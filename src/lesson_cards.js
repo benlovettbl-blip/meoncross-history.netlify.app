@@ -864,36 +864,9 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     return lessonsHTML;
   } else {
     lessonsHTML =
-      '<h2 style="font-family: \'Playfair Display\', serif; color: #1a237e; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; margin-bottom: 20px;">Key Topic Lessons</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; text-align: left;">';
+      '<h2 style="font-family: \'Playfair Display\', serif; color: #1a237e; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; margin-bottom: 24px;">Key Topic Lessons</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; text-align: left;">';
     if (unitData.lessons) {
       unitData.lessons.forEach((lesson, index) => {
-        let bgStyle = 'background: white; border: 1px solid #e2e8f0;';
-        let titleColor = '#1a237e';
-        let textColor = '#475569';
-        let textShadow = 'none';
-
-        let candidateImg = lesson.card_image || lesson.banner || lesson.cover_image;
-        if (!candidateImg && lesson.sources && lesson.sources.length > 0) {
-          candidateImg = lesson.sources[0].src || lesson.sources[0].image_url;
-        }
-
-        if (candidateImg) {
-          let imgUrl = getAssetUrl(candidateImg);
-          let cardPos =
-            lesson.card_position ||
-            lesson.card_image_position ||
-            (typeof lesson.card_image === 'object' && lesson.card_image?.position) ||
-            (typeof lesson.banner === 'object' && lesson.banner
-              ? lesson.banner.card_position || lesson.banner.position
-              : null) ||
-            lesson.banner_position ||
-            'center';
-          bgStyle = `background: linear-gradient(to bottom, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.9) 100%), url('${imgUrl}') ${cardPos}/cover; border: none; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end;`;
-          titleColor = '#f8fafc';
-          textColor = '#e2e8f0';
-          textShadow = '0 2px 4px rgba(0,0,0,0.5)';
-        }
-
         let cardBadge = `Lesson ${index + 1}`;
         if (lesson.id === 'hero_crummack') {
           cardBadge = 'Pupil Family Archive';
@@ -905,21 +878,124 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           cardBadge = `Day ${lesson.id.split('_')[1]}`;
         }
 
-        let cardContent = `
-            <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: ${textShadow};">${cardBadge}</h3>
-            <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.95rem; text-shadow: ${textShadow};">${lesson.title}</p>
-        `;
-
-        if (lesson.enquiry) {
-          cardContent = `
-                <h3 style="margin-top: 0; color: ${titleColor}; font-size: 1.1rem; margin-bottom: 5px; text-shadow: ${textShadow};">${cardBadge}: ${lesson.title}</h3>
-                <p style="margin: 0; color: ${textColor}; font-weight: 500; font-size: 0.9rem; font-style: italic; text-shadow: ${textShadow}; line-height: 1.3;">${lesson.enquiry}</p>
-            `;
+        let candidateImg =
+          lesson.card_image || lesson.banner || lesson.hero_image || lesson.cover_image;
+        if (!candidateImg && lesson.sources && lesson.sources.length > 0) {
+          candidateImg =
+            lesson.sources[0].src || lesson.sources[0].image_url || lesson.sources[0].image;
+        }
+        if (!candidateImg && lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
+          for (const b of lesson.narrative_blocks) {
+            if (b.source && (b.source.image || b.source.src || b.source.image_url)) {
+              candidateImg = b.source.image || b.source.src || b.source.image_url;
+              break;
+            }
+          }
+        }
+        if (!candidateImg && lesson.acts && lesson.acts.length > 0) {
+          for (const a of lesson.acts) {
+            if (a.source && (a.source.image || a.source.src || a.source.image_url)) {
+              candidateImg = a.source.image || a.source.src || a.source.image_url;
+              break;
+            }
+          }
         }
 
+        if (candidateImg && typeof candidateImg === 'object') {
+          candidateImg =
+            candidateImg.image ||
+            candidateImg.src ||
+            candidateImg.image_url ||
+            candidateImg.url ||
+            null;
+        }
+
+        let topMediaHTML = '';
+        if (candidateImg) {
+          let imgUrl = getAssetUrl(candidateImg);
+          let cardPos =
+            lesson.card_position ||
+            lesson.card_image_position ||
+            (typeof lesson.card_image === 'object' && lesson.card_image?.position) ||
+            (typeof lesson.banner === 'object' && lesson.banner
+              ? lesson.banner.card_position || lesson.banner.position
+              : null) ||
+            lesson.banner_position;
+
+          if (
+            (!cardPos || cardPos === 'center') &&
+            (unitData?.id === 'ks2_ww2' ||
+              currentUnitId === 'ks2_ww2' ||
+              (currentUnitData && currentUnitData.id === 'ks2_ww2'))
+          ) {
+            const ks2CardPositions = {
+              lesson_1: 'center 82%',
+              lesson_2: 'center 55%',
+              lesson_3: 'center 45%',
+              lesson_4: 'center 32%',
+              lesson_5: 'center 22%',
+              lesson_6: 'center 70%',
+              lesson_7: 'center 32%',
+              lesson_8: 'center 50%',
+              lesson_9: 'center 20%',
+              lesson_10: 'center 88%',
+            };
+            if (ks2CardPositions[lesson.id]) {
+              cardPos = ks2CardPositions[lesson.id];
+            }
+          }
+          if (!cardPos) cardPos = 'center';
+
+          topMediaHTML = `
+            <div style="position: relative; width: 100%; height: 145px; overflow: hidden; background: #0f172a; flex-shrink: 0;">
+              <img src="${imgUrl}" alt="${lesson.title}" class="lesson-card-banner-img" style="width: 100%; height: 100%; object-fit: cover; object-position: ${cardPos}; display: block; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);" />
+              <div style="position: absolute; top: 12px; left: 12px; background: rgba(15,23,42,0.85); backdrop-filter: blur(6px); color: #f8fafc; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.04em; border: 1px solid rgba(255,255,255,0.2); text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                ${cardBadge}
+              </div>
+            </div>
+          `;
+        } else {
+          topMediaHTML = `
+            <div style="position: relative; width: 100%; height: 50px; background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); display: flex; align-items: center; padding: 0 16px; flex-shrink: 0;">
+              <span style="background: rgba(255,255,255,0.22); color: #ffffff; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 14px; text-transform: uppercase; letter-spacing: 0.04em;">
+                ${cardBadge}
+              </span>
+            </div>
+          `;
+        }
+
+        const displayTitle = (lesson.title || '')
+          .replace(/^(?:Enquiry|Lesson)\s*\d+:\s*/i, '')
+          .trim();
+        const displayEnquiry =
+          lesson.enquiry ||
+          lesson.enquiryQuestion ||
+          lesson.enquiry_question ||
+          lesson.subtitle ||
+          '';
+
         lessonsHTML += `
-          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${index}" style="${bgStyle} border-radius: 8px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;">
-            ${cardContent}
+          <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${index}" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s; display: flex; flex-direction: column;">
+            ${topMediaHTML}
+            <div style="padding: 16px 18px 20px 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; gap: 8px;">
+              <div>
+                <div style="font-size: 0.75rem; font-weight: 700; color: #2563eb; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px;">
+                  ${cardBadge}
+                </div>
+                <h3 style="margin: 0 0 8px 0; color: #0f172a; font-size: 1.05rem; font-weight: 700; line-height: 1.35; font-family: 'Playfair Display', Georgia, serif;">
+                  ${displayTitle}
+                </h3>
+                ${
+                  displayEnquiry
+                    ? `
+                  <p style="margin: 0; color: #475569; font-weight: 400; font-size: 0.88rem; line-height: 1.45; font-style: italic;">
+                    ${displayEnquiry}
+                  </p>
+                `
+                    : ''
+                }
+              </div>
+            </div>
           </div>
         `;
       });

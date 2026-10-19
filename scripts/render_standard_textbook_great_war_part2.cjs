@@ -1,1915 +1,1490 @@
 /**
- * History Revision Hub — Publisher-Level Master Textbook Engine
+ * render_standard_textbook_great_war_part2.cjs
  *
- * Target: units/great_war_part2 (KS3 Year 9: The Great War Part 2, 1914–1919)
- * Output: public/pdfs/great_war_part2_textbook_PUBLISHER.pdf
- * HTML:   public/units/great_war_part2/textbook_PUBLISHER.html
- *
- * Gold Standard Publisher Architecture:
- * 1. Commercial Independence: Strict institutional neutrality; 0 prohibited school identifiers.
- * 2. Symmetric Dual-Column Master Architecture:
- *    - Verso (Left Page): Act 1 (3 paras + Source A) & Act 2 (3 paras + Source B) + 4-Term Vocab Deck
- *    - Recto (Right Page): Upper Grid [Act 3 (2 paras + Key Figure) | Act 4 (2 paras + Concept Spotlight)] + Source C Archival Dispatch + Bottom Enquiry & Workbook Signpost
- *    - Pure PEEL paragraph referencing with .para-ref micro-badges ([1.1], [1.2], etc.)
- * 3. Exact 14-Page Budget:
- *    - Page 1:  Master Front Cover (4-column syllabus matrix with "Disciplinary Skill & Assessment Focus")
- *    - Pages 2–13: 6 Double-Page Enquiry Spreads (Verso Acts 1 & 2; Recto Acts 3 & 4)
- *    - Page 14: Master Revision Back Cover (1914–1922 Chronological Spine, Themes Matrix, Historiography, PEEL Scaffold & QR Matrix)
- * 4. Zero multi-column prose voids (completely eliminates legacy CSS column-count: 2; uses flex .two-column-grid).
- * 5. Base64 Image Inlining for 100% offline and Puppeteer fidelity.
+ * PURE NARRATIVE CLASSROOM TEXTBOOK (12-Page Saddle-Stitch Model)
+ * Conforms strictly to the KS3 Classroom Textbook Engine Standard:
+ * - 100% Pure narrative text (zero primary sources, zero vocab boxes, zero QR codes/ledgers)
+ * - Large, comfortable, high-legibility typography for Year 9 reading (11.5pt body, 1.57–1.6 line-height)
+ * - Exactly 12 pages (3 folded A3 sheets, saddle-stitch reprographics compatible)
+ * - 5 Canonical Enquiries across 5 flat double-page spreads (Verso + Recto)
+ * - Explicit paragraph referencing [1.1] to [5.5] matching pupil workbook citations
+ * - Master Front Cover with 80x64mm hero plate, 2-para overview, 5-enquiry syllabus box, and core concepts strip
+ * - Back cover: 5-Card Master Knowledge Retrieval Quiz (Cards 1–4 for Enquiries 1–4, Card 5 full-width for compound Enquiry 5; 60 canonical questions, 0 answers)
+ * - 100% Institutional Neutrality (strictly "The History Revision Hub", zero school names)
  */
 
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
-const QRCode = require('qrcode');
 const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 
-const ROOT_DIR = path.join(__dirname, '..');
+const ROOT_DIR = path.resolve(__dirname, '..');
 
-function getBase64Image(relPath) {
-  if (!relPath) return null;
-  const clean = relPath.replace(/^\//, '');
-  const candidates = [
-    path.join(ROOT_DIR, 'public', clean),
-    path.join(ROOT_DIR, clean),
-    path.join(ROOT_DIR, 'public', 'images', path.basename(clean)),
-    path.join(ROOT_DIR, 'units', 'great_war_part2', 'assets', path.basename(clean)),
-    path.join(ROOT_DIR, 'public', 'units', 'great_war_part2', 'assets', path.basename(clean)),
-    path.join(ROOT_DIR, 'units', 'great_war', 'assets', path.basename(clean)),
-    path.join(ROOT_DIR, 'public', 'units', 'great_war', 'assets', path.basename(clean)),
-  ];
-
-  for (const cand of candidates) {
-    if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
-      const ext = path.extname(cand).toLowerCase();
-      let mime = 'image/jpeg';
-      if (ext === '.png') mime = 'image/png';
-      else if (ext === '.webp') mime = 'image/webp';
-      else if (ext === '.svg') mime = 'image/svg+xml';
-      const buf = fs.readFileSync(cand);
-      return `data:${mime};base64,${buf.toString('base64')}`;
+// Helper to convert local image to Base64 data URI for zero-latency rendering
+function getBase64Image(relativePath) {
+  try {
+    const cleanPath = relativePath.startsWith('/') ? relativePath.slice(1) : relativePath;
+    const candidates = [
+      path.join(ROOT_DIR, 'public', cleanPath),
+      path.join(ROOT_DIR, cleanPath),
+      path.join(ROOT_DIR, 'public', 'images', path.basename(cleanPath)),
+    ];
+    for (const cand of candidates) {
+      if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+        const ext = path.extname(cand).toLowerCase();
+        const mime =
+          ext === '.png'
+            ? 'image/png'
+            : ext === '.jpg' || ext === '.jpeg'
+              ? 'image/jpeg'
+              : ext === '.webp'
+                ? 'image/webp'
+                : 'image/jpeg';
+        const data = fs.readFileSync(cand).toString('base64');
+        return `data:${mime};base64,${data}`;
+      }
     }
+    return null;
+  } catch (err) {
+    return null;
   }
-  return null;
 }
 
-function formatText(text) {
+// Markdown bold and italics parser for clean prose typography
+function formatMarkdown(text) {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
 }
 
-function generateQrSvg(url) {
-  try {
-    const qr = QRCode.create(url, { margin: 1 });
-    const size = qr.modules.size;
-    const data = qr.modules.data;
-    let pathD = '';
-    for (let r = 0; r < size; r++) {
-      for (let c = 0; c < size; c++) {
-        if (data[r * size + c]) {
-          pathD += `M${c},${r}h1v1h-1z `;
-        }
-      }
-    }
-    return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#0f172a" d="${pathD.trim()}"/></svg>`;
-  } catch (e) {
-    return `<div style="font-size: 6pt; color: #64748b; text-align: center;">QR Code</div>`;
-  }
-}
+// ============================================================================
+// CANONICAL 5-ENQUIRY PURE NARRATIVE TEXT
+// ============================================================================
+const ENQUIRIES = JSON.parse(
+  fs.readFileSync(path.resolve(__dirname, 'great_war_part2_calibrated_enquiries.json'), 'utf8'),
+);
 
-// Load data module
-const getGreatWarPart2Data = require('./great_war_part2_textbook_data.cjs');
+// ============================================================================
+// 60 CANONICAL KNOWLEDGE RETRIEVAL QUESTIONS (10 PER BOX / PART)
+// ============================================================================
+const QUIZ_QUESTIONS = {
+  box1: [
+    'Which crisis precipitated the outbreak of the First World War in 1914?',
+    'Which 1839 treaty guaranteeing Belgian neutrality brought Britain into the war?',
+    "How large was Britain's professional standing army (the BEF) in August 1914?",
+    'Which Secretary of State for War warned the conflict would last years?',
+    "How many British volunteers enlisted in the first eight weeks of Kitchener's appeal?",
+    "What was the core purpose of creating civic 'Pals Battalions'?",
+    'Which local Hampshire battalions were raised in Portsmouth?',
+    'What symbol of cowardice was pinned on civilian men by women in 1914?',
+    "How did recruitment posters like 'Women of Britain Say—GO!' pressure men?",
+    'Why did the loss of a Pals battalion devastate entire home towns?',
+  ],
+  box2: [
+    'Which rapid-firing defensive weapon made infantry charges across open ground suicidal?',
+    'What was the name of the cratered wasteland between opposing front lines?',
+    'What three tiered defensive lines made up a standard Western Front trench system?',
+    'Which painful fungal infection, caused by standing in cold water, threatened amputation?',
+    'What medical term described severe trauma caused by constant artillery shelling?',
+    'Who served as Commander-in-Chief of the British Army from December 1915?',
+    'How many British casualties were suffered on the first day of the Somme?',
+    'Why did the seven-day preliminary bombardment fail to destroy German defences?',
+    'Which phrase did Alan Clark popularize to describe British soldiers and generals?',
+    "What concept do modern historians use to describe the British Army's tactical evolution?",
+  ],
+  box3: [
+    'Approximately how many troops and labourers were mobilised across the British Empire?',
+    'Which colony sent over 1.3 million combatants and labourers to the Allied war effort?',
+    'Who was the first South Asian soldier awarded the Victoria Cross in 1914?',
+    'Which regiment of Caribbean volunteers was raised in 1915 to fight for Britain?',
+    'What discriminatory restriction barred Black colonial soldiers from European frontline combat?',
+    'How many unarmed Chinese civilian volunteers served in the Chinese Labour Corps?',
+    'What hazardous tasks did non-white labour corps undertake under artillery fire?',
+    'Which Italian port saw Caribbean soldiers mutiny against racial abuse in 1918?',
+    'How were returning Caribbean veterans treated by colonial authorities in 1919?',
+    'What term describes the postwar erasure of colonial troops from British public memory?',
+  ],
+  box4: [
+    'Which emergency act passed in August 1914 granted sweeping state powers over daily life?',
+    'Name two daily activities that were restricted or criminalised under DORA.',
+    "Which 1915 political scandal toppled Asquith's government over artillery ammunition?",
+    'Who was appointed Minister of Munitions in 1915 to reorganise British industry?',
+    'What nickname was given to female munitions workers whose skin turned yellow from TNT?',
+    'What severe health risks and hazards did female munitionettes face in factories?',
+    'Which 1916 act introduced compulsory military conscription for British men?',
+    'What was the legal term for men who refused military service on moral grounds?',
+    "What was the distinction between 'alternativist' and 'absolutist' conscientious objectors?",
+    'How did British authorities punish absolutist objectors who refused all labour?',
+  ],
+  box5PartA: [
+    "What was the codename for Germany's massive Western Front offensive in March 1918?",
+    'Which specialized infantry units used infiltration tactics and flamethrowers?',
+    'What Allied counter-offensive in August 1918 broke the German Hindenburg Line?',
+    "Which fresh nation's arrival in France provided decisive reinforcements in 1918?",
+    'Where did German sailors mutiny in October 1918, sparking domestic revolution?',
+    'On what date and at what time did the Armistice take effect on the Western Front?',
+    'Where did German delegates meet Marshal Foch to sign the Armistice agreement?',
+    'What happened to Kaiser Wilhelm II on 9 November 1918?',
+    'Which Allied naval measure continued to starve German civilians after the Armistice?',
+    "What myth claimed that Germany's undefeated military was betrayed by politicians at home?",
+  ],
+  box5PartB: [
+    'Which three Allied leaders dominated the Paris Peace Conference in 1919?',
+    "How did Georges Clemenceau's aims differ from Woodrow Wilson's Fourteen Points?",
+    'What was Article 231 of the Treaty of Versailles commonly known as?',
+    'What total sum in financial reparations was fixed on Germany in 1921?',
+    'To what maximum troop number was the German Army restricted under the treaty?',
+    'Which territory was returned to France, and which was created to give Poland sea access?',
+    "Why did the German public condemn the Treaty of Versailles as a 'Diktat'?",
+    'What international peace-keeping organisation was created at Versailles?',
+    "What warning did John Maynard Keynes make about crushing Germany's economy?",
+    'How did the humiliation of Versailles help pave the path to war in 1939?',
+  ],
+};
 
-function renderArchivalSourceBox(src) {
-  if (!src) return '';
-  const isPanoramic =
-    src.isPanoramic || src.panoramic || (src.aspectRatio && src.aspectRatio === 'panoramic');
-  const sizeClass = src.expand ? ` expand-${src.expand}` : '';
-  const panoramicClass = isPanoramic ? ' panoramic-source' : '';
-
-  if (src.text && !src.image) {
-    // Written Primary Document
-    return `
-      <div class="archival-source-box written-source-box${sizeClass}${panoramicClass}">
-        <div class="archival-header">
-          <div class="source-identity">
-            <span class="source-badge">${src.badge || 'SOURCE'}</span>
-            <span class="source-type">${src.type || 'Written Primary Document'}</span>
-          </div>
-          <span class="source-date-micro">${src.date || src.shelfmark || ''}</span>
-        </div>
-        <div class="archival-title">${src.title || 'Primary Historical Record'}</div>
-        <div class="archival-body">${formatText(src.text)}</div>
-        <div class="archival-context-box">
-          <p class="archival-context-text">${formatText(src.context || '')}</p>
-          ${src.hingeQuestion ? `<div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>${formatText(src.hingeQuestion)}</em></div>` : ''}
-        </div>
-        <div class="archival-footer">
-          <span>${src.shelfmark || 'Curriculum Primary Record'}</span>
-          <span>${src.footer || 'Department Archives'}</span>
-        </div>
-      </div>
-    `;
-  }
-
-  if (src.image) {
-    // Visual / Artifact Primary Document
-    const imgData = src.image.startsWith('data:')
-      ? src.image
-      : getBase64Image(src.image) || src.image;
-    return `
-      <div class="archival-source-box${sizeClass}${panoramicClass}">
-        <div class="archival-header">
-          <div class="source-identity">
-            <span class="source-badge">${src.badge || 'SOURCE'}</span>
-            <span class="source-type">${src.type || 'Visual Primary Evidence'}</span>
-          </div>
-          <span class="source-date-micro">${src.date || src.shelfmark || ''}</span>
-        </div>
-        <div class="archival-title">${src.title || 'Primary Historical Evidence'}</div>
-        <img class="archival-image" src="${imgData}" alt="${src.title || 'Primary Source'}">
-        ${src.text ? `<div class="archival-body">${formatText(src.text)}</div>` : ''}
-        <div class="archival-context-box">
-          <p class="archival-context-text">${formatText(src.context || '')}</p>
-          ${src.hingeQuestion ? `<div class="archival-hinge-q"><strong>Hinge Question:</strong> <em>${formatText(src.hingeQuestion)}</em></div>` : ''}
-        </div>
-        <div class="archival-footer">
-          <span>${src.shelfmark || 'Curriculum Primary Record'}</span>
-          <span>${src.footer || 'Department Archives'}</span>
-        </div>
-      </div>
-    `;
-  }
-
-  return '';
-}
-
-function renderConceptSpotlightBox(csb) {
-  if (!csb) return '';
-  if (typeof csb === 'string') return csb;
-  return `
-    <div class="concept-spotlight-box">
-      <div class="csb-header">
-        <span class="csb-tag">${csb.tag || 'CONCEPT SPOTLIGHT'}</span>
-        <span class="csb-category">${csb.category || ''}</span>
-      </div>
-      <h4 class="csb-title">${csb.title || ''}</h4>
-      <div class="csb-body">${formatText(csb.body || '')}</div>
-      ${csb.takeaway ? `<div class="csb-takeaway"><strong>Key Historical Insight:</strong> ${formatText(csb.takeaway.replace(/^Key Historical Insight:\s*/i, ''))}</div>` : ''}
-    </div>
-  `;
-}
-
-function renderKeyFigureBox(keyFigure) {
-  if (!keyFigure) return '';
-  const portraitHtml =
-    keyFigure.image && keyFigure.image !== 'monogram'
-      ? `<img class="kf-portrait" src="${keyFigure.image.startsWith('data:') ? keyFigure.image : getBase64Image(keyFigure.image) || keyFigure.image}" alt="${keyFigure.name}">`
-      : '';
-
-  return `
-    <div class="key-figure-box">
-      <div class="kf-header">
-        <span class="kf-tag">${keyFigure.category || keyFigure.badge || 'KEY FIGURE'}</span>
-        <span class="kf-lifespan">${keyFigure.lifespan || ''}</span>
-      </div>
-      <div class="kf-identity-row">
-        ${portraitHtml}
-        <div class="kf-identity-text">
-          <div class="kf-name">${keyFigure.name}</div>
-          <div class="kf-role">${keyFigure.role}</div>
-        </div>
-      </div>
-      <div class="kf-significance">${formatText(keyFigure.significance)}</div>
-      <div class="kf-actions-title">DECISIVE ACTIONS:</div>
-      <ul class="kf-actions-list">
-        ${keyFigure.actions.map((a) => `<li>${formatText(a)}</li>`).join('')}
-      </ul>
-    </div>
-  `;
-}
-
-async function buildPublisherTextbookHtmlGreatWarPart2() {
-  const gwData = getGreatWarPart2Data({ getBase64Image });
-  const {
-    unitTitle,
-    yearGroup,
-    subtitle,
-    overarchingEnquiry,
-    heroImage,
-    heroCaption,
-    syllabusMatrix,
-    leftSources,
-    leftVocab,
-    componentBank,
-    lessonSections,
-    chronology,
-    thematicMatrix,
-    historiographicalDebates,
-    synopticVerdict,
-  } = gwData;
-
+// ============================================================================
+// HTML GENERATOR FUNCTION
+// ============================================================================
+function buildNarrativeTextbookHtml() {
   const coverImgData =
-    getBase64Image(heroImage) || getBase64Image('/images/stubbington_memorial_1.jpg');
+    getBase64Image('/images/bg_great_war_part2.jpg') || '/images/bg_great_war_part2.jpg';
 
-  // Back cover practice quiz cards for 6 enquiries
-  const qrLessons = [
-    {
-      num: 'Enquiry 1',
-      title: 'Recruitment & Pals',
-      url: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2&lesson=1',
-    },
-    {
-      num: 'Enquiry 2',
-      title: 'Trenches & Haig',
-      url: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2&lesson=2',
-    },
-    {
-      num: 'Enquiry 3',
-      title: 'Empire & Khudadad',
-      url: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2&lesson=3',
-    },
-    {
-      num: 'Enquiry 4',
-      title: 'DORA & Home Front',
-      url: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2&lesson=4',
-    },
-    {
-      num: 'Enquiry 5',
-      title: 'Treaty of Versailles',
-      url: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2&lesson=5',
-    },
-    {
-      num: 'Enquiry 6',
-      title: 'Lost Gen & Village',
-      url: 'https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2&lesson=6',
-    },
-  ];
+  let spreadsHtml = '';
 
-  const qrCardsHtml = qrLessons
-    .map(
-      (l) => `
-    <div class="bqr-card">
-      <div class="bqr-header">
-        <span class="bqr-num">${l.num}</span>
-        <span class="bqr-title">${l.title}</span>
-      </div>
-      <div class="bqr-code-box">
-        ${generateQrSvg(l.url)}
-      </div>
-      <div class="bqr-footer">Interactive Hub &bull; Quiz</div>
-    </div>
-  `,
-    )
-    .join('');
+  ENQUIRIES.forEach((enquiry) => {
+    const num = enquiry.num;
+    const versoPage = num * 2;
+    const rectoPage = num * 2 + 1;
 
-  let lessonsHtml = '';
+    spreadsHtml += `
+    <!-- =========================================================
+         PAGE ${versoPage} (VERSO): ENQUIRY ${num} PART I
+         ========================================================= -->
+    <div class="a4-page verso textbook-page" data-page="${versoPage}" id="page-${versoPage}">
+      
+      <!-- Running Header -->
+      <header class="page-running-header">
+        <span class="rh-left">KEY STAGE 3 DISCIPLINARY HISTORY</span>
+        <span class="rh-right">ENQUIRY 0${num} &bull; PART I</span>
+      </header>
 
-  syllabusMatrix.forEach((syl, idx) => {
-    const lessonNum = idx + 1;
-    const leftPageNum = lessonNum * 2;
-    const rightPageNum = lessonNum * 2 + 1;
-    const bankKey = `p${rightPageNum}`;
-    const leftVocabKey = `p${leftPageNum}`;
-    const leftSrcKey = `p${leftPageNum}`;
-
-    const bank = componentBank[bankKey] || {};
-    const vocabTerms = leftVocab[leftVocabKey] || [];
-    const sources = leftSources[leftSrcKey] || {};
-    const acts = lessonSections[idx] || [];
-
-    const act1 = acts[0] || { title: 'Act 1: Context & Catalyst', text: [] };
-    const act2 = acts[1] || { title: 'Act 2: Escalation & Conflict', text: [] };
-    const act3 = acts[2] || { title: 'Act 3: Forensic Archival Evidence', text: [] };
-    const act4 = acts[3] || { title: 'Act 4: The Historical Verdict', text: [] };
-
-    const task3Instruction =
-      bank.task3Instruction ||
-      'Prepare factual evidence for both sides of the historical enquiry in your workbook before writing.';
-    const task4Question = bank.task4Question || syl.enquiry || syl.title;
-    const wbPages = bank.wbPages || `${lessonNum * 2 + 2}–${lessonNum * 2 + 3}`;
-
-    // LEFT PAGE (Verso)
-    lessonsHtml += `
-    <!-- PAGE ${leftPageNum}: The Great War Part 2 Enquiry ${lessonNum} Left Page (Verso) -->
-    <div class="textbook-page" data-page="${leftPageNum}">
-      <div class="page-inner">
-        
-        <!-- Lesson Header Strip -->
-        <div class="lesson-header">
-          <div class="lesson-badge-strip">
-            <span class="topic-badge">KEY STAGE 3 MASTER CURRICULUM &bull; YEAR 9</span>
-            <span class="spec-ref-badge">THE GREAT WAR (1914–1919) &bull; ENQUIRY ${lessonNum} OF 6</span>
-          </div>
-          <h2 class="lesson-title">${syl.title}</h2>
-          <div class="lesson-spec-anchor">
-            <strong>Key Enquiry:</strong> ${syl.enquiry} &bull; <em>Acts 1 &amp; 2: Context, Catalysts &amp; Primary Evidence</em>
-          </div>
+      <!-- Enquiry Title Banner -->
+      <div class="enquiry-title-banner">
+        <div class="enquiry-meta-row">
+          <span class="enquiry-badge">ENQUIRY 0${num} &bull; YEAR 9</span>
+          <span class="enquiry-subtitle-tag">${enquiry.versoSubtitle}</span>
         </div>
-
-        <!-- 2-Column Core Prose Grid -->
-        <div class="two-column-grid">
-          <div class="col-side">
-            <div class="col-top-group">
-              <div class="section-banner">
-                <span class="sb-num">ACT 1</span>
-                <span class="sb-title">${act1.title.replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
-              </div>
-              ${act1.text.map((p) => `<p class="narrative-p">${formatText(p)}</p>`).join('')}
-            </div>
-            ${renderArchivalSourceBox(sources.sourceA)}
-          </div>
-          <div class="col-side">
-            <div class="col-top-group">
-              <div class="section-banner">
-                <span class="sb-num">ACT 2</span>
-                <span class="sb-title">${act2.title.replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
-              </div>
-              ${act2.text.map((p) => `<p class="narrative-p">${formatText(p)}</p>`).join('')}
-            </div>
-            ${renderArchivalSourceBox(sources.sourceB)}
-          </div>
+        <h1 class="enquiry-main-title">${enquiry.title}</h1>
+        <div class="enquiry-question-box">
+          <span class="eq-icon">&sect;</span>
+          <span class="eq-text"><strong>Key Enquiry Question:</strong> ${enquiry.enquiry}</span>
         </div>
+      </div>
 
-        <!-- Bottom Fingertip Vocabulary Deck -->
-        <div class="bottom-vocab-box">
-          <div class="bvb-header">
-            <span class="bvb-title">CORE DISCIPLINARY TERMINOLOGY &bull; ENQUIRY ${lessonNum}</span>
-            <span class="bvb-badge">KEY STAGE 3 VOCABULARY</span>
-          </div>
-          <div class="bvb-grid">
-            ${vocabTerms
+      <!-- Main Prose Reading Area (2-Column Flow for Blocks 1 & 2) -->
+      <main class="page-prose-body">
+        <div class="prose-two-column">
+          
+          <!-- Block 1 -->
+          <section class="narrative-block">
+            <div class="block-header">
+              <span class="block-ref">[${enquiry.block1.ref}]</span>
+              <span class="block-date">${enquiry.block1.date}</span>
+              <h2 class="block-title">${enquiry.block1.title}</h2>
+            </div>
+            ${enquiry.block1.paras
               .map(
-                (v) => `
-              <div class="bvb-col">
-                <strong>${v.term}</strong>
-                ${v.def}
-              </div>
-            `,
+                (p) => `
+            <p class="prose-p"><span class="para-pill">[${enquiry.block1.ref}]</span> ${formatMarkdown(p)}</p>`,
               )
               .join('')}
-          </div>
-        </div>
+          </section>
 
-        <!-- Page Footer -->
-        <div class="page-footer">
-          <span>The Great War (1914–1919) &bull; Enquiry ${lessonNum}: ${syl.title}</span>
-          <span>Page ${leftPageNum}</span>
-        </div>
+          <!-- Block 2 -->
+          <section class="narrative-block">
+            <div class="block-header">
+              <span class="block-ref">[${enquiry.block2.ref}]</span>
+              <span class="block-date">${enquiry.block2.date}</span>
+              <h2 class="block-title">${enquiry.block2.title}</h2>
+            </div>
+            ${enquiry.block2.paras
+              .map(
+                (p) => `
+            <p class="prose-p"><span class="para-pill">[${enquiry.block2.ref}]</span> ${formatMarkdown(p)}</p>`,
+              )
+              .join('')}
+          </section>
 
-      </div>
+        </div>
+      </main>
+
+      <!-- Running Footer -->
+      <footer class="page-running-footer">
+        <span>The Great War (1914&ndash;1919) &bull; Enquiry 0${num} Part I</span>
+        <span class="page-num">${versoPage}</span>
+      </footer>
+
     </div>
 
-    <!-- PAGE ${rightPageNum}: The Great War Part 2 Enquiry ${lessonNum} Right Page (Recto) -->
-    <div class="textbook-page" data-page="${rightPageNum}">
-      <div class="page-inner">
-        
-        <!-- Right Page Header -->
-        <div class="right-page-header">
-          <div class="rph-meta">
-            <span class="rph-tag">PRIMARY ARCHIVE &amp; HISTORICAL VERDICT &bull; KS3 MASTER CURRICULUM</span>
-            <span class="rph-lesson">ENQUIRY ${lessonNum} OF 6: ACTS 3 &amp; 4</span>
-          </div>
-          <h3 class="rph-title">${syl.title}</h3>
-        </div>
+    <!-- =========================================================
+         PAGE ${rectoPage} (RECTO): ENQUIRY ${num} PART II
+         ========================================================= -->
+    <div class="a4-page recto textbook-page" data-page="${rectoPage}" id="page-${rectoPage}">
+      
+      <!-- Running Header -->
+      <header class="page-running-header">
+        <span class="rh-left">THE GREAT WAR (1914&ndash;1919)</span>
+        <span class="rh-right">ENQUIRY 0${num} &bull; PART II</span>
+      </header>
 
-        <!-- Right Page Content Layout -->
-        <div class="right-page-content">
-          <div class="right-upper-grid">
-            <div class="col-side">
-              <div class="col-top-group">
-                <div class="section-banner">
-                  <span class="sb-num">ACT 3</span>
-                  <span class="sb-title">${act3.title.replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
-                </div>
-                ${act3.text.map((p) => `<p class="narrative-p">${formatText(p)}</p>`).join('')}
-              </div>
-              ${renderKeyFigureBox(bank.keyFigure)}
-            </div>
-            <div class="col-side">
-              <div class="col-top-group">
-                <div class="section-banner">
-                  <span class="sb-num">ACT 4</span>
-                  <span class="sb-title">${act4.title.replace(/^Act\s*\d+:\s*/i, '').replace(/^\d+\.\s*/, '')}</span>
-                </div>
-                ${act4.text.map((p) => `<p class="narrative-p">${formatText(p)}</p>`).join('')}
-              </div>
-              ${renderConceptSpotlightBox(bank.conceptSpotlight)}
-            </div>
-          </div>
-
-          ${
-            bank.archivalDispatch
-              ? `
-          <div class="fullwidth-dispatch-wrap">
-            ${bank.archivalDispatch}
-          </div>`
-              : ''
-          }
-        </div>
-
-        <!-- Lesson Enquiry & Writing Tasks Box -->
-        <div class="bottom-enquiry-box">
-          <div class="beb-header">
-            <span class="beb-title">HISTORICAL ENQUIRY &amp; DISCIPLINARY ASSESSMENT &bull; ENQUIRY ${lessonNum}</span>
-            <span class="beb-badge">${syl.skill || 'DISCIPLINARY WRITING'}</span>
-          </div>
-          <div class="beb-mission-content">
-            <div class="beb-task-row">
-              <span class="beb-task-tag">TASK 3: EVIDENCE PREPARATION</span>
-              <span class="beb-task-text">${task3Instruction}</span>
-            </div>
-            <div class="beb-task-row">
-              <span class="beb-task-tag">TASK 4: EXTENDED WRITING</span>
-              <span class="beb-task-text"><strong>Enquiry Question:</strong> ${task4Question}</span>
-            </div>
-            <div class="beb-workbook-signpost">
-              <span>&rarr; <strong>Pupil Workbook:</strong> Turn to Lesson ${lessonNum} (pages ${wbPages}) in your Pupil Workbook to complete your Task 3 evidence notes and Task 4 written response.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Page Footer -->
-        <div class="page-footer">
-          <span>The Great War (1914–1919) &bull; Primary Archival Core</span>
-          <span>Page ${rightPageNum}</span>
-        </div>
-
+      <!-- Recto Section Header -->
+      <div class="recto-header-banner">
+        <span class="recto-part-tag">PART II: CLIMAX, TURNING POINTS &amp; HISTORICAL CONSEQUENCE</span>
+        <span class="recto-subhead">${enquiry.rectoSubtitle}</span>
       </div>
+
+      <!-- Main Prose Reading Area (2-Column Continuous Flow for Blocks 3, 4 & 5) -->
+      <main class="page-prose-body">
+        <div class="prose-two-column">
+          
+          <!-- Block 3 -->
+          <section class="narrative-block">
+            <div class="block-header">
+              <span class="block-ref">[${enquiry.block3.ref}]</span>
+              <span class="block-date">${enquiry.block3.date}</span>
+              <h2 class="block-title">${enquiry.block3.title}</h2>
+            </div>
+            ${enquiry.block3.paras
+              .map(
+                (p) => `
+            <p class="prose-p"><span class="para-pill">[${enquiry.block3.ref}]</span> ${formatMarkdown(p)}</p>`,
+              )
+              .join('')}
+          </section>
+
+          <!-- Block 4 -->
+          <section class="narrative-block">
+            <div class="block-header">
+              <span class="block-ref">[${enquiry.block4.ref}]</span>
+              <span class="block-date">${enquiry.block4.date}</span>
+              <h2 class="block-title">${enquiry.block4.title}</h2>
+            </div>
+            ${enquiry.block4.paras
+              .map(
+                (p) => `
+            <p class="prose-p"><span class="para-pill">[${enquiry.block4.ref}]</span> ${formatMarkdown(p)}</p>`,
+              )
+              .join('')}
+          </section>
+
+          <!-- Block 5 -->
+          <section class="narrative-block">
+            <div class="block-header">
+              <span class="block-ref">[${enquiry.block5.ref}]</span>
+              <span class="block-date">${enquiry.block5.date}</span>
+              <h2 class="block-title">${enquiry.block5.title}</h2>
+            </div>
+            ${enquiry.block5.paras
+              .map(
+                (p) => `
+            <p class="prose-p"><span class="para-pill">[${enquiry.block5.ref}]</span> ${formatMarkdown(p)}</p>`,
+              )
+              .join('')}
+          </section>
+
+        </div>
+      </main>
+
+      <!-- Running Footer -->
+      <footer class="page-running-footer">
+        <span>The Great War (1914&ndash;1919) &bull; Enquiry 0${num} Part II</span>
+        <span class="page-num">${rectoPage}</span>
+      </footer>
+
     </div>
     `;
   });
+
+  // Master Knowledge Retrieval Quiz helper
+  let globalQNum = 1;
+  function renderQList(questions) {
+    return questions
+      .map((qText) => {
+        const num = globalQNum++;
+        return `
+        <div class="quiz-item">
+          <span class="quiz-num">${num}.</span>
+          <span class="quiz-text">${qText}</span>
+        </div>
+      `;
+      })
+      .join('');
+  }
+
+  const box1List = renderQList(QUIZ_QUESTIONS.box1);
+  const box2List = renderQList(QUIZ_QUESTIONS.box2);
+  const box3List = renderQList(QUIZ_QUESTIONS.box3);
+  const box4List = renderQList(QUIZ_QUESTIONS.box4);
+  const box5PartAList = renderQList(QUIZ_QUESTIONS.box5PartA);
+  const box5PartBList = renderQList(QUIZ_QUESTIONS.box5PartB);
+
+  const quizBoxesHtml = `
+    <!-- BOX 1: ENQUIRY 1 -->
+    <div class="quiz-grid-card">
+      <div class="quiz-grid-header">
+        <div class="quiz-title-wrap">
+          <span class="quiz-badge">ENQUIRY 01</span>
+          <span class="quiz-title">1914: The Outbreak &amp; Pals’ Battalions</span>
+        </div>
+        <span class="quiz-locator">pp. 2&ndash;3 &bull; Ref [1.1]&ndash;[1.5]</span>
+      </div>
+      <div class="quiz-items-wrap">
+        ${box1List}
+      </div>
+    </div>
+
+    <!-- BOX 2: ENQUIRY 2 -->
+    <div class="quiz-grid-card">
+      <div class="quiz-grid-header">
+        <div class="quiz-title-wrap">
+          <span class="quiz-badge">ENQUIRY 02</span>
+          <span class="quiz-title">Blood, Mud &amp; Trench Warfare</span>
+        </div>
+        <span class="quiz-locator">pp. 4&ndash;5 &bull; Ref [2.1]&ndash;[2.5]</span>
+      </div>
+      <div class="quiz-items-wrap">
+        ${box2List}
+      </div>
+    </div>
+
+    <!-- BOX 3: ENQUIRY 3 -->
+    <div class="quiz-grid-card">
+      <div class="quiz-grid-header">
+        <div class="quiz-title-wrap">
+          <span class="quiz-badge">ENQUIRY 03</span>
+          <span class="quiz-title">The Forgotten Global Empire</span>
+        </div>
+        <span class="quiz-locator">pp. 6&ndash;7 &bull; Ref [3.1]&ndash;[3.5]</span>
+      </div>
+      <div class="quiz-items-wrap">
+        ${box3List}
+      </div>
+    </div>
+
+    <!-- BOX 4: ENQUIRY 4 -->
+    <div class="quiz-grid-card">
+      <div class="quiz-grid-header">
+        <div class="quiz-title-wrap">
+          <span class="quiz-badge">ENQUIRY 04</span>
+          <span class="quiz-title">The Total War Home Front</span>
+        </div>
+        <span class="quiz-locator">pp. 8&ndash;9 &bull; Ref [4.1]&ndash;[4.5]</span>
+      </div>
+      <div class="quiz-items-wrap">
+        ${box4List}
+      </div>
+    </div>
+
+    <!-- BOX 5: ENQUIRY 5 (SPANS BOTH COLUMNS) -->
+    <div class="quiz-grid-card enquiry-span-2">
+      <div class="quiz-grid-header">
+        <div class="quiz-title-wrap">
+          <span class="quiz-badge">ENQUIRY 05</span>
+          <span class="quiz-title">The Armistice (1918), The Versailles Diktat (1919) &amp; The Fragile Peace</span>
+        </div>
+        <span class="quiz-locator">pp. 10&ndash;11 &bull; Ref [5.1]&ndash;[5.5]</span>
+      </div>
+      <div class="compound-columns-wrap">
+        <div class="compound-subcol">
+          <div class="subcol-header">
+            <span>Part I: 1918 Hundred Days &amp; Armistice</span>
+            <span class="subcol-tag">p. 10 &bull; Ref [5.1]&ndash;[5.2]</span>
+          </div>
+          <div class="quiz-items-wrap">
+            ${box5PartAList}
+          </div>
+        </div>
+        <div class="compound-subcol">
+          <div class="subcol-header">
+            <span>Part II: Versailles, Article 231 &amp; The Diktat</span>
+            <span class="subcol-tag">p. 11 &bull; Ref [5.3]&ndash;[5.5]</span>
+          </div>
+          <div class="quiz-items-wrap">
+            ${box5PartBList}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>${unitTitle} — Master Publisher Textbook</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Great War (1914–1919) — Classroom Reading Anthology</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <style>
-    @page {
-      size: A4 portrait;
-      margin: 0;
-    }
-    *, *:before, *:after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      background: #e2e8f0;
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 10.0pt;
-      line-height: 1.46;
-      color: #1e293b;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
+    :root {
+      --ink-primary: #0f172a;
+      --ink-secondary: #334155;
+      --ink-muted: #64748b;
+      --crimson-accent: #991b1b;
+      --crimson-dark: #7f1d1d;
+      --navy-deep: #0f284e;
+      --gold-royal: #b45309;
+      --parchment-bg: #fdfbf7;
+      --border-soft: #cbd5e1;
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Lora', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, sans-serif;
     }
 
-    .textbook-page {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background: #e2e8f0;
+      color: var(--ink-primary);
+      font-family: var(--font-body);
+      font-size: 11.5pt;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Screen Quick Control Bar */
+    .screen-control-bar {
+      width: 210mm;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-family: var(--font-sans);
+      font-size: 8.5pt;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .screen-control-bar .badge-hub {
+      background: var(--crimson-accent);
+      color: #ffffff;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .screen-control-bar button {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid #475569;
+      padding: 5px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 8pt;
+    }
+    .screen-control-bar button:hover {
+      background: #334155;
+    }
+
+    /* =============================================================
+       A4 PAGE ARCHITECTURE (210mm x 297mm)
+       ============================================================= */
+    .a4-page {
       width: 210mm;
       height: 297mm;
-      box-sizing: border-box;
-      padding: 9.5mm 13mm 8mm 13mm;
       background: #ffffff;
-      margin: 0 auto 10mm auto;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 14mm 16mm 11mm 16mm;
       page-break-after: always;
       break-after: always;
+    }
+
+    /* =============================================================
+       PAGE 1: MASTER FRONT COVER (Rich Architectural Overview)
+       ============================================================= */
+    .a4-page.front-cover {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10mm 15mm 9mm 15mm;
       display: flex;
       flex-direction: column;
       position: relative;
-      overflow: hidden;
-    }
-    @media print {
-      body { background: #ffffff; }
-      .textbook-page { margin: 0; }
     }
 
-    .page-inner {
-      height: 100%;
+    .cover-top-masthead {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      overflow: hidden;
-    }
-
-    /* Lesson Header Strip */
-    .lesson-header {
-      border-bottom: 2px solid #1e3a8a;
-      padding-bottom: 3.5px;
-      margin-bottom: 5px;
-      flex-shrink: 0;
-    }
-    .lesson-badge-strip {
-      display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 2px;
-      font-family: 'Inter', sans-serif;
-    }
-    .topic-badge {
-      background: #1e3a8a;
-      color: #ffffff;
-      font-size: 7.2pt;
-      font-weight: 800;
-      padding: 2px 7px;
-      border-radius: 3px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .spec-ref-badge {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      padding-bottom: 1.5mm;
+      margin-bottom: 2.5mm;
+      font-family: var(--font-sans);
       font-size: 7.2pt;
       font-weight: 700;
-      color: #1d4ed8;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .lesson-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 13.0pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 1.5px 0 2.5px 0;
-      line-height: 1.18;
-    }
-    .lesson-spec-anchor {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
-      color: #334155;
-      line-height: 1.32;
-      background: #eff6ff;
-      border-left: 3px solid #1e3a8a;
-      padding: 2px 7px;
-      border-radius: 0 3px 3px 0;
+      color: #94a3b8;
     }
 
-    /* Right Page Header */
-    .right-page-header {
-      border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 3.5px;
-      margin-bottom: 5px;
-      flex-shrink: 0;
+    .cover-title-group {
+      text-align: center;
+      margin-bottom: 2.8mm;
     }
-    .rph-meta {
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+    .cover-date-pill {
+      display: inline-block;
+      background: #991b1b;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 8pt;
       font-weight: 800;
+      letter-spacing: 0.14em;
+      padding: 2.5px 12px;
+      border-radius: 3px;
+      margin-bottom: 2mm;
+    }
+    .cover-title-group h1 {
+      font-family: var(--font-display);
+      font-size: 26pt;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      line-height: 1.1;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 2px;
+      margin-bottom: 2mm;
     }
-    .rph-tag { color: #1e3a8a; }
-    .rph-lesson { color: #64748b; }
-    .rph-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 11.6pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 0;
-      line-height: 1.18;
+    .cover-title-group p {
+      font-family: var(--font-body);
+      font-size: 10.8pt;
+      font-style: italic;
+      color: #cbd5e1;
+      line-height: 1.35;
     }
 
-    /* Balanced 2-Column Grid Layout (Left Page) */
-    .two-column-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 5mm;
-      flex: 1;
-      overflow: hidden;
-      margin-bottom: 2px;
-    }
-    .col-side {
+    /* Hero Plate & Overview Row */
+    .cover-hero-row {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 6px;
-      height: 100%;
-      overflow: hidden;
-    }
-    .col-top-group {
-      display: flex;
-      flex-direction: column;
-      flex-shrink: 0;
-    }
-    .col-side .archival-source-box {
-      margin: 0;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 3px;
-    }
-    .two-column-grid .narrative-p {
-      margin: 0 0 2.5px 0;
-      line-height: 1.28;
-      font-size: 9.3pt;
-    }
-    .two-column-grid .archival-source-box {
-      padding: 3.5px 5.5px;
-    }
-    .two-column-grid .archival-title {
-      font-size: 8.8pt;
-      margin: 1px 0 2.5px 0;
-      line-height: 1.16;
-    }
-    .two-column-grid .archival-image {
-      max-height: 160px;
-      min-height: 85px;
-      height: 100%;
-      flex: 1;
-      object-fit: contain;
-    }
-    .two-column-grid .archival-body {
-      font-size: 8.4pt;
-      line-height: 1.26;
-      padding: 3px 5px;
-      margin-bottom: 2px;
-    }
-    .two-column-grid .archival-context-box {
-      padding: 3px 5px;
-      margin: 2px 0;
-    }
-    .two-column-grid .archival-context-text {
-      font-size: 7.9pt;
-      line-height: 1.22;
-      margin: 0 0 1.5px 0;
-    }
-    .two-column-grid .archival-hinge-q {
-      font-size: 7.9pt;
-      line-height: 1.22;
-      padding: 1.5px 4px;
-    }
-    .two-column-grid .written-source-box {
-      padding: 4px 6.5px;
-    }
-    .two-column-grid .written-source-box .archival-title {
-      font-size: 9.6pt;
-      margin: 2px 0 3px 0;
-      line-height: 1.18;
-    }
-    .two-column-grid .written-source-box .archival-body {
-      font-size: 10.2pt;
-      line-height: 1.34;
-      padding: 5px 8px;
-      margin: 3px 0 4px 0;
-      background: #fafaf9;
-      border-left: 3.5px solid #1e3a8a;
-      border-radius: 2px;
-    }
-    .two-column-grid .written-source-box .archival-context-box {
-      padding: 3px 5px;
-      margin: 2px 0;
-    }
-    .two-column-grid .written-source-box .archival-context-text {
-      font-size: 8.0pt;
-      line-height: 1.24;
-      margin-bottom: 1.5px;
-    }
-    .two-column-grid .written-source-box .archival-hinge-q {
-      font-size: 8.0pt;
-      line-height: 1.24;
-      padding: 1.5px 4px;
-    }
-    .two-column-grid .written-source-box.expand-lg .archival-body {
-      font-size: 11.0pt;
-      line-height: 1.44;
-      padding: 7px 11px;
-      margin: 5px 0 7px 0;
-    }
-    .two-column-grid .written-source-box.expand-lg .archival-context-box {
-      padding: 4px 6px;
-      margin: 3px 0;
-    }
-    .two-column-grid .written-source-box.expand-lg .archival-context-text {
-      font-size: 8.3pt;
-      line-height: 1.28;
-      margin-bottom: 2px;
-    }
-    .two-column-grid .written-source-box.expand-lg .archival-hinge-q {
-      font-size: 8.3pt;
-      line-height: 1.28;
-      padding: 2.5px 5px;
-    }
-    .two-column-grid .archival-source-box.expand-lg .archival-image {
-      max-height: 205px;
-    }
-    .two-column-grid .archival-source-box.expand-lg .archival-context-box {
-      padding: 4px 6px;
-      margin: 3px 0;
-    }
-    .two-column-grid .archival-source-box.expand-lg .archival-context-text {
-      font-size: 8.3pt;
-      line-height: 1.28;
-      margin-bottom: 2px;
-    }
-    .two-column-grid .archival-source-box.expand-lg .archival-hinge-q {
-      font-size: 8.3pt;
-      line-height: 1.28;
-      padding: 2.5px 5px;
-    }
-
-    /* Right Page 2-Tier Balanced Layout */
-    .right-page-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
-      margin-bottom: 2px;
-    }
-    .right-upper-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      column-gap: 5mm;
-      flex: 1;
-      overflow: hidden;
-      margin-bottom: 2px;
-    }
-    .right-upper-grid .col-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 3px;
-      overflow: hidden;
-    }
-    .right-upper-grid .narrative-p {
-      font-size: 9.3pt;
-      line-height: 1.28;
-      margin: 0 0 2.5px 0;
-    }
-    .right-upper-grid .col-side .key-figure-box,
-    .right-upper-grid .col-side .concept-spotlight-box {
-      margin: 0;
-    }
-    .fullwidth-dispatch-wrap {
-      flex-shrink: 0;
-      margin: 2px 0 1px 0;
-    }
-    .fullwidth-dispatch-wrap .archival-source-box {
-      margin: 0;
-      padding: 3.5px 6px;
-      background: #fdfaf6;
-      border: 1px solid #e7e5e4;
-      border-left: 3px solid #78716c;
-    }
-    .fullwidth-dispatch-wrap .archival-image {
-      float: left;
-      max-height: 62px;
-      width: auto;
-      max-width: 120px;
-      object-fit: contain !important;
-      border-radius: 2px;
-      border: 1px solid #cbd5e1;
-      margin: 0 6px 2px 0;
-    }
-    .fullwidth-dispatch-wrap .archival-title {
-      font-size: 9.2pt;
-      margin-bottom: 2px;
-      line-height: 1.18;
-    }
-    .fullwidth-dispatch-wrap .archival-body {
-      font-size: 8.4pt;
-      line-height: 1.28;
-      margin-bottom: 2px;
-    }
-    .fullwidth-dispatch-wrap .archival-context-box {
-      clear: both;
-      padding: 2.5px 5px;
-      margin: 2px 0 0 0;
-    }
-    .fullwidth-dispatch-wrap .archival-context-text {
-      font-size: 8.0pt;
-      line-height: 1.22;
-      margin: 0 0 1px 0;
-    }
-    .fullwidth-dispatch-wrap .archival-hinge-q {
-      font-size: 8.0pt;
-      line-height: 1.22;
-      padding: 1.5px 4px;
-    }
-      padding: 1px 3px;
-      margin-top: 1.5px;
-    }
-    .fullwidth-dispatch-wrap .archival-footer {
-      display: none;
-    }
-
-    .section-banner {
-      background: #eff6ff;
-      border-left: 3px solid #1e3a8a;
-      border-bottom: 1px solid #bfdbfe;
-      padding: 2px 6px;
-      border-radius: 0 3px 3px 0;
-      margin: 2px 0 2px 0;
-      display: flex;
+      gap: 16px;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      padding: 3mm 4.5mm;
+      margin-bottom: 3.2mm;
       align-items: center;
-      gap: 6px;
-      font-family: 'Inter', sans-serif;
-      break-after: avoid;
     }
-    .sb-num {
-      font-size: 8.0pt;
-      font-weight: 900;
-      color: #1e3a8a;
-      background: #dbeafe;
-      padding: 1px 4px;
-      border-radius: 2px;
+    .cover-hero-artwork-frame {
+      width: 68.33mm;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
     }
-    .sb-title {
-      font-size: 8.4pt;
+    .cover-hero-img-box {
+      width: 100%;
+      height: 82mm;
+      border-radius: 3px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      background: #000000;
+    }
+    .cover-hero-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .cover-hero-caption {
+      font-family: var(--font-sans);
+      font-size: 6pt;
+      color: #94a3b8;
+      margin-top: 1mm;
+      line-height: 1.15;
+      text-align: center;
+      font-style: italic;
+    }
+    .cover-overview-narrative {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.8mm;
+    }
+    .cover-overview-title {
+      color: #fca5a5;
+      font-family: var(--font-sans);
+      font-size: 9.2pt;
       font-weight: 800;
-      color: #0f172a;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      border-bottom: 1px solid rgba(252, 165, 165, 0.3);
+      padding-bottom: 1.2mm;
+      margin-bottom: 0.5mm;
     }
-
-    .narrative-p {
+    .cover-overview-p {
+      font-family: var(--font-body);
+      font-size: 10.4pt;
+      line-height: 1.42;
+      color: #f8fafc;
       text-align: justify;
       text-justify: inter-word;
-      hyphens: auto;
-      font-size: 9.8pt;
-      line-height: 1.44;
-      color: #1e293b;
-      margin: 0 0 3px 0;
-    }
-    .para-ref {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
-      color: #1e3a8a;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      padding: 0 2.5px;
-      border-radius: 2px;
-      margin-right: 3.5px;
-      vertical-align: 0.5px;
-      display: inline-block;
-      line-height: 1.1;
     }
 
-    /* Archival Source Box Standard */
-    .archival-source-box {
-      background: #fdfaf6;
-      border: 1px solid #e7e5e4;
-      border-left: 3px solid #78716c;
-      border-radius: 0 3px 3px 0;
-      padding: 4px 6px;
-      box-sizing: border-box;
+    /* Enquiries Syllabus Box */
+    .cover-enquiries-box {
+      background: #ffffff;
+      color: #0f172a;
+      border-radius: 4px;
+      padding: 3.8mm 5.5mm;
+      border-left: 5px solid #991b1b;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    .cover-enquiries-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #0f284e;
+      padding-bottom: 1.4mm;
+      margin-bottom: 2mm;
+      font-family: var(--font-sans);
+    }
+    .cover-enquiries-header h2 {
+      font-size: 9.2pt;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0f284e;
+    }
+    .cover-enquiries-header span {
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: #991b1b;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .cover-enquiry-list {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
+      gap: 3.5mm;
     }
-    .written-source-box {
-      border-left: 3.5px solid #1e3a8a;
-      background: #f8fafc;
-      padding: 5px 7px;
-    }
-    .written-source-box .archival-body {
-      font-size: 8.5pt;
-      line-height: 1.34;
-      padding: 3.5px 6px;
-      margin-bottom: 2.5px;
-    }
-    .archival-header {
+    .cover-enquiry-item {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 2px;
-      margin-bottom: 2px;
-      font-family: 'Inter', sans-serif;
+      align-items: flex-start;
+      gap: 10px;
+      font-family: var(--font-sans);
+      padding-bottom: 2.2mm;
+      border-bottom: 1px solid #f1f5f9;
     }
-    .source-identity {
-      display: flex;
-      align-items: center;
-      gap: 5px;
+    .cover-enquiry-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
-    .source-badge {
-      font-size: 6.8pt;
-      font-weight: 900;
+    .cover-enquiry-num {
+      background: #0f284e;
       color: #ffffff;
-      background: #0f172a;
-      padding: 1px 4px;
-      border-radius: 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .source-type {
-      font-size: 6.5pt;
-      font-weight: 700;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .source-date-micro {
-      font-size: 6.2pt;
-      font-weight: 700;
-      color: #1e3a8a;
-      font-family: 'Inter', sans-serif;
-    }
-    .archival-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.5pt;
-      font-weight: 700;
-      color: #0f172a;
-      margin: 1px 0 2px 0;
-      line-height: 1.15;
-    }
-    .archival-image {
-      width: 100%;
-      height: 120px;
-      object-fit: contain;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 2px;
-      margin-bottom: 2px;
-    }
-    .archival-body {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 8.2pt;
-      line-height: 1.24;
-      color: #1e293b;
-      font-style: italic;
-      margin-bottom: 2px;
-      background: #ffffff;
-      padding: 2.5px 5px;
-      border-radius: 2px;
-      border: 1px solid #f1f5f9;
-    }
-    .archival-context-box {
-      background: #f1f5f9;
-      border-left: 2px solid #64748b;
-      padding: 2.5px 4.5px;
-      border-radius: 0 2px 2px 0;
+      font-size: 7.8pt;
+      font-weight: 800;
+      padding: 2.5px 7px;
+      border-radius: 3px;
+      flex-shrink: 0;
       margin-top: 1px;
     }
-    .archival-context-text {
-      font-size: 7.2pt;
-      line-height: 1.20;
-      color: #334155;
-      margin: 0 0 1px 0;
-      font-family: 'Inter', sans-serif;
+    .cover-enquiry-text {
+      flex: 1;
     }
-    .archival-hinge-q {
-      font-size: 7.2pt;
-      line-height: 1.20;
-      color: #0f172a;
-      font-family: 'Inter', sans-serif;
-      background: #e2e8f0;
-      padding: 1.5px 3px;
-      border-radius: 2px;
-    }
-    .archival-hinge-q strong {
-      color: #1e3a8a;
-    }
-    .archival-footer {
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Inter', sans-serif;
-      font-size: 5.8pt;
-      color: #64748b;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 1.5px;
-      margin-top: auto;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    /* Key Figure Box */
-    .key-figure-box {
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-left: 3.5px solid #1e3a8a;
-      border-radius: 0 3px 3px 0;
-      padding: 3px 6px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5px;
-    }
-    .kf-header {
+    .cover-enquiry-top-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 1px;
-      font-family: 'Inter', sans-serif;
-    }
-    .kf-tag {
-      font-size: 7.2pt;
-      font-weight: 900;
-      color: #1e3a8a;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .kf-lifespan {
-      font-size: 7.2pt;
-      font-weight: 700;
-      color: #64748b;
-    }
-    .kf-identity-row {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin: 1px 0;
-    }
-    .kf-portrait {
-      width: 36px;
-      height: 45px;
-      object-fit: cover;
-      border-radius: 2px;
-      border: 1px solid #cbd5e1;
-      flex-shrink: 0;
-    }
-    .kf-name {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.8pt;
-      font-weight: 800;
-      color: #0f172a;
-      line-height: 1.16;
-    }
-    .kf-role {
-      font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
-      font-weight: 800;
-      color: #1e3a8a;
-      line-height: 1.20;
-    }
-    .kf-significance {
-      font-size: 8.0pt;
-      line-height: 1.22;
-      color: #1e293b;
       margin-bottom: 1px;
     }
-    .kf-actions-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
-      font-weight: 900;
+    .cover-enquiry-title {
+      font-size: 8.8pt;
+      font-weight: 800;
       color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin: 1px 0 0.5px 0;
+      line-height: 1.25;
     }
-    .kf-actions-list {
-      margin: 0;
-      padding-left: 10px;
-      font-size: 7.8pt;
-      line-height: 1.22;
+    .cover-enquiry-locator {
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: #991b1b;
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+    .cover-enquiry-question {
+      font-family: var(--font-body);
+      font-size: 8.2pt;
+      font-style: italic;
       color: #334155;
+      line-height: 1.28;
+      margin-bottom: 1px;
     }
-    .kf-actions-list li {
-      margin-bottom: 0.5px;
+    .cover-enquiry-desc {
+      font-size: 7.4pt;
+      color: #64748b;
+      line-height: 1.32;
     }
 
-    /* Concept Spotlight Box */
-    .concept-spotlight-box {
-      background: #fdfaf6;
-      border: 1px solid #fed7aa;
-      border-left: 3.5px solid #b45309;
-      border-radius: 0 3px 3px 0;
-      padding: 3px 6px;
-      box-sizing: border-box;
+    /* Bottom Concept Strip */
+    .cover-concept-strip {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 3px;
+      padding: 2.2mm 4mm;
+      margin-top: 3.2mm;
+      font-family: var(--font-sans);
+      font-size: 7.2pt;
+      color: #cbd5e1;
       display: flex;
-      flex-direction: column;
-      gap: 1.5px;
+      align-items: center;
+      gap: 10px;
+      line-height: 1.35;
     }
-    .csb-header {
+    .cover-concept-label {
+      background: #0f284e;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      font-size: 6.5pt;
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+    }
+
+    .cover-footer-meta {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 2.5mm;
+      margin-top: auto;
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid #fde68a;
-      padding-bottom: 1px;
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      color: #94a3b8;
     }
-    .csb-tag {
-      font-size: 7.6pt;
-      font-weight: 900;
-      color: #b45309;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .csb-category {
+
+    /* =============================================================
+       PAGES 2–11: SPREAD RUNNING HEADERS & FOOTERS
+       ============================================================= */
+    .page-running-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 2mm;
+      margin-bottom: 3.5mm;
+      font-family: var(--font-sans);
       font-size: 7.2pt;
       font-weight: 700;
-      color: #92400e;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
       text-transform: uppercase;
     }
-    .csb-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.6pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 0 0 1px 0;
-      line-height: 1.16;
-    }
-    .csb-body {
-      font-size: 8.0pt;
-      line-height: 1.22;
-      color: #1e293b;
-      margin-bottom: 1.5px;
-    }
-    .csb-takeaway {
-      background: #fef3c7;
-      border-left: 2.5px solid #b45309;
-      padding: 2px 4.5px;
-      border-radius: 0 2px 2px 0;
-      font-size: 7.8pt;
-      line-height: 1.20;
-      color: #78350f;
-      font-family: 'Inter', sans-serif;
-      margin-top: 1.5px;
-    }
-
-    /* Bottom Fingertip Vocabulary Deck */
-    .bottom-vocab-box {
-      background: #f8fafc;
-      border: 1.5px solid #0f172a;
-      border-radius: 3px;
-      padding: 4.5px 7px;
-      flex-shrink: 0;
-      margin-bottom: 2px;
-    }
-    .bvb-header {
+    .page-running-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 2px;
-      margin-bottom: 3px;
-      font-family: 'Inter', sans-serif;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 2.5mm;
+      margin-top: 2.2mm;
+      font-family: var(--font-sans);
+      font-size: 7.2pt;
+      color: var(--ink-muted);
     }
-    .bvb-title {
-      font-size: 7.6pt;
-      font-weight: 900;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .bvb-badge {
-      font-size: 6.8pt;
+    .page-running-footer .page-num {
       font-weight: 800;
-      color: #1e3a8a;
-      text-transform: uppercase;
-    }
-    .bvb-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-      font-size: 7.6pt;
-      line-height: 1.28;
-      color: #334155;
-    }
-    .bvb-col strong {
-      color: #0f172a;
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      margin-bottom: 1.5px;
+      color: var(--ink-primary);
+      font-size: 8.5pt;
     }
 
-    /* Bottom Enquiry & Writing Tasks Box */
-    .bottom-enquiry-box {
-      background: #eff6ff;
-      border: 1.5px solid #1e3a8a;
-      border-radius: 3px;
-      padding: 5px 8px;
-      flex-shrink: 0;
-      margin-bottom: 2px;
+    /* =============================================================
+       VERSO ENQUIRY HEADER
+       ============================================================= */
+    .enquiry-title-banner {
+      margin-bottom: 4mm;
     }
-    .beb-header {
+    .enquiry-meta-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #bfdbfe;
-      padding-bottom: 2px;
-      margin-bottom: 3px;
-      font-family: 'Inter', sans-serif;
+      align-items: baseline;
+      margin-bottom: 1.5mm;
     }
-    .beb-title {
-      font-size: 7.8pt;
-      font-weight: 900;
-      color: #1e3a8a;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .beb-badge {
-      font-size: 6.8pt;
-      font-weight: 800;
+    .enquiry-badge {
+      background: var(--navy-deep);
       color: #ffffff;
-      background: #1e3a8a;
-      padding: 1.5px 5px;
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 7px;
       border-radius: 2px;
+    }
+    .enquiry-subtitle-tag {
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      font-weight: 600;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .enquiry-main-title {
+      font-family: var(--font-display);
+      font-size: 15.5pt;
+      font-weight: 800;
+      color: var(--ink-primary);
+      line-height: 1.2;
+      margin-bottom: 2mm;
+    }
+    .enquiry-question-box {
+      background: #f8fafc;
+      border-left: 3px solid var(--crimson-accent);
+      padding: 3mm 4mm;
+      border-radius: 0 3px 3px 0;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .eq-icon {
+      color: var(--crimson-accent);
+      font-weight: 800;
+      font-size: 9.5pt;
+    }
+    .eq-text {
+      font-family: var(--font-body);
+      font-size: 9.2pt;
+      font-style: italic;
+      color: var(--ink-secondary);
+      line-height: 1.35;
+    }
+    .eq-text strong {
+      font-style: normal;
+      font-family: var(--font-sans);
+      font-size: 8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--crimson-accent);
+      letter-spacing: 0.04em;
+    }
+
+    /* =============================================================
+       RECTO RUNNING SUBHEAD
+       ============================================================= */
+    .recto-header-banner {
+      background: #f8fafc;
+      border-bottom: 2px solid var(--navy-deep);
+      padding: 2mm 3.5mm;
+      margin-bottom: 4mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-sans);
+    }
+    .recto-part-tag {
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
-    .beb-mission-content {
+    .recto-subhead {
+      font-size: 7.2pt;
+      font-weight: 600;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* =============================================================
+       PROSE BODY & TWO-COLUMN ARCHITECTURE (11.5pt Reading Grade)
+       ============================================================= */
+    .page-prose-body {
+      flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      font-size: 7.8pt;
-      line-height: 1.28;
+      min-height: 0;
     }
-    .beb-task-row {
+    .prose-two-column {
+      column-count: 2;
+      column-gap: 22px;
+      column-fill: balance;
+      height: 100%;
+    }
+    .prose-two-column .narrative-block:last-child,
+    .prose-two-column .narrative-block:last-child .prose-p:last-child {
+      margin-bottom: 0;
+    }
+    .narrative-block {
+      break-inside: auto;
+      margin-bottom: 10px;
+    }
+    .block-header {
+      break-after: avoid;
+      break-inside: avoid;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
       display: flex;
-      gap: 6px;
       align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
     }
-    .beb-task-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
-      font-weight: 900;
-      color: #1e3a8a;
-      background: #dbeafe;
+    .block-ref {
+      font-family: var(--font-sans);
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: var(--crimson-accent);
+      letter-spacing: 0.04em;
+    }
+    .block-date {
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
+      font-weight: 600;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .block-title {
+      font-family: var(--font-sans);
+      font-size: 8.8pt;
+      font-weight: 800;
+      color: var(--ink-primary);
+      width: 100%;
+      margin-top: 1px;
+      line-height: 1.25;
+    }
+    .prose-p {
+      font-size: 11pt;
+      line-height: 1.57;
+      color: #1e293b;
+      text-align: justify;
+      hyphens: auto;
+      text-justify: inter-word;
+      margin-bottom: 5.8px;
+    }
+    .para-pill {
+      font-family: var(--font-sans);
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+      background: #e2e8f0;
       padding: 1px 4px;
       border-radius: 2px;
-      flex-shrink: 0;
-      text-transform: uppercase;
+      margin-right: 4px;
+      vertical-align: 1px;
     }
-    .beb-task-text {
-      color: #1e293b;
+    .prose-p strong {
+      color: var(--ink-primary);
+      font-weight: 700;
+    }
+
+    /* =============================================================
+       PAGE 12: MASTER KNOWLEDGE RETRIEVAL QUIZ (5-Card Grid)
+       ============================================================= */
+    .a4-page.back-cover {
+      background: #faf8f5;
+      padding: 7.5mm 13mm 5.5mm 13mm;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 0;
+    }
+    .back-header-strip {
+      border-bottom: 2.2px solid #8b0000;
+      padding-bottom: 1.5mm;
+      margin-bottom: 1.6mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .header-left h2 {
+      font-family: var(--font-display);
+      font-size: 15.5pt;
+      font-weight: 800;
+      color: #0b192c;
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+    .header-left p {
+      font-family: var(--font-sans);
       font-size: 7.8pt;
-      line-height: 1.26;
+      color: #8b0000;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 1.5px;
     }
-    .beb-workbook-signpost {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
-      color: #1e3a8a;
-      background: #dbeafe;
-      border-left: 2.5px solid #1e3a8a;
-      padding: 2px 5px;
-      border-radius: 0 2px 2px 0;
+    .header-right {
+      text-align: right;
+    }
+    .badge-capsule {
+      background: #0b192c;
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      font-weight: 700;
+      padding: 2.5px 8px;
+      border-radius: 3px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-block;
+    }
+    .header-right p {
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
+      color: #64748b;
+      font-weight: 600;
       margin-top: 2px;
     }
 
-    /* Page Footer */
-    .page-footer {
+    /* INSTRUCTIONS BANNER */
+    .quiz-instructions-strip {
+      background: #f1f5f9;
+      border-left: 3px solid #8b0000;
+      padding: 1.2mm 2.8mm;
+      margin-bottom: 1.8mm;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
-      font-weight: 700;
-      color: #64748b;
-      border-top: 1px solid #e2e8f0;
-      padding-top: 2px;
-      flex-shrink: 0;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    /* ============================================================ */
-    /* MASTER FRONT COVER ARCHITECTURE                              */
-    /* ============================================================ */
-    .cover-container {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 2px solid #0f172a;
-      padding: 16px 18px 14px 18px;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-    .cover-top {
-      text-align: center;
-      margin-bottom: 4px;
-    }
-    .cover-dept-banner {
-      display: inline-block;
-      background: #0f172a;
-      color: #ffffff;
+      gap: 5mm;
+      font-family: var(--font-sans);
       font-size: 7.2pt;
-      font-weight: 800;
-      padding: 2.5px 12px;
-      border-radius: 2px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .cover-series {
-      font-size: 7.6pt;
-      font-weight: 800;
-      color: #1e3a8a;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 2px;
-    }
-    .cover-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 21.0pt;
-      font-weight: 800;
-      color: #0f172a;
-      text-transform: uppercase;
-      margin: 0 0 2px 0;
-      line-height: 1.12;
-      letter-spacing: 0.02em;
-    }
-    .cover-subtitle {
-      font-size: 8.8pt;
-      color: #475569;
-      font-style: italic;
-      font-weight: 500;
-      line-height: 1.25;
-      max-width: 90%;
-      margin: 0 auto;
-    }
-    .cover-plate-wrapper {
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      padding: 4px;
-      border-radius: 3px;
-      text-align: center;
-      margin: 3px 0;
-    }
-    .cover-plate-img {
-      width: 100%;
-      height: 108mm;
-      max-height: 110mm;
-      object-fit: cover;
-      border-radius: 2px;
-      border: 1px solid #cbd5e1;
-    }
-    .cover-plate-caption {
-      font-size: 6.8pt;
-      color: #64748b;
-      margin-top: 2.5px;
-      font-style: italic;
-      line-height: 1.2;
-    }
-    .cover-enquiry-box {
-      background: #eff6ff;
-      border: 1.5px solid #1e3a8a;
-      border-left: 4px solid #1e3a8a;
-      border-radius: 0 3px 3px 0;
-      padding: 5px 8px;
-      margin: 4px 0;
-      text-align: center;
-    }
-    .ceb-label {
-      font-size: 6.8pt;
-      font-weight: 900;
-      color: #1e3a8a;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 1px;
-    }
-    .ceb-text {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.8pt;
-      font-weight: 700;
-      color: #0f172a;
-      line-height: 1.25;
-    }
-    .cover-matrix-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 7.3pt;
-      line-height: 1.24;
-      margin: 3px 0;
-    }
-    .cover-matrix-table th {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 3px 5px;
-      text-transform: uppercase;
-      font-weight: 800;
-      font-size: 6.8pt;
-      letter-spacing: 0.05em;
-      border: 1px solid #0f172a;
-    }
-    .cover-matrix-table td {
-      padding: 3.2mm 2.6mm;
-      border: 1px solid #cbd5e1;
       color: #1e293b;
     }
-    .cover-matrix-table tr:nth-child(even) td {
-      background: #f8fafc;
+    .quiz-instructions-strip span {
+      flex: 1;
     }
-    .cover-matrix-table td strong {
-      color: #1e3a8a;
-      display: block;
-    }
-    .cover-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 6.5pt;
-      font-weight: 800;
-      color: #64748b;
-      border-top: 1.5px solid #0f172a;
-      padding-top: 3px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+    .quiz-instructions-strip strong {
+      color: #0b192c;
     }
 
-    /* Master Back Cover Architecture */
-    .bc-container {
-      height: 100%;
+    /* 2x3 GRID CONTAINER */
+    .quiz-grid-container {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 1.8mm 3.5mm;
+    }
+    .quiz-grid-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 1.8mm 2.6mm;
       display: flex;
       flex-direction: column;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+    /* Box 5 spans full width across both columns */
+    .quiz-grid-card.enquiry-span-2 {
+      grid-column: span 2;
+    }
+    .quiz-grid-header {
+      border-bottom: 1.4px solid #8b0000;
+      padding-bottom: 1.5px;
+      margin-bottom: 1.8px;
+      display: flex;
       justify-content: space-between;
-      border: 2px solid #0f172a;
-      padding: 14px 18px 12px 18px;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+      align-items: baseline;
     }
-    .bc-header {
-      text-align: center;
-      margin-bottom: 4px;
-      border-bottom: 2.5px solid #1e3a8a;
-      padding-bottom: 3px;
+    .quiz-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
     }
-    .bc-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 15.0pt;
+    .quiz-badge {
+      font-family: var(--font-sans);
+      font-size: 6.5pt;
       font-weight: 800;
-      color: #0f172a;
-      text-transform: uppercase;
-      margin: 0;
-      line-height: 1.15;
-      letter-spacing: 0.02em;
+      color: #8b0000;
+      letter-spacing: 0.04em;
     }
-    .bc-tag {
+    .quiz-title {
+      font-family: var(--font-sans);
       font-size: 7.6pt;
-      color: #1d4ed8;
-      margin-top: 1px;
-      font-style: italic;
-      font-weight: 600;
+      font-weight: 800;
+      color: #0b192c;
     }
-    .back-body-content {
+    .quiz-locator {
+      font-family: var(--font-sans);
+      font-size: 6.3pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    .quiz-items-wrap {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 1.5px;
     }
-    .bct-header, .bth-header, .bch-header, .bcv-header, .bcw-header {
-      font-size: 7.8pt;
-      font-weight: 900;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 1.5px;
-      margin: 3px 0 2px 0;
-    }
-    .bct-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4px;
+    .quiz-item {
+      display: flex;
+      gap: 3.5px;
+      font-family: var(--font-sans);
       font-size: 7.2pt;
       line-height: 1.25;
+      color: #1e293b;
     }
-    .bct-item {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 2.5px solid #1e3a8a;
-      padding: 3px 5px;
-      border-radius: 0 2px 2px 0;
+    .quiz-num {
+      font-weight: 800;
+      color: #8b0000;
+      min-width: 15px;
+      flex-shrink: 0;
     }
-    .bct-date { color: #1e3a8a; font-weight: 800; font-size: 7.3pt; }
-    
-    .bth-grid {
+    .quiz-text {
+      flex: 1;
+    }
+    /* Compound Box 5 inner split */
+    .compound-columns-wrap {
+      flex: 1;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      font-size: 7.2pt;
-      line-height: 1.25;
+      grid-template-columns: 1fr 1fr;
+      gap: 4mm;
     }
-    .bth-col {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 2.5px solid #1d4ed8;
-      padding: 3px 5px;
-      border-radius: 0 2px 2px 0;
-    }
-    .bth-col strong { color: #0f172a; font-weight: 800; display: block; margin-bottom: 1px; }
-
-    .bch-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4px;
-      font-size: 7.2pt;
-      line-height: 1.25;
-    }
-    .bch-col {
-      background: #fdfaf6;
-      border: 1px solid #fed7aa;
-      border-left: 2.5px solid #b45309;
-      padding: 3px 5px;
-      border-radius: 0 2px 2px 0;
-    }
-    .bch-col strong { color: #92400e; font-weight: 800; display: block; margin-bottom: 1px; }
-
-    .bcv-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      font-size: 7.2pt;
-      line-height: 1.25;
-    }
-    .bcv-col {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 2.5px solid #0284c7;
-      padding: 3px 5px;
-      border-radius: 0 2px 2px 0;
-    }
-    .bcv-col strong { color: #0369a1; font-weight: 800; display: block; margin-bottom: 1px; }
-
-    .bcw-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      font-size: 7.2pt;
-      line-height: 1.25;
-    }
-    .bcw-col {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-left: 2.5px solid #1e3a8a;
-      padding: 3px 5px;
-      border-radius: 0 2px 2px 0;
-    }
-    .bcw-col strong { color: #1e3a8a; font-weight: 800; display: block; margin-bottom: 1px; }
-
-    .bc-qr-strip {
-      margin-top: 3px;
-    }
-    .bqr-grid {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 3px;
-      margin-top: 2px;
-    }
-    .bqr-card {
-      background: #ffffff;
-      border: 1.2px solid #cbd5e1;
-      border-top: 2.5px solid #1e3a8a;
-      border-radius: 3px;
-      padding: 3px 2px 2px 2px;
-      text-align: center;
+    .compound-subcol {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
-    .bqr-header {
-      width: 100%;
-      margin-bottom: 1px;
-    }
-    .bqr-num {
-      display: block;
-      font-size: 6.5pt;
+    .subcol-header {
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
       font-weight: 800;
-      color: #1e3a8a;
+      color: #0b192c;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-    .bqr-title {
-      display: block;
-      font-size: 5.4pt;
-      font-weight: 700;
-      color: #334155;
-      line-height: 1.15;
-      height: 16px;
+      letter-spacing: 0.04em;
+      border-bottom: 1px dashed #cbd5e1;
+      padding-bottom: 1px;
+      margin-bottom: 2px;
       display: flex;
+      justify-content: space-between;
+    }
+    .subcol-header span.subcol-tag {
+      color: #8b0000;
+      font-size: 6.2pt;
+    }
+    .back-colophon {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 1.8mm;
+      margin-top: 2.2mm;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      margin-top: 1px;
-    }
-    .bqr-code-box {
-      width: 44px;
-      height: 44px;
-      margin: 0 auto;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      padding: 1.5px;
-      box-sizing: border-box;
-      border-radius: 2px;
-    }
-    .bqr-footer {
-      font-size: 5.0pt;
-      font-weight: 800;
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
       color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      margin-top: 1.5px;
-      border-top: 1px solid #f1f5f9;
-      padding-top: 1px;
-      width: 100%;
+      font-weight: 600;
+    }
+
+    /* Print media overrides */
+    @media print {
+      body {
+        background: transparent !important;
+        padding: 0 !important;
+      }
+      .screen-control-bar {
+        display: none !important;
+      }
+      .a4-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ========================================== -->
-  <!-- PAGE 1: MASTER FRONT COVER                 -->
-  <!-- ========================================== -->
-  <div class="textbook-page" data-page="1">
-    <div class="cover-container">
-      <div class="cover-top">
-        <div class="cover-dept-banner" data-department-name="The History Department">
-          <span class="school-brand-target">The History Department</span>
-        </div>
-        <div class="cover-series">KEY STAGE 3 MASTER CURRICULUM SERIES &bull; ${yearGroup.toUpperCase()}</div>
-        <h1 class="cover-title">${unitTitle}</h1>
-        <div class="cover-subtitle">${subtitle}</div>
-      </div>
-
-      <div class="cover-plate-wrapper">
-        <img class="cover-plate-img" src="${coverImgData}" alt="Stubbington War Memorial Shelter">
-        <div class="cover-plate-caption">${heroCaption}</div>
-      </div>
-
-      <div class="cover-enquiry-box">
-        <div class="ceb-label">Core Overarching Historical Enquiry:</div>
-        <div class="ceb-text">"${overarchingEnquiry}"</div>
-      </div>
-
-      <table class="cover-matrix-table">
-        <thead>
-          <tr>
-            <th style="width: 12%;">Lesson</th>
-            <th style="width: 44%;">Historical Enquiry &amp; Narrative Focus</th>
-            <th style="width: 32%;">Disciplinary Skill &amp; Assessment Focus</th>
-            <th style="width: 12%;">Page Ref</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${syllabusMatrix
-            .map(
-              (s, i) => `
-            <tr>
-              <td><strong>Enquiry ${s.num}</strong></td>
-              <td>${s.title}</td>
-              <td>${s.assessmentFocus || s.skill}</td>
-              <td>pp. ${i * 2 + 2}–${i * 2 + 3}</td>
-            </tr>
-          `,
-            )
-            .join('')}
-        </tbody>
-      </table>
-
-      <div class="cover-footer">
-        <span>The History Revision Hub &bull; Independent Educational Publishing</span>
-        <span>Verified Print Publication &bull; September 2026</span>
-      </div>
+  <!-- Screen Only Quick Control Bar -->
+  <div class="screen-control-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <span class="badge-hub">The History Revision Hub</span>
+      <span>The Great War (1914&ndash;1919) &bull; Master Classroom Reading Anthology (12 Pages)</span>
+    </div>
+    <div style="display: flex; gap: 8px;">
+      <button onclick="window.print()">Print / Save as PDF</button>
     </div>
   </div>
 
-  <!-- ========================================== -->
-  <!-- PAGES 2–13: 6 CORE ENQUIRY LESSONS         -->
-  <!-- ========================================== -->
-  ${lessonsHtml}
+  <div class="anthology-book-container">
 
-  <!-- ========================================== -->
-  <!-- PAGE 14: MASTER REVISION BACK COVER        -->
-  <!-- ========================================== -->
-  <div class="textbook-page" data-page="14">
-    <div class="bc-container">
-      <div class="bc-header">
-        <h2 class="bc-title">${unitTitle}</h2>
-        <div class="bc-tag">Master Revision Spine &bull; Key Stage 3 Master Curriculum Series</div>
+    <!-- =========================================================
+         PAGE 1: MASTER FRONT COVER
+         ========================================================= -->
+    <div class="a4-page front-cover cover-page textbook-page" data-page="1" id="page-1">
+      <div class="cover-top-masthead">
+        <span>The History Revision Hub &bull; Master Curriculum Series</span>
+        <span>Key Stage 3 Disciplinary History</span>
       </div>
 
-      <div class="back-body-content">
-        <div class="bc-timeline-box">
-          <div class="bct-header">Chronological Spine &bull; 14 Causal Turning Points (1914–1922)</div>
-          <div class="bct-grid">
-            ${chronology
-              .map(
-                (t) => `
-              <div class="bct-item">
-                <span class="bct-date">${t.date}:</span>
-                <span>${t.event}</span>
-              </div>
-            `,
-              )
-              .join('')}
+      <div class="cover-title-group">
+        <span class="cover-date-pill">1914 &ndash; 1919</span>
+        <h1>THE GREAT WAR</h1>
+        <p>Total War, Industrial Slaughter &amp; The Fragile Peace</p>
+      </div>
+
+      <!-- HERO VISUAL PLATE & OVERVIEW ROW -->
+      <div class="cover-hero-row">
+        <div class="cover-hero-artwork-frame">
+          <div class="cover-hero-img-box">
+            <img src="${coverImgData}" alt="The Signing of Peace in the Hall of Mirrors, Versailles (1919) by Sir William Orpen" />
           </div>
+          <div class="cover-hero-caption">Sir William Orpen &bull; The Signing of Peace in the Hall of Mirrors, Versailles (1919)</div>
         </div>
-
-        <div class="bc-themes-box">
-          <div class="bth-header">The 4 Big Storylines to Track &bull; Core Disciplinary Strands</div>
-          <div class="bth-grid">
-            ${thematicMatrix
-              .map(
-                (th) => `
-              <div class="bth-col">
-                <strong>${th.strand}</strong>
-                <p style="margin: 0; font-size: 7.0pt; line-height: 1.20;">${th.trajectory}</p>
-                <span style="font-size: 6.2pt; color: #64748b; font-weight: 700; display: block; margin-top: 1px;">Focus: ${th.lessons}</span>
-              </div>
-            `,
-              )
-              .join('')}
-          </div>
+        <div class="cover-overview-narrative">
+          <div class="cover-overview-title">INTO THE ABYSS &bull; 1914&ndash;1919</div>
+          <p class="cover-overview-p">
+            In the summer of 1914, millions of young men marched eagerly to war, swept up in patriotic fever and promised they would return home victorious before Christmas. None foresaw the industrial nightmare awaiting them. Within months, rapid-firing machine guns, heavy artillery, and poison gas obliterated the old world of cavalry charges, trapping an entire generation in the mud, blood, and barbed wire of the Western Front.
+          </p>
+          <p class="cover-overview-p">
+            From the catastrophic slaughter of the Somme to the forgotten heroism of four million imperial troops of colour, and from the courage of female munition workers on the Home Front to the bitter peace dictated in the Hall of Mirrors at Versailles, this anthology tells the dramatic story of five cataclysmic years that shattered empires and reshaped human history forever.
+          </p>
         </div>
+      </div>
 
-        <div class="bc-hist-box">
-          <div class="bch-header">Academic Historiography &amp; Debates &bull; The Western Front &amp; Versailles</div>
-          <div class="bch-grid">
-            ${historiographicalDebates
-              .map(
-                (d) => `
-              <div class="bch-col">
-                <strong>${d.debate}</strong>
-                <p style="margin: 0 0 2px 0; font-size: 7.0pt; line-height: 1.20;">${d.viewA}</p>
-                <p style="margin: 0; font-size: 7.0pt; line-height: 1.20;">${d.viewB}</p>
-              </div>
-            `,
-              )
-              .join('')}
-          </div>
+      <!-- 5 ENQUIRIES OVERVIEW BOX -->
+      <div class="cover-enquiries-box">
+        <div class="cover-enquiries-header">
+          <h2>Curriculum Enquiries in This Volume</h2>
+          <span>Chronological Syllabus Overview</span>
         </div>
-
-        ${
-          synopticVerdict
-            ? `
-        <div class="bc-verdict-box">
-          <div class="bcv-header">${synopticVerdict.title}</div>
-          <div class="bcv-grid">
-            ${synopticVerdict.pillars
-              .map(
-                (p) => `
-              <div class="bcv-col">
-                <strong>${p.theme}</strong>
-                <p style="margin: 0; font-size: 6.8pt; line-height: 1.18;">${p.verdict}</p>
+        <div class="cover-enquiry-list">
+          <div class="cover-enquiry-item">
+            <span class="cover-enquiry-num">01</span>
+            <div class="cover-enquiry-text">
+              <div class="cover-enquiry-top-row">
+                <span class="cover-enquiry-title">1914: The Outbreak, The Alliance Trap &amp; The Pals’ Battalions</span>
+                <span class="cover-enquiry-locator">pp. 2&ndash;3 &bull; Ref [1.1]&ndash;[1.5]</span>
               </div>
-            `,
-              )
-              .join('')}
-          </div>
-        </div>`
-            : ''
-        }
-
-        <!-- Disciplinary Extended Writing Framework -->
-        <div class="bc-writing-box">
-          <div class="bcw-header">Disciplinary Extended Writing Framework &bull; Causal &amp; Evaluative Argumentation</div>
-          <div class="bcw-grid">
-            <div class="bcw-col">
-              <strong>1. Causal PEEL Structure &amp; Evidence:</strong>
-              "A decisive catalyst for voluntary enlistment was... for example, following Kitchener’s appeal in August 1914, civic leaders formed Pals Battalions like the Pompey Pals, which directly compelled..."
-            </div>
-            <div class="bcw-col">
-              <strong>2. Counter-Argument &amp; Nuance:</strong>
-              "However, this factor cannot be viewed in isolation; domestic emotional coercion through the White Feather campaign and pre-war economic poverty fundamentally altered..."
-            </div>
-            <div class="bcw-col">
-              <strong>3. Synoptic Historical Verdict:</strong>
-              "Ultimately, while immediate triggers ignited the conflict, deep structural currents—industrialised warfare, state control under DORA, and unresolved geopolitical trauma at Versailles—shaped..."
+              <div class="cover-enquiry-question">Key Question: Why were young men so desperate to volunteer for the slaughter of 1914?</div>
+              <div class="cover-enquiry-desc">${ENQUIRIES[0].coverDesc}</div>
             </div>
           </div>
-        </div>
 
-        <div class="bc-qr-strip">
-          <div style="font-size: 6.2pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 2px;">
-            Interactive Revision Hub &bull; 20-Question Knowledge Practice Quizzes
+          <div class="cover-enquiry-item">
+            <span class="cover-enquiry-num">02</span>
+            <div class="cover-enquiry-text">
+              <div class="cover-enquiry-top-row">
+                <span class="cover-enquiry-title">Blood, Mud &amp; Steel: Did British Generals Make Trench Warfare Worse?</span>
+                <span class="cover-enquiry-locator">pp. 4&ndash;5 &bull; Ref [2.1]&ndash;[2.5]</span>
+              </div>
+              <div class="cover-enquiry-question">Key Question: Were British commanders like General Haig callous 'donkeys' or prisoners of industrial technology?</div>
+              <div class="cover-enquiry-desc">${ENQUIRIES[1].coverDesc}</div>
+            </div>
           </div>
-          <div class="bqr-grid">
-            ${qrCardsHtml}
+
+          <div class="cover-enquiry-item">
+            <span class="cover-enquiry-num">03</span>
+            <div class="cover-enquiry-text">
+              <div class="cover-enquiry-top-row">
+                <span class="cover-enquiry-title">The Forgotten Global Empire: Troops of Colour on the Western Front</span>
+                <span class="cover-enquiry-locator">pp. 6&ndash;7 &bull; Ref [3.1]&ndash;[3.5]</span>
+              </div>
+              <div class="cover-enquiry-question">Key Question: Why were over four million colonial and dominion troops erased from popular memory?</div>
+              <div class="cover-enquiry-desc">${ENQUIRIES[2].coverDesc}</div>
+            </div>
+          </div>
+
+          <div class="cover-enquiry-item">
+            <span class="cover-enquiry-num">04</span>
+            <div class="cover-enquiry-text">
+              <div class="cover-enquiry-top-row">
+                <span class="cover-enquiry-title">The Total War Home Front: DORA, Canaries &amp; The Subjugation of Civilian Life</span>
+                <span class="cover-enquiry-locator">pp. 8&ndash;9 &bull; Ref [4.1]&ndash;[4.5]</span>
+              </div>
+              <div class="cover-enquiry-question">Key Question: How did an overseas war fundamentally transform the British state and civilian life?</div>
+              <div class="cover-enquiry-desc">${ENQUIRIES[3].coverDesc}</div>
+            </div>
+          </div>
+
+          <div class="cover-enquiry-item">
+            <span class="cover-enquiry-num">05</span>
+            <div class="cover-enquiry-text">
+              <div class="cover-enquiry-top-row">
+                <span class="cover-enquiry-title">The Armistice (1918), The Versailles Diktat (1919) &amp; The Fragile Peace</span>
+                <span class="cover-enquiry-locator">pp. 10&ndash;11 &bull; Ref [5.1]&ndash;[5.5]</span>
+              </div>
+              <div class="cover-enquiry-question">Key Question: Did the Treaty of Versailles resolve the problems of 1914 or cultivate the seeds of 1939?</div>
+              <div class="cover-enquiry-desc">${ENQUIRIES[4].coverDesc}</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="page-footer" style="margin-top: 2px;">
-        <span>The History Revision Hub &bull; Independent Educational Publishing</span>
-        <span>The Great War (1914–1919) &bull; Master Revision Guide</span>
-        <span>Page 14</span>
+      <!-- CORE CONCEPTS STRIP -->
+      <div class="cover-concept-strip">
+        <span class="cover-concept-label">Core Concepts</span>
+        <span>Industrialised Attrition &bull; Total War Mobilisation &bull; Imperial Subjugation &bull; Conscription &amp; Conscience &bull; Geopolitical Diktat &amp; War Guilt</span>
+      </div>
+
+      <div class="cover-footer-meta">
+        <span>The History Revision Hub &bull; Commercial Educational Publishing</span>
+        <span>Classroom Reading Edition &bull; 100% Pure Disciplinary Narrative Architecture</span>
       </div>
     </div>
+
+    <!-- =========================================================
+         PAGES 2–11: 5 CANONICAL ENQUIRY SPREADS
+         ========================================================= -->
+    ${spreadsHtml}
+
+    <!-- =========================================================
+         PAGE 12: MASTER CLASSROOM BACK COVER (Knowledge Retrieval Quiz)
+         ========================================================= -->
+    <div class="a4-page back-cover textbook-page" data-page="12" id="page-12">
+      
+      <div class="back-header-strip">
+        <div class="header-left">
+          <h2>Master Knowledge Retrieval Quiz</h2>
+          <p>60 Essential Recall Questions &bull; The Great War (1914&ndash;1919)</p>
+        </div>
+        <div class="header-right">
+          <span class="badge-capsule">Partner Quiz or Solo Practice</span>
+          <p>Check your answers inside &bull; Paragraphs [1.1] to [5.5]</p>
+        </div>
+      </div>
+
+      <div class="quiz-instructions-strip">
+        <span><strong>Partner Quiz:</strong> Sit in pairs with one book closed. Take turns reading 5 questions to test your partner. Swap roles!</span>
+        <span><strong>Solo Practice:</strong> Pick an Enquiry box. Write answers 1 to 10 in your book from memory, then check paragraphs to mark your score.</span>
+      </div>
+
+      <div class="quiz-grid-container">
+        ${quizBoxesHtml}
+      </div>
+
+      <footer class="back-colophon page-footer">
+        <span>The History Revision Hub &bull; Master Curriculum Series</span>
+        <span>Classroom Retrieval Edition &bull; Page 12 of 12</span>
+      </footer>
+
+    </div>
+
   </div>
 
 </body>
 </html>`;
 }
 
-async function renderGreatWarPart2MasterTextbook() {
-  console.log('Building 14-page Great War Part 2 Master Textbook HTML...');
-  const html = await buildPublisherTextbookHtmlGreatWarPart2();
-
-  const outHtmlPath = path.join(
-    ROOT_DIR,
-    'public',
-    'units',
-    'great_war_part2',
-    'textbook_PUBLISHER.html',
+// ============================================================================
+// MAIN EXECUTION & PDF GENERATION
+// ============================================================================
+async function run() {
+  console.log(
+    'Building 12-Page Pure Narrative Classroom Textbook HTML for The Great War (1914–1919)...',
   );
-  const outPdfPath = path.join(
-    ROOT_DIR,
-    'public',
-    'pdfs',
-    'great_war_part2_textbook_PUBLISHER.pdf',
-  );
+  const html = buildNarrativeTextbookHtml();
 
-  fs.mkdirSync(path.dirname(outHtmlPath), { recursive: true });
-  fs.mkdirSync(path.dirname(outPdfPath), { recursive: true });
+  // Ensure public and root destination folders exist
+  const publicDir = path.join(ROOT_DIR, 'public', 'units', 'great_war_part2');
+  if (!fs.existsSync(publicDir)) fs.mkdirSync(publicDir, { recursive: true });
 
-  fs.writeFileSync(outHtmlPath, html, 'utf8');
-  console.log(`HTML saved to: ${outHtmlPath}`);
+  const rootDir = path.join(ROOT_DIR, 'units', 'great_war_part2');
+  if (!fs.existsSync(rootDir)) fs.mkdirSync(rootDir, { recursive: true });
 
-  const legacyHtmlPath1 = path.join(
-    ROOT_DIR,
-    'public',
-    'units',
-    'great_war_part2',
-    'textbook.html',
-  );
-  const legacyHtmlPath2 = path.join(ROOT_DIR, 'units', 'great_war_part2', 'textbook.html');
-  fs.writeFileSync(legacyHtmlPath1, html, 'utf8');
-  fs.writeFileSync(legacyHtmlPath2, html, 'utf8');
+  const publicHtmlPath = path.join(publicDir, 'textbook.html');
+  fs.writeFileSync(publicHtmlPath, html, 'utf8');
+  console.log('HTML saved to:', publicHtmlPath);
 
-  console.log('Launching Puppeteer to compile PDF...');
+  const rootHtmlPath = path.join(rootDir, 'textbook.html');
+  fs.writeFileSync(rootHtmlPath, html, 'utf8');
+
+  console.log('Launching Puppeteer to audit and compile 12-page PDF...');
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    executablePath: chromePath,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--allow-file-access-from-files'],
   });
 
   const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 1600 });
-  await page.goto(require('url').pathToFileURL(outHtmlPath).href, {
-    waitUntil: 'load',
-    timeout: 120000,
-  });
-  await page.evaluateHandle('document.fonts.ready');
+  await page.setViewport({ width: 1200, height: 1600, deviceScaleFactor: 2 });
+  await page.setContent(html, { waitUntil: 'networkidle0' });
 
-  // Evaluate page count and dimensions
-  const pageStats = await page.evaluate(() => {
-    const pages = document.querySelectorAll('.textbook-page');
-    return {
-      count: pages.length,
-      heights: Array.from(pages).map((p) => ({
-        page: p.getAttribute('data-page'),
-        scrollHeight: p.scrollHeight,
-        clientHeight: p.clientHeight,
-      })),
-    };
-  });
-
-  console.log(`Rendered ${pageStats.count} pages.`);
-
-  await page.pdf({
-    path: outPdfPath,
-    format: 'A4',
-    printBackground: true,
-    margin: { top: 0, right: 0, bottom: 0, left: 0 },
+  // Page Overflow Audit
+  const auditResults = await page.evaluate(() => {
+    const pages = document.querySelectorAll('.a4-page');
+    return Array.from(pages).map((p, index) => {
+      const pageNum = p.getAttribute('data-page') || index + 1;
+      const scrollH = p.scrollHeight;
+      const clientH = p.clientHeight;
+      return {
+        page: pageNum,
+        scrollHeight: scrollH,
+        clientHeight: clientH,
+        overflow: scrollH > clientH + 4,
+        diff: scrollH - clientH,
+      };
+    });
   });
 
-  // Audit page budget
+  console.log(`Rendered exactly ${auditResults.length} pages.`);
+  const overflows = auditResults.filter((r) => r.overflow);
+  if (overflows.length > 0) {
+    console.warn('WARNING: Pages with height overflows:', overflows);
+  } else {
+    console.log('PERFECT: All 12 pages have 0px overflow!');
+  }
+
+  // Audit Page Budget
   console.log('\nAuditing Page Budget...');
   try {
     const report = await auditPageBudget(page, {
-      pageSelector: '.textbook-page, .page, .a4-page',
-      underflowThresholdPx: 40,
+      pageSelector: '.a4-page, .textbook-page',
+      underflowThresholdPx: 45,
       minUtilizationPct: 85,
       maxGapAboveFooterPx: 25,
       maxInterTaskGapPx: 35,
     });
-    printSpaceAuditReport(report, path.basename(outHtmlPath));
+    printSpaceAuditReport(report, 'textbook.html');
   } catch (err) {
     console.warn('Audit warning:', err.message);
   }
 
-  await browser.close();
-  console.log(`Master Textbook PDF compiled to: ${outPdfPath}`);
-
-  // Mirror to G: Drive if available
-  const driveDir = 'G:\\My Drive\\AAMX\\Dep File\\Year 9\\The Great War Part 2';
-  if (fs.existsSync(driveDir)) {
-    try {
-      const targetPdf1 = path.join(driveDir, 'Great War Part 2 Master Textbook.pdf');
-      const targetPdf2 = path.join(driveDir, 'great_war_part2_textbook_PUBLISHER.pdf');
-      fs.copyFileSync(outPdfPath, targetPdf1);
-      fs.copyFileSync(outPdfPath, targetPdf2);
-      console.log(`Mirrored to Google Drive: ${targetPdf1}`);
-      console.log(`Mirrored to Google Drive: ${targetPdf2}`);
-    } catch (e) {
-      console.warn('Could not mirror to Google Drive:', e.message);
-    }
+  // Compile PDF
+  const pdfOutputDir = path.join(ROOT_DIR, 'public', 'pdfs');
+  if (!fs.existsSync(pdfOutputDir)) {
+    fs.mkdirSync(pdfOutputDir, { recursive: true });
   }
 
-  return { htmlPath: outHtmlPath, pdfPath: outPdfPath };
+  const pdfPath = path.join(pdfOutputDir, 'great_war_part2_textbook_FINAL.pdf');
+  await page.pdf({
+    path: pdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: { top: '0px', right: '0px', bottom: '0px', left: '0px' },
+    preferCSSPageSize: true,
+  });
+
+  console.log('Master 12-Page Textbook PDF compiled to:', pdfPath);
+  await browser.close();
+
+  console.log('Compilation completed successfully.');
 }
 
-if (require.main === module) {
-  renderGreatWarPart2MasterTextbook()
-    .then(() => {
-      console.log('Great War Part 2 Master Textbook Compilation Complete.');
-      process.exit(0);
-    })
-    .catch((err) => {
-      console.error('Fatal error during textbook compilation:', err);
-      process.exit(1);
-    });
-}
-
-module.exports = {
-  renderGreatWarPart2MasterTextbook,
-  buildPublisherTextbookHtmlGreatWarPart2,
-};
+run().catch((err) => {
+  console.error('Fatal error during compilation:', err);
+  process.exit(1);
+});

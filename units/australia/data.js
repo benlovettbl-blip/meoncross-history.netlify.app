@@ -337,23 +337,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1768',
-          label: '1.1 Secret Orders',
+          label: 'Secret Orders',
         },
         {
           year: '1769',
-          label: '1.2 Star Navigator',
+          label: 'Star Navigator',
         },
         {
           year: '1770',
-          label: '1.3 Botany Bay',
+          label: 'Botany Bay',
         },
         {
           year: '1770',
-          label: '1.4 Possession Island',
+          label: 'Possession Island',
         },
         {
           year: '1788',
-          label: '1.5 Terra Nullius',
+          label: 'Terra Nullius',
         },
       ],
       causal_domino_spine: {
@@ -594,12 +594,12 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '1.1 The Secret Admiralty Orders (1768–1769)',
+          title: 'The Secret Admiralty Orders (1768–1769)',
           text: '<span class="para-ref">[1.1]</span> In August 1768, Lieutenant James Cook sailed from Plymouth aboard the HMS <em>Endeavour</em>, an overhauled Whitby coal bark. Publicly, the mission was celebrated as an Enlightenment scientific triumph financed by the Royal Society. Cook was tasked with transporting wealthy young botanist Sir Joseph Banks to Tahiti to observe the rare <strong>transit of Venus</strong> across the Sun, allowing astronomers to calculate the distance between the Earth and the Sun. However, locked inside Cook’s sea chest lay a sealed packet of <strong>secret instructions</strong> from the British Admiralty. Cook was commanded, once the astronomical observations concluded, to sail south to 40 degrees latitude in search of the mythical continent <em>Terra Australis Incognita</em> (the Great Southern Land) and claim it for King George III before rival French or Spanish expeditions could seize it.',
         },
         {
           act: 2,
-          title: '1.2 Tupaia and Polynesian Star Navigation (1769–1770)',
+          title: 'Tupaia and Polynesian Star Navigation (1769–1770)',
           text: '<span class="para-ref">[1.2]</span> When the <em>Endeavour</em> arrived in Tahiti, Cook encountered an extraordinarily sophisticated maritime civilisation. Recognizing his own limitations in navigating the uncharted Pacific, Cook invited <strong>Tupaia</strong>, a revered Arioi high priest and master navigator from the island of Raiatea, to join the crew. Without the aid of European brass sextants, magnetic compasses, or chronometers, Tupaia navigated by memorising the exact rising and setting azimuths of over 150 stars, reading oceanic swell dampening, bird flight trajectories, and the subtle greenish reflections cast by coral atolls on cloud bellies. Tupaia drew an astonishing chart displaying more than 130 islands across 3,000 miles of the Pacific. When the <em>Endeavour</em> reached New Zealand, Tupaia acted as an indispensable cultural diplomat, speaking Tahitian which the Māori immediately understood, preventing countless violent clashes.',
           source: {
             letter: 'A',
@@ -623,7 +623,7 @@ const unitData = {
         },
         {
           act: 3,
-          title: '1.3 The Gweagal Encounter at Botany Bay (April 1770)',
+          title: 'The Gweagal Encounter at Botany Bay (April 1770)',
           text: '<span class="para-ref">[1.3]</span> On 29 April 1770, the <em>Endeavour</em> dropped anchor in a wide shallow bay south of modern Sydney, which Cook initially named Stingray Bay before renaming it <strong>Botany Bay</strong> due to the vast botanical collection gathered by Banks. As Cook’s small rowing pinnace approached the shore, two <strong>Gweagal</strong> warriors of the Dharawal nation marched down to the water’s edge. Defending their sacred country under traditional Indigenous legal protocol, the men shook their heavy wooden spears, threw stones, and shouted \'Walla walla ma!\' (go away). Interpreting this defensive territorial stance as unprovoked hostility, Cook fired his musket, wounding one warrior in the leg with small shot. The warriors retreated behind the dunes, leaving behind a pierced bark shield. The British landed and planted their flag, initiating British contact not with peaceful diplomacy, but with gunpowder.',
           source: {
             letter: 'B',
@@ -647,12 +647,12 @@ const unitData = {
         },
         {
           act: 4,
-          title: '1.4 Possession Island & The Royal Claim (August 1770)',
+          title: 'Possession Island & The Royal Claim (August 1770)',
           text: '<span class="para-ref">[1.4]</span> For four months, Cook sailed north along 2,000 miles of treacherous coastline, nearly wrecking the <em>Endeavour</em> when its wooden hull struck coral on the Great Barrier Reef. On 22 August 1770, after threading through the Torres Strait, Cook landed on a rocky outcrop he named <strong>Possession Island</strong> off the tip of Cape York. Dressed in full naval regalia, Cook hoisted the Union Jack, fired three volleys of musketry, and declared the entire eastern seaboard of Australia—stretching from 38 degrees south to Cape York—to be the sovereign possession of King George III under the name <strong>New South Wales</strong>. In doing so, Cook violated his explicit Admiralty instructions, which had commanded him to take possession \'with the consent of the natives\'. Cook obtained no consent, held no conferences with Indigenous elders, and offered no compensation.',
         },
         {
           act: 5,
-          title: '1.5 The Legal Fiction of Terra Nullius (1770–1788)',
+          title: 'The Legal Fiction of Terra Nullius (1770–1788)',
           text: '<span class="para-ref">[1.5]</span> Cook justified claiming an entire inhabited continent by portraying Indigenous Australians in his journals as primitive nomads who had no laws, no permanent towns, and no attachment to property. In London, colonial jurists transformed Cook’s observations into the catastrophic legal doctrine of <strong>terra nullius</strong>—\'land belonging to nobody\'. Under 18th-century European legal theory, sovereignty could only be recognized if people cultivated the soil with iron plows, built permanent stone houses, and enclosed fields with fences. Because First Nations people practiced complex spiritual custodianship and subtle environmental fire-stick farming rather than European agriculture, British law declared the continent legally uninhabited. Terra nullius stripped over 500,000 Indigenous people of their legal existence, leaving them without sovereign rights, citizenship, or treaty protections as the British Empire prepared its invasion.',
         },
       ],
@@ -783,23 +783,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1783',
-          label: '2.1 Prison Crisis',
+          label: 'Prison Crisis',
         },
         {
           year: '1787',
-          label: '2.2 First Fleet Sails',
+          label: 'First Fleet Sails',
         },
         {
           year: '1788',
-          label: '2.3 Sydney Cove',
+          label: 'Sydney Cove',
         },
         {
           year: '1790',
-          label: '2.4 Starvation Years',
+          label: 'Starvation Years',
         },
         {
           year: '1792',
-          label: '2.5 Convict Labour',
+          label: 'Convict Labour',
         },
       ],
       causal_domino_spine: {
@@ -1039,7 +1039,7 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '2.1 The American Crisis & The Thames Prison Hulks (1783–1786)',
+          title: 'The American Crisis & The Thames Prison Hulks (1783–1786)',
           text: '<span class="para-ref">[2.1]</span> Between 1718 and 1775, the British justice system routinely transported around 50,000 convicted felons to work on the tobacco plantations of Maryland and Virginia. However, when the American Revolutionary War ended in British defeat in 1783, the newly independent United States slammed its ports shut to British criminals. London’s county jails—such as Newgate—were quickly overwhelmed with convicts sentenced under the savage <strong>Bloody Code</strong>, where stealing goods worth more than 12 pence could carry the death penalty. In desperation, Parliament passed the 1776 Hulks Act, converting decommissioned, dismasted warships into temporary floating prisons along the River Thames, Portsmouth, and Plymouth. Packed like rotting timber below waterlines in airless, rat-infested holds, convicts died in their hundreds from typhus ("gaol fever"), dysentery, and cholera. Fearing violent prisoner riots and contagion spreading into London, Prime Minister William Pitt’s cabinet looked 15,000 miles away to Captain Cook’s Botany Bay.',
           source: {
             letter: 'A',
@@ -1063,12 +1063,12 @@ const unitData = {
         },
         {
           act: 2,
-          title: '2.2 Outfitting the First Fleet (May 1787 – Jan 1788)',
+          title: 'Outfitting the First Fleet (May 1787 – Jan 1788)',
           text: '<span class="para-ref">[2.2]</span> In December 1786, 48-year-old naval veteran Captain Arthur Phillip was appointed the founding Governor of New South Wales. Over five frantic months, Phillip assembled 11 sailing ships at Portsmouth: two Royal Navy escort warships (HMS <em>Sirius</em> and HMS <em>Supply</em>), three storeships laden with flour, salted pork, seeds, and livestock, and six converted transport merchantmen carrying roughly 750 convicts (around 560 men and 190 women) guarded by 250 Royal Marines. On 13 May 1787, the <strong>First Fleet</strong> weighed anchor. Sailing across the Bay of Biscay, the fleet touched at Tenerife, Rio de Janeiro, and Cape Town to replenish water barrels and livestock. Phillip enforced strict hygiene, ordering decks scrubbed with vinegar, convicts brought on deck for fresh air, and fresh lime juice served against scurvy. Miraculously, over an eight-month, 15,000-mile voyage through roaring southern ocean gales, fewer than 50 people died—an extraordinary maritime achievement for the 18th century.',
         },
         {
           act: 3,
-          title: '2.3 Founding Sydney Cove (January 1788)',
+          title: 'Founding Sydney Cove (January 1788)',
           text: '<span class="para-ref">[2.3]</span> On 18 January 1788, HMS <em>Supply</em> sailed into Botany Bay, followed over the next two days by the remainder of the fleet. However, Phillip was bitterly disappointed by what he found. Joseph Banks had described lush green meadows, but Phillip saw open marshland, shallow anchorages exposed to ferocious southerly gales, and no reliable freshwater river. Taking three small rowing boats, Phillip scouted eight miles north into Port Jackson. Passing between towering sandstone heads, he entered a sprawling natural harbour he declared "the finest harbour in the world, in which a thousand sail of the line may ride in the most perfect security". On 26 January 1788, the ships anchored in a sheltered inlet named <strong>Sydney Cove</strong> (after the Home Secretary, Lord Sydney). Marines cleared eucalyptus trees, hoisted the Union Jack, drank a toast to King George III, and fired a volley of muskets, officially founding the British colony of New South Wales.',
           source: {
             letter: 'B',
@@ -1092,12 +1092,12 @@ const unitData = {
         },
         {
           act: 4,
-          title: '2.4 The Starvation Years (1788–1790)',
+          title: 'The Starvation Years (1788–1790)',
           text: '<span class="para-ref">[2.4]</span> The idyllic picture of colonization quickly dissolved into an agonizing battle for biological survival. The convicts were largely urban London pickpockets, silk weavers, and prostitutes; very few possessed farming skills or carpentry knowledge. The soil around Sydney Cove was poor sandstone sand that withered British grain crops, and wooden hoe handles snapped against rock-hard eucalyptus roots. Scurvy and dysentery incapacitated dozens, while government-issued seeds rotted in the ground. The colony’s disaster worsened in December 1789 when the vital relief ship HMS <em>Guardian</em> struck an iceberg off South Africa, losing its entire cargo of food and supplies. In response, Phillip slashed weekly <strong>rations</strong> to just two pounds of flour, two pounds of salt pork, and one pint of peas per person. Phillip ordered 200 convicts sent to fertile Norfolk Island, while officers and convicts alike scoured the shoreline for wild oysters and native spinach to stave off starvation.',
         },
         {
           act: 5,
-          title: '2.5 Convict Labour, The Lash & Emancipists (1788–1792)',
+          title: 'Convict Labour, The Lash & Emancipists (1788–1792)',
           text: '<span class="para-ref">[2.5]</span> Under Governor Phillip’s strict governance, the penal colony was organized as an open-air military prison. Convicts laboured under the supervision of overseers from 5 a.m. to sundown, felling dense forest, quarrying sandstone, and constructing government stores. Those who shirked work, stole food, or attempted to escape into the bush were brought before magistrates and sentenced to between 50 and 500 lashes with the <strong>cat-o\'-nine-tails</strong>. Yet, transportation was also designed with a radical promise of reform: unlike in Britain, where class barriers were rigid, convicts who served out their sentences became free <strong>emancipists</strong>. Phillip granted 30 acres of fertile farmland at Rose Hill (Parramatta) to ex-convicts such as James Ruse, an illiterate Cornish farm labourer who demonstrated that wheat and corn could be grown successfully in Australian soil, paving the way for the colony’s eventual self-sufficiency.',
         },
       ],
@@ -1222,23 +1222,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1788',
-          label: '3.1 65,000 Years',
+          label: '65,000 Years',
         },
         {
           year: '1789',
-          label: '3.2 Smallpox Outbreak',
+          label: 'Smallpox Outbreak',
         },
         {
           year: '1790',
-          label: '3.3 Bennelong Diplomat',
+          label: 'Bennelong Diplomat',
         },
         {
           year: '1797',
-          label: '3.4 Pemulwuy’s War',
+          label: 'Pemulwuy’s War',
         },
         {
           year: '1802',
-          label: '3.5 Hawkesbury Battles',
+          label: 'Hawkesbury Battles',
         },
       ],
       causal_domino_spine: {
@@ -1477,12 +1477,12 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '3.1 First Nations Custodianship (Pre-1788)',
+          title: 'First Nations Custodianship (Pre-1788)',
           text: '<span class="para-ref">[3.1]</span> For at least 65,000 years before European arrival—making theirs the oldest continuous living cultures on Earth—First Nations peoples inhabited the Australian continent. An estimated 500,000 to 750,000 people lived in more than 250 distinct sovereign nations, each speaking their own languages and dialects, from the saltwater Eora of Sydney Harbour to the desert nations of the arid interior. Far from wandering aimlessly across a wilderness as British colonial jurists claimed, Indigenous clans managed their territories with sophisticated environmental engineering. Through systematic <strong>fire-stick farming</strong>, clans deliberately burned patches of grassland at specific seasonal intervals to prevent devastating bushfires, encourage sweet young grass for kangaroos to graze, and harvest staple yam daisies. Society was governed by the <strong>Dreamtime</strong> (Tjukurpa), an ancient spiritual cosmology encoded in oral <strong>Songlines</strong>—vast memorised musical pathways that served as navigational maps, historical archives, and moral laws.',
         },
         {
           act: 2,
-          title: '3.2 The 1789 Smallpox Catastrophe',
+          title: 'The 1789 Smallpox Catastrophe',
           text: '<span class="para-ref">[3.2]</span> King George III had commanded Governor Phillip to "endeavour by every possible means to open an intercourse with the natives, and to conciliate their affections, enjoining all our subjects to live in amity and kindness with them". In reality, the arrival of 1,400 hungry foreigners quickly provoked crisis. Convicts and marines competed with the coastal Eora clans for fish and kangaroo meat, cutting down sacred trees and polluting freshwater creeks. Then, in April 1789, an apocalyptic biological disaster struck. An explosive outbreak of <strong>smallpox</strong> (known to the Eora as <em>gal-galla</em>) ripped through the Sydney Basin. Indigenous Australians possessed zero biological immunity to the virus. Within weeks, between 50% and 70% of the local Eora population perished in agonizing fever. British burial parties found unburied bodies lying in beach caves and rock shelters around the harbour. The epidemic destroyed tribal elders, medicine women, and warrior networks, fatally shattering the Eora’s capacity to resist British expansion.',
           source: {
             letter: 'A',
@@ -1506,12 +1506,12 @@ const unitData = {
         },
         {
           act: 3,
-          title: '3.3 Bennelong: The Tragic Intermediary',
+          title: 'Bennelong: The Tragic Intermediary',
           text: '<span class="para-ref">[3.3]</span> Desperate to understand Indigenous language and negotiate with the Sydney clans, Governor Phillip ordered his marines to kidnap Aboriginal men. In November 1789, marines captured 25-year-old Wangal warrior <strong>Woollarawarre Bennelong</strong>. Bound with iron ropes, Bennelong was held at Government House. Exceptionally intelligent and charismatic, Bennelong quickly mastered English, learned European dining customs, and became Phillip’s key cultural <strong>intermediary</strong>. In May 1790, Bennelong escaped back to his clan. When Phillip met him four months later at Manly Cove, an elder named Willemering speared Phillip through the shoulder—a traditional Indigenous legal punishment for kidnapping and stealing land. Demonstrating remarkable diplomatic skill, Bennelong de-escalated the crisis, reconciled with Phillip, and had a brick house built for him at Tubowgalle (now Bennelong Point, the site of the Sydney Opera House). In 1792, Bennelong sailed with Phillip to London, visiting Parliament and meeting King George III, but returned home in 1795 to find his country transformed and himself alienated from both worlds.',
         },
         {
           act: 4,
-          title: '3.4 Pemulwuy: The Rainbow Warrior (1790–1797)',
+          title: 'Pemulwuy: The Rainbow Warrior (1790–1797)',
           text: '<span class="para-ref">[3.4]</span> While Bennelong pursued diplomacy, other First Nations leaders chose armed warfare. In December 1790, a fierce Bidjigal clan warrior named <strong>Pemulwuy</strong> speared Governor Phillip’s gamekeeper, John McIntyre, who had been notorious among the Eora for shooting Aboriginal people. In response, Phillip dispatched military punitive expeditions with orders to bring back the heads of ten Indigenous men. Pemulwuy slipped into the dense bush and initiated a 12-year <strong>guerrilla warfare</strong> campaign across the Sydney Basin. Pemulwuy united different clans—including the Bidjigal, Dharug, and Eora—organizing coordinated ambushes against military supply wagons, spearing convict timber-getters, and burning settlers’ wheat crops and barns. In March 1797, Pemulwuy led 100 warriors in a direct daytime assault on the redcoat garrison at the <strong>Battle of Parramatta</strong>. Shot multiple times with buckshot and musket balls, Pemulwuy was captured and chained to a bed in Parramatta Hospital, yet he escaped into the bush with his leg-irons still on.',
           source: {
             letter: 'B',
@@ -1535,7 +1535,7 @@ const unitData = {
         },
         {
           act: 5,
-          title: '3.5 The Hawkesbury River Frontier War (1795–1802)',
+          title: 'The Hawkesbury River Frontier War (1795–1802)',
           text: '<span class="para-ref">[3.5]</span> By the late 1790s, the frontier of conflict shifted west to the fertile alluvial plains of the Hawkesbury and Nepean Rivers. Settlers cleared vast tracts of riverbank land, destroying native yam beds, driving away wild ducks, and barring Indigenous families from sacred ceremonial grounds. Deprived of their traditional food, the Dharug people took settlers\' corn and speared cattle. Frontier warfare erupted into brutal reprisal: settler vigilantes slaughtered Aboriginal families, while warriors retaliated by ambushing isolated farmhouses. In November 1801, Governor Philip Gidley King issued a military proclamation declaring Aboriginal people around Parramatta and the Hawkesbury outlaws, authorising soldiers and settlers to "shoot them on sight". A substantial bounty was placed on Pemulwuy\'s head. On 2 June 1802, Pemulwuy was ambushed and shot dead by a British sailor. In a grim imperial act, his head was severed and sent in a jar of spirits to Sir Joseph Banks in London, concluding the first phase of the Australian Frontier Wars.',
         },
       ],
@@ -1661,23 +1661,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1803',
-          label: '4.1 Tasmania Invaded',
+          label: 'Tasmania Invaded',
         },
         {
           year: '1828',
-          label: '4.2 Martial Law',
+          label: 'Martial Law',
         },
         {
           year: '1832',
-          label: '4.3 Flinders Island',
+          label: 'Flinders Island',
         },
         {
           year: '1835',
-          label: '4.4 Squatter Boom',
+          label: 'Squatter Boom',
         },
         {
           year: '1838',
-          label: '4.5 Myall Creek Trial',
+          label: 'Myall Creek Trial',
         },
       ],
       causal_domino_spine: {
@@ -1921,12 +1921,12 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '4.1 The Invasion of Van Diemen’s Land (1803–1824)',
+          title: 'The Invasion of Van Diemen’s Land (1803–1824)',
           text: '<span class="para-ref">[4.1]</span> In 1803, fearing French naval expansion into Bass Strait, the British Crown established a second penal colony in Van Diemen’s Land (Tasmania). Hardened repeat-offender convicts, corrupt military guards, and violent sealers were dumped onto the pristine island. The island was home to an estimated 6,000 to 8,000 <strong>Palawa</strong> people, divided into nine distinct nations with rich ceremonial traditions. Bloodshed began almost immediately. In May 1804 at Risdon Cove, soldiers panicked when 300 Palawa men, women, and children appeared on a traditional kangaroo hunt; the British fired grape-shot from naval cannons, killing dozens. Over the next two decades, as British sheep farmers seized the rich fertile Midlands, convict shepherds and armed bushrangers regularly kidnapped Aboriginal women and shot Palawa hunters who attempted to protect their ancestral lands.',
         },
         {
           act: 2,
-          title: '4.2 The Black War & Governor Arthur’s Martial Law (1826–1830)',
+          title: 'The Black War & Governor Arthur’s Martial Law (1826–1830)',
           text: '<span class="para-ref">[4.2]</span> By the mid-1820s, Palawa clans launched a desperate, brilliant guerrilla counter-offensive, raiding isolated settler homesteads with fire and spears. Between 1826 and 1831, over 250 British settlers and more than 600 Aboriginal Tasmanians were killed in what historians classify as the <strong>Black War</strong>. In November 1828, Governor Colonel George Arthur declared <strong>martial law</strong>, authorising troops to shoot any Aboriginal person found in settled districts. Arthur offered bounties of £5 for every captured adult and £2 for every child. When guerrilla attacks continued, Arthur launched the "Black Line" in October 1830: 2,200 armed soldiers, police, convicts, and settlers formed an unbroken human cordon stretching 120 miles across the island, sweeping south for seven weeks to herd the remaining Palawa onto the Tasman Peninsula. The operation cost £30,000 but captured only two Aboriginal people, as Palawa warriors easily slipped through the cordon at night.',
           source: {
             letter: 'A',
@@ -1950,12 +1950,12 @@ const unitData = {
         },
         {
           act: 3,
-          title: '4.3 Truganini and the Exile to Wybalenna (1830–1835)',
+          title: 'Truganini and the Exile to Wybalenna (1830–1835)',
           text: '<span class="para-ref">[4.3]</span> Realising that military force was failing to end the war, Governor Arthur hired an evangelical builder and missionary, George Augustus Robinson, to embark on a "Friendly Mission". Robinson enlisted the help of <strong>Truganini</strong>, a remarkable young Nuenonne woman from Bruny Island whose mother, sister, and uncle had all been murdered by British sealers and convicts. Believing Robinson’s solemn promise that her people would be protected and allowed to return to their lands once peace was restored, Truganini traveled hundreds of miles across the rugged wilderness, persuading the surviving Palawa clan leaders to surrender their spears. Instead of returning to their country, the surviving 200 Aboriginal Tasmanians were betrayed: they were rounded up and <strong>exiled</strong> to Wybalenna, a windswept, barren penal settlement on Flinders Island. Stricken by depression, respiratory diseases, and forced Europeanization, over 150 died within a decade. By 1847, only 47 survivors remained, and Truganini became an iconic, tragic symbol of Palawa survival against extermination.',
         },
         {
           act: 4,
-          title: '4.4 Squatters and the Great Merino Land Grab (1820–1838)',
+          title: 'Squatters and the Great Merino Land Grab (1820–1838)',
           text: '<span class="para-ref">[4.4]</span> On the Australian mainland, an economic revolution was violently accelerating the frontier. In northern England, the steam-powered textile mills of Yorkshire were hungry for raw wool. Australian Merino sheep, bred from Spanish and South African stock by pioneers like John Macarthur, thrived in the dry Australian climate. Wealthy colonial elites, known as <strong>squatters</strong>, ignored government regulations and drove millions of sheep over the Blue Mountains, illegally occupying vast empires of land stretching from Queensland to South Australia. The pastoral invasion was ecologically devastating: millions of sharp-hoofed sheep trampled fragile topsoils, muddying ancient waterholes and eating the yam daisies that formed the staple diet of First Nations nations. Deprived of food, Aboriginal clans speared sheep for meat, provoking ferocious, secretive retaliation from armed stockmen and private settler militias.',
           source: {
             letter: 'B',
@@ -1979,7 +1979,7 @@ const unitData = {
         },
         {
           act: 5,
-          title: '4.5 The Myall Creek Reckoning (1838)',
+          title: 'The Myall Creek Reckoning (1838)',
           text: '<span class="para-ref">[4.5]</span> On Sunday 10 June 1838, the escalating frontier conflict produced one of the darkest crimes in colonial history. At Myall Creek cattle station in northern New South Wales, a gang of eleven armed white stockmen—mostly convicts and ex-convicts—surrounded a peaceful camp of the Wirrayaraay nation. The Wirrayaraay had lived on friendly terms with the station manager. Nevertheless, the stockmen tied 28 unarmed women, young children, and elders together with a long tethering rope, led them into a gully, and butchered them with swords and muskets before burning their bodies. When station manager William Hobbs reported the atrocity, newly appointed Governor Sir George Gipps ordered an uncompromising investigation. In the first trial, an all-white settler jury acquitted all eleven men in just twenty minutes to wild courtroom cheering. But Gipps ordered a second trial: seven stockmen were convicted of murder and, on 18 December 1838, publicly hanged in Sydney. It was the only time in Australian history that white settlers were executed for murdering Indigenous people, provoking fury from wealthy squatters and driving future frontier massacres into secrecy.',
         },
       ],
@@ -2104,23 +2104,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1851',
-          label: '5.1 Gold Fever',
+          label: 'Gold Fever',
         },
         {
           year: '1853',
-          label: '5.2 Licence Hunts',
+          label: 'Licence Hunts',
         },
         {
           year: '1854',
-          label: '5.3 Eureka Stockade',
+          label: 'Eureka Stockade',
         },
         {
           year: '1861',
-          label: '5.4 Anti-Chinese Riots',
+          label: 'Anti-Chinese Riots',
         },
         {
           year: '1901',
-          label: '5.5 White Australia',
+          label: 'White Australia',
         },
       ],
       causal_domino_spine: {
@@ -2378,12 +2378,12 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '5.1 Gold Fever: Ballarat & Bendigo (1851–1853)',
+          title: 'Gold Fever: Ballarat & Bendigo (1851–1853)',
           text: '<span class="para-ref">[5.1]</span> In February 1851, a veteran prospector named Edward Hargraves returned from the California goldfields and panned five specks of payable gold at Summerhill Creek near Bathurst, New South Wales. Within months, far richer alluvial gold deposits were discovered in the newly created colony of Victoria at Mount Alexander, Bendigo, and <strong>Ballarat</strong>. The discovery triggered one of the greatest mass migrations in human history. Ships arriving in Melbourne were abandoned by their crews, shopkeepers dropped their ledgers, and doctors left their clinics to rush to the diggings. Between 1851 and 1861, over 500,000 immigrants poured into Australia from Britain, Ireland, continental Europe, America, and China. Australia’s non-Indigenous population skyrocketed from 400,000 to over 1.2 million. Gold shattered the convict penal stigma forever, injecting hundreds of millions of pounds into the economy and transforming Melbourne into "Marvellous Melbourne", one of the richest, most opulent cities in the British Empire.',
         },
         {
           act: 2,
-          title: '5.2 The Gold Commission & Licence Hunts (1853–1854)',
+          title: 'The Gold Commission & Licence Hunts (1853–1854)',
           text: '<span class="para-ref">[5.2]</span> To control the chaotic tent cities and fund colonial administration, the Victorian government imposed a harsh, monthly 30-shilling <strong>miner’s licence fee</strong> on every digger, regardless of whether they struck gold or worked an empty shaft. To enforce the tax, Governor Sir Charles Hotham deployed armed Gold Commissioners backed by corrupt, arrogant police—many of whom were former convicts from Van Diemen’s Land. Twice a week, mounted police conducted armed "digger hunts", galloping through tent settlements, chaining miners who could not instantly produce their paper licences to trees, and dragging them before magistrate courts. The diggers were outraged: while wealthy squatter pastoralists leased thousands of acres for pennies, miners were taxed heavily and denied all political voting rights. In November 1854, after police covered up the murder of a Scottish miner by a corrupt publican, 10,000 diggers met at Bakery Hill, forming the Ballarat Reform League to demand universal male <strong>suffrage</strong> and the abolition of the licence.',
           source: {
             letter: 'A',
@@ -2407,7 +2407,7 @@ const unitData = {
         },
         {
           act: 3,
-          title: '5.3 The Eureka Stockade (3 December 1854)',
+          title: 'The Eureka Stockade (3 December 1854)',
           text: '<span class="para-ref">[5.3]</span> On 30 November 1854, following a particularly brutal police digger hunt, thousands of miners gathered beneath a new flag designed by Canadian miner Henry Ross: the <strong>Southern Cross</strong>, featuring five white eight-pointed stars connected by a white cross on an azure blue silk field. Led by fiery Irish engineer Peter Lalor, the diggers knelt, pointed to the sky, and swore a solemn oath: "We swear by the Southern Cross to stand truly by each other and fight to defend our rights and liberties." Around 120 diggers constructed a makeshift wooden stockade of wooden slabs and overturned carts across an acre of ground at Eureka. At 3:30 a.m. on Sunday, 3 December 1854, while most miners were asleep, 276 redcoat soldiers and mounted police stormed the <strong>Eureka Stockade</strong>. In a savage 15-minute battle, 22 miners and six soldiers were killed. The rebellion was crushed, but public outrage in Melbourne was overwhelming: thirteen rebel leaders were tried for high treason, and Melbourne juries acquitted every single one to roaring cheers. Within a year, Governor Hotham abolished the licence, introduced an annual £1 \'Miner\'s Right\', and granted diggers the right to vote, establishing Eureka as the legendary birthplace of Australian democracy.',
           source: {
             letter: 'B',
@@ -2432,12 +2432,12 @@ const unitData = {
         },
         {
           act: 4,
-          title: '5.4 Chinese Miners & The White Australia Policy (1855–1901)',
+          title: 'Chinese Miners & The White Australia Policy (1855–1901)',
           text: '<span class="para-ref">[5.4]</span> The gold rush also unleashed severe racial conflict. Over 40,000 Chinese miners arrived in Victoria, working cooperatively in well-organized teams that meticulously re-washed abandoned tailings to find fine gold dust. European diggers reacted with bitter jealousy and racism, accusing the Chinese of wasting water, smoking opium, and lowering living standards. In 1857, violent anti-Chinese riots erupted at the Buckland River, and in June 1861, over 1,000 armed white miners marched on the Lambing Flat goldfield in New South Wales behind a banner reading "No Chinese", burning Chinese camps, beating miners, and scalping pigtails. Colonial governments appeased white voters by passing discriminatory poll taxes and entry restrictions. When the six Australian colonies federated into an independent Commonwealth on 1 January 1901, the very first legislation passed by the new federal Parliament was the <strong>Immigration Restriction Act 1901</strong>, establishing the notorious <strong>White Australia Policy</strong>. Through a rigged 50-word European language dictation test, the new nation officially codified racial exclusion to ensure Australia remained a white British outpost.',
         },
         {
           act: 5,
-          title: '5.5 First Nations Survival & The Mabo Legacy (1901–Present)',
+          title: 'First Nations Survival & The Mabo Legacy (1901–Present)',
           text: '<span class="para-ref">[5.5]</span> While Federation expanded democratic freedoms for white men, it codified the erasure of First Nations peoples: the 1901 Constitution explicitly excluded Aboriginal Australians from national censuses and barred federal laws on their behalf. For much of the 20th century, state governments removed thousands of Indigenous children from their mothers under assimilation policies, creating the <strong>Stolen Generations</strong>. Yet, First Nations survival and political activism never faltered. On 26 January 1938—as white Australia celebrated the 150th anniversary of the First Fleet—Indigenous leaders led by Yorta Yorta activist William Cooper staged the historic <strong>Day of Mourning</strong> in Sydney, demanding full citizenship and equal human rights. In 1967, a record 90.77% of Australians voted in a constitutional referendum to include Aboriginal people in the national census. Finally, on 3 June 1992, following a heroic ten-year legal battle led by Torres Strait Islander Eddie Koiki Mabo, the High Court of Australia handed down the historic <strong>Mabo Decision</strong>, legally ruling that <em>terra nullius</em> had always been a legal lie. For the first time, Australian law recognized <strong>Native Title</strong>, affirming that First Nations sovereignty had never been extinguished and transforming the nation’s historical consciousness.',
         },
       ],

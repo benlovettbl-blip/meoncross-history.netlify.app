@@ -13,10 +13,10 @@ module.exports = {
   subtitle:
     'Step-by-step PEEL Planning & Revision Workshop: John Snow, Joseph Bazalgette, Louis Pasteur, and the 1875 Public Health Act',
   skill: 'Disciplinary Skill: Causal Explanation & Structured PEEL Synthesis',
-  card_image: '/images/bazalgette_sewer.jpg',
-  card_position: 'center 35%',
-  banner: '/images/bazalgette_sewer.jpg',
-  cover_image: '/images/bazalgette_sewer.jpg',
+  card_image: '/images/water_local_eastney_opt.jpg',
+  card_position: 'center 40%',
+  banner: '/images/water_local_eastney_opt.jpg',
+  cover_image: '/images/water_local_eastney_opt.jpg',
 
   prologue:
     'Welcome to your November Assessment Masterclass! In this workshop, you will prepare for your 30-minute formal assessment: "Explain why there was rapid progress in Public Health 1800–1900?". You will write three developed PEEL paragraphs explaining how scientific investigation (Dr John Snow), civil engineering (Sir Joseph Bazalgette), laboratory microbiology (Louis Pasteur), and compulsory government legislation (the 1875 Public Health Act) transformed British public health from deadly squalor into modern sanitary safety. Over half term, you are permitted to prepare ONE single sheet of A4 lined paper containing bullet points, mind maps, statistics, and dates to bring directly into the assessment room!',
@@ -36,11 +36,11 @@ module.exports = {
   },
 
   margin_spine: [
-    { year: '1800–1850', label: '7.1 Laissez-Faire Context' },
-    { year: '1854', label: '7.2 Reason 1: Dr John Snow' },
-    { year: '1858–1865', label: '7.3 Reason 2: Joseph Bazalgette' },
-    { year: '1861', label: '7.4 Reason 3: Louis Pasteur' },
-    { year: '1875', label: '7.5 Reason 4: 1875 Health Act' },
+    { year: '1800–1850', label: 'Laissez-Faire Context' },
+    { year: '1854', label: 'Reason 1: Dr John Snow' },
+    { year: '1858–1865', label: 'Reason 2: Joseph Bazalgette' },
+    { year: '1861', label: 'Reason 3: Louis Pasteur' },
+    { year: '1875', label: 'Reason 4: 1875 Health Act' },
   ],
 
   causal_domino_spine: {
@@ -247,14 +247,14 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '7.1 Deconstructing the Question: The 19th-Century Transformation (1800–1900)',
-      theme_heading: '7.1 Deconstructing the Question: The 19th-Century Transformation (1800–1900)',
+      title: 'Deconstructing the Question: The 19th-Century Transformation (1800–1900)',
+      theme_heading: 'Deconstructing the Question: The 19th-Century Transformation (1800–1900)',
       text: '<span class="para-ref">[7.1]</span> Between 1800 and 1850, the Industrial Revolution triggered rapid, chaotic urbanisation across Britain. Millions moved from rural villages into industrial cities like Manchester and Leeds to work in factories. Speculative landlords built cramped "back-to-back" terraced slums with no building codes. Up to one hundred residents shared a single outdoor privy, and shallow drinking wells were contaminated by leaking cesspools.<br><br>The British government took no action due to **laissez-faire** ("leave alone")—the belief that the state should not interfere in private life or raise taxes. Although Edwin Chadwick\'s 1842 Report proved filth caused disease, the 1848 Public Health Act was merely **permissive** (optional). Most local councils refused to spend tax money on clean water or sewers. Consequently, nationwide cholera epidemics in 1831, 1848, and 1853 killed over 130,000 Britons. Progress was impossible until three breakthroughs occurred: scientific epidemiology, civil engineering, and compulsory government legislation.<br><br><div style="margin: 16px 0; padding: 14px 18px; background: #eff6ff; border: 1.5px solid #93c5fd; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;"><div><span style="background: #1e40af; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">Revision Gateway</span><strong style="margin-left: 8px; color: #1e3a8a; font-size: 0.95rem;">Need to revise Industrial Slum Squalor & Early Cholera?</strong></div><a href="/?view=lessons&unit=water_and_sanitation&lesson=4" target="_blank" style="padding: 7px 15px; background: #2563eb; color: white; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Lesson 4: Boomtown Squalor & Asiatic Cholera</a></div>',
     },
     {
       act: 2,
-      title: '7.2 Reason 1: Dr John Snow & Scientific Epidemiology (1854)',
-      theme_heading: '7.2 Reason 1: Dr John Snow & Scientific Epidemiology (1854)',
+      title: 'Reason 1: Dr John Snow & Scientific Epidemiology (1854)',
+      theme_heading: 'Reason 1: Dr John Snow & Scientific Epidemiology (1854)',
       text: '<span class="para-ref">[7.2]</span> The first breakthrough came from **Dr John Snow** during the 1854 cholera outbreak in Soho, London. Most doctors believed in **miasma**—the idea that bad smells caused disease. However, Snow noticed cholera attacked the stomach and bowels, not the lungs, proving the poison had to be swallowed in food or water.<br><br>When cholera killed over five hundred people in Soho in ten days, Snow mapped every death as a black bar on a street map (Source A). His **spot map** showed deaths clustered around the Broad Street water pump. Snow proved that workers at the local Lion Brewery drank only beer and stayed healthy, while a woman in Hampstead died after having Broad Street water delivered to her. Snow convinced the parish vestry to remove the pump handle, and the outbreak stopped. Snow proved cholera was waterborne, showing that cleaning drinking water was the real key to saving lives.<br><br><div style="margin: 16px 0; padding: 14px 18px; background: #eff6ff; border: 1.5px solid #93c5fd; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;"><div><span style="background: #1e40af; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">Revision Gateway</span><strong style="margin-left: 8px; color: #1e3a8a; font-size: 0.95rem;">Need to revise John Snow’s investigation & the Spot Map?</strong></div><a href="/?view=lessons&unit=water_and_sanitation&lesson=6" target="_blank" style="padding: 7px 15px; background: #2563eb; color: white; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Lesson 6: Dr John Snow & Broad Street</a></div>',
       source: {
         letter: 'A',
@@ -278,8 +278,8 @@ module.exports = {
     },
     {
       act: 3,
-      title: '7.3 Reason 2: Sir Joseph Bazalgette & Civil Engineering (1858–1865)',
-      theme_heading: '7.3 Reason 2: Sir Joseph Bazalgette & Civil Engineering (1858–1865)',
+      title: 'Reason 2: Sir Joseph Bazalgette & Civil Engineering (1858–1865)',
+      theme_heading: 'Reason 2: Sir Joseph Bazalgette & Civil Engineering (1858–1865)',
       text: '<span class="para-ref">[7.3]</span> While Snow showed water caused cholera, **Sir Joseph Bazalgette** engineered the permanent solution. In the 1850s, flushing toilets emptied raw sewage into street drains that flowed into the River Thames, turning London\'s drinking river into an open sewer. In June 1858, extreme summer heat created **The Great Stink**.<br><br>MPs fled the riverbank Parliament in terror, fearing miasma would kill them. In just eighteen days, Parliament dropped laissez-faire and granted £3 million for new sewers. Chief Engineer Bazalgette built **82 miles of underground intercepting brick sewers** parallel to the Thames, using 318 million bricks and waterproof Portland cement (Source B). Massive steam pumping stations (Abbey Mills and Crossness) lifted waste to flow out to the sea. Finished in 1865, Bazalgette’s sewers permanently separated drinking water from human sewage, ending cholera in London forever.<br><br><div style="margin: 16px 0; padding: 14px 18px; background: #eff6ff; border: 1.5px solid #93c5fd; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;"><div><span style="background: #1e40af; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">Revision Gateway</span><strong style="margin-left: 8px; color: #1e3a8a; font-size: 0.95rem;">Need to revise The Great Stink & Bazalgette’s Sewers?</strong></div><a href="/?view=lessons&unit=water_and_sanitation&lesson=5" target="_blank" style="padding: 7px 15px; background: #2563eb; color: white; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Lesson 5: The Great Stink & Bazalgette</a></div>',
       source: {
         letter: 'B',
@@ -304,8 +304,8 @@ module.exports = {
     },
     {
       act: 4,
-      title: '7.4 Reason 3: Louis Pasteur & The Germ Theory (1861)',
-      theme_heading: '7.4 Reason 3: Louis Pasteur & The Germ Theory (1861)',
+      title: 'Reason 3: Louis Pasteur & The Germ Theory (1861)',
+      theme_heading: 'Reason 3: Louis Pasteur & The Germ Theory (1861)',
       text: '<span class="para-ref">[7.4]</span> The third catalyst was the 1861 scientific breakthrough of French chemist **Louis Pasteur**. For centuries, doctors believed in spontaneous generation—the idea that rotting matter created disease out of nothing. This allowed doctors to ignore Snow’s water theory, because nobody could see germs.<br><br>Pasteur disproved spontaneous generation with his **swan-neck flask experiments** (Source C). Boiled broth stayed clear in curved glass flasks that trapped airborne dust; only when the neck was broken did airborne microbes enter and spoil the liquid. In 1861, Pasteur published **Germ Theory**, proving living microscopic bacteria cause decay and disease. In 1884, German scientist Robert Koch isolated the exact cholera bacterium (*Vibrio cholerae*). Germ Theory destroyed miasma forever: clean water was now proven by science to be vital to stop lethal bacteria.',
       source: {
         letter: 'C',
@@ -329,8 +329,8 @@ module.exports = {
     },
     {
       act: 5,
-      title: '7.5 Reason 4: Government Legislation & The 1875 Public Health Act',
-      theme_heading: '7.5 Reason 4: Government Legislation & The 1875 Public Health Act',
+      title: 'Reason 4: Government Legislation & The 1875 Public Health Act',
+      theme_heading: 'Reason 4: Government Legislation & The 1875 Public Health Act',
       text: '<span class="para-ref">[7.5]</span> Scientific discoveries and engineering marvels only succeeded nationwide when backed by compulsory law. The 1848 Public Health Act failed because it was permissive (optional); selfish ratepayers refused to spend taxes on sewers.<br><br>The turning point came in 1875 under Prime Minister Benjamin Disraeli. Armed with proof from Snow, Bazalgette, and Pasteur, Parliament passed the **1875 Public Health Act**. This law was **compulsory** ("must do"): every council had to appoint a Medical Officer of Health, provide clean piped drinking water, build covered sewers, collect household rubbish, and inspect butcher shops. The 1875 Act permanently ended laissez-faire, ensuring every town in Britain gained clean water and sanitation, causing national death rates to tumble into the twentieth century.<br><br><div style="margin: 16px 0; padding: 14px 18px; background: #eff6ff; border: 1.5px solid #93c5fd; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;"><div><span style="background: #1e40af; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">Revision Gateway</span><strong style="margin-left: 8px; color: #1e3a8a; font-size: 0.95rem;">Need to revise the 1875 Public Health Act & Laissez-Faire?</strong></div><a href="/?view=lessons&unit=water_and_sanitation&lesson=5" target="_blank" style="padding: 7px 15px; background: #2563eb; color: white; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open Lesson 5: The 1875 Act & Modern Sanitation</a></div>',
     },
   ],

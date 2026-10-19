@@ -132,7 +132,7 @@ const water_and_sanitation = {
       id: 'pasteur',
       name: 'Louis Pasteur',
       role: 'Chemist & Microbiologist',
-      image: '/images/pasteur_swan_neck.jpg',
+      image: '/images/pasteur.png',
       bio: 'Disproved spontaneous generation with his 1861 swan-neck flask experiments and proved Germ Theory: that living bacteria cause disease.',
     },
     {

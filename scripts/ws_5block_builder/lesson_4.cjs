@@ -19,11 +19,11 @@ module.exports = {
     'Between 1780 and 1850, the Industrial Revolution catapulted Britain into the modern age as the "workshop of the world". Steam-powered factories, ironworks, and textile mills drew millions of agricultural labourers into booming northern cities like Manchester, Leeds, and Sheffield. Speculative landlords threw up shoddy, back-to-back houses and unventilated cellars where entire families lived amidst raw sewage. When Asiatic Cholera made landfall in 1831, killing thousands in hours, Victorian society blamed bad air (miasma). Even when Edwin Chadwick published his landmark 1842 report proving filth caused disease and economic ruin, the entrenched dogma of "laissez-faire" blocked compulsory reform.',
 
   margin_spine: [
-    { year: '1780', label: '4.1 Boomtown Urbanisation' },
-    { year: '1831', label: '4.2 The Blue Death' },
-    { year: '1842', label: '4.3 Chadwick’s Report' },
-    { year: '1848', label: '4.4 The 1848 Act' },
-    { year: '1854', label: '4.5 Laissez-Faire Gridlock' },
+    { year: '1780', label: 'Boomtown Urbanisation' },
+    { year: '1831', label: 'The Blue Death' },
+    { year: '1842', label: 'Chadwick’s Report' },
+    { year: '1848', label: 'The 1848 Act' },
+    { year: '1854', label: 'Laissez-Faire Gridlock' },
   ],
 
   causal_domino_spine: {
@@ -233,12 +233,14 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '4.1 Boomtown Squalor: Back-to-Backs & Cellar Dwellings',
+      title: 'Boomtown Squalor: Back-to-Backs & Cellar Dwellings',
+      theme_heading: 'Boomtown Squalor: Back-to-Backs & Cellar Dwellings',
       text: '<span class="para-ref">[4.1]</span> Between 1780 and 1850, the Industrial Revolution transformed Britain into the manufacturing "workshop of the world." The expansion of steam-powered cotton mills and coal mines triggered rapid urbanisation. Millions of rural labourers moved to northern boomtowns for factory work. Manchester’s population exploded from 25,000 in 1770 to over 300,000 by 1850, with Birmingham and Leeds growing equally fast.<br><br>Because towns had no building codes, speculative landlords rushed to maximize profits by building cramped "back-to-back" terraced housing. These houses shared party walls on three sides, with no through-ventilation. Rooms were dark, damp, and soot-choked. In districts like Manchester’s "Little Ireland", families lived in flooded cellar dwellings. Up to one hundred residents shared a single outdoor communal privy midden, where untreated waste piled up outside bedroom windows.',
     },
     {
       act: 2,
-      title: '4.2 Slum Squalor: Contaminated Wells & Privy Middens',
+      title: 'Slum Squalor: Contaminated Wells & Privy Middens',
+      theme_heading: 'Slum Squalor: Contaminated Wells & Privy Middens',
       text: '<span class="para-ref">[4.2]</span> The water supply in industrial boomtowns was dangerous and scarce. Towns owned no public water pipes. Instead, private companies operated for profit, piping water only to wealthy squares. In working-class slums, companies turned on street standpipes for only twenty minutes three days a week, sparking desperate scrambles for water.<br><br>Families unable to reach standpipes relied on shallow wells or took water from polluted rivers like the Irwell in Manchester or the Aire in Leeds. These rivers were black with chemical acids and human sewage from unlined cesspits. Liquid waste seeped through the porous earth directly into drinking wells. Cartoons like "A Court for King Cholera" (Source A) mocked these filthy courtyards as royal palaces where disease ruled over helpless families.',
       source: {
         letter: 'A',
@@ -262,12 +264,14 @@ module.exports = {
     },
     {
       act: 3,
-      title: '4.3 The Blue Death: Asiatic Cholera & the Miasma Trap (1831)',
+      title: 'The Blue Death: Asiatic Cholera & the Miasma Trap (1831)',
+      theme_heading: 'The Blue Death: Asiatic Cholera & the Miasma Trap (1831)',
       text: '<span class="para-ref">[4.3]</span> In October 1831, Britain was struck by a terrifying new global epidemic: **Asiatic Cholera**. Arriving through the port of Sunderland from the Baltic Sea, cholera killed with horrific speed. Victims suffered violent vomiting and severe watery diarrhea ("rice-water stools"). Severe dehydration drained gallons of bodily fluid within hours, turning the skin a shriveled blue-grey color and killing healthy adults in less than a day. The 1831–1832 epidemic killed over 32,000 Britons.<br><br>Victorian doctors were helpless because they believed in **miasma**—the false theory that disease spread through poisonous bad air from rotting matter. Local councils burned tar barrels in streets and whitewashed alleys with vinegar to clear the smell. These efforts failed completely: cholera was a waterborne bacterium (*Vibrio cholerae*) spread by drinking sewage-tainted water.',
     },
     {
       act: 4,
-      title: '4.4 Edwin Chadwick’s Sanitary Report & the Miasma Dilemma (1842)',
+      title: 'Edwin Chadwick’s Sanitary Report & the Miasma Dilemma (1842)',
+      theme_heading: 'Edwin Chadwick’s Sanitary Report & the Miasma Dilemma (1842)',
       text: '<span class="para-ref">[4.4]</span> In 1842, civil servant **Edwin Chadwick** published a landmark parliamentary report: the *Report on the Sanitary Condition of the Labouring Population* (Source B). Using detailed medical and economic statistics, Chadwick proved that the average life expectancy for a labourer in Manchester was just **seventeen years**—compared to thirty-eight years in rural Rutland.<br><br>Chadwick cleverly appealed to Victorian taxpayers. He argued that preventable filth killed working fathers in their prime, forcing thousands of widows and orphans onto poor-relief taxes paid by middle-class ratepayers. Chadwick showed that spending money on clean water mains and underground glazed ceramic sewers would remove filth, boost worker productivity, and save taxpayers millions of pounds in poor-relief rates.',
       source: {
         letter: 'B',
@@ -293,7 +297,8 @@ module.exports = {
     },
     {
       act: 5,
-      title: '4.5 The 1848 Public Health Act & Laissez-Faire Resistance',
+      title: 'The 1848 Public Health Act & Laissez-Faire Resistance',
+      theme_heading: 'The 1848 Public Health Act & Laissez-Faire Resistance',
       text: '<span class="para-ref">[4.5]</span> Chadwick’s report prompted the **Public Health Act of 1848**, which set up Britain’s first General Board of Health. However, the law was crippled by the Victorian belief in **laissez-faire** ("leave alone")—the idea that national government should not interfere in private property or local taxation.<br><br>Parliament made the 1848 Act *permissive* (optional) rather than compulsory. Councils only had to form a health board if their death rate exceeded an extreme 23 per 1,000 residents. Wealthy landlords and property ratepayers fiercely opposed spending money on sewers, attacking Chadwick as a "sanitary dictator." Ratepayers formed associations to vote out reformist councillors. In 1854, the government gave in: Chadwick was sacked, the Board of Health was closed down, and slum squalor continued unchecked.',
     },
   ],

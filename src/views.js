@@ -30,6 +30,7 @@ import {
   renderDiagnosticLauncherHTML,
   launchUnitBenchmark,
   startDiagnosticBenchmark,
+  sampleDiagnosticQuestions,
 } from './diagnostic_benchmark.js';
 import {
   getMasterpieceStarterStripHtml,
@@ -60,6 +61,7 @@ export function renderDashboard() {
         <!-- Stage Filters -->
         <div class="stage-filter-group" style="display: inline-flex; align-items: center; gap: 4px; background: #f1f5f9; border-radius: 8px; padding: 3px;">
           <button class="stage-filter-btn active" data-stage="all" style="background: #0f172a; color: #ffffff; border: none; border-radius: 6px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">All Syllabuses</button>
+          <button class="stage-filter-btn" data-stage="ks2" style="background: transparent; color: #475569; border: none; border-radius: 6px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">Key Stage 2</button>
           <button class="stage-filter-btn" data-stage="ks3" style="background: transparent; color: #475569; border: none; border-radius: 6px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">Key Stage 3</button>
           <button class="stage-filter-btn" data-stage="gcse" style="background: transparent; color: #475569; border: none; border-radius: 6px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">GCSE (9–1)</button>
         </div>
@@ -67,6 +69,7 @@ export function renderDashboard() {
         <!-- Fast Year Jump Chips -->
         <nav id="year-quick-jump-nav" aria-label="Jump to year group" style="display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;">
           <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 2px;">Jump:</span>
+          <a href="#year5-section" class="jump-chip jump-ks2" onclick="event.preventDefault(); window.scrollToSection('year5-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; cursor: pointer; transition: all 0.15s;">Year 5</a>
           <a href="#year7-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year7-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 7</a>
           <a href="#year8-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year8-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 8</a>
           <a href="#year9-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year9-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 9</a>
@@ -79,6 +82,12 @@ export function renderDashboard() {
 
   const units = getUnits();
 
+  // Year 5 Grouping (Key Stage 2)
+  const year5Order = ['ks2_ww2'];
+  const year5Units = units
+    .filter((u) => year5Order.includes(u.id))
+    .sort((a, b) => year5Order.indexOf(a.id) - year5Order.indexOf(b.id));
+
   // Year 7 Grouping
   const year7Order = ['water_and_sanitation', 'medieval_england'];
   const year7Units = units
@@ -87,7 +96,6 @@ export function renderDashboard() {
 
   // Year 8 Grouping
   const year8Order = [
-    'early_modern_world',
     'monarchy_religion_power',
     'first_british_empire',
     'industrialisation_and_empire',
@@ -134,6 +142,7 @@ export function renderDashboard() {
     const imageUrl = unit.homepage_background || unit.cover_image || '';
 
     const unitCanonicalTitles = {
+      ks2_ww2: 'World War II & The Home Front (1939–1945)',
       water_and_sanitation: 'Water & Sanitation (1250–Present)',
       medieval_england: 'Medieval England (1066–1485)',
       early_modern_world: 'Early Modern World (1450–1750)',
@@ -183,13 +192,17 @@ export function renderDashboard() {
 
     const gcseUnitIds = ['cme_new', 'weimar_nazi_germany', 'edexcel_medicine', 'eee', 'usa'];
     const isGcse = gcseUnitIds.includes(unit.id);
+    const isKs2 = unit.is_ks2 || unit.id === 'ks2_ww2';
     const gcseBadge = isGcse
       ? `<span style="position:absolute; top:8px; left:8px; z-index:10; background:#f59e0b; color:#fff; font-size:0.62rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.25);">GCSE</span>`
       : '';
+    const ks2Badge = isKs2
+      ? `<span style="position:absolute; top:8px; left:8px; z-index:10; background:#3730a3; color:#fff; font-size:0.62rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.25);">KS2</span>`
+      : '';
 
     html += `
-      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.05}s; cursor: pointer; position: relative; ${isGcse ? 'border-top: 3px solid #f59e0b;' : ''}" data-action="launch-subapp" data-unit="${unit.id}">
-        ${gcseBadge}
+      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.05}s; cursor: pointer; position: relative; ${isGcse ? 'border-top: 3px solid #f59e0b;' : isKs2 ? 'border-top: 3px solid #3730a3;' : ''}" data-action="launch-subapp" data-unit="${unit.id}">
+        ${gcseBadge || ks2Badge}
         ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
         <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
           <div style="flex-grow: 1; min-width: 0;">
@@ -199,8 +212,8 @@ export function renderDashboard() {
         </div>
         
         <div class="module-card-footer" style="margin-top: auto; padding-top: 10px; border-top: 1px solid var(--border-glass, #e2e8f0); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; position: relative; z-index: 2;">
-          <span style="font-weight: 700; color: ${isGcse ? '#92400e' : '#1d4ed8'}; background: ${isGcse ? '#fef3c7' : '#eff6ff'}; border: 1px solid ${isGcse ? '#fde68a' : '#bfdbfe'}; padding: 2px 7px; border-radius: 4px; font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase;">
-            ${isGcse ? 'Edexcel GCSE' : 'Key Stage 3'}
+          <span style="font-weight: 700; color: ${isGcse ? '#92400e' : isKs2 ? '#3730a3' : '#1d4ed8'}; background: ${isGcse ? '#fef3c7' : isKs2 ? '#e0e7ff' : '#eff6ff'}; border: 1px solid ${isGcse ? '#fde68a' : isKs2 ? '#c7d2fe' : '#bfdbfe'}; padding: 2px 7px; border-radius: 4px; font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase;">
+            ${isGcse ? 'Edexcel GCSE' : isKs2 ? 'Key Stage 2' : 'Key Stage 3'}
           </span>
           <span class="module-launch-link" style="font-weight: 700; color: #2563eb; display: inline-flex; align-items: center; gap: 4px; font-size: 0.76rem;">
             <span>Explore</span>
@@ -210,6 +223,25 @@ export function renderDashboard() {
       </div>
     `;
   };
+
+  // Year 5 Section (Key Stage 2)
+  if (year5Units.length > 0) {
+    html += `
+      <div class="dashboard-curriculum-block stage-block-ks2" id="block-year5">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+          <h3 class="section-title" id="year5-section" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin: 0; display: flex; align-items: center; gap: 8px;">
+            <span style="background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">Key Stage 2</span>
+            Year 5: World War II &amp; The Home Front (1939–1945)
+          </h3>
+          <a href="/units/ks2_ww2/index.html" target="_blank" style="background: #1e3a8a; color: #ffffff; padding: 6px 14px; border-radius: 6px; font-size: 0.76rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(30,58,138,0.25); transition: background 0.15s ease;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#1e3a8a'">
+            <i class="fa-solid fa-chalkboard-user"></i> Open KS2 Teacher Command Centre &amp; Showcase <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.68rem;"></i>
+          </a>
+        </div>
+        <div class="modules-grid" style="margin-bottom: 2rem;">
+    `;
+    year5Units.forEach(renderUnitCard);
+    html += `</div></div>`;
+  }
 
   // Year 7 Section
   if (year7Units.length > 0) {
@@ -409,6 +441,22 @@ function attachDashboardStageFilter(container) {
   const filterBtns = container.querySelectorAll('.stage-filter-btn');
   if (!filterBtns.length) return;
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const portalParam = (urlParams.get('portal') || urlParams.get('stage') || '').toLowerCase();
+  if (portalParam === 'ks2') {
+    try {
+      sessionStorage.setItem('hh_portal', 'ks2');
+    } catch (e) {}
+  } else if (portalParam === 'all' || portalParam === 'reset') {
+    try {
+      sessionStorage.removeItem('hh_portal');
+    } catch (e) {}
+  }
+
+  const isKs2Portal =
+    portalParam === 'ks2' ||
+    (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('hh_portal') === 'ks2');
+
   filterBtns.forEach((btn) => {
     btn.onclick = () => {
       const stage = btn.dataset.stage;
@@ -423,34 +471,52 @@ function attachDashboardStageFilter(container) {
       btn.style.color = '#ffffff';
       btn.style.boxShadow = 'none';
 
+      const ks2Blocks = container.querySelectorAll('.stage-block-ks2');
       const ks3Blocks = container.querySelectorAll('.stage-block-ks3');
       const gcseBlocks = container.querySelectorAll('.stage-block-gcse');
+      const jumpKs2 = container.querySelectorAll('.jump-ks2');
       const jumpKs3 = container.querySelectorAll('.jump-ks3');
       const jumpGcse = container.querySelectorAll('.jump-gcse');
       const jumpFieldwork = container.querySelectorAll('.jump-fieldwork');
       const tripBlock = container.querySelector('#block-trip');
 
       if (stage === 'all') {
+        ks2Blocks.forEach((el) => (el.style.display = ''));
         ks3Blocks.forEach((el) => (el.style.display = ''));
         gcseBlocks.forEach((el) => (el.style.display = ''));
+        jumpKs2.forEach((el) => (el.style.display = ''));
         jumpKs3.forEach((el) => (el.style.display = ''));
         jumpGcse.forEach((el) => (el.style.display = ''));
         jumpFieldwork.forEach((el) => (el.style.display = ''));
+      } else if (stage === 'ks2') {
+        ks2Blocks.forEach((el) => (el.style.display = ''));
+        ks3Blocks.forEach((el) => (el.style.display = 'none'));
+        gcseBlocks.forEach((el) => (el.style.display = 'none'));
+        jumpKs2.forEach((el) => (el.style.display = ''));
+        jumpKs3.forEach((el) => (el.style.display = 'none'));
+        jumpGcse.forEach((el) => (el.style.display = 'none'));
+        jumpFieldwork.forEach((el) => (el.style.display = 'none'));
       } else if (stage === 'ks3') {
+        ks2Blocks.forEach((el) => (el.style.display = 'none'));
         ks3Blocks.forEach((el) => (el.style.display = ''));
         gcseBlocks.forEach((el) => (el.style.display = 'none'));
+        jumpKs2.forEach((el) => (el.style.display = 'none'));
         jumpKs3.forEach((el) => (el.style.display = ''));
         jumpGcse.forEach((el) => (el.style.display = 'none'));
         jumpFieldwork.forEach((el) => (el.style.display = 'none'));
       } else if (stage === 'gcse') {
+        ks2Blocks.forEach((el) => (el.style.display = 'none'));
         ks3Blocks.forEach((el) => (el.style.display = 'none'));
         gcseBlocks.forEach((el) => (el.style.display = ''));
+        jumpKs2.forEach((el) => (el.style.display = 'none'));
         jumpKs3.forEach((el) => (el.style.display = 'none'));
         jumpGcse.forEach((el) => (el.style.display = ''));
         jumpFieldwork.forEach((el) => (el.style.display = ''));
       } else if (stage === 'fieldwork') {
+        ks2Blocks.forEach((el) => (el.style.display = 'none'));
         ks3Blocks.forEach((el) => (el.style.display = 'none'));
         gcseBlocks.forEach((el) => (el.style.display = 'none'));
+        jumpKs2.forEach((el) => (el.style.display = 'none'));
         jumpKs3.forEach((el) => (el.style.display = 'none'));
         jumpGcse.forEach((el) => (el.style.display = 'none'));
         jumpFieldwork.forEach((el) => (el.style.display = ''));
@@ -461,6 +527,21 @@ function attachDashboardStageFilter(container) {
       }
     };
   });
+
+  if (isKs2Portal) {
+    const ks2Btn = container.querySelector('.stage-filter-btn[data-stage="ks2"]');
+    if (ks2Btn) {
+      ks2Btn.click();
+    }
+    if (urlParams.get('portal') === 'ks2') {
+      const allBtn = container.querySelector('.stage-filter-btn[data-stage="all"]');
+      const ks3Btn = container.querySelector('.stage-filter-btn[data-stage="ks3"]');
+      const gcseBtn = container.querySelector('.stage-filter-btn[data-stage="gcse"]');
+      if (allBtn) allBtn.style.display = 'none';
+      if (ks3Btn) ks3Btn.style.display = 'none';
+      if (gcseBtn) gcseBtn.style.display = 'none';
+    }
+  }
 }
 
 export function renderMasterpieceView() {
@@ -632,6 +713,28 @@ window.updateProfileYearGroup = function (val) {
 };
 
 window.launchSubApp = function (subAppName) {
+  const urlParams =
+    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const isLocked =
+    urlParams &&
+    (urlParams.get('locked') === 'true' ||
+      urlParams.get('mode') === 'pupil' ||
+      urlParams.get('safeguard') === 'true');
+  const currentUnit = state.selectedUnitId || window.currentUnitId;
+
+  if (isLocked && currentUnit && subAppName !== currentUnit) {
+    console.warn(
+      `[Safeguard Mode] Blocked unauthorized attempt to switch from locked unit ${currentUnit} to ${subAppName}`,
+    );
+    if (window.showToast) {
+      window.showToast(
+        'Classroom Safeguard Active: Navigation to other units is locked.',
+        'warning',
+      );
+    }
+    return;
+  }
+
   // Show the curtain
   const curtain = document.getElementById('page-curtain');
   if (curtain) {
@@ -672,23 +775,38 @@ export function extractUnitSelfQuizCards(unitData, topicFilter = 'all') {
     // Topic filtering
     if (topicFilter && topicFilter !== 'all' && topicFilter !== 'full') {
       let matched = false;
-      const cleanFilter = topicFilter.toLowerCase().replace(/[\s_:-]+/g, '');
-      const lTitle = (l.title || '').toLowerCase().replace(/[\s_:-]+/g, '');
-      const lId = (l.id || '').toLowerCase().replace(/[\s_:-]+/g, '');
 
-      if (lTitle.includes(cleanFilter) || lId.includes(cleanFilter)) {
+      // 1. Exact ID match (prevents lesson_1 colliding with lesson_10)
+      if (l.id && (l.id === topicFilter || l.id.toLowerCase() === topicFilter.toLowerCase())) {
         matched = true;
-      } else {
+      }
+
+      // 2. Key topic / workbook prefix matching
+      if (!matched && workbooks && workbooks.length > 0) {
+        const cleanFilter = topicFilter.toLowerCase().replace(/[\s_:-]+/g, '');
         for (const wb of workbooks) {
           const wbId = (wb.id || wb.name || '').toLowerCase().replace(/[\s_:-]+/g, '');
           if (wbId === cleanFilter) {
             const prefix = (wb.prefix || wb.id || '').toLowerCase().replace(/[\s_:-]+/g, '');
+            const lTitle = (l.title || '').toLowerCase().replace(/[\s_:-]+/g, '');
+            const lId = (l.id || '').toLowerCase().replace(/[\s_:-]+/g, '');
             if (lTitle.startsWith(prefix) || lId.startsWith(prefix) || lId.includes(prefix)) {
               matched = true;
+              break;
             }
           }
         }
       }
+
+      // 3. Fallback: Title matching
+      if (!matched) {
+        const cleanFilter = topicFilter.toLowerCase().replace(/[\s_:-]+/g, '');
+        const lTitle = (l.title || '').toLowerCase().replace(/[\s_:-]+/g, '');
+        if (lTitle.includes(cleanFilter)) {
+          matched = true;
+        }
+      }
+
       if (!matched) return;
     }
 
@@ -724,15 +842,25 @@ export function extractUnitSelfQuizCards(unitData, topicFilter = 'all') {
     }
 
     // 2. Vocabulary Terms
-    if (Array.isArray(l.vocab)) {
-      l.vocab.forEach((v) => {
-        if (v.term && v.definition) {
-          const key = v.term.trim().toLowerCase();
+    const vocabList = Array.isArray(l.vocab)
+      ? l.vocab
+      : Array.isArray(l.vocabulary)
+        ? l.vocabulary
+        : Array.isArray(l.key_vocab)
+          ? l.key_vocab
+          : [];
+
+    if (vocabList.length > 0) {
+      vocabList.forEach((v) => {
+        const term = v.term || v.word || v.concept;
+        const def = v.definition || v.def || v.meaning;
+        if (term && def) {
+          const key = term.trim().toLowerCase();
           if (!seen.has(key)) {
             seen.add(key);
             cards.push({
-              q: `Historical definition: "${v.term}"`,
-              a: v.definition,
+              q: `Historical definition: "${term}"`,
+              a: def,
               topic: topicLabel,
               lessonId: l.id,
               type: 'vocab',
@@ -788,12 +916,17 @@ export function renderInteractiveQuiz() {
     return;
   }
 
-  const workbooks =
-    data.workbooks && data.workbooks.length > 0
-      ? data.workbooks
-      : [{ id: 'full', title: 'Complete Course', prefix: 'lesson' }];
+  const lessons = data.lessons || data.subtopics || [];
+  const validWorkbooks = (data.workbooks || []).filter(
+    (wb) => wb && wb.id !== 'full' && wb.name !== 'full',
+  );
 
   const allCards = extractUnitSelfQuizCards(data, 'all');
+  const allDiagQuestions =
+    typeof sampleDiagnosticQuestions === 'function'
+      ? sampleDiagnosticQuestions(unitId, data, 'all')
+      : [];
+  const initialDiagCount = allDiagQuestions.length || 20;
 
   // Initialize self quiz global state
   window._selfQuizState = {
@@ -813,6 +946,46 @@ export function renderInteractiveQuiz() {
   const retrievalTitle =
     catalogRetrieval.title || `${data.title || 'Curriculum'} Master Knowledge Retrieval Companion`;
   const retrievalPdf = catalogRetrieval.pdfUrl || `/pdfs/${unitId}_quiz_pack_FINAL_V1.pdf`;
+
+  // Build topic dropdown options
+  let topicOptionsHtml = `
+    <option value="all">⭐ Complete Unit (All ${lessons.length > 0 ? lessons.length + ' Lessons • ' : ''}${allCards.length} Cards)</option>
+  `;
+
+  if (validWorkbooks.length > 0) {
+    topicOptionsHtml += `
+      <optgroup label="Key Topics / Modules">
+        ${validWorkbooks
+          .map((wb, i) => {
+            const id = wb.id || wb.name;
+            const wbCards = extractUnitSelfQuizCards(data, id);
+            return `<option value="${id}">${wb.title || wb.name || `Key Topic ${i + 1}`} (${wbCards.length} Cards)</option>`;
+          })
+          .join('')}
+      </optgroup>
+    `;
+  }
+
+  if (lessons.length > 0) {
+    const groupLabel =
+      data.is_ks2 || unitId === 'ks2_ww2'
+        ? 'Enquiry Lessons (Year 5)'
+        : data.isGCSE
+          ? 'Individual Enquiry Lessons'
+          : 'Enquiry Lessons';
+
+    topicOptionsHtml += `
+      <optgroup label="${groupLabel}">
+        ${lessons
+          .map((l, idx) => {
+            const lCards = extractUnitSelfQuizCards(data, l.id);
+            const rawTitle = l.title || `Lesson ${idx + 1}`;
+            return `<option value="${l.id}">${rawTitle} (${lCards.length} Cards)</option>`;
+          })
+          .join('')}
+      </optgroup>
+    `;
+  }
 
   const html = `
     <div id="self-quiz-arena" class="self-quiz-arena" style="max-width: 960px; margin: 0 auto; padding-bottom: 60px; animation: fadeInUp 0.25s ease-out;">
@@ -915,17 +1088,21 @@ export function renderInteractiveQuiz() {
         }
       </style>
       
-      <!-- Unified Header -->
-      <div style="margin-bottom: 22px; text-align: center;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(99, 102, 241, 0.2); color: #c7d2fe; border: 1px solid rgba(99, 102, 241, 0.35); padding: 5px 16px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; backdrop-filter: blur(4px);">
-          <i class="fa-solid fa-graduation-cap" style="color: #fef08a;"></i> ${data.title || 'Curriculum Revision'}
+      <!-- Unified Hero Header -->
+      <div style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 60%, #312e81 100%); border-radius: 16px; padding: 26px 24px; margin-bottom: 22px; text-align: center; color: #ffffff; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.25), 0 8px 10px -6px rgba(15, 23, 42, 0.2); position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div style="position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(99, 102, 241, 0.35) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+        
+        <div style="position: relative; z-index: 2;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.12); color: #e0e7ff; border: 1px solid rgba(255, 255, 255, 0.2); padding: 5px 16px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; backdrop-filter: blur(8px);">
+            <i class="fa-solid fa-graduation-cap" style="color: #fde047;"></i> ${data.title || 'Curriculum Revision'}
+          </div>
+          <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.1rem; font-weight: 800; color: #ffffff; margin: 0 0 8px 0; letter-spacing: -0.5px;">
+            Self-Quiz &amp; Knowledge Check
+          </h1>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin: 0 auto; max-width: 640px; line-height: 1.5; font-weight: 400;">
+            Master core factual recall and key vocabulary through interactive 3D flashcards, or benchmark your exam readiness with a timed diagnostic knowledge check.
+          </p>
         </div>
-        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.1rem; font-weight: 800; color: #ffffff; margin: 0 0 6px 0; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.4);">
-          Self-Quiz &amp; Knowledge Check
-        </h1>
-        <p style="color: #cbd5e1; font-size: 0.95rem; margin: 0 auto; max-width: 620px; line-height: 1.45; font-weight: 400; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
-          Master core facts through active recall flashcards or test your readiness with a 10-minute diagnostic check.
-        </p>
       </div>
 
       <!-- Unified Control Panel (Topic Selector + Mode Switcher) -->
@@ -940,15 +1117,8 @@ export function renderInteractiveQuiz() {
             <label for="select-recall-deck" style="display: block; font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
               Topic Scope:
             </label>
-            <select id="select-recall-deck" class="form-select" style="width: 100%; padding: 6px 10px; font-size: 0.85rem; font-weight: 600; border: 1.5px solid #cbd5e1; border-radius: 6px; background: #ffffff; color: #0f172a; cursor: pointer;" onchange="window.selfQuizSetTopic(this.value)">
-              <option value="all">⭐ Complete Course (All Topics)</option>
-              ${workbooks
-                .map((wb, i) => {
-                  const id = wb.name || wb.id;
-                  if (id === 'full') return '';
-                  return `<option value="${id}">${wb.title || wb.name || `Key Topic ${i + 1}`}</option>`;
-                })
-                .join('')}
+            <select id="select-recall-deck" class="form-select" style="width: 100%; padding: 7px 10px; font-size: 0.86rem; font-weight: 600; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #ffffff; color: #0f172a; cursor: pointer;" onchange="window.selfQuizSetTopic(this.value)">
+              ${topicOptionsHtml}
             </select>
           </div>
         </div>
@@ -958,7 +1128,7 @@ export function renderInteractiveQuiz() {
           <button id="btn-mode-flashcards" type="button" class="self-quiz-mode-pill active" onclick="window.selfQuizSetMode('flashcards')">
             <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i>
             <span>Flashcard Deck</span>
-            <span id="deck-card-count" style="background: rgba(255,255,255,0.25); color: #fff; font-size: 0.74rem; padding: 2px 7px; border-radius: 999px; margin-left: 2px;">
+            <span id="deck-card-count" style="background: rgba(255,255,255,0.25); color: #fff; font-size: 0.74rem; font-weight: 800; padding: 2px 7px; border-radius: 999px; margin-left: 2px;">
               ${allCards.length}
             </span>
           </button>
@@ -966,8 +1136,8 @@ export function renderInteractiveQuiz() {
           <button id="btn-mode-quiz" type="button" class="self-quiz-mode-pill" onclick="window.selfQuizSetMode('quiz')">
             <i class="fa-solid fa-bullseye" style="color: #d97706;"></i>
             <span>10-Minute Knowledge Quiz</span>
-            <span style="background: #e2e8f0; color: #334155; font-size: 0.74rem; font-weight: 800; padding: 2px 7px; border-radius: 999px; margin-left: 2px;">
-              20 Qs
+            <span id="quiz-deck-q-count" style="background: #e2e8f0; color: #334155; font-size: 0.74rem; font-weight: 800; padding: 2px 7px; border-radius: 999px; margin-left: 2px;">
+              ${initialDiagCount} Qs
             </span>
           </button>
         </div>
@@ -1107,13 +1277,13 @@ export function renderInteractiveQuiz() {
             10-Minute Knowledge Diagnostic Quiz
           </h2>
           <p style="color: #64748b; font-size: 0.9rem; max-width: 540px; margin: 0 auto 22px auto; line-height: 1.5;">
-            20 sampled questions testing factual recall and chronological accuracy under timed exam conditions.
+            Sampled questions testing factual recall and chronological accuracy under timed exam conditions.
           </p>
 
           <!-- 3-Metric Spec Breakdown -->
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 12px; margin-bottom: 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
             <div>
-              <div style="font-weight: 800; font-size: 1.25rem; color: #0f172a;">20</div>
+              <div id="diag-metric-q-count" style="font-weight: 800; font-size: 1.25rem; color: #0f172a;">${initialDiagCount}</div>
               <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 700; margin-top: 2px;">Questions</div>
             </div>
             <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
@@ -1137,15 +1307,15 @@ export function renderInteractiveQuiz() {
         </div>
       </div>
 
-      <!-- Subtle Cross-Reference to Printable 24-Page Companion -->
+      <!-- Direct Cross-Reference to Printable Curricular Booklets -->
       <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
         <div style="display: flex; align-items: center; gap: 12px;">
           <div style="width: 38px; height: 38px; border-radius: 8px; background: #fee2e2; color: #dc2626; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
             <i class="fa-solid fa-file-pdf"></i>
           </div>
           <div>
-            <strong style="color: #0f172a; font-size: 0.92rem; display: block;">Prefer a physical printed booklet?</strong>
-            <span style="color: #64748b; font-size: 0.82rem;">The 24-page Master Knowledge Retrieval Companion with teacher mark schemes is in Workbooks &amp; Textbooks.</span>
+            <strong style="color: #0f172a; font-size: 0.92rem; display: block;">Prefer physical printed booklets or classroom workbooks?</strong>
+            <span style="color: #64748b; font-size: 0.82rem;">${retrievalTitle} and complete pupil workbooks with full teacher mark schemes are available in Workbooks &amp; Textbooks.</span>
           </div>
         </div>
         <button type="button" onclick="window.switchView('booklet', '${unitId}')" style="background: #f8fafc; border: 1.5px solid #cbd5e1; color: #0f172a; padding: 8px 16px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#e2e8f0';" onmouseout="this.style.background='#f8fafc';">
@@ -1367,6 +1537,14 @@ window.selfQuizSetTopic = function (topicId) {
   const lCountEl = document.getElementById('fc-learning-count');
   if (lCountEl) lCountEl.textContent = '0';
 
+  if (typeof sampleDiagnosticQuestions === 'function') {
+    const qSample = sampleDiagnosticQuestions(s.unitId, s.data, topicId);
+    const qCountBadge = document.getElementById('quiz-deck-q-count');
+    if (qCountBadge) qCountBadge.textContent = `${qSample.length} Qs`;
+    const qMetricEl = document.getElementById('diag-metric-q-count');
+    if (qMetricEl) qMetricEl.textContent = qSample.length;
+  }
+
   window.selfQuizUpdateCardDisplay();
 };
 
@@ -1457,6 +1635,12 @@ export async function renderTimeline() {
   if (unitId === 'cme_new' || unitId === 'gcse_middle_east_1945_1995') {
     const { renderCmeLivingTimeline } = await import('./cme_living_timeline.js');
     renderCmeLivingTimeline(container);
+    return;
+  }
+
+  if (unitId === 'ks2_ww2') {
+    const { renderKs2TimelineSlider } = await import('./ks2_chronology_slider.js');
+    renderKs2TimelineSlider(container);
     return;
   }
 
@@ -1922,6 +2106,7 @@ export async function renderLessonsView() {
   let headerHtml = '';
   if (heroImageUrl) {
     const positionFallbacks = {
+      ks2_ww2: 'center 85%',
       monarchy_religion_power: 'center 12%',
       first_british_empire: 'center 35%',
       eee: 'center 10%',

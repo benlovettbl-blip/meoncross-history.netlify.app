@@ -1,0 +1,3921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mastery Pack: Complete Unit Mastery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-dark: #121212;
+            --brand-red: #d32f2f;
+            --brand-grey: #f5f5f5;
+        }
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.15;
+            color: #2c3e50;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            box-sizing: border-box;
+        }
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 12mm 15mm;
+            }
+            body {
+                background: #fff !important;
+                color: #000 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            .page {
+                margin: 0 !important;
+                box-shadow: none !important;
+                width: 100% !important;
+                min-height: 270mm !important;
+                padding: 0 !important;
+                page-break-after: always !important;
+                break-after: page !important;
+            }
+            .page:last-child {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+            .screen-vault-toolbar,
+            .leitner-modal-overlay,
+            .vault-screen-controls,
+            .vault-btn-group,
+            .cover-qr-card {
+                /* ensure clean print output */
+            }
+            .screen-vault-toolbar,
+            .leitner-modal-overlay,
+            .vault-screen-controls {
+                display: none !important;
+            }
+        }
+        
+        /* Cover Page Styling */
+        .cover {
+            background-color: var(--brand-dark);
+            color: white;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box !important;
+            background-image: url('/images/shah_alam_clive.jpg'); background-size: cover; background-position: center;
+        }
+        .cover::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.65);
+            z-index: 1;
+        }
+        .cover-content {
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            min-height: 240mm;
+            box-sizing: border-box;
+        }
+        .cover h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 4rem;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+            text-shadow: 0px 4px 12px rgba(0,0,0,0.8);
+        }
+        .cover h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 300;
+            font-size: 1.5rem;
+            color: #f8fafc;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 0px 2px 8px rgba(0,0,0,0.8);
+        }
+        .cover h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            color: #ef4444; /* bright red */
+            margin-top: 0;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .cover-bottom {
+            margin-top: auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.95);
+            color: #121212;
+            border-radius: 8px;
+            padding: 20px 25px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-left: 5px solid var(--brand-red);
+        }
+        .cover-bottom p {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin: 5px 0;
+        }
+
+        /* Cover QR Card */
+        .cover-qr-card {
+            margin-top: 14px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #f8fafc;
+            border: 2px dashed #1e3a8a;
+            border-radius: 8px;
+            padding: 10px 14px;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .cover-qr-img {
+            width: 78px;
+            height: 78px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 2px;
+            display: block;
+        }
+        .cover-qr-info {
+            flex: 1;
+            text-align: left;
+        }
+        .cover-qr-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 2px;
+        }
+        .cover-qr-desc {
+            font-size: 0.8rem;
+            color: #334155;
+            line-height: 1.3;
+            margin-bottom: 3px;
+        }
+        .cover-qr-url {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #2563eb;
+            word-break: break-all;
+        }
+
+        /* Strategy Page Styling */
+        .strategy {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 2.2rem;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            margin-top: 14px;
+            margin-bottom: 6px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 4px;
+        }
+        .strategy p, .strategy li {
+            font-size: 1.02rem;
+            line-height: 1.5;
+            color: #334155;
+        }
+        .strategy ul {
+            margin: 6px 0;
+            padding-left: 20px;
+        }
+
+        /* Screen-Only Mobile Toolbar */
+        .screen-vault-toolbar {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 9999;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            font-family: 'Outfit', sans-serif;
+        }
+        .toolbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .toolbar-badge {
+            background: #ef4444;
+            color: white;
+            font-size: 0.68rem;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-btn {
+            background: #f1f5f9;
+            color: #0f172a;
+            padding: 6px 13px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.82rem;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+        .toolbar-btn:hover {
+            transform: translateY(-1px);
+            filter: brightness(0.95);
+        }
+        .toolbar-btn.primary {
+            background: #fbbf24;
+            color: #0f172a;
+            box-shadow: 0 2px 6px rgba(251, 191, 36, 0.4);
+        }
+        .toolbar-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .toolbar-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Leitner 3-Box Practice Modal Styles */
+        .leitner-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(6px);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            animation: leitnerFadeIn 0.2s ease-out;
+        }
+        @keyframes leitnerFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .leitner-modal-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 680px;
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            animation: leitnerSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes leitnerSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .leitner-modal-header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-header-title h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .leitner-unit-subtitle {
+            margin: 3px 0 0 0;
+            font-size: 0.82rem;
+            color: #93c5fd;
+        }
+        .leitner-close-btn {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: #ffffff;
+            font-size: 1.6rem;
+            line-height: 1;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .leitner-close-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        /* Leitner Spaced Streak & 7-Day Heatmap */
+        .leitner-streak-bar {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            border-bottom: 1px solid #334155;
+        }
+        .streak-badge-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .streak-fire-icon {
+            font-size: 1.8rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(239, 68, 68, 0.5));
+            animation: pulseGlow 2s infinite ease-in-out;
+        }
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4)); }
+            50% { transform: scale(1.12); filter: drop-shadow(0 2px 12px rgba(239, 68, 68, 0.8)); }
+        }
+        .streak-text-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .streak-count-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 800;
+            letter-spacing: 0.4px;
+            color: #fef08a;
+        }
+        .streak-subtitle {
+            font-size: 0.72rem;
+            color: #94a3b8;
+        }
+        .streak-heatmap-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .streak-heatmap-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #94a3b8;
+        }
+        .streak-heatmap-days {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .heatmap-day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+        }
+        .heatmap-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+        .heatmap-cell {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            background: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: bold;
+            color: transparent;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        .heatmap-cell.active {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+        }
+        .heatmap-cell.today {
+            border: 2px solid #fbbf24;
+        }
+        @media (max-width: 600px) {
+            .leitner-streak-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 14px;
+                gap: 8px;
+            }
+            .streak-heatmap-container {
+                align-items: flex-start;
+                width: 100%;
+            }
+            .streak-heatmap-days {
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+        .leitner-box-stats {
+            background: #f8fafc;
+            padding: 10px 16px;
+            display: flex;
+            gap: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .leitner-stat-pill {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 10px;
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            cursor: default;
+        }
+        .leitner-stat-pill.box-1 {
+            background: #fef2f2;
+            color: #991b1b;
+            border-color: #fecaca;
+        }
+        .leitner-stat-pill.box-2 {
+            background: #fffbeb;
+            color: #92400e;
+            border-color: #fde68a;
+        }
+        .leitner-stat-pill.box-3 {
+            background: #ecfdf5;
+            color: #065f46;
+            border-color: #a7f3d0;
+        }
+        .leitner-stat-pill strong {
+            font-size: 1rem;
+        }
+        .leitner-filter-row {
+            padding: 10px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        .leitner-filter-row label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #334155;
+            white-space: nowrap;
+        }
+        .leitner-topic-select {
+            flex: 1;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e1;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-container {
+            padding: 16px 20px;
+            perspective: 1000px;
+        }
+        .leitner-card {
+            width: 100%;
+            min-height: 220px;
+            cursor: pointer;
+            position: relative;
+        }
+        .leitner-card-inner {
+            position: relative;
+            width: 100%;
+            min-height: 220px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .leitner-card.flipped .leitner-card-inner {
+            transform: rotateY(180deg);
+        }
+        .leitner-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 2px solid #e2e8f0;
+        }
+        .leitner-card-front {
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .leitner-card-back {
+            background: #fffbc8;
+            color: #0f172a;
+            transform: rotateY(180deg);
+            border-color: #fde047;
+        }
+        .card-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .qnum-badge {
+            background: #1e3a8a;
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+        .qnum-badge.ans {
+            background: #b45309;
+        }
+        .box-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .box-badge.b1 { background: #fee2e2; color: #b91c1c; }
+        .box-badge.b2 { background: #fef3c7; color: #b45309; }
+        .box-badge.b3 { background: #d1fae5; color: #047857; }
+        .card-question-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.4;
+            font-weight: 600;
+            color: #1e293b;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .rapid-card-prompt {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: inherit;
+        }
+        .exam-card-prompt {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: inherit;
+            margin: 8px 0;
+        }
+        .card-answer-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.35;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 15px 0;
+            text-align: center;
+        }
+        .card-main-answer {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: inherit;
+            margin-bottom: 0.6rem;
+            line-height: 1.35;
+        }
+        .card-explanation-box {
+            font-size: 0.92rem;
+            font-style: italic;
+            color: #334155;
+            line-height: 1.4;
+            max-width: 550px;
+            margin: 0 auto;
+            background: rgba(241, 245, 249, 0.9);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 3px solid #3b82f6;
+            text-align: left;
+        }
+        .exam-card-model-answer {
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.45;
+            text-align: left;
+            color: #0f172a;
+            background: #ffffff;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 8px;
+        }
+        .card-prompt-hint {
+            font-size: 0.78rem;
+            color: #64748b;
+            font-style: italic;
+        }
+        .leitner-action-bar {
+            padding: 0 20px 14px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .leitner-rate-btn {
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px 8px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            transition: all 0.15s ease;
+        }
+        .leitner-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .btn-box-1 {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .btn-box-2 {
+            background: #fffbeb;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .btn-box-3 {
+            background: #ecfdf5;
+            border-color: #6ee7b7;
+            color: #065f46;
+        }
+        .btn-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+        }
+        .btn-sub {
+            font-size: 0.7rem;
+            opacity: 0.85;
+        }
+        .leitner-modal-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .leitner-nav-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-nav-btn:hover {
+            background: #e2e8f0;
+        }
+        .leitner-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .leitner-teacher-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            padding: 6px 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+            transition: all 0.15s ease;
+        }
+        .leitner-teacher-btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.45);
+        }
+        .leitner-tools-toggle-btn {
+            display: none;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.16);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            color: #ffffff;
+            padding: 6px 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .leitner-tools-toggle-btn:hover,
+        .leitner-tools-toggle-btn.active {
+            background: rgba(255, 255, 255, 0.28);
+            border-color: #93c5fd;
+        }
+        .leitner-tools-drawer {
+            display: block;
+        }
+        /* Rapid-Fire Classroom Retrieval Timer Bar */
+        .rapid-fire-timer-bar {
+            background: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 8px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            transition: all 0.3s ease;
+        }
+        .leitner-modal-overlay:not(.teacher-mode) .rapid-fire-timer-bar {
+            display: none;
+        }
+        .leitner-modal-overlay:not(.teacher-mode) .leitner-tools-drawer.expanded .rapid-fire-timer-bar {
+            display: flex;
+        }
+        .rapid-fire-timer-bar.timer-expired {
+            background: #fee2e2;
+            border-color: #f87171;
+            animation: timerPulseRed 0.8s infinite alternate ease-in-out;
+        }
+        @keyframes timerPulseRed {
+            from { box-shadow: inset 0 0 10px rgba(239, 68, 68, 0.3); }
+            to { box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.7); }
+        }
+        .timer-badge-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+        .timer-flame {
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+        .timer-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #334155;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .timer-countdown {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0284c7;
+            min-width: 44px;
+            text-align: right;
+            transition: color 0.2s ease;
+        }
+        .timer-countdown.warning {
+            color: #d97706;
+        }
+        .timer-countdown.critical {
+            color: #dc2626;
+            animation: pulseCritical 0.4s infinite alternate;
+        }
+        @keyframes pulseCritical {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+        .timer-progress-track {
+            flex: 1;
+            height: 8px;
+            background: #cbd5e1;
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+        }
+        .timer-progress-fill {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            border-radius: 999px;
+            transition: width 0.1s linear, background 0.3s ease;
+        }
+        .timer-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .timer-ctrl-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .timer-ctrl-btn:hover {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+        .timer-ctrl-btn.reset {
+            color: #2563eb;
+        }
+
+        /* CME Whiteboard & Instant-Feedback Recall Quiz Styles */
+        .toolbar-btn.whiteboard {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+        }
+        .toolbar-btn.whiteboard:hover {
+            background: linear-gradient(135deg, #0369a1 0%, #075985 100%);
+            transform: translateY(-1px);
+        }
+        .toolbar-btn.quiz {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #ffffff;
+            font-weight: 800;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+        }
+        .toolbar-btn.quiz:hover {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            transform: translateY(-1px);
+        }
+
+        /* CME Instant-Feedback Recall Quiz & Binary Score Bar */
+        .quiz-score-bar {
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            font-family: 'Outfit', sans-serif;
+            flex-wrap: wrap;
+        }
+        .quiz-score-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #1e293b;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .quiz-score-pill strong {
+            color: #0284c7;
+            font-size: 0.95rem;
+        }
+        .quiz-review-missed-btn {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fca5a5;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.15s ease;
+        }
+        .quiz-review-missed-btn:hover {
+            background: #fee2e2;
+            transform: translateY(-1px);
+        }
+        .quiz-review-missed-btn.active {
+            background: #dc2626;
+            color: #ffffff;
+            border-color: #b91c1c;
+        }
+        .quiz-reset-score-btn {
+            background: transparent;
+            color: #64748b;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .quiz-reset-score-btn:hover {
+            background: #f1f5f9;
+            color: #0f172a;
+        }
+        .quiz-binary-bar {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            padding: 12px 20px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+        .quiz-rate-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'Outfit', sans-serif;
+        }
+        .quiz-rate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .quiz-rate-btn .btn-title {
+            font-size: 1rem;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+        .quiz-rate-btn .btn-sub {
+            font-size: 0.76rem;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+        .quiz-rate-btn.btn-needs-review {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+        .quiz-rate-btn.btn-needs-review:hover {
+            background: #fee2e2;
+            border-color: #ef4444;
+        }
+        .quiz-rate-btn.btn-got-it {
+            background: #f0fdf4;
+            border-color: #86efac;
+            color: #166534;
+        }
+        .quiz-rate-btn.btn-got-it:hover {
+            background: #dcfce7;
+            border-color: #22c55e;
+        }
+
+        /* Dual-Tier Leitner Switcher Bar */
+        .leitner-tier-switcher {
+            display: flex;
+            background: #0f172a;
+            padding: 8px 16px 0 16px;
+            gap: 6px;
+            border-bottom: 1px solid #334155;
+        }
+        .tier-btn {
+            flex: 1;
+            padding: 8px 12px;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            border: none;
+            cursor: pointer;
+            background: #1e293b;
+            color: #94a3b8;
+            transition: all 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+        .tier-btn:hover:not(.active) {
+            background: #334155;
+            color: #ffffff;
+        }
+        .tier-btn.active {
+            background: #ffffff;
+            color: #0f172a;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        }
+
+        /* Stem Filter Row */
+        .leitner-stem-filter-row {
+            background: #f8fafc;
+            padding: 8px 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+        .stem-filter-label {
+            font-size: 0.74rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            white-space: nowrap;
+            margin-right: 4px;
+        }
+        .stem-pill {
+            padding: 4px 10px;
+            border-radius: 9999px;
+            font-size: 0.74rem;
+            font-weight: 700;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.15s ease;
+        }
+        .stem-pill:hover {
+            border-color: #3b82f6;
+            color: #1e3a8a;
+        }
+        .stem-pill.active {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        /* Exam Card Elements */
+        .exam-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .exam-stem-badge {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .exam-stem-badge.consequence {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+        }
+        .exam-stem-badge.narrative {
+            background: #f3e8ff;
+            color: #6b21a8;
+            border: 1px solid #d8b4fe;
+        }
+        .exam-stem-badge.importance {
+            background: #ffedd5;
+            color: #9a3412;
+            border: 1px solid #fdba74;
+        }
+        .exam-stem-badge.term {
+            background: #e0f2fe;
+            color: #075985;
+            border: 1px solid #7dd3fc;
+        }
+        .exam-formula-badge {
+            background: #eff6ff;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .exam-facts-hint {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px dashed #cbd5e1;
+        }
+        .historian-box {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: #fefce8;
+            border: 1px solid #fef08a;
+            border-left: 4px solid #eab308;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #713f12;
+            line-height: 1.45;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+        .facts-checklist {
+            margin-top: 10px;
+            text-align: left;
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 0.82rem;
+            color: #166534;
+        }
+        .facts-checklist ul {
+            margin: 4px 0 0 0;
+            padding-left: 18px;
+        }
+        .facts-checklist li {
+            margin-bottom: 2px;
+        }
+
+        /* Full-Screen Teacher Presentation Mode (Projector / Smartboard) */
+        .leitner-modal-overlay.teacher-mode {
+            padding: 0;
+            background: #020617;
+            align-items: stretch;
+            justify-content: stretch;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-modal-card {
+            max-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+            border-radius: 0;
+            box-shadow: none;
+            background: #090e1f;
+            border: none;
+            animation: none;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-modal-header {
+            background: #020617;
+            border-bottom: 2px solid #3b82f6;
+            padding: 14px 32px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-header-title h3 {
+            font-size: 1.65rem;
+            color: #60a5fa;
+            letter-spacing: 0.8px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-unit-subtitle {
+            font-size: 0.95rem;
+            color: #93c5fd;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-teacher-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+            font-size: 0.9rem;
+            padding: 8px 16px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-streak-bar,
+        .leitner-modal-overlay.teacher-mode .leitner-box-stats,
+        .leitner-modal-overlay.teacher-mode .leitner-tools-toggle-btn,
+        .leitner-modal-overlay.teacher-mode .quiz-score-bar,
+        .leitner-modal-overlay.teacher-mode .quiz-binary-bar {
+            display: none !important;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-filter-row {
+            padding: 12px 32px 6px 32px;
+            background: #090e1f;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-filter-row label {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-topic-select {
+            background: #1e293b;
+            color: #f8fafc;
+            border: 1px solid #475569;
+            font-size: 1rem;
+            padding: 8px 14px;
+        }
+        .leitner-modal-overlay.teacher-mode .rapid-fire-timer-bar {
+            background: #111827;
+            border: 2px solid #3b82f6;
+            margin: 10px 32px;
+            padding: 12px 24px;
+            border-radius: 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-title {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-countdown {
+            font-size: 2rem;
+            color: #38bdf8;
+            min-width: 65px;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-progress-track {
+            height: 12px;
+            background: #1e293b;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-ctrl-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            background: #1e293b;
+            color: #ffffff;
+            border-color: #475569;
+        }
+        .leitner-modal-overlay.teacher-mode .timer-ctrl-btn:hover {
+            background: #334155;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 14px 32px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card {
+            min-height: 420px;
+            max-height: 52vh;
+            max-width: 1250px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-inner {
+            min-height: 420px;
+            height: 100%;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-face {
+            min-height: 420px;
+            border-radius: 18px;
+            padding: 36px 50px;
+            box-shadow: 0 16px 50px rgba(0,0,0,0.7);
+            overflow-y: auto;
+            max-height: 100%;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-front {
+            background: #0f172a;
+            border: 4px solid #38bdf8;
+            color: #f8fafc;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-card-back {
+            background: #1e1b4b;
+            border: 4px solid #facc15;
+            color: #fef08a;
+        }
+        .leitner-modal-overlay.teacher-mode .card-meta {
+            font-size: 1.1rem;
+        }
+        .leitner-modal-overlay.teacher-mode .qnum-badge {
+            font-size: 1rem;
+            padding: 5px 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .box-badge {
+            font-size: 1rem;
+            padding: 5px 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .card-question-text {
+            font-size: clamp(1.8rem, 2.8vw, 2.7rem) !important;
+            line-height: 1.3 !important;
+            font-weight: 700;
+            color: #ffffff !important;
+            margin: auto 0;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .rapid-card-prompt {
+            font-size: clamp(1.8rem, 2.8vw, 2.7rem) !important;
+            line-height: 1.3 !important;
+            font-weight: 700;
+            color: #ffffff !important;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .exam-card-prompt {
+            font-size: 2.2rem !important;
+            line-height: 1.3 !important;
+            font-weight: 700;
+            color: #ffffff !important;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+            margin: 12px 0;
+        }
+        .leitner-modal-overlay.teacher-mode .card-answer-text {
+            font-size: 2.6rem !important;
+            line-height: 1.3 !important;
+            font-weight: 800;
+            color: #fef08a !important;
+            margin: auto 0;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+        }
+        .leitner-modal-overlay.teacher-mode .card-main-answer {
+            font-size: 2.6rem !important;
+            line-height: 1.25 !important;
+            font-weight: 800;
+            color: #fef08a !important;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.7);
+            margin: auto 0 14px 0;
+        }
+        .leitner-modal-overlay.teacher-mode .card-explanation-box {
+            font-size: 1.2rem !important;
+            font-style: normal;
+            color: #f1f5f9 !important;
+            line-height: 1.45 !important;
+            max-width: 920px !important;
+            margin: 0 auto;
+            background: rgba(15, 23, 42, 0.95) !important;
+            padding: 14px 20px !important;
+            border-radius: 10px;
+            border: 1.5px solid #334155;
+            border-left: 5px solid #facc15 !important;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+        .leitner-modal-overlay.teacher-mode .exam-card-model-answer {
+            font-size: 1.35rem !important;
+            line-height: 1.5 !important;
+            font-weight: 600;
+            color: #0f172a !important;
+            background: #ffffff !important;
+            border: 2px solid #facc15 !important;
+            padding: 16px 22px !important;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            margin-bottom: 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .card-prompt-hint {
+            font-size: 1.05rem;
+            color: #cbd5e1 !important;
+        }
+        .leitner-modal-overlay.teacher-mode .exam-facts-hint {
+            font-size: 1.05rem !important;
+            color: #93c5fd !important;
+            background: rgba(15, 23, 42, 0.85) !important;
+            border: 1.5px dashed #38bdf8 !important;
+            padding: 8px 16px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .facts-checklist {
+            font-size: 1.15rem !important;
+            line-height: 1.45 !important;
+            padding: 12px 18px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .historian-box {
+            font-size: 1.15rem !important;
+            line-height: 1.45 !important;
+            padding: 14px 20px !important;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-filter-label {
+            color: #94a3b8;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill {
+            background: #1e293b;
+            color: #cbd5e1;
+            border-color: #334155;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill:hover {
+            background: #334155;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+        .leitner-modal-overlay.teacher-mode .stem-pill.active {
+            background: #0284c7;
+            color: #ffffff;
+            border-color: #38bdf8;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-action-bar {
+            padding: 10px 32px 14px 32px;
+            background: #090e1f;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-rate-btn {
+            padding: 12px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-rate-btn .btn-title {
+            font-size: 1.1rem;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-modal-footer {
+            background: #020617;
+            border-top: 1px solid #1e293b;
+            padding: 14px 32px;
+        }
+        .leitner-modal-overlay.teacher-mode .leitner-nav-btn {
+            font-size: 1.05rem;
+            padding: 10px 22px;
+        }
+        /* Mobile Portrait & Responsive Spaced Retrieval Layout */
+        @media (max-width: 768px) {
+            .leitner-modal-overlay {
+                padding: 0 !important;
+                align-items: stretch !important;
+                justify-content: stretch !important;
+            }
+            .leitner-modal-card {
+                width: 100vw !important;
+                height: 100vh !important;
+                max-width: 100vw !important;
+                max-height: 100vh !important;
+                border-radius: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden !important;
+            }
+            .leitner-modal-header {
+                padding: 10px 14px !important;
+                min-height: 48px !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-header-title h3 {
+                font-size: 1.05rem !important;
+            }
+            .leitner-unit-subtitle {
+                font-size: 0.72rem !important;
+                max-width: 170px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .leitner-teacher-btn {
+                padding: 5px 9px !important;
+                font-size: 0.74rem !important;
+            }
+            .leitner-tools-toggle-btn {
+                display: inline-flex !important;
+            }
+            .leitner-tools-drawer {
+                display: none;
+                background: #0f172a;
+                border-bottom: 2px solid #2563eb;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+                max-height: 55vh;
+                overflow-y: auto;
+                flex-shrink: 0;
+                animation: drawerSlideDown 0.2s ease-out;
+            }
+            .leitner-tools-drawer.expanded {
+                display: block !important;
+            }
+            @keyframes drawerSlideDown {
+                from { opacity: 0; transform: translateY(-8px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .leitner-card-container {
+                flex: 1 1 auto !important;
+                min-height: 0 !important;
+                padding: 12px 14px 6px 14px !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .leitner-card {
+                flex: 1 1 auto !important;
+                min-height: 190px !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                touch-action: pan-y;
+            }
+            .leitner-card-inner {
+                height: 100% !important;
+            }
+            .leitner-card-face {
+                padding: 18px 16px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch;
+            }
+            .card-question-text {
+                font-size: 1.2rem !important;
+                font-weight: 700 !important;
+                line-height: 1.45 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+            }
+            .card-answer-text {
+                font-size: 1.28rem !important;
+                font-weight: 800 !important;
+                line-height: 1.4 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+                color: #1e3a8a !important;
+            }
+            .leitner-action-bar {
+                flex-shrink: 0 !important;
+                padding: 8px 14px 10px 14px !important;
+                gap: 8px !important;
+            }
+            .leitner-rate-btn {
+                padding: 12px 6px !important;
+                border-radius: 12px !important;
+                min-height: 50px !important;
+            }
+            .btn-title {
+                font-size: 0.9rem !important;
+                font-weight: 800 !important;
+            }
+            .btn-sub {
+                display: block !important;
+                font-size: 0.68rem !important;
+            }
+            .leitner-modal-footer {
+                flex-shrink: 0 !important;
+                padding: 8px 14px !important;
+            }
+            .leitner-nav-btn {
+                padding: 8px 12px !important;
+                font-size: 0.82rem !important;
+            }
+
+            /* High-Specificity Teacher/Whiteboard Mode Overrides for Mobile Phones */
+            .leitner-modal-overlay.teacher-mode {
+                padding: 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-modal-card {
+                width: 100vw !important;
+                height: 100vh !important;
+                max-width: 100vw !important;
+                max-height: 100vh !important;
+                border-radius: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-modal-header {
+                padding: 8px 12px !important;
+                min-height: 48px !important;
+                flex-shrink: 0 !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                gap: 8px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-header-title h3 {
+                font-size: 0.98rem !important;
+                line-height: 1.2 !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-unit-subtitle {
+                font-size: 0.72rem !important;
+                max-width: 135px !important;
+                white-space: nowrap !important;
+                overflow: hidden !important;
+                text-overflow: ellipsis !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-teacher-btn {
+                padding: 5px 9px !important;
+                font-size: 0.74rem !important;
+                white-space: nowrap !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .rapid-fire-timer-bar {
+                margin: 4px 10px !important;
+                padding: 6px 12px !important;
+                border-radius: 8px !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .timer-title {
+                font-size: 0.8rem !important;
+            }
+            .leitner-modal-overlay.teacher-mode .timer-countdown {
+                font-size: 1.2rem !important;
+                min-width: 45px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .timer-ctrl-btn {
+                padding: 4px 10px !important;
+                font-size: 0.76rem !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-container {
+                flex: 1 1 auto !important;
+                min-height: 0 !important;
+                padding: 8px 12px 6px 12px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: stretch !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card {
+                flex: 1 1 auto !important;
+                min-height: 0 !important;
+                max-height: none !important;
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-inner {
+                min-height: 0 !important;
+                height: 100% !important;
+                flex: 1 1 auto !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-face {
+                min-height: 0 !important;
+                height: 100% !important;
+                border-radius: 14px !important;
+                padding: 16px 14px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                overflow-y: auto !important;
+                -webkit-overflow-scrolling: touch;
+                border-width: 2.5px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-meta {
+                font-size: 0.85rem !important;
+                flex-shrink: 0 !important;
+                margin-bottom: 6px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .qnum-badge {
+                font-size: 0.8rem !important;
+                padding: 3px 8px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-question-text,
+            .leitner-modal-overlay.teacher-mode .rapid-card-prompt {
+                font-size: clamp(1.15rem, 4.2vw, 1.45rem) !important;
+                line-height: 1.4 !important;
+                font-weight: 700 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+                max-height: none !important;
+                overflow: visible !important;
+            }
+            .leitner-modal-overlay.teacher-mode .exam-card-prompt {
+                font-size: clamp(1.05rem, 3.8vw, 1.3rem) !important;
+                line-height: 1.35 !important;
+                margin: 6px 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-answer-text,
+            .leitner-modal-overlay.teacher-mode .card-main-answer {
+                font-size: clamp(1.15rem, 4.4vw, 1.45rem) !important;
+                line-height: 1.35 !important;
+                font-weight: 800 !important;
+                margin: auto 0 8px 0 !important;
+                text-align: center !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-explanation-box {
+                font-size: 0.85rem !important;
+                padding: 8px 10px !important;
+                line-height: 1.35 !important;
+                max-height: 38vh !important;
+                overflow-y: auto !important;
+            }
+            .leitner-modal-overlay.teacher-mode .exam-card-model-answer {
+                font-size: 0.95rem !important;
+                padding: 10px 12px !important;
+                max-height: 35vh !important;
+                overflow-y: auto !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-prompt-hint {
+                font-size: 0.76rem !important;
+                color: #94a3b8 !important;
+                flex-shrink: 0 !important;
+                margin-top: 6px !important;
+                text-align: center !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-modal-footer {
+                padding: 8px 12px 10px 12px !important;
+                flex-shrink: 0 !important;
+                gap: 6px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-nav-btn {
+                padding: 8px 10px !important;
+                font-size: 0.82rem !important;
+            }
+        }
+
+        /* Mobile Landscape Compact Studio Layout (Max Height 550px) */
+        @media (max-height: 550px) and (orientation: landscape) {
+            .leitner-modal-overlay {
+                padding: 0 !important;
+                align-items: stretch !important;
+                justify-content: stretch !important;
+            }
+            .leitner-modal-card {
+                width: 100vw !important;
+                height: 100vh !important;
+                max-width: 100vw !important;
+                max-height: 100vh !important;
+                border-radius: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden !important;
+            }
+            .leitner-modal-header {
+                padding: 3px 12px !important;
+                height: 32px !important;
+                min-height: 32px !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-header-title h3 {
+                font-size: 0.88rem !important;
+            }
+            .leitner-unit-subtitle {
+                display: none !important;
+            }
+            .leitner-teacher-btn {
+                padding: 2px 8px !important;
+                font-size: 0.72rem !important;
+            }
+            .leitner-tools-toggle-btn {
+                display: inline-flex !important;
+                padding: 2px 8px !important;
+                font-size: 0.72rem !important;
+            }
+            .leitner-close-btn {
+                width: 24px !important;
+                height: 24px !important;
+                font-size: 1.1rem !important;
+            }
+            .leitner-tools-drawer {
+                display: none;
+                max-height: 65vh !important;
+                overflow-y: auto !important;
+                flex-shrink: 0 !important;
+            }
+            .leitner-tools-drawer.expanded {
+                display: block !important;
+            }
+            .leitner-card-container {
+                flex: 1 1 auto !important;
+                padding: 4px 12px 2px 12px !important;
+                min-height: 0 !important;
+                display: flex !important;
+                flex-direction: column !important;
+                overflow: hidden !important;
+            }
+            .leitner-card {
+                flex: 1 1 auto !important;
+                height: 100% !important;
+                min-height: 0 !important;
+            }
+            .leitner-card-inner {
+                height: 100% !important;
+            }
+            .leitner-card-face {
+                padding: 6px 14px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: space-between !important;
+                height: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .card-meta {
+                margin-bottom: 2px !important;
+            }
+            .qnum-badge, .box-badge {
+                font-size: 0.65rem !important;
+                padding: 2px 6px !important;
+            }
+            .card-question-text {
+                font-size: 0.95rem !important;
+                line-height: 1.25 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+            }
+            .card-answer-text {
+                font-size: 1.02rem !important;
+                line-height: 1.25 !important;
+                margin: auto 0 !important;
+                text-align: center !important;
+            }
+            .card-prompt-hint {
+                display: none !important;
+            }
+            .leitner-action-bar {
+                flex-shrink: 0 !important;
+                padding: 3px 12px !important;
+                gap: 6px !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr 1fr !important;
+                margin: 0 !important;
+            }
+            .leitner-rate-btn {
+                padding: 3px 6px !important;
+                border-radius: 6px !important;
+                min-height: 32px !important;
+                height: 32px !important;
+                box-sizing: border-box !important;
+            }
+            .btn-title {
+                font-size: 0.78rem !important;
+                font-weight: 800 !important;
+            }
+            .btn-sub {
+                display: none !important;
+            }
+            .leitner-modal-footer {
+                flex-shrink: 0 !important;
+                padding: 2px 12px 3px 12px !important;
+                height: 28px !important;
+                min-height: 28px !important;
+                box-sizing: border-box !important;
+            }
+            .leitner-nav-btn {
+                padding: 2px 8px !important;
+                font-size: 0.7rem !important;
+            }
+
+            /* Teacher Mode Overrides for Mobile Landscape */
+            .leitner-modal-overlay.teacher-mode .leitner-card-container {
+                padding: 4px 12px 2px 12px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card {
+                min-height: 0 !important;
+                max-height: none !important;
+                height: 100% !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-inner {
+                min-height: 0 !important;
+                height: 100% !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-card-face {
+                min-height: 0 !important;
+                height: 100% !important;
+                padding: 6px 14px !important;
+                overflow-y: auto !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-question-text,
+            .leitner-modal-overlay.teacher-mode .rapid-card-prompt {
+                font-size: 0.95rem !important;
+                line-height: 1.25 !important;
+                margin: auto 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-answer-text,
+            .leitner-modal-overlay.teacher-mode .card-main-answer {
+                font-size: 1.02rem !important;
+                line-height: 1.25 !important;
+                margin: auto 0 !important;
+            }
+            .leitner-modal-overlay.teacher-mode .card-prompt-hint {
+                display: none !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-modal-footer {
+                height: 28px !important;
+                min-height: 28px !important;
+                padding: 2px 12px 3px 12px !important;
+            }
+            .leitner-modal-overlay.teacher-mode .leitner-nav-btn {
+                padding: 2px 8px !important;
+                font-size: 0.7rem !important;
+            }
+        }
+
+        /* Strategy Page */
+        .strategy h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.1rem;
+            color: var(--brand-dark);
+            border-bottom: 3px solid var(--brand-red);
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+        .strategy h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            color: var(--brand-red);
+            margin-top: 14px;
+            margin-bottom: 4px;
+        }
+        .strategy p, .strategy li {
+            font-size: 0.95rem;
+            line-height: 1.4;
+            margin-bottom: 6px;
+        }
+        .strategy ul {
+            margin-top: 4px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+        }
+        .rag-box {
+            display: inline-block;
+            width: 14px; height: 14px;
+            border: 1px solid #000;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        /* Grids */
+        .grid-page h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+        }
+        th, td {
+            border: 1.2px solid #475569;
+            padding: 8px 10px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.95rem;
+        }
+        th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        tr:nth-child(even) {
+            background-color: var(--brand-grey);
+        }
+        .col-qnum { width: 5%; text-align: center; font-weight: bold; }
+        .col-question { width: 45%; }
+        .col-rag { width: 4%; text-align: center; }
+        .col-notes { width: 38%; }
+        
+        .rag-checkbox {
+            width: 12px; height: 12px;
+            border: 1.5px solid #334155;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Footer Debrief */
+        .debrief {
+            margin-top: auto !important;
+            border: 2px dashed var(--brand-red);
+            padding: 14px 18px;
+            background: #fff;
+        }
+        .debrief h3 {
+            margin: 0 0 8px 0;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--brand-red);
+        }
+        .debrief p {
+            margin: 4px 0;
+            font-weight: 600;
+        }
+
+        /* The Vault (Answers) */
+        .vault-page {
+            background-color: #fffbc8; /* Pastel yellow */
+            position: relative;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+        .vault-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15rem;
+            color: rgba(0,0,0,0.03);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .vault-content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .vault-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        .vault-subtitle {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #475569;
+            font-size: 1rem;
+        }
+        .vault-screen-controls {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .vault-mode-indicator {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .vault-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .vault-toggle-btn {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .vault-toggle-btn:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+        .vault-toggle-btn.leitner-shortcut {
+            background: #fef3c7;
+            border-color: #fcd34d;
+            color: #92400e;
+        }
+        .vault-toggle-btn.leitner-shortcut:hover {
+            background: #fde68a;
+        }
+        .answer-list {
+            margin-bottom: 30px;
+        }
+        .answer-list h3 {
+            font-family: 'Outfit', sans-serif;
+            border-bottom: 1px solid #999;
+            padding-bottom: 5px;
+        }
+        .answer-item {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: baseline;
+        }
+        .answer-num {
+            font-weight: bold;
+            width: 32px;
+            flex-shrink: 0;
+            color: #1e3a8a;
+        }
+        .answer-text {
+            font-weight: 600;
+            display: inline-block;
+            color: #0f172a;
+        }
+        @media screen {
+            .answer-text {
+                cursor: pointer;
+                user-select: none;
+                position: relative;
+                background: #e2e8f0;
+                color: transparent !important;
+                border-radius: 6px;
+                padding: 3px 12px;
+                min-height: 24px;
+                min-width: 140px;
+                box-sizing: border-box;
+                border: 1px dashed #94a3b8;
+                transition: all 0.15s ease;
+            }
+            .answer-text::after {
+                content: '🔒 Tap to Reveal';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.76rem;
+                font-weight: 700;
+                color: #475569;
+                letter-spacing: 0.4px;
+            }
+            .answer-text:hover {
+                background: #cbd5e1;
+            }
+            .answer-text.revealed {
+                background: #ffffff;
+                color: #0f172a !important;
+                border: 1px solid #10b981;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            }
+            .answer-text.revealed::after {
+                display: none !important;
+            }
+        }
+
+        /* Tracker Page Flex Distribution */
+        .tracker-page {
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: space-between !important;
+            box-sizing: border-box !important;
+        }
+        .tracker-page h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 4px;
+        }
+        .tracker-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+        }
+        .tracker-table th, .tracker-table td {
+            padding: 16px 12px;
+            font-size: 1.05rem;
+            border: 1.2px solid #cbd5e1;
+            text-align: center;
+        }
+        .tracker-table th {
+            background-color: var(--brand-dark);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+        }
+        .col-attempt { width: 8%; }
+        .col-date { width: 13%; }
+        .col-score { width: 14%; }
+        .col-sig { width: 37%; }
+        .col-target { width: 28%; }
+        .tracker-table td {
+            vertical-align: middle;
+        }
+        .col-sig-cell {
+            padding: 8px 10px !important;
+        }
+        .parent-stamp-box {
+            border: 2px dashed #1e3a8a;
+            border-radius: 6px;
+            background: #f8fafc;
+            padding: 8px 10px;
+            text-align: left;
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        .stamp-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            color: #1e3a8a;
+            text-transform: uppercase;
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 3px;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .stamp-effort {
+            font-size: 0.84rem;
+            font-weight: 700;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 6px;
+        }
+        .stamp-stars {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            white-space: nowrap;
+        }
+        .stamp-hint {
+            font-size: 0.7rem;
+            font-weight: normal;
+            color: #64748b;
+        }
+        .stamp-field {
+            display: flex;
+            align-items: flex-end;
+            margin-top: 4px;
+            font-size: 0.8rem;
+            color: #334155;
+            font-weight: 600;
+        }
+        .stamp-label {
+            white-space: nowrap;
+        }
+        .stamp-line {
+            flex-grow: 1;
+            border-bottom: 1px solid #94a3b8;
+            margin-left: 6px;
+            height: 12px;
+        }
+        .reflection-box {
+            border: 2px solid var(--brand-dark);
+            padding: 20px 24px;
+            margin-top: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 240px;
+            background: #fdfdfd;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+        .reflection-box h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--brand-dark);
+            border-bottom: 2px solid var(--brand-dark);
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+        }
+        .reflection-prompt {
+            margin: 8px 0;
+            font-size: 0.98rem;
+        }
+        .reflection-lines {
+            border-bottom: 1.2px dashed #94a3b8;
+            height: 28px;
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        /* Print Optimization & Vault Answers Guarantee */
+        @media print {
+            .page-break { page-break-after: always; }
+            body { font-size: 11pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .vault-bg { background-color: #fffbc8 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .screen-vault-toolbar,
+            .vault-screen-controls,
+            .leitner-modal-overlay {
+                display: none !important;
+            }
+            .answer-item {
+                margin-bottom: 6px !important;
+                display: flex !important;
+                align-items: baseline !important;
+                page-break-inside: avoid !important;
+            }
+            .answer-num {
+                font-weight: bold !important;
+                width: 32px !important;
+                flex-shrink: 0 !important;
+                color: #1e3a8a !important;
+            }
+            .answer-text {
+                background: transparent !important;
+                color: #000000 !important;
+                border: none !important;
+                padding: 0 !important;
+                min-width: 0 !important;
+                min-height: 0 !important;
+                box-shadow: none !important;
+                cursor: default !important;
+                display: inline !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                font-size: 0.95rem !important;
+                font-weight: 600 !important;
+            }
+            .answer-text::after {
+                display: none !important;
+                content: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Screen-Only Toolbar -->
+    <div class="screen-vault-toolbar">
+        <div class="toolbar-brand">
+            <span>⚡</span>
+            <span>Mastery Practice Mode</span>
+            <span class="toolbar-badge">Mobile</span>
+        </div>
+        <div class="toolbar-actions">
+            <button class="toolbar-btn whiteboard" onclick="openTeacherWhiteboardModal()">⚡ Whiteboard Rapid-Fire</button>
+            <button id="open-leitner-btn" class="toolbar-btn quiz" onclick="openPupilQuizModal()">🎯 Recall Quiz (Self-Check)</button>
+            <a href="#the-vault" class="toolbar-btn secondary">🔓 The Vault</a>
+        </div>
+    </div>
+
+    <!-- Cover Page -->
+    <div class="page cover page-break">
+        <div class="cover-content">
+            <h1>The First British Empire (1600–1783)</h1>
+            <h2>"How did trade, slavery, and rebellion shape the First British Empire?"</h2>
+            <h3>Mastery Pack: COMPLETE UNIT MASTERY</h3>
+            
+            <div class="cover-bottom">
+                <p><strong>Operative / Student Name:</strong> ___________________________</p>
+                <p><strong>Target:</strong> Total Recall of 25 Crucial Questions</p>
+                <div class="cover-qr-card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAYAAACHjumMAAAAAklEQVR4AewaftIAAA5XSURBVO3B0W1cWw5FweWDzoOBMC5GwbgYCCPx+FugAR34Ui292VW/fv+BiMiCg4jIkoOIyJKDiMiSg4jIkoOIyJIXf2Ge/ARdwcQ8mXQFE/NkU1cwMU8mXcEm82TSFXyWeTLpCm6YJ5Ou4IZ5cqMrmJgnk67gCebJpCuYmCc/QVfw0UFEZMlBRGTJQURkyUFEZMlBRGTJi0tdwTuYJze6gol58oSuYGKe3OgKbpgnk65gYp5MuoKJefKvzJMbXcGmrmBinky6gol5MukKJubJpCt4QlfwDubJZx1ERJYcRESWHERElhxERJYcRESWvHiIefKEruAduoJN5smNruCGeTLpCm50BRPz5KOuYJN5MukKJl3BxDyZdAUT8+QnM0+e0BX8q4OIyJKDiMiSg4jIkoOIyJKDiMiSF/9R5smkK5iYJze6gklXsKkreIJ5MukKJl3BR+bJE7qCG+bJpCu4YZ5MuoJN5smkK/ivOYiILDmIiCw5iIgsOYiILDmIiCx58X/GPLnRFUzMk3foCm6YJzfMk69mnjzBPLnRFdwwT+TOQURkyUFEZMlBRGTJQURkyUFEZMmLh3QFP1lXMDFPntAVTMyTSVcwMU8mXcETuoJ/ZZ5MuoKJeTLpCm6YJ5Ou4AldwU/QFXwXBxGRJQcRkSUHEZElBxGRJQcRkSUvLpknP1lXMDFPJl3BxDyZdAUT82TSFUzMk0lXMDFPJl3BxDy5YZ581BW8g3ky6Qom5smkK5iYJ5OuYGKeTLqCiXky6QpumCff3UFEZMlBRGTJQURkyUFEZMlBRGTJr99/8B9kntzoCibmyaQreAfz5EZXMDFPJl3BvzJPNnUFTzBPbnQFE/PkCV3Bf81BRGTJQURkyUFEZMlBRGTJQURkyYu/ME8mXcETzJNJVzAxT74T8+RGV7CpK3iCebKlK5iYJ5Ou4AnmyaQrmJgnN7qCJ5gn79AV3DBPJl3BRwcRkSUHEZElBxGRJQcRkSUHEZElv37/wQXz5AldwRPMk0lXcMM8udEV3DBPJl3BE8yTSVdwwzyZdAUfmSc3uoKJeXKjK5iYJze6ghvmyaQrmJgn30lXMDFPJl3BvzqIiCw5iIgsOYiILDmIiCw5iIgseXGpK3iCeTLpCibmyaQruGGeTLqCiXlywzy5YZ5MuoInmCeTrmBLVzAxT+R9zJMb5smkK/isg4jIkoOIyJKDiMiSg4jIkoOIyJIXf2GeTLqCG+bJpCuYmCeTruAJXcGNruAJXcGmruAJXcHEPPmoK3gH82TSFTzBPNnUFUzMk0lXMDFPJl3BxDyZdAVbDiIiSw4iIksOIiJLDiIiSw4iIkte/EVXMDFPnmCe3DBPJl3BDfNk0hXcME9umCeTruCGeXKjK5iYJ1vMk0lXcMM8eYJ58pOZJ0/oCm6YJ5Ou4LMOIiJLDiIiSw4iIksOIiJLDiIiS15c6gom5skTuoIb5smNruCGefKddAU3zJOv1hXcME8mXcHEPJmYJ5u6gieYJ5OuYGKeTLqCiXky6Qom5smWg4jIkoOIyJKDiMiSg4jIkoOIyJIXy7qCG+bJja5gYp7cME+e0BU8wTx5QlcwMU9udAXfRVcwMU9udAU3zJNJV/AO5sl3dxARWXIQEVlyEBFZchARWXIQEVny6/cfvIF5MukKbpgnT+gKJubJE7qC/xfmyaQr2GSeTLqCG+bJpCuYmCeTruCGefKEruAJ5smkK/isg4jIkoOIyJKDiMiSg4jIkoOIyJIXl8yTSVewyTyZdAVPME8mXcEN82Rinky6ghvmyaau4LPMk0lXcMM8udEVvIN5MukKJubJpCuYdAUT8+QduoJ/dRARWXIQEVlyEBFZchARWXIQEVny4i/Mk0lX8ISuYGKeTLqC/yfmyY2u4P+FeXLDPHlCV/AE82TSFWwyTyZdwZaDiMiSg4jIkoOIyJKDiMiSg4jIkl+//2BgntzoCibmyaQrmJgnP1lXcMM8mXQFE/NkU1fw1cyTSVfwBPNk0hVMzJMbXcEN8+QJXcHEPLnRFUzMk0lX8FkHEZElBxGRJQcRkSUHEZElBxGRJS/+oiu4YZ5MuoKJeXKjK5iYJ5OuYGKe3OgKJubJxDx5h65gYp5MuoIb5slP1RVsMk8mXcGNruAJXcHEPPlqBxGRJQcRkSUHEZElBxGRJQcRkSUv/sI8udEVbDJPbpgnTzBPJl3BJvPkhnlywzz5LrqCiXky6Qom5smNruA7MU82dQVf7SAisuQgIrLkICKy5CAisuQgIrLkxaWuYFNX8ATz5AldwRPMk0lX8ISu4IZ5MukK/pV5MukKbnQFP0FXMDFPbnQFTzBPJubJVzuIiCw5iIgsOYiILDmIiCw5iIgsefFDmCeTruA7MU8mXcHEPJl0BRPz5B3Mk4+6gncwT55gnmzqCibmyQ3zZNIVPKErmJgn/+ogIrLkICKy5CAisuQgIrLkxSXz5EZX8ISu4AldwcQ8mZgnN7qCTV3BO3QF30VX8ATzZJN58oSu4AldwVc7iIgsOYiILDmIiCw5iIgsOYiILPn1+w8G5smkK3iCefIOXcHEPLnRFXwn5slP1RVMzJNJVzAxT250BRPzZNIVPME8+U66ghvmyaQr+OggIrLkICKy5CAisuQgIrLkICKy5MUl82TSFUzMk0lX8ATz5AldwQ3z5EZX8ATz5EZX8ATz5KOuYGKeTLqCiXky6Qom5sk7mCeTruBGV3DDPLnRFUzMkxvmyaQr+KyDiMiSg4jIkoOIyJKDiMiSg4jIkhd/0RXcME+eYJ7c6ApumCeTruAJXcHEPJl0BTe6gieYJ5Ou4LPMk03myY2uYGKe3OgKJubJDfPkCV3BDfPkhnmy5SAisuQgIrLkICKy5CAisuQgIrLkxV+YJze6ghvmyaQr+Am6gol5csM8udEV3DBPbpgnn9UV3DBPJl3BDfPkRlcwMU9udAU3uoKJeTLpCibmyaQruNEVfLWDiMiSg4jIkoOIyJKDiMiSg4jIkhd/0RXcME9udAUT8+QJXcETzJNJV7CpK5iYJ5OuYNIVTMyTG13Bd9EVTMyTG13BxDy5YZ5MuoJJVzAxTyZdwcQ8+e4OIiJLDiIiSw4iIksOIiJLDiIiS15cMk9udAUT82TSFdwwTybmyaQrmJgnT+gKbpgnN7qCiXlyoyuYmCefZZ7c6Aom5smNrmDSFUzMk4l5csM8mXQFN8yTTV3BE8yTSVfwWQcRkSUHEZElBxGRJQcRkSUHEZElLy51BTfMkyeYJ5Ou4IZ5MukKJubJDfNk0hVMuoKJefIOXcHEPPmsrmCTeXKjK3iCefKErmCTeXKjK9hyEBFZchARWXIQEVlyEBFZchARWfLr9x8sMk8mXcHEPJl0BRPz5EZXMDFPbnQFN8yTSVdwwzyZdAUT8+RGVzAxTz7qCibmyaQreIJ5MukKnmCeTLqCJ5gnk65gYp48oSv4agcRkSUHEZElBxGRJQcRkSUHEZElv37/wQXz5EZXMDFPJl3BxDx5QlcwMU8mXcETzJNJV/AE82TSFUzMkxtdwVczTyZdwQ3zZNIVTMyTJ3QFm8yTTV3BxDyZdAUfHURElhxERJYcRESWHERElhxERJa8+AvzZNIVTMyTTV3BDfNkYp78BObJpq7ghnnyWV3BDfPkCebJO3QFN8yTTV3BDfNkYp5MuoLPOoiILDmIiCw5iIgsOYiILDmIiCx58RddwY2uYJN5MukKJl3BDfPkCebJDfNk0hVMzJNN5slndQU/mXnyDl3BxDyZdAUT82Rinky6gq92EBFZchARWXIQEVlyEBFZchARWfLiknnyDl3Bpq5gU1cwMU+e0BXcME8mXcHEPNnSFTyhK5iYJ5OuYGKeTLqCiXky6QpudAUT82RTV7DlICKy5CAisuQgIrLkICKy5CAisuTX7z8YmCeTruCGeXKjK5iYJ0/oCibmyU/QFTzBPPlqXcHEPLnRFWwyT250BTfMk++kK7hhnky6go8OIiJLDiIiSw4iIksOIiJLDiIiS379/oP/IPPkRldwwzyZdAUT8+RGVzAxTyZdwcQ8udEV/CvzZFNXMDFPbnQFE/Nk0hXcME9udAVPME+e0BX8q4OIyJKDiMiSg4jIkoOIyJKDiMiSF39hnvwEXcGNrmBinky6ghvmyY2uYGKeTLqCiXmyyTz5qCt4QlcwMU82mSc3zJNJVzDpCibmyQ3zZNIVPKErmJgnk67gsw4iIksOIiJLDiIiSw4iIksOIiJLXlzqCt7BPLnRFUzMk0lXsKkruNEV3OgKJubJE7qCr9YVPKEruGGeTLqCiXky6Qqe0BU8oSu40RX8q4OIyJKDiMiSg4jIkoOIyJKDiMiSFw8xT57QFTzBPLlhnky6gklXsMk8udEVPME82dIVTMyTG13BpCvYZJ5MuoKJeXLDPNlknky6gol5MukKPusgIrLkICKy5CAisuQgIrLkICKy5MV/VFcwMU8mXcHEPJl0BTfMk0lX8ATzZNIVbDFPJl3BJvPkCV3Bja7gCV3BxDy50RVMzJPv4iAisuQgIrLkICKy5CAisuQgIrLkxf+ZrmBintwwT250BU/oCibmycQ8udEVTMyTzzJPntAVPME8mZgnN8yTSVcw6QpudAXvYJ5sOYiILDmIiCw5iIgsOYiILDmIiCx58ZCu4CcwT57QFUzMkxvmyaauYGKeTMyTSVfwWebJpCuYmCcT8+RGV/AO5smkK5iYJze6ghtdwXdxEBFZchARWXIQEVlyEBFZchARWfLiknnyE5gnk65gYp5sMk8mXcHEPJmYJ5Ou4KuZJz9BV3DDPLnRFbyDeXKjK3iCeTLpCj46iIgsOYiILDmIiCw5iIgsOYiILPn1+w9ERBYcRESWHERElhxERJYcRESW/A+CjGf5myfXPAAAAABJRU5ErkJggg==" alt="Digital Vault QR Code" class="cover-qr-img">
+                    <div class="cover-qr-info">
+                        <div class="cover-qr-title">⚡ Interactive Recall Quiz &amp; Scratch-Off Vault</div>
+                        <div class="cover-qr-desc">Scan with your phone to launch Instant-Feedback Recall Quiz (#practice-mode) &amp; tap-to-reveal self-marking solutions.</div>
+                        <div class="cover-qr-url">the-history-revision-hub.netlify.app/units/first_british_empire/mastery_pack_full.html#practice-mode</div>
+                    </div>
+                </div>
+                <p style="margin-top: 12px; font-size: 0.85rem; color: #777;">RESTRICTED ACCESS - MASTER YOUR MEMORY</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Strategy Page -->
+    <div class="page strategy page-break">
+        <h1>How to Hack Your Memory<br><span style="font-size: 1.2rem; color: #555;">(Rules of Engagement)</span></h1>
+        
+        <h2>1. Never Just Read</h2>
+        <p>Reading the answers feels like learning, but it’s an illusion. You must force your brain to struggle to find the answer. The struggle is what builds memory pathways.</p>
+
+        <h2>2. Cover, Recall, Check</h2>
+        <p>Cover the answer sheet. Write your answer down in the notes section (or say it out loud). Only then are you allowed to check 'The Vault'.</p>
+
+        <h2>3. Track Your Threat Level</h2>
+        <p>Use the R-A-G (Red, Amber, Green) checkboxes next to every question after you attempt it.</p>
+        <ul>
+            <li><span class="rag-box" style="background: #4ade80;"></span> <strong>Green:</strong> I nailed it instantly.</li>
+            <li><span class="rag-box" style="background: #fbbf24;"></span> <strong>Amber:</strong> I got it, but I had to think hard.</li>
+            <li><span class="rag-box" style="background: #f87171;"></span> <strong>Red:</strong> My mind went blank. (Revisit these tomorrow).</li>
+        </ul>
+
+        <h2>4. The Interrogation (Homework Protocol)</h2>
+        <p>True mastery requires testing under pressure. Hand 'The Vault' (answers) to your parent or guardian. They will test you on 20 random questions. They hold the score; they hold the signature.</p>
+
+        <h2>5. The 3-Star Parent Effort Rubric</h2>
+        <p>When authenticating your spaced retrieval practice on the final Mastery Tracker, your parent or guardian will evaluate your effort using the following criteria:</p>
+        <ul>
+            <li><strong>⭐⭐⭐ 3 Stars (Full Mastery):</strong> Completed under strict exam conditions without glancing at notes or the Knowledge Vault. Total independent recall.</li>
+            <li><strong>⭐⭐ 2 Stars (Consolidating):</strong> Required 1–2 hints from the Knowledge Vault, but demonstrated sound foundational understanding.</li>
+            <li><strong>⭐ 1 Star (Needs Intervention):</strong> Rushed, mind went blank, or completed with notes open. Target facts must be hunted down and re-tested tomorrow.</li>
+        </ul>
+    </div>
+
+    <!-- Question Grids -->
+    
+    <div class="page grid-page page-break" id="topic-part-0" style="display: flex; flex-direction: column;">
+        <h2>The East India Company & Mughal Bengal (1600–1757)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">1</td>
+                    <td class="col-question">In what year did Queen Elizabeth I sign the royal charter establishing the East India Company?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">2</td>
+                    <td class="col-question">What 1534 statute declared the English monarch to be the Supreme Head of the Church of England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">3</td>
+                    <td class="col-question">What terrifying weapon did Sir Francis Drake deploy at midnight off Calais in 1588 to scatter the Spanish Armada?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">4</td>
+                    <td class="col-question">What political belief held that kings were appointed directly by God and could not be questioned by Parliament?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">5</td>
+                    <td class="col-question">What constitutional document did William and Mary sign in 1689 establishing parliamentary supremacy under law?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">6</td>
+                    <td class="col-question">In what year did Queen Elizabeth I grant the royal charter founding the East India Company?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">7</td>
+                    <td class="col-question">What were fortified European trading warehouses called in 17th-century India?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">8</td>
+                    <td class="col-question">Which British commander defeated Nawab Siraj ud-Daulah at the Battle of Plassey in 1757?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">9</td>
+                    <td class="col-question">What constitutional right did the Mughal Emperor grant the Company in 1765 to collect all taxes in Bengal?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">10</td>
+                    <td class="col-question">What 1689 law established that the English monarch cannot suspend laws or raise taxes without Parliament?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">11</td>
+                    <td class="col-question">What was the horrific transatlantic voyage of enslaved Africans across the ocean called?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">12</td>
+                    <td class="col-question">Which English port city grew into the largest slave-trading port in Europe by the late 1700s?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">13</td>
+                    <td class="col-question">What famous 1788 printed diagram showed captive humans packed onto shelves inside a slave ship?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">14</td>
+                    <td class="col-question">Which formerly enslaved author published a bestselling 1789 autobiography exposing the horrors of the slave trade?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">15</td>
+                    <td class="col-question">Who was the Puritan Lord Protector of England whose navy captured Jamaica in 1655?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">16</td>
+                    <td class="col-question">Which Caribbean island was seized by Oliver Cromwell’s forces in 1655 and became Britain’s premier sugar colony?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">17</td>
+                    <td class="col-question">What were self-liberated formerly enslaved Africans who founded mountain communities called?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">18</td>
+                    <td class="col-question">Which female commander led the Windward Maroons in guerrilla warfare against British soldiers?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">19</td>
+                    <td class="col-question">In what year did the British Crown sign a peace treaty granting the Maroons self-governing autonomy?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">20</td>
+                    <td class="col-question">What ancient coastal tax did King Charles I impose illegally without Parliament’s consent in the 1630s?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <div class="page grid-page page-break" id="topic-part-1" style="display: flex; flex-direction: column;">
+        <h2>The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th class="col-qnum">Q#</th>
+                    <th class="col-question">The Target Question</th>
+                    <th class="col-rag">R</th>
+                    <th class="col-rag">A</th>
+                    <th class="col-rag">G</th>
+                    <th class="col-notes">Notes / My Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+            
+                <tr>
+                    <td class="col-qnum">21</td>
+                    <td class="col-question">What slogan did American colonists use to protest British taxes passed without elected colonial MPs?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">22</td>
+                    <td class="col-question">What 1765 tax placed duties on newspapers, legal documents, and playing cards in the colonies?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">23</td>
+                    <td class="col-question">What 1770 street confrontation resulted in British soldiers firing and killing five Boston civilians?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">24</td>
+                    <td class="col-question">How many chests of East India Company tea were dumped into Boston Harbour in December 1773?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+                <tr>
+                    <td class="col-qnum">25</td>
+                    <td class="col-question">In what year did King Henry VIII declare himself Supreme Head of the Church of England?</td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-rag"><div class="rag-checkbox"></div></td>
+                    <td class="col-notes"></td>
+                </tr>
+                
+            </tbody>
+        </table>
+        
+        <div class="debrief">
+            <h3>MISSION DEBRIEF</h3>
+            <p>Score: _______ / 20</p>
+            <p>Parent/Guardian Authentication (Signature): ___________________________</p>
+            <p>Date: _______</p>
+        </div>
+    </div>
+            
+    <!-- The Vault -->
+    <div class="page vault-page page-break vault-bg page-flex-full" id="the-vault">
+        <div class="vault-watermark">🔒</div>
+        <div class="vault-content page-body-stretch">
+            <h1>THE VAULT</h1>
+            <p class="vault-subtitle">Restricted Access: Answer Keys</p>
+            <div class="vault-screen-controls">
+                <span class="vault-mode-indicator">🔒 Tap each badge to scratch-off &amp; reveal</span>
+                <div class="vault-btn-group">
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(true)">👁️ Reveal All</button>
+                    <button class="vault-toggle-btn" onclick="toggleAllAnswers(false)">🔒 Shield All</button>
+                    <button class="vault-toggle-btn leitner-shortcut" onclick="openLeitnerModal()">⚡ Leitner Deck</button>
+                </div>
+            </div>
+        <div class="answer-list"><h3>The East India Company & Mughal Bengal (1600–1757)</h3>
+                <div class="answer-item">
+                    <div class="answer-num">1.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1600 (31 December).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">2.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Act of Supremacy.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">3.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Fireships (hell-burners).</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">4.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Divine Right of Kings.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">5.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Bill of Rights.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">6.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1600.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">7.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Factories.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">8.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Robert Clive.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">9.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Diwani.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">10.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Bill of Rights.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">11.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Middle Passage.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">12.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Liverpool.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">13.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Brookes slave ship diagram.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">14.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Olaudah Equiano.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">15.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Oliver Cromwell.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">16.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Jamaica.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">17.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Maroons.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">18.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Queen Nanny.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">19.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1739.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">20.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">Ship Money.</div>
+                </div>
+                </div><div class="answer-list"><h3>The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)</h3>
+                <div class="answer-item">
+                    <div class="answer-num">21.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">‘No taxation without representation!’</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">22.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Stamp Act.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">23.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">The Boston Massacre.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">24.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">342 chests.</div>
+                </div>
+                
+                <div class="answer-item">
+                    <div class="answer-num">25.</div>
+                    <div class="answer-text" onclick="this.classList.toggle('revealed')">1534.</div>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    <!-- Tracker Page -->
+    <div class="page tracker-page page-flex-full">
+        <div>
+            <h1>Mastery Tracker</h1>
+            <p style="text-align: center; margin-bottom: 16px;">Track your total recall score across all 25 questions.</p>
+            
+            <table class="tracker-table">
+                <thead>
+                    <tr>
+                        <th class="col-attempt">Attempt</th>
+                        <th class="col-date">Date</th>
+                        <th class="col-score">Score (/25)</th>
+                        <th class="col-sig">Parent Validation Stamp</th>
+                        <th class="col-target">Target for Next Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>1</strong></td><td></td><td></td><td class="col-sig-cell">
+                        <div class="parent-stamp-box">
+                            <div class="stamp-badge">PARENT VALIDATION STAMP</div>
+                            <div class="stamp-effort">
+                                <span>Effort: ⭐ ⭐ ⭐</span>
+                                <span class="stamp-hint">(Circle 1–3)</span>
+                            </div>
+                            <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
+                            <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
+                        </div></td><td></td></tr>
+                    <tr><td><strong>2</strong></td><td></td><td></td><td class="col-sig-cell">
+                        <div class="parent-stamp-box">
+                            <div class="stamp-badge">PARENT VALIDATION STAMP</div>
+                            <div class="stamp-effort">
+                                <span>Effort: ⭐ ⭐ ⭐</span>
+                                <span class="stamp-hint">(Circle 1–3)</span>
+                            </div>
+                            <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
+                            <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
+                        </div></td><td></td></tr>
+                    <tr><td><strong>3</strong></td><td></td><td></td><td class="col-sig-cell">
+                        <div class="parent-stamp-box">
+                            <div class="stamp-badge">PARENT VALIDATION STAMP</div>
+                            <div class="stamp-effort">
+                                <span>Effort: ⭐ ⭐ ⭐</span>
+                                <span class="stamp-hint">(Circle 1–3)</span>
+                            </div>
+                            <div class="stamp-field"><span class="stamp-label">Date:</span><span class="stamp-line"></span></div>
+                            <div class="stamp-field"><span class="stamp-label">Signature:</span><span class="stamp-line"></span></div>
+                        </div></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="reflection-box page-body-stretch">
+            <h3>Operative Reflection</h3>
+            <div class="reflection-prompt">
+                <strong>1. My ultimate strength in this unit is...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>2. The three specific facts I need to hunt down and memorize tonight are...</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+            <div class="reflection-prompt">
+                <strong>3. Key targets and action steps for the next retrieval attempt:</strong>
+                <div class="reflection-lines"></div>
+                <div class="reflection-lines"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Practice & Whiteboard Modal -->
+    <div id="leitner-modal" class="leitner-modal-overlay" style="display: none;">
+        <div class="leitner-modal-card">
+            <div class="leitner-modal-header">
+                <div class="leitner-header-title">
+                    <h3 id="leitner-modal-title">🎯 Pupil Recall Quiz · Instant Feedback</h3>
+                    <p class="leitner-unit-subtitle">The First British Empire (1600–1783) · Complete Unit Mastery</p>
+                </div>
+                <div class="leitner-header-actions">
+                    <button class="leitner-tools-toggle-btn" onclick="toggleLeitnerTools()" id="leitner-tools-btn" title="Toggle Spaced Retrieval Tools &amp; Stats">⚙️ Tools</button>
+                    <button class="leitner-teacher-btn" onclick="toggleTeacherMode()" id="teacher-mode-btn" title="Toggle Classroom Projector Display (Shortcut: T)">📽️ Teacher Mode</button>
+                    <button class="leitner-close-btn" onclick="closeLeitnerModal()" title="Close Practice Mode">&times;</button>
+                </div>
+            </div>
+
+            
+
+            <!-- Collapsible Spaced Retrieval Tools Drawer -->
+            <div id="leitner-tools-drawer" class="leitner-tools-drawer">
+                <div class="leitner-filter-row">
+                    <label for="leitner-topic-select">Filter Topic:</label>
+                    <select id="leitner-topic-select" class="leitner-topic-select" onchange="changeLeitnerTopic(this.value)">
+                        <option value="all">All Topics (25 Questions)</option>
+                        <option value="0">Part 1: The East India Company & Mughal Bengal (1600–1757)</option>
+<option value="1">Part 2: The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)</option>
+                    </select>
+                </div>
+
+                <!-- Rapid-Fire Classroom Retrieval Timer (Whiteboard / Projector Drill) -->
+                <div class="rapid-fire-timer-bar" id="rapid-fire-bar">
+                    <div class="timer-badge-group">
+                        <span class="timer-flame">⏱️</span>
+                        <span class="timer-title">Rapid-Fire Recall:</span>
+                        <span class="timer-countdown" id="timer-countdown-text">15s</span>
+                    </div>
+                    <div class="timer-progress-track">
+                        <div class="timer-progress-fill" id="timer-progress-fill"></div>
+                    </div>
+                    <div class="timer-btn-group">
+                        <button class="timer-ctrl-btn" id="timer-toggle-btn" onclick="toggleRapidFireTimer()" title="Start / Pause 15s Timer (Enter)">▶️ Start</button>
+                        <button class="timer-ctrl-btn reset" onclick="resetRapidFireTimer(true)" title="Reset &amp; Start 15s Countdown (Shortcut: R)">🔄 15s (R)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instant-Feedback Live Score & Review Missed Bar -->
+            <div class="quiz-score-bar" id="quiz-score-bar">
+                <div class="quiz-score-pill">
+                    <span>🎯 Mastery Score:</span>
+                    <strong id="quiz-score-text">0 / 0 (0%)</strong>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <button class="quiz-review-missed-btn" id="btn-review-missed" onclick="filterMissedQuestions()" style="display: none;">
+                        🔁 Review Missed (<span id="missed-count">0</span>)
+                    </button>
+                    <button class="quiz-reset-score-btn" onclick="resetQuizScore()" title="Reset score and restart quiz">
+                        🔄 Restart Quiz
+                    </button>
+                </div>
+            </div>
+
+            <!-- Flashcard Area -->
+            <div class="leitner-card-container">
+                <div class="leitner-card" id="leitner-flashcard" onclick="flipCurrentCard()">
+                    <div class="leitner-card-inner">
+                        <div class="leitner-card-face leitner-card-front">
+                            <div class="card-meta">
+                                <span id="card-qnum-badge" class="qnum-badge">Q# 1</span>
+                            </div>
+                            <div class="card-question-text" id="card-question-text">
+                                Loading question...
+                            </div>
+                            <div class="card-prompt-hint">👆 Tap card to flip &amp; reveal answer</div>
+                        </div>
+                        <div class="leitner-card-face leitner-card-back">
+                            <div class="card-meta">
+                                <span class="qnum-badge ans">Answer Key</span>
+                            </div>
+                            <div class="card-answer-text" id="card-answer-text">
+                                Loading answer...
+                            </div>
+                            <div class="card-prompt-hint">Rate your recall below 👇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instant-Feedback Binary Rating Bar -->
+            <div class="quiz-binary-bar" id="quiz-binary-bar">
+                <button class="quiz-rate-btn btn-needs-review" onclick="rateBinaryCard(false)">
+                    <span class="btn-title">❌ Needs Review</span>
+                    <span class="btn-sub">Didn't know / Guessed</span>
+                </button>
+                <button class="quiz-rate-btn btn-got-it" onclick="rateBinaryCard(true)">
+                    <span class="btn-title">✅ Got It (+1)</span>
+                    <span class="btn-sub">Recalled correctly</span>
+                </button>
+            </div>
+
+            <!-- Navigation Footer -->
+            <div class="leitner-modal-footer">
+                <button class="leitner-nav-btn" onclick="prevCard()">⬅️ Prev</button>
+                <button class="leitner-nav-btn" onclick="shuffleCurrentDeck()">🔀 Shuffle</button>
+                <button class="leitner-nav-btn" onclick="resetCurrentDeck()">🔄 Reset</button>
+                <button class="leitner-nav-btn" onclick="nextCard()">Next ➡️</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+  (function() {
+    const LEITNER_STORAGE_KEY_RAPID = 'leitner_v1_first_british_empire_full';
+    const LEITNER_STORAGE_KEY_EXAM = 'leitner_v1_first_british_empire_full_exam';
+    let LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+    const STREAK_STORAGE_KEY = 'leitner_spaced_activity_v1';
+
+    const RAPID_DECK = [{"id":1,"q":"In what year did Queen Elizabeth I sign the royal charter establishing the East India Company?","a":"1600 (31 December).","topic":"The East India Company & Mughal Bengal (1600–1757)","tier":"rapid"},{"id":2,"q":"What 1534 statute declared the English monarch to be the Supreme Head of the Church of England?","a":"The Act of Supremacy.","topic":"The East India Company & Mughal Bengal (1600–1757)","tier":"rapid"},{"id":3,"q":"What terrifying weapon did Sir Francis Drake deploy at midnight off Calais in 1588 to scatter the Spanish Armada?","a":"Fireships (hell-burners).","topic":"The East India Company & Mughal Bengal (1600–1757)","tier":"rapid"},{"id":4,"q":"What political belief held that kings were appointed directly by God and could not be questioned by Parliament?","a":"The Divine Right of Kings.","topic":"The East India Company & Mughal Bengal (1600–1757)","tier":"rapid"},{"id":5,"q":"What constitutional document did William and Mary sign in 1689 establishing parliamentary supremacy under law?","a":"The Bill of Rights.","topic":"The East India Company & Mughal Bengal (1600–1757)","tier":"rapid"},{"id":6,"q":"In what year did Queen Elizabeth I grant the royal charter founding the East India Company?","a":"1600.","topic":"The Transatlantic Slave Trade & The Middle Passage (1619–1807)","tier":"rapid"},{"id":7,"q":"What were fortified European trading warehouses called in 17th-century India?","a":"Factories.","topic":"The Transatlantic Slave Trade & The Middle Passage (1619–1807)","tier":"rapid"},{"id":8,"q":"Which British commander defeated Nawab Siraj ud-Daulah at the Battle of Plassey in 1757?","a":"Robert Clive.","topic":"The Transatlantic Slave Trade & The Middle Passage (1619–1807)","tier":"rapid"},{"id":9,"q":"What constitutional right did the Mughal Emperor grant the Company in 1765 to collect all taxes in Bengal?","a":"The Diwani.","topic":"The Transatlantic Slave Trade & The Middle Passage (1619–1807)","tier":"rapid"},{"id":10,"q":"What 1689 law established that the English monarch cannot suspend laws or raise taxes without Parliament?","a":"The Bill of Rights.","topic":"The Transatlantic Slave Trade & The Middle Passage (1619–1807)","tier":"rapid"},{"id":11,"q":"What was the horrific transatlantic voyage of enslaved Africans across the ocean called?","a":"The Middle Passage.","topic":"Plantation Reality, Queen Nanny & Maroon Resistance (1655–1740)","tier":"rapid"},{"id":12,"q":"Which English port city grew into the largest slave-trading port in Europe by the late 1700s?","a":"Liverpool.","topic":"Plantation Reality, Queen Nanny & Maroon Resistance (1655–1740)","tier":"rapid"},{"id":13,"q":"What famous 1788 printed diagram showed captive humans packed onto shelves inside a slave ship?","a":"The Brookes slave ship diagram.","topic":"Plantation Reality, Queen Nanny & Maroon Resistance (1655–1740)","tier":"rapid"},{"id":14,"q":"Which formerly enslaved author published a bestselling 1789 autobiography exposing the horrors of the slave trade?","a":"Olaudah Equiano.","topic":"Plantation Reality, Queen Nanny & Maroon Resistance (1655–1740)","tier":"rapid"},{"id":15,"q":"Who was the Puritan Lord Protector of England whose navy captured Jamaica in 1655?","a":"Oliver Cromwell.","topic":"Plantation Reality, Queen Nanny & Maroon Resistance (1655–1740)","tier":"rapid"},{"id":16,"q":"Which Caribbean island was seized by Oliver Cromwell’s forces in 1655 and became Britain’s premier sugar colony?","a":"Jamaica.","topic":"The Thirteen Colonies, The Proclamation of 1763 & The Boston Tea Party (1763–1773)","tier":"rapid"},{"id":17,"q":"What were self-liberated formerly enslaved Africans who founded mountain communities called?","a":"Maroons.","topic":"The Thirteen Colonies, The Proclamation of 1763 & The Boston Tea Party (1763–1773)","tier":"rapid"},{"id":18,"q":"Which female commander led the Windward Maroons in guerrilla warfare against British soldiers?","a":"Queen Nanny.","topic":"The Thirteen Colonies, The Proclamation of 1763 & The Boston Tea Party (1763–1773)","tier":"rapid"},{"id":19,"q":"In what year did the British Crown sign a peace treaty granting the Maroons self-governing autonomy?","a":"1739.","topic":"The Thirteen Colonies, The Proclamation of 1763 & The Boston Tea Party (1763–1773)","tier":"rapid"},{"id":20,"q":"What ancient coastal tax did King Charles I impose illegally without Parliament’s consent in the 1630s?","a":"Ship Money.","topic":"The Thirteen Colonies, The Proclamation of 1763 & The Boston Tea Party (1763–1773)","tier":"rapid"},{"id":21,"q":"What slogan did American colonists use to protest British taxes passed without elected colonial MPs?","a":"‘No taxation without representation!’","topic":"The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)","tier":"rapid"},{"id":22,"q":"What 1765 tax placed duties on newspapers, legal documents, and playing cards in the colonies?","a":"The Stamp Act.","topic":"The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)","tier":"rapid"},{"id":23,"q":"What 1770 street confrontation resulted in British soldiers firing and killing five Boston civilians?","a":"The Boston Massacre.","topic":"The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)","tier":"rapid"},{"id":24,"q":"How many chests of East India Company tea were dumped into Boston Harbour in December 1773?","a":"342 chests.","topic":"The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)","tier":"rapid"},{"id":25,"q":"In what year did King Henry VIII declare himself Supreme Head of the Church of England?","a":"1534.","topic":"The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)","tier":"rapid"}];
+
+    const EXAM_DECK = [];
+
+    let currentTier = 'rapid';
+    let currentStemFilter = 'all';
+    let ALL_DECK = RAPID_DECK;
+    let currentDeck = [...ALL_DECK];
+    let currentIndex = 0;
+    let userBoxes = {};
+    let isTeacherMode = false;
+    let timerInterval = null;
+    let timerRemainingMs = 15000;
+    let timerEndTime = 0;
+    let isTimerRunning = false;
+    let quizScore = {
+      correct: 0,
+      answered: 0,
+      missedIds: new Set()
+    };
+    let isReviewingMissed = false;
+
+    function getLocalDateString(d) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return year + '-' + month + '-' + day;
+    }
+
+    function recordLeitnerActivity() {
+      try {
+        const todayStr = getLocalDateString(new Date());
+        let activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+        if (!activity.includes(todayStr)) {
+          activity.push(todayStr);
+          localStorage.setItem(STREAK_STORAGE_KEY, JSON.stringify(activity));
+        }
+        updateStreakAndHeatmap();
+      } catch (e) {}
+    }
+
+    function updateStreakAndHeatmap() {
+      let activity = [];
+      try {
+        activity = JSON.parse(localStorage.getItem(STREAK_STORAGE_KEY) || '[]');
+      } catch (e) {}
+
+      const today = new Date();
+      const todayStr = getLocalDateString(today);
+      const yesterday = new Date(Date.now() - 86400000);
+      const yesterdayStr = getLocalDateString(yesterday);
+
+      const practicedToday = activity.includes(todayStr);
+      let streak = 0;
+
+      if (practicedToday) {
+        streak = 1;
+        let checkDate = new Date(Date.now() - 86400000);
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      } else if (activity.includes(yesterdayStr)) {
+        let checkDate = new Date(yesterday.getTime());
+        while (activity.includes(getLocalDateString(checkDate))) {
+          streak++;
+          checkDate = new Date(checkDate.getTime() - 86400000);
+        }
+      }
+
+      // Update Streak Text
+      const titleEl = document.getElementById('streak-title');
+      const subtitleEl = document.getElementById('streak-subtitle');
+      if (titleEl) {
+        if (streak > 0) {
+          titleEl.textContent = '🔥 ' + streak + '-Day Spaced Streak!';
+        } else {
+          titleEl.textContent = '⚡ 0-Day Spaced Streak';
+        }
+      }
+      if (subtitleEl) {
+        if (practicedToday) {
+          subtitleEl.textContent = 'Streak active today! Great effort on retrieval practice.';
+        } else if (streak > 0) {
+          subtitleEl.textContent = 'Practice today to extend your ' + streak + '-day streak!';
+        } else {
+          subtitleEl.textContent = 'Practice 5 mins today to ignite your streak!';
+        }
+      }
+
+      // Render 7-Day Heatmap
+      const heatmapEl = document.getElementById('streak-heatmap-days');
+      if (heatmapEl) {
+        const dayLetters = ['Su', 'M', 'Tu', 'W', 'Th', 'F', 'Sa'];
+        let html = '';
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(Date.now() - i * 86400000);
+          const dStr = getLocalDateString(d);
+          const isToday = (i === 0);
+          const isActive = activity.includes(dStr);
+          const label = dayLetters[d.getDay()];
+
+          html += '<div class="heatmap-day" title="' + dStr + ': ' + (isActive ? 'Practiced' : 'No Practice') + '">' +
+            '<span class="heatmap-label">' + label + '</span>' +
+            '<div class="heatmap-cell ' + (isActive ? 'active' : '') + ' ' + (isToday ? 'today' : '') + '">' +
+            (isActive ? '✓' : '') +
+            '</div></div>';
+        }
+        heatmapEl.innerHTML = html;
+      }
+    }
+
+    function loadLeitnerProgress() {
+      try {
+        const raw = localStorage.getItem(LEITNER_STORAGE_KEY);
+        if (raw) userBoxes = JSON.parse(raw);
+        else userBoxes = {};
+      } catch (e) {
+        userBoxes = {};
+      }
+    }
+
+    function saveLeitnerProgress() {
+      try {
+        localStorage.setItem(LEITNER_STORAGE_KEY, JSON.stringify(userBoxes));
+      } catch (e) {}
+    }
+
+    function getCardBox(cardId) {
+      return userBoxes[cardId] || 1;
+    }
+
+    function updateStats() {
+      let b1 = 0, b2 = 0, b3 = 0;
+      ALL_DECK.forEach(card => {
+        const b = getCardBox(card.id);
+        if (b === 3) b3++;
+        else if (b === 2) b2++;
+        else b1++;
+      });
+      const el1 = document.getElementById('count-box-1');
+      const el2 = document.getElementById('count-box-2');
+      const el3 = document.getElementById('count-box-3');
+      if (el1) el1.textContent = b1;
+      if (el2) el2.textContent = b2;
+      if (el3) el3.textContent = b3;
+    }
+
+    function renderCurrentCard() {
+      if (currentDeck.length === 0) return;
+      if (currentIndex < 0) currentIndex = 0;
+      if (currentIndex >= currentDeck.length) currentIndex = 0;
+
+      const card = currentDeck[currentIndex];
+      const cardBox = getCardBox(card.id);
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      const qNumBadge = document.getElementById('card-qnum-badge');
+      if (qNumBadge) {
+        if (currentTier === 'exam') {
+          qNumBadge.textContent = 'Exam Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        } else {
+          qNumBadge.textContent = 'Q#' + card.id + ' (' + (currentIndex + 1) + '/' + currentDeck.length + ')';
+        }
+      }
+
+      const boxBadge = document.getElementById('card-box-badge');
+      const boxBadgeBack = document.getElementById('card-box-badge-back');
+      if (boxBadge) boxBadge.style.display = 'none';
+      if (boxBadgeBack) boxBadgeBack.style.display = 'none';
+
+      const qText = document.getElementById('card-question-text');
+      if (qText) {
+        if (currentTier === 'exam') {
+          let metaHtml = '<div class="exam-meta-row">';
+          const stemClass = card.stem || 'consequence';
+          const stemLabel = card.marks ? (card.marks + 'm ' + (card.stem === 'consequence' ? 'Consequence' : card.stem === 'narrative' ? 'Narrative Account' : card.stem === 'importance' ? 'Importance' : 'Key Term')) : card.stem;
+          metaHtml += '<span class="exam-stem-badge ' + stemClass + '">🎯 ' + stemLabel + '</span>';
+          if (card.formula) {
+            metaHtml += '<span class="exam-formula-badge">⚡ ' + card.formula + (card.formula_name ? ': ' + card.formula_name : '') + '</span>';
+          }
+          metaHtml += '</div>';
+
+          let factsHint = '';
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            factsHint = '<div class="exam-facts-hint">🧠 Precision Facts Required: ' + card.specific_facts.length + ' specific historical details</div>';
+          }
+          qText.innerHTML = metaHtml + '<div class="exam-card-prompt">' + card.q + '</div>' + factsHint;
+        } else {
+          qText.innerHTML = '<div class="rapid-card-prompt">' + card.q + '</div>';
+        }
+      }
+
+      const aText = document.getElementById('card-answer-text');
+      if (aText) {
+        if (currentTier === 'exam') {
+          let html = '<div class="exam-meta-row">';
+          if (card.formula) {
+            html += '<span class="exam-formula-badge" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">📝 Formula: ' + card.formula + (card.formula_name ? ' (' + card.formula_name + ')' : '') + '</span>';
+          }
+          html += '</div>';
+          html += '<div class="exam-card-model-answer">' + card.a + '</div>';
+
+          if (card.specific_facts && card.specific_facts.length > 0) {
+            html += '<div class="facts-checklist"><strong>✓ Crucial Historical Evidence Checked:</strong><ul>';
+            card.specific_facts.forEach(f => {
+              html += '<li>' + f + '</li>';
+            });
+            html += '</ul></div>';
+          }
+
+          if (card.historian_explanation) {
+            html += '<div class="historian-box">🏛️ <strong>Historian &amp; Examiner Analysis:</strong> ' + card.historian_explanation + '</div>';
+          }
+          aText.innerHTML = html;
+        } else if (card.explanation) {
+          aText.innerHTML = '<div class="card-main-answer">' + card.a + '</div><div class="card-explanation-box">💡 ' + card.explanation + '</div>';
+        } else {
+          aText.innerHTML = '<div class="card-main-answer">' + card.a + '</div>';
+        }
+      }
+
+      updateStats();
+    }
+
+    window.switchPracticeTier = function(tier) {
+      if (currentTier === tier) return;
+      currentTier = tier;
+      stopRapidFireTimer();
+
+      const btnRapid = document.getElementById('tier-btn-rapid');
+      const btnExam = document.getElementById('tier-btn-exam');
+      const stemRow = document.getElementById('leitner-stem-filter-row');
+
+      if (tier === 'exam') {
+        if (btnRapid) btnRapid.classList.remove('active');
+        if (btnExam) btnExam.classList.add('active');
+        if (stemRow) stemRow.style.display = 'flex';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_EXAM;
+        ALL_DECK = EXAM_DECK;
+        currentStemFilter = 'all';
+        resetStemPills();
+      } else {
+        if (btnRapid) btnRapid.classList.add('active');
+        if (btnExam) btnExam.classList.remove('active');
+        if (stemRow) stemRow.style.display = 'none';
+        LEITNER_STORAGE_KEY = LEITNER_STORAGE_KEY_RAPID;
+        ALL_DECK = RAPID_DECK;
+      }
+
+      currentDeck = [...ALL_DECK];
+      currentIndex = 0;
+      loadLeitnerProgress();
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    window.filterByExamStem = function(stem) {
+      currentStemFilter = stem;
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === stem);
+      });
+
+      if (stem === 'all') {
+        currentDeck = [...EXAM_DECK];
+      } else {
+        currentDeck = EXAM_DECK.filter(c => c.stem === stem);
+        if (currentDeck.length === 0) currentDeck = [...EXAM_DECK];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode) resetRapidFireTimer(true);
+    };
+
+    function resetStemPills() {
+      const pills = ['all', 'consequence', 'narrative', 'importance'];
+      pills.forEach(p => {
+        const el = document.getElementById('stem-pill-' + p);
+        if (el) el.classList.toggle('active', p === 'all');
+      });
+    }
+
+    window.openTeacherWhiteboardModal = function() {
+      openLeitnerModal();
+      if (!isTeacherMode) {
+        toggleTeacherMode();
+      }
+      const titleEl = document.getElementById('leitner-modal-title');
+      if (titleEl) titleEl.textContent = '⚡ Whiteboard Rapid-Fire Recall';
+    };
+
+    window.openPupilQuizModal = function() {
+      openLeitnerModal();
+      if (isTeacherMode) {
+        toggleTeacherMode();
+      }
+      const titleEl = document.getElementById('leitner-modal-title');
+      if (titleEl) titleEl.textContent = '🎯 Pupil Recall Quiz · Instant Feedback';
+      stopRapidFireTimer();
+    };
+
+    window.rateBinaryCard = function(isCorrect) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+
+      if (isCorrect) {
+        quizScore.correct++;
+        quizScore.answered++;
+        quizScore.missedIds.delete(card.id);
+        userBoxes[card.id] = 3;
+      } else {
+        quizScore.answered++;
+        quizScore.missedIds.add(card.id);
+        userBoxes[card.id] = 1;
+      }
+
+      saveLeitnerProgress();
+      recordLeitnerActivity();
+      updateQuizScoreDisplay();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        if (isReviewingMissed && isCorrect) {
+          currentDeck = currentDeck.filter(c => c.id !== card.id);
+          if (currentDeck.length === 0) {
+            alert('🎉 Outstanding! You have mastered all of your missed questions!');
+            isReviewingMissed = false;
+            currentDeck = [...ALL_DECK];
+            currentIndex = 0;
+            renderCurrentCard();
+            updateQuizScoreDisplay();
+            return;
+          }
+          if (currentIndex >= currentDeck.length) currentIndex = 0;
+          renderCurrentCard();
+        } else {
+          currentIndex = (currentIndex + 1) % currentDeck.length;
+          renderCurrentCard();
+        }
+      }, 120);
+    };
+
+    function updateQuizScoreDisplay() {
+      const scoreText = document.getElementById('quiz-score-text');
+      const missedBtn = document.getElementById('btn-review-missed');
+      const missedCount = document.getElementById('missed-count');
+
+      const pct = quizScore.answered > 0 ? Math.round((quizScore.correct / quizScore.answered) * 100) : 0;
+      if (scoreText) {
+        scoreText.textContent = quizScore.correct + ' / ' + quizScore.answered + ' (' + pct + '%)';
+      }
+
+      const missedTotal = quizScore.missedIds.size;
+      if (missedCount) missedCount.textContent = missedTotal;
+      if (missedBtn) {
+        missedBtn.style.display = missedTotal > 0 ? 'inline-flex' : 'none';
+        if (isReviewingMissed) {
+          missedBtn.classList.add('active');
+          missedBtn.innerHTML = '🔁 Exit Missed Review (' + missedTotal + ')';
+        } else {
+          missedBtn.classList.remove('active');
+          missedBtn.innerHTML = '🔁 Review Missed (' + missedTotal + ')';
+        }
+      }
+    }
+
+    window.filterMissedQuestions = function() {
+      if (isReviewingMissed) {
+        isReviewingMissed = false;
+        currentDeck = [...ALL_DECK];
+        currentIndex = 0;
+        renderCurrentCard();
+        updateQuizScoreDisplay();
+        return;
+      }
+
+      if (quizScore.missedIds.size === 0) {
+        alert('No missed questions! You have 100% mastery so far.');
+        return;
+      }
+
+      isReviewingMissed = true;
+      currentDeck = ALL_DECK.filter(c => quizScore.missedIds.has(c.id));
+      currentIndex = 0;
+      renderCurrentCard();
+      updateQuizScoreDisplay();
+    };
+
+    window.resetQuizScore = function() {
+      if (confirm('Restart quiz and reset your current score?')) {
+        quizScore = { correct: 0, answered: 0, missedIds: new Set() };
+        isReviewingMissed = false;
+        currentDeck = [...ALL_DECK];
+        currentIndex = 0;
+        renderCurrentCard();
+        updateQuizScoreDisplay();
+      }
+    };
+
+    window.flipCurrentCard = function() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.toggle('flipped');
+      recordLeitnerActivity();
+    };
+
+    window.rateCurrentCard = function(targetBox) {
+      if (currentDeck.length === 0) return;
+      const card = currentDeck[currentIndex];
+      userBoxes[card.id] = targetBox;
+      saveLeitnerProgress();
+      recordLeitnerActivity();
+
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+      }, 120);
+    };
+
+    window.toggleTeacherMode = function() {
+      isTeacherMode = !isTeacherMode;
+      const modal = document.getElementById('leitner-modal');
+      const btn = document.getElementById('teacher-mode-btn');
+      const titleEl = document.getElementById('leitner-modal-title');
+      if (modal) {
+        if (isTeacherMode) {
+          modal.classList.add('teacher-mode');
+          if (btn) btn.textContent = window.innerWidth <= 600 ? '✖️ Exit (T)' : '✖️ Exit Whiteboard (T)';
+          if (titleEl) titleEl.textContent = '⚡ Whiteboard Rapid-Fire Recall';
+          if (modal.requestFullscreen) {
+            modal.requestFullscreen().catch(() => {});
+          } else if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen().catch(() => {});
+          }
+          resetRapidFireTimer(true);
+        } else {
+          modal.classList.remove('teacher-mode');
+          if (btn) btn.textContent = window.innerWidth <= 600 ? '📽️ Teacher' : '📽️ Teacher Mode';
+          if (titleEl) {
+            titleEl.textContent = '🎯 Pupil Recall Quiz · Instant Feedback';
+          }
+          if (document.fullscreenElement) {
+            document.exitFullscreen().catch(() => {});
+          }
+          stopRapidFireTimer();
+        }
+      }
+    };
+
+    window.startRapidFireTimer = function() {
+      stopRapidFireTimer();
+      isTimerRunning = true;
+      timerEndTime = Date.now() + timerRemainingMs;
+      const toggleBtn = document.getElementById('timer-toggle-btn');
+      if (toggleBtn) toggleBtn.textContent = '⏸️ Pause';
+      const bar = document.getElementById('rapid-fire-bar');
+      if (bar) bar.classList.remove('timer-expired');
+
+      timerInterval = setInterval(() => {
+        const now = Date.now();
+        const diff = Math.max(0, timerEndTime - now);
+        timerRemainingMs = diff;
+        updateTimerDisplay(diff);
+
+        if (diff <= 0) {
+          stopRapidFireTimer();
+          handleTimerExpired();
+        }
+      }, 50);
+    };
+
+    window.stopRapidFireTimer = function() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      isTimerRunning = false;
+      const toggleBtn = document.getElementById('timer-toggle-btn');
+      if (toggleBtn) toggleBtn.textContent = '▶️ Start';
+    };
+
+    window.toggleRapidFireTimer = function() {
+      if (isTimerRunning) {
+        stopRapidFireTimer();
+      } else {
+        if (timerRemainingMs <= 0) timerRemainingMs = 15000;
+        startRapidFireTimer();
+      }
+    };
+
+    window.resetRapidFireTimer = function(autoStart = true) {
+      stopRapidFireTimer();
+      timerRemainingMs = 15000;
+      updateTimerDisplay(15000);
+      const bar = document.getElementById('rapid-fire-bar');
+      if (bar) bar.classList.remove('timer-expired');
+      if (autoStart) {
+        startRapidFireTimer();
+      }
+    };
+
+    function updateTimerDisplay(ms) {
+      const countdownEl = document.getElementById('timer-countdown-text');
+      const fillEl = document.getElementById('timer-progress-fill');
+      const seconds = Math.ceil(ms / 1000);
+
+      if (countdownEl) {
+        countdownEl.textContent = seconds + 's';
+        countdownEl.classList.remove('warning', 'critical');
+        if (seconds <= 3) countdownEl.classList.add('critical');
+        else if (seconds <= 5) countdownEl.classList.add('warning');
+      }
+
+      if (fillEl) {
+        const pct = Math.max(0, Math.min(100, (ms / 15000) * 100));
+        fillEl.style.width = pct + '%';
+        if (seconds <= 3) {
+          fillEl.style.background = 'linear-gradient(90deg, #ef4444 0%, #dc2626 100%)';
+        } else if (seconds <= 5) {
+          fillEl.style.background = 'linear-gradient(90deg, #f59e0b 0%, #d97706 100%)';
+        } else {
+          fillEl.style.background = 'linear-gradient(90deg, #10b981 0%, #059669 100%)';
+        }
+      }
+    }
+
+    function handleTimerExpired() {
+      const countdownEl = document.getElementById('timer-countdown-text');
+      if (countdownEl) countdownEl.textContent = '0s';
+      const bar = document.getElementById('rapid-fire-bar');
+      if (bar) bar.classList.add('timer-expired');
+      if (isTeacherMode) {
+        const cardEl = document.getElementById('leitner-flashcard');
+        if (cardEl && !cardEl.classList.contains('flipped')) {
+          cardEl.classList.add('flipped');
+        }
+      }
+    }
+
+    window.nextCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % currentDeck.length;
+        renderCurrentCard();
+        if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
+      }, 100);
+    };
+
+    window.prevCard = function() {
+      if (currentDeck.length === 0) return;
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (cardEl) cardEl.classList.remove('flipped');
+      setTimeout(() => {
+        currentIndex = (currentIndex - 1 + currentDeck.length) % currentDeck.length;
+        renderCurrentCard();
+        if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
+      }, 100);
+    };
+
+    window.shuffleCurrentDeck = function() {
+      for (let i = currentDeck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
+    };
+
+    window.resetCurrentDeck = function() {
+      if (confirm('Reset all Leitner Box assignments for this Mastery Pack?')) {
+        userBoxes = {};
+        saveLeitnerProgress();
+        renderCurrentCard();
+      }
+    };
+
+    window.changeLeitnerTopic = function(val) {
+      if (val === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const pageIdx = parseInt(val, 10);
+        const startQ = pageIdx * 20 + 1;
+        const endQ = startQ + 20;
+        currentDeck = ALL_DECK.filter(c => c.id >= startQ && c.id < endQ);
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
+    };
+
+    window.filterByLeitnerBox = function(boxVal) {
+      loadLeitnerProgress();
+      if (boxVal === 'all') {
+        currentDeck = [...ALL_DECK];
+      } else {
+        const targetBox = parseInt(boxVal, 10);
+        currentDeck = ALL_DECK.filter(c => getCardBox(c.id) === targetBox);
+        if (currentDeck.length === 0) {
+          alert('No cards currently in Box ' + targetBox + '. Showing all cards.');
+          currentDeck = [...ALL_DECK];
+        }
+      }
+      currentIndex = 0;
+      renderCurrentCard();
+      if (isTeacherMode || isTimerRunning) resetRapidFireTimer(true);
+    };
+
+    window.toggleLeitnerTools = function() {
+      const drawer = document.getElementById('leitner-tools-drawer');
+      const btn = document.getElementById('leitner-tools-btn');
+      if (drawer) {
+        drawer.classList.toggle('expanded');
+        const isExp = drawer.classList.contains('expanded');
+        if (btn) {
+          btn.classList.toggle('active', isExp);
+          btn.innerHTML = isExp ? '✖ Tools' : '⚙️ Tools';
+        }
+      }
+    };
+
+    window.openLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        const drawer = document.getElementById('leitner-tools-drawer');
+        const btn = document.getElementById('leitner-tools-btn');
+        if (drawer && window.innerWidth <= 768) {
+          drawer.classList.remove('expanded');
+          if (btn) {
+            btn.classList.remove('active');
+            btn.innerHTML = '⚙️ Tools';
+          }
+        }
+        loadLeitnerProgress();
+        updateStreakAndHeatmap();
+
+        // Check if a subtopic or part was requested in the URL hash (e.g. #practice-mode&part=1 or &subtopic=KT1.2)
+        const hash = window.location.hash;
+        const partMatch = hash.match(/(?:part|topic|subtopic)=([^&]+)/i);
+        let appliedPart = false;
+        if (partMatch) {
+          const rawVal = decodeURIComponent(partMatch[1]).trim().toLowerCase();
+          const topicSelect = document.getElementById('leitner-topic-select');
+          if (topicSelect) {
+            let matchedValue = null;
+            if (rawVal === 'all') {
+              matchedValue = 'all';
+            } else if (!isNaN(parseInt(rawVal, 10)) && parseInt(rawVal, 10) < topicSelect.options.length) {
+              matchedValue = parseInt(rawVal, 10).toString();
+            } else {
+              for (let i = 0; i < topicSelect.options.length; i++) {
+                const optText = topicSelect.options[i].textContent.toLowerCase();
+                if (optText.includes(rawVal)) {
+                  matchedValue = topicSelect.options[i].value;
+                  break;
+                }
+              }
+            }
+            if (matchedValue !== null) {
+              topicSelect.value = matchedValue;
+              changeLeitnerTopic(matchedValue);
+              appliedPart = true;
+            }
+          }
+        }
+
+        if (hash.includes('box=1')) {
+          filterByLeitnerBox(1);
+        } else if (!appliedPart) {
+          renderCurrentCard();
+        }
+
+        if (hash.includes('teacher=true') && !isTeacherMode) {
+          toggleTeacherMode();
+        } else {
+          const titleEl = document.getElementById('leitner-modal-title');
+          if (titleEl && !isTeacherMode) {
+            titleEl.textContent = '🎯 Pupil Recall Quiz · Instant Feedback';
+          }
+        }
+        updateQuizScoreDisplay();
+      }
+    };
+
+    window.closeLeitnerModal = function() {
+      const modal = document.getElementById('leitner-modal');
+      if (modal) {
+        stopRapidFireTimer();
+        if (isTeacherMode) toggleTeacherMode();
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        if (window.location.hash.startsWith('#practice-mode')) {
+          history.replaceState(null, null, ' ');
+        }
+      }
+    };
+
+    window.openPrintPreviewIframe = function(htmlUrl, title, pdfUrl) {
+      const existing = document.getElementById('masteryPrintPreviewModal');
+      if (existing) existing.remove();
+
+      const overlay = document.createElement('div');
+      overlay.id = 'masteryPrintPreviewModal';
+      overlay.className = 'printables-modal-overlay';
+      overlay.style.cssText = 'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); z-index: 100001; display: flex; justify-content: center; align-items: center;';
+
+      overlay.innerHTML = `
+        <div style="background: #0f172a; border: 1px solid #334155; border-radius: 12px; width: 94vw; max-width: 1350px; height: 92vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); font-family: 'Outfit', sans-serif;">
+          <div style="background: #1e293b; border-bottom: 1px solid #334155; padding: 14px 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div style="width: 38px; height: 38px; border-radius: 8px; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.15rem;">
+                🖨️
+              </div>
+              <div>
+                <span style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(14, 165, 233, 0.2); color: #38bdf8; padding: 2px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3);">Teacher Planning Hub</span>
+                <h3 style="margin: 2px 0 0 0; color: #f8fafc; font-size: 1.25rem; font-weight: 700;">${title}</h3>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <button id="masteryPrintTriggerBtn" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 9px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(37,99,235,0.4);">
+                🖨️ Print Class Set
+              </button>
+              <a href="${pdfUrl}" target="_blank" download style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                📕 High-Res PDF
+              </a>
+              <button id="masteryPrintCloseBtn" style="background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: #94a3b8; font-size: 1.1rem; width: 36px; height: 36px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                ✕
+              </button>
+            </div>
+          </div>
+          <div style="flex: 1; position: relative; background: #334155;">
+            <iframe id="masteryPreviewIframe" src="${htmlUrl}" style="width: 100%; height: 100%; border: none; background: #ffffff;"></iframe>
+          </div>
+          <div style="background: #1e293b; border-top: 1px solid #334155; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; color: #94a3b8;">
+            <span>💡 <strong>Teacher Tip:</strong> The print stylesheet automatically handles page sizing (A3 Landscape for Placemats, A4 Portrait for Workouts, A4 Landscape for Trifolds). Ensure <em>"Background graphics"</em> is checked in your browser's print dialog.</span>
+            <span>Press <kbd style="background: #334155; color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace;">Esc</kbd> to close</span>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(overlay);
+
+      const iframe = overlay.querySelector('#masteryPreviewIframe');
+      const close = () => {
+        window.removeEventListener('keydown', handleEsc);
+        overlay.remove();
+      };
+      const handleEsc = (e) => { if (e.key === 'Escape') close(); };
+      window.addEventListener('keydown', handleEsc);
+
+      overlay.querySelector('#masteryPrintCloseBtn').onclick = close;
+      overlay.onclick = (e) => { if (e.target === overlay) close(); };
+      overlay.querySelector('#masteryPrintTriggerBtn').onclick = () => {
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+        }
+      };
+    };
+
+    // Touch Swipe Gestures for Mobile Practice (Left: Box 1, Up: Box 2, Right: Box 3)
+    (function initTouchGestures() {
+      const cardEl = document.getElementById('leitner-flashcard');
+      if (!cardEl) return;
+
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+
+      cardEl.addEventListener('touchstart', function(e) {
+        if (e.touches && e.touches.length > 0) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+        }
+      }, { passive: true });
+
+      cardEl.addEventListener('touchend', function(e) {
+        if (e.changedTouches && e.changedTouches.length > 0) {
+          const deltaX = e.changedTouches[0].clientX - touchStartX;
+          const deltaY = e.changedTouches[0].clientY - touchStartY;
+          const elapsedTime = Date.now() - touchStartTime;
+
+          if (elapsedTime < 550) {
+            const absX = Math.abs(deltaX);
+            const absY = Math.abs(deltaY);
+
+            if (absX > 50 && absX > absY * 1.3) {
+              if (deltaX > 0) {
+                // Swiped Right -> Got It
+                rateBinaryCard(true);
+              } else {
+                // Swiped Left -> Needs Review
+                rateBinaryCard(false);
+              }
+            } else if (deltaY < -45 && absY > absX * 1.3) {
+              // Swiped Upwards -> Got It
+              rateBinaryCard(true);
+            }
+          }
+        }
+      }, { passive: true });
+    })();
+
+    window.toggleAllAnswers = function(reveal) {
+      const answerEls = document.querySelectorAll('.answer-text');
+      answerEls.forEach(el => {
+        if (reveal) el.classList.add('revealed');
+        else el.classList.remove('revealed');
+      });
+    };
+
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('leitner-modal');
+      if (!modal || modal.style.display === 'none') return;
+      if (e.key === 'Escape') {
+        if (isTeacherMode) toggleTeacherMode();
+        else closeLeitnerModal();
+      }
+      else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCurrentCard(); }
+      else if (e.key === 't' || e.key === 'T') { e.preventDefault(); toggleTeacherMode(); }
+      else if (e.key === 'e' || e.key === 'E') { e.preventDefault(); if (EXAM_DECK && EXAM_DECK.length > 0) switchPracticeTier(currentTier === 'rapid' ? 'exam' : 'rapid'); }
+      else if (e.key === 'r' || e.key === 'R') { e.preventDefault(); resetRapidFireTimer(true); }
+      else if (e.key === '1') {
+        if (!isTeacherMode) rateBinaryCard(false);
+      }
+      else if (e.key === '2') {
+        if (!isTeacherMode) rateBinaryCard(true);
+      }
+      else if (e.key === 'ArrowRight') nextCard();
+      else if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    function initLeitner() {
+      loadLeitnerProgress();
+      updateStreakAndHeatmap();
+      if (window.location.hash.startsWith('#practice-mode')) {
+        openLeitnerModal();
+      }
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash.startsWith('#practice-mode')) {
+          openLeitnerModal();
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener("DOMContentLoaded", initLeitner);
+    } else {
+      initLeitner();
+    }
+  })();
+</script>
+        

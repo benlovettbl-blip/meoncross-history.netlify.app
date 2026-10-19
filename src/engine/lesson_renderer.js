@@ -11,6 +11,7 @@ import {
   cleanVideoDisplayTitle,
   getSortedLessonVideos,
 } from './video_utils.js';
+import './ks2_guidance.js';
 
 // Module-level fallback to ensure isGCSE never throws ReferenceError
 var isGCSE = false;
@@ -120,6 +121,241 @@ window.formatBold = function (text) {
 
   return parsed;
 };
+
+export function toggleThinkDiscuss(btn, targetId) {
+  const panel = typeof targetId === 'string' ? document.getElementById(targetId) : targetId;
+  if (!panel) return;
+  const isHidden =
+    window.getComputedStyle(panel).display === 'none' || panel.style.display === 'none';
+  if (isHidden) {
+    panel.style.display = 'block';
+    panel.classList.add('revealed');
+    if (btn) {
+      const label = btn.querySelector('.toggle-label');
+      if (label) label.textContent = label.dataset.hideText || 'Hide Examples';
+      const icon = btn.querySelector('i');
+      if (icon) icon.className = 'fa-solid fa-eye-slash';
+      btn.style.background = 'linear-gradient(135deg, #64748b 0%, #475569 100%)';
+    }
+  } else {
+    panel.style.display = 'none';
+    panel.classList.remove('revealed');
+    if (btn) {
+      const label = btn.querySelector('.toggle-label');
+      if (label) label.textContent = label.dataset.showText || 'Example Answers';
+      const icon = btn.querySelector('i');
+      if (icon) icon.className = 'fa-solid fa-lightbulb';
+      btn.style.background = '';
+    }
+  }
+}
+if (typeof window !== 'undefined') {
+  window.toggleThinkDiscuss = toggleThinkDiscuss;
+}
+
+export function getFallbackDiscussionIdeas(qText, sourceObj = {}) {
+  const qLower = (qText || '').toLowerCase();
+  const titleLower = (sourceObj.title || sourceObj.caption || '').toLowerCase();
+
+  if (qLower.includes('gas mask') || titleLower.includes('gas mask')) {
+    return [
+      'Muscle Memory & Preparedness: Routine drills trained children to fit their respirators within seconds without panic in the event of a deadly poison gas attack.',
+      'Sensory & Physical Discomfort: The rubber felt hot, sticky, and smelled strongly of disinfectant and charcoal; eyepieces misted up and voices sounded muffled and distant.',
+      'Normalising Wartime Disruption: Practising while sitting at neat wooden desks showed how wartime dangers quickly became part of ordinary daily childhood routines.',
+    ];
+  }
+  if (
+    qLower.includes('luggage label') ||
+    qLower.includes('label') ||
+    titleLower.includes('label')
+  ) {
+    return [
+      "Instant Visual Identification: In chaotic railway stations and village halls, billeting officers needed to read a child's name, home town, and destination at a single glance without opening bags.",
+      'Young Children & Lost Luggage: Many evacuees were toddlers aged 3 to 5 who could not spell their names or remember addresses, and suitcases frequently went missing on trains.',
+      'Systematic Billeting: Labels allowed officials in host towns to tick children off arrival manifests and match them systematically with local foster families.',
+    ];
+  }
+  if (
+    qLower.includes('kindertransport') ||
+    qLower.includes('gangway') ||
+    qLower.includes('identity card')
+  ) {
+    return [
+      'Administrative Tracking & Welfare: Numbered cardboard tags matched children to British sponsor guarantees, foster records, and medical files to ensure no refugee went missing.',
+      'Heartbreaking Separation: Children felt terrified, confused, and heartbroken after saying farewell to parents at continental railway stations, often never knowing if they would see them again.',
+      'Language & Culture Shock: Arriving in a foreign port surrounded by adults speaking only English caused intense loneliness, mixed with relief at reaching physical safety.',
+    ];
+  }
+  if (
+    qLower.includes('anderson shelter') ||
+    qLower.includes('shelter') ||
+    titleLower.includes('anderson shelter')
+  ) {
+    return [
+      'Essential Warmth & Survival: Families needed heavy woollen blankets, overcoats, gas masks, a torch or candles with matches, and flasks of hot tea or water.',
+      'Emotional Distraction: Favourite teddy bears, comics, reading books, playing cards, or a portable wireless radio helped children cope with the terrifying screech and blast of bombs.',
+      'Harsh Shelter Realities: Half-buried in cold, wet garden soil, Anderson shelters frequently flooded with puddle water, making thick rugs and hot water bottles crucial.',
+    ];
+  }
+  if (
+    qLower.includes('dig for victory') ||
+    qLower.includes('garden') ||
+    titleLower.includes('dig for victory')
+  ) {
+    return [
+      'Empowering Young Citizens: It demonstrated to children that even though they were too young to fight, digging, weeding, and watering vegetables was a vital way they could help Britain win.',
+      'Encouraging Family Co-operation: Cheerful images of children made food production feel like a shared, rewarding family adventure rather than an exhausting chore.',
+      "Protecting Atlantic Merchant Sailors: Growing food at home saved valuable cargo ship space and directly reduced Britain's reliance on merchant convoys targeted by German U-boats.",
+    ];
+  }
+  if (
+    qLower.includes('land girls') ||
+    qLower.includes('farms') ||
+    titleLower.includes('land girls')
+  ) {
+    return [
+      'Practical Uniforms for Hard Manual Work: Heavy corduroy breeches, knitted green jerseys, and sturdy boots show the physical demands of farming through winter mud and summer heat.',
+      'Comradeship & Shared Meals: Sitting together under a shady tree sharing sandwiches highlights the close friendships, team spirit, and high morale of Land Army volunteers.',
+      'Vital Domestic Food Production: The expansive harvest fields and farm tools in the background emphasize the immense physical effort required to prevent Britain from being starved into surrender.',
+    ];
+  }
+  if (
+    qLower.includes('football team') ||
+    (qLower.includes('boys') && qLower.includes('religion')) ||
+    titleLower.includes('football team')
+  ) {
+    return [
+      'Universal Childhood Passions: They look like any proud, happy school sports team—wearing striped shirts, smiling, and celebrating together with arms around each other.',
+      "Invisible Faith & Heritage: You cannot tell a person's religion, culture, or background simply by looking at them; they were regular German schoolchildren who loved football.",
+      'Humanising Historical Reality: This photograph proves that before discriminatory Nazi laws took away their rights, Jewish families lived completely normal, integrated lives in their communities.',
+    ];
+  }
+  if (
+    qLower.includes('school ban') ||
+    qLower.includes('no longer go to school') ||
+    titleLower.includes('school ban')
+  ) {
+    return [
+      'Confusion & Injustice: Children felt deeply bewildered and hurt because they had broken no rules, yet were punished and excluded simply because of their identity.',
+      'Isolation from Friends: Being banned from state schools cut children off from classmates, teachers, and playgrounds, creating acute feelings of loneliness and rejection.',
+      "Loss of Safety & Routine: School provided a stable, predictable daily routine; losing it shattered children's sense of security and made the future feel threatening.",
+    ];
+  }
+  if (qLower.includes('enigma') || titleLower.includes('enigma')) {
+    return [
+      'Astronomical Mathematical Possibilities: With three rotating wheels, 26 positions each, and front plugboard cables, Enigma generated over 158 quintillion (158 million million million) possible settings.',
+      'Daily Midnight Setting Changes: German code clerks reset the wheel combinations, ring settings, and plug connections every 24 hours, completely resetting the code puzzle every midnight.',
+      'Stepped Mechanical Scrambling: Each keypress caused the rotors to step forward, so typing the same letter twice produced two completely different scrambled output letters.',
+    ];
+  }
+  if (
+    qLower.includes('bombe') ||
+    titleLower.includes('bombe') ||
+    qLower.includes('defeat another machine')
+  ) {
+    return [
+      'Human Physical Limitations: Human mathematicians would have taken weeks or months to test potential wheel settings by hand; by then, military orders were already carried out.',
+      "High-Speed Electrical Elimination: Turing and Welchman's electromechanical Bombe tested thousands of letter combinations every second, rapidly discarding impossible contradictions.",
+      'Pioneering Modern Computing: Alan Turing understood that only a machine operating with pure mathematical logic could defeat another machine, laying the foundation for modern computers.',
+    ];
+  }
+  if (
+    qLower.includes('qualities make someone a rescuer') ||
+    titleLower.includes('winton with a rescued child')
+  ) {
+    return [
+      'Moral Courage & Conscience: A rescuer acts on personal conscience, believing that saving innocent lives in danger takes priority over personal convenience, comfort, or official red tape.',
+      'Practical Determination: Rather than just feeling sympathy, Winton and Chadwick took concrete action—setting up desks in Prague, raising £50 guarantees, and securing visas.',
+      'Humility & Selflessness: True heroes rarely boast; Winton regarded saving 669 children as ordinary human decency and returned quietly to normal life without seeking fame or medals.',
+    ];
+  }
+  if (qLower.includes('scrapbook') || titleLower.includes('scrapbook')) {
+    return [
+      'Official Proof for Border Authorities: Detailed index cards with names, birth dates, and photos were vital to satisfy British immigration officials and obtain entry permits.',
+      "Preserving True Roots & Identities: Scrapbook entries protected children's real identities and heritage, ensuring they would not forget who their families were.",
+      'Lifesaving Historical Evidence: Fifty years later, this single scrapbook was the only surviving proof that allowed hundreds of rescued adults to discover who had saved their lives.',
+    ];
+  }
+  if (
+    qLower.includes('ve day') ||
+    qLower.includes('street party') ||
+    titleLower.includes('ve day')
+  ) {
+    return [
+      'Overwhelming Joy & Relief: Communities celebrated the end of nearly six years of terrifying night raids, wailing sirens, blackouts, and the daily fear of sudden death.',
+      'Heartbreaking Personal Grief: Amid the street dancing, union jacks, and music, many families quietly wept for fathers, brothers, and sons who had died and would never return.',
+      'The Daunting Reality of Rebuilding: Cities lay in ruins, food rationing would continue for years, and families faced the exhausting challenge of rebuilding shattered lives.',
+    ];
+  }
+  return null;
+}
+
+export function renderArchivalSourceDiscussionBox(
+  questionText,
+  sourceObj = {},
+  isKs2 = false,
+  marginTop = '14px',
+) {
+  if (!questionText) return '';
+  const cleanQ = cleanQuestionText(questionText);
+  const formattedQ =
+    typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQ) : cleanQ;
+
+  let ideas = sourceObj
+    ? sourceObj.discussion_ideas || sourceObj.example_answers || sourceObj.exemplar_answers
+    : null;
+  if (!ideas || !Array.isArray(ideas) || ideas.length === 0) {
+    ideas = getFallbackDiscussionIdeas(cleanQ, sourceObj);
+  }
+
+  const hasIdeas = Array.isArray(ideas) && ideas.length > 0;
+  const discussId = 'think-discuss-' + Math.random().toString(36).substring(2, 9);
+
+  return `
+    <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 13px 16px; border-radius: 6px; margin-top: ${marginTop}; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
+        <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+          <span style="font-size: 0.95rem;">💭</span> ${isKs2 ? 'Think & Discuss' : 'Hinge Discussion Prompt'}
+        </div>
+        ${
+          hasIdeas
+            ? `
+          <button type="button" class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-clue btn-think-discuss-toggle" data-action="toggle-think-discuss" data-target-id="${discussId}" onclick="if(window.toggleThinkDiscuss){window.toggleThinkDiscuss(this, '${discussId}');}event.stopPropagation();" title="Click to reveal exemplar discussion points for the class" style="padding: 4px 10px; font-size: 0.76rem; text-transform: none; border-radius: 5px; display: inline-flex; align-items: center; gap: 5px; font-weight: 700; cursor: pointer; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+            <i class="fa-solid fa-lightbulb"></i> <span class="toggle-label" data-show-text="Example Answers" data-hide-text="Hide Examples">Example Answers</span>
+          </button>
+        `
+            : ''
+        }
+      </div>
+      <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
+        ${formattedQ}
+      </div>
+      ${
+        hasIdeas
+          ? `
+        <div id="${discussId}" class="think-discuss-exemplar-panel" style="display: none; margin-top: 12px; padding: 12px 14px; background: #ffffff; border: 1.5px solid #bfdbfe; border-radius: 6px; box-shadow: 0 2px 8px rgba(30, 64, 175, 0.08);">
+          <div style="font-size: 0.74rem; font-weight: 800; color: #1e40af; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #e0f2fe; padding-bottom: 5px;">
+            <i class="fa-solid fa-graduation-cap" style="color: #2563eb; font-size: 0.85rem;"></i> Teacher Discussion Guide &bull; Exemplar Points &amp; Angles:
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 7px;">
+            ${ideas
+              .map(
+                (idea, idx) => `
+              <div style="display: flex; gap: 9px; align-items: flex-start; font-size: 0.90rem; color: #1e293b; line-height: 1.45; background: #f8fafc; padding: 8px 11px; border-radius: 5px; border-left: 3.5px solid #3b82f6;">
+                <span style="font-weight: 800; color: #1d4ed8; font-size: 0.72rem; background: #dbeafe; padding: 2px 6px; border-radius: 3px; flex-shrink: 0; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.03em;">Idea ${idx + 1}</span>
+                <span style="font-weight: 500;">${idea}</span>
+              </div>
+            `,
+              )
+              .join('')}
+          </div>
+        </div>
+      `
+          : ''
+      }
+    </div>
+  `;
+}
 
 export function getGoldenSentenceExemplar(lesson, vocabTermsList = []) {
   if (lesson && lesson.vocab_golden_sentence) {
@@ -2602,17 +2838,29 @@ export function renderLesson(lesson) {
     unitId === 'edexcel_medicine' ||
     activeUnit.isGCSE ||
     false;
+  const isKs2 =
+    unitId === 'ks2_ww2' ||
+    (typeof unitId === 'string' && unitId.startsWith('ks2_')) ||
+    Boolean(window.currentUnitData && window.currentUnitData.is_ks2) ||
+    Boolean(window.currentUnitId && window.currentUnitId.startsWith('ks2_')) ||
+    Boolean(
+      typeof appStore !== 'undefined' &&
+      appStore.state &&
+      appStore.state.activeUnitData &&
+      appStore.state.activeUnitData.is_ks2,
+    );
   const isKs3 =
-    unitId === 'early_modern_world' ||
-    unitId === 'water_and_sanitation' ||
-    unitId === 'great_war' ||
-    unitId === 'great_war_part2' ||
-    unitId === 'medieval_england' ||
-    unitId === 'industrialisation_and_empire' ||
-    unitId === 'first_british_empire' ||
-    unitId === 'monarchy_religion_power' ||
-    activeUnit.is_ks3 ||
-    !isGCSE;
+    !isKs2 &&
+    (unitId === 'early_modern_world' ||
+      unitId === 'water_and_sanitation' ||
+      unitId === 'great_war' ||
+      unitId === 'great_war_part2' ||
+      unitId === 'medieval_england' ||
+      unitId === 'industrialisation_and_empire' ||
+      unitId === 'first_british_empire' ||
+      unitId === 'monarchy_religion_power' ||
+      activeUnit.is_ks3 ||
+      !isGCSE);
   const hasInlineNarrativeSources =
     Array.isArray(lesson.narrative_blocks) &&
     lesson.narrative_blocks.some(
@@ -2724,6 +2972,14 @@ export function renderLesson(lesson) {
   if (!heroImage && lesson.sources && lesson.sources.length > 0) {
     heroImage =
       lesson.sources[0].src || lesson.sources[0].image_url || lesson.sources[0].image || '';
+  }
+  if (!heroImage && lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
+    for (const b of lesson.narrative_blocks) {
+      if (b.source && (b.source.image || b.source.src || b.source.image_url)) {
+        heroImage = b.source.image || b.source.src || b.source.image_url;
+        break;
+      }
+    }
   }
   if (!heroImage && lesson.right_page_task && lesson.right_page_task.visual_source) {
     heroImage =
@@ -2861,6 +3117,15 @@ export function renderLesson(lesson) {
               ? ''
               : `
               ${
+                isKs2
+                  ? `
+                    <button type="button" class="btn btn-ks2-worksheet-launcher" onclick="window.openKs2WorksheetModal('${lesson.id}', ${currentIndex})" style="padding: 6px 12px; font-size: 0.88rem; background: #eff6ff; color: #1e3a8a; border: 1.5px solid #bfdbfe; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(30, 58, 138, 0.1); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Open A4 Companion Worksheet (PDF & Print)"><i class="fa-solid fa-file-pdf" style="color: #2563eb;"></i> <span>Enquiry Worksheet</span></button>
+                    <button type="button" class="btn btn-ks2-teacher-launcher" onclick="window.openKs2TeacherGuidanceModal('${lesson.id}', ${currentIndex})" style="padding: 6px 12px; font-size: 0.88rem; background: #fdf2f8; color: #9d174d; border: 1.5px solid #fbcfe8; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(157, 23, 77, 0.1); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Junior School Non-Specialist Teacher Guidance & Answers"><i class="fa-solid fa-chalkboard-user" style="color: #be185d;"></i> <span>Teacher Guidance</span></button>
+                    <a href="/pdfs/ks2_ww2/ks2_ww2_pupil_workbook.pdf" target="_blank" class="btn btn-ks2-workbook-launcher" style="padding: 6px 12px; font-size: 0.88rem; background: #f0fdf4; color: #166534; border: 1.5px solid #bbf7d0; font-weight: 700; text-decoration: none; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px;" title="Open complete 24-page pupil workbook (PDF)"><i class="fa-solid fa-book-bookmark" style="color: #16a34a;"></i> <span>Pupil Workbook (PDF)</span></a>
+                  `
+                  : ''
+              }
+              ${
                 grEntry
                   ? `<button class="btn btn-guided-reading-launcher" style="padding: 6px 12px; font-size: 0.88rem; background: #fdf2f8; color: #9d174d; border: 1.5px solid #fbcfe8; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" data-action="open-guided-reading-modal" data-lesson-index="${currentIndex}" title="Open Guided Reading Extract: ${grEntry.book_title}"><i class="fa-solid fa-book-open-reader" style="color: #be185d;"></i> Guided Reading</button>`
                   : ''
@@ -2897,8 +3162,30 @@ export function renderLesson(lesson) {
     `;
   let bannerPosition =
     lesson.banner_position ||
-    (typeof lesson.banner === 'object' && lesson.banner ? lesson.banner.position : null) ||
-    'center';
+    (typeof lesson.banner === 'object' && lesson.banner ? lesson.banner.position : null);
+
+  if (
+    (!bannerPosition || bannerPosition === 'center') &&
+    (unitId === 'ks2_ww2' || window.currentUnitId === 'ks2_ww2' || isKs2)
+  ) {
+    const ks2BannerPositions = {
+      lesson_1: 'center 82%',
+      lesson_2: 'center 55%',
+      lesson_3: 'center 45%',
+      lesson_4: 'center 30%',
+      lesson_5: 'center 18%',
+      lesson_6: 'center 70%',
+      lesson_7: 'center 30%',
+      lesson_8: 'center 50%',
+      lesson_9: 'center 20%',
+      lesson_10: 'center 88%',
+      lesson_11: 'center 42%',
+    };
+    if (ks2BannerPositions[lesson.id]) {
+      bannerPosition = ks2BannerPositions[lesson.id];
+    }
+  }
+  if (!bannerPosition) bannerPosition = 'center';
   const isFamilyHero =
     lesson.id &&
     (lesson.id.startsWith('hero_') ||
@@ -2933,13 +3220,27 @@ export function renderLesson(lesson) {
     }
   }
 
-  // Full-Bleed Hero Image (Calibrated 140px Compact Height for Smartboards)
+  // Full-Bleed Hero Image (Calibrated Height: 185px for KS2, 140px for Secondary/GCSE)
+  const heroBannerHeight = isKs2 ? '185px' : '140px';
+  const enquiryText =
+    lesson.enquiryQuestion || lesson.enquiry_question || lesson.inquiry_question || '';
+  const enquirySubtitle = enquiryText
+    ? `<p class="lesson-hero-enquiry-sub" style="font-family: 'Lora', Georgia, serif; font-style: italic; color: #fef08a; font-size: 0.95rem; margin: 0.35rem 0 0 0; line-height: 1.35; text-shadow: 0 1px 3px rgba(0,0,0,0.8);"><i class="fa-solid fa-circle-question" style="color: #fde047; font-size: 0.82rem; margin-right: 6px;"></i>Key Enquiry: &ldquo;${enquiryText}&rdquo;</p>`
+    : lesson.subtitle
+      ? `<p class="lesson-hero-subtitle" style="font-family: 'Inter', sans-serif; color: #e2e8f0; font-size: 0.88rem; margin: 0.3rem 0 0 0; line-height: 1.3; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">${lesson.subtitle}</p>`
+      : '';
+
+  const cleanLessonHeading = (lesson.title || '')
+    .replace(/^(?:Enquiry|Lesson)\s*\d+:\s*/i, '')
+    .trim();
+
   html += `
-      <div class="lesson-hero${heroExtraClass}" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 140px; background: url('${resolvedHeroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+      <div class="lesson-hero${heroExtraClass}" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: ${heroBannerHeight}; background: url('${resolvedHeroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.25), rgba(15,23,42,0.85));"></div>
         <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.25rem 4rem;">
           <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.82rem;">${lessonPrefix}</span>
-          <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 1.6rem; margin: 0.2rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">${lesson.title}</h2>
+          <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 1.6rem; margin: 0.2rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">${cleanLessonHeading}</h2>
+          ${enquirySubtitle}
         </div>
         ${bannerGalleryBtn}
       </div>
@@ -3179,11 +3480,12 @@ export function renderLesson(lesson) {
                 sourceImgUrl
                   ? `
                 <div class="archival-source-split-layout">
-                  <div class="archival-source-media-col">
-                    <div style="position: relative; width: 100%;">
-                      <img src="${sourceImgUrl}" alt="${displayTitle}" data-action="open-modal" data-src="${sourceImgUrl}" style="cursor: zoom-in; width: 100%; display: block; border-radius: 6px;">
+                  <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
+                    <div style="position: relative; width: 100%; display: flex; justify-content: center;">
+                      <img src="${sourceImgUrl}" alt="${displayTitle}" data-action="open-modal" data-src="${sourceImgUrl}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
                       <div class="archival-source-inspect-badge">
-                        <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                        <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
+                        <span>Pan-Zoom</span>
                       </div>
                     </div>
                     ${sourceSpotlightBtn}
@@ -3204,14 +3506,14 @@ export function renderLesson(lesson) {
                         contextText
                           ? `
                         <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
-                          <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(contextText) : contextText}
+                          <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(contextText) : contextText}
                         </div>
                       `
                           : ''
                       }
                     </div>
                     ${
-                      citationText
+                      !isKs2 && citationText
                         ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
                             <strong>Provenance:</strong> ${citationText}
                           </div>`
@@ -3236,13 +3538,13 @@ export function renderLesson(lesson) {
                     contextText
                       ? `
                     <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
-                      <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(contextText) : contextText}
+                      <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(contextText) : contextText}
                     </div>
                   `
                       : ''
                   }
                   ${
-                    citationText
+                    !isKs2 && citationText
                       ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px;">
                           <strong>Provenance:</strong> ${citationText}
                         </div>`
@@ -3277,18 +3579,7 @@ export function renderLesson(lesson) {
               `
                   : ''
               }
-              ${
-                hingeText
-                  ? `
-                <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt</div>
-                  <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                    ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(hingeText)) : cleanQuestionText(hingeText)}
-                  </div>
-                </div>
-              `
-                  : ''
-              }
+              ${renderArchivalSourceDiscussionBox(hingeText, source, isKs2, '14px')}
             </div>
           </details>
         `;
@@ -3329,10 +3620,13 @@ export function renderLesson(lesson) {
               source.src || source.source || source.image
                 ? `
               <div class="archival-source-split-layout">
-                <div class="archival-source-media-col">
-                  <img src="${getAssetUrl(source.src || source.source || source.image)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src || source.source || source.image)}" style="cursor: zoom-in;">
-                  <div class="archival-source-inspect-badge">
-                    <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
+                  <div style="position: relative; width: 100%; display: flex; justify-content: center;">
+                    <img src="${getAssetUrl(source.src || source.source || source.image)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src || source.source || source.image)}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
+                    <div class="archival-source-inspect-badge">
+                      <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
+                      <span>Pan-Zoom</span>
+                    </div>
                   </div>
                 </div>
                 <div class="archival-source-details-col">
@@ -3523,7 +3817,8 @@ export function renderLesson(lesson) {
                 <div class="archival-source-media-col">
                   ${srcs.map((src) => `<img src="${getAssetUrl(src)}" alt="${lesson.primary_source.title}" data-action="open-modal" data-src="${getAssetUrl(src)}" style="cursor: zoom-in;">`).join('')}
                   <div class="archival-source-inspect-badge">
-                    <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                    <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
+                    <span>Pan-Zoom</span>
                   </div>
                 </div>
                 <div class="archival-source-details-col">
@@ -5231,28 +5526,14 @@ export function renderLesson(lesson) {
       const rawHeading = block.theme_heading || block.title;
       if (rawHeading) {
         let displayHeading = rawHeading;
-        if (
-          unitId === 'monarchy_religion_power' ||
-          window.currentUnitId === 'monarchy_religion_power' ||
-          unitId === 'first_british_empire' ||
-          window.currentUnitId === 'first_british_empire' ||
-          unitId === 'eee' ||
-          window.currentUnitId === 'eee' ||
-          unitId === 'cme_new' ||
-          window.currentUnitId === 'cme_new' ||
-          unitId === 'water_and_sanitation' ||
-          window.currentUnitId === 'water_and_sanitation'
-        ) {
-          displayHeading = rawHeading;
-        } else {
+        if (/^Act\s*\d+/i.test(rawHeading)) {
           const bracketMatch = rawHeading.match(/\(([^)]+)\)/);
           if (bracketMatch) {
-            // Extract clean historical title from brackets (e.g. "The Spanish Vacancy & Bismarck's Pencil")
             displayHeading = bracketMatch[1].trim();
           } else {
-            // If no brackets, strip internal curriculum "Act X: ..." prefix
             displayHeading = displayHeading
               .replace(/^Act\s*\d+\s*:\s*[^:\-–—]+[:\-–—]\s*/i, '')
+              .replace(/^Act\s*\d+\s*:\s*/i, '')
               .trim();
           }
         }
@@ -5326,7 +5607,8 @@ export function renderLesson(lesson) {
                                <div class="archival-source-media-col">
                                  <img src="${imgSrc}" alt="${displayCaption}" style="width: 100%; max-height: 380px; object-fit: contain; background: #fff; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-gallery" data-gallery="${galleryData}" data-index="${idx}">
                                  <div class="archival-source-inspect-badge">
-                                   <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                                   <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
+                                    <span>Pan-Zoom</span>
                                  </div>
                                </div>
                                <div class="archival-source-details-col">
@@ -5335,28 +5617,23 @@ export function renderLesson(lesson) {
                                    contextText
                                      ? `
                                    <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
-                                     <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(contextText) : contextText}
+                                     <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(contextText) : contextText}
                                    </div>
                                  `
                                      : ''
                                  }
-                                 <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
+                                 ${
+                                   !isKs2
+                                     ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
                                    <strong>Accession:</strong> Edexcel GCSE Paper 3 Primary Visual Evidence
-                                 </div>
+                                 </div>`
+                                     : ''
+                                 }
+
+
                                </div>
                              </div>
-                             ${
-                               hingeText
-                                 ? `
-                               <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                                 <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt</div>
-                                 <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                                   ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(hingeText)) : cleanQuestionText(hingeText)}
-                                 </div>
-                               </div>
-                             `
-                                 : ''
-                             }
+                             ${renderArchivalSourceDiscussionBox(hingeText, img, isKs2, '14px')}
                            </div>
                          </details>
                        </div>
@@ -5583,7 +5860,7 @@ export function renderLesson(lesson) {
                 : ''
             }
             ${
-              rawSource.citation || rawSource.provenance
+              !isKs2 && (rawSource.citation || rawSource.provenance)
                 ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
                     <strong>Provenance:</strong> ${rawSource.citation || rawSource.provenance}
                   </div>`
@@ -5593,7 +5870,7 @@ export function renderLesson(lesson) {
               cleanContextVal
                 ? `
               <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
-                <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
+                <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
               </div>
             `
                 : ''
@@ -5623,11 +5900,12 @@ export function renderLesson(lesson) {
 
           sourceBodyHtml = `
             <div class="archival-source-split-layout">
-              <div class="archival-source-media-col">
-                <div style="position: relative; width: 100%;">
-                  <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" ${rawSource.default_zoom || rawSource.defaultZoom || (rawSourceImgUrl && rawSourceImgUrl.includes('vesalius_fabrica_frontispiece')) ? `data-default-zoom="${rawSource.default_zoom || rawSource.defaultZoom || '2x'}"` : ''} style="cursor: zoom-in; width: 100%; display: block; border-radius: 6px;">
+              <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
+                <div style="position: relative; width: 100%; display: flex; justify-content: center;">
+                  <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" ${rawSource.default_zoom || rawSource.defaultZoom || (rawSourceImgUrl && rawSourceImgUrl.includes('vesalius_fabrica_frontispiece')) ? `data-default-zoom="${rawSource.default_zoom || rawSource.defaultZoom || '2x'}"` : ''} style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
                   <div class="archival-source-inspect-badge">
-                    <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                    <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
+                    <span>Pan-Zoom</span>
                   </div>
                 </div>
                 ${examSpotlightBtn}
@@ -5662,7 +5940,7 @@ export function renderLesson(lesson) {
                     cleanContextVal
                       ? `
                     <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
-                      <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
+                      <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
                     </div>
                   `
                       : ''
@@ -5679,7 +5957,7 @@ export function renderLesson(lesson) {
                   }
                 </div>
                 ${
-                  rawSource.citation || rawSource.provenance
+                  !isKs2 && (rawSource.citation || rawSource.provenance)
                     ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
                         <strong>Provenance:</strong> ${rawSource.citation || rawSource.provenance}
                       </div>`
@@ -5691,6 +5969,9 @@ export function renderLesson(lesson) {
         }
 
         const isAccordionUnit =
+          isKs2 ||
+          window.currentUnitId === 'ks2_ww2' ||
+          unitId === 'ks2_ww2' ||
           window.currentUnitId === 'cme_new' ||
           unitId === 'cme_new' ||
           window.currentUnitId === 'edexcel_medicine' ||
@@ -5842,18 +6123,7 @@ export function renderLesson(lesson) {
                   }
                   return '';
                 })()}
-                ${
-                  rawSource.hinge_question || rawSource.question || rawSource.source_question
-                    ? `
-                  <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt</div>
-                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.hinge_question || rawSource.question || rawSource.source_question)) : cleanQuestionText(rawSource.hinge_question || rawSource.question || rawSource.source_question)}
-                    </div>
-                  </div>
-                `
-                    : ''
-                }
+                ${renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '14px')}
               </div>
             </details>
           `;
@@ -5862,18 +6132,7 @@ export function renderLesson(lesson) {
                 <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
                   ${sourceHeaderHtml}
                   ${sourceBodyHtml}
-                  ${
-                    rawSource.question || rawSource.hinge_question || rawSource.source_question
-                      ? `
-                    <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 12px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                      <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt</div>
-                      <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-                        ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.question || rawSource.hinge_question || rawSource.source_question)) : cleanQuestionText(rawSource.question || rawSource.hinge_question || rawSource.source_question)}
-                      </div>
-                    </div>
-                  `
-                      : ''
-                  }
+                  ${renderArchivalSourceDiscussionBox(rawSource.question || rawSource.hinge_question || rawSource.source_question, rawSource, isKs2, '12px')}
                 </div>
                `;
         }
@@ -6577,20 +6836,33 @@ export function renderLesson(lesson) {
                 : [];
             const words = scaf.word_bank || [];
             const criteria = scaf.evaluative_criteria || [];
+            const isKs2 =
+              window.currentUnitId === 'ks2_ww2' ||
+              (typeof unit !== 'undefined' && unit && (unit.is_ks2 || unit.id === 'ks2_ww2'));
             const isKs3 =
-              window.currentUnitId === 'early_modern_world' ||
-              window.currentUnitId === 'water_and_sanitation' ||
-              window.currentUnitId === 'great_war' ||
-              window.currentUnitId === 'great_war_part2' ||
-              window.currentUnitId === 'medieval_england' ||
-              window.currentUnitId === 'industrialisation_and_empire' ||
-              (typeof unit !== 'undefined' && unit && unit.is_ks3);
-            const badgeText = isKs3 ? 'KS3 Analytical Masterclass' : 'GCSE Analytical Masterclass';
-            const vocabBadgeText = isKs3
-              ? 'Core Disciplinary Vocabulary'
-              : 'GCSE Key Vocabulary Bank';
+              !isKs2 &&
+              (window.currentUnitId === 'early_modern_world' ||
+                window.currentUnitId === 'water_and_sanitation' ||
+                window.currentUnitId === 'great_war' ||
+                window.currentUnitId === 'great_war_part2' ||
+                window.currentUnitId === 'medieval_england' ||
+                window.currentUnitId === 'industrialisation_and_empire' ||
+                (typeof unit !== 'undefined' && unit && unit.is_ks3));
+            const badgeText = isKs2
+              ? 'Year 5 Historian Challenge'
+              : isKs3
+                ? 'KS3 Analytical Masterclass'
+                : 'GCSE Analytical Masterclass';
+            const vocabBadgeText = isKs2
+              ? 'Historian Word Bank'
+              : isKs3
+                ? 'Core Disciplinary Vocabulary'
+                : 'GCSE Key Vocabulary Bank';
             const questionTitle =
-              task.title || task.question || task.text || 'Extended Analytical Writing';
+              task.title ||
+              task.question ||
+              task.text ||
+              (isKs2 ? 'Historian Writing Challenge' : 'Extended Analytical Writing');
             const actualPrompt = task.prompt || task.question || task.text || '';
 
             extrasHtml += `
@@ -6907,7 +7179,7 @@ export function renderLesson(lesson) {
       `;
     }
 
-    if (!isTrip) {
+    if (!isTrip && !isKs2) {
       if (lesson.tasks && lesson.tasks.length > 0) {
         let hasModels = false;
         if (lesson.tasks) {
@@ -6918,8 +7190,37 @@ export function renderLesson(lesson) {
           ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>`
           : '';
 
+        const ks2WorksheetBanner = isKs2
+          ? `
+            <div class="ks2-inlesson-worksheet-banner" style="background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border: 1.5px solid #bfdbfe; border-left: 5px solid #2563eb; border-radius: 8px; padding: 14px 18px; margin-bottom: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; box-shadow: 0 2px 8px rgba(37,99,235,0.06);">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 38px; height: 38px; border-radius: 8px; background: #2563eb; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(37,99,235,0.3);">
+                  <i class="fa-solid fa-file-lines"></i>
+                </div>
+                <div>
+                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; letter-spacing: 0.5px;">Enquiry Companion Resources &bull; Year 5</div>
+                  <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: #0f172a;">A4 Companion Worksheet &amp; Pupil Workbook</div>
+                  <div style="font-size: 0.82rem; color: #475569; margin-top: 1px;">Printable 2-page enquiry worksheet, source detective tasks, and 24-page pupil workbook.</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                <button type="button" class="btn btn-ks2-inlesson-worksheet" onclick="window.openKs2WorksheetModal('${lesson.id}', ${currentIndex})" style="background: #2563eb; color: #ffffff; font-weight: 700; font-size: 0.82rem; padding: 7px 14px; border-radius: 6px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 5px rgba(37,99,235,0.25);">
+                  <i class="fa-solid fa-file-pdf"></i> Open Lesson Worksheet (2pp)
+                </button>
+                <button type="button" class="btn btn-ks2-inlesson-teacher" onclick="window.openKs2TeacherGuidanceModal('${lesson.id}', ${currentIndex})" style="background: #ffffff; color: #9d174d; border: 1.5px solid #fbcfe8; font-weight: 700; font-size: 0.82rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-chalkboard-user"></i> Teacher Guidance
+                </button>
+                <a href="/pdfs/ks2_ww2/ks2_ww2_pupil_workbook.pdf" target="_blank" style="background: #ffffff; color: #166534; border: 1.5px solid #bbf7d0; font-weight: 700; font-size: 0.82rem; padding: 6px 12px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-book-bookmark"></i> Pupil Workbook (PDF)
+                </a>
+              </div>
+            </div>
+          `
+          : '';
+
         htmlTasks += `
             <div class="phase-card">
+              ${ks2WorksheetBanner}
               <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
                 
                 ${revealBtn}
@@ -6960,19 +7261,27 @@ export function renderLesson(lesson) {
           }
           if (task.type === 'two_sided_argument') {
             const hasTaskPrefix = task.topic && /^Task\s*\d+/i.test(task.topic);
+            const isKs2 =
+              window.currentUnitId === 'ks2_ww2' ||
+              (typeof unit !== 'undefined' && unit && (unit.is_ks2 || unit.id === 'ks2_ww2'));
             const isKs3 =
-              window.currentUnitId === 'early_modern_world' ||
-              window.currentUnitId === 'water_and_sanitation' ||
-              window.currentUnitId === 'great_war' ||
-              window.currentUnitId === 'great_war_part2' ||
-              window.currentUnitId === 'medieval_england' ||
-              window.currentUnitId === 'industrialisation_and_empire' ||
-              (typeof unit !== 'undefined' && unit && unit.is_ks3);
-            const qNumPrefix = task.qNum && !hasTaskPrefix && !isKs3 ? `Q${task.qNum}. ` : '';
+              !isKs2 &&
+              (window.currentUnitId === 'early_modern_world' ||
+                window.currentUnitId === 'water_and_sanitation' ||
+                window.currentUnitId === 'great_war' ||
+                window.currentUnitId === 'great_war_part2' ||
+                window.currentUnitId === 'medieval_england' ||
+                window.currentUnitId === 'industrialisation_and_empire' ||
+                (typeof unit !== 'undefined' && unit && unit.is_ks3));
+            const qNumPrefix =
+              task.qNum && !hasTaskPrefix && !isKs3 && !isKs2 ? `Q${task.qNum}. ` : '';
             const adv = task.advancement || {};
             const lim = task.limitations || {};
-            const advTitle = adv.title || 'Advancement & Progress (Change)';
-            const limTitle = lim.title || 'Critical Limitations & Stagnation (Continuity)';
+            const advTitle =
+              adv.title || (isKs2 ? 'Successes & Advances' : 'Advancement & Progress (Change)');
+            const limTitle =
+              lim.title ||
+              (isKs2 ? 'Challenges & Obstacles' : 'Critical Limitations & Stagnation (Continuity)');
             const advPoints = adv.points || [];
             const limPoints = lim.points || [];
             const advStarter = adv.starter || adv.sentence_starter || '';
@@ -6980,24 +7289,42 @@ export function renderLesson(lesson) {
             const synthesisPrompt =
               task.synthesis_prompt ||
               task.question ||
-              'Write a balanced analytical paragraph evaluating both sides.';
-            const connectives = task.synthesis_connectives || [
-              'On the one hand...',
-              'For example...',
-              'On the other hand...',
-              'Consequently...',
-              'Overall, while...',
-            ];
+              (isKs2
+                ? 'Write your historian answer weighing up both sides.'
+                : 'Write a balanced analytical paragraph evaluating both sides.');
+            const connectives =
+              task.synthesis_connectives ||
+              (isKs2
+                ? [
+                    'On the one hand...',
+                    'For example...',
+                    'On the other hand...',
+                    'This was important because...',
+                    'Overall, I think that...',
+                  ]
+                : [
+                    'On the one hand...',
+                    'For example...',
+                    'On the other hand...',
+                    'Consequently...',
+                    'Overall, while...',
+                  ]);
             const modelAnswer = task.model_answer || task.model || '';
-            const targetBadge = isKs3
-              ? `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bridge" style="color: #5eead4;"></i> Planning Bridge &bull; Evidence Extraction</span>`
-              : `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]</span>`;
-            const synthesisTitle = isKs3
-              ? `<i class="fa-solid fa-pen-nib"></i> Paragraph Builder &bull; Evaluative Synthesis`
-              : `<i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis`;
-            const placeholderText = isKs3
-              ? 'Combine the evidence and counter-evidence above to write your complex, balanced analytical paragraph...'
-              : 'Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph...';
+            const targetBadge = isKs2
+              ? `<span style="background: #1e3a8a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-award" style="color: #93c5fd;"></i> Year 5 Historian Investigation</span>`
+              : isKs3
+                ? `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bridge" style="color: #5eead4;"></i> Planning Bridge &bull; Evidence Extraction</span>`
+                : `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]</span>`;
+            const synthesisTitle = isKs2
+              ? `<i class="fa-solid fa-pen-nib"></i> Paragraph Builder: Historian Writing`
+              : isKs3
+                ? `<i class="fa-solid fa-pen-nib"></i> Paragraph Builder &bull; Evaluative Synthesis`
+                : `<i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis`;
+            const placeholderText = isKs2
+              ? 'Use the clues and evidence above to write your historian explanation...'
+              : isKs3
+                ? 'Combine the evidence and counter-evidence above to write your complex, balanced analytical paragraph...'
+                : 'Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph...';
 
             htmlTasks += `
               <div class="task-box two-sided-argument-interactive" style="margin-bottom: 25px; background: #ffffff; padding: 20px; border-radius: 10px; border: 2px solid #0f766e; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08);">
@@ -7216,37 +7543,59 @@ export function renderLesson(lesson) {
           }
           if (task.type === 'extended_writing' || task.type === 'narrative_account') {
             const hasTaskPrefix = task.topic && /^Task\s*\d+/i.test(task.topic);
+            const isKs2 =
+              window.currentUnitId === 'ks2_ww2' ||
+              (typeof unit !== 'undefined' && unit && (unit.is_ks2 || unit.id === 'ks2_ww2'));
             const isKs3 =
-              window.currentUnitId === 'early_modern_world' ||
-              window.currentUnitId === 'water_and_sanitation' ||
-              window.currentUnitId === 'great_war' ||
-              window.currentUnitId === 'great_war_part2' ||
-              window.currentUnitId === 'medieval_england' ||
-              window.currentUnitId === 'industrialisation_and_empire' ||
-              (typeof unit !== 'undefined' && unit && unit.is_ks3);
-            const qNumPrefix = task.qNum && !hasTaskPrefix && !isKs3 ? `Q${task.qNum}. ` : '';
+              !isKs2 &&
+              (window.currentUnitId === 'early_modern_world' ||
+                window.currentUnitId === 'water_and_sanitation' ||
+                window.currentUnitId === 'great_war' ||
+                window.currentUnitId === 'great_war_part2' ||
+                window.currentUnitId === 'medieval_england' ||
+                window.currentUnitId === 'industrialisation_and_empire' ||
+                (typeof unit !== 'undefined' && unit && unit.is_ks3));
+            const qNumPrefix =
+              task.qNum && !hasTaskPrefix && !isKs3 && !isKs2 ? `Q${task.qNum}. ` : '';
             const taskTitle =
               task.tariff ||
               task.title ||
               task.topic ||
-              (isKs3 ? 'Enquiry Writing Task' : 'Task 4: Analytical Synthesis & Historical Essay');
+              (isKs2
+                ? 'Historian Writing Challenge'
+                : isKs3
+                  ? 'Enquiry Writing Task'
+                  : 'Task 4: Analytical Synthesis & Historical Essay');
             const badgeText =
               task.badge ||
-              (isKs3
-                ? task.type === 'narrative_account'
-                  ? '8 MARKS &bull; NARRATIVE ACCOUNT'
-                  : 'KS3 Enquiry Essay &bull; Structured Writing'
-                : 'GCSE Analytical Masterclass');
+              (isKs2
+                ? 'Year 5 Historian Challenge'
+                : isKs3
+                  ? task.type === 'narrative_account'
+                    ? '8 MARKS &bull; NARRATIVE ACCOUNT'
+                    : 'KS3 Enquiry Essay &bull; Structured Writing'
+                  : 'GCSE Analytical Masterclass');
             const questionPrompt = task.question || task.text || task.prompt || '';
             const hints = Array.isArray(task.hints) ? task.hints : [];
             const modelAnswer = task.model_answer || task.model || '';
-            const essayConnectives = (task.scaffolding && task.scaffolding.connective_bank) || [
-              'To a large extent, it can be argued that...',
-              'In particular, a decisive factor was...',
-              'Furthermore, this created severe consequences because...',
-              'On the other hand, an alternative perspective is that...',
-              'In conclusion, the decisive reason why...',
+            const ks2Connectives = [
+              'In the beginning, ...',
+              'This was important because ...',
+              'The evidence shows that ...',
+              'Another reason was ...',
+              'Overall, I think that ...',
             ];
+            const essayConnectives =
+              (task.scaffolding && task.scaffolding.connective_bank) ||
+              (isKs2
+                ? ks2Connectives
+                : [
+                    'To a large extent, it can be argued that...',
+                    'In particular, a decisive factor was...',
+                    'Furthermore, this created severe consequences because...',
+                    'On the other hand, an alternative perspective is that...',
+                    'In conclusion, the decisive reason why...',
+                  ]);
 
             let peelHtml = '';
             if (hints.length > 0) {
@@ -7359,7 +7708,7 @@ export function renderLesson(lesson) {
                     <summary style="padding: 10px 14px; cursor: pointer; font-size: 0.88rem; font-weight: 800; color: #0369a1; background: #f1f5f9; display: flex; align-items: center; justify-content: space-between; user-select: none;">
                       <span style="display: flex; align-items: center; gap: 8px;">
                         <i class="${task.type === 'narrative_account' ? 'fa-solid fa-arrow-down-wide-short' : 'fa-solid fa-chalkboard-user'}" style="color: #0284c7;"></i>
-                        <span>${task.type === 'narrative_account' ? 'Chronological Narrative Scaffolding &bull; 3-Stage Sequence (Beginning, Middle, End)' : 'PEEL Analytical Writing Scaffolds &bull; Sentence Stems'}</span>
+                        <span>${isKs2 ? 'Historian Writing Scaffolds &bull; Helpful Sentence Starters' : task.type === 'narrative_account' ? 'Chronological Narrative Scaffolding &bull; 3-Stage Sequence (Beginning, Middle, End)' : 'PEEL Analytical Writing Scaffolds &bull; Sentence Stems'}</span>
                       </span>
                       <span style="font-size: 0.75rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
                         <i class="fa-solid fa-eye"></i> Click to Reveal Scaffolding
@@ -7375,19 +7724,19 @@ export function renderLesson(lesson) {
 
                 <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 12px;">
                   <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center;">
-                    <span style="font-size: 0.78rem; font-weight: 700; color: #0369a1; text-transform: uppercase;">${task.type === 'narrative_account' ? 'Chronological & Causal Connectives (Click to Insert):' : 'Analytical Connectives (Click to Insert):'}</span>
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0369a1; text-transform: uppercase;">${isKs2 ? 'Helpful Sentence Starters (Click to Insert):' : task.type === 'narrative_account' ? 'Chronological & Causal Connectives (Click to Insert):' : 'Analytical Connectives (Click to Insert):'}</span>
                     ${essayConnectives.map((c) => `<button type="button" class="connective-chip" data-connective="${c.replace(/"/g, '&quot;')}" style="background: #ffffff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease;" title="Click to insert at cursor">${c}</button>`).join('')}
                   </div>
 
-                  <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">${task.type === 'narrative_account' ? 'Student Response &bull; Chronological 3-Paragraph Narrative Account (Beginning, Middle, End):' : 'Student Response &bull; Structured Historical Argument:'}</label>
-                  <textarea class="interactive-textarea student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 140px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="${task.type === 'narrative_account' ? 'Write your 3-paragraph narrative account following the chronological sequence (Beginning: Peterloo ➔ Middle: Swing Riots ➔ End: Tolpuddle)...' : 'Using the PEEL structure and historical evidence above, write your analytical essay paragraph...'}" oninput="window.updateProgress()"></textarea>
+                  <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">${isKs2 ? 'Your Historian Response:' : task.type === 'narrative_account' ? 'Student Response &bull; Chronological 3-Paragraph Narrative Account (Beginning, Middle, End):' : 'Student Response &bull; Structured Historical Argument:'}</label>
+                  <textarea class="interactive-textarea student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 140px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="${isKs2 ? 'Write your historian answer using the clues and key words above...' : task.type === 'narrative_account' ? 'Write your 3-paragraph narrative account following the chronological sequence (Beginning: Peterloo ➔ Middle: Swing Riots ➔ End: Tolpuddle)...' : 'Using the PEEL structure and historical evidence above, write your analytical essay paragraph...'}" oninput="window.updateProgress()"></textarea>
 
                   ${
                     modelAnswer
                       ? `
                     <details class="model-paragraph-reveal" style="margin-top: 14px; border: 1px dashed #0284c7; border-radius: 8px; padding: 10px 14px; background: #ffffff;">
                       <summary style="cursor: pointer; color: #0369a1; font-weight: 700; font-size: 0.9rem; outline: none; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-eye"></i> [ Show Examiner-Grade Model Response ]
+                        <i class="fa-solid fa-eye"></i> ${isKs2 ? '[ Show Model Historian Answer ]' : '[ Show Examiner-Grade Model Response ]'}
                       </summary>
                       <div class="scaffold-box model-box" style="margin-top: 12px; padding: 14px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 4px; font-size: 0.95rem; color: #1e293b; line-height: 1.65; border: 1px solid #e2e8f0; font-family: 'Georgia', serif;">
                         ${
@@ -9033,9 +9382,14 @@ export function renderLesson(lesson) {
   }
 
   const activeUnitEdition = (activeUnit && activeUnit.edition) || '2026.1';
+  const hubPrefix = isKs2
+    ? 'The History Revision Hub &bull; Year 5 History'
+    : isKs3
+      ? 'The History Revision Hub &bull; Key Stage 3'
+      : 'GCSE History Hub';
   html += `
     <div class="lesson-footer-meta" style="text-align: center; margin-top: 50px; padding: 16px; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid #e2e8f0; font-family: 'Inter', sans-serif;">
-      GCSE History Hub &bull; Unit: ${unitId} &bull; Edition ${activeUnitEdition}
+      ${hubPrefix} &bull; Unit: ${activeUnit?.shortTitle || activeUnit?.title || unitId} &bull; Edition ${activeUnitEdition}
     </div>
   `;
 

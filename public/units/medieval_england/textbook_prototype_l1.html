@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 1 Textbook Redesign Prototype • Medieval England • The History Revision Hub</title>
+  
+  <!-- Typography: Newsreader (Body), Playfair Display (Headings), Inter (Editorial metadata) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* -------------------------------------------------------------
+       GLOBAL RESET & A4 PAGE GEOMETRY
+       ------------------------------------------------------------- */
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --font-body: 'Newsreader', Georgia, serif;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-archival: 'Cinzel', serif;
+
+      /* Refined Historical Scholar Palette */
+      --ink-primary: #0f172a;       /* Deep slate black */
+      --ink-secondary: #334155;     /* Dark slate */
+      --ink-muted: #64748b;         /* Muted editorial grey */
+      --crimson-accent: #831843;    /* Royal Norman / Plantagenet Crimson */
+      --crimson-light: #fdf2f8;     /* Subtle rose tint */
+      --crimson-border: #fbcfe8;    /* Border line */
+      --gold-accent: #92400e;       /* Parchment amber */
+      --parchment-bg: #faf8f5;      /* Warm off-white */
+      --rule-line: #cbd5e1;         /* Hairline rule */
+      
+      /* Redesigned Typography Scale (10.8pt body with 1.50 line height for Year 7 reading ease) */
+      --body-font-size: 10.8pt;
+      --body-line-height: 1.50;
+    }
+
+    body {
+      background-color: #334155;
+      color: var(--ink-primary);
+      font-family: var(--font-body);
+      font-size: var(--body-font-size);
+      line-height: var(--body-line-height);
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      padding: 24px 0;
+    }
+
+    /* Interactive Top Control Bar (Screen only) */
+    .screen-control-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .screen-control-bar .badge-hub {
+      background: var(--crimson-accent);
+      color: #fff;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    .screen-control-bar .title-hub {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #f1f5f9;
+    }
+    .screen-control-bar .actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .btn-action {
+      background: #1e293b;
+      color: #f8fafc;
+      border: 1px solid #475569;
+      padding: 6px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+    .btn-action:hover {
+      background: #334155;
+      border-color: #94a3b8;
+    }
+    .btn-action.btn-primary {
+      background: var(--crimson-accent);
+      border-color: #9d174d;
+    }
+    .btn-action.btn-primary:hover {
+      background: #9d174d;
+    }
+
+    /* Container for Spreads */
+    .spread-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      padding: 0 16px;
+    }
+
+    /* -------------------------------------------------------------
+       A4 PAGE CONTAINER
+       Exact Dimensions: 210mm × 297mm
+       ------------------------------------------------------------- */
+    .a4-page {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 13mm 14mm 11mm 14mm;
+      page-break-after: always;
+      break-after: always;
+    }
+
+    /* Left page (Verso) has slightly wider inner margin for binding */
+    .a4-page.verso {
+      padding-right: 15mm;
+      padding-left: 13mm;
+    }
+    /* Right page (Recto) has slightly wider inner margin for binding */
+    .a4-page.recto {
+      padding-left: 15mm;
+      padding-right: 13mm;
+    }
+
+    /* -------------------------------------------------------------
+       HEADER REGION: Clean, Dignified, Scholarly
+       ------------------------------------------------------------- */
+    .page-header {
+      flex-shrink: 0;
+      margin-bottom: 8px;
+      border-bottom: 1.5px solid var(--crimson-accent);
+      padding-bottom: 5px;
+    }
+
+    .header-meta-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--crimson-accent);
+      margin-bottom: 3px;
+    }
+    .header-meta-strip .syllabus-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .header-meta-strip .badge-ks3 {
+      background: var(--crimson-accent);
+      color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      font-size: 6.5pt;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }
+    .header-meta-strip .enquiry-indicator {
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    .lesson-headline {
+      font-family: var(--font-display);
+      font-size: 14pt;
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--ink-primary);
+      letter-spacing: -0.015em;
+      margin-bottom: 4px;
+    }
+
+    .enquiry-question-banner {
+      background: #fdf2f8;
+      border-left: 3.5px solid var(--crimson-accent);
+      padding: 3px 8px;
+      border-radius: 0 4px 4px 0;
+      font-family: var(--font-sans);
+      font-size: 8.2pt;
+      color: #1e293b;
+      line-height: 1.3;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .enquiry-question-banner strong {
+      color: var(--crimson-accent);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      font-size: 7.6pt;
+    }
+
+    /* Recto Header (Right Page) */
+    .recto-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+    }
+    .recto-header .rh-left {
+      font-family: var(--font-sans);
+      font-size: 7.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--crimson-accent);
+    }
+    .recto-header .rh-title {
+      font-family: var(--font-display);
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--ink-primary);
+      letter-spacing: -0.01em;
+    }
+
+    /* -------------------------------------------------------------
+       CORE NARRATIVE PROSE: 2-Column Balanced Scholarly Layout
+       ------------------------------------------------------------- */
+    .prose-content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+    }
+
+    /* 2-Column reading layout with generous gutter */
+    .dual-reading-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .narrative-act-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .act-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      border-bottom: 1px solid var(--rule-line);
+      padding-bottom: 3px;
+      margin-bottom: 3px;
+    }
+    .act-num-pill {
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #fff;
+      background: var(--crimson-accent);
+      padding: 1px 5px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .act-title {
+      font-family: var(--font-display);
+      font-size: 10.2pt;
+      font-weight: 700;
+      color: var(--ink-primary);
+      letter-spacing: -0.01em;
+    }
+
+    /* Narrative Paragraphs */
+    .narrative-p {
+      text-align: justify;
+      hyphens: auto;
+      color: var(--ink-secondary);
+      font-size: var(--body-font-size);
+      line-height: var(--body-line-height);
+      position: relative;
+    }
+    .narrative-p + .narrative-p {
+      margin-top: 2px;
+    }
+
+    /* Scholarly Paragraph Marker */
+    .para-marker {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 7.2pt;
+      font-weight: 700;
+      color: var(--crimson-accent);
+      margin-right: 4px;
+      user-select: none;
+      vertical-align: baseline;
+    }
+
+    /* Bold historical names & terms embedded in prose */
+    .narrative-p strong {
+      color: var(--ink-primary);
+      font-weight: 600;
+    }
+
+    /* Integrated Term Definition in Margin/Footnotes */
+    .term-gloss {
+      border-bottom: 1px dashed var(--crimson-accent);
+      cursor: help;
+      position: relative;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* -------------------------------------------------------------
+       INTEGRATED MARGINALIA VOCABULARY STRIP
+       Sits gracefully at the base of the narrative columns
+       ------------------------------------------------------------- */
+    .reading-glossary-ribbon {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid var(--crimson-accent);
+      padding: 6px 10px;
+      border-radius: 3px;
+      margin-top: auto;
+      flex-shrink: 0;
+    }
+    .glossary-ribbon-header {
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--crimson-accent);
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .glossary-ribbon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .glossary-ribbon-item {
+      font-family: var(--font-sans);
+      font-size: 7.2pt;
+      line-height: 1.35;
+      color: #334155;
+    }
+    .glossary-ribbon-item strong {
+      display: block;
+      color: #0f172a;
+      font-size: 7.6pt;
+      font-weight: 700;
+      margin-bottom: 1px;
+    }
+
+    /* -------------------------------------------------------------
+       PRIMARY SOURCE EXHIBITS: Museum Quality, High Dignity
+       ------------------------------------------------------------- */
+    /* Primary Written Chronicle Document */
+    .written-chronicle-plate {
+      background: #fbfbfa;
+      border: 1px solid #e5e7eb;
+      border-left: 3.5px solid #0f172a;
+      padding: 8px 12px;
+      border-radius: 3px;
+      margin-top: 6px;
+    }
+    .plate-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
+      margin-bottom: 4px;
+      border-bottom: 1px dotted #cbd5e1;
+      padding-bottom: 3px;
+    }
+    .plate-badge {
+      background: #0f172a;
+      color: #fff;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+    }
+    .plate-type {
+      font-weight: 700;
+      color: var(--ink-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .plate-date {
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+    .plate-title {
+      font-family: var(--font-display);
+      font-size: 8.8pt;
+      font-weight: 700;
+      color: var(--ink-primary);
+      margin-bottom: 4px;
+    }
+    .chronicle-quote {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 9.8pt;
+      line-height: 1.45;
+      color: #1e293b;
+      margin-bottom: 5px;
+    }
+    .plate-context-box {
+      font-family: var(--font-sans);
+      font-size: 7.2pt;
+      line-height: 1.35;
+      color: #475569;
+      background: #f1f5f9;
+      padding: 4px 7px;
+      border-radius: 2px;
+    }
+    .plate-hinge-q {
+      margin-top: 3px;
+      font-weight: 600;
+      color: var(--crimson-accent);
+    }
+    .plate-footer {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-sans);
+      font-size: 6.2pt;
+      color: var(--ink-muted);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Grand Visual Primary Source (Bayeux Tapestry Plate) */
+    .hero-source-plate {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 6px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .hero-source-plate .plate-img-frame {
+      width: 100%;
+      height: 155px;
+      overflow: hidden;
+      border-radius: 2px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-source-plate img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .hero-source-caption-block {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: 2px 4px;
+    }
+    .hero-source-caption-block .caption-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
+    }
+    .hero-source-caption-block .caption-badge {
+      background: var(--crimson-accent);
+      color: #ffffff;
+      font-weight: 800;
+      padding: 1px 5px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+    }
+    .hero-source-caption-block .caption-citation {
+      font-family: var(--font-sans);
+      font-size: 6.4pt;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero-source-caption-block .caption-title {
+      font-family: var(--font-display);
+      font-size: 9.6pt;
+      font-weight: 700;
+      color: var(--ink-primary);
+    }
+    .hero-source-caption-block .caption-body {
+      font-family: var(--font-sans);
+      font-size: 7.4pt;
+      line-height: 1.35;
+      color: var(--ink-secondary);
+    }
+    .hero-source-caption-block .hinge-banner {
+      background: #fdf2f8;
+      border-left: 3px solid var(--crimson-accent);
+      padding: 3px 6px;
+      border-radius: 0 2px 2px 0;
+      font-family: var(--font-sans);
+      font-size: 7.4pt;
+      color: #1e293b;
+      margin-top: 2px;
+    }
+    .hero-source-caption-block .hinge-banner strong {
+      color: var(--crimson-accent);
+      font-weight: 700;
+    }
+
+    /* -------------------------------------------------------------
+       SUBTLE ENQUIRY SYNTHESIS ANCHOR (Replaces Cluttered Tasks)
+       ------------------------------------------------------------- */
+    .enquiry-synthesis-anchor {
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-sans);
+      font-size: 7.6pt;
+      color: #334155;
+      border-radius: 3px;
+      margin-top: auto;
+      flex-shrink: 0;
+    }
+    .enquiry-synthesis-anchor .esa-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .enquiry-synthesis-anchor .esa-badge {
+      background: #0f172a;
+      color: #fff;
+      font-size: 6.4pt;
+      font-weight: 800;
+      padding: 1.5px 6px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .enquiry-synthesis-anchor .esa-text strong {
+      color: #0f172a;
+    }
+    .enquiry-synthesis-anchor .esa-link {
+      font-weight: 700;
+      color: var(--crimson-accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* -------------------------------------------------------------
+       PAGE FOOTER
+       ------------------------------------------------------------- */
+    .page-footer {
+      flex-shrink: 0;
+      border-top: 1px solid var(--rule-line);
+      padding-top: 5px;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
+      color: var(--ink-muted);
+      letter-spacing: 0.03em;
+    }
+    .page-footer .page-number {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 8.5pt;
+      color: var(--ink-primary);
+    }
+
+    /* -------------------------------------------------------------
+       PRINT STYLES
+       ------------------------------------------------------------- */
+    @media print {
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+      .screen-control-bar {
+        display: none !important;
+      }
+      .spread-container {
+        padding: 0 !important;
+        gap: 0 !important;
+        max-width: none !important;
+        display: block !important;
+      }
+      .a4-page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        page-break-after: always !important;
+        break-after: always !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen-Only Navigation & Control Bar -->
+  <div class="screen-control-bar">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <span class="badge-hub">PROTOTYPE REDESIGN</span>
+      <span class="title-hub">Medieval England: Lesson 1 • The Scholar’s Reading Anthology Architecture</span>
+    </div>
+    <div class="actions">
+      <button class="btn-action" onclick="toggleComparison()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        Toggle Legacy Comparison
+      </button>
+      <button class="btn-action btn-primary" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+        Print / PDF Preview (A4)
+      </button>
+      <a class="btn-action" href="/units/medieval_england/textbook.html" target="_blank">
+        View Full Legacy Textbook
+      </a>
+    </div>
+  </div>
+
+  <!-- SPREAD CONTAINER (Verso + Recto = 1 Lesson) -->
+  <div class="spread-container">
+
+    <!-- =========================================================
+         PAGE 2 (VERSO): ACTS 1 & 2 • THE CONFLICT OF THREE RIVALS
+         ========================================================= -->
+    <div class="a4-page verso" id="page-verso">
+      
+      <!-- Dignified Header Strip -->
+      <header class="page-header">
+        <div class="header-meta-strip">
+          <div class="syllabus-tag">
+            <span class="badge-ks3">YEAR 7</span>
+            <span>MEDIEVAL ENGLAND (1066–1485) &bull; THE STRUGGLE FOR POWER</span>
+          </div>
+          <span class="enquiry-indicator">ENQUIRY 01 OF 09 &bull; SPREAD I OF II</span>
+        </div>
+        
+        <h1 class="lesson-headline">1066: The Succession Crisis &amp; The Battle of Hastings</h1>
+        
+        <div class="enquiry-question-banner">
+          <strong>Key Enquiry:</strong> Why did three men claim one throne in 1066, and how did William secure victory at Hastings?
+        </div>
+      </header>
+
+      <!-- Main Prose Reading Area (2 Columns) -->
+      <main class="prose-content-area">
+        
+        <div class="dual-reading-columns">
+          
+          <!-- Column A: Act 1 (Succession Crisis) -->
+          <div class="narrative-act-group">
+            <div class="act-header">
+              <span class="act-num-pill">ACT I</span>
+              <h2 class="act-title">The Confessor’s Void &amp; The Sacred Oath</h2>
+            </div>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.1]</span>
+              King Edward the Confessor spent twenty-four years on the English throne being famously pious, politically detached, and disastrously vague about who would succeed him. Having produced no biological heirs, Edward spent his twilight years casually promising the English crown to multiple foreign dignitaries. When he finally died on 5 January 1066, Anglo-Saxon law provided no clear succession rules, triggering the most vicious three-way geopolitical crisis in English history as rival claimants gathered across the English Channel and the stormy North Sea.
+            </p>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.2]</span>
+              England’s leading nobleman, <strong>Harold Godwinson</strong>, Earl of Wessex, acted with ruthless speed. He claimed that as the dying king slipped into unconsciousness, Edward grasped his hand and nominated Harold to protect the realm. The <em>Witan</em>—the council of Anglo-Saxon earls and bishops—quickly ratified Harold’s claim, crowning him King Harold II in Westminster Abbey the following morning. Yet Harold’s crown rested on fragile ground, as two formidable military commanders immediately denounced him as an illegitimate usurper.
+            </p>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.3]</span>
+              Across the Channel, <strong>Duke William of Normandy</strong> was incandescent with rage. William claimed that Edward had promised him the crown in 1051, and that Harold had sworn a sacred oath on holy relics in 1064 to support William’s succession. William secured the blessing of Pope Alexander II, who granted a consecrated papal banner. This vital endorsement transformed William’s opportunistic cross-Channel invasion into a holy crusade against an oath-breaking usurper in the eyes of Christendom.
+            </p>
+          </div>
+
+          <!-- Column B: Act 2 (Northern Pincer & Stamford Bridge) -->
+          <div class="narrative-act-group">
+            <div class="act-header">
+              <span class="act-num-pill">ACT II</span>
+              <h2 class="act-title">The Northern Crucible &amp; Stamford Bridge</h2>
+            </div>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.4]</span>
+              Harold faced an agonizing military dilemma: Duke William was assembling an invasion fleet in Normandy, while Viking King <strong>Harald Hardrada</strong> prepared three hundred longships in Norway. Harold positioned his army along the southern coast throughout the summer of 1066, waiting for the Normans. However, unyielding northerly winds pinned William’s fleet in French ports, exhausting English supplies and forcing Harold to disband his peasant militia in early September just as catastrophe struck.
+            </p>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.5]</span>
+              Hardrada’s Norse army landed near York, crushing the northern earls at Gate Fulford. Showing astonishing military energy, King Harold marched his elite bodyguard housecarls 190 miles north in just five days, catching the unarmoured Vikings completely by surprise at <strong>Stamford Bridge</strong> on 25 September. In a savage bloodbath, Hardrada was slain, ending the Viking threat forever. Yet as Harold celebrated in York, a breathless messenger arrived: the Channel wind had shifted, and Duke William had landed at Pevensey.
+            </p>
+
+            <p class="narrative-p">
+              <span class="para-marker">[1.6]</span>
+              William’s invasion fleet had made landfall unopposed on the Sussex coast on 28 September, immediately throwing up a prefabricated timber castle inside the Roman fortress walls of Pevensey. To force Harold into fighting before the English could gather reinforcement levies, William systematically burned and pillaged Harold’s personal ancestral estates across Sussex. Taunted by the destruction of his lands and desperate to protect his subjects, Harold made the fateful decision to march south immediately without resting his exhausted army.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Integrated Part I Vocabulary Ribbon (Acts 1 & 2 terms) -->
+        <div class="reading-glossary-ribbon" style="margin-top: 10px;">
+          <div class="glossary-ribbon-header">
+            <span>Essential Disciplinary Vocabulary &bull; Acts I &amp; II</span>
+            <span>Academic Lexicon</span>
+          </div>
+          <div class="glossary-ribbon-grid">
+            <div class="glossary-ribbon-item">
+              <strong>Succession Crisis</strong>
+              A dangerous political vacuum when a monarch dies without leaving a clear, uncontested biological heir.
+            </div>
+            <div class="glossary-ribbon-item">
+              <strong>The Witan</strong>
+              The council of Anglo-Saxon earls and bishops possessing ancient constitutional authority to elect the King.
+            </div>
+            <div class="glossary-ribbon-item">
+              <strong>Housecarls</strong>
+              Elite, full-time professional Anglo-Saxon bodyguards armed with lethal two-handed Danish battleaxes.
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Verso Footer -->
+      <footer class="page-footer">
+        <span>Medieval England (1066–1485) &bull; Part I: The Succession Crisis &amp; The Two-Front War</span>
+        <span class="page-number">2</span>
+      </footer>
+
+    </div>
+
+
+    <!-- =========================================================
+         PAGE 3 (RECTO): ACTS 3 & 4 • SENLAC HILL & THE VERDICT
+         ========================================================= -->
+    <div class="a4-page recto" id="page-recto">
+      
+      <!-- Recto Running Header -->
+      <header class="recto-header">
+        <span class="rh-left">PART II: SENLAC HILL &amp; THE NORMAN VERDICT</span>
+        <span class="rh-title">Enquiry 01: 1066 &amp; The Battle of Hastings</span>
+      </header>
+
+      <!-- Main Prose Reading Area -->
+      <main class="prose-content-area">
+        
+        <!-- Upper Grid: Acts 3 & 4 (2 Columns) -->
+        <div class="dual-reading-columns">
+          
+          <!-- Column A: Act 3 (The Shield Wall Clash) -->
+          <div class="narrative-act-group">
+            <div class="act-header">
+              <span class="act-num-pill">ACT III</span>
+              <h2 class="act-title">Senlac Hill &amp; The Shield Wall</h2>
+            </div>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.7]</span>
+              Harold marched his exhausted army 250 miles back south in under two weeks, arriving at Senlac Hill near Hastings on 14 October 1066. The battle represented a clash between two fundamentally distinct military philosophies. Harold deployed his troops along the ridge crest, locking heavy lime-wood shields into an impenetrable defensive wall. William commanded a combined-arms force of archers, armored infantry, and devastating heavy cavalry, yet for hours Norman uphill charges broke helplessly against the ferocious wall of swinging Danish axes.
+            </p>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.8]</span>
+              In the afternoon, panic erupted across the Norman ranks when a rumor spread that Duke William was dead. Norman infantry fled down the slope, and undisciplined Saxon soldiers broke ranks to pursue them. William dramatically pushed back his nasal helmet, shouting: <em>"Look at me! I live, and with God’s help I will conquer!"</em> The rallied Norman knights wheeled round and slaughtered the exposed Saxons, exposing the fatal weakness of the stationary Saxon formation.
+            </p>
+          </div>
+
+          <!-- Column B: Act 4 (The Feigned Retreat & The Verdict) -->
+          <div class="narrative-act-group">
+            <div class="act-header">
+              <span class="act-num-pill">ACT IV</span>
+              <h2 class="act-title">The Feigned Retreat &amp; The Verdict</h2>
+            </div>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.9]</span>
+              William capitalized on this discovery by ordering repeated <strong>feigned retreats</strong>—charging the hill, pretending to flee in panic, and luring desperate Saxon defenders into the open meadow where heavy cavalry hacked them to pieces. With the English shield wall fatally thinned, William ordered his archers to fire high plunging volleys into the air, raining arrows down behind the remaining Saxon shields while cavalry smashed through the ragged gaps.
+            </p>
+            
+            <p class="narrative-p">
+              <span class="para-marker">[1.10]</span>
+              As dusk fell, King Harold was killed—traditionally depicted as struck through the eye by an arrow—and his faithful housecarls died fighting to the last man around his royal dragon standard. Harold had fought two massive pitched battles in three weeks across opposite ends of England, but William’s tactical brilliance, combined-arms cavalry, and fortune sealed the Norman victory. On Christmas Day 1066, William was crowned King of England in Westminster Abbey, ending six centuries of Anglo-Saxon rule and forging a new feudal realm.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Hero Archival Visual Plate: The Bayeux Tapestry -->
+        <div class="hero-source-plate">
+          <div class="plate-img-frame">
+            <img src="/images/bayeux_william_hastings_wide.jpg" alt="The Bayeux Tapestry: Norman Heavy Cavalry charging the Anglo-Saxon Shield Wall at Senlac Hill">
+          </div>
+          <div class="hero-source-caption-block">
+            <div class="caption-meta">
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span class="caption-badge">PRIMARY SOURCE B</span>
+                <span style="font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.04em;">Romanesque Visual Embroidery</span>
+              </div>
+              <span class="caption-citation">Mus&eacute;e de la Tapisserie de Bayeux &bull; Commissioned c. 1070s</span>
+            </div>
+            <div class="caption-title">The Bayeux Tapestry: Duke William Wheels His Cavalry Against the English Wall</div>
+            <div class="caption-body">
+              Commissioned by Bishop Odo of Bayeux (William’s half-brother), this 70-metre embroidered linen records the entire campaign. This central section depicts the climax on Senlac Ridge: armored Norman couched lances clash violently against the dense Anglo-Saxon shield wall, with decapitated warriors and fallen steeds littering the decorative bottom border.
+            </div>
+            <div class="hinge-banner">
+              <strong>Hinge Discussion Question:</strong> Why did the victorious Normans choose to portray the Anglo-Saxon defenders with ferocious courage rather than showing them fleeing in cowardice?
+            </div>
+          </div>
+        </div>
+
+        <!-- Integrated Marginalia Vocabulary Strip (Part II terms) -->
+        <div class="reading-glossary-ribbon">
+          <div class="glossary-ribbon-header">
+            <span>Essential Disciplinary Vocabulary &bull; Tactics &amp; Royal Sovereignty</span>
+            <span>Academic Lexicon</span>
+          </div>
+          <div class="glossary-ribbon-grid">
+            <div class="glossary-ribbon-item">
+              <strong>Feigned Retreat</strong>
+              A high-risk tactical manoeuvre where troops simulate panic and flight to lure a fortified enemy out of formation into an ambush.
+            </div>
+            <div class="glossary-ribbon-item">
+              <strong>Combined Arms</strong>
+              An advanced military doctrine coordinating archers, heavy cavalry, and infantry together to exploit mutual strengths.
+            </div>
+            <div class="glossary-ribbon-item">
+              <strong>Subjugation</strong>
+              The systematic process of bringing a conquered civilian and military population under permanent, total royal control.
+            </div>
+          </div>
+        </div>
+
+        <!-- Dignified Enquiry Synthesis Anchor -->
+        <div class="enquiry-synthesis-anchor">
+          <div class="esa-left">
+            <span class="esa-badge">ENQUIRY SYNTHESIS</span>
+            <div class="esa-text">
+              <strong>Historical Debate:</strong> Was Duke William’s victory secured primarily by Norman tactical innovation or Anglo-Saxon exhaustion?
+            </div>
+          </div>
+          <div class="esa-link">
+            <span>Workbook pp. 4–5 &rarr;</span>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Recto Footer -->
+      <footer class="page-footer">
+        <span>Medieval England (1066–1485) &bull; Part II: The Battle of Senlac Hill &amp; The Norman Verdict</span>
+        <span class="page-number">3</span>
+      </footer>
+
+    </div>
+
+  </div>
+
+  <!-- Interactive Comparison Modal -->
+  <div id="comparison-modal" style="display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.85); z-index: 2000; padding: 24px; overflow-y: auto; backdrop-filter: blur(4px);">
+    <div style="max-width: 1200px; margin: 0 auto; background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); font-family: var(--font-sans);">
+      <div style="background: #0f172a; color: #ffffff; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--crimson-accent);">
+        <div>
+          <h2 style="font-size: 16px; font-weight: 700; margin: 0;">Direct Architectural Comparison: Legacy vs Scholar’s Anthology</h2>
+          <p style="font-size: 12px; color: #94a3b8; margin: 2px 0 0 0;">Examining typography, page geometry, filler widgets, and Year 7 reading accessibility</p>
+        </div>
+        <button onclick="closeComparison()" style="background: #334155; color: #ffffff; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600;">&times; Close</button>
+      </div>
+
+      <div style="padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <!-- Left Column: Legacy -->
+        <div style="background: #fef2f2; border: 1.5px solid #fecaca; border-radius: 6px; padding: 16px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="background: #dc2626; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 6px; border-radius: 3px;">LEGACY ARCHITECTURE</span>
+            <span style="font-size: 11px; color: #991b1b; font-weight: 600;">Unprinted / Rejected</span>
+          </div>
+          <ul style="font-size: 12.5px; line-height: 1.5; color: #7f1d1d; margin-left: 18px; margin-bottom: 16px;">
+            <li><strong>9.6pt Cramped Font:</strong> Dense, microscopic serif text with tight leading, intimidating for Year 7 pupils reading aloud.</li>
+            <li><strong>Artificial Filler Widgets:</strong> Key Figure cards, Concept Spotlights, and Archival Oddity sideboxes shoehorned in to pad arbitrary whitespace.</li>
+            <li><strong>Duplicated Workbook Tasks:</strong> Bottom "Task 3 Evidence" and "Task 4 Writing" instruction boxes repeating what is already in pupil workbooks.</li>
+            <li><strong>Fragmented Layout:</strong> 3 miniature, postage-stamp source boxes squeezed under text columns with tiny illegible captions.</li>
+          </ul>
+          <a href="/units/medieval_england/textbook.html" target="_blank" style="display: block; text-align: center; background: #dc2626; color: #fff; text-decoration: none; padding: 8px; border-radius: 4px; font-size: 12px; font-weight: 700;">Open Legacy Textbook (Page 2 & 3) &rarr;</a>
+        </div>
+
+        <!-- Right Column: New Prototype -->
+        <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 6px; padding: 16px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="background: #16a34a; color: #fff; font-size: 11px; font-weight: 800; padding: 2px 6px; border-radius: 3px;">NEW SCHOLAR’S ANTHOLOGY</span>
+            <span style="font-size: 11px; color: #166534; font-weight: 600;">Prototype Live</span>
+          </div>
+          <ul style="font-size: 12.5px; line-height: 1.5; color: #14532d; margin-left: 18px; margin-bottom: 16px;">
+            <li><strong>10.8pt Newsreader Serif:</strong> Designed for effortless long-form reading, high legibility, and generous 1.50 leading for KS3 pupils.</li>
+            <li><strong>Zero Artificial Filler:</strong> Pure narrative historical prose with discrete paragraph markers ([1.1], [1.2]) for seamless teacher-led reading.</li>
+            <li><strong>Hero Primary Source Plate:</strong> Museum-grade Bayeux Tapestry plate with authentic citation, context, and targeted Hinge Question.</li>
+            <li><strong>Clean Disciplinary Glossaries:</strong> Dedicated, dignified lexicon ribbons anchored naturally at the foot of each page.</li>
+            <li><strong>Flat Double-Page Spread:</strong> Verso + Recto = 1 Complete Enquiry. Zero mid-enquiry page turns.</li>
+          </ul>
+          <button onclick="closeComparison()" style="width: 100%; text-align: center; background: #16a34a; color: #fff; border: none; padding: 8px; border-radius: 4px; font-size: 12px; font-weight: 700; cursor: pointer;">Explore New Spread &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleComparison() {
+      const modal = document.getElementById('comparison-modal');
+      modal.style.display = modal.style.display === 'none' ? 'block' : 'none';
+    }
+    function closeComparison() {
+      document.getElementById('comparison-modal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

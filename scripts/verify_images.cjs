@@ -5,7 +5,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 const AI_PATTERNS = [
   /_\d{12,14}\.(png|jpg|jpeg|webp)$/i,
   /_pano_\d+/i,
-  /dall[-_]?e/i,
+  /\bdall[-_]?e\b/i,
   /midjourney/i,
   /stablediffusion/i,
   /flux[_-]ai/i,

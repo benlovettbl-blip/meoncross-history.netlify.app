@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scheme of Work • KS2 History: The Second World War & The Home Front (Year 5)</title>
+  <meta name="description" content="Comprehensive 11-Lesson Key Stage 2 Scheme of Work and Curriculum Guide for Year 5 World War II and the Home Front, integrating the Holocaust Educational Trust Primary Guidelines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f172a;
+      --ink-muted: #475569;
+      --navy-primary: #1e3a8a;
+      --navy-deep: #0f172a;
+      --accent-gold: #b45309;
+      --accent-crimson: #991b1b;
+      --card-bg: #ffffff;
+      --border-gray: #cbd5e1;
+      --bg-cream: #f8fafc;
+      --tag-bg: #e0e7ff;
+      --tag-text: #3730a3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      line-height: 1.5;
+      padding: 30px 20px;
+    }
+
+    .sow-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      overflow: hidden;
+      border: 1px solid var(--border-gray);
+    }
+
+    /* HEADER BANNER */
+    .sow-header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 35px 40px;
+      position: relative;
+    }
+
+    .brand-tag {
+      display: inline-block;
+      font-size: 8.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #fde68a;
+      background: rgba(255,255,255,0.12);
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+
+    .sow-title {
+      font-family: 'Cinzel', serif;
+      font-size: 26pt;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .sow-subtitle {
+      font-size: 12pt;
+      font-weight: 400;
+      color: #cbd5e1;
+      max-width: 850px;
+      line-height: 1.6;
+    }
+
+    .sow-meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 9.5pt;
+    }
+
+    .meta-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+
+    .meta-pill strong {
+      color: #fde68a;
+    }
+
+    /* MAIN CONTENT */
+    .sow-body {
+      padding: 40px;
+    }
+
+    .section-block {
+      margin-bottom: 45px;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 16pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+      border-bottom: 2.5px solid var(--accent-gold);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pedagogy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+
+    .pedagogy-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid var(--navy-primary);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .pedagogy-card.het-pillar {
+      border-left-color: var(--accent-gold);
+      background: #fdfbf7;
+    }
+
+    .pedagogy-card h3 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pedagogy-card p {
+      font-size: 9pt;
+      color: var(--ink-muted);
+      line-height: 1.55;
+    }
+
+    /* 10 LESSON MASTER TABLE */
+    .lesson-table-wrapper {
+      overflow-x: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border-gray);
+      background: #ffffff;
+      margin-top: 15px;
+    }
+
+    .lesson-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      text-align: left;
+    }
+
+    .lesson-table th {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 14px 16px;
+      font-weight: 700;
+      font-size: 8.5pt;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-right: 1px solid #334155;
+    }
+
+    .lesson-table th:last-child {
+      border-right: none;
+    }
+
+    .lesson-table td {
+      padding: 16px;
+      border-bottom: 1px solid #e2e8f0;
+      border-right: 1px solid #f1f5f9;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .lesson-table td:last-child {
+      border-right: none;
+    }
+
+    .lesson-table tr:hover td {
+      background: #f8fafc;
+    }
+
+    .lesson-num {
+      display: inline-block;
+      font-weight: 800;
+      color: var(--navy-primary);
+      background: #e0e7ff;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      margin-bottom: 6px;
+    }
+
+    .lesson-num.het-tag {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .enquiry-q {
+      font-family: 'Lora', serif;
+      font-weight: 600;
+      font-size: 9.5pt;
+      color: var(--navy-deep);
+      margin-bottom: 6px;
+    }
+
+    .source-list {
+      list-style: none;
+      padding-left: 0;
+      font-size: 8.5pt;
+      color: #334155;
+    }
+
+    .source-list li {
+      margin-bottom: 4px;
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .source-badge {
+      font-weight: 800;
+      color: var(--navy-primary);
+      flex-shrink: 0;
+    }
+
+    .vocab-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 6px;
+    }
+
+    .vocab-tag {
+      font-size: 7.5pt;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #475569;
+    }
+
+    .assessment-pill {
+      display: inline-block;
+      font-size: 8pt;
+      font-weight: 600;
+      color: #065f46;
+      background: #d1fae5;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    /* REPROGRAPHIC GUIDE */
+    .repro-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #172554 100%);
+      color: #ffffff;
+      padding: 25px 30px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .repro-banner h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 13pt;
+      margin-bottom: 10px;
+      color: #fde68a;
+    }
+
+    .repro-banner p {
+      font-size: 9pt;
+      line-height: 1.6;
+      color: #e2e8f0;
+      margin-bottom: 12px;
+    }
+
+    .repro-specs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .spec-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 8.5pt;
+    }
+
+    .spec-item strong {
+      display: block;
+      color: #fde68a;
+      font-size: 9pt;
+      margin-bottom: 4px;
+    }
+
+    /* FOOTER */
+    .sow-footer {
+      background: #0f172a;
+      color: #94a3b8;
+      padding: 25px 40px;
+      font-size: 8.5pt;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #1e293b;
+    }
+
+    .sow-footer strong {
+      color: #f8fafc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sow-container">
+    
+    <!-- HEADER -->
+    <header class="sow-header">
+      <div class="brand-tag">The History Revision Hub • KS2 Curriculum</div>
+      <h1 class="sow-title">The Second World War & The Home Front</h1>
+      <p class="sow-subtitle">
+        A complete, 11-lesson modular scheme of work for Year 5 (Ages 9–10) comprising 10 Core Home Front &amp; Rescue Enquiries plus 1 Literature &amp; Rebuilding Lives Extension Enquiry. Built upon high-challenge historical enquiry, authentic primary source analysis, and rigorous integration of the Holocaust Educational Trust (HET) Primary Guidelines.
+      </p>
+
+      <div class="sow-meta-strip">
+        <div class="meta-pill"><span>Key Stage:</span> <strong>Key Stage 2 (Year 5)</strong></div>
+        <div class="meta-pill"><span>Duration:</span> <strong>11 Modular Lessons (10 Core + 1 Extension)</strong></div>
+        <div class="meta-pill"><span>Format:</span> <strong>A4 'Stick & Solve' Exercise Book Cutline</strong></div>
+        <div class="meta-pill"><span>Pedagogy:</span> <strong>HET Primary Framework & NC 2014</strong></div>
+        <div class="meta-pill"><span>Reprographics:</span> <strong>0px Overflow / 100% Page Utilization</strong></div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="sow-body">
+
+      <!-- SECTION 1: PEDAGOGICAL ARCHITECTURE -->
+      <section class="section-block">
+        <h2 class="section-title">1. Pedagogical Architecture & Curricular Foundation</h2>
+        <div class="pedagogy-grid">
+          <div class="pedagogy-card">
+            <h3>National Curriculum (2014) Alignment</h3>
+            <p>
+              Directly addresses the statutory Key Stage 2 requirement: <em>"A study of an aspect or theme in British history that extends pupils' chronological knowledge beyond 1066: a significant turning point in British history"</em>. Explores the impact of the Blitz, evacuation, civilian mobilization, technological innovation at Bletchley Park, and the moral duty of remembrance.
+            </p>
+          </div>
+
+          <div class="pedagogy-card het-pillar">
+            <h3>Holocaust Educational Trust (HET) Primary Guidelines</h3>
+            <p>
+              Fully aligned with <em>A Guide for Primary School Teachers</em>:
+              <strong>(1) Pre-war diversity:</strong> Celebrates the richness of Jewish family life before 1939.
+              <strong>(2) Gradual erosion of rights:</strong> Investigates how discriminatory laws stripped childhood rights step-by-step.
+              <strong>(3) Agency & Dignity:</strong> Focuses on parental sacrifice, child resilience, and upstanders (Winton, Chadwick, Warriner).
+              <strong>(4) Zero atrocity imagery:</strong> Uses only dignified archival photographs and authentic documents.
+            </p>
+            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed rgba(157, 23, 77, 0.25); font-size: 8.5pt;">
+              <span style="color: #9d174d; font-weight: 700;">Teacher CPD &amp; Free Primary Outreach:</span> For complete primary teacher development courses, classroom artifact boxes, and educator guidance, visit the Holocaust Educational Trust at <a href="https://www.het.org.uk" target="_blank" rel="noopener noreferrer" style="color: #be185d; font-weight: 700; text-decoration: underline;">het.org.uk</a>.
+            </div>
+          </div>
+
+          <div class="pedagogy-card">
+            <h3>High-Challenge Disciplinary Reading & Writing</h3>
+            <p>
+              Every lesson pairs narrative historical reading with authentic primary sources (labeled strictly as <strong>Source A</strong> and <strong>Source B</strong>). Year 5 pupils develop key disciplinary skills: interrogating physical artifacts, chronological sequencing, comparing dual perspectives, and writing extended historical explanations on generous ruled handwriting lines.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: 11-LESSON MASTER CURRICULUM ROADMAP -->
+      <section class="section-block">
+        <h2 class="section-title">2. Complete 11-Lesson Master Scheme of Work</h2>
+        <p style="font-size: 9.5pt; color: var(--ink-muted); margin-bottom: 15px;">
+          Each lesson is delivered via a bespoke, double-sided A4 "Stick & Solve" worksheet engineered with an inner dashed cutline (190mm &times; 270mm) to paste directly into pupils' standard school exercise books.
+        </p>
+
+        <div class="lesson-table-wrapper">
+          <table class="lesson-table">
+            <thead>
+              <tr>
+                <th style="width: 14%;">Lesson & Type</th>
+                <th style="width: 26%;">Key Enquiry Question & Core Content</th>
+                <th style="width: 25%;">Authentic Primary Sources</th>
+                <th style="width: 18%;">Key Historical Vocabulary</th>
+                <th style="width: 17%;">Stick & Solve Tasks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- LESSON 01 -->
+              <tr>
+                <td>
+                  <span class="lesson-num">LESSON 01</span><br>
+                  <strong>Outbreak 1939</strong><br>
+                  <small style="color: var(--ink-muted);">Home Front Readiness</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">Why did ordinary British families carry cardboard boxes and tape their windows in September 1939?</p>
+                  <small>Chamberlain's 11:15am radio broadcast; declaration of war; the first false air raid siren; issuing 38 million civilian gas masks; blackout regulations.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> civilians & children fitting gas masks in London, Sept 1939 (IWM).</li>
+                    <li><span class="source-badge">Source B:</span> Cardboard civilian gas mask carrying box with shoulder string and instruction label.</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Air Raid Siren</span>
+                    <span class="vocab-tag">Gas Mask</span>
+                    <span class="vocab-tag">Blackout</span>
+                    <span class="vocab-tag">ARP Warden</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Artifact Detective</span><br>
+                  Gas mask box analysis; Outbreak timeline; Blackout reasoning paragraph.
+                </td>
+              </tr>
+
+              <!-- LESSON 02 -->
+              <tr>
+                <td>
+                  <span class="lesson-num">LESSON 02</span><br>
+                  <strong>Operation Pied Piper</strong><br>
+                  <small style="color: var(--ink-muted);">British Evacuation</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">What was it like for 1.5 million British children to be sent away from home with a brown paper luggage tag?</p>
+                  <small>Mass evacuation of schoolchildren; railway station farewells; billeting officers; rural vs industrial city culture shock; foster families.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> London school evacuees waiting at station with luggage, 1939 (IWM).</li>
+                    <li><span class="source-badge">Source B:</span> Authentic London County Council evacuation luggage label on string.</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Evacuee</span>
+                    <span class="vocab-tag">Operation Pied Piper</span>
+                    <span class="vocab-tag">Billeting Officer</span>
+                    <span class="vocab-tag">Host Family</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Perspective Task</span><br>
+                  Evacuee luggage tag decoding; City vs Country comparison; Postcard home to parents.
+                </td>
+              </tr>
+
+              <!-- LESSON 03 -->
+              <tr>
+                <td>
+                  <span class="lesson-num het-tag">LESSON 03 • HET</span><br>
+                  <strong>Vera's Journey</strong><br>
+                  <small style="color: #92400e;">Kindertransport</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">How did 10,000 child refugees escape to Britain, and what was inside their suitcases?</p>
+                  <small>The Kindertransport rescue mission (1938–39); 9-year-old Vera Schaufeld's departure from Prague; parental sacrifice; arriving at Liverpool Street Station.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> Jewish refugee children arriving in Britain, 1939 (Bundesarchiv Bild 183-S69279).</li>
+                    <li><span class="source-badge">Source B:</span> Authentic July 1939 circular Kindertransport neck tag (Refugee Nr. 8434).</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Kindertransport</span>
+                    <span class="vocab-tag">Refugee</span>
+                    <span class="vocab-tag">Persecution</span>
+                    <span class="vocab-tag">Sponsor</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Creative Synthesis</span><br>
+                  Numbered tag investigation; Blank suitcase packing canvas; Thinking Heads dual perspectives.
+                </td>
+              </tr>
+
+              <!-- LESSON 04 -->
+              <tr>
+                <td>
+                  <span class="lesson-num">LESSON 04</span><br>
+                  <strong>The Blitz & Air Raids</strong><br>
+                  <small style="color: var(--ink-muted);">Civil Defence</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">How did communities in British cities stay safe when bombs fell for 57 nights in a row?</p>
+                  <small>The Blitz on London, Coventry, and Liverpool; Anderson shelters in back gardens; Morrison shelters indoors; Tube stations as communal shelters; ARP wardens.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> London family sleeping inside their Anderson shelter, 1940 (IWM).</li>
+                    <li><span class="source-badge">Source B:</span> Ministry of Home Security instructional blueprint for Anderson shelter assembly.</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">The Blitz</span>
+                    <span class="vocab-tag">Anderson Shelter</span>
+                    <span class="vocab-tag">Morrison Shelter</span>
+                    <span class="vocab-tag">Incendiary Bomb</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Design & Shelter Plan</span><br>
+                  Shelter comparison matrix; Blank shelter interior layout canvas; ARP warden night log.
+                </td>
+              </tr>
+
+              <!-- LESSON 05 -->
+              <tr>
+                <td>
+                  <span class="lesson-num">LESSON 05</span><br>
+                  <strong>Dig for Victory & Food</strong><br>
+                  <small style="color: var(--ink-muted);">Rationing System</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">How did Britain survive when German U-boats attacked food supply ships in the Atlantic?</p>
+                  <small>Import crisis; Ministry of Food introduced rationing in Jan 1940; ration books and coupon points; Dig for Victory allotments; Lord Woolton Pie.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> Ministry of Agriculture "Dig for Victory" propaganda poster (spade in turf).</li>
+                    <li><span class="source-badge">Source B:</span> Authentic 1941 Ministry of Food Ration Book cover and coupon grid.</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Rationing</span>
+                    <span class="vocab-tag">Coupon Points</span>
+                    <span class="vocab-tag">Dig for Victory</span>
+                    <span class="vocab-tag">Black Market</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Maths & Menu Plan</span><br>
+                  Ration book coupon detective; Weekly wartime meal planner; "Was rationing fair?" enquiry.
+                </td>
+              </tr>
+
+              <!-- LESSON 06 -->
+              <tr>
+                <td>
+                  <span class="lesson-num">LESSON 06</span><br>
+                  <strong>Women at War</strong><br>
+                  <small style="color: var(--ink-muted);">Total Mobilisation</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">How did women keep Britain running on the farms and in the factories while men fought overseas?</p>
+                  <small>Women's Land Army (Land Girls); munitions and aircraft factories; ATA ferry pilots; Air Transport Auxiliary; changing societal roles of women.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> Women's Land Army volunteers operating a tractor and harvesting wheat, 1941 (IWM).</li>
+                    <li><span class="source-badge">Source B:</span> Official Women's Land Army recruitment armlet badge and uniform regulations.</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Women's Land Army</span>
+                    <span class="vocab-tag">Munitions</span>
+                    <span class="vocab-tag">Mobilisation</span>
+                    <span class="vocab-tag">ATA Pilots</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Role Matrix</span><br>
+                  Land Army uniform analysis; Wartime service classification; Historical change evaluation.
+                </td>
+              </tr>
+
+              <!-- LESSON 07 -->
+              <tr>
+                <td>
+                  <span class="lesson-num het-tag">LESSON 07 • HET</span><br>
+                  <strong>Pre-War Life & Rights Lost</strong><br>
+                  <small style="color: #92400e;">Persecution Under Nazism</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">What was life like for Jewish children in Europe before the war, and how did laws gradually take their rights away?</p>
+                  <small>Everyday Jewish family life, holidays, and hobbies in 1930s Europe; the incremental introduction of anti-Jewish laws (1933–1939: sports, pets, radios, schools).</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> Pre-war archival photograph of Jewish schoolchildren in Europe (USHMM / Yad Vashem).</li>
+                    <li><span class="source-badge">Source B:</span> Reich Ministry of Education Decree Notice (15 Nov 1938 ban on school attendance).</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Civil Rights</span>
+                    <span class="vocab-tag">Discrimination</span>
+                    <span class="vocab-tag">Anti-Jewish Laws</span>
+                    <span class="vocab-tag">Community</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Chronology Ladder</span><br>
+                  Pre-war life evidence match; Rights lost chronological ladder; Impact on children reflection.
+                </td>
+              </tr>
+
+              <!-- LESSON 08 -->
+              <tr>
+                <td>
+                  <span class="lesson-num">LESSON 08</span><br>
+                  <strong>Secret Codebreakers</strong><br>
+                  <small style="color: var(--ink-muted);">Bletchley Park</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">How did mathematicians and women working in secret wooden huts help shorten the Second World War?</p>
+                  <small>Station X (Bletchley Park); Alan Turing and the Enigma cipher machine; the Turing-Welchman Bombe; Wrens operating machines; wartime secrecy.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> Military 3-rotor Enigma cipher machine with keyboard and plugboard.</li>
+                    <li><span class="source-badge">Source B:</span> Wrens operating the Turing-Welchman Bombe codebreaking machine at Bletchley Park.</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Enigma Machine</span>
+                    <span class="vocab-tag">Cipher</span>
+                    <span class="vocab-tag">Bletchley Park</span>
+                    <span class="vocab-tag">Bombe Machine</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Cipher Decryption</span><br>
+                  Enigma machine features check; Caesar cipher cracking task; "Careless talk costs lives" reflection.
+                </td>
+              </tr>
+
+              <!-- LESSON 09 -->
+              <tr>
+                <td>
+                  <span class="lesson-num het-tag">LESSON 09 • HET</span><br>
+                  <strong>Who Were the Rescuers?</strong><br>
+                  <small style="color: #92400e;">Upstanders & Courage</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">How did a stockbroker and a Dorset schoolteacher risk everything to rescue 669 Czech children?</p>
+                  <small>Sir Nicholas Winton, Trevor Chadwick (Dorset teacher), and Doreen Warriner; finding British sponsors; Nicky's Scrapbook hidden in an attic for 50 years.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> Nicholas Winton holding a young refugee in Prague, 1939 (HET Archive).</li>
+                    <li><span class="source-badge">Source B:</span> Authentic page from Nicholas Winton's Scrapbook showing refugee photos & UK sponsors.</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Upstander</span>
+                    <span class="vocab-tag">Bystander</span>
+                    <span class="vocab-tag">Rescue Chain</span>
+                    <span class="vocab-tag">Sponsorship</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Scrapbook Evidence</span><br>
+                  Scrapbook entry analysis; The 3-link Rescue Chain map; "What makes a hero?" enquiry essay.
+                </td>
+              </tr>
+
+              <!-- LESSON 10 -->
+              <tr>
+                <td>
+                  <span class="lesson-num">LESSON 10</span><br>
+                  <strong>VE Day & Remembrance</strong><br>
+                  <small style="color: var(--ink-muted);">Legacy & Memorialisation</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">How was peace celebrated in May 1945, and why is it our duty to remember their sacrifices?</p>
+                  <small>VE Day (8 May 1945) street parties; Churchill's speech; Commonwealth contributions; post-war rebuilding; the Cenotaph and the symbol of the poppy.</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> VE Day street party celebration in London, 8 May 1945 (IWM HU 49481).</li>
+                    <li><span class="source-badge">Source B:</span> King George VI VE Day national broadcast speech transcript and Cenotaph poppy.</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">VE Day</span>
+                    <span class="vocab-tag">Commonwealth</span>
+                    <span class="vocab-tag">Remembrance</span>
+                    <span class="vocab-tag">Legacy</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill">Master Synthesis</span><br>
+                  Street party detective; The human cost of war matrix; Extended writing: "Why must we remember?"
+                </td>
+              </tr>
+
+              <!-- LESSON 11 (EXTENSION) -->
+              <tr style="background: #f0fdf4;">
+                <td>
+                  <span class="lesson-num" style="background: #dcfce7; color: #15803d;">LESSON 11 • EXTENSION</span><br>
+                  <strong>The Windermere Children</strong><br>
+                  <small style="color: #166534;">Literature &amp; Rebuilding Lives</small>
+                </td>
+                <td>
+                  <p class="enquiry-q">How did 300 child survivors rebuild their lives by Lake Windermere in 1945?</p>
+                  <small>Airlift from Prague in RAF Stirling bombers; Calgarth Estate sanctuary; fear of showers &amp; bread hoarding; 300 red bicycles; Tom Palmer's novel <em>'After the War'</em> and real survivor testimonies (Arek Hersh MBE, Ike Alterman).</small>
+                </td>
+                <td>
+                  <ul class="source-list">
+                    <li><span class="source-badge">Source A:</span> Prague airport mercy airlift departure with chalk-tagged bags, Aug 1945 ('45 Aid / IWM).</li>
+                    <li><span class="source-badge">Source B:</span> English language &amp; rehabilitation class in Calgarth hall ('45 Aid / LDHP).</li>
+                    <li><span class="source-badge">Source C:</span> Cover of <em>'After the War: From Auschwitz to Ambleside'</em> by Tom Palmer (Barrington Stoke).</li>
+                    <li><span class="source-badge">Source D:</span> Younger survivors outside Calgarth chalets (USHMM / Shoshannah Gallowski).</li>
+                    <li><span class="source-badge" style="background:#7e22ce; color:#fff;">ERA Video:</span> BBC Two Feature Drama &amp; BBC Four Documentary (Educational Recording Agency).</li>
+                  </ul>
+                </td>
+                <td>
+                  <div class="vocab-tags">
+                    <span class="vocab-tag">Windermere Children</span>
+                    <span class="vocab-tag">Calgarth Estate</span>
+                    <span class="vocab-tag">Oral History</span>
+                    <span class="vocab-tag">Historical Fiction</span>
+                  </div>
+                </td>
+                <td>
+                  <span class="assessment-pill" style="background: #bbf7d0; color: #14532d;">Literature &amp; Empathy</span><br>
+                  Kindertransport vs Windermere comparison; Calgarth Estate sanctuary diary; Tom Palmer author interview &amp; chapter study.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION 3: REPROGRAPHIC STANDARDS & TEACHER PRINT GUIDE -->
+      <section class="section-block">
+        <h2 class="section-title">3. Reprographic Standards & Teacher Print Guide</h2>
+        <div class="repro-banner">
+          <h3>The Exercise Book "Stick & Solve" Standard</h3>
+          <p>
+            Every worksheet in this unit is engineered using high-precision CSS print media rules and proportional flexbox layout to ensure <strong>100% Reprographic Compliance: 0px overflow across all pages, 0 blank footer gaps, and zero content clipping</strong>.
+          </p>
+          <div class="repro-specs">
+            <div class="spec-item">
+              <strong>1. Page Dimensions</strong>
+              Full A4 sheet (210mm &times; 297mm). Designed to print at 100% scale without 'Fit to Page' distortion.
+            </div>
+            <div class="spec-item">
+              <strong>2. Exercise Book Cutline</strong>
+              Inner dashed border calibrated to exactly 190mm &times; 270mm. Pupils cut neatly with scissors to stick into standard UK exercise books.
+            </div>
+            <div class="spec-item">
+              <strong>3. Ruled Handwriting Lines</strong>
+              Calibrated with an 8mm baseline and dashed guidelines tailored specifically for Year 5 developing cursive writers.
+            </div>
+            <div class="spec-item">
+              <strong>4. Drawing Canvases</strong>
+              Suitcases, gas mask boxes, and shelter cross-sections are strictly 100% blank inside for genuine student drawing and inquiry.
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="sow-footer">
+      <div>
+        <strong>The History Revision Hub</strong> • Key Stage 2 Departmental Resources • Independent Commercial Education
+      </div>
+      <div>
+        100% Institutional Neutrality Policy • National Curriculum & HET Compliant
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>

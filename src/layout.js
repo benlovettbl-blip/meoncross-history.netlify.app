@@ -315,8 +315,37 @@ export function bindEvents() {
 
   // Render Sidebar Units
   const sidebarUnitsContainer = document.getElementById('sidebar-unit-links');
+  const sidebarUnitsHeader = document.getElementById('sidebar-units-header');
+
   if (sidebarUnitsContainer) {
     sidebarUnitsContainer.innerHTML = '';
+
+    const urlParams =
+      typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+    const isLocked =
+      urlParams &&
+      (urlParams.get('locked') === 'true' ||
+        urlParams.get('mode') === 'pupil' ||
+        urlParams.get('safeguard') === 'true');
+    const isKs2Active =
+      (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('hh_portal') === 'ks2') ||
+      (urlParams && urlParams.get('portal') === 'ks2') ||
+      (urlParams && urlParams.get('unit') && urlParams.get('unit').startsWith('ks2_'));
+
+    // In Safeguard Lockdown Mode (e.g. KS2 primary pupils or teacher-locked sessions):
+    // Completely hide cross-unit links and accordions so pupils cannot escape their designated unit.
+    if (isLocked) {
+      sidebarUnitsContainer.style.display = 'none';
+      if (sidebarUnitsHeader) sidebarUnitsHeader.style.display = 'none';
+      if (navProfile) navProfile.style.display = 'none';
+      return;
+    }
+
+    if (sidebarUnitsHeader) {
+      sidebarUnitsHeader.style.display = 'block';
+    }
+    sidebarUnitsContainer.style.display = 'flex';
+    if (navProfile) navProfile.style.display = 'flex';
 
     const units = getUnits();
     const getOrderedUnits = (orderArray) => {
@@ -324,28 +353,6 @@ export function bindEvents() {
         .filter((u) => u && u.id && orderArray.includes(u.id))
         .sort((a, b) => orderArray.indexOf(a.id) - orderArray.indexOf(b.id));
     };
-
-    const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
-    const year7Units = getOrderedUnits(['water_and_sanitation', 'medieval_england']);
-    const year8Units = getOrderedUnits([
-      'early_modern_world',
-      'monarchy_religion_power',
-      'first_british_empire',
-      'industrialisation_and_empire',
-      'second_british_empire',
-      'australia',
-    ]);
-    const year9Units = getOrderedUnits([
-      'great_war',
-      'great_war_part2',
-      'the_shoah',
-      'cold_war',
-      'second_world_war',
-      'post_war_britain',
-    ]).filter((u) => !underConstructionIds.includes(u.id));
-    const year10Units = getOrderedUnits(['cme_new', 'weimar_nazi_germany']);
-    const year11Units = getOrderedUnits(['edexcel_medicine', 'eee', 'usa']);
-    const tripUnits = getOrderedUnits(['trip_ypres']);
 
     const renderAccordionGroup = (title, unitList, defaultOpen = false) => {
       if (unitList.length === 0) return;
@@ -409,6 +416,43 @@ export function bindEvents() {
         content.appendChild(link);
       });
     };
+
+    // If user is in KS2 Junior Portal mode, ONLY show Key Stage 2 units
+    if (isKs2Active) {
+      if (sidebarUnitsHeader) {
+        const titleSpan = sidebarUnitsHeader.querySelector('span');
+        if (titleSpan) titleSpan.textContent = 'Key Stage 2 Units';
+      }
+      const ks2Units = getOrderedUnits(['ks2_ww2']);
+      renderAccordionGroup('Key Stage 2 (Primary)', ks2Units, true);
+      return;
+    }
+
+    if (sidebarUnitsHeader) {
+      const titleSpan = sidebarUnitsHeader.querySelector('span');
+      if (titleSpan) titleSpan.textContent = 'Units of Study';
+    }
+
+    const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
+    const year7Units = getOrderedUnits(['water_and_sanitation', 'medieval_england']);
+    const year8Units = getOrderedUnits([
+      'monarchy_religion_power',
+      'first_british_empire',
+      'industrialisation_and_empire',
+      'second_british_empire',
+      'australia',
+    ]);
+    const year9Units = getOrderedUnits([
+      'great_war',
+      'great_war_part2',
+      'the_shoah',
+      'cold_war',
+      'second_world_war',
+      'post_war_britain',
+    ]).filter((u) => !underConstructionIds.includes(u.id));
+    const year10Units = getOrderedUnits(['cme_new', 'weimar_nazi_germany']);
+    const year11Units = getOrderedUnits(['edexcel_medicine', 'eee', 'usa']);
+    const tripUnits = getOrderedUnits(['trip_ypres']);
 
     renderAccordionGroup('GCSE Battlefield Tour (Y10–11)', tripUnits, false);
     renderAccordionGroup('Year 7', year7Units, false);

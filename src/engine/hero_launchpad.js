@@ -23,13 +23,27 @@ if (typeof window !== 'undefined') {
 }
 
 export const CURRICULAR_PILLARS_CATALOG = {
-  great_war: {
+  ks2_ww2: {
     textbook: {
-      title: 'Causes of the Great War Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/great_war/textbook.html',
-      pdfUrl: '/pdfs/great_war_textbook_FINAL_V17.pdf',
+      title: 'World War II & The Home Front (1939–1945) Master Classroom Textbook',
+      label: 'Master Textbook (24 Pages)',
+      htmlUrl: '/units/ks2_ww2/textbook.html',
+      pdfUrl: '/pdfs/ks2_ww2_textbook_FINAL_V1.pdf',
     },
+    workbook: {
+      title: 'World War II & The Home Front (1939–1945) Pupil Workbook',
+      label: 'Pupil Workbook (24 Pages)',
+      htmlUrl: '/units/ks2_ww2/pupil_workbook.html',
+      pdfUrl: '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf',
+    },
+    retrieval: {
+      title: 'World War II & The Home Front Knowledge Retrieval Companion',
+      label: 'Retrieval Companion (40 Qs)',
+      htmlUrl: '/units/ks2_ww2/quiz_pack.html',
+      pdfUrl: '/pdfs/ks2_ww2_quiz_pack_FINAL_V17.pdf',
+    },
+  },
+  great_war: {
     workbook: {
       title: 'Causes of the Great War Pupil Workbook',
       label: 'Pupil Workbook',
@@ -44,12 +58,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   great_war_part2: {
-    textbook: {
-      title: 'Course of the Great War Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/great_war_part2/textbook.html',
-      pdfUrl: '/pdfs/great_war_part2_textbook_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Course of the Great War Pupil Workbook',
       label: 'Pupil Workbook',
@@ -65,8 +73,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
   },
   medieval_england: {
     textbook: {
-      title: 'Medieval England Master Textbook',
-      label: 'Master Textbook',
+      title: 'Medieval England (1066–1381) Master Classroom Textbook',
+      label: 'Master Textbook (12 Pages)',
       htmlUrl: '/units/medieval_england/textbook.html',
       pdfUrl: '/pdfs/medieval_england_textbook_FINAL_V17.pdf',
     },
@@ -84,12 +92,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   early_modern_world: {
-    textbook: {
-      title: 'Early Modern World Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/early_modern_world/textbook.html',
-      pdfUrl: '/pdfs/early_modern_world_textbook_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Early Modern World Pupil Workbook',
       label: 'Pupil Workbook',
@@ -132,12 +134,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   industrialisation_and_empire: {
-    textbook: {
-      title: 'Industrialisation & Empire Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/industrialisation_and_empire/textbook.html',
-      pdfUrl: '/pdfs/industrialisation_and_empire_textbook_PUBLISHER.pdf',
-    },
     workbook: {
       title: 'Industrialisation & Empire Pupil Workbook',
       label: 'Pupil Workbook',
@@ -166,12 +162,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   water_and_sanitation: {
-    textbook: {
-      title: 'Water & Sanitation Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/water_and_sanitation/textbook.html',
-      pdfUrl: '/pdfs/water_and_sanitation_textbook_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Water & Sanitation Pupil Workbook',
       label: 'Pupil Workbook',
@@ -186,12 +176,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   the_shoah: {
-    textbook: {
-      title: 'The Shoah Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/the_shoah/textbook.html',
-      pdfUrl: '/pdfs/the_shoah_textbook_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'The Shoah Pupil Workbook',
       label: 'Pupil Workbook',
@@ -206,12 +190,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   post_war_britain: {
-    textbook: {
-      title: 'Post-War Britain Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/post_war_britain/textbook.html',
-      pdfUrl: '/pdfs/post_war_britain_textbook_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Post-War Britain Pupil Workbook',
       label: 'Pupil Workbook',
@@ -226,12 +204,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   australia: {
-    textbook: {
-      title: 'Australia & The Pacific Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/australia/textbook.html',
-      pdfUrl: '/pdfs/australia_textbook_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Australia & The Pacific Pupil Workbook',
       label: 'Pupil Workbook',
@@ -247,10 +219,10 @@ export const CURRICULAR_PILLARS_CATALOG = {
   },
   cme_new: {
     textbook: {
-      title: 'Conflict in the Middle East Master Publisher Textbook',
+      title: 'Conflict in the Middle East (1945–1995) 28-Page Master Textbook',
       label: 'Master Textbook',
-      htmlUrl: '/units/cme_new/textbook_KT1_PUBLISHER.html',
-      pdfUrl: '/pdfs/cme_new_textbook_KT1_FINAL_V17.pdf',
+      htmlUrl: '/units/cme_new/textbook_UNIFIED.html',
+      pdfUrl: '/pdfs/cme_new_textbook_UNIFIED_FINAL.pdf',
     },
     workbook: {
       title: 'Conflict in the Middle East Pupil Workbook',
@@ -266,12 +238,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   usa: {
-    textbook: {
-      title: 'USA 1954–1975 Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/usa/textbook_KT1.html',
-      pdfUrl: '/pdfs/usa_visual_revision_guide.pdf',
-    },
     workbook: {
       title: 'USA 1954–1975 Pupil Workbook',
       label: 'Pupil Workbook',
@@ -286,12 +252,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   edexcel_medicine: {
-    textbook: {
-      title: 'Medicine in Britain Master Publisher Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/edexcel_medicine/textbook_medieval_PUBLISHER.html',
-      pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Medicine in Britain Master Pupil Workbook',
       label: 'Pupil Workbook',
@@ -306,12 +266,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   weimar_nazi_germany: {
-    textbook: {
-      title: 'Weimar & Nazi Germany Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/weimar_nazi_germany/textbook_KT1.html',
-      pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT1_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Weimar & Nazi Germany Pupil Workbook',
       label: 'Pupil Workbook',
@@ -326,12 +280,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   eee: {
-    textbook: {
-      title: 'Early Elizabethan England Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/eee/textbook_KT1.html',
-      pdfUrl: '/pdfs/eee_textbook_KT1_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Early Elizabethan England Pupil Workbook',
       label: 'Pupil Workbook',
@@ -346,12 +294,6 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   cold_war: {
-    textbook: {
-      title: 'Superpower Relations & Cold War Master Textbook',
-      label: 'Master Textbook',
-      htmlUrl: '/units/cold_war/textbook.html',
-      pdfUrl: '/pdfs/cold_war_textbook_FINAL_V17.pdf',
-    },
     workbook: {
       title: 'Superpower Relations & Cold War Pupil Workbook',
       label: 'Pupil Workbook',
@@ -379,12 +321,6 @@ export function renderHeroCurricularLaunchpad(unitId, unitData) {
   if (isTrip) return '';
 
   const config = CURRICULAR_PILLARS_CATALOG[unitId] || {
-    textbook: {
-      title: `${unitData?.title || 'Unit'} Master Textbook`,
-      label: 'Master Textbook',
-      htmlUrl: `/units/${unitId}/textbook.html`,
-      pdfUrl: `/pdfs/${unitId}_textbook_FINAL_V17.pdf`,
-    },
     workbook: {
       title: `${unitData?.title || 'Unit'} Pupil Workbook`,
       label: 'Pupil Workbook',

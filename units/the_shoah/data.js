@@ -14,6 +14,8 @@ const unitData = {
   lessons: [
     {
       title: 'Anti-Semitism: How did centuries of prejudice pave the way for Nazi ideology?',
+      card_image: '/images/anti_jewish_boycott_1933.jpg',
+      card_position: 'center 30%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -52,6 +54,8 @@ const unitData = {
     },
     {
       title: '1933–1939: How were German Jews progressively stripped of citizenship and rights?',
+      card_image: '/images/kristallnacht_shop.jpg',
+      card_position: 'center 35%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -91,6 +95,8 @@ const unitData = {
     {
       title:
         'The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?',
+      card_image: '/images/warsaw_ghetto_wall_1941.jpg',
+      card_position: 'center 45%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -130,6 +136,8 @@ const unitData = {
     {
       title:
         "The 'Final Solution': How did the death camps operate as industrialised extermination?",
+      card_image: '/images/shoah_cover.jpg',
+      card_position: 'center 40%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -168,6 +176,8 @@ const unitData = {
     },
     {
       title: 'Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?',
+      card_image: '/images/warsaw_ghetto_uprising_1943.jpg',
+      card_position: 'center 25%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -207,6 +217,8 @@ const unitData = {
     {
       title:
         'Liberation and Legacy: What does survivor testimony teach us about humanity and memory?',
+      card_image: '/images/buchenwald_liberation_1945.jpg',
+      card_position: 'center 30%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -245,6 +257,8 @@ const unitData = {
     },
     {
       title: 'Assessment: The Shoah Enquiry',
+      card_image: '/images/shoah_memorial_berlin.jpg',
+      card_position: 'center center',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',

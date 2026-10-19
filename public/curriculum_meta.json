@@ -1,6 +1,23 @@
 {
   "yearGroups": [
     {
+      "year": "Year 5",
+      "ks": "Key Stage 2",
+      "units": [
+        {
+          "uid": "ks2_ww2",
+          "terms": ["Autumn 1", "Autumn 2"],
+          "shortTitle": "World War II & The Home Front",
+          "summary": "Pupils investigate how the Second World War transformed children's lives in Britain and Europe, covering the outbreak in 1939, Operation Pied Piper evacuation, the Blitz and air raid shelters, rationing, women at war, Bletchley Park codebreaking, and the Holocaust Educational Trust primary undercurrent tracing Kindertransport rescues and upstanders.",
+          "vocab": "Air Raid Siren, Gas Mask, Evacuee, Operation Pied Piper, Kindertransport, The Blitz, Anderson Shelter, Rationing, Women's Land Army, Enigma Machine, Upstander, VE Day",
+          "skills": ["Chronological Understanding", "Artifact & Primary Source Investigation", "Perspectives & Empathy", "Historical Explanation"],
+          "assessment": "Formative primary source analyses throughout. Extended enquiry: 'How did World War II transform children's lives in Britain and Europe?'",
+          "smsc": "<strong>Spiritual:</strong> Reflecting on loss, separation, and remembrance. <strong>Moral:</strong> Choices made by rescuers and upstanders (Winton, Chadwick). <strong>Social:</strong> Community resilience during the Blitz and post-war rebuilding. <strong>Cultural:</strong> Celebrating pre-war European Jewish heritage and wartime culture.",
+          "careers": "Museum Educator, Archivist, Historian, Civil Service, Journalist"
+        }
+      ]
+    },
+    {
       "year": "Year 7",
       "ks": "Key Stage 3",
       "units": [

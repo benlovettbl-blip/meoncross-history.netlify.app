@@ -2888,12 +2888,48 @@ window.openTeacherPrintPreview = function (fileBaseName, title, pdfUrl) {
     }
   }
 
-  if (!pdfUrl) {
-    const pdfBase = fileBaseName
-      .replace('/units/cme_new/booklets/', '')
-      .replace('.html', '')
-      .replace('cme_mastery_', 'cme_mastery_pack_');
-    pdfUrl = `/pdfs/cme_new/${pdfBase}.pdf`;
+  // Robust unit-aware PDF resolution
+  if (!pdfUrl || pdfUrl === '#' || pdfUrl === 'undefined') {
+    if (htmlUrl.includes('/units/ks2_ww2/')) {
+      if (htmlUrl.includes('pupil_workbook')) {
+        pdfUrl = '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf';
+      } else if (htmlUrl.includes('quiz_pack')) {
+        pdfUrl = '/pdfs/ks2_ww2_quiz_pack_FINAL_V17.pdf';
+      } else if (htmlUrl.includes('textbook')) {
+        pdfUrl = '/pdfs/ks2_ww2_textbook_FINAL_V1.pdf';
+      } else if (htmlUrl.includes('/worksheets/')) {
+        const file = htmlUrl.split('/').pop().replace('.html', '.pdf');
+        pdfUrl = `/pdfs/ks2_ww2/${file}`;
+      } else {
+        pdfUrl = '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf';
+      }
+    } else if (htmlUrl.includes('/units/medieval_england/')) {
+      if (htmlUrl.includes('pupil_workbook')) {
+        pdfUrl = '/pdfs/medieval_england_pupil_workbook.pdf';
+      } else if (htmlUrl.includes('quiz_pack')) {
+        pdfUrl = '/pdfs/medieval_england_quiz_pack_FINAL_V1.pdf';
+      } else {
+        pdfUrl = '/pdfs/medieval_england_textbook_FINAL_V17.pdf';
+      }
+    } else if (htmlUrl.includes('/units/great_war_part2/')) {
+      pdfUrl = '/pdfs/great_war_part2_pupil_workbook.pdf';
+    } else if (htmlUrl.includes('/units/great_war/')) {
+      if (htmlUrl.includes('pupil_workbook')) {
+        pdfUrl = '/pdfs/great_war_pupil_workbook_FINAL_V17.pdf';
+      } else {
+        pdfUrl = '/pdfs/great_war_quiz_pack_FINAL_V17.pdf';
+      }
+    } else if (htmlUrl.includes('/units/cme_new/')) {
+      const pdfBase = fileBaseName
+        .replace('/units/cme_new/booklets/', '')
+        .replace('/units/cme_new/printables/', '')
+        .replace('.html', '')
+        .replace('cme_mastery_', 'cme_mastery_pack_');
+      pdfUrl = `/pdfs/cme_new/${pdfBase}.pdf`;
+    } else {
+      const cleanBase = htmlUrl.split('/').pop().replace('.html', '');
+      pdfUrl = `/pdfs/${cleanBase}.pdf`;
+    }
   }
 
   // Remove existing modal if any
@@ -2930,8 +2966,8 @@ window.openTeacherPrintPreview = function (fileBaseName, title, pdfUrl) {
             <i class="fa-solid fa-print"></i> Print Class Set
           </button>
           
-          <a href="${pdfUrl}" target="_blank" download style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
-            <i class="fa-solid fa-file-pdf"></i> High-Res PDF
+          <a id="teacherPrintModalPdfDownload" href="${pdfUrl}" target="_blank" download style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
+            <i class="fa-solid fa-file-pdf"></i> High-Resolution PDF
           </a>
 
           <a href="${htmlUrl}" target="_blank" style="background: rgba(255, 255, 255, 0.08); color: #e2e8f0; border: 1px solid rgba(255, 255, 255, 0.15); font-weight: 600; font-size: 0.88rem; padding: 8px 14px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">

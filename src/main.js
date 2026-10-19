@@ -19,6 +19,7 @@ import {
 import './langemarck_myth.js';
 import('./digital_textbook_reader.js');
 import { initCmeMapHotkeys, renderFloatingCmeMapButton } from './cme_theater_map.js';
+import './engine/ks2_guidance.js';
 
 function purgeGDPRHistoricalCache() {
   try {

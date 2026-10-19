@@ -1,0 +1,45 @@
+{
+  "medieval_england": {
+    "unitId": "medieval_england",
+    "title": "MEDIEVAL ENGLAND",
+    "dateRange": "1066 – 1381",
+    "subtitle": "The Struggle for Power: Monarchy, Church & Popular Rebellion",
+    "coverImage": "/images/portchester_keep.jpg",
+    "coverImageCaption": "Portchester Castle Norman Keep • Hampshire (Late 11th Century)",
+    "overviewHeading": "SWORD, CROWN & REBELLION • 1066–1381",
+    "overviewParas": [
+      "In October 1066, on a bloody ridge near Hastings, an arrow pierced King Harold’s eye and shattered Anglo-Saxon England forever. Duke William unleashed a brutal conquest—erecting towering stone keeps to terrify the conquered, laying waste to Yorkshire in the ferocious Harrying of the North, and recording every acre and ox in the Domesday Book to cement iron-fisted Norman rule.",
+      "Yet the crown’s grip was never secure. Across three turbulent centuries, violent clashes between monarchs and subjects transformed the realm: from the martyrdom of Thomas Becket at Canterbury and the revolutionary liberties extorted at Magna Carta, to the horror of the Black Death and the armed peasants marching on London in 1381 to demand an end to serfdom."
+    ],
+    "coreConcepts": [
+      "Monarchical Sovereignty",
+      "Feudal Land Tenure",
+      "Secular vs Canon Law",
+      "Constitutional Rule of Law",
+      "Demographic Catastrophe & Labour Mobility"
+    ],
+    "calibratedEnquiriesFile": "perfect_calibrated_enquiries.json",
+    "pdfFilename": "medieval_england_textbook_FINAL_V17.pdf"
+  },
+  "great_war_part2": {
+    "unitId": "great_war_part2",
+    "title": "THE GREAT WAR",
+    "dateRange": "1914 – 1919",
+    "subtitle": "Total War, Industrial Slaughter & The Fragile Peace",
+    "coverImage": "/images/bg_great_war_part2.jpg",
+    "overviewHeading": "INTO THE ABYSS • 1914–1919",
+    "overviewParas": [
+      "In the summer of 1914, millions of young men marched eagerly to war, swept up in patriotic fever and promised they would return home victorious before Christmas. None foresaw the industrial nightmare awaiting them. Within months, rapid-firing machine guns, heavy artillery, and poison gas obliterated the old world of cavalry charges, trapping an entire generation in the mud, blood, and barbed wire of the Western Front.",
+      "From the catastrophic slaughter of the Somme to the forgotten heroism of four million imperial troops of colour, and from the courage of female munition workers on the Home Front to the bitter peace dictated in the Hall of Mirrors at Versailles, this anthology tells the dramatic story of five cataclysmic years that shattered empires and reshaped human history forever."
+    ],
+    "coreConcepts": [
+      "Industrialised Attrition",
+      "Total War Mobilisation",
+      "Imperial Subjugation",
+      "Conscription & Conscience",
+      "Geopolitical Diktat & War Guilt"
+    ],
+    "calibratedEnquiriesFile": "great_war_part2_calibrated_enquiries.json",
+    "pdfFilename": "great_war_part2_textbook_FINAL.pdf"
+  }
+}

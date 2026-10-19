@@ -105,23 +105,44 @@ export function sampleDiagnosticQuestions(unitId, unitData, topicFilter = null) 
   // Filter eras if a specific topic was selected
   const cleanFilter = topicFilter ? String(topicFilter).split(':')[0].trim().toLowerCase() : null;
   let activeEras = eras;
+  let isSingleLesson = false;
+
   if (cleanFilter && cleanFilter !== 'all' && cleanFilter !== 'full') {
-    const matched = eras.filter((e) => {
-      const eId = String(e.id || '').toLowerCase();
-      const eWb = String(e.workbookId || '').toLowerCase();
-      const eTitle = String(e.title || '').toLowerCase();
-      return (
-        eId === cleanFilter ||
-        eWb === cleanFilter ||
-        eId.includes(cleanFilter) ||
-        cleanFilter.includes(eId) ||
-        eTitle.includes(cleanFilter)
-      );
+    // 1. Direct lesson ID match (e.g. "lesson_1", "lesson_10")
+    const matchedLesson = lessons.find((l) => {
+      const lId = String(l.id || '').toLowerCase();
+      return lId === cleanFilter;
     });
-    if (matched.length > 0) activeEras = matched;
+
+    if (matchedLesson) {
+      isSingleLesson = true;
+      activeEras = [
+        {
+          id: matchedLesson.id,
+          title: matchedLesson.title || 'Selected Lesson',
+          lessons: [matchedLesson],
+          workbookId: matchedLesson.id,
+        },
+      ];
+    } else {
+      // 2. Era / workbook / key topic match
+      const matched = eras.filter((e) => {
+        const eId = String(e.id || '').toLowerCase();
+        const eWb = String(e.workbookId || '').toLowerCase();
+        const eTitle = String(e.title || '').toLowerCase();
+        return (
+          eId === cleanFilter ||
+          eWb === cleanFilter ||
+          eId.includes(cleanFilter) ||
+          cleanFilter.includes(eId) ||
+          eTitle.includes(cleanFilter)
+        );
+      });
+      if (matched.length > 0) activeEras = matched;
+    }
   }
 
-  // Determine questions per era to reach exactly 20
+  // Determine questions per era to reach target count
   const questionsPerEra = Math.floor(20 / activeEras.length);
   const remainder = 20 % activeEras.length;
 
@@ -198,8 +219,8 @@ export function sampleDiagnosticQuestions(unitId, unitData, topicFilter = null) 
     });
   });
 
-  // If fewer than 20 questions sampled, backfill from remaining unused questions in the unit
-  if (sampledQuestions.length < 20) {
+  // If fewer than 20 questions sampled, backfill from remaining unused questions in the unit (unless single lesson chosen)
+  if (!isSingleLesson && sampledQuestions.length < 20) {
     const usedPrompts = new Set(sampledQuestions.map((q) => q.prompt));
     const backfillPool = [];
 

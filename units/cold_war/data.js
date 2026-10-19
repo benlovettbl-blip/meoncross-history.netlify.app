@@ -14,6 +14,8 @@ const unitData = {
   lessons: [
     {
       title: 'Ideological Clash: Why could Capitalism and Communism never peacefully coexist?',
+      card_image: '/images/cold_war_jfk_khrushchev_1961.jpg',
+      card_position: 'center 25%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -52,6 +54,8 @@ const unitData = {
     },
     {
       title: 'Yalta to Potsdam (1945): How did wartime allies become bitter rivals?',
+      card_image: '/images/yalta_conference_1945.jpg',
+      card_position: 'center 30%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -90,6 +94,8 @@ const unitData = {
     },
     {
       title: 'The Iron Curtain & The Berlin Blockade (1948–1949): The first flashpoint.',
+      card_image: '/images/berlin_airlift_c54_tempelhof.jpg',
+      card_position: 'center center',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -128,6 +134,8 @@ const unitData = {
     },
     {
       title: 'Nuclear Brinkmanship: The Cuban Missile Crisis (1962).',
+      card_image: '/images/cuban_missile_crisis_u2_1962.jpg',
+      card_position: 'center center',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -165,6 +173,8 @@ const unitData = {
     },
     {
       title: 'Proxy Wars: Why did the superpowers fight in Asia (Korea & Vietnam)?',
+      card_image: '/images/huey_combat_landing_vietnam.jpg',
+      card_position: 'center center',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -203,6 +213,8 @@ const unitData = {
     },
     {
       title: 'Fall of the Berlin Wall (1989) and the collapse of the Soviet Union (1991).',
+      card_image: '/images/berlin_wall_fall_1989.jpg',
+      card_position: 'center 25%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',
@@ -241,6 +253,8 @@ const unitData = {
     },
     {
       title: "Assessment: Was the Cold War ever truly 'cold'?",
+      card_image: '/images/checkpoint_charlie_tanks_1961.jpg',
+      card_position: 'center 40%',
       teacher_notes: {
         primer:
           'This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.',

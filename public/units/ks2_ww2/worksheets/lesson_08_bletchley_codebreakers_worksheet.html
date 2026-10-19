@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KS2 History Worksheet • Lesson 8: Secret Codebreakers & Bletchley Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+
+    :root {
+      --ink: #1e293b;
+      --ink-muted: #475569;
+      --navy-primary: #1e3a8a;
+      --navy-deep: #0f172a;
+      --parchment: #fdfbf7;
+      --accent-gold: #b45309;
+      --border-gray: #cbd5e1;
+      --card-bg: #ffffff;
+      --cut-guide: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      background: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15mm;
+      padding: 15mm 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+        gap: 0;
+      }
+      .worksheet-page {
+        box-shadow: none !important;
+        page-break-after: always;
+        break-after: page;
+        margin: 0;
+      }
+    }
+
+    .worksheet-page {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      padding: 6.5mm 7.5mm;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .exercise-book-cutline {
+      width: 100%;
+      height: 100%;
+      border: 1.5px dashed var(--cut-guide);
+      border-radius: 6px;
+      padding: 4.5mm 5.5mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: #ffffff;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .cut-indicator {
+      position: absolute;
+      top: -3.5mm;
+      left: 14mm;
+      background: #ffffff;
+      padding: 0 5px;
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: var(--cut-guide);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sheet-masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--navy-deep);
+      padding-bottom: 2mm;
+      margin-bottom: 2mm;
+      flex-shrink: 0;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-badge {
+      background: var(--navy-deep);
+      color: #ffffff;
+      font-family: 'Cinzel', serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 1.5px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-text {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: var(--navy-primary);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .student-fields {
+      display: flex;
+      gap: 12px;
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .field-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .field-line {
+      display: inline-block;
+      width: 32mm;
+      border-bottom: 1.2px solid var(--ink);
+      height: 3.5mm;
+    }
+
+    .field-line.short {
+      width: 20mm;
+    }
+
+    .enquiry-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: 5px;
+      padding: 2.2mm 3.5mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.2mm;
+      flex-shrink: 0;
+    }
+
+    .enquiry-title-group h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 11pt;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      line-height: 1.15;
+    }
+
+    .enquiry-title-group .enquiry-question {
+      font-family: 'Lora', serif;
+      font-size: 7.6pt;
+      font-style: italic;
+      color: #cbd5e1;
+      margin-top: 0.4mm;
+    }
+
+    .lesson-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 1.5mm 3.5mm;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 7.2pt;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* SECTION 1: ARCHIVAL EVIDENCE & STORY CARD */
+    .story-evidence-grid {
+      display: grid;
+      grid-template-columns: 58mm 1fr;
+      gap: 3mm;
+      margin-bottom: 2.2mm;
+      flex-shrink: 0;
+    }
+
+    .archival-plate-box {
+      border: 1px solid var(--border-gray);
+      border-radius: 4px;
+      padding: 1.5mm;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .archival-img {
+      width: 100%;
+      height: 38mm;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 3px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .archival-caption {
+      font-size: 6.2pt;
+      line-height: 1.25;
+      color: var(--ink-muted);
+      margin-top: 1mm;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .story-text-box {
+      background: var(--parchment);
+      border: 1px solid #fed7aa;
+      border-left: 3.5px solid var(--accent-gold);
+      border-radius: 4px;
+      padding: 2.2mm 2.8mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .story-header {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 7.6pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.2mm;
+    }
+
+    .story-prose {
+      font-family: 'Lora', serif;
+      font-size: 8.1pt;
+      line-height: 1.45;
+      color: #1e293b;
+    }
+
+    .story-prose strong {
+      color: var(--navy-primary);
+    }
+
+    /* DYNAMIC EXPANDING TASK CARDS */
+    .task-card-expand {
+      background: #ffffff;
+      border: 1.2px solid var(--border-gray);
+      border-radius: 5px;
+      padding: 2.2mm 3mm;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      margin-bottom: 2.2mm;
+      box-sizing: border-box;
+    }
+
+    .p1-task1 {
+      flex: 1.15;
+    }
+
+    .p1-task2 {
+      flex: 1.05;
+      margin-bottom: 0;
+    }
+
+    .task-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5mm;
+      padding-bottom: 1mm;
+      border-bottom: 1px solid #e2e8f0;
+      flex-shrink: 0;
+    }
+
+    .task-num-title {
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .task-tag {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .artifact-detective-grid {
+      display: grid;
+      grid-template-columns: 46mm 1fr;
+      gap: 3mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .artifact-container {
+      background: #fdfbf7;
+      border: 1px dashed #d97706;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8mm;
+      overflow: hidden;
+    }
+
+    .artifact-img {
+      width: 42mm;
+      height: 38mm;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .artifact-caption {
+      font-size: 6.0pt;
+      line-height: 1.25;
+      color: var(--ink-muted);
+      text-align: center;
+      margin-top: 1mm;
+      font-style: italic;
+    }
+
+    .detective-questions {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.8mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .q-block {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .q-item {
+      font-size: 7.6pt;
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.25;
+      flex-shrink: 0;
+      margin-bottom: 0.6mm;
+    }
+
+    .ruled-handwriting-lines {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
+    .ruled-line {
+      flex: 1;
+      min-height: 5.4mm;
+      border-bottom: 1.2px dashed #94a3b8;
+    }
+
+    /* TASK 2: ACTIVE 3-STAGE CHRONOLOGY */
+    .timeline-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.8mm;
+      flex: 1;
+      min-height: 0;
+      margin-top: 0.5mm;
+    }
+
+    .timeline-step-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-top: 3.5px solid var(--navy-primary);
+      border-radius: 4px;
+      padding: 1.8mm 2.2mm;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .step-badge {
+      font-size: 6.4pt;
+      font-weight: 800;
+      color: var(--navy-primary);
+      margin-bottom: 0.5mm;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-size: 7.4pt;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 0.5mm;
+      flex-shrink: 0;
+    }
+
+    .step-desc {
+      font-size: 6.6pt;
+      color: var(--ink-muted);
+      line-height: 1.25;
+      margin-bottom: 1mm;
+      flex-shrink: 0;
+    }
+
+    .step-response-box {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
+    .sheet-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5mm;
+      border-top: 1px solid #e2e8f0;
+      font-size: 6.8pt;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+      margin-top: 1.5mm;
+    }
+
+    /* PAGE 2 STYLES */
+    .p2-task3 {
+      flex: 1.32;
+    }
+
+    .p2-task4 {
+      flex: 0.95;
+    }
+
+    .p2-task5 {
+      flex: 0.95;
+      margin-bottom: 0;
+    }
+
+    .visual-investigation-grid {
+      display: grid;
+      grid-template-columns: 66mm 1fr;
+      gap: 3.5mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .canvas-drawing-col {
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .drawing-outer-shell {
+      flex: 1;
+      min-height: 0;
+      border: 2px dashed #b45309;
+      border-radius: 6px;
+      background: #fdfbf7;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3mm;
+      box-sizing: border-box;
+    }
+
+    .canvas-subcaption {
+      font-size: 6.4pt;
+      font-weight: 700;
+      color: #92400e;
+      text-align: center;
+      margin-top: 1.5mm;
+      letter-spacing: 0.02em;
+      flex-shrink: 0;
+    }
+
+    .investigation-ledger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .ledger-row {
+      background: #ffffff;
+      border: 1px solid #e7e5e4;
+      border-left: 3.5px solid var(--navy-primary);
+      border-radius: 4px;
+      padding: 1.5mm 2.2mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
+    .ledger-item-line {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      font-size: 7.3pt;
+      font-weight: 700;
+      color: var(--navy-deep);
+    }
+
+    .ledger-reason-prompt {
+      font-size: 6.6pt;
+      color: var(--ink-muted);
+      margin-top: 0.4mm;
+      font-weight: 500;
+    }
+
+    /* THINKING HEADS */
+    .thinking-heads-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      flex: 1;
+      min-height: 0;
+      margin-top: 0.5mm;
+    }
+
+    .head-card {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: 5px;
+      padding: 2.2mm 2.8mm;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .head-title-row {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 1mm;
+      flex-shrink: 0;
+    }
+
+    .head-badge {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: var(--navy-primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6.8pt;
+      font-weight: 800;
+    }
+
+    .head-name {
+      font-size: 7.6pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+    }
+
+    .thought-bubble {
+      background: #f8fafc;
+      border: 1.2px solid #cbd5e1;
+      border-radius: 5px;
+      padding: 2mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
+    .thought-prompt {
+      font-size: 7.1pt;
+      color: var(--navy-primary);
+      font-weight: 600;
+      line-height: 1.25;
+      flex-shrink: 0;
+      margin-bottom: 1mm;
+    }
+
+    .bubble-lines {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
+    .bubble-line {
+      border-bottom: 1.2px dashed #94a3b8;
+      flex: 1;
+      min-height: 5.2mm;
+    }
+
+    /* SYNTHESIS FRAME */
+    .synthesis-container {
+      background: #fdfbf7;
+      border: 1.2px solid #fed7aa;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 5px;
+      padding: 2.2mm 2.8mm;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .synthesis-header {
+      font-family: 'Lora', serif;
+      font-size: 7.6pt;
+      font-style: italic;
+      color: var(--navy-primary);
+      font-weight: 700;
+      margin-bottom: 1mm;
+      flex-shrink: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       PAGE 1: SOURCE EVIDENCE & ACTIVE CHRONOLOGY (SHEET 1)
+       ======================================================== -->
+  <div class="worksheet-page" id="sheet-page-1">
+    <div class="exercise-book-cutline">
+      <div class="cut-indicator">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+        Cut along dashed line to stick neatly into exercise book
+      </div>
+
+      <!-- Masthead -->
+      <div class="sheet-masthead">
+        <div class="brand-left">
+          <span class="brand-badge">KS2 HISTORY</span>
+          <span class="brand-text">THE HISTORY REVISION HUB • YEAR 5 WORLD WAR II</span>
+        </div>
+        <div class="student-fields">
+          <div class="field-item">Name: <span class="field-line"></span></div>
+          <div class="field-item">Date: <span class="field-line short"></span></div>
+        </div>
+      </div>
+
+      <!-- Enquiry Title -->
+      <div class="enquiry-banner">
+        <div class="enquiry-title-group">
+          <h1>Secret Codebreakers & The Enigma Machine</h1>
+          <p class="enquiry-question">Key Enquiry Question: How did Alan Turing and the secret minds at Bletchley Park crack the unbreakable German cipher?</p>
+        </div>
+        <div class="lesson-badge">
+          LESSON 08<br><span style="font-size: 6.2pt; font-weight:600;">KEY STAGE 2</span>
+        </div>
+      </div>
+
+      <!-- Section 1: Archival Story & Evidence Card -->
+      <div class="story-evidence-grid">
+        <div class="archival-plate-box">
+          <img src="enigma_machine_bletchley.jpg" class="archival-img" alt="Source A (Museum Artifact)">
+          <p class="archival-caption"><strong>Source A (Museum Artifact):</strong> An Enigma cipher machine showing its alphabetical keyboard, illuminating lampboard, and spinning rotor wheels. (Bletchley Park Trust)</p>
+        </div>
+        <div class="story-text-box">
+          <div class="story-header">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Historical Reading • What this tells us
+          </div>
+          <p class="story-prose">
+            The German military used an electrical cipher typewriter called the <strong>Enigma machine</strong> to scramble battle orders. With spinning rotor wheels and plugboard cables, Enigma could scramble a message into <strong>158 million million million combinations</strong>.<br><br>At secret Bletchley Park in Buckinghamshire, genius mathematician Alan Turing and thousands of young codebreakers designed electromechanical "Bombe" machines that tested combinations at lightning speed, breaking the code daily.
+          </p>
+        </div>
+      </div>
+
+      <!-- Task 1: Primary Evidence Detective -->
+      <div class="task-card-expand p1-task1">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Task 1: Artifact Detective • Alan Turing's Bombe Machine
+          </span>
+          <span class="task-tag">Primary Evidence</span>
+        </div>
+        <div class="artifact-detective-grid">
+          <div class="artifact-container">
+            <img src="bombe_bletchley_park.jpg" class="artifact-img" alt="Source B (Archival Photograph)">
+            <p class="artifact-caption"><strong>Source B (Archival Photograph):</strong> The towering electromechanical Bombe machine in Hut 11, with dozens of spinning coloured drums designed to decipher Enigma keys.</p>
+          </div>
+          <div class="detective-questions">
+            <div class="q-block">
+              <p class="q-item">1. Look closely at Source B. Why did Alan Turing realize that only an electromechanical machine (the Bombe) could test thousands of cipher combinations fast enough to save lives?</p>
+              <div class="ruled-handwriting-lines">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
+            </div>
+            <div class="q-block">
+              <p class="q-item">2. Looking at Source A and Source B, why was the midnight reset of German cipher keys such a desperate daily race against time for codebreakers?</p>
+              <div class="ruled-handwriting-lines">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 2: Active Chronological Challenge -->
+      <div class="task-card-expand p1-task2">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Task 2: Active Chronological Challenge • The Codebreaking Pipeline
+          </span>
+          <span class="task-tag">Chronological Understanding</span>
+        </div>
+        <div class="timeline-3col">
+          <div class="timeline-step-card">
+            <span class="step-badge">STAGE 1</span>
+            <span class="step-title">Radio Intercept (Y-Stations)</span>
+            <p class="step-desc">Coastal listening stations intercept Morse code radio signals transmitted by German U-boats and armies.</p>
+            <div class="step-response-box">
+              <p style="font-size:6.8pt; font-weight:700; color:#1e3a8a; margin-bottom:0.5mm;">Why did listening operators need lightning-fast ears to transcribe Morse code dits and dahs?</p>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+            </div>
+          </div>
+          <div class="timeline-step-card">
+            <span class="step-badge">STAGE 2</span>
+            <span class="step-title">Hut 8 & The Turing Bombes</span>
+            <p class="step-desc">Coded slips rushed to Bletchley. Bombes whirr through rotor settings to find the day's secret key.</p>
+            <div class="step-response-box">
+              <p style="font-size:6.8pt; font-weight:700; color:#1e3a8a; margin-bottom:0.5mm;">What went through codebreakers' minds when the machine suddenly stopped on a winning match?</p>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+            </div>
+          </div>
+          <div class="timeline-step-card">
+            <span class="step-badge">STAGE 3</span>
+            <span class="step-title">'Ultra' Secret Intelligence</span>
+            <p class="step-desc">Decrypted battle orders delivered to Churchill in locked yellow dispatch boxes to re-route convoys.</p>
+            <div class="step-response-box">
+              <p style="font-size:6.8pt; font-weight:700; color:#1e3a8a; margin-bottom:0.5mm;">Why was keeping the secret that Britain had cracked Enigma just as critical as breaking the code?</p>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="sheet-footer">
+        <span>The History Revision Hub • KS2 History Exercise Book Series</span>
+        <span>LESSON 08 • Sheet 1 of 2 (Trim along dashed outer cutline)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 2: INQUIRY TASKS & MASTER SYNTHESIS (SHEET 2)
+       ======================================================== -->
+  <div class="worksheet-page" id="sheet-page-2">
+    <div class="exercise-book-cutline">
+      <div class="cut-indicator">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+        Cut along dashed line to stick neatly into exercise book
+      </div>
+
+      <!-- Masthead -->
+      <div class="sheet-masthead">
+        <div class="brand-left">
+          <span class="brand-badge">KS2 ACTIVITY</span>
+          <span class="brand-text">Alan Turing & The Bombe Machines</span>
+        </div>
+        <div class="student-fields">
+          <div class="field-item">Name: <span class="field-line"></span></div>
+          <div class="field-item">LESSON 08 • Sheet 2</div>
+        </div>
+      </div>
+
+      <!-- Task 3: Visual Investigation & Tactile Ledger -->
+      <div class="task-card-expand p2-task3">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            Task 3: Visual Investigation • The Enigma Rotor Mechanism & Cipher Wheel
+          </span>
+          <span class="task-tag">Tactile Investigation</span>
+        </div>
+        <div class="visual-investigation-grid">
+          <div class="canvas-drawing-col">
+            <div class="drawing-outer-shell">
+              
+      <div style="width:52mm; height:50mm; border:2px solid #1e3a8a; border-radius:50%; background:#f8fafc; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:2mm; box-shadow:inset 0 0 10px rgba(0,0,0,0.1);">
+        <div style="position:absolute; width:44mm; height:44mm; border:1.5px dashed #3b82f6; border-radius:50%;"></div>
+        <div style="width:28mm; height:28mm; border:2px solid #0f172a; border-radius:50%; background:#e2e8f0; display:flex; flex-direction:column; align-items:center; justify-content:center; font-size:6pt; font-weight:800; color:#0f172a; text-align:center;">
+          <span>ROTOR I</span>
+          <span style="font-size:8pt; color:#1e3a8a;">A → X</span>
+          <span style="font-size:5pt; color:#475569;">ELECTRIC CONTACTS</span>
+        </div>
+        <div style="position:absolute; bottom:2.5mm; font-size:5.5pt; font-weight:800; color:#1e3a8a;">PLUGBOARD STECKER</div>
+      </div>
+    
+            </div>
+            <p class="canvas-subcaption">Annotate the outer letter ring, internal wiring, and stepping ratchet above</p>
+          </div>
+          <div class="investigation-ledger">
+            <div class="ledger-row">
+              <div class="ledger-item-line">
+                <span>1. The Plugboard (Steckerboard)</span>
+              </div>
+              <p class="ledger-reason-prompt">How did swapping 10 pairs of letters before the rotors turned create millions of extra combinations?</p>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+            </div>
+            <div class="ledger-row">
+              <div class="ledger-item-line">
+                <span>2. The Three Spinning Rotors</span>
+              </div>
+              <p class="ledger-reason-prompt">Why did the rotor wheel stepping forward with every keystroke prevent simple letter-frequency decoding?</p>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+            </div>
+            <div class="ledger-row">
+              <div class="ledger-item-line">
+                <span>3. The Reflector (Umkehrwalze)</span>
+              </div>
+              <p class="ledger-reason-prompt">Why was the rule that a letter could never be encrypted as itself the fatal flaw Turing exploited?</p>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+            </div>
+            <div class="ledger-row">
+              <div class="ledger-item-line">
+                <span>4. The 30-Year Secrecy Oath</span>
+              </div>
+              <p class="ledger-reason-prompt">Why did over 10,000 workers at Bletchley never tell their spouses or families what they did for 30 years?</p>
+              <div class="ruled-line"></div>
+              <div class="ruled-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 4: Thinking Heads -->
+      <div class="task-card-expand p2-task4">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Task 4: "Thinking Heads" • Contrasting Historical Perspectives
+          </span>
+          <span class="task-tag">Contrasting Perspectives</span>
+        </div>
+        <div class="thinking-heads-grid">
+          <div class="head-card">
+            <div class="head-title-row">
+              <span class="head-badge">1</span>
+              <span class="head-name">Alan Turing (Mathematician & Pioneer)</span>
+            </div>
+            <div class="thought-bubble">
+              <p class="thought-prompt">Prompt: What mathematical breakthrough convinced you that logic machines could defeat human ciphers and save millions of Allied lives?</p>
+              <div class="bubble-lines">
+                <div class="bubble-line"></div>
+                <div class="bubble-line"></div>
+                <div class="bubble-line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="head-card">
+            <div class="head-title-row">
+              <span class="head-badge">2</span>
+              <span class="head-name">Wren Operating the Bombe in Hut 11</span>
+            </div>
+            <div class="thought-bubble">
+              <p class="thought-prompt">Prompt: What does it feel like to spend 8 hours in deafening mechanical rotor noise knowing your dials might save a convoy at sea tonight?</p>
+              <div class="bubble-lines">
+                <div class="bubble-line"></div>
+                <div class="bubble-line"></div>
+                <div class="bubble-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 5: Mission Challenge -->
+      <div class="task-card-expand p2-task5">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Task 5: Mission Challenge • Shortening the War
+          </span>
+          <span class="task-tag">Historian Challenge</span>
+        </div>
+        <div class="synthesis-container">
+          <p class="synthesis-header">Big Question: Historians calculate that Bletchley Park shortened the war by up to two years. How did silent codebreaking in secret wooden huts save millions of civilian and soldier lives?</p>
+          <div class="bubble-lines" style="flex:1;">
+            <div class="bubble-line"></div>
+            <div class="bubble-line"></div>
+            <div class="bubble-line"></div>
+            <div class="bubble-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="sheet-footer">
+        <span>The History Revision Hub • KS2 History Exercise Book Series</span>
+        <span>LESSON 08 • Sheet 2 of 2 (Trim along dashed outer cutline)</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

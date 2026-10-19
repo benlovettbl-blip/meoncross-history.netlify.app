@@ -15,6 +15,8 @@ const unitData = {
     {
       title:
         'Votes for Women: Were the Suffragists or Suffragettes more effective in securing the vote?',
+      card_image: '/images/suffragettes_kenney_pankhurst.jpg',
+      card_position: 'center 20%',
       narrative_blocks: [
         {
           text: 'Placeholder content for Votes for Women: Were the Suffragists or Suffragettes more effective in securing the vote?',
@@ -53,6 +55,8 @@ const unitData = {
     },
     {
       title: '1945: How did the aftermath of total war build the Welfare State and the NHS?',
+      card_image: '/images/bevan_first_day_nhs_1948.jpg',
+      card_position: 'center 30%',
       narrative_blocks: [
         {
           text: 'Placeholder content for 1945: How did the aftermath of total war build the Welfare State and the NHS?',
@@ -92,6 +96,8 @@ const unitData = {
     {
       title:
         'The Windrush Generation: Why did Britain invite Commonwealth citizens, and what did they face?',
+      card_image: '/images/empire_windrush_1948.jpg',
+      card_position: 'center 40%',
       narrative_blocks: [
         {
           text: 'Placeholder content for The Windrush Generation: Why did Britain invite Commonwealth citizens, and what did they face?',
@@ -129,6 +135,8 @@ const unitData = {
     },
     {
       title: 'The 1963 Bristol Bus Boycott & the fight for British civil rights.',
+      card_image: '/images/bristol_bus_boycott_mural.jpg',
+      card_position: 'center 30%',
       narrative_blocks: [
         {
           text: 'Placeholder content for The 1963 Bristol Bus Boycott & the fight for British civil rights.',
@@ -168,6 +176,8 @@ const unitData = {
     {
       title:
         'The Cold War on the Home Front: How did nuclear paranoia shape British popular culture?',
+      card_image: '/images/york_cold_war_bunker.jpg',
+      card_position: 'center center',
       narrative_blocks: [
         {
           text: 'Placeholder content for The Cold War on the Home Front: How did nuclear paranoia shape British popular culture?',
@@ -206,6 +216,8 @@ const unitData = {
     },
     {
       title: 'Assessment: How has British identity transformed since 1945?',
+      card_image: '/images/festival_of_britain_1951.jpg',
+      card_position: 'center 40%',
       narrative_blocks: [
         {
           text: 'Placeholder content for Assessment: How has British identity transformed since 1945?',

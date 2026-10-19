@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KS2 History Worksheet • Lesson 7: Pre-War Life & Rights Lost</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1e293b;
+      --ink-muted: #475569;
+      --navy-primary: #1e3a8a;
+      --navy-deep: #0f172a;
+      --parchment: #fdfbf7;
+      --accent-gold: #b45309;
+      --border-gray: #cbd5e1;
+      --card-bg: #ffffff;
+      --cut-guide: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      background: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15mm;
+      padding: 15mm 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+        padding: 0;
+        gap: 0;
+      }
+      .worksheet-page {
+        box-shadow: none !important;
+        page-break-after: always;
+        break-after: page;
+        margin: 0;
+      }
+    }
+
+    .worksheet-page {
+      width: 210mm;
+      height: 297mm;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+      padding: 6.5mm 7.5mm;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    .exercise-book-cutline {
+      width: 100%;
+      height: 100%;
+      border: 1.5px dashed var(--cut-guide);
+      border-radius: 6px;
+      padding: 4.5mm 5.5mm;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: #ffffff;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .cut-indicator {
+      position: absolute;
+      top: -3.5mm;
+      left: 14mm;
+      background: #ffffff;
+      padding: 0 5px;
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: var(--cut-guide);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sheet-masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--navy-deep);
+      padding-bottom: 2mm;
+      margin-bottom: 2mm;
+      flex-shrink: 0;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .brand-badge {
+      background: var(--navy-deep);
+      color: #ffffff;
+      font-family: 'Cinzel', serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 1.5px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-text {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: var(--navy-primary);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .student-fields {
+      display: flex;
+      gap: 12px;
+      font-size: 8pt;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .field-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .field-line {
+      display: inline-block;
+      width: 32mm;
+      border-bottom: 1.2px solid var(--ink);
+      height: 3.5mm;
+    }
+
+    .field-line.short {
+      width: 22mm;
+    }
+
+    /* ENQUIRY TITLE BANNER & HIGH-CONTRAST TYPOGRAPHY */
+    .enquiry-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%) !important;
+      color: #ffffff !important;
+      border: 1px solid #1e3a8a !important;
+      border-radius: 6px !important;
+      padding: 2.2mm 3.8mm !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      margin-bottom: 2.4mm !important;
+      flex-shrink: 0 !important;
+      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.15) !important;
+    }
+
+    .enquiry-title-group {
+      flex: 1 !important;
+      min-width: 0 !important;
+      padding-right: 4mm !important;
+    }
+
+    .enquiry-title-group h1 {
+      font-family: 'Cinzel', serif !important;
+      font-size: 11.2pt !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.02em !important;
+      line-height: 1.15 !important;
+      color: #ffffff !important;
+      margin: 0 !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .enquiry-title-group .enquiry-question,
+    .enquiry-question {
+      font-family: 'Lora', serif !important;
+      font-size: 7.8pt !important;
+      font-style: italic !important;
+      color: #fef08a !important;
+      margin-top: 0.5mm !important;
+      line-height: 1.25 !important;
+      display: block !important;
+    }
+
+    .lesson-badge {
+      background: #ffffff !important;
+      color: #1e3a8a !important;
+      border: 1.5px solid #93c5fd !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+      padding: 1.8mm 3.8mm !important;
+      border-radius: 5px !important;
+      text-align: center !important;
+      font-size: 7.4pt !important;
+      font-weight: 900 !important;
+      letter-spacing: 0.06em !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+      line-height: 1.25 !important;
+    }
+
+    .lesson-badge span {
+      color: #0369a1 !important;
+      font-size: 6.2pt !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.05em !important;
+      display: block !important;
+    }
+
+    .story-evidence-grid {
+      display: grid;
+      grid-template-columns: 58mm 1fr;
+      gap: 3mm;
+      margin-bottom: 2.5mm;
+      flex-shrink: 0;
+    }
+
+    .archival-plate-box {
+      border: 1px solid var(--border-gray);
+      border-radius: 4px;
+      padding: 1.5mm;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .archival-img {
+      width: 100%;
+      height: 38mm;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 3px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .archival-caption {
+      font-size: 6.2pt;
+      line-height: 1.25;
+      color: var(--ink-muted);
+      margin-top: 1mm;
+      font-style: italic;
+    }
+
+    .story-text-box {
+      background: var(--parchment);
+      border: 1px solid #fed7aa;
+      border-left: 3.5px solid var(--accent-gold);
+      border-radius: 4px;
+      padding: 2.2mm 2.8mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .story-header {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 7.6pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.2mm;
+    }
+
+    .story-prose {
+      font-family: 'Lora', serif;
+      font-size: 8.1pt;
+      line-height: 1.48;
+      color: #1e293b;
+    }
+
+    .story-prose strong {
+      color: var(--navy-primary);
+    }
+
+    .task-card-expand {
+      background: #ffffff;
+      border: 1.2px solid var(--border-gray);
+      border-radius: 5px;
+      padding: 2.5mm 3.2mm;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      margin-bottom: 2.5mm;
+    }
+
+    .p1-task1 {
+      flex: 1.15;
+    }
+
+    .p1-task2 {
+      flex: 1.05;
+      margin-bottom: 0;
+    }
+
+    .task-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5mm;
+      padding-bottom: 1mm;
+      border-bottom: 1px solid #e2e8f0;
+      flex-shrink: 0;
+    }
+
+    .task-num-title {
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .task-tag {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+
+    .artifact-detective-grid {
+      display: grid;
+      grid-template-columns: 46mm 1fr;
+      gap: 3mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .tag-container {
+      background: #fdfbf7;
+      border: 1px dashed #d97706;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2mm;
+    }
+
+    .tag-img {
+      width: 44mm;
+      height: 44mm;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .tag-caption {
+      font-size: 6.2pt;
+      line-height: 1.3;
+      color: var(--ink-muted);
+      text-align: center;
+      margin-top: 1.2mm;
+      font-style: italic;
+    }
+
+    .detective-questions {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .q-block {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .q-item {
+      font-size: 7.8pt;
+      font-weight: 700;
+      color: var(--navy-deep);
+      line-height: 1.3;
+      flex-shrink: 0;
+      margin-bottom: 0.8mm;
+    }
+
+    .ruled-handwriting-lines {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
+    .ruled-line {
+      flex: 1;
+      min-height: 5.8mm;
+      border-bottom: 1.2px dashed #94a3b8;
+    }
+
+    /* TASK 2: RIGHTS TIMELINE LADDER */
+    .rights-ladder {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.8mm;
+      flex: 1;
+      min-height: 0;
+      margin-top: 0.5mm;
+    }
+
+    .ladder-step-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-top: 3.5px solid var(--accent-gold);
+      border-radius: 4px;
+      padding: 2mm 2.2mm;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .ladder-date {
+      font-size: 6.4pt;
+      font-weight: 800;
+      color: var(--accent-gold);
+      margin-bottom: 0.6mm;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+
+    .ladder-law-title {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: var(--navy-deep);
+      margin-bottom: 0.6mm;
+      flex-shrink: 0;
+    }
+
+    .ladder-law-desc {
+      font-size: 6.7pt;
+      color: var(--ink-muted);
+      line-height: 1.3;
+      margin-bottom: 1.2mm;
+      flex-shrink: 0;
+    }
+
+    .sheet-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.5mm;
+      border-top: 1px solid #e2e8f0;
+      font-size: 6.8pt;
+      color: var(--ink-muted);
+      flex-shrink: 0;
+      margin-top: 1.5mm;
+    }
+
+    /* PAGE 2 STYLES */
+    .p2-task3 {
+      flex: 1.25;
+    }
+
+    .p2-task4 {
+      flex: 0.95;
+    }
+
+    .p2-task5 {
+      flex: 1.0;
+      margin-bottom: 0;
+    }
+
+    .rights-comparison-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .comparison-col {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: 5px;
+      padding: 2.2mm 2.8mm;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .comparison-col.lost {
+      border-left: 3.5px solid #dc2626;
+      background: #fef2f2;
+    }
+
+    .comparison-col.normal {
+      border-left: 3.5px solid #059669;
+      background: #f0fdf4;
+    }
+
+    .col-title {
+      font-size: 7.4pt;
+      font-weight: 800;
+      margin-bottom: 1.5mm;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .col-title.lost { color: #991b1b; }
+    .col-title.normal { color: #065f46; }
+
+    .comparison-items {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5mm;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .compare-row {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .compare-label {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: var(--navy-deep);
+    }
+
+    .compare-line {
+      border-bottom: 1.2px dashed #94a3b8;
+      flex: 1;
+      min-height: 5.2mm;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 1px;
+      font-size: 7.2pt;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    .thinking-heads-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+      flex: 1;
+      min-height: 0;
+      margin-top: 0.5mm;
+    }
+
+    .head-card {
+      background: #ffffff;
+      border: 1px solid var(--border-gray);
+      border-radius: 5px;
+      padding: 2.2mm 2.8mm;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .head-title-row {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 1mm;
+      flex-shrink: 0;
+    }
+
+    .head-badge {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--navy-primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6.8pt;
+      font-weight: 800;
+    }
+
+    .head-name {
+      font-size: 7.6pt;
+      font-weight: 800;
+      color: var(--navy-deep);
+    }
+
+    .thought-bubble {
+      background: #f8fafc;
+      border: 1.2px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 2.2mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
+    .thought-prompt {
+      font-size: 7.2pt;
+      color: var(--navy-primary);
+      font-weight: 600;
+      line-height: 1.3;
+      flex-shrink: 0;
+      margin-bottom: 1.2mm;
+    }
+
+    .bubble-lines {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      min-height: 0;
+      margin-top: 0.8mm;
+    }
+
+    .bubble-line {
+      border-bottom: 1.2px dashed #94a3b8;
+      flex: 1;
+      min-height: 5.5mm;
+    }
+
+    .synthesis-container {
+      background: #fdfbf7;
+      border: 1.2px solid #fed7aa;
+      border-left: 4px solid var(--accent-gold);
+      border-radius: 5px;
+      padding: 2.2mm 2.8mm;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .synthesis-header {
+      font-family: 'Lora', serif;
+      font-size: 7.6pt;
+      font-style: italic;
+      color: var(--navy-primary);
+      font-weight: 700;
+      margin-bottom: 1.2mm;
+      flex-shrink: 0;
+    }
+
+    .synthesis-lines {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      min-height: 0;
+    }
+
+    .synthesis-line {
+      border-bottom: 1.2px dashed #94a3b8;
+      flex: 1;
+      min-height: 5.5mm;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       PAGE 1: INVESTIGATION & HISTORICAL EVIDENCE (SHEET 1)
+       ======================================================== -->
+  <div class="worksheet-page" id="sheet-page-1">
+    <div class="exercise-book-cutline">
+      <div class="cut-indicator">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+        Cut along dashed line to stick neatly into exercise book
+      </div>
+
+      <!-- Masthead -->
+      <div class="sheet-masthead">
+        <div class="brand-left">
+          <span class="brand-badge">KS2 History</span>
+          <span class="brand-text">The History Revision Hub • Year 5 World War II</span>
+        </div>
+        <div class="student-fields">
+          <div class="field-item">Name: <span class="field-line"></span></div>
+          <div class="field-item">Date: <span class="field-line short"></span></div>
+        </div>
+      </div>
+
+      <!-- Enquiry Title -->
+      <div class="enquiry-banner">
+        <div class="enquiry-title-group">
+          <h1>Pre-War Life & The Rights That Disappeared</h1>
+          <p class="enquiry-question">Key Enquiry Question: What can photographs teach us about Jewish life before 1939, and how did laws take their rights away?</p>
+        </div>
+        <div class="lesson-badge">
+          LESSON 07<br><span style="font-size: 6.2pt; font-weight:600;">KEY STAGE 2</span>
+        </div>
+      </div>
+
+      <!-- Section 1: Archival Story & Evidence Card -->
+      <div class="story-evidence-grid">
+        <div class="archival-plate-box">
+          <img src="prewar_children_holiday.jpg" class="archival-img" alt="Archival photograph of a boys' football team in matching striped kit in 1935">
+          <p class="archival-caption"><strong>Source A:</strong> A boys' football team (1935) posing together in matching striped shirts with their goalkeeper in front.</p>
+        </div>
+        <div class="story-text-box">
+          <div class="story-header">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Historical Reading • Pre-War Everyday Life
+          </div>
+          <p class="story-prose">
+            Before the Second World War, millions of Jewish families lived across Europe in vibrant cities, quiet market towns, and rural villages. Jewish children went to ordinary schools, rode their bicycles, played football in the park, and formed sports teams just like British children today.<br><br>
+            However, when the Nazi regime came to power, they did not attack all rights at once. Instead, they introduced <strong>hundreds of anti-Jewish laws step-by-step</strong>. Year after year, ordinary joys were taken away: first sports clubs and football leagues, then public parks, family pets, radios, and finally the right to attend school with their friends.
+          </p>
+        </div>
+      </div>
+
+      <!-- Task 1: Artifact Detective - Auto-Expands to Fill Page -->
+      <div class="task-card-expand p1-task1">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Task 1: Source Detective • The Pre-War Photograph
+          </span>
+          <span class="task-tag">Primary Source Skills</span>
+        </div>
+        <div class="artifact-detective-grid">
+          <div class="tag-container">
+            <img src="school_ban_decree_november_1938.png" class="tag-img" alt="Historical Notice of the November 1938 School Ban">
+            <p class="tag-caption"><strong>Source B:</strong> The November 1938 school ban decree that stopped Jewish pupils attending state schools.</p>
+          </div>
+          <div class="detective-questions">
+            <div class="q-block">
+              <p class="q-item">1. Look closely at Source A. What can we learn about these boys from looking at their photograph? Can you tell anything about their nationality or religion just by looking at them?</p>
+              <div class="ruled-handwriting-lines">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
+            </div>
+            <div class="q-block">
+              <p class="q-item">2. Look at Source B. How would being banned from your school and separated from your friends make you feel?</p>
+              <div class="ruled-handwriting-lines">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 2: The Rights Ladder - Auto-Expands to Fill Page -->
+      <div class="task-card-expand p1-task2">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="20" x2="12" y2="4"/><polyline points="5 11 12 4 19 11"/></svg>
+            Task 2: The Rights Ladder • Step-by-Step Discrimination
+          </span>
+          <span class="task-tag">Chronological Understanding</span>
+        </div>
+        <div class="rights-ladder">
+          <!-- Step 1 -->
+          <div class="ladder-step-card">
+            <span class="ladder-date">APRIL 1933</span>
+            <h3 class="ladder-law-title">Banned from Sports Clubs</h3>
+            <p class="ladder-law-desc">Jewish children and adults are forbidden from joining sports clubs, swimming pools, or athletics teams.</p>
+            <div class="q-block">
+              <p class="q-item" style="font-size: 7.1pt;">Why start with clubs and hobbies?</p>
+              <div class="ruled-handwriting-lines">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="ladder-step-card">
+            <span class="ladder-date">SEPTEMBER 1935</span>
+            <h3 class="ladder-law-title">Loss of Citizenship</h3>
+            <p class="ladder-law-desc">The Nuremberg Laws strip Jewish people of their German citizenship, voting rights, and legal protection.</p>
+            <div class="q-block">
+              <p class="q-item" style="font-size: 7.1pt;">What does losing citizenship mean?</p>
+              <div class="ruled-handwriting-lines">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="ladder-step-card">
+            <span class="ladder-date">NOVEMBER 1938</span>
+            <h3 class="ladder-law-title">Banned from School & Radios</h3>
+            <p class="ladder-law-desc">Jewish children are expelled from state schools. Families must surrender radios, bicycles, and typewriters.</p>
+            <div class="q-block">
+              <p class="q-item" style="font-size: 7.1pt;">Why confiscate radios and bikes?</p>
+              <div class="ruled-handwriting-lines">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="sheet-footer">
+        <span>The History Revision Hub • KS2 History Exercise Book Series</span>
+        <span>Lesson 07 • Sheet 1 of 2 (Trim along dashed outer cutline)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PAGE 2: APPLIED ENQUIRY & CREATIVE SYNTHESIS (SHEET 2)
+       ======================================================== -->
+  <div class="worksheet-page" id="sheet-page-2">
+    <div class="exercise-book-cutline">
+      <div class="cut-indicator">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+        Cut along dashed line to stick neatly into exercise book
+      </div>
+
+      <!-- Masthead -->
+      <div class="sheet-masthead">
+        <div class="brand-left">
+          <span class="brand-badge">KS2 History</span>
+          <span class="brand-text">The History Revision Hub • Year 5 World War II</span>
+        </div>
+        <div class="student-fields">
+          <div class="field-item">Lesson 07: Rights & Dignity • Sheet 2</div>
+        </div>
+      </div>
+
+      <!-- Task 3: My Rights vs Rights Lost - Auto-Expands to Fill Page -->
+      <div class="task-card-expand p2-task3">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+            Task 3: Comparative Analysis • Everyday Rights vs Rights Stolen
+          </span>
+          <span class="task-tag">Human Rights & Empathy</span>
+        </div>
+        <div class="rights-comparison-table">
+          <!-- Col 1: Normal Rights -->
+          <div class="comparison-col normal">
+            <div class="col-title normal">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Rights Every Child Expects Today
+            </div>
+            <div class="comparison-items">
+              <div class="compare-row">
+                <span class="compare-label">1. Going to school every day with all your friends:</span>
+                <div class="compare-line"></div>
+              </div>
+              <div class="compare-row">
+                <span class="compare-label">2. Visiting public parks, playgrounds, and cinemas:</span>
+                <div class="compare-line"></div>
+              </div>
+              <div class="compare-row">
+                <span class="compare-label">3. Owning a bicycle, keeping a pet, listening to radio:</span>
+                <div class="compare-line"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Col 2: Rights Stolen -->
+          <div class="comparison-col lost">
+            <div class="col-title lost">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              How Nazi Laws Took These Away (1933–1939)
+            </div>
+            <div class="comparison-items">
+              <div class="compare-row">
+                <span class="compare-label">1. November 1938 School Ban:</span>
+                <div class="compare-line"></div>
+              </div>
+              <div class="compare-row">
+                <span class="compare-label">2. Park Benches & Cinema Bans:</span>
+                <div class="compare-line"></div>
+              </div>
+              <div class="compare-row">
+                <span class="compare-label">3. Confiscation of Radios & Pets:</span>
+                <div class="compare-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 4: Thinking Heads - Auto-Expands to Fill Page -->
+      <div class="task-card-expand p2-task4">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
+            Task 4: Thinking Heads • Two Perspectives in November 1938
+          </span>
+          <span class="task-tag">Contrasting Perspectives</span>
+        </div>
+        <div class="thinking-heads-grid">
+          <!-- Head 1: The Excluded Child -->
+          <div class="head-card">
+            <div class="head-title-row">
+              <span class="head-badge">1</span>
+              <span class="head-name">10-Year-Old Jewish Pupil</span>
+            </div>
+            <div class="thought-bubble">
+              <p class="thought-prompt">What thoughts and feelings might a Jewish pupil have upon being turned away at the gate?</p>
+              <div class="bubble-lines">
+                <div class="bubble-line"></div>
+                <div class="bubble-line"></div>
+                <div class="bubble-line"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Head 2: The Non-Jewish Classmate -->
+          <div class="head-card">
+            <div class="head-title-row">
+              <span class="head-badge">2</span>
+              <span class="head-name">Classmate Inside the Classroom</span>
+            </div>
+            <div class="thought-bubble">
+              <p class="thought-prompt">What thoughts might a classmate have seeing their best friend's desk suddenly empty?</p>
+              <div class="bubble-lines">
+                <div class="bubble-line"></div>
+                <div class="bubble-line"></div>
+                <div class="bubble-line"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 5: Master Synthesis - Why Remember Pre-War Life? -->
+      <div class="task-card-expand p2-task5">
+        <div class="task-header">
+          <span class="task-num-title">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            Task 5: Master Synthesis • Why Must We Remember Pre-War Life?
+          </span>
+          <span class="task-tag">Historical Significance</span>
+        </div>
+        <div class="synthesis-container">
+          <p class="synthesis-header">Big Question: Why is it so important to discover what children's daily lives and hobbies were like before the war?</p>
+          <div class="synthesis-lines">
+            <div class="synthesis-line"></div>
+            <div class="synthesis-line"></div>
+            <div class="synthesis-line"></div>
+            <div class="synthesis-line"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="sheet-footer">
+        <span>The History Revision Hub • KS2 History Exercise Book Series</span>
+        <span>Lesson 07 • Sheet 2 of 2 (Trim along dashed outer cutline)</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

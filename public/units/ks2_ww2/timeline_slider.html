@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Stage 2 Milestones Chronology Slider (1938–1948) • The History Revision Hub</title>
+  <meta name="description" content="Interactive horizontal milestones chronology slider for Key Stage 2 World War II & The Home Front (1938–1948). Optimized for interactive whiteboards and pupil tablets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&family=Outfit:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f8fafc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Standalone App Navigation Bar */
+    .top-app-header {
+      background: #091224;
+      color: #ffffff;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      flex-wrap: wrap;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-logo-badge {
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 0.04em;
+    }
+
+    .header-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn-link {
+      background: rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+
+    .nav-btn-link:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+
+    .nav-btn-link.gold {
+      background: #f59e0b;
+      color: #0f172a;
+      border-color: #f59e0b;
+      font-weight: 700;
+    }
+
+    .nav-btn-link.gold:hover {
+      background: #d97706;
+      color: #ffffff;
+    }
+
+    #slider-mount-point {
+      flex: 1;
+      width: 100%;
+    }
+
+    /* Fullscreen Whiteboard optimization */
+    :fullscreen {
+      background: #f8fafc;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Quick-Navigation Header -->
+  <header class="top-app-header">
+    <div class="brand-group">
+      <span class="brand-logo-badge">Key Stage 2</span>
+      <span class="brand-title">The History Revision Hub</span>
+      <span style="color: #64748b; font-size: 0.8rem;">|</span>
+      <span style="font-size: 0.8rem; color: #cbd5e1; font-weight: 600;">Interactive Milestones Chronology Slider (1938–1948)</span>
+    </div>
+
+    <div class="header-nav-actions">
+      <a href="index.html" class="nav-btn-link">
+        <i class="fa-solid fa-house"></i> Unit Hub
+      </a>
+      <a href="textbook.html" target="_blank" class="nav-btn-link">
+        <i class="fa-solid fa-book-open"></i> 24-Page Textbook
+      </a>
+      <a href="pupil_workbook.html" target="_blank" class="nav-btn-link">
+        <i class="fa-solid fa-pencil"></i> Worksheets
+      </a>
+      <button id="btn-fullscreen-toggle" class="nav-btn-link" title="Toggle Fullscreen for Whiteboard Presentation">
+        <i class="fa-solid fa-expand"></i> Whiteboard Mode
+      </button>
+    </div>
+  </header>
+
+  <!-- Slider Root Container -->
+  <main id="slider-mount-point"></main>
+
+  <script type="module">
+    import { renderKs2TimelineSlider } from '/src/ks2_chronology_slider.js';
+
+    const container = document.getElementById('slider-mount-point');
+    renderKs2TimelineSlider(container);
+
+    // Fullscreen Toggle
+    const fsBtn = document.getElementById('btn-fullscreen-toggle');
+    if (fsBtn) {
+      fsBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(err => {
+            console.error('Fullscreen request error:', err);
+          });
+          fsBtn.innerHTML = '<i class="fa-solid fa-compress"></i> Exit Fullscreen';
+        } else {
+          document.exitFullscreen().catch(err => {
+            console.error('Exit fullscreen error:', err);
+          });
+          fsBtn.innerHTML = '<i class="fa-solid fa-expand"></i> Whiteboard Mode';
+        }
+      });
+
+      document.addEventListener('fullscreenchange', () => {
+        if (!document.fullscreenElement) {
+          fsBtn.innerHTML = '<i class="fa-solid fa-expand"></i> Whiteboard Mode';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

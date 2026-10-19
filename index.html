@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>GCSE History Study & Revision Portal</title>
+    <title>The History Revision Hub | Curriculum &amp; Study Portal</title>
     <!-- Strict GDPR Anti-Indexing & Edge Cache Invalidation Meta Tags -->
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
     <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
@@ -156,10 +156,17 @@
         <div class="sidebar-logo" id="sidebar-logo">
           <i
             class="fa-solid fa-graduation-cap logo-icon"
-            onclick="window.switchView('dashboard')"
+            onclick="
+              window.handleBrandClick ? window.handleBrandClick() : window.switchView('dashboard')
+            "
             style="cursor: pointer"
           ></i>
-          <div onclick="window.switchView('dashboard')" style="flex: 1; cursor: pointer">
+          <div
+            onclick="
+              window.handleBrandClick ? window.handleBrandClick() : window.switchView('dashboard')
+            "
+            style="flex: 1; cursor: pointer"
+          >
             <h2>The History Revision Hub</h2>
             <span>History Portal</span>
           </div>
@@ -238,6 +245,26 @@
               <i class="fa-solid fa-landmark" style="color: #60a5fa"></i>
               <span>Department Portal</span>
             </div>
+            <a
+              href="/units/ks2_ww2/index.html"
+              target="_blank"
+              class="nav-item"
+              id="nav-ks2-hub"
+              style="
+                opacity: 0.85;
+                text-decoration: none;
+                color: inherit;
+                display: flex;
+                align-items: center;
+              "
+            >
+              <i class="fa-solid fa-chalkboard-user" style="color: #818cf8"></i>
+              <span style="flex: 1">KS2 Teacher Hub</span>
+              <i
+                class="fa-solid fa-arrow-up-right-from-square"
+                style="font-size: 0.65rem; color: rgba(255, 255, 255, 0.4); margin-left: auto"
+              ></i>
+            </a>
             <div
               class="nav-item"
               id="nav-cover-generator"
@@ -327,7 +354,10 @@
             <div class="sidebar-section-divider"></div>
           </div>
 
-          <div style="margin-top: 14px; padding: 0 16px; margin-bottom: 8px">
+          <div
+            id="sidebar-units-header"
+            style="margin-top: 14px; padding: 0 16px; margin-bottom: 8px"
+          >
             <span
               style="
                 font-size: 0.75rem;
@@ -416,13 +446,13 @@
               <span class="btn-text">SEN</span>
             </button>
 
-            <!-- Coloured Reading Overlay / Visual Stress Tint Selector -->
+            <!-- Coloured Reading Overlay Tint Selector -->
             <div id="header-overlay-toggle" style="position: relative">
               <button
                 type="button"
                 id="btn-overlay-toggle"
                 class="header-tool-btn btn-overlay"
-                title="Coloured Reading Overlay for Visual Stress & Dyslexia (Blue, Yellow, Mint, Peach)"
+                title="Coloured Reading Overlay (Blue, Yellow, Mint, Peach)"
                 aria-label="Toggle Coloured Reading Overlay"
               >
                 <i class="fa-solid fa-glasses"></i>
@@ -460,9 +490,6 @@
                   "
                 >
                   <span>Reading Overlays</span>
-                  <span style="font-size: 0.68rem; font-weight: normal; opacity: 0.8"
-                    >Visual Stress / SEN</span
-                  >
                 </div>
                 <div style="display: flex; flex-direction: column; gap: 6px">
                   <button type="button" class="overlay-option-btn selected" data-overlay="none">

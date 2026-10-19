@@ -487,3 +487,16 @@ STRICT RULE: All 16-page saddle-stitch pupil workbooks must enforce the followin
      - Followed by: `(You must also use information of your own)`.
 6. **Chronological Spine Stage Question Variety:**
    - Left-page chronological spine stages (5 stages per enquiry) must strictly rotate question stems across the unit. Avoid repeating "Why did..." or "How did..." on consecutive stages; use varied high-cognitive stems (`What factors led to...`, `In what ways did...`, `Explain why...`, `What forced [X] to...`, `To what extent did...`, `Evaluate why...`).
+
+## GCSE 28-Page Master Classroom Textbook Publishing Standard
+Whenever authoring, updating, or compiling a GCSE (Key Stage 4) or in-depth companion classroom textbook (e.g. `cme_new` Conflict in the Middle East, `cold_war`, `weimar_nazi_germany`, `eee` Early Elizabethan England, `edexcel_medicine` Medicine Through Time):
+1. **Mandatory 28-Page Reprographic Architecture:** Exactly 28 pages (7 folded A3 sheets, saddle-stitch booklet), 0 blank pages, 0px overflow.
+2. **Page 1 (Master Cover):** Top masthead (`The History Revision Hub • Master Curriculum Series`), date range pill, hero artwork plate ($82\text{mm} \times 76\text{mm}$) with archival caption, 2-paragraph narrative overview blurb (`HISTORICAL OVERVIEW • [DATES]`), enlarged 12-Enquiry Table of Contents directory ($2 \times 6$) with browser auto-fit scaler (`autoFitCoverEnquiries()`), zero core concepts strip, zero double-headers.
+3. **Page 2 (Milestone Spine):** 15-event chronological turning points highway with connecting vertical spine, circular node dots, and paragraph cross-references (`Ref [X.Y]`).
+4. **Page 3 (Dual Cartographic Theater & 4 Strategic Flashpoints):** Two side-by-side maps (Map 1: Regional Theater + Map 2: Conflict Corridor / Occupied Territories, calibrated $94\text{mm}$ height, `object-fit: contain`) + $2 \times 2$ grid of Four Defining Strategic Geopolitical Flashpoints (topography, water, chokepoints, strategic depth). Sized via `autoFitPage3Flashpoints()`. Zero curriculum duplication with Page 1.
+5. **Pages 4–27 (12 Double-Page Spreads):** 100% pure narrative historical text (0 primary sources, 0 vocab boxes, 0 exam rubrics). Body font strictly $\ge 11.5\text{pt}$ Lora serif, 1.58 line height, 2 balanced columns. STRICTLY ZERO in-prose paragraph numbering pills (`[1.3]`). STRICTLY ZERO archaic symbols (`§`, `Δ`). Only clean block section headers `[X.Y] Date Range Title`. Verso banner has `KEY ENQUIRY QUESTION` badge; Recto banner has `DECISIVE HISTORICAL MECHANISM` badge.
+6. **Page 28 (Master Retrieval Quiz):** 60 essential recall questions across 6 topic cards (10 questions each, Qs 1–60) cross-referenced to paragraph ranges (`pp. X–Y • Ref [A.B]–[C.D]`). Instructions banner for Partner Quiz or Solo Practice. Zero answers printed.
+7. **Automated Reprographics Quality Gates:** Must run `node scripts/audit_page_budget.cjs` to enforce 0px overflow across all 28 pages, footer gaps $\le 25\text{px}$, and $\ge 95\%$ space utilization (`✅ OPTIMAL`).
+8. **Strict Anonymity:** 100% institutional neutrality under *"The History Revision Hub"*, zero school names.
+9. **Turnkey Engine:** Synchronize HTML to `public/units/<unit_id>/textbook_UNIFIED.html` and export print-ready PDF to `public/pdfs/<unit_id>_textbook_UNIFIED_FINAL.pdf`.
+

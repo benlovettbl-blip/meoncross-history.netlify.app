@@ -20,11 +20,11 @@ module.exports = {
     'In late August 1854, a sudden and devastating cholera epidemic struck the Soho district of central London, killing over five hundred people in ten days within two hundred and fifty yards of Broad Street. While the medical establishment insisted that miasma from foul sewers was poisoning the atmosphere, an anesthetist named Dr John Snow conducted a revolution in medical detective work. By plotting every death on a spot map, Snow pinpointed the Broad Street water pump as the lethal epicenter. When the pump handle was removed, the outbreak collapsed. Yet decades passed before medical authorities surrendered miasma dogma to the undeniable truth of Germ Theory.',
 
   margin_spine: [
-    { year: '1854', label: '6.1 Soho Epidemic Strikes' },
-    { year: '1854', label: '6.2 Snow’s Water Theory' },
-    { year: '1854', label: '6.3 Broad Street Spot Map' },
-    { year: '1855', label: '6.4 Infant Diaper Cesspool' },
-    { year: '1884', label: '6.5 Koch Isolates Cholera' },
+    { year: '1854', label: 'Soho Epidemic Strikes' },
+    { year: '1854', label: 'Snow’s Water Theory' },
+    { year: '1854', label: 'Broad Street Spot Map' },
+    { year: '1855', label: 'Infant Diaper Cesspool' },
+    { year: '1884', label: 'Koch Isolates Cholera' },
   ],
 
   causal_domino_spine: {
@@ -239,17 +239,20 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '6.1 The Soho Cholera Outbreak & Miasma Dogma (1854)',
+      title: 'The Soho Cholera Outbreak & Miasma Dogma (1854)',
+      theme_heading: 'The Soho Cholera Outbreak & Miasma Dogma (1854)',
       text: '<span class="para-ref">[6.1]</span> In late August 1854, a sudden cholera outbreak struck the crowded Soho district of central London. Within ten days, over five hundred people living near Broad Street died in agonizing pain. Soho was thrown into chaos as coffins lined the streets and terrified families fled the area.<br><br>The medical establishment blamed **miasma**—foul air rising from unwashed drains, cesspools, and rotting gutters. Doctors believed hot weather had caused a cloud of poisonous gas to settle over Soho. They told residents to shut their windows, light camphor lamps, and pour vinegar in the street. These measures achieved nothing because doctors looked at the air rather than the water.',
     },
     {
       act: 2,
-      title: '6.2 The Medical Detective: Dr John Snow at Broad Street',
+      title: 'The Medical Detective: Dr John Snow at Broad Street',
+      theme_heading: 'The Medical Detective: Dr John Snow at Broad Street',
       text: '<span class="para-ref">[6.2]</span> One London doctor rejected the miasma consensus: **Dr John Snow**, a leading physician who had administered chloroform to Queen Victoria in 1853. Snow used clinical logic: if cholera was inhaled from bad air, it would attack the lungs and throat. Instead, patients suffered violent vomiting and diarrhea, proving the disease attacked the digestive system and had to be swallowed in contaminated food or drinking water.<br><br>Snow investigated the popular public water pump at the corner of Broad Street and Cambridge Street. The pump drew water from an underground gravel well twenty-eight feet deep. Local residents praised its water as cold and sparkling, unaware it was fatally contaminated.',
     },
     {
       act: 3,
-      title: '6.3 Spot Map Evidence & the Lion Brewery Anomaly (1854)',
+      title: 'Spot Map Evidence & the Lion Brewery Anomaly (1854)',
+      theme_heading: 'Spot Map Evidence & the Lion Brewery Anomaly (1854)',
       text: '<span class="para-ref">[6.3]</span> Snow created his famous **1854 Cholera Spot Map** (Source A) to prove his water theory. By plotting 616 cholera deaths as black bars outside each victim’s house, Snow revealed that deaths clustered directly around the Broad Street pump.<br><br>Crucially, Snow investigated anomalies. At the nearby Lion Brewery, seventy workers drank only free malt beer and suffered zero cholera deaths. In contrast, a widow living miles away in Hampstead died after having Broad Street water delivered to her in a bottle. On 7 September 1854, Snow convinced local parish officials to remove the handle from the Broad Street pump. The epidemic collapsed immediately, proving cholera was waterborne.',
       source: {
         letter: 'A',
@@ -273,7 +276,8 @@ module.exports = {
     },
     {
       act: 4,
-      title: '6.4 The Cesspool Revelation: 40 Broad Street & the Leaking Well',
+      title: 'The Cesspool Revelation: 40 Broad Street & the Leaking Well',
+      theme_heading: 'The Cesspool Revelation: 40 Broad Street & the Leaking Well',
       text: '<span class="para-ref">[6.4]</span> Snow then proved how the water became poisoned. Working with Reverend Henry Whitehead, Snow traced the outbreak to its first case: five-month-old **Baby Lewis** at 40 Broad Street. His mother had washed his cholera-infected diapers and emptied the water into a basement cesspool.<br><br>When surveyor Peter York excavated the site, he found that the brick lining of the cesspool was cracked. Liquid sewage had seeped through less than three feet of soil directly into the fractured stone wall of the Broad Street drinking well. Contaminated sewage filled with cholera bacteria was being pumped directly into residents\' drinking cups.',
       source: {
         letter: 'B',
@@ -297,7 +301,8 @@ module.exports = {
     },
     {
       act: 5,
-      title: '6.5 Medical Dogma Overturned: Germ Theory & Robert Koch (1884)',
+      title: 'Medical Dogma Overturned: Germ Theory & Robert Koch (1884)',
+      theme_heading: 'Medical Dogma Overturned: Germ Theory & Robert Koch (1884)',
       text: '<span class="para-ref">[6.5]</span> Despite Snow’s proof, the General Board of Health rejected his findings in 1855, stubbornly clinging to miasma theory because Snow could not show bacteria under a microscope. Snow tragically died of a stroke in 1858, aged forty-five, before his genius was officially recognized.<br><br>Snow was fully vindicated thirty years later. In 1884, German scientist **Robert Koch** isolated the *Vibrio cholerae* bacterium under the microscope, proving cholera was spread through sewage-tainted water. Today, Dr John Snow is celebrated as the father of modern epidemiology, proving that clean water is a non-negotiable human right.',
     },
   ],

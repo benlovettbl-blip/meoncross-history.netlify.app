@@ -736,14 +736,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Scriptoria & The Church Monopoly on Learning (c. 1250)',
-          theme_heading: 'Act 1: Scriptoria & The Church Monopoly on Learning (c. 1250)',
+          title: 'Scriptoria & The Church Monopoly on Learning (c. 1250)',
+          theme_heading: 'Scriptoria & The Church Monopoly on Learning (c. 1250)',
           text: '<span class="para-ref">[1.1]</span> In medieval England (c1250–c1500), the Roman Catholic Church exercised an unshakeable institutional monopoly over intellectual life, education, and societal values. Formal scholarship was an ecclesiastical privilege; cathedral grammar schools and universities like Oxford, Cambridge, and Paris were staffed exclusively by tonsured Catholic clergy. Most decisively, all book production and manuscript dissemination were concentrated within monastic scriptoria. In these monastic copying rooms, Benedictine and Cistercian monks laboriously hand-transcribed Latin scrolls onto vellum parchment over months of physical toil. Because the Church controlled the physical means of textual reproduction, clerical superiors operated as unyielding censors, deciding precisely which ancient treatises were copied, translated, or permanently suppressed from university libraries.<br><br><span class="para-ref">[1.2]</span> Medical instruction across medieval European faculties was strictly theoretical, scholastic, and subordinated to biblical scripture. The Church taught that the material universe was a temporary, imperfect terrestrial realm entirely subservient to divine providence. Consequently, comprehending human health did not require physical dissection, clinical experimentation, or empirical inquiry; it demanded the memorisation of holy scripture alongside ancient philosophical authorities sanctified by papal decree. Within medieval theological orthodoxy, sickness was treated as a spiritual condition reflecting divine purpose. To openly dispute canonical authority or propose alternate physical causes of disease was not treated as academic disagreement—it was prosecuted as dangerous heresy against Almighty God.',
         },
         {
           act: 2,
-          title: 'Act 2: Biblical Leprosy & Divine Retribution (c. 1280)',
-          theme_heading: 'Act 2: Biblical Leprosy & Divine Retribution (c. 1280)',
+          title: 'Biblical Leprosy & Divine Retribution (c. 1280)',
+          theme_heading: 'Biblical Leprosy & Divine Retribution (c. 1280)',
           source: {
             id: 'source_a_salisbury_doom',
             letter: 'A',
@@ -771,8 +771,8 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Christian Astrology & Planetary Conjunction (1345)',
-          theme_heading: 'Act 3: Christian Astrology & Planetary Conjunction (1345)',
+          title: 'Christian Astrology & Planetary Conjunction (1345)',
+          theme_heading: 'Christian Astrology & Planetary Conjunction (1345)',
           source: {
             id: 'source_b_zodiac_man',
             letter: 'B',
@@ -800,14 +800,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Purgatory, Pilgrimage Shrines & Holy Relics (c. 1350)',
-          theme_heading: 'Act 4: Purgatory, Pilgrimage Shrines & Holy Relics (c. 1350)',
+          title: 'Purgatory, Pilgrimage Shrines & Holy Relics (c. 1350)',
+          theme_heading: 'Purgatory, Pilgrimage Shrines & Holy Relics (c. 1350)',
           text: '<span class="para-ref">[4.1]</span> Believing sickness reflected time owed in Purgatory or immediate spiritual transgression, suffering medieval people turned to sacred pilgrimage shrines rather than university physicians. Sufferers undertook arduous journeys to shrines of miraculous saints, most famously St Thomas Becket at Canterbury Cathedral, St Etheldreda at Ely, and Our Lady of Walsingham. The Church taught that saints held direct intercessory favour with God, capable of petitioning the Almighty to remit earthly physical punishment in exchange for sincere spiritual devotion and material penance.<br><br><span class="para-ref">[4.2]</span> At these pilgrimage destinations, sick pilgrims knelt before ornate gilded reliquaries, kissed holy bone fragments and preserved garments of deceased saints, lit expensive beeswax votive candles, and purchased lead pilgrimage badges alongside paper indulgences from pardoner priests. Wealthy barons and sick merchants endowed perpetual chantries where priests chanted daily intercessory Masses for their souls. This institutionalized spiritual devotion poured immense wealth into cathedral treasuries while leaving underlying physiological conditions and infectious pathogens entirely untreated.',
         },
         {
           act: 5,
-          title: 'Act 5: Galen’s Teleology, Censorship & Roger Bacon (c. 1400)',
-          theme_heading: 'Act 5: Galen’s Teleology, Censorship & Roger Bacon (c. 1400)',
+          title: 'Galen’s Teleology, Censorship & Roger Bacon (c. 1400)',
+          theme_heading: 'Galen’s Teleology, Censorship & Roger Bacon (c. 1400)',
           text: '<span class="para-ref">[5.1]</span> Why did the medieval Christian Church grant supreme, unquestioned authority to Claudius Galen, a pagan physician who practiced in pagan imperial Rome during the second century AD? The fundamental explanation was teleology. In his voluminous anatomical and philosophical treatises, Galen repeatedly argued that every single organ, bone, muscle, and tendon in the human body had been purposefully crafted with anatomical perfection by a supreme, benevolent, and singular Creator. This teleological design argument aligned so flawlessly with Christian creation theology and the Book of Genesis that the Papacy and university faculties embraced Galen’s writings as sacred, divinely inspired truth.<br><br><span class="para-ref">[5.2]</span> The resulting consequence for European medical development was centuries of profound intellectual stagnation. Questioning Galen’s anatomical descriptions was treated as questioning the perfection of God’s divine design. During rare university dissections of executed felons, the scholarly physician (lector) sat aloft in an elevated pulpit reading aloud from Galen’s Latin texts, while an unlettered barber-surgeon made crude incisions; if a cadaver’s internal organs contradicted Galen, lecturers insisted the corpse was deformed rather than admit Galen was mistaken. When the brilliant English Franciscan friar Roger Bacon argued at Oxford around 1277 that scholars must abandon blind deference to ancient texts and test nature through firsthand empirical experimentation, church authorities condemned his writings and imprisoned him for fourteen years. For over two centuries, scientific inquiry remained effectively outlawed.',
         },
       ],
@@ -849,9 +849,9 @@ export const unitData = {
             'Who controlled formal medical education and the copying of books in medieval England?',
           options: [
             'The Catholic Church and monastic scriptoria.',
+            'Independent guild printers.',
             'The Crown and royal parliament.',
             'The Royal College of Physicians.',
-            'Independent guild printers.',
           ],
           answer: 'The Catholic Church and monastic scriptoria.',
           explanation:
@@ -861,8 +861,8 @@ export const unitData = {
           question:
             'Why was sudden illness viewed as a spiritual condition rather than a biological infection?',
           options: [
-            'The government legally outlawed physical medical treatments.',
             'Physicians believed germs spontaneously generated inside blood.',
+            'The government legally outlawed physical medical treatments.',
             'People believed disease was caused solely by dirty drinking water.',
             'People believed sickness was sent by God to punish sin or test religious faith.',
           ],
@@ -873,10 +873,10 @@ export const unitData = {
         {
           question: 'How did medieval society treat leprosy sufferers based on biblical scripture?',
           options: [
-            'They were appointed as churchwardens to pray for the sick.',
-            'They were banished to Lazar houses outside towns, wearing cloaks and ringing warning bells.',
-            'They were treated in monastic infirmary wards alongside fever patients.',
             'They were surgically cured by barber-surgeons using cauterisation.',
+            'They were banished to Lazar houses outside towns, wearing cloaks and ringing warning bells.',
+            'They were appointed as churchwardens to pray for the sick.',
+            'They were treated in monastic infirmary wards alongside fever patients.',
           ],
           answer:
             'They were banished to Lazar houses outside towns, wearing cloaks and ringing warning bells.',
@@ -887,10 +887,10 @@ export const unitData = {
           question:
             'What celestial event in March 1345 did University of Paris scholars blame for the Black Death?',
           options: [
-            'A meteor shower striking southern Italy.',
-            'A total solar eclipse over Western Europe.',
-            'An unusual planetary conjunction of Saturn, Jupiter, and Mars in Aquarius.',
             'The appearance of Halley’s Comet in the sky.',
+            'A meteor shower striking southern Italy.',
+            'An unusual planetary conjunction of Saturn, Jupiter, and Mars in Aquarius.',
+            'A total solar eclipse over Western Europe.',
           ],
           answer: 'An unusual planetary conjunction of Saturn, Jupiter, and Mars in Aquarius.',
           explanation:
@@ -901,9 +901,9 @@ export const unitData = {
             'What pocket manual did medieval physicians carry to consult astrological diagrams and urine charts?',
           options: [
             'A Pharmacopoeia.',
-            'The Canon of Medicine.',
-            'A Vademecum handbook.',
             'Philosophical Transactions.',
+            'A Vademecum handbook.',
+            'The Canon of Medicine.',
           ],
           answer: 'A Vademecum handbook.',
           explanation:
@@ -913,9 +913,9 @@ export const unitData = {
           question:
             'Why did the Christian Church adopt the medical writings of the Roman pagan physician Galen?',
           options: [
-            'Galen proved that God sent diseases as punishment for heresy.',
-            'Galen’s teleological theory argued every organ was designed with purpose by a single Creator.',
             'Galen converted to Christianity on his deathbed.',
+            'Galen’s teleological theory argued every organ was designed with purpose by a single Creator.',
+            'Galen proved that God sent diseases as punishment for heresy.',
             'Galen’s treatises were originally written in Latin by the Apostles.',
           ],
           answer:
@@ -929,8 +929,8 @@ export const unitData = {
           options: [
             'He was imprisoned by Church authorities for heresy.',
             'He was made Archbishop of Canterbury.',
-            'He founded the first secular medical school in London.',
             'He was awarded a royal charter by King Edward I.',
+            'He founded the first secular medical school in London.',
           ],
           answer: 'He was imprisoned by Church authorities for heresy.',
           explanation:
@@ -940,9 +940,9 @@ export const unitData = {
           question:
             'What did university professors do during rare dissections of executed criminals in medieval universities?',
           options: [
-            'They allowed medical students to debate whether Galen was wrong.',
-            'They examined tissue samples under compound microscopes.',
             'They performed intricate dissections with scalpels to discover new organs.',
+            'They examined tissue samples under compound microscopes.',
+            'They allowed medical students to debate whether Galen was wrong.',
             'They sat high in a chair reading Galen aloud while a barber-surgeon did the cutting.',
           ],
           answer:
@@ -954,10 +954,10 @@ export const unitData = {
           question:
             'What religious punishment was self-inflicted by penitents during epidemics to appease God’s wrath?',
           options: [
-            'Exile into royal forests.',
-            'Banning all church attendance.',
-            'Fasting and self-flagellation with iron-tipped whips.',
             'Drinking mercury solutions.',
+            'Exile into royal forests.',
+            'Fasting and self-flagellation with iron-tipped whips.',
+            'Banning all church attendance.',
           ],
           answer: 'Fasting and self-flagellation with iron-tipped whips.',
           explanation:
@@ -967,9 +967,9 @@ export const unitData = {
           question:
             'What was the main reason medieval people believed astrology could cause widespread disease?',
           options: [
-            'The Church taught that constellations were ancient Roman pagan gods with physical powers.',
-            'Stars were believed to be physical burning fires that dried up the human liver.',
             'Comets were thought to directly poison well water.',
+            'Stars were believed to be physical burning fires that dried up the human liver.',
+            'The Church taught that constellations were ancient Roman pagan gods with physical powers.',
             'Planetary alignments and conjunctions were thought to alter earthly atmospheres and corrupt the humours.',
           ],
           answer:
@@ -1391,14 +1391,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Hippocrates, Clinical Observation & Natural Causes (c. 460 BC)',
-          theme_heading: 'Act 1: Hippocrates, Clinical Observation & Natural Causes (c. 460 BC)',
+          title: 'Hippocrates, Clinical Observation & Natural Causes (c. 460 BC)',
+          theme_heading: 'Hippocrates, Clinical Observation & Natural Causes (c. 460 BC)',
           text: '<span class="para-ref">[1.1]</span> While the medieval Christian Church explained the ultimate theological purpose of suffering, the intellectual architecture of physical medicine was inherited from classical antiquity. In fifth-century BC Greece, the physician Hippocrates of Kos fundamentally liberated medical thought from supernatural superstition. Rejecting the entrenched belief that sickness was an invisible curse inflicted by vengeful pagan deities like Apollo, Hippocrates asserted that illness was an entirely natural bodily phenomenon governed by physical laws. He established the revolutionary practice of clinical observation: urging physicians to examine the patient directly at the bedside, systematically record changes in pulse, facial pallor, sweating, and urine, and track the natural trajectory of diseases over time.<br><br><span class="para-ref">[1.2]</span> Hippocrates preserved his clinical insights across the sixty treatises of the <em>Hippocratic Corpus</em>, establishing the ethical foundation of Western medicine through the Hippocratic Oath. He taught that the human body possessed inherent restorative capabilities, and that the doctor’s primary duty was not to impose violent physical intervention, but to assist nature through prescribed diet, restful sleep, moderate exercise, and herbal infusions. By insisting that disease possessed observable physical origins that could be diagnosed and anticipated through natural reason, Hippocrates laid the intellectual cornerstone upon which all medieval rational medicine was erected.',
         },
         {
           act: 2,
-          title: 'Act 2: The Four Bodily Humours & Temperament (c. 1250)',
-          theme_heading: 'Act 2: The Four Bodily Humours & Temperament (c. 1250)',
+          title: 'The Four Bodily Humours & Temperament (c. 1250)',
+          theme_heading: 'The Four Bodily Humours & Temperament (c. 1250)',
           source: {
             id: 'source_a_four_humours',
             letter: 'A',
@@ -1426,14 +1426,14 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Galen’s Theory of Opposites (c. 1280)',
-          theme_heading: 'Act 3: Galen’s Theory of Opposites (c. 1280)',
+          title: 'Galen’s Theory of Opposites (c. 1280)',
+          theme_heading: 'Galen’s Theory of Opposites (c. 1280)',
           text: '<span class="para-ref">[3.1]</span> In the second century AD, the Greek physician Claudius Galen, practicing in imperial Rome, dramatically expanded Hippocrates’s ideas into a comprehensive therapeutic doctrine: the Theory of Opposites (<em>contraria contrariis curantur</em>). While Hippocrates had largely advocated passive dietary observation, Galen argued that physicians must actively intervene to restore humoural equilibrium by administering remedies that possessed qualities directly opposing the excess humour causing the disease.<br><br><span class="para-ref">[3.2]</span> Under Galen’s systematic doctrine, bedside diagnosis and prescription followed rigid deductive logic. If a patient presented with a common winter cold characterized by excessive cold and wet phlegm, the physician prescribed heating and drying therapies: hot dry toast, pungent mustard seeds, spicy pepper broths, and warm blankets. Conversely, if a summer fever left a patient flushed, delirious, hot, and dry with excess yellow bile, the doctor administered cooling and moistening remedies: chilled cucumber water, barley gruel, cold vinegar sponges, and bleeding to evacuate excessive boiling blood. The Theory of Opposites provided medieval practitioners with a clear, comforting, and authoritative manual that made prescribing feel scientifically certain.',
         },
         {
           act: 4,
-          title: 'Act 4: Diagnostic Uroscopy & The Matula Flask (c. 1300)',
-          theme_heading: 'Act 4: Diagnostic Uroscopy & The Matula Flask (c. 1300)',
+          title: 'Diagnostic Uroscopy & The Matula Flask (c. 1300)',
+          theme_heading: 'Diagnostic Uroscopy & The Matula Flask (c. 1300)',
           source: {
             id: 'source_b_uroscopy',
             letter: 'B',
@@ -1461,8 +1461,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: Miasma Theory & Foul Environmental Vapours (c. 1350)',
-          theme_heading: 'Act 5: Miasma Theory & Foul Environmental Vapours (c. 1350)',
+          title: 'Miasma Theory & Foul Environmental Vapours (c. 1350)',
+          theme_heading: 'Miasma Theory & Foul Environmental Vapours (c. 1350)',
           text: '<span class="para-ref">[5.1]</span> Alongside internal humoural dyscrasia, the dominant environmental explanation for widespread epidemic disease was Miasma Theory. Originating in the classical writings of Hippocrates and Galen, miasma was conceptualized as a poisonous, corrupted atmospheric vapor laden with invisible putrefaction. Medieval physicians believed that miasma was generated by decaying terrestrial organic matter: stagnant marshland bogs, rotting animal carcasses, open cesspits, unburied corpses, and stagnant urban ditches choked with human excrement and butchers’ entrails.<br><br><span class="para-ref">[5.2]</span> When inhaled directly into the human lungs, this foul-smelling, corrupted air passed into the heart and arterial bloodstream, instantly poisoning the internal humours and sparking virulent fever. Because medieval senses instinctively associated putrid odors with sickness, miasma theory appeared deeply rational. It motivated civic magistrates to introduce early public health ordinances—commanding butchers to dump offal outside city walls, ordering householders to sweep street filth, and urging citizens to carry aromatic pomanders stuffed with dried lavender, cloves, and rose petals to neutralize deadly atmospheric vapours.',
         },
       ],
@@ -1503,7 +1503,7 @@ export const unitData = {
         {
           question:
             'Which ancient Greek physician originally developed the Theory of the Four Humours?',
-          options: ['Hippocrates of Kos.', 'Aristotle.', 'Claudius Galen.', 'Alexander the Great.'],
+          options: ['Hippocrates of Kos.', 'Claudius Galen.', 'Aristotle.', 'Alexander the Great.'],
           answer: 'Hippocrates of Kos.',
           explanation:
             'Hippocrates developed the Theory of the Four Humours in ancient Greece to explain disease as natural fluid imbalance.',
@@ -1511,7 +1511,7 @@ export const unitData = {
         {
           question:
             'Which of the four humours was associated with spring, air, and being hot and wet?',
-          options: ['Black Bile.', 'Blood.', 'Yellow Bile.', 'Phlegm.'],
+          options: ['Phlegm.', 'Blood.', 'Yellow Bile.', 'Black Bile.'],
           answer: 'Blood.',
           explanation:
             'Blood was produced by the liver and linked with air, spring, and a sanguine (optimistic) temperament.',
@@ -1521,8 +1521,8 @@ export const unitData = {
             'How did Galen’s Theory of Opposites suggest treating a patient with cold, wet phlegm?',
           options: [
             'With warm, dry foods like hot peppers or ginger.',
-            'With extensive bloodletting.',
             'With cold cucumbers and cold baths.',
+            'With extensive bloodletting.',
             'By drinking large amounts of cold water.',
           ],
           answer: 'With warm, dry foods like hot peppers or ginger.',
@@ -1532,10 +1532,10 @@ export const unitData = {
         {
           question: 'What was miasma believed to be in medieval medicine?',
           options: [
-            'A microscopic bacterium transmitted by black rat fleas.',
-            'A poisonous, foul-smelling vapor arising from decaying filth and swamps.',
             'A magical curse cast by witches or heretics.',
+            'A poisonous, foul-smelling vapor arising from decaying filth and swamps.',
             'An imbalance between red blood cells and white blood cells.',
+            'A microscopic bacterium transmitted by black rat fleas.',
           ],
           answer: 'A poisonous, foul-smelling vapor arising from decaying filth and swamps.',
           explanation:
@@ -1544,9 +1544,9 @@ export const unitData = {
         {
           question: 'What was a glass matula used for in medieval clinical diagnosis?',
           options: [
-            'Mixing complex herbal syrups like Theriac.',
             'Distilling alcohol for surgical antiseptics.',
             'Collecting blood drawn during phlebotomy.',
+            'Mixing complex herbal syrups like Theriac.',
             'Holding patient urine for inspection against colour wheels.',
           ],
           answer: 'Holding patient urine for inspection against colour wheels.',
@@ -1558,9 +1558,9 @@ export const unitData = {
             'What item did wealthy medieval people carry to protect themselves against miasma in crowded streets?',
           options: [
             'A portable surgical scalpel.',
-            'A pocket magnifying glass.',
-            'A sweet-smelling pomander or posy of herbs.',
             'A bottle of carbolic acid.',
+            'A sweet-smelling pomander or posy of herbs.',
+            'A pocket magnifying glass.',
           ],
           answer: 'A sweet-smelling pomander or posy of herbs.',
           explanation:
@@ -1569,10 +1569,10 @@ export const unitData = {
         {
           question: 'Why did the Theory of the Four Humours hinder long-term scientific progress?',
           options: [
-            'Because ordinary citizens refused to take herbal remedies.',
+            'Because the Theory of Opposites was strictly banned by the Catholic Church.',
             'Because it required doctors to perform thousands of illegal human dissections.',
             'Because doctors assumed disease was internal fluid imbalance, ignoring real physical bacteria and organs.',
-            'Because the Theory of Opposites was strictly banned by the Catholic Church.',
+            'Because ordinary citizens refused to take herbal remedies.',
           ],
           answer:
             'Because doctors assumed disease was internal fluid imbalance, ignoring real physical bacteria and organs.',
@@ -1582,7 +1582,7 @@ export const unitData = {
         {
           question:
             'What bodily organ did Galen claim was responsible for constantly producing blood from digested food?',
-          options: ['The liver.', 'The heart.', 'The spleen.', 'The lungs.'],
+          options: ['The liver.', 'The heart.', 'The lungs.', 'The spleen.'],
           answer: 'The liver.',
           explanation:
             'Galen taught that the liver manufactured blood, which was then consumed as fuel by bodily tissues.',
@@ -1591,9 +1591,9 @@ export const unitData = {
           question:
             'Which core clinical practice did Hippocrates pioneer that instructed physicians to observe patient symptoms carefully at the bedside rather than relying on superstition?',
           options: [
-            'Routine injection of herbal antidotes into the bloodstream.',
-            'Bedside clinical observation and systematic recording of symptoms.',
             'Chemical dissection of organs with microscopic lenses.',
+            'Bedside clinical observation and systematic recording of symptoms.',
+            'Routine injection of herbal antidotes into the bloodstream.',
             'Trepanning holes in the cranium to release trapped spirits.',
           ],
           answer: 'Bedside clinical observation and systematic recording of symptoms.',
@@ -1604,8 +1604,8 @@ export const unitData = {
           question:
             'Why did Galen’s anatomical writings contain significant anatomical errors, such as claiming the human jawbone consisted of two distinct bones?',
           options: [
-            'Galen only examined mummified Egyptian bodies whose bones had decomposed.',
             'Medieval monks deliberately falsified Galen’s anatomical diagrams to preserve Church dogma.',
+            'Galen only examined mummified Egyptian bodies whose bones had decomposed.',
             'Ancient Greek physicians refused to look inside animal bodies due to pagan taboos.',
             'Roman law strictly forbade the dissection of human corpses, forcing Galen to dissect animals like pigs and apes instead.',
           ],
@@ -2025,14 +2025,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Religious Treatments: Prayers, Fasting & Flagellation (c. 1250)',
-          theme_heading: 'Act 1: Religious Treatments: Prayers, Fasting & Flagellation (c. 1250)',
+          title: 'Religious Treatments: Prayers, Fasting & Flagellation (c. 1250)',
+          theme_heading: 'Religious Treatments: Prayers, Fasting & Flagellation (c. 1250)',
           text: '<span class="para-ref">[1.1]</span> Because medieval society fundamentally believed that health and sickness were governed by divine will, religious and spiritual treatments constituted the essential first line of defence. When fever or epidemic pestilence struck, physical medicine was considered completely futile unless the patient first achieved spiritual reconciliation with Almighty God. Sufferers sought absolution by reciting repetitive devotional prayers—most commonly the <em>Pater Noster</em> (Lord’s Prayer), <em>Ave Maria</em> (Hail Mary), and the seven Penitential Psalms—while parish priests administered the Last Rites (Extreme Unction) to cleanse mortal sins from the dying soul.<br><br><span class="para-ref">[1.2]</span> Beyond bedside prayers, communities deployed collective religious rituals to avert divine wrath. Diocesan bishops commanded mandatory parish fasts, daily penitential processions through city lanes, and financial offerings to church altars. In moments of extreme existential crisis, desperate penitents engaged in extreme bodily mortification, including wearing abrasive horsehair shirts and self-flagellation, beating their bare shoulders with iron-tipped knotted cords to demonstrate genuine remorse. Spiritual pilgrimage to holy shrines like Canterbury or Walsingham was sought above all else, in the fervent conviction that touching saintly relics would elicit miraculous divine healing.',
         },
         {
           act: 2,
-          title: 'Act 2: Humoral Phlebotomy: Bloodletting & Cupping (c. 1300)',
-          theme_heading: 'Act 2: Humoral Phlebotomy: Bloodletting & Cupping (c. 1300)',
+          title: 'Humoral Phlebotomy: Bloodletting & Cupping (c. 1300)',
+          theme_heading: 'Humoral Phlebotomy: Bloodletting & Cupping (c. 1300)',
           source: {
             id: 'source_a_phlebotomy_manuscript',
             letter: 'A',
@@ -2060,14 +2060,14 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Purging, Clysters & Humoral Cleansing (c. 1320)',
-          theme_heading: 'Act 3: Purging, Clysters & Humoral Cleansing (c. 1320)',
+          title: 'Purging, Clysters & Humoral Cleansing (c. 1320)',
+          theme_heading: 'Purging, Clysters & Humoral Cleansing (c. 1320)',
           text: '<span class="para-ref">[3.1]</span> When phlebotomy failed to relieve humoural congestion, practitioners turned to purging the digestive tract. Galenic doctrine held that toxic, corrupt humours accumulated within the stomach and intestines, necessitating aggressive evacuation through vomiting or bowel evacuation. To induce violent vomiting, healers administered emetics formulated from antimony, bitter aloes, or scammony resin. Alternatively, to clear the lower intestines, patients were forced to ingest violent laxatives compounded from dried senna leaves, black hellebore root, and linseed oil, inducing debilitating gastrointestinal purging.<br><br><span class="para-ref">[3.2]</span> The most famous instrument of medieval purging was the clyster—an enema apparatus consisting of a long pewter or ivory pipe attached to an oiled pig’s bladder. The apothecary filled the bladder with a warm concoction of mallow leaves, chamomile flowers, crushed bran, and olive oil, injecting the fluid directly into the patient’s rectum to soften compacted faeces and purge corrupt melancholic bile. Although these violent treatments frequently induced severe dehydration, electrolyte collapse, and circulatory shock, they provided tangible sensory proof to the patient that dangerous internal poisons were being physically evacuated from the body.',
         },
         {
           act: 4,
-          title: 'Act 4: Herbal Apothecary Remedies & Theriac (c. 1350)',
-          theme_heading: 'Act 4: Herbal Apothecary Remedies & Theriac (c. 1350)',
+          title: 'Herbal Apothecary Remedies & Theriac (c. 1350)',
+          theme_heading: 'Herbal Apothecary Remedies & Theriac (c. 1350)',
           source: {
             id: 'source_b_galen_portrait',
             letter: 'B',
@@ -2095,8 +2095,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: The Regimen Sanitatis & Clean Air (c. 1400)',
-          theme_heading: 'Act 5: The Regimen Sanitatis & Clean Air (c. 1400)',
+          title: 'The Regimen Sanitatis & Clean Air (c. 1400)',
+          theme_heading: 'The Regimen Sanitatis & Clean Air (c. 1400)',
           text: '<span class="para-ref">[5.1]</span> In medieval medical philosophy, preventive preservation of health was regarded as vastly superior to curative intervention. This philosophy was formalized in the <em>Regimen Sanitatis Salernitanum</em> (The Salerno Rule of Health), an influential didactic treatise composed by the prestigious medical faculty at Salerno, Italy, for the instruction of European nobility and royal courts. The Regimen instructed wealthy individuals to govern their lives according to the "Six Non-Naturals": air, food and drink, motion and rest, sleep and wakefulness, excretion and retention, and passions of the soul. Sickness was avoided by eating seasonal foods, avoiding heavy greasy meats, exercising moderately before meals, and maintaining emotional calm.<br><br><span class="para-ref">[5.2]</span> Most crucially, preventive regimen required continuous protection against corrupted environmental miasma. Wealthy barons and noble ladies carried pomanders—perforated gold or silver filigree orbs filled with ambergris, cloves, musk, and dried rose petals—which they held to their nostrils when traversing urban thoroughfares. In noble halls, servants burned sweet-scented woods like juniper, pine, and rosemary in open braziers to cleanse domestic air. When epidemic plague loomed, the ultimate preventive advice of classical physicians was simple and brutal: <em>Cito, longe, tarde</em> ("Flee quickly, travel far, return slowly")—an evasive luxury available only to the landowning aristocracy who could retreat to secluded rural country manors.',
         },
       ],
@@ -2138,8 +2138,8 @@ export const unitData = {
             'What was the most common surgical treatment performed in medieval England to restore humoural balance?',
           options: [
             'Antiseptic wound washing.',
-            'Inoculation.',
             'Appendectomy.',
+            'Inoculation.',
             'Phlebotomy (bloodletting).',
           ],
           answer: 'Phlebotomy (bloodletting).',
@@ -2151,9 +2151,9 @@ export const unitData = {
             'Which instrument was commonly used to open a patient’s vein during bloodletting?',
           options: [
             'A fleam or lancet blade.',
-            'A hypodermic syringe.',
             'A cautery iron.',
             'A trephine drill.',
+            'A hypodermic syringe.',
           ],
           answer: 'A fleam or lancet blade.',
           explanation:
@@ -2162,7 +2162,7 @@ export const unitData = {
         {
           question:
             'What method of bloodletting involved creating a warm vacuum over scratched skin?',
-          options: ['Amputation.', 'Leeching.', 'Cupping.', 'Cauterisation.'],
+          options: ['Cauterisation.', 'Amputation.', 'Cupping.', 'Leeching.'],
           answer: 'Cupping.',
           explanation:
             'Heated glass cups placed over scratched skin created a vacuum suction that drew blood.',
@@ -2170,10 +2170,10 @@ export const unitData = {
         {
           question: 'What was Theriac in medieval medicine?',
           options: [
-            'A holy oil blessed by the Pope for dying patients.',
+            'An antiseptic solution made of wine and vinegar.',
             'A complex universal herbal remedy containing over 60 ingredients, including crushed viper flesh.',
             'A chemical compound of mercury and sulphur.',
-            'An antiseptic solution made of wine and vinegar.',
+            'A holy oil blessed by the Pope for dying patients.',
           ],
           answer:
             'A complex universal herbal remedy containing over 60 ingredients, including crushed viper flesh.',
@@ -2195,9 +2195,9 @@ export const unitData = {
         {
           question: 'What was the Regimen Sanitatis?',
           options: [
-            'A monastic rule forbidding monks from leaving monastery grounds.',
-            'A personalized lifestyle guide advising moderation in diet, sleep, exercise, and baths.',
             'A royal statute banning foreign doctors from practicing in London.',
+            'A personalized lifestyle guide advising moderation in diet, sleep, exercise, and baths.',
+            'A monastic rule forbidding monks from leaving monastery grounds.',
             'A Latin text describing how to perform battlefield amputations.',
           ],
           answer:
@@ -2208,10 +2208,10 @@ export const unitData = {
         {
           question: 'Why did routine bloodletting and purging often result in patient death?',
           options: [
-            'Church law prohibited patients from sleeping after being bled.',
-            'The instruments were secretly poisoned by barber-surgeons.',
-            'They caused severe blood loss, dehydration, and weakened immune defenses in already sick patients.',
             'Patients refused to eat any food for three weeks following treatment.',
+            'Church law prohibited patients from sleeping after being bled.',
+            'They caused severe blood loss, dehydration, and weakened immune defenses in already sick patients.',
+            'The instruments were secretly poisoned by barber-surgeons.',
           ],
           answer:
             'They caused severe blood loss, dehydration, and weakened immune defenses in already sick patients.',
@@ -2223,8 +2223,8 @@ export const unitData = {
             'What religious practice did sick people perform at shrines like Thomas Becket at Canterbury?',
           options: [
             'Receiving university medical degrees.',
-            'Undergoing human dissection.',
             'Purchasing licensed apothecary drugs.',
+            'Undergoing human dissection.',
             'Touching holy relics and praying for miraculous healing.',
           ],
           answer: 'Touching holy relics and praying for miraculous healing.',
@@ -2235,10 +2235,10 @@ export const unitData = {
           question:
             'Why was leeching (hirudotherapy) frequently used as an alternative to venesection (opening a vein with a fleam) in medieval England?',
           options: [
-            'The Catholic Church strictly banned the use of metal surgical blades on human skin.',
-            'It allowed controlled, gradual blood extraction for children, the elderly, or delicate areas where a fleam was too dangerous.',
-            'Leeches were thought to selectively consume only the diseased black bile humour.',
             'Leeches were believed to inject magical medicinal fluids directly into the patient’s arteries.',
+            'It allowed controlled, gradual blood extraction for children, the elderly, or delicate areas where a fleam was too dangerous.',
+            'The Catholic Church strictly banned the use of metal surgical blades on human skin.',
+            'Leeches were thought to selectively consume only the diseased black bile humour.',
           ],
           answer:
             'It allowed controlled, gradual blood extraction for children, the elderly, or delicate areas where a fleam was too dangerous.',
@@ -2249,10 +2249,10 @@ export const unitData = {
           question:
             'How did medieval physicians use the ‘Zodiac Man’ (Homo Signorum) diagram to plan medical treatments?',
           options: [
-            'To identify criminal suspects by matching their birth month to physical body marks.',
+            'To predict whether a newborn infant would become a priest or a farmer.',
             'To calculate the exact financial cost of herbal medicines based on planetary angles.',
             'To determine which astrological constellation governed each body part and avoid bleeding or operating when the moon was in that sign.',
-            'To predict whether a newborn infant would become a priest or a farmer.',
+            'To identify criminal suspects by matching their birth month to physical body marks.',
           ],
           answer:
             'To determine which astrological constellation governed each body part and avoid bleeding or operating when the moon was in that sign.',
@@ -2663,20 +2663,20 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: University-Trained Physicians: Theory, Wealth & Status (c. 1250)',
-          theme_heading: 'Act 1: University-Trained Physicians: Theory, Wealth & Status (c. 1250)',
+          title: 'University-Trained Physicians: Theory, Wealth & Status (c. 1250)',
+          theme_heading: 'University-Trained Physicians: Theory, Wealth & Status (c. 1250)',
           text: '<span class="para-ref">[1.1]</span> In medieval England, access to formal medical treatment was rigidly stratified by wealth and social class. At the absolute summit of the professional hierarchy stood the university-trained physician. Medical doctors trained for up to a decade at prestigious universities—including Oxford, Cambridge, Paris, Montpellier, and Bologna—studying in Latin and mastering the canonical texts of Hippocrates, Galen, and Avicenna. However, their education was entirely scholastic and theoretical: students debated philosophical disputations and memorized classical humoral aphorisms without ever touching a living patient or conducting a physical clinical dissection.<br><br><span class="para-ref">[1.2]</span> Because university training was immensely lengthy and costly, licensed physicians were exceptionally scarce: by 1300, there were fewer than one hundred university-trained doctors across the entirety of England. Gowned physicians considered physical manual labor beneath their intellectual dignity, refusing to cut into human skin, lance boils, or dress wounds. Instead, they conducted dignified bedside consultations, examining urine flasks, taking pulses, checking astrological charts, and writing complex Latin prescriptions. Because their consultation fees were exorbitant, physicians catered exclusively to the royal court, landowning aristocracy, and ultra-wealthy urban merchants, leaving ninety-nine percent of the population completely beyond their reach.',
         },
         {
           act: 2,
-          title: 'Act 2: Guild Apothecaries & Spicers (c. 1300)',
-          theme_heading: 'Act 2: Guild Apothecaries & Spicers (c. 1300)',
+          title: 'Guild Apothecaries & Spicers (c. 1300)',
+          theme_heading: 'Guild Apothecaries & Spicers (c. 1300)',
           text: '<span class="para-ref">[2.1]</span> For ordinary urban burghers, tradesmen, and master craftsmen who could never afford a physician, the high-street provider of physical medicine was the apothecary. Apothecaries were organized as skilled merchant craftsmen within powerful urban trade guilds—such as the Worshipful Company of Grocers in London. Unlike university doctors, apothecaries did not attend university; they acquired their extensive practical knowledge through seven-year apprenticeships, learning to identify, dry, weigh, and blend botanical herbs, mineral compounds, and imported spices.<br><br><span class="para-ref">[2.2]</span> Operating open shopfronts stocked with rows of labeled ceramic majolica jars, apothecaries compounded electuaries, soothing syrups, herbal simples, and clysters. While formal law stipulated that apothecaries were merely meant to compound recipes prescribed by licensed physicians, in everyday practice they served as direct diagnostic prescribers for townspeople. Dispensing medicines at a fraction of a physician’s fee, apothecaries were frequently accused by academic doctors of commercial quackery and illicit competition, yet they remained the indispensable pharmaceutical backbone of medieval town life.',
         },
         {
           act: 3,
-          title: 'Act 3: Barber-Surgeons & Manual Wound Care (c. 1320)',
-          theme_heading: 'Act 3: Barber-Surgeons & Manual Wound Care (c. 1320)',
+          title: 'Barber-Surgeons & Manual Wound Care (c. 1320)',
+          theme_heading: 'Barber-Surgeons & Manual Wound Care (c. 1320)',
           source: {
             id: 'source_a_surgeon_suturing',
             letter: 'A',
@@ -2704,8 +2704,8 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Monastic Hospitals: Spiritual ‘Care Not Cure’ (c. 1350)',
-          theme_heading: 'Act 4: Monastic Hospitals: Spiritual ‘Care Not Cure’ (c. 1350)',
+          title: 'Monastic Hospitals: Spiritual ‘Care Not Cure’ (c. 1350)',
+          theme_heading: 'Monastic Hospitals: Spiritual ‘Care Not Cure’ (c. 1350)',
           source: {
             id: 'source_b_hotel_dieu',
             letter: 'B',
@@ -2733,8 +2733,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: Women Healers & Household Care (c. 1400)',
-          theme_heading: 'Act 5: Women Healers & Household Care (c. 1400)',
+          title: 'Women Healers & Household Care (c. 1400)',
+          theme_heading: 'Women Healers & Household Care (c. 1400)',
           text: '<span class="para-ref">[5.1]</span> For the overwhelming majority of medieval people—the ninety percent of the population living in rural peasant villages—formal physicians, guild apothecaries, and monastic hospitals were completely inaccessible. When sickness struck a peasant cottage, healthcare was delivered entirely within the domestic household by women: wives, mothers, grandmothers, and local village wise women.<br><br><span class="para-ref">[5.2]</span> Peasant women possessed an extensive practical knowledge of herbal remedies cultivated in cottage kitchen gardens or gathered from hedgerows, boiling soothing broths, preparing warm bread-and-milk poultices for swollen joints, and mixing herbal salves for burns and rashes. In every village, experienced local women served as traditional midwives, managing labor and delivering infants using herbal teas, warm compresses, and manual techniques passed down through female oral tradition. Despite being completely excluded from universities and condemned by male physicians, women healers provided compassionate, practical, and accessible healthcare that was often far safer than the dangerous bloodletting and violent purges administered by the professional elite.',
         },
       ],
@@ -2776,9 +2776,9 @@ export const unitData = {
           question: 'Where were university-trained physicians educated in medieval Europe?',
           options: [
             'At universities like Oxford, Paris, and Bologna studying Latin texts for 7–10 years.',
-            'At public grammar schools.',
-            'Inside royal naval dockyards.',
             'Through 3-year manual apprenticeships with barber guilds.',
+            'Inside royal naval dockyards.',
+            'At public grammar schools.',
           ],
           answer:
             'At universities like Oxford, Paris, and Bologna studying Latin texts for 7–10 years.',
@@ -2788,9 +2788,9 @@ export const unitData = {
         {
           question: 'Why were university-trained physicians socially superior to barber-surgeons?',
           options: [
-            'They possessed exclusive rights to compound herbal Theriac.',
-            'They performed all major abdominal surgeries in hospitals.',
             'They were personally appointed by the Pope.',
+            'They performed all major abdominal surgeries in hospitals.',
+            'They possessed exclusive rights to compound herbal Theriac.',
             'They were educated in Latin, studied classical theory, and did not perform manual labor.',
           ],
           answer:
@@ -2801,10 +2801,10 @@ export const unitData = {
         {
           question: 'What manual procedures did guild-trained barber-surgeons perform?',
           options: [
-            'Teaching Latin grammar at Oxford University.',
             'Preaching sermons and administering holy communion.',
-            'Pulling teeth, bloodletting, stitching wounds, and lancing boils.',
             'Compounding imported chemical drugs.',
+            'Pulling teeth, bloodletting, stitching wounds, and lancing boils.',
+            'Teaching Latin grammar at Oxford University.',
           ],
           answer: 'Pulling teeth, bloodletting, stitching wounds, and lancing boils.',
           explanation:
@@ -2814,9 +2814,9 @@ export const unitData = {
           question: 'What did apothecaries do in the medieval medical division of labour?',
           options: [
             'Formulated and dispensed herbal syrups, ointments, and medicines.',
-            'Served as full-time hospital surgeons.',
             'Issued royal quarantine orders during epidemics.',
             'Conducted clinical post-mortem dissections on corpses.',
+            'Served as full-time hospital surgeons.',
           ],
           answer: 'Formulated and dispensed herbal syrups, ointments, and medicines.',
           explanation:
@@ -2826,10 +2826,10 @@ export const unitData = {
           question:
             'Who provided the vast majority of day-to-day healthcare for ordinary medieval peasants?',
           options: [
-            'Hospital doctors operating specialized clinics.',
-            'Women, mothers, and local wise women caring for sick family members in the home.',
             'Traveling Italian pharmacists.',
+            'Women, mothers, and local wise women caring for sick family members in the home.',
             'University physicians charging modest charitable fees.',
+            'Hospital doctors operating specialized clinics.',
           ],
           answer:
             'Women, mothers, and local wise women caring for sick family members in the home.',
@@ -2853,9 +2853,9 @@ export const unitData = {
             'Which of the following patient groups was strictly EXCLUDED from medieval monastic hospitals?',
           options: [
             'The elderly and infirm poor.',
-            'Impoverished church clerics.',
-            'Infectious patients (lepers, plague victims) and pregnant women.',
             'Traveling religious pilgrims.',
+            'Infectious patients (lepers, plague victims) and pregnant women.',
+            'Impoverished church clerics.',
           ],
           answer: 'Infectious patients (lepers, plague victims) and pregnant women.',
           explanation:
@@ -2865,9 +2865,9 @@ export const unitData = {
           question:
             'What famous London hospital was founded in 1123 by Rahere to care for the poor?',
           options: [
-            'Guy’s Hospital.',
             'Florence Nightingale Hospital.',
             'The Royal Free Hospital.',
+            'Guy’s Hospital.',
             'St Bartholomew’s Hospital.',
           ],
           answer: 'St Bartholomew’s Hospital.',
@@ -2893,9 +2893,9 @@ export const unitData = {
             'What specialized medical institutions were established on the outskirts of medieval towns to isolate patients suffering from contagious leprosy?',
           options: [
             'Lazar houses (leprosaria).',
+            'Monastic scriptoria.',
             'Royal infirmaries.',
             'Almshouses for retired guild masons.',
-            'Monastic scriptoria.',
           ],
           answer: 'Lazar houses (leprosaria).',
           explanation:
@@ -3307,15 +3307,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Arrival at Melcombe Regis: Trade Routes & The Rat Vector (June 1348)',
-          theme_heading:
-            'Act 1: Arrival at Melcombe Regis: Trade Routes & The Rat Vector (June 1348)',
+          title: 'Arrival at Melcombe Regis: Trade Routes & The Rat Vector (June 1348)',
+          theme_heading: 'Arrival at Melcombe Regis: Trade Routes & The Rat Vector (June 1348)',
           text: '<span class="para-ref">[1.1]</span> In late June 1348, a merchant vessel from Gascony carrying barrels of wine dropped anchor at the southern English port of Melcombe Regis in Dorset. Unbeknownst to the dockers who unloaded the cargo, the bilge timbers and sacking harboured black ship rats (<em>Rattus rattus</em>) infested with tropical rodent fleas (<em>Xenopsylla cheopis</em>), themselves gorged on the virulent bacillus <em>Yersinia pestis</em>. Within weeks, the catastrophic pandemic known to chroniclers as the "Great Pestilence" or "Great Mortality"—and later named the Black Death—ignited across the Dorset countryside. Propelled along overland trade corridors and coastal shipping lanes, it engulfed Bristol, Salisbury, and London by Michaelmas 1348.<br><br><span class="para-ref">[1.2]</span> The rapid velocity of transmission was accelerated by crowded, unpaved timber settlements where families lived in close proximity to livestock, open drains, and infested straw bedding. England had experienced no major plague outbreak for over six centuries; its population possessed zero acquired biological immunity. Within eighteen months, the pestilence obliterated between thirty and fifty percent of the English population, slaughtering an estimated 1.5 to 2 million men, women, and children and devastating the economic fabric of the realm.',
         },
         {
           act: 2,
-          title: 'Act 2: Clinical Terror: Bubonic vs Pneumonic Plague (Autumn 1348)',
-          theme_heading: 'Act 2: Clinical Terror: Bubonic vs Pneumonic Plague (Autumn 1348)',
+          title: 'Clinical Terror: Bubonic vs Pneumonic Plague (Autumn 1348)',
+          theme_heading: 'Clinical Terror: Bubonic vs Pneumonic Plague (Autumn 1348)',
           source: {
             id: 'source_b_plague_victim_buboes',
             letter: 'B',
@@ -3343,21 +3342,20 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Desperate Treatments: Hot Knives & Strapped Chickens (Winter 1348)',
-          theme_heading:
-            'Act 3: Desperate Treatments: Hot Knives & Strapped Chickens (Winter 1348)',
+          title: 'Desperate Treatments: Hot Knives & Strapped Chickens (Winter 1348)',
+          theme_heading: 'Desperate Treatments: Hot Knives & Strapped Chickens (Winter 1348)',
           text: '<span class="para-ref">[3.1]</span> Contemporary medical practitioners proved totally impotent against the bacillus, offering treatments that were futile, agonizing, and lethal. Guided by humoural doctrine, barber-surgeons attempted to evacuate corrupt matter by applying heated cupping glasses to buboes or slicing them open with red-hot cautery irons. This crude surgery frequently induced catastrophic secondary septic shock, while allowing bacteria to contaminate instruments and hands, accelerating the spread of infection to attending healers.<br><br><span class="para-ref">[3.2]</span> Desperate folk remedies abounded across villages: healers strapped live, plucked chickens or dried toads directly to swollen buboes, believing the creature’s warm belly would draw the venomous poison out of the human body until the animal perished. Apothecaries prescribed costly concoctions of crushed emeralds dissolved in vinegar, melted gold cordial, and heavy doses of Theriac treacle. In domestic sickrooms, families burned sulfur, pitch, and dried rosemary to fumigate the air, while desperate sufferers drank concoctions of urine and crushed marigolds. Every single treatment failed completely, exposing the absolute bankruptcy of medieval therapeutics.',
         },
         {
           act: 4,
-          title: 'Act 4: King Edward III’s Cleanliness Order & Miasma Prevention (1349)',
-          theme_heading: 'Act 4: King Edward III’s Cleanliness Order & Miasma Prevention (1349)',
+          title: 'King Edward III’s Cleanliness Order & Miasma Prevention (1349)',
+          theme_heading: 'King Edward III’s Cleanliness Order & Miasma Prevention (1349)',
           text: '<span class="para-ref">[4.1]</span> In a desperate attempt to fend off miasma, civic leaders and citizens adopted aggressive environmental measures. People walked through alleys holding sweet posies, dried lavender, or sponges steeped in vinegar to their nostrils, while pitch fires burned perpetually at crossroads to purify the air. Certain urban settlements attempted quarantine: the borough of Gloucester sealed its town gates against all outsiders, though country lanes soon brought the infection regardless.<br><br><span class="para-ref">[4.2]</span> In April 1349, King Edward III dispatched an urgent royal mandate to the Mayor of London, furiously denouncing the filthy conditions of the capital where human dung, horse carcasses, and butchers’ entrails fouled the streets, generating a deadly stench that threatened his royal court. Edward demanded immediate civic street-clearing to dispel the pestilential miasma. However, because authorities lacked an organized sanitation bureaucracy or police enforcement, and remained wholly ignorant of the rodent and flea vector, royal decrees proved entirely powerless to halt the epidemic.',
         },
         {
           act: 5,
-          title: 'Act 5: Mass Burial Pits & Demographic Collapse (1349–1350)',
-          theme_heading: 'Act 5: Mass Burial Pits & Demographic Collapse (1349–1350)',
+          title: 'Mass Burial Pits & Demographic Collapse (1349–1350)',
+          theme_heading: 'Mass Burial Pits & Demographic Collapse (1349–1350)',
           source: {
             id: 'source_a_tournai_burials',
             letter: 'A',
@@ -3422,9 +3420,9 @@ export const unitData = {
           question: 'Where did the Black Death first arrive in England in June 1348?',
           options: [
             'Melcombe Regis in Dorset.',
-            'The Tower of London.',
-            'Portsmouth Dockyard in Hampshire.',
             'The port of Dover in Kent.',
+            'Portsmouth Dockyard in Hampshire.',
+            'The Tower of London.',
           ],
           answer: 'Melcombe Regis in Dorset.',
           explanation:
@@ -3433,10 +3431,10 @@ export const unitData = {
         {
           question: 'What bacterium, unknown to medieval people, actually caused the Black Death?',
           options: [
-            'Streptococcus pneumoniae.',
+            'Mycobacterium leprae.',
             'Yersinia pestis.',
             'Vibrio cholerae.',
-            'Mycobacterium leprae.',
+            'Streptococcus pneumoniae.',
           ],
           answer: 'Yersinia pestis.',
           explanation:
@@ -3452,8 +3450,8 @@ export const unitData = {
         {
           question: 'How was the pneumonic form of the plague transmitted between humans?',
           options: [
-            'Through eating rotten meat.',
             'Through drinking infected well water.',
+            'Through eating rotten meat.',
             'Through coughs, sneezes, and breath directly through the air.',
             'Through touching churchyard soil.',
           ],
@@ -3466,8 +3464,8 @@ export const unitData = {
           options: [
             'Guild barber-surgeons employed to lance buboes.',
             'Religious sects who marched from town to town whipping themselves to appease God’s wrath.',
-            'Royal tax collectors sent by Edward III.',
             'Parish gravediggers digging emergency trench pits.',
+            'Royal tax collectors sent by Edward III.',
           ],
           answer:
             'Religious sects who marched from town to town whipping themselves to appease God’s wrath.',
@@ -3477,10 +3475,10 @@ export const unitData = {
         {
           question: 'What did King Edward III order the Mayor of London to do in April 1349?',
           options: [
-            'Close all Catholic churches and cancel Mass.',
-            'Execute all barber-surgeons who failed to cure patients.',
-            'Clean human faeces and animal dung from London streets to clear corrupt miasma.',
             'Burn down all infected wooden houses in the city.',
+            'Close all Catholic churches and cancel Mass.',
+            'Clean human faeces and animal dung from London streets to clear corrupt miasma.',
+            'Execute all barber-surgeons who failed to cure patients.',
           ],
           answer: 'Clean human faeces and animal dung from London streets to clear corrupt miasma.',
           explanation:
@@ -3490,9 +3488,9 @@ export const unitData = {
           question:
             'What proportion of England’s entire population is estimated to have died during the Black Death?',
           options: [
-            'Over 90%.',
-            'Roughly 10%.',
             'Less than 5%.',
+            'Roughly 10%.',
+            'Over 90%.',
             'Between 30% and 50% (over 1.5 million people).',
           ],
           answer: 'Between 30% and 50% (over 1.5 million people).',
@@ -3516,9 +3514,9 @@ export const unitData = {
           question:
             'How did local authorities in towns like Gloucester attempt to prevent the spread of the Black Death from infected areas?',
           options: [
-            'They burned down every wooden tavern and inn within twenty miles of the city.',
-            'They constructed underground piped sewage networks to drain contaminated soil.',
             'They vaccinated all citizens using cowpox fluid imported from France.',
+            'They constructed underground piped sewage networks to drain contaminated soil.',
+            'They burned down every wooden tavern and inn within twenty miles of the city.',
             'They closed city gates, banned strangers from entering, and attempted to isolate themselves from infected cities like Bristol.',
           ],
           answer:
@@ -3531,9 +3529,9 @@ export const unitData = {
             'What major economic consequence followed the Black Death due to the severe shortage of agricultural workers in England?',
           options: [
             'The King abolished all taxes and disbanded the English army.',
-            'England imported millions of skilled workers from the Holy Roman Empire.',
-            'Surviving peasants demanded higher wages and lower rents, weakening the feudal manor system.',
             'Landowners forced all peasants into slavery and tripled land rents.',
+            'Surviving peasants demanded higher wages and lower rents, weakening the feudal manor system.',
+            'England imported millions of skilled workers from the Holy Roman Empire.',
           ],
           answer:
             'Surviving peasants demanded higher wages and lower rents, weakening the feudal manor system.',
@@ -3994,9 +3992,8 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: The Monastic Scribal Monopoly & The Movable-Type Press (c. 1440–1476)',
-          theme_heading:
-            'Act 1: The Monastic Scribal Monopoly & The Movable-Type Press (c. 1440–1476)',
+          title: 'The Monastic Scribal Monopoly & The Movable-Type Press (c. 1440–1476)',
+          theme_heading: 'The Monastic Scribal Monopoly & The Movable-Type Press (c. 1440–1476)',
           source: {
             id: 'source_a_printing_press',
             letter: 'A',
@@ -4024,20 +4021,20 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: Renaissance Humanism & Ancient Texts (c. 1500)',
-          theme_heading: 'Act 2: Renaissance Humanism & Ancient Texts (c. 1500)',
+          title: 'Renaissance Humanism & Ancient Texts (c. 1500)',
+          theme_heading: 'Renaissance Humanism & Ancient Texts (c. 1500)',
           text: '<span class="para-ref">[2.1]</span> Alongside the mechanical triumph of movable type, the intellectual movement known as Renaissance Humanism fundamentally reshaped medical scholarship. Humanist scholars sought to return to original classical Greek manuscripts (<em>ad fontes</em>), bypassing centuries of medieval Latin translations. By comparing original texts with the Church’s sanctioned copies, scholars made a startling discovery: medieval monk copyists had introduced thousands of translation errors, misunderstandings, and theological distortions into Galen’s and Hippocrates’s works over the preceding millennium. By printing pristine, uncorrupted Greek editions with precise anatomical diagrams, Humanism encouraged physicians across Europe to realize that ancient medical authorities were fallible men rather than divine prophets, sparking an urgent demand to verify classical claims against direct human anatomy and empirical observation.',
         },
         {
           act: 3,
-          title: 'Act 3: Foundation of the Royal Society & ‘Nullius in Verba’ (1660–1662)',
-          theme_heading: 'Act 3: Foundation of the Royal Society & ‘Nullius in Verba’ (1660–1662)',
+          title: 'Foundation of the Royal Society & ‘Nullius in Verba’ (1660–1662)',
+          theme_heading: 'Foundation of the Royal Society & ‘Nullius in Verba’ (1660–1662)',
           text: '<span class="para-ref">[3.1]</span> By the mid-17th century, the demand for observable, empirical proof led scholars to reject scholastic disputation in favour of institutional experimentation. In November 1660, a group of twelve natural philosophers—including the architect Christopher Wren, the chemist Robert Boyle, and the polymath Robert Hooke—met at Gresham College in London to establish a formal scientific body. In 1662, King Charles II granted them a prestigious Royal Charter, formally incorporating "The Royal Society of London for Improving Natural Knowledge". The Society adopted the radical Latin motto <em>Nullius in Verba</em> ("Take nobody\'s word for it"), boldly declaring their refusal to accept any scientific assertion based merely on classical authority, ecclesiastical dogma, or ancient tradition. To replace hearsay, members conducted weekly laboratory demonstrations, establishing repeatable physical experiment as the supreme test of medical and scientific truth.',
         },
         {
           act: 4,
-          title: 'Act 4: Philosophical Transactions & International Peer Review (1665)',
-          theme_heading: 'Act 4: Philosophical Transactions & International Peer Review (1665)',
+          title: 'Philosophical Transactions & International Peer Review (1665)',
+          theme_heading: 'Philosophical Transactions & International Peer Review (1665)',
           source: {
             id: 'source_b_philosophical_transactions',
             letter: 'B',
@@ -4065,8 +4062,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: Early Microscopes, Animalcules & The Renaissance Paradox',
-          theme_heading: 'Act 5: Early Microscopes, Animalcules & The Renaissance Paradox',
+          title: 'Early Microscopes, Animalcules & The Renaissance Paradox',
+          theme_heading: 'Early Microscopes, Animalcules & The Renaissance Paradox',
           source: {
             id: 'source_c_hooke_flea',
             letter: 'C',
@@ -4195,8 +4192,8 @@ export const unitData = {
           options: [
             'It allowed identical texts and anatomical diagrams to be mass-produced quickly without copyist errors, bypassing Church censorship.',
             'It made every peasant in Europe immediately literate in medical Latin.',
-            'It forced all universities to close down and burn ancient manuscripts.',
             'It proved that the Four Humours did not exist by analyzing ink chemistry.',
+            'It forced all universities to close down and burn ancient manuscripts.',
           ],
           answer:
             'It allowed identical texts and anatomical diagrams to be mass-produced quickly without copyist errors, bypassing Church censorship.',
@@ -4207,10 +4204,10 @@ export const unitData = {
           question:
             'What is the official Latin motto of the Royal Society, and what is its English translation?',
           options: [
-            "'In Vino Veritas' ('In wine there is truth').",
+            "'Cogito Ergo Sum' ('I think, therefore I am').",
             "'Nullius in Verba' ('Take nobody\\'s word for it').",
             "'Carpe Diem' ('Seize the day').",
-            "'Cogito Ergo Sum' ('I think, therefore I am').",
+            "'In Vino Veritas' ('In wine there is truth').",
           ],
           answer: "'Nullius in Verba' ('Take nobody\\'s word for it').",
           explanation:
@@ -4220,9 +4217,9 @@ export const unitData = {
           question:
             "What was the name of the world's first peer-reviewed scientific journal, published by the Royal Society in 1665?",
           options: [
+            'De Humani Corporis Fabrica',
             'The Lancet',
             'Observationes Medicae',
-            'De Humani Corporis Fabrica',
             'Philosophical Transactions',
           ],
           answer: 'Philosophical Transactions',
@@ -4233,9 +4230,9 @@ export const unitData = {
           question: "What was the 'Renaissance Paradox' in medical history?",
           options: [
             'Huge advances occurred in anatomy and scientific communication, yet everyday treatments and patient survival barely improved.',
+            'The Catholic Church supported dissections while outlawing the printing press.',
             'Physicians became much poorer while university fees tripled.',
             'Fewer people died of plague even though no doctors existed.',
-            'The Catholic Church supported dissections while outlawing the printing press.',
           ],
           answer:
             'Huge advances occurred in anatomy and scientific communication, yet everyday treatments and patient survival barely improved.',
@@ -4245,7 +4242,7 @@ export const unitData = {
         {
           question:
             'In what year did William Caxton introduce the first movable-type printing press to England at Westminster?',
-          options: ['1348', '1543', '1476', '1665'],
+          options: ['1543', '1665', '1476', '1348'],
           answer: '1476',
           explanation:
             "William Caxton established England's first movable-type printing press at Westminster in 1476, dramatically accelerating the spread of vernacular and Latin medical texts.",
@@ -4254,9 +4251,9 @@ export const unitData = {
           question:
             'In which decade was the Royal Society founded, and in which year did it receive its Royal Charter from King Charles II?',
           options: [
-            'Founded 1500; Royal Charter 1543',
-            'Founded 1660; Royal Charter 1662',
             'Founded 1348; Royal Charter 1476',
+            'Founded 1660; Royal Charter 1662',
+            'Founded 1500; Royal Charter 1543',
             'Founded 1700; Royal Charter 1715',
           ],
           answer: 'Founded 1660; Royal Charter 1662',
@@ -4267,9 +4264,9 @@ export const unitData = {
           question:
             'Which 1665 book by Robert Hooke used the newly invented compound microscope to reveal plant cells and microscopic fleas?',
           options: [
-            'De Motu Cordis',
-            'Micrographia',
             'De Humani Corporis Fabrica',
+            'Micrographia',
+            'De Motu Cordis',
             'Observationes Medicae',
           ],
           answer: 'Micrographia',
@@ -4281,9 +4278,9 @@ export const unitData = {
             "Why did the work of Antonie van Leeuwenhoek in discovering microscopic 'animalcules' (bacteria) in 1676 fail to improve medical treatment at the time?",
           options: [
             'Scientists had no understanding that bacteria caused human disease or infection.',
+            'Leeuwenhoek refused to publish his findings in Philosophical Transactions.',
             "The Catholic Church immediately seized and burned all of Leeuwenhoek's microscopes.",
             'Microscopes were outlawed across England under the 1665 Quarantine Orders.',
-            'Leeuwenhoek refused to publish his findings in Philosophical Transactions.',
           ],
           answer:
             'Scientists had no understanding that bacteria caused human disease or infection.',
@@ -4293,7 +4290,7 @@ export const unitData = {
         {
           question:
             'Which ancient Roman medical authority had dominated European medical education for over 1,400 years prior to the Renaissance, whose dogma was finally challenged by the new spirit of Humanist enquiry?',
-          options: ['Alexander Fleming', 'Ambroise Paré', 'Edward Jenner', 'Claudius Galen'],
+          options: ['Edward Jenner', 'Alexander Fleming', 'Ambroise Paré', 'Claudius Galen'],
           answer: 'Claudius Galen',
           explanation:
             'Galen’s theories (such as the Four Humours and the liver manufacturing blood) dominated medieval medicine with the blessing of the Catholic Church until Renaissance humanism and empirical observation proved many of his anatomical claims false.',
@@ -4302,10 +4299,10 @@ export const unitData = {
           question:
             'What was the central philosophy of the Renaissance Humanist movement that transformed European science and medicine in the early 1500s?',
           options: [
-            'Insisting that the Four Humours were identical to the movement of stars and planets.',
             'Rejecting all ancient books and burning university libraries.',
-            'Rediscovering original classical texts, questioning medieval translations, and promoting empirical observation and human reason.',
             'Mandating that all medical operations be conducted by Church clergy.',
+            'Rediscovering original classical texts, questioning medieval translations, and promoting empirical observation and human reason.',
+            'Insisting that the Four Humours were identical to the movement of stars and planets.',
           ],
           answer:
             'Rediscovering original classical texts, questioning medieval translations, and promoting empirical observation and human reason.',
@@ -4390,8 +4387,8 @@ export const unitData = {
           options: [
             'It made every peasant in Europe immediately literate in medical Latin.',
             'It allowed identical texts and anatomical diagrams to be mass-produced quickly without copyist errors, bypassing Church censorship.',
-            'It forced all universities to close down and burn ancient manuscripts.',
             'It proved that the Four Humours did not exist by analyzing ink chemistry.',
+            'It forced all universities to close down and burn ancient manuscripts.',
           ],
           answer:
             'It allowed identical texts and anatomical diagrams to be mass-produced quickly without copyist errors, bypassing Church censorship.',
@@ -4402,9 +4399,9 @@ export const unitData = {
           question:
             'What is the official Latin motto of the Royal Society, and what is its English translation?',
           options: [
-            "'In Vino Veritas' ('In wine there is truth').",
-            "'Carpe Diem' ('Seize the day').",
             "'Cogito Ergo Sum' ('I think, therefore I am').",
+            "'Carpe Diem' ('Seize the day').",
+            "'In Vino Veritas' ('In wine there is truth').",
             "'Nullius in Verba' ('Take nobody\\'s word for it').",
           ],
           answer: "'Nullius in Verba' ('Take nobody\\'s word for it').",
@@ -4416,9 +4413,9 @@ export const unitData = {
             "What was the name of the world's first peer-reviewed scientific journal, published by the Royal Society in 1665?",
           options: [
             'Philosophical Transactions',
+            'De Humani Corporis Fabrica',
             'The Lancet',
             'Observationes Medicae',
-            'De Humani Corporis Fabrica',
           ],
           answer: 'Philosophical Transactions',
           explanation:
@@ -4427,10 +4424,10 @@ export const unitData = {
         {
           question: "What was the 'Renaissance Paradox' in medical history?",
           options: [
-            'Physicians became much poorer while university fees tripled.',
-            'Fewer people died of plague even though no doctors existed.',
-            'Huge advances occurred in anatomy and scientific communication, yet everyday treatments and patient survival barely improved.',
             'The Catholic Church supported dissections while outlawing the printing press.',
+            'Physicians became much poorer while university fees tripled.',
+            'Huge advances occurred in anatomy and scientific communication, yet everyday treatments and patient survival barely improved.',
+            'Fewer people died of plague even though no doctors existed.',
           ],
           answer:
             'Huge advances occurred in anatomy and scientific communication, yet everyday treatments and patient survival barely improved.',
@@ -4440,7 +4437,7 @@ export const unitData = {
         {
           question:
             'In what year did William Caxton introduce the first movable-type printing press to England at Westminster?',
-          options: ['1476', '1348', '1543', '1665'],
+          options: ['1476', '1543', '1665', '1348'],
           answer: '1476',
           explanation:
             "William Caxton established England's first movable-type printing press at Westminster in 1476, dramatically accelerating the spread of vernacular and Latin medical texts.",
@@ -4449,9 +4446,9 @@ export const unitData = {
           question:
             'In which decade was the Royal Society founded, and in which year did it receive its Royal Charter from King Charles II?',
           options: [
-            'Founded 1500; Royal Charter 1543',
-            'Founded 1660; Royal Charter 1662',
             'Founded 1348; Royal Charter 1476',
+            'Founded 1660; Royal Charter 1662',
+            'Founded 1500; Royal Charter 1543',
             'Founded 1700; Royal Charter 1715',
           ],
           answer: 'Founded 1660; Royal Charter 1662',
@@ -4462,8 +4459,8 @@ export const unitData = {
           question:
             'Which 1665 book by Robert Hooke used the newly invented compound microscope to reveal plant cells and microscopic fleas?',
           options: [
-            'De Motu Cordis',
             'De Humani Corporis Fabrica',
+            'De Motu Cordis',
             'Observationes Medicae',
             'Micrographia',
           ],
@@ -4475,10 +4472,10 @@ export const unitData = {
           question:
             "Why did the work of Antonie van Leeuwenhoek in discovering microscopic 'animalcules' (bacteria) in 1676 fail to improve medical treatment at the time?",
           options: [
-            "The Catholic Church immediately seized and burned all of Leeuwenhoek's microscopes.",
-            'Microscopes were outlawed across England under the 1665 Quarantine Orders.',
-            'Scientists had no understanding that bacteria caused human disease or infection.',
             'Leeuwenhoek refused to publish his findings in Philosophical Transactions.',
+            "The Catholic Church immediately seized and burned all of Leeuwenhoek's microscopes.",
+            'Scientists had no understanding that bacteria caused human disease or infection.',
+            'Microscopes were outlawed across England under the 1665 Quarantine Orders.',
           ],
           answer:
             'Scientists had no understanding that bacteria caused human disease or infection.',
@@ -4490,8 +4487,8 @@ export const unitData = {
             'What was the official Latin motto of the Royal Society, founded in London in 1660, and what did it signal for the development of scientific medicine?',
           options: [
             '"Deus Vult" (God wills it), signalling that medical cures required religious devotion.',
-            '"In Vino Veritas" (In wine there is truth), signalling the use of alcohol as the primary Renaissance cure.',
             '"Festina Lente" (Make haste slowly), signalling that new surgical operations should be delayed.',
+            '"In Vino Veritas" (In wine there is truth), signalling the use of alcohol as the primary Renaissance cure.',
             '"Nullius in Verba" (Take nobody\'s word for it), signalling a commitment to empirical evidence and experimentation over ancient textbook authority.',
           ],
           answer:
@@ -4504,9 +4501,9 @@ export const unitData = {
             "How did Johannes Gutenberg's movable-type printing press (invented c.1440) transform medical learning during the Renaissance?",
           options: [
             'It allowed rapid, identical duplication of medical textbooks and detailed anatomical illustrations, breaking Church control over knowledge dissemination.',
+            'It made hand-copied manuscripts cheaper and easier to produce in monastic scriptoria.',
             'It completely eliminated all Latin medical books in favour of English only.',
             'It was only used for royal tax collection and had no effect on medicine.',
-            'It made hand-copied manuscripts cheaper and easier to produce in monastic scriptoria.',
           ],
           answer:
             'It allowed rapid, identical duplication of medical textbooks and detailed anatomical illustrations, breaking Church control over knowledge dissemination.',
@@ -4898,8 +4895,8 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Rejecting Book Learning at the Bedside (1660s)',
-          theme_heading: 'Act 1: Rejecting Book Learning at the Bedside (1660s)',
+          title: 'Rejecting Book Learning at the Bedside (1660s)',
+          theme_heading: 'Rejecting Book Learning at the Bedside (1660s)',
           source: {
             id: 'source_a_sydenham_portrait',
             letter: 'A',
@@ -4927,8 +4924,8 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: Observationes Medicae & Disease Classification (1676)',
-          theme_heading: 'Act 2: Observationes Medicae & Disease Classification (1676)',
+          title: 'Observationes Medicae & Disease Classification (1676)',
+          theme_heading: 'Observationes Medicae & Disease Classification (1676)',
           source: {
             id: 'source_b_quack_physician',
             letter: 'B',
@@ -4956,20 +4953,20 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Quinine & Cinchona Bark for Malaria (c. 1670s)',
-          theme_heading: 'Act 3: Quinine & Cinchona Bark for Malaria (c. 1670s)',
+          title: 'Quinine & Cinchona Bark for Malaria (c. 1670s)',
+          theme_heading: 'Quinine & Cinchona Bark for Malaria (c. 1670s)',
           text: '<span class="para-ref">[3.1]</span> Sydenham’s empirical bedside method bore its most celebrated therapeutic fruit in his championing of Cinchona bark (Peruvian bark) for the treatment of "intermittent fevers" (ague, known today as malaria). Imported from South America by Jesuit missionaries, Cinchona bark was initially viewed with deep suspicion by conservative Protestant English doctors, who dismissed it as a dangerous Catholic concoction. Sydenham tested it rigorously on patients suffering ague in the marshy Thames estuary, carefully calculating dosages and timing administration to coincide with fever remissions.<br><br><span class="para-ref">[3.2]</span> The results were miraculous: the bark (which contained natural quinine) cured malaria directly and rapidly. Crucially, Cinchona bark did not purge the bowels or induce vomiting; it operated as a specific chemical remedy targeting a specific illness. This discovery was conceptually devastating to Galenism. If a single imported tree bark could cure ague without adjusting the Four Humours or bleeding the patient, then the entire Galenic edifice of humoral balance was fundamentally flawed.',
         },
         {
           act: 4,
-          title: 'Act 4: Cool Therapy for Smallpox Fevers (c. 1670s)',
-          theme_heading: 'Act 4: Cool Therapy for Smallpox Fevers (c. 1670s)',
+          title: 'Cool Therapy for Smallpox Fevers (c. 1670s)',
+          theme_heading: 'Cool Therapy for Smallpox Fevers (c. 1670s)',
           text: '<span class="para-ref">[4.1]</span> Sydenham also revolutionized the clinical management of smallpox, one of the deadliest and most disfiguring killers of the seventeenth century. Traditional Galenic physicians treated smallpox fevers by attempting to sweat the poison out of the body: patients were locked in stifling rooms with shuttered windows, roaring hearth fires, and piled under heavy woolen blankets, while being administered heating cordials and wine. This horrific "sweating regimen" caused severe dehydration, accelerated systemic delirium, and dramatically increased patient mortality.<br><br><span class="para-ref">[4.2]</span> Sydenham overturned this centuries-old practice with his famous "cool therapy". He ordered windows opened to allow fresh air to circulate freely through the sickroom, removed heavy blankets in favor of light sheets, extinguished bedchamber fires, and forbade hot cordials, prescribing instead refreshing cold drinks and mild barley waters. While Sydenham could not cure the smallpox virus itself, his cool regimen allowed patients’ immune systems to survive the acute fever crisis, drastically reducing smallpox fatalities and earning him widespread acclaim among grateful London families.',
         },
         {
           act: 5,
-          title: 'Act 5: The Limits of Sydenham’s Legacy (1680s)',
-          theme_heading: 'Act 5: The Limits of Sydenham’s Legacy (1680s)',
+          title: 'The Limits of Sydenham’s Legacy (1680s)',
+          theme_heading: 'The Limits of Sydenham’s Legacy (1680s)',
           source: {
             id: 'source_c_municipal_hospital',
             letter: 'C',
@@ -5092,9 +5089,9 @@ export const unitData = {
           question:
             'What nickname was given to Thomas Sydenham because of his emphasis on bedside observation?',
           options: [
-            'The Roman Galen',
-            'The English Hippocrates',
             'The Father of Surgery',
+            'The English Hippocrates',
+            'The Roman Galen',
             'The London Alchemist',
           ],
           answer: 'The English Hippocrates',
@@ -5105,10 +5102,10 @@ export const unitData = {
           question:
             'Name the 1676 book in which Sydenham set out his methods of clinical observation.',
           options: [
-            'Philosophical Transactions',
-            'Micrographia',
-            'Observationes Medicae',
             'De Humani Corporis Fabrica',
+            'Philosophical Transactions',
+            'Observationes Medicae',
+            'Micrographia',
           ],
           answer: 'Observationes Medicae',
           explanation:
@@ -5120,8 +5117,8 @@ export const unitData = {
           options: [
             'Cinchona bark (quinine)',
             'Mercury ointment',
-            'Boiling elderberry oil',
             'Leeches and vinegar',
+            'Boiling elderberry oil',
           ],
           answer: 'Cinchona bark (quinine)',
           explanation:
@@ -5131,10 +5128,10 @@ export const unitData = {
           question:
             'Which two childhood illnesses did Sydenham successfully prove were separate diseases?',
           options: [
-            'Typhoid and dysentery',
-            'Measles and scarlet fever',
             'Smallpox and plague',
+            'Measles and scarlet fever',
             'Tuberculosis and cholera',
+            'Typhoid and dysentery',
           ],
           answer: 'Measles and scarlet fever',
           explanation:
@@ -5144,9 +5141,9 @@ export const unitData = {
           question:
             "How did Thomas Sydenham's approach to diagnosing disease differ fundamentally from medieval humoural physicians?",
           options: [
+            'He relied entirely on astrological charts and matula flasks.',
             'He performed internal dissections on living patients to inspect heart valves.',
             'He calculated mathematical planetary alignments before prescribing medicines.',
-            'He relied entirely on astrological charts and matula flasks.',
             'He viewed diseases as distinct species to be classified by observing symptoms, rather than individual fluid imbalances.',
           ],
           answer:
@@ -5158,8 +5155,8 @@ export const unitData = {
           question:
             'What radical treatment did Sydenham prescribe for smallpox, overturning the centuries-old traditional practice of suffocating patients in hot rooms?',
           options: [
-            'Immediate cauterisation with red-hot irons and boiling oil.',
             'Drinking heavy doses of liquid mercury and arsenic.',
+            'Immediate cauterisation with red-hot irons and boiling oil.',
             'A cooling regimen with fresh air, cool bedrooms, and light bedclothes.',
             'Mandatory bloodletting until the patient fainted.',
           ],
@@ -5170,7 +5167,7 @@ export const unitData = {
         {
           question:
             'What famous pain-relieving medicine did Sydenham develop by dissolving opium in Spanish wine?',
-          options: ['Penicillin', 'Carbolic acid', 'Laudanum', 'Chloroform'],
+          options: ['Carbolic acid', 'Penicillin', 'Laudanum', 'Chloroform'],
           answer: 'Laudanum',
           explanation:
             'Sydenham created liquid laudanum (a standardized tincture of opium), providing an effective treatment for severe pain, dysentery, and coughs.',
@@ -5179,10 +5176,10 @@ export const unitData = {
           question:
             'Why did Sydenham firmly reject the use of the microscope for clinical medical practice in the 17th century?',
           options: [
-            'He believed microscopes were instruments of witchcraft forbidden by royal decree.',
+            'He argued that human blood was too dense for light to pass through.',
             'He believed practical bedside observation of symptoms was far more useful for curing patients than gazing at microscopic structures.',
             'He could not afford to purchase lenses imported from the Netherlands.',
-            'He argued that human blood was too dense for light to pass through.',
+            'He believed microscopes were instruments of witchcraft forbidden by royal decree.',
           ],
           answer:
             'He believed practical bedside observation of symptoms was far more useful for curing patients than gazing at microscopic structures.',
@@ -5193,9 +5190,9 @@ export const unitData = {
           question:
             'What famous advice did Thomas Sydenham give to young medical students regarding the best place to understand disease, breaking away from ancient textbook memorisation?',
           options: [
+            '"You must consult the stars; there alone destiny is revealed."',
             '"You must inspect the urine matula; there alone the humours show their balance."',
             '"You must read Aristotle; there alone pure reason exists."',
-            '"You must consult the stars; there alone destiny is revealed."',
             '"You must go to the bedside; there alone you can learn disease."',
           ],
           answer: '"You must go to the bedside; there alone you can learn disease."',
@@ -5207,9 +5204,9 @@ export const unitData = {
             'Despite his pioneering empirical diagnostic methods, in what major way did Thomas Sydenham demonstrate continuity with medieval medical practice?',
           options: [
             'He still believed disease was influenced by atmospheric miasmas and continued prescribing traditional bloodletting and purging.',
+            'He refused to treat any patients who were not ordained Catholic priests.',
             'He outlawed the use of foreign botanical medicines throughout London.',
             'He performed public human dissections in university theatres.',
-            'He refused to treat any patients who were not ordained Catholic priests.',
           ],
           answer:
             'He still believed disease was influenced by atmospheric miasmas and continued prescribing traditional bloodletting and purging.',
@@ -5293,8 +5290,8 @@ export const unitData = {
             'What nickname was given to Thomas Sydenham because of his emphasis on bedside observation?',
           options: [
             'The English Hippocrates',
-            'The Roman Galen',
             'The Father of Surgery',
+            'The Roman Galen',
             'The London Alchemist',
           ],
           answer: 'The English Hippocrates',
@@ -5305,10 +5302,10 @@ export const unitData = {
           question:
             'Name the 1676 book in which Sydenham set out his methods of clinical observation.',
           options: [
-            'Philosophical Transactions',
-            'Micrographia',
-            'Observationes Medicae',
             'De Humani Corporis Fabrica',
+            'Philosophical Transactions',
+            'Observationes Medicae',
+            'Micrographia',
           ],
           answer: 'Observationes Medicae',
           explanation:
@@ -5319,8 +5316,8 @@ export const unitData = {
             'What treatment did Sydenham prescribe for malaria fevers, imported from South America?',
           options: [
             'Mercury ointment',
-            'Boiling elderberry oil',
             'Leeches and vinegar',
+            'Boiling elderberry oil',
             'Cinchona bark (quinine)',
           ],
           answer: 'Cinchona bark (quinine)',
@@ -5331,10 +5328,10 @@ export const unitData = {
           question:
             'Which two childhood illnesses did Sydenham successfully prove were separate diseases?',
           options: [
-            'Typhoid and dysentery',
-            'Measles and scarlet fever',
             'Smallpox and plague',
+            'Measles and scarlet fever',
             'Tuberculosis and cholera',
+            'Typhoid and dysentery',
           ],
           answer: 'Measles and scarlet fever',
           explanation:
@@ -5344,10 +5341,10 @@ export const unitData = {
           question:
             "How did Thomas Sydenham's approach to diagnosing disease differ fundamentally from medieval humoural physicians?",
           options: [
-            'He performed internal dissections on living patients to inspect heart valves.',
-            'He viewed diseases as distinct species to be classified by observing symptoms, rather than individual fluid imbalances.',
-            'He calculated mathematical planetary alignments before prescribing medicines.',
             'He relied entirely on astrological charts and matula flasks.',
+            'He viewed diseases as distinct species to be classified by observing symptoms, rather than individual fluid imbalances.',
+            'He performed internal dissections on living patients to inspect heart valves.',
+            'He calculated mathematical planetary alignments before prescribing medicines.',
           ],
           answer:
             'He viewed diseases as distinct species to be classified by observing symptoms, rather than individual fluid imbalances.',
@@ -5358,8 +5355,8 @@ export const unitData = {
           question:
             'What radical treatment did Sydenham prescribe for smallpox, overturning the centuries-old traditional practice of suffocating patients in hot rooms?',
           options: [
-            'Immediate cauterisation with red-hot irons and boiling oil.',
             'Drinking heavy doses of liquid mercury and arsenic.',
+            'Immediate cauterisation with red-hot irons and boiling oil.',
             'A cooling regimen with fresh air, cool bedrooms, and light bedclothes.',
             'Mandatory bloodletting until the patient fainted.',
           ],
@@ -5370,7 +5367,7 @@ export const unitData = {
         {
           question:
             'What famous pain-relieving medicine did Sydenham develop by dissolving opium in Spanish wine?',
-          options: ['Laudanum', 'Penicillin', 'Carbolic acid', 'Chloroform'],
+          options: ['Laudanum', 'Carbolic acid', 'Penicillin', 'Chloroform'],
           answer: 'Laudanum',
           explanation:
             'Sydenham created liquid laudanum (a standardized tincture of opium), providing an effective treatment for severe pain, dysentery, and coughs.',
@@ -5379,9 +5376,9 @@ export const unitData = {
           question:
             'Why did Sydenham firmly reject the use of the microscope for clinical medical practice in the 17th century?',
           options: [
-            'He believed microscopes were instruments of witchcraft forbidden by royal decree.',
-            'He could not afford to purchase lenses imported from the Netherlands.',
             'He argued that human blood was too dense for light to pass through.',
+            'He could not afford to purchase lenses imported from the Netherlands.',
+            'He believed microscopes were instruments of witchcraft forbidden by royal decree.',
             'He believed practical bedside observation of symptoms was far more useful for curing patients than gazing at microscopic structures.',
           ],
           answer:
@@ -5395,8 +5392,8 @@ export const unitData = {
           options: [
             'Observationes Medicae',
             'De Motu Cordis',
-            'Canon of Medicine',
             'De Humani Corporis Fabrica',
+            'Canon of Medicine',
           ],
           answer: 'Observationes Medicae',
           explanation:
@@ -5407,8 +5404,8 @@ export const unitData = {
             'How did Thomas Sydenham radically alter the treatment of smallpox, breaking with traditional Galenic heating methods?',
           options: [
             'He ordered windows closed, heavy blankets piled on, and massive bloodletting.',
-            'He forced patients to ingest crushed pearls and drink boiled gold.',
             'He injected patients with live smallpox scabs directly into their veins.',
+            'He forced patients to ingest crushed pearls and drink boiled gold.',
             'He prescribed fresh cold air, light blankets, and cooling drinks rather than suffocating heat.',
           ],
           answer:
@@ -5803,8 +5800,8 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Professor of Surgery at Padua University (1537)',
-          theme_heading: 'Act 1: Professor of Surgery at Padua University (1537)',
+          title: 'Professor of Surgery at Padua University (1537)',
+          theme_heading: 'Professor of Surgery at Padua University (1537)',
           source: {
             id: 'source_a_fabrica_frontispiece',
             letter: 'A',
@@ -5832,14 +5829,14 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: Proving Galen Wrong on Human Anatomy (1540)',
-          theme_heading: 'Act 2: Proving Galen Wrong on Human Anatomy (1540)',
+          title: 'Proving Galen Wrong on Human Anatomy (1540)',
+          theme_heading: 'Proving Galen Wrong on Human Anatomy (1540)',
           text: '<span class="para-ref">[2.1]</span> Through years of hands-on human dissection, Vesalius made a startling discovery that shook European scholarship to its core: Claudius Galen had never dissected a human body in his entire career. Under imperial Roman pagan law, the dissection of human corpses had been strictly outlawed as desecration. Consequently, Galen had dissected Barbary apes, dogs, pigs, and sheep, falsely projecting animal anatomy directly onto the human species. For fourteen centuries, European university doctors had been worshipping the anatomy of apes while believing they were studying humanity.<br><br><span class="para-ref">[2.2]</span> Vesalius systematically compiled a catalog of over three hundred major anatomical errors in Galen’s canonical texts. Among his most famous corrections: he proved that the human lower jawbone is a single solid bone (not two bones fused together as in dogs); the human breastbone (sternum) consists of three parts (not seven segments as in apes); the human liver has two lobes (not five lobes as in pigs); and the human uterus is a simple pear-shaped chamber (not a multi-horned animal organ). Most radically, he investigated the muscular wall (septum) of the heart, proving that it was solid and contained no invisible porous holes for blood to filter through as Galen had claimed.',
         },
         {
           act: 3,
-          title: 'Act 3: Publication of De Humani Corporis Fabrica (1543)',
-          theme_heading: 'Act 3: Publication of De Humani Corporis Fabrica (1543)',
+          title: 'Publication of De Humani Corporis Fabrica (1543)',
+          theme_heading: 'Publication of De Humani Corporis Fabrica (1543)',
           source: {
             id: 'source_b_vesalius_muscle_men',
             letter: 'B',
@@ -5867,8 +5864,8 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Thomas Geminus & Dissemination in Britain (1545–1553)',
-          theme_heading: 'Act 4: Thomas Geminus & Dissemination in Britain (1545–1553)',
+          title: 'Thomas Geminus & Dissemination in Britain (1545–1553)',
+          theme_heading: 'Thomas Geminus & Dissemination in Britain (1545–1553)',
           source: {
             id: 'source_c_traditional_phlebotomy_man',
             letter: 'C',
@@ -5894,8 +5891,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: Fierce Opposition & Practical Limitations (c. 1560)',
-          theme_heading: 'Act 5: Fierce Opposition & Practical Limitations (c. 1560)',
+          title: 'Fierce Opposition & Practical Limitations (c. 1560)',
+          theme_heading: 'Fierce Opposition & Practical Limitations (c. 1560)',
           text: '<span class="para-ref">[5.1]</span> Vesalius’s demolition of Galen provoked furious outrage across conservative medical faculties. Traditionalist physicians in Paris and London condemned him as an arrogant upstart. His former university professor, Jacobus Sylvius, published a vitriolic attack branding Vesalius an "insolent madman" whose dissections were fraudulent, arguing that if human anatomy contradicted Galen, it was because the human body had degenerate and deformed since antiquity rather than Galen being wrong. Exhausted by bitter academic vitriol, Vesalius burned his remaining research notes in disgust, resigned his professorship at Padua, and spent his remaining career as court physician to Holy Roman Emperor Charles V.<br><br><span class="para-ref">[5.2]</span> Most significantly for ordinary patients, Vesalius’s anatomical revolution suffered from a profound practical limitation: knowing the exact structure of the human skeleton and muscles did not cure disease. Vesalius could describe an inflamed appendix or a diseased lung with forensic brilliance, but he could not prevent infection, stop internal hemorrhages, or alleviate fever. Without antiseptics, anaesthetics, or germ theory, everyday treatments remained stubbornly medieval: barber-surgeons still cauterized stumps with boiling oil, and physicians still bled patients according to the Four Humours. Vesalius revolutionized anatomical science, but saved zero lives in his lifetime.',
         },
       ],
@@ -6000,7 +5997,7 @@ export const unitData = {
       quiz: [
         {
           question: 'In what year did Andreas Vesalius publish De Humani Corporis Fabrica?',
-          options: ['1628', '1476', '1543', '1665'],
+          options: ['1628', '1665', '1543', '1476'],
           answer: '1543',
           explanation:
             'Vesalius published De Humani Corporis Fabrica in 1543, the same year Copernicus published his theory that the Earth revolved around the Sun.',
@@ -6009,10 +6006,10 @@ export const unitData = {
           question:
             'At which famous Italian university did Vesalius serve as professor of surgery?',
           options: [
-            'University of Oxford',
-            'University of Padua',
-            'University of Bologna',
             'University of Paris',
+            'University of Padua',
+            'University of Oxford',
+            'University of Bologna',
           ],
           answer: 'University of Padua',
           explanation:
@@ -6028,9 +6025,9 @@ export const unitData = {
         {
           question: 'State one specific anatomical error of Galen corrected by Vesalius.',
           options: [
-            'Human blood is purple rather than red.',
             'The human heart has 5 chambers instead of 4.',
             'The human brain is completely hollow.',
+            'Human blood is purple rather than red.',
             'The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7).',
           ],
           answer:
@@ -6041,7 +6038,7 @@ export const unitData = {
         {
           question:
             'Which ancient Roman medical authority did Andreas Vesalius directly challenge through his public human dissections?',
-          options: ['Hippocrates of Kos', 'Aristotle', 'Claudius Galen', 'Avicenna'],
+          options: ['Hippocrates of Kos', 'Avicenna', 'Claudius Galen', 'Aristotle'],
           answer: 'Claudius Galen',
           explanation:
             'Vesalius proved that Galen had made hundreds of anatomical errors because Roman law forbade human dissection, forcing Galen to dissect apes and pigs instead.',
@@ -6051,9 +6048,9 @@ export const unitData = {
             "What did Vesalius prove regarding the human breastbone (sternum), correcting Galen's ancient teaching?",
           options: [
             'It consists of three parts, whereas Galen claimed it had seven parts like an ape.',
-            'It is entirely composed of soft cartilage that disappears in adulthood.',
-            'It contains invisible pores that filter blood directly into the lungs.',
             'It is fused directly to the collarbone without joints.',
+            'It contains invisible pores that filter blood directly into the lungs.',
+            'It is entirely composed of soft cartilage that disappears in adulthood.',
           ],
           answer:
             'It consists of three parts, whereas Galen claimed it had seven parts like an ape.',
@@ -6064,10 +6061,10 @@ export const unitData = {
           question:
             'What crucial heart structure did Vesalius examine, proving that Galen was wrong about blood passing through it?',
           options: [
-            'The aorta, proving it carried air rather than blood.',
-            'The pulmonary valve, proving it was permanently open.',
-            'The septum (muscular wall between the ventricles), proving it has no invisible pores.',
             'The pericardium, proving it produced bile.',
+            'The aorta, proving it carried air rather than blood.',
+            'The septum (muscular wall between the ventricles), proving it has no invisible pores.',
+            'The pulmonary valve, proving it was permanently open.',
           ],
           answer:
             'The septum (muscular wall between the ventricles), proving it has no invisible pores.',
@@ -6079,9 +6076,9 @@ export const unitData = {
             "Why did Vesalius's revolutionary discoveries in human anatomy have almost no immediate impact on medical treatments in the 1500s?",
           options: [
             'Knowing the exact structure of the human body did not explain what caused disease or how to cure internal infections.',
-            'King Philip II of Spain ordered all copies of De Fabrica burned across Europe.',
             'Vesalius refused to let any surgeons or university students read his books.',
             'Padua University revoked his medical degree and banned dissection.',
+            'King Philip II of Spain ordered all copies of De Fabrica burned across Europe.',
           ],
           answer:
             'Knowing the exact structure of the human body did not explain what caused disease or how to cure internal infections.',
@@ -6092,10 +6089,10 @@ export const unitData = {
           question:
             'How did Andreas Vesalius revolutionize the teaching of anatomy in university lecture theatres, as famously depicted in the frontispiece of De Humani Corporis Fabrica (1543)?',
           options: [
-            'He used wax models and refused to touch human corpses.',
+            'He sat in an elevated chair (cathedra) reading Galen aloud while a barber-surgeon dissected.',
             'He stepped down to personally dissect human cadavers with his own hands directly before his students.',
             'He forbade medical students from ever entering the dissection room.',
-            'He sat in an elevated chair (cathedra) reading Galen aloud while a barber-surgeon dissected.',
+            'He used wax models and refused to touch human corpses.',
           ],
           answer:
             'He stepped down to personally dissect human cadavers with his own hands directly before his students.',
@@ -6107,8 +6104,8 @@ export const unitData = {
             'How did Andreas Vesalius ensure that his anatomical corrections to Galen were communicated accurately across Europe without being distorted by copyists?',
           options: [
             'He secretly hand-wrote only three copies and kept them locked in Padua.',
-            'He etched his diagrams onto copper coins distributed to Italian merchants.',
             'He whispered his findings to passing travellers to avoid Church detection.',
+            'He etched his diagrams onto copper coins distributed to Italian merchants.',
             'He used the movable-type printing press to publish over 200 meticulously accurate woodcut illustrations produced by master Renaissance artists.',
           ],
           answer:
@@ -6190,7 +6187,7 @@ export const unitData = {
       quick_quiz: [
         {
           question: 'In what year did Andreas Vesalius publish De Humani Corporis Fabrica?',
-          options: ['1628', '1476', '1543', '1665'],
+          options: ['1628', '1665', '1543', '1476'],
           answer: '1543',
           explanation:
             'Vesalius published De Humani Corporis Fabrica in 1543, the same year Copernicus published his theory that the Earth revolved around the Sun.',
@@ -6199,10 +6196,10 @@ export const unitData = {
           question:
             'At which famous Italian university did Vesalius serve as professor of surgery?',
           options: [
-            'University of Oxford',
-            'University of Padua',
-            'University of Bologna',
             'University of Paris',
+            'University of Padua',
+            'University of Oxford',
+            'University of Bologna',
           ],
           answer: 'University of Padua',
           explanation:
@@ -6219,9 +6216,9 @@ export const unitData = {
           question: 'State one specific anatomical error of Galen corrected by Vesalius.',
           options: [
             'The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7).',
-            'Human blood is purple rather than red.',
             'The human heart has 5 chambers instead of 4.',
             'The human brain is completely hollow.',
+            'Human blood is purple rather than red.',
           ],
           answer:
             'The human lower jaw is one bone (not two); the breastbone has 3 segments (not 7).',
@@ -6231,7 +6228,7 @@ export const unitData = {
         {
           question:
             'Which ancient Roman medical authority did Andreas Vesalius directly challenge through his public human dissections?',
-          options: ['Claudius Galen', 'Hippocrates of Kos', 'Aristotle', 'Avicenna'],
+          options: ['Claudius Galen', 'Hippocrates of Kos', 'Avicenna', 'Aristotle'],
           answer: 'Claudius Galen',
           explanation:
             'Vesalius proved that Galen had made hundreds of anatomical errors because Roman law forbade human dissection, forcing Galen to dissect apes and pigs instead.',
@@ -6240,9 +6237,9 @@ export const unitData = {
           question:
             "What did Vesalius prove regarding the human breastbone (sternum), correcting Galen's ancient teaching?",
           options: [
-            'It is entirely composed of soft cartilage that disappears in adulthood.',
-            'It contains invisible pores that filter blood directly into the lungs.',
             'It is fused directly to the collarbone without joints.',
+            'It contains invisible pores that filter blood directly into the lungs.',
+            'It is entirely composed of soft cartilage that disappears in adulthood.',
             'It consists of three parts, whereas Galen claimed it had seven parts like an ape.',
           ],
           answer:
@@ -6254,10 +6251,10 @@ export const unitData = {
           question:
             'What crucial heart structure did Vesalius examine, proving that Galen was wrong about blood passing through it?',
           options: [
-            'The aorta, proving it carried air rather than blood.',
-            'The septum (muscular wall between the ventricles), proving it has no invisible pores.',
-            'The pulmonary valve, proving it was permanently open.',
             'The pericardium, proving it produced bile.',
+            'The septum (muscular wall between the ventricles), proving it has no invisible pores.',
+            'The aorta, proving it carried air rather than blood.',
+            'The pulmonary valve, proving it was permanently open.',
           ],
           answer:
             'The septum (muscular wall between the ventricles), proving it has no invisible pores.',
@@ -6268,10 +6265,10 @@ export const unitData = {
           question:
             "Why did Vesalius's revolutionary discoveries in human anatomy have almost no immediate impact on medical treatments in the 1500s?",
           options: [
-            'King Philip II of Spain ordered all copies of De Fabrica burned across Europe.',
             'Vesalius refused to let any surgeons or university students read his books.',
-            'Knowing the exact structure of the human body did not explain what caused disease or how to cure internal infections.',
             'Padua University revoked his medical degree and banned dissection.',
+            'Knowing the exact structure of the human body did not explain what caused disease or how to cure internal infections.',
+            'King Philip II of Spain ordered all copies of De Fabrica burned across Europe.',
           ],
           answer:
             'Knowing the exact structure of the human body did not explain what caused disease or how to cure internal infections.',
@@ -6284,8 +6281,8 @@ export const unitData = {
           options: [
             'University of Padua',
             'University of Oxford',
-            'University of Bologna',
             'University of Paris',
+            'University of Bologna',
           ],
           answer: 'University of Padua',
           explanation:
@@ -6296,8 +6293,8 @@ export const unitData = {
             'How did Andreas Vesalius obtain human bodies for anatomical dissection during his early research in Paris and Louvain?',
           options: [
             'He paid living volunteers large sums of money to undergo operations.',
-            'He was provided bodies exclusively by the Pope in Rome.',
             'He ordered bodies preserved in ice from Scandinavia.',
+            'He was provided bodies exclusively by the Pope in Rome.',
             'He secretly stole corpses from the roadside gallows and raided cemetery burial grounds at night.',
           ],
           answer:
@@ -6697,20 +6694,20 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Dissecting Cold-Blooded Animals & Padua Foundations (c. 1615)',
-          theme_heading: 'Act 1: Dissecting Cold-Blooded Animals & Padua Foundations (c. 1615)',
+          title: 'Dissecting Cold-Blooded Animals & Padua Foundations (c. 1615)',
+          theme_heading: 'Dissecting Cold-Blooded Animals & Padua Foundations (c. 1615)',
           text: '<span class="para-ref">[1.1]</span> For fourteen centuries, European medicine operated under Claudius Galen’s complex model of physiology. Galen taught that the human body contained two entirely separate circulatory systems with different functions. Dark venous blood, containing natural spirits, was continuously manufactured in the liver from digested food (chyle) and flowed outwards through veins to nourish body tissues, where it was completely consumed like fuel in a fire. Meanwhile, bright arterial blood, enriched with vital heat and air from the lungs, was pumped through arteries to provide life and movement. Galen insisted that blood seeped between these two systems through invisible pores in the central muscular wall (septum) of the heart.<br><br><span class="para-ref">[1.2]</span> William Harvey (1578–1657) dismantled this ancient dogma. After studying at Cambridge, Harvey traveled to the University of Padua, the leading center of European anatomical research. There, he studied under the master anatomist Hieronymus Fabricius, who had discovered tiny one-way flaps or "valves" inside human veins. While Fabricius believed these valves merely slowed down the outward rush of blood to prevent pooling in the feet, Harvey suspected they had a far more radical mechanical purpose: to ensure that blood could only ever flow in one direction—back toward the heart. Returning to England, Harvey conducted intensive laboratory vivisections on over eighty species of animals, focusing on cold-blooded creatures like frogs, toads, and snakes whose slow heartbeats allowed him to observe cardiac contractions clearly.',
         },
         {
           act: 2,
-          title: 'Act 2: The Mechanical Pump & Quantitative Proof (1620s)',
-          theme_heading: 'Act 2: The Mechanical Pump & Quantitative Proof (1620s)',
+          title: 'The Mechanical Pump & Quantitative Proof (1620s)',
+          theme_heading: 'The Mechanical Pump & Quantitative Proof (1620s)',
           text: '<span class="para-ref">[2.1]</span> Influenced by the Renaissance mechanical philosophy of the scientific revolution—which viewed nature as an intricate clockwork mechanism—Harvey reconceptualized the heart not as a mysterious spiritual furnace, but as a mechanical muscular pump. Through meticulous vivisections, he proved that the heart actively contracts during systole, forcing blood out into the arteries, rather than expanding like a sponge to suck blood in as Galen had claimed.<br><br><span class="para-ref">[2.2]</span> Harvey’s most devastating argument against Galen was mathematical. Measuring the internal capacity of the human left ventricle, he calculated that with every heartbeat, approximately two ounces of blood were forced into the aorta. At an average pulse of 72 beats per minute, the heart pumped 540 pints (nearly 300 liters) of blood into the body every single hour—three times the total weight of an average human being! It was physically impossible for the liver to manufacture this astronomical quantity of blood from food, nor could the body consume it. The only logical scientific conclusion was that the blood was not consumed at all: it was the same finite volume of blood circulating continuously in a closed, perpetual loop.',
         },
         {
           act: 3,
-          title: 'Act 3: Publication of De Motu Cordis & Tourniquet Proof (1628)',
-          theme_heading: 'Act 3: Publication of De Motu Cordis & Tourniquet Proof (1628)',
+          title: 'Publication of De Motu Cordis & Tourniquet Proof (1628)',
+          theme_heading: 'Publication of De Motu Cordis & Tourniquet Proof (1628)',
           source: {
             id: 'source_a_harvey_de_motu_cordis',
             letter: 'A',
@@ -6738,14 +6735,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Ridicule by ‘Galenists’ & Lost Patients (1630s–1650s)',
-          theme_heading: 'Act 4: Ridicule by ‘Galenists’ & Lost Patients (1630s–1650s)',
+          title: 'Ridicule by ‘Galenists’ & Lost Patients (1630s–1650s)',
+          theme_heading: 'Ridicule by ‘Galenists’ & Lost Patients (1630s–1650s)',
           text: '<span class="para-ref">[4.1]</span> Harvey’s discovery met furious resistance from conservative physicians across Europe. Senior doctors refused to believe that Galen had been mistaken for over a millennium. Critics ridiculed Harvey as a "circulator" (a Latin pun meaning an irrational quack who travels in circles), and many of his wealthy private patients abandoned him, fearing his radical, unproven theories would endanger their health.<br><br><span class="para-ref">[4.2]</span> Furthermore, Harvey faced a major scientific gap that his critics ruthlessly exploited: he could not explain how blood passed from the microscopic endings of the arteries into the beginnings of the veins. Harvey theorized that tiny invisible channels must exist in body tissue, but because compound microscopes were in their infancy, he could not physically demonstrate them, leaving a frustrating anatomical gap in his complete circulatory circuit.',
         },
         {
           act: 5,
-          title: 'Act 5: Marcello Malpighi Confirms Capillaries & Practical Limits (1661)',
-          theme_heading: 'Act 5: Marcello Malpighi Confirms Capillaries & Practical Limits (1661)',
+          title: 'Marcello Malpighi Confirms Capillaries & Practical Limits (1661)',
+          theme_heading: 'Marcello Malpighi Confirms Capillaries & Practical Limits (1661)',
           text: '<span class="para-ref">[5.1]</span> The missing anatomical link was finally discovered in 1661, four years after Harvey’s death. The Italian anatomist Marcello Malpighi, using newly perfected compound microscopes, examined the thin lung tissue of a living frog. Magnified under curved glass lenses, Malpighi observed delicate, microscopic blood vessels connecting the arterial branches directly to the venous system—the capillaries. Malpighi’s microscopic discovery provided the final physical proof of Harvey’s closed circulatory loop, silencing his remaining critics forever.<br><br><span class="para-ref">[5.2]</span> Yet despite this crowning intellectual victory, Harvey’s discovery had virtually zero immediate impact on everyday medical treatment. Knowing that blood circulated did not cure fevers, heal surgical gangrene, or prevent plague. Early attempts at blood transfusion in England and France killed patients due to ignorance of blood groups, prompting Parliament to ban transfusion by law. Most tragically, despite Harvey proving that the body possessed a finite, precious circulating volume of blood, physicians—including Harvey himself—continued to prescribe aggressive bloodletting using leeches and lancets for another two hundred years. Harvey revolutionized physiology, but saved no lives during the Renaissance.',
         },
       ],
@@ -6847,7 +6844,7 @@ export const unitData = {
       quiz: [
         {
           question: 'In what year did William Harvey publish De Motu Cordis?',
-          options: ['1543', '1628', '1665', '1676'],
+          options: ['1543', '1628', '1676', '1665'],
           answer: '1628',
           explanation: 'Harvey published De Motu Cordis in Frankfurt in 1628.',
         },
@@ -6867,7 +6864,7 @@ export const unitData = {
         {
           question:
             'What tiny blood vessels connecting arteries and veins could Harvey NOT see without a microscope?',
-          options: ['Vena cavas', 'Ligatures', 'Aortas', 'Capillaries'],
+          options: ['Aortas', 'Vena cavas', 'Ligatures', 'Capillaries'],
           answer: 'Capillaries',
           explanation:
             'Capillaries were invisible to the naked eye; Marcello Malpighi discovered them in 1661 using a microscope.',
@@ -6877,9 +6874,9 @@ export const unitData = {
             "Why did Harvey's discovery of blood circulation have NO immediate effect on medical treatment?",
           options: [
             'Doctors did not know what caused infection and continued bloodletting to balance humours.',
-            'The King banned the practice of medicine across England.',
-            'All patients refused to let doctors touch their pulses.',
             'Harvey burned all his research papers before dying.',
+            'All patients refused to let doctors touch their pulses.',
+            'The King banned the practice of medicine across England.',
           ],
           answer:
             'Doctors did not know what caused infection and continued bloodletting to balance humours.',
@@ -6891,9 +6888,9 @@ export const unitData = {
             'How did William Harvey calculate that the liver could not possibly manufacture new blood from digested food?',
           options: [
             'He analyzed chemical elements inside the liver using an early spectrometer.',
-            'He weighed the amount of bread eaten by patients before surgery.',
-            "He calculated the heart pumped roughly 540 pints of blood per hour, which exceeded the entire body's weight.",
             'He measured blood pressure using a mercury manometer.',
+            "He calculated the heart pumped roughly 540 pints of blood per hour, which exceeded the entire body's weight.",
+            'He weighed the amount of bread eaten by patients before surgery.',
           ],
           answer:
             "He calculated the heart pumped roughly 540 pints of blood per hour, which exceeded the entire body's weight.",
@@ -6906,8 +6903,8 @@ export const unitData = {
           options: [
             'He injected blue dye into the arterial blood of volunteer students.',
             "He applied a tight ligature to a patient's arm and tried pushing blood backwards through vein valves.",
-            'He immersed arms in freezing water to stop circulation.',
             'He cut the radial artery to measure blood velocity.',
+            'He immersed arms in freezing water to stop circulation.',
           ],
           answer:
             "He applied a tight ligature to a patient's arm and tried pushing blood backwards through vein valves.",
@@ -6920,8 +6917,8 @@ export const unitData = {
           options: [
             'Andreas Vesalius',
             'Marcello Malpighi',
-            'Galileo Galilei',
             'Santorio Santorio',
+            'Galileo Galilei',
           ],
           answer: 'Marcello Malpighi',
           explanation:
@@ -6932,8 +6929,8 @@ export const unitData = {
             "How did traditional 17th-century physicians initially react to Harvey's revolutionary book De Motu Cordis?",
           options: [
             "Many called him a 'quack' or lunatic and refused to abandon Galen's teachings during their lifetimes.",
-            'They immediately stopped all bloodletting across London hospitals.',
             'They awarded him the Royal Society Gold Medal in 1628.',
+            'They immediately stopped all bloodletting across London hospitals.',
             'They successfully petitioned parliament to ban blood circulation lectures.',
           ],
           answer:
@@ -6946,9 +6943,9 @@ export const unitData = {
             'What mechanical device from the Scientific Revolution did William Harvey compare the human heart to, disproving the ancient idea that the heart acted like an open furnace?',
           options: [
             'An hourglass measuring the sands of biological time.',
-            'A magnetic compass guiding blood along planetary meridians.',
-            'A water pump with mechanical valves operating on hydrodynamic principles.',
             'A windmill grinding nutrients into animal spirits.',
+            'A water pump with mechanical valves operating on hydrodynamic principles.',
+            'A magnetic compass guiding blood along planetary meridians.',
           ],
           answer: 'A water pump with mechanical valves operating on hydrodynamic principles.',
           explanation:
@@ -6958,8 +6955,8 @@ export const unitData = {
           question:
             'Which English monarchs did William Harvey serve as personal royal physician, granting him access to royal deer herds for dissecting beating hearts?',
           options: [
-            'Queen Elizabeth I and King Edward VI',
             'King Henry VIII and Queen Mary I',
+            'Queen Elizabeth I and King Edward VI',
             'King George III and Queen Victoria',
             'King James I and King Charles I',
           ],
@@ -7015,7 +7012,7 @@ export const unitData = {
       quick_quiz: [
         {
           question: 'In what year did William Harvey publish De Motu Cordis?',
-          options: ['1543', '1665', '1676', '1628'],
+          options: ['1543', '1676', '1665', '1628'],
           answer: '1628',
           explanation: 'Harvey published De Motu Cordis in Frankfurt in 1628.',
         },
@@ -7035,7 +7032,7 @@ export const unitData = {
         {
           question:
             'What tiny blood vessels connecting arteries and veins could Harvey NOT see without a microscope?',
-          options: ['Capillaries', 'Vena cavas', 'Ligatures', 'Aortas'],
+          options: ['Capillaries', 'Aortas', 'Vena cavas', 'Ligatures'],
           answer: 'Capillaries',
           explanation:
             'Capillaries were invisible to the naked eye; Marcello Malpighi discovered them in 1661 using a microscope.',
@@ -7044,10 +7041,10 @@ export const unitData = {
           question:
             "Why did Harvey's discovery of blood circulation have NO immediate effect on medical treatment?",
           options: [
-            'The King banned the practice of medicine across England.',
+            'Harvey burned all his research papers before dying.',
             'All patients refused to let doctors touch their pulses.',
             'Doctors did not know what caused infection and continued bloodletting to balance humours.',
-            'Harvey burned all his research papers before dying.',
+            'The King banned the practice of medicine across England.',
           ],
           answer:
             'Doctors did not know what caused infection and continued bloodletting to balance humours.',
@@ -7059,8 +7056,8 @@ export const unitData = {
             'How did William Harvey calculate that the liver could not possibly manufacture new blood from digested food?',
           options: [
             'He analyzed chemical elements inside the liver using an early spectrometer.',
-            'He weighed the amount of bread eaten by patients before surgery.',
             'He measured blood pressure using a mercury manometer.',
+            'He weighed the amount of bread eaten by patients before surgery.',
             "He calculated the heart pumped roughly 540 pints of blood per hour, which exceeded the entire body's weight.",
           ],
           answer:
@@ -7074,8 +7071,8 @@ export const unitData = {
           options: [
             "He applied a tight ligature to a patient's arm and tried pushing blood backwards through vein valves.",
             'He injected blue dye into the arterial blood of volunteer students.',
-            'He immersed arms in freezing water to stop circulation.',
             'He cut the radial artery to measure blood velocity.',
+            'He immersed arms in freezing water to stop circulation.',
           ],
           answer:
             "He applied a tight ligature to a patient's arm and tried pushing blood backwards through vein valves.",
@@ -7087,9 +7084,9 @@ export const unitData = {
             "Which famous Italian microscopist finally observed capillaries in a frog's lung in 1661, visually confirming Harvey's theory four years after Harvey died?",
           options: [
             'Andreas Vesalius',
-            'Galileo Galilei',
-            'Marcello Malpighi',
             'Santorio Santorio',
+            'Marcello Malpighi',
+            'Galileo Galilei',
           ],
           answer: 'Marcello Malpighi',
           explanation:
@@ -7099,9 +7096,9 @@ export const unitData = {
           question:
             "How did traditional 17th-century physicians initially react to Harvey's revolutionary book De Motu Cordis?",
           options: [
-            'They immediately stopped all bloodletting across London hospitals.',
-            "Many called him a 'quack' or lunatic and refused to abandon Galen's teachings during their lifetimes.",
             'They awarded him the Royal Society Gold Medal in 1628.',
+            "Many called him a 'quack' or lunatic and refused to abandon Galen's teachings during their lifetimes.",
+            'They immediately stopped all bloodletting across London hospitals.',
             'They successfully petitioned parliament to ban blood circulation lectures.',
           ],
           answer:
@@ -7115,8 +7112,8 @@ export const unitData = {
           options: [
             'An hourglass measuring the sands of biological time.',
             'A water pump with mechanical valves operating on hydrodynamic principles.',
-            'A magnetic compass guiding blood along planetary meridians.',
             'A windmill grinding nutrients into animal spirits.',
+            'A magnetic compass guiding blood along planetary meridians.',
           ],
           answer: 'A water pump with mechanical valves operating on hydrodynamic principles.',
           explanation:
@@ -7126,8 +7123,8 @@ export const unitData = {
           question:
             'Which English monarchs did William Harvey serve as personal royal physician, granting him access to royal deer herds for dissecting beating hearts?',
           options: [
-            'Queen Elizabeth I and King Edward VI',
             'King Henry VIII and Queen Mary I',
+            'Queen Elizabeth I and King Edward VI',
             'King James I and King Charles I',
             'King George III and Queen Victoria',
           ],
@@ -7526,14 +7523,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: The Outbreak in St Giles-in-the-Fields (Spring 1665)',
-          theme_heading: 'Act 1: The Outbreak in St Giles-in-the-Fields (Spring 1665)',
+          title: 'The Outbreak in St Giles-in-the-Fields (Spring 1665)',
+          theme_heading: 'The Outbreak in St Giles-in-the-Fields (Spring 1665)',
           text: '<span class="para-ref">[1.1]</span> In the spring of 1665, after a winter of bitter frost, bubonic plague erupted across London. Beginning in the crowded, impoverished suburban parish of St Giles-in-the-Fields, the epidemic exploded during an unusually hot, dry summer. Within weeks, the death toll escalated from dozens to thousands per week. At its catastrophic peak in September, over 7,000 people were dying every seven days. By the time the epidemic subsided in the winter frost, over 100,000 Londoners—nearly twenty percent of the city’s population—had perished.<br><br><span class="para-ref">[1.2]</span> As panic gripped the capital, King Charles II, Parliament, and wealthy aristocrats fled to the countryside. Most university-educated physicians abandoned their practices and followed the royal court, leaving ordinary citizens to face the nightmare alone. Commerce collapsed, shipping on the River Thames was quarantined, and London became an eerie city of silence, punctuated only by the mourning wails of families and the midnight rumble of dead-carts.',
         },
         {
           act: 2,
-          title: 'Act 2: Continuity of Humoral & Supernatural Beliefs (Summer 1665)',
-          theme_heading: 'Act 2: Continuity of Humoral & Supernatural Beliefs (Summer 1665)',
+          title: 'Continuity of Humoral & Supernatural Beliefs (Summer 1665)',
+          theme_heading: 'Continuity of Humoral & Supernatural Beliefs (Summer 1665)',
           source: {
             id: 'source_b_plague_doctor_schnabel',
             letter: 'B',
@@ -7561,20 +7558,20 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Mayor’s Orders & Pest Houses (1665)',
-          theme_heading: 'Act 3: Mayor’s Orders & Pest Houses (1665)',
+          title: 'Mayor’s Orders & Pest Houses (1665)',
+          theme_heading: 'Mayor’s Orders & Pest Houses (1665)',
           text: '<span class="para-ref">[3.1]</span> Compared to the disorganized, panicked response to the Black Death in 1348, the response of London’s local government in 1665 demonstrated a major advancement in civic public health administration. The Lord Mayor and Court of Aldermen issued strict "Plague Orders". Parishes appointed two female "Searchers of the Dead" to inspect corpses and verify the cause of death. Parishes also published weekly <em>Bills of Mortality</em>, detailing deaths parish by parish to monitor the epidemic’s spread—an early form of statistical epidemiology.<br><br><span class="para-ref">[3.2]</span> The most aggressive municipal policy was compulsory household quarantine. When plague struck a family, the entire house was boarded up and locked for 28 days. A red cross, twelve inches high, was painted on the door beneath the solemn plea: "Lord have mercy upon us". Two watchmen were assigned to every locked home—one by day and one by night—to bring food and prevent anyone from escaping. All public gatherings, theatrical performances, sports, and traditional funeral ceremonies were banned. Sufferers were transferred where possible to dedicated municipal wooden Pest Houses constructed outside the city walls to isolate infection.',
         },
         {
           act: 4,
-          title: 'Act 4: Slaughter of Dogs & Smoking Tar Barrels (1665)',
-          theme_heading: 'Act 4: Slaughter of Dogs & Smoking Tar Barrels (1665)',
+          title: 'Slaughter of Dogs & Smoking Tar Barrels (1665)',
+          theme_heading: 'Slaughter of Dogs & Smoking Tar Barrels (1665)',
           text: '<span class="para-ref">[4.1]</span> Believing that domestic animals carried the poisonous miasmatic contagion in their fur, the Lord Mayor ordered the mass extermination of domestic animals. Special animal catchers were employed, leading to the slaughter of over 40,000 domestic dogs and an estimated 200,000 cats across the city’s parishes.<br><br><span class="para-ref">[4.2]</span> This decision proved to be a catastrophic medical error. Slaughtering cats and dogs eliminated the natural predators of the black rat (<em>Rattus rattus</em>). With rodent predators removed, flea-carrying black rats multiplied completely unchecked throughout London’s timbered tenements, accelerating the spread of <em>Yersinia pestis</em>. Meanwhile, city constables burned barrels of pitch and sulfur day and night at street crossings, choking residents in acrid smoke without killing a single flea.',
         },
         {
           act: 5,
-          title: 'Act 5: The Dead Carts & Demographic Collapse (Winter 1665–1666)',
-          theme_heading: 'Act 5: The Dead Carts & Demographic Collapse (Winter 1665–1666)',
+          title: 'The Dead Carts & Demographic Collapse (Winter 1665–1666)',
+          theme_heading: 'The Dead Carts & Demographic Collapse (Winter 1665–1666)',
           source: {
             id: 'source_a_night_plague_burials',
             letter: 'A',
@@ -7699,8 +7696,8 @@ export const unitData = {
         {
           question: 'Roughly how many Londoners died during the Great Plague of 1665?',
           options: [
-            'About 5,000',
             'Over 1 million',
+            'About 5,000',
             'Less than 1,000',
             'Over 100,000 (roughly 20%)',
           ],
@@ -7724,8 +7721,8 @@ export const unitData = {
           question:
             'Why was the slaughter of 200,000 cats and dogs in 1665 a catastrophic mistake?',
           options: [
-            'Cats and dogs were the only animals that could smell the plague bacteria.',
             'The meat was needed to feed citizens during quarantine.',
+            'Cats and dogs were the only animals that could smell the plague bacteria.',
             'It removed the natural predators of black rats, allowing the flea-carrying rat population to explode.',
             'It angered the King, who punished the Lord Mayor.',
           ],
@@ -7738,9 +7735,9 @@ export const unitData = {
           question:
             'Which event in September 1666 helped bring an end to the plague epidemic in London?',
           options: [
+            'The arrival of Penicillin',
             'The coronation of a new King',
             'A severe drought that dried up the Thames',
-            'The arrival of Penicillin',
             'The Great Fire of London',
           ],
           answer: 'The Great Fire of London',
@@ -7751,10 +7748,10 @@ export const unitData = {
           question:
             'What municipal civic order was enforced by the Mayor of London when an inhabitant showed symptoms of the Great Plague in 1665?',
           options: [
-            'All family members were immediately put on ships and exiled to the American colonies.',
-            'The infected house was padlocked shut for 28 days and guarded day and night by appointed watchmen.',
-            'The family was forced to swim in the River Thames to wash away infection.',
             'The house was immediately demolished and burned to the ground.',
+            'The infected house was padlocked shut for 28 days and guarded day and night by appointed watchmen.',
+            'All family members were immediately put on ships and exiled to the American colonies.',
+            'The family was forced to swim in the River Thames to wash away infection.',
           ],
           answer:
             'The infected house was padlocked shut for 28 days and guarded day and night by appointed watchmen.',
@@ -7766,9 +7763,9 @@ export const unitData = {
             'What weekly statistical publications were printed in London in 1665 to track the rising death toll across parishes?',
           options: [
             'Bills of Mortality',
+            'The Black Book',
             'The London Gazette',
             'Philosophical Transactions',
-            'The Black Book',
           ],
           answer: 'Bills of Mortality',
           explanation:
@@ -7779,9 +7776,9 @@ export const unitData = {
             'What popular miasmatic remedy did ordinary Londoners and schoolboys carry or use to ward off foul plague air in 1665?',
           options: [
             'Smoking tobacco and holding sweet-scented herbal pomanders to their noses.',
-            'Inhaling pure oxygen from rubber bladders.',
-            'Rubbing carbolic acid ointment onto their chests.',
             'Drinking cowpox lymph dissolved in warm milk.',
+            'Rubbing carbolic acid ointment onto their chests.',
+            'Inhaling pure oxygen from rubber bladders.',
           ],
           answer: 'Smoking tobacco and holding sweet-scented herbal pomanders to their noses.',
           explanation:
@@ -7791,10 +7788,10 @@ export const unitData = {
           question:
             'In what crucial way did medical beliefs during the Great Plague of 1665 show overwhelming continuity with the Black Death of 1348?',
           options: [
-            'Doctors used penicillin to cure 95% of infected patients.',
-            "People still believed the disease was caused by God's wrath or miasma, and physicians had zero effective medical cures.",
-            'The government successfully identified microscopic Yersinia pestis bacteria.',
             'Monks in scriptoria still controlled all public health policies in London.',
+            "People still believed the disease was caused by God's wrath or miasma, and physicians had zero effective medical cures.",
+            'Doctors used penicillin to cure 95% of infected patients.',
+            'The government successfully identified microscopic Yersinia pestis bacteria.',
           ],
           answer:
             "People still believed the disease was caused by God's wrath or miasma, and physicians had zero effective medical cures.",
@@ -7805,9 +7802,9 @@ export const unitData = {
           question:
             'What distinctive protective costume was worn by Renaissance plague doctors in 1665, illustrating the persistent belief that disease was transmitted through foul air?',
           options: [
-            'Woollen monk robes with a red wooden cross tied to the chest.',
             'White cotton scrubs soaked in antiseptic carbolic acid.',
             'Full steel armour with an airtight diving helmet.',
+            'Woollen monk robes with a red wooden cross tied to the chest.',
             'Waxed leather cloaks and a bird-like beak mask packed with sweet-smelling herbs, dried flowers, and camphor.',
           ],
           answer:
@@ -7820,9 +7817,9 @@ export const unitData = {
             'What public health orders were enforced by the Lord Mayor and aldermen of London in 1665 to contain the spread of the Great Plague?',
           options: [
             'Mandatory vaccination of all infants with cowpox lymph.',
-            'Draining all marshes and spraying chemical insecticides across the city.',
-            'Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits.',
             'Closing all water pumps throughout the Soho district of London.',
+            'Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits.',
+            'Draining all marshes and spraying chemical insecticides across the city.',
           ],
           answer:
             'Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits.',
@@ -7900,9 +7897,9 @@ export const unitData = {
         {
           question: 'Roughly how many Londoners died during the Great Plague of 1665?',
           options: [
-            'About 5,000',
-            'Over 100,000 (roughly 20%)',
             'Over 1 million',
+            'Over 100,000 (roughly 20%)',
+            'About 5,000',
             'Less than 1,000',
           ],
           answer: 'Over 100,000 (roughly 20%)',
@@ -7925,8 +7922,8 @@ export const unitData = {
           question:
             'Why was the slaughter of 200,000 cats and dogs in 1665 a catastrophic mistake?',
           options: [
-            'Cats and dogs were the only animals that could smell the plague bacteria.',
             'The meat was needed to feed citizens during quarantine.',
+            'Cats and dogs were the only animals that could smell the plague bacteria.',
             'It removed the natural predators of black rats, allowing the flea-carrying rat population to explode.',
             'It angered the King, who punished the Lord Mayor.',
           ],
@@ -7939,9 +7936,9 @@ export const unitData = {
           question:
             'Which event in September 1666 helped bring an end to the plague epidemic in London?',
           options: [
+            'The arrival of Penicillin',
             'The coronation of a new King',
             'A severe drought that dried up the Thames',
-            'The arrival of Penicillin',
             'The Great Fire of London',
           ],
           answer: 'The Great Fire of London',
@@ -7953,9 +7950,9 @@ export const unitData = {
             'What municipal civic order was enforced by the Mayor of London when an inhabitant showed symptoms of the Great Plague in 1665?',
           options: [
             'The infected house was padlocked shut for 28 days and guarded day and night by appointed watchmen.',
+            'The house was immediately demolished and burned to the ground.',
             'All family members were immediately put on ships and exiled to the American colonies.',
             'The family was forced to swim in the River Thames to wash away infection.',
-            'The house was immediately demolished and burned to the ground.',
           ],
           answer:
             'The infected house was padlocked shut for 28 days and guarded day and night by appointed watchmen.',
@@ -7966,9 +7963,9 @@ export const unitData = {
           question:
             'What weekly statistical publications were printed in London in 1665 to track the rising death toll across parishes?',
           options: [
+            'The Black Book',
             'The London Gazette',
             'Philosophical Transactions',
-            'The Black Book',
             'Bills of Mortality',
           ],
           answer: 'Bills of Mortality',
@@ -7979,10 +7976,10 @@ export const unitData = {
           question:
             'What popular miasmatic remedy did ordinary Londoners and schoolboys carry or use to ward off foul plague air in 1665?',
           options: [
-            'Inhaling pure oxygen from rubber bladders.',
+            'Drinking cowpox lymph dissolved in warm milk.',
             'Rubbing carbolic acid ointment onto their chests.',
             'Smoking tobacco and holding sweet-scented herbal pomanders to their noses.',
-            'Drinking cowpox lymph dissolved in warm milk.',
+            'Inhaling pure oxygen from rubber bladders.',
           ],
           answer: 'Smoking tobacco and holding sweet-scented herbal pomanders to their noses.',
           explanation:
@@ -7992,10 +7989,10 @@ export const unitData = {
           question:
             'In what crucial way did medical beliefs during the Great Plague of 1665 show overwhelming continuity with the Black Death of 1348?',
           options: [
-            'Doctors used penicillin to cure 95% of infected patients.',
-            "People still believed the disease was caused by God's wrath or miasma, and physicians had zero effective medical cures.",
-            'The government successfully identified microscopic Yersinia pestis bacteria.',
             'Monks in scriptoria still controlled all public health policies in London.',
+            "People still believed the disease was caused by God's wrath or miasma, and physicians had zero effective medical cures.",
+            'Doctors used penicillin to cure 95% of infected patients.',
+            'The government successfully identified microscopic Yersinia pestis bacteria.',
           ],
           answer:
             "People still believed the disease was caused by God's wrath or miasma, and physicians had zero effective medical cures.",
@@ -8006,10 +8003,10 @@ export const unitData = {
           question:
             'What distinctive protective costume was worn by Renaissance plague doctors in 1665, illustrating the persistent belief that disease was transmitted through foul air?',
           options: [
-            'Woollen monk robes with a red wooden cross tied to the chest.',
-            'Waxed leather cloaks and a bird-like beak mask packed with sweet-smelling herbs, dried flowers, and camphor.',
             'White cotton scrubs soaked in antiseptic carbolic acid.',
+            'Waxed leather cloaks and a bird-like beak mask packed with sweet-smelling herbs, dried flowers, and camphor.',
             'Full steel armour with an airtight diving helmet.',
+            'Woollen monk robes with a red wooden cross tied to the chest.',
           ],
           answer:
             'Waxed leather cloaks and a bird-like beak mask packed with sweet-smelling herbs, dried flowers, and camphor.',
@@ -8022,8 +8019,8 @@ export const unitData = {
           options: [
             'Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits.',
             'Mandatory vaccination of all infants with cowpox lymph.',
-            'Draining all marshes and spraying chemical insecticides across the city.',
             'Closing all water pumps throughout the Soho district of London.',
+            'Draining all marshes and spraying chemical insecticides across the city.',
           ],
           answer:
             'Banning public assemblies and theatres, lighting fires on street corners to purify the air, and collecting corpses at night in dead-carts for burial in communal pits.',
@@ -8417,14 +8414,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Spontaneous Generation & Miasma Orthodoxy (c1700–1850s)',
-          theme_heading: 'Act 1: Spontaneous Generation & Miasma Orthodoxy (c1700–1850s)',
+          title: 'Spontaneous Generation & Miasma Orthodoxy (c1700–1850s)',
+          theme_heading: 'Spontaneous Generation & Miasma Orthodoxy (c1700–1850s)',
           text: '<span class="para-ref">[1.1]</span> At the dawn of the 1860s, European understanding of disease causation was mired in intellectual confusion. While Antonie van Leeuwenhoek had observed microscopic "animalcules" in 1676, natural philosophers assumed these organisms were harmless oddities. The dominant scientific paradigm remained <em>Spontaneous Generation</em>—the belief that rotting matter naturally generated living microbes out of decay, just as rotting meat appeared to spawn flies and maggots. Furthermore, the medical profession clung tenaciously to <em>miasma theory</em>, maintaining that poisonous, foul-smelling vapors rising from cesspools and decomposing organic matter poisoned the blood.<br><br><span class="para-ref">[1.2]</span> In 1859, the French Academy of Sciences offered the prestigious Alhumbert Prize to anyone who could solve the mystery of spontaneous generation through definitive, repeatable experimentation. The challenge was accepted by Louis Pasteur, an energetic French chemist working at the University of Lille. Hired by industrial manufacturers whose beer, wine, and milk were spoiling, Pasteur made the crucial observation that fermentation was caused by living microscopic yeasts, while souring was caused by lactic acid microbes. Pasteur hypothesized that microbes did not generate spontaneously from liquids, but were living organisms carried invisibly through the atmosphere.',
         },
         {
           act: 2,
-          title: 'Act 2: Louis Pasteur & The Germ Theory Breakthrough (1861)',
-          theme_heading: 'Act 2: Louis Pasteur & The Germ Theory Breakthrough (1861)',
+          title: 'Louis Pasteur & The Germ Theory Breakthrough (1861)',
+          theme_heading: 'Louis Pasteur & The Germ Theory Breakthrough (1861)',
           source: {
             id: 'source_a_pasteur_lab',
             letter: 'A',
@@ -8452,14 +8449,14 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: British Scepticism & John Tyndall (1867–1876)',
-          theme_heading: 'Act 3: British Scepticism & John Tyndall (1867–1876)',
+          title: 'British Scepticism & John Tyndall (1867–1876)',
+          theme_heading: 'British Scepticism & John Tyndall (1867–1876)',
           text: '<span class="para-ref">[3.1]</span> Despite Pasteur’s brilliance, his Germ Theory encountered formidable resistance in Britain. Pasteur was an industrial chemist, not a qualified physician; while he proved microbes caused beer to turn sour, he had not proven which specific germ caused which specific human disease. Powerful British authorities—led by Dr Henry Charlton Bastian, Professor of Pathological Anatomy at University College London—violently opposed Germ Theory through the 1870s. In the <em>British Medical Journal</em>, Bastian pointed out that because transparent bacteria lived habitually inside healthy human throats and intestines, it was absurd to blame them for lethal epidemics.<br><br><span class="para-ref">[3.2]</span> British medical skepticism began to erode thanks to the Irish physicist John Tyndall. Conducting precision light-beam experiments in sealed optical chambers between 1869 and 1876, Tyndall demonstrated that dust-free air never produced bacterial growth, while ordinary atmospheric dust teemed with living bacterial spores. Tyndall gave public lectures to the Royal Society and British medical associations, bridging the gap between French chemical physics and British medical pathology and providing vital physical proof for Pasteur’s theory.',
         },
         {
           act: 4,
-          title: 'Act 4: Robert Koch & Specific Bacteria (1876–1882)',
-          theme_heading: 'Act 4: Robert Koch & Specific Bacteria (1876–1882)',
+          title: 'Robert Koch & Specific Bacteria (1876–1882)',
+          theme_heading: 'Robert Koch & Specific Bacteria (1876–1882)',
           source: {
             id: 'source_b_koch_bacteria',
             letter: 'B',
@@ -8487,9 +8484,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: Koch’s Postulates, Photomicrography & The Fall of Miasma (1883–1890)',
-          theme_heading:
-            'Act 5: Koch’s Postulates, Photomicrography & The Fall of Miasma (1883–1890)',
+          title: 'Koch’s Postulates, Photomicrography & The Fall of Miasma (1883–1890)',
+          theme_heading: 'Koch’s Postulates, Photomicrography & The Fall of Miasma (1883–1890)',
           text: '<span class="para-ref">[5.1]</span> In 1883, Koch traveled to Egypt and India to isolate the comma-shaped <em>Vibrio cholerae</em> bacterium in contaminated drinking water, providing visual proof of John Snow\'s earlier deductions. Scottish surgeon William Watson Cheyne translated Koch’s bacteriological treatises into English, while Koch\'s high-resolution photomicrographs circulated among British medical faculties. Faced with undeniable photographic evidence of microbes invading human tissue, Dr Bastian\'s anti-contagionist arguments collapsed, and the British medical establishment abandoned miasma theory forever.<br><br><span class="para-ref">[5.2]</span> Historiographically, historians emphasize the <em>Diagnostic-Therapeutic Lag</em>: while Pasteur and Koch revolutionized the scientific understanding of disease *causation*, their work produced few immediate treatments. Isolating the tuberculosis bacillus in 1882 did not cure a single patient dying of consumption, because effective antibiotics (streptomycin) lay sixty years in the future. The immediate practical fruit of Germ Theory lay in prevention: it validated Joseph Lister’s antiseptic carbolic techniques, guided municipal sewer engineering, and enabled Pasteur to engineer lab-attenuated vaccines for chicken cholera (1879), anthrax (1881), and rabies (1885). Together, Pasteur and Koch had destroyed two millennia of humoural theory and established modern scientific medicine.',
         },
       ],
@@ -8628,8 +8624,8 @@ export const unitData = {
             'What ancient theory did Louis Pasteur’s 1861 swan-neck flask experiment disprove?',
           options: [
             'The Theory of Opposites.',
-            'Aseptic Surgery.',
             'The Theory of Blood Circulation.',
+            'Aseptic Surgery.',
             'Spontaneous Generation.',
           ],
           answer: 'Spontaneous Generation.',
@@ -8639,8 +8635,8 @@ export const unitData = {
         {
           question: 'What medium did Robert Koch adopt to grow pure, unmixed bacterial colonies?',
           options: [
-            'Carbolic acid solution.',
             'Warm chicken broth.',
+            'Carbolic acid solution.',
             'Solid nutrient agar jelly in Petri dishes.',
             'Liquid sheep blood.',
           ],
@@ -8652,9 +8648,9 @@ export const unitData = {
           question:
             'How did Robert Koch make transparent bacteria clearly visible under microscopes?',
           options: [
-            'By burning them with sulfur fumes.',
-            'By freezing them in ice.',
             'By boiling them in salt water.',
+            'By freezing them in ice.',
+            'By burning them with sulfur fumes.',
             'By staining them with synthetic industrial aniline dyes.',
           ],
           answer: 'By staining them with synthetic industrial aniline dyes.',
@@ -8666,8 +8662,8 @@ export const unitData = {
           options: [
             'Tuberculosis (Mycobacterium tuberculosis).',
             'Smallpox.',
-            'Malaria.',
             'Bubonic plague.',
+            'Malaria.',
           ],
           answer: 'Tuberculosis (Mycobacterium tuberculosis).',
           explanation:
@@ -8677,8 +8673,8 @@ export const unitData = {
           question:
             'Why did British doctor Henry Bastian oppose Pasteur’s Germ Theory into the 1870s?',
           options: [
-            'He believed all disease was caused by bad planetary alignments.',
             'He believed smallpox was caused by cow milk.',
+            'He believed all disease was caused by bad planetary alignments.',
             'He pointed out that bacteria lived harmlessly inside healthy people, arguing they were byproducts not causes.',
             'He refused to read French scientific journals.',
           ],
@@ -8691,10 +8687,10 @@ export const unitData = {
           question:
             'What commercial problem in Lille first led Louis Pasteur to investigate the cause of fermentation in 1857?',
           options: [
-            'Bread dough was refusing to rise in bakeries.',
-            'Beetroot alcohol was turning sour and ruining local distillers.',
             'Milk was failing to turn into cheese.',
+            'Beetroot alcohol was turning sour and ruining local distillers.',
             'Beer barrels were exploding in transit across the English Channel.',
+            'Bread dough was refusing to rise in bakeries.',
           ],
           answer: 'Beetroot alcohol was turning sour and ruining local distillers.',
           explanation:
@@ -8703,7 +8699,7 @@ export const unitData = {
         {
           question:
             'Which livestock disease did Robert Koch study in 1876, establishing his scientific method for linking a specific bacterium to a disease?',
-          options: ['Cowpox.', 'Foot-and-mouth disease.', 'Rinderpest.', 'Anthrax.'],
+          options: ['Cowpox.', 'Rinderpest.', 'Foot-and-mouth disease.', 'Anthrax.'],
           answer: 'Anthrax.',
           explanation:
             'Koch isolated the rod-shaped anthrax bacterium, cultured it for eight generations, injected it into mice, and proved it consistently reproduced anthrax.',
@@ -8712,10 +8708,10 @@ export const unitData = {
           question:
             'How did Louis Pasteur accidentally discover the principle of artificial vaccine attenuation in 1879?',
           options: [
-            'He exposed anthrax bacilli to intense ultraviolet sunlight.',
+            'He boiled rabies saliva until it evaporated into a dry powder.',
             'Charles Chamberland left chicken cholera cultures exposed to air over the summer, and weakened germs induced immunity.',
             'He injected sheep with crushed mould scraped from cellar walls.',
-            'He boiled rabies saliva until it evaporated into a dry powder.',
+            'He exposed anthrax bacilli to intense ultraviolet sunlight.',
           ],
           answer:
             'Charles Chamberland left chicken cholera cultures exposed to air over the summer, and weakened germs induced immunity.',
@@ -8725,7 +8721,7 @@ export const unitData = {
         {
           question:
             'Which fatal nervous system disease did Louis Pasteur successfully vaccinate against in July 1885, saving young Joseph Meister?',
-          options: ['Rabies (Hydrophobia).', 'Diphtheria.', 'Polio.', 'Tetanus.'],
+          options: ['Rabies (Hydrophobia).', 'Diphtheria.', 'Tetanus.', 'Polio.'],
           answer: 'Rabies (Hydrophobia).',
           explanation:
             'Pasteur treated nine-year-old Joseph Meister, bitten by a rabid dog, with successively stronger doses of attenuated rabies virus, saving his life.',
@@ -8734,8 +8730,8 @@ export const unitData = {
           question:
             'What specific water-borne bacterial pathogen did Robert Koch isolate in Egypt and India in 1883?',
           options: [
-            'Yersinia pestis (Plague).',
             'Salmonella typhi (Typhoid).',
+            'Yersinia pestis (Plague).',
             'Vibrio cholerae (Cholera).',
             'Treponema pallidum (Syphilis).',
           ],
@@ -9124,44 +9120,44 @@ export const unitData = {
       },
       do_now: [
         {
-          q: 'In what year did Edward Jenner perform his famous cowpox test on James Phipps?',
-          a: '1796 (published findings in 1798)',
+          q: 'In what year did Louis Pasteur publish his revolutionary Germ Theory?',
+          a: '1861',
         },
         {
-          q: 'Who brought the dangerous practice of smallpox inoculation (variolation) to Britain in 1721?',
-          a: 'Lady Mary Wortley Montagu (from the Ottoman Empire / Turkey)',
+          q: 'What scientific experiment did Pasteur design with glass flasks to disprove spontaneous generation?',
+          a: 'The swan-neck flask experiment',
         },
         {
-          q: 'What milder dairy disease gave milkmaids immunity from deadly smallpox?',
-          a: 'Cowpox (vaccinia)',
+          q: 'What liquid was Pasteur originally studying when he proved that heating it killed souring bacteria?',
+          a: 'Wine and beer / milk (pasteurisation)',
         },
         {
-          q: 'How much money did Parliament grant Jenner in 1802 and 1807 to support vaccination?',
-          a: '£30,000 in total (£10,000 in 1802, £20,000 in 1807)',
+          q: 'Which German bacteriologist identified the specific bacterium causing anthrax in 1876?',
+          a: 'Robert Koch',
         },
         {
-          q: 'In what year was infant smallpox vaccination made legally compulsory in Britain?',
-          a: '1852 (with strict enforcement and fines added in 1871)',
+          q: 'What chemical technique did Koch introduce to make transparent microbes visible under a microscope?',
+          a: 'Staining with aniline dyes / methyl violet',
         },
         {
-          q: 'Name the protest organisation formed by citizens who opposed mandatory vaccination.',
-          a: 'The Anti-Vaccination League (formed in London in the 1860s)',
+          q: 'What solid medium did Koch use instead of liquid broth to culture pure colonies of bacteria?',
+          a: 'Agar jelly in flat petri dishes',
         },
         {
-          q: 'Why did the Royal Society initially refuse to publish Jenner’s 1796 findings?',
-          a: 'Jenner could not explain the biological mechanism of why cowpox conferred immunity',
+          q: 'What prominent ancient medical theory claimed disease was caused by foul, poisonous vapours rising from decaying filth?',
+          a: 'Miasma theory',
         },
         {
-          q: 'In what year did the British government formally ban dangerous smallpox inoculation?',
-          a: '1840 (Vaccination Act of 1840, which also made vaccination free for poor infants)',
+          q: 'During the 1665 Great Plague of London, what mark was painted on the doors of quarantined houses?',
+          a: "A red cross and 'Lord have mercy upon us'",
         },
         {
-          q: 'Which French scientist discovered Germ Theory in 1861, explaining why vaccines worked?',
-          a: 'Louis Pasteur',
+          q: "Which 17th-century English doctor, known as the 'English Hippocrates', advocated clinical observation at the patient's bedside?",
+          a: 'Thomas Sydenham',
         },
         {
-          q: 'What Latin word for ‘cow’ is the root of Jenner’s term ‘vaccination’?',
-          a: 'Vacca',
+          q: 'What scientific society, chartered by King Charles II in 1662, met weekly in London to promote experimental medicine?',
+          a: 'The Royal Society',
         },
       ],
       fun_facts: [
@@ -9195,14 +9191,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: The Scourge of Smallpox & Risky Variolation (1721–1795)',
-          theme_heading: 'Act 1: The Scourge of Smallpox & Risky Variolation (1721–1795)',
+          title: 'The Scourge of Smallpox & Risky Variolation (1721–1795)',
+          theme_heading: 'The Scourge of Smallpox & Risky Variolation (1721–1795)',
           text: '<span class="para-ref">[1.1]</span> Throughout the eighteenth century, smallpox (*Variola major*) was the most terrifying epidemic killer in Britain. An airborne viral infection that spread effortlessly through crowded tenements, smallpox killed an estimated 40,000 people in Britain every year, claiming the lives of one in three newborn infants. Victims suffered agonizing fevers, severe vomiting, and erupted into thousands of fluid-filled pustules that fused together across the body. Those who survived were often left blind, disfigured, or permanently scarred with grotesque pitted pockmarks.<br><br><span class="para-ref">[1.2]</span> The only known protection was *inoculation* (or variolation), brought to Britain from Turkey in 1721 by aristocrat Lady Mary Wortley Montagu. Inoculation involved using a lancet to scrape live, infectious smallpox pus from a sick patient’s pustule directly into a cut on a healthy person’s arm. While patients frequently survived with a milder infection and gained lifelong immunity, the procedure was fraught with mortal peril: roughly 2% to 3% of inoculated patients died from full-blown smallpox, and inoculated individuals became highly contagious vectors who ignited fresh community epidemics. Furthermore, commercial inoculators like the Sutton and Dimsdale families charged extortionate fees (up to 20 guineas), making prevention a luxury monopoly reserved exclusively for the wealthy.',
         },
         {
           act: 2,
-          title: 'Act 2: Edward Jenner & The Cowpox Vaccine (1796–1798)',
-          theme_heading: 'Act 2: Edward Jenner & The Cowpox Vaccine (1796–1798)',
+          title: 'Edward Jenner & The Cowpox Vaccine (1796–1798)',
+          theme_heading: 'Edward Jenner & The Cowpox Vaccine (1796–1798)',
           source: {
             id: 'source_a_jenner_portrait',
             letter: 'A',
@@ -9230,8 +9226,8 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Medical Opposition & Religious Resistance (1798–1810s)',
-          theme_heading: 'Act 3: Medical Opposition & Religious Resistance (1798–1810s)',
+          title: 'Medical Opposition & Religious Resistance (1798–1810s)',
+          theme_heading: 'Medical Opposition & Religious Resistance (1798–1810s)',
           source: {
             id: 'source_b_cow_pock_gillray',
             letter: 'B',
@@ -9260,14 +9256,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Parliamentary Grants & The 1840 Vaccination Act (1802–1840)',
-          theme_heading: 'Act 4: Parliamentary Grants & The 1840 Vaccination Act (1802–1840)',
+          title: 'Parliamentary Grants & The 1840 Vaccination Act (1802–1840)',
+          theme_heading: 'Parliamentary Grants & The 1840 Vaccination Act (1802–1840)',
           text: '<span class="para-ref">[4.1]</span> Despite the fury of anti-vaccine campaigners, empirical mortality statistics rapidly proved vaccination’s overwhelming superiority. In 1803, the Royal Jennerian Society was founded in London to provide free vaccinations; Napoleon had the entire French army vaccinated and struck a commemorative medal in Jenner’s honour. Recognizing that smallpox devastated the national workforce, the British Parliament abandoned its strict *laissez-faire* stance to award Jenner £10,000 in 1802 and a further £20,000 in 1807 to fund public distribution.<br><br><span class="para-ref">[4.2]</span> State involvement expanded decisively in 1840 with the passing of the landmark Vaccination Act. The Act outlawed the dangerous practice of variolation (smallpox inoculation) entirely, making it a criminal offence. Furthermore, it provided free infant cowpox vaccination funded out of local poor-law rates, ensuring that impoverished working-class families could protect their children without paying private medical fees.',
         },
         {
           act: 5,
-          title: 'Act 5: Compulsory Vaccination & The Anti-Vaccination League (1852–1871)',
-          theme_heading: 'Act 5: Compulsory Vaccination & The Anti-Vaccination League (1852–1871)',
+          title: 'Compulsory Vaccination & The Anti-Vaccination League (1852–1871)',
+          theme_heading: 'Compulsory Vaccination & The Anti-Vaccination League (1852–1871)',
           text: '<span class="para-ref">[5.1]</span> Over the following decades, the British government steadily tightened state enforcement: the 1852 Compulsory Vaccination Act made infant vaccination legally mandatory within three months of birth, and the 1867 Vaccination Act introduced strict financial fines and imprisonment for non-compliant parents. In response, working-class communities formed the Anti-Vaccination League, marching in mass demonstrations in Leicester and London against what they denounced as medical tyranny and infringement on bodily autonomy.<br><br><span class="para-ref">[5.2]</span> Despite civil liberties protests, compulsory vaccination caused national smallpox deaths to plummet from over 40,000 per decade to virtually zero by the end of the century. However, historians emphasize that Jenner’s breakthrough was an extraordinary "one-off" empirical anomaly. Because Jenner lived six decades before Louis Pasteur’s Germ Theory (1861), he had no comprehension of viruses or immune antibodies. Unable to explain the biological mechanism of immunity, Jenner could not adapt his technique to prevent any other infectious disease, leaving cholera, typhoid, and tuberculosis to rampage across Victorian Britain untouched.',
         },
       ],
@@ -9378,9 +9374,9 @@ export const unitData = {
         {
           question: 'What disease matter did Edward Jenner use in 1796 to vaccinate James Phipps?',
           options: [
-            'Diluted rabies virus.',
             'Active smallpox pus from a dying patient.',
             'Sterilized chicken cholera broth.',
+            'Diluted rabies virus.',
             'Benign cowpox pus from milkmaid Sarah Nelmes.',
           ],
           answer: 'Benign cowpox pus from milkmaid Sarah Nelmes.',
@@ -9392,8 +9388,8 @@ export const unitData = {
           options: [
             'It gave patients permanent cow horns.',
             'It caused patients to become contagious and frequently triggered full-blown fatal epidemics.',
-            'It made patients permanently allergic to dairy milk.',
             'It only worked on infants under one year old.',
+            'It made patients permanently allergic to dairy milk.',
           ],
           answer:
             'It caused patients to become contagious and frequently triggered full-blown fatal epidemics.',
@@ -9403,10 +9399,10 @@ export const unitData = {
         {
           question: 'How did the British Parliament support Edward Jenner in 1802 and 1807?',
           options: [
-            'By banning all French medical imports.',
-            'By demolishing all London parish hospitals.',
-            'By granting him £30,000 in total to fund free national vaccination.',
             'By making him Prime Minister.',
+            'By banning all French medical imports.',
+            'By granting him £30,000 in total to fund free national vaccination.',
+            'By demolishing all London parish hospitals.',
           ],
           answer: 'By granting him £30,000 in total to fund free national vaccination.',
           explanation:
@@ -9417,8 +9413,8 @@ export const unitData = {
             'What landmark legislation made infant smallpox vaccination legally mandatory in Britain?',
           options: [
             'The 1852 Compulsory Vaccination Act.',
-            'The 1875 Public Health Act.',
             'The 1840 Vaccination Act.',
+            'The 1875 Public Health Act.',
             'The 1832 Great Reform Act.',
           ],
           answer: 'The 1852 Compulsory Vaccination Act.',
@@ -9428,10 +9424,10 @@ export const unitData = {
           question:
             'Why was Edward Jenner’s vaccine considered an isolated "one-off" breakthrough?',
           options: [
-            'Because it only worked on boys named James.',
+            'Because Parliament repealed the law in 1860.',
             'Because without Germ Theory, Jenner did not know why it worked, so he could not adapt it for other diseases.',
             'Because cowpox cows went completely extinct in 1810.',
-            'Because Parliament repealed the law in 1860.',
+            'Because it only worked on boys named James.',
           ],
           answer:
             'Because without Germ Theory, Jenner did not know why it worked, so he could not adapt it for other diseases.',
@@ -9442,10 +9438,10 @@ export const unitData = {
           question:
             'What longstanding dairy folklore observation formed the clinical basis of Edward Jenner’s 1796 experiment?',
           options: [
-            'Farmers who worked with horses were immune to the Black Death.',
+            'Drinking raw cow milk cured tuberculosis in children.',
             'Rubbing butter on the forehead prevented epidemic fevers.',
             'Milkmaids who contracted mild cowpox from cow udders never contracted lethal smallpox.',
-            'Drinking raw cow milk cured tuberculosis in children.',
+            'Farmers who worked with horses were immune to the Black Death.',
           ],
           answer:
             'Milkmaids who contracted mild cowpox from cow udders never contracted lethal smallpox.',
@@ -9456,9 +9452,9 @@ export const unitData = {
           question:
             'Why did the prestigious Royal Society initially reject Edward Jenner’s smallpox paper in 1797?',
           options: [
-            'They demanded that he test the treatment on royalty first.',
-            'They believed smallpox was caused by volcanic emissions.',
             'They claimed his French spelling was inaccurate.',
+            'They believed smallpox was caused by volcanic emissions.',
+            'They demanded that he test the treatment on royalty first.',
             'They considered an experiment on a single child insufficient proof and warned he risked his medical reputation.',
           ],
           answer:
@@ -9485,8 +9481,8 @@ export const unitData = {
             'Why did the Anti-Vaccination League form in Britain following the 1853 and 1867 Vaccination Acts?',
           options: [
             'Opponents viewed compulsory state vaccination as an infringement of personal liberty and feared animal contamination.',
-            'Protesters wanted the vaccine reserved exclusively for wealthy citizens.',
             'Members demanded that Parliament raise taxes on doctors.',
+            'Protesters wanted the vaccine reserved exclusively for wealthy citizens.',
             'Parents objected to school closures during harvest time.',
           ],
           answer:
@@ -9899,44 +9895,44 @@ export const unitData = {
       },
       do_now: [
         {
-          q: 'In what war did Florence Nightingale serve as superintendent of female nursing from 1854 to 1856?',
-          a: 'The Crimean War (against the Russian Empire)',
+          q: 'In what year did Edward Jenner test his cowpox hypothesis on young James Phipps?',
+          a: '1796',
         },
         {
-          q: 'Name the British military hospital near Constantinople where Nightingale was stationed.',
-          a: 'Scutari Barracks Hospital',
+          q: 'What was the traditional, dangerous practice of deliberately infecting healthy people with live smallpox scabs called?',
+          a: 'Inoculation / Variolation',
         },
         {
-          q: 'To what percentage did Nightingale’s sanitary reforms reduce the mortality rate at Scutari?',
-          a: 'From approximately 40% down to 2%',
+          q: 'Why did the Royal Society initially refuse to publish Jenner’s discovery in 1797?',
+          a: 'Because Jenner could not explain how or why cowpox provided immunity, before Germ Theory was discovered',
         },
         {
-          q: 'What title was given to Florence Nightingale by the British press during the Crimean War?',
-          a: '‘The Lady with the Lamp’',
+          q: 'In what year did the British Parliament pass legislation making smallpox vaccination compulsory for all infants?',
+          a: '1853',
         },
         {
-          q: 'What landmark book did Nightingale publish in 1859 setting down rules for nurse training?',
-          a: 'Notes on Nursing: What It Is, and What It Is Not (1859)',
+          q: 'What French chemist published the Germ Theory in 1861, proving that microorganisms caused decay and disease?',
+          a: 'Louis Pasteur',
         },
         {
-          q: 'Which London hospital housed the first professional Nightingale Training School for Nurses in 1860?',
-          a: 'St Thomas’ Hospital',
+          q: 'What discredited ancient theory claimed that living disease microbes generated spontaneously out of rotting matter?',
+          a: 'Spontaneous Generation',
         },
         {
-          q: 'What architectural hospital design featured long, narrow wards with large windows for cross-ventilation?',
-          a: 'The Pavilion Hospital Plan (endorsed in Notes on Hospitals, 1863)',
+          q: 'Name one specific disease bacterium identified by Robert Koch between 1876 and 1883.',
+          a: 'Anthrax (1876), Tuberculosis (1882), or Cholera (1883)',
         },
         {
-          q: 'What fatal bacterial infection was notoriously spread in pre-1850 unwashed hospital wards?',
-          a: 'Hospital gangrene / sepsis (erysipelas)',
+          q: 'What was the central motto and primary purpose of medieval monastic hospitals like St Bartholomew’s in London?',
+          a: "'Care not cure' — providing spiritual shelter, warmth, and prayer rather than medical healing",
         },
         {
-          q: 'What was the general reputation and social status of hospital nurses in Britain prior to the 1850s?',
-          a: 'Untrained, poorly paid, and widely regarded as uneducated, neglectful domestic drudges',
+          q: 'Who staffed and operated monastic hospitals in England prior to Henry VIII’s Dissolution of the Monasteries?',
+          a: 'Monks, nuns, and religious orders',
         },
         {
-          q: 'What was the primary function of medieval monastic hospitals in England?',
-          a: 'Providing religious hospitality, shelter, and care rather than surgical treatment (‘care not cure’)',
+          q: "Why were early 19th-century voluntary hospitals before 1850 widely feared by working-class families as 'gateways to death'?",
+          a: 'Because overcrowded, unventilated wards and unwashed doctors spread fatal cross-infections such as hospital gangrene, typhus, and sepsis',
         },
       ],
       fun_facts: [
@@ -9970,8 +9966,8 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Pestilential Wards & Pre-Modern Nursing (c1700–1850)',
-          theme_heading: 'Act 1: Pestilential Wards & Pre-Modern Nursing (c1700–1850)',
+          title: 'Pestilential Wards & Pre-Modern Nursing (c1700–1850)',
+          theme_heading: 'Pestilential Wards & Pre-Modern Nursing (c1700–1850)',
           source: {
             id: 'source_a_pre_nightingale_ward',
             letter: 'A',
@@ -10000,8 +9996,8 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: Scutari Hospital & The Crimean Sanitary Revolution (1854–1856)',
-          theme_heading: 'Act 2: Scutari Hospital & The Crimean Sanitary Revolution (1854–1856)',
+          title: 'Scutari Hospital & The Crimean Sanitary Revolution (1854–1856)',
+          theme_heading: 'Scutari Hospital & The Crimean Sanitary Revolution (1854–1856)',
           source: {
             id: 'source_b_scutari_nightingale',
             letter: 'B',
@@ -10030,8 +10026,8 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Notes on Nursing, Statistics & The Coxcomb Diagram (1859)',
-          theme_heading: 'Act 3: Notes on Nursing, Statistics & The Coxcomb Diagram (1859)',
+          title: 'Notes on Nursing, Statistics & The Coxcomb Diagram (1859)',
+          theme_heading: 'Notes on Nursing, Statistics & The Coxcomb Diagram (1859)',
           source: {
             id: 'source_c_nightingale_coxcomb',
             letter: 'C',
@@ -10059,15 +10055,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: The Pavilion Plan & Architectural Cross-Ventilation (1860s)',
-          theme_heading: 'Act 4: The Pavilion Plan & Architectural Cross-Ventilation (1860s)',
+          title: 'The Pavilion Plan & Architectural Cross-Ventilation (1860s)',
+          theme_heading: 'The Pavilion Plan & Architectural Cross-Ventilation (1860s)',
           text: '<span class="para-ref">[4.1]</span> In her 1859 treatise <em>Notes on Hospitals</em>, Nightingale turned her attention to hospital architecture, advocating the revolutionary <em>Pavilion Plan</em>. Old Victorian hospitals were monolithic, multi-story blocks where foul air from lower wards rose through stairwells to poison upper floors. In contrast, the Pavilion Plan mandated separate, detached multi-story wings connected only by covered outdoor corridors. This layout isolated infectious illnesses and prevented cross-contamination between surgical, fever, and convalescent wards.<br><br><span class="para-ref">[4.2]</span> Inside each pavilion, wards were designed with high ceilings and large opposing windows positioned directly opposite each bed, creating continuous cross-ventilation that diluted and flushed away airborne poisons. Floors were made of non-porous polished hardwood, walls were surfaced with washable glazed tiles, and plumbing was housed in separate annexes. When London’s St Thomas’ Hospital was rebuilt on the southern Embankment of the River Thames opposite Parliament (1868–1871), it was designed from the ground up according to Nightingale’s pavilion specifications, setting a global gold standard for hospital architecture.',
         },
         {
           act: 5,
-          title: 'Act 5: Professional Nurse Training & Mary Seacole’s Dual Legacy (1860–1890s)',
-          theme_heading:
-            'Act 5: Professional Nurse Training & Mary Seacole’s Dual Legacy (1860–1890s)',
+          title: 'Professional Nurse Training & Mary Seacole’s Dual Legacy (1860–1890s)',
+          theme_heading: 'Professional Nurse Training & Mary Seacole’s Dual Legacy (1860–1890s)',
           source: {
             id: 'source_d_mary_seacole',
             letter: 'D',
@@ -10197,8 +10192,8 @@ export const unitData = {
           question:
             'What military base hospital in the Crimea did Florence Nightingale reform in 1854–1856?',
           options: [
-            'Sebastopol Field Infirmary.',
             'Balaclava General Hospital.',
+            'Sebastopol Field Infirmary.',
             'St Thomas’ Hospital.',
             'Scutari Barrack Hospital.',
           ],
@@ -10237,9 +10232,9 @@ export const unitData = {
             'Where was Europe’s first professional school of nursing established by Nightingale in 1860?',
           options: [
             'Edinburgh Royal Infirmary.',
-            'Oxford University.',
-            'St Thomas’ Hospital, London.',
             'Guy’s Hospital, London.',
+            'St Thomas’ Hospital, London.',
+            'Oxford University.',
           ],
           answer: 'St Thomas’ Hospital, London.',
           explanation:
@@ -10249,8 +10244,8 @@ export const unitData = {
           question:
             'How did Mary Seacole contribute to Crimean War nursing after being rejected in London?',
           options: [
-            'She joined the Russian medical corps.',
             'She returned to Jamaica and gave up nursing.',
+            'She joined the Russian medical corps.',
             'She trained Nightingale at St Thomas’.',
             'She funded her own voyage to the Crimea and opened the British Hotel to nurse soldiers under fire.',
           ],
@@ -10277,10 +10272,10 @@ export const unitData = {
           question:
             'What was the public reputation and social status of hospital nurses in Britain prior to Florence Nightingale’s reforms?',
           options: [
-            'Highly paid university graduates trained in scientific surgery and anatomy.',
-            'Untrained, poorly paid domestic workers who were often viewed as drunken and neglectful.',
-            'Specialist military officers commissioned directly by the War Office.',
             'Licensed apothecaries who held formal surgical diplomas.',
+            'Untrained, poorly paid domestic workers who were often viewed as drunken and neglectful.',
+            'Highly paid university graduates trained in scientific surgery and anatomy.',
+            'Specialist military officers commissioned directly by the War Office.',
           ],
           answer:
             'Untrained, poorly paid domestic workers who were often viewed as drunken and neglectful.',
@@ -10293,8 +10288,8 @@ export const unitData = {
           options: [
             'Because smooth, non-porous surfaces could be washed clean and would not absorb poisonous miasmic air or bodily fluids.',
             'To make the rooms darker so patients could sleep during daylight hours.',
-            'Because Victorian wallpaper was believed to cause cholera.',
             'To reduce building construction costs for charitable trusts.',
+            'Because Victorian wallpaper was believed to cause cholera.',
           ],
           answer:
             'Because smooth, non-porous surfaces could be washed clean and would not absorb poisonous miasmic air or bodily fluids.',
@@ -10305,9 +10300,9 @@ export const unitData = {
           question:
             'What medical belief system guided Florence Nightingale’s sanitary reforms throughout her entire life?',
           options: [
+            'Pasteur’s Germ Theory of bacteriology.',
             'Paracelsian chemical alchemy.',
             'Ancient Galenic Four Humours astrology.',
-            'Pasteur’s Germ Theory of bacteriology.',
             'Miasma Theory (that disease was spontaneously generated by filth, stagnant air, and decaying matter).',
           ],
           answer:
@@ -10318,7 +10313,7 @@ export const unitData = {
         {
           question:
             'What minimum distance did Florence Nightingale demand between patient beds in the Pavilion hospital design?',
-          options: ['Fifteen feet.', 'Two feet.', 'Eight feet.', 'Four feet.'],
+          options: ['Two feet.', 'Four feet.', 'Eight feet.', 'Fifteen feet.'],
           answer: 'Eight feet.',
           explanation:
             'Nightingale specified an eight-foot gap between beds to ensure adequate space for cross-ventilation and prevent airborne contagion between patients.',
@@ -10742,44 +10737,44 @@ export const unitData = {
       },
       do_now: [
         {
-          q: 'What Edinburgh professor of midwifery discovered the anaesthetic properties of chloroform in 1847?',
-          a: 'James Young Simpson',
+          q: 'In what war did Florence Nightingale manage military nursing at Scutari Hospital (1854–1856)?',
+          a: 'The Crimean War',
         },
         {
-          q: 'Which early anaesthetic gas was discovered by Humphry Davy in 1799?',
-          a: 'Nitrous oxide (laughing gas)',
+          q: 'To what percentage did Nightingale’s sanitary reforms cut the patient mortality rate at Scutari?',
+          a: 'From approximately 40% down to 2%',
         },
         {
-          q: 'Which monarch famously used chloroform during the birth of Prince Leopold in 1853?',
-          a: 'Queen Victoria',
+          q: 'What architectural hospital layout did Nightingale champion, featuring long, narrow wards with high ceilings and cross-ventilation?',
+          a: 'The Pavilion Plan',
         },
         {
-          q: 'Why did death rates from infection increase during the ‘Black Period’ of surgery (1847–1865)?',
-          a: 'Pain-free patients allowed deeper, longer surgeries, but unwashed hands and coats introduced fatal sepsis',
+          q: 'What landmark training institution was founded by Nightingale at St Thomas’ Hospital in 1860?',
+          a: 'The Nightingale School of Nursing',
         },
         {
-          q: 'Which Scottish surgeon pioneered antiseptic surgery using carbolic acid in 1865?',
-          a: 'Joseph Lister',
+          q: "Which Jamaican doctress travelled to the Crimea at her own expense and opened the 'British Hotel' to nurse wounded soldiers near the front?",
+          a: 'Mary Seacole',
         },
         {
-          q: 'Whose 1861 scientific discovery directly inspired Lister to investigate wound sepsis?',
-          a: 'Louis Pasteur (Germ Theory)',
+          q: 'What disease did Edward Jenner successfully prevent using cowpox matter in 1796?',
+          a: 'Smallpox',
         },
         {
-          q: 'To what percentage did Lister’s carbolic acid treatments reduce amputee mortality in Glasgow?',
-          a: 'From 46% down to 15%',
+          q: 'Whose 1861 Germ Theory proved that airborne microorganisms were the true cause of fermentation and putrefaction?',
+          a: 'Louis Pasteur',
         },
         {
-          q: 'What steam-pressure sterilisation machine was invented by Charles Chamberland in 1881?',
-          a: 'The Autoclave',
+          q: 'Name the three great obstacles that made major surgical operations almost impossible before the mid-19th century.',
+          a: 'Pain, Infection / Sepsis, and Blood Loss / Haemorrhage',
         },
         {
-          q: 'What surgical innovation did William Halsted introduce at Johns Hopkins Hospital in 1890?',
-          a: 'Boiled rubber surgical gloves',
+          q: 'What French Renaissance military surgeon used silk thread ligatures instead of boiling cautery oil to tie off bleeding arteries?',
+          a: 'Ambroise Paré',
         },
         {
-          q: 'Which 16th-century French barber-surgeon famously replaced boiling oil with soothing rose-oil lotion?',
-          a: 'Ambroise Paré (1537)',
+          q: 'Why were complex surgical operations before the 1840s strictly limited to procedures that could be completed in under three minutes?',
+          a: 'Because patients went into fatal shock or cardiac arrest from unbearable agony',
         },
       ],
       fun_facts: [
@@ -10813,14 +10808,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Pre-Anaesthetic Surgery: Raw Speed & Traumatic Shock (c1700–1846)',
-          theme_heading: 'Act 1: Pre-Anaesthetic Surgery: Raw Speed & Traumatic Shock (c1700–1846)',
+          title: 'Pre-Anaesthetic Surgery: Raw Speed & Traumatic Shock (c1700–1846)',
+          theme_heading: 'Pre-Anaesthetic Surgery: Raw Speed & Traumatic Shock (c1700–1846)',
           text: '<span class="para-ref">[1.1]</span> In the early decades of the nineteenth century, surgery was an ordeal of unimaginable agony. Surgeons faced three insurmountable physiological barriers: *Pain*, *Infection*, and *Bleeding*. Because there were no effective anaesthetics, operations were confined to emergency amputations, superficial tumor excisions, and lithotomies (bladder stone cuttings). Patients had to be dragged into operating theatres and physically pinned to wooden tables by burly hospital porters while screaming in terror. Many patients died on the table from sheer cardiovascular shock before the knife had completed its work.<br><br><span class="para-ref">[1.2]</span> Under these terrifying conditions, surgical excellence was judged solely by speed. The premier surgeon of the era, London’s Robert Liston, was celebrated for amputating an adult thigh in under thirty seconds. Liston operated in a dark frock coat stiffened with dried blood and rotting pus from past surgeries, holding his bone saw between his teeth to free his hands. Speed was the only mercy a surgeon could offer, but speed made delicate, precise operations on the abdomen, chest, or brain completely impossible.',
         },
         {
           act: 2,
-          title: 'Act 2: James Simpson & The Discovery of Chloroform (1847–1853)',
-          theme_heading: 'Act 2: James Simpson & The Discovery of Chloroform (1847–1853)',
+          title: 'James Simpson & The Discovery of Chloroform (1847–1853)',
+          theme_heading: 'James Simpson & The Discovery of Chloroform (1847–1853)',
           source: {
             id: 'source_a_simpson_chloroform',
             letter: 'A',
@@ -10848,14 +10843,14 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: The "Black Period" of Surgery & Deep Infections (1846–1865)',
-          theme_heading: 'Act 3: The "Black Period" of Surgery & Deep Infections (1846–1865)',
+          title: 'The"Black Period" of Surgery & Deep Infections (1846–1865)',
+          theme_heading: 'The"Black Period" of Surgery & Deep Infections (1846–1865)',
           text: '<span class="para-ref">[3.1]</span> Paradoxically, the conquest of pain triggered the disastrous *"Black Period" of Surgery (1846–1865)*. Because patients were unconscious and motionless, surgeons attempted deeper, longer, and more complex internal procedures. However, because surgeons still knew nothing of germs, they operated with unwashed hands, dirty instruments, and unsterilized catgut ligatures. Pathogens were carried deep into internal body cavities, causing infection rates to skyrocket. More patients died of gangrene, septicaemia, and pyaemia during the Black Period than ever before.<br><br><span class="para-ref">[3.2]</span> Hospital wards became lethal death traps for surgical patients. Doctors wore blood-caked coats as badges of pride, sponges used to mop up pus from one patient were reused on the next without washing, and surgical dressings were rarely changed. The mortality rate for amputations in major voluntary hospitals rose above 40%, leading prominent surgeons to argue that patients had a far higher chance of surviving an operation performed in a private farmhouse bedroom than in a modern municipal hospital.',
         },
         {
           act: 4,
-          title: 'Act 4: Joseph Lister & The Carbolic Acid Antiseptic Spray (1865–1870s)',
-          theme_heading: 'Act 4: Joseph Lister & The Carbolic Acid Antiseptic Spray (1865–1870s)',
+          title: 'Joseph Lister & The Carbolic Acid Antiseptic Spray (1865–1870s)',
+          theme_heading: 'Joseph Lister & The Carbolic Acid Antiseptic Spray (1865–1870s)',
           source: {
             id: 'source_b_lister_carbolic_spray',
             letter: 'B',
@@ -10883,10 +10878,9 @@ export const unitData = {
         },
         {
           act: 5,
-          title:
-            'Act 5: From Antiseptic to Aseptic Surgery: Autoclaves & Rubber Gloves (1880s–1890s)',
+          title: 'From Antiseptic to Aseptic Surgery: Autoclaves & Rubber Gloves (1880s–1890s)',
           theme_heading:
-            'Act 5: From Antiseptic to Aseptic Surgery: Autoclaves & Rubber Gloves (1880s–1890s)',
+            'From Antiseptic to Aseptic Surgery: Autoclaves & Rubber Gloves (1880s–1890s)',
           text: '<span class="para-ref">[5.1]</span> British surgeons initially resisted Listerism with stubborn skepticism. Carbolic acid cracked surgeons’ hands, irritated patients’ lungs, slowed surgical speed, and added financial expense. Conservative surgeons argued that if microbes were invisible, Lister was inventing a phantom enemy to justify elaborate rituals. However, when German military surgeons adopted Lister’s antiseptic techniques during the Franco-Prussian War (1870) and achieved miraculous survival rates among wounded soldiers, British resistance collapsed, and Lister was appointed Professor of Clinical Surgery at King’s College London in 1877.<br><br><span class="para-ref">[5.2]</span> By the late 1880s and 1890s, the medical profession realized that chemical carbolic sprays were caustic and unnecessary, moving beyond *antiseptic surgery* (killing germs already present) to embrace *aseptic surgery* (excluding all germs from the operating environment entirely). High-pressure steam autoclaves (invented by Charles Chamberland in 1881 and championed by Ernst von Bergmann in 1886) sterilized all instruments; operating theatres were tiled with glazed porcelain that could be scrubbed with boiling water; and surgeons washed with carbolic soap and donned boiled cotton gowns, masks, and sterilized rubber gloves (introduced by William Halsted in 1889). Together, Simpson’s conquest of pain and Lister’s conquest of infection transformed the operating theatre from a butcher shop of terror into a precise, lifesaving science.',
         },
       ],
@@ -10992,7 +10986,7 @@ export const unitData = {
         {
           question:
             'Which Scottish physician discovered the anaesthetic properties of chloroform in 1847?',
-          options: ['Robert Liston.', 'James Young Simpson.', 'John Snow.', 'Joseph Lister.'],
+          options: ['Robert Liston.', 'James Young Simpson.', 'Joseph Lister.', 'John Snow.'],
           answer: 'James Young Simpson.',
           explanation:
             'Simpson tested chloroform on himself and colleagues at his Edinburgh home in November 1847.',
@@ -11002,8 +10996,8 @@ export const unitData = {
           options: [
             'An era when infection deaths rose because doctors operated longer with unwashed hands.',
             'A period when surgeons refused to operate due to strikes.',
-            'A period when Parliament outlawed all surgery.',
             'A time when all British hospitals were closed due to cholera.',
+            'A period when Parliament outlawed all surgery.',
           ],
           answer:
             'An era when infection deaths rose because doctors operated longer with unwashed hands.',
@@ -11013,10 +11007,10 @@ export const unitData = {
         {
           question: 'What chemical did Joseph Lister use as an antiseptic in Glasgow in 1865?',
           options: [
-            'Boiling salt water.',
+            'Nitric acid.',
             'Vinegar wash.',
             'Carbolic acid (phenol).',
-            'Nitric acid.',
+            'Boiling salt water.',
           ],
           answer: 'Carbolic acid (phenol).',
           explanation: 'Lister used carbolic acid, inspired by its use on town sewage in Carlisle.',
@@ -11025,9 +11019,9 @@ export const unitData = {
           question:
             'By how much did Joseph Lister reduce surgical mortality at Glasgow Royal Infirmary?',
           options: [
-            'Mortality did not decrease.',
-            'From 20% down to 18%.',
             'From 90% to 80%.',
+            'From 20% down to 18%.',
+            'Mortality did not decrease.',
             'From 45.7% down to 15.0%.',
           ],
           answer: 'From 45.7% down to 15.0%.',
@@ -11049,7 +11043,7 @@ export const unitData = {
         {
           question:
             'Which young patient died in 1848 while receiving chloroform to remove an infected toenail, triggering intense medical controversy over anaesthetic safety?',
-          options: ['Mary Seacole.', 'James Greenlees.', 'Hannah Greener.', 'James Phipps.'],
+          options: ['James Phipps.', 'James Greenlees.', 'Hannah Greener.', 'Mary Seacole.'],
           answer: 'Hannah Greener.',
           explanation:
             'Hannah Greener’s death in January 1848 was the first recorded fatality from chloroform anaesthesia, sparking furious debates about dangerous dosages.',
@@ -11058,9 +11052,9 @@ export const unitData = {
           question:
             'Which royal milestone in 1853 effectively silenced religious and moral objections against the use of chloroform in childbirth?',
           options: [
-            'Parliament passed the Royal Anaesthesia Charter.',
             'King George III was given chloroform during dental surgery.',
             'The Archbishop of Canterbury blessed the use of chloroform in St Paul’s Cathedral.',
+            'Parliament passed the Royal Anaesthesia Charter.',
             'Queen Victoria publicly used chloroform during the birth of Prince Leopold.',
           ],
           answer: 'Queen Victoria publicly used chloroform during the birth of Prince Leopold.',
@@ -11070,7 +11064,7 @@ export const unitData = {
         {
           question:
             'Who was the 11-year-old boy whose compound leg fracture was successfully treated with carbolic acid dressings by Joseph Lister in 1865, avoiding amputation?',
-          options: ['Alexander Fleck.', 'James Greenlees.', 'James Phipps.', 'Robert Liston.'],
+          options: ['James Phipps.', 'James Greenlees.', 'Alexander Fleck.', 'Robert Liston.'],
           answer: 'James Greenlees.',
           explanation:
             'James Greenlees was run over by a cart; Lister soaked lint in carbolic acid, and the bone and skin healed completely without suppuration or gangrene.',
@@ -11080,9 +11074,9 @@ export const unitData = {
             'Why did many Victorian surgeons vigorously oppose Lister’s carbolic acid spray in the 1870s?',
           options: [
             'It cracked surgeons’ hands, irritated lungs, slowed operating speed, and surgeons argued bacteria in the air were harmless.',
-            'Parliament had banned the industrial import of carbolic acid from France.',
             'It caused fires when brought near surgical gas lamps.',
             'Carbolic acid was too expensive for voluntary hospitals to afford.',
+            'Parliament had banned the industrial import of carbolic acid from France.',
           ],
           answer:
             'It cracked surgeons’ hands, irritated lungs, slowed operating speed, and surgeons argued bacteria in the air were harmless.',
@@ -11093,8 +11087,8 @@ export const unitData = {
           question:
             'What is the fundamental difference between antiseptic surgery and aseptic surgery?',
           options: [
-            'Antiseptic surgery is performed outdoors; aseptic surgery is performed in military tents.',
             'Antiseptic uses boiling water, whereas aseptic uses cold carbolic acid.',
+            'Antiseptic surgery is performed outdoors; aseptic surgery is performed in military tents.',
             'Antiseptic surgery requires anaesthetic; aseptic surgery is performed without anaesthetic.',
             'Antiseptic surgery kills germs already in the wound using chemicals; aseptic surgery excludes all microbes from the theatre entirely through complete sterilisation.',
           ],
@@ -11488,44 +11482,44 @@ export const unitData = {
       },
       do_now: [
         {
-          q: 'In what year did the first deadly epidemic of Asiatic cholera arrive in Britain?',
-          a: '1831 (killing over 31,000 people)',
+          q: 'What chemical anaesthetic liquid was discovered by James Simpson in Edinburgh in 1847?',
+          a: 'Chloroform',
         },
         {
-          q: 'What government economic philosophy meaning ‘leave alone’ opposed sanitary spending?',
+          q: 'What chemical antiseptic spray did Joseph Lister introduce in Glasgow in 1865 to prevent wound sepsis?',
+          a: 'Carbolic acid',
+        },
+        {
+          q: 'Whose 1861 Germ Theory directly inspired Lister to realize microbes caused wound gangrene?',
+          a: 'Louis Pasteur',
+        },
+        {
+          q: 'What is the fundamental difference between antiseptic surgery and aseptic surgery?',
+          a: 'Antiseptic kills germs already inside the wound; aseptic creates an entirely sterile operating environment to prevent germs entering',
+        },
+        {
+          q: 'What surgical barrier did William Halsted introduce at Johns Hopkins Hospital in 1890 to protect surgical incisions?',
+          a: 'Sterilized rubber surgical gloves',
+        },
+        {
+          q: 'What hospital architectural layout did Florence Nightingale design to ensure continuous fresh air and sunlight?',
+          a: 'The Pavilion Hospital Plan',
+        },
+        {
+          q: 'In what year did Edwin Chadwick publish his landmark Report on the Sanitary Condition of the Labouring Population?',
+          a: '1842',
+        },
+        {
+          q: "What traditional British political and economic philosophy meaning 'leave alone' opposed government spending on public sanitation?",
           a: 'Laissez-faire',
         },
         {
-          q: 'Whose landmark 1842 report proved poor sanitary conditions caused disease and poverty?',
-          a: 'Edwin Chadwick (Report on the Sanitary Condition of the Labouring Population)',
+          q: 'What was the dominant 19th-century medical belief that blamed epidemics on toxic smells rising from open sewers and cesspools?',
+          a: 'Miasma theory',
         },
         {
-          q: 'Why was the 1848 First Public Health Act largely ineffective across Britain?',
-          a: 'It was permissive (optional); local councils refused to raise taxes to build sewers',
-        },
-        {
-          q: 'Which London doctor mapped the 1854 Soho cholera outbreak to the Broad Street water pump?',
-          a: 'Dr John Snow',
-        },
-        {
-          q: 'What physical action halted the cholera epidemic in Soho in September 1854?',
-          a: 'Removing the handle from the Broad Street water pump',
-        },
-        {
-          q: 'What environmental crisis in hot summer 1858 forced Parliament to fund London’s sewers?',
-          a: 'The Great Stink (the Thames was an open sewer boiling in the summer heat)',
-        },
-        {
-          q: 'Which civil engineer designed and built London’s revolutionary 82-mile brick sewer network?',
-          a: 'Sir Joseph Bazalgette',
-        },
-        {
-          q: 'Which political party leader passed the compulsory 1875 Second Public Health Act?',
-          a: 'Benjamin Disraeli (Conservative Prime Minister)',
-        },
-        {
-          q: 'Name one compulsory requirement placed on local town councils by the 1875 Public Health Act.',
-          a: 'Providing clean water, maintaining underground sewers, appointing Medical Officers of Health, or collecting refuse',
+          q: 'During the 1665 Great Plague, what emergency measure was taken by the Lord Mayor of London to isolate infected households?',
+          a: 'Quarantine of houses for 28–40 days with watchmen stationed outside',
         },
       ],
       fun_facts: [
@@ -11559,9 +11553,9 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Industrial Slums, Edwin Chadwick & The 1848 Public Health Act (1831–1848)',
+          title: 'Industrial Slums, Edwin Chadwick & The 1848 Public Health Act (1831–1848)',
           theme_heading:
-            'Act 1: Industrial Slums, Edwin Chadwick & The 1848 Public Health Act (1831–1848)',
+            'Industrial Slums, Edwin Chadwick & The 1848 Public Health Act (1831–1848)',
           source: {
             id: 'source_a_court_king_cholera',
             letter: 'A',
@@ -11589,8 +11583,8 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: John Snow & The Broad Street Pump Detective Investigation (1854)',
-          theme_heading: 'Act 2: John Snow & The Broad Street Pump Detective Investigation (1854)',
+          title: 'John Snow & The Broad Street Pump Detective Investigation (1854)',
+          theme_heading: 'John Snow & The Broad Street Pump Detective Investigation (1854)',
           source: {
             id: 'source_b_snow_cholera_map',
             letter: 'B',
@@ -11618,15 +11612,14 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Board of Health Scepticism & The Miasma Orthodoxy (1854–1858)',
-          theme_heading: 'Act 3: Board of Health Scepticism & The Miasma Orthodoxy (1854–1858)',
+          title: 'Board of Health Scepticism & The Miasma Orthodoxy (1854–1858)',
+          theme_heading: 'Board of Health Scepticism & The Miasma Orthodoxy (1854–1858)',
           text: '<span class="para-ref">[3.1]</span> Snow confirmed his water-borne hypothesis on a massive municipal scale through his celebrated "Grand Experiment" in South London during the 1854 epidemic. Comparing two competing private water companies that supplied houses along the exact same streets in Lambeth and Southwark, Snow uncovered stark statistical proof: customers of the *Southwark and Vauxhall Water Company* (which drew raw water from the sewage-polluted tidal Thames in central London) suffered **71 cholera deaths per 10,000 houses**; in contrast, customers of the *Lambeth Water Company* (which had moved its intake upriver to clean rural water at Thames Ditton) suffered only **5 deaths per 10,000 houses**.<br><br><span class="para-ref">[3.2]</span> Despite Snow’s overwhelming cartographic and statistical evidence, the medical establishment and the General Board of Health, led by figures like William Farr and Sir John Simon, obstinately rejected his findings. In 1855, the official government report concluded that there was no reason to doubt that cholera was spread by atmospheric miasma rising from filthy streets. The prestigious medical journal *The Lancet* published scathing critiques mocking Snow’s "peculiar water theory." Because Snow died of a stroke in 1858 at the age of forty-five, he did not live to see his discovery officially accepted by the scientific world.',
         },
         {
           act: 4,
-          title: 'Act 4: The Great Stink of 1858 & Bazalgette’s London Sewer Network (1858–1865)',
-          theme_heading:
-            'Act 4: The Great Stink of 1858 & Bazalgette’s London Sewer Network (1858–1865)',
+          title: 'The Great Stink of 1858 & Bazalgette’s London Sewer Network (1858–1865)',
+          theme_heading: 'The Great Stink of 1858 & Bazalgette’s London Sewer Network (1858–1865)',
           source: {
             id: 'source_c_bazalgette_sewer',
             letter: 'C',
@@ -11654,8 +11647,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: The 1875 Public Health Act: The Death of Laissez-Faire (1875)',
-          theme_heading: 'Act 5: The 1875 Public Health Act: The Death of Laissez-Faire (1875)',
+          title: 'The 1875 Public Health Act: The Death of Laissez-Faire (1875)',
+          theme_heading: 'The 1875 Public Health Act: The Death of Laissez-Faire (1875)',
           text: '<span class="para-ref">[5.1]</span> The ultimate legislative triumph of the sanitary revolution was the **1875 Public Health Act**, passed under Prime Minister Benjamin Disraeli’s Conservative government. While Edwin Chadwick’s earlier *1848 Public Health Act* had been purely *permissive* (optional) and largely ignored by tight-fisted local ratepayer councils, the 1875 Act was strictly **compulsory**: every town council was legally forced to provide clean piped water, construct modern drainage, collect street refuse, pave roadways, and appoint a full-time Medical Officer of Health and Sanitary Inspector.<br><br><span class="para-ref">[5.2]</span> Political democracy drove this legislative transformation. Under the 1867 Second Reform Act, urban working-class men had been granted the parliamentary vote; politicians could no longer ignore the appalling squalor of industrial slums if they wished to win elections. Combined with the Artisans’ Dwellings Act of 1875 (empowering councils to demolish filthy slums) and the Sale of Food and Drugs Act of 1875 (outlawing contaminated bread and milk), the 1875 Act marked the definitive death of *laissez-faire* and established the modern interventionist state, eliminating water-borne epidemics from Britain forever.',
         },
       ],
@@ -11759,10 +11752,10 @@ export const unitData = {
           question:
             'How did Dr John Snow prove that the 1854 Soho cholera outbreak was water-borne?',
           options: [
-            'By testing the air quality with balloons.',
+            'By inspecting sewage under a microscope.',
             'By plotting cholera deaths on a street map around the Broad Street water pump.',
             'By giving patients carbolic acid.',
-            'By inspecting sewage under a microscope.',
+            'By testing the air quality with balloons.',
           ],
           answer: 'By plotting cholera deaths on a street map around the Broad Street water pump.',
           explanation:
@@ -11772,10 +11765,10 @@ export const unitData = {
           question:
             'Why did the workers at the Broad Street Lion Brewery survive the 1854 cholera outbreak?',
           options: [
-            'They fled to the countryside.',
+            'They had all been vaccinated by Jenner.',
             'They wore carbolic acid masks.',
             'They drank free malt beer and never touched the contaminated pump water.',
-            'They had all been vaccinated by Jenner.',
+            'They fled to the countryside.',
           ],
           answer: 'They drank free malt beer and never touched the contaminated pump water.',
           explanation:
@@ -11785,10 +11778,10 @@ export const unitData = {
           question:
             'What crisis in July 1858 forced Parliament to authorize London’s underground sewer system?',
           options: [
-            'The Crimean War.',
-            'The Black Death.',
-            'The Great Stink (the Thames fermenting in an intense heatwave).',
             'The Great Fire of London.',
+            'The Crimean War.',
+            'The Great Stink (the Thames fermenting in an intense heatwave).',
+            'The Black Death.',
           ],
           answer: 'The Great Stink (the Thames fermenting in an intense heatwave).',
           explanation:
@@ -11798,9 +11791,9 @@ export const unitData = {
           question:
             'Who was the civil engineer who designed and built London’s intercepting sewer network?',
           options: [
-            'Robert Liston.',
-            'Edwin Chadwick.',
             'Isambard Kingdom Brunel.',
+            'Edwin Chadwick.',
+            'Robert Liston.',
             'Sir Joseph Bazalgette.',
           ],
           answer: 'Sir Joseph Bazalgette.',
@@ -11813,8 +11806,8 @@ export const unitData = {
           options: [
             'It lowered taxes for everyone.',
             'It was compulsory, legally forcing all local councils to provide clean water and drainage.',
-            'It outlawed all hospitals.',
             'It made beer free for factory workers.',
+            'It outlawed all hospitals.',
           ],
           answer:
             'It was compulsory, legally forcing all local councils to provide clean water and drainage.',
@@ -11825,8 +11818,8 @@ export const unitData = {
             'What immediate practical action did Dr John Snow persuade the parish Board of Guardians to take on 8 September 1854 to halt the Soho epidemic?',
           options: [
             'Remove the handle from the Broad Street water pump.',
-            'Pour carbolic acid into the Soho gutters.',
             'Burn all bedding in Broad Street.',
+            'Pour carbolic acid into the Soho gutters.',
             'Evacuate all Soho residents to Hampstead.',
           ],
           answer: 'Remove the handle from the Broad Street water pump.',
@@ -11837,9 +11830,9 @@ export const unitData = {
           question:
             'How did the cholera death of Susannah Eley in distant Hampstead provide crucial evidence confirming Snow’s water-borne theory?',
           options: [
+            'She worked as a nurse in Soho Hospital.',
             'She had handled infected cloth imported from India.',
             'She contracted cholera directly from a cloud of miasma blown northwards.',
-            'She worked as a nurse in Soho Hospital.',
             'She had never visited Soho but had Broad Street well water delivered daily because she liked its sparkling taste.',
           ],
           answer:
@@ -11852,9 +11845,9 @@ export const unitData = {
             'What seminal report published by Edwin Chadwick in 1842 proved that filth and epidemic disease caused widespread economic poverty?',
           options: [
             'Report on the Sanitary Condition of the Labouring Population.',
-            'The Soho Mortality Survey.',
             'The Microbe Hunter’s Gazette.',
             'The Royal Commission on Anaesthesia.',
+            'The Soho Mortality Survey.',
           ],
           answer: 'Report on the Sanitary Condition of the Labouring Population.',
           explanation:
@@ -11864,10 +11857,10 @@ export const unitData = {
           question:
             'How did the passage of the 1867 Second Reform Act directly accelerate public health legislation in Victorian Britain?',
           options: [
-            'It required all Members of Parliament to undergo medical training.',
+            'It abolished all municipal taxes.',
             'It enfranchised working-class men, forcing political parties to pass social reforms to win their votes.',
             'It banned private water companies from operating in London.',
-            'It abolished all municipal taxes.',
+            'It required all Members of Parliament to undergo medical training.',
           ],
           answer:
             'It enfranchised working-class men, forcing political parties to pass social reforms to win their votes.',
@@ -11878,10 +11871,10 @@ export const unitData = {
           question:
             'Which of the following was a mandatory requirement imposed on local councils by the compulsory 1875 Public Health Act?',
           options: [
-            'Compulsory quarantine for all arriving maritime sailors.',
+            'Building free sanatoria in every rural parish.',
             'Providing free smallpox inoculations to all adults.',
             'Appointing a qualified Medical Officer of Health and providing clean water, paving, lighting, and sewage disposal.',
-            'Building free sanatoria in every rural parish.',
+            'Compulsory quarantine for all arriving maritime sailors.',
           ],
           answer:
             'Appointing a qualified Medical Officer of Health and providing clean water, paving, lighting, and sewage disposal.',
@@ -12265,14 +12258,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Mendel, Heredity & The Chromosomal Mystery (c1900–1940s)',
-          theme_heading: 'Act 1: Mendel, Heredity & The Chromosomal Mystery (c1900–1940s)',
+          title: 'Mendel, Heredity & The Chromosomal Mystery (c1900–1940s)',
+          theme_heading: 'Mendel, Heredity & The Chromosomal Mystery (c1900–1940s)',
           text: '<span class="para-ref">[1.1]</span> By the opening decades of the twentieth century, Louis Pasteur and Robert Koch’s Germ Theory had conquered infectious medicine, explaining how external bacteria caused cholera, tuberculosis, and anthrax. Yet physicians were confronted by a profound biological mystery: why did fatal illnesses such as cystic fibrosis, sickle cell anemia, and hemophilia recur relentlessly across generations of the same family without any microbial infection? In 1900, European botanists rediscovered the forgotten 1866 hybridization experiments of Augustinian monk Gregor Mendel, which demonstrated that physical characteristics were transmitted from parents to offspring in precise mathematical ratios via invisible biological units termed "genes."<br><br><span class="para-ref">[1.2]</span> Medical researchers recognized that humanity possessed an internal biological blueprint; however, the physical nature of the gene remained an impenetrable enigma. Microscopic staining revealed thread-like chromosomes inside the cell nucleus, but biochemists were locked in debate over whether genetic blueprints were stored in complex chromosomal proteins or in a puzzling, overlooked nucleic acid called deoxyribonucleic acid (DNA). Without deciphering the molecular geometry of DNA, doctors could neither explain how genetic information replicated during cellular division nor comprehend how microscopic copying errors caused catastrophic hereditary mutations.',
         },
         {
           act: 2,
-          title: 'Act 2: Rosalind Franklin & Photograph 51 (1951–1952)',
-          theme_heading: 'Act 2: Rosalind Franklin & Photograph 51 (1951–1952)',
+          title: 'Rosalind Franklin & Photograph 51 (1951–1952)',
+          theme_heading: 'Rosalind Franklin & Photograph 51 (1951–1952)',
           source: {
             id: 'source_a_photograph_51',
             letter: 'A',
@@ -12300,8 +12293,8 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Watson & Crick’s Double Helix Model (1953)',
-          theme_heading: 'Act 3: Watson & Crick’s Double Helix Model (1953)',
+          title: 'Watson & Crick’s Double Helix Model (1953)',
+          theme_heading: 'Watson & Crick’s Double Helix Model (1953)',
           source: {
             id: 'source_b_dna_model',
             letter: 'B',
@@ -12329,14 +12322,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: The Human Genome Project (1990–2003)',
-          theme_heading: 'Act 4: The Human Genome Project (1990–2003)',
+          title: 'The Human Genome Project (1990–2003)',
+          theme_heading: 'The Human Genome Project (1990–2003)',
           text: '<span class="para-ref">[4.1]</span> Deciphering the structure of DNA was the catalyst for the greatest collaborative expedition in biomedical history: the Human Genome Project. Launched in 1990 as an international public consortium led by James Watson and Francis Collins and co-funded by the UK Wellcome Trust Sanger Institute, researchers across Britain, the United States, France, Germany, and Japan spent thirteen years decoding the genetic instruction manual.<br><br><span class="para-ref">[4.2]</span> Completed in April 2003, the project successfully mapped all 3 billion chemical base pairs across humanity’s 20,000–25,000 genes, publishing the data free online. This monumental digital reference sequence allows geneticists to pinpoint specific faulty mutations responsible for over 4,000 inherited disorders, including the BRCA1 and BRCA2 genes that dramatically elevate hereditary breast and ovarian cancer risks.',
         },
         {
           act: 5,
-          title: 'Act 5: Genetic Screening & The Treatment Gap (2000s–Present)',
-          theme_heading: 'Act 5: Genetic Screening & The Treatment Gap (2000s–Present)',
+          title: 'Genetic Screening & The Treatment Gap (2000s–Present)',
+          theme_heading: 'Genetic Screening & The Treatment Gap (2000s–Present)',
           text: '<span class="para-ref">[5.1]</span> The genetic revolution fundamentally transformed modern clinical practice from reactive symptom management into predictive, personalized medicine. Armed with genomic sequencing, contemporary doctors no longer rely on standardized treatments; instead, individuals carrying faulty hereditary mutations can undergo preventative blood screening, enabling life-saving prophylactic surgery such as double mastectomies decades before malignant tumors form. Furthermore, pharmacogenomics matches targeted drug therapies directly to a patient’s individual DNA profile.<br><br><span class="para-ref">[5.2]</span> However, medical historians emphasize the persistent "Diagnostic-Therapeutic Lag": while sequencing a patient’s genome is now rapid and inexpensive, developing safe, effective gene therapies remains extraordinarily complex, costly, and ethically contested. Correcting mutated genes inside living human bodies via techniques like CRISPR-Cas9 has progressed slowly, proving that understanding the genetic cause of disease does not automatically translate into an immediate clinical cure.',
         },
       ],
@@ -12436,8 +12429,8 @@ export const unitData = {
         {
           question: 'What does DNA stand for?',
           options: [
-            'Dextrorotatory Nucleic Atom',
             'Dinitrogen Amino Acid',
+            'Dextrorotatory Nucleic Atom',
             'Disaccharide Nitrogen Acid',
             'Deoxyribonucleic Acid',
           ],
@@ -12446,7 +12439,7 @@ export const unitData = {
         },
         {
           question: 'In what year did Watson and Crick publish their double-helix model of DNA?',
-          options: ['1953', '1971', '1945', '1962'],
+          options: ['1953', '1945', '1962', '1971'],
           answer: '1953',
           explanation:
             'Watson and Crick completed and published their DNA double helix model in April 1953.',
@@ -12454,26 +12447,26 @@ export const unitData = {
         {
           question:
             'Which scientist took the crucial X-ray diffraction image known as Photograph 51?',
-          options: ['Marie Curie', 'Rosalind Franklin', 'Dorothy Hodgkin', 'Florence Nightingale'],
+          options: ['Marie Curie', 'Rosalind Franklin', 'Florence Nightingale', 'Dorothy Hodgkin'],
           answer: 'Rosalind Franklin',
           explanation:
             'Rosalind Franklin captured Photograph 51 at King’s College London in May 1952.',
         },
         {
           question: 'Which base does Adenine (A) pair with in the DNA double helix?',
-          options: ['Uracil', 'Guanine', 'Thymine', 'Cytosine'],
+          options: ['Cytosine', 'Guanine', 'Thymine', 'Uracil'],
           answer: 'Thymine',
           explanation: 'In DNA, Adenine (A) pairs strictly with Thymine (T).',
         },
         {
           question: 'Which base does Cytosine (C) pair with in the DNA double helix?',
-          options: ['Ribose', 'Thymine', 'Adenine', 'Guanine'],
+          options: ['Adenine', 'Thymine', 'Ribose', 'Guanine'],
           answer: 'Guanine',
           explanation: 'Cytosine (C) bonds strictly with Guanine (G).',
         },
         {
           question: 'In what year was the international Human Genome Project officially completed?',
-          options: ['2000', '1995', '2003', '1990'],
+          options: ['1990', '1995', '2003', '2000'],
           answer: '2003',
           explanation:
             'The Human Genome Project was completed in April 2003, mapping all 3 billion base pairs.',
@@ -12488,7 +12481,7 @@ export const unitData = {
         {
           question:
             'Which pub in Cambridge did Watson and Crick enter to announce their discovery?',
-          options: ['The Red Lion', 'The Eagle', 'The Swan', 'The Crown'],
+          options: ['The Red Lion', 'The Eagle', 'The Crown', 'The Swan'],
           answer: 'The Eagle',
           explanation:
             'Watson and Crick famously celebrated at The Eagle pub near the Cavendish Laboratory in Cambridge.',
@@ -12496,10 +12489,10 @@ export const unitData = {
         {
           question: 'Which university laboratory did Franklin and Wilkins work at?',
           options: [
-            'Edinburgh University',
             'Cavendish Laboratory, Cambridge',
-            'King’s College London',
             'Oxford University',
+            'King’s College London',
+            'Edinburgh University',
           ],
           answer: 'King’s College London',
           explanation:
@@ -12508,7 +12501,7 @@ export const unitData = {
         {
           question:
             'What preventative surgery can a woman undergo if genetic screening reveals the faulty BRCA1 gene?',
-          options: ['Appendectomy', 'Preventative mastectomy', 'Blood transfusion', 'Lobectomy'],
+          options: ['Appendectomy', 'Preventative mastectomy', 'Lobectomy', 'Blood transfusion'],
           answer: 'Preventative mastectomy',
           explanation:
             'Women with the BRCA1 gene mutation may choose a prophylactic mastectomy to eliminate breast cancer risk.',
@@ -12932,8 +12925,8 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Wilhelm Röntgen & The Discovery of X-Rays (1895–1918)',
-          theme_heading: 'Act 1: Wilhelm Röntgen & The Discovery of X-Rays (1895–1918)',
+          title: 'Wilhelm Röntgen & The Discovery of X-Rays (1895–1918)',
+          theme_heading: 'Wilhelm Röntgen & The Discovery of X-Rays (1895–1918)',
           source: {
             id: 'source_a_first_xray',
             letter: 'A',
@@ -12961,14 +12954,14 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: Blood Laboratories & Fibre-Optic Endoscopy (1930s–1960s)',
-          theme_heading: 'Act 2: Blood Laboratories & Fibre-Optic Endoscopy (1930s–1960s)',
+          title: 'Blood Laboratories & Fibre-Optic Endoscopy (1930s–1960s)',
+          theme_heading: 'Blood Laboratories & Fibre-Optic Endoscopy (1930s–1960s)',
           text: '<span class="para-ref">[2.1]</span> As the twentieth century progressed, hospital diagnostics moved beyond bones to chemical pathology and biochemistry. Automated laboratory testing transformed diagnostic precision: centrifuges separated blood plasma, automated cell counters measured white blood cell spikes signaling acute infection or leukaemia, and biochemical assays measured blood glucose to diagnose diabetes and blood pressure cuffs monitored cardiovascular strain. Instead of guessing from external symptoms, clinicians possessed quantifiable biochemical indicators.<br><br><span class="para-ref">[2.2]</span> Alongside blood testing arose flexible fibre-optic endoscopy. Prior to the 1950s, inspecting internal organs required rigid metal tubes that risked puncturing delicate tissues, or dangerous exploratory laparotomies (cutting open the abdomen). In the 1950s and 1960s, optical physicists developed coherent bundles of flexible glass fibres that transmitted light and high-resolution images around bends. Doctors could now slide flexible endoscopes down a patient’s throat or into the bowel, directly inspecting gastric ulcers and biopsying tumors under direct vision without a single surgical incision.',
         },
         {
           act: 3,
-          title: 'Act 3: Godfrey Hounsfield, The CT Scanner & MRI (1971–1980s)',
-          theme_heading: 'Act 3: Godfrey Hounsfield, The CT Scanner & MRI (1971–1980s)',
+          title: 'Godfrey Hounsfield, The CT Scanner & MRI (1971–1980s)',
+          theme_heading: 'Godfrey Hounsfield, The CT Scanner & MRI (1971–1980s)',
           source: {
             id: 'source_b_ct_scanner',
             letter: 'B',
@@ -12996,16 +12989,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: The Epidemiological Shift to Chronic & Lifestyle Diseases (c1950–1980s)',
-          theme_heading:
-            'Act 4: The Epidemiological Shift to Chronic & Lifestyle Diseases (c1950–1980s)',
+          title: 'The Epidemiological Shift to Chronic & Lifestyle Diseases (c1950–1980s)',
+          theme_heading: 'The Epidemiological Shift to Chronic & Lifestyle Diseases (c1950–1980s)',
           text: '<span class="para-ref">[4.1]</span> In 1900, infectious diseases—tuberculosis, pneumonia, cholera, and diphtheria—were the undisputed executioners of British citizens, holding average life expectancy to just 46 for men and 50 for women. Over the subsequent six decades, clean municipal water, compulsory childhood immunizations, and the mass deployment of antibiotics brought bacterial epidemics under historic control. Average UK life expectancy surged past 75 by the 1980s.<br><br><span class="para-ref">[4.2]</span> However, living decades longer triggered a profound "epidemiological transition": the leading causes of national mortality shifted decisively from external microbial pathogens to non-communicable, chronic lifestyle illnesses. Epidemiologists isolated major culprits: commercial cigarette smoking causing lung cancer and COPD; excessive alcohol causing liver cirrhosis; sedentary diets high in saturated fats and refined sugars driving coronary heart disease, strokes, and type 2 diabetes; and UV sunbeds causing melanoma. Twentieth-century medicine recognized that daily consumer behaviors were degrading internal organs from within.',
         },
         {
           act: 5,
-          title: 'Act 5: State Lifestyle Campaigns & Prevention vs High-Tech Cure (1980s–Present)',
-          theme_heading:
-            'Act 5: State Lifestyle Campaigns & Prevention vs High-Tech Cure (1980s–Present)',
+          title: 'State Lifestyle Campaigns & Prevention vs High-Tech Cure (1980s–Present)',
+          theme_heading: 'State Lifestyle Campaigns & Prevention vs High-Tech Cure (1980s–Present)',
           text: '<span class="para-ref">[5.1]</span> Confronted by the astronomical financial cost of managing chronic lifestyle illnesses with high-tech scanners and intensive hospital care, the British government recognized that prevention was far more effective than clinical treatment. From the 1980s onward, the Department of Health launched nationwide health promotion campaigns: compulsory seatbelts (1983), the Change4Life dietary and exercise initiative, the soft drinks sugar levy (2018), and graphic public education campaigns warning against binge drinking and skin cancer.<br><br><span class="para-ref">[5.2]</span> The ultimate legislative expression of this philosophy was the landmark Health Act 2006, which made all enclosed public places and workplaces smoke-free from 1 July 2007. Health economists proved that statutory regulation and lifestyle prevention deliver far greater aggregate population health improvements at a fraction of the cost of high-tech scanners, demonstrating that modern public health requires combining cutting-edge diagnostic technology with compulsory state intervention.',
         },
       ],
@@ -13105,13 +13096,13 @@ export const unitData = {
       quick_quiz: [
         {
           question: 'In what year did Wilhelm Röntgen discover X-rays?',
-          options: ['1928', '1914', '1865', '1895'],
+          options: ['1865', '1914', '1928', '1895'],
           answer: '1895',
           explanation: 'Röntgen discovered X-rays in Würzburg on 8 November 1895.',
         },
         {
           question: 'Whose hand was pictured in the world’s first clinical X-ray photograph?',
-          options: ['Bertha Röntgen', 'Queen Victoria', 'Marie Curie', 'Florence Nightingale'],
+          options: ['Bertha Röntgen', 'Marie Curie', 'Queen Victoria', 'Florence Nightingale'],
           answer: 'Bertha Röntgen',
           explanation:
             'Röntgen took the famous 1895 X-ray photograph of his wife Bertha’s hand and wedding ring.',
@@ -13119,9 +13110,9 @@ export const unitData = {
         {
           question: 'Who pioneered mobile radiology ambulances ("petites Curies") during WWI?',
           options: [
+            'Rosalind Franklin',
             'Dorothy Crowfoot Hodgkin',
             'Elizabeth Garrett Anderson',
-            'Rosalind Franklin',
             'Marie Curie',
           ],
           answer: 'Marie Curie',
@@ -13149,10 +13140,10 @@ export const unitData = {
         {
           question: 'What is the main diagnostic advantage of MRI over conventional X-rays and CT?',
           options: [
-            'It was invented in 1850',
+            'It takes only 2 seconds',
             'It is made of cheap plastic',
             'It uses zero ionizing radiation and visualizes soft tissues',
-            'It takes only 2 seconds',
+            'It was invented in 1850',
           ],
           answer: 'It uses zero ionizing radiation and visualizes soft tissues',
           explanation:
@@ -13161,7 +13152,7 @@ export const unitData = {
         {
           question:
             'What device uses a flexible fiber-optic tube with a light and camera to inspect inside organs?',
-          options: ['Barometer', 'Stethoscope', 'Endoscope', 'Microscope'],
+          options: ['Microscope', 'Stethoscope', 'Endoscope', 'Barometer'],
           answer: 'Endoscope',
           explanation:
             'Endoscopes are inserted into the body to inspect digestive tracts and internal cavities.',
@@ -13171,9 +13162,9 @@ export const unitData = {
             'Which of the following is a primary lifestyle cause of cardiovascular disease and lung cancer?',
           options: [
             'Tobacco smoking',
+            'Drinking clean tap water',
             'Daily walking',
             'Penicillin injections',
-            'Drinking clean tap water',
           ],
           answer: 'Tobacco smoking',
           explanation:
@@ -13185,8 +13176,8 @@ export const unitData = {
           options: [
             'Prophylactic mastectomy',
             'Exploratory laparotomy',
-            'Aseptic suture',
             'Bloodletting',
+            'Aseptic suture',
           ],
           answer: 'Exploratory laparotomy',
           explanation:
@@ -13195,7 +13186,7 @@ export const unitData = {
         {
           question:
             'What British record company funded the early development of Godfrey Hounsfield’s CT scanner?',
-          options: ['Virgin Records', 'BBC', 'Decca', 'EMI (Electric & Musical Industries)'],
+          options: ['Decca', 'Virgin Records', 'BBC', 'EMI (Electric & Musical Industries)'],
           answer: 'EMI (Electric & Musical Industries)',
           explanation:
             'EMI funded Hounsfield’s research, partly enriched by the enormous royalties of The Beatles.',
@@ -13616,8 +13607,8 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Paul Ehrlich & Salvarsan 606 (1906–1909)',
-          theme_heading: 'Act 1: Paul Ehrlich & Salvarsan 606 (1906–1909)',
+          title: 'Paul Ehrlich & Salvarsan 606 (1906–1909)',
+          theme_heading: 'Paul Ehrlich & Salvarsan 606 (1906–1909)',
           source: {
             id: 'source_a_ehrlich_lab',
             letter: 'A',
@@ -13645,20 +13636,20 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: Gerhard Domagk & Prontosil (1932–1935)',
-          theme_heading: 'Act 2: Gerhard Domagk & Prontosil (1932–1935)',
+          title: 'Gerhard Domagk & Prontosil (1932–1935)',
+          theme_heading: 'Gerhard Domagk & Prontosil (1932–1935)',
           text: '<span class="para-ref">[2.1]</span> While Salvarsan 606 was a triumph against syphilis spirochetes, it was ineffective against common bacterial killers like *Streptococcus* and *Staphylococcus*. In 1932, German pathologist Gerhard Domagk achieved the next therapeutic breakthrough with **Prontosil**, a bright red industrial leather dye manufactured by Bayer. Domagk demonstrated that Prontosil cured mice infected with lethal streptococcal blood poisoning without poisoning the animals.<br><br><span class="para-ref">[2.2]</span> In 1935, Domagk’s six-year-old daughter Hildegard contracted severe, life-threatening blood poisoning after an embroidery needle snapped in her arm. Facing impending amputation and death, Domagk took the desperate gamble of injecting her with a heavy dose of Prontosil; she recovered completely within days. Researchers at the Pasteur Institute soon realized that the active therapeutic agent inside Prontosil was a simple chemical called *sulphonamide*. Sulphonamides ("sulfa drugs") slashed maternal puerperal fever deaths by 60% and cured bacterial pneumonia, proving that synthetic drugs could conquer widespread internal infections.',
         },
         {
           act: 3,
-          title: 'Act 3: The Beveridge Report & Wartime Reconstruction (1942)',
-          theme_heading: 'Act 3: The Beveridge Report & Wartime Reconstruction (1942)',
+          title: 'The Beveridge Report & Wartime Reconstruction (1942)',
+          theme_heading: 'The Beveridge Report & Wartime Reconstruction (1942)',
           text: '<span class="para-ref">[3.1]</span> While laboratory science advanced, interwar Britain remained scarred by grotesque healthcare inequality. Prior to 1948, medical treatment was private, commercial, or dependent on charitable philanthropy. David Lloyd George’s 1911 National Insurance Act provided basic GP coverage for low-paid working men, but completely excluded their wives, children, and elderly relatives. Millions of working-class women suffered untreated prolapses, dental decay, and illnesses in silence, while calling a private doctor or entering a hospital could plunge an entire family into financial ruin.<br><br><span class="para-ref">[3.2]</span> The collective solidarity of the Second World War shattered this unequal order. The Blitz, wartime rationing, and the shared evacuation of children convinced citizens that if the state could organize total war, it could organize peacetime welfare. In December 1942, civil servant William Beveridge published his famous social report, proclaiming that post-war reconstruction required slaying "Five Giant Evils": Want, Disease, Ignorance, Squalor, and Idleness. The report became an instant bestseller, recommending a comprehensive welfare state and a universal National Health Service providing free medical treatment for every citizen.',
         },
         {
           act: 4,
-          title: 'Act 4: Aneurin Bevan & The Launch of the NHS (1945–1948)',
-          theme_heading: 'Act 4: Aneurin Bevan & The Launch of the NHS (1945–1948)',
+          title: 'Aneurin Bevan & The Launch of the NHS (1945–1948)',
+          theme_heading: 'Aneurin Bevan & The Launch of the NHS (1945–1948)',
           source: {
             id: 'source_b_nhs_leaflet',
             letter: 'B',
@@ -13685,9 +13676,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: High-Tech Care, Surgical Milestones & Escalating Costs (1950s–Present)',
-          theme_heading:
-            'Act 5: High-Tech Care, Surgical Milestones & Escalating Costs (1950s–Present)',
+          title: 'High-Tech Care, Surgical Milestones & Escalating Costs (1950s–Present)',
+          theme_heading: 'High-Tech Care, Surgical Milestones & Escalating Costs (1950s–Present)',
           text: '<span class="para-ref">[5.1]</span> The foundation of the NHS coincided with an unprecedented explosion in high-tech treatments and complex surgery. In 1962, British orthopedic surgeon Sir John Charnley perfected low-friction total hip replacement at Wrightington Hospital using high-density polyethylene and bone cement, restoring mobility to hundreds of thousands of arthritic patients. The NHS rapidly expanded to deliver kidney dialysis machines, cardiac bypass surgery, intensive neonatal life support, and complex organ transplants.<br><br><span class="para-ref">[5.2]</span> Paradoxically, the clinical success of the NHS in keeping an ageing population alive longer created an escalating financial crisis. When the service opened, pent-up demand resulted in 8.5 million pairs of free spectacles and millions of dentures dispensed within months, wildly exceeding budgetary forecasts. By 1951, the government was forced to introduce prescription and dental charges, prompting Bevan’s Cabinet resignation. In the modern era, the exponential cost of new biological therapies, robotic surgery, and round-the-clock emergency care continues to challenge Bevan’s founding vision of universal, tax-funded healthcare.',
         },
       ],
@@ -13786,9 +13776,9 @@ export const unitData = {
           question:
             'What term did Paul Ehrlich coin for chemicals that destroy bacteria without harming human tissue?',
           options: [
-            'Four Humours',
-            'Magic bullets (Zauberkugeln)',
             'Antiseptic sprays',
+            'Magic bullets (Zauberkugeln)',
+            'Four Humours',
             'Antibody shields',
           ],
           answer: 'Magic bullets (Zauberkugeln)',
@@ -13797,7 +13787,7 @@ export const unitData = {
         },
         {
           question: 'What disease was cured by Salvarsan 606 in 1909?',
-          options: ['Syphilis', 'Smallpox', 'Tuberculosis', 'Cholera'],
+          options: ['Syphilis', 'Tuberculosis', 'Cholera', 'Smallpox'],
           answer: 'Syphilis',
           explanation:
             'Salvarsan 606 specifically destroyed Treponema pallidum, the bacterium causing syphilis.',
@@ -13805,20 +13795,20 @@ export const unitData = {
         {
           question:
             'Which Japanese scientist assisted Paul Ehrlich in testing arsenic compounds to discover Salvarsan 606?',
-          options: ['Kitasato Shibasaburo', 'Susumu Tonegawa', 'Sahachiro Hata', 'Hideyo Noguchi'],
+          options: ['Kitasato Shibasaburo', 'Hideyo Noguchi', 'Sahachiro Hata', 'Susumu Tonegawa'],
           answer: 'Sahachiro Hata',
           explanation:
             'Sahachiro Hata painstakingly retested the compounds in 1909 to discover compound 606.',
         },
         {
           question: 'Who discovered that the red dye Prontosil cured bacterial infections in 1932?',
-          options: ['Louis Pasteur', 'Robert Koch', 'Alexander Fleming', 'Gerhard Domagk'],
+          options: ['Alexander Fleming', 'Louis Pasteur', 'Robert Koch', 'Gerhard Domagk'],
           answer: 'Gerhard Domagk',
           explanation: 'Gerhard Domagk discovered Prontosil in 1932, winning the 1939 Nobel Prize.',
         },
         {
           question: 'What active antibacterial chemical group was found inside Prontosil?',
-          options: ['Tetracyclines', 'Sulphonamides', 'Penicillin', 'Streptomycin'],
+          options: ['Penicillin', 'Sulphonamides', 'Tetracyclines', 'Streptomycin'],
           answer: 'Sulphonamides',
           explanation:
             'Scientists at the Pasteur Institute discovered that sulfonamide was the active antimicrobial ingredient.',
@@ -13826,7 +13816,7 @@ export const unitData = {
         {
           question:
             'Who published the landmark 1942 report identifying "Five Giant Evils" in British society?',
-          options: ['William Beveridge', 'Clement Attlee', 'Aneurin Bevan', 'Winston Churchill'],
+          options: ['William Beveridge', 'Aneurin Bevan', 'Clement Attlee', 'Winston Churchill'],
           answer: 'William Beveridge',
           explanation:
             'William Beveridge authored the famous 1942 Social Insurance and Allied Services report.',
@@ -13834,13 +13824,13 @@ export const unitData = {
         {
           question:
             'Who was appointed Minister of Health in 1945 to create the National Health Service?',
-          options: ['David Lloyd George', 'Harold Wilson', 'Neville Chamberlain', 'Aneurin Bevan'],
+          options: ['David Lloyd George', 'Neville Chamberlain', 'Harold Wilson', 'Aneurin Bevan'],
           answer: 'Aneurin Bevan',
           explanation: 'Aneurin Bevan, a former Welsh coal miner, drove the creation of the NHS.',
         },
         {
           question: 'On what exact date did the National Health Service officially launch?',
-          options: ['1 January 1945', '1 January 1950', '5 July 1948', '8 May 1945'],
+          options: ['1 January 1945', '8 May 1945', '5 July 1948', '1 January 1950'],
           answer: '5 July 1948',
           explanation: 'The NHS was officially launched on 5 July 1948.',
         },
@@ -13862,9 +13852,9 @@ export const unitData = {
             'How did Aneurin Bevan famously compromise to win over reluctant hospital consultants?',
           options: [
             'He allowed them to keep private paying beds in NHS hospitals ("stuffed their mouths with gold")',
+            'He doubled their salaries',
             'He gave them military medals',
             'He exempted them from taxes',
-            'He doubled their salaries',
           ],
           answer:
             'He allowed them to keep private paying beds in NHS hospitals ("stuffed their mouths with gold")',
@@ -13963,44 +13953,44 @@ export const unitData = {
       ],
       do_now: [
         {
-          q: 'What term did Paul Ehrlich use for chemical compounds that destroy bacteria without harming patient cells?',
-          a: 'Magic bullets (Zauberkugeln)',
+          q: 'What diagnostic radiation technology was discovered by Wilhelm Röntgen in 1895?',
+          a: 'X-rays',
         },
         {
-          q: 'What disease was cured by Salvarsan 606 in 1909?',
-          a: 'Syphilis',
+          q: 'Name two advanced diagnostic imaging machines developed in the 1970s that create computerized 3D cross-sections of organs.',
+          a: 'CT scans and MRI scans',
         },
         {
-          q: 'Which Japanese bacteriologist assisted Paul Ehrlich in discovering Salvarsan 606?',
-          a: 'Sahachiro Hata',
+          q: 'What handheld diagnostic instrument uses flexible optical glass fibers and cameras to view the interior of the digestive tract or lungs?',
+          a: 'Endoscopes',
         },
         {
-          q: 'Who discovered that the red dye Prontosil cured streptococcal blood poisoning in 1932?',
-          a: 'Gerhard Domagk',
+          q: 'Which two British medical researchers published a landmark epidemiological study in 1950 proving that smoking caused lung cancer?',
+          a: 'Richard Doll and Austin Bradford Hill',
         },
         {
-          q: 'What active antibacterial chemical group was found inside Prontosil?',
-          a: 'Sulphonamides',
+          q: 'In what year did James Watson, Francis Crick, and Rosalind Franklin determine the double-helix molecular structure of DNA?',
+          a: '1953',
         },
         {
-          q: 'Who authored the 1942 social report identifying the "Five Giant Evils" in Britain?',
-          a: 'William Beveridge',
+          q: 'What international scientific consortium mapped the entire sequence of human genetic code between 1990 and 2003?',
+          a: 'The Human Genome Project',
         },
         {
-          q: 'Who was appointed Minister of Health in 1945 to create the National Health Service?',
-          a: 'Aneurin Bevan',
+          q: 'What German scientist identified the specific bacteria for tuberculosis (1882) and cholera (1883)?',
+          a: 'Robert Koch',
         },
         {
-          q: 'On what exact date was the NHS officially launched in Britain?',
-          a: '5 July 1948',
+          q: 'Why were existing 19th-century antiseptics like carbolic acid completely useless for treating internal bodily infections?',
+          a: 'Because they were toxic poisons that destroyed human internal organs and red blood cells',
         },
         {
-          q: 'Which medical organization fiercely resisted state-employed doctors under the NHS?',
-          a: 'The British Medical Association (BMA)',
+          q: 'What landmark legislation in 1875 made it compulsory for all local councils in Britain to provide clean water, sewers, and health inspectors?',
+          a: 'The Public Health Act 1875',
         },
         {
-          q: 'Which British engineer invented the CT scanner at EMI laboratories in 1971?',
-          a: 'Godfrey Hounsfield',
+          q: 'Who discovered the smallpox vaccine in 1796 using cowpox matter?',
+          a: 'Edward Jenner',
         },
       ],
       video: [
@@ -14289,8 +14279,8 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Alexander Fleming’s Accidental Discovery (1928–1929)',
-          theme_heading: 'Act 1: Alexander Fleming’s Accidental Discovery (1928–1929)',
+          title: 'Alexander Fleming’s Accidental Discovery (1928–1929)',
+          theme_heading: 'Alexander Fleming’s Accidental Discovery (1928–1929)',
           source: {
             id: 'source_a_fleming_dish',
             letter: 'A',
@@ -14318,14 +14308,14 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: Florey, Chain & Norman Heatley at Oxford (1938–1940)',
-          theme_heading: 'Act 2: Florey, Chain & Norman Heatley at Oxford (1938–1940)',
+          title: 'Florey, Chain & Norman Heatley at Oxford (1938–1940)',
+          theme_heading: 'Florey, Chain & Norman Heatley at Oxford (1938–1940)',
           text: '<span class="para-ref">[2.1]</span> A decade later, in 1938, an interdisciplinary scientific research team at Oxford University reopened Fleming’s forgotten paper. Led by Australian professor of pathology Howard Florey and German-Jewish refugee biochemist Ernst Chain, the Oxford team set out to isolate pure penicillin. Florey brought clinical leadership, while Chain applied biochemical rigor to analyze the chemical properties of the elusive mold.<br><br><span class="para-ref">[2.2]</span> Operating in a cash-starved laboratory during the early months of World War II, the team faced immense obstacles: penicillin broke down rapidly when exposed to air, light, or mild temperature shifts. Laboratory engineer Norman Heatley improvised brilliant apparatus using hospital bedpans, porcelain dairy churns, milk bottles, and bathtubs. By using ether solvents and vacuum freeze-drying, Heatley yielded tiny, precious pinches of stable, concentrated brown penicillin powder.',
         },
         {
           act: 3,
-          title: 'Act 3: Mice Trials & The Tragic Case of Albert Alexander (1940–1941)',
-          theme_heading: 'Act 3: Mice Trials & The Tragic Case of Albert Alexander (1940–1941)',
+          title: 'Mice Trials & The Tragic Case of Albert Alexander (1940–1941)',
+          theme_heading: 'Mice Trials & The Tragic Case of Albert Alexander (1940–1941)',
           source: {
             id: 'source_b_penicillin_production',
             letter: 'B',
@@ -14353,14 +14343,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Peoria & US Industrial Deep-Tank Fermentation (1941–1944)',
-          theme_heading: 'Act 4: Peoria & US Industrial Deep-Tank Fermentation (1941–1944)',
+          title: 'Peoria & US Industrial Deep-Tank Fermentation (1941–1944)',
+          theme_heading: 'Peoria & US Industrial Deep-Tank Fermentation (1941–1944)',
           text: '<span class="para-ref">[4.1]</span> In July 1941, Florey and Heatley flew to the neutral United States to secure corporate backing. Collaborating with the US Department of Agriculture Northern Regional Research Laboratory in Peoria, Illinois, scientists achieved two crucial breakthroughs: culturing the mould in *corn steep liquor* (a cornstarch byproduct) boosted yields twenty-fold, while a mouldy cantaloupe melon from a Peoria grocery market provided *Penicillium chrysogenum*, producing 200 times more penicillin.<br><br><span class="para-ref">[4.2]</span> Backed by the US War Production Board, pharmaceutical giants (Pfizer, Merck, Squibb) constructed massive 10,000-gallon deep-tank fermentation vats pumped with sterile oxygen. By D-Day on 6 June 1944, Allied medical units possessed 2.3 million doses of penicillin, treating every wounded casualty on the Normandy beaches and reducing amputations and fatal wound sepsis to unprecedented historic lows.',
         },
         {
           act: 5,
-          title: 'Act 5: D-Day Allied Victory & The Menace of Superbugs (1944–Present)',
-          theme_heading: 'Act 5: D-Day Allied Victory & The Menace of Superbugs (1944–Present)',
+          title: 'D-Day Allied Victory & The Menace of Superbugs (1944–Present)',
+          theme_heading: 'D-Day Allied Victory & The Menace of Superbugs (1944–Present)',
           text: '<span class="para-ref">[5.1]</span> Mass-produced penicillin revolutionized military and civilian medicine, transforming once-fatal conditions—pneumonia, scarlet fever, meningitis, and syphilis—into routine, curable infections. In 1945, Alexander Fleming, Howard Florey, and Ernst Chain were jointly awarded the Nobel Prize in Physiology or Medicine. Fleming was celebrated by the world press as a lone Scottish hero, though historical analysis proves penicillin was the triumphant product of multidisciplinary teamwork and state-backed industrial scale.<br><br><span class="para-ref">[5.2]</span> However, Fleming delivered a prophetic warning in his 1945 Nobel address: under-dosing and over-prescribing would inevitably train bacteria to survive penicillin. Over the subsequent decades, excessive antibiotic use in human medicine and livestock agriculture spurred the evolution of multi-drug resistant "superbugs" like MRSA (Methicillin-Resistant *Staphylococcus Aureus*). In the twenty-first century, medicine faces the alarming prospect of a post-antibiotic era, where ordinary infections could once again prove incurable.',
         },
       ],
@@ -14457,7 +14447,7 @@ export const unitData = {
       quick_quiz: [
         {
           question: 'In what year did Alexander Fleming discover penicillin at St Mary’s Hospital?',
-          options: ['1944', '1938', '1914', '1928'],
+          options: ['1914', '1938', '1944', '1928'],
           answer: '1928',
           explanation:
             'Fleming observed the bacterial inhibition of penicillin on 3 September 1928.',
@@ -14465,7 +14455,7 @@ export const unitData = {
         {
           question:
             'What type of bacteria was being cultured in the petri dish when penicillin was discovered?',
-          options: ['Anthrax', 'Staphylococcus', 'Cholera', 'Tuberculosis'],
+          options: ['Tuberculosis', 'Staphylococcus', 'Cholera', 'Anthrax'],
           answer: 'Staphylococcus',
           explanation: 'Fleming was investigating golden colonies of Staphylococcus bacteria.',
         },
@@ -14473,9 +14463,9 @@ export const unitData = {
           question: 'What was the scientific name of the mold that contaminated Fleming’s dish?',
           options: [
             'Bacillus anthracis',
-            'Streptococcus pyogenes',
-            'Penicillium notatum',
             'Escherichia coli',
+            'Penicillium notatum',
+            'Streptococcus pyogenes',
           ],
           answer: 'Penicillium notatum',
           explanation:
@@ -14497,14 +14487,14 @@ export const unitData = {
         {
           question:
             'What ingenious technician built improvised laboratory apparatus using bedpans and dairy churns at Oxford?',
-          options: ['Charles Chamberland', 'Norman Heatley', 'Raymond Gosling', 'Albert Alexander'],
+          options: ['Raymond Gosling', 'Norman Heatley', 'Albert Alexander', 'Charles Chamberland'],
           answer: 'Norman Heatley',
           explanation: 'Norman Heatley engineered the extraction and freeze-drying equipment.',
         },
         {
           question:
             'What was the name of the Oxford police constable who was the first human patient treated with penicillin in 1941?',
-          options: ['Arthur Davies', 'James Phipps', 'Sylvia Diggory', 'Albert Alexander'],
+          options: ['James Phipps', 'Arthur Davies', 'Sylvia Diggory', 'Albert Alexander'],
           answer: 'Albert Alexander',
           explanation:
             'Albert Alexander was treated in February 1941 after a rose thorn scratch turned septic.',
@@ -14514,9 +14504,9 @@ export const unitData = {
             'Why did Albert Alexander tragically die despite penicillin initially clearing his infection?',
           options: [
             'The team ran out of penicillin after five days',
-            'Penicillin poisoned his kidneys',
             'He was allergic to mold',
             'He had smallpox',
+            'Penicillin poisoned his kidneys',
           ],
           answer: 'The team ran out of penicillin after five days',
           explanation:
@@ -14525,7 +14515,7 @@ export const unitData = {
         {
           question:
             'In what US city did American scientists discover that corn steep liquor boosted penicillin yields?',
-          options: ['New York', 'Peoria, Illinois', 'San Francisco', 'Chicago'],
+          options: ['New York', 'Peoria, Illinois', 'Chicago', 'San Francisco'],
           answer: 'Peoria, Illinois',
           explanation:
             'The breakthrough occurred at the USDA Northern Regional Research Laboratory in Peoria, Illinois.',
@@ -14533,7 +14523,7 @@ export const unitData = {
         {
           question:
             'How many doses of penicillin were manufactured in time for the Allied D-Day landings in June 1944?',
-          options: ['50 million', '10,000', '2.3 million', '100,000'],
+          options: ['10,000', '100,000', '2.3 million', '50 million'],
           answer: '2.3 million',
           explanation:
             'Allied pharmaceutical production delivered 2.3 million doses for the Normandy campaign.',
@@ -14542,9 +14532,9 @@ export const unitData = {
           question:
             'What dangerous consequence of misusing antibiotics did Fleming presciently warn about in 1945?',
           options: [
+            'Global food shortages',
             'Immediate heart failure',
             'Hair loss',
-            'Global food shortages',
             'Bacterial resistance (superbugs)',
           ],
           answer: 'Bacterial resistance (superbugs)',
@@ -14644,44 +14634,44 @@ export const unitData = {
       ],
       do_now: [
         {
-          q: 'In what year did Alexander Fleming discover penicillin at St Mary’s Hospital?',
-          a: '1928',
+          q: 'What term was coined by Paul Ehrlich to describe chemical compounds designed to target and destroy specific disease microbes without harming the host?',
+          a: "'Magic bullets'",
         },
         {
-          q: 'What type of bacteria was being cultured when penicillin was discovered?',
-          a: 'Staphylococcus',
+          q: 'What was the name of the first chemical magic bullet, discovered by Paul Ehrlich and Sahachiro Hata in 1909 to treat syphilis?',
+          a: 'Salvarsan 606',
         },
         {
-          q: 'What was the scientific name of the mold that contaminated Fleming’s dish?',
-          a: 'Penicillium notatum',
+          q: 'What red chemical dye compound did Gerhard Domagk discover in 1932 that cured lethal streptococcal blood poisoning?',
+          a: 'Prontosil',
         },
         {
-          q: 'Which two Oxford scientists reopened penicillin research in 1938?',
-          a: 'Howard Florey and Ernst Chain',
+          q: "What 1942 wartime government report proposed a comprehensive welfare state to slay the 'Five Giant Evils'?",
+          a: 'The Beveridge Report',
         },
         {
-          q: 'What technician built improvised laboratory apparatus using bedpans at Oxford?',
-          a: 'Norman Heatley',
+          q: 'On what exact date did the British National Health Service (NHS) officially launch under Minister of Health Aneurin Bevan?',
+          a: '5 July 1948',
         },
         {
-          q: 'What was the name of the Oxford policeman who was the first human patient treated with penicillin in 1941?',
-          a: 'Albert Alexander',
+          q: 'What principle was the NHS built upon regarding payment for hospital care, prescriptions, and physician visits?',
+          a: 'Free at the point of delivery / funded through general taxation',
         },
         {
-          q: 'Why did Albert Alexander die despite penicillin clearing his infection?',
-          a: 'The Oxford team ran out of penicillin after five days',
+          q: 'What is the fundamental difference between a synthetic chemical drug and a biological antibiotic?',
+          a: 'A synthetic drug is manufactured chemically in a laboratory; an antibiotic is naturally produced by living organisms like fungi/molds to kill bacteria',
         },
         {
-          q: 'In what US city did scientists discover that corn steep liquor boosted penicillin yields?',
-          a: 'Peoria, Illinois',
+          q: 'What diagnostic technology discovered by Wilhelm Röntgen in 1895 allowed physicians to see fractured bones inside the living body?',
+          a: 'X-rays',
         },
         {
-          q: 'How many doses of penicillin were manufactured in time for D-Day in June 1944?',
-          a: '2.3 million doses',
+          q: 'Who proved in 1861 that airborne microorganisms, not spontaneous generation, caused disease and decay?',
+          a: 'Louis Pasteur',
         },
         {
-          q: 'What dangerous consequence of overusing antibiotics did Fleming warn about in 1945?',
-          a: 'Bacterial resistance (superbugs like MRSA)',
+          q: 'What was the name of Florence Nightingale’s revolutionary hospital design that featured cross-ventilated wards?',
+          a: 'The Pavilion Plan',
         },
       ],
       video: [
@@ -14971,9 +14961,8 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: The 20th-Century Smoking Epidemic & Tobacco Advertising (1920s–1950)',
-          theme_heading:
-            'Act 1: The 20th-Century Smoking Epidemic & Tobacco Advertising (1920s–1950)',
+          title: 'The 20th-Century Smoking Epidemic & Tobacco Advertising (1920s–1950)',
+          theme_heading: 'The 20th-Century Smoking Epidemic & Tobacco Advertising (1920s–1950)',
           source: {
             id: 'source_a_cigarette_ad',
             letter: 'A',
@@ -15000,27 +14989,26 @@ export const unitData = {
         },
         {
           act: 2,
-          title: 'Act 2: Doll & Hill’s Epidemiological Indictment (1950–1954)',
-          theme_heading: 'Act 2: Doll & Hill’s Epidemiological Indictment (1950–1954)',
+          title: 'Doll & Hill’s Epidemiological Indictment (1950–1954)',
+          theme_heading: 'Doll & Hill’s Epidemiological Indictment (1950–1954)',
           text: '<span class="para-ref">[2.1]</span> As hospital thoracic wards overflowed with dying patients, the Medical Research Council (MRC) commissioned two brilliant investigators—epidemiologist Richard Doll and medical statistician Austin Bradford Hill—to determine the cause of the epidemic. Most contemporary physicians assumed the culprit was environmental pollution, pointing to coal fires, automobile exhaust fumes, or tarmac road resurfacing. Doll and Hill designed an innovative forensic inquiry, personally interviewing 709 lung cancer patients across twenty London hospitals between 1948 and 1952, comparing their detailed life histories with an identical control group of hospital patients admitted for non-cancer illnesses.<br><br><span class="para-ref">[2.2]</span> In September 1950, Doll and Hill dropped a scientific bombshell in the *British Medical Journal* (BMJ): heavy cigarette smokers were fifty times more likely to contract lung cancer than non-smokers, with the statistical risk rising in direct proportion to the number of cigarettes smoked per day. To silence skeptical tobacco executives, in October 1951 Doll and Hill launched the monumental British Doctors Study, tracking the smoking habits and cause of death of over 40,000 registered British physicians over several decades. Within three years, the prospective study proved conclusively that smoking caused lung cancer, chronic obstructive pulmonary disease (COPD), and coronary heart disease. Stunned by his own forensic data, Richard Doll extinguished his pipe and never smoked again.',
         },
         {
           act: 3,
-          title: 'Act 3: Royal College of Physicians & Early Statutory Ad Bans (1962–1971)',
-          theme_heading: 'Act 3: Royal College of Physicians & Early Statutory Ad Bans (1962–1971)',
+          title: 'Royal College of Physicians & Early Statutory Ad Bans (1962–1971)',
+          theme_heading: 'Royal College of Physicians & Early Statutory Ad Bans (1962–1971)',
           text: '<span class="para-ref">[3.1]</span> Despite Doll and Hill’s overwhelming statistical proof, the British government dragged its feet throughout the 1950s, fearful of losing hundreds of millions in tobacco tax revenues and cowed by the aggressive political lobbying of tobacco conglomerates. The inertia was shattered in 1962, when the Royal College of Physicians published its landmark report *Smoking and Health*, warning Parliament that cigarette smoking was causing a national death toll equivalent to a major wartime catastrophe.<br><br><span class="para-ref">[3.2]</span> Under intense public pressure, Parliament initiated an escalating legislative campaign against tobacco: in 1965, the government banned all cigarette commercials from British television screens; in 1971, health warnings were made legally compulsory on all cigarette packets; and tobacco sports sponsorship was progressively restricted. However, commercial tobacco firms fought back by sponsoring Formula 1 motor racing, keeping brand logos visible to millions of young television viewers.',
         },
         {
           act: 4,
-          title: 'Act 4: The Public Indoor Smoking Ban & Secondhand Smoke (2000s)',
-          theme_heading: 'Act 4: The Public Indoor Smoking Ban & Secondhand Smoke (2000s)',
+          title: 'The Public Indoor Smoking Ban & Secondhand Smoke (2000s)',
+          theme_heading: 'The Public Indoor Smoking Ban & Secondhand Smoke (2000s)',
           text: '<span class="para-ref">[4.1]</span> By the late 1990s, medical science established that tobacco did not merely poison the individual smoker, but inflicted severe mortal harm on non-smokers via *passive smoking* (secondhand smoke). Extensive epidemiological research proved that inhaling secondhand tobacco smoke in crowded pubs, restaurants, and workplaces caused thousands of fatal heart attacks and lung cancers in non-smoking hospitality workers every year.<br><br><span class="para-ref">[4.2]</span> This scientific revelation transformed public health policy: tobacco was no longer a matter of individual lifestyle choice, but a workplace safety hazard that the state had a legal duty to regulate. Under the landmark Health Act 2006, the British government enacted a total ban on smoking inside all enclosed public places and workplaces across England from 1 July 2007 (following Scotland in 2006 and Wales earlier in 2007). In October 2007, the legal purchase age for tobacco was raised from 16 to 18, permanently changing British social habits.',
         },
         {
           act: 5,
-          title: 'Act 5: Plain Packaging, Advanced Oncology & The Smoke-Free Goal (2010s–Present)',
-          theme_heading:
-            'Act 5: Plain Packaging, Advanced Oncology & The Smoke-Free Goal (2010s–Present)',
+          title: 'Plain Packaging, Advanced Oncology & The Smoke-Free Goal (2010s–Present)',
+          theme_heading: 'Plain Packaging, Advanced Oncology & The Smoke-Free Goal (2010s–Present)',
           source: {
             id: 'source_b_plain_packaging',
             letter: 'B',
@@ -15142,7 +15130,7 @@ export const unitData = {
         {
           question:
             'Who were the two British researchers who proved the link between smoking and lung cancer in 1950?',
-          options: ['Simpson and Lister', 'Doll and Hill', 'Florey and Chain', 'Watson and Crick'],
+          options: ['Watson and Crick', 'Doll and Hill', 'Florey and Chain', 'Simpson and Lister'],
           answer: 'Doll and Hill',
           explanation:
             'Richard Doll and Austin Bradford Hill published their definitive study in the BMJ in September 1950.',
@@ -15163,9 +15151,9 @@ export const unitData = {
         {
           question: 'Why is lung cancer particularly difficult to diagnose in its early stages?',
           options: [
-            'Lungs are invisible on scans',
-            'Doctors refuse to test patients',
             'X-rays cannot pass through ribs',
+            'Doctors refuse to test patients',
+            'Lungs are invisible on scans',
             'Lungs lack sensory pain receptors, so early tumors grow without symptoms',
           ],
           answer: 'Lungs lack sensory pain receptors, so early tumors grow without symptoms',
@@ -15177,9 +15165,9 @@ export const unitData = {
             'What type of diagnostic scan uses low-dose radiation to detect small lung nodules before they metastasize?',
           options: [
             'Standard dental X-ray',
-            'Thermometer',
-            'Low-dose helical CT scan',
             'Ultrasound scan',
+            'Low-dose helical CT scan',
+            'Thermometer',
           ],
           answer: 'Low-dose helical CT scan',
           explanation:
@@ -15187,7 +15175,7 @@ export const unitData = {
         },
         {
           question: 'What surgical procedure involves removing an entire cancerous lobe of a lung?',
-          options: ['Appendectomy', 'Lobectomy', 'Tonsillectomy', 'Mastectomy'],
+          options: ['Mastectomy', 'Lobectomy', 'Tonsillectomy', 'Appendectomy'],
           answer: 'Lobectomy',
           explanation: 'A lobectomy removes one of the lobes of the lung containing the tumor.',
         },
@@ -15202,21 +15190,21 @@ export const unitData = {
         {
           question:
             'In what year was cigarette advertising completely banned on British television?',
-          options: ['1965', '1985', '1948', '2007'],
+          options: ['1965', '1948', '1985', '2007'],
           answer: '1965',
           explanation: 'Television cigarette advertising was banned in the UK in 1965.',
         },
         {
           question:
             'In what year did England introduce a compulsory ban on smoking in all enclosed public places and workplaces?',
-          options: ['1990', '2016', '1975', '2007'],
+          options: ['1975', '1990', '2016', '2007'],
           answer: '2007',
           explanation: 'The Health Act 2007 banned public indoor smoking from 1 July 2007.',
         },
         {
           question:
             'What standardized color (Pantone 448 C) was made compulsory for all UK cigarette packaging in 2016?',
-          options: ['Drab dark olive-brown', 'Bright red', 'Neon yellow', 'Pure white'],
+          options: ['Drab dark olive-brown', 'Bright red', 'Pure white', 'Neon yellow'],
           answer: 'Drab dark olive-brown',
           explanation:
             'Pantone 448 C, an unappealing dark olive-brown, was mandated for plain packaging.',
@@ -15224,7 +15212,7 @@ export const unitData = {
         {
           question:
             'Approximately what percentage of adult British males smoked in 1950 compared to under 13% today?',
-          options: ['10%', '65%', '95%', '30%'],
+          options: ['10%', '65%', '30%', '95%'],
           answer: '65%',
           explanation: 'Approximately 65% of adult men smoked in Britain in 1950.',
         },
@@ -15320,44 +15308,44 @@ export const unitData = {
       ],
       do_now: [
         {
-          q: 'Who were the two British epidemiologists who proved that smoking causes lung cancer in 1950?',
-          a: 'Richard Doll and Austin Bradford Hill',
+          q: 'In what year did Alexander Fleming accidentally observe that Penicillium mold had dissolved staphylococcus bacteria at St Mary’s Hospital?',
+          a: '1928',
         },
         {
-          q: 'What was the long-term study of over 40,000 doctors launched in 1951 called?',
-          a: 'The British Doctors Study',
+          q: 'Which two Oxford University researchers purified penicillin into a usable medical drug and conducted clinical trials in 1940–1941?',
+          a: 'Howard Florey and Ernst Chain',
         },
         {
-          q: 'Why is lung cancer particularly difficult to diagnose in its early stages?',
-          a: 'Lung tissue has no pain nerves, so early tumors grow without symptoms',
+          q: 'What was the name of the Oxford policeman who became the first human patient treated with penicillin in 1941?',
+          a: 'Albert Alexander',
         },
         {
-          q: 'What type of diagnostic scan uses low-dose radiation to detect small lung tumors early?',
-          a: 'Low-dose helical CT scan',
+          q: 'What country provided the industrial chemical factories and deep-tank fermentation facilities to mass-produce penicillin for D-Day in 1944?',
+          a: 'The United States',
         },
         {
-          q: 'What surgical procedure involves removing an entire cancerous lobe of a lung?',
-          a: 'Lobectomy',
+          q: 'What growing modern medical crisis has been triggered by the widespread over-use and misuse of antibiotics in humans and agriculture?',
+          a: "Antibiotic resistance / antimicrobial resistance / 'superbugs' like MRSA",
         },
         {
-          q: 'What modern cancer treatment uses drugs to train the body’s own immune T-cells to attack tumors?',
-          a: 'Immunotherapy',
+          q: 'In what year was the British National Health Service (NHS) founded?',
+          a: '1948',
         },
         {
-          q: 'In what year was cigarette advertising completely banned on British television?',
-          a: '1965',
+          q: "What 1909 synthetic chemical compound discovered by Paul Ehrlich was known as the first 'magic bullet'?",
+          a: 'Salvarsan 606',
         },
         {
-          q: 'In what year was smoking banned in all enclosed public places and workplaces in England?',
-          a: '2007 (The Health Act 2007)',
+          q: 'What landmark Victorian law in 1875 marked the definitive end of laissez-faire by making clean water and sewers compulsory for all local councils?',
+          a: 'The Public Health Act 1875',
         },
         {
-          q: 'What standardized color (Pantone 448 C) was mandated for UK cigarette packaging in 2016?',
-          a: 'Drab dark olive-brown (plain packaging)',
+          q: 'Which physician proved in 1854 that cholera was transmitted through contaminated drinking water from the Broad Street pump?',
+          a: 'Dr John Snow',
         },
         {
-          q: 'Approximately what percentage of adult British men smoked in 1950 compared to under 13% today?',
-          a: '65%',
+          q: 'What statistical diagram did Florence Nightingale create in 1858 to convince Queen Victoria and Parliament that preventable diseases killed more soldiers than combat?',
+          a: 'The Polar Area Diagram / Coxcomb chart',
         },
       ],
       video: [
@@ -15622,14 +15610,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Flanders Terrain & The Ypres Salient (1914–1915)',
-          theme_heading: 'Act 1: Flanders Terrain & The Ypres Salient (1914–1915)',
+          title: 'Flanders Terrain & The Ypres Salient (1914–1915)',
+          theme_heading: 'Flanders Terrain & The Ypres Salient (1914–1915)',
           text: '<span class="para-ref">[1.1]</span> In August 1914, the British Expeditionary Force (BEF) deployed to France expecting a war of rapid movement, sweeping cavalry maneuvers, and decisive open-field engagements. However, the lethal reality of modern industrialized firepower immediately shattered these nineteenth-century tactical assumptions. Heavy breech-loading artillery firing high-explosive shells, combined with rapid-firing Vickers machine guns capable of discharging 500 rounds per minute, rendered open infantry advances suicidal. Following the Battle of the Marne and the "Race to the Sea," both armies attempted to outflank each other northwards until they collided with the Belgian coast, establishing a static front line defending the vital Channel ports of Boulogne, Calais, and Dunkirk—the logistical lifeline through which fresh troops, ammunition, food, and medical supplies flowed from Britain.<br><br><span class="para-ref">[1.2]</span> The most contested and deadly sector held by British forces was the <strong>Ypres Salient</strong> in West Flanders. A "salient" is an outward military bulge into enemy territory, surrounded on three sides. At Ypres, the German army held the higher surrounding crescent of ridges (including Messines and Passchendaele), giving them commanding artillery observation over every British movement in the low-lying basin below. Geologically, Flanders consisted of dense, impermeable clay with a water table just two to three feet beneath the surface. When relentless artillery bombardments pulverized the ancient agricultural drainage dykes, the ground liquefied into an ocean of putrid mud. British frontline trenches could rarely be dug more than two feet deep; instead, soldiers were forced to pile sandbags into raised breastworks above ground level, exposed to constant artillery fire and the threat of drowning in liquid mud.',
         },
         {
           act: 2,
-          title: 'Act 2: Trench Architecture & Zig-Zag Traverses (1914–1918)',
-          theme_heading: 'Act 2: Trench Architecture & Zig-Zag Traverses (1914–1918)',
+          title: 'Trench Architecture & Zig-Zag Traverses (1914–1918)',
+          theme_heading: 'Trench Architecture & Zig-Zag Traverses (1914–1918)',
           source: {
             id: 'source_a_aerial_trench_ypres',
             letter: 'A',
@@ -15658,8 +15646,8 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Trench System & Evacuation Bottlenecks (1915–1918)',
-          theme_heading: 'Act 3: Trench System & Evacuation Bottlenecks (1915–1918)',
+          title: 'Trench System & Evacuation Bottlenecks (1915–1918)',
+          theme_heading: 'Trench System & Evacuation Bottlenecks (1915–1918)',
           source: {
             id: 'source_b_flooded_trench',
             letter: 'B',
@@ -15688,14 +15676,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Thompson’s Cave & The Arras Underground Hospital (Nov 1916–1917)',
-          theme_heading: 'Act 4: Thompson’s Cave & The Arras Underground Hospital (Nov 1916–1917)',
+          title: 'Thompson’s Cave & The Arras Underground Hospital (Nov 1916–1917)',
+          theme_heading: 'Thompson’s Cave & The Arras Underground Hospital (Nov 1916–1917)',
           text: '<span class="para-ref">[4.1]</span> In striking contrast to the waterlogged clay of Flanders, the terrain around the historic city of <strong>Arras</strong> in northern France was underlain by dry, permeable chalk. Centred on ancient Roman and medieval chalk quarries (known locally as <em>boves</em>), the British military discovered an extraordinary geological opportunity. In late 1916, ahead of the planned spring 1917 offensive, the British and New Zealand Tunnelling Corps were deployed to link these cavernous chalk quarries with miles of newly excavated subterranean tunnels, creating a hidden underground city capable of sheltering 25,000 soldiers within striking distance of the German lines.<br><br><span class="para-ref">[4.2]</span> Within this subterranean labyrinth, the RAMC constructed an immense, fully equipped underground medical complex known as <strong>Thompson’s Cave</strong>. Connected directly to the front line by covered chalk saps, this underground dressing station and hospital housed 700 hospital beds, operating theatres, rest stations, a mortuary, and a kitchen. Fitted with electric lighting, piped running water, and ventilation shafts, Thompson’s Cave operated entirely immune to surface artillery bombardment. Surgeons performed emergency debridement and stabilized severe casualties in dry, warm, and sterile conditions—an unprecedented achievement that demonstrated how the British Army exploited local geology to protect medical care.',
         },
         {
           act: 5,
-          title: 'Act 5: Mass Trauma: The Somme & Cambrai (1916–1917)',
-          theme_heading: 'Act 5: Mass Trauma: The Somme & Cambrai (1916–1917)',
+          title: 'Mass Trauma: The Somme & Cambrai (1916–1917)',
+          theme_heading: 'Mass Trauma: The Somme & Cambrai (1916–1917)',
           text: '<span class="para-ref">[5.1]</span> The scale of medical trauma on the Western Front was defined by massive, set-piece battles. On 1 July 1916—the catastrophic opening day of the <strong>Battle of the Somme</strong>—the British Army suffered 57,470 casualties, including 19,240 killed, as infantry advanced across rolling chalk downland against uncut barbed wire and fortified German machine-gun nests. The sheer tidal wave of wounded men completely overwhelmed the existing evacuation chain: frontline aid posts ran out of morphine and bandages, motor ambulances broke down on rutted roads, and thousands of casualties lay on open stretchers in clearing station fields for days awaiting emergency surgery.<br><br><span class="para-ref">[5.2]</span> The crisis of the Somme forced the British High Command and the RAMC to revolutionize their operational methods. By November 1917 at the <strong>Battle of Cambrai</strong>, where 450 British tanks broke through the Hindenburg Line on unbroken chalk ground, the medical service had evolved into a sophisticated, mechanized trauma pipeline. The RAMC deployed advance surgical teams closer to the front line, expanded fleets of motorized field ambulances, coordinated dedicated hospital trains, and established forward blood depot banks. From the flooded quagmires of Ypres to the chalk fortresses of Arras and the carnage of the Somme, the geography of the Western Front was the relentless crucible that forged modern emergency trauma medicine.',
         },
       ],
@@ -15821,10 +15809,10 @@ export const unitData = {
         {
           question: 'Where was the British sector of the Western Front located?',
           options: [
-            'Along the Gallipoli peninsula in Turkey.',
             'In southern Germany along the Rhine river.',
-            'In northern France and Belgium (Flanders), defending Channel ports like Calais and Boulogne.',
             'Across the Italian Alps near Caporetto.',
+            'In northern France and Belgium (Flanders), defending Channel ports like Calais and Boulogne.',
+            'Along the Gallipoli peninsula in Turkey.',
           ],
           answer:
             'In northern France and Belgium (Flanders), defending Channel ports like Calais and Boulogne.',
@@ -15847,10 +15835,10 @@ export const unitData = {
           question:
             'Why was the Ypres Salient such a dangerous position for British troops to defend?',
           options: [
-            'German troops possessed radar and guided missiles.',
+            'It was located in an arid desert with no water supply.',
             'It was surrounded on three sides by German forces holding the higher ground.',
             'It was entirely underwater with no land surface.',
-            'It was located in an arid desert with no water supply.',
+            'German troops possessed radar and guided missiles.',
           ],
           answer: 'It was surrounded on three sides by German forces holding the higher ground.',
           explanation:
@@ -15860,8 +15848,8 @@ export const unitData = {
           question: 'What tactic did the British use to capture Hill 60 near Ypres in April 1915?',
           options: [
             'Specialist tunnelling companies dug deep mines under the hill and detonated massive explosive charges.',
-            'Amphibious gunboats sailing up the river Lys.',
             'A massive airborne parachute assault.',
+            'Amphibious gunboats sailing up the river Lys.',
             'High-altitude bombing raids by zeppelins.',
           ],
           answer:
@@ -15874,8 +15862,8 @@ export const unitData = {
             'How many British casualties were suffered on the first day of the Battle of the Somme (1 July 1916)?',
           options: [
             'Exactly 500 casualties.',
-            'Zero casualties because artillery destroyed all enemy positions.',
             'Over 500,000 casualties on the first morning.',
+            'Zero casualties because artillery destroyed all enemy positions.',
             'Approximately 57,000 casualties (including over 19,000 killed).',
           ],
           answer: 'Approximately 57,000 casualties (including over 19,000 killed).',
@@ -15887,9 +15875,9 @@ export const unitData = {
             'What unique medical facility was created inside the chalk quarries beneath Arras in 1917?',
           options: [
             'A floating hospital barge on the canal.',
-            'A chemical weapons manufacturing plant.',
-            'Thompson’s Cave, a fully functioning 700-bed underground hospital with operating theatres and running water.',
             'An open-air canvas camp on the battlefield.',
+            'Thompson’s Cave, a fully functioning 700-bed underground hospital with operating theatres and running water.',
+            'A chemical weapons manufacturing plant.',
           ],
           answer:
             'Thompson’s Cave, a fully functioning 700-bed underground hospital with operating theatres and running water.',
@@ -15900,10 +15888,10 @@ export const unitData = {
           question:
             'What major technological military innovation was first used en masse at the Battle of Cambrai in November 1917?',
           options: [
-            'Submarines operating on the Western Front rivers.',
+            'Poison mustard gas delivered by supersonic rockets.',
             'Over 450 British tanks working in close coordination with infantry.',
             'Jet fighter aircraft providing close air support.',
-            'Poison mustard gas delivered by supersonic rockets.',
+            'Submarines operating on the Western Front rivers.',
           ],
           answer: 'Over 450 British tanks working in close coordination with infantry.',
           explanation:
@@ -15913,10 +15901,10 @@ export const unitData = {
           question:
             'Why were British front-line trenches constructed in a zigzag pattern with traverses rather than straight lines?',
           options: [
-            'To allow rainwater to drain directly into German lines.',
-            'To make room for cavalry horses to gallop through.',
-            'To prevent enemy machine-gunners firing down the entire length of the trench and contain artillery shell blasts.',
             'Because British soldiers did not possess surveying compasses.',
+            'To allow rainwater to drain directly into German lines.',
+            'To prevent enemy machine-gunners firing down the entire length of the trench and contain artillery shell blasts.',
+            'To make room for cavalry horses to gallop through.',
           ],
           answer:
             'To prevent enemy machine-gunners firing down the entire length of the trench and contain artillery shell blasts.',
@@ -15928,9 +15916,9 @@ export const unitData = {
             'How did the geography of Flanders (Ypres) differ from the chalk hills of the Somme?',
           options: [
             'Flanders had a very high water table and clay soil that easily turned to impassable liquid mud, whereas the Somme was undulating dry chalk downland.',
-            'Flanders had no rainfall while the Somme experienced constant monsoons.',
-            'Flanders was dense pine forest while the Somme was coastal sand dunes.',
             'Flanders was mountainous granite while the Somme was low-lying swamp.',
+            'Flanders was dense pine forest while the Somme was coastal sand dunes.',
+            'Flanders had no rainfall while the Somme experienced constant monsoons.',
           ],
           answer:
             'Flanders had a very high water table and clay soil that easily turned to impassable liquid mud, whereas the Somme was undulating dry chalk downland.',
@@ -15941,9 +15929,9 @@ export const unitData = {
           question:
             'Why was maintaining the railway line between Amiens, Boulogne, and Le Touquet essential for British medical logistics?',
           options: [
-            'It carried coal directly to the front line to heat the trenches.',
             'It was used exclusively to transport German prisoners of war to London.',
             'It was built to transport civilian holidaymakers away from Paris.',
+            'It carried coal directly to the front line to heat the trenches.',
             'It was the primary artery for transporting wounded soldiers rapidly from Casualty Clearing Stations to Base Hospitals and hospital ships.',
           ],
           answer:
@@ -16279,14 +16267,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: The Flanders Water Table & Trench Foot Pathology (1914–1915)',
-          theme_heading: 'Act 1: The Flanders Water Table & Trench Foot Pathology (1914–1915)',
+          title: 'The Flanders Water Table & Trench Foot Pathology (1914–1915)',
+          theme_heading: 'The Flanders Water Table & Trench Foot Pathology (1914–1915)',
           text: '<span class="para-ref">[1.1]</span> The physical geography of northern France and Flanders exerted a relentless, hostile pressure on the health of the British Army. The coastal plains of Belgium and northern France were naturally low-lying, reclaimed marshland underlain by impermeable, dense clay. Beneath the soil, the water table sat mere feet below the surface. Before 1914, this rich agricultural land was maintained by an intricate, fragile system of underground ceramic drainage pipes, roadside ditches, and drainage dykes. Millions of high-explosive artillery shells systematically pulverized this drainage infrastructure, turning the topsoil into a liquid soup of putrid mud.<br><br><span class="para-ref">[1.2]</span> For British soldiers stationed in the trenches, standing in cold, stagnant water was an inescapable reality of daily life. In winter, temperatures regularly plunged below freezing, chilling the mud to ice. Furthermore, soldiers wore tight woollen puttees—long fabric strips wrapped tightly around the calves and ankles from the boot to the knee. When drenched in freezing mud, the wool shrank, acting as an unintended tourniquet that severely restricted peripheral blood flow to the lower extremities. By November 1914, medical officers noted an alarming epidemic: thousands of men were reporting to medical dugouts unable to walk, their feet swollen, numb, and drained of color.',
         },
         {
           act: 2,
-          title: 'Act 2: Preventive Discipline: Whale Oil & The Buddy System (1915–1918)',
-          theme_heading: 'Act 2: Preventive Discipline: Whale Oil & The Buddy System (1915–1918)',
+          title: 'Preventive Discipline: Whale Oil & The Buddy System (1915–1918)',
+          theme_heading: 'Preventive Discipline: Whale Oil & The Buddy System (1915–1918)',
           source: {
             id: 'source_a_cheshire_regiment_trench',
             letter: 'A',
@@ -16315,14 +16303,14 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Trench Fever, Body Lice & Delousing (1914–1918)',
-          theme_heading: 'Act 3: Trench Fever, Body Lice & Delousing (1914–1918)',
+          title: 'Trench Fever, Body Lice & Delousing (1914–1918)',
+          theme_heading: 'Trench Fever, Body Lice & Delousing (1914–1918)',
           text: '<span class="para-ref">[3.1]</span> While trench foot assaulted the feet, a microscopic parasite besieged the body. <strong>Body lice</strong> (<em>Pediculus humanus corporis</em>) infested virtually every soldier on the Western Front. Living in the warm inner seams of woollen tunics and trousers, lice multiplied at an astonishing rate, laying pale eggs ("nits") in clothing fabric. Soldiers spent off-duty hours "chatting"—running candle flames along uniform seams to pop the lice. The constant itching caused severe sleep deprivation, but the primary medical danger was <strong>Trench Fever</strong> (Pyrexia of Unknown Origin). In 1918, medical researchers proved that trench fever was caused by the bacterium <em>Bartonella quintana</em>, transmitted through louse faeces. When soldiers scratched inflamed bite wounds, louse excrement was rubbed directly into the broken skin.<br><br><span class="para-ref">[3.2]</span> Trench fever caused sudden shivering, splitting headaches, severe aching in the shins, and recurring high fevers lasting up to a month, incapacitating up to 15% of an army’s strength at any one time. Because sick soldiers required weeks of hospitalization in base facilities, the disease created an intolerable logistical burden. To eliminate lice, the RAMC established extensive divisional <em>delousing stations</em> behind the lines. Uniforms were baked inside pressurized steam autoclaves known as "Serbian barrels" while soldiers bathed in hot carbolic baths. While these measures temporarily eradicated vermin, soldiers were frequently re-infested within days of returning to the muddy dugouts of the frontline.',
         },
         {
           act: 4,
-          title: 'Act 4: Dysentery, Water Chlorination & Sanitary Sections (1914–1918)',
-          theme_heading: 'Act 4: Dysentery, Water Chlorination & Sanitary Sections (1914–1918)',
+          title: 'Dysentery, Water Chlorination & Sanitary Sections (1914–1918)',
+          theme_heading: 'Dysentery, Water Chlorination & Sanitary Sections (1914–1918)',
           source: {
             id: 'source_b_ramparts_ww1',
             letter: 'B',
@@ -16350,8 +16338,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: Shell Shock & Psychological Trauma (1914–1918)',
-          theme_heading: 'Act 5: Shell Shock & Psychological Trauma (1914–1918)',
+          title: 'Shell Shock & Psychological Trauma (1914–1918)',
+          theme_heading: 'Shell Shock & Psychological Trauma (1914–1918)',
           text: '<span class="para-ref">[5.1]</span> In addition to physical diseases, the unrelenting violence of industrial high-explosive artillery bombardments triggered an unprecedented psychological catastrophe: <strong>Shell Shock</strong>. Soldiers subjected to days of continuous concussive shelling suffered catastrophic neurological and psychiatric collapses. Symptoms varied dramatically: severe uncontrollable physical tremors, hysterical blindness, sudden mutism, complete amnesia, sleep paralysis, and catatonic stupor. Coined by British psychologist Dr Charles Myers in 1915, the condition affected an estimated 80,000 British soldiers during the war, demonstrating that the human nervous system had broken down under mechanized industrial warfare.<br><br><span class="para-ref">[5.2]</span> Initially, British military authorities severely stigmatized shell shock as cowardice, malingering, or a lack of moral fiber; tragically, over 300 British soldiers suffering from acute trauma were executed by firing squad for "desertion." However, as thousands of frontline officers and decorated veterans succumbed to identical breakdowns, the Army shifted toward a medical model. Cases were officially designated as <strong>Not Yet Diagnosed, Nervous (NYDN)</strong> to prevent court-martials. Forward rest stations were established behind the lines to provide immediate warm food, clean dry clothes, and rest; approximately 70% of traumatized soldiers returned to duty within weeks. For severe cases, specialized recovery facilities like <em>Craiglockhart War Hospital</em> in Edinburgh pioneered psychotherapy, dream analysis, and humane compassionate care, laying the groundwork for modern clinical understanding of Post-Traumatic Stress Disorder (PTSD).',
         },
       ],
@@ -16479,8 +16467,8 @@ export const unitData = {
           options: [
             'A painful swelling and gangrene of the feet caused by prolonged immersion in cold mud and water and tight puttees.',
             'A fungal infection caught from infected sheep wool.',
-            'An allergic reaction to chemical poison gas.',
             'A bone fracture caused by marching in heavy leather boots.',
+            'An allergic reaction to chemical poison gas.',
           ],
           answer:
             'A painful swelling and gangrene of the feet caused by prolonged immersion in cold mud and water and tight puttees.',
@@ -16492,8 +16480,8 @@ export const unitData = {
           options: [
             'Soaking feet in boiling vinegar every morning.',
             'Rubbing feet with whale oil, changing into dry socks twice daily, and implementing the buddy system.',
-            'Wearing thin silk stockings under wet boots.',
             'Spraying boots with carbolic acid aerosol.',
+            'Wearing thin silk stockings under wet boots.',
           ],
           answer:
             'Rubbing feet with whale oil, changing into dry socks twice daily, and implementing the buddy system.',
@@ -16504,9 +16492,9 @@ export const unitData = {
           question:
             'What parasite was identified in 1918 as the carrier of Trench Fever (pyrexia of unknown origin)?',
           options: [
+            'Giant sewer rats biting sleeping soldiers.',
             'Fleas carried by trench pigeons.',
             'Mosquitoes breeding in flooded shell craters.',
-            'Giant sewer rats biting sleeping soldiers.',
             'Body lice (Pediculus humanus) spreading bacteria through infected faeces rubbed into the skin.',
           ],
           answer:
@@ -16518,10 +16506,10 @@ export const unitData = {
           question:
             'How did the British Army attempt to combat body lice in the rest areas behind the front?',
           options: [
-            'Forcing men to bathe in cold river water every day.',
             'Spraying all trenches with chemical DDT insecticide.',
-            'Establishing mobile delousing stations with high-pressure steam ovens to sterilize uniforms.',
             'Shaving soldiers completely bald and banning wool clothing.',
+            'Establishing mobile delousing stations with high-pressure steam ovens to sterilize uniforms.',
+            'Forcing men to bathe in cold river water every day.',
           ],
           answer:
             'Establishing mobile delousing stations with high-pressure steam ovens to sterilize uniforms.',
@@ -16532,8 +16520,8 @@ export const unitData = {
           question:
             'What organ was damaged by Trench Nephritis, a disease linked to cold, damp conditions and contaminated rations?',
           options: [
-            'The liver, causing permanent jaundice.',
             'The lungs, causing chronic asthma.',
+            'The liver, causing permanent jaundice.',
             'The kidneys, causing severe protein loss and bodily swelling.',
             'The inner ear, causing loss of balance.',
           ],
@@ -16544,10 +16532,10 @@ export const unitData = {
         {
           question: 'Why was dysentery so widespread among soldiers living in frontline trenches?',
           options: [
-            'Troops ate raw vegetables grown in unwashed manure.',
-            'Soldiers drank unpurified water from flooded shell holes and latrines attracted swarms of flies that contaminated rations.',
-            'The army diet contained too much fresh citrus fruit.',
             'German forces deliberately poisoned European cloud cover.',
+            'Soldiers drank unpurified water from flooded shell holes and latrines attracted swarms of flies that contaminated rations.',
+            'Troops ate raw vegetables grown in unwashed manure.',
+            'The army diet contained too much fresh citrus fruit.',
           ],
           answer:
             'Soldiers drank unpurified water from flooded shell holes and latrines attracted swarms of flies that contaminated rations.',
@@ -16558,9 +16546,9 @@ export const unitData = {
           question:
             'What chemical was routinely added to British drinking water in the trenches to kill bacteria?',
           options: [
+            'Pure sulphuric acid.',
             'Potassium cyanide.',
             'Chloroform gas.',
-            'Pure sulphuric acid.',
             'Chloride of lime (chlorination).',
           ],
           answer: 'Chloride of lime (chlorination).',
@@ -16572,9 +16560,9 @@ export const unitData = {
             'What did the medical designation “NYDN” stand for when soldiers collapsed with shell shock symptoms?',
           options: [
             'Not Yet Diagnosed (Nervous).',
+            'No Young Doctors Needed.',
             'Naval Yard Defence Network.',
             'Non-Ypres Daily Notification.',
-            'No Young Doctors Needed.',
           ],
           answer: 'Not Yet Diagnosed (Nervous).',
           explanation:
@@ -16584,8 +16572,8 @@ export const unitData = {
           question: 'Why were brown sewer rats such a massive nuisance in the trenches?',
           options: [
             'They were trained by German scouts to chew British telephone cables.',
-            'They burrowed through concrete machine-gun bunkers and collapsed them.',
             'They carried rabies and infected thousands of horses.',
+            'They burrowed through concrete machine-gun bunkers and collapsed them.',
             'They fed on human corpses in No Man’s Land, contaminated rations, and spread contamination through trenches.',
           ],
           answer:
@@ -16598,9 +16586,9 @@ export const unitData = {
             'How did non-combat sickness compare to bullet/shrapnel wounds on the Western Front?',
           options: [
             'Non-combat sickness accounted for millions of hospital admissions, and at times incapacitated more troops than enemy fire.',
+            'Sickness was virtually non-existent due to penicillin antibiotics.',
             'Only 100 soldiers caught infectious diseases throughout the entire war.',
             'German soldiers were immune to disease while Allied soldiers were not.',
-            'Sickness was virtually non-existent due to penicillin antibiotics.',
           ],
           answer:
             'Non-combat sickness accounted for millions of hospital admissions, and at times incapacitated more troops than enemy fire.',
@@ -16942,14 +16930,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Artillery Firepower & Jagged Shrapnel Trauma (1914–1918)',
-          theme_heading: 'Act 1: Artillery Firepower & Jagged Shrapnel Trauma (1914–1918)',
+          title: 'Artillery Firepower & Jagged Shrapnel Trauma (1914–1918)',
+          theme_heading: 'Artillery Firepower & Jagged Shrapnel Trauma (1914–1918)',
           text: '<span class="para-ref">[1.1]</span> The nature of battlefield wounds on the Western Front was dictated by the catastrophic supremacy of modern industrial artillery. Unlike previous nineteenth-century conflicts where rifle musket balls inflicted the majority of injuries, over 58% of British casualties in the First World War were caused by high-explosive artillery shells and fragmentation shrapnel. Artillery batteries discharged massive ordnance: high-explosive shells packed with trinitrotoluene (TNT) detonated on contact, creating a colossal supersonic blast wave and tearing thick steel casings into thousands of razor-sharp, jagged, red-hot metal fragments of irregular shapes and sizes.<br><br><span class="para-ref">[1.2]</span> When these jagged fragments struck human tissue at high velocity, they did not produce clean puncture wounds. Instead, they shredded flesh, severed major blood vessels, splintered bone structures into jagged fragments, and gouged out enormous craters of living tissue. Furthermore, the explosive vacuum and velocity of the metal fragment sucked foreign matter deep into the cavity: pieces of dirty woollen tunic, sodden khaki trousers, soil, and boot leather were buried into the wounded muscle. These contaminated foreign materials carried millions of deadly bacteria straight into crushed, devitalized tissue, setting the stage for virulent, life-threatening wound infections.',
         },
         {
           act: 2,
-          title: 'Act 2: Soil Bacteria & The Gas Gangrene Crisis (1914–1918)',
-          theme_heading: 'Act 2: Soil Bacteria & The Gas Gangrene Crisis (1914–1918)',
+          title: 'Soil Bacteria & The Gas Gangrene Crisis (1914–1918)',
+          theme_heading: 'Soil Bacteria & The Gas Gangrene Crisis (1914–1918)',
           source: {
             id: 'source_a_trench_foot_clinical',
             letter: 'A',
@@ -16978,14 +16966,14 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Head Trauma & The Brodie Steel Helmet (Late 1915–1918)',
-          theme_heading: 'Act 3: Head Trauma & The Brodie Steel Helmet (Late 1915–1918)',
+          title: 'Head Trauma & The Brodie Steel Helmet (Late 1915–1918)',
+          theme_heading: 'Head Trauma & The Brodie Steel Helmet (Late 1915–1918)',
           text: '<span class="para-ref">[3.1]</span> In the opening year of the war, head injuries represented the most lethal form of trauma on the battlefield. British soldiers entered the conflict wearing soft cloth peaked caps that offered zero ballistic protection. Because soldiers spent their days standing in trenches with their heads positioned just below the parapet, descending airburst artillery shells rained jagged iron balls and razor-sharp shell fragments directly onto their exposed skulls. In 1914 and early 1915, penetrating head trauma and fractured skulls accounted for a massive proportion of instant fatalities in the trenches.<br><br><span class="para-ref">[3.2]</span> To counter this carnage, British inventor John Leopold Brodie patented the pressed-steel <strong>Brodie Helmet</strong> in autumn 1915. Stamped from a single sheet of hardened manganese steel and lined with felt and canvas, the helmet featured a distinctive wide, shallow brim designed to deflect descending artillery shrapnel away from the wearer’s face, neck, and shoulders. Distributed to British frontline troops from early 1916, the Brodie helmet slashed fatal penetrating head wounds by an estimated 75% to 80%. Interestingly, hospital admissions for head injuries actually increased after the helmet’s introduction—a famous statistical anomaly caused by the fact that thousands of soldiers who previously would have died instantly in the trenches were now surviving to reach clearing stations for medical care.',
         },
         {
           act: 4,
-          title: 'Act 4: Chemical Warfare: Chlorine & Phosgene Attacks (Apr 1915–1916)',
-          theme_heading: 'Act 4: Chemical Warfare: Chlorine & Phosgene Attacks (Apr 1915–1916)',
+          title: 'Chemical Warfare: Chlorine & Phosgene Attacks (Apr 1915–1916)',
+          theme_heading: 'Chemical Warfare: Chlorine & Phosgene Attacks (Apr 1915–1916)',
           source: {
             id: 'source_b_british_ph_gas_helmet',
             letter: 'B',
@@ -17013,8 +17001,8 @@ export const unitData = {
         },
         {
           act: 5,
-          title: 'Act 5: Mustard Gas & The Small Box Respirator (1916–1918)',
-          theme_heading: 'Act 5: Mustard Gas & The Small Box Respirator (1916–1918)',
+          title: 'Mustard Gas & The Small Box Respirator (1916–1918)',
+          theme_heading: 'Mustard Gas & The Small Box Respirator (1916–1918)',
           text: '<span class="para-ref">[5.1]</span> The technological race between chemical delivery and protection culminated in the British invention of the <strong>Small Box Respirator (SBR)</strong>, introduced from late 1916. The SBR comprised a snug rubberized face mask with glass eyepieces, connected by a flexible corrugated hose to a metal chest canister containing chemical neutralizers and granules of activated vegetable charcoal. The charcoal trapped toxic gas molecules through physical adsorption, providing almost complete respiratory protection against all known suffocating gases and establishing the standard design for modern military gas masks.<br><br><span class="para-ref">[5.2]</span> However, in July 1917 at the Third Battle of Ypres (Passchendaele), the German army unleashed their most insidious weapon: <strong>Mustard Gas</strong> (Yellow Cross). Unlike chlorine or phosgene, mustard gas was an oily, persistent vesicant (blistering agent) that did not need to be inhaled to inflict horrific casualties. Fired in artillery shells, the oily liquid penetrated damp woollen uniforms, causing severe chemical burns, immense fluid-filled weeping blisters, temporary blindness, and respiratory tract destruction. Mustard gas contaminated muddy shell craters for days or weeks, forcing medical units to establish specialized decontamination showers and stripping stations. While chemical gas caused only 2.6% of British battlefield deaths due to effective respirators, its psychological terror and blistering injuries severely strained RAMC evacuation lines.',
         },
       ],
@@ -17140,10 +17128,10 @@ export const unitData = {
           question:
             'What weapon caused the vast majority (approximately 58%) of all wounds on the Western Front?',
           options: [
-            'Sniper pistol bullets.',
-            'Artillery shells and shrapnel fragments.',
             'Bayonet thrusts in close-quarters combat.',
+            'Artillery shells and shrapnel fragments.',
             'Poison gas inhalation.',
+            'Sniper pistol bullets.',
           ],
           answer: 'Artillery shells and shrapnel fragments.',
           explanation:
@@ -17153,10 +17141,10 @@ export const unitData = {
           question:
             'What impact did the introduction of the steel Brodie helmet in late 1915 have on British casualties?',
           options: [
-            'It had no effect because soldiers refused to wear metal hats.',
-            'It increased neck injuries and was quickly withdrawn.',
-            'It reduced fatal head wounds from falling shrapnel by an estimated 80%.',
             'It made soldiers completely bulletproof from rifle fire at point-blank range.',
+            'It had no effect because soldiers refused to wear metal hats.',
+            'It reduced fatal head wounds from falling shrapnel by an estimated 80%.',
+            'It increased neck injuries and was quickly withdrawn.',
           ],
           answer: 'It reduced fatal head wounds from falling shrapnel by an estimated 80%.',
           explanation:
@@ -17179,10 +17167,10 @@ export const unitData = {
         {
           question: 'What micro-organism caused gas gangrene in wounds on the Western Front?',
           options: [
-            'Waterborne malaria parasites.',
-            'Anaerobic Clostridium bacteria living in manured agricultural soil that thrived in oxygen-deprived tissue.',
-            'Bubonic plague fleas living in trench sandbags.',
             'Airborne influenza virus particles.',
+            'Anaerobic Clostridium bacteria living in manured agricultural soil that thrived in oxygen-deprived tissue.',
+            'Waterborne malaria parasites.',
+            'Bubonic plague fleas living in trench sandbags.',
           ],
           answer:
             'Anaerobic Clostridium bacteria living in manured agricultural soil that thrived in oxygen-deprived tissue.',
@@ -17195,8 +17183,8 @@ export const unitData = {
           options: [
             'Routine injection of Anti-Tetanus Serum (ATS) to all wounded men at frontline dressing stations.',
             'Immediate amputation of every wounded soldier’s arm or leg.',
-            'Mass vaccination of German prisoners.',
             'Forcing wounded men to drink pure alcohol.',
+            'Mass vaccination of German prisoners.',
           ],
           answer:
             'Routine injection of Anti-Tetanus Serum (ATS) to all wounded men at frontline dressing stations.',
@@ -17207,10 +17195,10 @@ export const unitData = {
           question:
             'What were the physical symptoms and effects of chlorine gas, first used by Germany at Second Ypres in April 1915?',
           options: [
-            'Rapid heart failure with zero external symptoms.',
+            'Immediate blindness with zero effect on the lungs.',
             'Permanent paralysis of the legs without breathing difficulty.',
             'A green-yellow cloud that destroyed lung tissue, causing victims to choke to death as fluid filled their lungs.',
-            'Immediate blindness with zero effect on the lungs.',
+            'Rapid heart failure with zero external symptoms.',
           ],
           answer:
             'A green-yellow cloud that destroyed lung tissue, causing victims to choke to death as fluid filled their lungs.',
@@ -17236,9 +17224,9 @@ export const unitData = {
             'What distinguishing characteristic made mustard gas so feared when introduced in July 1917?',
           options: [
             'It was an oily blistering agent that burned through clothing, caused massive skin blisters, and contaminated the soil for weeks.',
+            'It had a pleasant smell of roses and caused laughing fits.',
             'It only affected horses and pack mules.',
             'It evaporated within five seconds of detonation.',
-            'It had a pleasant smell of roses and caused laughing fits.',
           ],
           answer:
             'It was an oily blistering agent that burned through clothing, caused massive skin blisters, and contaminated the soil for weeks.',
@@ -17250,8 +17238,8 @@ export const unitData = {
             'What was the most effective British gas mask issued to soldiers from 1916 onwards?',
           options: [
             'A urine-soaked cotton pad wrapped around the mouth.',
-            'A leather hood with open glass eyeholes.',
             'A solid brass diving helmet with hand-pumped air.',
+            'A leather hood with open glass eyeholes.',
             'The Small Box Respirator (SBR), featuring a rubber face mask connected by a hose to a charcoal filter box.',
           ],
           answer:
@@ -17263,10 +17251,10 @@ export const unitData = {
           question:
             'What proportion of total British Western Front deaths was directly caused by poison gas?',
           options: [
-            'Exactly 50% of all battlefield casualties.',
-            'Less than 3% of deaths, although gas caused immense psychological terror and hospitalized over 180,000 men.',
-            'Zero deaths because gas masks were 100% effective from the first day.',
             'Over 85% of all British fatalities.',
+            'Less than 3% of deaths, although gas caused immense psychological terror and hospitalized over 180,000 men.',
+            'Exactly 50% of all battlefield casualties.',
+            'Zero deaths because gas masks were 100% effective from the first day.',
           ],
           answer:
             'Less than 3% of deaths, although gas caused immense psychological terror and hospitalized over 180,000 men.',
@@ -17555,57 +17543,57 @@ export const unitData = {
       ],
       do_now: [
         {
-          q: 'How many stretcher bearers were assigned to an infantry battalion of 1,000 men?',
-          a: '16 stretcher bearers',
+          q: 'What percentage of all battle wounds on the Western Front were caused by exploding artillery shells and jagged shrapnel?',
+          a: 'Approximately 58% to 60%',
         },
         {
-          q: 'How many bearers were typically required to carry one wounded man in Passchendaele mud?',
-          a: '4 to 6 bearers',
+          q: 'What head protection was issued to British soldiers in late 1915, reducing fatal head wounds by up to 80%?',
+          a: 'The steel Brodie helmet',
         },
         {
-          q: 'How far behind the frontline was a Regimental Aid Post (RAP) usually located?',
-          a: '200 to 300 yards',
+          q: 'Why was gas gangrene so widespread in wounds suffered in Flanders and the Somme?',
+          a: 'Because the farmland had been heavily manured for centuries with animal feces containing anaerobic tetanus and gangrene spores',
         },
         {
-          q: 'Could major surgery be performed at a Regimental Aid Post?',
-          a: 'No (only first aid and bandaging)',
+          q: 'What was the first lethal poison gas deployed on the Western Front by the German army at Second Ypres in April 1915?',
+          a: 'Chlorine gas',
         },
         {
-          q: 'Which medical unit operated Advanced and Main Dressing Stations (ADS/MDS)?',
-          a: 'RAMC Field Ambulance',
+          q: 'What chemical poison gas introduced in July 1917 caused agonizing skin blisters, blindness, and lingered in trench mud for days?',
+          a: 'Mustard gas',
         },
         {
-          q: 'What station in the evacuation chain was the primary surgical center near rail lines?',
-          a: 'Casualty Clearing Station (CCS)',
+          q: 'What fungal infection caused by standing in cold, muddy, waterlogged trenches resulted in rotting flesh and potential amputation?',
+          a: 'Trench foot',
         },
         {
-          q: 'What three triage categories were used at Casualty Clearing Stations?',
-          a: 'The Walking Wounded, Immediate Surgery, The Moribund',
+          q: 'What preventative measure was made compulsory to prevent trench foot, requiring men to rub their feet twice daily?',
+          a: 'Whale oil',
         },
         {
-          q: 'What female voluntary organisation drove motor ambulances on the Western Front?',
-          a: 'First Aid Nursing Yeomanry (FANY)',
+          q: 'What tiny parasitic insect was discovered in 1918 to be the vector transmitting trench fever between soldiers?',
+          a: 'Body lice',
         },
         {
-          q: 'Why were canal barges preferred for transporting chest and brain wound patients?',
-          a: 'Provided smooth, vibration-free travel',
+          q: 'On what date did the Battle of the Somme begin, resulting in 57,470 British casualties on the first day alone?',
+          a: '1 July 1916',
         },
         {
-          q: 'Where were large British Base Hospitals located in France?',
-          a: 'Coastal ports (Boulogne, Le Touquet, Calais)',
+          q: 'What battle in 1917 saw the British military engineer an underground hospital city within 2.5 miles of medieval chalk quarries?',
+          a: 'The Battle of Arras',
         },
       ],
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Frontline Retrieval & The Regimental Aid Post (1914–1918)',
-          theme_heading: 'Act 1: Frontline Retrieval & The Regimental Aid Post (1914–1918)',
+          title: 'Frontline Retrieval & The Regimental Aid Post (1914–1918)',
+          theme_heading: 'Frontline Retrieval & The Regimental Aid Post (1914–1918)',
           text: '<span class="para-ref">[1.1]</span> In the brutal arithmetic of the Western Front, casualty survival was a desperate race against time. Because the manured soil of Flanders and northern France was teeming with virulent anaerobic bacteria that caused fatal gas gangrene within twenty-four hours, the Royal Army Medical Corps (RAMC) constructed an organized, continuous evacuation pipeline from the firestep back to specialized base hospitals: the <strong>Chain of Evacuation</strong>. The initial retrieval of wounded men fell upon battalion <strong>Stretcher Bearers</strong>. Each British infantry battalion of 1,000 men had just sixteen dedicated stretcher bearers (four per company), armed only with brassards, field dressings, and wooden stretchers.<br><br><span class="para-ref">[1.2]</span> Under direct artillery fire and sniper observation, bearers crawled into shell holes to retrieve casualties and haul them back to the <strong>Regimental Aid Post (RAP)</strong>. Located 200 to 300 yards behind the frontline in a communication trench dugout, ruined farmhouse cellar, or sandbagged breastwork, the RAP was staffed by the Regimental Medical Officer (RMO) and orderlies. The RAP was an emergency first-aid station, not a surgical hospital: its mission was immediate life-preservation—applying tourniquets to stem arterial haemorrhage, bandaging wounds, administering pain-relieving morphine, and giving mandatory tetanus antitoxin injections before moving men back to avoid congestion.',
         },
         {
           act: 2,
-          title: 'Act 2: Field Ambulances & Advanced Dressing Stations (1914–1918)',
-          theme_heading: 'Act 2: Field Ambulances & Advanced Dressing Stations (1914–1918)',
+          title: 'Field Ambulances & Advanced Dressing Stations (1914–1918)',
+          theme_heading: 'Field Ambulances & Advanced Dressing Stations (1914–1918)',
           source: {
             id: 'source_a_stretcher_bearers_passchendaele',
             letter: 'A',
@@ -17634,20 +17622,20 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Casualty Clearing Stations & The 3-Tier Triage System (1914–1918)',
-          theme_heading: 'Act 3: Casualty Clearing Stations & The 3-Tier Triage System (1914–1918)',
+          title: 'Casualty Clearing Stations & The 3-Tier Triage System (1914–1918)',
+          theme_heading: 'Casualty Clearing Stations & The 3-Tier Triage System (1914–1918)',
           text: '<span class="para-ref">[3.1]</span> The pivotal medical hub of the entire evacuation chain was the <strong>Casualty Clearing Station (CCS)</strong>. Located 7 to 12 miles behind the front line—safely beyond standard German field artillery range, but positioned strategically beside railway lines and canal networks—the CCS was the first facility equipped with sterile operating theatres, autoclaves, mobile X-ray vans, and professional military nurses of the Queen Alexandra’s Imperial Military Nursing Service (QAIMNS). The CCS was where contaminated, life-threatening trauma surgery actually took place.<br><br><span class="para-ref">[3.2]</span> To handle thousands of casualties arriving simultaneously during major offensives, medical officers operated a rigorous system of <strong>Triage</strong>, dividing incoming men into three strict clinical categories: (1) <em>The Walking Wounded</em> (men with minor flesh wounds who were dressed and returned to duty); (2) <em>Those Requiring Immediate Surgery</em> (patients with compound fractures, ruptured femurs, or penetrating abdominal and chest wounds who had a viable chance of survival if operated on immediately); and (3) <em>The Moribund</em> (hopelessly wounded soldiers whose injuries were fatal, who were placed in quiet tents and made comfortable with morphine until they passed away). By prioritizing surgical resources for viable life-threatening cases, CCS surgeons saved hundreds of thousands of lives.',
         },
         {
           act: 4,
-          title: 'Act 4: Base Hospitals on the French Coast (1914–1918)',
-          theme_heading: 'Act 4: Base Hospitals on the French Coast (1914–1918)',
+          title: 'Base Hospitals on the French Coast (1914–1918)',
+          theme_heading: 'Base Hospitals on the French Coast (1914–1918)',
           text: '<span class="para-ref">[4.1]</span> Once patients were operated on and stabilized at the CCS, they were evacuated to vast <strong>Base Hospitals</strong> situated along the French coast, concentrated at major ports such as Boulogne, Le Havre, Rouen, and the massive hospital camp at Étaples. Taking advantage of maritime and railway infrastructure, coastal base hospitals were vast complexes of brick buildings, tents, and wooden huts capable of housing 2,000 to 20,000 beds. Base hospitals were staffed by senior civilian surgeons, specialist consultants, and Voluntary Aid Detachment (VAD) nurses, providing advanced post-operative care and specialized rehabilitation.<br><br><span class="para-ref">[4.2]</span> Base hospitals were organized into dedicated specialist wings: orthopedic wards for compound fractures, specialized units for severe facial and head injuries, and isolation wards for infectious gas gangrene and dysentery. When casualties stabilized sufficiently to travel and required extended convalescence, they were loaded onto dedicated white-painted <strong>hospital ships</strong> (marked with red crosses and green hull bands) for the voyage across the English Channel back to specialized military and civilian hospitals in Britain ("Blighty").',
         },
         {
           act: 5,
-          title: 'Act 5: Transport Logistics: Motor Ambulances & Canal Barges (1914–1918)',
-          theme_heading: 'Act 5: Transport Logistics: Motor Ambulances & Canal Barges (1914–1918)',
+          title: 'Transport Logistics: Motor Ambulances & Canal Barges (1914–1918)',
+          theme_heading: 'Transport Logistics: Motor Ambulances & Canal Barges (1914–1918)',
           source: {
             id: 'source_b_ramc_canal_barge',
             letter: 'B',
@@ -17797,8 +17785,8 @@ export const unitData = {
           options: [
             'Performing emergency open-heart surgery in shell craters.',
             'Retrieving wounded men under fire, carrying stretchers through knee-deep mud requiring up to 6–8 men per stretcher.',
-            'Guarding captured German trenches without weapons.',
             'Piloting motorized helicopters to evacuate casualties.',
+            'Guarding captured German trenches without weapons.',
           ],
           answer:
             'Retrieving wounded men under fire, carrying stretchers through knee-deep mud requiring up to 6–8 men per stretcher.',
@@ -17810,8 +17798,8 @@ export const unitData = {
           options: [
             'Located within 200m of the front line in a dugout or communication trench to provide immediate first aid and triage.',
             'Located 50 miles back in Paris for routine dental work.',
-            'Located on top of observation towers to direct artillery.',
             'Located on hospital ships moored off the coast of England.',
+            'Located on top of observation towers to direct artillery.',
           ],
           answer:
             'Located within 200m of the front line in a dugout or communication trench to provide immediate first aid and triage.',
@@ -17822,10 +17810,10 @@ export const unitData = {
           question:
             'What was the position and role of an Advanced Dressing Station in the chain of evacuation?',
           options: [
-            'Located in the front line trench to launch counter-attacks.',
-            'Located at railway stations to sell coffee to troops.',
-            'Located about 400m to 1km behind the RAP, staffed by the Field Ambulance to dress wounds and stabilize shock before ambulance transport.',
             'Located in London to manufacture prosthetic limbs.',
+            'Located in the front line trench to launch counter-attacks.',
+            'Located about 400m to 1km behind the RAP, staffed by the Field Ambulance to dress wounds and stabilize shock before ambulance transport.',
+            'Located at railway stations to sell coffee to troops.',
           ],
           answer:
             'Located about 400m to 1km behind the RAP, staffed by the Field Ambulance to dress wounds and stabilize shock before ambulance transport.',
@@ -17836,9 +17824,9 @@ export const unitData = {
           question:
             'Why was the Casualty Clearing Station (CCS) considered the most crucial surgical hub on the Western Front?',
           options: [
+            'It was the place where soldiers went for two weeks of holiday rest.',
             'It was exclusively dedicated to manufacturing artificial eyes.',
             'It was where uniforms were washed and ironed.',
-            'It was the place where soldiers went for two weeks of holiday rest.',
             'It was the first facility with full operating theatres, X-rays, and anaesthetists equipped to perform life-saving surgery before infection spread.',
           ],
           answer:
@@ -17864,8 +17852,8 @@ export const unitData = {
             'What major problem did horse-drawn ambulances face in the autumn of 1914 that led to the introduction of motor ambulances?',
           options: [
             'Horses refused to cross international borders.',
-            'Motorized vehicles were strictly illegal in France.',
             'The British Army possessed zero horses in 1914.',
+            'Motorized vehicles were strictly illegal in France.',
             'Horses struggled through thick mud, could only carry two stretchers, and wounded men were severely shaken, worsening haemorrhage.',
           ],
           answer:
@@ -17877,10 +17865,10 @@ export const unitData = {
           question:
             'Why were canal barges used to transport certain types of wounded soldiers to Base Hospitals?',
           options: [
-            'Barges were invisible to German submarine torpedoes.',
-            'French railways were completely dismantled in 1914.',
-            'Barges provided an extremely smooth, gentle journey that avoided the violent jolting of roads, ideal for men with head trauma or severe fractures.',
             'Barges travelled faster than high-speed steam trains.',
+            'Barges were invisible to German submarine torpedoes.',
+            'Barges provided an extremely smooth, gentle journey that avoided the violent jolting of roads, ideal for men with head trauma or severe fractures.',
+            'French railways were completely dismantled in 1914.',
           ],
           answer:
             'Barges provided an extremely smooth, gentle journey that avoided the violent jolting of roads, ideal for men with head trauma or severe fractures.',
@@ -17891,10 +17879,10 @@ export const unitData = {
           question:
             'What was the primary purpose of Base Hospitals located at coastal ports like Boulogne and Le Touquet?',
           options: [
-            'Storing frozen beef rations imported from South America.',
-            'Providing long-term specialist surgical convalescence and preparing soldiers for return to the front or evacuation to Britain via hospital ships.',
             'Training new infantry recruits in bayonet drill.',
+            'Providing long-term specialist surgical convalescence and preparing soldiers for return to the front or evacuation to Britain via hospital ships.',
             'Manufacturing artillery shells and cartridges.',
+            'Storing frozen beef rations imported from South America.',
           ],
           answer:
             'Providing long-term specialist surgical convalescence and preparing soldiers for return to the front or evacuation to Britain via hospital ships.',
@@ -17905,10 +17893,10 @@ export const unitData = {
           question:
             'What role did the First Aid Nursing Yeomanry (FANY) play in the Western Front medical evacuation chain?',
           options: [
-            'They worked exclusively as clerical secretaries in the War Office in London.',
             'They served as fighter pilots in the Royal Flying Corps.',
-            'Female volunteers drove frontline field ambulances, transported supplies, and operated mobile soup kitchens and baths.',
             'They commanded artillery batteries along the Somme.',
+            'Female volunteers drove frontline field ambulances, transported supplies, and operated mobile soup kitchens and baths.',
+            'They worked exclusively as clerical secretaries in the War Office in London.',
           ],
           answer:
             'Female volunteers drove frontline field ambulances, transported supplies, and operated mobile soup kitchens and baths.',
@@ -17919,9 +17907,9 @@ export const unitData = {
           question:
             'Why was speed along the chain of evacuation so vital to preventing death from wound contamination?',
           options: [
-            'Hospital beds were forfeited if ambulances arrived after nightfall.',
-            'If infected tissue was not excised or cleaned within the “golden window” of 12 to 24 hours, bacteria invaded deep tissue and blood poisoning became fatal.',
             'Wounded men lost their British citizenship if not hospitalized within 12 hours.',
+            'If infected tissue was not excised or cleaned within the “golden window” of 12 to 24 hours, bacteria invaded deep tissue and blood poisoning became fatal.',
+            'Hospital beds were forfeited if ambulances arrived after nightfall.',
             'Stretcher bearers were fined by the army if trips took more than two hours.',
           ],
           answer:
@@ -18231,57 +18219,57 @@ export const unitData = {
       ],
       do_now: [
         {
-          q: 'What was the mortality rate for compound femur fractures in 1914 before the Thomas Splint?',
-          a: '80%',
+          q: 'How many trained stretcher bearers were officially assigned to each British infantry battalion of 1,000 men?',
+          a: '16 stretcher bearers (4 per company)',
         },
         {
-          q: 'Who introduced the Thomas Splint to frontline medical officers in December 1915?',
-          a: 'Robert Jones',
+          q: 'How many stretcher bearers were often needed to carry a single stretcher through the deep mud at Passchendaele?',
+          a: '6 to 8 men',
         },
         {
-          q: 'To what percentage did the Thomas Splint reduce compound femur mortality by 1916?',
-          a: '20%',
+          q: 'What was the immediate frontline medical station located in a communications trench or dugout called?',
+          a: 'Regimental Aid Post / RAP',
         },
         {
-          q: 'How did the Thomas Splint prevent fatal internal haemorrhage in fractured thighs?',
-          a: 'Applied mechanical traction to pull bone ends apart',
+          q: 'Which medical unit within the Royal Army Medical Corps (RAMC) operated Advanced and Main Dressing Stations?',
+          a: 'The Field Ambulance',
         },
         {
-          q: 'What surgical term describes cutting away dead, infected tissue from a gunshot wound?',
-          a: 'Wound debridement (wound excision)',
+          q: 'What large medical station located 7 to 12 miles behind the front near railways was the primary site for urgent life-saving surgery?',
+          a: 'Casualty Clearing Station / CCS',
         },
         {
-          q: 'What antiseptic irrigation solution was used continuously through perforated rubber tubes?',
-          a: 'Carrel-Dakin solution',
+          q: 'What three triage categories were wounded soldiers sorted into upon arrival at the CCS?',
+          a: 'The lightly wounded / walking wounded, those requiring urgent surgery, and the moribund / hopeless cases',
         },
         {
-          q: 'Why did Carrel-Dakin solution need to be made fresh in laboratories every 6 hours?',
-          a: 'It degraded quickly and lost antiseptic potency',
+          q: 'Where were large Base Hospitals located to provide long-term convalescent care before soldiers returned home?',
+          a: 'Near French and Belgian coastal ports like Boulogne, Le Tréport, and Étaples',
         },
         {
-          q: 'Who discovered X-rays in Germany in 1895?',
-          a: 'Wilhelm Röntgen',
+          q: 'What weapon caused the vast majority (nearly 60%) of wounds on the Western Front?',
+          a: 'Artillery shells and shrapnel',
         },
         {
-          q: 'Name one limitation of mobile X-ray units used at Casualty Clearing Stations.',
-          a: 'Could not detect fabric or clothing fragments driven into wounds',
+          q: 'What lethal anaerobic infection caused flesh to turn green-black, bubble with foul gas, and spread rapidly through tissue?',
+          a: 'Gas gangrene',
         },
         {
-          q: 'What was the role of Marie Curie in mobile radiology during the Great War?',
-          a: 'Equipped mobile X-ray vans (‘Petites Curies’) on the Western Front',
+          q: 'What was the psychological trauma caused by prolonged artillery bombardment initially termed before being classified as NYDN?',
+          a: 'Shellshock',
         },
       ],
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Wound Debridement & Surgical Excision (1914–1918)',
-          theme_heading: 'Act 1: Wound Debridement & Surgical Excision (1914–1918)',
+          title: 'Wound Debridement & Surgical Excision (1914–1918)',
+          theme_heading: 'Wound Debridement & Surgical Excision (1914–1918)',
           text: '<span class="para-ref">[1.1]</span> In autumn 1914, British military surgeons confronted an acute sepsis crisis that peacetime civilian training could not resolve. In nineteenth-century hospitals, Joseph Lister’s antiseptic techniques had controlled surface contamination; on the Western Front, however, swabbing deep shrapnel wounds with carbolic acid was completely useless. High-explosive shrapnel drove dirty khaki cloth, mud, and anaerobic soil bacteria deep into torn muscle pockets. Concentrated chemical antiseptics could not reach the deep recesses of irregular wound tracts and damaged the patient’s exposed living tissues and white blood cells faster than they destroyed anaerobic spores, allowing gas gangrene and septicaemia to flourish.<br><br><span class="para-ref">[1.2]</span> Confronted with thousands of rotting limbs, military surgeons adopted radical <strong>Wound Debridement</strong> (surgical excision). Operating under general or local anaesthesia in forward stations, surgeons used scalpels to systematically cut away all dead, bruised, and contaminated muscle tissue around the margins of the wound, depriving anaerobic bacteria of the devitalized biological material they required to multiply. Furthermore, surgeons rejected immediate stitching, practicing <strong>delayed primary closure</strong>: wounds were left wide open and packed with sterile gauze for 24 to 48 hours to expose tissue to oxygen, halting anaerobic bacterial reproduction before the wound was surgically closed.',
         },
         {
           act: 2,
-          title: 'Act 2: The Carrel-Dakin Antiseptic Irrigation Method (1915–1918)',
-          theme_heading: 'Act 2: The Carrel-Dakin Antiseptic Irrigation Method (1915–1918)',
+          title: 'The Carrel-Dakin Antiseptic Irrigation Method (1915–1918)',
+          theme_heading: 'The Carrel-Dakin Antiseptic Irrigation Method (1915–1918)',
           source: {
             id: 'source_b_casualty_clearing_station_ww1',
             letter: 'B',
@@ -18309,8 +18297,8 @@ export const unitData = {
         },
         {
           act: 3,
-          title: 'Act 3: Mechanical Traction: The Thomas Splint Revolution (Dec 1915–1916)',
-          theme_heading: 'Act 3: Mechanical Traction: The Thomas Splint Revolution (Dec 1915–1916)',
+          title: 'Mechanical Traction: The Thomas Splint Revolution (Dec 1915–1916)',
+          theme_heading: 'Mechanical Traction: The Thomas Splint Revolution (Dec 1915–1916)',
           source: {
             id: 'source_a_thomas_splint_authentic',
             letter: 'A',
@@ -18338,14 +18326,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Mobile X-Ray Units & Radiology (1914–1918)',
-          theme_heading: 'Act 4: Mobile X-Ray Units & Radiology (1914–1918)',
+          title: 'Mobile X-Ray Units & Radiology (1914–1918)',
+          theme_heading: 'Mobile X-Ray Units & Radiology (1914–1918)',
           text: '<span class="para-ref">[4.1]</span> Discovering the exact three-dimensional location of buried shrapnel fragments was critical to successful debridement. If a surgeon had to probe blindly with metal forceps through crushed flesh to locate a bullet, they caused massive additional tissue trauma, haemorrhage, and shock. To solve this, the British Army deployed diagnostic <strong>Mobile X-Ray Units</strong>. Inspired by pioneering scientist Marie Curie—who equipped French hospital vans known as "petites Curies"—the British War Office fitted motorized vans with portable radiography equipment, darkroom developing facilities, and petrol-driven electrical dynamo generators connected directly to the automobile engine.<br><br><span class="para-ref">[4.2]</span> Traveling between Casualty Clearing Stations and forward dressing stations, mobile X-ray vans allowed radiologists to take two cross-angled diagnostic images (stereoscopic plates) of wounded casualties. These cross-referenced views enabled surgeons to pinpoint the precise location and depth of buried metal shrapnel and shattered bone fragments before picking up a scalpel. Radiologists also used fluorescent screens for real-time fluoroscopy, allowing surgeons to extract buried metal balls quickly with minimal incisions, dramatically reducing operating times and surgical shock during heavy offensives.',
         },
         {
           act: 5,
-          title: 'Act 5: Tactical Limits of Battlefield X-Rays (1914–1918)',
-          theme_heading: 'Act 5: Tactical Limits of Battlefield X-Rays (1914–1918)',
+          title: 'Tactical Limits of Battlefield X-Rays (1914–1918)',
+          theme_heading: 'Tactical Limits of Battlefield X-Rays (1914–1918)',
           text: '<span class="para-ref">[5.1]</span> Despite their revolutionary diagnostic power, battlefield X-rays faced severe physical and technical limitations in active combat zones. First World War radiography machines were delicate, temperamental instruments. The glass vacuum tubes (Crookes tubes) overheated rapidly after a few minutes of continuous operation and had to be rested to cool down, causing dangerous bottlenecks when hundreds of casualties flooded a CCS. Furthermore, transporting heavy X-ray vans and delicate glass photographic plates over rutted, shell-cratered roads frequently shattered electrical vacuum bulbs and fractured fragile glass developer plates.<br><br><span class="para-ref">[5.2]</span> Most significantly, medical historians emphasize the crucial clinical blind spot of wartime X-rays: radiography could easily detect dense, radiopaque materials like lead bullets and steel shrapnel, but was completely blind to <strong>radiolucent</strong> materials. X-rays could not reveal muddy soil, trench timber splinters, or fragments of sodden woollen khaki uniform buried deep in muscle tissue. These invisible, bacteria-saturated cloth fragments remained deadly reservoirs of <em>Clostridium welchii</em>, meaning that an apparently successful shrapnel extraction could still result in fatal post-operative gas gangrene unless complemented by thorough manual surgical debridement.',
         },
       ],
@@ -18471,9 +18459,9 @@ export const unitData = {
           question:
             'What was the survival rate for compound femur (thigh bone) fractures at the start of the war in 1914?',
           options: [
-            'Exactly 99% survived without splints.',
-            'A 50% recovery rate with zero surgery.',
             'A 0% mortality rate because all soldiers survived.',
+            'A 50% recovery rate with zero surgery.',
+            'Exactly 99% survived without splints.',
             'Approximately an 80% mortality rate (only 20% survived).',
           ],
           answer: 'Approximately an 80% mortality rate (only 20% survived).',
@@ -18485,8 +18473,8 @@ export const unitData = {
             'How did the introduction of the Thomas Splint in late 1915 transform compound fracture survival?',
           options: [
             'It pulled the broken leg into rigid traction, preventing bone fragments rubbing together, and reduced mortality from 80% to 20%.',
-            'It was made of solid gold to prevent bacterial growth.',
             'It completely eliminated the need for any surgery or bandages.',
+            'It was made of solid gold to prevent bacterial growth.',
             'It allowed soldiers to continue running into battle with a broken leg.',
           ],
           answer:
@@ -18510,10 +18498,10 @@ export const unitData = {
         {
           question: 'What surgical procedure was known as wound debridement?',
           options: [
-            'Applying leeches to the open wound for 24 hours.',
-            'Cutting away all contaminated, dead, and damaged tissue around a wound to deny bacteria an environment to grow.',
             'Sewing the skin tightly closed immediately after injury.',
+            'Cutting away all contaminated, dead, and damaged tissue around a wound to deny bacteria an environment to grow.',
             'Pouring boiling oil directly into an open fracture.',
+            'Applying leeches to the open wound for 24 hours.',
           ],
           answer:
             'Cutting away all contaminated, dead, and damaged tissue around a wound to deny bacteria an environment to grow.',
@@ -18524,9 +18512,9 @@ export const unitData = {
           question:
             'Why did military surgeons leave deep shrapnel wounds open after debridement rather than stitching them shut immediately?',
           options: [
-            'French law forbade closing wounds on foreign soldiers.',
-            'It was believed that exposure to trench mud hardened human flesh.',
             'The British Army ran out of surgical thread in 1915.',
+            'It was believed that exposure to trench mud hardened human flesh.',
+            'French law forbade closing wounds on foreign soldiers.',
             'Stitching an infected wound shut trapped anaerobic bacteria inside, creating a lethal breeding ground for gas gangrene.',
           ],
           answer:
@@ -18538,8 +18526,8 @@ export const unitData = {
           question:
             'How did the Carrel-Dakin method treat deep wound infections from 1916 onwards?',
           options: [
-            'Immersing the entire body in a hot sulphur bath.',
             'Packing wounds with dried moss soaked in carbolic acid.',
+            'Immersing the entire body in a hot sulphur bath.',
             'Flushing the wound continuously through perforated rubber tubes with a mild sodium hypochlorite antiseptic solution.',
             'Injecting mercury directly into the spinal cord.',
           ],
@@ -18553,8 +18541,8 @@ export const unitData = {
             'What was a major practical limitation of the Carrel-Dakin antiseptic solution in forward hospitals?',
           options: [
             'It corroded glass bottles and caused explosions.',
-            'It was immediately neutralized by clean water.',
             'It turned human skin bright purple permanently.',
+            'It was immediately neutralized by clean water.',
             'The sodium hypochlorite solution became unstable and lost its antiseptic potency after six hours, requiring fresh preparation daily.',
           ],
           answer:
@@ -18565,10 +18553,10 @@ export const unitData = {
         {
           question: 'How did mobile X-ray vans improve surgical outcomes near the front lines?',
           options: [
-            'They projected radar signals across German trenches.',
             'They cured gas gangrene by killing bacteria with radiation.',
-            'They located embedded metal shrapnel and shattered bone fragments inside casualties before surgery, allowing precise excision.',
             'They provided high-speed transport for ambulance drivers.',
+            'They located embedded metal shrapnel and shattered bone fragments inside casualties before surgery, allowing precise excision.',
+            'They projected radar signals across German trenches.',
           ],
           answer:
             'They located embedded metal shrapnel and shattered bone fragments inside casualties before surgery, allowing precise excision.',
@@ -18579,9 +18567,9 @@ export const unitData = {
           question:
             'What was a significant hazard and limitation of early X-ray equipment in 1914–1918?',
           options: [
-            'Soldiers had to swallow metallic lead before being X-rayed.',
-            'Glass X-ray tubes overheated quickly, could shatter under heavy bombardment, and required minutes of still exposure.',
             'X-ray vans could only be powered by nuclear reactors.',
+            'Glass X-ray tubes overheated quickly, could shatter under heavy bombardment, and required minutes of still exposure.',
+            'Soldiers had to swallow metallic lead before being X-rayed.',
             'X-rays could not penetrate human skin.',
           ],
           answer:
@@ -18594,9 +18582,9 @@ export const unitData = {
             'When all antiseptic and debridement measures failed, why did surgeons resort to limb amputation?',
           options: [
             'To prevent localized gas gangrene and sepsis from spreading through the bloodstream and causing fatal multi-organ failure.',
-            'Because artificial limbs were cheaper than bandages.',
             'Because amputations paid higher fees from the British government.',
             'To make soldiers eligible for pension payments.',
+            'Because artificial limbs were cheaper than bandages.',
           ],
           answer:
             'To prevent localized gas gangrene and sepsis from spreading through the bloodstream and causing fatal multi-organ failure.',
@@ -18898,63 +18886,63 @@ export const unitData = {
       ],
       do_now: [
         {
-          q: 'Who discovered the main ABO blood groups in Vienna in 1901?',
-          a: 'Karl Landsteiner',
+          q: 'What orthopedic device, introduced to the Western Front in December 1915, reduced mortality from compound femur fractures from 80% to 20%?',
+          a: 'The Thomas Splint',
         },
         {
-          q: 'What chemical was discovered by Albert Hustin in 1914 to prevent blood clotting?',
-          a: 'Sodium citrate',
+          q: 'Which pioneering orthopedic surgeon persuaded the British War Office to mass-produce and deploy the Thomas Splint to frontline units?',
+          a: 'Sir Robert Jones',
         },
         {
-          q: 'What substance did Rous and Turner add in 1916 to preserve blood for up to 4 weeks?',
-          a: 'Glucose (dextrose)',
+          q: 'What surgical procedure involved meticulously cutting away all dead, damaged tissue and contaminated soil from an open bullet wound?',
+          a: 'Wound debridement / excision',
         },
         {
-          q: 'Who established the world’s first stored blood depot at the Battle of Cambrai in 1917?',
-          a: 'Captain Oswald Robertson',
+          q: 'What chemical wound-irrigation system, using sterilized sodium hypochlorite saline solution flushed through rubber tubes, was developed in 1915?',
+          a: 'The Carrel-Dakin method',
         },
         {
-          q: 'What blood group was chosen for universal transfusion in Robertson’s blood depot?',
-          a: 'Group O',
+          q: 'Why were mobile X-ray units crucial before surgeons attempted to operate on shrapnel wounds?',
+          a: 'To locate the precise depth and position of jagged metal fragments and embedded uniform fabric before surgery',
         },
         {
-          q: 'Which American surgeon pioneered precise neurosurgery using local anaesthetic on the Western Front?',
-          a: 'Harvey Cushing',
+          q: 'What forward medical facility was the first stage in the evacuation chain where major surgery was performed?',
+          a: 'Casualty Clearing Station / CCS',
         },
         {
-          q: 'To what percentage did Harvey Cushing reduce brain surgery mortality in 1917?',
-          a: 'From 54% to 29%',
+          q: 'What was the name of the horse-drawn or motorized vehicles used by the RAMC to transport casualties between dressing stations and the CCS?',
+          a: 'Motor ambulances / ambulance wagons',
         },
         {
-          q: 'Which New Zealand-born surgeon pioneered facial reconstructive plastic surgery at Sidcup?',
-          a: 'Harold Gillies',
+          q: 'Why was untreated blood loss and haemorrhage on the battlefield so rapidly fatal to wounded soldiers?',
+          a: 'It induced irreversible hypovolaemic shock and organ failure',
         },
         {
-          q: 'What surgical skin-transfer technique did Harold Gillies invent in 1917?',
-          a: 'The tubed pedicle graft',
+          q: 'What was the primary lethal poison gas introduced at Second Ypres in 1915?',
+          a: 'Chlorine gas',
         },
         {
-          q: 'What hospital in Kent became the world centre for British plastic facial reconstruction?',
-          a: 'Queen’s Hospital, Sidcup',
+          q: 'What landmark antiseptic spray was invented by Joseph Lister in 1865 to prevent wound sepsis in civilian surgery?',
+          a: 'Carbolic acid',
         },
       ],
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Haemorrhagic Shock & Sodium Citrate Anticoagulation (1914–1915)',
-          theme_heading: 'Act 1: Haemorrhagic Shock & Sodium Citrate Anticoagulation (1914–1915)',
+          title: 'Haemorrhagic Shock & Sodium Citrate Anticoagulation (1914–1915)',
+          theme_heading: 'Haemorrhagic Shock & Sodium Citrate Anticoagulation (1914–1915)',
           text: '<span class="para-ref">[1.1]</span> As artillery firepower intensified across the Western Front between 1914 and 1916, military surgeons confronted forms of trauma that pushed human physiology to its breaking point. The most immediate killer of wounded soldiers was <strong>haemorrhagic shock</strong>—a catastrophic collapse of systemic blood pressure caused by acute blood loss from severed arteries. A casualty who lost more than two pints of blood became hypothermic, turned ashen grey, and suffered irreversible multi-organ failure within hours, long before surgeons could perform debridement or surgical excision in an operating theatre.<br><br><span class="para-ref">[1.2]</span> Before 1914, blood transfusions were extraordinarily rare, hazardous, and impractical. Although Austrian biologist Karl Landsteiner had discovered the ABO blood group system in 1901, transfusions on the battlefield were virtually impossible because human blood naturally coagulated into solid clots within five minutes of leaving the body. Transfusions required a direct donor lying immediately beside the patient, connected arm-to-arm by a rubber tube; in a chaotic, unsanitary Casualty Clearing Station dealing with hundreds of dying men under artillery fire, finding matching live donors under bombardment was an insurmountable logistical hurdle. In 1914, Belgian doctor Albert Hustin and Argentine physician Luis Agote discovered that adding non-toxic <strong>sodium citrate</strong> to freshly drawn blood neutralized calcium ions, preventing coagulation and allowing blood to be administered indirectly via sterile glass funnels.',
         },
         {
           act: 2,
-          title: 'Act 2: Glucose Refrigeration & Extended Blood Storage (1916–1917)',
-          theme_heading: 'Act 2: Glucose Refrigeration & Extended Blood Storage (1916–1917)',
+          title: 'Glucose Refrigeration & Extended Blood Storage (1916–1917)',
+          theme_heading: 'Glucose Refrigeration & Extended Blood Storage (1916–1917)',
           text: '<span class="para-ref">[2.1]</span> While sodium citrate kept blood liquid, medical researchers encountered a critical biological barrier: citrated blood deteriorated rapidly. In 1915, American doctor Richard Weil proved that citrated blood could be kept in glass bottles in a refrigerator for a few days, but after 72 hours the fragile red blood cells broke down and lysed, releasing toxic potassium and causing severe kidney failure in recipients. Without a method to preserve living red blood cells over extended periods, medical officers could not stockpile blood in advance of major military offensives.<br><br><span class="para-ref">[2.2]</span> The decisive scientific breakthrough occurred in 1916 at the Rockefeller Institute in New York, where researchers Francis Rous and James Turner discovered that adding a <strong>citrate-glucose</strong> (dextrose) solution provided vital nutrients for the cellular metabolism of red blood cells. By mixing freshly collected blood with sodium citrate and glucose and storing it in glass medicine bottles packed inside insulated ice chests, blood could be preserved fresh, intact, and fully viable for up to four weeks (28 days). For the first time in medical history, human blood had been transformed from a perishable fluid into a storable, transportable medical commodity.',
         },
         {
           act: 3,
-          title: 'Act 3: Captain Oswald Robertson & The Cambrai Blood Depot (Nov 1917)',
-          theme_heading: 'Act 3: Captain Oswald Robertson & The Cambrai Blood Depot (Nov 1917)',
+          title: 'Captain Oswald Robertson & The Cambrai Blood Depot (Nov 1917)',
+          theme_heading: 'Captain Oswald Robertson & The Cambrai Blood Depot (Nov 1917)',
           source: {
             id: 'source_a_robertson_blood_depot_1917',
             letter: 'A',
@@ -18983,16 +18971,14 @@ export const unitData = {
         },
         {
           act: 4,
-          title: 'Act 4: Specialized Brain Surgery: Harvey Cushing at Passchendaele (1917–1918)',
-          theme_heading:
-            'Act 4: Specialized Brain Surgery: Harvey Cushing at Passchendaele (1917–1918)',
+          title: 'Specialized Brain Surgery: Harvey Cushing at Passchendaele (1917–1918)',
+          theme_heading: 'Specialized Brain Surgery: Harvey Cushing at Passchendaele (1917–1918)',
           text: '<span class="para-ref">[4.1]</span> Parallel breakthroughs occurred in specialized trauma surgery. Penetrating skull and brain wounds inflicted by descending artillery shrapnel carried a catastrophic 50% mortality rate on the Western Front. American neurosurgeon <strong>Harvey Cushing</strong>, stationed at No. 46 Casualty Clearing Station near Mendinghem during the grueling Third Battle of Ypres (Passchendaele) in 1917, revolutionized brain surgery through meticulous clinical innovation. Cushing recognized that standard general anaesthesia (ether or chloroform) caused massive cerebral swelling and elevated intracranial pressure, which pushed delicate brain tissue through fractured skull defects, causing instant fatal herniation.<br><br><span class="para-ref">[4.2]</span> Cushing pioneered operating on conscious brain casualties under <strong>local anaesthetic</strong> (novocaine injected into the scalp), which kept the brain calm and unswollen. He designed an electrical suction apparatus to gently aspirate pulped, dead brain tissue, deployed powerful <em>surgical electromagnets</em> to extract deeply embedded steel shrapnel shards without lacerating healthy cerebral cortex, and used tiny silver clips to clamp delicate bleeding vessels. Cushing stitched the scalp closed using galeal sutures to protect against meningitis, reducing brain surgery mortality from over 50% down to 29% and operating on 45 severe casualties in a single 48-hour offensive, establishing modern neurosurgery.',
         },
         {
           act: 5,
-          title: 'Act 5: Harold Gillies & The Tubed Pedicle Plastic Reconstruction (1917–1918)',
-          theme_heading:
-            'Act 5: Harold Gillies & The Tubed Pedicle Plastic Reconstruction (1917–1918)',
+          title: 'Harold Gillies & The Tubed Pedicle Plastic Reconstruction (1917–1918)',
+          theme_heading: 'Harold Gillies & The Tubed Pedicle Plastic Reconstruction (1917–1918)',
           source: {
             id: 'source_b_gillies_tubed_pedicle',
             letter: 'B',
@@ -19142,9 +19128,9 @@ export const unitData = {
           question:
             'Why was direct person-to-person blood transfusion so difficult and rarely performed at the start of the war?',
           options: [
-            'Donating blood was illegal under British military law.',
-            'Blood clotted within minutes of leaving the body, and donors had to be hooked directly to recipients using fragile glass tubes.',
             'Blood typing had not yet been discovered.',
+            'Blood clotted within minutes of leaving the body, and donors had to be hooked directly to recipients using fragile glass tubes.',
+            'Donating blood was illegal under British military law.',
             'Blood could only be transferred between identical twins.',
           ],
           answer:
@@ -19169,9 +19155,9 @@ export const unitData = {
           question:
             'What discovery did Francis Rous and James Turner make in 1916 that allowed blood to be stored for up to four weeks?',
           options: [
+            'Boiling blood to kill all bacteria.',
             'Exposing blood to ultra-violet radiation lamps.',
             'Freezing blood into solid bricks of dry ice.',
-            'Boiling blood to kill all bacteria.',
             'Adding a citrate-glucose solution and storing the bottled blood in ice containers.',
           ],
           answer:
@@ -19184,9 +19170,9 @@ export const unitData = {
             'Who established the world’s first mobile blood bank at the Battle of Cambrai in November 1917?',
           options: [
             'Oswald Hope Robertson, an American doctor serving with the British medical service.',
+            'Florence Nightingale.',
             'Alexander Fleming.',
             'Joseph Lister.',
-            'Florence Nightingale.',
           ],
           answer:
             'Oswald Hope Robertson, an American doctor serving with the British medical service.',
@@ -19198,9 +19184,9 @@ export const unitData = {
             'Why was Group O blood specifically collected and stored in wartime blood depots?',
           options: [
             'Group O negative blood can be given safely to patients of any blood group without causing a fatal agglutination reaction.',
-            'British soldiers only possessed Group O blood.',
             'Group O was the only blood type that did not turn brown when cold.',
             'Group O blood carried twice as much oxygen as other types.',
+            'British soldiers only possessed Group O blood.',
           ],
           answer:
             'Group O negative blood can be given safely to patients of any blood group without causing a fatal agglutination reaction.',
@@ -19225,8 +19211,8 @@ export const unitData = {
           question:
             'What specialized medical hospital was established in 1917 by Harold Gillies for facial reconstructive surgery?',
           options: [
-            'The Royal Naval Hospital at Greenwich.',
             'St Thomas’ Hospital in central London.',
+            'The Royal Naval Hospital at Greenwich.',
             'Manchester Royal Infirmary.',
             'Queen’s Hospital at Sidcup, Kent.',
           ],
@@ -19238,10 +19224,10 @@ export const unitData = {
           question:
             'What revolutionary surgical technique did Harold Gillies develop to graft skin onto damaged faces without tissue necrosis?',
           options: [
-            'Spraying liquid plastic onto open facial burns.',
-            'The “tubed pedicle”, rolling skin from the chest or forehead into a living tube to preserve blood supply while migrating it to the face.',
-            'Transplanting entire donor faces from deceased casualties.',
             'Sewing animal leather directly onto the facial bones.',
+            'The “tubed pedicle”, rolling skin from the chest or forehead into a living tube to preserve blood supply while migrating it to the face.',
+            'Spraying liquid plastic onto open facial burns.',
+            'Transplanting entire donor faces from deceased casualties.',
           ],
           answer:
             'The “tubed pedicle”, rolling skin from the chest or forehead into a living tube to preserve blood supply while migrating it to the face.',
@@ -19268,8 +19254,8 @@ export const unitData = {
           options: [
             'All wartime medical techniques were banned by the British government in 1919.',
             'Blood transfusion services, advanced plastic reconstruction, and modern orthopaedic casualty units were integrated into civilian hospitals.',
-            'Military hospitals were burned down to prevent the spread of trench fever.',
             'Doctors returned to Galen’s Four Humours theory after 1918.',
+            'Military hospitals were burned down to prevent the spread of trench fever.',
           ],
           answer:
             'Blood transfusion services, advanced plastic reconstruction, and modern orthopaedic casualty units were integrated into civilian hospitals.',

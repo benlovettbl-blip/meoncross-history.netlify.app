@@ -26,12 +26,57 @@ window.openInPagePreview = function (url, title, pdfUrl, options = {}) {
     return;
   }
 
+  let resolvedPdfUrl = pdfUrl;
+  if (
+    !resolvedPdfUrl ||
+    resolvedPdfUrl === '#' ||
+    resolvedPdfUrl === 'undefined' ||
+    resolvedPdfUrl.endsWith('.html')
+  ) {
+    if (url.includes('/units/ks2_ww2/')) {
+      if (url.includes('pupil_workbook')) {
+        resolvedPdfUrl = '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf';
+      } else if (url.includes('quiz_pack')) {
+        resolvedPdfUrl = '/pdfs/ks2_ww2_quiz_pack_FINAL_V17.pdf';
+      } else if (url.includes('textbook')) {
+        resolvedPdfUrl = '/pdfs/ks2_ww2_textbook_FINAL_V1.pdf';
+      } else if (url.includes('/worksheets/')) {
+        const file = url.split('/').pop().replace('.html', '.pdf');
+        resolvedPdfUrl = `/pdfs/ks2_ww2/${file}`;
+      } else {
+        resolvedPdfUrl = '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf';
+      }
+    } else if (url.includes('/units/medieval_england/')) {
+      if (url.includes('pupil_workbook')) {
+        resolvedPdfUrl = '/pdfs/medieval_england_pupil_workbook.pdf';
+      } else if (url.includes('quiz_pack')) {
+        resolvedPdfUrl = '/pdfs/medieval_england_quiz_pack_FINAL_V1.pdf';
+      } else {
+        resolvedPdfUrl = '/pdfs/medieval_england_textbook_FINAL_V17.pdf';
+      }
+    } else if (url.includes('/units/great_war_part2/')) {
+      resolvedPdfUrl = '/pdfs/great_war_part2_pupil_workbook.pdf';
+    } else if (url.includes('/units/great_war/')) {
+      if (url.includes('pupil_workbook')) {
+        resolvedPdfUrl = '/pdfs/great_war_pupil_workbook_FINAL_V17.pdf';
+      } else {
+        resolvedPdfUrl = '/pdfs/great_war_quiz_pack_FINAL_V17.pdf';
+      }
+    } else if (url.includes('/units/cme_new/')) {
+      const clean = url.split('/').pop().replace('.html', '');
+      resolvedPdfUrl = `/pdfs/cme_new/${clean}.pdf`;
+    } else {
+      const clean = url.split('/').pop().replace('.html', '');
+      resolvedPdfUrl = `/pdfs/${clean}.pdf`;
+    }
+  }
+
   currentPreviewState = {
     activeTab: options.activeTab || 'qp',
     qpUrl: options.qpUrl || (options.isMockPaper ? url : null),
     msUrl: options.msUrl || null,
     title: options.title || title,
-    pdfUrl: pdfUrl || url,
+    pdfUrl: resolvedPdfUrl,
     url: url,
     isMockPaper: Boolean(options.isMockPaper),
   };
@@ -51,7 +96,7 @@ window.openInPagePreview = function (url, title, pdfUrl, options = {}) {
   }
 
   if (downloadBtn) {
-    downloadBtn.href = pdfUrl || url;
+    downloadBtn.href = resolvedPdfUrl;
     downloadBtn.style.display = 'inline-flex';
   }
 
@@ -173,8 +218,8 @@ function renderInPagePreviewConsole() {
           <button id="btnPreviewPrint" type="button" onclick="window.printInPagePreview()" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.76rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(37,99,235,0.35);">
             <i class="fa-solid fa-print"></i> Print
           </button>
-          <a id="btnPreviewDownload" href="#" target="_blank" title="Open compiled PDF in new tab" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.76rem; padding: 5px 10px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
-            <i class="fa-solid fa-file-pdf"></i> Open PDF
+          <a id="btnPreviewDownload" href="#" target="_blank" download title="Download official high-resolution compiled PDF" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-weight: 600; font-size: 0.76rem; padding: 5px 10px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-file-pdf"></i> High-Resolution PDF
           </a>
           <a id="btnPreviewFullTab" href="#" target="_blank" style="background: rgba(255, 255, 255, 0.08); color: #e2e8f0; border: 1px solid rgba(255, 255, 255, 0.15); font-weight: 600; font-size: 0.76rem; padding: 5px 10px; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
             <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Tab
@@ -205,43 +250,16 @@ const UNIT_PUBLICATIONS = {
       key: 'pillar1',
       badge: 'PILLAR 1 • MASTER TEXTBOOK',
       color: '#0284c7',
-      tags: ['Reading Narrative', 'Primary Sources', '0% Writing Lines'],
+      tags: ['Reading Narrative', '28-Page Master Textbook', '0% Writing Lines'],
       editions: [
         {
           id: 'all',
-          label: 'Complete Unit (KT1–KT3 Combined)',
-          title: '20-Page Specification Revision Guide & War Atlas',
-          pages: '20 Pages',
-          desc: '12 Specification Cheat Sheets across KT1–KT3, 4 cartographic war atlas plates, verbatim Pearson specification targets, and memory vaults.',
-          readUrl: '/units/cme_new/visual_revision_guide.html',
-          pdfUrl: '/pdfs/cme_revision_guide.pdf',
-        },
-        {
-          id: 'KT1',
-          label: 'Key Topic 1: Creation of Israel (1945–56)',
-          title: 'KT1 Master Textbook: Creation of Israel (1945–56)',
-          pages: '16 Pages',
-          desc: 'Mandate collapse, Jewish insurgency, UN Partition, 1948 War, Palestinian refugees & 1956 Suez Crisis. Reading text and primary sources.',
-          readUrl: '/units/cme_new/textbook_KT1_PUBLISHER.html',
-          pdfUrl: '/pdfs/cme_new_textbook_KT1_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT2',
-          label: 'Key Topic 2: The Escalating Conflict (1964–73)',
-          title: 'KT2 Master Textbook: The Escalating Conflict (1964–73)',
-          pages: '16 Pages',
-          desc: 'Water Wars, Six-Day War (1967), Conquered Territories, Resolution 242, Black September, Munich & Yom Kippur War.',
-          readUrl: '/units/cme_new/textbook_KT2_PUBLISHER.html',
-          pdfUrl: '/pdfs/cme_new_textbook_KT2_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT3',
-          label: 'Key Topic 3: The Search for Peace (1974–95)',
-          title: 'KT3 Master Textbook: The Search for Peace (1974–95)',
-          pages: '16 Pages',
-          desc: 'Shuttle diplomacy, Camp David (1978), Lebanon & Sabra/Shatila (1982), First Intifada (1987), Oslo Accords & Rabin assassination.',
-          readUrl: '/units/cme_new/textbook_KT3_PUBLISHER.html',
-          pdfUrl: '/pdfs/cme_new_textbook_KT3_FINAL_V17.pdf',
+          label: 'Complete 28-Page Master Classroom Textbook',
+          title: 'Conflict in the Middle East (1945–1995) 28-Page Master Textbook',
+          pages: '28 Pages',
+          desc: 'Complete 28-page pure narrative classroom textbook. 12 Enquiry Spreads, Chronological Milestone Spine, Dual Cartographic Perspectives & Master 60-Question Retrieval Quiz.',
+          readUrl: '/units/cme_new/textbook_UNIFIED.html',
+          pdfUrl: '/pdfs/cme_new_textbook_UNIFIED_FINAL.pdf',
         },
       ],
     },
@@ -307,13 +325,67 @@ const UNIT_PUBLICATIONS = {
       ],
     },
   },
+  medieval_england: {
+    specTitle: 'Key Stage 3: Medieval England, 1066–1381',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Reading Narrative', '12-Page Master Textbook', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete 12-Page Master Classroom Textbook',
+          title: 'Medieval England (1066–1381) Master Classroom Textbook',
+          pages: '12 Pages',
+          desc: 'Complete 12-page pure narrative classroom textbook. 6 Double-Page Enquiry Spreads, Chronological Milestone Spine, Cartographic Battle Plan & Master Retrieval Quiz.',
+          readUrl: '/units/medieval_england/textbook.html',
+          pdfUrl: '/pdfs/medieval_england_textbook_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Enquiry Spreads', 'Writing Scaffolds', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Pupil Consumable Workbook',
+          title: 'Medieval England Pupil Workbook',
+          pages: 'Photocopier Ready',
+          desc: 'Structured writing tasks, enquiry challenges, source evaluation tables, and extended writing scaffolds for every lesson in the unit.',
+          readUrl: '/units/medieval_england/pupil_workbook.html',
+          pdfUrl: '/pdfs/medieval_england_pupil_workbook.pdf',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['40 Core Questions', 'Teacher Marking Bank', 'Assessment'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Knowledge Retrieval Companion (40 Qs)',
+          title: 'Medieval England Knowledge Retrieval Companion',
+          pages: '12 Pages',
+          desc: '40 core factual questions across all enquiries with dual handwriting lines, front tracking ledger, and teacher marking bank.',
+          readUrl: '/units/medieval_england/quiz_pack.html',
+          pdfUrl: '/pdfs/medieval_england_quiz_pack_FINAL_V1.pdf',
+        },
+      ],
+    },
+  },
   usa: {
     specTitle: 'Paper 3: USA, 1954–75: Conflict at Home and Abroad (1HI0/33)',
     pillar1: {
       key: 'pillar1',
-      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      badge: 'PILLAR 1 • REVISION PLAYBOOK',
       color: '#1e40af',
-      tags: ['Reading Spreads', 'Primary Sources', 'Paper 3 Blueprint'],
+      tags: ['Revision Spreads', 'Primary Sources', 'Paper 3 Blueprint'],
       editions: [
         {
           id: 'all',
@@ -323,42 +395,6 @@ const UNIT_PUBLICATIONS = {
           desc: '16 double-page spreads across all 4 Key Topics, complete Paper 3 specification blueprints, Q1–Q3 paragraph formulas, Grade 9 WAGOLLs, and timed models.',
           readUrl: '/units/usa/visual_revision_guide.html',
           pdfUrl: '/pdfs/usa_visual_revision_guide.pdf',
-        },
-        {
-          id: 'KT1',
-          label: 'Key Topic 1: Civil Rights Movement (1954–65)',
-          title: 'KT1 Master Textbook: Civil Rights Movement (1954–65)',
-          pages: '16 Pages',
-          desc: 'Brown v Board, Montgomery bus boycott, Little Rock, sit-ins, Freedom Rides, March on Washington, CRA 1964, VRA 1965.',
-          readUrl: '/units/usa/textbook_KT1.html',
-          pdfUrl: '/pdfs/usa_textbook_KT1_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT2',
-          label: 'Key Topic 2: Black Power & Civil Rights (1965–75)',
-          title: 'KT2 Master Textbook: Black Power & Civil Rights (1965–75)',
-          pages: '16 Pages',
-          desc: 'Malcolm X, Nation of Islam, Stokely Carmichael, Black Panthers, 1968 Mexico Olympics, urban riots (Watts), MLK assassination.',
-          readUrl: '/units/usa/textbook_KT2.html',
-          pdfUrl: '/pdfs/usa_textbook_KT2_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT3',
-          label: 'Key Topic 3: Peace Movement & Counterculture (1960–75)',
-          title: 'KT3 Master Textbook: Peace Movement & Counterculture (1960–75)',
-          pages: '16 Pages',
-          desc: 'Student movement, SDS, anti-Vietnam War protests, Kent State, Woodstock, Women’s Liberation Movement, Roe v Wade.',
-          readUrl: '/units/usa/textbook_KT3.html',
-          pdfUrl: '/pdfs/usa_textbook_KT3_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT4',
-          label: 'Key Topic 4: The Vietnam War (1954–75)',
-          title: 'KT4 Master Textbook: The Vietnam War (1954–75)',
-          pages: '16 Pages',
-          desc: 'Geneva Accords, Gulf of Tonkin, guerrilla tactics, Tet Offensive (1968), My Lai, Vietnamization, and the Fall of Saigon.',
-          readUrl: '/units/usa/textbook_KT4.html',
-          pdfUrl: '/pdfs/usa_textbook_KT4_FINAL_V17.pdf',
         },
       ],
     },
@@ -437,9 +473,9 @@ const UNIT_PUBLICATIONS = {
     specTitle: 'Paper 1: Medicine in Britain & Western Front (1HI0/11)',
     pillar1: {
       key: 'pillar1',
-      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      badge: 'PILLAR 1 • REVISION PLAYBOOK',
       color: '#0f766e',
-      tags: ['Historical Narratives', 'Primary Medical Treatises', '0% Writing Lines'],
+      tags: ['Revision Masterclasses', 'Specification Blueprints', 'Exam Scaffolds'],
       editions: [
         {
           id: 'all',
@@ -449,51 +485,6 @@ const UNIT_PUBLICATIONS = {
           desc: '18 double-page spreads, complete Paper 1 specification blueprints, Section A 2-mark feature guides, Q3–Q6 paragraph formulas, and 1h 15m exam timing models.',
           readUrl: '/units/edexcel_medicine/visual_revision_guide.html',
           pdfUrl: '/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf',
-        },
-        {
-          id: 'medieval',
-          label: 'Era 1: Medieval Britain (c1250–c1500)',
-          title: 'Medieval Britain Master Textbook (c1250–c1500)',
-          pages: '16 Pages',
-          desc: 'Four Humours, Galen & Church, medieval hospitals, pilgrimage, Black Death (1348). Core reading text and medical plates.',
-          readUrl: '/units/edexcel_medicine/textbook_medieval_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
-        },
-        {
-          id: 'renaissance',
-          label: 'Era 2: The Medical Renaissance (c1500–c1700)',
-          title: 'The Medical Renaissance Master Textbook (c1500–c1700)',
-          pages: '16 Pages',
-          desc: 'Humanism, printing press, Vesalius (1543), Harvey (1628), Sydenham, Great Plague (1665).',
-          readUrl: '/units/edexcel_medicine/textbook_renaissance_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_renaissance_FINAL_V17.pdf',
-        },
-        {
-          id: '18th_19th',
-          label: 'Era 3: 18th & 19th C. Britain (c1700–c1900)',
-          title: '18th & 19th C. Britain Master Textbook (c1700–c1900)',
-          pages: '16 Pages',
-          desc: 'Jenner (smallpox), Germ Theory (Pasteur/Koch), Nightingale, Simpson, Lister, Public Health Acts.',
-          readUrl: '/units/edexcel_medicine/textbook_18th_19th_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_18th_19th_FINAL_V17.pdf',
-        },
-        {
-          id: 'modern',
-          label: 'Era 4: Modern Britain (c1900–present)',
-          title: 'Modern Britain Master Textbook (c1900–present)',
-          pages: '16 Pages',
-          desc: 'Genetics & DNA, magic bullets, Fleming/Florey/Chain (penicillin), NHS (1948), lung cancer diagnosis and treatment.',
-          readUrl: '/units/edexcel_medicine/textbook_modern_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_modern_FINAL_V17.pdf',
-        },
-        {
-          id: 'western_front',
-          label: 'Historic Env: The Western Front (1914–18)',
-          title: 'The Western Front Historic Environment Textbook (1914–18)',
-          pages: '16 Pages',
-          desc: 'Ypres, Somme, Arras, Cambrai; chain of evacuation (RAP, ADS/MDS, CCS); trench conditions, poison gas & surgical innovation.',
-          readUrl: '/units/edexcel_medicine/textbook_western_front_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_western_front_FINAL_V17.pdf',
         },
       ],
     },
@@ -597,50 +588,7 @@ const UNIT_PUBLICATIONS = {
   },
   eee: {
     specTitle: 'Paper 2: Early Elizabethan England, 1558–1588 (1HI0/B4)',
-    pillar1: {
-      key: 'pillar1',
-      badge: 'PILLAR 1 • MASTER TEXTBOOK',
-      color: '#b45309',
-      tags: ['Reading Spreads', 'Court & Politics', '0% Writing Lines'],
-      editions: [
-        {
-          id: 'all',
-          label: 'Complete Course (KT1–KT3 Combined)',
-          title: 'Complete Early Elizabethan Course Textbook (KT1–KT3 Combined)',
-          pages: '48 Pages',
-          desc: "Full specification coverage across the Elizabethan Religious Settlement, Mary Queen of Scots, the Spanish Armada, and Drake's exploration.",
-          readUrl: '/units/eee/textbook_KT1_PUBLISHER.html',
-          pdfUrl: '/pdfs/eee_textbook_KT1_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT1',
-          label: 'Key Topic 1: Queen, Government & Religion (1558–69)',
-          title: 'KT1 Master Textbook: Queen, Government & Religion (1558–69)',
-          pages: '16 Pages',
-          desc: "Elizabeth's accession, government structure, religious settlement, Puritan and Catholic challenges.",
-          readUrl: '/units/eee/textbook_KT1_PUBLISHER.html',
-          pdfUrl: '/pdfs/eee_textbook_KT1_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT2',
-          label: 'Key Topic 2: Challenges Home & Abroad (1569–88)',
-          title: 'KT2 Master Textbook: Challenges to Elizabeth at Home & Abroad (1569–88)',
-          pages: '16 Pages',
-          desc: 'Plots against Elizabeth (Northern Rebellion, Ridolfi, Throckmorton, Babington), execution of Mary QoS, and the Spanish Armada.',
-          readUrl: '/units/eee/textbook_KT2_PUBLISHER.html',
-          pdfUrl: '/pdfs/eee_textbook_KT2_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT3',
-          label: 'Key Topic 3: Society, Poverty & Exploration (1558–88)',
-          title: 'KT3 Master Textbook: Elizabethan Society in the Age of Exploration (1558–88)',
-          pages: '16 Pages',
-          desc: "Education and leisure, poverty and vagrancy, Drake's circumnavigation, and Raleigh's attempts to colonize Virginia.",
-          readUrl: '/units/eee/textbook_KT3_PUBLISHER.html',
-          pdfUrl: '/pdfs/eee_textbook_KT3_FINAL_V17.pdf',
-        },
-      ],
-    },
+    pillar1: null,
     pillar2: {
       key: 'pillar2',
       badge: 'PILLAR 2 • PUPIL WORKBOOK',
@@ -716,54 +664,18 @@ const UNIT_PUBLICATIONS = {
     specTitle: 'Paper 3: Weimar and Nazi Germany, 1918–1939 (1HI0/31)',
     pillar1: {
       key: 'pillar1',
-      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      badge: 'PILLAR 1 • REVISION PLAYBOOK',
       color: '#7f1d1d',
-      tags: ['Historical Narratives', 'Primary Source Vaults', '0% Writing Lines'],
+      tags: ['Revision Masterclasses', 'Paper 3 Blueprints', 'Exam Scaffolds'],
       editions: [
         {
           id: 'all',
           label: 'Complete Course (KT1–KT4 Combined)',
-          title: 'Complete Weimar & Nazi Germany Specification Guide & Textbook',
+          title: 'Complete Weimar & Nazi Germany Specification Guide & Revision Playbook',
           pages: '64 Pages',
           desc: "Complete specification text across the Weimar Republic, Hitler's rise, Nazi dictatorship, and life in the Police State.",
           readUrl: '/units/weimar_nazi_germany/visual_revision_guide.html',
           pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT1_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT1',
-          label: 'Key Topic 1: The Weimar Republic (1918–29)',
-          title: 'KT1 Master Textbook: The Weimar Republic (1918–29)',
-          pages: '16 Pages',
-          desc: "Origins, Treaty of Versailles, early rebellions, hyperinflation (1923), Stresemann's Golden Years, and Weimar culture.",
-          readUrl: '/units/weimar_nazi_germany/textbook_KT1_PUBLISHER.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT1_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT2',
-          label: 'Key Topic 2: Hitler’s Rise to Power (1919–33)',
-          title: 'KT2 Master Textbook: Hitler’s Rise to Power (1919–33)',
-          pages: '16 Pages',
-          desc: 'NSDAP origins, 25-Point Programme, Munich Putsch, Lean Years, Great Depression, and appointment as Chancellor.',
-          readUrl: '/units/weimar_nazi_germany/textbook_KT2_PUBLISHER.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT2_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT3',
-          label: 'Key Topic 3: Nazi Control & Dictatorship (1933–39)',
-          title: 'KT3 Master Textbook: Nazi Control & Dictatorship (1933–39)',
-          pages: '16 Pages',
-          desc: 'Reichstag Fire, Enabling Act, Night of Long Knives, death of Hindenburg, Police State, SS/Gestapo, propaganda, and religion.',
-          readUrl: '/units/weimar_nazi_germany/textbook_KT3_PUBLISHER.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT3_FINAL_V17.pdf',
-        },
-        {
-          id: 'KT4',
-          label: 'Key Topic 4: Life in Nazi Germany (1933–39)',
-          title: 'KT4 Master Textbook: Life in Nazi Germany (1933–39)',
-          pages: '16 Pages',
-          desc: 'Women, Hitler Youth, education, employment, standard of living, and persecution of minorities/Jews (Kristallnacht).',
-          readUrl: '/units/weimar_nazi_germany/textbook_KT4_PUBLISHER.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT4_FINAL_V17.pdf',
         },
       ],
     },
@@ -840,23 +752,7 @@ const UNIT_PUBLICATIONS = {
   },
   great_war: {
     specTitle: 'Key Stage 3: Causes of the Great War, 1871–1914',
-    pillar1: {
-      key: 'pillar1',
-      badge: 'PILLAR 1 • MASTER TEXTBOOK',
-      color: '#0284c7',
-      tags: ['Narrative Reading', 'Primary Documents', '0% Writing Lines'],
-      editions: [
-        {
-          id: 'all',
-          label: 'Complete Core Textbook (6 Lessons)',
-          title: 'Complete Causes of the Great War Core Textbook',
-          pages: '6 Lessons • Full Text',
-          desc: 'Authentic historical narratives, primary documents, and context. Zero writing lines — ideal for reading on screens or printing class sets.',
-          readUrl: '/units/great_war/textbook.html',
-          pdfUrl: '/pdfs/great_war_textbook_FINAL_V17.pdf',
-        },
-      ],
-    },
+    pillar1: null,
     pillar2: {
       key: 'pillar2',
       badge: 'PILLAR 2 • PUPIL WORKBOOK',
@@ -901,6 +797,168 @@ const UNIT_PUBLICATIONS = {
       ],
     },
   },
+  ks2_ww2: {
+    specTitle: 'Key Stage 2: The Second World War & The Home Front (1939–1945)',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK & PLANNING',
+      color: '#0284c7',
+      tags: ['24-Page Master Textbook', 'Reading Anthology', 'Scheme of Work'],
+      editions: [
+        {
+          id: 'textbook',
+          label: 'Master 24-Page Classroom Textbook (Reading Anthology)',
+          title: 'World War II & The Home Front (1939–1945) Master Classroom Textbook',
+          pages: '24 Pages (A4)',
+          desc: 'Definitive 24-page pure narrative classroom companion (6 folded A3 saddle-stitch sheets). 10 double-page enquiry spreads, 20 authentic primary visual sources with Think & Discuss hinge tasks, Chronological Milestone Spine, Dual Cartographic Perspectives, and Master 40-Question Retrieval Quiz.',
+          readUrl: '/units/ks2_ww2/textbook.html',
+          pdfUrl: '/pdfs/ks2_ww2_textbook_FINAL_V1.pdf',
+        },
+        {
+          id: 'all',
+          label: 'Master 10-Lesson Scheme of Work & Planning Guide',
+          title: 'Key Stage 2 WWII & Home Front Scheme of Work & Curriculum Companion',
+          pages: '10-Lesson Plan',
+          desc: 'Comprehensive Key Stage 2 curriculum companion. Detailed enquiry overviews, HET primary guidelines, core vocabulary, hinge discussion prompts, and assessment criteria.',
+          readUrl: '/units/ks2_ww2/ks2_ww2_scheme_of_work.html',
+          pdfUrl: '/units/ks2_ww2/ks2_ww2_scheme_of_work.html',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['24 Pages (A4)', '10 Enquiry Worksheets', '3 Authentic Craft Sheets'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete 24-Page Pupil Workbook',
+          title: 'Key Stage 2 WWII & The Home Front: 24-Page Pupil Workbook',
+          pages: '24 Pages (A4)',
+          desc: 'Complete 24-page pupil workbook covering all 10 lessons. Includes dual-purpose exercise-book cutlines, vocabulary matching, source analysis, timeline challenges, and 40-question Master Retrieval Challenge.',
+          readUrl: '/units/ks2_ww2/pupil_workbook.html',
+          pdfUrl: '/pdfs/ks2_ww2/ks2_ww2_pupil_workbook.pdf',
+        },
+        {
+          id: 'L01',
+          label: 'Lesson 1: Outbreak & Gas Masks (with Sheet 3 Craft)',
+          title: 'Lesson 1 Enquiry Worksheet: Outbreak of War & Gas Masks',
+          pages: '3 Pages (A4)',
+          desc: 'Photocopier-ready 3-page companion worksheet. Includes exercise-book cutlines, vocabulary match, source analysis, PLUS Page 3 Primary Craft: ARP Warden Pocket Warrant Card & Official Blackout Warning Notice.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_01_outbreak_gasmasks_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_01_outbreak_gasmasks_worksheet.pdf',
+        },
+        {
+          id: 'L02',
+          label: 'Lesson 2: Evacuation Experience',
+          title: 'Lesson 2 Enquiry Worksheet: The Evacuation Experience',
+          pages: '2 Pages (A4)',
+          desc: 'Photocopier-ready 2-page companion worksheet covering Operation Pied Piper, billeting, and contrasting pupil perspectives.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_02_evacuation_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_02_evacuation_worksheet.pdf',
+        },
+        {
+          id: 'L03',
+          label: 'Lesson 3: The Kindertransport',
+          title: 'Lesson 3 Enquiry Worksheet: The Kindertransport',
+          pages: '2 Pages (A4)',
+          desc: 'Photocopier-ready 2-page companion worksheet aligned with Holocaust Educational Trust primary guidance.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_03_kindertransport_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_03_kindertransport_worksheet.pdf',
+        },
+        {
+          id: 'L04',
+          label: 'Lesson 4: The Blitz & Air Raid Shelters',
+          title: 'Lesson 4 Enquiry Worksheet: The Blitz & Air Raid Shelters',
+          pages: '2 Pages (A4)',
+          desc: 'Photocopier-ready 2-page companion worksheet exploring Anderson and Morrison shelters, the Tube stations, and resilience.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_04_the_blitz_shelters_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_04_the_blitz_shelters_worksheet.pdf',
+        },
+        {
+          id: 'L05',
+          label: 'Lesson 5: Dig for Victory & Rationing (with Sheet 3 Craft)',
+          title: 'Lesson 5 Enquiry Worksheet: Dig for Victory & Food Rationing',
+          pages: '3 Pages (A4)',
+          desc: 'Photocopier-ready 3-page companion worksheet on rationing coupon books, U-boat blockades, PLUS Page 3 Primary Craft: Ministry of Food 1940 General Ration Book, Cut-out Ration Coupons & Lord Woolton Pie Recipe Card.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_05_dig_for_victory_rationing_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_05_dig_for_victory_rationing_worksheet.pdf',
+        },
+        {
+          id: 'L06',
+          label: 'Lesson 6: Women at War & Land Army',
+          title: 'Lesson 6 Enquiry Worksheet: Women at War & The Land Army',
+          pages: '2 Pages (A4)',
+          desc: "Photocopier-ready 2-page companion worksheet on the Auxiliary Territorial Service, factories, and Women's Land Army.",
+          readUrl: '/units/ks2_ww2/worksheets/lesson_06_women_at_war_land_army_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_06_women_at_war_land_army_worksheet.pdf',
+        },
+        {
+          id: 'L07',
+          label: 'Lesson 7: Daily Life Before 1939',
+          title: 'Lesson 7 Enquiry Worksheet: Daily Life Before the War',
+          pages: '2 Pages (A4)',
+          desc: 'Photocopier-ready 2-page companion worksheet contrasting pre-war British childhood and European Jewish life before 1939.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_07_prewar_life_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_07_prewar_life_worksheet.pdf',
+        },
+        {
+          id: 'L08',
+          label: 'Lesson 8: Bletchley Park & Codebreakers (with Sheet 3 Craft)',
+          title: 'Lesson 8 Enquiry Worksheet: Bletchley Park & Codebreakers',
+          pages: '3 Pages (A4)',
+          desc: 'Photocopier-ready 3-page companion worksheet examining the Enigma cipher, Alan Turing, Bombe machines, PLUS Page 3 Primary Craft: Concentric Enigma Cipher Wheel & Station X Intercept Dispatches.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_08_bletchley_codebreakers_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_08_bletchley_codebreakers_worksheet.pdf',
+        },
+        {
+          id: 'L09',
+          label: 'Lesson 9: Rescuers & Nicholas Winton',
+          title: 'Lesson 9 Enquiry Worksheet: Rescuers & Nicholas Winton',
+          pages: '2 Pages (A4)',
+          desc: 'Photocopier-ready 2-page companion worksheet exploring moral courage, the Czech Kindertransport, and individual agency.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_09_rescuers_winton_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_09_rescuers_winton_worksheet.pdf',
+        },
+        {
+          id: 'L10',
+          label: 'Lesson 10: VE Day & Remembrance',
+          title: 'Lesson 10 Enquiry Worksheet: VE Day & Historical Remembrance',
+          pages: '2 Pages (A4)',
+          desc: 'Photocopier-ready 2-page companion worksheet exploring street celebrations, the cost of war, and national legacy.',
+          readUrl: '/units/ks2_ww2/worksheets/lesson_10_ve_day_remembrance_worksheet.html',
+          pdfUrl: '/pdfs/ks2_ww2/lesson_10_ve_day_remembrance_worksheet.pdf',
+        },
+        {
+          id: 'L11',
+          label: 'Lesson 11: The Windermere Children',
+          title: 'Lesson 11 Extension Worksheet: The Windermere Children & Rebuilding Lives',
+          pages: '2 Pages (A4)',
+          desc: "Photocopier-ready 2-page companion worksheet exploring the August 1945 arrival at Calgarth, Tom Palmer's historical fiction, and oral history.",
+          readUrl: '/units/ks2_ww2/worksheets/lesson_11_windermere_children_worksheet.html',
+          pdfUrl: '/units/ks2_ww2/worksheets/lesson_11_windermere_children_worksheet.html',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL & ASSESSMENT',
+      color: '#7c3aed',
+      tags: ['4 Pages (A4)', '40 Core Questions', 'Department Marking Bank'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Master 40-Question Retrieval Companion & Tracking Ledger',
+          title: 'Key Stage 2 WWII Knowledge Retrieval Companion & Assessment Ledger',
+          pages: '4 Pages (40 Questions)',
+          desc: 'Streamlined 4-page A4 companion (1 folded A3 sheet) covering all 10 enquiries. Features 40 recall checkpoints, student tracking ledger, complete Department Marking Bank, and teacher feedback rubric.',
+          readUrl: '/units/ks2_ww2/quiz_pack.html',
+          pdfUrl: '/pdfs/ks2_ww2_quiz_pack_FINAL_V17.pdf',
+        },
+      ],
+    },
+  },
 };
 
 /**
@@ -910,23 +968,7 @@ function getGenericUnitPublications(unitId, unitData) {
   const title = (unitData && unitData.title) || unitId;
   return {
     specTitle: `Key Stage 3 Curriculum: ${title}`,
-    pillar1: {
-      key: 'pillar1',
-      badge: 'PILLAR 1 • MASTER TEXTBOOK',
-      color: '#0284c7',
-      tags: ['Class Set Reading', 'Primary Extracts', '0% Writing Lines'],
-      editions: [
-        {
-          id: 'all',
-          label: 'Complete Core Textbook',
-          title: `${title} — Complete Core Textbook`,
-          pages: 'Complete Volume',
-          desc: 'Photocopier-ready and digital class set reading text with authentic historical narratives, primary source extracts, and enquiry questions.',
-          readUrl: `/units/${unitId}/textbook.html`,
-          pdfUrl: `/pdfs/${unitId}_textbook_FINAL_V17.pdf`,
-        },
-      ],
-    },
+    pillar1: null,
     pillar2: {
       key: 'pillar2',
       badge: 'PILLAR 2 • PUPIL WORKBOOK',
@@ -1006,15 +1048,30 @@ window.onPillarEditionChange = function (selectEl, unitId, pillarKey) {
  * Helper to render an individual master pillar card
  */
 function renderMasterPillarCard(unitId, pillar) {
+  if (!pillar || !pillar.editions || !pillar.editions.length) return '';
   const defaultEdition = pillar.editions[0];
   const cleanTitle = (defaultEdition.title || '').replace(/'/g, "\\'");
   const hasMultipleEditions = pillar.editions.length > 1;
 
+  // Only render edition select if there are multiple editions to choose from
+  const editionSelectHtml = hasMultipleEditions
+    ? `
+      <div style="margin-bottom: 12px;">
+        <label style="display: block; font-size: 0.68rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">
+          <i class="fa-solid fa-layer-group" style="margin-right: 4px;"></i>Select Module / Key Topic:
+        </label>
+        <select class="pillar-edition-select" onchange="window.onPillarEditionChange(this, '${unitId}', '${pillar.key}')" style="width: 100%; font-size: 0.78rem; font-weight: 700; color: #0f172a; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; cursor: pointer; outline: none; transition: border-color 0.15s ease;">
+          ${pillar.editions.map((e) => `<option value="${e.id}">${e.label}</option>`).join('')}
+        </select>
+      </div>
+    `
+    : '';
+
   return `
-    <div class="master-pillar-card" data-pillar-key="${pillar.key}" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-top: 4px solid ${pillar.color}; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.04); min-height: 290px; box-sizing: border-box; transition: transform 0.15s ease, box-shadow 0.15s ease;">
+    <div class="master-pillar-card" data-pillar-key="${pillar.key}" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-top: 4px solid ${pillar.color}; border-radius: 10px; padding: 18px 20px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.04); min-height: 250px; box-sizing: border-box; transition: transform 0.15s ease, box-shadow 0.15s ease;">
       <div>
         <!-- Top Badge + Page Budget -->
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
           <span style="font-size: 0.68rem; font-weight: 800; background: ${pillar.color}15; color: ${pillar.color}; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.4px; text-transform: uppercase; border: 1px solid ${pillar.color}30;">
             ${pillar.badge}
           </span>
@@ -1023,40 +1080,19 @@ function renderMasterPillarCard(unitId, pillar) {
           </span>
         </div>
 
-        <!-- Edition / Module Dropdown -->
-        <div style="margin-bottom: 12px;">
-          <label style="display: block; font-size: 0.68rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">
-            <i class="fa-solid fa-layer-group" style="margin-right: 4px;"></i>Course Edition / Topic:
-          </label>
-          <select class="pillar-edition-select" onchange="window.onPillarEditionChange(this, '${unitId}', '${pillar.key}')" ${hasMultipleEditions ? '' : 'disabled title="Complete single-volume edition"'} style="width: 100%; font-size: 0.78rem; font-weight: 700; color: #0f172a; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; cursor: ${hasMultipleEditions ? 'pointer' : 'default'}; outline: none; transition: border-color 0.15s ease;">
-            ${pillar.editions.map((e) => `<option value="${e.id}">${e.label}</option>`).join('')}
-          </select>
-        </div>
+        ${editionSelectHtml}
 
         <!-- Title & Description -->
-        <h3 class="pillar-dynamic-title" style="margin: 0 0 6px 0; color: #0f172a; font-size: 0.94rem; font-weight: 800; line-height: 1.3;">
+        <h3 class="pillar-dynamic-title" style="margin: 0 0 8px 0; color: #0f172a; font-size: 0.96rem; font-weight: 800; line-height: 1.35;">
           ${defaultEdition.title}
         </h3>
-        <p class="pillar-dynamic-desc" style="margin: 0 0 12px 0; font-size: 0.76rem; color: #475569; line-height: 1.45; min-height: 48px;">
+        <p class="pillar-dynamic-desc" style="margin: 0 0 14px 0; font-size: 0.78rem; color: #475569; line-height: 1.5; min-height: 44px;">
           ${defaultEdition.desc}
         </p>
-
-        <!-- Key Pedagogical Tags -->
-        <div class="pillar-feature-tags" style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px;">
-          ${(pillar.tags || [])
-            .map(
-              (t) => `
-            <span style="font-size: 0.66rem; font-weight: 700; background: #f1f5f9; color: #475569; padding: 2px 7px; border-radius: 4px;">
-              <i class="fa-solid fa-check" style="color: ${pillar.color}; margin-right: 3px;"></i>${t}
-            </span>
-          `,
-            )
-            .join('')}
-        </div>
       </div>
 
       <!-- Strictly 2 Primary Actions -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto; padding-top: 12px; border-top: 1px solid #f1f5f9;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto; padding-top: 14px; border-top: 1px solid #f1f5f9;">
         <button type="button" class="pillar-btn-read" onclick="window.openInPagePreview('${defaultEdition.readUrl}', '${cleanTitle}', '${defaultEdition.pdfUrl}', { badge: '${pillar.badge}' })" style="background: #ffffff; color: #0f172a; border: 1.5px solid #cbd5e1; border-left: 3.5px solid ${pillar.color}; padding: 8px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.borderColor='${pillar.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.06)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${pillar.color}'; this.style.boxShadow='none';">
           <i class="fa-solid fa-book-open-reader" style="color: ${pillar.color};"></i> Read Online
         </button>
@@ -1074,15 +1110,19 @@ function renderMasterPillarCard(unitId, pillar) {
 export function renderWorkbooksZone(container, unitData) {
   unitData = unitData || state.activeUnitData || {};
   const activeUnitId = state.selectedUnitId || window.currentUnitId;
+  const isAllUnits = !activeUnitId || activeUnitId === 'all';
+  const unitPubs = isAllUnits
+    ? null
+    : UNIT_PUBLICATIONS[activeUnitId] || getGenericUnitPublications(activeUnitId, unitData);
 
-  // Ultra-clean top bar: Institutional neutrality & zero visual alarm
+  // Top Masthead: Institutional neutrality & zero visual alarm
   let html = `
-    <div style="background: #0f172a; padding: 8px 16px; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+    <div style="background: #0f172a; padding: 10px 18px; border-radius: 8px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
       <div style="display: flex; align-items: center; gap: 10px;">
-        <i class="fa-solid fa-book-bookmark" style="color: #38bdf8; font-size: 1.1rem;"></i>
+        <i class="fa-solid fa-book-bookmark" style="color: #38bdf8; font-size: 1.15rem;"></i>
         <div>
           <span style="color: #ffffff; font-size: 0.98rem; font-weight: 800; letter-spacing: -0.01em;">Print &amp; PDF Hub</span>
-          <span style="display: inline-block; width: 1px; height: 12px; background: rgba(255,255,255,0.25); margin: 0 6px; vertical-align: middle;"></span>
+          <span style="display: inline-block; width: 1px; height: 12px; background: rgba(255,255,255,0.25); margin: 0 8px; vertical-align: middle;"></span>
           <span style="color: #94a3b8; font-size: 0.76rem; font-weight: 500;">Master Textbooks, Pupil Workbooks &amp; Retrieval Companions</span>
         </div>
       </div>
@@ -1096,100 +1136,12 @@ export function renderWorkbooksZone(container, unitData) {
         </button>
       </div>
     </div>
-
-    <!-- Specification Unit Switcher Tabs -->
-    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; padding: 6px 10px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px;">
-      <button type="button" onclick="window.switchView('booklet', 'all')" style="background: ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#ffffff'}; color: ${!activeUnitId || activeUnitId === 'all' ? '#ffffff' : '#334155'}; border: 1px solid ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#cbd5e1'}; font-size: 0.74rem; font-weight: 700; padding: 4px 10px; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
-        <i class="fa-solid fa-layer-group"></i> All Units Directory
-      </button>
-
-      <span style="font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 4px;">GCSE:</span>
-      
-      <button type="button" onclick="window.switchView('booklet', 'edexcel_medicine')" style="background: ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#ffffff'}; color: ${activeUnitId === 'edexcel_medicine' ? '#ffffff' : '#0f766e'}; border: 1px solid ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#99f6e4'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'edexcel_medicine' ? '0 1px 3px rgba(15,118,110,0.25)' : 'none'};">
-        <i class="fa-solid fa-notes-medical"></i> Medicine (P1)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'cme_new')" style="background: ${activeUnitId === 'cme_new' ? '#0284c7' : '#ffffff'}; color: ${activeUnitId === 'cme_new' ? '#ffffff' : '#0369a1'}; border: 1px solid ${activeUnitId === 'cme_new' ? '#0284c7' : '#bae6fd'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'cme_new' ? '0 1px 3px rgba(2,132,199,0.25)' : 'none'};">
-        <i class="fa-solid fa-dove"></i> Middle East (P2)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'eee')" style="background: ${activeUnitId === 'eee' ? '#b45309' : '#ffffff'}; color: ${activeUnitId === 'eee' ? '#ffffff' : '#b45309'}; border: 1px solid ${activeUnitId === 'eee' ? '#b45309' : '#fde68a'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'eee' ? '0 1px 3px rgba(180,83,9,0.25)' : 'none'};">
-        <i class="fa-solid fa-crown"></i> Elizabethan (P2)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'weimar_nazi_germany')" style="background: ${activeUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#ffffff'}; color: ${activeUnitId === 'weimar_nazi_germany' ? '#ffffff' : '#991b1b'}; border: 1px solid ${activeUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#fecaca'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'weimar_nazi_germany' ? '0 1px 3px rgba(127,29,29,0.25)' : 'none'};">
-        <i class="fa-solid fa-landmark"></i> Weimar (P3)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'usa')" style="background: ${activeUnitId === 'usa' ? '#1e40af' : '#ffffff'}; color: ${activeUnitId === 'usa' ? '#ffffff' : '#1e40af'}; border: 1px solid ${activeUnitId === 'usa' ? '#1e40af' : '#bfdbfe'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'usa' ? '0 1px 3px rgba(30,64,175,0.25)' : 'none'};">
-        <i class="fa-solid fa-flag-usa"></i> USA 1954–75 (P3)
-      </button>
-
-      <span style="font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 4px;">KS3:</span>
-
-      <button type="button" onclick="window.switchView('booklet', 'water_and_sanitation')" style="background: ${activeUnitId === 'water_and_sanitation' ? '#0369a1' : '#ffffff'}; color: ${activeUnitId === 'water_and_sanitation' ? '#ffffff' : '#0369a1'}; border: 1px solid ${activeUnitId === 'water_and_sanitation' ? '#0369a1' : '#bae6fd'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
-        <i class="fa-solid fa-faucet-drip"></i> Water (Y7)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'medieval_england')" style="background: ${activeUnitId === 'medieval_england' ? '#7c2d12' : '#ffffff'}; color: ${activeUnitId === 'medieval_england' ? '#ffffff' : '#7c2d12'}; border: 1px solid ${activeUnitId === 'medieval_england' ? '#7c2d12' : '#fed7aa'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
-        <i class="fa-solid fa-chess-rook"></i> Medieval (Y7)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'early_modern_world')" style="background: ${activeUnitId === 'early_modern_world' ? '#047857' : '#ffffff'}; color: ${activeUnitId === 'early_modern_world' ? '#ffffff' : '#047857'}; border: 1px solid ${activeUnitId === 'early_modern_world' ? '#047857' : '#a7f3d0'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
-        <i class="fa-solid fa-compass"></i> Early Modern (Y8)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'industrialisation_and_empire')" style="background: ${activeUnitId === 'industrialisation_and_empire' ? '#475569' : '#ffffff'}; color: ${activeUnitId === 'industrialisation_and_empire' ? '#ffffff' : '#475569'}; border: 1px solid ${activeUnitId === 'industrialisation_and_empire' ? '#475569' : '#cbd5e1'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
-        <i class="fa-solid fa-industry"></i> Industry (Y8)
-      </button>
-
-      <button type="button" onclick="window.switchView('booklet', 'great_war')" style="background: ${activeUnitId === 'great_war' ? '#4338ca' : '#ffffff'}; color: ${activeUnitId === 'great_war' ? '#ffffff' : '#4338ca'}; border: 1px solid ${activeUnitId === 'great_war' ? '#4338ca' : '#c7d2fe'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'great_war' ? '0 1px 3px rgba(67,56,202,0.25)' : 'none'};">
-        <i class="fa-solid fa-shield-halved"></i> Great War (Y9)
-      </button>
-    </div>
   `;
 
-  // Check if unit is in catalog or is generic KS3
-  const isAllUnits = !activeUnitId || activeUnitId === 'all';
-  const unitPubs = isAllUnits
-    ? null
-    : UNIT_PUBLICATIONS[activeUnitId] || getGenericUnitPublications(activeUnitId, unitData);
-
+  // Specific unit publication hub
   if (unitPubs) {
     window.currentGenericUnitPublications = unitPubs;
 
-    // Render the 3 Master Books Grid
-    html += `
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 12px;">
-        ${renderMasterPillarCard(activeUnitId, unitPubs.pillar1)}
-        ${renderMasterPillarCard(activeUnitId, unitPubs.pillar2)}
-        ${renderMasterPillarCard(activeUnitId, unitPubs.pillar3)}
-      </div>
-    `;
-
-    // Specialized Great War Teacher Packs toolbar
-    if (activeUnitId === 'great_war') {
-      html += `
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
-          <span style="font-size: 0.74rem; font-weight: 800; color: #475569; text-transform: uppercase;">
-            <i class="fa-solid fa-paperclip" style="color: #0284c7; margin-right: 4px;"></i>Specialized Great War Teacher &amp; Revision Packs:
-          </span>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <a href="/pdfs/great_war_guided_reading_workbook_FINAL_V17.pdf" target="_blank" title="Open Guided Reading Workbook PDF in new tab" style="background: #ffffff; color: #0284c7; border: 1px solid #bae6fd; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
-              <i class="fa-solid fa-file-pdf"></i> Guided Reading (PDF)
-            </a>
-            <a href="/pdfs/great_war_answer_key_FINAL_V17.pdf" target="_blank" title="Open Teacher Answer Key PDF in new tab" style="background: #ffffff; color: #16a34a; border: 1px solid #bbf7d0; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
-              <i class="fa-solid fa-file-pdf"></i> Teacher Answer Key (PDF)
-            </a>
-            <a href="/pdfs/great_war_cheat_sheet_FINAL_V17.pdf" target="_blank" title="Open Revision Cheat Sheet PDF in new tab" style="background: #ffffff; color: #d97706; border: 1px solid #fde68a; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
-              <i class="fa-solid fa-file-pdf"></i> Revision Cheat Sheet (PDF)
-            </a>
-          </div>
-        </div>
-      `;
-    }
-
-    // Dedicated Cross-Reference to GCSE Exam Practice Hub (declutters this page completely)
     const isGcseUnit = [
       'cme_new',
       'usa',
@@ -1197,6 +1149,67 @@ export function renderWorkbooksZone(container, unitData) {
       'eee',
       'weimar_nazi_germany',
     ].includes(activeUnitId);
+    const isKs2Unit = activeUnitId === 'ks2_ww2';
+    const ksBadgeText = isGcseUnit ? 'GCSE • Edexcel' : isKs2Unit ? 'KS2 • Primary' : 'Key Stage 3';
+    const ksBadgeBg = isGcseUnit ? '#0f172a' : isKs2Unit ? '#1e3a8a' : '#334155';
+
+    // Streamlined Contextual Bar (Clean breadcrumb navigation & compact jump select)
+    html += `
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; padding: 8px 14px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <button type="button" onclick="window.switchView('booklet', 'all')" style="background: #f8fafc; color: #0f172a; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 12px; font-size: 0.76rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#0284c7'; this.style.color='#0284c7';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#cbd5e1'; this.style.color='#0f172a';">
+            <i class="fa-solid fa-arrow-left"></i> All Curriculum Units
+          </button>
+          <span style="font-size: 0.68rem; font-weight: 800; background: ${ksBadgeBg}; color: #ffffff; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
+            ${ksBadgeText}
+          </span>
+          <span style="font-size: 0.90rem; font-weight: 800; color: #0f172a;">
+            ${unitPubs.specTitle || unitData.title || activeUnitId}
+          </span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <label for="hubUnitQuickSwitcher" style="font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px;">
+            <i class="fa-solid fa-arrow-right-arrow-left" style="margin-right: 4px;"></i>Switch Unit:
+          </label>
+          <select id="hubUnitQuickSwitcher" onchange="window.switchView('booklet', this.value)" style="font-size: 0.76rem; font-weight: 700; color: #0f172a; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 5px 10px; cursor: pointer; outline: none;">
+            <option value="all">-- All Units Directory --</option>
+            <optgroup label="Edexcel GCSE History (Years 10–11)">
+              <option value="edexcel_medicine" ${activeUnitId === 'edexcel_medicine' ? 'selected' : ''}>Medicine in Britain (Paper 1)</option>
+              <option value="cme_new" ${activeUnitId === 'cme_new' ? 'selected' : ''}>Conflict in the Middle East (Paper 2)</option>
+              <option value="eee" ${activeUnitId === 'eee' ? 'selected' : ''}>Early Elizabethan England (Paper 2)</option>
+              <option value="weimar_nazi_germany" ${activeUnitId === 'weimar_nazi_germany' ? 'selected' : ''}>Weimar &amp; Nazi Germany (Paper 3)</option>
+              <option value="usa" ${activeUnitId === 'usa' ? 'selected' : ''}>USA: Conflict at Home &amp; Abroad (Paper 3)</option>
+            </optgroup>
+            <optgroup label="Key Stage 3 Curriculum (Years 7–9)">
+              <option value="great_war" ${activeUnitId === 'great_war' ? 'selected' : ''}>Causes of the Great War (Year 9)</option>
+              <option value="medieval_england" ${activeUnitId === 'medieval_england' ? 'selected' : ''}>Medieval England 1066–1381 (Year 7)</option>
+              <option value="industrialisation_and_empire" ${activeUnitId === 'industrialisation_and_empire' ? 'selected' : ''}>Industrialisation &amp; Empire (Year 8)</option>
+              <option value="early_modern_world" ${activeUnitId === 'early_modern_world' ? 'selected' : ''}>The Early Modern World (Year 8)</option>
+              <option value="water_and_sanitation" ${activeUnitId === 'water_and_sanitation' ? 'selected' : ''}>Water &amp; Sanitation (Year 7)</option>
+              <option value="the_shoah" ${activeUnitId === 'the_shoah' ? 'selected' : ''}>The Shoah / Holocaust (Year 9)</option>
+              <option value="australia" ${activeUnitId === 'australia' ? 'selected' : ''}>Indigenous Australia &amp; Colony (Year 8)</option>
+              <option value="cold_war" ${activeUnitId === 'cold_war' ? 'selected' : ''}>Superpower Relations &amp; Cold War (KS3)</option>
+              <option value="post_war_britain" ${activeUnitId === 'post_war_britain' ? 'selected' : ''}>Post-War Britain &amp; Windrush (Year 9)</option>
+              <option value="trip_ypres" ${activeUnitId === 'trip_ypres' ? 'selected' : ''}>Ypres Battlefield Tour Companion</option>
+            </optgroup>
+            <optgroup label="Key Stage 2 Primary History (Year 5)">
+              <option value="ks2_ww2" ${activeUnitId === 'ks2_ww2' ? 'selected' : ''}>World War II &amp; The Home Front (Year 5)</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+    `;
+
+    // Render the Master Publications Grid (3 Pillars for CME/Medieval/KS2, 2-3 for others)
+    const activePillars = [unitPubs.pillar1, unitPubs.pillar2, unitPubs.pillar3].filter(Boolean);
+    html += `
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 12px;">
+        ${activePillars.map((p) => renderMasterPillarCard(activeUnitId, p)).join('')}
+      </div>
+    `;
+
+    // Dedicated Cross-Reference to GCSE Exam Practice Hub (only on GCSE units)
     if (isGcseUnit) {
       html += `
         <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 8px; padding: 12px 18px; margin-top: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border: 1px solid #334155; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
@@ -1347,7 +1360,7 @@ export function renderWorkbooksZone(container, unitData) {
                   </div>
                 </div>
                 <button type="button" onclick="window.switchView('booklet', '${u.id}')" style="background: #0f172a; color: #ffffff; border: none; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                  <span>Open 3 Pillars</span>
+                  <span>Open Master Publications</span>
                   <i class="fa-solid fa-arrow-right" style="font-size: 0.65rem;"></i>
                 </button>
               </div>
@@ -1384,6 +1397,32 @@ export function renderWorkbooksZone(container, unitData) {
               )
               .join('')}
           </div>
+        </div>
+      </div>
+
+      <!-- Key Stage 2 Section -->
+      <div style="margin-top: 14px; background: #ffffff; border: 1.5px solid #1e3a8a; border-radius: 8px; padding: 14px 16px;">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1.5px solid #e2e8f0;">
+          <span style="font-size: 0.78rem; font-weight: 900; text-transform: uppercase; color: #1e3a8a;">
+            <i class="fa-solid fa-school" style="margin-right: 6px;"></i> Key Stage 2 Primary History Curriculum Suite
+          </span>
+          <span style="font-size: 0.68rem; font-weight: 800; background: #1e3a8a; color: #ffffff; padding: 2px 8px; border-radius: 4px;">Primary Unit</span>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px solid #bfdbfe; border-left: 3.5px solid #1e3a8a; border-radius: 6px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 6px; background: rgba(30, 58, 138, 0.1); display: flex; align-items: center; justify-content: center; color: #1e3a8a; font-size: 1.05rem;">
+              <i class="fa-solid fa-plane"></i>
+            </div>
+            <div>
+              <strong style="color: #0f172a; font-size: 0.84rem; display: block; line-height: 1.2;">The Second World War &amp; The Home Front (1939–1945)</strong>
+              <span style="color: #64748b; font-size: 0.70rem;">Complete 24-Page Pupil Workbook • 10-Lesson Scheme of Work • 40-Question Knowledge Retrieval Companion</span>
+            </div>
+          </div>
+          <button type="button" onclick="window.switchView('booklet', 'ks2_ww2')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <span>Open KS2 Master Publications</span>
+            <i class="fa-solid fa-arrow-right" style="font-size: 0.65rem;"></i>
+          </button>
         </div>
       </div>
     `;

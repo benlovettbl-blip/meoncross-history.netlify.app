@@ -184,6 +184,7 @@ export function updateBreadcrumbs(customTrail = null) {
     if (id === 'usa') return 'Conflict at Home and Abroad: USA (1954–75)';
     if (id === 'trip_ypres') return 'Ypres Expedition & The Salient';
     if (id === 'great_war') return 'Causes of the Great War';
+    if (id === 'ks2_ww2') return 'World War II & The Home Front (1939–1945)';
     return id.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   };
 
@@ -233,9 +234,24 @@ export function updateBreadcrumbs(customTrail = null) {
     }
   }
 
-  // Guarantee 'Dashboard' is root
-  if (trail.length === 0 || trail[0].label !== 'Dashboard') {
-    trail.unshift({ label: 'Dashboard', view: 'dashboard' });
+  const urlParams =
+    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const isLocked =
+    urlParams && (urlParams.get('locked') === 'true' || urlParams.get('mode') === 'pupil');
+  const isKs2Portal =
+    (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('hh_portal') === 'ks2') ||
+    (urlParams && urlParams.get('portal') === 'ks2');
+
+  const rootLabel = isKs2Portal ? 'KS2 Junior Hub' : 'Dashboard';
+
+  // Guarantee root crumb unless locked
+  if (isLocked) {
+    trail = trail.filter((t) => t.view !== 'dashboard');
+  } else if (
+    trail.length === 0 ||
+    (trail[0].label !== 'Dashboard' && trail[0].label !== 'KS2 Junior Hub')
+  ) {
+    trail.unshift({ label: rootLabel, view: 'dashboard' });
   }
 
   let html = '';
@@ -308,7 +324,61 @@ export function initDraftPreservation(container = document, scopeKey = 'global')
 }
 window.initDraftPreservation = initDraftPreservation;
 
+export function handleBrandClick() {
+  const urlParams =
+    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const isLocked =
+    urlParams &&
+    (urlParams.get('locked') === 'true' ||
+      urlParams.get('mode') === 'pupil' ||
+      urlParams.get('safeguard') === 'true');
+  const lockedUnit =
+    (urlParams && urlParams.get('unit')) || state.selectedUnitId || window.currentUnitId;
+  if (isLocked && lockedUnit) {
+    switchView('lessons', lockedUnit);
+  } else {
+    switchView('dashboard');
+  }
+}
+window.handleBrandClick = handleBrandClick;
+
 export async function switchView(viewName, param = null, skipHistory = false, options = {}) {
+  // Safeguard lockdown mode enforcement
+  const urlParams =
+    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const isLocked =
+    urlParams &&
+    (urlParams.get('locked') === 'true' ||
+      urlParams.get('mode') === 'pupil' ||
+      urlParams.get('safeguard') === 'true');
+  const lockedUnit =
+    (urlParams && urlParams.get('unit')) || state.selectedUnitId || window.currentUnitId;
+
+  if (isLocked && lockedUnit) {
+    const restrictedViews = [
+      'dashboard',
+      'profile',
+      'curriculum',
+      'department-portal',
+      'competitions',
+      'chess',
+      'masterpiece',
+      'gallery',
+    ];
+    if (restrictedViews.includes(viewName)) {
+      console.warn(
+        `[Safeguard Mode] Prevented exit to ${viewName} while locked to unit ${lockedUnit}`,
+      );
+      viewName = 'lessons';
+      param = lockedUnit;
+    } else if (param && param !== lockedUnit && param !== 'all') {
+      console.warn(
+        `[Safeguard Mode] Prevented switch to unit ${param} while locked to ${lockedUnit}`,
+      );
+      param = lockedUnit;
+    }
+  }
+
   // Stop active speech playback on view transition
   if (typeof window !== 'undefined' && typeof window.cancelSpeech === 'function') {
     window.cancelSpeech();
@@ -651,6 +721,62 @@ function updateSidebarForUnit(unitId, unitData = {}) {
   if (globalNav) globalNav.style.display = 'none';
   if (unitWorkspace) unitWorkspace.style.display = 'flex';
 
+  // Handle classroom lockdown mode and KS2 portal navigation
+  const unitBackBtn = document.getElementById('unit-nav-back');
+  const urlParams = new URLSearchParams(window.location.search);
+  const isLocked =
+    urlParams.get('locked') === 'true' ||
+    urlParams.get('mode') === 'pupil' ||
+    urlParams.get('safeguard') === 'true';
+  const isKs2Active =
+    (typeof sessionStorage !== 'undefined' && sessionStorage.getItem('hh_portal') === 'ks2') ||
+    urlParams.get('portal') === 'ks2' ||
+    unitData.is_ks2;
+
+  const sidebarUnitsContainer = document.getElementById('sidebar-unit-links');
+  const sidebarUnitsHeader = document.getElementById('sidebar-units-header');
+  const navProfile = document.getElementById('nav-profile');
+
+  if (isLocked) {
+    if (unitBackBtn) unitBackBtn.style.display = 'none';
+    if (sidebarUnitsContainer) {
+      sidebarUnitsContainer.style.display = 'none';
+      sidebarUnitsContainer.innerHTML = '';
+    }
+    if (sidebarUnitsHeader) sidebarUnitsHeader.style.display = 'none';
+    if (navProfile) navProfile.style.display = 'none';
+
+    // Inject visible Safeguard Active indicator
+    let badge = document.getElementById('sidebar-safeguard-badge');
+    if (!badge) {
+      badge = document.createElement('div');
+      badge.id = 'sidebar-safeguard-badge';
+      badge.style.cssText =
+        'margin: 6px 12px 10px 12px; background: rgba(30, 58, 138, 0.35); border: 1px solid rgba(96, 165, 250, 0.45); border-radius: 6px; padding: 6px 10px; font-size: 0.72rem; color: #93c5fd; display: flex; align-items: center; gap: 8px; font-family: Inter, sans-serif;';
+      badge.innerHTML =
+        '<i class="fa-solid fa-shield-halved" style="color: #60a5fa; font-size: 0.85rem;"></i><span><strong>Classroom Safeguard Active</strong></span>';
+      const unitCard = document.getElementById('sidebar-unit-card');
+      if (unitCard && unitCard.parentNode) {
+        unitCard.parentNode.insertBefore(badge, unitCard.nextSibling);
+      }
+    }
+  } else {
+    const existingBadge = document.getElementById('sidebar-safeguard-badge');
+    if (existingBadge) existingBadge.remove();
+
+    if (unitBackBtn) {
+      unitBackBtn.style.display = 'flex';
+      if (isKs2Active && (unitData.is_ks2 || unitId.startsWith('ks2_'))) {
+        unitBackBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i><span>KS2 Junior Hub</span>';
+      } else {
+        unitBackBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i><span>Main Dashboard</span>';
+      }
+    }
+    if (sidebarUnitsContainer) sidebarUnitsContainer.style.display = 'flex';
+    if (sidebarUnitsHeader) sidebarUnitsHeader.style.display = 'block';
+    if (navProfile) navProfile.style.display = 'flex';
+  }
+
   const navDecisions = document.getElementById('nav-decisions');
   const navTaboo = document.getElementById('nav-taboo');
   const navLessons = document.getElementById('nav-lessons');
@@ -679,6 +805,12 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     unitId === 'usa'
   ) {
     ksLabel = 'EDEXCEL GCSE';
+  } else if (
+    unitData.is_ks2 ||
+    unitId.startsWith('ks2_') ||
+    (unitData.keyStage && unitData.keyStage.toLowerCase().includes('stage 2'))
+  ) {
+    ksLabel = 'KEY STAGE 2';
   } else if (isTrip) {
     ksLabel = 'BATTLEFIELD TOUR';
   }
@@ -764,10 +896,11 @@ function updateSidebarForUnit(unitId, unitData = {}) {
         item.className = 'sidebar-lesson-item';
         item.setAttribute('data-lesson-index', idx);
         const rawTitle = sub.title || `Lesson ${idx + 1}`;
+        const cleanTitle = rawTitle.replace(/^(?:Enquiry|Lesson)\s*\d+:\s*/i, '').trim();
         const vBadgeHtml = renderSidebarVideoBadgeHTML(sub);
         item.innerHTML = `
           <span class="sidebar-lesson-badge">${idx + 1}</span>
-          <span class="sidebar-lesson-title-text" title="${rawTitle.replace(/"/g, '&quot;')}">${rawTitle}</span>
+          <span class="sidebar-lesson-title-text" title="${cleanTitle.replace(/"/g, '&quot;')}">${cleanTitle}</span>
           ${vBadgeHtml}
         `;
         item.addEventListener('click', (e) => {
@@ -830,10 +963,11 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     };
   }
 
-  // Living Chronological Timeline (promoted for Middle East and units with timelines)
+  // Living Chronological Timeline (promoted for Middle East, KS2 WW2, and units with timelines)
   const hasTimeline =
     unitId === 'cme_new' ||
     unitId === 'gcse_middle_east_1945_1995' ||
+    unitId === 'ks2_ww2' ||
     Boolean(unitData.timelineEvents && unitData.timelineEvents.length > 0) ||
     Boolean(unitData.timeline && unitData.timeline.length > 0);
 
@@ -843,7 +977,9 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navTimeline.dataset.view = 'timeline';
     navTimeline.dataset.unit = unitId;
     navTimeline.innerHTML =
-      '<i class="fa-solid fa-clock-rotate-left" style="color: #10b981;"></i><span>Living Chronology</span>';
+      unitId === 'ks2_ww2'
+        ? '<i class="fa-solid fa-sliders" style="color: #3b82f6;"></i><span>Milestones Slider</span>'
+        : '<i class="fa-solid fa-clock-rotate-left" style="color: #10b981;"></i><span>Living Chronology</span>';
     navTimeline.onclick = () => switchView('timeline', unitId);
   } else if (navTimeline) {
     navTimeline.style.display = 'none';

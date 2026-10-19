@@ -105,6 +105,7 @@ export function renderHomepage() {
 
     if (heroImageUrl) {
       const positionFallbacks = {
+        ks2_ww2: 'center 85%',
         monarchy_religion_power: 'center 12%',
         first_british_empire: 'center 35%',
         eee: 'center 10%',
@@ -122,7 +123,7 @@ export function renderHomepage() {
         positionFallbacks[appStore.state.activeUnitData.id] ||
         'center';
       topSectionHTML = `
-          <div class="hero-container" style="background: linear-gradient(to bottom, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.1) 100%), url('${heroImageUrl}') ${heroBgPos}/cover no-repeat;">
+          <div class="hero-container" style="background: linear-gradient(to bottom, rgba(15,23,42,0.85) 0%, rgba(15,23,42,0.7) 60%, rgba(15,23,42,0.9) 100%), url('${heroImageUrl}') ${heroBgPos}/cover no-repeat;">
             <h1 class="hero-title">${appStore.state.activeUnitData.enquiry_question || appStore.state.activeUnitData.enquiry || 'Unit Enquiry'}</h1>
             <h2 class="hero-subtitle">
               ${appStore.state.activeUnitData.title}
@@ -266,12 +267,18 @@ export function renderHomepage() {
   const cards = contentArea.querySelectorAll('.homepage-lesson-card');
   cards.forEach((card) => {
     card.addEventListener('mouseover', () => {
-      card.style.transform = 'translateY(-3px)';
-      card.style.boxShadow = '0 8px 15px rgba(0,0,0,0.1)';
+      card.style.transform = 'translateY(-4px)';
+      card.style.boxShadow = '0 12px 24px -4px rgba(15,23,42,0.12)';
+      card.style.borderColor = '#cbd5e1';
+      const img = card.querySelector('.lesson-card-banner-img');
+      if (img) img.style.transform = 'scale(1.05)';
     });
     card.addEventListener('mouseout', () => {
       card.style.transform = 'none';
-      card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.05)';
+      card.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)';
+      card.style.borderColor = '#e2e8f0';
+      const img = card.querySelector('.lesson-card-banner-img');
+      if (img) img.style.transform = 'scale(1)';
     });
     card.addEventListener('click', () => {
       if (!card.hasAttribute('data-index')) return;

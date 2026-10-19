@@ -342,11 +342,11 @@ export const unitData = {
           'The Family of Henry VIII (c. 1545): King Henry VIII enthroned under the royal canopy with his heirs, establishing royal supremacy.',
       },
       margin_spine: [
-        { year: '1517', label: '1.1 Luther’s Protest' },
-        { year: '1527', label: '1.2 Dynastic Crisis' },
-        { year: '1529', label: '1.3 Roman Deadlock' },
-        { year: '1533', label: '1.4 Cromwell’s Siege' },
-        { year: '1534', label: '1.5 Royal Supremacy' },
+        { year: '1517', label: 'Luther’s Protest' },
+        { year: '1527', label: 'Dynastic Crisis' },
+        { year: '1529', label: 'Roman Deadlock' },
+        { year: '1533', label: 'Cromwell’s Siege' },
+        { year: '1534', label: 'Royal Supremacy' },
       ],
       causal_domino_spine: {
         title: 'The Reformation & The Break with Rome (1517–1547)',
@@ -561,7 +561,7 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '1.1 The Spark at Wittenberg (1517–1521)',
+          title: 'The Spark at Wittenberg (1517–1521)',
           text: '<span class="para-ref">[1.1]</span> In October 1517, a furious German monk named Martin Luther stormed up to the castle church in Wittenberg and nailed 95 fiery arguments to the oak door. Luther was disgusted by corrupt Catholic friars selling an <strong>indulgence</strong>—a printed certificate promising wealthy sinners that their deceased relatives would escape the agony of <strong>Purgatory</strong> for cash. Thanks to the newly invented printing press, Luther’s ideas swept across Europe like wildfire, triggering the Protestant <strong>Reformation</strong>. Luther boldly declared that ordinary Christians did not need priests or Latin rituals to reach God: faith and the Bible in their own language were enough. The Pope condemned Luther for wicked <strong>heresy</strong>, but German princes sheltered him, fracturing Western Christendom forever.',
           source: {
             letter: 'A',
@@ -585,7 +585,7 @@ export const unitData = {
         },
         {
           act: 2,
-          title: '1.2 The King’s Dynastic Crisis (1525–1527)',
+          title: 'The King’s Dynastic Crisis (1525–1527)',
           text: '<span class="para-ref">[1.2]</span> Across the English Channel, King Henry VIII initially despised Luther, writing a book defending the Catholic sacraments that earned him the papal title <em>Defender of the Faith</em>. But by 1527, Henry faced an agonizing <strong>dynastic</strong> emergency. His Spanish wife, Catherine of Aragon, was past forty and had produced only one living child: a girl, Princess Mary. Convinced that England would collapse into bloody civil war without a legitimate male heir, Henry fell passionately in love with the clever, reform-minded Anne Boleyn. Believing his marriage was cursed by God because Catherine had previously been married to his deceased brother Arthur, Henry demanded an official <strong>annulment</strong> from Rome to ensure the Tudor royal <strong>succession</strong>.',
           source: {
             letter: 'B',
@@ -610,17 +610,17 @@ export const unitData = {
         },
         {
           act: 3,
-          title: '1.3 The Roman Deadlock (1527–1529)',
+          title: 'The Roman Deadlock (1527–1529)',
           text: '<span class="para-ref">[1.3]</span> Normally, popes readily granted royal divorces for allied kings, but Pope Clement VII was hopelessly trapped. In May 1527, the mutinous imperial armies of Holy Roman Emperor Charles V—Catherine of Aragon’s powerful nephew—sacked Rome and held the Pope hostage in Castel Sant’Angelo. Charles warned the <strong>papacy</strong> that granting Henry an annulment would bring total destruction upon Italy. For two agonising years, Henry’s chief minister, Cardinal Thomas Wolsey, attempted desperate legal manoeuvres in London to prove English legal <strong>sovereignty</strong>. When Clement VII abruptly revoked the case back to Rome in 1529, Wolsey was stripped of his titles and arrested, leaving Henry’s marriage unresolved and his royal pride deeply wounded.',
         },
         {
           act: 4,
-          title: '1.4 Cromwell’s Parliamentary Siege (1529–1533)',
+          title: 'Cromwell’s Parliamentary Siege (1529–1533)',
           text: '<span class="para-ref">[1.4]</span> Following Wolsey’s downfall, a brilliant, ruthless lawyer named Thomas Cromwell showed Henry how to cut the Roman knot. Cromwell argued that Henry did not need papal permission: England was an independent "Empire," answerable to no foreign bishop. Between 1529 and 1533, Cromwell used the Reformation Parliament to pass a series of revolutionary <strong>statute</strong> laws. Parliament forced the English clergy to submit to royal control and cut off Church taxes to Rome. In 1533, the landmark Act in Restraint of Appeals banned all legal appeals to the Pope. Archbishop Thomas Cranmer immediately declared Henry’s marriage to Catherine null and void, and crowned Anne Boleyn Queen of England.',
         },
         {
           act: 5,
-          title: '1.5 Royal Supremacy & Monastic Meltdown (1534–1540)',
+          title: 'Royal Supremacy & Monastic Meltdown (1534–1540)',
           text: '<span class="para-ref">[1.5]</span> In November 1534, Parliament passed the historic <strong>Act of Supremacy</strong>, formally declaring King Henry VIII the sole "Supreme Head" of the Church of England. Refusing to swear the mandatory Oath of <strong>Supremacy</strong> was classified as high <strong>treason</strong>; Henry’s revered former Chancellor Sir Thomas More was promptly beheaded for remaining loyal to the Pope. Royal power was immense, but church wealth was even sweeter. Between 1536 and 1540, Cromwell orchestrated the systematic <strong>dissolution</strong> of over 800 Catholic monasteries, abbeys, and nunneries. Henry melted their lead roofs, confiscated their gold chalices, and sold their vast estates to wealthy nobles to fund national coastal defences and continental wars. Locally in Hampshire, Henry granted the dissolved Titchfield Abbey on the River Meon to his ruthless secretary Thomas Wriothesley, who demolished the abbey nave to construct "Place House"—a grand Tudor mansion whose four-turreted gatehouse still stands today. Along the coast, Henry used lead and stone stripped from dissolved religious houses to build Southsea Castle (1544) to defend Portsmouth Harbour.',
           source: {
             letter: 'C',
@@ -936,11 +936,11 @@ export const unitData = {
           'The Procession Portrait of Queen Elizabeth I (c. 1601): carried in triumph through London surrounded by her Elizabethan courtiers.',
       },
       margin_spine: [
-        { year: '1558', label: '2.1 Fractured Kingdom' },
-        { year: '1559', label: '2.2 Supreme Governor' },
-        { year: '1559', label: '2.3 The Via Media' },
-        { year: '1570', label: '2.4 Papal Excommunication' },
-        { year: '1587', label: '2.5 Babington & Mary' },
+        { year: '1558', label: 'Fractured Kingdom' },
+        { year: '1559', label: 'Supreme Governor' },
+        { year: '1559', label: 'The Via Media' },
+        { year: '1570', label: 'Papal Excommunication' },
+        { year: '1587', label: 'Babington & Mary' },
       ],
       causal_domino_spine: {
         title: 'Elizabeth I & The Middle Way (1558–1588)',
@@ -1141,12 +1141,12 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '2.1 A Fractured Kingdom (1558–1559)',
+          title: 'A Fractured Kingdom (1558–1559)',
           text: '<span class="para-ref">[2.1]</span> When twenty-five-year-old Elizabeth Tudor inherited the throne in November 1558, England was exhausted by twenty-five years of terrifying religious turmoil. Under her half-brother Edward VI, radical Protestants had smashed stained-glass windows, whitewashed medieval church walls, and stripped gold altars. Then, under her strict Catholic half-sister Mary I, the Pope’s authority was restored with brutal <strong>persecution</strong>. Mary burned over 280 Protestant men, women, and bishops at the stake—creating celebrated national <strong>martyr</strong> heroes like Cranmer, Latimer, and Ridley. Elizabeth inherited a bitter, traumatised nation on the brink of civil war, surrounded by hostile Catholic superpowers in France and Spain who regarded her as an illegitimate heretic.',
         },
         {
           act: 2,
-          title: '2.2 Restoring Control: Supreme Governor (1559)',
+          title: 'Restoring Control: Supreme Governor (1559)',
           text: '<span class="para-ref">[2.2]</span> Elizabeth was a moderate Protestant, but she was above all an exceptionally shrewd politician. In January 1559, she summoned Parliament to construct a lasting religious settlement. Her first landmark statute was the new Act of Supremacy. Instead of reclaiming Henry VIII’s provocative title of "Supreme Head," Elizabeth agreed to a diplomatic <strong>compromise</strong>, adopting the softer title of <strong>Supreme Governor</strong> of the Church of England. This clever wording defused Catholic theological objections that only Jesus Christ or the Pope could be head of the Church, while placating Puritan Protestants who fiercely opposed a woman holding spiritual supremacy over male bishops. All clergy were required to swear an oath accepting her governance or forfeit their jobs.',
           source: {
             letter: 'A',
@@ -1171,7 +1171,7 @@ export const unitData = {
         },
         {
           act: 3,
-          title: '2.3 The Via Media & The Prayer Book (1559)',
+          title: 'The Via Media & The Prayer Book (1559)',
           text: '<span class="para-ref">[2.3]</span> Alongside her supremacy, Elizabeth passed the 1559 Act of <strong>Uniformity</strong>, forging her famous <strong>Via Media</strong>—the "Middle Way." Church was made compulsory: every subject had to attend English Protestant services every Sunday or pay a steep 12d fine as a <strong>recusant</strong>. However, to avoid alienating Catholic subjects, the 1559 Book of Common Prayer deliberately retained traditional priestly vestments, church music, and ambiguous communion wording. A Catholic worshipper could take communion believing in the Real Presence of Christ, while a Protestant could take it as a simple remembrance. Elizabeth famously refused to "make windows into men’s souls"—demanding public loyalty rather than policing private conscience.',
           source: {
             letter: 'B',
@@ -1195,12 +1195,12 @@ export const unitData = {
         },
         {
           act: 4,
-          title: '2.4 The Catholic Storm Gathers (1568–1570)',
+          title: 'The Catholic Storm Gathers (1568–1570)',
           text: '<span class="para-ref">[2.4]</span> Elizabeth’s delicate peace could not last. In 1568, her charismatic Catholic cousin Mary Queen of Scots fled a rebellion in Scotland and arrived in England seeking sanctuary. As next in line to the English throne, Mary instantly became a magnet for Catholic conspirators. In 1569, Catholic nobles in northern England launched the Northern Earls Rebellion to depose Elizabeth and crown Mary. The revolt was crushed, but in 1570, Pope Pius V dropped a theological bomb: he issued a formal <strong>papal bull</strong> named <em>Regnans in Excelsis</em>, declaring the <strong>excommunication</strong> of Elizabeth. The Pope ordered all loyal Catholics to disobey Elizabeth, effectively turning practicing English Catholics into suspected traitors.',
         },
         {
           act: 5,
-          title: '2.5 Spies, Ciphers & The Scaffold (1571–1588)',
+          title: 'Spies, Ciphers & The Scaffold (1571–1588)',
           text: '<span class="para-ref">[2.5]</span> With Elizabeth’s life under constant threat from foreign Catholic assassins and Jesuit infiltration, her brilliant spymaster Sir Francis Walsingham established an elite network of <strong>espionage</strong> across Europe. Walsingham’s cryptographers intercepted conspiratorial letters written in secret <strong>cipher</strong>, culminating in the 1586 Babington Plot. Deciphered letters proved that Mary Queen of Scots had explicitly approved Elizabeth’s assassination. In February 1587, Elizabeth reluctantly signed Mary’s death warrant; the Scottish queen was beheaded at Fotheringhay Castle. Outraged by the execution of a Catholic queen, King Philip II of Spain ordered his colossal Armada to sail for England, testing Elizabeth’s Protestant nation in total war.',
           source: {
             letter: 'C',
@@ -1480,11 +1480,11 @@ export const unitData = {
           'The Battle of Gravelines (8 August 1588) by Philip James de Loutherbourg: English fireships and warships scattering Philip II’s Armada.',
       },
       margin_spine: [
-        { year: '1585', label: '3.1 Catholic Crusade' },
-        { year: '1587', label: '3.2 Cadiz Singeing' },
-        { year: '1588', label: '3.3 Channel Standoff' },
-        { year: '1588', label: '3.4 Calais Fireships' },
-        { year: '1588', label: '3.5 The Protestant Wind' },
+        { year: '1585', label: 'Catholic Crusade' },
+        { year: '1587', label: 'Cadiz Singeing' },
+        { year: '1588', label: 'Channel Standoff' },
+        { year: '1588', label: 'Calais Fireships' },
+        { year: '1588', label: 'The Protestant Wind' },
       ],
       causal_domino_spine: {
         title: 'The Spanish Armada & Naval Power (1588)',
@@ -1670,12 +1670,12 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '3.1 The Catholic Crusade (1585–1587)',
+          title: 'The Catholic Crusade (1585–1587)',
           text: '<span class="para-ref">[3.1]</span> By the mid-1580s, war between Protestant England and Catholic Spain was inevitable. King Philip II ruled the mightiest empire on earth, enriched by American silver, and viewed invading England as a sacred <strong>crusade</strong> to eradicate Protestantism. Philip was outraged by English sea-captains like Francis Drake raiding Spanish treasure fleets as an authorised <strong>privateer</strong>, and infuriated that Elizabeth was sending troops to aid Dutch rebels against Spanish rule. The February 1587 execution of the Catholic Mary Queen of Scots was the final insult. Philip ordered the construction of the "Enterprise of England": a colossal fleet of 130 warships and 30,000 men designed to sail up the Channel, transport the Duke of Parma’s battle-hardened army from Flanders, and overthrow Elizabeth.',
         },
         {
           act: 2,
-          title: '3.2 Singeing the King’s Beard (April 1587)',
+          title: 'Singeing the King’s Beard (April 1587)',
           text: '<span class="para-ref">[3.2]</span> Before the Spanish fleet could assemble, Sir Francis Drake struck a devastating pre-emptive blow. In April 1587, Drake sailed four Royal Navy warships audaciously into Spain’s chief naval harbour at Cadiz. In a whirlwind 36-hour attack, Drake destroyed over thirty Spanish transports and captured immense supplies. He triumphantly boasted to Queen Elizabeth that he had "singed the King of Spain’s beard." Far more critically, Drake burned thousands of tons of seasoned oak barrel staves. This catastrophic blow to Spanish naval <strong>logistics</strong> delayed the invasion by a full year, forcing the Spanish to store their provisions in unseasoned green wood barrels that leaked fresh water and rotted food long before reaching England.',
           source: {
             letter: 'A',
@@ -1699,17 +1699,17 @@ export const unitData = {
         },
         {
           act: 3,
-          title: '3.3 Channel Standoff & Gun Tactics (July 1588)',
+          title: 'Channel Standoff & Gun Tactics (July 1588)',
           text: '<span class="para-ref">[3.3]</span> In July 1588, the 130 ships of the Great Armada entered the English Channel, commanded by the reluctant Duke of Medina Sidonia. The Spanish sailed in a disciplined, impenetrable seven-mile-wide crescent formation, designed for traditional naval warfare: grappling enemy ships, boarding them with infantry, and fighting hand-to-hand. But England had revolutionised naval warfare. Under Sir John Hawkins, the Royal Navy had built lower, faster "race-built" galleons. Armed with long-range <strong>culverin</strong> cannons mounted on compact truck carriages, English gunners could deliver a devastating rolling <strong>broadside</strong> from standoff distances and reload three times faster than Spanish gunners, without ever coming close enough to be boarded.',
         },
         {
           act: 4,
-          title: '3.4 Midnight Hellburners at Calais (7–8 August 1588)',
+          title: 'Midnight Hellburners at Calais (7–8 August 1588)',
           text: '<span class="para-ref">[3.4]</span> On 6 August, Medina Sidonia anchored his fleet off Calais to await the Duke of Parma’s army. But Parma’s troops were blockaded in port by Dutch flyboats and not ready to embark. Sensing a golden opportunity, Drake and Lord Howard executed a terrifying tactical strike. Just after midnight on 7 August, the English steered eight blazing <strong>fireship</strong> vessels—packed with gunpowder, pitch, and ordnance—directly into the crowded Spanish <strong>anchorage</strong>. Terrified Spanish captains panicked, chopped their heavy iron anchor cables, and scattered blindly into the pitch-black night. The unbreakable crescent formation was irrevocably broken, leaving Spanish ships disordered and drifting toward shallow Flemish sandbanks.',
         },
         {
           act: 5,
-          title: '3.5 Gravelines & The Protestant Wind (August–September 1588)',
+          title: 'Gravelines & The Protestant Wind (August–September 1588)',
           text: '<span class="para-ref">[3.5]</span> At dawn on 8 August, the English closed in for the decisive Battle of Gravelines. In an eight-hour running battle, English race-built galleons pounded the scattered, anchorless Spanish ships with over 100,000 cannonballs at point-blank range, killing thousands of soldiers and puncturing hulls. Then, divine <strong>providence</strong> intervened. Ferocious south-westerly gales—celebrated across England as the "Protestant Wind"—drove the battered Armada north into the treacherous North Sea. Lacking anchors and starving on foul rations, Spanish captains were forced to circumnavigate Scotland and Ireland. Fierce Atlantic hurricanes smashed dozens of galleons against the rocky Irish cliffs; over 50 ships and 15,000 men perished, turning the invasion into an utter catastrophe.',
           source: {
             letter: 'B',
@@ -1981,11 +1981,11 @@ export const unitData = {
           'The Battle of Naseby (1645): Oliver Cromwell’s New Model Army breaks the Royalists, leading to the trial and execution of Charles I.',
       },
       margin_spine: [
-        { year: '1629', label: '4.1 Eleven Years’ Tyranny' },
-        { year: '1642', label: '4.2 Breakdown of Trust' },
-        { year: '1645', label: '4.3 Naseby & New Model Army' },
-        { year: '1649', label: '4.4 The King on Trial' },
-        { year: '1689', label: '4.5 The Bill of Rights' },
+        { year: '1629', label: 'Eleven Years’ Tyranny' },
+        { year: '1642', label: 'Breakdown of Trust' },
+        { year: '1645', label: 'Naseby & New Model Army' },
+        { year: '1649', label: 'The King on Trial' },
+        { year: '1689', label: 'The Bill of Rights' },
       ],
       causal_domino_spine: {
         title: 'The Civil War, Regicide & The Bill of Rights (1642–1689)',
@@ -2169,7 +2169,7 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '4.1 The Eleven Years’ Tyranny (1629–1640)',
+          title: 'The Eleven Years’ Tyranny (1629–1640)',
           text: '<span class="para-ref">[4.1]</span> In 1625, Charles I inherited the English throne, holding a fanatical belief in the <strong>Divine Right</strong> of Kings. Charles believed he was appointed directly by God Almighty and that no earthly court or parliament had the right to limit his power. When MPs in Parliament challenged his royal policies, Charles dismissed them in 1629, initiating eleven years of absolute <strong>Personal Rule</strong>. To finance his royal court without parliamentary taxation, Charles revived obsolete feudal fines. Most notoriously, he imposed <strong>Ship Money</strong>—an emergency tax traditionally levied on coastal ports during war—and forced inland farming towns to pay it every year in peacetime. When inland MP John Hampden refused to pay in 1637, constitutional outrage erupted across England.',
           source: {
             letter: 'A',
@@ -2193,12 +2193,12 @@ export const unitData = {
         },
         {
           act: 2,
-          title: '4.2 The Breakdown of Trust (1640–1642)',
+          title: 'The Breakdown of Trust (1640–1642)',
           text: '<span class="para-ref">[4.2]</span> Charles’s attempt to impose English prayer books on Presbyterian Scotland triggered an armed Scottish invasion, bankrupting the Crown. Desperate for war funds, Charles was forced to summon the Long Parliament in November 1640. Furious MPs, led by John Pym, seized control: they outlawed Ship Money, passed an <strong>impeachment</strong> against the King’s chief minister Strafford, and declared that Parliament could not be dissolved without its own consent. In January 1642, Charles committed an unprecedented breach of constitutional privilege: he entered the House of Commons with 400 armed soldiers to arrest five MPs for treason. Forewarned, the MPs had escaped by river. Trust was shattered; Charles fled London and raised the Royal Standard at Nottingham.',
         },
         {
           act: 3,
-          title: '4.3 War & The New Model Army (1642–1648)',
+          title: 'War & The New Model Army (1642–1648)',
           text: '<span class="para-ref">[4.3]</span> The English Civil War divided the kingdom between Royalist "Cavaliers" (nobles and traditional Anglicans) and Parliamentary "Roundheads" (merchants, yeomen, and Puritans). At first, Royalist cavalry had the upper hand. The tide turned decisively with the rise of Oliver Cromwell, who created the revolutionary <strong>New Model Army</strong> in 1645. Unlike aristocratic armies where officer commissions were bought, Cromwell promoted officers strictly on military talent and religious zeal. At the Battle of Naseby in June 1645, the disciplined Parliamentary cavalry smashed the King’s army. Charles surrendered to the Scots in 1646, but while negotiating peace terms, he secretly signed a pact with Scottish factions, igniting a bloody Second Civil War in 1648 that branded him a "man of blood."',
           source: {
             letter: 'B',
@@ -2222,7 +2222,7 @@ export const unitData = {
         },
         {
           act: 4,
-          title: '4.4 The Trial & Execution of Charles I (1648–1649)',
+          title: 'The Trial & Execution of Charles I (1648–1649)',
           text: '<span class="para-ref">[4.4]</span> Furious that Charles had provoked renewed bloodshed, the New Model Army purged Parliament of moderate MPs in Pride’s Purge, leaving a radical "Rump Parliament." In January 1649, this Rump established a High Court of Justice to try King Charles I for <strong>high treason</strong> against his own people. Charles boycotted the trial, refusing to remove his hat or enter a plea, insisting that no earthly court had the legal authority to try an anointed king. Found guilty of tyranny and treason, Charles was sentenced to death. On 30 January 1649, the world watched in stunned disbelief as Charles was publicly beheaded outside the Banqueting House at Whitehall. Monarchy was abolished, and England was declared a republican Commonwealth.',
           source: {
             letter: 'C',
@@ -2246,7 +2246,7 @@ export const unitData = {
         },
         {
           act: 5,
-          title: '4.5 The Glorious Revolution & The Bill of Rights (1660–1689)',
+          title: 'The Glorious Revolution & The Bill of Rights (1660–1689)',
           text: '<span class="para-ref">[4.5]</span> Following eleven years of Puritan rule under Lord Protector Oliver Cromwell, the monarchy was brought back in the 1660 <strong>Restoration</strong> under Charles II. However, when his Catholic brother James II inherited the throne in 1685, he suspended anti-Catholic laws and attempted to pack Parliament with royal loyalists. In 1688, seven leading nobles invited Protestant William of Orange and his wife Mary to invade England in the "Glorious Revolution." James II fled into exile. In February 1689, William and Mary accepted the historic <strong>Bill of Rights</strong>. This landmark law banned royal suspending power, outlawed taxation without parliamentary consent, and guaranteed free elections—permanently transforming Britain into a constitutional monarchy.',
         },
       ],
@@ -2507,11 +2507,11 @@ export const unitData = {
           'The Presentation of the Crown and Declaration of Rights (1689) by Edward Matthew Ward: Parliament offering the Crown to William and Mary under constitutional terms.',
       },
       margin_spine: [
-        { year: '1534', label: '5.1 Tudor Statecraft' },
-        { year: '1588', label: '5.2 Protestant Identity' },
-        { year: '1640', label: '5.3 Stuart Rupture' },
-        { year: '1649', label: '5.4 Radical Regicide' },
-        { year: '1689', label: '5.5 Parliamentary Sovereignty' },
+        { year: '1534', label: 'Tudor Statecraft' },
+        { year: '1588', label: 'Protestant Identity' },
+        { year: '1640', label: 'Stuart Rupture' },
+        { year: '1649', label: 'Radical Regicide' },
+        { year: '1689', label: 'Parliamentary Sovereignty' },
       ],
       causal_domino_spine: {
         title: 'Crown, Church, or Parliament? (1517–1689)',
@@ -2689,12 +2689,12 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '5.1 Henry VIII & Sovereign Statehood (1517–1547)',
+          title: 'Henry VIII & Sovereign Statehood (1517–1547)',
           text: '<span class="para-ref">[5.1]</span> In 1517, England was an orthodox Roman Catholic kingdom where spiritual life and legal appeals answered to the Pope in Rome. Henry VIII’s Break with Rome transformed English <strong>sovereignty</strong> forever. By declaring England an independent "Empire" and passing the 1534 Act of Supremacy, Henry merged church and state under the royal crown. Yet paradoxically, to make his religious supremacy legally watertight, Henry was forced to use <strong>statute law</strong> passed by Parliament. By repeatedly using the House of Commons to dissolve 800 monasteries, alter the royal succession, and enact religious doctrine, Henry inadvertently elevated Parliament from an occasional tax-granting assembly into a permanent pillar of sovereign national law.',
         },
         {
           act: 2,
-          title: '5.2 The Elizabethan Protestant Identity (1558–1603)',
+          title: 'The Elizabethan Protestant Identity (1558–1603)',
           text: '<span class="para-ref">[5.2]</span> Under Elizabeth I, the English state forged an unshakeable national identity centered on Protestantism and parliamentary partnership. Through the 1559 Via Media, Elizabeth demonstrated political pragmatism: enforcing public <strong>conformity</strong> while avoiding the wholesale burnings of her predecessor Mary I. When Catholic assassination plots and Philip II’s 1588 Armada threatened England, Elizabeth rallied her subjects behind the Protestant Crown. Defeating the Armada convinced generations of English citizens that God Almighty had personally chosen England as a Protestant champion. Crucially, Elizabeth managed Parliament as a trusted partner, consulting MPs on trade, defense, and succession, leaving the Crown immensely popular and financially secure.',
           source: {
             letter: 'A',
@@ -2718,17 +2718,17 @@ export const unitData = {
         },
         {
           act: 3,
-          title: '5.3 The Stuart Rupture: Divine Right (1603–1640)',
+          title: 'The Stuart Rupture: Divine Right (1603–1640)',
           text: '<span class="para-ref">[5.3]</span> The accession of the Scottish Stuart dynasty in 1603 ruptured this delicate Tudor partnership. Both James I and his son Charles I brought rigid theories of royal <strong>absolutism</strong> to London, insisting that kings held a Divine Right to govern free from parliamentary interference. Charles I pushed this ideology to its breaking point during his eleven-year Personal Rule (1629–1640), locking out Parliament and levying illegal Ship Money on inland counties. When Charles attempted to impose English bishops on Presbyterian Scotland, his war debts forced him to recall MPs. Rather than submitting, furious MPs dismantled royal courts and impeached royal ministers, proving that absolute monarchy could not survive in a nation with an assertive tax-paying gentry.',
         },
         {
           act: 4,
-          title: '5.4 The Shock of Regicide & Republic (1642–1649)',
+          title: 'The Shock of Regicide & Republic (1642–1649)',
           text: '<span class="para-ref">[5.4]</span> The Civil War of 1642–1648 shattered centuries of royal mystique. When Parliament’s New Model Army defeated the King at Naseby and Charles refused to negotiate peace, the Army executed Pride’s Purge and established a revolutionary <strong>Commonwealth</strong> republic. Putting an anointed monarch on trial for high treason and beheading Charles I on 30 January 1649 was the most radical constitutional earthquake in British history. It established the permanent legal <strong>precedent</strong> that British monarchs were not above the law: if a king ruled as a tyrant and shed his people’s blood, he could be held legally accountable and executed by the nation.',
         },
         {
           act: 5,
-          title: '5.5 The 1689 Bill of Rights: Parliamentary Supremacy (1689)',
+          title: 'The 1689 Bill of Rights: Parliamentary Supremacy (1689)',
           text: '<span class="para-ref">[5.5]</span> Although the monarchy was restored in 1660, the Stuart ambition for absolute power died forever in the 1688 Glorious Revolution. When James II attempted to rule by decree and promote Catholicism, Parliament expelled him and invited William and Mary to take the throne on statutory terms. By signing the 1689 Bill of Rights, William and Mary accepted a permanent <strong>constitutional monarchy</strong>. The Crown lost its royal <strong>veto</strong> over legislation, lost the power to levy taxes without parliamentary approval, and was barred from keeping a peacetime standing army. Over 170 years of violent conflict, sovereignty had shifted irreversibly: Britain was now ruled not by the personal will of a King, but by the King-in-Parliament.',
           source: {
             letter: 'C',

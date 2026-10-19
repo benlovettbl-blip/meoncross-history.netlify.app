@@ -340,7 +340,7 @@ export function initEventDelegation() {
         break;
       }
 
-      case 'toggle-element':
+      case 'toggle-element': {
         const targetId = target.dataset.targetId || target.getAttribute('data-target-id');
         const el = document.getElementById(targetId);
         if (el) {
@@ -350,14 +350,44 @@ export function initEventDelegation() {
           if (isCurrentlyHidden) {
             el.classList.add('revealed');
             el.style.display = 'block';
+            const btn =
+              target.closest('.btn-think-discuss-toggle') ||
+              (target.classList?.contains('btn-think-discuss-toggle') ? target : null);
+            if (btn) {
+              const label = btn.querySelector('.toggle-label');
+              if (label) label.textContent = label.dataset.hideText || 'Hide Examples';
+              const icon = btn.querySelector('i');
+              if (icon) icon.className = 'fa-solid fa-eye-slash';
+              btn.style.background = 'linear-gradient(135deg, #64748b 0%, #475569 100%)';
+            }
           } else {
             el.classList.remove('revealed');
             el.style.display = 'none';
+            const btn =
+              target.closest('.btn-think-discuss-toggle') ||
+              (target.classList?.contains('btn-think-discuss-toggle') ? target : null);
+            if (btn) {
+              const label = btn.querySelector('.toggle-label');
+              if (label) label.textContent = label.dataset.showText || 'Example Answers';
+              const icon = btn.querySelector('i');
+              if (icon) icon.className = 'fa-solid fa-lightbulb';
+              btn.style.background = '';
+            }
           }
         } else if (window.toggleElement) {
           window.toggleElement(targetId);
         }
         break;
+      }
+
+      case 'toggle-think-discuss': {
+        const targetId = target.dataset.targetId || target.getAttribute('data-target-id');
+        const btn = target.closest('button') || target;
+        if (typeof window.toggleThinkDiscuss === 'function') {
+          window.toggleThinkDiscuss(btn, targetId);
+        }
+        break;
+      }
 
       case 'render-lesson':
         if (window.renderLessonByIndex) {

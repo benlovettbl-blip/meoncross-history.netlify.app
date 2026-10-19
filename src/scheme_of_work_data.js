@@ -20,7 +20,7 @@ export const SCHEMES_OF_WORK_DATA = {
     subtitle: 'Conquest, Feudal Control, Crown vs Church, Demography & Popular Revolt',
     overarchingEnquiry:
       'How was royal power constructed, contested, and transformed in medieval England between Hastings and Bosworth?',
-    textbookPdf: '/pdfs/medieval_england_textbook_PUBLISHER.pdf',
+    textbookPdf: '/pdfs/medieval_england_textbook_FINAL_V17.pdf',
     workbookPdf: '/pdfs/medieval_england_pupil_workbook.pdf',
     enquiries: [
       {
@@ -179,7 +179,7 @@ export const SCHEMES_OF_WORK_DATA = {
       'Global Encounters, Religious Reformation, Revolutionary Sovereignty & The Transatlantic Trade',
     overarchingEnquiry:
       'How did early modern commerce, religious conflict, and ideological revolution reshape Britain and the global balance of power between 1450 and 1750?',
-    textbookPdf: '/pdfs/early_modern_world_textbook_PUBLISHER.pdf',
+    textbookPdf: null,
     workbookPdf: '/pdfs/early_modern_world_pupil_workbook_FINAL_V17.pdf',
     enquiries: [
       {
@@ -338,7 +338,7 @@ export const SCHEMES_OF_WORK_DATA = {
       'Steam Power, Urban Squalor, The Factory System, Imperial Hegemony & Democratic Reform',
     overarchingEnquiry:
       'How did industrial technology, colonial extraction, and popular radical protest transform Britain from an agrarian kingdom into the "Workshop of the World" between 1750 and 1901?',
-    textbookPdf: '/pdfs/industrialisation_and_empire_textbook_PUBLISHER.pdf',
+    textbookPdf: null,
     workbookPdf: '/pdfs/industrialisation_and_empire_pupil_workbook.pdf',
     enquiries: [
       {
@@ -484,6 +484,160 @@ export const SCHEMES_OF_WORK_DATA = {
           'Standard of Living',
           'Victorian Era',
         ],
+      },
+    ],
+  },
+  ks2_ww2: {
+    unitId: 'ks2_ww2',
+    yearGroup: 'Year 5',
+    keyStage: 'KS2',
+    title: 'World War II & The Home Front (1939–1945)',
+    subtitle:
+      'Outbreak, Evacuation, Kindertransport, The Blitz, Rationing, Women at War & Remembrance',
+    overarchingEnquiry:
+      'How did ordinary British families and children experience and survive the Second World War on the Home Front?',
+    textbookPdf: '/units/ks2_ww2/ks2_ww2_scheme_of_work.html',
+    workbookPdf: '/pdfs/ks2_ww2/ks2_ww2_pupil_workbook.pdf',
+    enquiries: [
+      {
+        num: 1,
+        title: 'Outbreak of War & Gas Masks',
+        enquiryQuestion:
+          'Why did ordinary British families carry cardboard boxes and tape their windows in September 1939?',
+        disciplinaryFocus: 'Historical Enquiry / Cause & Prevention',
+        sources: 'IWM School Respirator Photograph (1939); Chamberlain Wireless Broadcast',
+        keyFigure: 'Neville Chamberlain',
+        figureRole: 'Prime Minister of the United Kingdom (1937–1940)',
+        vocabulary: ['Blackout', 'Respirator', 'ARP Warden', 'Barrage Balloon', 'Civilian'],
+      },
+      {
+        num: 2,
+        title: 'Operation Pied Piper & Evacuation',
+        enquiryQuestion:
+          'What was it like for 1.5 million British children to be sent away from home with a brown paper luggage tag?',
+        disciplinaryFocus: 'Historical Perspectives & Diversity of Experience',
+        sources: 'IWM Billeting Railway Platform Photograph; Evacuee Luggage Label',
+        keyFigure: 'Evacuee Child',
+        figureRole: 'Ordinary City Child in Operation Pied Piper',
+        vocabulary: [
+          'Operation Pied Piper',
+          'Billeting Officer',
+          'Luggage Label',
+          'Reception Area',
+          'Culture Shock',
+        ],
+      },
+      {
+        num: 3,
+        title: 'The Kindertransport',
+        enquiryQuestion:
+          'How did 10,000 refugee children travel alone across Europe to safety in Britain in 1938–1939?',
+        disciplinaryFocus: 'Historical Significance & Humanitarian Action',
+        sources: 'Authentic Kindertransport Transit Identity Tag; Harwich Port Arrival Photos',
+        keyFigure: 'Nicholas Winton & Volunteer Organisers',
+        figureRole: 'Humanitarian Rescuers',
+        vocabulary: ['Kindertransport', 'Refugee', 'Kristallnacht', 'Persecution', 'Foster Family'],
+      },
+      {
+        num: 4,
+        title: 'The Blitz & Air Raid Shelters',
+        enquiryQuestion:
+          'How did ordinary families protect themselves when bombs fell night after night during the Blitz?',
+        disciplinaryFocus: 'Change & Continuity / Civilian Resilience',
+        sources: 'IWM Garden Anderson Shelter Photograph; London Underground Bunk Photos',
+        keyFigure: 'Sir John Anderson',
+        figureRole: 'Lord Privy Seal & Designer of the Anderson Shelter',
+        vocabulary: [
+          'The Blitz',
+          'Anderson Shelter',
+          'Morrison Shelter',
+          'Incendiary Bomb',
+          'Luftwaffe',
+        ],
+      },
+      {
+        num: 5,
+        title: 'Dig for Victory & Food Rationing',
+        enquiryQuestion:
+          'Why did the British government ration butter, sugar, and meat, and order citizens to "Dig for Victory"?',
+        disciplinaryFocus: 'Cause & Consequence / Home Front Resourcefulness',
+        sources: 'Ministry of Food "Dig for Victory" Poster; Authentic Civilian Ration Book',
+        keyFigure: 'Lord Woolton',
+        figureRole: 'Minister of Food (Architect of Rationing)',
+        vocabulary: [
+          'Ration Book',
+          'Dig for Victory',
+          'Black Market',
+          'U-Boat Blockade',
+          'Woolton Pie',
+        ],
+      },
+      {
+        num: 6,
+        title: 'Women at War & The Land Army',
+        enquiryQuestion:
+          'How did the Second World War fundamentally transform the daily lives and roles of British women?',
+        disciplinaryFocus: 'Social Change & Gender Roles',
+        sources: "Women's Land Army Recruitment Poster; Factory Munitions Photographs",
+        keyFigure: 'Lady Gertrude Denman',
+        figureRole: "Honorary Director of the Women's Land Army",
+        vocabulary: [
+          "Women's Land Army",
+          'Munitions',
+          'Conscription',
+          'Auxiliary Territorial Service (ATS)',
+          'Land Girl',
+        ],
+      },
+      {
+        num: 7,
+        title: 'Daily Life Before 1939',
+        enquiryQuestion:
+          'What was daily life like for children across Britain and Europe before the outbreak of war in 1939?',
+        disciplinaryFocus: 'Historical Empathy / Restoring Individuality',
+        sources: '1930s Family Holiday Photographs; Street Game Archive Prints',
+        keyFigure: 'European & British Children of the 1930s',
+        figureRole: 'Peacetime School Children',
+        vocabulary: ['Pre-War', 'Community', 'Wireless', 'Normalcy', 'Assimilation'],
+      },
+      {
+        num: 8,
+        title: 'Bletchley Park & Codebreakers',
+        enquiryQuestion:
+          'How did codebreakers working in secret wooden huts at Bletchley Park help defeat the German military?',
+        disciplinaryFocus: 'Technological & Scientific Agency / Secret Intelligence',
+        sources: 'Authentic 3-Rotor Enigma Machine; Turing-Welchman Bombe Photographs',
+        keyFigure: 'Alan Turing',
+        figureRole: 'Mathematician, Cryptanalyst & Pioneer of Modern Computing',
+        vocabulary: [
+          'Enigma Machine',
+          'Bletchley Park',
+          'Bombe Machine',
+          'Ultra Intelligence',
+          'Cipher',
+        ],
+      },
+      {
+        num: 9,
+        title: 'Rescuers & Nicholas Winton',
+        enquiryQuestion:
+          'How did ordinary individuals like Nicholas Winton show extraordinary moral courage during the war?',
+        disciplinaryFocus: 'Moral Courage & Individual Agency',
+        sources: "Nicholas Winton's Handwritten Prague Notebook; 1988 That's Life BBC Broadcast",
+        keyFigure: 'Sir Nicholas Winton',
+        figureRole: 'Stockbroker & Organiser of the Czech Kindertransport',
+        vocabulary: ['Rescuer', 'Moral Courage', 'Prague', 'Guarantor', 'Upstander'],
+      },
+      {
+        num: 10,
+        title: 'VE Day & Historical Remembrance',
+        enquiryQuestion:
+          'Why was VE Day on 8 May 1945 a day of both wild celebration and profound sorrow for British families?',
+        disciplinaryFocus: 'Historical Interpretation / Legacy & Remembrance',
+        sources: 'IWM London Street Party Photograph (May 1945); Churchill Victory Speech',
+        keyFigure: 'Winston Churchill',
+        figureRole: 'Wartime Prime Minister of the United Kingdom',
+        vocabulary: ['VE Day', 'Armistice', 'Remembrance', 'Reconstruction', 'Legacy'],
       },
     ],
   },

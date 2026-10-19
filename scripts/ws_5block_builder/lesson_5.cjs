@@ -20,11 +20,11 @@ module.exports = {
     'By 1858, London was the beating heart of the British Empire, yet its greatest landmark—the River Thames—had become an open, fermenting sewer. Decades of flushing middle-class water closets directly into old storm drains had turned the river into a thick, toxic soup of human waste. In June 1858, a scorching heatwave triggered the "Great Stink", driving MPs from the Houses of Parliament with lime-soaked curtains. In sheer self-preservation, Parliament granted engineer Joseph Bazalgette £3 million and absolute power to build 82 miles of underground intercepting brick sewers. When Louis Pasteur published his Germ Theory in 1861, proving bacteria caused disease, it dealt the fatal blow to miasma—paving the way for the compulsory 1875 Public Health Act and the death of laissez-faire.',
 
   margin_spine: [
-    { year: '1855', label: '5.1 Faraday’s Warning' },
-    { year: '1858', label: '5.2 The Great Stink Panic' },
-    { year: '1865', label: '5.3 Bazalgette’s Brick Sewers' },
-    { year: '1865', label: '5.4 Eastney Pumping Engine' },
-    { year: '1875', label: '5.5 Compulsory Public Health' },
+    { year: '1855', label: 'Faraday’s Warning' },
+    { year: '1858', label: 'The Great Stink Panic' },
+    { year: '1865', label: 'Bazalgette’s Brick Sewers' },
+    { year: '1865', label: 'Eastney Pumping Engine' },
+    { year: '1875', label: 'Compulsory Public Health' },
   ],
 
   causal_domino_spine: {
@@ -245,12 +245,14 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '5.1 The Toxic Tide: Water Closets & the Polluted Thames',
+      title: 'The Toxic Tide: Water Closets & the Polluted Thames',
+      theme_heading: 'The Toxic Tide: Water Closets & the Polluted Thames',
       text: '<span class="para-ref">[5.1]</span> By 1855, London’s population reached nearly three million. However, the city faced an environmental crisis. In the 1830s and 1840s, thousands of middle-class homes installed modern flushing water closets. Because London had no separate sewage pipes, builders connected toilets directly into street rainwater drains that emptied straight into the River Thames.<br><br>The result was catastrophic. The Thames—the source of drinking water for much of London—became an open, fermenting sewer. In July 1855, scientist **Michael Faraday** wrote to *The Times* after taking a boat trip along the river. Dropping white cards into the water, he watched them vanish less than an inch below the surface: the Thames was an opaque soup of human faeces and industrial waste producing a nauseating stench.',
     },
     {
       act: 2,
-      title: '5.2 The Great Stink: Summer Heatwave & Panic in Parliament (1858)',
+      title: 'The Great Stink: Summer Heatwave & Panic in Parliament (1858)',
+      theme_heading: 'The Great Stink: Summer Heatwave & Panic in Parliament (1858)',
       text: '<span class="para-ref">[5.2]</span> In June 1858, a severe heatwave struck London with temperatures over thirty-five degrees. The heat baked raw sewage along the exposed mudbanks of the Thames, unleashing **"The Great Stink"** (Source A). The stench was so overwhelming that life across central London halted; river boatmen collapsed and law courts shut down.<br><br>Crucially, the Houses of Parliament sat right on the riverbank. Foul fumes filled committee rooms, forcing MPs to flee with handkerchiefs over their faces. Staff soaked curtains in chloride of lime, but politicians still suffered nausea and dizziness. Convinced by miasma theory that the smell would give them fatal cholera, Parliament panicked. Overcoming fifty years of laissez-faire resistance in just eighteen days, MPs passed an emergency bill granting £3 million to build a new sewer system.',
       source: {
         letter: 'A',
@@ -275,7 +277,8 @@ module.exports = {
     },
     {
       act: 3,
-      title: '5.3 Joseph Bazalgette’s Brick Revolution: 82 Miles of Sewers',
+      title: 'Joseph Bazalgette’s Brick Revolution: 82 Miles of Sewers',
+      theme_heading: 'Joseph Bazalgette’s Brick Revolution: 82 Miles of Sewers',
       text: '<span class="para-ref">[5.3]</span> Chief Engineer **Joseph Bazalgette** was tasked with saving London. Instead of simply widening drains, he designed a system to intercept sewage before it reached the Thames. Between 1859 and 1865, thousands of navvies built **82 miles of underground intercepting brick sewers**, connected to over 1,000 miles of street drains. Bazalgette used 318 million bricks cemented with waterproof **Portland cement**.<br><br>The sewers used gravity to carry waste eastward past London to outfalls at Barking Creek and Crossness. Where pipes dipped below river level, Bazalgette built massive steam pumping stations like Abbey Mills and Crossness to lift sewage into reservoirs for discharge on the outgoing tide. Across Britain, towns copied this design, as seen at the Eastney Beam Engine House (Source B).',
       source: {
         letter: 'B',
@@ -299,7 +302,8 @@ module.exports = {
     },
     {
       act: 4,
-      title: '5.4 Scientific Confirmation: Pasteur’s Germ Theory & Eastney',
+      title: 'Scientific Confirmation: Pasteur’s Germ Theory & Eastney',
+      theme_heading: 'Scientific Confirmation: Pasteur’s Germ Theory & Eastney',
       text: '<span class="para-ref">[5.4]</span> In 1861, French chemist **Louis Pasteur** published his groundbreaking **Germ Theory of Disease**. Through his famous swan-neck flask experiments (Source C), Pasteur proved that boiled broth stayed sterile in flasks with curved necks that trapped airborne dust. When the neck was broken, microbes entered and fermented the liquid, disproving the old belief in "spontaneous generation".<br><br>Pasteur proved that disease was caused by living microscopic germs, not by foul smells (miasma). This scientific discovery gave engineers and reformers the ultimate justification for their work: enclosed sewer systems were essential not just to remove bad odours, but to physically stop deadly bacteria from contaminating drinking water.',
       source: {
         letter: 'C',
@@ -323,7 +327,8 @@ module.exports = {
     },
     {
       act: 5,
-      title: '5.5 The 1875 Public Health Act & the Fall of Laissez-Faire',
+      title: 'The 1875 Public Health Act & the Fall of Laissez-Faire',
+      theme_heading: 'The 1875 Public Health Act & the Fall of Laissez-Faire',
       text: '<span class="para-ref">[5.5]</span> Bazalgette’s sewers, the Great Stink, and Germ Theory decisively ended laissez-faire. In 1866, cholera struck London again, but only the East End—which was not yet linked to Bazalgette\'s system—suffered deaths. The rest of London remained completely free of cholera, proving conclusively that modern sewers saved lives.<br><br>In 1875, Prime Minister Benjamin Disraeli’s government passed the **Public Health Act of 1875**. Unlike the optional 1848 law, the 1875 Act was strictly *compulsory*. Every local council was legally required to appoint a Medical Officer of Health, supply clean piped water, build covered sewers, collect rubbish, and inspect food. The 1875 Act ended laissez-faire in public health, making clean water and sanitation legal rights protected by the state.',
     },
   ],

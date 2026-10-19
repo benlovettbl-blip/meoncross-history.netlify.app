@@ -237,7 +237,7 @@ async function auditPageBudget(page, options = {}) {
               if (el.style.display === 'none') return false;
               if (
                 el.matches(
-                  '.page, .page-container, .a4-page, .a5-page, .page-landscape, .sheet-page, .textbook-page, .back-body-content, .back-container, .page-inner, .page-body-full, .page-flex-full, .page-body-stretch, .two-column-prose',
+                  '.page, .page-container, .a4-page, .a5-page, .page-landscape, .sheet-page, .textbook-page, .back-body-content, .back-container, .page-inner, .page-body-full, .page-flex-full, .page-body-stretch, .two-column-prose, .prose-two-column, .page-prose-body, .narrative-block',
                 )
               ) {
                 return false;
@@ -310,15 +310,20 @@ async function auditPageBudget(page, options = {}) {
 
           // 5. Internal Multi-Column Prose Void Audit
           let internalProseGap = 0;
-          const prose = p.querySelector('.two-column-prose, .two-column-prose-grid');
+          const prose = p.querySelector(
+            '.two-column-prose, .two-column-prose-grid, .prose-two-column',
+          );
           if (prose) {
             const proseRect = prose.getBoundingClientRect();
             const nextSection = prose.nextElementSibling;
-            const leaves = Array.from(prose.querySelectorAll('*')).filter(
+            const leaves = Array.from(
+              prose.querySelectorAll('.prose-p, .block-header, p, h1, h2, h3, h4, li, *'),
+            ).filter(
               (el) =>
                 !['SCRIPT', 'STYLE', 'LINK'].includes(el.tagName) &&
                 el.style.display !== 'none' &&
-                el.children.length === 0 &&
+                (el.matches('.prose-p, .block-header, p, h1, h2, h3, h4, li') ||
+                  el.children.length === 0) &&
                 el.getBoundingClientRect().height > 0,
             );
             if (leaves.length > 0) {

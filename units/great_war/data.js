@@ -143,23 +143,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1862–1866',
-          label: '1.1 Balance of Power',
+          label: 'Balance of Power',
         },
         {
           year: '1870–1871',
-          label: '1.2 Versailles Proclamation',
+          label: 'Versailles Proclamation',
         },
         {
           year: 'May 1871',
-          label: '1.3 Alsace-Lorraine Annexed',
+          label: 'Alsace-Lorraine Annexed',
         },
         {
           year: '1871–1889',
-          label: '1.4 French Revanche',
+          label: 'French Revanche',
         },
         {
           year: '1871–1890',
-          label: '1.5 Bismarckian Isolation',
+          label: 'Bismarckian Isolation',
         },
       ],
       teacher_notes: {
@@ -253,7 +253,7 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '1.1 The Fragmented Chessboard, Zollverein & Prussian Power (1862–1866)',
+          title: 'The Fragmented Chessboard, Zollverein & Prussian Power (1862–1866)',
           text: '<span class="para-ref">[1.1]</span> For more than two centuries after the Peace of Westphalia, Central Europe resembled a fractured chessboard rather than a nation. Between the Rhine and the Vistula lay over three hundred sovereign duchies, free cities, and petty principalities. Even after the 1815 Congress of Vienna consolidated these into <strong>thirty-nine independent states (39 independent states)</strong>, they remained paralyzed by mutual distrust. Two rival titans competed for dominance: the polyglot Austrian Empire, ruled by Catholic Habsburgs who feared German national unity would tear their multinational realm apart, and the <strong>Kingdom of Prussia</strong>—a disciplined Protestant military powerhouse ruled from Berlin by the Hohenzollern dynasty, possessing an advanced railway network and the mighty Krupp steel industry.<br><br><span class="para-ref">[1.2]</span> In 1834, Berlin orchestrated a masterstroke of economic statecraft: the <strong>Zollverein</strong> (Customs Union). By abolishing internal tariffs while deliberately excluding Austria, Prussia created a booming single market. Steam locomotives thundered across the Ruhr and Silesia along tracks cast in Prussian iron, knitting the German states into economic dependency on Berlin. When <strong>Otto von Bismarck</strong> became Prussian Minister-President in 1862, he bypassed the Prussian parliament unconstitutionally and laid down his ruthless political creed: <em>"The great questions of the day will not be decided by speeches and majority votes... but by iron and blood."</em> Practicing pure <em>Realpolitik</em>, Bismarck manufactured short, decisive wars: crushing Denmark in 1864, and annihilating the Austrian army at Königgrätz in the Seven Weeks\' War of 1866 with breech-loading needle guns.',
           source: {
             letter: 'A',
@@ -271,7 +271,7 @@ const unitData = {
         },
         {
           act: 2,
-          title: '1.2 The Sedan Debacle & Proclamation at Versailles (1870–1871)',
+          title: 'The Sedan Debacle & Proclamation at Versailles (1870–1871)',
           text: '<span class="para-ref">[1.2]</span> To sweep the reluctant Catholic southern German states into Berlin’s embrace, Bismarck engineered a common enemy. In July 1870, he doctored and carefully edited the <strong>Ems Telegram</strong>—deleting polite words to make it appear that King Wilhelm I had insulted the French ambassador. Enraged by national vanity, Emperor Napoleon III declared war. It was a catastrophic French miscalculation. Masterminded by General Helmuth von Moltke, Prussian railways and Krupp steel breech-loading artillery pulverized French positions. On 1 September 1870, at the decisive <strong>Battle of Sedan</strong>, the German armies encircled Napoleon III, capturing the emperor and 104,000 soldiers. Overnight, the French Empire collapsed.<br><br><span class="para-ref">[1.3]</span> The republican government in Paris refused to surrender, prompting a brutal four-month <strong>Siege of Paris</strong> where starving citizens ate carriage horses and zoo animals. On a freezing winter morning—18 January 1871—Bismarck delivered the supreme humiliation. Inside the gilded <strong>Hall of Mirrors at the Palace of Versailles</strong> outside besieged Paris, German princes and generals amidst drawn sabres and spiked pickelhaube helmets proclaimed King Wilhelm I the first German Emperor (Kaiser). The German Empire was not born in a democratic assembly, but hammered together on the battlefield and christened on the ashes of French defeat.',
           source: {
             letter: 'B',
@@ -291,7 +291,7 @@ const unitData = {
         },
         {
           act: 3,
-          title: '1.3 The Treaty of Frankfurt & Annexation of Alsace-Lorraine (May 1871)',
+          title: 'The Treaty of Frankfurt & Annexation of Alsace-Lorraine (May 1871)',
           text: '<span class="para-ref">[1.3]</span> Finalized in May 1871, the <strong>Treaty of Frankfurt</strong> was designed by German generals not merely to conclude peace, but to cripple France militarily for a generation. France was forced to pay an astronomical financial indemnity of <strong>five billion gold francs (5 billion gold francs)</strong>, with German occupation troops quartered on French soil until the final centime was delivered. Far more devastating was the territorial amputation: Germany tore away the mineral-rich border province of <strong>Alsace</strong> and the northern half of <strong>Lorraine</strong>.<br><br><span class="para-ref">[1.4]</span> This seizure stripped France of 1.6 million citizens, advanced textile manufacturing centres, and the irreplaceable iron-ore basins of Briey and Thionville. The ancient fortress city of Metz and the cathedral city of Strasbourg were converted into fortified bulwarks of the new German Empire. Over forty-one million people, welded to the booming industrial foundries of the Krupp arms works, were suddenly concentrated into a colossal military superpower situated squarely in the vulnerable centre of continental Europe.',
           source: {
             letter: 'C',
@@ -309,7 +309,7 @@ const unitData = {
         },
         {
           act: 4,
-          title: '1.4 French Revanche & The Cult of the Lost Provinces (1871–1889)',
+          title: 'French Revanche & The Cult of the Lost Provinces (1871–1889)',
           text: '<span class="para-ref">[1.4]</span> For the French nation, the loss of Alsace-Lorraine was an unendurable psychic trauma that poisoned European international politics for over four decades. In the Place de la Concorde in Paris, the monumental stone statue representing the city of Strasbourg was draped in mourning black crepe. In classrooms across the French Republic, schoolmasters taught generations of young boys that their highest civic obligation was <strong>Revanche</strong> (revenge)—the sacred mission to liberate the lost provinces.<br><br><span class="para-ref">[1.5]</span> In schoolrooms, wall maps displayed Alsace-Lorraine shaded in pitch black—the infamous <em>"tache noire"</em> (black spot). Compulsory military conscription was introduced, and physical education drill in schools was modeled on military marching. As the patriotic French statesman Léon Gambetta famously instructed the nation: <em>"Think of it always; speak of it never."</em> No French political leader could ever sign a permanent friendship treaty with Berlin while German garrisons occupied Strasbourg and Metz.',
           source: {
             letter: 'D',
@@ -329,7 +329,7 @@ const unitData = {
         },
         {
           act: 5,
-          title: '1.5 Bismarckian Isolation, The Reinsurance Treaty & Two-Front Dread (1871–1890)',
+          title: 'Bismarckian Isolation, The Reinsurance Treaty & Two-Front Dread (1871–1890)',
           text: '<span class="para-ref">[1.5]</span> On 9 February 1871, British opposition leader <strong>Benjamin Disraeli</strong> warned Parliament that the German victory was <em>"the German Revolution, a greater political event than the French Revolution... You have a new world, new influences at work, new and unknown objects and dangers with which to cope."</em> The delicate balance of power negotiated at Vienna in 1815 was dead. Recognizing that France would never forgive its defeat, Bismarck spent the next twenty years pursuing a single paramount foreign policy goal: <strong>to keep France diplomatically isolated and maintain continental peace</strong>.<br><br><span class="para-ref">[1.6]</span> Germany’s greatest strategic military nightmare was a <strong>war on two fronts (encirclement)</strong>, attacked simultaneously by France from the west and the Russian Empire from the east. To avert this, Bismarck spun a complex defensive web of treaties, culminating in the secret 1887 <strong>Reinsurance Treaty</strong> with Tsarist Russia, pledging neutrality if either empire faced attack. So long as Bismarck remained Chancellor, his brilliant diplomatic balancing act kept France isolated. But in 1888, the impulsive young <strong>Kaiser Wilhelm II</strong> ascended the throne. In 1890, Wilhelm dismissed Bismarck and allowed the Reinsurance Treaty with Russia to lapse—unleashing the exact two-front encirclement Bismarck had spent his career trying to prevent.',
         },
       ],
@@ -427,19 +427,19 @@ const unitData = {
         {
           q: 'How many independent states existed in Central Europe before 1871?',
           a: '39',
-          options: ['300', '39', '15', '50'],
+          options: ['50', '39', '300', '15'],
         },
         {
           q: 'Which state was the most powerful among the German states before 1871?',
           a: 'Prussia',
-          options: ['Bavaria', 'Saxony', 'Austria', 'Prussia'],
+          options: ['Saxony', 'Austria', 'Bavaria', 'Prussia'],
         },
         {
           q: 'Who became the Prime Minister of Prussia in 1862?',
           a: 'Otto von Bismarck',
           options: [
-            'Wilhelm I',
             'Frederick the Great',
+            'Wilhelm I',
             'Otto von Bismarck',
             'Klemens von Metternich',
           ],
@@ -458,18 +458,18 @@ const unitData = {
           q: "What did 'blood and iron' mean in Bismarck's approach?",
           a: 'Warfare and military strength',
           options: [
-            'Industrial factories only',
-            'Warfare and military strength',
-            'Democratic votes',
             'Peaceful treaties',
+            'Warfare and military strength',
+            'Industrial factories only',
+            'Democratic votes',
           ],
         },
         {
           q: 'Which three countries did Prussia defeat to unify Germany?',
           a: 'Denmark, Austria, France',
           options: [
-            'Britain, Russia, France',
             'Italy, Austria, Spain',
+            'Britain, Russia, France',
             'Denmark, Austria, France',
             'Sweden, Denmark, Russia',
           ],
@@ -477,32 +477,32 @@ const unitData = {
         {
           q: 'In what year did the Franco-Prussian War begin?',
           a: '1870',
-          options: ['1864', '1866', '1914', '1870'],
+          options: ['1914', '1866', '1864', '1870'],
         },
         {
           q: 'Where was the King of Prussia proclaimed the first German Emperor?',
           a: 'Palace of Versailles',
           options: [
             'Palace of Versailles',
+            'Tower of London',
             'Reichstag in Berlin',
             'Schönbrunn Palace',
-            'Tower of London',
           ],
         },
         {
           q: 'When was the German Empire officially created?',
           a: '18 January 1871',
-          options: ['1 September 1870', '28 June 1914', '18 January 1871', '11 November 1918'],
+          options: ['28 June 1914', '1 September 1870', '18 January 1871', '11 November 1918'],
         },
         {
           q: 'Which valuable French territory did Germany seize in 1871?',
           a: 'Alsace-Lorraine',
-          options: ['Normandy', 'Brittany', 'Burgundy', 'Alsace-Lorraine'],
+          options: ['Burgundy', 'Normandy', 'Brittany', 'Alsace-Lorraine'],
         },
         {
           q: 'What was the economic union created by Prussia in 1834 called?',
           a: 'Zollverein',
-          options: ['Reichstag', 'Zollverein', 'Kaiserreich', 'Wehrmacht'],
+          options: ['Kaiserreich', 'Zollverein', 'Reichstag', 'Wehrmacht'],
         },
         {
           q: 'Which major German-speaking power was deliberately excluded from the Zollverein?',
@@ -512,12 +512,12 @@ const unitData = {
         {
           q: 'What was the German term for the new German Empire?',
           a: 'Kaiserreich',
-          options: ['Lebensraum', 'Blitzkrieg', 'Kaiserreich', 'Reichstag'],
+          options: ['Lebensraum', 'Reichstag', 'Kaiserreich', 'Blitzkrieg'],
         },
         {
           q: 'How long did it take the Prussian army to crush Austria in 1866?',
           a: 'Seven weeks',
-          options: ['Seven weeks', 'Four years', 'Two months', 'One year'],
+          options: ['Seven weeks', 'One year', 'Two months', 'Four years'],
         },
         {
           q: 'Who was the first Emperor (Kaiser) of the newly unified Germany?',
@@ -537,20 +537,20 @@ const unitData = {
         {
           q: 'Which French Emperor was captured by the Prussian military?',
           a: 'Napoleon III',
-          options: ['Napoleon III', 'Louis XIV', 'Napoleon Bonaparte', 'Charles de Gaulle'],
+          options: ['Napoleon III', 'Louis XIV', 'Charles de Gaulle', 'Napoleon Bonaparte'],
         },
         {
           q: 'What natural resources was Alsace-Lorraine rich in?',
           a: 'Coal and iron',
-          options: ['Gold and silver', 'Oil and gas', 'Coal and iron', 'Timber and wheat'],
+          options: ['Gold and silver', 'Timber and wheat', 'Coal and iron', 'Oil and gas'],
         },
         {
           q: 'What long-term effect did the taking of Alsace-Lorraine have?',
           a: 'It created long-term rivalry and hatred between France and Germany',
           options: [
-            'It made France and Germany permanent allies',
             'It caused the collapse of the British Empire',
             'It led directly to the Russian Revolution',
+            'It made France and Germany permanent allies',
             'It created long-term rivalry and hatred between France and Germany',
           ],
         },
@@ -558,9 +558,9 @@ const unitData = {
           q: 'Why was the unification of Germany a shock to the balance of power in Europe?',
           a: 'A massive, powerful, militaristic state suddenly appeared in the center of Europe',
           options: [
-            'Germany was very weak and needed protecting',
-            'A massive, powerful, militaristic state suddenly appeared in the center of Europe',
             'It meant Europe was now entirely peaceful',
+            'A massive, powerful, militaristic state suddenly appeared in the center of Europe',
+            'Germany was very weak and needed protecting',
             'Britain lost its navy',
           ],
         },
@@ -675,23 +675,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1884–1885',
-          label: '2.1 Berlin Conference',
+          label: 'Berlin Conference',
         },
         {
           year: '1890–1897',
-          label: '2.2 Weltpolitik',
+          label: 'Weltpolitik',
         },
         {
           year: 'Mar 1905',
-          label: '2.3 Tangier Crisis',
+          label: 'Tangier Crisis',
         },
         {
           year: '1906',
-          label: '2.4 Algeciras Isolation',
+          label: 'Algeciras Isolation',
         },
         {
           year: 'Jul 1911',
-          label: '2.5 Panther at Agadir',
+          label: 'Panther at Agadir',
         },
       ],
       teacher_notes: {
@@ -782,7 +782,7 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '2.1 The Scramble for Africa & The Berlin Conference (1884–1885)',
+          title: 'The Scramble for Africa & The Berlin Conference (1884–1885)',
           text: '<span class="para-ref">[2.1]</span> Between 1881 and 1914, European powers engaged in a frenzied race to conquer and colonize the African continent, a phenomenon known as the <strong>Scramble for Africa</strong>. Driven by the voracious industrial appetite for raw materials—rubber, copper, cotton, and palm oil—as well as captive consumer markets and competitive national prestige, European explorers and armies carved through African kingdoms. In 1870, less than ten percent of Africa was under European control; by 1914, that figure had soared to ninety percent.<br><br><span class="para-ref">[2.2]</span> To prevent this land grab from triggering wars among European nations, Chancellor Otto von Bismarck hosted the landmark <strong>Berlin West Africa Conference (1884–1885)</strong>. Fourteen nations gathered in Berlin to establish ground rules. The conference established the principle of <strong>effective occupation</strong>: no European power could claim sovereign territory merely by planting a flag; it had to establish physical administrative posts, police garrisons, and economic development. With rulers and colored pencils, European diplomats carved up millions of square miles, completely disregarding indigenous cultures, languages, and ethnic borders.',
           source: {
             letter: 'A',
@@ -801,23 +801,22 @@ const unitData = {
         },
         {
           act: 2,
-          title: '2.2 Kaiser Wilhelm II, "Weltpolitik" & "A Place in the Sun" (1890–1897)',
+          title: 'Kaiser Wilhelm II,"Weltpolitik" & "A Place in the Sun" (1890–1897)',
           text: '<span class="para-ref">[2.2]</span> So long as Bismarck governed Germany, he insisted that Germany was a "satiated" continental power with no need for distant colonies. Bismarck famously pointed to a map of Europe and declared: <em>"Here lies Russia, and here lies France, and we are in the middle; that is my map of Africa."</em> But in 1888, the ambitious, erratic twenty-nine-year-old <strong>Kaiser Wilhelm II</strong> ascended the Hohenzollern throne. Impatient with Bismarck’s caution, Wilhelm II forced the Chancellor’s resignation in 1890, an event immortalized in British cartoons as "Dropping the Pilot."<br><br><span class="para-ref">[2.3]</span> Wilhelm II was determined on personal autocratic rule and demanded that Germany take its rightful place as a global empire. In 1897, Foreign Minister Bernhard von Bülow declared in the Reichstag that Germany demanded its <strong>"place in the sun" (Platz an der Sonne)</strong>. This aggressive doctrine was christened <strong>Weltpolitik</strong> ("World Policy"). Germany was late to the imperial banquet; Britain and France had already seized the most fertile and mineral-rich territories. To acquire an overseas empire and protect German merchant shipping, Wilhelm II resolved to build a colossal battlefleet, putting Germany on a direct collision course with Great Britain.',
         },
         {
           act: 3,
-          title: '2.3 The First Moroccan Crisis & The Landing at Tangier (March 1905)',
+          title: 'The First Moroccan Crisis & The Landing at Tangier (March 1905)',
           text: '<span class="para-ref">[2.3]</span> In April 1904, alarmed by Germany’s rising industrial power and naval ambitions, Great Britain and France signed the historic <strong>Entente Cordiale</strong> ("Friendly Understanding"). This was not a military alliance, but a settlement of colonial rivalries: France recognized British control of Egypt, while Britain recognized French dominance over the independent North African Sultanate of <strong>Morocco</strong>. To German leaders, this rapprochement was an intolerable diplomatic encirclement.<br><br><span class="para-ref">[2.4]</span> On 31 March 1905, Kaiser Wilhelm II staged a theatrical provocation in the <strong>First Moroccan Crisis</strong>. Landing at the Moroccan port of <strong>Tangier</strong> riding a white charger, Wilhelm II addressed the Sultan’s representatives, declaring that he viewed the Sultan as a completely independent sovereign ruler and would protect German commercial rights against French monopoly. The Kaiser calculated that France was militarily unready for war and that Britain would abandon Paris when challenged. It was a spectacular diplomatic miscalculation.',
         },
         {
           act: 4,
-          title: '2.4 The Algeciras Conference & German Diplomatic Isolation (1906)',
+          title: 'The Algeciras Conference & German Diplomatic Isolation (1906)',
           text: '<span class="para-ref">[2.4]</span> To resolve the Moroccan standoff, Germany demanded a general European conference, confident that international opinion would rebuke French expansion. In January 1906, diplomats convened at the <strong>Algeciras Conference</strong> in southern Spain. The outcome was a humiliating catastrophe for Berlin.<br><br><span class="para-ref">[2.5]</span> Rather than driving a wedge between Britain and France, German bullying cemented their partnership. The British Foreign Secretary, Sir Edward Grey, firmly supported France, warning Berlin that Britain would not remain neutral if France were attacked. Russia, Italy, Spain, and the United States also voted in favor of France controlling the Moroccan police and state bank. Only Austria-Hungary voted with Germany. Deeply embittered, Kaiser Wilhelm II left Algeciras convinced that the other European Great Powers were conspiring to surround and humiliate the German Empire—a paranoia known as <strong>Einkreisung</strong> (encirclement).',
         },
         {
           act: 5,
-          title:
-            '2.5 The Second Moroccan Crisis: The Panther at Agadir & Mansion House (July 1911)',
+          title: 'The Second Moroccan Crisis: The Panther at Agadir & Mansion House (July 1911)',
           text: '<span class="para-ref">[2.5]</span> Five years later, in the spring of 1911, Moroccan tribes rebelled against the Sultan, besieging him in his palace at Fez. The French government dispatched an army to occupy Fez to protect European residents. Accusing France of violating the Algeciras agreement, German Foreign Minister Alfred von Kiderlen-Waechter decided on a dangerous gamble of <strong>gunboat diplomacy</strong>. On 1 July 1911, the German imperial navy dispatched the gunboat <strong>SMS Panther</strong> to the Atlantic port of <strong>Agadir</strong>, ostensibly to protect German merchants, but in reality to blackmail France into ceding the French Congo.<br><br><span class="para-ref">[2.6]</span> The dispatch of the <em>Panther</em> caused outrage in London. Agadir lay close to vital British Atlantic shipping routes to South Africa and South America; a German naval base there would threaten British naval security. On 21 July 1911, Chancellor of the Exchequer <strong>David Lloyd George</strong> delivered his famous <strong>Mansion House Speech</strong>, warning Germany that Britain would fight alongside France rather than see peace maintained through national humiliation: <em>"If Britain is to be treated where she is concerned as if she were of no account... then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure."</em> Germany backed down, accepting minor territorial concessions in the Congo in exchange for recognizing France’s protectorate over Morocco. Most crucially, the crisis convinced the British and French General Staffs to initiate secret, coordinated military planning for deploying a British Expeditionary Force to France in the event of German invasion.',
           source: {
             letter: 'B',
@@ -943,16 +942,16 @@ const unitData = {
           q: "Which German leader famously stated that Germany wanted its 'place in the sun'?",
           a: 'Kaiser Wilhelm II',
           options: [
-            'Otto von Bismarck',
+            'Paul von Hindenburg',
             'Adolf Hitler',
             'Kaiser Wilhelm II',
-            'Paul von Hindenburg',
+            'Otto von Bismarck',
           ],
         },
         {
           q: 'In which year did the First Moroccan Crisis occur?',
           a: '1905',
-          options: ['1911', '1905', '1898', '1914'],
+          options: ['1898', '1905', '1911', '1914'],
         },
         {
           q: 'What was the purpose of the 1884 Berlin Conference?',
@@ -973,19 +972,19 @@ const unitData = {
           q: "Why did Kaiser Wilhelm II demand a 'place in the sun'?",
           a: 'He wanted Germany to have a global empire like Britain and France',
           options: [
-            'He wanted a holiday home in Africa',
-            'He wanted Germany to have a global empire like Britain and France',
             'He wanted to conquer South America',
+            'He wanted Germany to have a global empire like Britain and France',
             'He wanted to control the Mediterranean Sea',
+            'He wanted a holiday home in Africa',
           ],
         },
         {
           q: 'What happened during the First Moroccan Crisis (1905)?',
           a: 'The Kaiser visited Tangier and declared support for Moroccan independence',
           options: [
+            'The local sultan defeated the French army',
             'Germany invaded Morocco',
             'France surrendered Morocco to Britain',
-            'The local sultan defeated the French army',
             'The Kaiser visited Tangier and declared support for Moroccan independence',
           ],
         },
@@ -993,10 +992,10 @@ const unitData = {
           q: 'What was the main result of the Algeciras Conference (1906)?',
           a: 'Germany was humiliated and France was given control of Moroccan police',
           options: [
-            'Germany gained full control of Morocco',
+            'Britain took over Morocco',
             'Morocco became fully independent',
             'Germany was humiliated and France was given control of Moroccan police',
-            'Britain took over Morocco',
+            'Germany gained full control of Morocco',
           ],
         },
         {
@@ -1004,18 +1003,18 @@ const unitData = {
           a: 'Germany sent the gunboat Panther to the port of Agadir',
           options: [
             'Germany sent the gunboat Panther to the port of Agadir',
-            'France declared war on Germany',
-            'Britain blockaded the Moroccan coast',
             'Moroccans attacked German tourists',
+            'Britain blockaded the Moroccan coast',
+            'France declared war on Germany',
           ],
         },
         {
           q: 'How did the Agadir Crisis end?',
           a: 'Germany backed down after being given a small strip of the Congo',
           options: [
-            'Germany successfully conquered Morocco',
-            'Germany backed down after being given a small strip of the Congo',
             'Britain declared war on Germany',
+            'Germany backed down after being given a small strip of the Congo',
+            'Germany successfully conquered Morocco',
             'France was forced to leave Africa',
           ],
         },
@@ -1139,23 +1138,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1889–1897',
-          label: '3.1 Two-Power Standard',
+          label: 'Two-Power Standard',
         },
         {
           year: '1898–1900',
-          label: '3.2 Tirpitz Risk Theory',
+          label: 'Tirpitz Risk Theory',
         },
         {
           year: 'Feb 1906',
-          label: '3.3 HMS Dreadnought',
+          label: 'HMS Dreadnought',
         },
         {
           year: '1909',
-          label: '3.4 Naval Panic',
+          label: 'Naval Panic',
         },
         {
           year: '1912–1914',
-          label: '3.5 Haldane Mission',
+          label: 'Haldane Mission',
         },
       ],
       teacher_notes: {
@@ -1247,17 +1246,17 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '3.1 The Two-Power Standard & British Maritime Survival (1889–1897)',
+          title: 'The Two-Power Standard & British Maritime Survival (1889–1897)',
           text: '<span class="para-ref">[3.1]</span> For Great Britain, naval supremacy was not a luxury; it was the foundation of national survival. As an island nation, Britain could not feed its growing urban population without food imported across the oceans: by 1900, four-fifths of Britain’s wheat and four-fifths of its meat arrived on merchant ships. If enemy warships severed these maritime arteries, Britain would be starved into unconditional surrender within six weeks. Furthermore, the Royal Navy guarded an empire spanning one-quarter of the globe and four hundred million subjects.<br><br><span class="para-ref">[3.2]</span> Under the <strong>Naval Defence Act of 1889</strong>, Britain codified its core maritime doctrine: the <strong>Two-Power Standard</strong>. This statutory rule required the Royal Navy to maintain a battlefleet at least equal to the combined strength of the world\'s next two largest navies (at the time, France and Russia). British statesmen believed that maintaining undisputed mastery of the seas was the ultimate guarantee of European peace, deterring rival continental empires from launching aggressive wars.',
         },
         {
           act: 2,
-          title: '3.2 Admiral von Tirpitz, German Naval Laws & "Risk Theory" (1898–1900)',
+          title: 'Admiral von Tirpitz, German Naval Laws &"Risk Theory" (1898–1900)',
           text: '<span class="para-ref">[3.2]</span> In 1897, Kaiser Wilhelm II appointed an iron-willed, ambitious naval officer as Secretary of the Imperial Navy: <strong>Admiral Alfred von Tirpitz</strong>. Tirpitz possessed a passionate conviction that Germany could never achieve true greatness as a world empire without a powerful oceanic battlefleet. In 1898 and 1900, Tirpitz skillfully mobilized the German press, industrial shipbuilders, and the patriotic Navy League to push the monumental <strong>German Naval Laws</strong> through the Reichstag, authorizing the construction of dozens of colossal battleships to build the <strong>High Seas Fleet</strong>.<br><br><span class="para-ref">[3.3]</span> Tirpitz justified this ruinous expenditure through his famous <strong>Risk Theory (Risikotheorie)</strong>. Tirpitz recognized that Germany could not build a fleet larger than the entire Royal Navy, which was scattered across the globe guarding imperial trade routes. Instead, Germany would concentrate a lethal, modern battlefleet directly across the North Sea in German ports like Wilhelmshaven and Kiel. Tirpitz calculated that if Britain attacked, the German fleet would be strong enough to inflict catastrophic damage, even if defeated—thereby destroying Britain’s margin of superiority over rival powers like France or Russia. Consequently, Tirpitz believed Britain would avoid confrontation and concede Germany’s colonial and diplomatic demands. It was a fatal misreading of British strategic resolve.',
         },
         {
           act: 3,
-          title: '3.3 The Dreadnought Revolution: All-Big-Gun Technology (February 1906)',
+          title: 'The Dreadnought Revolution: All-Big-Gun Technology (February 1906)',
           text: '<span class="para-ref">[3.3]</span> Britain’s response to the German challenge was spearheaded by a brilliant, ruthless reformer: First Sea Lord <strong>Admiral Sir John "Jackie" Fisher</strong>. Fisher recognized that pre-existing battleships, armed with a chaotic mix of small and medium caliber guns, were obsolete. Working in utmost secrecy at Portsmouth Dockyard, Fisher oversaw the design and construction of <strong>HMS Dreadnought</strong>, completed in just four months and launched in February 1906.<br><br><span class="para-ref">[3.4]</span> <em>Dreadnought</em> was an engineering marvel that revolutionized naval warfare. It was the world\'s first "all-big-gun" warship, carrying ten 12-inch heavy guns mounted in rotating steel turrets capable of hurling 850-pound armor-piercing shells over eight miles. Powered by revolutionary Parsons steam turbines rather than reciprocating coal engines, it could cruise at a staggering 21 knots, outrunning and outgunning every warship afloat. Yet <em>Dreadnought</em> created a dangerous strategic paradox. By rendering every existing battleship obsolete, it wiped out Britain’s enormous numerical advantage of fifty pre-dreadnoughts to Germany’s twenty. The naval race was instantly reset to zero: <strong>Britain 1, Germany 0</strong>. Germany could now compete on equal terms by widening the Kiel Canal and laying down dreadnoughts of its own.',
           source: {
             letter: 'A',
@@ -1276,12 +1275,12 @@ const unitData = {
         },
         {
           act: 4,
-          title: '3.4 The 1909 Naval Panic: "We Want Eight and We Won\'t Wait!" (1909)',
+          title: 'The 1909 Naval Panic:"We Want Eight and We Won\'t Wait!" (1909)',
           text: '<span class="para-ref">[3.4]</span> Between 1906 and 1908, the German Reichstag passed amendments accelerating battleship construction, building four dreadnoughts a year. In late 1908, British intelligence discovered that German shipyards in Hamburg and Bremen were secretly pre-ordering steel and armor plates to accelerate construction beyond official quotas. In January 1909, a wave of patriotic hysteria known as the <strong>1909 Naval Panic</strong> swept through the British press and Parliament.<br><br><span class="para-ref">[3.5]</span> The British Liberal government, led by Prime Minister H.H. Asquith and Chancellor David Lloyd George, had hoped to economize on naval spending to fund historic social reforms like old-age pensions and national insurance. But Conservative politicians, newspapers, and the Navy League launched a fierce public campaign with the roaring slogan: <em>"We want eight and we won\'t wait!"</em> The public pressure proved irresistible. Parliament voted to fund eight massive super-dreadnoughts in a single fiscal year, heavily out-building Germany and imposing soaring tax burdens on both empires.',
         },
         {
           act: 5,
-          title: '3.5 The Haldane Mission Failure & Strategic Redeployment (1912–1914)',
+          title: 'The Haldane Mission Failure & Strategic Redeployment (1912–1914)',
           text: '<span class="para-ref">[3.5]</span> By 1912, the ruinous economic cost of the naval arms race prompted British leaders to attempt a diplomatic truce. British War Secretary <strong>Lord Haldane</strong> traveled to Berlin to meet Kaiser Wilhelm II and Admiral Tirpitz. Haldane proposed a naval holiday: Britain would slow down dreadnought construction if Germany agreed to limit High Seas Fleet expansion. But the Kaiser insisted on a condition Britain could never accept: <strong>Germany demanded an unconditional treaty pledge that Britain would remain strictly neutral in any future European war</strong>.<br><br><span class="para-ref">[3.6]</span> Accepting this condition would have given Germany a free hand to crush France and dominate Europe, so Haldane rejected it and the mission collapsed. Concluding that a diplomatic settlement was impossible, First Lord of the Admiralty <strong>Winston Churchill</strong> enacted a radical strategic redistribution in 1912. Britain withdrew its major battleships from the Mediterranean Sea and concentrated sixty percent of the Royal Navy directly in the North Sea at Scapa Flow and Rosyth. Under an informal naval agreement, the French navy agreed to protect British commercial routes in the Mediterranean, while Britain undertook to defend the northern French coast from German attack. The naval race had failed to give Germany maritime dominance; instead, it poisoned commercial cooperation between London and Berlin, and forced Britain to abandon "splendid isolation" to weld an unbreakable naval and military partnership with the French Republic. Yet while dreadnoughts fueled tension, the spark that ignited the conflagration arose from Balkan ethnic nationalism.',
         },
       ],
@@ -1350,15 +1349,15 @@ const unitData = {
         {
           q: 'Which German Admiral was in charge of expanding the German Navy?',
           a: 'Admiral von Tirpitz',
-          options: ['Admiral von Tirpitz', 'Admiral Scheer', 'Admiral Hipper', 'Kaiser Wilhelm II'],
+          options: ['Admiral von Tirpitz', 'Kaiser Wilhelm II', 'Admiral Scheer', 'Admiral Hipper'],
         },
         {
           q: 'What policy dictated that the British Royal Navy must be as large as the next two largest navies combined?',
           a: 'Two-Power Standard',
           options: [
             'Splendid Isolation',
-            'Naval Supremacy Act',
             'Dreadnought Rule',
+            'Naval Supremacy Act',
             'Two-Power Standard',
           ],
         },
@@ -1366,10 +1365,10 @@ const unitData = {
           q: 'Why was the HMS Dreadnought completely revolutionary?',
           a: "It was faster, heavier armored, and had all 'big-guns'",
           options: [
-            'It was the first submarine',
             'It could launch airplanes',
-            "It was faster, heavier armored, and had all 'big-guns'",
             'It was completely invisible to radar',
+            "It was faster, heavier armored, and had all 'big-guns'",
+            'It was the first submarine',
           ],
         },
         {
@@ -1378,18 +1377,18 @@ const unitData = {
           options: [
             'Germany immediately surrendered',
             'It made all older battleships instantly obsolete, resetting the naval race',
-            'Britain stopped building ships',
             'France allied with Germany',
+            'Britain stopped building ships',
           ],
         },
         {
           q: "What was the German 'Risk Theory' proposed by Admiral Tirpitz?",
           a: "Building a navy large enough that Britain wouldn't risk fighting it",
           options: [
-            'Attacking Britain immediately',
-            'Building only submarines',
-            "Building a navy large enough that Britain wouldn't risk fighting it",
             'Refusing to build any ships to avoid angering Britain',
+            'Attacking Britain immediately',
+            "Building a navy large enough that Britain wouldn't risk fighting it",
+            'Building only submarines',
           ],
         },
         {
@@ -1397,8 +1396,8 @@ const unitData = {
           a: "'We want eight and we won't wait!'",
           options: [
             "'Rule Britannia!'",
-            "'Sink the Kaiser!'",
             "'More dreadnoughts now!'",
+            "'Sink the Kaiser!'",
             "'We want eight and we won't wait!'",
           ],
         },
@@ -1407,28 +1406,28 @@ const unitData = {
           a: 'Britain is an island and relied entirely on its navy for survival and trade',
           options: [
             'Britain is an island and relied entirely on its navy for survival and trade',
-            'They were worried Germany would steal their ships',
-            'They wanted to attack Germany',
             'They had no army at all',
+            'They wanted to attack Germany',
+            'They were worried Germany would steal their ships',
           ],
         },
         {
           q: 'What laws were passed in Germany to fund their massive naval buildup?',
           a: 'The Naval Laws of 1898 and 1900',
           options: [
-            'The Shipyard Acts',
-            'The Naval Laws of 1898 and 1900',
-            'The Tirpitz Decrees',
             'The Imperial Fleet Bills',
+            'The Naval Laws of 1898 and 1900',
+            'The Shipyard Acts',
+            'The Tirpitz Decrees',
           ],
         },
         {
           q: 'By 1914, who had won the naval race?',
           a: "Britain, with 29 dreadnoughts to Germany's 17",
           options: [
-            "Germany, with 30 dreadnoughts to Britain's 10",
-            "Britain, with 29 dreadnoughts to Germany's 17",
             'They had exactly the same number',
+            "Britain, with 29 dreadnoughts to Germany's 17",
+            "Germany, with 30 dreadnoughts to Britain's 10",
             'France overtook both of them',
           ],
         },
@@ -1437,9 +1436,9 @@ const unitData = {
           a: "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
           options: [
             "It forced Britain out of 'Splendid Isolation' and into an alliance with France and Russia",
-            'It made them ally with Germany',
-            'It caused them to declare war on America',
             'It made them give up their empire',
+            'It caused them to declare war on America',
+            'It made them ally with Germany',
           ],
         },
       ],
@@ -1575,23 +1574,23 @@ const unitData = {
       margin_spine: [
         {
           year: '1879–1882',
-          label: '4.1 Triple Alliance',
+          label: 'Triple Alliance',
         },
         {
           year: '1894–1907',
-          label: '4.2 Triple Entente',
+          label: 'Triple Entente',
         },
         {
           year: '1900–1908',
-          label: '4.3 Balkan Powder Keg',
+          label: 'Balkan Powder Keg',
         },
         {
           year: 'Oct 1908',
-          label: '4.4 Bosnian Annexation',
+          label: 'Bosnian Annexation',
         },
         {
           year: '1912–1913',
-          label: '4.5 Balkan Wars',
+          label: 'Balkan Wars',
         },
       ],
       teacher_notes: {
@@ -1684,7 +1683,7 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '4.1 The Central European Bloc: Dual Alliance & Triple Alliance (1879–1882)',
+          title: 'The Central European Bloc: Dual Alliance & Triple Alliance (1879–1882)',
           text: '<span class="para-ref">[4.1]</span> In October 1879, haunted by the specter of a hostile coalition between France and Russia, Chancellor Otto von Bismarck negotiated the historic <strong>Dual Alliance</strong> with the Austro-Hungarian Empire. Both empires pledged that if either were attacked by Russia, the other would intervene with its entire armed forces; if attacked by another power (such as France), the other promised benevolent neutrality. Three years later, in 1882, Italy joined the partnership after losing Tunisia to France in an imperial dispute, expanding the bloc into the <strong>Triple Alliance</strong>.<br><br><span class="para-ref">[4.2]</span> Bismarck intended the Triple Alliance as a strictly defensive shield to stabilize Central Europe and preserve peace through strength. But it had a dangerous unintended consequence: it tied Germany’s military destiny to the fragile, multi-ethnic Austro-Hungarian Empire, an ancient realm ruled by the elderly Habsburg Emperor Franz Joseph that was being torn apart from within by violent nationalist rebellions.',
           source: {
             letter: 'A',
@@ -1704,7 +1703,7 @@ const unitData = {
         },
         {
           act: 2,
-          title: '4.2 The Counter-Alliance: Franco-Russian Alliance & Triple Entente (1894–1907)',
+          title: 'The Counter-Alliance: Franco-Russian Alliance & Triple Entente (1894–1907)',
           text: '<span class="para-ref">[4.2]</span> In 1890, Kaiser Wilhelm II made the fateful blunder of allowing Bismarck’s secret 1887 Reinsurance Treaty with Russia to lapse. Desperate for capital loans to build the Trans-Siberian Railway and fearful of German military dominance, autocratic Tsarist Russia turned to republican France. In 1894, the two ideologically opposite regimes signed the <strong>Franco-Russian Military Alliance</strong>, promising mutual military assistance if either were attacked by Germany. Bismarck’s supreme nightmare—a two-front encirclement—had become a reality.<br><br><span class="para-ref">[4.3]</span> Alarmed by German naval expansion, Great Britain abandoned its traditional policy of "Splendid Isolation." In 1904, Britain settled century-old colonial disputes with France in the <strong>Entente Cordiale</strong>. In 1907, Britain and Russia resolved imperial rivalries in Persia and Tibet in the <strong>Anglo-Russian Convention</strong>. Together, these bilateral treaties formed the <strong>Triple Entente</strong> (Britain, France, Russia). Europe was now divided into two armed, suspicious coalitions. The alliance system was designed as a mutual deterrent, but it operated like a string of linked dynamite: if any two powers went to war, all six would be dragged into the conflagration.',
           source: {
             letter: 'B',
@@ -1723,7 +1722,7 @@ const unitData = {
         },
         {
           act: 3,
-          title: '4.3 The "Balkan Powder Keg", Ottoman Decline & Pan-Slavism (1900–1908)',
+          title: 'The"Balkan Powder Keg", Ottoman Decline & Pan-Slavism (1900–1908)',
           text: '<span class="para-ref">[4.3]</span> For centuries, the Balkan peninsula in south-eastern Europe had been ruled by the Islamic <strong>Ottoman Empire</strong>. But by 1900, the Ottoman state was decaying rapidly, mocked across Europe as the "Sick Man of Europe." As Ottoman power collapsed, independent Christian nations—Greece, Bulgaria, Romania, and <strong>Serbia</strong>—threw off Turkish rule. A dangerous geopolitical vacuum emerged in south-eastern Europe, known as the <strong>"Balkan Powder Keg."</strong><br><br><span class="para-ref">[4.4]</span> Two rival Great Powers competed to dominate this vacuum. The Russian Empire claimed the mantle of protector of fellow Orthodox Christians and Slavs under the banner of <strong>Pan-Slavism</strong>, seeking warm-water naval access through the Dardanelles Straits to the Mediterranean. Directly opposing Russia was the Austro-Hungarian Empire, which feared that if Slavic nationalism triumphed in the Balkans, the millions of Serbs, Croats, and Bosnians living inside the Habsburg realm would break away and destroy the empire. Independent Serbia, dreaming of a "Greater Serbia" uniting all South Slavs, became Austria’s mortal enemy.',
           source: {
             letter: 'C',
@@ -1741,7 +1740,7 @@ const unitData = {
         },
         {
           act: 4,
-          title: '4.4 The 1908 Bosnian Annexation Crisis & Russian Humiliation (October 1908)',
+          title: 'The 1908 Bosnian Annexation Crisis & Russian Humiliation (October 1908)',
           text: '<span class="para-ref">[4.4]</span> In October 1908, the powder keg came close to exploding. Exploiting a revolution in the Ottoman Empire, Austro-Hungarian Foreign Minister Alois von Aehrenthal unilaterally <strong>annexed the provinces of Bosnia and Herzegovina</strong>, which Austria had occupied administratively since 1878. The annexation sparked furious outrage in Serbia, which viewed Bosnia—with its large Serbian population—as its natural sovereign territory. Serbian crowds protested in Belgrade and demanded war.<br><br><span class="para-ref">[4.5]</span> Russia stepped forward to champion Serbia, mobilizing troops along its western border. But Germany’s Chancellor Bernhard von Bülow intervened with brutal clarity. In March 1909, Germany delivered a harsh ultimatum to Saint Petersburg: Russia must accept the annexation immediately without an international conference, or Germany would support Austria with total military force. Still recovering from its disastrous 1905 defeat by Japan, the Russian army was unready for war. Deeply humiliated, Tsar Nicholas II backed down and forced Serbia to submit. But the humiliation left a legacy of bitter fury: Russia launched a massive military rearmament program and resolved never to back down in the Balkans again.',
           source: {
             letter: 'D',
@@ -1759,7 +1758,7 @@ const unitData = {
         },
         {
           act: 5,
-          title: '4.5 The 1912–1913 Balkan Wars & The Pre-emptive War Urge (1912–1913)',
+          title: 'The 1912–1913 Balkan Wars & The Pre-emptive War Urge (1912–1913)',
           text: '<span class="para-ref">[4.5]</span> In October 1912, the <strong>First Balkan War</strong> erupted. An alliance of Serbia, Greece, Bulgaria, and Montenegro (the Balkan League) attacked the Ottoman Empire, sweeping Turkish armies out of almost all their European territories in just six weeks. In 1913, the victors quarrelled over the spoils in the bloody <strong>Second Balkan War</strong>, which ended with Serbia decisively defeating Bulgaria.<br><br><span class="para-ref">[4.6]</span> The consequences of the Balkan Wars were catastrophic for Austro-Hungarian security. Serbia emerged from the wars triumphant: its national territory expanded by eighty percent and its population swelled from three million to four and a half million. Flush with military confidence and armed with modern French artillery, Serbian nationalists intensified terrorist agitation inside Austria-Hungary. In Vienna, Austrian Chief of General Staff <strong>Franz Conrad von Hötzendorf</strong> became convinced that a <strong>pre-emptive war</strong> to militarily crush Serbia was essential before Slavic subversion destroyed the Habsburg monarchy: Conrad urged war against Serbia over twenty times in 1913 alone. The stage was set: all that was needed was a spark.',
           source: {
             letter: 'E',
@@ -1946,8 +1945,8 @@ const unitData = {
           q: 'Which three countries formed the Triple Entente in 1907?',
           a: 'Britain, France, Russia',
           options: [
-            'Germany, Austria-Hungary, Italy',
             'Britain, France, Italy',
+            'Germany, Austria-Hungary, Italy',
             'Britain, France, Russia',
             'Germany, Russia, Austria-Hungary',
           ],
@@ -1955,19 +1954,19 @@ const unitData = {
         {
           q: 'Which country left the Triple Alliance and joined the Entente in 1915?',
           a: 'Italy',
-          options: ['Ottoman Empire', 'Bulgaria', 'Romania', 'Italy'],
+          options: ['Ottoman Empire', 'Romania', 'Bulgaria', 'Italy'],
         },
         {
           q: "What was Britain's traditional foreign policy before forming alliances?",
           a: 'Splendid Isolation',
-          options: ['Splendid Isolation', 'Weltpolitik', 'Appeasement', 'Continental Commitment'],
+          options: ['Splendid Isolation', 'Weltpolitik', 'Continental Commitment', 'Appeasement'],
         },
         {
           q: 'Which three countries made up the Triple Alliance of 1882?',
           a: 'Germany, Austria-Hungary, Italy',
           options: [
-            'Germany, Russia, Austria-Hungary',
             'Britain, France, Russia',
+            'Germany, Russia, Austria-Hungary',
             'Germany, Ottoman Empire, Italy',
             'Germany, Austria-Hungary, Italy',
           ],
@@ -1976,9 +1975,9 @@ const unitData = {
           q: 'Which three countries formed the Triple Entente by 1907?',
           a: 'Britain, France, Russia',
           options: [
-            'Germany, Austria-Hungary, Italy',
-            'Britain, France, Russia',
             'Britain, USA, France',
+            'Britain, France, Russia',
+            'Germany, Austria-Hungary, Italy',
             'France, Russia, Italy',
           ],
         },
@@ -1986,10 +1985,10 @@ const unitData = {
           q: 'What was a major flaw of the alliance system?',
           a: 'A small dispute between two nations could drag all major powers into war',
           options: [
-            'It prevented any trade between the blocs',
             'It made the armies too small',
-            'A small dispute between two nations could drag all major powers into war',
             'It forced countries to disarm',
+            'A small dispute between two nations could drag all major powers into war',
+            'It prevented any trade between the blocs',
           ],
         },
         {
@@ -1998,8 +1997,8 @@ const unitData = {
           options: [
             'Because they shared the same religion',
             'Because Kaiser Wilhelm II allowed the Reinsurance Treaty with Russia to lapse',
-            'Because France promised them African colonies',
             'Because Britain attacked them',
+            'Because France promised them African colonies',
           ],
         },
         {
@@ -2007,9 +2006,9 @@ const unitData = {
           a: 'A friendly agreement between Britain and France, settling colonial disputes',
           options: [
             'A friendly agreement between Britain and France, settling colonial disputes',
+            'An agreement to build dreadnoughts together',
             'A military alliance between Germany and Russia',
             'A peace treaty ending a war',
-            'An agreement to build dreadnoughts together',
           ],
         },
         {
@@ -2017,25 +2016,25 @@ const unitData = {
           a: "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
           options: [
             'They wanted to conquer Europe',
-            'They were invaded by France',
-            "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
             'They needed money from Russia',
+            "They felt threatened by Germany's growing navy and aggressive Weltpolitik",
+            'They were invaded by France',
           ],
         },
         {
           q: "What does 'Weltpolitik' mean?",
           a: "World policy (Germany's desire for a global empire)",
           options: [
+            'Peaceful co-existence',
             'Naval supremacy',
             'Splendid isolation',
-            'Peaceful co-existence',
             "World policy (Germany's desire for a global empire)",
           ],
         },
         {
           q: "Which nation in the Triple Alliance was seen as the 'weak link'?",
           a: 'Italy',
-          options: ['Germany', 'Austria-Hungary', 'Britain', 'Italy'],
+          options: ['Austria-Hungary', 'Germany', 'Britain', 'Italy'],
         },
       ],
       prologue:
@@ -2154,23 +2153,23 @@ const unitData = {
       margin_spine: [
         {
           year: '28 Jun 1914',
-          label: '5.1 Sarajevo Shots',
+          label: 'Sarajevo Shots',
         },
         {
           year: '5 Jul 1914',
-          label: '5.2 The Blank Cheque',
+          label: 'The Blank Cheque',
         },
         {
           year: '23–28 Jul',
-          label: '5.3 The Ultimatum',
+          label: 'The Ultimatum',
         },
         {
           year: '29–31 Jul',
-          label: '5.4 Train Timetables',
+          label: 'Train Timetables',
         },
         {
           year: '1–4 Aug',
-          label: '5.5 Belgian Neutrality',
+          label: 'Belgian Neutrality',
         },
       ],
       teacher_notes: {
@@ -2261,7 +2260,7 @@ const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: '5.1 The Assassination of Franz Ferdinand in Sarajevo (28 June 1914)',
+          title: 'The Assassination of Franz Ferdinand in Sarajevo (28 June 1914)',
           text: '<span class="para-ref">[5.1]</span> On Sunday, 28 June 1914, the heir to the Austro-Hungarian throne, <strong>Archduke Franz Ferdinand</strong>, and his wife Sophie arrived in the Bosnian capital of <strong>Sarajevo</strong> for an official military inspection. The date was deeply provocative: 28 June was <em>Vidovdan</em> (St Vitus Day), a sacred Serbian national holiday commemorating the heroic 1389 Battle of Kosovo. Stationed along the Appel Quay beside the Miljacka River was a six-man assassination squad from the radical nationalist movement <strong>Young Bosnia</strong>, armed with pistols and bombs supplied by the secret Serbian military society the <strong>Black Hand (Crna Ruka)</strong>, led by Colonel Dragutin Dimitrijević ("Apis").<br><br><span class="para-ref">[5.2]</span> The initial assassination attempt failed: a bomb thrown by Nedeljko Čabrinović bounced off the Archduke’s convertible roof, detonating beneath the following vehicle and wounding twenty people. Franz Ferdinand attended a reception at City Hall, then bravely insisted on visiting the wounded officers in hospital. But his chauffeur, Leopold Lojka, was not informed of the changed itinerary. Turning right into Franz Josef Street outside <strong>Schiller’s Delicatessen</strong> beside the <strong>Latin Bridge</strong>, the driver was ordered to stop and reverse. The car stalled. Standing on the pavement just five feet away was nineteen-year-old student <strong>Gavrilo Princip</strong>. Seizing the astonishing opportunity, Princip drew his Browning pistol and fired two shots at point-blank range. Sophie was shot in the stomach; Franz Ferdinand was severed in the jugular. As his wife lay dying, the Archduke murmured: <em>"Sophie, Sophie, don\'t die! Stay alive for our children!"</em> Both were dead within fifteen minutes.',
           source: {
             letter: 'A',
@@ -2280,22 +2279,22 @@ const unitData = {
         },
         {
           act: 2,
-          title: '5.2 The "Blank Cheque" & The Escalation of the Crisis (5 July 1914)',
+          title: 'The"Blank Cheque" & The Escalation of the Crisis (5 July 1914)',
           text: '<span class="para-ref">[5.2]</span> The assassinations provoked horrified outrage across Europe. Aggressive Serbian nationalism and Austro-Hungarian determination to launch a pre-emptive strike caused Austrian leaders to resolve that Serbia’s complicity in the plot provided the perfect opportunity to eliminate the Serbian threat once and for all. But Austrian leaders hesitated to attack, knowing that attacking Serbia risked military intervention by Russia. On 5 July 1914, Austrian envoy Count Alexander Hoyos traveled to Berlin to seek German backing.<br><br><span class="para-ref">[5.3]</span> In what historians consider one of the most reckless diplomatic blunders in history, Kaiser Wilhelm II and Chancellor Theobald von Bethmann-Hollweg issued the infamous <strong>"Blank Cheque" (Blankovollmacht)</strong>. Germany promised unconditional, total military support to Austria-Hungary, urging Vienna to strike swiftly against Serbia while international outrage was high, even if Russia intervened. German leaders calculated that Russia was still unready for war and that Britain would stay neutral. Backed by German might, Austrian hawks drafted a plan not for negotiation, but for war.',
         },
         {
           act: 3,
-          title: '5.3 The Ten-Point Ultimatum & Declaration of War on Serbia (23–28 July 1914)',
+          title: 'The Ten-Point Ultimatum & Declaration of War on Serbia (23–28 July 1914)',
           text: '<span class="para-ref">[5.3]</span> On the evening of 23 July 1914, Austria-Hungary delivered a severe <strong>Ten-Point Ultimatum</strong> to the Serbian government in Belgrade, demanding complete acceptance within forty-eight hours. The terms were deliberately designed to be intolerable: they demanded that Serbia ban all anti-Austrian newspapers and societies, dismiss anti-Austrian military officers, and, critically, permit Austro-Hungarian police and judicial officials to enter Serbia to conduct investigations.<br><br><span class="para-ref">[5.4]</span> Accepting foreign police on sovereign soil would have meant the surrender of Serbian national independence. Yet, advised by Russia to show maximum restraint, Serbia submitted an astonishingly conciliatory reply on 25 July, accepting eight of the ten demands and offering to submit the remaining two to the International Court at The Hague. British Foreign Secretary Sir Edward Grey praised Serbia’s response as the greatest capitulation ever offered by a sovereign state. But Austria-Hungary was determined on war. On <strong>28 July 1914</strong>, Austria declared war on Serbia. That night, Austrian artillery gunboats on the Danube opened fire, shelling the Serbian capital of Belgrade. The third Balkan war had begun.',
         },
         {
           act: 4,
-          title: '5.4 Railway Mobilisation Schedules & The Domino Effect (29–31 July 1914)',
+          title: 'Railway Mobilisation Schedules & The Domino Effect (29–31 July 1914)',
           text: '<span class="para-ref">[5.4]</span> The bombardment of Belgrade triggered the inexorable domino effect of the alliance systems. The division of Europe into the Triple Alliance and Triple Entente created an automatic tripwire mechanism. In Saint Petersburg, Tsar Nicholas II came under intense pressure from Russian military commanders: if Russia did not mobilize immediately, Austria would crush Serbia and dominate the Balkans. Furthermore, because of Russia’s vast geographic expanse and sparse railway network, Russian mobilization took six weeks; delaying mobilization would leave Russia defenseless if Germany attacked. On <strong>30 July 1914</strong>, the Tsar signed the order for <strong>general mobilization</strong>.<br><br><span class="para-ref">[5.5]</span> Russian mobilization transformed diplomacy into an automated military machine, a phenomenon historian A.J.P. Taylor termed <strong>"War by Timetable."</strong> In nineteenth-century warfare, mobilization was not merely preparation; it was an act of war involving millions of reservists and thousands of trains on rigid timetables that generals claimed could not be halted without risking total defeat. In Berlin, the Chief of the General Staff, <strong>Helmuth von Moltke the Younger</strong>, informed the Chancellor that Russia’s mobilization made war unavoidable. On 31 July, Germany issued an ultimatum to Russia demanding it halt mobilization within twelve hours, and an ultimatum to France demanding neutrality within eighteen hours. Both refused. On 1 August, Germany declared war on Russia, and on 3 August declared war on France.',
         },
         {
           act: 5,
-          title: '5.5 The Schlieffen Plan, Belgian Neutrality & British Entry (1–4 August 1914)',
+          title: 'The Schlieffen Plan, Belgian Neutrality & British Entry (1–4 August 1914)',
           text: '<span class="para-ref">[5.5]</span> Germany’s entire war strategy was dictated by the rigid, inflexible <strong>Schlieffen Plan</strong>, conceived a decade earlier by Count Alfred von Schlieffen to solve the nightmare of a two-front war. The plan assumed that Russia’s "steamroller" army would take six weeks to mobilize. During those six weeks, Germany would concentrate ninety percent of its army in the west to crush France in forty-two days with a colossal right-hook sweep, before wheeling east along railways to defeat Russia. To bypass France’s impregnable frontier forts along the Vosges, the German right wing was ordered to march across the plains of neutral <strong>Belgium</strong>.<br><br><span class="para-ref">[5.6]</span> On 2 August, Germany demanded free passage across Belgium; King Albert of Belgium heroically refused, declaring: <em>"Belgium is a nation, not a road."</em> On <strong>3 August 1914</strong>, German armies crossed the Belgian frontier at Gemmenich, burning towns and shooting civilians in an invasion that outraged global opinion. For Great Britain, Belgian neutrality was non-negotiable: Britain had guaranteed Belgian sovereignty in the historic <strong>1839 Treaty of London</strong>, and no British government could permit a hostile superpower to control the Channel ports facing the Thames estuary. When German Chancellor Bethmann-Hollweg dismissed the 1839 treaty as a mere <em>"scrap of paper,"</em> Britain delivered an ultimatum demanding German withdrawal by midnight. Germany refused. At 11:00 PM on <strong>4 August 1914</strong>, Great Britain entered the First World War. Watching the street lamps being lit along Whitehall from the Foreign Office window, Sir Edward Grey uttered his unforgettable epitaph: <em>"The lamps are going out all over Europe; we shall not see them lit again in our lifetime."</em>',
         },
       ],
@@ -2407,8 +2406,8 @@ const unitData = {
           q: 'Who assassinated Archduke Franz Ferdinand?',
           a: 'Gavrilo Princip',
           options: [
-            'Nedeljko Cabrinovic',
             'Dragutin Dimitrijevic',
+            'Nedeljko Cabrinovic',
             'Gavrilo Princip',
             'Leon Trotsky',
           ],
@@ -2421,55 +2420,55 @@ const unitData = {
         {
           q: 'On what exact date was the Archduke assassinated?',
           a: '28 June 1914',
-          options: ['28 July 1914', '28 June 1914', '11 November 1918', '4 August 1914'],
+          options: ['28 July 1914', '28 June 1914', '4 August 1914', '11 November 1918'],
         },
         {
           q: 'Which empire had annexed Bosnia in 1908, angering Serbian nationalists?',
           a: 'Austria-Hungary',
-          options: ['The Ottoman Empire', 'Russia', 'Germany', 'Austria-Hungary'],
+          options: ['Germany', 'The Ottoman Empire', 'Russia', 'Austria-Hungary'],
         },
         {
           q: 'Who was the heir to the Austro-Hungarian throne that visited Sarajevo?',
           a: 'Archduke Franz Ferdinand',
           options: [
             'Archduke Franz Ferdinand',
-            'Emperor Franz Joseph',
             'Kaiser Wilhelm II',
             'Tsar Nicholas II',
+            'Emperor Franz Joseph',
           ],
         },
         {
           q: 'What terrorist group supplied the assassins with weapons?',
           a: 'The Black Hand',
-          options: ['Young Bosnia', 'The Black Hand', 'The Red Army', 'The Serbian Guard'],
+          options: ['The Red Army', 'The Black Hand', 'The Serbian Guard', 'Young Bosnia'],
         },
         {
           q: 'What was the first, failed assassination attempt on the Archduke that morning?',
           a: 'A bomb was thrown at his car but bounced off',
           options: [
             'He was shot at but missed',
-            'His driver was poisoned',
-            'A bomb was thrown at his car but bounced off',
             'A bridge was blown up',
+            'A bomb was thrown at his car but bounced off',
+            'His driver was poisoned',
           ],
         },
         {
           q: "Why was Gavrilo Princip standing outside Schiller's Delicatessen when the Archduke's car stopped?",
           a: 'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
           options: [
-            'Princip had planned the exact route',
-            'The Archduke went in to buy a sandwich',
-            'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
             'The police ordered the car to stop there',
+            'Princip had planned the exact route',
+            'By total coincidence, the driver took a wrong turn and stalled the car right in front of him',
+            'The Archduke went in to buy a sandwich',
           ],
         },
         {
           q: "What was the 'Blank Cheque'?",
           a: "Germany's promise of unconditional support to Austria-Hungary against Serbia",
           options: [
-            'A bribe paid to the assassins',
-            "Germany's promise of unconditional support to Austria-Hungary against Serbia",
             'A peace offer from Russia',
+            "Germany's promise of unconditional support to Austria-Hungary against Serbia",
+            'A bribe paid to the assassins',
             'The money used to buy the guns',
           ],
         },
@@ -2478,8 +2477,8 @@ const unitData = {
           a: 'Austria-Hungary sent an impossibly harsh ultimatum to Serbia',
           options: [
             'Austria-Hungary sent an impossibly harsh ultimatum to Serbia',
-            'Germany invaded Belgium',
             'Russia declared war',
+            'Germany invaded Belgium',
             'Britain joined the war',
           ],
         },
@@ -2487,9 +2486,9 @@ const unitData = {
           q: 'Why did Britain declare war on Germany on August 4, 1914?',
           a: 'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
           options: [
+            'Because Germany sank a British ship',
             'Because of the assassination in Sarajevo',
             'Because France surrendered',
-            'Because Germany sank a British ship',
             'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
           ],
         },
@@ -2502,28 +2501,28 @@ const unitData = {
     {
       q: 'In what year did the Franco-Prussian War end?',
       a: '1871',
-      options: ['1871', '1882', '1914', '1890'],
+      options: ['1871', '1890', '1914', '1882'],
       id: 'gw_q1',
     },
     {
       q: 'Which wealthy region did Germany take from France in 1871?',
       a: 'Alsace-Lorraine',
-      options: ['The Rhineland', 'The Sudetenland', 'Alsace-Lorraine', 'The Ruhr Valley'],
+      options: ['The Sudetenland', 'The Rhineland', 'Alsace-Lorraine', 'The Ruhr Valley'],
       id: 'gw_q2',
     },
     {
       q: 'What was the French desire for revenge called?',
       a: 'Revanche',
-      options: ['Weltpolitik', 'Encirclement', 'Pan-Slavism', 'Revanche'],
+      options: ['Pan-Slavism', 'Encirclement', 'Weltpolitik', 'Revanche'],
       id: 'gw_q3',
     },
     {
       q: 'Who was the German Chancellor that unified Germany?',
       a: 'Otto von Bismarck',
       options: [
-        'Kaiser Wilhelm II',
-        'Otto von Bismarck',
         'Count Leo von Caprivi',
+        'Otto von Bismarck',
+        'Kaiser Wilhelm II',
         'Theobald von Bethmann-Hollweg',
       ],
       id: 'gw_q4',
@@ -2532,9 +2531,9 @@ const unitData = {
       q: "What was Bismarck's greatest strategic fear?",
       a: 'A war on two fronts (Encirclement)',
       options: [
-        'A British naval blockade',
-        'A war on two fronts (Encirclement)',
         'An uprising by the working class',
+        'A war on two fronts (Encirclement)',
+        'A British naval blockade',
         'The collapse of Austria-Hungary',
       ],
       id: 'gw_q5',
@@ -2543,9 +2542,9 @@ const unitData = {
       q: 'Which two countries did Bismarck fear would ally against Germany?',
       a: 'France and Russia',
       options: [
-        'Britain and France',
         'Russia and Austria-Hungary',
         'Britain and Russia',
+        'Britain and France',
         'France and Russia',
       ],
       id: 'gw_q6',
@@ -2555,9 +2554,9 @@ const unitData = {
       a: 'The Reinsurance Treaty',
       options: [
         'The Reinsurance Treaty',
-        'The Entente Cordiale',
-        'The Dual Alliance',
         'The Treaty of London',
+        'The Dual Alliance',
+        'The Entente Cordiale',
       ],
       id: 'gw_q7',
     },
@@ -2566,22 +2565,22 @@ const unitData = {
       a: 'Kaiser Wilhelm II',
       options: [
         'Kaiser Wilhelm I',
-        'Archduke Franz Ferdinand',
-        'Kaiser Wilhelm II',
         'Tsar Nicholas II',
+        'Kaiser Wilhelm II',
+        'Archduke Franz Ferdinand',
       ],
       id: 'gw_q8',
     },
     {
       q: "What was Wilhelm II's aggressive global policy called?",
       a: 'Weltpolitik (World Policy)',
-      options: ['Realpolitik', 'Weltpolitik (World Policy)', 'Lebensraum', 'Splendid Isolation'],
+      options: ['Lebensraum', 'Weltpolitik (World Policy)', 'Realpolitik', 'Splendid Isolation'],
       id: 'gw_q9',
     },
     {
       q: "What previous policy of Bismarck's focused on European peace?",
       a: 'Realpolitik',
-      options: ['Weltpolitik (World Policy)', 'Mitteleuropa', 'Realpolitik', 'Pan-Slavism'],
+      options: ['Pan-Slavism', 'Mitteleuropa', 'Realpolitik', 'Weltpolitik (World Policy)'],
       id: 'gw_q10',
     },
     {
@@ -2598,30 +2597,30 @@ const unitData = {
     {
       q: 'In which African country did Wilhelm provoke crises in 1905 and 1911?',
       a: 'Morocco',
-      options: ['Morocco', 'Egypt', 'South Africa', 'Sudan'],
+      options: ['Morocco', 'Sudan', 'Egypt', 'South Africa'],
       id: 'gw_q12',
     },
     {
       q: 'What was the result of the First Moroccan (Tangier) Crisis?',
       a: 'Britain and France grew closer, isolating Germany',
       options: [
-        'Germany gained control of Morocco',
-        'Britain and France grew closer, isolating Germany',
         'The Entente Cordiale was dissolved',
+        'Britain and France grew closer, isolating Germany',
         'Russia declared war on Germany',
+        'Germany gained control of Morocco',
       ],
       id: 'gw_q13',
     },
     {
       q: "What name was given to Germany's aggressive threat of military force?",
       a: 'Gunboat Diplomacy',
-      options: ['Dollar Diplomacy', 'Appeasement', 'Gunboat Diplomacy', 'Risk Theory'],
+      options: ['Dollar Diplomacy', 'Risk Theory', 'Gunboat Diplomacy', 'Appeasement'],
       id: 'gw_q14',
     },
     {
       q: 'What was the name of the German gunboat sent to Agadir in 1911?',
       a: 'SMS Panther',
-      options: ['HMS Dreadnought', 'SMS Emden', 'SMS Bismarck', 'SMS Panther'],
+      options: ['SMS Emden', 'SMS Bismarck', 'HMS Dreadnought', 'SMS Panther'],
       id: 'gw_q15',
     },
     {
@@ -2629,9 +2628,9 @@ const unitData = {
       a: 'The Two-Power Standard',
       options: [
         'The Two-Power Standard',
-        'The Risk Theory',
-        'The Imperial Defense Act',
         'The Continental Commitment',
+        'The Imperial Defense Act',
+        'The Risk Theory',
       ],
       id: 'gw_q16',
     },
@@ -2646,16 +2645,16 @@ const unitData = {
       a: 'It made all older ships obsolete, resetting the naval race',
       options: [
         'It was too expensive to build more than one',
-        'It was easily destroyed by German U-Boats',
-        'It made all older ships obsolete, resetting the naval race',
         'Its guns could not hit moving targets',
+        'It made all older ships obsolete, resetting the naval race',
+        'It was easily destroyed by German U-Boats',
       ],
       id: 'gw_q18',
     },
     {
       q: "What was Britain's traditional foreign policy of avoiding European alliances called?",
       a: 'Splendid Isolation',
-      options: ['The Two-Power Standard', 'Balance of Power', 'Appeasement', 'Splendid Isolation'],
+      options: ['Appeasement', 'The Two-Power Standard', 'Balance of Power', 'Splendid Isolation'],
       id: 'gw_q19',
     },
     {
@@ -2664,15 +2663,15 @@ const unitData = {
       options: [
         'Risk Theory',
         'The Schlieffen Plan',
-        'Weltpolitik',
         'Unrestricted Submarine Warfare',
+        'Weltpolitik',
       ],
       id: 'gw_q20',
     },
     {
       q: "What volatile region was known as the 'Powder Keg of Europe'?",
       a: 'The Balkans',
-      options: ['The Rhineland', 'The Middle East', 'The Balkans', 'The Caucasus'],
+      options: ['The Caucasus', 'The Middle East', 'The Balkans', 'The Rhineland'],
       id: 'gw_q21',
     },
     {
@@ -2680,9 +2679,9 @@ const unitData = {
       a: 'The Austro-Hungarian Empire',
       options: [
         'The Austro-Hungarian Empire',
-        'The Ottoman Empire',
         'The Russian Empire',
         'The British Empire',
+        'The Ottoman Empire',
       ],
       id: 'gw_q22',
     },
@@ -2690,9 +2689,9 @@ const unitData = {
       q: 'Which empire was retreating from the Balkans, leaving a power vacuum?',
       a: 'The Ottoman Empire',
       options: [
-        'The Austro-Hungarian Empire',
         'The Russian Empire',
         'The German Empire',
+        'The Austro-Hungarian Empire',
         'The Ottoman Empire',
       ],
       id: 'gw_q23',
@@ -2700,19 +2699,19 @@ const unitData = {
     {
       q: "Which nation wanted to unite all South Slavs into a 'Greater' nation?",
       a: 'Serbia',
-      options: ['Bosnia', 'Serbia', 'Croatia', 'Bulgaria'],
+      options: ['Bulgaria', 'Serbia', 'Bosnia', 'Croatia'],
       id: 'gw_q24',
     },
     {
       q: 'Which region did Austria-Hungary formally annex in 1908?',
       a: 'Bosnia',
-      options: ['Serbia', 'Romania', 'Bosnia', 'Albania'],
+      options: ['Romania', 'Serbia', 'Bosnia', 'Albania'],
       id: 'gw_q25',
     },
     {
       q: 'Which major power considered itself the protector of the Slavic people?',
       a: 'Russia',
-      options: ['Germany', 'France', 'Britain', 'Russia'],
+      options: ['Germany', 'Britain', 'France', 'Russia'],
       id: 'gw_q26',
     },
     {
@@ -2721,33 +2720,33 @@ const unitData = {
       options: [
         'Emperor Franz Joseph',
         'Archduke Franz Ferdinand',
-        'Kaiser Wilhelm II',
         'Tsar Nicholas II',
+        'Kaiser Wilhelm II',
       ],
       id: 'gw_q27',
     },
     {
       q: 'In which city was the Archduke assassinated?',
       a: 'Sarajevo',
-      options: ['Sarajevo', 'Belgrade', 'Vienna', 'Berlin'],
+      options: ['Sarajevo', 'Berlin', 'Belgrade', 'Vienna'],
       id: 'gw_q28',
     },
     {
       q: 'On what date was the Archduke assassinated?',
       a: 'June 28, 1914',
-      options: ['July 23, 1914', 'August 4, 1914', 'November 11, 1918', 'June 28, 1914'],
+      options: ['August 4, 1914', 'July 23, 1914', 'November 11, 1918', 'June 28, 1914'],
       id: 'gw_q29',
     },
     {
       q: 'Who assassinated the Archduke?',
       a: 'Gavrilo Princip',
-      options: ['Gavrilo Princip', 'Nedeljko Čabrinović', 'Dragutin Dimitrijević', 'Leon Trotsky'],
+      options: ['Gavrilo Princip', 'Leon Trotsky', 'Nedeljko Čabrinović', 'Dragutin Dimitrijević'],
       id: 'gw_q30',
     },
     {
       q: 'What secret Serbian society did the assassin belong to?',
       a: 'The Black Hand',
-      options: ['The White Rose', 'The Black Hand', 'The Young Turks', 'The Bolsheviks'],
+      options: ['The White Rose', 'The Black Hand', 'The Bolsheviks', 'The Young Turks'],
       id: 'gw_q31',
     },
     {
@@ -2755,9 +2754,9 @@ const unitData = {
       a: "The 'Blank Check'",
       options: [
         'The Reinsurance Treaty',
-        'The Entente Cordiale',
-        "The 'Blank Check'",
         'The Ultimatum',
+        "The 'Blank Check'",
+        'The Entente Cordiale',
       ],
       id: 'gw_q32',
     },
@@ -2765,9 +2764,9 @@ const unitData = {
       q: 'What is the month of diplomatic failures after the assassination called?',
       a: 'The July Crisis',
       options: [
-        'The Sarajevo Crisis',
-        'The Balkan Wars',
         'The Blank Check Incident',
+        'The Balkan Wars',
+        'The Sarajevo Crisis',
         'The July Crisis',
       ],
       id: 'gw_q33',
@@ -2786,13 +2785,13 @@ const unitData = {
     {
       q: 'Which country began mobilizing its army to protect Serbia?',
       a: 'Russia',
-      options: ['France', 'Britain', 'Russia', 'Germany'],
+      options: ['Britain', 'Germany', 'Russia', 'France'],
       id: 'gw_q35',
     },
     {
       q: "What was the name of Germany's military strategy for a two-front war?",
       a: 'The Schlieffen Plan',
-      options: ['The Schlieffen Plan', 'The Risk Theory', 'Plan XVII', 'The Bismarck Strategy'],
+      options: ['The Schlieffen Plan', 'Plan XVII', 'The Risk Theory', 'The Bismarck Strategy'],
       id: 'gw_q36',
     },
     {
@@ -2804,7 +2803,7 @@ const unitData = {
     {
       q: 'Which country declared war on Germany due to the invasion of Belgium?',
       a: 'Britain',
-      options: ['Russia', 'Italy', 'Britain', 'The United States'],
+      options: ['Italy', 'The United States', 'Britain', 'Russia'],
       id: 'gw_q38',
     },
     {
@@ -2824,8 +2823,8 @@ const unitData = {
       options: [
         'The Triple Alliance',
         'The Triple Entente',
-        'The Allied Powers',
         'The Grand Alliance',
+        'The Allied Powers',
       ],
       id: 'gw_q40',
     },
@@ -2833,10 +2832,10 @@ const unitData = {
       q: 'What treaty ended the First World War in 1919?',
       a: 'The Treaty of Versailles',
       options: [
-        'The Treaty of Brest-Litovsk',
-        'The Treaty of Versailles',
         'The Treaty of Trianon',
+        'The Treaty of Versailles',
         'The Congress of Vienna',
+        'The Treaty of Brest-Litovsk',
       ],
       id: 'gw_q41',
     },
@@ -2845,40 +2844,40 @@ const unitData = {
       a: 'Article 231 (War Guilt Clause)',
       options: [
         'Article 48',
-        'The Blank Check',
-        'Article 231 (War Guilt Clause)',
         'The Reparations Clause',
+        'Article 231 (War Guilt Clause)',
+        'The Blank Check',
       ],
       id: 'gw_q42',
     },
     {
       q: 'What is the term for a war launched to destroy a rising threat before it gets too strong?',
       a: 'Preventative War',
-      options: ['Total War', 'War of Attrition', 'Proxy War', 'Preventative War'],
+      options: ['Proxy War', 'Total War', 'War of Attrition', 'Preventative War'],
       id: 'gw_q43',
     },
     {
       q: 'Which historian famously argued Germany planned a war of aggression?',
       a: 'Fritz Fischer',
-      options: ['Fritz Fischer', 'Margaret MacMillan', 'A.J.P. Taylor', 'Christopher Clark'],
+      options: ['Fritz Fischer', 'A.J.P. Taylor', 'Margaret MacMillan', 'Christopher Clark'],
       id: 'gw_q44',
     },
     {
       q: 'Which historian argued the nations blundered into war due to rigid alliances?',
       a: 'Margaret MacMillan',
-      options: ['Margaret MacMillan', 'Fritz Fischer', 'Ian Kershaw', 'Richard Evans'],
+      options: ['Margaret MacMillan', 'Richard Evans', 'Ian Kershaw', 'Fritz Fischer'],
       id: 'gw_q45',
     },
     {
       q: "What was the 'quarantine line' of new states created after WWI called?",
       a: 'Cordon Sanitaire',
-      options: ['The Iron Curtain', 'The Maginot Line', 'Cordon Sanitaire', 'Mitteleuropa'],
+      options: ['Mitteleuropa', 'The Maginot Line', 'Cordon Sanitaire', 'The Iron Curtain'],
       id: 'gw_q46',
     },
     {
       q: 'Name one new state created by the Treaty of Versailles.',
       a: 'Poland',
-      options: ['Serbia', 'Poland', 'Bulgaria', 'Romania'],
+      options: ['Romania', 'Poland', 'Bulgaria', 'Serbia'],
       id: 'gw_q47',
     },
     {
@@ -2886,8 +2885,8 @@ const unitData = {
       a: 'The Austro-Hungarian Empire',
       options: [
         'The German Empire',
-        'The British Empire',
         'The Russian Empire',
+        'The British Empire',
         'The Austro-Hungarian Empire',
       ],
       id: 'gw_q48',
@@ -2895,13 +2894,13 @@ const unitData = {
     {
       q: 'What ideological threat did the Allies want to separate from Germany after the war?',
       a: 'Soviet Communism',
-      options: ['Soviet Communism', 'Fascism', 'Anarchism', 'Imperialism'],
+      options: ['Soviet Communism', 'Anarchism', 'Imperialism', 'Fascism'],
       id: 'gw_q49',
     },
     {
       q: 'Which country did Germany invade on 3 August 1914?',
       a: 'Belgium',
-      options: ['France', 'Russia', 'Serbia', 'Belgium'],
+      options: ['Russia', 'France', 'Serbia', 'Belgium'],
       id: 'gw_q50',
     },
   ],

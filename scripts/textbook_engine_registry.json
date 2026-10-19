@@ -1,0 +1,181 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-10-17T20:06:47.800Z",
+  "standards": {
+    "ks4_gcse": "28-Page Master A3 Saddle-Stitch Publication Engine",
+    "ks3": "8-Page or 12-Page A3 Saddle-Stitch Narrative Anthology Engine",
+    "ks2": "8-Page Narrative Reader & Companion Workbook Standard"
+  },
+  "units": {
+    "ks4_gcse": [
+      {
+        "id": "cme_new",
+        "name": "Conflict in the Middle East, c1945–1995",
+        "examBoard": "Pearson Edexcel (Option P5)",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "28-Page Master",
+        "deliverables": {
+          "html": "public/units/cme_new/textbook_UNIFIED.html",
+          "pdf": "public/pdfs/cme_new_textbook_UNIFIED_FINAL.pdf"
+        },
+        "auditStatus": "100% Passed (0px overflow, 97% space utilization)"
+      },
+      {
+        "id": "weimar_nazi_germany",
+        "name": "Weimar and Nazi Germany, 1918–1939",
+        "examBoard": "Pearson Edexcel (Option 31)",
+        "status": "PENDING_MIGRATION",
+        "format": "28-Page Master",
+        "deliverables": {
+          "html": "units/weimar_nazi_germany/textbook_KT1.html",
+          "pdf": null
+        }
+      },
+      {
+        "id": "eee",
+        "name": "Early Elizabethan England, 1558–1588",
+        "examBoard": "Pearson Edexcel (Option B4)",
+        "status": "PENDING_MIGRATION",
+        "format": "28-Page Master",
+        "deliverables": {
+          "html": "units/eee/textbook_KT1.html",
+          "pdf": null
+        }
+      },
+      {
+        "id": "cold_war",
+        "name": "Superpower Relations & the Cold War, 1941–1991",
+        "examBoard": "Pearson Edexcel (Option P4)",
+        "status": "PENDING_MIGRATION",
+        "format": "28-Page Master",
+        "deliverables": {
+          "html": "units/cold_war/textbook.html",
+          "pdf": null
+        }
+      },
+      {
+        "id": "edexcel_medicine",
+        "name": "Medicine Through Time, c1250–present & Western Front",
+        "examBoard": "Pearson Edexcel (Option 11)",
+        "status": "PENDING_MIGRATION",
+        "format": "28-Page Master",
+        "deliverables": {
+          "html": "units/edexcel_medicine/textbook_medieval.html",
+          "pdf": null
+        }
+      },
+      {
+        "id": "usa",
+        "name": "USA, 1954–1975: Conflict at Home and Abroad",
+        "examBoard": "Pearson Edexcel (Option 33)",
+        "status": "PENDING_MIGRATION",
+        "format": "28-Page Master",
+        "deliverables": {
+          "html": "units/usa/textbook_KT1.html",
+          "pdf": null
+        }
+      }
+    ],
+    "ks3": [
+      {
+        "id": "medieval_england",
+        "name": "Medieval England, 1066–1485",
+        "yearGroup": "Year 7",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "8-Page Master Anthology",
+        "deliverables": {
+          "html": "units/medieval_england/textbook.html",
+          "pdf": "public/pdfs/medieval_england_textbook_FINAL_V17.pdf"
+        }
+      },
+      {
+        "id": "great_war_part2",
+        "name": "The Great War, 1914–1919 (Part 2)",
+        "yearGroup": "Year 9",
+        "status": "PILOT_COMPILED",
+        "format": "8-Page Master Anthology",
+        "deliverables": {
+          "html": "units/great_war_part2/textbook.html",
+          "pdf": "public/pdfs/great_war_part2_textbook_FINAL.pdf"
+        }
+      },
+      {
+        "id": "early_modern_world",
+        "name": "Early Modern World & Tudors",
+        "yearGroup": "Year 8",
+        "status": "PENDING_COMPILATION",
+        "format": "8-Page / 12-Page"
+      },
+      {
+        "id": "industrialisation_and_empire",
+        "name": "Industrialisation & Empire, 1750–1901",
+        "yearGroup": "Year 8",
+        "status": "PENDING_COMPILATION",
+        "format": "8-Page / 12-Page"
+      },
+      {
+        "id": "the_shoah",
+        "name": "The Holocaust / The Shoah",
+        "yearGroup": "Year 9",
+        "status": "PENDING_COMPILATION",
+        "format": "8-Page / 12-Page"
+      },
+      {
+        "id": "post_war_britain",
+        "name": "Post-War Britain, 1945–1990s",
+        "yearGroup": "Year 9",
+        "status": "PENDING_COMPILATION",
+        "format": "8-Page / 12-Page"
+      }
+    ],
+    "ks2": [
+      {
+        "id": "ks2_ww2",
+        "name": "The Second World War & The Home Front",
+        "yearGroup": "Year 5",
+        "status": "SCHEME_OF_WORK_AND_FLAGSHIP_LESSONS_VERIFIED",
+        "format": "10-Lesson Modular 'Stick & Solve' A4 Worksheets (Exercise Book Cutline Standard)",
+        "schemeOfWork": "public/units/ks2_ww2/ks2_ww2_scheme_of_work.html",
+        "deliverables": [
+          {
+            "lesson": "Lesson 02: Operation Pied Piper & The British Evacuee Experience",
+            "html": "public/units/ks2_ww2/worksheets/lesson_02_evacuation_worksheet.html",
+            "pdf": "public/pdfs/ks2_ww2/lesson_02_evacuation_worksheet.pdf",
+            "previews": [
+              "public/units/ks2_ww2/worksheets/preview_lesson_02_evacuation_worksheet_p1.png",
+              "public/units/ks2_ww2/worksheets/preview_lesson_02_evacuation_worksheet_p2.png"
+            ]
+          },
+          {
+            "lesson": "Lesson 03: Vera's Journey & The Kindertransport (HET Primary Undercurrent)",
+            "html": "public/units/ks2_ww2/worksheets/lesson_03_kindertransport_worksheet.html",
+            "pdf": "public/pdfs/ks2_ww2/lesson_03_kindertransport_worksheet.pdf",
+            "previews": [
+              "public/units/ks2_ww2/worksheets/preview_lesson_03_kindertransport_worksheet_p1.png",
+              "public/units/ks2_ww2/worksheets/preview_lesson_03_kindertransport_worksheet_p2.png"
+            ]
+          },
+          {
+            "lesson": "Lesson 07: Pre-War Jewish Life & Rights Lost (HET Primary Undercurrent)",
+            "html": "public/units/ks2_ww2/worksheets/lesson_07_prewar_life_worksheet.html",
+            "pdf": "public/pdfs/ks2_ww2/lesson_07_prewar_life_worksheet.pdf",
+            "previews": [
+              "public/units/ks2_ww2/worksheets/preview_lesson_07_prewar_life_worksheet_p1.png",
+              "public/units/ks2_ww2/worksheets/preview_lesson_07_prewar_life_worksheet_p2.png"
+            ]
+          },
+          {
+            "lesson": "Lesson 09: Who Were the Rescuers? Nicholas Winton & Trevor Chadwick (HET Primary Undercurrent)",
+            "html": "public/units/ks2_ww2/worksheets/lesson_09_rescuers_winton_worksheet.html",
+            "pdf": "public/pdfs/ks2_ww2/lesson_09_rescuers_winton_worksheet.pdf",
+            "previews": [
+              "public/units/ks2_ww2/worksheets/preview_lesson_09_rescuers_winton_worksheet_p1.png",
+              "public/units/ks2_ww2/worksheets/preview_lesson_09_rescuers_winton_worksheet_p2.png"
+            ]
+          }
+        ],
+        "auditStatus": "100% Reprographic Compliance: 0px overflow across all pages, 43px footer margin, 190mm x 270mm inner exercise book cutline guide"
+      }
+    ]
+  }
+}
