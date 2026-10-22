@@ -1712,8 +1712,9 @@ const unitData = {
             image: '/images/gw_alliance_map.png',
             is_artwork: false,
             caption:
-              'Map showing the geopolitical division of Europe into the Triple Entente (yellow), Central Powers (pink), and neutral nations (blue).',
-            citation: 'European International Relations Archive, 1914.',
+              'Geopolitical map illustrating the central encirclement of Germany and Austria-Hungary (the Central Powers) by Britain, France, and Russia (the Triple Entente), also noting the subsequent alignment of neighbouring states during the escalation into general European war.',
+            citation:
+              'Historical Cartographic Department Archive (Modern European Geopolitical Series).',
             context:
               'When France and Russia formed an alliance in 1894, Bismarck’s nightmare of a two-front encirclement became reality. When Britain signed ententes with France (1904) and Russia (1907), Germany found itself encircled by three Great Powers.',
             hinge_question:
@@ -1748,12 +1749,12 @@ const unitData = {
             image: '/units/great_war/assets/was_boiling_point.png',
             is_artwork: true,
             caption:
-              'Leonard Raven-Hill, "The Boiling Point" (Punch, October 1912): European Great Power monarchs (Wilhelm II, Franz Joseph, George V, Nicholas II, and the Ottoman Sultan) desperately attempt to sit on the lid of a boiling pot marked "Balkan Troubles".',
+              'Leonard Raven-Hill, "The Boiling Point" (Punch, 2 October 1912): Leaders and national figures of the five European Great Powers—Great Britain (John Bull), Germany (Kaiser Wilhelm II), Russia (Tsar Nicholas II), Austria-Hungary (Emperor Franz Joseph), and France (officer representing the Republic)—desperately struggle to hold down the lid of a cauldron boiling over with "Balkan Troubles".',
             citation: 'Leonard Raven-Hill, Punch Magazine, Vol. CXLIII, 2 October 1912.',
             context:
               'Published during the First Balkan War, this cartoon illustrates contemporary fears that regional ethnic and national rivalries in south-eastern Europe were threatening to boil over and engulf the entire continent.',
             hinge_question:
-              'Why did the cartoonist depict the Great Power monarchs struggling to keep the lid on the pot, rather than creating the fire underneath?',
+              'Why did the cartoonist depict the Great Power leaders struggling to keep the lid on the pot, rather than creating the fire underneath?',
           },
         },
         {
@@ -3635,7 +3636,7 @@ const unitData = {
       lesson_index: 0,
       book_title: 'The Sleepwalkers: How Europe Went to War in 1914',
       author: 'Christopher Clark',
-      cover_image: 'assets/clark_cover.png',
+      cover_image: '/units/great_war/assets/clark_cover.png',
       author_context:
         "Christopher Clark is an acclaimed Australian historian. In 'The Sleepwalkers' (2012), he argues that the outbreak of World War I was not a premeditated crime by one single nation, but a tragic, complex failure of diplomacy where European leaders 'sleepwalked' into disaster without fully understanding the consequences.",
       extract:
@@ -3654,7 +3655,7 @@ const unitData = {
       lesson_index: 1,
       book_title: 'Heart of Darkness',
       author: 'Joseph Conrad',
-      cover_image: 'assets/conrad_cover.png',
+      cover_image: '/units/great_war/assets/conrad_cover.png',
       author_context:
         "Joseph Conrad was a Polish-British author who worked as a sailor for many years. His 1899 novella 'Heart of Darkness' was based on his own horrifying experiences captaining a steamboat on the Congo River. It is a searing critique of the brutality, greed, and moral corruption of European imperialism in Africa.",
       extract:
@@ -3673,7 +3674,7 @@ const unitData = {
       lesson_index: 2,
       book_title: 'The Riddle of the Sands',
       author: 'Erskine Childers',
-      cover_image: 'assets/childers_cover.png',
+      cover_image: '/units/great_war/assets/childers_cover.png',
       author_context:
         "Erskine Childers was a British author and sailor. Published in 1903, 'The Riddle of the Sands' is considered the first modern spy novel. It fueled British paranoia about a surprise German naval invasion, perfectly capturing the intense public anxiety surrounding the Anglo-German naval arms race.",
       extract:
@@ -3692,7 +3693,7 @@ const unitData = {
       lesson_index: 3,
       book_title: 'The Guns of August',
       author: 'Barbara W. Tuchman',
-      cover_image: 'assets/tuchman_cover.png',
+      cover_image: '/units/great_war/assets/tuchman_cover.png',
       author_context:
         "Barbara W. Tuchman was an American historian who won the Pulitzer Prize for 'The Guns of August' (1962). The book masterfully details the political calculations, military plans, and sheer arrogance of the Great Powers in the fateful month of August 1914 as the alliance system dragged them all into war.",
       extract:
@@ -3711,7 +3712,7 @@ const unitData = {
       lesson_index: 4,
       book_title: 'All Quiet on the Western Front',
       author: 'Erich Maria Remarque',
-      cover_image: 'assets/all_quiet_cover.png',
+      cover_image: '/units/great_war/assets/all_quiet_cover.png',
       author_context:
         "Erich Maria Remarque was a German veteran of World War I. His 1929 novel 'All Quiet on the Western Front' became a defining anti-war masterpiece, detailing the extreme physical and mental trauma of the trenches, and the profound disillusionment of a generation. It was so powerful that it was later banned and burned by the Nazi regime.",
       extract:
