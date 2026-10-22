@@ -1551,6 +1551,14 @@ const great_war = {
     },
     {
       id: 'lesson_5',
+      card_image: '/units/great_war/assets/archduke_sarajevo_car_1914.jpg',
+      card_position: 'center 22%',
+      banner: {
+        image: '/units/great_war/assets/archduke_sarajevo_car_1914.jpg',
+        position: 'center 22%',
+        caption:
+          'Archduke Franz Ferdinand and Sophie Duchess of Hohenberg in their open-top motor car in Sarajevo on 28 June 1914, shortly before the fatal shots at the Latin Bridge.',
+      },
       skill: 'Short-Term Causation & The July Crisis: From Sarajevo to World War',
       title: 'Enquiry 5: The July Crisis: Sarajevo to the Outbreak of War (June–August 1914)',
       subtitle:
@@ -1673,7 +1681,7 @@ const great_war = {
             letter: 'A',
             title:
               'Source A (Cartographic & Primary Record): The Fatal Wrong Turn at the Latin Bridge, Sarajevo (28 June 1914)',
-            image: '/units/great_war/assets/july_crisis.svg',
+            image: '/units/great_war/assets/map_sarajevo_route.jpg',
             caption:
               'Forensic street map of Sarajevo showing the route of Archduke Franz Ferdinand’s motorcade along the Appel Quay and the fatal wrong turn outside Schiller’s Delicatessen beside the Latin Bridge.',
             citation: 'Bosnian Archival Primary Record (1914).',

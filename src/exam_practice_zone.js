@@ -390,6 +390,27 @@ export function renderExamPracticeZone(container, unitData, initialQuestion = nu
       </style>
       <div class="epz-wrapper" style="max-width: 900px; margin: 0 auto; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.4); border-radius: 20px; padding: 40px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; position: relative;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1e3a8a; margin-top: 0; margin-bottom: 30px;"><i class="fa-solid fa-pen-nib" style="color: #3b82f6;"></i> Unit Assessments</h2>
+        ${
+          unitData.id === 'great_war' || window.currentUnitId === 'great_war'
+            ? `
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); border-radius: 14px; padding: 24px; color: #ffffff; margin-bottom: 24px; border: 1.5px solid #3b82f6; box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.3);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;">
+            <div>
+              <span style="background: #3b82f6; color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">Featured Formal Assessment</span>
+              <h3 style="margin: 8px 0 6px 0; color: #ffffff; font-size: 1.45rem; font-family: 'Playfair Display', serif;">November Assessment: "Why did war break out in 1914?"</h3>
+              <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 0.92rem; line-height: 1.45; max-width: 650px;">
+                <strong>Sets &amp; Dates:</strong> 9Y: Monday 9th November &bull; 9X: Thursday 12th November [30 mins &bull; 12 marks]<br>
+                <strong>Format:</strong> 3 developed PEEL paragraphs choosing from the 4 key factors. You are permitted 1 single sheet of A4 revision notes (bullet points, mind maps, statistics, and dates only).
+              </p>
+            </div>
+            <button onclick="document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active')); window.renderLessonByIndex(5); (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });" style="padding: 10px 20px; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 0.92rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(37,99,235,0.3); transition: all 0.2s;" onmouseover="this.style.background='#1d4ed8';" onmouseout="this.style.background='#2563eb';">
+              <i class="fa-solid fa-graduation-cap"></i> Launch Assessment Masterclass (Lesson 6) &rarr;
+            </button>
+          </div>
+        </div>
+        `
+            : ''
+        }
         <div style="display: flex; flex-direction: column; gap: 20px;">
     `;
 

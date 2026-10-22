@@ -1407,6 +1407,34 @@ const industrialisation_and_empire = {
       ],
       vocab_cloze_text:
         'Victorian urban expansion was built upon industrial brickyards and mills. In Hampshire, workers produced millions of [Fareham Reds], mixing clay in a heavy [Pug Mill]. Throughout early factories and every northern [Textile Mill], employers relied heavily on cheap [Child Labour] to clean spinning machines. Desperate families took these hazardous jobs to avoid starvation in the dreaded [Workhouse]. Public outrage gradually forced Parliament to pass the [Factory Acts], legally restricting hours for young factory hands.',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=1PmHBqtLFss',
+          title:
+            'Horrific Working Conditions Experienced by Children in the Industrial Revolution | Channel 4',
+          duration: '4 mins 11 secs',
+          teacher_guidance:
+            'Documentary investigation examining the grueling physical reality for parish apprentice children working inside northern cotton mills under dangerous machinery.',
+          viewing_task:
+            "What hazardous tasks were children expected to carry out as 'scavengers' and 'piecers' in textile mills?",
+          model_answer:
+            "Children crawled underneath rapidly moving spinning mules to sweep up loose cotton fibres ('scavengers') or climbed over machinery to tie snapped threads ('piecers'), risking being crushed, losing fingers, or being scalped by unprotected belts and cogs.",
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=KZM-LpIOEBU',
+          title:
+            'The Industrial Revolution: Life of Children at Quarry Bank Mill | Educational Archive',
+          duration: '1 min 26 secs',
+          teacher_guidance:
+            'Case study of Quarry Bank Mill at Styal, illustrating factory bell schedules, apprentice dormitories, and the regimentation of human labour by clock-time.',
+          viewing_task:
+            'How did the factory bell system change the everyday relationship between workers and time during the Industrial Revolution?',
+          model_answer:
+            'Work was no longer governed by daylight or season as on rural farms, but by strict clock-time. The factory bell dictated waking, eating, and 12-to-14 hour shifts with severe fines or physical punishment for arriving minutes late.',
+        },
+      ],
     },
     {
       id: 'lesson_3',
@@ -2004,6 +2032,32 @@ const industrialisation_and_empire = {
       },
       vocab_cloze_text:
         'During the nineteenth century, unmanaged [Urbanisation] turned British towns into crowded, pestilential centers. Factory owners and councils followed a policy of [Laissez-faire], refusing to spend taxes on sewers. Families crammed into back-to-back houses where a single overflowing [Cesspool] contaminated neighborhood drinking pumps. Most doctors subscribed to the [Miasma Theory], leaving cities defenseless against repeated outbreaks of waterborne [Cholera]. Only massive epidemics forced Parliament to pass compulsory legislation for [Public Health].',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=SrrXUN7S_Ys',
+          title: 'Urban Slums: Manchester & Industrial Living Conditions | Timelines.tv',
+          duration: '6 mins 55 secs',
+          teacher_guidance:
+            "Explores the explosive growth of industrial cities like Manchester ('Cottonopolis'), where rapid, unregulated building created cramped, damp back-to-back courts without sanitation.",
+          viewing_task:
+            'Why did life expectancy for working-class families plummet to under 20 years in industrial cities during the early 19th century?',
+          model_answer:
+            'Overcrowding in damp cellar dwellings, lack of clean piped water, open sewage flowing down unpaved streets, cesspools leaking into water supplies, and virulent water-borne cholera and typhus epidemics devastated public health.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=oHhqzoqFqew',
+          title: 'The Growth of Industry & Factory Towns | BBC Bitesize',
+          duration: '4 mins 17 secs',
+          teacher_guidance:
+            'Analyses demographic shifts from countryside to manufacturing hubs and the social cost of rapid, unplanned urban sprawl.',
+          viewing_task:
+            'How did the layout of back-to-back terraced houses contribute to the rapid spread of infectious diseases?',
+          model_answer:
+            'Back-to-back houses shared three exterior walls with adjoining properties, creating zero through-ventilation, dark damp interiors, and forcing up to a hundred residents to share a single privy cesspit located in a narrow communal courtyard.',
+        },
+      ],
     },
     {
       id: 'lesson_4',
@@ -3818,6 +3872,32 @@ const industrialisation_and_empire = {
       },
       vocab_cloze_text:
         "Working-class Britons repeatedly fought for democratic rights during the nineteenth century. In 1819, magistrates unleashed cavalry on peaceful reform protesters in the infamous [Peterloo Massacre]. Workers organizing early unions faced severe state repression, demonstrated when the [Tolpuddle Martyrs] were sentenced to penal [Transportation] to Australia in 1834. In response, activists launched [Chartism], publishing the celebrated [People's Charter] in 1838 to demand the vote for all men and expand the parliamentary [Franchise].",
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=pyMOo52H05E',
+          title: 'The Peterloo Massacre (1819) | Timelines.tv',
+          duration: '6 mins 31 secs',
+          teacher_guidance:
+            "Detailed examination of 16 August 1819 at St Peter's Field, Manchester, where 60,000 unarmed working-class demonstrators gathered to demand parliamentary reform before being charged by the yeomanry cavalry.",
+          viewing_task:
+            "Why did magistrates order the cavalry to charge the crowd at St Peter's Field, and why was the event mockingly named 'Peterloo'?",
+          model_answer:
+            "Magistrates feared the massive, peaceful gathering was a prelude to violent revolution and ordered the Manchester Yeomanry to arrest orator Henry Hunt. The cavalry drew sabres and charged into the dense crowd, killing 18 and injuring hundreds. The press coined the name 'Peterloo' in bitter contrast to the soldiers' heroics at the Battle of Waterloo.",
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=mWucd5tXlqY',
+          title: 'The Chartists (1838–1848) | Timelines.tv History of Britain',
+          duration: '9 mins 35 secs',
+          teacher_guidance:
+            "Charts the rise of the Chartist movement, the drafting of the People's Charter, and the massive monster petitions delivered to Parliament.",
+          viewing_task:
+            "What were two key demands of the People's Charter, and how did Parliament initially respond to the million-signature petition?",
+          model_answer:
+            'The Charter demanded universal male suffrage, secret ballots to prevent landlord intimidation, and the abolition of property qualifications so working-class men could become MPs. Parliament overwhelmingly rejected the petition by 235 votes to 46, sparking waves of strikes and civil unrest.',
+        },
+      ],
     },
     {
       id: 'lesson_7',
@@ -4429,6 +4509,32 @@ const industrialisation_and_empire = {
       },
       vocab_cloze_text:
         "Before 1832, Britain's electoral map was notoriously corrupt: depopulated rural areas existed as a [Rotten Borough], while huge manufacturing cities like Birmingham had no MPs. After massive civil unrest, Parliament passed the [Great Reform Act 1832], disenfranchising corrupt towns and creating new urban [Constituency] seats. The law expanded the [Franchise] to middle-class property owners, though working men remained excluded. Full working-class male [Suffrage] developed gradually over the century, bolstered in 1872 by the introduction of the [Secret Ballot].",
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=7geGIkPy5q0',
+          title: 'What was the Great Reform Act 1832? | Parliamentary Archives | History Hub',
+          duration: '2 mins 30 secs',
+          teacher_guidance:
+            "Explains how the 1832 Act abolished 'rotten boroughs' like Old Sarum and Dunwich while granting parliamentary representation to burgeoning industrial powerhouses like Manchester and Birmingham.",
+          viewing_task:
+            "What were 'rotten boroughs', and how did the Great Reform Act of 1832 begin to rebalance parliamentary power?",
+          model_answer:
+            "'Rotten boroughs' were depopulated settlements (such as Old Sarum with only 7 voters) that sent two MPs to Parliament, while industrial cities of 200,000 people had no representation. The 1832 Act disenfranchised 56 rotten boroughs and created new seats for northern industrial towns, extending the vote to wealthier middle-class men.",
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=3K2oMqYEGdY',
+          title: 'Elections & Voting Explained | UK Parliament',
+          duration: '1 min 35 secs',
+          teacher_guidance:
+            'Concise parliamentary explainer on the evolution from open public hustings voting to the Ballot Act 1872 and progressive widening of the franchise.',
+          viewing_task:
+            'Why was the introduction of the secret ballot in 1872 vital for protecting working-class voters?',
+          model_answer:
+            'Prior to 1872, votes were cast verbally on an open wooden stage (hustings), allowing landlords, employers, and factory bosses to fire or evict tenants who voted against their wishes. The secret ballot enabled voters to choose freely without intimidation or bribery.',
+        },
+      ],
     },
     {
       id: 'lesson_8',

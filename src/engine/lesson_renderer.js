@@ -154,140 +154,101 @@ if (typeof window !== 'undefined') {
 }
 
 export function getFallbackDiscussionIdeas(qText, sourceObj = {}) {
-  const qLower = (qText || '').toLowerCase();
-  const titleLower = (sourceObj.title || sourceObj.caption || '').toLowerCase();
-
-  if (qLower.includes('gas mask') || titleLower.includes('gas mask')) {
-    return [
-      'Muscle Memory & Preparedness: Routine drills trained children to fit their respirators within seconds without panic in the event of a deadly poison gas attack.',
-      'Sensory & Physical Discomfort: The rubber felt hot, sticky, and smelled strongly of disinfectant and charcoal; eyepieces misted up and voices sounded muffled and distant.',
-      'Normalising Wartime Disruption: Practising while sitting at neat wooden desks showed how wartime dangers quickly became part of ordinary daily childhood routines.',
-    ];
-  }
-  if (
-    qLower.includes('luggage label') ||
-    qLower.includes('label') ||
-    titleLower.includes('label')
-  ) {
-    return [
-      "Instant Visual Identification: In chaotic railway stations and village halls, billeting officers needed to read a child's name, home town, and destination at a single glance without opening bags.",
-      'Young Children & Lost Luggage: Many evacuees were toddlers aged 3 to 5 who could not spell their names or remember addresses, and suitcases frequently went missing on trains.',
-      'Systematic Billeting: Labels allowed officials in host towns to tick children off arrival manifests and match them systematically with local foster families.',
-    ];
-  }
-  if (
-    qLower.includes('kindertransport') ||
-    qLower.includes('gangway') ||
-    qLower.includes('identity card')
-  ) {
-    return [
-      'Administrative Tracking & Welfare: Numbered cardboard tags matched children to British sponsor guarantees, foster records, and medical files to ensure no refugee went missing.',
-      'Heartbreaking Separation: Children felt terrified, confused, and heartbroken after saying farewell to parents at continental railway stations, often never knowing if they would see them again.',
-      'Language & Culture Shock: Arriving in a foreign port surrounded by adults speaking only English caused intense loneliness, mixed with relief at reaching physical safety.',
-    ];
-  }
-  if (
-    qLower.includes('anderson shelter') ||
-    qLower.includes('shelter') ||
-    titleLower.includes('anderson shelter')
-  ) {
-    return [
-      'Essential Warmth & Survival: Families needed heavy woollen blankets, overcoats, gas masks, a torch or candles with matches, and flasks of hot tea or water.',
-      'Emotional Distraction: Favourite teddy bears, comics, reading books, playing cards, or a portable wireless radio helped children cope with the terrifying screech and blast of bombs.',
-      'Harsh Shelter Realities: Half-buried in cold, wet garden soil, Anderson shelters frequently flooded with puddle water, making thick rugs and hot water bottles crucial.',
-    ];
-  }
-  if (
-    qLower.includes('dig for victory') ||
-    qLower.includes('garden') ||
-    titleLower.includes('dig for victory')
-  ) {
-    return [
-      'Empowering Young Citizens: It demonstrated to children that even though they were too young to fight, digging, weeding, and watering vegetables was a vital way they could help Britain win.',
-      'Encouraging Family Co-operation: Cheerful images of children made food production feel like a shared, rewarding family adventure rather than an exhausting chore.',
-      "Protecting Atlantic Merchant Sailors: Growing food at home saved valuable cargo ship space and directly reduced Britain's reliance on merchant convoys targeted by German U-boats.",
-    ];
-  }
-  if (
-    qLower.includes('land girls') ||
-    qLower.includes('farms') ||
-    titleLower.includes('land girls')
-  ) {
-    return [
-      'Practical Uniforms for Hard Manual Work: Heavy corduroy breeches, knitted green jerseys, and sturdy boots show the physical demands of farming through winter mud and summer heat.',
-      'Comradeship & Shared Meals: Sitting together under a shady tree sharing sandwiches highlights the close friendships, team spirit, and high morale of Land Army volunteers.',
-      'Vital Domestic Food Production: The expansive harvest fields and farm tools in the background emphasize the immense physical effort required to prevent Britain from being starved into surrender.',
-    ];
-  }
-  if (
-    qLower.includes('football team') ||
-    (qLower.includes('boys') && qLower.includes('religion')) ||
-    titleLower.includes('football team')
-  ) {
-    return [
-      'Universal Childhood Passions: They look like any proud, happy school sports team—wearing striped shirts, smiling, and celebrating together with arms around each other.',
-      "Invisible Faith & Heritage: You cannot tell a person's religion, culture, or background simply by looking at them; they were regular German schoolchildren who loved football.",
-      'Humanising Historical Reality: This photograph proves that before discriminatory Nazi laws took away their rights, Jewish families lived completely normal, integrated lives in their communities.',
-    ];
-  }
-  if (
-    qLower.includes('school ban') ||
-    qLower.includes('no longer go to school') ||
-    titleLower.includes('school ban')
-  ) {
-    return [
-      'Confusion & Injustice: Children felt deeply bewildered and hurt because they had broken no rules, yet were punished and excluded simply because of their identity.',
-      'Isolation from Friends: Being banned from state schools cut children off from classmates, teachers, and playgrounds, creating acute feelings of loneliness and rejection.',
-      "Loss of Safety & Routine: School provided a stable, predictable daily routine; losing it shattered children's sense of security and made the future feel threatening.",
-    ];
-  }
-  if (qLower.includes('enigma') || titleLower.includes('enigma')) {
-    return [
-      'Astronomical Mathematical Possibilities: With three rotating wheels, 26 positions each, and front plugboard cables, Enigma generated over 158 quintillion (158 million million million) possible settings.',
-      'Daily Midnight Setting Changes: German code clerks reset the wheel combinations, ring settings, and plug connections every 24 hours, completely resetting the code puzzle every midnight.',
-      'Stepped Mechanical Scrambling: Each keypress caused the rotors to step forward, so typing the same letter twice produced two completely different scrambled output letters.',
-    ];
-  }
-  if (
-    qLower.includes('bombe') ||
-    titleLower.includes('bombe') ||
-    qLower.includes('defeat another machine')
-  ) {
-    return [
-      'Human Physical Limitations: Human mathematicians would have taken weeks or months to test potential wheel settings by hand; by then, military orders were already carried out.',
-      "High-Speed Electrical Elimination: Turing and Welchman's electromechanical Bombe tested thousands of letter combinations every second, rapidly discarding impossible contradictions.",
-      'Pioneering Modern Computing: Alan Turing understood that only a machine operating with pure mathematical logic could defeat another machine, laying the foundation for modern computers.',
-    ];
-  }
-  if (
-    qLower.includes('qualities make someone a rescuer') ||
-    titleLower.includes('winton with a rescued child')
-  ) {
-    return [
-      'Moral Courage & Conscience: A rescuer acts on personal conscience, believing that saving innocent lives in danger takes priority over personal convenience, comfort, or official red tape.',
-      'Practical Determination: Rather than just feeling sympathy, Winton and Chadwick took concrete action—setting up desks in Prague, raising £50 guarantees, and securing visas.',
-      'Humility & Selflessness: True heroes rarely boast; Winton regarded saving 669 children as ordinary human decency and returned quietly to normal life without seeking fame or medals.',
-    ];
-  }
-  if (qLower.includes('scrapbook') || titleLower.includes('scrapbook')) {
-    return [
-      'Official Proof for Border Authorities: Detailed index cards with names, birth dates, and photos were vital to satisfy British immigration officials and obtain entry permits.',
-      "Preserving True Roots & Identities: Scrapbook entries protected children's real identities and heritage, ensuring they would not forget who their families were.",
-      'Lifesaving Historical Evidence: Fifty years later, this single scrapbook was the only surviving proof that allowed hundreds of rescued adults to discover who had saved their lives.',
-    ];
-  }
-  if (
-    qLower.includes('ve day') ||
-    qLower.includes('street party') ||
-    titleLower.includes('ve day')
-  ) {
-    return [
-      'Overwhelming Joy & Relief: Communities celebrated the end of nearly six years of terrifying night raids, wailing sirens, blackouts, and the daily fear of sudden death.',
-      'Heartbreaking Personal Grief: Amid the street dancing, union jacks, and music, many families quietly wept for fathers, brothers, and sons who had died and would never return.',
-      'The Daunting Reality of Rebuilding: Cities lay in ruins, food rationing would continue for years, and families faced the exhausting challenge of rebuilding shattered lives.',
-    ];
-  }
+  // Quality gate: keyword guessing is disabled to prevent generic, mismatched answers.
+  // All exemplar answers must be bespoke and explicitly authored on source.discussion_ideas.
   return null;
+}
+
+export function getArchivalSourceDiscussionComponents(
+  questionText,
+  sourceObj = {},
+  isKs2 = false,
+  marginTop = '10px',
+) {
+  let effectiveQ = questionText;
+  if (!effectiveQ && sourceObj) {
+    effectiveQ = sourceObj.hinge_question || sourceObj.question || sourceObj.source_question;
+    if (
+      !effectiveQ &&
+      sourceObj.source_context &&
+      sourceObj.source_context.includes('Hinge Question:')
+    ) {
+      const parts = sourceObj.source_context.split(/\*{0,2}Hinge Question:\*{0,2}/i);
+      if (parts[1]) effectiveQ = parts[1].trim();
+    }
+  }
+  if (!effectiveQ) return { promptHtml: '', panelHtml: '', discussId: '' };
+  const cleanQ = cleanQuestionText(effectiveQ);
+  const formattedQ =
+    typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQ) : cleanQ;
+
+  let ideas = sourceObj
+    ? sourceObj.discussion_ideas ||
+      sourceObj.example_answers ||
+      sourceObj.exemplar_answers ||
+      (sourceObj.model_answer
+        ? Array.isArray(sourceObj.model_answer)
+          ? sourceObj.model_answer
+          : [sourceObj.model_answer]
+        : null)
+    : null;
+  if (!ideas || !Array.isArray(ideas) || ideas.length === 0) {
+    ideas = getFallbackDiscussionIdeas(cleanQ, sourceObj);
+  }
+
+  const hasIdeas = Array.isArray(ideas) && ideas.length > 0;
+  const isSingle = hasIdeas && ideas.length === 1;
+  const discussId = 'think-discuss-' + Math.random().toString(36).substring(2, 9);
+
+  const showBtnLabel = isSingle ? 'Example Answer' : 'Example Answers';
+  const hideBtnLabel = isSingle ? 'Hide Example' : 'Hide Examples';
+  const panelHeader = isSingle
+    ? 'Exemplar Model Answer:'
+    : 'Exemplar Discussion Points &amp; Angles:';
+
+  const promptHtml = `
+    <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 6px; margin-top: ${marginTop}; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06); width: 100%; box-sizing: border-box;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;">
+        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600; display: flex; align-items: flex-start; gap: 9px; flex: 1;">
+          <span style="font-size: 1.15rem; line-height: 1.25; flex-shrink: 0;" title="Discussion Prompt">💭</span>
+          <span>${formattedQ}</span>
+        </div>
+        ${
+          hasIdeas
+            ? `
+          <button type="button" class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-clue btn-think-discuss-toggle" data-action="toggle-think-discuss" data-target-id="${discussId}" onclick="if(window.toggleThinkDiscuss){window.toggleThinkDiscuss(this, '${discussId}');}event.stopPropagation();" title="Click to reveal exemplar discussion points for the class" style="padding: 5px 10px; font-size: 0.78rem; text-transform: none; border-radius: 5px; display: inline-flex; align-items: center; justify-content: center; width: 140px; min-width: 140px; gap: 6px; font-weight: 700; cursor: pointer; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.1); flex-shrink: 0; white-space: nowrap; margin-top: 1px; box-sizing: border-box;">
+            <i class="fa-solid fa-lightbulb"></i> <span class="toggle-label" data-show-text="${showBtnLabel}" data-hide-text="${hideBtnLabel}">${showBtnLabel}</span>
+          </button>
+        `
+            : ''
+        }
+      </div>
+    </div>
+  `;
+
+  const panelHtml = hasIdeas
+    ? `
+    <div id="${discussId}" class="think-discuss-exemplar-panel" style="display: none; margin-top: 14px; padding: 14px 18px; background: #ffffff; border: 1.5px solid #bfdbfe; border-radius: 6px; box-shadow: 0 2px 8px rgba(30, 64, 175, 0.08); width: 100%; box-sizing: border-box;">
+      <div style="font-size: 0.74rem; font-weight: 800; color: #1e40af; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #e0f2fe; padding-bottom: 6px;">
+        <i class="fa-solid fa-graduation-cap" style="color: #2563eb; font-size: 0.85rem;"></i> ${panelHeader}
+      </div>
+      <div style="display: ${isSingle ? 'block' : 'grid'}; ${isSingle ? '' : 'grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 12px;'}">
+        ${ideas
+          .map(
+            (idea, idx) => `
+          <div style="display: flex; gap: 9px; align-items: flex-start; font-size: 0.90rem; color: #1e293b; line-height: 1.45; background: #f8fafc; padding: 10px 13px; border-radius: 5px; border-left: 3.5px solid #3b82f6;">
+            <span style="font-weight: 800; color: #1d4ed8; font-size: 0.72rem; background: #dbeafe; padding: 2px 6px; border-radius: 3px; flex-shrink: 0; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.03em;">${isSingle ? 'Model Answer' : `Point ${idx + 1}`}</span>
+            <span style="font-weight: 500;">${idea}</span>
+          </div>
+        `,
+          )
+          .join('')}
+      </div>
+    </div>
+  `
+    : '';
+
+  return { promptHtml, panelHtml, discussId };
 }
 
 export function renderArchivalSourceDiscussionBox(
@@ -296,63 +257,17 @@ export function renderArchivalSourceDiscussionBox(
   isKs2 = false,
   marginTop = '14px',
 ) {
-  if (!questionText) return '';
-  const cleanQ = cleanQuestionText(questionText);
-  const formattedQ =
-    typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQ) : cleanQ;
-
-  let ideas = sourceObj
-    ? sourceObj.discussion_ideas || sourceObj.example_answers || sourceObj.exemplar_answers
-    : null;
-  if (!ideas || !Array.isArray(ideas) || ideas.length === 0) {
-    ideas = getFallbackDiscussionIdeas(cleanQ, sourceObj);
-  }
-
-  const hasIdeas = Array.isArray(ideas) && ideas.length > 0;
-  const discussId = 'think-discuss-' + Math.random().toString(36).substring(2, 9);
-
+  const { promptHtml, panelHtml } = getArchivalSourceDiscussionComponents(
+    questionText,
+    sourceObj,
+    isKs2,
+    marginTop,
+  );
+  if (!promptHtml) return '';
   return `
-    <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 13px 16px; border-radius: 6px; margin-top: ${marginTop}; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 6px;">
-        <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-          <span style="font-size: 0.95rem;">💭</span> ${isKs2 ? 'Think & Discuss' : 'Hinge Discussion Prompt'}
-        </div>
-        ${
-          hasIdeas
-            ? `
-          <button type="button" class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-clue btn-think-discuss-toggle" data-action="toggle-think-discuss" data-target-id="${discussId}" onclick="if(window.toggleThinkDiscuss){window.toggleThinkDiscuss(this, '${discussId}');}event.stopPropagation();" title="Click to reveal exemplar discussion points for the class" style="padding: 4px 10px; font-size: 0.76rem; text-transform: none; border-radius: 5px; display: inline-flex; align-items: center; gap: 5px; font-weight: 700; cursor: pointer; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-            <i class="fa-solid fa-lightbulb"></i> <span class="toggle-label" data-show-text="Example Answers" data-hide-text="Hide Examples">Example Answers</span>
-          </button>
-        `
-            : ''
-        }
-      </div>
-      <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
-        ${formattedQ}
-      </div>
-      ${
-        hasIdeas
-          ? `
-        <div id="${discussId}" class="think-discuss-exemplar-panel" style="display: none; margin-top: 12px; padding: 12px 14px; background: #ffffff; border: 1.5px solid #bfdbfe; border-radius: 6px; box-shadow: 0 2px 8px rgba(30, 64, 175, 0.08);">
-          <div style="font-size: 0.74rem; font-weight: 800; color: #1e40af; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #e0f2fe; padding-bottom: 5px;">
-            <i class="fa-solid fa-graduation-cap" style="color: #2563eb; font-size: 0.85rem;"></i> Teacher Discussion Guide &bull; Exemplar Points &amp; Angles:
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 7px;">
-            ${ideas
-              .map(
-                (idea, idx) => `
-              <div style="display: flex; gap: 9px; align-items: flex-start; font-size: 0.90rem; color: #1e293b; line-height: 1.45; background: #f8fafc; padding: 8px 11px; border-radius: 5px; border-left: 3.5px solid #3b82f6;">
-                <span style="font-weight: 800; color: #1d4ed8; font-size: 0.72rem; background: #dbeafe; padding: 2px 6px; border-radius: 3px; flex-shrink: 0; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.03em;">Idea ${idx + 1}</span>
-                <span style="font-weight: 500;">${idea}</span>
-              </div>
-            `,
-              )
-              .join('')}
-          </div>
-        </div>
-      `
-          : ''
-      }
+    <div style="width: 100%; box-sizing: border-box;">
+      ${promptHtml}
+      ${panelHtml}
     </div>
   `;
 }
@@ -570,6 +485,66 @@ function getRetrievalStarterActions(lesson, currentUnitId) {
       <i class="fa-solid fa-circle-question" style="color: #fde047;"></i>
       Jump to Unit Quizzing
     </button>
+  `;
+}
+
+function renderDoNowHeaderWithTimerHTML({
+  timerId = 'donow-timer',
+  title = 'Do Now Tasks',
+  badgeText = 'Prior Knowledge',
+  icon = 'fa-solid fa-list-check',
+  showRevealAll = true,
+}) {
+  return `
+    <div class="donow-streamlined-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px;">
+      <!-- Title & Pedagogical Badge -->
+      <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+        <span style="font-weight: 800; font-size: 0.94rem; color: #0f172a; display: flex; align-items: center; gap: 7px;">
+          <i class="${icon}" style="color: #0284c7;"></i> ${title}
+        </span>
+        ${badgeText ? `<span style="font-size: 0.68rem; font-weight: 700; color: #475569; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 1.5px 7px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.4px;">${badgeText}</span>` : ''}
+      </div>
+
+      <!-- Discreet Inline Stopwatch Timer -->
+      <div class="donow-inline-timer-bar" id="${timerId}-bar" style="display: inline-flex; align-items: center; gap: 5px; background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 20px; padding: 2.5px 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+        <i class="fa-solid fa-stopwatch" style="color: #0284c7; font-size: 0.85rem; margin-left: 2px;"></i>
+        <span id="${timerId}-display" style="font-size: 0.95rem; font-weight: 800; font-family: 'Courier New', monospace; color: #0f172a; min-width: 44px; text-align: center;">05:00</span>
+        <span id="${timerId}-summary-badge" style="display: none;">05:00</span>
+        <span id="${timerId}-mode-pill" style="display: none;">5 Mins</span>
+        
+        <div id="${timerId}-presets" style="display: inline-flex; align-items: center; gap: 3px;">
+          <button type="button" class="btn-timer-pill" data-sec="180" onclick="event.stopPropagation(); window.setDoNowTimerPreset('${timerId}', 180);" style="padding: 1px 6px; font-size: 0.7rem; font-weight: 700; border-radius: 10px; border: 1px solid #cbd5e1; background: #ffffff; color: #475569; cursor: pointer;" title="3 minutes">3m</button>
+          <button type="button" class="btn-timer-pill active-preset" data-sec="300" onclick="event.stopPropagation(); window.setDoNowTimerPreset('${timerId}', 300);" style="padding: 1px 6px; font-size: 0.7rem; font-weight: 700; border-radius: 10px; border: 1.2px solid #0284c7; background: #e0f2fe; color: #0284c7; cursor: pointer;" title="5 minutes">5m</button>
+        </div>
+
+        <button type="button" class="btn-timer-ctl" id="${timerId}-start-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'start');" style="padding: 2px 8px; font-weight: 700; font-size: 0.73rem; border-radius: 12px; cursor: pointer; background: #0284c7; color: #ffffff; border: none; display: inline-flex; align-items: center; gap: 3px;" title="Start countdown">
+          <i class="fa-solid fa-play" style="font-size: 0.6rem;"></i> Start
+        </button>
+        <button type="button" class="btn-timer-ctl" id="${timerId}-pause-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'pause');" style="padding: 2px 8px; font-weight: 700; font-size: 0.73rem; border-radius: 12px; cursor: pointer; background: #f59e0b; color: #ffffff; border: none; display: none; align-items: center; gap: 3px;" title="Pause countdown">
+          <i class="fa-solid fa-pause" style="font-size: 0.6rem;"></i> Pause
+        </button>
+        <button type="button" id="${timerId}-reset-btn" onclick="event.stopPropagation(); window.toggleDoNowTimer('${timerId}', 'reset');" style="padding: 2px 5px; font-size: 0.72rem; color: #64748b; background: transparent; border: none; cursor: pointer;" title="Reset timer">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+        <button type="button" id="${timerId}-sound-btn" onclick="event.stopPropagation(); window.toggleDoNowTimerSound('${timerId}');" style="padding: 2px 5px; font-size: 0.72rem; color: #64748b; background: transparent; border: none; cursor: pointer;" title="Toggle audio chime">
+          <i class="fa-solid fa-bell-slash" id="${timerId}-sound-icon"></i>
+        </button>
+      </div>
+
+      <!-- Action (Reveal All) -->
+      ${
+        showRevealAll
+          ? `
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <button class="btn btn-secondary btn-sm" data-action="toggle-all-answers" onclick="if(window.toggleAllAnswers){window.toggleAllAnswers(this);}event.stopPropagation();" style="font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 6px; border: 1px solid #cbd5e1; background: #ffffff; color: #334155; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-eye" style="color: #0284c7; font-size: 0.72rem;"></i>
+            <span>Reveal All Answers</span>
+          </button>
+        </div>
+      `
+          : ''
+      }
+    </div>
   `;
 }
 
@@ -1188,6 +1163,50 @@ if (typeof window !== 'undefined' && !window.toggleSingleEvidence) {
       btn.style.background = '#ecfdf5';
       btn.style.borderColor = '#6ee7b7';
       btn.style.color = '#065f46';
+    }
+  };
+
+  window.toggleBbsMask = function (btn) {
+    const taskBox = btn.closest('.because-but-so-interactive');
+    if (!taskBox) return;
+    const isRevealing = !btn.classList.contains('is-all-revealed');
+    const models = taskBox.querySelectorAll('.bbs-model-box');
+
+    models.forEach(function (el) {
+      el.style.display = isRevealing ? 'block' : 'none';
+    });
+
+    const singleBtns = taskBox.querySelectorAll('.btn-single-bbs-model span');
+    singleBtns.forEach(function (s) {
+      s.textContent = isRevealing ? 'Hide Model' : 'Model Stem';
+    });
+
+    if (isRevealing) {
+      btn.classList.add('is-all-revealed');
+      btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> <span>Mask Whiteboard Models</span>';
+      btn.style.background = '#fef2f2';
+      btn.style.borderColor = '#fca5a5';
+      btn.style.color = '#991b1b';
+    } else {
+      btn.classList.remove('is-all-revealed');
+      btn.innerHTML =
+        '<i class="fa-solid fa-chalkboard-user"></i> <span>Teacher Whiteboard Key</span>';
+      btn.style.background = '#eef2ff';
+      btn.style.borderColor = '#c7d2fe';
+      btn.style.color = '#4338ca';
+    }
+  };
+
+  window.toggleSingleBbsModel = function (btn) {
+    const card = btn.closest('.bbs-card');
+    if (!card) return;
+    const model = card.querySelector('.bbs-model-box');
+    if (!model) return;
+    const isHidden = model.style.display === 'none' || !model.style.display;
+    model.style.display = isHidden ? 'block' : 'none';
+    const span = btn.querySelector('span');
+    if (span) {
+      span.textContent = isHidden ? 'Hide Model' : 'Model Stem';
     }
   };
 }
@@ -2192,10 +2211,9 @@ function renderLessonVideos(videos, lesson, unitId) {
       taskPanelsHtml += `
         <div id="video-task-content-${safeLessonId}-${idx}" class="video-task-item-content" style="display: none;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
-            <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-crosshairs" style="color: #d97706;"></i>
-              <span>Active Viewing Protocol &bull; ${cleanTitle}</span>
-              ${vid.duration ? `<span style="font-size: 0.72rem; color: #64748b; font-weight: 600;">[${vid.duration}]</span>` : ''}
+            <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+              <span>${cleanTitle}</span>
+              ${vid.duration ? `<span style="font-size: 0.72rem; color: #64748b; font-weight: 600; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">${vid.duration}</span>` : ''}
             </div>
             <button type="button" style="background: none; border: none; font-size: 0.82rem; color: #64748b; cursor: pointer; padding: 2px 6px;" onclick="window.toggleVideoTaskDrawer('${safeLessonId}', ${idx}, event)">
               <i class="fa-solid fa-xmark"></i> Close
@@ -2206,17 +2224,12 @@ function renderLessonVideos(videos, lesson, unitId) {
             ${
               pathwayInfo.guidance
                 ? `
-              <div class="video-teacher-guidance-box" style="background: #ffffff; border-left: 3px solid #6366f1; padding: 8px 12px; border-radius: 0 5px 5px 0; border: 1px solid #e2e8f0; border-left-width: 3px; display: flex; align-items: flex-start; gap: 8px;">
-                <div style="color: #4f46e5; font-size: 0.88rem; margin-top: 2px; flex-shrink: 0;">
-                  <i class="fa-solid fa-chalkboard-user"></i>
+              <div class="video-teacher-guidance-box" style="background: #ffffff; border-left: 3px solid #6366f1; padding: 8px 12px; border-radius: 0 5px 5px 0; border: 1px solid #e2e8f0; border-left-width: 3px;">
+                <div style="font-size: 0.70rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">
+                  Teacher Guidance:
                 </div>
-                <div>
-                  <div style="font-size: 0.70rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
-                    Teacher Pathway Guidance:
-                  </div>
-                  <div style="font-size: 0.84rem; color: #334155; line-height: 1.45;">
-                    ${formatBold(pathwayInfo.guidance)}
-                  </div>
+                <div style="font-size: 0.84rem; color: #334155; line-height: 1.45;">
+                  ${formatBold(pathwayInfo.guidance)}
                 </div>
               </div>
             `
@@ -2226,17 +2239,12 @@ function renderLessonVideos(videos, lesson, unitId) {
             ${
               vid.viewing_task
                 ? `
-              <div class="video-viewing-task-box" style="background: #ffffff; border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 0 5px 5px 0; border: 1px solid #fed7aa; border-left-width: 3px; display: flex; align-items: flex-start; gap: 8px;">
-                <div style="color: #d97706; font-size: 0.88rem; margin-top: 2px; flex-shrink: 0;">
-                  <i class="fa-solid fa-bullseye"></i>
+              <div class="video-viewing-task-box" style="background: #ffffff; border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 0 5px 5px 0; border: 1px solid #fed7aa; border-left-width: 3px;">
+                <div style="font-size: 0.70rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">
+                  Viewing Question:
                 </div>
-                <div>
-                  <div style="font-size: 0.70rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
-                    Active Viewing Task:
-                  </div>
-                  <div style="font-size: 0.85rem; color: #92400e; line-height: 1.45;">
-                    ${formatBold(vid.viewing_task)}
-                  </div>
+                <div style="font-size: 0.85rem; color: #92400e; line-height: 1.45;">
+                  ${formatBold(vid.viewing_task)}
                 </div>
               </div>
             `
@@ -2249,7 +2257,7 @@ function renderLessonVideos(videos, lesson, unitId) {
               ? `
             <details class="video-model-details" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden; margin-top: 8px;">
               <summary style="cursor: pointer; padding: 6px 12px; font-size: 0.80rem; color: #166534; font-weight: 700; user-select: none; display: flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-key" style="color: #16a34a;"></i> Reveal Viewing Task Model Notes
+                <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Reveal Model Answer
               </summary>
               <div style="padding: 10px 14px; font-size: 0.86rem; color: #14532d; line-height: 1.55; border-top: 1px solid #bbf7d0; background: #ffffff;">
                 ${formatBold(vid.model_answer)}
@@ -2291,6 +2299,180 @@ function renderLessonVideos(videos, lesson, unitId) {
       `
           : ''
       }
+    </div>
+  `;
+}
+
+export function renderLessonLaunchpad({
+  lesson,
+  unitId,
+  videos = [],
+  htmlVideo = '',
+  htmlDoNowInner = '',
+  htmlVocabInner = '',
+  htmlSpineInner = '',
+  defaultTab = '',
+}) {
+  const tabs = [];
+
+  // 1. Do Now Starter Tab
+  const hasDoNow = Boolean(
+    (lesson &&
+      lesson.do_now &&
+      ((lesson.do_now.items && lesson.do_now.items.length > 0) ||
+        (lesson.do_now.questions && lesson.do_now.questions.length > 0) ||
+        (lesson.do_now.tasks && lesson.do_now.tasks.length > 0) ||
+        (lesson.do_now.events && lesson.do_now.events.length > 0))) ||
+    (htmlDoNowInner && htmlDoNowInner.trim().length > 0),
+  );
+
+  if (hasDoNow) {
+    tabs.push({
+      key: 'donow',
+      label: 'Do Now Starter',
+      icon: 'fa-solid fa-stopwatch',
+      badge: '05:00',
+    });
+  }
+
+  // 2. Video Pathway Tab
+  const hasVideo = Boolean(
+    (videos && videos.length > 0) || (htmlVideo && htmlVideo.trim().length > 0),
+  );
+  if (hasVideo) {
+    let videoDuration = '';
+    if (videos && videos.length > 0 && videos[0].duration) {
+      videoDuration = videos[0].duration
+        .replace(/\bmins?\b/gi, 'm')
+        .replace(/\bsecs?\b/gi, 's')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+    tabs.push({
+      key: 'video',
+      label: 'Video Pathway',
+      icon: 'fa-solid fa-play',
+      badge: videoDuration || `${videos.length} Clip${videos.length > 1 ? 's' : ''}`,
+    });
+  }
+
+  // 3. Key Vocabulary Tab
+  const hasVocab = Boolean(
+    (lesson && lesson.vocab && lesson.vocab.length > 0) ||
+    (htmlVocabInner && htmlVocabInner.trim().length > 0),
+  );
+  if (hasVocab) {
+    const vocabCount = lesson && lesson.vocab ? lesson.vocab.length : '';
+    tabs.push({
+      key: 'vocab',
+      label: 'Key Vocabulary',
+      icon: 'fa-solid fa-book-bookmark',
+      badge: vocabCount ? `${vocabCount} Terms` : '',
+    });
+  }
+
+  // 4. Chronology Spine Tab
+  const hasSpine = Boolean(htmlSpineInner && htmlSpineInner.trim().length > 0);
+  if (hasSpine) {
+    let spineCount = 0;
+    if (lesson.causal_domino_spine && Array.isArray(lesson.causal_domino_spine.stages)) {
+      spineCount = lesson.causal_domino_spine.stages.length;
+    } else if (lesson.timeline_anchor && Array.isArray(lesson.timeline_anchor)) {
+      spineCount = lesson.timeline_anchor.length;
+    } else if (lesson.workbook_stages && Array.isArray(lesson.workbook_stages)) {
+      spineCount = lesson.workbook_stages.length;
+    }
+    tabs.push({
+      key: 'spine',
+      label: 'Chronology Spine',
+      icon: 'fa-solid fa-timeline',
+      badge: spineCount ? `${spineCount} Stages` : '',
+    });
+  }
+
+  if (tabs.length === 0) return '';
+
+  // Active tab selection: only set active if defaultTab is explicitly specified and exists
+  const activeTabKey = defaultTab && tabs.some((t) => t.key === defaultTab) ? defaultTab : '';
+
+  return `
+    <div class="lesson-launchpad-container" id="lesson-launchpad-${lesson.id || 'current'}">
+      <div class="launchpad-bar">
+        <div class="launchpad-tabs-group" role="tablist">
+          ${tabs
+            .map((tab) => {
+              const isActive = tab.key === activeTabKey;
+              return `
+              <button type="button"
+                class="launchpad-tab-btn ${isActive ? 'active' : ''}"
+                data-action="switch-launchpad-tab"
+                data-tab="${tab.key}"
+                role="tab"
+                aria-selected="${isActive ? 'true' : 'false'}"
+                title="${tab.label}">
+                <i class="${tab.icon}"></i>
+                <span>${tab.label}</span>
+                ${tab.badge ? `<span class="launchpad-tab-badge">${tab.badge}</span>` : ''}
+              </button>
+            `;
+            })
+            .join('')}
+        </div>
+        <div class="launchpad-actions-group">
+          <button type="button"
+            class="launchpad-start-reading-btn"
+            data-action="launchpad-start-reading"
+            title="Jump directly to lesson narrative reading">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <span>Start Reading &darr;</span>
+          </button>
+          <button type="button"
+            class="launchpad-close-btn"
+            data-action="close-launchpad"
+            title="Collapse drawer"
+            style="${activeTabKey ? 'display: inline-flex;' : 'display: none;'}">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="lesson-launchpad-drawer" id="launchpad-drawer-${lesson.id || 'current'}" style="${activeTabKey ? 'display: block;' : 'display: none;'}">
+        ${
+          hasDoNow
+            ? `
+          <div class="launchpad-panel ${activeTabKey === 'donow' ? 'active' : ''}" data-panel="donow" style="${activeTabKey === 'donow' ? 'display: block;' : 'display: none;'}">
+            ${htmlDoNowInner}
+          </div>
+        `
+            : ''
+        }
+        ${
+          hasVideo
+            ? `
+          <div class="launchpad-panel ${activeTabKey === 'video' ? 'active' : ''}" data-panel="video" style="${activeTabKey === 'video' ? 'display: block;' : 'display: none;'}">
+            ${htmlVideo}
+          </div>
+        `
+            : ''
+        }
+        ${
+          hasVocab
+            ? `
+          <div class="launchpad-panel ${activeTabKey === 'vocab' ? 'active' : ''}" data-panel="vocab" style="${activeTabKey === 'vocab' ? 'display: block;' : 'display: none;'}">
+            ${htmlVocabInner}
+          </div>
+        `
+            : ''
+        }
+        ${
+          hasSpine
+            ? `
+          <div class="launchpad-panel ${activeTabKey === 'spine' ? 'active' : ''}" data-panel="spine" style="${activeTabKey === 'spine' ? 'display: block;' : 'display: none;'}">
+            ${htmlSpineInner}
+          </div>
+        `
+            : ''
+        }
+      </div>
     </div>
   `;
 }
@@ -2624,6 +2806,168 @@ export function renderHistoricalInterpretationsTaskHTML(task, lessonIndex, tIdx,
   `;
 }
 
+export function renderBecauseButSoTaskHTML(task, lessonIndex, tIdx, unitId) {
+  const taskId = task.id || `task-bbs-${lessonIndex}-${tIdx}`;
+  const title = task.title || 'The "Because, But, So" Strategy • Sentence Expansion';
+  const subtitle =
+    task.subtitle ||
+    'Hochman Analytical Framework • Rehearsing Causal, Complex & Consequential Syntax';
+  const instruction =
+    task.instruction ||
+    'Complete each sentence using precise historical evidence to demonstrate causal reasoning, historical complexity, and long-term significance before tackling the exam questions.';
+  const stem = task.stem || task.question || 'Historical Stem';
+
+  const becauseObj = task.because || {};
+  const becauseGuidance =
+    becauseObj.guidance ||
+    'Causal Explanation: Explain the precise historical cause, military necessity, or trigger mechanism.';
+  const becausePlaceholder =
+    becauseObj.placeholder ||
+    '...BECAUSE... (Explain why this happened using precise historical evidence)';
+  const becauseModel = becauseObj.model || becauseObj.model_answer || '';
+
+  const butObj = task.but || {};
+  const butGuidance =
+    butObj.guidance ||
+    'Nuance & Critical Limitation: Explain the severe battlefield flaws, combat failures, or untackled obstacles.';
+  const butPlaceholder =
+    butObj.placeholder || '...BUT... (Explain the limitations, complications, or contradictions)';
+  const butModel = butObj.model || butObj.model_answer || '';
+
+  const soObj = task.so || {};
+  const soGuidance =
+    soObj.guidance ||
+    'Consequence & Lasting Significance: Explain the ripple effect on military medicine, surgical protocol, or survival rates.';
+  const soPlaceholder =
+    soObj.placeholder || '...SO... (Explain the lasting historical consequence or transformation)';
+  const soModel = soObj.model || soObj.model_answer || '';
+
+  return `
+    <div class="task-box because-but-so-interactive" style="margin-bottom: 25px; background: #ffffff; padding: 22px; border-radius: 12px; border: 2px solid #4f46e5; box-shadow: 0 4px 16px rgba(79, 70, 229, 0.08);">
+      <!-- Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1.5px solid #e0e7ff; padding-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 38px; height: 38px; border-radius: 8px; background: #4f46e5; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(79, 70, 229, 0.3);">
+            <i class="fa-solid fa-pen-ruler"></i>
+          </div>
+          <div>
+            <h4 style="margin: 0; color: #312e81; font-size: 1.15rem; font-weight: 800; font-family: 'Playfair Display', Georgia, serif;">${title}</h4>
+            <div style="font-size: 0.8rem; color: #4338ca; font-weight: 600; margin-top: 1px;">${subtitle}</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <button type="button" class="btn-reveal-all-bbs no-print" onclick="window.toggleBbsMask && window.toggleBbsMask(this)" style="background: #eef2ff; border: 1.5px solid #c7d2fe; color: #4338ca; font-size: 0.78rem; font-weight: 700; padding: 5px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;">
+            <i class="fa-solid fa-chalkboard-user"></i> <span>Teacher Whiteboard Key</span>
+          </button>
+          <span style="background: #4f46e5; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 5px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-feather-pointed" style="color: #a5b4fc;"></i> The Writing Revolution
+          </span>
+        </div>
+      </div>
+
+      ${instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 16px; line-height: 1.5;">${instruction}</p>` : ''}
+
+      <!-- Historical Anchor Stem Callout -->
+      <div style="background: linear-gradient(135deg, #eef2ff 0%, #f5f3ff 100%); border: 1.5px solid #c7d2fe; border-left: 5px solid #4f46e5; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+        <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #4338ca; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-anchor"></i> <span>Core Historical Stem:</span>
+        </div>
+        <div style="font-size: 1.05rem; font-weight: 700; color: #1e1b4b; line-height: 1.5; font-family: 'Playfair Display', Georgia, serif;">&ldquo;${stem}&rdquo;</div>
+      </div>
+
+      <!-- 3 Conjunction Expansion Cards -->
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <!-- Card 1: BECAUSE -->
+        <div class="bbs-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; padding: 14px; transition: all 0.2s ease;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="background: #16a34a; color: #ffffff; font-weight: 900; font-size: 0.78rem; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px;">BECAUSE</span>
+              <strong style="color: #166534; font-size: 0.92rem;">${becauseGuidance}</strong>
+            </div>
+            ${
+              becauseModel
+                ? `
+              <button type="button" class="btn-single-bbs-model no-print" onclick="window.toggleSingleBbsModel && window.toggleSingleBbsModel(this)" style="background: #ffffff; border: 1px solid #86efac; color: #166534; font-size: 0.76rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa-solid fa-eye"></i> <span>Model Stem</span>
+              </button>
+            `
+                : ''
+            }
+          </div>
+          <textarea class="student-answer-input bbs-input" style="width: 100%; box-sizing: border-box; min-height: 60px; padding: 10px; border: 1px solid #86efac; border-radius: 6px; font-size: 0.95rem; font-family: inherit; resize: vertical; line-height: 1.45; background: #ffffff;" placeholder="${becausePlaceholder}"></textarea>
+          ${
+            becauseModel
+              ? `
+            <div class="bbs-model-box" style="display: none; margin-top: 10px; padding: 12px 14px; background: #ffffff; border-left: 3.5px solid #16a34a; border-radius: 4px; font-size: 0.92rem; color: #14532d; line-height: 1.5; border: 1px solid #bbf7d0;">
+              <strong>Exemplar Completion:</strong> ${becauseModel}
+            </div>
+          `
+              : ''
+          }
+        </div>
+
+        <!-- Card 2: BUT -->
+        <div class="bbs-card" style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 8px; padding: 14px; transition: all 0.2s ease;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="background: #d97706; color: #ffffff; font-weight: 900; font-size: 0.78rem; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px;">BUT</span>
+              <strong style="color: #92400e; font-size: 0.92rem;">${butGuidance}</strong>
+            </div>
+            ${
+              butModel
+                ? `
+              <button type="button" class="btn-single-bbs-model no-print" onclick="window.toggleSingleBbsModel && window.toggleSingleBbsModel(this)" style="background: #ffffff; border: 1px solid #fde68a; color: #92400e; font-size: 0.76rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa-solid fa-eye"></i> <span>Model Stem</span>
+              </button>
+            `
+                : ''
+            }
+          </div>
+          <textarea class="student-answer-input bbs-input" style="width: 100%; box-sizing: border-box; min-height: 60px; padding: 10px; border: 1px solid #fde68a; border-radius: 6px; font-size: 0.95rem; font-family: inherit; resize: vertical; line-height: 1.45; background: #ffffff;" placeholder="${butPlaceholder}"></textarea>
+          ${
+            butModel
+              ? `
+            <div class="bbs-model-box" style="display: none; margin-top: 10px; padding: 12px 14px; background: #ffffff; border-left: 3.5px solid #d97706; border-radius: 4px; font-size: 0.92rem; color: #78350f; line-height: 1.5; border: 1px solid #fef3c7;">
+              <strong>Exemplar Completion:</strong> ${butModel}
+            </div>
+          `
+              : ''
+          }
+        </div>
+
+        <!-- Card 3: SO -->
+        <div class="bbs-card" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 14px; transition: all 0.2s ease;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="background: #2563eb; color: #ffffff; font-weight: 900; font-size: 0.78rem; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.5px;">SO</span>
+              <strong style="color: #1e40af; font-size: 0.92rem;">${soGuidance}</strong>
+            </div>
+            ${
+              soModel
+                ? `
+              <button type="button" class="btn-single-bbs-model no-print" onclick="window.toggleSingleBbsModel && window.toggleSingleBbsModel(this)" style="background: #ffffff; border: 1px solid #bfdbfe; color: #1e40af; font-size: 0.76rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <i class="fa-solid fa-eye"></i> <span>Model Stem</span>
+              </button>
+            `
+                : ''
+            }
+          </div>
+          <textarea class="student-answer-input bbs-input" style="width: 100%; box-sizing: border-box; min-height: 60px; padding: 10px; border: 1px solid #bfdbfe; border-radius: 6px; font-size: 0.95rem; font-family: inherit; resize: vertical; line-height: 1.45; background: #ffffff;" placeholder="${soPlaceholder}"></textarea>
+          ${
+            soModel
+              ? `
+            <div class="bbs-model-box" style="display: none; margin-top: 10px; padding: 12px 14px; background: #ffffff; border-left: 3.5px solid #2563eb; border-radius: 4px; font-size: 0.92rem; color: #1e3a8a; line-height: 1.5; border: 1px solid #dbeafe;">
+              <strong>Exemplar Completion:</strong> ${soModel}
+            </div>
+          `
+              : ''
+          }
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 export function renderTextbookSpotlightDrawers(lesson) {
   if (!lesson || (!lesson.key_figure && !lesson.concept_spotlight && !lesson.archival_dispatch)) {
     return '';
@@ -2864,9 +3208,13 @@ export function renderLesson(lesson) {
   const hasInlineNarrativeSources =
     Array.isArray(lesson.narrative_blocks) &&
     lesson.narrative_blocks.some(
-      (b) => b && (b.source || (unitId === 'edexcel_medicine' && b.image)),
+      (b) => b && (b.source || b.sources || (unitId === 'edexcel_medicine' && b.image)),
     );
   let htmlDoNow = '',
+    htmlDoNowInner = '',
+    htmlVocabInner = '',
+    htmlSpineInner = '',
+    htmlLearningObjectives = '',
     htmlPrimary = '',
     htmlSources1 = '',
     htmlNarrative = '',
@@ -2892,10 +3240,16 @@ export function renderLesson(lesson) {
   // Normalize do_now format
   if (Array.isArray(lesson.do_now)) {
     lesson.do_now = {
-      type: 'questions',
+      type: 'retrieval_starter',
+      title: 'Recall & Retrieval',
+      instructions: 'Answer these questions in full sentences.',
       items: lesson.do_now.map((t) => ({ question: t.q || t.question, answer: t.a || t.answer })),
     };
-  } else if (lesson.do_now && lesson.do_now.type === 'questions' && lesson.do_now.tasks) {
+  } else if (
+    lesson.do_now &&
+    (lesson.do_now.type === 'questions' || lesson.do_now.type === 'retrieval_starter') &&
+    lesson.do_now.tasks
+  ) {
     lesson.do_now.items = lesson.do_now.tasks.map((t) => ({
       question: t.q || t.question,
       answer: t.a || t.answer,
@@ -3143,11 +3497,6 @@ export function renderLesson(lesson) {
               ${
                 unitId === 'cme_new' || isCme
                   ? `<button type="button" class="btn btn-cme-theater-map" onclick="window.openCmeTheaterMapModal()" style="padding: 6px 12px; font-size: 0.88rem; background: #0284c7; color: #ffffff; border: 1.5px solid #0369a1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(2,132,199,0.3); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Open High-Resolution Regional Map (Israel & Surrounding Neighbours) [Shortcut: M]"><i class="fa-solid fa-map" style="color: #ffffff;"></i> Regional Map</button>`
-                  : ''
-              }
-              ${
-                lesson.causal_domino_spine
-                  ? `<button class="btn btn-causal-spine-jump" onclick="const sp = document.getElementById('lesson-chronology-spine') || document.getElementById('causal-domino-scaffold'); if(sp) { sp.open = true; sp.scrollIntoView({ behavior: 'smooth' }); }" style="padding: 6px 12px; font-size: 0.88rem; background: #fefce8; color: #854d0e; border: 1.5px solid #fde047; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Chronology & Causal Domino Spine"><i class="fa-solid fa-clock-rotate-left" style="color: #ca8a04;"></i> Chronology Spine</button>`
                   : ''
               }
               ${
@@ -3478,7 +3827,14 @@ export function renderLesson(lesson) {
             <div class="eee-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
               ${
                 sourceImgUrl
-                  ? `
+                  ? (() => {
+                      const disc = getArchivalSourceDiscussionComponents(
+                        hingeText,
+                        source,
+                        isKs2,
+                        '10px',
+                      );
+                      return `
                 <div class="archival-source-split-layout">
                   <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
                     <div style="position: relative; width: 100%; display: flex; justify-content: center;">
@@ -3489,6 +3845,13 @@ export function renderLesson(lesson) {
                       </div>
                     </div>
                     ${sourceSpotlightBtn}
+                    ${
+                      !isKs2 && citationText
+                        ? `<div class="archival-media-provenance" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 8px; font-size: 0.74rem; line-height: 1.35; color: #94a3b8; text-align: left;">
+                            <strong style="color: #cbd5e1;">Provenance:</strong> ${citationText}
+                          </div>`
+                        : ''
+                    }
                   </div>
                   <div class="archival-source-details-col">
                     <div>
@@ -3511,18 +3874,13 @@ export function renderLesson(lesson) {
                       `
                           : ''
                       }
-                      ${renderArchivalSourceDiscussionBox(hingeText, source, isKs2, '10px')}
+                      ${disc.promptHtml}
                     </div>
-                    ${
-                      !isKs2 && citationText
-                        ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
-                            <strong>Provenance:</strong> ${citationText}
-                          </div>`
-                        : ''
-                    }
                   </div>
                 </div>
-              `
+                ${disc.panelHtml}
+              `;
+                    })()
                   : `
                 <div>
                   ${
@@ -4008,14 +4366,14 @@ export function renderLesson(lesson) {
 
   if (lesson.do_now && lesson.do_now.type === 'timeline' && lesson.do_now.events) {
     if (isTrip) {
-      htmlDoNow += `
-          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 30px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-              <div style="padding: 20px;">
-                <div style="margin-bottom: 20px; font-size: 1.2rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+      htmlDoNowInner += `
+          <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+              <div style="padding: 18px;">
+                <div style="margin-bottom: 16px; font-size: 1.15rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
                 <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
         `;
       lesson.do_now.events.forEach((ev, idx) => {
-        htmlDoNow += `
+        htmlDoNowInner += `
             <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
               <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;"><i class="fa-regular fa-clock" style="margin-right: 6px;"></i>${ev.year}</div>
               <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
@@ -4024,14 +4382,14 @@ export function renderLesson(lesson) {
             </div>
           `;
       });
-      htmlDoNow += `</div></div></div>`;
+      htmlDoNowInner += `</div></div></div>`;
 
       // Add Map Container
       const eventsWithLoc = lesson.do_now.events.filter((e) => e.lat && e.lng);
       if (eventsWithLoc.length > 0) {
-        htmlDoNow += `
-            <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px;">
-              <div style="padding: 15px 20px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-weight: bold; font-size: 1.1rem; color: #1e293b;">
+        htmlDoNowInner += `
+            <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px;">
+              <div style="padding: 12px 18px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-weight: bold; font-size: 1.05rem; color: #1e293b;">
                 <i class="fa-solid fa-map-location-dot" style="color: #ef4444; margin-right: 8px;"></i> Interactive Trip Map
               </div>
               <div id="trip-map-container" style="height: 500px; width: 100%;"></div>
@@ -4039,51 +4397,29 @@ export function renderLesson(lesson) {
           `;
       }
     } else {
-      htmlDoNow += `
-          <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
-              <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
-                <span style="display: flex; align-items: center; gap: 10px;">
-                  <i class="fa-solid fa-clock-rotate-left" style="color: #3b82f6;"></i> Chronological Timeline
-                  <span id="donow-timeline-timer-summary-badge" style="font-size: 0.8rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-family: monospace;">05:00</span>
-                </span>
-                <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
-              </summary>
-              <div style="padding: 20px;">
-                ${renderDoNowTimerBarHTML('donow-timeline-timer')}
-                ${
-                  !isTrip &&
-                  ((appStore && appStore.state && appStore.state.selectedUnitId) ||
-                    window.currentUnitId)
-                    ? `
-                  <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 12px 18px; margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
-                    <div style="display: flex; align-items: center; gap: 12px;">
-                      <div style="width: 36px; height: 36px; border-radius: 8px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1rem; flex-shrink: 0; box-shadow: 0 2px 4px rgba(59,130,246,0.25);">
-                        <i class="fa-solid fa-bolt"></i>
-                      </div>
-                      <div>
-                        <div style="font-weight: 700; color: #1e3a8a; font-size: 0.95rem;">Retrieval Starter Drill</div>
-                        <div style="font-size: 0.83rem; color: #64748b;">Consolidate prior learning with 3-Box Leitner spaced flashcards or a 10-min readiness check.</div>
-                      </div>
-                    </div>
-                    ${getRetrievalStarterActions(lesson, (appStore && appStore.state && appStore.state.selectedUnitId) || window.currentUnitId || '')}
-                  </div>
-                `
-                    : ''
-                }
-                <div style="margin-bottom: 20px; font-size: 1.1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
-                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between;">
-        `;
+      htmlDoNowInner += `
+          <div class="donow-panel-content">
+            ${renderDoNowHeaderWithTimerHTML({
+              timerId: 'donow-timeline-timer',
+              title: 'Timeline Starter',
+              badgeText: 'Chronological Sequence',
+              icon: 'fa-solid fa-clock-rotate-left',
+              showRevealAll: false,
+            })}
+            <div style="margin-bottom: 14px; font-size: 1rem; color: #1e3a8a;"><strong>${lesson.do_now.prediction_question || ''}</strong></div>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;">
+      `;
       lesson.do_now.events.forEach((ev, idx) => {
-        htmlDoNow += `
-            <div style="width: 45%; border: 2px solid #cbd5e1; border-radius: 8px; padding: 15px; background: #fff; box-shadow: 2px 2px 0px #94a3b8; margin-bottom: 15px;">
-              <div style="font-weight: 800; color: #1e40af; font-size: 1.2rem; margin-bottom: 5px;">${ev.year}</div>
-              <div style="font-weight: 600; color: #0f172a; margin-bottom: 8px;">${ev.title}</div>
-              <div style="font-size: 0.95rem; color: #475569;">${ev.detail}</div>
-              ${ev.img ? `<div style="text-align: center; margin-top: 15px;"><img src="${getAssetUrl(ev.img)}" style="max-width: 40%; border-radius: 4px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"></div>` : ''}
+        htmlDoNowInner += `
+            <div style="width: 48%; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 12px; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.03); margin-bottom: 10px;">
+              <div style="font-weight: 800; color: #0284c7; font-size: 1.05rem; margin-bottom: 4px;"><i class="fa-regular fa-clock" style="margin-right: 6px;"></i>${ev.year}</div>
+              <div style="font-weight: 600; color: #0f172a; margin-bottom: 6px; font-size: 0.92rem;">${ev.title}</div>
+              <div style="font-size: 0.88rem; color: #475569; line-height: 1.35;">${ev.detail}</div>
+              ${ev.img ? `<div style="text-align: center; margin-top: 10px;"><img src="${getAssetUrl(ev.img)}" style="max-width: 40%; border-radius: 4px; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.08);"></div>` : ''}
             </div>
           `;
       });
-      htmlDoNow += `</div></div></details>`;
+      htmlDoNowInner += `</div></div>`;
     }
   } else if (
     lesson.do_now &&
@@ -4110,43 +4446,17 @@ export function renderLesson(lesson) {
       console.error(e);
     }
 
-    const currentUnitId =
-      (appStore && appStore.state && appStore.state.selectedUnitId) || window.currentUnitId || '';
-    const showQuizzing = !isTrip && currentUnitId && currentUnitId !== 'monarchy_religion_power';
-
-    htmlDoNow += `
-        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
-            <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
-              <span style="display: flex; align-items: center; gap: 10px;">
-                <i class="fa-solid fa-list-check" style="color: #3b82f6;"></i> Do Now Tasks
-                <span id="donow-timer-summary-badge" style="font-size: 0.8rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-family: monospace;">05:00</span>
-              </span>
-              <div>
-                <button class="btn btn-secondary" data-action="toggle-all-answers" onclick="if(window.toggleAllAnswers){window.toggleAllAnswers(this);}event.stopPropagation();" style="font-size: 0.9rem; padding: 4px 10px; margin-right: 10px;"><i class="fa-solid fa-eye"></i> Reveal All</button>
-                <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
-              </div>
-            </summary>
-            <div class="do-now-grid" style="padding: 14px 18px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px;">
-              ${renderDoNowTimerBarHTML('donow-timer')}
-              ${
-                showQuizzing
-                  ? `
-                <div style="grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); border: 1.5px solid #bfdbfe; border-radius: 8px; padding: 8px 14px; margin-bottom: 2px; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
-                  <div style="display: flex; align-items: center; gap: 10px;">
-                    <div style="width: 30px; height: 30px; border-radius: 6px; background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 0.9rem; flex-shrink: 0; box-shadow: 0 2px 4px rgba(59,130,246,0.25);">
-                      <i class="fa-solid fa-bolt"></i>
-                    </div>
-                    <div>
-                      <div style="font-weight: 700; color: #1e3a8a; font-size: 0.9rem;">Retrieval Starter Drill</div>
-                      <div style="font-size: 0.8rem; color: #64748b;">Consolidate prior learning with 3-Box Leitner spaced flashcards or a 10-min readiness check.</div>
-                    </div>
-                  </div>
-                  ${getRetrievalStarterActions(lesson, currentUnitId)}
-                </div>
-              `
-                  : ''
-              }
-      `;
+    htmlDoNowInner += `
+        <div class="donow-panel-content">
+          ${renderDoNowHeaderWithTimerHTML({
+            timerId: 'donow-timer',
+            title: 'Do Now Tasks',
+            badgeText: '📖 Workbook Task 1 &bull; Prior Knowledge Retrieval',
+            icon: 'fa-solid fa-list-check',
+            showRevealAll: true,
+          })}
+          <div class="donow-rows-container" style="display: flex; flex-direction: column; gap: 0; margin-top: 6px; background: #ffffff; border: 1.2px solid #e2e8f0; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);">
+    `;
     const doNowItems = lesson.do_now.items || lesson.do_now.questions || lesson.do_now.tasks || [];
     doNowItems.forEach((item, index) => {
       let qText = item.question || item.q || item.event || '';
@@ -4158,47 +4468,75 @@ export function renderLesson(lesson) {
         aText = aText.replace(/src=['"]assets\//g, `src="/units/${window.currentUnitId}/assets/`);
       }
       const cardId = `donow-card-${index}`;
-      htmlDoNow += `
-          <div class="do-now-card" id="do-now-card-${index}" data-action="toggle-element" data-target-id="${cardId}" style="cursor: pointer;">
-            <div style="display: flex; gap: 8px; align-items: flex-start;">
-              <span style="font-weight: 800; color: #0369a1; background: #e0f2fe; padding: 2px 7px; border-radius: 4px; font-size: 0.85rem; line-height: 1.2; flex-shrink: 0;">${index + 1}</span>
-              <div style="font-size: 0.9rem; line-height: 1.35; color: #1e293b; font-weight: 500;">${qText}</div>
+      const isLast = index === doNowItems.length - 1;
+      htmlDoNowInner += `
+          <div class="donow-sentence-row do-now-card" id="do-now-card-${index}" data-action="toggle-element" data-target-id="${cardId}" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #ffffff; border: none; ${!isLast ? 'border-bottom: 1px solid #f1f5f9;' : ''} border-radius: 0; margin: 0; padding: 7px 14px; min-height: 36px; box-sizing: border-box; cursor: pointer; box-shadow: none;">
+            <div style="display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0;">
+              <span style="display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 4px; background: #f0f9ff; color: #0284c7; font-size: 0.74rem; font-weight: 800; flex-shrink: 0; border: 1px solid #bae6fd; line-height: 1;">${index + 1}</span>
+              <span style="font-size: 0.88rem; line-height: 1.35; color: #1e293b; font-weight: 600; flex: 1;">${qText}</span>
             </div>
-            <div class="answer" id="${cardId}" style="display: none; margin-top: 8px; padding: 8px 10px; background: #f8fafc; border-left: 3px solid #3b82f6; border-radius: 4px; font-size: 0.85rem; line-height: 1.35; color: #1e3a8a; font-weight: 600;">${aText}</div>
+            <div class="donow-right-answer-box" style="display: flex; align-items: center; flex-shrink: 0; margin-left: 8px;">
+              <span class="donow-reveal-pill" style="font-size: 0.72rem; font-weight: 700; color: #0284c7; background: #f0f9ff; border: 1px solid #bae6fd; padding: 3px 9px; border-radius: 12px; display: inline-flex; align-items: center; gap: 4px;">
+                <i class="fa-solid fa-eye" style="font-size: 0.65rem;"></i> Reveal Answer
+              </span>
+              <div class="answer" id="${cardId}" style="display: none; margin: 0; padding: 0; background: transparent;">
+                <span style="display: inline-flex; align-items: center; gap: 5px; padding: 3px 10px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; font-size: 0.82rem; font-weight: 700; color: #1d4ed8; white-space: nowrap;">
+                  <i class="fa-solid fa-circle-check" style="color: #2563eb; font-size: 0.75rem;"></i>
+                  ${aText}
+                </span>
+              </div>
+            </div>
           </div>
         `;
     });
-    htmlDoNow += `</div></details>`;
+    htmlDoNowInner += `</div></div>`;
   }
+  htmlDoNow = htmlDoNowInner;
 
   const hasVocab = lesson.vocab && lesson.vocab.length > 0;
   if (hasVocab) {
-    htmlDoNow += `
-        <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
-            <summary style="padding: 10px 15px; cursor: pointer; color: #b45309; font-weight: bold; font-size: 1.05rem; background: #fffbeb; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
-              <span><i class="fa-solid fa-spell-check" style="color: #b45309; margin-right: 10px;"></i> Key Vocabulary</span>
-              <i class="fa-solid fa-chevron-down" style="color: #64748b;"></i>
-            </summary>
-            <div style="padding: 20px;">
-              <p style="color: #475569; margin-bottom: 20px; font-size: 1.1rem;"><strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
-              <div id="vocab-match-game" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                <div class="match-terms" style="display: flex; flex-direction: column; gap: 10px;">
+    htmlVocabInner += `
+        <div class="vocab-panel-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px;">
+              <span style="font-weight: 800; font-size: 0.95rem; color: #b45309; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-spell-check" style="color: #b45309;"></i> Key Vocabulary Mastery &bull; Match &amp; Cognitive Drill
+              </span>
+            </div>
+            <div style="padding: 4px 0;">
+              <p style="color: #475569; margin-bottom: 16px; font-size: 0.95rem;"><strong>Vocabulary Practice:</strong> Tap a term on the left, then tap its matching definition on the right to master the key vocabulary.</p>
+              <div id="vocab-match-game" class="vocab-match-asymmetric">
+                <div class="match-terms">
       `;
 
     lesson.vocab.forEach((v, idx) => {
-      htmlDoNow += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}" style="text-align: left; padding: 15px; font-weight: bold; border-width: 2px; cursor: pointer; transition: all 0.2s;">${v.term}</button>`;
+      htmlVocabInner += `<button class="btn btn-secondary match-term-btn" data-idx="${idx}">${v.term}</button>`;
     });
 
-    htmlDoNow += `</div><div class="match-defs" style="display: flex; flex-direction: column; gap: 10px;">`;
+    htmlVocabInner += `</div><div class="match-defs">`;
 
     let defs = lesson.vocab.map((v, idx) => ({ def: v.definition || v.def || '', idx: idx }));
-    defs.sort(() => Math.random() - 0.5);
+    if (defs.length > 1) {
+      // Guaranteed derangement shuffle: ensures NO definition starts on the same horizontal row as its matching term
+      let attempts = 0;
+      let hasFixedPoint = true;
+      while (hasFixedPoint && attempts < 50) {
+        attempts++;
+        for (let i = defs.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [defs[i], defs[j]] = [defs[j], defs[i]];
+        }
+        hasFixedPoint = defs.some((d, i) => d.idx === i);
+      }
+      if (hasFixedPoint) {
+        defs = defs.map((_, i) => defs[(i + 1) % defs.length]);
+      }
+    }
 
     defs.forEach((d) => {
-      htmlDoNow += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}" style="text-align: left; padding: 15px; font-weight: normal; border-width: 2px; cursor: pointer; transition: all 0.2s;">${d.def}</button>`;
+      htmlVocabInner += `<button class="btn btn-secondary match-def-btn" data-idx="${d.idx}">${d.def}</button>`;
     });
 
-    htmlDoNow += `
+    htmlVocabInner += `
                 </div>
               </div>
               <div id="unlock-success" style="display: none; margin-top: 20px; padding: 15px; background: #ecfdf5; border: 2px solid #10b981; border-radius: 8px; color: #047857; font-weight: bold; text-align: center; font-size: 1.2rem;">
@@ -4236,7 +4574,7 @@ export function renderLesson(lesson) {
     if (vocabStyle === 0) {
       // Style 0: The Odd One Out
       const oddExemplars = getOddOneOutExemplars(lesson, vocabTermsList);
-      htmlDoNow += `
+      htmlVocabInner += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
             <div style="display: flex; align-items: center; gap: 8px;">
@@ -4304,7 +4642,7 @@ export function renderLesson(lesson) {
     } else if (vocabStyle === 1) {
       // Style 1: The Golden Sentence (Connect Two)
       const goldenExemplar = getGoldenSentenceExemplar(lesson, vocabTermsList);
-      htmlDoNow += `
+      htmlVocabInner += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
             <div style="display: flex; align-items: center; gap: 8px;">
@@ -4337,7 +4675,7 @@ export function renderLesson(lesson) {
           </div>
           <div id="golden-feedback" style="display: none; margin-top: 10px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem;"></div>
           <div id="golden-model-box" style="display: none; margin-top: 10px; padding: 14px 16px; background: #fefce8; border: 1.5px solid #facc15; border-radius: 6px; color: #713f12; font-size: 0.95rem; line-height: 1.6; box-shadow: 0 2px 6px rgba(234, 179, 8, 0.15);">
-            <div style="font-weight: 700; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; color: #854d0e;">
+            <div style="font-weight: 700; margin-bottom: 4px; display: flex; align-items: gap: 6px; color: #854d0e;">
               <i class="fa-solid fa-star" style="color: #eab308;"></i> Model Golden Sentence:
             </div>
             <div style="font-style: italic; font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #1e293b;">
@@ -4351,7 +4689,7 @@ export function renderLesson(lesson) {
       `;
     } else if (vocabStyle === 2) {
       // Style 2: Conceptual Binary Sort
-      htmlDoNow += `
+      htmlVocabInner += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
             <div style="display: flex; align-items: center; gap: 8px;">
@@ -4396,7 +4734,7 @@ export function renderLesson(lesson) {
         ? lesson.vocab_deliberate_error
         : `A modern historical commentator claimed that ${vocabTermsList[0] || 'the main concept'} and ${vocabTermsList[1] || 'the event'} were completely trivial, playing no role in shaping the political outcome of this era.`;
 
-      htmlDoNow += `
+      htmlVocabInner += `
         <div id="vocab-cognitive-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
             <div style="display: flex; align-items: center; gap: 8px;">
@@ -4439,7 +4777,7 @@ export function renderLesson(lesson) {
         return `<select class="cloze-blank-select" data-answer="${cleanTerm.replace(/"/g, '&quot;')}" style="display: inline-block; vertical-align: middle; padding: 4px 10px; margin: 2px 4px; font-family: inherit; font-size: 0.95rem; font-weight: 600; border: 2px solid #cbd5e1; border-radius: 6px; background-color: #ffffff; color: #1e293b; cursor: pointer; transition: all 0.2s; max-width: 100%;">${options}</select>`;
       });
 
-      htmlDoNow += `
+      htmlVocabInner += `
               <div id="vocab-cloze-challenge" style="margin-top: 25px; padding-top: 20px; border-top: 1px dashed #cbd5e1;">
                 <p style="color: #475569; margin-bottom: 12px; font-size: 1.05rem;">
                   <strong>Contextual Challenge:</strong> Complete the historical summary below by selecting the correct vocabulary term for each blank.
@@ -4454,16 +4792,15 @@ export function renderLesson(lesson) {
       `;
     }
 
-    htmlDoNow += `
+    htmlVocabInner += `
             </div>
-          </details>
+          </div>
       `;
   }
 
   // ==========================================
   // TAB 2: THE HISTORY
   // ==========================================
-  htmlDoNow += ``;
 
   if (lesson.learning_objectives) {
     // Smart check: Only render overarching objective if it differs from the main lesson title
@@ -4485,8 +4822,8 @@ export function renderLesson(lesson) {
       ? lesson.learning_objectives
       : lesson.learning_objectives.scaffolded || [];
 
-    htmlDoNow += `
-        <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
+    htmlLearningObjectives += `
+        <div class="learning-objectives-card" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid #10b981;">
           <h3 style="margin-top: 0; color: #0f172a; font-size: 1.2rem; display: flex; align-items: center; gap: 10px; margin-bottom: ${overarchingHtml ? '0' : '15px'};">
             <i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Learning Objectives
           </h3>
@@ -4515,14 +4852,15 @@ export function renderLesson(lesson) {
         <div class="phase-card">
       `;
 
-    const prologueText = lesson.prologue || lesson.hook_text;
+    const prologueText = lesson.prologue || lesson.hook_text || lesson.blurb;
     if (prologueText) {
       htmlNarrative += `
-        <div class="historical-hook-card" style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-left: 4px solid #0284c7; border-radius: 8px; padding: 20px 24px; margin-bottom: 25px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: #0369a1; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px;">
-            <i class="fa-solid fa-compass" style="color: #0284c7;"></i> The Historical Setting
+        <div class="historical-editorial-lede">
+          <div class="lede-eyebrow">
+            <i class="fa-solid fa-compass"></i>
+            <span>The Historical Setting</span>
           </div>
-          <p style="margin: 0; font-size: 1.08rem; line-height: 1.7; color: #1e293b; font-style: italic; font-family: 'Georgia', serif;">
+          <p style="margin: 0;">
             "${prologueText}"
           </p>
         </div>
@@ -4600,28 +4938,27 @@ export function renderLesson(lesson) {
         }
         const pageAnchor = getWorkbookPageAnchor(unitId || window.currentUnitId, lesson, lIdx);
 
-        htmlNarrative += `
-        <details id="lesson-chronology-spine" class="timeline-anchor-details cme-chronology-spine" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;">
-          <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
+        htmlSpineInner += `
+        <div id="lesson-chronology-spine" class="timeline-anchor-details cme-chronology-spine" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;">
+          <div style="padding: 12px 18px; font-weight: 700; color: #0f172a; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0; flex-wrap: wrap; gap: 8px;">
             <span style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
               <span style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Chronology Spine</span>
               <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Key Turning Points &amp; Causal Dominoes</span>
             </span>
-            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
               ${pageAnchor ? `<span style="font-size: 0.74rem; font-weight: 700; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; padding: 2px 8px; border-radius: 12px;"><i class="fa-solid fa-book-open" style="color: #0284c7; margin-right: 4px;"></i> Workbook: ${pageAnchor.label}</span>` : ''}
               <button type="button" class="btn btn-toggle-all-spine-stages" onclick="event.stopPropagation(); window.toggleAllSpineDrawers(this);" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #0369a1; background: #ffffff; border: 1.2px solid #bae6fd; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Expand or collapse all 5 stage drawers at once">
                 <i class="fa-solid fa-arrows-up-down" style="font-size: 0.65rem;"></i> <span class="toggle-spine-text">Expand All</span>
               </button>
               <span style="font-size: 0.74rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
-              <i class="fa-solid fa-chevron-down" style="color: #64748b; font-size: 0.85rem;"></i>
             </div>
-          </summary>
-          <div class="cme-chronology-spine-grid" style="padding: 16px 14px 14px 14px; display: grid; grid-template-columns: repeat(${spineItems.length}, minmax(0, 1fr)); gap: 14px; background: #ffffff; box-sizing: border-box;">
+          </div>
+          <div class="cme-chronology-spine-grid" style="--spine-cols: ${spineItems.length};">
             ${spineItems
               .map((item, idx) => {
                 const isLast = idx === spineItems.length - 1;
                 return `
-              <div class="cme-spine-card" data-stage="${item.step}" style="background: #ffffff; border: 1.2px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; display: flex; flex-direction: column; min-width: 0; box-sizing: border-box; box-shadow: 0 1px 3px rgba(0,0,0,0.03); position: relative; overflow: visible; padding: 10px 10px 8px 10px;">
+              <div class="cme-spine-card" data-stage="${item.step}">
                 ${
                   !isLast
                     ? `
@@ -4633,14 +4970,8 @@ export function renderLesson(lesson) {
                 
                 <!-- Baseline Narrative Zone (Row 1: Enquiry Focus) -->
                 <div class="cme-spine-narrative-zone" style="display: flex; flex-direction: column; flex: 1; box-sizing: border-box;">
-                  <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px; flex-wrap: wrap;">
-                    <div style="display: inline-flex; align-items: center; gap: 4px;">
-                      <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; white-space: nowrap;">
-                        STAGE ${item.step}
-                      </span>
-                      ${item.para_ref ? `<span style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: monospace; font-size: 0.62rem; font-weight: 800; padding: 1px 5px; border-radius: 3px;" title="Corresponds to Paragraph ${item.para_ref} in narrative">Text ${item.para_ref}</span>` : ''}
-                    </div>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 800; color: #0284c7; text-align: right; line-height: 1.25;" title="${item.date}">${item.date}</span>
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px;">
+                    <span style="font-family: 'Inter', sans-serif; font-size: 0.74rem; font-weight: 800; color: #0284c7; line-height: 1.25;" title="${item.date}">${item.date}</span>
                   </div>
 
                   ${
@@ -4722,11 +5053,24 @@ export function renderLesson(lesson) {
                     : ''
                 }
               </div>
+              ${
+                !isLast
+                  ? `
+              <div class="cme-domino-vertical-connector" title="Stage ${item.step} triggers Stage ${item.step + 1}${item.connective ? ': ' + item.connective : ''}">
+                <div class="cme-connector-line"></div>
+                <div class="cme-connector-badge">
+                  <i class="fa-solid fa-arrow-down"></i>
+                  <span>${item.connective ? 'Causal Domino Trigger' : 'Next Stage'}</span>
+                </div>
+                <div class="cme-connector-line"></div>
+              </div>`
+                  : ''
+              }
               `;
               })
               .join('')}
           </div>
-        </details>
+        </div>
         `;
       }
     } else if (
@@ -4734,14 +5078,14 @@ export function renderLesson(lesson) {
       Array.isArray(lesson.timeline_anchor) &&
       lesson.timeline_anchor.length > 0
     ) {
-      htmlNarrative += `
-        <details class="timeline-anchor-details" style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;">
-          <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc;">
+      htmlSpineInner += `
+        <div class="timeline-anchor-details" style="background: #ffffff; border: 1px solid #cbd5e1; border-left: 4px solid #0284c7; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;">
+          <div style="padding: 12px 18px; font-weight: 700; color: #0f172a; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
             <span style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; color: #0369a1;">
               <i class="fa-solid fa-clock-rotate-left" style="color: #0284c7;"></i> Chronology Spine &bull; Key Milestones
             </span>
             <span style="font-size: 0.8rem; font-weight: 600; color: #64748b;">${lesson.timeline_anchor.length} Milestones</span>
-          </summary>
+          </div>
           <div style="padding: 16px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; background: #fff;">
             ${lesson.timeline_anchor
               .map(
@@ -4768,7 +5112,7 @@ export function renderLesson(lesson) {
                 : ''
             }
           </div>
-        </details>
+        </div>
       `;
     }
 
@@ -4790,18 +5134,18 @@ export function renderLesson(lesson) {
         if (lIdx === -1) lIdx = 0;
       }
       const pageAnchor = getWorkbookPageAnchor(unitId || window.currentUnitId, lesson, lIdx);
-      htmlNarrative += `
-        <details id="lesson-workbook-stages-drawer" class="ks3-workbook-stages-drawer" style="background: #ffffff; border: 1.5px solid #0f284e; border-top: 4px solid #0f284e; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(15, 40, 78, 0.08); overflow: hidden;">
-          <summary style="padding: 12px 18px; font-weight: 700; color: #0f284e; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f0f4f9; border-bottom: 1.2px solid #cbd5e1;">
+      htmlSpineInner += `
+        <div id="lesson-workbook-stages-drawer" class="ks3-workbook-stages-drawer" style="background: #ffffff; border: 1.5px solid #0f284e; border-top: 4px solid #0f284e; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 3px 10px rgba(15, 40, 78, 0.08); overflow: hidden;">
+          <div style="padding: 12px 18px; font-weight: 700; color: #0f284e; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f0f4f9; border-bottom: 1.2px solid #cbd5e1; flex-wrap: wrap; gap: 8px;">
             <span style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
               <span style="background: #0f284e; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 900; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Pupil Workbook Companion</span>
               <span style="font-weight: 800; font-size: 0.98rem; color: #0f284e; font-family: 'Inter', sans-serif;">5-Stage Chronological Enquiry Spine &bull; Paragraph Anchors</span>
             </span>
-            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
               ${pageAnchor ? `<span style="font-size: 0.76rem; font-weight: 700; color: #0f284e; background: #ffffff; border: 1px solid #93c5fd; padding: 2px 8px; border-radius: 12px;"><i class="fa-solid fa-book-open" style="color: #2563eb; margin-right: 4px;"></i> Workbook Spread: ${pageAnchor.label}</span>` : ''}
               <span style="font-size: 0.74rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${lesson.workbook_stages.length} Inquiry Stages</span>
             </div>
-          </summary>
+          </div>
           <div class="ks3-stages-grid" style="padding: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; background: #ffffff;">
             ${lesson.workbook_stages
               .map((st) => {
@@ -4852,7 +5196,7 @@ export function renderLesson(lesson) {
               })
               .join('')}
           </div>
-        </details>
+        </div>
       `;
     }
 
@@ -5594,7 +5938,7 @@ export function renderLesson(lesson) {
                        return `
                        <div style="width: 100%; grid-column: 1 / -1; margin: 6px 0;">
                          <details class="cme-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" id="source-card-A" data-source-letter="A" style="margin: 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
-                           <summary style="padding: 5px 12px; min-height: 28px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+                           <summary style="padding: 5px 12px; min-height: 40px; padding: 7px 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
                              <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                                <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">PRIMARY VISUAL RECORD</span>
                                <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${displayCaption}</span>
@@ -5604,6 +5948,14 @@ export function renderLesson(lesson) {
                              </span>
                            </summary>
                            <div class="weimar-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+                             ${(() => {
+                               const disc = getArchivalSourceDiscussionComponents(
+                                 hingeText,
+                                 img,
+                                 isKs2,
+                                 '10px',
+                               );
+                               return `
                              <div class="archival-source-split-layout">
                                <div class="archival-source-media-col">
                                  <img src="${imgSrc}" alt="${displayCaption}" style="width: 100%; max-height: 380px; object-fit: contain; background: #fff; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-gallery" data-gallery="${galleryData}" data-index="${idx}">
@@ -5611,6 +5963,13 @@ export function renderLesson(lesson) {
                                    <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
                                     <span>Pan-Zoom</span>
                                  </div>
+                                 ${
+                                   !isKs2
+                                     ? `<div class="archival-media-provenance" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 8px; font-size: 0.74rem; line-height: 1.35; color: #94a3b8; text-align: left;">
+                                   <strong style="color: #cbd5e1;">Accession:</strong> Edexcel GCSE Paper 3 Primary Visual Evidence
+                                 </div>`
+                                     : ''
+                                 }
                                </div>
                                <div class="archival-source-details-col">
                                  ${displayCaption ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 12px; font-style: italic;">${displayCaption}</div>` : ''}
@@ -5623,16 +5982,12 @@ export function renderLesson(lesson) {
                                  `
                                      : ''
                                  }
-                                 ${
-                                   !isKs2
-                                     ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
-                                   <strong>Accession:</strong> Edexcel GCSE Paper 3 Primary Visual Evidence
-                                 </div>`
-                                     : ''
-                                 }
-                                 ${renderArchivalSourceDiscussionBox(hingeText, img, isKs2, '10px')}
+                                 ${disc.promptHtml}
                                </div>
                              </div>
+                             ${disc.panelHtml}
+                             `;
+                             })()}
                            </div>
                          </details>
                        </div>
@@ -5722,43 +6077,8 @@ export function renderLesson(lesson) {
            `;
       }
 
-      let blockSourceHtml = '';
-      let rawSource =
-        block.source ||
-        (block.archival_source
-          ? {
-              type: 'written',
-              title: block.archival_source.title,
-              shelfmark: block.archival_source.shelfmark,
-              content: block.archival_source.text || block.archival_source.content || '',
-              citation: block.archival_source.citation || '',
-              source_context:
-                block.archival_source.source_context || block.archival_source.context || '',
-              question: block.archival_source.question || '',
-              qNum: block.archival_source.qNum || '',
-            }
-          : null);
-
-      if (
-        !rawSource &&
-        window.currentUnitId === 'water_and_sanitation' &&
-        block.source_letter &&
-        block.image
-      ) {
-        rawSource = {
-          type: 'visual',
-          src: block.image,
-          source: block.image,
-          title: `Source ${block.source_letter}: ${block.image_alt || block.theme_heading || 'Primary Historical Evidence'}`,
-          shelfmark: block.shelfmark || `SOURCE ${block.source_letter}`,
-          caption: block.caption || block.image_caption || '',
-          citation: block.citation || 'Archaeological / Primary Archive Evidence',
-          source_context: block.image_context || '',
-          question: block.source_question || '',
-        };
-      }
-
-      if (rawSource) {
+      const renderSingleArchivalSource = (rawSource) => {
+        if (!rawSource) return '';
         const rawImgSrc =
           (typeof rawSource.src === 'string' &&
           rawSource.src.trim() &&
@@ -5898,8 +6218,42 @@ export function renderLesson(lesson) {
             `
             : '';
 
-          sourceBodyHtml = `
-            <div class="archival-source-split-layout">
+          const primaryProvenanceHtml =
+            !isKs2 && (rawSource.citation || rawSource.provenance)
+              ? `<div class="archival-media-provenance" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 8px; font-size: 0.74rem; line-height: 1.35; color: #94a3b8; text-align: left;">
+                  <strong style="color: #cbd5e1;">Provenance:</strong> ${rawSource.citation || rawSource.provenance}
+                </div>`
+              : '';
+
+          let mediaColHtml = '';
+          if (Array.isArray(rawSource.plates) && rawSource.plates.length > 0) {
+            mediaColHtml = `
+              <div class="archival-source-media-col dual-plates-col${isKs2 ? ' ks2-source-media-col' : ''}" style="flex: 0 0 380px; max-width: 440px; display: flex; flex-direction: column; gap: 14px;">
+                ${rawSource.plates
+                  .map((plate, pIdx) => {
+                    const plateImgUrl = getAssetUrl(plate.image || plate.src);
+                    return `
+                    <div class="archival-plate-card" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                      <div style="font-size: 0.65rem; font-weight: 800; color: #1e40af; letter-spacing: 0.5px; margin-bottom: 6px; text-transform: uppercase;">
+                        ${plate.label || `PLATE ${pIdx + 1}`}
+                      </div>
+                      <div style="position: relative; width: 100%; display: flex; justify-content: center; background: #f8fafc; border-radius: 4px; overflow: hidden;">
+                        <img src="${plateImgUrl}" alt="${plate.title || `Plate ${pIdx + 1}`}" data-action="open-modal" data-src="${plateImgUrl}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: 200px; object-fit: contain; display: block; border-radius: 4px;">
+                        <div class="archival-source-inspect-badge">
+                          <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
+                          <span>Pan-Zoom</span>
+                        </div>
+                      </div>
+                      ${plate.caption ? `<div style="font-size: 0.78rem; color: #475569; margin-top: 6px; line-height: 1.35; font-style: italic;">${plate.caption}</div>` : ''}
+                    </div>
+                  `;
+                  })
+                  .join('')}
+                ${primaryProvenanceHtml}
+              </div>
+            `;
+          } else {
+            mediaColHtml = `
               <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
                 <div style="position: relative; width: 100%; display: flex; justify-content: center;">
                   <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" ${rawSource.default_zoom || rawSource.defaultZoom || (rawSourceImgUrl && rawSourceImgUrl.includes('vesalius_fabrica_frontispiece')) ? `data-default-zoom="${rawSource.default_zoom || rawSource.defaultZoom || '2x'}"` : ''} style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
@@ -5909,6 +6263,7 @@ export function renderLesson(lesson) {
                   </div>
                 </div>
                 ${examSpotlightBtn}
+                ${primaryProvenanceHtml}
                 ${
                   window.currentUnitId === 'cme_new' ||
                   window.currentUnitId === 'gcse_middle_east_1945_1995'
@@ -5922,6 +6277,19 @@ export function renderLesson(lesson) {
                     : ''
                 }
               </div>
+            `;
+          }
+
+          const primaryDisc = getArchivalSourceDiscussionComponents(
+            rawSource.hinge_question || rawSource.question || rawSource.source_question,
+            rawSource,
+            isKs2,
+            '10px',
+          );
+
+          sourceBodyHtml = `
+            <div class="archival-source-split-layout">
+              ${mediaColHtml}
               <div class="archival-source-details-col">
                 <div>
                   ${
@@ -5955,17 +6323,11 @@ export function renderLesson(lesson) {
                   `
                       : ''
                   }
-                  ${renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '10px')}
+                  ${primaryDisc.promptHtml}
                 </div>
-                ${
-                  !isKs2 && (rawSource.citation || rawSource.provenance)
-                    ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: auto;">
-                        <strong>Provenance:</strong> ${rawSource.citation || rawSource.provenance}
-                      </div>`
-                    : ''
-                }
               </div>
             </div>
+            ${primaryDisc.panelHtml}
           `;
         }
 
@@ -6015,9 +6377,9 @@ export function renderLesson(lesson) {
             ? rawSource.title.replace(/^Source\s+[A-Z0-9]+[:\s-]*/i, '').trim()
             : rawSource.caption || 'Archival Primary Record';
 
-          blockSourceHtml = `
+          return `
             <details class="cme-source-drawer medicine-source-drawer eee-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" ${bCardIdAttr} style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
-              <summary style="padding: 5px 12px; min-height: 28px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+              <summary style="padding: 7px 12px; min-height: 40px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
                 <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                   <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">${sLetter ? `SOURCE ${sLetter}` : 'ARCHIVAL EVIDENCE'}</span>
                   <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${displayTitle}</span>
@@ -6027,7 +6389,7 @@ export function renderLesson(lesson) {
                 </span>
               </summary>
               <div class="cme-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
-                ${sourceHeaderHtml}
+                ${sourceAudioBtnHtml ? `<div class="archival-source-header" style="display: flex; justify-content: flex-end; margin-bottom: 12px;">${sourceAudioBtnHtml}</div>` : ''}
                 ${sourceBodyHtml}
                 ${(() => {
                   const utilityObj = rawSource.utility_enquiry || rawSource.utilityEnquiry;
@@ -6046,11 +6408,25 @@ export function renderLesson(lesson) {
                       utilityObj.context ||
                       '';
 
+                    const isMedicineWesternFront =
+                      (unitId === 'edexcel_medicine' ||
+                        window.currentUnitId === 'edexcel_medicine') &&
+                      (lesson.historic_environment ||
+                        (lesson.title && lesson.title.includes('KT5')));
+                    const examBadgeTitle =
+                      utilityObj.exam_label ||
+                      (isMedicineWesternFront
+                        ? 'Edexcel Paper 1 &bull; Q2(a) Source Utility Enquiry [8 Marks]'
+                        : unitId === 'weimar_nazi_germany' ||
+                            window.currentUnitId === 'weimar_nazi_germany'
+                          ? 'Edexcel Paper 3 &bull; Q3(a) Source Utility Enquiry [8 Marks]'
+                          : 'GCSE Source Utility Enquiry [8 Marks]');
+
                     return `
                       <div class="archival-source-utility-box edexcel-paper3-utility-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
                           <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-                            <i class="fa-solid fa-scale-balanced"></i> Edexcel Paper 3 &bull; Q3(a) Source Utility Enquiry [8 Marks]
+                            <i class="fa-solid fa-scale-balanced"></i> ${examBadgeTitle}
                           </div>
                           <span style="font-size: 0.65rem; font-weight: 800; color: #15803d; background: #dcfce7; border: 1px solid #bbf7d0; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Exam Utility Triad</span>
                         </div>
@@ -6128,14 +6504,53 @@ export function renderLesson(lesson) {
             </details>
           `;
         } else {
-          blockSourceHtml = `
-                <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
-                  ${sourceHeaderHtml}
-                  ${sourceBodyHtml}
-                </div>
-               `;
+          return `
+            <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
+              ${sourceHeaderHtml}
+              ${sourceBodyHtml}
+            </div>
+          `;
         }
+      };
+
+      const rawSourcesList = [];
+      if (Array.isArray(block.sources)) {
+        rawSourcesList.push(...block.sources);
+      } else if (Array.isArray(block.source)) {
+        rawSourcesList.push(...block.source);
+      } else if (block.source) {
+        rawSourcesList.push(block.source);
+      } else if (block.archival_source) {
+        rawSourcesList.push({
+          type: 'written',
+          title: block.archival_source.title,
+          shelfmark: block.archival_source.shelfmark,
+          content: block.archival_source.text || block.archival_source.content || '',
+          citation: block.archival_source.citation || '',
+          source_context:
+            block.archival_source.source_context || block.archival_source.context || '',
+          question: block.archival_source.question || '',
+          qNum: block.archival_source.qNum || '',
+        });
+      } else if (
+        window.currentUnitId === 'water_and_sanitation' &&
+        block.source_letter &&
+        block.image
+      ) {
+        rawSourcesList.push({
+          type: 'visual',
+          src: block.image,
+          source: block.image,
+          title: `Source ${block.source_letter}: ${block.image_alt || block.theme_heading || 'Primary Historical Evidence'}`,
+          shelfmark: block.shelfmark || `SOURCE ${block.source_letter}`,
+          caption: block.caption || block.image_caption || '',
+          citation: block.citation || 'Archaeological / Primary Archive Evidence',
+          source_context: block.image_context || '',
+          question: block.source_question || '',
+        });
       }
+
+      let blockSourceHtml = rawSourcesList.map((s) => renderSingleArchivalSource(s)).join('');
 
       const showParaNumber = Boolean(
         block.text &&
@@ -7218,15 +7633,43 @@ export function renderLesson(lesson) {
           : '';
 
         htmlTasks += `
-            <div class="phase-card">
-              ${ks2WorksheetBanner}
-              <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
-                
-                ${revealBtn}
-              </div>
+            <details class="lesson-tasks-accordion phase-card" open style="margin-top: 32px; border: 1.5px solid #cbd5e1; border-radius: 12px; background: #ffffff; overflow: hidden; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05); padding: 0;">
+              <summary style="cursor: pointer; padding: 16px 22px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); display: flex; justify-content: space-between; align-items: center; user-select: none; border-bottom: 1px solid #e2e8f0; list-style: none; outline: none; transition: background 0.15s ease;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <div style="width: 38px; height: 38px; border-radius: 8px; background: #0284c7; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);">
+                    <i class="fa-solid fa-book-open"></i>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #0369a1; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                      <span style="background: #e0f2fe; color: #0369a1; padding: 1.5px 7px; border-radius: 4px; font-weight: 800;"><i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> PUPIL WORKBOOK COMPANION</span>
+                      <span style="color: #94a3b8;">&bull;</span>
+                      <span>RIGHT-HAND SPREAD (RECTO)</span>
+                    </div>
+                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #0f172a;">Pupil Workbook Activity &bull; Disciplinary Writing Tasks</div>
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 12px;">
+                  <span style="font-size: 0.78rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 14px; display: inline-flex; align-items: center; gap: 5px;">
+                    <i class="fa-solid fa-layer-group"></i> ${lesson.tasks.length} Workbook Tasks
+                  </span>
+                  <span style="font-size: 0.85rem; font-weight: 700; color: #64748b; display: inline-flex; align-items: center; gap: 6px;">
+                    <span>Click to Collapse/Expand</span>
+                    <i class="fa-solid fa-chevron-down accordion-arrow" style="transition: transform 0.2s ease;"></i>
+                  </span>
+                </div>
+              </summary>
+              <div style="padding: 22px 24px;">
+                ${ks2WorksheetBanner}
+                <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 20px;">
+                  ${revealBtn}
+                </div>
           `;
 
         lesson.tasks.forEach((task, tIdx) => {
+          if (task.type === 'because_but_so' || task.type === 'sentence_expansion') {
+            htmlTasks += renderBecauseButSoTaskHTML(task, currentIndex, tIdx, unitId);
+            return;
+          }
           if (task.type === 'source_utility' || task.taskType === 'source_utility') {
             htmlTasks += renderSourceUtilityTaskHTML(task, currentIndex, tIdx, unitId);
             return;
@@ -7805,8 +8248,8 @@ export function renderLesson(lesson) {
             </div>
           `;
         });
+        htmlTasks += `</div></details>`;
       }
-      htmlTasks += `</div>`;
     }
 
     if (lesson.essay_planning) {
@@ -7973,24 +8416,290 @@ export function renderLesson(lesson) {
     if (epQuestions.length > 0 || epStimulus.length > 0) {
       htmlExamPractice += `
           <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
-            <div style="background: #eff6ff; padding: 15px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-              <h3 style="margin: 0; color: #1e3a8a; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;"><i class="fa-solid fa-graduation-cap"></i> Assessment Practice</h3>
+            <div style="background: #eff6ff; padding: 16px 20px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                  <span style="background: #dbeafe; color: #1e40af; padding: 1.5px 7px; border-radius: 4px; font-weight: 800;"><i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> PUPIL WORKBOOK COMPANION</span>
+                  <span style="color: #94a3b8;">&bull;</span>
+                  <span>RIGHT-HAND SPREAD (RECTO)</span>
+                </div>
+                <h3 style="margin: 0; color: #1e3a8a; font-size: 1.25rem; font-family: 'Playfair Display', Georgia, serif; display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-graduation-cap" style="color: #2563eb;"></i> Pupil Workbook Activity &bull; GCSE Examination Practice
+                </h3>
+              </div>
               <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                 <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal All Models</button>
               </div>
             </div>
         `;
-      const formatExamQuestionTitle = (qText, fallbackIdx) => {
+      const formatExamQuestionTitle = (qText, fallbackIdx, qObj) => {
         if (!qText) return '';
         let str = qText.trim();
-        if (/^Q?\s*1\s*\([a-b]\)/i.test(str)) {
-          str = str.replace(/^Q?\s*1\s*\(([a-b])\)[\.:\s]*/i, 'Q1($1). ');
-        } else if (/^Q?\s*([2-6])[\.:\s]/i.test(str)) {
-          str = str.replace(/^Q?\s*([2-6])[\.:\s]*/i, 'Q$1. ');
+        // Remove redundant top line like "Describe two features of battlefield trauma and protective equipment on the Western Front:"
+        str = str.replace(/^Describe two features of[^\n:]+:\s*\n?/i, '');
+
+        const qType = (qObj?.type || '').toLowerCase();
+        const qTariff = (qObj?.tariff || '').toLowerCase();
+
+        // 1. Follow-up enquiry (Edexcel Paper 1 Q2b)
+        if (qType.includes('follow_up') || /follow up source/i.test(str)) {
+          let cleanStr = str.replace(/^(?:Q\d+[\.:\s]+|Question\s+\d+[\.:\s]+)*/i, '');
+          cleanStr = cleanStr.replace(/\n/g, '<br>');
+          return `Question 2(b) [4 marks]: ${typeof formatBold !== 'undefined' ? formatBold(cleanStr) : cleanStr}`;
+        }
+
+        // 2. Source Utility (Edexcel Paper 1 Q2a)
+        if (
+          qType.includes('utility_of_sources') ||
+          (qType.includes('utility') && !qType.includes('follow_up')) ||
+          /how useful is source/i.test(str)
+        ) {
+          let cleanStr = str.replace(/^(?:Q\d+[\.:\s]+|Question\s+\d+[\.:\s]+)*/i, '');
+          cleanStr = cleanStr.replace(/\[4 marks\]/gi, '[8 marks]'); // Correct 8-mark utility tariff in stem
+          cleanStr = cleanStr.replace(/\n/g, '<br>');
+          return `Question 2(a) [8 marks]: ${typeof formatBold !== 'undefined' ? formatBold(cleanStr) : cleanStr}`;
+        }
+
+        // 3. Feature drills (Edexcel Paper 1 Q1)
+        if (
+          qType.includes('features') ||
+          /feature_drills/i.test(qType) ||
+          str.startsWith('(a) Describe one feature') ||
+          /Describe one feature/i.test(str)
+        ) {
+          let cleanStr = str.replace(/^(?:Q\d+[\.:\s]+|Question\s+\d+[\.:\s]+)*/i, '');
+          cleanStr = cleanStr.replace(/\n/g, '<br><br>');
+          return `Question 1: Feature Drills [4 marks]<br><div style="font-size: 0.98rem; font-weight: 600; color: #1e293b; margin-top: 8px;">${typeof formatBold !== 'undefined' ? formatBold(cleanStr) : cleanStr}</div>`;
+        }
+
+        if (/^(?:Q?\d+[\.:\s]+)*3\s*\(([a-d])\)[\.:\s]*/i.test(str)) {
+          str = str.replace(/^(?:Q?\d+[\.:\s]+)*3\s*\(([a-d])\)[\.:\s]*/i, 'Q3($1). ');
+        } else if (/^(?:Q?\d+[\.:\s]+)*1\s*\(([a-b])\)[\.:\s]*/i.test(str)) {
+          str = str.replace(/^(?:Q?\d+[\.:\s]+)*1\s*\(([a-b])\)[\.:\s]*/i, 'Q1($1). ');
+        } else if (/^(?:Q?\s*(\d+)[\.:\s]+)+/i.test(str)) {
+          str = str.replace(/^(?:Q?\s*(\d+)[\.:\s]+)+/i, (match, p1) => {
+            return `Q${p1}. `;
+          });
         } else if (!/^(Q\d|Question\s+\d)/i.test(str)) {
           str = `Q${fallbackIdx + 1}. ${str}`;
         }
+        str = str.replace(/\n/g, '<br>');
         return typeof formatBold !== 'undefined' ? formatBold(str) : str;
+      };
+
+      const getWorkbookTaskMeta = (unitId, lessonId, qObj, qText, qIdx, lesson) => {
+        const type = (qObj?.type || '').toLowerCase();
+        const text = (qText || '').toLowerCase();
+        const tariff = (qObj?.tariff || '').toLowerCase();
+
+        // Parse lesson ID format: e.g. "lesson_1_3" -> kt=1, num=3
+        const idMatch = (lessonId || '').match(/lesson_([0-9]+)_([0-9]+)/i);
+        const ktNum = idMatch ? parseInt(idMatch[1], 10) : 1;
+        const lNum = idMatch ? parseInt(idMatch[2], 10) : 1;
+
+        // 1. EDEXCEL MEDICINE
+        if (unitId === 'edexcel_medicine') {
+          // Key Topic 5: Western Front (4-page spreads, 28-page saddle stitch booklet)
+          if (ktNum === 5) {
+            const startPg = 4 + (lNum - 1) * 4;
+            const endPg = startPg + 3;
+
+            if (type.includes('features') || text.includes('describe one feature')) {
+              return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
+            }
+            if (lNum % 2 === 1) {
+              if (type.includes('utility') || text.includes('how useful is source')) {
+                return {
+                  inWorkbook: true,
+                  label: `In Printed Workbook • Pages ${startPg}–${endPg}`,
+                };
+              }
+              if (type.includes('follow_up') || text.includes('follow up source')) {
+                const nextPractice =
+                  lNum === 5 ? 'Lesson 4 (KT5.4)' : `Lesson ${lNum + 1} (KT5.${lNum + 1})`;
+                return {
+                  inWorkbook: false,
+                  label: 'Digital Extension • Not in Printed Workbook',
+                  note: `This follow-up enquiry is provided as an optional digital extension. In the printed workbook, Question 2(b) is practiced in ${nextPractice}.`,
+                };
+              }
+            } else {
+              if (type.includes('follow_up') || text.includes('follow up source')) {
+                return {
+                  inWorkbook: true,
+                  label: `In Printed Workbook • Pages ${startPg}–${endPg}`,
+                };
+              }
+              if (type.includes('utility') || text.includes('how useful is source')) {
+                const prevPractice = `Lesson ${lNum - 1} (KT5.${lNum - 1})`;
+                return {
+                  inWorkbook: false,
+                  label: 'Digital Extension • Not in Printed Workbook',
+                  note: `This source utility enquiry is provided as an optional digital extension. In the printed workbook, Question 2(a) is practiced in ${prevPractice}.`,
+                };
+              }
+            }
+            return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+          }
+
+          // Key Topics 1–4: Medieval, Renaissance, 18th/19th, Modern (20-page booklets, 3-page spreads)
+          if (ktNum >= 1 && ktNum <= 4) {
+            const part1Pg = 4 + (lNum - 1) * 3 + 1;
+            const part2Pg = part1Pg + 1;
+
+            if (
+              type.includes('similarity') ||
+              type.includes('difference') ||
+              tariff.includes('4 mark') ||
+              type.includes('4m')
+            ) {
+              return { inWorkbook: true, label: `In Printed Workbook • Page ${part2Pg}` };
+            }
+            if (
+              type.includes('causal') ||
+              type.includes('essay') ||
+              tariff.includes('12 mark') ||
+              tariff.includes('16 mark') ||
+              type.includes('12m') ||
+              type.includes('16m')
+            ) {
+              return {
+                inWorkbook: true,
+                label: `In Printed Workbook • Pages ${part1Pg}–${part2Pg}`,
+              };
+            }
+            return { inWorkbook: true, label: `In Printed Workbook • Pages ${part1Pg}–${part2Pg}` };
+          }
+        }
+
+        // 2. EARLY ELIZABETHAN ENGLAND (eee)
+        if (unitId === 'eee') {
+          const startPg = 2 + lNum * 2;
+          const endPg = startPg + 1;
+
+          if (
+            type.includes('feature') ||
+            text.includes('describe two features') ||
+            tariff.includes('4 mark') ||
+            type.includes('2m')
+          ) {
+            return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
+          }
+          if (type.includes('explain_why') || tariff.includes('12 mark') || type.includes('12')) {
+            return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+          }
+          if (type.includes('essay') || tariff.includes('16 mark') || type.includes('16')) {
+            if (lNum >= 5) {
+              return { inWorkbook: true, label: `In Printed Workbook • Pages 14–15` };
+            }
+            return {
+              inWorkbook: false,
+              label: 'Digital Extension • Not in Printed Workbook',
+              note: 'This 16-mark evaluative essay is provided as an optional digital extension. In the printed workbook, 16-mark essay mastery is practiced on the Key Topic Assessment spread (Pages 14–15).',
+            };
+          }
+          return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+        }
+
+        // 3. WEIMAR & NAZI GERMANY (weimar_nazi_germany)
+        if (unitId === 'weimar_nazi_germany') {
+          const startPg = 2 + lNum * 2;
+          const endPg = startPg + 1;
+
+          if (
+            type.includes('inference') ||
+            text.includes('two things you can infer') ||
+            tariff.includes('4 mark')
+          ) {
+            return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
+          }
+          if (
+            type.includes('causation') ||
+            type.includes('explain_why') ||
+            tariff.includes('12 mark') ||
+            type.includes('12m')
+          ) {
+            return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+          }
+          if (
+            type.includes('utility') ||
+            type.includes('interpret') ||
+            tariff.includes('8 mark') ||
+            tariff.includes('16 mark')
+          ) {
+            if (ktNum >= 3 || lNum >= 3) {
+              return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+            }
+            return {
+              inWorkbook: false,
+              label: 'Digital Extension • Not in Printed Workbook',
+              note: 'This Section B interpretation enquiry is provided as an optional digital extension for advanced exam practice.',
+            };
+          }
+          return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+        }
+
+        // 4. CONFLICT IN THE MIDDLE EAST (cme_new)
+        if (unitId === 'cme_new') {
+          const startPg = 2 + lNum * 2;
+          const endPg = startPg + 1;
+          if (
+            tariff.includes('4 mark') ||
+            type.includes('4-mark') ||
+            type.includes('consequence_4')
+          ) {
+            return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
+          }
+          if (
+            tariff.includes('8 mark') ||
+            tariff.includes('12 mark') ||
+            type.includes('narrative_8') ||
+            type.includes('importance_8')
+          ) {
+            return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+          }
+          return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+        }
+
+        // 5. USA: CONFLICT AT HOME AND ABROAD (usa)
+        if (unitId === 'usa') {
+          const startPg = 2 + lNum * 2;
+          const endPg = startPg + 1;
+          if (tariff.includes('4 mark') || type.includes('inference_4m')) {
+            return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
+          }
+          if (
+            tariff.includes('8 mark') ||
+            tariff.includes('12 mark') ||
+            tariff.includes('16 mark')
+          ) {
+            return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+          }
+          return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+        }
+
+        // 6. COLD WAR & OTHER UNITS WITH COMPANION WORKBOOKS
+        const unitsWithWorkbooks = [
+          'cold_war',
+          'medieval_england',
+          'great_war',
+          'great_war_part2',
+          'industrialisation_and_empire',
+          'the_shoah',
+          'monarchy_religion_power',
+          'first_british_empire',
+          'second_british_empire',
+          'early_modern_world',
+          'water_and_sanitation',
+          'australia',
+          'ks2_ww2',
+        ];
+
+        if (unitsWithWorkbooks.includes(unitId)) {
+          return { inWorkbook: true, label: 'In Printed Workbook • Companion Spread' };
+        }
+
+        return null;
       };
 
       const renderQuestion = (q, qIdx) => {
@@ -8058,17 +8767,35 @@ export function renderLesson(lesson) {
           `
               : '';
 
+          const hasDetailedScaffold = !!(
+            sc.guidance ||
+            (sc.steps && sc.steps.length > 0) ||
+            (sc.sentence_starters && sc.sentence_starters.length > 0) ||
+            (sc.connectives_bank && sc.connectives_bank.length > 0) ||
+            (sc.red_flags && sc.red_flags.length > 0) ||
+            (sc.checklist && sc.checklist.length > 0)
+          );
+
           scaffoldHtml = `
             <div style="margin: 12px 0 16px 0;">
               <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
                 <span style="background: #eff6ff; border: 1px solid #93c5fd; color: #1e40af; font-size: 0.85rem; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.5px;">
                   <i class="fa-solid fa-layer-group" style="margin-right: 6px;"></i> ${sc.acronym || 'PEE/PEEL Structure Strip'}
                 </span>
+                ${
+                  hasDetailedScaffold
+                    ? `
                 <button class="btn btn-pedagogy btn-pedagogy-sm" data-action="toggle-element" data-target-id="ep-scaffold-${qIdx}" style="background: #f1f5f9; color: #1e3a8a; border: 1px solid #cbd5e1; font-weight: 600;">
-                  <i class="fa-solid fa-wand-magic-sparkles" style="color: #2563eb;"></i> PEE/PEEL Structure Strip &amp; Tips
+                  <i class="fa-solid fa-wand-magic-sparkles" style="color: #2563eb;"></i> Structure Strip &amp; Tips
                 </button>
+                `
+                    : ''
+                }
               </div>
-              <div id="ep-scaffold-${qIdx}" class="scaffold-box" style="display: block; background: #f8fafc; border: 1.5px solid #93c5fd; border-radius: 8px; padding: 16px; margin-top: 8px;">
+              ${
+                hasDetailedScaffold
+                  ? `
+              <div id="ep-scaffold-${qIdx}" class="scaffold-box" style="display: none; background: #f8fafc; border: 1.5px solid #93c5fd; border-radius: 8px; padding: 16px; margin-top: 8px;">
                 <div style="font-weight: 700; color: #1e3a8a; font-size: 1.05rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
                   <i class="fa-solid fa-sitemap" style="color: #3b82f6;"></i> ${sc.acronym_title || 'Exam Technique Formula'}
                 </div>
@@ -8079,16 +8806,74 @@ export function renderLesson(lesson) {
                 ${redFlagsHtml}
                 ${checklistHtml}
               </div>
+              `
+                  : ''
+              }
             </div>
           `;
         }
 
-        const is4Mark =
-          (q.tariff && q.tariff.includes('4')) ||
-          q.type === '4-mark' ||
-          (lesson.exam_practice && lesson.exam_practice.type === 'consequence_4m');
+        const qText = (q.question || '').toLowerCase();
+        const qTariff = (q.tariff || '').toLowerCase();
+        const qType = (q.type || '').toLowerCase();
+        const isPaper3Weimar =
+          typeof unitId !== 'undefined' &&
+          (unitId === 'weimar_nazi_germany' ||
+            unitId === 'germany' ||
+            (typeof window !== 'undefined' && window.currentUnitId === 'weimar_nazi_germany'));
+
+        const isConsequence =
+          !isPaper3Weimar &&
+          !qTariff.includes('8 mark') &&
+          !qTariff.includes('12 mark') &&
+          !qTariff.includes('16 mark') &&
+          !qType.includes('utility') &&
+          !qType.includes('causation') &&
+          !qType.includes('verdict') &&
+          !qText.includes('how useful') &&
+          !qText.includes('infer') &&
+          !qText.includes('3(a)') &&
+          !qText.includes('3(b)') &&
+          !qText.includes('3(c)') &&
+          !qText.includes('3(d)') &&
+          (qType.includes('consequence') ||
+            qType === 'consequence_4m' ||
+            /explain\s+(?:two\s+)?consequences/i.test(qText));
+
+        const isInference =
+          qText.includes('infer') ||
+          qType.includes('inference') ||
+          /give two things you can infer/i.test(q.question || '');
+
+        const isInterpDiff =
+          qText.includes('difference between these views') ||
+          qText.includes('difference between the views') ||
+          qType.includes('interp_diff') ||
+          /3\(b\)/i.test(q.question || '');
+
+        const isInterpWhy =
+          qText.includes('reason why interpretations') ||
+          qType.includes('interp_why') ||
+          /3\(c\)/i.test(q.question || '');
+
+        const isFollowUp = qText.includes('follow up source') || qType.includes('follow_up');
+
+        const isFeatures = qText.includes('describe two features') || qType.includes('features');
+
+        const isUtility =
+          !isConsequence &&
+          !isFeatures &&
+          !isInference &&
+          !isInterpDiff &&
+          !isInterpWhy &&
+          !isFollowUp &&
+          (qTariff.includes('8 mark') ||
+            qType.includes('utility') ||
+            qText.includes('how useful') ||
+            qText.includes('source utility'));
+
         let stampHtml = '';
-        if (is4Mark) {
+        if (isConsequence) {
           stampHtml = `
             <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #0284c7; border-radius: 8px; background: #f0f9ff; padding: 12px 16px;">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #bae6fd; padding-bottom: 6px;">
@@ -8105,6 +8890,104 @@ export function renderLesson(lesson) {
               </div>
             </div>
           `;
+        } else if (isInterpDiff) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #8b5cf6; border-radius: 8px; background: #f5f3ff; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #ddd6fe; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #6d28d9; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-code-compare" style="margin-right: 6px;"></i> Edexcel 4-Mark Interpretation Difference Structure Strip (Paper 3 Q3b)</span>
+                <span style="background: #8b5cf6; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[4 marks &bull; 5 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #8b5cf6; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">D</span>
+                <div><strong>Identify Main Difference [1–2m]:</strong> <em>"The main difference between Interpretation 1 and Interpretation 2 is that Interpretation 1 suggests [View X], whereas Interpretation 2 suggests [View Y]..."</em></div>
+                <span style="background: #8b5cf6; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">I1</span>
+                <div><strong>Evidence from Interpretation 1 [1m]:</strong> <em>"Interpretation 1 supports this by stating that '[Quote or detail 1]'..."</em></div>
+                <span style="background: #8b5cf6; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">I2</span>
+                <div><strong>Evidence from Interpretation 2 [1m]:</strong> <em>"In contrast, Interpretation 2 states that '[Quote or detail 2]'..."</em></div>
+              </div>
+            </div>
+          `;
+        } else if (isInterpWhy) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #8b5cf6; border-radius: 8px; background: #f5f3ff; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #ddd6fe; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #6d28d9; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-scale-balanced" style="margin-right: 6px;"></i> Edexcel 4-Mark Why Interpretations Differ Structure Strip (Paper 3 Q3c)</span>
+                <span style="background: #8b5cf6; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[4 marks &bull; 5 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #8b5cf6; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">R</span>
+                <div><strong>Identify Valid Reason [1–2m]:</strong> <em>"One reason why Interpretations 1 and 2 give different views is that the historians have used different sources / focused on different aspects [such as X vs Y]..."</em></div>
+                <span style="background: #8b5cf6; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">E</span>
+                <div><strong>Explain with Context &amp; Sources [3–4m]:</strong> <em>"Interpretation 1 draws upon [Source/Context] showing that..., whereas Interpretation 2 emphasizes [Source/Context] because..."</em></div>
+              </div>
+            </div>
+          `;
+        } else if (isInference) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #059669; border-radius: 8px; background: #ecfdf5; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #a7f3d0; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #065f46; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-magnifying-glass" style="margin-right: 6px;"></i> Edexcel 4-Mark Source Inference Structure Strip (Paper 3 Q1)</span>
+                <span style="background: #059669; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[4 marks &bull; 5 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #059669; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">I1</span>
+                <div><strong>Inference 1 [2 Marks]:</strong> <em>"What I can infer from Source A is [clear deduction]..."</em> [1m] + <em>"Details in the source that tell me this are '[Quote or specific detail]'..."</em> [1m]</div>
+                <span style="background: #059669; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">I2</span>
+                <div><strong>Inference 2 [2 Marks]:</strong> <em>"Another thing I can infer from Source A is [second deduction]..."</em> [1m] + <em>"Details in the source that tell me this are '[Different quote or detail]'..."</em> [1m]</div>
+              </div>
+            </div>
+          `;
+        } else if (isFollowUp) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #0d9488; border-radius: 8px; background: #f0fdfa; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #99f6e4; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #115e59; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Edexcel 4-Step Follow-Up Enquiry Structure Strip (Paper 1 Q2b)</span>
+                <span style="background: #0d9488; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[4 marks &bull; 5 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #0d9488; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">1</span>
+                <div><strong>Detail to Follow Up [1m]:</strong> Quote or select one specific historical detail from the source directly linked to the enquiry.</div>
+                <span style="background: #0d9488; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">2</span>
+                <div><strong>Question to Ask [1m]:</strong> Pose a focused, precise historical question directly arising from that detail.</div>
+                <span style="background: #0d9488; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">3</span>
+                <div><strong>Type of Source [1m]:</strong> Name a realistic, authentic contemporary primary record (e.g. medical register, war diary, dispatch log).</div>
+                <span style="background: #0d9488; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">4</span>
+                <div><strong>How Source Helps [1m]:</strong> Explain specifically how this record answers the question and deepens understanding.</div>
+              </div>
+            </div>
+          `;
+        } else if (isFeatures) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #0284c7; border-radius: 8px; background: #f0f9ff; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #bae6fd; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-list-check" style="margin-right: 6px;"></i> Edexcel 4-Mark 'Describe Two Features' Structure Strip</span>
+                <span style="background: #0284c7; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[4 marks &bull; 5 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #0284c7; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">F1</span>
+                <div><strong>Feature 1 [2 Marks]:</strong> <em>"One key feature was [name feature]..."</em> [1m] + <em>"Specifically, [supporting historical factual detail]..."</em> [1m]</div>
+                <span style="background: #0284c7; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">F2</span>
+                <div><strong>Feature 2 [2 Marks]:</strong> <em>"A second key feature was [name feature]..."</em> [1m] + <em>"Specifically, [supporting historical factual detail]..."</em> [1m]</div>
+              </div>
+            </div>
+          `;
+        } else if (isUtility) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #2563eb; border-radius: 8px; background: #eff6ff; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #bfdbfe; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #1e40af; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-magnifying-glass-chart" style="margin-right: 6px;"></i> Edexcel 8-Mark Source Utility Structure Strip (Paper 1 Q2a)</span>
+                <span style="background: #2563eb; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[8 marks &bull; 12 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #2563eb; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">U1</span>
+                <div><strong>Content &amp; Utility:</strong> <em>"Source A is useful for investigating [topic] because it reveals that..."</em> (Quote specific details and corroborate with factual knowledge)</div>
+                <span style="background: #2563eb; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">U2</span>
+                <div><strong>Provenance &amp; Motive:</strong> <em>"The utility of Source A is influenced by its provenance, as it was produced by..."</em> (Evaluate author, date, purpose, and contemporary audience)</div>
+                <span style="background: #2563eb; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">U3</span>
+                <div><strong>Contextual Limitation:</strong> <em>"However, Source A is limited because it omits..."</em> (Deploy precise own knowledge to explain what key developments are missing)</div>
+              </div>
+            </div>
+          `;
         }
 
         const promptHtml = q.prompt
@@ -8115,35 +8998,53 @@ export function renderLesson(lesson) {
         `
           : '';
 
+        const modelAns = q.model || q.model_answer || '';
+        const wbMeta = getWorkbookTaskMeta(unitId, lesson?.id, q, q.question, qIdx, lesson);
+        let wbBadgeHtml = '';
+        let wbNoticeHtml = '';
+        if (wbMeta) {
+          if (wbMeta.inWorkbook) {
+            wbBadgeHtml = `
+              <div style="display: inline-flex; align-items: center; gap: 6px; background: #ecfdf5; border: 1.5px solid #10b981; color: #065f46; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 9999px; margin-bottom: 12px;">
+                <i class="fa-solid fa-book-open" style="font-size: 0.8rem; color: #059669;"></i>
+                <span>${wbMeta.label}</span>
+              </div>
+            `;
+          } else {
+            wbBadgeHtml = `
+              <div style="display: inline-flex; align-items: center; gap: 6px; background: #f8fafc; border: 1.5px solid #94a3b8; color: #334155; font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 9999px; margin-bottom: 12px;">
+                <i class="fa-solid fa-laptop-code" style="font-size: 0.8rem; color: #64748b;"></i>
+                <span>${wbMeta.label}</span>
+              </div>
+            `;
+            if (wbMeta.note) {
+              wbNoticeHtml = `
+                <div style="font-size: 0.88rem; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #3b82f6; border-radius: 6px; padding: 10px 14px; margin-bottom: 14px; line-height: 1.5;">
+                  <strong><i class="fa-solid fa-circle-info" style="color: #2563eb; margin-right: 6px;"></i> Workbook Navigation:</strong> ${wbMeta.note}
+                </div>
+              `;
+            }
+          }
+        }
+
         return `
           <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-            <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-              ${formatExamQuestionTitle(q.question, qIdx)}
-              <span style="display: inline-flex; vertical-align: middle;">
-                ${q.model ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="ep-model-${qIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
+            ${wbBadgeHtml}
+            <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a; line-height: 1.5;">
+              ${formatExamQuestionTitle(q.question, qIdx, q)}
+              <span style="display: inline-flex; vertical-align: middle; margin-left: 8px;">
+                ${modelAns ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="ep-model-${qIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
               </span>
             </div>
+            ${wbNoticeHtml}
             ${stampHtml}
             ${promptHtml}
             ${scaffoldHtml}
             <textarea class="student-answer-input" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
-            ${q.model ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none;">${typeof formatBold !== 'undefined' ? formatBold(q.model) : q.model}</div>` : ''}
+            ${modelAns ? `<div id="ep-model-${qIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${typeof formatBold !== 'undefined' ? formatBold(modelAns) : modelAns}</div>` : ''}
           </div>
         `;
       };
-
-      const isPaper3Weimar =
-        typeof unitId !== 'undefined' && (unitId === 'weimar_nazi_germany' || unitId === 'germany');
-      if (epQuestions.length > 0 && isPaper3Weimar) {
-        let q2Index = epQuestions.findIndex(
-          (q) =>
-            q.question &&
-            (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.')),
-        );
-        if (q2Index !== -1) {
-          htmlExamPractice += renderQuestion(epQuestions[q2Index], q2Index);
-        }
-      }
 
       if (lesson.exam_practice.sources && lesson.exam_practice.sources.length > 0) {
         htmlExamPractice += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 20px;">`;
@@ -8202,7 +9103,7 @@ export function renderLesson(lesson) {
 
             htmlExamPractice += `
               <details class="cme-source-drawer weimar-source-drawer weimar-interpretation-drawer archival-drawer gcse-source-container archival-source-box" id="${interpCardId}" data-interpretation-num="${interpNum}" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
-                <summary style="padding: 5px 12px; min-height: 28px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+                <summary style="padding: 5px 12px; min-height: 40px; padding: 7px 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
                   <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                     <span class="archival-meta-tag" style="background: #9a3412; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">INTERPRETATION ${interpNum}</span>
                     <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${cleanInterpTitle || 'Historical View'}</span>
@@ -8228,7 +9129,7 @@ export function renderLesson(lesson) {
 
             htmlExamPractice += `
               <details class="cme-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" id="${sourceCardId}" data-source-letter="${srcLetter}" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
-                <summary style="padding: 5px 12px; min-height: 28px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+                <summary style="padding: 5px 12px; min-height: 40px; padding: 7px 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
                   <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
                     <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">SOURCE ${srcLetter}</span>
                     <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${cleanSourceTitle || 'Archival Primary Record'}</span>
@@ -8255,12 +9156,7 @@ export function renderLesson(lesson) {
 
       if (epQuestions.length > 0) {
         epQuestions.forEach((q, qIdx) => {
-          let isQ2 =
-            q.question &&
-            (q.question.trim().startsWith('2. ') || q.question.trim().startsWith('Q2.'));
-          if (!isQ2 || !isPaper3Weimar) {
-            htmlExamPractice += renderQuestion(q, qIdx);
-          }
+          htmlExamPractice += renderQuestion(q, qIdx);
         });
       }
       htmlExamPractice += `</div>`;
@@ -8438,14 +9334,24 @@ export function renderLesson(lesson) {
     htmlSpotlightDrawers = renderTextbookSpotlightDrawers(lesson);
   }
 
+  const htmlLaunchpad = renderLessonLaunchpad({
+    lesson,
+    unitId,
+    videos,
+    htmlVideo,
+    htmlDoNowInner,
+    htmlVocabInner,
+    htmlSpineInner,
+    defaultTab: '',
+  });
+
   if (isTrip) {
     html +=
       htmlCwgc +
       htmlNarrative +
       htmlSpotlightDrawers +
-      htmlVideo +
+      htmlLaunchpad +
       htmlPoetry +
-      htmlDoNow +
       htmlPrimary +
       htmlSources1 +
       htmlPairShare +
@@ -8464,8 +9370,8 @@ export function renderLesson(lesson) {
   ) {
     // Universal KS3 Unified Engine Layout
     html +=
-      htmlVideo +
-      htmlDoNow +
+      htmlLaunchpad +
+      htmlLearningObjectives +
       htmlNarrative +
       htmlSpotlightDrawers +
       (lesson.narrative_blocks && lesson.narrative_blocks.length > 0 ? '' : htmlPrimary) +
@@ -8480,12 +9386,12 @@ export function renderLesson(lesson) {
     let htmlDominoSpine = '';
 
     html +=
-      htmlVideo +
-      htmlDoNow +
+      htmlLaunchpad +
+      htmlLearningObjectives +
       htmlNarrative +
       htmlSpotlightDrawers +
       (lesson.narrative_blocks && lesson.narrative_blocks.length > 0 ? '' : htmlPrimary) +
-      (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
+      htmlSources1 +
       htmlTasks +
       htmlDominoSpine +
       htmlExamPractice +
@@ -8493,15 +9399,6 @@ export function renderLesson(lesson) {
       htmlExtended +
       htmlPairShare +
       htmlHistorian;
-  }
-
-  if (
-    typeof isGCSE !== 'undefined' &&
-    isGCSE &&
-    unitId !== 'cme_new' &&
-    !hasInlineNarrativeSources
-  ) {
-    html += htmlSources1;
   }
   const hasExamPractice = !!(
     lesson.exam_practice &&
@@ -8520,7 +9417,14 @@ export function renderLesson(lesson) {
     let gcseHtml = `
         <div class="phase-card">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
-            <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">${lesson.extended && lesson.extended.title ? lesson.extended.title : 'Assessment Practice'}</div>
+            <div>
+              <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #b45309; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                <span style="background: #fef3c7; color: #92400e; padding: 1.5px 7px; border-radius: 4px; font-weight: 800;"><i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> PUPIL WORKBOOK COMPANION</span>
+                <span style="color: #94a3b8;">&bull;</span>
+                <span>RIGHT-HAND SPREAD (RECTO)</span>
+              </div>
+              <div class="phase-title" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0; color: #b45309;">${lesson.extended && lesson.extended.title ? lesson.extended.title : 'Pupil Workbook Activity &bull; GCSE Assessment Practice'}</div>
+            </div>
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
               <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="reveal-all-models"><i class="fa-solid fa-magnifying-glass"></i> Reveal Models</button>
             </div>
@@ -8998,8 +9902,8 @@ export function renderLesson(lesson) {
             <!-- Card Header -->
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #e0f2fe; padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
               <h4 style="margin: 0; color: #1e3a8a; font-size: 1.18rem; font-weight: 800; display: flex; align-items: center; gap: 8px;">
-                <i class="fa-solid fa-pen-nib" style="color: #2563eb;"></i>
-                <span>${qNum}Edexcel Exam Practice</span>
+                <i class="fa-solid fa-book-open" style="color: #2563eb;"></i>
+                <span>${qNum}Pupil Workbook &bull; Edexcel Exam Practice</span>
               </h4>
               <span style="background: #1e3a8a; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
                 <i class="fa-solid fa-award" style="color: #93c5fd;"></i> ${tariffBadge}
@@ -9985,6 +10889,11 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
       if (block.source && block.source.question) block.source.qNum = globalQNum++;
+      if (Array.isArray(block.sources)) {
+        block.sources.forEach((s) => {
+          if (s && s.question) s.qNum = globalQNum++;
+        });
+      }
       if (block.tasks) {
         block.tasks.forEach((task) => {
           if (
@@ -10317,6 +11226,8 @@ export function toggleAllAnswers(btnOrContainer) {
       btn = btnOrContainer;
       container =
         btn.closest('details') ||
+        btn.closest('.donow-panel-content') ||
+        btn.closest('.launchpad-panel') ||
         btn.closest('.phase-card') ||
         btn.closest('.do-now-box') ||
         document;
@@ -10336,12 +11247,15 @@ export function toggleAllAnswers(btnOrContainer) {
     return window.getComputedStyle(a).display === 'none' || a.style.display === 'none';
   });
   answers.forEach((a) => {
+    const parentCard = a.closest('.do-now-card');
     if (anyHidden) {
       a.style.display = 'block';
       a.classList.add('revealed');
+      if (parentCard) parentCard.classList.add('revealed');
     } else {
       a.style.display = 'none';
       a.classList.remove('revealed');
+      if (parentCard) parentCard.classList.remove('revealed');
     }
   });
   if (btn) {

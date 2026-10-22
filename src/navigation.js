@@ -228,6 +228,13 @@ export function updateBreadcrumbs(customTrail = null) {
       currentSectionLabel = 'Masterpiece Studio';
     else if (viewName === 'reader' || viewName === 'textbook-reader')
       currentSectionLabel = 'Dual-Spread Digital Reader';
+    else if (
+      viewName === 'gcse-tracker' ||
+      viewName === 'spec-tracker' ||
+      viewName === 'revision-builder' ||
+      viewName === 'year11-tracker'
+    )
+      currentSectionLabel = 'GCSE Spec Tracker & Revision';
 
     if (currentSectionLabel) {
       trail.push({ label: currentSectionLabel });
@@ -431,6 +438,9 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     viewName === 'chess' ||
     viewName === 'masterpiece' ||
     viewName === 'gallery' ||
+    viewName === 'gcse-tracker' ||
+    viewName === 'spec-tracker' ||
+    viewName === 'revision-builder' ||
     (viewName === 'booklet' && (!param || param === 'all'));
 
   if (isGlobalView) {
@@ -570,6 +580,14 @@ export async function switchView(viewName, param = null, skipHistory = false, op
       await loadUnit(unitTarget);
     }
     await renderDigitalReaderView(param);
+  } else if (
+    viewName === 'gcse-tracker' ||
+    viewName === 'spec-tracker' ||
+    viewName === 'revision-builder' ||
+    viewName === 'year11-tracker'
+  ) {
+    const { renderGcseSpecTracker } = await import('./gcse_spec_tracker.js');
+    await renderGcseSpecTracker(param || 'audit');
   }
 
   // Update dynamic breadcrumbs

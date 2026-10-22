@@ -251,6 +251,36 @@ export function renderHomepage() {
         </div>
       </div>
     `;
+  } else if (window.currentUnitId === 'great_war') {
+    medicineVisualGuideBannerHTML = `
+      <div class="gw-assessment-hub-card" style="margin: 28px 0 20px 0; background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1e293b 100%); border-radius: 14px; padding: 24px 28px; color: #ffffff; box-shadow: 0 10px 30px -5px rgba(30, 58, 138, 0.4); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border: 1.5px solid rgba(255,255,255,0.15); position: relative; overflow: hidden;">
+        <div style="position: absolute; right: -20px; top: -30px; font-size: 13rem; color: rgba(255, 255, 255, 0.03); pointer-events: none; z-index: 0;">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div style="flex: 1; min-width: 290px; position: relative; z-index: 1;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.25); border: 1px solid rgba(147, 197, 253, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; color: #93c5fd;">
+            <i class="fa-solid fa-star"></i> Year 9 November Assessment &bull; 30 Mins &bull; 12 Marks
+          </div>
+          <h3 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 800; color: #ffffff; line-height: 1.25;">
+            "Why Did War Break Out in 1914?" Masterclass &amp; Scaffolding Hub
+          </h3>
+          <p style="margin: 0 0 12px 0; color: #cbd5e1; font-size: 0.94rem; line-height: 1.45; max-width: 680px;">
+            Targeted PEEL scaffolding for your formal written assessment: 1-page A4 revision notes templates, differentiated sentence frames, model answers, revision gateways to Lessons 1–5, and printed quiz booklet shortcuts. <strong>Timetable: 9Y (Monday 9th Nov) &bull; 9X (Thursday 12th Nov)</strong>.
+          </p>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.76rem;">
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-regular fa-clock" style="color: #38bdf8;"></i> 30m Assessment</span>
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-file-lines" style="color: #fbbf24;"></i> 1 Side A4 Notes Permitted</span>
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-pen-nib" style="color: #a78bfa;"></i> 3 PEEL Paragraphs</span>
+            <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-book-open" style="color: #34d399;"></i> Quiz Booklet Shortcut (Q1–3)</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px; flex-shrink: 0; position: relative; z-index: 1;">
+          <button class="btn" onclick="document.querySelectorAll('.lesson-link').forEach(l => l.classList.remove('active')); window.renderLessonByIndex(5); (document.getElementById('content-area') || window).scrollTo({ top: 0, behavior: 'smooth' });" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #ffffff; padding: 12px 22px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); transition: all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='none';">
+            <i class="fa-solid fa-rocket"></i> Launch Assessment Masterclass
+          </button>
+        </div>
+      </div>
+    `;
   }
 
   contentArea.innerHTML = `

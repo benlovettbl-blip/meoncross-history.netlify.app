@@ -2,6 +2,19 @@ const fs = require('fs');
 const path = require('path');
 const { PATHS } = require('./config.cjs');
 
+// ⚠️ HARD DEPRECATION GUARD
+if (!process.argv.includes('--force-legacy')) {
+  console.error(`\n❌ ERROR: generate_pupil_workbooks.cjs is DEPRECATED.`);
+  console.error(`Do NOT compile workbooks using this legacy monolithic script.`);
+  console.error(
+    `All KS3 & GCSE units must use their dedicated Gold Standard double-page compilers (e.g. scripts/render_<unit_id>_workbook.cjs).`,
+  );
+  console.error(
+    `If you genuinely require the legacy fallback for frozen tests, pass --force-legacy.\n`,
+  );
+  process.exit(1);
+}
+
 const publicUnitsDir = PATHS.UNITS;
 let dataParserCode = '';
 try {

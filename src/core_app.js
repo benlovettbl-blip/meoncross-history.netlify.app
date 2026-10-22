@@ -1241,9 +1241,13 @@ function openTaskWhiteboard() {
         activeLesson.do_now.prediction_question,
         activeLesson.do_now.model || activeLesson.do_now.answer || '',
       );
-    } else if (activeLesson.do_now.type === 'questions') {
-      activeLesson.do_now.items.forEach((item) => {
-        addQuestionCard('Do Now', item.question, item.answer || '');
+    } else if (
+      activeLesson.do_now.type === 'questions' ||
+      activeLesson.do_now.type === 'retrieval_starter' ||
+      Array.isArray(activeLesson.do_now.items)
+    ) {
+      (activeLesson.do_now.items || []).forEach((item) => {
+        addQuestionCard('Do Now', item.question || item.q, item.answer || item.a || '');
       });
     }
   }

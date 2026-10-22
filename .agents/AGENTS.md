@@ -7,6 +7,19 @@ STRICT RULE: You are STRICTLY FORBIDDEN from using the name of the user's school
 5. **Git Pre-Commit Sanitization Guardrail:** `node scripts/verify_sanitization.cjs` is strictly enforced in `npm run test:qa` and `.husky/pre-commit`. Any attempt to commit code or documents containing prohibited school or teacher identifiers will exit with code 1 and immediately abort the commit.
 6. **Commercial School Cover Customizer Standard:** All printed booklets, pupil workbooks, and revision packs must follow the customizer pattern: `data-department-name="The History Department"` on the cover banner enclosing `<span class="school-brand-target">The History Department</span>`. Purchasing schools can seamlessly stamp their own school or department name on the cover via pure CSS (`[data-department-name]::after`), browser query parameter (`?school=School+Name`), or CLI/PDF environment variable (`SCHOOL_NAME="School Name" node scripts/export_pdfs.cjs`), keeping our source repository 100% institutional-neutral.
 
+## Strict Ban on Legacy Workbook/Textbook Monoliths & Mandatory Gold Standard Architecture
+STRICT RULE: You are STRICTLY FORBIDDEN from running or generating workbooks or textbooks using the deprecated monolithic scripts `scripts/generate_pupil_workbooks.cjs` or `scripts/generate_textbooks.cjs`.
+1. **Mandatory Gold Standard Double-Page Workbook Architecture:** Every active or newly created KS3 unit MUST use a dedicated compiler (`scripts/render_<unit_id>_workbook.cjs`) adhering to the 16-Page or 20-Page Gold Standard format established in `medieval_england`, `monarchy_religion_power`, and `great_war_part2`:
+   - Page 1: Color Master Cover with 110–118mm primary plate, 4 Core Features, 3-Pillar Decoding Matrix, disciplinary significance, targeted Hinge Question, and student enrollment grid.
+   - Pages 2–13 (or 2–17): Pure `#000000` monochrome interior (zero navy/gray fill dithering).
+   - Verso (Left Page): 5-Stage Chronological Inquiry Spine with 44mm trigger spine and prominent decimal badges (`[1.1]`–`[5.5]`).
+   - Recto (Right Page): Disciplinary writing tasks with calibrated `~7.8mm–8.1mm` handwriting pitch.
+   - Centrefold: Panoramic Dual-Coding Living Timeline laying flat across the saddle-stitch.
+   - Exercise Notes Spread: Authentic British exercise book layout with 26mm margin rule and 32 full-width handwriting lines per page.
+   - Back Cover: KS3 Level Assessment Pathways (Emerging to Greater Depth), formal Progress Tracking Ledger, and interactive Dual-QR code badges linking directly to online retrieval quizzes.
+2. **Mandatory Pure Narrative Classroom Textbook Architecture:** Every companion classroom textbook MUST use the dedicated zero-clutter narrative compiler (`scripts/render_standard_textbook_<unit_id>.cjs`) adhering to the KS3 Classroom Textbook Engine skill (zero source boxes, zero vocab ribbons, zero exam rubrics, 2-column Lora serif text $\ge 10.15\text{pt}$, 0px overflow, and 25/35-question Master Knowledge Retrieval Quiz back cover).
+3. **Automated Audit Requirement:** Every compiled workbook and textbook must pass `node scripts/audit_page_budget.cjs` with 0px overflow and $\ge 95\%$ space utilization (`✅ OPTIMAL`).
+
 ## Layout Checks & Universal Page Budget Standardization
 Always proactively audit documents for page overflows, spilling text, and dead underflow space using `node scripts/check_overflows.cjs <unit_id>`.
 1. **Container Architecture:** All discrete printable page containers (`.a5-page`, `.page`, `.page-container`) must enforce rigid page limits (`overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;`).
@@ -82,10 +95,9 @@ Act as an experienced app builder and an experienced history teacher. Maintain a
 1. **Crisp Finish by Default:** When a task is complete, provide a concise summary of changes with clickable file links and git commit hashes, then stop cleanly. Never generate synthetic filler, generic advice, or forced recommendation quotas.
 2. **Immediate Technical Next Step & Workbook Rollout Compass:** In every response, state the immediate technical next step and display the persistent **Workbook Rollout Compass** (`WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`) so neither the user nor the assistant ever loses track of the unit perfection sequence, even when working on unrelated tasks:
    > 🧭 **Workbook Rollout Compass:**  
-   > **GCSE Track:** Edexcel Medicine (5x 24p Workbooks, 130 stages) 🟢 • Middle East (60 stages) 🟢 • Weimar Germany (16 lessons) ⚪ • Early Elizabeth (12 lessons) ⚪  
-   > **KS3 Perfected:** Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Industrialisation* (`industrialisation_and_empire`) 🌟 • Year 8 *Australia* (`australia`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-   > **Next Target:** GCSE Option 1 Digital Chronology Spine Parity (Option A: *Weimar and Nazi Germany* `weimar_nazi_germany` [16 lessons / 80 stages] or Option B: *Early Elizabethan England* `eee` [12 lessons / 60 stages]) 🎯  
-   > **KS3 Half-Term Queue:** *The Shoah* ⏳ • *The Cold War* ⏳ • *Post-War Britain* ⏳  
+   > **GCSE Track:** Edexcel Medicine (5x 24p Workbooks, 130 stages) 🟢 • Middle East (60 stages) 🟢 • Weimar Germany (16 lessons / 80 stages) 🟢 • Early Elizabeth (12 lessons / 60 stages) 🟢  
+   > **KS3 Perfected:** Year 9 *The Shoah* (`the_shoah` [Dual-Pathway Prototype]) 🌟 • Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Industrialisation* (`industrialisation_and_empire`) 🌟 • Year 8 *Australia* (`australia`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
+   > **Next Target:** Retrospective Dual-Pathway & Line Budget Rollout across KS3 Workbooks (or Half-Term Queue: *The Cold War* `cold_war` ⏳ • *Post-War Britain* `post_war_britain` ⏳) 🎯  
 3. **Genuine Architectural Forks:** Only pose questions or options when a technical, layout, or pedagogical fork genuinely requires the user's decision or preference.
 4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`, not as per-response conversational boilerplate.
 
@@ -487,6 +499,33 @@ STRICT RULE: All 16-page saddle-stitch pupil workbooks must enforce the followin
      - Followed by: `(You must also use information of your own)`.
 6. **Chronological Spine Stage Question Variety:**
    - Left-page chronological spine stages (5 stages per enquiry) must strictly rotate question stems across the unit. Avoid repeating "Why did..." or "How did..." on consecutive stages; use varied high-cognitive stems (`What factors led to...`, `In what ways did...`, `Explain why...`, `What forced [X] to...`, `To what extent did...`, `Evaluate why...`).
+
+## Dual-Pathway Living Timeline Standard (Choice A: Dual-Coding vs Choice B: Concept Mind Map)
+STRICT RULE: All Key Stage 3 double-page pupil workbooks (both newly authored and retrospectively upgraded) MUST implement the Dual-Pathway Living Timeline architecture established in `the_shoah`.
+1. **The Core Pedagogical Rationale (Autonomy & Neurodiversity):**
+   - Forcing all pupils to sketch/draw historical events creates acute cognitive friction, drawing anxiety, and off-task avoidance for pupils with fine-motor dysgraphia or strong verbal/analytical preferences.
+   - Grounded in Universal Design for Learning (UDL: Multiple Means of Action and Expression), Paivio & Caviglioli's Dual-Coding Theory, and Novak & Ausubel's Concept Mapping schema theory: pupils must be provided with autonomous agency to select their cognitive representation method.
+   - **Pathway A (Visual Dual-Coding):** Visual storytelling symbols, timeline icons, and dates for visual processors.
+   - **Pathway B (Concept Mind Map):** Central conceptual node branching out to 3 concrete historical evidence stems for analytical and neurodiverse thinkers.
+2. **The 3 Mandatory Reprographic Touchpoints in Every Workbook:**
+   - **Touchpoint 1: Centrefold Protocol Banner (Pages 8–9 or 10–11):**
+     `<strong style="color: #000000;">Living Timeline Dual-Pathway Protocol:</strong> For each milestone, pupils choose either <strong>Pathway A (Visual Dual-Coding):</strong> sketch non-graphic historical symbols &amp; dates; OR <strong>Pathway B (Concept Mind Map):</strong> draw a central concept node branching to 3 specific evidence stems.`
+   - **Touchpoint 2: Centrefold Milestone Canvas Footer:**
+     Every milestone sketch canvas must render the discreet identifier:
+     `<div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">[ Choice A: Visual Dual-Code Icon &bull; OR &bull; Choice B: 3-Branch Concept Mind Map ]</div>`
+   - **Touchpoint 3: Right-Page Lesson Tasks (Bottom Timeline Mission Box):**
+     Every right-page timeline mission banner MUST offer both pathways explicitly:
+     `<strong>Milestone X ([Title] &bull; [Date]):</strong> Annotate [core fact/statistic]. <em>Choose:</em> <strong>[A] Dual-Code:</strong> sketch [symbol 1] &amp; [symbol 2] &bull; OR &bull; <strong>[B] Mind Map:</strong> node <em>"[Concept Name]"</em> branching to [Branch 1], [Branch 2] &amp; [Branch 3].`
+
+## Ruled Lines Gap-Free Reprographic Standard (Vertical Headroom & Space Allocation)
+STRICT RULE: In all printed workbook right-hand writing pages, ruled response lines must cluster directly underneath their scaffolding strip with zero dead gaps or artificial spacing voids.
+1. **Root Cause Avoidance:** Never rely on `justify-content: space-between` across discrete sibling elements in `.page-body-full` when line counts are low; this creates unsightly 15–20mm voids between the question box, scaffolding strip, and ruled lines.
+2. **Unified Flex Layout:** Group the Exam Header, Question Prompt, Scaffolding Strip, and Ruled Lines inside a unified vertical flex container (`gap: 2px`). Attach the Ruled Lines directly below the scaffolding box with a clean 1mm margin.
+3. **Full Line Budget Absorption:** Response lines must absorb the full vertical page height down to the bottom mission box:
+   - Full-Page Extended Writing (`narrative_8`, `single_12`, `essay`): 22–23 lines (`~7.8mm–8.1mm` pitch).
+   - Split Drill Pages (e.g. 4m Feature + 4m Consequence): 8 lines (Part A) + 14 lines (Part B) seamlessly absorbing the layout with zero footer gaps.
+
+
 
 ## GCSE 28-Page Master Classroom Textbook Publishing Standard
 Whenever authoring, updating, or compiling a GCSE (Key Stage 4) or in-depth companion classroom textbook (e.g. `cme_new` Conflict in the Middle East, `cold_war`, `weimar_nazi_germany`, `eee` Early Elizabethan England, `edexcel_medicine` Medicine Through Time):

@@ -433,7 +433,7 @@ export function bindEvents() {
       if (titleSpan) titleSpan.textContent = 'Units of Study';
     }
 
-    const underConstructionIds = ['second_world_war', 'the_shoah', 'cold_war', 'post_war_britain'];
+    const underConstructionIds = ['second_world_war', 'cold_war', 'post_war_britain'];
     const year7Units = getOrderedUnits(['water_and_sanitation', 'medieval_england']);
     const year8Units = getOrderedUnits([
       'monarchy_religion_power',
@@ -501,7 +501,6 @@ export function bindEvents() {
     }
     // Coming-soon dimmed entries
     const comingSoon9 = [
-      'KS3: The Shoah',
       'KS3: The Cold War',
       'KS3: The Second World War',
       'KS3: Rights, Protest & Post-War Britain',

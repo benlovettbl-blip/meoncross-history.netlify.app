@@ -279,6 +279,19 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'the_shoah') {
+        console.log(
+          `\n📚 Compiling 20-page pupil workbook & 12-page publisher textbook for [the_shoah]...`,
+        );
+        execSync(`node scripts/render_the_shoah_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+        execSync(`node scripts/render_standard_textbook_the_shoah.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);

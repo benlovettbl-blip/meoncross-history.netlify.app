@@ -161,16 +161,18 @@ export const unitSynopses = {
       'Thatcherism & Industrial Unrest',
     ],
   },
-  the_shoah: {
-    period: '1933 – 1945',
+  ks2_ww2: {
+    period: '1939 – 1945',
     synopsis:
-      'How did an advanced, cultured European democracy conceive and execute the systematic industrial murder of six million Jewish men, women, and children? Trace the terrifying escalation from street boycotts and Nuremberg race laws to Kristallnacht, mass shootings in the killing ravines of the East, and the bureaucratic assembly-line slaughter of Auschwitz-Birkenau. A sombre, essential confrontation with totalitarianism, complicity, and the heroic resistance of those who fought to preserve human dignity in the abyss.',
+      "When the air raid sirens wailed across Britain in September 1939, daily life changed overnight for millions of families. Step into the shoes of wartime children clutching cardboard gas mask boxes at crowded railway stations as Operation Pied Piper evacuated them to the countryside. Discover how families sheltered together during the terrifying nights of the Blitz, grew vegetables in city parks to 'Dig for Victory', and celebrated the brave Land Girls, codebreakers at Bletchley Park, and rescuers like Nicholas Winton who saved innocent lives. An inspiring, hands-on exploration of courage, community resilience, and remembering the past.",
     tags: [
-      'Nuremberg Laws (1935)',
-      'Kristallnacht (1938)',
-      'Einsatzgruppen & The Ghettos',
-      'Auschwitz & The Death Camps',
-      'Warsaw Ghetto Uprising',
+      'Operation Pied Piper (Evacuation)',
+      'The Blitz & Anderson Shelters',
+      'Dig for Victory & Rationing',
+      'Women at War & Land Army',
+      'Bletchley Park & Alan Turing',
+      'The Kindertransport & Rescuers',
+      'VE Day & The Windermere Children',
     ],
   },
   australia: {
@@ -195,6 +197,20 @@ export const unitSynopses = {
       'Lochnagar Crater & Thiepval',
       '2nd Lt Crummack MC Action',
       'Commonwealth War Graves',
+    ],
+  },
+  the_shoah: {
+    period: '1933 – 1948',
+    synopsis:
+      'Before the catastrophic rupture of the Second World War, over nine million Jewish people inhabited every corner of Europe, speaking dozens of languages and enriching the intellectual, artistic, and political fabric of the continent. Trace how Adolf Hitler and the Nazi regime systematically weaponized racial antisemitism to strip German Jews of civil rights and legal personhood, before exploiting the smoke and chaos of total war to engineer the continent-wide annihilation of six million human beings. From the claustrophobic terror of the Warsaw Ghetto and the secret chronicle of the Ringelblum Archive to the mass shootings of the Einsatzgruppen in the killing fields of Ukraine, the industrial extermination machinery of Auschwitz-Birkenau, and the armed heroism of ghetto fighters and righteous rescuers—confront the deepest moral questions of complicity, indifference, human resistance, and the enduring obligation to remember.',
+    tags: [
+      'Pre-War Diversity',
+      'Nuremberg Laws (1935)',
+      'Warsaw Ghetto & Oyneg Shabes',
+      'The Holocaust by Bullets',
+      'Wannsee & Death Camps',
+      'Righteous Among the Nations',
+      'Liberation & Nuremberg Trials',
     ],
   },
 };

@@ -107,16 +107,12 @@ export function renderDashboard() {
     .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));
 
   // Year 9 Grouping
-  const underConstructionIds = ['the_shoah', 'cold_war', 'post_war_britain'];
+  const underConstructionIds = ['cold_war', 'post_war_britain'];
   const year9Order = ['great_war', 'great_war_part2', 'the_shoah', 'cold_war', 'post_war_britain'];
   const year9Units = units
     .filter((u) => year9Order.includes(u.id) && !underConstructionIds.includes(u.id))
     .sort((a, b) => year9Order.indexOf(a.id) - year9Order.indexOf(b.id));
-  const comingSoonNames = [
-    'KS3: The Shoah & World War II',
-    'KS3: The Cold War',
-    'KS3: Rights, Protest & Post-War Britain',
-  ];
+  const comingSoonNames = ['KS3: The Cold War', 'KS3: Rights, Protest & Post-War Britain'];
 
   // Year 10 Grouping
   const year10Order = ['cme_new', 'weimar_nazi_germany'];
@@ -153,7 +149,7 @@ export function renderDashboard() {
       australia: 'Invasion & Survival in Australia',
       great_war: 'Causes of the Great War (1890–1914)',
       great_war_part2: 'The Great War (1914–1919)',
-      the_shoah: 'The Shoah & World War II',
+      the_shoah: 'The Shoah (1933–1948)',
       cold_war: 'The Cold War (1945–1991)',
       second_world_war: 'The Second World War',
       post_war_britain: 'Rights, Protest & Post-War Britain',
@@ -177,6 +173,7 @@ export function renderDashboard() {
     }
 
     const positionFallbacks = {
+      the_shoah: 'center 20%',
       monarchy_religion_power: 'center 12%',
       first_british_empire: 'center 35%',
       eee: 'center 10%',
@@ -315,6 +312,38 @@ export function renderDashboard() {
           Year 11: Edexcel GCSE History (9–1)
           <span style="font-size:0.68em;font-weight:700;background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">GCSE</span>
         </h3>
+
+        <!-- Year 11 Specification Tracker & Revision Engine Hero Showcase -->
+        <div class="year11-spec-tracker-banner" style="margin-bottom: 20px; background: linear-gradient(135deg, #091e3a 0%, #1e3a8a 60%, #172554 100%); border-radius: 14px; padding: 22px 26px; color: #ffffff; box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.4); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border: 1.5px solid rgba(255,255,255,0.18); position: relative; overflow: hidden;">
+          <div style="position: absolute; right: -20px; top: -30px; font-size: 11rem; color: rgba(255, 255, 255, 0.03); pointer-events: none; z-index: 0;">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+          <div style="flex: 1; min-width: 290px; position: relative; z-index: 1;">
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.25); border: 1px solid rgba(147, 197, 253, 0.4); padding: 4px 12px; border-radius: 20px; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; color: #93c5fd;">
+              <i class="fa-solid fa-bolt"></i> Interactive Specification Engine &bull; Active 2026 Baseline
+            </div>
+            <h3 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.55rem; font-weight: 800; color: #ffffff; line-height: 1.25;">
+              GCSE Specification Tracker &amp; Revision Builder
+            </h3>
+            <p style="margin: 0 0 14px 0; color: #cbd5e1; font-size: 0.92rem; line-height: 1.45; max-width: 700px;">
+              Your complete terminal revision roadmap: live Red-Amber-Green self-audit matrix covering verbatim Pearson Issue 6 targets, direct lesson bridges, printable A4 checklist, 12-mark causation generator, and rapid diagnostic retrieval sprints.
+            </p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; font-size: 0.76rem;">
+              <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-circle-check" style="color: #34d399;"></i> 4 Active Papers</span>
+              <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-file-pdf" style="color: #f87171;"></i> Printable A4 Checklist</span>
+              <span style="background: rgba(255,255,255,0.12); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.18);"><i class="fa-solid fa-bullseye" style="color: #fbbf24;"></i> 12-Mark Causation Strips</span>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; flex-shrink: 0; position: relative; z-index: 1;">
+            <button type="button" class="btn" onclick="window.switchView('gcse-tracker', 'audit')" style="background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); color: #ffffff; padding: 11px 22px; border-radius: 8px; font-weight: 700; font-size: 0.92rem; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4); transition: all 0.2s;" onmouseover="this.style.transform='translateY(-2px)';" onmouseout="this.style.transform='none';">
+              <i class="fa-solid fa-list-check"></i> Launch Spec Tracker
+            </button>
+            <button type="button" class="btn" onclick="window.switchView('gcse-tracker', 'printable')" style="background: rgba(255,255,255,0.12); color: #ffffff; border: 1px solid rgba(255,255,255,0.25); padding: 9px 18px; border-radius: 8px; font-weight: 600; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.12)'">
+              <i class="fa-solid fa-print"></i> Personalised A4 Checklist
+            </button>
+          </div>
+        </div>
+
         <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
     year11Units.forEach(renderUnitCard);

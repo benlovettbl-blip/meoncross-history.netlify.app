@@ -2,6 +2,19 @@ const fs = require('fs');
 const path = require('path');
 const ROOT_DIR = path.join(__dirname, '..');
 
+// ⚠️ HARD DEPRECATION GUARD
+if (!process.argv.includes('--force-legacy')) {
+  console.error(`\n❌ ERROR: generate_textbooks.cjs is DEPRECATED.`);
+  console.error(`Do NOT compile textbooks using this legacy monolithic script.`);
+  console.error(
+    `All KS3 & GCSE units must use their dedicated zero-clutter pure narrative compilers (e.g. scripts/render_standard_textbook_<unit_id>.cjs).`,
+  );
+  console.error(
+    `If you genuinely require the legacy fallback for frozen tests, pass --force-legacy.\n`,
+  );
+  process.exit(1);
+}
+
 const publicUnitsDir = path.join(ROOT_DIR, 'public', 'units');
 const dataParserSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'data_parser.js'), 'utf8');
 const dataParserCode = dataParserSrc.replace(/export /g, '');

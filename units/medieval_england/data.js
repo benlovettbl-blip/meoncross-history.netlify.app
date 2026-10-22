@@ -679,27 +679,27 @@ const unitData = {
         {
           question: 'Who died in January 1066 without leaving an heir to the English throne?',
           options: [
-            'Harold Godwinson',
+            'William the Conqueror',
             'Edward the Confessor',
             'Alfred the Great',
-            'William the Conqueror',
+            'Harold Godwinson',
           ],
           answer: 'Edward the Confessor',
         },
         {
           question: 'Where did Harold Godwinson crush Harald Hardrada’s Viking invasion army?',
-          options: ['Fulford', 'Hastings', 'Stamford Bridge', 'Pevensey'],
+          options: ['Hastings', 'Fulford', 'Stamford Bridge', 'Pevensey'],
           answer: 'Stamford Bridge',
         },
         {
           question:
             'What military formation did Anglo-Saxon housecarls form at the crest of Senlac Hill?',
-          options: ['The Phalanx', 'The Flying Wedge', 'The Roman Square', 'The Shield Wall'],
+          options: ['The Flying Wedge', 'The Roman Square', 'The Phalanx', 'The Shield Wall'],
           answer: 'The Shield Wall',
         },
         {
           question: 'What tactical trick did Duke William use to lure the English downhill?',
-          options: ['The Feigned Retreat', 'Night Ambush', 'Poisoned Wells', 'Smoke Screens'],
+          options: ['The Feigned Retreat', 'Poisoned Wells', 'Night Ambush', 'Smoke Screens'],
           answer: 'The Feigned Retreat',
         },
       ],
@@ -722,6 +722,72 @@ const unitData = {
       ],
       prologue:
         "On 14 October 1066, two battle-hardened armies collided on a Sussex hillside. Harold Godwinson's Anglo-Saxon housecarls formed an impenetrable shield-wall, defying cavalry charges and arrow storms for nine brutal hours. Yet by sunset, King Harold lay dead and William of Normandy stood victorious. Was William’s triumph down to battlefield genius, or Harold’s exhaustion?",
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=1sK4JX0co8I',
+          title:
+            'Who were the claimants to the throne in 1066? (1/6) | History – The Norman Conquest | BBC Bitesize',
+          duration: '5 mins 38 secs',
+          teacher_guidance:
+            "Examines the succession crisis of January 1066 following Edward the Confessor's death, contrasting the legal, bloodline, and oath claims of Harold Godwinson, William Duke of Normandy, Harald Hardrada, and Edgar the Aetheling.",
+          viewing_task:
+            'What different claims to the English throne were put forward by Harold Godwinson, William of Normandy, and Harald Hardrada?',
+          model_answer:
+            'Harold Godwinson claimed Edward the Confessor nominated him on his deathbed and the Witan elected him. William of Normandy claimed Edward had promised him the throne in 1051 and Harold had sworn a sacred oath to support him. Harald Hardrada claimed the throne based on an earlier secret pact between King Harthacnut and King Magnus of Norway.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=m9NdbxQWdJ8',
+          title: '1066: The Battle of Fulford (2/6) | History – The Norman Conquest | BBC Bitesize',
+          duration: '6 mins 02 secs',
+          teacher_guidance:
+            'Investigates the invasion of northern England by Harald Hardrada and Tostig Godwinson in September 1066 and the clash with Earls Edwin and Morcar at Gate Fulford outside York.',
+          viewing_task:
+            'Why did Earls Edwin and Morcar fight the Viking invaders at Fulford rather than waiting inside the walled city of York?',
+          model_answer:
+            'Edwin and Morcar chose to confront Hardrada south of York to protect the city from being pillaged and to pin the Viking army against the swampy ditch of Germany Beck, but were outflanked when Hardrada’s veteran warriors pushed through the marsh.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=qtW7H7yPZLg',
+          title:
+            '1066: The Battle of Stamford Bridge (3/6) | History - The Norman Conquest | BBC Bitesize',
+          duration: '6 mins 06 secs',
+          teacher_guidance:
+            'Charts King Harold’s extraordinary forced march 200 miles north in four days, catching the Viking army unawares without armour and ending the Viking Age in England.',
+          viewing_task:
+            'How did King Harold achieve surprise at Stamford Bridge, and what cost did this victory have for his southern defences?',
+          model_answer:
+            'Harold marched his mounted housecarls and fyrd 200 miles north in just four days, surprising the Vikings while their heavy chainmail was left with their ships. While Hardrada and Tostig were killed, Harold’s army suffered severe casualties and was exhausted just as Duke William landed on the southern coast.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=zigjVCFzZ38',
+          title:
+            '1066: The Battle of Hastings (4/6) | History - The Norman Conquest | BBC Bitesize',
+          duration: '6 mins 10 secs',
+          teacher_guidance:
+            'Detailed breakdown of the tactical phases at Senlac Hill, comparing the Saxon shield wall with Norman composite forces (archers, infantry, and heavy cavalry).',
+          viewing_task:
+            "How did the combination of the Saxon shield wall breaking and the Norman 'feigned retreat' tactic turn the battle in William's favour?",
+          model_answer:
+            'The Anglo-Saxons held an impenetrable hilltop shield wall until rumours spread that William was dead. When Norman cavalry feigned retreat down the hill, Saxon fyrd soldiers broke formation to pursue them, leaving gaps in their defensive line. William removed his helmet to rally his men, and the cavalry wheeled round to cut down the exposed Saxons.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=wiaCId6pANI',
+          title:
+            'Why William Won at the Battle of Hastings 1066 | Animated History | English Heritage',
+          duration: '1 min 16 secs',
+          teacher_guidance:
+            'Crisp animated summary by English Heritage examining the three decisive factors: wind/luck, exhaustion after Stamford Bridge, and tactical flexibility.',
+          viewing_task:
+            'What three critical advantages allowed Duke William of Normandy to defeat King Harold at Hastings?',
+          model_answer:
+            "Harold's army was exhausted after marching 200 miles south from Stamford Bridge; William possessed cavalry and archers whereas Harold lacked cavalry; and the feigned retreat tactic successfully shattered the Saxon defensive wall.",
+        },
+      ],
     },
     {
       id: 'lesson_2',
@@ -1047,21 +1113,21 @@ const unitData = {
         {
           question:
             'Roughly how many Norman soldiers invaded England in 1066 to rule over 2 million people?',
-          options: ['Over 100,000', 'Fewer than 1,000', 'Roughly 50,000', 'Fewer than 10,000'],
+          options: ['Over 100,000', 'Roughly 50,000', 'Fewer than 1,000', 'Fewer than 10,000'],
           answer: 'Fewer than 10,000',
         },
         {
           question: 'What was the artificial earthen mound of a Norman castle called?',
-          options: ['The Palisade', 'The Bailey', 'The Motte', 'The Barbican'],
+          options: ['The Bailey', 'The Palisade', 'The Motte', 'The Barbican'],
           answer: 'The Motte',
         },
         {
           question: 'What campaign did William carry out in the winter of 1069–1070?',
           options: [
             'The Harrying of the North',
-            'The Pilgrimage of Grace',
             'The Barons’ War',
             'The Peasant Crusade',
+            'The Pilgrimage of Grace',
           ],
           answer: 'The Harrying of the North',
         },
@@ -1069,10 +1135,10 @@ const unitData = {
           question:
             'What great survey of English land and wealth did William commission in 1085–1086?',
           options: [
-            'The Anglo-Saxon Chronicle',
-            'The Domesday Book',
             'Magna Carta',
+            'The Domesday Book',
             'The Constitutions of Clarendon',
+            'The Anglo-Saxon Chronicle',
           ],
           answer: 'The Domesday Book',
         },
@@ -1096,6 +1162,58 @@ const unitData = {
       ],
       prologue:
         'Following his bloody coronation at Westminster, William faced a hostile kingdom of two million Anglo-Saxons. With fewer than ten thousand Norman soldiers, he imposed absolute terror. From the scorched earth of the Harrying of the North to the Domesday survey, William transformed England. How did a tiny Norman elite crush an entire conquered nation?',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=KGDu-_vi8sg',
+          title:
+            'How William the Conquerer secured power after 1066 (5/6) | History - The Norman Conquest | BBC Bitesize',
+          duration: '4 mins 58 secs',
+          teacher_guidance:
+            'Details how William established military dominance following his coronation through the rapid erection of over 500 motte-and-bailey fortresses and the feudal distribution of land to Norman tenants-in-chief.',
+          viewing_task:
+            'How did motte-and-bailey castles allow a tiny Norman minority (around 7,000 soldiers) to dominate an English population of over two million?',
+          model_answer:
+            'Castles functioned as military psychological garrisons placed at strategic road intersections, river crossings, and rebellious towns. A small detachment of mounted Norman knights could shelter safely within the palisades and ride out rapidly to crush any local uprising before rebels could organise.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=kNWoXlAZdkM',
+          title:
+            'Revolt and resistance after 1066 (6/6) | History - The Norman Conquest | BBC Bitesize',
+          duration: '6 mins 00 secs',
+          teacher_guidance:
+            'Examines English resistance across Exeter, the Welsh Marches, Hereward the Wake in the Isle of Ely, and the catastrophic brutality of the Harrying of the North (1069–1070).',
+          viewing_task:
+            'What was the Harrying of the North, and why did William adopt such an extreme, scorched-earth policy in 1069–1070?',
+          model_answer:
+            'Following rebellions in York supported by Danish fleets, William systematically burned crops, slaughtered livestock, salted soil, and destroyed food stores across Yorkshire to the Tees. He did this to starve out any surviving rebels and create a wasteland buffer zone so the north could never rebel or support an invading fleet again.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=RXXDThkJ3Ew',
+          title: 'A Mini Guide to Medieval Castles | Animated History | English Heritage',
+          duration: '1 min 55 secs',
+          teacher_guidance:
+            'Explains how William rapidly constructed timber motte-and-bailey fortresses across England to assert territorial control and intimidate local Anglo-Saxon populations.',
+          viewing_task:
+            'Why were motte-and-bailey castles the ideal military fortification for William to build immediately following the conquest?',
+          model_answer:
+            'They could be constructed in a matter of days or weeks using readily available earth and timber, providing an elevated motte (mound) for lookout and defence and an enclosed bailey for garrisoning troops and horses to suppress local rebellions.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=om_BIzXaVwU',
+          title: 'The Domesday Book | The Story of Britain | BBC Teach',
+          duration: '6 mins 45 secs',
+          teacher_guidance:
+            "Archival narrative exploring the unprecedented 1086 nationwide survey, why Anglo-Saxons likened it to the 'Day of Judgement', and how William used it for tax and feudal control.",
+          viewing_task:
+            'What was the purpose of the 1086 Domesday survey, and why did the English people compare it to Doomsday?',
+          model_answer:
+            "William ordered royal commissioners to survey every hide of land, mill, pig, woodland, and tenant across England to establish exact tax values and feudal obligations. People called it 'Domesday' because, like the biblical Day of Judgement, its records were absolute and could never be appealed or challenged.",
+        },
+      ],
     },
     {
       id: 'lesson_3',
@@ -1410,7 +1528,7 @@ const unitData = {
         {
           question:
             'What royal office did Thomas Becket hold before becoming Archbishop of Canterbury?',
-          options: ['Justiciar', 'Lord Chancellor', 'Earl Marshal', 'Lord High Treasurer'],
+          options: ['Lord High Treasurer', 'Lord Chancellor', 'Earl Marshal', 'Justiciar'],
           answer: 'Lord Chancellor',
         },
         {
@@ -1426,15 +1544,15 @@ const unitData = {
         },
         {
           question: 'On what date was Thomas Becket assassinated inside Canterbury Cathedral?',
-          options: ['24 June 1381', '15 June 1215', '29 December 1170', '14 October 1066'],
+          options: ['14 October 1066', '15 June 1215', '29 December 1170', '24 June 1381'],
           answer: '29 December 1170',
         },
         {
           question: 'What public punishment did King Henry II submit to at Canterbury in 1174?',
           options: [
-            'Loss of his crown',
             'Imprisonment in the Tower',
             'Exile to Normandy',
+            'Loss of his crown',
             'Flogging by monks',
           ],
           answer: 'Flogging by monks',
@@ -1459,6 +1577,33 @@ const unitData = {
       ],
       prologue:
         'King Henry II and Thomas Becket were once inseparable friends, sharing banquets and hunting trips. But when Henry made Becket Archbishop of Canterbury, his friend chose God over the Crown. On a freezing winter evening in 1170, four royal knights burst into Canterbury Cathedral. Why did their dispute end in holy murder before the altar?',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=GtYb038Q7DY',
+          title:
+            'Henry II, Thomas Becket and the Church Courts | The Strange Case of the Law | BBC Bitesize',
+          duration: '4 mins 07 secs',
+          teacher_guidance:
+            "Explores the fundamental legal constitutional dispute over 'benefit of clergy' and whether churchmen who committed crimes should be tried in royal or ecclesiastical courts.",
+          viewing_task:
+            "What was the legal issue of 'criminous clerks', and why did Henry II believe the Church courts undermined royal authority?",
+          model_answer:
+            "Anyone in religious orders could claim 'benefit of clergy' and be tried in bishop's courts, where capital punishment was forbidden and penalties were light (such as prayers or defrocking), whereas royal courts hanged murderers. Henry II argued this created a two-tier legal system where a sixth of the population was exempt from royal justice.",
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=cwTaqxLg7nk',
+          title: 'The Murder of Thomas Becket | Murder and Martyrdom | History Hub',
+          duration: '4 mins 24 secs',
+          teacher_guidance:
+            'Dramatic account of the confrontation on 29 December 1170 inside Canterbury Cathedral between the four Norman knights and Archbishop Thomas Becket.',
+          viewing_task:
+            'What words did Henry II allegedly utter in fury, and what happened when the four knights confronted Becket in Canterbury Cathedral?',
+          model_answer:
+            "Henry uttered words of exasperation ('Will no one rid me of this turbulent priest?'). Four knights sailed to England, confronted Becket inside Canterbury Cathedral during Vespers, and struck him down with swords before the altar when he refused to submit to royal authority.",
+        },
+      ],
     },
     {
       id: 'lesson_4',
@@ -1746,18 +1891,18 @@ const unitData = {
       quick_quiz: [
         {
           question: 'What ancestral continental territory did King John lose to France in 1204?',
-          options: ['Gascony', 'Aquitaine', 'Normandy', 'Brittany'],
+          options: ['Aquitaine', 'Brittany', 'Normandy', 'Gascony'],
           answer: 'Normandy',
         },
         {
           question: 'Where beside the River Thames did King John seal Magna Carta in June 1215?',
-          options: ['Westminster', 'Oxford', 'Canterbury', 'Runnymede'],
+          options: ['Westminster', 'Canterbury', 'Oxford', 'Runnymede'],
           answer: 'Runnymede',
         },
         {
           question:
             'Which famous clause guaranteed that no free man would be imprisoned without lawful judgement?',
-          options: ['Clause 63', 'Clause 39', 'Clause 12', 'Clause 1'],
+          options: ['Clause 1', 'Clause 39', 'Clause 63', 'Clause 12'],
           answer: 'Clause 39',
         },
         {
@@ -1789,6 +1934,32 @@ const unitData = {
       ],
       prologue:
         'King John was deeply unpopular: he lost Normandy, fought with the Pope, and extorted ruinous taxes from his nobility. In June 1215, armed barons cornered the terrified monarch at Runnymede, forcing him to set his seal to Magna Carta. Was the Great Charter a landmark victory for human freedom, or a selfish baronial power grab?',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=7xo4tUMdAMw',
+          title: 'What is Magna Carta? | British Library',
+          duration: '3 mins 33 secs',
+          teacher_guidance:
+            "The British Library's authoritative animated explainer charting King John's abuses of feudal rights, heavy taxation, defeat at Bouvines, and the sealing of the Great Charter at Runnymede.",
+          viewing_task:
+            'What core legal principle established in Clause 39 of Magna Carta still underpins modern law today?',
+          model_answer:
+            'Clause 39 established that no free man could be seized, imprisoned, or stripped of possessions except by the lawful judgement of his equals or by the law of the land, establishing that the king himself was subject to the rule of law.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=wWKTy1NlxZE',
+          title: 'Magna Carta | The Story of Britain | BBC Teach',
+          duration: '7 mins 44 secs',
+          teacher_guidance:
+            'Examines how the barons drafted the charter in June 1215 to protect their land and wealth against royal extortion, and why Pope Innocent III subsequently annulled the agreement.',
+          viewing_task:
+            'Why did the barons rebel against King John in 1215, and how did he react once he had sealed the charter at Runnymede?',
+          model_answer:
+            "The barons rebelled because John demanded exorbitant scutage (shield taxes), seized inheritances, and lost their ancestral lands in Normandy. While John sealed the charter under duress at Runnymede, he immediately appealed to Pope Innocent III, who annulled it, sparking the First Barons' War.",
+        },
+      ],
     },
     {
       id: 'lesson_5',
@@ -2074,15 +2245,15 @@ const unitData = {
       quick_quiz: [
         {
           question: 'In what year did the Black Death first arrive in England?',
-          options: ['1348', '1215', '1381', '1066'],
+          options: ['1348', '1066', '1215', '1381'],
           answer: '1348',
         },
         {
           question: 'What 1351 royal law attempted to freeze peasant wages at pre-plague rates?',
           options: [
-            'The Poor Law',
             'The Constitutions of Clarendon',
             'Magna Carta',
+            'The Poor Law',
             'The Statute of Labourers',
           ],
           answer: 'The Statute of Labourers',
@@ -2116,8 +2287,35 @@ const unitData = {
       ],
       prologue:
         "In the summer of 1348, a terrifying pestilence arrived on merchant ships from Europe, wiping out nearly half of England's population within two years. When surviving farmworkers demanded higher wages, landlords clamped down with harsh poll taxes. In 1381, peasant rebels marched on London with scythes and banners. How did plague and rebellion shatter medieval feudalism?",
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=NBxLWTyUJ0w',
+          title: 'The Black Death | GCSE & KS3 History Explainer',
+          duration: '3 mins 02 secs',
+          teacher_guidance:
+            "Explains how the Yersinia pestis bacteria arrived via trading ships in 1348, wiping out an estimated third to a half of England's population and creating acute labour shortages.",
+          viewing_task:
+            'How did the massive loss of population during the Black Death shift economic power into the hands of surviving peasant labourers?',
+          model_answer:
+            'With up to half the population dead, agricultural fields lay unharvested and landlords faced desperate labour shortages. Surviving peasants could demand higher wages and threaten to move to other manors, directly undermining the traditional feudal system of bonded serfdom.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=WsML7hiTnsY',
+          title: "The Peasants' Revolt (1381) | History - The Plantagenets | BBC Bitesize",
+          duration: '5 mins 27 secs',
+          teacher_guidance:
+            'Traces the trigger of the 1381 rebellion from the hated Poll Tax to Wat Tyler and radical priest John Ball marching on London to confront 14-year-old Richard II.',
+          viewing_task:
+            'What were the main demands of Wat Tyler and the rebels when they met King Richard II at Mile End and Smithfield?',
+          model_answer:
+            'The rebels demanded the abolition of serfdom (feudal bondage), the repeal of the Ordinance of Labourers, freedom of movement, fair land rents (fourpence an acre), and pardon for all rebels.',
+        },
+      ],
     },
   ],
 };
+
 export default unitData;
 export { unitData };

@@ -1009,7 +1009,7 @@ const early_modern_world = {
       },
       video: [
         {
-          url: 'https://www.youtube.com/watch?v=NJMZURabB2k',
+          url: 'https://www.youtube.com/watch?v=3PszVWZNWVA',
           title: '[STARTER HOOK] The World in 1450: Ming Dynasty, Ottoman Empire & The Silk Roads',
           duration: '4 mins 30 secs',
           teacher_guidance:
@@ -2180,7 +2180,7 @@ const early_modern_world = {
         'Significance - Evaluating the impact of the Renaissance on art and science.',
       video: [
         {
-          url: 'https://www.youtube.com/watch?v=s_fTwtgS03A',
+          url: 'https://www.youtube.com/watch?v=YptNONmnXH0',
           title:
             '[STARTER HOOK] The Gunpowder Plot (5 November 1605): Guy Fawkes & Robert Catesby (BBC Teach)',
           duration: '4 mins 30 secs',
@@ -2614,7 +2614,7 @@ const early_modern_world = {
       disciplinary_focus: "Causation - Analyzing the reasons for the Spanish Armada's defeat.",
       video: [
         {
-          url: 'https://www.youtube.com/watch?v=bZ7J3n3sD0Y',
+          url: 'https://www.youtube.com/watch?v=6niBsMeNToo',
           title:
             '[STARTER HOOK] The Causes of the English Civil War: Charles I & The Divine Right of Kings (BBC Teach)',
           duration: '4 mins 45 secs',
@@ -2974,7 +2974,7 @@ const early_modern_world = {
         'Change and Continuity - Tracing the economic shift towards global trade.',
       video: [
         {
-          url: 'https://www.youtube.com/watch?v=2YfKCEQ7pC4',
+          url: 'https://www.youtube.com/watch?v=899il5aiTBg',
           title:
             '[PRIMARY EVIDENCE] The Trial and Execution of King Charles I (30 January 1649) (BBC)',
           duration: '5 mins 0 secs',

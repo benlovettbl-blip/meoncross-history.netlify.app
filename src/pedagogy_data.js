@@ -665,4 +665,53 @@ export const PEDAGOGY_RESEARCH_BANK = [
       },
     ],
   },
+  {
+    id: 'dual_pathway_living_timeline',
+    author: 'Oliver Caviglioli & Joseph Novak',
+    affiliation: 'Dual Coding with Teachers / Cornell University (Concept Mapping)',
+    category: 'SEND & Inclusive Cognition',
+    categoryBadge: 'badge-blue',
+    title: 'The Dual-Pathway Living Timeline: Visual Dual-Coding vs Causal Concept Mapping',
+    subtitle:
+      'Empowering Pupil Autonomy & Accommodating Neurodiversity via Dual Representation Pathways',
+    overview:
+      'When teachers compel all pupils to sketch historical events, neurodiverse pupils and those with fine-motor dysgraphia experience drawing anxiety and cognitive overload. Combining Paivio’s Dual Coding Theory (visual and verbal channels) with Joseph Novak’s Concept Mapping theory (causal schema webs) and Universal Design for Learning (UDL) principles, the Dual-Pathway Living Timeline offers pupils an autonomous cognitive choice: Pathway A (Visual Dual-Code Icon/Symbol) or Pathway B (3-Branch Causal Mind Map). Both pathways demand identical historical thinking without penalizing motor skills.',
+    analysisHeading: 'The Classroom Dilemma (Drawing Fatigue & Motor Anxiety)',
+    analysisText:
+      'Traditional dual-coding tasks frequently force pupils to sketch historical figures or complex events (such as the storming of the Bastille or a trench raid). For pupils with developmental coordination disorder, dysgraphia, or a strong verbal-analytical bias, drawing is a source of acute anxiety and off-task avoidance. Valuable classroom time is wasted attempting to render realistic figures rather than processing historical causation, while lower-attaining pupils copy visual clichés without thinking about the historical mechanism.',
+    evidenceHeading: 'What the Evidence Proves (UDL, Dual Coding & Schema Construction)',
+    evidenceText:
+      'Allan Paivio (1971) and Oliver Caviglioli (2019) establish that visual and verbal representations reinforce long-term memory through additive mnemonic pathways. However, Joseph Novak and David Ausubel (1984) demonstrate that structured concept mapping—linking a central propositional node to specific evidence branches—constructs powerful causal schema in working memory. The Universal Design for Learning (CAST, 2018) guidelines state that offering multiple means of action and expression optimizes engagement and removes artificial barriers to substantive learning.',
+    applicationHeading: 'Revision Hub Architecture: Dual-Pathway Living Timeline Standard',
+    implementation: [
+      'Binary Choice Architecture: For every milestone across the centrefold Living Timeline, pupils explicitly select between Pathway A (Visual Dual-Code: non-graphic symbolic icon + date) or Pathway B (Concept Mind Map: central conceptual node branching to 3 concrete historical evidence stems).',
+      'Standardized Centrefold Footer Canvas: Each milestone drawing space is cleanly designated with an unobtrusive prompt "[ Choice A: Visual Dual-Code Icon • OR • Choice B: 3-Branch Concept Mind Map ]" to validate both representation modes.',
+      'Synchronized Right-Page Timeline Missions: Every right-hand writing spread features a bottom Timeline Mission offering both pathways explicitly (e.g. Choose: [A] Dual-Code: sketch fireship & sliced cable • OR • [B] Mind Map: node "Armada Rout" branching to Fireships, Gravelines & Storm).',
+      'Zero-Clutter Gap-Free Ruled Lines: Writing lines attach directly under scaffolding with a 1mm margin inside a unified flex container, eliminating vertical dead space and maximizing writing headroom.',
+    ],
+    protocolHeading: 'Practical Classroom Protocol for History Teachers',
+    teacherProtocols: [
+      '1. Autonomous Sign-Off: Allow pupils to choose Pathway A or B without prior teacher permission, framing both pathways as equally rigorous disciplinary representations.',
+      '2. De-Emphasize Artistic Skill: Instruct Pathway A sketchers that historical dual-coding uses simple geometric shapes, arrows, and non-graphic symbols (stick figures, shields, balance scales), never high-art realism.',
+      '3. Enforce the 3-Evidence Rule: For Pathway B concept mappers, insist on the triad rule: a central node must connect to exactly three concrete historical evidence stems (dates, statistics, or named acts), preventing superficial single-word webs.',
+    ],
+    citations: [
+      'Caviglioli, O. (2019). Dual Coding with Teachers. John Catt Educational.',
+      'Novak, J. D., & Gowin, D. B. (1984). Learning How to Learn. Cambridge University Press.',
+      'Paivio, A. (1986). Mental Representations: A Dual Coding Approach. Oxford University Press.',
+      'CAST (2018). Universal Design for Learning Guidelines version 2.2. Wakefield, MA.',
+    ],
+    links: [
+      {
+        title: 'Oliver Caviglioli: Dual Coding in the Classroom',
+        url: 'https://www.olicav.com/',
+        displayText: 'www.olicav.com',
+      },
+      {
+        title: 'CAST: Universal Design for Learning Guidelines',
+        url: 'https://udlguidelines.cast.org/',
+        displayText: 'udlguidelines.cast.org',
+      },
+    ],
+  },
 ];

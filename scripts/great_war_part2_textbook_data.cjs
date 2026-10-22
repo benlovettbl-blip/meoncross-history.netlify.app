@@ -381,7 +381,7 @@ module.exports = function getGreatWarPart2Data(helpers = {}) {
           'Featured on Alfred Leete’s iconic recruiting poster with pointed finger declaring: "Your Country Needs YOU".',
           'Sanctioned the formation of civic Pals Battalions, allowing friends and work colleagues to enlist and train together.',
         ],
-        image: getBase64Image('/images/gw_kitchener_portrait.jpg'),
+        image: getBase64Image('/images/gw_kitchener_poster.jpg'),
       },
       conceptSpotlight: `
         <div class="concept-spotlight-box">

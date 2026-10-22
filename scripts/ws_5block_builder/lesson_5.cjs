@@ -446,7 +446,7 @@ module.exports = {
     },
     {
       type: 'youtube',
-      url: 'https://www.youtube.com/watch?v=8st-Ako2mrU',
+      url: 'https://www.youtube.com/watch?v=5k8AnhNkN04',
       title: "The Great Stink & Bazalgette's London Sewers (BBC Bitesize GCSE History)",
       duration: '3 mins 45 secs',
       viewing_task:

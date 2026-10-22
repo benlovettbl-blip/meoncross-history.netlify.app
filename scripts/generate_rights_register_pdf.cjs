@@ -1304,6 +1304,56 @@ async function renderRegister() {
   console.log(`🎉 Successfully rendered KS2 Unit PDF: ${ks2PdfPath}`);
   await ks2Page.close();
 
+  // Render standalone The Shoah Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone The Shoah Unit Source Bibliography...');
+  const shoahPdfDir = path.join(outPdfDir, 'the_shoah');
+  if (!fs.existsSync(shoahPdfDir)) fs.mkdirSync(shoahPdfDir, { recursive: true });
+  const shoahPdfPath = path.join(shoahPdfDir, 'the_shoah_source_bibliography.pdf');
+  const shoahHtml = buildHtml('the_shoah');
+  const shoahPage = await browser.newPage();
+  await shoahPage.setContent(shoahHtml, { waitUntil: 'domcontentloaded' });
+  await shoahPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await shoahPage.pdf({
+    path: shoahPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered The Shoah Unit PDF: ${shoahPdfPath}`);
+  await shoahPage.close();
+
+  // Render standalone USA Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone USA Unit Source Bibliography...');
+  const usaPdfDir = path.join(outPdfDir, 'usa');
+  if (!fs.existsSync(usaPdfDir)) fs.mkdirSync(usaPdfDir, { recursive: true });
+  const usaPdfPath = path.join(usaPdfDir, 'usa_source_bibliography.pdf');
+  const usaHtml = buildHtml('usa');
+  const usaPage = await browser.newPage();
+  await usaPage.setContent(usaHtml, { waitUntil: 'domcontentloaded' });
+  await usaPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await usaPage.pdf({
+    path: usaPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered USA Unit PDF: ${usaPdfPath}`);
+  await usaPage.close();
+
   await browser.close();
   console.log('🏁 All PDF rendering tasks completed successfully!');
 }

@@ -1,68 +1,63 @@
-const fs = require('fs');
-const path = require('path');
 const https = require('https');
+const fs = require('fs');
 
 const downloads = [
   {
-    name: 've_day_children_table_1945.jpg',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/d/db/Ve_Day_in_London%2C_8_May_1945_HU49414.jpg',
-    source: 'Imperial War Museum HU 49414 (Battersea, London, 8 May 1945)',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/e/e9/An_Air_Raid_Precautions_Warden_reports_for_duty_to_the_Chief_Warden_at_his_local_ARP_post_in_Springfield%2C_Essex%2C_aUGUST_1941._D4263.jpg',
+    dest: 'public/units/ks2_ww2/assets/arp_warden_duty_1941.jpg',
   },
   {
-    name: 'tube_station_shelter_1940.jpg',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/c/cc/Shelterers_in_Swiss_Cottage_tube_station%2C_c._1940s.jpg',
-    source: 'London Transport / Imperial War Museum (Swiss Cottage Tube Station, 1940)',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/MaureenPopp.jpg',
+    dest: 'public/units/ks2_ww2/assets/ata_pilot_maureen_dunlop.jpg',
   },
   {
-    name: 'ration_book_coupons_1940.jpg',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/5/50/Child%27s_ration_book_%28A%29%2C_Ministry_of_Food_Wellcome_L0072436.jpg',
-    source: "Ministry of Food / Wellcome Collection L0072436 (Child's Ration Book with Coupons)",
+    url: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Women_in_Bletchley_Park.jpg',
+    dest: 'public/units/ks2_ww2/assets/bletchley_park_wrens.jpg',
   },
   {
-    name: 'land_army_poster_1941.jpg',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/8/80/Come_and_help_with_the_VICTORY_HARVEST.jpg',
-    source: "Ministry of Agriculture / HMSO (Women's Land Army Victory Harvest Recruitment Poster)",
-  },
-  {
-    name: 'gas_mask_box_1939.jpg',
-    url: 'https://upload.wikimedia.org/wikipedia/commons/3/39/Respirator_%28AM_1995.59.20-1%29.jpg',
-    source:
-      'Ministry of Home Security / Auckland War Memorial Museum AM 1995.59.20 (British Civilian Respirator & Cardboard Box)',
+    url: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/The_Cenotaph_at_Whitehall%2C_1920_Q31488.jpg',
+    dest: 'public/units/ks2_ww2/assets/cenotaph_whitehall_remembrance.jpg',
   },
 ];
 
-function download(item) {
+function downloadFile(item) {
   return new Promise((resolve, reject) => {
-    const dest = path.join(__dirname, '..', 'scratch', item.name);
-    const file = fs.createWriteStream(dest);
-    console.log(`Downloading ${item.name} from ${item.url}...`);
+    const file = fs.createWriteStream(item.dest);
     https
       .get(
         item.url,
-        { headers: { 'User-Agent': 'HistoryEducationalApp/1.0 (education@historyhub.org)' } },
-        (res) => {
-          if (res.statusCode === 301 || res.statusCode === 302) {
+        {
+          headers: {
+            'User-Agent':
+              'TheHistoryRevisionHubBot/2.0 (https://the-history-revision-hub.netlify.app; contact@historyhub.org) Node/20',
+          },
+        },
+        (response) => {
+          if (response.statusCode === 301 || response.statusCode === 302) {
             https
               .get(
-                res.headers.location,
-                { headers: { 'User-Agent': 'HistoryEducationalApp/1.0' } },
-                (res2) => {
-                  res2.pipe(file);
+                response.headers.location,
+                {
+                  headers: {
+                    'User-Agent':
+                      'TheHistoryRevisionHubBot/2.0 (https://the-history-revision-hub.netlify.app; contact@historyhub.org) Node/20',
+                  },
+                },
+                (redirectResponse) => {
+                  redirectResponse.pipe(file);
                   file.on('finish', () => {
                     file.close();
-                    resolve(dest);
+                    resolve();
                   });
                 },
               )
               .on('error', reject);
-          } else if (res.statusCode === 200) {
-            res.pipe(file);
+          } else {
+            response.pipe(file);
             file.on('finish', () => {
               file.close();
-              resolve(dest);
+              resolve();
             });
-          } else {
-            reject(new Error(`Failed with status ${res.statusCode}`));
           }
         },
       )
@@ -71,17 +66,10 @@ function download(item) {
 }
 
 async function run() {
-  if (!fs.existsSync(path.join(__dirname, '..', 'scratch'))) {
-    fs.mkdirSync(path.join(__dirname, '..', 'scratch'));
-  }
   for (const item of downloads) {
-    try {
-      const p = await download(item);
-      const stat = fs.statSync(p);
-      console.log(`✅ Saved ${item.name} (${stat.size} bytes)`);
-    } catch (e) {
-      console.error(`❌ Error downloading ${item.name}:`, e.message);
-    }
+    console.log('Downloading: ' + item.dest);
+    await downloadFile(item);
+    console.log('Done: ' + item.dest + ' (size: ' + fs.statSync(item.dest).size + ' bytes)');
   }
 }
 

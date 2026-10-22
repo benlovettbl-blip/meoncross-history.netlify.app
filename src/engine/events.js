@@ -350,6 +350,8 @@ export function initEventDelegation() {
           if (isCurrentlyHidden) {
             el.classList.add('revealed');
             el.style.display = 'block';
+            const card = target.closest('.do-now-card');
+            if (card) card.classList.add('revealed');
             const btn =
               target.closest('.btn-think-discuss-toggle') ||
               (target.classList?.contains('btn-think-discuss-toggle') ? target : null);
@@ -363,6 +365,8 @@ export function initEventDelegation() {
           } else {
             el.classList.remove('revealed');
             el.style.display = 'none';
+            const card = target.closest('.do-now-card');
+            if (card) card.classList.remove('revealed');
             const btn =
               target.closest('.btn-think-discuss-toggle') ||
               (target.classList?.contains('btn-think-discuss-toggle') ? target : null);
@@ -538,6 +542,67 @@ export function initEventDelegation() {
           cardContainer.querySelectorAll('.poet-view-pane').forEach((pane) => {
             pane.style.display = pane.id === poetTargetId ? 'block' : 'none';
           });
+        }
+        break;
+      }
+      case 'switch-launchpad-tab': {
+        const tabKey = target.dataset.tab;
+        const launchpad = target.closest('.lesson-launchpad-container');
+        if (!launchpad) break;
+
+        const drawer = launchpad.querySelector('.lesson-launchpad-drawer');
+        const allTabs = launchpad.querySelectorAll('.launchpad-tab-btn');
+        const allPanels = launchpad.querySelectorAll('.launchpad-panel');
+        const targetPanel = launchpad.querySelector(`.launchpad-panel[data-panel="${tabKey}"]`);
+        const closeBtn = launchpad.querySelector('.launchpad-close-btn');
+
+        const isCurrentlyActive =
+          target.classList.contains('active') && drawer && drawer.style.display !== 'none';
+
+        if (isCurrentlyActive) {
+          // Toggle close
+          if (drawer) drawer.style.display = 'none';
+          allTabs.forEach((t) => t.classList.remove('active'));
+          if (closeBtn) closeBtn.style.display = 'none';
+        } else {
+          // Open target panel
+          if (drawer) drawer.style.display = 'block';
+          allTabs.forEach((t) => t.classList.toggle('active', t.dataset.tab === tabKey));
+          allPanels.forEach((p) => {
+            p.style.display = p.dataset.panel === tabKey ? 'block' : 'none';
+          });
+          if (closeBtn) closeBtn.style.display = 'inline-flex';
+        }
+        break;
+      }
+      case 'close-launchpad': {
+        const launchpad = target.closest('.lesson-launchpad-container');
+        if (launchpad) {
+          const drawer = launchpad.querySelector('.lesson-launchpad-drawer');
+          const allTabs = launchpad.querySelectorAll('.launchpad-tab-btn');
+          const closeBtn = launchpad.querySelector('.launchpad-close-btn');
+          if (drawer) drawer.style.display = 'none';
+          allTabs.forEach((t) => t.classList.remove('active'));
+          if (closeBtn) closeBtn.style.display = 'none';
+        }
+        break;
+      }
+      case 'launchpad-start-reading': {
+        const launchpad = target.closest('.lesson-launchpad-container');
+        if (launchpad) {
+          const drawer = launchpad.querySelector('.lesson-launchpad-drawer');
+          const allTabs = launchpad.querySelectorAll('.launchpad-tab-btn');
+          const closeBtn = launchpad.querySelector('.launchpad-close-btn');
+          if (drawer) drawer.style.display = 'none';
+          allTabs.forEach((t) => t.classList.remove('active'));
+          if (closeBtn) closeBtn.style.display = 'none';
+        }
+        const firstNarrative =
+          document.querySelector('.historical-editorial-lede') ||
+          document.querySelector('.phase-card') ||
+          document.querySelector('.narrative-chunk');
+        if (firstNarrative) {
+          firstNarrative.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
         break;
       }
@@ -935,6 +1000,8 @@ export function toggleAllAnswers(btnOrContainer) {
       btn = btnOrContainer;
       container =
         btn.closest('details') ||
+        btn.closest('.donow-panel-content') ||
+        btn.closest('.launchpad-panel') ||
         btn.closest('.phase-card') ||
         btn.closest('.do-now-box') ||
         document;
@@ -954,12 +1021,15 @@ export function toggleAllAnswers(btnOrContainer) {
     return window.getComputedStyle(a).display === 'none' || a.style.display === 'none';
   });
   answers.forEach((a) => {
+    const parentCard = a.closest('.do-now-card');
     if (anyHidden) {
       a.style.display = 'block';
       a.classList.add('revealed');
+      if (parentCard) parentCard.classList.add('revealed');
     } else {
       a.style.display = 'none';
       a.classList.remove('revealed');
+      if (parentCard) parentCard.classList.remove('revealed');
     }
   });
   if (btn) {

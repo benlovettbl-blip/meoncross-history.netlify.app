@@ -94,9 +94,15 @@ export function renderQuizZone(container, unitData) {
           groupedExamLevels[topicKey].questions.push(questionObj);
         });
       }
-      if (l.do_now && l.do_now.type === 'questions' && l.do_now.items) {
+      if (
+        l.do_now &&
+        (l.do_now.type === 'questions' ||
+          l.do_now.type === 'retrieval_starter' ||
+          l.do_now.items) &&
+        l.do_now.items
+      ) {
         l.do_now.items.forEach((item) => {
-          addQuestion(item.question, null, item.answer);
+          addQuestion(item.question || item.q, null, item.answer || item.a);
         });
       }
 
@@ -115,7 +121,10 @@ export function renderQuizZone(container, unitData) {
           addFlashcard(`Which term matches this definition: "${v.definition}"?`, v.term);
         });
       }
-      if (l.do_now && l.do_now.type === 'questions') {
+      if (
+        l.do_now &&
+        (l.do_now.type === 'questions' || l.do_now.type === 'retrieval_starter' || l.do_now.items)
+      ) {
         const items = l.do_now.items || l.do_now.tasks || [];
         items.forEach((item) => {
           const qText = item.question || item.q;

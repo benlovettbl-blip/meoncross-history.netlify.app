@@ -546,8 +546,12 @@ const unitData = {
               'Motive: To project Clive as a heroic, aristocratic military commander defending British imperial interests, overshadowing accusations of corruption and extortion in India.',
             ],
             hinge_question:
-              'Hinge Question: Does Dance depict Clive as a legitimate British military hero, or does the portrait mask the commercial plunder of a private trading corporation?',
+              'Does Dance depict Clive as a legitimate British military hero or as an agent of corporate plunder?',
             citation: 'Nathaniel Dance • National Portrait Gallery, London.',
+            discussion_ideas: [
+              'A Victorious Patriotic Hero of Empire: Nathaniel Dance depicts Clive standing resolute in scarlet military uniform against a dramatic backdrop of swirling battlefield smoke, with an Indian obelisk and palm trees behind him; the portrait visually frames Clive as a brilliant imperial commander who secured British supremacy at the Battle of Plassey (1757) and expanded British trade.',
+              "A Corrupt Corporate 'Nabob' Enriched by Plunder: In 1773, when Dance painted this portrait, Clive was under hostile parliamentary investigation for gross corruption, extortion, and amassing a personal fortune of over £234,000 while serving as an agent of the East India Company; critics in Parliament condemned him for corporate greed that provoked the catastrophic Great Bengal Famine of 1770, which starved ten million Indian peasants.",
+            ],
           },
         },
         {
@@ -581,9 +585,12 @@ const unitData = {
               'Motive: To portray the British acquisition of sovereign power as an orderly, respectful, and legally legitimate diplomatic ceremony rather than a forced military shakedown.',
             ],
             hinge_question:
-              'Hinge Question: Why did Benjamin West paint this scene looking like a peaceful, dignified legal contract rather than a forced surrender after military conquest?',
+              'Why did West depict this scene as a peaceful legal ceremony rather than a forced military shakedown?',
             citation:
               'Benjamin West • British Library / Foreign and Commonwealth Office Collection, London.',
+            discussion_ideas: [
+              'Benjamin West painted this scene thirty years after the event to create an official visual myth of imperial legitimacy. In reality, Mughal Emperor Shah Alam II was a defeated, powerless captive whose forces had been routed at Buxar; he was compelled at gunpoint in an ordinary military tent to surrender the Diwani (tax collection rights) of Bengal, Bihar, and Orissa. West replaces this forced military extortion with a neoclassical ceremonial tableau: Shah Alam sits serenely upon an elevated imperial pavilion, bestowing the treaty scroll upon a bowed, deferential Lord Clive as if granting a voluntary feudal honor. This whitewashed depiction was designed to reassure British audiences that the East India Company’s rule was not an aggressive corporate land-grab, but an orderly, legal, and civilized succession of power.',
+            ],
           },
         },
       ],
@@ -603,8 +610,12 @@ const unitData = {
             'Motive: To project Clive as a heroic military commander defending British interests.',
           ],
           hinge_question:
-            'Hinge Question: Does Dance depict Clive as a legitimate British military hero or as an agent of corporate plunder?',
+            'Does Dance depict Clive as a legitimate British military hero or as an agent of corporate plunder?',
           citation: 'Nathaniel Dance • National Portrait Gallery, London.',
+          discussion_ideas: [
+            'A Victorious Patriotic Hero of Empire: Nathaniel Dance depicts Clive standing resolute in scarlet military uniform against a dramatic backdrop of swirling battlefield smoke, with an Indian obelisk and palm trees behind him; the portrait visually frames Clive as a brilliant imperial commander who secured British supremacy at the Battle of Plassey (1757) and expanded British trade.',
+            "A Corrupt Corporate 'Nabob' Enriched by Plunder: In 1773, when Dance painted this portrait, Clive was under hostile parliamentary investigation for gross corruption, extortion, and amassing a personal fortune of over £234,000 while serving as an agent of the East India Company; critics in Parliament condemned him for corporate greed that provoked the catastrophic Great Bengal Famine of 1770, which starved ten million Indian peasants.",
+          ],
         },
         {
           title:
@@ -622,8 +633,11 @@ const unitData = {
             'Motive: To portray the takeover as an orderly, legal diplomatic ceremony.',
           ],
           hinge_question:
-            'Hinge Question: Why did West depict this scene as a peaceful legal ceremony rather than a forced military shakedown?',
+            'Why did West depict this scene as a peaceful legal ceremony rather than a forced military shakedown?',
           citation: 'Benjamin West • British Library / FCO Collection, London.',
+          discussion_ideas: [
+            'Benjamin West painted this scene thirty years after the event to create an official visual myth of imperial legitimacy. In reality, Mughal Emperor Shah Alam II was a defeated, powerless captive whose forces had been routed at Buxar; he was compelled at gunpoint in an ordinary military tent to surrender the Diwani (tax collection rights) of Bengal, Bihar, and Orissa. West replaces this forced military extortion with a neoclassical ceremonial tableau: Shah Alam sits serenely upon an elevated imperial pavilion, bestowing the treaty scroll upon a bowed, deferential Lord Clive as if granting a voluntary feudal honor. This whitewashed depiction was designed to reassure British audiences that the East India Company’s rule was not an aggressive corporate land-grab, but an orderly, legal, and civilized succession of power.',
+          ],
         },
       ],
       teacher_notes: {
@@ -658,6 +672,33 @@ const unitData = {
       },
       prologue:
         'In 1600, Queen Elizabeth I granted a royal charter to a tiny syndicate of London merchants trading in Indian spices. Over 150 years, this private corporation built its own mercenary armies, forts, and warships. In 1757, Robert Clive defeated the Nawab of Bengal at Plassey. How did a commercial company become the ruler of millions?',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=OxeTFB84e2k',
+          title: 'How one of the most profitable companies in history rose to power | TED-Ed',
+          duration: '5 mins 05 secs',
+          teacher_guidance:
+            'Examine the unique corporate-military structure of the East India Company (EIC). Focus on its 1600 Royal Charter granting a trade monopoly, its private mercenary army (which grew to over 200,000 men, dwarfing the British Army), and how it transitioned from mercantile commerce to sovereign territorial rule following the 1765 Treaty of Allahabad.',
+          viewing_task:
+            'How did the East India Company transform from an association of London spice merchants into a sovereign military power capable of collecting taxes across Bengal?',
+          model_answer:
+            "Originally granted a royal monopoly in 1600 to trade spices, the EIC established fortified coastal trading factories at Surat, Madras, and Calcutta. To protect its investments against rival European powers and regional rulers, the Company built its own private standing army composed of British officers and recruited Indian soldiers (sepoys). Following Robert Clive's victory at Plassey in 1757, the EIC forced the Mughal Emperor to sign the 1765 Treaty of Allahabad, granting the Company the 'Diwani'—the legal right to collect land revenue and taxes from 20 million people in Bengal, transforming a private corporation into an imperial ruler.",
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=oNWTXaOotEA',
+          title:
+            'How did the British gain control of India? | History - Empire | BBC Bitesize for Teachers',
+          duration: '4 mins 23 secs',
+          teacher_guidance:
+            "This BBC Bitesize clip analyzes how the EIC exploited the fracturing of the Mughal Empire after Emperor Aurangzeb's death. Focus on Robert Clive's conspiracy with wealthy financier Jagat Seth and military commander Mir Jafar to overthrow Nawab Siraj ud-Daulah at the Battle of Plassey in 1757.",
+          viewing_task:
+            'What political divisions within Bengal did Robert Clive exploit to defeat Nawab Siraj ud-Daulah at the Battle of Plassey in 1757?',
+          model_answer:
+            "Clive exploited intense internal opposition to the young Nawab Siraj ud-Daulah among Bengal's ruling elite. He formed a secret alliance with the Nawab's disaffected army commander, Mir Jafar, and wealthy Hindu banking financiers (the Jagat Seths). At Plassey, Mir Jafar kept the majority of the Nawab's cavalry and troops inactive on the battlefield in exchange for Clive's promise to install him as a puppet ruler, enabling Clive's force of just 3,000 men to rout the Nawab's 50,000-strong army.",
+        },
+      ],
     },
     {
       id: 'lesson_2',
@@ -907,8 +948,11 @@ const unitData = {
               'Motive: To provide undeniable forensic proof of the systematic, calculated cruelty of the slave trade to force Parliament to pass abolition laws.',
             ],
             hinge_question:
-              'Hinge Question: Why did the abolitionists choose to print a cold, technical architectural diagram rather than an emotional painting of suffering captives?',
+              'Why did abolitionists choose a technical diagram rather than an emotional painting?',
             citation: 'Plymouth Committee • British Library / National Maritime Museum, Greenwich.',
+            discussion_ideas: [
+              "The Plymouth Abolition Committee made the deliberate tactical decision to use an objective architectural plan because cold technical diagrams were impossible for slave traders to deny or refute as artistic exaggeration. By depicting the exact dimensions of the ship's hold and showing over 450 human bodies packed shoulder-to-shoulder in rows with each adult male allotted a space just six feet long by sixteen inches wide, the cross-section visually exposed the monstrous reality of chattel slavery: treating human beings not as persons, but as inert, tightly packed cargo. Circulated across Britain, America, and France, this unemotional blueprint stripped away the polite fictions of the slave trade and forced the public to confront the physical horror of the Middle Passage.",
+            ],
           },
         },
         {
@@ -935,9 +979,12 @@ const unitData = {
               'Audience: Literate middle- and upper-class British readers, MPs, and churchgoers.',
               'Motive: To directly disprove the pro-slavery claim that Africans were naturally uncivilised or subhuman by presenting himself as an educated, refined, and deeply moral Christian scholar.',
             ],
-            hinge_question:
-              'Hinge Question: Why did Equiano insist on being portrayed in formal European attire holding an open Bible rather than in traditional African clothing?',
+            hinge_question: 'Why did Equiano insist on European attire holding an open Bible?',
             citation: 'Daniel Orme • Frontispiece of The Interesting Narrative (1789).',
+            discussion_ideas: [
+              "Direct Refutation of Pro-Slavery Racial Stereotypes: Pro-slavery apologists claimed that African people were uncivilized savages who lacked the capacity for moral reasoning, education, or Christian faith; by presenting himself in elegant British gentleman's attire—a frock coat, ruffled cravat, and styled hair—holding an open Bible, Equiano visually demolished racist caricatures and asserted his full intellectual, moral, and spiritual equality.",
+              'Mobilizing Christian Empathy and Abolitionist Appeal: By holding the Christian Scriptures open to the Acts of the Apostles, Equiano appealed directly to the religious conscience of white British churchgoers and evangelical reformers (such as William Wilberforce), reminding readers that all human souls were equal in the sight of God and that chattel slavery was an unpardonable sin against Christian doctrine.',
+            ],
           },
         },
       ],
@@ -958,8 +1005,11 @@ const unitData = {
             'Motive: To provide undeniable forensic proof of systematic cruelty.',
           ],
           hinge_question:
-            'Hinge Question: Why did abolitionists choose a technical diagram rather than an emotional painting?',
+            'Why did abolitionists choose a technical diagram rather than an emotional painting?',
           citation: 'Plymouth Committee • British Library / National Maritime Museum, Greenwich.',
+          discussion_ideas: [
+            "The Plymouth Abolition Committee made the deliberate tactical decision to use an objective architectural plan because cold technical diagrams were impossible for slave traders to deny or refute as artistic exaggeration. By depicting the exact dimensions of the ship's hold and showing over 450 human bodies packed shoulder-to-shoulder in rows with each adult male allotted a space just six feet long by sixteen inches wide, the cross-section visually exposed the monstrous reality of chattel slavery: treating human beings not as persons, but as inert, tightly packed cargo. Circulated across Britain, America, and France, this unemotional blueprint stripped away the polite fictions of the slave trade and forced the public to confront the physical horror of the Middle Passage.",
+          ],
         },
         {
           title: 'Source B: Daniel Orme, Portrait of Olaudah Equiano / Gustavus Vassa (1789)',
@@ -975,9 +1025,12 @@ const unitData = {
             'Audience: Literate British readers, MPs, and churchgoers.',
             'Motive: To disprove pro-slavery claims by presenting himself as an educated Christian scholar.',
           ],
-          hinge_question:
-            'Hinge Question: Why did Equiano insist on European attire holding an open Bible?',
+          hinge_question: 'Why did Equiano insist on European attire holding an open Bible?',
           citation: 'Daniel Orme • Frontispiece of The Interesting Narrative (1789).',
+          discussion_ideas: [
+            "Direct Refutation of Pro-Slavery Racial Stereotypes: Pro-slavery apologists claimed that African people were uncivilized savages who lacked the capacity for moral reasoning, education, or Christian faith; by presenting himself in elegant British gentleman's attire—a frock coat, ruffled cravat, and styled hair—holding an open Bible, Equiano visually demolished racist caricatures and asserted his full intellectual, moral, and spiritual equality.",
+            'Mobilizing Christian Empathy and Abolitionist Appeal: By holding the Christian Scriptures open to the Acts of the Apostles, Equiano appealed directly to the religious conscience of white British churchgoers and evangelical reformers (such as William Wilberforce), reminding readers that all human souls were equal in the sight of God and that chattel slavery was an unpardonable sin against Christian doctrine.',
+          ],
         },
       ],
       teacher_notes: {
@@ -1012,6 +1065,32 @@ const unitData = {
       },
       prologue:
         'Between the sixteenth and nineteenth centuries, European slave ships forcibly transported over twelve million African men, women, and children across the Atlantic Ocean. Packed in suffocating darkness below deck, captives endured the unspeakable horrors of the Middle Passage. What were the brutal economic mechanics and human costs of this global trading empire?',
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=3NXC4Q_4JVg',
+          title: 'The Atlantic slave trade: What too few textbooks told you | TED-Ed',
+          duration: '5 mins 39 secs',
+          teacher_guidance:
+            'Use this TED-Ed animation by historian Anthony Hazard to deconstruct the economic machinery of the Triangular Trade. Emphasize that enslaved Africans were not merely labourers, but skilled farmers, ironworkers, and weavers whose forced labour built the transatlantic capitalist economy while decimating African societies.',
+          viewing_task:
+            'How did the three legs of the Triangular Trade operate, and what lasting impact did the trade have on West African societies and British port cities?',
+          model_answer:
+            'The first leg carried manufactured British goods (guns, textiles, metalware) from ports like Liverpool and Bristol to West Africa, where they were exchanged for captured African men, women, and children. The second leg (the Middle Passage) transported enslaved captives across the Atlantic under inhumane conditions to the Americas. The third leg carried slave-produced raw commodities (sugar, tobacco, cotton, rum) back to Europe. While British port cities amassed immense banking and commercial wealth that fueled the Industrial Revolution, West African societies suffered demographic collapse, intensified regional warfare driven by European firearms, and severe economic distortion.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=PmQvofAiZGA',
+          title: 'Life Aboard a Slave Ship | HISTORY',
+          duration: '5 mins 01 sec',
+          teacher_guidance:
+            'This documentary explores the dehumanizing mechanics of the Middle Passage using archival ship plans (such as the famous 1788 Brookes diagram) and primary survivor accounts. Address the systematic brutalization, extreme packing, dysentery/scurvy epidemics, and the desperate acts of resistance, including shipboard insurrections and hunger strikes.',
+          viewing_task:
+            'How did slave ship captains maximize their profits during the Middle Passage, and what physical and psychological brutalities did enslaved Africans endure aboard ship?',
+          model_answer:
+            "Captains practiced 'tight-packing', forcing 400 to 600 human beings into suffocating holds with barely 45 centimetres of headroom, shackled in pairs by ankle irons to maximize cargo volume per voyage. Captives endured extreme heat, foul air contaminated with vomit and excrement, widespread dysentery ('bloody flux'), and brutal flogging. Suicide attempts (such as leaping overboard) and hunger strikes were met with violent force, including hot coals and the 'speculum oris' (a mechanical device used to force open jaws for feeding), with roughly 15% to 20% of enslaved people dying before reaching the Americas.",
+        },
+      ],
     },
     {
       id: 'lesson_3',
@@ -1255,8 +1334,11 @@ const unitData = {
               'Motive: While realistically depicting the gang system, Clark sanitised the scene by showing neatly dressed workers without displaying the frequent whippings or horrific injuries common in sugar mills.',
             ],
             hinge_question:
-              'Hinge Question: Why might a British artist depict plantation labour looking tidy and orderly rather than showing the brutal violence used to enforce work?',
+              'Why might an artist depict plantation labour looking orderly rather than showing the violence used to enforce work?',
             citation: 'William Clark • British Library, London.',
+            discussion_ideas: [
+              "William Clark's print was produced for British audiences and plantation owners who wished to defend the Caribbean sugar industry against the mounting abolitionist campaign in Parliament. Clark deliberately depicts the enslaved workers in clean clothes, working at an unhurried, rhythmic pace under a bright Caribbean sky, with the overseer appearing calm rather than brandishing the cart whip. By erasing the brutal realities of plantation slavery—where enslaved men, women, and children were driven by the whip through 18-hour shifts cutting cane with razor-sharp machetes under scorching heat, suffering high mortality rates—Clark presented a sanitized, pastoral fantasy designed to convince British buyers that enslavement was a benign, orderly agricultural system.",
+            ],
           },
         },
         {
@@ -1284,8 +1366,12 @@ const unitData = {
               'Motive: To celebrate Queen Nanny as a courageous military commander and founding mother of Jamaican freedom who outfought the British imperial army.',
             ],
             hinge_question:
-              'Hinge Question: How does commemorating Queen Nanny challenge traditional European historical narratives that portray enslaved people as passive victims?',
+              'How does commemorating Queen Nanny challenge narratives of enslaved people as passive victims?',
             citation: 'National Heroes Park, Kingston, Jamaica.',
+            discussion_ideas: [
+              'Celebrating Active, Militant Indigenous Resistance: Queen Nanny was the spiritual and military leader of the Windward Maroons in the Blue Mountains of Jamaica; rather than submitting to slavery, she organized escaped captives into disciplined guerrilla units who used mountain topography, camouflage, and ambushes to defeat British redcoat regiments, forcing the British Crown to sign a formal peace treaty in 1739 granting the Maroons land autonomy.',
+              "Subverting Colonial Historical Erasure: Traditional colonial histories depicted enslaved Africans as helpless victims waiting for benevolent white British politicians to liberate them; honoring Queen Nanny as Jamaica's only National Heroine recenters the historical narrative on Black agency, proving that enslaved people fought heroically for their own freedom decades before parliamentary abolition.",
+            ],
           },
         },
         {
@@ -1310,8 +1396,11 @@ const unitData = {
             'Motive: To depict plantation life as orderly, minimising overt visual depictions of violence.',
           ],
           hinge_question:
-            'Hinge Question: Why might an artist depict plantation labour looking orderly rather than showing the violence used to enforce work?',
+            'Why might an artist depict plantation labour looking orderly rather than showing the violence used to enforce work?',
           citation: 'William Clark • British Library, London.',
+          discussion_ideas: [
+            "William Clark's print was produced for British audiences and plantation owners who wished to defend the Caribbean sugar industry against the mounting abolitionist campaign in Parliament. Clark deliberately depicts the enslaved workers in clean clothes, working at an unhurried, rhythmic pace under a bright Caribbean sky, with the overseer appearing calm rather than brandishing the cart whip. By erasing the brutal realities of plantation slavery—where enslaved men, women, and children were driven by the whip through 18-hour shifts cutting cane with razor-sharp machetes under scorching heat, suffering high mortality rates—Clark presented a sanitized, pastoral fantasy designed to convince British buyers that enslavement was a benign, orderly agricultural system.",
+          ],
         },
         {
           title: 'Source B: Memorial Bust of Queen Nanny of the Maroons, National Heroes Park',
@@ -1328,8 +1417,12 @@ const unitData = {
             'Motive: To celebrate Queen Nanny as a founding military leader of freedom.',
           ],
           hinge_question:
-            'Hinge Question: How does commemorating Queen Nanny challenge narratives of enslaved people as passive victims?',
+            'How does commemorating Queen Nanny challenge narratives of enslaved people as passive victims?',
           citation: 'National Heroes Park, Kingston, Jamaica.',
+          discussion_ideas: [
+            'Celebrating Active, Militant Indigenous Resistance: Queen Nanny was the spiritual and military leader of the Windward Maroons in the Blue Mountains of Jamaica; rather than submitting to slavery, she organized escaped captives into disciplined guerrilla units who used mountain topography, camouflage, and ambushes to defeat British redcoat regiments, forcing the British Crown to sign a formal peace treaty in 1739 granting the Maroons land autonomy.',
+            "Subverting Colonial Historical Erasure: Traditional colonial histories depicted enslaved Africans as helpless victims waiting for benevolent white British politicians to liberate them; honoring Queen Nanny as Jamaica's only National Heroine recenters the historical narrative on Black agency, proving that enslaved people fought heroically for their own freedom decades before parliamentary abolition.",
+          ],
         },
       ],
       tasks: [
@@ -1411,6 +1504,33 @@ const unitData = {
       },
       prologue:
         "On Caribbean sugar plantations, enslaved Africans endured backbreaking labour under the overseer's whip to feed Britain's booming sweet tooth. Yet resistance was relentless. In the misty Blue Mountains of Jamaica, Queen Nanny led runaway Maroons in daring guerrilla warfare against British soldiers. How did enslaved people actively resist colonial bondage?",
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=UKfVuyFYQ6M',
+          title: 'The Real Story of Nanny of the Maroons | Jamaica History',
+          duration: '7 mins 21 secs',
+          teacher_guidance:
+            'Focus on Queen Nanny of the Windward Maroons as a master military strategist and spiritual leader. Examine how Jamaican Maroons utilized deep geographic knowledge of the mountainous Cockpit Country and Blue Mountains to conduct successful guerrilla warfare against British colonial troops.',
+          viewing_task:
+            'What guerrilla warfare strategies did Queen Nanny and the Windward Maroons use to defeat heavily armed British redcoat regiments in Jamaica?',
+          model_answer:
+            "Queen Nanny and her fighters exploited the rugged, dense terrain of the Blue Mountains using sophisticated camouflage—attaching branches and leaves to blend seamlessly into the forest canopy. They lured British redcoat columns into narrow mountain defiles and launched sudden ambush attacks from higher ground. Furthermore, the Maroons maintained an early warning communication network using the 'abeng' (a hollowed-out cow horn blown through a side hole) to transmit tactical signals across valleys, cutting British supply lines and causing immense casualties without engaging in open field combat.",
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=MrJsmMpedQY',
+          title:
+            'The Voice of a Maroon: The Story of Nanny of the Maroons | Jamaica Information Service',
+          duration: '2 mins 12 secs',
+          teacher_guidance:
+            'Produced by the Jamaica Information Service, this brief piece explains the legal and constitutional significance of the 1739–1740 peace treaties between the British Crown and the Maroons, which recognized Maroon independence a century before the abolition of slavery.',
+          viewing_task:
+            'Why was the British Crown forced to sign peace treaties with the Jamaican Maroons in 1739–1740, and what rights did the Maroons secure?',
+          model_answer:
+            'After decades of costly warfare (the First Maroon War) in which British regiments repeatedly failed to conquer the mountain settlements, colonial authorities recognized that the Maroons could not be militarily defeated. The 1739–1740 treaties formally recognized Maroon sovereignty, granting them 1,500 acres of autonomous crown land, the right to govern themselves under their own chiefs (like Cudjoe and Nanny), and freedom from enslavement, making them the first legally recognized free Black communities in the colonial Americas.',
+        },
+      ],
     },
     {
       id: 'lesson_4',
@@ -1660,9 +1780,12 @@ const unitData = {
               'Motive: To generate explosive anti-British outrage by depicting a tragic, chaotic street brawl as a deliberate, pre-meditated military massacre ordered by Captain Preston.',
             ],
             hinge_question:
-              'Hinge Question: What visual details in Revere’s engraving deliberately distort the reality of a chaotic street brawl into a cold-blooded execution?',
+              'What visual details in Revere’s engraving deliberately distort the reality of a chaotic street brawl?',
             citation:
               'Paul Revere • Library of Congress, Prints and Photographs Division, Washington D.C.',
+            discussion_ideas: [
+              "Paul Revere's famous engraving is one of the most effective pieces of political propaganda in American history. In reality, on 5 March 1770, a small, terrified British sentry was surrounded by an angry Boston mob throwing ice, rocks, and clubs before a confused musket discharge killed five civilians. Revere deliberately altered every key detail: he depicts British Captain Preston standing behind his men with a raised sword explicitly commanding an orderly firing squad to shoot into an innocent, peaceful crowd of gentlemen; he erased all stones, snowballs, and weapons, added the label 'Butcher's Hall' above the British customs house, and added a musket firing from a civilian window, transforming a chaotic, self-defense riot into an act of cold-blooded, pre-planned military tyranny to inflame anti-British colonial fury.",
+            ],
           },
         },
         {
@@ -1690,8 +1813,12 @@ const unitData = {
               'Motive: To romanticise the Boston Tea Party as a brave, orderly, and triumphant act of national liberation.',
             ],
             hinge_question:
-              'Hinge Question: Why did the protestors disguise themselves as Mohawk warriors rather than performing the action as ordinary British townsfolk?',
+              'Why did the protestors disguise themselves as Mohawk warriors rather than performing the action as ordinary British townsfolk?',
             citation: 'Currier & Ives • Library of Congress, Washington D.C.',
+            discussion_ideas: [
+              'Protection from Arrest and Hanging for High Treason: Destroying 342 chests of British East India Company tea worth over £9,000 (millions today) was a felony capital crime against the Crown; donning Native American blankets, smearing soot on their faces, and communicating with mock war cries concealed the identities of prominent Sons of Liberty (including merchant smugglers) from British customs informants and royal courts.',
+              "Symbolic Rejection of British Identity: By adopting the persona of indigenous Mohawk warriors, the colonists symbolically declared that they were no longer subservient British subjects obedient to a distant Parliament, but a distinct 'American' people who belonged to the American continent and rejected British imperial taxation without representation.",
+            ],
           },
         },
       ],
@@ -1711,8 +1838,11 @@ const unitData = {
             'Motive: To portray a chaotic street riot as a pre-meditated military massacre.',
           ],
           hinge_question:
-            'Hinge Question: What visual details in Revere’s engraving deliberately distort the reality of a chaotic street brawl?',
+            'What visual details in Revere’s engraving deliberately distort the reality of a chaotic street brawl?',
           citation: 'Paul Revere • Library of Congress, Washington D.C.',
+          discussion_ideas: [
+            "Paul Revere's famous engraving is one of the most effective pieces of political propaganda in American history. In reality, on 5 March 1770, a small, terrified British sentry was surrounded by an angry Boston mob throwing ice, rocks, and clubs before a confused musket discharge killed five civilians. Revere deliberately altered every key detail: he depicts British Captain Preston standing behind his men with a raised sword explicitly commanding an orderly firing squad to shoot into an innocent, peaceful crowd of gentlemen; he erased all stones, snowballs, and weapons, added the label 'Butcher's Hall' above the British customs house, and added a musket firing from a civilian window, transforming a chaotic, self-defense riot into an act of cold-blooded, pre-planned military tyranny to inflame anti-British colonial fury.",
+          ],
         },
         {
           title: 'Source B: Currier & Ives, The Boston Tea Party (1846 lithograph)',
@@ -1729,8 +1859,12 @@ const unitData = {
             'Motive: To romanticise the protest as a disciplined, heroic act of national liberation.',
           ],
           hinge_question:
-            'Hinge Question: Why did the protestors disguise themselves as Mohawk warriors rather than ordinary townsfolk?',
+            'Why did the protestors disguise themselves as Mohawk warriors rather than performing the action as ordinary British townsfolk?',
           citation: 'Currier & Ives • Library of Congress, Washington D.C.',
+          discussion_ideas: [
+            'Protection from Arrest and Hanging for High Treason: Destroying 342 chests of British East India Company tea worth over £9,000 (millions today) was a felony capital crime against the Crown; donning Native American blankets, smearing soot on their faces, and communicating with mock war cries concealed the identities of prominent Sons of Liberty (including merchant smugglers) from British customs informants and royal courts.',
+            "Symbolic Rejection of British Identity: By adopting the persona of indigenous Mohawk warriors, the colonists symbolically declared that they were no longer subservient British subjects obedient to a distant Parliament, but a distinct 'American' people who belonged to the American continent and rejected British imperial taxation without representation.",
+          ],
         },
       ],
       teacher_notes: {
@@ -1765,6 +1899,32 @@ const unitData = {
       },
       prologue:
         "Following the Seven Years' War, Parliament insisted that American colonists help pay for imperial defence. Colonists furiously resisted, shouting 'No taxation without representation!' In December 1773, Boston rebels disguised themselves as Native Americans and dumped 342 chests of British tea into the harbour. Why did imperial taxes push loyal subjects toward rebellion?",
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=1cT_Z0KGhP8',
+          title: 'The story behind the Boston Tea Party | TED-Ed',
+          duration: '3 mins 48 secs',
+          teacher_guidance:
+            'Historian Ben Labaree explains the economic and constitutional tensions behind the 1773 Boston Tea Party. Clarify that colonists were not objecting to high taxes (the Tea Act actually lowered the price of East India Company tea), but to Britain granting the EIC a corporate monopoly and asserting the constitutional right to tax colonists without parliamentary representation.',
+          viewing_task:
+            'Why did the 1773 Tea Act outrage American colonists even though it made British East India Company tea cheaper than smuggled Dutch tea?',
+          model_answer:
+            "Colonists objected because the Tea Act granted the struggling East India Company a direct commercial monopoly in North America, undercutting local colonial merchants and smugglers. More importantly, colonists recognized the act as a constitutional trap: purchasing the tea meant paying the remaining Townshend duty, thereby accepting Parliament's legal authority to levy taxes on the colonies without their consent ('no taxation without representation').",
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=3enVp7RVLFY',
+          title: 'The Boston Tea Party 1773 (The American Revolution) | Simple History',
+          duration: '1 min 28 secs',
+          teacher_guidance:
+            'Fast-paced visual recap of the events of 16 December 1773 in Boston Harbor. Highlight the role of Samuel Adams and the Sons of Liberty, the symbolic Mohawk disguise, the precision destruction of 342 chests of tea, and the catastrophic British backlash: the Coercive (Intolerable) Acts of 1774.',
+          viewing_task:
+            'How did the Sons of Liberty execute the Boston Tea Party, and how did the British government respond to the destruction of the tea?',
+          model_answer:
+            "On the night of 16 December 1773, roughly 60 members of the Sons of Liberty disguised themselves as Mohawk warriors, boarded three merchant ships (the Dartmouth, Eleanor, and Beaver) in Boston Harbor, and smashed open 342 chests of East India Company tea, dumping 45 tons of tea worth millions in modern currency into the water. King George III and Parliament retaliated in 1774 with the Coercive ('Intolerable') Acts: closing Boston Harbor, suspending Massachusetts' colonial charter, and quartering British troops in private homes, which united the Thirteen Colonies in resistance.",
+        },
+      ],
     },
     {
       id: 'lesson_5',
@@ -2012,8 +2172,11 @@ const unitData = {
               'Motive: To portray the founders as dignified, united, and visionary philosophers creating a republic based on universal equality, while deliberately omitting the presence of enslaved people whose labour built their estates.',
             ],
             hinge_question:
-              'Hinge Question: Why did Trumbull paint this scene with dignified, orderly statesmen in fine wigs, omitting the intense arguments over slavery that nearly broke the Congress apart?',
+              'Why did Trumbull omit the intense debates over slavery that nearly broke the Congress apart?',
             citation: 'John Trumbull • United States Capitol Rotunda, Washington D.C.',
+            discussion_ideas: [
+              "John Trumbull painted this iconic scene for the US Capitol Rotunda decades after 1776 to create a myth of unanimous, harmonious founding unity. In reality, the drafting committee (led by Thomas Jefferson) was bitterly divided: Jefferson’s original draft contained a passionate clause condemning King George III for waging 'cruel war against human nature itself' by maintaining the transatlantic slave trade. Delegates from Georgia and South Carolina furiously refused to sign unless this passage was completely excised, threatening to walk out and collapse the revolution. Trumbull erased this foundational hypocrisy, depicting 47 founding fathers standing in dignified harmony, concealing the tragic paradox that an empire of liberty was founded by slaveholders proclaiming 'all men are created equal' while keeping 500,000 Black human beings in chattel bondage.",
+            ],
           },
         },
         {
@@ -2034,7 +2197,7 @@ const unitData = {
             letter: 'B',
             title:
               'Source B: Excerpt from Lord Dunmore’s Proclamation, Williamsburg, Virginia (November 1775)',
-            image: '/images/declaration_of_independence.jpg',
+            image: '/images/dunmore_proclamation_1775.jpg',
             caption:
               'Archival text of Lord Dunmore’s revolutionary proclamation offering immediate freedom to enslaved Africans who deserted rebel plantations to fight for the British Crown.',
             source_context:
@@ -2048,8 +2211,12 @@ const unitData = {
               'Motive: Primarily military and economic—to cripple the rebel plantation economy and terrorise slaveholding rebels by arming their former enslaved workers.',
             ],
             hinge_question:
-              'Hinge Question: Was Lord Dunmore motivated by a genuine moral desire to abolish slavery, or was this a ruthless military tactic to weaken American rebel slave owners?',
+              'Was Dunmore motivated by moral abolition or ruthless military strategy?',
             citation: 'Lord Dunmore • The Gilder Lehrman Institute of American History, New York.',
+            discussion_ideas: [
+              "Ruthless Military Warfare to Crush the Rebellion: Lord Dunmore was himself a wealthy slaveowner; his November 1775 proclamation offering freedom to 'all indentured servants, Negroes, or others... able and willing to bear arms' was a desperate tactical weapon designed to cripple the Virginia plantation economy and recruit an 'Ethiopian Regiment' of 800 soldiers to save his beleaguered royal garrison.",
+              "The Inadvertent Spark for Black Liberation and Loyalism: Regardless of Dunmore's cynical imperial motives, thousands of enslaved men, women, and children seized the opportunity to escape bondage and run to the British lines; known as the Black Loyalists, over 3,000 were subsequently evacuated by the British to Nova Scotia in 1783 (recorded in the Book of Negroes), transforming a British war measure into the largest emancipation of enslaved people in North America prior to the Civil War.",
+            ],
           },
         },
       ],
@@ -2069,8 +2236,11 @@ const unitData = {
             'Motive: To portray the founders as dignified philosophers creating a republic based on equality.',
           ],
           hinge_question:
-            'Hinge Question: Why did Trumbull omit the intense debates over slavery that nearly broke the Congress apart?',
+            'Why did Trumbull omit the intense debates over slavery that nearly broke the Congress apart?',
           citation: 'John Trumbull • United States Capitol Rotunda, Washington D.C.',
+          discussion_ideas: [
+            "John Trumbull painted this iconic scene for the US Capitol Rotunda decades after 1776 to create a myth of unanimous, harmonious founding unity. In reality, the drafting committee (led by Thomas Jefferson) was bitterly divided: Jefferson’s original draft contained a passionate clause condemning King George III for waging 'cruel war against human nature itself' by maintaining the transatlantic slave trade. Delegates from Georgia and South Carolina furiously refused to sign unless this passage was completely excised, threatening to walk out and collapse the revolution. Trumbull erased this foundational hypocrisy, depicting 47 founding fathers standing in dignified harmony, concealing the tragic paradox that an empire of liberty was founded by slaveholders proclaiming 'all men are created equal' while keeping 500,000 Black human beings in chattel bondage.",
+          ],
         },
         {
           title:
@@ -2088,9 +2258,12 @@ const unitData = {
             'Audience: Enslaved workers and rebel plantation owners.',
             'Motive: To cripple the rebel economy and recruit troops by arming former slaves.',
           ],
-          hinge_question:
-            'Hinge Question: Was Dunmore motivated by moral abolition or ruthless military strategy?',
+          hinge_question: 'Was Dunmore motivated by moral abolition or ruthless military strategy?',
           citation: 'Lord Dunmore • The Gilder Lehrman Institute of American History, New York.',
+          discussion_ideas: [
+            "Ruthless Military Warfare to Crush the Rebellion: Lord Dunmore was himself a wealthy slaveowner; his November 1775 proclamation offering freedom to 'all indentured servants, Negroes, or others... able and willing to bear arms' was a desperate tactical weapon designed to cripple the Virginia plantation economy and recruit an 'Ethiopian Regiment' of 800 soldiers to save his beleaguered royal garrison.",
+            "The Inadvertent Spark for Black Liberation and Loyalism: Regardless of Dunmore's cynical imperial motives, thousands of enslaved men, women, and children seized the opportunity to escape bondage and run to the British lines; known as the Black Loyalists, over 3,000 were subsequently evacuated by the British to Nova Scotia in 1783 (recorded in the Book of Negroes), transforming a British war measure into the largest emancipation of enslaved people in North America prior to the Civil War.",
+          ],
         },
       ],
       teacher_notes: {
@@ -2124,8 +2297,38 @@ const unitData = {
       },
       prologue:
         "In July 1776, American delegates proclaimed that 'all men are created equal' and declared independence from King George III. Yet thousands of enslaved Black Loyalists fled to British battle-lines, seeking genuine personal freedom under the Crown. At Yorktown in 1781, Britain surrendered. How did revolutionary ideals collide with imperial defeat and the reality of slavery?",
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=LKJMWHCUoiw',
+          title: 'What you might not know about the Declaration of Independence | TED-Ed',
+          duration: '3 mins 38 secs',
+          teacher_guidance:
+            "Kenneth C. Davis examines the philosophical rhetoric versus the human contradictions of the 1776 Declaration of Independence. Highlight Thomas Jefferson's famous assertion that 'all men are created equal' alongside the fact that Jefferson and 40 other signers enslaved over 200 people each, and examine why a draft paragraph blaming King George for the slave trade was deleted.",
+          viewing_task:
+            'What central contradiction existed between the revolutionary ideals expressed in the 1776 Declaration of Independence and the socio-economic reality of the American colonies?',
+          model_answer:
+            "The Declaration boldly proclaimed as 'self-evident' that 'all men are created equal' with unalienable rights to 'Life, Liberty and the pursuit of Happiness'. However, this universal philosophy was denied to roughly 500,000 enslaved African Americans who constituted one-fifth of the colonial population. Principal author Thomas Jefferson and one-third of the continental delegates were wealthy slaveholders who struck out draft condemnations of the slave trade to preserve southern economic support for the rebellion, establishing a new nation founded on freedom for white property owners while legally entrenching chattel slavery.",
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=E7yNN_g0Blo',
+          title: 'Who Were the Black Loyalists? | Black Loyalist Heritage Centre',
+          duration: '5 mins 40 secs',
+          teacher_guidance:
+            "Produced by the Black Loyalist Heritage Centre in Nova Scotia, this video explores Lord Dunmore's 1775 Proclamation and the Philipsburg Proclamation (1779). Discuss why up to 20,000 enslaved Black Americans risked their lives to escape Patriot masters and fight for the British Crown in exchange for freedom, and track their postwar evacuation to Nova Scotia, London, and Sierra Leone.",
+          viewing_task:
+            'Why did thousands of enslaved African Americans choose to fight for the British Crown during the American War of Independence, and what happened to them after the British defeat in 1783?',
+          model_answer:
+            "Enslaved men and women joined the British because royal governors like Lord Dunmore issued proclamations promising immediate emancipation to any enslaved person owned by rebel Patriots who joined British armed forces. Serving as soldiers (the 'Ethiopian Regiment'), guides, and labourers, over 3,000 Black Loyalists were registered in the British military's 'Book of Negroes' upon Britain's defeat in 1783, granting them official certificates of freedom and evacuating them aboard British ships to Birchtown, Nova Scotia, London, and later Freetown, Sierra Leone.",
+        },
+      ],
     },
   ],
 };
-export default unitData;
+
 export { unitData };
+export default unitData;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = unitData;
+}

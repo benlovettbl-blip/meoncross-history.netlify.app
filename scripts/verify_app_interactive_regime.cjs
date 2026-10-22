@@ -205,8 +205,14 @@ async function runTestingRegime(targetUnitId = 'industrialisation_and_empire') {
 
   let browser;
   try {
+    const chromePath =
+      process.env.PUPPETEER_EXECUTABLE_PATH ||
+      (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+        ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+        : undefined);
     browser = await puppeteer.launch({
       headless: 'new',
+      executablePath: chromePath,
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
     });
     const page = await browser.newPage();
@@ -865,8 +871,11 @@ async function runTestingRegime(targetUnitId = 'industrialisation_and_empire') {
 
     // Mobile Speech Touch Ergonomics & Mobile Tap Test
     await page.setViewport({ width: 375, height: 667, isMobile: true, hasTouch: true });
+    await page
+      .waitForSelector('.read-aloud-btn, .narrative-chunk', { timeout: 8000 })
+      .catch(() => {});
     await page.evaluate(() => window.scrollTo(0, 0));
-    await new Promise((r) => setTimeout(r, 300));
+    await new Promise((r) => setTimeout(r, 400));
 
     const mobileSpeechMetrics = await page.evaluate(() => {
       const playBtn =

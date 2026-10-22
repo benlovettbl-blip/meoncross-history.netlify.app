@@ -260,6 +260,12 @@ const unitData = {
         ],
         model_answer:
           'Source A uses sophisticated emotional manipulation by weaponizing traditional Victorian gender roles. By placing women and a young child inside the domestic sphere gazing outward, the poster implies that a woman’s highest patriotic duty is to send her sons and husband to war ("Women of Britain Say GO!"). For young civilian men viewing the poster, it created intense social guilt and emasculation, suggesting that remaining at home while other men marched away was an act of shameful cowardice that disappointed their mothers, sisters, and wives.',
+        hinge_question:
+          'Enquiry: Study Source A. How does this poster use emotional manipulation and gender expectations to pressure men into volunteering?',
+        discussion_ideas: [
+          'Emotional Weaponization of the Domestic Sphere: By positioning middle-class women and an innocent child looking out from the domestic sanctuary while brave soldiers march into the distance, the poster establishes a powerful moral contract: women are not holding men back, but actively urging them into battle. This created acute psychological pressure and social guilt for civilian men who had not yet enlisted, making remaining at home seem cowardly and dishonourable.',
+          'Pre-Conscription Social Coercion: Produced in 1915 before the Military Service Act of 1916 introduced conscription, the British government relied heavily on voluntary recruitment campaigns. This poster mobilized civilian women as moral enforcers on the home front, leveraging traditional chivalric ideals to shame eligible men into uniform during the transition toward total national mobilization.',
+        ],
       },
       flashcards: [
         {
@@ -446,6 +452,8 @@ const unitData = {
             'Watch this clip explaining Lord Kitchener’s recruitment campaign. Note down how his image created direct personal pressure on young men.',
           model_answer:
             'The poster used direct eye contact and a pointing finger to break down crowd anonymity, making individual men feel personally singled out and morally obliged to enlist.',
+          teacher_guidance:
+            "Examines the visual psychology of Alfred Leete's famous 1914 recruitment poster featuring Lord Kitchener. Discuss how direct address and patriotic obligation drove over one million men to enlist voluntarily before conscription was introduced in 1916.",
         },
         {
           type: 'era',
@@ -456,6 +464,8 @@ const unitData = {
             'Explain what a "Pals Battalion" was and why it proved so effective in driving recruitment in 1914.',
           model_answer:
             'Pals Battalions promised that friends, colleagues, and neighbours could serve together. It eliminated the fear of isolation and leveraged peer group loyalty, meaning men enlisted to avoid being left behind by their mates.',
+          teacher_guidance:
+            "Analyses the concept of 'Pals Battalions' conceived by Lord Derby and the War Office. Highlight to pupils how civic pride and social pressure encouraged men from the same towns, sports clubs, or offices to enlist together, with devastating collective consequences on the Somme.",
         },
       ],
       narrative_blocks: [
@@ -469,7 +479,7 @@ const unitData = {
           source: {
             title:
               'Source A: "Your Country Needs You" (Lord Kitchener Recruitment Poster, August 1914)',
-            image: '/images/gw_kitchener_portrait.jpg',
+            image: '/images/gw_kitchener_poster.jpg',
             caption:
               'Official Parliamentary Recruiting Committee poster featuring Field Marshal Lord Kitchener, pointing directly at the viewer with the caption "Your Country Needs You".',
             provenance:
@@ -477,6 +487,12 @@ const unitData = {
             letter: 'A',
             context:
               "Lord Kitchener broke military convention by appealing directly to individual citizens rather than relying on county militias. **Hinge Question:** Why did Kitchener's pointing finger create such an intense personal psychological obligation for ordinary young men walking down the street?",
+            hinge_question:
+              'Why was the direct visual gaze and pointing finger of Lord Kitchener so psychologically effective in mobilizing volunteer recruits in 1914?',
+            discussion_ideas: [
+              "Direct Personal Accusation and Civic Obligation: Alfred Leete's design broke with Victorian group recruitment art by creating an intimate psychological summons: Kitchener's piercing eyes and pointing finger appear to follow the viewer from any angle, transforming a general national appeal into an inescapable, personal demand of masculine duty, honor, and patriotism that made young men feel like cowards if they walked away.",
+              "Imperial Hero Status and Military Authority: Field Marshal Lord Kitchener was a revered Victorian imperial legend—the conqueror of Omdurman and veteran of Khartoum; seeing Britain’s most trusted military hero directly asking for their personal service gave the recruitment campaign supreme gravitas, persuading over 750,000 men to enlist in 'Kitchener's New Armies' in the first eight weeks of the war.",
+            ],
           },
         },
         {
@@ -497,6 +513,11 @@ const unitData = {
             letter: 'B',
             context:
               'British wartime propaganda constantly invoked the 1839 Treaty of London to present Britain as an honourable defender of small nations. **Hinge Question:** How did framing the conflict as a legal and moral defense of Belgium help unite anti-war liberals and working-class pacifists behind the war effort?',
+            hinge_question:
+              'How did the British government use Germany’s violation of Belgian neutrality to frame the war as a moral crusade rather than a cynical imperial conflict?',
+            discussion_ideas: [
+              "When German Chancellor Theobald von Bethmann-Hollweg dismissed the 1839 Treaty of London guaranteeing Belgian neutrality as just a 'scrap of paper' (ein Fetzen Papier), British propagandists seized upon the phrase to establish moral superiority. The Parliamentary Recruiting Committee printed facsimile posters showing the signatures and seals of European statesmen alongside Britain's historic guarantee. By framing Britain's entry into the war not as a calculated move to preserve naval dominance or defend the British Empire, but as an honorable defense of international law, the sanctity of treaties, and the rights of small nations against ruthless Prussian militarism ('Brave Little Belgium'), the poster successfully united liberals, trade unionists, and religious pacifists behind the war effort.",
+            ],
           },
         },
         {
@@ -514,6 +535,12 @@ const unitData = {
             letter: 'C',
             context:
               'Personal diaries of Pals Battalion volunteers reveal the intense peer camaraderie and fear of social exclusion that drove whole workplaces to volunteer together. **Hinge Question:** Why did the promise that friends would never be separated make military service far more appealing than traditional individual enlistment?',
+            hinge_question:
+              'What does Arthur Green’s diary reveal about the mixture of patriotic excitement and fear that drove working-class men to enlist in August 1914?',
+            discussion_ideas: [
+              'Escape from Monotonous Industrial Labor and Promise of Adventure: Green’s diary captures the intoxicating, carnival atmosphere in industrial Portsmouth, where thousands of young dockers and apprentices rushed to recruiting offices; enlisting offered an exciting escape from low wages, factory grime, and social monotony, promising travel abroad, good food, comradeship, and heroic glory in what everyone believed would be a short war over by Christmas.',
+              'Intense Social Coercion and Fear of Public Humiliation: Alongside patriotic idealism, Green documents the immense social pressure applied by peers, employers, and young women handing out white feathers; young men were terrified of being branded shirkers, realizing that remaining a civilian in town while friends marched off in uniform meant permanent social ostracism and shame.',
+            ],
           },
         },
         {
@@ -533,6 +560,11 @@ const unitData = {
             letter: 'D',
             context:
               "Working-class oral testimonies illustrate that the King's Shilling and guaranteed daily rations represented a significant improvement in living standards for impoverished Edwardian youths. **Hinge Question:** How does Private Morgan's testimony challenge the traditional view that volunteers were merely naive victims of patriotic propaganda?",
+            hinge_question:
+              "Why did the formation of 'Pals Battalions' encourage whole communities to enlist together, and why did this prove catastrophic later?",
+            discussion_ideas: [
+              "Conceived by Lord Derby, 'Pals Battalions' promised that friends, workmates, sports teams, and neighbors from the same town could enlist, train, and fight together in the same regiment (such as the Accrington Pals or Leeds Pals). This created extraordinary camaraderie and peer solidarity that drove hundreds of thousands of working-class men into the ranks. However, this localized structure proved catastrophic on the Western Front: on 1 July 1916, the first day of the Battle of the Somme, whole battalions were wiped out by machine-gun fire in minutes. Because men from the same street served together, the devastating casualties shattered entire villages and industrial towns simultaneously, leaving communities with virtually every young man of a generation dead or wounded on a single morning.",
+            ],
           },
         },
         {
@@ -552,6 +584,12 @@ const unitData = {
             letter: 'E',
             context:
               'This poster deliberately framed military service inside the domestic front room, leveraging female expectation and guilt to compel men to join. **Hinge Question:** How did weaponizing the opinions of mothers and sweethearts make refusing to enlist socially and emotionally impossible for Edwardian men?',
+            hinge_question:
+              'Enquiry: Study Source A. How does this poster use emotional manipulation and gender expectations to pressure men into volunteering?',
+            discussion_ideas: [
+              'Emotional Weaponization of the Domestic Sphere: By positioning middle-class women and an innocent child looking out from the domestic sanctuary while brave soldiers march into the distance, the poster establishes a powerful moral contract: women are not holding men back, but actively urging them into battle. This created acute psychological pressure and social guilt for civilian men who had not yet enlisted, making remaining at home seem cowardly and dishonourable.',
+              'Pre-Conscription Social Coercion: Produced in 1915 before the Military Service Act of 1916 introduced conscription, the British government relied heavily on voluntary recruitment campaigns. This poster mobilized civilian women as moral enforcers on the home front, leveraging traditional chivalric ideals to shame eligible men into uniform during the transition toward total national mobilization.',
+            ],
           },
         },
       ],
@@ -573,8 +611,8 @@ const unitData = {
           options: [
             'David Lloyd George',
             'Lord Horatio Kitchener',
-            'Herbert Asquith',
             'Winston Churchill',
+            'Herbert Asquith',
           ],
           answer: 'Lord Horatio Kitchener',
           a: 'Lord Horatio Kitchener',
@@ -586,9 +624,9 @@ const unitData = {
             'What was the nickname given to battalions of friends, neighbours, and workmates who enlisted together on the promise of serving side by side?',
           q: 'What was the nickname given to battalions of friends, neighbours, and workmates who enlisted together on the promise of serving side by side?',
           options: [
+            'The Territorial Legions',
             'The Iron Brigades',
             'Kitchener’s Guards',
-            'The Territorial Legions',
             'Pals Battalions',
           ],
           answer: 'Pals Battalions',
@@ -601,9 +639,9 @@ const unitData = {
           q: 'Which Hampshire regiment battalions were known locally as the "Pompey Pals"?',
           options: [
             'The 14th and 15th Battalions of the Hampshire Regiment',
-            'The 10th Isle of Wight Volunteers',
-            'The 1st and 2nd Royal Marines',
             'The 7th and 8th Southampton Rifles',
+            'The 1st and 2nd Royal Marines',
+            'The 10th Isle of Wight Volunteers',
           ],
           answer: 'The 14th and 15th Battalions of the Hampshire Regiment',
           a: 'The 14th and 15th Battalions of the Hampshire Regiment',
@@ -615,9 +653,9 @@ const unitData = {
             'What catastrophic casualty rate did the 1st Pompey Pals suffer at the Somme (Hamel sector) on 3 September 1916?',
           q: 'What catastrophic casualty rate did the 1st Pompey Pals suffer at the Somme (Hamel sector) on 3 September 1916?',
           options: [
-            'Over 950 casualties out of 1,000 men',
             'Zero casualties because the attack was cancelled',
             '50 casualties out of 1,000 men',
+            'Over 950 casualties out of 1,000 men',
             '457 casualties out of 587 men who went over the top',
           ],
           answer: '457 casualties out of 587 men who went over the top',
@@ -644,7 +682,7 @@ const unitData = {
           question:
             'What popular pro-war poet compared the First World War to a sporting contest in the poem "Who’s for the Game?"?',
           q: 'What popular pro-war poet compared the First World War to a sporting contest in the poem "Who’s for the Game?"?',
-          options: ['Rupert Brooke', 'Siegfried Sassoon', 'Jessie Pope', 'Wilfred Owen'],
+          options: ['Wilfred Owen', 'Siegfried Sassoon', 'Jessie Pope', 'Rupert Brooke'],
           answer: 'Jessie Pope',
           a: 'Jessie Pope',
           explanation:
@@ -654,7 +692,7 @@ const unitData = {
           question:
             'Which famous war poet wrote "Dulce et Decorum Est" to bitterly attack Jessie Pope’s romanticized pro-war poetry?',
           q: 'Which famous war poet wrote "Dulce et Decorum Est" to bitterly attack Jessie Pope’s romanticized pro-war poetry?',
-          options: ['Rudyard Kipling', 'Wilfred Owen', 'Robert Graves', 'John McCrae'],
+          options: ['Robert Graves', 'Wilfred Owen', 'Rudyard Kipling', 'John McCrae'],
           answer: 'Wilfred Owen',
           a: 'Wilfred Owen',
           explanation:
@@ -665,8 +703,8 @@ const unitData = {
             "Beyond patriotic propaganda, what pragmatic economic benefits ('the King’s Shilling') motivated many impoverished working-class men to volunteer in 1914?",
           q: "Beyond patriotic propaganda, what pragmatic economic benefits ('the King’s Shilling') motivated many impoverished working-class men to volunteer in 1914?",
           options: [
-            'A guaranteed seat in the House of Commons',
             'An exemption from paying any domestic taxes for life',
+            'A guaranteed seat in the House of Commons',
             'A promise of free farmland in France after the war',
             'Guaranteed regular pay ("the King’s Shilling"), warm clothing, three meals a day, and sturdy leather boots',
           ],
@@ -681,8 +719,8 @@ const unitData = {
             'Beyond domestic economic pressure, what moral outrage over international law convinced hundreds of thousands of British volunteers to enlist in 1914?',
           q: 'Beyond domestic economic pressure, what moral outrage over international law convinced hundreds of thousands of British volunteers to enlist in 1914?',
           options: [
-            'A desire to colonize Germany and seize Berlin’s gold reserves',
             'Fear of an immediate French naval invasion of London',
+            'A desire to colonize Germany and seize Berlin’s gold reserves',
             'Genuine moral outrage over the German invasion of neutral Belgium ("the Rape of Belgium") and defense of small nations',
             'A religious crusade to convert European populations to Protestantism',
           ],
@@ -707,10 +745,10 @@ const unitData = {
             'Approximately how many voluntary recruits had joined the British military by the end of September 1914 during the "Rush to the Colours"?',
           q: 'Approximately how many voluntary recruits had joined the British military by the end of September 1914 during the "Rush to the Colours"?',
           options: [
-            'Barely 25,000 volunteers',
-            'Over 750,000 volunteers',
             'Exactly 150,000 volunteers',
+            'Over 750,000 volunteers',
             'Over 5 million volunteers',
+            'Barely 25,000 volunteers',
           ],
           answer: 'Over 750,000 volunteers',
           a: 'Over 750,000 volunteers',
@@ -723,8 +761,8 @@ const unitData = {
           q: 'Which prominent northern politician and later Director-General of Recruiting pioneered the concept of civic battalions in Liverpool?',
           options: [
             'Sir Edward Carson',
-            'David Lloyd George',
             'Sir Douglas Haig',
+            'David Lloyd George',
             'Lord Derby (Edward Stanley)',
           ],
           answer: 'Lord Derby (Edward Stanley)',
@@ -753,10 +791,10 @@ const unitData = {
             'Which retired British admiral founded the Order of the White Feather in Folkestone in August 1914 to shame men into enlisting?',
           q: 'Which retired British admiral founded the Order of the White Feather in Folkestone in August 1914 to shame men into enlisting?',
           options: [
-            'Admiral Sir John Jellicoe',
             'Admiral Sir John Fisher',
-            'Admiral Charles Penrose Fitzgerald',
             'Admiral David Beatty',
+            'Admiral Charles Penrose Fitzgerald',
+            'Admiral Sir John Jellicoe',
           ],
           answer: 'Admiral Charles Penrose Fitzgerald',
           a: 'Admiral Charles Penrose Fitzgerald',
@@ -768,10 +806,10 @@ const unitData = {
             'In Wilfred Owen’s famous poem "Dulce et Decorum Est", what Latin phrase from Horace does he brand as "The old Lie"?',
           q: 'In Wilfred Owen’s famous poem "Dulce et Decorum Est", what Latin phrase from Horace does he brand as "The old Lie"?',
           options: [
-            '"Aut vincere aut mori" (Either conquer or die)',
+            '"Veni, vidi, vici" (I came, I saw, I conquered)',
             '"Dulce et decorum est pro patria mori" (It is sweet and fitting to die for one’s country)',
             '"Si vis pacem, para bellum" (If you want peace, prepare for war)',
-            '"Veni, vidi, vici" (I came, I saw, I conquered)',
+            '"Aut vincere aut mori" (Either conquer or die)',
           ],
           answer:
             '"Dulce et decorum est pro patria mori" (It is sweet and fitting to die for one’s country)',
@@ -784,8 +822,8 @@ const unitData = {
             'What term describes the intense civilian peer pressure, patriotic fervor, and community expectation that compelled young men to enlist in 1914?',
           q: 'What term describes the intense civilian peer pressure, patriotic fervor, and community expectation that compelled young men to enlist in 1914?',
           options: [
-            'Cosmopolitan pacifism',
             'Laissez-faire mobilization',
+            'Cosmopolitan pacifism',
             'Passive resistance',
             'Social jingoism and community coercion',
           ],
@@ -799,9 +837,9 @@ const unitData = {
             'What physical requirement did British Army recruitment boards initially enforce in August 1914, which was drastically lowered as casualty lists mounted?',
           q: 'What physical requirement did British Army recruitment boards initially enforce in August 1914, which was drastically lowered as casualty lists mounted?',
           options: [
-            'A mandatory university degree in classical languages',
-            'A minimum height requirement of 5 feet 8 inches (later lowered to 5 feet 3 inches)',
             'Flawless eyesight without any corrective spectacles',
+            'A minimum height requirement of 5 feet 8 inches (later lowered to 5 feet 3 inches)',
+            'A mandatory university degree in classical languages',
             'Ownership of land worth at least £500',
           ],
           answer:
@@ -815,10 +853,10 @@ const unitData = {
             'Why do social historians challenge the traditional myth that the British public in August 1914 was swept up in hysterical "war enthusiasm"?',
           q: 'Why do social historians challenge the traditional myth that the British public in August 1914 was swept up in hysterical "war enthusiasm"?',
           options: [
-            'Nobody in Britain knew that war had been declared until December 1914',
             'Every single British newspaper opposed the war and refused to print news',
-            'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
             'The British public was entirely pacifist and rioted against the government',
+            'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
+            'Nobody in Britain knew that war had been declared until December 1914',
           ],
           answer:
             'The dominant public mood was sober, grim determination and civic obligation rather than hysterical rejoicing or bloodlust',
@@ -832,9 +870,9 @@ const unitData = {
           q: 'What major demographic group suffered the highest proportional officer casualty rates during the early campaigns of 1914–1915?',
           options: [
             'Junior subalterns (lieutenants and second lieutenants) recruited from elite public schools and universities',
-            'Senior staff generals residing in châteaux behind the lines',
-            'Cabinet ministers and members of the House of Lords',
             'Naval officers stationed on home dockyard duty in Portsmouth',
+            'Cabinet ministers and members of the House of Lords',
+            'Senior staff generals residing in châteaux behind the lines',
           ],
           answer:
             'Junior subalterns (lieutenants and second lieutenants) recruited from elite public schools and universities',
@@ -1119,6 +1157,12 @@ const unitData = {
         ],
         model_answer:
           'Source A provides decisive visual evidence of why the Western Front remained an unbroken stalemate. The aerial perspective reveals that trenches were not simple ditches, but deeply engineered defensive networks. The sharp zig-zag traverses prevented enfilading machine-gun fire and localized shell blasts. Furthermore, the photograph reveals the desolate, crater-scarred expanse of No Man’s Land, demonstrating that any attacking infantry force had to cross open, pulverized ground without cover directly into barbed wire and entrenched machine guns.',
+        hinge_question:
+          'Enquiry: Study Source A. How does this aerial photograph reveal why defensive trench warfare completely overwhelmed traditional 19th-century infantry tactics?',
+        discussion_ideas: [
+          'Decisive Defensive Superiority: The aerial perspective exposes why the Western Front remained an unbroken stalemate. Trenches were not simple straight ditches, but deeply engineered zig-zag networks with defensive traverses that localized artillery shell blasts and prevented attackers from raking an entire trench with enfilading machine-gun fire, rendering traditional massed infantry charges suicidal.',
+          "The Lethal Reality of No Man's Land: The photograph starkly captures the lunar, cratered wasteland separating the opposing lines. To assault the enemy, infantry had to advance across hundreds of yards of churned mud, pulverized chalk, and thick belts of barbed wire under direct observation and pre-sighted defensive artillery, explaining why commanders struggled to achieve operational breakthroughs until combined-arms tactics developed.",
+        ],
       },
       flashcards: [
         {
@@ -1329,6 +1373,8 @@ const unitData = {
             'Describe three terrible physical hardships soldiers endured while living in the frontline trenches.',
           model_answer:
             'Soldiers endured freezing waterlogged mud that caused trench foot, swarms of disease-carrying rats feeding on corpses, and relentless deafening artillery bombardments.',
+          teacher_guidance:
+            'Archival footage and architectural breakdown of the Western Front trench system. Guide pupils to identify frontline, support, and reserve trenches, communications saps, duckboards, fire steps, and the omnipresent threat of mud and trench foot.',
         },
         {
           type: 'era',
@@ -1339,6 +1385,8 @@ const unitData = {
             'Explain why poison gas attacks were so psychologically terrifying for soldiers in the trenches.',
           model_answer:
             'Gas was heavier than air and sank directly into the trenches, burning the skin, blinding soldiers, and destroying lungs from the inside, causing an agonizing, suffocating death.',
+          teacher_guidance:
+            'Examines the introduction of chemical warfare by the German army at Second Ypres in April 1915. Focus on the psychological terror of chlorine, phosgene, and mustard gas, and the rapid evolution from urine-soaked rags to sophisticated box respirators.',
         },
       ],
       narrative_blocks: [
@@ -1357,6 +1405,11 @@ const unitData = {
             letter: 'A',
             context:
               'Aerial photography revolutionized intelligence on the Western Front, revealing the complex, multi-layered layout of opposing trenches. **Hinge Question:** Why did the development of aerial reconnaissance make surprise infantry attacks virtually impossible?',
+            hinge_question:
+              'How does aerial photography explain why the Western Front devolved into an impenetrable defensive stalemate?',
+            discussion_ideas: [
+              "Aerial photography from the Royal Flying Corps reveals that the Western Front was not a simple ditch, but a deeply layered, industrialized defensive fortress system stretching hundreds of miles. The photograph shows interlocking, zig-zagging trenches designed to prevent enemy enfilade fire, fronted by vast belts of coiled barbed wire up to thirty feet deep, and covered by mutually supporting machine-gun redoubts and pre-sighted heavy artillery batteries. Because military defense technology (machine guns firing 600 rounds per minute and quick-firing shrapnel artillery) was decades ahead of offensive transport (infantry walking with 60 lb packs across shell-cratered mud), any frontal assault across No Man's Land was tactical suicide, freezing the conflict into an immovable war of attrition.",
+            ],
           },
         },
         {
@@ -1376,6 +1429,11 @@ const unitData = {
             letter: 'B',
             context:
               'Trench construction required meticulous engineering to resist artillery shells and ensure rapid reinforcement. **Hinge Question:** How did zig-zag traverses and communication trenches prevent attackers from turning a local breakthrough into a general collapse?',
+            hinge_question:
+              'Why were trenches constructed with angular zig-zags (traverses) rather than straight lines?',
+            discussion_ideas: [
+              "Trenches were strictly engineered with sharp 90-degree right angles and firebays (traverses) to neutralize the catastrophic effects of artillery and infantry infiltration. If a trench had been dug in a straight line, an enemy artillery shell landing inside would send deadly shrapnel flying hundreds of yards down the entire length, wiping out an entire platoon in seconds; furthermore, an enemy soldier with a machine gun could 'enfilade' (shoot straight down) the entire trench line. Traverses confined the lethal blast radius of high-explosive shells to a single small bay and forced attacking raiders to clear trenches corner by corner in close-quarters combat with bayonets and grenades.",
+            ],
           },
         },
         {
@@ -1396,6 +1454,12 @@ const unitData = {
             letter: 'C',
             context:
               'Trench foot incapacitated over 75,000 British soldiers before the introduction of whale-oil rubbing routines and dry sock regulations. **Hinge Question:** Why was trench foot considered a military discipline failure by high command rather than an unavoidable environmental hazard?',
+            hinge_question:
+              'What does trench foot reveal about the daily environmental suffering of soldiers even when no battles were taking place?',
+            discussion_ideas: [
+              'The Agony of Relentless Cold, Wet, and Tissue Necrosis: Trench foot was an agonizing medical condition caused by prolonged immersion in cold water and mud below 16°C without drying; blood vessels constricted, cutting off circulation and oxygen to the extremities, leading to severe numbness, blisters, fungal rot, and eventually gangrene, requiring surgical amputation of toes or whole feet without an enemy bullet being fired.',
+              "Military Failure and Command Preventative Discipline: In the first winter of the war, over 20,000 British soldiers contracted trench foot, severely depleting frontline fighting strength; once the high command recognized it was preventable, strict disciplinary orders mandated whale oil rubbing, daily sock changes, and duckboards in trenches, making officer inspections of soldiers' bare feet a daily military routine.",
+            ],
           },
         },
         {
@@ -1416,6 +1480,12 @@ const unitData = {
             letter: 'D',
             context:
               'Photographs of front-line units before the assault capture the intense sensory isolation and anxiety of soldiers awaiting zero hour. **Hinge Question:** Why did British high command believe that marching in slow, rigid lines was the only way to manage newly trained volunteer battalions?',
+            hinge_question:
+              'How does the calm, youthful appearance of these Cheshire soldiers contrast with the horrific reality they faced hours later on 1 July 1916?',
+            discussion_ideas: [
+              "Poignant Innocence on the Eve of Catastrophe: The photograph captures young British soldiers smiling, smoking, and resting against the chalk trench wall hours before going 'over the top'; convinced by General Haig's promise that a week-long artillery bombardment of 1.5 million shells had pulverized German barbed wire and killed all defenders, the troops were told they could walk casually across No Man's Land to occupy abandoned German lines.",
+              'The Tragic Reality of Machine-Gun Slaughter: Within minutes of the whistles blowing at 7:30 am on 1 July 1916, deep German concrete dugouts proved undamaged by the bombardment; German machine gunners rushed to their parapets and cut down advancing British battalions in swathes, resulting in 57,470 British casualties on that single day—the bloodiest day in British military history.',
+            ],
           },
         },
         {
@@ -1435,6 +1505,12 @@ const unitData = {
             letter: 'E',
             context:
               'Haig remains one of the most controversial figures in modern British history, viewed alternately as a butcher and as a master modernizer. **Hinge Question:** Is it fair to judge Haig by the catastrophic casualties of 1916, or should he be evaluated by the combined-arms Allied victory of 1918?',
+            hinge_question:
+              "Does Sir Douglas Haig deserve his historical reputation as the 'Butcher of the Somme', or was he an innovative commander facing an unprecedented industrial war?",
+            discussion_ideas: [
+              "The Inflexible 'Butcher' Blind to Human Slaughter: Critics argue Haig was an obstinate, cavalry-trained commander detached in his chateau headquarters miles from the front line, who stubbornly repeated failed frontal assaults across muddy quagmires (the Somme in 1916 and Passchendaele in 1917), callous to the loss of hundreds of thousands of lives in futile wars of attrition.",
+              "The Master of Industrial War and Victor of 1918: Modern military historians argue Haig faced an unprecedented technological crisis with no easy tactical solutions; he learned painful lessons, pioneered all-arms coordination (integrating tanks, creeping artillery barrages, aerial spotters, and infantry platoons), and led the British Army through the victorious 'Hundred Days Offensive' of 1918, which broke the German Hindenburg Line and forced imperial Germany to surrender.",
+            ],
           },
         },
       ],
@@ -1460,9 +1536,9 @@ const unitData = {
           q: 'Why were frontline trenches constructed in an intricate zig-zag or traverse pattern rather than straight lines?',
           options: [
             'To prevent enfilading machine-gun fire down the trench and contain artillery blast shockwaves',
+            'To allow rainwater to drain directly into underground rivers',
             'Because soldiers did not possess straight measuring ropes',
             'To make it easier for horses and cavalry charges to navigate the trench',
-            'To allow rainwater to drain directly into underground rivers',
           ],
           answer:
             'To prevent enfilading machine-gun fire down the trench and contain artillery blast shockwaves',
@@ -1485,10 +1561,10 @@ const unitData = {
             'Which weapon was responsible for approximately 60% of all combat casualties on the Western Front?',
           q: 'Which weapon was responsible for approximately 60% of all combat casualties on the Western Front?',
           options: [
-            'The Vickers machine gun',
-            'Heavy Artillery',
-            'The Lee-Enfield rifle',
             'Poison gas',
+            'Heavy Artillery',
+            'The Vickers machine gun',
+            'The Lee-Enfield rifle',
           ],
           answer: 'Heavy Artillery',
           a: 'Heavy Artillery',
@@ -1500,9 +1576,9 @@ const unitData = {
             'At which battle in April 1915 did the German Army first deploy large-scale lethal chlorine gas warfare?',
           q: 'At which battle in April 1915 did the German Army first deploy large-scale lethal chlorine gas warfare?',
           options: [
+            'The First Battle of the Marne',
             'The Battle of Verdun',
             'The Battle of Loos',
-            'The First Battle of the Marne',
             'The Second Battle of Ypres',
           ],
           answer: 'The Second Battle of Ypres',
@@ -1532,8 +1608,8 @@ const unitData = {
           options: [
             'German troops survived unharmed in deep concrete dugouts, and many shells were duds that failed to cut wire',
             'British shells were made of wood and caused zero damage',
-            'The German army had completely evacuated the Somme days before',
             'British artillery accidentally fired entirely in the wrong direction',
+            'The German army had completely evacuated the Somme days before',
           ],
           answer:
             'German troops survived unharmed in deep concrete dugouts, and many shells were duds that failed to cut wire',
@@ -1579,8 +1655,8 @@ const unitData = {
           options: [
             'The Hundred Days Offensive',
             'The Spring Offensive',
-            'The Gallipoli Campaign',
             'The Nivelle Offensive',
+            'The Gallipoli Campaign',
           ],
           answer: 'The Hundred Days Offensive',
           a: 'The Hundred Days Offensive',
@@ -1592,9 +1668,9 @@ const unitData = {
             'What were the three standard parallel trench lines that composed a British defensive sector on the Western Front?',
           q: 'What were the three standard parallel trench lines that composed a British defensive sector on the Western Front?',
           options: [
-            'The Outer trench, Middle trench, and City trench',
             'The Moat, Bastion, and Redoubt',
             'The Machine-gun trench, Cavalry trench, and Kitchen trench',
+            'The Outer trench, Middle trench, and City trench',
             'The Frontline (fire) trench, Support trench, and Reserve trench',
           ],
           answer: 'The Frontline (fire) trench, Support trench, and Reserve trench',
@@ -1637,7 +1713,7 @@ const unitData = {
           question:
             'Which blistering chemical agent, first deployed by Germany at Third Ypres (Passchendaele) in July 1917, burned skin and lingered in soil for weeks?',
           q: 'Which blistering chemical agent, first deployed by Germany at Third Ypres (Passchendaele) in July 1917, burned skin and lingered in soil for weeks?',
-          options: ['Phosgene gas', 'Cyanide gas', 'Chlorine gas', 'Mustard gas (Yperite)'],
+          options: ['Cyanide gas', 'Phosgene gas', 'Chlorine gas', 'Mustard gas (Yperite)'],
           answer: 'Mustard gas (Yperite)',
           a: 'Mustard gas (Yperite)',
           explanation:
@@ -1649,9 +1725,9 @@ const unitData = {
           q: 'Which British Commander-in-Chief was appointed in December 1915, orchestrating the massive campaigns at the Somme and Passchendaele?',
           options: [
             'Field Marshal Sir Douglas Haig',
+            'Field Marshal Lord Kitchener',
             'General Sir Horace Smith-Dorrien',
             'General Sir William Robertson',
-            'Field Marshal Lord Kitchener',
           ],
           answer: 'Field Marshal Sir Douglas Haig',
           a: 'Field Marshal Sir Douglas Haig',
@@ -1663,10 +1739,10 @@ const unitData = {
             'Why did British artillery fail to cut the dense German barbed wire entanglements prior to the infantry attack on 1 July 1916?',
           q: 'Why did British artillery fail to cut the dense German barbed wire entanglements prior to the infantry attack on 1 July 1916?',
           options: [
-            'British artillery guns were forbidden from firing at wire under the Geneva Convention',
-            'The artillery shells had no gunpowder inside them',
-            'Gunners fired shrapnel shells instead of high explosives, which lifted and tangled the wire rather than severing it, and one-third of British shells were duds',
             'German troops had replaced the barbed wire with rubber ropes',
+            'British artillery guns were forbidden from firing at wire under the Geneva Convention',
+            'Gunners fired shrapnel shells instead of high explosives, which lifted and tangled the wire rather than severing it, and one-third of British shells were duds',
+            'The artillery shells had no gunpowder inside them',
           ],
           answer:
             'Gunners fired shrapnel shells instead of high explosives, which lifted and tangled the wire rather than severing it, and one-third of British shells were duds',
@@ -1679,10 +1755,10 @@ const unitData = {
             'What revolutionary new armored weapon was deployed in combat for the first time in world history at Flers-Courcelette on the Somme in September 1916?',
           q: 'What revolutionary new armored weapon was deployed in combat for the first time in world history at Flers-Courcelette on the Somme in September 1916?',
           options: [
-            'The armored car',
-            'The tank (British Mark I)',
-            'The self-propelled howitzer',
             'The half-track personnel carrier',
+            'The tank (British Mark I)',
+            'The armored car',
+            'The self-propelled howitzer',
           ],
           answer: 'The tank (British Mark I)',
           a: 'The tank (British Mark I)',
@@ -1696,8 +1772,8 @@ const unitData = {
           options: [
             'The "Learning Curve" thesis: British commanders confronted an unprecedented industrial stalemate and successfully adapted tactics, weaponry, and command structures to win in 1918',
             'The claim that British generals deliberately prolonged the war to win medals',
-            'The argument that German soldiers were secretly fighting for the British',
             'The assertion that trench warfare was a complete military success from day one',
+            'The argument that German soldiers were secretly fighting for the British',
           ],
           answer:
             'The "Learning Curve" thesis: British commanders confronted an unprecedented industrial stalemate and successfully adapted tactics, weaponry, and command structures to win in 1918',
@@ -1725,9 +1801,9 @@ const unitData = {
             'What was the name of the formidable, multi-layered German defensive fortification line on the Western Front that the British Army broke during autumn 1918?',
           q: 'What was the name of the formidable, multi-layered German defensive fortification line on the Western Front that the British Army broke during autumn 1918?',
           options: [
-            'The Atlantic Wall',
             'The Maginot Line',
             'The Mannerheim Line',
+            'The Atlantic Wall',
             'The Hindenburg Line (Siegfriedstellung)',
           ],
           answer: 'The Hindenburg Line (Siegfriedstellung)',
@@ -2029,6 +2105,12 @@ const unitData = {
         ],
         model_answer:
           'Source A provides powerful visual and historical evidence of the decisive contribution of Indian soldiers in 1914. Sepoy Khudadad Khan’s heroic stand at Hollebeke demonstrates that the Indian Army did not merely provide auxiliary support, but fought in the most critical frontline combat operations. By holding off German assaults until his ammunition was exhausted, Khan saved the depleted British Expeditionary Force from encirclement. His award of the Victoria Cross proved that colonial combatants displayed extraordinary valor, shattering contemporary imperial prejudices that questioned the courage of non-European troops.',
+        hinge_question:
+          'Enquiry: Study Source A. How does the heroism of Sepoy Khudadad Khan demonstrate the vital military role of the Indian Army in saving the British line in 1914?',
+        discussion_ideas: [
+          "The Indispensable Role of Colonial Armies: Sepoy Khudadad Khan's heroism at Hollebeke during the First Battle of Ypres in October 1914 proved decisive in plugging the collapsed line and preventing a German breakthrough to the Channel ports. The presence of the Indian Expeditionary Force in France directly preserved the British Expeditionary Force from destruction during the critical opening months of the war.",
+          "Breaking the Imperial Racial Ceiling: Awarded the Victoria Cross on 31 October 1914, Khudadad Khan became the very first South Asian soldier in history to receive Britain's highest decoration for gallantry in combat. His recognition shattered long-standing colonial military racial hierarchies that had previously barred non-white imperial soldiers from receiving the VC, forcing British military authorities to publicly honour colonial equality on the battlefield.",
+        ],
       },
       flashcards: [
         {
@@ -2125,6 +2207,8 @@ const unitData = {
             'Explain how the arrival of the Indian Army in autumn 1914 saved the British Expeditionary Force from complete collapse.',
           model_answer:
             'The Indian Army arrived in France in October 1914 just as the original British professional army had been decimated, plugging vital gaps at First Ypres and holding one-third of the British frontline.',
+          teacher_guidance:
+            'Crucial global perspective highlighting the 1.3 million Indian soldiers who served in the Great War. Emphasizes how the Indian Corps arrived in France in autumn 1914 to plug critical gaps at First Ypres, suffering heavy casualties in freezing, unfamiliar conditions.',
         },
         {
           type: 'era',
@@ -2135,6 +2219,8 @@ const unitData = {
             'Identify two non-European groups that provided essential logistical and manual labor on the Western Front.',
           model_answer:
             'The Chinese Labour Corps (140,000 men) and the British West Indies Regiment (16,000 men) provided essential labour, moving heavy artillery ammunition and digging trenches.',
+          teacher_guidance:
+            'Explores the worldwide mobilization of British Empire forces, including Canada, Australia, New Zealand, South Africa, the West Indies, and the Chinese Labour Corps. Demonstrates that the Western Front relied completely on global logistical and combat manpower.',
         },
       ],
       narrative_blocks: [
@@ -2153,6 +2239,12 @@ const unitData = {
             letter: 'A',
             context:
               'British wartime posters projected an idealized image of loyal imperial unity to conceal colonial exploitation. **Hinge Question:** Why did British propaganda present the Empire as an equal family of nations when political power remained completely concentrated in London?',
+            hinge_question:
+              'How does the symbolism of the British lion and its cubs illustrate Britain’s imperial relationship with its dominions and colonies?',
+            discussion_ideas: [
+              "A Paternalistic Allegory of Imperial Unity: The poster depicts an adult British lion standing proudly atop a hill, calling out to four younger lions representing the self-governing White Dominions (Canada, Australia, New Zealand, and South Africa); it visualizes the British Empire as a noble, devoted family bound by blood, language, and loyalty to the Crown, willing to rally to the mother country's defense in her hour of need.",
+              'The Blatant Erasure of Non-White Colonial Soldiers: While celebrating the White Dominions, the poster completely excludes India, Africa, and the Caribbean; yet India alone mobilized over 1.4 million soldiers and laborers—more than Australia, Canada, and New Zealand combined—exposing the racist imperial hierarchy that erased non-white subjects from the visual narrative of empire while relying heavily on their blood on the battlefield.',
+            ],
           },
         },
         {
@@ -2171,6 +2263,12 @@ const unitData = {
             letter: 'B',
             context:
               "Over 130,000 Indian troops served on the Western Front, earning eleven Victoria Crosses before being redeployed to the Middle East in late 1915. **Hinge Question:** Why did the British high command celebrate Khudadad Khan's individual bravery while denying Indian officers command over white soldiers?",
+            hinge_question:
+              'Enquiry: Study Source A. How does the heroism of Sepoy Khudadad Khan demonstrate the vital military role of the Indian Army in saving the British line in 1914?',
+            discussion_ideas: [
+              "The Indispensable Role of Colonial Armies: Sepoy Khudadad Khan's heroism at Hollebeke during the First Battle of Ypres in October 1914 proved decisive in plugging the collapsed line and preventing a German breakthrough to the Channel ports. The presence of the Indian Expeditionary Force in France directly preserved the British Expeditionary Force from destruction during the critical opening months of the war.",
+              "Breaking the Imperial Racial Ceiling: Awarded the Victoria Cross on 31 October 1914, Khudadad Khan became the very first South Asian soldier in history to receive Britain's highest decoration for gallantry in combat. His recognition shattered long-standing colonial military racial hierarchies that had previously barred non-white imperial soldiers from receiving the VC, forcing British military authorities to publicly honour colonial equality on the battlefield.",
+            ],
           },
         },
         {
@@ -2189,6 +2287,12 @@ const unitData = {
             letter: 'C',
             context:
               'Over 1.3 million memorial plaques were cast in bronze to commemorate imperial dead. **Hinge Question:** How did the shared grief of dominion casualties at Gallipoli accelerate political independence movements in Australia and New Zealand?',
+            hinge_question:
+              'Why was the Gallipoli campaign of 1915 so pivotal in forging a distinct Australian and New Zealand national identity separate from Britain?',
+            discussion_ideas: [
+              "The Birth of Independent National Nationhood Through Shared Blood: Before 1915, Australians and New Zealanders viewed themselves primarily as loyal British colonial subjects; the heroism, mateship, and resilience of the ANZACs clambering up the cliffs of Gallipoli under devastating Turkish fire created the enduring 'ANZAC Legend', uniting disparate Australian states in a shared national founding myth.",
+              'Bitter Disillusionment with British Military Incompetence: Gallipoli was a catastrophic strategic disaster masterminded by Winston Churchill and bungled by British high commanders, who landed troops on the wrong beaches and sent ANZAC soldiers into suicidal frontal assaults against Turkish trenches (such as at the Nek); the horrific slaughter planted deep cynicism toward British aristocratic generalship and accelerated Dominion demands for political autonomy.',
+            ],
           },
         },
         {
@@ -2209,6 +2313,11 @@ const unitData = {
             letter: 'D',
             context:
               'Over 2,000 Chinese labourers died on the Western Front from artillery shelling, poison gas, and the 1918 Spanish Flu. **Hinge Question:** Why did the British military conceal the existence of the Chinese Labour Corps from the British public during the war?',
+            hinge_question:
+              'Why was the non-combat contribution of the 140,000 men of the Chinese Labour Corps essential to the Allied victory on the Western Front?',
+            discussion_ideas: [
+              'The Chinese Labour Corps (CLC) was the essential industrial backbone of the British Expeditionary Force. Operating under military discipline in segregated camps, over 140,000 Chinese recruits loaded and unloaded ammunition ships at Channel ports, laid hundreds of miles of military railways, assembled artillery shells, repaired tanks, and dug frontline trenches. In an industrial war decided by logistical supply lines, their relentless physical labor freed hundreds of thousands of British and French men from dockyards and railheads to serve as combat riflemen at the front. Even after the 1918 Armistice, Chinese laborers performed the horrifying duty of clearing live battlefields, defusing unexploded ordnance, and exhuming decomposing soldiers for war graves, suffering an estimated 20,000 deaths that were virtually erased from European public remembrance for decades.',
+            ],
           },
         },
         {
@@ -2227,6 +2336,12 @@ const unitData = {
             letter: 'E',
             context:
               'Over 15,000 West Indian volunteers served in the BWIR, facing cold weather and systemic institutional racism. **Hinge Question:** How did wartime racial discrimination undermine colonial loyalty and spark Caribbean political independence movements after 1918?',
+            hinge_question:
+              'How did the racist policies of the British War Office limit the roles of the British West Indies Regiment, and how did this fuel post-war Caribbean independence movements?',
+            discussion_ideas: [
+              'Racial Segregation and Denial of Combat Glory: Over 15,000 Caribbean men volunteered out of fierce loyalty to King George V, only to face institutional racism: the War Office refused to let Black soldiers fight with rifles against white Europeans on the Western Front, fearing it would undermine white prestige in the colonies. Instead, the BWIR were relegated to dangerous, humiliating manual labor—carrying heavy artillery shells under German fire and digging latrines—while being denied equal pay, uniforms, and promotion.',
+              "The Spark for Anti-Colonial Revolution: Disgusted by maltreatment, BWIR soldiers mutinied at Taranto, Italy in December 1918, forming the 'Caribbean League' to demand freedom; returning home to Jamaica, Trinidad, and Barbados, decorated veterans used their military organizing skills to launch general strikes and lead trade unions that evolved directly into the modern Caribbean independence and civil rights movements.",
+            ],
           },
         },
       ],
@@ -2235,7 +2350,7 @@ const unitData = {
           question:
             'Approximately how many Indian soldiers and non-combatant labourers served Great Britain during the First World War?',
           q: 'Approximately how many Indian soldiers and non-combatant labourers served Great Britain during the First World War?',
-          options: ['300,000 men', '50,000 men', 'Approximately 1.3 million men', '5 million men'],
+          options: ['5 million men', '300,000 men', 'Approximately 1.3 million men', '50,000 men'],
           answer: 'Approximately 1.3 million men',
           a: 'Approximately 1.3 million men',
           explanation:
@@ -2247,9 +2362,9 @@ const unitData = {
           q: 'Who was the first South Asian soldier to be awarded the Victoria Cross (VC) for extraordinary machine-gun valor at First Ypres in October 1914?',
           options: [
             'Sepoy Khudadad Khan VC',
-            'Subadar Mir Dast VC',
             'Naik Darwan Singh Negi VC',
             'Chatta Singh VC',
+            'Subadar Mir Dast VC',
           ],
           answer: 'Sepoy Khudadad Khan VC',
           a: 'Sepoy Khudadad Khan VC',
@@ -2261,9 +2376,9 @@ const unitData = {
             'Which royal palace in England was famously converted into a showcase military hospital for wounded Indian soldiers between 1914 and 1916?',
           q: 'Which royal palace in England was famously converted into a showcase military hospital for wounded Indian soldiers between 1914 and 1916?',
           options: [
-            'Buckingham Palace',
             'Hampton Court Palace',
             'Windsor Castle',
+            'Buckingham Palace',
             'The Royal Pavilion in Brighton',
           ],
           answer: 'The Royal Pavilion in Brighton',
@@ -2291,7 +2406,7 @@ const unitData = {
           question:
             'How many Chinese civilian contract workers served in the Chinese Labour Corps (CLC) on the Western Front supporting Allied logistics?',
           q: 'How many Chinese civilian contract workers served in the Chinese Labour Corps (CLC) on the Western Front supporting Allied logistics?',
-          options: ['500,000 men', '10,000 men', '1 million men', 'Approximately 140,000 men'],
+          options: ['10,000 men', '1 million men', '500,000 men', 'Approximately 140,000 men'],
           answer: 'Approximately 140,000 men',
           a: 'Approximately 140,000 men',
           explanation:
@@ -2302,9 +2417,9 @@ const unitData = {
             'What major official celebration in London in July 1919 highlighted the deliberate exclusion of Black colonial troops from British victory?',
           q: 'What major official celebration in London in July 1919 highlighted the deliberate exclusion of Black colonial troops from British victory?',
           options: [
-            'The King’s Birthday Review',
-            'The London Victory Parade down Whitehall',
             'The Peace Thanksgiving Service at St. Paul’s',
+            'The London Victory Parade down Whitehall',
+            'The King’s Birthday Review',
             'The Cenotaph Dedication Ceremony',
           ],
           answer: 'The London Victory Parade down Whitehall',
@@ -2319,8 +2434,8 @@ const unitData = {
           options: [
             'The Jallianwala Bagh (Amritsar) Massacre',
             'The Delhi Uprising',
-            'The Rawalpindi Incident',
             'The Lahore Mutiny',
+            'The Rawalpindi Incident',
           ],
           answer: 'The Jallianwala Bagh (Amritsar) Massacre',
           a: 'The Jallianwala Bagh (Amritsar) Massacre',
@@ -2332,10 +2447,10 @@ const unitData = {
             'What system of military surveillance was strictly applied to letters written home by wounded Indian soldiers convalescing in England?',
           q: 'What system of military surveillance was strictly applied to letters written home by wounded Indian soldiers convalescing in England?',
           options: [
-            'The White Feather Audit',
-            'The Defense Mail Quota',
-            'Imperial Censorship',
             'Postal Conscription',
+            'The White Feather Audit',
+            'Imperial Censorship',
+            'The Defense Mail Quota',
           ],
           answer: 'Imperial Censorship',
           a: 'Imperial Censorship',
@@ -2363,9 +2478,9 @@ const unitData = {
             'Why did colonial veterans across the Caribbean and India organize mutinies and political strikes following the 1918 Armistice?',
           q: 'Why did colonial veterans across the Caribbean and India organize mutinies and political strikes following the 1918 Armistice?',
           options: [
+            'They demanded to be permanently relocated to Germany',
             'They wanted to abolish all international shipping lanes',
             'They were ordered to conquer South America by the British government',
-            'They demanded to be permanently relocated to Germany',
             'They were subjected to institutional racism, denied promised equal pay, and betrayed over political rights and self-rule',
           ],
           answer:
@@ -2379,9 +2494,9 @@ const unitData = {
             'At which crucial early battle in October 1914 did Indian Expeditionary Force A plug critical gaps in the British frontline, saving the Allied line from collapse?',
           q: 'At which crucial early battle in October 1914 did Indian Expeditionary Force A plug critical gaps in the British frontline, saving the Allied line from collapse?',
           options: [
-            'The Battle of the Somme',
-            'The First Battle of Ypres',
             'The Battle of Cambrai',
+            'The First Battle of Ypres',
+            'The Battle of the Somme',
             'The Battle of Loos',
           ],
           answer: 'The First Battle of Ypres',
@@ -2394,8 +2509,8 @@ const unitData = {
             'What military designation was given to the two Indian infantry and cavalry divisions sent to France in autumn 1914?',
           q: 'What military designation was given to the two Indian infantry and cavalry divisions sent to France in autumn 1914?',
           options: [
-            'The Eastern Corps',
             'The Commonwealth Taskforce',
+            'The Eastern Corps',
             'Indian Expeditionary Force A',
             'The Imperial Vanguard',
           ],
@@ -2410,9 +2525,9 @@ const unitData = {
           q: 'What racial theory held by British military recruiters dictated which Indian ethnic groups were deemed biologically suited for frontline combat?',
           options: [
             'The "Martial Races" theory (e.g., Sikhs, Gurkhas, and Punjabi Muslims)',
+            'The Aryan Hierarchy Doctrine',
             'The Imperial Caste Mandate',
             'Social Darwinist Phrenology',
-            'The Aryan Hierarchy Doctrine',
           ],
           answer: 'The "Martial Races" theory (e.g., Sikhs, Gurkhas, and Punjabi Muslims)',
           a: 'The "Martial Races" theory (e.g., Sikhs, Gurkhas, and Punjabi Muslims)',
@@ -2425,8 +2540,8 @@ const unitData = {
           q: 'What was the name of the December 1918 mutiny in Italy where Caribbean soldiers revolted against degrading physical tasks and racist abuse?',
           options: [
             'The Kingston Rebellion',
-            'The Port of Spain Riot',
             'The Naples Uprising',
+            'The Port of Spain Riot',
             'The Taranto Mutiny',
           ],
           answer: 'The Taranto Mutiny',
@@ -2439,10 +2554,10 @@ const unitData = {
             'Under what strict contractual condition were 140,000 Chinese labourers brought to the Western Front by British authorities?',
           q: 'Under what strict contractual condition were 140,000 Chinese labourers brought to the Western Front by British authorities?',
           options: [
-            'They were promised full British citizenship upon arrival',
+            'They were employed exclusively as civilian bank clerks in Paris',
             'They were classified as non-combatant civilian contract labourers and legally barred from carrying weapons or fighting',
             'They were deployed as frontline elite assault stormtroopers',
-            'They were employed exclusively as civilian bank clerks in Paris',
+            'They were promised full British citizenship upon arrival',
           ],
           answer:
             'They were classified as non-combatant civilian contract labourers and legally barred from carrying weapons or fighting',
@@ -2472,9 +2587,9 @@ const unitData = {
           q: 'Which famous Indian nationalist leader actively supported British military recruitment in 1914 in the mistaken hope it would earn India dominion self-government?',
           options: [
             'Muhammad Ali Jinnah',
-            'Jawaharlal Nehru',
-            'Mahatma Gandhi',
             'Subhas Chandra Bose',
+            'Mahatma Gandhi',
+            'Jawaharlal Nehru',
           ],
           answer: 'Mahatma Gandhi',
           a: 'Mahatma Gandhi',
@@ -2487,9 +2602,9 @@ const unitData = {
           q: 'What repressive imperial legislation passed in India in March 1919 extended wartime censorship and detention without trial, sparking massive protests?',
           options: [
             'The Rowlatt Act',
-            'The Morley-Minto Regulations',
-            'The Government of India Act',
             'The Defense of India Mandate',
+            'The Government of India Act',
+            'The Morley-Minto Regulations',
           ],
           answer: 'The Rowlatt Act',
           a: 'The Rowlatt Act',
@@ -2501,9 +2616,9 @@ const unitData = {
             'How many gallantry medals were awarded to soldiers of the British West Indies Regiment (BWIR) despite being officially barred from frontline combat?',
           q: 'How many gallantry medals were awarded to soldiers of the British West Indies Regiment (BWIR) despite being officially barred from frontline combat?',
           options: [
-            'Only 1 medal',
             'Zero decorations',
             'Over 10,000 Victoria Crosses',
+            'Only 1 medal',
             'Over 80 decorations, including 5 Distinguished Conduct Medals and dozens of Military Medals',
           ],
           answer:
@@ -2519,8 +2634,8 @@ const unitData = {
           options: [
             'Because the British government ran out of stone to carve non-European names',
             'To preserve the comforting national myth that the Great War was an exclusively white, British sacrifice, thereby reinforcing post-war imperial dominance',
-            'Because colonial governments demanded that all records of their troops be burned',
             'Because no colonial troops were present in Europe during the war',
+            'Because colonial governments demanded that all records of their troops be burned',
           ],
           answer:
             'To preserve the comforting national myth that the Great War was an exclusively white, British sacrifice, thereby reinforcing post-war imperial dominance',
@@ -2880,6 +2995,12 @@ const unitData = {
         ],
         model_answer:
           'Source A provides vivid visual evidence of how total war shattered traditional Victorian gender spheres. Rather than remaining confined to the domestic home, working-class women took over heavy manufacturing and arms production to keep the British Army supplied. By operating complex, heavy industrial machinery, women proved their indispensable economic value to the nation. However, their simple clothing highlights the extreme physical hazards they endured, including toxic jaundice from handling TNT and the constant risk of explosive accidents, establishing their role as vital frontline participants on the Home Front.',
+        hinge_question:
+          'Enquiry: Study Source A. How does this photograph demonstrate the radical transformation of women’s roles in British society during the First World War?',
+        discussion_ideas: [
+          'Shattering Victorian Gender Spheres: The image of female workers operating heavy lathes and filling artillery shells demonstrates how the shell shortages of 1915 forced the British state to dismantle strict gender divisions in heavy industry. Over one million women entered munitions and engineering factories, permanently undermining the Victorian ideology that women were physically and technically unfit for industrial labour.',
+          "The Lethal Hazards of the Home Front: The workers' protective gear highlights the extreme occupational dangers endured by civilian 'munitionettes'. Handling toxic chemicals like TNT caused fatal toxic jaundice, turning their skin and hair bright yellow ('Canary Girls') and causing severe liver damage, alongside constant risks of catastrophic factory detonations (such as the 1917 Silvertown explosion), showing that civilian women faced frontline risks in total war.",
+        ],
       },
       flashcards: [
         {
@@ -2976,6 +3097,8 @@ const unitData = {
             'Describe two dangerous tasks performed by female munitions workers and note down the medical symptoms of TNT poisoning.',
           model_answer:
             'Women mixed toxic chemicals and filled artillery shells; exposure to TNT turned their skin and hair bright yellow ("Canary Girls") and caused toxic jaundice and liver failure.',
+          teacher_guidance:
+            "Investigates the mobilization of over one million British women into munitions factories, transport, and agriculture. Explores the extreme dangers of toxic TNT handling ('Canary Girls'), industrial explosions, and the social impact on post-war female suffrage.",
         },
         {
           type: 'era',
@@ -2986,6 +3109,8 @@ const unitData = {
             'Explain the difference between an "Alternatist" and an "Absolutist" Conscientious Objector in 1916.',
           model_answer:
             'Alternatists agreed to perform non-combatant military roles like ambulance driving or farming, while Absolutists refused to assist the war effort in any way and were imprisoned.',
+          teacher_guidance:
+            "Examines the introduction of the Military Service Act 1916 (conscription) and the moral, religious, and political objections raised by Conscientious Objectors ('Conchies'). Explores tribunals, the Non-Combatant Corps, and harsh imprisonment at Richmond Castle and Dartmoor.",
         },
       ],
       narrative_blocks: [
@@ -3006,6 +3131,12 @@ const unitData = {
             letter: 'A',
             context:
               'Under DORA, postal censors examined millions of private letters to prevent military secrets or civilian morale reports from leaking. **Hinge Question:** Why did the British government consider civilian reporting of Zeppelin raids dangerous enough to censor under DORA?',
+            hinge_question:
+              'How did the Defence of the Realm Act (DORA) mark an unprecedented expansion of state control over the private lives of British citizens?',
+            discussion_ideas: [
+              'Total Censorship and Suppression of Free Speech: Passed in August 1914, DORA granted the government sweeping authoritarian powers: postal censors opened private letters, anti-war newspapers were banned, public speech criticizing the war or army was criminalized, and citizens were forbidden from flying kites, lighting bonfires, or buying binoculars, erasing centuries of British civil liberties in the name of national security.',
+              "State Regulation of Social Habits and Alcohol: DORA reached directly into the daily routines of ordinary civilians: British pub opening hours were restricted, beer was watered down, 'buying rounds' was made illegal to prevent drunkenness among munitions workers, and British Summer Time (daylight saving) was invented to maximize factory working hours.",
+            ],
           },
         },
         {
@@ -3023,6 +3154,11 @@ const unitData = {
             letter: 'B',
             context:
               "Lloyd George's nationalization of munitions saved the British army from running out of ammunition on the Western Front. **Hinge Question:** How did the 1915 Shell Crisis permanently shift the relationship between private industry and the British state?",
+            hinge_question:
+              "How did the 'Shell Scandal' of 1915 lead to the creation of the Ministry of Munitions, and how did this revolutionize the British economy?",
+            discussion_ideas: [
+              "In May 1915, The Times published explosive reports from the Western Front revealing that British troops were being slaughtered at Neuve Chapelle because they had run out of artillery shells, while German guns fired ten shells for every British one. The resulting 'Shell Scandal' collapsed the Liberal government and forced the creation of the Ministry of Munitions under dynamic politician David Lloyd George. Lloyd George ruthlessly broke with laissez-faire capitalism: he nationalized armaments factories, set prices, controlled wages, commandeered raw materials, and built massive state-owned 'National Shell Filling Factories' employing hundreds of thousands of women. By mobilizing the entire industrial power of the nation under state direction, Lloyd George increased British artillery shell production from 500,000 rounds in 1914 to over 50 million in 1917, turning Britain into an unstoppable industrial war machine.",
+            ],
           },
         },
         {
@@ -3044,6 +3180,12 @@ const unitData = {
             letter: 'C',
             context:
               "Sixteen Conscientious Objectors held at Richmond Castle were secretly transported to France and sentenced to death by firing squad, before Prime Minister Asquith intervened to commute their sentences to ten years' hard labour. **Hinge Question:** Why did the British state treat conscientious objectors as military criminals rather than civil dissenters?",
+            hinge_question:
+              'Why did the British state treat Absolutist Conscientious Objectors with such harsh brutality during the First World War?',
+            discussion_ideas: [
+              "Moral Panic Over Cowardice and Military Discipline: When conscription was introduced in 1916, 'Absolutist' conscientious objectors (like the Richmond Sixteen) refused not only combat, but any non-combat war work (like driving ambulances), believing any cooperation helped the war machine; the government and public branded them traitors and cowards, fearing that leniency would cause widespread military desertion and collapse troop morale.",
+              "Cruel Psychological Torment and Near-Execution: The Richmond Sixteen were imprisoned in damp castle cells, starved, and secretly transported to France, where they were sentenced to death by military tribunal for refusing orders on active service; although their sentences were commuted to ten years' hard labor at the last second, they spent years doing hard labor in quarry prisons like Dartmoor, ostracized by society long after 1918.",
+            ],
           },
         },
         {
@@ -3061,6 +3203,12 @@ const unitData = {
             letter: 'D',
             context:
               'Over one million women took on industrial roles during the war; in July 1918, a catastrophic explosion at Chilwell killed 134 workers, yet the factory resumed production within hours. **Hinge Question:** Did wartime work genuinely liberate British women, or were they forced back into domestic servitude once soldiers returned in 1919?',
+            hinge_question:
+              'Enquiry: Study Source A. How does this photograph demonstrate the radical transformation of women’s roles in British society during the First World War?',
+            discussion_ideas: [
+              'Shattering Victorian Gender Spheres: The image of female workers operating heavy lathes and filling artillery shells demonstrates how the shell shortages of 1915 forced the British state to dismantle strict gender divisions in heavy industry. Over one million women entered munitions and engineering factories, permanently undermining the Victorian ideology that women were physically and technically unfit for industrial labour.',
+              "The Lethal Hazards of the Home Front: The workers' protective gear highlights the extreme occupational dangers endured by civilian 'munitionettes'. Handling toxic chemicals like TNT caused fatal toxic jaundice, turning their skin and hair bright yellow ('Canary Girls') and causing severe liver damage, alongside constant risks of catastrophic factory detonations (such as the 1917 Silvertown explosion), showing that civilian women faced frontline risks in total war.",
+            ],
           },
         },
         {
@@ -3079,6 +3227,11 @@ const unitData = {
             letter: 'E',
             context:
               'Compulsory rationing eliminated hours of food queueing and ensured fair distribution of essential calories across social classes. **Hinge Question:** Why was equitable food rationing essential to preventing revolution and industrial strikes in wartime Britain?',
+            hinge_question:
+              'Why did the British government introduce compulsory food rationing in 1918, and how did it maintain social fairness on the home front?',
+            discussion_ideas: [
+              "By early 1918, Germany's campaign of unrestricted submarine warfare was sinking hundreds of thousands of tons of Allied merchant shipping, leaving Britain with only a six-week supply of wheat and food. Food shortages caused skyrocketing prices, hoarding, and long queues outside grocery shops, threatening working-class strikes and social unrest. To prevent revolution and maintain national morale, the Ministry of Food introduced compulsory rationing for meat, butter, sugar, and margarine using standardized coupon books. Rationing established strict social equality: a wealthy aristocrat received the exact same four-ounce butter and meat ration as an impoverished factory worker, preventing the rich from buying up supplies and ensuring that working-class children received fair nutrition to survive until victory.",
+            ],
           },
         },
       ],
@@ -3088,10 +3241,10 @@ const unitData = {
             'What sweeping emergency legislation was passed by Parliament on 8 August 1914 to control civilian life and industry in wartime Britain?',
           q: 'What sweeping emergency legislation was passed by Parliament on 8 August 1914 to control civilian life and industry in wartime Britain?',
           options: [
-            'The War Measures Mandate',
+            'The Representation of the People Act',
             'The Emergency Powers Act',
             'The Defence of the Realm Act (DORA)',
-            'The Representation of the People Act',
+            'The War Measures Mandate',
           ],
           answer: 'The Defence of the Realm Act (DORA)',
           a: 'The Defence of the Realm Act (DORA)',
@@ -3104,9 +3257,9 @@ const unitData = {
           q: 'Which personal habit was strictly regulated under DORA to combat industrial absenteeism among munitions workers?',
           options: [
             'Slashing pub opening hours, watering down beer, and banning buying rounds ("no-treating")',
-            'Forbidding civilians from eating meals in restaurants on weekends',
             'Banning all consumption of tea and coffee in public places',
             'Making smoking tobacco punishable by immediate execution',
+            'Forbidding civilians from eating meals in restaurants on weekends',
           ],
           answer:
             'Slashing pub opening hours, watering down beer, and banning buying rounds ("no-treating")',
@@ -3119,9 +3272,9 @@ const unitData = {
             'Why did the British government introduce British Summer Time (advancing clocks by one hour) in May 1916?',
           q: 'Why did the British government introduce British Summer Time (advancing clocks by one hour) in May 1916?',
           options: [
-            'To synchronize London time with St. Petersburg time',
-            'To provide extra evening daylight for munitions manufacturing and conserve domestic coal supplies',
             'To confuse German Zeppelin navigators flying over England',
+            'To provide extra evening daylight for munitions manufacturing and conserve domestic coal supplies',
+            'To synchronize London time with St. Petersburg time',
             'Because King George V personally disliked dark winter mornings',
           ],
           answer:
@@ -3135,9 +3288,9 @@ const unitData = {
             'What 1916 legislation introduced compulsory military conscription for the first time in modern British history?',
           q: 'What 1916 legislation introduced compulsory military conscription for the first time in modern British history?',
           options: [
+            'The Armed Forces Recruitment Bill',
             'The Conscription Declaration',
             'The National Service Mandate',
-            'The Armed Forces Recruitment Bill',
             'The Military Service Act',
           ],
           answer: 'The Military Service Act',
@@ -3164,10 +3317,10 @@ const unitData = {
           question: 'Why were female munitions workers given the popular nickname "Canary Girls"?',
           q: 'Why were female munitions workers given the popular nickname "Canary Girls"?',
           options: [
-            'They carried pet canaries into factories to detect carbon monoxide leaks',
-            'Exposure to toxic TNT chemicals turned their skin, eyes, and hair bright yellow',
-            'They wore bright yellow feathered hats to show factory solidarity',
             'They were required to sing patriotic songs while assembling artillery shells',
+            'Exposure to toxic TNT chemicals turned their skin, eyes, and hair bright yellow',
+            'They carried pet canaries into factories to detect carbon monoxide leaks',
+            'They wore bright yellow feathered hats to show factory solidarity',
           ],
           answer: 'Exposure to toxic TNT chemicals turned their skin, eyes, and hair bright yellow',
           a: 'Exposure to toxic TNT chemicals turned their skin, eyes, and hair bright yellow',
@@ -3196,8 +3349,8 @@ const unitData = {
           options: [
             'The German unrestricted submarine (U-boat) blockade sinking merchant supply ships in the Atlantic',
             'French armies seizing all British grain supplies at gunpoint',
-            'A nationwide strike by British railway and dock workers',
             'A total collapse of British domestic agriculture due to drought',
+            'A nationwide strike by British railway and dock workers',
           ],
           answer:
             'The German unrestricted submarine (U-boat) blockade sinking merchant supply ships in the Atlantic',
@@ -3210,9 +3363,9 @@ const unitData = {
             'Which women were granted the right to vote under the 1918 Representation of the People Act?',
           q: 'Which women were granted the right to vote under the 1918 Representation of the People Act?',
           options: [
+            'Only aristocratic women who owned more than 1,000 acres of land',
             'Only women who had served in frontline medical units in France',
             'All women aged 18 and over on equal terms with men',
-            'Only aristocratic women who owned more than 1,000 acres of land',
             'Women aged 30 and over who met property qualifications',
           ],
           answer: 'Women aged 30 and over who met property qualifications',
@@ -3226,8 +3379,8 @@ const unitData = {
           q: 'What happened to over 750,000 female industrial workers when the war ended in 1919?',
           options: [
             'They were sacked and forced out of heavy industry to restore jobs to demobilized male soldiers',
-            'They were promoted to senior executive management in British engineering firms',
             'They were given permanent government pensions equal to full male wages',
+            'They were promoted to senior executive management in British engineering firms',
             'They were conscripted into the peacetime regular army',
           ],
           answer:
@@ -3240,7 +3393,7 @@ const unitData = {
           question:
             'What traditional Victorian economic doctrine—meaning "leave alone"—was dismantled as the British state took control of mines, railways, and factories?',
           q: 'What traditional Victorian economic doctrine—meaning "leave alone"—was dismantled as the British state took control of mines, railways, and factories?',
-          options: ['Collectivist Anarchism', 'Mercantilism', 'Laissez-faire', 'Feudalism'],
+          options: ['Feudalism', 'Mercantilism', 'Laissez-faire', 'Collectivist Anarchism'],
           answer: 'Laissez-faire',
           a: 'Laissez-faire',
           explanation:
@@ -3251,10 +3404,10 @@ const unitData = {
             'What political crisis erupted in May 1915 when the British press revealed that frontline artillery was rationed to four shells per gun per day?',
           q: 'What political crisis erupted in May 1915 when the British press revealed that frontline artillery was rationed to four shells per gun per day?',
           options: [
-            'The Kitchener Crisis',
+            'The Marconi Scandal',
             'The "Shell Scandal"',
             'The Dardanelles Inquiry',
-            'The Marconi Scandal',
+            'The Kitchener Crisis',
           ],
           answer: 'The "Shell Scandal"',
           a: 'The "Shell Scandal"',
@@ -3266,8 +3419,8 @@ const unitData = {
             'Who was appointed Britain’s first Minister of Munitions in May 1915, transforming national industrial production through state regulation?',
           q: 'Who was appointed Britain’s first Minister of Munitions in May 1915, transforming national industrial production through state regulation?',
           options: [
-            'Winston Churchill',
             'Lord Beaverbrook',
+            'Winston Churchill',
             'David Lloyd George',
             'Arthur Henderson',
           ],
@@ -3318,8 +3471,8 @@ const unitData = {
           q: 'What voluntary civilian organization was created in 1917 to replace male agricultural workers and prevent national starvation by farming the British countryside?',
           options: [
             'The Women’s Land Army',
-            'The Munitionettes Guild',
             'The Rural Auxiliary Service',
+            'The Munitionettes Guild',
             'The Home Defense Corps',
           ],
           answer: 'The Women’s Land Army',
@@ -3332,10 +3485,10 @@ const unitData = {
             'What 1919 legislation legally required employers to dismiss wartime female workers and restore traditional male-only union practices?',
           q: 'What 1919 legislation legally required employers to dismiss wartime female workers and restore traditional male-only union practices?',
           options: [
-            'The Demobilization Bill',
             'The Female Redundancy Act',
-            'The Restoration of Pre-War Practices Act',
             'The Trade Union Restoration Mandate',
+            'The Restoration of Pre-War Practices Act',
+            'The Demobilization Bill',
           ],
           answer: 'The Restoration of Pre-War Practices Act',
           a: 'The Restoration of Pre-War Practices Act',
@@ -3346,7 +3499,7 @@ const unitData = {
           question:
             'In what year did British women finally achieve full, equal voting rights with men on identical terms at age 21?',
           q: 'In what year did British women finally achieve full, equal voting rights with men on identical terms at age 21?',
-          options: ['1924', '1928 (The Equal Franchise Act)', '1918', '1945'],
+          options: ['1918', '1928 (The Equal Franchise Act)', '1924', '1945'],
           answer: '1928 (The Equal Franchise Act)',
           a: '1928 (The Equal Franchise Act)',
           explanation:
@@ -3357,8 +3510,8 @@ const unitData = {
             'What system of fair food distribution was introduced across Great Britain in early 1918 to eliminate bread queues and combat U-boat shortages?',
           q: 'What system of fair food distribution was introduced across Great Britain in early 1918 to eliminate bread queues and combat U-boat shortages?',
           options: [
-            'Voluntary Abstinence Pledges',
             'National Kitchen Tokens',
+            'Voluntary Abstinence Pledges',
             'Price Gouging Fines',
             'Compulsory Rationing (for sugar, butter, meat, and jam)',
           ],
@@ -3766,6 +3919,12 @@ const unitData = {
         ],
         model_answer:
           'Source A is one of the most extraordinarily accurate political cartoons in modern history. Will Dyson brilliantly critiques the Treaty of Versailles as an act of short-sighted imperial vengeance. By depicting the "Big Four" exiting the peace palace while a naked child labeled "1940 Class" weeps over the treaty document, Dyson illustrates that the harsh terms would not secure peace, but merely guarantee a second catastrophic conflict twenty years later (1939–1940), in which the infants of 1919 would be sacrificed as "cannon fodder". Clemenceau’s dismissive comment highlights the arrogant complacency of Allied leaders who believed they had resolved European tensions.',
+        hinge_question:
+          'Enquiry: Study Source A. How does Will Dyson use symbolism to predict that the Treaty of Versailles would cause a second world war?',
+        discussion_ideas: [
+          "Prescient Critique of Punitive Retribution: Will Dyson brilliantly predicts the catastrophic trajectory of European history with stunning accuracy. By depicting the 'Big Four' exiting the Versailles negotiations while a weeping child labeled '1940 Class' stands in the shadows, Dyson exposed that the punitive clauses (War Guilt Clause 231, crippling reparations, and territorial dismemberment) were not a lasting peace, but a seedbed for revanchism that would send the newborn generation into a second world war in 1939–1940.",
+          "The Arrogance and Moral Blindness of Allied Leadership: Georges Clemenceau's callous remark—'Curious! I seem to hear a child weeping!'—personifies the short-sighted arrogance of victorious politicians. Dyson, writing from a socialist Labour perspective in the Daily Herald, argued that Allied statesmen were consumed by electoral vengeance and nationalist retribution, wilfully ignoring John Maynard Keynes's contemporaneous warnings that crushing Germany's economy would destabilize European civilization.",
+        ],
       },
       flashcards: [
         {
@@ -3862,6 +4021,8 @@ const unitData = {
             'Identify two major restrictions placed on the German military under the terms of the Treaty of Versailles.',
           model_answer:
             'The German army was capped at 100,000 volunteers with conscription banned, and Germany was strictly prohibited from possessing military aircraft, tanks, and submarines.',
+          teacher_guidance:
+            'Curriculum breakdown of the 1919 Paris Peace Conference and the Treaty of Versailles. Helps pupils evaluate Article 231 (War Guilt Clause), £6.6 billion reparations, German demilitarization, and the loss of Alsace-Lorraine and the Polish Corridor.',
         },
         {
           type: 'era',
@@ -3872,6 +4033,8 @@ const unitData = {
             'Explain why the German delegation felt betrayed by the Allies when they were handed the Treaty of Versailles.',
           model_answer:
             'Germany believed it had signed the 1918 Armistice based on Woodrow Wilson’s fair Fourteen Points, but was instead presented with an ultimatum demanding massive reparations, territorial loss, and full war guilt.',
+          teacher_guidance:
+            "Examines the signing of the Armistice on 11 November 1918 and the bitter German reaction to the 'Diktat' of Versailles. Discusses the emergence of the 'Stab-in-the-Back' myth (Dolchstoßlegende) and how post-war resentment destabilized the nascent Weimar Republic.",
         },
       ],
       narrative_blocks: [
@@ -3892,6 +4055,11 @@ const unitData = {
             letter: 'A',
             context:
               'The Armistice was signed in deep secrecy inside a train carriage in the Compiègne woods to prevent public demonstrations. **Hinge Question:** Why did German military commanders deliberately send civilian democratic politicians to sign the surrender rather than signing it themselves?',
+            hinge_question:
+              'Why did the German military leadership insist that civilian politicians, rather than generals, sign the 1918 Armistice in the Compiègne railway carriage?',
+            discussion_ideas: [
+              "In November 1918, German generals Erich Ludendorff and Paul von Hindenburg realized that the German army was collapsing, the home front was in revolution, and military defeat was inevitable. However, instead of surrendering themselves, the military high command pressured the newly appointed civilian democratic government (led by Matthias Erzberger) to travel to Marshal Foch's railway carriage at Compiègne to sign the humiliating armistice. This cynical maneuver allowed the German army to manufacture the toxic 'Stab in the Back' myth (Dolchstoßlegende): claiming the army was 'undefeated in the field' and had been betrayed by unpatriotic socialist politicians and Jews at home ('the November Criminals'), poisoning the Weimar Republic's legitimacy from its very first day.",
+            ],
           },
         },
         {
@@ -3910,6 +4078,12 @@ const unitData = {
             letter: 'B',
             context:
               'The conflicting national agendas of Clemenceau, Lloyd George, and Wilson produced a deeply contradictory treaty that pleased none of the signatories. **Hinge Question:** Why was a lasting European peace impossible when the three primary negotiators held irreconcilable goals?',
+            hinge_question:
+              'How did the contrasting national motives of Clemenceau, Lloyd George, and Wilson make a lasting, balanced peace settlement impossible?',
+            discussion_ideas: [
+              "Clemenceau’s Demand for Vengeance and National Security: Having witnessed France invaded twice by Germany in 1870 and 1914, French Premier Georges Clemenceau ('The Tiger') was determined to permanently crush Germany militarily and economically: demanding the return of Alsace-Lorraine, the demilitarization of the Rhineland, and astronomical reparations to ensure Germany could never threaten France again.",
+              "Wilson’s Utopian Idealism vs. Lloyd George’s Pragmatism: US President Woodrow Wilson arrived with his idealistic 'Fourteen Points', advocating national self-determination and the League of Nations to build a peaceful world order; British Prime Minister David Lloyd George stood caught in the middle: under intense public pressure to 'make Germany pay' for British dead, while secretly fearing that destroying Germany economically would destroy British trade and leave Europe vulnerable to Russian Bolshevism.",
+            ],
           },
         },
         {
@@ -3929,6 +4103,12 @@ const unitData = {
             letter: 'C',
             context:
               'The signing ceremony was staged in the exact hall where the German Empire had been proclaimed in 1871, maximizing French psychological revenge. **Hinge Question:** How did forcing democratic German leaders to sign the treaty create the toxic "stab-in-the-back" myth (*Dolchstoßlegende*)?',
+            hinge_question:
+              'How did the contrasting national motives of Clemenceau, Lloyd George, and Wilson make a lasting, balanced peace settlement impossible?',
+            discussion_ideas: [
+              "Clemenceau’s Demand for Vengeance and National Security: Having witnessed France invaded twice by Germany in 1870 and 1914, French Premier Georges Clemenceau ('The Tiger') was determined to permanently crush Germany militarily and economically: demanding the return of Alsace-Lorraine, the demilitarization of the Rhineland, and astronomical reparations to ensure Germany could never threaten France again.",
+              "Wilson’s Utopian Idealism vs. Lloyd George’s Pragmatism: US President Woodrow Wilson arrived with his idealistic 'Fourteen Points', advocating national self-determination and the League of Nations to build a peaceful world order; British Prime Minister David Lloyd George stood caught in the middle: under intense public pressure to 'make Germany pay' for British dead, while secretly fearing that destroying Germany economically would destroy British trade and leave Europe vulnerable to Russian Bolshevism.",
+            ],
           },
         },
         {
@@ -3951,6 +4131,12 @@ const unitData = {
             letter: 'D',
             context:
               "Published before the treaty was even signed, Dyson's cartoon accurately predicted that punishing Germany would breed a second world war for the next generation in 1939–1940. **Hinge Question:** Why did contemporary cartoonists like Dyson see the catastrophic dangers of Versailles that world leaders like Clemenceau were completely blind to?",
+            hinge_question:
+              'Enquiry: Study Source A. How does Will Dyson use symbolism to predict that the Treaty of Versailles would cause a second world war?',
+            discussion_ideas: [
+              "Prescient Critique of Punitive Retribution: Will Dyson brilliantly predicts the catastrophic trajectory of European history with stunning accuracy. By depicting the 'Big Four' exiting the Versailles negotiations while a weeping child labeled '1940 Class' stands in the shadows, Dyson exposed that the punitive clauses (War Guilt Clause 231, crippling reparations, and territorial dismemberment) were not a lasting peace, but a seedbed for revanchism that would send the newborn generation into a second world war in 1939–1940.",
+              "The Arrogance and Moral Blindness of Allied Leadership: Georges Clemenceau's callous remark—'Curious! I seem to hear a child weeping!'—personifies the short-sighted arrogance of victorious politicians. Dyson, writing from a socialist Labour perspective in the Daily Herald, argued that Allied statesmen were consumed by electoral vengeance and nationalist retribution, wilfully ignoring John Maynard Keynes's contemporaneous warnings that crushing Germany's economy would destabilize European civilization.",
+            ],
           },
         },
         {
@@ -3970,6 +4156,12 @@ const unitData = {
             letter: 'E',
             context:
               'German popular media universally framed Versailles as an execution of German democracy rather than a legitimate peace agreement. **Hinge Question:** Did the Treaty of Versailles cause World War II, or was it the Allied failure of enforcement and appeasement in the 1930s that allowed Hitler to rearm?',
+            hinge_question:
+              "How does the Simplicissimus cartoon reflect the deep German sense of betrayal regarding the 'War Guilt' clause (Article 231) and reparations?",
+            discussion_ideas: [
+              'The Brutal Image of Judicial Murder and Extortion: Published in the Munich satirical magazine Simplicissimus, the cartoon depicts a bound, condemned man representing Germany on a guillotine scaffold, with French Premier Clemenceau holding the release cord while British and American leaders look on; it reflects the universal German conviction that the Allies were not administering justice, but executing cold-blooded economic and national murder.',
+              'Fierce Rejection of Sole War Guilt: The cartoon captures German fury at Article 231, which forced Germany to accept sole moral responsibility for causing the war; ordinary Germans believed the conflict had been triggered by complex multi-nation alliances and Russian mobilization, viewing the War Guilt clause as a cynical Allied legal trick invented solely to justify astronomical financial reparations that impoverished German workers.',
+            ],
           },
         },
       ],
@@ -3979,10 +4171,10 @@ const unitData = {
             'Which three victorious world leaders were known collectively as "The Big Three" at the Paris Peace Conference in 1919?',
           q: 'Which three victorious world leaders were known collectively as "The Big Three" at the Paris Peace Conference in 1919?',
           options: [
-            'Winston Churchill, Franklin D. Roosevelt, and Joseph Stalin',
+            'Kaiser Wilhelm II, Tsar Nicholas II, and King George V',
             'Georges Clemenceau (France), David Lloyd George (Britain), and Woodrow Wilson (USA)',
             'Vittorio Orlando, Otto von Bismarck, and Lord Kitchener',
-            'Kaiser Wilhelm II, Tsar Nicholas II, and King George V',
+            'Winston Churchill, Franklin D. Roosevelt, and Joseph Stalin',
           ],
           answer:
             'Georges Clemenceau (France), David Lloyd George (Britain), and Woodrow Wilson (USA)',
@@ -3994,7 +4186,7 @@ const unitData = {
           question:
             'What German term was universally used in Berlin to condemn the Treaty of Versailles as an imposed, dictated peace?',
           q: 'What German term was universally used in Berlin to condemn the Treaty of Versailles as an imposed, dictated peace?',
-          options: ['A "Diktat"', 'A "Dolchstoß"', 'A "Reichstag"', 'A "Kaiserreich"'],
+          options: ['A "Diktat"', 'A "Reichstag"', 'A "Dolchstoß"', 'A "Kaiserreich"'],
           answer: 'A "Diktat"',
           a: 'A "Diktat"',
           explanation:
@@ -4004,7 +4196,7 @@ const unitData = {
           question:
             'What was the official clause number of the controversial "War Guilt Clause" in the Treaty of Versailles?',
           q: 'What was the official clause number of the controversial "War Guilt Clause" in the Treaty of Versailles?',
-          options: ['Article 14', 'Article 100', 'Article 48', 'Article 231'],
+          options: ['Article 14', 'Article 48', 'Article 100', 'Article 231'],
           answer: 'Article 231',
           a: 'Article 231',
           explanation:
@@ -4014,7 +4206,7 @@ const unitData = {
           question:
             'What astronomical financial sum was fixed by the Allied Reparations Commission in 1921 for Germany to pay in war damages?',
           q: 'What astronomical financial sum was fixed by the Allied Reparations Commission in 1921 for Germany to pay in war damages?',
-          options: ['£100 million', '£1 billion', '£6.6 billion ($33 billion)', '£50 billion'],
+          options: ['£100 million', '£50 billion', '£6.6 billion ($33 billion)', '£1 billion'],
           answer: '£6.6 billion ($33 billion)',
           a: '£6.6 billion ($33 billion)',
           explanation:
@@ -4025,10 +4217,10 @@ const unitData = {
             'To what maximum strength was the German army restricted under the disarmament clauses of the Treaty of Versailles?',
           q: 'To what maximum strength was the German army restricted under the disarmament clauses of the Treaty of Versailles?',
           options: [
-            '500,000 men',
+            '10,000 men',
             '1 million men',
             '100,000 volunteers (with military conscription banned)',
-            '10,000 men',
+            '500,000 men',
           ],
           answer: '100,000 volunteers (with military conscription banned)',
           a: '100,000 volunteers (with military conscription banned)',
@@ -4039,7 +4231,7 @@ const unitData = {
           question:
             'What strip of German territory was granted to the newly re-established state of Poland, cutting off East Prussia from the rest of Germany?',
           q: 'What strip of German territory was granted to the newly re-established state of Poland, cutting off East Prussia from the rest of Germany?',
-          options: ['The Sudetenland', 'The Polish Corridor', 'The Rhineland', 'Alsace-Lorraine'],
+          options: ['The Rhineland', 'The Polish Corridor', 'The Sudetenland', 'Alsace-Lorraine'],
           answer: 'The Polish Corridor',
           a: 'The Polish Corridor',
           explanation:
@@ -4049,7 +4241,7 @@ const unitData = {
           question:
             'Which famous British economist resigned in protest from the Paris Peace Conference and published "The Economic Consequences of the Peace" (1919)?',
           q: 'Which famous British economist resigned in protest from the Paris Peace Conference and published "The Economic Consequences of the Peace" (1919)?',
-          options: ['John Maynard Keynes', 'Adam Smith', 'Karl Marx', 'Milton Friedman'],
+          options: ['John Maynard Keynes', 'Milton Friedman', 'Adam Smith', 'Karl Marx'],
           answer: 'John Maynard Keynes',
           a: 'John Maynard Keynes',
           explanation:
@@ -4060,9 +4252,9 @@ const unitData = {
             'In Will Dyson’s famous May 1919 political cartoon, what prophetic label appears above the weeping child behind the pillar?',
           q: 'In Will Dyson’s famous May 1919 political cartoon, what prophetic label appears above the weeping child behind the pillar?',
           options: [
-            '"November Criminal"',
             '"Weimar Republic"',
             '"League of Nations"',
+            '"November Criminal"',
             '"1940 Class"',
           ],
           answer: '"1940 Class"',
@@ -4075,9 +4267,9 @@ const unitData = {
             'Why do modern historians argue that the failure of the 1919 Paris Peace Conference was due to Allied enforcement rather than the treaty terms alone?',
           q: 'Why do modern historians argue that the failure of the 1919 Paris Peace Conference was due to Allied enforcement rather than the treaty terms alone?',
           options: [
-            'President Woodrow Wilson ordered the destruction of the French army',
             'The treaty was too generous and gave Germany all of Eastern Europe',
             'Germany completely ran out of iron and coal reserves',
+            'President Woodrow Wilson ordered the destruction of the French army',
             'The refusal of the victorious Allies to consistently enforce the treaty’s terms during the 1920s and 1930s',
           ],
           answer:
@@ -4093,8 +4285,8 @@ const unitData = {
           options: [
             'The "Dolchstoßlegende" (stab-in-the-back myth)',
             'The Iron Curtain Legend',
-            'The Schlieffen Myth',
             'The Blitzkrieg Theory',
+            'The Schlieffen Myth',
           ],
           answer: 'The "Dolchstoßlegende" (stab-in-the-back myth)',
           a: 'The "Dolchstoßlegende" (stab-in-the-back myth)',
@@ -4121,10 +4313,10 @@ const unitData = {
             'What was French Prime Minister Georges Clemenceau’s primary diplomatic objective during the Paris Peace Conference?',
           q: 'What was French Prime Minister Georges Clemenceau’s primary diplomatic objective during the Paris Peace Conference?',
           options: [
-            'To help Germany rebuild its High Seas Fleet to challenge Great Britain',
-            'To permanently cripple Germany militarily and economically to guarantee French national security against future invasion',
             'To establish a permanent free-trade union across all of Central Europe',
+            'To permanently cripple Germany militarily and economically to guarantee French national security against future invasion',
             'To restore the Habsburg monarchy in Austria-Hungary',
+            'To help Germany rebuild its High Seas Fleet to challenge Great Britain',
           ],
           answer:
             'To permanently cripple Germany militarily and economically to guarantee French national security against future invasion',
@@ -4137,9 +4329,9 @@ const unitData = {
             'What blueprint for global peace and international self-determination was announced by US President Woodrow Wilson in January 1918?',
           q: 'What blueprint for global peace and international self-determination was announced by US President Woodrow Wilson in January 1918?',
           options: [
-            'The Marshall Plan',
-            'The Fourteen Points',
             'The Atlantic Charter',
+            'The Fourteen Points',
+            'The Marshall Plan',
             'The Truman Doctrine',
           ],
           answer: 'The Fourteen Points',
@@ -4152,8 +4344,8 @@ const unitData = {
             'What international peacekeeping organization was established in Part I of the Treaty of Versailles, but subsequently rejected by the United States Senate?',
           q: 'What international peacekeeping organization was established in Part I of the Treaty of Versailles, but subsequently rejected by the United States Senate?',
           options: [
-            'The International Court of Justice',
             'The United Nations',
+            'The International Court of Justice',
             'The League of Nations',
             'The Concert of Europe',
           ],
@@ -4166,7 +4358,7 @@ const unitData = {
           question:
             'What valuable border province, annexed by Germany in 1871, was returned to French sovereignty under the territorial terms of Versailles?',
           q: 'What valuable border province, annexed by Germany in 1871, was returned to French sovereignty under the territorial terms of Versailles?',
-          options: ['Alsace-Lorraine', 'The Sudetenland', 'The Ruhr Valley', 'Bavaria'],
+          options: ['Alsace-Lorraine', 'Bavaria', 'The Sudetenland', 'The Ruhr Valley'],
           answer: 'Alsace-Lorraine',
           a: 'Alsace-Lorraine',
           explanation:
@@ -4177,8 +4369,8 @@ const unitData = {
             'What was the military status of the German Rhineland under Articles 42 to 44 of the Treaty of Versailles?',
           q: 'What was the military status of the German Rhineland under Articles 42 to 44 of the Treaty of Versailles?',
           options: [
-            'It was ceded to Poland as an industrial mining colony',
             'It was annexed permanently into the territory of Belgium',
+            'It was ceded to Poland as an industrial mining colony',
             'It was converted into an independent kingdom ruled by King George V',
             'It was permanently demilitarized, forbidding German fortifications, troops, or military maneuvers within 50 kilometers east of the Rhine',
           ],
@@ -4192,7 +4384,7 @@ const unitData = {
           question:
             'What coal-rich German industrial territory was placed under League of Nations control for 15 years, with its coal production given directly to France?',
           q: 'What coal-rich German industrial territory was placed under League of Nations control for 15 years, with its coal production given directly to France?',
-          options: ['The Black Forest', 'Pomerania', 'The Saar Basin (Saarland)', 'Silesia'],
+          options: ['Pomerania', 'The Black Forest', 'The Saar Basin (Saarland)', 'Silesia'],
           answer: 'The Saar Basin (Saarland)',
           a: 'The Saar Basin (Saarland)',
           explanation:
@@ -4202,7 +4394,7 @@ const unitData = {
           question:
             'What derogatory term was used by German nationalists to vilify the Weimar politicians who signed the November 1918 Armistice and Versailles Treaty?',
           q: 'What derogatory term was used by German nationalists to vilify the Weimar politicians who signed the November 1918 Armistice and Versailles Treaty?',
-          options: ['The "November Criminals"', 'The Freikorps', 'The Junkers', 'The Spartacists'],
+          options: ['The "November Criminals"', 'The Spartacists', 'The Junkers', 'The Freikorps'],
           answer: 'The "November Criminals"',
           a: 'The "November Criminals"',
           explanation:
@@ -4213,8 +4405,8 @@ const unitData = {
             'In what landmark 1919 book did British economist John Maynard Keynes predict that Versailles would cause the economic destruction of Europe?',
           q: 'In what landmark 1919 book did British economist John Maynard Keynes predict that Versailles would cause the economic destruction of Europe?',
           options: [
-            'The Wealth of Nations',
             'Das Kapital',
+            'The Wealth of Nations',
             'General Theory of Employment',
             'The Economic Consequences of the Peace',
           ],
@@ -4459,5 +4651,9 @@ const unitData = {
     },
   ],
 };
+
 export default unitData;
 export { unitData };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = unitData;
+}

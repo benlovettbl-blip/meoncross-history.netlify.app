@@ -111,7 +111,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         {
           id: 'KT1',
           title: 'Key Topic 1: The Birth of Israel',
-          prefix: 'KT 1',
+          prefix: 'lesson_1_',
           gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
           border: '#3b82f6',
           image: '/assets/cme_new_kt1_cover.png',
@@ -120,7 +120,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         {
           id: 'KT2',
           title: 'Key Topic 2: Escalating Conflict',
-          prefix: 'KT 2',
+          prefix: 'lesson_2_',
           gradient: 'linear-gradient(135deg, #7f1d1d, #ef4444)',
           border: '#ef4444',
           image: '/assets/cme_new_yom_kippur_crossing.png',
@@ -129,7 +129,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         {
           id: 'KT3',
           title: 'Key Topic 3: Attempts at Peace',
-          prefix: 'KT 3',
+          prefix: 'lesson_3_',
           gradient: 'linear-gradient(135deg, #064e3b, #10b981)',
           border: '#10b981',
           image: '/assets/cme_new_camp_david_accords.png',

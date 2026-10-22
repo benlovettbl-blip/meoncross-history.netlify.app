@@ -1902,7 +1902,7 @@ export const MASTERPIECES_DATA = [
     medium: 'Lithograph recruitment poster print',
     location: 'Imperial War Museum, London / National Portrait Gallery',
     dimensions: '75 cm × 50 cm',
-    image: '/images/gw_kitchener_portrait.jpg',
+    image: '/images/gw_kitchener_poster.jpg',
     isArtwork: false,
     curatorBadge: 'WWI Propaganda · Mass Enlistment Icon',
     curatorHook:

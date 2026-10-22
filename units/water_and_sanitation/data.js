@@ -1,12 +1,4 @@
-/**
- * History Revision Hub — Master 5-Block Decimal Curriculum
- * Key Stage 3 Year 7 • Water & Sanitation Through Time
- *
- * Commercial Neutrality: 100% Institutional-neutral.
- * Architecture: 5-Stage Decimal Standard (1.1 to 1.5) with Inline Evidential Sources
- */
-
-const water_and_sanitation = {
+const unitData = {
   id: 'water_and_sanitation',
   edition: '2026.1',
   title: 'KS3: Water and Sanitation Through Time',
@@ -612,12 +604,14 @@ const water_and_sanitation = {
             'Explain the social, ritual, and hygienic routines Romans followed when visiting the public baths (thermae).',
           model_answer:
             'Roman bathing was an essential daily social ritual. Romans moved through progressive heated chambers (tepidarium, caldarium) to induce sweating, used olive oil and strigils to scrape away dirt and dead skin, plunged into cold water (frigidarium) to close pores, and socialised in the communal complex.',
+          teacher_guidance:
+            'Engaging cultural overview exploring Roman public baths (thermae). Frame the discussion around Roman hydraulic engineering (aqueducts, hypocaust central heating) and why hygiene was seen as a civic and social necessity rather than private medical care.',
         },
       ],
       quick_quiz: [
         {
           question: 'What kind of houses did Celtic Britons live in before AD 43?',
-          options: ['Underground bunkers', 'Stone castles', 'Timber roundhouses', 'Brick villas'],
+          options: ['Brick villas', 'Underground bunkers', 'Timber roundhouses', 'Stone castles'],
           answer: 'Timber roundhouses',
         },
         {
@@ -633,42 +627,42 @@ const water_and_sanitation = {
         },
         {
           question: 'In what year did Emperor Claudius invade Britain?',
-          options: ['AD 1066', 'AD 410', '55 BC', 'AD 43'],
+          options: ['AD 410', '55 BC', 'AD 1066', 'AD 43'],
           answer: 'AD 43',
         },
         {
           question: 'What Latin term describes Roman military fortresses that grew into towns?',
-          options: ['Castra', 'Villa', 'Aquae', 'Thermae'],
+          options: ['Castra', 'Villa', 'Thermae', 'Aquae'],
           answer: 'Castra',
         },
         {
           question:
             'What natural force did Roman engineers rely on to transport water through aqueducts?',
-          options: ['Wind power', 'Electric pumps', 'Steam power', 'Gravity'],
+          options: ['Steam power', 'Electric pumps', 'Wind power', 'Gravity'],
           answer: 'Gravity',
         },
         {
           question: 'What was the typical slope gradient of a Roman aqueduct channel?',
           options: [
-            'Flowing uphill using siphons',
+            'A steep 45-degree angle',
             'Completely flat',
             'A few inches every hundred yards',
-            'A steep 45-degree angle',
+            'Flowing uphill using siphons',
           ],
           answer: 'A few inches every hundred yards',
         },
         {
           question: 'What was the central water distribution tower in a Roman city called?',
-          options: ['Castellum', 'Forum', 'Colosseum', 'Basilica'],
+          options: ['Castellum', 'Basilica', 'Forum', 'Colosseum'],
           answer: 'Castellum',
         },
         {
           question: 'Which users received first priority for fresh water from Roman castella?',
           options: [
-            'Gladiator arenas',
-            'Public street fountains for ordinary citizens',
             'Emperor’s palace',
+            'Public street fountains for ordinary citizens',
             'Private villas of the rich',
+            'Gladiator arenas',
           ],
           answer: 'Public street fountains for ordinary citizens',
         },
@@ -677,49 +671,49 @@ const water_and_sanitation = {
             'At which famous Roman palace in Sussex were jointed lead water pipes excavated?',
           options: [
             'Fishbourne Roman Palace',
-            'Bignor Villa',
             'Portchester Castle',
+            'Bignor Villa',
             'Rockbourne Villa',
           ],
           answer: 'Fishbourne Roman Palace',
         },
         {
           question: 'What were large public bathhouses called in Roman Britain?',
-          options: ['Cloacae', 'Insulae', 'Domus', 'Thermae'],
+          options: ['Cloacae', 'Domus', 'Insulae', 'Thermae'],
           answer: 'Thermae',
         },
         {
           question: 'What was the name of the hot steam chamber in a Roman bathhouse?',
-          options: ['Tepidarium', 'Caldarium', 'Frigidarium', 'Apodyterium'],
+          options: ['Frigidarium', 'Caldarium', 'Tepidarium', 'Apodyterium'],
           answer: 'Caldarium',
         },
         {
           question: 'What was the name of the cold plunge pool in a Roman bathhouse?',
-          options: ['Tepidarium', 'Hypocaust', 'Frigidarium', 'Caldarium'],
+          options: ['Hypocaust', 'Caldarium', 'Frigidarium', 'Tepidarium'],
           answer: 'Frigidarium',
         },
         {
           question: 'How did Romans clean their skin in the baths instead of using soap?',
           options: [
             'Rubbed sand and lemon juice',
-            'Used lye soap from animal tallow',
-            'Applied olive oil and scraped with a bronze strigil',
             'Washed with vinegar and salt',
+            'Applied olive oil and scraped with a bronze strigil',
+            'Used lye soap from animal tallow',
           ],
           answer: 'Applied olive oil and scraped with a bronze strigil',
         },
         {
           question: 'What was the underground central heating system in Roman baths called?',
-          options: ['Aqueduct', 'Cloaca', 'Castellum', 'Hypocaust'],
+          options: ['Aqueduct', 'Castellum', 'Cloaca', 'Hypocaust'],
           answer: 'Hypocaust',
         },
         {
           question: 'What was the tersorium used for in Roman communal latrines?',
           options: [
             'A communal sea sponge on a stick for wiping',
-            'Cleaning bronze strigils',
-            'Stirring bath water',
             'Scraping dead skin in baths',
+            'Stirring bath water',
+            'Cleaning bronze strigils',
           ],
           answer: 'A communal sea sponge on a stick for wiping',
         },
@@ -730,13 +724,13 @@ const water_and_sanitation = {
         },
         {
           question: 'What microscopic organisms were Romans completely unaware of?',
-          options: ['Bacteria and microbes', 'Insects', 'Earthworms', 'Fleas and lice'],
+          options: ['Bacteria and microbes', 'Insects', 'Fleas and lice', 'Earthworms'],
           answer: 'Bacteria and microbes',
         },
         {
           question:
             'What Latin term described the cultural values and power of Roman civilization?',
-          options: ['Imperium', 'Pax Romana', 'Senatus', 'Romanitas'],
+          options: ['Pax Romana', 'Imperium', 'Senatus', 'Romanitas'],
           answer: 'Romanitas',
         },
         {
@@ -748,9 +742,9 @@ const water_and_sanitation = {
           question: 'Why did Roman sanitation systems fall into ruin after AD 410?',
           options: [
             'Invading Vikings blew up the aqueducts',
-            'A giant earthquake destroyed all pipes',
-            'Taxes, engineers, and municipal councils vanished with the legions',
             'People decided they preferred drinking sewage',
+            'Taxes, engineers, and municipal councils vanished with the legions',
+            'A giant earthquake destroyed all pipes',
           ],
           answer: 'Taxes, engineers, and municipal councils vanished with the legions',
         },
@@ -758,7 +752,7 @@ const water_and_sanitation = {
       quiz: [
         {
           question: 'What kind of houses did Celtic Britons live in before AD 43?',
-          options: ['Underground bunkers', 'Timber roundhouses', 'Stone castles', 'Brick villas'],
+          options: ['Brick villas', 'Timber roundhouses', 'Underground bunkers', 'Stone castles'],
           answer: 'Timber roundhouses',
         },
         {
@@ -774,42 +768,42 @@ const water_and_sanitation = {
         },
         {
           question: 'In what year did Emperor Claudius invade Britain?',
-          options: ['AD 1066', 'AD 410', 'AD 43', '55 BC'],
+          options: ['AD 410', '55 BC', 'AD 43', 'AD 1066'],
           answer: 'AD 43',
         },
         {
           question: 'What Latin term describes Roman military fortresses that grew into towns?',
-          options: ['Castra', 'Villa', 'Aquae', 'Thermae'],
+          options: ['Castra', 'Villa', 'Thermae', 'Aquae'],
           answer: 'Castra',
         },
         {
           question:
             'What natural force did Roman engineers rely on to transport water through aqueducts?',
-          options: ['Wind power', 'Electric pumps', 'Steam power', 'Gravity'],
+          options: ['Steam power', 'Electric pumps', 'Wind power', 'Gravity'],
           answer: 'Gravity',
         },
         {
           question: 'What was the typical slope gradient of a Roman aqueduct channel?',
           options: [
             'A few inches every hundred yards',
-            'Flowing uphill using siphons',
-            'Completely flat',
             'A steep 45-degree angle',
+            'Completely flat',
+            'Flowing uphill using siphons',
           ],
           answer: 'A few inches every hundred yards',
         },
         {
           question: 'What was the central water distribution tower in a Roman city called?',
-          options: ['Forum', 'Colosseum', 'Castellum', 'Basilica'],
+          options: ['Basilica', 'Forum', 'Castellum', 'Colosseum'],
           answer: 'Castellum',
         },
         {
           question: 'Which users received first priority for fresh water from Roman castella?',
           options: [
-            'Gladiator arenas',
-            'Public street fountains for ordinary citizens',
             'Emperor’s palace',
+            'Public street fountains for ordinary citizens',
             'Private villas of the rich',
+            'Gladiator arenas',
           ],
           answer: 'Public street fountains for ordinary citizens',
         },
@@ -817,8 +811,8 @@ const water_and_sanitation = {
           question:
             'At which famous Roman palace in Sussex were jointed lead water pipes excavated?',
           options: [
-            'Bignor Villa',
             'Portchester Castle',
+            'Bignor Villa',
             'Fishbourne Roman Palace',
             'Rockbourne Villa',
           ],
@@ -826,17 +820,17 @@ const water_and_sanitation = {
         },
         {
           question: 'What were large public bathhouses called in Roman Britain?',
-          options: ['Cloacae', 'Thermae', 'Insulae', 'Domus'],
+          options: ['Cloacae', 'Thermae', 'Domus', 'Insulae'],
           answer: 'Thermae',
         },
         {
           question: 'What was the name of the hot steam chamber in a Roman bathhouse?',
-          options: ['Tepidarium', 'Frigidarium', 'Apodyterium', 'Caldarium'],
+          options: ['Frigidarium', 'Tepidarium', 'Apodyterium', 'Caldarium'],
           answer: 'Caldarium',
         },
         {
           question: 'What was the name of the cold plunge pool in a Roman bathhouse?',
-          options: ['Frigidarium', 'Tepidarium', 'Hypocaust', 'Caldarium'],
+          options: ['Frigidarium', 'Hypocaust', 'Caldarium', 'Tepidarium'],
           answer: 'Frigidarium',
         },
         {
@@ -844,22 +838,22 @@ const water_and_sanitation = {
           options: [
             'Applied olive oil and scraped with a bronze strigil',
             'Rubbed sand and lemon juice',
-            'Used lye soap from animal tallow',
             'Washed with vinegar and salt',
+            'Used lye soap from animal tallow',
           ],
           answer: 'Applied olive oil and scraped with a bronze strigil',
         },
         {
           question: 'What was the underground central heating system in Roman baths called?',
-          options: ['Aqueduct', 'Hypocaust', 'Cloaca', 'Castellum'],
+          options: ['Aqueduct', 'Hypocaust', 'Castellum', 'Cloaca'],
           answer: 'Hypocaust',
         },
         {
           question: 'What was the tersorium used for in Roman communal latrines?',
           options: [
-            'Cleaning bronze strigils',
-            'Stirring bath water',
             'Scraping dead skin in baths',
+            'Stirring bath water',
+            'Cleaning bronze strigils',
             'A communal sea sponge on a stick for wiping',
           ],
           answer: 'A communal sea sponge on a stick for wiping',
@@ -871,13 +865,13 @@ const water_and_sanitation = {
         },
         {
           question: 'What microscopic organisms were Romans completely unaware of?',
-          options: ['Insects', 'Bacteria and microbes', 'Earthworms', 'Fleas and lice'],
+          options: ['Insects', 'Bacteria and microbes', 'Fleas and lice', 'Earthworms'],
           answer: 'Bacteria and microbes',
         },
         {
           question:
             'What Latin term described the cultural values and power of Roman civilization?',
-          options: ['Imperium', 'Pax Romana', 'Romanitas', 'Senatus'],
+          options: ['Pax Romana', 'Imperium', 'Romanitas', 'Senatus'],
           answer: 'Romanitas',
         },
         {
@@ -889,8 +883,8 @@ const water_and_sanitation = {
           question: 'Why did Roman sanitation systems fall into ruin after AD 410?',
           options: [
             'Invading Vikings blew up the aqueducts',
-            'A giant earthquake destroyed all pipes',
             'People decided they preferred drinking sewage',
+            'A giant earthquake destroyed all pipes',
             'Taxes, engineers, and municipal councils vanished with the legions',
           ],
           answer: 'Taxes, engineers, and municipal councils vanished with the legions',
@@ -1349,6 +1343,8 @@ const water_and_sanitation = {
             'Identify three ways monks at Canterbury or Fountains Abbey engineered clean water supplies.',
           model_answer:
             'Monks piped water from distant unpolluted springs through lead conduits, filtered water through settling tanks to remove silt, and flushed communal latrines directly into outflowing rivers.',
+          teacher_guidance:
+            'Focuses on monastic water systems at Canterbury Cathedral Priory and Fountains Abbey. Guide pupils to notice how monks engineered running water conduits, settling basins, and latrines, contrasting monastic cleanliness with filthy medieval towns.',
         },
         {
           type: 'youtube',
@@ -1359,29 +1355,31 @@ const water_and_sanitation = {
             'Explain how medieval people attempted to protect themselves from the Black Death, and why their efforts failed.',
           model_answer:
             'Medieval people believed plague was caused by corrupt air (miasma) or divine wrath. They burned sweet herbs, carried pomanders, and prayed, but these measures failed because plague was transmitted by fleas on black rats carrying Yersinia pestis.',
+          teacher_guidance:
+            'Essential analysis of the 1348 pandemic. Prepare pupils to examine supernatural and miasmatic explanations (wrath of God, misaligned planets, corrupt air) and why medieval treatments failed against Yersinia pestis carried by black rat fleas.',
         },
       ],
       quick_quiz: [
         {
           question: 'What happened to Roman water systems in Britain after AD 410?',
           options: [
-            'They were sold to France',
-            'They were completely destroyed by volcanoes',
-            'They fell into disrepair as central taxes and engineers vanished',
             'They were expanded across every village',
+            'They were sold to France',
+            'They fell into disrepair as central taxes and engineers vanished',
+            'They were completely destroyed by volcanoes',
           ],
           answer: 'They fell into disrepair as central taxes and engineers vanished',
         },
         {
           question: 'What was a self-governing medieval town granted a royal charter called?',
-          options: ['A borough', 'A manor', 'A parish', 'A monastery'],
+          options: ['A borough', 'A parish', 'A manor', 'A monastery'],
           answer: 'A borough',
         },
         {
           question: 'Why were medieval houses built with overhanging upper storeys (jetties)?',
           options: [
-            'To defend against archers',
             'To catch rainwater from roofs',
+            'To defend against archers',
             'To look like French castles',
             'To create extra floor space within cramped walled towns',
           ],
@@ -1389,27 +1387,27 @@ const water_and_sanitation = {
         },
         {
           question: 'What was a deep pit dug behind a house to collect human toilet waste called?',
-          options: ['A settling tank', 'A cesspit', 'An aqueduct', 'A conduit'],
+          options: ['An aqueduct', 'A cesspit', 'A settling tank', 'A conduit'],
           answer: 'A cesspit',
         },
         {
           question:
             'What specialist workers were hired to dig out cesspits under cover of darkness?',
-          options: ['Gong farmers (nightmen)', 'Blacksmiths', 'Town rakers', 'Monastic scribes'],
+          options: ['Gong farmers (nightmen)', 'Town rakers', 'Blacksmiths', 'Monastic scribes'],
           answer: 'Gong farmers (nightmen)',
         },
         {
           question:
             'During what hours were gong farmers legally allowed to work in medieval towns?',
-          options: ['Any time of day', 'Only at noon', '9:00 AM to 5:00 PM', '9:00 PM to 5:00 AM'],
+          options: ['9:00 AM to 5:00 PM', 'Only at noon', 'Any time of day', '9:00 PM to 5:00 AM'],
           answer: '9:00 PM to 5:00 AM',
         },
         {
           question: 'What was done with the waste shoveled out of town cesspits?',
           options: [
-            'Burned in public bonfires',
-            'Sold to suburban farmers as agricultural fertilizer',
             'Dumped in the town church',
+            'Sold to suburban farmers as agricultural fertilizer',
+            'Burned in public bonfires',
             'Thrown onto house roofs',
           ],
           answer: 'Sold to suburban farmers as agricultural fertilizer',
@@ -1418,8 +1416,8 @@ const water_and_sanitation = {
           question:
             'What local court prosecuted and fined citizens for dumping waste in the street?',
           options: [
-            'The Star Chamber',
             'The High Court of Parliament',
+            'The Star Chamber',
             'The Court Leet',
             'The Papal Curia',
           ],
@@ -1430,8 +1428,8 @@ const water_and_sanitation = {
             'At which famous English priory was a sophisticated waterworks map drawn in c.1165?',
           options: [
             'Christ Church Priory, Canterbury',
-            'Battle Abbey',
             'Titchfield Abbey',
+            'Battle Abbey',
             'Waverley Abbey',
           ],
           answer: 'Christ Church Priory, Canterbury',
@@ -1440,8 +1438,8 @@ const water_and_sanitation = {
           question:
             'What engineering feature was used at Canterbury to filter sand and silt from spring water?',
           options: [
-            'Boiling cauldrons',
             'Electric carbon filters',
+            'Boiling cauldrons',
             'Chlorine tablets',
             'Five successive settling tanks',
           ],
@@ -1449,28 +1447,28 @@ const water_and_sanitation = {
         },
         {
           question: 'What was the stone washing trough outside a monastic dining hall called?',
-          options: ['A reredorter', 'A lavatorium', 'A refectory', 'A cloister'],
+          options: ['A reredorter', 'A lavatorium', 'A cloister', 'A refectory'],
           answer: 'A lavatorium',
         },
         {
           question: 'What was a communal monastic latrine block called?',
-          options: ['A lavatorium', 'A chapter house', 'A reredorter', 'A scriptorium'],
+          options: ['A lavatorium', 'A scriptorium', 'A reredorter', 'A chapter house'],
           answer: 'A reredorter',
         },
         {
           question:
             'Which local abbey in Hampshire engineered fishponds and river diversions for clean water?',
           options: [
-            'Winchester College',
-            'Titchfield Abbey',
             'Netley Castle',
+            'Titchfield Abbey',
             'Portchester Castle',
+            'Winchester College',
           ],
           answer: 'Titchfield Abbey',
         },
         {
           question: 'In what year did the Black Death arrive in England?',
-          options: ['1066', '1665', '1348', 'AD 43'],
+          options: ['1665', 'AD 43', '1348', '1066'],
           answer: '1348',
         },
         {
@@ -1478,17 +1476,17 @@ const water_and_sanitation = {
           options: [
             'Yersinia pestis',
             'Vibrio cholerae',
-            'Salmonella typhi',
             'Mycobacterium tuberculosis',
+            'Salmonella typhi',
           ],
           answer: 'Yersinia pestis',
         },
         {
           question: 'How was the Black Death primarily transmitted between humans and rats?',
           options: [
-            'Eating bad meat',
             'Breathing cold wind',
             'Contaminated water pipes',
+            'Eating bad meat',
             'Bites from rat fleas',
           ],
           answer: 'Bites from rat fleas',
@@ -1502,16 +1500,16 @@ const water_and_sanitation = {
         {
           question:
             'What proportion of the English population died during the 1348–1350 Black Death?',
-          options: ['Between 40% and 50%', 'Nobody died', 'Exactly 95%', 'About 5%'],
+          options: ['Between 40% and 50%', 'About 5%', 'Exactly 95%', 'Nobody died'],
           answer: 'Between 40% and 50%',
         },
         {
           question:
             'What landmark law was passed in 1388 banning the dumping of offal and dung into rivers?',
           options: [
-            'The Public Health Act',
-            'The Statute of Cambridge',
             'The Act of Supremacy',
+            'The Statute of Cambridge',
+            'The Public Health Act',
             'The Magna Carta',
           ],
           answer: 'The Statute of Cambridge',
@@ -1519,7 +1517,7 @@ const water_and_sanitation = {
         {
           question:
             'Which modern historian challenged the myth that medieval people were dirty and ignorant?',
-          options: ['John Snow', 'Joseph Bazalgette', 'Edwin Chadwick', 'Carole Rawcliffe'],
+          options: ['Edwin Chadwick', 'Joseph Bazalgette', 'John Snow', 'Carole Rawcliffe'],
           answer: 'Carole Rawcliffe',
         },
       ],
@@ -1527,51 +1525,51 @@ const water_and_sanitation = {
         {
           question: 'What happened to Roman water systems in Britain after AD 410?',
           options: [
-            'They were sold to France',
-            'They were completely destroyed by volcanoes',
-            'They fell into disrepair as central taxes and engineers vanished',
             'They were expanded across every village',
+            'They were sold to France',
+            'They fell into disrepair as central taxes and engineers vanished',
+            'They were completely destroyed by volcanoes',
           ],
           answer: 'They fell into disrepair as central taxes and engineers vanished',
         },
         {
           question: 'What was a self-governing medieval town granted a royal charter called?',
-          options: ['A borough', 'A manor', 'A parish', 'A monastery'],
+          options: ['A borough', 'A parish', 'A manor', 'A monastery'],
           answer: 'A borough',
         },
         {
           question: 'Why were medieval houses built with overhanging upper storeys (jetties)?',
           options: [
-            'To defend against archers',
-            'To create extra floor space within cramped walled towns',
             'To catch rainwater from roofs',
+            'To create extra floor space within cramped walled towns',
+            'To defend against archers',
             'To look like French castles',
           ],
           answer: 'To create extra floor space within cramped walled towns',
         },
         {
           question: 'What was a deep pit dug behind a house to collect human toilet waste called?',
-          options: ['A settling tank', 'An aqueduct', 'A conduit', 'A cesspit'],
+          options: ['An aqueduct', 'A settling tank', 'A conduit', 'A cesspit'],
           answer: 'A cesspit',
         },
         {
           question:
             'What specialist workers were hired to dig out cesspits under cover of darkness?',
-          options: ['Blacksmiths', 'Town rakers', 'Monastic scribes', 'Gong farmers (nightmen)'],
+          options: ['Town rakers', 'Blacksmiths', 'Monastic scribes', 'Gong farmers (nightmen)'],
           answer: 'Gong farmers (nightmen)',
         },
         {
           question:
             'During what hours were gong farmers legally allowed to work in medieval towns?',
-          options: ['Any time of day', 'Only at noon', '9:00 PM to 5:00 AM', '9:00 AM to 5:00 PM'],
+          options: ['9:00 AM to 5:00 PM', 'Only at noon', '9:00 PM to 5:00 AM', 'Any time of day'],
           answer: '9:00 PM to 5:00 AM',
         },
         {
           question: 'What was done with the waste shoveled out of town cesspits?',
           options: [
             'Sold to suburban farmers as agricultural fertilizer',
-            'Burned in public bonfires',
             'Dumped in the town church',
+            'Burned in public bonfires',
             'Thrown onto house roofs',
           ],
           answer: 'Sold to suburban farmers as agricultural fertilizer',
@@ -1580,9 +1578,9 @@ const water_and_sanitation = {
           question:
             'What local court prosecuted and fined citizens for dumping waste in the street?',
           options: [
-            'The Star Chamber',
-            'The Court Leet',
             'The High Court of Parliament',
+            'The Court Leet',
+            'The Star Chamber',
             'The Papal Curia',
           ],
           answer: 'The Court Leet',
@@ -1591,8 +1589,8 @@ const water_and_sanitation = {
           question:
             'At which famous English priory was a sophisticated waterworks map drawn in c.1165?',
           options: [
-            'Battle Abbey',
             'Titchfield Abbey',
+            'Battle Abbey',
             'Christ Church Priory, Canterbury',
             'Waverley Abbey',
           ],
@@ -1603,45 +1601,45 @@ const water_and_sanitation = {
             'What engineering feature was used at Canterbury to filter sand and silt from spring water?',
           options: [
             'Five successive settling tanks',
-            'Boiling cauldrons',
             'Electric carbon filters',
+            'Boiling cauldrons',
             'Chlorine tablets',
           ],
           answer: 'Five successive settling tanks',
         },
         {
           question: 'What was the stone washing trough outside a monastic dining hall called?',
-          options: ['A reredorter', 'A refectory', 'A cloister', 'A lavatorium'],
+          options: ['A reredorter', 'A cloister', 'A refectory', 'A lavatorium'],
           answer: 'A lavatorium',
         },
         {
           question: 'What was a communal monastic latrine block called?',
-          options: ['A lavatorium', 'A reredorter', 'A chapter house', 'A scriptorium'],
+          options: ['A lavatorium', 'A reredorter', 'A scriptorium', 'A chapter house'],
           answer: 'A reredorter',
         },
         {
           question:
             'Which local abbey in Hampshire engineered fishponds and river diversions for clean water?',
           options: [
-            'Winchester College',
             'Netley Castle',
             'Portchester Castle',
+            'Winchester College',
             'Titchfield Abbey',
           ],
           answer: 'Titchfield Abbey',
         },
         {
           question: 'In what year did the Black Death arrive in England?',
-          options: ['1066', '1348', '1665', 'AD 43'],
+          options: ['1665', '1348', 'AD 43', '1066'],
           answer: '1348',
         },
         {
           question: 'What bacterium caused the Black Death?',
           options: [
             'Vibrio cholerae',
-            'Salmonella typhi',
-            'Yersinia pestis',
             'Mycobacterium tuberculosis',
+            'Yersinia pestis',
+            'Salmonella typhi',
           ],
           answer: 'Yersinia pestis',
         },
@@ -1649,9 +1647,9 @@ const water_and_sanitation = {
           question: 'How was the Black Death primarily transmitted between humans and rats?',
           options: [
             'Bites from rat fleas',
-            'Eating bad meat',
             'Breathing cold wind',
             'Contaminated water pipes',
+            'Eating bad meat',
           ],
           answer: 'Bites from rat fleas',
         },
@@ -1664,15 +1662,15 @@ const water_and_sanitation = {
         {
           question:
             'What proportion of the English population died during the 1348–1350 Black Death?',
-          options: ['Nobody died', 'Between 40% and 50%', 'Exactly 95%', 'About 5%'],
+          options: ['About 5%', 'Between 40% and 50%', 'Exactly 95%', 'Nobody died'],
           answer: 'Between 40% and 50%',
         },
         {
           question:
             'What landmark law was passed in 1388 banning the dumping of offal and dung into rivers?',
           options: [
-            'The Public Health Act',
             'The Act of Supremacy',
+            'The Public Health Act',
             'The Statute of Cambridge',
             'The Magna Carta',
           ],
@@ -1681,7 +1679,7 @@ const water_and_sanitation = {
         {
           question:
             'Which modern historian challenged the myth that medieval people were dirty and ignorant?',
-          options: ['Carole Rawcliffe', 'John Snow', 'Joseph Bazalgette', 'Edwin Chadwick'],
+          options: ['Carole Rawcliffe', 'Edwin Chadwick', 'Joseph Bazalgette', 'John Snow'],
           answer: 'Carole Rawcliffe',
         },
       ],
@@ -2145,6 +2143,8 @@ const water_and_sanitation = {
             'Explain how Sir John Harington’s toilet functioned, and identify the main obstacle preventing its widespread adoption.',
           model_answer:
             'Harington’s toilet used a cistern of water and a release valve to flush waste into a cesspool. It was not widely adopted because most homes lacked running water and towns had no underground sewer networks.',
+          teacher_guidance:
+            "Examines Queen Elizabeth I's godson Sir John Harington and his 1596 water closet (the 'Ajax'). Use this clip to explore why technological inventions often fail to catch on until urban infrastructure (running water, sewers) catches up.",
         },
       ],
       quick_quiz: [
@@ -2152,31 +2152,31 @@ const water_and_sanitation = {
           question: 'What happened to England’s national population between 1500 and 1700?',
           options: [
             'It doubled from 2.5 million to over 5 million',
-            'It stayed exactly the same',
             'It dropped by half due to famine',
+            'It stayed exactly the same',
             'It rose to 50 million',
           ],
           answer: 'It doubled from 2.5 million to over 5 million',
         },
         {
           question: 'What was London’s approximate population by 1700?',
-          options: ['Five million', 'About 10,000', 'About 60,000', 'Over 500,000'],
+          options: ['About 60,000', 'Five million', 'About 10,000', 'Over 500,000'],
           answer: 'Over 500,000',
         },
         {
           question:
             'What traditional French-origin phrase did Londoners shout when emptying chamber pots into the street?',
-          options: ['"Carpe diem!"', '"Gardyloo!"', '"Sacrebleu!"', '"Bon voyage!"'],
+          options: ['"Bon voyage!"', '"Gardyloo!"', '"Carpe diem!"', '"Sacrebleu!"'],
           answer: '"Gardyloo!"',
         },
         {
           question: 'Who invented the world’s first mechanical flush toilet in 1596?',
-          options: ['King Charles II', 'Samuel Pepys', 'Sir John Harington', 'Sir Hugh Myddelton'],
+          options: ['Sir Hugh Myddelton', 'King Charles II', 'Sir John Harington', 'Samuel Pepys'],
           answer: 'Sir John Harington',
         },
         {
           question: 'What monarch was Sir John Harington godson to?',
-          options: ['King Charles I', 'Queen Elizabeth I', 'Queen Victoria', 'King Henry VIII'],
+          options: ['King Henry VIII', 'Queen Elizabeth I', 'King Charles I', 'Queen Victoria'],
           answer: 'Queen Elizabeth I',
         },
         {
@@ -2195,25 +2195,25 @@ const water_and_sanitation = {
             'Why did Harington’s flush toilet fail to transform public health across Elizabethan Britain?',
           options: [
             'Homes lacked running water mains and sewers to take waste away',
-            'The Queen banned all toilets',
             'People preferred going in fields',
             'It was made of paper',
+            'The Queen banned all toilets',
           ],
           answer: 'Homes lacked running water mains and sewers to take waste away',
         },
         {
           question:
             'Who financed the 38-mile New River canal to bring clean water into London in 1613?',
-          options: ['Samuel Pepys', 'Edwin Chadwick', 'Sir Hugh Myddelton', 'Sir John Harington'],
+          options: ['Edwin Chadwick', 'Sir John Harington', 'Sir Hugh Myddelton', 'Samuel Pepys'],
           answer: 'Sir Hugh Myddelton',
         },
         {
           question: 'Where did the New River bring clean spring water from?',
           options: [
-            'Scotland',
+            'The River Thames at London Bridge',
             'Hertfordshire (Amwell and Chadwell)',
             'The English Channel',
-            'The River Thames at London Bridge',
+            'Scotland',
           ],
           answer: 'Hertfordshire (Amwell and Chadwell)',
         },
@@ -2222,8 +2222,8 @@ const water_and_sanitation = {
             'What material was used to make the underground pipes distributing New River water across London?',
           options: [
             'Hollowed-out elm tree trunks',
-            'Plastic PVC',
             'Stainless steel',
+            'Plastic PVC',
             'Cast aluminium',
           ],
           answer: 'Hollowed-out elm tree trunks',
@@ -2231,9 +2231,9 @@ const water_and_sanitation = {
         {
           question: 'Why was the New River water system unfair to poor slum dwellers?',
           options: [
-            'It only ran on Sundays',
             'It was reserved for horses',
             'It was poisonous to poor people',
+            'It only ran on Sundays',
             'Only wealthy subscribers who paid quarterly fees had pipes connected',
           ],
           answer: 'Only wealthy subscribers who paid quarterly fees had pipes connected',
@@ -2241,14 +2241,14 @@ const water_and_sanitation = {
         {
           question:
             'What celebrated diarist recorded stepping into sewage in his cellar on 20 October 1660?',
-          options: ['Daniel Defoe', 'John Evelyn', 'Samuel Pepys', 'William Shakespeare'],
+          options: ['John Evelyn', 'Daniel Defoe', 'Samuel Pepys', 'William Shakespeare'],
           answer: 'Samuel Pepys',
         },
         {
           question: 'Why was Samuel Pepys’ cellar flooded with sewage?',
           options: [
-            'He forgot to empty his chamber pot',
             'The Thames overflowed its banks',
+            'He forgot to empty his chamber pot',
             'A burst water main',
             'His neighbour’s cesspit cracked and leaked through the wall',
           ],
@@ -2256,15 +2256,15 @@ const water_and_sanitation = {
         },
         {
           question: 'In what year did the Great Plague kill nearly 100,000 Londoners?',
-          options: ['1665', '1854', '1596', '1348'],
+          options: ['1665', '1348', '1596', '1854'],
           answer: '1665',
         },
         {
           question: 'What sign was painted on the doors of plague-infected houses in 1665?',
           options: [
-            'A black skull and crossbones',
-            'A red cross with "Lord Have Mercy Upon Us"',
             'A green dragon',
+            'A red cross with "Lord Have Mercy Upon Us"',
+            'A black skull and crossbones',
             'A blue anchor',
           ],
           answer: 'A red cross with "Lord Have Mercy Upon Us"',
@@ -2272,17 +2272,17 @@ const water_and_sanitation = {
         {
           question: 'Who were the "Searchers of the Dead" appointed during plague outbreaks?',
           options: [
-            'Gravediggers who stole jewelry',
             'Soldiers patrolling streets',
-            'Parish women appointed to inspect corpses and confirm cause of death',
             'French doctors testing medicines',
+            'Parish women appointed to inspect corpses and confirm cause of death',
+            'Gravediggers who stole jewelry',
           ],
           answer: 'Parish women appointed to inspect corpses and confirm cause of death',
         },
         {
           question:
             'What weekly published documents recorded deaths and burial causes in seventeenth-century London?',
-          options: ['The Parish Register', 'The London Gazette', 'The Times', 'Bills of Mortality'],
+          options: ['The Times', 'The Parish Register', 'The London Gazette', 'Bills of Mortality'],
           answer: 'Bills of Mortality',
         },
         {
@@ -2295,10 +2295,10 @@ const water_and_sanitation = {
           question:
             'What great disaster in September 1666 destroyed much of London’s overcrowded timber housing?',
           options: [
-            'A French bombardment',
+            'A North Sea tidal wave',
             'A major earthquake',
             'The Great Fire of London',
-            'A North Sea tidal wave',
+            'A French bombardment',
           ],
           answer: 'The Great Fire of London',
         },
@@ -2318,8 +2318,8 @@ const water_and_sanitation = {
         {
           question: 'What happened to England’s national population between 1500 and 1700?',
           options: [
-            'It stayed exactly the same',
             'It dropped by half due to famine',
+            'It stayed exactly the same',
             'It doubled from 2.5 million to over 5 million',
             'It rose to 50 million',
           ],
@@ -2327,23 +2327,23 @@ const water_and_sanitation = {
         },
         {
           question: 'What was London’s approximate population by 1700?',
-          options: ['Five million', 'Over 500,000', 'About 10,000', 'About 60,000'],
+          options: ['About 60,000', 'Over 500,000', 'Five million', 'About 10,000'],
           answer: 'Over 500,000',
         },
         {
           question:
             'What traditional French-origin phrase did Londoners shout when emptying chamber pots into the street?',
-          options: ['"Gardyloo!"', '"Carpe diem!"', '"Sacrebleu!"', '"Bon voyage!"'],
+          options: ['"Gardyloo!"', '"Bon voyage!"', '"Carpe diem!"', '"Sacrebleu!"'],
           answer: '"Gardyloo!"',
         },
         {
           question: 'Who invented the world’s first mechanical flush toilet in 1596?',
-          options: ['King Charles II', 'Samuel Pepys', 'Sir Hugh Myddelton', 'Sir John Harington'],
+          options: ['Sir Hugh Myddelton', 'King Charles II', 'Samuel Pepys', 'Sir John Harington'],
           answer: 'Sir John Harington',
         },
         {
           question: 'What monarch was Sir John Harington godson to?',
-          options: ['King Charles I', 'Queen Elizabeth I', 'Queen Victoria', 'King Henry VIII'],
+          options: ['King Henry VIII', 'Queen Elizabeth I', 'King Charles I', 'Queen Victoria'],
           answer: 'Queen Elizabeth I',
         },
         {
@@ -2361,26 +2361,26 @@ const water_and_sanitation = {
           question:
             'Why did Harington’s flush toilet fail to transform public health across Elizabethan Britain?',
           options: [
-            'The Queen banned all toilets',
             'People preferred going in fields',
-            'Homes lacked running water mains and sewers to take waste away',
             'It was made of paper',
+            'Homes lacked running water mains and sewers to take waste away',
+            'The Queen banned all toilets',
           ],
           answer: 'Homes lacked running water mains and sewers to take waste away',
         },
         {
           question:
             'Who financed the 38-mile New River canal to bring clean water into London in 1613?',
-          options: ['Samuel Pepys', 'Edwin Chadwick', 'Sir John Harington', 'Sir Hugh Myddelton'],
+          options: ['Edwin Chadwick', 'Sir John Harington', 'Samuel Pepys', 'Sir Hugh Myddelton'],
           answer: 'Sir Hugh Myddelton',
         },
         {
           question: 'Where did the New River bring clean spring water from?',
           options: [
-            'Scotland',
+            'The River Thames at London Bridge',
             'The English Channel',
             'Hertfordshire (Amwell and Chadwell)',
-            'The River Thames at London Bridge',
+            'Scotland',
           ],
           answer: 'Hertfordshire (Amwell and Chadwell)',
         },
@@ -2388,8 +2388,8 @@ const water_and_sanitation = {
           question:
             'What material was used to make the underground pipes distributing New River water across London?',
           options: [
-            'Plastic PVC',
             'Stainless steel',
+            'Plastic PVC',
             'Cast aluminium',
             'Hollowed-out elm tree trunks',
           ],
@@ -2399,23 +2399,23 @@ const water_and_sanitation = {
           question: 'Why was the New River water system unfair to poor slum dwellers?',
           options: [
             'Only wealthy subscribers who paid quarterly fees had pipes connected',
-            'It only ran on Sundays',
             'It was reserved for horses',
             'It was poisonous to poor people',
+            'It only ran on Sundays',
           ],
           answer: 'Only wealthy subscribers who paid quarterly fees had pipes connected',
         },
         {
           question:
             'What celebrated diarist recorded stepping into sewage in his cellar on 20 October 1660?',
-          options: ['Daniel Defoe', 'Samuel Pepys', 'John Evelyn', 'William Shakespeare'],
+          options: ['John Evelyn', 'Samuel Pepys', 'Daniel Defoe', 'William Shakespeare'],
           answer: 'Samuel Pepys',
         },
         {
           question: 'Why was Samuel Pepys’ cellar flooded with sewage?',
           options: [
-            'He forgot to empty his chamber pot',
             'The Thames overflowed its banks',
+            'He forgot to empty his chamber pot',
             'A burst water main',
             'His neighbour’s cesspit cracked and leaked through the wall',
           ],
@@ -2423,14 +2423,14 @@ const water_and_sanitation = {
         },
         {
           question: 'In what year did the Great Plague kill nearly 100,000 Londoners?',
-          options: ['1665', '1854', '1596', '1348'],
+          options: ['1665', '1348', '1596', '1854'],
           answer: '1665',
         },
         {
           question: 'What sign was painted on the doors of plague-infected houses in 1665?',
           options: [
-            'A black skull and crossbones',
             'A green dragon',
+            'A black skull and crossbones',
             'A red cross with "Lord Have Mercy Upon Us"',
             'A blue anchor',
           ],
@@ -2439,17 +2439,17 @@ const water_and_sanitation = {
         {
           question: 'Who were the "Searchers of the Dead" appointed during plague outbreaks?',
           options: [
-            'Gravediggers who stole jewelry',
-            'Parish women appointed to inspect corpses and confirm cause of death',
             'Soldiers patrolling streets',
+            'Parish women appointed to inspect corpses and confirm cause of death',
             'French doctors testing medicines',
+            'Gravediggers who stole jewelry',
           ],
           answer: 'Parish women appointed to inspect corpses and confirm cause of death',
         },
         {
           question:
             'What weekly published documents recorded deaths and burial causes in seventeenth-century London?',
-          options: ['The Parish Register', 'The London Gazette', 'Bills of Mortality', 'The Times'],
+          options: ['The Times', 'The Parish Register', 'Bills of Mortality', 'The London Gazette'],
           answer: 'Bills of Mortality',
         },
         {
@@ -2462,9 +2462,9 @@ const water_and_sanitation = {
           question:
             'What great disaster in September 1666 destroyed much of London’s overcrowded timber housing?',
           options: [
-            'A French bombardment',
-            'A major earthquake',
             'A North Sea tidal wave',
+            'A major earthquake',
+            'A French bombardment',
             'The Great Fire of London',
           ],
           answer: 'The Great Fire of London',
@@ -2906,6 +2906,8 @@ const water_and_sanitation = {
             'Describe living conditions in Victorian back-to-back terraces and identify two water-borne diseases that spread through slums.',
           model_answer:
             'Back-to-backs were cramped, dark houses sharing party walls on three sides, with no through ventilation and up to 100 people sharing a single privy. Diseases included cholera and typhoid.',
+          teacher_guidance:
+            'Illustrates the appalling sanitary consequences of rapid industrialisation in cities like Manchester and Leeds. Emphasize back-to-back housing, open cesspools, privy sharing, and infant mortality rates that triggered early health investigations.',
         },
         {
           type: 'youtube',
@@ -2916,6 +2918,8 @@ const water_and_sanitation = {
             'Explain how Edwin Chadwick used statistics in his 1842 report to persuade Parliament to act.',
           model_answer:
             'Chadwick showed that labourers died at an average age of 17 in Manchester, and proved that preventable disease cost ratepayers more in poor relief than building sewers.',
+          teacher_guidance:
+            "Examines Edwin Chadwick's landmark 1842 Report on the Sanitary Condition of the Labouring Population. Direct pupils to notice Chadwick's use of statistical evidence and economic arguments to persuade a reluctant laissez-faire Parliament to act.",
         },
       ],
       quick_quiz: [
@@ -2941,30 +2945,30 @@ const water_and_sanitation = {
             'How much did the population of industrial Manchester grow between 1770 and 1850?',
           options: [
             'It dropped from 50,000 to zero',
-            'It reached 10 million',
-            'It exploded from 25,000 to over 300,000',
             'It stayed at 10,000',
+            'It exploded from 25,000 to over 300,000',
+            'It reached 10 million',
           ],
           answer: 'It exploded from 25,000 to over 300,000',
         },
         {
           question: 'What were cheaply constructed houses sharing three party walls called?',
-          options: ['Roundhouses', 'Back-to-back houses', 'Villas', 'Manor houses'],
+          options: ['Roundhouses', 'Back-to-back houses', 'Manor houses', 'Villas'],
           answer: 'Back-to-back houses',
         },
         {
           question: 'Why were back-to-back houses notoriously unhealthy?',
           options: [
-            'They were painted black',
-            'They had no front doors',
-            'They shared three walls and had no through-ventilation',
             'They were built of straw',
+            'They were painted black',
+            'They shared three walls and had no through-ventilation',
+            'They had no front doors',
           ],
           answer: 'They shared three walls and had no through-ventilation',
         },
         {
           question: 'What was an outdoor toilet shed built over an open refuse pit called?',
-          options: ['An aqueduct', 'A water closet', 'A thermae', 'A privy midden'],
+          options: ['An aqueduct', 'A thermae', 'A water closet', 'A privy midden'],
           answer: 'A privy midden',
         },
         {
@@ -2973,8 +2977,8 @@ const water_and_sanitation = {
           options: [
             'For 20–30 minutes a few days a week',
             '24 hours every day',
-            'Never',
             'Only on Christmas Day',
+            'Never',
           ],
           answer: 'For 20–30 minutes a few days a week',
         },
@@ -2985,7 +2989,7 @@ const water_and_sanitation = {
         },
         {
           question: 'At which northeastern coal port did cholera first enter Britain in 1831?',
-          options: ['Portsmouth', 'Liverpool', 'Sunderland', 'London'],
+          options: ['London', 'Liverpool', 'Sunderland', 'Portsmouth'],
           answer: 'Sunderland',
         },
         {
@@ -2993,40 +2997,40 @@ const water_and_sanitation = {
           options: [
             '"The Blue Death"',
             '"The Red Plague"',
-            '"The Yellow Fever"',
             '"The Black Death"',
+            '"The Yellow Fever"',
           ],
           answer: '"The Blue Death"',
         },
         {
           question: 'What microscopic pathogen causes cholera?',
-          options: ['Influenza', 'Vibrio cholerae', 'Yersinia pestis', 'Smallpox'],
+          options: ['Yersinia pestis', 'Vibrio cholerae', 'Influenza', 'Smallpox'],
           answer: 'Vibrio cholerae',
         },
         {
           question:
             'What incorrect medical theory did doctors believe caused cholera in the 1830s?',
-          options: ['Virus theory', 'Germ theory', 'Genetics', 'Miasma theory (bad air)'],
+          options: ['Genetics', 'Virus theory', 'Germ theory', 'Miasma theory (bad air)'],
           answer: 'Miasma theory (bad air)',
         },
         {
           question:
             'Who published the landmark 1842 Report on the Sanitary Condition of the Labouring Population?',
-          options: ['John Snow', 'Joseph Bazalgette', 'Robert Koch', 'Edwin Chadwick'],
+          options: ['Joseph Bazalgette', 'John Snow', 'Robert Koch', 'Edwin Chadwick'],
           answer: 'Edwin Chadwick',
         },
         {
           question:
             'According to Chadwick’s 1842 report, what was the average life expectancy for a labourer in Manchester?',
-          options: ['Just 17 years', '90 years', '38 years', '75 years'],
+          options: ['Just 17 years', '75 years', '90 years', '38 years'],
           answer: 'Just 17 years',
         },
         {
           question: 'What economic argument did Chadwick use to convince MPs to build sewers?',
           options: [
-            'Sewers would attract French tourists',
-            'Preventable disease cost taxpayers more in poor-relief than building sewers',
             'Sewers would produce gold',
+            'Preventable disease cost taxpayers more in poor-relief than building sewers',
+            'Sewers would attract French tourists',
             'Sewers would end all wars',
           ],
           answer: 'Preventable disease cost taxpayers more in poor-relief than building sewers',
@@ -3034,19 +3038,19 @@ const water_and_sanitation = {
         {
           question: 'What national body was established by the landmark Public Health Act of 1848?',
           options: [
-            'The Royal Navy',
-            'The National Health Service',
-            'The General Board of Health',
             'The World Health Organization',
+            'The Royal Navy',
+            'The General Board of Health',
+            'The National Health Service',
           ],
           answer: 'The General Board of Health',
         },
         {
           question: 'Why was the 1848 Public Health Act largely ineffective in many areas?',
           options: [
-            'Sewers had not been invented yet',
-            'It was permissive (optional) rather than compulsory',
             'It was banned by the Queen',
+            'It was permissive (optional) rather than compulsory',
+            'Sewers had not been invented yet',
             'Nobody had any bricks',
           ],
           answer: 'It was permissive (optional) rather than compulsory',
@@ -3054,21 +3058,21 @@ const water_and_sanitation = {
         {
           question:
             'What Victorian political philosophy believed government should not interfere in business or taxes?',
-          options: ['Socialism', 'Feudalism', 'Laissez-faire', 'Communism'],
+          options: ['Socialism', 'Communism', 'Laissez-faire', 'Feudalism'],
           answer: 'Laissez-faire',
         },
         {
           question:
             'Who were the local property owners that campaigned fiercely against paying sanitary taxes?',
-          options: ['Ratepayers', 'Monks', 'Gong farmers', 'Mill workers'],
+          options: ['Ratepayers', 'Gong farmers', 'Monks', 'Mill workers'],
           answer: 'Ratepayers',
         },
         {
           question: 'What happened to Edwin Chadwick in 1854 as a result of ratepayer backlash?',
           options: [
-            'He became Prime Minister',
             'He moved to America',
             'He was knighted by the Queen',
+            'He became Prime Minister',
             'He was sacked and the General Board of Health was abolished',
           ],
           answer: 'He was sacked and the General Board of Health was abolished',
@@ -3098,29 +3102,29 @@ const water_and_sanitation = {
           options: [
             'It exploded from 25,000 to over 300,000',
             'It dropped from 50,000 to zero',
-            'It reached 10 million',
             'It stayed at 10,000',
+            'It reached 10 million',
           ],
           answer: 'It exploded from 25,000 to over 300,000',
         },
         {
           question: 'What were cheaply constructed houses sharing three party walls called?',
-          options: ['Roundhouses', 'Villas', 'Manor houses', 'Back-to-back houses'],
+          options: ['Roundhouses', 'Manor houses', 'Villas', 'Back-to-back houses'],
           answer: 'Back-to-back houses',
         },
         {
           question: 'Why were back-to-back houses notoriously unhealthy?',
           options: [
+            'They were built of straw',
             'They were painted black',
             'They had no front doors',
-            'They were built of straw',
             'They shared three walls and had no through-ventilation',
           ],
           answer: 'They shared three walls and had no through-ventilation',
         },
         {
           question: 'What was an outdoor toilet shed built over an open refuse pit called?',
-          options: ['An aqueduct', 'A privy midden', 'A water closet', 'A thermae'],
+          options: ['An aqueduct', 'A privy midden', 'A thermae', 'A water closet'],
           answer: 'A privy midden',
         },
         {
@@ -3128,9 +3132,9 @@ const water_and_sanitation = {
             'How often was piped water typically turned on at public standpipes in poor slums?',
           options: [
             '24 hours every day',
-            'Never',
-            'For 20–30 minutes a few days a week',
             'Only on Christmas Day',
+            'For 20–30 minutes a few days a week',
+            'Never',
           ],
           answer: 'For 20–30 minutes a few days a week',
         },
@@ -3141,48 +3145,48 @@ const water_and_sanitation = {
         },
         {
           question: 'At which northeastern coal port did cholera first enter Britain in 1831?',
-          options: ['Sunderland', 'Portsmouth', 'Liverpool', 'London'],
+          options: ['Sunderland', 'London', 'Liverpool', 'Portsmouth'],
           answer: 'Sunderland',
         },
         {
           question: 'What was the nickname given to cholera because of its terrifying symptoms?',
           options: [
             '"The Red Plague"',
-            '"The Yellow Fever"',
-            '"The Blue Death"',
             '"The Black Death"',
+            '"The Blue Death"',
+            '"The Yellow Fever"',
           ],
           answer: '"The Blue Death"',
         },
         {
           question: 'What microscopic pathogen causes cholera?',
-          options: ['Influenza', 'Yersinia pestis', 'Smallpox', 'Vibrio cholerae'],
+          options: ['Yersinia pestis', 'Influenza', 'Smallpox', 'Vibrio cholerae'],
           answer: 'Vibrio cholerae',
         },
         {
           question:
             'What incorrect medical theory did doctors believe caused cholera in the 1830s?',
-          options: ['Virus theory', 'Miasma theory (bad air)', 'Germ theory', 'Genetics'],
+          options: ['Genetics', 'Miasma theory (bad air)', 'Virus theory', 'Germ theory'],
           answer: 'Miasma theory (bad air)',
         },
         {
           question:
             'Who published the landmark 1842 Report on the Sanitary Condition of the Labouring Population?',
-          options: ['Edwin Chadwick', 'John Snow', 'Joseph Bazalgette', 'Robert Koch'],
+          options: ['Edwin Chadwick', 'Joseph Bazalgette', 'John Snow', 'Robert Koch'],
           answer: 'Edwin Chadwick',
         },
         {
           question:
             'According to Chadwick’s 1842 report, what was the average life expectancy for a labourer in Manchester?',
-          options: ['90 years', '38 years', 'Just 17 years', '75 years'],
+          options: ['75 years', '90 years', 'Just 17 years', '38 years'],
           answer: 'Just 17 years',
         },
         {
           question: 'What economic argument did Chadwick use to convince MPs to build sewers?',
           options: [
-            'Sewers would attract French tourists',
-            'Preventable disease cost taxpayers more in poor-relief than building sewers',
             'Sewers would produce gold',
+            'Preventable disease cost taxpayers more in poor-relief than building sewers',
+            'Sewers would attract French tourists',
             'Sewers would end all wars',
           ],
           answer: 'Preventable disease cost taxpayers more in poor-relief than building sewers',
@@ -3190,9 +3194,9 @@ const water_and_sanitation = {
         {
           question: 'What national body was established by the landmark Public Health Act of 1848?',
           options: [
+            'The World Health Organization',
             'The Royal Navy',
             'The National Health Service',
-            'The World Health Organization',
             'The General Board of Health',
           ],
           answer: 'The General Board of Health',
@@ -3201,8 +3205,8 @@ const water_and_sanitation = {
           question: 'Why was the 1848 Public Health Act largely ineffective in many areas?',
           options: [
             'It was permissive (optional) rather than compulsory',
-            'Sewers had not been invented yet',
             'It was banned by the Queen',
+            'Sewers had not been invented yet',
             'Nobody had any bricks',
           ],
           answer: 'It was permissive (optional) rather than compulsory',
@@ -3210,22 +3214,22 @@ const water_and_sanitation = {
         {
           question:
             'What Victorian political philosophy believed government should not interfere in business or taxes?',
-          options: ['Socialism', 'Laissez-faire', 'Feudalism', 'Communism'],
+          options: ['Socialism', 'Laissez-faire', 'Communism', 'Feudalism'],
           answer: 'Laissez-faire',
         },
         {
           question:
             'Who were the local property owners that campaigned fiercely against paying sanitary taxes?',
-          options: ['Monks', 'Gong farmers', 'Mill workers', 'Ratepayers'],
+          options: ['Gong farmers', 'Monks', 'Mill workers', 'Ratepayers'],
           answer: 'Ratepayers',
         },
         {
           question: 'What happened to Edwin Chadwick in 1854 as a result of ratepayer backlash?',
           options: [
-            'He became Prime Minister',
             'He moved to America',
-            'He was sacked and the General Board of Health was abolished',
             'He was knighted by the Queen',
+            'He was sacked and the General Board of Health was abolished',
+            'He became Prime Minister',
           ],
           answer: 'He was sacked and the General Board of Health was abolished',
         },
@@ -3693,6 +3697,8 @@ const water_and_sanitation = {
             'Identify two engineering innovations Joseph Bazalgette used to build London’s intercepting sewer network, and explain why his system has lasted over 150 years.',
           model_answer:
             'Bazalgette used newly invented waterproof Portland cement, oval egg-shaped brick tunnels to keep sewage moving by gravity without clogging, and massive steam pumping stations (like Abbey Mills and Crossness). Crucially, he doubled the calculated pipe capacity so London’s future population would not overwhelm the sewers.',
+          teacher_guidance:
+            "Engineering case study by the ICE celebrating Joseph Bazalgette's Victorian marvel. Highlights the use of Portland cement, egg-shaped brick tunnels, and Bazalgette's foresight in doubling the sewer pipe capacity to prevent future bottlenecks.",
         },
         {
           type: 'era',
@@ -3703,6 +3709,8 @@ const water_and_sanitation = {
             'Observe Joseph Bazalgette’s struggle against political opposition, miasma theorists, and engineering disasters. Note how he tested Portland cement and how the Great Stink finally forced Parliament to release funding.',
           model_answer:
             'Politicians initially refused to fund Bazalgette due to laissez-faire penny-pinching and stubborn belief in miasma. The unbearable heatwave of June 1858 forced Parliament to pass emergency legislation granting £3 million in eighteen days. Bazalgette rigorously tested Portland cement batches to guarantee structural integrity against sewage acids, creating an underground marvel that virtually eliminated waterborne cholera in the capital.',
+          teacher_guidance:
+            "Superb BBC docudrama tracing Joseph Bazalgette's engineering triumph over political resistance, cholera outbreaks, and administrative apathy, culminating in London's 82-mile underground intercepting sewer network.",
         },
         {
           type: 'youtube',
@@ -3713,6 +3721,8 @@ const water_and_sanitation = {
             'Identify two reasons why the Great Stink forced Parliament to act, and explain how Bazalgette’s sewers worked.',
           model_answer:
             'The stench from the boiling Thames was so overwhelming that MPs could not work in Parliament and feared catching cholera. Bazalgette built 82 miles of intercepting sewers using gravity to carry waste eastwards away from London.',
+          teacher_guidance:
+            'Crisp curriculum summary explaining how the unbearable summer heatwave of June 1858 turned the River Thames into an open sewer, forcing MPs in Parliament to abandon laissez-faire and pass emergency funding for Bazalgette.',
         },
         {
           type: 'youtube',
@@ -3723,6 +3733,8 @@ const water_and_sanitation = {
             'Explain how Pasteur’s swan-neck flask experiment proved that microbes were in the air and disproved spontaneous generation.',
           model_answer:
             'Pasteur boiled nutrient broth in an S-shaped flask; it stayed sterile because dust trapped in the curve. When the curve was broken, microbes fell in and the broth decayed, proving bacteria came from the air rather than generating spontaneously.',
+          teacher_guidance:
+            "Clear demonstration of Louis Pasteur's 1861 swan-neck flask experiments. Guides pupils to understand how Pasteur disproved 'spontaneous generation' and proved that invisible airborne microorganisms cause fermentation, decay, and disease.",
         },
       ],
       quick_quiz: [
@@ -3730,10 +3742,10 @@ const water_and_sanitation = {
           question:
             'What modern convenience caused the River Thames to become an open sewer by the 1850s?',
           options: [
-            'The electric telegraph',
-            'The flushing indoor water closet',
             'The gas streetlamp',
+            'The flushing indoor water closet',
             'The steam locomotive',
+            'The electric telegraph',
           ],
           answer: 'The flushing indoor water closet',
         },
@@ -3741,8 +3753,8 @@ const water_and_sanitation = {
           question: 'Where were domestic flushing water closets plumbed in early Victorian London?',
           options: [
             'Into modern water purification factories',
-            'Into underground tanks in France',
             'Into deep coal mines',
+            'Into underground tanks in France',
             'Directly into old storm-water drains emptying into the Thames',
           ],
           answer: 'Directly into old storm-water drains emptying into the Thames',
@@ -3750,12 +3762,12 @@ const water_and_sanitation = {
         {
           question:
             'What famous scientist published a letter in 1855 warning that the Thames was an opaque fermenting sewer?',
-          options: ['Isaac Newton', 'Albert Einstein', 'Michael Faraday', 'Charles Darwin'],
+          options: ['Isaac Newton', 'Charles Darwin', 'Michael Faraday', 'Albert Einstein'],
           answer: 'Michael Faraday',
         },
         {
           question: 'In what year did the scorching heatwave cause the "Great Stink" in London?',
-          options: ['1858', '1848', '1875', '1831'],
+          options: ['1858', '1875', '1831', '1848'],
           answer: '1858',
         },
         {
@@ -3763,72 +3775,72 @@ const water_and_sanitation = {
             'What building stood directly on the riverbank and was overwhelmed by the Great Stink?',
           options: [
             'The Houses of Parliament (Palace of Westminster)',
-            'St Paul’s Cathedral',
-            'The Tower of London',
             'Buckingham Palace',
+            'The Tower of London',
+            'St Paul’s Cathedral',
           ],
           answer: 'The Houses of Parliament (Palace of Westminster)',
         },
         {
           question:
             'What chemical did officials soak the curtains of Parliament with to neutralize the smell?',
-          options: ['Vinegar', 'Rose water', 'Chloride of lime', 'Sulfuric acid'],
+          options: ['Vinegar', 'Sulfuric acid', 'Chloride of lime', 'Rose water'],
           answer: 'Chloride of lime',
         },
         {
           question:
             'How quickly did Parliament pass the emergency bill to fund London’s new sewers?',
-          options: ['In 6 months', 'It took 50 years', 'It was never passed', 'In just 18 days'],
+          options: ['It took 50 years', 'In 6 months', 'It was never passed', 'In just 18 days'],
           answer: 'In just 18 days',
         },
         {
           question:
             'Who was appointed Chief Engineer to design and build London’s underground sewer network?',
-          options: ['John Snow', 'Joseph Bazalgette', 'Edwin Chadwick', 'Isambard Kingdom Brunel'],
+          options: ['Edwin Chadwick', 'Joseph Bazalgette', 'John Snow', 'Isambard Kingdom Brunel'],
           answer: 'Joseph Bazalgette',
         },
         {
           question:
             'How many miles of underground intercepting brick sewers did Bazalgette construct?',
-          options: ['82 miles', '5 miles', '1,000 miles', '500 miles'],
+          options: ['82 miles', '5 miles', '500 miles', '1,000 miles'],
           answer: '82 miles',
         },
         {
           question:
             'What revolutionary waterproof material was used to bind the 318 million bricks in the sewers?',
-          options: ['Plaster of Paris', 'Tar', 'Clay mud', 'Portland cement'],
+          options: ['Plaster of Paris', 'Clay mud', 'Tar', 'Portland cement'],
           answer: 'Portland cement',
         },
         {
           question: 'Why were Bazalgette’s sewer pipes engineered in an oval, egg-like shape?',
           options: [
-            'To fit horses inside',
             'Because round pipes were banned',
-            'To keep water flowing fast even when water levels were low',
             'To look artistic',
+            'To keep water flowing fast even when water levels were low',
+            'To fit horses inside',
           ],
           answer: 'To keep water flowing fast even when water levels were low',
         },
         {
           question:
             'What natural force carried most of London’s sewage eastward along Bazalgette’s tunnels?',
-          options: ['Compressed air', 'Gravity', 'Nuclear power', 'Electric motors'],
+          options: ['Electric motors', 'Gravity', 'Compressed air', 'Nuclear power'],
           answer: 'Gravity',
         },
         {
           question:
             'What massive steam pumping stations were built to lift sewage into outfall reservoirs?',
           options: [
-            'Soho and Waterloo',
+            'Big Ben and Westminster',
             'Abbey Mills and Crossness',
             'Tower Bridge and London Eye',
-            'Big Ben and Westminster',
+            'Soho and Waterloo',
           ],
           answer: 'Abbey Mills and Crossness',
         },
         {
           question: 'What French scientist published the Germ Theory of Disease in 1861?',
-          options: ['René Descartes', 'Robert Koch', 'Marie Curie', 'Louis Pasteur'],
+          options: ['Robert Koch', 'René Descartes', 'Marie Curie', 'Louis Pasteur'],
           answer: 'Louis Pasteur',
         },
         {
@@ -3836,9 +3848,9 @@ const water_and_sanitation = {
             'What shape of glass flask did Louis Pasteur use to disprove spontaneous generation?',
           options: [
             'A square jar',
-            'A giant test tube',
-            'A swan-neck (S-shaped) flask',
             'A flat plate',
+            'A swan-neck (S-shaped) flask',
+            'A giant test tube',
           ],
           answer: 'A swan-neck (S-shaped) flask',
         },
@@ -3848,8 +3860,8 @@ const water_and_sanitation = {
           options: [
             'Eastney Beam Engine House',
             'Titchfield Abbey',
-            'Southsea Castle',
             'Portchester Fort',
+            'Southsea Castle',
           ],
           answer: 'Eastney Beam Engine House',
         },
@@ -3857,16 +3869,16 @@ const water_and_sanitation = {
           question: 'What happened during the 1866 cholera outbreak in London?',
           options: [
             'The whole city died',
-            'Cholera was worse than ever everywhere',
-            'Areas connected to Bazalgette’s sewers had no cholera deaths',
             'The sewers exploded',
+            'Areas connected to Bazalgette’s sewers had no cholera deaths',
+            'Cholera was worse than ever everywhere',
           ],
           answer: 'Areas connected to Bazalgette’s sewers had no cholera deaths',
         },
         {
           question:
             'In what year was the landmark compulsory Public Health Act passed by Disraeli’s government?',
-          options: ['1875', '1914', '1848', '1858'],
+          options: ['1875', '1858', '1914', '1848'],
           answer: '1875',
         },
         {
@@ -3885,8 +3897,8 @@ const water_and_sanitation = {
             'What long-standing political philosophy finally ended with the passage of the 1875 Public Health Act?',
           options: [
             'Feudalism',
-            'Democracy',
             'Monarchy',
+            'Democracy',
             'Laissez-faire (government non-interference)',
           ],
           answer: 'Laissez-faire (government non-interference)',
@@ -3897,9 +3909,9 @@ const water_and_sanitation = {
           question:
             'What modern convenience caused the River Thames to become an open sewer by the 1850s?',
           options: [
-            'The electric telegraph',
             'The gas streetlamp',
             'The steam locomotive',
+            'The electric telegraph',
             'The flushing indoor water closet',
           ],
           answer: 'The flushing indoor water closet',
@@ -3909,20 +3921,20 @@ const water_and_sanitation = {
           options: [
             'Into modern water purification factories',
             'Directly into old storm-water drains emptying into the Thames',
-            'Into underground tanks in France',
             'Into deep coal mines',
+            'Into underground tanks in France',
           ],
           answer: 'Directly into old storm-water drains emptying into the Thames',
         },
         {
           question:
             'What famous scientist published a letter in 1855 warning that the Thames was an opaque fermenting sewer?',
-          options: ['Isaac Newton', 'Albert Einstein', 'Michael Faraday', 'Charles Darwin'],
+          options: ['Isaac Newton', 'Charles Darwin', 'Michael Faraday', 'Albert Einstein'],
           answer: 'Michael Faraday',
         },
         {
           question: 'In what year did the scorching heatwave cause the "Great Stink" in London?',
-          options: ['1858', '1848', '1875', '1831'],
+          options: ['1858', '1875', '1831', '1848'],
           answer: '1858',
         },
         {
@@ -3930,48 +3942,48 @@ const water_and_sanitation = {
             'What building stood directly on the riverbank and was overwhelmed by the Great Stink?',
           options: [
             'The Houses of Parliament (Palace of Westminster)',
-            'St Paul’s Cathedral',
-            'The Tower of London',
             'Buckingham Palace',
+            'The Tower of London',
+            'St Paul’s Cathedral',
           ],
           answer: 'The Houses of Parliament (Palace of Westminster)',
         },
         {
           question:
             'What chemical did officials soak the curtains of Parliament with to neutralize the smell?',
-          options: ['Vinegar', 'Rose water', 'Sulfuric acid', 'Chloride of lime'],
+          options: ['Vinegar', 'Sulfuric acid', 'Rose water', 'Chloride of lime'],
           answer: 'Chloride of lime',
         },
         {
           question:
             'How quickly did Parliament pass the emergency bill to fund London’s new sewers?',
-          options: ['In 6 months', 'It took 50 years', 'In just 18 days', 'It was never passed'],
+          options: ['It took 50 years', 'In 6 months', 'In just 18 days', 'It was never passed'],
           answer: 'In just 18 days',
         },
         {
           question:
             'Who was appointed Chief Engineer to design and build London’s underground sewer network?',
-          options: ['John Snow', 'Joseph Bazalgette', 'Edwin Chadwick', 'Isambard Kingdom Brunel'],
+          options: ['Edwin Chadwick', 'Joseph Bazalgette', 'John Snow', 'Isambard Kingdom Brunel'],
           answer: 'Joseph Bazalgette',
         },
         {
           question:
             'How many miles of underground intercepting brick sewers did Bazalgette construct?',
-          options: ['5 miles', '1,000 miles', '82 miles', '500 miles'],
+          options: ['5 miles', '500 miles', '82 miles', '1,000 miles'],
           answer: '82 miles',
         },
         {
           question:
             'What revolutionary waterproof material was used to bind the 318 million bricks in the sewers?',
-          options: ['Portland cement', 'Plaster of Paris', 'Tar', 'Clay mud'],
+          options: ['Portland cement', 'Plaster of Paris', 'Clay mud', 'Tar'],
           answer: 'Portland cement',
         },
         {
           question: 'Why were Bazalgette’s sewer pipes engineered in an oval, egg-like shape?',
           options: [
-            'To fit horses inside',
             'Because round pipes were banned',
             'To look artistic',
+            'To fit horses inside',
             'To keep water flowing fast even when water levels were low',
           ],
           answer: 'To keep water flowing fast even when water levels were low',
@@ -3979,23 +3991,23 @@ const water_and_sanitation = {
         {
           question:
             'What natural force carried most of London’s sewage eastward along Bazalgette’s tunnels?',
-          options: ['Compressed air', 'Gravity', 'Nuclear power', 'Electric motors'],
+          options: ['Electric motors', 'Gravity', 'Compressed air', 'Nuclear power'],
           answer: 'Gravity',
         },
         {
           question:
             'What massive steam pumping stations were built to lift sewage into outfall reservoirs?',
           options: [
-            'Soho and Waterloo',
+            'Big Ben and Westminster',
             'Abbey Mills and Crossness',
             'Tower Bridge and London Eye',
-            'Big Ben and Westminster',
+            'Soho and Waterloo',
           ],
           answer: 'Abbey Mills and Crossness',
         },
         {
           question: 'What French scientist published the Germ Theory of Disease in 1861?',
-          options: ['René Descartes', 'Robert Koch', 'Marie Curie', 'Louis Pasteur'],
+          options: ['Robert Koch', 'René Descartes', 'Marie Curie', 'Louis Pasteur'],
           answer: 'Louis Pasteur',
         },
         {
@@ -4004,8 +4016,8 @@ const water_and_sanitation = {
           options: [
             'A swan-neck (S-shaped) flask',
             'A square jar',
-            'A giant test tube',
             'A flat plate',
+            'A giant test tube',
           ],
           answer: 'A swan-neck (S-shaped) flask',
         },
@@ -4014,9 +4026,9 @@ const water_and_sanitation = {
             'Which local Hampshire pumping station was built in 1865 using twin James Watt beam engines?',
           options: [
             'Titchfield Abbey',
-            'Southsea Castle',
-            'Eastney Beam Engine House',
             'Portchester Fort',
+            'Eastney Beam Engine House',
+            'Southsea Castle',
           ],
           answer: 'Eastney Beam Engine House',
         },
@@ -4025,15 +4037,15 @@ const water_and_sanitation = {
           options: [
             'The whole city died',
             'Areas connected to Bazalgette’s sewers had no cholera deaths',
-            'Cholera was worse than ever everywhere',
             'The sewers exploded',
+            'Cholera was worse than ever everywhere',
           ],
           answer: 'Areas connected to Bazalgette’s sewers had no cholera deaths',
         },
         {
           question:
             'In what year was the landmark compulsory Public Health Act passed by Disraeli’s government?',
-          options: ['1914', '1848', '1875', '1858'],
+          options: ['1858', '1914', '1875', '1848'],
           answer: '1875',
         },
         {
@@ -4053,8 +4065,8 @@ const water_and_sanitation = {
           options: [
             'Laissez-faire (government non-interference)',
             'Feudalism',
-            'Democracy',
             'Monarchy',
+            'Democracy',
           ],
           answer: 'Laissez-faire (government non-interference)',
         },
@@ -4491,13 +4503,15 @@ const water_and_sanitation = {
             'Explain how John Snow identified the Broad Street pump as the cause of cholera and what action he took.',
           model_answer:
             'Snow plotted deaths on a map showing they clustered around the Broad Street pump, interviewed local families, and convinced the parish council to remove the pump handle.',
+          teacher_guidance:
+            "Classic epidemiological case study. Guide pupils to analyze Dr John Snow's scientific detective work in Soho, plotting cholera deaths on a spot map to pinpoint contaminated drinking water from the Broad Street pump.",
         },
       ],
       quick_quiz: [
         {
           question:
             'In what central London neighborhood did a devastating cholera epidemic break out in August 1854?',
-          options: ['Whitechapel', 'Kensington', 'Soho', 'Westminster'],
+          options: ['Whitechapel', 'Westminster', 'Soho', 'Kensington'],
           answer: 'Soho',
         },
         {
@@ -4509,9 +4523,9 @@ const water_and_sanitation = {
           question:
             'What did the medical establishment and Board of Health blame for the 1854 Soho outbreak?',
           options: [
-            'Poisoned bread',
-            'Foul miasma (poisonous sewer gas)',
             'Contaminated water',
+            'Foul miasma (poisonous sewer gas)',
+            'Poisoned bread',
             'Alien invasion',
           ],
           answer: 'Foul miasma (poisonous sewer gas)',
@@ -4519,9 +4533,9 @@ const water_and_sanitation = {
         {
           question: 'What was Dr John Snow’s medical specialty before investigating cholera?',
           options: [
-            'Brain surgeon',
             'Eye doctor',
             'Dentist',
+            'Brain surgeon',
             'Anesthetist (administering chloroform)',
           ],
           answer: 'Anesthetist (administering chloroform)',
@@ -4529,7 +4543,7 @@ const water_and_sanitation = {
         {
           question:
             'What famous monarch did Dr John Snow administer chloroform to during childbirth in 1853?',
-          options: ['Queen Mary', 'Queen Anne', 'Queen Elizabeth I', 'Queen Victoria'],
+          options: ['Queen Elizabeth I', 'Queen Anne', 'Queen Mary', 'Queen Victoria'],
           answer: 'Queen Victoria',
         },
         {
@@ -4545,7 +4559,7 @@ const water_and_sanitation = {
         },
         {
           question: 'What street was the contaminated municipal water pump located on in Soho?',
-          options: ['Fleet Street', 'Broad Street', 'Oxford Street', 'Baker Street'],
+          options: ['Oxford Street', 'Broad Street', 'Baker Street', 'Fleet Street'],
           answer: 'Broad Street',
         },
         {
@@ -4563,9 +4577,9 @@ const water_and_sanitation = {
             'What famous visual tool did John Snow create to prove cholera clustered around the pump?',
           options: [
             'The 1854 Cholera Spot Map',
+            'A pie chart',
             'A bronze statue',
             'A painted oil portrait',
-            'A pie chart',
           ],
           answer: 'The 1854 Cholera Spot Map',
         },
@@ -4573,8 +4587,8 @@ const water_and_sanitation = {
           question: 'How did John Snow represent each cholera death on his 1854 spot map?',
           options: [
             'With a red circle',
-            'With a blue dot',
             'With a yellow cross',
+            'With a blue dot',
             'As a black bar stacked outside the victim’s address',
           ],
           answer: 'As a black bar stacked outside the victim’s address',
@@ -4583,20 +4597,20 @@ const water_and_sanitation = {
           question:
             'Why was the Lion Brewery on Broad Street so important to Snow’s investigation?',
           options: [
-            'It was used as a hospital',
+            'It was where cholera was invented',
             'Its 70 workers drank free malt beer and none of them died of cholera',
             'The workers died first',
-            'It was where cholera was invented',
+            'It was used as a hospital',
           ],
           answer: 'Its 70 workers drank free malt beer and none of them died of cholera',
         },
         {
           question: 'Who was Susanna Eley in Hampstead, and why was her death significant?',
           options: [
-            'She owned the Broad Street pump',
+            'She was the Queen’s sister',
             'She invented chloroform',
             'She died in healthy Hampstead because she had Broad Street water delivered in a bottle',
-            'She was the Queen’s sister',
+            'She owned the Broad Street pump',
           ],
           answer:
             'She died in healthy Hampstead because she had Broad Street water delivered in a bottle',
@@ -4605,10 +4619,10 @@ const water_and_sanitation = {
           question:
             'What decisive action did John Snow persuade the parish vestry to take on 8 September 1854?',
           options: [
-            'Lock all citizens inside',
-            'Remove the handle from the Broad Street pump',
             'Dump lime into the Thames',
+            'Remove the handle from the Broad Street pump',
             'Burn down Soho',
+            'Lock all citizens inside',
           ],
           answer: 'Remove the handle from the Broad Street pump',
         },
@@ -4621,10 +4635,10 @@ const water_and_sanitation = {
         {
           question: 'How did Baby Lewis’s illness contaminate the Broad Street pump well?',
           options: [
-            'A flood washed sewage from the Thames',
+            'He fell into the well',
             'His father poisoned the water',
             'His mother washed his cholera diapers into a cracked cesspool that leaked into the well',
-            'He fell into the well',
+            'A flood washed sewage from the Thames',
           ],
           answer:
             'His mother washed his cholera diapers into a cracked cesspool that leaked into the well',
@@ -4632,7 +4646,7 @@ const water_and_sanitation = {
         {
           question:
             'What distance separated the cracked cesspool at No. 40 Broad Street from the drinking well?',
-          options: ['Ten miles', '50 feet', '500 yards', 'Just 2 feet and 8 inches'],
+          options: ['Ten miles', '500 yards', '50 feet', 'Just 2 feet and 8 inches'],
           answer: 'Just 2 feet and 8 inches',
         },
         {
@@ -4640,21 +4654,21 @@ const water_and_sanitation = {
             'Did the General Board of Health immediately accept John Snow’s findings in 1855?',
           options: [
             'No, they stubbornly rejected his water theory and clung to miasma',
-            'Yes, they tore down all pumps',
             'Yes, they banned all water',
             'Yes, they knighted him immediately',
+            'Yes, they tore down all pumps',
           ],
           answer: 'No, they stubbornly rejected his water theory and clung to miasma',
         },
         {
           question: 'In what year did Dr John Snow die, before his theories were fully accepted?',
-          options: ['1901', '1875', '1831', '1858'],
+          options: ['1831', '1875', '1901', '1858'],
           answer: '1858',
         },
         {
           question:
             'What German scientist isolated the Vibrio cholerae bacterium under a microscope in 1884?',
-          options: ['Louis Pasteur', 'Joseph Bazalgette', 'Robert Koch', 'Edwin Chadwick'],
+          options: ['Louis Pasteur', 'Edwin Chadwick', 'Robert Koch', 'Joseph Bazalgette'],
           answer: 'Robert Koch',
         },
         {
@@ -4662,8 +4676,8 @@ const water_and_sanitation = {
           options: [
             'Cardiology',
             'Modern epidemiology (tracking disease patterns)',
-            'Orthopedics',
             'Brain surgery',
+            'Orthopedics',
           ],
           answer: 'Modern epidemiology (tracking disease patterns)',
         },
@@ -4672,7 +4686,7 @@ const water_and_sanitation = {
         {
           question:
             'In what central London neighborhood did a devastating cholera epidemic break out in August 1854?',
-          options: ['Whitechapel', 'Kensington', 'Soho', 'Westminster'],
+          options: ['Whitechapel', 'Westminster', 'Soho', 'Kensington'],
           answer: 'Soho',
         },
         {
@@ -4684,9 +4698,9 @@ const water_and_sanitation = {
           question:
             'What did the medical establishment and Board of Health blame for the 1854 Soho outbreak?',
           options: [
-            'Poisoned bread',
-            'Foul miasma (poisonous sewer gas)',
             'Contaminated water',
+            'Foul miasma (poisonous sewer gas)',
+            'Poisoned bread',
             'Alien invasion',
           ],
           answer: 'Foul miasma (poisonous sewer gas)',
@@ -4695,16 +4709,16 @@ const water_and_sanitation = {
           question: 'What was Dr John Snow’s medical specialty before investigating cholera?',
           options: [
             'Anesthetist (administering chloroform)',
-            'Brain surgeon',
             'Eye doctor',
             'Dentist',
+            'Brain surgeon',
           ],
           answer: 'Anesthetist (administering chloroform)',
         },
         {
           question:
             'What famous monarch did Dr John Snow administer chloroform to during childbirth in 1853?',
-          options: ['Queen Mary', 'Queen Anne', 'Queen Victoria', 'Queen Elizabeth I'],
+          options: ['Queen Elizabeth I', 'Queen Anne', 'Queen Victoria', 'Queen Mary'],
           answer: 'Queen Victoria',
         },
         {
@@ -4720,7 +4734,7 @@ const water_and_sanitation = {
         },
         {
           question: 'What street was the contaminated municipal water pump located on in Soho?',
-          options: ['Fleet Street', 'Broad Street', 'Oxford Street', 'Baker Street'],
+          options: ['Oxford Street', 'Broad Street', 'Baker Street', 'Fleet Street'],
           answer: 'Broad Street',
         },
         {
@@ -4738,9 +4752,9 @@ const water_and_sanitation = {
             'What famous visual tool did John Snow create to prove cholera clustered around the pump?',
           options: [
             'The 1854 Cholera Spot Map',
+            'A pie chart',
             'A bronze statue',
             'A painted oil portrait',
-            'A pie chart',
           ],
           answer: 'The 1854 Cholera Spot Map',
         },
@@ -4748,8 +4762,8 @@ const water_and_sanitation = {
           question: 'How did John Snow represent each cholera death on his 1854 spot map?',
           options: [
             'With a red circle',
-            'With a blue dot',
             'With a yellow cross',
+            'With a blue dot',
             'As a black bar stacked outside the victim’s address',
           ],
           answer: 'As a black bar stacked outside the victim’s address',
@@ -4758,20 +4772,20 @@ const water_and_sanitation = {
           question:
             'Why was the Lion Brewery on Broad Street so important to Snow’s investigation?',
           options: [
-            'It was used as a hospital',
+            'It was where cholera was invented',
             'Its 70 workers drank free malt beer and none of them died of cholera',
             'The workers died first',
-            'It was where cholera was invented',
+            'It was used as a hospital',
           ],
           answer: 'Its 70 workers drank free malt beer and none of them died of cholera',
         },
         {
           question: 'Who was Susanna Eley in Hampstead, and why was her death significant?',
           options: [
-            'She owned the Broad Street pump',
+            'She was the Queen’s sister',
             'She invented chloroform',
             'She died in healthy Hampstead because she had Broad Street water delivered in a bottle',
-            'She was the Queen’s sister',
+            'She owned the Broad Street pump',
           ],
           answer:
             'She died in healthy Hampstead because she had Broad Street water delivered in a bottle',
@@ -4781,9 +4795,9 @@ const water_and_sanitation = {
             'What decisive action did John Snow persuade the parish vestry to take on 8 September 1854?',
           options: [
             'Remove the handle from the Broad Street pump',
-            'Lock all citizens inside',
             'Dump lime into the Thames',
             'Burn down Soho',
+            'Lock all citizens inside',
           ],
           answer: 'Remove the handle from the Broad Street pump',
         },
@@ -4796,10 +4810,10 @@ const water_and_sanitation = {
         {
           question: 'How did Baby Lewis’s illness contaminate the Broad Street pump well?',
           options: [
-            'A flood washed sewage from the Thames',
+            'He fell into the well',
             'His mother washed his cholera diapers into a cracked cesspool that leaked into the well',
             'His father poisoned the water',
-            'He fell into the well',
+            'A flood washed sewage from the Thames',
           ],
           answer:
             'His mother washed his cholera diapers into a cracked cesspool that leaked into the well',
@@ -4807,7 +4821,7 @@ const water_and_sanitation = {
         {
           question:
             'What distance separated the cracked cesspool at No. 40 Broad Street from the drinking well?',
-          options: ['Ten miles', '50 feet', '500 yards', 'Just 2 feet and 8 inches'],
+          options: ['Ten miles', '500 yards', '50 feet', 'Just 2 feet and 8 inches'],
           answer: 'Just 2 feet and 8 inches',
         },
         {
@@ -4815,30 +4829,30 @@ const water_and_sanitation = {
             'Did the General Board of Health immediately accept John Snow’s findings in 1855?',
           options: [
             'No, they stubbornly rejected his water theory and clung to miasma',
-            'Yes, they tore down all pumps',
             'Yes, they banned all water',
             'Yes, they knighted him immediately',
+            'Yes, they tore down all pumps',
           ],
           answer: 'No, they stubbornly rejected his water theory and clung to miasma',
         },
         {
           question: 'In what year did Dr John Snow die, before his theories were fully accepted?',
-          options: ['1901', '1875', '1831', '1858'],
+          options: ['1831', '1875', '1901', '1858'],
           answer: '1858',
         },
         {
           question:
             'What German scientist isolated the Vibrio cholerae bacterium under a microscope in 1884?',
-          options: ['Louis Pasteur', 'Robert Koch', 'Joseph Bazalgette', 'Edwin Chadwick'],
+          options: ['Louis Pasteur', 'Robert Koch', 'Edwin Chadwick', 'Joseph Bazalgette'],
           answer: 'Robert Koch',
         },
         {
           question: 'What branch of medicine is Dr John Snow celebrated for founding?',
           options: [
             'Cardiology',
-            'Orthopedics',
-            'Modern epidemiology (tracking disease patterns)',
             'Brain surgery',
+            'Modern epidemiology (tracking disease patterns)',
+            'Orthopedics',
           ],
           answer: 'Modern epidemiology (tracking disease patterns)',
         },
@@ -5253,7 +5267,7 @@ const water_and_sanitation = {
         {
           question:
             'What political philosophy ("leave alone") stopped early Victorian governments from spending taxes on sewers?',
-          options: ['Laissez-faire', 'Imperialism', 'Feudalism', 'Socialism'],
+          options: ['Laissez-faire', 'Imperialism', 'Socialism', 'Feudalism'],
           answer: 'Laissez-faire',
           explanation:
             'Laissez-faire was the belief that government should not interfere in private business or citizens’ lives.',
@@ -5261,7 +5275,7 @@ const water_and_sanitation = {
         {
           question:
             'In what year did Dr John Snow map cholera deaths around the Broad Street pump in Soho?',
-          options: ['1848', '1854', '1831', '1875'],
+          options: ['1831', '1854', '1848', '1875'],
           answer: '1854',
           explanation:
             'John Snow carried out his famous Broad Street investigation in August 1854.',
@@ -5270,8 +5284,8 @@ const water_and_sanitation = {
           question:
             'What famous item did Dr John Snow persuade parish vestrymen to remove in Soho?',
           options: [
-            'The church bells',
             'The water pipes from the river',
+            'The church bells',
             'The hospital curtains',
             'The Broad Street pump handle',
           ],
@@ -5283,10 +5297,10 @@ const water_and_sanitation = {
           question:
             'What historic environmental crisis in June 1858 finally terrified Parliament into funding London’s sewers?',
           options: [
-            'The Peasants’ Revolt',
+            'The Great Fire of London',
             'The Black Death',
             'The Great Stink',
-            'The Great Fire of London',
+            'The Peasants’ Revolt',
           ],
           answer: 'The Great Stink',
           explanation:
@@ -5295,7 +5309,7 @@ const water_and_sanitation = {
         {
           question:
             'How many miles of brick intercepting sewers did Sir Joseph Bazalgette build across London?',
-          options: ['300 miles', '82 miles', '15 miles', '500 miles'],
+          options: ['15 miles', '82 miles', '300 miles', '500 miles'],
           answer: '82 miles',
           explanation:
             'Bazalgette built 82 miles of underground intercepting sewers using 318 million bricks.',
@@ -5303,7 +5317,7 @@ const water_and_sanitation = {
         {
           question:
             'What newly invented waterproof building material did Bazalgette rigorously test for his sewer tunnels?',
-          options: ['Terracotta clay', 'Cast iron', 'Portland cement', 'Lead sheeting'],
+          options: ['Cast iron', 'Terracotta clay', 'Portland cement', 'Lead sheeting'],
           answer: 'Portland cement',
           explanation:
             'Portland cement set rock-hard underwater and resisted acidic sewage corrosion.',
@@ -5311,7 +5325,7 @@ const water_and_sanitation = {
         {
           question:
             'Which French scientist published the revolutionary Germ Theory of Disease in 1861?',
-          options: ['Louis Pasteur', 'Thomas Sydenham', 'Robert Koch', 'Edward Jenner'],
+          options: ['Louis Pasteur', 'Edward Jenner', 'Thomas Sydenham', 'Robert Koch'],
           answer: 'Louis Pasteur',
           explanation:
             'Louis Pasteur proved that microscopic living organisms caused fermentation and disease.',
@@ -5319,7 +5333,7 @@ const water_and_sanitation = {
         {
           question:
             'What shape of glass flask did Louis Pasteur use to disprove spontaneous generation in his broth experiments?',
-          options: ['Open beaker', 'Square bottle', 'Test tube', 'Swan-neck (S-shaped) flask'],
+          options: ['Square bottle', 'Open beaker', 'Test tube', 'Swan-neck (S-shaped) flask'],
           answer: 'Swan-neck (S-shaped) flask',
           explanation:
             'The downward curve trapped dust and microbes, keeping the boiled broth sterile.',
@@ -5329,9 +5343,9 @@ const water_and_sanitation = {
             'What was the crucial legal difference between the 1848 Public Health Act and the 1875 Public Health Act?',
           options: [
             'The 1848 Act was optional ("may"), while the 1875 Act was compulsory ("must")',
-            'The 1875 Act made all medicine free',
-            'The 1848 Act only applied to Scotland',
             'The 1875 Act banned flushing toilets',
+            'The 1848 Act only applied to Scotland',
+            'The 1875 Act made all medicine free',
           ],
           answer: 'The 1848 Act was optional ("may"), while the 1875 Act was compulsory ("must")',
           explanation:
@@ -5381,7 +5395,7 @@ const water_and_sanitation = {
         {
           question:
             'What political philosophy ("leave alone") stopped early Victorian governments from spending taxes on sewers?',
-          options: ['Imperialism', 'Laissez-faire', 'Feudalism', 'Socialism'],
+          options: ['Imperialism', 'Laissez-faire', 'Socialism', 'Feudalism'],
           answer: 'Laissez-faire',
           explanation:
             'Laissez-faire was the belief that government should not interfere in private business or citizens’ lives.',
@@ -5389,7 +5403,7 @@ const water_and_sanitation = {
         {
           question:
             'In what year did Dr John Snow map cholera deaths around the Broad Street pump in Soho?',
-          options: ['1848', '1831', '1854', '1875'],
+          options: ['1831', '1848', '1854', '1875'],
           answer: '1854',
           explanation:
             'John Snow carried out his famous Broad Street investigation in August 1854.',
@@ -5399,8 +5413,8 @@ const water_and_sanitation = {
             'What famous item did Dr John Snow persuade parish vestrymen to remove in Soho?',
           options: [
             'The Broad Street pump handle',
-            'The church bells',
             'The water pipes from the river',
+            'The church bells',
             'The hospital curtains',
           ],
           answer: 'The Broad Street pump handle',
@@ -5411,10 +5425,10 @@ const water_and_sanitation = {
           question:
             'What historic environmental crisis in June 1858 finally terrified Parliament into funding London’s sewers?',
           options: [
-            'The Peasants’ Revolt',
+            'The Great Fire of London',
             'The Great Stink',
             'The Black Death',
-            'The Great Fire of London',
+            'The Peasants’ Revolt',
           ],
           answer: 'The Great Stink',
           explanation:
@@ -5423,7 +5437,7 @@ const water_and_sanitation = {
         {
           question:
             'How many miles of brick intercepting sewers did Sir Joseph Bazalgette build across London?',
-          options: ['300 miles', '15 miles', '500 miles', '82 miles'],
+          options: ['15 miles', '300 miles', '500 miles', '82 miles'],
           answer: '82 miles',
           explanation:
             'Bazalgette built 82 miles of underground intercepting sewers using 318 million bricks.',
@@ -5431,7 +5445,7 @@ const water_and_sanitation = {
         {
           question:
             'What newly invented waterproof building material did Bazalgette rigorously test for his sewer tunnels?',
-          options: ['Terracotta clay', 'Cast iron', 'Portland cement', 'Lead sheeting'],
+          options: ['Cast iron', 'Terracotta clay', 'Portland cement', 'Lead sheeting'],
           answer: 'Portland cement',
           explanation:
             'Portland cement set rock-hard underwater and resisted acidic sewage corrosion.',
@@ -5439,7 +5453,7 @@ const water_and_sanitation = {
         {
           question:
             'Which French scientist published the revolutionary Germ Theory of Disease in 1861?',
-          options: ['Thomas Sydenham', 'Robert Koch', 'Edward Jenner', 'Louis Pasteur'],
+          options: ['Edward Jenner', 'Thomas Sydenham', 'Robert Koch', 'Louis Pasteur'],
           answer: 'Louis Pasteur',
           explanation:
             'Louis Pasteur proved that microscopic living organisms caused fermentation and disease.',
@@ -5447,7 +5461,7 @@ const water_and_sanitation = {
         {
           question:
             'What shape of glass flask did Louis Pasteur use to disprove spontaneous generation in his broth experiments?',
-          options: ['Open beaker', 'Square bottle', 'Swan-neck (S-shaped) flask', 'Test tube'],
+          options: ['Square bottle', 'Open beaker', 'Swan-neck (S-shaped) flask', 'Test tube'],
           answer: 'Swan-neck (S-shaped) flask',
           explanation:
             'The downward curve trapped dust and microbes, keeping the boiled broth sterile.',
@@ -5456,10 +5470,10 @@ const water_and_sanitation = {
           question:
             'What was the crucial legal difference between the 1848 Public Health Act and the 1875 Public Health Act?',
           options: [
-            'The 1875 Act made all medicine free',
+            'The 1875 Act banned flushing toilets',
             'The 1848 Act was optional ("may"), while the 1875 Act was compulsory ("must")',
             'The 1848 Act only applied to Scotland',
-            'The 1875 Act banned flushing toilets',
+            'The 1875 Act made all medicine free',
           ],
           answer: 'The 1848 Act was optional ("may"), while the 1875 Act was compulsory ("must")',
           explanation:
@@ -5479,14 +5493,38 @@ const water_and_sanitation = {
             'Every district had to employ a qualified Medical Officer to inspect housing and track disease.',
         },
       ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=TT4Z1Ikf36w',
+          title: 'Chadwick and Snow: Transforming 19th Century Public Health | BBC Bitesize',
+          duration: '5 mins 00 secs',
+          teacher_guidance:
+            "Masterclass synthesis contrasting Edwin Chadwick's 1842 Report on the Sanitary Condition of the Labouring Population with Dr John Snow's breakthrough mapping of the 1854 Broad Street cholera outbreak.",
+          viewing_task:
+            "How did Dr John Snow prove that cholera was water-borne rather than caused by foul air ('miasma')?",
+          model_answer:
+            'Snow drew a spot map of deaths in Soho and cross-referenced them with local water pumps, showing that the vast majority of cholera victims drank from the Broad Street pump. When the handle was removed and the pump closed, deaths plummeted, providing empirical epidemiological proof that cholera was spread through contaminated water.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=XoS68K916eo',
+          title: 'Government Action & The Public Health Act 1875 | GCSE History',
+          duration: '3 mins 24 secs',
+          teacher_guidance:
+            "Essential revision summary of the shift from Victorian 'laissez-faire' inaction to compulsory state intervention under the landmark 1875 Public Health Act.",
+          viewing_task:
+            'Why was the 1875 Public Health Act fundamentally different from the earlier 1848 Public Health Act?',
+          model_answer:
+            "The 1848 Act was optional ('permissive'), allowing councils to ignore sanitary improvements if local taxpayers objected. In contrast, the 1875 Act was compulsory ('mandatory'), forcing every town council to supply clean water, appoint medical officers of health, collect refuse, and enforce sanitary sewer connections.",
+        },
+      ],
     },
   ],
 };
 
-export const unitData = water_and_sanitation;
-export { water_and_sanitation };
-export default water_and_sanitation;
-
+export default unitData;
+export { unitData };
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = water_and_sanitation;
+  module.exports = unitData;
 }
