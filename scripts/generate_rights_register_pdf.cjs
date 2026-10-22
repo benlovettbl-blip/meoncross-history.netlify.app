@@ -1354,6 +1354,31 @@ async function renderRegister() {
   console.log(`🎉 Successfully rendered USA Unit PDF: ${usaPdfPath}`);
   await usaPage.close();
 
+  // Render standalone Weimar & Nazi Germany Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Weimar & Nazi Germany Unit Source Bibliography...');
+  const weimarPdfDir = path.join(outPdfDir, 'weimar_nazi_germany');
+  if (!fs.existsSync(weimarPdfDir)) fs.mkdirSync(weimarPdfDir, { recursive: true });
+  const weimarPdfPath = path.join(weimarPdfDir, 'weimar_nazi_germany_source_bibliography.pdf');
+  const weimarHtml = buildHtml('weimar_nazi_germany');
+  const weimarPage = await browser.newPage();
+  await weimarPage.setContent(weimarHtml, { waitUntil: 'domcontentloaded' });
+  await weimarPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await weimarPage.pdf({
+    path: weimarPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Weimar & Nazi Germany Unit PDF: ${weimarPdfPath}`);
+  await weimarPage.close();
+
   await browser.close();
   console.log('🏁 All PDF rendering tasks completed successfully!');
 }

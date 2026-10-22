@@ -1359,15 +1359,15 @@ const unitData = {
               id: 'source_a_dolchstoss_cartoon',
               letter: 'A',
               title: 'Source A: The "Stab in the Back" (Dolchstoßlegende) (1919)',
-              src: '/images/gw_versailles_cartoon.jpg',
-              source: '/images/gw_versailles_cartoon.jpg',
-              image: '/images/gw_versailles_cartoon.jpg',
+              src: '/images/dolchstosslegende_postcard_1919.jpg',
+              source: '/images/dolchstosslegende_postcard_1919.jpg',
+              image: '/images/dolchstosslegende_postcard_1919.jpg',
               caption:
                 'Austrian and German right-wing postcard depicting the "Stab in the Back" (Dolchstoßlegende), claiming a heroic German soldier was betrayed from behind by home-front politicians.',
-              desc: 'Right-wing propaganda postcard depicting the Dolchstoßlegende (Stab in the Back myth), 1919.',
+              desc: 'Austrian/German nationalist propaganda postcard depicting the Dolchstoßlegende, Vienna/Berlin, 1919.',
               provenance:
-                'Austrian/German nationalist propaganda postcard, 1919. Imperial War Museum Collection.',
-              citation: 'Austrian/German nationalist postcard, 1919.',
+                'Austrian/German nationalist propaganda postcard, Vienna/Berlin, 1919. Imperial War Museum / Austrian National Library.',
+              citation: 'Austrian/German nationalist postcard, Vienna/Berlin, 1919.',
               hinge_question:
                 "Why was the 'Stab in the Back' myth so politically toxic for the long-term legitimacy of the Weimar democracy?",
               source_context:
@@ -1393,15 +1393,15 @@ const unitData = {
             id: 'source_a_dolchstoss_cartoon',
             letter: 'A',
             title: 'Source A: The "Stab in the Back" (Dolchstoßlegende) (1919)',
-            src: '/images/gw_versailles_cartoon.jpg',
-            source: '/images/gw_versailles_cartoon.jpg',
-            image: '/images/gw_versailles_cartoon.jpg',
+            src: '/images/dolchstosslegende_postcard_1919.jpg',
+            source: '/images/dolchstosslegende_postcard_1919.jpg',
+            image: '/images/dolchstosslegende_postcard_1919.jpg',
             caption:
               'Austrian and German right-wing postcard depicting the "Stab in the Back" (Dolchstoßlegende), claiming a heroic German soldier was betrayed from behind by home-front politicians.',
-            desc: 'Right-wing propaganda postcard depicting the Dolchstoßlegende (Stab in the Back myth), 1919.',
+            desc: 'Austrian/German nationalist propaganda postcard depicting the Dolchstoßlegende, Vienna/Berlin, 1919.',
             provenance:
-              'Austrian/German nationalist propaganda postcard, 1919. Imperial War Museum Collection.',
-            citation: 'Austrian/German nationalist postcard, 1919.',
+              'Austrian/German nationalist propaganda postcard, Vienna/Berlin, 1919. Imperial War Museum / Austrian National Library.',
+            citation: 'Austrian/German nationalist postcard, Vienna/Berlin, 1919.',
             hinge_question:
               "Why was the 'Stab in the Back' myth so politically toxic for the long-term legitimacy of the Weimar democracy?",
             source_context:
@@ -2095,15 +2095,15 @@ const unitData = {
           id: 'source_a_dolchstoss_cartoon',
           letter: 'A',
           title: 'Source A: The "Stab in the Back" (Dolchstoßlegende) (1919)',
-          src: '/images/gw_versailles_cartoon.jpg',
-          source: '/images/gw_versailles_cartoon.jpg',
-          image: '/images/gw_versailles_cartoon.jpg',
+          src: '/images/dolchstosslegende_postcard_1919.jpg',
+          source: '/images/dolchstosslegende_postcard_1919.jpg',
+          image: '/images/dolchstosslegende_postcard_1919.jpg',
           caption:
             'Austrian and German right-wing postcard depicting the "Stab in the Back" (Dolchstoßlegende), claiming a heroic German soldier was betrayed from behind by home-front politicians.',
-          desc: 'Right-wing propaganda postcard depicting the Dolchstoßlegende (Stab in the Back myth), 1919.',
+          desc: 'Austrian/German nationalist propaganda postcard depicting the Dolchstoßlegende, Vienna/Berlin, 1919.',
           provenance:
-            'Austrian/German nationalist propaganda postcard, 1919. Imperial War Museum Collection.',
-          citation: 'Austrian/German nationalist postcard, 1919.',
+            'Austrian/German nationalist propaganda postcard, Vienna/Berlin, 1919. Imperial War Museum / Austrian National Library.',
+          citation: 'Austrian/German nationalist postcard, Vienna/Berlin, 1919.',
           hinge_question:
             "Why was the 'Stab in the Back' myth so politically toxic for the long-term legitimacy of the Weimar democracy?",
           source_context:
@@ -2251,11 +2251,11 @@ const unitData = {
         ],
         source_context: {
           'Source A':
-            'Reichsbank currency note illustrating hyperinflation in late 1923. Hinge Question: Why was introducing a currency backed by physical land assets (the Rentenmark) so crucial in restoring public trust in German money?',
+            'Official 1-Rentenmark banknote issued by the Deutsche Rentenbank in November 1923, backed by mortgages on agricultural and industrial land to halt hyperinflation. Hinge Question: Why was introducing a currency backed by mortgages on agricultural and industrial land (the Rentenmark) so crucial in restoring public trust in German money?',
           'Source B':
             'Photograph of Gustav Stresemann at the Locarno Conference, October 1925. Hinge Question: Why did right-wing nationalists accuse Stresemann of betrayal for signing the Locarno Treaties, even though they restored Germany’s standing as a great power?',
           'Source C':
-            'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926. Hinge Question: How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
+            'Historical photograph of Gustav Stresemann addressing the League of Nations in Geneva in September 1926 following Germany’s admission as a permanent Council member. Hinge Question: How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
         },
       },
       learning_objectives: {
@@ -2401,29 +2401,31 @@ const unitData = {
             {
               id: 'source_a_currency_crisis',
               letter: 'A',
-              title: 'Source A: The Currency Collapse Preceding the Rentenmark (1923)',
-              src: '/images/weimar_hyperinflation_note.jpg',
-              source: '/images/weimar_hyperinflation_note.jpg',
-              image: '/images/weimar_hyperinflation_note.jpg',
+              title: 'Source A: The 1-Rentenmark Banknote Halting Hyperinflation (November 1923)',
+              src: '/images/weimar_rentenmark_1923.jpg',
+              source: '/images/weimar_rentenmark_1923.jpg',
+              image: '/images/weimar_rentenmark_1923.jpg',
               caption:
-                'A trillion-mark note from late 1923 illustrating the catastrophic monetary collapse that Gustav Stresemann resolved by introducing the Rentenmark.',
-              desc: 'Reichsbank currency note illustrating the hyperinflation solved by Stresemann in late 1923.',
-              provenance: 'German Reichsbank, November 1923. Bundesarchiv.',
-              citation: 'Reichsbank, Berlin, 1923.',
+                'An original 1-Rentenmark banknote issued on 1 November 1923, backed by mortgages on German agricultural and industrial land, successfully halting hyperinflation and stabilizing the currency under Gustav Stresemann and Hjalmar Schacht.',
+              desc: 'Official 1-Rentenmark banknote issued by the Deutsche Rentenbank in Berlin on 1 November 1923.',
+              provenance:
+                'Deutsche Rentenbank, Berlin, 1 November 1923. German Federal Archives (Bundesarchiv) Numismatic Collection.',
+              citation: 'Deutsche Rentenbank, Berlin, 1 November 1923.',
               hinge_question:
                 'Why was introducing a currency backed by physical land assets (the Rentenmark) so crucial in restoring public trust in German money?',
               source_context:
-                'Reichsbank currency note illustrating hyperinflation in late 1923. Hinge Question: Why was introducing a currency backed by physical land assets (the Rentenmark) so crucial in restoring public trust in German money?',
-              context: 'Reichsbank currency note illustrating hyperinflation in late 1923.',
+                'Official 1-Rentenmark banknote issued by the Deutsche Rentenbank in November 1923, backed by mortgages on agricultural and industrial land to halt hyperinflation. Hinge Question: Why was introducing a currency backed by mortgages on agricultural and industrial land (the Rentenmark) so crucial in restoring public trust in German money?',
+              context:
+                'Official 1-Rentenmark banknote issued by the newly created Deutsche Rentenbank in November 1923 to replace the worthless paper Mark.',
               utility_enquiry: {
                 question:
                   'How useful is Source A for an enquiry into the economic emergency confronting Gustav Stresemann when he became Chancellor in 1923?',
                 content_inferences:
-                  'Shows the extreme depreciation of the currency, demonstrating why immediate, radical monetary reform was essential to prevent total societal breakdown.',
+                  'Shows the emergency currency issued by the Rentenbank with legal mortgage backing, demonstrating the radical monetary reorganization required to replace the worthless trillion-mark paper notes.',
                 provenance_evaluation:
-                  'Official Reichsbank issue, November 1923. Authentic evidence of hyperinflation at its peak, though it illustrates the problem rather than Stresemann’s solution.',
+                  "An authentic official banknote issued on 1 November 1923 by the newly established state Rentenbank under Stresemann and Schacht, providing direct primary evidence of the state's successful currency stabilization mechanism.",
                 context_limitations:
-                  'Own knowledge confirms that in November 1923, Stresemann introduced the Rentenmark, backed by agricultural and industrial land; under Hjalmar Schacht, the old currency was retired and confidence returned almost immediately.',
+                  'While the physical note confirms the currency reform, own knowledge indicates that currency stabilization alone did not restore the wiped-out middle-class savings or resolve the deeper reliance on short-term American loans under the Dawes Plan.',
               },
               discussion_ideas: [
                 'Following hyperinflation, the German public completely rejected fiat paper currency printed without backing. Newly appointed Chancellor Gustav Stresemann and currency commissioner Hjalmar Schacht abolished the worthless Old Mark and introduced the temporary Rentenmark, backing its value with a legal mortgage over German agricultural and industrial land. By strictly capping the total money supply to 3.2 billion Rentenmarks and establishing a fixed exchange rate (one Rentenmark = one trillion old marks), they restored psychological confidence, stopped the printing presses, and stabilized domestic consumer prices within weeks.',
@@ -2433,29 +2435,31 @@ const unitData = {
           source: {
             id: 'source_a_currency_crisis',
             letter: 'A',
-            title: 'Source A: The Currency Collapse Preceding the Rentenmark (1923)',
-            src: '/images/weimar_hyperinflation_note.jpg',
-            source: '/images/weimar_hyperinflation_note.jpg',
-            image: '/images/weimar_hyperinflation_note.jpg',
+            title: 'Source A: The 1-Rentenmark Banknote Halting Hyperinflation (November 1923)',
+            src: '/images/weimar_rentenmark_1923.jpg',
+            source: '/images/weimar_rentenmark_1923.jpg',
+            image: '/images/weimar_rentenmark_1923.jpg',
             caption:
-              'A trillion-mark note from late 1923 illustrating the catastrophic monetary collapse that Gustav Stresemann resolved by introducing the Rentenmark.',
-            desc: 'Reichsbank currency note illustrating the hyperinflation solved by Stresemann in late 1923.',
-            provenance: 'German Reichsbank, November 1923. Bundesarchiv.',
-            citation: 'Reichsbank, Berlin, 1923.',
+              'An original 1-Rentenmark banknote issued on 1 November 1923, backed by mortgages on German agricultural and industrial land, successfully halting hyperinflation and stabilizing the currency under Gustav Stresemann and Hjalmar Schacht.',
+            desc: 'Official 1-Rentenmark banknote issued by the Deutsche Rentenbank in Berlin on 1 November 1923.',
+            provenance:
+              'Deutsche Rentenbank, Berlin, 1 November 1923. German Federal Archives (Bundesarchiv) Numismatic Collection.',
+            citation: 'Deutsche Rentenbank, Berlin, 1 November 1923.',
             hinge_question:
               'Why was introducing a currency backed by physical land assets (the Rentenmark) so crucial in restoring public trust in German money?',
             source_context:
-              'Reichsbank currency note illustrating hyperinflation in late 1923. Hinge Question: Why was introducing a currency backed by physical land assets (the Rentenmark) so crucial in restoring public trust in German money?',
-            context: 'Reichsbank currency note illustrating hyperinflation in late 1923.',
+              'Official 1-Rentenmark banknote issued by the Deutsche Rentenbank in November 1923, backed by mortgages on agricultural and industrial land to halt hyperinflation. Hinge Question: Why was introducing a currency backed by mortgages on agricultural and industrial land (the Rentenmark) so crucial in restoring public trust in German money?',
+            context:
+              'Official 1-Rentenmark banknote issued by the newly created Deutsche Rentenbank in November 1923 to replace the worthless paper Mark.',
             utility_enquiry: {
               question:
                 'How useful is Source A for an enquiry into the economic emergency confronting Gustav Stresemann when he became Chancellor in 1923?',
               content_inferences:
-                'Shows the extreme depreciation of the currency, demonstrating why immediate, radical monetary reform was essential to prevent total societal breakdown.',
+                'Shows the emergency currency issued by the Rentenbank with legal mortgage backing, demonstrating the radical monetary reorganization required to replace the worthless trillion-mark paper notes.',
               provenance_evaluation:
-                'Official Reichsbank issue, November 1923. Authentic evidence of hyperinflation at its peak, though it illustrates the problem rather than Stresemann’s solution.',
+                "An authentic official banknote issued on 1 November 1923 by the newly established state Rentenbank under Stresemann and Schacht, providing direct primary evidence of the state's successful currency stabilization mechanism.",
               context_limitations:
-                'Own knowledge confirms that in November 1923, Stresemann introduced the Rentenmark, backed by agricultural and industrial land; under Hjalmar Schacht, the old currency was retired and confidence returned almost immediately.',
+                'While the physical note confirms the currency reform, own knowledge indicates that currency stabilization alone did not restore the wiped-out middle-class savings or resolve the deeper reliance on short-term American loans under the Dawes Plan.',
             },
             discussion_ideas: [
               'Following hyperinflation, the German public completely rejected fiat paper currency printed without backing. Newly appointed Chancellor Gustav Stresemann and currency commissioner Hjalmar Schacht abolished the worthless Old Mark and introduced the temporary Rentenmark, backing its value with a legal mortgage over German agricultural and industrial land. By strictly capping the total money supply to 3.2 billion Rentenmarks and establishing a fixed exchange rate (one Rentenmark = one trillion old marks), they restored psychological confidence, stopped the printing presses, and stabilized domestic consumer prices within weeks.',
@@ -2554,21 +2558,21 @@ const unitData = {
               id: 'source_c_league_of_nations',
               letter: 'C',
               title:
-                'Source C: Germany’s Admission to the League of Nations in Geneva (September 1926)',
-              src: '/images/league_of_nations_geneva_1926.jpg',
-              source: '/images/league_of_nations_geneva_1926.jpg',
-              image: '/images/league_of_nations_geneva_1926.jpg',
+                'Source C: Gustav Stresemann Addressing the League of Nations in Geneva (September 1926)',
+              src: '/images/stresemann_geneva_league_of_nations_1926.jpg',
+              source: '/images/stresemann_geneva_league_of_nations_1926.jpg',
+              image: '/images/stresemann_geneva_league_of_nations_1926.jpg',
               caption:
-                'The Assembly of the League of Nations in Geneva welcoming the German delegation led by Gustav Stresemann as a permanent Council member in September 1926.',
-              desc: 'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926.',
-              provenance: 'League of Nations Archives, Geneva, Switzerland, September 1926.',
-              citation: 'League of Nations Archives, Geneva, September 1926.',
+                "German Foreign Minister Gustav Stresemann addressing the plenary assembly of the League of Nations in Geneva on 10 September 1926 following Germany's admission as a permanent Council member.",
+              desc: 'Photograph of Gustav Stresemann delivering his historic address to the League of Nations Assembly in Geneva, 10 September 1926.',
+              provenance: 'Bundesarchiv Bild 146-1988-101-12, Geneva, Switzerland, September 1926.',
+              citation: 'Bundesarchiv Bild 146-1988-101-12, September 1926.',
               hinge_question:
                 'How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
               source_context:
-                'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926. Hinge Question: How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
+                'Historical photograph of Gustav Stresemann addressing the League of Nations in Geneva in September 1926 following Germany’s admission as a permanent Council member. Hinge Question: How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
               context:
-                'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926.',
+                'Historical photograph of Gustav Stresemann delivering his historic entry speech to the League of Nations Assembly in Geneva, September 1926.',
               utility_enquiry: {
                 question:
                   'How useful is Source C for an enquiry into Germany’s international standing during the Stresemann era?',
@@ -2588,21 +2592,21 @@ const unitData = {
             id: 'source_c_league_of_nations',
             letter: 'C',
             title:
-              'Source C: Germany’s Admission to the League of Nations in Geneva (September 1926)',
-            src: '/images/league_of_nations_geneva_1926.jpg',
-            source: '/images/league_of_nations_geneva_1926.jpg',
-            image: '/images/league_of_nations_geneva_1926.jpg',
+              'Source C: Gustav Stresemann Addressing the League of Nations in Geneva (September 1926)',
+            src: '/images/stresemann_geneva_league_of_nations_1926.jpg',
+            source: '/images/stresemann_geneva_league_of_nations_1926.jpg',
+            image: '/images/stresemann_geneva_league_of_nations_1926.jpg',
             caption:
-              'The Assembly of the League of Nations in Geneva welcoming the German delegation led by Gustav Stresemann as a permanent Council member in September 1926.',
-            desc: 'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926.',
-            provenance: 'League of Nations Archives, Geneva, Switzerland, September 1926.',
-            citation: 'League of Nations Archives, Geneva, September 1926.',
+              "German Foreign Minister Gustav Stresemann addressing the plenary assembly of the League of Nations in Geneva on 10 September 1926 following Germany's admission as a permanent Council member.",
+            desc: 'Photograph of Gustav Stresemann delivering his historic address to the League of Nations Assembly in Geneva, 10 September 1926.',
+            provenance: 'Bundesarchiv Bild 146-1988-101-12, Geneva, Switzerland, September 1926.',
+            citation: 'Bundesarchiv Bild 146-1988-101-12, September 1926.',
             hinge_question:
               'How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
             source_context:
-              'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926. Hinge Question: How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
+              'Historical photograph of Gustav Stresemann addressing the League of Nations in Geneva in September 1926 following Germany’s admission as a permanent Council member. Hinge Question: How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
             context:
-              'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926.',
+              'Historical photograph of Gustav Stresemann delivering his historic entry speech to the League of Nations Assembly in Geneva, September 1926.',
             utility_enquiry: {
               question:
                 'How useful is Source C for an enquiry into Germany’s international standing during the Stresemann era?',
@@ -3148,29 +3152,31 @@ const unitData = {
         {
           id: 'source_a_currency_crisis',
           letter: 'A',
-          title: 'Source A: The Currency Collapse Preceding the Rentenmark (1923)',
-          src: '/images/weimar_hyperinflation_note.jpg',
-          source: '/images/weimar_hyperinflation_note.jpg',
-          image: '/images/weimar_hyperinflation_note.jpg',
+          title: 'Source A: The 1-Rentenmark Banknote Halting Hyperinflation (November 1923)',
+          src: '/images/weimar_rentenmark_1923.jpg',
+          source: '/images/weimar_rentenmark_1923.jpg',
+          image: '/images/weimar_rentenmark_1923.jpg',
           caption:
-            'A trillion-mark note from late 1923 illustrating the catastrophic monetary collapse that Gustav Stresemann resolved by introducing the Rentenmark.',
-          desc: 'Reichsbank currency note illustrating the hyperinflation solved by Stresemann in late 1923.',
-          provenance: 'German Reichsbank, November 1923. Bundesarchiv.',
-          citation: 'Reichsbank, Berlin, 1923.',
+            'An original 1-Rentenmark banknote issued on 1 November 1923, backed by mortgages on German agricultural and industrial land, successfully halting hyperinflation and stabilizing the currency under Gustav Stresemann and Hjalmar Schacht.',
+          desc: 'Official 1-Rentenmark banknote issued by the Deutsche Rentenbank in Berlin on 1 November 1923.',
+          provenance:
+            'Deutsche Rentenbank, Berlin, 1 November 1923. German Federal Archives (Bundesarchiv) Numismatic Collection.',
+          citation: 'Deutsche Rentenbank, Berlin, 1 November 1923.',
           hinge_question:
             'Why was introducing a currency backed by physical land assets (the Rentenmark) so crucial in restoring public trust in German money?',
           source_context:
-            'Reichsbank currency note illustrating hyperinflation in late 1923. Hinge Question: Why was introducing a currency backed by physical land assets (the Rentenmark) so crucial in restoring public trust in German money?',
-          context: 'Reichsbank currency note illustrating hyperinflation in late 1923.',
+            'Official 1-Rentenmark banknote issued by the Deutsche Rentenbank in November 1923, backed by mortgages on agricultural and industrial land to halt hyperinflation. Hinge Question: Why was introducing a currency backed by mortgages on agricultural and industrial land (the Rentenmark) so crucial in restoring public trust in German money?',
+          context:
+            'Official 1-Rentenmark banknote issued by the newly created Deutsche Rentenbank in November 1923 to replace the worthless paper Mark.',
           utility_enquiry: {
             question:
               'How useful is Source A for an enquiry into the economic emergency confronting Gustav Stresemann when he became Chancellor in 1923?',
             content_inferences:
-              'Shows the extreme depreciation of the currency, demonstrating why immediate, radical monetary reform was essential to prevent total societal breakdown.',
+              'Shows the emergency currency issued by the Rentenbank with legal mortgage backing, demonstrating the radical monetary reorganization required to replace the worthless trillion-mark paper notes.',
             provenance_evaluation:
-              'Official Reichsbank issue, November 1923. Authentic evidence of hyperinflation at its peak, though it illustrates the problem rather than Stresemann’s solution.',
+              "An authentic official banknote issued on 1 November 1923 by the newly established state Rentenbank under Stresemann and Schacht, providing direct primary evidence of the state's successful currency stabilization mechanism.",
             context_limitations:
-              'Own knowledge confirms that in November 1923, Stresemann introduced the Rentenmark, backed by agricultural and industrial land; under Hjalmar Schacht, the old currency was retired and confidence returned almost immediately.',
+              'While the physical note confirms the currency reform, own knowledge indicates that currency stabilization alone did not restore the wiped-out middle-class savings or resolve the deeper reliance on short-term American loans under the Dawes Plan.',
           },
           discussion_ideas: [
             'Following hyperinflation, the German public completely rejected fiat paper currency printed without backing. Newly appointed Chancellor Gustav Stresemann and currency commissioner Hjalmar Schacht abolished the worthless Old Mark and introduced the temporary Rentenmark, backing its value with a legal mortgage over German agricultural and industrial land. By strictly capping the total money supply to 3.2 billion Rentenmarks and establishing a fixed exchange rate (one Rentenmark = one trillion old marks), they restored psychological confidence, stopped the printing presses, and stabilized domestic consumer prices within weeks.',
@@ -3212,21 +3218,21 @@ const unitData = {
           id: 'source_c_league_of_nations',
           letter: 'C',
           title:
-            'Source C: Germany’s Admission to the League of Nations in Geneva (September 1926)',
-          src: '/images/league_of_nations_geneva_1926.jpg',
-          source: '/images/league_of_nations_geneva_1926.jpg',
-          image: '/images/league_of_nations_geneva_1926.jpg',
+            'Source C: Gustav Stresemann Addressing the League of Nations in Geneva (September 1926)',
+          src: '/images/stresemann_geneva_league_of_nations_1926.jpg',
+          source: '/images/stresemann_geneva_league_of_nations_1926.jpg',
+          image: '/images/stresemann_geneva_league_of_nations_1926.jpg',
           caption:
-            'The Assembly of the League of Nations in Geneva welcoming the German delegation led by Gustav Stresemann as a permanent Council member in September 1926.',
-          desc: 'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926.',
-          provenance: 'League of Nations Archives, Geneva, Switzerland, September 1926.',
-          citation: 'League of Nations Archives, Geneva, September 1926.',
+            "German Foreign Minister Gustav Stresemann addressing the plenary assembly of the League of Nations in Geneva on 10 September 1926 following Germany's admission as a permanent Council member.",
+          desc: 'Photograph of Gustav Stresemann delivering his historic address to the League of Nations Assembly in Geneva, 10 September 1926.',
+          provenance: 'Bundesarchiv Bild 146-1988-101-12, Geneva, Switzerland, September 1926.',
+          citation: 'Bundesarchiv Bild 146-1988-101-12, September 1926.',
           hinge_question:
             'How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
           source_context:
-            'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926. Hinge Question: How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
+            'Historical photograph of Gustav Stresemann addressing the League of Nations in Geneva in September 1926 following Germany’s admission as a permanent Council member. Hinge Question: How did Germany’s permanent seat on the League of Nations Council prove that Stresemann’s peaceful diplomatic strategy achieved more than violent confrontation?',
           context:
-            'Official archive photograph of the League of Nations welcoming Germany, Geneva, September 1926.',
+            'Historical photograph of Gustav Stresemann delivering his historic entry speech to the League of Nations Assembly in Geneva, September 1926.',
           utility_enquiry: {
             question:
               'How useful is Source C for an enquiry into Germany’s international standing during the Stresemann era?',
@@ -3314,7 +3320,7 @@ const unitData = {
           'Source B':
             'Architectural photograph of the Bauhaus building in Dessau, designed by Walter Gropius, 1926. Hinge Question: Why did modern, functionalist architecture like the Bauhaus movement become such an intense political battleground in Weimar Germany?',
           'Source C':
-            'Contemporary artwork capturing the cultural experimentation of the Weimar Golden Twenties. Hinge Question: How did the explosion of artistic freedom in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
+            'Official archive photograph capturing the vibrant nightlife and cabaret entertainment at the Europahaus in central Berlin during the Weimar Golden Twenties. Hinge Question: How did the explosion of artistic freedom and cosmopolitan nightlife in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
         },
       },
       video: [
@@ -3498,9 +3504,9 @@ const unitData = {
               image: '/images/weimar_new_woman_1920s.jpg',
               caption:
                 'A fashionable young German woman in Berlin sporting the signature short bob hairstyle (Bubikopf), modern apparel, and smoking in public, embodying the emancipated "New Woman" of the Weimar era.',
-              desc: 'Contemporary photograph of a modern Weimar woman in Berlin, mid-1920s.',
-              provenance: 'Contemporary 1920s German photographic archive, Berlin, c. 1926.',
-              citation: 'Berlin photographic archive, c. 1926.',
+              desc: 'Photograph of a modern woman in Berlin representing the New Woman (Neue Frau), c. 1926.',
+              provenance: 'Ullstein Bild Agency / Landesarchiv Berlin, Nr. 00028914, c. 1926.',
+              citation: 'Ullstein Bild Agency / Landesarchiv Berlin, c. 1926.',
               hinge_question:
                 "To what extent did the fashionable image of the 'New Woman' represent the lived reality of ordinary German women outside the capital city of Berlin?",
               source_context:
@@ -3531,9 +3537,9 @@ const unitData = {
             image: '/images/weimar_new_woman_1920s.jpg',
             caption:
               'A fashionable young German woman in Berlin sporting the signature short bob hairstyle (Bubikopf), modern apparel, and smoking in public, embodying the emancipated "New Woman" of the Weimar era.',
-            desc: 'Contemporary photograph of a modern Weimar woman in Berlin, mid-1920s.',
-            provenance: 'Contemporary 1920s German photographic archive, Berlin, c. 1926.',
-            citation: 'Berlin photographic archive, c. 1926.',
+            desc: 'Photograph of a modern woman in Berlin representing the New Woman (Neue Frau), c. 1926.',
+            provenance: 'Ullstein Bild Agency / Landesarchiv Berlin, Nr. 00028914, c. 1926.',
+            citation: 'Ullstein Bild Agency / Landesarchiv Berlin, c. 1926.',
             hinge_question:
               "To what extent did the fashionable image of the 'New Woman' represent the lived reality of ordinary German women outside the capital city of Berlin?",
             source_context:
@@ -3642,21 +3648,21 @@ const unitData = {
             {
               id: 'source_c_golden_twenties_art',
               letter: 'C',
-              title: 'Source C: Golden Twenties Modernist Culture in Weimar Berlin',
-              src: '/images/weimar_kt1_cover.jpg',
-              source: '/images/weimar_kt1_cover.jpg',
-              image: '/images/weimar_kt1_cover.jpg',
+              title: 'Source C: Tanzkabarett (Dance Cabaret) at the Europahaus in Berlin (c. 1930)',
+              src: '/images/weimar_berlin_cabaret_1931.jpg',
+              source: '/images/weimar_berlin_cabaret_1931.jpg',
+              image: '/images/weimar_berlin_cabaret_1931.jpg',
               caption:
-                'Expressionist representation of Golden Twenties cabaret culture and artistic experimentation in Weimar Berlin, capturing both creative vibrancy and social polarization.',
-              desc: 'Contemporary artwork capturing the vibrant cultural experimentation of the Weimar Golden Twenties.',
-              provenance: 'Weimar Cultural Archive, Berlin, c. 1927.',
-              citation: 'Weimar Cultural Archive, Berlin, 1927.',
+                'Patrons enjoying music, dance, and nightlife at the prestigious Europahaus dance cabaret in Berlin, illustrating the vibrant cultural nightlife and modernist lifestyle of the Golden Twenties.',
+              desc: 'Photograph of patrons at the Europahaus Tanzkabarett in Berlin, c. 1930.',
+              provenance: 'Bundesarchiv Bild 145 Bild-P062899, Berlin, c. 1930–1931.',
+              citation: 'Bundesarchiv Bild 145 Bild-P062899, c. 1930.',
               hinge_question:
                 'How did the explosion of artistic freedom in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
               source_context:
-                'Contemporary artwork capturing the cultural experimentation of the Weimar Golden Twenties. Hinge Question: How did the explosion of artistic freedom in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
+                'Official archive photograph capturing the vibrant nightlife and cabaret entertainment at the Europahaus in central Berlin during the Weimar Golden Twenties. Hinge Question: How did the explosion of artistic freedom and cosmopolitan nightlife in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
               context:
-                'Contemporary artwork capturing the cultural experimentation of the Weimar Golden Twenties.',
+                'Official archive photograph capturing the vibrant nightlife and cabaret entertainment at the Europahaus in central Berlin during the Weimar Golden Twenties.',
               utility_enquiry: {
                 question:
                   'How useful is Source C for an enquiry into artistic experimentation and social criticism in Weimar Germany between 1924 and 1929?',
@@ -3676,21 +3682,21 @@ const unitData = {
           source: {
             id: 'source_c_golden_twenties_art',
             letter: 'C',
-            title: 'Source C: Golden Twenties Modernist Culture in Weimar Berlin',
-            src: '/images/weimar_kt1_cover.jpg',
-            source: '/images/weimar_kt1_cover.jpg',
-            image: '/images/weimar_kt1_cover.jpg',
+            title: 'Source C: Tanzkabarett (Dance Cabaret) at the Europahaus in Berlin (c. 1930)',
+            src: '/images/weimar_berlin_cabaret_1931.jpg',
+            source: '/images/weimar_berlin_cabaret_1931.jpg',
+            image: '/images/weimar_berlin_cabaret_1931.jpg',
             caption:
-              'Expressionist representation of Golden Twenties cabaret culture and artistic experimentation in Weimar Berlin, capturing both creative vibrancy and social polarization.',
-            desc: 'Contemporary artwork capturing the vibrant cultural experimentation of the Weimar Golden Twenties.',
-            provenance: 'Weimar Cultural Archive, Berlin, c. 1927.',
-            citation: 'Weimar Cultural Archive, Berlin, 1927.',
+              'Patrons enjoying music, dance, and nightlife at the prestigious Europahaus dance cabaret in Berlin, illustrating the vibrant cultural nightlife and modernist lifestyle of the Golden Twenties.',
+            desc: 'Photograph of patrons at the Europahaus Tanzkabarett in Berlin, c. 1930.',
+            provenance: 'Bundesarchiv Bild 145 Bild-P062899, Berlin, c. 1930–1931.',
+            citation: 'Bundesarchiv Bild 145 Bild-P062899, c. 1930.',
             hinge_question:
               'How did the explosion of artistic freedom in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
             source_context:
-              'Contemporary artwork capturing the cultural experimentation of the Weimar Golden Twenties. Hinge Question: How did the explosion of artistic freedom in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
+              'Official archive photograph capturing the vibrant nightlife and cabaret entertainment at the Europahaus in central Berlin during the Weimar Golden Twenties. Hinge Question: How did the explosion of artistic freedom and cosmopolitan nightlife in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
             context:
-              'Contemporary artwork capturing the cultural experimentation of the Weimar Golden Twenties.',
+              'Official archive photograph capturing the vibrant nightlife and cabaret entertainment at the Europahaus in central Berlin during the Weimar Golden Twenties.',
             utility_enquiry: {
               question:
                 'How useful is Source C for an enquiry into artistic experimentation and social criticism in Weimar Germany between 1924 and 1929?',
@@ -4201,9 +4207,9 @@ const unitData = {
           image: '/images/weimar_new_woman_1920s.jpg',
           caption:
             'A fashionable young German woman in Berlin sporting the signature short bob hairstyle (Bubikopf), modern apparel, and smoking in public, embodying the emancipated "New Woman" of the Weimar era.',
-          desc: 'Contemporary photograph of a modern Weimar woman in Berlin, mid-1920s.',
-          provenance: 'Contemporary 1920s German photographic archive, Berlin, c. 1926.',
-          citation: 'Berlin photographic archive, c. 1926.',
+          desc: 'Photograph of a modern woman in Berlin representing the New Woman (Neue Frau), c. 1926.',
+          provenance: 'Ullstein Bild Agency / Landesarchiv Berlin, Nr. 00028914, c. 1926.',
+          citation: 'Ullstein Bild Agency / Landesarchiv Berlin, c. 1926.',
           hinge_question:
             "To what extent did the fashionable image of the 'New Woman' represent the lived reality of ordinary German women outside the capital city of Berlin?",
           source_context:
@@ -4260,21 +4266,21 @@ const unitData = {
         {
           id: 'source_c_golden_twenties_art',
           letter: 'C',
-          title: 'Source C: Golden Twenties Modernist Culture in Weimar Berlin',
-          src: '/images/weimar_kt1_cover.jpg',
-          source: '/images/weimar_kt1_cover.jpg',
-          image: '/images/weimar_kt1_cover.jpg',
+          title: 'Source C: Tanzkabarett (Dance Cabaret) at the Europahaus in Berlin (c. 1930)',
+          src: '/images/weimar_berlin_cabaret_1931.jpg',
+          source: '/images/weimar_berlin_cabaret_1931.jpg',
+          image: '/images/weimar_berlin_cabaret_1931.jpg',
           caption:
-            'Expressionist representation of Golden Twenties cabaret culture and artistic experimentation in Weimar Berlin, capturing both creative vibrancy and social polarization.',
-          desc: 'Contemporary artwork capturing the vibrant cultural experimentation of the Weimar Golden Twenties.',
-          provenance: 'Weimar Cultural Archive, Berlin, c. 1927.',
-          citation: 'Weimar Cultural Archive, Berlin, 1927.',
+            'Patrons enjoying music, dance, and nightlife at the prestigious Europahaus dance cabaret in Berlin, illustrating the vibrant cultural nightlife and modernist lifestyle of the Golden Twenties.',
+          desc: 'Photograph of patrons at the Europahaus Tanzkabarett in Berlin, c. 1930.',
+          provenance: 'Bundesarchiv Bild 145 Bild-P062899, Berlin, c. 1930–1931.',
+          citation: 'Bundesarchiv Bild 145 Bild-P062899, c. 1930.',
           hinge_question:
             'How did the explosion of artistic freedom in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
           source_context:
-            'Contemporary artwork capturing the cultural experimentation of the Weimar Golden Twenties. Hinge Question: How did the explosion of artistic freedom in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
+            'Official archive photograph capturing the vibrant nightlife and cabaret entertainment at the Europahaus in central Berlin during the Weimar Golden Twenties. Hinge Question: How did the explosion of artistic freedom and cosmopolitan nightlife in Weimar Berlin contribute to deeper cultural and political divisions across Germany?',
           context:
-            'Contemporary artwork capturing the cultural experimentation of the Weimar Golden Twenties.',
+            'Official archive photograph capturing the vibrant nightlife and cabaret entertainment at the Europahaus in central Berlin during the Weimar Golden Twenties.',
           utility_enquiry: {
             question:
               'How useful is Source C for an enquiry into artistic experimentation and social criticism in Weimar Germany between 1924 and 1929?',
@@ -4354,7 +4360,7 @@ const unitData = {
           'Source B':
             'Printed pamphlet of the NSDAP 25-Point Programme, Munich, February 1920. Hinge Question: How did the 25-Point Programme cleverly combine nationalist foreign policy demands with anti-capitalist promises to attract working-class support?',
           'Source C':
-            'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s. Hinge Question: Why was Adolf Hitler’s oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
+            'Famous photographic contact sheet taken by personal photographer Heinrich Hoffmann in 1927, capturing Hitler rehearsing rhetorical gestures to phonograph recordings of his own speeches. Hinge Question: Why was Adolf Hitler’s calculated oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
         },
       },
       learning_objectives: {
@@ -4625,21 +4631,23 @@ const unitData = {
             {
               id: 'source_c_hitler_speaking_munich',
               letter: 'C',
-              title: 'Source C: Adolf Hitler Addressing a Munich Beer Hall Meeting in the 1920s',
-              src: '/images/hitler_munich_1920s.jpg',
-              source: '/images/hitler_munich_1920s.jpg',
-              image: '/images/hitler_munich_1920s.jpg',
+              title:
+                'Source C: Adolf Hitler Rehearsing Theatrical Speech Gestures (Heinrich Hoffmann, 1927)',
+              src: '/images/hitler_rednerposen_oratory_1927.jpg',
+              source: '/images/hitler_rednerposen_oratory_1927.jpg',
+              image: '/images/hitler_rednerposen_oratory_1927.jpg',
               caption:
-                'Adolf Hitler delivering a passionate speech to NSDAP supporters in a Munich beer hall during the early 1920s, demonstrating his theatrical oratory and gestures.',
-              desc: 'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s.',
+                'Photographic study by Heinrich Hoffmann showing Adolf Hitler practicing dramatic rhetorical gestures, body language, and facial expressions in 1927 to maximize emotional manipulation in his speeches.',
+              desc: 'Contact sheet of photographs by Heinrich Hoffmann of Hitler rehearsing speech poses (Rednerposen), 1927.',
               provenance:
-                'Heinrich Hoffmann photographic archive, Munich, c. 1923. Bundesarchiv Bild 146-1974-059-45.',
-              citation: 'Bundesarchiv Bild 146-1974-059-45, c. 1923.',
+                'Bundesarchiv Bild 102-10460, Heinrich Hoffmann Photographic Studio, Munich, 1927.',
+              citation: 'Bundesarchiv Bild 102-10460, Heinrich Hoffmann, 1927.',
               hinge_question:
                 'Why was Adolf Hitler’s oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
               source_context:
-                'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s. Hinge Question: Why was Adolf Hitler’s oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
-              context: 'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s.',
+                'Famous photographic contact sheet taken by personal photographer Heinrich Hoffmann in 1927, capturing Hitler rehearsing rhetorical gestures to phonograph recordings of his own speeches. Hinge Question: Why was Adolf Hitler’s calculated oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
+              context:
+                'Famous photographic contact sheet taken by personal photographer Heinrich Hoffmann in 1927, capturing Hitler rehearsing rhetorical gestures to phonograph recordings of his own speeches.',
               utility_enquiry: {
                 question:
                   'How useful is Source C for an enquiry into Adolf Hitler’s rise to leadership within the Nazi Party in the early 1920s?',
@@ -4658,21 +4666,23 @@ const unitData = {
           source: {
             id: 'source_c_hitler_speaking_munich',
             letter: 'C',
-            title: 'Source C: Adolf Hitler Addressing a Munich Beer Hall Meeting in the 1920s',
-            src: '/images/hitler_munich_1920s.jpg',
-            source: '/images/hitler_munich_1920s.jpg',
-            image: '/images/hitler_munich_1920s.jpg',
+            title:
+              'Source C: Adolf Hitler Rehearsing Theatrical Speech Gestures (Heinrich Hoffmann, 1927)',
+            src: '/images/hitler_rednerposen_oratory_1927.jpg',
+            source: '/images/hitler_rednerposen_oratory_1927.jpg',
+            image: '/images/hitler_rednerposen_oratory_1927.jpg',
             caption:
-              'Adolf Hitler delivering a passionate speech to NSDAP supporters in a Munich beer hall during the early 1920s, demonstrating his theatrical oratory and gestures.',
-            desc: 'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s.',
+              'Photographic study by Heinrich Hoffmann showing Adolf Hitler practicing dramatic rhetorical gestures, body language, and facial expressions in 1927 to maximize emotional manipulation in his speeches.',
+            desc: 'Contact sheet of photographs by Heinrich Hoffmann of Hitler rehearsing speech poses (Rednerposen), 1927.',
             provenance:
-              'Heinrich Hoffmann photographic archive, Munich, c. 1923. Bundesarchiv Bild 146-1974-059-45.',
-            citation: 'Bundesarchiv Bild 146-1974-059-45, c. 1923.',
+              'Bundesarchiv Bild 102-10460, Heinrich Hoffmann Photographic Studio, Munich, 1927.',
+            citation: 'Bundesarchiv Bild 102-10460, Heinrich Hoffmann, 1927.',
             hinge_question:
               'Why was Adolf Hitler’s oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
             source_context:
-              'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s. Hinge Question: Why was Adolf Hitler’s oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
-            context: 'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s.',
+              'Famous photographic contact sheet taken by personal photographer Heinrich Hoffmann in 1927, capturing Hitler rehearsing rhetorical gestures to phonograph recordings of his own speeches. Hinge Question: Why was Adolf Hitler’s calculated oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
+            context:
+              'Famous photographic contact sheet taken by personal photographer Heinrich Hoffmann in 1927, capturing Hitler rehearsing rhetorical gestures to phonograph recordings of his own speeches.',
             utility_enquiry: {
               question:
                 'How useful is Source C for an enquiry into Adolf Hitler’s rise to leadership within the Nazi Party in the early 1920s?',
@@ -5300,21 +5310,23 @@ const unitData = {
         {
           id: 'source_c_hitler_speaking_munich',
           letter: 'C',
-          title: 'Source C: Adolf Hitler Addressing a Munich Beer Hall Meeting in the 1920s',
-          src: '/images/hitler_munich_1920s.jpg',
-          source: '/images/hitler_munich_1920s.jpg',
-          image: '/images/hitler_munich_1920s.jpg',
+          title:
+            'Source C: Adolf Hitler Rehearsing Theatrical Speech Gestures (Heinrich Hoffmann, 1927)',
+          src: '/images/hitler_rednerposen_oratory_1927.jpg',
+          source: '/images/hitler_rednerposen_oratory_1927.jpg',
+          image: '/images/hitler_rednerposen_oratory_1927.jpg',
           caption:
-            'Adolf Hitler delivering a passionate speech to NSDAP supporters in a Munich beer hall during the early 1920s, demonstrating his theatrical oratory and gestures.',
-          desc: 'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s.',
+            'Photographic study by Heinrich Hoffmann showing Adolf Hitler practicing dramatic rhetorical gestures, body language, and facial expressions in 1927 to maximize emotional manipulation in his speeches.',
+          desc: 'Contact sheet of photographs by Heinrich Hoffmann of Hitler rehearsing speech poses (Rednerposen), 1927.',
           provenance:
-            'Heinrich Hoffmann photographic archive, Munich, c. 1923. Bundesarchiv Bild 146-1974-059-45.',
-          citation: 'Bundesarchiv Bild 146-1974-059-45, c. 1923.',
+            'Bundesarchiv Bild 102-10460, Heinrich Hoffmann Photographic Studio, Munich, 1927.',
+          citation: 'Bundesarchiv Bild 102-10460, Heinrich Hoffmann, 1927.',
           hinge_question:
             'Why was Adolf Hitler’s oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
           source_context:
-            'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s. Hinge Question: Why was Adolf Hitler’s oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
-          context: 'Photograph of Adolf Hitler speaking in a Munich beer hall, early 1920s.',
+            'Famous photographic contact sheet taken by personal photographer Heinrich Hoffmann in 1927, capturing Hitler rehearsing rhetorical gestures to phonograph recordings of his own speeches. Hinge Question: Why was Adolf Hitler’s calculated oratorical style so decisive in enabling him to demand absolute dictatorial leadership (Führerprinzip) over the Nazi Party by July 1921?',
+          context:
+            'Famous photographic contact sheet taken by personal photographer Heinrich Hoffmann in 1927, capturing Hitler rehearsing rhetorical gestures to phonograph recordings of his own speeches.',
           utility_enquiry: {
             question:
               'How useful is Source C for an enquiry into Adolf Hitler’s rise to leadership within the Nazi Party in the early 1920s?',
@@ -7730,7 +7742,7 @@ const unitData = {
         ],
         source_context: {
           'Source A':
-            'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933. Hinge Question: Why did Franz von Papen’s boast that "Within two months we will have pushed Hitler so far into a corner that he will squeak" prove to be such a catastrophic miscalculation?',
+            'Contemporary photograph of Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen walking alongside conservative coalition ministers following the Day of Potsdam, March 1933. Hinge Question: Why did Franz von Papen’s boast that "Within two months we will have pushed Hitler so far into a corner that he will squeak" prove to be such a catastrophic miscalculation?',
           'Source B':
             'Official photograph of President Hindenburg and Chancellor Hitler, Berlin, 30 January 1933. Hinge Question: How did Hitler use the traditional prestige of Field Marshal von Hindenburg to make his new government appear respectable to the German army and middle classes?',
         },
@@ -8229,30 +8241,31 @@ const unitData = {
               id: 'source_a_papen_hitler_cartoon',
               letter: 'A',
               title:
-                'Source A: "A Shrewd Move" British Political Cartoon on Franz von Papen and Hitler (January 1933)',
+                'Source A: Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen with the Conservative Cabinet (March 1933)',
               src: '/images/papen_hitler_cartoon.jpg',
               source: '/images/papen_hitler_cartoon.jpg',
               image: '/images/papen_hitler_cartoon.jpg',
               caption:
-                'British political cartoon commenting on Franz von Papen’s scheme to tame Adolf Hitler by installing him as Chancellor while surrounding him with conservative aristocratic ministers.',
-              desc: 'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933.',
-              provenance: 'British satirical press cartoon, London, January 1933.',
-              citation: 'British satirical cartoon, January 1933.',
+                "Adolf Hitler in morning dress walking alongside Vice-Chancellor Franz von Papen and aristocratic conservative cabinet members in top hats, reflecting Papen's coalition designed to contain Hitler.",
+              desc: 'Photograph of Adolf Hitler, Franz von Papen, and conservative cabinet members in top hats walking from the Garrison Church, March 1933.',
+              provenance:
+                'Narodowe Archiwum Cyfrowe (NAC) / Bundesarchiv Bild 183-C0314, Potsdam/Berlin, March 1933.',
+              citation: 'NAC / Bundesarchiv Bild 183-C0314, March 1933.',
               hinge_question:
                 "Why did Franz von Papen’s boast that 'Within two months we will have pushed Hitler so far into a corner that he will squeak' prove to be such a catastrophic miscalculation?",
               source_context:
-                'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933. Hinge Question: Why did Franz von Papen’s boast that "Within two months we will have pushed Hitler so far into a corner that he will squeak" prove to be such a catastrophic miscalculation?',
+                'Contemporary photograph of Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen walking alongside conservative coalition ministers following the Day of Potsdam, March 1933. Hinge Question: Why did Franz von Papen’s boast that "Within two months we will have pushed Hitler so far into a corner that he will squeak" prove to be such a catastrophic miscalculation?',
               context:
-                'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933.',
+                'Contemporary photograph of Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen walking alongside conservative coalition ministers following the Day of Potsdam, March 1933.',
               utility_enquiry: {
                 question:
-                  'How useful is Source A for an enquiry into the backstairs political intrigue that led to Hitler being appointed Chancellor in January 1933?',
+                  'How useful is Source A for an enquiry into the political intrigue that led to Adolf Hitler becoming Chancellor in 1933?',
                 content_inferences:
-                  'Portrays Franz von Papen attempting to leash and steer a dangerous, predatory Hitler, satirizing the aristocratic belief that inexperienced Nazi demagogues could be easily controlled and manipulated by seasoned conservative elites.',
+                  'Shows Hitler dressed formally alongside Vice-Chancellor Franz von Papen and conservative ministers, demonstrating the tactical compromise between the Nazi movement and traditional conservative elites.',
                 provenance_evaluation:
-                  'Contemporary British political cartoon published in January 1933. Valuable for showing international awareness of the dangerous gamble being taken in Berlin, though satirical cartoons simplify complex constitutional maneuvers for humorous effect.',
+                  "An authentic press photograph documenting the formal partnership between Hitler and Papen's conservative bloc following the Day of Potsdam, March 1933.",
                 context_limitations:
-                  'Own knowledge confirms that Papen convinced the senile President Hindenburg to appoint Hitler by restricting the Nazis to only three cabinet posts out of twelve; Papen arrogantly claimed "We have hired him", entirely underestimating Hitler’s ruthless political drive and control over the SA paramilitaries.',
+                  'While the photograph captures the outward image of conservative control, own knowledge reveals that within weeks Hitler used the Reichstag Fire and the Enabling Act to thoroughly outmaneuver Papen and establish complete dictatorial power.',
               },
               discussion_ideas: [
                 "Arrogant Aristocratic Illusion of Control: Von Papen believed his conservative clique could exploit Hitler's mass popular following while keeping him safely shackled: the cabinet contained only three Nazis out of eleven ministers, with Papen as Vice-Chancellor holding the right to attend every meeting between Hitler and President Hindenburg.",
@@ -8264,30 +8277,31 @@ const unitData = {
             id: 'source_a_papen_hitler_cartoon',
             letter: 'A',
             title:
-              'Source A: "A Shrewd Move" British Political Cartoon on Franz von Papen and Hitler (January 1933)',
+              'Source A: Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen with the Conservative Cabinet (March 1933)',
             src: '/images/papen_hitler_cartoon.jpg',
             source: '/images/papen_hitler_cartoon.jpg',
             image: '/images/papen_hitler_cartoon.jpg',
             caption:
-              'British political cartoon commenting on Franz von Papen’s scheme to tame Adolf Hitler by installing him as Chancellor while surrounding him with conservative aristocratic ministers.',
-            desc: 'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933.',
-            provenance: 'British satirical press cartoon, London, January 1933.',
-            citation: 'British satirical cartoon, January 1933.',
+              "Adolf Hitler in morning dress walking alongside Vice-Chancellor Franz von Papen and aristocratic conservative cabinet members in top hats, reflecting Papen's coalition designed to contain Hitler.",
+            desc: 'Photograph of Adolf Hitler, Franz von Papen, and conservative cabinet members in top hats walking from the Garrison Church, March 1933.',
+            provenance:
+              'Narodowe Archiwum Cyfrowe (NAC) / Bundesarchiv Bild 183-C0314, Potsdam/Berlin, March 1933.',
+            citation: 'NAC / Bundesarchiv Bild 183-C0314, March 1933.',
             hinge_question:
               "Why did Franz von Papen’s boast that 'Within two months we will have pushed Hitler so far into a corner that he will squeak' prove to be such a catastrophic miscalculation?",
             source_context:
-              'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933. Hinge Question: Why did Franz von Papen’s boast that "Within two months we will have pushed Hitler so far into a corner that he will squeak" prove to be such a catastrophic miscalculation?',
+              'Contemporary photograph of Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen walking alongside conservative coalition ministers following the Day of Potsdam, March 1933. Hinge Question: Why did Franz von Papen’s boast that "Within two months we will have pushed Hitler so far into a corner that he will squeak" prove to be such a catastrophic miscalculation?',
             context:
-              'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933.',
+              'Contemporary photograph of Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen walking alongside conservative coalition ministers following the Day of Potsdam, March 1933.',
             utility_enquiry: {
               question:
-                'How useful is Source A for an enquiry into the backstairs political intrigue that led to Hitler being appointed Chancellor in January 1933?',
+                'How useful is Source A for an enquiry into the political intrigue that led to Adolf Hitler becoming Chancellor in 1933?',
               content_inferences:
-                'Portrays Franz von Papen attempting to leash and steer a dangerous, predatory Hitler, satirizing the aristocratic belief that inexperienced Nazi demagogues could be easily controlled and manipulated by seasoned conservative elites.',
+                'Shows Hitler dressed formally alongside Vice-Chancellor Franz von Papen and conservative ministers, demonstrating the tactical compromise between the Nazi movement and traditional conservative elites.',
               provenance_evaluation:
-                'Contemporary British political cartoon published in January 1933. Valuable for showing international awareness of the dangerous gamble being taken in Berlin, though satirical cartoons simplify complex constitutional maneuvers for humorous effect.',
+                "An authentic press photograph documenting the formal partnership between Hitler and Papen's conservative bloc following the Day of Potsdam, March 1933.",
               context_limitations:
-                'Own knowledge confirms that Papen convinced the senile President Hindenburg to appoint Hitler by restricting the Nazis to only three cabinet posts out of twelve; Papen arrogantly claimed "We have hired him", entirely underestimating Hitler’s ruthless political drive and control over the SA paramilitaries.',
+                'While the photograph captures the outward image of conservative control, own knowledge reveals that within weeks Hitler used the Reichstag Fire and the Enabling Act to thoroughly outmaneuver Papen and establish complete dictatorial power.',
             },
             discussion_ideas: [
               "Arrogant Aristocratic Illusion of Control: Von Papen believed his conservative clique could exploit Hitler's mass popular following while keeping him safely shackled: the cabinet contained only three Nazis out of eleven ministers, with Papen as Vice-Chancellor holding the right to attend every meeting between Hitler and President Hindenburg.",
@@ -8756,30 +8770,31 @@ const unitData = {
           id: 'source_a_papen_hitler_cartoon',
           letter: 'A',
           title:
-            'Source A: "A Shrewd Move" British Political Cartoon on Franz von Papen and Hitler (January 1933)',
+            'Source A: Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen with the Conservative Cabinet (March 1933)',
           src: '/images/papen_hitler_cartoon.jpg',
           source: '/images/papen_hitler_cartoon.jpg',
           image: '/images/papen_hitler_cartoon.jpg',
           caption:
-            'British political cartoon commenting on Franz von Papen’s scheme to tame Adolf Hitler by installing him as Chancellor while surrounding him with conservative aristocratic ministers.',
-          desc: 'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933.',
-          provenance: 'British satirical press cartoon, London, January 1933.',
-          citation: 'British satirical cartoon, January 1933.',
+            "Adolf Hitler in morning dress walking alongside Vice-Chancellor Franz von Papen and aristocratic conservative cabinet members in top hats, reflecting Papen's coalition designed to contain Hitler.",
+          desc: 'Photograph of Adolf Hitler, Franz von Papen, and conservative cabinet members in top hats walking from the Garrison Church, March 1933.',
+          provenance:
+            'Narodowe Archiwum Cyfrowe (NAC) / Bundesarchiv Bild 183-C0314, Potsdam/Berlin, March 1933.',
+          citation: 'NAC / Bundesarchiv Bild 183-C0314, March 1933.',
           hinge_question:
             "Why did Franz von Papen’s boast that 'Within two months we will have pushed Hitler so far into a corner that he will squeak' prove to be such a catastrophic miscalculation?",
           source_context:
-            'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933. Hinge Question: Why did Franz von Papen’s boast that "Within two months we will have pushed Hitler so far into a corner that he will squeak" prove to be such a catastrophic miscalculation?',
+            'Contemporary photograph of Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen walking alongside conservative coalition ministers following the Day of Potsdam, March 1933. Hinge Question: Why did Franz von Papen’s boast that "Within two months we will have pushed Hitler so far into a corner that he will squeak" prove to be such a catastrophic miscalculation?',
           context:
-            'Contemporary political cartoon on Franz von Papen and Adolf Hitler, January 1933.',
+            'Contemporary photograph of Chancellor Adolf Hitler and Vice-Chancellor Franz von Papen walking alongside conservative coalition ministers following the Day of Potsdam, March 1933.',
           utility_enquiry: {
             question:
-              'How useful is Source A for an enquiry into the backstairs political intrigue that led to Hitler being appointed Chancellor in January 1933?',
+              'How useful is Source A for an enquiry into the political intrigue that led to Adolf Hitler becoming Chancellor in 1933?',
             content_inferences:
-              'Portrays Franz von Papen attempting to leash and steer a dangerous, predatory Hitler, satirizing the aristocratic belief that inexperienced Nazi demagogues could be easily controlled and manipulated by seasoned conservative elites.',
+              'Shows Hitler dressed formally alongside Vice-Chancellor Franz von Papen and conservative ministers, demonstrating the tactical compromise between the Nazi movement and traditional conservative elites.',
             provenance_evaluation:
-              'Contemporary British political cartoon published in January 1933. Valuable for showing international awareness of the dangerous gamble being taken in Berlin, though satirical cartoons simplify complex constitutional maneuvers for humorous effect.',
+              "An authentic press photograph documenting the formal partnership between Hitler and Papen's conservative bloc following the Day of Potsdam, March 1933.",
             context_limitations:
-              'Own knowledge confirms that Papen convinced the senile President Hindenburg to appoint Hitler by restricting the Nazis to only three cabinet posts out of twelve; Papen arrogantly claimed "We have hired him", entirely underestimating Hitler’s ruthless political drive and control over the SA paramilitaries.',
+              'While the photograph captures the outward image of conservative control, own knowledge reveals that within weeks Hitler used the Reichstag Fire and the Enabling Act to thoroughly outmaneuver Papen and establish complete dictatorial power.',
           },
           discussion_ideas: [
             "Arrogant Aristocratic Illusion of Control: Von Papen believed his conservative clique could exploit Hitler's mass popular following while keeping him safely shackled: the cabinet contained only three Nazis out of eleven ministers, with Papen as Vice-Chancellor holding the right to attend every meeting between Hitler and President Hindenburg.",
@@ -12146,7 +12161,7 @@ const unitData = {
         ],
         source_context: {
           'Source A':
-            'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s. Hinge Question: Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
+            'Commemorative mural painted upon the historic Cologne-Ehrenfeld railway wall where thirteen members of the Edelweiss Pirates and Ehrenfeld Group were publicly executed by the Gestapo in November 1944. Hinge Question: Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
           'Source B':
             'Portrait photograph of Bishop Clemens August Graf von Galen, Bishop of Münster. Hinge Question: Why was the Nazi regime afraid to execute Bishop von Galen, even when he openly attacked government euthanasia policies from the pulpit?',
         },
@@ -12274,30 +12289,31 @@ const unitData = {
               id: 'source_a_edelweiss_pirates',
               letter: 'A',
               title:
-                'Source A: Edelweiss Pirates Anti-Nazi Slogans and Youth Graffiti (Cologne, 1938–1939)',
-              src: '/images/edelweiss_pirates_graffiti.jpg',
-              source: '/images/edelweiss_pirates_graffiti.jpg',
-              image: '/images/edelweiss_pirates_graffiti.jpg',
+                'Source A: Memorial Mural to the Edelweiss Pirates at Cologne-Ehrenfeld (Bartholomäus-Schink-Straße)',
+              src: '/images/edelweiss_pirates_cologne_mural.jpg',
+              source: '/images/edelweiss_pirates_cologne_mural.jpg',
+              image: '/images/edelweiss_pirates_cologne_mural.jpg',
               caption:
-                'Gestapo photographic evidence showing anti-Nazi graffiti sprayed by the Edelweiss Pirates (Edelweißpiraten) on railway walls in the Rhineland, defying Hitler Youth control.',
-              desc: 'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s.',
-              provenance: 'Gestapo Düsseldorf/Köln surveillance file, c. 1938–1939. Bundesarchiv.',
-              citation: 'Gestapo surveillance file, Cologne, 1939.',
+                'Mural at the historic Cologne-Ehrenfeld railway arches commemorating the Edelweiss Pirates (Edelweißpiraten), depicting youth resistance symbols including guitars, alpine flowers, and the execution site of teenage resisters in November 1944.',
+              desc: 'Memorial mural to the Edelweiss Pirates at the historic railway arches in Cologne-Ehrenfeld, Bartholomäus-Schink-Straße.',
+              provenance:
+                'Memorial site, Bartholomäus-Schink-Straße, Cologne-Ehrenfeld / NS-Documentation Centre of the City of Cologne (EL-DE Haus).',
+              citation: 'Bartholomäus-Schink-Straße Memorial, Cologne-Ehrenfeld.',
               hinge_question:
                 'Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
               source_context:
-                'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s. Hinge Question: Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
+                'Commemorative mural painted upon the historic Cologne-Ehrenfeld railway wall where thirteen members of the Edelweiss Pirates and Ehrenfeld Group were publicly executed by the Gestapo in November 1944. Hinge Question: Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
               context:
-                'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s.',
+                'Commemorative mural painted directly upon the railway brick wall in Cologne-Ehrenfeld where thirteen members of the Ehrenfeld Group and Edelweiss Pirates were publicly hanged by the Gestapo without trial on 10 November 1944.',
               utility_enquiry: {
                 question:
                   'How useful is Source A for an enquiry into the nature and extent of youth opposition in Nazi Germany before the Second World War?',
                 content_inferences:
-                  'Shows illegal graffiti painted in prominent public spaces, demonstrating that working-class teenagers openly rejected totalitarian regimentation, mocked the Hitler Youth, and risked arrest to assert their freedom.',
+                  'Depicts the core symbols of Edelweiss Pirates youth resistance—guitars for forbidden folk songs, hiking gear, and edelweiss badges—showing how working-class teenagers carved out defiant cultural independence away from the compulsory Hitler Youth.',
                 provenance_evaluation:
-                  'Official Gestapo photographic evidence compiled during investigations in Cologne, c. 1938 (Bundesarchiv). Highly useful as authentic police evidence of real resistance, though police records often focused on criminal deviance rather than political motives.',
+                  'A permanent public historical memorial at the authentic execution site where Barthel Schink and other teenage resisters were hanged in Cologne-Ehrenfeld, preserving local communal memory and honoring youth resistance to Nazi totalitarianism.',
                 context_limitations:
-                  'From own knowledge, the Edelweiss Pirates (who wore checked shirts and edelweiss flower badges) beat up Hitler Youth patrols, sang banned songs, and went hiking; while their defiance was courageous, it remained localized and never posed an existential threat to Hitler’s grip on state power.',
+                  'While the memorial highlights the bravery and cultural symbols of the Pirates, own knowledge reminds us that youth opposition remained localized, informal, and lacked a centralized political command structure capable of overthrowing the regime.',
               },
               discussion_ideas: [
                 'Active Defiance of Totalitarian Monopolies: The Edelweiss Pirates (such as the Navajos in Cologne) openly defied the compulsory Hitler Youth: wearing distinct clothing (checkered shirts, white socks, and edelweiss metal pins), beating up Hitler Youth patrols, hiking in the countryside, and singing forbidden parodies of Nazi anthems, showing that the regime had failed to achieve total control over the minds of working-class teenagers.',
@@ -12309,30 +12325,31 @@ const unitData = {
             id: 'source_a_edelweiss_pirates',
             letter: 'A',
             title:
-              'Source A: Edelweiss Pirates Anti-Nazi Slogans and Youth Graffiti (Cologne, 1938–1939)',
-            src: '/images/edelweiss_pirates_graffiti.jpg',
-            source: '/images/edelweiss_pirates_graffiti.jpg',
-            image: '/images/edelweiss_pirates_graffiti.jpg',
+              'Source A: Memorial Mural to the Edelweiss Pirates at Cologne-Ehrenfeld (Bartholomäus-Schink-Straße)',
+            src: '/images/edelweiss_pirates_cologne_mural.jpg',
+            source: '/images/edelweiss_pirates_cologne_mural.jpg',
+            image: '/images/edelweiss_pirates_cologne_mural.jpg',
             caption:
-              'Gestapo photographic evidence showing anti-Nazi graffiti sprayed by the Edelweiss Pirates (Edelweißpiraten) on railway walls in the Rhineland, defying Hitler Youth control.',
-            desc: 'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s.',
-            provenance: 'Gestapo Düsseldorf/Köln surveillance file, c. 1938–1939. Bundesarchiv.',
-            citation: 'Gestapo surveillance file, Cologne, 1939.',
+              'Mural at the historic Cologne-Ehrenfeld railway arches commemorating the Edelweiss Pirates (Edelweißpiraten), depicting youth resistance symbols including guitars, alpine flowers, and the execution site of teenage resisters in November 1944.',
+            desc: 'Memorial mural to the Edelweiss Pirates at the historic railway arches in Cologne-Ehrenfeld, Bartholomäus-Schink-Straße.',
+            provenance:
+              'Memorial site, Bartholomäus-Schink-Straße, Cologne-Ehrenfeld / NS-Documentation Centre of the City of Cologne (EL-DE Haus).',
+            citation: 'Bartholomäus-Schink-Straße Memorial, Cologne-Ehrenfeld.',
             hinge_question:
               'Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
             source_context:
-              'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s. Hinge Question: Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
+              'Commemorative mural painted upon the historic Cologne-Ehrenfeld railway wall where thirteen members of the Edelweiss Pirates and Ehrenfeld Group were publicly executed by the Gestapo in November 1944. Hinge Question: Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
             context:
-              'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s.',
+              'Commemorative mural painted directly upon the railway brick wall in Cologne-Ehrenfeld where thirteen members of the Ehrenfeld Group and Edelweiss Pirates were publicly hanged by the Gestapo without trial on 10 November 1944.',
             utility_enquiry: {
               question:
                 'How useful is Source A for an enquiry into the nature and extent of youth opposition in Nazi Germany before the Second World War?',
               content_inferences:
-                'Shows illegal graffiti painted in prominent public spaces, demonstrating that working-class teenagers openly rejected totalitarian regimentation, mocked the Hitler Youth, and risked arrest to assert their freedom.',
+                'Depicts the core symbols of Edelweiss Pirates youth resistance—guitars for forbidden folk songs, hiking gear, and edelweiss badges—showing how working-class teenagers carved out defiant cultural independence away from the compulsory Hitler Youth.',
               provenance_evaluation:
-                'Official Gestapo photographic evidence compiled during investigations in Cologne, c. 1938 (Bundesarchiv). Highly useful as authentic police evidence of real resistance, though police records often focused on criminal deviance rather than political motives.',
+                'A permanent public historical memorial at the authentic execution site where Barthel Schink and other teenage resisters were hanged in Cologne-Ehrenfeld, preserving local communal memory and honoring youth resistance to Nazi totalitarianism.',
               context_limitations:
-                'From own knowledge, the Edelweiss Pirates (who wore checked shirts and edelweiss flower badges) beat up Hitler Youth patrols, sang banned songs, and went hiking; while their defiance was courageous, it remained localized and never posed an existential threat to Hitler’s grip on state power.',
+                'While the memorial highlights the bravery and cultural symbols of the Pirates, own knowledge reminds us that youth opposition remained localized, informal, and lacked a centralized political command structure capable of overthrowing the regime.',
             },
             discussion_ideas: [
               'Active Defiance of Totalitarian Monopolies: The Edelweiss Pirates (such as the Navajos in Cologne) openly defied the compulsory Hitler Youth: wearing distinct clothing (checkered shirts, white socks, and edelweiss metal pins), beating up Hitler Youth patrols, hiking in the countryside, and singing forbidden parodies of Nazi anthems, showing that the regime had failed to achieve total control over the minds of working-class teenagers.',
@@ -12991,30 +13008,31 @@ const unitData = {
           id: 'source_a_edelweiss_pirates',
           letter: 'A',
           title:
-            'Source A: Edelweiss Pirates Anti-Nazi Slogans and Youth Graffiti (Cologne, 1938–1939)',
-          src: '/images/edelweiss_pirates_graffiti.jpg',
-          source: '/images/edelweiss_pirates_graffiti.jpg',
-          image: '/images/edelweiss_pirates_graffiti.jpg',
+            'Source A: Memorial Mural to the Edelweiss Pirates at Cologne-Ehrenfeld (Bartholomäus-Schink-Straße)',
+          src: '/images/edelweiss_pirates_cologne_mural.jpg',
+          source: '/images/edelweiss_pirates_cologne_mural.jpg',
+          image: '/images/edelweiss_pirates_cologne_mural.jpg',
           caption:
-            'Gestapo photographic evidence showing anti-Nazi graffiti sprayed by the Edelweiss Pirates (Edelweißpiraten) on railway walls in the Rhineland, defying Hitler Youth control.',
-          desc: 'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s.',
-          provenance: 'Gestapo Düsseldorf/Köln surveillance file, c. 1938–1939. Bundesarchiv.',
-          citation: 'Gestapo surveillance file, Cologne, 1939.',
+            'Mural at the historic Cologne-Ehrenfeld railway arches commemorating the Edelweiss Pirates (Edelweißpiraten), depicting youth resistance symbols including guitars, alpine flowers, and the execution site of teenage resisters in November 1944.',
+          desc: 'Memorial mural to the Edelweiss Pirates at the historic railway arches in Cologne-Ehrenfeld, Bartholomäus-Schink-Straße.',
+          provenance:
+            'Memorial site, Bartholomäus-Schink-Straße, Cologne-Ehrenfeld / NS-Documentation Centre of the City of Cologne (EL-DE Haus).',
+          citation: 'Bartholomäus-Schink-Straße Memorial, Cologne-Ehrenfeld.',
           hinge_question:
             'Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
           source_context:
-            'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s. Hinge Question: Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
+            'Commemorative mural painted upon the historic Cologne-Ehrenfeld railway wall where thirteen members of the Edelweiss Pirates and Ehrenfeld Group were publicly executed by the Gestapo in November 1944. Hinge Question: Why did working-class youth rebellion like the Edelweiss Pirates alarm the Gestapo far more than quiet discontent among older adults?',
           context:
-            'Gestapo surveillance photograph of Edelweiss Pirates graffiti in Cologne, late 1930s.',
+            'Commemorative mural painted directly upon the railway brick wall in Cologne-Ehrenfeld where thirteen members of the Ehrenfeld Group and Edelweiss Pirates were publicly hanged by the Gestapo without trial on 10 November 1944.',
           utility_enquiry: {
             question:
               'How useful is Source A for an enquiry into the nature and extent of youth opposition in Nazi Germany before the Second World War?',
             content_inferences:
-              'Shows illegal graffiti painted in prominent public spaces, demonstrating that working-class teenagers openly rejected totalitarian regimentation, mocked the Hitler Youth, and risked arrest to assert their freedom.',
+              'Depicts the core symbols of Edelweiss Pirates youth resistance—guitars for forbidden folk songs, hiking gear, and edelweiss badges—showing how working-class teenagers carved out defiant cultural independence away from the compulsory Hitler Youth.',
             provenance_evaluation:
-              'Official Gestapo photographic evidence compiled during investigations in Cologne, c. 1938 (Bundesarchiv). Highly useful as authentic police evidence of real resistance, though police records often focused on criminal deviance rather than political motives.',
+              'A permanent public historical memorial at the authentic execution site where Barthel Schink and other teenage resisters were hanged in Cologne-Ehrenfeld, preserving local communal memory and honoring youth resistance to Nazi totalitarianism.',
             context_limitations:
-              'From own knowledge, the Edelweiss Pirates (who wore checked shirts and edelweiss flower badges) beat up Hitler Youth patrols, sang banned songs, and went hiking; while their defiance was courageous, it remained localized and never posed an existential threat to Hitler’s grip on state power.',
+              'While the memorial highlights the bravery and cultural symbols of the Pirates, own knowledge reminds us that youth opposition remained localized, informal, and lacked a centralized political command structure capable of overthrowing the regime.',
           },
           discussion_ideas: [
             'Active Defiance of Totalitarian Monopolies: The Edelweiss Pirates (such as the Navajos in Cologne) openly defied the compulsory Hitler Youth: wearing distinct clothing (checkered shirts, white socks, and edelweiss metal pins), beating up Hitler Youth patrols, hiking in the countryside, and singing forbidden parodies of Nazi anthems, showing that the regime had failed to achieve total control over the minds of working-class teenagers.',
@@ -14145,7 +14163,7 @@ const unitData = {
           'Source A':
             'Photograph of Hitler Youth members in full uniform, c. 1935. Hinge Question: How did the Hitler Youth combine outdoor adventure with military drills to prepare young boys for future conscription in the German army?',
           'Source B':
-            'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936. Hinge Question: Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
+            'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936. Hinge Question: Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
         },
       },
       learning_objectives: {
@@ -14338,20 +14356,21 @@ const unitData = {
               letter: 'B',
               title:
                 'Source B: Bund Deutscher Mädel (BDM) Girls Performing Synchronised Gymnastics (c. 1936)',
-              src: '/images/bdm_gymnastics.jpg',
-              source: '/images/bdm_gymnastics.jpg',
-              image: '/images/bdm_gymnastics.jpg',
+              src: '/images/bdm_gymnastics_vorfuhrung.jpg',
+              source: '/images/bdm_gymnastics_vorfuhrung.jpg',
+              image: '/images/bdm_gymnastics_vorfuhrung.jpg',
               caption:
-                'Girls of the League of German Girls (Bund Deutscher Mädel) in uniform white shirts and black skirts performing synchronized physical exercises in the open air.',
-              desc: 'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936.',
-              provenance: 'Reichsjugendführung archive, Berlin, c. 1936. Bundesarchiv.',
-              citation: 'Bundesarchiv, Berlin, 1936.',
+                'Girls of the League of German Girls (Bund Deutscher Mädel) in uniform white shirts and black gym shorts performing synchronized physical exercises in the open air.',
+              desc: 'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936.',
+              provenance:
+                'Bundesarchiv Bild 183-2000-0110-500, BDM-Mädchen bei Sportvorführungen, c. 1936.',
+              citation: 'Bundesarchiv Bild 183-2000-0110-500, c. 1936.',
               hinge_question:
                 'Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
               source_context:
-                'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936. Hinge Question: Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
+                'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936. Hinge Question: Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
               context:
-                'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936.',
+                'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936.',
               utility_enquiry: {
                 question:
                   'How useful is Source B for an enquiry into the aims of the League of German Girls (BDM) in Nazi Germany?',
@@ -14372,19 +14391,21 @@ const unitData = {
             letter: 'B',
             title:
               'Source B: Bund Deutscher Mädel (BDM) Girls Performing Synchronised Gymnastics (c. 1936)',
-            src: '/images/bdm_gymnastics.jpg',
-            source: '/images/bdm_gymnastics.jpg',
-            image: '/images/bdm_gymnastics.jpg',
+            src: '/images/bdm_gymnastics_vorfuhrung.jpg',
+            source: '/images/bdm_gymnastics_vorfuhrung.jpg',
+            image: '/images/bdm_gymnastics_vorfuhrung.jpg',
             caption:
-              'Girls of the League of German Girls (Bund Deutscher Mädel) in uniform white shirts and black skirts performing synchronized physical exercises in the open air.',
-            desc: 'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936.',
-            provenance: 'Reichsjugendführung archive, Berlin, c. 1936. Bundesarchiv.',
-            citation: 'Bundesarchiv, Berlin, 1936.',
+              'Girls of the League of German Girls (Bund Deutscher Mädel) in uniform white shirts and black gym shorts performing synchronized physical exercises in the open air.',
+            desc: 'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936.',
+            provenance:
+              'Bundesarchiv Bild 183-2000-0110-500, BDM-Mädchen bei Sportvorführungen, c. 1936.',
+            citation: 'Bundesarchiv Bild 183-2000-0110-500, c. 1936.',
             hinge_question:
               'Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
             source_context:
-              'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936. Hinge Question: Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
-            context: 'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936.',
+              'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936. Hinge Question: Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
+            context:
+              'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936.',
             utility_enquiry: {
               question:
                 'How useful is Source B for an enquiry into the aims of the League of German Girls (BDM) in Nazi Germany?',
@@ -14996,19 +15017,21 @@ const unitData = {
           letter: 'B',
           title:
             'Source B: Bund Deutscher Mädel (BDM) Girls Performing Synchronised Gymnastics (c. 1936)',
-          src: '/images/bdm_gymnastics.jpg',
-          source: '/images/bdm_gymnastics.jpg',
-          image: '/images/bdm_gymnastics.jpg',
+          src: '/images/bdm_gymnastics_vorfuhrung.jpg',
+          source: '/images/bdm_gymnastics_vorfuhrung.jpg',
+          image: '/images/bdm_gymnastics_vorfuhrung.jpg',
           caption:
-            'Girls of the League of German Girls (Bund Deutscher Mädel) in uniform white shirts and black skirts performing synchronized physical exercises in the open air.',
-          desc: 'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936.',
-          provenance: 'Reichsjugendführung archive, Berlin, c. 1936. Bundesarchiv.',
-          citation: 'Bundesarchiv, Berlin, 1936.',
+            'Girls of the League of German Girls (Bund Deutscher Mädel) in uniform white shirts and black gym shorts performing synchronized physical exercises in the open air.',
+          desc: 'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936.',
+          provenance:
+            'Bundesarchiv Bild 183-2000-0110-500, BDM-Mädchen bei Sportvorführungen, c. 1936.',
+          citation: 'Bundesarchiv Bild 183-2000-0110-500, c. 1936.',
           hinge_question:
             'Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
           source_context:
-            'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936. Hinge Question: Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
-          context: 'Photograph of BDM girls engaged in synchronized outdoor gymnastics, c. 1936.',
+            'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936. Hinge Question: Why did the Nazi regime place such intense emphasis on physical fitness and outdoor gymnastics for young girls in the BDM?',
+          context:
+            'Official archive photograph showing BDM girls engaged in synchronized outdoor gymnastics and calisthenics demonstrations, c. 1936.',
           utility_enquiry: {
             question:
               'How useful is Source B for an enquiry into the aims of the League of German Girls (BDM) in Nazi Germany?',
@@ -17523,7 +17546,7 @@ const unitData = {
       group: 'Key Topic 4',
       name: 'Anna Lehnkering',
       bio: 'A disabled teenager who struggled in school and was sent to an institution. She was forcibly sterilized by the Nazis at age 19 under the Sterilisation Law and later murdered under the T4 Euthanasia Programme, representing the thousands of victims of Nazi eugenics.',
-      image: '/',
+      image: '/images/weimar_individuals/anna_lehnkering.jpg',
     },
     {
       group: 'Key Topic 4',
@@ -17547,7 +17570,7 @@ const unitData = {
       bio: 'A right-wing politician who effectively ruled Bavaria in 1923. He was part of the "Triumvirate" that Hitler attempted to force into supporting the Munich Putsch.',
       significance:
         'His betrayal of Hitler during the Munich Putsch caused the uprising to fail, leading to Hitler’s arrest, but also forcing Hitler to change his strategy to winning power legally.',
-      image: '/images/placeholder.jpg',
+      image: '/images/weimar_individuals/gustav_von_kahr.jpg',
     },
     {
       name: 'Otto von Lossow',
@@ -17565,7 +17588,7 @@ const unitData = {
       bio: 'The commander of the Bavarian police force in 1923. He completed the "Triumvirate" of right-wing leaders in Bavaria who resisted the Weimar government but ultimately crushed Hitler’s Putsch.',
       significance:
         'By mobilising the state police against the SA, he ensured that the Nazis were met with armed resistance during their march on Munich.',
-      image: '/images/placeholder.jpg',
+      image: '/images/weimar_individuals/hans_von_seisser.jpg',
     },
     {
       name: 'Benito Mussolini',
@@ -17574,7 +17597,7 @@ const unitData = {
       bio: 'The founder of Italian Fascism who seized power in 1922 following his famous "March on Rome".',
       significance:
         'His successful, violent seizure of power heavily inspired Hitler’s own attempt to launch the Munich Putsch in 1923.',
-      image: '/images/placeholder.jpg',
+      image: '/images/weimar_individuals/benito_mussolini.jpg',
     },
     {
       name: 'Prof. Ian Kershaw',
@@ -17605,6 +17628,22 @@ const unitData = {
       achievements: "Focus: 'Alltagsgeschichte' (Everyday History) & Complicity",
       group: 'Historians',
       image: '/images/mary_fulbrook.jpg',
+    },
+    {
+      name: 'William L. Shirer',
+      role: 'American Foreign Correspondent & Historian',
+      bio: "An American journalist who reported from Berlin from 1934 to 1940, witnessing the Nuremberg rallies, Hitler's speeches, and the rise of Nazi totalitarianism firsthand.",
+      actions:
+        "<ul><li>Author of the seminal monumental histories 'Berlin Diary' (1941) and 'The Rise and Fall of the Third Reich' (1960).</li><li>Provided invaluable primary eyewitness documentation of public mood and Gestapo intimidation in Berlin.</li></ul>",
+      achievements: 'Focus: Primary Eyewitness Journalism & Totalitarian Collapse',
+      group: 'Historians',
+      image: '/images/william_l_shirer.jpg',
+      limitations: [
+        'Wrote with strong personal outrage as an eyewitness journalist rather than detached academic distance',
+      ],
+      quotes: [
+        'I was on the scene in Germany from 1934 to the end of 1940 and observed at firsthand the machinery of totalitarian dictatorship.',
+      ],
     },
   ],
   mock_exams: [
