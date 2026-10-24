@@ -2634,8 +2634,12 @@ async function compilePublisherTextbookWater() {
   console.log(`✅ Updated unit textbook.html: ${unitHtmlPath}`);
 
   // Launch Puppeteer to generate high-fidelity print PDF
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: fs.existsSync(chromePath) ? chromePath : undefined,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--font-render-hinting=none'],
   });
 

@@ -1,0 +1,123 @@
+{
+  "id": "paper2_p3_american_west",
+  "code": "P3",
+  "paper": "Paper 2 (Period Study)",
+  "paperType": "Period Study",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option P3: The American West, c1835–c1895",
+  "shortTitle": "The American West",
+  "exam_structure": {
+    "paper_code": "1HI0/P1–P5",
+    "paper_name": "Paper 2 (Booklet P): Period Study",
+    "total_marks": 32,
+    "duration_minutes": 55,
+    "weighting": "20% of total GCSE",
+    "overview": "Tests unfolding period narrative across 3 Key Topics. Q1 Explain two consequences (8m), Q2 Write an analytical narrative (8m), Q3 Explain the importance of two events (16m)."
+  },
+  "stats": {
+    "sectionsCount": 3,
+    "topicsCount": 9,
+    "pointsCount": 24
+  },
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "keyTopicNumber": 1,
+      "title": "Key topic 1: The early settlement of the West, c1835–c1862",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Indigenous peoples of the Plains: their beliefs and ways of life",
+          "points": [
+            "Social and tribal structures, ways of life and means of survival on the Plains.",
+            "Beliefs about land and nature and attitudes to war and property."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Migration and early settlement",
+          "points": [
+            "The factors encouraging migration, including the Oregon Trail from 1836, the belief in Manifest Destiny, and the California Gold Rush of 1849.",
+            "Early migration to c1850, including the experiences of the Donner Party and the Mormon migration, 1846–47.",
+            "The development and problems of early settlement."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Conflict and tension",
+          "points": [
+            "Reasons for tension with Indigenous peoples of the Plains, including US government policy and the 'Permanent Indian Frontier'. The significance of the first Fort Laramie Treaty (1851). The Indian Appropriations Act (1851).",
+            "Lawlessness in early towns and settlements, including a ttempts to tackle lawlessness."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "keyTopicNumber": 2,
+      "title": "Key topic 2: Development of the Plains, c1862–c1876",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The development of settlement in the West",
+          "points": [
+            "The significance of the railroads; the Pacific Railroad Act (1862)  and the completion of the First Transcontinental Railroad (1869)  and the spread of the railroad network.",
+            "The impact of the Homestead Act (1862). Attempts at solutions to problems faced by homesteaders: the use of new methods and new technology; the impact of the Timber Culture Act (1873).",
+            "Introducing law and order in settlements, including the roles of law officers and increases in federal government influence."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Ranching and the cattle industry",
+          "points": [
+            "The cattle industry and factors in its growth, including the roles of Iliff, McCoy and Goodnight, the significance of Abilene and of the increasing use of the railroad network.",
+            "The changing role of the cowboy, including changes in ranching. Relations between ranchers and homesteaders."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Changes in the ways of life of Indigenous peoples of the Plains",
+          "points": [
+            "The impact of railroads, the cattle industry and gold prospecting on Indigenous peoples.",
+            "The impact of US government policy towards Indigenous peoples, including the continued use of reservations. The second Fort Laramie Treaty (1868).",
+            "Conflict on the Plains: Little Crow’s War (1862) and the Sand Creek Massacre (1864), the significance of Red Cloud’s War (1866–68)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "keyTopicNumber": 3,
+      "title": "Key topic 3: Later developments in the West, c1876–c1895",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Changes in farming, the cattle industry and settlement",
+          "points": [
+            "Changes in farming: the impact of new technology and new farming methods.",
+            "Changes in the cattle industry, including the impact of the winter of 1886–87. The significance of changes in the nature of ranching. T  he end of the open range.",
+            "Continued settlement: the Exoduster movement and Kansas (1879), the Oklahoma Land Rush of 1893. The closure of the 'Indian Frontier'."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Conflict and tension",
+          "points": [
+            "Dealing with law and order, including sheriffs and marshals, including the significance of Billy the Kid, Wyatt Earp,  the OK Corral (1881).",
+            "The range wars, including the Johnson County War of 1892.",
+            "Conflict on the Plains: the Battle of the Little Big Horn (1876)  and its impact; the Wounded Knee Massacre ( 1890)."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Indigenous peoples of the Plains: the destruction of their ways of life",
+          "points": [
+            "The hunting and extermination of the buffalo.",
+            "Indigenous people's  lives on the reservations.",
+            "The significance of changing government attitudes to Indigenous peoples, including the Dawes Act (1887)."
+          ]
+        }
+      ]
+    }
+  ]
+}

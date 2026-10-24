@@ -1,0 +1,148 @@
+{
+  "id": "paper2_b2_richard_and_john",
+  "code": "B2",
+  "paper": "Paper 2 (British Depth)",
+  "paperType": "British Depth Study",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option B2: The reigns of King Richard I and King John, 1189–1216",
+  "shortTitle": "Richard I and King John",
+  "exam_structure": {
+    "paper_code": "1HI0/B1–B4",
+    "paper_name": "Paper 2 (Booklet B): British Depth Study",
+    "total_marks": 32,
+    "duration_minutes": 55,
+    "weighting": "20% of total GCSE",
+    "overview": "Tests British depth across 3 Key Topics. Q1(a)/(b) Describe features (4m), Q2 Explain why causation (12m), Q3/Q4 Choice essay with stimulus points (16m)."
+  },
+  "stats": {
+    "sectionsCount": 3,
+    "topicsCount": 12,
+    "pointsCount": 31
+  },
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "keyTopicNumber": 1,
+      "title": "Key topic 1: Life and government in England, 1189–1216",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The feudal system",
+          "points": [
+            "The feudal hierarchy and the nature of feudalism (landholding, homage, knight service, labour service); forfeiture.",
+            "The role and influence of the Church."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Kingship and succession",
+          "points": [
+            "The nature of kingship: duties, rights, rituals.",
+            "Richard I as king: his claim to the throne; how power was secured; his character.",
+            "John as king: his claim to the throne; how power was secured and the murder of Prince Arthur; John’s character."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Royal government and finances",
+          "points": [
+            "How England was governed when Richard was absent, 1189–99, and during King John’s continued presence in England, 1199–1216.",
+            "Royal revenues: the royal demesne and the role of sheriffs in collecting revenues; feudal incidents; scutage; taxes on moveables and income in 1207."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. English society",
+          "points": [
+            "Countryside: the nature of agriculture and peasant life.",
+            "Towns: life in towns; their role in the economy.",
+            "Jews in Medieval England: legal status; role in moneylending; antisemitism; the causes and extent of the pogroms of 1189–90, including the significance of the coronation of Richard I; royal exploitation via taxes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "keyTopicNumber": 2,
+      "title": "Key topic 2: Involvements overseas, 1189–1204",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The nature of crusading",
+          "points": [
+            "The concept of crusade and attitudes in England to the crusades.",
+            "The nature of the English crusading army: who they were, why they went."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Richard and the Third Crusade",
+          "points": [
+            "The immediate causes of the Third Crusade; Richard’s motives for involvement in the Third Crusade.",
+            "Richard’s quarrel with Philip II; Richard’s military victories at Acre and Arsuf.",
+            "The failure to recapture Jerusalem."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Aftermath of the crusade",
+          "points": [
+            "Richard’s return from the Holy Land.",
+            "Richard’s capture, the ransom and its burden on England."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. Richard, John and the loss of Normandy",
+          "points": [
+            "The competing aims of Richard and John and Philip II in Normandy.",
+            "Richard and Chateau Gaillard: its cost and importance.",
+            "John and the fall of Chateau Gaillard; the loss of Normandy (1204)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "keyTopicNumber": 3,
+      "title": "Key topic 3: King John’s downfall, 1205–16",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The dispute with the Papacy",
+          "points": [
+            "Causes of the dispute.",
+            "The Interdict and its impact on everyday life.",
+            "The significance of the reconciliation between John and Innocent III."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Worsening relations with the barons",
+          "points": [
+            "Growing financial impositions to raise money for war with France: taxation and ‘fines’; John’s use of arbitrary power. The plot of 1212.",
+            "The impact of the failure to regain Normandy in 1214.",
+            "The rebellion of 1215: Northampton, Lincoln, the march on London."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Magna Carta and the First Barons’ War",
+          "points": [
+            "Runnymede: the motives of John and the barons, and the main provisions of Magna Carta.",
+            "Reasons for the outbreak of the First Baron’s War. T  he siege and taking of Rochester; the invasion of Prince Louis."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. England in 1216",
+          "points": [
+            "The condition of England at the time of John’s death.",
+            "The problem of the succession.",
+            "The role of William Marshal as Protector."
+          ]
+        }
+      ]
+    }
+  ]
+}

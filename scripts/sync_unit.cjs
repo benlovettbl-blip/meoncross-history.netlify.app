@@ -148,9 +148,9 @@ async function runSync() {
     try {
       if (unitId === 'great_war') {
         console.log(
-          `\n📚 Compiling 14-page publisher-grade textbook & V2 workbook for [great_war]...`,
+          `\n📚 Compiling 8-page pure narrative master textbook & workbook for [great_war]...`,
         );
-        execSync(`node scripts/render_standard_textbook_great_war.cjs`, {
+        execSync(`node scripts/render_great_war_8page_textbook.cjs`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
@@ -250,6 +250,13 @@ async function runSync() {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
+        console.log(
+          `\n📚 Compiling 8-page pure narrative master textbook for [monarchy_religion_power]...`,
+        );
+        execSync(`node scripts/render_monarchy_religion_power_8page_textbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
       }
       if (unitId === 'first_british_empire') {
         console.log(`\n📚 Compiling 16-page pupil workbook for [first_british_empire]...`);
@@ -257,10 +264,24 @@ async function runSync() {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
+        console.log(
+          `\n📚 Compiling 8-page pure narrative master textbook for [first_british_empire]...`,
+        );
+        execSync(`node scripts/render_first_british_empire_8page_textbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
       }
       if (unitId === 'second_british_empire') {
         console.log(`\n📚 Compiling 16-page pupil workbook for [second_british_empire]...`);
         execSync(`node scripts/render_second_british_empire_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+        console.log(
+          `\n📚 Compiling 12-page pure narrative master textbook for [second_british_empire]...`,
+        );
+        execSync(`node scripts/render_standard_textbook_second_british_empire.cjs`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
@@ -275,6 +296,11 @@ async function runSync() {
       if (unitId === 'australia') {
         console.log(`\n📚 Compiling 16-page pupil workbook for [australia]...`);
         execSync(`node scripts/render_australia_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+        console.log(`\n📚 Compiling 8-page pure narrative master textbook for [australia]...`);
+        execSync(`node scripts/render_australia_8page_textbook.cjs`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });

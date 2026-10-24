@@ -23,6 +23,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
 const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
@@ -35,11 +36,14 @@ if (!fs.existsSync(dataPath)) {
   process.exit(1);
 }
 
-// Parse units/industrialisation_and_empire/data.js
-const dataContent = fs.readFileSync(dataPath, 'utf8');
-const startIndex = dataContent.indexOf('{');
-const endIndex = dataContent.lastIndexOf('}');
-const unitData = eval('(' + dataContent.substring(startIndex, endIndex + 1) + ')');
+// Safely parse units/industrialisation_and_empire/data.js
+let rawData = fs.readFileSync(dataPath, 'utf8');
+rawData =
+  rawData
+    .replace(/export\s+const\s+unitData\s*=/g, 'const unitData =')
+    .replace(/export\s+default\s+unitData;?/g, '')
+    .replace(/export\s*\{[^}]*\};?/g, '') + '; unitData;';
+const unitData = vm.runInNewContext(rawData);
 
 const lessons = unitData.lessons || [];
 console.log(`Loaded ${lessons.length} Industrialisation lessons for publisher textbook.`);
@@ -2778,8 +2782,26 @@ async function renderPublisherTextbook() {
   }
 
   await browser.close();
+
+  // Copy to canonical V17 and PUBLISHER_FINAL_V17 paths
+  const canonicalV17 = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    'industrialisation_and_empire_textbook_FINAL_V17.pdf',
+  );
+  const publisherFinalV17 = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    'industrialisation_and_empire_textbook_PUBLISHER_FINAL_V17.pdf',
+  );
+  fs.copyFileSync(outPdfPath, canonicalV17);
+  fs.copyFileSync(outPdfPath, publisherFinalV17);
+
   console.log(`🎉 Masterpiece PDF Textbook Industrialisation successfully compiled!`);
   console.log(`📄 PDF Output: ${outPdfPath}`);
+  console.log(`📄 Copied to: ${canonicalV17}`);
 }
 
 if (require.main === module) {

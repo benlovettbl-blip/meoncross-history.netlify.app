@@ -4,106 +4,157 @@
   "sections": [
     {
       "id": "key-topic-1",
+      "keyTopicNumber": 1,
       "title": "Key topic 1: Queen, government and religion, 1558–69",
       "topics": [
         {
-          "title": "1. The situation on Elizabeth's accession",
+          "number": "1.1",
+          "code": "KT 1.1",
+          "title": "The Situation on Elizabeth's Accession",
+          "spreads": "Spread 1 • pp. 4–5",
           "points": [
             "Elizabethan England in 1558: **society and government**.",
             "The Virgin Queen: the problem of her **legitimacy, gender, marriage**. Her character and strengths.",
             "Challenges at home and from abroad: **financial weaknesses, religious divisions, the French threat**."
-          ]
+          ],
+          "narrative_blurb": "Ascending the throne in 1558, Elizabeth governed a deeply stratified **society and government**. Her rule was shadowed by fierce questions regarding her **legitimacy, gender, marriage**, yet she possessed formidable intelligence. Elizabeth immediately confronted dangerous structural challenges at home and abroad: acute Crown **financial weaknesses, religious divisions**, and the imminent **French threat** from Scotland."
         },
         {
-          "title": "2. The 'settlement' of religion",
+          "number": "1.2",
+          "code": "KT 1.2",
+          "title": "The 'Settlement' of Religion",
+          "spreads": "Spread 2 • pp. 6–7",
           "points": [
             "Elizabeth's **religious settlement (1559)**: its features and impact.",
             "The **Church of England**: its role in society."
-          ]
+          ],
+          "narrative_blurb": "To reconcile a fractured nation, Elizabeth enacted the historic **religious settlement (1559)**, establishing the middle way via the Act of Supremacy and Act of Uniformity with its Royal Injunctions. The newly reformed **Church of England** asserted its central role in society, enforcing national conformity, preaching royal obedience, and conducting village parish administration across England."
         },
         {
-          "title": "3. Challenge to the religious settlement",
+          "number": "1.3",
+          "code": "KT 1.3",
+          "title": "Challenge to the Religious Settlement",
+          "spreads": "Spread 3 • pp. 8–9",
           "points": [
             "The nature and extent of the **Puritan challenge**.",
             "The nature and extent of the **Catholic challenge**, including the role of the nobility, Papacy and foreign powers."
-          ]
+          ],
+          "narrative_blurb": "The middle way faced aggressive opposition from two extremes. The activist **Puritan challenge** demanded the eradication of all popish vestments and crucifixes. Concurrently, a dangerous **Catholic challenge** gathered momentum, sustained by traditional Northern nobility, Jesuit missionary infiltration, and external encouragement from the **Papacy and foreign powers** like Spain and Catholic France."
         },
         {
-          "title": "4. The problem of Mary, Queen of Scots",
+          "number": "1.4",
+          "code": "KT 1.4",
+          "title": "The Problem of Mary, Queen of Scots",
+          "spreads": "Spread 4 • pp. 10–11",
           "points": [
             "**Mary, Queen of Scots**: her claim to the English throne.",
             "Relations between **Elizabeth and Mary, 1568–69**."
-          ]
+          ],
+          "narrative_blurb": "Fleeing Scottish rebellion in 1568, Catholic cousin **Mary, Queen of Scots** arrived in England, possessing a potent dynastic **claim to the English throne** that attracted disaffected nobles. Delicate relations between **Elizabeth and Mary, 1568–69** deteriorated into permanent house arrest, as Elizabeth wrestled with the profound danger of executing an anointed monarch."
         }
       ]
     },
     {
       "id": "key-topic-2",
+      "keyTopicNumber": 2,
       "title": "Key topic 2: Challenges to Elizabeth at home and abroad, 1569–88",
       "topics": [
         {
-          "title": "1. Plots and revolts at home",
+          "number": "2.1",
+          "code": "KT 2.1",
+          "title": "Plots and Revolts at Home",
+          "spreads": "Spread 5 • pp. 12–13",
           "points": [
             "The reasons for, and significance of, the **Revolt of the Northern Earls, 1569–70**.",
             "The features and significance of the **Ridolfi, Throckmorton and Babington plots**.",
             "**Walsingham** and the use of spies.",
             "The reasons for, and significance of, **Mary Queen of Scots' execution in 1587**."
-          ]
+          ],
+          "narrative_blurb": "Northern Catholic grievances erupted in the **Revolt of the Northern Earls, 1569–70**. Subsequent foreign-backed conspiracies—the **Ridolfi, Throckmorton and Babington plots**—sought Elizabeth's assassination, but were systematically dismantled by Sir Francis **Walsingham and the use of spies**, directly culminating in the dramatic trial and **Mary Queen of Scots' execution in 1587**."
         },
         {
-          "title": "2. Relations with Spain",
+          "number": "2.2",
+          "code": "KT 2.2",
+          "title": "Relations with Spain",
+          "spreads": "Spread 6 • pp. 14–15",
           "points": [
             "Political, religious and commercial **rivalry**.",
             "The significance of **privateering** and the activities of **Drake**."
-          ]
+          ],
+          "narrative_blurb": "Mounting geopolitical friction ignited deep political, religious and commercial **rivalry** between Tudor England and Philip II's global empire. Protestant-Catholic antagonism intersected with illicit English trade in the Caribbean, where licensed state **privateering** and the lucrative plundering **activities of Drake** seizing Spanish silver fleets brought the two powers to the brink of open war."
         },
         {
-          "title": "3. Outbreak of war with Spain, 1585–88",
+          "number": "2.3",
+          "code": "KT 2.3",
+          "title": "Outbreak of War with Spain, 1585–88",
+          "spreads": "Spread 7 • pp. 16–17",
           "points": [
             "Reasons for deteriorating relations with Spain: English direct involvement in the **Netherlands** and the actions of **Robert Dudley**.",
             "**Drake** and the **raid on Cadiz**: 'Singeing the King of Spain's beard'."
-          ]
+          ],
+          "narrative_blurb": "Relations collapsed following direct military intervention in the Spanish **Netherlands** under the 1585 Treaty of Nonsuch and the controversial actions of **Robert Dudley**, Earl of Leicester. War became overt in 1587 when Sir Francis **Drake** executed the daring naval **raid on Cadiz**, destroying vital supplies in the famous 'Singeing the King of Spain's beard'."
         },
         {
-          "title": "4. The Armada",
+          "number": "2.4",
+          "code": "KT 2.4",
+          "title": "The Armada",
+          "spreads": "Spread 8 • pp. 18–19",
           "points": [
             "Spanish **invasion plans**. Key events of the **Spanish Armada**.",
             "The reasons for the **English victory**."
-          ]
+          ],
+          "narrative_blurb": "Philip II launched colossal **invasion plans** in 1588 to transport Parma's veteran army across the Channel. Through tactical blunders and English fire-ships at Gravelines, the key events of the **Spanish Armada** resulted in disaster. Decisive reasons for the **English victory** included superior gunnery, Drake's nimble galleons, defensive communications, and catastrophic North Sea storms."
         }
       ]
     },
     {
       "id": "key-topic-3",
+      "keyTopicNumber": 3,
       "title": "Key topic 3: Elizabethan society in the Age of Exploration, 1558–88",
       "topics": [
         {
-          "title": "1. Education and leisure",
+          "number": "3.1",
+          "code": "KT 3.1",
+          "title": "Education and Leisure",
+          "spreads": "Spread 9 • pp. 20–21",
           "points": [
             "**Education** in the home and schools.",
             "**Sport, pastimes** and the **theatre**."
-          ]
+          ],
+          "narrative_blurb": "Humanist ideas drove an expansion of grammar school **education** for wealthy boys, literacy, and dame schools, while girls remained confined to domestic tuition. Elizabethan leisure reflected social hierarchy, from violent **sport, pastimes** like bear-baiting and hawking to the wildly popular secular flowering of purpose-built public **theatre** featuring Marlowe and early Shakespeare."
         },
         {
-          "title": "2. The 'problem' of the poor",
+          "number": "3.2",
+          "code": "KT 3.2",
+          "title": "The 'Problem' of the Poor",
+          "spreads": "Spread 10 • pp. 22–23",
           "points": [
             "The reasons for the increase in **poverty and vagabondage** during these years.",
             "The changing **attitudes and policies** towards the poor."
-          ]
+          ],
+          "narrative_blurb": "Bad harvests, population growth, rack-renting, and sheep enclosure caused a alarming increase in **poverty and vagabondage**. Fear of rural disorder transformed traditional moral condemnation into changing legislative **attitudes and policies**, distinguishing between the 'deserving' and 'idle' poor, and establishing local poor rates through landmark Elizabethan Poor Laws."
         },
         {
-          "title": "3. Exploration and voyages of discovery",
+          "number": "3.3",
+          "code": "KT 3.3",
+          "title": "Exploration and Voyages of Discovery",
+          "spreads": "Spread 11 • pp. 24–25",
           "points": [
             "Factors prompting exploration, including the impact of **new technology on ships and sailing** and the drive to **expand trade**.",
             "The reasons for, and significance of, **Drake's circumnavigation of the globe**."
-          ]
+          ],
+          "narrative_blurb": "Maritime expansion was propelled by revolutionary **new technology on ships and sailing**, including the astrolabe, triangular lateen sails, and the commercial drive to **expand trade** beyond European cloth markets. National prestige surged with **Drake's circumnavigation of the globe** (1577–80), reaping immense plunder and establishing England as a formidable oceanic maritime power."
         },
         {
-          "title": "4. Attempted colonisation of Virginia",
+          "number": "3.4",
+          "code": "KT 3.4",
+          "title": "Attempted Colonisation of Virginia",
+          "spreads": "Spread 12 • pp. 26–27",
           "points": [
             "Reasons for the **attempted colonisation of Virginia**, including the significance of **Raleigh**.",
             "Reasons for the **failure of the first settlement** in Virginia."
-          ]
+          ],
+          "narrative_blurb": "Imperial ambitions motivated the **attempted colonisation of Virginia**, spearheaded by Sir Walter **Raleigh** to challenge Spanish hegemony and establish permanent New World bases. Despite intense royal backing, the **failure of the first settlement** at Roanoke resulted from poor planning, hostile Indigenous relations, severe supply starvation, and the complete disappearance of the 'Lost Colony'."
         }
       ]
     }

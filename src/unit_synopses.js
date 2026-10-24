@@ -213,6 +213,20 @@ export const unitSynopses = {
       'Liberation & Nuremberg Trials',
     ],
   },
+  cold_war: {
+    period: '1945 – 1991',
+    synopsis:
+      'In the smouldering ruins of post-war Europe, two continental superpowers—the capitalist United States and the communist Soviet Union—embarked upon a titanic struggle for the ideological mastery of the globe. From the division of Germany and the heroic aerial lifeline of the Berlin Airlift to the nuclear brinkmanship of the Cuban Missile Crisis and the bloody proxy wars in Korea and Vietnam, the Cold War redefined warfare, diplomacy, and human survival. Confront how espionage, the balance of nuclear terror, the construction and dramatic collapse of the Berlin Wall, and the reformist gamble of Mikhail Gorbachev finally brought four decades of global confrontation to a peaceful conclusion without a direct third world war.',
+    tags: [
+      'Yalta & Potsdam (1945)',
+      'Berlin Blockade & Airlift',
+      'Korean & Vietnam Proxy Wars',
+      'Cuban Missile Crisis (1962)',
+      'Prague Spring & Détente',
+      'Reagan & Gorbachev',
+      'Fall of the Berlin Wall (1989)',
+    ],
+  },
 };
 
 /**

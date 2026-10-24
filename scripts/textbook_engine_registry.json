@@ -24,56 +24,112 @@
         "id": "weimar_nazi_germany",
         "name": "Weimar and Nazi Germany, 1918–1939",
         "examBoard": "Pearson Edexcel (Option 31)",
-        "status": "PENDING_MIGRATION",
-        "format": "28-Page Master",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "28-Page Master Unified Edition (Saddle-Stitch A3 Reprographics)",
         "deliverables": {
-          "html": "units/weimar_nazi_germany/textbook_KT1.html",
-          "pdf": null
-        }
+          "html": "public/units/weimar_nazi_germany/textbook_UNIFIED.html",
+          "pdf": "public/pdfs/weimar_nazi_germany_textbook_UNIFIED_FINAL.pdf",
+          "legacy_modular_html": [
+            "public/units/weimar_nazi_germany/textbook_KT1_PUBLISHER.html",
+            "public/units/weimar_nazi_germany/textbook_KT2_PUBLISHER.html",
+            "public/units/weimar_nazi_germany/textbook_KT3_PUBLISHER.html",
+            "public/units/weimar_nazi_germany/textbook_KT4_PUBLISHER.html"
+          ],
+          "legacy_modular_pdf": [
+            "public/pdfs/weimar_nazi_germany_textbook_KT1_FINAL_V17.pdf",
+            "public/pdfs/weimar_nazi_germany_textbook_KT2_FINAL_V17.pdf",
+            "public/pdfs/weimar_nazi_germany_textbook_KT3_FINAL_V17.pdf",
+            "public/pdfs/weimar_nazi_germany_textbook_KT4_FINAL_V17.pdf"
+          ]
+        },
+        "auditStatus": "100% Passed (0px overflow, 96%–97% space utilization across all 28 pages)"
       },
       {
         "id": "eee",
         "name": "Early Elizabethan England, 1558–1588",
         "examBoard": "Pearson Edexcel (Option B4)",
-        "status": "PENDING_MIGRATION",
-        "format": "28-Page Master",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "28-Page Master Unified Edition (Saddle-Stitch A3 Reprographics)",
         "deliverables": {
-          "html": "units/eee/textbook_KT1.html",
-          "pdf": null
-        }
+          "html": "public/units/eee/textbook_UNIFIED.html",
+          "pdf": "public/pdfs/eee_textbook_UNIFIED_FINAL.pdf",
+          "legacy_modular_html": [
+            "public/units/eee/textbook_KT1_PUBLISHER.html",
+            "public/units/eee/textbook_KT2_PUBLISHER.html",
+            "public/units/eee/textbook_KT3_PUBLISHER.html"
+          ],
+          "legacy_modular_pdf": [
+            "public/pdfs/eee_textbook_KT1_FINAL_V17.pdf",
+            "public/pdfs/eee_textbook_KT2_FINAL_V17.pdf",
+            "public/pdfs/eee_textbook_KT3_FINAL_V17.pdf"
+          ]
+        },
+        "auditStatus": "100% Passed across all 28 pages (0px overflow, 97% space utilization, 100% SSoT verbatim)"
       },
       {
         "id": "cold_war",
-        "name": "Superpower Relations & the Cold War, 1941–1991",
-        "examBoard": "Pearson Edexcel (Option P4)",
-        "status": "PENDING_MIGRATION",
-        "format": "28-Page Master",
+        "name": "Superpower Relations & the Cold War, 1945–1991",
+        "examBoard": "Pearson Edexcel (Option P4) / KS3 Thematic Companion",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "12-Page Master Saddle-Stitch Edition",
         "deliverables": {
-          "html": "units/cold_war/textbook.html",
-          "pdf": null
-        }
+          "html": [
+            "public/units/cold_war/textbook.html",
+            "public/units/cold_war/textbook_PUBLISHER.html"
+          ],
+          "pdf": [
+            "public/pdfs/cold_war_textbook_FINAL_V17.pdf"
+          ]
+        },
+        "auditStatus": "100% Passed across all 12 pages (0px overflow, 97% space utilization)"
       },
       {
         "id": "edexcel_medicine",
         "name": "Medicine Through Time, c1250–present & Western Front",
         "examBoard": "Pearson Edexcel (Option 11)",
-        "status": "PENDING_MIGRATION",
-        "format": "28-Page Master",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "5x Master Era Editions (64 Pages Total: 4x 12-Page + 1x 16-Page Saddle-Stitch Editions)",
         "deliverables": {
-          "html": "units/edexcel_medicine/textbook_medieval.html",
-          "pdf": null
-        }
+          "html": [
+            "public/units/edexcel_medicine/textbook_medieval_PUBLISHER.html",
+            "public/units/edexcel_medicine/textbook_renaissance_PUBLISHER.html",
+            "public/units/edexcel_medicine/textbook_18th_19th_PUBLISHER.html",
+            "public/units/edexcel_medicine/textbook_modern_PUBLISHER.html",
+            "public/units/edexcel_medicine/textbook_western_front_PUBLISHER.html"
+          ],
+          "pdf": [
+            "public/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf",
+            "public/pdfs/edexcel_medicine_textbook_renaissance_FINAL_V17.pdf",
+            "public/pdfs/edexcel_medicine_textbook_18th_19th_FINAL_V17.pdf",
+            "public/pdfs/edexcel_medicine_textbook_modern_FINAL_V17.pdf",
+            "public/pdfs/edexcel_medicine_textbook_western_front_FINAL_V17.pdf"
+          ]
+        },
+        "auditStatus": "100% Passed across all 5 Eras (0px overflow, 100% space utilization, Pure Narrative Standard)"
       },
       {
         "id": "usa",
         "name": "USA, 1954–1975: Conflict at Home and Abroad",
         "examBoard": "Pearson Edexcel (Option 33)",
-        "status": "PENDING_MIGRATION",
+        "status": "COMPLETED_AND_VERIFIED",
         "format": "28-Page Master",
         "deliverables": {
-          "html": "units/usa/textbook_KT1.html",
-          "pdf": null
-        }
+          "html": "public/units/usa/textbook_UNIFIED.html",
+          "pdf": "public/pdfs/usa_textbook_UNIFIED_FINAL.pdf",
+          "keyTopicHtml": [
+            "public/units/usa/textbook_KT1_PUBLISHER.html",
+            "public/units/usa/textbook_KT2_PUBLISHER.html",
+            "public/units/usa/textbook_KT3_PUBLISHER.html",
+            "public/units/usa/textbook_KT4_PUBLISHER.html"
+          ],
+          "keyTopicPdf": [
+            "public/pdfs/usa_textbook_KT1_FINAL_V17.pdf",
+            "public/pdfs/usa_textbook_KT2_FINAL_V17.pdf",
+            "public/pdfs/usa_textbook_KT3_FINAL_V17.pdf",
+            "public/pdfs/usa_textbook_KT4_FINAL_V17.pdf"
+          ]
+        },
+        "auditStatus": "100% Passed across all 28 pages (0px overflow, 97% space utilization, 100% SSoT verbatim)"
       }
     ],
     "ks3": [
@@ -89,43 +145,88 @@
         }
       },
       {
+        "id": "great_war",
+        "name": "Causes of the Great War, 1871–1914",
+        "yearGroup": "Year 9",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "8-Page Master Anthology",
+        "deliverables": {
+          "html": "units/great_war/textbook.html",
+          "pdf": "public/pdfs/great_war_textbook_FINAL_V17.pdf"
+        },
+        "auditStatus": "100% Passed (0px overflow, 97% space utilization)"
+      },
+      {
         "id": "great_war_part2",
         "name": "The Great War, 1914–1919 (Part 2)",
         "yearGroup": "Year 9",
-        "status": "PILOT_COMPILED",
-        "format": "8-Page Master Anthology",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "12-Page Master Anthology",
         "deliverables": {
           "html": "units/great_war_part2/textbook.html",
           "pdf": "public/pdfs/great_war_part2_textbook_FINAL.pdf"
-        }
+        },
+        "auditStatus": "100% Passed (0px overflow, 96% space utilization)"
+      },
+      {
+        "id": "water_and_sanitation",
+        "name": "Water and Sanitation Through Time, AD 43–Present",
+        "yearGroup": "Year 7",
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "14-Page Publisher Edition",
+        "deliverables": {
+          "html": "units/water_and_sanitation/textbook.html",
+          "pdf": "public/pdfs/water_and_sanitation_textbook_FINAL_V17.pdf"
+        },
+        "auditStatus": "100% Passed (0px overflow, 100% space utilization)"
       },
       {
         "id": "early_modern_world",
-        "name": "Early Modern World & Tudors",
+        "name": "The Early Modern World & Global Encounters, 1450–1750",
         "yearGroup": "Year 8",
-        "status": "PENDING_COMPILATION",
-        "format": "8-Page / 12-Page"
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "20-Page Master Edition",
+        "deliverables": {
+          "html": "units/early_modern_world/textbook.html",
+          "pdf": "public/pdfs/early_modern_world_textbook_FINAL_V17.pdf"
+        },
+        "auditStatus": "100% Passed (0px overflow, 97% space utilization)"
       },
       {
         "id": "industrialisation_and_empire",
         "name": "Industrialisation & Empire, 1750–1901",
         "yearGroup": "Year 8",
-        "status": "PENDING_COMPILATION",
-        "format": "8-Page / 12-Page"
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "12-Page Master Edition",
+        "deliverables": {
+          "html": "units/industrialisation_and_empire/textbook.html",
+          "pdf": "public/pdfs/industrialisation_and_empire_textbook_FINAL_V17.pdf"
+        },
+        "auditStatus": "100% Passed (0px overflow, 97% space utilization)"
       },
       {
         "id": "the_shoah",
         "name": "The Holocaust / The Shoah",
         "yearGroup": "Year 9",
-        "status": "PENDING_COMPILATION",
-        "format": "8-Page / 12-Page"
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "12-Page Master Anthology",
+        "deliverables": {
+          "html": "units/the_shoah/textbook.html",
+          "pdf": "public/pdfs/the_shoah_textbook_FINAL.pdf"
+        },
+        "auditStatus": "100% Passed (0px overflow, 97% space utilization)"
       },
       {
         "id": "post_war_britain",
-        "name": "Post-War Britain, 1945–1990s",
+        "name": "Rights, Protest & Post-War Britain, 1900–Present",
         "yearGroup": "Year 9",
-        "status": "PENDING_COMPILATION",
-        "format": "8-Page / 12-Page"
+        "status": "COMPLETED_AND_VERIFIED",
+        "format": "8-Page Master Anthology",
+        "deliverables": {
+          "html": "units/post_war_britain/textbook.html",
+          "pdf": "public/pdfs/post_war_britain_textbook_FINAL_V17.pdf"
+        },
+        "auditStatus": "100% Passed (0px overflow, 97% space utilization)"
       }
     ],
     "ks2": [

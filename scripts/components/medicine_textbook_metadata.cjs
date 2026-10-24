@@ -6,6 +6,8 @@
  * for all 5 eras of Medicine in Britain (c1250–present) and The Western Front.
  */
 
+const { MEDICINE_ENQUIRY_CARDS } = require('./medicine_enquiry_cards.cjs');
+
 const MEDICINE_ERAS = {
   medieval: {
     id: 'medieval',
@@ -980,5 +982,13 @@ const MEDICINE_ERAS = {
     ],
   },
 };
+
+// Attach enquiryCards to each era from modular SSoT
+Object.keys(MEDICINE_ERAS).forEach((k) => {
+  if (MEDICINE_ENQUIRY_CARDS[k]) {
+    MEDICINE_ERAS[k].enquiryCards = MEDICINE_ENQUIRY_CARDS[k];
+  }
+});
+MEDICINE_ERAS.western_front.pageCount = 16;
 
 module.exports = { MEDICINE_ERAS };

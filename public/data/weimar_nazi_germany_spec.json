@@ -4,140 +4,208 @@
   "sections": [
     {
       "id": "key-topic-1",
+      "keyTopicNumber": 1,
       "title": "Key topic 1: The Weimar Republic 1918–29",
       "topics": [
         {
-          "title": "1 The origins of the Republic, 1918–19",
+          "number": "1.1",
+          "code": "KT 1.1",
+          "title": "The Origins of the Republic, 1918–19",
+          "spreads": "Spread 1 • pp. 4–5",
           "points": [
             "The situation in Germany at the end of the War: **political unrest, abdication of the Kaiser, armistice and new republic.**",
             "The **strengths and weaknesses** of the new Weimar Constitution."
-          ]
+          ],
+          "narrative_blurb": "Military collapse in 1918 sparked widespread **political unrest, abdication of the Kaiser, armistice and new republic**. Friedrich Ebert established a democratic regime under the new Weimar Constitution, yet its fundamental **strengths and weaknesses**—notably radical proportional representation and the emergency powers of Article 48—left the fledgling democracy structurally vulnerable to extremist subversion."
         },
         {
-          "title": "2 The early challenges to the Weimar Republic, 1919–23",
+          "number": "1.2",
+          "code": "KT 1.2",
+          "title": "The Early Challenges to the Weimar Republic, 1919–23",
+          "spreads": "Spread 2 • pp. 6–7",
           "points": [
             "Reasons for the **early unpopularity of the Republic**, including the **'stab in the back' theory** and the key terms of the **Treaty of Versailles**.",
             "Challenges to the Republic from Left and Right: **Spartacists, Freikorps, the Kapp Putsch.**",
             "The challenges of 1923: **hyperinflation**; the reasons for, and effects of, the **French occupation of the Ruhr**."
-          ]
+          ],
+          "narrative_blurb": "The **early unpopularity of the Republic** stemmed from the virulent **'stab in the back' theory** and the humiliating terms of the **Treaty of Versailles**. Armed insurrections by the left-wing **Spartacists** and right-wing **Freikorps, the Kapp Putsch** brought violent instability. In 1923, passive resistance against the **French occupation of the Ruhr** triggered catastrophic **hyperinflation**, wiping out the middle class."
         },
         {
-          "title": "3 The 'Golden Years': recovery of the Republic, 1924–29",
+          "number": "1.3",
+          "code": "KT 1.3",
+          "title": "The 'Golden Years': Recovery of the Republic, 1924–29",
+          "spreads": "Spread 3 • pp. 8–9",
           "points": [
             "Reasons for economic recovery, including the work of **Stresemann**, the **Rentenmark**, the **Dawes and Young Plans** and American loans and investment.",
             "Stresemann's achievements in gaining **international acceptance of Germany** abroad through the **Locarno Pact** and joining the **League of Nations**."
-          ]
+          ],
+          "narrative_blurb": "Economic recovery was orchestrated through the decisive work of Gustav **Stresemann**, the temporary **Rentenmark**, and crucial **American loans and investment** secured under the **Dawes and Young Plans**. Abroad, Stresemann restored **international acceptance of Germany** by negotiating the 1925 **Locarno Pact**, joining the **League of Nations** in 1926, and signing the Kellogg-Briand Pact."
         },
         {
-          "title": "4 Changes in society, 1924–29",
+          "number": "1.4",
+          "code": "KT 1.4",
+          "title": "Changes in Society, 1924–29",
+          "spreads": "Spread 3 • pp. 8–9",
           "points": [
             "Changes in the **standard of living**.",
             "Changes in the **position of women** in work, politics and leisure.",
             "**Cultural changes**: developments in architecture, art and the cinema."
-          ]
+          ],
+          "narrative_blurb": "Stabilisation brought significant improvements in the **standard of living**, with higher real wages and municipal housing projects. Women experienced profound changes in the **position of women** across work, voting politics, and urban leisure. Berlin became an avant-garde crucible for radical **cultural changes**, pioneering Bauhaus **architecture**, Neue Sachlichkeit **art and the cinema**."
         }
       ]
     },
     {
       "id": "key-topic-2",
+      "keyTopicNumber": 2,
       "title": "Key topic 2: Hitler's rise to power, 1919–33",
       "topics": [
         {
-          "title": "1 Early development of the Nazi Party, 1920–22",
+          "number": "2.1",
+          "code": "KT 2.1",
+          "title": "Early Development of the Nazi Party, 1920–22",
+          "spreads": "Spread 4 • pp. 10–11",
           "points": [
             "Hitler's early career: **joining the German Workers' Party** and **setting up the Nazi Party, 1919–20**.",
             "The **Twenty-Five Point Programme**. The **role of the SA**."
-          ]
+          ],
+          "narrative_blurb": "Hitler's political trajectory began by **joining the German Workers' Party** in Munich and rapidly taking control, **setting up the Nazi Party, 1919–20**. He co-authored the nationalistic **Twenty-Five Point Programme**, adopted the swastika emblem, and established the paramilitarism and violent intimidation that defined the **role of the SA** under Ernst Röhm."
         },
         {
-          "title": "2 The Munich Putsch and the Nazi Party, 1923–28",
+          "number": "2.2",
+          "code": "KT 2.2",
+          "title": "The Munich Putsch and the Nazi Party, 1923–28",
+          "spreads": "Spreads 4–5 • pp. 10–13",
           "points": [
             "The reasons for, events and consequences of the **Munich Putsch**; ***Mein Kampf***.",
             "Reasons for **limited support for the Nazi Party, 1924–28**. Party reorganisation, including the **Bamberg Conference of 1926**."
-          ]
+          ],
+          "narrative_blurb": "Exploiting the 1923 crisis, Hitler launched the abortive **Munich Putsch**, using his high-profile treason trial to gain national publicity and dictate **Mein Kampf**. Despite economic stability causing **limited support for the Nazi Party, 1924–28**, Hitler achieved vital party reorganisation and secured absolute personal authority over rivals at the **Bamberg Conference of 1926**."
         },
         {
-          "title": "3 The growth in support for the Nazis, 1929–32",
+          "number": "2.3",
+          "code": "KT 2.3",
+          "title": "The Growth in Support for the Nazis, 1929–32",
+          "spreads": "Spread 5 • pp. 12–13",
           "points": [
             "The **growth of unemployment** – its causes and impact. The growth of support for the **Communist Party**.",
             "Reasons for the **growth in support for the Nazi Party**, including the **appeal of Hitler and the Nazis**, the **effects of propaganda** and the **work of the SA**."
-          ]
+          ],
+          "narrative_blurb": "The 1929 Wall Street Crash caused a devastating **growth of unemployment** to six million, driving panic and surging support for the **Communist Party**. Exploiting middle-class terror, the **growth in support for the Nazi Party** surged due to the charismatic **appeal of Hitler and the Nazis**, Goebbels' modern **effects of propaganda**, and the violent order of the **work of the SA**."
         },
         {
-          "title": "4 How Hitler became Chancellor, 1932–33",
+          "number": "2.4",
+          "code": "KT 2.4",
+          "title": "How Hitler Became Chancellor, 1932–33",
+          "spreads": "Spread 6 • pp. 14–15",
           "points": [
             "The **Presidential and Reichstag elections of 1932**; reasons for **Hitler becoming Chancellor in 1933**, including the roles of **Hindenburg** and **von Papen**."
-          ]
+          ],
+          "narrative_blurb": "Following breakthroughs in the **Presidential and Reichstag elections of 1932**, parliamentary democracy collapsed under Article 48. The decisive reasons for **Hitler becoming Chancellor in 1933** centered on elite backstairs intrigue, where conservative conspirators, especially Franz **von Papen** and President Paul von **Hindenburg**, fatally gambled they could control Hitler inside a coalition cabinet."
         }
       ]
     },
     {
       "id": "key-topic-3",
+      "keyTopicNumber": 3,
       "title": "Key topic 3: Nazi control and dictatorship, 1933–39",
       "topics": [
         {
-          "title": "1 The creation of a dictatorship, 1933–34",
+          "number": "3.1",
+          "code": "KT 3.1",
+          "title": "The Creation of a Dictatorship, 1933–34",
+          "spreads": "Spread 7 • pp. 16–17",
           "points": [
             "The **Reichstag Fire**. The **Enabling Act** and the **banning of other parties and trade unions**.",
             "The **threat from Röhm and the SA**, the **Night of the Long Knives**. The **death of Hindenburg**. Hitler becomes **Führer**, the **army oath of allegiance**."
-          ]
+          ],
+          "narrative_blurb": "Hitler exploited the February 1933 **Reichstag Fire** to suspend civil liberties, passing the **Enabling Act** to enforce Gleichschaltung through the **banning of other parties and trade unions**. Eliminating internal rivalry and the **threat from Röhm and the SA** in the **Night of the Long Knives**, the **death of Hindenburg** allowed Hitler to declare himself **Führer**, sealed by the sacred **army oath of allegiance**."
         },
         {
-          "title": "2 The police state",
+          "number": "3.2",
+          "code": "KT 3.2",
+          "title": "The Police State",
+          "spreads": "Spread 8 • pp. 18–19",
           "points": [
             "The role of the **Gestapo**, the **SS** and **concentration camps**.",
             "Nazi control of the **legal system**."
-          ]
+          ],
+          "narrative_blurb": "Totalitarian terror was enforced through the ruthless apparatus of the police state, dominated by the **SS**, Heinrich Himmler, the plainclothes **Gestapo**, and early **concentration camps** like Dachau. Total Nazi control of the **legal system** abolished judicial impartiality, subordinating judges to the National Socialist League and establishing the dreaded People’s Court to eliminate political opposition."
         },
         {
-          "title": "3 Controlling and influencing attitudes",
+          "number": "3.3",
+          "code": "KT 3.3",
+          "title": "Controlling and Influencing Attitudes",
+          "spreads": "Spreads 8–9 • pp. 18–21",
           "points": [
             "**Goebbels** and the **Ministry of Propaganda**: **censorship**, Nazi **use of media, rallies and sport**, including the **Berlin Olympics (1936)**.",
             "Nazi control of **culture and the arts**, including art, architecture, literature and film.",
             "Nazi attempts to control the Catholic and Protestant Churches: the **Concordat** and the **Reich Church**."
-          ]
+          ],
+          "narrative_blurb": "Joseph **Goebbels** orchestrated total **censorship** and indoctrination via the **Ministry of Propaganda**, utilizing radio, massive Nuremberg **rallies and sport**, notably the **Berlin Olympics (1936)**. The regime enforced ideological control over **culture and the arts**, literature, and film, while subjugating religion through the 1933 Vatican **Concordat** and the Nazified Protestant **Reich Church**."
         },
         {
-          "title": "4 Opposition, resistance and conformity",
+          "number": "3.4",
+          "code": "KT 3.4",
+          "title": "Opposition, Resistance and Conformity",
+          "spreads": "Spread 9 • pp. 20–21",
           "points": [
             "The **extent of support** for the Nazi regime.",
             "**Opposition from the Churches**, including the role of **Pastor Niemöller**.",
             "**Opposition from the young**, including the **Swing Youth** and the **Edelweiss Pirates**."
-          ]
+          ],
+          "narrative_blurb": "Despite wide conformity and the broad **extent of support** won by economic recovery, brave pockets of dissent persisted. Religious resistance provoked **opposition from the Churches**, exemplified by the Confessing Church and **Pastor Niemöller**. Rebellious adolescents mounted cultural **opposition from the young**, rejecting regimented conformity through the counter-cultural **Swing Youth** and the militant **Edelweiss Pirates**."
         }
       ]
     },
     {
       "id": "key-topic-4",
+      "keyTopicNumber": 4,
       "title": "Key topic 4: Life in Nazi Germany, 1933–39",
       "topics": [
         {
-          "title": "1 Nazi policies towards women",
+          "number": "4.1",
+          "code": "KT 4.1",
+          "title": "Nazi Policies Towards Women",
+          "spreads": "Spread 10 • pp. 22–23",
           "points": [
             "Nazi **views on women and the family**.",
             "Nazi **policies towards women**, including **marriage and family, employment and appearance**."
-          ]
+          ],
+          "narrative_blurb": "Ideological dogma dictated patriarchal **views on women and the family**, promoting the ideal of Kinder, Küche, Kirche. Comprehensive **policies towards women** enforced motherhood through financial marriage loans, the Mother’s Cross, restrictions on female **employment and appearance**, and strict legal bans on birth control to reverse falling Aryan birth rates."
         },
         {
-          "title": "2 Nazi policies towards the young",
+          "number": "4.2",
+          "code": "KT 4.2",
+          "title": "Nazi Policies Towards the Young",
+          "spreads": "Spreads 10–11 • pp. 22–25",
           "points": [
             "Nazi **aims and policies towards the young**. The **Hitler Youth** and the **League of German Maidens**.",
             "Nazi **control of the young through education**, including the **curriculum and teachers**."
-          ]
+          ],
+          "narrative_blurb": "Totalitarian **aims and policies towards the young** sought total ideological capture, making membership mandatory in the **Hitler Youth** for boys and the **League of German Maidens** for girls. In schools, systematic **control of the young through education** purged Jewish staff, Nazified all **teachers**, and distorted the academic **curriculum** around racial biology, physical fitness, and militarism."
         },
         {
-          "title": "3 Employment and living standards",
+          "number": "4.3",
+          "code": "KT 4.3",
+          "title": "Employment and Living Standards",
+          "spreads": "Spread 11 • pp. 24–25",
           "points": [
             "Nazi **policies to reduce unemployment**: **labour service, autobahns, rearmament** and **invisible unemployment**.",
             "Changes in the **standard of living**, especially of German workers. The **Labour Front, Strength Through Joy, Beauty of Labour**."
-          ]
+          ],
+          "narrative_blurb": "Aggressive state **policies to reduce unemployment** mobilised compulsory National **labour service, autobahns, rearmament**, while masking millions through statistical **invisible unemployment**. Despite restricted freedoms under Robert Ley's **Labour Front**, changes in the **standard of living** offered workers subsidized leisure through **Strength Through Joy** and workplace upgrades via the **Beauty of Labour**."
         },
         {
-          "title": "4 The persecution of minorities",
+          "number": "4.4",
+          "code": "KT 4.4",
+          "title": "The Persecution of Minorities",
+          "spreads": "Spread 12 • pp. 26–27",
           "points": [
             "Nazi **racial beliefs and policies** and the treatment of minority groups: **Slavs, Roma and Sinti, homosexuals, and people with disabilities**.",
             "The **persecution of Jewish people**, including the **boycott of Jewish shops and businesses (1933)**, the **Nuremberg Laws** and **'Kristallnacht'**."
-          ]
+          ],
+          "narrative_blurb": "Fanatical **racial beliefs and policies** targeted supposed 'sub-humans', institutionalizing persecution of **Slavs, Roma and Sinti, homosexuals, and people with disabilities** through forced sterilization. Escalating **persecution of Jewish people** advanced from the **boycott of Jewish shops and businesses (1933)** to the disenfranchising **Nuremberg Laws** (1935) and the murderous pogrom of **'Kristallnacht'** in November 1938."
         }
       ]
     }

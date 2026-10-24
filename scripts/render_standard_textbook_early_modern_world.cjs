@@ -1825,8 +1825,12 @@ async function runEarlyModernWorld() {
   fs.writeFileSync(unitHtmlPath, html, 'utf8');
   console.log(`✅ Updated unit textbook.html: ${unitHtmlPath}`);
 
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: fs.existsSync(chromePath) ? chromePath : undefined,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();

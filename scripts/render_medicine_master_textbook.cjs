@@ -1,20 +1,20 @@
 /**
- * History Revision Hub — Edexcel GCSE History Paper 1: Medicine Through Time Master Textbook Engine
+ * scripts/render_medicine_master_textbook.cjs
  *
- * Compiles publisher-grade dual-column Master Textbooks for all 5 eras of Edexcel GCSE Paper 1:
- * - Medieval (c1250–c1500) — 12 Pages
- * - Renaissance (c1500–c1700) — 12 Pages
- * - 18th & 19th Century (c1700–c1900) — 12 Pages
- * - Modern Britain (c1900–present) — 12 Pages
- * - The British Sector of the Western Front (1914–1918) — 14 Pages
+ * UNIFIED PURE NARRATIVE CLASSROOM TEXTBOOK COMPILER FOR EDEXCEL GCSE MEDICINE (OPTION 11)
+ * Paper 1: Medicine Through Time in Britain, c1250–present & The British Sector of the Western Front
  *
- * Standards Enforced:
- * 1. Zero AI Fluff & Zero Jargon: 100% authentic Pearson Edexcel 1HI0/11 specification terminology.
- * 2. Strict School Anonymity: Uses platform title and generic "The History Department" with customizer.
- * 3. Base64 Image Inlining: Offline-ready, headless-proof photographic plates and sources.
- * 4. Deterministic 2-Column Grid: Guaranteed 0 horizontal overflow with .two-column-prose-grid.
- * 5. In-Memory Typographical Balancer: autoCalibrateTextbook evaluates bottom overflows dynamically.
- * 6. Automated Space Budget Audit: Strict verification of 0px overflow and optimal utilization.
+ * Conforms strictly to the Disciplinary History Classroom Textbook Standard & GCSE Master Engine:
+ * - 100% Pure narrative text (zero primary sources, zero vocab boxes, zero key figures, zero exam rubrics)
+ * - Exact 1:1 verbatim SSoT fidelity to units/edexcel_medicine/data.js narrative_blocks
+ * - 5x Era Saddle-Stitch Booklets:
+ *   * Medieval (c1250–c1500) — 12 Pages (3 folded A3 sheets)
+ *   * Renaissance (c1500–c1700) — 12 Pages (3 folded A3 sheets)
+ *   * 18th & 19th Century (c1700–c1900) — 12 Pages (3 folded A3 sheets)
+ *   * Modern Britain (c1900–present) — 12 Pages (3 folded A3 sheets)
+ *   * The Western Front (1914–1918) — 16 Pages (4 folded A3 sheets)
+ * - 100% Institutional Neutrality (strictly "The History Revision Hub", zero school names)
+ * - In-browser typography calibration engine (0px overflow, < 25px footer void, >= 95% utilization)
  *
  * Usage:
  *   node scripts/render_medicine_master_textbook.cjs medieval
@@ -28,1054 +28,605 @@
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
-const QRCode = require('qrcode');
-const { autoCalibrateTextbook } = require('./auto_calibrate_engine.cjs');
 const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 const { MEDICINE_ERAS } = require('./components/medicine_textbook_metadata.cjs');
 
-const ROOT_DIR = path.join(__dirname, '..');
-const dataPath = path.join(ROOT_DIR, 'units', 'edexcel_medicine', 'data.js');
+const ROOT_DIR = path.resolve(__dirname, '..');
 
-if (!fs.existsSync(dataPath)) {
-  console.error('Data file not found:', dataPath);
-  process.exit(1);
-}
-
-const dataContent = fs.readFileSync(dataPath, 'utf8');
-const startIndex = dataContent.indexOf('{');
-const endIndex = dataContent.lastIndexOf('}');
-const unitData = eval('(' + dataContent.substring(startIndex, endIndex + 1) + ')');
-
-/**
- * Robust Base64 Image Inliner
- */
-function getBase64Image(relPath) {
-  if (!relPath) return null;
-  const clean = relPath.replace(/^\//, '');
-  const candidates = [
-    path.join(ROOT_DIR, 'public', clean),
-    path.join(ROOT_DIR, clean),
-    path.join(ROOT_DIR, 'public', 'images', path.basename(clean)),
-    path.join(ROOT_DIR, 'units', 'edexcel_medicine', 'assets', path.basename(clean)),
-    path.join(ROOT_DIR, 'public', 'units', 'edexcel_medicine', 'assets', path.basename(clean)),
-  ];
-
-  for (const cand of candidates) {
-    if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
-      const ext = path.extname(cand).toLowerCase();
-      let mime = 'image/jpeg';
-      if (ext === '.png') mime = 'image/png';
-      else if (ext === '.webp') mime = 'image/webp';
-      else if (ext === '.svg') mime = 'image/svg+xml';
-      const buf = fs.readFileSync(cand);
-      return `data:${mime};base64,${buf.toString('base64')}`;
+// Helper to convert local image to Base64 data URI for zero-latency offline rendering
+function getBase64Image(relativePath) {
+  if (!relativePath) return '';
+  try {
+    const cleanPath = relativePath.startsWith('/') ? relativePath.slice(1) : relativePath;
+    const candidates = [
+      path.join(ROOT_DIR, 'public', cleanPath),
+      path.join(ROOT_DIR, cleanPath),
+      path.join(ROOT_DIR, 'public', 'images', path.basename(cleanPath)),
+      path.join(ROOT_DIR, 'images', path.basename(cleanPath)),
+      path.join(
+        ROOT_DIR,
+        'public',
+        'units',
+        'edexcel_medicine',
+        'assets',
+        path.basename(cleanPath),
+      ),
+      path.join(ROOT_DIR, 'units', 'edexcel_medicine', 'assets', path.basename(cleanPath)),
+    ];
+    for (const cand of candidates) {
+      if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+        const ext = path.extname(cand).toLowerCase();
+        const mime =
+          ext === '.png'
+            ? 'image/png'
+            : ext === '.jpg' || ext === '.jpeg'
+              ? 'image/jpeg'
+              : ext === '.webp'
+                ? 'image/webp'
+                : ext === '.svg'
+                  ? 'image/svg+xml'
+                  : 'image/jpeg';
+        const data = fs.readFileSync(cand).toString('base64');
+        return `data:${mime};base64,${data}`;
+      }
     }
+    return relativePath;
+  } catch (err) {
+    return relativePath;
   }
-  return null;
 }
 
-function formatText(text) {
+// Clean in-prose paragraph ref pills (e.g. <span class="para-ref">[1.1]</span>) and bracketed tags
+function cleanProse(text) {
+  if (!text) return '';
+  return text
+    .replace(/<span\s+class=["']para-ref["']>[^<]*<\/span>\s*/gi, '')
+    .replace(/<span\s+class=["']archival-meta-tag["']>[^<]*<\/span>\s*/gi, '')
+    .replace(/<span\s+class=["']para-ref-pill["']>[^<]*<\/span>\s*/gi, '')
+    .replace(/\[\d+\.\d+\]\s*/g, '')
+    .replace(/\[Key Individual:\s*([^\]]+)\]/gi, '$1')
+    .replace(/([a-zA-Z])"([a-zA-Z])/g, '$1" $2')
+    .replace(/,\s*\)/g, ')')
+    .replace(/\(\s*,\s*/g, '(')
+    .replace(/\(\s*\)/g, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+// Markdown bold and italics parser for clean prose typography
+function formatMarkdown(text) {
   if (!text) return '';
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
 }
 
-/**
- * Timeline Column Flowchart Generator for Page 1 Cover Tier 2
- */
-function renderTimelineColumns(timeline) {
-  if (!timeline || !timeline.length) return '';
-  const colCount = 3;
-  const perCol = Math.ceil(timeline.length / colCount);
-  const cols = [[], [], []];
-  timeline.forEach((item, idx) => {
-    const colIdx = Math.min(Math.floor(idx / perCol), 2);
-    cols[colIdx].push(item);
-  });
-
-  const headers = [
-    'CHRONOLOGY: PHASE 1 &bull; EARLY DEVELOPMENTS',
-    'CHRONOLOGY: PHASE 2 &bull; TURNING POINTS &amp; CRISES',
-    'CHRONOLOGY: PHASE 3 &bull; INSTITUTIONAL EVOLUTION',
-  ];
-
-  return `
-    <div style="margin-top: 6px;">
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #0f172a; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px;">
-        <span>KEY CHRONOLOGY &amp; CAUSAL TURNING POINTS</span>
-        <span style="color: #64748b; font-size: 6.2pt; font-weight: 600;">PEARSON EDEXCEL SPECIFICATION TIMELINE</span>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-        ${cols
-          .map(
-            (col, cIdx) => `
-          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 2.5px solid #0f172a; border-radius: 3px; padding: 5px 7px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #0f172a; text-transform: uppercase; margin-bottom: 3px; letter-spacing: 0.3px;">
-              ${headers[cIdx]}
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 2.5px; flex: 1;">
-              ${col
-                .map(
-                  (item, iIdx) => `
-                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 2px; padding: 2.5px 5px;">
-                  <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
-                    <span style="background: #1e3a8a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; padding: 1px 3.5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
-                      ${item.year}
-                    </span>
-                  </div>
-                  <div style="font-family: 'Inter', sans-serif; font-size: 6.3pt; color: #334155; line-height: 1.3;">
-                    ${item.event}
-                  </div>
-                </div>
-                ${iIdx < col.length - 1 ? `<div style="text-align: center; color: #94a3b8; font-size: 6pt; line-height: 1; margin: 1px 0;">&darr;</div>` : ''}
-              `,
-                )
-                .join('')}
-            </div>
-          </div>
-        `,
-          )
-          .join('')}
-      </div>
-    </div>
-  `;
+// Clean block section titles (removes "Act 1: ", etc.)
+function cleanBlockTitle(title) {
+  if (!title) return '';
+  return title
+    .replace(/^Act\s+\d+:\s*/i, '')
+    .replace(/^Block\s+\d+:\s*/i, '')
+    .trim();
 }
 
-/**
- * Authentic contemporary primary text excerpts for lessons needing a balanced Verso Col 2
- * Meticulously curated across all 5 eras of Edexcel GCSE Paper 1 (1HI0/11)
- */
-const LESSON_FALLBACK_SOURCES = {
-  // Era 1: Medieval (c1250–c1500)
-  lesson_1_1: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Philosophical Treatise &amp; Heresy Charge',
-    date: '1267',
-    title: 'Empirical Observation vs Ecclesiastical Dogma',
-    body: 'The strongest argument proves nothing so long as the conclusions are not verified by experience of an external kind. If we wish to know the truth of things, we must examine natural objects with our own senses, not bow down to ancient pagan authors or the decrees of schoolmen.',
-    footer: 'Roger Bacon &bull; Opus Majus (Oxford &amp; Paris, 1267)',
-    year: '1267',
-    hingeQ:
-      'Why did Bacon’s insistence on experiential testing lead Church authorities to imprison him for suspect novelties in 1277?',
-  },
-  lesson_1_2: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Classical Medical Treatise',
-    date: 'c.170 AD',
-    title: 'The Law of Opposites &amp; Humoural Pathophysiology',
-    body: 'All diseases are caused by an excess or defect of the four elemental qualities—heat, cold, dryness, and moisture. If a disease is hot and dry, such as a burning pleurisy, you must administer remedies that are cold and moist to restore the body to its natural equilibrium.',
-    footer: 'Claudius Galen &bull; De Temperamentis (Rome, c.170 AD)',
-    year: 'c.170 AD',
-    hingeQ:
-      'How did Galen’s Theory of Opposites give medieval physicians a rational clinical framework, even though their physiological premise was completely mistaken?',
-  },
-  lesson_1_3: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Monastic Medical Regimen',
-    date: '13th Century',
-    title: 'Monastic Phlebotomy &amp; The Regimen of Health',
-    body: 'Bleeding clears the mind, cleanses the stomach, warms the marrow, purges the bowels, and produces a long life. Let no brother be bled during the dog days of July or August, nor under an ill-aspected moon, lest the blood be drawn backward into the heart.',
-    footer: 'Regimen Sanitatis Salernitanum &bull; Medieval Monastic Health Code',
-    year: 'c.1250',
-    hingeQ:
-      'Why was bloodletting regarded as essential preventive maintenance in medieval monasteries rather than merely a desperate cure?',
-  },
-  lesson_1_4: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Hospital Foundation Charter',
-    date: '1123',
-    title: 'Foundation Charter of St Bartholomew’s Hospital',
-    body: 'We have founded this hospital for the reception of poor sick persons, that they may be refreshed with food and drink, cheered by the ministry of the brethren, and commended to the mercy of Almighty God, till they be restored to health or gathered unto their fathers in peace.',
-    footer:
-      'Rahere &bull; Foundation Charter of St Bartholomew’s Hospital, Smithfield (London, 1123)',
-    year: '1123',
-    hingeQ:
-      'How does this charter prove that medieval English hospitals were spiritual hospices for palliative care rather than places of surgical or medical cure?',
-  },
-  lesson_1_5: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Official Medical Faculty Report',
-    date: 'October 1348',
-    title: 'The Great Planetary Conjunction &amp; Miasma',
-    body: 'We say that the distant and first cause of this pestilence was the conjunction of the three upper planets—Saturn, Jupiter, and Mars—in the fourteenth degree of Aquarius on 20 March 1345. This conjunction attracted from the earth poisonous vapors which corrupted the surrounding air.',
-    footer: 'Medical Faculty of Paris &bull; Compendium de Epidemia (Paris, October 1348)',
-    year: '1348',
-    hingeQ:
-      'Why did 14th-century university physicians combine astrology with miasma theory to explain the sudden continental devastation of the Black Death?',
-  },
+// Clean lesson titles (removes "KT1.1: ", "L21: ", etc.)
+function cleanLessonTitle(title) {
+  if (!title) return '';
+  return title
+    .replace(/^KT\d+\.\d+:\s*/i, '')
+    .replace(/^L\d+:\s*/i, '')
+    .replace(/^Lesson\s+\d+:\s*/i, '')
+    .trim();
+}
 
-  // Era 2: Renaissance (c1500–c1700)
-  lesson_2_4: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Contemporary Medical Treatise',
-    date: '1628',
-    title: 'Experimental Method &amp; Empirical Demonstration',
-    body: 'I did not learn anatomy from the books of others, but by laying open veins and arteries with my own hands. We must discover truth not from ancient philosophical authority, but by the testimony of repeatable experiments upon living nature.',
-    footer: 'William Harvey &bull; De Motu Cordis (Frankfurt, 1628)',
-    year: '1628',
-    hingeQ:
-      "Why did Harvey's insistence on mathematical and experimental demonstration mark the birth of modern experimental physiology, even though it offered no immediate clinical cures?",
-  },
-  lesson_2_5: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Official Municipal Plague Orders',
-    date: '1665',
-    title: 'Orders Conceived and Approved for the Plague',
-    body: 'Every visited house be marked with a Red Cross of a foot long in the middle of the door, evident to be seen, with these usual words: Lord have Mercy upon us; and that such Cross remain until lawful opening of the said house, watched day and night by sworn warders.',
-    footer: 'Lord Mayor of London &bull; Orders Concerning the Plague (London, June 1665)',
-    year: '1665',
-    hingeQ:
-      'How did compulsory house quarantine in 1665 reflect greater municipal state intervention compared to the response during the 1348 Black Death?',
-  },
+// Load Medicine Unit Data from units/edexcel_medicine/data.js
+function loadMedicineData() {
+  const dataPath = path.join(ROOT_DIR, 'units', 'edexcel_medicine', 'data.js');
+  if (!fs.existsSync(dataPath)) {
+    console.error('Data file not found:', dataPath);
+    process.exit(1);
+  }
+  const content = fs.readFileSync(dataPath, 'utf8');
+  const startIndex = content.indexOf('{');
+  const endIndex = content.lastIndexOf('}');
+  return eval('(' + content.substring(startIndex, endIndex + 1) + ')');
+}
 
-  // Era 3: 18th & 19th Century (c1700–c1900)
-  lesson_3_1: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Scientific Academy Address',
-    date: '1861',
-    title: 'Refutation of Spontaneous Generation',
-    body: 'No, there is no circumstance known today which permits us to affirm that microscopic beings have come into the world without germ parents resembling them. Those who pretend it is so are victims of illusions, of ill-conducted experiments, tainted with errors they did not know how to perceive.',
-    footer: 'Louis Pasteur &bull; Mémoire sur les corpuscules organisés (Paris, 1861)',
-    year: '1861',
-    hingeQ:
-      'How did Pasteur’s swan-neck flask experiments finally destroy the centuries-old belief in spontaneous generation and lay the foundation for Germ Theory?',
+// Narrative Overview Synopses for each Era Cover
+const ERA_SYNOPSES = {
+  medieval: {
+    period: 'c1250–c1500',
+    caption:
+      'The Church Monopoly & Galenic Orthodoxy (c1250–c1500): Monks in monastic scriptoria copying theological treatises and Galenic manuscripts by candlelight, British Library MS Sloane.',
+    p1: 'In medieval Britain, illness was understood through Catholic theological dogma and ancient classical authority. The Church held an institutional monopoly over learning, scriptoria, and universities, declaring Claudius Galen infallible. Disease was interpreted as divine retribution for sin, celestial alignment, or humoural imbalance, while human dissection remained strictly prohibited and questioning doctrine was condemned as heresy.',
+    p2: 'When the catastrophic Black Death struck in 1348, killing over a third of the population, a society bound to the Four Humours and miasma theory stood powerless. From flagellants in city streets to herbal remedies, prayer, and bloodletting, this volume charts an age where religious devotion and Galenic tradition defined the human struggle against disease.',
   },
-  lesson_3_2: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Clinical Case Treatise',
-    date: '1798',
-    title: 'Inoculation with the Cow-Pox',
-    body: 'The cow-pox protects the human constitution from the contagion of smallpox. What renders the cow-pox so extremely singular is that the person who has thus been affected is forever after secure from the infection of the smallpox; neither exposure to variolous effluvia nor the insertion of variolous matter will produce it.',
-    footer:
-      'Edward Jenner &bull; An Inquiry into the Causes and Effects of the Variolae Vaccinae (London, 1798)',
-    year: '1798',
-    hingeQ:
-      'Why did Jenner face intense opposition from the Royal Society and the Anti-Vaccination League despite his successful clinical trial on James Phipps?',
+  renaissance: {
+    period: 'c1500–c1700',
+    caption:
+      'Vesalius Dissecting the Human Arm (1543): Andreas Vesalius demonstrating anatomical structures directly from the human cadaver, De Humani Corporis Fabrica, Basel.',
+    p1: "The collapse of feudalism, the printing press, and Renaissance humanism dismantled the Church's monopoly over medical learning. Scholars began questioning ancient texts, insisting that knowledge must rest on direct anatomical dissection and observable evidence. In 1543, Andreas Vesalius published De Humani Corporis Fabrica, proving Galen had committed over two hundred anatomical errors.",
+    p2: 'From William Harvey proving the mechanical circulation of blood in 1628 to Thomas Sydenham championing clinical bedside observation, the Scientific Revolution transformed medicine into an empirical science. Yet as the 1665 Great Plague demonstrated, revolutionary breakthroughs in anatomical understanding could not immediately overcome the ancient challenge of discovering effective medical cures.',
   },
-  lesson_3_3: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Eyewitness Newspaper Dispatch',
-    date: '1854',
-    title: 'Eyewitness Dispatches on Scutari Hospital (1854)',
-    body: 'The commonest accessories of a hospital are wanting; there is not the least attention paid to decency or cleanliness; the stench is sickening; the air is tainted with the breath of hundreds of dying men; and here the brave defenders of England are left to rot in their own gore.',
-    footer: 'William Howard Russell &bull; The Times (London, October 1854)',
-    year: '1854',
-    hingeQ:
-      'How did sensational eyewitness reporting by The Times compel the British government to authorize female civilian nursing at Scutari?',
+  '18th_19th': {
+    period: 'c1700–c1900',
+    caption:
+      'Edward Jenner Vaccinating James Phipps (1796): Jenner inoculating the boy with cowpox lymph from milkmaid Sarah Nelmes, Wellcome Collection, London.',
+    p1: 'The Industrial Revolution created packed, unsewered urban slums where cholera, typhus, and tuberculosis raged. In 1796, Edward Jenner developed the first smallpox vaccine. In 1861, Louis Pasteur published Germ Theory, proving microscopic pathogens caused decay—a breakthrough weaponised by Robert Koch to isolate the specific bacterial microbes of anthrax, tuberculosis, and cholera.',
+    p2: 'Simultaneously, surgical and hospital care underwent a revolution. James Simpson introduced chloroform anaesthesia in 1847, while Joseph Lister conquered sepsis with carbolic acid spray in 1865. Pioneered by Florence Nightingale, John Snow, and the compulsory 1875 Public Health Act, Victorian Britain transformed hospitals and forced the state to abandon laissez-faire fatalism.',
   },
-  lesson_3_4: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Landmark Surgical Paper',
-    date: '1867',
-    title: 'On the Antiseptic Principle in Surgery',
-    body: 'In the course of an extended investigation into the nature of inflammation, the author was led to conclude that the causes of wound decomposition were the living germs of microscopic organisms, suspended in the atmosphere. By destroying these particles with carbolic acid, compound fractures and wounds heal without suppuration or hospital gangrene.',
-    footer: 'Joseph Lister &bull; The Lancet (London, March 1867)',
-    year: '1867',
-    hingeQ:
-      'How did Lister’s application of Pasteur’s Germ Theory to wound dressing bring an end to the "Black Period of Surgery"?',
+  modern: {
+    period: 'c1900–present',
+    caption:
+      "Alexander Fleming in His Laboratory (1928): Fleming examining culture plates of penicillium notatum mould at St Mary's Hospital, London, Imperial War Museum.",
+    p1: 'The twentieth century witnessed an unprecedented acceleration of clinical capability. In 1928, Alexander Fleming discovered penicillin, transformed into mass-produced antibiotics by Florey and Chain during the Second World War. With the 1948 launch of the National Health Service by Aneurin Bevan, medical treatment in Britain became a universal human right, free at the point of delivery.',
+    p2: 'From Crick and Watson unravelling the double helix of DNA in 1953 to robotic surgery, organ transplants, and public health drives combating smoking and cancer, medicine advanced from fighting microbes to mastering molecular genetics. This volume traces how state welfare and high-technology science radically extended modern life expectancy.',
   },
-
-  // Era 4: Modern (c1900–present)
-  lesson_4_1: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Scientific Journal Announcement',
-    date: 'April 1953',
-    title: 'Molecular Structure of Nucleic Acids (DNA)',
-    body: 'We wish to suggest a structure for the salt of deoxyribose nucleic acid (D.N.A.). This structure has two helical chains each coiled round the same axis. It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material.',
-    footer: 'J. D. Watson &amp; F. H. C. Crick &bull; Nature, Vol. 171 (Cambridge, 25 April 1953)',
-    year: '1953',
-    hingeQ:
-      'Why was understanding the double-helix copying mechanism essential for later genetic breakthroughs like the Human Genome Project and targeted cancer therapies?',
-  },
-  lesson_4_2: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Physico-Medical Society Proceedings',
-    date: 'December 1895',
-    title: 'On a New Kind of Rays (X-Strahlen)',
-    body: 'If the discharge of a fairly large induction coil be made to pass through a Hittorf vacuum-tube, and if one covers the tube with a fairly close mantle of thin black cardboard, one observes in a completely darkened room that paper coated with barium platinocyanide lights up with brilliant fluorescence, even at a distance of two meters.',
-    footer: 'Wilhelm Conrad Röntgen &bull; Würzburg Physico-Medical Society (December 1895)',
-    year: '1895',
-    hingeQ:
-      'How did Röntgen’s discovery of non-invasive radiographic imaging revolutionize military and civilian surgery within months of publication?',
-  },
-  lesson_4_3: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Government White Paper &amp; Speech',
-    date: '1946',
-    title: 'Establishing the National Health Service',
-    body: 'No society can legitimately call itself civilised if a sick person is denied medical aid because of lack of means. The National Health Service will provide every citizen with medical, dental, nursing, and hospital services completely free of charge at the time of use, financed out of general taxation.',
-    footer: 'Aneurin Bevan &bull; Minister of Health, House of Commons Debate (London, April 1946)',
-    year: '1946',
-    hingeQ:
-      'Why did the British Medical Association (BMA) fiercely oppose Bevan’s NHS plans between 1946 and 1948, and how did Bevan overcome their resistance?',
-  },
-  lesson_4_4: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Laboratory Journal Report',
-    date: '1929',
-    title: 'On the Antibacterial Action of Penicillium',
-    body: 'While working with staphylococcus variants a number of culture plates were set aside on the laboratory bench. On one plate an accidental mould had developed as a contaminant. For a considerable distance around the mould the staphylococcus colonies were completely dissolved, undergoing active lysis.',
-    footer:
-      'Alexander Fleming &bull; British Journal of Experimental Pathology, Vol. 10 (London, May 1929)',
-    year: '1929',
-    hingeQ:
-      'Why was Fleming unable to turn his 1928 mould discovery into a mass-produced clinical medicine, requiring Florey and Chain’s intervention in 1939?',
-  },
-  lesson_4_5: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Landmark Epidemiological Study',
-    date: 'September 1950',
-    title: 'Smoking and Carcinoma of the Lung',
-    body: 'The risk of developing lung cancer increases in proportion to the amount of tobacco smoked. It may be 50 times as great among those who smoked 25 or more cigarettes daily as among non-smokers. We conclude that cigarette smoking is a factor, and an important factor, in the production of carcinoma of the lung.',
-    footer: 'Richard Doll &amp; Austin Bradford Hill &bull; British Medical Journal (London, 1950)',
-    year: '1950',
-    hingeQ:
-      'How did this statistical study trigger a paradigm shift in 20th-century government public health policy, moving from sewer infrastructure to lifestyle regulation?',
-  },
-
-  // Era 5: Western Front (1914–1918)
-  lesson_5_1: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Medical Officer War Diary',
-    date: '1915',
-    title: 'Trench Topography &amp; Waterlogged Flanders',
-    body: 'The water in the communication trenches is waist-deep in places, freezing cold and yellow with clay slurry. Men standing on the firestep for eight hours at a stretch find their boots filling with icy water. To evacuate a single stretcher case along these collapsed traverses requires six bearers over three agonizing hours.',
-    footer:
-      'Captain J. C. Dunn &bull; RAMC Medical Officer, 2nd Battalion Royal Welch Fusiliers (Flanders, 1915)',
-    year: '1915',
-    hingeQ:
-      'How did the low water table and clay subsoil of the Ypres Salient multiply the logistical difficulties of medical evacuation?',
-  },
-  lesson_5_2: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'RAMC Routine Orders',
-    date: 'December 1915',
-    title: 'Compulsory Prevention of Trench Foot',
-    body: 'Company commanders will ensure that every man rubs his feet daily with whale oil under the direct supervision of an officer or NCO, and changes into dry socks. A pair of dry socks must be carried in every man’s pocket. Trench foot is an avoidable casualty; officers will be held personally responsible for outbreaks.',
-    footer:
-      'RAMC General Headquarters &bull; Routine Orders, 2nd Army Sector (France, December 1915)',
-    year: '1915',
-    hingeQ:
-      'Why did the British Army treat Trench Foot as a disciplinary and command failure rather than an unavoidable biological disease?',
-  },
-  lesson_5_3: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Consulting Surgeon Clinical Address',
-    date: '1916',
-    title: 'Anaerobic Infections &amp; Soil Ecology',
-    body: 'The soil of Flanders and the Somme has been intensely manured for agricultural generations. The jagged fragments of explosive high-velocity artillery shells carry particles of this manure-soaked earth, together with soiled woolen uniform cloth, deep into lacerated muscle, creating ideal anaerobic conditions for gas gangrene and tetanus.',
-    footer:
-      'Sir Anthony Bowlby &bull; Consulting Surgeon to the British Armies in France, BMJ (1916)',
-    year: '1916',
-    hingeQ:
-      'Why were battlefield wounds on the Western Front vastly more susceptible to gas gangrene than wounds sustained in previous colonial conflicts?',
-  },
-  lesson_5_4: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Field Ambulance Operation Report',
-    date: 'August 1917',
-    title: 'The Evacuation Relay at Passchendaele',
-    body: 'The mud is beyond description; wooden duckboards have been blasted to splinters by continuous barrage. Four stretcher bearers carry a wounded man fifty yards and sink to their thighs; relief squads must be stationed every hundred yards along the track. It took nine hours yesterday to transport abdominal cases from the Regimental Aid Post to the Advanced Dressing Station.',
-    footer: 'Officer Commanding 55th Field Ambulance &bull; Passchendaele Sector (August 1917)',
-    year: '1917',
-    hingeQ:
-      'Why was speed of evacuation the single most critical factor in determining whether a casualty survived surgery for abdominal or chest wounds?',
-  },
-  lesson_5_5: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Military Orthopaedic Manual',
-    date: '1916',
-    title: 'The Thomas Splint &amp; Femur Fracture Shock',
-    body: 'Prior to the introduction of the Thomas Splint, compound fractures of the thigh bone resulted in an eighty percent mortality rate, primarily from surgical shock and hemorrhage caused by loose bone ends lacerating femoral blood vessels during transport over rough roads. By fixing the limb in rigid extension at the aid post, mortality has plummeted to under twenty percent.',
-    footer: 'Sir Robert Jones &bull; Notes on Military Orthopaedics (London &amp; Rouen, 1916)',
-    year: '1916',
-    hingeQ:
-      'How did a simple mechanical apparatus like the Thomas Splint achieve one of the greatest reductions in battlefield mortality on the Western Front?',
-  },
-  lesson_5_6: {
-    badge: 'PRIMARY EXCERPT',
-    type: 'Medical Research Committee Report',
-    date: 'November 1917',
-    title: 'Preserved Citrated Blood at the Battle of Cambrai',
-    body: 'We collected blood from group O universal donors into sterile glass bottles containing sodium citrate and dextrose, and stored them in ice chests behind the lines. During the Cambrai offensive, twenty-two severely exsanguinated casualties who were pulseless and considered moribund received transfusions of blood up to twenty-six days old; twenty recovered completely.',
-    footer:
-      'Captain Oswald Hope Robertson &bull; RAMC &amp; US Army Medical Corps (Cambrai, November 1917)',
-    year: '1917',
-    hingeQ:
-      'How did Robertson’s portable blood depot at Cambrai overcome the fatal limitations of direct donor-to-patient artery-to-vein transfusion in forward field hospitals?',
+  western_front: {
+    period: '1914–1918',
+    caption:
+      'Stretcher Bearers in the Mud of Passchendaele (1917): RAMC stretcher bearers carrying a wounded soldier through liquid mud along duckboard tracks, Imperial War Museum Q 5935.',
+    p1: 'The industrial violence of the First World War turned the Western Front into an unprecedented trauma laboratory. In the waterlogged, manured clay of Flanders and the Somme, artillery shrapnel and machine-gun fire caused horrific lacerations contaminated with gas gangrene and tetanus. The RAMC and FANY faced the colossal task of treating casualties under continuous shellfire.',
+    p2: "British military medicine responded with urgent innovation: the rapid evacuation chain from Regimental Aid Posts to Casualty Clearing Stations, the life-saving Thomas Splint, mobile X-rays, preserved blood transfusions at Cambrai, and Harold Gillies's pioneering plastic surgery. This volume explores how the trauma of trench warfare catalyzed modern emergency surgery.",
   },
 };
 
-/**
- * Generate publisher-grade HTML for an era
- */
-async function buildPublisherTextbookHtml(eraKey) {
-  const era = MEDICINE_ERAS[eraKey];
-  if (!era) throw new Error(`Unknown medicine era: ${eraKey}`);
+// Generates HTML for an era textbook
+function generateEraHtml(eraKey, unitData) {
+  const eraMeta = MEDICINE_ERAS[eraKey];
+  if (!eraMeta) throw new Error(`Unknown era key: ${eraKey}`);
 
-  const lessons = unitData.lessons.slice(era.lessonStart, era.lessonEnd);
-  const coverBase64 = getBase64Image(era.coverImage);
+  const synopsisData = ERA_SYNOPSES[eraKey];
+  const lessons = unitData.lessons.slice(
+    eraMeta.lessonStart,
+    eraMeta.lessonStart + eraMeta.lessonCount,
+  );
+  const totalPages = eraKey === 'western_front' ? 16 : 12;
 
-  // Generate mobile quiz QR Code
-  const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&quiz=true&lesson=${era.lessonStart + 1}`;
-  const qrDataUrl = await QRCode.toDataURL(quizUrl, {
-    width: 140,
-    margin: 1,
-    color: { dark: '#0f172a', light: '#ffffff' },
-  });
+  const heroImageUri = getBase64Image(eraMeta.coverImage);
 
-  let pagesHtml = '';
-
-  // --------------------------------------------------------------------------
-  // PAGE 1: MASTER FRONT COVER (Two-Tier Architecture)
-  // --------------------------------------------------------------------------
-  pagesHtml += `
-  <div class="textbook-page" style="justify-content: space-between; height: 100%;">
-    <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin-bottom: 4px;">
-      <div>
-        <div style="border-bottom: 2px solid #0f172a; padding-bottom: 5px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end; font-family: 'Inter', sans-serif;">
-          <span style="font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: #1e3a8a;">
-            Pearson Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)
-          </span>
-          <span style="font-size: 7.0pt; font-weight: 700; color: #b45309; text-transform: uppercase; letter-spacing: 0.5px;">
-            ${era.specCode}
-          </span>
-        </div>
-
-        <div style="text-align: center; margin-bottom: 5px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 2px;">
-            Master Course Textbook &bull; Thematic Study
-          </div>
-          <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 19pt; font-weight: 900; color: #0f172a; line-height: 1.15; margin: 0 0 2px 0; letter-spacing: -0.2px;">
-            ${era.coverTitle}
-          </h1>
-          <div style="font-family: 'Newsreader', Georgia, serif; font-size: 9.2pt; font-style: italic; color: #334155; margin-bottom: 5px;">
-            ${era.coverSubtitle}
-          </div>
-        </div>
-
-        <!-- Commercial School Customizer Banner -->
-        <div style="background: #1e3a8a; color: #ffffff; padding: 3.5px 10px; border-radius: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 6px;" data-department-name="The History Department">
-          <span class="school-brand-target">The History Department</span>
-          <span style="color: #93c5fd; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Masterclass Series &bull; ${era.period}</span>
-        </div>
-
-        <!-- Photographic Plate -->
-        <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px; background: #fafaf9; margin-bottom: 6px; text-align: center;">
-          ${
-            coverBase64
-              ? `<img src="${coverBase64}" style="width: 100%; height: 68mm; object-fit: contain; background: #fafaf9; border-radius: 3px; display: block;" alt="${era.title}">`
-              : ''
-          }
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #64748b; margin-top: 2.5px; font-weight: 600;">
-            Archival Photographic Plate &bull; Contemporary Primary Record &bull; ${era.title}
-          </div>
-        </div>
-
-        <!-- Tier 1: Official Specification Matrix -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 4px;">
-          ${era.specMatrix
-            .map(
-              (col) => `
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-top: 2.5px solid #1e3a8a; border-radius: 3px; padding: 4.5px 6.5px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.7pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase; margin-bottom: 2.5px; letter-spacing: 0.3px;">
-                ${col.header}
-              </div>
-              <ul style="margin: 0; padding-left: 11px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.32; color: #334155;">
-                ${col.items.map((it) => `<li style="margin-bottom: 1.5px;">${it}</li>`).join('')}
-              </ul>
-            </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Tier 2: Chronological Sequence & Causal Flowchart -->
-      ${renderTimelineColumns(era.timeline)}
-    </div>
-
-    <!-- Front Cover Footer -->
-    <div style="border-top: 1px solid #cbd5e1; padding-top: 3.5px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #64748b; font-weight: 600;">
-      <span>The History Revision Hub &bull; GCSE Master Textbook Series</span>
-      <span>Page 1 of ${era.pageCount}</span>
-    </div>
-  </div>
-  `;
-
-  // --------------------------------------------------------------------------
-  // LESSON SPREADS (VERSO + RECTO)
-  // --------------------------------------------------------------------------
+  // Build Enquiry Spreads HTML
+  let spreadsHtml = '';
   lessons.forEach((lesson, lIdx) => {
-    const globalLessonNum = era.lessonStart + lIdx + 1;
-    const versoPageNum = lIdx * 2 + 2;
-    const rectoPageNum = lIdx * 2 + 3;
+    const globalLessonNum = eraMeta.lessonStart + lIdx + 1;
+    const isWf = eraKey === 'western_front';
+    const versoPageNum = isWf ? lIdx * 2 + 3 : lIdx * 2 + 2;
+    const rectoPageNum = isWf ? lIdx * 2 + 4 : lIdx * 2 + 3;
 
+    const fullTitle = cleanLessonTitle(lesson.title);
+    const shortTitle = fullTitle.split('(')[0].split(':')[0].trim();
     const blocks = lesson.narrative_blocks || [];
-    const block1 = blocks[0] || {};
-    const block2 = blocks[1] || {};
-    const block3 = blocks[2] || {};
-    const block4 = blocks[3] || {};
 
-    // Gather distinct sources for the lesson by unique title
-    const distinctSources = [];
-    (lesson.sources || []).forEach((s) => {
-      if (s && s.title && !distinctSources.some((x) => x.title === s.title)) {
-        distinctSources.push(s);
-      }
-    });
-    blocks.forEach((b) => {
-      if (b.source && b.source.title && !distinctSources.some((x) => x.title === b.source.title)) {
-        distinctSources.push(b.source);
-      }
-    });
-
-    // Deterministic Canonical Source Allocation (Zero Duplication Standard):
-    // Verso: srcA in Col 1, srcB in Col 2
-    // Recto: srcC in Col 1
-    // - When >= 3 distinct sources: srcA = #0, srcB = #1, srcC = #2
-    // - When 2 distinct sources: srcA = #0 (Visual Plate 1), srcB = null (triggers renderFallbackSourceB() for primary excerpt), srcC = #1 (Visual Plate 2)
-    // - When 1 distinct source: srcA = #0, srcB = null (fallback), srcC = null (archival dispatch)
-    const srcA = distinctSources[0] || null;
-    let srcB = null;
-    let srcC = null;
-
-    if (distinctSources.length >= 3) {
-      srcB = distinctSources[1];
-      srcC = distinctSources[2];
-    } else if (distinctSources.length === 2) {
-      srcB = null; // Triggers authentic contemporary primary text excerpt on Verso Col 2
-      srcC = distinctSources[1]; // Passes second distinct source cleanly to Recto Col 1
-    } else if (distinctSources.length === 1) {
-      srcB = null;
-      srcC = null;
-    }
-
-    // Fallback Source B for lessons needing an authentic contemporary primary text excerpt
-    const renderFallbackSourceB = () => {
-      const custom = LESSON_FALLBACK_SOURCES[lesson.id] || LESSON_FALLBACK_SOURCES['lesson_1_1'];
-      return `
-      <div class="archival-source-box">
-        <div class="archival-header">
-          <div class="source-identity">
-            <span class="source-badge">${custom.badge}</span>
-            <span class="source-type">${custom.type}</span>
-          </div>
-          <span class="source-date-micro">${custom.date}</span>
-        </div>
-        <div class="archival-title">${custom.title}</div>
-        <div class="archival-body">
-          &ldquo;${custom.body}&rdquo;
-        </div>
-        <div class="archival-footer">
-          <span>${custom.footer}</span>
-          <span>${custom.year || custom.date}</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e3a8a; background: #eff6ff; padding: 2.5px 5px; border-radius: 2px; margin-top: 3px; border-left: 2px solid #1e3a8a;">
-          <strong>Hinge Question:</strong> <em>${custom.hingeQ}</em>
-        </div>
-      </div>
-    `;
+    // Concept spotlight for Recto banner
+    const cs = (eraMeta.conceptSpotlights && eraMeta.conceptSpotlights[lIdx]) || {
+      title: 'Historical Causation & Decisive Breakthrough',
+      takeaway: 'Key Causation: Fundamental transformation in clinical practice and understanding.',
     };
+    const cleanTakeaway = cs.takeaway.replace(
+      /^(Key Causation|Exam Distinction|Key Evidence|Core Specification Anchor|Historiographical Reality|Key Impact|Exam Anchor|Key Insight|Core Pedagogical Point|Specification Anchor|Key Scientific Shift|Historiographical Factor|Modern Public Health Principle|Historic Environment Anchor|Core Surgical Innovation):\s*/i,
+      '',
+    );
 
-    // Key Figure & Concept Spotlight
-    const kf = era.keyFigures[lIdx] || era.keyFigures[0];
-    const cs = era.conceptSpotlights[lIdx] || era.conceptSpotlights[0];
-
-    // Helper for rendering Archival Source Box
-    const renderSourceBox = (src, label, fallbackType = 'Archival Record') => {
-      if (!src) return '';
-      const title = src.title || `${label}: Historical Evidence`;
-      const type = src.type || fallbackType;
-      const imgSrc = src.image || src.img || src.src || src.url;
-      const base64 = imgSrc ? getBase64Image(imgSrc) : null;
-      const text = src.text || src.caption || '';
-      const prov = src.provenance || 'Official Primary Record';
-      const hinge = src.hinge_question || src.hingeQuestion || '';
-
-      return `
-        <div class="archival-source-box">
-          <div class="archival-header">
-            <div class="source-identity">
-              <span class="source-badge">${label}</span>
-              <span class="source-type">${type}</span>
-            </div>
-            <span class="source-date-micro">${src.date || era.period}</span>
-          </div>
-          <div class="archival-title">${title.replace(/^Source\s+[A-Z]:\s*/i, '')}</div>
-          ${base64 ? `<img src="${base64}" class="archival-image" alt="${title}">` : ''}
-          ${text ? `<div class="archival-body">&ldquo;${text}&rdquo;</div>` : ''}
-          <div class="archival-footer">
-            <span><strong>Provenance:</strong> ${prov}</span>
-          </div>
-          ${
-            hinge
-              ? `<div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e3a8a; background: #eff6ff; padding: 2.5px 5px; border-radius: 2px; margin-top: 3px; border-left: 2px solid #1e3a8a;"><strong>Hinge Question:</strong> <em>${hinge}</em></div>`
-              : ''
-          }
-        </div>
-      `;
-    };
-
-    // Helper for rendering narrative paragraphs from a block
-    const renderBlockParagraphs = (block, defaultAct) => {
-      if (!block || (!block.text && !block.paragraphs)) return '';
-      const rawText =
-        block.text || (Array.isArray(block.paragraphs) ? block.paragraphs.join('\n\n') : '');
-      const parts = String(rawText)
-        .split(/\n\s*\n/)
-        .filter((p) => p.trim());
+    // Format paragraphs
+    const formatBlockParas = (block, defaultAct) => {
+      if (!block || !block.text) return '';
+      const parts = block.text.split(/<br\s*\/?>\s*<br\s*\/?>|\n\s*\n/).filter((p) => p.trim());
       return parts
         .map((p) => {
-          let clean = p.trim();
-          // Ensure [Act.Para] pill formatting
-          clean = clean.replace(
-            /<span class="para-ref">\[(\d+\.\d+)\]<\/span>/g,
-            '<span class="para-ref-pill">[$1]</span>',
-          );
-          if (!clean.includes('para-ref-pill') && !clean.includes('[')) {
-            clean = `<span class="para-ref-pill">[${defaultAct}.1]</span> ${clean}`;
-          }
-          return `<div class="numbered-para">${formatText(clean)}</div>`;
+          const cleaned = cleanProse(p);
+          return `<p class="prose-p">${formatMarkdown(cleaned)}</p>`;
         })
         .join('');
     };
 
-    // Vocabulary for Verso Bottom (Robust for {q, a}, {front, back}, {term, def})
-    const flashcards = lesson.flashcards || [];
-    const getVocabItem = (fc, defaultQ, defaultA) => {
-      if (!fc) return { q: defaultQ, a: defaultA };
-      const q = fc.q || fc.front || fc.term || fc.question || defaultQ;
-      const a = fc.a || fc.back || fc.definition || fc.answer || defaultA;
-      return { q: String(q), a: String(a) };
-    };
+    // Verso: Blocks 0 & 1 (Acts 1 & 2)
+    const block1 = blocks[0] || {};
+    const block2 = blocks[1] || {};
 
-    const vocab1 = getVocabItem(
-      flashcards[0],
-      'Core Terminology',
-      'Fundamental historical concept.',
-    );
-    const vocab2 = getVocabItem(flashcards[1], 'Key Mechanism', 'Causal explanation for change.');
-    const vocab3 = getVocabItem(
-      flashcards[2],
-      'Specification Focus',
-      'Essential syllabus terminology.',
-    );
+    // Recto: Blocks 2, 3, 4 (Acts 3, 4, 5)
+    const block3 = blocks[2] || {};
+    const block4 = blocks[3] || {};
+    const block5 = blocks[4] || {};
 
-    const cleanVocabQ = (q) =>
-      String(q || '')
-        .replace(/^What was\s*/i, '')
-        .replace(/^What were\s*/i, '')
-        .replace(/^What is\s*/i, '')
-        .replace(/^What are\s*/i, '')
-        .replace(/^Why was\s*/i, '')
-        .replace(/^Why did\s*/i, '')
-        .replace(/^Explain the\s*/i, '')
-        .replace(/^Who was\s*/i, '')
-        .replace(/^Who were\s*/i, '')
-        .replace(/^Who produced\s*/i, '')
-        .replace(/^Who invented\s*/i, '')
-        .replace(/^Who proved\s*/i, '')
-        .replace(/^When and where did\s*/i, '')
-        .replace(/^How did\s*/i, '')
-        .replace(/^How was\s*/i, '')
-        .replace(/\?$/, '')
-        .trim();
+    // ----------------------------------------------------
+    // VERSO PAGE (PART I)
+    // ----------------------------------------------------
+    spreadsHtml += `
+    <!-- ENQUIRY ${lIdx + 1}: VERSO (PAGE ${versoPageNum}) -->
+    <div class="page spread-page verso-page" id="page-${versoPageNum}" data-page="${versoPageNum}">
+      <header class="running-header">
+        <span class="header-unit">The History Revision Hub &bull; GCSE Master Series &bull; ${eraMeta.title}</span>
+        <span class="header-enquiry">Enquiry 0${lIdx + 1} &bull; Part I</span>
+      </header>
 
-    // Enquiry Check questions for Recto Bottom
-    const doNowItems = (lesson.do_now && lesson.do_now.items) || [];
-    const q1 = doNowItems[0]?.question || 'Explain one key cause explored in this enquiry.';
-    const q2 =
-      doNowItems[1]?.question || 'How did contemporary individuals respond to this challenge?';
-    const q3 =
-      doNowItems[2]?.question || 'Assess the extent of change compared to earlier periods.';
-
-    // ------------------------------------------------------------------------
-    // VERSO PAGE (EVEN PAGE)
-    // ------------------------------------------------------------------------
-    pagesHtml += `
-    <div class="textbook-page">
-      <div class="running-header">
-        <span><strong>${era.title.toUpperCase()}</strong></span>
-        <span>ENQUIRY: ${lesson.title
-          .replace(/^L\d+:\s*/, '')
-          .replace(/^KT\d+\.\d+:\s*/, '')
-          .toUpperCase()}</span>
-      </div>
-
-      <!-- Lesson Hero Banner -->
-      <div class="lesson-hero">
-        <div class="lesson-badge-strip">
-          <span class="topic-badge">ERA ${era.id === 'western_front' ? '5' : era.lessonStart / 5 + 1} &bull; LESSON ${lIdx + 1}</span>
-          <span class="spec-ref-badge">Pearson Edexcel GCSE History &bull; Paper 1 (1HI0/11)</span>
+      <div class="spread-banner verso-banner">
+        <div class="banner-top-row">
+          <span class="enquiry-pill">ENQUIRY 0${lIdx + 1} &bull; PART I</span>
+          <span class="spec-tag">Pearson Edexcel GCSE (9–1) History &bull; Paper 1 (1HI0/11)</span>
         </div>
-        <h2 class="lesson-title">${lesson.title.replace(/^L\d+:\s*/, '')}</h2>
-        <div class="lesson-spec-anchor">
-          <strong>Specification Anchor:</strong> ${lesson.specification_anchor || 'Core thematic and historic environment study.'}
+        <h2 class="enquiry-title">${fullTitle}</h2>
+        <div class="enquiry-question-box">
+          <span class="eq-badge">KEY ENQUIRY QUESTION</span>
+          <span class="eq-text"><em>${lesson.enquiry_question || 'How did medical understanding develop across this period?'}</em></span>
         </div>
       </div>
 
-      <!-- 2-Column Deterministic Prose Grid -->
-      <div class="two-column-prose-grid">
-        <!-- Column 1: Act 1 Narrative + Source A -->
-        <div class="col-side">
-          <div>
-            <div class="section-banner">
-              <span class="section-title">${block1.act_title ? block1.act_title.replace(/^[^:]+:\s*/, '') : 'Historical Context & Origins'}</span>
-            </div>
-            ${renderBlockParagraphs(block1, 1)}
-          </div>
-          ${renderSourceBox(srcA, 'SOURCE A', 'Contemporary Visual Evidence')}
-        </div>
-
-        <!-- Column 2: Act 2 Narrative + Source B -->
-        <div class="col-side">
-          <div>
-            <div class="section-banner">
-              <span class="section-title">${block2.act_title ? block2.act_title.replace(/^[^:]+:\s*/, '') : 'Escalation & Core Developments'}</span>
-            </div>
-            ${renderBlockParagraphs(block2, 2)}
-          </div>
-          ${srcB ? renderSourceBox(srcB, 'SOURCE B', 'Historical Primary Evidence') : renderFallbackSourceB()}
-        </div>
-      </div>
-
-      <!-- Bottom Feature Box: Disciplinary Vocabulary Deck -->
-      <div class="bottom-vocab-box">
-        <div class="bvb-header">
-          <span class="bvb-title">KEY SPECIFICATION TERMINOLOGY &amp; DISCIPLINARY CONCEPTS</span>
-          <span class="bvb-badge">CORE VOCABULARY</span>
-        </div>
-        <div class="bvb-grid">
-          <div class="bvb-col">
-            <strong>${cleanVocabQ(vocab1.q)}:</strong> ${vocab1.a}
-          </div>
-          <div class="bvb-col">
-            <strong>${cleanVocabQ(vocab2.q)}:</strong> ${vocab2.a}
-          </div>
-          <div class="bvb-col">
-            <strong>${cleanVocabQ(vocab3.q)}:</strong> ${vocab3.a}
-          </div>
-        </div>
-      </div>
-
-      <!-- Running Footer -->
-      <div class="running-footer">
-        <span>The History Revision Hub &bull; GCSE History Master Textbook</span>
-        <span>Page ${versoPageNum} of ${era.pageCount}</span>
-      </div>
-    </div>
-    `;
-
-    // ------------------------------------------------------------------------
-    // RECTO PAGE (ODD PAGE)
-    // ------------------------------------------------------------------------
-    const kfPortraitBase64 = kf ? getBase64Image(kf.portrait) : null;
-
-    pagesHtml += `
-    <div class="textbook-page">
-      <div class="running-header">
-        <span><strong>${era.title.toUpperCase()}</strong></span>
-        <span>ENQUIRY: ${lesson.title
-          .replace(/^L\d+:\s*/, '')
-          .replace(/^KT\d+\.\d+:\s*/, '')
-          .toUpperCase()}</span>
-      </div>
-
-      <!-- 2-Column Deterministic Prose Grid -->
-      <div class="two-column-prose-grid">
-        <!-- Column 1: Act 3 Narrative + Source C -->
-        <div class="col-side">
-          <div>
-            <div class="section-banner">
-              <span class="section-title">${block3.act_title ? block3.act_title.replace(/^[^:]+:\s*/, '') : 'Detailed Forensic Evidence'}</span>
-            </div>
-            ${renderBlockParagraphs(block3, 3)}
-          </div>
+      <div class="spread-body">
+        <div class="prose-columns">
           ${
-            srcC
-              ? renderSourceBox(
-                  srcC,
-                  distinctSources.length === 2 ? 'SOURCE B' : 'SOURCE C',
-                  'Archival Record & Analysis',
-                )
-              : `
-            <div class="archival-source-box">
-              <div class="archival-header">
-                <div class="source-identity">
-                  <span class="source-badge">ARCHIVAL DISPATCH</span>
-                  <span class="source-type">Official Department Record</span>
-                </div>
-                <span class="source-date-micro">${era.period}</span>
-              </div>
-              <div class="archival-title">Contemporary Clinical &amp; Scientific Commentary</div>
-              <div class="archival-body">
-                &ldquo;Medical progress across this era was defined by the profound tension between entrenched theoretical orthodoxy and emerging practical observation. Understanding why change was gradual rather than instantaneous is central to mastering Edexcel Paper 1.&rdquo;
-              </div>
-              <div class="archival-footer">
-                <span>The History Department &bull; Primary Enquiry Record</span>
-              </div>
-            </div>
-          `
+            block1.title
+              ? `
+          <div class="block-section">
+            <h3 class="block-header">[${lIdx + 1}.1] ${cleanBlockTitle(block1.title)}</h3>
+            ${formatBlockParas(block1, 1)}
+          </div>`
+              : ''
+          }
+
+          ${
+            block2.title
+              ? `
+          <div class="block-section">
+            <h3 class="block-header">[${lIdx + 1}.2] ${cleanBlockTitle(block2.title)}</h3>
+            ${formatBlockParas(block2, 2)}
+          </div>`
+              : ''
           }
         </div>
+      </div>
 
-        <!-- Column 2: Act 4 Narrative + Key Figure + Concept Spotlight -->
-        <div class="col-side">
-          <div>
-            <div class="section-banner">
-              <span class="section-title">${block4.act_title ? block4.act_title.replace(/^[^:]+:\s*/, '') : 'Historical Significance & Verdict'}</span>
-            </div>
-            ${renderBlockParagraphs(block4, 4)}
-          </div>
+      <footer class="page-footer">
+        <span class="footer-left">Page ${versoPageNum} &bull; Enquiry 0${lIdx + 1}: ${shortTitle}</span>
+        <span class="footer-mid">The History Revision Hub &bull; GCSE Master Textbook Standard</span>
+        <span class="footer-right">Paper 1 Option 11</span>
+      </footer>
+    </div>
 
-          <!-- Key Figure Profile Card -->
-          <div class="key-figure-box">
-            <div class="kf-header">
-              <span class="kf-tag">KEY FIGURE</span>
-              <span class="kf-lifespan">${kf.dates}</span>
-            </div>
-            <div class="kf-identity-row">
-              ${kfPortraitBase64 ? `<img src="${kfPortraitBase64}" class="kf-portrait" alt="${kf.name}">` : ''}
-              <div class="kf-identity-text">
-                <h4 class="kf-name">${kf.name}</h4>
-                <div class="kf-role">${kf.role}</div>
-              </div>
-            </div>
-            <div class="kf-significance">
-              ${kf.significance}
-            </div>
-            <div class="kf-actions-title">Strategic Decisions &amp; Contributions:</div>
-            <ul class="kf-actions-list">
-              ${kf.actions.map((act) => `<li>${act}</li>`).join('')}
-            </ul>
-          </div>
+    <!-- ENQUIRY ${lIdx + 1}: RECTO (PAGE ${rectoPageNum}) -->
+    <div class="page spread-page recto-page" id="page-${rectoPageNum}" data-page="${rectoPageNum}">
+      <header class="running-header">
+        <span class="header-unit">The History Revision Hub &bull; GCSE Master Series &bull; ${eraMeta.title}</span>
+        <span class="header-enquiry">Enquiry 0${lIdx + 1} &bull; Part II</span>
+      </header>
 
-          <!-- Concept Spotlight Box -->
-          <div class="concept-spotlight-box">
-            <div class="csb-header">
-              <span class="csb-tag">HISTORICAL CONCEPT</span>
-              <span class="csb-category">${cs.category}</span>
-            </div>
-            <h4 class="csb-title">${cs.title}</h4>
-            <div class="csb-body">${cs.body}</div>
-            <div class="csb-takeaway">
-              <strong>${cs.takeaway.split(':')[0]}:</strong> ${cs.takeaway.split(':').slice(1).join(':')}
-            </div>
-          </div>
+      <div class="spread-banner recto-banner">
+        <div class="banner-top-row">
+          <span class="enquiry-pill" style="background: #1e3a8a;">ENQUIRY 0${lIdx + 1} &bull; PART II</span>
+          <span class="spec-tag" style="color: #1e3a8a; font-weight: 700;">Turning Points &amp; Historical Consequences</span>
+        </div>
+        <h2 class="enquiry-title" style="font-size: 11pt;">${cs.title || 'Historical Significance &amp; Decisive Turning Points'}</h2>
+        <div class="enquiry-question-box" style="border-left-color: #1e3a8a; background: #eff6ff;">
+          <span class="eq-badge" style="background: #1e3a8a;">DECISIVE HISTORICAL MECHANISM</span>
+          <span class="eq-text" style="color: #1e3a8a;">${cleanTakeaway}</span>
         </div>
       </div>
 
-      <!-- Bottom Feature Box: Key Enquiry Check & Discussion -->
-      <div class="bottom-enquiry-box">
-        <div class="beb-header">
-          <span class="beb-title">KEY ENQUIRY CHECK &bull; ${lesson.title
-            .replace(/^L\d+:\s*/, '')
-            .replace(/^KT\d+\.\d+:\s*/, '')
-            .toUpperCase()}</span>
-          <span class="beb-badge">CHECK YOUR UNDERSTANDING</span>
-        </div>
-        <div class="beb-grid">
-          <div class="beb-col">
-            <strong>1. Causal Recall:</strong> ${q1}
-          </div>
-          <div class="beb-col">
-            <strong>2. Historical Analysis:</strong> ${q2}
-          </div>
-          <div class="beb-col">
-            <strong>3. Evaluative Hinge:</strong> ${q3}
-          </div>
+      <div class="spread-body">
+        <div class="prose-columns">
+          ${
+            block3.title
+              ? `
+          <div class="block-section">
+            <h3 class="block-header">[${lIdx + 1}.3] ${cleanBlockTitle(block3.title)}</h3>
+            ${formatBlockParas(block3, 3)}
+          </div>`
+              : ''
+          }
+
+          ${
+            block4.title
+              ? `
+          <div class="block-section">
+            <h3 class="block-header">[${lIdx + 1}.4] ${cleanBlockTitle(block4.title)}</h3>
+            ${formatBlockParas(block4, 4)}
+          </div>`
+              : ''
+          }
+
+          ${
+            block5.title
+              ? `
+          <div class="block-section">
+            <h3 class="block-header">[${lIdx + 1}.5] ${cleanBlockTitle(block5.title)}</h3>
+            ${formatBlockParas(block5, 5)}
+          </div>`
+              : ''
+          }
         </div>
       </div>
 
-      <!-- Running Footer -->
-      <div class="running-footer">
-        <span>The History Revision Hub &bull; GCSE History Master Textbook</span>
-        <span>Page ${rectoPageNum} of ${era.pageCount}</span>
-      </div>
+      <footer class="page-footer">
+        <span class="footer-left">Page ${rectoPageNum} &bull; Enquiry 0${lIdx + 1}: Turning Points &amp; Outcomes</span>
+        <span class="footer-mid">The History Revision Hub &bull; GCSE Master Textbook Standard</span>
+        <span class="footer-right">Paper 1 Option 11</span>
+      </footer>
     </div>
     `;
   });
 
-  // --------------------------------------------------------------------------
-  // MASTER LIVING BACK COVER (Page 12 for 5-lesson eras, Page 14 for WF)
-  // --------------------------------------------------------------------------
-  const backCoverPageNum = era.pageCount;
+  // Build Western Front Middle Pages (Page 2 Milestone Spine & Page 15 Evacuation Atlas)
+  let wfPage2Html = '';
+  let wfPage15Html = '';
 
-  pagesHtml += `
-  <div class="textbook-page" style="justify-content: space-between;">
-    <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-      
-      <!-- Top Departmental Header Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Course Textbook</span>
+  if (eraKey === 'western_front') {
+    const milestones = eraMeta.timeline || [];
+    const spineHtml = milestones
+      .slice(0, 12)
+      .map(
+        (m, idx) => `
+      <div class="milestone-item">
+        <div class="milestone-date-badge">${m.year}</div>
+        <div class="milestone-connector">
+          <div class="milestone-node"></div>
+          ${idx < 11 ? '<div class="milestone-line"></div>' : ''}
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">
-            PEARSON EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1: MEDICINE IN BRITAIN, c1250–PRESENT
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; text-transform: uppercase;">REVISION SPINE &bull; ${era.title.toUpperCase()}</span>
-        </div>
-      </div>
-
-      <!-- Era Review Banner -->
-      <div style="border: 1.8px solid #000; border-radius: 4px; padding: 4px 8px; background: #fff; margin-bottom: 3.5px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; margin: 0 0 1px 0; font-weight: 900; color: #000;">
-          ${era.title.toUpperCase()}: REVISION SPINE &amp; EXAM STRATEGY (${era.period})
-        </h2>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #334155; line-height: 1.25;">
-          Comprehensive revision index of pivotal chronology, core specification concepts, and Edexcel examination question frameworks.
-        </div>
-      </div>
-
-      <!-- Master Chronological Sequence Table (Full Width Table) -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; margin-bottom: 3.5px;">
-        <div style="background: #0f172a; color: #fff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
-          <span>${era.title} &bull; Pivotal Chronological Sequence &amp; Causal Turning Points</span>
-          <span style="font-size: 6.5pt; font-weight: 700; color: #93c5fd;">Paper 1 Chronology Recall</span>
-        </div>
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.25;">
-          <thead>
-            <tr style="background: #1e293b; color: #ffffff;">
-              <th style="width: 75px; padding: 2.2px 6px; text-align: left;">Date</th>
-              <th style="width: 165px; padding: 2.2px 6px; text-align: left;">Pivotal Milestone</th>
-              <th style="padding: 2.2px 6px; text-align: left;">Historical Significance &amp; Causal Consequence</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${era.timeline
-              .map(
-                (item, idx) => `
-              <tr style="background: ${idx % 2 === 0 ? '#f8fafc' : '#ffffff'}; border-bottom: 1px solid #e2e8f0;">
-                <td style="padding: 2.2px 6px; font-weight: 800; color: #1e3a8a; white-space: nowrap;">${item.year}</td>
-                <td style="padding: 2.2px 6px; font-weight: 700; color: #0f172a;">${(item.event.split(':')[0] || item.event).trim()}</td>
-                <td style="padding: 2.2px 6px; color: #334155;">${(item.event.includes(':') ? item.event.split(':').slice(1).join(':').trim() : item.event).trim()}</td>
-              </tr>
-            `,
-              )
-              .join('')}
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Core Specification Concepts & Examination Question Models (2-Column Grid) -->
-      <div style="display: grid; grid-template-columns: 1fr 1.15fr; gap: 6px; margin-bottom: 3.5px;">
-        
-        <!-- Key Historical Concepts & Terminology -->
-        <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 4.5px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.4px; display: block; border-bottom: 1.5px solid #0f172a; padding-bottom: 1.5px; margin-bottom: 2.5px;">
-              Core Specification Concepts (${era.period})
-            </strong>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.25; color: #334155; display: flex; flex-direction: column; gap: 2px;">
-              ${era.conceptSpotlights
-                .slice(0, 5)
-                .map(
-                  (c) => `
-                <div>&bull; <strong>${c.title.split(':')[0].trim()}:</strong> ${c.takeaway.replace(/^(Key Causation|Exam Distinction|Key Evidence|Core Specification Anchor|Historiographical Reality|Key Impact|Exam Anchor|Key Insight|Core Pedagogical Point|Specification Anchor|Key Scientific Shift|Historiographical Factor|Modern Public Health Principle|Historic Environment Anchor|Core Surgical Innovation):\s*/i, '')}</div>
-              `,
-                )
-                .join('')}
-            </div>
+        <div class="milestone-content">
+          <div class="milestone-header-row">
+            <span class="milestone-title">${(m.event.split(':')[0] || m.event).split(';')[0].trim()}</span>
           </div>
-        </div>
-
-        <!-- Examination Question Structure with Concrete Specification Models -->
-        <div style="border: 1.5px solid #0f172a; border-radius: 4px; padding: 4.5px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f172a; padding-bottom: 1.5px; margin-bottom: 2.5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.4px;">
-              Edexcel Paper 1 Examination Framework
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; background: #0f172a; color: #fff; padding: 1px 4.5px; border-radius: 2px;">
-              ${era.id === 'western_front' ? 'SECTION A &bull; 16 MARKS' : 'SECTION B &bull; 32 MARKS'}
-            </span>
-          </div>
-
-          ${
-            era.id === 'western_front'
-              ? `
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.24; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
-              <div style="background: #f8fafc; border-left: 2.5px solid #b45309; padding: 2px 4px; border-radius: 0 2px 2px 0;">
-                <strong style="color: #b45309;">Q1(a/b): Describe ONE feature of... [2m + 2m = 4 Marks]</strong><br>
-                <em>Strategy:</em> 1 valid feature (1 mark) + 1 precise historical detail (1 mark). No causal explanation.
-              </div>
-              <div style="background: #f8fafc; border-left: 2.5px solid #1e3a8a; padding: 2px 4px; border-radius: 0 2px 2px 0;">
-                <strong style="color: #1e3a8a;">Q2(a): How useful are Sources A and B for... [8 Marks]</strong><br>
-                <em>Strategy:</em> Interrogate Content, Provenance (Nature, Origin, Purpose), and Context for both sources before judgment.
-              </div>
-              <div style="background: #f8fafc; border-left: 2.5px solid #15803d; padding: 2px 4px; border-radius: 0 2px 2px 0;">
-                <strong style="color: #15803d;">Q2(b): How could you follow up Source X to find out more... [4 Marks]</strong><br>
-                <em>Official 4 Prompts:</em> (1) Detail in Source X &bull; (2) Question I would ask &bull; (3) Type of source &bull; (4) How it helps.
-              </div>
-            </div>
-          `
-              : `
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.24; color: #1e293b; display: flex; flex-direction: column; gap: 2px;">
-              <div style="background: #f8fafc; border-left: 2.5px solid #b45309; padding: 2px 4px; border-radius: 0 2px 2px 0;">
-                <strong style="color: #b45309;">Q3: Explain one similarity / difference between... [4 Marks]</strong><br>
-                <em>Strategy:</em> Identify 1 valid conceptual link across eras &bull; Support with precise detail from both specified periods.
-              </div>
-              <div style="background: #f8fafc; border-left: 2.5px solid #1e3a8a; padding: 2px 4px; border-radius: 0 2px 2px 0;">
-                <strong style="color: #1e3a8a;">Q4: Explain why [change/continuity occurred]... [12 Marks]</strong><br>
-                <em>Strategy:</em> 3 PEEL paragraphs &bull; Use 2 stimulus points + own knowledge &bull; Link with causal connectives.
-              </div>
-              <div style="background: #f8fafc; border-left: 2.5px solid #15803d; padding: 2px 4px; border-radius: 0 2px 2px 0;">
-                <strong style="color: #15803d;">Q5/Q6: Evaluative Essay [16 Marks + 4 SPaG]</strong><br>
-                <em>Strategy:</em> Criteria-led introduction &bull; 3 balanced PEEL paragraphs weighing stated factor vs alternatives &bull; Weighed verdict.
-              </div>
-            </div>
-          `
-          }
+          <p class="milestone-desc">${(m.event.includes(';') ? m.event.split(';').slice(1).join(';') : m.event.includes(':') ? m.event.split(':').slice(1).join(':') : m.event).trim()}</p>
         </div>
       </div>
+    `,
+      )
+      .join('');
 
-      <!-- Interactive Digital Retrieval & Revision Hub (Full-Width Strip) -->
-      <div style="border: 1.5px solid #1e3a8a; border-left: 4.5px solid #1e3a8a; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 2px;">
-        <div style="flex: 1;">
-          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 1.5px;">
-            <span style="background: #1e3a8a; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; padding: 1px 5px; border-radius: 2px; letter-spacing: 0.5px;">
-              Interactive Digital Retrieval Hub
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.3px;">
-              ${era.title} Knowledge Quiz &amp; Flashcards
-            </span>
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #1e293b; line-height: 1.26; margin-bottom: 1.5px;">
-            Scan the QR code with any smartphone or tablet camera to launch the interactive, self-marking retrieval bank for this era. Test your rapid recall across key individuals, turning points, anatomical discoveries, and treatment breakthroughs with instant model answers and scoring.
-          </div>
-          <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 5.9pt; font-weight: 700; color: #475569;">
-            <span>&bull; 20 Specification Recall Questions</span>
-            <span>&bull; Instant Self-Marking &amp; Explanations</span>
-            <span>&bull; Digital Leitner Flashcard Deck</span>
-          </div>
-        </div>
-        <div style="text-align: center; flex-shrink: 0; display: flex; flex-direction: column; align-items: center;">
-          <img src="${qrDataUrl}" alt="${era.title} Quiz QR" style="width: 20mm; height: 20mm; display: block; border: 1px solid #cbd5e1; border-radius: 3px; padding: 1px; background: #fff;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 5.5pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a; margin-top: 1.5px; letter-spacing: 0.3px;">
-            Scan for Mobile Quiz
-          </span>
-        </div>
+    wfPage2Html = `
+    <!-- PAGE 2: MASTER CHRONOLOGICAL MILESTONE SPINE -->
+    <div class="page spine-page" id="page-2" data-page="2">
+      <header class="running-header">
+        <span class="header-unit">The History Revision Hub &bull; GCSE Master Series &bull; ${eraMeta.title}</span>
+        <span class="header-enquiry">Chronological Milestone Spine &bull; 1914–1918</span>
+      </header>
+
+      <div class="spine-intro-banner">
+        <span class="spine-pill">CHRONOLOGY HIGHWAY &bull; 1914–1918</span>
+        <h2 class="spine-title">Twelve Pivotal Turning Points of Western Front Trauma &amp; Surgery</h2>
+        <p class="spine-subtitle">Follow the chronological spine of medical innovations, from early evacuation paralysis in 1914 to the institutionalised surgical triage of the Hundred Days.</p>
       </div>
 
-      <!-- Back Cover Footer -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #333; font-weight: 700;">
-        <span>Paper 1: Medicine in Britain &bull; ${era.title} Specification Review</span>
-        <span>Page ${backCoverPageNum} of ${era.pageCount}</span>
+      <div class="spine-list" id="spine-list">
+        ${spineHtml}
       </div>
 
+      <footer class="page-footer">
+        <span class="footer-left">Page 2 &bull; Chronological Milestone Spine</span>
+        <span class="footer-mid">The History Revision Hub &bull; GCSE Master Textbook Standard</span>
+        <span class="footer-right">1914–1918</span>
+      </footer>
     </div>
-  </div>
-  `;
+    `;
+
+    const trenchImgUri = getBase64Image('public/images/gw_trench_diagram.jpg');
+    const evacImgUri = getBase64Image('public/images/ramc_chain_of_evacuation.jpg');
+
+    wfPage15Html = `
+    <!-- PAGE 15: HISTORIC ENVIRONMENT ANATOMY & EVACUATION ATLAS -->
+    <div class="page atlas-page" id="page-15" data-page="15">
+      <header class="running-header">
+        <span class="header-unit">The History Revision Hub &bull; GCSE Master Series &bull; ${eraMeta.title}</span>
+        <span class="header-enquiry">Historic Environment Anatomy &bull; Evacuation &amp; Terrain</span>
+      </header>
+
+      <div class="spine-intro-banner" style="margin-bottom: 5px;">
+        <span class="spine-pill">HISTORIC ENVIRONMENT ATLAS</span>
+        <h2 class="spine-title" style="font-size: 11pt;">The Western Front Theater &amp; The RAMC Chain of Evacuation</h2>
+        <p class="spine-subtitle">Understanding how battlefield geography, trench architecture, and transport bottlenecks dictated surgical survival rates.</p>
+      </div>
+
+      <div class="atlas-dual-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+        <div class="atlas-card" style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px; background: #fafaf9; box-sizing: border-box;">
+          <div style="height: 50mm; overflow: hidden; border-radius: 3px; background: #fff; text-align: center; box-sizing: border-box;">
+            ${trenchImgUri ? `<img src="${trenchImgUri}" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="Trench System Diagram">` : ''}
+          </div>
+          <div style="font-size: 6.3pt; color: #475569; margin-top: 3px; line-height: 1.25;">
+            <strong>Trench Anatomy:</strong> Frontline, support, and reserve lines connected by zigzag communications trenches to contain blast radius.
+          </div>
+        </div>
+        <div class="atlas-card" style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 4px; background: #fafaf9; box-sizing: border-box;">
+          <div style="height: 50mm; overflow: hidden; border-radius: 3px; background: #fff; text-align: center; box-sizing: border-box;">
+            ${evacImgUri ? `<img src="${evacImgUri}" style="width: 100%; height: 100%; object-fit: contain; display: block;" alt="RAMC Evacuation Chain">` : ''}
+          </div>
+          <div style="font-size: 6.3pt; color: #475569; margin-top: 3px; line-height: 1.25;">
+            <strong>Chain of Evacuation:</strong> Stretcher Bearers &rarr; Regimental Aid Post &rarr; Dressing Stations &rarr; Casualty Clearing Station &rarr; Base Hospitals.
+          </div>
+        </div>
+      </div>
+
+      <div class="flashpoints-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex: 1;">
+        <div class="fp-card" style="border: 1px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; border-radius: 3px; padding: 5px 8px; background: #fff;">
+          <div style="font-size: 7pt; font-weight: 800; color: #0f172a; margin-bottom: 2px;">1. Manured Soil Ecology &amp; Gas Gangrene</div>
+          <div style="font-size: 6.4pt; color: #334155; line-height: 1.28;">Intensively farmed Flanders clay contained lethal clostridium and tetanus bacteria. Shrapnel blasted soiled uniform cloth deep into lacerations, causing rapid anaerobic tissue necrosis.</div>
+        </div>
+        <div class="fp-card" style="border: 1px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; border-radius: 3px; padding: 5px 8px; background: #fff;">
+          <div style="font-size: 7pt; font-weight: 800; color: #0f172a; margin-bottom: 2px;">2. Mud, Crater Fields &amp; Bearer Relays</div>
+          <div style="font-size: 6.4pt; color: #334155; line-height: 1.28;">Continuous artillery bombardments destroyed natural drainage canals. Carrying a single stretcher through Passchendaele mud required up to eight exhausted bearers over six agonizing hours.</div>
+        </div>
+        <div class="fp-card" style="border: 1px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; border-radius: 3px; padding: 5px 8px; background: #fff;">
+          <div style="font-size: 7pt; font-weight: 800; color: #0f172a; margin-bottom: 2px;">3. Triage &amp; The Critical 12-Hour Window</div>
+          <div style="font-size: 6.4pt; color: #334155; line-height: 1.28;">Casualty Clearing Stations performed vital emergency surgery. Unless abdominal and chest trauma cases reached the surgeon’s table within 12 hours, peritonitis and irreversible shock proved fatal.</div>
+        </div>
+        <div class="fp-card" style="border: 1px solid #cbd5e1; border-left: 3.5px solid #1e3a8a; border-radius: 3px; padding: 5px 8px; background: #fff;">
+          <div style="font-size: 7pt; font-weight: 800; color: #0f172a; margin-bottom: 2px;">4. Subterranean &amp; Mobile Infrastructure</div>
+          <div style="font-size: 6.4pt; color: #334155; line-height: 1.28;">At Arras, British engineers linked ancient limestone quarries into Thompson's Cave, a bombproof 700-bed hospital with electric lights, operating theatres, and piped water 20 meters underground.</div>
+        </div>
+      </div>
+
+      <footer class="page-footer">
+        <span class="footer-left">Page 15 &bull; Historic Environment Anatomy &amp; Evacuation Atlas</span>
+        <span class="footer-mid">The History Revision Hub &bull; GCSE Master Textbook Standard</span>
+        <span class="footer-right">The Western Front</span>
+      </footer>
+    </div>
+    `;
+  }
+
+  // Build Back Cover Quiz Cards
+  let quizCardsHtml = '';
+  if (eraKey === 'western_front') {
+    // 6 Cards x 6 Questions = 36 Questions
+    quizCardsHtml = lessons
+      .map((lesson, lIdx) => {
+        const qItems = (lesson.do_now && lesson.do_now.items) || [];
+        const questions = qItems
+          .slice(0, 6)
+          .map(
+            (item, qIdx) => `
+        <li>
+          <span class="q-num">${lIdx * 6 + qIdx + 1}.</span>
+          <span class="q-txt">${item.question}</span>
+        </li>
+      `,
+          )
+          .join('');
+
+        return `
+        <div class="quiz-card">
+          <div class="quiz-card-header">
+            <span class="quiz-card-topic">Enquiry 0${lIdx + 1}: ${cleanLessonTitle(lesson.title).split('(')[0].trim()}</span>
+            <span class="quiz-card-loc">pp. ${lIdx * 2 + 3}–${lIdx * 2 + 4} &bull; Ref [${21 + lIdx}.1]–[${21 + lIdx}.5]</span>
+          </div>
+          <ul class="quiz-card-list">
+            ${questions}
+          </ul>
+        </div>
+      `;
+      })
+      .join('');
+  } else {
+    // Eras 1–4: 5 Enquiry Cards + 1 Synoptic Card (6 Cards x 5 Questions = 30 Questions)
+    const cards = lessons.map((lesson, lIdx) => {
+      const qItems = (lesson.do_now && lesson.do_now.items) || [];
+      const questions = qItems
+        .slice(0, 5)
+        .map(
+          (item, qIdx) => `
+        <li>
+          <span class="q-num">${lIdx * 5 + qIdx + 1}.</span>
+          <span class="q-txt">${item.question}</span>
+        </li>
+      `,
+        )
+        .join('');
+
+      return `
+        <div class="quiz-card">
+          <div class="quiz-card-header">
+            <span class="quiz-card-topic">Enquiry 0${lIdx + 1}: ${cleanLessonTitle(lesson.title).split('(')[0].trim()}</span>
+            <span class="quiz-card-loc">pp. ${lIdx * 2 + 2}–${lIdx * 2 + 3} &bull; Ref [${lIdx + 1}.1]–[${lIdx + 1}.5]</span>
+          </div>
+          <ul class="quiz-card-list">
+            ${questions}
+          </ul>
+        </div>
+      `;
+    });
+
+    // Card 6: Synoptic Retrieval & Causal Dominoes
+    const synopticQuestions = [
+      'Explain the single biggest obstacle to medical progress across this era.',
+      'Which institution or technological breakthrough triggered the greatest shift in clinical practice?',
+      'How did contemporary beliefs about the causes of disease influence the treatments administered?',
+      'Assess the extent of continuity between the start and end of this chronological period.',
+      'Identify one individual whose contributions laid the groundwork for subsequent breakthroughs.',
+    ]
+      .map(
+        (q, idx) => `
+      <li>
+        <span class="q-num">${25 + idx + 1}.</span>
+        <span class="q-txt"><strong>[Synoptic]</strong> ${q}</span>
+      </li>
+    `,
+      )
+      .join('');
+
+    cards.push(`
+      <div class="quiz-card" style="border-top-color: #1e3a8a;">
+        <div class="quiz-card-header" style="background: #eff6ff;">
+          <span class="quiz-card-topic" style="color: #1e3a8a;">Synoptic Synthesis &amp; Historical Causation</span>
+          <span class="quiz-card-loc">pp. 2–11 &bull; Whole-Era Recall</span>
+        </div>
+        <ul class="quiz-card-list">
+          ${synopticQuestions}
+        </ul>
+      </div>
+    `);
+
+    quizCardsHtml = cards.join('');
+  }
+
+  // Build Front Cover Specification Directory Cards (6 Enquiry Cards)
+  const enquiryCards = eraMeta.enquiryCards || [];
+  const cardsHtml = enquiryCards
+    .map(
+      (e) => `
+    <div class="card-box">
+      <div class="card-head">
+        <span class="enquiry-tag">${e.num === '06' && eraKey !== 'western_front' ? 'THEMATIC MATRIX' : `ENQUIRY ${e.num}`}</span>
+        <span class="page-locator">${e.pages}</span>
+      </div>
+      
+      <h3 class="card-heading">${e.title}</h3>
+      
+      <div class="card-question">
+        <span class="q-badge">KEY QUESTION:</span>
+        <span class="q-quote">"${e.question}"</span>
+      </div>
+
+      <div class="card-points">
+        <div class="pt-row"><span class="bullet-dot">▪</span><div class="pt-content">${e.b1}</div></div>
+        <div class="pt-row"><span class="bullet-dot">▪</span><div class="pt-content">${e.b2}</div></div>
+        <div class="pt-row"><span class="bullet-dot">▪</span><div class="pt-content">${e.b3}</div></div>
+      </div>
+    </div>
+  `,
+    )
+    .join('');
+
+  let examRibbonHtml = '';
+  if (eraKey === 'western_front') {
+    examRibbonHtml = `
+      <div class="master-exam-ribbon">
+        <div class="ribbon-cell">
+          <div class="ribbon-cell-title">Specification Paper</div>
+          <div class="ribbon-cell-content">Paper 1 Option 11 &bull; Historic Environment</div>
+        </div>
+        <div class="ribbon-cell">
+          <div class="ribbon-cell-title">Section A Question Architecture</div>
+          <div class="ribbon-cell-content">Q1: Features [4m] &bull; Q2(a): Utility [8m] &bull; Q2(b): Follow-Up [4m]</div>
+        </div>
+        <div class="ribbon-cell">
+          <div class="ribbon-cell-title">Assessment Weighting</div>
+          <div class="ribbon-cell-content">16 Raw Marks + 4 SPaG &bull; 30% of Paper 1 Total</div>
+        </div>
+      </div>
+    `;
+  } else {
+    examRibbonHtml = `
+      <div class="master-exam-ribbon">
+        <div class="ribbon-cell">
+          <div class="ribbon-cell-title">Specification Paper</div>
+          <div class="ribbon-cell-content">Paper 1 Option 11 &bull; Thematic Study</div>
+        </div>
+        <div class="ribbon-cell">
+          <div class="ribbon-cell-title">Section B Question Architecture</div>
+          <div class="ribbon-cell-content">Q3: Similarity/Diff [4m] &bull; Q4: Causation [12m] &bull; Q5/Q6: Essay [16m+4m]</div>
+        </div>
+        <div class="ribbon-cell">
+          <div class="ribbon-cell-title">Assessment Weighting</div>
+          <div class="ribbon-cell-content">36 Raw Marks + 4 SPaG &bull; 70% of Paper 1 Total</div>
+        </div>
+      </div>
+    `;
+  }
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Edexcel GCSE (9–1) History — ${era.title} Master Textbook</title>
+  <title>The History Revision Hub &bull; ${eraMeta.title} (${eraMeta.period}) Master Textbook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,600&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <style>
     *, *:before, *:after { box-sizing: border-box; }
 
@@ -1085,10 +636,10 @@ async function buildPublisherTextbookHtml(eraKey) {
     }
 
     body {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 9.4pt;
-      line-height: 1.44;
-      color: #1c1917;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 11pt;
+      line-height: 1.54;
+      color: #1e293b;
       background: #ffffff;
       margin: 0;
       padding: 0;
@@ -1096,8 +647,7 @@ async function buildPublisherTextbookHtml(eraKey) {
       print-color-adjust: exact !important;
     }
 
-    /* Strict A4 Page Container (297mm - 24mm margins = 273mm printable height) */
-    .textbook-page {
+    .page {
       width: 100%;
       height: 273mm;
       max-height: 273mm;
@@ -1110,621 +660,1170 @@ async function buildPublisherTextbookHtml(eraKey) {
       position: relative;
     }
 
-    /* Running Header */
+    /* Common Running Header & Footer */
     .running-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 3px;
-      margin-bottom: 8px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      padding-bottom: 2.5px;
+      margin-bottom: 5px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: #475569;
-      flex-shrink: 0;
-    }
-    .running-header strong {
-      color: #0f172a;
-      font-weight: 800;
-    }
-
-    /* Running Footer */
-    .running-footer {
-      border-top: 1px solid #cbd5e1;
-      padding-top: 3px;
-      margin-top: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
-      color: #64748b;
-      font-weight: 600;
-      flex-shrink: 0;
-    }
-
-    /* Lesson Hero Banner */
-    .lesson-hero {
-      border-bottom: 2px solid #1e3a8a;
-      padding-bottom: 5px;
-      margin-bottom: 7px;
-      flex-shrink: 0;
-    }
-    .lesson-badge-strip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 2px;
-      font-family: 'Inter', sans-serif;
-    }
-    .topic-badge {
-      background: #1e3a8a;
-      color: #ffffff;
-      font-size: 6.8pt;
-      font-weight: 800;
-      padding: 1.5px 6px;
-      border-radius: 3px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .spec-ref-badge {
-      font-size: 6.8pt;
-      font-weight: 700;
-      color: #b45309;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .lesson-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 13.0pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 2px 0 3px 0;
-      line-height: 1.22;
-    }
-    .lesson-spec-anchor {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
-      color: #334155;
-      line-height: 1.35;
-      background: #f8fafc;
-      border-left: 3px solid #1e3a8a;
-      padding: 3.5px 7px;
-      border-radius: 0 3px 3px 0;
-    }
-
-    /* 2-Column Deterministic Grid */
-    .two-column-prose-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      flex: 1;
-      width: 100%;
-      box-sizing: border-box;
-      margin-bottom: 3.5px;
-      min-height: 0;
-    }
-    .col-side {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 0;
-    }
-
-    /* Chapter Section Heading */
-    .section-banner {
-      background: #f8fafc;
-      border-left: 3.5px solid #1e3a8a;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 3px 7px;
-      border-radius: 0 3px 3px 0;
-      margin: 3px 0 4px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'Inter', sans-serif;
-    }
-    .section-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 9.2pt;
-      font-weight: 800;
-      color: #0f172a;
-      letter-spacing: 0.01em;
-    }
-
-    /* Paragraph Styling with Pure [Section.Paragraph] pill */
-    .numbered-para {
-      margin: 0 0 3.5px 0;
-      text-indent: 0;
-      line-height: 1.36;
-      font-size: 8.9pt;
-      color: #1e293b;
-    }
-    .para-ref-pill {
-      font-family: 'Inter', monospace;
-      font-size: 6.8pt;
-      font-weight: 800;
-      color: #ffffff;
-      background: #1e3a8a;
-      padding: 1px 4px;
-      border-radius: 2px;
-      margin-right: 4px;
-      display: inline-block;
-      vertical-align: baseline;
-      letter-spacing: 0.02em;
-    }
-
-    /* Primary Historical Source Box */
-    .archival-source-box {
-      background: #fdfcfb;
-      border: 1px solid #e7e5e4;
-      border-top: 2.5px solid #1e3a8a;
-      border-radius: 3px;
-      padding: 5px 7px;
-      margin: 4px 0;
-      font-family: 'Newsreader', Georgia, serif;
-    }
-    .archival-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2px;
-      font-family: 'Inter', sans-serif;
-    }
-    .source-identity {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .source-badge {
-      background: #1e3a8a;
-      color: #ffffff;
-      font-size: 6.6pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: 1.2px 4.5px;
-      border-radius: 2px;
-      letter-spacing: 0.05em;
-    }
-    .source-type {
-      font-size: 6.6pt;
-      font-weight: 700;
-      color: #475569;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .source-date-micro {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
-      color: #64748b;
-      font-weight: 600;
-    }
-    .archival-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 8.6pt;
-      font-weight: 700;
-      color: #0f172a;
-      margin: 1px 0 2px 0;
-      line-height: 1.22;
-    }
-    .archival-image {
-      width: 100%;
-      max-height: 105px;
-      object-fit: contain;
-      background: #fafaf9;
-      border-radius: 3px;
-      margin: 3px 0;
-      border: 1px solid #cbd5e1;
-      display: block;
-    }
-    .archival-body {
-      font-size: 8.0pt;
-      line-height: 1.35;
-      color: #1e293b;
-      margin: 2px 0;
-      font-style: italic;
-      background: #f8fafc;
-      padding: 3.5px 6px;
-      border-left: 2.5px solid #94a3b8;
-      border-radius: 0 2px 2px 0;
-    }
-    .archival-footer {
-      border-top: 1px solid #e2e8f0;
-      padding-top: 2px;
-      margin-top: 2px;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
-      color: #64748b;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    /* Key Figure Profile Box */
-    .key-figure-box {
-      background: #fdfcfb;
-      border: 1px solid #cbd5e1;
-      border-top: 2.5px solid #1e3a8a;
-      border-radius: 3px;
-      padding: 5px 7px;
-      margin: 4px 0;
-    }
-    .kf-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 3px;
-      font-family: 'Inter', sans-serif;
-    }
-    .kf-tag {
-      background: #1e3a8a;
-      color: #ffffff;
-      font-size: 6.5pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      padding: 1.2px 5px;
-      border-radius: 2px;
-      letter-spacing: 0.05em;
-    }
-    .kf-lifespan {
-      font-size: 6.6pt;
-      color: #64748b;
-      font-weight: 700;
-    }
-    .kf-identity-row {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      margin-bottom: 3px;
-    }
-    .kf-portrait {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid #94a3b8;
-      flex-shrink: 0;
-      background: #f1f5f9;
-    }
-    .kf-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 9.0pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 0;
-      line-height: 1.15;
-    }
-    .kf-role {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
-      font-weight: 700;
-      color: #b45309;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-    .kf-significance {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 7.8pt;
-      line-height: 1.30;
-      color: #334155;
-      font-style: italic;
-      margin-bottom: 3px;
-    }
-    .kf-actions-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
-      font-weight: 800;
-      color: #0f172a;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-      letter-spacing: 0.04em;
-    }
-    .kf-actions-list {
-      margin: 0;
-      padding-left: 12px;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
-      line-height: 1.30;
-      color: #1e293b;
-    }
-    .kf-actions-list li {
-      margin-bottom: 1.5px;
-    }
-
-    /* Concept Spotlight Box */
-    .concept-spotlight-box {
-      background: #fffbeb;
-      border: 1px solid #fef3c7;
-      border-left: 3.5px solid #d97706;
-      border-radius: 0 3px 3px 0;
-      padding: 5px 7px;
-      margin: 4px 0;
-    }
-    .csb-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2px;
-      font-family: 'Inter', sans-serif;
-    }
-    .csb-tag {
-      font-size: 6.4pt;
-      font-weight: 800;
-      color: #b45309;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .csb-category {
-      font-size: 6.2pt;
-      font-weight: 700;
-      color: #78350f;
-      text-transform: uppercase;
-    }
-    .csb-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 8.8pt;
-      font-weight: 800;
-      color: #78350f;
-      margin: 0 0 2px 0;
-      line-height: 1.2;
-    }
-    .csb-body {
-      font-family: 'Newsreader', Georgia, serif;
-      font-size: 7.8pt;
-      line-height: 1.32;
-      color: #1e293b;
-      margin-bottom: 3px;
-    }
-    .csb-takeaway {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
-      color: #78350f;
-      background: rgba(254, 243, 199, 0.6);
-      padding: 2.5px 5px;
-      border-radius: 2px;
-      line-height: 1.25;
-    }
-
-    /* Bottom Feature Box: Disciplinary Vocabulary Deck */
-    .bottom-vocab-box {
-      border: 1.5px solid #1e3a8a;
-      border-radius: 3px;
-      padding: 4px 7px;
-      background: #f8fafc;
-      margin-top: 4px;
-      flex-shrink: 0;
-    }
-    .bvb-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2.5px;
-      font-family: 'Inter', sans-serif;
-    }
-    .bvb-title {
       font-size: 6.8pt;
       font-weight: 800;
       color: #1e3a8a;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .bvb-badge {
-      background: #1e3a8a;
-      color: #ffffff;
-      font-size: 6.0pt;
-      font-weight: 800;
-      padding: 1px 4px;
-      border-radius: 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .bvb-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
-      line-height: 1.28;
-      color: #334155;
-    }
-    .bvb-col strong {
-      color: #0f172a;
-      font-weight: 700;
-    }
-
-    /* Bottom Feature Box: Key Enquiry Check */
-    .bottom-enquiry-box {
-      border: 1.5px solid #0f172a;
-      border-radius: 3px;
-      padding: 4px 7px;
-      background: #f8fafc;
-      margin-top: 4px;
       flex-shrink: 0;
     }
-    .beb-header {
+
+    .page-footer {
+      border-top: 1.2px solid #cbd5e1;
+      padding-top: 4px;
+      margin-top: 8px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 2.5px;
       font-family: 'Inter', sans-serif;
-    }
-    .beb-title {
       font-size: 6.8pt;
-      font-weight: 800;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+      color: #64748b;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
-    .beb-badge {
+
+    /* ==========================================================================
+       PAGE 1: MASTER FRONT COVER
+       ========================================================================== */
+    .cover-page {
+      padding: 0;
+    }
+
+    .cover-top-masthead {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+      flex-shrink: 0;
+    }
+
+    .masthead-title {
+      font-family: 'Cinzel', serif;
+      font-size: 10.5pt;
+      font-weight: 900;
+      letter-spacing: 0.10em;
+      color: #0f172a;
+    }
+
+    .masthead-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 800;
+      background: #1e3a8a;
+      color: #ffffff;
+      padding: 1.5px 6.5px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+    }
+
+    .cover-titles-wrap {
+      text-align: center;
+      margin-bottom: 3px;
+      flex-shrink: 0;
+    }
+
+    .cover-spec-pill {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.6pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1px;
+      display: inline-block;
+    }
+
+    .cover-main-title {
+      font-family: 'Cinzel', serif;
+      font-size: ${eraKey === 'western_front' ? '15pt' : '16pt'};
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      color: #0f172a;
+      margin: 0 0 1px 0;
+      line-height: 1.15;
+      white-space: nowrap;
+    }
+
+    .cover-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.5pt;
+      font-style: italic;
+      color: #475569;
+      margin: 0;
+    }
+
+    /* Middle Row: Calibrated 54mm height */
+    .cover-middle-row {
+      display: grid;
+      grid-template-columns: 80mm 1fr;
+      gap: 9px;
+      margin-bottom: 3px;
+      height: 54mm;
+      flex-shrink: 0;
+    }
+
+    .cover-hero-col {
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      padding: 3px;
+      background: #fafaf9;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .cover-hero-artwork-frame {
+      flex: 1;
+      overflow: hidden;
+      border-radius: 3px;
+      background: #ffffff;
+    }
+
+    .cover-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+    }
+
+    .cover-hero-caption {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.4pt;
+      line-height: 1.2;
+      color: #475569;
+      margin-top: 2px;
+    }
+
+    .cover-synopsis-card {
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #1e3a8a;
+      border-radius: 4px;
+      padding: 5px 9px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .blurb-header {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1e3a8a;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 2px;
+      margin-bottom: 2px;
+      flex-shrink: 0;
+    }
+
+    .cover-synopsis-quote {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 7.9pt;
+      line-height: 1.28;
+      color: #1e293b;
+      text-align: justify;
+    }
+
+    .cover-synopsis-quote p {
+      margin: 0 0 3px 0;
+    }
+
+    .cover-synopsis-quote p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cover-overview-footer {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      color: #64748b;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* LOWER SECTION: SPECIFICATION DIRECTORY - CLEAN, ZERO FLUFF */
+    .master-dossier {
+      border: 2px solid #0f172a;
+      border-radius: 4px;
+      background: #ffffff;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      margin-bottom: 3px;
+      min-height: 0;
+    }
+    
+    .dossier-header-bar {
       background: #0f172a;
       color: #ffffff;
-      font-size: 6.0pt;
-      font-weight: 800;
-      padding: 1px 4px;
-      border-radius: 2px;
+      padding: 4px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .dossier-header-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+      font-weight: 900;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .dossier-header-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #93c5fd;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .dossier-card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 4px;
+      padding: 4px;
+      background: #f1f5f9;
+      flex: 1;
+      min-height: 0;
+    }
+    
+    /* The Enquiry Card: Snug, Filled, Readable, Zero Ref Pills */
+    .card-box {
+      background: #ffffff;
+      border: 1.2px solid #cbd5e1;
+      border-top: 3.5px solid #1e3a8a;
+      border-radius: 3px;
+      padding: 4.5px 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      min-width: 0;
+    }
+    
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1px;
+      flex-shrink: 0;
+    }
+
+    .enquiry-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.4pt;
+      font-weight: 900;
+      background: #1e3a8a;
+      color: #ffffff;
+      padding: 1px 5.5px;
+      border-radius: 2px;
       letter-spacing: 0.04em;
     }
-    .beb-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
+
+    .page-locator {
       font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
-      line-height: 1.28;
+      font-size: 7.8pt;
+      font-weight: 800;
+      color: #1e3a8a;
+    }
+
+    .card-heading {
+      font-family: 'Inter', sans-serif;
+      font-size: 9.0pt;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.15;
+      margin: 0 0 2px 0;
+    }
+
+    .card-question {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 3px solid #1e3a8a;
+      border-radius: 2px;
+      padding: 2px 5px;
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 2px;
+      flex-shrink: 0;
+    }
+
+    .q-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 900;
+      color: #1e3a8a;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .q-quote {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 7.8pt;
+      font-style: italic;
+      color: #1e3a8a;
+      line-height: 1.18;
+    }
+
+    .card-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 2px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .pt-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      line-height: 1.22;
       color: #334155;
     }
-    .beb-col strong {
+
+    .bullet-dot {
+      color: #1e3a8a;
+      font-size: 8.0pt;
+      font-weight: 900;
+      line-height: 1.0;
+      flex-shrink: 0;
+    }
+
+    .pt-content {
+      flex: 1;
+    }
+
+    .pt-content strong {
       color: #0f172a;
+      font-weight: 800;
+    }
+
+    /* Bottom Exam Ribbon: Authentic Exam Specification & Weighting */
+    .master-exam-ribbon {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 3.5px 10px;
+      display: grid;
+      grid-template-columns: 0.95fr 1.4fr 0.95fr;
+      gap: 8px;
+      border-top: 2px solid #1e3a8a;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .ribbon-cell {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .ribbon-cell-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 1px;
+      white-space: nowrap;
+    }
+
+    .ribbon-cell-content {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
       font-weight: 700;
+      color: #e2e8f0;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .cover-footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      color: #64748b;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       SPREAD PAGES: DOUBLE-PAGE NARRATIVE
+       ========================================================================== */
+    .spread-page {
+      padding: 0;
+    }
+
+    .spread-banner {
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 3.5px;
+      margin-bottom: 5px;
+      flex-shrink: 0;
+    }
+
+    .banner-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2px;
+    }
+
+    .enquiry-pill {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1.5px 6px;
+      border-radius: 2px;
+    }
+
+    .spec-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .enquiry-title {
+      font-family: 'Cinzel', serif;
+      font-size: 11.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 2.5px 0;
+      line-height: 1.15;
+    }
+
+    .enquiry-question-box {
+      background: #f1f5f9;
+      border-left: 3px solid #0f172a;
+      padding: 2.5px 6px;
+      font-size: 7.3pt;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .eq-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: 6pt;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1px 5px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    .eq-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 7.6pt;
+      color: #1e293b;
+    }
+
+    .spread-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      margin-bottom: 12px;
+    }
+
+    .prose-columns {
+      column-count: 2;
+      column-gap: 16px;
+      column-fill: balance;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+
+    .block-section {
+      break-inside: auto;
+      margin-bottom: 5px;
+    }
+
+    .block-header {
+      break-after: avoid;
+      break-inside: avoid;
+      font-family: 'Inter', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2.5px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 1.5px;
+      letter-spacing: 0.02em;
+    }
+
+    .prose-p {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 11.2pt;
+      line-height: 1.54;
+      color: #1e293b;
+      margin: 0 0 6px 0;
+      text-indent: 0;
+    }
+
+    /* Calibrated Base Typography per Page Type (Verso vs Recto) */
+    .verso-page .prose-p {
+      font-size: 11.0pt;
+      line-height: 1.50;
+      margin: 0 0 6.0px 0;
+    }
+    .verso-page .block-section {
+      margin-bottom: 6.5px;
+    }
+    .verso-page .block-header {
+      font-size: 8.4pt;
+      margin-bottom: 2.5px;
+    }
+
+    .recto-page .prose-p {
+      font-size: 9.6pt;
+      line-height: 1.38;
+      margin: 0 0 3.5px 0;
+    }
+    .recto-page .block-section {
+      margin-bottom: 3.5px;
+    }
+    .recto-page .block-header {
+      font-size: 7.8pt;
+      margin-bottom: 1.6px;
+    }
+
+    /* ==========================================================================
+       PAGE 2: CHRONOLOGICAL SPINE (WESTERN FRONT)
+       ========================================================================== */
+    .spine-intro-banner {
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 3.5px;
+      margin-bottom: 5px;
+      flex-shrink: 0;
+    }
+
+    .spine-pill {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 1.5px 6px;
+      border-radius: 2px;
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+
+    .spine-title {
+      font-family: 'Cinzel', serif;
+      font-size: 12pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 0 0 1px 0;
+    }
+
+    .spine-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 7.5pt;
+      font-style: italic;
+      color: #475569;
+      margin: 0;
+    }
+
+    .spine-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6.5px;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .milestone-item {
+      display: flex;
+      align-items: stretch;
+      gap: 6px;
+    }
+
+    .milestone-date-badge {
+      width: 20mm;
+      flex-shrink: 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.4pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      text-align: right;
+      padding-top: 1px;
+    }
+
+    .milestone-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 10px;
+      flex-shrink: 0;
+    }
+
+    .milestone-node {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #1e3a8a;
+      border: 1.5px solid #ffffff;
+      box-shadow: 0 0 0 1px #1e3a8a;
+      margin-top: 2px;
+    }
+
+    .milestone-line {
+      flex: 1;
+      width: 1.5px;
+      background: #cbd5e1;
+      margin-top: 1px;
+    }
+
+    .milestone-content {
+      flex: 1;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 2.5px solid #1e3a8a;
+      border-radius: 3px;
+      padding: 3.5px 8px;
+    }
+
+    .milestone-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .milestone-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .milestone-desc {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 7.4pt;
+      line-height: 1.28;
+      color: #334155;
+      margin: 0;
+    }
+
+    /* ==========================================================================
+       BACK COVER: MASTER KNOWLEDGE RETRIEVAL QUIZ
+       ========================================================================== */
+    .quiz-page {
+      padding: 0;
+    }
+
+    .quiz-masthead {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 2.5px;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-shrink: 0;
+    }
+
+    .quiz-titles {
+      margin-bottom: 4px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .quiz-main-title {
+      font-family: 'Cinzel', serif;
+      font-size: 15pt;
+      font-weight: 900;
+      color: #0f172a;
+      margin: 0 0 1px 0;
+      letter-spacing: 0.04em;
+    }
+
+    .quiz-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 8.4pt;
+      font-style: italic;
+      color: #475569;
+      margin: 0;
+    }
+
+    .quiz-protocol-banner {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-left: 3.5px solid #0f172a;
+      border-radius: 3px;
+      padding: 3.5px 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.4pt;
+      line-height: 1.25;
+      color: #334155;
+      margin-bottom: 6px;
+      flex-shrink: 0;
+    }
+
+    .quiz-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+      flex: 1;
+    }
+
+    .quiz-card {
+      min-width: 0;
+      border: 1px solid #cbd5e1;
+      border-top: 3px solid #0f172a;
+      border-radius: 3px;
+      background: #ffffff;
+      padding: 4.5px 6.5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quiz-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+    }
+
+    .quiz-card-topic {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.1pt;
+      font-weight: 800;
+      color: #0f172a;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 65%;
+    }
+
+    .quiz-card-loc {
+      font-family: 'Inter', sans-serif;
+      font-size: 5.8pt;
+      font-weight: 700;
+      color: #1e3a8a;
+      white-space: nowrap;
+    }
+
+    .quiz-card-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 2px;
+    }
+
+    .quiz-card-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 3px;
+      font-family: 'Lora', Georgia, serif;
+      font-size: 6.6pt;
+      line-height: 1.22;
+      color: #1e293b;
+    }
+
+    .q-num {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      color: #0f172a;
+      flex-shrink: 0;
+      min-width: 12px;
+    }
+
+    .q-txt {
+      flex: 1;
     }
   </style>
 </head>
 <body>
-  ${pagesHtml}
+
+  <!-- ==========================================
+       PAGE 1: MASTER FRONT COVER
+  =========================================== -->
+  <div class="page cover-page" id="page-1" data-page="1">
+    <div>
+      <header class="cover-top-masthead">
+        <span class="masthead-title">The History Revision Hub</span>
+        <span class="masthead-badge">Master Curriculum Series &bull; KS4 GCSE</span>
+      </header>
+
+      <div class="cover-titles-wrap">
+        <span class="cover-spec-pill">Pearson Edexcel GCSE (9–1) History &bull; Paper 1 Option 11</span>
+        <h1 class="cover-main-title">${eraMeta.coverTitle}</h1>
+        <p class="cover-subtitle">${eraMeta.coverSubtitle}</p>
+      </div>
+
+      <div class="cover-middle-row">
+        <div class="cover-hero-col">
+          <div class="cover-hero-artwork-frame">
+            <img class="cover-hero-img" src="${heroImageUri}" alt="${eraMeta.title}">
+          </div>
+          <div class="cover-hero-caption">
+            <strong>${eraMeta.title}:</strong> ${synopsisData.caption}
+          </div>
+        </div>
+
+        <div class="cover-synopsis-card">
+          <div>
+            <div class="blurb-header">HISTORICAL OVERVIEW &bull; ${eraMeta.period}</div>
+            <div class="cover-synopsis-quote">
+              <p>${synopsisData.p1}</p>
+              <p>${synopsisData.p2}</p>
+            </div>
+          </div>
+          <div class="cover-overview-footer">
+            <span>Pearson Edexcel GCSE History</span>
+            <span>Paper 1 Option 11</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clean, Zero-Fluff Specification Directory -->
+    <div class="master-dossier">
+      <div class="dossier-header-bar">
+        <span class="dossier-header-title">SPECIFICATION &amp; ENQUIRY DIRECTORY</span>
+        <span class="dossier-header-badge">Pearson Edexcel GCSE (9–1) History</span>
+      </div>
+      <div class="dossier-card-grid">
+        ${cardsHtml}
+      </div>
+      ${examRibbonHtml}
+    </div>
+
+    <footer class="cover-footer">
+      <span>Page 1 &bull; Course Specification &amp; Enquiry Directory</span>
+      <span>The History Revision Hub &bull; GCSE Master Textbook Series</span>
+      <span>${totalPages} Pages &bull; Saddle-Stitch</span>
+    </footer>
+  </div>
+
+  ${wfPage2Html}
+
+  ${spreadsHtml}
+
+  ${wfPage15Html}
+
+  <!-- ==========================================
+       BACK COVER: MASTER KNOWLEDGE RETRIEVAL QUIZ
+  =========================================== -->
+  <div class="page quiz-page" id="page-${totalPages}" data-page="${totalPages}">
+    <header class="quiz-masthead">
+      <span class="masthead-title" style="font-size: 8.5pt;">The History Revision Hub</span>
+      <span class="masthead-badge">Master Retrieval Engine</span>
+    </header>
+
+    <div class="quiz-titles">
+      <h2 class="quiz-main-title">Master Knowledge Retrieval Quiz</h2>
+      <p class="quiz-subtitle">${eraMeta.title} &bull; ${eraMeta.period} (${eraKey === 'western_front' ? '36' : '30'} Essential Recall Questions)</p>
+    </div>
+
+    <div class="quiz-protocol-banner">
+      <strong>Standard Recall Protocol: Partner Quiz or Solo Practice.</strong> Test your rapid chronological, factual, and conceptual recall across all ${eraMeta.lessonCount} enquiries. All questions are cross-referenced directly to paragraph locations in this textbook; zero answers are printed to maintain active retrieval integrity.
+    </div>
+
+    <div class="quiz-grid">
+      ${quizCardsHtml}
+    </div>
+
+    <footer class="page-footer">
+      <span class="footer-left">Page ${totalPages} &bull; Master Knowledge Retrieval Quiz</span>
+      <span class="footer-mid">The History Revision Hub &bull; GCSE Master Textbook Standard</span>
+      <span class="footer-right">Paper 1 Option 11</span>
+    </footer>
+  </div>
+
+  <script>
+    // Client-side auto-fit engines
+
+    function autoFitSpreadTypography() {
+      document.querySelectorAll('.spread-page').forEach(page => {
+        const body = page.querySelector('.spread-body');
+        const cols = page.querySelector('.prose-columns');
+        const footer = page.querySelector('.page-footer');
+        if (!body || !cols || !footer) return;
+
+        const paras = Array.from(body.querySelectorAll('.prose-p'));
+        const blocks = Array.from(body.querySelectorAll('.block-section'));
+        if (!paras.length) return;
+
+        const isRecto = page.classList.contains('recto-page');
+
+        const getClearance = () => {
+          const fTop = footer.getBoundingClientRect().top;
+          let maxBottom = 0;
+          if (cols) {
+            const cBottom = cols.getBoundingClientRect().bottom;
+            if (cBottom > maxBottom) maxBottom = cBottom;
+          }
+          const allElements = body.querySelectorAll('.prose-p, .block-header, .block-section');
+          allElements.forEach(el => {
+            const rects = el.getClientRects();
+            for (let i = 0; i < rects.length; i++) {
+              if (rects[i].bottom > maxBottom) maxBottom = rects[i].bottom;
+            }
+          });
+          return fTop - maxBottom;
+        };
+
+        const MIN_CLEARANCE = 55;
+
+        const checkOverflow = () => {
+          const clearance = getClearance();
+          const pageOver = page.scrollHeight > page.clientHeight;
+          const colOver = cols.scrollWidth > cols.clientWidth + 2;
+          return (clearance < MIN_CLEARANCE) || pageOver || colOver;
+        };
+
+        let currentFs = parseFloat(window.getComputedStyle(paras[0]).fontSize) * 0.75;
+        let currentLh = parseFloat(window.getComputedStyle(paras[0]).lineHeight) / (currentFs * (96/72));
+        if (isNaN(currentLh) || currentLh < 1.2) currentLh = isRecto ? 1.38 : 1.50;
+        let currentMb = parseFloat(window.getComputedStyle(paras[0]).marginBottom) || (isRecto ? 3.5 : 6.0);
+        let attempts = 0;
+
+        // Downward scaling until safe clearance (>= 55px) and zero overflow
+        while (checkOverflow() && attempts < 40 && currentFs > 8.4) {
+          currentFs -= 0.10;
+          currentLh = Math.max(1.28, currentLh - 0.010);
+          currentMb = Math.max(1.8, currentMb - 0.15);
+          paras.forEach(p => {
+            p.style.fontSize = currentFs.toFixed(2) + 'pt';
+            p.style.lineHeight = currentLh.toFixed(2);
+            p.style.marginBottom = currentMb.toFixed(1) + 'px';
+          });
+          blocks.forEach(b => {
+            b.style.marginBottom = Math.max(2.0, currentMb * 0.9).toFixed(1) + 'px';
+          });
+          attempts++;
+        }
+
+        // Upward scaling: ONLY on Verso, ONLY if clearance > 90px, capped at 11.2pt
+        if (!isRecto && getClearance() > 90 && !checkOverflow()) {
+          let testSize = currentFs;
+          let testLine = currentLh;
+          let testMb = currentMb;
+          let upAttempts = 0;
+          while (testSize < 11.2 && upAttempts < 15) {
+            testSize += 0.08;
+            testLine = Math.min(1.52, testLine + 0.008);
+            testMb = Math.min(6.5, testMb + 0.15);
+            paras.forEach(p => {
+              p.style.fontSize = testSize.toFixed(2) + 'pt';
+              p.style.lineHeight = testLine.toFixed(2);
+              p.style.marginBottom = testMb.toFixed(1) + 'px';
+            });
+            blocks.forEach(b => {
+              b.style.marginBottom = Math.max(2.5, testMb * 0.9).toFixed(1) + 'px';
+            });
+            if (checkOverflow()) {
+              testSize -= 0.08;
+              testLine -= 0.008;
+              testMb -= 0.15;
+              paras.forEach(p => {
+                p.style.fontSize = testSize.toFixed(2) + 'pt';
+                p.style.lineHeight = testLine.toFixed(2);
+                p.style.marginBottom = testMb.toFixed(1) + 'px';
+              });
+              blocks.forEach(b => {
+                b.style.marginBottom = Math.max(2.5, testMb * 0.9).toFixed(1) + 'px';
+              });
+              break;
+            }
+            upAttempts++;
+          }
+        }
+      });
+    }
+
+    window.addEventListener('load', () => {
+      autoFitSpreadTypography();
+    });
+  </script>
 </body>
 </html>`;
 }
 
-/**
- * Compile PDF and verify layout with auto-calibrator and audit
- */
-async function renderTextbookPdf(eraKey) {
-  const era = MEDICINE_ERAS[eraKey];
-  if (!era) throw new Error(`Unknown medicine era: ${eraKey}`);
+// Compile a single era textbook
+async function renderEra(eraKey, unitData, browser) {
+  const eraMeta = MEDICINE_ERAS[eraKey];
+  console.log(`\n================================================================================`);
+  console.log(`🏛️ RENDERING ERA: ${eraMeta.title.toUpperCase()} (${eraKey})`);
+  console.log(`================================================================================`);
 
-  console.log(`\n=============================================================`);
-  console.log(`🚀 COMPILING MASTER TEXTBOOK: ${era.title.toUpperCase()} (${era.pageCount} PAGES)`);
-  console.log(`=============================================================`);
+  const html = generateEraHtml(eraKey, unitData);
 
-  const htmlContent = await buildPublisherTextbookHtml(eraKey);
-
-  // Save HTML companion files
-  const htmlOutputDir = path.join(ROOT_DIR, 'public', 'units', 'edexcel_medicine');
-  if (!fs.existsSync(htmlOutputDir)) fs.mkdirSync(htmlOutputDir, { recursive: true });
-  const htmlPathPublisher = path.join(htmlOutputDir, `textbook_${eraKey}_PUBLISHER.html`);
-  const htmlPathLegacy = path.join(htmlOutputDir, `textbook_${eraKey}.html`);
-  fs.writeFileSync(htmlPathPublisher, htmlContent, 'utf8');
-  fs.writeFileSync(htmlPathLegacy, htmlContent, 'utf8');
-  console.log(`✅ Saved HTML companions:`);
-  console.log(`   - ${htmlPathPublisher}`);
-  console.log(`   - ${htmlPathLegacy}`);
-
-  // Paths for PDF output
-  const pdfOutputDir = path.join(ROOT_DIR, 'public', 'pdfs');
-  if (!fs.existsSync(pdfOutputDir)) fs.mkdirSync(pdfOutputDir, { recursive: true });
-  const pdfPathPublisher = path.join(
-    pdfOutputDir,
-    `edexcel_medicine_textbook_${eraKey}_PUBLISHER.pdf`,
+  // Write HTML outputs
+  const pubHtmlPath = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'edexcel_medicine',
+    `textbook_${eraKey}_PUBLISHER.html`,
   );
-  const pdfPathLegacy = path.join(pdfOutputDir, `edexcel_medicine_textbook_${eraKey}.pdf`);
-  const pdfPathFinalV17 = path.join(
-    pdfOutputDir,
+  const pubAltHtmlPath = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'edexcel_medicine',
+    `textbook_${eraKey}.html`,
+  );
+  const rootHtmlPath = path.join(ROOT_DIR, 'units', 'edexcel_medicine', `textbook_${eraKey}.html`);
+
+  fs.writeFileSync(pubHtmlPath, html, 'utf8');
+  fs.writeFileSync(pubAltHtmlPath, html, 'utf8');
+  fs.writeFileSync(rootHtmlPath, html, 'utf8');
+  console.log(`[HTML] Written to:\n  - ${pubHtmlPath}\n  - ${pubAltHtmlPath}\n  - ${rootHtmlPath}`);
+
+  // Launch page in browser
+  const page = await browser.newPage();
+  await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
+  await page.emulateMediaType('print');
+  await page.setContent(html, { waitUntil: 'domcontentloaded' });
+  await page.evaluateHandle('document.fonts.ready');
+
+  // Evaluate auto-fit engines
+  await page.evaluate(() => {
+    if (typeof autoFitSpreadTypography === 'function') autoFitSpreadTypography();
+  });
+  await new Promise((r) => setTimeout(r, 600));
+
+  // Run reprographic space audit
+  const auditReport = await auditPageBudget(page);
+  printSpaceAuditReport(auditReport);
+
+  // Compile PDF
+  const pdfPath = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
     `edexcel_medicine_textbook_${eraKey}_FINAL_V17.pdf`,
   );
+  await page.pdf({
+    path: pdfPath,
+    format: 'A4',
+    printBackground: true,
+    preferCSSPageSize: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+
+  const pdfStats = fs.statSync(pdfPath);
+  console.log(`[PDF] Generated: ${pdfPath} (${(pdfStats.size / 1024).toFixed(1)} KB)`);
+
+  // Sync to standard aliases
+  const legacyPdfPath = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    `edexcel_medicine_textbook_${eraKey}.pdf`,
+  );
+  const publisherPdfPath = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    `edexcel_medicine_textbook_${eraKey}_PUBLISHER.pdf`,
+  );
+  const publisherFinalV17PdfPath = path.join(
+    ROOT_DIR,
+    'public',
+    'pdfs',
+    `edexcel_medicine_textbook_${eraKey}_PUBLISHER_FINAL_V17.pdf`,
+  );
+  fs.copyFileSync(pdfPath, legacyPdfPath);
+  fs.copyFileSync(pdfPath, publisherPdfPath);
+  fs.copyFileSync(pdfPath, publisherFinalV17PdfPath);
+
+  await page.close();
+  return { eraKey, pdfPath, auditReport };
+}
+
+async function main() {
+  const targetEra = process.argv[2] || 'medieval';
+  const unitData = loadMedicineData();
+
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
 
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    executablePath: chromePath,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--allow-file-access-from-files'],
   });
 
-  const page = await browser.newPage();
-  page.setDefaultNavigationTimeout(120000);
-  await page.setContent(htmlContent, { waitUntil: 'domcontentloaded', timeout: 120000 });
   try {
-    await page.evaluateHandle('document.fonts.ready');
-  } catch (e) {}
-
-  console.log('⚡ Running Automated Typographical & Layout Balancer...');
-  const calibrationResults = await autoCalibrateTextbook(page);
-  if (calibrationResults && calibrationResults.length > 0) {
-    console.log(
-      `   ✅ Auto-Calibrator resolved ${calibrationResults.length} potential layout/overflow issues in memory.`,
-    );
-  }
-
-  // Run space budget and clutter audit
-  const auditResults = await auditPageBudget(page, {
-    pageSelector: '.textbook-page, .page, .a4-page',
-    maxPageHeightPx: 1123,
-    underflowThresholdPx: 40,
-    minUtilizationPct: 85,
-    maxGapAboveFooterPx: 25,
-    maxInterTaskGapPx: 35,
-  });
-
-  printSpaceAuditReport(auditResults, `textbook_${eraKey}_PUBLISHER.html`);
-
-  if (auditResults.hasErrors) {
-    console.warn(
-      `⚠️ Warning: Some layout tolerances exceeded in ${eraKey}; review audit report above.`,
-    );
-  } else {
-    console.log(`🎉 AUDIT PASSED: 100% clean across all ${era.pageCount} pages in A4!`);
-  }
-
-  await page.pdf({
-    path: pdfPathPublisher,
-    format: 'A4',
-    printBackground: true,
-    margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
-  });
-
-  // Sync to standard aliases
-  fs.copyFileSync(pdfPathPublisher, pdfPathLegacy);
-  fs.copyFileSync(pdfPathPublisher, pdfPathFinalV17);
-
-  console.log(`🎉 Masterpiece PDF Textbook [${eraKey}] successfully compiled!`);
-  console.log(`📄 PDF Output: ${pdfPathPublisher}`);
-  console.log(`✅ Synchronized aliases:`);
-  console.log(`   - ${pdfPathLegacy}`);
-  console.log(`   - ${pdfPathFinalV17}`);
-
-  await page.close();
-  await browser.close();
-
-  return { htmlPath: htmlPathPublisher, pdfPath: pdfPathPublisher, auditResults };
-}
-
-async function run(target) {
-  const arg = (target || process.argv[2] || 'all').toLowerCase();
-
-  const validEras = ['medieval', 'renaissance', '18th_19th', 'modern', 'western_front'];
-
-  if (arg === 'all') {
-    console.log('================================================================');
-    console.log('🏛️ COMPILING ALL MEDICINE THROUGH TIME MASTER TEXTBOOKS (5 ERAS)');
-    console.log('================================================================\n');
-    for (const era of validEras) {
-      await renderTextbookPdf(era);
+    if (targetEra === 'all') {
+      const eras = ['medieval', 'renaissance', '18th_19th', 'modern', 'western_front'];
+      for (const e of eras) {
+        await renderEra(e, unitData, browser);
+      }
+    } else {
+      await renderEra(targetEra, unitData, browser);
     }
-    console.log('\n🎉 ALL 5 MEDICINE THROUGH TIME MASTER TEXTBOOKS COMPILED SUCCESSFULLY!');
-  } else if (validEras.includes(arg)) {
-    await renderTextbookPdf(arg);
-  } else if (arg === 'c18_c19' || arg === '18th' || arg === '19th') {
-    await renderTextbookPdf('18th_19th');
-  } else if (arg === 'wf' || arg === 'westernfront') {
-    await renderTextbookPdf('western_front');
-  } else {
-    console.error(
-      `Unknown argument: "${arg}". Use medieval, renaissance, 18th_19th, modern, western_front, or all.`,
-    );
+    console.log(`\n🎉 All requested Medicine textbooks rendered successfully!`);
+  } catch (err) {
+    console.error('Rendering error:', err);
     process.exit(1);
+  } finally {
+    await browser.close();
   }
 }
 
-if (require.main === module) {
-  run().catch((err) => {
-    console.error('Fatal error during Medicine master textbook compilation:', err);
-    process.exit(1);
-  });
-}
-
-module.exports = {
-  buildPublisherTextbookHtml,
-  renderTextbookPdf,
-  run,
-};
+main();

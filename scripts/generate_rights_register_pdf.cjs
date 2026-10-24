@@ -1379,6 +1379,81 @@ async function renderRegister() {
   console.log(`🎉 Successfully rendered Weimar & Nazi Germany Unit PDF: ${weimarPdfPath}`);
   await weimarPage.close();
 
+  // Render standalone Early Elizabethan England Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Early Elizabethan England Unit Source Bibliography...');
+  const eeePdfDir = path.join(outPdfDir, 'eee');
+  if (!fs.existsSync(eeePdfDir)) fs.mkdirSync(eeePdfDir, { recursive: true });
+  const eeePdfPath = path.join(eeePdfDir, 'eee_source_bibliography.pdf');
+  const eeeHtml = buildHtml('eee');
+  const eeePage = await browser.newPage();
+  await eeePage.setContent(eeeHtml, { waitUntil: 'domcontentloaded' });
+  await eeePage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await eeePage.pdf({
+    path: eeePdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Early Elizabethan England Unit PDF: ${eeePdfPath}`);
+  await eeePage.close();
+
+  // Render standalone Conflict in the Middle East Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Conflict in the Middle East Unit Source Bibliography...');
+  const cmePdfDir = path.join(outPdfDir, 'cme_new');
+  if (!fs.existsSync(cmePdfDir)) fs.mkdirSync(cmePdfDir, { recursive: true });
+  const cmePdfPath = path.join(cmePdfDir, 'cme_new_source_bibliography.pdf');
+  const cmeHtml = buildHtml('cme_new');
+  const cmePage = await browser.newPage();
+  await cmePage.setContent(cmeHtml, { waitUntil: 'domcontentloaded' });
+  await cmePage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await cmePage.pdf({
+    path: cmePdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Conflict in the Middle East Unit PDF: ${cmePdfPath}`);
+  await cmePage.close();
+
+  // Render standalone Medicine Through Time Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Medicine Through Time Unit Source Bibliography...');
+  const medPdfDir = path.join(outPdfDir, 'edexcel_medicine');
+  if (!fs.existsSync(medPdfDir)) fs.mkdirSync(medPdfDir, { recursive: true });
+  const medPdfPath = path.join(medPdfDir, 'edexcel_medicine_source_bibliography.pdf');
+  const medHtml = buildHtml('edexcel_medicine');
+  const medPage = await browser.newPage();
+  await medPage.setContent(medHtml, { waitUntil: 'domcontentloaded' });
+  await medPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await medPage.pdf({
+    path: medPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Medicine Through Time Unit PDF: ${medPdfPath}`);
+  await medPage.close();
+
   await browser.close();
   console.log('🏁 All PDF rendering tasks completed successfully!');
 }

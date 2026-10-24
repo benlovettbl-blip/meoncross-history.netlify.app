@@ -15,6 +15,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 const puppeteer = require('puppeteer');
 const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
 
@@ -56,12 +57,28 @@ function formatMarkdown(text) {
   return text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>');
 }
 
+// Clean in-prose paragraph ref pills (e.g. <span class="para-ref">[1.1]</span>)
+function cleanProse(text) {
+  if (!text) return '';
+  return text
+    .replace(/<span\s+class=["']para-ref["']>[^<]*<\/span>\s*/gi, '')
+    .replace(/\[\d+\.\d+\]\s*/g, '')
+    .trim();
+}
+
 // ============================================================================
-// CANONICAL 5-ENQUIRY PURE NARRATIVE TEXT
+// CANONICAL SINGLE SOURCE OF TRUTH (SSoT) LOADER
 // ============================================================================
-const ENQUIRIES = JSON.parse(
-  fs.readFileSync(path.resolve(__dirname, 'great_war_part2_calibrated_enquiries.json'), 'utf8'),
-);
+function loadUnitData() {
+  const dataPath = path.join(ROOT_DIR, 'units', 'great_war_part2', 'data.js');
+  let raw = fs.readFileSync(dataPath, 'utf8');
+  raw =
+    raw
+      .replace(/export\s+const\s+unitData\s*=/g, 'const unitData =')
+      .replace(/export\s+default\s+unitData;?/g, '')
+      .replace(/export\s*\{[^}]*\};?/g, '') + '; unitData;';
+  return vm.runInNewContext(raw);
+}
 
 // ============================================================================
 // 60 CANONICAL KNOWLEDGE RETRIEVAL QUESTIONS (10 PER BOX / PART)
@@ -148,12 +165,25 @@ function buildNarrativeTextbookHtml() {
   const coverImgData =
     getBase64Image('/images/bg_great_war_part2.jpg') || '/images/bg_great_war_part2.jpg';
 
+  const unitData = loadUnitData();
+  const lessons = unitData.lessons || [];
+
   let spreadsHtml = '';
 
-  ENQUIRIES.forEach((enquiry) => {
-    const num = enquiry.num;
+  lessons.slice(0, 5).forEach((lesson, lIdx) => {
+    const num = lIdx + 1;
     const versoPage = num * 2;
     const rectoPage = num * 2 + 1;
+    const blocks = lesson.narrative_blocks || [];
+    const b1 = blocks[0] || { paras: [] };
+    const b2 = blocks[1] || { paras: [] };
+    const b3 = blocks[2] || { paras: [] };
+    const b4 = blocks[3] || { paras: [] };
+    const b5 = blocks[4] || { paras: [] };
+    const title = lesson.textbookTitle || lesson.title;
+    const versoSubtitle = lesson.versoSubtitle || 'Core Narrative & Context';
+    const rectoSubtitle = lesson.rectoSubtitle || 'Climax, Turning Points & Consequence';
+    const enquiryQ = lesson.enquiry || lesson.title;
 
     spreadsHtml += `
     <!-- =========================================================
@@ -171,12 +201,12 @@ function buildNarrativeTextbookHtml() {
       <div class="enquiry-title-banner">
         <div class="enquiry-meta-row">
           <span class="enquiry-badge">ENQUIRY 0${num} &bull; YEAR 9</span>
-          <span class="enquiry-subtitle-tag">${enquiry.versoSubtitle}</span>
+          <span class="enquiry-subtitle-tag">${versoSubtitle}</span>
         </div>
-        <h1 class="enquiry-main-title">${enquiry.title}</h1>
+        <h1 class="enquiry-main-title">${title}</h1>
         <div class="enquiry-question-box">
-          <span class="eq-icon">&sect;</span>
-          <span class="eq-text"><strong>Key Enquiry Question:</strong> ${enquiry.enquiry}</span>
+          <span class="eq-badge">KEY ENQUIRY QUESTION</span>
+          <span class="eq-text">${enquiryQ}</span>
         </div>
       </div>
 
@@ -187,14 +217,14 @@ function buildNarrativeTextbookHtml() {
           <!-- Block 1 -->
           <section class="narrative-block">
             <div class="block-header">
-              <span class="block-ref">[${enquiry.block1.ref}]</span>
-              <span class="block-date">${enquiry.block1.date}</span>
-              <h2 class="block-title">${enquiry.block1.title}</h2>
+              <span class="block-ref">[${b1.ref || `${num}.1`}]</span>
+              <span class="block-date">${b1.date || ''}</span>
+              <h2 class="block-title">${b1.title || ''}</h2>
             </div>
-            ${enquiry.block1.paras
+            ${(b1.paras || [b1.text])
               .map(
                 (p) => `
-            <p class="prose-p"><span class="para-pill">[${enquiry.block1.ref}]</span> ${formatMarkdown(p)}</p>`,
+            <p class="prose-p">${formatMarkdown(cleanProse(p))}</p>`,
               )
               .join('')}
           </section>
@@ -202,14 +232,14 @@ function buildNarrativeTextbookHtml() {
           <!-- Block 2 -->
           <section class="narrative-block">
             <div class="block-header">
-              <span class="block-ref">[${enquiry.block2.ref}]</span>
-              <span class="block-date">${enquiry.block2.date}</span>
-              <h2 class="block-title">${enquiry.block2.title}</h2>
+              <span class="block-ref">[${b2.ref || `${num}.2`}]</span>
+              <span class="block-date">${b2.date || ''}</span>
+              <h2 class="block-title">${b2.title || ''}</h2>
             </div>
-            ${enquiry.block2.paras
+            ${(b2.paras || [b2.text])
               .map(
                 (p) => `
-            <p class="prose-p"><span class="para-pill">[${enquiry.block2.ref}]</span> ${formatMarkdown(p)}</p>`,
+            <p class="prose-p">${formatMarkdown(cleanProse(p))}</p>`,
               )
               .join('')}
           </section>
@@ -239,7 +269,7 @@ function buildNarrativeTextbookHtml() {
       <!-- Recto Section Header -->
       <div class="recto-header-banner">
         <span class="recto-part-tag">PART II: CLIMAX, TURNING POINTS &amp; HISTORICAL CONSEQUENCE</span>
-        <span class="recto-subhead">${enquiry.rectoSubtitle}</span>
+        <span class="recto-subhead">${rectoSubtitle}</span>
       </div>
 
       <!-- Main Prose Reading Area (2-Column Continuous Flow for Blocks 3, 4 & 5) -->
@@ -249,14 +279,14 @@ function buildNarrativeTextbookHtml() {
           <!-- Block 3 -->
           <section class="narrative-block">
             <div class="block-header">
-              <span class="block-ref">[${enquiry.block3.ref}]</span>
-              <span class="block-date">${enquiry.block3.date}</span>
-              <h2 class="block-title">${enquiry.block3.title}</h2>
+              <span class="block-ref">[${b3.ref || `${num}.3`}]</span>
+              <span class="block-date">${b3.date || ''}</span>
+              <h2 class="block-title">${b3.title || ''}</h2>
             </div>
-            ${enquiry.block3.paras
+            ${(b3.paras || [b3.text])
               .map(
                 (p) => `
-            <p class="prose-p"><span class="para-pill">[${enquiry.block3.ref}]</span> ${formatMarkdown(p)}</p>`,
+            <p class="prose-p">${formatMarkdown(cleanProse(p))}</p>`,
               )
               .join('')}
           </section>
@@ -264,14 +294,14 @@ function buildNarrativeTextbookHtml() {
           <!-- Block 4 -->
           <section class="narrative-block">
             <div class="block-header">
-              <span class="block-ref">[${enquiry.block4.ref}]</span>
-              <span class="block-date">${enquiry.block4.date}</span>
-              <h2 class="block-title">${enquiry.block4.title}</h2>
+              <span class="block-ref">[${b4.ref || `${num}.4`}]</span>
+              <span class="block-date">${b4.date || ''}</span>
+              <h2 class="block-title">${b4.title || ''}</h2>
             </div>
-            ${enquiry.block4.paras
+            ${(b4.paras || [b4.text])
               .map(
                 (p) => `
-            <p class="prose-p"><span class="para-pill">[${enquiry.block4.ref}]</span> ${formatMarkdown(p)}</p>`,
+            <p class="prose-p">${formatMarkdown(cleanProse(p))}</p>`,
               )
               .join('')}
           </section>
@@ -279,14 +309,14 @@ function buildNarrativeTextbookHtml() {
           <!-- Block 5 -->
           <section class="narrative-block">
             <div class="block-header">
-              <span class="block-ref">[${enquiry.block5.ref}]</span>
-              <span class="block-date">${enquiry.block5.date}</span>
-              <h2 class="block-title">${enquiry.block5.title}</h2>
+              <span class="block-ref">[${b5.ref || `${num}.5`}]</span>
+              <span class="block-date">${b5.date || ''}</span>
+              <h2 class="block-title">${b5.title || ''}</h2>
             </div>
-            ${enquiry.block5.paras
+            ${(b5.paras || [b5.text])
               .map(
                 (p) => `
-            <p class="prose-p"><span class="para-pill">[${enquiry.block5.ref}]</span> ${formatMarkdown(p)}</p>`,
+            <p class="prose-p">${formatMarkdown(cleanProse(p))}</p>`,
               )
               .join('')}
           </section>
@@ -424,7 +454,7 @@ function buildNarrativeTextbookHtml() {
   <title>The Great War (1914–1919) — Classroom Reading Anthology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
   <style>
     :root {
       --ink-primary: #0f172a;
@@ -519,266 +549,271 @@ function buildNarrativeTextbookHtml() {
     }
 
     /* =============================================================
-       PAGE 1: MASTER FRONT COVER (Rich Architectural Overview)
+       PAGE 1: MASTER FRONT COVER
        ============================================================= */
     .a4-page.front-cover {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 10mm 15mm 9mm 15mm;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 9mm 14mm 8mm 14mm;
       display: flex;
       flex-direction: column;
-      position: relative;
+      justify-content: space-between;
     }
 
     .cover-top-masthead {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 3.5px;
+      margin-bottom: 4px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      padding-bottom: 1.5mm;
-      margin-bottom: 2.5mm;
+      justify-content: space-between;
       font-family: var(--font-sans);
-      font-size: 7.2pt;
-      font-weight: 700;
-      letter-spacing: 0.1em;
+    }
+
+    .cover-series {
+      font-size: 8.5pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #94a3b8;
+      color: #0f172a;
+    }
+
+    .cover-sub-series {
+      font-size: 6.8pt;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      background: #0f172a;
+      padding: 2px 7px;
+      border-radius: 3px;
+      text-transform: uppercase;
     }
 
     .cover-title-group {
       text-align: center;
-      margin-bottom: 2.8mm;
+      margin: 4px 0 3px 0;
     }
+
     .cover-date-pill {
       display: inline-block;
       background: #991b1b;
-      color: #ffffff;
+      color: #fff;
+      font-size: 8.5pt;
+      font-weight: 800;
+      padding: 2px 14px;
+      border-radius: 12px;
+      letter-spacing: 0.12em;
+      margin-bottom: 3px;
       font-family: var(--font-sans);
-      font-size: 8pt;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      padding: 2.5px 12px;
-      border-radius: 3px;
-      margin-bottom: 2mm;
-    }
-    .cover-title-group h1 {
-      font-family: var(--font-display);
-      font-size: 26pt;
-      font-weight: 800;
-      letter-spacing: 0.05em;
-      color: #ffffff;
-      line-height: 1.1;
       text-transform: uppercase;
-      margin-bottom: 2mm;
-    }
-    .cover-title-group p {
-      font-family: var(--font-body);
-      font-size: 10.8pt;
-      font-style: italic;
-      color: #cbd5e1;
-      line-height: 1.35;
     }
 
-    /* Hero Plate & Overview Row */
-    .cover-hero-row {
-      display: flex;
-      gap: 16px;
-      background: rgba(30, 41, 59, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 4px;
-      padding: 3mm 4.5mm;
-      margin-bottom: 3.2mm;
-      align-items: center;
+    .cover-main-title {
+      font-family: 'Cinzel', serif;
+      font-size: 24pt;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      color: #0f172a;
+      margin: 0;
+      text-transform: uppercase;
     }
-    .cover-hero-artwork-frame {
-      width: 68.33mm;
-      display: flex;
-      flex-direction: column;
-      flex-shrink: 0;
+
+    .cover-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.8pt;
+      font-style: italic;
+      color: #475569;
+      margin-top: 2px;
     }
-    .cover-hero-img-box {
+
+    .cover-hero-wrap {
       width: 100%;
-      height: 82mm;
-      border-radius: 3px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-      background: #000000;
+      height: 87mm;
+      border: 1.5px solid #0f172a;
+      position: relative;
+      background: #0f172a;
+      margin: 3px 0 2px 0;
     }
-    .cover-hero-img-box img {
+
+    .cover-hero-img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
       display: block;
+      object-fit: cover;
+      object-position: center 30%;
     }
+
     .cover-hero-caption {
       font-family: var(--font-sans);
-      font-size: 6pt;
-      color: #94a3b8;
-      margin-top: 1mm;
-      line-height: 1.15;
+      font-size: 6.6pt;
+      color: #475569;
       text-align: center;
       font-style: italic;
-    }
-    .cover-overview-narrative {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 1.8mm;
-    }
-    .cover-overview-title {
-      color: #fca5a5;
-      font-family: var(--font-sans);
-      font-size: 9.2pt;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-bottom: 1px solid rgba(252, 165, 165, 0.3);
-      padding-bottom: 1.2mm;
-      margin-bottom: 0.5mm;
-    }
-    .cover-overview-p {
-      font-family: var(--font-body);
-      font-size: 10.4pt;
-      line-height: 1.42;
-      color: #f8fafc;
-      text-align: justify;
-      text-justify: inter-word;
-    }
-
-    /* Enquiries Syllabus Box */
-    .cover-enquiries-box {
-      background: #ffffff;
-      color: #0f172a;
-      border-radius: 4px;
-      padding: 3.8mm 5.5mm;
-      border-left: 5px solid #991b1b;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    }
-    .cover-enquiries-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 2px solid #0f284e;
-      padding-bottom: 1.4mm;
-      margin-bottom: 2mm;
-      font-family: var(--font-sans);
-    }
-    .cover-enquiries-header h2 {
-      font-size: 9.2pt;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #0f284e;
-    }
-    .cover-enquiries-header span {
-      font-size: 7.4pt;
-      font-weight: 700;
-      color: #991b1b;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    .cover-enquiry-list {
-      display: flex;
-      flex-direction: column;
-      gap: 3.5mm;
-    }
-    .cover-enquiry-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-family: var(--font-sans);
-      padding-bottom: 2.2mm;
-      border-bottom: 1px solid #f1f5f9;
-    }
-    .cover-enquiry-item:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-    .cover-enquiry-num {
-      background: #0f284e;
-      color: #ffffff;
-      font-size: 7.8pt;
-      font-weight: 800;
-      padding: 2.5px 7px;
-      border-radius: 3px;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-    .cover-enquiry-text {
-      flex: 1;
-    }
-    .cover-enquiry-top-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1px;
-    }
-    .cover-enquiry-title {
-      font-size: 8.8pt;
-      font-weight: 800;
-      color: #0f172a;
+      margin-bottom: 3px;
       line-height: 1.25;
     }
-    .cover-enquiry-locator {
-      font-size: 7.4pt;
-      font-weight: 700;
-      color: #991b1b;
-      flex-shrink: 0;
-      margin-left: 8px;
-    }
-    .cover-enquiry-question {
-      font-family: var(--font-body);
-      font-size: 8.2pt;
-      font-style: italic;
-      color: #334155;
-      line-height: 1.28;
-      margin-bottom: 1px;
-    }
-    .cover-enquiry-desc {
-      font-size: 7.4pt;
-      color: #64748b;
-      line-height: 1.32;
+
+    .cover-overview-box {
+      background: #fdfbf7;
+      border: 1.5px solid #e2d9cc;
+      border-left: 4.5px solid #991b1b;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin: 3px 0 5px 0;
     }
 
-    /* Bottom Concept Strip */
-    .cover-concept-strip {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 3px;
-      padding: 2.2mm 4mm;
-      margin-top: 3.2mm;
+    .cover-overview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
       font-family: var(--font-sans);
+    }
+
+    .cover-overview-title {
+      font-size: 7.0pt;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #991b1b;
+    }
+
+    .cover-overview-period {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.06em;
+    }
+
+    .cover-overview-text {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 9.4pt;
+      line-height: 1.48;
+      color: #1e293b;
+      margin: 0;
+      font-style: italic;
+      text-align: justify;
+    }
+
+    .cover-directory {
+      border: 1.5px solid #0f172a;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
+
+    .cover-directory-head {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 3.5px 8px;
+      font-family: 'Inter', sans-serif;
       font-size: 7.2pt;
-      color: #cbd5e1;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cover-directory-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.8pt;
+      background: #ffffff;
+    }
+
+    .cover-directory-table tr {
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .cover-directory-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .cover-directory-table td {
+      padding: 4.5px 8px;
+      vertical-align: middle;
+    }
+
+    .col-num {
+      width: 55px;
+      font-weight: 800;
+      color: #991b1b;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .col-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 7.8pt;
+      width: 36%;
+      line-height: 1.25;
+    }
+
+    .col-eq {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      color: #475569;
+      font-size: 7.5pt;
+      padding-left: 6px;
+      line-height: 1.28;
+    }
+
+    .col-page {
+      width: 58px;
+      text-align: right;
+      font-weight: 800;
+      color: #991b1b;
+      white-space: nowrap;
+    }
+
+    .cover-concepts-strip {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 3px;
+      padding: 3.5px 8px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      line-height: 1.35;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      color: #1e3a8a;
+      margin-bottom: 4px;
     }
-    .cover-concept-label {
-      background: #0f284e;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #ffffff;
+
+    .cover-concepts-tag {
       font-weight: 800;
-      padding: 2px 6px;
-      border-radius: 2px;
       text-transform: uppercase;
-      font-size: 6.5pt;
-      letter-spacing: 0.06em;
-      flex-shrink: 0;
+      letter-spacing: 0.08em;
+      background: #991b1b;
+      color: #ffffff;
+      padding: 1px 4.5px;
+      border-radius: 2px;
+      white-space: nowrap;
+      font-size: 6.2pt;
     }
 
     .cover-footer-meta {
-      border-top: 1px solid rgba(255, 255, 255, 0.2);
-      padding-top: 2.5mm;
-      margin-top: auto;
+      border-top: 1px solid #cbd5e1;
+      padding-top: 3px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       font-family: var(--font-sans);
-      font-size: 7pt;
-      color: #94a3b8;
+      font-size: 6.8pt;
+      color: #64748b;
+    }
+
+    .cover-footer-meta .page-pill {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 800;
+      padding: 1px 7px;
+      border-radius: 2px;
+      font-size: 6.8pt;
     }
 
     /* =============================================================
@@ -856,17 +891,25 @@ function buildNarrativeTextbookHtml() {
     }
     .enquiry-question-box {
       background: #f8fafc;
-      border-left: 3px solid var(--crimson-accent);
-      padding: 3mm 4mm;
+      border-left: 3.5px solid var(--crimson-accent);
+      padding: 2.5mm 4mm;
       border-radius: 0 3px 3px 0;
       display: flex;
       align-items: baseline;
       gap: 8px;
     }
-    .eq-icon {
-      color: var(--crimson-accent);
+    .eq-badge {
+      font-family: var(--font-sans);
+      font-size: 6.8pt;
       font-weight: 800;
-      font-size: 9.5pt;
+      text-transform: uppercase;
+      color: #ffffff;
+      background: var(--crimson-accent);
+      padding: 1px 5px;
+      border-radius: 2px;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .eq-text {
       font-family: var(--font-body);
@@ -874,15 +917,6 @@ function buildNarrativeTextbookHtml() {
       font-style: italic;
       color: var(--ink-secondary);
       line-height: 1.35;
-    }
-    .eq-text strong {
-      font-style: normal;
-      font-family: var(--font-sans);
-      font-size: 8pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: var(--crimson-accent);
-      letter-spacing: 0.04em;
     }
 
     /* =============================================================
@@ -925,7 +959,6 @@ function buildNarrativeTextbookHtml() {
       column-count: 2;
       column-gap: 22px;
       column-fill: balance;
-      height: 100%;
     }
     .prose-two-column .narrative-block:last-child,
     .prose-two-column .narrative-block:last-child .prose-p:last-child {
@@ -1230,113 +1263,83 @@ function buildNarrativeTextbookHtml() {
          ========================================================= -->
     <div class="a4-page front-cover cover-page textbook-page" data-page="1" id="page-1">
       <div class="cover-top-masthead">
-        <span>The History Revision Hub &bull; Master Curriculum Series</span>
-        <span>Key Stage 3 Disciplinary History</span>
+        <span class="cover-series">The History Revision Hub</span>
+        <span class="cover-sub-series">Key Stage 3 Disciplinary Classroom Textbook &bull; Year 9 Master Edition</span>
       </div>
 
       <div class="cover-title-group">
         <span class="cover-date-pill">1914 &ndash; 1919</span>
-        <h1>THE GREAT WAR</h1>
-        <p>Total War, Industrial Slaughter &amp; The Fragile Peace</p>
+        <h1 class="cover-main-title">THE GREAT WAR</h1>
+        <div class="cover-subtitle">Total War, Industrial Slaughter &amp; The Fragile Peace</div>
       </div>
 
-      <!-- HERO VISUAL PLATE & OVERVIEW ROW -->
-      <div class="cover-hero-row">
-        <div class="cover-hero-artwork-frame">
-          <div class="cover-hero-img-box">
-            <img src="${coverImgData}" alt="The Signing of Peace in the Hall of Mirrors, Versailles (1919) by Sir William Orpen" />
-          </div>
-          <div class="cover-hero-caption">Sir William Orpen &bull; The Signing of Peace in the Hall of Mirrors, Versailles (1919)</div>
-        </div>
-        <div class="cover-overview-narrative">
-          <div class="cover-overview-title">INTO THE ABYSS &bull; 1914&ndash;1919</div>
-          <p class="cover-overview-p">
-            In the summer of 1914, millions of young men marched eagerly to war, swept up in patriotic fever and promised they would return home victorious before Christmas. None foresaw the industrial nightmare awaiting them. Within months, rapid-firing machine guns, heavy artillery, and poison gas obliterated the old world of cavalry charges, trapping an entire generation in the mud, blood, and barbed wire of the Western Front.
-          </p>
-          <p class="cover-overview-p">
-            From the catastrophic slaughter of the Somme to the forgotten heroism of four million imperial troops of colour, and from the courage of female munition workers on the Home Front to the bitter peace dictated in the Hall of Mirrors at Versailles, this anthology tells the dramatic story of five cataclysmic years that shattered empires and reshaped human history forever.
-          </p>
-        </div>
+      <div class="cover-hero-wrap">
+        <img class="cover-hero-img" src="${coverImgData}" alt="The Signing of Peace in the Hall of Mirrors, Versailles (1919) by Sir William Orpen" />
+      </div>
+      <div class="cover-hero-caption">
+        Primary Archival Record: Sir William Orpen &bull; The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919), concluding the First World War.
       </div>
 
-      <!-- 5 ENQUIRIES OVERVIEW BOX -->
-      <div class="cover-enquiries-box">
-        <div class="cover-enquiries-header">
-          <h2>Curriculum Enquiries in This Volume</h2>
-          <span>Chronological Syllabus Overview</span>
+      <div class="cover-overview-box">
+        <div class="cover-overview-header">
+          <span class="cover-overview-title">Historical Enquiry &bull; Unit Narrative Synopsis</span>
+          <span class="cover-overview-period">1914 &ndash; 1919</span>
         </div>
-        <div class="cover-enquiry-list">
-          <div class="cover-enquiry-item">
-            <span class="cover-enquiry-num">01</span>
-            <div class="cover-enquiry-text">
-              <div class="cover-enquiry-top-row">
-                <span class="cover-enquiry-title">1914: The Outbreak, The Alliance Trap &amp; The Pals’ Battalions</span>
-                <span class="cover-enquiry-locator">pp. 2&ndash;3 &bull; Ref [1.1]&ndash;[1.5]</span>
-              </div>
-              <div class="cover-enquiry-question">Key Question: Why were young men so desperate to volunteer for the slaughter of 1914?</div>
-              <div class="cover-enquiry-desc">${ENQUIRIES[0].coverDesc}</div>
-            </div>
-          </div>
-
-          <div class="cover-enquiry-item">
-            <span class="cover-enquiry-num">02</span>
-            <div class="cover-enquiry-text">
-              <div class="cover-enquiry-top-row">
-                <span class="cover-enquiry-title">Blood, Mud &amp; Steel: Did British Generals Make Trench Warfare Worse?</span>
-                <span class="cover-enquiry-locator">pp. 4&ndash;5 &bull; Ref [2.1]&ndash;[2.5]</span>
-              </div>
-              <div class="cover-enquiry-question">Key Question: Were British commanders like General Haig callous 'donkeys' or prisoners of industrial technology?</div>
-              <div class="cover-enquiry-desc">${ENQUIRIES[1].coverDesc}</div>
-            </div>
-          </div>
-
-          <div class="cover-enquiry-item">
-            <span class="cover-enquiry-num">03</span>
-            <div class="cover-enquiry-text">
-              <div class="cover-enquiry-top-row">
-                <span class="cover-enquiry-title">The Forgotten Global Empire: Troops of Colour on the Western Front</span>
-                <span class="cover-enquiry-locator">pp. 6&ndash;7 &bull; Ref [3.1]&ndash;[3.5]</span>
-              </div>
-              <div class="cover-enquiry-question">Key Question: Why were over four million colonial and dominion troops erased from popular memory?</div>
-              <div class="cover-enquiry-desc">${ENQUIRIES[2].coverDesc}</div>
-            </div>
-          </div>
-
-          <div class="cover-enquiry-item">
-            <span class="cover-enquiry-num">04</span>
-            <div class="cover-enquiry-text">
-              <div class="cover-enquiry-top-row">
-                <span class="cover-enquiry-title">The Total War Home Front: DORA, Canaries &amp; The Subjugation of Civilian Life</span>
-                <span class="cover-enquiry-locator">pp. 8&ndash;9 &bull; Ref [4.1]&ndash;[4.5]</span>
-              </div>
-              <div class="cover-enquiry-question">Key Question: How did an overseas war fundamentally transform the British state and civilian life?</div>
-              <div class="cover-enquiry-desc">${ENQUIRIES[3].coverDesc}</div>
-            </div>
-          </div>
-
-          <div class="cover-enquiry-item">
-            <span class="cover-enquiry-num">05</span>
-            <div class="cover-enquiry-text">
-              <div class="cover-enquiry-top-row">
-                <span class="cover-enquiry-title">The Armistice (1918), The Versailles Diktat (1919) &amp; The Fragile Peace</span>
-                <span class="cover-enquiry-locator">pp. 10&ndash;11 &bull; Ref [5.1]&ndash;[5.5]</span>
-              </div>
-              <div class="cover-enquiry-question">Key Question: Did the Treaty of Versailles resolve the problems of 1914 or cultivate the seeds of 1939?</div>
-              <div class="cover-enquiry-desc">${ENQUIRIES[4].coverDesc}</div>
-            </div>
-          </div>
-        </div>
+        <p class="cover-overview-text">
+          &ldquo;In the summer of 1914, millions of young men marched eagerly to war, swept up in patriotic fever and promised they would return home victorious before Christmas. None foresaw the industrial nightmare awaiting them: rapid-firing machine guns, heavy artillery, and poison gas obliterated the old world of cavalry charges, trapping an entire generation in the mud, blood, and barbed wire of the Western Front. From the catastrophic slaughter of the Somme to the forgotten heroism of four million imperial troops of colour, the courage of female munition workers on the Home Front, and the bitter peace dictated in the Hall of Mirrors at Versailles, this anthology tells the dramatic story of five cataclysmic years that shattered empires and reshaped human history forever.&rdquo;
+        </p>
       </div>
 
-      <!-- CORE CONCEPTS STRIP -->
-      <div class="cover-concept-strip">
-        <span class="cover-concept-label">Core Concepts</span>
-        <span>Industrialised Attrition &bull; Total War Mobilisation &bull; Imperial Subjugation &bull; Conscription &amp; Conscience &bull; Geopolitical Diktat &amp; War Guilt</span>
+      <div class="cover-directory">
+        <div class="cover-directory-head">
+          <span>The Canonical Enquiries &bull; Scheme of Learning Directory</span>
+          <span>A3 Saddle-Stitch Format</span>
+        </div>
+        <table class="cover-directory-table">
+          <tbody>
+            <tr>
+              <td class="col-num">Enquiry 01</td>
+              <td class="col-title">The Outbreak, Alliance Trap &amp; Pals Battalions</td>
+              <td class="col-eq">Why were young men so desperate to volunteer for the slaughter of 1914?</td>
+              <td class="col-page">Pages 2&ndash;3</td>
+            </tr>
+            <tr>
+              <td class="col-num">Enquiry 02</td>
+              <td class="col-title">Blood, Mud &amp; Steel: Trench Warfare &amp; Somme</td>
+              <td class="col-eq">Did British generals make trench warfare on the Western Front worse?</td>
+              <td class="col-page">Pages 4&ndash;5</td>
+            </tr>
+            <tr>
+              <td class="col-num">Enquiry 03</td>
+              <td class="col-title">The Forgotten Global Empire: Troops of Colour</td>
+              <td class="col-eq">Why were four million colonial and dominion troops erased from popular memory?</td>
+              <td class="col-page">Pages 6&ndash;7</td>
+            </tr>
+            <tr>
+              <td class="col-num">Enquiry 04</td>
+              <td class="col-title">The Total War Home Front: DORA &amp; Conscription</td>
+              <td class="col-eq">How did an overseas war fundamentally transform the British state and civilian life?</td>
+              <td class="col-page">Pages 8&ndash;9</td>
+            </tr>
+            <tr>
+              <td class="col-num">Enquiry 05</td>
+              <td class="col-title">The Armistice, Versailles Diktat &amp; Fragile Peace</td>
+              <td class="col-eq">Did the Treaty of Versailles resolve the problems of 1914 or cultivate seeds of 1939?</td>
+              <td class="col-page">Pages 10&ndash;11</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cover-concepts-strip">
+        <span class="cover-concepts-tag">Core Concepts</span>
+        <span>Triple Entente &bull; Schlieffen Plan &bull; Kitchener's New Armies &bull; Pals Battalions &bull; White Feathers &bull; Western Front &bull; Attrition &bull; Somme &bull; Lions Led by Donkeys &bull; Troops of Colour &bull; DORA &bull; Munitionettes &bull; Conscientious Objectors &bull; Hundred Days &bull; Versailles Diktat</span>
       </div>
 
       <div class="cover-footer-meta">
-        <span>The History Revision Hub &bull; Commercial Educational Publishing</span>
-        <span>Classroom Reading Edition &bull; 100% Pure Disciplinary Narrative Architecture</span>
+        <span>The History Revision Hub &bull; Disciplinary History Textbook Series</span>
+        <span class="page-pill">Page 1</span>
+        <span>Year 9 Curriculum Companion &bull; 12-Page Saddle-Stitch Model</span>
       </div>
     </div>
 
@@ -1422,6 +1425,64 @@ async function run() {
   const page = await browser.newPage();
   await page.setViewport({ width: 1200, height: 1600, deviceScaleFactor: 2 });
   await page.setContent(html, { waitUntil: 'networkidle0' });
+
+  // Dynamic Auto-Balancing Typography Engine
+  console.log(
+    '\n[Auto-Balancer] Dynamically calibrating font metrics to guarantee 0px overflow & >= 95% fill...',
+  );
+  await page.evaluate(() => {
+    const lessonPages = document.querySelectorAll('.textbook-page');
+    lessonPages.forEach((p) => {
+      const footer = p.querySelector('.page-running-footer');
+      const proseEls = p.querySelectorAll('.prose-p');
+      const blocks = p.querySelectorAll('.narrative-block');
+      if (proseEls.length === 0 || !footer) return;
+
+      let size = 12.4;
+      let lh = 1.62;
+      let pMargin = 7.0;
+      let blockMargin = 12.0;
+
+      proseEls.forEach((el) => {
+        el.style.fontSize = size.toFixed(2) + 'pt';
+        el.style.lineHeight = lh.toFixed(2);
+        el.style.marginBottom = pMargin.toFixed(1) + 'px';
+      });
+      blocks.forEach((b) => (b.style.marginBottom = blockMargin.toFixed(1) + 'px'));
+
+      const getOverlap = () => {
+        const fTop = footer.getBoundingClientRect().top;
+        const allElements = Array.from(
+          p.querySelectorAll('.narrative-block, .prose-p, .block-header, h1, h2, span, p'),
+        );
+        const maxB = Math.max(
+          ...allElements
+            .filter((c) => c !== footer && !footer.contains(c))
+            .map((c) => c.getBoundingClientRect().bottom),
+        );
+        return maxB - fTop;
+      };
+
+      // Shrink until clearance is at least 6px above footer
+      while (getOverlap() > -6 && size > 9.2) {
+        size -= 0.05;
+        lh -= 0.007;
+        pMargin = Math.max(3.0, pMargin - 0.05);
+        blockMargin = Math.max(5.0, blockMargin - 0.1);
+        proseEls.forEach((el) => {
+          el.style.fontSize = size.toFixed(2) + 'pt';
+          el.style.lineHeight = lh.toFixed(2);
+          el.style.marginBottom = pMargin.toFixed(1) + 'px';
+        });
+        blocks.forEach((b) => (b.style.marginBottom = blockMargin.toFixed(1) + 'px'));
+      }
+    });
+  });
+
+  // Re-read HTML with calibrated styles and save back to disk
+  const calibratedHtml = await page.content();
+  fs.writeFileSync(publicHtmlPath, calibratedHtml, 'utf8');
+  fs.writeFileSync(rootHtmlPath, calibratedHtml, 'utf8');
 
   // Page Overflow Audit
   const auditResults = await page.evaluate(() => {

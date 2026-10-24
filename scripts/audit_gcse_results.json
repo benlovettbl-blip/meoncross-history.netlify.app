@@ -1,0 +1,162 @@
+{
+  "edexcel_medicine": {
+    "title": "Medicine Through Time (Paper 1)",
+    "lessonCount": 26,
+    "subFeatureStats": {
+      "do_now_count": 26,
+      "do_now_types": {
+        "object": 26
+      },
+      "sources_count": 26,
+      "sources_total": 57,
+      "sources_with_provenance": 57,
+      "sources_with_hinge_question": 57,
+      "key_individuals_count": 0,
+      "individuals_total": 0,
+      "guided_reading_count": 26,
+      "guided_reading_sections_total": 105,
+      "tasks_count": 15,
+      "tasks_total": 16,
+      "quizzes_count": 26,
+      "quizzes_questions_total": 260,
+      "exam_questions_count": 26,
+      "exam_questions_total": 26,
+      "exam_question_types": {},
+      "teacher_notes_count": 26,
+      "flashcards_count": 26,
+      "flashcards_total": 145,
+      "vocab_count": 26,
+      "vocab_total": 135,
+      "vocab_cloze_count": 26,
+      "causal_domino_count": 26
+    }
+  },
+  "cme_new": {
+    "title": "Conflict in the Middle East (Paper 2)",
+    "lessonCount": 12,
+    "subFeatureStats": {
+      "do_now_count": 12,
+      "do_now_types": {
+        "object": 12
+      },
+      "sources_count": 12,
+      "sources_total": 33,
+      "sources_with_provenance": 33,
+      "sources_with_hinge_question": 33,
+      "key_individuals_count": 0,
+      "individuals_total": 0,
+      "guided_reading_count": 12,
+      "guided_reading_sections_total": 66,
+      "tasks_count": 0,
+      "tasks_total": 0,
+      "quizzes_count": 12,
+      "quizzes_questions_total": 240,
+      "exam_questions_count": 12,
+      "exam_questions_total": 12,
+      "exam_question_types": {},
+      "teacher_notes_count": 12,
+      "flashcards_count": 12,
+      "flashcards_total": 92,
+      "vocab_count": 12,
+      "vocab_total": 72,
+      "vocab_cloze_count": 12,
+      "causal_domino_count": 12
+    }
+  },
+  "eee": {
+    "title": "Early Elizabethan England (Paper 2)",
+    "lessonCount": 12,
+    "subFeatureStats": {
+      "do_now_count": 12,
+      "do_now_types": {
+        "object": 12
+      },
+      "sources_count": 12,
+      "sources_total": 24,
+      "sources_with_provenance": 24,
+      "sources_with_hinge_question": 24,
+      "key_individuals_count": 0,
+      "individuals_total": 0,
+      "guided_reading_count": 12,
+      "guided_reading_sections_total": 60,
+      "tasks_count": 0,
+      "tasks_total": 0,
+      "quizzes_count": 12,
+      "quizzes_questions_total": 238,
+      "exam_questions_count": 12,
+      "exam_questions_total": 12,
+      "exam_question_types": {},
+      "teacher_notes_count": 12,
+      "flashcards_count": 12,
+      "flashcards_total": 66,
+      "vocab_count": 12,
+      "vocab_total": 72,
+      "vocab_cloze_count": 12,
+      "causal_domino_count": 12
+    }
+  },
+  "weimar_nazi_germany": {
+    "title": "Weimar & Nazi Germany (Paper 3)",
+    "lessonCount": 16,
+    "subFeatureStats": {
+      "do_now_count": 16,
+      "do_now_types": {
+        "object": 16
+      },
+      "sources_count": 16,
+      "sources_total": 39,
+      "sources_with_provenance": 39,
+      "sources_with_hinge_question": 39,
+      "key_individuals_count": 0,
+      "individuals_total": 0,
+      "guided_reading_count": 16,
+      "guided_reading_sections_total": 80,
+      "tasks_count": 16,
+      "tasks_total": 64,
+      "quizzes_count": 16,
+      "quizzes_questions_total": 330,
+      "exam_questions_count": 16,
+      "exam_questions_total": 16,
+      "exam_question_types": {},
+      "teacher_notes_count": 16,
+      "flashcards_count": 16,
+      "flashcards_total": 109,
+      "vocab_count": 16,
+      "vocab_total": 113,
+      "vocab_cloze_count": 16,
+      "causal_domino_count": 16
+    }
+  },
+  "usa": {
+    "title": "USA 1954–75: Conflict at Home and Abroad (Paper 3)",
+    "lessonCount": 16,
+    "subFeatureStats": {
+      "do_now_count": 16,
+      "do_now_types": {
+        "object": 16
+      },
+      "sources_count": 16,
+      "sources_total": 49,
+      "sources_with_provenance": 49,
+      "sources_with_hinge_question": 49,
+      "key_individuals_count": 0,
+      "individuals_total": 0,
+      "guided_reading_count": 16,
+      "guided_reading_sections_total": 49,
+      "tasks_count": 16,
+      "tasks_total": 45,
+      "quizzes_count": 16,
+      "quizzes_questions_total": 320,
+      "exam_questions_count": 16,
+      "exam_questions_total": 16,
+      "exam_question_types": {},
+      "teacher_notes_count": 16,
+      "flashcards_count": 16,
+      "flashcards_total": 96,
+      "vocab_count": 16,
+      "vocab_total": 80,
+      "vocab_cloze_count": 16,
+      "causal_domino_count": 16
+    }
+  }
+}

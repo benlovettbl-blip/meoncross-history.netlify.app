@@ -1,0 +1,146 @@
+{
+  "id": "paper2_b3_henry_viii_ministers",
+  "code": "B3",
+  "paper": "Paper 2 (British Depth)",
+  "paperType": "British Depth Study",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option B3: Henry VIII and his ministers, 1509–40",
+  "shortTitle": "Henry VIII and his Ministers",
+  "exam_structure": {
+    "paper_code": "1HI0/B1–B4",
+    "paper_name": "Paper 2 (Booklet B): British Depth Study",
+    "total_marks": 32,
+    "duration_minutes": 55,
+    "weighting": "20% of total GCSE",
+    "overview": "Tests British depth across 3 Key Topics. Q1(a)/(b) Describe features (4m), Q2 Explain why causation (12m), Q3/Q4 Choice essay with stimulus points (16m)."
+  },
+  "stats": {
+    "sectionsCount": 3,
+    "topicsCount": 12,
+    "pointsCount": 29
+  },
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "keyTopicNumber": 1,
+      "title": "Key topic 1: Henry VIII and Wolsey, 1509–29",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Henry VIII, Renaissance Prince",
+          "points": [
+            "England in 1509: society and government. The young Henry and his accession to the throne.",
+            "Henry’s character and views on sovereignty and monarchy. His personal style of government.",
+            "Strengths, weaknesses and aims as monarch."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The rise of Wolsey and his policies",
+          "points": [
+            "Reasons for Wolsey’s rise to power. His personality, roles and wealth.",
+            "Wolsey’s reforms: enclosures, finance and justice. The Eltham Ordinances.",
+            "Reasons for and reactions to the Amicable Grant."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Wolsey’s foreign policy",
+          "points": [
+            "Aims of Wolsey’s foreign policy.",
+            "Successes and failures, including relations with France and the Holy Roman Empire, the Treaty of London (1518), the ‘Field of the Cloth of Gold’ (1520) and increasing difficulties in the 1520s."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. Wolsey, Catherine, the succession and annulment",
+          "points": [
+            "Catherine of Aragon and the succession.",
+            "Henry’s reasons for and attempts to gain an annulment. Opposition to the annulment, including the role of Pope Clement VII.",
+            "Reasons for Wolsey’s fall from power, including the failure of the divorce proceedings in London and t he influence of the Boleyns."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "keyTopicNumber": 2,
+      "title": "Key topic 2: Henry VIII and Cromwell, 1529–40",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Cromwell’s rise to power, 1529–34",
+          "points": [
+            "Personality and early career, including service to Wolsey, election as MP and eventual membership of the Royal Council.",
+            "Handling of the king’s annulment and influence over Henry. Role as the king’s Chief Minister."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. T he king’s marriages",
+          "points": [
+            "Reasons for the fall of Anne Boleyn, including the role of Cromwell.",
+            "Reasons for marriage to Jane Seymour; her influence, heir and death.",
+            "Reasons for marriage to Anne of Cleves."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Cromwell and government, 1534–40",
+          "points": [
+            "Reform of government and royal finance.",
+            "The management and use of parliament."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. The fall of Cromwell",
+          "points": [
+            "Reasons for Cromwell’s fall from power in 1540, including the influence of the Duke of Norfolk and the failure of the marriage to Anne of Cleves."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "keyTopicNumber": 3,
+      "title": "Key topic 3: The Reformation and its impact, 1529–40",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The break with Rome",
+          "points": [
+            "Henry as ‘Defender of the Faith’. Reasons for Henry’s campaign against the Pope and the Catholic Church, 1529–33.",
+            "The significance of the Act of Succession and the Act of Supremacy (1534)  for the break with Rome. Cromwell’s role in their enforcement, including the use of oaths and treason laws."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Opposition to, and impact of, Reformation, 1534–40",
+          "points": [
+            "Elizabeth Barton (the Nun of Kent) and John Fisher.",
+            "The significance of opposition from Thomas More.",
+            "Impact of the Reformation on the English Church, including the work of Thomas Cranmer and the influence of Thomas Cromwell."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. The dissolution of the monasteries",
+          "points": [
+            "The role of religious houses in local communities.",
+            "Reasons for the dissolutions, including the findings of Cromwell’s commissions of 1535.",
+            "The impact of the dissolutions. Beneficiaries and losers."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. The Pilgrimage of Grace, 1536",
+          "points": [
+            "Reasons for the uprising.",
+            "Key events of the uprising, including rebellions in Lincolnshire and Yorkshire and the roles of Robert Aske and the Duke of Norfolk."
+          ]
+        }
+      ]
+    }
+  ]
+}

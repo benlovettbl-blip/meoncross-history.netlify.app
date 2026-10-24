@@ -154,12 +154,12 @@ const kt1Configs = [
           'Why did rising Jewish immigration spark communal violence under the Mandate?',
         bullets: [
           'Land Purchases & Evictions',
-          '1929 Hebron & Jaffa Clashes',
+          '1929 Hebron & Safed Massacres',
           'Haganah Self-Defence Force',
         ],
         keywords: [
           'Land Purchases & Evictions',
-          '1929 Hebron & Jaffa Clashes',
+          '1929 Hebron & Safed Massacres',
           'Haganah Self-Defence Force',
         ],
         clue: 'How did rising Jewish immigration spark the 1936 Arab Revolt?',
@@ -403,12 +403,12 @@ const kt1Configs = [
         bullets: [
           'Relieving Blockaded Enclaves',
           'Capture of Arab Villages',
-          'Deir Yassin Civilian Panic',
+          'Deir Yassin & Hadassah Ambush',
         ],
         keywords: [
           'Relieving Blockaded Enclaves',
           'Capture of Arab Villages',
-          'Deir Yassin Civilian Panic',
+          'Deir Yassin & Hadassah Ambush',
         ],
         clue: 'Why was securing the Tel Aviv–Jerusalem road vital before 14 May?',
         title: 'Communal Civil War & Plan Dalet',

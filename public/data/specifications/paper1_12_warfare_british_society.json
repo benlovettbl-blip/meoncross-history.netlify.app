@@ -1,0 +1,307 @@
+{
+  "id": "paper1_12_warfare_british_society",
+  "code": "12",
+  "paper": "Paper 1",
+  "paperType": "Thematic Study & Historic Environment",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option 12: Warfare and British society, c1250–present and London and the Second World War, 1939–45",
+  "shortTitle": "Warfare and British Society",
+  "exam_structure": {
+    "paper_code": "1HI0/10–13",
+    "paper_name": "Paper 1: Thematic Study and Historic Environment",
+    "total_marks": 52,
+    "duration_minutes": 80,
+    "weighting": "30% of total GCSE",
+    "overview": "Section A tests the Historic Environment site (16 marks, 25 mins). Section B tests the Thematic Study across 4 eras (36 marks, 55 mins) plus 4 marks for SPaG.",
+    "sections": [
+      {
+        "id": "section_a",
+        "name": "Section A: Historic Environment",
+        "marks": 16,
+        "time_mins": 25
+      },
+      {
+        "id": "section_b",
+        "name": "Section B: Thematic Study",
+        "marks": 36,
+        "time_mins": 55
+      }
+    ]
+  },
+  "stats": {
+    "sectionsCount": 5,
+    "topicsCount": 28,
+    "pointsCount": 67
+  },
+  "sections": [
+    {
+      "id": "thematic-era-1",
+      "eraNumber": 1,
+      "title": "c1250–c1500: Medieval warfare and English society",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The nature of warfare",
+          "points": [
+            "The composition of the army, including the roles of the infantry, archer and the mounted knight. The link between social structure and army command.",
+            "The impact on warfare (strategy, tactics and combat) of new weapons and formations, including the longbow and schiltrons. The importance of gunpowder and the development of cannon. The decline of the mounted knight."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience of war",
+          "points": [
+            "The recruitment and training of combatants in the medieval feudal army.",
+            "The impact of war on civilians, including the impact of feudal duties and army plunder on civilian lives."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "The Battle of Falkirk (1298): reasons for its outcome; the roles of William Wallace and Edward I.",
+            "The Battle of Agincourt (1415): reasons for its outcome; the role of Henry V."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-2",
+      "eraNumber": 2,
+      "title": "c1500–c1700: Warfare and English society in the early modern period",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The nature of warfare",
+          "points": [
+            "Continuity and change in the composition of the army in the sixteenth and seventeenth centuries, including the role of the musketeer, pikemen, dragoons and the cavalry. The development of a standing army.",
+            "The impact on warfare of developments in weaponry, including new muskets and pistols."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience of war",
+          "points": [
+            "The recruitment and training of combatants, including the New Model Army.",
+            "The impact of war on civilians, including recruitment and requisitioning."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case study",
+          "points": [
+            "The Battle of Naseby (1645): reasons for its outcome; the role of Oliver Cromwell."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-3",
+      "eraNumber": 3,
+      "title": "c1700–c1900: Warfare and British society in the eighteenth and",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The nature of warfare",
+          "points": [
+            "Continuity and change in the composition of the army, including the decline of the cavalry.",
+            "Impact on warfare of changes in weaponry, including the use of rifles and bullets, and the development of field guns and heavy artillery. The impact on warfare of industrialisation,  including steam- powered transport and the mass production of weapons."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience of war",
+          "points": [
+            "The recruitment and training of combatants, including Cardwell’s army reforms and professionalisation.",
+            "The impact of war on civilians, including recruitment and requisitioning. The impact on popular attitudes of the growth of newspaper reporting and photography in the nineteenth century, exemplified in the Crimean and Boer Wars."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "The Battle of Waterloo (1815): reasons for its outcome; the role of the Duke of Wellington.",
+            "The Battle of Balaclava (1854): reasons for its outcome; the role of Lord Raglan."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-4",
+      "eraNumber": 4,
+      "title": "c1900–present: Warfare and British society in the modern era",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The nature of warfare",
+          "points": [
+            "Continuity and change in the composition of the army, including the growth of a logistics corps and specialised bomb disposal units.",
+            "The impact on warfare of developments in weaponry, transport and surveillance, including machine guns, tanks, chemical and nuclear weapons, the use of radar and aircraft. The impact of computerised high-tech warfare. The increasing use of motor and air transport and aerial support. Dealing with guerrilla warfare in the twenty-first century."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience of war",
+          "points": [
+            "The recruitment and training of combatants, including the introduction of conscription, national service, the recruitment of women and the development of a professional army.",
+            "The impact of war on civilians, including recruitment and the organisation of a Home Front during the First and Second World Wars and fear of nuclear war post-1945. Attitudes to Conscientious Objectors. The influence of war reporting in the period on attitudes, including increased concern for casualties. Government use of censorship and propaganda in wartime."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "The Western Front during the First World War and the Battle of the Somme (1916): the nature of trench warfare and war of attrition; reasons for the outcome of the Somme; role of General Haig.",
+            "The Iraq War (2003): reasons for its outcome; use of high-tech weaponry and surveillance techniques. London and the Second World War, 1939–45 The historic environment"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. London and the Second World War, 1939–45",
+          "points": [
+            "The context of London in the Second World War, including its role in national government, significance as a target, importance as a port and industrial centre and its accessibility for German bombers. Preparations for war in London in 1939 and ongoing measures to safeguard the population: implementation of plans for evacuation, provision of Anderson shelters and gas masks.",
+            "The nature of attacks on London. Attacks on the docks and industries of the East End, including Black Saturday (7 September 1940), and the V2 attack on Deptford (1944). Types of bomb used in 1940–41 and 1944–45, the scale of attack and extent of devastation, including problems dealing with incendiaries and V1 and V2 rockets.",
+            "The impact of the Blitz on civilian life in London: air-raid precautions, including the use of underground stations and ‘Mickey’s shelter’; the impact of the South Hallsville School (1940) and Bethnal Green (1943) disasters. The continuance of leisure activities in London, including dancehalls and theatre. The extent of disruption to daily life and work,  and government concerns about morale.",
+            "London’s response to the war. The continued presence of the Royal Family and government ministers; the Cabinet War Rooms. The use of public spaces, including Victoria Park and the Tower of London moat, as part of the ‘Dig for Victory’ campaign.",
+            "The historical context of the Second World War: the nature and purpose of the Blitz. Government use of propaganda and censorship to influence attitudes about the Blitz."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Knowledge, selection and use of sources for historical enquiries",
+          "points": [
+            "Knowledge of local sources relevant to the period and issue, e.g. personal accounts and photographs, local newspapers, local council records.",
+            "Knowledge of national sources relevant to the period and issue, e.g. government records, newspapers, Mass Observation reports, newsreels, memoirs.",
+            "Recognition of the strengths and weaknesses of different types of source for specific enquiries.",
+            "Framing of questions relevant to the pursuit of a specific enquiry.",
+            "Selection of appropriate sources for specific investigations."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "historic-environment",
+      "title": "Historic Environment: London and the Second World War, 1939–45",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The nature of warfare",
+          "points": [
+            "The selected case studies in strand 3 of each period exemplify, in context, elements defined in strands 1 and 2. They provide opportunities to explore the operation of the key factors and to make detailed comparisons over time. c1250–c1500: Medieval warfare and English society",
+            "The composition of the army, including the roles of the infantry, archer and the mounted knight. The link between social structure and army command.",
+            "The impact on warfare (strategy, tactics and combat) of new weapons and formations, including the longbow and schiltrons. The importance of gunpowder and the development of cannon. The decline of the mounted knight."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience of war",
+          "points": [
+            "The recruitment and training of combatants in the medieval feudal army.",
+            "The impact of war on civilians, including the impact of feudal duties and army plunder on civilian lives."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "The Battle of Falkirk (1298): reasons for its outcome; the roles of William Wallace and Edward I.",
+            "The Battle of Agincourt (1415): reasons for its outcome; the role of Henry V. c1500–c1700: Warfare and English society in the early modern period"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. The nature of warfare",
+          "points": [
+            "Continuity and change in the composition of the army in the sixteenth and seventeenth centuries, including the role of the musketeer, pikemen, dragoons and the cavalry. The development of a standing army.",
+            "The impact on warfare of developments in weaponry, including new muskets and pistols."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience of war",
+          "points": [
+            "The recruitment and training of combatants, including the New Model Army.",
+            "The impact of war on civilians, including recruitment and requisitioning."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case study",
+          "points": [
+            "The Battle of Naseby (1645): reasons for its outcome; the role of Oliver Cromwell. c1700–c1900: Warfare and British society in the eighteenth and nineteenth centuries"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. The nature of warfare",
+          "points": [
+            "Continuity and change in the composition of the army, including the decline of the cavalry.",
+            "Impact on warfare of changes in weaponry, including the use of rifles and bullets, and the development of field guns and heavy artillery. The impact on warfare of industrialisation,  including steam- powered transport and the mass production of weapons."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience of war",
+          "points": [
+            "The recruitment and training of combatants, including Cardwell’s army reforms and professionalisation.",
+            "The impact of war on civilians, including recruitment and requisitioning. The impact on popular attitudes of the growth of newspaper reporting and photography in the nineteenth century, exemplified in the Crimean and Boer Wars."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "The Battle of Waterloo (1815): reasons for its outcome; the role of the Duke of Wellington.",
+            "The Battle of Balaclava (1854): reasons for its outcome; the role of Lord Raglan. c1900–present: Warfare and British society in the modern era"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. The nature of warfare",
+          "points": [
+            "Continuity and change in the composition of the army, including the growth of a logistics corps and specialised bomb disposal units.",
+            "The impact on warfare of developments in weaponry, transport and surveillance, including machine guns, tanks, chemical and nuclear weapons, the use of radar and aircraft. The impact of computerised high-tech warfare. The increasing use of motor and air transport and aerial support. Dealing with guerrilla warfare in the twenty-first century."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience of war",
+          "points": [
+            "The recruitment and training of combatants, including the introduction of conscription, national service, the recruitment of women and the development of a professional army.",
+            "The impact of war on civilians, including recruitment and the organisation of a Home Front during the First and Second World Wars and fear of nuclear war post-1945. Attitudes to Conscientious Objectors. The influence of war reporting in the period on attitudes, including increased concern for casualties. Government use of censorship and propaganda in wartime."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "The Western Front during the First World War and the Battle of the Somme (1916): the nature of trench warfare and war of attrition; reasons for the outcome of the Somme; role of General Haig.",
+            "The Iraq War (2003): reasons for its outcome; use of high-tech weaponry and surveillance techniques. London and the Second World War, 1939–45 The historic environment"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. London and the Second World War, 1939–45",
+          "points": [
+            "The context of London in the Second World War, including its role in national government, significance as a target, importance as a port and industrial centre and its accessibility for German bombers. Preparations for war in London in 1939 and ongoing measures to safeguard the population: implementation of plans for evacuation, provision of Anderson shelters and gas masks.",
+            "The nature of attacks on London. Attacks on the docks and industries of the East End, including Black Saturday (7 September 1940), and the V2 attack on Deptford (1944). Types of bomb used in 1940–41 and 1944–45, the scale of attack and extent of devastation, including problems dealing with incendiaries and V1 and V2 rockets.",
+            "The impact of the Blitz on civilian life in London: air-raid precautions, including the use of underground stations and ‘Mickey’s shelter’; the impact of the South Hallsville School (1940) and Bethnal Green (1943) disasters. The continuance of leisure activities in London, including dancehalls and theatre. The extent of disruption to daily life and work,  and government concerns about morale.",
+            "London’s response to the war. The continued presence of the Royal Family and government ministers; the Cabinet War Rooms. The use of public spaces, including Victoria Park and the Tower of London moat, as part of the ‘Dig for Victory’ campaign.",
+            "The historical context of the Second World War: the nature and purpose of the Blitz. Government use of propaganda and censorship to influence attitudes about the Blitz."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Knowledge, selection and use of sources for historical enquiries",
+          "points": [
+            "Knowledge of local sources relevant to the period and issue, e.g. personal accounts and photographs, local newspapers, local council records.",
+            "Knowledge of national sources relevant to the period and issue, e.g. government records, newspapers, Mass Observation reports, newsreels, memoirs.",
+            "Recognition of the strengths and weaknesses of different types of source for specific enquiries.",
+            "Framing of questions relevant to the pursuit of a specific enquiry.",
+            "Selection of appropriate sources for specific investigations."
+          ]
+        }
+      ]
+    }
+  ]
+}

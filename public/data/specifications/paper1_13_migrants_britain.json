@@ -1,0 +1,307 @@
+{
+  "id": "paper1_13_migrants_britain",
+  "code": "13",
+  "paper": "Paper 1",
+  "paperType": "Thematic Study & Historic Environment",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option 13: Migrants in Britain, c800–present and Notting Hill, c1948–c1970",
+  "shortTitle": "Migrants in Britain",
+  "exam_structure": {
+    "paper_code": "1HI0/10–13",
+    "paper_name": "Paper 1: Thematic Study and Historic Environment",
+    "total_marks": 52,
+    "duration_minutes": 80,
+    "weighting": "30% of total GCSE",
+    "overview": "Section A tests the Historic Environment site (16 marks, 25 mins). Section B tests the Thematic Study across 4 eras (36 marks, 55 mins) plus 4 marks for SPaG.",
+    "sections": [
+      {
+        "id": "section_a",
+        "name": "Section A: Historic Environment",
+        "marks": 16,
+        "time_mins": 25
+      },
+      {
+        "id": "section_b",
+        "name": "Section B: Thematic Study",
+        "marks": 36,
+        "time_mins": 55
+      }
+    ]
+  },
+  "stats": {
+    "sectionsCount": 5,
+    "topicsCount": 28,
+    "pointsCount": 67
+  },
+  "sections": [
+    {
+      "id": "thematic-era-1",
+      "eraNumber": 1,
+      "title": "c800–c1500: Migration in medieval England",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The context for migration",
+          "points": [
+            "Reasons for migration and patterns of settlement, including Vikings, Normans, Jews and other European traders and craftsmen.",
+            "The context of English society: landownership and the growth of towns; the role of the wool industry; opportunities for migrants; the role the monarchy, including the need for royal finance; England as a part of Christendom."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience and impact of migrants",
+          "points": [
+            "The experience of migrants in England: their relations with the authorities and the existing population, including the legal status of ‘alien’ and the impact of the Black Death.",
+            "The impact of migrants in England, including the Danelaw, culture, trade and the built environment."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case study",
+          "points": [
+            "The city of York under the Vikings."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-2",
+      "eraNumber": 2,
+      "title": "c1500–c1700: Migration in early modern England",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The context for migration",
+          "points": [
+            "Change and continuity in reasons for migration and patterns of settlement, including migrants from Europe and Africa.",
+            "The changing context of English society: changing social structures; economic growth, including the cloth industry and global trading companies; privateering and trade; the emergence of England as a predominantly Protestant nation."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience and impact of migrants",
+          "points": [
+            "The experience of migrants in England: their relations with the authorities and the existing population.",
+            "The impact of migrants in England, including culture, trade, industry and agriculture."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "Sandwich and Canterbury in the sixteenth century: the experiences of Flemish and Walloon migrants and their role in the local economy.",
+            "The experience of Huguenots in seventeenth century England."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-3",
+      "eraNumber": 3,
+      "title": "c1700–c1900: Migration in eighteenth- and nineteenth-century Britain",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The context for migration",
+          "points": [
+            "Change and continuity in reasons for migration and patterns of settlement, including migrants from Ireland, Europe and the Empire.",
+            "The changing context of British society: changing social structures; the Industrial Revolution; urbanisation; transatlantic slavery; the growth of the British Empire; civil liberties."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience and impact of migrants",
+          "points": [
+            "The experience of migrants in Britain: their relations with the authorities and the existing population. The role of the media.",
+            "The impact of migrants in Britain, including culture, trade and industry, politics and the urban environment."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "Liverpool in the nineteenth century: its role in migration and the experiences of migrants, including Irish migrants.",
+            "The experience of Jewish migrants in the East End of London in late nineteenth c entury."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-4",
+      "eraNumber": 4,
+      "title": "c1900–present: Migration in modern Britain",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The context for migration",
+          "points": [
+            "Change and continuity in reasons for migration and patterns of settlement, including migrants from Ireland, Europe, the British Empire and the Commonwealth; refugees and asylum seekers.",
+            "The changing context of British society: the World Wars; the end of the British Empire, decolonisation and the development of the Commonwealth; EU membership; legislation on immigration and nationality, including the Aliens Act (1905) and British Nationality Acts."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience and impact of migrants",
+          "points": [
+            "The experience of migrants in Britain: their relations with the authorities and the existing population, including anti-immigration and equal rights movements. The Race Relations Act (1965).   The role of the media.",
+            "The impact of migrants in Britain, including culture, politics, the urban environment, public services and the economy."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "Bristol in the mid-twentieth century: the experiences of migrants and their impact on society.",
+            "The experience of Asian migrants in Leicester from 1945. Notting Hill, c1948–c1970 The historic environment"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. Notting Hill, c1948–c1970",
+          "points": [
+            "The local context of Notting Hill. The reasons for Caribbean migration to the area. The problems of housing: houses of multiple occupation (HMOs), overcrowding and slum landlords, e.g. Peter Rachman. Bruce Kenrick and the Notting Hill Housing Trust. The development of Portobello Road market.",
+            "The influence of Caribbean cultures on the area, in particular the development of shops, markets, cafes and restaurants, shebeens, nightclubs and entertainment which featured Caribbean food and music. The development of All Saints Road. Mutual self-help organisations, e.g. ‘pardner’ schemes.",
+            "Racism and policing. The Notting Hill Riots (1958). The murder of Kelso Cochrane and the reaction of the local community. The impact of anti-immigrant groups, including Oswald Mosley’s Union Movement and his 1959 election campaign.",
+            "Black activism in the Notting Hill area. Claudia Jones and the West Indian Gazette. The 1959 Caribbean Carnival and the later development of the Notting Hill Carnival. Frank Crichlow and the Mangrove Restaurant. The British Black Panthers. The ‘Mangrove Nine’.",
+            "The national and regional context: Britain after the Second World War, reconstruction and demand for labour; the connection to the British Empire and Commonwealth. The ‘Swinging Sixties’. Poverty in London. Policing in London."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Knowledge, selection and use of sources for historical enquiries",
+          "points": [
+            "Knowledge of local sources relevant to the period and issue, e.g. local newspapers, publications written for the Caribbean community, local council and police records, housing and employment records, oral and written memoirs of local residents, photographs.",
+            "Knowledge of national sources relevant to the period and issue, e.g. national newspapers, photographs, government records, census data, opinion polls, television reports, memoirs.",
+            "Recognition of the strengths and weaknesses of different types of source for specific enquiries.",
+            "Framing of questions relevant to the pursuit of a specific enquiry.",
+            "Selection of appropriate sources for specific investigations."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "historic-environment",
+      "title": "Historic Environment: Notting Hill, c1948–c1970",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The context for migration",
+          "points": [
+            "The selected case studies in strand 3 of each period exemplify, in context, the elements defined in strands 1 and 2. They provide opportunities to explore the operation of the key factors and to make detailed comparisons over time. c800–c1500: Migration in medieval England",
+            "Reasons for migration and patterns of settlement, including Vikings, Normans, Jews and other European traders and craftsmen.",
+            "The context of English society: landownership and the growth of towns; the role of the wool industry; opportunities for migrants; the role the monarchy, including the need for royal finance; England as a part of Christendom."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience and impact of migrants",
+          "points": [
+            "The experience of migrants in England: their relations with the authorities and the existing population, including the legal status of ‘alien’ and the impact of the Black Death.",
+            "The impact of migrants in England, including the Danelaw, culture, trade and the built environment."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case study",
+          "points": [
+            "The city of York under the Vikings. c1500–c1700: Migration in early modern England"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. The context for migration",
+          "points": [
+            "Change and continuity in reasons for migration and patterns of settlement, including migrants from Europe and Africa.",
+            "The changing context of English society: changing social structures; economic growth, including the cloth industry and global trading companies; privateering and trade; the emergence of England as a predominantly Protestant nation."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience and impact of migrants",
+          "points": [
+            "The experience of migrants in England: their relations with the authorities and the existing population.",
+            "The impact of migrants in England, including culture, trade, industry and agriculture."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "Sandwich and Canterbury in the sixteenth century: the experiences of Flemish and Walloon migrants and their role in the local economy.",
+            "The experience of Huguenots in seventeenth century England. c1700–c1900: Migration in eighteenth- and nineteenth-century Britain"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. The context for migration",
+          "points": [
+            "Change and continuity in reasons for migration and patterns of settlement, including migrants from Ireland, Europe and the Empire.",
+            "The changing context of British society: changing social structures; the Industrial Revolution; urbanisation; transatlantic slavery; the growth of the British Empire; civil liberties."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience and impact of migrants",
+          "points": [
+            "The experience of migrants in Britain: their relations with the authorities and the existing population. The role of the media.",
+            "The impact of migrants in Britain, including culture, trade and industry, politics and the urban environment."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "Liverpool in the nineteenth century: its role in migration and the experiences of migrants, including Irish migrants.",
+            "The experience of Jewish migrants in the East End of London in late nineteenth c entury. c1900–present: Migration in modern Britain"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. The context for migration",
+          "points": [
+            "Change and continuity in reasons for migration and patterns of settlement, including migrants from Ireland, Europe, the British Empire and the Commonwealth; refugees and asylum seekers.",
+            "The changing context of British society: the World Wars; the end of the British Empire, decolonisation and the development of the Commonwealth; EU membership; legislation on immigration and nationality, including the Aliens Act (1905) and British Nationality Acts."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The experience and impact of migrants",
+          "points": [
+            "The experience of migrants in Britain: their relations with the authorities and the existing population, including anti-immigration and equal rights movements. The Race Relations Act (1965).   The role of the media.",
+            "The impact of migrants in Britain, including culture, politics, the urban environment, public services and the economy."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "Bristol in the mid-twentieth century: the experiences of migrants and their impact on society.",
+            "The experience of Asian migrants in Leicester from 1945. Notting Hill, c1948–c1970 The historic environment"
+          ]
+        },
+        {
+          "number": 1,
+          "title": "1. Notting Hill, c1948–c1970",
+          "points": [
+            "The local context of Notting Hill. The reasons for Caribbean migration to the area. The problems of housing: houses of multiple occupation (HMOs), overcrowding and slum landlords, e.g. Peter Rachman. Bruce Kenrick and the Notting Hill Housing Trust. The development of Portobello Road market.",
+            "The influence of Caribbean cultures on the area, in particular the development of shops, markets, cafes and restaurants, shebeens, nightclubs and entertainment which featured Caribbean food and music. The development of All Saints Road. Mutual self-help organisations, e.g. ‘pardner’ schemes.",
+            "Racism and policing. The Notting Hill Riots (1958). The murder of Kelso Cochrane and the reaction of the local community. The impact of anti-immigrant groups, including Oswald Mosley’s Union Movement and his 1959 election campaign.",
+            "Black activism in the Notting Hill area. Claudia Jones and the West Indian Gazette. The 1959 Caribbean Carnival and the later development of the Notting Hill Carnival. Frank Crichlow and the Mangrove Restaurant. The British Black Panthers. The ‘Mangrove Nine’.",
+            "The national and regional context: Britain after the Second World War, reconstruction and demand for labour; the connection to the British Empire and Commonwealth. The ‘Swinging Sixties’. Poverty in London. Policing in London."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Knowledge, selection and use of sources for historical enquiries",
+          "points": [
+            "Knowledge of local sources relevant to the period and issue, e.g. local newspapers, publications written for the Caribbean community, local council and police records, housing and employment records, oral and written memoirs of local residents, photographs.",
+            "Knowledge of national sources relevant to the period and issue, e.g. national newspapers, photographs, government records, census data, opinion polls, television reports, memoirs.",
+            "Recognition of the strengths and weaknesses of different types of source for specific enquiries.",
+            "Framing of questions relevant to the pursuit of a specific enquiry.",
+            "Selection of appropriate sources for specific investigations."
+          ]
+        }
+      ]
+    }
+  ]
+}

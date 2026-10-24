@@ -1,0 +1,144 @@
+{
+  "id": "paper2_b1_anglo_saxon_norman",
+  "code": "B1",
+  "paper": "Paper 2 (British Depth)",
+  "paperType": "British Depth Study",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option B1: Anglo-Saxon and Norman England, c1060–88",
+  "shortTitle": "Anglo-Saxon & Norman England",
+  "exam_structure": {
+    "paper_code": "1HI0/B1–B4",
+    "paper_name": "Paper 2 (Booklet B): British Depth Study",
+    "total_marks": 32,
+    "duration_minutes": 55,
+    "weighting": "20% of total GCSE",
+    "overview": "Tests British depth across 3 Key Topics. Q1(a)/(b) Describe features (4m), Q2 Explain why causation (12m), Q3/Q4 Choice essay with stimulus points (16m)."
+  },
+  "stats": {
+    "sectionsCount": 3,
+    "topicsCount": 12,
+    "pointsCount": 27
+  },
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "keyTopicNumber": 1,
+      "title": "Key topic 1: Anglo-Saxon England and the Norman Conquest, 1060–66",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Anglo-Saxon government, economy and society",
+          "points": [
+            "Monarchy and government. The power of the English monarchy. Earldoms, local government and the legal system.",
+            "The economy and social system. Towns and villages. The influence of the Church."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The last years of Edward the Confessor and the succession crisis",
+          "points": [
+            "The significance and power of the house of Godwin. Harold Godwinson’s succession as Earl of Wessex.",
+            "Harold Godwinson’s embassy to Normandy. The reasons for the rising against Tostig and his exile. The death of Edward the Confessor."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. The rival claimants for the throne",
+          "points": [
+            "The motives and claims of William of Normandy, Harald Hardrada and Edgar the Aethling.",
+            "The Witan and the coronation and reign of Harold Godwinson.",
+            "Reasons for, and significance of, the outcome of the battles of Gate Fulford and Stamford Bridge."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. The Norman invasion",
+          "points": [
+            "The Battle of Hastings.",
+            "Reasons for William’s victory, including the leadership skills of Harold and William, Norman and English troops and tactics."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "keyTopicNumber": 2,
+      "title": "Key topic 2: William I in power: securing the kingdom, 1066–87",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Establishing control",
+          "points": [
+            "The submission of the earls, 1066.",
+            "Rewarding followers and establishing control on the borderlands through the use of earls. The Marcher earldoms.",
+            "Reasons for the building of castles; their key features and importance."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Anglo-Saxon resistance, 1068–71",
+          "points": [
+            "Causes and outcomes of Anglo-Saxon resistance: the revolt of Earls Edwin and Morcar (1068); Edgar the Aethling and the rebellions in the North (1069); Hereward the Wake and rebellion at Ely (1070–71  )."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. The legacy of resistance to 1087",
+          "points": [
+            "The reasons for and features of Harrying of the North (1069–70). Its immediate and long-term impact, 1069–87.",
+            "Changes in landownership from Anglo-Saxon to Norman, 1066–87."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. Revolt of the Earls, 1075",
+          "points": [
+            "Reasons for and features of the revolt.",
+            "The defeat of the revolt and its effects."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "keyTopicNumber": 3,
+      "title": "Key topic 3: Norman England, 1066–88",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The feudal system and the Church",
+          "points": [
+            "The feudal hierarchy. The role and importance of tenants-in-chief and knights. The nature of feudalism (landholding, homage, knight service, labour service); forfeiture.",
+            "The Church in England: its role in society and relationship to government, including the   significance of Stigand and Lanfranc. The Normanisation and reform of the Church in the reign of William I.",
+            "The extent of change to Anglo-Saxon society and economy."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Norman government",
+          "points": [
+            "Changes to government after the Conquest. Centralised power and the limited use of earls under William I. The role of regents during William’s absences.",
+            "The office of sheriff and the demesne. Introduction and significance of the ‘forest’.",
+            "The Domesday survey and Domesday Book and their significance for Norman government and finance."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. The Norman aristocracy",
+          "points": [
+            "The culture and language of the Norman aristocracy.",
+            "The career and significance of Bishop Odo."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. William I and the succession",
+          "points": [
+            "Character and personality of William I and his relations with Robert, including Robert’s revolt in Normandy (1077–80).",
+            "William’s death and the disputed succession. William Rufus and the defeat of Robert and Odo."
+          ]
+        }
+      ]
+    }
+  ]
+}

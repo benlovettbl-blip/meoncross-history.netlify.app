@@ -1,0 +1,185 @@
+{
+  "id": "paper3_30_russia_soviet_union",
+  "code": "30",
+  "paper": "Paper 3",
+  "paperType": "Modern Depth Study",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option 30: Russia and the Soviet Union, 1917–41",
+  "shortTitle": "Russia & the Soviet Union",
+  "exam_structure": {
+    "paper_code": "1HI0/30–33",
+    "paper_name": "Paper 3: Modern Depth Study",
+    "total_marks": 52,
+    "duration_minutes": 90,
+    "weighting": "30% of total GCSE",
+    "overview": "Section A tests source inference (4m) and causation (12m). Section B tests historical interpretations and contemporary source utility (36m) plus 4 marks for SPaG."
+  },
+  "stats": {
+    "sectionsCount": 4,
+    "topicsCount": 16,
+    "pointsCount": 37
+  },
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "keyTopicNumber": 1,
+      "title": "Key topic 1: The revolutions of 1917",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The growth of opposition to the tsar in early 1917",
+          "points": [
+            "Growing discontent among peasants and town workers.",
+            "The impact of the First World War: military defeats; economic, political and social effects; the Tsar as commander-in-chief."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The February Revolution",
+          "points": [
+            "The immediate reasons for the February Revolution: e  vents in Petrograd in February 1917, including strikes and the mutiny in the army. The Tsar’s absence and abdication."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. The Provisional Government",
+          "points": [
+            "The establishment of the Provisional Government and the problems it faced, including ‘Dual Control’ and Soviet Order Number 1. The role of Kerensky.",
+            "The weaknesses and failures of the Provisional Government.",
+            "The significance of the Kornilov Revolt."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. The Bolshevik Revolution",
+          "points": [
+            "Lenin’s return and activities, including the April Theses and the growth in support for the Bolshevik Party. The ‘July Days’.",
+            "The Bolshevik seizure of power in October 1917. The reasons for their success. The roles of Trotsky and Lenin."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "keyTopicNumber": 2,
+      "title": "Key topic 2: The Bolsheviks in power, 1917–24",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Early consolidation of power, 1917–18",
+          "points": [
+            "The early Bolshevik decrees of November–December 1917.",
+            "The removal of opposition, including the Constituent Assembly and the execution of Tsar Nicholas II and his family.",
+            "The reasons for, main terms, and significance of, the Treaty of Brest-Litovsk. Different reactions in Russia to the Treaty."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The Civil War, 1918–21",
+          "points": [
+            "The reasons for, key events and effects of the Civil War.",
+            "The reasons for the Bolshevik victory, including the strengths of the Bolsheviks, role of Trotsky, foreign intervention and the weaknesses of the Whites."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Moves towards totalitarianism",
+          "points": [
+            "The Red Terror and the role of the Cheka. The Kronstadt Mutiny.",
+            "Bolshevik centralisation, including the role of Lenin and the Politburo. Setting up of the USSR."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. Economic and social change, 1918–24",
+          "points": [
+            "Reasons for, and features of, War Communism. Reasons for its unpopularity.",
+            "Reasons for, and features of, the New Economic Policy. Different reactions to the NEP. Its effects on the economy, 1921–24.",
+            "Social changes, including the impact of Bolshevik policies on women, education and culture."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "keyTopicNumber": 3,
+      "title": "Key topic 3: Stalin’s rise to power and dictatorship, 1924–41",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The struggle for power, 1924–28",
+          "points": [
+            "The strengths and weaknesses of Stalin and his rivals (Trotsky, Kamenev, Zinoviev and Bukharin).",
+            "The reasons for the emergence of Stalin as leader of the USSR, including the removal of rivals for the leadership in the years 1924–28."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The use of terror in the 1930s",
+          "points": [
+            "The reasons for, nature of and consequences of the purges, including the purges of the armed forces.",
+            "The work of the secret police (NKVD); the use of, and conditions in, the labour camps.",
+            "The reasons for, and the importance of, the show trials of 1936–1938."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Propaganda and censorship",
+          "points": [
+            "Official culture, socialist realism, control of education and religion. Media censorship.",
+            "The new Constitution of 1936."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. The Cult of Stalin",
+          "points": [
+            "The meaning of the Cult of Stalin and reasons for its introduction.",
+            "How the Cult of Stalin was achieved."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-4",
+      "keyTopicNumber": 4,
+      "title": "Key topic 4: Economic and social changes, 1924–41",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Agriculture and collectivisation",
+          "points": [
+            "Stalin’s reasons for changes in agriculture, including the problems of the NEP.",
+            "The organisation of collectives, mechanisation, widespread opposition and the attack on the kulaks. Famine in Ukraine.",
+            "The successes and failures of collectivisation."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Changes in industry",
+          "points": [
+            "Stalin’s motives for rapid industrialisation, including the failings of the NEP.",
+            "Gosplan, Five-Year Plans and the Stakhanovite Movement.",
+            "The successes and failures of industrialisation."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Life in the Soviet Union",
+          "points": [
+            "Living and working conditions in towns and the countryside.",
+            "The differing experiences of social groups."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. The position of women and ethnic minorities",
+          "points": [
+            "Changes in family life and employment and the political position of women.",
+            "Reasons for, and features of, the persecution of ethnic minorities."
+          ]
+        }
+      ]
+    }
+  ]
+}

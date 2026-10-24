@@ -383,13 +383,22 @@ const UNIT_PUBLICATIONS = {
     specTitle: 'Paper 3: USA, 1954–75: Conflict at Home and Abroad (1HI0/33)',
     pillar1: {
       key: 'pillar1',
-      badge: 'PILLAR 1 • REVISION PLAYBOOK',
-      color: '#1e40af',
-      tags: ['Revision Spreads', 'Primary Sources', 'Paper 3 Blueprint'],
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Reading Narrative', '28-Page Master Textbook', '0% Writing Lines'],
       editions: [
         {
+          id: 'textbook_master',
+          label: 'Complete 28-Page Master Classroom Textbook',
+          title: 'The USA, 1954–1975: Conflict at Home and Abroad 28-Page Master Textbook',
+          pages: '28 Pages',
+          desc: 'Complete 28-page pure narrative classroom textbook. 12 Canonical Disciplinary Enquiries, Chronological Milestone Spine, Geopolitical Theater Atlas & 4 Strategic Flashpoints, and Master 60-Question Retrieval Quiz.',
+          readUrl: '/units/usa/textbook_UNIFIED.html',
+          pdfUrl: '/pdfs/usa_textbook_UNIFIED_FINAL.pdf',
+        },
+        {
           id: 'all',
-          label: 'Complete Unit (KT1–KT4 Combined)',
+          label: 'Visual Revision & Exam Assessment Playbook',
           title: '36-Page Visual Revision & Exam Assessment Playbook',
           pages: '36 Pages',
           desc: '16 double-page spreads across all 4 Key Topics, complete Paper 3 specification blueprints, Q1–Q3 paragraph formulas, Grade 9 WAGOLLs, and timed models.',
@@ -473,13 +482,58 @@ const UNIT_PUBLICATIONS = {
     specTitle: 'Paper 1: Medicine in Britain & Western Front (1HI0/11)',
     pillar1: {
       key: 'pillar1',
-      badge: 'PILLAR 1 • REVISION PLAYBOOK',
-      color: '#0f766e',
-      tags: ['Revision Masterclasses', 'Specification Blueprints', 'Exam Scaffolds'],
+      badge: 'PILLAR 1 • MASTER TEXTBOOK & REVISION PLAYBOOK',
+      color: '#0284c7',
+      tags: ['Master Classroom Textbooks', 'Specification Blueprints', '0% Writing Lines'],
       editions: [
         {
+          id: 'textbook_medieval',
+          label: 'Era 1: Medieval Britain (c1250–c1500)',
+          title: 'Medieval Britain Master Classroom Textbook',
+          pages: '12 Pages',
+          desc: '12-page publisher-grade master classroom textbook. Dual-column narrative, Four Humours, Medieval Church, and the Black Death.',
+          readUrl: '/units/edexcel_medicine/textbook_medieval_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
+        },
+        {
+          id: 'textbook_renaissance',
+          label: 'Era 2: Medical Renaissance (c1500–c1700)',
+          title: 'The Medical Renaissance Master Classroom Textbook',
+          pages: '12 Pages',
+          desc: '12-page publisher-grade master classroom textbook. Vesalius, William Harvey, Thomas Sydenham, and the Great Plague of 1665.',
+          readUrl: '/units/edexcel_medicine/textbook_renaissance_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_renaissance_FINAL_V17.pdf',
+        },
+        {
+          id: 'textbook_18th_19th',
+          label: 'Era 3: 18th & 19th Century Britain',
+          title: '18th & 19th Century Britain Master Classroom Textbook',
+          pages: '12 Pages',
+          desc: '12-page publisher-grade master classroom textbook. Jenner, Germ Theory, Florence Nightingale, Joseph Lister, and Public Health.',
+          readUrl: '/units/edexcel_medicine/textbook_18th_19th_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_18th_19th_FINAL_V17.pdf',
+        },
+        {
+          id: 'textbook_modern',
+          label: 'Era 4: Modern Britain (c1900–present)',
+          title: 'Modern Britain Master Classroom Textbook',
+          pages: '12 Pages',
+          desc: '12-page publisher-grade master classroom textbook. Antibiotics, NHS, High-Technology Medicine, DNA, and Lung Cancer.',
+          readUrl: '/units/edexcel_medicine/textbook_modern_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_modern_FINAL_V17.pdf',
+        },
+        {
+          id: 'textbook_western_front',
+          label: 'Hist Env: The Western Front (1914–1918)',
+          title: 'The British Sector of the Western Front Historic Environment Textbook',
+          pages: '14 Pages',
+          desc: '14-page publisher-grade master classroom textbook. Evacuation chain, RAMC/FANY, gas attacks, wounds, and National Archives/RAMC sources.',
+          readUrl: '/units/edexcel_medicine/textbook_western_front_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_western_front_FINAL_V17.pdf',
+        },
+        {
           id: 'all',
-          label: 'Complete Course (All 5 Eras Combined)',
+          label: 'Complete Course (All 5 Eras Combined Playbook)',
           title: '40-Page Visual Revision Masterclasses & Specification Playbook',
           pages: '40 Pages',
           desc: '18 double-page spreads, complete Paper 1 specification blueprints, Section A 2-mark feature guides, Q3–Q6 paragraph formulas, and 1h 15m exam timing models.',
@@ -588,7 +642,23 @@ const UNIT_PUBLICATIONS = {
   },
   eee: {
     specTitle: 'Paper 2: Early Elizabethan England, 1558–1588 (1HI0/B4)',
-    pillar1: null,
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Reading Narrative', '28-Page Master Textbook', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'textbook_master',
+          label: 'Complete 28-Page Master Classroom Textbook',
+          title: 'Early Elizabethan England (1558–1588) 28-Page Master Textbook',
+          pages: '28 Pages',
+          desc: 'Complete 28-page pure narrative classroom textbook. 12 Canonical Disciplinary Enquiries, Chronological Milestone Spine, Dual Cartographic Perspectives & 4 Strategic Flashpoints, and Master 60-Question Retrieval Quiz.',
+          readUrl: '/units/eee/textbook_UNIFIED.html',
+          pdfUrl: '/pdfs/eee_textbook_UNIFIED_FINAL.pdf',
+        },
+      ],
+    },
     pillar2: {
       key: 'pillar2',
       badge: 'PILLAR 2 • PUPIL WORKBOOK',
@@ -664,13 +734,22 @@ const UNIT_PUBLICATIONS = {
     specTitle: 'Paper 3: Weimar and Nazi Germany, 1918–1939 (1HI0/31)',
     pillar1: {
       key: 'pillar1',
-      badge: 'PILLAR 1 • REVISION PLAYBOOK',
-      color: '#7f1d1d',
-      tags: ['Revision Masterclasses', 'Paper 3 Blueprints', 'Exam Scaffolds'],
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Reading Narrative', '28-Page Master Textbook', '0% Writing Lines'],
       editions: [
         {
+          id: 'textbook_master',
+          label: 'Complete 28-Page Master Classroom Textbook',
+          title: 'Weimar and Nazi Germany (1918–1939) 28-Page Master Textbook',
+          pages: '28 Pages',
+          desc: 'Complete 28-page pure narrative classroom textbook. 12 Canonical Disciplinary Enquiries, Chronological Milestone Spine, Dual Cartographic Perspectives & 4 Strategic Flashpoints, and Master 60-Question Retrieval Quiz.',
+          readUrl: '/units/weimar_nazi_germany/textbook_UNIFIED.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_UNIFIED_FINAL.pdf',
+        },
+        {
           id: 'all',
-          label: 'Complete Course (KT1–KT4 Combined)',
+          label: 'Complete Course (KT1–KT4 Combined Revision Playbook)',
           title: 'Complete Weimar & Nazi Germany Specification Guide & Revision Playbook',
           pages: '64 Pages',
           desc: "Complete specification text across the Weimar Republic, Hitler's rise, Nazi dictatorship, and life in the Police State.",
@@ -752,7 +831,32 @@ const UNIT_PUBLICATIONS = {
   },
   great_war: {
     specTitle: 'Key Stage 3: Causes of the Great War, 1871–1914',
-    pillar1: null,
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Reading Narrative', 'Master Textbooks', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'part1',
+          label: 'Part 1: Causes of the Great War (1871–1914)',
+          title: 'Causes of the Great War (1871–1914) 8-Page Master Anthology',
+          pages: '8 Pages',
+          desc: '8-page pure narrative reading anthology. Alliances, imperialism, arms race, Bosnian crisis, Sarajevo assassination, and July Crisis.',
+          readUrl: '/units/great_war/textbook.html',
+          pdfUrl: '/pdfs/great_war_textbook_FINAL_V17.pdf',
+        },
+        {
+          id: 'part2',
+          label: 'Part 2: The Great War (1914–1919)',
+          title: 'The Great War (1914–1919) 12-Page Master Saddle-Stitch Edition',
+          pages: '12 Pages',
+          desc: '12-page pure narrative classroom textbook. Trench warfare, Somme, Passchendaele, Russian withdrawal, Ludendorff Offensive, and Armistice.',
+          readUrl: '/units/great_war_part2/textbook.html',
+          pdfUrl: '/pdfs/great_war_part2_textbook_FINAL.pdf',
+        },
+      ],
+    },
     pillar2: {
       key: 'pillar2',
       badge: 'PILLAR 2 • PUPIL WORKBOOK',
@@ -959,6 +1063,60 @@ const UNIT_PUBLICATIONS = {
       ],
     },
   },
+  cold_war: {
+    specTitle: 'Paper P4: Superpower Relations & Cold War, 1945–1991',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Reading Narrative', '12-Page Master Textbook', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'textbook_master',
+          label: 'Complete 12-Page Master Classroom Textbook',
+          title: 'The Cold War & Global Flashpoints (1945–1991) Master Textbook',
+          pages: '12 Pages',
+          desc: '12-page pure narrative companion textbook. 7 Canonical Enquiries, Chronological Milestone Spine, Cartographic Theater & 4 Strategic Flashpoints, Disciplinary Historiography, and Master 35-Question Retrieval Quiz.',
+          readUrl: '/units/cold_war/textbook.html',
+          pdfUrl: '/pdfs/cold_war_textbook_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Enquiry Spreads', 'Writing Scaffolds', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Pupil Consumable Workbook',
+          title: 'Cold War & Superpower Relations Pupil Consumable Workbook',
+          pages: 'Photocopier Ready',
+          desc: 'Structured writing tasks, enquiry challenges, source evaluation tables, and extended writing scaffolds for every lesson in the unit.',
+          readUrl: '/units/cold_war/pupil_workbook.html',
+          pdfUrl: '/pdfs/cold_war_pupil_workbook_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['Core Recall Questions', 'Chronology Flowcharts', 'Marking Bank'],
+      editions: [
+        {
+          id: 'quiz_pack',
+          label: 'Master Quiz Pack & Knowledge Companion',
+          title: 'Superpower Relations Knowledge Retrieval Companion',
+          pages: '12 Pages',
+          desc: 'Factual retrieval questions across all 7 enquiries with handwriting lines, chronology flowcharts, and marking banks.',
+          readUrl: '/units/cold_war/quiz_pack.html',
+          pdfUrl: '/pdfs/cold_war_quiz_pack_FINAL_V17.pdf',
+        },
+      ],
+    },
+  },
 };
 
 /**
@@ -966,9 +1124,47 @@ const UNIT_PUBLICATIONS = {
  */
 function getGenericUnitPublications(unitId, unitData) {
   const title = (unitData && unitData.title) || unitId;
+  const hasTextbook = [
+    'the_shoah',
+    'early_modern_world',
+    'water_and_sanitation',
+    'industrialisation_and_empire',
+    'post_war_britain',
+  ].includes(unitId);
+
+  let pillar1 = null;
+  if (hasTextbook) {
+    const textbookHtml =
+      unitId === 'industrialisation_and_empire'
+        ? `/units/${unitId}/textbook_PUBLISHER.html`
+        : `/units/${unitId}/textbook.html`;
+    const textbookPdf =
+      unitId === 'the_shoah'
+        ? `/pdfs/${unitId}_textbook_FINAL.pdf`
+        : `/pdfs/${unitId}_textbook_FINAL_V17.pdf`;
+
+    pillar1 = {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Reading Narrative', 'Master Textbook', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'textbook_master',
+          label: 'Master Companion Textbook',
+          title: `${title} Master Companion Textbook`,
+          pages: '12 Pages',
+          desc: `Complete pure narrative master classroom companion textbook for ${title}. Canonical Enquiries, Milestone Spine, and Knowledge Retrieval Quiz.`,
+          readUrl: textbookHtml,
+          pdfUrl: textbookPdf,
+        },
+      ],
+    };
+  }
+
   return {
     specTitle: `Key Stage 3 Curriculum: ${title}`,
-    pillar1: null,
+    pillar1,
     pillar2: {
       key: 'pillar2',
       badge: 'PILLAR 2 • PUPIL WORKBOOK',

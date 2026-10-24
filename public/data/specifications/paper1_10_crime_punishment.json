@@ -1,0 +1,220 @@
+{
+  "id": "paper1_10_crime_punishment",
+  "code": "10",
+  "paper": "Paper 1",
+  "paperType": "Thematic Study & Historic Environment",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option 10: Crime and punishment in Britain, c1000–present and Whitechapel, c1870–c1900: crime, policing and the inner city",
+  "shortTitle": "Crime and Punishment",
+  "exam_structure": {
+    "paper_code": "1HI0/10–13",
+    "paper_name": "Paper 1: Thematic Study and Historic Environment",
+    "total_marks": 52,
+    "duration_minutes": 80,
+    "weighting": "30% of total GCSE",
+    "overview": "Section A tests the Historic Environment site (16 marks, 25 mins). Section B tests the Thematic Study across 4 eras (36 marks, 55 mins) plus 4 marks for SPaG.",
+    "sections": [
+      {
+        "id": "section_a",
+        "name": "Section A: Historic Environment",
+        "marks": 16,
+        "time_mins": 25
+      },
+      {
+        "id": "section_b",
+        "name": "Section B: Thematic Study",
+        "marks": 36,
+        "time_mins": 55
+      }
+    ]
+  },
+  "stats": {
+    "sectionsCount": 7,
+    "topicsCount": 16,
+    "pointsCount": 39
+  },
+  "sections": [
+    {
+      "id": "thematic-era-1",
+      "eraNumber": 1,
+      "title": "c1000–c1500: Crime and punishment in medieval England",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Nature and changing definitions of criminal activity",
+          "points": [
+            "Crimes against the person, property and authority, including poaching as an example of ‘social’ crime.",
+            "Changing definitions of crime as a result of the Norman Conquest, including William I’s Forest Laws."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The nature of law enforcement and punishment",
+          "points": [
+            "The role of the authorities and local communities in law enforcement in Anglo-Saxon, Norman and later medieval England, including tithings, the hue and cry, and the parish constable.",
+            "The emphasis on deterrence and retribution, the use of fines, corporal and capital punishment. The use and end of the Saxon Wergild."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case study",
+          "points": [
+            "The influence of the Church on crime and punishment in the early thirteenth century: the significance of Sanctuary and Benefit of Clergy; the use of trial by ordeal and reasons for its ending."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-2",
+      "eraNumber": 2,
+      "title": "c1500–c1700: Crime and punishment in early modern England",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Nature and changing definitions of criminal activity",
+          "points": [
+            "Continuity and change in the nature of crimes against the person, property and authority, including heresy and treason.",
+            "New definitions of crime in the sixteenth century: vagabondage and witchcraft."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The nature of law enforcement and punishment",
+          "points": [
+            "The role of the authorities and local communities in law enforcement, including town watchmen.",
+            "The continued use of corporal and capital punishment; the introduction of transportation and the start of the Bloody Code."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "The Gunpowder Plotters, 1605: their crimes and punishment.",
+            "Key individual: Matthew Hopkins and the witch-hunts of 1645–47. The reasons for their intensity; the punishment of those convicted."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-3",
+      "eraNumber": 3,
+      "title": "c1700–c1900: Crime and punishment in eighteenth- and nineteenth-",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Nature and changing definitions of criminal activity",
+          "points": [
+            "Continuity and change in the nature of crimes against the person, property and authority, including highway robbery, poaching and smuggling.",
+            "Changing definitions of crime exemplified in the ending of witchcraft prosecutions and treatment of the Tolpuddle Martyrs."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The nature of law enforcement and punishment",
+          "points": [
+            "The role of the authorities and local communities in law enforcement, including the work of the Fielding brothers. The development of police forces and the beginning of CID.",
+            "Changing views on the purpose of punishment. The use and ending of transportation, public execution and the Bloody Code. Prison reform, including the influence of John Howard and Elizabeth Fry."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "Pentonville prison in the mid nineteenth century: reasons for its construction; the strengths and weaknesses of the separate system in operation.",
+            "Key individual: Robert Peel –   his contribution to penal reform and to the development of the Metropolitan Police Force."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-4",
+      "eraNumber": 4,
+      "title": "c1900–present: Crime and punishment in modern Britain",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Nature and changing definitions of criminal activity",
+          "points": [
+            "Continuity and change in the nature of crimes against the person, property and authority, including new forms of theft and smuggling.",
+            "Changing definitions of crime, including driving offences, race crimes and drug crimes."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The nature of law enforcement and punishment",
+          "points": [
+            "The role of the authorities and local communities in law enforcement, including the development of Neighbourhood Watch. Changes within the police force: increasing specialisation, use of science and technology and the move towards prevention.",
+            "The abolition of the death penalty; changes to prisons, including the development of open prisons and specialised treatment of young offenders; the development of non-custodial alternatives to prison."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Case studies",
+          "points": [
+            "The treatment of Conscientious Objectors in the First and Second World Wars.",
+            "The Derek Bentley case: its significance for the abolition of the death penalty."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-5",
+      "eraNumber": 5,
+      "title": "c1870–c1900: crime, policing and the inner city",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Whitechapel,",
+          "points": []
+        }
+      ]
+    },
+    {
+      "id": "thematic-era-6",
+      "eraNumber": 6,
+      "title": "c1870–c1900:",
+      "topics": [
+        {
+          "number": 2,
+          "title": "2. Knowledge, selection and use of sources for historical enquiries",
+          "points": [
+            "The national and regional context: the working of the Metropolitan Police, the quality of police recruits. The development of CID, the role of the Home Secretary and of Sir Charles Warren, public attitudes towards the police.",
+            "Knowledge of local sources relevant to the period and issue, e.g. housing and employment records, council records and census returns, Charles Booth’s survey, workhouse records, local police records, coroners’ reports, photographs and London newspapers.",
+            "Knowledge of national sources relevant to the period and issue, e.g. national newspapers, records of crimes and police investigations, Old Bailey records of trials and Punch cartoons.",
+            "Recognition of the strengths and weaknesses of different types of source for specific enquiries.",
+            "Framing of questions relevant to the pursuit of a specific enquiry.",
+            "Selection of appropriate sources for specific investigations."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "historic-environment",
+      "title": "Historic Environment: Whitechapel, c1870–c1900: crime, policing and the inner city",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Whitechapel, c1870–c1900: crime, policing and the inner city",
+          "points": [
+            "The local context of Whitechapel. The problems of housing and overcrowding. Attempts to improve housing: the Peabody Estate. Provision for the poor in the Whitechapel workhouses. Links between the environment and crime. Life in Whitechapel as an inner city area of poverty and discontent.",
+            "The inhabitants of Whitechapel. The lack of employment opportunities and level of poverty. The prevalence of lodging houses and pubs creating a fluctuating population without ties to the community. The impact of changing patterns of migration: the settlement of migrants from Ireland and Eastern Europe, and the increase in Jewish migration during the 1880s.",
+            "The organisation of policing in Whitechapel. The role of the ‘beat constable’. The work of H division and the difficulties of policing the slum area of Whitechapel, the rookeries, alleys and courts. Problems of policing caused by crime and antisocial behaviour: alcohol, prostitution, protection rackets, gangs, violent demonstrations and attacks on Jewish people.",
+            "Investigative policing in Whitechapel: developments in techniques of detective investigation, including the use of sketches, photographs and interviews; problems caused by the need for cooperation between the Metropolitan Police, the City of London Police and Scotland Yard. Dealing with the crimes of Jack the Ripper and the added problems caused by the media reporting of the ‘Ripper’ murders. The Whitechapel Vigilance Committee.",
+            "The national and regional context: the working of the Metropolitan Police, the quality of police recruits. The development of CID, the role of the Home Secretary and of Sir Charles Warren, public attitudes towards the police."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Knowledge, selection and use of sources for historical enquiries",
+          "points": [
+            "Knowledge of local sources relevant to the period and issue, e.g. housing and employment records, council records and census returns, Charles Booth’s survey, workhouse records, local police records, coroners’ reports, photographs and London newspapers.",
+            "Knowledge of national sources relevant to the period and issue, e.g. national newspapers, records of crimes and police investigations, Old Bailey records of trials and Punch cartoons.",
+            "Recognition of the strengths and weaknesses of different types of source for specific enquiries.",
+            "Framing of questions relevant to the pursuit of a specific enquiry.",
+            "Selection of appropriate sources for specific investigations."
+          ]
+        }
+      ]
+    }
+  ]
+}

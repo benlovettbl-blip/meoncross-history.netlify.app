@@ -238,6 +238,12 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   usa: {
+    textbook: {
+      title: 'The USA, 1954–1975: Conflict at Home and Abroad 28-Page Master Textbook',
+      label: 'Master Textbook',
+      htmlUrl: '/units/usa/textbook_UNIFIED.html',
+      pdfUrl: '/pdfs/usa_textbook_UNIFIED_FINAL.pdf',
+    },
     workbook: {
       title: 'USA 1954–1975 Pupil Workbook',
       label: 'Pupil Workbook',
@@ -252,6 +258,12 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   edexcel_medicine: {
+    textbook: {
+      title: 'Medicine Through Time (c1250–present) Master Textbooks',
+      label: 'Master Textbook (5 Eras)',
+      htmlUrl: '/units/edexcel_medicine/textbook_medieval_PUBLISHER.html',
+      pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
+    },
     workbook: {
       title: 'Medicine in Britain Master Pupil Workbook',
       label: 'Pupil Workbook',
@@ -266,6 +278,12 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   weimar_nazi_germany: {
+    textbook: {
+      title: 'Weimar and Nazi Germany (1918–1939) 28-Page Master Textbook',
+      label: 'Master Textbook',
+      htmlUrl: '/units/weimar_nazi_germany/textbook_UNIFIED.html',
+      pdfUrl: '/pdfs/weimar_nazi_germany_textbook_UNIFIED_FINAL.pdf',
+    },
     workbook: {
       title: 'Weimar & Nazi Germany Pupil Workbook',
       label: 'Pupil Workbook',
@@ -280,6 +298,12 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   eee: {
+    textbook: {
+      title: 'Early Elizabethan England Master Textbook',
+      label: 'Master Textbook',
+      htmlUrl: '/units/eee/textbook_UNIFIED.html',
+      pdfUrl: '/pdfs/eee_textbook_UNIFIED_FINAL.pdf',
+    },
     workbook: {
       title: 'Early Elizabethan England Pupil Workbook',
       label: 'Pupil Workbook',
@@ -294,6 +318,12 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   cold_war: {
+    textbook: {
+      title: 'The Cold War & Global Flashpoints Master Textbook',
+      label: 'Master Textbook',
+      htmlUrl: '/units/cold_war/textbook.html',
+      pdfUrl: '/pdfs/cold_war_textbook_FINAL_V17.pdf',
+    },
     workbook: {
       title: 'Superpower Relations & Cold War Pupil Workbook',
       label: 'Pupil Workbook',

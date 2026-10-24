@@ -1,0 +1,186 @@
+{
+  "id": "paper3_32_maos_china",
+  "code": "32",
+  "paper": "Paper 3",
+  "paperType": "Modern Depth Study",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option 32: Mao’s China, 1945–76",
+  "shortTitle": "Mao’s China",
+  "exam_structure": {
+    "paper_code": "1HI0/30–33",
+    "paper_name": "Paper 3: Modern Depth Study",
+    "total_marks": 52,
+    "duration_minutes": 90,
+    "weighting": "30% of total GCSE",
+    "overview": "Section A tests source inference (4m) and causation (12m). Section B tests historical interpretations and contemporary source utility (36m) plus 4 marks for SPaG."
+  },
+  "stats": {
+    "sectionsCount": 4,
+    "topicsCount": 16,
+    "pointsCount": 38
+  },
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "keyTopicNumber": 1,
+      "title": "Key topic 1: Establishing communist rule, 1945–59",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The Civil War, 1945–49",
+          "points": [
+            "The relative strengths and weaknesses of the CCP and the Guomindang at the start of the Civil War.",
+            "Reasons for the success of Mao and the CCP, including leadership, military factors, and unrest in the towns and cities."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Communist rule",
+          "points": [
+            "The ideology and role of Mao. Reasons for Mao’s dominant position.",
+            "The role of the CCP in the government of China, including new mass party membership and democratic centralism."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Consolidating the CCP’s hold on power, 1951–52",
+          "points": [
+            "The use of terror against opponents of communist rule.",
+            "The ‘three antis’ and ‘five antis’ movements."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. The Hundred Flowers campaign, 1956–57",
+          "points": [
+            "Mao’s reasons for the Hundred Flowers campaign.",
+            "Key features of the Hundred Flowers campaign; criticism of communist rule and the reaction of Mao.",
+            "Results of the campaign, including the ‘Anti-Rightist’ purge."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "keyTopicNumber": 2,
+      "title": "Key topic 2: Economic policy, 1949–65",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Early changes in agriculture, 1949–57",
+          "points": [
+            "Reasons for, and features of, the attacks on landlordism and the redistribution of land.",
+            "Moves towards agricultural cooperation.",
+            "Reasons for the change from voluntary to enforced collectivisation."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Industry and the Five-Year Plan, 1953–57",
+          "points": [
+            "Reasons for, and targets of, the first Five-Year Plan. The significance of USSR financial and technical support.",
+            "Success and failures of the first Five-Year Plan."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. The Great Leap Forward",
+          "points": [
+            "Mao’s reasons for the second Five-Year Plan (the Great Leap Forward), 1958–62.",
+            "The successes and failures of the Great Leap Forward. Reasons for failures. The importance of the Lushan Conference (1959).",
+            "The organisation of the commune: communal living and the abolition of private farming. The significance of Lysenkoism.",
+            "The causes and impact of the Great Famine, 1958–62."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. Economic reform",
+          "points": [
+            "Reasons for the restoration of private farming under Liu Shaoqi and Deng Xiaoping.",
+            "Reasons for, and features of, economic reform (1962–65) under Liu and Deng."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "keyTopicNumber": 3,
+      "title": "Key topic 3: The Cultural Revolution and its aftermath, 1966–76",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Reasons for the Cultural Revolution",
+          "points": [
+            "The power struggle: Mao, Liu Shaoqi and Deng Xiaoping.",
+            "Purification of communism, including the Socialist Education Movement, and the reform of education."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The Red Guards and the Red Terror",
+          "points": [
+            "Mao’s hold on young people, including the mass rallies of 1966. Jiang Qing and the attack on the CCP.",
+            "Red Guard attacks on the ‘four olds’ and the CCP. The growth of anarchy and the use of terror. Cultural destruction."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. The effects of the Cultural Revolution",
+          "points": [
+            "Political effects: the purging of the CCP, Liu Shaoqi and Deng Xiaoping, the rise and fall of Lin Biao.",
+            "Social effects, including the impact on education.",
+            "Economic effects: changes in industry, the removal of technicians, the move to the countryside and the impact on farming."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. The end of the Cultural Revolution, 1968–76",
+          "points": [
+            "Reasons for the end of the Red Guards and the significance of the restoration of order by the PLA, including the ‘Up to the mountains and down to the villages’ campaign.",
+            "The return to power of Deng Xiaoping and the increased influence of Zhou Enlai. The rise and fall of the ‘Gang of Four’ and the death of Mao."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-4",
+      "keyTopicNumber": 4,
+      "title": "Key topic 4: Life in Mao’s China, 1949–76",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Communist control",
+          "points": [
+            "Propaganda and censorship and the significance of the ‘cult of Mao’.",
+            "Thought control and the development of the ‘Reform Through Labour’ system."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Family life and the role of women",
+          "points": [
+            "Changes in family life in towns and countryside. The impact of collectivisation and communes.",
+            "Reasons for changes in the status of women under Mao. The significance of foot binding and the Marriage Law (1950)."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Education and health",
+          "points": [
+            "Reasons for changes in education. Growth in literacy and the significance of Pinyin. The collapse of education after 1966.",
+            "Reasons for changes in health provision. The significance of the barefoot doctors. Successes and failures of healthcare reform."
+          ]
+        },
+        {
+          "number": 4,
+          "title": "4. Cultural change",
+          "points": [
+            "Reasons for attacks on traditional culture in towns and countryside.",
+            "The imposition of revolutionary art and culture; the role of Jiang Qing.",
+            "Reasons for attacks on Buddhism, Confucianism, Christianity, Islam and ancestor worship."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -16,34 +16,23 @@ const fs = require('fs');
     path.resolve(__dirname, '../public/units/cme_new/textbook_UNIFIED.html').replace(/\\/g, '/');
   await page.goto(htmlPath, { waitUntil: 'networkidle0' });
 
-  const artifactDir =
-    'C:/Users/fives/.gemini/antigravity-ide/brain/9c54f6a7-31a4-4f9a-a543-dfbdde13fbae';
-  const targets = [
-    { id: '#page-1', name: 'cme_unified_page1_cover.png' },
-    { id: '#page-2', name: 'cme_unified_page2_spine.png' },
-    { id: '#page-3', name: 'cme_unified_page3_map.png' },
-    { id: '#page-4', name: 'cme_unified_page4_enquiry1_verso.png' },
-    { id: '#page-5', name: 'cme_unified_page5_enquiry1_recto.png' },
-    { id: '#page-8', name: 'cme_unified_page8_enquiry3_verso.png' },
-    { id: '#page-9', name: 'cme_unified_page9_enquiry3_recto.png' },
-    { id: '#page-24', name: 'cme_unified_page24_enquiry11_verso.png' },
-    { id: '#page-25', name: 'cme_unified_page25_enquiry11_recto.png' },
-    { id: '#page-26', name: 'cme_unified_page26_enquiry12_verso.png' },
-    { id: '#page-27', name: 'cme_unified_page27_enquiry12_recto.png' },
-    { id: '#page-28', name: 'cme_unified_page28_quiz.png' },
-  ];
+  const outDir = path.join(__dirname, '../public/units/cme_new/previews/unified');
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
 
-  for (const t of targets) {
-    const el = await page.$(t.id);
+  const pageIds = [4, 5, 6, 7, 8, 9, 10, 11, 14, 15, 20, 21, 26, 27];
+
+  for (const pNum of pageIds) {
+    const selector = `#page-${pNum}`;
+    const el = await page.$(selector);
     if (el) {
-      const out = path.join(artifactDir, t.name);
-      await el.screenshot({ path: out });
-      console.log('Saved ' + t.id + ' to ' + out);
-    } else {
-      console.error('Target not found: ' + t.id);
+      const outPath = path.join(outDir, `page_${String(pNum).padStart(2, '0')}.png`);
+      await el.screenshot({ path: outPath });
+      console.log(`Saved ${selector} -> ${outPath}`);
     }
   }
+
   await browser.close();
+  console.log('Finished taking screenshots!');
 })().catch((err) => {
   console.error(err);
   process.exit(1);

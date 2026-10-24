@@ -1,0 +1,126 @@
+{
+  "id": "paper2_p2_british_america",
+  "code": "P2",
+  "paper": "Paper 2 (Period Study)",
+  "paperType": "Period Study",
+  "title": "Pearson Edexcel GCSE (9–1) History Specification",
+  "subtitle": "Option P2: British America, 1713–83: empire and revolution",
+  "shortTitle": "British America",
+  "exam_structure": {
+    "paper_code": "1HI0/P1–P5",
+    "paper_name": "Paper 2 (Booklet P): Period Study",
+    "total_marks": 32,
+    "duration_minutes": 55,
+    "weighting": "20% of total GCSE",
+    "overview": "Tests unfolding period narrative across 3 Key Topics. Q1 Explain two consequences (8m), Q2 Write an analytical narrative (8m), Q3 Explain the importance of two events (16m)."
+  },
+  "stats": {
+    "sectionsCount": 3,
+    "topicsCount": 9,
+    "pointsCount": 27
+  },
+  "sections": [
+    {
+      "id": "key-topic-1",
+      "keyTopicNumber": 1,
+      "title": "Key topic 1: British settlement in North America, 1713–41",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. Developments in colonial society",
+          "points": [
+            "The impact of expansion and immigration on society: the pattern of settlement and tensions among social groups.",
+            "Economic developments: trade with Britain and with the West Indies, the importance of tobacco, the impact of piracy, including the activities of ‘Black Sam’ Bellamy and Edward Teach (‘Blackbeard’).",
+            "The suppression of piracy in American waters: King George I’s Proclamation and the Piracy Act (1717), the work of Governor Spotswood."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. Slavery in North America",
+          "points": [
+            "The transatlantic slave trade and ‘Atlantic trade triangle’.",
+            "The impact of slavery on the development of tobacco and rice plantations.",
+            "The impact of slavery on colonial society;  the position of enslaved people within society and the treatment of fugitives  within the colonies."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Problems within the colonies",
+          "points": [
+            "Slave revolts in the Carolinas: the Stono Rebellion (1739);    the significance of Spain’s decision to protect runaways  in Florida.",
+            "The New York Conspiracy (1741).",
+            "Smuggling, attempts to collect customs revenue and to control the fur trade."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-2",
+      "keyTopicNumber": 2,
+      "title": "Key topic 2: A disrupted society, 1742–64",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. The impact of cultural developments",
+          "points": [
+            "Religious revivals, including the Great Awakening and revivalist preachers.",
+            "The Enlightenment: the emphasis on education; the growth of newspapers and public libraries.",
+            "The significance of Benjamin Franklin as a writer, philanthropist and intellectual."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. War in the colonies",
+          "points": [
+            "Relations with the French and with Indigenous peoples during and after King George’s War (1744–48).",
+            "The French and Indian War (1754–63) in North America and the role of Wolfe in Canada.",
+            "The significance of the Treaty of Paris (1763)  and the Proclamation Act (1763)."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. The aftermath of the French and Indian war",
+          "points": [
+            "The impact of the war on American colonists’ relations with Britain.",
+            "Opposition to the Sugar Act (1764).",
+            "Relations with Indigenous peoples, including Pontiac’s Rebellion (1763–64). The Paxton Boys: their actions and impact."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "key-topic-3",
+      "keyTopicNumber": 3,
+      "title": "Key topic 3: The loss of an empire, 1765–83",
+      "topics": [
+        {
+          "number": 1,
+          "title": "1. American colonist relations with Britain: growing opposition, 1765-75",
+          "points": [
+            "Opposition to British policies: the Stamp Act, the Sons of Liberty and the Boston Massacre (1770).",
+            "British and American relations: the Boston Tea Party (1773) and the Intolerable Acts (1774).",
+            "The significance of the First and Second Continental Congresses, 1774–75."
+          ]
+        },
+        {
+          "number": 2,
+          "title": "2. The War of Independence 1775-83",
+          "points": [
+            "The influence of Thomas Paine's 'Common Sense'. The significance of the Declaration of Independence. The role of Thomas Jefferson.",
+            "Key American victories: Saratoga (1777) and Yorktown (1781). The significance of Washington’s role, British mistakes, and French and Spanish involvement in the war.",
+            "The Peace of Paris (1783), including the role of Franklin."
+          ]
+        },
+        {
+          "number": 3,
+          "title": "3. Consequences of the war in America",
+          "points": [
+            "The significance of American independence for slavery.",
+            "The consequences of the war for Indigenous peoples.",
+            "The impact of the war on Loyalists, including their resettlement in Nova Scotia and Niagara."
+          ]
+        }
+      ]
+    }
+  ]
+}

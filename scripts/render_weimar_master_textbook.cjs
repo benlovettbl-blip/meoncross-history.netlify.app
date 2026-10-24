@@ -7,6 +7,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const vm = require('vm');
 const puppeteer = require('puppeteer');
 const QRCode = require('qrcode');
 const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
@@ -80,10 +81,13 @@ if (!fs.existsSync(dataPath)) {
   process.exit(1);
 }
 
-const dataContent = fs.readFileSync(dataPath, 'utf8');
-const startIndex = dataContent.indexOf('{');
-const endIndex = dataContent.lastIndexOf('}');
-const unitData = eval('(' + dataContent.substring(startIndex, endIndex + 1) + ')');
+let raw = fs.readFileSync(dataPath, 'utf8');
+raw =
+  raw
+    .replace(/export\s+const\s+unitData\s*=/g, 'const unitData =')
+    .replace(/export\s+default\s+unitData;?/g, '')
+    .replace(/export\s*\{[^}]*\};?/g, '') + '; unitData;';
+const unitData = vm.runInNewContext(raw);
 
 function getBase64Image(relPath) {
   if (!relPath) return null;
@@ -2313,8 +2317,15 @@ async function renderTextbookPdf(targetKt = 'kt1') {
   console.log(`✅ Saved HTML: ${htmlPathUnit}`);
 
   console.log(`🖨️ Compiling PDF with Puppeteer & Auditing Space Budget...`);
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: chromePath,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 

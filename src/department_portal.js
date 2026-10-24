@@ -154,14 +154,14 @@ const UNIT_HEALTH_DATA = [
     name: 'Water & Sanitation Through Time',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (99% Budget)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 12-Page Master Textbook (Unified)',
     appStatus: 'synced',
     appText: '✅ 100% Synced (6 L)',
     mapStatus: 'embedded',
     mapText: '✅ Broad Street & Roman Maps',
     workbookPdf: '/pdfs/water_and_sanitation_pupil_workbook_FINAL_V17.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/water_and_sanitation_textbook_FINAL_V17.pdf',
   },
   {
     year: 'Year 7',
@@ -186,14 +186,14 @@ const UNIT_HEALTH_DATA = [
     name: 'Early Modern World (1450–1750)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (99% Budget)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 12-Page Master Textbook (Unified)',
     appStatus: 'synced',
     appText: '✅ 100% Synced (9 L)',
     mapStatus: 'embedded',
     mapText: '✅ Global Trade & Exploration',
     workbookPdf: '/pdfs/early_modern_world_pupil_workbook_FINAL_V17.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/early_modern_world_textbook_FINAL_V17.pdf',
   },
   {
     year: 'Year 8',
@@ -202,14 +202,14 @@ const UNIT_HEALTH_DATA = [
     name: 'Industrialisation & Empire (1750–1900)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (99% Budget)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 12-Page Master Textbook (Unified)',
     appStatus: 'synced',
     appText: '✅ 100% Synced (8 L)',
     mapStatus: 'embedded',
     mapText: '✅ British Empire & Canal Network',
     workbookPdf: '/pdfs/industrialisation_and_empire_pupil_workbook.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/industrialisation_and_empire_textbook_FINAL_V17.pdf',
   },
   {
     year: 'Year 8',
@@ -234,14 +234,14 @@ const UNIT_HEALTH_DATA = [
     name: 'The Great War 1914–1918 (Part 1)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (99% Budget)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 8-Page Master Anthology',
     appStatus: 'synced',
     appText: '✅ 100% Synced (6 L)',
     mapStatus: 'embedded',
     mapText: '✅ Western Front & Schlieffen Plan',
     workbookPdf: '/pdfs/great_war_workbook.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/great_war_textbook_FINAL_V17.pdf',
   },
   {
     year: 'Year 9',
@@ -250,14 +250,14 @@ const UNIT_HEALTH_DATA = [
     name: 'The Great War 1914–1918 (Part 2: Somme & Armistice)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (99% Budget)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 12-Page Master Saddle-Stitch',
     appStatus: 'synced',
     appText: '✅ 100% Synced (7 L)',
     mapStatus: 'embedded',
     mapText: '✅ Somme & Ypres Battlegrounds',
     workbookPdf: '/units/great_war_part2/workbook.html',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/great_war_part2_textbook_FINAL.pdf',
   },
   {
     year: 'Year 9',
@@ -266,14 +266,14 @@ const UNIT_HEALTH_DATA = [
     name: 'The Shoah (Holocaust Education)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (99% Budget)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 12-Page Master Saddle-Stitch',
     appStatus: 'synced',
     appText: '✅ 100% Synced (7 L)',
     mapStatus: 'embedded',
     mapText: '✅ Camp Network & Resistance',
     workbookPdf: '/pdfs/the_shoah_pupil_workbook_FINAL_V17.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/the_shoah_textbook_FINAL.pdf',
   },
   {
     year: 'Year 9',
@@ -282,14 +282,14 @@ const UNIT_HEALTH_DATA = [
     name: 'Post-War Britain (1945–1990s)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (99% Budget)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 12-Page Master Saddle-Stitch',
     appStatus: 'synced',
     appText: '✅ 100% Synced (6 L)',
     mapStatus: 'embedded',
     mapText: '✅ Windrush Routes & NHS Districts',
     workbookPdf: '/pdfs/post_war_britain_pupil_workbook_FINAL_V17.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/post_war_britain_textbook_FINAL_V17.pdf',
   },
   {
     year: 'Year 9',
@@ -298,14 +298,14 @@ const UNIT_HEALTH_DATA = [
     name: 'Superpower Relations & The Cold War',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (99% Budget)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 12-Page Master Textbook (Unified)',
     appStatus: 'synced',
     appText: '✅ 100% Synced (7 L)',
     mapStatus: 'embedded',
     mapText: '✅ Divided Berlin & NATO/Warsaw',
     workbookPdf: '/units/cold_war/workbook.html',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/cold_war_textbook_FINAL_V17.pdf',
   },
   {
     year: 'Year 10',
@@ -330,14 +330,14 @@ const UNIT_HEALTH_DATA = [
     name: 'Weimar & Nazi Germany (1918–1939)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (16 L, KT1–4)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 28-Page Master Textbook (Unified)',
     appStatus: 'synced',
     appText: '✅ 100% Synced (16 L)',
     mapStatus: 'embedded',
     mapText: '✅ Weimar Territory & Plebiscites',
     workbookPdf: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/weimar_nazi_germany_textbook_UNIFIED_FINAL.pdf',
   },
   {
     year: 'Year 11',
@@ -346,14 +346,14 @@ const UNIT_HEALTH_DATA = [
     name: 'Early Elizabethan England (1558–1588)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (KT1–3)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 28-Page Master Textbook (Unified)',
     appStatus: 'synced',
     appText: '✅ 100% Synced (12 L)',
     mapStatus: 'embedded',
     mapText: '✅ Armada Route & Drake Circumnavigation',
     workbookPdf: '/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/eee_textbook_UNIFIED_FINAL.pdf',
   },
   {
     year: 'Year 11',
@@ -362,14 +362,14 @@ const UNIT_HEALTH_DATA = [
     name: 'Medicine in Britain (c1250–present) & Western Front',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (26 L, Medieval to Modern)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 5x Master Era Editions (62 Pages)',
     appStatus: 'synced',
     appText: '✅ 100% Synced (26 L)',
     mapStatus: 'embedded',
     mapText: '✅ Western Front Casualty Evacuation',
     workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
   },
   {
     year: 'Year 11',
@@ -378,14 +378,14 @@ const UNIT_HEALTH_DATA = [
     name: 'USA: Conflict at Home & Abroad (1954–1975)',
     workbookStatus: 'optimal',
     workbookText: '✅ V17 Optimal (KT1–4)',
-    textbookStatus: 'none',
-    textbookText: '— (No Master Textbook)',
+    textbookStatus: 'optimal',
+    textbookText: '✅ 28-Page Master Textbook (Unified)',
     appStatus: 'synced',
     appText: '✅ 100% Synced (16 L)',
     mapStatus: 'embedded',
     mapText: '✅ Civil Rights Marches & Vietnam War',
     workbookPdf: '/pdfs/usa_pupil_workbook_KT1_FINAL_V17.pdf',
-    textbookPdf: null,
+    textbookPdf: '/pdfs/usa_textbook_UNIFIED_FINAL.pdf',
   },
 ];
 
@@ -1380,6 +1380,20 @@ async function renderSowEnquiryGuidance(container, unitId, lessonIndex) {
     `;
   }
 
+  let impartialityHtml = '';
+  if (tn.statutory_impartiality_guidance) {
+    impartialityHtml = `
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 4px solid #0f766e; border-radius: 6px; padding: 12px 16px; margin-bottom: 14px;">
+        <div style="font-weight: 800; font-size: 0.78rem; text-transform: uppercase; color: #0f766e; letter-spacing: 0.06em; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-scale-balanced"></i> Statutory Neutrality &amp; Sensitive Content Protocol (DfE Compliance)
+        </div>
+        <div style="font-size: 0.84rem; color: #334155; line-height: 1.5;">
+          ${tn.statutory_impartiality_guidance}
+        </div>
+      </div>
+    `;
+  }
+
   let objectivesHtml = '';
   if (Array.isArray(tn.objectives) && tn.objectives.length > 0) {
     objectivesHtml = `
@@ -1465,6 +1479,7 @@ async function renderSowEnquiryGuidance(container, unitId, lessonIndex) {
   container.innerHTML = `
     <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 18px 20px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
       ${primerHtml}
+      ${impartialityHtml}
       ${objectivesHtml}
       ${deliveryHtml}
       ${fallbackNotice}
