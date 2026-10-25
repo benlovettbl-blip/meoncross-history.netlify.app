@@ -59,10 +59,28 @@ function runAudit() {
     (unit.lessons || []).forEach((l, lIdx) => {
       const lId = l.id || `L${lIdx + 1}`;
       const lessonTitle = l.title || lId;
+      const seenSourcesInLesson = new Set();
 
       const processSource = (s, locationType) => {
+        if (!s) return;
         const imgPath = s.src || s.image || s.source;
         if (!imgPath && !s.plates) return;
+
+        // Path resolution
+        let resolvedPath = imgPath;
+        if (Array.isArray(s.plates) && s.plates.length > 0 && !resolvedPath) {
+          resolvedPath = s.plates[0].image || s.plates[0].src;
+        }
+
+        if (!resolvedPath || typeof resolvedPath !== 'string' || resolvedPath.trim() === '' || resolvedPath === 'undefined') {
+          return;
+        }
+
+        // Deduplicate intra-lesson: if the same source is defined in both l.sources and b.source, audit only once
+        const normLetter = (s.letter || '').toUpperCase().trim();
+        const sourceKey = `${unitId}:${lId}:${normLetter}:${resolvedPath}`;
+        if (seenSourcesInLesson.has(sourceKey)) return;
+        seenSourcesInLesson.add(sourceKey);
 
         const title = s.title || s.caption || 'Archival Evidence';
         const caption = s.caption || '';
@@ -85,17 +103,9 @@ function runAudit() {
             : []);
         const expectedMedium = classifyMedium(title, caption);
 
-        // Path resolution
-        let resolvedPath = imgPath;
-        if (Array.isArray(s.plates) && s.plates.length > 0 && !resolvedPath) {
-          resolvedPath = s.plates[0].image || s.plates[0].src;
-        }
-
-        if (!resolvedPath) return;
-
         // Image Usage tracking
         if (!imageUsageMap[resolvedPath]) imageUsageMap[resolvedPath] = [];
-        imageUsageMap[resolvedPath].push({ unitId, unitTitle, lId, lessonTitle, title });
+        imageUsageMap[resolvedPath].push({ unitId, unitTitle, lId, lessonTitle, title, letter: normLetter });
 
         // File check
         const diskPath = path.join(rootDir, 'public', resolvedPath.replace(/^\//, ''));
@@ -142,13 +152,13 @@ function runAudit() {
         }
 
         allSources.push({
-          id: s.id || `${unitId}_${lId}_${allSources.length + 1}`,
+          id: s.id || `${unitId}_${lId}_${normLetter || allSources.length + 1}`,
           unitId,
           unitTitle,
           lessonId: lId,
           lessonTitle,
           locationType,
-          letter: s.letter || '',
+          letter: normLetter,
           title,
           caption,
           context,
@@ -187,16 +197,17 @@ function runAudit() {
   allSources.forEach((s) => {
     const usages = imageUsageMap[s.imagePath] || [];
     if (usages.length > 1) {
-      const distinctTitles = [...new Set(usages.map((u) => u.title))];
-      if (
-        distinctTitles.length > 1 &&
-        !s.imagePath.includes('map') &&
-        !s.imagePath.includes('banner')
-      ) {
-        s.reusedAcross = usages.filter((u) => u.title !== s.title);
-        if (s.status === 'VERIFIED') {
-          s.status = 'SHARED_ASSET';
-          s.flags.push(`Image shared across ${distinctTitles.length} distinct source titles`);
+      // Check for intra-unit duplicate (same unit, different lesson)
+      const intraUnitLessons = usages.filter((u) => u.unitId === s.unitId && u.lId !== s.lessonId);
+      if (intraUnitLessons.length > 0 && !s.imagePath.includes('map') && !s.imagePath.includes('banner')) {
+        s.status = 'INTRA_UNIT_DUPLICATE';
+        s.flags.push(`Intra-unit duplicate: reused in ${intraUnitLessons.map(u => u.lId).join(', ')}`);
+      } else {
+        // Cross-unit thematic sharing (e.g. King Cholera across Y7 Water & Sanitation and GCSE Medicine)
+        const distinctUnits = [...new Set(usages.map(u => u.unitId))];
+        if (distinctUnits.length > 1) {
+          s.thematicShared = true;
+          s.sharedUnits = distinctUnits.filter(u => u !== s.unitId);
         }
       }
     }
