@@ -254,7 +254,7 @@ export const PEDAGOGY_RESEARCH_BANK = [
     affiliation: 'University of Illinois / Principles of Instruction',
     category: 'Retrieval & Instruction',
     categoryBadge: 'badge-teal',
-    title: 'Rosenshine’s Principles: Isolated Prior-Learning Retrieval & Hinge Questions',
+    title: 'Rosenshine’s Principles: Isolated Prior-Learning Retrieval & Discussion Prompts',
     subtitle: 'Daily Spaced Practice Without Conflating Prior Memory with Unfamiliar Content',
     overview:
       'Rosenshine’s Principles of Instruction show that the most effective teachers begin lessons with a brief, systematic review of previously taught material. Daily retrieval strengthens synaptic neural connections, making recall effortless and freeing cognitive bandwidth for complex new historical topics. Crucially, recall starter tasks must test only prior learning, never introducing unlearned material.',
@@ -263,11 +263,11 @@ export const PEDAGOGY_RESEARCH_BANK = [
       'When starter or "Do Now" activities ask questions about material that has not yet been taught, pupils guess randomly, experience frustration, and inadvertently encode historical misconceptions into working memory.',
     evidenceHeading: 'Empirical Evidence on Spaced Retrieval',
     evidenceText:
-      'Regular, low-stakes retrieval practice interrupted by time delays halts forgetting and strengthens retrieval pathways. Diagnostic hinge questions placed at critical transitions allow teachers to verify class-wide conceptual understanding before advancing to higher-order extended writing.',
+      'Regular, low-stakes retrieval practice interrupted by time delays halts forgetting and strengthens retrieval pathways. Diagnostic discussion prompts placed at critical transitions allow teachers to verify class-wide conceptual understanding before advancing to higher-order extended writing.',
     applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
       'Strict Pedagogical Recall Isolation: "Do Now" activities strictly test recall from prior lessons or units. They NEVER ask about content from today\'s lesson.',
-      'Targeted Hinge Questions in Teacher Notes: Every learning objective includes an actionable hinge question to diagnose whole-class comprehension on the fly.',
+      'Targeted Discussion Prompts in Teacher Notes: Every learning objective includes an actionable discussion prompt to diagnose whole-class comprehension on the fly.',
       'Small-Step Guided Practice: Complex historical causation is taught in small, manageable sequences followed immediately by application.',
       'High-Success-Rate Calibration: Starter retrieval is calibrated for 80%+ success, cementing student confidence before tackling new content.',
     ],
@@ -275,7 +275,7 @@ export const PEDAGOGY_RESEARCH_BANK = [
     teacherProtocols: [
       'Enforce silent, independent completion of the Do-Now during the first 4 minutes of the lesson.',
       'Do not allow pupils to consult textbooks during the Do-Now; it must function as genuine closed-book memory retrieval.',
-      'Use cold-calling on hinge questions to verify whole-class readiness before transitioning to extended writing.',
+      'Use cold-calling on discussion prompts to verify whole-class readiness before transitioning to extended writing.',
     ],
     citations: [
       'Rosenshine, B. (2012). "Principles of instruction: Research-based strategies that all teachers should know", American Educator, 36(1), pp. 12–19.',
@@ -358,7 +358,7 @@ export const PEDAGOGY_RESEARCH_BANK = [
       'When pupils read a historical narrative interrupted by frequent, low-level comprehension questions ("What year did Bismarck take office?", "Name three states"), their cognitive attention shifts from causal synthesis to scanning for surface-level keywords. Pupils fail to perceive historical agency, contingency, or overarching narrative arcs, leaving them unable to construct coherent causal arguments in GCSE extended writing.',
     evidenceHeading: 'Disciplinary Evidence & Schema Synthesis',
     evidenceText:
-      'Research in history pedagogy demonstrates that deep conceptual retention ("residual knowledge") is forged through sustained, high-challenge shared reading (Acts 1–2), forensic evaluation of authentic primary sources paired with a targeted Hinge Question (Act 3), and analytical synthesis in a single, rigorous extended response (Act 4). Providing structured writing scaffolds (sentence stems, causal connectives, and evaluative criteria) enables all pupils, including SEND and disadvantaged learners, to produce high-level historical analysis.',
+      'Research in history pedagogy demonstrates that deep conceptual retention ("residual knowledge") is forged through sustained, high-challenge shared reading (Acts 1–2), forensic evaluation of authentic primary sources paired with a targeted Discussion Prompt (Act 3), and analytical synthesis in a single, rigorous extended response (Act 4). Providing structured writing scaffolds (sentence stems, causal connectives, and evaluative criteria) enables all pupils, including SEND and disadvantaged learners, to produce high-level historical analysis.',
     applicationHeading: 'Departmental & Platform Implementation',
     implementation: [
       '4-Act Lesson Architecture: Replaces fragmented comprehension worksheets with a single dramatic arc flowing from Context (Act 1) and Escalation (Act 2) to Archival Evidence (Act 3) and Verdict (Act 4).',
@@ -370,7 +370,7 @@ export const PEDAGOGY_RESEARCH_BANK = [
     teacherProtocols: [
       'Instruct pupils to bypass low-level worksheet blanks and dedicate their cognitive energy to the central lesson enquiry.',
       'Lead high-challenge shared reading of Acts 1 and 2, pausing only for targeted checks for understanding.',
-      'Use the Act 3 primary source and its embedded Hinge Question to orchestrate a 5-minute paired discussion before pupils put pen to paper.',
+      'Use the Act 3 primary source and its embedded Discussion Prompt to orchestrate a 5-minute paired discussion before pupils put pen to paper.',
       'Allocate a protected 15–20 minute block for pupils to write their sustained Act 4 response using the tiered writing scaffold.',
     ],
     citations: [

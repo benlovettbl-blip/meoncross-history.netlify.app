@@ -1,442 +1,166 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>The History Department</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
-      body {
-        font-family: 'Outfit', sans-serif;
-        color: #1e293b;
-        background: #fff;
-        margin: 0;
-        padding: 0;
-        font-size: 8.5pt;
-        line-height: 1.35;
-      }
-      h1,
-      h2,
-      h3,
-      h4 {
-        font-family: 'Playfair Display', serif;
-        color: #1b365d;
-        margin-top: 0;
-      }
-      .cover-page {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        background: #f8fafc;
-        border: 8px solid #facc15;
-        padding: 30px;
-        box-sizing: border-box;
-      }
-      .cover-title {
-        font-size: 38pt;
-        font-weight: 700;
-        color: #1b365d;
-        margin-bottom: 14px;
-      }
-      .cover-subtitle {
-        font-size: 20pt;
-        color: #facc15;
-        font-family: 'Outfit', sans-serif;
-        font-weight: 300;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-      }
-      .page-break {
-        page-break-before: always;
-      }
-      .container {
-        padding: 15px 25px;
-      }
-      .header-banner {
-        background: #1b365d;
-        color: #fff;
-        padding: 12px 18px;
-        text-align: center;
-        border-radius: 6px;
-        margin-bottom: 16px;
-        border-bottom: 3px solid #facc15;
-      }
-      .header-banner h1 {
-        color: #fff;
-        margin: 0;
-        font-size: 16pt;
-      }
-      .year-section {
-        margin-bottom: 16px;
-      }
-      .year-title {
-        background: #facc15;
-        color: #1b365d;
-        padding: 5px 12px;
-        border-radius: 4px;
-        font-size: 11pt;
-        margin-bottom: 8px;
-        display: inline-block;
-        font-family: 'Outfit', sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-      .unit-card {
-        page-break-inside: avoid;
-        border: 1px solid #cbd5e1;
-        border-radius: 6px;
-        padding: 8px 12px;
-        margin-bottom: 8px;
-        background: #f8fafc;
-        border-left: 4px solid #1b365d;
-      }
-      .unit-card h3 {
-        font-size: 11pt;
-        margin: 0 0 3px 0;
-        color: #1b365d;
-      }
-      .unit-card .enquiry {
-        font-weight: 600;
-        color: #b89c30;
-        font-size: 8.5pt;
-        margin-bottom: 3px;
-      }
-      .unit-card .desc {
-        font-size: 8pt;
-        color: #475569;
-        margin: 0;
-        line-height: 1.3;
-      }
-
-      /* SOW Styles */
-      .sow-unit-container {
-        margin-bottom: 25px;
-        page-break-inside: auto;
-      }
-      .sow-unit-header {
-        background: #1b365d;
-        color: #fff;
-        padding: 10px 16px;
-        border-radius: 6px 6px 0 0;
-        border-bottom: 3px solid #facc15;
-        margin-bottom: 12px;
-      }
-      .sow-unit-header h2 {
-        color: #fff;
-        margin: 0 0 4px 0;
-        font-size: 16pt;
-      }
-      .sow-unit-header p {
-        margin: 0;
-        color: #e2e8f0;
-        font-family: 'Outfit', sans-serif;
-        font-size: 9.5pt;
-      }
-      .primer-box {
-        background: #fef3c7;
-        border: 1px solid #fde68a;
-        border-left: 4px solid #d97706;
-        padding: 8px 12px;
-        border-radius: 4px;
-        margin-bottom: 12px;
-        font-size: 8pt;
-        line-height: 1.35;
-      }
-      .primer-box h4 {
-        margin: 0 0 4px 0;
-        color: #92400e;
-        font-family: 'Outfit', sans-serif;
-        text-transform: uppercase;
-        font-size: 8.5pt;
-        letter-spacing: 1px;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 16px;
-        page-break-inside: auto;
-        font-size: 8pt;
-      }
-      tr {
-        page-break-inside: avoid;
-        page-break-after: auto;
-        border-bottom: 1px solid #e2e8f0;
-      }
-      tr:nth-child(even) {
-        background-color: #f8fafc;
-      }
-      th {
-        background: #0f172a;
-        color: #ffffff;
-        text-align: left;
-        padding: 7px 9px;
-        font-family: 'Outfit', sans-serif;
-        font-weight: 600;
-        font-size: 8pt;
-        border: none;
-      }
-      td {
-        padding: 6px 8px;
-        border: none;
-        vertical-align: top;
-        font-size: 7.8pt;
-        line-height: 1.3;
-        color: #334155;
-      }
-
-      .lesson-num {
-        font-weight: 700;
-        color: #1b365d;
-        white-space: nowrap;
-        font-size: 8pt;
-      }
-      .lesson-title {
-        font-weight: 700;
-        margin-bottom: 2px;
-        color: #1e40af;
-        font-size: 8.5pt;
-      }
-
-      .hinge-question {
-        color: #b91c1c;
-        font-style: italic;
-        font-weight: 600;
-        margin-top: 4px;
-        display: block;
-        border-left: 2px solid #ef4444;
-        padding-left: 6px;
-        font-size: 7.5pt;
-      }
-
-      ul.obj-list {
-        margin: 2px 0 0 0;
-        padding-left: 14px;
-        font-size: 7.8pt;
-      }
-      ul.obj-list li {
-        margin-bottom: 2px;
-      }
-
-      /* SOW 3-Tier Task Extractor Styles */
-      .sow-three-tier {
-        display: flex;
-        flex-direction: column;
-        gap: 4.5px;
-      }
-      .tier-box {
-        background: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 4px;
-        padding: 4px 7px;
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
-      }
-      .tier-label {
-        font-size: 6.8pt;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 2px;
-      }
-      .tier-evidence {
-        border-left: 3.5px solid #1e3a8a;
-      }
-      .tier-evidence .tier-label {
-        color: #1e3a8a;
-      }
-      .tier-debate {
-        border-left: 3.5px solid #b45309;
-      }
-      .tier-debate .tier-label {
-        color: #b45309;
-      }
-      .tier-assessment {
-        border-left: 3.5px solid #0f766e;
-      }
-      .tier-assessment .tier-label {
-        color: #0f766e;
-      }
-      .tier-content {
-        font-size: 7.3pt;
-        color: #1e293b;
-        line-height: 1.28;
-      }
-      .tier-assessment .tier-content {
-        font-weight: 600;
-        color: #0f172a;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="cover-page">
-      <div class="cover-title">The History Department</div>
-      <div class="cover-subtitle">5-Year Curriculum Overview (2026-2027)</div>
-      <div style="margin-top: 30px; font-size: 12pt; color: #475569">
-        Key Stages 3 &amp; 4 (Years 7 – 11)
-      </div>
-    </div>
-    <div class="page-break"></div>
-    <div class="container">
-      <div class="header-banner">
-        <h1>History Curriculum Map &amp; Enquiry Architecture</h1>
-      </div>
-      <div class="year-section">
-        <div class="year-title">Year 7</div>
-        <div class="unit-card">
-          <h3>KS3: Water and Sanitation Through Time</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> Why did it take so long to clean up
-            Britain?
-          </div>
-          <div class="desc">An in-depth study featuring 6 lessons.</div>
+<!DOCTYPE html><html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>The History Department</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+            body { font-family: 'Outfit', sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 0; font-size: 8.5pt; line-height: 1.35; }
+            h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #1b365d; margin-top: 0; }
+            .cover-page { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f8fafc; border: 8px solid #facc15; padding: 30px; box-sizing: border-box; }
+            .cover-title { font-size: 38pt; font-weight: 700; color: #1b365d; margin-bottom: 14px; }
+            .cover-subtitle { font-size: 20pt; color: #facc15; font-family: 'Outfit', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; }
+            .page-break { page-break-before: always; }
+            .container { padding: 15px 25px; }
+            .header-banner { background: #1b365d; color: #fff; padding: 12px 18px; text-align: center; border-radius: 6px; margin-bottom: 16px; border-bottom: 3px solid #facc15; }
+            .header-banner h1 { color: #fff; margin: 0; font-size: 16pt; }
+            .year-section { margin-bottom: 16px; }
+            .year-title { background: #facc15; color: #1b365d; padding: 5px 12px; border-radius: 4px; font-size: 11pt; margin-bottom: 8px; display: inline-block; font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+            .unit-card { page-break-inside: avoid; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px; background: #f8fafc; border-left: 4px solid #1b365d; }
+            .unit-card h3 { font-size: 11pt; margin: 0 0 3px 0; color: #1b365d; }
+            .unit-card .enquiry { font-weight: 600; color: #b89c30; font-size: 8.5pt; margin-bottom: 3px; }
+            .unit-card .desc { font-size: 8pt; color: #475569; margin: 0; line-height: 1.3; }
+            
+            /* SOW Styles */
+            .sow-unit-container { margin-bottom: 25px; page-break-inside: auto; }
+            .sow-unit-header { background: #1b365d; color: #fff; padding: 10px 16px; border-radius: 6px 6px 0 0; border-bottom: 3px solid #facc15; margin-bottom: 12px; }
+            .sow-unit-header h2 { color: #fff; margin: 0 0 4px 0; font-size: 16pt; }
+            .sow-unit-header p { margin: 0; color: #e2e8f0; font-family: 'Outfit', sans-serif; font-size: 9.5pt; }
+            .primer-box { background: #fef3c7; border: 1px solid #fde68a; border-left: 4px solid #d97706; padding: 8px 12px; border-radius: 4px; margin-bottom: 12px; font-size: 8pt; line-height: 1.35; }
+            .primer-box h4 { margin: 0 0 4px 0; color: #92400e; font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 1px; }
+            
+            table { width: 100%; border-collapse: collapse; margin-bottom: 16px; page-break-inside: auto; font-size: 8pt; }
+            tr { page-break-inside: avoid; page-break-after: auto; border-bottom: 1px solid #e2e8f0; }
+            tr:nth-child(even) { background-color: #f8fafc; }
+            th { background: #0f172a; color: #ffffff; text-align: left; padding: 7px 9px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 8pt; border: none; }
+            td { padding: 6px 8px; border: none; vertical-align: top; font-size: 7.8pt; line-height: 1.3; color: #334155; }
+            
+            .lesson-num { font-weight: 700; color: #1b365d; white-space: nowrap; font-size: 8pt; }
+            .lesson-title { font-weight: 700; margin-bottom: 2px; color: #1e40af; font-size: 8.5pt; }
+            
+            .hinge-question { color: #b91c1c; font-style: italic; font-weight: 600; margin-top: 4px; display: block; border-left: 2px solid #ef4444; padding-left: 6px; font-size: 7.5pt; }
+            
+            ul.obj-list { margin: 2px 0 0 0; padding-left: 14px; font-size: 7.8pt; }
+            ul.obj-list li { margin-bottom: 2px; }
+            
+            /* SOW 3-Tier Task Extractor Styles */
+            .sow-three-tier { display: flex; flex-direction: column; gap: 4.5px; }
+            .tier-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 7px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
+            .tier-label { font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+            .tier-evidence { border-left: 3.5px solid #1e3a8a; }
+            .tier-evidence .tier-label { color: #1e3a8a; }
+            .tier-debate { border-left: 3.5px solid #b45309; }
+            .tier-debate .tier-label { color: #b45309; }
+            .tier-assessment { border-left: 3.5px solid #0f766e; }
+            .tier-assessment .tier-label { color: #0f766e; }
+            .tier-content { font-size: 7.3pt; color: #1e293b; line-height: 1.28; }
+            .tier-assessment .tier-content { font-weight: 600; color: #0f172a; }
+        </style>
+    </head>
+<body>
+        <div class="cover-page">
+            <div class="cover-title">The History Department</div>
+            <div class="cover-subtitle">5-Year Curriculum Overview (2026-2027)</div>
+            <div style="margin-top: 30px; font-size: 12pt; color: #475569;">Key Stages 3 &amp; 4 (Years 7 – 11)</div>
         </div>
-
-        <div class="unit-card">
-          <h3>Medieval England: 1066–1485</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How was power won, maintained, and
-            contested in Medieval England?
-          </div>
-          <div class="desc">An in-depth study featuring 5 lessons.</div>
-        </div>
-      </div>
-      <div class="year-section">
-        <div class="year-title">Year 8</div>
-        <div class="unit-card">
-          <h3>KS3: Early Modern World & Global Encounters (1450–1750)</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How 'global' was Britain's
-            transformation between 1450 and 1750?
-          </div>
-          <div class="desc">An in-depth study featuring 9 lessons.</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>KS3: The Industrial Revolution (1750–1900)</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How did steam, factories, and the fight
-            for democracy transform Britain?
-          </div>
-          <div class="desc">An in-depth study featuring 5 lessons.</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>KS3: History of Australia</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> Invasion, Settlement, or Survival? How
-            should we remember the colonization of Australia?
-          </div>
-          <div class="desc">An in-depth study featuring 5 lessons.</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>Crown, Church, or Parliament (1517–1689)</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> Who had the right to rule Britain:
-            King, Church, or Parliament?
-          </div>
-          <div class="desc">An in-depth study featuring 5 lessons.</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>The First British Empire (1600–1783)</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How did trade, slavery, and rebellion
-            shape the First British Empire?
-          </div>
-          <div class="desc">An in-depth study featuring 5 lessons.</div>
-        </div>
-      </div>
-      <div class="year-section">
-        <div class="year-title">Year 9</div>
-        <div class="unit-card">
-          <h3>KS3: Causes of the Great War</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How did decades of imperial rivalry and
-            fear culminate in thirty days of madness?
-          </div>
-          <div class="desc">An in-depth study featuring 5 lessons.</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>KS3: The Great War (1914–1919)</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How did a single spark in Sarajevo
-            ignite a global conflict that transformed the modern world?
-          </div>
-          <div class="desc">An in-depth study featuring 5 lessons.</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>KS3: The Shoah</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How did a modern, civilized nation
-            commit the systematic murder of six million Jewish people?
-          </div>
-          <div class="desc">An in-depth study featuring 7 lessons.</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>KS3: The Cold War</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> Why did the ideological clash between
-            Capitalism and Communism bring the world to the brink of nuclear destruction?
-          </div>
-          <div class="desc">An in-depth study featuring 7 lessons.</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>KS3: Rights, Protest, and Post-War Britain (1900–Present)</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How has British identity transformed
-            since 1945?
-          </div>
-          <div class="desc">An in-depth study featuring 6 lessons.</div>
-        </div>
-      </div>
-      <div class="year-section">
-        <div class="year-title">Year 10</div>
-        <div class="unit-card">
-          <h3>Paper 2: Conflict in the Middle East, 1945-1995</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> Why has peace proved so elusive in the
-            Middle East?
-          </div>
-          <div class="desc">Paper 2</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>Paper 3: Weimar and Nazi Germany, 1918-39</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> From Democracy to Dictatorship: How did
-            Hitler destroy the Weimar Republic?
-          </div>
-          <div class="desc">Paper 3</div>
-        </div>
-      </div>
-      <div class="year-section">
-        <div class="year-title">Year 11</div>
-        <div class="unit-card">
-          <h3>Paper 1: Medicine Through Time with the Western Front</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> How has medicine changed from c1250 to
-            the modern day?
-          </div>
-          <div class="desc">Paper 1</div>
-        </div>
-
-        <div class="unit-card">
-          <h3>Paper 2: Early Elizabethan England, 1558-88</h3>
-          <div class="enquiry">
-            <strong style="color: #1b365d">Enquiry:</strong> From religious division to the Armada:
-            How did Elizabeth secure her throne?
-          </div>
-          <div class="desc">Paper 2</div>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+        <div class="page-break"></div>
+        <div class="container">
+            <div class="header-banner">
+                <h1>History Curriculum Map &amp; Enquiry Architecture</h1>
+            </div>
+    <div class="year-section"><div class="year-title">Year 7</div>
+                <div class="unit-card">
+                    <h3>KS3: Water and Sanitation Through Time</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> Why did it take so long to clean up Britain?</div>
+                    <div class="desc">An in-depth study featuring 7 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>Medieval England: 1066–1485</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How was power won, maintained, and contested in Medieval England?</div>
+                    <div class="desc">An in-depth study featuring 5 lessons.</div>
+                </div>
+            </div><div class="year-section"><div class="year-title">Year 8</div>
+                <div class="unit-card">
+                    <h3>Crown, Church, or Parliament (1517–1689)</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> Who had the right to rule Britain: King, Church, or Parliament?</div>
+                    <div class="desc">An in-depth study featuring 5 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>The First British Empire (1600–1783)</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How did trade, slavery, and rebellion shape the First British Empire?</div>
+                    <div class="desc">An in-depth study featuring 5 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>KS3: The Industrial Revolution (1750–1900)</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How did steam, factories, and the fight for democracy transform Britain?</div>
+                    <div class="desc">An in-depth study featuring 5 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>KS3: The Second British Empire (1783–1914)</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How did trade, conquest, settler colonialism, and anti-colonial resistance shape the Second British Empire?</div>
+                    <div class="desc">An in-depth study featuring 5 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>The History of Australia: First Nations, Colonisation & Resistance (1770–1901)</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> Invasion, Settlement, or Survival? How did British colonisation transform Australia?</div>
+                    <div class="desc">An in-depth study featuring 5 lessons.</div>
+                </div>
+            </div><div class="year-section"><div class="year-title">Year 9</div>
+                <div class="unit-card">
+                    <h3>KS3: Causes of the Great War</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How did decades of imperial rivalry and fear culminate in thirty days of madness?</div>
+                    <div class="desc">An in-depth study featuring 6 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>KS3: The Great War (1914–1919)</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How did a single spark in Sarajevo ignite a global conflict that transformed the modern world?</div>
+                    <div class="desc">An in-depth study featuring 5 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>KS3: The Shoah</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How did a modern, civilized nation commit the systematic murder of six million Jewish people?</div>
+                    <div class="desc">An in-depth study featuring 7 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>The Cold War & Global Flashpoints (1945–1991)</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> Why did the ideological clash between Capitalism and Communism bring the world to the brink of nuclear destruction?</div>
+                    <div class="desc">An in-depth study featuring 7 lessons.</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>KS3: Rights, Protest, and Post-War Britain (1900–Present)</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How has British identity transformed since 1945?</div>
+                    <div class="desc">An in-depth study featuring 6 lessons.</div>
+                </div>
+            </div><div class="year-section"><div class="year-title">Year 10</div>
+                <div class="unit-card">
+                    <h3>Paper 2: Conflict in the Middle East, 1945-1995</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> Why has peace proved so elusive in the Middle East?</div>
+                    <div class="desc">Paper 2</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>Paper 3: Weimar and Nazi Germany, 1918-39</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> From Democracy to Dictatorship: How did Hitler destroy the Weimar Republic?</div>
+                    <div class="desc">Paper 3</div>
+                </div>
+            </div><div class="year-section"><div class="year-title">Year 11</div>
+                <div class="unit-card">
+                    <h3>Paper 1: Medicine Through Time with the Western Front</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> How has medicine changed from c1250 to the modern day?</div>
+                    <div class="desc">Paper 1</div>
+                </div>
+            
+                <div class="unit-card">
+                    <h3>Paper 2: Early Elizabethan England, 1558-88</h3>
+                    <div class="enquiry"><strong style="color:#1b365d">Enquiry:</strong> From religious division to the Armada: How did Elizabeth secure her throne?</div>
+                    <div class="desc">Paper 2</div>
+                </div>
+            </div></div></body></html>

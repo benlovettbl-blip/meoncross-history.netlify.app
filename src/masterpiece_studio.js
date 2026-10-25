@@ -189,7 +189,7 @@ export function buildDynamicStudioItem(payload) {
     turnAndTalkHint =
       'Prompt students to debate how the creator’s motive shaped which details were shown and which were suppressed.';
   } else if (context) {
-    const cleanCtx = context.replace(/\s*Hinge Question:.*$/i, '').trim();
+    const cleanCtx = context.replace(/\s*(?:Hinge Question|Discussion Prompt|Discussion Question|Question):.*$/i, '').trim();
     turnAndTalkQuestion = `Turn to your partner: Context: ${cleanCtx}. Why did the creator choose to depict this specific event or individual in this way, and how would contemporary viewers have reacted?`;
     turnAndTalkHint =
       'Encourage students to connect the historical context directly to the intended audience’s beliefs.';
@@ -200,9 +200,9 @@ export function buildDynamicStudioItem(payload) {
   }
 
   // Phase 3: Hinge Verdict (Evaluative historical conclusion)
-  let cleanHinge = hinge.replace(/^Hinge Question:\s*/i, '').trim();
+  let cleanHinge = hinge.replace(/^(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\s*/i, '').trim();
   if (!cleanHinge.endsWith('?')) cleanHinge += '?';
-  const hingeQuestion = `Hinge Question: ${cleanHinge}`;
+  const hingeQuestion = `Discussion Prompt: ${cleanHinge}`;
 
   // Detective Riddle Synthesis
   let riddlePrompt = '';
@@ -271,7 +271,7 @@ export function buildDynamicStudioItem(payload) {
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
@@ -291,7 +291,7 @@ export function buildDynamicStudioItem(payload) {
 /**
  * Play authentic synthesized transition soundscapes using Web Audio API
  * - Stage 2 (02:00, Turn & Talk): Warm two-tone ascending Westminster chime harmonic (F#4 -> A4)
- * - Stage 3 (00:30, Hinge Verdict): Resonant grandfather clock bell chime (D5 -> F#5)
+ * - Stage 3 (00:30, Final Verdict): Resonant grandfather clock bell chime (D5 -> F#5)
  * - Completion (00:00): Full celebratory acoustic triad (D5 -> F#5 -> A5)
  */
 export function playTransitionChime(stage) {
@@ -329,7 +329,7 @@ export function playTransitionChime(stage) {
       osc2.start(now + 0.28);
       osc2.stop(now + 1.4);
     } else if (stage === 3) {
-      // Stage 3: Hinge Verdict Transition (00:30) -> Resonant grandfather clock bell strike
+      // Stage 3: Final Verdict Transition (00:30) -> Resonant grandfather clock bell strike
       const osc1 = ctx.createOscillator();
       const gain1 = ctx.createGain();
       osc1.type = 'triangle';
@@ -407,7 +407,7 @@ export function getActivePhase(seconds, totalDuration = 180) {
   const ratio = seconds / totalDuration;
   if (ratio > 0.66) return 1; // Step 1: Forensic Look
   if (ratio > 0.17) return 2; // Step 2: Turn & Talk
-  return 3; // Step 3: Hinge Verdict
+  return 3; // Step 3: Final Verdict
 }
 
 /**

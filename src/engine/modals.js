@@ -261,7 +261,7 @@ export function openTaskWhiteboard() {
             }
           }
           addQuestionCard(
-            hq.qNum || 'Hinge Question',
+            hq.qNum || 'Discussion Prompt',
             qText,
             aText || 'Formative checkpoint question for class discussion.',
           );
@@ -332,8 +332,8 @@ export function openTaskWhiteboard() {
           ? '<strong>[Vocabulary Starter]</strong> '
           : qNum === 'Do Now'
             ? '<strong>[Do Now]</strong> '
-            : qNum === 'Hinge Question'
-              ? '<strong>[Hinge Question]</strong> '
+            : (qNum === 'Discussion Prompt' || qNum === 'Hinge Question')
+              ? '<strong>[Discussion Prompt]</strong> '
               : qNum && qNum !== '-'
                 ? `<strong>[${qNum}]</strong> `
                 : '';
@@ -1375,13 +1375,13 @@ window.openAnthologyModal = async function () {
             <!-- Pedagogical Rationale Drawer -->
             <details style="background: #fdfaf6; border: 1px solid #fed7aa; border-left: 4px solid #ea580c; border-radius: 6px; overflow: hidden;">
               <summary style="padding: 10px 14px; cursor: pointer; font-weight: 700; color: #9a3412; font-size: 0.9rem; display: flex; align-items: center; justify-content: space-between;">
-                <span><i class="fa-solid fa-brain" style="margin-right: 8px; color: #ea580c;"></i> Historical Rationale &amp; Hinge Question</span>
+                <span><i class="fa-solid fa-brain" style="margin-right: 8px; color: #ea580c;"></i> Historical Rationale &amp; Discussion Prompt</span>
                 <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem; color: #fb923c;"></i>
               </summary>
               <div style="padding: 12px 16px; border-top: 1px solid #fed7aa; font-size: 0.92rem; line-height: 1.6; color: #334155; background: #ffffff;">
                 <p style="margin: 0 0 10px 0;">${poem.pedagogical_rationale.context}</p>
                 <div style="background: #fff7ed; border-left: 3px solid #ea580c; padding: 10px 14px; border-radius: 4px;">
-                  <strong style="color: #9a3412; display: block; margin-bottom: 3px; font-size: 0.85rem;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i> Class Discussion Hinge Question:</strong>
+                  <strong style="color: #9a3412; display: block; margin-bottom: 3px; font-size: 0.85rem;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i> Class Discussion Prompt:</strong>
                   <span style="color: #431407; font-weight: 600; font-size: 0.95rem;">"${poem.pedagogical_rationale.hinge_question}"</span>
                 </div>
               </div>
@@ -5231,7 +5231,7 @@ export function openGuidedReadingModal(lessonIndex) {
           <!-- Core Hinge Question Box -->
           <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-left: 4px solid #1e3a8a; border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 8px;">
             <div style="display: flex; align-items: center; gap: 8px; color: #1e3a8a; font-weight: 700; font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px;">
-              <i class="fa-solid fa-compass"></i> Hinge Discussion Question
+              <i class="fa-solid fa-compass"></i> Discussion Prompt
             </div>
             <div style="font-size: 0.9rem; color: #0f172a; line-height: 1.5; font-weight: 500;">
               ${readingData.hinge_question || 'Discuss the core argument made by the author in this primary extract.'}

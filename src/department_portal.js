@@ -1157,7 +1157,7 @@ function renderCurriculumTab(container) {
                         &ldquo;${enq.enquiryQuestion}&rdquo;
                       </div>
                       <button type="button" class="btn-sow-guide-toggle" onclick="window.toggleSowEnquiryDetails('${currentUnit.unitId}', ${idx})" style="font-size: 0.74rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid #93c5fd; background: #eff6ff; color: #1e40af; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
-                        <i class="fa-solid fa-chalkboard-user"></i> <span id="sow-toggle-label-${idx}">Teacher Guidance &amp; Hinge Questions</span>
+                        <i class="fa-solid fa-chalkboard-user"></i> <span id="sow-toggle-label-${idx}">Teacher Guidance &amp; Discussion Prompts</span>
                       </button>
                     </td>
                     <td style="padding: 14px 16px;">
@@ -1338,7 +1338,7 @@ if (typeof window !== 'undefined') {
     const isVisible = drawer.style.display !== 'none';
     if (isVisible) {
       drawer.style.display = 'none';
-      if (label) label.textContent = 'Teacher Guidance & Hinge Questions';
+      if (label) label.textContent = 'Teacher Guidance & Discussion Prompts';
     } else {
       drawer.style.display = 'table-row';
       if (label) label.textContent = 'Hide Teacher Guidance';
@@ -1399,7 +1399,7 @@ async function renderSowEnquiryGuidance(container, unitId, lessonIndex) {
     objectivesHtml = `
       <div style="margin-bottom: 14px;">
         <div style="font-weight: 800; font-size: 0.78rem; text-transform: uppercase; color: #475569; letter-spacing: 0.06em; margin-bottom: 8px;">
-          Learning Objectives &amp; Targeted Diagnostic Hinge Questions
+          Learning Objectives &amp; Discussion Prompts
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
           ${tn.objectives
@@ -1418,7 +1418,7 @@ async function renderSowEnquiryGuidance(container, unitId, lessonIndex) {
                   ? `
                 <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; padding: 8px 10px; font-size: 0.82rem; color: #166534; font-weight: 600;">
                   <span style="font-weight: 800; text-transform: uppercase; font-size: 0.7rem; color: #059669; display: block; margin-bottom: 2px;">
-                    <i class="fa-solid fa-comments"></i> Hinge Discussion Question:
+                    <i class="fa-solid fa-comments"></i> Discussion Prompt:
                   </span>
                   ${obj.question}
                 </div>

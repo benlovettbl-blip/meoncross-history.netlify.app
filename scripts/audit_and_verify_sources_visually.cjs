@@ -87,8 +87,8 @@ function runAudit() {
         const context = s.context || s.source_context || '';
         const tn = s.teacher_notes || {};
         let hq = s.hinge_question || tn.hinge_question || s.question || s.source_question || '';
-        if (!hq && context.includes('Hinge Question:')) {
-          const parts = context.split(/\*{0,2}Hinge Question:\*{0,2}/i);
+        if (!hq && /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(context)) {
+          const parts = context.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
           if (parts[1]) hq = parts[1].trim();
         }
         const ideas =

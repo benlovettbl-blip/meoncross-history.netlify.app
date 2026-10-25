@@ -172,9 +172,9 @@ export function getArchivalSourceDiscussionComponents(
     if (
       !effectiveQ &&
       sourceObj.source_context &&
-      sourceObj.source_context.includes('Hinge Question:')
+      /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(sourceObj.source_context)
     ) {
-      const parts = sourceObj.source_context.split(/\*{0,2}Hinge Question:\*{0,2}/i);
+      const parts = sourceObj.source_context.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
       if (parts[1]) effectiveQ = parts[1].trim();
     }
   }
@@ -3851,8 +3851,8 @@ export function renderLesson(lesson) {
         const sourceText = (source.text || source.content || '').trim();
         let contextText = source.source_context || source.context || '';
         let hingeText = source.hinge_question || source.question || '';
-        if (contextText.includes('Hinge Question:')) {
-          const parts = contextText.split(/\*{0,2}Hinge Question:\*{0,2}/i);
+        if (/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(contextText)) {
+          const parts = contextText.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
           contextText = parts[0].trim();
           if (!hingeText && parts[1]) {
             hingeText = parts[1].trim();
@@ -5319,7 +5319,7 @@ export function renderLesson(lesson) {
                   <span style="font-size: 0.8rem; font-weight: 700; color: #f59e0b;">${initialSpot.date || ''}</span>
                 </div>
                 <p style="margin: 0 0 10px 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${initialSpot.details}</p>
-                ${initialSpot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${initialSpot.hinge}</div>` : ''}
+                ${initialSpot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${initialSpot.hinge.replace(/^(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\s*/i, 'Discussion Prompt: ')}</div>` : ''}
               `
                   : ''
               }
@@ -5377,7 +5377,7 @@ export function renderLesson(lesson) {
                 <span style="font-size: 0.8rem; font-weight: 700; color: #f59e0b;">${spot.date || ''}</span>
               </div>
               <p style="margin: 0 0 10px 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${spot.details}</p>
-              ${spot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${spot.hinge}</div>` : ''}
+              ${spot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${spot.hinge.replace(/^(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\s*/i, 'Discussion Prompt: ')}</div>` : ''}
             `;
           }
 
@@ -5834,9 +5834,9 @@ export function renderLesson(lesson) {
                 : block.hinge_question.answer;
             htmlNarrative += `
                 <div class="hinge-question-container no-print" style="margin-bottom: 25px; margin-top: -5px;">
-                  <button class="btn btn-secondary" id="btn-${hingeId}" data-action="reveal-hinge" data-target="${hingeId}" style="background: #0ea5e9; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;"><i class="fa-solid fa-person-circle-question" style="margin-right: 6px;"></i> Reveal Hinge Question</button>
+                  <button class="btn btn-secondary" id="btn-${hingeId}" data-action="reveal-hinge" data-target="${hingeId}" style="background: #0ea5e9; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;"><i class="fa-solid fa-person-circle-question" style="margin-right: 6px;"></i> Reveal Discussion Prompt</button>
                   <div id="${hingeId}" style="display: none; background: #f0f9ff; border: 2px solid #38bdf8; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                    <div style="color: #0284c7; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Interactive Hinge Question</div>
+                    <div style="color: #0284c7; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Interactive Discussion Question</div>
                     <div style="color: #0f172a; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">"${hingeQuestionText}"</div>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
                       ${block.hinge_question.options
@@ -5984,11 +5984,11 @@ export function renderLesson(lesson) {
 
                      let contextText = img.image_context || '';
                      let hingeText = '';
-                     if (contextText.includes('**Hinge Question:**')) {
-                       const parts = contextText.split('**Hinge Question:**');
-                       contextText = parts[0].trim();
-                       hingeText = parts[1].trim();
-                     } else if (contextText.includes('Hinge Question:')) {
+                     if (/\\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\\*{0,2}/i.test(contextText)) {
+                        const parts = contextText.split(/\\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\\*{0,2}/i);
+                        contextText = parts[0].trim();
+                        hingeText = parts[1].trim();
+                      } else if (contextText.includes('Hinge Question:')) {
                        const parts = contextText.split('Hinge Question:');
                        contextText = parts[0].trim();
                        hingeText = parts[1].trim();
@@ -6068,7 +6068,7 @@ export function renderLesson(lesson) {
                            <i class="fa-solid fa-magnifying-glass-plus"></i> Historical Context
                          </h4>
                          <p style="margin: 0; font-size: 1rem; color: #334155; line-height: 1.6;">
-                           ${img.image_context.replace(/\*\*Hinge Question:\*\*/g, '<br><br><strong style="color: #b45309;">Hinge Question:</strong>')}
+                           ${img.image_context.replace(/\*\*(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*\*/gi, '<br><br><strong style="color: #b45309;">Discussion Prompt:</strong>')}
                          </p>
                        </div>
                      </div>
@@ -6098,7 +6098,7 @@ export function renderLesson(lesson) {
         let contextHtml = block.image_context
           ? `
                <div style="flex: 1 1 300px; background: #f8fafc; padding: 18px 20px; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
-                 <p style="margin: 0; color: #334155; line-height: 1.65; font-size: 0.98rem;">${block.image_context.replace(/\*\*(?:Hinge Question|Question):\*\*/gi, '<br><br><strong style="color: #b45309;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i>Question:</strong> ')}</p>
+                 <p style="margin: 0; color: #334155; line-height: 1.65; font-size: 0.98rem;">${block.image_context.replace(/\*\*(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*\*/gi, '<br><br><strong style="color: #b45309;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i>Discussion Prompt:</strong> ')}</p>
                </div>
                `
           : '';
@@ -6199,8 +6199,8 @@ export function renderLesson(lesson) {
 
         let rawContextVal = rawSource.source_context || rawSource.context || '';
         let cleanContextVal = rawContextVal;
-        if (cleanContextVal.includes('Hinge Question:')) {
-          const parts = cleanContextVal.split(/\*{0,2}Hinge Question:\*{0,2}/i);
+        if (/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(cleanContextVal)) {
+          const parts = cleanContextVal.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
           cleanContextVal = parts[0].trim();
           if (
             !rawSource.hinge_question &&
@@ -6712,9 +6712,9 @@ export function renderLesson(lesson) {
             : block.hinge_question.answer;
         extrasHtml += `
             <div class="hinge-question-container no-print" style="margin-left: 40px; margin-bottom: 25px; margin-top: -5px;">
-              <button class="btn btn-secondary" id="btn-${hingeId}" data-action="reveal-hinge" data-target="${hingeId}" style="background: #0ea5e9; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;"><i class="fa-solid fa-person-circle-question" style="margin-right: 6px;"></i> Reveal Hinge Question</button>
+              <button class="btn btn-secondary" id="btn-${hingeId}" data-action="reveal-hinge" data-target="${hingeId}" style="background: #0ea5e9; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;"><i class="fa-solid fa-person-circle-question" style="margin-right: 6px;"></i> Reveal Discussion Prompt</button>
               <div id="${hingeId}" style="display: none; background: #f0f9ff; border: 2px solid #38bdf8; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-                <div style="color: #0284c7; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Interactive Hinge Question</div>
+                <div style="color: #0284c7; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-circle-question"></i> Interactive Discussion Question</div>
                 <div style="color: #0f172a; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px;">"${hingeQuestionText}"</div>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                   ${block.hinge_question.options
@@ -10926,7 +10926,7 @@ export function initCrummackInteractiveFeatures() {
         </div>
 
         <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 10px 14px; font-size: 0.85rem; line-height: 1.5; color: #1e3a8a;">
-          <strong style="display: block; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; color: #1d4ed8;">Hinge Question for Class Discussion:</strong>
+          <strong style="display: block; font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; color: #1d4ed8;">Discussion Prompt for Class:</strong>
           ${data.hingeQuestion}
         </div>
       `;
@@ -11192,7 +11192,7 @@ ${poem.poem_text}
             <div style="padding: 14px 18px; border-top: 1px solid #fed7aa; font-size: 0.93rem; line-height: 1.6; color: #334155; background: #ffffff;">
               <p style="margin: 0 0 12px 0;">${poem.pedagogical_rationale.context}</p>
               <div style="background: #fff7ed; border-left: 3px solid #ea580c; padding: 12px 14px; border-radius: 4px;">
-                <strong style="color: #9a3412; display: block; margin-bottom: 4px; font-size: 0.88rem;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i> Hinge Question for Class Discussion:</strong>
+                <strong style="color: #9a3412; display: block; margin-bottom: 4px; font-size: 0.88rem;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i> Discussion Prompt for Class:</strong>
                 <span style="color: #431407; font-weight: 600; font-size: 0.95rem;">"${poem.pedagogical_rationale.hinge_question}"</span>
               </div>
             </div>

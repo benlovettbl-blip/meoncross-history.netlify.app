@@ -472,8 +472,8 @@ const htmlContent = `<!DOCTYPE html>
           <p style="margin: 1.5px 0 0 0; color: #475569; font-size: 6.2pt;">Systematic spiral recall (Last Lesson, Last Week, Prior Key Stage schema) ensures deep schema formation, automated retrieval fluency, and long-term exam retention.</p>
         </div>
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #7c3aed; border-radius: 4px; padding: 4.5px 6px;">
-          <strong style="color: #6d28d9; font-size: 6.8pt;">Mandatory Hinge Questions:</strong>
-          <p style="margin: 1.5px 0 0 0; color: #475569; font-size: 6.2pt;">Every primary source concludes with an explicit Hinge Question and 3-bullet model answer to diagnose misconceptions and ignite whole-class disciplinary debate.</p>
+          <strong style="color: #6d28d9; font-size: 6.8pt;">Mandatory Discussion Prompts:</strong>
+          <p style="margin: 1.5px 0 0 0; color: #475569; font-size: 6.2pt;">Every primary source concludes with an explicit Discussion Prompt and 3-bullet model answer to diagnose misconceptions and ignite whole-class disciplinary debate.</p>
         </div>
       </div>
     </div>
@@ -674,7 +674,7 @@ const htmlContent = `<!DOCTYPE html>
         </div>
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #16a34a; border-radius: 4px; padding: 4.5px 6px;">
           <strong style="color: #15803d; font-size: 6.8pt;">Facing-Spread Sequential Sources:</strong>
-          <p style="margin: 1.5px 0 0 0; color: #475569; font-size: 6.2pt;">Sources A, B, and C sequence across each double-page spread with verified dates, archives, and targeted Hinge questions with 3-bullet model answers.</p>
+          <p style="margin: 1.5px 0 0 0; color: #475569; font-size: 6.2pt;">Sources A, B, and C sequence across each double-page spread with verified dates, archives, and targeted Discussion Prompts with 3-bullet model answers.</p>
         </div>
         <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid #7c3aed; border-radius: 4px; padding: 4.5px 6px;">
           <strong style="color: #6d28d9; font-size: 6.8pt;">28-Page Saddle-Stitch Publication:</strong>

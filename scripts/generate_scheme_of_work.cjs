@@ -1072,7 +1072,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
           if (hingeObj) hinge = hingeObj.question;
         }
         if (!hinge && lesson.teacher_notes?.source_context) {
-          const m = lesson.teacher_notes.source_context.match(/\*\*Hinge Question:\*\*\s*(.*)/i);
+          const m = lesson.teacher_notes.source_context.match(/\*\*(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*\*\s*(.*)/i);
           if (m) hinge = m[1].trim();
         }
         if (!hinge && unitData.teacher_notes && unitData.teacher_notes.objectives) {
@@ -1128,7 +1128,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                             </td>
                             <td>
                                 ${objsHTML}
-                                ${hinge ? `<span class="hinge-question">Hinge Q: ${hinge}</span>` : ''}
+                                ${hinge ? `<span class="hinge-question">Discussion Prompt: ${hinge}</span>` : ''}
                                 ${deliveryPlanSOW}
                             </td>
                             <td>
@@ -1177,7 +1177,7 @@ function generateSOWHTML(db, yearGroup, unitIds) {
                             </td>
                             <td>
                                 <ul class="obj-list"><li>${l.obj}</li></ul>
-                                <span class="hinge-question">Hinge Q: ${l.hinge}</span>
+                                <span class="hinge-question">Discussion Prompt: ${l.hinge}</span>
                             </td>
                             <td>
                                 <div class="sow-three-tier">
@@ -1289,7 +1289,14 @@ function generateSOWHTML(db, yearGroup, unitIds) {
   }
 
   console.log('Launching Puppeteer to create PDFs...');
-  const browser = await puppeteer.launch({ headless: 'new' });
+  const chromePath = fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+    ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+    : undefined;
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    executablePath: chromePath,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security'],
+  });
 
   // 1. Generate Overview PDF (Only if full build or overview requested)
   if (!targetYearGroup || targetArg === 'all' || targetArg === 'overview') {

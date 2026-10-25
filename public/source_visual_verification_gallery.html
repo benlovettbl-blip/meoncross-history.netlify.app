@@ -619,9 +619,9 @@
                 <div class="source-hinge-box">
                   <div class="hinge-title">
                     <i class="fa-solid fa-lightbulb" style="color: #2563eb;"></i>
-                    Hinge Question / Discussion Prompt
+                    Discussion Prompt
                   </div>
-                  <div class="hinge-text">💭 ${s.hinge_question}</div>
+                  <div class="hinge-text">💭 ${(s.hinge_question || '').replace(/^(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\s*/i, '').trim()}</div>
 
                   ${Array.isArray(s.discussion_ideas) && s.discussion_ideas.length > 0 ? `
                     <div class="exemplar-list">

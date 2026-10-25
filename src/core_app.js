@@ -1302,7 +1302,7 @@ function openTaskWhiteboard() {
             }
           }
           addQuestionCard(
-            hq.qNum || 'Hinge Question',
+            hq.qNum || 'Discussion Prompt',
             qText,
             aText || 'Formative checkpoint question for class discussion.',
           );
@@ -1377,8 +1377,8 @@ function openTaskWhiteboard() {
         ? `Q${qNum}. `
         : qNum === 'Do Now'
           ? '<strong>[Do Now]</strong> '
-          : qNum === 'Hinge Question'
-            ? '<strong>[Hinge Question]</strong> '
+          : (qNum === 'Discussion Prompt' || qNum === 'Hinge Question')
+            ? '<strong>[Discussion Prompt]</strong> '
             : qNum && qNum !== '-'
               ? `<strong>[${qNum}]</strong> `
               : '';

@@ -104,7 +104,7 @@ export function initGuidedReadingTask(container, guidedReadingData, globalState)
             <div style="background: #f8fafc; padding: 20px 24px; border-radius: 8px; border: 1.5px solid #e2e8f0; border-left: 5px solid #1e3a8a; margin-bottom: 10px;">
               <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #1e3a8a;">
                 <i class="fa-solid fa-compass" style="font-size: 1.25rem;"></i>
-                <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700; font-family: 'Playfair Display', serif;">Hinge Enquiry Question</h3>
+                <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700; font-family: 'Playfair Display', serif;">Discussion Question</h3>
               </div>
               <p style="color: #0f172a; font-size: 1.05rem; font-weight: 600; line-height: 1.55; margin: 0;">
                 ${readingData.hinge_question ? readingData.hinge_question : 'Discuss the main argument the author makes in this extract. Do you agree?'}

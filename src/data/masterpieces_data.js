@@ -65,12 +65,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was Brueghel primarily condemning the corrupt greed of the legal profession, or was he mocking the ignorance and superstition of rural peasants who believed gifts of poultry could purchase justice?',
+          'Discussion Prompt: Was Brueghel primarily condemning the corrupt greed of the legal profession, or was he mocking the ignorance and superstition of rural peasants who believed gifts of poultry could purchase justice?',
         teacherHint:
           'Take a fast show of hands before revealing that both interpretations reflect the 17th-century Dutch urban mindset.',
       },
@@ -142,12 +142,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Is the hidden skull on the floor a pessimistic warning that all earthly knowledge is futile (*Memento Mori*), or a celebration of human ingenuity that can unlock hidden secrets through perspective?',
+          'Discussion Prompt: Is the hidden skull on the floor a pessimistic warning that all earthly knowledge is futile (*Memento Mori*), or a celebration of human ingenuity that can unlock hidden secrets through perspective?',
         teacherHint:
           'Demonstrate how viewing the skull from the far right edge resolves the distortion.',
       },
@@ -219,12 +219,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was David’s painting an authentic documentary record of a political crime, or a masterclass in calculated visual propaganda that concealed Marat’s virulent calls for mass executions?',
+          'Discussion Prompt: Was David’s painting an authentic documentary record of a political crime, or a masterclass in calculated visual propaganda that concealed Marat’s virulent calls for mass executions?',
         teacherHint:
           'Note that David omitted Marat’s severe skin disease disfigurements to make him appear serene and noble.',
       },
@@ -296,12 +296,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Does Delacroix’s masterpiece celebrate the triumph of popular democratic revolution, or does the foreground of stripped corpses and dead soldiers serve as a solemn warning about the bloody human cost of violent rebellion?',
+          'Discussion Prompt: Does Delacroix’s masterpiece celebrate the triumph of popular democratic revolution, or does the foreground of stripped corpses and dead soldiers serve as a solemn warning about the bloody human cost of violent rebellion?',
         teacherHint:
           'Point to the fallen royal guard and the civilian in nightclothes in the lower left to prompt balanced reflection.',
       },
@@ -374,12 +374,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was this portrait primarily commissioned as a formal legal certificate of marriage, or was it an ostentatious display of merchant status designed to flaunt astronomical wealth to Bruges trading peers?',
+          'Discussion Prompt: Was this portrait primarily commissioned as a formal legal certificate of marriage, or was it an ostentatious display of merchant status designed to flaunt astronomical wealth to Bruges trading peers?',
         teacherHint:
           'Discuss how the voluminous dyed green cloth, imported fur trimmings, and exotic oranges served as conspicuous consumption.',
       },
@@ -452,12 +452,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Does the painting celebrate human reason conquering the laws of nature, or does it warn that cold scientific ambition threatens to extinguish human compassion and morality?',
+          'Discussion Prompt: Does the painting celebrate human reason conquering the laws of nature, or does it warn that cold scientific ambition threatens to extinguish human compassion and morality?',
         teacherHint:
           'Point to the philosopher holding the stopcock: he has the power of life and death over the suffocating bird.',
       },
@@ -530,12 +530,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was Goya’s painting commissioned to glorify the restored Spanish Bourbon monarchy as heroic national saviours, or is it a universal condemnation of the horrific barbarity inherent in all modern warfare?',
+          'Discussion Prompt: Was Goya’s painting commissioned to glorify the restored Spanish Bourbon monarchy as heroic national saviours, or is it a universal condemnation of the horrific barbarity inherent in all modern warfare?',
         teacherHint:
           'Note that the city of Madrid lies shrouded in dead black silence in the background, offering no rescue or redemption.',
       },
@@ -608,12 +608,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was Hogarth’s primary purpose to blame and punish the moral depravity of the poor, or was he weaponizing shocking visual propaganda to force Parliament to regulate ruthless commercial distillers?',
+          'Discussion Prompt: Was Hogarth’s primary purpose to blame and punish the moral depravity of the poor, or was he weaponizing shocking visual propaganda to force Parliament to regulate ruthless commercial distillers?',
         teacherHint:
           'Remind pupils that Hogarth published this alongside *Beer Street* specifically to influence the debate on the Gin Act 1751.',
       },
@@ -685,12 +685,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was Sargent’s monumental frieze intended as a patriotic tribute to British soldierly stoicism and brotherhood, or is it an anti-heroic indictment of modern industrialized slaughter that blinded a generation?',
+          'Discussion Prompt: Was Sargent’s monumental frieze intended as a patriotic tribute to British soldierly stoicism and brotherhood, or is it an anti-heroic indictment of modern industrialized slaughter that blinded a generation?',
         teacherHint:
           'Mention E.M. Forster’s review observing that the painting reveals war not as glorious combat, but as pathetic, mechanized suffering.',
       },
@@ -763,12 +763,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was *Las Meninas* primarily an intimate family snapshot to bring domestic comfort to an aging king, or was it Velázquez’s supreme manifesto asserting that painting was a noble intellectual science rather than a humble manual craft?',
+          'Discussion Prompt: Was *Las Meninas* primarily an intimate family snapshot to bring domestic comfort to an aging king, or was it Velázquez’s supreme manifesto asserting that painting was a noble intellectual science rather than a humble manual craft?',
         teacherHint:
           'Discuss Velázquez’s key hanging at his hip and the noble Cross of Santiago emblazoned on his chest.',
       },
@@ -838,12 +838,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was this monumental painting created as an intimate family portrait, or as an aggressive political manifesto asserting the unchallengeable legitimacy of the Protestant Tudor line?',
+          'Discussion Prompt: Was this monumental painting created as an intimate family portrait, or as an aggressive political manifesto asserting the unchallengeable legitimacy of the Protestant Tudor line?',
         teacherHint:
           'Take a fast show of hands before highlighting that every architectural column and embroidered cushion was calculated statecraft.',
       },
@@ -913,12 +913,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Does Cranach present Luther as a dangerous rebel overturning social order, or as a holy scholar restoring pure, uncorrupted Christian faith?',
+          'Discussion Prompt: Does Cranach present Luther as a dangerous rebel overturning social order, or as a holy scholar restoring pure, uncorrupted Christian faith?',
         teacherHint:
           'Note how Cranach’s portrait was specifically designed to reassure moderate rulers that Lutheranism was sober, scholarly, and respectable.',
       },
@@ -988,12 +988,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was this public procession portrait designed to demonstrate the genuine personal popularity of Elizabeth, or to conceal dangerous political factionalism and anxiety over the royal succession?',
+          'Discussion Prompt: Was this public procession portrait designed to demonstrate the genuine personal popularity of Elizabeth, or to conceal dangerous political factionalism and anxiety over the royal succession?',
         teacherHint:
           'Remind pupils that the Essex Rebellion erupted in 1601, making projections of united court loyalty urgently necessary.',
       },
@@ -1063,12 +1063,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was the Armada Portrait primarily celebrating a military naval victory, or was it an ideological proclamation that Elizabeth was God’s chosen empress destined to rule a global Protestant empire?',
+          'Discussion Prompt: Was the Armada Portrait primarily celebrating a military naval victory, or was it an ideological proclamation that Elizabeth was God’s chosen empress destined to rule a global Protestant empire?',
         teacherHint:
           'Direct attention to the terrestrial globe and imperial closed crown, which signified dominion beyond national borders.',
       },
@@ -1138,12 +1138,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Does the painting attribute the Armada’s defeat to English artillery tactics, or to the uncontrollable elemental fury of the stormy seas?',
+          'Discussion Prompt: Does the painting attribute the Armada’s defeat to English artillery tactics, or to the uncontrollable elemental fury of the stormy seas?',
         teacherHint:
           'Have students debate the balance between Hawkins’s race-built culverins and the "Protestant Wind" tempest.',
       },
@@ -1213,12 +1213,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was the public execution of Charles I an act of high-minded constitutional justice against a tyrant, or an unlawful military coup by a radical Puritan minority?',
+          'Discussion Prompt: Was the public execution of Charles I an act of high-minded constitutional justice against a tyrant, or an unlawful military coup by a radical Puritan minority?',
         teacherHint:
           'Take a fast vote, noting that Pride’s Purge had expelled over 100 moderate MPs who opposed putting the King on trial.',
       },
@@ -1288,12 +1288,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Look closely at the document held in the center and the crown on the cushion. Who is dictating terms to whom in this room?',
+          'Discussion Prompt: Look closely at the document held in the center and the crown on the cushion. Who is dictating terms to whom in this room?',
         teacherHint:
           'Take a fast show of hands: Parliament is dictating terms to the monarch, permanently reversing Henry VIII’s and Charles I’s Royal Supremacy.',
       },
@@ -1363,12 +1363,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Why did Benjamin West paint this scene looking like an orderly, peaceful legal contract rather than a forced military shakedown after a war?',
+          'Discussion Prompt: Why did Benjamin West paint this scene looking like an orderly, peaceful legal contract rather than a forced military shakedown after a war?',
         teacherHint:
           'Take a fast show of hands: To legitimise British imperial rule to Parliament as legal commerce rather than violent conquest.',
       },
@@ -1438,12 +1438,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was the primary power of the Brookes diagram that it made people feel pity, or that it used mathematical facts that slave owners could not deny?',
+          'Discussion Prompt: Was the primary power of the Brookes diagram that it made people feel pity, or that it used mathematical facts that slave owners could not deny?',
         teacherHint:
           'Emphasise that the forensic precision of the measurements disarmed the pro-slavery lobby’s arguments in the House of Commons.',
       },
@@ -1513,12 +1513,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Why is Paul Revere’s print considered one of the most effective pieces of political propaganda in history?',
+          'Discussion Prompt: Why is Paul Revere’s print considered one of the most effective pieces of political propaganda in history?',
         teacherHint:
           'Take a fast vote: Because it permanently cemented the image of British troops as tyrannical murderers across all thirteen colonies.',
       },
@@ -1588,12 +1588,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Can a painting celebrate the noble ideal that "all men are created equal" while honestly addressing the fact that 41 of the 56 men in that room were slaveholders?',
+          'Discussion Prompt: Can a painting celebrate the noble ideal that "all men are created equal" while honestly addressing the fact that 41 of the 56 men in that room were slaveholders?',
         teacherHint:
           'Facilitate discussion on historical complexity: revolutionary principles vs. painful imperial realities.',
       },
@@ -1666,12 +1666,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was the Bayeux Tapestry created to celebrate Norman military genius, or did the English embroiderers subtly weave sympathy for the defeated Anglo-Saxons into the borders?',
+          'Discussion Prompt: Was the Bayeux Tapestry created to celebrate Norman military genius, or did the English embroiderers subtly weave sympathy for the defeated Anglo-Saxons into the borders?',
         teacherHint:
           'Encourage students to consider the English peasant woman and child fleeing their burning house in Scene 47.',
       },
@@ -1744,12 +1744,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was Magna Carta a selfish aristocratic tax revolt by 25 wealthy barons, or was it the revolutionary birth of constitutional democracy?',
+          'Discussion Prompt: Was Magna Carta a selfish aristocratic tax revolt by 25 wealthy barons, or was it the revolutionary birth of constitutional democracy?',
         teacherHint:
           'Take a classroom vote before explaining how 17th-century lawyers and modern democracies transformed a feudal peace treaty into a global symbol of freedom.',
       },
@@ -1809,12 +1809,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Does Werner present the unification of Germany as a triumph of democratic national will, or as an autocratic military conquest achieved by Prussian "Blood and Iron"?',
+          'Discussion Prompt: Does Werner present the unification of Germany as a triumph of democratic national will, or as an autocratic military conquest achieved by Prussian "Blood and Iron"?',
         teacherHint:
           'Ask for mini-whiteboard responses noting the complete absence of civilian politicians or democratic representatives.',
       },
@@ -1874,12 +1874,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was Orpen celebrating the triumphant victory of the Allied democracies, or was he offering a cynical critique of vain politicians planting the seeds of another world war?',
+          'Discussion Prompt: Was Orpen celebrating the triumphant victory of the Allied democracies, or was he offering a cynical critique of vain politicians planting the seeds of another world war?',
         teacherHint:
           'Highlight Orpen’s disillusionment with the politicians who ignored the sacrifice of millions of dead soldiers.',
       },
@@ -1940,12 +1940,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Was the runaway success of early British recruitment driven primarily by Kitchener’s intimidating image, or by patriotic peer pressure and the naive belief that the war would be over by Christmas?',
+          'Discussion Prompt: Was the runaway success of early British recruitment driven primarily by Kitchener’s intimidating image, or by patriotic peer pressure and the naive belief that the war would be over by Christmas?',
         teacherHint:
           'Debrief by contrasting the poster’s direct personal guilt with the excitement of "Pals Battalions".',
       },
@@ -2006,12 +2006,12 @@ export const MASTERPIECES_DATA = [
       {
         step: 3,
         timeRange: '00:30 – 00:00',
-        phaseName: 'Hinge Verdict',
+        phaseName: 'Final Verdict',
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
         question:
-          'Hinge Question: Does this poster prove that British women enthusiastically wanted their husbands and sons to fight, or was it coercive state propaganda exploiting family loyalty to delay compulsory conscription?',
+          'Discussion Prompt: Does this poster prove that British women enthusiastically wanted their husbands and sons to fight, or was it coercive state propaganda exploiting family loyalty to delay compulsory conscription?',
         teacherHint:
           'Conclude by showing how voluntary recruitment collapsed in late 1915 despite posters like this, forcing the 1916 Military Service Act.',
       },
