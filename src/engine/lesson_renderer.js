@@ -10,6 +10,7 @@ import {
   formatProminentDuration,
   cleanVideoDisplayTitle,
   getSortedLessonVideos,
+  formatInteractiveTimestamps,
 } from './video_utils.js';
 import './ks2_guidance.js';
 
@@ -1237,7 +1238,7 @@ function resolveVideoPathway(vid) {
     if (mins > 0 && mins < 5) {
       pathway = 'Quick Summary';
     } else if (mins >= 15) {
-      pathway = 'In-Depth Analysis';
+      pathway = 'Documentary';
     } else {
       pathway = 'Core Overview';
     }
@@ -1251,6 +1252,17 @@ function resolveVideoPathway(vid) {
     pLower.includes('recap')
   ) {
     icon = 'fa-solid fa-bolt';
+  } else if (
+    pLower.includes('cinema') ||
+    pLower.includes('dramatisation') ||
+    pLower.includes('trailer') ||
+    pLower.includes('film')
+  ) {
+    icon = 'fa-solid fa-clapperboard';
+  } else if (pLower.includes('israeli')) {
+    icon = 'fa-solid fa-landmark';
+  } else if (pLower.includes('palestinian') || pLower.includes('arab')) {
+    icon = 'fa-solid fa-users';
   } else if (
     pLower.includes('deep') ||
     pLower.includes('documentary') ||
@@ -2067,9 +2079,12 @@ function renderLessonVideos(videos, lesson, unitId) {
   } else {
     const minDur = formatShortDuration(sortedVideos[0].duration);
     const maxDur = formatShortDuration(sortedVideos[sortedVideos.length - 1].duration);
-    countPillText = minDur
+    const validRange = minDur && maxDur && minDur !== maxDur;
+    countPillText = validRange
       ? `${sortedVideos.length} Videos &bull; Shortest First (${minDur} &ndash; ${maxDur})`
-      : `${sortedVideos.length} Videos &bull; Shortest First`;
+      : minDur
+        ? `${sortedVideos.length} Videos &bull; Shortest First (~${minDur})`
+        : `${sortedVideos.length} Videos &bull; Shortest First`;
   }
 
   let videoCardsHtml = '';
@@ -2098,12 +2113,30 @@ function renderLessonVideos(videos, lesson, unitId) {
     const cleanTitle = (vid.title || 'Historical Documentary Resource').replace(/"/g, '&quot;');
     const rawCleanTitle = vid.title || 'Historical Documentary Resource';
     const displayTitle = cleanVideoDisplayTitle(rawCleanTitle);
+    const videoKey = `${safeLessonId}_${idx}`;
+
+    if (typeof window !== 'undefined') {
+      window.__videoStore = window.__videoStore || {};
+      window.__videoStore[videoKey] = {
+        ...vid,
+        pathwayInfo,
+        cleanTitle,
+        displayTitle,
+        shortDur,
+        prominentDur,
+        providerName,
+        providerIcon,
+        ytId,
+        safeLessonId,
+        idx,
+      };
+    }
 
     // Left thumbnail element
     let thumbHtml = '';
     if (ytId) {
       thumbHtml = `
-        <div class="video-shelf-thumb-wrap" data-action="open-video-modal" data-youtube="${ytId}" title="Click to Play: ${cleanTitle}">
+        <div class="video-shelf-thumb-wrap" data-action="open-video-modal" data-youtube="${ytId}" data-video-key="${videoKey}" title="Click to Launch Theater Mode: ${cleanTitle}">
           <img src="https://img.youtube.com/vi/${ytId}/mqdefault.jpg" alt="${cleanTitle}" class="video-shelf-thumb-img" loading="lazy" />
           <div class="video-shelf-play-overlay">
             <i class="fa-solid fa-play"></i>
@@ -2148,7 +2181,7 @@ function renderLessonVideos(videos, lesson, unitId) {
 
     if (ytId) {
       actionButtonsHtml += `
-        <button type="button" class="btn-video-shelf-action watch" data-action="open-video-modal" data-youtube="${ytId}">
+        <button type="button" class="btn-video-shelf-action watch" data-action="open-video-modal" data-youtube="${ytId}" data-video-key="${videoKey}" title="Watch in Dual-Pane Theater">
           <i class="fa-solid fa-play"></i> Watch
         </button>
       `;
@@ -2180,9 +2213,6 @@ function renderLessonVideos(videos, lesson, unitId) {
         ${thumbHtml}
         <div class="video-shelf-card-info">
           <div class="video-shelf-card-tags">
-            <span class="video-shelf-provider-pill ${isEra ? 'era' : 'yt'}">
-              <i class="${providerIcon}"></i> ${providerName}
-            </span>
             ${
               prominentDur
                 ? `
@@ -2193,7 +2223,7 @@ function renderLessonVideos(videos, lesson, unitId) {
                 : ''
             }
             <span class="video-shelf-pathway-pill" title="${(pathwayInfo.guidance || '').replace(/"/g, '&quot;')}">
-              ${pathwayInfo.pathway}
+              <i class="${pathwayInfo.icon || 'fa-solid fa-route'}"></i> ${pathwayInfo.pathway}
             </span>
           </div>
           <div class="video-shelf-card-title" title="${cleanTitle}">
@@ -2210,26 +2240,45 @@ function renderLessonVideos(videos, lesson, unitId) {
     if (hasTask) {
       taskPanelsHtml += `
         <div id="video-task-content-${safeLessonId}-${idx}" class="video-task-item-content" style="display: none;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
-            <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 8px;">
-              <span>${cleanTitle}</span>
-              ${vid.duration ? `<span style="font-size: 0.72rem; color: #64748b; font-weight: 600; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">${vid.duration}</span>` : ''}
+          <div class="video-drawer-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span class="video-shelf-pathway-pill" title="${(pathwayInfo.guidance || '').replace(/"/g, '&quot;')}">
+                <i class="${pathwayInfo.icon || 'fa-solid fa-route'}"></i> ${pathwayInfo.pathway}
+              </span>
+              <span style="font-size: 0.92rem; font-weight: 800; color: #0f172a;">${cleanTitle}</span>
+              ${vid.duration ? `<span class="video-shelf-duration-badge"><i class="fa-solid fa-clock"></i> ${vid.duration}</span>` : ''}
             </div>
-            <button type="button" style="background: none; border: none; font-size: 0.82rem; color: #64748b; cursor: pointer; padding: 2px 6px;" onclick="window.toggleVideoTaskDrawer('${safeLessonId}', ${idx}, event)">
-              <i class="fa-solid fa-xmark"></i> Close
-            </button>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              ${
+                ytId
+                  ? `
+                <button type="button" class="btn-theater-launch-banner" data-action="open-video-modal" data-youtube="${ytId}" data-video-key="${videoKey}" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: #ffffff; border: none; font-size: 0.76rem; font-weight: 700; padding: 5px 12px; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(37,99,235,0.3);">
+                  <i class="fa-solid fa-expand"></i> Launch Theater Mode
+                </button>
+              `
+                  : ''
+              }
+              <button type="button" style="background: none; border: 1px solid #cbd5e1; font-size: 0.78rem; color: #64748b; cursor: pointer; padding: 4px 8px; border-radius: 5px;" onclick="window.toggleVideoTaskDrawer('${safeLessonId}', ${idx}, event)">
+                <i class="fa-solid fa-xmark"></i> Close
+              </button>
+            </div>
           </div>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-top: 6px;">
+          <div class="video-drawer-body" style="display: flex; flex-direction: column; gap: 10px;">
             ${
               pathwayInfo.guidance
                 ? `
-              <div class="video-teacher-guidance-box" style="background: #ffffff; border-left: 3px solid #6366f1; padding: 8px 12px; border-radius: 0 5px 5px 0; border: 1px solid #e2e8f0; border-left-width: 3px;">
-                <div style="font-size: 0.70rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">
-                  Teacher Guidance:
+              <div class="video-teacher-guidance-box" style="background: #f8faff; border-left: 4px solid #6366f1; padding: 10px 14px; border-radius: 0 8px 8px 0; border: 1px solid #e0e7ff; border-left-width: 4px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; flex-wrap: wrap; gap: 6px;">
+                  <div style="font-size: 0.72rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px;">
+                    <i class="fa-solid fa-graduation-cap"></i> Teacher Pedagogical Briefing
+                  </div>
+                  <span style="font-size: 0.68rem; font-weight: 700; color: #4338ca; background: #e0e7ff; padding: 2px 7px; border-radius: 4px;">
+                    ${pathwayInfo.pathway} Pathway
+                  </span>
                 </div>
-                <div style="font-size: 0.84rem; color: #334155; line-height: 1.45;">
-                  ${formatBold(pathwayInfo.guidance)}
+                <div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">
+                  ${formatBold(formatInteractiveTimestamps(pathwayInfo.guidance, ytId, false, videoKey))}
                 </div>
               </div>
             `
@@ -2239,33 +2288,41 @@ function renderLessonVideos(videos, lesson, unitId) {
             ${
               vid.viewing_task
                 ? `
-              <div class="video-viewing-task-box" style="background: #ffffff; border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 0 5px 5px 0; border: 1px solid #fed7aa; border-left-width: 3px;">
-                <div style="font-size: 0.70rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px;">
-                  Viewing Question:
+              <div class="video-viewing-task-box" style="background: #ffffff; border-left: 4px solid #f59e0b; padding: 12px 14px; border-radius: 0 8px 8px 0; border: 1px solid #fed7aa; border-left-width: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                  <div style="font-size: 0.72rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px;">
+                    <i class="fa-solid fa-list-check"></i> Viewing Question Tasks
+                  </div>
+                  <span style="font-size: 0.68rem; font-weight: 700; color: #b45309; background: #fef3c7; padding: 2px 7px; border-radius: 4px;">
+                    Mixed-Ability Scaffold
+                  </span>
                 </div>
-                <div style="font-size: 0.85rem; color: #92400e; line-height: 1.45;">
-                  ${formatBold(vid.viewing_task)}
+                <div class="video-task-content-rendered" style="font-size: 0.88rem; color: #78350f; line-height: 1.55;">
+                  ${formatBold(formatInteractiveTimestamps(vid.viewing_task, ytId, false, videoKey))}
                 </div>
               </div>
             `
                 : ''
             }
-          </div>
 
-          ${
-            vid.model_answer
-              ? `
-            <details class="video-model-details" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden; margin-top: 8px;">
-              <summary style="cursor: pointer; padding: 6px 12px; font-size: 0.80rem; color: #166534; font-weight: 700; user-select: none; display: flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Reveal Model Answer
-              </summary>
-              <div style="padding: 10px 14px; font-size: 0.86rem; color: #14532d; line-height: 1.55; border-top: 1px solid #bbf7d0; background: #ffffff;">
-                ${formatBold(vid.model_answer)}
-              </div>
-            </details>
-          `
-              : ''
-          }
+            ${
+              vid.model_answer
+                ? `
+              <details class="video-model-details" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; overflow: hidden; margin-top: 2px;">
+                <summary style="cursor: pointer; padding: 8px 14px; font-size: 0.82rem; color: #166534; font-weight: 700; user-select: none; display: flex; align-items: center; justify-content: space-between;">
+                  <span style="display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Reveal Model Answer &amp; Teacher Mark Scheme
+                  </span>
+                  <span style="font-size: 0.70rem; color: #15803d; font-weight: 600; text-transform: uppercase;">Click to expand</span>
+                </summary>
+                <div style="padding: 12px 16px; font-size: 0.86rem; color: #14532d; line-height: 1.55; border-top: 1px solid #bbf7d0; background: #ffffff;">
+                  ${formatBold(formatInteractiveTimestamps(vid.model_answer, ytId, false, videoKey))}
+                </div>
+              </details>
+            `
+                : ''
+            }
+          </div>
         </div>
       `;
     }
@@ -3916,26 +3973,32 @@ export function renderLesson(lesson) {
               ${
                 source.how_useful_question
                   ? `
-                <div class="archival-source-utility-box" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
-                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-                    <i class="fa-solid fa-scale-balanced"></i> Source Utility Enquiry & Provenance Scaffolding
-                  </div>
-                  <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #14532d; font-weight: 700; margin-bottom: 10px; line-height: 1.45;">
-                    ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.how_useful_question) : source.how_useful_question}
-                  </div>
+                <details class="source-enquiry-reveal">
+                  <summary>
+                    <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; flex-wrap: wrap;">
+                      <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 2px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0;">Enquiry Question</span>
+                      <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.4;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.how_useful_question) : source.how_useful_question}</span>
+                    </div>
+                    <span class="reveal-answer-pill">
+                      <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                      <span class="reveal-text-closed">Reveal Guidance</span>
+                      <span class="reveal-text-open">Hide Guidance</span>
+                      <span class="reveal-arrow">&#9660;</span>
+                    </span>
+                  </summary>
                   ${
                     source.provenance_clues
                       ? `
-                    <div style="font-size: 0.88rem; color: #166534; line-height: 1.55; background: #ffffff; padding: 10px 14px; border-radius: 4px; border: 1px solid #bbf7d0;">
-                      <strong style="color: #14532d; display: block; margin-bottom: 4px;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
-                      <ul style="margin: 4px 0 0 16px; padding: 0;">
+                    <div style="padding: 14px 18px 12px 18px; background: #ffffff;">
+                      <strong style="color: #14532d; display: block; margin-bottom: 6px; font-size: 0.85rem;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
+                      <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #166534; line-height: 1.55;">
                         ${(Array.isArray(source.provenance_clues) ? source.provenance_clues : [source.provenance_clues]).map((c) => `<li>${c}</li>`).join('')}
                       </ul>
                     </div>
                   `
                       : ''
                   }
-                </div>
+                </details>
               `
                   : ''
               }
@@ -5998,7 +6061,7 @@ export function renderLesson(lesson) {
                      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; justify-content: center; margin: 20px 0; width: 100%; grid-column: 1 / -1;">
                        <div style="flex: 1 1 300px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
                          <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-gallery" data-gallery="${galleryData}" data-index="${idx}">
-                         ${img.caption || img.image_caption || img.alt || img.image_alt ? `<div class="image-hint-caption" data-action="toggle-caption-blur" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.caption || img.image_caption || img.alt || img.image_alt}</div>` : ''}
+                         ${img.caption || img.image_caption || img.alt || img.image_alt ? `<div class="narrative-plate-caption" style="font-size: 0.82rem; color: #64748b; margin-top: 8px; font-style: italic; line-height: 1.45;">${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.caption || img.image_caption || img.alt || img.image_alt}</div>` : ''}
                        </div>
                        <div style="flex: 1 1 300px; background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
                          <h4 style="margin-top: 0; margin-bottom: 12px; color: #b45309; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;">
@@ -6014,7 +6077,7 @@ export function renderLesson(lesson) {
                      return `
                      <div class="narrative-image-container" style="text-align: center;">
                        <img src="${getAssetUrl(img.src || img.image)}" alt="${img.alt || img.image_alt || 'Narrative Image'}" style="width: 100%; max-height: 400px; object-fit: contain; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-gallery" data-gallery="${galleryData}" data-index="${idx}">
-                       ${img.caption || img.image_caption || img.alt || img.image_alt ? `<div class="image-hint-caption" data-action="toggle-caption-blur" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.caption || img.image_caption || img.alt || img.image_alt}</div>` : ''}
+                       ${img.caption || img.image_caption || img.alt || img.image_alt ? `<div class="narrative-plate-caption" style="font-size: 0.82rem; color: #64748b; margin-top: 8px; font-style: italic; line-height: 1.45;">${img.source_letter ? `<strong>Source ${img.source_letter}:</strong> ` : ''}${img.caption || img.image_caption || img.alt || img.image_alt}</div>` : ''}
                      </div>
                    `;
                    }
@@ -6034,31 +6097,17 @@ export function renderLesson(lesson) {
           : '';
         let contextHtml = block.image_context
           ? `
-               <div style="flex: 1 1 300px; background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
-                 <h4 style="margin-top: 0; margin-bottom: 12px; color: #b45309; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;">
-                   <i class="fa-solid fa-magnifying-glass-plus"></i> Historical Context
-                 </h4>
-                 <p style="margin: 0; color: #334155; line-height: 1.6; font-size: 1rem;">${block.image_context.replace(/\*\*Hinge Question:\*\*/g, '<br><br><strong style="color: #b45309;">Hinge Question:</strong>')}</p>
+               <div style="flex: 1 1 300px; background: #f8fafc; padding: 18px 20px; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
+                 <p style="margin: 0; color: #334155; line-height: 1.65; font-size: 0.98rem;">${block.image_context.replace(/\*\*(?:Hinge Question|Question):\*\*/gi, '<br><br><strong style="color: #b45309;"><i class="fa-solid fa-circle-question" style="margin-right: 5px;"></i>Question:</strong> ')}</p>
                </div>
                `
           : '';
 
         imageHtml = `
-             <style>
-               .image-hint-caption {
-                 font-size: 0.9rem; color: #64748b; margin-top: 8px; font-style: italic; cursor: pointer; user-select: none; transition: all 0.3s ease; padding: 4px; border-radius: 4px; display: inline-block;
-               }
-               .image-hint-caption:hover {
-                 background: rgba(0,0,0,0.02);
-               }
-               .image-hint-caption.blurred {
-                 color: transparent !important; text-shadow: 0 0 10px rgba(100,116,139,0.8) !important;
-               }
-             </style>
              <div class="narrative-image-container" style="${containerStyle}">
                <div style="${imgWrapperStyle}">
                  <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Narrative Image'}" style="max-width: 100%; max-height: 240px; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block; margin: 0 auto;" data-action="open-modal" data-src="${getAssetUrl(block.image)}">
-                 ${block.caption || block.image_caption || block.image_alt ? `<div class="image-hint-caption" data-action="toggle-caption-blur" title="Click to hide caption"><i class="fa-solid fa-eye" style="margin-right:4px; color: #10b981;"></i> ${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.caption || block.image_caption || block.image_alt}</div>` : ''}
+                 ${block.caption || block.image_caption || block.image_alt ? `<div class="narrative-plate-caption" style="font-size: 0.82rem; color: #64748b; margin-top: 8px; font-style: italic; line-height: 1.45;">${block.source_letter ? `<strong>Source ${block.source_letter}:</strong> ` : ''}${block.caption || block.image_caption || block.image_alt}</div>` : ''}
                   ${
                     window.currentUnitId === 'cme_new' ||
                     window.currentUnitId === 'gcse_middle_east_1945_1995'
@@ -6163,48 +6212,41 @@ export function renderLesson(lesson) {
           }
         }
 
+        const hasUtilityCard = !!(rawSource.utility_enquiry || rawSource.utilityEnquiry);
+
+        const orientingIntro = rawSource.intro || rawSource.caption || (cleanContextVal ? cleanContextVal.split('.')[0] + '.' : '');
+
         let sourceBodyHtml = '';
         if (isWrittenSource) {
           sourceBodyHtml = `
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 12px; flex-wrap: wrap;">
+              ${orientingIntro ? `<div style="font-size: 0.95rem; color: #475569; font-style: italic; line-height: 1.5; flex: 1 1 300px;">${orientingIntro}</div>` : '<div style="flex: 1;"></div>'}
+              ${sourceAudioBtnHtml ? `<div style="flex-shrink: 0;">${sourceAudioBtnHtml}</div>` : ''}
+            </div>
             ${
               sourceText
-                ? `<div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e3a8a; border-radius: 4px;">
+                ? `<div class="archival-source-body" style="width: 100%; max-height: 350px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e3a8a; border-radius: 4px; margin-bottom: 8px;">
                     ${sourceText}
                   </div>`
                 : ''
             }
             ${
-              rawSource.caption && !sourceTitle.includes(rawSource.caption)
-                ? `<div style="font-size: 0.95rem; color: #475569; margin-top: 8px; margin-bottom: 8px; font-style: italic;">${rawSource.caption}</div>`
-                : ''
-            }
-            ${
               !isKs2 && (rawSource.citation || rawSource.provenance)
-                ? `<div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
+                ? `<div class="archival-citation-footer" style="font-size: 0.78rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 6px; margin-top: 6px; margin-bottom: 6px; display: block !important; text-align: left !important; line-height: 1.45;">
                     <strong>Provenance:</strong> ${rawSource.citation || rawSource.provenance}
                   </div>`
                 : ''
             }
             ${
-              cleanContextVal
+              !hasUtilityCard && cleanContextVal
                 ? `
-              <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
+              <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-top: 12px; color: #334155; font-size: 0.95rem; line-height: 1.5;">
                 <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
               </div>
             `
                 : ''
             }
-            ${
-              rawSource.provenance_clue
-                ? `
-              <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 15px; margin-top: 15px;">
-                <strong style="color: #166534; display: block; margin-bottom: 5px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
-                <span style="color: #15803d; font-size: 0.95rem;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.provenance_clue) : rawSource.provenance_clue}</span>
-              </div>
-            `
-                : ''
-            }
-            ${renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '12px')}
+            ${!hasUtilityCard ? renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '12px') : ''}
           `;
         } else {
           const rawSourceImgUrl = getAssetUrl(rawImgSrc);
@@ -6305,7 +6347,7 @@ export function renderLesson(lesson) {
                       : ''
                   }
                   ${
-                    cleanContextVal
+                    !hasUtilityCard && cleanContextVal
                       ? `
                     <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
                       <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
@@ -6323,11 +6365,11 @@ export function renderLesson(lesson) {
                   `
                       : ''
                   }
-                  ${primaryDisc.promptHtml}
+                  ${!hasUtilityCard ? primaryDisc.promptHtml : ''}
                 </div>
               </div>
             </div>
-            ${primaryDisc.panelHtml}
+            ${!hasUtilityCard ? primaryDisc.panelHtml : ''}
           `;
         }
 
@@ -6385,118 +6427,148 @@ export function renderLesson(lesson) {
                   <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${displayTitle}</span>
                 </div>
                 <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
-                  Archival Evidence &bull; Expand <span class="drawer-caret">&#9660;</span>
+                  Archival Evidence &bull; <span class="drawer-state-expand">Expand</span><span class="drawer-state-collapse" style="display: none;">Collapse</span> <span class="drawer-caret">&#9660;</span>
                 </span>
               </summary>
               <div class="cme-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
-                ${sourceAudioBtnHtml ? `<div class="archival-source-header" style="display: flex; justify-content: flex-end; margin-bottom: 12px;">${sourceAudioBtnHtml}</div>` : ''}
                 ${sourceBodyHtml}
                 ${(() => {
                   const utilityObj = rawSource.utility_enquiry || rawSource.utilityEnquiry;
                   if (utilityObj) {
                     const uPrompt =
-                      utilityObj.question || utilityObj.prompt || utilityObj.enquiry || '';
-                    const uInferences =
-                      utilityObj.content_inferences ||
-                      utilityObj.inferences ||
-                      utilityObj.content ||
-                      '';
-                    const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
-                    const uContext =
-                      utilityObj.context_limitations ||
-                      utilityObj.limitations ||
-                      utilityObj.context ||
-                      '';
+                      utilityObj.question || utilityObj.prompt || utilityObj.enquiry || rawSource.question || '';
 
-                    const isMedicineWesternFront =
-                      (unitId === 'edexcel_medicine' ||
-                        window.currentUnitId === 'edexcel_medicine') &&
-                      (lesson.historic_environment ||
-                        (lesson.title && lesson.title.includes('KT5')));
-                    const examBadgeTitle =
-                      utilityObj.exam_label ||
-                      (isMedicineWesternFront
-                        ? 'Edexcel Paper 1 &bull; Q2(a) Source Utility Enquiry [8 Marks]'
-                        : unitId === 'weimar_nazi_germany' ||
-                            window.currentUnitId === 'weimar_nazi_germany'
-                          ? 'Edexcel Paper 3 &bull; Q3(a) Source Utility Enquiry [8 Marks]'
-                          : 'GCSE Source Utility Enquiry [8 Marks]');
+                    // Check if explicit exam rubric is requested (e.g. designated mock exam units)
+                    const isExamRubric = utilityObj.is_exam_rubric === true;
+
+                    if (isExamRubric) {
+                      const uInferences =
+                        utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
+                      const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
+                      const uContext =
+                        utilityObj.context_limitations || utilityObj.limitations || utilityObj.context || '';
+
+                      const isMedicineWesternFront =
+                        (unitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine') &&
+                        (lesson.historic_environment || (lesson.title && lesson.title.includes('KT5')));
+                      const examBadgeTitle =
+                        utilityObj.exam_label ||
+                        (isMedicineWesternFront
+                          ? 'Edexcel Paper 1 &bull; Q2(a) Source Utility Enquiry [8 Marks]'
+                          : unitId === 'weimar_nazi_germany' || window.currentUnitId === 'weimar_nazi_germany'
+                            ? 'Edexcel Paper 3 &bull; Q3(a) Source Utility Enquiry [8 Marks]'
+                            : 'GCSE Source Utility Enquiry [8 Marks]');
+
+                      return `
+                        <details class="source-enquiry-reveal edexcel-paper3-utility-card">
+                          <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
+                            <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
+                              <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${examBadgeTitle}</span>
+                              <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</span>
+                            </div>
+                            <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
+                              <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                              <span class="reveal-text-closed">Reveal Exam Guidance</span>
+                              <span class="reveal-text-open">Hide Exam Guidance</span>
+                              <span class="reveal-arrow">&#9660;</span>
+                            </span>
+                          </summary>
+                          <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 4px;">
+                              ${uInferences ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-magnifying-glass" style="color: #16a34a;"></i> 1. Content &amp; Inferences</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uInferences) : uInferences}</div></div>` : ''}
+                              ${uProv ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-stamp" style="color: #16a34a;"></i> 2. Provenance (NOP)</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uProv) : uProv}</div></div>` : ''}
+                              ${uContext ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-book-bookmark" style="color: #16a34a;"></i> 3. Context &amp; Limitations</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uContext) : uContext}</div></div>` : ''}
+                            </div>
+                          </div>
+                        </details>
+                      `;
+                    }
+
+
+                    // DEFAULT CHILD-FRIENDLY MODEL: 2 to 3 direct bullet points
+                    let points = utilityObj.bullet_points || utilityObj.key_points || utilityObj.model_answers || utilityObj.answers;
+                    if (!points || !Array.isArray(points) || points.length === 0) {
+                      const uInferences = utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
+                      const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
+                      const uContext = utilityObj.context_limitations || utilityObj.limitations || utilityObj.context || '';
+                      points = [];
+                      if (uInferences) points.push({ label: 'What the Source Shows', text: uInferences });
+                      if (uProv) points.push({ label: 'Historical Meaning', text: uProv });
+                      if (uContext && !uContext.toLowerCase().includes('does not show')) points.push({ label: 'Deeper Context', text: uContext });
+                    }
+
+
+                    const renderedBullets = points.map(pt => {
+                      let lbl = '';
+                      let txt = '';
+                      if (typeof pt === 'string') {
+                        txt = pt;
+                      } else if (pt && typeof pt === 'object') {
+                        if (pt.label) {
+                          const cleanLabel = (pt.label || '').toLowerCase();
+                          if (!['what the source shows', 'historical context', 'key takeaway', 'takeaway', 'point 1', 'point 2', 'point 3'].includes(cleanLabel)) {
+                            lbl = `<strong style="color: #166534;">${pt.label}:</strong> `;
+                          }
+                        }
+                        txt = pt.text || pt.content || pt.answer || '';
+                      }
+                      const formattedTxt = typeof window !== 'undefined' && window.formatBold ? window.formatBold(txt) : txt;
+                      return `<li style="margin-bottom: 8px; line-height: 1.55; color: #1e293b; font-size: 0.88rem;">${lbl}${formattedTxt}</li>`;
+                    }).join('');
 
                     return `
-                      <div class="archival-source-utility-box edexcel-paper3-utility-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
-                          <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-                            <i class="fa-solid fa-scale-balanced"></i> ${examBadgeTitle}
+                      <details class="source-enquiry-reveal">
+                        <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
+                          <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
+                            <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">Enquiry Question</span>
+                            <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</span>
                           </div>
-                          <span style="font-size: 0.65rem; font-weight: 800; color: #15803d; background: #dcfce7; border: 1px solid #bbf7d0; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Exam Utility Triad</span>
+                          <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
+                            <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                            <span class="reveal-text-closed">Reveal Model Answer</span>
+                            <span class="reveal-text-open">Hide Model Answer</span>
+                            <span class="reveal-arrow">&#9660;</span>
+                          </span>
+                        </summary>
+                        <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
+                          <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                            <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Key Takeaways &bull; Suggested Answers
+                          </div>
+                          <ul style="margin: 0; padding-left: 18px;">
+                            ${renderedBullets}
+                          </ul>
                         </div>
-                        ${uPrompt ? `<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #14532d; font-weight: 700; margin-bottom: 12px; line-height: 1.45;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</div>` : ''}
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 8px;">
-                          ${
-                            uInferences
-                              ? `
-                            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px; display: flex; flex-direction: column;">
-                              <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px; display: flex; align-items: center; gap: 5px;">
-                                <i class="fa-solid fa-magnifying-glass" style="color: #16a34a;"></i> 1. Content &amp; Inferences
-                              </div>
-                              <div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5; flex-grow: 1;">
-                                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uInferences) : uInferences}
-                              </div>
-                            </div>`
-                              : ''
-                          }
-                          ${
-                            uProv
-                              ? `
-                            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px; display: flex; flex-direction: column;">
-                              <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px; display: flex; align-items: center; gap: 5px;">
-                                <i class="fa-solid fa-stamp" style="color: #16a34a;"></i> 2. Provenance (NOP)
-                              </div>
-                              <div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5; flex-grow: 1;">
-                                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uProv) : uProv}
-                              </div>
-                            </div>`
-                              : ''
-                          }
-                          ${
-                            uContext
-                              ? `
-                            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px; display: flex; flex-direction: column;">
-                              <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px; display: flex; align-items: center; gap: 5px;">
-                                <i class="fa-solid fa-book-bookmark" style="color: #16a34a;"></i> 3. Context &amp; Limitations
-                              </div>
-                              <div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5; flex-grow: 1;">
-                                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uContext) : uContext}
-                              </div>
-                            </div>`
-                              : ''
-                          }
-                        </div>
-                      </div>
-                      `;
+                      </details>
+                    `;
                   } else if (rawSource.how_useful_question) {
                     return `
-                      <div class="archival-source-utility-box" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
-                        <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-                          <i class="fa-solid fa-scale-balanced"></i> Source Utility Enquiry & Provenance Scaffolding
-                        </div>
-                        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #14532d; font-weight: 700; margin-bottom: 10px; line-height: 1.45;">
-                          ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.how_useful_question) : rawSource.how_useful_question}
-                        </div>
+                      <details class="source-enquiry-reveal">
+                        <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
+                          <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
+                            <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">Enquiry Question</span>
+                            <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.how_useful_question) : rawSource.how_useful_question}</span>
+                          </div>
+                          <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
+                            <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                            <span class="reveal-text-closed">Reveal Guidance</span>
+                            <span class="reveal-text-open">Hide Guidance</span>
+                            <span class="reveal-arrow">&#9660;</span>
+                          </span>
+                        </summary>
                         ${
                           rawSource.provenance_clues
                             ? `
-                          <div style="font-size: 0.88rem; color: #166534; line-height: 1.55; background: #ffffff; padding: 10px 14px; border-radius: 4px; border: 1px solid #bbf7d0;">
-                            <strong style="color: #14532d; display: block; margin-bottom: 4px;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
-                            <ul style="margin: 4px 0 0 16px; padding: 0;">
+                          <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
+                            <strong style="color: #14532d; display: block; margin-bottom: 6px; font-size: 0.85rem;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
+                            <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #166534; line-height: 1.55;">
                               ${(Array.isArray(rawSource.provenance_clues) ? rawSource.provenance_clues : [rawSource.provenance_clues]).map((c) => `<li>${c}</li>`).join('')}
                             </ul>
                           </div>
                         `
                             : ''
                         }
-                      </div>
-                      `;
+                      </details>
+                    `;
                   }
                   return '';
                 })()}
@@ -6565,11 +6637,11 @@ export function renderLesson(lesson) {
         window.currentUnitId === 'first_british_empire' ||
         unitId === 'first_british_empire';
 
-      htmlNarrative += `
-            <div class="standard-narrative-container">
-              ${imageHtml}
-              ${!isSourceAfter ? blockSourceHtml : ''}
-              <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; flex-direction: column; margin-bottom: 15px; padding: 16px 18px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+      const hasPureVisual = Boolean(block.image && !block.image_context);
+      const isReversed = index % 2 === 1;
+
+      const narrativeChunkHtml = `
+              <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; flex-direction: column; margin-bottom: ${hasPureVisual ? '0' : '15px'}; padding: 16px 18px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05); flex: 1 1 58%; min-width: 0;">
                 <div class="narrative-chunk-header" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: ${themeHeadingHtml || showParaNumber ? '10px' : '4px'}; flex-wrap: wrap;">
                   <div class="narrative-chunk-meta" style="display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0;">
                     ${showParaNumber ? '<div class="para-number" style="margin-right: 0;">' + (index + 1) + '</div>' : ''}
@@ -6581,7 +6653,33 @@ export function renderLesson(lesson) {
                 </div>
                 <div class="narrative-text" style="width: 100%; line-height: 1.65; color: #1e293b; font-size: 1.05rem;">${styledContent}</div>
               </div>
-              ${isSourceAfter ? blockSourceHtml : ''}
+      `;
+
+      let topNarrativeHtml = '';
+      if (hasPureVisual) {
+        const visualPlateHtml = `
+          <div class="narrative-visual-plate" style="flex: 0 0 360px; max-width: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.04); text-align: center;">
+            <img src="${getAssetUrl(block.image)}" alt="${block.image_alt || 'Archival Plate'}" style="max-width: 100%; max-height: 310px; object-fit: contain; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.12); border: 1px solid #cbd5e1; cursor: zoom-in; display: block; margin: 0 auto;" data-action="open-modal" data-src="${getAssetUrl(block.image)}">
+            ${block.caption || block.image_caption || block.image_alt ? `<div class="narrative-plate-caption" style="font-size: 0.82rem; color: #64748b; margin-top: 10px; font-style: italic; line-height: 1.45; user-select: none;">${block.caption || block.image_caption || block.image_alt}</div>` : ''}
+          </div>
+        `;
+        topNarrativeHtml = `
+          <div class="narrative-visual-row ${isReversed ? 'row-reversed' : ''}" style="display: flex; gap: 20px; align-items: stretch; margin-bottom: 16px; ${isReversed ? 'flex-direction: row-reverse;' : ''}">
+            ${narrativeChunkHtml}
+            ${visualPlateHtml}
+          </div>
+        `;
+      } else {
+        topNarrativeHtml = `
+          ${narrativeChunkHtml}
+          ${imageHtml}
+        `;
+      }
+
+      htmlNarrative += `
+            <div class="standard-narrative-container" style="margin-bottom: 24px;">
+              ${topNarrativeHtml}
+              ${blockSourceHtml}
             </div>
           `;
 

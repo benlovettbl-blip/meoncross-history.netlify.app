@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KS3: Early Modern World & Global Encounters (1450–1750) - High-Yield Revision Cheat Sheet</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #b45309;
+      --bg: #f8fafc;
+      --border: #cbd5e1;
+      --text: #334155;
+    }
+    body { font-family: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 30px; color: var(--text); line-height: 1.5; background: #fff; }
+    h1 { color: var(--primary); border-bottom: 4px solid var(--primary); padding-bottom: 10px; text-align: center; font-size: 24pt; margin-bottom: 30px; }
+    h2 { color: var(--secondary); border-bottom: 2px solid var(--border); margin-top: 35px; padding-bottom: 5px; font-size: 16pt; display: flex; align-items: center; gap: 10px;}
+    
+    /* Timeline */
+    .timeline-container { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; border-left: 3px solid var(--primary); padding-left: 15px; }
+    .timeline-event { background: var(--bg); border: 1px solid var(--border); padding: 12px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .timeline-date { font-weight: bold; color: var(--primary); font-size: 11pt; }
+    .timeline-title { font-weight: bold; font-size: 11pt; margin-left: 10px; }
+    
+    /* Individuals */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px; }
+    .card { border: 1px solid var(--border); padding: 12px; background: var(--bg); border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-top: 4px solid var(--primary); }
+    .card-title { font-weight: bold; color: var(--primary); font-size: 12pt; margin-bottom: 4px; }
+    .card-role { font-size: 9pt; color: var(--secondary); font-weight: bold; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .card-bio { font-size: 9.5pt; }
+
+    /* Thematic Glossary */
+    .glossary-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 10pt; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    .glossary-table th, .glossary-table td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    .glossary-table th { background: var(--primary); color: #fff; font-weight: bold; }
+    .glossary-table tr:nth-child(even) { background: var(--bg); }
+
+    /* Hinge Questions */
+    .hinge-box { background: #fef3c7; border: 1px solid #f59e0b; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    .hinge-list { margin: 0; padding-left: 20px; font-size: 10.5pt; font-weight: bold; color: #92400e; }
+    .hinge-list li { margin-bottom: 8px; }
+
+    /* Exam Reminders */
+    .exam-box { background: #e0e7ff; border: 2px dashed #4f46e5; padding: 15px; border-radius: 8px; margin-top: 30px; }
+    .exam-box h3 { color: #4338ca; margin-top: 0; margin-bottom: 10px; }
+    .exam-box p { font-size: 9.5pt; margin: 0 0 10px 0; }
+
+    @media print {
+      body { margin: 0; font-size: 9pt; }
+      h1 { font-size: 18pt; margin-bottom: 15px; }
+      h2 { font-size: 13pt; margin-top: 20px; page-break-after: avoid; }
+      .grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .card, .timeline-event, .hinge-box, .exam-box { page-break-inside: avoid; }
+      .glossary-table { page-break-inside: auto; }
+      tr { page-break-inside: avoid; page-break-after: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>KS3: Early Modern World & Global Encounters (1450–1750)<br><span style="font-size:12pt; color:#64748b; font-weight:normal;">Ultimate Revision Cheat Sheet</span></h1>
+
+<h2>⏱️ 1. Core Chronology</h2><div class="timeline-container"><div class="timeline-event">
+      <span class="timeline-date">1453</span>
+      <span class="timeline-title">Fall of Constantinople</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">The Ottoman Empire captured Constantinople, effectively ending the Byzantine Empire and blocking the main European trade route to Asia.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1492</span>
+      <span class="timeline-title">Columbus's First Voyage</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Christopher Columbus reached the Americas, initiating widespread European exploration and colonization of the New World.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1494</span>
+      <span class="timeline-title">Treaty of Tordesillas</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Spain and Portugal divided the newly discovered lands outside Europe between themselves.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1517</span>
+      <span class="timeline-title">The Protestant Reformation Begins</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Martin Luther published his Ninety-five Theses, fracturing Christianity in Europe.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1534</span>
+      <span class="timeline-title">Act of Supremacy</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">King Henry VIII broke away from the Catholic Church, making himself head of the Church of England.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1569</span>
+      <span class="timeline-title">Mercator World Map</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Gerardus Mercator published his famous world map, revolutionising navigation for European sailors.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1577-1580</span>
+      <span class="timeline-title">Drake's Circumnavigation</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Sir Francis Drake became the first Englishman to circumnavigate the globe, plundering Spanish ships along the way.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1585</span>
+      <span class="timeline-title">Roanoke Colony Founded</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Sir Walter Raleigh organized the first, ultimately unsuccessful, English settlement in North America.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1588</span>
+      <span class="timeline-title">Defeat of the Spanish Armada</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">England repelled a massive invasion fleet sent by Catholic Spain.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1600</span>
+      <span class="timeline-title">East India Company Founded</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Queen Elizabeth I granted a royal charter to the EIC, creating a joint-stock monopoly on trade with Asia.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1607</span>
+      <span class="timeline-title">Jamestown Founded</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">The first permanent English settlement in the Americas was established in Virginia.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1615</span>
+      <span class="timeline-title">Roe's Embassy to India</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Sir Thomas Roe arrived at the Mughal Court to secure trading rights for the East India Company.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1642</span>
+      <span class="timeline-title">English Civil War Begins</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Conflict erupted between King Charles I and Parliament over religious and political authority.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1649</span>
+      <span class="timeline-title">Execution of Charles I</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">King Charles I was executed, and England briefly became a republic led by Oliver Cromwell.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1660</span>
+      <span class="timeline-title">The Restoration</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">The monarchy was restored under King Charles II after the collapse of the Protectorate.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1694</span>
+      <span class="timeline-title">Bank of England Founded</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Created to help fund the government's debt, it triggered a 'Financial Revolution' in Britain.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1720s</span>
+      <span class="timeline-title">First Maroon War Begins</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">Enslaved Africans in Jamaica who had escaped into the mountains fought a prolonged guerrilla war against the British.</div>
+    </div><div class="timeline-event">
+      <span class="timeline-date">1750</span>
+      <span class="timeline-title">Britain on the Eve of Industrialization</span>
+      <div style="font-size: 9.5pt; margin-top: 5px;">London became a booming metropolis marked by extreme wealth, widespread poverty, and global trade connections.</div>
+    </div></div><h2>👤 2. Key Individuals</h2><div class="grid">
+      <div class="card">
+        <div class="card-title">Niccolò Barbaro</div>
+        <div class="card-role">Venetian Doctor & Merchant</div>
+        <div class="card-bio">A Venetian who was present in Constantinople during the Ottoman siege in 1453. He wrote a famous eyewitness diary detailing the fall of the city.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Sultan Mehmed II</div>
+        <div class="card-role">Ottoman Sultan</div>
+        <div class="card-bio">Known as 'The Conqueror', he captured Constantinople at age 21, destroying the Byzantine Empire and transforming the city into the jewel of the Islamic world.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Mansa Musa</div>
+        <div class="card-role">Emperor of Mali</div>
+        <div class="card-bio">The famously wealthy ruler of the Mali Empire. His pilgrimage to Mecca in 1324 demonstrated the vast gold wealth of West Africa to the rest of the world.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Christopher Columbus</div>
+        <div class="card-role">Explorer</div>
+        <div class="card-bio">An Italian explorer funded by Spain. His 1492 voyage to find a western sea route to Asia accidentally encountered the Americas, changing world history forever.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Martin Luther</div>
+        <div class="card-role">German Monk & Theologian</div>
+        <div class="card-bio">A German monk who sparked the Protestant Reformation in 1517 by challenging the corruption of the Catholic Church. This triggered centuries of religious conflict.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Sir Francis Drake</div>
+        <div class="card-role">English Privateer & Explorer</div>
+        <div class="card-bio">A famous English sea captain, privateer, and explorer. He circumnavigated the globe and helped defeat the Spanish Armada in 1588.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Queen Elizabeth I</div>
+        <div class="card-role">Queen of England</div>
+        <div class="card-bio">Ruled England during a 'Golden Age'. She oversaw the defeat of the Spanish Armada and the founding of the East India Company, strengthening England's global position.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Pocahontas</div>
+        <div class="card-role">Powhatan Diplomat</div>
+        <div class="card-bio">A Native American woman who played a crucial role in the survival of the Jamestown colony. She later travelled to England, where she was treated as royalty.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">King Charles I</div>
+        <div class="card-role">King of England</div>
+        <div class="card-bio">His belief in the 'Divine Right of Kings' led to the English Civil War. He was tried and executed by Parliament in 1649.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Oliver Cromwell</div>
+        <div class="card-role">Lord Protector</div>
+        <div class="card-bio">A Puritan military leader who commanded the Parliamentarian army in the Civil War. He ruled England as a republic ('The Protectorate') after Charles I's execution.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Olaudah Equiano</div>
+        <div class="card-role">Abolitionist & Writer</div>
+        <div class="card-bio">An enslaved African who bought his own freedom and wrote a bestselling autobiography exposing the horrors of the Transatlantic Slave Trade.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Nanny of the Maroons</div>
+        <div class="card-role">Maroon Leader & National Hero</div>
+        <div class="card-bio">An iconic Jamaican leader of the Windward Maroons. Born in West Africa, she escaped slavery in Jamaica and led a highly successful guerrilla war against the British colonial forces.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Admiral Zheng He</div>
+        <div class="card-role">Ming Dynasty Explorer</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">John Hawkins</div>
+        <div class="card-role">English Privateer & Slave Trader</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">King Philip II</div>
+        <div class="card-role">King of Spain</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Henry VIII</div>
+        <div class="card-role">King of England</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Pope Alexander VI</div>
+        <div class="card-role">Head of the Catholic Church</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Sir Walter Raleigh</div>
+        <div class="card-role">English Explorer & Courtier</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Mary, Queen of Scots</div>
+        <div class="card-role">Queen of Scotland</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Don Francisco de Zárate</div>
+        <div class="card-role">Spanish Captain</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">King James I</div>
+        <div class="card-role">King of England and Scotland</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">John Rolfe</div>
+        <div class="card-role">English Planter</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Chief Powhatan</div>
+        <div class="card-role">Indigenous Leader</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Emperor Jahangir</div>
+        <div class="card-role">Mughal Emperor</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Sir Thomas Roe</div>
+        <div class="card-role">English Diplomat</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">John Bradshaw</div>
+        <div class="card-role">Judge</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Martin Noell</div>
+        <div class="card-role">London Merchant</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Charles II</div>
+        <div class="card-role">King of England</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Gerrard Winstanley</div>
+        <div class="card-role">Radical Leader (The Diggers)</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">William Wilberforce</div>
+        <div class="card-role">English Abolitionist</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Thomas Clarkson</div>
+        <div class="card-role">Abolitionist Campaigner</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Kritovoulos of Imbros</div>
+        <div class="card-role">Greek Scholar & Historian</div>
+        <div class="card-bio">A Greek scholar who lived through the fall of the Byzantine Empire. Instead of resisting, he entered the service of Sultan Mehmed II.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Prof. Peter Frankopan</div>
+        <div class="card-role">Professor of Global History, Oxford</div>
+        <div class="card-bio">He is famous for challenging Eurocentric history, arguing that for thousands of years the true centre of global wealth and power lay in Asia.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Dr. Geoffrey Parker</div>
+        <div class="card-role">Leading Expert on the Spanish Empire</div>
+        <div class="card-bio">His revisionist work on the Spanish Armada argues that the English victory was due to Spanish logistical failures and superior English ship design.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Sir John Seeley</div>
+        <div class="card-role">Victorian Historian</div>
+        <div class="card-bio">A 19th-century historian writing at the height of the British Empire. He famously argued that the British Empire was acquired 'in a fit of absence of mind'.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Prof. Shashi Tharoor</div>
+        <div class="card-role">Indian Politician & Historian</div>
+        <div class="card-bio">A former UN Under-Secretary-General. He aggressively dismantles the myth of a 'benevolent' British Empire.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Prof. Christopher Hill</div>
+        <div class="card-role">Marxist Historian</div>
+        <div class="card-bio">One of the most famous Marxist historians of the 20th century, based at Oxford. He argued the English Civil War was a revolutionary class struggle.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Prof. Eric Williams</div>
+        <div class="card-role">Historian & Prime Minister</div>
+        <div class="card-bio">A brilliant historian who later became the first Prime Minister of Trinidad and Tobago.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Reginald Coupland</div>
+        <div class="card-role">Imperial Historian</div>
+        <div class="card-bio">An Oxford historian writing in the 1930s. He promoted the 'Traditional Imperial View' of abolition.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Prof. Roy Porter</div>
+        <div class="card-role">Medical & Social Historian</div>
+        <div class="card-bio">A highly prolific historian at the Wellcome Institute. He argued that by the 18th century, Britain was a deeply modern, secular, consumer-driven society.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Prof. J.C.D. Clark</div>
+        <div class="card-role">Revisionist Historian</div>
+        <div class="card-bio">A prominent revisionist historian who fiercely challenged Porter's view.</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Harriet Tubman</div>
+        <div class="card-role">Abolitionist & Activist</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Toussaint Louverture</div>
+        <div class="card-role">Haitian Revolutionary Leader</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    
+      <div class="card">
+        <div class="card-title">Thomas Thistlewood</div>
+        <div class="card-role">Jamaican Overseer</div>
+        <div class="card-bio">undefined</div>
+      </div>
+    </div><h2>📖 3. Master Glossary</h2><table class="glossary-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">Term</th>
+        <th style="width: 75%;">Definition</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+      <td><strong>Armada</strong></td>
+      <td>A fleet of warships, particularly the Spanish fleet that sailed against England under the command of [Key Individual: King Philip II] in 1588.</td>
+    </tr><tr>
+      <td><strong>Charter</strong></td>
+      <td>A written grant by a country's sovereign or legislative power, by which a company is created and its rights and privileges defined.</td>
+    </tr><tr>
+      <td><strong>Commonwealth</strong></td>
+      <td>The republic that ruled England from 1649 to 1660 following the execution of Charles I.</td>
+    </tr><tr>
+      <td><strong>Covert Resistance</strong></td>
+      <td>Hidden or secretive acts of rebellion, such as working slowly or breaking tools.</td>
+    </tr><tr>
+      <td><strong>Divine Right of Kings</strong></td>
+      <td>The belief that a monarch's authority comes directly from God, making them unaccountable to earthly authorities like Parliament.</td>
+    </tr><tr>
+      <td><strong>Factory</strong></td>
+      <td>In the 17th century, a fortified trading post or warehouse established by a merchant company in a foreign country.</td>
+    </tr><tr>
+      <td><strong>Indulgences</strong></td>
+      <td>In the Catholic Church, a grant by the Pope of remission of the temporal punishment in purgatory still due for sins after absolution.</td>
+    </tr><tr>
+      <td><strong>Joint-Stock Company</strong></td>
+      <td>A company whose stock is owned jointly by the shareholders, spreading the financial risk of overseas ventures.</td>
+    </tr><tr>
+      <td><strong>Maroons</strong></td>
+      <td>Communities of formerly enslaved Africans who escaped and established free settlements in mountainous or remote areas.</td>
+    </tr><tr>
+      <td><strong>Mercantile</strong></td>
+      <td>Relating to trade or commerce; commercial.</td>
+    </tr><tr>
+      <td><strong>Middle Passage</strong></td>
+      <td>The brutal forced voyage of enslaved Africans across the Atlantic Ocean.</td>
+    </tr><tr>
+      <td><strong>Modernity</strong></td>
+      <td>In history, the transition away from traditional, agricultural, feudal societies towards commercial, secular, and industrialized ones.</td>
+    </tr><tr>
+      <td><strong>Monopoly</strong></td>
+      <td>The exclusive possession or control of the supply or trade in a commodity or service.</td>
+    </tr><tr>
+      <td><strong>National Debt</strong></td>
+      <td>Money borrowed by a government (often via a central bank like the Bank of England) to fund state activities like war.</td>
+    </tr><tr>
+      <td><strong>Navigation Acts</strong></td>
+      <td>Laws passed in 1651 requiring all trade between England and its colonies to be carried in English ships, boosting mercantile wealth.</td>
+    </tr><tr>
+      <td><strong>New Model Army</strong></td>
+      <td>A revolutionary, disciplined, and religiously motivated professional army formed by Parliament during the Civil War.</td>
+    </tr><tr>
+      <td><strong>Obeah</strong></td>
+      <td>A system of spiritual and healing practices developed by enslaved people in the Caribbean, often involving botanical knowledge.</td>
+    </tr><tr>
+      <td><strong>Plantation</strong></td>
+      <td>A large agricultural estate where enslaved people were forced to grow cash crops like sugar and tobacco.</td>
+    </tr><tr>
+      <td><strong>Privateer</strong></td>
+      <td>An armed ship owned by private individuals holding a government commission (Letter of Marque) and authorized for use in war, especially in the capture of enemy merchant shipping.</td>
+    </tr><tr>
+      <td><strong>Reformation</strong></td>
+      <td>A 16th-century religious movement in Europe that resulted in the creation of Protestant churches and a split from the Catholic Church.</td>
+    </tr><tr>
+      <td><strong>Rotten Borough</strong></td>
+      <td>A tiny parliamentary constituency with very few voters, easily bought or controlled by a wealthy aristocrat.</td>
+    </tr><tr>
+      <td><strong>Subjugation</strong></td>
+      <td>The action of bringing someone or something under domination or control.</td>
+    </tr><tr>
+      <td><strong>Synoptic</strong></td>
+      <td>Taking a comprehensive mental view of a wide series of events across a long period of time.</td>
+    </tr><tr>
+      <td><strong>The Bloody Code</strong></td>
+      <td>The harsh 18th-century English legal system which mandated the death penalty for over 200 minor crimes.</td>
+    </tr><tr>
+      <td><strong>Triangular Trade</strong></td>
+      <td>The three-legged transatlantic trade network connecting Europe, Africa, and the Americas.</td>
+    </tr></tbody></table><h2>🧠 4. Core Concepts & Big Questions</h2><div class="hinge-box"><ul class="hinge-list"><li>Why would a mapmaker in Europe in 1375 depict an African king with such prominent symbols of wealth?</li><li>Does this map suggest the English victory was due to superior skill, or lucky geography and weather?</li><li>How can the exact same historical figure be remembered as both a national hero and a criminal pirate?</li><li>What does the presence of multiple international flags, rather than a single European military fort, suggest about who held the real power in Canton?</li><li>Does this portrait tell us more about [Key Individual: Pocahontas]'s actual identity, or about what the English wanted to see?</li><li>Why was it so important for the monarch to create a single, unified visual identity for the newly formed nation?</li><li>How did the execution of Charles I permanently change the balance of power between the Monarchy and Parliament?</li><li>Why was a cold, technical diagram more effective at changing public opinion than an emotional painting might have been?</li><li>How does a map like this hide the human suffering and enslaved labor required to make those estates profitable?</li><li>What were the major risks of living in such densely packed, unregulated urban environments?</li><li>Is this image a reliable reflection of daily life in 1751, or an exaggerated moral panic designed to shock the viewer?</li></ul></div>
+</body>
+</html>

@@ -6,4 +6,5 @@ temp_backups
 public/database.json
 public/units/**/*.html
 units/**/*.html
+archive/**
 public/pdfs

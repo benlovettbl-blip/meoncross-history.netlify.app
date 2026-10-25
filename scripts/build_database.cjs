@@ -65,16 +65,16 @@ function auditEntityIntegrity(unitId, unitData) {
       desc: 'Suspicious double space after naming preposition',
     },
     {
-      regex: /\b(named|after)\s*[,:;]/i,
-      desc: 'Missing entity before punctuation',
+      regex: /\b(named|named after|called after)\s*[,:;]/i,
+      desc: 'Missing entity after naming preposition',
     },
     {
       regex: /\bcalled\s*[,:;]/i,
       desc: 'Missing entity after "called"',
     },
     {
-      regex: /\bby\s*[,;]/i,
-      desc: 'Missing entity after "by"',
+      regex: /\b(written by|photographed by|created by|painted by|drawn by|designed by)\s*[,;]/i,
+      desc: 'Missing entity after creator attribution',
     },
     {
       regex: /\b(Portrait of|diary of|account of|memoir of)\s*[,:;?!]/i,

@@ -4,6 +4,7 @@
  */
 import { appStore } from './store.js';
 import { readAloudText, setSpeechRate, cancelSpeech, toggleVoiceGender } from './speech.js';
+import { formatInteractiveTimestamps } from './video_utils.js';
 
 export function initEventDelegation() {
   // Vocabulary Matching Game State
@@ -608,11 +609,66 @@ export function initEventDelegation() {
       }
       case 'open-video-modal': {
         const youtubeId = target.dataset.youtube;
+        const videoKey = target.dataset.videoKey;
+        const initialStart = parseInt(target.dataset.start || '0', 10) || 0;
+        const videoData =
+          (window.__videoStore && videoKey && window.__videoStore[videoKey]) || null;
         if (youtubeId) {
+          const formatBold = window.formatBold || ((s) => s);
           const overlay = document.createElement('div');
-          overlay.className = 'modal-overlay video-modal-overlay no-print';
-          overlay.style.cssText =
-            'position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(12px); justify-content: center; align-items: center; z-index: 3000; display: flex;';
+          overlay.className = 'modal-overlay video-theater-overlay no-print';
+
+          // Global seek handler for interactive timestamp buttons
+          window.seekTheaterVideo = function (seconds, ytId) {
+            const iframe = document.getElementById('theater-player-frame');
+            if (!iframe) return;
+            const videoId = ytId || iframe.dataset.youtubeId || youtubeId;
+
+            // 1. PostMessage to YouTube API for smooth seek
+            try {
+              iframe.contentWindow.postMessage(
+                JSON.stringify({
+                  event: 'command',
+                  func: 'seekTo',
+                  args: [seconds, true],
+                }),
+                '*',
+              );
+              iframe.contentWindow.postMessage(
+                JSON.stringify({
+                  event: 'command',
+                  func: 'playVideo',
+                  args: [],
+                }),
+                '*',
+              );
+            } catch (err) {}
+
+            // 2. Direct reload to guarantee playback from timestamp
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&enablejsapi=1&start=${seconds}&rel=0`;
+
+            // 3. Visual confirmation toast
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            const timeLabel = `${m}:${s < 10 ? '0' : ''}${s}`;
+            let toast = document.getElementById('theater-seek-toast');
+            if (!toast) {
+              toast = document.createElement('div');
+              toast.id = 'theater-seek-toast';
+              toast.className = 'theater-seek-toast';
+              const playerCol = document.querySelector('.video-theater-player-col');
+              if (playerCol) playerCol.appendChild(toast);
+            }
+            if (toast) {
+              toast.innerHTML = `<i class="fa-solid fa-play" style="font-size: 0.7rem; color: #38bdf8;"></i> Jumped to ${timeLabel}`;
+              toast.classList.add('visible');
+              clearTimeout(window.__seekToastTimeout);
+              window.__seekToastTimeout = setTimeout(() => {
+                if (toast) toast.classList.remove('visible');
+              }, 1800);
+            }
+          };
+
           const removeModal = () => {
             document.removeEventListener('keydown', onEsc);
             overlay.remove();
@@ -624,18 +680,166 @@ export function initEventDelegation() {
           overlay.onclick = function (e) {
             if (e.target === overlay) removeModal();
           };
-          overlay.innerHTML = `
-            <div class="modal-content" style="background: transparent; width: 92%; max-width: 960px; position: relative;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                <span style="color: #94a3b8; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><i class="fa-solid fa-play" style="color: #ef4444; margin-right: 6px;"></i> Archival Documentary Player &bull; Press ESC to close</span>
-                <button type="button" class="btn-close-video-modal" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 1rem; cursor: pointer; padding: 4px 12px; border-radius: 6px; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">&times; Close</button>
+
+          const hasPedagogy = Boolean(
+            videoData &&
+              (videoData.viewing_task ||
+                videoData.pathwayInfo?.guidance ||
+                videoData.teacher_guidance),
+          );
+
+          if (hasPedagogy) {
+            // DUAL-PANE CLASSROOM VIDEO THEATER
+            const title = videoData.cleanTitle || 'Archival Video Resource';
+            const duration = videoData.duration || videoData.prominentDur || '';
+            const pathway =
+              videoData.pathwayInfo?.pathway || videoData.pathway || 'Video Pathway';
+            const rawGuidance =
+              videoData.teacher_guidance || videoData.pathwayInfo?.guidance || '';
+            const rawTask = videoData.viewing_task || '';
+            const rawModelAnswer = videoData.model_answer || '';
+            const icon = videoData.pathwayInfo?.icon || 'fa-solid fa-route';
+
+            // Convert all timestamps into clickable scrubbing pills
+            const guidance = formatInteractiveTimestamps(rawGuidance, youtubeId, true);
+            const task = formatInteractiveTimestamps(rawTask, youtubeId, true);
+            const modelAnswer = formatInteractiveTimestamps(rawModelAnswer, youtubeId, true);
+
+            // Extract recommended watch window timestamp if present
+            const windowMatch = rawGuidance.match(
+              /(?:Recommended\s+(?:Class\s+|Starter\s+)?Watch\s+Window|Recommended\s+Clip):\s*(\d{1,2}:\d{2})\s*[–\-]\s*(\d{1,2}:\d{2})/i,
+            );
+            let jumpButtonHtml = '';
+            if (windowMatch) {
+              const startStr = windowMatch[1];
+              const endStr = windowMatch[2];
+              const parts = startStr.split(':').map(Number);
+              const startSecs = parts.length === 2 ? parts[0] * 60 + parts[1] : 0;
+              jumpButtonHtml = `
+                <button type="button" class="btn-theater-timestamp" onclick="window.seekTheaterVideo(${startSecs}, '${youtubeId}')">
+                  <i class="fa-solid fa-play"></i> Jump to Watch Window (${startStr}&ndash;${endStr})
+                </button>
+              `;
+            }
+
+            overlay.innerHTML = `
+              <div class="video-theater-modal" role="dialog" aria-modal="true">
+                <!-- Header -->
+                <div class="video-theater-header">
+                  <div class="video-theater-title-group">
+                    <span class="video-shelf-pathway-pill">
+                      <i class="${icon}"></i> ${pathway}
+                    </span>
+                    <span class="video-theater-title">${title}</span>
+                    ${duration ? `<span class="video-shelf-duration-badge"><i class="fa-solid fa-clock"></i> ${duration}</span>` : ''}
+                  </div>
+                  <div class="video-theater-controls">
+                    <span class="video-theater-indicator">
+                      <i class="fa-solid fa-chalkboard-user"></i> Dual-Pane Classroom Theater
+                    </span>
+                    <button type="button" class="btn-close-theater" title="Press ESC to close">&times; Close (Esc)</button>
+                  </div>
+                </div>
+
+                <!-- Dual-Pane Body -->
+                <div class="video-theater-body">
+                  <!-- Left: Video Player Pane -->
+                  <div class="video-theater-player-col">
+                    <div class="video-theater-iframe-wrap">
+                      <iframe id="theater-player-frame" data-youtube-id="${youtubeId}" src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&enablejsapi=1${initialStart > 0 ? `&start=${initialStart}` : ''}&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-theater-navigator">
+                      <div style="display: flex; align-items: center; gap: 8px;">
+                        ${jumpButtonHtml}
+                        <button type="button" class="btn-theater-timestamp" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);" onclick="window.seekTheaterVideo(0, '${youtubeId}')">
+                          <i class="fa-solid fa-rotate-left"></i> Restart (0:00)
+                        </button>
+                      </div>
+                      <div style="font-size: 0.68rem; color: #94a3b8; font-weight: 600;">
+                        <i class="fa-solid fa-shield-halved" style="color: #10b981; margin-right: 4px;"></i> The History Revision Hub
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Right: Pedagogical Companion Pane -->
+                  <div class="video-theater-task-col">
+                    ${
+                      guidance
+                        ? `
+                      <div class="theater-briefing-box">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px; flex-wrap: wrap; gap: 4px;">
+                          <div style="font-size: 0.72rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-graduation-cap"></i> Teacher Pedagogical Briefing
+                          </div>
+                          <span style="font-size: 0.68rem; font-weight: 700; color: #4338ca; background: #e0e7ff; padding: 2px 7px; border-radius: 4px;">
+                            ${pathway}
+                          </span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #1e293b; line-height: 1.5;">
+                          ${formatBold(guidance)}
+                        </div>
+                      </div>
+                    `
+                        : ''
+                    }
+
+                    ${
+                      task
+                        ? `
+                      <div class="theater-task-box">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+                          <div style="font-size: 0.72rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; display: flex; align-items: center; gap: 5px;">
+                            <i class="fa-solid fa-list-check"></i> Viewing Question Tasks
+                          </div>
+                          <span style="font-size: 0.68rem; font-weight: 700; color: #b45309; background: #fef3c7; padding: 2px 7px; border-radius: 4px;">
+                            Mixed-Ability Scaffold
+                          </span>
+                        </div>
+                        <div class="theater-task-content" style="font-size: 0.88rem; color: #78350f; line-height: 1.55;">
+                          ${formatBold(task)}
+                        </div>
+                      </div>
+                    `
+                        : ''
+                    }
+
+                    ${
+                      modelAnswer
+                        ? `
+                      <details class="theater-model-details">
+                        <summary>
+                          <span style="display: flex; align-items: center; gap: 6px;">
+                            <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Reveal Model Answer &amp; Teacher Mark Scheme
+                          </span>
+                          <span style="font-size: 0.70rem; color: #15803d; font-weight: 600; text-transform: uppercase;">Click to expand</span>
+                        </summary>
+                        <div>
+                          ${formatBold(modelAnswer)}
+                        </div>
+                      </details>
+                    `
+                        : ''
+                    }
+                  </div>
+                </div>
               </div>
-              <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.15); background: #000;">
-                <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
+          } else {
+            // Standard Single Video Modal (Clean 16:9 Cinema)
+            overlay.innerHTML = `
+              <div class="modal-content" style="background: transparent; width: 92%; max-width: 960px; position: relative;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                  <span style="color: #94a3b8; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;"><i class="fa-solid fa-play" style="color: #ef4444; margin-right: 6px;"></i> Archival Documentary Player &bull; Press ESC to close</span>
+                  <button type="button" class="btn-close-theater">&times; Close</button>
+                </div>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.7); border: 1px solid rgba(255,255,255,0.15); background: #000;">
+                  <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&enablejsapi=1${initialStart > 0 ? `&start=${initialStart}` : ''}&rel=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
               </div>
-            </div>
-          `;
-          const closeBtn = overlay.querySelector('.btn-close-video-modal');
+            `;
+          }
+
+          const closeBtn = overlay.querySelector('.btn-close-theater');
           if (closeBtn) closeBtn.onclick = removeModal;
           document.body.appendChild(overlay);
         }

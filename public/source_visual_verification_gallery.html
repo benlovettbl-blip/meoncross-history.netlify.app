@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visual Source Verification &amp; Provenance Studio | The History Revision Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-card: #ffffff;
+      --border: #334155;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --accent-gold: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-rose: #f43f5e;
+      --accent-indigo: #6366f1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f1f5f9;
+      color: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+      color: #ffffff;
+      padding: 24px 36px;
+      border-bottom: 3px solid #3b82f6;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .brand-title {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #f8fafc;
+    }
+    .brand-title i { color: #60a5fa; }
+    .brand-subtitle {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+    .stats-bar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .stat-pill {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+    .stat-pill strong { font-size: 1.15rem; color: #ffffff; }
+    .stat-pill.success strong { color: #34d399; }
+    .stat-pill.warning strong { color: #fbbf24; }
+    .stat-pill.danger strong { color: #f87171; }
+    .stat-pill.info strong { color: #60a5fa; }
+
+    .controls-strip {
+      background: #ffffff;
+      padding: 16px 36px;
+      border-bottom: 1px solid #cbd5e1;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .search-box {
+      flex: 1;
+      min-width: 260px;
+      position: relative;
+    }
+    .search-box i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #94a3b8;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px 14px 10px 40px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .search-box input:focus {
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .filter-group label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    select {
+      padding: 9px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      background: #ffffff;
+      color: #0f172a;
+      outline: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    select:focus { border-color: #2563eb; }
+
+    main {
+      flex: 1;
+      padding: 32px 36px;
+      max-width: 1680px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      header, .controls-strip, main { padding-left: 16px; padding-right: 16px; }
+    }
+
+    .source-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .source-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+    .card-top-bar {
+      background: #f8fafc;
+      padding: 10px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .unit-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .status-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.04em;
+    }
+    .status-badge.verified { background: #dcfce7; color: #15803d; }
+    .status-badge.shared { background: #e0e7ff; color: #4338ca; }
+    .status-badge.mismatch { background: #fef3c7; color: #b45309; }
+    .status-badge.missing { background: #fee2e2; color: #b91c1c; }
+
+    .card-content-split {
+      display: flex;
+      padding: 16px;
+      gap: 18px;
+      flex: 1;
+    }
+    .card-media-col {
+      flex: 0 0 190px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .img-frame {
+      width: 100%;
+      height: 220px;
+      background: #0f172a;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-in;
+      position: relative;
+    }
+    .img-frame img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .medium-chip {
+      font-size: 0.70rem;
+      font-weight: 700;
+      background: #f1f5f9;
+      color: #334155;
+      padding: 4px 8px;
+      border-radius: 4px;
+      text-align: center;
+      border: 1px solid #cbd5e1;
+    }
+
+    .card-info-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 0;
+    }
+    .source-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.35;
+    }
+    .source-caption {
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.45;
+      font-style: italic;
+    }
+    .source-provenance {
+      font-size: 0.75rem;
+      color: #64748b;
+      background: #f8fafc;
+      padding: 6px 10px;
+      border-radius: 4px;
+      border-left: 3px solid #94a3b8;
+    }
+    .source-hinge-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-top: 6px;
+    }
+    .hinge-title {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #1e40af;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .hinge-text {
+      font-size: 0.82rem;
+      color: #1e3a8a;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+    .exemplar-list {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .exemplar-item {
+      font-size: 0.78rem;
+      line-height: 1.4;
+      background: #ffffff;
+      padding: 6px 8px;
+      border-radius: 4px;
+      border-left: 2.5px solid #3b82f6;
+      color: #1e293b;
+    }
+
+    .card-footer-bar {
+      background: #f8fafc;
+      padding: 8px 16px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+    .file-path-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #475569;
+      background: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      max-width: 280px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .launch-btn {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      transition: all 0.15s;
+    }
+    .launch-btn:hover {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    /* Modal */
+    #zoom-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    #zoom-modal.active { display: flex; }
+    #zoom-modal img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 2rem;
+      color: #ffffff;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <div>
+        <div class="brand-title">
+          <i class="fa-solid fa-camera-retro"></i>
+          <span>Visual Source Verification &amp; Provenance Studio</span>
+        </div>
+        <div class="brand-subtitle">The History Revision Hub • Continuous Automated Visual Integrity &amp; Pedagogy Audit</div>
+      </div>
+      <div>
+        <a href="/index.html" class="launch-btn" style="background: rgba(255,255,255,0.15); color: #ffffff; border-color: rgba(255,255,255,0.3); padding: 8px 16px; font-size: 0.85rem;">
+          <i class="fa-solid fa-arrow-left"></i> Return to Main Platform
+        </a>
+      </div>
+    </div>
+
+    <div class="stats-bar" id="stats-bar">
+      <div class="stat-pill info"><span>Total Visual Sources:</span> <strong id="stat-total">0</strong></div>
+      <div class="stat-pill success"><span>Verified Clean:</span> <strong id="stat-verified">0</strong></div>
+      <div class="stat-pill info"><span>Thematic / Shared:</span> <strong id="stat-shared">0</strong></div>
+      <div class="stat-pill warning"><span>Medium Mismatches:</span> <strong id="stat-mismatch">0</strong></div>
+      <div class="stat-pill danger"><span>Missing Files:</span> <strong id="stat-missing">0</strong></div>
+    </div>
+  </header>
+
+  <div class="controls-strip">
+    <div class="search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="search-input" placeholder="Search by source title, caption, historical figure, or keyword...">
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-unit">Unit:</label>
+      <select id="filter-unit">
+        <option value="ALL">All Units (20)</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-medium">Medium:</label>
+      <select id="filter-medium">
+        <option value="ALL">All Media</option>
+        <option value="Propaganda Poster">Propaganda Posters</option>
+        <option value="Political Cartoon">Political Cartoons</option>
+        <option value="Archival Photograph">Archival Photographs</option>
+        <option value="Painting / Portrait">Paintings &amp; Portraits</option>
+        <option value="Cartographic Map / Plan">Maps &amp; Plans</option>
+        <option value="Historical Document / Manuscript">Documents &amp; Manuscripts</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="filter-status">Status:</label>
+      <select id="filter-status">
+        <option value="ALL">All Statuses</option>
+        <option value="VERIFIED">Verified Clean</option>
+        <option value="SHARED_ASSET">Shared / Thematic</option>
+        <option value="MEDIUM_MISMATCH">Medium Mismatches</option>
+        <option value="MISSING_FILE">Missing Files</option>
+      </select>
+    </div>
+  </div>
+
+  <main>
+    <div class="gallery-grid" id="gallery-container">
+      <div style="padding: 40px; text-align: center; color: #64748b; font-size: 1rem;">
+        <i class="fa-solid fa-spinner fa-spin" style="font-size: 1.5rem; margin-bottom: 12px; display: block;"></i>
+        Loading Visual Verification Data...
+      </div>
+    </div>
+  </main>
+
+  <div id="zoom-modal" onclick="closeModal()">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <img id="zoom-img" src="" alt="Enlarged Visual Source" onclick="event.stopPropagation()">
+  </div>
+
+  <script>
+    let allSources = [];
+    let auditData = null;
+
+    async function loadAuditData() {
+      try {
+        const res = await fetch('/data/visual_verification_audit.json');
+        auditData = await res.json();
+        allSources = auditData.sources || [];
+        renderStats();
+        populateUnitFilter();
+        renderGallery();
+      } catch (err) {
+        console.error('Failed to load audit data:', err);
+        document.getElementById('gallery-container').innerHTML = `
+          <div style="padding: 40px; text-align: center; color: #ef4444;">
+            <i class="fa-solid fa-circle-exclamation" style="font-size: 2rem; margin-bottom: 12px;"></i>
+            <h3>Failed to load visual audit dataset</h3>
+            <p>Please ensure <code>scripts/audit_and_verify_sources_visually.cjs</code> has been executed.</p>
+          </div>
+        `;
+      }
+    }
+
+    function renderStats() {
+      if (!auditData) return;
+      document.getElementById('stat-total').textContent = auditData.totalSources || allSources.length;
+      document.getElementById('stat-verified').textContent = auditData.verifiedCount || 0;
+      document.getElementById('stat-shared').textContent = auditData.sharedCount || 0;
+      document.getElementById('stat-mismatch').textContent = auditData.mediumMismatchCount || 0;
+      document.getElementById('stat-missing').textContent = auditData.missingFileCount || 0;
+    }
+
+    function populateUnitFilter() {
+      const unitSelect = document.getElementById('filter-unit');
+      const unitsMap = new Map();
+      allSources.forEach(s => {
+        if (!unitsMap.has(s.unitId)) unitsMap.set(s.unitId, s.unitTitle || s.unitId);
+      });
+      const sortedUnits = Array.from(unitsMap.entries()).sort((a,b) => a[1].localeCompare(b[1]));
+      sortedUnits.forEach(([id, name]) => {
+        const opt = document.createElement('option');
+        opt.value = id;
+        opt.textContent = name;
+        unitSelect.appendChild(opt);
+      });
+    }
+
+    function renderGallery() {
+      const container = document.getElementById('gallery-container');
+      const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+      const selectedUnit = document.getElementById('filter-unit').value;
+      const selectedMedium = document.getElementById('filter-medium').value;
+      const selectedStatus = document.getElementById('filter-status').value;
+
+      const filtered = allSources.filter(s => {
+        if (selectedUnit !== 'ALL' && s.unitId !== selectedUnit) return false;
+        if (selectedMedium !== 'ALL' && s.expectedMedium !== selectedMedium) return false;
+        if (selectedStatus !== 'ALL' && s.status !== selectedStatus) return false;
+        if (searchTerm) {
+          const haystack = `${s.title} ${s.caption} ${s.context} ${s.provenance} ${s.hinge_question} ${s.unitTitle}`.toLowerCase();
+          if (!haystack.includes(searchTerm)) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div style="grid-column: 1 / -1; padding: 60px 20px; text-align: center; color: #64748b;">
+            <i class="fa-solid fa-filter-circle-xmark" style="font-size: 2.2rem; margin-bottom: 14px; color: #94a3b8; display: block;"></i>
+            <h3>No visual sources match the active filter criteria</h3>
+            <p style="margin-top: 6px;">Try adjusting your search terms or clearing selected dropdown filters.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(s => {
+        let statusClass = 'verified';
+        let statusLabel = 'VERIFIED ARTIFACT';
+        let statusIcon = 'fa-check-circle';
+
+        if (s.status === 'SHARED_ASSET') {
+          statusClass = 'shared';
+          statusLabel = 'THEMATIC SHARED';
+          statusIcon = 'fa-arrows-rotate';
+        } else if (s.status === 'MEDIUM_MISMATCH') {
+          statusClass = 'mismatch';
+          statusLabel = 'MEDIUM REVIEW';
+          statusIcon = 'fa-triangle-exclamation';
+        } else if (s.status === 'MISSING_FILE') {
+          statusClass = 'missing';
+          statusLabel = 'MISSING ASSET';
+          statusIcon = 'fa-circle-xmark';
+        }
+
+        const lessonNum = s.lessonId.replace(/\D/g, '') || '1';
+        const portalUrl = `/index.html?view=lessons&unit=${s.unitId}&lesson=${lessonNum}`;
+
+        return `
+          <div class="source-card">
+            <div class="card-top-bar">
+              <span class="unit-tag">${s.unitTitle || s.unitId} • ${s.lessonId}</span>
+              <span class="status-badge ${statusClass}">
+                <i class="fa-solid ${statusIcon}"></i> ${statusLabel}
+              </span>
+            </div>
+
+            <div class="card-content-split">
+              <div class="card-media-col">
+                <div class="img-frame" onclick="openModal('${s.imagePath}')" title="Click to zoom inspect">
+                  <img src="${s.imagePath}" alt="${s.title}" onerror="this.onerror=null; this.src='/images/placeholder.jpg';">
+                </div>
+                <div class="medium-chip">
+                  <i class="fa-solid fa-tag" style="margin-right: 4px; color: #64748b;"></i>
+                  ${s.expectedMedium}
+                </div>
+              </div>
+
+              <div class="card-info-col">
+                <div class="source-title">${s.title}</div>
+                ${s.caption ? `<div class="source-caption">${s.caption}</div>` : ''}
+                ${s.provenance ? `<div class="source-provenance"><strong>Provenance:</strong> ${s.provenance}</div>` : ''}
+
+                ${s.hinge_question ? `
+                  <div class="source-hinge-box">
+                    <div class="hinge-title">
+                      <i class="fa-solid fa-lightbulb" style="color: #2563eb;"></i>
+                      Hinge Question / Discussion Prompt
+                    </div>
+                    <div class="hinge-text">💭 ${s.hinge_question}</div>
+
+                    ${Array.isArray(s.discussion_ideas) && s.discussion_ideas.length > 0 ? `
+                      <div class="exemplar-list">
+                        ${s.discussion_ideas.map((idea, idx) => `
+                          <div class="exemplar-item">
+                            <strong style="color: #2563eb; text-transform: uppercase; font-size: 0.68rem; margin-right: 4px;">
+                              ${s.discussion_ideas.length === 1 ? 'Model Answer' : `Point ${idx + 1}`}:
+                            </strong>
+                            ${idea}
+                          </div>
+                        `).join('')}
+                      </div>
+                    ` : ''}
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+
+            <div class="card-footer-bar">
+              <span class="file-path-pill" title="${s.imagePath}">${s.imagePath}</span>
+              <a href="${portalUrl}" target="_blank" class="launch-btn" title="Open lesson in live portal">
+                <span>View in Lesson</span>
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.72rem;"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function openModal(imgSrc) {
+      document.getElementById('zoom-img').src = imgSrc;
+      document.getElementById('zoom-modal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('zoom-modal').classList.remove('active');
+    }
+
+    document.getElementById('search-input').addEventListener('input', renderGallery);
+    document.getElementById('filter-unit').addEventListener('change', renderGallery);
+    document.getElementById('filter-medium').addEventListener('change', renderGallery);
+    document.getElementById('filter-status').addEventListener('change', renderGallery);
+
+    loadAuditData();
+  </script>
+</body>
+</html>

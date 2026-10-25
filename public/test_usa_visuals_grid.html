@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USA 1954–1975 Visual Source Verification Rig | The History Revision Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #111827;
+      --card-bg: #1f2937;
+      --border: #374151;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent-blue: #3b82f6;
+      --accent-gold: #f59e0b;
+      --accent-green: #10b981;
+      --accent-red: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 30px;
+    }
+    header {
+      max-width: 1400px;
+      margin: 0 auto 30px auto;
+      padding: 24px;
+      background: var(--surface);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    .lesson-section {
+      max-width: 1400px;
+      margin: 0 auto 40px auto;
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 24px;
+      border: 1px solid var(--border);
+    }
+    .lesson-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .lesson-badge {
+      background: var(--accent-blue);
+      color: white;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+    .lesson-header h2 {
+      font-size: 1.25rem;
+      color: #ffffff;
+    }
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+      gap: 24px;
+    }
+    .source-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .source-card-header {
+      padding: 10px 14px;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .source-letter-badge {
+      background: var(--accent-gold);
+      color: #000;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .file-name {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: #93c5fd;
+    }
+    .image-wrapper {
+      position: relative;
+      width: 100%;
+      height: 280px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-wrapper img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .image-overlay {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      display: flex;
+      gap: 8px;
+    }
+    .status-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .status-loaded { background: var(--accent-green); color: #000; }
+    .status-pending { background: var(--accent-gold); color: #000; }
+    .status-error { background: var(--accent-red); color: #fff; }
+    .dimensions-badge {
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .source-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .source-title {
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-weight: 600;
+    }
+    .source-caption, .source-provenance {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .source-caption strong, .source-provenance strong {
+      color: var(--text);
+    }
+    .hinge-box {
+      margin-top: auto;
+      padding: 10px;
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 3px solid var(--accent-blue);
+      border-radius: 4px;
+    }
+    .hinge-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #60a5fa;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .hinge-text {
+      font-size: 0.82rem;
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The History Revision Hub — USA 1954–1975</h1>
+    <p class="subtitle">Complete Visual Source Verification Test Rig (49 Archival Sources Across 16 Lessons)</p>
+  </header>
+  <main>
+    
+    <section class="lesson-section" id="lesson-1">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 1</span>
+        <h2>KT 1.1: What was the position of Black Americans in the early 1950s?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="1" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">colored-waiting-room-sign.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/colored-waiting-room-sign.jpg" alt="Source A: 'Colored Waiting Room' Jim Crow Railway and Bus Terminal Sign (c. 1950)" loading="eager" onload="document.getElementById('dim-1-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-1-A').className = 'status-tag status-loaded'; document.getElementById('status-1-A').textContent = 'LOADED';" onerror="document.getElementById('status-1-A').className = 'status-tag status-error'; document.getElementById('status-1-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-1-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-1-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: 'Colored Waiting Room' Jim Crow Railway and Bus Terminal Sign (c. 1950)</h3>
+          <p class="source-caption"><strong>Caption:</strong> A Jim Crow sign designating a segregated 'Colored Waiting Room' in a bus terminal in the Southern United States.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Southern Railway Co. / Jack Delano (FSA/OWI Photographer), Library of Congress, Washington D.C. (LOC Prints & Photographs LC-USZ62-124451), c. 1950.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did de jure segregation in public transportation and waiting rooms represent a central mechanism of Jim Crow social control in the American South?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="1" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">warren-court-1954.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/warren-court-1954.jpg" alt="Source B: The Warren Court Justiciars Following the Brown v. Board Decision (17 May 1954)" loading="eager" onload="document.getElementById('dim-1-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-1-B').className = 'status-tag status-loaded'; document.getElementById('status-1-B').textContent = 'LOADED';" onerror="document.getElementById('status-1-B').className = 'status-tag status-error'; document.getElementById('status-1-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-1-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-1-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: The Warren Court Justiciars Following the Brown v. Board Decision (17 May 1954)</h3>
+          <p class="source-caption"><strong>Caption:</strong> The NAACP Legal Defense Fund, led by Thurgood Marshall, challenged segregation laws before Chief Justice Earl Warren and the Supreme Court.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Harris & Ewing Photographic Studio, Library of Congress, Washington D.C. (LOC Prints & Photographs LC-H814-T-B01-001), 17 May 1954.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why was achieving a unanimous 9–0 ruling under Chief Justice Earl Warren crucial for the constitutional authority of the Brown decision?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-2">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 2</span>
+        <h2>KT 1.2: How did developments in education challenge segregation (1954–57)?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="2" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">eisenhower-little-rock-speech.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/eisenhower-little-rock-speech.jpg" alt="Source A: President Dwight D. Eisenhower Delivering Nationally Televised Address on Little Rock Crisis (24 September 1957)" loading="eager" onload="document.getElementById('dim-2-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-2-A').className = 'status-tag status-loaded'; document.getElementById('status-2-A').textContent = 'LOADED';" onerror="document.getElementById('status-2-A').className = 'status-tag status-error'; document.getElementById('status-2-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-2-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-2-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: President Dwight D. Eisenhower Delivering Nationally Televised Address on Little Rock Crisis (24 September 1957)</h3>
+          <p class="source-caption"><strong>Caption:</strong> President Eisenhower addressing the nation on the constitutional necessity of enforcing federal court desegregation orders.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> White House Photographic Staff / US Information Agency, Dwight D. Eisenhower Presidential Library / US National Archives (NARA) (NARA ARC 7452285 / Accession 71-61-1), 24 September 1957.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did President Eisenhower view Governor Faubus's defiance at Little Rock as a direct constitutional threat to federal presidential authority?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="2" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">airborne-little-rock-patrol.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/airborne-little-rock-patrol.jpg" alt="Source B: Soldiers of the 101st Airborne Division Escorting the 'Little Rock Nine' into Central High (25 September 1957)" loading="eager" onload="document.getElementById('dim-2-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-2-B').className = 'status-tag status-loaded'; document.getElementById('status-2-B').textContent = 'LOADED';" onerror="document.getElementById('status-2-B').className = 'status-tag status-error'; document.getElementById('status-2-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-2-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-2-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Soldiers of the 101st Airborne Division Escorting the 'Little Rock Nine' into Central High (25 September 1957)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Soldiers of the 101st Airborne Division escort the 'Little Rock Nine' into Central High School, September 1957.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US Army Signal Corps Photographer, Dwight D. Eisenhower Presidential Library / US National Archives (NARA) (NARA Accession 71-61-1 / ARC 541992), 25 September 1957.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">What did the necessity of armed federal paratroopers escorting high school pupils demonstrate about the depth of Southern white resistance to desegregation?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-3">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 3</span>
+        <h2>KT 1.3: How did the Montgomery Bus Boycott happen, and why did it succeed?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="3" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">rosa-parks-fingerprint.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/rosa-parks-fingerprint.jpg" alt="Source A: Rosa Parks Police Booking Fingerprint Record Following Arrest in Montgomery (1 December 1955)" loading="eager" onload="document.getElementById('dim-3-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-3-A').className = 'status-tag status-loaded'; document.getElementById('status-3-A').textContent = 'LOADED';" onerror="document.getElementById('status-3-A').className = 'status-tag status-error'; document.getElementById('status-3-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-3-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-3-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Rosa Parks Police Booking Fingerprint Record Following Arrest in Montgomery (1 December 1955)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Rosa Parks being fingerprinted by Montgomery police officers following her arrest for refusing to surrender her bus seat, December 1955.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> City of Montgomery Police Department / Sheriff's Office, US National Archives and Records Administration (NARA), College Park (NARA ARC Identifier 594360), 1 December 1955.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why was Rosa Parks's arrest chosen by the Montgomery Improvement Association (MIA) as the catalyst for a mass boycott over earlier arrests?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="3" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">rosa-parks-bus-1956.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/rosa-parks-bus-1956.jpg" alt="Source B: Rosa Parks Seated at Front of Integrated City Bus in Montgomery Following Supreme Court Injunction (21 December 1956)" loading="eager" onload="document.getElementById('dim-3-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-3-B').className = 'status-tag status-loaded'; document.getElementById('status-3-B').textContent = 'LOADED';" onerror="document.getElementById('status-3-B').className = 'status-tag status-error'; document.getElementById('status-3-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-3-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-3-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Rosa Parks Seated at Front of Integrated City Bus in Montgomery Following Supreme Court Injunction (21 December 1956)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Rosa Parks sitting at the front of a newly integrated Montgomery city bus following the Browder v. Gayle ruling, December 1956.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Gene Herrick (Associated Press Photojournalist), Associated Press Archive, New York (AP Images Photo 561221034), 21 December 1956.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did the financial boycott require an ultimate Supreme Court legal ruling (Browder v. Gayle) to compel the city of Montgomery to desegregate?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-4">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 4</span>
+        <h2>KT 1.4: Why did white people in the South resist integration, and how did they do it?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="4" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">southern-manifesto-signing.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/southern-manifesto-signing.jpg" alt="Source A: The Southern Manifesto ('Declaration of Constitutional Principles') Signed by 101 Congressmen (12 March 1956)" loading="eager" onload="document.getElementById('dim-4-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-4-A').className = 'status-tag status-loaded'; document.getElementById('status-4-A').textContent = 'LOADED';" onerror="document.getElementById('status-4-A').className = 'status-tag status-error'; document.getElementById('status-4-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-4-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-4-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: The Southern Manifesto ('Declaration of Constitutional Principles') Signed by 101 Congressmen (12 March 1956)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Southern Senators and Congressmen sign the 1956 'Southern Manifesto' pledging massive resistance to federal desegregation orders.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Senator Strom Thurmond & Senator Richard Russell Jr., US National Archives and Records Administration (NARA), Washington D.C. (NARA Record Group 46 (Records of the US Senate), Sen 84A-F11), 12 March 1956.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the Southern Manifesto legitimize violent grassroots resistance by framing desegregation as federal constitutional overreach?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="4" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">kkk-march-washington-1926.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/kkk-march-washington-1926.jpg" alt="Source B: Ku Klux Klan Masked Demonstrators Parading in Regalia (13 September 1926 (Historical Revivals into the 1950s))" loading="eager" onload="document.getElementById('dim-4-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-4-B').className = 'status-tag status-loaded'; document.getElementById('status-4-B').textContent = 'LOADED';" onerror="document.getElementById('status-4-B').className = 'status-tag status-error'; document.getElementById('status-4-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-4-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-4-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Ku Klux Klan Masked Demonstrators Parading in Regalia (13 September 1926 (Historical Revivals into the 1950s))</h3>
+          <p class="source-caption"><strong>Caption:</strong> Ku Klux Klan members in regalia; the KKK experienced a violent revival across the Deep South during the 1950s.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> National Photo Company Collection, Library of Congress, Washington D.C. (LOC Prints & Photographs LC-DIG-npcc-16168), 13 September 1926 (Historical Revivals into the 1950s).</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the terror tactics of the Ku Klux Klan complement the legal and economic obstruction practiced by White Citizens' Councils in the South?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-5">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 5</span>
+        <h2>KT 2.1: How did peaceful protests (like sit-ins and Freedom Rides) force the government to act?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="5" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">greensboro-sit-in-counter.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/greensboro-sit-in-counter.jpg" alt="Source A: The Greensboro Four Stool Counter Sit-In at F.W. Woolworth Lunch Counter (1 February 1960)" loading="eager" onload="document.getElementById('dim-5-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-5-A').className = 'status-tag status-loaded'; document.getElementById('status-5-A').textContent = 'LOADED';" onerror="document.getElementById('status-5-A').className = 'status-tag status-error'; document.getElementById('status-5-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-5-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-5-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: The Greensboro Four Stool Counter Sit-In at F.W. Woolworth Lunch Counter (1 February 1960)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Black college students stage a non-violent sit-in at the segregated Woolworth's lunch counter in Greensboro, North Carolina, February 1960.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Jack Moebes (Greensboro Record Photojournalist), Smithsonian National Museum of American History, Washington D.C. (Smithsonian Object 1990.0076.01), 1 February 1960.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did economic disruption through lunch counter sit-ins force commercial retailers to integrate faster than litigation in local courts?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="5" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">freedom-riders-bus-wreckage.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/freedom-riders-bus-wreckage.jpg" alt="Source B: Charred Chassis of the Firebombed CORE Freedom Riders Bus Outside Anniston, Alabama (14 May 1961)" loading="eager" onload="document.getElementById('dim-5-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-5-B').className = 'status-tag status-loaded'; document.getElementById('status-5-B').textContent = 'LOADED';" onerror="document.getElementById('status-5-B').className = 'status-tag status-error'; document.getElementById('status-5-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-5-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-5-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Charred Chassis of the Firebombed CORE Freedom Riders Bus Outside Anniston, Alabama (14 May 1961)</h3>
+          <p class="source-caption"><strong>Caption:</strong> The firebombed wreckage of a Greyhound Freedom Riders bus in Anniston, Alabama, attacked by a white supremacist mob, May 1961.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Federal Bureau of Investigation (Investigative Photo Division), US National Archives and Records Administration (NARA), College Park (NARA ARC 7452277 (Record Group 65, Records of the FBI)), 14 May 1961.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the graphic media coverage of the Anniston bus bombing force the Kennedy administration to enforce interstate desegregation?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="5" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">james-meredith-walking.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/james-meredith-walking.jpg" alt="Source C: James Meredith Walking on University of Mississippi Campus Escorted by US Marshals (1 October 1962)" loading="eager" onload="document.getElementById('dim-5-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-5-C').className = 'status-tag status-loaded'; document.getElementById('status-5-C').textContent = 'LOADED';" onerror="document.getElementById('status-5-C').className = 'status-tag status-error'; document.getElementById('status-5-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-5-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-5-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: James Meredith Walking on University of Mississippi Campus Escorted by US Marshals (1 October 1962)</h3>
+          <p class="source-caption"><strong>Caption:</strong> James Meredith walks on the campus of the University of Mississippi, escorted by federal marshals after deadly rioting, October 1962.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Marion S. Trikosko (US News & World Report), Library of Congress, Washington D.C. (LOC Prints & Photographs LC-U9-8669-14), 1 October 1962.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did James Meredith's admission to 'Ole Miss' necessitate the largest deployment of federal troops on US soil since Reconstruction?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="5" data-source="D">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source D</span>
+          <span class="file-name">birmingham-protests-dogs-1963.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/birmingham-protests-dogs-1963.jpg" alt="Source D: Birmingham Police K-9 Attack Dogs Lunging at Teenage Demonstrator Walter Gadsden (3 May 1963)" loading="eager" onload="document.getElementById('dim-5-D').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-5-D').className = 'status-tag status-loaded'; document.getElementById('status-5-D').textContent = 'LOADED';" onerror="document.getElementById('status-5-D').className = 'status-tag status-error'; document.getElementById('status-5-D').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-5-D">CHECKING</span>
+            <span class="dimensions-badge" id="dim-5-D">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source D: Birmingham Police K-9 Attack Dogs Lunging at Teenage Demonstrator Walter Gadsden (3 May 1963)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Birmingham police under Commissioner 'Bull' Connor unleash attack dogs on teenage civil rights demonstrators, May 1963.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Bill Hudson (Associated Press Photojournalist), Associated Press Archive, New York (AP Images Photo 630503091), 3 May 1963.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did Bull Connor's deployment of police dogs and high-pressure firehoses against children transform national public opinion on civil rights?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-6">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 6</span>
+        <h2>KT 2.2: How did protests in Birmingham and Selma lead to the Civil and Voting Rights Acts?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="6" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">march-on-washington-crowd.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/march-on-washington-crowd.jpg" alt="Source A: Panoramic View of Demonstrators Surrounding the Lincoln Memorial Reflecting Pool at the March on Washington (28 August 1963)" loading="eager" onload="document.getElementById('dim-6-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-6-A').className = 'status-tag status-loaded'; document.getElementById('status-6-A').textContent = 'LOADED';" onerror="document.getElementById('status-6-A').className = 'status-tag status-error'; document.getElementById('status-6-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-6-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-6-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Panoramic View of Demonstrators Surrounding the Lincoln Memorial Reflecting Pool at the March on Washington (28 August 1963)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Over 250,000 civil rights demonstrators gather at the Lincoln Memorial during the historic March on Washington, August 1963.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Warren K. Leffler (US News & World Report), Library of Congress, Washington D.C. (LOC Prints & Photographs LC-U9-10360-15), 28 August 1963.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the disciplined, multi-racial character of the March on Washington undermine segregationist claims that civil rights activism was communist or violent?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="6" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">lbj-mlk-signing-1964.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/lbj-mlk-signing-1964.jpg" alt="Source B: President Lyndon B. Johnson Handing Pen to Dr Martin Luther King Jr. at Signing of Civil Rights Act of 1964 (2 July 1964)" loading="eager" onload="document.getElementById('dim-6-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-6-B').className = 'status-tag status-loaded'; document.getElementById('status-6-B').textContent = 'LOADED';" onerror="document.getElementById('status-6-B').className = 'status-tag status-error'; document.getElementById('status-6-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-6-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-6-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: President Lyndon B. Johnson Handing Pen to Dr Martin Luther King Jr. at Signing of Civil Rights Act of 1964 (2 July 1964)</h3>
+          <p class="source-caption"><strong>Caption:</strong> President Lyndon B. Johnson shakes hands with Martin Luther King Jr. after signing the landmark Civil Rights Act of 1964.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Cecil W. Stoughton (White House Official Photographer), Lyndon B. Johnson Presidential Library / US National Archives (NARA) (LBJ Library Photo Collection W-229-2-WH64), 2 July 1964.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did the Civil Rights Act of 1964 require federal funding cut-off powers (Title VI) to compel compliance from recalcitrant Southern authorities?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="6" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">selma-troopers-bridge.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/selma-troopers-bridge.jpg" alt="Source C: Alabama State Troopers and Possemen Confronting Voting Rights Marchers on 'Bloody Sunday' at Edmund Pettus Bridge (7 March 1965)" loading="eager" onload="document.getElementById('dim-6-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-6-C').className = 'status-tag status-loaded'; document.getElementById('status-6-C').textContent = 'LOADED';" onerror="document.getElementById('status-6-C').className = 'status-tag status-error'; document.getElementById('status-6-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-6-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-6-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Alabama State Troopers and Possemen Confronting Voting Rights Marchers on 'Bloody Sunday' at Edmund Pettus Bridge (7 March 1965)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Alabama State Troopers violently charge peaceful voting rights marchers on the Edmund Pettus Bridge on 'Bloody Sunday', March 7, 1965.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Spider Martin (The Birmingham News Photojournalist), Library of Congress, Washington D.C. (LOC Prints & Photographs LC-DIG-ppmsca-38435), 7 March 1965.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did national television broadcasts of 'Bloody Sunday' make the passage of the Voting Rights Act of 1965 politically inevitable?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-7">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 7</span>
+        <h2>KT 2.3: What was the Black Power movement, and how did it differ from non-violent protests?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="7" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">malcolm-x-speaking.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/malcolm-x-speaking.jpg" alt="Source A: Malcolm X Addressing a Mass Rally and Press Conference in Harlem, New York City (23 March 1964)" loading="eager" onload="document.getElementById('dim-7-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-7-A').className = 'status-tag status-loaded'; document.getElementById('status-7-A').textContent = 'LOADED';" onerror="document.getElementById('status-7-A').className = 'status-tag status-error'; document.getElementById('status-7-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-7-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-7-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Malcolm X Addressing a Mass Rally and Press Conference in Harlem, New York City (23 March 1964)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Malcolm X delivers a speech condemning non-violence as defenseless in the face of white supremacist terror, 1964.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Marion S. Trikosko (US News & World Report), Library of Congress, Washington D.C. (LOC Prints & Photographs LC-U9-11696-26), 23 March 1964.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did Malcolm X's philosophy of armed self-defense and Black nationalism resonate strongly with Northern urban communities unaffected by Southern integration laws?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="7" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">olympics-black-power-1968.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/olympics-black-power-1968.jpg" alt="Source B: Tommie Smith and John Carlos Raising Black-Gloved Fists on the 200m Olympic Medal Podium in Mexico City (16 October 1968)" loading="eager" onload="document.getElementById('dim-7-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-7-B').className = 'status-tag status-loaded'; document.getElementById('status-7-B').textContent = 'LOADED';" onerror="document.getElementById('status-7-B').className = 'status-tag status-error'; document.getElementById('status-7-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-7-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-7-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Tommie Smith and John Carlos Raising Black-Gloved Fists on the 200m Olympic Medal Podium in Mexico City (16 October 1968)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Tommie Smith and John Carlos give the Black Power raised-fist salute on the Olympic medal podium in Mexico City, October 1968.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Angelo Cozzi (Photographer for Olympic Pool), International Olympic Committee Archives / Olympic World Library, Lausanne (IOC Historical Photographic Archive Ref 1968-MEX-0412), 16 October 1968.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the 1968 Olympic podium protest internationalize the domestic struggle against American racial injustice?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="7" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">black-panthers-marching.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/black-panthers-marching.jpg" alt="Source C: Armed Black Panther Party Members Demonstrating on the Steps of the California State Capitol in Sacramento (2 May 1967)" loading="eager" onload="document.getElementById('dim-7-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-7-C').className = 'status-tag status-loaded'; document.getElementById('status-7-C').textContent = 'LOADED';" onerror="document.getElementById('status-7-C').className = 'status-tag status-error'; document.getElementById('status-7-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-7-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-7-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Armed Black Panther Party Members Demonstrating on the Steps of the California State Capitol in Sacramento (2 May 1967)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Armed members of the Black Panther Party for Self-Defense march in Oakland and Sacramento, demanding an end to police brutality.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Walt Zeboski (Associated Press Photojournalist), Associated Press Archive, New York (AP Images Photo 670502012), 2 May 1967.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did the Black Panther Party's open carry of firearms provoke urgent gun control legislation (the Mulford Act) from California authorities?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-8">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 8</span>
+        <h2>KT 2.4: Why did riots break out in American cities between 1965 and 1968?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="8" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">detroit-riot-guard-1967.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/detroit-riot-guard-1967.jpg" alt="Source A: Michigan National Guard Patrols Debris-Strewn 12th Street During the Detroit Rebellion (24 July 1967)" loading="eager" onload="document.getElementById('dim-8-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-8-A').className = 'status-tag status-loaded'; document.getElementById('status-8-A').textContent = 'LOADED';" onerror="document.getElementById('status-8-A').className = 'status-tag status-error'; document.getElementById('status-8-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-8-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-8-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Michigan National Guard Patrols Debris-Strewn 12th Street During the Detroit Rebellion (24 July 1967)</h3>
+          <p class="source-caption"><strong>Caption:</strong> National Guardsmen patrol burning streets in Detroit during the July 1967 rebellion, which left 43 people dead.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US Army Signal Corps / Department of Defense Official Photographer, US National Archives and Records Administration (NARA), College Park (NARA Record Group 111-SC-638210), 24 July 1967.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did urban revolts erupt in Northern and Western cities despite the recent passage of federal civil rights laws?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="8" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">poor-peoples-campaign-1968.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/poor-peoples-campaign-1968.jpg" alt="Source B: Demonstrators Assembling Shantytown Tents at 'Resurrection City' on the National Mall for the Poor People's Campaign (May 1968)" loading="eager" onload="document.getElementById('dim-8-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-8-B').className = 'status-tag status-loaded'; document.getElementById('status-8-B').textContent = 'LOADED';" onerror="document.getElementById('status-8-B').className = 'status-tag status-error'; document.getElementById('status-8-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-8-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-8-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Demonstrators Assembling Shantytown Tents at 'Resurrection City' on the National Mall for the Poor People's Campaign (May 1968)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Demonstrators camp at 'Resurrection City' in Washington D.C. as part of the Poor People's Campaign initiated by MLK.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Warren K. Leffler (US News & World Report), Library of Congress, Washington D.C. (LOC Prints & Photographs LC-U9-19198-18), May 1968.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did Martin Luther King Jr. shift his primary strategic focus from racial desegregation to structural economic inequality and poverty in 1967–68?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="8" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">mourners-mlk-assassination.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/mourners-mlk-assassination.jpg" alt="Source C: Over 100,000 Mourners Marching Behind the Mule-Drawn Farm Wagon Bearing Dr King's Casket in Atlanta (9 April 1968)" loading="eager" onload="document.getElementById('dim-8-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-8-C').className = 'status-tag status-loaded'; document.getElementById('status-8-C').textContent = 'LOADED';" onerror="document.getElementById('status-8-C').className = 'status-tag status-error'; document.getElementById('status-8-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-8-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-8-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Over 100,000 Mourners Marching Behind the Mule-Drawn Farm Wagon Bearing Dr King's Casket in Atlanta (9 April 1968)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Over 100,000 mourners follow the mule-drawn carriage carrying Martin Luther King Jr.’s casket through Atlanta, April 1968.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Associated Press Staff Photographer, Associated Press Archive, New York (AP Images Photo 680409028), 9 April 1968.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the assassination of Martin Luther King Jr. shatter mainstream belief in the efficacy of non-violent protest among younger civil rights activists?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="8" data-source="D">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source D</span>
+          <span class="file-name">lbj-signing-voting-rights-1965.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/lbj-signing-voting-rights-1965.jpg" alt="Source D: President Lyndon B. Johnson Signing the Voting Rights Act of 1965 in the President's Room of the US Capitol (6 August 1965)" loading="eager" onload="document.getElementById('dim-8-D').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-8-D').className = 'status-tag status-loaded'; document.getElementById('status-8-D').textContent = 'LOADED';" onerror="document.getElementById('status-8-D').className = 'status-tag status-error'; document.getElementById('status-8-D').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-8-D">CHECKING</span>
+            <span class="dimensions-badge" id="dim-8-D">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source D: President Lyndon B. Johnson Signing the Voting Rights Act of 1965 in the President's Room of the US Capitol (6 August 1965)</h3>
+          <p class="source-caption"><strong>Caption:</strong> President Johnson signs the Voting Rights Act of 1965, dramatically increasing Black voter registration and elected officials across the South by 1975.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Cecil W. Stoughton (White House Official Photographer), Lyndon B. Johnson Presidential Library / US National Archives (NARA) (LBJ Library Photo Collection 65-8-12-WH), 6 August 1965.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">What concrete political gains had Black Americans achieved by 1975 as a direct result of federal voting rights legislation?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-9">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 9</span>
+        <h2>KT 3.1: Why did the US support the unpopular government of Ngo Dinh Diem in South Vietnam?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="9" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">ho-chi-minh-trail-bicycles.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/ho-chi-minh-trail-bicycles.jpg" alt="Source A: Viet Minh Logistics Porters Utilizing Reinforced Bicycles to Transport Artillery to the Hills Above Dien Bien Phu (March–May 1954)" loading="eager" onload="document.getElementById('dim-9-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-9-A').className = 'status-tag status-loaded'; document.getElementById('status-9-A').textContent = 'LOADED';" onerror="document.getElementById('status-9-A').className = 'status-tag status-error'; document.getElementById('status-9-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-9-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-9-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Viet Minh Logistics Porters Utilizing Reinforced Bicycles to Transport Artillery to the Hills Above Dien Bien Phu (March–May 1954)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Viet Minh logistical supply lines; ordinary peasants used modified bicycles to carry heavy artillery up mountains surrounding Dien Bien Phu.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Vietnam News Agency (VNA) Documentary Unit, Vietnam National Military History Museum / French Ministry of Defense Archive (ECPAD) (ECPAD Photographic Archive TONK-54-12), March–May 1954.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did French colonial commanders fail to anticipate the logistical endurance and terrain mastery of Vo Nguyen Giap's Viet Minh forces?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="9" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">ngo-dinh-diem-parade.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/ngo-dinh-diem-parade.jpg" alt="Source B: South Vietnamese President Ngo Dinh Diem in Open-Top Ceremonial Motorcade in Saigon (October 1955)" loading="eager" onload="document.getElementById('dim-9-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-9-B').className = 'status-tag status-loaded'; document.getElementById('status-9-B').textContent = 'LOADED';" onerror="document.getElementById('status-9-B').className = 'status-tag status-error'; document.getElementById('status-9-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-9-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-9-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: South Vietnamese President Ngo Dinh Diem in Open-Top Ceremonial Motorcade in Saigon (October 1955)</h3>
+          <p class="source-caption"><strong>Caption:</strong> South Vietnamese President Ngo Dinh Diem in a motorcade; backed by US financial aid to prevent a communist election victory.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US Information Service (USIS) Saigon Bureau, Dwight D. Eisenhower Presidential Library / US National Archives (NARA) (NARA Accession 57-194-1 / ARC 7452288), October 1955.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did the US government support Ngo Dinh Diem despite his authoritarian methods and rigging of the 1955 referendum?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="9" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">buddhist-protests-1963.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/buddhist-protests-1963.jpg" alt="Source C: Eyewitness Photograph of Buddhist Monk Thich Quang Duc's Self-Immolation at a Busy Saigon Intersection (11 June 1963)" loading="eager" onload="document.getElementById('dim-9-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-9-C').className = 'status-tag status-loaded'; document.getElementById('status-9-C').textContent = 'LOADED';" onerror="document.getElementById('status-9-C').className = 'status-tag status-error'; document.getElementById('status-9-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-9-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-9-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Eyewitness Photograph of Buddhist Monk Thich Quang Duc's Self-Immolation at a Busy Saigon Intersection (11 June 1963)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Buddhist monk Thich Quang Duc self-immolates in Saigon in June 1963 in protest against religious persecution by Diem's regime.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Malcolm Browne (Associated Press Bureau Chief), Associated Press Archive, New York (AP Images Photo 630611019), 11 June 1963.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did international media outrage over the Buddhist crisis convince President Kennedy that Diem's regime was no longer politically viable?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-10">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 10</span>
+        <h2>KT 3.2: Why did the US send combat troops to Vietnam after the Gulf of Tonkin incident?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="10" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">us-soldier-patrolling-swamp.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg" alt="Source A: US Army Conscript Cautiously Traversing Mangrove Swamp in Search of Guerrilla Insurgents in the Mekong Delta (1966)" loading="eager" onload="document.getElementById('dim-10-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-10-A').className = 'status-tag status-loaded'; document.getElementById('status-10-A').textContent = 'LOADED';" onerror="document.getElementById('status-10-A').className = 'status-tag status-error'; document.getElementById('status-10-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-10-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-10-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: US Army Conscript Cautiously Traversing Mangrove Swamp in Search of Guerrilla Insurgents in the Mekong Delta (1966)</h3>
+          <p class="source-caption"><strong>Caption:</strong> A US infantryman cautiously patrols a murky swamp in South Vietnam, where Vietcong guerrillas blended into the local rural population.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Larry Burrows (Life Magazine War Photojournalist), The Life Picture Collection / International Center of Photography, New York (Life Collection Photographic Archive LB-1966-VN-04), 1966.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the geographical terrain and guerrilla tactics of the Vietcong neutralize the technological superiority of conventional US infantry?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="10" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">uss-maddox.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/uss-maddox.jpg" alt="Source B: USS Maddox (DD-731) Destroyer Underway in the Waters of the Gulf of Tonkin (2 August 1964)" loading="eager" onload="document.getElementById('dim-10-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-10-B').className = 'status-tag status-loaded'; document.getElementById('status-10-B').textContent = 'LOADED';" onerror="document.getElementById('status-10-B').className = 'status-tag status-error'; document.getElementById('status-10-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-10-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-10-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: USS Maddox (DD-731) Destroyer Underway in the Waters of the Gulf of Tonkin (2 August 1964)</h3>
+          <p class="source-caption"><strong>Caption:</strong> The destroyer USS Maddox, allegedly attacked by North Vietnamese torpedo boats in the Gulf of Tonkin in August 1964.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US Navy Official Photographer, Naval History and Heritage Command (NHHC), Washington Navy Yard (NHHC Photograph NH 97576), 2 August 1964.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why was the ambiguity surrounding the alleged second Gulf of Tonkin engagement of 4 August not disclosed to Congress before voting on the resolution?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="10" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">robert-mcnamara-briefing.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/robert-mcnamara-briefing.jpg" alt="Source C: Secretary of Defense Robert McNamara Pointing to Southeast Asian Maps During Pentagon Escalation Briefing (26 April 1965)" loading="eager" onload="document.getElementById('dim-10-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-10-C').className = 'status-tag status-loaded'; document.getElementById('status-10-C').textContent = 'LOADED';" onerror="document.getElementById('status-10-C').className = 'status-tag status-error'; document.getElementById('status-10-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-10-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-10-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Secretary of Defense Robert McNamara Pointing to Southeast Asian Maps During Pentagon Escalation Briefing (26 April 1965)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Secretary of Defense Robert McNamara uses maps during a Pentagon press briefing on airstrikes against North Vietnam, 1965.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Yoichi Okamoto (White House Official Photographer), Lyndon B. Johnson Presidential Library / US National Archives (NARA) (LBJ Library Photo Collection 65-4-19-WH), 26 April 1965.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the 'Domino Theory' shape Robert McNamara's and the Johnson administration's strategic calculations in escalating US combat troop commitments?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="10" data-source="D">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source D</span>
+          <span class="file-name">marines-landing-danang.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/marines-landing-danang.jpg" alt="Source D: US Marines of the 9th Marine Expeditionary Brigade Wading Ashore at Red Beach, Da Nang (8 March 1965)" loading="eager" onload="document.getElementById('dim-10-D').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-10-D').className = 'status-tag status-loaded'; document.getElementById('status-10-D').textContent = 'LOADED';" onerror="document.getElementById('status-10-D').className = 'status-tag status-error'; document.getElementById('status-10-D').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-10-D">CHECKING</span>
+            <span class="dimensions-badge" id="dim-10-D">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source D: US Marines of the 9th Marine Expeditionary Brigade Wading Ashore at Red Beach, Da Nang (8 March 1965)</h3>
+          <p class="source-caption"><strong>Caption:</strong> US Marines wade ashore at Da Nang in March 1965, marking the start of direct American combat troop involvement in Vietnam.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US Marine Corps Official Combat Photographer, US National Archives and Records Administration (NARA), College Park (NARA Record Group 127-GC-111094), 8 March 1965.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did the deployment of 3,500 Marines to protect the Da Nang airbase inevitably expand into offensive search-and-destroy combat across South Vietnam?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-11">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 11</span>
+        <h2>KT 3.3: Why did US military tactics (like bombing and search & destroy) fail to defeat the Vietcong?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="11" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">us-troops-bogged-down.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/us-troops-bogged-down.jpg" alt="Source A: Infantrymen of the 1st Cavalry Division Trudging Through Dense Bamboo Foliage and Punji-Spike Hazards (October 1966)" loading="eager" onload="document.getElementById('dim-11-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-11-A').className = 'status-tag status-loaded'; document.getElementById('status-11-A').textContent = 'LOADED';" onerror="document.getElementById('status-11-A').className = 'status-tag status-error'; document.getElementById('status-11-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-11-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-11-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Infantrymen of the 1st Cavalry Division Trudging Through Dense Bamboo Foliage and Punji-Spike Hazards (October 1966)</h3>
+          <p class="source-caption"><strong>Caption:</strong> US soldiers struggle through thick, booby-trapped jungle terrain searching for hidden Vietcong tunnel complexes.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US Army Signal Corps / NARA Combat Photography Division, US National Archives and Records Administration (NARA), College Park (NARA Record Group 111-SC-636248), October 1966.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did psychological stress and the constant threat of unseen booby traps undermine American troop discipline and morale in search-and-destroy patrols?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="11" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">agent-orange-spraying-c123.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/agent-orange-spraying-c123.jpg" alt="Source B: USAF Fairchild C-123 Provider Aircraft Spraying Agent Orange Defoliant Canopy During Operation Ranch Hand (1966)" loading="eager" onload="document.getElementById('dim-11-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-11-B').className = 'status-tag status-loaded'; document.getElementById('status-11-B').textContent = 'LOADED';" onerror="document.getElementById('status-11-B').className = 'status-tag status-error'; document.getElementById('status-11-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-11-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-11-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: USAF Fairchild C-123 Provider Aircraft Spraying Agent Orange Defoliant Canopy During Operation Ranch Hand (1966)</h3>
+          <p class="source-caption"><strong>Caption:</strong> US Air Force C-123 aircraft spray Agent Orange chemical defoliant over South Vietnamese forest canopy in Operation Ranch Hand.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US Air Force Official Photographer, National Museum of the US Air Force / US National Archives (NARA) (NARA Record Group 342-AF-080312), 1966.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the widespread deployment of chemical defoliants and napalm alienate the rural South Vietnamese population from the US and Saigon government?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="11" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">huey_combat_landing_vietnam.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/huey_combat_landing_vietnam.jpg" alt="Source C: Bell UH-1D 'Huey' Slick Helicopters Disembarking Airmobile Infantry During the Tet Counter-Offensive (February 1968)" loading="eager" onload="document.getElementById('dim-11-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-11-C').className = 'status-tag status-loaded'; document.getElementById('status-11-C').textContent = 'LOADED';" onerror="document.getElementById('status-11-C').className = 'status-tag status-error'; document.getElementById('status-11-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-11-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-11-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Bell UH-1D 'Huey' Slick Helicopters Disembarking Airmobile Infantry During the Tet Counter-Offensive (February 1968)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Huey helicopters deploy American airborne infantry into battle zones during the fierce house-to-house fighting of the Tet Offensive, 1968.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US Army Signal Corps Combat Cameraman, US National Archives and Records Administration (NARA), College Park (NARA Record Group 111-SC-642104), February 1968.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did airmobile helicopter deployment fail to secure permanent territorial control over areas cleared during combat?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="11" data-source="D">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source D</span>
+          <span class="file-name">general-westmoreland.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/general-westmoreland.jpg" alt="Source D: General William Westmoreland Briefing President Johnson in the White House Cabinet Room (6 April 1968)" loading="eager" onload="document.getElementById('dim-11-D').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-11-D').className = 'status-tag status-loaded'; document.getElementById('status-11-D').textContent = 'LOADED';" onerror="document.getElementById('status-11-D').className = 'status-tag status-error'; document.getElementById('status-11-D').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-11-D">CHECKING</span>
+            <span class="dimensions-badge" id="dim-11-D">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source D: General William Westmoreland Briefing President Johnson in the White House Cabinet Room (6 April 1968)</h3>
+          <p class="source-caption"><strong>Caption:</strong> General William Westmoreland, commander of US forces, claimed the military was winning a war of attrition right before Tet struck.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Yoichi Okamoto (White House Official Photographer), Lyndon B. Johnson Presidential Library / US National Archives (NARA) (LBJ Library Photo Collection 68-4-11-WH), 6 April 1968.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did the 'body count' metric of attrition warfare provide a fundamentally misleading picture of American strategic progress in Vietnam?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-12">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 12</span>
+        <h2>KT 3.4: What was Nixon's 'Vietnamization' policy, and did it achieve peace with honour?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="12" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">nixon-visiting-troops.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/nixon-visiting-troops.jpg" alt="Source A: President Richard Nixon Visiting Soldiers of the 1st Infantry Division at Di An, South Vietnam (30 July 1969)" loading="eager" onload="document.getElementById('dim-12-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-12-A').className = 'status-tag status-loaded'; document.getElementById('status-12-A').textContent = 'LOADED';" onerror="document.getElementById('status-12-A').className = 'status-tag status-error'; document.getElementById('status-12-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-12-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-12-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: President Richard Nixon Visiting Soldiers of the 1st Infantry Division at Di An, South Vietnam (30 July 1969)</h3>
+          <p class="source-caption"><strong>Caption:</strong> President Richard Nixon visits American infantrymen in Vietnam in July 1969 as he began phased troop withdrawals.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Oliver F. Atkins (White House Official Photographer), Richard Nixon Presidential Library and Museum / NARA (NARA ARC 194412 / White House Photo Office), 30 July 1969.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did Nixon's announcement of phased US troop withdrawals alter the diplomatic negotiating leverage of the United States in Paris?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="12" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">arvn-troops-combat.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/arvn-troops-combat.jpg" alt="Source B: South Vietnamese ARVN Paratroopers Retreating Under Intense Artillery Fire in Laos During Operation Lam Son 719 (March 1971)" loading="eager" onload="document.getElementById('dim-12-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-12-B').className = 'status-tag status-loaded'; document.getElementById('status-12-B').textContent = 'LOADED';" onerror="document.getElementById('status-12-B').className = 'status-tag status-error'; document.getElementById('status-12-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-12-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-12-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: South Vietnamese ARVN Paratroopers Retreating Under Intense Artillery Fire in Laos During Operation Lam Son 719 (March 1971)</h3>
+          <p class="source-caption"><strong>Caption:</strong> South Vietnamese ARVN troops advance under fire; despite billions in US weaponry, ARVN remained crippled by corruption and poor leadership.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Associated Press Photo Pool, Associated Press Archive, New York (AP Images Photo 710318041), March 1971.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">What did the catastrophic retreat of ARVN elite divisions in Laos reveal about the fundamental premise of 'Vietnamization'?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="12" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">nixon-television-address.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/nixon-television-address.jpg" alt="Source C: President Richard Nixon Explaining the US Military Incursion into Cambodia Using Wall Map on Live National Television (30 April 1970)" loading="eager" onload="document.getElementById('dim-12-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-12-C').className = 'status-tag status-loaded'; document.getElementById('status-12-C').textContent = 'LOADED';" onerror="document.getElementById('status-12-C').className = 'status-tag status-error'; document.getElementById('status-12-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-12-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-12-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: President Richard Nixon Explaining the US Military Incursion into Cambodia Using Wall Map on Live National Television (30 April 1970)</h3>
+          <p class="source-caption"><strong>Caption:</strong> President Nixon points to a map of Cambodia during a live televised address explaining the US military incursion, April 1970.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Oliver F. Atkins (White House Official Photographer), Richard Nixon Presidential Library and Museum / NARA (NARA ARC 194417 / White House Photo Office), 30 April 1970.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did Nixon's decision to expand ground combat into neutral Cambodia trigger unprecedented protests and violence on university campuses across the US?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="12" data-source="D">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source D</span>
+          <span class="file-name">paris-peace-accords-signing.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/paris-peace-accords-signing.jpg" alt="Source D: Delegates Signing the Paris Peace Agreement at the Centre International de Conférences (27 January 1973)" loading="eager" onload="document.getElementById('dim-12-D').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-12-D').className = 'status-tag status-loaded'; document.getElementById('status-12-D').textContent = 'LOADED';" onerror="document.getElementById('status-12-D').className = 'status-tag status-error'; document.getElementById('status-12-D').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-12-D">CHECKING</span>
+            <span class="dimensions-badge" id="dim-12-D">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source D: Delegates Signing the Paris Peace Agreement at the Centre International de Conférences (27 January 1973)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Representatives of the United States, North Vietnam, South Vietnam, and the Vietcong sign the Paris Peace Accords, January 1973.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> French Ministry of Foreign Affairs / US State Department Photographic Pool, US National Archives and Records Administration (NARA), College Park (NARA Record Group 59 (General Records of Department of State), Box 312), 27 January 1973.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why was the withdrawal of US troops accompanied by permission for 150,000 North Vietnamese PAVN troops to remain inside South Vietnam fatal to Saigon's survival?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-13">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 13</span>
+        <h2>KT 4.1: Why did so many Americans oppose the Vietnam War (like at My Lai and Kent State)?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="13" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">vietnam-draft-lottery.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/vietnam-draft-lottery.jpg" alt="Source A: Officials Drawing Birthdate Capsules from Glass Urn During First US Selective Service Draft Lottery in Washington D.C. (1 December 1969)" loading="eager" onload="document.getElementById('dim-13-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-13-A').className = 'status-tag status-loaded'; document.getElementById('status-13-A').textContent = 'LOADED';" onerror="document.getElementById('status-13-A').className = 'status-tag status-error'; document.getElementById('status-13-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-13-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-13-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Officials Drawing Birthdate Capsules from Glass Urn During First US Selective Service Draft Lottery in Washington D.C. (1 December 1969)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Officials draw birth dates during the first US selective service draft lottery in Washington D.C., December 1969.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Warren K. Leffler (US News & World Report), Library of Congress, Washington D.C. (LOC Prints & Photographs LC-U9-21942-12), 1 December 1969.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did the introduction of a universal draft lottery intensify anti-war activism among middle-class college students who previously held deferments?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="13" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">antiwar-pentagon-protest-1967.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg" alt="Source B: Anti-War Protesters Marching and Confronting Armed Military Police on Steps of the Pentagon (21 October 1967)" loading="eager" onload="document.getElementById('dim-13-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-13-B').className = 'status-tag status-loaded'; document.getElementById('status-13-B').textContent = 'LOADED';" onerror="document.getElementById('status-13-B').className = 'status-tag status-error'; document.getElementById('status-13-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-13-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-13-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Anti-War Protesters Marching and Confronting Armed Military Police on Steps of the Pentagon (21 October 1967)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Anti-war demonstrators confront military police outside the Pentagon during the massive October 1967 March on the Pentagon.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Frank Wolfe (LBJ Library Official Photographer) / Marc Riboud, Lyndon B. Johnson Presidential Library / US National Archives (NARA) (LBJ Library Photo Collection 67-10-21), 21 October 1967.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the visual contrast between unarmed student protesters and armed federal troops guarding the Pentagon reshape public perceptions of the war?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="13" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">kent-state-protests-1970.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/kent-state-protests-1970.jpg" alt="Source C: Ohio National Guardsmen Advancing with Fixed Bayonets and Rifles Toward Unarmed Demonstrators at Kent State University (4 May 1970)" loading="eager" onload="document.getElementById('dim-13-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-13-C').className = 'status-tag status-loaded'; document.getElementById('status-13-C').textContent = 'LOADED';" onerror="document.getElementById('status-13-C').className = 'status-tag status-error'; document.getElementById('status-13-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-13-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-13-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Ohio National Guardsmen Advancing with Fixed Bayonets and Rifles Toward Unarmed Demonstrators at Kent State University (4 May 1970)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Ohio National Guardsmen fire rifles into crowds of unarmed student anti-war protesters at Kent State University, killing four, May 4, 1970.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Howard Ruffner (Kent State Student Photojournalist), Kent State University Special Collections and Archives, Kent, Ohio (KSU Archives Box 4, Photo 1 / Pulitzer Archive), 4 May 1970.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did the Kent State shootings provoke a nationwide student strike involving over 4 million students and hundreds of closed campuses?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-14">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 14</span>
+        <h2>KT 4.2: Why did some Americans support the Vietnam War and the 'Silent Majority'?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="14" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">pro-war-rally-nyc.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/pro-war-rally-nyc.jpg" alt="Source A: Pro-Administration Counter-Demonstrators Marching Down Fifth Avenue in New York Supporting Armed Forces (May 1970)" loading="eager" onload="document.getElementById('dim-14-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-14-A').className = 'status-tag status-loaded'; document.getElementById('status-14-A').textContent = 'LOADED';" onerror="document.getElementById('status-14-A').className = 'status-tag status-error'; document.getElementById('status-14-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-14-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-14-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Pro-Administration Counter-Demonstrators Marching Down Fifth Avenue in New York Supporting Armed Forces (May 1970)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Pro-war demonstrators march down Fifth Avenue in New York City holding banners supporting US troops and demanding victory over communism.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Don Hogan Charles (The New York Times), The New York Times Photographic Archive, New York (NYT Photo Archive 1970-05-12-04), May 1970.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">What core values—such as patriotism, anti-communism, and respect for law and order—motivated working-class Americans to support the military mission?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="14" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">vvaw-veterans-protest.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/vvaw-veterans-protest.jpg" alt="Source B: Vietnam Veterans Against the War (VVAW) Discarding Military Medals and Purple Hearts Over the US Capitol Fence (23 April 1971)" loading="eager" onload="document.getElementById('dim-14-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-14-B').className = 'status-tag status-loaded'; document.getElementById('status-14-B').textContent = 'LOADED';" onerror="document.getElementById('status-14-B').className = 'status-tag status-error'; document.getElementById('status-14-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-14-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-14-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Vietnam Veterans Against the War (VVAW) Discarding Military Medals and Purple Hearts Over the US Capitol Fence (23 April 1971)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Vietnam Veterans Against the War (VVAW) throw their medals over the Capitol fence in Washington D.C., April 1971.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Warren K. Leffler (US News & World Report), Library of Congress, Washington D.C. (LOC Prints & Photographs LC-U9-24158-12), 23 April 1971.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why was the spectacle of decorated combat veterans repudiating their own military honors uniquely devastating to government claims of wartime honour?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="14" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">hard-hat-riot-1970.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/hard-hat-riot-1970.jpg" alt="Source C: Construction Workers in Hard Hats Clashing with Anti-War Student Protesters Near New York City Hall (8 May 1970)" loading="eager" onload="document.getElementById('dim-14-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-14-C').className = 'status-tag status-loaded'; document.getElementById('status-14-C').textContent = 'LOADED';" onerror="document.getElementById('status-14-C').className = 'status-tag status-error'; document.getElementById('status-14-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-14-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-14-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Construction Workers in Hard Hats Clashing with Anti-War Student Protesters Near New York City Hall (8 May 1970)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Construction workers wearing hard hats clash with anti-war students in Lower Manhattan during the violent 'Hard Hat Riot' of May 1970.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Neal Boenzi (The New York Times), The New York Times Photographic Archive, New York (NYT Photo Archive 1970-05-08-01), 8 May 1970.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the 'Hard Hat Riot' expose deep class and cultural antagonisms between blue-collar workers and college-educated anti-war demonstrators?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-15">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 15</span>
+        <h2>KT 4.3: How did the US exit Vietnam, and why did South Vietnam fall so quickly in 1975?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="15" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">kissinger-peace-talks.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/kissinger-peace-talks.jpg" alt="Source A: Dr Henry Kissinger and North Vietnamese Chief Negotiator Le Duc Tho Meeting at Villa in Gif-sur-Yvette Near Paris (8 January 1973)" loading="eager" onload="document.getElementById('dim-15-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-15-A').className = 'status-tag status-loaded'; document.getElementById('status-15-A').textContent = 'LOADED';" onerror="document.getElementById('status-15-A').className = 'status-tag status-error'; document.getElementById('status-15-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-15-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-15-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Dr Henry Kissinger and North Vietnamese Chief Negotiator Le Duc Tho Meeting at Villa in Gif-sur-Yvette Near Paris (8 January 1973)</h3>
+          <p class="source-caption"><strong>Caption:</strong> National Security Advisor Henry Kissinger and North Vietnamese negotiator Le Duc Tho conduct bilateral peace negotiations in Paris.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Associated Press Diplomatic Pool, Associated Press Archive, New York (AP Images Photo 730108018), 8 January 1973.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did both Henry Kissinger and Le Duc Tho recognize that the 1973 peace treaty was a temporary truce rather than a lasting settlement?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="15" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">paris-peace-accords-signing.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/paris-peace-accords-signing.jpg" alt="Source B: Formal Signing Ceremony of the Paris Peace Accords Ending US Combat Engagement in Vietnam (27 January 1973)" loading="eager" onload="document.getElementById('dim-15-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-15-B').className = 'status-tag status-loaded'; document.getElementById('status-15-B').textContent = 'LOADED';" onerror="document.getElementById('status-15-B').className = 'status-tag status-error'; document.getElementById('status-15-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-15-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-15-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Formal Signing Ceremony of the Paris Peace Accords Ending US Combat Engagement in Vietnam (27 January 1973)</h3>
+          <p class="source-caption"><strong>Caption:</strong> The formal signing of the Paris Peace Accords on January 27, 1973, which ended direct US military combat participation in Vietnam.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> US State Department / French Foreign Ministry Pool, US National Archives and Records Administration (NARA), College Park (NARA Record Group 59 (General Records of Department of State), Box 312), 27 January 1973.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why did President Nixon promise South Vietnamese President Thieu that the US would respond with air strikes if the North violated the accords, knowing Congress would forbid it?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="15" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">saigon-embassy-evacuation.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/saigon-embassy-evacuation.jpg" alt="Source C: Air America Bell 205 Helicopter Evacuating Officials from Rooftop of 22 Gia Long Street During Operation Frequent Wind (29 April 1975)" loading="eager" onload="document.getElementById('dim-15-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-15-C').className = 'status-tag status-loaded'; document.getElementById('status-15-C').textContent = 'LOADED';" onerror="document.getElementById('status-15-C').className = 'status-tag status-error'; document.getElementById('status-15-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-15-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-15-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Air America Bell 205 Helicopter Evacuating Officials from Rooftop of 22 Gia Long Street During Operation Frequent Wind (29 April 1975)</h3>
+          <p class="source-caption"><strong>Caption:</strong> A CIA helicopter evacuates evacuees from a rooftop near the US Embassy in Saigon as North Vietnamese tanks enter the city, April 29, 1975.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Hubert van Es (United Press International Photojournalist), UPI Bettmann Archive / Corbis, New York (Bettmann Archive Accession U1835702), 29 April 1975.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did Hubert van Es's rooftop evacuation photo become the enduring global symbol of American geopolitical humiliation in Southeast Asia?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+    <section class="lesson-section" id="lesson-16">
+      <div class="lesson-header">
+        <span class="lesson-badge">Lesson 16</span>
+        <h2>KT 4.4: What were the main reasons why the US failed to win the war in Vietnam?</h2>
+      </div>
+      <div class="sources-grid">
+  
+      <div class="source-card" data-lesson="16" data-source="A">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source A</span>
+          <span class="file-name">ho-chi-minh-trail-bicycles.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/ho-chi-minh-trail-bicycles.jpg" alt="Source A: Communist Logistical Columns Moving War Materiel Down the Jungle Paths of the Ho Chi Minh Trail (1968)" loading="eager" onload="document.getElementById('dim-16-A').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-16-A').className = 'status-tag status-loaded'; document.getElementById('status-16-A').textContent = 'LOADED';" onerror="document.getElementById('status-16-A').className = 'status-tag status-error'; document.getElementById('status-16-A').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-16-A">CHECKING</span>
+            <span class="dimensions-badge" id="dim-16-A">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source A: Communist Logistical Columns Moving War Materiel Down the Jungle Paths of the Ho Chi Minh Trail (1968)</h3>
+          <p class="source-caption"><strong>Caption:</strong> The Ho Chi Minh Trail: an intricate logistics network through Laos and Cambodia that the US Air Force was never able to sever permanently.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> North Vietnamese People's Army (PAVN) Cinema & Photography Unit, Vietnam National Military History Museum, Hanoi (VN-MHM Collection PAVN-LOG-68), 1968.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why was the continuous flow of Soviet and Chinese armaments through the Ho Chi Minh Trail decisive in sustaining North Vietnamese resilience?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="16" data-source="B">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source B</span>
+          <span class="file-name">us-soldier-patrolling-swamp.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg" alt="Source B: Exhausted Conscript of the 9th Infantry Division Sitting in Waterlogged Canal During Long Attrition Patrol (1968)" loading="eager" onload="document.getElementById('dim-16-B').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-16-B').className = 'status-tag status-loaded'; document.getElementById('status-16-B').textContent = 'LOADED';" onerror="document.getElementById('status-16-B').className = 'status-tag status-error'; document.getElementById('status-16-B').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-16-B">CHECKING</span>
+            <span class="dimensions-badge" id="dim-16-B">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source B: Exhausted Conscript of the 9th Infantry Division Sitting in Waterlogged Canal During Long Attrition Patrol (1968)</h3>
+          <p class="source-caption"><strong>Caption:</strong> Exhausted US conscripts on a search and destroy patrol; low morale, short one-year tours of duty, and drug abuse plagued late-war forces.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Larry Burrows (Life Magazine War Photographer), The Life Picture Collection / International Center of Photography, New York (Life Collection Photographic Archive LB-1968-VN), 1968.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">How did the 1-year individual rotation tour policy prevent US combat units from developing veteran cohesion and long-term tactical wisdom?</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="source-card" data-lesson="16" data-source="C">
+        <div class="source-card-header">
+          <span class="source-letter-badge">Source C</span>
+          <span class="file-name">antiwar-pentagon-protest-1967.jpg</span>
+        </div>
+        <div class="image-wrapper">
+          <img src="/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg" alt="Source C: Crowds of Hundreds of Thousands Surrounding the Mall and Reflecting Pool Calling for an Immediate End to the War (21 October 1967)" loading="eager" onload="document.getElementById('dim-16-C').textContent = this.naturalWidth + ' × ' + this.naturalHeight + ' px'; document.getElementById('status-16-C').className = 'status-tag status-loaded'; document.getElementById('status-16-C').textContent = 'LOADED';" onerror="document.getElementById('status-16-C').className = 'status-tag status-error'; document.getElementById('status-16-C').textContent = 'ERROR';" />
+          <div class="image-overlay">
+            <span class="status-tag status-pending" id="status-16-C">CHECKING</span>
+            <span class="dimensions-badge" id="dim-16-C">---</span>
+          </div>
+        </div>
+        <div class="source-body">
+          <h3 class="source-title">Source C: Crowds of Hundreds of Thousands Surrounding the Mall and Reflecting Pool Calling for an Immediate End to the War (21 October 1967)</h3>
+          <p class="source-caption"><strong>Caption:</strong> The collapse of the domestic political consensus forced consecutive presidents to limit ground operations and eventually withdraw.</p>
+          <p class="source-provenance"><strong>Provenance:</strong> Frank Wolfe (LBJ Library Official Photographer), Lyndon B. Johnson Presidential Library / US National Archives (NARA) (LBJ Library Photo Collection 67-10-21-02), 21 October 1967.</p>
+          <div class="hinge-box">
+            <span class="hinge-label"><i class="fas fa-question-circle"></i> Hinge Question:</span>
+            <p class="hinge-text">Why was maintaining domestic political consent at home just as essential for US military success as winning tactical engagements in Vietnam?</p>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </section>
+  
+  </main>
+</body>
+</html>

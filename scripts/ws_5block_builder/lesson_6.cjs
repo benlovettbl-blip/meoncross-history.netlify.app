@@ -180,16 +180,16 @@ module.exports = {
       a: 'Joseph Bazalgette.',
     },
     {
-      q: 'What French scientist published the revolutionary Germ Theory of disease in 1861?',
-      a: 'Louis Pasteur.',
+      q: 'What 1848 reform created the first General Board of Health, though setting up local boards was voluntary?',
+      a: 'The Public Health Act 1848.',
     },
     {
       q: 'Which local Hampshire pumping station was built in 1865 using steam beam engines?',
       a: 'Eastney Beam Engine House.',
     },
     {
-      q: 'What 1875 law made clean water and sewers compulsory for all local town councils?',
-      a: 'The Public Health Act 1875.',
+      q: 'What medical theory, believed since ancient times, wrongly claimed that diseases were spread by foul smells and poisonous air?',
+      a: 'Miasma theory.',
     },
   ],
 

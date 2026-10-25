@@ -107,12 +107,12 @@ export function renderDashboard() {
     .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));
 
   // Year 9 Grouping
-  const underConstructionIds = ['cold_war', 'post_war_britain'];
+  const underConstructionIds = [];
   const year9Order = ['great_war', 'great_war_part2', 'the_shoah', 'cold_war', 'post_war_britain'];
   const year9Units = units
-    .filter((u) => year9Order.includes(u.id) && !underConstructionIds.includes(u.id))
+    .filter((u) => year9Order.includes(u.id))
     .sort((a, b) => year9Order.indexOf(a.id) - year9Order.indexOf(b.id));
-  const comingSoonNames = ['KS3: The Cold War', 'KS3: Rights, Protest & Post-War Britain'];
+  const comingSoonNames = [];
 
   // Year 10 Grouping
   const year10Order = ['cme_new', 'weimar_nazi_germany'];
@@ -184,6 +184,8 @@ export function renderDashboard() {
       australia: 'center 70%',
       weimar_nazi_germany: 'center 20%',
       usa: 'center 25%',
+      cold_war: 'center 25%',
+      post_war_britain: 'center 20%',
     };
     const bgPos = unit.cover_image_position || positionFallbacks[unit.id] || 'center';
 

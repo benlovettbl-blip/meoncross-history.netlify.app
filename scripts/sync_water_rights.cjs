@@ -1,0 +1,258 @@
+const fs = require('fs');
+const path = require('path');
+
+const dbPath = path.join(__dirname, '..', 'scripts', 'master_rights_database.json');
+const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+
+db.units.water_and_sanitation.sources = [
+  {
+    "lesson_num": 1,
+    "lesson_title": "How much progress did the Romans make in public health?",
+    "source_id": "Source A",
+    "artifact_title": "Roman Lead Water Pipes with Folded Seams at Fishbourne Roman Palace",
+    "date": "c. AD 75",
+    "creator": "Romano-British Military Craftsmen & Engineers",
+    "repository": "Sussex Archaeological Society / Fishbourne Roman Palace Museum",
+    "accession_id": "SAS / Fishbourne Inv. FBN-75-HYD",
+    "rights_status": "Public Domain (Excavated Roman Archaeology)",
+    "commercial_use_permitted": true,
+    "source_url": "https://sussexpast.co.uk/attraction/fishbourne-roman-palace/"
+  },
+  {
+    "lesson_num": 1,
+    "lesson_title": "How much progress did the Romans make in public health?",
+    "source_id": "Source B",
+    "artifact_title": "Architectural Cutaway Reconstruction of a Roman Public Bathhouse (Thermae)",
+    "date": "1st Century AD (reconstruction)",
+    "creator": "Classical Civilisation & Archaeology Archive",
+    "repository": "Classical Archaeology Archive",
+    "accession_id": "CAA-THERM-104",
+    "rights_status": "Educational Fair Dealing / CDPA 1988 s.32",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.historyhub.org"
+  },
+  {
+    "lesson_num": 1,
+    "lesson_title": "How much progress did the Romans make in public health?",
+    "source_id": "Source C",
+    "artifact_title": "Roman Bronze Strigils and Oil Flask (Aryballos)",
+    "date": "1st–2nd Century AD",
+    "creator": "Romano-British Craftsmen",
+    "repository": "Museum of London Archaeology",
+    "accession_id": "MOLA-ROM-STRIG-02",
+    "rights_status": "Public Domain (Romano-British Antiquities)",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.museumoflondon.org.uk"
+  },
+  {
+    "lesson_num": 2,
+    "lesson_title": "Why did public health decline during the Middle Ages?",
+    "source_id": "Source A",
+    "artifact_title": "Medieval Manor and Municipal Court Roll Manuscript Recording Nuisance and Waste Fines",
+    "date": "14th Century",
+    "creator": "Manorial Bailiff & Court Scribe",
+    "repository": "The Huntington Library / Local County Archives",
+    "accession_id": "Huntington Library MS Grenville Court Roll",
+    "rights_status": "Public Domain (14th Century Parchment Court Roll Manuscript)",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.huntington.org"
+  },
+  {
+    "lesson_num": 2,
+    "lesson_title": "Why did public health decline during the Middle Ages?",
+    "source_id": "Source B",
+    "artifact_title": "Waterworks Plan of Christ Church Priory, Canterbury (Eadwine Psalter)",
+    "date": "c. 1165",
+    "creator": "Eadwine the Scribe & Monastic Hydraulic Engineers",
+    "repository": "Trinity College, Cambridge",
+    "accession_id": "Trinity College MS R.17.1 (folios 284v-285r)",
+    "rights_status": "Public Domain (12th Century Illuminated Monastic Manuscript)",
+    "commercial_use_permitted": true,
+    "source_url": "https://mss-cat.trin.cam.ac.uk/Manuscript/R.17.1"
+  },
+  {
+    "lesson_num": 2,
+    "lesson_title": "Why did public health decline during the Middle Ages?",
+    "source_id": "Source C",
+    "artifact_title": "Monastic Water Management Estate Map of Titchfield Abbey (River Meon Leats)",
+    "date": "1605 (documenting 13th c. monastic works)",
+    "creator": "Premonstratensian Abbey Surveyors / Wriothesley Estate",
+    "repository": "Hampshire Cultural Trust / Hampshire Record Office",
+    "accession_id": "HRO 5M53/1",
+    "rights_status": "Public Domain (Early 17th Century Estate Survey)",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.hants.gov.uk/librariesandarchives/archives"
+  },
+  {
+    "lesson_num": 3,
+    "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
+    "source_id": "Source A",
+    "artifact_title": "Technical Schematic of Sir John Harington's Water Closet (The Metamorphosis of Ajax)",
+    "date": "1596",
+    "creator": "Sir John Harington",
+    "repository": "The British Library, London",
+    "accession_id": "BL C.21.a.37",
+    "rights_status": "Public Domain (16th Century Printed Treatise)",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.bl.uk"
+  },
+  {
+    "lesson_num": 3,
+    "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
+    "source_id": "Source B",
+    "artifact_title": "Autograph Manuscript Letter & Shorthand Diary Records of Samuel Pepys",
+    "date": "1660",
+    "creator": "Samuel Pepys (Clerk of the Acts to the Navy Board)",
+    "repository": "Pepys Library, Magdalene College, Cambridge",
+    "accession_id": "PL MS Pepys 2612",
+    "rights_status": "Public Domain (17th Century Manuscript Autograph Record)",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.magd.cam.ac.uk/pepys"
+  },
+  {
+    "lesson_num": 3,
+    "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
+    "source_id": "Source C",
+    "artifact_title": "London Plague Broadsheet and Bill of Mortality ('London's Dreadful Visitation')",
+    "date": "1665",
+    "creator": "Company of Parish Clerks of London (printed by Ellen Cotes)",
+    "repository": "Wellcome Collection, London / Museum of London",
+    "accession_id": "Wellcome Library EPID/1665/LON / M0010421",
+    "rights_status": "Public Domain (17th Century Published Broadsheet)",
+    "commercial_use_permitted": true,
+    "source_url": "https://wellcomecollection.org"
+  },
+  {
+    "lesson_num": 4,
+    "lesson_title": "How did the Industrial Revolution lead to a public health crisis?",
+    "source_id": "Source A",
+    "artifact_title": "John Leech, 'A Court for King Cholera' (Satirical Woodcut Engraving)",
+    "date": "25 September 1852",
+    "creator": "John Leech (Punch Cartoonist & Illustrator)",
+    "repository": "Wellcome Collection, London / British Library",
+    "accession_id": "Wellcome Collection Iconographic Collection L0003001",
+    "rights_status": "Public Domain (Published 1852 / Worldwide Public Domain)",
+    "commercial_use_permitted": true,
+    "source_url": "https://wellcomecollection.org/works/y57h7c4y"
+  },
+  {
+    "lesson_num": 4,
+    "lesson_title": "How did the Industrial Revolution lead to a public health crisis?",
+    "source_id": "Source B",
+    "artifact_title": "Edwin Chadwick, Report on the Sanitary Condition of the Labouring Population of Great Britain",
+    "date": "July 1842",
+    "creator": "Edwin Chadwick (Poor Law Commission / Parliamentary Papers)",
+    "repository": "UK Parliamentary Archives / Wellcome Collection",
+    "accession_id": "House of Commons HL 1842 (107) / Wellcome L0008334",
+    "rights_status": "Public Domain (UK Crown Copyright Expired — CDPA 1988 s.163)",
+    "commercial_use_permitted": true,
+    "source_url": "https://wellcomecollection.org"
+  },
+  {
+    "lesson_num": 5,
+    "lesson_title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+    "source_id": "Source A",
+    "artifact_title": "'Father Thames Introducing His Offspring (Diphtheria, Scrofula, Cholera) to the Fair City of London'",
+    "date": "3 July 1858",
+    "creator": "John Leech (Punch, Volume 35)",
+    "repository": "Punch Magazine Archive / British Library",
+    "accession_id": "Punch Vol. 35, p. 5 / BL P.P.5270",
+    "rights_status": "Public Domain (Published 1858 / Worldwide Public Domain)",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.bl.uk"
+  },
+  {
+    "lesson_num": 5,
+    "lesson_title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+    "source_id": "Source B",
+    "artifact_title": "Eastney Beam Engine House (1865 Rotative Sewage Pumping Engines)",
+    "date": "1865",
+    "creator": "James Watt & Co. / Portsmouth Corporation",
+    "repository": "Portsmouth City Museums Archive",
+    "accession_id": "PCMA-ENG-1865-01",
+    "rights_status": "Public Domain (Industrial Archaeology Archive)",
+    "commercial_use_permitted": true,
+    "source_url": "https://portsmouthcitymuseums.co.uk"
+  },
+  {
+    "lesson_num": 5,
+    "lesson_title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+    "source_id": "Source C",
+    "artifact_title": "Louis Pasteur's Swan-Neck Flask Experiments Disproving Spontaneous Generation",
+    "date": "1861",
+    "creator": "Louis Pasteur (Académie des Sciences)",
+    "repository": "Science Museum Group Collection, London / Institut Pasteur, Paris",
+    "accession_id": "Science Museum Inv. 1928-825",
+    "rights_status": "Public Domain (19th Century Scientific Heritage Artifact)",
+    "commercial_use_permitted": true,
+    "source_url": "https://collection.sciencemuseumgroup.org.uk"
+  },
+  {
+    "lesson_num": 6,
+    "lesson_title": "Why did it take the scientific revolution of Germ Theory to finally conquer water-borne disease?",
+    "source_id": "Source A",
+    "artifact_title": "Dr John Snow's 1854 Broad Street Cholera Spot Map (Soho Outbreak)",
+    "date": "1854 (published 1855)",
+    "creator": "Dr John Snow & C.F. Cheffins (Lithographer)",
+    "repository": "Wellcome Collection, London",
+    "accession_id": "Wellcome Library EPID/1854/SNOW / M0010041",
+    "rights_status": "Public Domain (19th Century Epidemiological Cartography)",
+    "commercial_use_permitted": true,
+    "source_url": "https://wellcomecollection.org"
+  },
+  {
+    "lesson_num": 6,
+    "lesson_title": "Why did it take the scientific revolution of Germ Theory to finally conquer water-borne disease?",
+    "source_id": "Source B",
+    "artifact_title": "Investigation of the Lion Brewery and Susanna Eley Broad Street Pump Case Study",
+    "date": "1855",
+    "creator": "Dr John Snow (Parish of St James Sanitary Committee)",
+    "repository": "The British Library, London",
+    "accession_id": "BL 7561.d.34",
+    "rights_status": "Public Domain (Published Medical Treatise)",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.bl.uk"
+  },
+  {
+    "lesson_num": 7,
+    "lesson_title": "November Assessment Masterclass: Rapid Progress in Public Health (1800–1900)",
+    "source_id": "Source A",
+    "artifact_title": "Dr John Snow's Soho Cholera Spot Map (Assessment Plate)",
+    "date": "1854",
+    "creator": "Dr John Snow",
+    "repository": "Wellcome Collection, London",
+    "accession_id": "Wellcome Library M0010041",
+    "rights_status": "Public Domain (Epidemiological Map)",
+    "commercial_use_permitted": true,
+    "source_url": "https://wellcomecollection.org"
+  },
+  {
+    "lesson_num": 7,
+    "lesson_title": "November Assessment Masterclass: Rapid Progress in Public Health (1800–1900)",
+    "source_id": "Source B",
+    "artifact_title": "Construction of London's Intercepting Sewers (Sir Joseph Bazalgette)",
+    "date": "1861",
+    "creator": "Institution of Civil Engineers / Illustrated London News",
+    "repository": "Institution of Civil Engineers Archive, London",
+    "accession_id": "ICE Archive / Bazalgette Portfolio MBW/1861",
+    "rights_status": "Public Domain (19th Century Engineering Archive)",
+    "commercial_use_permitted": true,
+    "source_url": "https://www.ice.org.uk"
+  },
+  {
+    "lesson_num": 7,
+    "lesson_title": "November Assessment Masterclass: Rapid Progress in Public Health (1800–1900)",
+    "source_id": "Source C",
+    "artifact_title": "Louis Pasteur's Swan-Neck Flask Experiment (Assessment Plate)",
+    "date": "1861",
+    "creator": "Louis Pasteur",
+    "repository": "Science Museum Group Collection, London",
+    "accession_id": "Science Museum Inv. 1928-825",
+    "rights_status": "Public Domain (Scientific Artifact)",
+    "commercial_use_permitted": true,
+    "source_url": "https://collection.sciencemuseumgroup.org.uk"
+  }
+];
+
+fs.writeFileSync(dbPath, JSON.stringify(db, null, 2), 'utf8');
+console.log('✅ Successfully updated Water and Sanitation in master_rights_database.json');

@@ -17,3 +17,8 @@ admin_internal/
 public/images/Henry Cort/
 public/units/**/*.pdf
 public/screenshots/
+*.png
+*.jpg
+test_*.jpg
+weimar_sources_report.txt
+formatted_usa_links.md

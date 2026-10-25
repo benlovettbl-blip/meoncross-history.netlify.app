@@ -12,7 +12,7 @@
  * @returns {number} duration in seconds (defaults to 999999 if undefined)
  */
 export function parseDurationToSeconds(durationStr) {
-  if (!durationStr || typeof durationStr !== 'string') return 999999;
+  if (!durationStr || typeof durationStr !== 'string' || /not found/i.test(durationStr)) return 999999;
   let total = 0;
   const hoursMatch = durationStr.match(/(\d+)\s*(?:hours?|hrs?|h)/i);
   if (hoursMatch) total += parseInt(hoursMatch[1], 10) * 3600;
@@ -38,9 +38,10 @@ export function parseDurationToSeconds(durationStr) {
  * @returns {string}
  */
 export function formatShortDuration(durationStr) {
-  if (!durationStr) return '';
+  if (!durationStr || /not found/i.test(durationStr)) return '';
   const secs = parseDurationToSeconds(durationStr);
   if (secs === 999999) {
+    if (/not found/i.test(durationStr)) return '';
     return durationStr
       .replace(/\s*secs?/i, 's')
       .replace(/\s*mins?/i, 'm')
@@ -62,9 +63,10 @@ export function formatShortDuration(durationStr) {
  * @returns {string}
  */
 export function formatProminentDuration(durationStr) {
-  if (!durationStr) return '';
+  if (!durationStr || /not found/i.test(durationStr)) return '';
   const secs = parseDurationToSeconds(durationStr);
   if (secs === 999999) {
+    if (/not found/i.test(durationStr)) return '';
     return durationStr.trim();
   }
   const h = Math.floor(secs / 3600);
@@ -142,3 +144,47 @@ export function renderSidebarVideoBadgeHTML(lesson) {
 
   return `<span class="sidebar-lesson-video-badge ${typeClass}" title="${tooltipAttr}"><i class="${iconClass}"></i><span>${label}</span>${countBadge}</span>`;
 }
+
+/**
+ * Formats bracketed timestamps ([01:10]) and watch window ranges (00:15–03:45)
+ * into high-contrast clickable scrubbing pill buttons.
+ * @param {string} htmlText
+ * @param {string} youtubeId
+ * @param {boolean} inModal
+ * @param {string} videoKey
+ * @returns {string}
+ */
+export function formatInteractiveTimestamps(htmlText, youtubeId, inModal = true, videoKey = '') {
+  if (!htmlText || typeof htmlText !== 'string') return htmlText;
+
+  // 1. Bracketed timestamps: [01:10], [1:10], [00:45], [1:15:30]
+  let result = htmlText.replace(/\[(?:(\d{1,2}):)?(\d{1,2}):(\d{2})\]/g, (match, h, m, s) => {
+    const hours = h ? parseInt(h, 10) : 0;
+    const mins = parseInt(m, 10);
+    const secs = parseInt(s, 10);
+    const totalSecs = hours * 3600 + mins * 60 + secs;
+    const label = (h ? `${h}:` : '') + `${m.padStart(2, '0')}:${s}`;
+
+    if (inModal) {
+      return `<button type="button" class="theater-timestamp-pill" onclick="window.seekTheaterVideo(${totalSecs}, '${youtubeId}')" title="Click to scrub video to ${label}"><i class="fa-solid fa-play"></i> ${label}</button>`;
+    } else {
+      return `<button type="button" class="theater-timestamp-pill" data-action="open-video-modal" data-youtube="${youtubeId}" ${videoKey ? `data-video-key="${videoKey}"` : ''} data-start="${totalSecs}" title="Watch from ${label} in Theater"><i class="fa-solid fa-play"></i> ${label}</button>`;
+    }
+  });
+
+  // 2. Watch window range: 00:15–03:45 or 01:10-04:20
+  result = result.replace(
+    /(?:Recommended\s+(?:Class\s+|Starter\s+)?Watch\s+Window|Recommended\s+Clip):\s*(\d{1,2}:\d{2})\s*[–\-]\s*(\d{1,2}:\d{2})/gi,
+    (match, startStr, endStr) => {
+      const parts = startStr.split(':').map(Number);
+      const totalSecs = parts.length === 2 ? parts[0] * 60 + parts[1] : 0;
+      const btnHtml = inModal
+        ? `<button type="button" class="theater-timestamp-pill briefing-pill" onclick="window.seekTheaterVideo(${totalSecs}, '${youtubeId}')" title="Click to jump to start of watch window (${startStr})"><i class="fa-solid fa-play"></i> ${startStr}&ndash;${endStr}</button>`
+        : `<button type="button" class="theater-timestamp-pill briefing-pill" data-action="open-video-modal" data-youtube="${youtubeId}" ${videoKey ? `data-video-key="${videoKey}"` : ''} data-start="${totalSecs}" title="Watch window in Theater (${startStr}&ndash;${endStr})"><i class="fa-solid fa-play"></i> ${startStr}&ndash;${endStr}</button>`;
+      return `Recommended Watch Window: ${btnHtml}`;
+    },
+  );
+
+  return result;
+}
+

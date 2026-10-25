@@ -8,8 +8,8 @@
   "is_ks3": false,
   "isGCSE": false,
   "homepage_background": "/units/ks2_ww2/assets/evacuees_railway_1939.jpg",
-  "cover_image": "/units/ks2_ww2/assets/gas_masks_children_1939.jpg",
-  "cover_caption": "Primary Photograph: British schoolchildren and teachers in London practicing civilian gas mask drills in September 1939 as Britain mobilised for total war.",
+  "cover_image": "/units/ks2_ww2/assets/kindertransport_prague_airport_1939.jpg",
+  "cover_caption": "Primary Photograph: Czech refugee children, including Peter Needham (centre foreground), waving farewell at Prague Airport on 12 January 1939 before boarding an evacuation flight to Great Britain (Imperial War Museum HU 88871 / Object 205184254).",
   "enquiry": "How did World War II transform children's lives in Britain and Europe?",
   "enquiry_question": "How did World War II transform children's lives in Britain and Europe?",
   "workbooks": [
@@ -103,7 +103,10 @@
             "discussion_ideas": [
               "Immediate Preparedness & Muscle Memory: The government remembered the horrific gas attacks of the First World War and feared enemy bombers could drop poison gas without warning; daily drills ensured that fitting the respirator was an automatic reflex so every child could survive within seconds."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/neville_chamberlain_1939.jpg",
+          "image_alt": "Official photographic portrait of British Prime Minister Neville Chamberlain (1869–1940)",
+          "caption": "Official photographic portrait of British Prime Minister Neville Chamberlain (1869–1940), who announced the outbreak of the Second World War to the British people on 3 September 1939."
         },
         {
           "act": 2,
@@ -138,7 +141,10 @@
             "discussion_ideas": [
               "Denying Visual Navigation to Bombers: German bomber crews navigated at night by spotting the reflective glint of rivers and city streetlights; a total blackout left pilots flying over a featureless black void, preventing them from targeting docks, factories, and railway junctions."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/blackout_kerb_precautions_london_1941.jpg",
+          "image_alt": "London street kerbs painted with white safety stripes to guide pedestrians and drivers during the blackout, 1941",
+          "caption": "London street kerbs painted with alternating white safety stripes to help pedestrians and drivers navigate darkened streets during the blackout (1941)."
         }
       ],
       "tasks": [
@@ -201,31 +207,48 @@
       ],
       "video": [
         {
+          "id": "t2qlZHW-fDI",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=t2qlZHW-fDI",
           "title": "Neville Chamberlain: Declaration of War (3 September 1939)",
           "duration": "50 secs",
-          "teacher_guidance": "Primary audio-visual record of Prime Minister Neville Chamberlain's 11:15 am radio broadcast from 10 Downing Street. Prepare pupils to listen to the sombre tone and the solemn announcement that Britain was at war with Germany following the invasion of Poland.",
-          "viewing_task": "Listen to the exact words Prime Minister Chamberlain spoke from 10 Downing Street. How does his tone of voice convey the gravity of the situation, and what ultimatum had expired?",
-          "model_answer": "Prime Minister Neville Chamberlain spoke in a solemn, grave, and sorrowful voice to the British public. He explained that the British government had delivered a final ultimatum demanding that Nazi Germany withdraw its invading troops from Poland by 11:00 am. Because no reply was received from Berlin, Chamberlain announced with deep regret that 'this country is at war with Germany', marking the formal start of the Second World War."
+          "pathway": "Primary Archive",
+          "teacher_guidance": "Recommended Watch Window: 00:00–00:50 | Lesson Phase: Starter Hook & Primary Listening | Tone Alert: Historic radio broadcast; grave and solemn tone. Prepare pupils for the momentous silence of 11:15 am on Sunday 3 September 1939.",
+          "viewing_task": "[00:15] Quick Check: What country had German forces invaded, breaking Adolf Hitler's promises and forcing Britain to declare war?\n[00:35] Hinge Question: Listen to the tone of Prime Minister Chamberlain's voice. Does he sound excited, angry, or deeply sorrowful, and why?",
+          "model_answer": "Quick Check: Germany invaded Poland on 1 September 1939, breaking international treaties and ignoring Britain's ultimatum to withdraw.\nHinge Question: Chamberlain's voice sounds grave, quiet, and deeply sorrowful. Having worked tirelessly to avoid another world war through his policy of appeasement, he realized that all his peaceful efforts had failed and that Britain was now entering another catastrophic conflict."
         },
         {
+          "id": "GCPAeD1K6To",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=GCPAeD1K6To",
           "title": "How to Fit a Gas Mask (1939) | Air Raid Precautions",
           "duration": "1 min 57 secs",
-          "teacher_guidance": "Archival public information film showing civil defence wardens demonstrating the fitting of civilian gas masks issued to men, women, and children across Britain in 1939. Highlight to pupils why civilians were required to carry these cardboard boxes everywhere.",
-          "viewing_task": "Watch how the rubber gas mask was fitted over the face. Why was it vital to check the airtight seal around the cheeks and chin, and how was it tested?",
-          "model_answer": "The rubber gas mask had to fit tightly against the face so that deadly poison gas could not leak in around the edges of the cheeks or under the chin. Civilians were instructed to pull the elastic harness straps firmly over the head and test the airtight seal by placing their palm over the filter inlet; if the mask collapsed slightly against the face when inhaling, the seal was completely secure, ensuring all air was safely drawn through the protective charcoal filter."
+          "pathway": "Primary Archive",
+          "teacher_guidance": "Recommended Watch Window: 00:10–01:45 | Lesson Phase: Home Front Experience | Tone Alert: 1939 public information film. Children may find the black rubber gas masks strange or frightening.",
+          "viewing_task": "[00:35] Quick Check: How did an Air Raid Warden ensure a gas mask had an airtight seal against poisonous gas?\n[01:15] Hinge Question: Why was every British child required to carry a cardboard gas mask box everywhere they went in 1939?",
+          "model_answer": "Quick Check: The warden adjusted the elastic head straps and held a hand over the inlet valve; when the person breathed in, the mask puckered against the cheeks, proving no gas could enter.\nHinge Question: The British government feared that German bombers would drop deadly poison gas on cities just like in the First World War. Carrying the gas mask everywhere ensured that every child could protect themselves within seconds of an air raid siren sounding."
         },
         {
+          "id": "i234eVT_P8Q",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=i234eVT_P8Q",
           "title": "Britain Declares War on Germany | BBC Teach",
           "duration": "4 mins 51 secs",
-          "teacher_guidance": "Superb BBC educational overview exploring how Britain mobilized for war in September 1939. Covers Chamberlain's radio broadcast, the instantaneous sounding of the first air raid sirens in London, blackout regulations, and civilian preparations.",
-          "viewing_task": "What reasons did Neville Chamberlain give for declaring war, and what dramatic event occurred across London within minutes of his broadcast finishing?",
-          "model_answer": "Chamberlain explained that Britain had guaranteed Poland's independence and that Adolf Hitler's refusal to halt the German military invasion left Britain with no choice but to honour its treaty obligations. Within fifteen minutes of the radio broadcast ending, London's air raid sirens wailed across the capital, creating immediate alarm as millions of citizens, ARP wardens, and families rushed to shelters with their gas masks, expecting an immediate aerial bombardment."
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Recommended Watch Window: 00:30–04:30 | Lesson Phase: Core Narrative Overview | Tone Alert: Archival footage of wartime preparations. Focus pupils on the immediate disruption to civilian family life.",
+          "viewing_task": "[01:15] Recall: What immediate precautions did people take in British towns as soon as war was declared (e.g. windows, sandbags, blackout)?\n[02:40] Explain: Why did the government introduce the strict 'blackout' regulations, and what difficulties did it cause for ordinary people?\n[04:00] Challenge: How did the sudden outbreak of war change the daily lives of British children even before any bombs fell?",
+          "model_answer": "Recall: People taped up window panes with criss-cross adhesive tape to stop flying glass, filled sandbags to place outside doorways, and fitted thick black blackout curtains across every window.\nExplain: Blackout rules forced everyone to block any glimmer of light from homes, streetlamps, and cars so that German bomber navigators flying at night could not spot towns, rivers, or factories below. Walking in pitch-black streets led to many accidents.\nChallenge: Children's lives changed instantly: they had to carry gas mask boxes over their shoulders, practice air raid drills in school corridors, live in darkened houses every evening, and prepare to be separated from their families through evacuation."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=LtJ60u7SUSw",
+          "id": "LtJ60u7SUSw",
+          "title": "Darkest Hour (2017) | Official Trailer (Gary Oldman / Focus Features)",
+          "duration": "2 mins 28 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:28 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Oscar-winning performance showing Winston Churchill taking leadership in May 1940.",
+          "viewing_task": "[01:15] Cinematic Discussion Focus: How does the film portray Winston Churchill's determination to resist Hitler when others urged negotiation?",
+          "model_answer": "Cinematic Discussion Focus: The trailer contrasts defeatist voices in the War Cabinet with Churchill's defiant speeches, illustrating how his rhetoric inspired British civilian resilience."
         }
       ],
       "causal_domino_spine": {
@@ -393,7 +416,10 @@
               "Children's Mixed Bewilderment & Adventure: Many young children felt terrified and bewildered by being separated from their mothers, while some older boys initially imagined the journey as an exciting country adventure.",
               "Parents' Heartbreaking Sacrifice: Mothers had to bravely hide their tears on crowded platforms, sacrificing their own happiness to ensure their sons and daughters would be safe from falling bombs."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/evacuation_map_1939.jpg",
+          "image_alt": "Official British government planning map dividing Great Britain into Evacuation, Neutral, and Reception zones under Operation Pied Piper, 1939",
+          "caption": "Official British government planning map dividing Great Britain into Evacuation, Neutral, and Reception zones under Operation Pied Piper (1939)."
         },
         {
           "act": 2,
@@ -428,7 +454,10 @@
               "Inner-City Culture Shock: Working-class city children had never seen farm animals, open meadows, or orchards, and were shocked to discover that milk came from cows rather than bottles.",
               "Rural Host Realities: Middle-class host families were often shocked by the deep poverty of city slums, seeing children arrive with head lice, ragged clothes, and no shoes, exposing Britain's deep social inequalities."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/evacuee_feeding_farm_pigs_devon_1941.jpg",
+          "image_alt": "Evacuee Tony Ponsford feeds pigs at Dartington School Farm, Totnes, Devon, 1941",
+          "caption": "Evacuee Tony Ponsford feeding pigs at Dartington School Farm in Totnes, Devon, adapting to rural life away from London (1941)."
         }
       ],
       "tasks": [
@@ -491,31 +520,48 @@
       ],
       "video": [
         {
+          "id": "HFBlvWkNEKU",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=HFBlvWkNEKU",
           "title": "A Day in the Life of a 10-Year-Old Evacuee | BBC Hands On History",
           "duration": "2 mins 31 secs",
-          "teacher_guidance": "Lively primary-focused dramatisation following a 10-year-old child experiencing Operation Pied Piper. Prompt pupils to observe the luggage label, the essential items packed in the small suitcase, and the emotional separation from parents at railway stations.",
-          "viewing_task": "What belongings was the young evacuee allowed to pack, and what label did they wear around their neck?",
-          "model_answer": "The young evacuee was allowed only a small suitcase packed with essential clothing: a warm coat, change of underwear, socks, a toothbrush, soap, and their gas mask in a cardboard box hung with string. Around their neck, every child wore an official luggage label displaying their name, home address, school, and destination billeting code so they could be identified upon arrival."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:15–02:20 | Lesson Phase: Empathy & Starter | Tone Alert: Child-focused personal testimony. Ideal for prompting pupils to imagine leaving home with just one suitcase.",
+          "viewing_task": "[00:40] Quick Check: What label was tied to each child's coat, and what personal belongings were packed inside their small suitcase?\n[01:45] Hinge Question: Imagine standing on a village hall stage waiting to be chosen by a host family. How would an evacuee feel at that exact moment?",
+          "model_answer": "Quick Check: A luggage tag with their name, school, and home address was tied to their coat lapel. Their small suitcase contained spare underwear, a toothbrush, a warm jersey, and their cardboard gas mask box.\nHinge Question: Evacuees felt anxious, vulnerable, and self-conscious, like goods being inspected in a shop. Younger children were frightened of being separated from their older brothers and sisters, wondering who would pick them and take them to an unfamiliar home."
         },
         {
+          "id": "Wvgojxu2hp4",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=Wvgojxu2hp4",
           "title": "The Lives of WW2 Evacuees | Hunting for History | BBC Teach",
           "duration": "6 mins 19 secs",
-          "teacher_guidance": "Historical investigation examining real archival evidence from Operation Pied Piper in September 1939. Teachers should guide pupils to analyze how historians use billeting forms, school registers, and evacuee letters to uncover contrasting rural experiences.",
-          "viewing_task": "What historical primary sources does the historian examine to find out what life was like for evacuees arriving in the countryside?",
-          "model_answer": "The historian examines original primary sources including local billeting officers' ledgers, school registration logs, letters written home by evacuees, and period photographs of village halls. These sources show that while many children experienced cultural shock—encountering farm animals, outside toilets, and unfamiliar food for the first time—many formed lifelong bonds with their host families, while others found the separation deeply distressing."
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Recommended Watch Window: 00:45–05:45 | Lesson Phase: Primary Source Investigation | Tone Alert: Discusses the cultural contrast between city children and rural countryside families.",
+          "viewing_task": "[01:30] Recall: What was the official government code name for the mass evacuation of 1.5 million children in September 1939?\n[03:10] Explain: Why was life in the countryside such a massive culture shock for children who had grown up in crowded city streets like London or Liverpool?\n[04:50] Challenge: Were all evacuation experiences happy, or did some children face hardship and mistreatment? How do historians know?",
+          "model_answer": "Recall: Operation Pied Piper, named after the famous fairytale figure who led children away.\nExplain: Many city children had never seen cows, orchards, or green fields before; some thought milk came from bottles and had never seen an animal milked. Country houses often had outdoor toilets, no running hot water, and very quiet surroundings compared to bustling, noisy urban streets.\nChallenge: Experiences varied hugely: while many children were loved like family and enjoyed fresh country food, others were treated as free farm labour, fed poorly, or made to sleep in outhouses. Historians know this by reading letters sent home, oral histories from surviving evacuees, and billeting officers' inspection reports."
+        },
+        {
+          "id": "0SYDBJAwYCI",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=0SYDBJAwYCI",
+          "title": "An Evacuee's Adventure | Children of World War Two | BBC Teach",
+          "duration": "9 mins 41 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 01:00–08:30 | Lesson Phase: Deep Narrative Empathy | Tone Alert: Moving survivor reflections on family separation during wartime.",
+          "viewing_task": "[02:15] Recall: How did Betty travel from her home city of Cardiff to the Welsh countryside of Aberdare?\n[04:40] Explain: How did host families react when evacuee children arrived at the village hall, and what influenced which child was chosen first?\n[07:15] Challenge: How did letters sent between evacuees and their parents help families stay resilient during years of wartime separation?",
+          "model_answer": "Recall: Betty travelled by steam train alongside hundreds of schoolmates, carrying her luggage and singing songs to keep spirits up.\nExplain: Host mothers inspected the children, often choosing older, stronger boys who could help with farm chores or quiet, well-dressed girls first. Sickly, crying, or shabbily dressed children were often left until the very end, which felt deeply humiliating.\nChallenge: Letters were the only lifeline between children and parents, as long-distance phone calls were virtually non-existent. Parents wrote comforting words to keep children brave, while children shared drawings and news of countryside adventures, keeping family bonds strong despite months apart."
         },
         {
           "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=0SYDBJAwYCI",
-          "title": "An Evacuee's Adventure | History - Children of World War Two | BBC Teach",
-          "duration": "9 mins 41 secs",
-          "teacher_guidance": "Oral history documentary following real wartime evacuee Betty as she revisits her evacuation destination in the Welsh valleys. Excellent for exploring emotional empathy, social differences between industrial cities and rural villages, and host family dynamics.",
-          "viewing_task": "Watch Betty retrace her journey from Cardiff to Aberdare. How did she feel when she arrived at the village hall to be chosen by a host family?",
-          "model_answer": "Betty describes feeling anxious, bewildered, and self-conscious as she sat in the crowded village hall while prospective foster families walked along the rows picking out children ('I'll take that one'). Despite her initial fear of the unknown, Betty was relieved and comforted when she was chosen by a warm, welcoming Welsh mining family who treated her like their own daughter, giving her fresh food and introducing her to valley community life."
+          "url": "https://www.youtube.com/watch?v=32wyLEBf60c",
+          "id": "32wyLEBf60c",
+          "title": "Hope and Glory (1987) | Official Movie Trailer (John Boorman)",
+          "duration": "2 mins 10 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:10 | Lesson Phase: Child's Perspective | Tone Alert: Celebrated semi-autobiographical depiction of a young boy experiencing the London Blitz as an adventure.",
+          "viewing_task": "[01:05] Cinematic Discussion Focus: How does experiencing the Blitz through the eyes of a child differ from adult perspectives of terror and destruction?",
+          "model_answer": "Cinematic Discussion Focus: While adults endured anxiety and grief, children often viewed bomb craters as playgrounds and shrapnel as treasure, illustrating child psychological adaptation."
         }
       ],
       "causal_domino_spine": {
@@ -625,7 +671,7 @@
             "question": "What does a numbered neck tag reveal about the nature of the Kindertransport rescue?"
           }
         ],
-        "source_context": "German Federal Archives (Bundesarchiv) photograph (February 1939) showing Jewish refugee girls descending the gangway of a passenger ship upon arrival in London port, escorted by British volunteers and wearing numbered registration cards. **Hinge Question:** Why did British authorities use numbered identity tags for Kindertransport children, and what does this tell us about the nature of their journey?"
+        "source_context": "Imperial War Museum photograph (12 January 1939) showing Czech refugee children, including Peter Needham (centre foreground), waving farewell on the snow-covered tarmac at Prague Airport before boarding a Kindertransport flight to Britain. **Hinge Question:** What emotions can you see on the children’s faces as they wave goodbye, and why would an aeroplane flight have felt both exciting and frightening?"
       },
       "do_now": {
         "title": "Do Now: Retrieval from Enquiry 2 (Operation Pied Piper & Evacuation)",
@@ -674,16 +720,19 @@
           "text": "<span class=\"para-ref\">[3.1]</span> In November 1938, violent attacks erupted across Nazi Germany and Austria during what became known as the November Pogrom (Kristallnacht). Jewish synagogues were burnt, shops were destroyed, and thousands of innocent people were arrested. Terrified parents realized that their children were no longer safe. British humanitarian groups and religious leaders immediately petitioned Parliament, urging the government to offer refuge.<br><br><span class=\"para-ref\">[3.2]</span> The British government agreed to allow an unlimited number of refugee children under the age of 17 into the country, but with two strict conditions: <strong>parents could not come with them</strong>, and every child needed a British <strong>sponsor</strong> who would pay a £50 guarantee (worth over £3,500 today) to ensure the child would not cost the British taxpayer anything. This historic rescue operation was known as the <strong>Kindertransport</strong> (Children's Transport). Between December 1938 and September 1939, nearly 10,000 children were brought to safety.",
           "source": {
             "letter": "A",
-            "title": "Source A (Photograph): Refugee Children Arriving on the Kindertransport (1939)",
-            "caption": "Young Jewish girls wearing numbered identification cards arriving at a British port after their long journey across Europe.",
-            "image": "/units/ks2_ww2/assets/kindertransport_arrival.jpg",
-            "provenance": "German Federal Archives (Bundesarchiv), Koblenz (Bundesarchiv Bild 183-S69279).",
-            "source_context": "Following the violent anti-Jewish attacks of Kristallnacht in November 1938, the British Parliament agreed to allow 10,000 unaccompanied refugee children into the UK. The children travelled on special trains across Germany and Holland, then crossed by ferry to Harwich, leaving their parents behind.\n\n**Hinge Question:** Why was it such an agonizing decision for Jewish parents to send their children away on the Kindertransport?",
-            "hinge_question": "Why was it such an agonizing decision for Jewish parents to send their children away on the Kindertransport?",
+            "title": "Source A (Photograph): Czech Refugee Children Departing Prague Airport on the Kindertransport (12 January 1939)",
+            "caption": "Czech refugee children, including Peter Needham (centre foreground), wave farewell from an aeroplane at Prague Airport on 12 January 1939 before boarding an evacuation flight to Britain.",
+            "image": "/units/ks2_ww2/assets/kindertransport_prague_airport_1939.jpg",
+            "provenance": "Imperial War Museum, London (Catalogue No. HU 88871 / Object 205184254, Peter Needham Collection).",
+            "source_context": "Imperial War Museum photograph (12 January 1939) showing Czech refugee children, including Peter Needham (centre foreground), waving farewell on the snow-covered tarmac at Prague Airport before boarding a Kindertransport flight to Britain. Following the Kristallnacht pogroms in November 1938, volunteer rescue networks organized trains and chartered flights to evacuate vulnerable children to safety in the UK.\n\n**Hinge Question:** What emotions can you see on the children’s faces as they wave goodbye, and why would an aeroplane flight have felt both exciting and frightening?",
+            "hinge_question": "What emotions can you see on the children’s faces as they wave goodbye, and why would an aeroplane flight have felt both exciting and frightening?",
             "discussion_ideas": [
-              "The Agony of Absolute Uncertainty: Parents knew that sending their children alone to a foreign country was the only way to save them from Nazi violence, but they faced the heartbreaking realization that they might never see each other again."
+              "Refugee Journey Between Fear and Relief: While the children are smiling and waving for the press photographer, they faced separation from their parents, traveling into an unknown language and foreign land in the middle of winter."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/kindertransport_route_map.jpg",
+          "image_alt": "Historical route map of the Kindertransport rescue journeys from Berlin, Vienna, and Prague across the North Sea to Harwich, 1938–1939",
+          "caption": "Historical route map of the Kindertransport rescue journeys from Central Europe across the North Sea to Great Britain (1938–1939)."
         },
         {
           "act": 2,
@@ -700,7 +749,10 @@
             "discussion_ideas": [
               "Anchor to Home & Family: In a strange foreign world where children could not speak the language and had lost everything familiar, a toy or photo was a comforting emotional link to their parents' love and their former happy childhood."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/vera_portrait.jpg",
+          "image_alt": "Studio portrait of nine-year-old Vera Löwyová in Prague shortly before boarding the Kindertransport train to England, May 1939",
+          "caption": "Studio portrait of nine-year-old Vera Löwyová in Prague shortly before boarding the Kindertransport train to England (May 1939)."
         },
         {
           "act": 3,
@@ -780,31 +832,48 @@
       ],
       "video": [
         {
+          "id": "JXrCnJppIUM",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=JXrCnJppIUM",
           "title": "Kindertransport: How It Happened | Safe Passage",
           "duration": "3 mins 20 secs",
-          "teacher_guidance": "Animated documentary explaining the origins of the Kindertransport following the Kristallnacht pogrom of November 1938. Use to introduce Key Stage 2 pupils gently to refugee history, humanitarian rescue efforts, and the arrival at London Liverpool Street.",
-          "viewing_task": "How many children escaped on the Kindertransport between December 1938 and September 1939, and where did their trains arrive in London?",
-          "model_answer": "Between December 1938 and the outbreak of war in September 1939, the Kindertransport rescued nearly 10,000 predominantly Jewish unaccompanied children from Nazi Germany, Austria, Czechoslovakia, and Poland. After travelling by train across Europe and ferry across the North Sea to Harwich, the children arrived at Liverpool Street Station in London, where volunteer committees and British foster families met them."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:20–03:10 | Lesson Phase: Rescue Context | Tone Alert: Sensitive Holocaust context; explains how 10,000 Jewish children escaped Nazi persecution without their parents.",
+          "viewing_task": "[00:50] Quick Check: Following what violent event in November 1938 did the British government agree to let Jewish refugee children enter Britain?\n[02:10] Hinge Question: Why did parents put their beloved children on trains alone to a foreign country where they did not speak the language?",
+          "model_answer": "Quick Check: Kristallnacht (the Night of Broken Glass) in November 1938, when synagogues were burned and thousands of Jewish people were arrested.\nHinge Question: Parents made the heartbreaking sacrifice to send their children away because Nazi persecution was so dangerous that sending them away was the only way to save their lives, even though parents were not allowed to come with them."
         },
         {
+          "id": "-KkElrPdA_I",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=-KkElrPdA_I",
           "title": "Trude’s Story: Escaping Nazi-Occupied Czechoslovakia | BBC Teach",
           "duration": "3 mins 40 secs",
-          "teacher_guidance": "Gentle animated testimony of survivor Trude, who was sent from Prague to Britain on a Kindertransport organized by Nicholas Winton. Highlights the sacrifice of parents who said goodbye on station platforms to save their children's lives.",
-          "viewing_task": "Watch the animated story of Trude. Why did her parents decide to put her on a train to Britain, and what was her journey like?",
-          "model_answer": "Trude's parents realized their family was in mortal danger after Nazi German forces occupied Czechoslovakia in early 1939. To save her life, they made the heartbreaking sacrifice of securing her a seat on a rescue train. Trude packed a small suitcase, said goodbye to her parents at Prague main railway station, and endured a long, anxious train journey through Germany to the coast, eventually finding safety with a caring foster family in England."
+          "pathway": "Primary Archive",
+          "teacher_guidance": "Recommended Watch Window: 00:15–03:25 | Lesson Phase: Individual Case Study | Tone Alert: Animated survivor testimony. Extremely moving account of Nicholas Winton's rescue trains.",
+          "viewing_task": "[01:00] Recall: What precious possession did Trude's mother pack for her before she boarded the rescue train in Prague?\n[02:15] Explain: How did Nicholas Winton organize foster families and travel permits in Britain to rescue children from Prague?\n[03:00] Challenge: What did Trude discover about her parents after the war ended in 1945?",
+          "model_answer": "Recall: Trude's mother packed a warm coat, a small bag of personal keepsakes, and photographs of her family.\nExplain: Nicholas Winton set up an office in a Prague hotel, catalogued lists of endangered children, travelled back to London to find British families willing to guarantee £50 and provide a home, and secured official travel permits for each train.\nChallenge: After the war ended, Trude discovered that both her parents and most of her relatives had been murdered in Nazi concentration camps; the Kindertransport had been their only surviving family legacy."
         },
         {
+          "id": "Era_O5PS0bA",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=Era_O5PS0bA",
           "title": "Ruth's Story: Escaping the Nazis as War Began | BBC Teach",
           "duration": "5 mins 49 secs",
-          "teacher_guidance": "Poignant animated oral history of Ruth, who escaped Nazi persecution as borders closed across Europe. Focus pupils' attention on the dramatic timeline and the coincidence of arriving in Britain exactly as the war began.",
-          "viewing_task": "How did Ruth and her mother manage to escape from Germany, and on what historic date did she finally arrive in Britain?",
-          "model_answer": "Ruth and her family faced intensifying anti-Jewish persecution, forcing them to secure emergency travel papers and visas before Nazi borders sealed shut. They caught one of the very last civilian trains out of Germany into the Netherlands and boarded a cross-channel ferry, stepping onto British soil on Sunday 3 September 1939—the very morning Neville Chamberlain declared war over the radio."
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 00:30–05:20 | Lesson Phase: Survivor Testimony | Tone Alert: Deals with Nazi discrimination in schools and sudden flight. Foster compassionate listening.",
+          "viewing_task": "[01:15] Recall: How did Ruth's school life change once anti-Jewish laws were enforced by the Nazis in Germany?\n[03:00] Explain: What hurdles did Jewish refugee families face when trying to obtain British entry visas before September 1939?\n[04:30] Challenge: Why is Ruth's personal testimony such an invaluable primary source for understanding the lived reality of refugee children?",
+          "model_answer": "Recall: Ruth was forced to sit at the back of the classroom, excluded from playground games, and eventually banned from attending regular school altogether.\nExplain: Families faced immense bureaucratic obstacles: they had to produce passports stamped with a red 'J', prove financial sponsorship in Britain, secure transit permits through Holland, and pay heavy exit taxes to Nazi authorities.\nChallenge: Ruth's firsthand oral testimony conveys the fear, confusion, and resilience of a child that textbook statistics cannot capture, showing how political persecution tore apart ordinary childhoods."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=b6Q7uHQTlmA",
+          "id": "b6Q7uHQTlmA",
+          "title": "Goodnight Mister Tom (1998) | ITV Feature Drama Extract (John Thaw)",
+          "duration": "3 mins 15 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–03:15 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Acclaimed drama depicting London evacuee William Beech arriving in the Dorset countryside.",
+          "viewing_task": "[01:10] Cinematic Discussion Focus: How does the film portray the cultural shock experienced by inner-city evacuee children sent to rural villages?",
+          "model_answer": "Cinematic Discussion Focus: The extract visualizes the vast divide: poor city children with gas mask boxes and labels arriving in an alien countryside with fresh air, farm animals, and unfamiliar silence."
         }
       ],
       "causal_domino_spine": {
@@ -970,7 +1039,10 @@
             "discussion_ideas": [
               "Preventing Enemy Artillery & Bomb Correction: If the German Luftwaffe discovered exactly where their bombs fell, they could correct their navigation instruments and bomb sights to target docks, power stations, and railways with deadly precision."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/st_pauls_survives_blitz_1940.jpg",
+          "image_alt": "Herbert Mason's iconic photograph of St Paul's Cathedral rising through smoke and fire during the Blitz, 29 December 1940",
+          "caption": "Herbert Mason's iconic photograph of St Paul's Cathedral rising through billowing smoke and fire during the Great Blitz (29 December 1940)."
         },
         {
           "act": 2,
@@ -988,7 +1060,10 @@
               "Freezing Damp & Flooding: Anderson shelters were buried in garden soil and regularly flooded with muddy water, leaving families shivering on damp bunks with condensation dripping from the corrugated iron roof.",
               "Sensory Terror & Confinement: Families endured cramped confinement for up to 12 hours in total darkness, feeling the earth shudder with deafening bomb blasts and antiaircraft shell bursts above."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/morrison_shelter_indoor_1941.jpg",
+          "image_alt": "A British family sleeping safely inside a heavy steel Morrison indoor shelter inside their living room, 1941",
+          "caption": "A British family sleeping safely inside a heavy steel Morrison indoor shelter assembled inside their ground-floor dining room (1941)."
         },
         {
           "act": 3,
@@ -1068,31 +1143,48 @@
       ],
       "video": [
         {
+          "id": "rHyxP3epU-w",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=rHyxP3epU-w",
           "title": "Your Anderson Shelter This Winter (1940) | British Pathé",
           "duration": "2 mins 16 secs",
-          "teacher_guidance": "Authentic 1940 Ministry of Home Security newsreel offering advice to householders on weatherproofing Anderson shelters. Emphasize how families adapted corrugated iron shelters with drainage, bunks, and earth banks against blast shockwaves.",
-          "viewing_task": "How were corrugated steel Anderson shelters adapted by families to keep them warm and dry during winter bombings?",
-          "model_answer": "Anderson shelters, made from six curved corrugated steel panels bolted together and sunk three feet into garden soil, were adapted for winter by mounding at least fifteen inches of earth over the top and sides to absorb bomb blasts. To combat flooding and dampness, families dug drainage sumps at the entrance, laid wooden floorboards, fitted tiered bunk beds, and insulated the interior with rugs, blankets, and hot water bottles."
+          "pathway": "Primary Archive",
+          "teacher_guidance": "Recommended Watch Window: 00:10–02:00 | Lesson Phase: Starter Hook / Practical Survival | Tone Alert: Vintage 1940 government newsreel. Highlights how families coped with winter damp in corrugated steel shelters.",
+          "viewing_task": "[00:35] Quick Check: Where in a family's home garden was an Anderson shelter built, and what was it covered with to protect from blast waves?\n[01:25] Hinge Question: Why did many families prefer sleeping in cold garden shelters rather than upstairs in their warm bedrooms during the Blitz?",
+          "model_answer": "Quick Check: Dug into the soil in the back garden, constructed from curved corrugated iron sheets and covered with a thick mound of earth and turf.\nHinge Question: Because even though Anderson shelters were freezing, damp, and crowded, the soil and steel protected families from deadly bomb blast waves, flying shrapnel, and falling masonry if their house took a direct hit or collapsed nearby."
         },
         {
+          "id": "1VwY_UxXkYU",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=1VwY_UxXkYU",
           "title": "The Blitz (1940–1941) | Simple History",
           "duration": "3 mins 41 secs",
-          "teacher_guidance": "Concise animated overview of the 1940–1941 German bombing campaign against British industrial centres and ports. Explains the transition from daylight fighter battles to nighttime city bombing, blackout enforcement, and civilian fortitude.",
-          "viewing_task": "Why did the German Luftwaffe switch to bombing British cities, and which cities were most heavily targeted?",
-          "model_answer": "After failing to destroy RAF Fighter Command during the daylight air battles of the Battle of Britain in summer 1940, the German Luftwaffe switched to nocturnal bombing ('The Blitz'). Hitler aimed to shatter civilian morale, demolish vital manufacturing factories, and wreck docks and ports. London was bombed for 57 consecutive nights, alongside major industrial and naval centres including Coventry, Liverpool, Birmingham, Plymouth, and Glasgow."
+          "pathway": "Quick Summary",
+          "teacher_guidance": "Recommended Watch Window: 00:20–03:20 | Lesson Phase: Tactical Context | Tone Alert: Animated air raid explosions and searchlight battles over London.",
+          "viewing_task": "[00:50] Quick Check: For how many consecutive nights was London bombed by the German Luftwaffe between September and November 1940?\n[02:15] Hinge Question: Why did Hitler's bombing campaign fail to break the morale of the British civilian population, despite devastating destruction?",
+          "model_answer": "Quick Check: London was bombed for 57 consecutive nights.\nHinge Question: Instead of panicking or surrendering, civilian communities pulled together with a spirit of collective resilience (the 'Blitz Spirit'): neighbours rescued one another from rubble, fire-watchers tackled incendiary bombs, and Londoners used Underground tube platforms as communal shelters, refusing to let fear stop daily life."
+        },
+        {
+          "id": "4idj7fI6OZg",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=4idj7fI6OZg",
+          "title": "Living Through Air Raids | Children of World War Two | BBC Teach",
+          "duration": "9 mins 54 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 01:00–08:45 | Lesson Phase: Child Perspective Investigation | Tone Alert: Sounds of sirens, anti-aircraft guns, and bomb whistles. Debrief carefully with sensitive pupils.",
+          "viewing_task": "[02:30] Recall: What two different sounds warned civilians that an air raid was starting and that it was finally safe to come out?\n[05:15] Explain: How did children sleep and pass the time during long hours trapped inside tube stations or garden shelters?\n[08:00] Challenge: How did the Blitz forge a new sense of community and equality among ordinary British city dwellers?",
+          "model_answer": "Recall: The rising and falling wail of the air raid siren warned an attack was beginning, while the steady, unbroken pitch of the 'All Clear' siren signaled the bombers had departed.\nExplain: Families brought blankets, pillows, flasks of tea, and board games into shelters. In Underground stations, children played cards, sang songs, and slept along platform edges while trains rumbled past, trying to drown out the thumping explosions above.\nChallenge: The Blitz destroyed wealthy townhouses and working-class tenements alike. Sharing the same communal shelters, drinking tea from mobile canteens, and helping neighbours clear shattered glass broke down rigid social boundaries and created a powerful sense of national solidarity."
         },
         {
           "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=4idj7fI6OZg",
-          "title": "Living Through Air Raids | History - Children of World War Two | BBC Teach",
-          "duration": "9 mins 54 secs",
-          "teacher_guidance": "Evocative documentary featuring firsthand memories of children who lived through the Blitz. Explores the eerie wail of air raid sirens, searchlight beams, anti-aircraft artillery noise, and community resilience in public shelters.",
-          "viewing_task": "Listen to Alan describe how his family took cover when the sirens wailed. What was life like spending nights inside an air raid shelter?",
-          "model_answer": "Alan recounts how his family grabbed their emergency bags and rushed to their shelter as soon as the warning sirens wailed. Spending the night in the shelter was cold, cramped, and terrifying due to the deafening roar of aircraft engines, exploding bombs, and shaking ground. However, families demonstrated incredible resilience: neighbours sang songs, shared hot tea from thermoses, played card games, and comforted children to keep spirits high until the 'all-clear' siren sounded."
+          "url": "https://www.youtube.com/watch?v=5Cc4LaSRiSc",
+          "id": "5Cc4LaSRiSc",
+          "title": "The Home Front: Rationing & The Kitchen Front | BBC Archive",
+          "duration": "8 mins 30 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 00:30–07:30 | Lesson Phase: Flipped Learning / Extension | Tone Alert: Primary Ministry of Food propaganda films and ration book analysis.",
+          "viewing_task": "[01:30] Recall: What foods were strictly rationed from January 1940 (bacon, butter, sugar)?\n[03:45] Explain: How did 'Dig for Victory' convert public parks, flowerbeds, and bomb craters into vegetable allotments?\n[06:00] Challenge: Why was the British civilian diet during wartime rationing actually healthier than before the war?",
+          "model_answer": "Recall: Butter, sugar, bacon, meat, cheese, tea, and eggs.\nExplain: With U-boats sinking Atlantic merchant convoys, Britain had to produce its own food, turning lawns into potato patches.\nChallenge: Rationing guaranteed fair distribution of wholemeal 'National Loaf', root vegetables, and milk for children, reducing saturated fats and eliminating malnutrition among the poorest families."
         }
       ],
       "causal_domino_spine": {
@@ -1276,7 +1368,10 @@
             "discussion_ideas": [
               "Fair Shares for All: Ration books guaranteed that wealthy families could not hoard scarce food while poorer families starved, creating a strong sense of national fairness and unity that kept civilian morale high."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/housewife_ration_book_grocer_1941.jpg",
+          "image_alt": "A British housewife presenting her Ministry of Food ration book to a local grocer, 1941",
+          "caption": "A British housewife presenting her Ministry of Food ration book to a local grocer to purchase her family's weekly butter and sugar allowance (1941)."
         },
         {
           "act": 3,
@@ -1293,7 +1388,10 @@
             "discussion_ideas": [
               "Freeing Vital Merchant Ships: Every potato or cabbage grown in back gardens and school playing fields meant less food had to be imported across the dangerous Atlantic, freeing merchant ships to carry weapons, fuel, and soldiers."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/dig_for_victory_allotment_london_1942.jpg",
+          "image_alt": "Londoners tending vegetable allotments in Kensington Gardens near the Albert Memorial, 1942",
+          "caption": "Londoners tending vegetable allotments in Kensington Gardens near the Albert Memorial under the Dig for Victory campaign (1942)."
         }
       ],
       "tasks": [
@@ -1356,31 +1454,48 @@
       ],
       "video": [
         {
+          "id": "JMS0_R4pguw",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=JMS0_R4pguw",
           "title": "Digging For Victory (1940) | British Pathé",
           "duration": "2 mins 04 secs",
-          "teacher_guidance": "Archival newsreel illustrating the nationwide 'Dig for Victory' campaign led by the Ministry of Agriculture. Encourage pupils to look for famous public landmarks and green spaces converted into productive vegetable plots.",
-          "viewing_task": "Notice where ordinary citizens are digging. What unexpected spaces were converted into allotments?",
-          "model_answer": "Citizens across Britain converted virtually every available patch of green open space into vegetable gardens. The newsreel shows public parks, front and back flower beds, sports pitches, golf courses, railway verges, and even the moat of the Tower of London being ploughed and turned into thriving allotments to grow potatoes, cabbages, carrots, and onions."
+          "pathway": "Primary Archive",
+          "teacher_guidance": "Recommended Watch Window: 00:10–01:50 | Lesson Phase: Starter Hook | Tone Alert: Enthusiastic propaganda newsreel urging every citizen to turn flowerbeds into vegetable patches.",
+          "viewing_task": "[00:30] Quick Check: What unusual public spaces (like parks, railway embankments, and flower beds) were dug up to grow food?\n[01:15] Hinge Question: Why was growing vegetables at home described as a direct weapon of war against German U-boats?",
+          "model_answer": "Quick Check: Royal parks, sports pitches, road verges, golf courses, and front garden flowerbeds were dug up into vegetable plots.\nHinge Question: Britain imported over 70% of its food by cargo ship before the war. Every sack of potatoes or cabbage grown at home meant one less merchant ship needed to cross the Atlantic Ocean facing deadly German U-boat torpedoes."
         },
         {
+          "id": "35NpLveVZDg",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=35NpLveVZDg",
           "title": "Dig For Victory | Imperial War Museums",
           "duration": "5 mins 59 secs",
-          "teacher_guidance": "In-depth Imperial War Museum curator talk explaining the strategic necessity of food rationing and domestic cultivation. Explains how German U-boats targeted Atlantic supply convoys, making self-sufficiency essential for survival.",
-          "viewing_task": "Why did the government urge millions of people to turn their lawns, parks, and flower beds into vegetable patches?",
-          "model_answer": "Before 1939, Britain imported over 70% of its food (55 million tons annually) by merchant shipping. When German U-boat submarines began sinking merchant convoys in the Battle of the Atlantic, food imports plummeted, threatening the country with starvation. The government launched 'Dig for Victory' so that domestic food production would reduce shipping dependency, freeing up merchant vessels to transport troops, weapons, and ammunition instead."
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Recommended Watch Window: 00:30–05:15 | Lesson Phase: Curatorial Inquiry | Tone Alert: None. IWM historian examines wartime posters, ration books, and Woolton Pie recipes.",
+          "viewing_task": "[01:30] Recall: What fictional cartoon character was invented by the Ministry of Food to encourage children to eat vegetables?\n[03:10] Explain: How did the ration book system work with coupons and points to make sure rich and poor shared food fairly?\n[04:45] Challenge: How did wartime rationing unexpectedly improve the overall health and nutrition of many working-class British children?",
+          "model_answer": "Recall: 'Potato Pete' and 'Doctor Carrot' were cartoon characters created to encourage children to enjoy homegrown root vegetables.\nExplain: Every citizen was issued a ration book with tear-out coupons for butter, meat, cheese, eggs, and sugar. Shopkeepers could only sell goods if the customer handed over both the money and the exact coupons, preventing wealthy hoarders from buying up all the food.\nChallenge: Because sugar, refined fats, and sweets were strictly limited, while fresh vegetables, brown National Wheatmeal bread, and milk were prioritised for children and mothers, the average diet was far lower in sugar and richer in vitamins, improving dental health and childhood nutrition."
         },
         {
+          "id": "DuO1CYsPf_M",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=DuO1CYsPf_M",
           "title": "A Soldier's Daughter: Rationing & The Home Front | BBC Teach",
           "duration": "9 mins 30 secs",
-          "teacher_guidance": "Rich primary-focused oral history exploring daily domestic life under food rationing. Illustrates the use of ration books, points systems, queues, and creative wartime recipes like 'Woolton Pie' and egg substitutes.",
-          "viewing_task": "How did food rationing change what Sarah and her family could eat each week in Bolton?",
-          "model_answer": "Rationing strictly limited the weekly quantities of staple foods Sarah's family could buy: each person received only one fresh egg per fortnight, 50g of butter, 100g of bacon, and limited sugar and tea. Her mother had to register with specific local grocers, hand over ration book coupons, and queue patiently for hours. Meals had to be stretched using homegrown vegetables, powdered dried eggs, and creative substitutes like potato-based stews."
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 01:00–08:30 | Lesson Phase: Daily Life Investigation | Tone Alert: Domestic reflections on shortages, queues, and 'make do and mend'.",
+          "viewing_task": "[02:00] Recall: What substitute ingredients did families use to bake birthday cakes when butter and eggs were almost impossible to find?\n[04:40] Explain: What did the government campaign 'Make Do and Mend' ask families to do with old clothes and worn-out blankets?\n[07:15] Challenge: Why did queuing at the grocer or butcher become one of the most time-consuming jobs for women during the war?",
+          "model_answer": "Recall: Dried powdered egg, grated carrots for sweetness, and margarine or dripping instead of fresh butter.\nExplain: Clothes rationing meant citizens had few coupons for new garments. 'Make Do and Mend' taught families to darn socks, patch knees, unravel old jumpers to knit new woollen vests, and make dresses out of old curtains or parachute silk.\nChallenge: Shortages meant supplies arrived unpredictably; whenever word spread that a butcher had sausages or a grocer had oranges, long queues formed instantly, forcing women to wait for hours in all weather just to secure their week's rations."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=nuPZUUED5uk",
+          "id": "nuPZUUED5uk",
+          "title": "Women Codebreakers & Secret Operations | Cinematic Trailer",
+          "duration": "2 mins 30 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:30 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Depicts women operating complex machinery and breaking codes.",
+          "viewing_task": "[01:15] Cinematic Discussion Focus: How does the film highlight the vital, top-secret intellectual contributions of women in wartime intelligence?",
+          "model_answer": "Cinematic Discussion Focus: The trailer shows how women made up over 75% of the workforce at Bletchley Park, operating the Bombe decoders and intercepting enemy radio messages."
         }
       ],
       "causal_domino_spine": {
@@ -1546,7 +1661,10 @@
             "discussion_ideas": [
               "Preventing National Starvation: With hundreds of thousands of male farmhands conscripted into the military, over 80,000 Land Army girls ploughed fields, milked cows, and harvested crops to prevent Britain from being starved into surrender."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/women_aircraft_workers_ww2.jpg",
+          "image_alt": "Female industrial workers assembling aircraft components in an engineering factory, 1942",
+          "caption": "Female industrial workers assembling aircraft components in an engineering factory to sustain the Royal Air Force (1942)."
         },
         {
           "act": 2,
@@ -1581,7 +1699,10 @@
             "discussion_ideas": [
               "Shattering Gender Stereotypes: By skillfully flying high-speed Spitfire fighters and four-engine bombers without radios or weapons, female pilots proved beyond doubt that women were equally capable of mastering complex, dangerous technical roles."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/women_munitions_workers_inspecting_shells_1942.jpg",
+          "image_alt": "Female munitions factory workers inspecting artillery shells in a British ordnance factory, 1942",
+          "caption": "Female munitions workers inspecting artillery shells in a British ordnance factory, undertaking hazardous industrial war work (1942)."
         }
       ],
       "tasks": [
@@ -1644,31 +1765,48 @@
       ],
       "video": [
         {
+          "id": "Z8FrnZwysEs",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=Z8FrnZwysEs",
           "title": "Britain's Land Girls | BBC World Service",
           "duration": "3 mins 27 secs",
-          "teacher_guidance": "Focuses on the Women's Land Army (WLA) and their vital agricultural labour. Teachers should draw attention to how tens of thousands of young urban women volunteered or were conscripted to work on farms, overcoming hard physical labour.",
-          "viewing_task": "What duties did members of the Women's Land Army perform on British farms?",
-          "model_answer": "Members of the Women's Land Army carried out grueling manual farm labour that had previously been done by male agricultural workers called into the armed forces. 'Land Girls' ploughed fields using tractors and heavy horses, milked cows by hand at dawn, planted and harvested wheat and potatoes, caught vermin and rats, and worked in forestry (the 'Lumber Jills') felling trees to produce timber for pit props and aircraft."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:20–03:10 | Lesson Phase: Starter / Women in the Countryside | Tone Alert: Archival footage of the Women's Land Army. Explores female empowerment in agricultural labour.",
+          "viewing_task": "[00:45] Quick Check: What distinctive uniform did members of the Women's Land Army wear (breeches, green jersey, armbands)?\n[02:00] Hinge Question: Why were farmers initially sceptical about hiring young city women, and how did the Land Girls prove them wrong?",
+          "model_answer": "Quick Check: Corduroy breeches (trousers), heavy leather boots, a green knitted pullover, and an official WLA arm badge.\nHinge Question: Many traditional male farmers doubted that young women from offices or shops could handle heavy manual labour like ploughing, harvesting, and lambing. The Land Girls proved them wrong through sheer grit, working 50-hour weeks in winter frost and summer heat to feed the nation."
         },
         {
+          "id": "oWF_Ylaq8Eg",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=oWF_Ylaq8Eg",
           "title": "Women's Roles in World War Two | BBC Newsround",
           "duration": "4 mins 41 secs",
-          "teacher_guidance": "Comprehensive Newsround explainer on the diverse mobilization of British women. Covers factory work, aircraft assembly, civil defence, firefighting, the auxiliary armed services (ATS, WAAF, WRNS), and espionage.",
-          "viewing_task": "What jobs did women take on to replace men who were called up to fight in the armed forces?",
-          "model_answer": "Women stepped into essential national roles across the economy and military. In industry, they assembled Spitfires and Lancaster bombers in aircraft factories and manufactured shells in hazardous munitions plants. In civil defence, they served as air raid wardens, ambulance drivers, and firefighters. Thousands also joined the armed auxiliary services (ATS, WRNS, WAAF), operating radar stations, anti-aircraft searchlights, and decoding top-secret enemy signals at Bletchley Park."
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Recommended Watch Window: 00:30–04:15 | Lesson Phase: Broadening Horizons | Tone Alert: None. Clear, empowering Newsround overview of factory, military, and espionage roles.",
+          "viewing_task": "[01:10] Recall: In what year did Britain become the first country to introduce conscription (compulsory service) for unmarried women?\n[02:30] Explain: What dangerous work did women perform in munitions factories making explosives and bombs for the front line?\n[03:50] Challenge: In what ways did women's wartime contributions permanently shatter old stereotypes about female capability in society?",
+          "model_answer": "Recall: December 1941, when the National Service Act conscripted single women aged 20–30 into auxiliary services, industry, or agriculture.\nExplain: Women filled shells with volatile chemical explosives (TNT and cordite). The dangerous toxic chemicals often turned their skin and hair bright yellow, earning them the nickname 'Canary Girls', and risked accidental explosions.\nChallenge: Women proved they could fly transport aircraft, drive ambulances under fire, decipher secret enemy codes at Bletchley Park, and operate complex machinery just as effectively as men, making it impossible to deny women equal status in modern Britain."
         },
         {
+          "id": "GOhYrBQFSTQ",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=GOhYrBQFSTQ",
           "title": "What Did Queen Elizabeth II Do in the Second World War? | Imperial War Museums",
           "duration": "8 mins 34 secs",
-          "teacher_guidance": "Fascinating IWM archive study exploring the wartime service of Princess Elizabeth (later Queen Elizabeth II). Shows her radio broadcast to evacuated children in 1940 and her military enlistment in the Auxiliary Territorial Service (ATS) in 1945.",
-          "viewing_task": "What military training did Princess Elizabeth undergo when she joined the Auxiliary Territorial Service (ATS) in 1945?",
-          "model_answer": "In early 1945, at age 18, Princess Elizabeth joined the Auxiliary Territorial Service (ATS) as Subaltern Elizabeth Windsor (Service No. 230873). She trained at the mechanical transport training centre in Aldershot, learning how to deconstruct and rebuild heavy vehicle engines, change lorry tyres, service spark plugs, and drive military ambulances and trucks in blackout conditions, making her the first female member of the Royal Family to serve on active military duty."
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 00:45–07:30 | Lesson Phase: Monarchy & Service Case Study | Tone Alert: Explores Princess Elizabeth's military training in the Auxiliary Territorial Service (ATS).",
+          "viewing_task": "[01:45] Recall: What auxiliary military unit did the teenage Princess Elizabeth join when she turned 18 in 1945?\n[03:50] Explain: What practical mechanical skills did Princess Elizabeth learn while training alongside other recruits in Camberley?\n[06:30] Challenge: Why was it so important for the Royal Family to share the same wartime dangers and duties as ordinary British citizens?",
+          "model_answer": "Recall: The Auxiliary Territorial Service (ATS), where she registered as Subaltern No. 230873 Elizabeth Windsor.\nExplain: She learned to deconstruct, repair, and rebuild internal combustion engines, change heavy truck tyres, navigate military convoys, and drive heavy Red Cross ambulances.\nChallenge: King George VI and Queen Elizabeth refused to send the princesses to safety in Canada, remaining in Buckingham Palace even when it was bombed during the Blitz. The Princess serving as an ordinary mechanic sent a powerful message that the monarchy stood shoulder-to-shoulder with all citizens in sacrifice."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=JkOwLCib1Tk",
+          "id": "JkOwLCib1Tk",
+          "title": "Spitfires in the Skies & Radar Defense | Primary Archive",
+          "duration": "4 mins 10 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–04:10 | Lesson Phase: Aerial Warfare | Tone Alert: Authentic aerial footage of Supermarine Spitfires and Hawker Hurricanes in dogfights.",
+          "viewing_task": "[01:20] Cinematic Discussion Focus: How does the footage capture the speed, danger, and tension experienced by Fighter Command pilots during the summer of 1940?",
+          "model_answer": "Cinematic Discussion Focus: The footage captures the frantic dogfights over southern England, illustrating how 'The Few' scrambled multiple times a day guided by Dowding's radar network to deny Hitler air supremacy."
         }
       ],
       "causal_domino_spine": {
@@ -1835,7 +1973,10 @@
             "discussion_ideas": [
               "Restoring Identity & Humanity: It reminds us that Jewish children were regular, happy schoolchildren with hobbies, sports teams, and friends, rather than just anonymous statistics or helpless victims."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/anti_jewish_laws_card_1938.jpg",
+          "image_alt": "Holocaust Educational Trust archive plate illustrating the gradual introduction of discriminatory anti-Jewish decrees, 1933–1938",
+          "caption": "Holocaust Educational Trust archive plate illustrating the gradual, step-by-step introduction of discriminatory anti-Jewish decrees across Europe (1933–1938)."
         },
         {
           "act": 2,
@@ -1852,7 +1993,10 @@
             "discussion_ideas": [
               "The Creeping Trap of Normalisation: Nazi laws stripped rights away incrementally—first barring swimming pools, then radios, then schools—so each small injustice seemed bearable, making it difficult for families to foresee the catastrophic danger ahead."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/nazi_boycott_jewish_shops_berlin_1933.jpg",
+          "image_alt": "SA stormtroopers affixing boycott posters to the window of a Jewish-owned department store in Berlin, 1 April 1933",
+          "caption": "SA stormtroopers affixing boycott posters to the display window of a Jewish-owned shop in Berlin during the nationwide boycott (1 April 1933)."
         },
         {
           "act": 3,
@@ -1933,31 +2077,48 @@
       ],
       "video": [
         {
+          "id": "N-kHHGAT2AE",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=N-kHHGAT2AE",
           "title": "What Was the Holocaust? | BBC Newsround",
           "duration": "2 mins 59 secs",
-          "teacher_guidance": "Age-appropriate, sensitive Newsround explainer on the history of Nazi prejudice and persecution. Frame the discussion around civil rights, discrimination, and the importance of remembering historical injustice to promote tolerance and inclusion.",
-          "viewing_task": "How does Newsround explain the persecution of minorities in Nazi Germany, and why is this history remembered today?",
-          "model_answer": "Newsround explains that the Nazi regime, led by Adolf Hitler, promoted hateful propaganda that blamed Jewish people, Romani people, disabled people, and other minority groups for Germany's problems. The Nazis stripped these citizens of their human rights, separated them from society, and ultimately murdered six million Jewish people. This history is remembered annually on Holocaust Memorial Day so modern society learns from the past, combats hatred and prejudice, and protects human rights."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:15–02:50 | Lesson Phase: Starter / Sensitive Historical Context | Tone Alert: Highly sensitive Holocaust education for KS2. Emphasizes persecution, loss of rights, and combating prejudice.",
+          "viewing_task": "[00:45] Quick Check: Who did the Nazi party target for persecution, and how many Jewish men, women, and children were murdered?\n[01:50] Hinge Question: Why is it vital that we remember the steps of prejudice and discrimination that led to the Holocaust, rather than just the final outcome?",
+          "model_answer": "Quick Check: The Nazi regime targeted Jewish people, Romani people, disabled people, and political opponents; six million Jewish people were systematically murdered.\nHinge Question: The Holocaust did not begin with gas chambers; it began with hateful words, schoolyard bullying, unjust laws, and ordinary people looking the other way. By remembering each step, we learn to speak out against prejudice, discrimination, and bullying in our own communities today."
         },
         {
+          "id": "ZDIXugTLGts",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=ZDIXugTLGts",
           "title": "Heinz’s Story: Escaping to Britain from Kristallnacht | BBC Teach",
           "duration": "5 mins 39 secs",
-          "teacher_guidance": "Powerful animated testimony of Heinz Skyte, who grew up in Nuremberg. Explores how everyday life gradually deteriorated under the Nuremberg Laws (1935) before culminating in the terrifying violence of Kristallnacht (the November Pogrom 1938).",
-          "viewing_task": "Watch the animated account of Heinz Skyte. How did his childhood in Nuremberg change after the Nazis came to power in 1933?",
-          "model_answer": "Heinz explains that following the Nazi takeover, his rights and dignity were eroded step-by-step: he was banned from local swimming pools and sports clubs, shunned by non-Jewish school friends, and forced to leave mainstream school. On the night of 9–10 November 1938 (Kristallnacht), Nazi Stormtroopers attacked his family home, ransacked their possessions, and arrested his father, convincing the family that they had to escape Germany immediately."
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Recommended Watch Window: 00:30–05:10 | Lesson Phase: Eyewitness Account | Tone Alert: Animated survivor testimony detailing childhood in Nazi Germany and the November 1938 pogrom.",
+          "viewing_task": "[01:20] Recall: What happened to Heinz's father and local synagogue during Kristallnacht in November 1938?\n[03:00] Explain: How did Heinz feel when his mother took him to the train station to say goodbye forever?\n[04:30] Challenge: How does Heinz describe the kindness of the British foster family that welcomed him in London?",
+          "model_answer": "Recall: Nazi stormtroopers burned down their local synagogue, smashed the windows of Jewish-owned shops, and arrested Heinz's father, taking him to a concentration camp.\nExplain: Heinz was confused and heartbroken; his mother smiled bravely on the platform to prevent him from crying, hiding her own grief knowing she would likely never see her son again.\nChallenge: Heinz describes being met with warm tea, patience, and love by a British family who, despite speaking a different language and having little money themselves, treated him like their own son and gave him back his childhood."
         },
         {
+          "id": "dl-PUfTBjzU",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=dl-PUfTBjzU",
           "title": "Martin's Story: Childhood Experiences of a Holocaust Survivor | BBC Teach",
           "duration": "5 mins 50 secs",
-          "teacher_guidance": "Animated oral history of Martin Stern, recounting his early childhood memories in Germany and the Netherlands. Excellent for discussing the psychological impact of exclusion, wearing the yellow Star of David, and the erosion of civic belonging.",
-          "viewing_task": "How does Martin describe the gradual loss of everyday freedoms for Jewish families in Germany before the war?",
-          "model_answer": "Martin describes how discriminatory Nazi legislation systematically closed off the outside world to Jewish children: they were forbidden from sitting on public park benches (marked 'For Aryans Only'), barred from playgrounds and public libraries, and forced to wear a yellow Star of David badge sewn onto their coats. Martin recalls the bewilderment and sadness of being treated as an outcast in his own neighbourhood simply because of his heritage."
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 00:40–05:25 | Lesson Phase: Deeper Empathy & Evidence | Tone Alert: Survivor testimony; discusses hiding in cupboards and surviving persecution.",
+          "viewing_task": "[01:30] Recall: What badge were Martin and all Jewish citizens forced to sew onto their coats by Nazi decree?\n[03:15] Explain: How did non-Jewish neighbours risk their own lives to hide Martin and his family from Nazi patrols?\n[04:45] Challenge: What central lesson about human kindness and courage does Martin want modern schoolchildren to remember?",
+          "model_answer": "Recall: A yellow Star of David badge inscribed with the word 'Jude'.\nExplain: Brave neighbours hid Martin in secret false wall cupboards and beneath floorboards, sharing their scarce food rations even though helping a Jewish person was punishable by execution.\nChallenge: Martin emphasizes that even in the darkest times of tyranny and hatred, individual human beings have the power to make moral choices. A few brave, compassionate individuals can stand up for what is right and save human lives."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=YhsPPBGtquo",
+          "id": "YhsPPBGtquo",
+          "title": "London Firefighters in the Blitz | Fire Service Archive",
+          "duration": "7 mins 45 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 00:30–07:00 | Lesson Phase: Flipped Learning / Extension | Tone Alert: Archival footage of the Auxiliary Fire Service fighting infernos during Blitz raids.",
+          "viewing_task": "[01:30] Recall: What hazards did Auxiliary Fire Service volunteers face when mains water pipes were ruptured by bombs?\n[03:45] Explain: How did ARP wardens enforce the blackout and guide civilians to Anderson and Morrison shelters?\n[06:00] Challenge: Why were civilian defense volunteers called 'heroes without guns'?",
+          "model_answer": "Recall: Ruptured water mains forced firefighters to pump mud and sewage from the Thames while incendiary bombs rained down around them.\nExplain: Wardens patrolled streets to ensure not a chink of light guided German bombers, reported unexploded bombs, and administered first aid.\nChallenge: They risked their lives unarmed every night to rescue trapped neighbors and extinguish firestorms, sustaining the nation's morale and infrastructure."
         }
       ],
       "causal_domino_spine": {
@@ -2141,7 +2302,10 @@
             "discussion_ideas": [
               "High-Speed Electrical Elimination: The Bombe tested thousands of rotor positions every second, automatically ruling out contradictory settings in minutes and laying the foundation for modern electronic computers."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/alan_turing_portrait.jpg",
+          "image_alt": "Official photographic portrait of British mathematician and cryptanalyst Alan Turing, 1936",
+          "caption": "Official photographic portrait of British mathematician and cryptanalyst Alan Turing (1912–1954), who led Hut 8 at Bletchley Park cracking the naval Enigma cipher."
         },
         {
           "act": 3,
@@ -2158,7 +2322,10 @@
             "discussion_ideas": [
               "Protecting the Intelligence Advantage: If the German military ever suspected their messages were being read, they would have redesigned their cipher machines overnight, blinding Allied commanders to enemy battle plans."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/bletchley_park_hut_8_office.jpg",
+          "image_alt": "Inside Hut 8 at Bletchley Park where codebreakers and WRNS personnel worked in secrecy",
+          "caption": "Inside Hut 8 at Bletchley Park, where codebreakers and WRNS personnel worked in absolute secrecy decrypting enemy naval signals."
         }
       ],
       "tasks": [
@@ -2221,31 +2388,48 @@
       ],
       "video": [
         {
+          "id": "CspaXNkC2ec",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=CspaXNkC2ec",
           "title": "How Did the Enigma Machine Work? | Science Museum",
           "duration": "1 min 48 secs",
-          "teacher_guidance": "Clear scientific demonstration of the electromechanical Enigma cipher machine. Teachers can use this clip to illustrate the mechanical complexity of rotating rotors, plugboard cross-cabling, and the billions of possible cryptographic permutations.",
-          "viewing_task": "How did the typewriter keys, electric rotors, and plugboard work together to scramble German military messages?",
-          "model_answer": "When an operator pressed a letter on the keyboard, an electrical battery current passed through a front plugboard with cross-connected patch leads, then through three or four rotating cipher wheels (rotors), and finally through a reflector plate. Because the rotors stepped forward with every keystroke, the electrical circuit changed constantly, transforming a single letter into one of roughly 158 million million million possible cipher combinations, making manual decryption impossible."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:10–01:40 | Lesson Phase: STEM / Codebreaking Starter | Tone Alert: None. Fascinating demonstration of rotors and electrical circuits in the German cipher machine.",
+          "viewing_task": "[00:30] Quick Check: What happened inside the Enigma machine every single time a telegraph operator pressed a letter on the keyboard?\n[01:10] Hinge Question: Why did the German military believe their Enigma encryption was completely unbreakable by Allied intelligence?",
+          "model_answer": "Quick Check: Rotors inside the machine rotated by one position, altering the internal electrical circuits so that typing the same letter twice would produce two completely different cipher letters.\nHinge Question: Because with multiple rotating wheels, plugboard cable connections, and daily codebook settings changed at midnight every day, the machine could produce over 158 million million million (158 quintillion) possible combinations."
         },
         {
+          "id": "mXZNayEPFKc",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=mXZNayEPFKc",
           "title": "How Was Hitler's Enigma Machine Cracked? | Smithsonian Channel",
           "duration": "3 mins 06 secs",
-          "teacher_guidance": "Dramatic documentary explaining how Alan Turing, Gordon Welchman, and mathematicians at Bletchley Park designed the electromechanical 'Bombe' machine to break German naval and military ciphers, shortening the war by an estimated two years.",
-          "viewing_task": "What role did Alan Turing and the electromechanical 'Bombe' machine play in decoding enemy communications at Bletchley Park?",
-          "model_answer": "Alan Turing designed the electromechanical 'Bombe' machine, which replicated thirty Enigma machines running in parallel. By searching for predictable phrases in enemy communications (known as 'cribs', such as weather reports ending with 'Heil Hitler'), the Bombe automatically eliminated millions of false rotor combinations in minutes, allowing Bletchley Park codebreakers to deduce the daily German cipher keys and decrypt thousands of top-secret 'Ultra' intelligence messages daily."
+          "pathway": "Tactics & Mechanics",
+          "teacher_guidance": "Recommended Watch Window: 00:20–02:55 | Lesson Phase: Scientific Breakthrough | Tone Alert: None. Highlights the brilliant work of Alan Turing and Gordon Welchman at Bletchley Park.",
+          "viewing_task": "[00:50] Quick Check: What was the name of the electro-mechanical codebreaking machine designed by Alan Turing at Bletchley Park?\n[02:00] Hinge Question: How did German operators making predictable mistakes (like including daily weather forecasts or ending messages with 'Heil Hitler') help Turing crack the code?",
+          "model_answer": "Quick Check: The Bombe machine, which used rotating drums to simulate dozens of Enigma machines simultaneously.\nHinge Question: Turing called these predictable phrases 'cribs'. Because German operators repeatedly transmitted identical formulaic phrases like 'weather forecast' or 'Heil Hitler' at specific times of day, codebreakers knew what plaintext words to look for, narrowing down millions of rotor settings to a handful of possibilities."
         },
         {
+          "id": "iwoU7Mjvm4Q",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=iwoU7Mjvm4Q",
           "title": "What to Expect When You Visit Bletchley Park",
           "duration": "3 mins 52 secs",
-          "teacher_guidance": "Virtual tour of the Bletchley Park estate (Station X) in Buckinghamshire. Highlights the wooden huts where thousands of civilian women and mathematicians worked in extreme secrecy, bound by the Official Secrets Act.",
-          "viewing_task": "Look at the wooden huts at Bletchley Park. Why were thousands of civilian women and mathematicians sworn to absolute secrecy about their work?",
-          "model_answer": "Over 10,000 personnel worked at Bletchley Park—nearly 75% of whom were civilian women (Wrens and civil servants) working in freezing, cramped wooden huts. They were sworn to total secrecy under the Official Secrets Act because if Nazi military commanders had discovered that Britain was intercepting and reading their encrypted Enigma communications, they would have altered their cipher procedures immediately, blinding Allied intelligence and costing thousands of Allied lives."
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Recommended Watch Window: 00:30–03:30 | Lesson Phase: Virtual Fieldwork & Secret State | Tone Alert: None. Tours the wooden huts and the Victorian mansion where codebreakers lived and worked.",
+          "viewing_task": "[01:00] Recall: What official secret pledge were all 10,000 workers at Bletchley Park forced to swear regarding their wartime work?\n[02:15] Explain: Why did Bletchley Park recruit crossword puzzle masters, chess champions, and linguists alongside mathematicians?\n[03:15] Challenge: By how many years do historians estimate that the codebreakers of Bletchley Park shortened World War Two?",
+          "model_answer": "Recall: The Official Secrets Act: workers were forbidden from telling anyone—including parents, spouses, and children—what they did at Bletchley, keeping the secret for over thirty years after the war.\nExplain: Breaking codes required lateral thinking, pattern recognition, and an intuitive grasp of language syntax and translation, meaning chess champions and crossword champions could spot linguistic rhythms and flaws that pure numbers alone could not reveal.\nChallenge: Historians estimate that decoding German Ultra signals shortened the war in Europe by between two and four years, saving millions of military and civilian lives and ensuring the success of the D-Day landings."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=nuPZUUED5uk",
+          "id": "nuPZUUED5uk",
+          "title": "The Imitation Game (2014) | Official Trailer (Benedict Cumberbatch)",
+          "duration": "2 mins 32 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:32 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Oscar-winning drama depicting Alan Turing and the cracking of Nazi naval Enigma.",
+          "viewing_task": "[01:10] Cinematic Discussion Focus: How does the film portray the race against time to design the electromechanical Bombe machine to decipher millions of German military codes?",
+          "model_answer": "Cinematic Discussion Focus: The trailer dramatises how human mathematicians could never check millions of daily cipher variations by hand; Turing realized that only an electro-mechanical thinking machine could defeat another machine."
         }
       ],
       "causal_domino_spine": {
@@ -2411,7 +2595,10 @@
             "discussion_ideas": [
               "Moral Courage Over Inconvenience: Rescuers act on conscience, refusing to look away or wait for governments to act; Winton canceled a skiing holiday to organize rescue trains because he saw innocent children in grave danger."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/nicholas_winton_1938_portrait.jpg",
+          "image_alt": "Twenty-nine-year-old London stockbroker Nicholas Winton in 1938",
+          "caption": "Twenty-nine-year-old London stockbroker Nicholas Winton in 1938, who cancelled a Swiss skiing holiday to organize the rescue of 669 children from Prague."
         },
         {
           "act": 2,
@@ -2445,7 +2632,10 @@
             "discussion_ideas": [
               "Quiet Humility & Human Decency: Winton never sought fame or praise, believing he had simply done what any decent human being should do, and he carried quiet grief for the 250 children on the final train stopped by the outbreak of war."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/nicholas_winton_memorial_prague_station.jpg",
+          "image_alt": "The Sir Nicholas Winton Memorial bronze statue on Platform 1 of Prague Main Railway Station",
+          "caption": "The Sir Nicholas Winton Memorial bronze statue on Platform 1 of Praha hlavní nádraží (Prague Main Railway Station), commemorating the 669 children rescued on the Czech Kindertransports (Flor Kent, 2009)."
         }
       ],
       "tasks": [
@@ -2508,31 +2698,48 @@
       ],
       "video": [
         {
+          "id": "6_nFuJAF5F0",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=6_nFuJAF5F0",
           "title": "Sir Nicholas Winton: That's Life (1988) | BBC TV",
           "duration": "1 min 39 secs",
-          "teacher_guidance": "Iconic British television moment from the BBC programme 'That's Life!' hosted by Esther Rantzen. Prepare pupils for an emotionally moving clip demonstrating how one individual's quiet courage in 1938–39 saved generations of lives.",
-          "viewing_task": "Watch the famous moment when presenter Esther Rantzen asks the studio audience who owes their life to Nicholas Winton. How do they react?",
-          "model_answer": "Nicholas Winton sits in the studio audience unaware that Esther Rantzen is holding his original 1939 scrapbook. When Rantzen asks if anyone in the audience owes their life to Nicholas Winton, the woman sitting beside him stands up and embraces him. When Rantzen repeats the question to the entire auditorium, every single person in the surrounding rows stands up in unison, revealing that they were the very children he had rescued from Prague fifty years earlier."
+          "pathway": "Primary Archive",
+          "teacher_guidance": "Recommended Watch Window: 00:10–01:35 | Lesson Phase: Emotional Climax & Starter | Tone Alert: Deeply moving television archive. Esther Rantzen asks who in the studio audience owes their life to Nicholas Winton.",
+          "viewing_task": "[00:30] Quick Check: For how many decades did Sir Nicholas Winton keep his rescue of 669 children completely secret from his own wife and family?\n[01:10] Hinge Question: Watch the moment the studio audience stands up around Sir Nicholas Winton. What does their collective gesture reveal about the enduring legacy of moral courage?",
+          "model_answer": "Quick Check: For 50 years; his wife Grete only discovered the story in 1988 when she found a leather-bound scrapbook in their attic containing lists of children's names and addresses.\nHinge Question: The entire audience standing in silent tears and applause demonstrates that a single person's humble courage can alter generations of human lives: those 669 rescued children had grown up to have children and grandchildren of their own, creating an estimated 6,000 people alive today because of one man's integrity."
         },
         {
+          "id": "M1JEuQfMZfY",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=M1JEuQfMZfY",
           "title": "Sir Nicholas Winton: The Life of a Holocaust Hero | BBC News",
           "duration": "1 min 59 secs",
-          "teacher_guidance": "Concise biographical tribute summarizing the humanitarian achievements of Sir Nicholas Winton. Highlights how he canceled a Swiss skiing holiday in December 1938 to travel to Prague and organize the Czech Kindertransport.",
-          "viewing_task": "What did Nicholas Winton do in Prague in the winter of 1938 to arrange the rescue of 669 children?",
-          "model_answer": "In December 1938, young stockbroker Nicholas Winton traveled to Prague, set up an improvised rescue office in his hotel room, and compiled lists of vulnerable refugee children living in squalid camps. Working tirelessly with British volunteers, he lobbied the Home Office for entry visas, raised the required £50 financial guarantee per child, located British foster homes, and organized eight railway transports across Europe to bring 669 children to safety in the UK."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:15–01:50 | Lesson Phase: Biographical Overview | Tone Alert: Tribute following Sir Nicholas Winton's passing at age 106 in 2015.",
+          "viewing_task": "[00:40] Quick Check: What was Nicholas Winton's ordinary day job in London before he cancelled a Swiss ski holiday to travel to Prague in 1938?\n[01:20] Hinge Question: What famous motto guided Nicholas Winton's belief that ordinary people should never accept injustice as inevitable?",
+          "model_answer": "Quick Check: He was a 29-year-old stockbroker working in the City of London.\nHinge Question: His motto was: 'If something is not impossible, then there must be a way of doing it.' He believed that when human lives are at risk, ordinary citizens should not wait for governments or institutions to act, but take personal responsibility to solve the problem."
         },
         {
+          "id": "6ethollg-PI",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=6ethollg-PI",
           "title": "One Life: The Story of Nicholas Winton | Official Trailer",
           "duration": "2 mins 00 secs",
-          "teacher_guidance": "Cinematic trailer from the feature film starring Anthony Hopkins and Johnny Flynn. Shows the perilous race against time faced by Nicholas Winton, Doreen Warriner, and Trevor Chadwick as the German army closed in on Prague.",
-          "viewing_task": "How does the trailer show the urgency of Trevor Chadwick and Nicholas Winton's mission before borders closed in September 1939?",
-          "model_answer": "The trailer dramatizes the desperate race against bureaucratic delays and looming war: the rescue team worked night and day securing official permits, stamping identity documents, and boarding children onto trains while Nazi officers and secret police watched closely. Their final, largest train carrying 250 children was scheduled for 1 September 1939—the day Germany invaded Poland—forcing borders shut and tragically preventing that train from departing."
+          "pathway": "Cinematic Focus",
+          "teacher_guidance": "Recommended Watch Window: 00:10–01:55 | Lesson Phase: Cinematic Discussion Focus | Tone Alert: Feature film trailer starring Sir Anthony Hopkins and Johnny Flynn. Dramatic depictions of refugee camps and railway separations.",
+          "viewing_task": "Cinematic Discussion Focus: How does the film contrast the young, energetic Nicholas Winton fighting bureaucracy in 1938 with the elderly man in the 1980s still haunted by the children on the final train that could not leave when war broke out on 1 September 1939?",
+          "model_answer": "Cinematic Discussion Focus: The trailer shows the young Winton bursting with fierce determination to navigate red tape, secure £50 guarantees, and hustle children onto trains before borders shut. In contrast, the elderly Winton portrayed by Anthony Hopkins carries a quiet, lingering sadness: despite saving 669 children, he could never forget the 250 children aboard the ninth train scheduled for 1 September 1939, which was halted when Hitler invaded Poland and the borders were closed forever."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=w5gC3ySGGTI",
+          "id": "w5gC3ySGGTI",
+          "title": "The Kindertransport & Holocaust Survivors: In Their Own Words | Archive",
+          "duration": "5 mins 12 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 00:30–05:00 | Lesson Phase: Flipped Learning / Extension | Tone Alert: Primary survivor oral testimony detailing arrival in Britain.",
+          "viewing_task": "[01:15] Recall: What emotions did refugee children experience leaving parents behind on railway platforms?\n[02:45] Explain: How did British volunteer host families welcome refugee children?\n[04:15] Challenge: Why was Sir Nicholas Winton's rescue mission kept completely secret for fifty years until his wife found his scrapbook?",
+          "model_answer": "Recall: Deep fear, confusion, and grief as parents waved goodbye through train windows, often for the very last time.\nExplain: Volunteers met trains at Liverpool Street Station, providing hot food, shelter, and fostering children in British homes.\nChallenge: Winton never sought praise or fame; he believed he had simply done what was necessary, packing away his notebooks until his wife Grete discovered them in the attic in 1988."
         }
       ],
       "causal_domino_spine": {
@@ -2698,7 +2905,10 @@
             "discussion_ideas": [
               "Reclaiming Community Freedom: After nearly six years of terrifying night raids, blackouts, and rationing, carrying dining tables into bomb-damaged streets allowed entire neighbourhoods to sing, dance, and share food together in the open daylight."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/churchill_ve_day_whitehall_1945.jpg",
+          "image_alt": "Prime Minister Winston Churchill flashes his famous V for Victory sign to crowds from the Ministry of Health balcony in Whitehall on VE Day, 8 May 1945",
+          "caption": "Prime Minister Winston Churchill flashes his famous 'V for Victory' sign to roaring crowds from the Ministry of Health balcony in Whitehall on VE Day (8 May 1945)."
         },
         {
           "act": 2,
@@ -2716,12 +2926,15 @@
               "Triumph & Survival: The smiling children waving Union Jacks celebrate victory, safety, and the joy that no more bombs will ever fall on their homes.",
               "The Bleak Cost of Destruction: Standing atop jagged heaps of shattered brickwork silently shows the devastating destruction of Britain's cities and the countless lives lost in the blitz."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/ve_day_celebrations_london_1945.jpg",
+          "image_alt": "A mounted police officer gently navigates through densely packed crowds celebrating in Whitehall on VE Day, 8 May 1945",
+          "caption": "A mounted police officer gently navigates through the packed crowds celebrating in Whitehall, London, on VE Day (8 May 1945)."
         },
         {
           "act": 3,
           "title": "The Duty of Remembrance: The Poppy & The Cenotaph",
-          "text": "<span class=\"para-ref\">[10.5]</span> Today, the generation that lived through the Second World War has almost entirely passed away. But their courage, sacrifices, and resilience have shaped the modern world in which we live. Every year on <strong>Remembrance Sunday</strong> in November, millions of people wear a small <strong>red poppy</strong>—a symbol inspired by the poppy fields of battlefields, representing hope, peace, and sacrifice.<br><br><span class=\"para-ref\">[10.6]</span> At 11:00am on the eleventh day of the eleventh month, the nation observes a two-minute silence. We remember not only the brave soldiers, sailors, and pilots from Britain and the Commonwealth who fought for freedom, but also the brave civilians on the Home Front: the mothers who kept children safe in dark Anderson shelters, the Land Girls who harvested crops, the secret codebreakers at Bletchley Park, and the upstanders who saved innocent lives. Remembering their story ensures that their sacrifices were not in vain.<br><br><button type=\"button\" onclick=\"if(window.viewLessonDetail){window.viewLessonDetail(10);}else{window.location.search='?view=lessons&unit=ks2_ww2&lesson=11';}\" style=\"background: #16a34a; color: white; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 700; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(22,163,74,0.3);\"><span>Launch Enquiry 11</span> &rarr;</button></div>",
+          "text": "<span class=\"para-ref\">[10.5]</span> Today, the generation that lived through the Second World War has almost entirely passed away. But their courage, sacrifices, and resilience have shaped the modern world in which we live. Every year on <strong>Remembrance Sunday</strong> in November, millions of people wear a small <strong>red poppy</strong>—a symbol inspired by the poppy fields of battlefields, representing hope, peace, and sacrifice.<br><br><span class=\"para-ref\">[10.6]</span> At 11:00am on the eleventh day of the eleventh month, the nation observes a two-minute silence. We remember not only the brave soldiers, sailors, and pilots from Britain and the Commonwealth who fought for freedom, but also the brave civilians on the Home Front: the mothers who kept children safe in dark Anderson shelters, the Land Girls who harvested crops, the secret codebreakers at Bletchley Park, and the upstanders who saved innocent lives. Remembering their story ensures that their sacrifices were not in vain.",
           "source": {
             "letter": "C",
             "title": "Source C (Photograph): The Cenotaph in Whitehall (National Memorial of Remembrance)",
@@ -2796,31 +3009,48 @@
       ],
       "video": [
         {
+          "id": "q97bEp8Q0Mg",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=q97bEp8Q0Mg",
           "title": "Remembrance Day: What Is It & Why Is It Important? | BBC Newsround",
           "duration": "1 min 38 secs",
-          "teacher_guidance": "Sensitive primary introduction to the symbolism of Remembrance Day, the two-minute silence on 11 November, and the red poppy inspired by John McCrae's poem 'In Flanders Fields'. Focus pupils on reflection and gratitude.",
-          "viewing_task": "Why is the red poppy used as a symbol of remembrance, and why is it important to remember those who lived through the war?",
-          "model_answer": "The red poppy is used as a universal symbol of remembrance because bright scarlet poppies were the first flowers to grow across the devastated battlefields of Flanders and the Somme after the First World War. We observe a two-minute silence on Remembrance Day (11 November) to pause, pay tribute to the millions of soldiers and civilians who lost their lives in wars, and remind ourselves of the vital importance of peace and resolving conflict without violence."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:10–01:30 | Lesson Phase: Starter / Memorial Practice | Tone Alert: Explores the meaning of the red poppy and the two-minute silence.",
+          "viewing_task": "[00:30] Quick Check: On what day and at what time does the UK observe the annual national two-minute silence of remembrance?\n[01:05] Hinge Question: Why is it important that Remembrance honours not just soldiers on the battlefield, but civilian rescue workers, factory workers, and child victims of war?",
+          "model_answer": "Quick Check: On 11 November at 11:00 am (the eleventh hour of the eleventh day of the eleventh month).\nHinge Question: World War Two was a 'total war' where ordinary civilians—firefighters, ambulance drivers, factory workers, merchant seamen, and evacuees—were targeted by bombs and sustained the country. Honouring everyone acknowledges the shared sacrifice of the whole society."
         },
         {
+          "id": "U_FZlpQqhMg",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=U_FZlpQqhMg",
           "title": "V.E. Celebrations (1945) | British Pathé",
           "duration": "2 mins 10 secs",
-          "teacher_guidance": "Vibrant British Pathé archival newsreel capturing street parties, bonfires, dancing, and mass celebrations across Britain on Victory in Europe Day, 8 May 1945. Have pupils contrast this joy with the ongoing physical devastation of bombed neighbourhoods.",
-          "viewing_task": "Look at the archival footage of neighbourhood street parties. How did communities make the day special for children?",
-          "model_answer": "Despite wartime rationing and widespread bomb damage, communities pooled together to throw festive street parties: long rows of dining tables and chairs were brought out into the roads, decorated with homemade red, white, and blue paper bunting. Neighbours saved precious rationed sugar, flour, and butter to bake cakes, buns, and jelly for the children, while brass bands played, bonfires burned, and families danced the conga in the streets."
+          "pathway": "Primary Archive",
+          "teacher_guidance": "Recommended Watch Window: 00:15–02:00 | Lesson Phase: Primary Celebration Analysis | Tone Alert: Euphoric street parties, dancing, and bonfires on 8 May 1945.",
+          "viewing_task": "[00:35] Quick Check: What songs and dances broke out in British streets when Winston Churchill officially announced Victory in Europe?\n[01:25] Hinge Question: Even as crowds celebrated in the streets, why was VE Day also an occasion of quiet grief for millions of families?",
+          "model_answer": "Quick Check: Street parties broke out with the Hokey Cokey, the Conga, singing 'We'll Meet Again' and 'Roll Out the Barrel', with bunting hung across bombed streets.\nHinge Question: Because behind every street party and cheering crowd, hundreds of thousands of mothers, fathers, and children were mourning fallen sons, brothers, and husbands who would never return home, while the war against Japan in the Pacific was still ongoing."
         },
         {
+          "id": "uOEdJGE_j9g",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=uOEdJGE_j9g",
           "title": "VE Day: What Is It & Why Do We Remember? | BBC Newsround",
           "duration": "3 mins 26 secs",
-          "teacher_guidance": "Educational Newsround retrospective explaining the historical significance of 8 May 1945. Explains Winston Churchill's radio announcement, the crowds gathering at Buckingham Palace, and the mixed emotions of families mourning lost loved ones.",
-          "viewing_task": "What does 'VE Day' stand for, and how did people across Britain celebrate on 8 May 1945?",
-          "model_answer": "VE Day stands for 'Victory in Europe Day', marking Nazi Germany's unconditional surrender and the end of World War Two in Europe on 8 May 1945. Following Winston Churchill's radio broadcast, millions flooded city centres: vast crowds gathered outside Buckingham Palace chanting 'We want the King!', church bells rang across the country for the first time in years, streetlights were turned back on, and people celebrated the end of six years of blackout and bombardment."
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Recommended Watch Window: 00:20–03:15 | Lesson Phase: Synthesis & Legacy | Tone Alert: Explores the rebuilding of post-war Britain and international peace.",
+          "viewing_task": "[00:50] Recall: What does 'VE Day' stand for, and on what exact date was it declared across Britain and Europe?\n[01:45] Explain: What major rebuilding tasks did Britain face after six years of total war (e.g. destroyed cities, rebuilding the NHS)?\n[02:50] Challenge: How did the shared hardships of the war convince the British people to build a fairer society, leading to the creation of the National Health Service in 1948?",
+          "model_answer": "Recall: Victory in Europe Day, celebrated on 8 May 1945 following Nazi Germany's unconditional military surrender.\nExplain: Millions of homes had been pulverized by bombing, requiring prefabricated 'prefabs' to be constructed; industries had to switch from weapons back to civilian goods, food rationing continued for another nine years, and war debt was staggering.\nChallenge: Having pulled together through the Blitz, evacuation, and rationing, British citizens believed that if the nation could mobilize resources to defeat tyranny in war, it could and must organize healthcare, education, and social safety nets for every citizen in peace, inspiring the historic landslide election of Clement Attlee's Labour government and the birth of the NHS."
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=LtJ60u7SUSw",
+          "id": "LtJ60u7SUSw",
+          "title": "Winston Churchill's VE Day Broadcast & The End of War | BBC Archive",
+          "duration": "2 mins 28 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:28 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Historic radio broadcast announcing the unconditional surrender of Nazi Germany.",
+          "viewing_task": "[01:00] Cinematic Discussion Focus: How does Churchill's address balance triumphant celebration of victory with solemn remembrance of the fallen?",
+          "model_answer": "Cinematic Discussion Focus: Churchill declares 'This is your victory!', celebrating the endurance of the British people while somberly reminding the nation of the immense human cost and the ongoing struggle in the Pacific."
         }
       ],
       "causal_domino_spine": {
@@ -3007,7 +3237,10 @@
             "discussion_ideas": [
               "Restoring Trust and Childhood: The children had been robbed of love, food, and safety for years; gentle guidance, swimming in Lake Windermere, and warm meals helped their traumatized minds feel secure enough to learn and play again."
             ]
-          }
+          },
+          "image": "/units/ks2_ww2/assets/windermere_children_calgarth_1945.jpg",
+          "image_alt": "Child survivors of the concentration camps smiling on newly gifted red bicycles at Calgarth Estate, Lake Windermere, August 1945",
+          "caption": "Child survivors of the concentration camps smiling on newly gifted red bicycles at the Calgarth Estate, Lake Windermere (August 1945)."
         },
         {
           "act": 3,
@@ -3114,58 +3347,70 @@
       ],
       "video": [
         {
+          "id": "b3XaiHLObk8",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=b3XaiHLObk8",
-          "title": "After the War: Official Book Trailer | Barrington Stoke & Tom Palmer",
+          "title": "After the War: Official Book Trailer | Tom Palmer",
           "duration": "1 min 05 secs",
-          "teacher_guidance": "Animated book trailer for Tom Palmer's acclaimed historical novel 'After the War'. Introduces the arrival of child Holocaust survivors at Calgarth Estate by Lake Windermere in August 1945, highlighting themes of trauma, friendship, and recovery.",
-          "viewing_task": "Watch the animated book trailer. What challenges do Yossi, Leo, and Mordecai face as they try to settle into their new lives in Cumbria?",
-          "model_answer": "The trailer illustrates the profound emotional and psychological challenges the boys face: although they have survived concentration camps, they are haunted by nightmarish memories, fear uniforms and shouting, and desperately yearn to discover if any family members survived. At Lake Windermere, surrounded by peaceful mountains and supported by kind carers, they gradually find security, brotherhood, and the strength to rebuild their lives."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:00–01:05 | Lesson Phase: Book Hook / Literary Introduction | Tone Alert: Features award-winning children's author Tom Palmer introducing his novel about the 300 child survivors brought to the Lake District.",
+          "viewing_task": "[00:20] Quick Check: In August 1945, how many child survivors of the Holocaust were flown by the RAF from Prague to a former flying-boat factory in the English Lake District?\n[00:50] Hinge Question: Why was Lake Windermere in Cumbria chosen as the sanctuary for these traumatized children to begin rebuilding their lives?",
+          "model_answer": "Quick Check: 300 children (part of the 732 young survivors known as 'The Boys') were flown by RAF Stirling bombers to Crosby-on-Eden and brought to the Calgarth Estate by Lake Windermere.\nHinge Question: The quiet beauty of the mountains and water provided a peaceful, healing sanctuary far from bombed cities and barbed wire, where children could receive medical care, warm food, clean beds of their own, and learn to swim, ride bicycles, and trust people again."
         },
         {
+          "id": "BZgeEbYuWP8",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=BZgeEbYuWP8",
           "title": "Turning Fact into Fiction: Interviewing Real Survivors | Tom Palmer",
           "duration": "3 mins 42 secs",
-          "teacher_guidance": "Author interview exploring historical research and oral testimony. Tom Palmer explains how he interviewed living survivors including Arek Hersh MBE to ensure the authentic experiences of the 'Windermere Children' were faithfully captured in fiction.",
-          "viewing_task": "How did author Tom Palmer use real oral history and interviews with survivors like Arek Hersh to write 'After the War'?",
-          "model_answer": "Author Tom Palmer conducted in-depth oral history research by meeting and interviewing living survivors of the Windermere Children, including Arek Hersh MBE. He listened to their personal memories of arriving in England on RAF transport planes, their initial bewilderment at clean white sheets and abundant bread, and their joy at swimming in Lake Windermere. Palmer wove these authentic historical details into the narrative to ensure his novel preserved real survivor voices for young readers."
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Recommended Watch Window: 00:25–03:25 | Lesson Phase: Historical Craft & Testimony | Tone Alert: Tom Palmer discusses interviewing survivors Arek Hersh, Minia Jay, and Mala Tribich.",
+          "viewing_task": "[01:00] Recall: Which real-life Holocaust survivors did Tom Palmer interview while researching his novel 'After the War'?\n[02:15] Explain: Why did the children hide bread under their pillows and in their pockets when they first arrived at the Calgarth Estate?\n[03:10] Challenge: How does historical fiction based on real survivor testimony help young readers connect with events that occurred eighty years ago?",
+          "model_answer": "Recall: Tom Palmer interviewed survivors including Arek Hersh, Minia Jay, Mala Tribich, and Sam Laskier.\nExplain: Having endured years of starvation and cruelty in ghettos and concentration camps where missing a scrap of food meant death, the children could not believe that food was now plentiful. Hoarding bread under their pillows was an instinctive survival mechanism born of deep trauma.\nChallenge: Historical fiction gives emotional life to names and statistics, allowing pupils to walk in the shoes of young characters (Yossi, Leo, Mordecai), feeling their fears, friendships, and hope, making the lessons of the Holocaust unforgettable."
         },
         {
+          "id": "L-nPGLmpAJU",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=L-nPGLmpAJU",
           "title": "After the War: On Location at Lake Windermere | Tom Palmer",
           "duration": "4 mins 27 secs",
-          "teacher_guidance": "Author Tom Palmer takes viewers on a guided historical walk around the former Calgarth Estate at Troutbeck Bridge, Lake Windermere. Demonstrates how historical geography and physical landscapes connect to memory and healing.",
-          "viewing_task": "Watch author Tom Palmer walking around Lake Windermere. What happened at the Calgarth Estate in 1945 and why did he choose this setting for his novel?",
-          "model_answer": "Tom Palmer explains that in August 1945, the British government and Jewish relief committees brought 300 child Holocaust survivors from liberated camps in Europe to the Calgarth Estate by Lake Windermere. Originally built as wartime housing for Sunderland flying boat factory workers, the chalets provided a peaceful sanctuary where traumatized children received medical care, therapy, nutritious food, and English lessons, turning a corner of Cumbria into a world-famous place of rebirth and hope."
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 00:30–04:00 | Lesson Phase: Geographical / Fieldwork Connection | Tone Alert: On-location report from the shores of Lake Windermere and the Lake District Holocaust Project.",
+          "viewing_task": "[01:15] Recall: What specific sports and activities helped the Windermere children regain their physical strength and childhood joy?\n[02:40] Explain: How did Dr Oskar Friedman and the team of social workers care for the psychological trauma of the child survivors?\n[03:50] Challenge: What does the story of the Windermere Children teach us about human resilience and the power of welcoming refugees?",
+          "model_answer": "Recall: Swimming in the lake, football matches, rowing boats, hiking up Cumbrian fells, and riding newly donated bicycles.\nExplain: Dr Friedman and his staff did not treat them as patients, but as an affectionate community. They allowed the children to make their own rules, stay together in friendship groups, learn English gradually, and speak freely about their experiences without judgment.\nChallenge: It shows that even after enduring unimaginable loss and trauma, young people possess extraordinary capacity to rebuild lives, make lifelong friendships, and contribute richly to their new country if they are welcomed with warmth, dignity, and love."
         },
         {
+          "id": "w5gC3ySGGTI",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=w5gC3ySGGTI",
           "title": "The Windermere Children: Mayer Hersh's True Story | LDHP",
           "duration": "5 mins 12 secs",
-          "teacher_guidance": "Moving firsthand testimony from survivor Mayer Hersh MBE, produced by the Lake District Holocaust Project. Details his arrival in Cumbria and how the kindness of British volunteers restored his faith in humanity.",
-          "viewing_task": "Listen to survivor Mayer Hersh speak about his arrival at Lake Windermere. How did the local people and the peaceful setting help him begin to feel human again?",
-          "model_answer": "Mayer Hersh explains that arriving in the tranquil Lake District felt like entering another world after surviving the horrors of Auschwitz and Buchenwald. He recalls that having his own bed with clean sheets, being served wholesome meals without fear of starvation, and being treated with genuine dignity and kindness by British volunteers and counselors slowly restored his humanity and allowed him to feel safe again for the first time in six years."
+          "pathway": "Primary Archive",
+          "teacher_guidance": "Recommended Watch Window: 00:40–04:45 | Lesson Phase: Primary Eyewitness Testimony | Tone Alert: Authentic survivor testimony from Mayer Hersh MBE. Listen with deep respect.",
+          "viewing_task": "[01:20] Recall: What did Mayer Hersh think when the RAF aircraft landed in England and he saw the lush green countryside?\n[02:45] Explain: How did Mayer describe the feeling of sleeping between clean white sheets and having a room of his own for the first time in six years?\n[04:10] Challenge: Why did Mayer Hersh dedicate his entire retirement to speaking in British schools about tolerance and combating hatred?",
+          "model_answer": "Recall: Mayer remembered looking out of the aircraft windows at the rolling green English hills, thinking he had arrived in paradise after the smoke and ash of the camps.\nExplain: He described weeping tears of disbelief at the clean white bed linen, the soft mattress, and having his own towel, contrasting it with sleeping crammed five to a wooden bunk on lice-ridden straw in Auschwitz.\nChallenge: Mayer spoke to tens of thousands of school pupils because he believed that education is the ultimate antidote to prejudice. Having lost his entire family except his brother Arek, he wanted every child to recognize that all human beings bleed the same blood and that hatred must never be allowed to divide people."
         },
         {
-          "type": "youtube",
+          "id": "era-windermere-words",
+          "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/the-windermere-children-in-their-own-words/",
           "title": "The Windermere Children: In Their Own Words (BBC Four Documentary, 2020)",
           "duration": "59 mins 0 secs",
-          "teacher_guidance": "Award-winning BBC documentary featuring intimate interviews with the real Windermere survivors, including Sir Ben Helfgott, Harry Olmer, and Arek Hersh. Explores their arrival on RAF Stirling bombers in August 1945 and their lifelong bond.",
-          "viewing_task": "Listen to real survivors describe their memories of arriving at Lake Windermere. What did the gift of bicycles and swimming in the lake mean to their physical and emotional recovery?",
-          "model_answer": "The survivors explain that arriving at Lake Windermere was a miraculous turning point: after years of confinement, starvation, and fear in Nazi camps, the expansive beauty of the mountains and open water represented pure freedom. Swimming in the lake felt like washing away the past, while receiving brand-new bicycles gave them independent mobility and joyful recreation, helping them rediscover their childhood and form an unbreakable community known as 'The Boys'."
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 05:00–22:00 | Lesson Phase: Extended Documentary Study | Tone Alert: BBC Four companion documentary featuring Arek Hersh, Sir Ben Helfgott, and Harry Olmer reflecting on their journey from Calgarth to adult life. Log in via school ERA SSO.",
+          "viewing_task": "[08:30] Recall: What did Sir Ben Helfgott achieve in later life representing Great Britain at the Olympic Games?\n[14:15] Explain: How did the surviving children form 'The '45 Aid Society' to support one another and raise funds for charitable causes across the UK?\n[20:00] Challenge: How does hearing the survivors speak as elderly men, surrounded by their children and grandchildren, serve as the ultimate refutation of Nazi tyranny?",
+          "model_answer": "Recall: Ben Helfgott went on to become British weightlifting champion and captained the British Olympic weightlifting teams at the 1956 Melbourne and 1960 Rome Olympic Games.\nExplain: In 1963, the survivors founded 'The '45 Aid Society' to maintain their unbreakable brotherhood, care for members in need, and raise funds to help underprivileged children and charities throughout Britain as a way of repaying the country that had taken them in.\nChallenge: Seeing them as elderly men surrounded by loving families proves that hatred and industrialized murder failed to extinguish their humanity; their thriving descendants and lifelong contributions stand as a triumphant testament to human survival and moral victory."
         },
         {
-          "type": "youtube",
+          "id": "era-windermere-drama",
+          "type": "era",
           "url": "https://era.org.uk/streaming-service-resource/the-windermere-children/",
           "title": "The Windermere Children (BBC Two Feature Drama, 2020)",
           "duration": "1 hr 28 mins",
-          "teacher_guidance": "Critically acclaimed BBC feature drama depicting the arrival of 300 child survivors in Cumbria. Superb for exploring the psychological trauma of survivors and the pioneering psychiatric care provided by Dr Oscar Friedman, Marie Paneth, and Leonard Montefiore.",
-          "viewing_task": "Watch how the young survivors react when they first step off the buses at the Calgarth Estate. What fears do they carry from the concentration camps, and how do carers gently reassure them that they are safe?",
-          "model_answer": "When the children arrive at Calgarth, they display deep trauma: they panic at the sight of uniformed personnel, fear that group showers are gas chambers, and hoard bread under their pillows because they cannot believe food will be provided tomorrow. Carers Dr Oscar Friedman and art therapist Marie Paneth respond with profound empathy, refusing to punish or restrict them, gently reassuring them in their native languages, and using art, sports, and nature to help them process their grief and trust adults again."
+          "pathway": "Cinematic Focus",
+          "teacher_guidance": "Recommended Watch Window: 18:00–35:00 | Lesson Phase: Feature Drama Study | Tone Alert: Acclaimed BAFTA-nominated BBC feature film depicting the arrival and rehabilitation of the children at Calgarth. Contains sensitive scenes of flash-backs to the camps. Recommended for whole-class screening or extract analysis via school ERA SSO.",
+          "viewing_task": "Cinematic Discussion Focus: Watch the scene where the children encounter bread on the tables for the first time and the scene where they take bicycles down to the lake. How does the filmmaker use lighting, sound, and the natural landscape of Cumbria to symbolize their transition from nightmare to hope?",
+          "model_answer": "Cinematic Discussion Focus: The director contrasts the dark, desaturated flashbacks of barracks and roll-calls with the luminous, sun-drenched green hills and shimmering waters of Lake Windermere. In the dining room scene, the tense, breathless silence as the boys hoard loaves gives way to an uplifting orchestral score as they race bicycles along the country lanes, visually celebrating the rediscovery of carefree childhood and friendship."
         }
       ],
       "causal_domino_spine": {

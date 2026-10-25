@@ -511,23 +511,58 @@
       },
       "video": [
         {
+          "id": "7QBbM5kb7YY",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=7QBbM5kb7YY",
+          "title": "The Engineering Genius of the Roman Aqueducts | Grand Structures",
+          "duration": "4 mins 15 secs",
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:20–04:00 | Lesson Phase: Lesson Hook | Tone Alert: Explores gravity flow, inverted siphons, and Roman hydraulic engineering.",
+          "viewing_task": "[01:00] Quick Check: How did Roman engineers use a slight, continuous downward gradient (1:200 to 1:1000) to transport millions of gallons of mountain water across miles into cities?\n[03:15] Hinge Question: Were Roman aqueducts built primarily to safeguard public health, or as political prestige projects to showcase imperial wealth and pacify citizens with luxuries?",
+          "model_answer": "Quick Check: They used gravity: water flowed continuously downhill along sealed stone channels and arched bridges from mountain springs.\nHinge Question: While fresh water promoted cleanliness, the primary driver was imperial prestige and civic contentment: most water supplied lavish public fountains, emperor's palaces, and heated bathhouses to keep populations compliant ('bread and circuses')."
+        },
+        {
+          "id": "5XgyIg5QKgE",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=5XgyIg5QKgE",
+          "title": "The Amazing Engineering of Roman Sewers: The Cloaca Maxima",
+          "duration": "5 mins 20 secs",
+          "pathway": "Core Enquiry",
+          "teacher_guidance": "Recommended Watch Window: 00:30–04:50 | Lesson Phase: Infrastructure Analysis | Tone Alert: Explores the Great Sewer of ancient Rome and communal multiseat latrines.",
+          "viewing_task": "[01:15] Recall: What was the original purpose of the Cloaca Maxima in ancient Rome (draining local marshland between hills)?\n[02:45] Explain: How did Roman communal latrines operate, and what hygiene hazards were caused by the shared sponge on a stick ('tersorium')?\n[04:10] Challenge: Despite aqueducts and sewers, why does modern palaeopathology reveal high rates of whipworm and gut parasites among Roman urban populations?",
+          "model_answer": "Recall: Constructed around 600 BC, it was originally an open drainage canal to drain marshy ground between the Palatine and Capitoline Hills before being vaulted over with stone.\nExplain: Citizens sat side-by-side on stone benches with running water beneath; however, cleaning themselves with a communal sponge rinsed in shared salt water rapidly spread intestinal parasites.\nChallenge: Warm, stagnant water in public baths was infrequently changed and lacked chemical disinfection, serving as breeding grounds for bacterial infections and parasitic worms."
+        },
+        {
+          "id": "P5ieIbInFpg",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=P5ieIbInFpg",
+          "title": "Gladiator (2000) | Official Movie Trailer (Paramount / Ridley Scott)",
+          "duration": "2 mins 20 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:20 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Oscar-winning cinematic depiction of ancient Rome's grand architecture and social hierarchy.",
+          "viewing_task": "[01:15] Cinematic Discussion Focus: How does the film visually contrast the marble monuments, fountains, and orderly streets of Rome with the gritty, disease-ridden reality of the Roman urban mob?",
+          "model_answer": "Cinematic Discussion Focus: The trailer contrasts grand Colosseum spectacles and imperial marble palaces with the crowded, volatile tenements (insulae) of the ordinary plebeians, illustrating the stark divide between Roman imperial propaganda and daily life."
+        },
+        {
+          "id": "klnMloYjHmg",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=klnMloYjHmg",
-          "title": "Roman Bathing and Wellness: How Were Roman Baths Really Used?",
-          "duration": "14 mins 5 secs",
-          "viewing_task": "Explain the social, ritual, and hygienic routines Romans followed when visiting the public baths (thermae).",
-          "model_answer": "Roman bathing was an essential daily social ritual. Romans moved through progressive heated chambers (tepidarium, caldarium) to induce sweating, used olive oil and strigils to scrape away dirt and dead skin, plunged into cold water (frigidarium) to close pores, and socialised in the communal complex.",
-          "teacher_guidance": "Engaging cultural overview exploring Roman public baths (thermae). Frame the discussion around Roman hydraulic engineering (aqueducts, hypocaust central heating) and why hygiene was seen as a civic and social necessity rather than private medical care."
+          "title": "Roman Bathing and Wellness: How Were Roman Baths Really Used? | Primary Evidence",
+          "duration": "14 mins 05 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 01:00–12:00 | Lesson Phase: Flipped Learning / Extension | Tone Alert: On-site archaeological investigation into the Thermae, hypocaust underfloor heating, and strigils.",
+          "viewing_task": "[02:30] Recall: What was the sequential routine of rooms in a Roman bathhouse (apodyterium, tepidarium, caldarium, frigidarium)?\n[06:15] Explain: How did Roman hypocaust systems heat floors and pool water using underground slave-tended furnaces and hollow wall flues?\n[11:00] Challenge: In assessing Roman public health, how did the collapse of the Western Roman Empire in 476 AD cause an immediate, catastrophic regression in urban sanitation across Europe?",
+          "model_answer": "Recall: Changing room (apodyterium), warm room (tepidarium), hot steam room (caldarium), and plunge pool (frigidarium).\nExplain: Wood-burning furnaces forced superheated air through brick pillars beneath suspended tile floors and through terracotta pipes lining walls.\nChallenge: Without centralized Roman taxes, legionary engineers, and municipal administration, aqueducts were cut by invaders, lead pipes were looted, sewers silted up, and cities reverted to cesspits."
         }
       ],
       "quick_quiz": [
         {
           "question": "What kind of houses did Celtic Britons live in before AD 43?",
           "options": [
+            "Brick villas",
             "Underground bunkers",
-            "Stone castles",
             "Timber roundhouses",
-            "Brick villas"
+            "Stone castles"
           ],
           "answer": "Timber roundhouses"
         },
@@ -544,9 +579,9 @@
         {
           "question": "In what year did Emperor Claudius invade Britain?",
           "options": [
-            "AD 1066",
             "AD 410",
             "55 BC",
+            "AD 1066",
             "AD 43"
           ],
           "answer": "AD 43"
@@ -556,17 +591,17 @@
           "options": [
             "Castra",
             "Villa",
-            "Aquae",
-            "Thermae"
+            "Thermae",
+            "Aquae"
           ],
           "answer": "Castra"
         },
         {
           "question": "What natural force did Roman engineers rely on to transport water through aqueducts?",
           "options": [
-            "Wind power",
-            "Electric pumps",
             "Steam power",
+            "Electric pumps",
+            "Wind power",
             "Gravity"
           ],
           "answer": "Gravity"
@@ -574,10 +609,10 @@
         {
           "question": "What was the typical slope gradient of a Roman aqueduct channel?",
           "options": [
-            "Flowing uphill using siphons",
+            "A steep 45-degree angle",
             "Completely flat",
             "A few inches every hundred yards",
-            "A steep 45-degree angle"
+            "Flowing uphill using siphons"
           ],
           "answer": "A few inches every hundred yards"
         },
@@ -585,19 +620,19 @@
           "question": "What was the central water distribution tower in a Roman city called?",
           "options": [
             "Castellum",
+            "Basilica",
             "Forum",
-            "Colosseum",
-            "Basilica"
+            "Colosseum"
           ],
           "answer": "Castellum"
         },
         {
           "question": "Which users received first priority for fresh water from Roman castella?",
           "options": [
-            "Gladiator arenas",
-            "Public street fountains for ordinary citizens",
             "Emperor’s palace",
-            "Private villas of the rich"
+            "Public street fountains for ordinary citizens",
+            "Private villas of the rich",
+            "Gladiator arenas"
           ],
           "answer": "Public street fountains for ordinary citizens"
         },
@@ -605,8 +640,8 @@
           "question": "At which famous Roman palace in Sussex were jointed lead water pipes excavated?",
           "options": [
             "Fishbourne Roman Palace",
-            "Bignor Villa",
             "Portchester Castle",
+            "Bignor Villa",
             "Rockbourne Villa"
           ],
           "answer": "Fishbourne Roman Palace"
@@ -615,8 +650,8 @@
           "question": "What were large public bathhouses called in Roman Britain?",
           "options": [
             "Cloacae",
-            "Insulae",
             "Domus",
+            "Insulae",
             "Thermae"
           ],
           "answer": "Thermae"
@@ -624,9 +659,9 @@
         {
           "question": "What was the name of the hot steam chamber in a Roman bathhouse?",
           "options": [
-            "Tepidarium",
-            "Caldarium",
             "Frigidarium",
+            "Caldarium",
+            "Tepidarium",
             "Apodyterium"
           ],
           "answer": "Caldarium"
@@ -634,10 +669,10 @@
         {
           "question": "What was the name of the cold plunge pool in a Roman bathhouse?",
           "options": [
-            "Tepidarium",
             "Hypocaust",
+            "Caldarium",
             "Frigidarium",
-            "Caldarium"
+            "Tepidarium"
           ],
           "answer": "Frigidarium"
         },
@@ -645,9 +680,9 @@
           "question": "How did Romans clean their skin in the baths instead of using soap?",
           "options": [
             "Rubbed sand and lemon juice",
-            "Used lye soap from animal tallow",
+            "Washed with vinegar and salt",
             "Applied olive oil and scraped with a bronze strigil",
-            "Washed with vinegar and salt"
+            "Used lye soap from animal tallow"
           ],
           "answer": "Applied olive oil and scraped with a bronze strigil"
         },
@@ -655,8 +690,8 @@
           "question": "What was the underground central heating system in Roman baths called?",
           "options": [
             "Aqueduct",
-            "Cloaca",
             "Castellum",
+            "Cloaca",
             "Hypocaust"
           ],
           "answer": "Hypocaust"
@@ -665,9 +700,9 @@
           "question": "What was the tersorium used for in Roman communal latrines?",
           "options": [
             "A communal sea sponge on a stick for wiping",
-            "Cleaning bronze strigils",
+            "Scraping dead skin in baths",
             "Stirring bath water",
-            "Scraping dead skin in baths"
+            "Cleaning bronze strigils"
           ],
           "answer": "A communal sea sponge on a stick for wiping"
         },
@@ -686,16 +721,16 @@
           "options": [
             "Bacteria and microbes",
             "Insects",
-            "Earthworms",
-            "Fleas and lice"
+            "Fleas and lice",
+            "Earthworms"
           ],
           "answer": "Bacteria and microbes"
         },
         {
           "question": "What Latin term described the cultural values and power of Roman civilization?",
           "options": [
-            "Imperium",
             "Pax Romana",
+            "Imperium",
             "Senatus",
             "Romanitas"
           ],
@@ -715,9 +750,9 @@
           "question": "Why did Roman sanitation systems fall into ruin after AD 410?",
           "options": [
             "Invading Vikings blew up the aqueducts",
-            "A giant earthquake destroyed all pipes",
+            "People decided they preferred drinking sewage",
             "Taxes, engineers, and municipal councils vanished with the legions",
-            "People decided they preferred drinking sewage"
+            "A giant earthquake destroyed all pipes"
           ],
           "answer": "Taxes, engineers, and municipal councils vanished with the legions"
         }
@@ -726,10 +761,10 @@
         {
           "question": "What kind of houses did Celtic Britons live in before AD 43?",
           "options": [
-            "Underground bunkers",
+            "Brick villas",
             "Timber roundhouses",
-            "Stone castles",
-            "Brick villas"
+            "Underground bunkers",
+            "Stone castles"
           ],
           "answer": "Timber roundhouses"
         },
@@ -746,10 +781,10 @@
         {
           "question": "In what year did Emperor Claudius invade Britain?",
           "options": [
-            "AD 1066",
             "AD 410",
+            "55 BC",
             "AD 43",
-            "55 BC"
+            "AD 1066"
           ],
           "answer": "AD 43"
         },
@@ -758,17 +793,17 @@
           "options": [
             "Castra",
             "Villa",
-            "Aquae",
-            "Thermae"
+            "Thermae",
+            "Aquae"
           ],
           "answer": "Castra"
         },
         {
           "question": "What natural force did Roman engineers rely on to transport water through aqueducts?",
           "options": [
-            "Wind power",
-            "Electric pumps",
             "Steam power",
+            "Electric pumps",
+            "Wind power",
             "Gravity"
           ],
           "answer": "Gravity"
@@ -777,37 +812,37 @@
           "question": "What was the typical slope gradient of a Roman aqueduct channel?",
           "options": [
             "A few inches every hundred yards",
-            "Flowing uphill using siphons",
+            "A steep 45-degree angle",
             "Completely flat",
-            "A steep 45-degree angle"
+            "Flowing uphill using siphons"
           ],
           "answer": "A few inches every hundred yards"
         },
         {
           "question": "What was the central water distribution tower in a Roman city called?",
           "options": [
+            "Basilica",
             "Forum",
-            "Colosseum",
             "Castellum",
-            "Basilica"
+            "Colosseum"
           ],
           "answer": "Castellum"
         },
         {
           "question": "Which users received first priority for fresh water from Roman castella?",
           "options": [
-            "Gladiator arenas",
-            "Public street fountains for ordinary citizens",
             "Emperor’s palace",
-            "Private villas of the rich"
+            "Public street fountains for ordinary citizens",
+            "Private villas of the rich",
+            "Gladiator arenas"
           ],
           "answer": "Public street fountains for ordinary citizens"
         },
         {
           "question": "At which famous Roman palace in Sussex were jointed lead water pipes excavated?",
           "options": [
-            "Bignor Villa",
             "Portchester Castle",
+            "Bignor Villa",
             "Fishbourne Roman Palace",
             "Rockbourne Villa"
           ],
@@ -818,16 +853,16 @@
           "options": [
             "Cloacae",
             "Thermae",
-            "Insulae",
-            "Domus"
+            "Domus",
+            "Insulae"
           ],
           "answer": "Thermae"
         },
         {
           "question": "What was the name of the hot steam chamber in a Roman bathhouse?",
           "options": [
-            "Tepidarium",
             "Frigidarium",
+            "Tepidarium",
             "Apodyterium",
             "Caldarium"
           ],
@@ -837,9 +872,9 @@
           "question": "What was the name of the cold plunge pool in a Roman bathhouse?",
           "options": [
             "Frigidarium",
-            "Tepidarium",
             "Hypocaust",
-            "Caldarium"
+            "Caldarium",
+            "Tepidarium"
           ],
           "answer": "Frigidarium"
         },
@@ -848,8 +883,8 @@
           "options": [
             "Applied olive oil and scraped with a bronze strigil",
             "Rubbed sand and lemon juice",
-            "Used lye soap from animal tallow",
-            "Washed with vinegar and salt"
+            "Washed with vinegar and salt",
+            "Used lye soap from animal tallow"
           ],
           "answer": "Applied olive oil and scraped with a bronze strigil"
         },
@@ -858,17 +893,17 @@
           "options": [
             "Aqueduct",
             "Hypocaust",
-            "Cloaca",
-            "Castellum"
+            "Castellum",
+            "Cloaca"
           ],
           "answer": "Hypocaust"
         },
         {
           "question": "What was the tersorium used for in Roman communal latrines?",
           "options": [
-            "Cleaning bronze strigils",
-            "Stirring bath water",
             "Scraping dead skin in baths",
+            "Stirring bath water",
+            "Cleaning bronze strigils",
             "A communal sea sponge on a stick for wiping"
           ],
           "answer": "A communal sea sponge on a stick for wiping"
@@ -888,16 +923,16 @@
           "options": [
             "Insects",
             "Bacteria and microbes",
-            "Earthworms",
-            "Fleas and lice"
+            "Fleas and lice",
+            "Earthworms"
           ],
           "answer": "Bacteria and microbes"
         },
         {
           "question": "What Latin term described the cultural values and power of Roman civilization?",
           "options": [
-            "Imperium",
             "Pax Romana",
+            "Imperium",
             "Romanitas",
             "Senatus"
           ],
@@ -917,8 +952,8 @@
           "question": "Why did Roman sanitation systems fall into ruin after AD 410?",
           "options": [
             "Invading Vikings blew up the aqueducts",
-            "A giant earthquake destroyed all pipes",
             "People decided they preferred drinking sewage",
+            "A giant earthquake destroyed all pipes",
             "Taxes, engineers, and municipal councils vanished with the legions"
           ],
           "answer": "Taxes, engineers, and municipal councils vanished with the legions"
@@ -1301,32 +1336,58 @@
       },
       "video": [
         {
+          "id": "NBxLWTyUJ0w",
           "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=nVJV8iEAm88",
-          "title": "Medieval Monasteries: Engineering Water and Cleanliness",
-          "duration": "9 mins 15 secs",
-          "viewing_task": "Identify three ways monks at Canterbury or Fountains Abbey engineered clean water supplies.",
-          "model_answer": "Monks piped water from distant unpolluted springs through lead conduits, filtered water through settling tanks to remove silt, and flushed communal latrines directly into outflowing rivers.",
-          "teacher_guidance": "Focuses on monastic water systems at Canterbury Cathedral Priory and Fountains Abbey. Guide pupils to notice how monks engineered running water conduits, settling basins, and latrines, contrasting monastic cleanliness with filthy medieval towns."
+          "url": "https://www.youtube.com/watch?v=NBxLWTyUJ0w",
+          "title": "Medieval Sanitation, Gong Farmers & Street Filth | Explainer",
+          "duration": "3 mins 02 secs",
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:00–03:02 | Lesson Phase: Lesson Hook | Tone Alert: Humorous yet historically rigorous examination of medieval cesspits and nightsoil men.",
+          "viewing_task": "[00:50] Quick Check: Who were 'gong farmers' in medieval towns, and at what time of night were they legally allowed to work?\n[02:15] Hinge Question: Why were medieval towns so filthy when town councils repeatedly passed fines against throwing butchery waste and human feces into streets?",
+          "model_answer": "Quick Check: Men hired to shovel out human waste from privies and cesspits, restricted to working only between 9pm and 5am ('nightsoil').\nHinge Question: Town councils had no permanent police force or municipal street cleaners to enforce laws; populations grew faster than primitive infrastructure could cope with, so residents ignored fines."
         },
         {
+          "id": "nVJV8iEAm88",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=nVJV8iEAm88",
+          "title": "Medieval Monasteries: Engineering Water and Cleanliness | BBC Bitesize",
+          "duration": "9 mins 15 secs",
+          "pathway": "Core Enquiry",
+          "teacher_guidance": "Recommended Watch Window: 00:30–08:00 | Lesson Phase: Exceptional Cleanliness | Tone Alert: Explores monastic water systems at Canterbury and Fountains Abbey.",
+          "viewing_task": "[01:30] Recall: Why were medieval Christian monasteries so much cleaner and healthier than nearby towns?\n[04:15] Explain: How did monastic water systems separate incoming clean spring water for drinking from outflowing water used to flush the reredorter (latrines)?\n[07:00] Challenge: Why were the sophisticated sanitary engineering techniques developed in wealthy monasteries not adopted in ordinary medieval cities?",
+          "model_answer": "Recall: Monks valued physical cleanliness as a sign of spiritual purity ('cleanliness is next to godliness') and possessed the wealth, land, and literacy to design hydraulic systems.\nExplain: Water was channeled from uphill springs through lead pipes and settling tanks, supplying drinking water first, then kitchens, laundry, and finally flushing latrines out to the river.\nChallenge: Towns lacked unified ownership and single wealthy authorities; narrow streets were congested with private properties, and town burgesses were unwilling to levy heavy taxes for collective infrastructure."
+        },
+        {
+          "id": "JkOwLCib1Tk",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=JkOwLCib1Tk",
+          "title": "Black Death (2010) | Medieval Living Conditions & Pestilence Trailer",
+          "duration": "2 mins 18 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:18 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Visceral, authentic depiction of 14th-century village life, mud, isolation, and plague fear.",
+          "viewing_task": "[01:10] Cinematic Discussion Focus: How does the film visually portray the vulnerability of medieval communities with no knowledge of bacteria or microscopic vectors of disease?",
+          "model_answer": "Cinematic Discussion Focus: The trailer shows terrified villagers burning pitch barrels and carrying smoking herbs to ward off 'corrupt air' (miasma), illustrating how medieval medical theory left populations utterly defenceless against Yersinia pestis."
+        },
+        {
+          "id": "YhsPPBGtquo",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=YhsPPBGtquo",
-          "title": "The Black Death (1348): Causes, Symptoms, and Medieval Responses",
+          "title": "The Black Death (1348): Causes, Symptoms & Medieval Responses | Timelines.tv",
           "duration": "11 mins 40 secs",
-          "viewing_task": "Explain how medieval people attempted to protect themselves from the Black Death, and why their efforts failed.",
-          "model_answer": "Medieval people believed plague was caused by corrupt air (miasma) or divine wrath. They burned sweet herbs, carried pomanders, and prayed, but these measures failed because plague was transmitted by fleas on black rats carrying Yersinia pestis.",
-          "teacher_guidance": "Essential analysis of the 1348 pandemic. Prepare pupils to examine supernatural and miasmatic explanations (wrath of God, misaligned planets, corrupt air) and why medieval treatments failed against Yersinia pestis carried by black rat fleas."
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 01:00–11:00 | Lesson Phase: Flipped Learning / Extension | Tone Alert: Rigorous documentary examining contemporary primary chronicles and archaeology.",
+          "viewing_task": "[02:15] Recall: What symptoms characterized bubonic plague (painful buboes in armpits and groin) and pneumonic plague?\n[05:30] Explain: How did the medieval Church interpret the Black Death as divine punishment for sinful mankind, leading to flagellant processions?\n[08:45] Challenge: How did the complete failure of both Galenic herbal medicine and Church prayer to stop the plague begin to undermine blind medieval faith in traditional authorities?",
+          "model_answer": "Recall: High fever, vomiting, agonizing black swellings (buboes), followed by internal bleeding and dark blotches beneath the skin.\nExplain: Priests preached that human sin had brought God's righteous wrath; brotherhoods of flagellants whipped themselves with iron-tipped cords to appease God's anger.\nChallenge: Because holy priests died at the same horrifying rate as ordinary sinners, and doctors reciting Galen were useless, educated people began to question whether ancient authorities held all the answers, sowing early seeds of scientific inquiry."
         }
       ],
       "quick_quiz": [
         {
           "question": "What happened to Roman water systems in Britain after AD 410?",
           "options": [
+            "They were expanded across every village",
             "They were sold to France",
-            "They were completely destroyed by volcanoes",
             "They fell into disrepair as central taxes and engineers vanished",
-            "They were expanded across every village"
+            "They were completely destroyed by volcanoes"
           ],
           "answer": "They fell into disrepair as central taxes and engineers vanished"
         },
@@ -1334,8 +1395,8 @@
           "question": "What was a self-governing medieval town granted a royal charter called?",
           "options": [
             "A borough",
-            "A manor",
             "A parish",
+            "A manor",
             "A monastery"
           ],
           "answer": "A borough"
@@ -1343,8 +1404,8 @@
         {
           "question": "Why were medieval houses built with overhanging upper storeys (jetties)?",
           "options": [
-            "To defend against archers",
             "To catch rainwater from roofs",
+            "To defend against archers",
             "To look like French castles",
             "To create extra floor space within cramped walled towns"
           ],
@@ -1353,9 +1414,9 @@
         {
           "question": "What was a deep pit dug behind a house to collect human toilet waste called?",
           "options": [
-            "A settling tank",
-            "A cesspit",
             "An aqueduct",
+            "A cesspit",
+            "A settling tank",
             "A conduit"
           ],
           "answer": "A cesspit"
@@ -1364,8 +1425,8 @@
           "question": "What specialist workers were hired to dig out cesspits under cover of darkness?",
           "options": [
             "Gong farmers (nightmen)",
-            "Blacksmiths",
             "Town rakers",
+            "Blacksmiths",
             "Monastic scribes"
           ],
           "answer": "Gong farmers (nightmen)"
@@ -1373,9 +1434,9 @@
         {
           "question": "During what hours were gong farmers legally allowed to work in medieval towns?",
           "options": [
-            "Any time of day",
-            "Only at noon",
             "9:00 AM to 5:00 PM",
+            "Only at noon",
+            "Any time of day",
             "9:00 PM to 5:00 AM"
           ],
           "answer": "9:00 PM to 5:00 AM"
@@ -1383,9 +1444,9 @@
         {
           "question": "What was done with the waste shoveled out of town cesspits?",
           "options": [
-            "Burned in public bonfires",
-            "Sold to suburban farmers as agricultural fertilizer",
             "Dumped in the town church",
+            "Sold to suburban farmers as agricultural fertilizer",
+            "Burned in public bonfires",
             "Thrown onto house roofs"
           ],
           "answer": "Sold to suburban farmers as agricultural fertilizer"
@@ -1393,8 +1454,8 @@
         {
           "question": "What local court prosecuted and fined citizens for dumping waste in the street?",
           "options": [
-            "The Star Chamber",
             "The High Court of Parliament",
+            "The Star Chamber",
             "The Court Leet",
             "The Papal Curia"
           ],
@@ -1404,8 +1465,8 @@
           "question": "At which famous English priory was a sophisticated waterworks map drawn in c.1165?",
           "options": [
             "Christ Church Priory, Canterbury",
-            "Battle Abbey",
             "Titchfield Abbey",
+            "Battle Abbey",
             "Waverley Abbey"
           ],
           "answer": "Christ Church Priory, Canterbury"
@@ -1413,8 +1474,8 @@
         {
           "question": "What engineering feature was used at Canterbury to filter sand and silt from spring water?",
           "options": [
-            "Boiling cauldrons",
             "Electric carbon filters",
+            "Boiling cauldrons",
             "Chlorine tablets",
             "Five successive settling tanks"
           ],
@@ -1425,8 +1486,8 @@
           "options": [
             "A reredorter",
             "A lavatorium",
-            "A refectory",
-            "A cloister"
+            "A cloister",
+            "A refectory"
           ],
           "answer": "A lavatorium"
         },
@@ -1434,29 +1495,29 @@
           "question": "What was a communal monastic latrine block called?",
           "options": [
             "A lavatorium",
-            "A chapter house",
+            "A scriptorium",
             "A reredorter",
-            "A scriptorium"
+            "A chapter house"
           ],
           "answer": "A reredorter"
         },
         {
           "question": "Which local abbey in Hampshire engineered fishponds and river diversions for clean water?",
           "options": [
-            "Winchester College",
-            "Titchfield Abbey",
             "Netley Castle",
-            "Portchester Castle"
+            "Titchfield Abbey",
+            "Portchester Castle",
+            "Winchester College"
           ],
           "answer": "Titchfield Abbey"
         },
         {
           "question": "In what year did the Black Death arrive in England?",
           "options": [
-            "1066",
             "1665",
+            "AD 43",
             "1348",
-            "AD 43"
+            "1066"
           ],
           "answer": "1348"
         },
@@ -1465,17 +1526,17 @@
           "options": [
             "Yersinia pestis",
             "Vibrio cholerae",
-            "Salmonella typhi",
-            "Mycobacterium tuberculosis"
+            "Mycobacterium tuberculosis",
+            "Salmonella typhi"
           ],
           "answer": "Yersinia pestis"
         },
         {
           "question": "How was the Black Death primarily transmitted between humans and rats?",
           "options": [
-            "Eating bad meat",
             "Breathing cold wind",
             "Contaminated water pipes",
+            "Eating bad meat",
             "Bites from rat fleas"
           ],
           "answer": "Bites from rat fleas"
@@ -1494,18 +1555,18 @@
           "question": "What proportion of the English population died during the 1348–1350 Black Death?",
           "options": [
             "Between 40% and 50%",
-            "Nobody died",
+            "About 5%",
             "Exactly 95%",
-            "About 5%"
+            "Nobody died"
           ],
           "answer": "Between 40% and 50%"
         },
         {
           "question": "What landmark law was passed in 1388 banning the dumping of offal and dung into rivers?",
           "options": [
-            "The Public Health Act",
-            "The Statute of Cambridge",
             "The Act of Supremacy",
+            "The Statute of Cambridge",
+            "The Public Health Act",
             "The Magna Carta"
           ],
           "answer": "The Statute of Cambridge"
@@ -1513,9 +1574,9 @@
         {
           "question": "Which modern historian challenged the myth that medieval people were dirty and ignorant?",
           "options": [
-            "John Snow",
-            "Joseph Bazalgette",
             "Edwin Chadwick",
+            "Joseph Bazalgette",
+            "John Snow",
             "Carole Rawcliffe"
           ],
           "answer": "Carole Rawcliffe"
@@ -1525,10 +1586,10 @@
         {
           "question": "What happened to Roman water systems in Britain after AD 410?",
           "options": [
+            "They were expanded across every village",
             "They were sold to France",
-            "They were completely destroyed by volcanoes",
             "They fell into disrepair as central taxes and engineers vanished",
-            "They were expanded across every village"
+            "They were completely destroyed by volcanoes"
           ],
           "answer": "They fell into disrepair as central taxes and engineers vanished"
         },
@@ -1536,8 +1597,8 @@
           "question": "What was a self-governing medieval town granted a royal charter called?",
           "options": [
             "A borough",
-            "A manor",
             "A parish",
+            "A manor",
             "A monastery"
           ],
           "answer": "A borough"
@@ -1545,9 +1606,9 @@
         {
           "question": "Why were medieval houses built with overhanging upper storeys (jetties)?",
           "options": [
-            "To defend against archers",
-            "To create extra floor space within cramped walled towns",
             "To catch rainwater from roofs",
+            "To create extra floor space within cramped walled towns",
+            "To defend against archers",
             "To look like French castles"
           ],
           "answer": "To create extra floor space within cramped walled towns"
@@ -1555,8 +1616,8 @@
         {
           "question": "What was a deep pit dug behind a house to collect human toilet waste called?",
           "options": [
-            "A settling tank",
             "An aqueduct",
+            "A settling tank",
             "A conduit",
             "A cesspit"
           ],
@@ -1565,8 +1626,8 @@
         {
           "question": "What specialist workers were hired to dig out cesspits under cover of darkness?",
           "options": [
-            "Blacksmiths",
             "Town rakers",
+            "Blacksmiths",
             "Monastic scribes",
             "Gong farmers (nightmen)"
           ],
@@ -1575,10 +1636,10 @@
         {
           "question": "During what hours were gong farmers legally allowed to work in medieval towns?",
           "options": [
-            "Any time of day",
+            "9:00 AM to 5:00 PM",
             "Only at noon",
             "9:00 PM to 5:00 AM",
-            "9:00 AM to 5:00 PM"
+            "Any time of day"
           ],
           "answer": "9:00 PM to 5:00 AM"
         },
@@ -1586,8 +1647,8 @@
           "question": "What was done with the waste shoveled out of town cesspits?",
           "options": [
             "Sold to suburban farmers as agricultural fertilizer",
-            "Burned in public bonfires",
             "Dumped in the town church",
+            "Burned in public bonfires",
             "Thrown onto house roofs"
           ],
           "answer": "Sold to suburban farmers as agricultural fertilizer"
@@ -1595,9 +1656,9 @@
         {
           "question": "What local court prosecuted and fined citizens for dumping waste in the street?",
           "options": [
-            "The Star Chamber",
-            "The Court Leet",
             "The High Court of Parliament",
+            "The Court Leet",
+            "The Star Chamber",
             "The Papal Curia"
           ],
           "answer": "The Court Leet"
@@ -1605,8 +1666,8 @@
         {
           "question": "At which famous English priory was a sophisticated waterworks map drawn in c.1165?",
           "options": [
-            "Battle Abbey",
             "Titchfield Abbey",
+            "Battle Abbey",
             "Christ Church Priory, Canterbury",
             "Waverley Abbey"
           ],
@@ -1616,8 +1677,8 @@
           "question": "What engineering feature was used at Canterbury to filter sand and silt from spring water?",
           "options": [
             "Five successive settling tanks",
-            "Boiling cauldrons",
             "Electric carbon filters",
+            "Boiling cauldrons",
             "Chlorine tablets"
           ],
           "answer": "Five successive settling tanks"
@@ -1626,8 +1687,8 @@
           "question": "What was the stone washing trough outside a monastic dining hall called?",
           "options": [
             "A reredorter",
-            "A refectory",
             "A cloister",
+            "A refectory",
             "A lavatorium"
           ],
           "answer": "A lavatorium"
@@ -1637,17 +1698,17 @@
           "options": [
             "A lavatorium",
             "A reredorter",
-            "A chapter house",
-            "A scriptorium"
+            "A scriptorium",
+            "A chapter house"
           ],
           "answer": "A reredorter"
         },
         {
           "question": "Which local abbey in Hampshire engineered fishponds and river diversions for clean water?",
           "options": [
-            "Winchester College",
             "Netley Castle",
             "Portchester Castle",
+            "Winchester College",
             "Titchfield Abbey"
           ],
           "answer": "Titchfield Abbey"
@@ -1655,10 +1716,10 @@
         {
           "question": "In what year did the Black Death arrive in England?",
           "options": [
-            "1066",
-            "1348",
             "1665",
-            "AD 43"
+            "1348",
+            "AD 43",
+            "1066"
           ],
           "answer": "1348"
         },
@@ -1666,9 +1727,9 @@
           "question": "What bacterium caused the Black Death?",
           "options": [
             "Vibrio cholerae",
-            "Salmonella typhi",
+            "Mycobacterium tuberculosis",
             "Yersinia pestis",
-            "Mycobacterium tuberculosis"
+            "Salmonella typhi"
           ],
           "answer": "Yersinia pestis"
         },
@@ -1676,9 +1737,9 @@
           "question": "How was the Black Death primarily transmitted between humans and rats?",
           "options": [
             "Bites from rat fleas",
-            "Eating bad meat",
             "Breathing cold wind",
-            "Contaminated water pipes"
+            "Contaminated water pipes",
+            "Eating bad meat"
           ],
           "answer": "Bites from rat fleas"
         },
@@ -1695,18 +1756,18 @@
         {
           "question": "What proportion of the English population died during the 1348–1350 Black Death?",
           "options": [
-            "Nobody died",
+            "About 5%",
             "Between 40% and 50%",
             "Exactly 95%",
-            "About 5%"
+            "Nobody died"
           ],
           "answer": "Between 40% and 50%"
         },
         {
           "question": "What landmark law was passed in 1388 banning the dumping of offal and dung into rivers?",
           "options": [
-            "The Public Health Act",
             "The Act of Supremacy",
+            "The Public Health Act",
             "The Statute of Cambridge",
             "The Magna Carta"
           ],
@@ -1716,9 +1777,9 @@
           "question": "Which modern historian challenged the myth that medieval people were dirty and ignorant?",
           "options": [
             "Carole Rawcliffe",
-            "John Snow",
+            "Edwin Chadwick",
             "Joseph Bazalgette",
-            "Edwin Chadwick"
+            "John Snow"
           ],
           "answer": "Carole Rawcliffe"
         }
@@ -2100,13 +2161,48 @@
       },
       "video": [
         {
+          "id": "LBvOZO1gmOE",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=LBvOZO1gmOE",
-          "title": "Sir John Harington and the Invention of the Flush Toilet",
+          "title": "Sir John Harington and the Early Flush Toilet | History Explainer",
           "duration": "4 mins 52 secs",
-          "viewing_task": "Explain how Sir John Harington’s toilet functioned, and identify the main obstacle preventing its widespread adoption.",
-          "model_answer": "Harington’s toilet used a cistern of water and a release valve to flush waste into a cesspool. It was not widely adopted because most homes lacked running water and towns had no underground sewer networks.",
-          "teacher_guidance": "Examines Queen Elizabeth I's godson Sir John Harington and his 1596 water closet (the 'Ajax'). Use this clip to explore why technological inventions often fail to catch on until urban infrastructure (running water, sewers) catches up."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:15–04:15 | Lesson Phase: Lesson Hook | Tone Alert: Explores Queen Elizabeth I's godson Sir John Harington and his 1596 water closet.",
+          "viewing_task": "[01:15] Quick Check: What invention did Sir John Harington design in 1596 called the 'Ajax'?\n[03:45] Hinge Question: Why did it take nearly 250 years for Harington's flush toilet to be widely adopted across British homes?",
+          "model_answer": "Quick Check: The first valve-operated flush toilet, complete with an overhead water cistern and discharge pipe.\nHinge Question: Flush toilets required continuous running piped water and sewer drainage to function; without municipal water mains and underground sewers, flush toilets simply dumped sewage into indoor cesspits, making smells and filth far worse."
+        },
+        {
+          "id": "6cMhO7JpaYE",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=6cMhO7JpaYE",
+          "title": "Restoration (1995) | Official Movie Trailer (Robert Downey Jr / Meg Ryan)",
+          "duration": "2 mins 15 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:15 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Depicts 17th-century London, royal court excess, and the catastrophic Great Plague of 1665.",
+          "viewing_task": "[01:10] Cinematic Discussion Focus: How does the film contrast the debauched luxury of King Charles II's court with the filthy streets of London where the plague took hold?",
+          "model_answer": "Cinematic Discussion Focus: The trailer contrasts silken royal banquets with plague-stricken slums where doors are painted with red crosses ('Lord have mercy upon us') and searchers of the dead cart away piles of corpses at night."
+        },
+        {
+          "id": "IwB1ha70dRA",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=IwB1ha70dRA",
+          "title": "The Great Plague (1665) | Timeline Documentary",
+          "duration": "48 mins 00 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 10:00–35:00 | Lesson Phase: Flipped Learning / Extension | Tone Alert: In-depth historical investigation into the last major bubonic plague outbreak in England.",
+          "viewing_task": "[14:00] Recall: What public health quarantine measures did the Mayor of London enforce in 1665 when a house became infected?\n[24:00] Explain: How did wealthy elites (including King Charles II and physicians) flee the capital, abandoning the impoverished working class to perish in locked houses?\n[36:00] Challenge: In what ways did the 1665 plague reveal that public health responses had barely improved since the 1348 Black Death 300 years earlier?",
+          "model_answer": "Recall: Watchmen were posted outside bolted doors 24 hours a day with red crosses and the words 'Lord have mercy on us', locking healthy family members inside with the dying.\nExplain: The wealthy fled to country estates; poor workers had no savings and were trapped in crowded parishes like St Giles-in-the-Fields, suffering over 100,000 deaths.\nChallenge: Authorities still blamed corrupt air (miasma), slaughtered 40,000 harmless domestic dogs and cats (which allowed the true vector—fleas on black rats—to multiply exponentially), and relied on bloodletting and useless herbal pomanders."
+        },
+        {
+          "id": "oHhqzoqFqew",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=oHhqzoqFqew",
+          "title": "Living Conditions in Early Modern Towns | History Explainer",
+          "duration": "4 mins 17 secs",
+          "pathway": "Core Enquiry",
+          "teacher_guidance": "Recommended Watch Window: 00:20–04:00 | Lesson Phase: Urban Realities | Tone Alert: Detailed analysis of wooden overhanging jetties, open kennels, and polluted town pumps.",
+          "viewing_task": "[01:10] Recall: What were 'overhanging jetties', and how did they block sunlight and ventilation in early modern streets?\n[02:30] Explain: How did town brewers, tanners, and dyers dump industrial poisons and animal carcasses directly into urban rivers?\n[03:45] Challenge: How did the Great Fire of London (1666) inadvertently provide an opportunity to modernize streets with wider brick construction and cleaner drainage?",
+          "model_answer": "Recall: Upper stories of timber houses built jutting out over the street, nearly touching across narrow alleys and trapping foul stenches.\nExplain: Tanners soaked hides in animal urine and dog feces while butchers slaughtered animals in open streets, washing blood directly into surface gutters ('kennels') that emptied into drinking streams.\nChallenge: The fire destroyed over 13,000 crowded wooden houses; Parliament passed the Rebuilding of London Act 1667, banning timber jetties and mandating wider streets paved with stone and brick buildings with deeper cellars."
         }
       ],
       "quick_quiz": [
@@ -2114,8 +2210,8 @@
           "question": "What happened to England’s national population between 1500 and 1700?",
           "options": [
             "It doubled from 2.5 million to over 5 million",
-            "It stayed exactly the same",
             "It dropped by half due to famine",
+            "It stayed exactly the same",
             "It rose to 50 million"
           ],
           "answer": "It doubled from 2.5 million to over 5 million"
@@ -2123,9 +2219,9 @@
         {
           "question": "What was London’s approximate population by 1700?",
           "options": [
+            "About 60,000",
             "Five million",
             "About 10,000",
-            "About 60,000",
             "Over 500,000"
           ],
           "answer": "Over 500,000"
@@ -2133,30 +2229,30 @@
         {
           "question": "What traditional French-origin phrase did Londoners shout when emptying chamber pots into the street?",
           "options": [
-            "\"Carpe diem!\"",
+            "\"Bon voyage!\"",
             "\"Gardyloo!\"",
-            "\"Sacrebleu!\"",
-            "\"Bon voyage!\""
+            "\"Carpe diem!\"",
+            "\"Sacrebleu!\""
           ],
           "answer": "\"Gardyloo!\""
         },
         {
           "question": "Who invented the world’s first mechanical flush toilet in 1596?",
           "options": [
+            "Sir Hugh Myddelton",
             "King Charles II",
-            "Samuel Pepys",
             "Sir John Harington",
-            "Sir Hugh Myddelton"
+            "Samuel Pepys"
           ],
           "answer": "Sir John Harington"
         },
         {
           "question": "What monarch was Sir John Harington godson to?",
           "options": [
-            "King Charles I",
+            "King Henry VIII",
             "Queen Elizabeth I",
-            "Queen Victoria",
-            "King Henry VIII"
+            "King Charles I",
+            "Queen Victoria"
           ],
           "answer": "Queen Elizabeth I"
         },
@@ -2174,29 +2270,29 @@
           "question": "Why did Harington’s flush toilet fail to transform public health across Elizabethan Britain?",
           "options": [
             "Homes lacked running water mains and sewers to take waste away",
-            "The Queen banned all toilets",
             "People preferred going in fields",
-            "It was made of paper"
+            "It was made of paper",
+            "The Queen banned all toilets"
           ],
           "answer": "Homes lacked running water mains and sewers to take waste away"
         },
         {
           "question": "Who financed the 38-mile New River canal to bring clean water into London in 1613?",
           "options": [
-            "Samuel Pepys",
             "Edwin Chadwick",
+            "Sir John Harington",
             "Sir Hugh Myddelton",
-            "Sir John Harington"
+            "Samuel Pepys"
           ],
           "answer": "Sir Hugh Myddelton"
         },
         {
           "question": "Where did the New River bring clean spring water from?",
           "options": [
-            "Scotland",
+            "The River Thames at London Bridge",
             "Hertfordshire (Amwell and Chadwell)",
             "The English Channel",
-            "The River Thames at London Bridge"
+            "Scotland"
           ],
           "answer": "Hertfordshire (Amwell and Chadwell)"
         },
@@ -2204,8 +2300,8 @@
           "question": "What material was used to make the underground pipes distributing New River water across London?",
           "options": [
             "Hollowed-out elm tree trunks",
-            "Plastic PVC",
             "Stainless steel",
+            "Plastic PVC",
             "Cast aluminium"
           ],
           "answer": "Hollowed-out elm tree trunks"
@@ -2213,9 +2309,9 @@
         {
           "question": "Why was the New River water system unfair to poor slum dwellers?",
           "options": [
-            "It only ran on Sundays",
             "It was reserved for horses",
             "It was poisonous to poor people",
+            "It only ran on Sundays",
             "Only wealthy subscribers who paid quarterly fees had pipes connected"
           ],
           "answer": "Only wealthy subscribers who paid quarterly fees had pipes connected"
@@ -2223,8 +2319,8 @@
         {
           "question": "What celebrated diarist recorded stepping into sewage in his cellar on 20 October 1660?",
           "options": [
-            "Daniel Defoe",
             "John Evelyn",
+            "Daniel Defoe",
             "Samuel Pepys",
             "William Shakespeare"
           ],
@@ -2233,8 +2329,8 @@
         {
           "question": "Why was Samuel Pepys’ cellar flooded with sewage?",
           "options": [
-            "He forgot to empty his chamber pot",
             "The Thames overflowed its banks",
+            "He forgot to empty his chamber pot",
             "A burst water main",
             "His neighbour’s cesspit cracked and leaked through the wall"
           ],
@@ -2244,18 +2340,18 @@
           "question": "In what year did the Great Plague kill nearly 100,000 Londoners?",
           "options": [
             "1665",
-            "1854",
+            "1348",
             "1596",
-            "1348"
+            "1854"
           ],
           "answer": "1665"
         },
         {
           "question": "What sign was painted on the doors of plague-infected houses in 1665?",
           "options": [
-            "A black skull and crossbones",
-            "A red cross with \"Lord Have Mercy Upon Us\"",
             "A green dragon",
+            "A red cross with \"Lord Have Mercy Upon Us\"",
+            "A black skull and crossbones",
             "A blue anchor"
           ],
           "answer": "A red cross with \"Lord Have Mercy Upon Us\""
@@ -2263,19 +2359,19 @@
         {
           "question": "Who were the \"Searchers of the Dead\" appointed during plague outbreaks?",
           "options": [
-            "Gravediggers who stole jewelry",
             "Soldiers patrolling streets",
+            "French doctors testing medicines",
             "Parish women appointed to inspect corpses and confirm cause of death",
-            "French doctors testing medicines"
+            "Gravediggers who stole jewelry"
           ],
           "answer": "Parish women appointed to inspect corpses and confirm cause of death"
         },
         {
           "question": "What weekly published documents recorded deaths and burial causes in seventeenth-century London?",
           "options": [
+            "The Times",
             "The Parish Register",
             "The London Gazette",
-            "The Times",
             "Bills of Mortality"
           ],
           "answer": "Bills of Mortality"
@@ -2293,10 +2389,10 @@
         {
           "question": "What great disaster in September 1666 destroyed much of London’s overcrowded timber housing?",
           "options": [
-            "A French bombardment",
+            "A North Sea tidal wave",
             "A major earthquake",
             "The Great Fire of London",
-            "A North Sea tidal wave"
+            "A French bombardment"
           ],
           "answer": "The Great Fire of London"
         },
@@ -2315,8 +2411,8 @@
         {
           "question": "What happened to England’s national population between 1500 and 1700?",
           "options": [
-            "It stayed exactly the same",
             "It dropped by half due to famine",
+            "It stayed exactly the same",
             "It doubled from 2.5 million to over 5 million",
             "It rose to 50 million"
           ],
@@ -2325,10 +2421,10 @@
         {
           "question": "What was London’s approximate population by 1700?",
           "options": [
-            "Five million",
+            "About 60,000",
             "Over 500,000",
-            "About 10,000",
-            "About 60,000"
+            "Five million",
+            "About 10,000"
           ],
           "answer": "Over 500,000"
         },
@@ -2336,18 +2432,18 @@
           "question": "What traditional French-origin phrase did Londoners shout when emptying chamber pots into the street?",
           "options": [
             "\"Gardyloo!\"",
+            "\"Bon voyage!\"",
             "\"Carpe diem!\"",
-            "\"Sacrebleu!\"",
-            "\"Bon voyage!\""
+            "\"Sacrebleu!\""
           ],
           "answer": "\"Gardyloo!\""
         },
         {
           "question": "Who invented the world’s first mechanical flush toilet in 1596?",
           "options": [
+            "Sir Hugh Myddelton",
             "King Charles II",
             "Samuel Pepys",
-            "Sir Hugh Myddelton",
             "Sir John Harington"
           ],
           "answer": "Sir John Harington"
@@ -2355,10 +2451,10 @@
         {
           "question": "What monarch was Sir John Harington godson to?",
           "options": [
-            "King Charles I",
+            "King Henry VIII",
             "Queen Elizabeth I",
-            "Queen Victoria",
-            "King Henry VIII"
+            "King Charles I",
+            "Queen Victoria"
           ],
           "answer": "Queen Elizabeth I"
         },
@@ -2375,19 +2471,19 @@
         {
           "question": "Why did Harington’s flush toilet fail to transform public health across Elizabethan Britain?",
           "options": [
-            "The Queen banned all toilets",
             "People preferred going in fields",
+            "It was made of paper",
             "Homes lacked running water mains and sewers to take waste away",
-            "It was made of paper"
+            "The Queen banned all toilets"
           ],
           "answer": "Homes lacked running water mains and sewers to take waste away"
         },
         {
           "question": "Who financed the 38-mile New River canal to bring clean water into London in 1613?",
           "options": [
-            "Samuel Pepys",
             "Edwin Chadwick",
             "Sir John Harington",
+            "Samuel Pepys",
             "Sir Hugh Myddelton"
           ],
           "answer": "Sir Hugh Myddelton"
@@ -2395,18 +2491,18 @@
         {
           "question": "Where did the New River bring clean spring water from?",
           "options": [
-            "Scotland",
+            "The River Thames at London Bridge",
             "The English Channel",
             "Hertfordshire (Amwell and Chadwell)",
-            "The River Thames at London Bridge"
+            "Scotland"
           ],
           "answer": "Hertfordshire (Amwell and Chadwell)"
         },
         {
           "question": "What material was used to make the underground pipes distributing New River water across London?",
           "options": [
-            "Plastic PVC",
             "Stainless steel",
+            "Plastic PVC",
             "Cast aluminium",
             "Hollowed-out elm tree trunks"
           ],
@@ -2416,18 +2512,18 @@
           "question": "Why was the New River water system unfair to poor slum dwellers?",
           "options": [
             "Only wealthy subscribers who paid quarterly fees had pipes connected",
-            "It only ran on Sundays",
             "It was reserved for horses",
-            "It was poisonous to poor people"
+            "It was poisonous to poor people",
+            "It only ran on Sundays"
           ],
           "answer": "Only wealthy subscribers who paid quarterly fees had pipes connected"
         },
         {
           "question": "What celebrated diarist recorded stepping into sewage in his cellar on 20 October 1660?",
           "options": [
-            "Daniel Defoe",
-            "Samuel Pepys",
             "John Evelyn",
+            "Samuel Pepys",
+            "Daniel Defoe",
             "William Shakespeare"
           ],
           "answer": "Samuel Pepys"
@@ -2435,8 +2531,8 @@
         {
           "question": "Why was Samuel Pepys’ cellar flooded with sewage?",
           "options": [
-            "He forgot to empty his chamber pot",
             "The Thames overflowed its banks",
+            "He forgot to empty his chamber pot",
             "A burst water main",
             "His neighbour’s cesspit cracked and leaked through the wall"
           ],
@@ -2446,17 +2542,17 @@
           "question": "In what year did the Great Plague kill nearly 100,000 Londoners?",
           "options": [
             "1665",
-            "1854",
+            "1348",
             "1596",
-            "1348"
+            "1854"
           ],
           "answer": "1665"
         },
         {
           "question": "What sign was painted on the doors of plague-infected houses in 1665?",
           "options": [
-            "A black skull and crossbones",
             "A green dragon",
+            "A black skull and crossbones",
             "A red cross with \"Lord Have Mercy Upon Us\"",
             "A blue anchor"
           ],
@@ -2465,20 +2561,20 @@
         {
           "question": "Who were the \"Searchers of the Dead\" appointed during plague outbreaks?",
           "options": [
-            "Gravediggers who stole jewelry",
-            "Parish women appointed to inspect corpses and confirm cause of death",
             "Soldiers patrolling streets",
-            "French doctors testing medicines"
+            "Parish women appointed to inspect corpses and confirm cause of death",
+            "French doctors testing medicines",
+            "Gravediggers who stole jewelry"
           ],
           "answer": "Parish women appointed to inspect corpses and confirm cause of death"
         },
         {
           "question": "What weekly published documents recorded deaths and burial causes in seventeenth-century London?",
           "options": [
+            "The Times",
             "The Parish Register",
-            "The London Gazette",
             "Bills of Mortality",
-            "The Times"
+            "The London Gazette"
           ],
           "answer": "Bills of Mortality"
         },
@@ -2495,9 +2591,9 @@
         {
           "question": "What great disaster in September 1666 destroyed much of London’s overcrowded timber housing?",
           "options": [
-            "A French bombardment",
-            "A major earthquake",
             "A North Sea tidal wave",
+            "A major earthquake",
+            "A French bombardment",
             "The Great Fire of London"
           ],
           "answer": "The Great Fire of London"
@@ -2871,22 +2967,48 @@
       },
       "video": [
         {
+          "id": "oHhqzoqFqew",
           "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
-          "title": "Victorian Slums and the Public Health Crisis",
-          "duration": "8 mins 30 secs",
-          "viewing_task": "Describe living conditions in Victorian back-to-back terraces and identify two water-borne diseases that spread through slums.",
-          "model_answer": "Back-to-backs were cramped, dark houses sharing party walls on three sides, with no through ventilation and up to 100 people sharing a single privy. Diseases included cholera and typhoid.",
-          "teacher_guidance": "Illustrates the appalling sanitary consequences of rapid industrialisation in cities like Manchester and Leeds. Emphasize back-to-back housing, open cesspools, privy sharing, and infant mortality rates that triggered early health investigations."
+          "url": "https://www.youtube.com/watch?v=oHhqzoqFqew",
+          "title": "The Growth of Industry & Factory Towns | BBC Bitesize",
+          "duration": "4 mins 17 secs",
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:15–03:45 | Lesson Phase: Lesson Hook | Tone Alert: Rapid overview of industrial urban migration, overcrowding, and life expectancy collapse.",
+          "viewing_task": "[01:00] Quick Check: In 1840s Manchester or Liverpool, what was the average life expectancy of a working-class factory labourer?\n[03:15] Hinge Question: Why did the rapid, unregulated growth of industrial cities create a far deadlier disease environment than medieval farming villages?",
+          "model_answer": "Quick Check: Approximately 17 to 19 years of age.\nHinge Question: Tens of thousands of workers were crammed into tiny spaces without sewers, clean piped water, or garbage collection; cesspools overflowed into cellars and seeped into drinking pumps, spreading cholera and typhoid."
         },
         {
+          "id": "TT4Z1Ikf36w",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
+          "title": "Victorian Slums & The Public Health Crisis | Secondary History",
+          "duration": "8 mins 30 secs",
+          "pathway": "Core Enquiry",
+          "teacher_guidance": "Recommended Watch Window: 00:30–07:45 | Lesson Phase: Forensic Evidence | Tone Alert: Investigates back-to-back courts, cellar dwellings, and privy pits.",
+          "viewing_task": "[01:45] Recall: What was a back-to-back house, and why did it provide virtually zero fresh air circulation?\n[04:00] Explain: How did water companies pump contaminated river water directly into communal standpipes for just two hours a day?\n[06:30] Challenge: In what ways did the laissez-faire economic philosophy of the Victorian government prevent state intervention to clean up slums?",
+          "model_answer": "Recall: Terraced houses joined together on three sides (back and both flanks) with windows only on the front, creating dark, damp, airless rooms.\nExplain: Private water companies drew water straight from rivers into which sewers emptied, turning standpipes on only briefly, forcing families to store polluted water in stagnant buckets.\nChallenge: Victorian politicians believed the government should not interfere in private property or business ('leave alone'); landlords fiercely resisted spending money on drains, and ratepayers refused to pay higher local taxes."
+        },
+        {
+          "id": "Ry2ULl8osu4",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=Ry2ULl8osu4",
+          "title": "Oliver Twist (2005) | Victorian Slums & Workhouses Trailer",
+          "duration": "2 mins 10 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:10 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Captures the visual grittiness, chimney smoke, and poverty of Victorian Britain.",
+          "viewing_task": "[01:05] Cinematic Discussion Focus: How does the cinematography use color, shadows, and claustrophobic framing to capture the unlivable environment of industrial slums?",
+          "model_answer": "Cinematic Discussion Focus: The film uses murky brownish-grey lighting, smoke-filled air, and narrow crowded streets to immerse the viewer in the grim sensory reality of Victorian urban poverty, illustrating why disease spread uncontrollably."
+        },
+        {
+          "id": "MdNXDqCGv3M",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=MdNXDqCGv3M",
-          "title": "Edwin Chadwick and the 1848 Public Health Act",
+          "title": "Edwin Chadwick & The 1848 Public Health Act | Secondary History",
           "duration": "6 mins 15 secs",
-          "viewing_task": "Explain how Edwin Chadwick used statistics in his 1842 report to persuade Parliament to act.",
-          "model_answer": "Chadwick showed that labourers died at an average age of 17 in Manchester, and proved that preventable disease cost ratepayers more in poor relief than building sewers.",
-          "teacher_guidance": "Examines Edwin Chadwick's landmark 1842 Report on the Sanitary Condition of the Labouring Population. Direct pupils to notice Chadwick's use of statistical evidence and economic arguments to persuade a reluctant laissez-faire Parliament to act."
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 00:30–05:45 | Lesson Phase: Flipped Learning / Extension | Tone Alert: Rigorous analysis of Chadwick's 1842 Sanitary Report and the 1848 legislation.",
+          "viewing_task": "[01:30] Recall: What statistical evidence did Edwin Chadwick present in his 1842 Report on the Sanitary Condition of the Labouring Population?\n[03:15] Explain: How did Chadwick use economic arguments to convince politicians that poor sanitation was costing taxpayers millions in Poor Law relief?\n[05:00] Challenge: Why was the 1848 Public Health Act largely ineffective (due to being non-compulsory and relying on optional local boards of health)?",
+          "model_answer": "Recall: He proved mathematically that life expectancy was drastically lower in industrial slums and that filthy living conditions, not laziness, caused disease.\nExplain: He argued that preventing disease by installing clean water and sewers was far cheaper than paying endless Poor Law relief to support widows and orphans of deceased breadwinners.\nChallenge: The Act was permissive rather than compulsory: town councils could choose whether or not to set up a board of health, and many refused because wealthy ratepayers refused to pay higher property taxes."
         }
       ],
       "quick_quiz": [
@@ -2914,9 +3036,9 @@
           "question": "How much did the population of industrial Manchester grow between 1770 and 1850?",
           "options": [
             "It dropped from 50,000 to zero",
-            "It reached 10 million",
+            "It stayed at 10,000",
             "It exploded from 25,000 to over 300,000",
-            "It stayed at 10,000"
+            "It reached 10 million"
           ],
           "answer": "It exploded from 25,000 to over 300,000"
         },
@@ -2925,18 +3047,18 @@
           "options": [
             "Roundhouses",
             "Back-to-back houses",
-            "Villas",
-            "Manor houses"
+            "Manor houses",
+            "Villas"
           ],
           "answer": "Back-to-back houses"
         },
         {
           "question": "Why were back-to-back houses notoriously unhealthy?",
           "options": [
+            "They were built of straw",
             "They were painted black",
-            "They had no front doors",
             "They shared three walls and had no through-ventilation",
-            "They were built of straw"
+            "They had no front doors"
           ],
           "answer": "They shared three walls and had no through-ventilation"
         },
@@ -2944,8 +3066,8 @@
           "question": "What was an outdoor toilet shed built over an open refuse pit called?",
           "options": [
             "An aqueduct",
-            "A water closet",
             "A thermae",
+            "A water closet",
             "A privy midden"
           ],
           "answer": "A privy midden"
@@ -2955,8 +3077,8 @@
           "options": [
             "For 20–30 minutes a few days a week",
             "24 hours every day",
-            "Never",
-            "Only on Christmas Day"
+            "Only on Christmas Day",
+            "Never"
           ],
           "answer": "For 20–30 minutes a few days a week"
         },
@@ -2973,10 +3095,10 @@
         {
           "question": "At which northeastern coal port did cholera first enter Britain in 1831?",
           "options": [
-            "Portsmouth",
+            "London",
             "Liverpool",
             "Sunderland",
-            "London"
+            "Portsmouth"
           ],
           "answer": "Sunderland"
         },
@@ -2985,17 +3107,17 @@
           "options": [
             "\"The Blue Death\"",
             "\"The Red Plague\"",
-            "\"The Yellow Fever\"",
-            "\"The Black Death\""
+            "\"The Black Death\"",
+            "\"The Yellow Fever\""
           ],
           "answer": "\"The Blue Death\""
         },
         {
           "question": "What microscopic pathogen causes cholera?",
           "options": [
-            "Influenza",
-            "Vibrio cholerae",
             "Yersinia pestis",
+            "Vibrio cholerae",
+            "Influenza",
             "Smallpox"
           ],
           "answer": "Vibrio cholerae"
@@ -3003,9 +3125,9 @@
         {
           "question": "What incorrect medical theory did doctors believe caused cholera in the 1830s?",
           "options": [
+            "Genetics",
             "Virus theory",
             "Germ theory",
-            "Genetics",
             "Miasma theory (bad air)"
           ],
           "answer": "Miasma theory (bad air)"
@@ -3013,8 +3135,8 @@
         {
           "question": "Who published the landmark 1842 Report on the Sanitary Condition of the Labouring Population?",
           "options": [
-            "John Snow",
             "Joseph Bazalgette",
+            "John Snow",
             "Robert Koch",
             "Edwin Chadwick"
           ],
@@ -3024,18 +3146,18 @@
           "question": "According to Chadwick’s 1842 report, what was the average life expectancy for a labourer in Manchester?",
           "options": [
             "Just 17 years",
+            "75 years",
             "90 years",
-            "38 years",
-            "75 years"
+            "38 years"
           ],
           "answer": "Just 17 years"
         },
         {
           "question": "What economic argument did Chadwick use to convince MPs to build sewers?",
           "options": [
-            "Sewers would attract French tourists",
-            "Preventable disease cost taxpayers more in poor-relief than building sewers",
             "Sewers would produce gold",
+            "Preventable disease cost taxpayers more in poor-relief than building sewers",
+            "Sewers would attract French tourists",
             "Sewers would end all wars"
           ],
           "answer": "Preventable disease cost taxpayers more in poor-relief than building sewers"
@@ -3043,19 +3165,19 @@
         {
           "question": "What national body was established by the landmark Public Health Act of 1848?",
           "options": [
+            "The World Health Organization",
             "The Royal Navy",
-            "The National Health Service",
             "The General Board of Health",
-            "The World Health Organization"
+            "The National Health Service"
           ],
           "answer": "The General Board of Health"
         },
         {
           "question": "Why was the 1848 Public Health Act largely ineffective in many areas?",
           "options": [
-            "Sewers had not been invented yet",
-            "It was permissive (optional) rather than compulsory",
             "It was banned by the Queen",
+            "It was permissive (optional) rather than compulsory",
+            "Sewers had not been invented yet",
             "Nobody had any bricks"
           ],
           "answer": "It was permissive (optional) rather than compulsory"
@@ -3064,9 +3186,9 @@
           "question": "What Victorian political philosophy believed government should not interfere in business or taxes?",
           "options": [
             "Socialism",
-            "Feudalism",
+            "Communism",
             "Laissez-faire",
-            "Communism"
+            "Feudalism"
           ],
           "answer": "Laissez-faire"
         },
@@ -3074,8 +3196,8 @@
           "question": "Who were the local property owners that campaigned fiercely against paying sanitary taxes?",
           "options": [
             "Ratepayers",
-            "Monks",
             "Gong farmers",
+            "Monks",
             "Mill workers"
           ],
           "answer": "Ratepayers"
@@ -3083,9 +3205,9 @@
         {
           "question": "What happened to Edwin Chadwick in 1854 as a result of ratepayer backlash?",
           "options": [
-            "He became Prime Minister",
             "He moved to America",
             "He was knighted by the Queen",
+            "He became Prime Minister",
             "He was sacked and the General Board of Health was abolished"
           ],
           "answer": "He was sacked and the General Board of Health was abolished"
@@ -3117,8 +3239,8 @@
           "options": [
             "It exploded from 25,000 to over 300,000",
             "It dropped from 50,000 to zero",
-            "It reached 10 million",
-            "It stayed at 10,000"
+            "It stayed at 10,000",
+            "It reached 10 million"
           ],
           "answer": "It exploded from 25,000 to over 300,000"
         },
@@ -3126,8 +3248,8 @@
           "question": "What were cheaply constructed houses sharing three party walls called?",
           "options": [
             "Roundhouses",
-            "Villas",
             "Manor houses",
+            "Villas",
             "Back-to-back houses"
           ],
           "answer": "Back-to-back houses"
@@ -3135,9 +3257,9 @@
         {
           "question": "Why were back-to-back houses notoriously unhealthy?",
           "options": [
+            "They were built of straw",
             "They were painted black",
             "They had no front doors",
-            "They were built of straw",
             "They shared three walls and had no through-ventilation"
           ],
           "answer": "They shared three walls and had no through-ventilation"
@@ -3147,8 +3269,8 @@
           "options": [
             "An aqueduct",
             "A privy midden",
-            "A water closet",
-            "A thermae"
+            "A thermae",
+            "A water closet"
           ],
           "answer": "A privy midden"
         },
@@ -3156,9 +3278,9 @@
           "question": "How often was piped water typically turned on at public standpipes in poor slums?",
           "options": [
             "24 hours every day",
-            "Never",
+            "Only on Christmas Day",
             "For 20–30 minutes a few days a week",
-            "Only on Christmas Day"
+            "Never"
           ],
           "answer": "For 20–30 minutes a few days a week"
         },
@@ -3176,9 +3298,9 @@
           "question": "At which northeastern coal port did cholera first enter Britain in 1831?",
           "options": [
             "Sunderland",
-            "Portsmouth",
+            "London",
             "Liverpool",
-            "London"
+            "Portsmouth"
           ],
           "answer": "Sunderland"
         },
@@ -3186,17 +3308,17 @@
           "question": "What was the nickname given to cholera because of its terrifying symptoms?",
           "options": [
             "\"The Red Plague\"",
-            "\"The Yellow Fever\"",
+            "\"The Black Death\"",
             "\"The Blue Death\"",
-            "\"The Black Death\""
+            "\"The Yellow Fever\""
           ],
           "answer": "\"The Blue Death\""
         },
         {
           "question": "What microscopic pathogen causes cholera?",
           "options": [
-            "Influenza",
             "Yersinia pestis",
+            "Influenza",
             "Smallpox",
             "Vibrio cholerae"
           ],
@@ -3205,10 +3327,10 @@
         {
           "question": "What incorrect medical theory did doctors believe caused cholera in the 1830s?",
           "options": [
-            "Virus theory",
+            "Genetics",
             "Miasma theory (bad air)",
-            "Germ theory",
-            "Genetics"
+            "Virus theory",
+            "Germ theory"
           ],
           "answer": "Miasma theory (bad air)"
         },
@@ -3216,8 +3338,8 @@
           "question": "Who published the landmark 1842 Report on the Sanitary Condition of the Labouring Population?",
           "options": [
             "Edwin Chadwick",
-            "John Snow",
             "Joseph Bazalgette",
+            "John Snow",
             "Robert Koch"
           ],
           "answer": "Edwin Chadwick"
@@ -3225,19 +3347,19 @@
         {
           "question": "According to Chadwick’s 1842 report, what was the average life expectancy for a labourer in Manchester?",
           "options": [
+            "75 years",
             "90 years",
-            "38 years",
             "Just 17 years",
-            "75 years"
+            "38 years"
           ],
           "answer": "Just 17 years"
         },
         {
           "question": "What economic argument did Chadwick use to convince MPs to build sewers?",
           "options": [
-            "Sewers would attract French tourists",
-            "Preventable disease cost taxpayers more in poor-relief than building sewers",
             "Sewers would produce gold",
+            "Preventable disease cost taxpayers more in poor-relief than building sewers",
+            "Sewers would attract French tourists",
             "Sewers would end all wars"
           ],
           "answer": "Preventable disease cost taxpayers more in poor-relief than building sewers"
@@ -3245,9 +3367,9 @@
         {
           "question": "What national body was established by the landmark Public Health Act of 1848?",
           "options": [
+            "The World Health Organization",
             "The Royal Navy",
             "The National Health Service",
-            "The World Health Organization",
             "The General Board of Health"
           ],
           "answer": "The General Board of Health"
@@ -3256,8 +3378,8 @@
           "question": "Why was the 1848 Public Health Act largely ineffective in many areas?",
           "options": [
             "It was permissive (optional) rather than compulsory",
-            "Sewers had not been invented yet",
             "It was banned by the Queen",
+            "Sewers had not been invented yet",
             "Nobody had any bricks"
           ],
           "answer": "It was permissive (optional) rather than compulsory"
@@ -3267,16 +3389,16 @@
           "options": [
             "Socialism",
             "Laissez-faire",
-            "Feudalism",
-            "Communism"
+            "Communism",
+            "Feudalism"
           ],
           "answer": "Laissez-faire"
         },
         {
           "question": "Who were the local property owners that campaigned fiercely against paying sanitary taxes?",
           "options": [
-            "Monks",
             "Gong farmers",
+            "Monks",
             "Mill workers",
             "Ratepayers"
           ],
@@ -3285,10 +3407,10 @@
         {
           "question": "What happened to Edwin Chadwick in 1854 as a result of ratepayer backlash?",
           "options": [
-            "He became Prime Minister",
             "He moved to America",
+            "He was knighted by the Queen",
             "He was sacked and the General Board of Health was abolished",
-            "He was knighted by the Queen"
+            "He became Prime Minister"
           ],
           "answer": "He was sacked and the General Board of Health was abolished"
         }
@@ -3670,50 +3792,58 @@
       },
       "video": [
         {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=5k8AnhNkN04",
-          "title": "Bazalgette: Saviour of the Great Stink (Institution of Civil Engineers)",
-          "duration": "5 mins 14 secs",
-          "viewing_task": "Identify two engineering innovations Joseph Bazalgette used to build London’s intercepting sewer network, and explain why his system has lasted over 150 years.",
-          "model_answer": "Bazalgette used newly invented waterproof Portland cement, oval egg-shaped brick tunnels to keep sewage moving by gravity without clogging, and massive steam pumping stations (like Abbey Mills and Crossness). Crucially, he doubled the calculated pipe capacity so London’s future population would not overwhelm the sewers.",
-          "teacher_guidance": "Engineering case study by the ICE celebrating Joseph Bazalgette's Victorian marvel. Highlights the use of Portland cement, egg-shaped brick tunnels, and Bazalgette's foresight in doubling the sewer pipe capacity to prevent future bottlenecks."
-        },
-        {
-          "type": "era",
-          "url": "https://era.org.uk/streaming-service-resource/5-sewer-king-seven-wonders-of-the-industrial-world/",
-          "title": "05: The Sewer King | Seven Wonders of the Industrial World (BBC)",
-          "duration": "48 mins 36 secs",
-          "viewing_task": "Observe Joseph Bazalgette’s struggle against political opposition, miasma theorists, and engineering disasters. Note how he tested Portland cement and how the Great Stink finally forced Parliament to release funding.",
-          "model_answer": "Politicians initially refused to fund Bazalgette due to laissez-faire penny-pinching and stubborn belief in miasma. The unbearable heatwave of June 1858 forced Parliament to pass emergency legislation granting £3 million in eighteen days. Bazalgette rigorously tested Portland cement batches to guarantee structural integrity against sewage acids, creating an underground marvel that virtually eliminated waterborne cholera in the capital.",
-          "teacher_guidance": "Superb BBC docudrama tracing Joseph Bazalgette's engineering triumph over political resistance, cholera outbreaks, and administrative apathy, culminating in London's 82-mile underground intercepting sewer network."
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=8st-Ako2mrU",
-          "title": "The Great Stink & Bazalgette's London Sewers (BBC Bitesize GCSE History)",
-          "duration": "3 mins 45 secs",
-          "viewing_task": "Identify two reasons why the Great Stink forced Parliament to act, and explain how Bazalgette’s sewers worked.",
-          "model_answer": "The stench from the boiling Thames was so overwhelming that MPs could not work in Parliament and feared catching cholera. Bazalgette built 82 miles of intercepting sewers using gravity to carry waste eastwards away from London.",
-          "teacher_guidance": "Crisp curriculum summary explaining how the unbearable summer heatwave of June 1858 turned the River Thames into an open sewer, forcing MPs in Parliament to abandon laissez-faire and pass emergency funding for Bazalgette."
-        },
-        {
+          "id": "ZmaoHB5fKB4",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=ZmaoHB5fKB4",
-          "title": "Louis Pasteur & Germ Theory (Science Museum)",
+          "title": "Louis Pasteur & Germ Theory | Secondary History",
           "duration": "4 mins 12 secs",
-          "viewing_task": "Explain how Pasteur’s swan-neck flask experiment proved that microbes were in the air and disproved spontaneous generation.",
-          "model_answer": "Pasteur boiled nutrient broth in an S-shaped flask; it stayed sterile because dust trapped in the curve. When the curve was broken, microbes fell in and the broth decayed, proving bacteria came from the air rather than generating spontaneously.",
-          "teacher_guidance": "Clear demonstration of Louis Pasteur's 1861 swan-neck flask experiments. Guides pupils to understand how Pasteur disproved 'spontaneous generation' and proved that invisible airborne microorganisms cause fermentation, decay, and disease."
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:15–03:45 | Lesson Phase: Scientific Revolution Hook | Tone Alert: Explores the swan-neck flask experiment and disproving Spontaneous Generation.",
+          "viewing_task": "[01:00] Quick Check: In what year did French chemist Louis Pasteur publish his Germ Theory of disease?\n[02:45] Hinge Question: Why did the medical establishment take nearly two decades to accept that invisible microscopic bacteria caused disease rather than bad smells (miasma)?",
+          "model_answer": "Quick Check: 1861.\nHinge Question: Doctors had believed in the ancient miasma theory for over two thousand years; it seemed absurd that invisible microbes floating in the air could kill an adult human until Robert Koch specifically identified anthrax, tuberculosis, and cholera bacteria."
+        },
+        {
+          "id": "5k8AnhNkN04",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=5k8AnhNkN04",
+          "title": "Bazalgette: Saviour of the Great Stink | Institution of Civil Engineers",
+          "duration": "5 mins 14 secs",
+          "pathway": "Core Enquiry",
+          "teacher_guidance": "Recommended Watch Window: 00:20–04:45 | Lesson Phase: Engineering Triumph | Tone Alert: Technical analysis of Joseph Bazalgette's Victorian intercepting sewer network.",
+          "viewing_task": "[01:10] Recall: What occurred in the hot summer of 1858 that forced MPs in the Houses of Parliament to soak curtains in chloride of lime?\n[02:40] Explain: How did Joseph Bazalgette's network of 82 miles of underground brick intercepting sewers redirect 420 million gallons of sewage daily?\n[04:15] Challenge: How did Bazalgette's decision to double the diameter of his sewer pipes ('just in case') future-proof London's sanitation for over 150 years?",
+          "model_answer": "Recall: The 'Great Stink': the untreated sewage of 2 million people in the River Thames baked in extreme heat, producing an unbearable stench that disrupted Parliament.\nExplain: He built massive underground sewers parallel to the Thames that caught effluent before it reached the river, using gravity and steam pumping stations to carry it eastward to the Thames estuary.\nChallenge: He calculated the exact sewer capacity needed for London's population, said 'we're only going to do this once', and doubled pipe dimensions; his Victorian brick sewers still handle London's waste today."
+        },
+        {
+          "id": "lOIp7pOMrkI",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=lOIp7pOMrkI",
+          "title": "How The Victorians Ended London's Great Stink | History Documentaries",
+          "duration": "12 mins 40 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:30–11:30 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Acclaimed historical documentary recreating Victorian London and Bazalgette's struggles.",
+          "viewing_task": "[01:30] Cinematic Discussion Focus: How does the documentary capture the dramatic moment when Parliament was forced to pass legislation in just 18 days because the stink threatened MPs' own lives?",
+          "model_answer": "Cinematic Discussion Focus: The documentary highlights the irony: for decades, thousands of poor workers died in slums while Parliament did nothing; but when the stench of their own waste wafted through the windows of the House of Commons, politicians panicked and immediately granted Bazalgette £3 million."
+        },
+        {
+          "id": "era_sewer_king_bazalgette",
+          "type": "era",
+          "url": "https://eduvids.org/embed/sewer-king-seven-wonders",
+          "title": "The Sewer King: Seven Wonders of the Industrial World | BBC",
+          "duration": "48 mins 36 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 10:00–35:00 | Lesson Phase: Flipped Learning / Extension | Tone Alert: BBC docudrama starring Michael Kitchen as Sir Joseph Bazalgette.",
+          "viewing_task": "[14:00] Recall: What innovative construction material (Portland cement) did Bazalgette rigorously test to ensure sewers would not dissolve in acidic effluent?\n[26:30] Explain: How did Bazalgette's construction work also create the Victoria, Albert, and Chelsea Embankments, reclaiming 52 acres of prime riverside land?\n[38:15] Challenge: How did Bazalgette's engineering triumph permanently eradicate waterborne cholera from London even though he believed in the flawed miasma theory?",
+          "model_answer": "Recall: Portland cement: he personally inspected every batch to ensure it had maximum tensile strength in water.\nExplain: The embankments encased the massive low-level intercepting sewer pipes, the District underground railway line, and gas mains, simultaneously beautifying London and preventing tidal floods.\nChallenge: He believed bad smells caused cholera, so his goal was to remove foul-smelling waste; by diverting sewage away from drinking water intakes, he accidentally eliminated the cholera bacterium, ending epidemics in London forever."
         }
       ],
       "quick_quiz": [
         {
           "question": "What modern convenience caused the River Thames to become an open sewer by the 1850s?",
           "options": [
-            "The electric telegraph",
-            "The flushing indoor water closet",
             "The gas streetlamp",
-            "The steam locomotive"
+            "The flushing indoor water closet",
+            "The steam locomotive",
+            "The electric telegraph"
           ],
           "answer": "The flushing indoor water closet"
         },
@@ -3721,8 +3851,8 @@
           "question": "Where were domestic flushing water closets plumbed in early Victorian London?",
           "options": [
             "Into modern water purification factories",
-            "Into underground tanks in France",
             "Into deep coal mines",
+            "Into underground tanks in France",
             "Directly into old storm-water drains emptying into the Thames"
           ],
           "answer": "Directly into old storm-water drains emptying into the Thames"
@@ -3731,9 +3861,9 @@
           "question": "What famous scientist published a letter in 1855 warning that the Thames was an opaque fermenting sewer?",
           "options": [
             "Isaac Newton",
-            "Albert Einstein",
+            "Charles Darwin",
             "Michael Faraday",
-            "Charles Darwin"
+            "Albert Einstein"
           ],
           "answer": "Michael Faraday"
         },
@@ -3741,9 +3871,9 @@
           "question": "In what year did the scorching heatwave cause the \"Great Stink\" in London?",
           "options": [
             "1858",
-            "1848",
             "1875",
-            "1831"
+            "1831",
+            "1848"
           ],
           "answer": "1858"
         },
@@ -3751,9 +3881,9 @@
           "question": "What building stood directly on the riverbank and was overwhelmed by the Great Stink?",
           "options": [
             "The Houses of Parliament (Palace of Westminster)",
-            "St Paul’s Cathedral",
+            "Buckingham Palace",
             "The Tower of London",
-            "Buckingham Palace"
+            "St Paul’s Cathedral"
           ],
           "answer": "The Houses of Parliament (Palace of Westminster)"
         },
@@ -3761,17 +3891,17 @@
           "question": "What chemical did officials soak the curtains of Parliament with to neutralize the smell?",
           "options": [
             "Vinegar",
-            "Rose water",
+            "Sulfuric acid",
             "Chloride of lime",
-            "Sulfuric acid"
+            "Rose water"
           ],
           "answer": "Chloride of lime"
         },
         {
           "question": "How quickly did Parliament pass the emergency bill to fund London’s new sewers?",
           "options": [
-            "In 6 months",
             "It took 50 years",
+            "In 6 months",
             "It was never passed",
             "In just 18 days"
           ],
@@ -3780,9 +3910,9 @@
         {
           "question": "Who was appointed Chief Engineer to design and build London’s underground sewer network?",
           "options": [
-            "John Snow",
-            "Joseph Bazalgette",
             "Edwin Chadwick",
+            "Joseph Bazalgette",
+            "John Snow",
             "Isambard Kingdom Brunel"
           ],
           "answer": "Joseph Bazalgette"
@@ -3792,8 +3922,8 @@
           "options": [
             "82 miles",
             "5 miles",
-            "1,000 miles",
-            "500 miles"
+            "500 miles",
+            "1,000 miles"
           ],
           "answer": "82 miles"
         },
@@ -3801,8 +3931,8 @@
           "question": "What revolutionary waterproof material was used to bind the 318 million bricks in the sewers?",
           "options": [
             "Plaster of Paris",
-            "Tar",
             "Clay mud",
+            "Tar",
             "Portland cement"
           ],
           "answer": "Portland cement"
@@ -3810,38 +3940,38 @@
         {
           "question": "Why were Bazalgette’s sewer pipes engineered in an oval, egg-like shape?",
           "options": [
-            "To fit horses inside",
             "Because round pipes were banned",
+            "To look artistic",
             "To keep water flowing fast even when water levels were low",
-            "To look artistic"
+            "To fit horses inside"
           ],
           "answer": "To keep water flowing fast even when water levels were low"
         },
         {
           "question": "What natural force carried most of London’s sewage eastward along Bazalgette’s tunnels?",
           "options": [
-            "Compressed air",
+            "Electric motors",
             "Gravity",
-            "Nuclear power",
-            "Electric motors"
+            "Compressed air",
+            "Nuclear power"
           ],
           "answer": "Gravity"
         },
         {
           "question": "What massive steam pumping stations were built to lift sewage into outfall reservoirs?",
           "options": [
-            "Soho and Waterloo",
+            "Big Ben and Westminster",
             "Abbey Mills and Crossness",
             "Tower Bridge and London Eye",
-            "Big Ben and Westminster"
+            "Soho and Waterloo"
           ],
           "answer": "Abbey Mills and Crossness"
         },
         {
           "question": "What French scientist published the Germ Theory of Disease in 1861?",
           "options": [
-            "René Descartes",
             "Robert Koch",
+            "René Descartes",
             "Marie Curie",
             "Louis Pasteur"
           ],
@@ -3851,9 +3981,9 @@
           "question": "What shape of glass flask did Louis Pasteur use to disprove spontaneous generation?",
           "options": [
             "A square jar",
-            "A giant test tube",
+            "A flat plate",
             "A swan-neck (S-shaped) flask",
-            "A flat plate"
+            "A giant test tube"
           ],
           "answer": "A swan-neck (S-shaped) flask"
         },
@@ -3862,8 +3992,8 @@
           "options": [
             "Eastney Beam Engine House",
             "Titchfield Abbey",
-            "Southsea Castle",
-            "Portchester Fort"
+            "Portchester Fort",
+            "Southsea Castle"
           ],
           "answer": "Eastney Beam Engine House"
         },
@@ -3871,9 +4001,9 @@
           "question": "What happened during the 1866 cholera outbreak in London?",
           "options": [
             "The whole city died",
-            "Cholera was worse than ever everywhere",
+            "The sewers exploded",
             "Areas connected to Bazalgette’s sewers had no cholera deaths",
-            "The sewers exploded"
+            "Cholera was worse than ever everywhere"
           ],
           "answer": "Areas connected to Bazalgette’s sewers had no cholera deaths"
         },
@@ -3881,9 +4011,9 @@
           "question": "In what year was the landmark compulsory Public Health Act passed by Disraeli’s government?",
           "options": [
             "1875",
+            "1858",
             "1914",
-            "1848",
-            "1858"
+            "1848"
           ],
           "answer": "1875"
         },
@@ -3901,8 +4031,8 @@
           "question": "What long-standing political philosophy finally ended with the passage of the 1875 Public Health Act?",
           "options": [
             "Feudalism",
-            "Democracy",
             "Monarchy",
+            "Democracy",
             "Laissez-faire (government non-interference)"
           ],
           "answer": "Laissez-faire (government non-interference)"
@@ -3912,9 +4042,9 @@
         {
           "question": "What modern convenience caused the River Thames to become an open sewer by the 1850s?",
           "options": [
-            "The electric telegraph",
             "The gas streetlamp",
             "The steam locomotive",
+            "The electric telegraph",
             "The flushing indoor water closet"
           ],
           "answer": "The flushing indoor water closet"
@@ -3924,8 +4054,8 @@
           "options": [
             "Into modern water purification factories",
             "Directly into old storm-water drains emptying into the Thames",
-            "Into underground tanks in France",
-            "Into deep coal mines"
+            "Into deep coal mines",
+            "Into underground tanks in France"
           ],
           "answer": "Directly into old storm-water drains emptying into the Thames"
         },
@@ -3933,9 +4063,9 @@
           "question": "What famous scientist published a letter in 1855 warning that the Thames was an opaque fermenting sewer?",
           "options": [
             "Isaac Newton",
-            "Albert Einstein",
+            "Charles Darwin",
             "Michael Faraday",
-            "Charles Darwin"
+            "Albert Einstein"
           ],
           "answer": "Michael Faraday"
         },
@@ -3943,9 +4073,9 @@
           "question": "In what year did the scorching heatwave cause the \"Great Stink\" in London?",
           "options": [
             "1858",
-            "1848",
             "1875",
-            "1831"
+            "1831",
+            "1848"
           ],
           "answer": "1858"
         },
@@ -3953,9 +4083,9 @@
           "question": "What building stood directly on the riverbank and was overwhelmed by the Great Stink?",
           "options": [
             "The Houses of Parliament (Palace of Westminster)",
-            "St Paul’s Cathedral",
+            "Buckingham Palace",
             "The Tower of London",
-            "Buckingham Palace"
+            "St Paul’s Cathedral"
           ],
           "answer": "The Houses of Parliament (Palace of Westminster)"
         },
@@ -3963,8 +4093,8 @@
           "question": "What chemical did officials soak the curtains of Parliament with to neutralize the smell?",
           "options": [
             "Vinegar",
-            "Rose water",
             "Sulfuric acid",
+            "Rose water",
             "Chloride of lime"
           ],
           "answer": "Chloride of lime"
@@ -3972,8 +4102,8 @@
         {
           "question": "How quickly did Parliament pass the emergency bill to fund London’s new sewers?",
           "options": [
-            "In 6 months",
             "It took 50 years",
+            "In 6 months",
             "In just 18 days",
             "It was never passed"
           ],
@@ -3982,9 +4112,9 @@
         {
           "question": "Who was appointed Chief Engineer to design and build London’s underground sewer network?",
           "options": [
-            "John Snow",
-            "Joseph Bazalgette",
             "Edwin Chadwick",
+            "Joseph Bazalgette",
+            "John Snow",
             "Isambard Kingdom Brunel"
           ],
           "answer": "Joseph Bazalgette"
@@ -3993,9 +4123,9 @@
           "question": "How many miles of underground intercepting brick sewers did Bazalgette construct?",
           "options": [
             "5 miles",
-            "1,000 miles",
+            "500 miles",
             "82 miles",
-            "500 miles"
+            "1,000 miles"
           ],
           "answer": "82 miles"
         },
@@ -4004,17 +4134,17 @@
           "options": [
             "Portland cement",
             "Plaster of Paris",
-            "Tar",
-            "Clay mud"
+            "Clay mud",
+            "Tar"
           ],
           "answer": "Portland cement"
         },
         {
           "question": "Why were Bazalgette’s sewer pipes engineered in an oval, egg-like shape?",
           "options": [
-            "To fit horses inside",
             "Because round pipes were banned",
             "To look artistic",
+            "To fit horses inside",
             "To keep water flowing fast even when water levels were low"
           ],
           "answer": "To keep water flowing fast even when water levels were low"
@@ -4022,28 +4152,28 @@
         {
           "question": "What natural force carried most of London’s sewage eastward along Bazalgette’s tunnels?",
           "options": [
-            "Compressed air",
+            "Electric motors",
             "Gravity",
-            "Nuclear power",
-            "Electric motors"
+            "Compressed air",
+            "Nuclear power"
           ],
           "answer": "Gravity"
         },
         {
           "question": "What massive steam pumping stations were built to lift sewage into outfall reservoirs?",
           "options": [
-            "Soho and Waterloo",
+            "Big Ben and Westminster",
             "Abbey Mills and Crossness",
             "Tower Bridge and London Eye",
-            "Big Ben and Westminster"
+            "Soho and Waterloo"
           ],
           "answer": "Abbey Mills and Crossness"
         },
         {
           "question": "What French scientist published the Germ Theory of Disease in 1861?",
           "options": [
-            "René Descartes",
             "Robert Koch",
+            "René Descartes",
             "Marie Curie",
             "Louis Pasteur"
           ],
@@ -4054,8 +4184,8 @@
           "options": [
             "A swan-neck (S-shaped) flask",
             "A square jar",
-            "A giant test tube",
-            "A flat plate"
+            "A flat plate",
+            "A giant test tube"
           ],
           "answer": "A swan-neck (S-shaped) flask"
         },
@@ -4063,9 +4193,9 @@
           "question": "Which local Hampshire pumping station was built in 1865 using twin James Watt beam engines?",
           "options": [
             "Titchfield Abbey",
-            "Southsea Castle",
+            "Portchester Fort",
             "Eastney Beam Engine House",
-            "Portchester Fort"
+            "Southsea Castle"
           ],
           "answer": "Eastney Beam Engine House"
         },
@@ -4074,18 +4204,18 @@
           "options": [
             "The whole city died",
             "Areas connected to Bazalgette’s sewers had no cholera deaths",
-            "Cholera was worse than ever everywhere",
-            "The sewers exploded"
+            "The sewers exploded",
+            "Cholera was worse than ever everywhere"
           ],
           "answer": "Areas connected to Bazalgette’s sewers had no cholera deaths"
         },
         {
           "question": "In what year was the landmark compulsory Public Health Act passed by Disraeli’s government?",
           "options": [
+            "1858",
             "1914",
-            "1848",
             "1875",
-            "1858"
+            "1848"
           ],
           "answer": "1875"
         },
@@ -4104,8 +4234,8 @@
           "options": [
             "Laissez-faire (government non-interference)",
             "Feudalism",
-            "Democracy",
-            "Monarchy"
+            "Monarchy",
+            "Democracy"
           ],
           "answer": "Laissez-faire (government non-interference)"
         }
@@ -4293,16 +4423,16 @@
           "a": "Joseph Bazalgette."
         },
         {
-          "q": "What French scientist published the revolutionary Germ Theory of disease in 1861?",
-          "a": "Louis Pasteur."
+          "q": "What 1848 reform created the first General Board of Health, though setting up local boards was voluntary?",
+          "a": "The Public Health Act 1848."
         },
         {
           "q": "Which local Hampshire pumping station was built in 1865 using steam beam engines?",
           "a": "Eastney Beam Engine House."
         },
         {
-          "q": "What 1875 law made clean water and sewers compulsory for all local town councils?",
-          "a": "The Public Health Act 1875."
+          "q": "What medical theory, believed since ancient times, wrongly claimed that diseases were spread by foul smells and poisonous air?",
+          "a": "Miasma theory."
         }
       ],
       "vocabulary": [
@@ -4468,13 +4598,48 @@
       },
       "video": [
         {
+          "id": "VJ86D_DtyWg",
           "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
-          "title": "Dr John Snow and the 1854 Broad Street Cholera Outbreak",
-          "duration": "7 mins 20 secs",
-          "viewing_task": "Explain how John Snow identified the Broad Street pump as the cause of cholera and what action he took.",
-          "model_answer": "Snow plotted deaths on a map showing they clustered around the Broad Street pump, interviewed local families, and convinced the parish council to remove the pump handle.",
-          "teacher_guidance": "Classic epidemiological case study. Guide pupils to analyze Dr John Snow's scientific detective work in Soho, plotting cholera deaths on a spot map to pinpoint contaminated drinking water from the Broad Street pump."
+          "url": "https://www.youtube.com/watch?v=VJ86D_DtyWg",
+          "title": "The 1850s Map That Changed How We Fight Outbreaks | Vox",
+          "duration": "5 mins 12 secs",
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:00–05:12 | Lesson Phase: Lesson Hook | Tone Alert: Visually stunning spatial data visualization exploring Dr John Snow's 'Ghost Map'.",
+          "viewing_task": "[01:15] Quick Check: What neighborhood in Soho, London, suffered a devastating cholera outbreak killing 616 people in September 1854?\n[03:30] Hinge Question: How did Dr John Snow's revolutionary spatial map prove that cholera was transmitted through drinking water rather than miasma?",
+          "model_answer": "Quick Check: Broad Street (modern-day Broadwick Street) in Soho.\nHinge Question: Snow marked every cholera death with a black bar on a street map, showing that deaths clustered tightly around the Broad Street water pump; nearby workers at the brewery who drank only beer were completely unaffected."
+        },
+        {
+          "id": "lNjrAXGRda4",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=lNjrAXGRda4",
+          "title": "John Snow and the 1854 Broad Street Cholera Outbreak | Harvard Online",
+          "duration": "4 mins 45 secs",
+          "pathway": "Core Enquiry",
+          "teacher_guidance": "Recommended Watch Window: 00:20–04:20 | Lesson Phase: Epidemiological Breakthrough | Tone Alert: Harvard public health lecture exploring the source: an infant's dirty diaper leaking into the well.",
+          "viewing_task": "[01:00] Recall: What action did Dr John Snow persuade the local St James Parish board of guardians to take on 8 September 1854?\n[02:30] Explain: How did Reverend Whitehead uncover the origin of the outbreak (a cracked cesspool at 40 Broad Street where a sick infant's diaper water seeped into the well)?\n[04:00] Challenge: Why did the Board of Health reject Snow's waterborne theory in their official 1855 report despite overwhelming statistical evidence?",
+          "model_answer": "Recall: He persuaded them to remove the wooden handle of the Broad Street water pump, cutting off access to the contaminated water.\nExplain: Whitehead interviewed residents and discovered that a mother washed soiled diapers into a leaky brick cesspool situated just three feet from the pump well.\nChallenge: Chief medical officer Sir John Simon and Edwin Chadwick were dogmatic miasmatists; accepting Snow's waterborne theory meant admitting that spending millions flushing sewers into the Thames had actually worsened cholera epidemics."
+        },
+        {
+          "id": "Ftkmhs8BEms",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=Ftkmhs8BEms",
+          "title": "The Painted Veil (2006) | Official Movie Trailer (Edward Norton / Naomi Watts)",
+          "duration": "2 mins 25 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:25 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Acclaimed period drama depicting an epidemiological bacteriologist fighting a cholera epidemic.",
+          "viewing_task": "[01:15] Cinematic Discussion Focus: How does the film depict the bacteriologist's scientific struggle to enforce quarantine, boil drinking water, and bury corpses to halt a lethal cholera epidemic?",
+          "model_answer": "Cinematic Discussion Focus: The trailer dramatises the desperate race between scientific epidemiology and cholera: Edward Norton's character fights to purify the water supply and prevent contaminated irrigation, demonstrating how clean water engineering is the true cure for waterborne disease."
+        },
+        {
+          "id": "TLpzHHbFrHY",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=TLpzHHbFrHY",
+          "title": "England: The Broad Street Pump | Extra History (Part 1)",
+          "duration": "10 mins 15 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 01:00–09:30 | Lesson Phase: Flipped Learning / Extension | Tone Alert: Compelling animated deep dive into Dr John Snow's life and the birth of modern epidemiology.",
+          "viewing_task": "[02:30] Recall: How did Snow's earlier work as an anaesthetist studying respiratory gases (chloroform for Queen Victoria) lead him to doubt that cholera was inhaled as miasma?\n[05:45] Explain: What was Snow's 'Grand Experiment' comparing Southwark & Vauxhall water company (intake downstream of sewage) with Lambeth water company (intake upstream)?\n[08:50] Challenge: How did the combination of John Snow's epidemiology and Robert Koch's 1883 microscopic isolation of the Vibrio cholerae bacterium finally conquer cholera globally?",
+          "model_answer": "Recall: Snow reasoned that if poison was inhaled into the lungs, initial symptoms would be respiratory; cholera symptoms were purely gastrointestinal (vomiting and diarrhoea), proving the poison must be swallowed.\nExplain: Customers living on the same streets with identical air had radically different mortality rates: households drinking sewage-polluted water died at 8 times the rate of those drinking clean upstream water.\nChallenge: Snow provided epidemiological proof that water carried the pathogen, and Koch provided microscopic proof of the specific comma-shaped bacterium, giving municipal governments the scientific certainty needed to mandate universal water filtration."
         }
       ],
       "quick_quiz": [
@@ -4482,9 +4647,9 @@
           "question": "In what central London neighborhood did a devastating cholera epidemic break out in August 1854?",
           "options": [
             "Whitechapel",
-            "Kensington",
+            "Westminster",
             "Soho",
-            "Westminster"
+            "Kensington"
           ],
           "answer": "Soho"
         },
@@ -4501,9 +4666,9 @@
         {
           "question": "What did the medical establishment and Board of Health blame for the 1854 Soho outbreak?",
           "options": [
-            "Poisoned bread",
-            "Foul miasma (poisonous sewer gas)",
             "Contaminated water",
+            "Foul miasma (poisonous sewer gas)",
+            "Poisoned bread",
             "Alien invasion"
           ],
           "answer": "Foul miasma (poisonous sewer gas)"
@@ -4511,9 +4676,9 @@
         {
           "question": "What was Dr John Snow’s medical specialty before investigating cholera?",
           "options": [
-            "Brain surgeon",
             "Eye doctor",
             "Dentist",
+            "Brain surgeon",
             "Anesthetist (administering chloroform)"
           ],
           "answer": "Anesthetist (administering chloroform)"
@@ -4521,9 +4686,9 @@
         {
           "question": "What famous monarch did Dr John Snow administer chloroform to during childbirth in 1853?",
           "options": [
-            "Queen Mary",
-            "Queen Anne",
             "Queen Elizabeth I",
+            "Queen Anne",
+            "Queen Mary",
             "Queen Victoria"
           ],
           "answer": "Queen Victoria"
@@ -4541,10 +4706,10 @@
         {
           "question": "What street was the contaminated municipal water pump located on in Soho?",
           "options": [
-            "Fleet Street",
-            "Broad Street",
             "Oxford Street",
-            "Baker Street"
+            "Broad Street",
+            "Baker Street",
+            "Fleet Street"
           ],
           "answer": "Broad Street"
         },
@@ -4562,9 +4727,9 @@
           "question": "What famous visual tool did John Snow create to prove cholera clustered around the pump?",
           "options": [
             "The 1854 Cholera Spot Map",
+            "A pie chart",
             "A bronze statue",
-            "A painted oil portrait",
-            "A pie chart"
+            "A painted oil portrait"
           ],
           "answer": "The 1854 Cholera Spot Map"
         },
@@ -4572,8 +4737,8 @@
           "question": "How did John Snow represent each cholera death on his 1854 spot map?",
           "options": [
             "With a red circle",
-            "With a blue dot",
             "With a yellow cross",
+            "With a blue dot",
             "As a black bar stacked outside the victim’s address"
           ],
           "answer": "As a black bar stacked outside the victim’s address"
@@ -4581,30 +4746,30 @@
         {
           "question": "Why was the Lion Brewery on Broad Street so important to Snow’s investigation?",
           "options": [
-            "It was used as a hospital",
+            "It was where cholera was invented",
             "Its 70 workers drank free malt beer and none of them died of cholera",
             "The workers died first",
-            "It was where cholera was invented"
+            "It was used as a hospital"
           ],
           "answer": "Its 70 workers drank free malt beer and none of them died of cholera"
         },
         {
           "question": "Who was Susanna Eley in Hampstead, and why was her death significant?",
           "options": [
-            "She owned the Broad Street pump",
+            "She was the Queen’s sister",
             "She invented chloroform",
             "She died in healthy Hampstead because she had Broad Street water delivered in a bottle",
-            "She was the Queen’s sister"
+            "She owned the Broad Street pump"
           ],
           "answer": "She died in healthy Hampstead because she had Broad Street water delivered in a bottle"
         },
         {
           "question": "What decisive action did John Snow persuade the parish vestry to take on 8 September 1854?",
           "options": [
-            "Lock all citizens inside",
-            "Remove the handle from the Broad Street pump",
             "Dump lime into the Thames",
-            "Burn down Soho"
+            "Remove the handle from the Broad Street pump",
+            "Burn down Soho",
+            "Lock all citizens inside"
           ],
           "answer": "Remove the handle from the Broad Street pump"
         },
@@ -4621,10 +4786,10 @@
         {
           "question": "How did Baby Lewis’s illness contaminate the Broad Street pump well?",
           "options": [
-            "A flood washed sewage from the Thames",
+            "He fell into the well",
             "His father poisoned the water",
             "His mother washed his cholera diapers into a cracked cesspool that leaked into the well",
-            "He fell into the well"
+            "A flood washed sewage from the Thames"
           ],
           "answer": "His mother washed his cholera diapers into a cracked cesspool that leaked into the well"
         },
@@ -4632,8 +4797,8 @@
           "question": "What distance separated the cracked cesspool at No. 40 Broad Street from the drinking well?",
           "options": [
             "Ten miles",
-            "50 feet",
             "500 yards",
+            "50 feet",
             "Just 2 feet and 8 inches"
           ],
           "answer": "Just 2 feet and 8 inches"
@@ -4642,18 +4807,18 @@
           "question": "Did the General Board of Health immediately accept John Snow’s findings in 1855?",
           "options": [
             "No, they stubbornly rejected his water theory and clung to miasma",
-            "Yes, they tore down all pumps",
             "Yes, they banned all water",
-            "Yes, they knighted him immediately"
+            "Yes, they knighted him immediately",
+            "Yes, they tore down all pumps"
           ],
           "answer": "No, they stubbornly rejected his water theory and clung to miasma"
         },
         {
           "question": "In what year did Dr John Snow die, before his theories were fully accepted?",
           "options": [
-            "1901",
-            "1875",
             "1831",
+            "1875",
+            "1901",
             "1858"
           ],
           "answer": "1858"
@@ -4662,9 +4827,9 @@
           "question": "What German scientist isolated the Vibrio cholerae bacterium under a microscope in 1884?",
           "options": [
             "Louis Pasteur",
-            "Joseph Bazalgette",
+            "Edwin Chadwick",
             "Robert Koch",
-            "Edwin Chadwick"
+            "Joseph Bazalgette"
           ],
           "answer": "Robert Koch"
         },
@@ -4673,8 +4838,8 @@
           "options": [
             "Cardiology",
             "Modern epidemiology (tracking disease patterns)",
-            "Orthopedics",
-            "Brain surgery"
+            "Brain surgery",
+            "Orthopedics"
           ],
           "answer": "Modern epidemiology (tracking disease patterns)"
         }
@@ -4684,9 +4849,9 @@
           "question": "In what central London neighborhood did a devastating cholera epidemic break out in August 1854?",
           "options": [
             "Whitechapel",
-            "Kensington",
+            "Westminster",
             "Soho",
-            "Westminster"
+            "Kensington"
           ],
           "answer": "Soho"
         },
@@ -4703,9 +4868,9 @@
         {
           "question": "What did the medical establishment and Board of Health blame for the 1854 Soho outbreak?",
           "options": [
-            "Poisoned bread",
-            "Foul miasma (poisonous sewer gas)",
             "Contaminated water",
+            "Foul miasma (poisonous sewer gas)",
+            "Poisoned bread",
             "Alien invasion"
           ],
           "answer": "Foul miasma (poisonous sewer gas)"
@@ -4714,19 +4879,19 @@
           "question": "What was Dr John Snow’s medical specialty before investigating cholera?",
           "options": [
             "Anesthetist (administering chloroform)",
-            "Brain surgeon",
             "Eye doctor",
-            "Dentist"
+            "Dentist",
+            "Brain surgeon"
           ],
           "answer": "Anesthetist (administering chloroform)"
         },
         {
           "question": "What famous monarch did Dr John Snow administer chloroform to during childbirth in 1853?",
           "options": [
-            "Queen Mary",
+            "Queen Elizabeth I",
             "Queen Anne",
             "Queen Victoria",
-            "Queen Elizabeth I"
+            "Queen Mary"
           ],
           "answer": "Queen Victoria"
         },
@@ -4743,10 +4908,10 @@
         {
           "question": "What street was the contaminated municipal water pump located on in Soho?",
           "options": [
-            "Fleet Street",
-            "Broad Street",
             "Oxford Street",
-            "Baker Street"
+            "Broad Street",
+            "Baker Street",
+            "Fleet Street"
           ],
           "answer": "Broad Street"
         },
@@ -4764,9 +4929,9 @@
           "question": "What famous visual tool did John Snow create to prove cholera clustered around the pump?",
           "options": [
             "The 1854 Cholera Spot Map",
+            "A pie chart",
             "A bronze statue",
-            "A painted oil portrait",
-            "A pie chart"
+            "A painted oil portrait"
           ],
           "answer": "The 1854 Cholera Spot Map"
         },
@@ -4774,8 +4939,8 @@
           "question": "How did John Snow represent each cholera death on his 1854 spot map?",
           "options": [
             "With a red circle",
-            "With a blue dot",
             "With a yellow cross",
+            "With a blue dot",
             "As a black bar stacked outside the victim’s address"
           ],
           "answer": "As a black bar stacked outside the victim’s address"
@@ -4783,20 +4948,20 @@
         {
           "question": "Why was the Lion Brewery on Broad Street so important to Snow’s investigation?",
           "options": [
-            "It was used as a hospital",
+            "It was where cholera was invented",
             "Its 70 workers drank free malt beer and none of them died of cholera",
             "The workers died first",
-            "It was where cholera was invented"
+            "It was used as a hospital"
           ],
           "answer": "Its 70 workers drank free malt beer and none of them died of cholera"
         },
         {
           "question": "Who was Susanna Eley in Hampstead, and why was her death significant?",
           "options": [
-            "She owned the Broad Street pump",
+            "She was the Queen’s sister",
             "She invented chloroform",
             "She died in healthy Hampstead because she had Broad Street water delivered in a bottle",
-            "She was the Queen’s sister"
+            "She owned the Broad Street pump"
           ],
           "answer": "She died in healthy Hampstead because she had Broad Street water delivered in a bottle"
         },
@@ -4804,9 +4969,9 @@
           "question": "What decisive action did John Snow persuade the parish vestry to take on 8 September 1854?",
           "options": [
             "Remove the handle from the Broad Street pump",
-            "Lock all citizens inside",
             "Dump lime into the Thames",
-            "Burn down Soho"
+            "Burn down Soho",
+            "Lock all citizens inside"
           ],
           "answer": "Remove the handle from the Broad Street pump"
         },
@@ -4823,10 +4988,10 @@
         {
           "question": "How did Baby Lewis’s illness contaminate the Broad Street pump well?",
           "options": [
-            "A flood washed sewage from the Thames",
+            "He fell into the well",
             "His mother washed his cholera diapers into a cracked cesspool that leaked into the well",
             "His father poisoned the water",
-            "He fell into the well"
+            "A flood washed sewage from the Thames"
           ],
           "answer": "His mother washed his cholera diapers into a cracked cesspool that leaked into the well"
         },
@@ -4834,8 +4999,8 @@
           "question": "What distance separated the cracked cesspool at No. 40 Broad Street from the drinking well?",
           "options": [
             "Ten miles",
-            "50 feet",
             "500 yards",
+            "50 feet",
             "Just 2 feet and 8 inches"
           ],
           "answer": "Just 2 feet and 8 inches"
@@ -4844,18 +5009,18 @@
           "question": "Did the General Board of Health immediately accept John Snow’s findings in 1855?",
           "options": [
             "No, they stubbornly rejected his water theory and clung to miasma",
-            "Yes, they tore down all pumps",
             "Yes, they banned all water",
-            "Yes, they knighted him immediately"
+            "Yes, they knighted him immediately",
+            "Yes, they tore down all pumps"
           ],
           "answer": "No, they stubbornly rejected his water theory and clung to miasma"
         },
         {
           "question": "In what year did Dr John Snow die, before his theories were fully accepted?",
           "options": [
-            "1901",
-            "1875",
             "1831",
+            "1875",
+            "1901",
             "1858"
           ],
           "answer": "1858"
@@ -4865,8 +5030,8 @@
           "options": [
             "Louis Pasteur",
             "Robert Koch",
-            "Joseph Bazalgette",
-            "Edwin Chadwick"
+            "Edwin Chadwick",
+            "Joseph Bazalgette"
           ],
           "answer": "Robert Koch"
         },
@@ -4874,9 +5039,9 @@
           "question": "What branch of medicine is Dr John Snow celebrated for founding?",
           "options": [
             "Cardiology",
-            "Orthopedics",
+            "Brain surgery",
             "Modern epidemiology (tracking disease patterns)",
-            "Brain surgery"
+            "Orthopedics"
           ],
           "answer": "Modern epidemiology (tracking disease patterns)"
         }
@@ -4893,6 +5058,26 @@
       "banner": "/images/water_local_eastney_opt.jpg",
       "cover_image": "/images/water_local_eastney_opt.jpg",
       "prologue": "Welcome to your November Assessment Masterclass! In this workshop, you will prepare for your 30-minute formal assessment: \"Explain why there was rapid progress in Public Health 1800–1900?\". You will write three developed PEEL paragraphs explaining how scientific investigation (Dr John Snow), civil engineering (Sir Joseph Bazalgette), laboratory microbiology (Louis Pasteur), and compulsory government legislation (the 1875 Public Health Act) transformed British public health from deadly squalor into modern sanitary safety. Over half term, you are permitted to prepare ONE single sheet of A4 lined paper containing bullet points, mind maps, statistics, and dates to bring directly into the assessment room!",
+      "teacher_notes": {
+        "primer": "This masterclass synthesizes 19th-century public health progress across four key causal factors: scientific epidemiology (Snow), civil engineering (Bazalgette), laboratory microbiology (Pasteur), and state intervention (the 1875 Public Health Act). Guides Year 7 pupils to structure high-calibre PEEL paragraphs with explicit causal link sentences.",
+        "objectives": [
+          {
+            "tier": "Core Knowledge",
+            "desc": "Recall the 4 key historical catalysts of Victorian public health reform and their exact dates (1854, 1858, 1861, 1875).",
+            "question": "Which of the four catalysts provided the absolute legal compulsion that forced every local council to act?"
+          },
+          {
+            "tier": "Disciplinary Explanation",
+            "desc": "Explain how each factor dismantled the prevailing ideology of laissez-faire to protect human life.",
+            "question": "Could Bazalgette have built his sewer network without the crisis of the 1858 Great Stink forcing Parliament's hand?"
+          },
+          {
+            "tier": "Historical Judgment",
+            "desc": "Evaluate which factor was the most decisive catalyst in achieving rapid public health progress between 1800 and 1900.",
+            "question": "To what extent was government legislation the most important factor, or was it entirely dependent on prior scientific discovery?"
+          }
+        ]
+      },
       "assessment_notice": {
         "title": "Year 7 November Formal Assessment Timetable & Rules",
         "groups": [
@@ -5230,8 +5415,8 @@
           "options": [
             "Laissez-faire",
             "Imperialism",
-            "Feudalism",
-            "Socialism"
+            "Socialism",
+            "Feudalism"
           ],
           "answer": "Laissez-faire",
           "explanation": "Laissez-faire was the belief that government should not interfere in private business or citizens’ lives."
@@ -5239,9 +5424,9 @@
         {
           "question": "In what year did Dr John Snow map cholera deaths around the Broad Street pump in Soho?",
           "options": [
-            "1848",
-            "1854",
             "1831",
+            "1854",
+            "1848",
             "1875"
           ],
           "answer": "1854",
@@ -5250,8 +5435,8 @@
         {
           "question": "What famous item did Dr John Snow persuade parish vestrymen to remove in Soho?",
           "options": [
-            "The church bells",
             "The water pipes from the river",
+            "The church bells",
             "The hospital curtains",
             "The Broad Street pump handle"
           ],
@@ -5261,10 +5446,10 @@
         {
           "question": "What historic environmental crisis in June 1858 finally terrified Parliament into funding London’s sewers?",
           "options": [
-            "The Peasants’ Revolt",
+            "The Great Fire of London",
             "The Black Death",
             "The Great Stink",
-            "The Great Fire of London"
+            "The Peasants’ Revolt"
           ],
           "answer": "The Great Stink",
           "explanation": "The unbearable stench from the boiling Thames forced MPs to fund Bazalgette’s sewers."
@@ -5272,9 +5457,9 @@
         {
           "question": "How many miles of brick intercepting sewers did Sir Joseph Bazalgette build across London?",
           "options": [
-            "300 miles",
-            "82 miles",
             "15 miles",
+            "82 miles",
+            "300 miles",
             "500 miles"
           ],
           "answer": "82 miles",
@@ -5283,8 +5468,8 @@
         {
           "question": "What newly invented waterproof building material did Bazalgette rigorously test for his sewer tunnels?",
           "options": [
-            "Terracotta clay",
             "Cast iron",
+            "Terracotta clay",
             "Portland cement",
             "Lead sheeting"
           ],
@@ -5295,9 +5480,9 @@
           "question": "Which French scientist published the revolutionary Germ Theory of Disease in 1861?",
           "options": [
             "Louis Pasteur",
+            "Edward Jenner",
             "Thomas Sydenham",
-            "Robert Koch",
-            "Edward Jenner"
+            "Robert Koch"
           ],
           "answer": "Louis Pasteur",
           "explanation": "Louis Pasteur proved that microscopic living organisms caused fermentation and disease."
@@ -5305,8 +5490,8 @@
         {
           "question": "What shape of glass flask did Louis Pasteur use to disprove spontaneous generation in his broth experiments?",
           "options": [
-            "Open beaker",
             "Square bottle",
+            "Open beaker",
             "Test tube",
             "Swan-neck (S-shaped) flask"
           ],
@@ -5317,9 +5502,9 @@
           "question": "What was the crucial legal difference between the 1848 Public Health Act and the 1875 Public Health Act?",
           "options": [
             "The 1848 Act was optional (\"may\"), while the 1875 Act was compulsory (\"must\")",
-            "The 1875 Act made all medicine free",
+            "The 1875 Act banned flushing toilets",
             "The 1848 Act only applied to Scotland",
-            "The 1875 Act banned flushing toilets"
+            "The 1875 Act made all medicine free"
           ],
           "answer": "The 1848 Act was optional (\"may\"), while the 1875 Act was compulsory (\"must\")",
           "explanation": "The 1875 Act legally forced every council in Britain to provide clean water and sewers."
@@ -5368,8 +5553,8 @@
           "options": [
             "Imperialism",
             "Laissez-faire",
-            "Feudalism",
-            "Socialism"
+            "Socialism",
+            "Feudalism"
           ],
           "answer": "Laissez-faire",
           "explanation": "Laissez-faire was the belief that government should not interfere in private business or citizens’ lives."
@@ -5377,8 +5562,8 @@
         {
           "question": "In what year did Dr John Snow map cholera deaths around the Broad Street pump in Soho?",
           "options": [
-            "1848",
             "1831",
+            "1848",
             "1854",
             "1875"
           ],
@@ -5389,8 +5574,8 @@
           "question": "What famous item did Dr John Snow persuade parish vestrymen to remove in Soho?",
           "options": [
             "The Broad Street pump handle",
-            "The church bells",
             "The water pipes from the river",
+            "The church bells",
             "The hospital curtains"
           ],
           "answer": "The Broad Street pump handle",
@@ -5399,10 +5584,10 @@
         {
           "question": "What historic environmental crisis in June 1858 finally terrified Parliament into funding London’s sewers?",
           "options": [
-            "The Peasants’ Revolt",
+            "The Great Fire of London",
             "The Great Stink",
             "The Black Death",
-            "The Great Fire of London"
+            "The Peasants’ Revolt"
           ],
           "answer": "The Great Stink",
           "explanation": "The unbearable stench from the boiling Thames forced MPs to fund Bazalgette’s sewers."
@@ -5410,8 +5595,8 @@
         {
           "question": "How many miles of brick intercepting sewers did Sir Joseph Bazalgette build across London?",
           "options": [
-            "300 miles",
             "15 miles",
+            "300 miles",
             "500 miles",
             "82 miles"
           ],
@@ -5421,8 +5606,8 @@
         {
           "question": "What newly invented waterproof building material did Bazalgette rigorously test for his sewer tunnels?",
           "options": [
-            "Terracotta clay",
             "Cast iron",
+            "Terracotta clay",
             "Portland cement",
             "Lead sheeting"
           ],
@@ -5432,9 +5617,9 @@
         {
           "question": "Which French scientist published the revolutionary Germ Theory of Disease in 1861?",
           "options": [
+            "Edward Jenner",
             "Thomas Sydenham",
             "Robert Koch",
-            "Edward Jenner",
             "Louis Pasteur"
           ],
           "answer": "Louis Pasteur",
@@ -5443,8 +5628,8 @@
         {
           "question": "What shape of glass flask did Louis Pasteur use to disprove spontaneous generation in his broth experiments?",
           "options": [
-            "Open beaker",
             "Square bottle",
+            "Open beaker",
             "Swan-neck (S-shaped) flask",
             "Test tube"
           ],
@@ -5454,10 +5639,10 @@
         {
           "question": "What was the crucial legal difference between the 1848 Public Health Act and the 1875 Public Health Act?",
           "options": [
-            "The 1875 Act made all medicine free",
+            "The 1875 Act banned flushing toilets",
             "The 1848 Act was optional (\"may\"), while the 1875 Act was compulsory (\"must\")",
             "The 1848 Act only applied to Scotland",
-            "The 1875 Act banned flushing toilets"
+            "The 1875 Act made all medicine free"
           ],
           "answer": "The 1848 Act was optional (\"may\"), while the 1875 Act was compulsory (\"must\")",
           "explanation": "The 1875 Act legally forced every council in Britain to provide clean water and sewers."
@@ -5476,22 +5661,48 @@
       ],
       "video": [
         {
+          "id": "js_Kab5C2xI",
           "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
-          "title": "Chadwick and Snow: Transforming 19th Century Public Health | BBC Bitesize",
-          "duration": "5 mins 00 secs",
-          "teacher_guidance": "Masterclass synthesis contrasting Edwin Chadwick's 1842 Report on the Sanitary Condition of the Labouring Population with Dr John Snow's breakthrough mapping of the 1854 Broad Street cholera outbreak.",
-          "viewing_task": "How did Dr John Snow prove that cholera was water-borne rather than caused by foul air ('miasma')?",
-          "model_answer": "Snow drew a spot map of deaths in Soho and cross-referenced them with local water pumps, showing that the vast majority of cholera victims drank from the Broad Street pump. When the handle was removed and the pump closed, deaths plummeted, providing empirical epidemiological proof that cholera was spread through contaminated water."
+          "url": "https://www.youtube.com/watch?v=js_Kab5C2xI",
+          "title": "Public Health & Social Reform in Victorian Britain | UK Parliament",
+          "duration": "3 mins 30 secs",
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Recommended Watch Window: 00:15–03:15 | Lesson Phase: Synoptic Review Hook | Tone Alert: Compares the voluntary 1848 Public Health Act with the compulsory 1875 Act.",
+          "viewing_task": "[01:00] Quick Check: What major constitutional change transformed the 1875 Public Health Act from an optional recommendation into a compulsory legal duty?\n[02:45] Hinge Question: Why did the extension of the vote to urban working-class men in the 1867 Reform Act compel politicians to finally pass compulsory public health laws?",
+          "model_answer": "Quick Check: It made it mandatory for every local authority to appoint medical officers of health, provide clean water, build sewers, and inspect food.\nHinge Question: For the first time, working-class men in industrial towns had the vote; MPs could no longer ignore slum conditions if they wanted to win elections, ending the era of laissez-faire inaction."
         },
         {
+          "id": "XoS68K916eo",
           "type": "youtube",
           "url": "https://www.youtube.com/watch?v=XoS68K916eo",
           "title": "Government Action & The Public Health Act 1875 | GCSE History",
           "duration": "3 mins 24 secs",
-          "teacher_guidance": "Essential revision summary of the shift from Victorian 'laissez-faire' inaction to compulsory state intervention under the landmark 1875 Public Health Act.",
-          "viewing_task": "Why was the 1875 Public Health Act fundamentally different from the earlier 1848 Public Health Act?",
-          "model_answer": "The 1848 Act was optional ('permissive'), allowing councils to ignore sanitary improvements if local taxpayers objected. In contrast, the 1875 Act was compulsory ('mandatory'), forcing every town council to supply clean water, appoint medical officers of health, collect refuse, and enforce sanitary sewer connections."
+          "pathway": "Core Enquiry",
+          "teacher_guidance": "Recommended Watch Window: 00:20–03:10 | Lesson Phase: Landmark Legislation | Tone Alert: Examines Disraeli's Tory social reforms ('Sanitas sanitatum, omnia sanitas').",
+          "viewing_task": "[00:50] Recall: What specific requirements were mandated by Benjamin Disraeli's 1875 Public Health Act?\n[01:45] Explain: How did the 1875 Act work alongside the Artisan's Dwellings Act to empower councils to demolish insanitary slums?\n[02:40] Challenge: In evaluating public health progress between 1800 and 1900, which factor was most decisive: scientific breakthroughs (Pasteur/Koch), engineering feats (Bazalgette), or government legislation?",
+          "model_answer": "Recall: Councils were legally required to provide clean water, maintain covered sewers, appoint sanitary inspectors, collect rubbish, and regulate food adulteration.\nExplain: It allowed local authorities to compulsorily purchase and tear down overcrowded, disease-ridden tenements and rebuild planned housing.\nChallenge: A holistic historical judgement: engineering (Bazalgette) created the physical infrastructure, science (Pasteur/Snow) proved why water sanitation worked, but compulsory government legislation (1875) was essential to force reluctant ratepayers to fund it nationwide."
+        },
+        {
+          "id": "Dj5h1kKjVYc",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=Dj5h1kKjVYc",
+          "title": "Victorian Urban Reality & Social Reform | Cinematic Trailer",
+          "duration": "2 mins 24 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Recommended Watch Window: 00:00–02:24 | Lesson Phase: Visual & Cultural Impact | Tone Alert: Dramatises the human struggle of working-class citizens in industrial Britain.",
+          "viewing_task": "[01:10] Cinematic Discussion Focus: How does the cinematography capture the transition from despairing working-class poverty toward organized political demand for dignity, health, and representation?",
+          "model_answer": "Cinematic Discussion Focus: The trailer shows how working people united to demand basic human rights—including clean air, potable water, and decent housing—proving that political democracy and public health progress were inextricably linked."
+        },
+        {
+          "id": "lOIp7pOMrkI",
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=lOIp7pOMrkI",
+          "title": "How The Victorians Ended London's Great Stink | Masterclass Archive",
+          "duration": "12 mins 40 secs",
+          "pathway": "Documentary Depth",
+          "teacher_guidance": "Recommended Watch Window: 01:00–12:00 | Lesson Phase: Synoptic Synthesis | Tone Alert: Comprehensive documentary exploring the culmination of 19th-century public health progress.",
+          "viewing_task": "[02:30] Recall: How did life expectancy in British cities change between 1850 and 1900 as a result of clean water infrastructure?\n[06:45] Explain: How did the eradication of waterborne cholera and typhoid pave the way for modern 20th-century welfare and healthcare systems?\n[11:00] Challenge: What lessons from 19th-century water sanitation apply to developing nations today where over 2 billion people still lack safely managed drinking water?",
+          "model_answer": "Recall: Infant mortality plummeted and average urban life expectancy rose from under 20 to nearly 50 by the early 20th century.\nExplain: Proving that government could successfully eliminate diseases through environmental hygiene laid the foundation for the 1911 National Insurance Act and the 1948 National Health Service (NHS).\nChallenge: The Victorian experience demonstrates that modern medicine alone cannot conquer disease without basic municipal infrastructure: clean tap water and subterranean sewage disposal remain the single greatest public health intervention in human history."
         }
       ]
     }

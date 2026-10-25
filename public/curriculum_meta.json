@@ -50,20 +50,31 @@
       "ks": "Key Stage 3",
       "units": [
         {
-          "uid": "early_modern_world",
-          "terms": ["Autumn 1", "Autumn 2"],
-          "shortTitle": "Early Modern World (1450\u20131750)",
-          "summary": "Pupils examine why Europe was not the centre of global power in 1450, how religious conflict triggered exploration, and how early trading encounters escalated into empire and the Transatlantic Slave Trade.",
-          "vocab": "Reformation, Conquistador, Transatlantic Slave Trade, East India Company, Colonisation, Triangular Trade",
-          "skills": ["Significance", "Historical Interpretations", "Comparative Analysis", "Extended Writing (PEEL)"],
-          "assessment": "Formative PEEL paragraphs and source work throughout. Final assessment: \"To what extent was greed the main cause of European exploration?\"",
-          "smsc": "<strong>Moral:</strong> Ethics of colonisation, slavery, and cultural destruction. <strong>Social:</strong> Impact of global trade on indigenous societies. <strong>Cultural:</strong> Encountering and evaluating diverse civilisations.",
-          "careers": "Museum Curator, International Relations Analyst, Human Rights Lawyer"
+          "uid": "monarchy_religion_power",
+          "terms": ["Autumn 1"],
+          "shortTitle": "Crown, Church, or Parliament (1517–1689)",
+          "summary": "Pupils investigate 170 years of religious conflict and constitutional struggle, from Henry VIII's Break with Rome and Elizabeth's Middle Way to the English Civil War, the trial and execution of Charles I, and the 1689 Bill of Rights.",
+          "vocab": "Reformation, Act of Supremacy, Middle Way, Armada, Divine Right, Ship Money, New Model Army, Regicide, Bill of Rights",
+          "skills": ["Causation & Motivation", "Source Utility & Propaganda", "Historical Interpretations", "Significance & Turning Points", "Change & Continuity"],
+          "assessment": "Formative analytical responses and source investigations. Synoptic assessment: 'The World Turned Upside Down? To what extent did life and power in Britain truly change between 1517 and 1689?' (extended evaluative essay)",
+          "smsc": "<strong>Spiritual:</strong> The Reformation and conscience vs state religion. <strong>Moral:</strong> Is rebellion or regicide against a king ever justified? <strong>Social:</strong> How power shifted to Parliament while leaving the poorest 90% behind.",
+          "careers": "Constitutional Lawyer, Civil Servant, Parliamentary Researcher, Museum Educator"
+        },
+        {
+          "uid": "first_british_empire",
+          "terms": ["Autumn 2"],
+          "shortTitle": "The First British Empire (1600–1783)",
+          "summary": "Pupils investigate the commercial and imperial foundations of British global expansion, examining the East India Company's conquest of Bengal, the brutality of the Transatlantic Slave Trade and Middle Passage, plantation reality and Maroon resistance under Queen Nanny, through to the American Revolution and the 1776 Declaration of Independence.",
+          "vocab": "Charter, Diwani, Middle Passage, Chattel Slavery, Maroons, Navigation Acts, Boston Tea Party, Black Loyalists",
+          "skills": ["Causation & Consequence", "Source Utility & Provenance", "Historical Interpretations", "Significance"],
+          "assessment": "Formative source investigations and retrieval drills. Synoptic essay: 'To what extent was the First British Empire built primarily upon the Transatlantic Slave Trade?'",
+          "smsc": "<strong>Moral:</strong> Ethics of empire, enslavement, and resistance. <strong>Social:</strong> Impact of corporate conquest on Mughal Bengal and the Thirteen Colonies. <strong>Cultural:</strong> African resistance, cultural survival, and Black Loyalists.",
+          "careers": "Archivist, Diplomat, Legal Historian, International Relations Analyst"
         },
         {
           "uid": "industrialisation_and_empire",
-          "terms": ["Spring 1", "Spring 2"],
-          "shortTitle": "Industrialisation & Empire (1750\u20131900)",
+          "terms": ["Spring 1"],
+          "shortTitle": "Industrialisation & Empire (1750–1900)",
           "summary": "Pupils investigate how industrialisation transformed Britain into the world's first industrial superpower and evaluate the human cost of factory life, urbanisation, and imperial expansion across the globe.",
           "vocab": "Industrial Revolution, Urbanisation, Child Labour, Imperialism, Chartism, Free Trade, Working Class",
           "skills": ["Change & Continuity", "Source Analysis", "Comparative Judgement", "Extended Writing"],
@@ -72,26 +83,26 @@
           "careers": "Urban Planner, Economist, Politician, Museum Educator"
         },
         {
+          "uid": "second_british_empire",
+          "terms": ["Spring 2"],
+          "shortTitle": "The Second British Empire (1783–1914)",
+          "summary": "Pupils investigate the transformation of British imperial power in the 19th century, exploring the 1857 Indian Rebellion and direct Crown Raj, settler colonialism across Australasia, the Scramble for Africa, and the ideological justifications versus realities of imperial dominion.",
+          "vocab": "Sepoy, Raj, Settler Colonialism, Terra Nullius, Scramble for Africa, Maxim Gun, Imperial Federation",
+          "skills": ["Change & Continuity", "Historical Interpretations", "Source Evaluation", "Comparative Judgement"],
+          "assessment": "Formative source evaluations and 25-question retrieval drill checks. Final extended enquiry: 'Who truly benefited from the Second British Empire?'",
+          "smsc": "<strong>Moral:</strong> Evaluating imperial exploitation, military dominance, and racism. <strong>Social:</strong> The Indian Rebellion and colonial resistance. <strong>Cultural:</strong> Victorian imperial propaganda versus colonial realities.",
+          "careers": "Diplomat, Human Rights Policy Advisor, Museum Curator, Journalist"
+        },
+        {
           "uid": "australia",
           "terms": ["Summer 1", "Summer 2"],
           "shortTitle": "The History of Australia (1770–1901)",
-          "summary": "Pupils critically examine First Nations custodianship, Captain Cook's secret Admiralty voyage, the 1788 First Fleet penal colony, the devastating frontier wars and Pemulwuy's armed resistance, the 1851 Gold Rush and Eureka Stockade, and the enduring fight for First Nations sovereignty and Native Title.",
+          "summary": "Pupils critically examine First Nations custodianship, Captain Cook's secret Admiralty voyage, the 1788 First Fleet penal colony, the devastating frontier wars and Pemulwuy’s armed resistance, the 1851 Gold Rush and Eureka Stockade, and the enduring fight for First Nations sovereignty and Native Title.",
           "vocab": "Terra Nullius, First Nations, Songlines, Transportation, Prison Hulk, Emancipist, Martial Law, Squatter, Eureka Stockade, White Australia Policy, Native Title",
           "skills": ["Causation & Motive", "Source Utility & Perspective", "Causation & Turning Points", "Historical Interpretations", "Historical Significance"],
           "assessment": "Formative source analysis and 25-question retrieval drill checks. Synoptic evaluative statement essay: 'The discovery of gold and the Eureka Stockade were the most important turning points in 19th-century Australian history.' How far do you agree? [12 marks]",
           "smsc": "<strong>Cultural:</strong> Respect for 65,000 years of Indigenous heritage and Songlines. <strong>Moral:</strong> Legacies of penal transportation, terra nullius, and frontier warfare. <strong>Social:</strong> The birth of democracy at Eureka alongside the struggle for civil rights and Mabo.",
           "careers": "Human Rights Advocate, Anthropologist, Diplomat, Legal Historian, Museum Curator"
-        },
-        {
-          "uid": "monarchy_religion_power",
-          "terms": ["Autumn 1", "Autumn 2"],
-          "shortTitle": "Crown, Church, or Parliament (1517–1689)",
-          "summary": "Pupils investigate 170 years of religious conflict and constitutional struggle, from Henry VIII's Break with Rome and Elizabeth's Middle Way to the English Civil War, the trial and execution of Charles I, and the 1689 Bill of Rights.",
-          "vocab": "Reformation, Act of Supremacy, Middle Way, Armada, Divine Right, Ship Money, New Model Army, Regicide, Bill of Rights",
-          "skills": ["Causation & Motivation", "Source Utility & Propaganda", "Historical Interpretations", "Significance & Turning Points", "Change & Continuity"],
-          "assessment": "Formative analytical responses and source investigations. Synoptic assessment: 'The World Turned Upside Down? To what extent did life and power in Britain truly change between 1517 and 1689?' (extended evaluative essay)",
-          "smsc": "<strong>Spiritual:</strong> The Reformation and conscience vs state religion. <strong>Moral:</strong> Is rebellion or regicide against a king ever justified? <strong>Social:</strong> How power shifted to Parliament while leaving the poorest 90% behind.",
-          "careers": "Constitutional Lawyer, Civil Servant, Parliamentary Researcher, Museum Educator"
         }
       ]
     },

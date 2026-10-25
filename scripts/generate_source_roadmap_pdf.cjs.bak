@@ -1,0 +1,704 @@
+const fs = require('fs');
+const path = require('path');
+const puppeteer = require('puppeteer');
+
+const desktopPath = path.join('C:', 'Users', 'fives', 'Desktop', 'Master_Visual_Source_Curriculum_Roadmap.pdf');
+const publicPdfPath = path.join(__dirname, '..', 'public', 'pdfs', 'Master_Visual_Source_Curriculum_Roadmap.pdf');
+
+const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The History Revision Hub • Master Visual Source Curriculum Roadmap</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 14mm 14mm 14mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.45;
+      font-size: 8.8pt;
+    }
+
+    .page {
+      page-break-after: always;
+      position: relative;
+      min-height: 268mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page:last-child {
+      page-break-after: avoid;
+    }
+
+    /* Running Header & Footer */
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 5px;
+      margin-bottom: 12px;
+    }
+
+    .doc-header .brand {
+      font-weight: 800;
+      font-size: 10.5pt;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .doc-header .badge {
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 7.2pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .doc-header .meta {
+      font-size: 7.5pt;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .doc-footer {
+      margin-top: auto;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7.2pt;
+      color: #94a3b8;
+    }
+
+    /* Typography & Hierarchy */
+    h1 {
+      font-size: 17pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 9.5pt;
+      color: #475569;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 10px 0 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-left: 3px solid #0284c7;
+      padding-left: 8px;
+    }
+
+    p {
+      margin-bottom: 8px;
+      color: #334155;
+    }
+
+    /* KPI Highlights */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .kpi-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+      text-align: center;
+    }
+
+    .kpi-card .val {
+      font-size: 15pt;
+      font-weight: 800;
+      color: #0284c7;
+      line-height: 1.1;
+    }
+
+    .kpi-card.amber .val { color: #d97706; }
+    .kpi-card.green .val { color: #16a34a; }
+    .kpi-card.purple .val { color: #7c3aed; }
+
+    .kpi-card .lbl {
+      font-size: 6.8pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      margin-top: 3px;
+    }
+
+    /* Protocol Cards */
+    .protocol-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .protocol-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 9px 11px;
+      border-top: 3px solid #0284c7;
+    }
+
+    .protocol-card.p2 { border-top-color: #059669; }
+    .protocol-card.p3 { border-top-color: #d97706; }
+    .protocol-card.p4 { border-top-color: #7c3aed; }
+
+    .protocol-title {
+      font-weight: 700;
+      font-size: 8.8pt;
+      color: #0f172a;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .protocol-card p {
+      font-size: 7.8pt;
+      color: #475569;
+      margin-bottom: 0;
+      line-height: 1.4;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.5pt;
+      margin: 8px 0;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 700;
+      text-align: left;
+      padding: 4px 6px;
+      border: 1px solid #cbd5e1;
+      font-size: 7pt;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    td {
+      padding: 4px 6px;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 6.8pt;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .status-complete { background: #dcfce7; color: #15803d; }
+    .status-partial { background: #fef3c7; color: #b45309; }
+    .status-zero { background: #fee2e2; color: #b91c1c; }
+
+    .callout {
+      background: #eff6ff;
+      border-left: 3px solid #3b82f6;
+      padding: 8px 10px;
+      border-radius: 4px;
+      margin: 8px 0;
+      font-size: 7.8pt;
+      color: #1e3a8a;
+    }
+
+    .callout strong {
+      color: #1d4ed8;
+    }
+
+    .phase-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #475569;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 6.8pt;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE 1: EXECUTIVE ROADMAP & VERIFICATION PROTOCOL -->
+  <div class="page">
+    <div class="doc-header">
+      <div class="brand">
+        <span>The History Revision Hub</span>
+        <span class="badge">Master Curriculum Standard</span>
+      </div>
+      <div class="meta">Curriculum Architecture • Visual Rights &amp; Pedagogy • 2026 Edition</div>
+    </div>
+
+    <h1>Master Visual Source Curriculum Roadmap</h1>
+    <div class="subtitle">Platform-Wide Visual Source Expansion &amp; 4-Layer Human/Vision Verification Standard</div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="val">18</div>
+        <div class="lbl">Taught Units</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="val">759</div>
+        <div class="lbl">Narrative Blocks</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="val">431</div>
+        <div class="lbl">Existing Verified Sources</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="val">328</div>
+        <div class="lbl">Target Source Deficit</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <strong>Core Curriculum Directive:</strong> Every 4-act narrative block across the platform must be anchored by an authentic, academically verified primary source plate (1 source per block target). Visual sources are never decorative; each plate must drive disciplinary historical inquiry with complete provenance, context, targeted hinge questions, and dual-perspective discussion prompts.
+    </div>
+
+    <h2>The 4-Layer Human &amp; Multimodal Verification Protocol</h2>
+    <p>To prevent fake imagery, modern cinematic stills (e.g. <em>Bridge of Spies</em>), living-history reenactors, or mislabeled internet reposts from compromising the curriculum, every visual asset must pass four strict gates:</p>
+
+    <div class="protocol-grid">
+      <div class="protocol-card p1">
+        <div class="protocol-title">
+          <span>Layer 1: Code &amp; File Pre-Flight</span>
+          <span class="phase-badge">Automated</span>
+        </div>
+        <p>Scripts (<code>audit_and_verify_sources_visually.cjs</code>) verify physical existence on disk (&gt;0 bytes), exact image dimensions, zero 404 network errors, and complete schema integrity. Medium-mismatch guards flag mismatched types (e.g. portraits mapped to maps).</p>
+      </div>
+
+      <div class="protocol-card p2">
+        <div class="protocol-title">
+          <span>Layer 2: Archival Provenance</span>
+          <span class="phase-badge">Academic Rights</span>
+        </div>
+        <p>Every asset is registered in <code>master_rights_database.json</code> with official accession numbers and permanent catalog URLs from accredited repositories: Imperial War Museums (IWM), US National Archives (NARA), Library of Congress (LOC), UK National Archives (Kew), and Bundesarchiv.</p>
+      </div>
+
+      <div class="protocol-card p3">
+        <div class="protocol-title">
+          <span>Layer 3: Multimodal Vision Inspection</span>
+          <span class="phase-badge">Multi-Modal AI / Human</span>
+        </div>
+        <p>Direct pixel analysis (via <code>view_file</code>) of the binary file. Verifies authentic period grain, genuine documentary context, and absence of modern film actors, CGI elements, watermark crops, or anachronistic details.</p>
+      </div>
+
+      <div class="protocol-card p4">
+        <div class="protocol-title">
+          <span>Layer 4: In-App Render &amp; Sign-Off Gate</span>
+          <span class="phase-badge">Production Preview</span>
+        </div>
+        <p>Browser-based inspection in the live lesson drawer and <code>source_visual_verification_gallery.html</code>. Validates aspect ratio, legible captions, archival citation line, targeted hinge question, and model exam discussion ideas.</p>
+      </div>
+    </div>
+
+    <h2>Curriculum Implementation Priorities (3-Phase Rollout)</h2>
+    <table style="margin-top: 4px;">
+      <thead>
+        <tr>
+          <th style="width: 14%;">Phase</th>
+          <th style="width: 28%;">Units Targeted</th>
+          <th style="width: 14%;">Total Blocks</th>
+          <th style="width: 14%;">Existing</th>
+          <th style="width: 14%;">Deficit</th>
+          <th style="width: 16%;">Priority Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Phase 1: KS3 Y9 Core</strong></td>
+          <td>Cold War, Post-War Britain, Great War (Pts 1 &amp; 2)</td>
+          <td>106</td>
+          <td>13</td>
+          <td><strong style="color: #b91c1c;">93</strong></td>
+          <td>Highest deficit; foundational modern 20th century curriculum.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 2: KS3 Y7–Y8</strong></td>
+          <td>Medieval England, Water, Australia, Empires 1 &amp; 2, Monarchy</td>
+          <td>174</td>
+          <td>99</td>
+          <td><strong style="color: #d97706;">75</strong></td>
+          <td>Chronological KS3 progression; empire and social history depth.</td>
+        </tr>
+        <tr>
+          <td><strong>Phase 3: GCSE Focus</strong></td>
+          <td>Edexcel Medicine, Weimar, Early Elizabethan, CME, USA</td>
+          <td>400</td>
+          <td>239</td>
+          <td><strong style="color: #0369a1;">160</strong></td>
+          <td>Exam board high-utility visual questions; deep mark scheme alignment.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="doc-footer">
+      <div>The History Revision Hub • Independent Curriculum Architecture</div>
+      <div>Master Visual Source Curriculum Roadmap • Page 1 of 2</div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: MASTER 18-UNIT STATUS DIRECTORY & PEDAGOGICAL SCHEMA -->
+  <div class="page">
+    <div class="doc-header">
+      <div class="brand">
+        <span>The History Revision Hub</span>
+        <span class="badge">Master Curriculum Standard</span>
+      </div>
+      <div class="meta">Audit Directory • 18 Active Taught Units • 2026 Edition</div>
+    </div>
+
+    <h2>Master 18-Unit Curriculum Source Coverage Directory</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 4%;">#</th>
+          <th style="width: 25%;">Unit Title (Slug)</th>
+          <th style="width: 14%;">Level</th>
+          <th style="width: 9%; text-align: center;">Lessons</th>
+          <th style="width: 9%; text-align: center;">Blocks</th>
+          <th style="width: 11%; text-align: center;">Existing</th>
+          <th style="width: 11%; text-align: center;">Needed</th>
+          <th style="width: 9%; text-align: center;">Coverage</th>
+          <th style="width: 8%; text-align: center;">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>WW2 Home Front &amp; Evacuation</strong> (<code>ks2_ww2</code>)</td>
+          <td>KS2 (Year 6)</td>
+          <td style="text-align: center;">11</td>
+          <td style="text-align: center;">34</td>
+          <td style="text-align: center;">35</td>
+          <td style="text-align: center;">0</td>
+          <td style="text-align: center;">103%</td>
+          <td style="text-align: center;"><span class="status-badge status-complete">COMPLETE</span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Water &amp; Sanitation Through Time</strong> (<code>water_and_sanitation</code>)</td>
+          <td>KS3 (Year 7)</td>
+          <td style="text-align: center;">7</td>
+          <td style="text-align: center;">35</td>
+          <td style="text-align: center;">19</td>
+          <td style="text-align: center;">16</td>
+          <td style="text-align: center;">54%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Medieval England: Conquest to Plague</strong> (<code>medieval_england</code>)</td>
+          <td>KS3 (Year 7)</td>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">26</td>
+          <td style="text-align: center;">10</td>
+          <td style="text-align: center;">16</td>
+          <td style="text-align: center;">38%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Monarchy, Religion &amp; Power</strong> (<code>monarchy_religion_power</code>)</td>
+          <td>KS3 (Year 8)</td>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">26</td>
+          <td style="text-align: center;">17</td>
+          <td style="text-align: center;">9</td>
+          <td style="text-align: center;">65%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>The First British Empire</strong> (<code>first_british_empire</code>)</td>
+          <td>KS3 (Year 8)</td>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">25</td>
+          <td style="text-align: center;">11</td>
+          <td style="text-align: center;">14</td>
+          <td style="text-align: center;">44%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Industrialisation &amp; Empire</strong> (<code>industrialisation_and_empire</code>)</td>
+          <td>KS3 (Year 8)</td>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">27</td>
+          <td style="text-align: center;">22</td>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">81%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>The Second British Empire</strong> (<code>second_british_empire</code>)</td>
+          <td>KS3 (Year 8)</td>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">20</td>
+          <td style="text-align: center;">20</td>
+          <td style="text-align: center;">0</td>
+          <td style="text-align: center;">100%</td>
+          <td style="text-align: center;"><span class="status-badge status-complete">COMPLETE</span></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><strong>Colonial Australia &amp; First Nations</strong> (<code>australia</code>)</td>
+          <td>KS3 (Year 8)</td>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">25</td>
+          <td style="text-align: center;">10</td>
+          <td style="text-align: center;">15</td>
+          <td style="text-align: center;">40%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><strong>The Great War: Western Front</strong> (<code>great_war</code>)</td>
+          <td>KS3 (Year 9)</td>
+          <td style="text-align: center;">6</td>
+          <td style="text-align: center;">30</td>
+          <td style="text-align: center;">13</td>
+          <td style="text-align: center;">17</td>
+          <td style="text-align: center;">43%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><strong>The Great War: Global Conflict</strong> (<code>great_war_part2</code>)</td>
+          <td>KS3 (Year 9)</td>
+          <td style="text-align: center;">5</td>
+          <td style="text-align: center;">25</td>
+          <td style="text-align: center;">0</td>
+          <td style="text-align: center;">25</td>
+          <td style="text-align: center;">0%</td>
+          <td style="text-align: center;"><span class="status-badge status-zero">PRIORITY</span></td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td><strong>The Shoah / Holocaust</strong> (<code>the_shoah</code>)</td>
+          <td>KS3 (Year 9)</td>
+          <td style="text-align: center;">7</td>
+          <td style="text-align: center;">35</td>
+          <td style="text-align: center;">35</td>
+          <td style="text-align: center;">0</td>
+          <td style="text-align: center;">100%</td>
+          <td style="text-align: center;"><span class="status-badge status-complete">COMPLETE</span></td>
+        </tr>
+        <tr style="background: #eff6ff;">
+          <td>12</td>
+          <td><strong>The Cold War (1945–1991)</strong> (<code>cold_war</code>)</td>
+          <td>KS3 (Year 9)</td>
+          <td style="text-align: center;">7</td>
+          <td style="text-align: center;">35</td>
+          <td style="text-align: center;">0</td>
+          <td style="text-align: center;"><strong>35</strong></td>
+          <td style="text-align: center; font-weight: 700; color: #b91c1c;">0%</td>
+          <td style="text-align: center;"><span class="status-badge status-zero">IMMEDIATE</span></td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td><strong>Post-War Britain (1945–1997)</strong> (<code>post_war_britain</code>)</td>
+          <td>KS3 (Year 9)</td>
+          <td style="text-align: center;">6</td>
+          <td style="text-align: center;">16</td>
+          <td style="text-align: center;">0</td>
+          <td style="text-align: center;">16</td>
+          <td style="text-align: center;">0%</td>
+          <td style="text-align: center;"><span class="status-badge status-zero">PRIORITY</span></td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td><strong>Conflict in the Middle East</strong> (<code>cme_new</code>)</td>
+          <td>GCSE (Year 10)</td>
+          <td style="text-align: center;">12</td>
+          <td style="text-align: center;">66</td>
+          <td style="text-align: center;">45</td>
+          <td style="text-align: center;">21</td>
+          <td style="text-align: center;">68%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td><strong>Weimar &amp; Nazi Germany</strong> (<code>weimar_nazi_germany</code>)</td>
+          <td>GCSE (Year 10)</td>
+          <td style="text-align: center;">16</td>
+          <td style="text-align: center;">80</td>
+          <td style="text-align: center;">39</td>
+          <td style="text-align: center;">41</td>
+          <td style="text-align: center;">49%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td><strong>Edexcel Medicine Through Time</strong> (<code>edexcel_medicine</code>)</td>
+          <td>GCSE (Year 11)</td>
+          <td style="text-align: center;">26</td>
+          <td style="text-align: center;">130</td>
+          <td style="text-align: center;">82</td>
+          <td style="text-align: center;">48</td>
+          <td style="text-align: center;">63%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td><strong>Early Elizabethan England</strong> (<code>eee</code>)</td>
+          <td>GCSE (Year 11)</td>
+          <td style="text-align: center;">12</td>
+          <td style="text-align: center;">60</td>
+          <td style="text-align: center;">24</td>
+          <td style="text-align: center;">36</td>
+          <td style="text-align: center;">40%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td><strong>USA: Opportunity &amp; Inequality</strong> (<code>usa</code>)</td>
+          <td>GCSE (Year 11)</td>
+          <td style="text-align: center;">16</td>
+          <td style="text-align: center;">64</td>
+          <td style="text-align: center;">49</td>
+          <td style="text-align: center;">15</td>
+          <td style="text-align: center;">77%</td>
+          <td style="text-align: center;"><span class="status-badge status-partial">IN PROGRESS</span></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr style="background: #f1f5f9; font-weight: 700;">
+          <td colspan="3"><strong>TOTALS (Active Curriculum)</strong></td>
+          <td style="text-align: center;">161</td>
+          <td style="text-align: center;">759</td>
+          <td style="text-align: center;">431</td>
+          <td style="text-align: center; color: #b91c1c;">328</td>
+          <td style="text-align: center;">56.8%</td>
+          <td style="text-align: center;">-</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <h2>Mandatory Pedagogical Source Schema &amp; Disciplinary Standards</h2>
+    <p>Every source object registered in a unit's <code>data.js</code> must implement the rigorous five-fold pedagogical schema:</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 7.5pt;">
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px;">
+        <strong style="color: #0284c7;">1. Archival Metadata &amp; Citation:</strong>
+        <p style="margin: 2px 0 0 0; color: #475569;">Descriptive Title (<code>Source A: Creator, Title (Date)</code>), clean image path in <code>/images/</code>, archival citation line referencing holding repository and accession ID.</p>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px;">
+        <strong style="color: #059669;">2. Context &amp; Mandatory Hinge Question:</strong>
+        <p style="margin: 2px 0 0 0; color: #475569;">Succinct historical contextualisation (2–3 sentences) concluding with a targeted hinge question compelling pupils to interrogate purpose, perspective, or reliability.</p>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px;">
+        <strong style="color: #d97706;">3. Provenance Clues (Tripartite Analysis):</strong>
+        <p style="margin: 2px 0 0 0; color: #475569;">Three explicit analytical bullet points dissecting: (a) <strong>Author/Creator</strong> status, (b) Intended <strong>Audience</strong>, and (c) Underlying ideological or political <strong>Motive</strong>.</p>
+      </div>
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 8px;">
+        <strong style="color: #7c3aed;">4. Dual-Perspective Discussion Ideas:</strong>
+        <p style="margin: 2px 0 0 0; color: #475569;">At least two balanced model interpretive angles for classroom teacher facilitation and high-mark utility analysis in exams (value vs limitation).</p>
+      </div>
+    </div>
+
+    <div class="doc-footer">
+      <div>The History Revision Hub • Independent Curriculum Architecture</div>
+      <div>Master Visual Source Curriculum Roadmap • Page 2 of 2</div>
+    </div>
+  </div>
+
+</body>
+</html>
+`;
+
+async function generatePdf() {
+  console.log('🚀 Launching Puppeteer to compile Master Visual Source Curriculum Roadmap PDF...');
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-web-security']
+  });
+
+  const page = await browser.newPage();
+  await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
+  await page.evaluateHandle('document.fonts.ready');
+
+  // Render to Desktop
+  console.log(`🖨️ Rendering Master Roadmap PDF to Desktop: ${desktopPath}`);
+  await page.pdf({
+    path: desktopPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm'
+    }
+  });
+
+  // Render to Public PDFs
+  console.log(`🖨️ Rendering backup copy to Public PDFs: ${publicPdfPath}`);
+  await page.pdf({
+    path: publicPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm'
+    }
+  });
+
+  await browser.close();
+  console.log('🎉 Successfully compiled Master Visual Source Roadmap PDF to Desktop and Public PDFs!');
+}
+
+generatePdf().catch(err => {
+  console.error('❌ Failed to generate Roadmap PDF:', err);
+  process.exit(1);
+});

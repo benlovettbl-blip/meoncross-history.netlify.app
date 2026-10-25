@@ -433,7 +433,7 @@ export function bindEvents() {
       if (titleSpan) titleSpan.textContent = 'Units of Study';
     }
 
-    const underConstructionIds = ['second_world_war', 'cold_war', 'post_war_britain'];
+    const underConstructionIds = [];
     const year7Units = getOrderedUnits(['water_and_sanitation', 'medieval_england']);
     const year8Units = getOrderedUnits([
       'monarchy_religion_power',
@@ -447,9 +447,8 @@ export function bindEvents() {
       'great_war_part2',
       'the_shoah',
       'cold_war',
-      'second_world_war',
       'post_war_britain',
-    ]).filter((u) => !underConstructionIds.includes(u.id));
+    ]);
     const year10Units = getOrderedUnits(['cme_new', 'weimar_nazi_germany']);
     const year11Units = getOrderedUnits(['edexcel_medicine', 'eee', 'usa']);
     const tripUnits = getOrderedUnits(['trip_ypres']);
@@ -499,19 +498,7 @@ export function bindEvents() {
         content9.appendChild(link);
       });
     }
-    // Coming-soon dimmed entries
-    const comingSoon9 = [
-      'KS3: The Cold War',
-      'KS3: The Second World War',
-      'KS3: Rights, Protest & Post-War Britain',
-    ];
-    comingSoon9.forEach((name) => {
-      const item = document.createElement('div');
-      item.style.cssText =
-        'display:flex;align-items:center;gap:8px;padding:6px 16px;border-radius:6px;margin:0 8px 2px 8px;color:rgba(255,255,255,0.3);font-size:0.8rem;cursor:default;';
-      item.innerHTML = `<i class="fa-solid fa-hammer" style="width:20px;text-align:center;"></i> <span>${name} <em style="font-size:0.75em;">(coming soon)</em></span>`;
-      content9.appendChild(item);
-    });
+
     sidebarUnitsContainer.appendChild(header9);
     sidebarUnitsContainer.appendChild(content9);
 

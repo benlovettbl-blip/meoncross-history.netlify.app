@@ -17,7 +17,8 @@ units.forEach((unitId) => {
   const dataPath = path.join(ROOT_DIR, 'units', unitId, 'data.js');
   if (fs.existsSync(dataPath)) {
     const raw = fs.readFileSync(dataPath, 'utf8');
-    const uMatch = raw.match(/undefined/gi) || [];
+    const sanitized = raw.replace(/typeof\s+module\s*!==\s*['"]undefined['"]/g, '');
+    const uMatch = sanitized.match(/undefined/gi) || [];
     console.log(`  - units/${unitId}/data.js: ${uMatch.length} undefined occurrence(s)`);
     if (uMatch.length > 0) totalUndefined += uMatch.length;
   }

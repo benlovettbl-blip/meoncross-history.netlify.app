@@ -365,6 +365,26 @@ const repoHomepages = [
     url: 'https://parker.stanford.edu',
     domain: 'parker.stanford.edu',
   },
+  {
+    match: /State Library of New South Wales|SLNSW/i,
+    url: 'https://www.sl.nsw.gov.au',
+    domain: 'sl.nsw.gov.au',
+  },
+  {
+    match: /Natural History Museum|NHM/i,
+    url: 'https://www.nhm.ac.uk',
+    domain: 'nhm.ac.uk',
+  },
+  {
+    match: /Royal Armouries/i,
+    url: 'https://royalarmouries.org',
+    domain: 'royalarmouries.org',
+  },
+  {
+    match: /Norman B\. Leventhal Map Center|Leventhal Map/i,
+    url: 'https://www.leventhalmap.org',
+    domain: 'leventhalmap.org',
+  },
 ];
 
 function resolveRepo(repoStr) {
@@ -1453,6 +1473,106 @@ async function renderRegister() {
   });
   console.log(`🎉 Successfully rendered Medicine Through Time Unit PDF: ${medPdfPath}`);
   await medPage.close();
+
+  // Render standalone Cold War Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Cold War Unit Source Bibliography...');
+  const cwPdfDir = path.join(outPdfDir, 'cold_war');
+  if (!fs.existsSync(cwPdfDir)) fs.mkdirSync(cwPdfDir, { recursive: true });
+  const cwPdfPath = path.join(cwPdfDir, 'cold_war_source_bibliography.pdf');
+  const cwHtml = buildHtml('cold_war');
+  const cwPage = await browser.newPage();
+  await cwPage.setContent(cwHtml, { waitUntil: 'domcontentloaded' });
+  await cwPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await cwPage.pdf({
+    path: cwPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Cold War Unit PDF: ${cwPdfPath}`);
+  await cwPage.close();
+
+  // Render standalone First British Empire Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone First British Empire Unit Source Bibliography...');
+  const fbePdfDir = path.join(outPdfDir, 'first_british_empire');
+  if (!fs.existsSync(fbePdfDir)) fs.mkdirSync(fbePdfDir, { recursive: true });
+  const fbePdfPath = path.join(fbePdfDir, 'first_british_empire_source_bibliography.pdf');
+  const fbeHtml = buildHtml('first_british_empire');
+  const fbePage = await browser.newPage();
+  await fbePage.setContent(fbeHtml, { waitUntil: 'domcontentloaded' });
+  await fbePage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await fbePage.pdf({
+    path: fbePdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered First British Empire Unit PDF: ${fbePdfPath}`);
+  await fbePage.close();
+
+  // Render standalone Medieval England Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Medieval England Unit Source Bibliography...');
+  const mePdfDir = path.join(outPdfDir, 'medieval_england');
+  if (!fs.existsSync(mePdfDir)) fs.mkdirSync(mePdfDir, { recursive: true });
+  const mePdfPath = path.join(mePdfDir, 'medieval_england_source_bibliography.pdf');
+  const meHtml = buildHtml('medieval_england');
+  const mePage = await browser.newPage();
+  await mePage.setContent(meHtml, { waitUntil: 'domcontentloaded' });
+  await mePage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await mePage.pdf({
+    path: mePdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Medieval England Unit PDF: ${mePdfPath}`);
+  await mePage.close();
+
+  // Render standalone Second British Empire Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Second British Empire Unit Source Bibliography...');
+  const sbePdfDir = path.join(outPdfDir, 'second_british_empire');
+  if (!fs.existsSync(sbePdfDir)) fs.mkdirSync(sbePdfDir, { recursive: true });
+  const sbePdfPath = path.join(sbePdfDir, 'second_british_empire_source_bibliography.pdf');
+  const sbeHtml = buildHtml('second_british_empire');
+  const sbePage = await browser.newPage();
+  await sbePage.setContent(sbeHtml, { waitUntil: 'domcontentloaded' });
+  await sbePage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await sbePage.pdf({
+    path: sbePdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Second British Empire Unit PDF: ${sbePdfPath}`);
+  await sbePage.close();
 
   await browser.close();
   console.log('🏁 All PDF rendering tasks completed successfully!');

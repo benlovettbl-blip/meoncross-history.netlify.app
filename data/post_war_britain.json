@@ -1,400 +1,535 @@
 {
-  "lesson_reflection": {
-    "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
-    "instructions": [
-      "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
-      "Complete the EBI (Even Better If) section — what did you find most challenging?",
-      "Circle your effort level (1-5) and set a specific target for the next unit."
-    ]
-  },
   "id": "post_war_britain",
-  "title": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
-  "enquiry": "How has British identity transformed since 1945?",
-  "lessons": [
-    {
-      "title": "Votes for Women: Were the Suffragists or Suffragettes more effective in securing the vote?",
-      "card_image": "/images/suffragettes_kenney_pankhurst.jpg",
-      "card_position": "center 20%",
-      "narrative_blocks": [
-        {
-          "act": 1,
-          "title": "The Suffragists & Constitutional Campaigning (1897–1903)",
-          "text": "<span class=\"para-ref\">[1.1]</span> In late Victorian Britain, women were denied the parliamentary vote, despite paying taxes and subject to the laws of the realm. In 1897, <strong>Millicent Fawcett</strong> united diverse regional societies into the <strong>National Union of Women’s Suffrage Societies (NUWSS)</strong>. The Suffragists believed fervently in peaceful, constitutional persuasion. They argued that women could only win the vote by demonstrating moral rectitude, patience, and political maturity to a sceptical male Parliament.<br><br><span class=\"para-ref\">[1.2]</span> The NUWSS organised public lectures, collected hundreds of thousands of signatures on parliamentary petitions, and patiently lobbied Members of Parliament. By 1914, the NUWSS had grown into a formidable democratic federation of over 50,000 members. However, despite decades of peaceful campaigning, consecutive Liberal and Conservative governments repeatedly stalled, shelving private members' suffrage bills and refusing to grant female emancipation."
-        },
-        {
-          "act": 2,
-          "title": "The Militant Turn: Suffragettes & 'Deeds, Not Words' (1903–1913)",
-          "text": "<span class=\"para-ref\">[1.3]</span> Frustrated by decades of parliamentary stalling, <strong>Emmeline Pankhurst</strong> and her daughters Christabel and Sylvia founded the <strong>Women’s Social and Political Union (WSPU)</strong> in Manchester in 1903. Adopting the uncompromising battle-cry <em>\"Deeds, not words\"</em>, the \"Suffragettes\" abandoned quiet lobbying for militant direct action. They chained themselves to Downing Street railings, interrupted cabinet meetings, smashed commercial shop windows along Oxford Street, cut telegraph wires, and burned post boxes and railway stations to force women’s suffrage into national headlines.<br><br><span class=\"para-ref\">[1.4]</span> When arrested, Suffragette prisoners went on hunger strike, demanding the status of political prisoners. Herbert Asquith’s government responded with brutal force-feeding through rubber nasal tubes. Following fierce public condemnation, Parliament passed the Prisoners (Temporary Discharge for Ill-Health) Act 1913—popularly dubbed the <strong>\"Cat and Mouse Act\"</strong>—which released weakened hunger strikers only to re-arrest them once recovered. In June 1913, <strong>Emily Wilding Davison</strong> stepped in front of the King’s horse Anmer at the Epsom Derby, suffering fatal injuries in a dramatic act of martyrdom that stunned the British Empire."
-        },
-        {
-          "act": 3,
-          "title": "Total War Mobilisation & The Home Front (1914–1918)",
-          "text": "<span class=\"para-ref\">[1.5]</span> The outbreak of the First World War in August 1914 transformed the suffrage struggle overnight. Both the NUWSS and WSPU suspended campaigning to support the national war effort. With hundreds of thousands of men fighting in the trenches of the Western Front, women stepped forward to keep the British economy alive. Over 1.5 million women entered the workforce, operating heavy machinery in munitions factories (\"Canary Girls\"), driving buses and trams, working the agricultural Land Army, and staffing field hospitals in France.<br><br><span class=\"para-ref\">[1.6]</span> Women’s indispensable contribution dismantled the anti-suffrage argument that women were physically or temperamentally unfit for public responsibility. Facing postwar electoral reform for returning soldiers, Parliament could no longer justify excluding women. In February 1918, Prime Minister David Lloyd George passed the <strong>Representation of the People Act 1918</strong>, enfranchising women over thirty who met property qualifications. A decade later, the Equal Franchise Act 1928 granted women the vote on equal terms with men at age twenty-one."
-        }
-      ],
-      "do_now": {
-        "type": "standard",
-        "questions": []
-      },
-      "comprehension": [],
-      "source_tasks": [],
-      "teacher_notes": {
-        "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-        "objectives": [
-          {
-            "objective": "Understand the core concepts of Votes for Women: Were the Suffragists or Suffragettes more effective in securing the vote?",
-            "primer": "Guide students through the narrative and focus on the key turning points.",
-            "question": "What is the most significant consequence of the events studied today?"
-          }
-        ]
-      },
-      "pair_share": {
-        "prompt": "Discuss with your partner: Were the Suffragists or Suffragettes more effective in securing the vote?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
-      },
-      "prologue": "In early twentieth-century Britain, women were denied the parliamentary vote. While Millicent Fawcett’s peaceful Suffragists used patient lobbying and petitions, Emmeline Pankhurst’s militant Suffragettes turned to direct action, smashing windows, hunger strikes, and civil disobedience. Were peaceful arguments or militant headlines more effective in securing female emancipation?",
-      "video": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=pw0IAFIhVfA",
-          "title": "Suffragettes vs Suffragists: Did violent protest get women the vote? | Channel 4 News",
-          "duration": "6 mins 33 secs",
-          "teacher_guidance": "Deep historical evaluation comparing Millicent Fawcett's constitutional NUWSS (lobbying, peaceful marches) with Emmeline Pankhurst's militant WSPU ('Deeds, not words', arson, window smashing, hunger strikes). Explores which faction was truly decisive in achieving the 1918 Representation of the People Act.",
-          "viewing_task": "How did the contrasting methods of the Suffragists (NUWSS) and Suffragettes (WSPU) differ, and what evidence is there for which group was more influential in securing the vote?",
-          "model_answer": "The Suffragists (NUWSS, led by Millicent Fawcett from 1897) believed in non-violent, constitutional methods such as presenting parliamentary petitions, organising public meetings, and lobbying MPs, proving women were responsible and politically mature. In contrast, the Suffragettes (WSPU, founded by Emmeline Pankhurst in 1903) adopted militant direct action under the slogan 'Deeds, not words'—smashing shop windows, cutting telegraph wires, burning post boxes, and enduring hunger strikes and force-feeding in prison. While militant tactics kept women's suffrage on the front pages and made it impossible for the government to ignore, critics argue it alienated moderate politicians and provided an excuse for Herbert Asquith's government to refuse concessions. Most historians conclude that women's indispensable economic and industrial contribution during the First World War (1914–1918), combined with decades of patient Suffragist groundwork, ultimately convinced Parliament to pass the 1918 Representation of the People Act."
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=ZNeg2cfUHRw",
-          "title": "Votes for Women | Timelines.tv History of Britain",
-          "duration": "8 mins 26 secs",
-          "teacher_guidance": "Andrew Chater explores the Edwardian campaign for female suffrage, examining the arrest and force-feeding of suffragette prisoners, the Cat and Mouse Act (1913), and Emily Wilding Davison's tragic death at the 1913 Epsom Derby.",
-          "viewing_task": "Why did the Suffragettes escalate their campaign to militant tactics, and how did the British government respond to hunger strikes?",
-          "model_answer": "Suffragettes escalated to militant direct action because decades of peaceful campaigning and broken political promises had produced zero legislative progress in Parliament. Frustrated by government stalling, the WSPU used civil disobedience to force the issue into national consciousness. When arrested Suffragettes went on hunger strike in prison as political prisoners, the Liberal government feared creating martyrs and initially subjected them to painful, dangerous force-feeding via nasal tubes. Following public outrage, Parliament passed the Prisoners (Temporary Discharge for Ill-Health) Act 1913—popularly dubbed the 'Cat and Mouse Act'—which temporarily released severely weakened hunger-striking women to recover at home before re-arresting them to complete their sentences."
-        }
+  "data": {
+    "lesson_reflection": {
+      "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
+      "instructions": [
+        "Complete the WWW (What Went Well) section — what did you enjoy or find easiest?",
+        "Complete the EBI (Even Better If) section — what did you find most challenging?",
+        "Circle your effort level (1-5) and set a specific target for the next unit."
       ]
     },
-    {
-      "title": "1945: How did the aftermath of total war build the Welfare State and the NHS?",
-      "card_image": "/images/bevan_first_day_nhs_1948.jpg",
-      "card_position": "center 30%",
-      "narrative_blocks": [
-        {
-          "act": 1,
-          "title": "Total War, Shared Sacrifice & The Beveridge Blueprint (1940–1942)",
-          "text": "<span class=\"para-ref\">[2.1]</span> The shared ordeal of the Second World War permanently altered British social attitudes. Evacuation exposed wealthy rural families to the shocking poverty of inner-city children, while the Blitz and universal food rationing united the population in common sacrifice. In December 1942, civil servant <strong>William Beveridge</strong> published his landmark report on <em>Social Insurance and Allied Services</em>, selling over 630,000 copies as people queued at bookshops.<br><br><span class=\"para-ref\">[2.2]</span> Beveridge declared war on the <strong>\"Five Giants\"</strong> blocking postwar reconstruction: <strong>Want</strong> (poverty), <strong>Disease</strong> (lack of medical care), <strong>Ignorance</strong> (inadequate education), <strong>Squalor</strong> (poor housing), and <strong>Idleness</strong> (unemployment). Beveridge proposed a comprehensive system of social security \"from the cradle to the grave\", funded through universal weekly national insurance contributions to protect every citizen against hardship."
-        },
-        {
-          "act": 2,
-          "title": "The 1945 Labour Landslide & The Modern Welfare State",
-          "text": "<span class=\"para-ref\">[2.3]</span> In July 1945, British voters stunned international observers by rejecting wartime Prime Minister Winston Churchill and electing <strong>Clement Attlee's</strong> Labour Party in a landslide general election victory. While Churchill was revered as a war leader, voters bitterly remembered the 1930s Great Depression, mass unemployment, and humiliating means tests overseen by Conservative-led governments. Labour pledged to \"win the peace\" through full employment, mass council housing, and the complete enactment of the Beveridge Report.<br><br><span class=\"para-ref\">[2.4]</span> Attlee’s administration rapidly established the foundations of the modern Welfare State. The <strong>National Insurance Act 1946</strong> provided universal sickness, maternity, invalidity, and unemployment benefits, while the National Assistance Act 1948 abolished the hated centuries-old Poor Law workhouses, establishing an unconditional state safety net for the most vulnerable citizens."
-        },
-        {
-          "act": 3,
-          "title": "Aneurin Bevan & The Creation of the NHS (1946–1948)",
-          "text": "<span class=\"para-ref\">[2.5]</span> Prior to 1948, British healthcare was deeply unequal and fragmented: low-paid working men had limited GP cover, but wives, children, and elderly people had to pay private fees, join charity clubs, or rely on grim municipal infirmaries. Minister of Health <strong>Aneurin Bevan</strong>, a former Welsh coal miner, was determined to create a single national health service funded through general taxation and completely free at the point of delivery.<br><br><span class=\"para-ref\">[2.6]</span> Bevan encountered fierce, prolonged resistance from the <strong>British Medical Association (BMA)</strong>, whose leaders feared becoming salaried civil servants. To defeat their boycott, Bevan pragmatically compromised—famously declaring he <em>\"stuffed their mouths with gold\"</em>—by allowing hospital consultants to treat private paying patients in NHS beds and paying family GPs on a per-patient capitation basis. On <strong>5 July 1948</strong>, Bevan officially opened the National Health Service at Park Hospital, Davyhulme, near Manchester, pioneering the principle that healthcare is a fundamental human right."
-        }
-      ],
-      "do_now": {
-        "type": "standard",
-        "questions": []
-      },
-      "comprehension": [],
-      "source_tasks": [],
-      "teacher_notes": {
-        "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-        "objectives": [
+    "id": "post_war_britain",
+    "title": "KS3: Rights, Protest, and Post-War Britain (1900–Present)",
+    "enquiry": "How has British identity transformed since 1945?",
+    "lessons": [
+      {
+        "title": "Votes for Women: Were the Suffragists or Suffragettes more effective in securing the vote?",
+        "card_image": "/images/suffragettes_kenney_pankhurst.jpg",
+        "card_position": "center 20%",
+        "narrative_blocks": [
           {
-            "objective": "Understand the core concepts of 1945: How did the aftermath of total war build the Welfare State and the NHS?",
-            "primer": "Guide students through the narrative and focus on the key turning points.",
-            "question": "What is the most significant consequence of the events studied today?"
+            "act": 1,
+            "title": "The Suffragists & Constitutional Campaigning (1897–1903)",
+            "text": "<span class=\"para-ref\">[1.1]</span> In late Victorian Britain, women were denied the parliamentary vote, despite paying taxes and subject to the laws of the realm. In 1897, <strong>Millicent Fawcett</strong> united diverse regional societies into the <strong>National Union of Women’s Suffrage Societies (NUWSS)</strong>. The Suffragists believed fervently in peaceful, constitutional persuasion. They argued that women could only win the vote by demonstrating moral rectitude, patience, and political maturity to a sceptical male Parliament.<br><br><span class=\"para-ref\">[1.2]</span> The NUWSS organised public lectures, collected hundreds of thousands of signatures on parliamentary petitions, and patiently lobbied Members of Parliament. By 1914, the NUWSS had grown into a formidable democratic federation of over 50,000 members. However, despite decades of peaceful campaigning, consecutive Liberal and Conservative governments repeatedly stalled, shelving private members' suffrage bills and refusing to grant female emancipation."
+          },
+          {
+            "act": 2,
+            "title": "The Militant Turn: Suffragettes & 'Deeds, Not Words' (1903–1913)",
+            "text": "<span class=\"para-ref\">[1.3]</span> Frustrated by decades of parliamentary stalling, <strong>Emmeline Pankhurst</strong> and her daughters Christabel and Sylvia founded the <strong>Women’s Social and Political Union (WSPU)</strong> in Manchester in 1903. Adopting the uncompromising battle-cry <em>\"Deeds, not words\"</em>, the \"Suffragettes\" abandoned quiet lobbying for militant direct action. They chained themselves to Downing Street railings, interrupted cabinet meetings, smashed commercial shop windows along Oxford Street, cut telegraph wires, and burned post boxes and railway stations to force women’s suffrage into national headlines.<br><br><span class=\"para-ref\">[1.4]</span> When arrested, Suffragette prisoners went on hunger strike, demanding the status of political prisoners. Herbert Asquith’s government responded with brutal force-feeding through rubber nasal tubes. Following fierce public condemnation, Parliament passed the Prisoners (Temporary Discharge for Ill-Health) Act 1913—popularly dubbed the <strong>\"Cat and Mouse Act\"</strong>—which released weakened hunger strikers only to re-arrest them once recovered. In June 1913, <strong>Emily Wilding Davison</strong> stepped in front of the King’s horse Anmer at the Epsom Derby, suffering fatal injuries in a dramatic act of martyrdom that stunned the British Empire."
+          },
+          {
+            "act": 3,
+            "title": "Total War Mobilisation & The Home Front (1914–1918)",
+            "text": "<span class=\"para-ref\">[1.5]</span> The outbreak of the First World War in August 1914 transformed the suffrage struggle overnight. Both the NUWSS and WSPU suspended campaigning to support the national war effort. With hundreds of thousands of men fighting in the trenches of the Western Front, women stepped forward to keep the British economy alive. Over 1.5 million women entered the workforce, operating heavy machinery in munitions factories (\"Canary Girls\"), driving buses and trams, working the agricultural Land Army, and staffing field hospitals in France.<br><br><span class=\"para-ref\">[1.6]</span> Women’s indispensable contribution dismantled the anti-suffrage argument that women were physically or temperamentally unfit for public responsibility. Facing postwar electoral reform for returning soldiers, Parliament could no longer justify excluding women. In February 1918, Prime Minister David Lloyd George passed the <strong>Representation of the People Act 1918</strong>, enfranchising women over thirty who met property qualifications. A decade later, the Equal Franchise Act 1928 granted women the vote on equal terms with men at age twenty-one."
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": [],
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of Votes for Women: Were the Suffragists or Suffragettes more effective in securing the vote?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "pair_share": {
+          "prompt": "Discuss with your partner: Were the Suffragists or Suffragettes more effective in securing the vote?",
+          "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+          "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+          "share": "Share your pair's combined conclusion with the class."
+        },
+        "prologue": "In early twentieth-century Britain, women were denied the parliamentary vote. While Millicent Fawcett’s peaceful Suffragists used patient lobbying and petitions, Emmeline Pankhurst’s militant Suffragettes turned to direct action, smashing windows, hunger strikes, and civil disobedience. Were peaceful arguments or militant headlines more effective in securing female emancipation?",
+        "video": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=pw0IAFIhVfA",
+            "title": "Suffragettes vs Suffragists: Did violent protest get women the vote? | Channel 4 News",
+            "duration": "6 mins 33 secs",
+            "pathway": "Starter Hook",
+            "teacher_guidance": "Deep historical evaluation comparing Millicent Fawcett's constitutional NUWSS (lobbying, peaceful marches) with Emmeline Pankhurst's militant WSPU ('Deeds, not words', arson, window smashing, hunger strikes). Explores which faction was truly decisive in achieving the 1918 Representation of the People Act. Recommended Watch Window: 00:00–03:45 • Lesson Phase: Quick Starter Check (0–3m). Tone Alert: Fast, balanced historiographical debate.",
+            "viewing_task": "<ol><li><strong>[01:10] Quick Check:</strong> What were the contrasting slogans and methods used by Millicent Fawcett's Suffragists (NUWSS) versus Emmeline Pankhurst's Suffragettes (WSPU)?</li><li><strong>[03:20] Hinge Question:</strong> Did militant direct action accelerate parliamentary support for female suffrage or provide an excuse for Herbert Asquith's government to delay reform?</li></ol>",
+            "model_answer": "<ol><li><strong>Quick Check:</strong> The Suffragists used peaceful constitutional lobbying, petitions, and legal marches; the Suffragettes adopted militant direct action under the slogan \"Deeds, not words\", smashing windows, cutting wires, and enduring hunger strikes.</li><li><strong>Hinge Question:</strong> Militant tactics kept the suffrage campaign on front pages and made it impossible to ignore. However, critics argue it alienated moderate MPs and allowed Asquith to claim that granting votes under threat of violence would undermine the rule of law. Most historians conclude that women's crucial wartime industrial work in 1914–1918 broke the political impasse.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=ZNeg2cfUHRw",
+            "title": "Votes for Women | Timelines.tv History of Britain",
+            "duration": "8 mins 26 secs",
+            "pathway": "Enquiry Evidence",
+            "teacher_guidance": "Andrew Chater explores the Edwardian campaign for female suffrage, examining the arrest and force-feeding of suffragette prisoners, the Cat and Mouse Act (1913), and Emily Wilding Davison's tragic death at the 1913 Epsom Derby. Recommended Watch Window: 01:00–06:15 • Lesson Phase: Guided Instruction & Archival Investigation. Tone Alert: Superb narrative documentary with primary photographs and prison records.",
+            "viewing_task": "<ol><li><strong>[01:45] Recall:</strong> What was the official parliamentary name of the 1913 statute popularly nicknamed the \"Cat and Mouse Act\"?</li><li><strong>[03:30] Explain:</strong> Explain how prison force-feeding via nasal tubes was condemned by the British medical establishment and turned public sympathy in favor of imprisoned suffragettes.</li><li><strong>[05:40] Challenge:</strong> Evaluate the sacrifice of Emily Wilding Davison at the Epsom Derby in June 1913: was her death a calculated act of political martyrdom or a tragic misjudgment?</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> The Prisoners (Temporary Discharge for Ill-Health) Act 1913.</li><li><strong>Explain:</strong> Force-feeding involved wardresses strapping weakened women to chairs and violently forcing rubber tubes down their noses or throats into the stomach. The brutal procedure caused severe physical trauma, vomiting, and lung infections, provoking outrage in Parliament and turning the government into the villain while suffragettes appeared as heroic martyrs for democracy.</li><li><strong>Challenge:</strong> Davison stepped onto the racetrack carrying two WSPU flags, intending to attach them to King George V's horse Anmer to publicize female suffrage before a global newsreel audience. Her death created massive public shock and a funeral procession of 6,000 women through London, cementing her status as a martyr, though hostile newspapers framed her action as evidence of dangerous fanaticism.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=3HdQ0iVrl2Y",
+            "title": "Suffragette (2015, Sarah Gavron / Carey Mulligan, Meryl Streep) | Official UK Trailer",
+            "duration": "2 mins 32 secs",
+            "pathway": "Cinematic",
+            "teacher_guidance": "Theatrical feature film starring Carey Mulligan, Helena Bonham Carter, and Meryl Streep as Emmeline Pankhurst. Centers on working-class Bethnal Green laundry worker Maud Watts drawn into the radical underground WSPU campaign. Recommended Watch Window: 00:00–02:32 (Full Trailer). Lesson Phase: Cinematic Starter Hook & Working-Class Militancy. Tone Alert: Gritty, emotionally visceral period drama.",
+            "viewing_task": "<p><strong>Cinematic Discussion Focus:</strong> Notice how the trailer depicts the grueling working conditions of working-class women in industrial laundries, the paternalistic condescension of employers and police, and the police surveillance photographs tracking suffragettes. How does this film challenge the common stereotype that the suffrage movement was merely a pastime for wealthy middle-class ladies?</p>",
+            "model_answer": "<p><strong>Cinematic Analysis:</strong> By centering on Maud Watts, an exhausted laundry worker who faced sexual harassment, lower pay, and legal powerlessness over her own children, the film shows that votes for women was a vital economic necessity for working-class women. The trailer highlights how working-class activists risked losing their jobs, homes, and children, demonstrating the severe personal cost of political protest.</p>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=AYWsUXQrLYw",
+            "title": "The Suffragettes with Lucy Worsley | BBC Archival Documentary",
+            "duration": "58 mins 26 secs",
+            "pathway": "Documentary",
+            "teacher_guidance": "Dr. Lucy Worsley examines the secret surveillance files compiled by Scotland Yard's Special Branch, tracking the covert WSPU bombing campaign, letter-bomb attacks, and royal bodyguard confrontations. Recommended Watch Window: 12:00–22:30 • Lesson Phase: In-Depth Documentary Investigation & State Surveillance. Tone Alert: Fascinating forensic documentary detailing early state intelligence and counter-terrorism.",
+            "viewing_task": "<ol><li><strong>[05:20] Recall:</strong> What covert forensic technology did the Metropolitan Police Special Branch pioneer in 1913 to identify suffragette activists without their knowledge?</li><li><strong>[14:40] Explain:</strong> Explain how Emmeline and Christabel Pankhurst organized an underground network of safe houses, disguised messengers, and code names to evade police arrest.</li><li><strong>[21:10] Challenge:</strong> Evaluate the moral dilemma faced by Prime Minister Herbert Asquith: why did the government view militant suffragette arson as an existential threat to democratic law?</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> Covert surveillance photography using telephoto lenses from concealed prison vans at Holloway Prison.</li><li><strong>Explain:</strong> As leaders faced continuous re-arrest under the Cat and Mouse Act, Christabel fled to Paris, issuing weekly orders via couriers, while female bodyguards (the \"Amazons\" trained in jujitsu) protected Emmeline Pankhurst from violent arrest at public rallies.</li><li><strong>Challenge:</strong> Asquith argued that yielding to arson, railway station bombings, and physical attacks would surrender parliamentary democracy to violent coercion, setting a precedent for any fringe group to force policy changes through terror. However, by refusing any compromise, the government trapped itself in an escalating cycle of repression that eroded its own moral authority.</li></ol>"
           }
         ]
       },
-      "pair_share": {
-        "prompt": "Discuss with your partner: Why did the experience of total war lead directly to the creation of the Welfare State?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
-      },
-      "prologue": "In July 1945, having survived the Blitz and total war, British voters stunned the world by voting out Winston Churchill and electing Clement Attlee’s Labour government. Based on William Beveridge's report, Labour launched the National Health Service and the Welfare State. How did wartime suffering inspire a postwar social revolution?",
-      "video": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=YokrY_G8L-c",
-          "title": "Why was Churchill voted out of office after WW2? | History Matters",
-          "duration": "3 mins 17 secs",
-          "teacher_guidance": "Explains why the British electorate rejected war hero Winston Churchill in July 1945 in favour of Clement Attlee's Labour Party, which promised comprehensive social reform based on William Beveridge's 1942 blueprint.",
-          "viewing_task": "Why did the British public elect Clement Attlee's Labour Party in July 1945 despite Winston Churchill's wartime popularity?",
-          "model_answer": "Although Winston Churchill was celebrated as a victorious wartime leader, voters associated the Conservative Party with the bitter economic depression, mass unemployment, and means-tested poverty of the 1930s. Furthermore, the shared sacrifice of total war, rationing, and evacuation had created a powerful national consensus that post-war reconstruction must build a fairer society. Clement Attlee's Labour Party offered a clear, radical domestic programme pledging full employment, mass council house construction, and the complete implementation of the 1942 Beveridge Report to slay the 'Five Giants' (Want, Disease, Ignorance, Squalor, and Idleness). Churchill's campaign focus on foreign policy and his ill-judged claim that Labour would require a 'Gestapo' convinced the public that Labour was best suited to win the peace."
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=0pnEMBgEG24",
-          "title": "The Foundation of the National Health Service | BBC Bitesize for Teachers",
-          "duration": "9 mins 59 secs",
-          "teacher_guidance": "Archival testimonies and historical analysis documenting healthcare inequality prior to 1948, Health Minister Aneurin Bevan's battle against the British Medical Association, and the opening of Park Hospital on 5 July 1948.",
-          "viewing_task": "How did healthcare in Britain change on 5 July 1948, and how did Health Minister Aneurin Bevan overcome doctors' opposition?",
-          "model_answer": "Prior to 5 July 1948, British healthcare was deeply unequal and fragmented: low-paid working men had limited GP cover under the 1911 National Insurance Act, but wives, children, and the elderly had to pay private fees, join charitable clubs, or rely on stigmatised municipal workhouse infirmaries. On 5 July 1948, Minister of Health Aneurin Bevan officially opened the National Health Service (NHS) at Park Hospital, Manchester, establishing a universal system funded through general taxation and free at the point of delivery for all citizens regardless of wealth. To defeat fierce opposition from the British Medical Association (BMA), who feared becoming state-controlled civil servants, Bevan pragmatically compromised—famously stating he 'stuffed their mouths with gold'—by permitting hospital consultants to retain private paying beds alongside their NHS work and paying GPs on a per-patient capitation basis."
-        }
-      ]
-    },
-    {
-      "title": "The Windrush Generation: Why did Britain invite Commonwealth citizens, and what did they face?",
-      "card_image": "/images/empire_windrush_1948.jpg",
-      "card_position": "center 40%",
-      "narrative_blocks": [
-        {
-          "act": 1,
-          "title": "Post-War Reconstruction & The British Nationality Act (1948)",
-          "text": "<span class=\"para-ref\">[3.1]</span> In the aftermath of the Second World War, Britain faced acute labour shortages to rebuild bombed cities, manufacture export goods, and staff vital public infrastructure, including London Transport, British Railways, and the newly created National Health Service. In 1948, Clement Attlee’s government passed the <strong>British Nationality Act 1948</strong>, which conferred full British citizenship and an unrestricted legal right of entry, residence, and employment upon all subjects throughout the British Empire and Commonwealth.<br><br><span class=\"para-ref\">[3.2]</span> Recruitment drives in the Caribbean invited colonial citizens to help reconstruct the war-weary \"Mother Country\". For young Caribbean men and women, many of whom had served in the Royal Air Force or British military during the war, answering the call to rebuild Britain was seen as both a patriotic duty and an opportunity for professional advancement."
-        },
-        {
-          "act": 2,
-          "title": "Arrival of HMT Empire Windrush & The Cold Reality (1948–1958)",
-          "text": "<span class=\"para-ref\">[3.3]</span> On <strong>22 June 1948</strong>, the converted German troopship <strong>HMT Empire Windrush</strong> docked at Tilbury Port in Essex, carrying 492 passengers from Jamaica, Trinidad, and other Caribbean islands. The arrivals included decorated war veterans, carpenters, nurses, mechanics, and musicians. Greeted on the dockside by newsreels and calypsonian Lord Kitchener singing <em>\"London is the Place for Me\"</em>, they represented the pioneers of the \"Windrush Generation\".<br><br><span class=\"para-ref\">[3.4]</span> Upon arrival in London, Birmingham, and Manchester, Caribbean migrants encountered bitter British winters, bomb-damaged housing, and widespread racial discrimination. Landlords routinely posted signs in windows reading <em>\"No Irish, No Blacks, No Dogs\"</em>, forcing families into squalid bedsits. Excluded from commercial bank loans and mortgages, Caribbean communities established cooperative savings circles known as <strong>\"Pardner\"</strong> or <strong>\"Susu\"</strong> schemes to pool money and purchase homes collectively."
-        },
-        {
-          "act": 3,
-          "title": "Racial Tensions, Resistance & The Birth of Notting Hill Carnival (1958–1962)",
-          "text": "<span class=\"para-ref\">[3.5]</span> In late August 1958, racial tensions erupted into violent riots in Notting Hill, London, and Nottingham, as gangs of white youths (\"Teddy Boys\") attacked Black residents, homes, and businesses. Rather than retreating, Caribbean communities organised defence committees and political associations to demand police protection and legal justice. In January 1959, Trinidadian activist <strong>Claudia Jones</strong> founded the <em>West Indian Gazette</em> and organised an indoor Caribbean Carnival at St Pancras Town Hall, a cultural celebration designed to heal racial divides that grew into the annual <strong>Notting Hill Carnival</strong>.<br><br><span class=\"para-ref\">[3.6]</span> Despite fierce public hostility and the passage of the <strong>Commonwealth Immigrants Act 1962</strong>—which restricted Commonwealth migration for the first time—the Windrush Generation persevered. Their dedication built the NHS, modernized public transport, and irrevocably enriched British music, language, cuisine, and literature, laying the indelible foundations of modern multicultural Britain."
-        }
-      ],
-      "do_now": {
-        "type": "standard",
-        "questions": []
-      },
-      "comprehension": [],
-      "source_tasks": [],
-      "teacher_notes": {
-        "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-        "objectives": [
+      {
+        "title": "1945: How did the aftermath of total war build the Welfare State and the NHS?",
+        "card_image": "/images/bevan_first_day_nhs_1948.jpg",
+        "card_position": "center 30%",
+        "narrative_blocks": [
           {
-            "objective": "Understand the core concepts of The Windrush Generation: Why did Britain invite Commonwealth citizens, and what did they face?",
-            "primer": "Guide students through the narrative and focus on the key turning points.",
-            "question": "What is the most significant consequence of the events studied today?"
+            "act": 1,
+            "title": "Total War, Shared Sacrifice & The Beveridge Blueprint (1940–1942)",
+            "text": "<span class=\"para-ref\">[2.1]</span> The shared ordeal of the Second World War permanently altered British social attitudes. Evacuation exposed wealthy rural families to the shocking poverty of inner-city children, while the Blitz and universal food rationing united the population in common sacrifice. In December 1942, civil servant <strong>William Beveridge</strong> published his landmark report on <em>Social Insurance and Allied Services</em>, selling over 630,000 copies as people queued at bookshops.<br><br><span class=\"para-ref\">[2.2]</span> Beveridge declared war on the <strong>\"Five Giants\"</strong> blocking postwar reconstruction: <strong>Want</strong> (poverty), <strong>Disease</strong> (lack of medical care), <strong>Ignorance</strong> (inadequate education), <strong>Squalor</strong> (poor housing), and <strong>Idleness</strong> (unemployment). Beveridge proposed a comprehensive system of social security \"from the cradle to the grave\", funded through universal weekly national insurance contributions to protect every citizen against hardship."
+          },
+          {
+            "act": 2,
+            "title": "The 1945 Labour Landslide & The Modern Welfare State",
+            "text": "<span class=\"para-ref\">[2.3]</span> In July 1945, British voters stunned international observers by rejecting wartime Prime Minister Winston Churchill and electing <strong>Clement Attlee's</strong> Labour Party in a landslide general election victory. While Churchill was revered as a war leader, voters bitterly remembered the 1930s Great Depression, mass unemployment, and humiliating means tests overseen by Conservative-led governments. Labour pledged to \"win the peace\" through full employment, mass council housing, and the complete enactment of the Beveridge Report.<br><br><span class=\"para-ref\">[2.4]</span> Attlee’s administration rapidly established the foundations of the modern Welfare State. The <strong>National Insurance Act 1946</strong> provided universal sickness, maternity, invalidity, and unemployment benefits, while the National Assistance Act 1948 abolished the hated centuries-old Poor Law workhouses, establishing an unconditional state safety net for the most vulnerable citizens."
+          },
+          {
+            "act": 3,
+            "title": "Aneurin Bevan & The Creation of the NHS (1946–1948)",
+            "text": "<span class=\"para-ref\">[2.5]</span> Prior to 1948, British healthcare was deeply unequal and fragmented: low-paid working men had limited GP cover, but wives, children, and elderly people had to pay private fees, join charity clubs, or rely on grim municipal infirmaries. Minister of Health <strong>Aneurin Bevan</strong>, a former Welsh coal miner, was determined to create a single national health service funded through general taxation and completely free at the point of delivery.<br><br><span class=\"para-ref\">[2.6]</span> Bevan encountered fierce, prolonged resistance from the <strong>British Medical Association (BMA)</strong>, whose leaders feared becoming salaried civil servants. To defeat their boycott, Bevan pragmatically compromised—famously declaring he <em>\"stuffed their mouths with gold\"</em>—by allowing hospital consultants to treat private paying patients in NHS beds and paying family GPs on a per-patient capitation basis. On <strong>5 July 1948</strong>, Bevan officially opened the National Health Service at Park Hospital, Davyhulme, near Manchester, pioneering the principle that healthcare is a fundamental human right."
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": [],
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of 1945: How did the aftermath of total war build the Welfare State and the NHS?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "pair_share": {
+          "prompt": "Discuss with your partner: Why did the experience of total war lead directly to the creation of the Welfare State?",
+          "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+          "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+          "share": "Share your pair's combined conclusion with the class."
+        },
+        "prologue": "In July 1945, having survived the Blitz and total war, British voters stunned the world by voting out Winston Churchill and electing Clement Attlee’s Labour government. Based on William Beveridge's report, Labour launched the National Health Service and the Welfare State. How did wartime suffering inspire a postwar social revolution?",
+        "video": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=YokrY_G8L-c",
+            "title": "Why was Churchill voted out of office after WW2? | History Matters",
+            "duration": "3 mins 17 secs",
+            "pathway": "Starter Hook",
+            "teacher_guidance": "Explains why the British electorate rejected war hero Winston Churchill in July 1945 in favour of Clement Attlee's Labour Party, which promised comprehensive social reform based on William Beveridge's 1942 blueprint. Recommended Watch Window: 00:00–03:17 (Full Clip) • Lesson Phase: Quick Starter Check (0–3m). Tone Alert: Fast, accessible animated historical breakdown.",
+            "viewing_task": "<ol><li><strong>[00:50] Quick Check:</strong> Which political party won a landslide 146-seat majority in the July 1945 British General Election, defeating wartime leader Winston Churchill?</li><li><strong>[02:15] Hinge Question:</strong> Why did the shared national experience of the Blitz, evacuation, and rationing convince millions of British citizens that post-war Britain must never return to the poverty of the 1930s?</li></ol>",
+            "model_answer": "<ol><li><strong>Quick Check:</strong> Clement Attlee's Labour Party.</li><li><strong>Hinge Question:</strong> Total war required the total mobilisation and shared sacrifice of all social classes. Evacuation exposed wealthy rural families to the shocking malnutrition and poverty of urban slums, while government rationing proved the state could guarantee fair distribution of resources, creating an overwhelming national demand for social security, council housing, and universal healthcare.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=0pnEMBgEG24",
+            "title": "The Foundation of the National Health Service | BBC Bitesize for Teachers",
+            "duration": "9 mins 59 secs",
+            "pathway": "Enquiry Evidence",
+            "teacher_guidance": "Archival testimonies and historical analysis documenting healthcare inequality prior to 1948, Health Minister Aneurin Bevan's battle against the British Medical Association, and the opening of Park Hospital on 5 July 1948. Recommended Watch Window: 01:15–06:45 • Lesson Phase: Guided Instruction & Archival Investigation. Tone Alert: Rigorous educational documentary featuring historical newsreels and doctor testimonies.",
+            "viewing_task": "<ol><li><strong>[01:45] Recall:</strong> On what historic date did the National Health Service (NHS) officially begin operations across the United Kingdom?</li><li><strong>[03:30] Explain:</strong> Explain how Health Minister Aneurin Bevan overcame fierce opposition from the British Medical Association (BMA), who feared doctors would become state-controlled civil servants.</li><li><strong>[05:50] Challenge:</strong> Evaluate the transformative egalitarian principle at the core of the 1948 NHS: why was providing care \"free at the point of delivery, funded through general taxation\" revolutionary?</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> 5 July 1948 (inaugurated by Aneurin Bevan at Park Hospital, Davyhulme, Manchester).</li><li><strong>Explain:</strong> Bevan famously compromised by \"stuffing their mouths with gold\": he allowed hospital consultants to retain private paying beds alongside their NHS salaries and agreed that family GPs would remain independent contractors paid on a per-patient capitation basis rather than salaried employees.</li><li><strong>Challenge:</strong> Prior to 1948, poor families routinely delayed seeing doctors due to fear of crippling medical bills, and elderly patients died of untreated ailments in Victorian workhouse infirmaries. The NHS severed healthcare from personal wealth, establishing that medical treatment was a fundamental universal human right rather than a commercial commodity.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=MXoYbRXorEQ",
+            "title": "The Spirit of '45 (2013, Ken Loach) | Official Theatrical Trailer",
+            "duration": "1 min 52 secs",
+            "pathway": "Cinematic",
+            "teacher_guidance": "Acclaimed documentary feature by director Ken Loach using primary British Film Institute newsreel and oral history to celebrate the transformative post-war Labour government: the creation of the NHS, nationalisation of coal, railways, and steel, and building 1 million council homes. Recommended Watch Window: 00:00–01:52 (Full Trailer). Lesson Phase: Cinematic Starter Hook & Post-War Consensus. Tone Alert: Stirring, passionate celebration of collective solidarity.",
+            "viewing_task": "<p><strong>Cinematic Discussion Focus:</strong> Notice the joyful post-war street parties, the black-and-white footage of miners, nurses, and railway workers, and the powerful collective slogan \"Never Again!\" echoing across Britain. How does Ken Loach frame the 1945 general election as a historic moral triumph of community cooperation over pre-war poverty and capitalist exploitation?</p>",
+            "model_answer": "<p><strong>Cinematic Analysis:</strong> The trailer frames 1945 not merely as a change of government, but as a peaceful social revolution born from wartime victory. Loach contrasts the squalor, means-testing, and depression of the 1930s with the boundless optimism of ordinary working people building a new society where essential services (health, housing, energy) were owned by and operated for the public good.</p>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=MbNH4JBQiSY",
+            "title": "Windrush: Arrival (1998, BBC Landmark Documentary)",
+            "duration": "59 mins 59 secs",
+            "pathway": "Documentary",
+            "teacher_guidance": "Landmark BBC documentary chronicling the voyage of the HMT Empire Windrush from Kingston, Jamaica, carrying 492 Caribbean passengers arriving at Tilbury Docks in June 1948 to rebuild war-torn Britain. Recommended Watch Window: 04:30–16:00 • Lesson Phase: In-Depth Documentary Investigation & Migration History. Tone Alert: Superb oral history featuring Lord Kitchener, Sam King, and early settlers.",
+            "viewing_task": "<ol><li><strong>[06:15] Recall:</strong> What British legal statute passed in 1948 granted all citizens of the British Empire and Commonwealth full British citizenship and the unrestricted right to live and work in the UK?</li><li><strong>[11:30] Explain:</strong> Which essential public sectors in post-war Britain—facing acute labor shortages—actively recruited workers from Jamaica, Barbados, and Trinidad?</li><li><strong>[14:45] Challenge:</strong> Evaluate the profound psychological shock experienced by Caribbean arrivals who arrived viewing Britain as the \"Mother Country\", only to encounter cold weather and hostile signs (\"No Irish, No Blacks, No Dogs\").</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> The British Nationality Act 1948.</li><li><strong>Explain:</strong> London Transport, the newly established National Health Service (NHS, recruiting nurses and orderlies), British Rail, and heavy manufacturing factories sent recruitment missions to the Caribbean to solve postwar reconstruction labor shortages.</li><li><strong>Challenge:</strong> West Indian migrants had been educated in colonial schools singing \"Rule Britannia\" and viewing Britain as their ancestral cultural home; many had served in the RAF during WWII. Finding themselves subjected to informal \"colour bars\" in rental housing, bars, and churches shattered their idealized illusions, forcing them to build resilient independent community, religious, and mutual-aid networks to survive.</li></ol>"
           }
         ]
       },
-      "pair_share": {
-        "prompt": "Discuss with your partner: Was Britain welcoming to the Windrush Generation?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
-      },
-      "prologue": "In June 1948, the Empire Windrush docked at Tilbury, carrying hundreds of Caribbean passengers invited to help rebuild war-torn Britain. Arriving as proud British subjects, Caribbean nurses, bus drivers, and railway workers faced cold weather, poor housing, and colour bars. What challenges and prejudice did the Windrush generation overcome?",
-      "video": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=Si3IRAPJkkU",
-          "title": "What is the Windrush Generation? | Finding My Family: A Windrush Special | BBC Newsround",
-          "duration": "2 mins 09 secs",
-          "teacher_guidance": "Essential primer introducing the arrival of the HMT Empire Windrush on 22 June 1948, the British Nationality Act 1948, post-war labour shortages, and Caribbean contributions to British public services.",
-          "viewing_task": "Why were Caribbean citizens invited to Britain in 1948, and what rights did they hold under British law?",
-          "model_answer": "Following the Second World War, Britain faced severe labour shortages to rebuild bombed cities, run London Transport, staff British Rail, and operate the newly established National Health Service. Under the British Nationality Act 1948, all citizens of the British Empire and Commonwealth were granted British citizenship, holding an unrestricted legal right to enter, settle, and work in the United Kingdom. On 22 June 1948, the HMT Empire Windrush docked at Tilbury carrying 492 passengers from Jamaica, Trinidad, and other Caribbean islands, who arrived as proud British subjects responding to government recruitment calls to help reconstruct the post-war 'Mother Country'."
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=g2vLT8xwSf4",
-          "title": "1974: Windrush Generation Recall Arriving in Britain in 1948 | Yesterday's Witness | BBC Archive",
-          "duration": "4 mins 44 secs",
-          "teacher_guidance": "Primary oral history testimonies from Windrush passengers recalling their arrival, freezing British weather, racial discrimination in private housing ('No Irish, No Blacks, No Dogs'), and community resilience.",
-          "viewing_task": "What practical challenges and racial discrimination did early Caribbean arrivals face when settling in post-war Britain?",
-          "model_answer": "Upon arriving in Britain, Caribbean migrants faced harsh weather, austere living conditions, and widespread colour bars in accommodation and employment. Landlords routinely refused housing to Black tenants, displaying racist signs in windows reading 'No Irish, No Blacks, No Dogs', forcing many migrants to pool money through informal saving schemes (Pardner schemes) to buy homes collectively. In the workplace, highly qualified professionals like teachers, engineers, and nurses were often relegated to low-skilled manual labour or denied promotion. Despite these hostile barriers, Caribbean communities established churches, social clubs, and cultural traditions that enriched British society, laying the foundations for modern multicultural Britain."
-        }
-      ]
-    },
-    {
-      "title": "The 1963 Bristol Bus Boycott & the fight for British civil rights.",
-      "card_image": "/images/bristol_bus_boycott_mural.jpg",
-      "card_position": "center 30%",
-      "narrative_blocks": [
-        {
-          "act": 1,
-          "title": "The Bristol 'Colour Bar' & Guy Bailey's Rejection (1963)",
-          "text": "<span class=\"para-ref\">[4.1]</span> In early 1963, racial discrimination in employment, housing, and commercial services was entirely legal in the United Kingdom. In the port city of Bristol, the state-owned <strong>Bristol Omnibus Company</strong> enforced an open, rigid <strong>\"colour bar\"</strong>, refusing to employ Black or Asian workers as bus drivers or conductors, despite experiencing a severe shortage of over 200 staff.<br><br><span class=\"para-ref\">[4.2]</span> The bus company’s exclusionary policy was actively supported by the local branch of the Transport and General Workers' Union (TGWU), whose shop stewards feared that hiring non-white workers would dilute wages and conditions. In March 1963, eighteen-year-old <strong>Guy Bailey</strong>, a qualified warehouseman and Boys' Brigade officer, applied for an advertised conductor post. When youth worker <strong>Paul Stephenson</strong> phoned the depot to confirm Bailey was Jamaican, company managers immediately cancelled the interview."
-        },
-        {
-          "act": 2,
-          "title": "The West Indian Development Council & The Citywide Boycott",
-          "text": "<span class=\"para-ref\">[4.3]</span> Outraged by the brazen discrimination, Paul Stephenson joined forces with Caribbean community leaders <strong>Roy Hackett</strong>, <strong>Audley Evans</strong>, and <strong>Owen Henry</strong> to establish the <strong>West Indian Development Council</strong>. Inspired directly by Rosa Parks, Martin Luther King Jr., and the 1955 Montgomery Bus Boycott in Alabama, they resolved to use non-violent direct action to defeat the company.<br><br><span class=\"para-ref\">[4.4]</span> On <strong>30 April 1963</strong>, Stephenson held a press conference announcing a total passenger boycott of Bristol buses. Thousands of Caribbean residents refused to board company vehicles, walking miles to work every day. University of Bristol students joined the campaign, holding protest marches through the city centre and picketing the bus depot, generating national media coverage that exposed British racism to the world."
-        },
-        {
-          "act": 3,
-          "title": "Victory & The Landmark Race Relations Acts (1963–1968)",
-          "text": "<span class=\"para-ref\">[4.5]</span> The four-month boycott attracted national political intervention. Local Bristol MP Tony Benn and Labour Party leader Harold Wilson publicly supported the boycott, while cricketer and diplomat Sir Learie Constantine condemned the colour bar. Faced with mounting financial losses and national disgrace, on <strong>28 August 1963</strong>—the very same day Martin Luther King delivered his \"I Have a Dream\" speech in Washington—the Bristol Omnibus Company capitulated, announcing the immediate end of the colour bar. In September, <strong>Raghbir Singh</strong> became Bristol’s first Sikh bus conductor.<br><br><span class=\"para-ref\">[4.6]</span> The triumph of the Bristol Bus Boycott exposed the urgent need for legislation against racial prejudice. Upon taking office in 1964, Harold Wilson’s Labour government introduced the <strong>Race Relations Act 1965</strong>, which outlawed racial discrimination in public places, followed by the <strong>Race Relations Act 1968</strong>, which banned discrimination in employment and housing, establishing the foundational legal framework for British racial equality."
-        }
-      ],
-      "do_now": {
-        "type": "standard",
-        "questions": []
-      },
-      "comprehension": [],
-      "source_tasks": [],
-      "teacher_notes": {
-        "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-        "objectives": [
+      {
+        "title": "The Windrush Generation: Why did Britain invite Commonwealth citizens, and what did they face?",
+        "card_image": "/images/empire_windrush_1948.jpg",
+        "card_position": "center 40%",
+        "narrative_blocks": [
           {
-            "objective": "Understand the core concepts of The 1963 Bristol Bus Boycott & the fight for British civil rights.",
-            "primer": "Guide students through the narrative and focus on the key turning points.",
-            "question": "What is the most significant consequence of the events studied today?"
+            "act": 1,
+            "title": "Post-War Reconstruction & The British Nationality Act (1948)",
+            "text": "<span class=\"para-ref\">[3.1]</span> In the aftermath of the Second World War, Britain faced acute labour shortages to rebuild bombed cities, manufacture export goods, and staff vital public infrastructure, including London Transport, British Railways, and the newly created National Health Service. In 1948, Clement Attlee’s government passed the <strong>British Nationality Act 1948</strong>, which conferred full British citizenship and an unrestricted legal right of entry, residence, and employment upon all subjects throughout the British Empire and Commonwealth.<br><br><span class=\"para-ref\">[3.2]</span> Recruitment drives in the Caribbean invited colonial citizens to help reconstruct the war-weary \"Mother Country\". For young Caribbean men and women, many of whom had served in the Royal Air Force or British military during the war, answering the call to rebuild Britain was seen as both a patriotic duty and an opportunity for professional advancement."
+          },
+          {
+            "act": 2,
+            "title": "Arrival of HMT Empire Windrush & The Cold Reality (1948–1958)",
+            "text": "<span class=\"para-ref\">[3.3]</span> On <strong>22 June 1948</strong>, the converted German troopship <strong>HMT Empire Windrush</strong> docked at Tilbury Port in Essex, carrying 492 passengers from Jamaica, Trinidad, and other Caribbean islands. The arrivals included decorated war veterans, carpenters, nurses, mechanics, and musicians. Greeted on the dockside by newsreels and calypsonian Lord Kitchener singing <em>\"London is the Place for Me\"</em>, they represented the pioneers of the \"Windrush Generation\".<br><br><span class=\"para-ref\">[3.4]</span> Upon arrival in London, Birmingham, and Manchester, Caribbean migrants encountered bitter British winters, bomb-damaged housing, and widespread racial discrimination. Landlords routinely posted signs in windows reading <em>\"No Irish, No Blacks, No Dogs\"</em>, forcing families into squalid bedsits. Excluded from commercial bank loans and mortgages, Caribbean communities established cooperative savings circles known as <strong>\"Pardner\"</strong> or <strong>\"Susu\"</strong> schemes to pool money and purchase homes collectively."
+          },
+          {
+            "act": 3,
+            "title": "Racial Tensions, Resistance & The Birth of Notting Hill Carnival (1958–1962)",
+            "text": "<span class=\"para-ref\">[3.5]</span> In late August 1958, racial tensions erupted into violent riots in Notting Hill, London, and Nottingham, as gangs of white youths (\"Teddy Boys\") attacked Black residents, homes, and businesses. Rather than retreating, Caribbean communities organised defence committees and political associations to demand police protection and legal justice. In January 1959, Trinidadian activist <strong>Claudia Jones</strong> founded the <em>West Indian Gazette</em> and organised an indoor Caribbean Carnival at St Pancras Town Hall, a cultural celebration designed to heal racial divides that grew into the annual <strong>Notting Hill Carnival</strong>.<br><br><span class=\"para-ref\">[3.6]</span> Despite fierce public hostility and the passage of the <strong>Commonwealth Immigrants Act 1962</strong>—which restricted Commonwealth migration for the first time—the Windrush Generation persevered. Their dedication built the NHS, modernized public transport, and irrevocably enriched British music, language, cuisine, and literature, laying the indelible foundations of modern multicultural Britain."
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": [],
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of The Windrush Generation: Why did Britain invite Commonwealth citizens, and what did they face?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "pair_share": {
+          "prompt": "Discuss with your partner: Was Britain welcoming to the Windrush Generation?",
+          "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+          "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+          "share": "Share your pair's combined conclusion with the class."
+        },
+        "prologue": "In June 1948, the Empire Windrush docked at Tilbury, carrying hundreds of Caribbean passengers invited to help rebuild war-torn Britain. Arriving as proud British subjects, Caribbean nurses, bus drivers, and railway workers faced cold weather, poor housing, and colour bars. What challenges and prejudice did the Windrush generation overcome?",
+        "video": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=MbNH4JBQiSY",
+            "title": "HMT Empire Windrush: The Arrival at Tilbury (1948) | BBC Archive",
+            "duration": "4 mins 20 secs",
+            "pathway": "Starter Hook",
+            "teacher_guidance": "Archival newsreel of the docking of the Empire Windrush on 22 June 1948, featuring calypso singer Lord Kitchener singing \"London is the Place for Me\" on the quayside. Recommended Watch Window: 00:00–03:45 • Lesson Phase: Quick Starter Check (0–3m). Tone Alert: Famous primary British Pathé newsreel footage.",
+            "viewing_task": "<ol><li><strong>[01:10] Quick Check:</strong> What was the name of the Trinidadian calypsonian who sang \"London is the Place for Me\" to newsreel cameras on Tilbury Docks in June 1948?</li><li><strong>[02:45] Hinge Question:</strong> Why did British employers and the state welcome Caribbean workers to staff transport and hospitals, while politicians simultaneously expressed private anxiety over non-white immigration?</li></ol>",
+            "model_answer": "<ol><li><strong>Quick Check:</strong> Lord Kitchener (Aldwyn Roberts).</li><li><strong>Hinge Question:</strong> Post-war economic reconstruction urgently needed thousands of workers for the NHS, buses, and railways that British workers shunned. However, ingrained colonial racial prejudices caused ministers to fear that visible non-white communities would alter traditional British identity, creating an enduring contradiction between economic necessity and racial exclusion.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=0pnEMBgEG24",
+            "title": "The Windrush Generation: Building Modern Britain | BBC Teach",
+            "duration": "8 mins 15 secs",
+            "pathway": "Enquiry Evidence",
+            "teacher_guidance": "Examines the daily lives, cultural contributions, and racism faced by Commonwealth citizens in 1950s Britain: the colour bar, the 1958 Notting Hill riots, and the founding of the Notting Hill Carnival by Claudia Jones. Recommended Watch Window: 01:00–06:30 • Lesson Phase: Guided Instruction & Cultural Investigation. Tone Alert: Balanced historical analysis combining primary testimonies and music.",
+            "viewing_task": "<ol><li><strong>[01:50] Recall:</strong> What was the informal discriminatory practice known as the \"colour bar\", which barred Black citizens from renting rooms, securing bank loans, or entering pubs?</li><li><strong>[03:40] Explain:</strong> Explain how Claudia Jones, a Trinidadian political activist, organized the first Caribbean indoor carnival at St Pancras Town Hall in 1959 to heal racial divisions following the Notting Hill riots.</li><li><strong>[05:50] Challenge:</strong> Evaluate how Caribbean music (calypso, ska, reggae), cuisine, and literature permanently enriched and transformed British urban culture from the 1950s onward.</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> The \"colour bar\" was widespread racial discrimination where landlords placed signs in windows (\"No Blacks, No Irish, No Dogs\") and refused housing or employment, which remained completely legal until the 1965 Race Relations Act.</li><li><strong>Explain:</strong> Following the violent August 1958 Notting Hill race riots where white \"Teddy Boys\" attacked Black residents, Claudia Jones launched the West Indian Gazette and an indoor carnival with steel bands to showcase Caribbean pride, foster mutual cultural respect, and demonstrate that cultural diversity was a positive strength for Britain.</li><li><strong>Challenge:</strong> Far from merely providing manual labor, Caribbean immigrants revolutionized British artistic, musical, and social life. Sound systems, ska, and calypso laid the foundation for modern British popular music, while community mobilization challenged institutional racism, forcing Parliament to pass anti-discrimination laws that reshaped modern British civil rights.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=VHFLv3k2Eww",
+            "title": "Small Axe: Mangrove (2020, Steve McQueen) | BFI Official Trailer",
+            "duration": "1 min 00 sec",
+            "pathway": "Cinematic",
+            "teacher_guidance": "Trailer for Oscar-winning director Steve McQueen’s masterpiece starring Shaun Parkes and Letitia Wright. Dramatizes Frank Crichlow’s Mangrove restaurant in Notting Hill, relentless Metropolitan Police harassment, and the 1970 Old Bailey trial that legally established institutional racism. Recommended Watch Window: 00:00–01:00 (Full Trailer). Lesson Phase: Cinematic Starter Hook & Civil Rights Resistance. Tone Alert: Tense, powerful historical dramatisation.",
+            "viewing_task": "<p><strong>Cinematic Discussion Focus:</strong> Notice the vibrant community life inside Frank Crichlow's Caribbean restaurant, the repeated aggressive police raids, and the defiant courtroom defense of the \"Mangrove Nine\" at the Old Bailey. How does Steve McQueen's film dramatize the fight of Black Britons for equal justice under the law?</p>",
+            "model_answer": "<p><strong>Cinematic Analysis:</strong> The trailer captures how the Mangrove restaurant was targeted by the police not for criminal activity, but because it served as a safe intellectual and cultural hub for Notting Hill's Black community. The Mangrove Nine's historic legal victory at the Old Bailey forced the British judiciary for the very first time to acknowledge evidence of \"racial hatred\" within the police force, marking a turning point in UK civil rights history.</p>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=MbNH4JBQiSY",
+            "title": "The Unwanted: The Secret Windrush Files | BBC Documentary",
+            "duration": "59 mins 16 secs",
+            "pathway": "Documentary",
+            "teacher_guidance": "Historian David Olusoga uncovers previously secret British government documents revealing how successive post-war administrations from 1948 onward sought to discourage non-white immigration and restrict citizenship rights. Recommended Watch Window: 08:00–20:00 • Lesson Phase: In-Depth Documentary Investigation & State Policy. Tone Alert: Rigorous, award-winning investigative documentary.",
+            "viewing_task": "<ol><li><strong>[06:30] Recall:</strong> Which 1962 legislative measure passed by Harold Macmillan's Conservative government ended the automatic right of Commonwealth citizens to live and work in the UK?</li><li><strong>[14:15] Explain:</strong> Explain how secret cabinet papers revealed by David Olusoga show ministers exploring ways to intercept immigration ships or create administrative obstacles without appearing openly racist.</li><li><strong>[18:40] Challenge:</strong> Evaluate how post-war immigration policy reflected an unresolved imperial paradox: Britain celebrated its global Commonwealth family, yet simultaneously legislated to restrict non-white Commonwealth citizens from entering Britain.</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> The Commonwealth Immigrants Act 1962 (which introduced employment vouchers).</li><li><strong>Explain:</strong> Cabinet files show civil servants were instructed to make passport issuance slow and bureaucratic in Jamaica, while ministers debated imposing health checks or deportation powers. However, they feared that openly restricting Black immigration would damage Britain's international prestige and prompt Commonwealth nations to leave the alliance.</li><li><strong>Challenge:</strong> British politicians took immense pride in leading a multiracial Commonwealth of 800 million citizens that spanned the globe, using it to maintain Britain's great-power status after WWII. Yet when citizens from that Commonwealth exercised their legal right to settle in the UK, political panic over racial homogeneity led to successive immigration acts (1962, 1968, 1971) that effectively constructed a \"colour-coded\" border, stripping rights from the very people who had helped win the war and rebuild the country.</li></ol>"
           }
         ]
       },
-      "pair_share": {
-        "prompt": "Discuss with your partner: Was the Bristol Bus Boycott a turning point for British civil rights?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
-      },
-      "prologue": "In 1963, the Bristol Omnibus Company refused to employ Black or Asian bus conductors, enforcing an open 'colour bar'. Inspired by Martin Luther King and Rosa Parks, local youth activists Paul Stephenson and Roy Hackett organised a citywide passenger boycott. How did community direct action force Britain’s first Race Relations Act?",
-      "video": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=uSyzaXXKUaQ",
-          "title": "The Story of the Bristol Bus Boycott | The Black Curriculum",
-          "duration": "1 min 54 secs",
-          "teacher_guidance": "High-impact animated and photographic breakdown of the 1963 Bristol Bus Boycott, detailing the 'colour bar' operated by the Bristol Omnibus Company and the union, and how non-violent direct action triumphed.",
-          "viewing_task": "Why was the Bristol Bus Boycott launched in April 1963, and what tactical inspiration did the organisers draw from abroad?",
-          "model_answer": "In early 1963, the state-owned Bristol Omnibus Company operated an open 'colour bar', refusing to hire Black or Asian conductors or drivers despite acute staff shortages, with the compliance of the Transport and General Workers' Union (TGWU). When 18-year-old Guy Bailey was denied an interview purely because of his race, youth worker Paul Stephenson, Roy Hackett, Audley Evans, and Owen Henry formed the West Indian Development Council. Inspired by Rosa Parks and Martin Luther King Jr.'s 1955 Montgomery Bus Boycott in Alabama, they launched a total boycott of Bristol buses on 30 April 1963, rallying students, church leaders, and politicians to demand an end to racial discrimination."
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=rQXwh__d2S4",
-          "title": "How the Bristol Bus Boycott Changed UK Civil Rights | Witness History | BBC World Service",
-          "duration": "3 mins 45 secs",
-          "teacher_guidance": "Explores the national fallout of the boycott, intervention by Labour MP Tony Benn and Harold Wilson, the collapse of the colour bar on 28 August 1963, and how it directly led to Britain's Race Relations Acts of 1965 and 1968.",
-          "viewing_task": "What were the major short-term and long-term consequences of the 1963 Bristol Bus Boycott for British legislation?",
-          "model_answer": "In the short term, after four months of public pressure, passenger boycotts, and student protest marches, the Bristol Omnibus Company surrendered on 28 August 1963—the exact same day Martin Luther King Jr. delivered his 'I Have a Dream' speech in Washington—announcing an immediate end to the colour bar and hiring Bristol's first non-white bus conductor, Raghbir Singh, in September. In the long term, the boycott exposed the complete absence of UK legal protections against racial discrimination, prompting Harold Wilson's incoming Labour government to pass the landmark Race Relations Act 1965 (outlawing discrimination in public places) and the Race Relations Act 1968 (extending protections to housing and employment)."
-        }
-      ]
-    },
-    {
-      "title": "The Cold War on the Home Front: How did nuclear paranoia shape British popular culture?",
-      "card_image": "/images/york_cold_war_bunker.jpg",
-      "card_position": "center center",
-      "narrative_blocks": [
-        {
-          "act": 1,
-          "title": "The Nuclear Shadow & Postwar British Deterrence (1945–1958)",
-          "text": "<span class=\"para-ref\">[5.1]</span> Following the atomic devastation of Hiroshima and Nagasaki in August 1945, Britain entered the Cold War under the constant threat of nuclear annihilation. Determined that Britain should remain an independent Great Power and not rely solely on the United States, Prime Minister Clement Attlee secretly authorised the construction of Britain’s own nuclear deterrent in 1947. Britain successfully tested its first atomic bomb in 1952 (Operation Hurricane) and its first thermonuclear hydrogen bomb in 1957.<br><br><span class=\"para-ref\">[5.2]</span> As the Soviet Union developed intercontinental ballistic missiles, the British Isles became a frontline target. Situated between Washington and Moscow and hosting American strategic bomber bases, Britain was uniquely vulnerable to catastrophic nuclear attack, creating pervasive civilian anxiety that permeated postwar domestic life and popular culture."
-        },
-        {
-          "act": 2,
-          "title": "The Peace Movement: CND & The Aldermaston Marches (1958–1965)",
-          "text": "<span class=\"para-ref\">[5.3]</span> In February 1958, public horror at nuclear fallout led prominent philosophers, scientists, and journalists—including <strong>Bertrand Russell</strong>, Canon John Collins, and J.B. Priestley—to establish the <strong>Campaign for Nuclear Disarmament (CND)</strong>. Artist Gerald Holtom designed the universal CND peace symbol, combining the semaphore signals for the letters 'N' (Nuclear) and 'D' (Disarmament) inside a circle representing the Earth.<br><br><span class=\"para-ref\">[5.4]</span> Over the 1958 Easter weekend, the CND organised the first <strong>Aldermaston March</strong>, leading thousands of demonstrators on a fifty-two-mile trek from Trafalgar Square to the Atomic Weapons Research Establishment in Berkshire. The annual marches drew tens of thousands of young people, trade unionists, and families, forging a mass protest culture that challenged government nuclear policy and popularized anti-war music, literature, and fashion across Britain."
-        },
-        {
-          "act": 3,
-          "title": "Civil Defence, The York Bunker & 'Protect and Survive' (1961–1980)",
-          "text": "<span class=\"para-ref\">[5.5]</span> To maintain national command during thermonuclear war, the government built a covert network of subterranean bunkers. In 1961, the semi-underground <strong>York Cold War Bunker</strong> was constructed as the regional headquarters for the <strong>Royal Observer Corps (ROC)</strong>. Designed with blast-proof reinforced concrete, airlocks, and air filters, sixty ROC volunteers were tasked with surviving thirty days sealed underground to triangulate bomb detonation coordinates using Bomb Power Indicators (BPIs) and plot lethal fallout plumes on wall maps.<br><br><span class=\"para-ref\">[5.6]</span> For ordinary families, the Home Office established an air-raid siren network linked to RAF Fylingdales, designed to give the public a chilling <strong>\"Four-Minute Warning\"</strong> before missile impact. In May 1980, the government published the infamous <strong>\"Protect and Survive\"</strong> booklet, advising citizens to build domestic \"inner core shelters\" using unhinged doors leaned against walls and packed with sandbags. Mocked by peace activists as dangerously naive, nuclear paranoia shaped an entire generation, inspiring haunting anti-war pop anthems, Raymond Briggs’ graphic novel <em>When the Wind Blows</em> (1982), and the chilling BBC drama <em>Threads</em> (1984)."
-        }
-      ],
-      "do_now": {
-        "type": "standard",
-        "questions": []
-      },
-      "comprehension": [],
-      "source_tasks": [],
-      "teacher_notes": {
-        "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-        "objectives": [
+      {
+        "title": "The 1963 Bristol Bus Boycott & the fight for British civil rights.",
+        "card_image": "/images/bristol_bus_boycott_mural.jpg",
+        "card_position": "center 30%",
+        "narrative_blocks": [
           {
-            "objective": "Understand the core concepts of The Cold War on the Home Front: How did nuclear paranoia shape British popular culture?",
-            "primer": "Guide students through the narrative and focus on the key turning points.",
-            "question": "What is the most significant consequence of the events studied today?"
+            "act": 1,
+            "title": "The Bristol 'Colour Bar' & Guy Bailey's Rejection (1963)",
+            "text": "<span class=\"para-ref\">[4.1]</span> In early 1963, racial discrimination in employment, housing, and commercial services was entirely legal in the United Kingdom. In the port city of Bristol, the state-owned <strong>Bristol Omnibus Company</strong> enforced an open, rigid <strong>\"colour bar\"</strong>, refusing to employ Black or Asian workers as bus drivers or conductors, despite experiencing a severe shortage of over 200 staff.<br><br><span class=\"para-ref\">[4.2]</span> The bus company’s exclusionary policy was actively supported by the local branch of the Transport and General Workers' Union (TGWU), whose shop stewards feared that hiring non-white workers would dilute wages and conditions. In March 1963, eighteen-year-old <strong>Guy Bailey</strong>, a qualified warehouseman and Boys' Brigade officer, applied for an advertised conductor post. When youth worker <strong>Paul Stephenson</strong> phoned the depot to confirm Bailey was Jamaican, company managers immediately cancelled the interview."
+          },
+          {
+            "act": 2,
+            "title": "The West Indian Development Council & The Citywide Boycott",
+            "text": "<span class=\"para-ref\">[4.3]</span> Outraged by the brazen discrimination, Paul Stephenson joined forces with Caribbean community leaders <strong>Roy Hackett</strong>, <strong>Audley Evans</strong>, and <strong>Owen Henry</strong> to establish the <strong>West Indian Development Council</strong>. Inspired directly by Rosa Parks, Martin Luther King Jr., and the 1955 Montgomery Bus Boycott in Alabama, they resolved to use non-violent direct action to defeat the company.<br><br><span class=\"para-ref\">[4.4]</span> On <strong>30 April 1963</strong>, Stephenson held a press conference announcing a total passenger boycott of Bristol buses. Thousands of Caribbean residents refused to board company vehicles, walking miles to work every day. University of Bristol students joined the campaign, holding protest marches through the city centre and picketing the bus depot, generating national media coverage that exposed British racism to the world."
+          },
+          {
+            "act": 3,
+            "title": "Victory & The Landmark Race Relations Acts (1963–1968)",
+            "text": "<span class=\"para-ref\">[4.5]</span> The four-month boycott attracted national political intervention. Local Bristol MP Tony Benn and Labour Party leader Harold Wilson publicly supported the boycott, while cricketer and diplomat Sir Learie Constantine condemned the colour bar. Faced with mounting financial losses and national disgrace, on <strong>28 August 1963</strong>—the very same day Martin Luther King delivered his \"I Have a Dream\" speech in Washington—the Bristol Omnibus Company capitulated, announcing the immediate end of the colour bar. In September, <strong>Raghbir Singh</strong> became Bristol’s first Sikh bus conductor.<br><br><span class=\"para-ref\">[4.6]</span> The triumph of the Bristol Bus Boycott exposed the urgent need for legislation against racial prejudice. Upon taking office in 1964, Harold Wilson’s Labour government introduced the <strong>Race Relations Act 1965</strong>, which outlawed racial discrimination in public places, followed by the <strong>Race Relations Act 1968</strong>, which banned discrimination in employment and housing, establishing the foundational legal framework for British racial equality."
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": [],
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of The 1963 Bristol Bus Boycott & the fight for British civil rights.",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "pair_share": {
+          "prompt": "Discuss with your partner: Was the Bristol Bus Boycott a turning point for British civil rights?",
+          "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+          "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+          "share": "Share your pair's combined conclusion with the class."
+        },
+        "prologue": "In 1963, the Bristol Omnibus Company refused to employ Black or Asian bus conductors, enforcing an open 'colour bar'. Inspired by Martin Luther King and Rosa Parks, local youth activists Paul Stephenson and Roy Hackett organised a citywide passenger boycott. How did community direct action force Britain’s first Race Relations Act?",
+        "video": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=uSyzaXXKUaQ",
+            "title": "The Story of the Bristol Bus Boycott (1963) | Black History Month",
+            "duration": "1 min 55 secs",
+            "pathway": "Starter Hook",
+            "teacher_guidance": "Concise animated overview of the April–August 1963 Bristol Bus Boycott organized by Paul Stephenson, Roy Hackett, and the West Indian Development Council against the Bristol Omnibus Company's ban on hiring Black or Asian bus crews. Recommended Watch Window: 00:00–01:55 (Full Clip) • Lesson Phase: Quick Starter Check (0–3m). Tone Alert: Fast, accessible animated summary.",
+            "viewing_task": "<ol><li><strong>[00:30] Quick Check:</strong> What discriminatory employment policy was openly enforced by the Bristol Omnibus Company in 1963 regarding bus drivers and conductors?</li><li><strong>[01:15] Hinge Question:</strong> How did American civil rights activist Rosa Parks and the Montgomery Bus Boycott inspire young Black activists in Bristol to launch a consumer boycott?</li></ol>",
+            "model_answer": "<ol><li><strong>Quick Check:</strong> A complete \"colour bar\" banning Black or Asian people from being employed as bus drivers or conductors (only white workers were hired).</li><li><strong>Hinge Question:</strong> Paul Stephenson recognized that direct consumer action and economic pressure had successfully desegregated buses in Alabama. By organizing Bristol's Caribbean community and university students to refuse to ride the buses, they mobilized national media scrutiny, proving that peaceful boycott tactics could defeat institutional racism in Britain.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=rQXwh__d2S4",
+            "title": "How the Bristol bus boycott changed UK civil rights | BBC Witness History",
+            "duration": "3 mins 45 secs",
+            "pathway": "Enquiry Evidence",
+            "teacher_guidance": "BBC Witness History interview with civil rights pioneer Paul Stephenson, detailing the test case with Guy Bailey, the 60-day boycott, support from MP Tony Benn, and the company's capitulation on 28 August 1963. Recommended Watch Window: 00:30–03:45 • Lesson Phase: Guided Instruction & Archival Investigation. Tone Alert: Stirring oral history featuring primary radio dispatches and eyewitness reflection.",
+            "viewing_task": "<ol><li><strong>[01:00] Recall:</strong> What happened when 18-year-old Guy Bailey was sent by Paul Stephenson for an interview at the Bristol Omnibus Company in April 1963?</li><li><strong>[02:15] Explain:</strong> Explain the role played by local Bristol MP Tony Benn and Labour leader Harold Wilson in applying political pressure to overturn the bus company's colour bar.</li><li><strong>[03:10] Challenge:</strong> Evaluate the direct causal link between the victory of the Bristol Bus Boycott in August 1963 and the passage of Britain's first Race Relations Act in 1965.</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> When the receptionist saw Bailey was Black, she canceled the interview immediately, stating: \"We don't employ Black people on the buses.\"</li><li><strong>Explain:</strong> Tony Benn declared the company's policy a national disgrace in parliamentary debates, while Harold Wilson pledged at a London rally that a future Labour government would outlaw racial discrimination in employment, elevating a local city dispute into a national political priority.</li><li><strong>Challenge:</strong> The boycott ended on 28 August 1963 (the very day Martin Luther King Jr delivered his \"I Have a Dream\" speech). The public victory proved that moral persuasion was insufficient: without statutory legal penalties, private companies and trade unions could openly discriminate with impunity. When Harold Wilson was elected Prime Minister in 1964, his administration passed the Race Relations Act 1965, Britain's first legislation outlawing racial discrimination in public places.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=kZfFvsKDuUU",
+            "title": "Pressure (1976, Horace Ové) | BFI Cinematic Restoration Trailer",
+            "duration": "2 mins 31 secs",
+            "pathway": "Cinematic",
+            "teacher_guidance": "Trailer for Horace Ové's historic film, recognized as Britain's first feature-length Black fiction film. Chronicles Tony, a British-born Black teenager leaving school with excellent qualifications who faces continuous rejection in job interviews due to racism. Recommended Watch Window: 00:00–02:31 (Full Trailer). Lesson Phase: Cinematic Starter Hook & Second-Generation Identity. Tone Alert: Raw, realistic social drama.",
+            "viewing_task": "<p><strong>Cinematic Discussion Focus:</strong> Notice Tony's experience of feeling caught between two worlds: his Trinidadian parents advising patience and compliance, versus his older brother advocating radical Black Power activism, while white British society refuses to employ him. How does this film capture the frustration that led second-generation Black Britons to demand genuine legal equality?</p>",
+            "model_answer": "<p><strong>Cinematic Analysis:</strong> Ové's groundbreaking film portrays the generational divide within Britain's Black community in the 1970s. Unlike their immigrant parents who tolerated second-class treatment, British-born youth considered themselves 100% British and refused to accept the \"colour bar\", fueling the civil rights protests and legal challenges that expanded the 1976 Race Relations Act.</p>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=AYWsUXQrLYw",
+            "title": "Civil Rights in Britain: The Battle for the Race Relations Acts | BBC Documentary",
+            "duration": "58 mins 26 secs",
+            "pathway": "Documentary",
+            "teacher_guidance": "In-depth documentary analyzing the progression of British civil rights legislation: from the narrow 1965 Act, through the 1968 Act (sparked by Enoch Powell's \"Rivers of Blood\" speech), to the landmark 1976 Race Relations Act and the creation of the Commission for Racial Equality. Recommended Watch Window: 15:00–27:00 • Lesson Phase: Guided Instruction & Legal Progress. Tone Alert: Rigorous political documentary detailing cabinet debates and public reactions.",
+            "viewing_task": "<ol><li><strong>[08:45] Recall:</strong> What conservative politician delivered the inflammatory \"Rivers of Blood\" speech in Birmingham in April 1968, fiercely opposing the 1968 Race Relations Bill?</li><li><strong>[16:30] Explain:</strong> Explain why the original 1965 Race Relations Act was criticized as toothless, and what crucial protections (housing, employment, and incitement to racial hatred) were added in 1968 and 1976.</li><li><strong>[24:15] Challenge:</strong> Evaluate whether civil rights legislation alone could eradicate racism in Britain: how did the 1981 Brixton riots and Lord Scarman's report expose ongoing institutional discrimination?</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> Enoch Powell (Conservative Shadow Defence Secretary, immediately sacked by Edward Heath).</li><li><strong>Explain:</strong> The 1965 Act only covered public places (hotels and pubs), carried no criminal penalties, and relied on voluntary conciliation. The 1968 Act extended bans to employment and private housing, while the 1976 Act introduced the concept of \"indirect discrimination\" and created the Commission for Racial Equality (CRE) with powers to investigate organizations.</li><li><strong>Challenge:</strong> While laws made overt discrimination illegal, they could not easily eliminate subconscious prejudice or institutional bias. The 1981 Brixton riots erupted against aggressive police \"Operation Swamp 81\" (stop-and-search under the 1824 Vagrancy Act). Lord Scarman's inquiry concluded that deep social deprivation, unemployment, and police insensitivity created racial tension, showing that legal equality required broader economic and institutional reform.</li></ol>"
           }
         ]
       },
-      "pair_share": {
-        "prompt": "Discuss with your partner: How did nuclear paranoia shape British popular culture?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
-      },
-      "prologue": "During the Cold War, nuclear anxiety penetrated everyday British life. Schoolchildren learned to 'Duck and Cover', television broadcast chilling government survival films, and underground bunkers were dug for politicians in the Chilterns. How did the ever-present shadow of the atomic bomb transform British popular culture, protest, and domestic life?",
-      "video": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=UgOybc8Jdoo",
-          "title": "Nuclear Attack: Protect & Survive: Action After Warnings (1975) | CharlieDeanArchives",
-          "duration": "4 mins 14 secs",
-          "teacher_guidance": "Authentic Cold War British public information film produced by the Central Office of Information for the Home Office. Instructs families on creating 'fallout rooms' and inner core shelters with doors and sandbags.",
-          "viewing_task": "What survival instructions did the British government's 'Protect and Survive' campaign give citizens in the event of a nuclear strike, and why was it criticised?",
-          "model_answer": "The British government's 'Protect and Survive' campaign advised families to prepare an 'inner core shelter' inside the safest room of their house—typically under stairs or using unhinged doors leaned against walls and packed with sandbags, mattresses, and books to absorb fallout radiation. Citizens were instructed to hoard 14 days of canned food and water, paint window panes white with slaked lime to reflect thermal flash, and remain sheltered until official radio broadcasts sounded the all-clear. However, the campaign faced intense public mockery and political criticism from groups like the Campaign for Nuclear Disarmament (CND) and scientist E.P. Thompson, who pointed out that flimsy domestic lean-to shelters provided zero real protection against the blast, heat, and lethal fallout of multi-megaton thermonuclear warheads."
-        },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=glYUnmhi5zU",
-          "title": "York Cold War Bunker | 10 Places That Made England with Dan Snow | English Heritage",
-          "duration": "8 mins 17 secs",
-          "teacher_guidance": "Historian Dan Snow tours the semi-subterranean York Cold War Bunker, built in 1961 for the Royal Observer Corps (ROC) to monitor nuclear fallout and calculate blast yields.",
-          "viewing_task": "What was the purpose of the York Cold War Bunker, and what role did Royal Observer Corps volunteers play in Britain's civil defence?",
-          "model_answer": "Built in 1961 during the height of Cold War tensions, the York Cold War Bunker served as the blast-proof headquarters for the No. 20 Group of the Royal Observer Corps (ROC). Designed with massive reinforced concrete walls, decontamination airlocks, and independent air filtration systems, the bunker was engineered to shelter 60 volunteers sealed inside for up to 30 days during a thermonuclear attack. The ROC's mission was to triangulate atomic detonations using pinhole Bomb Power Indicators (BPIs), track lethal radioactive fallout plumes with survey meters, and relay fallout warnings to local authorities and military command posts across Yorkshire to coordinate emergency responses."
-        }
-      ]
-    },
-    {
-      "title": "Assessment: How has British identity transformed since 1945?",
-      "card_image": "/images/festival_of_britain_1951.jpg",
-      "card_position": "center 40%",
-      "narrative_blocks": [
-        {
-          "text": "Placeholder content for Assessment: How has British identity transformed since 1945?",
-          "level_2": "",
-          "level_3": "",
-          "level_4": ""
-        }
-      ],
-      "do_now": {
-        "type": "standard",
-        "questions": []
-      },
-      "comprehension": [],
-      "source_tasks": [],
-      "teacher_notes": {
-        "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
-        "objectives": [
+      {
+        "title": "The Cold War on the Home Front: How did nuclear paranoia shape British popular culture?",
+        "card_image": "/images/york_cold_war_bunker.jpg",
+        "card_position": "center center",
+        "narrative_blocks": [
           {
-            "objective": "Understand the core concepts of Assessment: How has British identity transformed since 1945?",
-            "primer": "Guide students through the narrative and focus on the key turning points.",
-            "question": "What is the most significant consequence of the events studied today?"
+            "act": 1,
+            "title": "The Nuclear Shadow & Postwar British Deterrence (1945–1958)",
+            "text": "<span class=\"para-ref\">[5.1]</span> Following the atomic devastation of Hiroshima and Nagasaki in August 1945, Britain entered the Cold War under the constant threat of nuclear annihilation. Determined that Britain should remain an independent Great Power and not rely solely on the United States, Prime Minister Clement Attlee secretly authorised the construction of Britain’s own nuclear deterrent in 1947. Britain successfully tested its first atomic bomb in 1952 (Operation Hurricane) and its first thermonuclear hydrogen bomb in 1957.<br><br><span class=\"para-ref\">[5.2]</span> As the Soviet Union developed intercontinental ballistic missiles, the British Isles became a frontline target. Situated between Washington and Moscow and hosting American strategic bomber bases, Britain was uniquely vulnerable to catastrophic nuclear attack, creating pervasive civilian anxiety that permeated postwar domestic life and popular culture."
+          },
+          {
+            "act": 2,
+            "title": "The Peace Movement: CND & The Aldermaston Marches (1958–1965)",
+            "text": "<span class=\"para-ref\">[5.3]</span> In February 1958, public horror at nuclear fallout led prominent philosophers, scientists, and journalists—including <strong>Bertrand Russell</strong>, Canon John Collins, and J.B. Priestley—to establish the <strong>Campaign for Nuclear Disarmament (CND)</strong>. Artist Gerald Holtom designed the universal CND peace symbol, combining the semaphore signals for the letters 'N' (Nuclear) and 'D' (Disarmament) inside a circle representing the Earth.<br><br><span class=\"para-ref\">[5.4]</span> Over the 1958 Easter weekend, the CND organised the first <strong>Aldermaston March</strong>, leading thousands of demonstrators on a fifty-two-mile trek from Trafalgar Square to the Atomic Weapons Research Establishment in Berkshire. The annual marches drew tens of thousands of young people, trade unionists, and families, forging a mass protest culture that challenged government nuclear policy and popularized anti-war music, literature, and fashion across Britain."
+          },
+          {
+            "act": 3,
+            "title": "Civil Defence, The York Bunker & 'Protect and Survive' (1961–1980)",
+            "text": "<span class=\"para-ref\">[5.5]</span> To maintain national command during thermonuclear war, the government built a covert network of subterranean bunkers. In 1961, the semi-underground <strong>York Cold War Bunker</strong> was constructed as the regional headquarters for the <strong>Royal Observer Corps (ROC)</strong>. Designed with blast-proof reinforced concrete, airlocks, and air filters, sixty ROC volunteers were tasked with surviving thirty days sealed underground to triangulate bomb detonation coordinates using Bomb Power Indicators (BPIs) and plot lethal fallout plumes on wall maps.<br><br><span class=\"para-ref\">[5.6]</span> For ordinary families, the Home Office established an air-raid siren network linked to RAF Fylingdales, designed to give the public a chilling <strong>\"Four-Minute Warning\"</strong> before missile impact. In May 1980, the government published the infamous <strong>\"Protect and Survive\"</strong> booklet, advising citizens to build domestic \"inner core shelters\" using unhinged doors leaned against walls and packed with sandbags. Mocked by peace activists as dangerously naive, nuclear paranoia shaped an entire generation, inspiring haunting anti-war pop anthems, Raymond Briggs’ graphic novel <em>When the Wind Blows</em> (1982), and the chilling BBC drama <em>Threads</em> (1984)."
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
+        },
+        "comprehension": [],
+        "source_tasks": [],
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of The Cold War on the Home Front: How did nuclear paranoia shape British popular culture?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "pair_share": {
+          "prompt": "Discuss with your partner: How did nuclear paranoia shape British popular culture?",
+          "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+          "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+          "share": "Share your pair's combined conclusion with the class."
+        },
+        "prologue": "During the Cold War, nuclear anxiety penetrated everyday British life. Schoolchildren learned to 'Duck and Cover', television broadcast chilling government survival films, and underground bunkers were dug for politicians in the Chilterns. How did the ever-present shadow of the atomic bomb transform British popular culture, protest, and domestic life?",
+        "video": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=UgOybc8Jdoo",
+            "title": "Nuclear Attack: Protect & Survive: Action After Warnings (1975) | CharlieDeanArchives",
+            "duration": "4 mins 14 secs",
+            "pathway": "Starter Hook",
+            "teacher_guidance": "Authentic Cold War British public information film produced by the Central Office of Information for the Home Office. Instructs families on creating fallout rooms and inner core shelters with doors and sandbags. Recommended Watch Window: 00:00–03:45 • Lesson Phase: Quick Starter Check (0–3m). Tone Alert: Eerie, bureaucratic Cold War instructional film.",
+            "viewing_task": "<ol><li><strong>[01:00] Quick Check:</strong> What survival instructions did the British government's \"Protect and Survive\" campaign give citizens regarding building an \"inner core shelter\"?</li><li><strong>[02:30] Hinge Question:</strong> Why did the Campaign for Nuclear Disarmament (CND) condemn the guidance as a dangerous deception designed to normalize nuclear war?</li></ol>",
+            "model_answer": "<ol><li><strong>Quick Check:</strong> To unhinge doors, lean them against an interior wall at an angle, and pack them with mattresses, sandbags, and heavy books to absorb radiation.</li><li><strong>Hinge Question:</strong> The CND argued that leaning wooden doors against a wall provided zero protection against the blast, 3,000°C firestorms, and intense fallout of multi-megaton thermonuclear warheads. Presenting nuclear war as survivable misled the public and legitimized the government's nuclear weapons policy.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=glYUnmhi5zU",
+            "title": "York Cold War Bunker | 10 Places That Made England with Dan Snow | English Heritage",
+            "duration": "8 mins 17 secs",
+            "pathway": "Enquiry Evidence",
+            "teacher_guidance": "Historian Dan Snow tours the semi-subterranean York Cold War Bunker, built in 1961 for the Royal Observer Corps (ROC) to monitor nuclear fallout and calculate blast yields. Recommended Watch Window: 01:00–06:30 • Lesson Phase: Guided Instruction & Civil Defence Reality. Tone Alert: Engaging historical investigation inside a real blast-proof bunker.",
+            "viewing_task": "<ol><li><strong>[01:45] Recall:</strong> What volunteer civil defence organization staffed the York bunker, and how long were 60 volunteers expected to survive locked inside during a nuclear exchange?</li><li><strong>[03:40] Explain:</strong> Explain how Royal Observer Corps volunteers used Bomb Power Indicators (BPIs) and survey meters to triangulate Soviet nuclear detonations and map radioactive fallout across northern England.</li><li><strong>[05:50] Challenge:</strong> Evaluate the grim reality of Cold War civil defence: could a bunker of 60 volunteers actually coordinate meaningful post-attack medical relief for millions of injured citizens?</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> The Royal Observer Corps (ROC); up to 30 days sealed inside.</li><li><strong>Explain:</strong> Volunteers used pinhole cameras on the surface to record the direction and height of flashes, calculating blast power. Inside, plotters mapped wind directions on Perspex boards to predict where lethal radioactive fallout clouds would drift, broadcasting siren warnings to local authorities.</li><li><strong>Challenge:</strong> In reality, post-attack rescue was a logistical impossibility. With roads destroyed, water mains vaporized, hospitals pulverized, and fallout lethal for weeks, volunteers could only document the destruction. Civil defence was primarily a psychological deterrence mechanism to reassure the public that Britain retained government continuity.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=vgT4Y30DkaA",
+            "title": "Threads (1984, Mick Jackson / BBC) | Original Theatrical Trailer",
+            "duration": "2 mins 24 secs",
+            "pathway": "Cinematic",
+            "teacher_guidance": "Acclaimed BAFTA-winning BBC film portraying the catastrophic impact of a nuclear strike on Sheffield. Directed by Mick Jackson and written by Barry Hines, it shattered illusions of nuclear survivability. Recommended Watch Window: 00:00–02:24 (Full Trailer). Lesson Phase: Cinematic Starter Hook & Nuclear Reality. Tone Alert: Uncompromising, chilling depiction of nuclear catastrophe.",
+            "viewing_task": "<p><strong>Cinematic Discussion Focus:</strong> Notice how <em>Threads</em> depicts the sudden disintegration of electricity, medical care, communication, and societal order in Sheffield following a nuclear attack, followed by decades of nuclear winter, radiation poisoning, and subsistence farming. Why did this film have such a profound impact on British public opinion and government civil defence policy in the 1980s?</p>",
+            "model_answer": "<p><strong>Cinematic Analysis:</strong> The trailer strips away heroic wartime mythology to present the unvarnished scientific reality of thermonuclear war. By focusing on ordinary working-class Sheffield families rather than politicians or soldiers, it graphically illustrated that civil defense manuals like 'Protect and Survive' were completely useless against megaton weapons, fueling the growth of CND and anti-nuclear protests like Greenham Common.</p>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=7yrv505R-0U",
+            "title": "Protect and Survive: Complete Civil Defence Archive (Remastered)",
+            "duration": "48 mins 50 secs",
+            "pathway": "Documentary",
+            "teacher_guidance": "The complete 20-part Home Office civil defence series, examining the reality of warning sirens (\"Attack Warning Red\"), fallout rooms, sanitation, and food storage. Recommended Watch Window: 02:00–14:30 • Lesson Phase: In-Depth Documentary Investigation & Cold War Paranoia. Tone Alert: Cold, clinical government broadcasting reflecting 1970s nuclear anxiety.",
+            "viewing_task": "<ol><li><strong>[04:15] Recall:</strong> What siren sound and radio broadcast message designated that an enemy ballistic missile attack was imminent within four minutes?</li><li><strong>[08:40] Explain:</strong> Describe the government's advice on water decontamination, sanitation, and waste disposal inside an \"inner core shelter\".</li><li><strong>[13:20] Challenge:</strong> Evaluate why the BBC refused to broadcast these public information films in peacetime, fearing mass panic and civil unrest.</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> \"Attack Warning Red\" (a rising and falling four-minute siren note broadcast over local sirens and BBC radio).</li><li><strong>Explain:</strong> Families were told to turn off mains gas and water to prevent ruptured mains explosions, store 14 days of canned water in sealed containers, and use polythene bags and buckets for human waste, remaining sealed in their makeshift shelter until radiation levels dropped.</li><li><strong>Challenge:</strong> Cabinet records reveal ministers recognized that broadcasting the grim instructions would trigger nationwide hoarding, property market collapses, and mass hysteria. Furthermore, exposing the crude reality of cardboard-and-mattress shelters would destroy public confidence in Britain's independent nuclear deterrent, prompting the government to lock the tapes in a vault for wartime broadcast only.</li></ol>"
           }
         ]
       },
-      "pair_share": {
-        "prompt": "Discuss with your partner: Has British identity transformed completely since 1945?",
-        "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
-        "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
-        "share": "Share your pair's combined conclusion with the class."
-      },
-      "prologue": "Since 1945, Britain has evolved from a bankrupt global empire into a diverse, multicultural, and modern society. Through immigration, decolonisation, the welfare state, and changing social values, the meaning of 'Britishness' was continuously questioned and redefined. How has British national identity transformed over the past eighty years?",
-      "video": [
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=i4U3o4adeP8",
-          "title": "Festival Of Britain - Short Version (1951) | British Pathé",
-          "duration": "2 mins 36 secs",
-          "teacher_guidance": "Archival newsreel showcasing the 1951 Festival of Britain on London's South Bank, designed by Clement Attlee's Labour government as a 'tonic to the nation' to celebrate modern British design, science, and democratic vitality.",
-          "viewing_task": "What was the primary purpose of the 1951 Festival of Britain, and how did it represent a reimagining of British post-war identity?",
-          "model_answer": "The 1951 Festival of Britain was commissioned by Clement Attlee's government to mark the centenary of Prince Albert's 1851 Great Exhibition and provide a 'tonic to the nation' following six years of wartime destruction and grim post-war austerity. Located on London's regenerated South Bank, the exhibition showcased futuristic British architecture, modernist engineering (such as the Skylon and the Dome of Discovery), and technological innovation. It represented a deliberate shift in British identity away from imperial militarism toward modern social democracy, civic optimism, scientific prowess, and cultural renewal."
+      {
+        "title": "Assessment: How has British identity transformed since 1945?",
+        "card_image": "/images/festival_of_britain_1951.jpg",
+        "card_position": "center 40%",
+        "narrative_blocks": [
+          {
+            "text": "Placeholder content for Assessment: How has British identity transformed since 1945?",
+            "level_2": "",
+            "level_3": "",
+            "level_4": ""
+          }
+        ],
+        "do_now": {
+          "type": "standard",
+          "questions": []
         },
-        {
-          "type": "youtube",
-          "url": "https://www.youtube.com/watch?v=qoo3gnKaUzM",
-          "title": "Post War Britain 1945–1979 | History Skimmed",
-          "duration": "10 mins 17 secs",
-          "teacher_guidance": "Comprehensive thematic synoptic overview tracing post-war Britain from 1945 to 1979: the welfare state, decolonisation and loss of Empire, Commonwealth immigration, cultural revolution, and youth culture.",
-          "viewing_task": "How did decolonisation, Commonwealth immigration, and changing social values transform the definition of 'Britishness' between 1945 and the late 1970s?",
-          "model_answer": "Between 1945 and the late 1970s, British national identity underwent a profound transformation on multiple fronts. Geopolitically, the rapid decline and collapse of the British Empire (marked by Indian independence in 1947, the 1956 Suez Crisis, and Harold Macmillan's 1960 'Wind of Change') dismantled the traditional identity of Britain as a global imperial ruler. Demographically and culturally, the arrival of hundreds of thousands of Commonwealth citizens from the Caribbean, India, Pakistan, and Bangladesh created a diverse, multi-ethnic society, celebrated in music, food, and civil rights activism despite enduring racial prejudice. Domestically, universal healthcare (the NHS), compulsory secondary education (1944 Butler Act), the expansion of higher education, and the liberalising legislation of the 1960s (decriminalisation of homosexuality, legalisation of abortion, and abolition of theatre censorship) reshaped Britain into a more secular, pluralistic, and tolerant modern democracy."
-        }
-      ]
-    }
-  ],
-  "key_individuals": [],
-  "terminology": [],
-  "workbooks": [],
-  "specification_file": ""
+        "comprehension": [],
+        "source_tasks": [],
+        "teacher_notes": {
+          "primer": "This lesson requires teacher input. Explain the overarching pedagogical goal of this lesson.",
+          "objectives": [
+            {
+              "objective": "Understand the core concepts of Assessment: How has British identity transformed since 1945?",
+              "primer": "Guide students through the narrative and focus on the key turning points.",
+              "question": "What is the most significant consequence of the events studied today?"
+            }
+          ]
+        },
+        "pair_share": {
+          "prompt": "Discuss with your partner: Has British identity transformed completely since 1945?",
+          "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
+          "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
+          "share": "Share your pair's combined conclusion with the class."
+        },
+        "prologue": "Since 1945, Britain has evolved from a bankrupt global empire into a diverse, multicultural, and modern society. Through immigration, decolonisation, the welfare state, and changing social values, the meaning of 'Britishness' was continuously questioned and redefined. How has British national identity transformed over the past eighty years?",
+        "video": [
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=i4U3o4adeP8",
+            "title": "Festival Of Britain (1951) | British Pathé",
+            "duration": "2 mins 36 secs",
+            "pathway": "Starter Hook",
+            "teacher_guidance": "Archival newsreel showcasing the 1951 Festival of Britain on London's South Bank, designed by Clement Attlee's Labour government as a 'tonic to the nation' to celebrate modern British design, science, and democratic vitality. Recommended Watch Window: 00:00–02:36 (Full Clip) • Lesson Phase: Quick Starter Check (0–3m). Tone Alert: Optimistic, patriotic period newsreel.",
+            "viewing_task": "<ol><li><strong>[00:45] Quick Check:</strong> What landmark centenary anniversary was the 1951 Festival of Britain on London's South Bank commissioned to commemorate?</li><li><strong>[01:45] Hinge Question:</strong> How did the modernist architecture and scientific focus of the Festival represent a conscious shift away from Victorian imperial conquest toward modern civic progress?</li></ol>",
+            "model_answer": "<ol><li><strong>Quick Check:</strong> The centenary of Prince Albert's 1851 Great Exhibition of the Works of Industry of All Nations.</li><li><strong>Hinge Question:</strong> Rather than exhibiting colonial trophies or imperial dominance, the 1951 Festival showcased British democratic design, social housing, cutting-edge science, and cultural arts, redefining British identity around post-war democratic reconstruction, welfare, and technological optimism.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=qoo3gnKaUzM",
+            "title": "Post War Britain 1945–1979 | History Skimmed",
+            "duration": "10 mins 17 secs",
+            "pathway": "Enquiry Evidence",
+            "teacher_guidance": "Comprehensive thematic synoptic overview tracing post-war Britain from 1945 to 1979: the welfare state, decolonisation and loss of Empire, Commonwealth immigration, cultural revolution, and youth culture. Recommended Watch Window: 01:00–07:30 • Lesson Phase: Guided Instruction & Synoptic Investigation. Tone Alert: Clear, structured educational narrative.",
+            "viewing_task": "<ol><li><strong>[02:15] Recall:</strong> Name two major diplomatic and military crises (1947 and 1956) that signaled the rapid retreat of the British Empire after the Second World War.</li><li><strong>[04:40] Explain:</strong> Explain how the liberalising legislation of the 1960s (Roy Jenkins' reforms) transformed legal boundaries regarding personal freedom in Britain.</li><li><strong>[07:10] Challenge:</strong> Synoptic Evaluation: How did the combination of Commonwealth immigration and decolonisation permanently dismantle the traditional homogeneous concept of \"Britishness\"?</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> The independence and partition of India (1947) and the Suez Crisis (1956).</li><li><strong>Explain:</strong> Parliament decriminalised homosexuality between consenting adult men (1967), legalised abortion under medical supervision (1967), modernized divorce laws (1969), and abolished the Lord Chamberlain's theatre censorship (1968), creating a more permissive, secular society.</li><li><strong>Challenge:</strong> For centuries, \"Britishness\" was defined through an overseas empire, Anglican Protestantism, and ethnic homogeneity. The loss of colonies compelled Britain to look toward European trade, while the arrival of citizens from the Caribbean, South Asia, and Africa made Britain a multiracial society, forcing a reimagining of national identity based on shared civic values and pluralism rather than imperial heritage.</li></ol>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=jX398kx-OCM",
+            "title": "The Iron Lady (2011, Phyllida Lloyd / Meryl Streep) | Official Movie Trailer",
+            "duration": "2 mins 19 secs",
+            "pathway": "Cinematic",
+            "teacher_guidance": "Portrays Margaret Thatcher confronting political consensus and transforming Britain's economy from collective social democracy to individual enterprise. Recommended Watch Window: 00:00–02:19 (Full Trailer). Lesson Phase: Cinematic Starter Hook & Ideological Transformation. Tone Alert: Powerful biographical drama.",
+            "viewing_task": "<p><strong>Cinematic Discussion Focus:</strong> Notice Meryl Streep's portrayal of Thatcher's conviction that Britain's post-war decline required smashing state intervention and union power. How does the trailer illustrate the profound ideological battle between collectivist social democracy and individualist free-market capitalism that redefined modern Britain?</p>",
+            "model_answer": "<p><strong>Cinematic Analysis:</strong> The trailer captures Thatcher's radical belief that Britain had become stagnant under the post-war welfare state. Her policies of privatisation, council house sales (Right to Buy), and financial deregulation dismantled the 1945 consensus, establishing a culture of individual entrepreneurship and home ownership that permanently transformed modern British society.</p>"
+          },
+          {
+            "type": "youtube",
+            "url": "https://www.youtube.com/watch?v=AYWsUXQrLYw",
+            "title": "Andrew Marr's History of Modern Britain: Advance Britannia to Revolution",
+            "duration": "58 mins 26 secs",
+            "pathway": "Documentary",
+            "teacher_guidance": "Comprehensive synoptic capstone exploring how Britain transformed from a battered imperial monarchy in 1945 into a multicultural, service-based European democracy by the end of the 20th century. Recommended Watch Window: 18:00–32:00 • Lesson Phase: Synoptic Capstone & Historiographical Evaluation. Tone Alert: Masterful, engaging historical narrative from Andrew Marr.",
+            "viewing_task": "<ol><li><strong>[06:30] Recall:</strong> How did the 1956 Suez Crisis permanently alter Britain's geopolitical status as an independent global superpower?</li><li><strong>[19:40] Explain:</strong> Explain how 1960s social legislation transformed the relationship between the British state and private individual morality.</li><li><strong>[28:15] Challenge:</strong> Synoptic Assessment: Evaluate the central question—is modern Britain defined more by the collective social democratic legacy of 1945 or the individualist free-market revolution of 1979?</li></ol>",
+            "model_answer": "<ol><li><strong>Recall:</strong> When President Eisenhower threatened to collapse the British pound unless British and French forces withdrew from Egypt, it proved Britain could no longer wage war or project power globally without United States approval.</li><li><strong>Explain:</strong> The reforming Home Secretary Roy Jenkins championed the decriminalisation of male homosexuality (Sexual Offences Act 1967), legalisation of abortion (1967), divorce reform (1969), and abolition of theatre censorship (1968), legally establishing that private adult conduct was no longer the business of criminal law.</li><li><strong>Challenge:</strong> Modern Britain is an enduring synthesis of both revolutions. The 1945 legacy endures in the universal moral attachment to the NHS and free state education, while the 1979 revolution created an open, consumerist, privatized market economy. Understanding modern Britain requires recognizing that both forces continually contest and shape the nation's civic identity.</li></ol>"
+          }
+        ]
+      }
+    ],
+    "key_individuals": [],
+    "terminology": [],
+    "workbooks": [],
+    "specification_file": ""
+  }
 }
