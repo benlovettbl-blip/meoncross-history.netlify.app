@@ -90,7 +90,7 @@ for (const relPath of allFiles) {
       // Check teacher lovett (excluding historical Chartist William Lovett)
       if (/lovett/i.test(line)) {
         const isHistoricalWilliamLovett =
-          /william[_\s]+lovett|leaders\s+like\s+lovett|lovett\s+and\s+o'connor|chartist|charter|people['’]s\s+charter/i.test(
+          /william[_\s-]+lovett|leaders\s+like\s+lovett|lovett\s+and\s+o'connor|chartist|charter|people['’]s\s+charter/i.test(
             line,
           );
         if (!isHistoricalWilliamLovett) {

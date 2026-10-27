@@ -522,6 +522,12 @@ const PDF_MAPPINGS = [
     dest: 'Early Elizabethan England Mastery Pack (KT3).pdf',
     category: 'Year 11 GCSE',
   },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
+    src: 'Early_Elizabethan_England_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Early Elizabethan England Master Knowledge Retrieval Companion.pdf',
+    category: 'Year 11 GCSE',
+  },
 
   // Year 10 (GCSE) - Conflict in the Middle East
   {
@@ -778,6 +784,12 @@ const PDF_MAPPINGS = [
     folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
     src: 'year10_germany_overdue_booster.pdf',
     dest: 'Year 10 Germany Overdue Work & Revision Booster.pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
+    src: 'Weimar_and_Nazi_Germany_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Weimar and Nazi Germany Master Knowledge Retrieval Companion.pdf',
     category: 'Year 10 GCSE',
   },
 

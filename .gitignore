@@ -22,3 +22,5 @@ public/screenshots/
 test_*.jpg
 weimar_sources_report.txt
 formatted_usa_links.md
+archive/historical_scripts/
+archive/*.html

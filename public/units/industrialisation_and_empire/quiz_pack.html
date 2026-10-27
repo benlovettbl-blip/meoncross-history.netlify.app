@@ -2,1168 +2,1854 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Industrialisation, Empire &amp; Power (1750–1901) &bull; Knowledge Retrieval &amp; Homework Companion</title>
+  <title>Industrialisation, Power & Protest (1750–1901) — Master Knowledge Retrieval Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
   <style>
-    @page {
-      size: A5 portrait;
-      margin: 0;
-    }
-    * {
-      box-sizing: border-box;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
+    
+  @page {
+    size: A5 portrait;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #000000;
+    background: #ffffff;
+    font-size: 8.8pt;
+    line-height: 1.25;
+  }
+  .a5-page {
+    width: 148mm;
+    height: 210mm;
+    padding: 6.5mm 9mm 6mm 9mm;
+    margin: 0 auto;
+    page-break-after: always;
+    break-after: page;
+    background: #ffffff;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .a5-page:last-child,
+  .a5-page:last-of-type {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+  @media screen {
     body {
-      margin: 0;
-      padding: 0;
-      background: #eaedf2;
-      color: #000000;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 8pt;
-      line-height: 1.25;
+      background: #334155;
+      padding: 20px 0;
     }
     .a5-page {
-      width: 148mm;
-      height: 210mm;
-      box-sizing: border-box;
-      margin: 0 auto;
-      overflow: hidden;
-      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      margin-bottom: 25px;
+    }
+  }
+  @media print {
+    body { background: transparent; }
+    .a5-page {
+      margin: 0;
+      box-shadow: none;
       page-break-after: always;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 4.5mm 5.5mm;
-      background: #ffffff;
+      break-after: page;
     }
-    .a5-page:last-child {
-      page-break-after: auto;
+    .a5-page:last-child,
+    .a5-page:last-of-type {
+      page-break-after: avoid !important;
+      break-after: avoid !important;
     }
-    .page-body-full {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 0;
-    }
-    .page-header-strip {
-      border-bottom: 2px solid #0f284e;
-      padding-bottom: 2.5px;
-      margin-bottom: 3.5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .page-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 8.8pt;
-      font-weight: 900;
-      color: #0f284e;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
-      margin: 0;
-    }
-    .page-enquiry-banner {
-      background: #f0f4f9;
-      border-left: 3px solid #0f284e;
-      padding: 2px 5px;
-      font-family: 'Georgia', serif;
-      font-size: 7.2pt;
-      font-style: italic;
-      color: #1e293b;
-      line-height: 1.2;
-      margin-bottom: 4px;
-    }
-    .page-footer-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-top: 0.8px solid #0f284e;
-      padding-top: 1.5px;
-      margin-top: 2px;
-      font-family: 'Inter', sans-serif;
-      font-size: 5.8pt;
-      font-weight: 700;
-      color: #0f284e;
-    }
-    .q-item {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 3px;
-    }
-    .q-stem {
-      display: flex;
-      align-items: baseline;
-      gap: 3.5px;
-      font-size: 7.2pt;
-      font-weight: 700;
-      color: #000000;
-      line-height: 1.18;
-    }
-    .pip-emerald { color: #059669; font-size: 6.5pt; }
-    .pip-amber { color: #d97706; font-size: 6.5pt; }
-    .pip-crimson { color: #dc2626; font-size: 6.5pt; }
-    .answer-line {
-      border-bottom: 1.1px solid #000000;
-      height: 5.6mm;
-      width: 100%;
-      margin: 0;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 0.5px;
-      box-sizing: border-box;
-    }
-    .line-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 5.6pt;
-      font-weight: 800;
-      color: #64748b;
-      text-transform: uppercase;
-      margin-right: 4px;
-    }
+  }
+
+  .page-flex-full {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  /* Headers and Footers */
+  .page-header-strip {
+    border-bottom: 1.5px solid #000000;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .page-header-strip h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10.4pt;
+    font-weight: 800;
+    margin: 0;
+    color: #000000;
+    line-height: 1.1;
+  }
+  .page-header-strip p {
+    margin: 1px 0 0 0;
+    font-size: 7.0pt;
+    color: #000000;
+    font-weight: 600;
+    font-style: italic;
+  }
+  .page-tag {
+    font-size: 6.4pt;
+    font-weight: 800;
+    background: #000000;
+    color: #ffffff;
+    padding: 2px 6px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .page-footer-strip {
+    font-size: 6.6pt;
+    color: #000000;
+    border-top: 1.2px solid #000000;
+    padding-top: 2px;
+    margin-top: 2px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+  }
+
+  /* Cover Page Styling (Page 1) */
+  .cover-banner {
+    background: #000000;
+    color: #ffffff;
+    padding: 4.5px 8px;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 7.0pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .cover-header-block {
+    text-align: center;
+    padding: 6px 6px 5px 6px;
+    background: #f8fafc;
+    border-left: 1.2px solid #000000;
+    border-right: 1.2px solid #000000;
+  }
+  .cover-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12.8pt;
+    font-weight: 800;
+    color: #000000;
+    line-height: 1.15;
+    margin: 0 0 2px 0;
+  }
+  .cover-subtitle {
+    font-size: 7.2pt;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin: 0;
+  }
+
+  /* Pupil Box */
+  .pupil-box {
+    background: #ffffff;
+    border: 1.2px solid #000000;
+    border-top: none;
+    padding: 5px 8px;
+    font-size: 7.6pt;
+    color: #000000;
+  }
+  .pupil-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr 1.5fr;
+    gap: 8px;
+    align-items: center;
+  }
+  .pupil-field {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .pupil-field span.lbl {
+    font-weight: 800;
+    color: #000000;
+    white-space: nowrap;
+  }
+  .pupil-field span.line {
+    border-bottom: 1.2px solid #000000;
+    flex: 1;
+    min-height: 11px;
+  }
+
+  /* Cover Archival Plate */
+  .cover-map-container {
+    margin: 2.5px 0;
+    text-align: center;
+    background: #ffffff;
+    border: 1.2px solid #000000;
+    border-radius: 4px;
+    padding: 2.5px 5px;
+  }
+  .cover-map-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-height: 48mm;
+  }
+  .cover-map-img {
+    max-height: 48mm;
+    max-width: 100%;
+    object-fit: contain;
+    border: 1.2px solid #000000;
+    border-radius: 2px;
+  }
+  .cover-map-caption {
+    font-size: 6.0pt;
+    color: #000000;
+    margin-top: 1.8px;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  /* Formative Tracking Table */
+  .ledger-container {
+    margin-top: 2.5px;
+  }
+  .tracking-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 6.8pt;
+    background: #ffffff;
+    color: #000000;
+  }
+  .tracking-table th {
+    background: #000000;
+    color: #ffffff;
+    font-weight: 800;
+    padding: 3.5px 3.5px;
+    border: 1px solid #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.1px;
+    text-align: center;
+    font-size: 6.8pt;
+  }
+  .tracking-table td {
+    border: 1px solid #000000;
+    padding: 5.5px 4.0px;
+    text-align: center;
+    vertical-align: middle;
+    color: #000000;
+  }
+  .tracking-table td.left-title {
+    text-align: left;
+    color: #000000;
+  }
+  .tb-lesson-title {
+    font-weight: 800;
+    font-size: 7.2pt;
+    color: #000000;
+    line-height: 1.15;
+  }
+  .tb-lesson-enquiry {
+    font-size: 5.7pt;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-top: 1px;
+  }
+  .tb-lesson-desc {
+    font-size: 5.7pt;
+    color: #1e293b;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-top: 1px;
+  }
+  .score-line {
+    display: inline-block;
+    width: 14px;
+    border-bottom: 1.2px solid #000000;
+  }
+  .date-line {
+    display: block;
+    width: 44px;
+    margin: 0 auto;
+    border-bottom: 1.2px solid #000000;
+    height: 12px;
+  }
+  .parent-sig-line {
+    display: block;
+    width: 55px;
+    margin: 0 auto;
+    border-bottom: 1.2px solid #000000;
+    height: 12px;
+  }
+
+  /* Partner Quiz / Instructions Banner */
+  .instructions-banner {
+    background: #f8fafc;
+    border: 1.2px solid #000000;
+    border-radius: 3px;
+    padding: 3px 6px;
+    margin-top: 3px;
+    font-size: 6.2pt;
+    line-height: 1.25;
+    color: #000000;
+  }
+  .instructions-banner strong {
+    color: #000000;
+    text-transform: uppercase;
+  }
+
+  /* QR Strip */
+  .qr-strip {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1.2px solid #000000;
+    border-radius: 4px;
+    padding: 3px 6px;
+    gap: 8px;
+    margin-top: 3px;
+    margin-bottom: 1px;
+    color: #000000;
+  }
+  .qr-code-img {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+  .qr-caption-text {
+    font-size: 6.2pt;
+    color: #000000;
+    line-height: 1.18;
+    text-align: left;
+    font-weight: 700;
+  }
+
+  /* Horizontal 5-Event Chronological Spine */
+  .spine-strip {
+    background: #f8fafc;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin: 2px 0 2px 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .spine-lbl {
+    font-size: 5.2pt;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    color: #000000;
+    white-space: nowrap;
+    border-right: 1px solid #000000;
+    padding-right: 4px;
+    line-height: 1.1;
+    text-align: center;
+  }
+  .spine-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    gap: 2px;
+  }
+  .spine-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+  }
+  .spine-date-pill {
+    background: #000000;
+    color: #ffffff;
+    font-size: 5.2pt;
+    font-weight: 800;
+    padding: 0.5px 3.5px;
+    border-radius: 2px;
+    white-space: nowrap;
+    line-height: 1.1;
+  }
+  .spine-event-title {
+    font-size: 5.4pt;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.1;
+    margin-top: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 82px;
+  }
+  .spine-arrow {
+    font-size: 5.8pt;
+    color: #64748b;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin: 0 1px;
+  }
+
+  /* Pages 2–6: Dedicated Question Page Layout */
+  .q-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    margin: 3px 0 2px 0;
+  }
+  .q-block {
+    background: #ffffff;
+    border: 1.2px solid #000000;
+    border-radius: 3px;
+    padding: 4px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5px;
+  }
+  .q-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 9.4pt;
+    line-height: 1.2;
+  }
+  .q-num-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.5px;
+  }
+  .q-num {
+    font-weight: 800;
+    color: #000000;
+    font-size: 9.4pt;
+    line-height: 1.1;
+  }
+  .q-pips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    line-height: 1;
+  }
+  .pip-badge {
+    font-size: 6.6pt;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+  .pip-t1 { color: #16a34a; }
+  .pip-t2 { color: #d97706; }
+  .pip-t3 { color: #dc2626; }
+
+  .q-prompt {
+    font-weight: 700;
+    color: #000000;
+    font-size: 9.4pt;
+    line-height: 1.2;
+    flex: 1;
+  }
+  .q-warmup-choice {
+    display: inline-block;
+    background: #f1f5f9;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    padding: 0.5px 5px;
+    margin-left: 4px;
+    font-weight: 800;
+    font-size: 8.6pt;
+    color: #000000;
+  }
+  .q-line-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    font-size: 7.8pt;
+    margin-top: 1px;
+  }
+  .q-line-lbl {
+    font-weight: 800;
+    color: #000000;
+    white-space: nowrap;
+    font-size: 7.8pt;
+    min-width: 65px;
+  }
+  .q-line-lbl.cue {
+    font-style: italic;
+    font-weight: 700;
+  }
+  .q-solid-line {
+    flex: 1;
+    border-bottom: 1.2px solid #000000;
+    min-height: 25px;
+  }
+
+  /* Key Term Vault (Support Vault) */
+  .term-vault-box {
+    background: #f8fafc;
+    border: 1.2px solid #000000;
+    border-radius: 3px;
+    padding: 3px 6px;
+    margin-top: 2.5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .term-vault-lbl {
+    font-size: 6.2pt;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #000000;
+    white-space: nowrap;
+    border-right: 1.2px solid #000000;
+    padding-right: 6px;
+  }
+  .term-vault-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 6.8pt;
+    font-weight: 700;
+    color: #000000;
+    flex: 1;
+  }
+  .term-pill {
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    padding: 0.5px 4.5px;
+    white-space: nowrap;
+  }
+
+  /* Pages 7 & 8: Department Marking Bank */
+  .mb-section-title {
+    background: #f1f5f9;
+    border: 1px solid #000000;
+    border-left: 3.5px solid #000000;
+    padding: 1px 4.5px;
+    font-size: 6.3pt;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.2px;
+    margin: 1.5px 0 1px 0;
+  }
+  .mb-section-title:first-child { margin-top: 0; }
+  .mb-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 1px;
+  }
+  .ans-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 6.5pt;
+    line-height: 1.15;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    padding: 1.2px 4.5px;
+    color: #000000;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .ans-num-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 14px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.5px;
+  }
+  .ans-num {
+    font-weight: 800;
+    color: #000000;
+    font-size: 6.8pt;
+    line-height: 1.1;
+  }
+  .ans-pip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    line-height: 1;
+  }
+  .ans-pip .pip-badge {
+    font-size: 5.6pt;
+    letter-spacing: -1px;
+  }
+  .ans-content {
+    flex: 1;
+    color: #000000;
+  }
+  .ans-core {
+    font-weight: 800;
+    color: #000000;
+    font-size: 6.8pt;
+  }
+  .ans-exp {
+    color: #000000 !important;
+    font-weight: 500 !important;
+    font-style: italic !important;
+    font-size: 6.3pt;
+  }
+  .ans-ticks {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 6.2pt;
+    font-weight: 800;
+    color: #000000;
+    margin-left: 3px;
+    white-space: nowrap;
+    align-self: center;
+  }
+
+  /* Page 8: Key Concept 4-Pillar Grid */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    margin-top: 2.5px;
+    border-top: 1.2px solid #000000;
+    padding-top: 2.5px;
+  }
+  .concept-card {
+    background: #f8fafc;
+    border: 1px solid #000000;
+    border-radius: 2px;
+    padding: 2.5px 5px;
+    font-size: 6.4pt;
+    line-height: 1.16;
+  }
+  .concept-title {
+    font-weight: 900;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 6.6pt;
+  }
+
   </style>
 </head>
 <body>
 
-  <!-- PAGE 1: OUTSIDE FRONT COVER -->
-  <div class="a5-page" id="page-1">
-    <div class="page-body-full">
+  <div class="a5-page page-flex-full">
+    <div>
+      <div class="cover-banner">
+        <span>The History Revision Hub</span>
+        <span>Key Stage 3 • Year 8 History</span>
+      </div>
+      <div class="cover-header-block">
+        <h1 class="cover-title">Industrialisation, Power & Protest (1750–1901)</h1>
+        <p class="cover-subtitle">Knowledge Retrieval & Homework Companion &bull; 30 High-Yield Questions</p>
+      </div>
+      <div class="pupil-box">
+        <div class="pupil-grid">
+          <div class="pupil-field"><span class="lbl">Pupil Name:</span><span class="line"></span></div>
+          <div class="pupil-field"><span class="lbl">Class:</span><span class="line"></span></div>
+          <div class="pupil-field"><span class="lbl">Teacher:</span><span class="line"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centerpiece Archival Plate -->
+    <div class="cover-map-container">
+      <div class="cover-map-frame">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAAEBLAEsAAD//gAfTEVBRCBUZWNobm9sb2dpZXMgSW5jLiBWMS4wMQD/2wCEAAwICQoJBwwKCgoODQwOEh8UEhEREiYbHBYfLScvLiwnKyoxOEc8MTVDNSorPlU/Q0pMUFFQMDxYXldOXUdOUE0BDQ4OEhASJBQUJE0zKzNNTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTf/EAaIAAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKCwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+foRAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/AABEIAbwBwgMBIQACEQEDEQH/2gAMAwEAAhEDEQA/APVKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKAOQ/tvV7yfba3dhayTvILK3mjZmmVCQSxB+XkVd0PxVY3+l+bd3EEF1ExjuIt+drg4OO+D2oAnk8WaIpI+2FsHB2RO38hVK98daRZRtI8OoNGBneLRwPzIFAGfH8S9PaKOZ9J1NLaV9iTeSCrH0HPNaUXjvQH4ee4gPpLbSD+lAF628VaDdL+61e1+jSBT+Rq4mqae+Nl9bNnpiVTn9aALYIIBBBB7iloAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigDB8QeLtH8PusV7cMZ2G5YYl3OR9O341iDxlrOoqG0zQvs0J6T35YD67VH9aAOBm1vWFuZoBqptoDcNIXhgwsRbJOD1X6Z710Wl6JcaXZ+S3hye93Ozfb7O+2PKuTtJGfQ0AXYbzQZ5jYy+INe0m6U42XV0yH8zkVpXvgW7v7M27+K9Slt5ANySkOG5z7UActDp+tT6pYeEru48vTrK8ZI7iMDeSq71/Qj869NOnXRQqNXuwf722P/4mgDPvfCceogre6neSIf4QI1/ktZ0Xww8Mx5JguJCTkZnPy/TGKANXwXCtv4Zt7dJfMSF5I1cnOQHYCt6gAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooA5q98Y2lr4hbRY7G9uLxV3bYoxg8Z4yRnipm8StGQZtHvYVP8UjRL/N6AOJ8Qa94JvNZe7u7G/l1FT5RETY5HHBDYp0nhzRnKlfCGvEv2MuAM+uWoAl/wCER04WrFPCeq9v3RvVGSf+BY4p50yfKhvDOsHHIRtXGAe3G6gDDuG8OvqSWl14cka9aXyykmrZYHrlj0A/Gu0sdbfSbOGwttOsYLeFdqB9WQ4H480AZd9qXlXD3xuNIjuftqXKodRU4ATYRwO4zXX+G/EFl4i083VmGGxtkiMOVb69D9aANiigDB8En/inEH92eYf+RGreoAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKAOU8d6Rb3VjBexu1tfRzRxR3MRwyq7hSPcYJ4rDh8E6dHPIUivcwgIZvOJ8zH38AqflHGMck9KAOQ8T2NvpPin+z4YWFqkYkbzmXzAGAJ+b1z096z728vAAkWpXkZiAErNeF1H0weSeuBQBXvL3zZ/Miv5zxl3aRsnP8Iz1wari7jhskMUsv2xiwY5BTYRjHPOf0oA6Twd4ag1+KaeeF5niljhKlhGqgjliRycAYAHUkV11t4C0F5EL6Vg4bdGt6SQwPCdeuOW9O1AGv4F0vTG8MWsn9n22/MiljGCThyOp57V1UUUcKbYkVF9FGBQA+igDB8GAf2BkNu3XM5P/f1q3qACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigDD8Wlf7Ltwxxm9gA+vmCpbpfJvEaW8kG87Y0Gep6n8APwGTQB5H48WO78czSXMv7kpEvmQkYyUBHU9KpCdr1X07yNtvAxEEKIASdjck9zxnvzQBqWmglbxbq8UQ2W0kStECuVb+fOKx44YWhDtbqGaHKN5fVsrz9aAPQPBjRMNSuJLThJomwq/ccKwL49fT3xXS2drbvDFENPlO7g+Y2e+WLHvzjPqeOgoAb4D58JWpxj55P/RjV0NABRQBheDUKaCQf+fmf/wBGNW7QAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAZ2tSWsVtE15F5q+fGEX/bLAKfwPNQEh51mS3jac74t2GIQbsnn0+nU8dqAPJ/Hiyz+PdSEFurObdS6SKG2/IMke/p9azYbiS6tJbi5VJHQKqqq7fl8uT09+tAF+08+4uhblGeLgyIAflG/oBSIsEIRI4Vf91vCsSCeQcD8BQB2fggyf2VrjLKiOLklcNs2gDO0ntx3rooGna8iLX0Z3PtwCeu3JwPUjjH8I9zQAeBST4StN3UNKP8AyI1b9ABRQBheCxjw6ozn9/N/6Mat2gAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAxfFQJs7IDH/H/B1/3xU+2YzgC6QjLZ+bB6jjH149vqaAPHvH7zt8Qb0QzGOVVRQ4OM/KPyFZejBG027VpTvZ15JwMlJOCaAN+wtNut+arxwAsI2Z5M7vmB/LNWUtxb26uGVG2HD7gw5B6H8qAOi8Cr58euBIhKpvlYjdgEAD8+lblskoYOdKKuq+UCXPGTuY59PVv4j7UAJ8PW3+DbNs5+aT/wBGNXR0AFFAGL4PGPD0fGAZZSP+/jVtUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFABRQAUUAFFAGN4oJFlZsOMX0H/oYqOaeFLiRY4J3YkhirAEMfuqPfqfYcmgDyTxzIv8Awnt20il4YlRSqPg7Qg6Hvis/S7TFpdBixUOrBQ4/uOeaANizP235p3cIXUHtjkdcVpQQwx+H4hIrMgZOCctnDcfSgDa8LWpnS+je4ktbZ7lWkVeC6hSdpYfdHHPr071syNulki/tUyyROoCmIth25PHdsdB0UcmgCb4d5/4QuyyR1fp/vmuloAKKAMbwgQfDsOOnmS/+jGrZoAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKAMXxUrNptuFPP2yD/0YKsqt2YmbaqSM+4KAMKP6nufyoA8g8T2t1dePb6KKRvPVVYllUMxEY7DgZ5H5VBoJjIuYrOORA7bcygH5dj4HTgjoaANTS4pJrg20TBY2lBYHA5DD/HNW9OF7a+dApSTf5YckBsgM3T0oA3vBv8Ax76w0mfmkXCJ95Tg4xngnpVq2S1ktHe3tZbcJjy3MwXcDy3OM4Zu/V/pQBf+H/8AyJOmnjlGJx/vGuhoAKKAMPwZg+GoCpJBklPP/XRq3KACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigDK8RbRZ2xbtdw/8AoYomkjkuYy8syZwiRBcYz1P1x37D3NAHkfiSOCfxrqVo1wLaNJCYwoOSVRQV/EDj3puhpD5dsZF2QyKjOEGcNslGfxxmgC44WHUltwTsMxO9R15XitK3T/TbgMFXYi7UjTAOCfzoAu+BLpU0rVjOgePMJCnJLbk6Y7k/rmtu3v3lZpEtokVWdnaNd2eMFVOeccbn6D7ozQBb+Hv/ACIuk/8AXH+proqACigDA8DKE8KWuM8tIf8Ax9q36ACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigAooAKKACigDB8YymHS7ZwQCL63xn/roKsTD7Knnm1SaY4TahJ3ck4GffGfzPSgDyXxFbf2h4q1ie3dXLL5jeWchFwAWz3APBx61W0yOSCw2sW37ACmTlTtl7enegDoIYUV/9YWkAdmQDOMBT1NQWN4I7p3ZSZJMsqYO3ALc0AWvBl0YX1WCOWBrhUt5NpAK4CENz2AzyeuOO9a13r8uj6aZb0hIliaOODaFJJHy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" alt="Industrial ironworks and reverberatory puddling furnace" class="cover-map-img">
+      </div>
+      <div class="cover-map-caption">
+        Henry Cort’s pioneering ironworks (c. 1780s) • The development of reverberatory puddling and grooved rollers transformed Britain into the industrial "Workshop of the World".
+      </div>
+    </div>
+
+    <!-- Formative Tracking Ledger Table -->
+    <div class="ledger-container">
+      <table class="tracking-table">
+        <thead>
+          <tr>
+            <th style="width: 41%;">Lesson Enquiry Focus</th>
+            <th style="width: 13%;">HW Due Date</th>
+            <th style="width: 13%;">1. Solo<br>(Written)</th>
+            <th style="width: 15%;">2. Partner<br>(Verbal)</th>
+            <th style="width: 18%;">Parent /<br>Teacher Sign</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td class="left-title">
+              <div class="tb-lesson-title">Enquiry 1: Iron & Steam Revolution</div>
+              <div class="tb-lesson-desc">James Watt's steam engine (1769), puddling iron furnaces, Henry Cort, canal networks & factory coal demand</div>
+            </td>
+            <td>
+              <span class="date-line"></span>
+            </td>
+            <td><span class="score-line"></span> / 6</td>
+            <td><span class="score-line"></span> / 6</td>
+            <td>
+              <span class="parent-sig-line"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="left-title">
+              <div class="tb-lesson-title">Enquiry 2: Factory System & Child Labour</div>
+              <div class="tb-lesson-desc">Cotton mills, child piecers & scavengers, byssinosis, 1832 Sadler Report & 1833 Factory Act</div>
+            </td>
+            <td>
+              <span class="date-line"></span>
+            </td>
+            <td><span class="score-line"></span> / 6</td>
+            <td><span class="score-line"></span> / 6</td>
+            <td>
+              <span class="parent-sig-line"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="left-title">
+              <div class="tb-lesson-title">Enquiry 3: Slums, Cholera & Sanitation</div>
+              <div class="tb-lesson-desc">Back-to-back slums, cesspools, waterborne cholera, Edwin Chadwick's 1842 Report & 1875 Public Health Act</div>
+            </td>
+            <td>
+              <span class="date-line"></span>
+            </td>
+            <td><span class="score-line"></span> / 6</td>
+            <td><span class="score-line"></span> / 6</td>
+            <td>
+              <span class="parent-sig-line"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="left-title">
+              <div class="tb-lesson-title">Enquiry 4: Peterloo & The Tolpuddle Martyrs</div>
+              <div class="tb-lesson-desc">1819 Peterloo Massacre, Six Acts, 1830 Captain Swing riots, threshing machines & 1834 Tolpuddle Martyrs</div>
+            </td>
+            <td>
+              <span class="date-line"></span>
+            </td>
+            <td><span class="score-line"></span> / 6</td>
+            <td><span class="score-line"></span> / 6</td>
+            <td>
+              <span class="parent-sig-line"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="left-title">
+              <div class="tb-lesson-title">Enquiry 5: Chartism & Democracy</div>
+              <div class="tb-lesson-desc">1838 People's Charter, Six Points, universal male suffrage, secret ballot, Feargus O'Connor & moral vs physical force</div>
+            </td>
+            <td>
+              <span class="date-line"></span>
+            </td>
+            <td><span class="score-line"></span> / 6</td>
+            <td><span class="score-line"></span> / 6</td>
+            <td>
+              <span class="parent-sig-line"></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Instructions / Partner Quiz Banner -->
+    <div class="instructions-banner">
+      <div style="font-weight: 800; text-transform: uppercase; font-size: 6.2pt; margin-bottom: 1px; letter-spacing: 0.1px;">How to Complete Your Retrieval Cycles:</div>
+      <div><strong>1. Solo (Written):</strong> Complete your 6 write-in lines from memory without looking. Check your answers in green pen using the Department Marking Bank on Pages 7–8.</div>
+      <div style="margin-top: 1.5px;"><strong>2. Partner (Verbal):</strong> Hand your booklet to a <strong>parent, carer, family member, or study buddy</strong> to test you out loud from the Marking Bank until you hit 6/6!</div>
+    </div>
+
+    <!-- Interactive Portal QR Code -->
+    <div class="qr-strip">
+      <img src="data:image/png;base64,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" alt="Digital Portal QR" class="qr-code-img">
+      <div class="qr-caption-text">
+        <strong>Scan for Interactive Digital Quizzes & Audio Lessons:</strong><br>
+        Access online self-marking retrieval flashcards, diagnostic feedback, and audio narration at <strong>the-history-revision-hub.netlify.app</strong>.
+      </div>
+    </div>
+
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Key Stage 3 • Year 8 History</span>
+      <span>Page 1 of 8</span>
+    </div>
+  </div>
+
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip">
+      <div>
+        <h2>Enquiry 1: Iron & Steam Revolution</h2>
+        <p>How did steam and iron transform Britain into the "Workshop of the World"?</p>
+      </div>
+      <span class="page-tag">Questions 1–6</span>
+    </div>
+
+    
+
+    <div class="q-container">
       
-      <!-- Top Department Branding -->
-      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 2.5px; display: flex; justify-content: space-between; align-items: center;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #0f284e; text-transform: uppercase; letter-spacing: 0.5px;">
-          The History Department
-        </span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; color: #0f284e;">
-          KEY STAGE 3 HISTORICAL STUDIES &bull; YEAR 8
-        </span>
-      </div>
-
-      <!-- Main Booklet Title Block -->
-      <div style="text-align: center; margin: 3px 0 4px 0;">
-        <span style="display: inline-block; background: #0f284e; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-          Formative Homework &amp; Retrieval Companion
-        </span>
-        <h1 style="font-family: 'Playfair Display', Georgia, serif; font-size: 13.5pt; line-height: 1.15; color: #0f284e; margin: 1px 0; font-weight: 900;">
-          Industrialisation, Empire &amp; Power
-        </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #334155; font-style: italic;">
-          40 Core Retrieval Questions &bull; Energy, Exploitation, Democracy &amp; Empire (1750–1901)
-        </div>
-      </div>
-
-      <!-- Scholar Details Box -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 8px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; align-items: center;">
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-size: 6.8pt; color: #0f284e; text-transform: uppercase; margin-right: 4px;">Pupil:</strong>
-          <div style="flex: 1; border-bottom: 1.2px solid #0f284e; height: 10px;"></div>
-        </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-size: 6.8pt; color: #0f284e; text-transform: uppercase; margin-right: 4px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.2px solid #0f284e; height: 10px;"></div>
-        </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-size: 6.8pt; color: #0f284e; text-transform: uppercase; margin-right: 4px;">Teacher:</strong>
-          <div style="flex: 1; border-bottom: 1.2px solid #0f284e; height: 10px;"></div>
-        </div>
-      </div>
-
-      <!-- Formative Tracking Ledger Table (Enquiries 1–5) -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 3px; overflow: hidden; margin: 3px 0;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 6.8pt; font-family: 'Inter', sans-serif;">
-          <thead>
-            <tr style="background: #0f284e; color: #ffffff;">
-              <th style="padding: 3px 5px; text-align: left; font-size: 6.2pt; text-transform: uppercase;">Enquiry &bull; Retrieval Focus</th>
-              <th style="padding: 3px 3px; width: 44px; text-align: center; font-size: 6.0pt; text-transform: uppercase;">Attempt 1</th>
-              <th style="padding: 3px 3px; width: 44px; text-align: center; font-size: 6.0pt; text-transform: uppercase;">Attempt 2</th>
-              <th style="padding: 3px 5px; width: 68px; text-align: center; font-size: 6.0pt; text-transform: uppercase;">Parent Sign</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-            <tr style="border-bottom: 1px solid #cbd5e1; ">
-              <td style="padding: 4px 5px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 800; color: #0f284e;">Enquiry 1: Iron & Steam: Henry Cort</div>
-                <div style="font-size: 5.6pt; color: #475569;">8-question cognitive ascent [Q1–Q8]</div>
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 5px; text-align: center;">
-                <div style="border-bottom: 1px dashed #94a3b8; height: 10px; width: 100%;"></div>
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #cbd5e1; background: #f8fafc;">
-              <td style="padding: 4px 5px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 800; color: #0f284e;">Enquiry 2: Factory System & Child Labour</div>
-                <div style="font-size: 5.6pt; color: #475569;">8-question cognitive ascent [Q9–Q16]</div>
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 5px; text-align: center;">
-                <div style="border-bottom: 1px dashed #94a3b8; height: 10px; width: 100%;"></div>
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #cbd5e1; ">
-              <td style="padding: 4px 5px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 800; color: #0f284e;">Enquiry 3: Slums, Cholera & Sanitation</div>
-                <div style="font-size: 5.6pt; color: #475569;">8-question cognitive ascent [Q17–Q24]</div>
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 5px; text-align: center;">
-                <div style="border-bottom: 1px dashed #94a3b8; height: 10px; width: 100%;"></div>
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #cbd5e1; background: #f8fafc;">
-              <td style="padding: 4px 5px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 800; color: #0f284e;">Enquiry 4: Peterloo, Swing & Tolpuddle</div>
-                <div style="font-size: 5.6pt; color: #475569;">8-question cognitive ascent [Q25–Q32]</div>
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 5px; text-align: center;">
-                <div style="border-bottom: 1px dashed #94a3b8; height: 10px; width: 100%;"></div>
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #cbd5e1; ">
-              <td style="padding: 4px 5px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 800; color: #0f284e;">Enquiry 5: Chartism & Democracy</div>
-                <div style="font-size: 5.6pt; color: #475569;">8-question cognitive ascent [Q33–Q40]</div>
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 3px; text-align: center; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp; / 8
-              </td>
-              <td style="padding: 4px 5px; text-align: center;">
-                <div style="border-bottom: 1px dashed #94a3b8; height: 10px; width: 100%;"></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Cognitive Progression Key & Digital Portal Strip -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 6px; background: #f0f4f9; display: grid; grid-template-columns: 1fr 22mm; gap: 6px; align-items: center;">
-        <div>
-          <div style="font-size: 6.5pt; font-weight: 900; text-transform: uppercase; color: #0f284e; margin-bottom: 2px;">
-            Cognitive Ascent Progression Key:
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">1.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
           </div>
-          <div style="font-size: 6.0pt; color: #1e293b; line-height: 1.25;">
-            <div><strong style="color: #059669;">▸ Tier 1 (Q1–Q3):</strong> Core Substantive Recall &bull; Chronology &amp; Facts</div>
-            <div><strong style="color: #d97706;">▸▸ Tier 2 (Q4–Q6):</strong> Causal Mechanisms &bull; Historical Dynamics &amp; Context</div>
-            <div><strong style="color: #dc2626;">▸▸▸ Tier 3 (Q7–Q8):</strong> Synoptic Significance &bull; Precedent &amp; Historiography</div>
+          <span class="q-prompt">In what year did James Watt patent his revolutionary separate condenser for the steam engine, multiplying fuel efficiency?<span class="q-warmup-choice">[ 1769  /  1833 ]</span></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">This meant that...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">2.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
           </div>
+          <span class="q-prompt">Why was early British iron called "pig iron", and why was it useless for steam boilers and warships?</span>
         </div>
-        <div style="text-align: center;">
-          <div style="width: 17mm; height: 17mm; margin: 0 auto;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 39 39" shape-rendering="crispEdges"><path fill="#ffffff" d="M0 0h39v39H0z"/><path stroke="#000000" d="M1 1.5h7m1 0h2m1 0h1m2 0h8m1 0h1m4 0h1m1 0h7M1 2.5h1m5 0h1m1 0h6m1 0h2m1 0h1m1 0h2m1 0h2m5 0h1m5 0h1M1 3.5h1m1 0h3m1 0h1m2 0h2m2 0h3m3 0h1m3 0h3m1 0h2m1 0h1m1 0h3m1 0h1M1 4.5h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m4 0h2m1 0h4m1 0h1m1 0h3m1 0h1M1 5.5h1m1 0h3m1 0h1m3 0h1m1 0h1m1 0h2m3 0h1m1 0h1m2 0h5m1 0h1m1 0h3m1 0h1M1 6.5h1m5 0h1m3 0h2m1 0h2m1 0h1m2 0h1m1 0h1m2 0h2m4 0h1m5 0h1M1 7.5h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7M9 8.5h2m4 0h1m2 0h3m3 0h1m3 0h1M1 9.5h1m1 0h2m1 0h3m1 0h2m1 0h2m1 0h4m1 0h1m2 0h1m2 0h1m3 0h1m2 0h1m1 0h2M4 10.5h2m2 0h2m2 0h1m3 0h2m2 0h2m1 0h2m1 0h1m2 0h1m2 0h1m2 0h2M1 11.5h1m5 0h3m1 0h4m1 0h1m1 0h2m4 0h3m5 0h4M3 12.5h1m4 0h3m5 0h1m2 0h3m4 0h2m5 0h1m1 0h1M4 13.5h1m1 0h7m2 0h1m2 0h1m1 0h1m2 0h11m1 0h3M3 14.5h1m4 0h2m6 0h7m2 0h1m2 0h7m1 0h2M5 15.5h8m2 0h1m1 0h2m1 0h1m1 0h1m3 0h1m4 0h1m1 0h1m1 0h1M1 16.5h1m2 0h1m4 0h1m1 0h1m1 0h1m3 0h1m1 0h2m1 0h3m2 0h2m1 0h4m3 0h1M1 17.5h1m3 0h5m1 0h1m3 0h3m1 0h1m1 0h4m1 0h1m1 0h2m2 0h1m1 0h3M1 18.5h3m4 0h1m1 0h1m1 0h2m1 0h1m1 0h1m3 0h6m1 0h1m2 0h2m1 0h1m1 0h2M1 19.5h2m1 0h1m2 0h1m1 0h1m1 0h2m1 0h1m1 0h2m3 0h1m1 0h1m1 0h2m1 0h2m5 0h3M9 20.5h3m1 0h1m1 0h1m2 0h1m4 0h3m1 0h2m1 0h1m1 0h3m1 0h1M4 21.5h1m2 0h1m1 0h2m3 0h1m2 0h4m1 0h1m2 0h1m1 0h1m1 0h2m1 0h3m2 0h1M1 22.5h4m1 0h1m1 0h4m2 0h2m3 0h4m1 0h1m1 0h2m1 0h1m4 0h1m1 0h1M2 23.5h3m1 0h3m1 0h3m2 0h1m1 0h3m4 0h2m5 0h2M4 24.5h1m1 0h1m2 0h1m2 0h1m1 0h1m2 0h1m1 0h3m3 0h2m2 0h1m1 0h1m1 0h3M1 25.5h2m1 0h1m1 0h3m1 0h2m7 0h1m3 0h1m2 0h2m1 0h5m1 0h1m1 0h1M3 26.5h2m1 0h1m1 0h1m1 0h2m1 0h1m3 0h1m2 0h1m1 0h1m2 0h10m1 0h2M2 27.5h6m2 0h2m1 0h2m1 0h2m1 0h4m2 0h2m3 0h1m3 0h3M1 28.5h1m2 0h3m3 0h3m4 0h1m1 0h4m2 0h1m1 0h5m1 0h1m2 0h1M3 29.5h6m1 0h1m1 0h2m2 0h2m1 0h2m1 0h1m1 0h1m1 0h2m1 0h5m1 0h1m1 0h1M9 30.5h1m1 0h1m2 0h1m1 0h1m1 0h1m2 0h5m3 0h1m3 0h1m1 0h3M1 31.5h7m1 0h1m1 0h1m2 0h3m1 0h1m4 0h1m1 0h1m3 0h1m1 0h1m1 0h1m1 0h3M1 32.5h1m5 0h1m1 0h4m1 0h1m1 0h2m3 0h1m6 0h2m3 0h1M1 33.5h1m1 0h3m1 0h1m3 0h4m4 0h1m1 0h2m4 0h1m1 0h6M1 34.5h1m1 0h3m1 0h1m1 0h4m2 0h2m1 0h2m1 0h1m2 0h1m1 0h2m3 0h1m1 0h1m1 0h1m1 0h1M1 35.5h1m1 0h3m1 0h1m1 0h1m2 0h1m2 0h1m1 0h2m2 0h1m1 0h3m2 0h4m1 0h1m1 0h1M1 36.5h1m5 0h1m2 0h2m2 0h1m2 0h1m1 0h3m2 0h1m1 0h3m1 0h1m1 0h4M1 37.5h7m1 0h1m3 0h1m1 0h2m1 0h1m4 0h1m2 0h2m3 0h1m1 0h5"/></svg>
-</div>
-          <span style="font-size: 5.2pt; font-weight: 800; color: #0f284e; text-transform: uppercase;">Scan for Portal</span>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Because...</span>
+          <span class="q-solid-line"></span>
         </div>
       </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">3.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">How did Henry Cort’s 1783 reverberatory puddling furnace chemically refine pig iron without coal contamination?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">By...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">4.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why were Cort’s patented grooved rollers (1784) fifteen times faster than traditional forging hammers?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Because...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">5.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why did naval demand from Portsmouth Royal Dockyard determine the success of Cort’s iron breakthroughs?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Because...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">6.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">How did the transformation of the iron and steam industries give Britain an overwhelming global economic advantage?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">As a result...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+    </div>
 
-      <div class="page-footer-strip">
-        <span>Industrialisation, Empire &amp; Power (1750–1901)</span>
-        <span>Homework &amp; Retrieval Companion &bull; Page 1 of 8</span>
+    <!-- Key Term Vault at Base of Page -->
+    <div class="term-vault-box">
+      <div class="term-vault-lbl">Key Term Vault:</div>
+      <div class="term-vault-pills">
+        <span class="term-pill">James Watt (1769)</span><span class="term-pill">Pig Iron</span><span class="term-pill">Puddling Furnace</span><span class="term-pill">Grooved Rollers</span><span class="term-pill">Henry Cort</span><span class="term-pill">Naval Demand</span>
       </div>
+    </div>
+
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Iron & Steam Revolution</span>
+      <span>Page 2 of 8</span>
     </div>
   </div>
 
-  <!-- PAGE 2: ENQUIRY 1 RETRIEVAL -->
-  <div class="a5-page" id="page-2">
-    <div class="page-body-full">
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip">
       <div>
-        <div class="page-header-strip">
-          <h2 class="page-title">Enquiry 1 &bull; Iron & Steam: Henry Cort</h2>
-          <span style="font-size: 6.5pt; font-weight: 800; color: #0f284e; text-transform: uppercase;">8 Questions &bull; 8 Marks</span>
-        </div>
-        <div class="page-enquiry-banner">
-          <strong>Enquiry Focus:</strong> How did Henry Cort’s breakthrough at Funtley Ironworks transform Britain into an industrial and naval superpower?
-        </div>
+        <h2>Enquiry 2: Factory System & Child Labour</h2>
+        <p>Was factory work a triumph of productive progress or brutal exploitation?</p>
       </div>
+      <span class="page-tag">Questions 7–12</span>
+    </div>
 
-      <!-- 8 Questions Stacked with Two Write-in Lines -->
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q1.</strong> In what year did James Watt patent his revolutionary separate condenser for the steam engine?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q2.</strong> Why was early British iron called "pig iron", and why was it useless for Royal Navy warships?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q3.</strong> Where in Hampshire did ironmaster Henry Cort establish his revolutionary iron mill along the River Meon?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q4.</strong> How did Cort’s reverberatory puddling furnace (1783) chemically refine pig iron without coal contamination?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q5.</strong> Why were Cort’s patented grooved rollers (1784) fifteen times faster than traditional trip hammers?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q6.</strong> What rigorous stress tests were conducted on Funtley iron at Portsmouth Royal Dockyard in March 1787?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q7.</strong> Why did naval proximity to Portsmouth Royal Dockyard determine Cort’s industrial breakthrough at Funtley?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q8.</strong> How did the 2023 Atlantic metallurgy findings regarding 76 enslaved metallurgists in Morant Bay, Jamaica, reshape Cort’s historiography?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-      </div>
+    
 
-      <div class="page-footer-strip">
-        <span>Enquiry 1: Iron & Steam: Henry Cort &bull; Industrialisation, Empire &amp; Power</span>
-        <span>Page 2 of 8</span>
+    <div class="q-container">
+      
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">7.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What dangerous factory jobs were assigned to young children in textile mills because of their small size and nimble fingers?<span class="q-warmup-choice">[ Scavengers and piecers  /  Overseers and clerks ]</span></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">This meant that...</span>
+          <span class="q-solid-line"></span>
+        </div>
       </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">8.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What severe chronic lung disease was caused by inhaling toxic airborne cotton dust in unventilated textile mills?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Known as...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">9.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What historic legislation in 1833 banned textile work for children under nine and created factory inspectors to enforce the law?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Known as...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">10.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What prevailing economic doctrine of government non-intervention did mill owners cite to resist safety regulations?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Known as...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">11.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">How did the parliamentary Sadler Committee Report of 1832 shock the British public into accepting labor reforms?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">By...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">12.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why did the transition to factory work fundamentally alter human time discipline and family life?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Consequently...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Term Vault at Base of Page -->
+    <div class="term-vault-box">
+      <div class="term-vault-lbl">Key Term Vault:</div>
+      <div class="term-vault-pills">
+        <span class="term-pill">Scavengers & Piecers</span><span class="term-pill">Byssinosis</span><span class="term-pill">Factory Act (1833)</span><span class="term-pill">Sadler Report (1832)</span><span class="term-pill">Laissez-Faire</span><span class="term-pill">Mines Act (1842)</span>
+      </div>
+    </div>
+
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Factory System & Child Labour</span>
+      <span>Page 3 of 8</span>
     </div>
   </div>
 
-  <!-- PAGE 3: ENQUIRY 2 RETRIEVAL -->
-  <div class="a5-page" id="page-3">
-    <div class="page-body-full">
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip">
       <div>
-        <div class="page-header-strip">
-          <h2 class="page-title">Enquiry 2 &bull; Factory System & Child Labour</h2>
-          <span style="font-size: 6.5pt; font-weight: 800; color: #0f284e; text-transform: uppercase;">8 Questions &bull; 8 Marks</span>
-        </div>
-        <div class="page-enquiry-banner">
-          <strong>Enquiry Focus:</strong> Was industrial factory work a triumph of productive progress or a brutal system of physical punishment?
-        </div>
+        <h2>Enquiry 3: Slums, Cholera & Sanitation</h2>
+        <p>Did rapid urban industrialisation condemn the working class to squalor and premature death?</p>
       </div>
+      <span class="page-tag">Questions 13–18</span>
+    </div>
 
-      <!-- 8 Questions Stacked with Two Write-in Lines -->
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q9.</strong> What dangerous factory jobs were assigned to small children in northern textile mills because of their nimble fingers and small stature?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q10.</strong> What severe chronic respiratory disease was caused by inhaling toxic airborne cotton lint in unventilated textile mills?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q11.</strong> What parliamentary inquiry published horrifying 1832 testimony of 14-hour workdays and physical beatings of child labourers?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q12.</strong> What historic legislation in 1833 banned textile work for children under nine and created factory inspectors to enforce the law?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q13.</strong> What physical punishment was routinely inflicted by mill overlookers to keep exhausted children awake toward the end of 14-hour shifts?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q14.</strong> What landmark 1842 law banned all women and girls and boys under the age of ten from working underground in coal mines?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q15.</strong> What prevailing economic doctrine of government non-intervention did mill owners cite to resist statutory workplace regulation?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q16.</strong> Why did the factory system fundamentally transform human labour and time discipline compared to domestic craft work?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-      </div>
+    
 
-      <div class="page-footer-strip">
-        <span>Enquiry 2: Factory System & Child Labour &bull; Industrialisation, Empire &amp; Power</span>
-        <span>Page 3 of 8</span>
+    <div class="q-container">
+      
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">13.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What deadly waterborne bacterium struck British industrial cities in terrifying epidemics in 1831, 1848, 1853, and 1866?<span class="q-warmup-choice">[ Cholera  /  The Black Death ]</span></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">This meant that...</span>
+          <span class="q-solid-line"></span>
+        </div>
       </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">14.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What prevailing medical theory wrongly claimed that epidemic diseases were spread by inhaling foul, toxic airborne vapors from rotting filth?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Known as...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">15.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why was the average life expectancy for a working-class labourer in 1840s Manchester and Liverpool under 20 years?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Because of...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">16.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What landmark 1842 report by social reformer Edwin Chadwick proved that disease caused poverty and demanded clean water?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Known as...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">17.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">How did Dr John Snow’s famous 1854 Broad Street pump investigation in Soho disprove the miasma theory of cholera?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">By...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">18.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why was the Public Health Act of 1875 the decisive statutory turning point for British urban living conditions?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">As a result...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Term Vault at Base of Page -->
+    <div class="term-vault-box">
+      <div class="term-vault-lbl">Key Term Vault:</div>
+      <div class="term-vault-pills">
+        <span class="term-pill">Cholera</span><span class="term-pill">Cesspools</span><span class="term-pill">Back-to-Back Housing</span><span class="term-pill">Miasma Theory</span><span class="term-pill">Edwin Chadwick (1842)</span><span class="term-pill">Public Health Act (1875)</span>
+      </div>
+    </div>
+
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Slums, Cholera & Sanitation</span>
+      <span>Page 4 of 8</span>
     </div>
   </div>
 
-  <!-- PAGE 4: ENQUIRY 3 RETRIEVAL -->
-  <div class="a5-page" id="page-4">
-    <div class="page-body-full">
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip">
       <div>
-        <div class="page-header-strip">
-          <h2 class="page-title">Enquiry 3 &bull; Slums, Cholera & Sanitation</h2>
-          <span style="font-size: 6.5pt; font-weight: 800; color: #0f284e; text-transform: uppercase;">8 Questions &bull; 8 Marks</span>
-        </div>
-        <div class="page-enquiry-banner">
-          <strong>Enquiry Focus:</strong> Did rapid urban industrialisation condemn the working class to disease, squalor, and premature death?
-        </div>
+        <h2>Enquiry 4: Peterloo & The Tolpuddle Martyrs</h2>
+        <p>How did working people fight for political rights against brutal state repression?</p>
       </div>
+      <span class="page-tag">Questions 19–24</span>
+    </div>
 
-      <!-- 8 Questions Stacked with Two Write-in Lines -->
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q17.</strong> What deadly waterborne bacterium struck British industrial cities in terrifying epidemics in 1831, 1848, 1853, and 1866?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q18.</strong> Why was the average life expectancy for a working-class labourer in 1840s Manchester and Liverpool under 20 years?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q19.</strong> What prevailing medical theory wrongly claimed that cholera and epidemic diseases were spread by foul airborne stenches?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q20.</strong> How did Dr John Snow’s cartographic investigation of the 1854 Broad Street outbreak disprove the miasma theory?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q21.</strong> How did Edwin Chadwick’s 1842 Sanitary Report connect working-class disease directly to the national economic burden?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q22.</strong> What crisis in the sweltering summer of 1858 finally forced Parliament to fund Joseph Bazalgette’s revolutionary London sewer network?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q23.</strong> What civil engineer designed London’s 1,100-mile underground intercepting sewer network, diverting 420 million gallons of sewage daily?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q24.</strong> Why did the Public Health Act 1875 mark a decisive turning point in the role of the British state?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-      </div>
+    
 
-      <div class="page-footer-strip">
-        <span>Enquiry 3: Slums, Cholera & Sanitation &bull; Industrialisation, Empire &amp; Power</span>
-        <span>Page 4 of 8</span>
+    <div class="q-container">
+      
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">19.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What 1819 event in Manchester saw armed cavalry charge a peaceful crowd of 60,000 men, women, and children demanding parliamentary reform?<span class="q-warmup-choice">[ The Peterloo Massacre  /  The Boston Massacre ]</span></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">This meant that...</span>
+          <span class="q-solid-line"></span>
+        </div>
       </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">20.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What mythical collective name was signed to threatening letters sent by agricultural labourers smashing farm machinery in 1830?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Known as...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">21.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why did the Great Reform Act of 1832 cause profound fury and betrayal among working-class Britons who campaigned for it?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Because...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">22.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why were six Dorset agricultural labourers, the Tolpuddle Martyrs, sentenced to seven years’ penal transportation to Australia in 1834?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">For...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">23.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">How did the public outcry over the Tolpuddle Martyrs demonstrate the growing power of organized working-class solidarity?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">By...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">24.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why did state repression at Peterloo and Tolpuddle convince working people that only parliamentary representation could secure justice?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Consequently...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Term Vault at Base of Page -->
+    <div class="term-vault-box">
+      <div class="term-vault-lbl">Key Term Vault:</div>
+      <div class="term-vault-pills">
+        <span class="term-pill">Peterloo Massacre (1819)</span><span class="term-pill">Henry Hunt</span><span class="term-pill">Rotten Boroughs</span><span class="term-pill">Captain Swing (1830)</span><span class="term-pill">Threshing Machines</span><span class="term-pill">Tolpuddle Martyrs (1834)</span>
+      </div>
+    </div>
+
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Peterloo & The Tolpuddle Martyrs</span>
+      <span>Page 5 of 8</span>
     </div>
   </div>
 
-  <!-- PAGE 5: ENQUIRY 4 RETRIEVAL -->
-  <div class="a5-page" id="page-5">
-    <div class="page-body-full">
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip">
       <div>
-        <div class="page-header-strip">
-          <h2 class="page-title">Enquiry 4 &bull; Peterloo, Swing & Tolpuddle</h2>
-          <span style="font-size: 6.5pt; font-weight: 800; color: #0f284e; text-transform: uppercase;">8 Questions &bull; 8 Marks</span>
-        </div>
-        <div class="page-enquiry-banner">
-          <strong>Enquiry Focus:</strong> How did ordinary British people fight against political exclusion, wage cuts, and state repression?
-        </div>
+        <h2>Enquiry 5: Chartism & Democracy</h2>
+        <p>How did the working class win the vote and create modern British democracy?</p>
       </div>
+      <span class="page-tag">Questions 25–30</span>
+    </div>
 
-      <!-- 8 Questions Stacked with Two Write-in Lines -->
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q25.</strong> What 1819 event in Manchester saw cavalry charge a peaceful gathering of 60,000 working-class reformers, killing 18 and injuring hundreds?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q26.</strong> What mythological collective name did agricultural labourers sign on threatening letters sent to landlords during the 1830 rural rebellion?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q27.</strong> What new farm machinery did rioting Hampshire labourers systematically smash with sledgehammers across Selborne and Headley in 1830?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q28.</strong> How did the Special Commission at Winchester Assizes punish the Hampshire Swing rioters in December 1830?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q29.</strong> What six Dorset agricultural labourers were sentenced to seven years’ transportation to Australia in 1834 for forming a friendly society?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q30.</strong> What was a corrupt "rotten borough" in the pre-1832 British electoral system?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q31.</strong> How did the Great Reform Act 1832 betray working-class reformers who had campaigned fiercely for its passage?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q32.</strong> Why did the state repression of 1819–1834 convince working people of the urgent need for a nationwide political movement?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-      </div>
+    
 
-      <div class="page-footer-strip">
-        <span>Enquiry 4: Peterloo, Swing & Tolpuddle &bull; Industrialisation, Empire &amp; Power</span>
-        <span>Page 5 of 8</span>
+    <div class="q-container">
+      
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">25.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What radical 1838 working-class manifesto drafted by William Lovett demanded democratic voting rights for all men?<span class="q-warmup-choice">[ The People’s Charter  /  The Bill of Rights ]</span></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">This meant that...</span>
+          <span class="q-solid-line"></span>
+        </div>
       </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">26.</span>
+            <span class="q-pips"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Name two of the famous Six Points of the People’s Charter.</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Two points were...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">27.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why was the demand for MPs to receive a salary essential for working-class representation in Parliament?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Because...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">28.</span>
+            <span class="q-pips"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">What was the fundamental tactical division between "Moral Force" and "Physical Force" Chartists?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">While...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">29.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why did Parliament repeatedly reject the massive Chartist petitions of 1839, 1842, and 1848 containing millions of signatures?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Because...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">30.</span>
+            <span class="q-pips"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+          </div>
+          <span class="q-prompt">Why can Chartism be considered one of the most successful "failed" political movements in British history?</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl cue">Consequently...</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Term Vault at Base of Page -->
+    <div class="term-vault-box">
+      <div class="term-vault-lbl">Key Term Vault:</div>
+      <div class="term-vault-pills">
+        <span class="term-pill">People’s Charter (1838)</span><span class="term-pill">Six Points</span><span class="term-pill">Universal Male Suffrage</span><span class="term-pill">Secret Ballot</span><span class="term-pill">Moral vs Physical Force</span><span class="term-pill">Feargus O’Connor</span>
+      </div>
+    </div>
+
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Chartism & Democracy</span>
+      <span>Page 6 of 8</span>
     </div>
   </div>
 
-  <!-- PAGE 6: ENQUIRY 5 RETRIEVAL -->
-  <div class="a5-page" id="page-6">
-    <div class="page-body-full">
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip">
       <div>
-        <div class="page-header-strip">
-          <h2 class="page-title">Enquiry 5 &bull; Chartism & Democracy</h2>
-          <span style="font-size: 6.5pt; font-weight: 800; color: #0f284e; text-transform: uppercase;">8 Questions &bull; 8 Marks</span>
-        </div>
-        <div class="page-enquiry-banner">
-          <strong>Enquiry Focus:</strong> How did working-class pressure overcome elite resistance to build modern parliamentary democracy?
-        </div>
+        <h2>Department Marking Bank &bull; Part 1</h2>
+        <p>Green-Pen Verification Key &bull; Enquiries 1 to 3 (Questions 1 to 18)</p>
       </div>
+      <span class="page-tag">Enquiries 1–3</span>
+    </div>
 
-      <!-- 8 Questions Stacked with Two Write-in Lines -->
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0;">
-        
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q33.</strong> What radical 1838 working-class manifesto drafted by William Lovett demanded universal male suffrage and secret ballots?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
+    <div class="mb-container">
+      
+      <div class="mb-section-title">Enquiry 1: Iron & Steam Revolution</div>
+      
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">1.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
         </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q34.</strong> Why did the People’s Charter demand annual parliaments and payment for Members of Parliament?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
+        <div class="ans-content">
+          <span class="ans-core">1769</span> &mdash;
+          <span class="ans-exp">Watt’s condenser converted steam into continuous rotative power, freeing factories from river valleys and powering heavy machinery.</span>
         </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-emerald">▸</span>
-            <span><strong>Q35.</strong> What was the fundamental tactical division between Chartist leaders William Lovett and Feargus O’Connor?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q36.</strong> Why was the Newport Rising of November 1839 a watershed moment in the struggle for British democracy?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q37.</strong> What nationwide 1842 general strike saw industrial workers pull the plugs from factory steam boilers to halt capitalist production?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-amber">▸▸</span>
-            <span><strong>Q38.</strong> Which landmark 1872 legislation abolished public voting and ended landlord bribery and workplace intimidation of voters?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q39.</strong> Which two major electoral reform acts in 1867 and 1884 progressively expanded the franchise to urban and agricultural working-class men?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
-        <div class="q-item">
-          <div class="q-stem">
-            <span class="pip-crimson">▸▸▸</span>
-            <span><strong>Q40.</strong> Although Parliament rejected all three mass Chartist petitions in 1839, 1842, and 1848, why was Chartism ultimately victorious?</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Ans:</span>
-          </div>
-          <div class="answer-line">
-            <span class="line-tag">Detail:</span>
-          </div>
-        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
       </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">2.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Molten metal flowed into sand moulds resembling suckling pigs; raw coal contaminated it with sulphur, leaving it brittle</span> &mdash;
+          <span class="ans-exp">Sulphur-rich coal made pig iron brittle and prone to shattering under high steam pressure or artillery cannon fire.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">3.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Deflecting radiant heat from an arched roof onto the iron, keeping coal smoke separate from molten metal</span> &mdash;
+          <span class="ans-exp">The reverberatory oven burned away carbon impurities while preventing sulphur contamination, producing pure malleable wrought iron.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">4.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">They continuously squeezed out liquid slag and rolled uniform iron bars in seconds rather than slow manual hammering</span> &mdash;
+          <span class="ans-exp">Hydraulic rollers standardized naval iron dimensions and multiplied British industrial wrought iron production fifteen-fold.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">5.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">The Royal Navy was the world’s largest consumer of wrought iron, providing an immediate market and trial facilities</span> &mdash;
+          <span class="ans-exp">Without urgent Admiralty demand for reliable ship bolts and anchors, Cort would have lacked the capital or testing facilities to develop puddling.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">6.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">It allowed Britain to produce cheap iron rails, locomotives, and machinery faster than all European rivals combined</span> &mdash;
+          <span class="ans-exp">Abundant coal and cheap rolled iron laid the physical infrastructure for railway networks, steamships, and Victorian global trade mastery.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      
+      <div class="mb-section-title">Enquiry 2: Factory System & Child Labour</div>
+      
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">7.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Scavengers and piecers</span> &mdash;
+          <span class="ans-exp">Scavengers crawled under whirring looms to sweep loose cotton, while piecers tied broken threads at constant risk of losing fingers or scalp.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">8.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Byssinosis ("mill fever" or brown lung disease)</span> &mdash;
+          <span class="ans-exp">Fine cotton fibres clogged children’s lungs, causing debilitating chronic coughing and permanent respiratory damage.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">9.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">The Factory Act of 1833</span> &mdash;
+          <span class="ans-exp">The 1833 Act established statutory regulation, limiting children aged 9–13 to eight hours of daily work and appointing four national inspectors.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">10.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Laissez-faire capitalism</span> &mdash;
+          <span class="ans-exp">Industrialists argued Parliament had no legal right to interfere with "freedom of contract", insisting regulation would ruin British trade profits.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">11.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Publishing horrifying eyewitness testimony of 14-hour workdays, physical beatings, and child crippling in mills</span> &mdash;
+          <span class="ans-exp">Michael Sadler exposed systemic brutality, proving that self-regulation failed and compelling Parliament to intervene in the workplace.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">12.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Workers surrendered personal autonomy to the relentless mechanical pace of steam engines and the factory clock</span> &mdash;
+          <span class="ans-exp">Unlike home cottage craftwork where workers controlled their pace, factories imposed locked gates, punitive fines, and 14-hour shifts.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      
+      <div class="mb-section-title">Enquiry 3: Slums, Cholera & Sanitation</div>
+      
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">13.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Cholera</span> &mdash;
+          <span class="ans-exp">Cholera caused fatal dehydration through violent diarrhea and vomiting, killing thousands within hours of first symptoms.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">14.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Miasma theory ("bad air")</span> &mdash;
+          <span class="ans-exp">Most Victorian doctors believed bad smells caused disease, delaying recognition that cholera was spread by contaminated drinking water.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">15.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Deadly combinations of open cesspools, contaminated well water, unventilated back-to-back cellars, and typhus</span> &mdash;
+          <span class="ans-exp">Overcrowded industrial slums lacked sewers, clean piped water, or garbage disposal, causing infant mortality rates to exceed 50%.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">16.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">The Sanitary Report of 1842 (Report on the Sanitary Condition of the Labouring Population)</span> &mdash;
+          <span class="ans-exp">Chadwick used statistical mortality tables to prove squalor caused epidemics, convincing MPs that clean sewers saved taxpayer money.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">17.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Mapping cholera deaths geographically to prove victims all drank from a single sewage-contaminated water pump</span> &mdash;
+          <span class="ans-exp">When Snow removed the pump handle, cholera deaths stopped immediately, establishing modern epidemiology and waterborne disease theory.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">18.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">It made clean water supply, sewage disposal, and street lighting legally compulsory for all local councils</span> &mdash;
+          <span class="ans-exp">It abandoned laissez-faire negligence, forcing towns to appoint medical health officers and build modern underground sewer networks.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      
+    </div>
 
-      <div class="page-footer-strip">
-        <span>Enquiry 5: Chartism & Democracy &bull; Industrialisation, Empire &amp; Power</span>
-        <span>Page 6 of 8</span>
-      </div>
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Marking Bank Part 1</span>
+      <span>Page 7 of 8</span>
     </div>
   </div>
 
-  <!-- PAGE 7: MARKING BANK PART 1 (ENQUIRIES 1–3) -->
-  <div class="a5-page" id="page-7">
-    <div class="page-body-full">
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip">
       <div>
-        <div class="page-header-strip">
-          <h2 class="page-title">Department Marking Bank &bull; Part 1 (Enquiries 1–3)</h2>
-          <span style="font-size: 6.2pt; font-weight: 800; color: #0f284e; text-transform: uppercase;">Self / Peer Assessment</span>
-        </div>
-        <div style="background: #f0f4f9; border-left: 3px solid #0f284e; padding: 2px 5px; font-size: 6.2pt; color: #1e293b; margin-bottom: 3px;">
-          Tick [✓] correct answers in green pen. Annotate missing mechanisms using the model explanations below.
-        </div>
+        <h2>Department Marking Bank &bull; Part 2</h2>
+        <p>Green-Pen Verification Key &bull; Enquiries 4 to 5 (Questions 19 to 30)</p>
       </div>
+      <span class="page-tag">Enquiries 4–5</span>
+    </div>
 
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0; font-size: 6.0pt; line-height: 1.15;">
+    <div class="mb-container">
+      
+      <div class="mb-section-title">Enquiry 4: Peterloo & The Tolpuddle Martyrs</div>
+      
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">19.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">The Peterloo Massacre (at St Peter’s Field)</span> &mdash;
+          <span class="ans-exp">Magistrates panicked and ordered sabre-wielding yeomanry to arrest orator Henry Hunt, killing eighteen reformers and injuring over six hundred.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">20.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">"Captain Swing"</span> &mdash;
+          <span class="ans-exp">The Swing Riots saw rural farmworkers destroy mechanical threshing machines that had robbed them of winter employment and wages.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">21.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">It enfranchised only middle-class property owners, leaving working-class men completely excluded from voting</span> &mdash;
+          <span class="ans-exp">While it abolished corrupt "rotten boroughs", the £10 property qualification meant nine out of ten men still had zero parliamentary vote.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">22.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Swearing an illegal secret oath while forming a friendly trade union to resist wage cuts</span> &mdash;
+          <span class="ans-exp">Fearing trade unionism, landowners used an archaic 1797 naval mutiny statute to convict George Loveless and fellow farm labourers.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">23.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Mobilizing 100,000 peaceful protesters in London and collecting 800,000 petition signatures, forcing a royal pardon</span> &mdash;
+          <span class="ans-exp">Massive peaceful trade union demonstrations forced the government to remit their sentences and bring the martyrs home from Australia.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">24.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">It proved that landowners and magistrates would use laws and troops to crush unions until working men won the vote</span> &mdash;
+          <span class="ans-exp">Bitterness from these defeats convinced working-class leaders to form the national Chartist movement to capture control of Parliament.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      
+      <div class="mb-section-title">Enquiry 5: Chartism & Democracy</div>
+      
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">25.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">The People’s Charter (1838)</span> &mdash;
+          <span class="ans-exp">The Charter demanded six key political reforms to turn Britain from an aristocratic oligarchy into a true representative democracy.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">26.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t1" title="Tier 1: Substantive Recall (Bronze)">&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Universal male suffrage and the Secret Ballot (or: Payment for MPs, Equal Constituencies, Abolition of Property Qualifications, Annual Parliaments)</span> &mdash;
+          <span class="ans-exp">These reforms aimed to ensure that ordinary working men could stand for Parliament and vote without intimidation from landlords.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">27.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Without a state salary, only wealthy men with independent private fortunes could afford to serve in Parliament</span> &mdash;
+          <span class="ans-exp">Unpaid MPs meant Parliament remained an exclusive club of wealthy landowners and factory bosses; paying MPs allowed working men to govern.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">28.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism (Silver)">&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Moral Force advocated peaceful petitions and speeches, while Physical Force threatened armed revolution and general strikes</span> &mdash;
+          <span class="ans-exp">William Lovett believed peaceful persuasion would win public sympathy, while Feargus O’Connor warned that tyrants only surrendered to force.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">29.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Wealthy ruling elites feared that giving working men the vote would lead to the confiscation of private property and wealth redistribution</span> &mdash;
+          <span class="ans-exp">MPs viewed Chartism as dangerous socialism, arresting leaders and deploying thousands of special constables to disperse the 1848 Kennington Common rally.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">30.</span>
+          <span class="ans-pip"><span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance (Gold)">&#9658;&#9658;&#9658;</span></span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">Although defeated in the short term, five of the six Chartist demands were subsequently enacted into law by 1918</span> &mdash;
+          <span class="ans-exp">With the exception of annual parliaments, every single Chartist demand became the constitutional foundation of modern British democracy.</span>
+        </div>
+        <div class="ans-ticks">[✓] [✗]</div>
+      </div>
+      
+
+      <!-- Master Disciplinary Glossary / Key Concept Vault -->
+      <div class="mb-section-title" style="margin-top: 3px;">Unit Conceptual Foundations &bull; 4 Core Anchors</div>
+      <div class="glossary-grid">
         
-        <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-          <div style="font-weight: 900; font-size: 6.4pt; color: #0f284e; border-bottom: 0.8px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
-            Enquiry 1: Iron & Steam: Henry Cort (Q1–Q8)
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-            
-              <div>
-                <strong style="color: #0f284e;">Q1:</strong> <strong>1769</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Watt’s 1769 patent dramatically increased fuel efficiency and transformed coal into continuous rotative power, liberating factories from river valleys.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q2:</strong> <strong>Molten metal flowed into sand moulds resembling suckling pigs; raw coal contaminated it with sulphur, leaving it brittle as glass</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Sulphur-rich pit coal made British pig iron brittle and prone to shattering under high steam pressure or naval artillery shock.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q3:</strong> <strong>Funtley (Fontley), near Fareham</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Cort leased Funtley Mill in 1775 to exploit River Meon water power and direct tidal water access down Fareham Creek into Portsmouth Dockyard.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q4:</strong> <strong>An arched brick ceiling deflected pure radiant heat onto the iron hearth, keeping smoke and sulphur separate from the metal</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The reverberatory design acted like a giant radiant oven, burning away carbon impurities while preventing sulphur contamination from the burning coal.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q5:</strong> <strong>They continuously squeezed out liquid slag and rolled uniform bars in seconds rather than requiring hours of slow manual hammering</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Hydraulic grooved rollers mechanized the consolidation of wrought iron, standardising naval dimensions and multiplying output fifteen-fold.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q6:</strong> <strong>Master smiths cold-twisted bars into corkscrews, bent rods double, and forged anchor rings with 20-pound sledgehammers without cracking</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Admiralty trials proved Funtley iron equaled Sweden’s finest Orgrounds iron, shattering Britain’s dangerous reliance on Baltic imports.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q7:</strong> <strong>Portsmouth was the world’s largest naval consumer of wrought iron, providing an immediate military market, naval trial facilities, and tidal transport</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Without the Royal Navy’s urgent demand for reliable ship bolts and anchors, Cort would have lacked the capital, testing facilities, or market to develop puddling.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q8:</strong> <strong>They revealed that enslaved Black metallurgists operated grooved rollers years earlier, proving the Industrial Revolution was tied to Atlantic colonial networks</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Dr Jenny Bulstrode showed that Jamaican ironworks run by enslaved Africans used grooved rollers before Cort, challenging the traditional "lone English genius" narrative.</div>
-              </div>
-          </div>
+        <div class="concept-card">
+          <span class="concept-title">Urbanisation:</span> The massive population shift from rural countryside villages to industrial towns and cities, driven by factory employment and enclosure.
         </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-          <div style="font-weight: 900; font-size: 6.4pt; color: #0f284e; border-bottom: 0.8px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
-            Enquiry 2: Factory System & Child Labour (Q9–Q16)
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-            
-              <div>
-                <strong style="color: #0f284e;">Q9:</strong> <strong>Scavengers and piecers</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Scavengers crawled beneath active, whirring machinery to sweep up loose cotton fibres, while piecers tied broken threads at constant risk of mutilation.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q10:</strong> <strong>Byssinosis (known as "mill fever" or brown lung disease)</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Fine cotton fibres choked children’s lungs, causing chronic coughing, permanent respiratory damage, and premature death among textile operatives.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q11:</strong> <strong>The Sadler Committee Report (1832)</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Michael Sadler’s parliamentary report shocked Victorian Britain by documenting horrific mill cruelty, paving the way for the Factory Act of 1833.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q12:</strong> <strong>The Factory Act of 1833</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The 1833 Act established the principle of state regulation, limiting children aged 9–13 to eight hours of daily work and appointing four inspectors nationwide.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q13:</strong> <strong>"Strapping" with heavy leather belts</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Overlookers, whose own pay depended on output targets, ruthlessly beat drowsy children to prevent machine slowdowns and enforce relentless factory discipline.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q14:</strong> <strong>The Mines Act 1842</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Lord Ashley’s inquiry exposed half-naked young trappers and hurriers chained to coal carts in dark, flooded mines, prompting immediate parliamentary prohibition.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q15:</strong> <strong>Laissez-faire capitalism</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Industrialists argued that Parliament had no right to interfere with "freedom of contract" or trade profits, insisting state regulations would ruin British commerce.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q16:</strong> <strong>Workers surrendered personal autonomy to the relentless mechanical pace of steam engines and the strict schedule of the factory clock</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">In domestic workshops, artisans controlled their own pace; factories imposed punitive fines, locked gates, and continuous machine toil for 12 to 14 hours daily.</div>
-              </div>
-          </div>
+        <div class="concept-card">
+          <span class="concept-title">Laissez-Faire:</span> The economic doctrine that governments should not interfere in the free market, wages, or factory working hours, resisting early safety reforms.
         </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-          <div style="font-weight: 900; font-size: 6.4pt; color: #0f284e; border-bottom: 0.8px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
-            Enquiry 3: Slums, Cholera & Sanitation (Q17–Q24)
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-            
-              <div>
-                <strong style="color: #0f284e;">Q17:</strong> <strong>Cholera</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Cholera caused sudden, fatal dehydration through diarrhoea and vomiting, killing tens of thousands in unsewered, overcrowded industrial slums.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q18:</strong> <strong>Deadly combinations of open cesspools, contaminated well water, unventilated back-to-back cellars, typhus, and exhausting factory toil</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Rapid, unregulated urban migration created catastrophic sanitary conditions, where infants and labourers succumbed to waterborne and respiratory diseases.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q19:</strong> <strong>Miasma theory ("bad air")</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Most Victorian doctors believed decomposing matter poisoned the atmosphere, ignoring contaminated drinking water supplies until John Snow’s 1854 discovery.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q20:</strong> <strong>He mapped cholera deaths clustering around the Broad Street water pump and proved removing the pump handle halted the epidemic</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Snow proved that cholera was an ingested waterborne contagion caused by cesspool sewage leaking directly into public drinking wells.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q21:</strong> <strong>He argued that preventable filth made breadwinners sick, creating widows and orphans who drained local Poor Law tax rates, making sanitation economically rational</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Chadwick convinced reluctant laissez-faire ratepayers that investing in clean piped water and arterial sewers would actually lower municipal poor relief costs.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q22:</strong> <strong>The Great Stink of London</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">When intense heat turned the sewage-choked River Thames outside Parliament intolerably foul, politicians fled committee rooms and funded intercepting sewers.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q23:</strong> <strong>Sir Joseph Bazalgette</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Bazalgette’s brick-arched intercepting sewers carried London’s waste eastward to the Thames estuary, permanently eliminating cholera from the British capital.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q24:</strong> <strong>It made clean water supply, sewer connection, and street lighting compulsory for all local councils, ending extreme laissez-faire in municipal governance</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The 1875 Act established the modern public health framework, recognizing that safeguarding citizen health was a mandatory duty of civil government.</div>
-              </div>
-          </div>
+        <div class="concept-card">
+          <span class="concept-title">Chartism:</span> The mass working-class political movement (1838–1848) demanding democratic parliamentary reform through the six points of the People’s Charter.
         </div>
-      </div>
-
-      <div class="page-footer-strip">
-        <span>Industrialisation, Empire &amp; Power (1750–1901)</span>
-        <span>Marking Bank Part 1 &bull; Page 7 of 8</span>
+        <div class="concept-card">
+          <span class="concept-title">Miasma Theory:</span> The incorrect medical belief that epidemic diseases like cholera were caused by inhaling poisonous airborne vapors from rotting filth.
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- PAGE 8: MARKING BANK PART 2 & DIRT REVISION -->
-  <div class="a5-page" id="page-8">
-    <div class="page-body-full">
-      <div>
-        <div class="page-header-strip">
-          <h2 class="page-title">Department Marking Bank &bull; Part 2 &amp; DIRT Reflection</h2>
-          <span style="font-size: 6.2pt; font-weight: 800; color: #0f284e; text-transform: uppercase;">Enquiries 4–5 &bull; Mastery Sign-Off</span>
-        </div>
-      </div>
-
-      <!-- Enquiries 4 & 5 Answers -->
-      <div style="display: flex; flex-direction: column; gap: 3.5px; font-size: 6.0pt; line-height: 1.15;">
-        
-        <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-          <div style="font-weight: 900; font-size: 6.4pt; color: #0f284e; border-bottom: 0.8px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
-            Enquiry 4: Peterloo, Swing & Tolpuddle (Q25–Q32)
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-            
-              <div>
-                <strong style="color: #0f284e;">Q25:</strong> <strong>The Peterloo Massacre</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Magistrates panicked and sent sabre-wielding yeomanry into a peaceful crowd at St Peter’s Field listening to radical orator Henry Hunt demand votes for working men.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q26:</strong> <strong>"Captain Swing"</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The fictitious "Captain Swing" embodied the collective fury of starving agricultural labourers fighting wage cuts and mechanised unemployment.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q27:</strong> <strong>Threshing machines</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Threshing machines replaced winter hand-flailing, robbing farm labourers of their only dependable winter wages and plunging families into destitution.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q28:</strong> <strong>It sentenced 101 men to penal transportation to Australia, imprisoned hundreds, and publicly hanged 19-year-old labourer Henry Cook</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The government made a ruthless example of Hampshire workers, deporting skilled breadwinners and hanging Cook for knocking off a magistrate’s hat.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q29:</strong> <strong>The Tolpuddle Martyrs</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Led by George Loveless, the labourers were prosecuted under an obsolete 1797 mutiny law against "unlawful oaths", triggering massive trade union protests.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q30:</strong> <strong>A depopulated rural voting district (like Newtown on the Isle of Wight) that sent two MPs to Parliament while industrial cities like Manchester had none</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Wealthy landowners bought and sold pocket boroughs to control Parliament, excluding millions of urban factory workers from democratic representation.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q31:</strong> <strong>It enfranchised industrial cities and middle-class property owners, but retained a £10 property qualification that deliberately excluded working men</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Working men felt cheated by the 1832 settlement, realizing that the middle class had secured power while leaving the working majority disenfranchised.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q32:</strong> <strong>Isolated riots and local strikes were crushed by military force; only securing parliamentary votes could change laws and protect workers’ rights</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The harsh lessons of Peterloo, Winchester Assizes, and Tolpuddle proved that industrial workers required constitutional power, directly inspiring Chartism.</div>
-              </div>
-          </div>
-        </div>
-        <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-          <div style="font-weight: 900; font-size: 6.4pt; color: #0f284e; border-bottom: 0.8px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
-            Enquiry 5: Chartism & Democracy (Q33–Q40)
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-            
-              <div>
-                <strong style="color: #0f284e;">Q33:</strong> <strong>The People’s Charter</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The Charter set out Six Points (universal male suffrage, secret ballot, no property qualification, annual parliaments, equal constituencies, salaries for MPs).</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q34:</strong> <strong>Annual elections made MPs accountable to voters, while salaries allowed working-class men without private fortunes to serve in Parliament</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Without state salaries, only wealthy landowners and factory magnates could afford to serve as MPs, preserving elite monopoly over lawmaking.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q35:</strong> <strong>William Lovett advocated peaceful "Moral Force" through education and petitions; O’Connor threatened "Physical Force" and revolutionary general strikes</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Moral Force Chartists sought constitutional legitimacy through moral persuasion, while Physical Force Chartists prepared pike drills and insurrection.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q36:</strong> <strong>Over 5,000 armed Welsh coal miners marched on the Westgate Hotel to liberate Chartist prisoners; soldiers opened fire, killing 22 demonstrators</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The Newport Rising was the last major armed insurrection on British soil, resulting in high-treason convictions and cementing the state’s fear of revolution.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q37:</strong> <strong>The Plug Plot Riots (1842 General Strike)</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Sparked by wage cuts, half a million factory workers and miners across Lancashire and Yorkshire struck for both higher pay and the People’s Charter.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q38:</strong> <strong>The Secret Ballot Act 1872</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Prior to 1872, voting was conducted in public on open hustings; the secret ballot allowed workers to vote their conscience without fear of eviction or sacking.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q39:</strong> <strong>The Second Reform Act (1867) and Third Reform Act (1884)</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">The 1867 Act gave votes to urban male householders, doubling the electorate to 2 million; the 1884 Act extended equal voting rights to rural labourers.</div>
-              </div>
-              <div>
-                <strong style="color: #0f284e;">Q40:</strong> <strong>Five of the Six Points (all except annual parliaments) were progressively adopted into British law between 1867 and 1918, creating modern democracy</strong>
-                <div style="color: #475569; font-size: 5.6pt; font-style: italic;">Chartism educated millions in political organising, creating the trade union and democratic foundations that eventually enfranchised the entire adult population.</div>
-              </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dedicated DIRT Reflection & Revision Box -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 6px; background: #f8fafc; margin-top: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
-          <strong style="font-size: 6.6pt; text-transform: uppercase; color: #0f284e;">
-            DIRT (Dedicated Improvement &amp; Reflection Time)
-          </strong>
-          <span style="font-size: 5.6pt; font-weight: 700; color: #64748b;">Record 2 misconceptions corrected:</span>
-        </div>
-        <div style="border-bottom: 1px dashed #94a3b8; height: 11px; margin-bottom: 2px;"></div>
-        <div style="border-bottom: 1px dashed #94a3b8; height: 11px;"></div>
-      </div>
-
-      <!-- Department Evaluator Quality Seal & Teacher Sign-off -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 8px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr; gap: 8px; align-items: center; margin-top: 3px;">
-        <div>
-          <div style="font-size: 6.5pt; font-weight: 900; color: #0f284e; text-transform: uppercase;">
-            Department Quality Seal &bull; Evaluated Standard
-          </div>
-          <div style="font-size: 5.8pt; color: #475569; margin-top: 1px;">
-            [ &nbsp; ] Emerging (1–15) &nbsp;&nbsp; [ &nbsp; ] Expected (16–28) &nbsp;&nbsp; [ &nbsp; ] Greater Depth (29–40)
-          </div>
-        </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-size: 6.2pt; color: #0f284e; text-transform: uppercase; margin-right: 4px;">Signed:</strong>
-          <div style="flex: 1; border-bottom: 1.2px solid #0f284e; height: 11px;"></div>
-        </div>
-      </div>
-
-      <div class="page-footer-strip">
-        <span>Industrialisation, Empire &amp; Power (1750–1901)</span>
-        <span>Marking Bank Part 2 &bull; Page 8 of 8</span>
-      </div>
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Marking Bank Part 2</span>
+      <span>Page 8 of 8</span>
     </div>
   </div>
-
 </body>
 </html>

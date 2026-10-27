@@ -147,6 +147,16 @@
       <i class="fa-solid fa-graduation-cap curtain-logo"></i>
       <div class="curtain-text">Loading History Hub...</div>
     </div>
+    <script>
+      // Emergency Curtain Failsafe: Guarantee curtain never permanently locks the viewport
+      setTimeout(function () {
+        var c = document.getElementById('page-curtain');
+        if (c && !c.classList.contains('hidden')) {
+          c.classList.add('hidden');
+          setTimeout(function () { c.style.display = 'none'; }, 400);
+        }
+      }, 3500);
+    </script>
 
     <!-- Coloured Reading Overlay Acetate Screen for Visual Stress / Dyslexia -->
     <div id="reading-overlay-screen" class="reading-overlay-screen" aria-hidden="true"></div>

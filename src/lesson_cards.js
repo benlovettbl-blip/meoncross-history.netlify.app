@@ -111,7 +111,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         {
           id: 'KT1',
           title: 'Key Topic 1: The Birth of Israel',
-          prefix: 'lesson_1_',
+          prefix: 'KT 1',
           gradient: 'linear-gradient(135deg, #1e3a8a, #3b82f6)',
           border: '#3b82f6',
           image: '/assets/cme_new_kt1_cover.png',
@@ -120,7 +120,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         {
           id: 'KT2',
           title: 'Key Topic 2: Escalating Conflict',
-          prefix: 'lesson_2_',
+          prefix: 'KT 2',
           gradient: 'linear-gradient(135deg, #7f1d1d, #ef4444)',
           border: '#ef4444',
           image: '/assets/cme_new_yom_kippur_crossing.png',
@@ -129,7 +129,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         {
           id: 'KT3',
           title: 'Key Topic 3: Attempts at Peace',
-          prefix: 'lesson_3_',
+          prefix: 'KT 3',
           gradient: 'linear-gradient(135deg, #064e3b, #10b981)',
           border: '#10b981',
           image: '/assets/cme_new_camp_david_accords.png',
@@ -272,6 +272,15 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       if (currentUnitId === 'edexcel_medicine') {
         pdfWorkbookUrl = `/pdfs/edexcel_medicine_pupil_workbook_${p.id}_FINAL_V17.pdf`;
         digitalWorkbookUrl = `/units/edexcel_medicine/pupil_workbook_${p.id}.html`;
+      } else if (currentUnitId === 'cme_new') {
+        pdfWorkbookUrl = `/pdfs/cme_new_pupil_workbook_${p.id}_FINAL_V17.pdf`;
+        digitalWorkbookUrl = `/units/cme_new/pupil_workbook_${p.id}.html`;
+      } else if (currentUnitId === 'eee') {
+        pdfWorkbookUrl = `/pdfs/eee_pupil_workbook_${p.id}_FINAL_V17.pdf`;
+        digitalWorkbookUrl = `/units/eee/pupil_workbook_${p.id}.html`;
+      } else if (currentUnitId === 'weimar_nazi_germany') {
+        pdfWorkbookUrl = `/pdfs/weimar_nazi_germany_pupil_workbook_${p.id}_FINAL_V17.pdf`;
+        digitalWorkbookUrl = `/units/weimar_nazi_germany/pupil_workbook_${p.id}.html`;
       }
 
       lessonsHTML += `
@@ -310,7 +319,7 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       `;
 
       lessonsHTML +=
-        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left;">';
+        '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; text-align: left;">';
 
       let foundAny = false;
       unitData.lessons.forEach((lesson, index) => {
@@ -319,29 +328,133 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           (lesson.title && lesson.title.startsWith(p.prefix));
 
         if (!isMatch && currentUnitId === 'cme_new') {
-          const normPrefix = (p.prefix || '').replace(/\s+/g, '').toLowerCase();
-          const normTitle = (lesson.title || '').replace(/\s+/g, '').toLowerCase();
-          const normId = (lesson.id || '').replace(/\s+/g, '').toLowerCase();
-          const normKt = (lesson.key_topic || '').replace(/\s+/g, '').toLowerCase();
-          const normWb = (lesson.workbook || '').replace(/\s+/g, '').toLowerCase();
-
-          isMatch =
-            normTitle.startsWith(normPrefix) ||
-            normId.startsWith(normPrefix) ||
-            normKt.startsWith(normPrefix) ||
-            normWb === normPrefix;
+          if (p.id === 'KT1') {
+            isMatch =
+              (lesson.title && /KT\s*1\b/i.test(lesson.title)) ||
+              (lesson.id && (lesson.id.startsWith('lesson_1_') || ['lesson_1', 'lesson_2', 'lesson_3', 'lesson_4'].includes(lesson.id))) ||
+              index < 4;
+          } else if (p.id === 'KT2') {
+            isMatch =
+              (lesson.title && /KT\s*2\b/i.test(lesson.title)) ||
+              (lesson.id && (lesson.id.startsWith('lesson_2_') || ['lesson_5', 'lesson_6', 'lesson_7', 'lesson_8', 'lesson_9', 'lesson_10'].includes(lesson.id))) ||
+              (index >= 4 && index < 9);
+          } else if (p.id === 'KT3') {
+            isMatch =
+              (lesson.title && /KT\s*3\b/i.test(lesson.title)) ||
+              (lesson.id && (lesson.id.startsWith('lesson_3_') || ['lesson_11', 'lesson_12', 'lesson_13'].includes(lesson.id))) ||
+              index >= 9;
+          }
         }
 
         if (isMatch) {
           foundAny = true;
           const cardBadge = renderSidebarVideoBadgeHTML(lesson);
-          lessonsHTML += `
-            <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; gap: 6px;">
-                <h3 style="margin: 0; color: #1a237e; font-size: 1rem; font-family: 'Outfit', sans-serif;">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
-                ${cardBadge}
+
+          let candidateImg =
+            lesson.card_image || lesson.banner || lesson.hero_image || lesson.cover_image;
+          if (!candidateImg && lesson.narrative_blocks && lesson.narrative_blocks.length > 0) {
+            for (const b of lesson.narrative_blocks) {
+              if (b.image) {
+                candidateImg = b.image;
+                break;
+              }
+              if (b.source && (b.source.image || b.source.src || b.source.image_url)) {
+                candidateImg = b.source.image || b.source.src || b.source.image_url;
+                break;
+              }
+            }
+          }
+          if (!candidateImg && lesson.sources && lesson.sources.length > 0) {
+            candidateImg =
+              lesson.sources[0].src || lesson.sources[0].image_url || lesson.sources[0].image;
+          }
+          if (candidateImg && typeof candidateImg === 'object') {
+            candidateImg =
+              candidateImg.image ||
+              candidateImg.src ||
+              candidateImg.image_url ||
+              candidateImg.url ||
+              null;
+          }
+
+          let topMediaHTML = '';
+          if (candidateImg) {
+            let imgUrl = getAssetUrl(candidateImg);
+            let cardPos =
+              lesson.card_position ||
+              lesson.card_image_position ||
+              (typeof lesson.card_image === 'object' && lesson.card_image?.position) ||
+              (typeof lesson.banner === 'object' && lesson.banner
+                ? lesson.banner.card_position || lesson.banner.position
+                : null) ||
+              lesson.banner_position ||
+              'center';
+
+            if (imgUrl.includes('edward_jenner') || lesson.id === 'lesson_3_2') {
+              cardPos = 'center 15%';
+            }
+
+            topMediaHTML = `
+              <div style="position: relative; width: 100%; height: 145px; overflow: hidden; background: #0f172a; flex-shrink: 0;">
+                <img src="${imgUrl}" alt="${lesson.title}" class="lesson-card-banner-img" style="width: 100%; height: 100%; object-fit: cover; object-position: ${cardPos}; display: block; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);" />
+                <div style="position: absolute; top: 12px; left: 12px; background: rgba(15,23,42,0.85); backdrop-filter: blur(6px); color: #f8fafc; font-size: 0.72rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; letter-spacing: 0.04em; border: 1px solid rgba(255,255,255,0.2); text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+                  ${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}
+                </div>
               </div>
-              <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.9rem; line-height: 1.3;">${lesson.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
+            `;
+          } else {
+            topMediaHTML = `
+              <div style="position: relative; width: 100%; height: 50px; background: linear-gradient(135deg, ${p.border || '#1e3a8a'} 0%, #3b82f6 100%); display: flex; align-items: center; padding: 0 16px; flex-shrink: 0;">
+                <span style="background: rgba(255,255,255,0.22); color: #ffffff; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 14px; text-transform: uppercase; letter-spacing: 0.04em;">
+                  ${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}
+                </span>
+              </div>
+            `;
+          }
+
+          let displayTitle = (lesson.title || '')
+            .replace(/^(?:Enquiry|Lesson)\s*\d+:\s*/i, '')
+            .trim();
+          let shortCode = `Lesson ${index + 1}`;
+          const ktMatch = displayTitle.match(/^(KT\s*\d+\.\d+)\s*(?:Enquiry)?:\s*(.*)$/i);
+          if (ktMatch) {
+            shortCode = `${ktMatch[1]} • Lesson ${index + 1}`;
+            displayTitle = ktMatch[2].trim();
+          }
+
+          const displayEnquiry =
+            lesson.enquiry ||
+            lesson.enquiryQuestion ||
+            lesson.enquiry_question ||
+            lesson.subtitle ||
+            lesson.hook_text ||
+            '';
+
+          lessonsHTML += `
+            <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${index}" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-top: 4px solid ${p.border || '#2563eb'}; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05); cursor: pointer; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s; display: flex; flex-direction: column;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px -3px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -2px rgba(0,0,0,0.05)';">
+              ${topMediaHTML}
+              <div style="padding: 16px 18px 20px 18px; display: flex; flex-direction: column; flex: 1; justify-content: space-between; gap: 8px;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; gap: 6px;">
+                    <span style="font-size: 0.75rem; font-weight: 700; color: ${p.border || '#2563eb'}; text-transform: uppercase; letter-spacing: 0.05em;">
+                      ${shortCode}
+                    </span>
+                    ${cardBadge}
+                  </div>
+                  <h3 style="margin: 0 0 8px 0; color: #0f172a; font-size: 1.02rem; font-weight: 700; line-height: 1.35; font-family: 'Playfair Display', Georgia, serif;">
+                    ${displayTitle}
+                  </h3>
+                  ${
+                    displayEnquiry
+                      ? `
+                    <p style="margin: 0; color: #475569; font-weight: 400; font-size: 0.85rem; line-height: 1.45; font-style: italic;">
+                      ${displayEnquiry}
+                    </p>
+                  `
+                      : ''
+                  }
+                </div>
+              </div>
             </div>
           `;
         }
@@ -921,6 +1034,10 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
               ? lesson.banner.card_position || lesson.banner.position
               : null) ||
             lesson.banner_position;
+
+          if (imgUrl.includes('edward_jenner') || lesson.id === 'lesson_3_2') {
+            cardPos = 'center 15%';
+          }
 
           if (
             (!cardPos || cardPos === 'center') &&

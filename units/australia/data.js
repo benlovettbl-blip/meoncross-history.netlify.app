@@ -1,11 +1,12 @@
-const unitData = {
+export const unitData = {
+  "homepage_background": "/images/francis_fowkes_sydney_cove_1788.jpg",
+  "cover_image": "/images/prison_hulks.jpg",
   "id": "australia",
   "title": "The History of Australia: First Nations, Colonisation & Resistance (1770–1901)",
   "short_title": "The History of Australia",
   "period": "1770–1901",
   "enquiry": "Invasion, Settlement, or Survival? How did British colonisation transform Australia?",
   "description": "From 65,000 years of continuous First Nations custodianship and Captain Cook’s voyage to the First Fleet, frontier wars, convict labour, the Gold Rush, and Aboriginal resistance, investigate how colonisation built modern Australia through dispossession and struggle.",
-  "cover_image": "/images/prison_hulks.jpg",
   "cover_image_position": "center 30%",
   "is_ks3": true,
   "year_group": "Year 8",
@@ -547,18 +548,21 @@ const unitData = {
             "image": "/images/james_cook.jpg",
             "caption": "Captain James Cook RN, painted by Nathaniel Dance in official naval uniform, his hand resting upon an Admiralty chart of his Pacific voyages.",
             "source_context": "Commissioned by Sir Joseph Banks following Cook’s second voyage, Dance depicted Cook as a calm, dignified naval officer and scientific explorer, celebrating British Enlightenment achievements across the Pacific Ocean. Hinge Question: Does Dance present Cook as a detached man of science, or does this portrait obscure his role as an agent of British imperial conquest?",
-            "how_useful_question": "How useful is Source A for an enquiry into how British imperial commanders like Captain Cook presented their naval exploration of the Pacific?",
             "provenance_clues": [
-              "Author: Nathaniel Dance, a distinguished London society portraitist commissioned by Cook’s wealthy patron, Sir Joseph Banks.",
-              "Audience: British elites, the Royal Society, and the Admiralty.",
-              "Motive: To celebrate Cook as a calm, heroic Enlightenment explorer who brought glory and scientific knowledge to the British Empire."
+              "Author: Nathaniel Dance, a London portrait painter commissioned by Cook’s wealthy patron, Sir Joseph Banks.",
+              "Audience: British elites, scientists at the Royal Society, and naval leaders.",
+              "Motive: To celebrate Cook as a noble Enlightenment explorer who brought scientific glory to the British Empire."
             ],
             "hinge_question": "Does Dance present Cook as a detached man of science, or does this portrait obscure his role as an agent of British imperial conquest?",
             "citation": "Nathaniel Dance • National Maritime Museum, Greenwich.",
             "discussion_ideas": [
               "The Enlightenment Icon of Scientific Reason and Exploration: Nathaniel Dance depicts Cook seated calmly in a naval captain’s uniform, pointing with quiet authority to a nautical chart of his Pacific discoveries, surrounded by books and navigational instruments; the portrait emphasizes Cook’s reputation as an Enlightenment navigator, astronomer, and surveyor whose voyages were ostensibly dedicated to observing the Transit of Venus and charting Oceania for human knowledge.",
               "An Agent of British Imperial Annexation and Dispossession: Dance’s refined depiction obscures the political and military reality: Cook carried secret Admiralty instructions commanding him to find the 'Great Southern Continent' and annex territories for the British Crown. By raising the Union Jack at Possession Island in August 1770 and declaring the entire eastern continent British territory under the fiction of terra nullius—ignoring clear First Nations presence and his orders to gain the consent of the natives—Cook acted as the imperial vanguard of British colonial land-theft."
-            ]
+            ],
+            "question_badge": "Author's Purpose",
+            "question": "Why did Nathaniel Dance paint Captain Cook looking like a calm scientist rather than a naval conqueror?",
+            "enquiry_question": "Why did Nathaniel Dance paint Captain Cook looking like a calm scientist rather than a naval conqueror?",
+            "model_answer": "The artist wanted to celebrate Cook as an educated, peaceful explorer bringing scientific knowledge to Britain, hiding the reality that Cook was claiming other people's lands for the British Empire."
           }
         },
         {
@@ -571,17 +575,20 @@ const unitData = {
             "image": "/images/botany_bay_map.jpg",
             "caption": "The official Admiralty hydrographic survey of Botany Bay produced by Captain Cook in May 1770, showing depth soundings and landing coordinates.",
             "source_context": "Produced for King George III and the British Admiralty, Cook’s survey charted the coast with scientific precision but systematically omitted the presence of Indigenous villages, fish-traps, and sacred sites. Hinge Question: Why did Cook chart natural anchorages with meticulous care while completely ignoring the existence of Indigenous boundaries and sovereign populations?",
-            "how_useful_question": "How useful is Source B for an enquiry into the British Admiralty’s priorities when surveying the eastern coast of Australia in 1770?",
             "provenance_clues": [
-              "Author: Captain James Cook and naval navigators on the Endeavour.",
-              "Audience: The British Admiralty, Royal Navy commanders, and colonial planners in London.",
-              "Motive: To record safe deep-water anchorages and navigational hazards for future British naval vessels and colonial fleets."
+              "Author: Captain James Cook and naval navigators on HMS Endeavour.",
+              "Audience: King George III, the British Admiralty, and naval commanders.",
+              "Motive: To chart safe anchorages for British naval ships and prepare the land for colonial settlement."
             ],
             "hinge_question": "Why did Cook chart natural anchorages with meticulous care while completely ignoring the existence of Indigenous boundaries and sovereign populations?",
             "citation": "The British Library, London • Admiralty Hydrographic Office.",
             "discussion_ideas": [
               "Cook and Banks’ cartography reflects European imperial legal doctrine: land was only recognized as possessed if it was visibly transformed by European-style permanent settlements, fenced private property, and agricultural cultivation. Because Indigenous First Nations custodians practiced sophisticated, sustainable land management (such as fire-stick farming and seasonal migration across songlines) without erecting stone walls or plowing fields, Cook categorized the continent as terra nullius ('nobody's land'). By meticulously sounding depths, charting fresh water creeks, and naming botanical headlands while omitting 65,000 years of Gweagal and Dharawal clan territories, the map served not merely as a navigational aid, but as a colonial erasure tool that prepared the coast for military annexation and convict settlement without treaty or compensation."
-            ]
+            ],
+            "question_badge": "Source Inference",
+            "question": "What does Cook’s detailed map of Botany Bay reveal about what the British cared about—and what they ignored?",
+            "enquiry_question": "What does Cook’s detailed map of Botany Bay reveal about what the British cared about—and what they ignored?",
+            "model_answer": "Cook carefully mapped safe water depths and harbours for future British ships, but completely erased Indigenous people by leaving out their villages, fishing areas, and sacred land."
           }
         },
         {
@@ -735,7 +742,112 @@ const unitData = {
           "viewing_task": "[08:00] Recall: What archaeological evidence proves human occupation in Australia for over 65,000 years (e.g. Madjedbebe rock shelter)?\n[18:30] Explain: How did Indigenous systems of kinship, Songlines, and ecological fire-stick burning sustain populations across arid environments?\n[28:00] Challenge: In light of 65,000 years of unbroken culture, how does modern Australian law now view the 18th-century declaration of 'Terra Nullius'?",
           "model_answer": "Recall: Radiocarbon and optical dating of flaked stone axes, grinding stones, and red ochre pigments at Madjedbebe in Arnhem Land.\nExplain: Songlines served as oral navigational maps, legal boundaries, and spiritual histories, while controlled burns stimulated native grasses and prevented catastrophic wildfires.\nChallenge: The 1992 landmark Mabo High Court ruling officially overturned Terra Nullius, acknowledging that native title existed prior to 1788 and shattered the colonial myth that Australia was an uninhabited wilderness."
         }
-      ]
+      ],
+      "sources": [
+        {
+          "letter": "A",
+          "title": "Source A: Nathaniel Dance, Portrait of Captain James Cook RN (1775)",
+          "image": "/images/james_cook.jpg",
+          "caption": "Captain James Cook RN, painted by Nathaniel Dance in official naval uniform, his hand resting upon an Admiralty chart of his Pacific voyages.",
+          "source_context": "Commissioned by Sir Joseph Banks following Cook’s second voyage, Dance depicted Cook as a calm, dignified naval officer and scientific explorer, celebrating British Enlightenment achievements across the Pacific Ocean. Hinge Question: Does Dance present Cook as a detached man of science, or does this portrait obscure his role as an agent of British imperial conquest?",
+          "provenance_clues": [
+            "Author: Nathaniel Dance, a London portrait painter commissioned by Cook’s wealthy patron, Sir Joseph Banks.",
+            "Audience: British elites, scientists at the Royal Society, and naval leaders.",
+            "Motive: To celebrate Cook as a noble Enlightenment explorer who brought scientific glory to the British Empire."
+          ],
+          "hinge_question": "Does Dance present Cook as a detached man of science, or does this portrait obscure his role as an agent of British imperial conquest?",
+          "citation": "Nathaniel Dance • National Maritime Museum, Greenwich.",
+          "discussion_ideas": [
+            "The Enlightenment Icon of Scientific Reason and Exploration: Nathaniel Dance depicts Cook seated calmly in a naval captain’s uniform, pointing with quiet authority to a nautical chart of his Pacific discoveries, surrounded by books and navigational instruments; the portrait emphasizes Cook’s reputation as an Enlightenment navigator, astronomer, and surveyor whose voyages were ostensibly dedicated to observing the Transit of Venus and charting Oceania for human knowledge.",
+            "An Agent of British Imperial Annexation and Dispossession: Dance’s refined depiction obscures the political and military reality: Cook carried secret Admiralty instructions commanding him to find the 'Great Southern Continent' and annex territories for the British Crown. By raising the Union Jack at Possession Island in August 1770 and declaring the entire eastern continent British territory under the fiction of terra nullius—ignoring clear First Nations presence and his orders to gain the consent of the natives—Cook acted as the imperial vanguard of British colonial land-theft."
+          ],
+          "question_badge": "Author's Purpose",
+          "question": "Why did Nathaniel Dance paint Captain Cook looking like a calm scientist rather than a naval conqueror?",
+          "enquiry_question": "Why did Nathaniel Dance paint Captain Cook looking like a calm scientist rather than a naval conqueror?",
+          "model_answer": "The artist wanted to celebrate Cook as an educated, peaceful explorer bringing scientific knowledge to Britain, hiding the reality that Cook was claiming other people's lands for the British Empire."
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Captain Cook and Joseph Banks, Chart of Botany Bay (1770)",
+          "image": "/images/botany_bay_map.jpg",
+          "caption": "The official Admiralty hydrographic survey of Botany Bay produced by Captain Cook in May 1770, showing depth soundings and landing coordinates.",
+          "source_context": "Produced for King George III and the British Admiralty, Cook’s survey charted the coast with scientific precision but systematically omitted the presence of Indigenous villages, fish-traps, and sacred sites. Hinge Question: Why did Cook chart natural anchorages with meticulous care while completely ignoring the existence of Indigenous boundaries and sovereign populations?",
+          "provenance_clues": [
+            "Author: Captain James Cook and naval navigators on HMS Endeavour.",
+            "Audience: King George III, the British Admiralty, and naval commanders.",
+            "Motive: To chart safe anchorages for British naval ships and prepare the land for colonial settlement."
+          ],
+          "hinge_question": "Why did Cook chart natural anchorages with meticulous care while completely ignoring the existence of Indigenous boundaries and sovereign populations?",
+          "citation": "The British Library, London • Admiralty Hydrographic Office.",
+          "discussion_ideas": [
+            "Cook and Banks’ cartography reflects European imperial legal doctrine: land was only recognized as possessed if it was visibly transformed by European-style permanent settlements, fenced private property, and agricultural cultivation. Because Indigenous First Nations custodians practiced sophisticated, sustainable land management (such as fire-stick farming and seasonal migration across songlines) without erecting stone walls or plowing fields, Cook categorized the continent as terra nullius ('nobody's land'). By meticulously sounding depths, charting fresh water creeks, and naming botanical headlands while omitting 65,000 years of Gweagal and Dharawal clan territories, the map served not merely as a navigational aid, but as a colonial erasure tool that prepared the coast for military annexation and convict settlement without treaty or compensation."
+          ],
+          "question_badge": "Source Inference",
+          "question": "What does Cook’s detailed map of Botany Bay reveal about what the British cared about—and what they ignored?",
+          "enquiry_question": "What does Cook’s detailed map of Botany Bay reveal about what the British cared about—and what they ignored?",
+          "model_answer": "Cook carefully mapped safe water depths and harbours for future British ships, but completely erased Indigenous people by leaving out their villages, fishing areas, and sacred land."
+        }
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: Claiming Australia & Terra Nullius",
+        "tariff": "12 marks (Explain Why Causal Analysis)",
+        "questions": [
+          {
+            "tariff": "12 marks",
+            "type": "explain_why_12m",
+            "question": "Explain why the British Empire claimed eastern Australia and declared it terra nullius between 1768 and 1788. [12 marks]",
+            "stimulus": [
+              "Secret Admiralty instructions to locate the Great Southern Land",
+              "Joseph Banks’s reports of Botany Bay and European property law"
+            ],
+            "prompt": "Explain three distinct causal reasons: geopolitical and naval rivalry in the Pacific following the Seven Years’ War, botanical and agricultural recommendations by Joseph Banks, and the legal fiction of \"terra nullius\" based on European concepts of cultivated land ownership.",
+            "model": "One primary reason the British Empire claimed Australia was geopolitical and commercial competition with rival European powers. Following victory in the Seven Years’ War (1756–1763), the British Admiralty sought to discover the hypothetical continent of Terra Australis Incognita to prevent France or Spain from securing strategic naval bases in the Pacific. James Cook was dispatched on HMS Endeavour in 1768 with secret Admiralty instructions ordering him, after observing the Transit of Venus in Tahiti, to chart southern sea routes and take possession of convenient territories in the name of King George III. Claiming eastern Australia in August 1770 on Possession Island secured Britain a strategic Pacific gateway for future trade with China and the East Indies.<br><br>Furthermore, a second decisive factor was the glowing scientific and commercial report delivered by botanist Joseph Banks. Banks observed Botany Bay in April 1770, collecting hundreds of botanical specimens with Polynesian navigator Tupaia. Banks testified before Parliament in 1779 that New South Wales possessed rich soil, abundant timber, and fertile pastures suitable for European crops, while Norfolk Island could supply tall pines for ship masts and native flax for naval sailcloth. Consequently, British political leaders viewed the continent as an economically viable territory capable of self-sufficiency.<br><br>Finally, Britain declared Australia \"terra nullius\" (nobody’s land) by applying ethnocentric European legal doctrines of property ownership. Drawing upon philosopher John Locke’s theory that legitimate property rights derive from enclosing land and tilling the soil, Cook and Banks falsely assumed that because First Nations peoples were nomadic hunter-gatherers who did not erect permanent stone fences or European-style farms, they held no sovereign ownership. By deliberately ignoring Indigenous land management systems (such as fire-stick farming) and the 65,000-year continuous cultural attachment of over 500 First Nations groups, the British Crown bypassed seeking treaties or consent, legally dispossessing First Nations peoples upon arrival.",
+            "scaffolding": {
+              "acronym": "3-Paragraph Causal Analysis (PEEL)",
+              "acronym_title": "12-Mark Explain Why Standard",
+              "steps": [
+                {
+                  "letter": "REASON 1",
+                  "name": "Pacific Rivalry & Secret Admiralty Orders",
+                  "prompt": "Explain the Seven Years’ War, Cook on HMS Endeavour, secret instructions, and claiming for King George III.",
+                  "starter": "One primary reason the British Empire claimed Australia was..."
+                },
+                {
+                  "letter": "REASON 2",
+                  "name": "Joseph Banks’s Botany Bay Reports",
+                  "prompt": "Explain Banks, Tupaia, fertile pastures, Norfolk Island pine for masts, and flax for sails.",
+                  "starter": "Furthermore, a second decisive factor was..."
+                },
+                {
+                  "letter": "REASON 3",
+                  "name": "The Legal Fiction of Terra Nullius",
+                  "prompt": "Explain John Locke, European property law, ignoring fire-stick farming, and seizing land without treaties.",
+                  "starter": "Finally, Britain declared Australia \"terra nullius\" because..."
+                }
+              ],
+              "sentence_starters": [
+                "One primary reason was that...",
+                "For example, secret instructions ordered...",
+                "This led directly to the claim because...",
+                "A second critical factor was...",
+                "Finally, the legal doctrine of terra nullius was applied because...",
+                "Ultimately, this resulted in..."
+              ],
+              "connectives_bank": [
+                "James Cook",
+                "Tupaia",
+                "terra nullius",
+                "Admiralty instructions",
+                "Joseph Banks",
+                "Botany Bay",
+                "Possession Island",
+                "HMS Endeavour",
+                "John Locke"
+              ]
+            }
+          }
+        ]
+      }
     },
     {
       "id": "lesson_2",
@@ -991,18 +1103,21 @@ const unitData = {
             "image": "/images/prison_hulks.jpg",
             "caption": "An 18th-century sketch by French captive Louis Garneray showing converted prison hulks moored in harbour, with convicts labouring on mudflats.",
             "source_context": "Drawn by a naval painter held as a prisoner of war, this sketch records the grim conditions on decommissioned warships where convicts were chained below decks in dark, disease-ridden holds. Hinge Question: How does Garneray’s depiction of the hulks explain why the British government felt compelled to establish an overseas penal colony in Australia?",
-            "how_useful_question": "How useful is Source A for an enquiry into the British penal crisis that led to the dispatch of the First Fleet in 1787?",
             "provenance_clues": [
-              "Author: Louis Garneray, an eyewitness French prisoner held in Portsmouth harbour.",
-              "Audience: The British public and European observers.",
-              "Motive: To document the squalor, physical degradation, and punitive regime of the British prison hulks."
+              "Author: Louis Garneray, a French naval painter held as a prisoner of war in Portsmouth.",
+              "Audience: Observers in Britain and France curious about harsh prison conditions.",
+              "Motive: To record the miserable, cramped reality of life on disease-ridden floating prison ships."
             ],
             "hinge_question": "How does Garneray’s depiction of the hulks explain why the British government felt compelled to establish an overseas penal colony in Australia?",
             "citation": "Louis Garneray • National Maritime Museum, Greenwich.",
             "discussion_ideas": [
               "Catastrophic Overcrowding and Epidemic Filth in English Ports: Following American independence in 1783, Britain could no longer transport convicts to the American colonies; obsolete wooden warships stripped of masts ('hulks') moored at Portsmouth, Plymouth, and the Thames were packed with thousands of petty convicts sentenced under the brutal 'Bloody Code'. Floating in squalor, lice, and typhus ('gaol fever'), the hulks were overflowing and feared by the British ruling class as explosive breeding grounds for disease and violent prisoner mutiny.",
               "Radical Imperial Relocation to the Ends of the Earth: Transporting convicts 15,000 miles to Botany Bay under Captain Arthur Phillip was viewed by William Pitt’s government as a permanent, terrifying deterrent: ridding British streets of the 'criminal class' forever, preventing domestic revolution, and simultaneously securing a strategic British naval and commercial outpost in the South Pacific to counter French imperial expansion."
-            ]
+            ],
+            "question_badge": "Source Inference",
+            "question": "What can you infer from this sketch about why the British government felt forced to send convicts all the way to Australia?",
+            "enquiry_question": "What can you infer from this sketch about why the British government felt forced to send convicts all the way to Australia?",
+            "model_answer": "The sketch shows that British prisons and floating hulks were dangerously overcrowded, dirty, and overflowing with convicts, forcing the government to ship prisoners across the world."
           }
         },
         {
@@ -1020,17 +1135,20 @@ const unitData = {
             "image": "/images/francis_fowkes_sydney_cove_1788.jpg",
             "caption": "Contemporary sketch showing British naval transports anchored in Sydney Cove, with canvas tents, storehouses, and convict encampments pitched on the foreshore.",
             "source_context": "Drawn by a convict surveyor in 1788, this map illustrates the precarious nature of the early settlement, with flimsy canvas tents pitched on the edge of dense eucalyptus forest. Hinge Question: What does Source B reveal about the immediate logistical and environmental vulnerabilities of the First Fleet encampment?",
-            "how_useful_question": "How useful is Source B for an enquiry into the challenges faced by Governor Phillip when establishing the settlement at Sydney Cove in 1788?",
             "provenance_clues": [
-              "Author: Francis Fowkes, an eyewitness convict working as a draughtsman at Sydney Cove.",
-              "Audience: Colonial administrators in Sydney and officials in London.",
-              "Motive: To provide an accurate spatial record of storehouses, marine encampments, and cleared timber at the founding of Sydney."
+              "Author: Francis Fowkes, a convict surveyor working under Governor Phillip's orders.",
+              "Audience: British government ministers and colonial planners in London.",
+              "Motive: To document the layout of the newborn settlement and show the progress of the infant penal colony."
             ],
             "hinge_question": "What does Source B reveal about the immediate logistical and environmental vulnerabilities of the First Fleet encampment?",
             "citation": "Francis Fowkes • State Library of New South Wales, Sydney.",
             "discussion_ideas": [
               "Francis Fowkes' 1788 sketch illustrates the extreme fragility of the early British penal settlement at Sydney Cove. Surrounded by dense, alien eucalyptus forest on infertile, rocky sandstone soil, over 1,400 convicts and marines were housed in fragile canvas tents and crude wattle-and-daub huts, dependent entirely on the tiny freshwater stream (the Tank Stream). The sketch highlights their total logistical isolation: English farming tools broke on the hard Australian timber, European seed corn rotted in the ground, and livestock died, bringing the entire colony to the brink of starvation. Without regular supply ships from England, Governor Phillip was forced to place the entire colony on starvation rations of salt pork and flour, proving that British industrial might was initially completely powerless against the unfamiliar Australian environment."
-            ]
+            ],
+            "question_badge": "Technology & Power",
+            "question": "What does this early map reveal about the struggles faced by the First Fleet when building their new colony?",
+            "enquiry_question": "What does this early map reveal about the struggles faced by the First Fleet when building their new colony?",
+            "model_answer": "It shows the settlement was just a fragile cluster of canvas tents and wooden storehouses clinging to the shore, facing starvation on the edge of unfamiliar, dense bushland."
           }
         },
         {
@@ -1184,7 +1302,162 @@ const unitData = {
           "viewing_task": "[12:00] Recall: What initial reactions did the Eora people have to the strange pale arrivals clearing the trees of Sydney Cove?\n[22:00] Explain: How did the rapid exhaustion of British food rations lead to near-starvation during the colony's first three years?\n[32:30] Challenge: How did Governor Phillip's early attempts at peaceful assimilation collapse into frontier military reprisals?",
           "model_answer": "Recall: Initial curiosity and warning shouts ('Warra warra wai' - go away), followed by astonishment at the felling of ancient trees and building of permanent huts.\nExplain: English wheat crops failed in the unfamiliar soil, seeds rotted, cattle escaped into the bush, and supply ships were wrecked, leaving the colony on starvation rations of salt pork.\nChallenge: When convicts began stealing Indigenous fishing nets and spearing game, Aboriginal warriors retaliated; Phillip responded by dispatching military punitive expeditions with bags to bring back severed heads."
         }
-      ]
+      ],
+      "sources": [
+        {
+          "letter": "A",
+          "title": "Source A: Louis Garneray, Prison Hulks in Portsmouth Harbour (c. 1780s)",
+          "image": "/images/prison_hulks.jpg",
+          "caption": "An 18th-century sketch by French captive Louis Garneray showing converted prison hulks moored in harbour, with convicts labouring on mudflats.",
+          "source_context": "Drawn by a naval painter held as a prisoner of war, this sketch records the grim conditions on decommissioned warships where convicts were chained below decks in dark, disease-ridden holds. Hinge Question: How does Garneray’s depiction of the hulks explain why the British government felt compelled to establish an overseas penal colony in Australia?",
+          "provenance_clues": [
+            "Author: Louis Garneray, a French naval painter held as a prisoner of war in Portsmouth.",
+            "Audience: Observers in Britain and France curious about harsh prison conditions.",
+            "Motive: To record the miserable, cramped reality of life on disease-ridden floating prison ships."
+          ],
+          "hinge_question": "How does Garneray’s depiction of the hulks explain why the British government felt compelled to establish an overseas penal colony in Australia?",
+          "citation": "Louis Garneray • National Maritime Museum, Greenwich.",
+          "discussion_ideas": [
+            "Catastrophic Overcrowding and Epidemic Filth in English Ports: Following American independence in 1783, Britain could no longer transport convicts to the American colonies; obsolete wooden warships stripped of masts ('hulks') moored at Portsmouth, Plymouth, and the Thames were packed with thousands of petty convicts sentenced under the brutal 'Bloody Code'. Floating in squalor, lice, and typhus ('gaol fever'), the hulks were overflowing and feared by the British ruling class as explosive breeding grounds for disease and violent prisoner mutiny.",
+            "Radical Imperial Relocation to the Ends of the Earth: Transporting convicts 15,000 miles to Botany Bay under Captain Arthur Phillip was viewed by William Pitt’s government as a permanent, terrifying deterrent: ridding British streets of the 'criminal class' forever, preventing domestic revolution, and simultaneously securing a strategic British naval and commercial outpost in the South Pacific to counter French imperial expansion."
+          ],
+          "question_badge": "Source Inference",
+          "question": "What can you infer from this sketch about why the British government felt forced to send convicts all the way to Australia?",
+          "enquiry_question": "What can you infer from this sketch about why the British government felt forced to send convicts all the way to Australia?",
+          "model_answer": "The sketch shows that British prisons and floating hulks were dangerously overcrowded, dirty, and overflowing with convicts, forcing the government to ship prisoners across the world."
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Francis Fowkes, Sketch of the Settlement at Sydney Cove (1788)",
+          "image": "/images/francis_fowkes_sydney_cove_1788.jpg",
+          "caption": "Contemporary sketch showing British naval transports anchored in Sydney Cove, with canvas tents, storehouses, and convict encampments pitched on the foreshore.",
+          "source_context": "Drawn by a convict surveyor in 1788, this map illustrates the precarious nature of the early settlement, with flimsy canvas tents pitched on the edge of dense eucalyptus forest. Hinge Question: What does Source B reveal about the immediate logistical and environmental vulnerabilities of the First Fleet encampment?",
+          "provenance_clues": [
+            "Author: Francis Fowkes, a convict surveyor working under Governor Phillip's orders.",
+            "Audience: British government ministers and colonial planners in London.",
+            "Motive: To document the layout of the newborn settlement and show the progress of the infant penal colony."
+          ],
+          "hinge_question": "What does Source B reveal about the immediate logistical and environmental vulnerabilities of the First Fleet encampment?",
+          "citation": "Francis Fowkes • State Library of New South Wales, Sydney.",
+          "discussion_ideas": [
+            "Francis Fowkes' 1788 sketch illustrates the extreme fragility of the early British penal settlement at Sydney Cove. Surrounded by dense, alien eucalyptus forest on infertile, rocky sandstone soil, over 1,400 convicts and marines were housed in fragile canvas tents and crude wattle-and-daub huts, dependent entirely on the tiny freshwater stream (the Tank Stream). The sketch highlights their total logistical isolation: English farming tools broke on the hard Australian timber, European seed corn rotted in the ground, and livestock died, bringing the entire colony to the brink of starvation. Without regular supply ships from England, Governor Phillip was forced to place the entire colony on starvation rations of salt pork and flour, proving that British industrial might was initially completely powerless against the unfamiliar Australian environment."
+          ],
+          "question_badge": "Technology & Power",
+          "question": "What does this early map reveal about the struggles faced by the First Fleet when building their new colony?",
+          "enquiry_question": "What does this early map reveal about the struggles faced by the First Fleet when building their new colony?",
+          "model_answer": "It shows the settlement was just a fragile cluster of canvas tents and wooden storehouses clinging to the shore, facing starvation on the edge of unfamiliar, dense bushland."
+        }
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: The First Fleet & The Penal Colony",
+        "tariff": "12 marks (Feature Drill [4m] & Source Utility [8m])",
+        "questions": [
+          {
+            "tariff": "4 marks",
+            "type": "feature_drills_4m",
+            "question": "Describe two features of life on board the Thames prison hulks in the 1780s. [4 marks]",
+            "prompt": "Identify two distinct features of living conditions on the Thames prison hulks. For each feature, provide a clear identification followed by supporting factual knowledge.",
+            "model": "Feature 1: One key feature was severe overcrowding and debilitating physical confinement.<br>Detail: Decommissioned naval warships moored on the River Thames were crammed with hundreds of chained convicts in unventilated, rat-infested lower decks, sleeping on bare floorboards with minimal bedding.<br><br>Feature 2: A second key feature was the prevalence of virulent infectious diseases and hard labour.<br>Detail: Due to contaminated river water and raw sewage, typhus (jail fever), dysentery, and scurvy spread rapidly, killing up to a third of inmates while survivors were forced into heavy manual labour dredging the Thames riverbed.",
+            "scaffolding": {
+              "acronym": "F1 + D1 • F2 + D2",
+              "acronym_title": "4-Mark Feature Drill Formula",
+              "steps": [
+                {
+                  "letter": "F1",
+                  "name": "Feature 1 (Confinement & Overcrowding)",
+                  "prompt": "Identify decommissioned warships, iron chains, and rat-infested lower decks.",
+                  "starter": "One key feature was that..."
+                },
+                {
+                  "letter": "D1",
+                  "name": "Detail 1",
+                  "prompt": "Add precise details (hundreds chained, bare floorboards, unventilated holds).",
+                  "starter": "Specifically, this involved..."
+                },
+                {
+                  "letter": "F2",
+                  "name": "Feature 2 (Lethal Disease & Forced Labour)",
+                  "prompt": "Identify jail fever, dysentery, and dredging the Thames riverbed.",
+                  "starter": "A second key feature was..."
+                },
+                {
+                  "letter": "D2",
+                  "name": "Detail 2",
+                  "prompt": "Add precise details (up to 30% mortality, typhus, contaminated bilge water).",
+                  "starter": "In particular, this meant that..."
+                }
+              ],
+              "sentence_starters": [
+                "One key feature was that...",
+                "Specifically, this involved...",
+                "A second key feature was...",
+                "In particular, this meant that..."
+              ],
+              "connectives_bank": [
+                "prison hulks",
+                "River Thames",
+                "overcrowding",
+                "jail fever / typhus",
+                "leg irons",
+                "forced dredging",
+                "First Fleet"
+              ]
+            }
+          },
+          {
+            "tariff": "8 marks",
+            "type": "source_utility_8m",
+            "question": "How useful are Sources A and B for an enquiry into the challenges faced by convicts and colonial authorities during the founding of Sydney Cove (1780–1792)? [8 marks]",
+            "stimulus": [
+              "Source A: Governor Arthur Phillip’s dispatch to Lord Sydney (1788) detailing unyielding eucalyptus wood that blunts axes, poor soil at Sydney Cove, and near-starvation.",
+              "Source B: Extract from the journal of convict marine Watkin Tench (1790) recording severe caloric reductions, the loss of the supply ship HMS Guardian, and rampant scurvy."
+            ],
+            "prompt": "Evaluate both sources for their historical utility. Analyse what their contents reveal about agricultural failure and supply shortages, corroborating with contextual knowledge and interrogating their official provenance and personal perspectives.",
+            "model": "Source A is exceptionally useful because it provides official, direct evidence from Governor Arthur Phillip regarding the acute environmental and physical challenges encountered at Sydney Cove. Phillip details how the hard eucalyptus timber destroyed iron axes and spades, and notes that the sandy coastal soil caused English wheat crops to wither. This aligns precisely with contextual knowledge: the colony faced immediate starvation because convicts were largely urban pickpockets rather than skilled farmers. Furthermore, the provenance makes Source A highly valuable as a candid administrative dispatch written to the British Home Secretary, Lord Sydney, where Phillip had an urgent motive to convey the unvarnished reality to secure emergency supply fleets.<br><br>Source B is equally valuable because it captures the psychological and nutritional desperation of the colony during the \"Starvation Years\" (1790–1792). Watkin Tench documents how weekly rations were halved to barely surviving levels of salt pork and flour following the shipwreck of the supply frigate HMS Guardian off South Africa. From my own knowledge, I know that Phillip dispatched HMS Sirius to Norfolk Island to divide the hungry population, but Sirius was also wrecked. As a literate marine officer living among the convicts, Tench’s published journal offers an observant eyewitness account of daily suffering that corroborates Phillip’s official reports. Together, both sources provide comprehensive insight into the extreme fragility of early colonial survival.",
+            "scaffolding": {
+              "acronym": "Source A (Content + Provenance) • Source B (Content + Provenance) • Synthesis",
+              "acronym_title": "Edexcel Paper 3 Q3(a) Dual Source Utility Framework",
+              "steps": [
+                {
+                  "letter": "SOURCE A",
+                  "name": "Analyse Phillip’s Dispatch",
+                  "prompt": "Analyse eucalyptus wood blunting tools, sandy soil, urban convicts, and official report motive.",
+                  "starter": "Source A is exceptionally useful because its content reveals that..."
+                },
+                {
+                  "letter": "SOURCE B",
+                  "name": "Analyse Tench’s Journal",
+                  "prompt": "Analyse halved rations, loss of HMS Guardian, scurvy, and personal eyewitness accuracy.",
+                  "starter": "Source B is equally useful because it captures..."
+                },
+                {
+                  "letter": "SYNTHESIS",
+                  "name": "Weighed Value",
+                  "prompt": "Explain how both sources corroborate the extreme precarity of the Starvation Years.",
+                  "starter": "Combined, both sources provide high historical utility because..."
+                }
+              ],
+              "sentence_starters": [
+                "Source A is useful for an enquiry into challenges because it reveals...",
+                "In particular, this aligns with historical knowledge regarding...",
+                "Furthermore, the provenance makes it valuable because...",
+                "Similarly, Source B offers critical insight into...",
+                "Overall, both sources combined provide comprehensive utility because..."
+              ],
+              "connectives_bank": [
+                "Arthur Phillip",
+                "Watkin Tench",
+                "Sydney Cove",
+                "eucalyptus blunted axes",
+                "starvation rations",
+                "HMS Guardian wreck",
+                "Norfolk Island",
+                "scurvy"
+              ]
+            }
+          }
+        ]
+      }
     },
     {
       "id": "lesson_3",
@@ -1445,18 +1718,21 @@ const unitData = {
             "image": "/images/bennelong.jpg",
             "caption": "Watercolour portrait of Woollarawarre Bennelong dressed in a tailored European suit, painted following his return from London in 1795.",
             "source_context": "Bennelong, an influential Wangal leader captured by order of Governor Phillip in 1789, learned English, dined at Government House, and traveled to England to meet King George III in 1793. Hinge Question: Does Bennelong’s European dress reflect genuine cultural assimilation, or was he a pragmatic diplomat attempting to negotiate with a vastly more powerful military occupier?",
-            "how_useful_question": "How useful is Source A for an enquiry into the challenges faced by Indigenous intermediaries like Bennelong in the early colony of New South Wales?",
             "provenance_clues": [
-              "Author: European portraitist depicting Woollarawarre Bennelong after his return from London.",
-              "Audience: Colonial administrators in Sydney and the British public.",
-              "Motive: To celebrate British 'civilising' influence by portraying an Aboriginal leader adopting European clothing, manners, and language."
+              "Author: Attributed to James Neagle, a British engraver working in London.",
+              "Audience: British society fascinated by Indigenous leaders who visited King George III.",
+              "Motive: To depict Bennelong as a polished, educated intermediary bridging European and Aboriginal worlds."
             ],
             "hinge_question": "Does Bennelong’s European dress reflect genuine cultural assimilation, or was he a pragmatic diplomat attempting to negotiate with a vastly more powerful military occupier?",
             "citation": "State Library of New South Wales, Sydney.",
             "discussion_ideas": [
               "Pragmatic Indigenous Diplomacy and Intermediary Leadership: Bennelong—a senior Wangal clan man captured on Governor Phillip’s orders—voluntarily adopted European dress and learned English to serve as an ambassador for his people; he traveled to London and met King George III in 1793, strategically using his unique royal connections to negotiate between British authorities and Eora clans, seeking to protect his people's survival through cross-cultural diplomacy.",
               "The Tragedy of Cultural Dislocation and Rejection: Bennelong's European attire trapped him in an agonizing cultural limbo: while British colonists treated him as an exotic novelty to be discarded once his diplomatic usefulness ended, many of his own Eora kin viewed his European clothes, alcohol consumption, and adoption of British customs with deep suspicion, leaving him ostracized and heartbroken upon his return to Sydney."
-            ]
+            ],
+            "question_badge": "Historical Significance",
+            "question": "Why is Bennelong wearing a fancy British suit in this portrait, and what made his role between two cultures so difficult?",
+            "enquiry_question": "Why is Bennelong wearing a fancy British suit in this portrait, and what made his role between two cultures so difficult?",
+            "model_answer": "Bennelong dressed like an English gentleman to act as a peaceful diplomat for his people, but he struggled because neither the British settlers nor his own community fully trusted him afterwards."
           }
         },
         {
@@ -1474,18 +1750,21 @@ const unitData = {
             "image": "/images/pemulwuy.jpg",
             "caption": "An early 19th-century engraving depicting Bidjigal resistance warrior Pemulwuy holding a hunting spear and club in the Sydney bush.",
             "source_context": "Regarded by colonial authorities as an outlaw and rebel, Pemulwuy led a 12-year armed guerrilla resistance campaign defending Sydney clans against British expansion. Hinge Question: Why did British colonial accounts label Pemulwuy a 'bloodthirsty terrorist', while modern historians regard him as an iconic patriot and military commander?",
-            "how_useful_question": "How useful is Source B for an enquiry into how British colonists viewed First Nations resistance leaders like Pemulwuy?",
             "provenance_clues": [
-              "Author: British colonial illustrator based on military reports and contemporary descriptions.",
-              "Audience: British settlers in Sydney and readers in Britain.",
-              "Motive: To depict the leader of the frontier resistance who was evading military expeditions and threatening colonial expansion."
+              "Author: British colonial artist in New South Wales.",
+              "Audience: White settlers and authorities in Sydney alarmed by Frontier conflict.",
+              "Motive: To depict Pemulwuy as a fierce, wild threat to justify hunting him down and crushing his resistance."
             ],
             "hinge_question": "Why did British colonial accounts label Pemulwuy a 'bloodthirsty terrorist', while modern historians regard him as an iconic patriot and military commander?",
             "citation": "State Library of New South Wales, Sydney.",
             "discussion_ideas": [
               "Colonial Demonization to Justify Annihilation: British colonial gazettes branded Pemulwuy—a clever Bidjigal warrior who led a twelve-year guerrilla war against British settlement along the Hawkesbury River—a savage murderer and outlaw; framing his attacks on livestock, crops, and armed expeditions as irrational criminal violence justified Governor King's 1801 proclamation placing a price on his head and ordering soldiers to shoot him on sight.",
               "First Nations Patriot and Resistance Commander: Modern historians recognize Pemulwuy as Australia's first national military hero: he fought a sophisticated, disciplined guerrilla campaign to defend sacred ancestral hunting grounds from environmental destruction and agricultural fencing, uniting disparate Eora, Dharug, and Tharawal clans and surviving seven bullet wounds before being killed in an ambush in 1802, his severed head tragically sent to Sir Joseph Banks in London."
-            ]
+            ],
+            "question_badge": "Propaganda & Persuasion",
+            "question": "How does this colonial picture portray Pemulwuy, and why did British accounts describe him as a dangerous outlaw?",
+            "enquiry_question": "How does this colonial picture portray Pemulwuy, and why did British accounts describe him as a dangerous outlaw?",
+            "model_answer": "The picture shows Pemulwuy armed with weapons in the wild bush, reflecting British fears of a brave warrior who united clans to fight guerrilla warfare against land theft."
           }
         },
         {
@@ -1634,7 +1913,150 @@ const unitData = {
           "viewing_task": "[28:00] Recall: What sparked the April 1789 smallpox epidemic (Galgala) that wiped out half the Eora population?\n[36:00] Explain: How did Pemulwuy organize alliances between different Aboriginal language groups to resist British pastoral expansion?\n[45:30] Challenge: Following Pemulwuy's death in 1802, what happened to his head, and what does this reveal about colonial attitudes toward resistance heroes?",
           "model_answer": "Recall: An outbreak of smallpox swept through coastal clans; historians still debate whether it escaped from First Fleet medical vials, Macassan traders, or was deliberately spread.\nExplain: He united Bidjigal, Dharug, and Eora warriors, coordinating night attacks on isolated farms and burning maize crops to cut off food supplies to Sydney.\nChallenge: His severed head was pickled in spirits and sent to London to Sir Joseph Banks as a scientific curiosity, showing how colonial authorities treated First Nations resistance leaders as specimens rather than legitimate military adversaries."
         }
-      ]
+      ],
+      "sources": [
+        {
+          "letter": "A",
+          "title": "Source A: Attributed to James Neagle, Portrait of Woollarawarre Bennelong in European Dress (c. 1798)",
+          "image": "/images/bennelong.jpg",
+          "caption": "Watercolour portrait of Woollarawarre Bennelong dressed in a tailored European suit, painted following his return from London in 1795.",
+          "source_context": "Bennelong, an influential Wangal leader captured by order of Governor Phillip in 1789, learned English, dined at Government House, and traveled to England to meet King George III in 1793. Hinge Question: Does Bennelong’s European dress reflect genuine cultural assimilation, or was he a pragmatic diplomat attempting to negotiate with a vastly more powerful military occupier?",
+          "provenance_clues": [
+            "Author: Attributed to James Neagle, a British engraver working in London.",
+            "Audience: British society fascinated by Indigenous leaders who visited King George III.",
+            "Motive: To depict Bennelong as a polished, educated intermediary bridging European and Aboriginal worlds."
+          ],
+          "hinge_question": "Does Bennelong’s European dress reflect genuine cultural assimilation, or was he a pragmatic diplomat attempting to negotiate with a vastly more powerful military occupier?",
+          "citation": "State Library of New South Wales, Sydney.",
+          "discussion_ideas": [
+            "Pragmatic Indigenous Diplomacy and Intermediary Leadership: Bennelong—a senior Wangal clan man captured on Governor Phillip’s orders—voluntarily adopted European dress and learned English to serve as an ambassador for his people; he traveled to London and met King George III in 1793, strategically using his unique royal connections to negotiate between British authorities and Eora clans, seeking to protect his people's survival through cross-cultural diplomacy.",
+            "The Tragedy of Cultural Dislocation and Rejection: Bennelong's European attire trapped him in an agonizing cultural limbo: while British colonists treated him as an exotic novelty to be discarded once his diplomatic usefulness ended, many of his own Eora kin viewed his European clothes, alcohol consumption, and adoption of British customs with deep suspicion, leaving him ostracized and heartbroken upon his return to Sydney."
+          ],
+          "question_badge": "Historical Significance",
+          "question": "Why is Bennelong wearing a fancy British suit in this portrait, and what made his role between two cultures so difficult?",
+          "enquiry_question": "Why is Bennelong wearing a fancy British suit in this portrait, and what made his role between two cultures so difficult?",
+          "model_answer": "Bennelong dressed like an English gentleman to act as a peaceful diplomat for his people, but he struggled because neither the British settlers nor his own community fully trusted him afterwards."
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Contemporary Engraving, Bidjigal Warrior Pemulwuy (c. 1802)",
+          "image": "/images/pemulwuy.jpg",
+          "caption": "An early 19th-century engraving depicting Bidjigal resistance warrior Pemulwuy holding a hunting spear and club in the Sydney bush.",
+          "source_context": "Regarded by colonial authorities as an outlaw and rebel, Pemulwuy led a 12-year armed guerrilla resistance campaign defending Sydney clans against British expansion. Hinge Question: Why did British colonial accounts label Pemulwuy a 'bloodthirsty terrorist', while modern historians regard him as an iconic patriot and military commander?",
+          "provenance_clues": [
+            "Author: British colonial artist in New South Wales.",
+            "Audience: White settlers and authorities in Sydney alarmed by Frontier conflict.",
+            "Motive: To depict Pemulwuy as a fierce, wild threat to justify hunting him down and crushing his resistance."
+          ],
+          "hinge_question": "Why did British colonial accounts label Pemulwuy a 'bloodthirsty terrorist', while modern historians regard him as an iconic patriot and military commander?",
+          "citation": "State Library of New South Wales, Sydney.",
+          "discussion_ideas": [
+            "Colonial Demonization to Justify Annihilation: British colonial gazettes branded Pemulwuy—a clever Bidjigal warrior who led a twelve-year guerrilla war against British settlement along the Hawkesbury River—a savage murderer and outlaw; framing his attacks on livestock, crops, and armed expeditions as irrational criminal violence justified Governor King's 1801 proclamation placing a price on his head and ordering soldiers to shoot him on sight.",
+            "First Nations Patriot and Resistance Commander: Modern historians recognize Pemulwuy as Australia's first national military hero: he fought a sophisticated, disciplined guerrilla campaign to defend sacred ancestral hunting grounds from environmental destruction and agricultural fencing, uniting disparate Eora, Dharug, and Tharawal clans and surviving seven bullet wounds before being killed in an ambush in 1802, his severed head tragically sent to Sir Joseph Banks in London."
+          ],
+          "question_badge": "Propaganda & Persuasion",
+          "question": "How does this colonial picture portray Pemulwuy, and why did British accounts describe him as a dangerous outlaw?",
+          "enquiry_question": "How does this colonial picture portray Pemulwuy, and why did British accounts describe him as a dangerous outlaw?",
+          "model_answer": "The picture shows Pemulwuy armed with weapons in the wild bush, reflecting British fears of a brave warrior who united clans to fight guerrilla warfare against land theft."
+        }
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: Frontier Warfare & Pemulwuy’s Resistance",
+        "tariff": "16 marks (Narrative Account [8m] & Explain Importance [8m])",
+        "questions": [
+          {
+            "tariff": "8 marks",
+            "type": "narrative_account_8m",
+            "question": "Write a narrative account analysing the key events of Indigenous resistance and frontier conflict in New South Wales between 1788 and 1802. [8 marks]",
+            "stimulus": [
+              "The 1789 smallpox epidemic (Galgany) and the kidnapping of Bennelong",
+              "Pemulwuy’s guerrilla campaign and the Battle of Parramatta (1797)"
+            ],
+            "prompt": "Write a chronological account examining the escalation: the initial 1789 smallpox catastrophe and diplomatic kidnappings, the emergence of Pemulwuy’s armed resistance in the Hawkesbury and Parramatta regions, and Governor King’s 1801 outlaw proclamation leading to Pemulwuy’s death in 1802.",
+            "model": "Between 1788 and 1802, relations between British colonizers and the Eora people rapidly disintegrated from cautious curiosity into sustained guerrilla warfare.<br><br>The conflict began in April 1789 with the devastating outbreak of smallpox (known to the Eora as Galgany) along Sydney Cove, which wiped out over 50% of the local Indigenous population within months. Weakened by demographic collapse, the Eora faced aggressive British incursions onto their ancestral lands. In an attempt to force diplomatic communication, Governor Arthur Phillip ordered the kidnapping of Arabanoo and later Bennelong in late 1789. Although Bennelong was dressed in European clothes and traveled to London in 1792, colonial pastoralists continued clearing Eora fishing creeks and yam beds, igniting armed friction.<br><br>Sustained military resistance coalesced around the Bidjigal warrior Pemulwuy from 1790. Rejecting collaboration, Pemulwuy launched a systematic guerrilla campaign, spearing Governor Phillip’s gamekeeper John McIntyre and coordinating multi-clan raids across the Hawkesbury and Parramatta settlements. Utilizing burning spears to destroy colonial grain stores and orchards, Pemulwuy culminated his campaign in March 1797 by leading 100 warriors directly into the township at the Battle of Parramatta. Despite being shot seven times, Pemulwuy survived and escaped from hospital, entering Indigenous legend as an invincible spiritual leader.<br><br>The final escalation occurred in May 1801 when Governor Philip Gidley King issued an official proclamation outlawing Indigenous people from entering settled areas and offering a reward for Pemulwuy dead or alive. In June 1802, Pemulwuy was shot by a British ambush, and his decapitated head was pickled in spirits and sent to Sir Joseph Banks in London. Consequently, Pemulwuy’s death ended the first phase of unified resistance along the Sydney Basin, paving the way for unrestricted British expansion.",
+            "scaffolding": {
+              "acronym": "3-Stage Chronological Narrative Framework",
+              "acronym_title": "Narrative Account Formula (Beginning • Escalation • Climax)",
+              "steps": [
+                {
+                  "letter": "STAGE 1",
+                  "name": "1789 Smallpox & Bennelong Kidnap",
+                  "prompt": "Explain 50% mortality from Galgany, Phillip kidnapping Bennelong, and land clearing.",
+                  "starter": "Initially, relations disintegrated following the April 1789..."
+                },
+                {
+                  "letter": "STAGE 2",
+                  "name": "1790–1797 Pemulwuy & Battle of Parramatta",
+                  "prompt": "Explain spearing McIntyre, burning crops, Parramatta raid, and surviving 7 bullet wounds.",
+                  "starter": "Following this, organized armed resistance coalesced under Pemulwuy when..."
+                },
+                {
+                  "letter": "STAGE 3",
+                  "name": "1801 Outlawing & 1802 Ambush",
+                  "prompt": "Explain Governor King’s proclamation, Pemulwuy’s death, and sending head to Joseph Banks.",
+                  "starter": "The tragic culmination of the frontier conflict occurred in 1801–1802 when..."
+                }
+              ],
+              "sentence_starters": [
+                "Initially, relations broke down when...",
+                "Following this, sustained armed resistance erupted in...",
+                "A major military escalation occurred in March 1797 when...",
+                "Consequently, this culminated in 1801–1802 when..."
+              ],
+              "connectives_bank": [
+                "smallpox / Galgany",
+                "Bennelong kidnap",
+                "Pemulwuy",
+                "Bidjigal clan",
+                "Hawkesbury raids",
+                "Battle of Parramatta (1797)",
+                "Governor King proclamation (1801)",
+                "Joseph Banks"
+              ]
+            }
+          },
+          {
+            "tariff": "8 marks",
+            "type": "explain_importance_8m",
+            "question": "Explain the importance of Pemulwuy’s guerrilla campaign (1790–1802) for Indigenous resistance against British colonisation. [8 marks]",
+            "prompt": "Explain two distinct reasons why Pemulwuy was historically important: first, how his multi-clan tactical alliances proved that Indigenous peoples fought back with sophisticated military strategy; second, how his enduring spiritual legacy inspired future frontier resistance across the Australian continent.",
+            "model": "One reason Pemulwuy’s guerrilla campaign was profoundly important was that it shattered the colonial myth that Indigenous Australians were passive spectators who surrendered their lands without a fight. Pemulwuy developed sophisticated military tactics specifically tailored to counter British flintlock muskets. Recognizing that British muskets took twenty seconds to reload and were rendered useless in damp weather, Pemulwuy orchestrated dawn and rain raids, targeted British supply chains, burned crop fields with fire-sticks, and ambushed isolated patrols along the Hawkesbury River. Crucially, he united previously divided clans—including the Bidjigal, Dharug, and Eora—into a coordinated resistance alliance, demonstrating formidable political and military leadership.<br><br>Furthermore, Pemulwuy’s campaign was vital because he created an enduring spiritual and cultural legacy of resistance that inspired subsequent generations across the Australian Frontier Wars. When Pemulwuy survived seven gunshot wounds following the Battle of Parramatta in 1797, his people believed he was protected by ancestral spirits and impervious to British bullets. Even Governor King admitted in official dispatches that Pemulwuy was \"a terrible pest to the colony\" who was regarded by his people as a hero. His twelve-year war of resistance established a blueprint for frontier defiance that was later adopted by warriors in the Bathurst War and the Tasmanian Black War, cementing his status as Australia’s first great national resistance leader.",
+            "scaffolding": {
+              "acronym": "Importance Point 1 • Importance Point 2",
+              "acronym_title": "Edexcel Paper 2 Period Study 8-Mark Importance Standard",
+              "steps": [
+                {
+                  "letter": "IMPACT 1",
+                  "name": "Tactical Sophistication & Multi-Clan Unity",
+                  "prompt": "Explain exploiting musket reload times, rain raids, burning crops, and unifying clans.",
+                  "starter": "One reason Pemulwuy’s campaign was profoundly important was that..."
+                },
+                {
+                  "letter": "IMPACT 2",
+                  "name": "Enduring Spiritual & Frontier Legacy",
+                  "prompt": "Explain surviving bullet wounds, legend of invulnerability, and inspiring future frontier wars.",
+                  "starter": "Furthermore, the campaign was vital because it established..."
+                }
+              ],
+              "sentence_starters": [
+                "One reason why Pemulwuy’s campaign was important was...",
+                "In particular, he demonstrated military sophistication by...",
+                "Furthermore, the campaign was critical because...",
+                "Consequently, this transformed Indigenous resistance because..."
+              ],
+              "connectives_bank": [
+                "Pemulwuy",
+                "guerrilla tactics",
+                "rain raids",
+                "multi-clan alliance",
+                "Battle of Parramatta",
+                "spiritual invulnerability",
+                "Frontier Wars legacy"
+              ]
+            }
+          }
+        ]
+      }
     },
     {
       "id": "lesson_4",
@@ -1645,7 +2067,7 @@ const unitData = {
       "card_image": "/images/ballarat_gold.jpg",
       "card_position": "center 20%",
       "banner": {
-        "image": "/images/myall_creek_deposition_1838.jpg",
+        "image": "/images/aus_first_fleet.jpg",
         "position": "center 40%",
         "caption": "Frontier expansion across the Australian interior: Settlers, convict shepherds, and armed stockmen violently dispossessing Indigenous nations from ancestral waterways."
       },
@@ -1895,17 +2317,20 @@ const unitData = {
             "image": "/images/governor_arthur_proclamation_board_1829.jpg",
             "caption": "A painted wooden proclamation board issued by Governor Arthur in 1829, using pictorial strips to promise equal British justice for both settlers and Aboriginal people.",
             "source_context": "Painted on wooden boards and nailed to trees across Tasmania, this proclamation purported to show Aboriginal people and settlers living in harmony, and promised that both white and black murderers would be hanged equally. Hinge Question: How did the pictorial promise of equal justice on the proclamation board contradict the violent reality of Governor Arthur’s martial law and the Black Line?",
-            "how_useful_question": "How useful is Source A for an enquiry into British colonial propaganda and policy during the Black War in Tasmania?",
             "provenance_clues": [
-              "Author: Commissioned by Governor George Arthur and colonial officials in Hobart.",
-              "Audience: Illiterate Aboriginal Tasmanians and settler colonists.",
-              "Motive: To persuade Palawa clans that British law offered equal protection, masking the military reality of lethal shoot-on-sight orders."
+              "Author: Commissioned by Governor George Arthur in Van Diemen's Land (Tasmania).",
+              "Audience: Indigenous Tasmanian clans who could not read English text.",
+              "Motive: To persuade Aboriginal people that British law would protect them, while soldiers were actually waging the Black War."
             ],
             "hinge_question": "How did the pictorial promise of equal justice on the proclamation board contradict the violent reality of Governor Arthur’s martial law and the Black Line?",
             "citation": "Tasmanian Museum and Art Gallery, Hobart.",
             "discussion_ideas": [
               "Governor Arthur's proclamation boards—wooden panels painted with comic-strip sequences showing British redcoats and Aboriginal people embracing, followed by equal hangings: a white settler hanged for killing a Black person and a Black person hanged for killing a white settler—were grotesque colonial propaganda. In reality, during the Tasmanian 'Black War' (1824–1831), Arthur declared martial law, offering cash bounties for captured Indigenous people and deploying the 'Black Line'—a human military dragnet of 2,200 armed soldiers, police, and convicts that swept across the entire island to trap and expel the surviving Palawa population. Not a single white settler or soldier was ever legally prosecuted or hanged in Van Diemen's Land for killing an Aboriginal person, exposing the proclamation's promise of equal justice as a cynical falsehood masking near-total demographic genocide."
-            ]
+            ],
+            "question_badge": "Propaganda & Reality",
+            "question": "How did this picture board try to convince Aboriginal people that British law was fair, and why was it misleading?",
+            "enquiry_question": "How did this picture board try to convince Aboriginal people that British law was fair, and why was it misleading?",
+            "model_answer": "It showed black and white people shaking hands and promised that anyone who killed would be hanged equally, but in reality British soldiers were driving Aboriginal people off their lands with deadly violence."
           }
         },
         {
@@ -1921,20 +2346,23 @@ const unitData = {
             "letter": "B",
             "title": "Source B: Edward Day, Deposition on the Myall Creek Massacre (1838)",
             "image": "/images/myall_creek_deposition_1838.jpg",
-            "caption": "Court records and official depositions from the 1838 trial of eleven white stockmen for the murder of Wirrayaraay families at Myall Creek.",
+            "caption": "Official report and deposition concerning the Myall Creek Massacre, written by station manager William Hobbs to Police Magistrate Edward Denny Day (Invermein Court of Petty Sessions / NSW State Archives Collection NRS 19437, 9 July 1838).",
             "source_context": "Police magistrate Edward Day investigated the gruesome massacre at Myall Creek station, gathering eyewitness testimony that exposed how stockmen tied 28 unarmed women, children, and elders together with tethering ropes and butchered them with swords. Hinge Question: Why was the conviction of seven white stockmen in 1838 an unprecedented exception to the normal pattern of colonial frontier justice?",
-            "how_useful_question": "How useful is Source B for an enquiry into the nature of frontier violence and colonial justice during pastoral expansion in 1830s Australia?",
             "provenance_clues": [
-              "Author: Edward Day, a Crown police magistrate conducting a formal judicial murder investigation.",
-              "Audience: The Supreme Court of New South Wales, the Governor, and the British Colonial Office.",
-              "Motive: To provide rigorous legal evidence to prosecute white stockmen for murder under British law."
+              "Author: Edward Denny Day, an official police magistrate investigating mass murder at Myall Creek.",
+              "Audience: The Governor, the Supreme Court in Sydney, and the British Colonial Office.",
+              "Motive: To record sworn legal testimony so that the murderers could be brought to justice under British law."
             ],
             "hinge_question": "Why was the conviction of seven white stockmen in 1838 an unprecedented exception to the normal pattern of colonial frontier justice?",
             "citation": "Supreme Court of New South Wales • State Archives Collection.",
             "discussion_ideas": [
               "The Exceptional Triumph of Equal Rule of Law: On 10 June 1838, a gang of eleven armed white stockmen tied together and butchered twenty-eight defenseless Wirrayaraay women, children, and elderly people at Myall Creek; thanks to the courageous whistleblowing of station manager William Hobbs and the determined prosecution by Attorney-General John Plunkett, seven white perpetrators were convicted and hanged, marking the only time in Australian history that white men were legally executed for murdering First Nations people on the frontier.",
               "Fierce Settler Backlash and Underground Frontier Murder: The executions provoked fury across the colonial squatter aristocracy and press, who formed the 'Black Association' to fund the killers' legal defense; rather than stopping frontier massacres, the verdict merely taught stockmen never to leave witnesses or report killings, driving frontier genocide underground through the use of arsenic-laced flour, waterhole poisonings, and secretive nighttime police sweeps."
-            ]
+            ],
+            "question_badge": "Reliability & Provenance",
+            "question": "Why is this police magistrate’s report such a reliable and shocking record of frontier violence in 1830s Australia?",
+            "enquiry_question": "Why is this police magistrate’s report such a reliable and shocking record of frontier violence in 1830s Australia?",
+            "model_answer": "It is reliable because Magistrate Day carefully gathered eyewitness evidence under oath, exposing how white stockmen tied up and murdered 28 defenseless women, children, and elders."
           }
         },
         {
@@ -2083,7 +2511,159 @@ const unitData = {
           "viewing_task": "[20:00] Recall: What was the 'Black Line' military operation ordered by Governor George Arthur in Van Diemen's Land (Tasmania) in 1830?\n[32:00] Explain: How did George Augustus Robinson persuade surviving Tasmanian Aboriginal people to surrender and relocate to Flinders Island?\n[42:15] Challenge: How did the rapid decline of the Tasmanian population on Flinders Island disprove colonial claims of 'humanitarian protection'?",
           "model_answer": "Recall: A human cordon of over 2,000 soldiers and armed settlers who swept across the island over six weeks to capture or drive all Aboriginal people onto the Tasman Peninsula.\nExplain: Robinson promised that if they ceased fighting and moved temporarily to an island sanctuary, they would be protected, their lands would be preserved, and they could eventually return home.\nChallenge: Confined on windy, disease-ridden Flinders Island, stripped of culture, and forced into European clothing and Christian prayer, over 100 people died of respiratory illness and despair within a decade."
         }
-      ]
+      ],
+      "sources": [
+        {
+          "letter": "A",
+          "title": "Source A: Governor George Arthur’s Proclamation Board (c. 1829)",
+          "image": "/images/governor_arthur_proclamation_board_1829.jpg",
+          "caption": "A painted wooden proclamation board issued by Governor Arthur in 1829, using pictorial strips to promise equal British justice for both settlers and Aboriginal people.",
+          "source_context": "Painted on wooden boards and nailed to trees across Tasmania, this proclamation purported to show Aboriginal people and settlers living in harmony, and promised that both white and black murderers would be hanged equally. Hinge Question: How did the pictorial promise of equal justice on the proclamation board contradict the violent reality of Governor Arthur’s martial law and the Black Line?",
+          "provenance_clues": [
+            "Author: Commissioned by Governor George Arthur in Van Diemen's Land (Tasmania).",
+            "Audience: Indigenous Tasmanian clans who could not read English text.",
+            "Motive: To persuade Aboriginal people that British law would protect them, while soldiers were actually waging the Black War."
+          ],
+          "hinge_question": "How did the pictorial promise of equal justice on the proclamation board contradict the violent reality of Governor Arthur’s martial law and the Black Line?",
+          "citation": "Tasmanian Museum and Art Gallery, Hobart.",
+          "discussion_ideas": [
+            "Governor Arthur's proclamation boards—wooden panels painted with comic-strip sequences showing British redcoats and Aboriginal people embracing, followed by equal hangings: a white settler hanged for killing a Black person and a Black person hanged for killing a white settler—were grotesque colonial propaganda. In reality, during the Tasmanian 'Black War' (1824–1831), Arthur declared martial law, offering cash bounties for captured Indigenous people and deploying the 'Black Line'—a human military dragnet of 2,200 armed soldiers, police, and convicts that swept across the entire island to trap and expel the surviving Palawa population. Not a single white settler or soldier was ever legally prosecuted or hanged in Van Diemen's Land for killing an Aboriginal person, exposing the proclamation's promise of equal justice as a cynical falsehood masking near-total demographic genocide."
+          ],
+          "question_badge": "Propaganda & Reality",
+          "question": "How did this picture board try to convince Aboriginal people that British law was fair, and why was it misleading?",
+          "enquiry_question": "How did this picture board try to convince Aboriginal people that British law was fair, and why was it misleading?",
+          "model_answer": "It showed black and white people shaking hands and promised that anyone who killed would be hanged equally, but in reality British soldiers were driving Aboriginal people off their lands with deadly violence."
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Edward Day, Deposition on the Myall Creek Massacre (1838)",
+          "image": "/images/myall_creek_deposition_1838.jpg",
+          "caption": "Official report and deposition concerning the Myall Creek Massacre, written by station manager William Hobbs to Police Magistrate Edward Denny Day (Invermein Court of Petty Sessions / NSW State Archives Collection NRS 19437, 9 July 1838).",
+          "source_context": "Police magistrate Edward Day investigated the gruesome massacre at Myall Creek station, gathering eyewitness testimony that exposed how stockmen tied 28 unarmed women, children, and elders together with tethering ropes and butchered them with swords. Hinge Question: Why was the conviction of seven white stockmen in 1838 an unprecedented exception to the normal pattern of colonial frontier justice?",
+          "provenance_clues": [
+            "Author: Edward Denny Day, an official police magistrate investigating mass murder at Myall Creek.",
+            "Audience: The Governor, the Supreme Court in Sydney, and the British Colonial Office.",
+            "Motive: To record sworn legal testimony so that the murderers could be brought to justice under British law."
+          ],
+          "hinge_question": "Why was the conviction of seven white stockmen in 1838 an unprecedented exception to the normal pattern of colonial frontier justice?",
+          "citation": "Supreme Court of New South Wales • State Archives Collection.",
+          "discussion_ideas": [
+            "The Exceptional Triumph of Equal Rule of Law: On 10 June 1838, a gang of eleven armed white stockmen tied together and butchered twenty-eight defenseless Wirrayaraay women, children, and elderly people at Myall Creek; thanks to the courageous whistleblowing of station manager William Hobbs and the determined prosecution by Attorney-General John Plunkett, seven white perpetrators were convicted and hanged, marking the only time in Australian history that white men were legally executed for murdering First Nations people on the frontier.",
+            "Fierce Settler Backlash and Underground Frontier Murder: The executions provoked fury across the colonial squatter aristocracy and press, who formed the 'Black Association' to fund the killers' legal defense; rather than stopping frontier massacres, the verdict merely taught stockmen never to leave witnesses or report killings, driving frontier genocide underground through the use of arsenic-laced flour, waterhole poisonings, and secretive nighttime police sweeps."
+          ],
+          "question_badge": "Reliability & Provenance",
+          "question": "Why is this police magistrate’s report such a reliable and shocking record of frontier violence in 1830s Australia?",
+          "enquiry_question": "Why is this police magistrate’s report such a reliable and shocking record of frontier violence in 1830s Australia?",
+          "model_answer": "It is reliable because Magistrate Day carefully gathered eyewitness evidence under oath, exposing how white stockmen tied up and murdered 28 defenseless women, children, and elders."
+        }
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: The Frontier Wars & The Black War",
+        "tariff": "8 marks (Contrasting Historical Interpretations)",
+        "questions": [
+          {
+            "tariff": "4 marks",
+            "type": "interpretations_diff_4m",
+            "question": "Explain how Interpretations 1 and 2 differ on the nature and scale of frontier conflict in Australia. [4 marks]",
+            "stimulus": [
+              "Interpretation 1: Historian Henry Reynolds, The Other Side of the Frontier (1981) — argues European occupation was resisted from the start by Indigenous peoples using guerrilla tactics in a protracted, bloody war costing at least 20,000 Aboriginal lives.",
+              "Interpretation 2: Historian Keith Windschuttle, The Fabrication of Aboriginal History (2002) — argues there was no systematic warfare or frontier genocide, asserting conflicts were uncoordinated, small-scale criminal skirmishes over stolen goods with fabricated death tolls."
+            ],
+            "prompt": "Explain the fundamental difference between Henry Reynolds’s orthodox view of a protracted, bloody continental war of resistance and Keith Windschuttle’s revisionist view of minor, uncoordinated criminal skirmishes.",
+            "model": "Interpretations 1 and 2 differ fundamentally on whether colonial conflict in Australia constituted a genuine war of resistance or mere uncoordinated criminal skirmishes. Interpretation 1, advanced by Henry Reynolds, argues that British settlement met with organized, continuous warfare from Indigenous peoples defending their ancestral lands. Reynolds characterizes this as a protracted, bloody war resulting in over 20,000 Aboriginal deaths. In sharp contrast, Interpretation 2, by Keith Windschuttle, rejects the concept of a \"Frontier War\" entirely. Windschuttle asserts that there was no systematic warfare or frontier genocide, claiming conflicts were isolated criminal disputes over stolen sheep and tools, and dismissing high death tolls as unproven fabrications. Thus, Reynolds identifies a national war of territorial defense, while Windschuttle dismisses it as localized minor criminality.",
+            "scaffolding": {
+              "acronym": "Point • Interp 1 • Interp 2 • Contrast",
+              "acronym_title": "Edexcel Paper 3 Q3(b) Interpretation Difference Formula",
+              "steps": [
+                {
+                  "letter": "POINT",
+                  "name": "State the Core Difference",
+                  "prompt": "State clearly that they disagree on whether the frontier was a war of defense or minor crime.",
+                  "starter": "Interpretations 1 and 2 differ fundamentally on..."
+                },
+                {
+                  "letter": "INTERP 1",
+                  "name": "Exemplify Reynolds (War & 20,000 Dead)",
+                  "prompt": "Quote or summarize Reynolds on guerrilla resistance, bloody war, and 20,000 casualties.",
+                  "starter": "Interpretation 1 argues that..."
+                },
+                {
+                  "letter": "INTERP 2",
+                  "name": "Exemplify Windschuttle (Minor Crime Skirmishes)",
+                  "prompt": "Quote or summarize Windschuttle on denying warfare, small-scale criminal disputes, and fabricated figures.",
+                  "starter": "In contrast, Interpretation 2 suggests that..."
+                },
+                {
+                  "letter": "CONTRAST",
+                  "name": "Explain the Divergence",
+                  "prompt": "Explicitly synthesize the difference between patriotic warfare and localized crime.",
+                  "starter": "This is a fundamental difference because..."
+                }
+              ],
+              "sentence_starters": [
+                "Interpretations 1 and 2 differ on...",
+                "Interpretation 1 argues that...",
+                "In contrast, Interpretation 2 suggests that...",
+                "This is a difference because..."
+              ],
+              "connectives_bank": [
+                "Henry Reynolds (1981)",
+                "Keith Windschuttle (2002)",
+                "Frontier Wars",
+                "guerrilla resistance",
+                "20,000 dead",
+                "History Wars",
+                "criminal skirmishes vs warfare"
+              ]
+            }
+          },
+          {
+            "tariff": "4 marks",
+            "type": "interpretations_reason_4m",
+            "question": "Suggest one reason why Interpretations 1 and 2 differ on the reality of the Frontier Wars. [4 marks]",
+            "prompt": "Explain why Reynolds and Windschuttle arrive at opposing conclusions. Consider their different methodologies, source selection, and political/philosophical motives.",
+            "model": "One primary reason why Interpretations 1 and 2 differ is that the historians utilize radically different methodologies and evidence criteria in what is known as the \"History Wars\". Henry Reynolds draws upon oral histories from First Nations elders, missionary diaries, private letters of colonial settlers, and police reports that recorded violent dispersals that were intentionally omitted from official records. His objective is to acknowledge colonial dispossession and give voice to Indigenous perspectives. In contrast, Keith Windschuttle adopts a strictly narrow, literalist methodology that accepts only formal British government court documents and certified coroner records as proof of killing. Because frontier massacres (such as at Myall Creek or during the Black War) were rarely documented by perpetrators in official court files, Windschuttle’s standard of evidence leads him to drastically minimize the conflict, producing contrasting historical conclusions.",
+            "scaffolding": {
+              "acronym": "Methodology Contrast • Source Selection • Motive",
+              "acronym_title": "Edexcel Paper 3 Q3(c) Why Interpretations Differ Formula",
+              "steps": [
+                {
+                  "letter": "REASON",
+                  "name": "Methodology & Source Criteria",
+                  "prompt": "Identify that Reynolds uses settler letters and oral histories, while Windschuttle demands court records.",
+                  "starter": "One reason why Interpretations 1 and 2 differ is because they rely on..."
+                },
+                {
+                  "letter": "AUTHOR 1",
+                  "name": "Reynolds’s Methodology",
+                  "prompt": "Explain Reynolds acknowledges unrecorded massacres and Indigenous testimony.",
+                  "starter": "Specifically, Henry Reynolds evaluates settler letters, missionary records, and oral traditions..."
+                },
+                {
+                  "letter": "AUTHOR 2",
+                  "name": "Windschuttle’s Methodology",
+                  "prompt": "Explain Windschuttle demands strict court records, dismissing undocumented massacres.",
+                  "starter": "In contrast, Keith Windschuttle insists on strict documentary court evidence..."
+                }
+              ],
+              "sentence_starters": [
+                "One reason why Interpretations 1 and 2 differ is because they rely on different historical sources...",
+                "Specifically, Interpretation 1 uses settler diaries and oral testimony to...",
+                "In contrast, Interpretation 2 focuses strictly on official legal records to...",
+                "As a result, the authors reach different conclusions because..."
+              ],
+              "connectives_bank": [
+                "History Wars",
+                "settler diaries",
+                "oral traditions",
+                "narrow literalist methodology",
+                "Myall Creek trial",
+                "Black War martial law"
+              ]
+            }
+          }
+        ]
+      }
     },
     {
       "id": "lesson_5",
@@ -2344,18 +2924,21 @@ const unitData = {
             "image": "/images/ballarat_gold.jpg",
             "caption": "Watercolour by S.T. Gill showing gold diggers panning and puddling gravel at Ballarat, surrounded by canvas tents and timber shafts.",
             "source_context": "S.T. Gill lived among the miners on the Victorian goldfields, recording the chaotic, diverse reality of the diggings where men of all social classes worked knee-deep in mud. Hinge Question: How does Gill’s depiction of egalitarian labour on the goldfield explain why diggers fiercely resisted authoritarian police rule and taxation?",
-            "how_useful_question": "How useful is Source A for an enquiry into the working conditions and social composition of the Victorian goldfields in the 1850s?",
             "provenance_clues": [
-              "Author: S.T. Gill, an eyewitness colonial artist living and working directly on the goldfields.",
-              "Audience: The Australian colonial public and British readers fascinated by gold rush news.",
-              "Motive: To capture the energetic, unvarnished everyday reality of the diggers panning for gold in muddy creeks."
+              "Author: S.T. Gill, an artist who lived and worked among gold miners in Victoria.",
+              "Audience: The Australian and British public fascinated by Gold Rush fever.",
+              "Motive: To paint an honest, realistic picture of daily grit, teamwork, and chaos on the diggings."
             ],
             "hinge_question": "How does Gill’s depiction of egalitarian labour on the goldfield explain why diggers fiercely resisted authoritarian police rule and taxation?",
             "citation": "S.T. Gill • National Library of Australia, Canberra.",
             "discussion_ideas": [
               "The Radical Democracy of the Goldfield Diggings: S.T. Gill captures the rough-hewn egalitarianism of the early alluvial goldfields: doctors, former convicts, Chartists, sailors, and farmworkers worked side-by-side in red flannel shirts and moleskin trousers; fortune depended solely on luck and manual physical sweat rather than aristocratic birth or inherited wealth, fostering a fierce spirit of independence and democratic equality.",
               "Outrage at Authoritarian Colonial Governance: Having escaped rigid British class oppression, free diggers violently resented the authoritarian colonial government, which treated them as quasi-convicts: corrupt mounted police conducted brutal, armed 'digger hunts' twice a week, chaining men to trees if they failed to produce their extortionate 30-shilling monthly licence on demand, fueling the revolutionary anger that exploded at Eureka."
-            ]
+            ],
+            "question_badge": "Source Inference",
+            "question": "What does this lively painting reveal about what daily life was like on the Australian goldfields in the 1850s?",
+            "enquiry_question": "What does this lively painting reveal about what daily life was like on the Australian goldfields in the 1850s?",
+            "model_answer": "It reveals that people from all backgrounds worked side-by-side in deep mud and heat, living rough in tents and doing exhausting physical work in hope of striking it rich."
           }
         },
         {
@@ -2368,17 +2951,20 @@ const unitData = {
             "image": "/images/doudiet_southern_cross_eureka_1854.jpg",
             "caption": "Eyewitness sketch by Canadian miner Charles Doudiet showing armed diggers raising their hats and weapons as they swear allegiance to the Eureka flag on Bakery Hill.",
             "source_context": "Doudiet recorded the solemn revolutionary oath taken by 10,000 miners on 30 November 1854, just days before imperial troops attacked the stockade. Hinge Question: Does Doudiet depict the diggers as dangerous armed insurrectionists, or as patriotic citizens defending legitimate civil liberties?",
-            "how_useful_question": "How useful is Source B for an enquiry into the motives and solidarity of the miners who rebelled at the Eureka Stockade in 1854?",
             "provenance_clues": [
-              "Author: Charles Doudiet, an eyewitness Canadian prospector on the Ballarat goldfield.",
-              "Audience: Fellow diggers and private personal sketch album.",
-              "Motive: To record the historic oath of defiance sworn by thousands of miners against colonial tyranny."
+              "Author: Charles Doudiet, a Canadian gold miner who witnessed the rebellion firsthand.",
+              "Audience: Fellow miners and future generations remembering the Eureka uprising.",
+              "Motive: To capture the historic moment when diggers swore to defend their rights and liberties with their lives."
             ],
             "hinge_question": "Does Doudiet depict the diggers as dangerous armed insurrectionists, or as patriotic citizens defending legitimate civil liberties?",
             "citation": "Charles Doudiet • Ballarat Fine Art Gallery, Victoria.",
             "discussion_ideas": [
               "Charles Doudiet's contemporary sketch of 1 December 1854 presents the Eureka rebels not as dangerous criminals, but as a dignified, solemn assembly of citizens exercising their fundamental British rights against despotic misrule. Under the iconic blue Southern Cross flag (designed by Canadian digger Henry Ross to symbolize Australian liberty), hundreds of diggers stand bareheaded with right hands raised, swearing the sacred oath: 'We swear by the Southern Cross to stand truly by each other, and fight to defend our rights and liberties.' Doudiet captures the moral seriousness of the movement: inspired by Chartist principles, leader Peter Lalor and the Ballarat Reform League were not seeking to overthrow the British Crown, but demanding an end to taxation without representation, the abolition of the corrupt licence system, universal male suffrage, and democratic equality, establishing Eureka as the foundational birthplace of Australian democracy."
-            ]
+            ],
+            "question_badge": "Historical Significance",
+            "question": "Why was the swearing of allegiance to the Eureka flag such a defining moment in Australia's fight for democracy?",
+            "enquiry_question": "Why was the swearing of allegiance to the Eureka flag such a defining moment in Australia's fight for democracy?",
+            "model_answer": "It showed thousands of miners uniting under the Southern Cross flag to defy corrupt colonial taxes, sparking a rebellion that helped give ordinary Australians the right to vote."
           }
         },
         {
@@ -2532,10 +3118,118 @@ const unitData = {
           "viewing_task": "[25:00] Recall: How did 19th-century colonial 'Aboriginal Protection Acts' strip Indigenous people of basic civil rights?\n[35:00] Explain: How did the 1901 Federation of Australia establish the 'White Australia Policy' through the Immigration Restriction Act?\n[44:30] Challenge: How does understanding the full trajectory from 1788 to 1901 explain why First Nations Australians continue to campaign for Constitutional Recognition and Treaty?",
           "model_answer": "Recall: State Protectors controlled where Aboriginal people could live, whom they could marry, their wages, and seized their children without court orders.\nExplain: The newly federated Commonwealth passed laws designed to keep Australia exclusively white, imposing dictation tests in European languages and denying voting rights to Indigenous peoples.\nChallenge: Because Australia was founded without treaties or constitutional acknowledgement of prior ownership, the legacy of dispossession and systemic inequality remains an unresolved national question."
         }
-      ]
+      ],
+      "sources": [
+        {
+          "letter": "A",
+          "title": "Source A: S.T. Gill, Diggers Washing for Gold at Ballarat (1852)",
+          "image": "/images/ballarat_gold.jpg",
+          "caption": "Watercolour by S.T. Gill showing gold diggers panning and puddling gravel at Ballarat, surrounded by canvas tents and timber shafts.",
+          "source_context": "S.T. Gill lived among the miners on the Victorian goldfields, recording the chaotic, diverse reality of the diggings where men of all social classes worked knee-deep in mud. Hinge Question: How does Gill’s depiction of egalitarian labour on the goldfield explain why diggers fiercely resisted authoritarian police rule and taxation?",
+          "provenance_clues": [
+            "Author: S.T. Gill, an artist who lived and worked among gold miners in Victoria.",
+            "Audience: The Australian and British public fascinated by Gold Rush fever.",
+            "Motive: To paint an honest, realistic picture of daily grit, teamwork, and chaos on the diggings."
+          ],
+          "hinge_question": "How does Gill’s depiction of egalitarian labour on the goldfield explain why diggers fiercely resisted authoritarian police rule and taxation?",
+          "citation": "S.T. Gill • National Library of Australia, Canberra.",
+          "discussion_ideas": [
+            "The Radical Democracy of the Goldfield Diggings: S.T. Gill captures the rough-hewn egalitarianism of the early alluvial goldfields: doctors, former convicts, Chartists, sailors, and farmworkers worked side-by-side in red flannel shirts and moleskin trousers; fortune depended solely on luck and manual physical sweat rather than aristocratic birth or inherited wealth, fostering a fierce spirit of independence and democratic equality.",
+            "Outrage at Authoritarian Colonial Governance: Having escaped rigid British class oppression, free diggers violently resented the authoritarian colonial government, which treated them as quasi-convicts: corrupt mounted police conducted brutal, armed 'digger hunts' twice a week, chaining men to trees if they failed to produce their extortionate 30-shilling monthly licence on demand, fueling the revolutionary anger that exploded at Eureka."
+          ],
+          "question_badge": "Source Inference",
+          "question": "What does this lively painting reveal about what daily life was like on the Australian goldfields in the 1850s?",
+          "enquiry_question": "What does this lively painting reveal about what daily life was like on the Australian goldfields in the 1850s?",
+          "model_answer": "It reveals that people from all backgrounds worked side-by-side in deep mud and heat, living rough in tents and doing exhausting physical work in hope of striking it rich."
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Charles Doudiet, Swearing Allegiance to the Southern Cross at Eureka (1854)",
+          "image": "/images/doudiet_southern_cross_eureka_1854.jpg",
+          "caption": "Eyewitness sketch by Canadian miner Charles Doudiet showing armed diggers raising their hats and weapons as they swear allegiance to the Eureka flag on Bakery Hill.",
+          "source_context": "Doudiet recorded the solemn revolutionary oath taken by 10,000 miners on 30 November 1854, just days before imperial troops attacked the stockade. Hinge Question: Does Doudiet depict the diggers as dangerous armed insurrectionists, or as patriotic citizens defending legitimate civil liberties?",
+          "provenance_clues": [
+            "Author: Charles Doudiet, a Canadian gold miner who witnessed the rebellion firsthand.",
+            "Audience: Fellow miners and future generations remembering the Eureka uprising.",
+            "Motive: To capture the historic moment when diggers swore to defend their rights and liberties with their lives."
+          ],
+          "hinge_question": "Does Doudiet depict the diggers as dangerous armed insurrectionists, or as patriotic citizens defending legitimate civil liberties?",
+          "citation": "Charles Doudiet • Ballarat Fine Art Gallery, Victoria.",
+          "discussion_ideas": [
+            "Charles Doudiet's contemporary sketch of 1 December 1854 presents the Eureka rebels not as dangerous criminals, but as a dignified, solemn assembly of citizens exercising their fundamental British rights against despotic misrule. Under the iconic blue Southern Cross flag (designed by Canadian digger Henry Ross to symbolize Australian liberty), hundreds of diggers stand bareheaded with right hands raised, swearing the sacred oath: 'We swear by the Southern Cross to stand truly by each other, and fight to defend our rights and liberties.' Doudiet captures the moral seriousness of the movement: inspired by Chartist principles, leader Peter Lalor and the Ballarat Reform League were not seeking to overthrow the British Crown, but demanding an end to taxation without representation, the abolition of the corrupt licence system, universal male suffrage, and democratic equality, establishing Eureka as the foundational birthplace of Australian democracy."
+          ],
+          "question_badge": "Historical Significance",
+          "question": "Why was the swearing of allegiance to the Eureka flag such a defining moment in Australia's fight for democracy?",
+          "enquiry_question": "Why was the swearing of allegiance to the Eureka flag such a defining moment in Australia's fight for democracy?",
+          "model_answer": "It showed thousands of miners uniting under the Southern Cross flag to defy corrupt colonial taxes, sparking a rebellion that helped give ordinary Australians the right to vote."
+        }
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: The Gold Rush, Eureka Stockade & Historical Legacy",
+        "tariff": "12 marks (Evaluative Statement Essay)",
+        "questions": [
+          {
+            "tariff": "12 marks",
+            "type": "evaluative_essay_12m",
+            "question": "‘The discovery of gold and the Eureka Stockade were the most important turning points in 19th-century Australian history.’ How far do you agree? Explain your answer. [12 marks]",
+            "stimulus": [
+              "The 1851 Gold Rush and the Eureka Stockade rebellion (1854)",
+              "Pastoral expansion, the wool boom, and the frontier wars (1820–1840)"
+            ],
+            "prompt": "Construct a balanced evaluative argument: on the one hand, evaluate how gold triggered massive demographic growth, ended convict transportation, and sparked the birth of Australian democracy at Eureka; on the other hand, evaluate how the earlier wool boom, pastoral squatting, and frontier wars permanently defined the continent’s land division and Indigenous dispossession. Reach a weighed conclusion.",
+            "model": "To a large extent, the discovery of gold in 1851 and the 1854 Eureka Stockade rebellion represent the most transformative turning point in 19th-century Australian history, dramatically accelerating democratic self-government, terminating the convict system, and forging a modern multicultural society.<br><br>On the one hand, the Gold Rush fundamentally transformed Australia’s demographics, economy, and political structures within a single decade. Following Edward Hargraves’s 1851 discovery near Bathurst, hundreds of thousands of free migrants rushed from Britain, America, and southern China, causing the non-Indigenous population to skyrocket from 400,000 in 1850 to over 1.1 million by 1860. This massive influx of free settlers irrevocably ended British convict transportation to eastern Australia. Furthermore, the Eureka Stockade of December 1854—where gold diggers at Ballarat swore allegiance to the Southern Cross flag against repressive mining licence fees—led directly to democratic reforms. In 1856, Victoria granted universal male suffrage, the secret ballot (the \"Australian Ballot\"), and abolished property requirements for MPs, establishing Australia as a world pioneer in democratic governance.<br><br>On the other hand, it can be argued that the earlier pastoral wool boom of 1820–1840 was the foundational turning point that shaped the geography and racial hierarchy of Australia. The expansion of the \"squattocracy\" across millions of acres of fertile grassland transformed Australia into the world’s leading wool exporter, establishing British financial hegemony. Crucially, it was this relentless pastoral hunger for grazing lands that triggered the Frontier Wars, the declaration of martial law in Tasmania’s Black War, and the catastrophic dispossession of First Nations peoples long before gold was discovered. Without the pastoral seizure of the continent, the infrastructure that enabled the gold rushes would not have existed.<br><br>In conclusion, while the wool boom established the foundational territorial seizure of Australia, the Gold Rush was the decisive watershed. It destroyed the stigma of Australia as a penal prison, triggered an unprecedented demographic and economic explosion, and birthed the democratic institutions that created modern Australian national identity.",
+            "scaffolding": {
+              "acronym": "PEEL Evaluative Essay Framework",
+              "acronym_title": "12-Mark Evaluative Statement Essay Standard",
+              "steps": [
+                {
+                  "letter": "THESIS",
+                  "name": "State Position",
+                  "prompt": "State clearly that gold transformed Australia from a penal colony into a wealthy, democratic nation.",
+                  "starter": "To a large extent, the discovery of gold and the Eureka Stockade were the decisive turning points because..."
+                },
+                {
+                  "letter": "THEME 1",
+                  "name": "Gold Rush & Eureka Democracy (1851–1856)",
+                  "prompt": "Explain population tripling to 1.1m, ending convict transport, Eureka rebellion, and secret ballot.",
+                  "starter": "On the one hand, the Gold Rush fundamentally transformed Australia by..."
+                },
+                {
+                  "letter": "THEME 2",
+                  "name": "Wool Boom & Frontier Dispossession (1820–1840)",
+                  "prompt": "Evaluate squattocracy, wool exports, and the pastoral dispossession of Indigenous lands.",
+                  "starter": "On the other hand, it can be argued that the pastoral wool boom was foundational because..."
+                },
+                {
+                  "letter": "JUDGMENT",
+                  "name": "Weighed Verdict",
+                  "prompt": "Synthesize why gold was the decisive catalyst creating modern democratic Australia.",
+                  "starter": "In conclusion, while the wool boom established the territory, the Gold Rush was decisive because..."
+                }
+              ],
+              "sentence_starters": [
+                "To a large extent, it can be argued that...",
+                "On the one hand, the discovery of gold transformed Australia because...",
+                "In particular, at the Eureka Stockade in 1854...",
+                "On the other hand, an alternative view emphasizes the earlier pastoral expansion, such as...",
+                "In conclusion, the most decisive turning point was... because..."
+              ],
+              "connectives_bank": [
+                "1851 Gold Rush",
+                "Edward Hargraves",
+                "Ballarat",
+                "Eureka Stockade (1854)",
+                "Southern Cross flag",
+                "universal male suffrage",
+                "Australian secret ballot",
+                "squattocracy",
+                "wool boom"
+              ]
+            }
+          }
+        ]
+      }
     }
   ]
 };
-
-export { unitData };
 export default unitData;

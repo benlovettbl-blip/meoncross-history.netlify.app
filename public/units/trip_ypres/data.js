@@ -1,4 +1,6 @@
-import { poetryDossiers } from './poetry_data.js';
+import {
+  "homepage_background": "/images/ypres_cloth_hall.jpg",
+  "cover_image": "/images/ypres_cloth_hall.jpg", poetryDossiers } from './poetry_data.js';
 
 export const unitData = {
   id: 'trip_ypres',

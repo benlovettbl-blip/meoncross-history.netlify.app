@@ -14,7 +14,7 @@ async function generateReport() {
 
   const unitRowsHtml = Object.entries(data.units).map(([unitId, u]) => {
     let statusBadge = '<span class="badge badge-clean">100% VERIFIED</span>';
-    if (unitId === 'water_and_sanitation' || unitId === 'australia' || unitId === 'first_british_empire' || unitId === 'medieval_england' || unitId === 'second_british_empire' || unitId === 'cme_new' || unitId === 'usa' || unitId === 'edexcel_medicine') {
+    if (unitId === 'water_and_sanitation' || unitId === 'australia' || unitId === 'first_british_empire' || unitId === 'medieval_england' || unitId === 'second_british_empire' || unitId === 'cme_new' || unitId === 'usa' || unitId === 'edexcel_medicine' || unitId === 'eee') {
       statusBadge = '<span class="badge badge-resolved">100% RESOLVED</span>';
     } else if (u.flaggedSources > 0) {
       statusBadge = `<span class="badge badge-flagged">${u.flaggedSources} FLAGGED</span>`;

@@ -21,7 +21,10 @@ console.log('--- Starting Content Validation ---\n');
 async function validateUnits() {
   for (const unitId of Object.keys(db)) {
     console.log(`Checking unit: ${unitId}...`);
-    const dataPath = path.join(__dirname, '..', unitId, 'data.js');
+    let dataPath = path.join(__dirname, '../units', unitId, 'data.js');
+    if (!fs.existsSync(dataPath)) {
+      dataPath = path.join(__dirname, '..', unitId, 'data.js');
+    }
     if (!fs.existsSync(dataPath)) {
       console.error(`  ERROR: Could not find data.js for unit ${unitId}`);
       errors++;

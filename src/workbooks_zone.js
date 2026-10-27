@@ -617,7 +617,7 @@ const UNIT_PUBLICATIONS = {
           pages: '40 Pages',
           desc: 'Complete retrieval volume compiling all 380 rapid recall questions across Section A and Section B with quick-marking back banks.',
           readUrl: '/units/edexcel_medicine/med_recall_quiz_FULL.html',
-          pdfUrl: '/pdfs/med_recall_quiz_pack_FULL.pdf',
+          pdfUrl: '/pdfs/Medicine_Through_Time_Master_Knowledge_Retrieval_Companion.pdf',
         },
         {
           id: 'section_b',
@@ -709,6 +709,15 @@ const UNIT_PUBLICATIONS = {
       color: '#7c3aed',
       tags: ['Core Recall Questions', 'Chronology Flowcharts', 'Marking Bank'],
       editions: [
+        {
+          id: 'companion_master',
+          label: 'Master 24-Page Retrieval Companion (120 Questions)',
+          title: 'Early Elizabethan England Master Knowledge Retrieval & Homework Companion',
+          pages: '24 Pages (A4)',
+          desc: 'Complete 24-page A4 saddle-stitch retrieval companion: 12 Enquiries × 10 Questions, Dual-Line handwriting boxes, Tudor Domino Flowchart, 3-Page Department Marking Bank, and Paper 2 Section B Exam Strategies (Q1–Q3).',
+          readUrl: '/units/eee/eee_master_retrieval_companion.html',
+          pdfUrl: '/pdfs/Early_Elizabethan_England_Master_Knowledge_Retrieval_Companion.pdf',
+        },
         {
           id: 'quiz_pack',
           label: 'Master 16-Page Quiz Pack (120 Questions)',
@@ -817,6 +826,15 @@ const UNIT_PUBLICATIONS = {
       color: '#7c3aed',
       tags: ['Core Recall Questions', 'Chronology Flowcharts', 'Marking Bank'],
       editions: [
+        {
+          id: 'companion_master',
+          label: 'Master 28-Page Retrieval Companion (128 Questions)',
+          title: 'Weimar & Nazi Germany Master Knowledge Retrieval & Homework Companion',
+          pages: '28 Pages (A4)',
+          desc: 'Complete 28-page A4 saddle-stitch retrieval companion: 16 Enquiries × 8 Questions (128 core Qs), Dual-Line handwriting boxes, 1918–1939 Domino Flowchart, 4-Page Marking Bank, and Paper 3 Section A & B Exam Strategies (Q1, Q2, Q3a–d).',
+          readUrl: '/units/weimar_nazi_germany/weimar_master_retrieval_companion.html',
+          pdfUrl: '/pdfs/Weimar_and_Nazi_Germany_Master_Knowledge_Retrieval_Companion.pdf',
+        },
         {
           id: 'all',
           label: 'Complete Course (KT1–KT4 Combined)',
@@ -1092,8 +1110,8 @@ const UNIT_PUBLICATIONS = {
           id: 'all',
           label: 'Pupil Consumable Workbook',
           title: 'Cold War & Superpower Relations Pupil Consumable Workbook',
-          pages: 'Photocopier Ready',
-          desc: 'Structured writing tasks, enquiry challenges, source evaluation tables, and extended writing scaffolds for every lesson in the unit.',
+          pages: '16 Pages',
+          desc: '16-page Gold Standard saddle-stitch pupil workbook. 6 Two-Page Enquiry Spreads with 5-Stage Chronological Inquiry Spines, Centrefold Living Timeline, and Assessment Progress Ledger.',
           readUrl: '/units/cold_war/pupil_workbook.html',
           pdfUrl: '/pdfs/cold_war_pupil_workbook_FINAL_V17.pdf',
         },
@@ -1126,7 +1144,7 @@ function getGenericUnitPublications(unitId, unitData) {
   const title = (unitData && unitData.title) || unitId;
   const hasTextbook = [
     'the_shoah',
-    'early_modern_world',
+    'monarchy_religion_power',
     'water_and_sanitation',
     'industrialisation_and_empire',
     'post_war_britain',
@@ -1381,7 +1399,7 @@ export function renderWorkbooksZone(container, unitData) {
               <option value="great_war" ${activeUnitId === 'great_war' ? 'selected' : ''}>Causes of the Great War (Year 9)</option>
               <option value="medieval_england" ${activeUnitId === 'medieval_england' ? 'selected' : ''}>Medieval England 1066–1381 (Year 7)</option>
               <option value="industrialisation_and_empire" ${activeUnitId === 'industrialisation_and_empire' ? 'selected' : ''}>Industrialisation &amp; Empire (Year 8)</option>
-              <option value="early_modern_world" ${activeUnitId === 'early_modern_world' ? 'selected' : ''}>The Early Modern World (Year 8)</option>
+              <option value="monarchy_religion_power" ${activeUnitId === 'monarchy_religion_power' ? 'selected' : ''}>Crown, Church &amp; Parliament 1517–1689 (Year 8)</option>
               <option value="water_and_sanitation" ${activeUnitId === 'water_and_sanitation' ? 'selected' : ''}>Water &amp; Sanitation (Year 7)</option>
               <option value="the_shoah" ${activeUnitId === 'the_shoah' ? 'selected' : ''}>The Shoah / Holocaust (Year 9)</option>
               <option value="australia" ${activeUnitId === 'australia' ? 'selected' : ''}>Indigenous Australia &amp; Colony (Year 8)</option>
@@ -1519,10 +1537,10 @@ export function renderWorkbooksZone(container, unitData) {
         icon: 'fa-city',
       },
       {
-        id: 'early_modern_world',
-        name: 'The Early Modern World',
+        id: 'monarchy_religion_power',
+        name: 'Crown, Church & Parliament (1517–1689)',
         year: 'Year 8',
-        icon: 'fa-compass',
+        icon: 'fa-chess-rook',
       },
       {
         id: 'trip_ypres',

@@ -19,7 +19,6 @@ const ROOT_DIR = path.join(__dirname, '..');
 const UNIT_REGISTRY = [
   { id: 'water_and_sanitation', year: 'KS3 (Y7)', title: 'Water & Sanitation Through Time' },
   { id: 'medieval_england', year: 'KS3 (Y7)', title: 'Medieval England (1066–1485)' },
-  { id: 'early_modern_world', year: 'KS3 (Y8)', title: 'Early Modern World (1450–1750)' },
   { id: 'industrialisation_and_empire', year: 'KS3 (Y8)', title: 'Industrialisation & Empire (1750–1901)' },
   { id: 'monarchy_religion_power', year: 'KS3 (Y8)', title: 'Crown, Church or Parliament (1517–1689)' },
   { id: 'first_british_empire', year: 'KS3 (Y8)', title: 'The First British Empire (1600–1783)' },

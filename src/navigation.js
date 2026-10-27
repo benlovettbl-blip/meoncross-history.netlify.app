@@ -11,11 +11,7 @@ import {
   renderBookletView,
   renderMockExamsView,
   renderProfileView,
-  renderDecisionsView,
-  renderTabooView,
   renderLessonsView,
-  renderIndividualsView,
-  renderReadingView,
   renderMasterpieceView,
   renderDigitalReaderView,
 } from './views.js'; // Trigger HMR
@@ -535,12 +531,6 @@ export async function switchView(viewName, param = null, skipHistory = false, op
   } else if (viewName === 'mock-exams') {
     if (param) await loadUnit(param);
     renderMockExamsView();
-  } else if (viewName === 'decisions') {
-    if (param) await loadUnit(param);
-    renderDecisionsView();
-  } else if (viewName === 'taboo') {
-    if (param) await loadUnit(param);
-    renderTabooView();
   } else if (viewName === 'lessons') {
     const targetUnit = param || state.selectedUnitId || window.currentUnitId || 'edexcel_medicine';
     await loadUnit(targetUnit);
@@ -552,12 +542,6 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     ) {
       window.viewLessonDetail(options.lessonIndex);
     }
-  } else if (viewName === 'individuals') {
-    if (param) await loadUnit(param);
-    renderIndividualsView();
-  } else if (viewName === 'reading') {
-    if (param) await loadUnit(param);
-    renderReadingView();
   } else if (viewName === 'curriculum') {
     await renderCurriculumMap();
   } else if (viewName === 'department-portal') {
@@ -618,7 +602,7 @@ async function loadUnit(unitId) {
 
     if (state.db && state.db[unitId]) {
       const unitPayload = state.db[unitId];
-      state.activeUnitData = unitPayload.data || {};
+      state.activeUnitData = unitPayload.data || (unitPayload.lessons ? unitPayload : {});
       window.currentUnitData = state.activeUnitData;
       window.currentUnitId = unitId;
       if (appStore && appStore.state) {

@@ -1,11 +1,11 @@
 {
-  "auditedAt": "2026-10-25T09:56:24.363Z",
+  "auditedAt": "2026-10-25T16:23:53.455Z",
   "platform": "The History Revision Hub",
   "totalUnits": 19,
-  "totalSources": 575,
-  "cleanSources": 559,
-  "flaggedSources": 16,
-  "globalAccuracyPct": 97,
+  "totalSources": 576,
+  "cleanSources": 576,
+  "flaggedSources": 0,
+  "globalAccuracyPct": 100,
   "units": {
     "australia": {
       "title": "The History of Australia: First Nations, Colonisation & Resistance (1770–1901)",
@@ -102,438 +102,454 @@
       "totalSources": 60,
       "cleanSources": 60,
       "flaggedSources": 0,
-      "resolvedSources": 0,
+      "resolvedSources": 60,
       "accuracyPct": 100,
       "sources": [
         {
-          "letter": "",
-          "title": "Source A: The Sykes-Picot Agreement Partition Map (May 1916)",
+          "letter": "A",
+          "title": "Source A: The Sykes-Picot Agreement Partition Map (8 May 1916)",
           "image": "/images/cme_sykes_picot_1916_map.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "B",
           "title": "Source B: The Original Balfour Declaration Letter (2 November 1917)",
           "image": "/images/cme_balfour_declaration_1917.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "A",
+          "title": "Source A: The Sykes-Picot Agreement Partition Map (8 May 1916)",
+          "image": "/images/cme_sykes_picot_1916_map.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
           "title": "Source B: The Original Balfour Declaration Letter (2 November 1917)",
           "image": "/images/cme_balfour_declaration_1917.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)",
+          "letter": "A",
+          "title": "Source A: The Ruins of the King David Hotel, Jerusalem (22 July 1946)",
           "image": "/assets/cme_new_king_david_ruins.png",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source B: The Sergeants Affair, Netanya (July 1947)",
-          "image": "/images/cme_sergeants_affair_1947.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source C: The SS Exodus Intercepted off Palestine (July 1947)",
+          "letter": "B",
+          "title": "Source B: The SS Exodus Intercepted off Haifa (July 1947)",
           "image": "/units/cme_new/assets/cme_exodus.jpeg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source D: David Ben-Gurion Declaring the State of Israel (14 May 1948)",
+          "letter": "C",
+          "title": "Source C: David Ben-Gurion Declaring the State of Israel (14 May 1948)",
           "image": "/images/cme_bengurion_declaration_1948.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source A: The Ruins of the King David Hotel, Jerusalem (July 1946)",
-          "image": "/units/cme_new/assets/king_david_ruins.png",
-          "status": "CLEAN",
+          "letter": "A",
+          "title": "Source A: The Ruins of the King David Hotel, Jerusalem (22 July 1946)",
+          "image": "/assets/cme_new_king_david_ruins.png",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source B: The Sergeants Affair (July 1947)",
-          "image": "/images/cme_sergeants_affair_1947.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source C: The SS Exodus Arriving in Haifa (July 1947)",
+          "letter": "B",
+          "title": "Source B: The SS Exodus Intercepted off Haifa (July 1947)",
           "image": "/units/cme_new/assets/cme_exodus.jpeg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source D: David Ben-Gurion Declaring the State of Israel (14 May 1948)",
+          "letter": "C",
+          "title": "Source C: David Ben-Gurion Declaring the State of Israel (14 May 1948)",
           "image": "/images/cme_bengurion_declaration_1948.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source A: Palestinian Refugees Fleeing Galilee During the 1948 Nakba",
+          "letter": "A",
+          "title": "Source A: Palestinian Arab Refugees Leaving Galilee on Foot (1948 Nakba)",
           "image": "/images/cme_palestinian_refugees_1948.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source B: David Ben-Gurion Declaring Israeli Independence (14 May 1948)",
-          "image": "/images/cme_bengurion_declaration_1948.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source B: Palestinian Refugees Leaving Their Villages (1948 Nakba)",
-          "image": "/images/cme_palestinian_refugees_leaving_gaza.webp",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source C: The 1949 Armistice Green Line",
+          "letter": "B",
+          "title": "Source B: Cartographic Map of the 1949 Armistice Demarcation \"Green Line\"",
           "image": "/units/cme_new/assets/palestine_1949_map.png",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source D: Maritime Chokepoints & The Straits of Tiran Blockade",
-          "image": "/images/cme_sinai_peninsula_map.jpg",
-          "status": "CLEAN",
+          "letter": "A",
+          "title": "Source A: Palestinian Arab Refugees Leaving Galilee on Foot (1948 Nakba)",
+          "image": "/images/cme_palestinian_refugees_1948.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source A: Political Cartoon: \"The Man at the Tap\" (August 1956)",
+          "letter": "B",
+          "title": "Source B: Cartographic Map of the 1949 Armistice Demarcation \"Green Line\"",
+          "image": "/units/cme_new/assets/palestine_1949_map.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: Political Cartoon: \"The Man at the Tap\" (Leslie Illingworth, Punch, 1956)",
           "image": "/images/cme_nasser_suez_cartoon_1956.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source B: Cairo Newspaper Al-Ahram Announcing the Suez Nationalisation (July 1956)",
+          "letter": "B",
+          "title": "Source B: Cairo Newspaper Al-Ahram Announcing Suez Nationalisation (27 July 1956)",
           "image": "/images/cme_alahram_suez_1956.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "",
-          "title": "Source A: Political Cartoon: \"The Man at the Tap\" (August 1956)",
-          "image": "/images/cme_nasser_suez_cartoon_1956.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source B: Al-Ahram Front Page — Suez Canal Nationalised (July 1956)",
-          "image": "/images/cme_alahram_suez_1956.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source C: Military Campaign Map: The 1956 Suez Crisis & Operation Kadesh",
-          "image": "/images/cme_suez_1956_campaign_map.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source D: British Forces Landing at Port Said (Operation Musketeer, Nov 1956)",
+          "letter": "C",
+          "title": "Source C: British Airborne Troops Securing Port Said during Operation Musketeer (November 1956)",
           "image": "/images/cme_port_said_british_troops_1956.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "A",
-          "title": "Source A: Archival Primary Photograph: Arab Heads of State at the First Arab League Summit in Cairo (January 1964)",
-          "image": "/images/cme_cairo_summit_1964.jpg",
-          "status": "CLEAN",
+          "title": "Source A: Political Cartoon: \"The Man at the Tap\" (Leslie Illingworth, Punch, 1956)",
+          "image": "/images/cme_nasser_suez_cartoon_1956.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B: Historical Topographical Map: The Syrian Armistice Line and Golan Heights Overlooking Israeli Settlements (1964–1967)",
-          "image": "/images/cme_golan_heights_relief_map_1967.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Primary Photograph: Arab Heads of State at the First Arab League Summit in Cairo (January 1964)",
-          "image": "/images/cme_cairo_summit_1964.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Historical Topographical Map: The Syrian Armistice Line and Golan Heights Overlooking Israeli Settlements (1964–1967)",
-          "image": "/images/cme_golan_heights_relief_map_1967.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Photograph: Destroyed Egyptian Jet Aircraft at Bir Gifgafa Airfield, Sinai (5 June 1967)",
-          "image": "/images/cme_six_day_war_airfield_1967.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Archival Primary Photograph: Israeli Paratroopers at the Western Wall, Jerusalem (David Rubinger, 7 June 1967)",
-          "image": "/images/cme_paratroopers_western_wall_1967.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Photograph: Destroyed Egyptian Jet Aircraft at Bir Gifgafa Airfield, Sinai (5 June 1967)",
-          "image": "/images/cme_six_day_war_airfield_1967.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Archival Primary Photograph: Israeli Paratroopers at the Western Wall, Jerusalem (David Rubinger, 7 June 1967)",
-          "image": "/images/cme_paratroopers_western_wall_1967.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Primary Map: The Conquered Occupied Territories Following the Six-Day War (June 1967)",
-          "image": "/images/cme_1967_occupied_territories_cia_map.png",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Primary Map: The Conquered Occupied Territories Following the Six-Day War (June 1967)",
-          "image": "/images/cme_1967_occupied_territories_cia_map.png",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Photograph: PFLP Militants Detonating Hijacked Commercial Airliners at Dawson's Field, Jordan (12 September 1970)",
-          "image": "/images/cme_dawsons_field_1970.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Archival Primary Photograph: Masked Black September Gunman on the Balcony at Munich Olympic Village (5 September 1972)",
-          "image": "/images/cme_munich_1972_balcony.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Photograph: PFLP Militants Detonating Hijacked Commercial Airliners at Dawson's Field, Jordan (12 September 1970)",
-          "image": "/images/cme_dawsons_field_1970.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Archival Primary Photograph: Masked Black September Gunman on the Balcony at Munich Olympic Village (5 September 1972)",
-          "image": "/images/cme_munich_1972_balcony.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Photograph: Egyptian Infantry and Armored Columns Crossing the Suez Canal (October 1973)",
-          "image": "/images/cme_egyptians_crossing_suez_1973.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Archival Photograph: Israeli Armored Vehicles and Tanks Crossing the Suez Canal to the West Bank (October 1973)",
-          "image": "/images/cme_israeli_crossing_suez_1973.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Photograph: Egyptian Infantry and Armored Columns Crossing the Suez Canal (October 1973)",
-          "image": "/images/cme_egyptians_crossing_suez_1973.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Archival Photograph: Israeli Armored Vehicles and Tanks Crossing the Suez Canal to the West Bank (October 1973)",
-          "image": "/images/cme_israeli_crossing_suez_1973.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Photograph: President Anwar Sadat Addressing the Israeli Knesset in Jerusalem (20 November 1977)",
-          "image": "/units/cme_new/assets/anwar_sadat.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Archival Photograph: Menachem Begin, Jimmy Carter, and Anwar Sadat at Camp David (September 1978)",
-          "image": "/images/cme_camp_david_1978.jpg",
-          "status": "CLEAN",
+          "title": "Source B: Cairo Newspaper Al-Ahram Announcing Suez Nationalisation (27 July 1956)",
+          "image": "/images/cme_alahram_suez_1956.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "C",
-          "title": "Source C: Cartographic Map: The Sinai Peninsula and Camp David Demilitarization Zones (1979)",
-          "image": "/images/cme_sinai_peninsula_map.jpg",
-          "status": "CLEAN",
+          "title": "Source C: British Airborne Troops Securing Port Said during Operation Musketeer (November 1956)",
+          "image": "/images/cme_port_said_british_troops_1956.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
-          "letter": "D",
-          "title": "Source D: Archival Photograph: The Triple Handshake at the Egypt-Israel Peace Treaty Signing (26 March 1979)",
+          "letter": "A",
+          "title": "Source A: Arab Heads of State at the Cairo Summit (January 1964)",
+          "image": "/images/cme_cairo_summit_1964.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Topographical Relief Map of the Syrian Escarpment and Golan Heights",
+          "image": "/images/cme_golan_heights_relief_map_1967.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: Arab Heads of State at the Cairo Summit (January 1964)",
+          "image": "/images/cme_cairo_summit_1964.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Topographical Relief Map of the Syrian Escarpment and Golan Heights",
+          "image": "/images/cme_golan_heights_relief_map_1967.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: Destroyed Egyptian Airfields after Operation Focus (5 June 1967)",
+          "image": "/images/cme_six_day_war_airfield_1967.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Israeli Paratroopers at the Western Wall, Jerusalem (7 June 1967)",
+          "image": "/images/cme_paratroopers_western_wall_1967.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: Destroyed Egyptian Airfields after Operation Focus (5 June 1967)",
+          "image": "/images/cme_six_day_war_airfield_1967.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Israeli Paratroopers at the Western Wall, Jerusalem (7 June 1967)",
+          "image": "/images/cme_paratroopers_western_wall_1967.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: CIA Cartographic Map of the Conquered Occupied Territories (1967)",
+          "image": "/images/cme_1967_occupied_territories_cia_map.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: CIA Cartographic Map of the Conquered Occupied Territories (1967)",
+          "image": "/images/cme_1967_occupied_territories_cia_map.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: PFLP Militants with Hijacked Western Aircraft at Dawson's Field, Jordan (September 1970)",
+          "image": "/images/cme_dawsons_field_1970.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Masked Black September Militant on Balcony, Munich Olympics (5 September 1972)",
+          "image": "/images/cme_munich_1972_balcony.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "C",
+          "title": "Source C: Map of Palestinian Fedayeen Bases and Infiltration Corridors in Jordan (1968–1970)",
+          "image": "/images/cme_jordan_fedayeen_1970_map.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: PFLP Militants with Hijacked Western Aircraft at Dawson's Field, Jordan (September 1970)",
+          "image": "/images/cme_dawsons_field_1970.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Masked Black September Militant on Balcony, Munich Olympics (5 September 1972)",
+          "image": "/images/cme_munich_1972_balcony.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "C",
+          "title": "Source C: Map of Palestinian Fedayeen Bases and Infiltration Corridors in Jordan (1968–1970)",
+          "image": "/images/cme_jordan_fedayeen_1970_map.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: Egyptian Infantry Crossing the Suez Canal in Operation Badr (6 October 1973)",
+          "image": "/images/cme_egyptians_crossing_suez_1973.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Israeli Armored Vehicles Crossing the Suez Canal to Mainland Egypt (October 1973)",
+          "image": "/images/cme_israeli_crossing_suez_1973.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "C",
+          "title": "Source C: Strategic Operational Map of the 1973 Yom Kippur War (Two Fronts)",
+          "image": "/images/cme_yom_kippur_1973_map.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: Egyptian Infantry Crossing the Suez Canal in Operation Badr (6 October 1973)",
+          "image": "/images/cme_egyptians_crossing_suez_1973.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Israeli Armored Vehicles Crossing the Suez Canal to Mainland Egypt (October 1973)",
+          "image": "/images/cme_israeli_crossing_suez_1973.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "C",
+          "title": "Source C: Strategic Operational Map of the 1973 Yom Kippur War (Two Fronts)",
+          "image": "/images/cme_yom_kippur_1973_map.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: President Anwar Sadat Addressing the Israeli Knesset in Jerusalem (20 November 1977)",
+          "image": "/units/cme_new/assets/anwar_sadat.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Menachem Begin, Jimmy Carter, and Anwar Sadat at Camp David (September 1978)",
+          "image": "/images/cme_camp_david_1978.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "C",
+          "title": "Source C: The Historic Triple Handshake on the White House Lawn (26 March 1979)",
           "image": "/images/cme_treaty_triple_handshake_1979.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "A",
-          "title": "Source A: Archival Photograph: President Anwar Sadat Addressing the Israeli Knesset in Jerusalem (20 November 1977)",
+          "title": "Source A: President Anwar Sadat Addressing the Israeli Knesset in Jerusalem (20 November 1977)",
           "image": "/units/cme_new/assets/anwar_sadat.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B: Archival Photograph: Menachem Begin, Jimmy Carter, and Anwar Sadat at Camp David (September 1978)",
+          "title": "Source B: Menachem Begin, Jimmy Carter, and Anwar Sadat at Camp David (September 1978)",
           "image": "/images/cme_camp_david_1978.jpg",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "A",
-          "title": "Source A: Archival Photograph: Yasser Arafat Addressing the United Nations General Assembly in New York (13 November 1974)",
-          "image": "/images/cme_arafat_un_1974.png",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "B",
-          "title": "Source B: Military Operations Map of the 1982 Lebanon Invasion ('Operation Peace for Galilee')",
-          "image": "/images/cme_lebanon_1982_campaign_map.png",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "C",
-          "title": "Source C: Archival Photograph: Palestinian Youths at Barricades During the First Intifada (Gaza, December 1987)",
-          "image": "/units/cme_new/assets/first_intifada.png",
-          "status": "CLEAN",
+          "title": "Source C: The Historic Triple Handshake on the White House Lawn (26 March 1979)",
+          "image": "/images/cme_treaty_triple_handshake_1979.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "A",
-          "title": "Source A: Archival Photograph: Yasser Arafat Addressing the United Nations General Assembly in New York (13 November 1974)",
+          "title": "Source A: Yasser Arafat Addressing the UN General Assembly (13 November 1974)",
           "image": "/images/cme_arafat_un_1974.png",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B: Military Map: 1982 Lebanon War (Operation Peace for Galilee)",
+          "title": "Source B: Military Operations Map of the 1982 Lebanon War and Siege of Beirut",
           "image": "/images/cme_lebanon_1982_campaign_map.png",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "C",
-          "title": "Source C: Archival Photograph: Palestinian Youths Confronting Israeli Armoured Vehicles in Gaza (First Intifada, December 1987)",
+          "title": "Source C: Palestinian Youths Confronting IDF Patrol during the First Intifada (1987)",
           "image": "/units/cme_new/assets/first_intifada.png",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "A",
-          "title": "Source A: Archival Photograph: The Opening Session of the Madrid Peace Conference (October 1991)",
+          "title": "Source A: Yasser Arafat Addressing the UN General Assembly (13 November 1974)",
+          "image": "/images/cme_arafat_un_1974.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Military Operations Map of the 1982 Lebanon War and Siege of Beirut",
+          "image": "/images/cme_lebanon_1982_campaign_map.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "C",
+          "title": "Source C: Palestinian Youths Confronting IDF Patrol during the First Intifada (1987)",
+          "image": "/units/cme_new/assets/first_intifada.png",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
+          "title": "Source A: Opening Plenary of the Madrid Peace Conference (30 October 1991)",
           "image": "/images/cme_madrid_conference_1991.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B: Archival Photograph: The Historic Oslo I Handshake on the White House Lawn (13 September 1993)",
+          "title": "Source B: The Historic Oslo I Accord Handshake on the White House Lawn (13 September 1993)",
           "image": "/images/oslo_handshake.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -541,31 +557,23 @@
           "letter": "C",
           "title": "Source C: Cartographic Map: The Fragmentation of the West Bank into Areas A, B, and C under Oslo II (1995)",
           "image": "/images/cme_oslo_areas_map.png",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "D",
-          "title": "Source D: Archival Photograph: The Tel Aviv Peace Rally Moments Before the Assassination of Yitzhak Rabin (4 November 1995)",
-          "image": "/units/cme_new/assets/rabin_peace_rally_1995.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "A",
-          "title": "Source A: Archival Photograph: The Opening Session of the Madrid Peace Conference (October 1991)",
+          "title": "Source A: Opening Plenary of the Madrid Peace Conference (30 October 1991)",
           "image": "/images/cme_madrid_conference_1991.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B: Archival Photograph: The Historic Oslo I Handshake on the White House Lawn (13 September 1993)",
+          "title": "Source B: The Historic Oslo I Accord Handshake on the White House Lawn (13 September 1993)",
           "image": "/images/oslo_handshake.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -573,15 +581,7 @@
           "letter": "C",
           "title": "Source C: Cartographic Map: The Fragmentation of the West Bank into Areas A, B, and C under Oslo II (1995)",
           "image": "/images/cme_oslo_areas_map.png",
-          "status": "CLEAN",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "D",
-          "title": "Source D: Archival Photograph: The Tel Aviv Peace Rally Moments Before the Assassination of Yitzhak Rabin (4 November 1995)",
-          "image": "/units/cme_new/assets/rabin_peace_rally_1995.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         }
@@ -935,7 +935,7 @@
         },
         {
           "letter": "B",
-          "title": "Source B: Plague Victim with Groin and Armpit Buboes (1497)",
+          "title": "Source B: Medieval Illumination of Bedridden Plague Victims with Boils and Sores (c. 1411)",
           "image": "/images/black_death.jpg",
           "status": "RESOLVED",
           "issueType": "",
@@ -943,7 +943,7 @@
         },
         {
           "letter": "B",
-          "title": "Source B: Plague Victim with Groin and Armpit Buboes (1497)",
+          "title": "Source B: Medieval Illumination of Bedridden Plague Victims with Boils and Sores (c. 1411)",
           "image": "/images/plague_victim_buboes.jpg",
           "status": "RESOLVED",
           "issueType": "",
@@ -1023,8 +1023,8 @@
         },
         {
           "letter": "C",
-          "title": "Source C: Renaissance Municipal Hospital Ward",
-          "image": "/images/hotel_dieu_hospital.jpg",
+          "title": "Source C: The Infirmary of the Hospital of Charity by Abraham Bosse (ca. 1639)",
+          "image": "/images/renaissance_hospital_ward.jpg",
           "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
@@ -1047,7 +1047,7 @@
         },
         {
           "letter": "C",
-          "title": "Source C: Renaissance Municipal Hospital Ward",
+          "title": "Source C: The Infirmary of the Hospital of Charity by Abraham Bosse (ca. 1639)",
           "image": "/images/renaissance_hospital_ward.jpg",
           "status": "RESOLVED",
           "issueType": "",
@@ -1119,8 +1119,8 @@
         },
         {
           "letter": "A",
-          "title": "Source A: Night Burial in a Mass Plague Pit (1665)",
-          "image": "/images/plague_burial.jpg",
+          "title": "Source A: Plague in 1665: Dead-Carts Collecting Victims in London",
+          "image": "/images/night_plague_burials_1665.jpg",
           "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
@@ -1143,7 +1143,7 @@
         },
         {
           "letter": "A",
-          "title": "Source A: Night Burial in a Mass Plague Pit (1665)",
+          "title": "Source A: Plague in 1665: Dead-Carts Collecting Victims in London",
           "image": "/images/night_plague_burials_1665.jpg",
           "status": "RESOLVED",
           "issueType": "",
@@ -1311,7 +1311,7 @@
         },
         {
           "letter": "A",
-          "title": "Source A: A Court for King Cholera (Punch, September 1852)",
+          "title": "Source A: John Leech, A Court for King Cholera (Punch, September 1852)",
           "image": "/images/court_for_king_cholera.png",
           "status": "RESOLVED",
           "issueType": "",
@@ -1327,7 +1327,7 @@
         },
         {
           "letter": "C",
-          "title": "Source C: Joseph Bazalgette’s London Main Drainage Sewer Works (1860s)",
+          "title": "Source C: Sir Joseph Bazalgette’s London Interceptor Sewer Network Under Construction (1862)",
           "image": "/images/bazalgette_sewer.jpg",
           "status": "RESOLVED",
           "issueType": "",
@@ -1335,7 +1335,7 @@
         },
         {
           "letter": "A",
-          "title": "Source A: A Court for King Cholera (Punch, September 1852)",
+          "title": "Source A: John Leech, A Court for King Cholera (Punch, September 1852)",
           "image": "/images/court_for_king_cholera.png",
           "status": "RESOLVED",
           "issueType": "",
@@ -1351,7 +1351,7 @@
         },
         {
           "letter": "C",
-          "title": "Source C: Joseph Bazalgette’s London Main Drainage Sewer Works (1860s)",
+          "title": "Source C: Sir Joseph Bazalgette’s London Interceptor Sewer Network Under Construction (1862)",
           "image": "/images/bazalgette_sewer.jpg",
           "status": "RESOLVED",
           "issueType": "",
@@ -1714,16 +1714,16 @@
     "eee": {
       "title": "Paper 2: Early Elizabethan England, 1558-88",
       "totalSources": 48,
-      "cleanSources": 44,
-      "flaggedSources": 4,
-      "resolvedSources": 0,
-      "accuracyPct": 92,
+      "cleanSources": 48,
+      "flaggedSources": 0,
+      "resolvedSources": 48,
+      "accuracyPct": 100,
       "sources": [
         {
           "letter": "A",
           "title": "Source A: Queen Elizabeth I Coronation Portrait (1559)",
           "image": "/images/elizabeth_coronation_portrait.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1731,7 +1731,7 @@
           "letter": "B",
           "title": "Source B: Sir William Cecil, Lord Burghley, Elizabeth’s Chief Minister",
           "image": "/images/sir_william_cecil_lord_burghley.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1739,7 +1739,7 @@
           "letter": "A",
           "title": "Source A: Queen Elizabeth I Coronation Portrait (1559)",
           "image": "/images/elizabeth_coronation_portrait.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1747,7 +1747,7 @@
           "letter": "B",
           "title": "Source B: Sir William Cecil, Lord Burghley, Elizabeth’s Chief Minister",
           "image": "/images/sir_william_cecil_lord_burghley.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1755,7 +1755,7 @@
           "letter": "A",
           "title": "Source A: The 1559 Act of Supremacy",
           "image": "/images/act_of_supremacy.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1763,7 +1763,7 @@
           "letter": "B",
           "title": "Source B: The 1559 Book of Common Prayer",
           "image": "/images/book_of_common_prayer_1559.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1771,7 +1771,7 @@
           "letter": "A",
           "title": "Source A: The 1559 Act of Supremacy",
           "image": "/images/act_of_supremacy.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1779,7 +1779,7 @@
           "letter": "B",
           "title": "Source B: The 1559 Book of Common Prayer",
           "image": "/images/book_of_common_prayer_1559.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1787,7 +1787,7 @@
           "letter": "A",
           "title": "Source A: Papal Bull Regnans in Excelsis Excommunicating Elizabeth (1570)",
           "image": "/images/regnans_in_excelsis_1570.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1795,7 +1795,7 @@
           "letter": "B",
           "title": "Source B: Father Edmund Campion SJ, Catholic Jesuit Martyr (1581)",
           "image": "/images/edmund_campion.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1803,7 +1803,7 @@
           "letter": "A",
           "title": "Source A: Papal Bull Regnans in Excelsis Excommunicating Elizabeth (1570)",
           "image": "/images/regnans_in_excelsis_1570.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1811,7 +1811,7 @@
           "letter": "B",
           "title": "Source B: Father Edmund Campion SJ, Catholic Jesuit Martyr (1581)",
           "image": "/images/edmund_campion.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1819,7 +1819,7 @@
           "letter": "A",
           "title": "Source A: Mary, Queen of Scots (c. 1565)",
           "image": "/images/mary_queen_of_scots_mary_stuart.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1827,7 +1827,7 @@
           "letter": "B",
           "title": "Source B: Sir Francis Walsingham, Queen Elizabeth’s Spymaster",
           "image": "/images/sir_francis_walsingham.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1835,7 +1835,7 @@
           "letter": "A",
           "title": "Source A: Mary, Queen of Scots (c. 1565)",
           "image": "/images/mary_queen_of_scots_mary_stuart.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1843,7 +1843,7 @@
           "letter": "B",
           "title": "Source B: Sir Francis Walsingham, Queen Elizabeth’s Spymaster",
           "image": "/images/sir_francis_walsingham.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1851,7 +1851,7 @@
           "letter": "A",
           "title": "Source A: Francis Throckmorton and the 1583 Catholic Conspiracy",
           "image": "/images/francis_throckmorton.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1859,7 +1859,7 @@
           "letter": "B",
           "title": "Source B: Anthony Babington and the 1586 Conspiracy",
           "image": "/images/anthony_babington.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1867,7 +1867,7 @@
           "letter": "A",
           "title": "Source A: Francis Throckmorton and the 1583 Catholic Conspiracy",
           "image": "/images/francis_throckmorton.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1875,7 +1875,7 @@
           "letter": "B",
           "title": "Source B: Anthony Babington and the 1586 Conspiracy",
           "image": "/images/anthony_babington.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1883,7 +1883,7 @@
           "letter": "A",
           "title": "Source A: Robert Dudley, Earl of Leicester",
           "image": "/images/robert_dudley_earl_of_leicester.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1891,7 +1891,7 @@
           "letter": "B",
           "title": "Source B: Sir Francis Drake, Privateer and Navigator",
           "image": "/images/sir_francis_drake.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1899,7 +1899,7 @@
           "letter": "A",
           "title": "Source A: Robert Dudley, Earl of Leicester",
           "image": "/images/robert_dudley_earl_of_leicester.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1907,7 +1907,7 @@
           "letter": "B",
           "title": "Source B: Sir Francis Drake, Privateer and Navigator",
           "image": "/images/sir_francis_drake.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1915,15 +1915,15 @@
           "letter": "A",
           "title": "Source A: Drake’s Raid on Cadiz (1587)",
           "image": "/images/drake_cadiz_1587.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 2 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Elizabeth I’s Speech to the Troops at Tilbury (August 1588)",
           "image": "/images/elizabeth_tilbury_speech.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1931,15 +1931,15 @@
           "letter": "A",
           "title": "Source A: Drake’s Raid on Cadiz (1587)",
           "image": "/images/drake_cadiz_1587.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 2 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Elizabeth I’s Speech to the Troops at Tilbury (August 1588)",
           "image": "/images/elizabeth_tilbury_speech.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1947,15 +1947,15 @@
           "letter": "A",
           "title": "Source A: The Battle of Gravelines and the Fireships (8 August 1588)",
           "image": "/images/battle_of_gravelines_1588.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: The Armada Portrait of Elizabeth I (1588)",
           "image": "/images/armada_portrait.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1963,15 +1963,15 @@
           "letter": "A",
           "title": "Source A: The Battle of Gravelines and the Fireships (8 August 1588)",
           "image": "/images/battle_of_gravelines_1588.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: The Armada Portrait of Elizabeth I (1588)",
           "image": "/images/armada_portrait.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1979,7 +1979,7 @@
           "letter": "A",
           "title": "Source A: Queen Elizabeth in Royal Procession (1601)",
           "image": "/images/elizabeth_procession_1601.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1987,7 +1987,7 @@
           "letter": "B",
           "title": "Source B: Johannes de Witt’s Sketch of the Swan Theatre (c. 1596)",
           "image": "/images/swan_theatre.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -1995,7 +1995,7 @@
           "letter": "A",
           "title": "Source A: Queen Elizabeth in Royal Procession (1601)",
           "image": "/images/elizabeth_procession_1601.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2003,7 +2003,7 @@
           "letter": "B",
           "title": "Source B: Johannes de Witt’s Sketch of the Swan Theatre (c. 1596)",
           "image": "/images/swan_theatre.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2011,7 +2011,7 @@
           "letter": "A",
           "title": "Source A: Thomas Harman’s Caveat for Common Cursitors (1567)",
           "image": "/images/caveat_for_cursitors.png",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2019,7 +2019,7 @@
           "letter": "B",
           "title": "Source B: The Elizabethan Poor Law Statute of 1601",
           "image": "/images/poor_law_1601.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2027,7 +2027,7 @@
           "letter": "A",
           "title": "Source A: Thomas Harman’s Caveat for Common Cursitors (1567)",
           "image": "/images/caveat_for_cursitors.png",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2035,7 +2035,7 @@
           "letter": "B",
           "title": "Source B: The Elizabethan Poor Law Statute of 1601",
           "image": "/images/poor_law_1601.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2043,7 +2043,7 @@
           "letter": "A",
           "title": "Source A: Naval Engagement Between English Galleons and Spanish Warships",
           "image": "/images/spanish_armada_battle.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2051,7 +2051,7 @@
           "letter": "B",
           "title": "Source B: Sir Francis Drake Circumnavigating the Globe",
           "image": "/images/francis_drake.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2059,7 +2059,7 @@
           "letter": "A",
           "title": "Source A: Naval Engagement Between English Galleons and Spanish Warships",
           "image": "/images/spanish_armada_battle.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2067,7 +2067,7 @@
           "letter": "B",
           "title": "Source B: Sir Francis Drake Circumnavigating the Globe",
           "image": "/images/francis_drake.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2075,7 +2075,7 @@
           "letter": "A",
           "title": "Source A: Sir Walter Raleigh, Courtier, Explorer, and Coloniser",
           "image": "/images/sir_walter_raleigh.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2083,7 +2083,7 @@
           "letter": "B",
           "title": "Source B: The Roanoke Island Colony Map by John White (1585)",
           "image": "/images/roanoke_colony.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2091,7 +2091,7 @@
           "letter": "A",
           "title": "Source A: Sir Walter Raleigh, Courtier, Explorer, and Coloniser",
           "image": "/images/sir_walter_raleigh.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2099,7 +2099,7 @@
           "letter": "B",
           "title": "Source B: The Roanoke Island Colony Map by John White (1585)",
           "image": "/images/roanoke_colony.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         }
@@ -2114,7 +2114,7 @@
       "accuracyPct": 100,
       "sources": [
         {
-          "letter": "",
+          "letter": "A",
           "title": "Source A: Nathaniel Dance, Portrait of Major-General Robert Clive (1773)",
           "image": "/images/robert_clive.jpg",
           "status": "RESOLVED",
@@ -2122,7 +2122,7 @@
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "B",
           "title": "Source B: Benjamin West, Shah Alam II Conveying the Grant of the Diwani to Lord Clive (1795)",
           "image": "/images/shah_alam_clive.jpg",
           "status": "RESOLVED",
@@ -2141,22 +2141,6 @@
           "letter": "B",
           "title": "Source B: Benjamin West, Shah Alam II Conveying the Grant of the Diwani to Lord Clive (1795)",
           "image": "/images/shah_alam_clive.jpg",
-          "status": "RESOLVED",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source A: The Plymouth Committee, Stowage of the British Slave Ship Brookes (1788)",
-          "image": "/images/brookes_slave_ship.jpg",
-          "status": "RESOLVED",
-          "issueType": "",
-          "issueDesc": ""
-        },
-        {
-          "letter": "",
-          "title": "Source B: Daniel Orme, Portrait of Olaudah Equiano / Gustavus Vassa (1789)",
-          "image": "/images/olaudah_equiano.jpg",
           "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
@@ -2178,7 +2162,23 @@
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "A",
+          "title": "Source A: The Plymouth Committee, Stowage of the British Slave Ship Brookes (1788)",
+          "image": "/images/brookes_slave_ship.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: Daniel Orme, Portrait of Olaudah Equiano / Gustavus Vassa (1789)",
+          "image": "/images/olaudah_equiano.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "A",
           "title": "Source A: William Clark, Slaves Cutting the Sugar Cane in Antigua (1823)",
           "image": "/images/sugar_cane_plantation.jpg",
           "status": "RESOLVED",
@@ -2186,7 +2186,7 @@
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "B",
           "title": "Source B: Memorial Bust of Queen Nanny of the Maroons, National Heroes Park",
           "image": "/images/queen_nanny.jpg",
           "status": "RESOLVED",
@@ -2210,7 +2210,7 @@
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "A",
           "title": "Source A: Paul Revere, The Bloody Massacre in King-Street (March 1770)",
           "image": "/images/boston_massacre.jpg",
           "status": "RESOLVED",
@@ -2218,7 +2218,7 @@
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "B",
           "title": "Source B: Currier & Ives, The Boston Tea Party (1846 lithograph)",
           "image": "/images/boston_tea_party.jpg",
           "status": "RESOLVED",
@@ -2242,7 +2242,7 @@
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "A",
           "title": "Source A: John Trumbull, Declaration of Independence (1819)",
           "image": "/images/declaration_of_independence.jpg",
           "status": "RESOLVED",
@@ -2250,7 +2250,7 @@
           "issueDesc": ""
         },
         {
-          "letter": "",
+          "letter": "B",
           "title": "Source B: Excerpt from Lord Dunmore’s Proclamation, Williamsburg, Virginia (November 1775)",
           "image": "/images/dunmore_proclamation_1775.jpg",
           "status": "RESOLVED",
@@ -2400,17 +2400,17 @@
     },
     "industrialisation_and_empire": {
       "title": "KS3: The Industrial Revolution (1750–1900)",
-      "totalSources": 13,
-      "cleanSources": 11,
-      "flaggedSources": 2,
-      "resolvedSources": 0,
-      "accuracyPct": 85,
+      "totalSources": 14,
+      "cleanSources": 14,
+      "flaggedSources": 0,
+      "resolvedSources": 14,
+      "accuracyPct": 100,
       "sources": [
         {
           "letter": "A",
           "title": "Source A: Coalbrookdale by Night (1801)",
           "image": "/images/coalbrookdale_by_night.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2418,7 +2418,7 @@
           "letter": "B",
           "title": "Source B: Cort’s Reverberatory Puddling Furnace (1783)",
           "image": "/images/funtley_ironworks.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2426,7 +2426,7 @@
           "letter": "D",
           "title": "Source D: Contemporary Dedication Portrait of Henry Cort (c. 1780s)",
           "image": "/images/henry_cort.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2434,7 +2434,7 @@
           "letter": "A",
           "title": "Source A: Powerloom Weaving in 1835",
           "image": "/images/19th_century_mill.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2442,7 +2442,7 @@
           "letter": "D",
           "title": "Source D: Contemporary Engraving of Factory Child Labour (1840)",
           "image": "/images/child_labour.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2450,7 +2450,7 @@
           "letter": "A",
           "title": "Source A: Gustave Doré, Over London by Rail (1872)",
           "image": "/images/victorian_slum.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2458,23 +2458,31 @@
           "letter": "B",
           "title": "Source B: John Leech, A Court for King Cholera (Punch, 1852)",
           "image": "/images/court_for_king_cholera.png",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 2 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "D",
           "title": "Source D: Sir Joseph Bazalgette’s London Interceptor Sewer Network Under Construction (1862)",
           "image": "/images/bazalgette_sewer.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 2 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
+        },
+        {
+          "letter": "B",
+          "title": "Source B: George Cruikshank, The Massacre of Peterloo or Britains in Search of Liberty (1819)",
+          "image": "/images/peterloo_massacre_cruikshank.jpg",
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "C",
           "title": "Source C: The Threat of Captain Swing (National Archives HO 52/6, November 1830)",
           "image": "/images/captain_swing_letter.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2482,7 +2490,7 @@
           "letter": "A",
           "title": "Source A: Parliamentary Representation Map of England & Wales & Unreformed Boroughs (1832)",
           "image": "/images/map_rotten_boroughs.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2490,7 +2498,7 @@
           "letter": "B",
           "title": "Source B: The School of Reform (Satirical Lithograph on the 1832 Reform Bill)",
           "image": "/images/school_of_reform.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2498,7 +2506,7 @@
           "letter": "D",
           "title": "Source D: The Chartist Mass Demonstration at Kennington Common (10 April 1848)",
           "image": "/images/chartist_demo.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -2506,7 +2514,7 @@
           "letter": "E",
           "title": "Source E: The First Secret Ballot in the United Kingdom, Pontefract By-Election (1872)",
           "image": "/images/secret_ballot.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         }
@@ -3159,16 +3167,16 @@
     "monarchy_religion_power": {
       "title": "Crown, Church, or Parliament (1517–1689)",
       "totalSources": 27,
-      "cleanSources": 23,
-      "flaggedSources": 4,
-      "resolvedSources": 0,
-      "accuracyPct": 85,
+      "cleanSources": 27,
+      "flaggedSources": 0,
+      "resolvedSources": 27,
+      "accuracyPct": 100,
       "sources": [
         {
           "letter": "",
           "title": "Source A: Lucas Cranach the Elder, Portrait of Martin Luther (1529)",
           "image": "/images/martin_luther_portrait.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3176,7 +3184,7 @@
           "letter": "",
           "title": "Source B: Unknown Anglo-Flemish Court Artist, The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545)",
           "image": "/images/family_of_henry_viii_c1545.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3184,7 +3192,7 @@
           "letter": "",
           "title": "Source C: Hans Holbein the Younger, Whitehall Mural Portrait of King Henry VIII (c. 1537)",
           "image": "/images/henry_viii.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3192,7 +3200,7 @@
           "letter": "A",
           "title": "Source A: Lucas Cranach the Elder, Portrait of Martin Luther (1529)",
           "image": "/images/martin_luther_portrait.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3200,7 +3208,7 @@
           "letter": "B",
           "title": "Source B: Unknown Anglo-Flemish Court Artist, The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545)",
           "image": "/images/family_of_henry_viii_c1545.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3208,7 +3216,7 @@
           "letter": "C",
           "title": "Source C: Hans Holbein the Younger, Whitehall Mural Portrait of King Henry VIII (c. 1537)",
           "image": "/images/henry_viii.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3216,7 +3224,7 @@
           "letter": "",
           "title": "Source A: Attributed to Robert Peake the Elder, The Procession Portrait of Queen Elizabeth I (c. 1601)",
           "image": "/images/elizabeth_procession_1601.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3224,15 +3232,15 @@
           "letter": "",
           "title": "Source B: Antonis Mor, Portrait of Queen Mary I (\"Bloody Mary\") (1554)",
           "image": "/images/queen_mary_i_mary_tudor.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "",
-          "title": "Source C: The Armada Portrait of Queen Elizabeth I (c. 1588)",
+          "title": "Source C: George Gower (attr.), The Armada Portrait of Queen Elizabeth I (c. 1588)",
           "image": "/images/armada_portrait.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3240,7 +3248,7 @@
           "letter": "A",
           "title": "Source A: Attributed to Robert Peake the Elder, The Procession Portrait of Queen Elizabeth I (c. 1601)",
           "image": "/images/elizabeth_procession_1601.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3248,7 +3256,7 @@
           "letter": "B",
           "title": "Source B: Antonis Mor, Portrait of Queen Mary I (\"Bloody Mary\") (1554)",
           "image": "/images/queen_mary_i_mary_tudor.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3256,63 +3264,63 @@
           "letter": "C",
           "title": "Source C: George Gower (attr.), The Armada Portrait of Queen Elizabeth I (c. 1588)",
           "image": "/images/armada_portrait.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "",
-          "title": "Source A: Contemporary Chart of Drake’s Raid on Cadiz (1587)",
+          "title": "Source A: William Borough’s Contemporary Chart of Drake’s Raid on Cadiz (1587)",
           "image": "/images/drake_cadiz_1587.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 2 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "",
-          "title": "Source B: Philip James de Loutherbourg, The Battle of Gravelines (1588)",
+          "title": "Source B: Philip James de Loutherbourg, The Defeat of the Spanish Armada (1796)",
           "image": "/images/battle_of_gravelines_1588.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "A",
-          "title": "Source A: Contemporary Chart of Sir Francis Drake’s Raid on Cadiz (1587)",
+          "title": "Source A: William Borough’s Contemporary Chart of Drake’s Raid on Cadiz (1587)",
           "image": "/images/drake_cadiz_1587.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 2 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B: Philip James de Loutherbourg, The Battle of Gravelines (1588)",
+          "title": "Source B: Philip James de Loutherbourg, The Defeat of the Spanish Armada (1796)",
           "image": "/images/battle_of_gravelines_1588.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "",
           "title": "Source A: Anthony van Dyck, Portrait of King Charles I (1636)",
           "image": "/images/charles_first.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "",
           "title": "Source B: Contemporary Painting, The Battle of Naseby (14 June 1645)",
-          "image": "/images/battle_of_naseby_1645.jpg",
-          "status": "CLEAN",
+          "image": "/images/covers/unit_crown_parliament_revolution.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "",
-          "title": "Source C: Contemporary Broadside of the Execution of Charles I (1649)",
+          "title": "Source C: Contemporary German Broadside of the Execution of Charles I (1649)",
           "image": "/images/charles_i_execution.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3320,15 +3328,15 @@
           "letter": "A",
           "title": "Source A: Anthony van Dyck, Portrait of King Charles I (1636)",
           "image": "/images/charles_first.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Contemporary Painting, The Battle of Naseby (14 June 1645)",
-          "image": "/images/battle_of_naseby_1645.jpg",
-          "status": "CLEAN",
+          "image": "/images/covers/unit_crown_parliament_revolution.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3336,7 +3344,7 @@
           "letter": "C",
           "title": "Source C: Contemporary German Broadside of the Execution of Charles I (1649)",
           "image": "/images/charles_i_execution.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3344,7 +3352,7 @@
           "letter": "",
           "title": "Source A: The 1689 Bill of Rights (Original Statute Scroll)",
           "image": "/images/bill_of_rights.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3352,7 +3360,7 @@
           "letter": "",
           "title": "Source B: Prince William of Orange Landing at Brixham (5 November 1688)",
           "image": "/images/william_landing_1688.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3360,7 +3368,7 @@
           "letter": "",
           "title": "Source C: Edward Matthew Ward (RA), The Presentation of the Crown and Declaration of Rights (1689)",
           "image": "/images/william_mary_declaration_of_rights_1689.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3368,7 +3376,7 @@
           "letter": "A",
           "title": "Source A: The 1689 Bill of Rights (Original Statute Scroll)",
           "image": "/images/bill_of_rights.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3376,7 +3384,7 @@
           "letter": "C",
           "title": "Source C: Edward Matthew Ward (RA), The Presentation of the Crown and Declaration of Rights (1689)",
           "image": "/images/william_mary_declaration_of_rights_1689.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         }
@@ -3417,7 +3425,7 @@
         },
         {
           "letter": "A",
-          "title": "Source A: Benjamin West, Shah Alam II Conveying the Grant of the Diwani to Lord Clive (1795)",
+          "title": "Source A: Benjamin West, Shah Alam Conveying the Grant of the Diwani to Lord Clive (1795)",
           "image": "/images/shah_alam_clive.jpg",
           "status": "RESOLVED",
           "issueType": "",
@@ -3476,10 +3484,10 @@
     "the_shoah": {
       "title": "KS3: The Shoah",
       "totalSources": 14,
-      "cleanSources": 12,
-      "flaggedSources": 2,
+      "cleanSources": 14,
+      "flaggedSources": 0,
       "resolvedSources": 0,
-      "accuracyPct": 86,
+      "accuracyPct": 100,
       "sources": [
         {
           "letter": "A",
@@ -3499,19 +3507,19 @@
         },
         {
           "letter": "A",
-          "title": "Source A (Archival Photograph): SA Stormtroopers Enforcing the Anti-Jewish Boycott in Berlin (1 April 1933)",
+          "title": "Source A: SA Stormtroopers Enforcing the Nationwide Anti-Jewish Boycott (1 April 1933)",
           "image": "/images/anti_jewish_boycott_1933.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "CLEAN",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B (Official State Chart): The Nuremberg Laws Racial Classification Diagram (September 1935)",
+          "title": "Source B: Official Racial Classification Chart under the Nuremberg Laws (September 1935)",
           "image": "/images/nuremberg_laws_chart_1935.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "CLEAN",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "D",
@@ -3609,14 +3617,14 @@
       "totalSources": 49,
       "cleanSources": 49,
       "flaggedSources": 0,
-      "resolvedSources": 0,
+      "resolvedSources": 49,
       "accuracyPct": 100,
       "sources": [
         {
           "letter": "A",
           "title": "Source A: 'Colored Waiting Room' Jim Crow Railway and Bus Terminal Sign (c. 1950)",
           "image": "/units/usa/assets/sources/colored-waiting-room-sign.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3624,7 +3632,7 @@
           "letter": "B",
           "title": "Source B: The Warren Court Justiciars Following the Brown v. Board Decision (17 May 1954)",
           "image": "/units/usa/assets/sources/warren-court-1954.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3632,7 +3640,7 @@
           "letter": "A",
           "title": "Source A: President Dwight D. Eisenhower Delivering Nationally Televised Address on Little Rock Crisis (24 September 1957)",
           "image": "/units/usa/assets/sources/eisenhower-little-rock-speech.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3640,7 +3648,7 @@
           "letter": "B",
           "title": "Source B: Soldiers of the 101st Airborne Division Escorting the 'Little Rock Nine' into Central High (25 September 1957)",
           "image": "/units/usa/assets/sources/airborne-little-rock-patrol.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3648,7 +3656,7 @@
           "letter": "A",
           "title": "Source A: Rosa Parks Police Booking Fingerprint Record Following Arrest in Montgomery (1 December 1955)",
           "image": "/units/usa/assets/sources/rosa-parks-fingerprint.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3656,7 +3664,7 @@
           "letter": "B",
           "title": "Source B: Rosa Parks Seated at Front of Integrated City Bus in Montgomery Following Supreme Court Injunction (21 December 1956)",
           "image": "/units/usa/assets/sources/rosa-parks-bus-1956.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3664,7 +3672,7 @@
           "letter": "A",
           "title": "Source A: The Southern Manifesto ('Declaration of Constitutional Principles') Signed by 101 Congressmen (12 March 1956)",
           "image": "/units/usa/assets/sources/southern-manifesto-signing.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3672,7 +3680,7 @@
           "letter": "B",
           "title": "Source B: Ku Klux Klan Masked Demonstrators Parading in Regalia (13 September 1926 (Historical Revivals into the 1950s))",
           "image": "/units/usa/assets/sources/kkk-march-washington-1926.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3680,7 +3688,7 @@
           "letter": "A",
           "title": "Source A: The Greensboro Four Stool Counter Sit-In at F.W. Woolworth Lunch Counter (1 February 1960)",
           "image": "/units/usa/assets/sources/greensboro-sit-in-counter.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3688,7 +3696,7 @@
           "letter": "B",
           "title": "Source B: Charred Chassis of the Firebombed CORE Freedom Riders Bus Outside Anniston, Alabama (14 May 1961)",
           "image": "/units/usa/assets/sources/freedom-riders-bus-wreckage.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3696,7 +3704,7 @@
           "letter": "C",
           "title": "Source C: James Meredith Walking on University of Mississippi Campus Escorted by US Marshals (1 October 1962)",
           "image": "/units/usa/assets/sources/james-meredith-walking.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3704,7 +3712,7 @@
           "letter": "D",
           "title": "Source D: Birmingham Police K-9 Attack Dogs Lunging at Teenage Demonstrator Walter Gadsden (3 May 1963)",
           "image": "/units/usa/assets/sources/birmingham-protests-dogs-1963.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3712,7 +3720,7 @@
           "letter": "A",
           "title": "Source A: Panoramic View of Demonstrators Surrounding the Lincoln Memorial Reflecting Pool at the March on Washington (28 August 1963)",
           "image": "/units/usa/assets/sources/march-on-washington-crowd.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3720,7 +3728,7 @@
           "letter": "B",
           "title": "Source B: President Lyndon B. Johnson Handing Pen to Dr Martin Luther King Jr. at Signing of Civil Rights Act of 1964 (2 July 1964)",
           "image": "/units/usa/assets/sources/lbj-mlk-signing-1964.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3728,7 +3736,7 @@
           "letter": "C",
           "title": "Source C: Alabama State Troopers and Possemen Confronting Voting Rights Marchers on 'Bloody Sunday' at Edmund Pettus Bridge (7 March 1965)",
           "image": "/units/usa/assets/sources/selma-troopers-bridge.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3736,7 +3744,7 @@
           "letter": "A",
           "title": "Source A: Malcolm X Addressing a Mass Rally and Press Conference in Harlem, New York City (23 March 1964)",
           "image": "/units/usa/assets/sources/malcolm-x-speaking.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3744,7 +3752,7 @@
           "letter": "B",
           "title": "Source B: Tommie Smith and John Carlos Raising Black-Gloved Fists on the 200m Olympic Medal Podium in Mexico City (16 October 1968)",
           "image": "/units/usa/assets/sources/olympics-black-power-1968.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3752,7 +3760,7 @@
           "letter": "C",
           "title": "Source C: Armed Black Panther Party Members Demonstrating on the Steps of the California State Capitol in Sacramento (2 May 1967)",
           "image": "/units/usa/assets/sources/black-panthers-marching.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3760,7 +3768,7 @@
           "letter": "A",
           "title": "Source A: Michigan National Guard Patrols Debris-Strewn 12th Street During the Detroit Rebellion (24 July 1967)",
           "image": "/units/usa/assets/sources/detroit-riot-guard-1967.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3768,7 +3776,7 @@
           "letter": "B",
           "title": "Source B: Demonstrators Assembling Shantytown Tents at 'Resurrection City' on the National Mall for the Poor People's Campaign (May 1968)",
           "image": "/units/usa/assets/sources/poor-peoples-campaign-1968.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3776,7 +3784,7 @@
           "letter": "C",
           "title": "Source C: Over 100,000 Mourners Marching Behind the Mule-Drawn Farm Wagon Bearing Dr King's Casket in Atlanta (9 April 1968)",
           "image": "/units/usa/assets/sources/mourners-mlk-assassination.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3784,7 +3792,7 @@
           "letter": "D",
           "title": "Source D: President Lyndon B. Johnson Signing the Voting Rights Act of 1965 in the President's Room of the US Capitol (6 August 1965)",
           "image": "/units/usa/assets/sources/lbj-signing-voting-rights-1965.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3792,7 +3800,7 @@
           "letter": "A",
           "title": "Source A: Viet Minh Logistics Porters Utilizing Reinforced Bicycles to Transport Artillery to the Hills Above Dien Bien Phu (March–May 1954)",
           "image": "/units/usa/assets/sources/ho-chi-minh-trail-bicycles.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3800,7 +3808,7 @@
           "letter": "B",
           "title": "Source B: South Vietnamese President Ngo Dinh Diem in Open-Top Ceremonial Motorcade in Saigon (October 1955)",
           "image": "/units/usa/assets/sources/ngo-dinh-diem-parade.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3808,7 +3816,7 @@
           "letter": "C",
           "title": "Source C: Eyewitness Photograph of Buddhist Monk Thich Quang Duc's Self-Immolation at a Busy Saigon Intersection (11 June 1963)",
           "image": "/units/usa/assets/sources/buddhist-protests-1963.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3816,7 +3824,7 @@
           "letter": "A",
           "title": "Source A: US Army Conscript Cautiously Traversing Mangrove Swamp in Search of Guerrilla Insurgents in the Mekong Delta (1966)",
           "image": "/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3824,7 +3832,7 @@
           "letter": "B",
           "title": "Source B: USS Maddox (DD-731) Destroyer Underway in the Waters of the Gulf of Tonkin (2 August 1964)",
           "image": "/units/usa/assets/sources/uss-maddox.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3832,7 +3840,7 @@
           "letter": "C",
           "title": "Source C: Secretary of Defense Robert McNamara Pointing to Southeast Asian Maps During Pentagon Escalation Briefing (26 April 1965)",
           "image": "/units/usa/assets/sources/robert-mcnamara-briefing.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3840,7 +3848,7 @@
           "letter": "D",
           "title": "Source D: US Marines of the 9th Marine Expeditionary Brigade Wading Ashore at Red Beach, Da Nang (8 March 1965)",
           "image": "/units/usa/assets/sources/marines-landing-danang.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3848,7 +3856,7 @@
           "letter": "A",
           "title": "Source A: Infantrymen of the 1st Cavalry Division Trudging Through Dense Bamboo Foliage and Punji-Spike Hazards (October 1966)",
           "image": "/units/usa/assets/sources/us-troops-bogged-down.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3856,7 +3864,7 @@
           "letter": "B",
           "title": "Source B: USAF Fairchild C-123 Provider Aircraft Spraying Agent Orange Defoliant Canopy During Operation Ranch Hand (1966)",
           "image": "/units/usa/assets/sources/agent-orange-spraying-c123.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3864,7 +3872,7 @@
           "letter": "C",
           "title": "Source C: Bell UH-1D 'Huey' Slick Helicopters Disembarking Airmobile Infantry During the Tet Counter-Offensive (February 1968)",
           "image": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3872,7 +3880,7 @@
           "letter": "D",
           "title": "Source D: General William Westmoreland Briefing President Johnson in the White House Cabinet Room (6 April 1968)",
           "image": "/units/usa/assets/sources/general-westmoreland.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3880,7 +3888,7 @@
           "letter": "A",
           "title": "Source A: President Richard Nixon Visiting Soldiers of the 1st Infantry Division at Di An, South Vietnam (30 July 1969)",
           "image": "/units/usa/assets/sources/nixon-visiting-troops.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3888,7 +3896,7 @@
           "letter": "B",
           "title": "Source B: South Vietnamese ARVN Paratroopers Retreating Under Intense Artillery Fire in Laos During Operation Lam Son 719 (March 1971)",
           "image": "/units/usa/assets/sources/arvn-troops-combat.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3896,7 +3904,7 @@
           "letter": "C",
           "title": "Source C: President Richard Nixon Explaining the US Military Incursion into Cambodia Using Wall Map on Live National Television (30 April 1970)",
           "image": "/units/usa/assets/sources/nixon-television-address.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3904,7 +3912,7 @@
           "letter": "D",
           "title": "Source D: Delegates Signing the Paris Peace Agreement at the Centre International de Conférences (27 January 1973)",
           "image": "/units/usa/assets/sources/paris-peace-accords-signing.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3912,7 +3920,7 @@
           "letter": "A",
           "title": "Source A: Officials Drawing Birthdate Capsules from Glass Urn During First US Selective Service Draft Lottery in Washington D.C. (1 December 1969)",
           "image": "/units/usa/assets/sources/vietnam-draft-lottery.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3920,7 +3928,7 @@
           "letter": "B",
           "title": "Source B: Anti-War Protesters Marching and Confronting Armed Military Police on Steps of the Pentagon (21 October 1967)",
           "image": "/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3928,7 +3936,7 @@
           "letter": "C",
           "title": "Source C: Ohio National Guardsmen Advancing with Fixed Bayonets and Rifles Toward Unarmed Demonstrators at Kent State University (4 May 1970)",
           "image": "/units/usa/assets/sources/kent-state-protests-1970.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3936,7 +3944,7 @@
           "letter": "A",
           "title": "Source A: Pro-Administration Counter-Demonstrators Marching Down Fifth Avenue in New York Supporting Armed Forces (May 1970)",
           "image": "/units/usa/assets/sources/pro-war-rally-nyc.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3944,7 +3952,7 @@
           "letter": "B",
           "title": "Source B: Vietnam Veterans Against the War (VVAW) Discarding Military Medals and Purple Hearts Over the US Capitol Fence (23 April 1971)",
           "image": "/units/usa/assets/sources/vvaw-veterans-protest.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3952,7 +3960,7 @@
           "letter": "C",
           "title": "Source C: Construction Workers in Hard Hats Clashing with Anti-War Student Protesters Near New York City Hall (8 May 1970)",
           "image": "/units/usa/assets/sources/hard-hat-riot-1970.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3960,15 +3968,15 @@
           "letter": "A",
           "title": "Source A: Dr Henry Kissinger and North Vietnamese Chief Negotiator Le Duc Tho Meeting at Villa in Gif-sur-Yvette Near Paris (8 January 1973)",
           "image": "/units/usa/assets/sources/kissinger-peace-talks.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B: Formal Signing Ceremony of the Paris Peace Accords Ending US Combat Engagement in Vietnam (27 January 1973)",
-          "image": "/units/usa/assets/sources/paris-peace-accords-signing.jpg",
-          "status": "CLEAN",
+          "title": "Source B: Operation Homecoming: Celebrations Aboard C-141 Transport Aircraft Returning US Prisoners of War from Hanoi (12 February 1973)",
+          "image": "/units/usa/assets/sources/operation-homecoming-pows-1973.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
@@ -3976,31 +3984,31 @@
           "letter": "C",
           "title": "Source C: Air America Bell 205 Helicopter Evacuating Officials from Rooftop of 22 Gia Long Street During Operation Frequent Wind (29 April 1975)",
           "image": "/units/usa/assets/sources/saigon-embassy-evacuation.jpg",
-          "status": "CLEAN",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "A",
-          "title": "Source A: Communist Logistical Columns Moving War Materiel Down the Jungle Paths of the Ho Chi Minh Trail (1968)",
-          "image": "/units/usa/assets/sources/ho-chi-minh-trail-bicycles.jpg",
-          "status": "CLEAN",
+          "title": "Source A: Subterranean Guerrilla Warfare: US Engineer 'Tunnel Rat' Exploring Viet Cong Complex (1967)",
+          "image": "/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "B",
-          "title": "Source B: Exhausted Conscript of the 9th Infantry Division Sitting in Waterlogged Canal During Long Attrition Patrol (1968)",
-          "image": "/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg",
-          "status": "CLEAN",
+          "title": "Source B: Battle of Hamburger Hill: Exhausted Troops of the 101st Airborne Division (May 1969)",
+          "image": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         },
         {
           "letter": "C",
-          "title": "Source C: Crowds of Hundreds of Thousands Surrounding the Mall and Reflecting Pool Calling for an Immediate End to the War (21 October 1967)",
-          "image": "/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg",
-          "status": "CLEAN",
+          "title": "Source C: Anti-War Demonstrators Burning Conscription Draft Cards in New York City (15 April 1967)",
+          "image": "/units/usa/assets/sources/draft-card-burning-nyc-1967.jpg",
+          "status": "RESOLVED",
           "issueType": "",
           "issueDesc": ""
         }
@@ -4020,91 +4028,119 @@
           "image": "/images/roman_lead_water_pipe_bath.jpg",
           "status": "RESOLVED",
           "issueType": "",
-          "issueDesc": "Replaced Cupid on dolphin floor mosaic with authentic Roman lead water pipe (fistula) with folded seam from Roman Baths Museum."
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Architectural Cutaway Reconstruction of a Roman Public Bathhouse (Thermae)",
           "image": "/images/roman_thermae_cross_section.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "C",
           "title": "Source C: Roman Bronze Strigils and Oil Flask (Aryballos)",
           "image": "/images/roman_strigils.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "A",
           "title": "Source A: Municipal Court Rolls of Norwich and Winchester (1312 & 1421)",
           "image": "/images/medieval_court_roll_manuscript.png",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Waterworks Plan of Christ Church Priory, Canterbury (c.1165)",
           "image": "/images/canterbury_waterworks_plan_1165.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "C",
           "title": "Source C: Monastic Water Management at Titchfield Abbey (1232–1537)",
           "image": "/images/titchfield/titchfield_estate_map_1605.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "A",
           "title": "Source A: Technical Schematic of Sir John Harington’s Water Closet (1596)",
           "image": "/images/harington_toilet.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Diary of Samuel Pepys (20 October 1660)",
           "image": "/images/samuel_pepys_diary_manuscript_1660.png",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "C",
           "title": "Source C: London Plague Broadsheet and Bill of Mortality (1665)",
           "image": "/images/london_bill_of_mortality_1665.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "A",
           "title": "Source A: \"A Court for King Cholera\" (Punch Magazine, 1852)",
           "image": "/images/court_for_king_cholera.png",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Edwin Chadwick’s Report on the Sanitary Condition of the Labouring Population (1842)",
           "image": "/images/chadwick_sanitary_report_1842.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "A",
           "title": "Source A: \"Father Thames Introducing His Offspring to the Fair City of London\" (Punch, 1858)",
           "image": "/images/father_thames_punch_1858.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Eastney Beam Engine House (1865)",
           "image": "/images/water_local_eastney.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "C",
           "title": "Source C: Louis Pasteur’s Swan-Neck Flask Experiments (1861)",
           "image": "/images/pasteur_swan_neck.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "A",
-          "title": "Source A: Dr John Snow’s 1854 Cholera Spot Map of Soho",
+          "title": "Source A: Dr John Snow’s Spot Map of the Broad Street Cholera Outbreak (1854)",
           "image": "/images/john_snow_cholera_map.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
@@ -4112,7 +4148,7 @@
           "image": "/images/snow_treatise_page_42_brewery.jpg",
           "status": "RESOLVED",
           "issueType": "",
-          "issueDesc": "Replaced duplicate spot map with authentic Page 42 facsimile from Snow’s 1855 treatise detailing Lion Brewery workmen."
+          "issueDesc": ""
         },
         {
           "letter": "A",
@@ -4120,13 +4156,15 @@
           "image": "/images/snow_grand_experiment_table_1854.jpg",
           "status": "RESOLVED",
           "issueType": "",
-          "issueDesc": "Replaced duplicate spot map with authentic Table IX facsimile from Snow’s 1855 treatise documenting ninefold mortality difference."
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Construction of London’s Intercepting Sewers (1861)",
           "image": "/images/bazalgette_sewer.jpg",
-          "status": "RESOLVED"
+          "status": "RESOLVED",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "C",
@@ -4134,17 +4172,17 @@
           "image": "/images/cholera_microscope_gummelt_1897.jpg",
           "status": "RESOLVED",
           "issueType": "",
-          "issueDesc": "Replaced duplicate Pasteur swan-neck flask with authentic chromolithograph of Bacilli Kochii (Vibrio cholerae) under the microscope."
+          "issueDesc": ""
         }
       ]
     },
     "weimar_nazi_germany": {
       "title": "Paper 3: Weimar and Nazi Germany, 1918-39",
       "totalSources": 77,
-      "cleanSources": 73,
-      "flaggedSources": 4,
+      "cleanSources": 77,
+      "flaggedSources": 0,
       "resolvedSources": 0,
-      "accuracyPct": 95,
+      "accuracyPct": 100,
       "sources": [
         {
           "letter": "A",
@@ -4597,7 +4635,7 @@
         {
           "letter": "B",
           "title": "Source B: Bishop Clemens August Graf von Galen (c. 1935)",
-          "image": "/images/galen_portrait.jpg",
+          "image": "/images/bishop_von_galen.jpg",
           "status": "CLEAN",
           "issueType": "",
           "issueDesc": ""
@@ -4718,17 +4756,17 @@
           "letter": "A",
           "title": "Source A: SA Stormtroopers Enforcing the Nationwide Anti-Jewish Boycott (1 April 1933)",
           "image": "/images/anti_jewish_boycott_1933.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "CLEAN",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Official Racial Classification Chart under the Nuremberg Laws (September 1935)",
           "image": "/images/nuremberg_laws_chart_1935.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "CLEAN",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "C",
@@ -4742,17 +4780,17 @@
           "letter": "A",
           "title": "Source A: SA Stormtroopers Enforcing the Nationwide Anti-Jewish Boycott (1 April 1933)",
           "image": "/images/anti_jewish_boycott_1933.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "CLEAN",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "B",
           "title": "Source B: Official Racial Classification Chart under the Nuremberg Laws (September 1935)",
           "image": "/images/nuremberg_laws_chart_1935.jpg",
-          "status": "FLAGGED",
-          "issueType": "Cross-Unit Image Reuse",
-          "issueDesc": "Shared with 1 other source(s) with conflicting titles across units."
+          "status": "CLEAN",
+          "issueType": "",
+          "issueDesc": ""
         },
         {
           "letter": "C",
@@ -4765,214 +4803,5 @@
       ]
     }
   },
-  "flaggedList": [
-    {
-      "unitId": "eee",
-      "unitTitle": "Paper 2: Early Elizabethan England, 1558-88",
-      "lessonId": "lesson_2_3",
-      "lessonTitle": "KT 2.3: The Outbreak of War with Spain, 1585–1588",
-      "letter": "A",
-      "title": "Source A: Drake’s Raid on Cadiz (1587)",
-      "image": "/images/drake_cadiz_1587.jpg",
-      "provenance": "National Maritime Museum, Greenwich, 1587.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 2 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "eee",
-      "unitTitle": "Paper 2: Early Elizabethan England, 1558-88",
-      "lessonId": "lesson_2_3",
-      "lessonTitle": "KT 2.3: The Outbreak of War with Spain, 1585–1588",
-      "letter": "A",
-      "title": "Source A: Drake’s Raid on Cadiz (1587)",
-      "image": "/images/drake_cadiz_1587.jpg",
-      "provenance": "National Maritime Museum, Greenwich, 1587.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 2 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "eee",
-      "unitTitle": "Paper 2: Early Elizabethan England, 1558-88",
-      "lessonId": "lesson_2_4",
-      "lessonTitle": "KT 2.4: The Spanish Armada: Strategy, Conflict & Defeat, 1588",
-      "letter": "A",
-      "title": "Source A: The Battle of Gravelines and the Fireships (8 August 1588)",
-      "image": "/images/battle_of_gravelines_1588.jpg",
-      "provenance": "National Maritime Museum, Greenwich, 1588.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "eee",
-      "unitTitle": "Paper 2: Early Elizabethan England, 1558-88",
-      "lessonId": "lesson_2_4",
-      "lessonTitle": "KT 2.4: The Spanish Armada: Strategy, Conflict & Defeat, 1588",
-      "letter": "A",
-      "title": "Source A: The Battle of Gravelines and the Fireships (8 August 1588)",
-      "image": "/images/battle_of_gravelines_1588.jpg",
-      "provenance": "National Maritime Museum, Greenwich, 1588.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "industrialisation_and_empire",
-      "unitTitle": "KS3: The Industrial Revolution (1750–1900)",
-      "lessonId": "lesson_3",
-      "lessonTitle": "Did industrialisation make British towns unlivable?",
-      "letter": "B",
-      "title": "Source B: John Leech, A Court for King Cholera (Punch, 1852)",
-      "image": "/images/court_for_king_cholera.png",
-      "provenance": "",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 2 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "industrialisation_and_empire",
-      "unitTitle": "KS3: The Industrial Revolution (1750–1900)",
-      "lessonId": "lesson_3",
-      "lessonTitle": "Did industrialisation make British towns unlivable?",
-      "letter": "D",
-      "title": "Source D: Sir Joseph Bazalgette’s London Interceptor Sewer Network Under Construction (1862)",
-      "image": "/images/bazalgette_sewer.jpg",
-      "provenance": "",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 2 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "monarchy_religion_power",
-      "unitTitle": "Crown, Church, or Parliament (1517–1689)",
-      "lessonId": "lesson_3",
-      "lessonTitle": "The Spanish Armada & Naval Warfare (1588)",
-      "letter": "",
-      "title": "Source A: Contemporary Chart of Drake’s Raid on Cadiz (1587)",
-      "image": "/images/drake_cadiz_1587.jpg",
-      "provenance": "British Library Maritime Cartographic Manuscripts.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 2 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "monarchy_religion_power",
-      "unitTitle": "Crown, Church, or Parliament (1517–1689)",
-      "lessonId": "lesson_3",
-      "lessonTitle": "The Spanish Armada & Naval Warfare (1588)",
-      "letter": "",
-      "title": "Source B: Philip James de Loutherbourg, The Battle of Gravelines (1588)",
-      "image": "/images/battle_of_gravelines_1588.jpg",
-      "provenance": "Philip James de Loutherbourg (1796) • National Maritime Museum, Greenwich.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "monarchy_religion_power",
-      "unitTitle": "Crown, Church, or Parliament (1517–1689)",
-      "lessonId": "lesson_3",
-      "lessonTitle": "The Spanish Armada & Naval Warfare (1588)",
-      "letter": "A",
-      "title": "Source A: Contemporary Chart of Sir Francis Drake’s Raid on Cadiz (1587)",
-      "image": "/images/drake_cadiz_1587.jpg",
-      "provenance": "British Library Maritime Cartographic Manuscripts.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 2 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "monarchy_religion_power",
-      "unitTitle": "Crown, Church, or Parliament (1517–1689)",
-      "lessonId": "lesson_3",
-      "lessonTitle": "The Spanish Armada & Naval Warfare (1588)",
-      "letter": "B",
-      "title": "Source B: Philip James de Loutherbourg, The Battle of Gravelines (1588)",
-      "image": "/images/battle_of_gravelines_1588.jpg",
-      "provenance": "Philip James de Loutherbourg (1796) • National Maritime Museum, Greenwich.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "the_shoah",
-      "unitTitle": "KS3: The Shoah",
-      "lessonId": "lesson_2",
-      "lessonTitle": "Enquiry 2: How were German Jews progressively stripped of citizenship and rights (1933–1939)?",
-      "letter": "A",
-      "title": "Source A (Archival Photograph): SA Stormtroopers Enforcing the Anti-Jewish Boycott in Berlin (1 April 1933)",
-      "image": "/images/anti_jewish_boycott_1933.jpg",
-      "provenance": "German Federal Archives (Bundesarchiv Bild 102-14516).",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "the_shoah",
-      "unitTitle": "KS3: The Shoah",
-      "lessonId": "lesson_2",
-      "lessonTitle": "Enquiry 2: How were German Jews progressively stripped of citizenship and rights (1933–1939)?",
-      "letter": "B",
-      "title": "Source B (Official State Chart): The Nuremberg Laws Racial Classification Diagram (September 1935)",
-      "image": "/images/nuremberg_laws_chart_1935.jpg",
-      "provenance": "US National Archives and Records Administration (NARA RG 242, Captured German Records).",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "weimar_nazi_germany",
-      "unitTitle": "Paper 3: Weimar and Nazi Germany, 1918-39",
-      "lessonId": "lesson_4_4",
-      "lessonTitle": "Key Topic 4.4: The Persecution of Minorities, 1933–1939",
-      "letter": "A",
-      "title": "Source A: SA Stormtroopers Enforcing the Nationwide Anti-Jewish Boycott (1 April 1933)",
-      "image": "/images/anti_jewish_boycott_1933.jpg",
-      "provenance": "Bundesarchiv Bild 102-14469, 1 April 1933.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "weimar_nazi_germany",
-      "unitTitle": "Paper 3: Weimar and Nazi Germany, 1918-39",
-      "lessonId": "lesson_4_4",
-      "lessonTitle": "Key Topic 4.4: The Persecution of Minorities, 1933–1939",
-      "letter": "B",
-      "title": "Source B: Official Racial Classification Chart under the Nuremberg Laws (September 1935)",
-      "image": "/images/nuremberg_laws_chart_1935.jpg",
-      "provenance": "Reichsgesetzblatt, Berlin, 1935.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "weimar_nazi_germany",
-      "unitTitle": "Paper 3: Weimar and Nazi Germany, 1918-39",
-      "lessonId": "lesson_4_4",
-      "lessonTitle": "Key Topic 4.4: The Persecution of Minorities, 1933–1939",
-      "letter": "A",
-      "title": "Source A: SA Stormtroopers Enforcing the Nationwide Anti-Jewish Boycott (1 April 1933)",
-      "image": "/images/anti_jewish_boycott_1933.jpg",
-      "provenance": "Bundesarchiv Bild 102-14469, 1 April 1933.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    },
-    {
-      "unitId": "weimar_nazi_germany",
-      "unitTitle": "Paper 3: Weimar and Nazi Germany, 1918-39",
-      "lessonId": "lesson_4_4",
-      "lessonTitle": "Key Topic 4.4: The Persecution of Minorities, 1933–1939",
-      "letter": "B",
-      "title": "Source B: Official Racial Classification Chart under the Nuremberg Laws (September 1935)",
-      "image": "/images/nuremberg_laws_chart_1935.jpg",
-      "provenance": "Reichsgesetzblatt, Berlin, 1935.",
-      "issueType": "Cross-Unit Image Reuse",
-      "issueDesc": "Shared with 1 other source(s) with conflicting titles across units.",
-      "recommendedFix": "Disaggregate and assign dedicated authentic archival plate."
-    }
-  ]
+  "flaggedList": []
 }

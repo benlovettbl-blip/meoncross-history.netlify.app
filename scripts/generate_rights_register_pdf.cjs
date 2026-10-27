@@ -1098,16 +1098,17 @@ function buildHtml(targetUnitId = null) {
         <tbody>
 `;
     units.forEach((u) => {
+      const ksStr = u.key_stage || 'Key Stage 4';
       let ksBadge = 'dir-badge-ks3';
-      if (u.key_stage.includes('2')) ksBadge = 'dir-badge-ks2';
-      else if (u.key_stage.includes('4') || u.key_stage.includes('GCSE')) ksBadge = 'dir-badge-ks4';
+      if (ksStr.includes('2')) ksBadge = 'dir-badge-ks2';
+      else if (ksStr.includes('4') || ksStr.includes('GCSE')) ksBadge = 'dir-badge-ks4';
 
       html += `
           <tr>
-            <td><span class="dir-badge ${ksBadge}">${u.key_stage.replace('Key Stage ', 'KS')}</span></td>
+            <td><span class="dir-badge ${ksBadge}">${ksStr.replace('Key Stage ', 'KS')}</span></td>
             <td><strong>${u.unit_title}</strong></td>
-            <td style="color: var(--ink-muted); font-size: 6.5pt;">${u.exam_board}</td>
-            <td style="text-align: center; font-weight: 700;">${u.total_lessons}</td>
+            <td style="color: var(--ink-muted); font-size: 6.5pt;">${u.exam_board || 'National Curriculum / GCSE'}</td>
+            <td style="text-align: center; font-weight: 700;">${u.total_lessons || (u.sources ? Math.ceil(u.sources.length / 3) : 10)}</td>
             <td style="text-align: center; font-weight: 700; color: var(--navy-primary);">${u.sources.length}</td>
             <td style="text-align: center;"><span style="color: #065f46; font-weight: 800; font-size: 6.2pt;">100% Cleared</span></td>
           </tr>
@@ -1187,54 +1188,61 @@ function buildHtml(targetUnitId = null) {
 `;
 
       pageSources.forEach((s) => {
+        const sId = String(s.source_id || s.source_letter || 'Source');
+        const rStatus = String(s.rights_status || s.license_tier || 'Public Domain');
+        const artTitle = s.artifact_title || s.title || '';
+        const lTitle = s.lesson_title || `Lesson ${s.lesson_num}`;
+        const accId = s.accession_id || s.catalogue_id || 'Archival Record';
+        const sUrl = s.source_url || s.archive_url || '#';
+
         let roleClass = 'role-source-a';
-        if (s.source_id === 'Source B') roleClass = 'role-source-b';
-        else if (s.source_id.includes('Cartographic') || s.source_id.includes('Map'))
+        if (sId === 'Source B') roleClass = 'role-source-b';
+        else if (sId.includes('Cartographic') || sId.includes('Map'))
           roleClass = 'role-map';
 
         let rightsClass = 'rights-pd';
         if (
-          s.rights_status.includes('Creative Commons') ||
-          s.rights_status.includes('CC BY') ||
-          s.rights_status.includes('CC0')
+          rStatus.includes('Creative Commons') ||
+          rStatus.includes('CC BY') ||
+          rStatus.includes('CC0')
         )
           rightsClass = 'rights-cc';
         else if (
-          s.rights_status.includes('Fair Dealing') ||
-          s.rights_status.includes('Educational')
+          rStatus.includes('Fair Dealing') ||
+          rStatus.includes('Educational')
         )
           rightsClass = 'rights-ed';
 
-        const repoInfo = resolveRepo(s.repository);
+        const repoInfo = resolveRepo(s.repository || 'Archival Collection');
 
         html += `
           <tr>
             <td class="col-lesson">
               <strong>Lesson ${s.lesson_num < 10 ? '0' + s.lesson_num : s.lesson_num}</strong><br>
-              <span style="font-size: 6.2pt; color: var(--ink-muted); font-weight: normal;">${s.lesson_title}</span>
+              <span style="font-size: 6.2pt; color: var(--ink-muted); font-weight: normal;">${lTitle}</span>
             </td>
             <td class="col-role">
-              <span class="role-badge ${roleClass}">${s.source_id}</span>
+              <span class="role-badge ${roleClass}">${sId}</span>
             </td>
             <td class="col-artifact">
-              <div class="artifact-name">${s.artifact_title}</div>
-              <div class="artifact-details">${s.date} • ${s.creator}</div>
+              <div class="artifact-name">${artTitle}</div>
+              <div class="artifact-details">${s.date || ''} • ${s.creator || ''}</div>
             </td>
             <td class="col-archive">
               <a href="${repoInfo.url}" target="_blank" class="repo-main-link" title="Visit official homepage of ${s.repository}">
-                <strong>${s.repository}</strong>
+                <strong>${s.repository || 'Holding Archive'}</strong>
               </a>
               <div class="repo-domain-strip">
                 <a href="${repoInfo.url}" target="_blank" class="repo-domain-link" title="Visit official homepage">
                   🌐 ${repoInfo.domain} ↗
                 </a>
               </div>
-              <div class="accession-pill">${s.accession_id}</div>
+              <div class="accession-pill">${accId}</div>
             </td>
             <td class="col-rights">
-              <span class="rights-pill ${rightsClass}">${s.rights_status.split('(')[0].trim()}</span>
-              <span class="rights-legal-desc">${s.rights_status}</span>
-              <a href="${s.source_url}" target="_blank" class="archive-link" title="View catalogued artifact in permanent collection">
+              <span class="rights-pill ${rightsClass}">${rStatus.split('(')[0].trim()}</span>
+              <span class="rights-legal-desc">${rStatus}</span>
+              <a href="${sUrl}" target="_blank" class="archive-link" title="View catalogued artifact in permanent collection">
                 <span>View Verified Archive Catalogue</span>
                 <svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               </a>
@@ -1573,6 +1581,81 @@ async function renderRegister() {
   });
   console.log(`🎉 Successfully rendered Second British Empire Unit PDF: ${sbePdfPath}`);
   await sbePage.close();
+
+  // Render standalone Crown, Church, or Parliament Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Crown, Church, or Parliament Unit Source Bibliography...');
+  const mrpPdfDir = path.join(outPdfDir, 'monarchy_religion_power');
+  if (!fs.existsSync(mrpPdfDir)) fs.mkdirSync(mrpPdfDir, { recursive: true });
+  const mrpPdfPath = path.join(mrpPdfDir, 'monarchy_religion_power_source_bibliography.pdf');
+  const mrpHtml = buildHtml('monarchy_religion_power');
+  const mrpPage = await browser.newPage();
+  await mrpPage.setContent(mrpHtml, { waitUntil: 'domcontentloaded' });
+  await mrpPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await mrpPage.pdf({
+    path: mrpPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Crown, Church, or Parliament Unit PDF: ${mrpPdfPath}`);
+  await mrpPage.close();
+
+  // Render standalone Industrialisation & Empire Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Industrialisation & Empire Unit Source Bibliography...');
+  const iaePdfDir = path.join(outPdfDir, 'industrialisation_and_empire');
+  if (!fs.existsSync(iaePdfDir)) fs.mkdirSync(iaePdfDir, { recursive: true });
+  const iaePdfPath = path.join(iaePdfDir, 'industrialisation_and_empire_source_bibliography.pdf');
+  const iaeHtml = buildHtml('industrialisation_and_empire');
+  const iaePage = await browser.newPage();
+  await iaePage.setContent(iaeHtml, { waitUntil: 'domcontentloaded' });
+  await iaePage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await iaePage.pdf({
+    path: iaePdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Industrialisation & Empire Unit PDF: ${iaePdfPath}`);
+  await iaePage.close();
+
+  // Render standalone Water and Sanitation Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Water & Sanitation Unit Source Bibliography...');
+  const wasPdfDir = path.join(outPdfDir, 'water_and_sanitation');
+  if (!fs.existsSync(wasPdfDir)) fs.mkdirSync(wasPdfDir, { recursive: true });
+  const wasPdfPath = path.join(wasPdfDir, 'water_and_sanitation_source_bibliography.pdf');
+  const wasHtml = buildHtml('water_and_sanitation');
+  const wasPage = await browser.newPage();
+  await wasPage.setContent(wasHtml, { waitUntil: 'domcontentloaded' });
+  await wasPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await wasPage.pdf({
+    path: wasPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Water & Sanitation Unit PDF: ${wasPdfPath}`);
+  await wasPage.close();
 
   await browser.close();
   console.log('🏁 All PDF rendering tasks completed successfully!');

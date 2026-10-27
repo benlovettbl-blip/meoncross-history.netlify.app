@@ -41,7 +41,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Explain why the Weimar Republic was established in Germany in 1918–1919. [12 marks]',
       stimulus: ['Military defeat in the First World War', 'The Kiel Mutiny and German Revolution'],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Reichstag &bull; Armistice &bull; Friedrich Ebert &bull; Kiel Mutiny &bull; Kaiser Wilhelm II &bull; Council of People’s Representatives &bull; Ebert-Groener Pact &bull; Proportional Representation &bull; Article 48',
       timelineMission:
@@ -140,7 +140,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Explain why there were challenges to the Weimar Republic from both the left and right in the years 1919–1923. [12 marks]',
       stimulus: ['The Treaty of Versailles (1919)', 'The Spartacist Uprising (1919)'],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Spartacists &bull; Freikorps &bull; Rosa Luxemburg &bull; Karl Liebknecht &bull; Diktat &bull; Dolchstoß &bull; Kapp Putsch &bull; General von Seeckt &bull; Walther Rathenau &bull; Ruhr occupation &bull; Hyperinflation',
       timelineMission:
@@ -239,7 +239,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Explain why the German economy and international standing recovered in the years 1924–1929. [12 marks]',
       stimulus: ['The introduction of the Rentenmark', 'The Dawes Plan (1924)'],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Gustav Stresemann &bull; Rentenmark &bull; Reichsbank &bull; Charles Dawes &bull; Dawes Plan (1924) &bull; Wall Street loans &bull; Locarno Treaties (1925) &bull; League of Nations (1926) &bull; Kellogg-Briand Pact &bull; Young Plan (1929)',
       timelineMission:
@@ -306,15 +306,14 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         },
       ],
       fourMark: {
-        type: 'Difference',
-        tariffLabel: 'Question 3(b): Difference in Views [4 marks]',
-        stem: 'Study Interpretations 1 and 2. What is the main difference between the views on the extent of German economic recovery between 1924 and 1929?',
-        provenance: 'From two modern historical analyses of the Weimar Republic.',
+        type: 'Inference',
+        tariffLabel: 'Question 1: Inference from Source C [4 marks]',
+        stem: 'Give two things you can infer from Source C about the impact of the Rentenmark and economic recovery in Germany after 1924.',
+        provenance: 'From an account by a German bank clerk in Frankfurt, published in a local newspaper in 1925.',
         sourceExcerpt:
-          'Interpretation 1 stresses solid industrial expansion, foreign loans, and modern infrastructure. Interpretation 2 argues that recovery was superficial and built on fragile American short-term credit.',
-        hint: 'State the core difference in views directly, then support with specific quotes or details from both interpretations.',
-        stems:
-          'The main difference is that Interpretation 1 argues that... whereas Interpretation 2 stresses that... Specifically, Interpretation 1 notes "..." while Interpretation 2 claims "..."',
+          '"The panic has vanished almost overnight. For the first time in ten years, customers walk into our branch calmly depositing wages they know will not evaporate by evening. Rentenmark notes are held with reverence; small shopkeepers no longer change price tags three times an hour, and queues for bread have melted away."',
+        hint: 'State your first deduction clearly with supporting quote, then your second deduction with supporting quote.',
+        stems: 'What I can infer: ... • Details in Source C that tell me this: ...',
       },
     },
 
@@ -340,7 +339,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'The Bauhaus movement in design and architecture',
       ],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Unemployment Insurance (1927) &bull; New Woman &bull; Weimar Constitution &bull; Walter Gropius &bull; Bauhaus &bull; Neue Sachlichkeit &bull; Otto Dix &bull; George Grosz &bull; Fritz Lang &bull; Metropolis &bull; UFA studios',
       timelineMission:
@@ -407,15 +406,14 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         },
       ],
       fourMark: {
-        type: 'Reason',
-        tariffLabel: 'Question 3(c): Reason for Difference [4 marks]',
-        stem: 'Suggest one reason why Interpretations 1 and 2 give different views about social changes in the Weimar Republic during the 1920s.',
-        provenance: 'From two historical studies examining social change in Weimar Germany.',
+        type: 'Inference',
+        tariffLabel: 'Question 1: Inference from Source D [4 marks]',
+        stem: 'Give two things you can infer from Source D about changes in the lives of German women during the 1920s.',
+        provenance: 'From an article in a Berlin illustrated magazine, Die Dame, published in 1927.',
         sourceExcerpt:
-          'Historian A focuses on urban Berlin, nightlife, and progressive women. Historian B focuses on small-town Germany, rural poverty, and religious conservatism.',
-        hint: 'Explain how the historians drew on different evidence or had a different perspective (e.g. urban avant-garde vs rural traditionalism).',
-        stems:
-          'One reason they give different views is that the historians investigated different aspects of society. Interpretation 1 focuses on urban cities like Berlin where... whereas Interpretation 2 focuses on rural areas where...',
+          '"The modern German woman has stepped onto the public stage. In the ministries and trading houses of Berlin, thousands of young women earn their own livelihoods as stenographers and bookkeepers. In the evenings, they pack the cinemas and dance halls unchaperoned, wearing practical bobbed hair and ready-made dresses, claiming their constitutional right to equal independence."',
+        hint: 'State your first deduction clearly with supporting quote, then your second deduction with supporting quote.',
+        stems: 'What I can infer: ... • Details in Source D that tell me this: ...',
       },
     },
   ],
@@ -446,7 +444,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'The creation of the SA (Sturmabteilung)',
       ],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Anton Drexler &bull; DAP &bull; 25-Point Programme (1920) &bull; NSDAP &bull; Völkischer Beobachter &bull; Swastika &bull; Führerprinzip &bull; Ernst Röhm &bull; Sturmabteilung (SA) &bull; Munich beer halls',
       timelineMission:
@@ -543,7 +541,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         "Explain why the Nazi Party changed its strategy during the 'Lean Years' (1924–1929). [12 marks]",
       stimulus: ['The failure of the Munich Putsch (1923)', 'The Bamberg Conference (1926)'],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Bürgerbräukeller &bull; Gustav von Kahr &bull; General Ludendorff &bull; Landsberg Prison &bull; Mein Kampf &bull; Legal strategy (Ballot box) &bull; Bamberg Conference (1926) &bull; Gregor Strasser &bull; Schutzstaffel (SS) &bull; 1928 election (2.6%)',
       timelineMission:
@@ -643,7 +641,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Nazi propaganda under Joseph Goebbels',
       ],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Wall Street Crash (1929) &bull; Great Depression &bull; Six million unemployed &bull; Heinrich Brüning &bull; Hunger Chancellor &bull; Article 48 &bull; KPD surge &bull; Negative cohesion &bull; Joseph Goebbels &bull; July 1932 election (230 seats)',
       timelineMission:
@@ -711,15 +709,14 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         },
       ],
       fourMark: {
-        type: 'Difference',
-        tariffLabel: 'Question 3(b): Difference in Views [4 marks]',
-        stem: 'Study Interpretations 1 and 2. What is the main difference between the views on why people voted for the Nazi Party in the years 1929–1932?',
-        provenance: 'From two modern historical accounts of the Great Depression in Germany.',
+        type: 'Inference',
+        tariffLabel: 'Question 1: Inference from Source C [4 marks]',
+        stem: 'Give two things you can infer from Source C about why ordinary Germans turned to the Nazi Party during the Great Depression.',
+        provenance: 'From a diary entry by a middle-class schoolteacher in Hamburg, May 1932.',
         sourceExcerpt:
-          "Interpretation 1 stresses economic desperation, mass unemployment, and the destruction of the middle classes. Interpretation 2 highlights Goebbels' brilliant propaganda techniques, emotional appeal, and fear of Communism.",
-        hint: 'State the core difference in views directly, then support with specific quotes or details from both interpretations.',
-        stems:
-          'The main difference is that Interpretation 1 stresses economic causes such as... whereas Interpretation 2 argues that political and propaganda factors were decisive because...',
+          '"Our savings are completely gone, and my husband’s small pension has been cut in half by government decrees. Yesterday we stood in the soup queue behind former factory managers and clerks in frayed collars. The National Socialists held a rally in the square: their speakers did not offer vague compromises, but promised work, bread, and national pride. Desperate men clapped until their hands bled."',
+        hint: 'State your first deduction clearly with supporting quote, then your second deduction with supporting quote.',
+        stems: 'What I can infer: ... • Details in Source C that tell me this: ...',
       },
     },
 
@@ -741,7 +738,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Explain why Adolf Hitler was appointed Chancellor of Germany in January 1933. [12 marks]',
       stimulus: ['The political intrigue of Franz von Papen', 'The November 1932 election results'],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Franz von Papen &bull; Kurt von Schleicher &bull; Paul von Hindenburg &bull; November 1932 election &bull; Cabinet of Barons &bull; Backstairs plot &bull; Schroeder Villa &bull; 30 January 1933 &bull; Coalition &bull; Boxed into a corner',
       timelineMission:
@@ -810,15 +807,14 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         },
       ],
       fourMark: {
-        type: 'Reason',
-        tariffLabel: 'Question 3(c): Reason for Difference [4 marks]',
-        stem: 'Suggest one reason why Interpretations 1 and 2 give different views on why Hitler was appointed Chancellor in January 1933.',
-        provenance: "From two historical evaluations of Hitler's appointment.",
+        type: 'Inference',
+        tariffLabel: 'Question 1: Inference from Source D [4 marks]',
+        stem: 'Give two things you can infer from Source D about Franz von Papen’s scheme to appoint Hitler as Chancellor.',
+        provenance: 'From the memoirs of a German diplomat in Berlin, recalling events in January 1933.',
         sourceExcerpt:
-          "Interpretation 1 focuses on backstairs intrigue, conservative miscalculation, and Papen's vanity. Interpretation 2 focuses on economic collapse, street violence, and the massive electoral mandate won by the Nazis.",
-        hint: 'Explain how the historians placed different weight on long-term electoral strength versus short-term elite political plotting.',
-        stems:
-          'One reason the interpretations differ is that the historians emphasize different causes. Interpretation 1 gives weight to the short-term political intrigue of von Papen, who believed... whereas Interpretation 2 emphasizes the broad electoral appeal caused by the Great Depression, which made...',
+          '"Papen was utterly convinced he had outsmarted everyone. He assured President Hindenburg that Hitler would merely be a decorative figurehead in the cabinet, surrounded by experienced conservative ministers who held all key portfolios. Papen laughed off our warnings, declaring with absolute self-assurance that within two months they would have pushed Hitler so far into a corner that he would squeal."',
+        hint: 'State your first deduction clearly with supporting quote, then your second deduction with supporting quote.',
+        stems: 'What I can infer: ... • Details in Source D that tell me this: ...',
       },
     },
   ],
@@ -846,7 +842,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Explain why the Nazi regime was able to establish a one-party dictatorship by August 1934. [12 marks]',
       stimulus: ['The Reichstag Fire (February 1933)', 'The Night of the Long Knives (June 1934)'],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Marinus van der Lubbe &bull; Reichstag Fire Decree &bull; Enabling Act (23 March 1933) &bull; Gleichschaltung &bull; German Labour Front (DAF) &bull; One-party state &bull; Night of the Long Knives &bull; Ernst Röhm &bull; Death of Hindenburg &bull; Armed forces oath',
       timelineMission:
@@ -942,7 +938,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Explain why the Nazi police state and control over the churches was effective in the years 1933–1939. [12 marks]',
       stimulus: ['The role of the Gestapo and SS', 'The Concordat with the Catholic Church (1933)'],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         "Heinrich Himmler &bull; Schutzstaffel (SS) &bull; Reinhard Heydrich &bull; Gestapo &bull; Dachau (1933) &bull; People's Court &bull; Concordat (1933) &bull; Reich Church &bull; Ludwig Müller &bull; Confessing Church &bull; Martin Niemöller",
       timelineMission:
@@ -1035,16 +1031,16 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'How did Joseph Goebbels use censorship, mass media, spectacle, and cultural control to indoctrinate the German people?',
       specAnchor:
         'Controlling Attitudes: Goebbels and Propaganda Ministry; censorship of press, radio, literature; rallies and Berlin 1936 Olympics; Reich Chamber of Culture; art, architecture, music.',
-      tariff: 'Section B: Question 3(a) • Utility of Sources B & C [8 Marks &bull; 12 Mins]',
-      scoreMax: '8',
+      tariff: 'Question 2: Explain Why [12 marks &bull; 15 mins]',
+      scoreMax: '12',
       examStem:
-        'How useful are Sources B and C for an enquiry into Nazi methods of controlling and influencing attitudes in the years 1933–1939? [8 marks]',
+        'Explain why the Nazi regime was able to control and influence attitudes in Germany in the years 1933–1939. [12 marks]',
       stimulus: [
-        'The Ministry of Popular Enlightenment and Propaganda',
-        'The Nuremberg Rallies and the 1936 Berlin Olympics',
+        'The use of radio and the Volksempfänger',
+        'Censorship of newspapers and the arts',
       ],
       connectives:
-        'Source B is useful because it reveals... &bull; From my own knowledge, this is accurate because... &bull; However, the provenance makes it valuable because... &bull; Similarly, Source C demonstrates that... &bull; In evaluating both, they are useful because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Joseph Goebbels &bull; Propaganda Ministry &bull; Reich Chamber of Culture &bull; Volksempfänger &bull; Editorial Law (1933) &bull; Book burnings &bull; Nuremberg Rallies &bull; Cathedral of Light &bull; 1936 Berlin Olympics &bull; Degenerate Art',
       timelineMission:
@@ -1111,15 +1107,14 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         },
       ],
       fourMark: {
-        type: 'Difference',
-        tariffLabel: 'Question 3(b): Difference in Views [4 marks]',
-        stem: 'Study Interpretations 1 and 2. What is the main difference between the views on the effectiveness of Nazi propaganda?',
-        provenance: 'From two historical analyses of Nazi propaganda and culture.',
+        type: 'Inference',
+        tariffLabel: 'Question 1: Inference from Source C [4 marks]',
+        stem: 'Give two things you can infer from Source C about how Nazi propaganda was used to influence public opinion.',
+        provenance: 'From an account by an American reporter living in Berlin, published in 1935.',
         sourceExcerpt:
-          'Interpretation 1 argues that propaganda brainwashed the German population into enthusiastic obedience. Interpretation 2 stresses that Germans grew cynical of repetitious speeches and simply conformed to avoid punishment.',
-        hint: 'State the core difference in views directly, then support with specific quotes or details from both interpretations.',
-        stems:
-          'The main difference is that Interpretation 1 claims propaganda achieved total indoctrination because... whereas Interpretation 2 argues that people developed cynicism and only outwardly conformed because...',
+          '"One cannot escape the regime’s message for a single waking hour. Loudspeakers on street corners blare out political speeches, and in every cafe the cheap People’s Radio plays marching songs interspersed with news bulletins praising the Führer’s achievements. Even in the cinema, lights remain dimmed until the compulsory newsreel finishes, ensuring every citizen absorbs the state’s triumphant version of reality."',
+        hint: 'State your first deduction clearly with supporting quote, then your second deduction with supporting quote.',
+        stems: 'What I can infer: ... • Details in Source C that tell me this: ...',
       },
     },
 
@@ -1136,16 +1131,16 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Why was active opposition to the Nazi regime so limited between 1933 and 1939, and how did youth and church groups resist?',
       specAnchor:
         'Opposition & Conformity: extent of support and conformity; worker and political underground opposition; youth groups (Edelweiss Pirates, Swing Youth); church resistance (Niemöller, Bonhoeffer, Galen).',
-      tariff: 'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG &bull; 25 Mins]',
-      scoreMax: '16 (+4)',
+      tariff: 'Question 2: Explain Why [12 marks &bull; 15 mins]',
+      scoreMax: '12',
       examStem:
-        'How far do you agree with Interpretation 2 about opposition to the Nazi regime in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+        'Explain why active opposition to the Nazi regime was limited in the years 1933–1939. [12 marks]',
       stimulus: [
-        'Interpretation 1: Opposition was crushed and the majority actively conformed',
-        'Interpretation 2: Genuine underground opposition persisted among youth and church groups',
+        'The Gestapo and concentration camps',
+        'Economic recovery and Nazi social policies',
       ],
       connectives:
-        'To a large extent, Interpretation 1 is valid because... &bull; In particular, evidence shows that... &bull; On the other hand, Interpretation 2 rightly points out that... &bull; For instance, ... &bull; In conclusion, the more persuasive view is... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Conformity &bull; Gestapo fear &bull; KPD/SPD underground &bull; Rote Kapelle &bull; Edelweiss Pirates &bull; Swing Youth &bull; American jazz &bull; Martin Niemöller &bull; Dietrich Bonhoeffer &bull; Bishop Galen &bull; With Burning Concern (1937)',
       timelineMission:
@@ -1212,15 +1207,14 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         },
       ],
       fourMark: {
-        type: 'Reason',
-        tariffLabel: 'Question 3(c): Reason for Difference [4 marks]',
-        stem: 'Suggest one reason why Interpretations 1 and 2 give different views about opposition to the Nazi regime.',
-        provenance: 'From two historical studies examining dissent in totalitarian Germany.',
+        type: 'Inference',
+        tariffLabel: 'Question 1: Inference from Source D [4 marks]',
+        stem: 'Give two things you can infer from Source D about the activities and attitudes of the Edelweiss Pirates.',
+        provenance: 'From a confidential Gestapo report on youth opposition in the Rhineland, 1938.',
         sourceExcerpt:
-          'Historian 1 focuses on political party records, arrests, and the overwhelming conformity of the public. Historian 2 focuses on cultural youth rebellion, private diaries, and church sermons.',
-        hint: 'Explain how the historians defined opposition differently (e.g. organized political revolt to overthrow Hitler vs non-conformist cultural rebellion).',
-        stems:
-          "One reason the interpretations differ is that the historians defined 'opposition' in different ways. Interpretation 1 defines opposition as organized political attempts to overthrow the regime, finding little evidence because... whereas Interpretation 2 includes cultural dissent and moral non-conformity such as...",
+          '"Groups of youths between fourteen and seventeen, styling themselves the Edelweiss Pirates, continually evade state authority. They refuse to join the Hitler Youth, wear distinctive metal flower badges on their lapels, and gather secretly in parks at night singing banned songs. They openly mock party officials and have repeatedly assaulted patrol leaders in darkened streets."',
+        hint: 'State your first deduction clearly with supporting quote, then your second deduction with supporting quote.',
+        stems: 'What I can infer: ... • Details in Source D that tell me this: ...',
       },
     },
   ],
@@ -1251,7 +1245,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'The demands of the rearmament economy after 1937',
       ],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Kinder, Küche, Kirche &bull; Law for Encouragement of Marriage (1933) &bull; Marriage loans &bull; Mother’s Cross (Bronze, Silver, Gold) &bull; Lebensborn &bull; Sterilisation law &bull; Duty Year &bull; Four-Year Plan &bull; Armaments industry &bull; Female conscription',
       timelineMission:
@@ -1351,7 +1345,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'Explain why the Nazi regime placed such high importance on controlling the youth in the years 1933–1939. [12 marks]',
       stimulus: ['The Hitler Youth and BDM', 'Changes to the school curriculum'],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         "Hitler Youth (HJ) &bull; Baldur von Schirach &bull; League of German Girls (BDM) &bull; Compulsory membership (1939) &bull; Nazi Teachers' League (NSLB) &bull; Racial biology &bull; Physical education (15%) &bull; Adolf Hitler Schools &bull; Napolas &bull; Indoctrination",
       timelineMission:
@@ -1452,7 +1446,7 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'The impact of rearmament and public works',
       ],
       connectives:
-        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Reich Labour Service (RAD) &bull; Autobahn &bull; Rearmament &bull; Military conscription (1935) &bull; Invisible unemployment &bull; German Labour Front (DAF) &bull; Robert Ley &bull; Strength Through Joy (KdF) &bull; Beauty of Labour (SdA) &bull; Volkswagen scheme',
       timelineMission:
@@ -1519,16 +1513,15 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         },
       ],
       fourMark: {
-        type: 'Difference',
-        tariffLabel: 'Question 3(b): Difference in Views [4 marks]',
-        stem: 'Study Interpretations 1 and 2. What is the main difference between the views on living standards for German workers under Nazi rule?',
+        type: 'Inference',
+        tariffLabel: 'Question 1: Inference from Source C [4 marks]',
+        stem: 'Give two things you can infer from Source C about the conditions experienced by German workers under the Nazi regime.',
         provenance:
-          'From two historical assessments of the German working class under the Third Reich.',
+          'From a secret report on working-class morale compiled for the outlawed SPD party in exile (Sopade), 1937.',
         sourceExcerpt:
-          'Interpretation 1 stresses that workers benefited from full employment, stable wages, and KdF holidays. Interpretation 2 highlights that real wages fell, hours lengthened, trade union rights were abolished, and food prices rose sharply.',
-        hint: 'State the core difference in views directly, then support with specific quotes or details from both interpretations.',
-        stems:
-          'The main difference is that Interpretation 1 argues living standards improved because of full employment and leisure schemes, whereas Interpretation 2 claims workers were exploited because real wages fell and working hours increased...',
+          '"While the official newspapers celebrate the disappearance of unemployment, the reality inside the factories is grim. Men work ten to twelve hours a day without overtime pay, and any complaint to the Labour Front is treated as sabotage. However, the regime keeps grumbling in check by offering subsidized theatre tickets and weekend excursions through Strength Through Joy, which many young workers genuinely welcome."',
+        hint: 'State your first deduction clearly with supporting quote, then your second deduction with supporting quote.',
+        stems: 'What I can infer: ... • Details in Source C that tell me this: ...',
       },
     },
 
@@ -1545,16 +1538,16 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         'How and why did Nazi persecution of Jews and other minority groups escalate between 1933 and 1939?',
       specAnchor:
         'Persecution of Minorities: racial hierarchy and Herrenvolk; persecution of disabled, Roma, and homosexuals; anti-Semitic measures (1933 boycott, 1935 Nuremberg Laws, 1938 Kristallnacht).',
-      tariff: 'Section B: Question 3(d) • Evaluative Assessment [16 Marks + 4 SPaG &bull; 25 Mins]',
-      scoreMax: '16 (+4)',
+      tariff: 'Question 2: Explain Why [12 marks &bull; 15 mins]',
+      scoreMax: '12',
       examStem:
-        'How far do you agree with Interpretation 2 about the persecution of minorities in Nazi Germany in the years 1933–1939? Explain your answer, using both interpretations and your knowledge of the historical context. [16 marks]',
+        'Explain why the persecution of Jews and other minorities escalated in Nazi Germany in the years 1933–1939. [12 marks]',
       stimulus: [
-        'Interpretation 1: Persecution escalated through gradual legal and economic exclusion',
-        'Interpretation 2: State-directed violence and terror like Kristallnacht were the decisive turning points',
+        'The Nuremberg Laws (1935)',
+        'The events of Kristallnacht (1938)',
       ],
       connectives:
-        'To a large extent, Interpretation 1 is valid because... &bull; In particular, evidence shows that... &bull; On the other hand, Interpretation 2 rightly points out that... &bull; For instance, ... &bull; In conclusion, the more persuasive view is... because...',
+        'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Therefore, this led to... &bull; Another key factor was... &bull; Consequently, this meant that...',
       wordBank:
         'Herrenvolk &bull; Untermenschen &bull; Social Darwinism &bull; 1933 Shop Boycott &bull; Nuremberg Laws (1935) &bull; Reich Citizenship Law &bull; Law for Protection of German Blood &bull; Kristallnacht (Nov 1938) &bull; Herschel Grynszpan &bull; Reinhard Heydrich &bull; One-billion-mark fine',
       timelineMission:
@@ -1623,15 +1616,15 @@ const WEIMAR_ENQUIRY_CONFIGS = {
         },
       ],
       fourMark: {
-        type: 'Reason',
-        tariffLabel: 'Question 3(c): Reason for Difference [4 marks]',
-        stem: 'Suggest one reason why Interpretations 1 and 2 give different views on the events of Kristallnacht in November 1938.',
-        provenance: 'From two historical studies analyzing the November 1938 pogrom.',
+        type: 'Inference',
+        tariffLabel: 'Question 1: Inference from Source D [4 marks]',
+        stem: 'Give two things you can infer from Source D about the destruction caused during Kristallnacht in November 1938.',
+        provenance:
+          'From an eyewitness account by a British consular official in Leipzig, 11 November 1938.',
         sourceExcerpt:
-          'Interpretation 1 focuses on Nazi propaganda depicting the pogrom as a spontaneous public reaction to the Paris assassination. Interpretation 2 focuses on confidential police orders and SS documents proving the violence was centrally organized.',
-        hint: 'Explain how the historians relied on different types of evidence (e.g. public press reports vs confidential state telexes).',
-        stems:
-          'One reason the interpretations differ is that the historians used different types of sources. Interpretation 1 gave weight to public newspaper reports like the Völkischer Beobachter which claimed... whereas Interpretation 2 relied on secret police telexes from Heydrich which proved...',
+          '"The devastation in the city centre is appalling. Shattered glass from Jewish-owned shops covers the pavements like gravel, and ancient synagogues have been reduced to smoking ruins while fire brigades stood by merely protecting adjacent Aryan buildings. Crowds of terrified families huddled in side streets as stormtroopers marched past carrying looted goods and dragging shopkeepers toward waiting police vans."',
+        hint: 'State your first deduction clearly with supporting quote, then your second deduction with supporting quote.',
+        stems: 'What I can infer: ... • Details in Source D that tell me this: ...',
       },
     },
   ],

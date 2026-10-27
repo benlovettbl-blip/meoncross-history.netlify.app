@@ -3220,6 +3220,18 @@ export function renderLesson(lesson) {
     window.doNowTimers = {};
   }
   window.postRenderHooks = [];
+
+  // Defensive Normalization: ensure all narrative blocks have consistent text & heading properties
+  if (lesson && Array.isArray(lesson.narrative_blocks)) {
+    lesson.narrative_blocks.forEach((b) => {
+      if (!b.text && b.content) b.text = b.content;
+      if (!b.content && b.text) b.content = b.text;
+      if (!b.theme_heading && (b.theme || b.title)) b.theme_heading = b.theme || b.title;
+      if (!b.theme && b.theme_heading) b.theme = b.theme_heading;
+      if (!b.title && b.theme_heading) b.title = b.theme_heading;
+    });
+  }
+
   const activeUnit =
     window.currentUnitData || (appStore && appStore.state && appStore.state.activeUnitData) || {};
   const unitId =
@@ -3265,7 +3277,7 @@ export function renderLesson(lesson) {
   const hasInlineNarrativeSources =
     Array.isArray(lesson.narrative_blocks) &&
     lesson.narrative_blocks.some(
-      (b) => b && (b.source || b.sources || (unitId === 'edexcel_medicine' && b.image)),
+      (b) => b && (b.source || b.sources),
     );
   let htmlDoNow = '',
     htmlDoNowInner = '',
@@ -3828,6 +3840,8 @@ export function renderLesson(lesson) {
           : '';
 
       if (
+        unitId === 'edexcel_medicine' ||
+        window.currentUnitId === 'edexcel_medicine' ||
         unitId === 'eee' ||
         window.currentUnitId === 'eee' ||
         unitId === 'monarchy_religion_power' ||
@@ -3971,35 +3985,81 @@ export function renderLesson(lesson) {
               `
               }
               ${
-                source.how_useful_question
-                  ? `
+                source.question || source.enquiry_question || source.how_useful_question
+                  ? (() => {
+                      const qPrompt = source.question || source.enquiry_question || source.how_useful_question;
+                      const dynamicBadge = source.question_badge || source.question_type || (() => {
+                        if (/what can you infer|what does .* reveal|what does .* show/i.test(qPrompt)) return 'Source Inference';
+                        if (/why was|why did|purpose|intended|motive|propaganda/i.test(qPrompt)) return 'Author’s Purpose';
+                        if (/differ|support|challenge|corroborat|contrast|counter/i.test(qPrompt)) return 'Cross-Referencing';
+                        if (/reliable|convincing|trustworthy|provenance|weight/i.test(qPrompt)) return 'Reliability & Provenance';
+                        if (/how useful/i.test(qPrompt)) return 'Source Utility';
+                        if (/significance|commemorat|myth/i.test(qPrompt)) return 'Historical Significance';
+                        return 'Enquiry Question';
+                      })();
+
+                      return `
                 <details class="source-enquiry-reveal">
-                  <summary>
-                    <div style="display: flex; align-items: center; gap: 10px; flex-grow: 1; flex-wrap: wrap;">
-                      <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 2px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0;">Enquiry Question</span>
-                      <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.4;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.how_useful_question) : source.how_useful_question}</span>
+                  <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
+                    <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
+                      <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${dynamicBadge}</span>
+                      <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(qPrompt) : qPrompt}</span>
                     </div>
-                    <span class="reveal-answer-pill">
+                    <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
                       <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
-                      <span class="reveal-text-closed">Reveal Guidance</span>
-                      <span class="reveal-text-open">Hide Guidance</span>
+                      <span class="reveal-text-closed">Reveal Model Answer</span>
+                      <span class="reveal-text-open">Hide Model Answer</span>
                       <span class="reveal-arrow">&#9660;</span>
                     </span>
                   </summary>
-                  ${
-                    source.provenance_clues
-                      ? `
-                    <div style="padding: 14px 18px 12px 18px; background: #ffffff;">
-                      <strong style="color: #14532d; display: block; margin-bottom: 6px; font-size: 0.85rem;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
-                      <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #166534; line-height: 1.55;">
-                        ${(Array.isArray(source.provenance_clues) ? source.provenance_clues : [source.provenance_clues]).map((c) => `<li>${c}</li>`).join('')}
-                      </ul>
-                    </div>
-                  `
-                      : ''
-                  }
+                  <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
+                    ${
+                      source.model_answer
+                        ? `
+                      <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
+                        <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Answer:</strong>
+                        <div style="font-size: 0.90rem; color: #1e293b; line-height: 1.6;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.model_answer) : source.model_answer}</div>
+                      </div>
+                    `
+                        : source.discussion_ideas && Array.isArray(source.discussion_ideas) && source.discussion_ideas.length > 0
+                          ? `
+                      <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
+                        <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Disciplinary Guidance:</strong>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #1e293b; line-height: 1.55;">
+                          ${source.discussion_ideas.map((d) => `<li style="margin-bottom: 6px;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(d) : d}</li>`).join('')}
+                        </ul>
+                      </div>
+                    `
+                          : ''
+                    }
+                    ${
+                      source.provenance_clues && !isKs2 && !isKs3
+                        ? (() => {
+                            const cluesList = Array.isArray(source.provenance_clues)
+                              ? source.provenance_clues
+                              : typeof source.provenance_clues === 'object' && source.provenance_clues !== null
+                                ? [
+                                    source.provenance_clues.author ? `Author: ${source.provenance_clues.author}` : null,
+                                    source.provenance_clues.audience ? `Audience: ${source.provenance_clues.audience}` : null,
+                                    source.provenance_clues.motive ? `Motive: ${source.provenance_clues.motive}` : null
+                                  ].filter(Boolean)
+                                : [String(source.provenance_clues)];
+
+                            return `
+                      <div style="padding-top: ${source.model_answer || (source.discussion_ideas && source.discussion_ideas.length) ? '10px; border-top: 1px dashed #cbd5e1;' : '0;'}">
+                        <strong style="color: #14532d; display: block; margin-bottom: 6px; font-size: 0.80rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-magnifying-glass" style="color: #16a34a; margin-right: 6px;"></i>Provenance Clues (Author &bull; Audience &bull; Motive):</strong>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #166534; line-height: 1.55;">
+                          ${cluesList.map((c) => `<li style="margin-bottom: 4px;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(c) : c}</li>`).join('')}
+                        </ul>
+                      </div>
+                    `;
+                          })()
+                        : ''
+                    }
+                  </div>
                 </details>
-              `
+              `;
+                    })()
                   : ''
               }
             </div>
@@ -5264,6 +5324,7 @@ export function renderLesson(lesson) {
     }
 
     let renderedKeyIndividual = false;
+    let visualPlateCounter = 0;
     lesson.narrative_blocks.forEach((block, index) => {
       if (block.type === 'interactive_hotspot_map') {
         const mapId = block.id || 'hotspot-map-' + index;
@@ -5656,8 +5717,9 @@ export function renderLesson(lesson) {
 
       const bg = index % 2 === 0 ? '#ffffff' : '#f0f9ff';
 
-      if (typeof block.text === 'string' && block.text.match(/^\[Key Individual:\s*(.+)\]$/i)) {
-        const kiMatch = block.text.match(/^\[Key Individual:\s*(.+)\]$/i);
+      const rawKiText = block.text || block.content || '';
+      if (typeof rawKiText === 'string' && rawKiText.match(/^\[Key Individual:\s*(.+)\]$/i)) {
+        const kiMatch = rawKiText.match(/^\[Key Individual:\s*(.+)\]$/i);
         const personName = kiMatch[1].trim();
         let person = null;
         if (window.db && window.currentUnitId) {
@@ -5860,8 +5922,8 @@ export function renderLesson(lesson) {
         }
       }
 
-      const isQuote = typeof block.text === 'string' && block.text.startsWith('"');
-      let blockText = block.text || '';
+      const blockText = block.text || block.content || '';
+      const isQuote = typeof blockText === 'string' && blockText.startsWith('"');
 
       // 1. Add inline Key Individual links FIRST
       let contentStr = blockText.replace(/\[Key Individual:\s*([^\]]+)\]/gi, (match, name) => {
@@ -5931,7 +5993,7 @@ export function renderLesson(lesson) {
       }
 
       let themeHeadingHtml = '';
-      const rawHeading = block.theme_heading || block.title;
+      const rawHeading = block.theme_heading || block.theme || block.title;
       if (rawHeading) {
         let displayHeading = rawHeading;
         if (/^Act\s*\d+/i.test(rawHeading)) {
@@ -5984,8 +6046,8 @@ export function renderLesson(lesson) {
 
                      let contextText = img.image_context || '';
                      let hingeText = '';
-                     if (/\\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\\*{0,2}/i.test(contextText)) {
-                        const parts = contextText.split(/\\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\\*{0,2}/i);
+                     if (/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(contextText)) {
+                        const parts = contextText.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
                         contextText = parts[0].trim();
                         hingeText = parts[1].trim();
                       } else if (contextText.includes('Hinge Question:')) {
@@ -6212,7 +6274,201 @@ export function renderLesson(lesson) {
           }
         }
 
-        const hasUtilityCard = !!(rawSource.utility_enquiry || rawSource.utilityEnquiry);
+        // Pre-build utility enquiry / guidance card if present
+        const utilityCardHtml = (() => {
+          const utilityObj = rawSource.utility_enquiry || rawSource.utilityEnquiry;
+          if (utilityObj && (utilityObj.is_exam_rubric === true || (!rawSource.model_answer && (utilityObj.bullet_points || utilityObj.key_points)))) {
+            const uPrompt =
+              utilityObj.question || utilityObj.prompt || utilityObj.enquiry || rawSource.question || '';
+
+            // Check if explicit exam rubric is requested (e.g. designated mock exam units)
+            const isExamRubric = utilityObj.is_exam_rubric === true;
+
+            if (isExamRubric) {
+              const uInferences =
+                utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
+              const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
+              const uContext =
+                utilityObj.context_limitations || utilityObj.limitations || utilityObj.context || '';
+
+              const isMedicineWesternFront =
+                (unitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine') &&
+                (lesson.historic_environment || (lesson.title && lesson.title.includes('KT5')));
+              const examBadgeTitle =
+                utilityObj.exam_label ||
+                (isMedicineWesternFront
+                  ? 'Edexcel Paper 1 &bull; Q2(a) Source Utility Enquiry [8 Marks]'
+                  : unitId === 'weimar_nazi_germany' || window.currentUnitId === 'weimar_nazi_germany'
+                    ? 'Edexcel Paper 3 &bull; Q3(a) Source Utility Enquiry [8 Marks]'
+                    : 'GCSE Source Utility Enquiry [8 Marks]');
+
+              return `
+                <details class="source-enquiry-reveal edexcel-paper3-utility-card">
+                  <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
+                    <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
+                      <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${examBadgeTitle}</span>
+                      <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</span>
+                    </div>
+                    <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
+                      <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                      <span class="reveal-text-closed">Reveal Exam Guidance</span>
+                      <span class="reveal-text-open">Hide Exam Guidance</span>
+                      <span class="reveal-arrow">&#9660;</span>
+                    </span>
+                  </summary>
+                  <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 4px;">
+                      ${uInferences ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-magnifying-glass" style="color: #16a34a;"></i> 1. Content &amp; Inferences</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uInferences) : uInferences}</div></div>` : ''}
+                      ${uProv ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-stamp" style="color: #16a34a;"></i> 2. Provenance (NOP)</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uProv) : uProv}</div></div>` : ''}
+                      ${uContext ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-book-bookmark" style="color: #16a34a;"></i> 3. Context &amp; Limitations</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uContext) : uContext}</div></div>` : ''}
+                    </div>
+                  </div>
+                </details>
+              `;
+            }
+
+            // DEFAULT CHILD-FRIENDLY MODEL: 2 to 3 direct bullet points
+            let points = utilityObj.bullet_points || utilityObj.key_points || utilityObj.model_answers || utilityObj.answers;
+            if (!points || !Array.isArray(points) || points.length === 0) {
+              const uInferences = utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
+              const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
+              const uContext = utilityObj.context_limitations || utilityObj.limitations || utilityObj.context || '';
+              points = [];
+              if (uInferences) points.push({ label: 'What the Source Shows', text: uInferences });
+              if (uProv) points.push({ label: 'Historical Meaning', text: uProv });
+              if (uContext && !uContext.toLowerCase().includes('does not show')) points.push({ label: 'Deeper Context', text: uContext });
+            }
+
+            const renderedBullets = points.map(pt => {
+              let lbl = '';
+              let txt = '';
+              if (typeof pt === 'string') {
+                txt = pt;
+              } else if (pt && typeof pt === 'object') {
+                if (pt.label) {
+                  const cleanLabel = (pt.label || '').toLowerCase();
+                  if (!['what the source shows', 'historical context', 'key takeaway', 'takeaway', 'point 1', 'point 2', 'point 3'].includes(cleanLabel)) {
+                    lbl = `<strong style="color: #166534;">${pt.label}:</strong> `;
+                  }
+                }
+                txt = pt.text || pt.content || pt.answer || '';
+              }
+              const formattedTxt = typeof window !== 'undefined' && window.formatBold ? window.formatBold(txt) : txt;
+              return `<li style="margin-bottom: 8px; line-height: 1.55; color: #1e293b; font-size: 0.88rem;">${lbl}${formattedTxt}</li>`;
+            }).join('');
+
+            const dynamicBadge = rawSource.question_badge || rawSource.question_type || (() => {
+              if (/what can you infer|what does .* reveal|what does .* show/i.test(uPrompt)) return 'Source Inference';
+              if (/why was|why did|purpose|intended|motive|propaganda/i.test(uPrompt)) return 'Author’s Purpose';
+              if (/differ|support|challenge|corroborat|contrast|counter/i.test(uPrompt)) return 'Cross-Referencing';
+              if (/reliable|convincing|trustworthy|provenance|weight/i.test(uPrompt)) return 'Reliability & Provenance';
+              if (/how useful/i.test(uPrompt)) return 'Source Utility';
+              if (/significance|commemorat|myth/i.test(uPrompt)) return 'Historical Significance';
+              return 'Enquiry Question';
+            })();
+
+            return `
+              <details class="source-enquiry-reveal">
+                <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
+                  <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
+                    <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${dynamicBadge}</span>
+                    <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</span>
+                  </div>
+                  <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
+                    <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                    <span class="reveal-text-closed">Reveal Model Answer</span>
+                    <span class="reveal-text-open">Hide Model Answer</span>
+                    <span class="reveal-arrow">&#9660;</span>
+                  </span>
+                </summary>
+                <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
+                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Key Takeaways &bull; Suggested Answers
+                  </div>
+                  <ul style="margin: 0; padding-left: 18px;">
+                    ${renderedBullets}
+                  </ul>
+                </div>
+              </details>
+            `;
+          } else if (rawSource.question || rawSource.enquiry_question || rawSource.how_useful_question) {
+            const qPrompt = rawSource.question || rawSource.enquiry_question || rawSource.how_useful_question;
+            const dynamicBadge = rawSource.question_badge || rawSource.question_type || (() => {
+              if (/what can you infer|what does .* reveal|what does .* show/i.test(qPrompt)) return 'Source Inference';
+              if (/why was|why did|purpose|intended|motive|propaganda/i.test(qPrompt)) return 'Author’s Purpose';
+              if (/differ|support|challenge|corroborat|contrast|counter/i.test(qPrompt)) return 'Cross-Referencing';
+              if (/reliable|convincing|trustworthy|provenance|weight/i.test(qPrompt)) return 'Reliability & Provenance';
+              if (/how useful/i.test(qPrompt)) return 'Source Utility';
+              if (/significance|commemorat|myth/i.test(qPrompt)) return 'Historical Significance';
+              return 'Enquiry Question';
+            })();
+
+            return `
+              <details class="source-enquiry-reveal">
+                <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
+                  <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
+                    <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${dynamicBadge}</span>
+                    <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(qPrompt) : qPrompt}</span>
+                  </div>
+                  <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
+                    <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                    <span class="reveal-text-closed">Reveal Model Answer</span>
+                    <span class="reveal-text-open">Hide Model Answer</span>
+                    <span class="reveal-arrow">&#9660;</span>
+                  </span>
+                </summary>
+                <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
+                  ${
+                    rawSource.model_answer
+                      ? `
+                    <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
+                      <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Answer:</strong>
+                      <div style="font-size: 0.90rem; color: #1e293b; line-height: 1.6;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.model_answer) : rawSource.model_answer}</div>
+                    </div>
+                  `
+                      : rawSource.discussion_ideas && Array.isArray(rawSource.discussion_ideas) && rawSource.discussion_ideas.length > 0
+                        ? `
+                    <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
+                      <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Disciplinary Guidance:</strong>
+                      <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #1e293b; line-height: 1.55;">
+                        ${rawSource.discussion_ideas.map((d) => `<li style="margin-bottom: 6px;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(d) : d}</li>`).join('')}
+                      </ul>
+                    </div>
+                  `
+                        : ''
+                  }
+                  ${
+                    rawSource.provenance_clues && !isKs2 && !isKs3 && !rawSource.hide_provenance_box && !/infer/i.test(rawSource.question_type || rawSource.question_badge || '')
+                      ? (() => {
+                          const cluesList = Array.isArray(rawSource.provenance_clues)
+                            ? rawSource.provenance_clues
+                            : typeof rawSource.provenance_clues === 'object' && rawSource.provenance_clues !== null
+                              ? [
+                                  rawSource.provenance_clues.author ? `Author: ${rawSource.provenance_clues.author}` : null,
+                                  rawSource.provenance_clues.audience ? `Audience: ${rawSource.provenance_clues.audience}` : null,
+                                  rawSource.provenance_clues.motive ? `Motive: ${rawSource.provenance_clues.motive}` : null
+                                ].filter(Boolean)
+                              : [String(rawSource.provenance_clues)];
+
+                          return `
+                    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px; margin-top: 8px;">
+                      <strong style="color: #14532d; display: block; margin-bottom: 6px; font-size: 0.80rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-stamp" style="color: #16a34a; margin-right: 5px;"></i>Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
+                      <ul style="margin: 0; padding-left: 18px; font-size: 0.86rem; color: #166534; line-height: 1.5;">
+                        ${cluesList.map((c) => `<li>${c}</li>`).join('')}
+                      </ul>
+                    </div>
+                  `;
+                        })()
+                      : ''
+                  }
+                </div>
+              </details>
+            `;
+          }
+          return '';
+        })();
+
+        const hasUtilityCard = Boolean(utilityCardHtml);
 
         const orientingIntro = rawSource.intro || rawSource.caption || (cleanContextVal ? cleanContextVal.split('.')[0] + '.' : '');
 
@@ -6238,15 +6494,15 @@ export function renderLesson(lesson) {
                 : ''
             }
             ${
-              !hasUtilityCard && cleanContextVal
+              cleanContextVal
                 ? `
-              <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-top: 12px; color: #334155; font-size: 0.95rem; line-height: 1.5;">
+              <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-top: 12px; margin-bottom: 12px; color: #334155; font-size: 0.95rem; line-height: 1.5;">
                 <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
               </div>
             `
                 : ''
             }
-            ${!hasUtilityCard ? renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '12px') : ''}
+            ${utilityCardHtml ? `<div class="archival-source-fullwidth-enquiry" style="width: 100%; margin-top: 12px;">${utilityCardHtml}</div>` : renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '12px')}
           `;
         } else {
           const rawSourceImgUrl = getAssetUrl(rawImgSrc);
@@ -6332,44 +6588,48 @@ export function renderLesson(lesson) {
           sourceBodyHtml = `
             <div class="archival-source-split-layout">
               ${mediaColHtml}
-              <div class="archival-source-details-col">
-                <div>
-                  ${
-                    rawSource.caption
-                      ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 12px; font-style: italic;">${rawSource.caption}</div>`
-                      : ''
-                  }
-                  ${
-                    sourceText
-                      ? `<div class="archival-source-body" style="width: 100%; max-height: 250px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 0.95rem; line-height: 1.6; color: #1e293b; background: #fffdfa; padding: 10px 14px; border-left: 3px solid #1e3a8a; border-radius: 4px; margin-bottom: 12px;">
-                          ${sourceText}
-                        </div>`
-                      : ''
-                  }
-                  ${
-                    !hasUtilityCard && cleanContextVal
-                      ? `
-                    <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
-                      <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
-                    </div>
-                  `
-                      : ''
-                  }
-                  ${
-                    rawSource.provenance_clue
-                      ? `
-                    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 12px 15px; margin-bottom: 12px;">
-                      <strong style="color: #166534; display: block; margin-bottom: 4px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
-                      <span style="color: #15803d; font-size: 0.92rem;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.provenance_clue) : rawSource.provenance_clue}</span>
-                    </div>
-                  `
-                      : ''
-                  }
-                  ${!hasUtilityCard ? primaryDisc.promptHtml : ''}
-                </div>
+              <div class="archival-source-details-col" style="display: flex; flex-direction: column; justify-content: flex-start; gap: 10px;">
+                ${
+                  rawSource.caption
+                    ? `<div style="font-size: 0.95rem; color: #475569; margin-bottom: 2px; font-style: italic;">${rawSource.caption}</div>`
+                    : ''
+                }
+                ${
+                  sourceText
+                    ? `<div class="archival-source-body" style="width: 100%; max-height: 250px; overflow-y: auto; font-family: 'Georgia', serif; font-style: italic; font-size: 0.95rem; line-height: 1.6; color: #1e293b; background: #fffdfa; padding: 10px 14px; border-left: 3px solid #1e3a8a; border-radius: 4px; margin-bottom: 4px;">
+                        ${sourceText}
+                      </div>`
+                    : ''
+                }
+                ${
+                  cleanContextVal
+                    ? `
+                  <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 4px; color: #334155; font-size: 0.95rem; line-height: 1.55;">
+                    <strong>${isKs2 ? 'What this tells us:' : 'Historical Context:'}</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
+                  </div>
+                `
+                    : ''
+                }
+                ${
+                  rawSource.provenance_clue
+                    ? `
+                  <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 10px 14px; margin-bottom: 4px;">
+                    <strong style="color: #166534; display: block; margin-bottom: 2px;"><span class="archival-meta-tag accent-emerald" style="margin-right: 6px;">PROVENANCE CLUE</span></strong>
+                    <span style="color: #15803d; font-size: 0.90rem;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.provenance_clue) : rawSource.provenance_clue}</span>
+                  </div>
+                `
+                    : ''
+                }
+                ${!hasUtilityCard ? primaryDisc.promptHtml || '' : ''}
               </div>
             </div>
-            ${!hasUtilityCard ? primaryDisc.panelHtml : ''}
+            ${
+              utilityCardHtml
+                ? `<div class="archival-source-fullwidth-enquiry" style="width: 100%; margin-top: 12px;">${utilityCardHtml}</div>`
+                : !hasUtilityCard
+                  ? primaryDisc.panelHtml
+                  : ''
+            }
           `;
         }
 
@@ -6432,146 +6692,6 @@ export function renderLesson(lesson) {
               </summary>
               <div class="cme-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
                 ${sourceBodyHtml}
-                ${(() => {
-                  const utilityObj = rawSource.utility_enquiry || rawSource.utilityEnquiry;
-                  if (utilityObj) {
-                    const uPrompt =
-                      utilityObj.question || utilityObj.prompt || utilityObj.enquiry || rawSource.question || '';
-
-                    // Check if explicit exam rubric is requested (e.g. designated mock exam units)
-                    const isExamRubric = utilityObj.is_exam_rubric === true;
-
-                    if (isExamRubric) {
-                      const uInferences =
-                        utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
-                      const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
-                      const uContext =
-                        utilityObj.context_limitations || utilityObj.limitations || utilityObj.context || '';
-
-                      const isMedicineWesternFront =
-                        (unitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine') &&
-                        (lesson.historic_environment || (lesson.title && lesson.title.includes('KT5')));
-                      const examBadgeTitle =
-                        utilityObj.exam_label ||
-                        (isMedicineWesternFront
-                          ? 'Edexcel Paper 1 &bull; Q2(a) Source Utility Enquiry [8 Marks]'
-                          : unitId === 'weimar_nazi_germany' || window.currentUnitId === 'weimar_nazi_germany'
-                            ? 'Edexcel Paper 3 &bull; Q3(a) Source Utility Enquiry [8 Marks]'
-                            : 'GCSE Source Utility Enquiry [8 Marks]');
-
-                      return `
-                        <details class="source-enquiry-reveal edexcel-paper3-utility-card">
-                          <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
-                            <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
-                              <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${examBadgeTitle}</span>
-                              <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</span>
-                            </div>
-                            <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
-                              <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
-                              <span class="reveal-text-closed">Reveal Exam Guidance</span>
-                              <span class="reveal-text-open">Hide Exam Guidance</span>
-                              <span class="reveal-arrow">&#9660;</span>
-                            </span>
-                          </summary>
-                          <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 4px;">
-                              ${uInferences ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-magnifying-glass" style="color: #16a34a;"></i> 1. Content &amp; Inferences</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uInferences) : uInferences}</div></div>` : ''}
-                              ${uProv ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-stamp" style="color: #16a34a;"></i> 2. Provenance (NOP)</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uProv) : uProv}</div></div>` : ''}
-                              ${uContext ? `<div style="background: #f8fafc; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px;"><div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px;"><i class="fa-solid fa-book-bookmark" style="color: #16a34a;"></i> 3. Context &amp; Limitations</div><div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uContext) : uContext}</div></div>` : ''}
-                            </div>
-                          </div>
-                        </details>
-                      `;
-                    }
-
-
-                    // DEFAULT CHILD-FRIENDLY MODEL: 2 to 3 direct bullet points
-                    let points = utilityObj.bullet_points || utilityObj.key_points || utilityObj.model_answers || utilityObj.answers;
-                    if (!points || !Array.isArray(points) || points.length === 0) {
-                      const uInferences = utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
-                      const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
-                      const uContext = utilityObj.context_limitations || utilityObj.limitations || utilityObj.context || '';
-                      points = [];
-                      if (uInferences) points.push({ label: 'What the Source Shows', text: uInferences });
-                      if (uProv) points.push({ label: 'Historical Meaning', text: uProv });
-                      if (uContext && !uContext.toLowerCase().includes('does not show')) points.push({ label: 'Deeper Context', text: uContext });
-                    }
-
-
-                    const renderedBullets = points.map(pt => {
-                      let lbl = '';
-                      let txt = '';
-                      if (typeof pt === 'string') {
-                        txt = pt;
-                      } else if (pt && typeof pt === 'object') {
-                        if (pt.label) {
-                          const cleanLabel = (pt.label || '').toLowerCase();
-                          if (!['what the source shows', 'historical context', 'key takeaway', 'takeaway', 'point 1', 'point 2', 'point 3'].includes(cleanLabel)) {
-                            lbl = `<strong style="color: #166534;">${pt.label}:</strong> `;
-                          }
-                        }
-                        txt = pt.text || pt.content || pt.answer || '';
-                      }
-                      const formattedTxt = typeof window !== 'undefined' && window.formatBold ? window.formatBold(txt) : txt;
-                      return `<li style="margin-bottom: 8px; line-height: 1.55; color: #1e293b; font-size: 0.88rem;">${lbl}${formattedTxt}</li>`;
-                    }).join('');
-
-                    return `
-                      <details class="source-enquiry-reveal">
-                        <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
-                          <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
-                            <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">Enquiry Question</span>
-                            <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</span>
-                          </div>
-                          <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
-                            <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
-                            <span class="reveal-text-closed">Reveal Model Answer</span>
-                            <span class="reveal-text-open">Hide Model Answer</span>
-                            <span class="reveal-arrow">&#9660;</span>
-                          </span>
-                        </summary>
-                        <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
-                          <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
-                            <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i> Key Takeaways &bull; Suggested Answers
-                          </div>
-                          <ul style="margin: 0; padding-left: 18px;">
-                            ${renderedBullets}
-                          </ul>
-                        </div>
-                      </details>
-                    `;
-                  } else if (rawSource.how_useful_question) {
-                    return `
-                      <details class="source-enquiry-reveal">
-                        <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
-                          <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
-                            <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">Enquiry Question</span>
-                            <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.how_useful_question) : rawSource.how_useful_question}</span>
-                          </div>
-                          <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
-                            <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
-                            <span class="reveal-text-closed">Reveal Guidance</span>
-                            <span class="reveal-text-open">Hide Guidance</span>
-                            <span class="reveal-arrow">&#9660;</span>
-                          </span>
-                        </summary>
-                        ${
-                          rawSource.provenance_clues
-                            ? `
-                          <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
-                            <strong style="color: #14532d; display: block; margin-bottom: 6px; font-size: 0.85rem;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
-                            <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #166534; line-height: 1.55;">
-                              ${(Array.isArray(rawSource.provenance_clues) ? rawSource.provenance_clues : [rawSource.provenance_clues]).map((c) => `<li>${c}</li>`).join('')}
-                            </ul>
-                          </div>
-                        `
-                            : ''
-                        }
-                      </details>
-                    `;
-                  }
-                  return '';
-                })()}
               </div>
             </details>
           `;
@@ -6624,10 +6744,11 @@ export function renderLesson(lesson) {
 
       let blockSourceHtml = rawSourcesList.map((s) => renderSingleArchivalSource(s)).join('');
 
+      const resolvedBlockText = block.text || block.content || '';
       const showParaNumber = Boolean(
-        block.text &&
-        block.text.trim() &&
-        !(typeof block.text === 'string' && block.text.includes('side-quest-box')) &&
+        resolvedBlockText &&
+        resolvedBlockText.trim() &&
+        !(typeof resolvedBlockText === 'string' && resolvedBlockText.includes('side-quest-box')) &&
         !(block.title && block.title.toLowerCase().includes('lesson reflection')),
       );
 
@@ -6638,7 +6759,9 @@ export function renderLesson(lesson) {
         unitId === 'first_british_empire';
 
       const hasPureVisual = Boolean(block.image && !block.image_context);
-      const isReversed = index % 2 === 1;
+      const isReversed = hasPureVisual
+        ? visualPlateCounter++ % 2 === 1
+        : index % 2 === 1;
 
       const narrativeChunkHtml = `
               <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; flex-direction: column; margin-bottom: ${hasPureVisual ? '0' : '15px'}; padding: 16px 18px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05); flex: 1 1 58%; min-width: 0;">
@@ -7739,16 +7862,16 @@ export function renderLesson(lesson) {
                   </div>
                   <div>
                     <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #0369a1; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-                      <span style="background: #e0f2fe; color: #0369a1; padding: 1.5px 7px; border-radius: 4px; font-weight: 800;"><i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> PUPIL WORKBOOK COMPANION</span>
+                      <span style="background: #e0f2fe; color: #0369a1; padding: 1.5px 7px; border-radius: 4px; font-weight: 800;"><i class="fa-solid fa-pen-nib" style="margin-right: 4px;"></i> DIGITAL EXTENSION</span>
                       <span style="color: #94a3b8;">&bull;</span>
-                      <span>RIGHT-HAND SPREAD (RECTO)</span>
+                      <span>DISCIPLINARY WRITING PRACTICE</span>
                     </div>
-                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #0f172a;">Pupil Workbook Activity &bull; Disciplinary Writing Tasks</div>
+                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #0f172a;">Disciplinary Writing Tasks &bull; Classroom Extension</div>
                   </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 12px;">
                   <span style="font-size: 0.78rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 14px; display: inline-flex; align-items: center; gap: 5px;">
-                    <i class="fa-solid fa-layer-group"></i> ${lesson.tasks.length} Workbook Tasks
+                    <i class="fa-solid fa-layer-group"></i> ${lesson.tasks.length} Extension Tasks
                   </span>
                   <span style="font-size: 0.85rem; font-weight: 700; color: #64748b; display: inline-flex; align-items: center; gap: 6px;">
                     <span>Click to Collapse/Expand</span>
@@ -8530,6 +8653,11 @@ export function renderLesson(lesson) {
               </div>
             </div>
         `;
+      const isPaper3Weimar =
+        (typeof unitId !== 'undefined' && (unitId === 'weimar_nazi_germany' || unitId === 'germany')) ||
+        (typeof activeUnit !== 'undefined' && activeUnit && activeUnit.id === 'weimar_nazi_germany') ||
+        (typeof window !== 'undefined' && (window.currentUnitId === 'weimar_nazi_germany' || (window.location && window.location.search && window.location.search.includes('weimar_nazi_germany'))));
+
       const formatExamQuestionTitle = (qText, fallbackIdx, qObj) => {
         if (!qText) return '';
         let str = qText.trim();
@@ -8539,6 +8667,42 @@ export function renderLesson(lesson) {
         const qType = (qObj?.type || '').toLowerCase();
         const qTariff = (qObj?.tariff || '').toLowerCase();
 
+        if (isPaper3Weimar) {
+          let cleanStr = str.replace(/^(?:Q\d+[\.:\s]+|Question\s+\d+[\.:\s]+)*/i, '');
+          cleanStr = cleanStr.replace(/^(?:(?:\d+[\.:\s]+)*3\s*\([a-d]\)[\.:\s]*|\d+[\.:\s]+)+/i, '');
+          cleanStr = cleanStr.replace(/^3\s*\([a-d]\)[\.:\s]*/i, '');
+          cleanStr = cleanStr.replace(/\s*\[\s*\d+\s*marks?(?:\s*\(\+4\s*spag\))?\s*\]\s*$/i, '');
+          cleanStr = cleanStr.replace(/\n/g, '<br>');
+
+          let badge = '';
+          if (qType.includes('inference') || /give two things you can infer/i.test(str)) {
+            badge = 'Question 1 [4 marks]: Source Inference';
+          } else if (qType.includes('causation') || qType.includes('explain_why') || qTariff.includes('12')) {
+            badge = 'Question 2 [12 marks]: Causation Essay';
+          } else if (qType.includes('utility_comp') || /COP Comparative/i.test(str) || /Part 1:/i.test(str)) {
+            badge = 'Question 3(a) Foundation Drill [4 marks]: Content & Provenance Analysis';
+          } else if (qType.includes('utility') || /how useful are sources/i.test(str)) {
+            badge = 'Question 3(a) [8 marks]: Source Utility';
+          } else if (qType.includes('4-mark') && /study interpretations/i.test(str)) {
+            badge = 'Question 3(b) [4 marks]: Difference in Historical Views';
+          } else if (/suggest one reason why interpretations/i.test(str)) {
+            badge = 'Question 3(c) [4 marks]: Reason for Difference in Views';
+          } else if (qType.includes('verdict') || /how far do you agree with interpretation/i.test(str)) {
+            badge = 'Question 3(d) [16+4 marks]: Evaluative Historical Verdict';
+          } else {
+            badge = `Question ${fallbackIdx + 1}`;
+          }
+
+          return `
+            <div class="exam-q-header-banner" style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 6px;">
+              <span style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 800; color: #1e3a8a;">${badge}</span>
+            </div>
+            <div class="exam-q-stem-content" style="font-size: 1.02rem; font-weight: 600; color: #1e293b; line-height: 1.5;">
+              ${typeof formatBold !== 'undefined' ? formatBold(cleanStr) : cleanStr}
+            </div>
+          `;
+        }
+
         // 1. Follow-up enquiry (Edexcel Paper 1 Q2b)
         if (qType.includes('follow_up') || /follow up source/i.test(str)) {
           let cleanStr = str.replace(/^(?:Q\d+[\.:\s]+|Question\s+\d+[\.:\s]+)*/i, '');
@@ -8546,16 +8710,19 @@ export function renderLesson(lesson) {
           return `Question 2(b) [4 marks]: ${typeof formatBold !== 'undefined' ? formatBold(cleanStr) : cleanStr}`;
         }
 
-        // 2. Source Utility (Edexcel Paper 1 Q2a)
+        // 2. Source Utility (Edexcel Paper 1 Q2a or Paper 3 Q3a)
         if (
           qType.includes('utility_of_sources') ||
           (qType.includes('utility') && !qType.includes('follow_up')) ||
           /how useful is source/i.test(str)
         ) {
           let cleanStr = str.replace(/^(?:Q\d+[\.:\s]+|Question\s+\d+[\.:\s]+)*/i, '');
+          cleanStr = cleanStr.replace(/^(?:(?:\d+[\.:\s]+)*3\s*\([a-d]\)[\.:\s]*|\d+[\.:\s]+)+/i, '');
           cleanStr = cleanStr.replace(/\[4 marks\]/gi, '[8 marks]'); // Correct 8-mark utility tariff in stem
+          cleanStr = cleanStr.replace(/\s*\[\s*8\s*marks\s*\]\s*$/i, ''); // Strip trailing mark tag to prevent duplicate
           cleanStr = cleanStr.replace(/\n/g, '<br>');
-          return `Question 2(a) [8 marks]: ${typeof formatBold !== 'undefined' ? formatBold(cleanStr) : cleanStr}`;
+          const prefix = 'Question 2(a) [8 marks]: ';
+          return `${prefix}${typeof formatBold !== 'undefined' ? formatBold(cleanStr) : cleanStr}`;
         }
 
         // 3. Feature drills (Edexcel Paper 1 Q1)
@@ -8706,8 +8873,7 @@ export function renderLesson(lesson) {
 
           if (
             type.includes('inference') ||
-            text.includes('two things you can infer') ||
-            tariff.includes('4 mark')
+            text.includes('two things you can infer')
           ) {
             return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
           }
@@ -8719,20 +8885,21 @@ export function renderLesson(lesson) {
           ) {
             return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
           }
-          if (
-            type.includes('utility') ||
-            type.includes('interpret') ||
-            tariff.includes('8 mark') ||
-            tariff.includes('16 mark')
-          ) {
-            if (ktNum >= 3 || lNum >= 3) {
+          if (type.includes('utility')) {
+            if (ktNum === 3 && lNum === 3) {
               return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
             }
             return {
               inWorkbook: false,
-              label: 'Digital Extension • Not in Printed Workbook',
-              note: 'This Section B interpretation enquiry is provided as an optional digital extension for advanced exam practice.',
+              label: 'Digital Interactive Extension • Not in Printed Workbook',
+              note: 'In the printed pupil workbook, Question 2 (12 marks) is the core causation essay. This 8-mark source utility enquiry is provided as an interactive digital extension.',
             };
+          }
+          if (type.includes('verdict') || tariff.includes('16 mark') || type.includes('16m')) {
+            return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+          }
+          if (tariff.includes('4 mark') || type.includes('4m') || type.includes('interp')) {
+            return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
           }
           return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
         }
@@ -8914,11 +9081,6 @@ export function renderLesson(lesson) {
         const qText = (q.question || '').toLowerCase();
         const qTariff = (q.tariff || '').toLowerCase();
         const qType = (q.type || '').toLowerCase();
-        const isPaper3Weimar =
-          typeof unitId !== 'undefined' &&
-          (unitId === 'weimar_nazi_germany' ||
-            unitId === 'germany' ||
-            (typeof window !== 'undefined' && window.currentUnitId === 'weimar_nazi_germany'));
 
         const isConsequence =
           !isPaper3Weimar &&
@@ -9125,6 +9287,23 @@ export function renderLesson(lesson) {
           }
         }
 
+        let bulletHtml = '';
+        if (q.bullet_points && Array.isArray(q.bullet_points) && q.bullet_points.length > 0) {
+          bulletHtml = `
+            <div class="edexcel-stimulus-bullet-box" style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid #1e3a8a; border-radius: 6px; padding: 12px 16px; margin: 12px 0 16px 0;">
+              <div style="font-size: 0.88rem; font-weight: 700; color: #1e3a8a; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+                <i class="fa-solid fa-list-check" style="margin-right: 6px;"></i> You may use the following in your answer:
+              </div>
+              <ul style="margin: 0; padding-left: 24px; font-size: 0.95rem; color: #0f172a; font-weight: 600; line-height: 1.6;">
+                ${q.bullet_points.map((b) => `<li>${b}</li>`).join('')}
+              </ul>
+              <div style="font-size: 0.85rem; color: #64748b; margin-top: 8px; font-style: italic;">
+                You must also use information of your own.
+              </div>
+            </div>
+          `;
+        }
+
         return `
           <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
             ${wbBadgeHtml}
@@ -9135,6 +9314,7 @@ export function renderLesson(lesson) {
               </span>
             </div>
             ${wbNoticeHtml}
+            ${bulletHtml}
             ${stampHtml}
             ${promptHtml}
             ${scaffoldHtml}
@@ -9144,120 +9324,265 @@ export function renderLesson(lesson) {
         `;
       };
 
-      if (lesson.exam_practice.sources && lesson.exam_practice.sources.length > 0) {
-        htmlExamPractice += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 20px;">`;
-        lesson.exam_practice.sources.forEach((src, sIdx) => {
-          htmlExamPractice += `
-            <div class="archival-source-box" style="margin-bottom: 0; background: #fffcf8; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px 18px;">
-              <div class="archival-source-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
-                <span class="archival-meta-tag" style="font-weight: 700; color: #1e3a8a; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">${src.id || 'Source ' + String.fromCharCode(65 + sIdx)}</span>
-                <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">ARCHIVAL RECORD</span>
-              </div>
-              <div class="archival-source-body" style="font-family: Georgia, 'Playfair Display', serif; font-size: 0.95rem; line-height: 1.6; color: #1e293b; margin-bottom: 10px; font-style: italic;">
-                "${src.text || src.content || ''}"
-              </div>
-              <div class="archival-citation-footer" style="font-size: 0.82rem; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 8px; line-height: 1.4;">
-                <div><strong>Provenance:</strong> ${src.provenance || ''}</div>
-                ${src.provenance_clue ? `<div style="margin-top: 4px; color: #b45309; font-style: italic;"><strong>Provenance Clue:</strong> ${src.provenance_clue}</div>` : ''}
-              </div>
-            </div>
-          `;
-        });
-        htmlExamPractice += `</div>`;
-      }
-
-      if (epStimulus.length > 0) {
-        htmlExamPractice += `<div class="exam-stimulus-container" style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px;">`;
-        epStimulus.forEach((stim, sIdx) => {
-          let stimTitle = '';
-          let stimContent = '';
-          if (typeof stim === 'string') {
-            const parts = stim.split('**:');
-            if (parts.length > 1) {
-              stimTitle = parts[0].replace(/\*\*/g, '').trim();
-              stimContent = parts.slice(1).join('**:').trim();
-            } else {
-              stimTitle = `Interpretation ${sIdx + 1}`;
-              stimContent = stim;
-            }
+      const renderSingleStimulus = (stim, sIdx) => {
+        let stimTitle = '';
+        let stimContent = '';
+        if (typeof stim === 'string') {
+          const parts = stim.split('**:');
+          if (parts.length > 1) {
+            stimTitle = parts[0].replace(/\*\*/g, '').trim();
+            stimContent = parts.slice(1).join('**:').trim();
           } else {
-            stimTitle = stim.title || `Interpretation ${sIdx + 1}`;
-            stimContent = stim.content || stim.text || '';
+            stimTitle = `Interpretation ${sIdx + 1}`;
+            stimContent = stim;
           }
+        } else {
+          stimTitle = stim.title || `Interpretation ${sIdx + 1}`;
+          stimContent = stim.content || stim.text || '';
+        }
 
-          const isInterp = /Interpretation\s+([0-9]+)/i.test(stimTitle);
-          const interpMatch = stimTitle.match(/Interpretation\s+([0-9]+)/i);
-          const interpNum = interpMatch ? interpMatch[1] : `${sIdx + 1}`;
+        const isInterp = /Interpretation\s+([0-9]+)/i.test(stimTitle);
+        const interpMatch = stimTitle.match(/Interpretation\s+([0-9]+)/i);
+        const interpNum = interpMatch ? interpMatch[1] : `${sIdx + 1}`;
 
-          const srcMatch = stimTitle.match(/Source\s+([A-Z0-9]+)/i);
-          const srcLetter = srcMatch ? srcMatch[1].toUpperCase() : String.fromCharCode(65 + sIdx);
+        const srcMatch = stimTitle.match(/Source\s+([A-Z0-9]+)/i);
+        const srcLetter = srcMatch ? srcMatch[1].toUpperCase() : String.fromCharCode(65 + sIdx);
 
-          if (isInterp) {
-            const cleanInterpTitle = stimTitle
-              .replace(/^Interpretation\s+[0-9]+[:\s-]*/i, '')
-              .replace(/^\(([^)]+)\)[:\s-]*/i, '$1: ')
-              .trim();
-            const interpCardId = `interpretation-card-${interpNum}`;
+        if (isInterp) {
+          const cleanInterpTitle = stimTitle
+            .replace(/^Interpretation\s+[0-9]+[:\s-]*/i, '')
+            .replace(/^\(([^)]+)\)[:\s-]*/i, '$1: ')
+            .trim();
+          const interpCardId = `interpretation-card-${interpNum}`;
 
-            htmlExamPractice += `
-              <details class="cme-source-drawer weimar-source-drawer weimar-interpretation-drawer archival-drawer gcse-source-container archival-source-box" id="${interpCardId}" data-interpretation-num="${interpNum}" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
-                <summary style="padding: 5px 12px; min-height: 40px; padding: 7px 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
-                  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                    <span class="archival-meta-tag" style="background: #9a3412; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">INTERPRETATION ${interpNum}</span>
-                    <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${cleanInterpTitle || 'Historical View'}</span>
-                  </div>
-                  <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
-                    Historiographical View &bull; Expand <span class="drawer-caret">&#9660;</span>
-                  </span>
-                </summary>
-                <div class="weimar-interpretation-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
-                  <div class="archival-source-body" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.02rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #ea580c; border-radius: 4px;">
-                    ${typeof formatBold !== 'undefined' ? formatBold(stimContent) : stimContent}
-                  </div>
-                  <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
-                    <span><strong>Historical Analysis:</strong> Pearson Edexcel GCSE Paper 3 Section B Historical Interpretation</span>
-                    <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.72rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">INTERP ${interpNum}</span>
-                  </div>
+          return `
+            <details class="cme-source-drawer weimar-source-drawer weimar-interpretation-drawer archival-drawer gcse-source-container archival-source-box" id="${interpCardId}" data-interpretation-num="${interpNum}" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
+              <summary style="padding: 5px 12px; min-height: 40px; padding: 7px 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span class="archival-meta-tag" style="background: #9a3412; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">INTERPRETATION ${interpNum}</span>
+                  <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${cleanInterpTitle || 'Historical View'}</span>
                 </div>
-              </details>
-            `;
-          } else {
-            const cleanSourceTitle = stimTitle.replace(/^Source\s+[A-Z0-9]+[:\s-]*/i, '').trim();
-            const sourceCardId = `source-card-${srcLetter}`;
+                <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
+                  Historiographical View &bull; Expand <span class="drawer-caret">&#9660;</span>
+                </span>
+              </summary>
+              <div class="weimar-interpretation-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+                <div class="archival-source-body" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.02rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #ea580c; border-radius: 4px;">
+                  ${typeof formatBold !== 'undefined' ? formatBold(stimContent) : stimContent}
+                </div>
+                <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+                  <span><strong>Historical Analysis:</strong> Pearson Edexcel GCSE Paper 3 Section B Historical Interpretation</span>
+                  <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.72rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">INTERP ${interpNum}</span>
+                </div>
+              </div>
+            </details>
+          `;
+        } else {
+          const cleanSourceTitle = stimTitle.replace(/^Source\s+[A-Z0-9]+[:\s-]*/i, '').trim();
+          const sourceCardId = `source-card-${srcLetter}`;
+          const stimImg = typeof stim === 'object' && stim !== null ? (stim.image || stim.src || stim.image_url || stim.asset_path || '') : '';
+          const stimImgUrl = stimImg ? getAssetUrl(stimImg) : '';
+          const stimCaption = typeof stim === 'object' && stim !== null ? (stim.caption || '') : '';
+          const stimProvenance = typeof stim === 'object' && stim !== null ? (stim.provenance || stim.citation || cleanSourceTitle || 'Contemporary Written Record') : (cleanSourceTitle || 'Contemporary Written Record');
 
-            htmlExamPractice += `
-              <details class="cme-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" id="${sourceCardId}" data-source-letter="${srcLetter}" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
-                <summary style="padding: 5px 12px; min-height: 40px; padding: 7px 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
-                  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-                    <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">SOURCE ${srcLetter}</span>
-                    <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${cleanSourceTitle || 'Archival Primary Record'}</span>
+          return `
+            <details class="cme-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" id="${sourceCardId}" data-source-letter="${srcLetter}" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
+              <summary style="padding: 5px 12px; min-height: 40px; padding: 7px 12px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+                <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                  <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">SOURCE ${srcLetter}</span>
+                  <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${cleanSourceTitle || 'Archival Primary Record'}</span>
+                </div>
+                <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
+                  Archival Evidence &bull; Expand <span class="drawer-caret">&#9660;</span>
+                </span>
+              </summary>
+              <div class="weimar-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+                ${stimImgUrl ? `
+                  <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 12px;">
+                    <div style="flex: 0 0 280px; max-width: 320px; position: relative; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+                      <img src="${stimImgUrl}" alt="${cleanSourceTitle || 'Source ' + srcLetter}" data-action="open-modal" data-src="${stimImgUrl}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: 240px; object-fit: contain; display: block; margin: 0 auto; border-radius: 4px;">
+                      <div class="archival-source-inspect-badge" style="position: absolute; bottom: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: #fff; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; pointer-events: none; display: inline-flex; align-items: center; gap: 4px;">
+                        <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
+                        <span>Pan-Zoom</span>
+                      </div>
+                    </div>
+                    <div style="flex: 1 1 300px;">
+                      ${stimContent ? `
+                        <div class="archival-source-body" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.02rem; line-height: 1.7; color: #1e293b; background: #fffdfa; padding: 12px 16px; border-left: 4px solid #1e40af; border-radius: 4px; margin-bottom: 10px;">
+                          ${typeof formatBold !== 'undefined' ? formatBold(stimContent) : stimContent}
+                        </div>
+                      ` : ''}
+                      ${stimCaption ? `
+                        <div style="font-size: 0.86rem; color: #475569; line-height: 1.45; margin-bottom: 8px;">
+                          <strong style="color: #1e3a8a;">Archival Caption:</strong> ${stimCaption}
+                        </div>
+                      ` : ''}
+                    </div>
                   </div>
-                  <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
-                    Archival Evidence &bull; Expand <span class="drawer-caret">&#9660;</span>
-                  </span>
-                </summary>
-                <div class="weimar-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+                ` : `
                   <div class="archival-source-body" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e40af; border-radius: 4px;">
                     ${typeof formatBold !== 'undefined' ? formatBold(stimContent) : stimContent}
                   </div>
-                  <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
-                    <span><strong>Provenance:</strong> ${cleanSourceTitle || 'Contemporary Written Record'}</span>
-                    <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.72rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">SOURCE ${srcLetter}</span>
-                  </div>
+                `}
+                <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+                  <span><strong>Provenance:</strong> ${stimProvenance}</span>
+                  <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.72rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">SOURCE ${srcLetter}</span>
                 </div>
-              </details>
-            `;
+              </div>
+            </details>
+          `;
+        }
+      };
+
+      if (isPaper3Weimar) {
+        const secAQuestions = [];
+        const secBQuestions = [];
+
+        epQuestions.forEach((q, idx) => {
+          const type = (q.type || '').toLowerCase();
+          const tariff = (q.tariff || '').toLowerCase();
+          if (type.includes('inference') || type.includes('causation') || type.includes('explain_why') || tariff.includes('12')) {
+            secAQuestions.push({ q, idx });
+          } else {
+            secBQuestions.push({ q, idx });
           }
         });
+
+        // 1. Lessons with BOTH Section A and Section B (Lessons 2, 6, 10, 14):
+        if (secAQuestions.length > 0 && secBQuestions.length > 0) {
+          // Render Section A (Causation Essay) - ZERO SOURCES HERE!
+          htmlExamPractice += `
+            <div class="exam-section-wrapper exam-section-a-wrapper" style="margin-bottom: 28px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.95rem; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
+                  <i class="fa-solid fa-file-pen" style="margin-right: 6px; color: #2563eb;"></i> Pearson Edexcel Paper 3 &bull; Section A: Causation Essay
+                </span>
+                <span style="font-size: 0.76rem; font-weight: 700; color: #475569; background: #f1f5f9; border: 1px solid #e2e8f0; padding: 2px 8px; border-radius: 4px;">
+                  Knowledge &amp; Explanation &bull; No Sources Required
+                </span>
+              </div>
+          `;
+          secAQuestions.forEach(({ q, idx }) => {
+            htmlExamPractice += renderQuestion(q, idx);
+          });
+          htmlExamPractice += `</div>`;
+
+          // Render Section B (Source Utility) - ARCHIVAL SOURCES GO HERE!
+          htmlExamPractice += `
+            <div class="exam-section-wrapper exam-section-b-wrapper" style="margin-bottom: 20px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.95rem; color: #9a3412; text-transform: uppercase; letter-spacing: 0.5px;">
+                  <i class="fa-solid fa-box-archive" style="margin-right: 6px; color: #ea580c;"></i> Pearson Edexcel Paper 3 &bull; Section B: Primary Source Enquiry
+                </span>
+                <span style="font-size: 0.76rem; font-weight: 700; color: #9a3412; background: #fff7ed; border: 1px solid #fed7aa; padding: 2px 8px; border-radius: 4px;">
+                  Archival Evidence &bull; Question 3(a)
+                </span>
+              </div>
+          `;
+          if (epStimulus.length > 0) {
+            htmlExamPractice += `<div class="exam-stimulus-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px;">`;
+            epStimulus.forEach((stim, sIdx) => {
+              htmlExamPractice += renderSingleStimulus(stim, sIdx);
+            });
+            htmlExamPractice += `</div>`;
+          }
+          secBQuestions.forEach(({ q, idx }) => {
+            htmlExamPractice += renderQuestion(q, idx);
+          });
+          htmlExamPractice += `</div>`;
+        }
+        // 2. Lessons with ONLY Section A (Lessons 1, 5, 9, 13):
+        else if (secAQuestions.length > 0) {
+          htmlExamPractice += `
+            <div class="exam-section-wrapper exam-section-a-wrapper" style="margin-bottom: 20px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.95rem; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
+                  <i class="fa-solid fa-file-pen" style="margin-right: 6px; color: #2563eb;"></i> Pearson Edexcel Paper 3 &bull; Section A: Historical Explanation &amp; Inference
+                </span>
+                <span style="font-size: 0.76rem; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 2px 8px; border-radius: 4px;">
+                  Questions 1 &amp; 2
+                </span>
+              </div>
+          `;
+          if (epStimulus.length > 0) {
+            htmlExamPractice += `<div class="exam-stimulus-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">`;
+            epStimulus.forEach((stim, sIdx) => {
+              htmlExamPractice += renderSingleStimulus(stim, sIdx);
+            });
+            htmlExamPractice += `</div>`;
+          }
+          secAQuestions.forEach(({ q, idx }) => {
+            htmlExamPractice += renderQuestion(q, idx);
+          });
+          htmlExamPractice += `</div>`;
+        }
+        // 3. Lessons with ONLY Section B (Lessons 3, 4, 7, 8, 11, 12, 15, 16):
+        else {
+          const isInterpUnit = epStimulus.some(s => /Interpretation/i.test(typeof s === 'string' ? s : (s.title || '')));
+          const secTitle = isInterpUnit ? 'Section B: Historiographical Interpretations' : 'Section B: Historical Enquiry & Source Utility';
+          const secBadge = isInterpUnit ? 'Questions 3(b) & 3(d)' : 'Question 3(a)';
+          htmlExamPractice += `
+            <div class="exam-section-wrapper exam-section-b-wrapper" style="margin-bottom: 20px;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; border-bottom: 2px solid #cbd5e1; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.95rem; color: #9a3412; text-transform: uppercase; letter-spacing: 0.5px;">
+                  <i class="fa-solid fa-box-archive" style="margin-right: 6px; color: #ea580c;"></i> Pearson Edexcel Paper 3 &bull; ${secTitle}
+                </span>
+                <span style="font-size: 0.76rem; font-weight: 700; color: #9a3412; background: #fff7ed; border: 1px solid #fed7aa; padding: 2px 8px; border-radius: 4px;">
+                  ${secBadge}
+                </span>
+              </div>
+          `;
+          if (epStimulus.length > 0) {
+            htmlExamPractice += `<div class="exam-stimulus-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px;">`;
+            epStimulus.forEach((stim, sIdx) => {
+              htmlExamPractice += renderSingleStimulus(stim, sIdx);
+            });
+            htmlExamPractice += `</div>`;
+          }
+          secBQuestions.forEach(({ q, idx }) => {
+            htmlExamPractice += renderQuestion(q, idx);
+          });
+          htmlExamPractice += `</div>`;
+        }
+        htmlExamPractice += `</div>`;
+      } else {
+        if (lesson.exam_practice.sources && lesson.exam_practice.sources.length > 0) {
+          htmlExamPractice += `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 20px;">`;
+          lesson.exam_practice.sources.forEach((src, sIdx) => {
+            htmlExamPractice += `
+              <div class="archival-source-box" style="margin-bottom: 0; background: #fffcf8; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px 18px;">
+                <div class="archival-source-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
+                  <span class="archival-meta-tag" style="font-weight: 700; color: #1e3a8a; font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">${src.id || 'Source ' + String.fromCharCode(65 + sIdx)}</span>
+                  <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.75rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">ARCHIVAL RECORD</span>
+                </div>
+                <div class="archival-source-body" style="font-family: Georgia, 'Playfair Display', serif; font-size: 0.95rem; line-height: 1.6; color: #1e293b; margin-bottom: 10px; font-style: italic;">
+                  "${src.text || src.content || ''}"
+                </div>
+                <div class="archival-citation-footer" style="font-size: 0.82rem; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 8px; line-height: 1.4;">
+                  <div><strong>Provenance:</strong> ${src.provenance || ''}</div>
+                  ${src.provenance_clue ? `<div style="margin-top: 4px; color: #b45309; font-style: italic;"><strong>Provenance Clue:</strong> ${src.provenance_clue}</div>` : ''}
+                </div>
+              </div>
+            `;
+          });
+          htmlExamPractice += `</div>`;
+        }
+
+        if (epStimulus.length > 0) {
+          htmlExamPractice += `<div class="exam-stimulus-container" style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px;">`;
+          epStimulus.forEach((stim, sIdx) => {
+            htmlExamPractice += renderSingleStimulus(stim, sIdx);
+          });
+          htmlExamPractice += `</div>`;
+        }
+
+        if (epQuestions.length > 0) {
+          epQuestions.forEach((q, qIdx) => {
+            htmlExamPractice += renderQuestion(q, qIdx);
+          });
+        }
         htmlExamPractice += `</div>`;
       }
-
-      if (epQuestions.length > 0) {
-        epQuestions.forEach((q, qIdx) => {
-          htmlExamPractice += renderQuestion(q, qIdx);
-        });
-      }
-      htmlExamPractice += `</div>`;
     }
   }
 
@@ -10987,7 +11312,7 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
       if (block.source && block.source.question) block.source.qNum = globalQNum++;
-      if (Array.isArray(block.sources)) {
+      if (Array.isArray(block.sources) && (!lesson.sources || lesson.sources.length === 0)) {
         block.sources.forEach((s) => {
           if (s && s.question) s.qNum = globalQNum++;
         });

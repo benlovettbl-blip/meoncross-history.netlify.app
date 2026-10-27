@@ -256,7 +256,7 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (7 L)',
     mapStatus: 'embedded',
     mapText: '✅ Somme & Ypres Battlegrounds',
-    workbookPdf: '/units/great_war_part2/workbook.html',
+    workbookPdf: '/pdfs/great_war_part2_pupil_workbook.pdf',
     textbookPdf: '/pdfs/great_war_part2_textbook_FINAL.pdf',
   },
   {

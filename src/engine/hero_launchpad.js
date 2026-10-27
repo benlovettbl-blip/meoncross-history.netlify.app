@@ -53,8 +53,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'Causes of the Great War Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
-      htmlUrl: '/units/great_war/quiz_pack.html',
-      pdfUrl: '/pdfs/great_war_quiz_pack_FINAL_V1.pdf',
+      htmlUrl: '/units/great_war/great_war_retrieval_companion.html',
+      pdfUrl: '/pdfs/Causes_of_the_Great_War_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   great_war_part2: {
@@ -67,8 +67,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'Course of the Great War Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
-      htmlUrl: '/units/great_war_part2/quiz_pack.html',
-      pdfUrl: '/pdfs/great_war_part2_quiz_pack_FINAL_V1.pdf',
+      htmlUrl: '/units/great_war_part2/great_war_part2_retrieval_companion.html',
+      pdfUrl: '/pdfs/The_Course_of_the_Great_War_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   medieval_england: {
@@ -87,22 +87,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'Medieval England Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
-      htmlUrl: '/units/medieval_england/quiz_pack.html',
-      pdfUrl: '/pdfs/medieval_england_quiz_pack_FINAL_V1.pdf',
-    },
-  },
-  early_modern_world: {
-    workbook: {
-      title: 'Early Modern World Pupil Workbook',
-      label: 'Pupil Workbook',
-      htmlUrl: '/units/early_modern_world/pupil_workbook.html',
-      pdfUrl: '/pdfs/early_modern_world_pupil_workbook_FINAL_V17.pdf',
-    },
-    retrieval: {
-      title: 'Early Modern World Knowledge Retrieval Companion',
-      label: 'Retrieval Companion',
-      htmlUrl: '/units/early_modern_world/quiz_pack.html',
-      pdfUrl: '/pdfs/early_modern_world_mastery_pack_full_FINAL_V17.pdf',
+      htmlUrl: '/units/medieval_england/medieval_england_retrieval_companion.html',
+      pdfUrl: '/pdfs/Medieval_England_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   monarchy_religion_power: {
@@ -115,8 +101,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'Crown, Church, or Parliament Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
-      htmlUrl: '/units/monarchy_religion_power/quiz_pack.html',
-      pdfUrl: '/pdfs/monarchy_religion_power_quiz_pack_FINAL_V1.pdf',
+      htmlUrl: '/units/monarchy_religion_power/monarchy_religion_power_retrieval_companion.html',
+      pdfUrl: '/pdfs/Crown_Church_or_Parliament_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   first_british_empire: {
@@ -129,8 +115,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'The First British Empire Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
-      htmlUrl: '/units/first_british_empire/quiz_pack.html',
-      pdfUrl: '/pdfs/first_british_empire_quiz_pack_FINAL_V1.pdf',
+      htmlUrl: '/units/first_british_empire/first_british_empire_retrieval_companion.html',
+      pdfUrl: '/pdfs/The_First_British_Empire_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   industrialisation_and_empire: {
@@ -143,8 +129,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'The Industrial Revolution Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
-      htmlUrl: '/units/industrialisation_and_empire/quiz_pack.html',
-      pdfUrl: '/pdfs/industrialisation_and_empire_quiz_pack.pdf',
+      htmlUrl: '/units/industrialisation_and_empire/industrialisation_and_empire_retrieval_companion.html',
+      pdfUrl: '/pdfs/Industrialisation_Power_and_Protest_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   second_british_empire: {
@@ -157,8 +143,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'The Second British Empire Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
-      htmlUrl: '/units/second_british_empire/quiz_pack.html',
-      pdfUrl: '/pdfs/second_british_empire_quiz_pack.pdf',
+      htmlUrl: '/units/second_british_empire/second_british_empire_retrieval_companion.html',
+      pdfUrl: '/pdfs/The_Second_British_Empire_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   water_and_sanitation: {
@@ -274,7 +260,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Medicine in Britain Master Knowledge Retrieval Companion',
       label: 'Retrieval Companion (140 Qs)',
       htmlUrl: '/units/edexcel_medicine/medicine_master_retrieval_companion.html',
-      pdfUrl: '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+      pdfUrl: '/pdfs/Medicine_Through_Time_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   weimar_nazi_germany: {
@@ -291,10 +277,10 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
     },
     retrieval: {
-      title: 'Weimar & Nazi Germany Knowledge Retrieval Companion',
-      label: 'Retrieval Companion',
-      htmlUrl: '/units/weimar_nazi_germany/quiz_pack.html',
-      pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
+      title: 'Weimar and Nazi Germany Master Knowledge Retrieval Companion',
+      label: 'Retrieval Companion (128 Qs)',
+      htmlUrl: '/units/weimar_nazi_germany/weimar_master_retrieval_companion.html',
+      pdfUrl: '/pdfs/Weimar_and_Nazi_Germany_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   eee: {
@@ -311,10 +297,10 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
     },
     retrieval: {
-      title: 'Early Elizabethan England Knowledge Retrieval Companion',
-      label: 'Retrieval Companion',
-      htmlUrl: '/units/eee/quiz_pack.html',
-      pdfUrl: '/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
+      title: 'Early Elizabethan England Master Knowledge Retrieval Companion',
+      label: 'Retrieval Companion (120 Qs)',
+      htmlUrl: '/units/eee/eee_master_retrieval_companion.html',
+      pdfUrl: '/pdfs/Early_Elizabethan_England_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
   cold_war: {
@@ -333,8 +319,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'Superpower Relations Knowledge Retrieval Companion',
       label: 'Retrieval Companion',
-      htmlUrl: '/units/cold_war/quiz_pack.html',
-      pdfUrl: '/pdfs/cold_war_pupil_workbook_FINAL_V17.pdf',
+      htmlUrl: '/units/cold_war/cold_war_master_retrieval_companion.html',
+      pdfUrl: '/pdfs/Superpower_Relations_and_Cold_War_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
 };

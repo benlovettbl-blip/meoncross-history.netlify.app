@@ -600,7 +600,7 @@ export function renderSidebar() {
     cheatSheetLink.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Revision Cheat Sheet';
     cheatSheetLink.href = window.currentUnitId
       ? `/units/${window.currentUnitId}/cheat_sheet.html`
-      : 'cheat_sheet.html';
+      : '#';
     cheatSheetLink.target = '_blank';
     cheatSheetLink.style.marginTop = '15px';
 

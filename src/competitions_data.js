@@ -16,7 +16,6 @@ export const competitionsData = [
     deadline: 'Friday 19th March 2027',
     ceremony: 'Summer Term 2027 at the Lord Lieutenant of Hampshire’s offices in Winchester',
     posterPdfUrl: '/pdfs/hampshire_archives_competition_poster.pdf',
-    posterHtmlUrl: '/pdfs/hampshire_competition_poster.html',
     prizes: [
       {
         tier: 'Individual Winner',
@@ -186,7 +185,7 @@ export const competitionsData = [
         category: 'KS3 & GCSE · Spirit of Normandy Prize',
         desc: 'Investigate the massive logistical buildup across Hampshire for Operation Overlord (D-Day), marshalling local camps, Mulberry harbours, and troop embarkations.',
         badge: 'Normandy Trust Category',
-        unitId: 'second_world_war',
+        unitId: 'ks2_ww2',
         lessonIndex: 0,
         lessonLabel: 'View Second World War Studies',
       },

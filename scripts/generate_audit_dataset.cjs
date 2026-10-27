@@ -5,7 +5,20 @@ const dbPath = path.join(__dirname, '..', 'public', 'database.json');
 const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
 
 // Units that have been 100% audited, repaired, and verified
-const verifiedUnits = new Set(['australia', 'water_and_sanitation']);
+const verifiedUnits = new Set([
+  'australia',
+  'water_and_sanitation',
+  'first_british_empire',
+  'medieval_england',
+  'second_british_empire',
+  'cme_new',
+  'usa',
+  'edexcel_medicine',
+  'eee',
+  'monarchy_religion_power',
+  'first_british_empire',
+  'industrialisation_and_empire'
+]);
 
 const unitsAudit = {};
 let totalSourcesCount = 0;

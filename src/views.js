@@ -315,8 +315,14 @@ export function renderDashboard() {
           <span style="font-size:0.68em;font-weight:700;background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">GCSE</span>
         </h3>
 
-        <!-- Year 11 Specification Tracker & Revision Engine Hero Showcase -->
-        <div class="year11-spec-tracker-banner" style="margin-bottom: 20px; background: linear-gradient(135deg, #091e3a 0%, #1e3a8a 60%, #172554 100%); border-radius: 14px; padding: 22px 26px; color: #ffffff; box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.4); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border: 1.5px solid rgba(255,255,255,0.18); position: relative; overflow: hidden;">
+        <div class="modules-grid" style="margin-bottom: 1.5rem;">
+    `;
+    year11Units.forEach(renderUnitCard);
+    html += `
+        </div>
+
+        <!-- Year 11 Specification Tracker & Revision Engine Hero Showcase (Positioned Beneath Year 11 Modules) -->
+        <div class="year11-spec-tracker-banner" style="margin-bottom: 2rem; background: linear-gradient(135deg, #091e3a 0%, #1e3a8a 60%, #172554 100%); border-radius: 14px; padding: 22px 26px; color: #ffffff; box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.4); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border: 1.5px solid rgba(255,255,255,0.18); position: relative; overflow: hidden;">
           <div style="position: absolute; right: -20px; top: -30px; font-size: 11rem; color: rgba(255, 255, 255, 0.03); pointer-events: none; z-index: 0;">
             <i class="fa-solid fa-list-check"></i>
           </div>
@@ -345,11 +351,8 @@ export function renderDashboard() {
             </button>
           </div>
         </div>
-
-        <div class="modules-grid" style="margin-bottom: 2rem;">
+      </div>
     `;
-    year11Units.forEach(renderUnitCard);
-    html += `</div></div>`;
   }
 
   // Trips & Tours Grouping
@@ -1715,266 +1718,6 @@ export async function renderTimeline() {
   `;
 }
 
-export async function renderDecisionsView() {
-  const container = document.getElementById('main-content');
-  const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
-
-  let decisionsData = [];
-  if (unitId === 'gcse_middle_east_1945_1995' || unitId === 'cme_new') {
-    const mod = await import('./data/cme/decisions_data.js');
-    decisionsData = mod.DECISIONS_DATA;
-  } else if (unitId === 'gcse_usa_1954_1975' || unitId === 'usa') {
-    const mod = await import('./decisions_data.js');
-    decisionsData = mod.DECISIONS_DATA;
-  }
-
-  if (decisionsData.length === 0) {
-    container.innerHTML = `
-      <div class="card text-center">
-        <h3><i class="fa-solid fa-phone-volume"></i> Decision Simulator</h3>
-        <p>No decision scenarios available for this unit.</p>
-        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
-      </div>
-    `;
-    return;
-  }
-
-  window.playDecisionsScenario = function (gameId) {
-    const g = decisionsData.find((x) => x.id === gameId);
-    if (!g) return;
-
-    container.innerHTML = `
-      <div class="card max-w-lg mx-auto quiz-container">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
-          <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">Phase 1: Initial Response</span>
-          <button class="btn btn-secondary btn-sm" data-action="switch-view" data-view="decisions" data-unit="${unitId}">
-            <i class="fa-solid fa-arrow-left"></i> Scenario Menu
-          </button>
-        </div>
-
-        <h2 style="font-size: 1.4rem; font-weight: 800; margin: 10px 0 0 0;">${g.title}</h2>
-        <div style="font-size: 0.9rem; margin-bottom: 14px; font-weight: 600; opacity: 0.8;">Active Role: ${g.role}</div>
-
-        <div style="background-color: var(--bg-app); border: 1px solid var(--border-glass); padding: 18px; border-radius: var(--border-radius-sm); margin-bottom: 20px;">
-          <strong>THE CRISIS:</strong><br />
-          ${g.crisis}
-        </div>
-
-        <div class="quiz-options">
-          <button class="btn btn-block btn-quiz-opt" data-action="play-decisions-phase2" data-id="${g.id}" data-choice="A">
-            <strong>Choice A:</strong> ${g.phase1.choiceA.text}
-          </button>
-          <button class="btn btn-block btn-quiz-opt" data-action="play-decisions-phase2" data-id="${g.id}" data-choice="B">
-            <strong>Choice B:</strong> ${g.phase1.choiceB.text}
-          </button>
-        </div>
-      </div>
-    `;
-  };
-
-  window.playDecisionsPhase2 = function (gameId, choiceLetter) {
-    const g = decisionsData.find((x) => x.id === gameId);
-    if (!g) return;
-
-    const selectedChoice = choiceLetter === 'A' ? g.phase1.choiceA : g.phase1.choiceB;
-
-    container.innerHTML = `
-      <div class="card max-w-lg mx-auto quiz-container">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
-          <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">Phase 2: The Fallout</span>
-          <button class="btn btn-secondary btn-sm" data-action="switch-view" data-view="decisions" data-unit="${unitId}">
-            <i class="fa-solid fa-arrow-left"></i> Scenario Menu
-          </button>
-        </div>
-
-        <h2 style="font-size: 1.4rem; font-weight: 800; margin: 10px 0 0 0;">${g.title}</h2>
-        
-        <div style="border: 1px solid var(--border-glass); padding: 12px; border-radius: var(--border-radius-sm); font-size: 0.9rem; color: var(--text-muted);">
-          <strong>Your Choice:</strong> ${selectedChoice.text}
-        </div>
-
-        <div style="background-color: var(--bg-app); border: 1px solid var(--border-glass); padding: 18px; border-radius: var(--border-radius-sm); margin-bottom: 20px; border-left: 4px solid var(--accent);">
-          <strong>THE FALLOUT:</strong><br />
-          ${selectedChoice.fallout}
-        </div>
-
-        <div class="quiz-options">
-          <button class="btn btn-block btn-quiz-opt" data-action="play-decisions-phase3" data-id="${g.id}" data-choice="${choiceLetter}" data-phase="1">
-            <strong>Choice ${choiceLetter}1:</strong> ${selectedChoice.choice1.text}
-          </button>
-          <button class="btn btn-block btn-quiz-opt" data-action="play-decisions-phase3" data-id="${g.id}" data-choice="${choiceLetter}" data-phase="2">
-            <strong>Choice ${choiceLetter}2:</strong> ${selectedChoice.choice2.text}
-          </button>
-        </div>
-      </div>
-    `;
-  };
-
-  window.playDecisionsPhase3 = function (gameId, choiceLetter, subChoice) {
-    const g = decisionsData.find((x) => x.id === gameId);
-    if (!g) return;
-
-    // Award +20 XP for completing decision scenario
-    addXp(20, 'Decision Simulator Completed');
-
-    const selectedChoice = choiceLetter === 'A' ? g.phase1.choiceA : g.phase1.choiceB;
-    const selectedSubChoice = subChoice === '1' ? selectedChoice.choice1 : selectedChoice.choice2;
-
-    container.innerHTML = `
-      <div class="card max-w-lg mx-auto quiz-container">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-glass); padding-bottom: 12px;">
-          <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">Phase 3: The Verdict</span>
-          <button class="btn btn-secondary btn-sm" data-action="switch-view" data-view="decisions" data-unit="${unitId}">
-            <i class="fa-solid fa-arrow-left"></i> Scenario Menu
-          </button>
-        </div>
-
-        <h2 style="font-size: 1.4rem; font-weight: 800; margin: 10px 0 0 0;">${g.title}</h2>
-        
-        <div style="background-color: var(--bg-app); border: 1px solid var(--border-glass); padding: 18px; border-radius: var(--border-radius-sm); margin-bottom: 20px; border-left: 4px solid ${selectedSubChoice.isHistorical ? 'var(--primary)' : 'var(--accent)'};">
-          <h4 style="margin-bottom: 8px;">${selectedSubChoice.isHistorical ? '🏆 Historical Path Followed' : '⚠️ Deviated from History'}</h4>
-          ${selectedSubChoice.verdict}
-        </div>
-
-        <div style="display: flex; justify-content: space-between;">
-          <button class="btn btn-secondary" data-action="switch-view" data-view="decisions" data-unit="${unitId}">Another Scenario</button>
-          <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Exit Simulator</button>
-        </div>
-      </div>
-    `;
-  };
-
-  // Render scenarios menu list
-  container.innerHTML = `
-    <div class="card">
-      <h3 style="margin-bottom: 8px;"><i class="fa-solid fa-phone-volume text-primary"></i> Decision-Making Simulation</h3>
-      <p class="text-muted" style="margin-bottom: 24px;">Put yourself in the shoes of historical figures facing critical turning points.</p>
-      
-      <div class="modules-grid">
-        ${decisionsData
-          .map(
-            (g) => `
-          <div class="module-card">
-            <div class="module-header">
-              <span class="category-badge">${g.series}</span>
-              <i class="${g.icon}" style="color: var(--primary);"></i>
-            </div>
-            <h4>${g.title}</h4>
-            <p style="font-size: 0.85rem;"><strong>Role:</strong> ${g.role}</p>
-            <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" data-action="play-decisions-scenario" data-id="${g.id}">
-              Start Simulation
-            </button>
-          </div>
-        `,
-          )
-          .join('')}
-      </div>
-    </div>
-  `;
-}
-
-export async function renderTabooView() {
-  const container = document.getElementById('main-content');
-  const unitId = window.currentUnitId || state.selectedUnitId || 'cme_new';
-
-  let tabooCards = [];
-  if (
-    unitId === 'cme_new' ||
-    unitId === 'gcse_middle_east_1945_1995' ||
-    unitId === 'usa' ||
-    unitId === 'gcse_usa_1954_1975'
-  ) {
-    // Both USA and CME are currently pulling from the same taboo_data file for now based on the old code
-    const mod = await import('./taboo_data.js');
-    Object.keys(mod.TABOO_CARDS).forEach((cat) => {
-      mod.TABOO_CARDS[cat].forEach((card) => {
-        tabooCards.push({
-          id: `taboo_${unitId}_${card.target.replace(/\s+/g, '_')}`,
-          topic: cat,
-          target: card.target.toUpperCase(),
-          taboo: card.taboo,
-          hint: `Recall this key ${cat} from the course.`,
-        });
-      });
-    });
-  } else if (unitId === 'eee' || unitId === 'gcse_elizabethan_england') {
-    const mod = await import('./data/elizabethan/data.js');
-    const timelineData = mod.timelineData;
-    let cardCount = 1;
-    timelineData.forEach((topic) => {
-      topic.events.forEach((evt) => {
-        if (evt.subtitle && evt.text) {
-          const target = evt.subtitle.toUpperCase();
-          const taboo = [...(evt.names || []), ...(evt.stats || [])]
-            .slice(0, 5)
-            .map((s) => s.replace(/\(.*?\)/g, '').trim())
-            .filter(Boolean);
-          const hint = evt.text.split('.')[0] + '.';
-          if (taboo.length >= 2) {
-            tabooCards.push({
-              id: `taboo_eee_${cardCount++}`,
-              topic: topic.title,
-              target: target,
-              taboo: taboo,
-              hint: hint,
-            });
-          }
-        }
-      });
-    });
-  }
-
-  if (tabooCards.length === 0) {
-    container.innerHTML = `
-      <div class="card text-center">
-        <h3><i class="fa-solid fa-tags"></i> Taboo Recall</h3>
-        <p>No Taboo recall cards available for this unit.</p>
-        <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
-      </div>
-    `;
-    return;
-  }
-
-  window.showTabooCard = function (index) {
-    const card = tabooCards[index];
-    container.innerHTML = `
-      <div class="card max-w-md mx-auto text-center" style="display: flex; flex-direction: column; gap: 20px; border: 2px solid var(--primary); padding: 32px;">
-        <span style="font-size: 0.8rem; text-transform: uppercase; font-weight: 700; color: var(--primary);">${card.topic}</span>
-        
-        <div style="background-color: var(--bg-app); border: 2px solid var(--border-glass); border-radius: var(--border-radius-md); padding: 24px; box-shadow: var(--shadow-sm);">
-          <h2 style="font-size: 1.8rem; font-weight: 800; color: var(--primary); letter-spacing: 0.5px;">${card.target}</h2>
-        </div>
-
-        <div style="border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass); padding: 18px 0;">
-          <h4 style="text-transform: uppercase; font-size: 0.85rem; color: var(--accent); margin-bottom: 12px; letter-spacing: 1px;">Forbidden Taboo Words:</h4>
-          <div style="display: flex; flex-direction: column; gap: 6px;">
-            ${card.taboo.map((w) => `<span style="font-size: 1.1rem; font-weight: 700; text-decoration: line-through; opacity: 0.85;">${w}</span>`).join('')}
-          </div>
-        </div>
-
-        <div id="taboo-hint-box" style="display: none; background-color: var(--bg-app); padding: 12px; border-radius: var(--border-radius-sm); font-size: 0.85rem; text-align: left;">
-          <strong>Context Hint:</strong> ${card.hint}
-        </div>
-
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <button class="btn btn-outline" id="btn-show-hint" data-action="reveal-taboo-hint">Show Context Hint</button>
-          <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
-            <button class="btn btn-secondary" data-action="switch-view" data-view="dashboard">Exit Game</button>
-            <button class="btn-pedagogy-primary" data-action="next-taboo-card">Next Card &rarr;</button>
-          </div>
-        </div>
-      </div>
-    `;
-  };
-
-  window.showRandomTabooCard = function () {
-    const randomIndex = Math.floor(Math.random() * tabooCards.length);
-    window.showTabooCard(randomIndex);
-  };
-
-  window.showRandomTabooCard();
-}
-
 export async function renderLessonsView() {
   const container = document.getElementById('main-content');
   const unitId = state.selectedUnitId || 'gcse_usa_1954_1975';
@@ -2242,67 +1985,6 @@ export async function renderLessonsView() {
       </div>
     </div>
   `;
-}
-
-export function renderIndividualsView() {
-  const contentArea = document.getElementById('main-content');
-  if (!contentArea) return;
-  contentArea.innerHTML = '';
-  contentArea.style.paddingTop = '1rem';
-
-  const keyIndividualsData =
-    (state.activeUnitData && state.activeUnitData.key_individuals) ||
-    (state.activeUnitData && state.activeUnitData.biographies);
-  if (!keyIndividualsData || keyIndividualsData.length === 0) {
-    contentArea.innerHTML =
-      '<p style="padding: 2rem; color: var(--text-main);">No historical individuals found for this unit.</p>';
-    return;
-  }
-
-  const historicalData = keyIndividualsData.filter(
-    (p) => !p.group || p.group === 'Historical Figures' || p.group !== 'Historians',
-  );
-
-  if (historicalData.length > 0) {
-    initKeyIndividualsTask(
-      contentArea,
-      historicalData,
-      'Historical Individuals',
-      'Profiles of the major historical figures who shaped these events.',
-    );
-  }
-
-  const historiansData = keyIndividualsData.filter((p) => p.group === 'Historians');
-  if (historiansData && historiansData.length > 0) {
-    initKeyIndividualsTask(
-      contentArea,
-      historiansData,
-      'Historians',
-      'Academic perspectives and historical interpretations.',
-    );
-  }
-
-  if (window.scrollToTop) window.scrollToTop(true);
-  else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-export function renderReadingView() {
-  const contentArea = document.getElementById('main-content');
-  if (!contentArea) return;
-  contentArea.innerHTML = '';
-  contentArea.style.paddingTop = '1rem';
-
-  const readingData = state.activeUnitData.guided_reading;
-  if (!readingData || readingData.length === 0) {
-    contentArea.innerHTML =
-      '<p style="padding: 2rem; color: var(--text-main);">No guided reading available for this unit.</p>';
-    return;
-  }
-
-  initGuidedReadingTask(contentArea, readingData, state);
-
-  if (window.scrollToTop) window.scrollToTop(true);
-  else contentArea.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 export async function renderBookletView() {

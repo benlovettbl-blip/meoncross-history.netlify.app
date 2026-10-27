@@ -76,6 +76,18 @@ export function sanitizeLessonData(lesson) {
       if (!block.text && block.content) {
         block.text = block.content;
       }
+      if (!block.content && block.text) {
+        block.content = block.text;
+      }
+      if (!block.theme_heading && (block.theme || block.title)) {
+        block.theme_heading = block.theme || block.title;
+      }
+      if (!block.theme && block.theme_heading) {
+        block.theme = block.theme_heading;
+      }
+      if (!block.title && block.theme_heading) {
+        block.title = block.theme_heading;
+      }
       if (block.source) {
         if (block.source.question) block.source.question = cleanQuestionText(block.source.question);
         if (block.source.hinge_question)

@@ -16,17 +16,25 @@ async function runAudit() {
   const unitsDir = path.resolve(__dirname, '../units');
 
   const defaultUnits = [
+    'australia',
     'cme_new',
-    'early_modern_world',
-    'great_war',
-    'medieval_england',
-    'industrialisation_and_empire',
-    'edexcel_medicine',
-    'weimar_germany',
-    'eee',
     'cold_war',
+    'edexcel_medicine',
+    'eee',
+    'first_british_empire',
+    'great_war',
+    'great_war_part2',
+    'industrialisation_and_empire',
+    'ks2_ww2',
+    'medieval_england',
+    'monarchy_religion_power',
+    'post_war_britain',
+    'second_british_empire',
+    'the_shoah',
+    'trip_ypres',
     'usa',
     'water_and_sanitation',
+    'weimar_nazi_germany',
   ];
 
   const unitsToAudit = targetUnitArg
@@ -73,22 +81,29 @@ async function runAudit() {
             totalCitationsChecked++;
             const citedLetter = m[1].toUpperCase();
 
-            if (!block.source) {
-              console.error(
-                `  ❌ [${unitId} | ${lessonId} | Act ${actNum}] Text cites Source ${citedLetter} via archival-meta-tag, but NO block.source is attached to this block!`,
-              );
-              unitErrors++;
-              totalErrors++;
-              return;
+            // Check block.source (legacy) or lesson.sources (3-layer gold standard)
+            let matchingSource = null;
+            if (block.source) {
+              const blockLetter =
+                block.source.letter?.toUpperCase() ||
+                (block.source.title || '').match(/Source\s+([A-Z])\b/i)?.[1]?.toUpperCase();
+              if (blockLetter === citedLetter) {
+                matchingSource = block.source;
+              }
             }
 
-            const sourceLetter =
-              block.source.letter?.toUpperCase() ||
-              (block.source.title || '').match(/Source\s+([A-Z])\b/i)?.[1]?.toUpperCase();
+            if (!matchingSource && Array.isArray(lesson.sources)) {
+              matchingSource = lesson.sources.find((s) => {
+                const sLetter =
+                  s.letter?.toUpperCase() ||
+                  (s.title || '').match(/Source\s+([A-Z])\b/i)?.[1]?.toUpperCase();
+                return sLetter === citedLetter;
+              });
+            }
 
-            if (sourceLetter !== citedLetter) {
+            if (!matchingSource) {
               console.error(
-                `  ❌ [${unitId} | ${lessonId} | Act ${actNum}] Text cites Source ${citedLetter}, but block.source is "${block.source.title || block.source.letter || 'UNKNOWN'}" (detected letter: ${sourceLetter || 'none'})!`,
+                `  ❌ [${unitId} | ${lessonId} | Act ${actNum}] Text cites Source ${citedLetter} via archival-meta-tag, but NO matching source found in block.source or lesson.sources!`,
               );
               unitErrors++;
               totalErrors++;

@@ -105,13 +105,16 @@ function formatMarkdown(text) {
 
 // Load canonical unit data from units/weimar_nazi_germany/data.js
 function loadWeimarData() {
+  const jsonPath = path.join(ROOT_DIR, 'data', 'weimar_nazi_germany.json');
+  if (fs.existsSync(jsonPath)) {
+    return JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+  }
   const dataPath = path.join(ROOT_DIR, 'units', 'weimar_nazi_germany', 'data.js');
   let raw = fs.readFileSync(dataPath, 'utf8');
   raw =
     raw
-      .replace(/export\s+const\s+unitData\s*=/g, 'const unitData =')
-      .replace(/export\s+default\s+unitData;?/g, '')
-      .replace(/export\s*\{[^}]*\};?/g, '') + '; unitData;';
+      .replace(/export\s+default\s+[^;]+;?/g, '')
+      .replace(/export\s*\{[^}]*\};?/g, '') + '; (typeof weimar_data !== "undefined" ? weimar_data : unitData);';
   return vm.runInNewContext(raw);
 }
 

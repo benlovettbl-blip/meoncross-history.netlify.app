@@ -28,7 +28,37 @@ async function buildDatabase() {
       try {
         const fileUrl = 'file:///' + dataPath.replace(/\\/g, '/');
         const module = await import(fileUrl);
-        const unitData = module.default || module.unitData || module[unitId];
+        let unitData =
+          module.default ||
+          module.unitData ||
+          module[unitId] ||
+          module.data ||
+          module[`${unitId}_data`];
+        if (!unitData) {
+          try {
+            const raw = fs.readFileSync(dataPath, 'utf8');
+            const vm = require('vm');
+            const sandbox = { module: { exports: {} }, exports: {} };
+            vm.createContext(sandbox);
+            vm.runInContext(raw.replace(/export\s+default[\s\S]*$/, ''), sandbox);
+            const exp = sandbox.module.exports;
+            unitData =
+              exp && (exp.lessons || exp.subtopics || exp.data)
+                ? exp.data || exp
+                : exp[unitId] ||
+                  exp[`${unitId}_data`] ||
+                  sandbox[unitId] ||
+                  sandbox[`${unitId}_data`];
+            if (!unitData) {
+              const varMatch = raw.match(/const\s+([a-zA-Z0-9_]+)\s*=\s*\{/);
+              if (varMatch && sandbox[varMatch[1]]) {
+                unitData = sandbox[varMatch[1]];
+              }
+            }
+          } catch (e) {
+            // ignore
+          }
+        }
         if (unitData) {
           unitData.edition = unitData.edition || '2026.1';
           const issues = auditEntityIntegrity(unitId, unitData);
@@ -53,7 +83,9 @@ async function buildDatabase() {
     }
   }
 
+  const rootDbPath = path.join(__dirname, '..', 'database.json');
   fs.writeFileSync(publicDbPath, JSON.stringify(db, null, 2), 'utf8');
+  fs.writeFileSync(rootDbPath, JSON.stringify(db, null, 2), 'utf8');
   console.log(`🎉 Successfully built database.json with ${Object.keys(db).length} units.`);
 }
 

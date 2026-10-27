@@ -1,11 +1,12 @@
-const unitData = {
+const first_british_empire_data = {
+  "homepage_background": "/images/first_british_empire/battle_of_plassey_1757.jpg",
+  "cover_image": "/images/shah_alam_clive.jpg",
   "id": "first_british_empire",
   "title": "The First British Empire (1600–1783)",
   "short_title": "The First British Empire",
   "period": "1600–1783",
   "enquiry": "How did trade, slavery, and rebellion shape the First British Empire?",
   "description": "From the founding of the East India Company and the horrors of the Transatlantic slave trade to Jamaican Maroon resistance and the American Revolution, explore how commercial greed, human exploitation, and colonial rebellion built and fractured the First British Empire.",
-  "cover_image": "/images/shah_alam_clive.jpg",
   "cover_image_position": "center 35%",
   "is_ks3": true,
   "year_group": "Year 8",
@@ -475,100 +476,474 @@ const unitData = {
         {
           "act": 1,
           "title": "The London Charter (1600–1615)",
-          "text": "<span class=\"para-ref\">[1.1]</span> On New Year’s Eve 1600, Queen Elizabeth I granted a royal <strong>charter</strong> to the Governor and Company of Merchants of London Trading into the East Indies. Seeking lucrative Asian spices, silk, and cotton textiles to rival Portuguese and Dutch traders, 218 wealthy London merchants pooled their capital. The Crown granted the East India Company an exclusive trade <strong>monopoly</strong> east of the Cape of Good Hope. Early voyages faced catastrophic shipwreck, scurvy, and Portuguese cannon fire, but the profits were astronomical: a single cargo of pepper or cloves could return over 300% on a merchant’s investment."
+          "text": "<span class=\"para-ref\">[1.1]</span> On New Year’s Eve 1600, Queen Elizabeth I granted a royal <strong>charter</strong> to the Governor and Company of Merchants of London Trading into the East Indies. Seeking lucrative Asian spices, silk, and cotton textiles to rival Portuguese and Dutch traders, 218 wealthy London merchants pooled their capital. The Crown granted the East India Company an exclusive trade <strong>monopoly</strong> east of the Cape of Good Hope. Early voyages faced catastrophic shipwreck, scurvy, and Portuguese cannon fire, but the profits were astronomical: a single cargo of pepper or cloves could return over 300% on a merchant’s investment.",
+          "image": "/images/east_india_house.jpg",
+          "image_alt": "Contemporary oil painting of the East India House on Leadenhall Street, London",
+          "caption": "The East India House on Leadenhall Street, London, administrative headquarters of the East India Company from where the Court of Directors governed Asian trade and imperial armies (Yale Center for British Art, B1977.14.17469).",
+          "source": {
+            "id": "fbe_l1_src_a",
+            "letter": "A",
+            "type": "visual",
+            "src": "/images/robert_clive.jpg",
+            "image": "/images/robert_clive.jpg",
+            "title": "Source A (Military Portrait): Major-General Robert Clive, 1st Baron Clive of Plassey (1757)",
+            "caption": "Major-General Robert Clive, who spearheaded the East India Company's military expansion across Mughal Bengal, culminating in the 1757 Battle of Plassey.",
+            "citation": "National Portrait Gallery, London (NPG 39). Oil on canvas by Nathaniel Dance, c. 1773.",
+            "provenance": "Commissioned to commemorate Clive's decisive role in establishing British territorial dominion in India.",
+            "context": "Clive arrived in Madras as an impoverished nineteen-year-old clerk. Exploiting the fragmentation of the Mughal Empire, he organized sepoy regiments and formed alliances with disaffected Indian bankers and generals. **Hinge Question:** Should a private trading corporation ever be permitted to recruit a private army and govern an empire?",
+            "question": "Why did Robert Clive believe the East India Company had to seize military and territorial control rather than remain peaceful traders?",
+            "hinge_question": "Should a private trading corporation ever be permitted to recruit a private army and govern an empire?",
+            "disciplinary_focus": "MERCANTILE IMPERIALISM",
+            "utility_enquiry": {
+              "question": "Why did Robert Clive believe the East India Company had to seize military and territorial control rather than remain peaceful traders?",
+              "model_answer": "Clive argued that Mughal imperial authority was collapsing into regional anarchy, meaning that without military garrisons and territorial revenue, British merchants would be driven out by French rivals and regional warlords.",
+              "content_inferences": "Highlights the transformation of a corporate trading enterprise into an armed colonial conqueror driven by geopolitical competition.",
+              "provenance_evaluation": "Official portrait celebrating Clive as an imperial hero; reflects how eighteenth-century British elites lionized corporate military adventurers.",
+              "context_limitations": "Conceals the massive corruption, private looting, and human devastation that accompanied Company rule in Bengal.",
+              "bullet_points": [
+                {
+                  "label": "Collapse of Mughal Stability",
+                  "text": "Clive exploited the breakdown of centralized Mughal authority to argue that armed force was necessary to protect British commercial settlements."
+                },
+                {
+                  "label": "Territorial Revenue Model",
+                  "text": "Military dominance allowed the Company to collect Indian tax revenues to fund its own private army and purchase trade commodities without exporting British bullion."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Nathaniel Dance, prominent British royal and high-society portrait painter.",
+                "Audience: British Parliament, East India Company directors, and the London political elite.",
+                "Motive: To project Clive's martial authority and legitimize corporate expansion in the East Indies."
+              ]
+            },
+            "question_badge": "MERCANTILE IMPERIALISM",
+            "model_answer": "Clive argued that Mughal imperial authority was collapsing into regional anarchy, meaning that without military garrisons and territorial revenue, British merchants would be driven out by French rivals and regional warlords.",
+            "provenance_clues": [
+              "Author: Nathaniel Dance, prominent British royal and high-society portrait painter.",
+              "Audience: British Parliament, East India Company directors, and the London political elite.",
+              "Motive: To project Clive's martial authority and legitimize corporate expansion in the East Indies."
+            ]
+          }
         },
         {
           "act": 2,
           "title": "Coastal Fortresses & Mughal Factories (1615–1700)",
           "text": "<span class=\"para-ref\">[1.2]</span> When English merchants arrived in India, they encountered the vast, glittering Mughal Empire, whose economy accounted for nearly a quarter of global manufacturing. In 1615, King James I dispatched Sir Thomas Roe to the court of Emperor Jahangir. Roe bowed low and secured permission to construct permanent trading posts called <strong>factories</strong> along the coastline at Surat, Madras, and Calcutta. Behind fortified walls, English company factors traded bullion for fine woven calicoes and raw silk, while training regiments of native Indian soldiers called <strong>sepoys</strong> to defend their warehouses from rival French garrisons.",
           "source": {
-            "letter": "A",
-            "title": "Source A: Nathaniel Dance, Portrait of Major-General Robert Clive (1773)",
-            "image": "/images/robert_clive.jpg",
-            "caption": "Major-General Robert Clive, 1st Baron Clive of Plassey, painted by Nathaniel Dance in royal red and gold military uniform, with the smoke of battle and Indian cavalry in the background.",
-            "source_context": "Robert Clive rose from an unruly teenage clerk on a £5 annual salary to commander-in-chief of the East India Company’s armed forces, amassing a personal fortune of £300,000 through military conquest and political bribery.",
-            "how_useful_question": "How useful is Source A for an enquiry into how British imperial commanders like Robert Clive presented their military leadership in India?",
+            "id": "fbe_l1_src_b",
+            "letter": "B",
+            "type": "visual",
+            "src": "/images/shah_alam_clive.jpg",
+            "image": "/images/shah_alam_clive.jpg",
+            "title": "Source B (Imperial Grant): Shah 'Alam II Conveying the Diwani of Bengal to Lord Clive (August 1765)",
+            "caption": "Mughal Emperor Shah 'Alam II hands the royal firman granting the Diwani (tax revenues) of Bengal, Bihar, and Orissa to Robert Clive inside his imperial tent.",
+            "citation": "British Library, London (Foster 430). Oil painting by Benjamin West, c. 1795.",
+            "provenance": "Painted in London by American-born Royal Academician Benjamin West, based on Company records and sketches.",
+            "context": "Following the Battle of Buxar (1764), Mughal Emperor Shah 'Alam II was coerced into signing the Treaty of Allahabad. This transferred the right to collect land revenues from 20 million people directly to the East India Company. **Hinge Question:** Did the Treaty of Allahabad represent genuine diplomatic cooperation or coerced imperial plunder?",
+            "question": "How did the 1765 Treaty of Allahabad transform the East India Company from a commercial trading venture into the sovereign government of Bengal?",
+            "hinge_question": "Did the Treaty of Allahabad represent genuine diplomatic cooperation or coerced imperial plunder?",
+            "disciplinary_focus": "TERRITORIAL SOVEREIGNTY",
+            "utility_enquiry": {
+              "question": "How did the 1765 Treaty of Allahabad transform the East India Company from a commercial trading venture into the sovereign government of Bengal?",
+              "model_answer": "By granting the Diwani, the Mughal Emperor surrendered the legal right to collect taxes from 20 million people to the Company, allowing British merchants to finance their private armies using Indian wealth.",
+              "content_inferences": "Demonstrates how British commercial agents co-opted existing imperial legal structures to gain sovereign taxation rights over vast populations.",
+              "provenance_evaluation": "Monumental historical painting depicting the transaction as an orderly, consensual transfer of legal rights rather than military subjugation.",
+              "context_limitations": "Idealizes the ceremony; in reality, the Emperor was an impoverished puppet captive operating under direct British military duress.",
+              "bullet_points": [
+                {
+                  "label": "Fiscal Control over Bengal",
+                  "text": "The grant gave the Company immediate control over £2 to £3 million annually in land revenue, vastly exceeding the domestic revenues of many European states."
+                },
+                {
+                  "label": "Self-Financing Colonisation",
+                  "text": "Instead of shipping British silver to buy Indian silk, spices, and tea, the Company used taxes extracted from Bengali peasants to purchase those very goods."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Benjamin West, official historical painter to King George III and President of the Royal Academy.",
+                "Audience: British monarchs, aristocrats, and the Georgian public visiting London exhibitions.",
+                "Motive: To depict imperial conquest as a dignified, lawful diplomatic ceremony sanctified by Mughal consent."
+              ]
+            },
+            "question_badge": "TERRITORIAL SOVEREIGNTY",
+            "model_answer": "By granting the Diwani, the Mughal Emperor surrendered the legal right to collect taxes from 20 million people to the Company, allowing British merchants to finance their private armies using Indian wealth.",
             "provenance_clues": [
-              "Author: Nathaniel Dance, a fashionable London portraitist commissioned by wealthy British elites.",
-              "Audience: British parliamentarians, high society, and the London art establishment.",
-              "Motive: To project Clive as a heroic, aristocratic military commander defending British imperial interests, overshadowing accusations of corruption and extortion in India."
-            ],
-            "hinge_question": "Does Dance depict Clive as a legitimate British military hero or as an agent of corporate plunder?",
-            "citation": "Nathaniel Dance • National Portrait Gallery, London.",
-            "discussion_ideas": [
-              "A Victorious Patriotic Hero of Empire: Nathaniel Dance depicts Clive standing resolute in scarlet military uniform against a dramatic backdrop of swirling battlefield smoke, with an Indian obelisk and palm trees behind him; the portrait visually frames Clive as a brilliant imperial commander who secured British supremacy at the Battle of Plassey (1757) and expanded British trade.",
-              "A Corrupt Corporate 'Nabob' Enriched by Plunder: In 1773, when Dance painted this portrait, Clive was under hostile parliamentary investigation for gross corruption, extortion, and amassing a personal fortune of over £234,000 while serving as an agent of the East India Company; critics in Parliament condemned him for corporate greed that provoked the catastrophic Great Bengal Famine of 1770, which starved ten million Indian peasants."
+              "Author: Benjamin West, official historical painter to King George III and President of the Royal Academy.",
+              "Audience: British monarchs, aristocrats, and the Georgian public visiting London exhibitions.",
+              "Motive: To depict imperial conquest as a dignified, lawful diplomatic ceremony sanctified by Mughal consent."
             ]
           }
         },
         {
           "act": 3,
           "title": "The Storm at Calcutta (1756)",
-          "text": "<span class=\"para-ref\">[1.3]</span> By the mid-18th century, the Mughal Empire was fracturing into warring regional kingdoms. Bengal was the wealthiest province in Asia, producing exquisite textiles and bountiful rice harvests. When the youthful, fiercely patriotic Nawab Siraj ud-Daulah inherited Bengal in 1756, he ordered the British to dismantle unauthorised fortifications at Fort William in Calcutta. When company officials insolently refused, Siraj marched 50,000 troops, stormed Calcutta, and captured the garrison. British propagandists seized upon the disputed \"Black Hole of Calcutta\"—claiming dozens of English captives suffocated in a cramped military cell—to whip up imperial vengeance in London."
+          "text": "<span class=\"para-ref\">[1.3]</span> By the mid-18th century, the Mughal Empire was fracturing into warring regional kingdoms. Bengal was the wealthiest province in Asia, producing exquisite textiles and bountiful rice harvests. When the youthful, fiercely patriotic Nawab Siraj ud-Daulah inherited Bengal in 1756, he ordered the British to dismantle unauthorised fortifications at Fort William in Calcutta. When company officials insolently refused, Siraj marched 50,000 troops, stormed Calcutta, and captured the garrison. British propagandists seized upon the disputed \"Black Hole of Calcutta\"—claiming dozens of English captives suffocated in a cramped military cell—to whip up imperial vengeance in London.",
+          "image": "/images/siraj_ud_daulah.jpg",
+          "image_alt": "Contemporary 18th-century miniature portrait of Nawab Siraj ud-Daulah of Bengal",
+          "caption": "Nawab Siraj ud-Daulah (1733–1757), the last independent Nawab of Bengal, whose capture of Calcutta and resistance to Company fortification provoked the decisive clash at Plassey (Victoria Memorial, Kolkata / GNM).",
+          "source": {
+            "id": "fbe_l1_src_c",
+            "letter": "C",
+            "type": "visual",
+            "src": "/images/first_british_empire/eic_royal_charter_arms.svg",
+            "image": "/images/first_british_empire/eic_royal_charter_arms.svg",
+            "title": "Source C (Constitutional Charter & Official Arms): The Royal Charter Arms of the East India Company (1600)",
+            "caption": "Official heraldic achievement and coat of arms granted under Queen Elizabeth I's Royal Charter to the Governor and Company of Merchants of London Trading into the East Indies (31 December 1600).",
+            "citation": "College of Arms, London / British Library Asian & African Collections (IOR/A/1).",
+            "provenance": "Granted under royal letters patent on 31 December 1600, establishing the legal monopoly of the Company.",
+            "context": "Elizabeth I granted 218 London merchants a 15-year exclusive trade monopoly east of the Cape of Good Hope. The charter granted extraordinary sovereign powers to pass laws, build forts, and maintain armed vessels. **Hinge Question:** Why did European monarchs rely on chartered joint-stock companies to expand overseas rather than running imperial expeditions directly?",
+            "question": "What exclusive commercial and legal powers did Queen Elizabeth I grant to the Company in her 1600 Royal Charter?",
+            "hinge_question": "Why did European monarchs rely on chartered joint-stock companies to expand overseas rather than running imperial expeditions directly?",
+            "disciplinary_focus": "CHARTER MONOPOLY",
+            "utility_enquiry": {
+              "question": "What exclusive commercial and legal powers did Queen Elizabeth I grant to the Company in her 1600 Royal Charter?",
+              "model_answer": "The Charter granted the Company an exclusive 15-year commercial monopoly over all English trade east of the Cape of Good Hope, along with the extraordinary legal authority to govern its servants, erect forts, and wage defensive war.",
+              "content_inferences": "Proves that from its founding, the Company was endowed with state-like sovereign powers rather than functioning as a mere commercial retailer.",
+              "provenance_evaluation": "Official royal heraldic document codifying royal assent and monopolistic commercial privileges under English law.",
+              "context_limitations": "Reflects metropolitan legal theory; on the ground in Asia, the Company had to negotiate humbly with powerful Mughal governors for trading posts.",
+              "bullet_points": [
+                {
+                  "label": "Total Commercial Monopoly",
+                  "text": "No English subject could legally trade in Asia without Company permission, under penalty of ship confiscation and imprisonment."
+                },
+                {
+                  "label": "Sovereign State Powers",
+                  "text": "The Charter authorized the Company to assemble armed forces, mint coinage in overseas factories, and administer judicial punishment."
+                }
+              ],
+              "provenance_clues": [
+                "Author: The English Crown (Queen Elizabeth I and the Privy Council).",
+                "Audience: The 218 founding merchant venturers of London and foreign maritime rivals.",
+                "Motive: To challenge Dutch and Portuguese spice trade dominance without expending direct Crown treasury funds."
+              ]
+            },
+            "question_badge": "CHARTER MONOPOLY",
+            "model_answer": "The Charter granted the Company an exclusive 15-year commercial monopoly over all English trade east of the Cape of Good Hope, along with the extraordinary legal authority to govern its servants, erect forts, and wage defensive war.",
+            "provenance_clues": [
+              "Author: The English Crown (Queen Elizabeth I and the Privy Council).",
+              "Audience: The 218 founding merchant venturers of London and foreign maritime rivals.",
+              "Motive: To challenge Dutch and Portuguese spice trade dominance without expending direct Crown treasury funds."
+            ]
+          }
         },
         {
           "act": 4,
           "title": "Treachery at Plassey (June 1757)",
-          "text": "<span class=\"para-ref\">[1.4]</span> The Company dispatched Robert Clive from Madras with 3,000 troops (mostly Indian sepoys) to retake Bengal. Knowing he was vastly outnumbered by Siraj’s 50,000-strong army, Clive resorted to conspiracy. He secretly met Mir Jafar, Siraj’s disgruntled commander-in-chief, bribing him with the Bengali throne in exchange for battlefield betrayal. On 23 June 1757, the armies collided in a mango grove at Plassey. When a sudden monsoon torrential downpour soaked Siraj’s exposed gunpowder, Clive kept his own ammunition dry under canvas tarpaulins. Mir Jafar held back his regiments, Siraj’s lines collapsed, and Clive seized Bengal with fewer than 30 British casualties."
+          "text": "<span class=\"para-ref\">[1.4]</span> The Company dispatched Robert Clive from Madras with 3,000 troops (mostly Indian sepoys) to retake Bengal. Knowing he was vastly outnumbered by Siraj’s 50,000-strong army, Clive resorted to conspiracy. He secretly met Mir Jafar, Siraj’s disgruntled commander-in-chief, bribing him with the Bengali throne in exchange for battlefield betrayal. On 23 June 1757, the armies collided in a mango grove at Plassey. When a sudden monsoon torrential downpour soaked Siraj’s exposed gunpowder, Clive kept his own ammunition dry under canvas tarpaulins. Mir Jafar held back his regiments, Siraj’s lines collapsed, and Clive seized Bengal with fewer than 30 British casualties.",
+          "source": {
+            "id": "fbe_l1_src_d",
+            "letter": "D",
+            "type": "visual",
+            "src": "/images/first_british_empire/battle_of_plassey_1757.jpg",
+            "image": "/images/first_british_empire/battle_of_plassey_1757.jpg",
+            "title": "Source D (Cartographic Military Plan): Tactical Survey Plan of the Battle of Plassey (23 June 1757)",
+            "caption": "Contemporary tactical field survey map of the Battle of Plassey, showing the positions of Clive's British and sepoy regiments along the Bhagirathi River facing Nawab Siraj ud-Daulah's massive army and Mir Jafar's motionless cavalry.",
+            "citation": "British Library, Cartographic Collections / James Rennell Survey Archive (Maps K.Top.115.42).",
+            "provenance": "Surveyed and engraved by British military cartographers following Clive's victory at Palashi, Bengal.",
+            "context": "At Plassey, Clive fielded 3,000 troops against Siraj ud-Daulah's 50,000. Before the engagement, Clive negotiated a secret conspiracy with Mir Jafar, promising him the throne in return for withholding his 15,000 cavalry. **Hinge Question:** If Mir Jafar had remained loyal to Siraj ud-Daulah at Plassey, would British rule in India have ever begun?",
+            "question": "How does this tactical map reveal that Clive's victory at Plassey was won through political conspiracy rather than battlefield superiority?",
+            "hinge_question": "If Mir Jafar had remained loyal to Siraj ud-Daulah at Plassey, would British rule in India have ever begun?",
+            "disciplinary_focus": "MILITARY CONSPIRACY",
+            "utility_enquiry": {
+              "question": "How does this tactical map reveal that Clive's victory at Plassey was won through political conspiracy rather than battlefield superiority?",
+              "model_answer": "The map shows Siraj ud-Daulah's massive army encircling Clive's small force, but Mir Jafar's large cavalry division on the flank refused to fight, having been secretly bribed by Clive to betray the Nawab.",
+              "content_inferences": "Reveals that British military dominance was built upon strategic exploitation of internal political rivalries within the Bengali elite.",
+              "provenance_evaluation": "Official British military survey documenting terrain, river bends, and unit alignments for tactical analysis and parliamentary praise.",
+              "context_limitations": "Depicts the engagement as a geometric tactical clash, obscuring the monsoon rain that soaked the Nawab's gunpowder while British tarpaulins kept theirs dry.",
+              "bullet_points": [
+                {
+                  "label": "Overwhelming Numerical Disparity",
+                  "text": "The map illustrates Clive's tiny regiment entrenched inside a mango grove facing a formidable host of 50,000 soldiers and 53 French-crewed artillery pieces."
+                },
+                {
+                  "label": "Paralyzed Treacherous Flank",
+                  "text": "Mir Jafar's huge corps is positioned idly on the Nawab's left flank, fulfilling his clandestine agreement with Clive to allow the British to rout the loyal defenders."
+                }
+              ],
+              "provenance_clues": [
+                "Author: British military surveyors / Major James Rennell (Surveyor General of Bengal).",
+                "Audience: East India Company military planners, British commanders, and historians.",
+                "Motive: To record the operational maneuvers that eliminated French influence in Bengal and established British military supremacy."
+              ]
+            },
+            "question_badge": "MILITARY CONSPIRACY",
+            "model_answer": "The map shows Siraj ud-Daulah's massive army encircling Clive's small force, but Mir Jafar's large cavalry division on the flank refused to fight, having been secretly bribed by Clive to betray the Nawab.",
+            "provenance_clues": [
+              "Author: British military surveyors / Major James Rennell (Surveyor General of Bengal).",
+              "Audience: East India Company military planners, British commanders, and historians.",
+              "Motive: To record the operational maneuvers that eliminated French influence in Bengal and established British military supremacy."
+            ]
+          }
         },
         {
           "act": 5,
           "title": "The Treaty of Allahabad & Corporate Plunder (1765–1770)",
           "text": "<span class=\"para-ref\">[1.5]</span> Following further military triumphs, Clive cornered the weakened Mughal Emperor Shah Alam II. In August 1765, under a silk canopy at Allahabad, the Emperor signed away the <strong>Diwani</strong>—the sovereign constitutional right to collect all land taxes across Bengal, Bihar, and Orissa. Overnight, a private commercial corporation became the absolute government of 20 million people. The Company pocketed £3 million annually in tax revenue, using Bengal’s own taxes to purchase Indian goods for export to Europe. When drought struck in 1769–1770, the Company maintained ruthless tax enforcement, resulting in the Great Bengal Famine, which killed an estimated 10 million people.",
           "source": {
-            "letter": "B",
-            "title": "Source B: Benjamin West, Shah Alam II Conveying the Grant of the Diwani to Lord Clive (1795)",
-            "image": "/images/shah_alam_clive.jpg",
-            "caption": "Benjamin West’s historic oil painting depicting Mughal Emperor Shah Alam II on his elevated imperial throne, formally handing the legal scroll of the Diwani to Robert Clive and company officers in August 1765.",
-            "source_context": "The 1765 Treaty of Allahabad transformed the East India Company from a maritime trading enterprise into a sovereign territorial power with the legal right to collect taxes from 20 million Indian subjects.",
-            "how_useful_question": "How useful is Source B for an enquiry into how the British East India Company justified its takeover of sovereign power in Bengal?",
+            "id": "fbe_l1_src_e",
+            "letter": "E",
+            "type": "visual",
+            "src": "/images/first_british_empire/bengal_presidency_silver_rupee.jpg",
+            "image": "/images/first_british_empire/bengal_presidency_silver_rupee.jpg",
+            "title": "Source E (Material Culture & Currency): Silver Rupee of the Bengal Presidency Struck in the Name of Shah 'Alam II (1770s)",
+            "caption": "Authentic silver rupee minted by the East India Company at the Murshidabad mint. The Persian inscription honors Mughal Emperor Shah 'Alam II, concealing Company rule beneath traditional imperial iconography.",
+            "citation": "British Museum, Department of Coins and Medals (Museum number: 1888,1208.761). Silver, 28mm.",
+            "provenance": "Minted in Bengal under the administration of the East India Company following the 1765 grant of the Diwani.",
+            "context": "Even after seizing total political and economic control of Bengal, the Company continued minting silver coins displaying the name and regnal year of Mughal Emperor Shah 'Alam II. **Hinge Question:** Why is maintaining familiar symbols and currency often more effective in securing imperial conquest than imposing alien foreign institutions?",
+            "question": "Why did the East India Company continue minting silver coins displaying the name and titles of the Mughal Emperor even after taking total control of Bengal?",
+            "hinge_question": "Why is maintaining familiar symbols and currency often more effective in securing imperial conquest than imposing alien foreign institutions?",
+            "disciplinary_focus": "CURRENCY & HEGEMONY",
+            "utility_enquiry": {
+              "question": "Why did the East India Company continue minting silver coins displaying the name and titles of the Mughal Emperor even after taking total control of Bengal?",
+              "model_answer": "The Company used the Emperor's name and Islamic calligraphy as a legitimate political disguise, ensuring Indian merchants and peasants would accept the coins for taxes without realizing British officials were draining the treasury.",
+              "content_inferences": "Illustrates the Company's policy of 'indirect rule' and dual government, preserving established indigenous forms to extract revenue smoothly.",
+              "provenance_evaluation": "Physical numismatic evidence proving the economic integration of British corporate management into traditional Mughal fiscal networks.",
+              "context_limitations": "The pristine condition of museum coinage masks the devastating 1770 Bengal famine, where rigid Company taxation caused the starvation of millions.",
+              "bullet_points": [
+                {
+                  "label": "Preserving Monetary Credibility",
+                  "text": "Peasants, moneylenders, and traders trusted the established silver weight and Persian script of the Mughal rupee, preventing market panic."
+                },
+                {
+                  "label": "Imperial Facade",
+                  "text": "Retaining the Mughal Emperor's name allowed British merchants to exercise absolute tyrannical power without provoking foreign or domestic rebellion."
+                }
+              ],
+              "provenance_clues": [
+                "Author: East India Company mint masters operating the provincial Murshidabad mint.",
+                "Audience: Indian merchants, bankers, revenue collectors, and provincial populations.",
+                "Motive: To maintain economic liquidity, extract agricultural taxation, and prevent civil resistance against colonial currency."
+              ]
+            },
+            "question_badge": "CURRENCY & HEGEMONY",
+            "model_answer": "The Company used the Emperor's name and Islamic calligraphy as a legitimate political disguise, ensuring Indian merchants and peasants would accept the coins for taxes without realizing British officials were draining the treasury.",
             "provenance_clues": [
-              "Author: Benjamin West, American-born court painter to King George III, working thirty years after the event.",
-              "Audience: The British royal court, politicians, and the public viewing the painting at the Royal Academy.",
-              "Motive: To portray the British acquisition of sovereign power as an orderly, respectful, and legally legitimate diplomatic ceremony rather than a forced military shakedown."
-            ],
-            "hinge_question": "Why did West depict this scene as a peaceful legal ceremony rather than a forced military shakedown?",
-            "citation": "Benjamin West • British Library / Foreign and Commonwealth Office Collection, London.",
-            "discussion_ideas": [
-              "Benjamin West painted this scene thirty years after the event to create an official visual myth of imperial legitimacy. In reality, Mughal Emperor Shah Alam II was a defeated, powerless captive whose forces had been routed at Buxar; he was compelled at gunpoint in an ordinary military tent to surrender the Diwani (tax collection rights) of Bengal, Bihar, and Orissa. West replaces this forced military extortion with a neoclassical ceremonial tableau: Shah Alam sits serenely upon an elevated imperial pavilion, bestowing the treaty scroll upon a bowed, deferential Lord Clive as if granting a voluntary feudal honor. This whitewashed depiction was designed to reassure British audiences that the East India Company’s rule was not an aggressive corporate land-grab, but an orderly, legal, and civilized succession of power."
+              "Author: East India Company mint masters operating the provincial Murshidabad mint.",
+              "Audience: Indian merchants, bankers, revenue collectors, and provincial populations.",
+              "Motive: To maintain economic liquidity, extract agricultural taxation, and prevent civil resistance against colonial currency."
             ]
           }
         }
       ],
       "sources": [
         {
-          "title": "Source A: Nathaniel Dance, Portrait of Major-General Robert Clive (1773)",
+          "id": "fbe_l1_src_a",
+          "letter": "A",
+          "type": "visual",
+          "src": "/images/robert_clive.jpg",
           "image": "/images/robert_clive.jpg",
-          "caption": "Major-General Robert Clive, 1st Baron Clive of Plassey, painted by Nathaniel Dance in military uniform.",
-          "source_context": "Robert Clive rose from an unruly clerk to commander-in-chief of the East India Company’s army.",
-          "how_useful_question": "How useful is Source A for an enquiry into how British imperial commanders presented their military leadership in India?",
+          "title": "Source A (Military Portrait): Major-General Robert Clive, 1st Baron Clive of Plassey (1757)",
+          "caption": "Major-General Robert Clive, who spearheaded the East India Company's military expansion across Mughal Bengal, culminating in the 1757 Battle of Plassey.",
+          "citation": "National Portrait Gallery, London (NPG 39). Oil on canvas by Nathaniel Dance, c. 1773.",
+          "provenance": "Commissioned to commemorate Clive's decisive role in establishing British territorial dominion in India.",
+          "context": "Clive arrived in Madras as an impoverished nineteen-year-old clerk. Exploiting the fragmentation of the Mughal Empire, he organized sepoy regiments and formed alliances with disaffected Indian bankers and generals. **Hinge Question:** Should a private trading corporation ever be permitted to recruit a private army and govern an empire?",
+          "question": "Why did Robert Clive believe the East India Company had to seize military and territorial control rather than remain peaceful traders?",
+          "hinge_question": "Should a private trading corporation ever be permitted to recruit a private army and govern an empire?",
+          "disciplinary_focus": "MERCANTILE IMPERIALISM",
+          "utility_enquiry": {
+            "question": "Why did Robert Clive believe the East India Company had to seize military and territorial control rather than remain peaceful traders?",
+            "model_answer": "Clive argued that Mughal imperial authority was collapsing into regional anarchy, meaning that without military garrisons and territorial revenue, British merchants would be driven out by French rivals and regional warlords.",
+            "content_inferences": "Highlights the transformation of a corporate trading enterprise into an armed colonial conqueror driven by geopolitical competition.",
+            "provenance_evaluation": "Official portrait celebrating Clive as an imperial hero; reflects how eighteenth-century British elites lionized corporate military adventurers.",
+            "context_limitations": "Conceals the massive corruption, private looting, and human devastation that accompanied Company rule in Bengal.",
+            "bullet_points": [
+              {
+                "label": "Collapse of Mughal Stability",
+                "text": "Clive exploited the breakdown of centralized Mughal authority to argue that armed force was necessary to protect British commercial settlements."
+              },
+              {
+                "label": "Territorial Revenue Model",
+                "text": "Military dominance allowed the Company to collect Indian tax revenues to fund its own private army and purchase trade commodities without exporting British bullion."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Nathaniel Dance, prominent British royal and high-society portrait painter.",
+              "Audience: British Parliament, East India Company directors, and the London political elite.",
+              "Motive: To project Clive's martial authority and legitimize corporate expansion in the East Indies."
+            ]
+          },
+          "question_badge": "MERCANTILE IMPERIALISM",
+          "model_answer": "Clive argued that Mughal imperial authority was collapsing into regional anarchy, meaning that without military garrisons and territorial revenue, British merchants would be driven out by French rivals and regional warlords.",
           "provenance_clues": [
-            "Author: Nathaniel Dance, fashionable London portraitist.",
-            "Audience: British parliamentarians and high society.",
-            "Motive: To project Clive as a heroic military commander defending British interests."
-          ],
-          "hinge_question": "Does Dance depict Clive as a legitimate British military hero or as an agent of corporate plunder?",
-          "citation": "Nathaniel Dance • National Portrait Gallery, London.",
-          "discussion_ideas": [
-            "A Victorious Patriotic Hero of Empire: Nathaniel Dance depicts Clive standing resolute in scarlet military uniform against a dramatic backdrop of swirling battlefield smoke, with an Indian obelisk and palm trees behind him; the portrait visually frames Clive as a brilliant imperial commander who secured British supremacy at the Battle of Plassey (1757) and expanded British trade.",
-            "A Corrupt Corporate 'Nabob' Enriched by Plunder: In 1773, when Dance painted this portrait, Clive was under hostile parliamentary investigation for gross corruption, extortion, and amassing a personal fortune of over £234,000 while serving as an agent of the East India Company; critics in Parliament condemned him for corporate greed that provoked the catastrophic Great Bengal Famine of 1770, which starved ten million Indian peasants."
+            "Author: Nathaniel Dance, prominent British royal and high-society portrait painter.",
+            "Audience: British Parliament, East India Company directors, and the London political elite.",
+            "Motive: To project Clive's martial authority and legitimize corporate expansion in the East Indies."
           ]
         },
         {
-          "title": "Source B: Benjamin West, Shah Alam II Conveying the Grant of the Diwani to Lord Clive (1795)",
+          "id": "fbe_l1_src_b",
+          "letter": "B",
+          "type": "visual",
+          "src": "/images/shah_alam_clive.jpg",
           "image": "/images/shah_alam_clive.jpg",
-          "caption": "Benjamin West’s painting depicting Mughal Emperor Shah Alam II handing the legal scroll of the Diwani to Robert Clive.",
-          "source_context": "The 1765 Treaty of Allahabad transformed the East India Company into a sovereign territorial power.",
-          "how_useful_question": "How useful is Source B for an enquiry into how the East India Company justified its takeover in Bengal?",
+          "title": "Source B (Imperial Grant): Shah 'Alam II Conveying the Diwani of Bengal to Lord Clive (August 1765)",
+          "caption": "Mughal Emperor Shah 'Alam II hands the royal firman granting the Diwani (tax revenues) of Bengal, Bihar, and Orissa to Robert Clive inside his imperial tent.",
+          "citation": "British Library, London (Foster 430). Oil painting by Benjamin West, c. 1795.",
+          "provenance": "Painted in London by American-born Royal Academician Benjamin West, based on Company records and sketches.",
+          "context": "Following the Battle of Buxar (1764), Mughal Emperor Shah 'Alam II was coerced into signing the Treaty of Allahabad. This transferred the right to collect land revenues from 20 million people directly to the East India Company. **Hinge Question:** Did the Treaty of Allahabad represent genuine diplomatic cooperation or coerced imperial plunder?",
+          "question": "How did the 1765 Treaty of Allahabad transform the East India Company from a commercial trading venture into the sovereign government of Bengal?",
+          "hinge_question": "Did the Treaty of Allahabad represent genuine diplomatic cooperation or coerced imperial plunder?",
+          "disciplinary_focus": "TERRITORIAL SOVEREIGNTY",
+          "utility_enquiry": {
+            "question": "How did the 1765 Treaty of Allahabad transform the East India Company from a commercial trading venture into the sovereign government of Bengal?",
+            "model_answer": "By granting the Diwani, the Mughal Emperor surrendered the legal right to collect taxes from 20 million people to the Company, allowing British merchants to finance their private armies using Indian wealth.",
+            "content_inferences": "Demonstrates how British commercial agents co-opted existing imperial legal structures to gain sovereign taxation rights over vast populations.",
+            "provenance_evaluation": "Monumental historical painting depicting the transaction as an orderly, consensual transfer of legal rights rather than military subjugation.",
+            "context_limitations": "Idealizes the ceremony; in reality, the Emperor was an impoverished puppet captive operating under direct British military duress.",
+            "bullet_points": [
+              {
+                "label": "Fiscal Control over Bengal",
+                "text": "The grant gave the Company immediate control over £2 to £3 million annually in land revenue, vastly exceeding the domestic revenues of many European states."
+              },
+              {
+                "label": "Self-Financing Colonisation",
+                "text": "Instead of shipping British silver to buy Indian silk, spices, and tea, the Company used taxes extracted from Bengali peasants to purchase those very goods."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Benjamin West, official historical painter to King George III and President of the Royal Academy.",
+              "Audience: British monarchs, aristocrats, and the Georgian public visiting London exhibitions.",
+              "Motive: To depict imperial conquest as a dignified, lawful diplomatic ceremony sanctified by Mughal consent."
+            ]
+          },
+          "question_badge": "TERRITORIAL SOVEREIGNTY",
+          "model_answer": "By granting the Diwani, the Mughal Emperor surrendered the legal right to collect taxes from 20 million people to the Company, allowing British merchants to finance their private armies using Indian wealth.",
           "provenance_clues": [
-            "Author: Benjamin West, court painter to King George III.",
-            "Audience: The British royal court and public.",
-            "Motive: To portray the takeover as an orderly, legal diplomatic ceremony."
-          ],
-          "hinge_question": "Why did West depict this scene as a peaceful legal ceremony rather than a forced military shakedown?",
-          "citation": "Benjamin West • British Library / FCO Collection, London.",
-          "discussion_ideas": [
-            "Benjamin West painted this scene thirty years after the event to create an official visual myth of imperial legitimacy. In reality, Mughal Emperor Shah Alam II was a defeated, powerless captive whose forces had been routed at Buxar; he was compelled at gunpoint in an ordinary military tent to surrender the Diwani (tax collection rights) of Bengal, Bihar, and Orissa. West replaces this forced military extortion with a neoclassical ceremonial tableau: Shah Alam sits serenely upon an elevated imperial pavilion, bestowing the treaty scroll upon a bowed, deferential Lord Clive as if granting a voluntary feudal honor. This whitewashed depiction was designed to reassure British audiences that the East India Company’s rule was not an aggressive corporate land-grab, but an orderly, legal, and civilized succession of power."
+            "Author: Benjamin West, official historical painter to King George III and President of the Royal Academy.",
+            "Audience: British monarchs, aristocrats, and the Georgian public visiting London exhibitions.",
+            "Motive: To depict imperial conquest as a dignified, lawful diplomatic ceremony sanctified by Mughal consent."
+          ]
+        },
+        {
+          "id": "fbe_l1_src_c",
+          "letter": "C",
+          "type": "visual",
+          "src": "/images/first_british_empire/eic_royal_charter_arms.svg",
+          "image": "/images/first_british_empire/eic_royal_charter_arms.svg",
+          "title": "Source C (Constitutional Charter & Official Arms): The Royal Charter Arms of the East India Company (1600)",
+          "caption": "Official heraldic achievement and coat of arms granted under Queen Elizabeth I's Royal Charter to the Governor and Company of Merchants of London Trading into the East Indies (31 December 1600).",
+          "citation": "College of Arms, London / British Library Asian & African Collections (IOR/A/1).",
+          "provenance": "Granted under royal letters patent on 31 December 1600, establishing the legal monopoly of the Company.",
+          "context": "Elizabeth I granted 218 London merchants a 15-year exclusive trade monopoly east of the Cape of Good Hope. The charter granted extraordinary sovereign powers to pass laws, build forts, and maintain armed vessels. **Hinge Question:** Why did European monarchs rely on chartered joint-stock companies to expand overseas rather than running imperial expeditions directly?",
+          "question": "What exclusive commercial and legal powers did Queen Elizabeth I grant to the Company in her 1600 Royal Charter?",
+          "hinge_question": "Why did European monarchs rely on chartered joint-stock companies to expand overseas rather than running imperial expeditions directly?",
+          "disciplinary_focus": "CHARTER MONOPOLY",
+          "utility_enquiry": {
+            "question": "What exclusive commercial and legal powers did Queen Elizabeth I grant to the Company in her 1600 Royal Charter?",
+            "model_answer": "The Charter granted the Company an exclusive 15-year commercial monopoly over all English trade east of the Cape of Good Hope, along with the extraordinary legal authority to govern its servants, erect forts, and wage defensive war.",
+            "content_inferences": "Proves that from its founding, the Company was endowed with state-like sovereign powers rather than functioning as a mere commercial retailer.",
+            "provenance_evaluation": "Official royal heraldic document codifying royal assent and monopolistic commercial privileges under English law.",
+            "context_limitations": "Reflects metropolitan legal theory; on the ground in Asia, the Company had to negotiate humbly with powerful Mughal governors for trading posts.",
+            "bullet_points": [
+              {
+                "label": "Total Commercial Monopoly",
+                "text": "No English subject could legally trade in Asia without Company permission, under penalty of ship confiscation and imprisonment."
+              },
+              {
+                "label": "Sovereign State Powers",
+                "text": "The Charter authorized the Company to assemble armed forces, mint coinage in overseas factories, and administer judicial punishment."
+              }
+            ],
+            "provenance_clues": [
+              "Author: The English Crown (Queen Elizabeth I and the Privy Council).",
+              "Audience: The 218 founding merchant venturers of London and foreign maritime rivals.",
+              "Motive: To challenge Dutch and Portuguese spice trade dominance without expending direct Crown treasury funds."
+            ]
+          },
+          "question_badge": "CHARTER MONOPOLY",
+          "model_answer": "The Charter granted the Company an exclusive 15-year commercial monopoly over all English trade east of the Cape of Good Hope, along with the extraordinary legal authority to govern its servants, erect forts, and wage defensive war.",
+          "provenance_clues": [
+            "Author: The English Crown (Queen Elizabeth I and the Privy Council).",
+            "Audience: The 218 founding merchant venturers of London and foreign maritime rivals.",
+            "Motive: To challenge Dutch and Portuguese spice trade dominance without expending direct Crown treasury funds."
+          ]
+        },
+        {
+          "id": "fbe_l1_src_d",
+          "letter": "D",
+          "type": "visual",
+          "src": "/images/first_british_empire/battle_of_plassey_1757.jpg",
+          "image": "/images/first_british_empire/battle_of_plassey_1757.jpg",
+          "title": "Source D (Cartographic Military Plan): Tactical Survey Plan of the Battle of Plassey (23 June 1757)",
+          "caption": "Contemporary tactical field survey map of the Battle of Plassey, showing the positions of Clive's British and sepoy regiments along the Bhagirathi River facing Nawab Siraj ud-Daulah's massive army and Mir Jafar's motionless cavalry.",
+          "citation": "British Library, Cartographic Collections / James Rennell Survey Archive (Maps K.Top.115.42).",
+          "provenance": "Surveyed and engraved by British military cartographers following Clive's victory at Palashi, Bengal.",
+          "context": "At Plassey, Clive fielded 3,000 troops against Siraj ud-Daulah's 50,000. Before the engagement, Clive negotiated a secret conspiracy with Mir Jafar, promising him the throne in return for withholding his 15,000 cavalry. **Hinge Question:** If Mir Jafar had remained loyal to Siraj ud-Daulah at Plassey, would British rule in India have ever begun?",
+          "question": "How does this tactical map reveal that Clive's victory at Plassey was won through political conspiracy rather than battlefield superiority?",
+          "hinge_question": "If Mir Jafar had remained loyal to Siraj ud-Daulah at Plassey, would British rule in India have ever begun?",
+          "disciplinary_focus": "MILITARY CONSPIRACY",
+          "utility_enquiry": {
+            "question": "How does this tactical map reveal that Clive's victory at Plassey was won through political conspiracy rather than battlefield superiority?",
+            "model_answer": "The map shows Siraj ud-Daulah's massive army encircling Clive's small force, but Mir Jafar's large cavalry division on the flank refused to fight, having been secretly bribed by Clive to betray the Nawab.",
+            "content_inferences": "Reveals that British military dominance was built upon strategic exploitation of internal political rivalries within the Bengali elite.",
+            "provenance_evaluation": "Official British military survey documenting terrain, river bends, and unit alignments for tactical analysis and parliamentary praise.",
+            "context_limitations": "Depicts the engagement as a geometric tactical clash, obscuring the monsoon rain that soaked the Nawab's gunpowder while British tarpaulins kept theirs dry.",
+            "bullet_points": [
+              {
+                "label": "Overwhelming Numerical Disparity",
+                "text": "The map illustrates Clive's tiny regiment entrenched inside a mango grove facing a formidable host of 50,000 soldiers and 53 French-crewed artillery pieces."
+              },
+              {
+                "label": "Paralyzed Treacherous Flank",
+                "text": "Mir Jafar's huge corps is positioned idly on the Nawab's left flank, fulfilling his clandestine agreement with Clive to allow the British to rout the loyal defenders."
+              }
+            ],
+            "provenance_clues": [
+              "Author: British military surveyors / Major James Rennell (Surveyor General of Bengal).",
+              "Audience: East India Company military planners, British commanders, and historians.",
+              "Motive: To record the operational maneuvers that eliminated French influence in Bengal and established British military supremacy."
+            ]
+          },
+          "question_badge": "MILITARY CONSPIRACY",
+          "model_answer": "The map shows Siraj ud-Daulah's massive army encircling Clive's small force, but Mir Jafar's large cavalry division on the flank refused to fight, having been secretly bribed by Clive to betray the Nawab.",
+          "provenance_clues": [
+            "Author: British military surveyors / Major James Rennell (Surveyor General of Bengal).",
+            "Audience: East India Company military planners, British commanders, and historians.",
+            "Motive: To record the operational maneuvers that eliminated French influence in Bengal and established British military supremacy."
+          ]
+        },
+        {
+          "id": "fbe_l1_src_e",
+          "letter": "E",
+          "type": "visual",
+          "src": "/images/first_british_empire/bengal_presidency_silver_rupee.jpg",
+          "image": "/images/first_british_empire/bengal_presidency_silver_rupee.jpg",
+          "title": "Source E (Material Culture & Currency): Silver Rupee of the Bengal Presidency Struck in the Name of Shah 'Alam II (1770s)",
+          "caption": "Authentic silver rupee minted by the East India Company at the Murshidabad mint. The Persian inscription honors Mughal Emperor Shah 'Alam II, concealing Company rule beneath traditional imperial iconography.",
+          "citation": "British Museum, Department of Coins and Medals (Museum number: 1888,1208.761). Silver, 28mm.",
+          "provenance": "Minted in Bengal under the administration of the East India Company following the 1765 grant of the Diwani.",
+          "context": "Even after seizing total political and economic control of Bengal, the Company continued minting silver coins displaying the name and regnal year of Mughal Emperor Shah 'Alam II. **Hinge Question:** Why is maintaining familiar symbols and currency often more effective in securing imperial conquest than imposing alien foreign institutions?",
+          "question": "Why did the East India Company continue minting silver coins displaying the name and titles of the Mughal Emperor even after taking total control of Bengal?",
+          "hinge_question": "Why is maintaining familiar symbols and currency often more effective in securing imperial conquest than imposing alien foreign institutions?",
+          "disciplinary_focus": "CURRENCY & HEGEMONY",
+          "utility_enquiry": {
+            "question": "Why did the East India Company continue minting silver coins displaying the name and titles of the Mughal Emperor even after taking total control of Bengal?",
+            "model_answer": "The Company used the Emperor's name and Islamic calligraphy as a legitimate political disguise, ensuring Indian merchants and peasants would accept the coins for taxes without realizing British officials were draining the treasury.",
+            "content_inferences": "Illustrates the Company's policy of 'indirect rule' and dual government, preserving established indigenous forms to extract revenue smoothly.",
+            "provenance_evaluation": "Physical numismatic evidence proving the economic integration of British corporate management into traditional Mughal fiscal networks.",
+            "context_limitations": "The pristine condition of museum coinage masks the devastating 1770 Bengal famine, where rigid Company taxation caused the starvation of millions.",
+            "bullet_points": [
+              {
+                "label": "Preserving Monetary Credibility",
+                "text": "Peasants, moneylenders, and traders trusted the established silver weight and Persian script of the Mughal rupee, preventing market panic."
+              },
+              {
+                "label": "Imperial Facade",
+                "text": "Retaining the Mughal Emperor's name allowed British merchants to exercise absolute tyrannical power without provoking foreign or domestic rebellion."
+              }
+            ],
+            "provenance_clues": [
+              "Author: East India Company mint masters operating the provincial Murshidabad mint.",
+              "Audience: Indian merchants, bankers, revenue collectors, and provincial populations.",
+              "Motive: To maintain economic liquidity, extract agricultural taxation, and prevent civil resistance against colonial currency."
+            ]
+          },
+          "question_badge": "CURRENCY & HEGEMONY",
+          "model_answer": "The Company used the Emperor's name and Islamic calligraphy as a legitimate political disguise, ensuring Indian merchants and peasants would accept the coins for taxes without realizing British officials were draining the treasury.",
+          "provenance_clues": [
+            "Author: East India Company mint masters operating the provincial Murshidabad mint.",
+            "Audience: Indian merchants, bankers, revenue collectors, and provincial populations.",
+            "Motive: To maintain economic liquidity, extract agricultural taxation, and prevent civil resistance against colonial currency."
           ]
         }
       ],
@@ -638,7 +1013,67 @@ const unitData = {
           "viewing_task": "[15:30] Recall: What constitutional status did 'coastal factories' hold in 17th-century India?\n[28:10] Explain: How did Robert Clive amass his personal fortune of £300,000 following the capture of Murshidabad in 1757?\n[42:00] Challenge: To what extent was the catastrophic Bengal Famine of 1770 a direct byproduct of Company tax extraction policies?",
           "model_answer": "Recall: Factories were fortified sovereign enclaves with warehouse vaults, private armed guards, and royal charters exempting them from local municipal taxes.\nExplain: Clive took massive cash kickbacks, gems, and annual land revenues ('jagirs') from the puppet Nawab Mir Jafar as personal reward for orchestrating the coup at Plassey.\nChallenge: While triggered by monsoon drought, the famine was catastrophic because Company collectors rigidly maintained and even increased land taxes, hoarded grain, and prohibited relief exports, prioritising corporate shareholder dividends over humanitarian survival."
         }
-      ]
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: The East India Company & Mughal Bengal",
+        "tariff": "12 marks (Explain Why Causal Analysis)",
+        "questions": [
+          {
+            "tariff": "12 marks",
+            "type": "explain_why_12m",
+            "question": "Explain why the East India Company was able to expand its territorial control across Bengal and India between 1600 and 1765. [12 marks]",
+            "stimulus": [
+              "Royal charters granting trade monopolies and company private armies",
+              "The grant of the Diwani (1765) by Mughal Emperor Shah Alam II"
+            ],
+            "prompt": "Explain three distinct causal reasons: the legal and military powers granted by British royal charters, the exploitation of Mughal political fragmentation culminating in the Battle of Plassey (1757), and the fiscal takeover through the Treaty of Allahabad (Diwani of Bengal 1765). Structure using PEEL paragraphs.",
+            "model": "One major reason the East India Company expanded its control was the extraordinary legal and military authority granted by British royal charters. In December 1600, Queen Elizabeth I granted the Company a royal charter giving it a complete monopoly on British trade in the Indian Ocean. Crucially, subsequent seventeenth-century charters from King Charles II authorized the Company to build fortresses, mint coins, declare war, make peace, and maintain its own private army. By employing European officers to drill Indian recruits (sepoys) in modern flintlock musket tactics, the Company created a formidable military force that could overpower regional Indian rulers.<br><br>Furthermore, a second decisive factor was the political decentralization of the Mughal Empire after the death of Emperor Aurangzeb in 1707. Regional governors (nawabs) operated virtually independently, creating intense rivalries that Company officials ruthlessly exploited. In Bengal, Nawab Siraj ud-Daulah attempted to halt unauthorized British fortifications at Fort William (Calcutta). In response, Robert Clive conspired with the Nawab’s disaffected paymaster, Mir Jafar, bribing him to withhold his troops at the Battle of Plassey in June 1757. Clive’s victory allowed the Company to depose Siraj ud-Daulah and install puppet rulers, effectively subordinating Bengal’s vast administrative machinery.<br><br>Finally, the critical turning point cementing territorial control was the fiscal conquest achieved through the 1765 Treaty of Allahabad. Following the decisive British victory at the Battle of Buxar (1764), Mughal Emperor Shah Alam II was forced to grant the Company the \"Diwani\" of Bengal, Bihar, and Orissa. The Diwani transferred the sovereign right to assess and collect all land tax revenues from thirty million people directly to the Company. With access to over two million pounds sterling in annual tax revenue, the Company funded an army of over 100,000 men without needing British taxpayer money, transforming a private mercantile corporation into an unstoppable colonial sovereign.",
+            "scaffolding": {
+              "acronym": "3-Paragraph Causal Analysis (PEEL)",
+              "acronym_title": "12-Mark Explain Why Standard",
+              "steps": [
+                {
+                  "letter": "REASON 1",
+                  "name": "Royal Charters & Private Armies",
+                  "prompt": "Explain Elizabeth I, Charles II, private armies, and European sepoy drilling.",
+                  "starter": "One major reason the East India Company expanded was..."
+                },
+                {
+                  "letter": "REASON 2",
+                  "name": "Mughal Fragmentation & Plassey (1757)",
+                  "prompt": "Explain Siraj ud-Daulah, Mir Jafar conspiracy, and the victory at Plassey.",
+                  "starter": "Furthermore, a second decisive factor was..."
+                },
+                {
+                  "letter": "REASON 3",
+                  "name": "The Diwani of Bengal (1765)",
+                  "prompt": "Explain the Treaty of Allahabad, Shah Alam II, collecting taxes, and funding an army of 100k.",
+                  "starter": "Finally, the critical turning point was..."
+                }
+              ],
+              "sentence_starters": [
+                "One major reason was that...",
+                "For example, royal charters granted...",
+                "This was important because...",
+                "Another key factor was...",
+                "In particular, Clive exploited...",
+                "Overall, the decisive turning point occurred in 1765 when..."
+              ],
+              "connectives_bank": [
+                "East India Company",
+                "Robert Clive",
+                "Battle of Plassey (1757)",
+                "Siraj ud-Daulah",
+                "Mir Jafar",
+                "Treaty of Allahabad (1765)",
+                "Diwani",
+                "Shah Alam II",
+                "sepoys"
+              ]
+            }
+          }
+        ]
+      }
     },
     {
       "id": "lesson_2",
@@ -833,100 +1268,474 @@ const unitData = {
         {
           "act": 1,
           "title": "The Triangular Engine (1619–1672)",
-          "text": "<span class=\"para-ref\">[2.1]</span> In 1619, a privateer vessel landed the first twenty captive Angolans in English Virginia, initiating a brutal economic nexus known as the Triangular <strong>Transatlantic Trade</strong>. On the first leg, British merchant ships departed Bristol and Liverpool loaded with manufactured guns, brass pans, alcohol, and woollen cloth. On the West African coast, these goods were bartered with local rulers and slave-raiders for captive men, women, and children. On the second leg—the dreaded <strong>Middle Passage</strong>—captives were shipped to the Caribbean and Americas. On the final leg, the ships returned to Britain packed with lucrative slave-grown raw commodities: sugar, tobacco, and cotton."
+          "text": "<span class=\"para-ref\">[2.1]</span> In 1619, a privateer vessel landed the first twenty captive Angolans in English Virginia, initiating a brutal economic nexus known as the Triangular <strong>Transatlantic Trade</strong>. On the first leg, British merchant ships departed Bristol and Liverpool loaded with manufactured guns, brass pans, alcohol, and woollen cloth. On the West African coast, these goods were bartered with local rulers and slave-raiders for captive men, women, and children. On the second leg—the dreaded <strong>Middle Passage</strong>—captives were shipped to the Caribbean and Americas. On the final leg, the ships returned to Britain packed with lucrative slave-grown raw commodities: sugar, tobacco, and cotton.",
+          "image": "/images/triangular_trade.png",
+          "image_alt": "Cartographic diagram of the Transatlantic Triangular Trade routes connecting Britain, West Africa, and the Americas",
+          "caption": "The Triangular Trade network, linking British manufactured export goods, captive African labour along the Middle Passage, and plantation commodities returning to European ports (The History Revision Hub Archival Cartography).",
+          "source": {
+            "id": "fbe_l2_src_a",
+            "letter": "A",
+            "type": "visual",
+            "src": "/images/brookes_slave_ship.jpg",
+            "image": "/images/brookes_slave_ship.jpg",
+            "title": "Source A (Forensic Architecture): Plan and Sections of the Slave Ship Brookes (1788)",
+            "caption": "Official broadside engraving published by the Society for Effecting the Abolition of the Slave Trade, showing the calculated stowage of 454 captive human beings aboard the Liverpool slave ship Brookes.",
+            "citation": "Library of Congress, Prints and Photographs Division (LC-USZ62-44000). Engraving, 1788.",
+            "provenance": "Published in London and Philadelphia in 1788 based on official British parliamentary inspection measurements.",
+            "context": "Even under the 1788 Regulated Slave Trade Act which placed limits on ship density, captive men were allotted a space just 6 feet by 16 inches. In previous voyages, the Brookes had carried over 600 people in suffocating holds. **Hinge Question:** Why was a precise, technical diagram of a ship more persuasive to eighteenth-century politicians than emotional written speeches?",
+            "question": "How did abolitionists use the precise architectural diagram of the slave ship Brookes to expose the brutal inhumanity of the Middle Passage?",
+            "hinge_question": "Why was a precise, technical diagram of a ship more persuasive to eighteenth-century politicians than emotional written speeches?",
+            "disciplinary_focus": "FORENSIC ARCHITECTURE",
+            "utility_enquiry": {
+              "question": "How did abolitionists use the precise architectural diagram of the slave ship Brookes to expose the brutal inhumanity of the Middle Passage?",
+              "model_answer": "By showing 454 human bodies crammed horizontally like inanimate cargo into suffocating shelves, the diagram provided unarguable geometric proof that enslavers prioritized maximum profit over human survival.",
+              "content_inferences": "Demonstrates how British maritime commerce treated human beings as commodified cargo subjected to lethal overcrowding.",
+              "provenance_evaluation": "Abolitionist political poster grounded in sworn parliamentary inspection data; deliberately clinical and unemotional in format to prevent pro-slavery rebuttals.",
+              "context_limitations": "Presents a clean, static, two-dimensional schematic that omits the pitch darkness, stifling stench, human vomit, dysentery, and screams experienced below deck.",
+              "bullet_points": [
+                {
+                  "label": "Mathematical Proof of Inhumanity",
+                  "text": "The diagram demonstrated that even legal 'reforms' treated human beings worse than livestock, cramming adults into spaces narrower than coffins."
+                },
+                {
+                  "label": "Mass Political Mobilisation",
+                  "text": "Over 7,000 copies were distributed across Britain, hung in taverns, homes, and churches, making the reality of the Middle Passage undeniable."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Plymouth Abolition Committee / Society for Effecting the Abolition of the Slave Trade (Thomas Clarkson).",
+                "Audience: Members of Parliament, the British reading public, and transatlantic sympathizers.",
+                "Motive: To expose the systematic cruelty of Liverpool slave merchants and demand legislative prohibition of the trade."
+              ]
+            },
+            "question_badge": "FORENSIC ARCHITECTURE",
+            "model_answer": "By showing 454 human bodies crammed horizontally like inanimate cargo into suffocating shelves, the diagram provided unarguable geometric proof that enslavers prioritized maximum profit over human survival.",
+            "provenance_clues": [
+              "Author: Plymouth Abolition Committee / Society for Effecting the Abolition of the Slave Trade (Thomas Clarkson).",
+              "Audience: Members of Parliament, the British reading public, and transatlantic sympathizers.",
+              "Motive: To expose the systematic cruelty of Liverpool slave merchants and demand legislative prohibition of the trade."
+            ]
+          }
         },
         {
           "act": 2,
           "title": "Capture, Barracoons & The Royal African Company (1672–1713)",
-          "text": "<span class=\"para-ref\">[2.2]</span> In 1672, King Charles II granted a royal charter to the Royal African Company, headed by his brother, the Duke of York (later James II). The Company branded captive Africans on their chests with the letters \"DY\" using red-hot irons. Captives had typically been kidnapped in violent inland raids, marched hundreds of miles in wooden neck-yokes to the coast, and locked in suffocating underground stone dungeons called <strong>barracoons</strong> at coastal slave fortresses like Cape Coast Castle. By 1713, Britain secured the coveted <strong>Asiento</strong> monopoly from Spain, making British merchants the undisputed rulers of the global slave trade."
+          "text": "<span class=\"para-ref\">[2.2]</span> In 1672, King Charles II granted a royal charter to the Royal African Company, headed by his brother, the Duke of York (later James II). The Company branded captive Africans on their chests with the letters \"DY\" using red-hot irons. Captives had typically been kidnapped in violent inland raids, marched hundreds of miles in wooden neck-yokes to the coast, and locked in suffocating underground stone dungeons called <strong>barracoons</strong> at coastal slave fortresses like Cape Coast Castle. By 1713, Britain secured the coveted <strong>Asiento</strong> monopoly from Spain, making British merchants the undisputed rulers of the global slave trade.",
+          "image": "/images/elmina_castle.jpg",
+          "image_alt": "Photograph of Elmina Castle on the Gold Coast of Ghana, fortified slave trade castle and barracoon",
+          "caption": "Elmina Castle on the Gold Coast (modern Ghana), one of the major fortified coastal slave depots where captive Africans were imprisoned before embarkation onto Atlantic slave ships (UNESCO World Heritage Site / Archival Collection).",
+          "source": {
+            "id": "fbe_l2_src_b",
+            "letter": "B",
+            "type": "visual",
+            "src": "/images/olaudah_equiano.jpg",
+            "image": "/images/olaudah_equiano.jpg",
+            "title": "Source B (Lived Testimony): Portrait Frontispiece of Olaudah Equiano, or Gustavus Vassa, the African (1789)",
+            "caption": "Engraved frontispiece portrait from The Interesting Narrative of the Life of Olaudah Equiano, showing him in refined European dress holding an open Bible pointing to Acts 4:12.",
+            "citation": "National Portrait Gallery, London (NPG D8621). Stipple engraving by Daniel Orme after W. Denton, 1789.",
+            "provenance": "Commissioned by Equiano himself as the authoritative frontispiece for his self-published autobiography.",
+            "context": "Kidnapped as a child from the Igbo kingdom in modern Nigeria, Equiano survived the horrors of the Middle Passage and enslavement in Virginia and the Caribbean. Having purchased his freedom, he settled in London as a leading abolitionist writer. **Hinge Question:** Why was firsthand testimony from formerly enslaved survivors essential to dismantling the moral legitimacy of the slave trade?",
+            "question": "How does Equiano's portrait and published narrative directly challenge pro-slavery arguments about the intellect and humanity of African people?",
+            "hinge_question": "Why was firsthand testimony from formerly enslaved survivors essential to dismantling the moral legitimacy of the slave trade?",
+            "disciplinary_focus": "LIVED TESTIMONY",
+            "utility_enquiry": {
+              "question": "How does Equiano's portrait and published narrative directly challenge pro-slavery arguments about the intellect and humanity of African people?",
+              "model_answer": "Depicted in refined Georgian dress holding an open Bible, Equiano presents himself as an educated, articulate Christian gentleman whose intellectual eloquence demolished racist claims that Africans were uncivilized.",
+              "content_inferences": "Asserts the dignity, intellectual capability, and moral authority of African people against racist pro-slavery stereotypes.",
+              "provenance_evaluation": "Self-published frontispiece portrait carefully composed by Equiano to project Christian piety, literary accomplishment, and financial independence.",
+              "context_limitations": "A polished public image designed to persuade an elite white eighteenth-century audience; reflects the need to conform to European norms to gain political credibility.",
+              "bullet_points": [
+                {
+                  "label": "Refutation of Racial Hierarchy",
+                  "text": "Equiano's refined costume and intellectual posture demonstrated that formerly enslaved Africans were fully equal to European aristocrats."
+                },
+                {
+                  "label": "Firsthand Eye-Witness Authority",
+                  "text": "As an African survivor who had personally endured the Middle Passage, Equiano's testimony carried unassailable authenticity in parliamentary debates."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Daniel Orme (engraver) / Olaudah Equiano (author, publisher, and activist).",
+                "Audience: British middle- and upper-class readers, politicians, and religious congregations.",
+                "Motive: To establish Equiano's moral and intellectual authority as an independent author exposing chattel slavery."
+              ]
+            },
+            "question_badge": "LIVED TESTIMONY",
+            "model_answer": "Depicted in refined Georgian dress holding an open Bible, Equiano presents himself as an educated, articulate Christian gentleman whose intellectual eloquence demolished racist claims that Africans were uncivilized.",
+            "provenance_clues": [
+              "Author: Daniel Orme (engraver) / Olaudah Equiano (author, publisher, and activist).",
+              "Audience: British middle- and upper-class readers, politicians, and religious congregations.",
+              "Motive: To establish Equiano's moral and intellectual authority as an independent author exposing chattel slavery."
+            ]
+          }
         },
         {
           "act": 3,
           "title": "The Agony of the Middle Passage (1713–1781)",
           "text": "<span class=\"para-ref\">[2.3]</span> The Middle Passage took between six and twelve weeks across the Atlantic. Captains operated on \"tight packing,\" cramming up to 600 people into dark, unventilated holds with ceiling heights under three feet. Captives were chained in pairs by their wrists and ankles, forced to lie spoon-fashioned on bare wooden planks amidst vomit, blood, and dysentery. The stench was so overpowering that sailors reported smelling a slave ship miles before sighting it. Between 12% and 15% of captives died during the voyage from dehydration, smallpox, and grief, their bodies thrown to following sharks.",
           "source": {
-            "letter": "A",
-            "title": "Source A: The Plymouth Committee, Stowage of the British Slave Ship Brookes (1788)",
-            "image": "/images/brookes_slave_ship.jpg",
-            "caption": "The famous 1788 abolitionist cross-section diagram of the slave ship Brookes, detailing how 454 enslaved human beings were systematically packed onto shelves like inanimate merchandise.",
-            "source_context": "Published in London by Thomas Clarkson and the Society for Effecting the Abolition of the Slave Trade, this factual architectural print was distributed to Parliament, schools, and coffeehouses, becoming the most influential political poster of the 18th century.",
-            "how_useful_question": "How useful is Source A for an enquiry into the conditions endured by enslaved Africans during the Middle Passage?",
+            "id": "fbe_l2_src_c",
+            "letter": "C",
+            "type": "visual",
+            "src": "/images/first_british_empire/slave_trade_iron_shackles.jpg",
+            "image": "/images/first_british_empire/slave_trade_iron_shackles.jpg",
+            "title": "Source C (Material Oppression & Coercion): Eighteenth-Century Iron Leg Shackles and Handcuffs (West Africa to Caribbean)",
+            "caption": "Authentic wrought-iron leg shackles recovered from the transatlantic slave route, manufactured by British foundries in Birmingham and Liverpool to chain African captives ankle-to-ankle aboard slave vessels.",
+            "citation": "International Slavery Museum, National Museums Liverpool (Accession: 28144996426). Tamale, Ghana.",
+            "provenance": "Forged in eighteenth-century British industrial metalworks and traded to coastal slave barracoons in West Africa.",
+            "context": "British industrial cities profited immensely from manufacturing the instruments of enslavement. Male captives aboard Guineamen were locked into iron leg irons for the entire 6 to 12-week Atlantic voyage. **Hinge Question:** How did British manufacturing industries in northern England profit directly from the infrastructure of human enslavement?",
+            "question": "What does the physical design of these iron leg shackles reveal about how British slave captains maintained control over hundreds of captives at sea?",
+            "hinge_question": "How did British manufacturing industries in northern England profit directly from the infrastructure of human enslavement?",
+            "disciplinary_focus": "MATERIAL OPPRESSION",
+            "utility_enquiry": {
+              "question": "What does the physical design of these iron leg shackles reveal about how British slave captains maintained control over hundreds of captives at sea?",
+              "model_answer": "The heavy iron cuffs locked pairs of male captives ankle-to-ankle around the clock, severely restricting movement and making coordinated mutinies or jumping overboard physically impossible.",
+              "content_inferences": "Reveals that the Middle Passage was an ongoing military operation reliant on continuous physical restraint and bodily torture.",
+              "provenance_evaluation": "Physical artifact of state-sanctioned industrial violence; tangibly demonstrates the raw physical brutality underpinning mercantile wealth.",
+              "context_limitations": "The cold metal artifact alone cannot convey the physical pain, gangrene, skin abrasions, and psychological despair suffered by the individuals who wore them.",
+              "bullet_points": [
+                {
+                  "label": "Prevention of Shipboard Rebellion",
+                  "text": "Chaining captives together in pairs ensured that any attempt to rise up or jump into the sea would be immediately hindered by the chained partner."
+                },
+                {
+                  "label": "British Industrial Complicity",
+                  "text": "Metal goods, shackles, and firearms forged in Birmingham and Bristol were traded for human beings, linking British factory workers directly to Atlantic slavery."
+                }
+              ],
+              "provenance_clues": [
+                "Author: British industrial metalworkers in Liverpool and Birmingham.",
+                "Audience: Slave ship captains, merchant crews, and captive enslaved people.",
+                "Motive: To enforce total physical submission and ensure maximum delivery of living human property to American markets."
+              ]
+            },
+            "question_badge": "MATERIAL OPPRESSION",
+            "model_answer": "The heavy iron cuffs locked pairs of male captives ankle-to-ankle around the clock, severely restricting movement and making coordinated mutinies or jumping overboard physically impossible.",
             "provenance_clues": [
-              "Author: The Plymouth Committee of the Abolitionist Society, drawn from precise measurements taken by British naval captain William Bligh.",
-              "Audience: British MPs, voters, and the wider public who had never witnessed a slave ship.",
-              "Motive: To provide undeniable forensic proof of the systematic, calculated cruelty of the slave trade to force Parliament to pass abolition laws."
-            ],
-            "hinge_question": "Why did abolitionists choose a technical diagram rather than an emotional painting?",
-            "citation": "Plymouth Committee • British Library / National Maritime Museum, Greenwich.",
-            "discussion_ideas": [
-              "The Plymouth Abolition Committee made the deliberate tactical decision to use an objective architectural plan because cold technical diagrams were impossible for slave traders to deny or refute as artistic exaggeration. By depicting the exact dimensions of the ship's hold and showing over 450 human bodies packed shoulder-to-shoulder in rows with each adult male allotted a space just six feet long by sixteen inches wide, the cross-section visually exposed the monstrous reality of chattel slavery: treating human beings not as persons, but as inert, tightly packed cargo. Circulated across Britain, America, and France, this unemotional blueprint stripped away the polite fictions of the slave trade and forced the public to confront the physical horror of the Middle Passage."
+              "Author: British industrial metalworkers in Liverpool and Birmingham.",
+              "Audience: Slave ship captains, merchant crews, and captive enslaved people.",
+              "Motive: To enforce total physical submission and ensure maximum delivery of living human property to American markets."
             ]
           }
         },
         {
           "act": 4,
           "title": "The Zong Atrocity & Captive Resistance (1781)",
-          "text": "<span class=\"para-ref\">[2.4]</span> Enslaved Africans resisted their captors at every stage. Historians have documented armed <strong>insurrections</strong> aboard over 400 slave ships; many captives staged suicidal hunger strikes or hurled themselves overboard into the sea rather than submit to lifelong bondage. The ultimate horror of the trade was exposed in 1781 aboard the British slave ship <em>Zong</em>. Running low on fresh water due to navigational errors, Captain Luke Collingwood ordered 133 sick and living enslaved Africans thrown into the ocean so the ship owners could collect £30 per person from their maritime insurance company for \"lost cargo.\""
+          "text": "<span class=\"para-ref\">[2.4]</span> Enslaved Africans resisted their captors at every stage. Historians have documented armed <strong>insurrections</strong> aboard over 400 slave ships; many captives staged suicidal hunger strikes or hurled themselves overboard into the sea rather than submit to lifelong bondage. The ultimate horror of the trade was exposed in 1781 aboard the British slave ship <em>Zong</em>. Running low on fresh water due to navigational errors, Captain Luke Collingwood ordered 133 sick and living enslaved Africans thrown into the ocean so the ship owners could collect £30 per person from their maritime insurance company for \"lost cargo.\"",
+          "source": {
+            "id": "fbe_l2_src_d",
+            "letter": "D",
+            "type": "visual",
+            "src": "/images/first_british_empire/slave_auction_broadside_1769.jpg",
+            "image": "/images/first_british_empire/slave_auction_broadside_1769.jpg",
+            "title": "Source D (Commodification & Slave Market): Charleston Slave Auction Broadside: Cargo of 94 Prime Negroes (July 1769)",
+            "caption": "Colonial auction broadside printed by David & John Deas, advertising the public sale of ninety-four captive African men, women, and children newly arrived from Sierra Leone aboard the brigantine Dembia.",
+            "citation": "Library of Congress, Rare Book and Special Collections Division (Broadside Collection, portfolio 172, no. 13).",
+            "provenance": "Printed in Charleston, South Carolina on 24 July 1769 to advertise a slave arrival auction.",
+            "context": "Upon surviving the Middle Passage, captive Africans were washed, oiled with lard to conceal illness, and sold at public auctions. This broadside highlighted that the captives were free from smallpox to entice wealthy plantation owners. **Hinge Question:** What strategies did colonial slave merchants use to strip human beings of their names, cultures, and identities upon arrival?",
+            "question": "How does the language and typographic design of this 1769 broadside reflect the total commodification of human beings in the colonial economy?",
+            "hinge_question": "What strategies did colonial slave merchants use to strip human beings of their names, cultures, and identities upon arrival?",
+            "disciplinary_focus": "COMMODIFICATION",
+            "utility_enquiry": {
+              "question": "How does the language and typographic design of this 1769 broadside reflect the total commodification of human beings in the colonial economy?",
+              "model_answer": "The broadside lists captive men, women, and children alongside livestock and trade goods, emphasizing their physical fitness, smallpox immunity, and agricultural utility to attract colonial buyers.",
+              "content_inferences": "Documents the cold, transactional commercial reality of the slave trade, where human lives were reduced to financial line-items.",
+              "provenance_evaluation": "Authentic commercial advertising poster from an American colonial slave port; reveals how slave auctions were normalized as public business events.",
+              "context_limitations": "Omits the terror, family separation, and trauma experienced by the 94 survivors paraded onto the auction block.",
+              "bullet_points": [
+                {
+                  "label": "Dehumanizing Marketing Language",
+                  "text": "Terms like 'prime, healthy Negroes' and guarantees of health treated human beings like grade-A cattle to maximize merchant commissions."
+                },
+                {
+                  "label": "Commercial Integration",
+                  "text": "The advertisement promised payment terms in rice, indigo, and bills of exchange, illustrating how colonial credit systems depended on chattel slavery."
+                }
+              ],
+              "provenance_clues": [
+                "Author: David & John Deas, prominent transatlantic slave merchants and auction brokers.",
+                "Audience: Wealthy rice, cotton, and tobacco planters in South Carolina and Georgia.",
+                "Motive: To attract competitive bidding and secure top market prices for newly imported human cargo."
+              ]
+            },
+            "question_badge": "COMMODIFICATION",
+            "model_answer": "The broadside lists captive men, women, and children alongside livestock and trade goods, emphasizing their physical fitness, smallpox immunity, and agricultural utility to attract colonial buyers.",
+            "provenance_clues": [
+              "Author: David & John Deas, prominent transatlantic slave merchants and auction brokers.",
+              "Audience: Wealthy rice, cotton, and tobacco planters in South Carolina and Georgia.",
+              "Motive: To attract competitive bidding and secure top market prices for newly imported human cargo."
+            ]
+          }
         },
         {
           "act": 5,
           "title": "Olaudah Equiano & The Awakening Conscience (1788–1807)",
           "text": "<span class=\"para-ref\">[2.5]</span> The legal aftermath of the <em>Zong</em> horrified British reformers like Granville Sharp and Thomas Clarkson. In 1788, the Abolition Society published the explosive <em>Brookes</em> diagram, visually demonstrating that human beings were stacked like books on shelves. In 1789, Olaudah Equiano, a formerly enslaved Igbo man who had purchased his freedom, published his bestselling autobiography. Equiano lectured across Britain, delivering harrowing first-person testimony about the shrieks of women and the suffocating pestilence of the hold. Equiano’s voice and the <em>Brookes</em> diagram ignited the mass abolition movement that culminated in the 1807 Abolition of the Slave Trade Act.",
           "source": {
-            "letter": "B",
-            "title": "Source B: Daniel Orme, Portrait of Olaudah Equiano / Gustavus Vassa (1789)",
-            "image": "/images/olaudah_equiano.jpg",
-            "caption": "Frontispiece engraving of Olaudah Equiano from his 1789 autobiography The Interesting Narrative: depicted as an educated Christian gentleman holding an open Bible.",
-            "source_context": "Kidnapped from modern-day Nigeria as a boy, Equiano survived the Middle Passage, was enslaved in Virginia and the Caribbean, learned to read and write, and purchased his freedom in 1766 before becoming a prominent leader of London’s Black community.",
-            "how_useful_question": "How useful is Source B for an enquiry into how formerly enslaved Africans challenged racist pro-slavery arguments in late 18th-century Britain?",
+            "id": "fbe_l2_src_e",
+            "letter": "E",
+            "type": "visual",
+            "src": "/images/first_british_empire/wedgwood_abolitionist_medallion_1786.jpg",
+            "image": "/images/first_british_empire/wedgwood_abolitionist_medallion_1786.jpg",
+            "title": "Source E (Visual Mobilisation & Consumer Culture): Josiah Wedgwood's Anti-Slavery Medallion: 'Am I Not a Man and a Brother?' (1786)",
+            "caption": "Black basalt and white jasperware ceramic medallion sculpted by William Hackwood for master potter Josiah Wedgwood, depicting a kneeling enslaved African in chains pleading for human brotherhood.",
+            "citation": "Brooklyn Museum / British Museum (Museum number: 1856,1217.1). Jasperware, 32mm.",
+            "provenance": "Manufactured at Wedgwood's Etruria factory, Staffordshire, and distributed free of charge to the Anti-Slavery Society.",
+            "context": "In 1787, master ceramic manufacturer Josiah Wedgwood joined the Committee for Abolition. He produced thousands of these cameos at personal expense, which became fashionable jewelry worn by thousands of British men and women. **Hinge Question:** Can consumer boycotts and fashion accessories ever be as powerful in achieving political change as parliamentary legislation?",
+            "question": "Why was Josiah Wedgwood's ceramic medallion so effective in transforming British public opinion against the slave trade?",
+            "hinge_question": "Can consumer boycotts and fashion accessories ever be as powerful in achieving political change as parliamentary legislation?",
+            "disciplinary_focus": "VISUAL MOBILISATION",
+            "utility_enquiry": {
+              "question": "Why was Josiah Wedgwood's ceramic medallion so effective in transforming British public opinion against the slave trade?",
+              "model_answer": "By reproducing the cameo on fashionable jasperware cufflinks, hairpins, and snuffboxes, abolitionists made opposition to human trafficking a visible, socially prestigious moral statement across British society.",
+              "content_inferences": "Shows how abolitionists pioneered modern consumer activist techniques, leveraging moral branding to pressure politicians.",
+              "provenance_evaluation": "A manufactured political badge designed for public display; marks the birth of popular humanitarian campaigning in Britain.",
+              "context_limitations": "Depicts the African captive in a passive, submissive kneeling posture begging white Europeans for charity, obscuring autonomous Black armed resistance.",
+              "bullet_points": [
+                {
+                  "label": "Social Prestige of Activism",
+                  "text": "Wearing the cameo signaled moral enlightenment, allowing women who lacked the vote to participate actively in the abolition movement."
+                },
+                {
+                  "label": "Universal Human Brotherhood",
+                  "text": "The motto 'Am I Not a Man and a Brother?' directly attacked the legal premise that Africans were property rather than human beings."
+                }
+              ],
+              "provenance_clues": [
+                "Author: William Hackwood (modeler) and Josiah Wedgwood (industrialist and abolitionist).",
+                "Audience: British middle- and upper-class consumers, particularly women driving domestic sugar boycotts.",
+                "Motive: To embed abolitionist sentiment into daily Georgian culture and sustain political pressure on Parliament."
+              ]
+            },
+            "question_badge": "VISUAL MOBILISATION",
+            "model_answer": "By reproducing the cameo on fashionable jasperware cufflinks, hairpins, and snuffboxes, abolitionists made opposition to human trafficking a visible, socially prestigious moral statement across British society.",
             "provenance_clues": [
-              "Author: Daniel Orme (engraver), commissioned by Olaudah Equiano himself for his self-published memoir.",
-              "Audience: Literate middle- and upper-class British readers, MPs, and churchgoers.",
-              "Motive: To directly disprove the pro-slavery claim that Africans were naturally uncivilised or subhuman by presenting himself as an educated, refined, and deeply moral Christian scholar."
-            ],
-            "hinge_question": "Why did Equiano insist on European attire holding an open Bible?",
-            "citation": "Daniel Orme • Frontispiece of The Interesting Narrative (1789).",
-            "discussion_ideas": [
-              "Direct Refutation of Pro-Slavery Racial Stereotypes: Pro-slavery apologists claimed that African people were uncivilized savages who lacked the capacity for moral reasoning, education, or Christian faith; by presenting himself in elegant British gentleman's attire—a frock coat, ruffled cravat, and styled hair—holding an open Bible, Equiano visually demolished racist caricatures and asserted his full intellectual, moral, and spiritual equality.",
-              "Mobilizing Christian Empathy and Abolitionist Appeal: By holding the Christian Scriptures open to the Acts of the Apostles, Equiano appealed directly to the religious conscience of white British churchgoers and evangelical reformers (such as William Wilberforce), reminding readers that all human souls were equal in the sight of God and that chattel slavery was an unpardonable sin against Christian doctrine."
+              "Author: William Hackwood (modeler) and Josiah Wedgwood (industrialist and abolitionist).",
+              "Audience: British middle- and upper-class consumers, particularly women driving domestic sugar boycotts.",
+              "Motive: To embed abolitionist sentiment into daily Georgian culture and sustain political pressure on Parliament."
             ]
           }
         }
       ],
       "sources": [
         {
-          "title": "Source A: The Plymouth Committee, Stowage of the British Slave Ship Brookes (1788)",
+          "id": "fbe_l2_src_a",
+          "letter": "A",
+          "type": "visual",
+          "src": "/images/brookes_slave_ship.jpg",
           "image": "/images/brookes_slave_ship.jpg",
-          "caption": "The famous 1788 abolitionist cross-section diagram of the slave ship Brookes detailing the stowage of 454 captives.",
-          "source_context": "Published in London by Thomas Clarkson and the Society for Effecting the Abolition of the Slave Trade.",
-          "how_useful_question": "How useful is Source A for an enquiry into the conditions endured by enslaved Africans during the Middle Passage?",
+          "title": "Source A (Forensic Architecture): Plan and Sections of the Slave Ship Brookes (1788)",
+          "caption": "Official broadside engraving published by the Society for Effecting the Abolition of the Slave Trade, showing the calculated stowage of 454 captive human beings aboard the Liverpool slave ship Brookes.",
+          "citation": "Library of Congress, Prints and Photographs Division (LC-USZ62-44000). Engraving, 1788.",
+          "provenance": "Published in London and Philadelphia in 1788 based on official British parliamentary inspection measurements.",
+          "context": "Even under the 1788 Regulated Slave Trade Act which placed limits on ship density, captive men were allotted a space just 6 feet by 16 inches. In previous voyages, the Brookes had carried over 600 people in suffocating holds. **Hinge Question:** Why was a precise, technical diagram of a ship more persuasive to eighteenth-century politicians than emotional written speeches?",
+          "question": "How did abolitionists use the precise architectural diagram of the slave ship Brookes to expose the brutal inhumanity of the Middle Passage?",
+          "hinge_question": "Why was a precise, technical diagram of a ship more persuasive to eighteenth-century politicians than emotional written speeches?",
+          "disciplinary_focus": "FORENSIC ARCHITECTURE",
+          "utility_enquiry": {
+            "question": "How did abolitionists use the precise architectural diagram of the slave ship Brookes to expose the brutal inhumanity of the Middle Passage?",
+            "model_answer": "By showing 454 human bodies crammed horizontally like inanimate cargo into suffocating shelves, the diagram provided unarguable geometric proof that enslavers prioritized maximum profit over human survival.",
+            "content_inferences": "Demonstrates how British maritime commerce treated human beings as commodified cargo subjected to lethal overcrowding.",
+            "provenance_evaluation": "Abolitionist political poster grounded in sworn parliamentary inspection data; deliberately clinical and unemotional in format to prevent pro-slavery rebuttals.",
+            "context_limitations": "Presents a clean, static, two-dimensional schematic that omits the pitch darkness, stifling stench, human vomit, dysentery, and screams experienced below deck.",
+            "bullet_points": [
+              {
+                "label": "Mathematical Proof of Inhumanity",
+                "text": "The diagram demonstrated that even legal 'reforms' treated human beings worse than livestock, cramming adults into spaces narrower than coffins."
+              },
+              {
+                "label": "Mass Political Mobilisation",
+                "text": "Over 7,000 copies were distributed across Britain, hung in taverns, homes, and churches, making the reality of the Middle Passage undeniable."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Plymouth Abolition Committee / Society for Effecting the Abolition of the Slave Trade (Thomas Clarkson).",
+              "Audience: Members of Parliament, the British reading public, and transatlantic sympathizers.",
+              "Motive: To expose the systematic cruelty of Liverpool slave merchants and demand legislative prohibition of the trade."
+            ]
+          },
+          "question_badge": "FORENSIC ARCHITECTURE",
+          "model_answer": "By showing 454 human bodies crammed horizontally like inanimate cargo into suffocating shelves, the diagram provided unarguable geometric proof that enslavers prioritized maximum profit over human survival.",
           "provenance_clues": [
-            "Author: The Plymouth Committee of the Abolitionist Society.",
-            "Audience: British MPs and voters debating the slave trade.",
-            "Motive: To provide undeniable forensic proof of systematic cruelty."
-          ],
-          "hinge_question": "Why did abolitionists choose a technical diagram rather than an emotional painting?",
-          "citation": "Plymouth Committee • British Library / National Maritime Museum, Greenwich.",
-          "discussion_ideas": [
-            "The Plymouth Abolition Committee made the deliberate tactical decision to use an objective architectural plan because cold technical diagrams were impossible for slave traders to deny or refute as artistic exaggeration. By depicting the exact dimensions of the ship's hold and showing over 450 human bodies packed shoulder-to-shoulder in rows with each adult male allotted a space just six feet long by sixteen inches wide, the cross-section visually exposed the monstrous reality of chattel slavery: treating human beings not as persons, but as inert, tightly packed cargo. Circulated across Britain, America, and France, this unemotional blueprint stripped away the polite fictions of the slave trade and forced the public to confront the physical horror of the Middle Passage."
+            "Author: Plymouth Abolition Committee / Society for Effecting the Abolition of the Slave Trade (Thomas Clarkson).",
+            "Audience: Members of Parliament, the British reading public, and transatlantic sympathizers.",
+            "Motive: To expose the systematic cruelty of Liverpool slave merchants and demand legislative prohibition of the trade."
           ]
         },
         {
-          "title": "Source B: Daniel Orme, Portrait of Olaudah Equiano / Gustavus Vassa (1789)",
+          "id": "fbe_l2_src_b",
+          "letter": "B",
+          "type": "visual",
+          "src": "/images/olaudah_equiano.jpg",
           "image": "/images/olaudah_equiano.jpg",
-          "caption": "Frontispiece engraving of Olaudah Equiano from his 1789 autobiography The Interesting Narrative.",
-          "source_context": "Kidnapped as a boy, Equiano purchased his freedom and became a leader of London’s abolitionist movement.",
-          "how_useful_question": "How useful is Source B for an enquiry into how formerly enslaved Africans challenged pro-slavery arguments?",
+          "title": "Source B (Lived Testimony): Portrait Frontispiece of Olaudah Equiano, or Gustavus Vassa, the African (1789)",
+          "caption": "Engraved frontispiece portrait from The Interesting Narrative of the Life of Olaudah Equiano, showing him in refined European dress holding an open Bible pointing to Acts 4:12.",
+          "citation": "National Portrait Gallery, London (NPG D8621). Stipple engraving by Daniel Orme after W. Denton, 1789.",
+          "provenance": "Commissioned by Equiano himself as the authoritative frontispiece for his self-published autobiography.",
+          "context": "Kidnapped as a child from the Igbo kingdom in modern Nigeria, Equiano survived the horrors of the Middle Passage and enslavement in Virginia and the Caribbean. Having purchased his freedom, he settled in London as a leading abolitionist writer. **Hinge Question:** Why was firsthand testimony from formerly enslaved survivors essential to dismantling the moral legitimacy of the slave trade?",
+          "question": "How does Equiano's portrait and published narrative directly challenge pro-slavery arguments about the intellect and humanity of African people?",
+          "hinge_question": "Why was firsthand testimony from formerly enslaved survivors essential to dismantling the moral legitimacy of the slave trade?",
+          "disciplinary_focus": "LIVED TESTIMONY",
+          "utility_enquiry": {
+            "question": "How does Equiano's portrait and published narrative directly challenge pro-slavery arguments about the intellect and humanity of African people?",
+            "model_answer": "Depicted in refined Georgian dress holding an open Bible, Equiano presents himself as an educated, articulate Christian gentleman whose intellectual eloquence demolished racist claims that Africans were uncivilized.",
+            "content_inferences": "Asserts the dignity, intellectual capability, and moral authority of African people against racist pro-slavery stereotypes.",
+            "provenance_evaluation": "Self-published frontispiece portrait carefully composed by Equiano to project Christian piety, literary accomplishment, and financial independence.",
+            "context_limitations": "A polished public image designed to persuade an elite white eighteenth-century audience; reflects the need to conform to European norms to gain political credibility.",
+            "bullet_points": [
+              {
+                "label": "Refutation of Racial Hierarchy",
+                "text": "Equiano's refined costume and intellectual posture demonstrated that formerly enslaved Africans were fully equal to European aristocrats."
+              },
+              {
+                "label": "Firsthand Eye-Witness Authority",
+                "text": "As an African survivor who had personally endured the Middle Passage, Equiano's testimony carried unassailable authenticity in parliamentary debates."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Daniel Orme (engraver) / Olaudah Equiano (author, publisher, and activist).",
+              "Audience: British middle- and upper-class readers, politicians, and religious congregations.",
+              "Motive: To establish Equiano's moral and intellectual authority as an independent author exposing chattel slavery."
+            ]
+          },
+          "question_badge": "LIVED TESTIMONY",
+          "model_answer": "Depicted in refined Georgian dress holding an open Bible, Equiano presents himself as an educated, articulate Christian gentleman whose intellectual eloquence demolished racist claims that Africans were uncivilized.",
           "provenance_clues": [
-            "Author: Daniel Orme, commissioned by Olaudah Equiano.",
-            "Audience: Literate British readers, MPs, and churchgoers.",
-            "Motive: To disprove pro-slavery claims by presenting himself as an educated Christian scholar."
-          ],
-          "hinge_question": "Why did Equiano insist on European attire holding an open Bible?",
-          "citation": "Daniel Orme • Frontispiece of The Interesting Narrative (1789).",
-          "discussion_ideas": [
-            "Direct Refutation of Pro-Slavery Racial Stereotypes: Pro-slavery apologists claimed that African people were uncivilized savages who lacked the capacity for moral reasoning, education, or Christian faith; by presenting himself in elegant British gentleman's attire—a frock coat, ruffled cravat, and styled hair—holding an open Bible, Equiano visually demolished racist caricatures and asserted his full intellectual, moral, and spiritual equality.",
-            "Mobilizing Christian Empathy and Abolitionist Appeal: By holding the Christian Scriptures open to the Acts of the Apostles, Equiano appealed directly to the religious conscience of white British churchgoers and evangelical reformers (such as William Wilberforce), reminding readers that all human souls were equal in the sight of God and that chattel slavery was an unpardonable sin against Christian doctrine."
+            "Author: Daniel Orme (engraver) / Olaudah Equiano (author, publisher, and activist).",
+            "Audience: British middle- and upper-class readers, politicians, and religious congregations.",
+            "Motive: To establish Equiano's moral and intellectual authority as an independent author exposing chattel slavery."
+          ]
+        },
+        {
+          "id": "fbe_l2_src_c",
+          "letter": "C",
+          "type": "visual",
+          "src": "/images/first_british_empire/slave_trade_iron_shackles.jpg",
+          "image": "/images/first_british_empire/slave_trade_iron_shackles.jpg",
+          "title": "Source C (Material Oppression & Coercion): Eighteenth-Century Iron Leg Shackles and Handcuffs (West Africa to Caribbean)",
+          "caption": "Authentic wrought-iron leg shackles recovered from the transatlantic slave route, manufactured by British foundries in Birmingham and Liverpool to chain African captives ankle-to-ankle aboard slave vessels.",
+          "citation": "International Slavery Museum, National Museums Liverpool (Accession: 28144996426). Tamale, Ghana.",
+          "provenance": "Forged in eighteenth-century British industrial metalworks and traded to coastal slave barracoons in West Africa.",
+          "context": "British industrial cities profited immensely from manufacturing the instruments of enslavement. Male captives aboard Guineamen were locked into iron leg irons for the entire 6 to 12-week Atlantic voyage. **Hinge Question:** How did British manufacturing industries in northern England profit directly from the infrastructure of human enslavement?",
+          "question": "What does the physical design of these iron leg shackles reveal about how British slave captains maintained control over hundreds of captives at sea?",
+          "hinge_question": "How did British manufacturing industries in northern England profit directly from the infrastructure of human enslavement?",
+          "disciplinary_focus": "MATERIAL OPPRESSION",
+          "utility_enquiry": {
+            "question": "What does the physical design of these iron leg shackles reveal about how British slave captains maintained control over hundreds of captives at sea?",
+            "model_answer": "The heavy iron cuffs locked pairs of male captives ankle-to-ankle around the clock, severely restricting movement and making coordinated mutinies or jumping overboard physically impossible.",
+            "content_inferences": "Reveals that the Middle Passage was an ongoing military operation reliant on continuous physical restraint and bodily torture.",
+            "provenance_evaluation": "Physical artifact of state-sanctioned industrial violence; tangibly demonstrates the raw physical brutality underpinning mercantile wealth.",
+            "context_limitations": "The cold metal artifact alone cannot convey the physical pain, gangrene, skin abrasions, and psychological despair suffered by the individuals who wore them.",
+            "bullet_points": [
+              {
+                "label": "Prevention of Shipboard Rebellion",
+                "text": "Chaining captives together in pairs ensured that any attempt to rise up or jump into the sea would be immediately hindered by the chained partner."
+              },
+              {
+                "label": "British Industrial Complicity",
+                "text": "Metal goods, shackles, and firearms forged in Birmingham and Bristol were traded for human beings, linking British factory workers directly to Atlantic slavery."
+              }
+            ],
+            "provenance_clues": [
+              "Author: British industrial metalworkers in Liverpool and Birmingham.",
+              "Audience: Slave ship captains, merchant crews, and captive enslaved people.",
+              "Motive: To enforce total physical submission and ensure maximum delivery of living human property to American markets."
+            ]
+          },
+          "question_badge": "MATERIAL OPPRESSION",
+          "model_answer": "The heavy iron cuffs locked pairs of male captives ankle-to-ankle around the clock, severely restricting movement and making coordinated mutinies or jumping overboard physically impossible.",
+          "provenance_clues": [
+            "Author: British industrial metalworkers in Liverpool and Birmingham.",
+            "Audience: Slave ship captains, merchant crews, and captive enslaved people.",
+            "Motive: To enforce total physical submission and ensure maximum delivery of living human property to American markets."
+          ]
+        },
+        {
+          "id": "fbe_l2_src_d",
+          "letter": "D",
+          "type": "visual",
+          "src": "/images/first_british_empire/slave_auction_broadside_1769.jpg",
+          "image": "/images/first_british_empire/slave_auction_broadside_1769.jpg",
+          "title": "Source D (Commodification & Slave Market): Charleston Slave Auction Broadside: Cargo of 94 Prime Negroes (July 1769)",
+          "caption": "Colonial auction broadside printed by David & John Deas, advertising the public sale of ninety-four captive African men, women, and children newly arrived from Sierra Leone aboard the brigantine Dembia.",
+          "citation": "Library of Congress, Rare Book and Special Collections Division (Broadside Collection, portfolio 172, no. 13).",
+          "provenance": "Printed in Charleston, South Carolina on 24 July 1769 to advertise a slave arrival auction.",
+          "context": "Upon surviving the Middle Passage, captive Africans were washed, oiled with lard to conceal illness, and sold at public auctions. This broadside highlighted that the captives were free from smallpox to entice wealthy plantation owners. **Hinge Question:** What strategies did colonial slave merchants use to strip human beings of their names, cultures, and identities upon arrival?",
+          "question": "How does the language and typographic design of this 1769 broadside reflect the total commodification of human beings in the colonial economy?",
+          "hinge_question": "What strategies did colonial slave merchants use to strip human beings of their names, cultures, and identities upon arrival?",
+          "disciplinary_focus": "COMMODIFICATION",
+          "utility_enquiry": {
+            "question": "How does the language and typographic design of this 1769 broadside reflect the total commodification of human beings in the colonial economy?",
+            "model_answer": "The broadside lists captive men, women, and children alongside livestock and trade goods, emphasizing their physical fitness, smallpox immunity, and agricultural utility to attract colonial buyers.",
+            "content_inferences": "Documents the cold, transactional commercial reality of the slave trade, where human lives were reduced to financial line-items.",
+            "provenance_evaluation": "Authentic commercial advertising poster from an American colonial slave port; reveals how slave auctions were normalized as public business events.",
+            "context_limitations": "Omits the terror, family separation, and trauma experienced by the 94 survivors paraded onto the auction block.",
+            "bullet_points": [
+              {
+                "label": "Dehumanizing Marketing Language",
+                "text": "Terms like 'prime, healthy Negroes' and guarantees of health treated human beings like grade-A cattle to maximize merchant commissions."
+              },
+              {
+                "label": "Commercial Integration",
+                "text": "The advertisement promised payment terms in rice, indigo, and bills of exchange, illustrating how colonial credit systems depended on chattel slavery."
+              }
+            ],
+            "provenance_clues": [
+              "Author: David & John Deas, prominent transatlantic slave merchants and auction brokers.",
+              "Audience: Wealthy rice, cotton, and tobacco planters in South Carolina and Georgia.",
+              "Motive: To attract competitive bidding and secure top market prices for newly imported human cargo."
+            ]
+          },
+          "question_badge": "COMMODIFICATION",
+          "model_answer": "The broadside lists captive men, women, and children alongside livestock and trade goods, emphasizing their physical fitness, smallpox immunity, and agricultural utility to attract colonial buyers.",
+          "provenance_clues": [
+            "Author: David & John Deas, prominent transatlantic slave merchants and auction brokers.",
+            "Audience: Wealthy rice, cotton, and tobacco planters in South Carolina and Georgia.",
+            "Motive: To attract competitive bidding and secure top market prices for newly imported human cargo."
+          ]
+        },
+        {
+          "id": "fbe_l2_src_e",
+          "letter": "E",
+          "type": "visual",
+          "src": "/images/first_british_empire/wedgwood_abolitionist_medallion_1786.jpg",
+          "image": "/images/first_british_empire/wedgwood_abolitionist_medallion_1786.jpg",
+          "title": "Source E (Visual Mobilisation & Consumer Culture): Josiah Wedgwood's Anti-Slavery Medallion: 'Am I Not a Man and a Brother?' (1786)",
+          "caption": "Black basalt and white jasperware ceramic medallion sculpted by William Hackwood for master potter Josiah Wedgwood, depicting a kneeling enslaved African in chains pleading for human brotherhood.",
+          "citation": "Brooklyn Museum / British Museum (Museum number: 1856,1217.1). Jasperware, 32mm.",
+          "provenance": "Manufactured at Wedgwood's Etruria factory, Staffordshire, and distributed free of charge to the Anti-Slavery Society.",
+          "context": "In 1787, master ceramic manufacturer Josiah Wedgwood joined the Committee for Abolition. He produced thousands of these cameos at personal expense, which became fashionable jewelry worn by thousands of British men and women. **Hinge Question:** Can consumer boycotts and fashion accessories ever be as powerful in achieving political change as parliamentary legislation?",
+          "question": "Why was Josiah Wedgwood's ceramic medallion so effective in transforming British public opinion against the slave trade?",
+          "hinge_question": "Can consumer boycotts and fashion accessories ever be as powerful in achieving political change as parliamentary legislation?",
+          "disciplinary_focus": "VISUAL MOBILISATION",
+          "utility_enquiry": {
+            "question": "Why was Josiah Wedgwood's ceramic medallion so effective in transforming British public opinion against the slave trade?",
+            "model_answer": "By reproducing the cameo on fashionable jasperware cufflinks, hairpins, and snuffboxes, abolitionists made opposition to human trafficking a visible, socially prestigious moral statement across British society.",
+            "content_inferences": "Shows how abolitionists pioneered modern consumer activist techniques, leveraging moral branding to pressure politicians.",
+            "provenance_evaluation": "A manufactured political badge designed for public display; marks the birth of popular humanitarian campaigning in Britain.",
+            "context_limitations": "Depicts the African captive in a passive, submissive kneeling posture begging white Europeans for charity, obscuring autonomous Black armed resistance.",
+            "bullet_points": [
+              {
+                "label": "Social Prestige of Activism",
+                "text": "Wearing the cameo signaled moral enlightenment, allowing women who lacked the vote to participate actively in the abolition movement."
+              },
+              {
+                "label": "Universal Human Brotherhood",
+                "text": "The motto 'Am I Not a Man and a Brother?' directly attacked the legal premise that Africans were property rather than human beings."
+              }
+            ],
+            "provenance_clues": [
+              "Author: William Hackwood (modeler) and Josiah Wedgwood (industrialist and abolitionist).",
+              "Audience: British middle- and upper-class consumers, particularly women driving domestic sugar boycotts.",
+              "Motive: To embed abolitionist sentiment into daily Georgian culture and sustain political pressure on Parliament."
+            ]
+          },
+          "question_badge": "VISUAL MOBILISATION",
+          "model_answer": "By reproducing the cameo on fashionable jasperware cufflinks, hairpins, and snuffboxes, abolitionists made opposition to human trafficking a visible, socially prestigious moral statement across British society.",
+          "provenance_clues": [
+            "Author: William Hackwood (modeler) and Josiah Wedgwood (industrialist and abolitionist).",
+            "Audience: British middle- and upper-class consumers, particularly women driving domestic sugar boycotts.",
+            "Motive: To embed abolitionist sentiment into daily Georgian culture and sustain political pressure on Parliament."
           ]
         }
       ],
@@ -996,7 +1805,112 @@ const unitData = {
           "viewing_task": "[01:00] Recall: What tactics did abolitionists like Thomas Clarkson and Olaudah Equiano deploy to persuade the British public?\n[01:50] Explain: Why did powerful mercantile interests in Bristol and Liverpool fiercely resist abolition for decades?\n[02:20] Challenge: How did first-hand evidence—such as the Brookes ship diagram and Equiano's autobiography—turn public opinion against the trade?",
           "model_answer": "Recall: They published empirical witness accounts, displayed physical instruments of torture (shackles, thumbscrews), produced the Brookes ship diagram, and organised nationwide consumer boycotts of slave-grown sugar.\nExplain: Wealthy merchant lobbies, West Indian plantation owners, and City of London financiers held immense parliamentary influence and argued that ending the trade would destroy Britain's naval supremacy and commercial wealth.\nChallenge: By presenting incontrovertible forensic evidence directly to middle-class citizens and working people, abolitionists transformed an abstract overseas economic system into an urgent, inescapable moral crisis that Parliament could no longer dismiss."
         }
-      ]
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: The Transatlantic Slave Trade & The Middle Passage",
+        "tariff": "8 marks (Feature Drill [4m] & Consequence Writing [4m])",
+        "questions": [
+          {
+            "tariff": "4 marks",
+            "type": "feature_drills_4m",
+            "question": "Describe two features of conditions endured by enslaved Africans during the Middle Passage. [4 marks]",
+            "prompt": "Identify two distinct features of conditions on slave ships during the Atlantic crossing. For each feature, provide a clear identification followed by supporting factual knowledge.",
+            "model": "Feature 1: One key feature was extreme physical confinement and overcrowding below decks.<br>Detail: Captives were forced to lie chained in pairs on tiered wooden shelves with barely thirty centimetres of headroom, packed in rows that prevented them from sitting upright or turning onto their sides during the eight-week voyage.<br><br>Feature 2: A second key feature was the catastrophic lack of sanitation and virulent disease.<br>Detail: Denied ventilation, the hold filled with vomit, dysentery (the \"bloody flux\"), and extreme tropical heat, creating lethal conditions that killed between 15% and 20% of enslaved Africans before reaching the Americas.",
+            "scaffolding": {
+              "acronym": "F1 + D1 • F2 + D2",
+              "acronym_title": "4-Mark Feature Drill Formula",
+              "steps": [
+                {
+                  "letter": "F1",
+                  "name": "Feature 1 (Physical Confinement)",
+                  "prompt": "Identify the cramped wooden shelves and iron shackles.",
+                  "starter": "One key feature was that..."
+                },
+                {
+                  "letter": "D1",
+                  "name": "Detail 1",
+                  "prompt": "Add precise details (thirty centimetres headroom, chained in pairs, inability to turn).",
+                  "starter": "Specifically, this involved..."
+                },
+                {
+                  "letter": "F2",
+                  "name": "Feature 2 (Sanitation & Mortality)",
+                  "prompt": "Identify the spread of virulent disease and heat below deck.",
+                  "starter": "A second key feature was..."
+                },
+                {
+                  "letter": "D2",
+                  "name": "Detail 2",
+                  "prompt": "Add precise details (dysentery / bloody flux, 15–20% mortality rate, suffocation).",
+                  "starter": "In particular, this meant that..."
+                }
+              ],
+              "sentence_starters": [
+                "One key feature was that...",
+                "Specifically, this involved...",
+                "A second key feature was...",
+                "In particular, this meant that..."
+              ],
+              "connectives_bank": [
+                "Middle Passage",
+                "tight packing",
+                "shackles",
+                "wooden shelves",
+                "dysentery",
+                "bloody flux",
+                "15–20% mortality",
+                "slaver Brooks"
+              ]
+            }
+          },
+          {
+            "tariff": "4 marks",
+            "type": "consequence_4m",
+            "question": "Explain one consequence of the Zong massacre (1781) for the British abolitionist movement. [4 marks]",
+            "prompt": "Focus on how the captain throwing 133 enslaved Africans overboard for insurance money, and the court treating them merely as lost commercial cargo, outraged the public and galvanized Granville Sharp and Olaudah Equiano to campaign for abolition.",
+            "model": "One significant consequence of the Zong massacre in 1781 was that it exposed the barbaric legal reality of chattel slavery, providing a powerful moral catalyst that galvanized the British abolitionist campaign. When Captain Luke Collingwood ordered 133 sick enslaved Africans to be thrown alive into the sea so the ship’s owners could claim an insurance payout for lost \"cargo\", the subsequent court case (Gregson v Gilbert) focused entirely on financial reimbursement rather than murder. Lord Chief Justice Mansfield ruled that the law viewed slaves identically to horses or timber. Outraged by this dehumanisation, abolitionist pioneers Granville Sharp and Olaudah Equiano published the court transcripts and publicised the atrocity. Consequently, the case shocked British public opinion, directly inspiring the founding of the Society for the Abolition of the Slave Trade in 1787 and proving that slavery was morally indefensible.",
+            "scaffolding": {
+              "acronym": "P-F-C (Point • Fact • Consequence)",
+              "acronym_title": "High-Yield Consequence Formula (1 Concise Paragraph)",
+              "steps": [
+                {
+                  "letter": "POINT",
+                  "name": "Identify Consequence",
+                  "prompt": "State the public outrage and moral catalyst galvanizing the abolition movement.",
+                  "starter": "One significant consequence of the Zong massacre was..."
+                },
+                {
+                  "letter": "FACT",
+                  "name": "Historical Evidence",
+                  "prompt": "Cite 133 people thrown overboard, Gregson v Gilbert insurance claim, and Granville Sharp.",
+                  "starter": "In particular, when Captain Collingwood..."
+                },
+                {
+                  "letter": "CONSEQUENCE",
+                  "name": "Explain Result",
+                  "prompt": "Explain how this directly inspired the 1787 Abolition Society and legislative campaigns.",
+                  "starter": "Consequently, this directly resulted in..."
+                }
+              ],
+              "sentence_starters": [
+                "One significant consequence of the Zong massacre was that...",
+                "In particular, this occurred when...",
+                "As a direct result...",
+                "Consequently, this galvanized the abolition movement because..."
+              ],
+              "connectives_bank": [
+                "Zong massacre (1781)",
+                "Luke Collingwood",
+                "133 murdered",
+                "insurance claim",
+                "Granville Sharp",
+                "Olaudah Equiano",
+                "1787 Abolition Society"
+              ]
+            }
+          }
+        ]
+      }
     },
     {
       "id": "lesson_3",
@@ -1191,100 +2105,474 @@ const unitData = {
         {
           "act": 1,
           "title": "Cromwell’s Western Design (1655)",
-          "text": "<span class=\"para-ref\">[3.1]</span> In 1655, Oliver Cromwell launched his ambitious \"Western Design\" to wrest control of the Caribbean from Catholic Spain. An English naval expedition seized the mountainous island of Jamaica. As the Spanish defenders fled, their enslaved African servants slipped into the impenetrable interior of the Blue Mountains and Cockpit Country. Joining indigenous Taíno survivors, they formed independent, self-governing mountain communities known as <strong>Maroons</strong> (from the Spanish <em>cimarrón</em>, meaning wild or untamed). For over eighty years, these free African enclaves defied every British attempt to recapture them."
+          "text": "<span class=\"para-ref\">[3.1]</span> In 1655, Oliver Cromwell launched his ambitious \"Western Design\" to wrest control of the Caribbean from Catholic Spain. An English naval expedition seized the mountainous island of Jamaica. As the Spanish defenders fled, their enslaved African servants slipped into the impenetrable interior of the Blue Mountains and Cockpit Country. Joining indigenous Taíno survivors, they formed independent, self-governing mountain communities known as <strong>Maroons</strong> (from the Spanish <em>cimarrón</em>, meaning wild or untamed). For over eighty years, these free African enclaves defied every British attempt to recapture them.",
+          "image": "/images/jamaica_maroons.jpg",
+          "image_alt": "18th-century cartographic map of Jamaica by Thomas Jefferys showing the mountainous interior sanctuary of the Maroons",
+          "caption": "Thomas Jefferys' 1775 map of Jamaica, illustrating the rugged, impenetrable Blue Mountains and Cockpit Country that enabled Maroon communities to establish autonomous defensive strongholds (British Library, Maps K.Top.123.47).",
+          "source": {
+            "id": "fbe_l3_src_a",
+            "letter": "A",
+            "type": "visual",
+            "src": "/images/sugar_cane_plantation.jpg",
+            "image": "/images/sugar_cane_plantation.jpg",
+            "title": "Source A (Exhaustive Labour): Slaves Cutting the Sugar Cane in Antigua (William Clark, 1823)",
+            "caption": "Aquatint engraving by William Clark depicting the rigorous gang labor system on an Antiguan sugar estate, with field hands cutting cane stalks in disciplined lines under the surveillance of a mounted white overseer.",
+            "citation": "British Library, London (Ten Views in the Island of Antigua, Plate 4). Aquatint, 1823.",
+            "provenance": "Published in London in 1823 by artist and plantation resident William Clark.",
+            "context": "Sugar cane cultivation was one of the most grueling agricultural industries in the world. Enslaved workers labored up to 14 hours a day in intense tropical heat, cutting stalks with sharp billhooks while dodging venomous snakes. **Hinge Question:** Why did Caribbean sugar plantations operate more like dangerous modern factories than traditional agricultural farms?",
+            "question": "How does William Clark's painting illustrate the rigid gang labor system that drove Caribbean sugar production?",
+            "hinge_question": "Why did Caribbean sugar plantations operate more like dangerous modern factories than traditional agricultural farms?",
+            "disciplinary_focus": "EXHAUSTIVE LABOUR",
+            "utility_enquiry": {
+              "question": "How does William Clark's painting illustrate the rigid gang labor system that drove Caribbean sugar production?",
+              "model_answer": "It depicts the 'first gang' of strongest enslaved workers cutting mature cane stalks in a disciplined line under the watchful eye of a mounted white overseer and black driver holding a whip.",
+              "content_inferences": "Documents how Caribbean sugar estates functioned as industrialized agro-capitalist sweatshops powered by coercive physical violence.",
+              "provenance_evaluation": "Painted by a sympathetic member of the planter class; sanitizes the brutality to portray plantation labor as orderly and picturesque.",
+              "context_limitations": "Minimizes the high mortality rate, frequent maimings from machetes, and extreme exhaustion that caused average lifespans of less than 7 years after arrival.",
+              "bullet_points": [
+                {
+                  "label": "Industrial Discipline",
+                  "text": "Workers were organized into strict gangs by physical strength, forced to work at a synchronized pace from sunrise to dusk."
+                },
+                {
+                  "label": "Constant Coercive Surveillance",
+                  "text": "The mounted overseer and whip-wielding driver ensured that any slackening of pace was met with immediate, agonizing physical punishment."
+                }
+              ],
+              "provenance_clues": [
+                "Author: William Clark, artist and planter resident in Antigua for several years.",
+                "Audience: British wealthy investors, absentee plantation owners, and the Georgian public.",
+                "Motive: To showcase Caribbean sugar production as productive, civilized, and harmonious to defend against abolitionist criticism."
+              ]
+            },
+            "question_badge": "EXHAUSTIVE LABOUR",
+            "model_answer": "It depicts the 'first gang' of strongest enslaved workers cutting mature cane stalks in a disciplined line under the watchful eye of a mounted white overseer and black driver holding a whip.",
+            "provenance_clues": [
+              "Author: William Clark, artist and planter resident in Antigua for several years.",
+              "Audience: British wealthy investors, absentee plantation owners, and the Georgian public.",
+              "Motive: To showcase Caribbean sugar production as productive, civilized, and harmonious to defend against abolitionist criticism."
+            ]
+          }
         },
         {
           "act": 2,
           "title": "The Sugar Industrial Complex (1670–1730)",
           "text": "<span class=\"para-ref\">[3.2]</span> Along the fertile coastal plains of Jamaica, British planters constructed a brutal agro-industrial machine powered by \"White Gold\"—sugar. Enslaved Africans were organised into the rigid <strong>gang system</strong>: the Great Gang cleared rocky land and cut thick cane with machetes under blistering tropical sun, driven by overseers brandishing leather whips. In steaming boiling houses, workers laboured through the night near bubbling cauldrons of molten sugar, where a slip meant amputation or scalding death. The work was so exhausting and food rations so meagre that life expectancy after arriving from Africa was under seven years.",
           "source": {
-            "letter": "A",
-            "title": "Source A: William Clark, Slaves Cutting the Sugar Cane in Antigua (1823)",
-            "image": "/images/sugar_cane_plantation.jpg",
-            "caption": "William Clark’s British Library print showing enslaved men and women cutting tall sugar cane under the watchful eye of an armed overseer on horseback.",
-            "source_context": "Published in London as part of Ten Views in the Island of Antigua, this print illustrates the intense physical labour demanded during the harvest season on Caribbean sugar estates.",
-            "how_useful_question": "How useful is Source A for an enquiry into the nature of plantation labour and colonial control in the 18th-century British Caribbean?",
+            "id": "fbe_l3_src_b",
+            "letter": "B",
+            "type": "visual",
+            "src": "/images/queen_nanny.jpg",
+            "image": "/images/queen_nanny.jpg",
+            "title": "Source B (Guerrilla Leadership): Memorial Monument Bust of National Hero Queen Nanny of the Maroons",
+            "caption": "Monument bust commemorating Grandy Nanny, spiritual and military leader of the Windward Maroons who led decades of successful guerrilla resistance against British regular armies in Jamaica's Blue Mountains.",
+            "citation": "National Heroes Park, Kingston, Jamaica. Commemorative Bronze Monument.",
+            "provenance": "Sculpted in Jamaica to honor the only female National Hero of Jamaica and champion of anti-colonial resistance.",
+            "context": "Queen Nanny was an Asante military and spiritual leader who established Nanny Town in the precipitous Blue Mountains. Between 1720 and 1739, her warriors repeatedly defeated British regiments by using camouflaged ambush tactics. **Hinge Question:** How did African military traditions and spiritual leadership enable Maroons to withstand the full might of the British military?",
+            "question": "Why did British colonial authorities find Queen Nanny and the Windward Maroons virtually impossible to defeat in the Blue Mountains?",
+            "hinge_question": "How did African military traditions and spiritual leadership enable Maroons to withstand the full might of the British military?",
+            "disciplinary_focus": "INDIGENOUS GUERRILLA WARFARE",
+            "utility_enquiry": {
+              "question": "Why did British colonial authorities find Queen Nanny and the Windward Maroons virtually impossible to defeat in the Blue Mountains?",
+              "model_answer": "Nanny utilized master camouflage, deep local knowledge of precipitous mountain terrain, and coordinated ambush tactics, neutralizing superior British military firepower and inflicting heavy casualties on colonial patrols.",
+              "content_inferences": "Highlights the efficacy of autonomous African military tactics against conventional European imperial regular forces.",
+              "provenance_evaluation": "Modern commemorative memorial reflecting oral historical traditions and national reverence for Maroon freedom fighters.",
+              "context_limitations": "Because Nanny left no written records, our understanding of her relies on British military dispatches (which feared and vilified her) and Maroon oral legends.",
+              "bullet_points": [
+                {
+                  "label": "Mastery of Camouflage and Terrain",
+                  "text": "Maroons dressed in living foliage and exploited the rugged Cockpit Country topography to trap British troops in steep limestone gorges."
+                },
+                {
+                  "label": "Spiritual and Tactical Authority",
+                  "text": "As an Obeah woman and supreme military commander, Nanny unified diverse African ethnic groups into a disciplined guerrilla confederacy."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Jamaican National Heritage sculptors based on centuries of preserved Maroon oral tradition.",
+                "Audience: The citizens of Jamaica, Commonwealth students, and international scholars of anti-slavery resistance.",
+                "Motive: To celebrate Queen Nanny as a visionary military strategist and pioneer of Caribbean decolonization."
+              ]
+            },
+            "question_badge": "INDIGENOUS GUERRILLA WARFARE",
+            "model_answer": "Nanny utilized master camouflage, deep local knowledge of precipitous mountain terrain, and coordinated ambush tactics, neutralizing superior British military firepower and inflicting heavy casualties on colonial patrols.",
             "provenance_clues": [
-              "Author: William Clark, an English artist who lived on sugar plantations in Antigua for three years.",
-              "Audience: British readers and investors in London interested in colonial plantation life.",
-              "Motive: While realistically depicting the gang system, Clark sanitised the scene by showing neatly dressed workers without displaying the frequent whippings or horrific injuries common in sugar mills."
-            ],
-            "hinge_question": "Why might an artist depict plantation labour looking orderly rather than showing the violence used to enforce work?",
-            "citation": "William Clark • British Library, London.",
-            "discussion_ideas": [
-              "William Clark's print was produced for British audiences and plantation owners who wished to defend the Caribbean sugar industry against the mounting abolitionist campaign in Parliament. Clark deliberately depicts the enslaved workers in clean clothes, working at an unhurried, rhythmic pace under a bright Caribbean sky, with the overseer appearing calm rather than brandishing the cart whip. By erasing the brutal realities of plantation slavery—where enslaved men, women, and children were driven by the whip through 18-hour shifts cutting cane with razor-sharp machetes under scorching heat, suffering high mortality rates—Clark presented a sanitized, pastoral fantasy designed to convince British buyers that enslavement was a benign, orderly agricultural system."
+              "Author: Jamaican National Heritage sculptors based on centuries of preserved Maroon oral tradition.",
+              "Audience: The citizens of Jamaica, Commonwealth students, and international scholars of anti-slavery resistance.",
+              "Motive: To celebrate Queen Nanny as a visionary military strategist and pioneer of Caribbean decolonization."
             ]
           }
         },
         {
           "act": 3,
           "title": "Daily Sabotage & Cultural Survival (1680–1720)",
-          "text": "<span class=\"para-ref\">[3.3]</span> Enslaved people did not passively endure bondage. While armed rebellion meant torture and execution, workers constantly engaged in subtle daily resistance: breaking heavy hoes, deliberately working slowly (\"playing the fool\"), faking illness, and secretly poisoning planter livestock. Enslaved communities fiercely guarded their African heritage: singing call-and-response work songs, passing down Anansi spider trickster folklore, practicing Obeah spiritual healing, and holding midnight funeral dances that celebrated the return of deceased spirits to their African homeland."
+          "text": "<span class=\"para-ref\">[3.3]</span> Enslaved people did not passively endure bondage. While armed rebellion meant torture and execution, workers constantly engaged in subtle daily resistance: breaking heavy hoes, deliberately working slowly (\"playing the fool\"), faking illness, and secretly poisoning planter livestock. Enslaved communities fiercely guarded their African heritage: singing call-and-response work songs, passing down Anansi spider trickster folklore, practicing Obeah spiritual healing, and holding midnight funeral dances that celebrated the return of deceased spirits to their African homeland.",
+          "image": "/images/sugar_boiling_house.jpg",
+          "image_alt": "Aquatint of the boiling house on an Antigua sugar plantation by William Clark",
+          "caption": "The Boiling House (Plate VI from William Clark's 'Ten Views in the Island of Antigua', 1823), depicting the hazardous, around-the-clock industrial boiling of sugar cane syrup by enslaved plantation workers (British Library, 1782.b.11).",
+          "source": {
+            "id": "fbe_l3_src_c",
+            "letter": "C",
+            "type": "visual",
+            "src": "/images/first_british_empire/maroon_treaty_cudjoe_1739.jpg",
+            "image": "/images/first_british_empire/maroon_treaty_cudjoe_1739.jpg",
+            "title": "Source C (Treaty Diplomacy & Compromise): Old Cudjoe Making Peace (1739 Maroon Peace Treaty Engraving)",
+            "caption": "Historic engraving depicting Leeward Maroon leader Captain Cudjoe meeting British colonial officers under a cotton tree to negotiate the Articles of Pacification ending the First Maroon War (1 March 1739).",
+            "citation": "National Library of Jamaica / British Library. Engraving from R. C. Dallas, The History of the Maroons (London, 1803).",
+            "provenance": "Published in 1803 by British colonial historian Robert Charles Dallas based on eighteenth-century colonial records.",
+            "context": "Unable to conquer the Maroons through military force, British Governor Edward Trelawny was forced to sign formal peace treaties in 1739 recognizing Maroon autonomy. However, the treaty required Maroons to return future runaway slaves to plantations. **Hinge Question:** Was the 1739 Treaty a triumphant victory for Maroon independence or a tragic compromise that divided enslaved Africans against each other?",
+            "question": "What compromise did British Governor Edward Trelawny and Maroon leader Captain Cudjoe agree to in the landmark 1739 Treaty?",
+            "hinge_question": "Was the 1739 Treaty a triumphant victory for Maroon independence or a tragic compromise that divided enslaved Africans against each other?",
+            "disciplinary_focus": "TREATY DIPLOMACY",
+            "utility_enquiry": {
+              "question": "What compromise did British Governor Edward Trelawny and Maroon leader Captain Cudjoe agree to in the landmark 1739 Treaty?",
+              "model_answer": "The British officially recognized Maroon freedom and granted them 1,500 acres of sovereign land, but in return, the Maroons agreed to halt hostilities and return future runaway slaves to colonial plantations.",
+              "content_inferences": "Reveals how British authorities were forced to negotiate diplomatic treaties with former slaves, creating an ambiguous autonomous buffer state.",
+              "provenance_evaluation": "British historical illustration depicting Cudjoe prostrating himself before white officers, reflecting colonial desire to present the treaty as a British victory.",
+              "context_limitations": "Maroon oral accounts emphasize that the peace was an equal pact signed between two undefeated sovereign powers, contradicting European visual bias.",
+              "bullet_points": [
+                {
+                  "label": "Recognition of Sovereignty",
+                  "text": "The treaty established Cudjoe's Town (Accompong) as a self-governing enclave with tax exemption and hunting rights."
+                },
+                {
+                  "label": "Colonial Collaboration Clause",
+                  "text": "Article 9 obligated Maroons to help British authorities suppress internal slave rebellions and return fugitives for a bounty."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Robert Charles Dallas, British historical author and colonial apologist.",
+                "Audience: British imperial politicians, plantation owners, and metropolitan reading audiences.",
+                "Motive: To depict the British Empire as magnanimous and orderly while portraying Captain Cudjoe as a grateful subaltern."
+              ]
+            },
+            "question_badge": "TREATY DIPLOMACY",
+            "model_answer": "The British officially recognized Maroon freedom and granted them 1,500 acres of sovereign land, but in return, the Maroons agreed to halt hostilities and return future runaway slaves to colonial plantations.",
+            "provenance_clues": [
+              "Author: Robert Charles Dallas, British historical author and colonial apologist.",
+              "Audience: British imperial politicians, plantation owners, and metropolitan reading audiences.",
+              "Motive: To depict the British Empire as magnanimous and orderly while portraying Captain Cudjoe as a grateful subaltern."
+            ]
+          }
         },
         {
           "act": 4,
           "title": "Queen Nanny & The Windward Guerrillas (1720–1734)",
           "text": "<span class=\"para-ref\">[3.4]</span> In the eastern Blue Mountains, resistance escalated into full-scale war. The Windward Maroons were led by an extraordinary spiritual and military strategist: Queen Nanny, an Asante woman believed to possess powerful spiritual powers. Nanny established Nanny Town, a fortified mountain haven. When British redcoat regiments marched into the mountains, Nanny’s warriors used brilliant <strong>guerrilla warfare</strong>: covering themselves in palm fronds as camouflage, sounding coded tactical warnings with the <strong>abeng</strong> horn, and rolling massive boulders down narrow ravine passes to crush advancing soldiers.",
           "source": {
-            "letter": "B",
-            "title": "Source B: Memorial Bust of Queen Nanny of the Maroons, National Heroes Park",
-            "image": "/images/queen_nanny.jpg",
-            "caption": "Bronze memorial bust of Queen Nanny in Kingston, Jamaica: honoured as the national hero who led the Maroons to military victory against the British Empire.",
-            "source_context": "Queen Nanny commanded the Windward Maroons throughout the First Maroon War (1720–1739), defeating repeated British military expeditions sent to destroy her mountain sanctuary.",
-            "how_useful_question": "How useful is Source B for an enquiry into how modern Jamaicans commemorate 18th-century anti-colonial resistance?",
+            "id": "fbe_l3_src_d",
+            "letter": "D",
+            "type": "visual",
+            "src": "/images/first_british_empire/maroon_captain_leonard_parkinson_1796.jpg",
+            "image": "/images/first_british_empire/maroon_captain_leonard_parkinson_1796.jpg",
+            "title": "Source D (Tactical Camouflage & Warfare): Leonard Parkinson, A Captain of the Maroons; Taken from the Life (1796)",
+            "caption": "Contemporary portrait engraving of Leonard Parkinson, a celebrated commander of the Trelawny Town Maroons during the Second Maroon War (1795–1796), armed with musket, powder horn, and cutlasses.",
+            "citation": "National Maritime Museum, Greenwich, London (PAH3417). Engraving by Abraham Raimbach, 1796.",
+            "provenance": "Sketched from life by a British military observer in Jamaica and published in London in 1796.",
+            "context": "Leonard Parkinson was an iconic Maroon guerrilla leader. His mobility and marksmanship allowed small bands of Maroon warriors to pin down hundreds of British regular soldiers and bloodhounds in the Cockpit Country. **Hinge Question:** Why did European armies repeatedly struggle when fighting against indigenous and maroon guerrilla forces in unfamiliar terrain?",
+            "question": "What features of Leonard Parkinson's arms, stance, and attire explain the effectiveness of Maroon fighters in the Jamaican interior?",
+            "hinge_question": "Why did European armies repeatedly struggle when fighting against indigenous and maroon guerrilla forces in unfamiliar terrain?",
+            "disciplinary_focus": "TACTICAL CAMOUFLAGE",
+            "utility_enquiry": {
+              "question": "What features of Leonard Parkinson's arms, stance, and attire explain the effectiveness of Maroon fighters in the Jamaican interior?",
+              "model_answer": "Parkinson is armed with a flintlock musket, powder horn, and cutlass, dressed in lightweight, durable linen suited for rapid mountain movement and guerrilla ambushes through dense tropical foliage.",
+              "content_inferences": "Documents the specialized military adaptations developed by African-descended communities in resistance to European colonial armies.",
+              "provenance_evaluation": "Drawn from life during active warfare; portrays Parkinson as a formidable, athletic, and defiant warrior who struck dread into colonial garrisons.",
+              "context_limitations": "Reflects British wartime fascination with a famous 'rebel enemy'; designed to sell dramatic prints in London rather than explore Maroon social life.",
+              "bullet_points": [
+                {
+                  "label": "Adapted Bush Weaponry",
+                  "text": "Carrying both long-range flintlock firearms and dual cutlasses for close-quarters fighting in dense undergrowth."
+                },
+                {
+                  "label": "Physical Agility",
+                  "text": "Barefoot and lightly clad, Maroon soldiers moved with astonishing speed across sharp limestone cockpit sinkholes where British soldiers collapsed."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Abraham Raimbach (engraver) after an eyewitness sketch from life in Jamaica.",
+                "Audience: British regular officers, metropolitan newspaper readers, and art collectors.",
+                "Motive: To satisfy metropolitan curiosity regarding the legendary Maroon leaders fighting the British Army."
+              ]
+            },
+            "question_badge": "TACTICAL CAMOUFLAGE",
+            "model_answer": "Parkinson is armed with a flintlock musket, powder horn, and cutlass, dressed in lightweight, durable linen suited for rapid mountain movement and guerrilla ambushes through dense tropical foliage.",
             "provenance_clues": [
-              "Author: Modern Jamaican sculptors commissioned by the Jamaican government.",
-              "Audience: Citizens of Jamaica, schoolchildren, and international visitors.",
-              "Motive: To celebrate Queen Nanny as a courageous military commander and founding mother of Jamaican freedom who outfought the British imperial army."
-            ],
-            "hinge_question": "How does commemorating Queen Nanny challenge narratives of enslaved people as passive victims?",
-            "citation": "National Heroes Park, Kingston, Jamaica.",
-            "discussion_ideas": [
-              "Celebrating Active, Militant Indigenous Resistance: Queen Nanny was the spiritual and military leader of the Windward Maroons in the Blue Mountains of Jamaica; rather than submitting to slavery, she organized escaped captives into disciplined guerrilla units who used mountain topography, camouflage, and ambushes to defeat British redcoat regiments, forcing the British Crown to sign a formal peace treaty in 1739 granting the Maroons land autonomy.",
-              "Subverting Colonial Historical Erasure: Traditional colonial histories depicted enslaved Africans as helpless victims waiting for benevolent white British politicians to liberate them; honoring Queen Nanny as Jamaica's only National Heroine recenters the historical narrative on Black agency, proving that enslaved people fought heroically for their own freedom decades before parliamentary abolition."
+              "Author: Abraham Raimbach (engraver) after an eyewitness sketch from life in Jamaica.",
+              "Audience: British regular officers, metropolitan newspaper readers, and art collectors.",
+              "Motive: To satisfy metropolitan curiosity regarding the legendary Maroon leaders fighting the British Army."
             ]
           }
         },
         {
           "act": 5,
           "title": "The 1739 Peace Treaty: Triumph and Compromise (1739–1740)",
-          "text": "<span class=\"para-ref\">[3.5]</span> By 1738, the British colonial government was on the brink of bankruptcy, having spent over £250,000 trying and failing to subdue the Maroons. In March 1739, Governor Edward Trelawny sent emissaries carrying a white flag to negotiate a formal <strong>treaty</strong> with Leeward Maroon leader Cudjoe, followed by a separate treaty with Queen Nanny’s Windward Maroons. The British Crown granted the Maroons 1,500 acres of sovereign land, complete tax exemption, and total self-governing <strong>autonomy</strong>. However, the treaty contained a tragic compromise: to maintain their freedom, the Maroons were forced to agree to capture and return future runaway slaves to British plantations."
+          "text": "<span class=\"para-ref\">[3.5]</span> By 1738, the British colonial government was on the brink of bankruptcy, having spent over £250,000 trying and failing to subdue the Maroons. In March 1739, Governor Edward Trelawny sent emissaries carrying a white flag to negotiate a formal <strong>treaty</strong> with Leeward Maroon leader Cudjoe, followed by a separate treaty with Queen Nanny’s Windward Maroons. The British Crown granted the Maroons 1,500 acres of sovereign land, complete tax exemption, and total self-governing <strong>autonomy</strong>. However, the treaty contained a tragic compromise: to maintain their freedom, the Maroons were forced to agree to capture and return future runaway slaves to British plantations.",
+          "source": {
+            "id": "fbe_l3_src_e",
+            "letter": "E",
+            "type": "visual",
+            "src": "/images/first_british_empire/antigua_digging_cane_holes_1823.jpg",
+            "image": "/images/first_british_empire/antigua_digging_cane_holes_1823.jpg",
+            "title": "Source E (Plantation Discipline & Field Labor): Digging the Cane-Holes (William Clark, Ten Views in Antigua, 1823)",
+            "caption": "William Clark's plate depicting the exhausting ordeal of digging cane-holes in Antigua. Men and women labor in line under tropical heat, wielding heavy hand-hoes while a driver observes with a coiled whip.",
+            "citation": "British Library, London (Ten Views in the Island of Antigua, Plate 2). Published by Thomas Clay, London, 1823.",
+            "provenance": "Drawn on site in Antigua by William Clark to document the seasonal cycle of sugar cultivation.",
+            "context": "Digging cane holes was the most back-breaking labor on a Caribbean sugar estate. Field workers were forced to excavate thousands of four-foot square pits in rocky soil under the burning sun to prepare for planting. **Hinge Question:** How did plantation managers use systematic daily quotas and physical intimidation to prevent collective resistance?",
+            "question": "Why was digging cane holes considered the most physically punishing task on an eighteenth-century sugar estate?",
+            "hinge_question": "How did plantation managers use systematic daily quotas and physical intimidation to prevent collective resistance?",
+            "disciplinary_focus": "PLANTATION DISCIPLINE",
+            "utility_enquiry": {
+              "question": "Why was digging cane holes considered the most physically punishing task on an eighteenth-century sugar estate?",
+              "model_answer": "Enslaved field hands were forced to dig thousands of four-foot square pits into hard, rocky soil with heavy hand hoes under blazing tropical heat, driven relentlessly by drivers to meet daily planting quotas.",
+              "content_inferences": "Proves that the immense profits of the British sugar empire were extracted through systematic, debilitating physical coercion of human bodies.",
+              "provenance_evaluation": "Detailed architectural plate from a resident planter; attempts to make intense field labor look orderly and clean for British readers.",
+              "context_limitations": "Does not show the frequent lashings, heatstroke collapses, and severe spinal injuries that accompanied cane-hole digging.",
+              "bullet_points": [
+                {
+                  "label": "Relentless Physical Toll",
+                  "text": "Workers bent double for twelve hours, repeatedly raising heavy hoes into baked earth, causing chronic spine and joint damage."
+                },
+                {
+                  "label": "Exacting Daily Quotas",
+                  "text": "Each laborer was required to complete 60 to 100 holes daily, with overseers measuring output and punishing any under-performance with the whip."
+                }
+              ],
+              "provenance_clues": [
+                "Author: William Clark, Antiguan planter and landscape artist.",
+                "Audience: British absentee sugar magnates, members of the House of Lords, and London investors.",
+                "Motive: To depict the Caribbean plantation system as an orderly agricultural machine worthy of parliamentary protection."
+              ]
+            },
+            "question_badge": "PLANTATION DISCIPLINE",
+            "model_answer": "Enslaved field hands were forced to dig thousands of four-foot square pits into hard, rocky soil with heavy hand hoes under blazing tropical heat, driven relentlessly by drivers to meet daily planting quotas.",
+            "provenance_clues": [
+              "Author: William Clark, Antiguan planter and landscape artist.",
+              "Audience: British absentee sugar magnates, members of the House of Lords, and London investors.",
+              "Motive: To depict the Caribbean plantation system as an orderly agricultural machine worthy of parliamentary protection."
+            ]
+          }
         }
       ],
       "sources": [
         {
-          "title": "Source A: William Clark, Slaves Cutting the Sugar Cane in Antigua (1823)",
+          "id": "fbe_l3_src_a",
+          "letter": "A",
+          "type": "visual",
+          "src": "/images/sugar_cane_plantation.jpg",
           "image": "/images/sugar_cane_plantation.jpg",
-          "caption": "William Clark’s British Library print showing enslaved workers cutting sugar cane under an overseer.",
-          "source_context": "Published in London illustrating labour on 18th-century Caribbean sugar plantations.",
-          "how_useful_question": "How useful is Source A for an enquiry into plantation labour and colonial control in the British Caribbean?",
+          "title": "Source A (Exhaustive Labour): Slaves Cutting the Sugar Cane in Antigua (William Clark, 1823)",
+          "caption": "Aquatint engraving by William Clark depicting the rigorous gang labor system on an Antiguan sugar estate, with field hands cutting cane stalks in disciplined lines under the surveillance of a mounted white overseer.",
+          "citation": "British Library, London (Ten Views in the Island of Antigua, Plate 4). Aquatint, 1823.",
+          "provenance": "Published in London in 1823 by artist and plantation resident William Clark.",
+          "context": "Sugar cane cultivation was one of the most grueling agricultural industries in the world. Enslaved workers labored up to 14 hours a day in intense tropical heat, cutting stalks with sharp billhooks while dodging venomous snakes. **Hinge Question:** Why did Caribbean sugar plantations operate more like dangerous modern factories than traditional agricultural farms?",
+          "question": "How does William Clark's painting illustrate the rigid gang labor system that drove Caribbean sugar production?",
+          "hinge_question": "Why did Caribbean sugar plantations operate more like dangerous modern factories than traditional agricultural farms?",
+          "disciplinary_focus": "EXHAUSTIVE LABOUR",
+          "utility_enquiry": {
+            "question": "How does William Clark's painting illustrate the rigid gang labor system that drove Caribbean sugar production?",
+            "model_answer": "It depicts the 'first gang' of strongest enslaved workers cutting mature cane stalks in a disciplined line under the watchful eye of a mounted white overseer and black driver holding a whip.",
+            "content_inferences": "Documents how Caribbean sugar estates functioned as industrialized agro-capitalist sweatshops powered by coercive physical violence.",
+            "provenance_evaluation": "Painted by a sympathetic member of the planter class; sanitizes the brutality to portray plantation labor as orderly and picturesque.",
+            "context_limitations": "Minimizes the high mortality rate, frequent maimings from machetes, and extreme exhaustion that caused average lifespans of less than 7 years after arrival.",
+            "bullet_points": [
+              {
+                "label": "Industrial Discipline",
+                "text": "Workers were organized into strict gangs by physical strength, forced to work at a synchronized pace from sunrise to dusk."
+              },
+              {
+                "label": "Constant Coercive Surveillance",
+                "text": "The mounted overseer and whip-wielding driver ensured that any slackening of pace was met with immediate, agonizing physical punishment."
+              }
+            ],
+            "provenance_clues": [
+              "Author: William Clark, artist and planter resident in Antigua for several years.",
+              "Audience: British wealthy investors, absentee plantation owners, and the Georgian public.",
+              "Motive: To showcase Caribbean sugar production as productive, civilized, and harmonious to defend against abolitionist criticism."
+            ]
+          },
+          "question_badge": "EXHAUSTIVE LABOUR",
+          "model_answer": "It depicts the 'first gang' of strongest enslaved workers cutting mature cane stalks in a disciplined line under the watchful eye of a mounted white overseer and black driver holding a whip.",
           "provenance_clues": [
-            "Author: William Clark, English artist resident in Antigua.",
-            "Audience: British readers and colonial investors.",
-            "Motive: To depict plantation life as orderly, minimising overt visual depictions of violence."
-          ],
-          "hinge_question": "Why might an artist depict plantation labour looking orderly rather than showing the violence used to enforce work?",
-          "citation": "William Clark • British Library, London.",
-          "discussion_ideas": [
-            "William Clark's print was produced for British audiences and plantation owners who wished to defend the Caribbean sugar industry against the mounting abolitionist campaign in Parliament. Clark deliberately depicts the enslaved workers in clean clothes, working at an unhurried, rhythmic pace under a bright Caribbean sky, with the overseer appearing calm rather than brandishing the cart whip. By erasing the brutal realities of plantation slavery—where enslaved men, women, and children were driven by the whip through 18-hour shifts cutting cane with razor-sharp machetes under scorching heat, suffering high mortality rates—Clark presented a sanitized, pastoral fantasy designed to convince British buyers that enslavement was a benign, orderly agricultural system."
+            "Author: William Clark, artist and planter resident in Antigua for several years.",
+            "Audience: British wealthy investors, absentee plantation owners, and the Georgian public.",
+            "Motive: To showcase Caribbean sugar production as productive, civilized, and harmonious to defend against abolitionist criticism."
           ]
         },
         {
-          "title": "Source B: Memorial Bust of Queen Nanny of the Maroons, National Heroes Park",
+          "id": "fbe_l3_src_b",
+          "letter": "B",
+          "type": "visual",
+          "src": "/images/queen_nanny.jpg",
           "image": "/images/queen_nanny.jpg",
-          "caption": "Bronze memorial bust of Queen Nanny in Kingston, Jamaica, honoured as a national hero.",
-          "source_context": "Queen Nanny commanded the Windward Maroons in the First Maroon War (1720–1739).",
-          "how_useful_question": "How useful is Source B for an enquiry into how modern Jamaicans commemorate anti-colonial resistance?",
+          "title": "Source B (Guerrilla Leadership): Memorial Monument Bust of National Hero Queen Nanny of the Maroons",
+          "caption": "Monument bust commemorating Grandy Nanny, spiritual and military leader of the Windward Maroons who led decades of successful guerrilla resistance against British regular armies in Jamaica's Blue Mountains.",
+          "citation": "National Heroes Park, Kingston, Jamaica. Commemorative Bronze Monument.",
+          "provenance": "Sculpted in Jamaica to honor the only female National Hero of Jamaica and champion of anti-colonial resistance.",
+          "context": "Queen Nanny was an Asante military and spiritual leader who established Nanny Town in the precipitous Blue Mountains. Between 1720 and 1739, her warriors repeatedly defeated British regiments by using camouflaged ambush tactics. **Hinge Question:** How did African military traditions and spiritual leadership enable Maroons to withstand the full might of the British military?",
+          "question": "Why did British colonial authorities find Queen Nanny and the Windward Maroons virtually impossible to defeat in the Blue Mountains?",
+          "hinge_question": "How did African military traditions and spiritual leadership enable Maroons to withstand the full might of the British military?",
+          "disciplinary_focus": "INDIGENOUS GUERRILLA WARFARE",
+          "utility_enquiry": {
+            "question": "Why did British colonial authorities find Queen Nanny and the Windward Maroons virtually impossible to defeat in the Blue Mountains?",
+            "model_answer": "Nanny utilized master camouflage, deep local knowledge of precipitous mountain terrain, and coordinated ambush tactics, neutralizing superior British military firepower and inflicting heavy casualties on colonial patrols.",
+            "content_inferences": "Highlights the efficacy of autonomous African military tactics against conventional European imperial regular forces.",
+            "provenance_evaluation": "Modern commemorative memorial reflecting oral historical traditions and national reverence for Maroon freedom fighters.",
+            "context_limitations": "Because Nanny left no written records, our understanding of her relies on British military dispatches (which feared and vilified her) and Maroon oral legends.",
+            "bullet_points": [
+              {
+                "label": "Mastery of Camouflage and Terrain",
+                "text": "Maroons dressed in living foliage and exploited the rugged Cockpit Country topography to trap British troops in steep limestone gorges."
+              },
+              {
+                "label": "Spiritual and Tactical Authority",
+                "text": "As an Obeah woman and supreme military commander, Nanny unified diverse African ethnic groups into a disciplined guerrilla confederacy."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Jamaican National Heritage sculptors based on centuries of preserved Maroon oral tradition.",
+              "Audience: The citizens of Jamaica, Commonwealth students, and international scholars of anti-slavery resistance.",
+              "Motive: To celebrate Queen Nanny as a visionary military strategist and pioneer of Caribbean decolonization."
+            ]
+          },
+          "question_badge": "INDIGENOUS GUERRILLA WARFARE",
+          "model_answer": "Nanny utilized master camouflage, deep local knowledge of precipitous mountain terrain, and coordinated ambush tactics, neutralizing superior British military firepower and inflicting heavy casualties on colonial patrols.",
           "provenance_clues": [
-            "Author: Commissioned by the Jamaican government.",
-            "Audience: Jamaican citizens and international visitors.",
-            "Motive: To celebrate Queen Nanny as a founding military leader of freedom."
-          ],
-          "hinge_question": "How does commemorating Queen Nanny challenge narratives of enslaved people as passive victims?",
-          "citation": "National Heroes Park, Kingston, Jamaica.",
-          "discussion_ideas": [
-            "Celebrating Active, Militant Indigenous Resistance: Queen Nanny was the spiritual and military leader of the Windward Maroons in the Blue Mountains of Jamaica; rather than submitting to slavery, she organized escaped captives into disciplined guerrilla units who used mountain topography, camouflage, and ambushes to defeat British redcoat regiments, forcing the British Crown to sign a formal peace treaty in 1739 granting the Maroons land autonomy.",
-            "Subverting Colonial Historical Erasure: Traditional colonial histories depicted enslaved Africans as helpless victims waiting for benevolent white British politicians to liberate them; honoring Queen Nanny as Jamaica's only National Heroine recenters the historical narrative on Black agency, proving that enslaved people fought heroically for their own freedom decades before parliamentary abolition."
+            "Author: Jamaican National Heritage sculptors based on centuries of preserved Maroon oral tradition.",
+            "Audience: The citizens of Jamaica, Commonwealth students, and international scholars of anti-slavery resistance.",
+            "Motive: To celebrate Queen Nanny as a visionary military strategist and pioneer of Caribbean decolonization."
+          ]
+        },
+        {
+          "id": "fbe_l3_src_c",
+          "letter": "C",
+          "type": "visual",
+          "src": "/images/first_british_empire/maroon_treaty_cudjoe_1739.jpg",
+          "image": "/images/first_british_empire/maroon_treaty_cudjoe_1739.jpg",
+          "title": "Source C (Treaty Diplomacy & Compromise): Old Cudjoe Making Peace (1739 Maroon Peace Treaty Engraving)",
+          "caption": "Historic engraving depicting Leeward Maroon leader Captain Cudjoe meeting British colonial officers under a cotton tree to negotiate the Articles of Pacification ending the First Maroon War (1 March 1739).",
+          "citation": "National Library of Jamaica / British Library. Engraving from R. C. Dallas, The History of the Maroons (London, 1803).",
+          "provenance": "Published in 1803 by British colonial historian Robert Charles Dallas based on eighteenth-century colonial records.",
+          "context": "Unable to conquer the Maroons through military force, British Governor Edward Trelawny was forced to sign formal peace treaties in 1739 recognizing Maroon autonomy. However, the treaty required Maroons to return future runaway slaves to plantations. **Hinge Question:** Was the 1739 Treaty a triumphant victory for Maroon independence or a tragic compromise that divided enslaved Africans against each other?",
+          "question": "What compromise did British Governor Edward Trelawny and Maroon leader Captain Cudjoe agree to in the landmark 1739 Treaty?",
+          "hinge_question": "Was the 1739 Treaty a triumphant victory for Maroon independence or a tragic compromise that divided enslaved Africans against each other?",
+          "disciplinary_focus": "TREATY DIPLOMACY",
+          "utility_enquiry": {
+            "question": "What compromise did British Governor Edward Trelawny and Maroon leader Captain Cudjoe agree to in the landmark 1739 Treaty?",
+            "model_answer": "The British officially recognized Maroon freedom and granted them 1,500 acres of sovereign land, but in return, the Maroons agreed to halt hostilities and return future runaway slaves to colonial plantations.",
+            "content_inferences": "Reveals how British authorities were forced to negotiate diplomatic treaties with former slaves, creating an ambiguous autonomous buffer state.",
+            "provenance_evaluation": "British historical illustration depicting Cudjoe prostrating himself before white officers, reflecting colonial desire to present the treaty as a British victory.",
+            "context_limitations": "Maroon oral accounts emphasize that the peace was an equal pact signed between two undefeated sovereign powers, contradicting European visual bias.",
+            "bullet_points": [
+              {
+                "label": "Recognition of Sovereignty",
+                "text": "The treaty established Cudjoe's Town (Accompong) as a self-governing enclave with tax exemption and hunting rights."
+              },
+              {
+                "label": "Colonial Collaboration Clause",
+                "text": "Article 9 obligated Maroons to help British authorities suppress internal slave rebellions and return fugitives for a bounty."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Robert Charles Dallas, British historical author and colonial apologist.",
+              "Audience: British imperial politicians, plantation owners, and metropolitan reading audiences.",
+              "Motive: To depict the British Empire as magnanimous and orderly while portraying Captain Cudjoe as a grateful subaltern."
+            ]
+          },
+          "question_badge": "TREATY DIPLOMACY",
+          "model_answer": "The British officially recognized Maroon freedom and granted them 1,500 acres of sovereign land, but in return, the Maroons agreed to halt hostilities and return future runaway slaves to colonial plantations.",
+          "provenance_clues": [
+            "Author: Robert Charles Dallas, British historical author and colonial apologist.",
+            "Audience: British imperial politicians, plantation owners, and metropolitan reading audiences.",
+            "Motive: To depict the British Empire as magnanimous and orderly while portraying Captain Cudjoe as a grateful subaltern."
+          ]
+        },
+        {
+          "id": "fbe_l3_src_d",
+          "letter": "D",
+          "type": "visual",
+          "src": "/images/first_british_empire/maroon_captain_leonard_parkinson_1796.jpg",
+          "image": "/images/first_british_empire/maroon_captain_leonard_parkinson_1796.jpg",
+          "title": "Source D (Tactical Camouflage & Warfare): Leonard Parkinson, A Captain of the Maroons; Taken from the Life (1796)",
+          "caption": "Contemporary portrait engraving of Leonard Parkinson, a celebrated commander of the Trelawny Town Maroons during the Second Maroon War (1795–1796), armed with musket, powder horn, and cutlasses.",
+          "citation": "National Maritime Museum, Greenwich, London (PAH3417). Engraving by Abraham Raimbach, 1796.",
+          "provenance": "Sketched from life by a British military observer in Jamaica and published in London in 1796.",
+          "context": "Leonard Parkinson was an iconic Maroon guerrilla leader. His mobility and marksmanship allowed small bands of Maroon warriors to pin down hundreds of British regular soldiers and bloodhounds in the Cockpit Country. **Hinge Question:** Why did European armies repeatedly struggle when fighting against indigenous and maroon guerrilla forces in unfamiliar terrain?",
+          "question": "What features of Leonard Parkinson's arms, stance, and attire explain the effectiveness of Maroon fighters in the Jamaican interior?",
+          "hinge_question": "Why did European armies repeatedly struggle when fighting against indigenous and maroon guerrilla forces in unfamiliar terrain?",
+          "disciplinary_focus": "TACTICAL CAMOUFLAGE",
+          "utility_enquiry": {
+            "question": "What features of Leonard Parkinson's arms, stance, and attire explain the effectiveness of Maroon fighters in the Jamaican interior?",
+            "model_answer": "Parkinson is armed with a flintlock musket, powder horn, and cutlass, dressed in lightweight, durable linen suited for rapid mountain movement and guerrilla ambushes through dense tropical foliage.",
+            "content_inferences": "Documents the specialized military adaptations developed by African-descended communities in resistance to European colonial armies.",
+            "provenance_evaluation": "Drawn from life during active warfare; portrays Parkinson as a formidable, athletic, and defiant warrior who struck dread into colonial garrisons.",
+            "context_limitations": "Reflects British wartime fascination with a famous 'rebel enemy'; designed to sell dramatic prints in London rather than explore Maroon social life.",
+            "bullet_points": [
+              {
+                "label": "Adapted Bush Weaponry",
+                "text": "Carrying both long-range flintlock firearms and dual cutlasses for close-quarters fighting in dense undergrowth."
+              },
+              {
+                "label": "Physical Agility",
+                "text": "Barefoot and lightly clad, Maroon soldiers moved with astonishing speed across sharp limestone cockpit sinkholes where British soldiers collapsed."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Abraham Raimbach (engraver) after an eyewitness sketch from life in Jamaica.",
+              "Audience: British regular officers, metropolitan newspaper readers, and art collectors.",
+              "Motive: To satisfy metropolitan curiosity regarding the legendary Maroon leaders fighting the British Army."
+            ]
+          },
+          "question_badge": "TACTICAL CAMOUFLAGE",
+          "model_answer": "Parkinson is armed with a flintlock musket, powder horn, and cutlass, dressed in lightweight, durable linen suited for rapid mountain movement and guerrilla ambushes through dense tropical foliage.",
+          "provenance_clues": [
+            "Author: Abraham Raimbach (engraver) after an eyewitness sketch from life in Jamaica.",
+            "Audience: British regular officers, metropolitan newspaper readers, and art collectors.",
+            "Motive: To satisfy metropolitan curiosity regarding the legendary Maroon leaders fighting the British Army."
+          ]
+        },
+        {
+          "id": "fbe_l3_src_e",
+          "letter": "E",
+          "type": "visual",
+          "src": "/images/first_british_empire/antigua_digging_cane_holes_1823.jpg",
+          "image": "/images/first_british_empire/antigua_digging_cane_holes_1823.jpg",
+          "title": "Source E (Plantation Discipline & Field Labor): Digging the Cane-Holes (William Clark, Ten Views in Antigua, 1823)",
+          "caption": "William Clark's plate depicting the exhausting ordeal of digging cane-holes in Antigua. Men and women labor in line under tropical heat, wielding heavy hand-hoes while a driver observes with a coiled whip.",
+          "citation": "British Library, London (Ten Views in the Island of Antigua, Plate 2). Published by Thomas Clay, London, 1823.",
+          "provenance": "Drawn on site in Antigua by William Clark to document the seasonal cycle of sugar cultivation.",
+          "context": "Digging cane holes was the most back-breaking labor on a Caribbean sugar estate. Field workers were forced to excavate thousands of four-foot square pits in rocky soil under the burning sun to prepare for planting. **Hinge Question:** How did plantation managers use systematic daily quotas and physical intimidation to prevent collective resistance?",
+          "question": "Why was digging cane holes considered the most physically punishing task on an eighteenth-century sugar estate?",
+          "hinge_question": "How did plantation managers use systematic daily quotas and physical intimidation to prevent collective resistance?",
+          "disciplinary_focus": "PLANTATION DISCIPLINE",
+          "utility_enquiry": {
+            "question": "Why was digging cane holes considered the most physically punishing task on an eighteenth-century sugar estate?",
+            "model_answer": "Enslaved field hands were forced to dig thousands of four-foot square pits into hard, rocky soil with heavy hand hoes under blazing tropical heat, driven relentlessly by drivers to meet daily planting quotas.",
+            "content_inferences": "Proves that the immense profits of the British sugar empire were extracted through systematic, debilitating physical coercion of human bodies.",
+            "provenance_evaluation": "Detailed architectural plate from a resident planter; attempts to make intense field labor look orderly and clean for British readers.",
+            "context_limitations": "Does not show the frequent lashings, heatstroke collapses, and severe spinal injuries that accompanied cane-hole digging.",
+            "bullet_points": [
+              {
+                "label": "Relentless Physical Toll",
+                "text": "Workers bent double for twelve hours, repeatedly raising heavy hoes into baked earth, causing chronic spine and joint damage."
+              },
+              {
+                "label": "Exacting Daily Quotas",
+                "text": "Each laborer was required to complete 60 to 100 holes daily, with overseers measuring output and punishing any under-performance with the whip."
+              }
+            ],
+            "provenance_clues": [
+              "Author: William Clark, Antiguan planter and landscape artist.",
+              "Audience: British absentee sugar magnates, members of the House of Lords, and London investors.",
+              "Motive: To depict the Caribbean plantation system as an orderly agricultural machine worthy of parliamentary protection."
+            ]
+          },
+          "question_badge": "PLANTATION DISCIPLINE",
+          "model_answer": "Enslaved field hands were forced to dig thousands of four-foot square pits into hard, rocky soil with heavy hand hoes under blazing tropical heat, driven relentlessly by drivers to meet daily planting quotas.",
+          "provenance_clues": [
+            "Author: William Clark, Antiguan planter and landscape artist.",
+            "Audience: British absentee sugar magnates, members of the House of Lords, and London investors.",
+            "Motive: To depict the Caribbean plantation system as an orderly agricultural machine worthy of parliamentary protection."
           ]
         }
       ],
@@ -1401,7 +2689,115 @@ const unitData = {
           "viewing_task": "[12:00] Recall: Why was Jamaican sugar referred to as 'White Gold' in 18th-century London?\n[18:30] Explain: How did British sugar consumption change from a luxury for monarchs into an everyday staple for industrial working families?\n[24:10] Challenge: How did the immense wealth generated by Caribbean sugar plantations directly finance the growth of British banks, stately homes, and the Industrial Revolution?",
           "model_answer": "Recall: Sugar cane was the most profitable agricultural commodity in the world, generating vast fortunes for absentee British plantation owners.\nExplain: As imports surged and prices fell, sweetened tea became an indispensable, cheap energy source that fuelled long factory shifts for British industrial labourers.\nChallenge: Profits from slavery were funneled into London financial houses (e.g. Barclays, Bank of England), railway networks, and civic infrastructure, cementing the direct causal link between colonial exploitation and Britain's domestic modernisation."
         }
-      ]
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: Plantation Reality & Maroon Resistance",
+        "tariff": "8 marks (Contrasting Historical Interpretations)",
+        "questions": [
+          {
+            "tariff": "4 marks",
+            "type": "interpretations_diff_4m",
+            "question": "Explain how Interpretations 1 and 2 differ on the nature of enslaved African resistance. [4 marks]",
+            "stimulus": [
+              "Interpretation 1: Planter Edward Long, History of Jamaica (1774) — argues enslaved people were naturally indolent and required perpetual whip discipline, claiming without European mastery order would dissolve.",
+              "Interpretation 2: Historian Hilary Beckles, Caribbean Freedom (2004) — argues enslaved Africans waged an unrelenting war of resistance through daily sabotage, spiritual preservation, and armed guerrilla struggle led by Queen Nanny."
+            ],
+            "prompt": "Explain the difference between Edward Long’s pro-slavery view of passive compliance and Hilary Beckles’s modern historical analysis of active military and cultural resistance.",
+            "model": "Interpretations 1 and 2 differ fundamentally on the agency and resistance of enslaved Africans. Interpretation 1 portrays enslaved people as naturally passive, claiming that discipline and constant threat of the whip were required to extract labour, and asserting that without white European mastery social order would dissolve. In sharp contrast, Interpretation 2 emphasizes active, organized, and unrelenting resistance. Beckles highlights that Africans continuously fought back through daily sabotage, cultural preservation, and brilliant guerrilla warfare, citing Queen Nanny of the Maroons who outmanoeuvred the British imperial army. Thus, while Long presents enslaved people as compliant subjects, Beckles reveals them as strategic fighters for freedom.",
+            "scaffolding": {
+              "acronym": "Point • Interp 1 • Interp 2 • Contrast",
+              "acronym_title": "Edexcel Paper 3 Q3(b) Interpretation Difference Formula",
+              "steps": [
+                {
+                  "letter": "POINT",
+                  "name": "State the Core Difference",
+                  "prompt": "State clearly that they differ on whether enslaved people were passive or active resisters.",
+                  "starter": "Interpretations 1 and 2 differ fundamentally on..."
+                },
+                {
+                  "letter": "INTERP 1",
+                  "name": "Exemplify Interpretation 1",
+                  "prompt": "Quote or summarize Long on natural indolence, whip discipline, and need for mastery.",
+                  "starter": "Interpretation 1 argues that..."
+                },
+                {
+                  "letter": "INTERP 2",
+                  "name": "Exemplify Interpretation 2",
+                  "prompt": "Quote or summarize Beckles on unrelenting resistance, guerrilla strategy, and Queen Nanny.",
+                  "starter": "In contrast, Interpretation 2 suggests that..."
+                },
+                {
+                  "letter": "CONTRAST",
+                  "name": "Explain the Divergence",
+                  "prompt": "Explicitly contrast the two views in a final analytical sentence.",
+                  "starter": "This is a fundamental difference because..."
+                }
+              ],
+              "sentence_starters": [
+                "Interpretations 1 and 2 differ on...",
+                "Interpretation 1 argues that...",
+                "In contrast, Interpretation 2 suggests that...",
+                "This is a difference because..."
+              ],
+              "connectives_bank": [
+                "Edward Long (1774)",
+                "Hilary Beckles (2004)",
+                "passivity vs resistance",
+                "driver’s whip",
+                "sabotage",
+                "guerrilla struggle",
+                "Queen Nanny",
+                "Blue Mountains"
+              ]
+            }
+          },
+          {
+            "tariff": "4 marks",
+            "type": "interpretations_reason_4m",
+            "question": "Suggest one reason why Interpretations 1 and 2 differ on the reality of plantation control. [4 marks]",
+            "prompt": "Explain why Edward Long and Hilary Beckles hold contrasting views. Consider their differing backgrounds, historical context, access to sources, and motives.",
+            "model": "One primary reason why Interpretations 1 and 2 differ is that the authors write from radically different historical contexts, motives, and sources. Edward Long was an 18th-century wealthy British planter and slaveholder writing in 1774. His direct motive was to justify chattel slavery and reassure British investors that harsh physical brutality was an economic and social necessity, leading him to produce racist caricatures that erased African agency. In contrast, Hilary Beckles is a 21st-century academic historian writing with modern scholarship and access to Maroon oral histories and colonial military records. Beckles’s motive is to restore historical truth and document the extensive reality of Black resistance, explaining why he reaches a completely contrary conclusion.",
+            "scaffolding": {
+              "acronym": "Origin • Motive • Evidence Contrast",
+              "acronym_title": "Edexcel Paper 3 Q3(c) Why Interpretations Differ Formula",
+              "steps": [
+                {
+                  "letter": "REASON",
+                  "name": "State Reason (Context & Motive)",
+                  "prompt": "Identify that the authors have contrasting positions: 18th-century slave owner vs modern academic.",
+                  "starter": "One reason why Interpretations 1 and 2 differ is because..."
+                },
+                {
+                  "letter": "AUTHOR 1",
+                  "name": "Analyse Long’s Motive",
+                  "prompt": "Explain Long was a planter justifying slave discipline to protect his financial profits.",
+                  "starter": "Specifically, Edward Long was writing in 1774 as a Jamaican planter who..."
+                },
+                {
+                  "letter": "AUTHOR 2",
+                  "name": "Analyse Beckles’s Perspective",
+                  "prompt": "Explain Beckles evaluates military archives and oral traditions to highlight African agency.",
+                  "starter": "In contrast, Hilary Beckles writes as a modern historian who..."
+                }
+              ],
+              "sentence_starters": [
+                "One reason why Interpretations 1 and 2 differ is because they have a different focus...",
+                "Specifically, Interpretation 1 focuses primarily on justifying...",
+                "In contrast, Interpretation 2 focuses more on documenting...",
+                "As a result, the authors reach different conclusions because..."
+              ],
+              "connectives_bank": [
+                "Jamaican planter",
+                "pro-slavery propaganda",
+                "economic justification",
+                "modern academic",
+                "oral traditions",
+                "colonial military records"
+              ]
+            }
+          }
+        ]
+      }
     },
     {
       "id": "lesson_4",
@@ -1596,100 +2992,474 @@ const unitData = {
         {
           "act": 1,
           "title": "Victory & The Debt Trap (1763)",
-          "text": "<span class=\"para-ref\">[4.1]</span> In 1763, Britain celebrated complete victory over France in the Seven Years’ War, driving French armies out of Canada and expanding the British Empire to unprecedented heights. But imperial glory carried an astronomical financial price tag: Britain’s national debt had skyrocketed to £133 million. In London, Prime Minister George Grenville argued that since British soldiers had bled to defend the American colonists, the colonists should pay taxes toward their own military defence. To prevent expensive frontier wars with Native American confederacies, King George III issued the <strong>Proclamation Line of 1763</strong>, forbidding colonists from settling west of the Appalachian Mountains—infuriating land-hungry colonial frontiersmen."
+          "text": "<span class=\"para-ref\">[4.1]</span> In 1763, Britain celebrated complete victory over France in the Seven Years’ War, driving French armies out of Canada and expanding the British Empire to unprecedented heights. But imperial glory carried an astronomical financial price tag: Britain’s national debt had skyrocketed to £133 million. In London, Prime Minister George Grenville argued that since British soldiers had bled to defend the American colonists, the colonists should pay taxes toward their own military defence. To prevent expensive frontier wars with Native American confederacies, King George III issued the <strong>Proclamation Line of 1763</strong>, forbidding colonists from settling west of the Appalachian Mountains—infuriating land-hungry colonial frontiersmen.",
+          "image": "/images/king_george_iii.jpg",
+          "image_alt": "Portrait of King George III in coronation robes by Allan Ramsay",
+          "caption": "King George III in coronation robes (Allan Ramsay, 1762), monarch whose ministry sought to levy direct taxes upon the American colonies to repay British imperial debts incurred during the Seven Years' War (Royal Collection Trust, RCIN 405325 / NPG).",
+          "source": {
+            "id": "fbe_l4_src_a",
+            "letter": "A",
+            "type": "visual",
+            "src": "/images/boston_massacre.jpg",
+            "image": "/images/boston_massacre.jpg",
+            "title": "Source A (Propaganda Iconography): The Bloody Massacre Perpetrated in King-Street, Boston (Paul Revere, 1770)",
+            "caption": "Famous hand-colored political engraving by Paul Revere depicting British soldiers of the 29th Regiment firing a disciplined volley into an unarmed Boston crowd on 5 March 1770.",
+            "citation": "Library of Congress, Prints and Photographs Division (LC-DIG-ppmsca-01657). Boston, 1770.",
+            "provenance": "Engraved and rushed into print in Boston within three weeks of the incident by patriot silversmith Paul Revere.",
+            "context": "On 5 March 1770, a hostile Boston mob threw ice, oyster shells, and clubs at British sentries. A soldier was knocked down, and troops fired into the crowd, killing five colonists including Crispus Attucks. **Hinge Question:** Where is the boundary between legitimate political reporting and inflammatory propaganda during times of civil unrest?",
+            "question": "How did Paul Revere's engraving deliberately manipulate the events of the Boston Massacre to provoke colonial fury against British rule?",
+            "hinge_question": "Where is the boundary between legitimate political reporting and inflammatory propaganda during times of civil unrest?",
+            "disciplinary_focus": "PROPAGANDA ICONOGRAPHY",
+            "utility_enquiry": {
+              "question": "How did Paul Revere's engraving deliberately manipulate the events of the Boston Massacre to provoke colonial fury against British rule?",
+              "model_answer": "Revere depicted British redcoats standing in a disciplined, grinning firing line unloading muskets into an unarmed, peaceful crowd on Captain Preston's order, omitting the hostile mob throwing snowballs, rocks, and ice.",
+              "content_inferences": "Demonstrates how visual media was weaponized to build anti-British solidarity and transform a street brawl into an act of imperial tyranny.",
+              "provenance_evaluation": "A masterwork of partisan political propaganda produced by a Sons of Liberty activist specifically to spark colonial outrage.",
+              "context_limitations": "Factually inaccurate; at the subsequent legal trial, John Adams successfully defended the soldiers by proving they were trapped and terrified by an aggressive mob.",
+              "bullet_points": [
+                {
+                  "label": "Calculated Visual Bias",
+                  "text": "Revere labeled the British customs house 'Butcher's Hall' and showed Captain Preston giving a deliberate command to slaughter unarmed civilians."
+                },
+                {
+                  "label": "Creation of Revolutionary Martyrs",
+                  "text": "The print framed the victims as innocent, peaceful gentlemen, making the British military garrison appear as an occupying foreign army."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Paul Revere, Boston silversmith, Son of Liberty, and revolutionary activist.",
+                "Audience: Colonists across the Thirteen Colonies and Whig sympathizers in Britain.",
+                "Motive: To inflame public rage, mobilize colonial resistance, and force the removal of British troops from Boston."
+              ]
+            },
+            "question_badge": "PROPAGANDA ICONOGRAPHY",
+            "model_answer": "Revere depicted British redcoats standing in a disciplined, grinning firing line unloading muskets into an unarmed, peaceful crowd on Captain Preston's order, omitting the hostile mob throwing snowballs, rocks, and ice.",
+            "provenance_clues": [
+              "Author: Paul Revere, Boston silversmith, Son of Liberty, and revolutionary activist.",
+              "Audience: Colonists across the Thirteen Colonies and Whig sympathizers in Britain.",
+              "Motive: To inflame public rage, mobilize colonial resistance, and force the removal of British troops from Boston."
+            ]
+          }
         },
         {
           "act": 2,
           "title": "The Stamp Act & \"No Taxation Without Representation\" (1765–1766)",
-          "text": "<span class=\"para-ref\">[4.2]</span> In March 1765, Parliament passed the fateful Stamp Act, imposing the first-ever direct internal tax on the Thirteen Colonies. Every legal contract, newspaper, almanac, pamphlet, and deck of playing cards required an official embossed tax stamp. Colonists erupted in outrage. Citing the 1689 English Bill of Rights, colonial assemblies declared that as British subjects, they could only be taxed by their own elected representatives: <em>\"No taxation without representation!\"</em> In Boston, a secretive resistance movement called the <strong>Sons of Liberty</strong> formed, hanging tax collectors in effigy, ransacking the royal governor’s mansion, and organizing a nationwide <strong>boycott</strong> of British imported goods. Stunned by the collapse in British exports, Parliament repealed the Stamp Act in 1766."
+          "text": "<span class=\"para-ref\">[4.2]</span> In March 1765, Parliament passed the fateful Stamp Act, imposing the first-ever direct internal tax on the Thirteen Colonies. Every legal contract, newspaper, almanac, pamphlet, and deck of playing cards required an official embossed tax stamp. Colonists erupted in outrage. Citing the 1689 English Bill of Rights, colonial assemblies declared that as British subjects, they could only be taxed by their own elected representatives: <em>\"No taxation without representation!\"</em> In Boston, a secretive resistance movement called the <strong>Sons of Liberty</strong> formed, hanging tax collectors in effigy, ransacking the royal governor’s mansion, and organizing a nationwide <strong>boycott</strong> of British imported goods. Stunned by the collapse in British exports, Parliament repealed the Stamp Act in 1766.",
+          "image": "/images/stamp_act_skull_1765.jpg",
+          "image_alt": "Skull and crossbones woodcut emblem printed in colonial American newspapers protesting the Stamp Act 1765",
+          "caption": "Colonial protest emblem published in the Pennsylvania Journal (October 1765), replacing the royal stamp with a skull and crossbones to denounce parliamentary taxation without colonial representation (Library of Congress, LC-USZ62-10658).",
+          "source": {
+            "id": "fbe_l4_src_b",
+            "letter": "B",
+            "type": "visual",
+            "src": "/images/boston_tea_party.jpg",
+            "image": "/images/boston_tea_party.jpg",
+            "title": "Source B (Direct Action & Rebellion): The Destruction of Tea at Boston Harbor (16 December 1773)",
+            "caption": "Historic lithograph depicting the Sons of Liberty, disguised as Mohawk warriors, dumping 342 chests of British East India Company tea into Boston Harbor to protest the 1773 Tea Act.",
+            "citation": "Library of Congress, Prints and Photographs Division (LC-USZ62-17121). Sarony & Major / Currier & Ives.",
+            "provenance": "Nineteenth-century historical print illustrating the dramatic confrontation in Boston Harbor.",
+            "context": "The 1773 Tea Act allowed the East India Company to sell surplus tea directly to the colonies with a small tax, undercutting local merchants. Colonists saw this as a backdoor maneuver to force them to accept Parliament's right to tax them. **Hinge Question:** Was the destruction of private commercial property in Boston Harbor an act of principled political protest or unlawful vandalism?",
+            "question": "Why did the Sons of Liberty target the East India Company's tea shipments rather than simply refusing to buy British imports?",
+            "hinge_question": "Was the destruction of private commercial property in Boston Harbor an act of principled political protest or unlawful vandalism?",
+            "disciplinary_focus": "DIRECT ACTION & PROTEST",
+            "utility_enquiry": {
+              "question": "Why did the Sons of Liberty target the East India Company's tea shipments rather than simply refusing to buy British imports?",
+              "model_answer": "By boarding the ships disguised as Mohawk warriors and dumping 342 chests of tea into the harbor, the rebels made compromise impossible and forced Parliament into an aggressive response that united the colonies.",
+              "content_inferences": "Illustrates the escalation from peaceful constitutional debate to organized, destructive direct action against British corporate monopolies.",
+              "provenance_evaluation": "Celebratory American historical lithograph celebrating the Tea Party as a disciplined patriotic milestone on the path to independence.",
+              "context_limitations": "Romanticizes the protest; omits the fact that £10,000 worth of private property (nearly £1.5 million today) was destroyed, provoking the Coercive Acts.",
+              "bullet_points": [
+                {
+                  "label": "Irreversible Defiance",
+                  "text": "Destroying the tea prevented colonial consignees from paying the duty, slamming the door shut on diplomatic tax negotiations."
+                },
+                {
+                  "label": "Symbolic Disguise",
+                  "text": "Dressing as Native Americans was both a disguise to avoid prosecution and a symbolic declaration of an American identity distinct from Britain."
+                }
+              ],
+              "provenance_clues": [
+                "Author: American historical printmakers (Sarony & Major / Currier & Ives).",
+                "Audience: American citizens, patriotic historical societies, and schoolchildren.",
+                "Motive: To commemorate the Boston Tea Party as a noble, courageous act of resistance against British tyranny."
+              ]
+            },
+            "question_badge": "DIRECT ACTION & PROTEST",
+            "model_answer": "By boarding the ships disguised as Mohawk warriors and dumping 342 chests of tea into the harbor, the rebels made compromise impossible and forced Parliament into an aggressive response that united the colonies.",
+            "provenance_clues": [
+              "Author: American historical printmakers (Sarony & Major / Currier & Ives).",
+              "Audience: American citizens, patriotic historical societies, and schoolchildren.",
+              "Motive: To commemorate the Boston Tea Party as a noble, courageous act of resistance against British tyranny."
+            ]
+          }
         },
         {
           "act": 3,
           "title": "Blood on King Street: The Boston Massacre (March 1770)",
           "text": "<span class=\"para-ref\">[4.3]</span> Despite repealing the Stamp Act, Parliament insisted on its absolute right to bind the colonies \"in all cases whatsoever.\" In 1767, Chancellor Charles Townshend imposed new <strong>customs duties</strong> on imported glass, lead, paint, paper, and tea. When Bostonians violently intimidated customs officials, Britain dispatched four regiments of <strong>redcoats</strong> to occupy the city. Tensions exploded on 5 March 1770: an angry mob of dockworkers pelted a British sentry with snowballs, oyster shells, and clubs outside the Custom House. Surrounded and panicked, British soldiers fired into the crowd, killing five civilians, including Crispus Attucks, a sailor of mixed African and Native American descent. Silversmith Paul Revere engraved an explosive piece of political <strong>propaganda</strong> titled <em>The Bloody Massacre</em>, portraying the redcoats as cold-blooded murderers.",
           "source": {
-            "letter": "A",
-            "title": "Source A: Paul Revere, The Bloody Massacre in King-Street (March 1770)",
-            "image": "/images/boston_massacre.jpg",
-            "caption": "Paul Revere’s famous hand-coloured copperplate engraving of the Boston Massacre: British soldiers in an organised firing squad blasting musket volleys into unarmed citizens outside \"Butcher’s Hall.\"",
-            "source_context": "Produced within three weeks of the 5 March 1770 incident, Revere copied Henry Pelham’s drawing to produce thousands of cheap prints distributed throughout the colonies to inflame anti-British sentiment.",
-            "how_useful_question": "How useful is Source A for an enquiry into how colonial patriots used the Boston Massacre to build support for rebellion against British rule?",
+            "id": "fbe_l4_src_c",
+            "letter": "C",
+            "type": "visual",
+            "src": "/images/first_british_empire/able_doctor_cartoon_1774.jpg",
+            "image": "/images/first_british_empire/able_doctor_cartoon_1774.jpg",
+            "title": "Source C (Satirical Resistance): 'The Able Doctor, or America Swallowing the Bitter Draught' (London Magazine, May 1774)",
+            "caption": "British satirical cartoon showing Prime Minister Lord North pouring tea down the throat of a restrained female figure symbolizing America, while Lord Mansfield holds her arms and Britannia weeps in the background.",
+            "citation": "Metropolitan Museum of Art, New York (Accession: DP876952) / British Museum (BM 1855,0609.1926).",
+            "provenance": "Published in London in The London Magazine (May 1774); copied and reprinted by Paul Revere in Boston.",
+            "context": "Following the Boston Tea Party, Parliament passed the Coercive (Intolerable) Acts to punish Massachusetts. This cartoon by British sympathizers exposed Lord North's aggressive military measures as an assault on American liberty. **Hinge Question:** Why did many British politicians and cartoonists in London actively support the American colonists against their own government?",
+            "question": "How does this satirical cartoon represent British colonial policy toward America as an act of physical violation?",
+            "hinge_question": "Why did many British politicians and cartoonists in London actively support the American colonists against their own government?",
+            "disciplinary_focus": "SATIRICAL RESISTANCE",
+            "utility_enquiry": {
+              "question": "How does this satirical cartoon represent British colonial policy toward America as an act of physical violation?",
+              "model_answer": "It portrays America as a helpless Native American woman being held down by Lord Mansfield and Lord Sandwich while Prime Minister Lord North forces boiling tea down her throat, symbolizing the Coercive Acts.",
+              "content_inferences": "Reveals that British public and parliamentary opinion was deeply divided over coercing the American colonies through military force.",
+              "provenance_evaluation": "A biting political cartoon from a mainstream London periodical; demonstrates that radical Whigs in England viewed government policy as tyrannical.",
+              "context_limitations": "Employs sensationalist imagery and gendered vulnerability to provoke emotional outrage rather than offering balanced legislative analysis.",
+              "bullet_points": [
+                {
+                  "label": "Forced Ingestion of Tyranny",
+                  "text": "Forcing tea down America's throat symbolized Parliament's insistence on unconstitutional taxation and military occupation against colonial consent."
+                },
+                {
+                  "label": "Grief of Britannia",
+                  "text": "Britannia turning away in tears in the background indicates that corrupt ministerial policies were tearing apart the British Empire."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Anonymous British satirist, published in The London Magazine (May 1774).",
+                "Audience: British parliamentary Whig opposition, educated Londoners, and American colonial readers.",
+                "Motive: To condemn Lord North's authoritarian measures and warn that tyrannical policies would destroy the British Empire."
+              ]
+            },
+            "question_badge": "SATIRICAL RESISTANCE",
+            "model_answer": "It portrays America as a helpless Native American woman being held down by Lord Mansfield and Lord Sandwich while Prime Minister Lord North forces boiling tea down her throat, symbolizing the Coercive Acts.",
             "provenance_clues": [
-              "Author: Paul Revere, a leading Boston silversmith and prominent member of the radical Sons of Liberty.",
-              "Audience: American colonists across all thirteen colonies, designed to be hung in taverns, parlours, and shops.",
-              "Motive: To generate explosive anti-British outrage by depicting a tragic, chaotic street brawl as a deliberate, pre-meditated military massacre ordered by Captain Preston."
-            ],
-            "hinge_question": "What visual details in Revere’s engraving deliberately distort the reality of a chaotic street brawl?",
-            "citation": "Paul Revere • Library of Congress, Prints and Photographs Division, Washington D.C.",
-            "discussion_ideas": [
-              "Paul Revere's famous engraving is one of the most effective pieces of political propaganda in American history. In reality, on 5 March 1770, a small, terrified British sentry was surrounded by an angry Boston mob throwing ice, rocks, and clubs before a confused musket discharge killed five civilians. Revere deliberately altered every key detail: he depicts British Captain Preston standing behind his men with a raised sword explicitly commanding an orderly firing squad to shoot into an innocent, peaceful crowd of gentlemen; he erased all stones, snowballs, and weapons, added the label 'Butcher's Hall' above the British customs house, and added a musket firing from a civilian window, transforming a chaotic, self-defense riot into an act of cold-blooded, pre-planned military tyranny to inflame anti-British colonial fury."
+              "Author: Anonymous British satirist, published in The London Magazine (May 1774).",
+              "Audience: British parliamentary Whig opposition, educated Londoners, and American colonial readers.",
+              "Motive: To condemn Lord North's authoritarian measures and warn that tyrannical policies would destroy the British Empire."
             ]
           }
         },
         {
           "act": 4,
           "title": "The Tea Act & The Monopoly Threat (May 1773)",
-          "text": "<span class=\"para-ref\">[4.4]</span> Following the massacre, Parliament backed down and repealed all Townshend duties—except for a symbolic three-penny duty on tea to assert royal authority. For three years, uneasy peace held as colonists happily drank cheap Dutch smuggled tea. But in May 1773, Parliament made a disastrous blunder: the Tea Act. Seeking to bail out the bankrupt East India Company, which had 18 million pounds of unsold tea rotting in London warehouses, Parliament granted the Company a total <strong>monopoly</strong> to ship tea directly to America without paying British export tariffs. Even with the three-penny tax, Company tea was cheaper than smuggled Dutch tea. But colonial merchants and patriots saw a deadly precedent: if Parliament could grant a monopoly on tea, it could grant monopolies on bread, cloth, and iron, destroying colonial commerce."
+          "text": "<span class=\"para-ref\">[4.4]</span> Following the massacre, Parliament backed down and repealed all Townshend duties—except for a symbolic three-penny duty on tea to assert royal authority. For three years, uneasy peace held as colonists happily drank cheap Dutch smuggled tea. But in May 1773, Parliament made a disastrous blunder: the Tea Act. Seeking to bail out the bankrupt East India Company, which had 18 million pounds of unsold tea rotting in London warehouses, Parliament granted the Company a total <strong>monopoly</strong> to ship tea directly to America without paying British export tariffs. Even with the three-penny tax, Company tea was cheaper than smuggled Dutch tea. But colonial merchants and patriots saw a deadly precedent: if Parliament could grant a monopoly on tea, it could grant monopolies on bread, cloth, and iron, destroying colonial commerce.",
+          "source": {
+            "id": "fbe_l4_src_d",
+            "letter": "D",
+            "type": "visual",
+            "src": "/images/first_british_empire/royal_proclamation_1763.jpg",
+            "image": "/images/first_british_empire/royal_proclamation_1763.jpg",
+            "title": "Source D (Imperial Jurisdiction): King George III's Royal Proclamation of 1763 Broadside",
+            "caption": "Official broadside of the Royal Proclamation issued by King George III on 7 October 1763, establishing the Appalachian crest as the boundary beyond which colonial settlement was strictly forbidden.",
+            "citation": "The National Archives, Kew (PC 1/59/74) / Library of Congress Rare Book Collection.",
+            "provenance": "Issued by the Privy Council of Great Britain under royal sign manual in London, October 1763.",
+            "context": "After acquiring Canada and the Ohio Valley from France in 1763, Britain faced Pontiac's War. To prevent further frontier warfare with Native American tribes, King George III drew a line forbidding colonial settlement west of the Appalachians. **Hinge Question:** Did King George III draw the Proclamation Line to protect Native American sovereignty or simply to keep British colonists contained along the coast?",
+            "question": "Why did King George III's Proclamation of 1763 cause profound outrage among American frontier colonists and land speculators?",
+            "hinge_question": "Did King George III draw the Proclamation Line to protect Native American sovereignty or simply to keep British colonists contained along the coast?",
+            "disciplinary_focus": "IMPERIAL JURISDICTION",
+            "utility_enquiry": {
+              "question": "Why did King George III's Proclamation of 1763 cause profound outrage among American frontier colonists and land speculators?",
+              "model_answer": "It drew a strict boundary line along the Appalachian Mountains forbidding British colonists from settling or buying land westward, reserving those territories exclusively for Native American nations.",
+              "content_inferences": "Exposes the fundamental clash between London's desire for orderly imperial frontier governance and the colonists' hunger for westward expansion.",
+              "provenance_evaluation": "Official royal proclamation with the full force of law; reflects Crown priority to avoid costly military garrisons in Indian territory.",
+              "context_limitations": "Presents the policy as a benevolent peace measure, ignoring that wealthy colonial speculators (including George Washington) had already surveyed millions of western acres.",
+              "bullet_points": [
+                {
+                  "label": "Shattered Westward Ambitions",
+                  "text": "Colonists who had fought in the French and Indian War believed they had won the right to western land, feeling betrayed by the Crown's ban."
+                },
+                {
+                  "label": "Direct Imperial Interference",
+                  "text": "By seizing control over land sales, the Crown infringed upon colonial charters and asserted authority over internal American colonial affairs."
+                }
+              ],
+              "provenance_clues": [
+                "Author: King George III, the Board of Trade, and the British Cabinet.",
+                "Audience: Colonial governors, settlers, fur traders, and indigenous tribal confederacies.",
+                "Motive: To pacify Native American nations, halt frontier violence, and keep British colonists contained within reach of maritime trade."
+              ]
+            },
+            "question_badge": "IMPERIAL JURISDICTION",
+            "model_answer": "It drew a strict boundary line along the Appalachian Mountains forbidding British colonists from settling or buying land westward, reserving those territories exclusively for Native American nations.",
+            "provenance_clues": [
+              "Author: King George III, the Board of Trade, and the British Cabinet.",
+              "Audience: Colonial governors, settlers, fur traders, and indigenous tribal confederacies.",
+              "Motive: To pacify Native American nations, halt frontier violence, and keep British colonists contained within reach of maritime trade."
+            ]
+          }
         },
         {
           "act": 5,
           "title": "342 Chests in the Harbour: The Boston Tea Party (December 1773)",
           "text": "<span class=\"para-ref\">[4.5]</span> In late autumn 1773, three East India Company ships—the <em>Dartmouth</em>, the <em>Eleanor</em>, and the <em>Beaver</em>—arrived in Boston Harbour carrying 342 chests of tea. Royal Governor Thomas Hutchinson refused to let the ships depart without paying the customs tax. On the freezing night of 16 December 1773, following an impassioned town meeting led by Samuel Adams at Old South Meeting House, over a hundred Sons of Liberty disguised themselves as Mohawk warriors. Brandishing tomahawks, they boarded the three vessels, split open all 342 wooden chests, and dumped 46 tons of East India Company tea into the ocean—worth over £1.5 million in modern money. Furious at what King George III called \"flagrant rebellion,\" Parliament retaliated in 1774 with the <strong>Coercive Acts</strong>, closing Boston Harbour and placing Massachusetts under military dictatorship, setting the stage for war.",
           "source": {
-            "letter": "B",
-            "title": "Source B: Currier & Ives, The Boston Tea Party (1846 retrospective print)",
-            "image": "/images/boston_tea_party.jpg",
-            "caption": "Lithograph showing the Sons of Liberty throwing chests of British East India Company tea into Boston Harbour on the night of 16 December 1773, cheered on by spectators on the wharf.",
-            "source_context": "The Boston Tea Party was the catalyst that pushed the imperial dispute past the point of reconciliation, prompting the British government to impose the punitive Intolerable Acts.",
-            "how_useful_question": "How useful is Source B for an enquiry into how 19th-century Americans commemorated the Boston Tea Party as a founding act of patriotic defiance?",
+            "id": "fbe_l4_src_e",
+            "letter": "E",
+            "type": "visual",
+            "src": "/images/first_british_empire/stamp_act_repeal_teapot_1766.jpg",
+            "image": "/images/first_british_empire/stamp_act_repeal_teapot_1766.jpg",
+            "title": "Source E (Material Culture & Commerce): Colonial Boycott Creamware Teapot: 'Stamp Act Repeal'd' (1766)",
+            "caption": "English creamware teapot manufactured in Leeds or Cockpit Hill, Derby, inscribed 'Stamp Act Repeal'd' on one side and 'Assez de Liberté' (Liberty Enough) on the reverse, celebrating the colonial boycott victory of 1766.",
+            "citation": "Peabody Essex Museum, Salem, Massachusetts (Accession: PEM 121493). Glazed earthenware, c. 1766.",
+            "provenance": "Manufactured in Yorkshire/Derbyshire foundries for export to enthusiastic American colonial households following repeal.",
+            "context": "When Parliament imposed the Stamp Act in 1765, American merchants enacted non-importation agreements boycotting British manufactured goods. British pottery exports plunged, leading English factory owners to petition Parliament to repeal the tax in 1766. **Hinge Question:** Why are economic boycotts often more effective in forcing imperial policy changes than armed revolts?",
+            "question": "What does this commemorative teapot reveal about the economic relationship between British pottery manufacturers and American consumers?",
+            "hinge_question": "Why are economic boycotts often more effective in forcing imperial policy changes than armed revolts?",
+            "disciplinary_focus": "MATERIAL CULTURE & COMMERCE",
+            "utility_enquiry": {
+              "question": "What does this commemorative teapot reveal about the economic relationship between British pottery manufacturers and American consumers?",
+              "model_answer": "It proves that colonial non-importation boycotts inflicted such catastrophic financial losses on British manufacturers that factory owners actively lobbied Parliament to repeal the Stamp Act and celebrated the victory with consumer wares.",
+              "content_inferences": "Demonstrates how domestic consumer goods became conduits for revolutionary political messaging and economic resistance.",
+              "provenance_evaluation": "Physical consumer artifact made in Britain for the American market; illustrates the transatlantic commercial links that constrained British imperial policy.",
+              "context_limitations": "While the teapot celebrates repeal, it omits the Declaratory Act of 1766 passed alongside it, which insisted Parliament retained total authority over the colonies.",
+              "bullet_points": [
+                {
+                  "label": "Potency of Commercial Boycotts",
+                  "text": "American refusal to purchase British goods harmed English industrial cities, turning British businessmen into fierce advocates for colonial relief."
+                },
+                {
+                  "label": "Politicisation of the Domestic Sphere",
+                  "text": "Drinking tea from a 'Stamp Act Repeal'd' teapot allowed colonists to express political defiance in everyday domestic life."
+                }
+              ],
+              "provenance_clues": [
+                "Author: British industrial potters (Leeds Pottery / Cockpit Hill, Derby).",
+                "Audience: Patriotic American colonial households and British commercial merchant allies.",
+                "Motive: To celebrate the resumption of profitable transatlantic trade and capitalize on colonial patriotic consumer demand."
+              ]
+            },
+            "question_badge": "MATERIAL CULTURE & COMMERCE",
+            "model_answer": "It proves that colonial non-importation boycotts inflicted such catastrophic financial losses on British manufacturers that factory owners actively lobbied Parliament to repeal the Stamp Act and celebrated the victory with consumer wares.",
             "provenance_clues": [
-              "Author: Currier & Ives, the foremost 19th-century American printmakers, published in New York.",
-              "Audience: Patriotic American households during the 1840s.",
-              "Motive: To romanticise the Boston Tea Party as a brave, orderly, and triumphant act of national liberation."
-            ],
-            "hinge_question": "Why did the protestors disguise themselves as Mohawk warriors rather than performing the action as ordinary British townsfolk?",
-            "citation": "Currier & Ives • Library of Congress, Washington D.C.",
-            "discussion_ideas": [
-              "Protection from Arrest and Hanging for High Treason: Destroying 342 chests of British East India Company tea worth over £9,000 (millions today) was a felony capital crime against the Crown; donning Native American blankets, smearing soot on their faces, and communicating with mock war cries concealed the identities of prominent Sons of Liberty (including merchant smugglers) from British customs informants and royal courts.",
-              "Symbolic Rejection of British Identity: By adopting the persona of indigenous Mohawk warriors, the colonists symbolically declared that they were no longer subservient British subjects obedient to a distant Parliament, but a distinct 'American' people who belonged to the American continent and rejected British imperial taxation without representation."
+              "Author: British industrial potters (Leeds Pottery / Cockpit Hill, Derby).",
+              "Audience: Patriotic American colonial households and British commercial merchant allies.",
+              "Motive: To celebrate the resumption of profitable transatlantic trade and capitalize on colonial patriotic consumer demand."
             ]
           }
         }
       ],
       "sources": [
         {
-          "title": "Source A: Paul Revere, The Bloody Massacre in King-Street (March 1770)",
+          "id": "fbe_l4_src_a",
+          "letter": "A",
+          "type": "visual",
+          "src": "/images/boston_massacre.jpg",
           "image": "/images/boston_massacre.jpg",
-          "caption": "Paul Revere’s hand-coloured copperplate engraving of the Boston Massacre: British soldiers firing into a crowd.",
-          "source_context": "Produced by Revere within three weeks of the incident to inflame colonial anti-British outrage.",
-          "how_useful_question": "How useful is Source A for an enquiry into how patriots used the Boston Massacre to build support for rebellion?",
+          "title": "Source A (Propaganda Iconography): The Bloody Massacre Perpetrated in King-Street, Boston (Paul Revere, 1770)",
+          "caption": "Famous hand-colored political engraving by Paul Revere depicting British soldiers of the 29th Regiment firing a disciplined volley into an unarmed Boston crowd on 5 March 1770.",
+          "citation": "Library of Congress, Prints and Photographs Division (LC-DIG-ppmsca-01657). Boston, 1770.",
+          "provenance": "Engraved and rushed into print in Boston within three weeks of the incident by patriot silversmith Paul Revere.",
+          "context": "On 5 March 1770, a hostile Boston mob threw ice, oyster shells, and clubs at British sentries. A soldier was knocked down, and troops fired into the crowd, killing five colonists including Crispus Attucks. **Hinge Question:** Where is the boundary between legitimate political reporting and inflammatory propaganda during times of civil unrest?",
+          "question": "How did Paul Revere's engraving deliberately manipulate the events of the Boston Massacre to provoke colonial fury against British rule?",
+          "hinge_question": "Where is the boundary between legitimate political reporting and inflammatory propaganda during times of civil unrest?",
+          "disciplinary_focus": "PROPAGANDA ICONOGRAPHY",
+          "utility_enquiry": {
+            "question": "How did Paul Revere's engraving deliberately manipulate the events of the Boston Massacre to provoke colonial fury against British rule?",
+            "model_answer": "Revere depicted British redcoats standing in a disciplined, grinning firing line unloading muskets into an unarmed, peaceful crowd on Captain Preston's order, omitting the hostile mob throwing snowballs, rocks, and ice.",
+            "content_inferences": "Demonstrates how visual media was weaponized to build anti-British solidarity and transform a street brawl into an act of imperial tyranny.",
+            "provenance_evaluation": "A masterwork of partisan political propaganda produced by a Sons of Liberty activist specifically to spark colonial outrage.",
+            "context_limitations": "Factually inaccurate; at the subsequent legal trial, John Adams successfully defended the soldiers by proving they were trapped and terrified by an aggressive mob.",
+            "bullet_points": [
+              {
+                "label": "Calculated Visual Bias",
+                "text": "Revere labeled the British customs house 'Butcher's Hall' and showed Captain Preston giving a deliberate command to slaughter unarmed civilians."
+              },
+              {
+                "label": "Creation of Revolutionary Martyrs",
+                "text": "The print framed the victims as innocent, peaceful gentlemen, making the British military garrison appear as an occupying foreign army."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Paul Revere, Boston silversmith, Son of Liberty, and revolutionary activist.",
+              "Audience: Colonists across the Thirteen Colonies and Whig sympathizers in Britain.",
+              "Motive: To inflame public rage, mobilize colonial resistance, and force the removal of British troops from Boston."
+            ]
+          },
+          "question_badge": "PROPAGANDA ICONOGRAPHY",
+          "model_answer": "Revere depicted British redcoats standing in a disciplined, grinning firing line unloading muskets into an unarmed, peaceful crowd on Captain Preston's order, omitting the hostile mob throwing snowballs, rocks, and ice.",
           "provenance_clues": [
-            "Author: Paul Revere, leading member of the Sons of Liberty.",
-            "Audience: Colonists across the thirteen colonies.",
-            "Motive: To portray a chaotic street riot as a pre-meditated military massacre."
-          ],
-          "hinge_question": "What visual details in Revere’s engraving deliberately distort the reality of a chaotic street brawl?",
-          "citation": "Paul Revere • Library of Congress, Washington D.C.",
-          "discussion_ideas": [
-            "Paul Revere's famous engraving is one of the most effective pieces of political propaganda in American history. In reality, on 5 March 1770, a small, terrified British sentry was surrounded by an angry Boston mob throwing ice, rocks, and clubs before a confused musket discharge killed five civilians. Revere deliberately altered every key detail: he depicts British Captain Preston standing behind his men with a raised sword explicitly commanding an orderly firing squad to shoot into an innocent, peaceful crowd of gentlemen; he erased all stones, snowballs, and weapons, added the label 'Butcher's Hall' above the British customs house, and added a musket firing from a civilian window, transforming a chaotic, self-defense riot into an act of cold-blooded, pre-planned military tyranny to inflame anti-British colonial fury."
+            "Author: Paul Revere, Boston silversmith, Son of Liberty, and revolutionary activist.",
+            "Audience: Colonists across the Thirteen Colonies and Whig sympathizers in Britain.",
+            "Motive: To inflame public rage, mobilize colonial resistance, and force the removal of British troops from Boston."
           ]
         },
         {
-          "title": "Source B: Currier & Ives, The Boston Tea Party (1846 lithograph)",
+          "id": "fbe_l4_src_b",
+          "letter": "B",
+          "type": "visual",
+          "src": "/images/boston_tea_party.jpg",
           "image": "/images/boston_tea_party.jpg",
-          "caption": "Lithograph showing the Sons of Liberty throwing chests of tea into Boston Harbour on 16 December 1773.",
-          "source_context": "The Boston Tea Party provoked Parliament to impose the punitive Coercive Acts.",
-          "how_useful_question": "How useful is Source B for an enquiry into how Americans commemorated the Boston Tea Party as a founding act of defiance?",
+          "title": "Source B (Direct Action & Rebellion): The Destruction of Tea at Boston Harbor (16 December 1773)",
+          "caption": "Historic lithograph depicting the Sons of Liberty, disguised as Mohawk warriors, dumping 342 chests of British East India Company tea into Boston Harbor to protest the 1773 Tea Act.",
+          "citation": "Library of Congress, Prints and Photographs Division (LC-USZ62-17121). Sarony & Major / Currier & Ives.",
+          "provenance": "Nineteenth-century historical print illustrating the dramatic confrontation in Boston Harbor.",
+          "context": "The 1773 Tea Act allowed the East India Company to sell surplus tea directly to the colonies with a small tax, undercutting local merchants. Colonists saw this as a backdoor maneuver to force them to accept Parliament's right to tax them. **Hinge Question:** Was the destruction of private commercial property in Boston Harbor an act of principled political protest or unlawful vandalism?",
+          "question": "Why did the Sons of Liberty target the East India Company's tea shipments rather than simply refusing to buy British imports?",
+          "hinge_question": "Was the destruction of private commercial property in Boston Harbor an act of principled political protest or unlawful vandalism?",
+          "disciplinary_focus": "DIRECT ACTION & PROTEST",
+          "utility_enquiry": {
+            "question": "Why did the Sons of Liberty target the East India Company's tea shipments rather than simply refusing to buy British imports?",
+            "model_answer": "By boarding the ships disguised as Mohawk warriors and dumping 342 chests of tea into the harbor, the rebels made compromise impossible and forced Parliament into an aggressive response that united the colonies.",
+            "content_inferences": "Illustrates the escalation from peaceful constitutional debate to organized, destructive direct action against British corporate monopolies.",
+            "provenance_evaluation": "Celebratory American historical lithograph celebrating the Tea Party as a disciplined patriotic milestone on the path to independence.",
+            "context_limitations": "Romanticizes the protest; omits the fact that £10,000 worth of private property (nearly £1.5 million today) was destroyed, provoking the Coercive Acts.",
+            "bullet_points": [
+              {
+                "label": "Irreversible Defiance",
+                "text": "Destroying the tea prevented colonial consignees from paying the duty, slamming the door shut on diplomatic tax negotiations."
+              },
+              {
+                "label": "Symbolic Disguise",
+                "text": "Dressing as Native Americans was both a disguise to avoid prosecution and a symbolic declaration of an American identity distinct from Britain."
+              }
+            ],
+            "provenance_clues": [
+              "Author: American historical printmakers (Sarony & Major / Currier & Ives).",
+              "Audience: American citizens, patriotic historical societies, and schoolchildren.",
+              "Motive: To commemorate the Boston Tea Party as a noble, courageous act of resistance against British tyranny."
+            ]
+          },
+          "question_badge": "DIRECT ACTION & PROTEST",
+          "model_answer": "By boarding the ships disguised as Mohawk warriors and dumping 342 chests of tea into the harbor, the rebels made compromise impossible and forced Parliament into an aggressive response that united the colonies.",
           "provenance_clues": [
-            "Author: Currier & Ives, prominent 19th-century American lithographers.",
-            "Audience: Patriotic American households.",
-            "Motive: To romanticise the protest as a disciplined, heroic act of national liberation."
-          ],
-          "hinge_question": "Why did the protestors disguise themselves as Mohawk warriors rather than performing the action as ordinary British townsfolk?",
-          "citation": "Currier & Ives • Library of Congress, Washington D.C.",
-          "discussion_ideas": [
-            "Protection from Arrest and Hanging for High Treason: Destroying 342 chests of British East India Company tea worth over £9,000 (millions today) was a felony capital crime against the Crown; donning Native American blankets, smearing soot on their faces, and communicating with mock war cries concealed the identities of prominent Sons of Liberty (including merchant smugglers) from British customs informants and royal courts.",
-            "Symbolic Rejection of British Identity: By adopting the persona of indigenous Mohawk warriors, the colonists symbolically declared that they were no longer subservient British subjects obedient to a distant Parliament, but a distinct 'American' people who belonged to the American continent and rejected British imperial taxation without representation."
+            "Author: American historical printmakers (Sarony & Major / Currier & Ives).",
+            "Audience: American citizens, patriotic historical societies, and schoolchildren.",
+            "Motive: To commemorate the Boston Tea Party as a noble, courageous act of resistance against British tyranny."
+          ]
+        },
+        {
+          "id": "fbe_l4_src_c",
+          "letter": "C",
+          "type": "visual",
+          "src": "/images/first_british_empire/able_doctor_cartoon_1774.jpg",
+          "image": "/images/first_british_empire/able_doctor_cartoon_1774.jpg",
+          "title": "Source C (Satirical Resistance): 'The Able Doctor, or America Swallowing the Bitter Draught' (London Magazine, May 1774)",
+          "caption": "British satirical cartoon showing Prime Minister Lord North pouring tea down the throat of a restrained female figure symbolizing America, while Lord Mansfield holds her arms and Britannia weeps in the background.",
+          "citation": "Metropolitan Museum of Art, New York (Accession: DP876952) / British Museum (BM 1855,0609.1926).",
+          "provenance": "Published in London in The London Magazine (May 1774); copied and reprinted by Paul Revere in Boston.",
+          "context": "Following the Boston Tea Party, Parliament passed the Coercive (Intolerable) Acts to punish Massachusetts. This cartoon by British sympathizers exposed Lord North's aggressive military measures as an assault on American liberty. **Hinge Question:** Why did many British politicians and cartoonists in London actively support the American colonists against their own government?",
+          "question": "How does this satirical cartoon represent British colonial policy toward America as an act of physical violation?",
+          "hinge_question": "Why did many British politicians and cartoonists in London actively support the American colonists against their own government?",
+          "disciplinary_focus": "SATIRICAL RESISTANCE",
+          "utility_enquiry": {
+            "question": "How does this satirical cartoon represent British colonial policy toward America as an act of physical violation?",
+            "model_answer": "It portrays America as a helpless Native American woman being held down by Lord Mansfield and Lord Sandwich while Prime Minister Lord North forces boiling tea down her throat, symbolizing the Coercive Acts.",
+            "content_inferences": "Reveals that British public and parliamentary opinion was deeply divided over coercing the American colonies through military force.",
+            "provenance_evaluation": "A biting political cartoon from a mainstream London periodical; demonstrates that radical Whigs in England viewed government policy as tyrannical.",
+            "context_limitations": "Employs sensationalist imagery and gendered vulnerability to provoke emotional outrage rather than offering balanced legislative analysis.",
+            "bullet_points": [
+              {
+                "label": "Forced Ingestion of Tyranny",
+                "text": "Forcing tea down America's throat symbolized Parliament's insistence on unconstitutional taxation and military occupation against colonial consent."
+              },
+              {
+                "label": "Grief of Britannia",
+                "text": "Britannia turning away in tears in the background indicates that corrupt ministerial policies were tearing apart the British Empire."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Anonymous British satirist, published in The London Magazine (May 1774).",
+              "Audience: British parliamentary Whig opposition, educated Londoners, and American colonial readers.",
+              "Motive: To condemn Lord North's authoritarian measures and warn that tyrannical policies would destroy the British Empire."
+            ]
+          },
+          "question_badge": "SATIRICAL RESISTANCE",
+          "model_answer": "It portrays America as a helpless Native American woman being held down by Lord Mansfield and Lord Sandwich while Prime Minister Lord North forces boiling tea down her throat, symbolizing the Coercive Acts.",
+          "provenance_clues": [
+            "Author: Anonymous British satirist, published in The London Magazine (May 1774).",
+            "Audience: British parliamentary Whig opposition, educated Londoners, and American colonial readers.",
+            "Motive: To condemn Lord North's authoritarian measures and warn that tyrannical policies would destroy the British Empire."
+          ]
+        },
+        {
+          "id": "fbe_l4_src_d",
+          "letter": "D",
+          "type": "visual",
+          "src": "/images/first_british_empire/royal_proclamation_1763.jpg",
+          "image": "/images/first_british_empire/royal_proclamation_1763.jpg",
+          "title": "Source D (Imperial Jurisdiction): King George III's Royal Proclamation of 1763 Broadside",
+          "caption": "Official broadside of the Royal Proclamation issued by King George III on 7 October 1763, establishing the Appalachian crest as the boundary beyond which colonial settlement was strictly forbidden.",
+          "citation": "The National Archives, Kew (PC 1/59/74) / Library of Congress Rare Book Collection.",
+          "provenance": "Issued by the Privy Council of Great Britain under royal sign manual in London, October 1763.",
+          "context": "After acquiring Canada and the Ohio Valley from France in 1763, Britain faced Pontiac's War. To prevent further frontier warfare with Native American tribes, King George III drew a line forbidding colonial settlement west of the Appalachians. **Hinge Question:** Did King George III draw the Proclamation Line to protect Native American sovereignty or simply to keep British colonists contained along the coast?",
+          "question": "Why did King George III's Proclamation of 1763 cause profound outrage among American frontier colonists and land speculators?",
+          "hinge_question": "Did King George III draw the Proclamation Line to protect Native American sovereignty or simply to keep British colonists contained along the coast?",
+          "disciplinary_focus": "IMPERIAL JURISDICTION",
+          "utility_enquiry": {
+            "question": "Why did King George III's Proclamation of 1763 cause profound outrage among American frontier colonists and land speculators?",
+            "model_answer": "It drew a strict boundary line along the Appalachian Mountains forbidding British colonists from settling or buying land westward, reserving those territories exclusively for Native American nations.",
+            "content_inferences": "Exposes the fundamental clash between London's desire for orderly imperial frontier governance and the colonists' hunger for westward expansion.",
+            "provenance_evaluation": "Official royal proclamation with the full force of law; reflects Crown priority to avoid costly military garrisons in Indian territory.",
+            "context_limitations": "Presents the policy as a benevolent peace measure, ignoring that wealthy colonial speculators (including George Washington) had already surveyed millions of western acres.",
+            "bullet_points": [
+              {
+                "label": "Shattered Westward Ambitions",
+                "text": "Colonists who had fought in the French and Indian War believed they had won the right to western land, feeling betrayed by the Crown's ban."
+              },
+              {
+                "label": "Direct Imperial Interference",
+                "text": "By seizing control over land sales, the Crown infringed upon colonial charters and asserted authority over internal American colonial affairs."
+              }
+            ],
+            "provenance_clues": [
+              "Author: King George III, the Board of Trade, and the British Cabinet.",
+              "Audience: Colonial governors, settlers, fur traders, and indigenous tribal confederacies.",
+              "Motive: To pacify Native American nations, halt frontier violence, and keep British colonists contained within reach of maritime trade."
+            ]
+          },
+          "question_badge": "IMPERIAL JURISDICTION",
+          "model_answer": "It drew a strict boundary line along the Appalachian Mountains forbidding British colonists from settling or buying land westward, reserving those territories exclusively for Native American nations.",
+          "provenance_clues": [
+            "Author: King George III, the Board of Trade, and the British Cabinet.",
+            "Audience: Colonial governors, settlers, fur traders, and indigenous tribal confederacies.",
+            "Motive: To pacify Native American nations, halt frontier violence, and keep British colonists contained within reach of maritime trade."
+          ]
+        },
+        {
+          "id": "fbe_l4_src_e",
+          "letter": "E",
+          "type": "visual",
+          "src": "/images/first_british_empire/stamp_act_repeal_teapot_1766.jpg",
+          "image": "/images/first_british_empire/stamp_act_repeal_teapot_1766.jpg",
+          "title": "Source E (Material Culture & Commerce): Colonial Boycott Creamware Teapot: 'Stamp Act Repeal'd' (1766)",
+          "caption": "English creamware teapot manufactured in Leeds or Cockpit Hill, Derby, inscribed 'Stamp Act Repeal'd' on one side and 'Assez de Liberté' (Liberty Enough) on the reverse, celebrating the colonial boycott victory of 1766.",
+          "citation": "Peabody Essex Museum, Salem, Massachusetts (Accession: PEM 121493). Glazed earthenware, c. 1766.",
+          "provenance": "Manufactured in Yorkshire/Derbyshire foundries for export to enthusiastic American colonial households following repeal.",
+          "context": "When Parliament imposed the Stamp Act in 1765, American merchants enacted non-importation agreements boycotting British manufactured goods. British pottery exports plunged, leading English factory owners to petition Parliament to repeal the tax in 1766. **Hinge Question:** Why are economic boycotts often more effective in forcing imperial policy changes than armed revolts?",
+          "question": "What does this commemorative teapot reveal about the economic relationship between British pottery manufacturers and American consumers?",
+          "hinge_question": "Why are economic boycotts often more effective in forcing imperial policy changes than armed revolts?",
+          "disciplinary_focus": "MATERIAL CULTURE & COMMERCE",
+          "utility_enquiry": {
+            "question": "What does this commemorative teapot reveal about the economic relationship between British pottery manufacturers and American consumers?",
+            "model_answer": "It proves that colonial non-importation boycotts inflicted such catastrophic financial losses on British manufacturers that factory owners actively lobbied Parliament to repeal the Stamp Act and celebrated the victory with consumer wares.",
+            "content_inferences": "Demonstrates how domestic consumer goods became conduits for revolutionary political messaging and economic resistance.",
+            "provenance_evaluation": "Physical consumer artifact made in Britain for the American market; illustrates the transatlantic commercial links that constrained British imperial policy.",
+            "context_limitations": "While the teapot celebrates repeal, it omits the Declaratory Act of 1766 passed alongside it, which insisted Parliament retained total authority over the colonies.",
+            "bullet_points": [
+              {
+                "label": "Potency of Commercial Boycotts",
+                "text": "American refusal to purchase British goods harmed English industrial cities, turning British businessmen into fierce advocates for colonial relief."
+              },
+              {
+                "label": "Politicisation of the Domestic Sphere",
+                "text": "Drinking tea from a 'Stamp Act Repeal'd' teapot allowed colonists to express political defiance in everyday domestic life."
+              }
+            ],
+            "provenance_clues": [
+              "Author: British industrial potters (Leeds Pottery / Cockpit Hill, Derby).",
+              "Audience: Patriotic American colonial households and British commercial merchant allies.",
+              "Motive: To celebrate the resumption of profitable transatlantic trade and capitalize on colonial patriotic consumer demand."
+            ]
+          },
+          "question_badge": "MATERIAL CULTURE & COMMERCE",
+          "model_answer": "It proves that colonial non-importation boycotts inflicted such catastrophic financial losses on British manufacturers that factory owners actively lobbied Parliament to repeal the Stamp Act and celebrated the victory with consumer wares.",
+          "provenance_clues": [
+            "Author: British industrial potters (Leeds Pottery / Cockpit Hill, Derby).",
+            "Audience: Patriotic American colonial households and British commercial merchant allies.",
+            "Motive: To celebrate the resumption of profitable transatlantic trade and capitalize on colonial patriotic consumer demand."
           ]
         }
       ],
@@ -1759,7 +3529,104 @@ const unitData = {
           "viewing_task": "[14:20] Recall: What financial debt did the British government carry following the Seven Years' War (French and Indian War)?\n[22:45] Explain: How did the Boston Massacre of March 1770 become an explosive propaganda victory for Paul Revere and Samuel Adams?\n[33:15] Challenge: Why did British ministers in London view colonial resistance as dangerous lawlessness that threatened the entire British constitution?",
           "model_answer": "Recall: Britain's national debt had doubled to over £130 million, convincing Parliament that American colonists should help pay for their own military defence.\nExplain: Revere's sensationalised engraving depicted British soldiers firing an unprovoked volley into a peaceful crowd of unarmed citizens, turning a chaotic street clash into an enduring symbol of imperial tyranny.\nChallenge: London believed in absolute parliamentary sovereignty: if the American colonies were exempt from parliamentary taxation, the authority of the British Crown and the rule of law across the entire empire would collapse."
         }
-      ]
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: Thirteen Colonies & The Boston Tea Party",
+        "tariff": "16 marks (Narrative Account [8m] & Explain Importance [8m])",
+        "questions": [
+          {
+            "tariff": "8 marks",
+            "type": "narrative_account_8m",
+            "question": "Write a narrative account analysing the key events leading from the Stamp Act (1765) to the Boston Tea Party (1773). [8 marks]",
+            "stimulus": [
+              "The Stamp Act and colonial boycotts (1765)",
+              "The Boston Massacre and the Tea Act (1770–1773)"
+            ],
+            "prompt": "Write a chronological account examining the escalation of colonial resistance: the 1765 Stamp Act crisis, the 1770 Boston Massacre, and the 1773 Tea Act leading directly to the Boston Tea Party.",
+            "model": "Between 1765 and 1773, relations between the British Parliament and the American colonies deteriorated through a cycle of imperial taxation, colonial resistance, and escalating violence.<br><br>The crisis began in 1765 when Parliament passed the Stamp Act to repay debts from the Seven Years’ War, taxing legal documents, newspapers, and playing cards. Colonists reacted with fury, establishing the Sons of Liberty and adopting the slogan \"No taxation without representation\", arguing that an unelected Parliament 3,000 miles away had no legal right to levy direct taxes. Widespread colonial boycotts of British goods forced Parliament to repeal the act in 1766, but the accompanying Declaratory Act insisted Parliament maintained sovereign power over the colonies in all cases whatsoever.<br><br>Tensions escalated dramatically with the 1767 Townshend Acts on imported glass, lead, paint, and tea. British troops were dispatched to Boston to enforce customs collections, creating friction that culminated on 5 March 1770 in the Boston Massacre, where British soldiers opened fire on an angry crowd, killing five colonists. Although Parliament repealed most Townshend duties following the massacre, it retained the tea tax as a symbol of authority.<br><br>The final catalyst occurred in May 1773 when Parliament passed the Tea Act, granting the struggling British East India Company a monopoly to sell surplus tea in America at reduced prices. Colonists recognized this as a bribe to accept parliamentary taxation. Consequently, on 16 December 1773, the Sons of Liberty disguised themselves as Mohawk warriors, boarded three East India Company ships in Boston Harbour, and dumped 342 chests of tea into the ocean, triggering the punitive Coercive Acts.",
+            "scaffolding": {
+              "acronym": "3-Stage Chronological Narrative Framework",
+              "acronym_title": "Narrative Account Formula (Beginning • Escalation • Climax)",
+              "steps": [
+                {
+                  "letter": "STAGE 1",
+                  "name": "1765 Stamp Act & Boycotts",
+                  "prompt": "Explain the tax on printed paper, \"No taxation without representation\", and boycott.",
+                  "starter": "Initially, the imperial crisis began in 1765 when..."
+                },
+                {
+                  "letter": "STAGE 2",
+                  "name": "1770 Boston Massacre",
+                  "prompt": "Explain Townshend Duties, British troops stationed in Boston, and 5 March 1770 shooting.",
+                  "starter": "Following this, tensions escalated sharply in March 1770 when..."
+                },
+                {
+                  "letter": "STAGE 3",
+                  "name": "1773 Tea Act & Boston Tea Party",
+                  "prompt": "Explain East India Company monopoly, Sons of Liberty, and 342 tea chests dumped in harbour.",
+                  "starter": "The decisive turning point occurred in December 1773 when..."
+                }
+              ],
+              "sentence_starters": [
+                "Initially, the crisis began when...",
+                "Following this, a major escalation occurred in 1770 when...",
+                "A violent turning point was reached when...",
+                "Consequently, this culminated in December 1773 when..."
+              ],
+              "connectives_bank": [
+                "Stamp Act (1765)",
+                "Sons of Liberty",
+                "No taxation without representation",
+                "Boston Massacre (1770)",
+                "Tea Act (1773)",
+                "342 tea chests",
+                "Boston Harbour",
+                "East India Company"
+              ]
+            }
+          },
+          {
+            "tariff": "8 marks",
+            "type": "explain_importance_8m",
+            "question": "Explain the importance of the Boston Tea Party (1773) for relations between Britain and the American colonies. [8 marks]",
+            "prompt": "Explain two distinct consequences: how it prompted Parliament to pass the punitive \"Coercive/Intolerable Acts\" shutting Boston port, and how it united previously divided colonies behind the First Continental Congress.",
+            "model": "One reason the Boston Tea Party was profoundly important was that it provoked a punitive and uncompromising legislative retaliation from the British government. Viewing the destruction of £10,000 worth of private property as open rebellion, King George III and Parliament passed the 1774 Coercive Acts (known in America as the \"Intolerable Acts\"). These measures closed Boston Harbour until the tea was paid for, suspended the Massachusetts colonial assembly, replaced the civilian governor with military general Thomas Gage, and quartered British troops in private buildings. By replacing colonial self-government with military rule, Britain foreclosed diplomatic compromise.<br><br>Furthermore, the Tea Party was critical because it transformed a regional dispute in Massachusetts into a united, continent-wide revolution. Rather than isolating Boston as Parliament intended, the harshness of the Coercive Acts outraged the other twelve colonies, inspiring them to send food and financial relief. More decisively, it spurred colonial leaders to convene the First Continental Congress in Philadelphia in September 1774. Representatives from twelve colonies united for the first time, establishing a coordinated continental boycott of British trade and authorizing local militias to arm themselves, paving the direct path to open warfare at Lexington and Concord in April 1775.",
+            "scaffolding": {
+              "acronym": "Importance Point 1 • Importance Point 2",
+              "acronym_title": "Edexcel Paper 2 Period Study 8-Mark Importance Standard",
+              "steps": [
+                {
+                  "letter": "IMPACT 1",
+                  "name": "British Retaliation (Coercive Acts)",
+                  "prompt": "Explain closing Boston Harbour, General Gage, martial law, and quartering troops.",
+                  "starter": "One reason the Boston Tea Party was crucial was that..."
+                },
+                {
+                  "letter": "IMPACT 2",
+                  "name": "Colonial Unification (Continental Congress)",
+                  "prompt": "Explain how it united 12 colonies, Philadelphia Congress 1774, and militia arming.",
+                  "starter": "Furthermore, the event was vital because it transformed..."
+                }
+              ],
+              "sentence_starters": [
+                "One reason why the Boston Tea Party was important was...",
+                "In particular, this led the British government to...",
+                "Furthermore, the event was critical because...",
+                "Consequently, this transformed relations because..."
+              ],
+              "connectives_bank": [
+                "Coercive Acts (1774)",
+                "Intolerable Acts",
+                "Boston Harbour closed",
+                "General Thomas Gage",
+                "First Continental Congress",
+                "colonial unity",
+                "Lexington and Concord"
+              ]
+            }
+          }
+        ]
+      }
     },
     {
       "id": "lesson_5",
@@ -1954,102 +3821,474 @@ const unitData = {
         {
           "act": 1,
           "title": "The Shot Heard ’Round the World (April–November 1775)",
-          "text": "<span class=\"para-ref\">[5.1]</span> In April 1775, British troops marched toward Concord, Massachusetts, to seize colonial weapons caches. At Lexington Green, an unknown gun fired \"the shot heard ’round the world,\" triggering open warfare. The Continental Congress named George Washington commander-in-chief of the newly formed Continental Army. In November 1775, desperate to suppress the rebellion in Virginia, Royal Governor Lord Dunmore issued a revolutionary proclamation: he offered immediate emancipation to any enslaved African owned by rebel masters who fled and enlisted in the King’s army. Dunmore formed the \"Ethiopian Regiment,\" where former slaves wore uniforms stitched with the motto <em>\"Liberty to Slaves.\"</em>"
+          "text": "<span class=\"para-ref\">[5.1]</span> In April 1775, British troops marched toward Concord, Massachusetts, to seize colonial weapons caches. At Lexington Green, an unknown gun fired \"the shot heard ’round the world,\" triggering open warfare. The Continental Congress named George Washington commander-in-chief of the newly formed Continental Army. In November 1775, desperate to suppress the rebellion in Virginia, Royal Governor Lord Dunmore issued a revolutionary proclamation: he offered immediate emancipation to any enslaved African owned by rebel masters who fled and enlisted in the King’s army. Dunmore formed the \"Ethiopian Regiment,\" where former slaves wore uniforms stitched with the motto <em>\"Liberty to Slaves.\"</em>",
+          "image": "/images/battle_of_lexington_1775.jpg",
+          "image_alt": "Contemporary copper engraving of the Battle of Lexington (19 April 1775) by Amos Doolittle",
+          "caption": "The Battle of Lexington (19 April 1775), contemporary copperplate engraving by Amos Doolittle depicting the opening military clash between British regular infantry and colonial Minutemen (New York Public Library / Concord Museum).",
+          "source": {
+            "id": "fbe_l5_src_a",
+            "letter": "A",
+            "type": "visual",
+            "src": "/images/declaration_of_independence.jpg",
+            "image": "/images/declaration_of_independence.jpg",
+            "title": "Source A (Enlightenment Ideology): Declaration of Independence (John Trumbull, 4 July 1776)",
+            "caption": "Monumental oil painting by John Trumbull depicting the Committee of Five (John Adams, Roger Sherman, Robert Livingston, Thomas Jefferson, and Benjamin Franklin) presenting the draft Declaration of Independence to John Hancock.",
+            "citation": "United States Capitol Rotunda, Washington, D.C. Oil on canvas by John Trumbull, 1818.",
+            "provenance": "Commissioned by the United States Congress in 1817 to commemorate the founding constitutional act of the republic.",
+            "context": "On 4 July 1776, the Continental Congress voted to approve the Declaration of Independence. Jefferson's preamble asserted that all men possess unalienable rights to life, liberty, and the pursuit of happiness. **Hinge Question:** How did Thomas Jefferson reconcile writing that 'all men are created equal' while personally enslaving over 600 human beings?",
+            "question": "How does John Trumbull's painting celebrate the Committee of Five presenting the Declaration of Independence to the Continental Congress?",
+            "hinge_question": "How did Thomas Jefferson reconcile writing that 'all men are created equal' while personally enslaving over 600 human beings?",
+            "disciplinary_focus": "ENLIGHTENMENT IDEOLOGY",
+            "utility_enquiry": {
+              "question": "How does John Trumbull's painting celebrate the Committee of Five presenting the Declaration of Independence to the Continental Congress?",
+              "model_answer": "It frames the moment as an orderly, dignified gathering of rational republican statesmen, emphasizing moral courage and philosophical resolve over revolutionary violence.",
+              "content_inferences": "Portrays the birth of the American republic as a noble Enlightenment act of civic courage and legal deliberation.",
+              "provenance_evaluation": "Monumental patriotic painting displayed in the heart of the US Capitol; designed to establish a sacred national visual mythology.",
+              "context_limitations": "An artistic dramatization painted 40 years later; the 47 delegates depicted were never assembled in the room simultaneously on 4 July.",
+              "bullet_points": [
+                {
+                  "label": "Universal Principles of Freedom",
+                  "text": "The painting glorifies the adoption of natural rights philosophy, declaring that governments derive their just powers from the consent of the governed."
+                },
+                {
+                  "label": "Racial and Gender Exclusions",
+                  "text": "The all-white, all-male assembly visualizes the historic paradox of a revolution fighting for liberty while entrenching chattel slavery and excluding women."
+                }
+              ],
+              "provenance_clues": [
+                "Author: John Trumbull, American painter and former aide-de-camp to General George Washington.",
+                "Audience: The citizens of the United States and international visitors to the US Capitol.",
+                "Motive: To preserve the likenesses of the founding fathers and instill national reverence for the Declaration."
+              ]
+            },
+            "question_badge": "ENLIGHTENMENT IDEOLOGY",
+            "model_answer": "It frames the moment as an orderly, dignified gathering of rational republican statesmen, emphasizing moral courage and philosophical resolve over revolutionary violence.",
+            "provenance_clues": [
+              "Author: John Trumbull, American painter and former aide-de-camp to General George Washington.",
+              "Audience: The citizens of the United States and international visitors to the US Capitol.",
+              "Motive: To preserve the likenesses of the founding fathers and instill national reverence for the Declaration."
+            ]
+          }
         },
         {
           "act": 2,
           "title": "The 1776 Declaration & The Paradox of Liberty (July 1776)",
           "text": "<span class=\"para-ref\">[5.2]</span> On 4 July 1776 in Philadelphia, the Continental Congress ratified the <strong>Declaration</strong> of Independence. Authored by 33-year-old Virginian lawyer Thomas Jefferson, the document declared that \"all men are created equal\" with inalienable rights to \"Life, Liberty and the pursuit of Happiness.\" Yet this ringing Enlightenment rhetoric exposed profound imperial <strong>hypocrisy</strong>: Jefferson personally owned over 170 enslaved human beings, and 41 of the 56 signatories were slaveholders. In London, the famous writer Dr Samuel Johnson sarcastically asked: <em>\"How is it that we hear the loudest yelps for liberty among the drivers of negroes?\"</em>",
           "source": {
-            "letter": "A",
-            "title": "Source A: John Trumbull, Declaration of Independence (1819)",
-            "image": "/images/declaration_of_independence.jpg",
-            "caption": "John Trumbull’s celebrated oil painting in the U.S. Capitol Rotunda, showing the five-man drafting committee (including John Adams, Roger Sherman, Robert Livingston, Thomas Jefferson, and Benjamin Franklin) presenting the draft Declaration to John Hancock.",
-            "source_context": "Commissioned by Congress decades after the Revolution, Trumbull spent years gathering authentic portraits of 42 signers to immortalise the founding of the American Republic.",
-            "how_useful_question": "How useful is Source A for an enquiry into how early American leaders wished the Declaration of Independence to be remembered by posterity?",
+            "id": "fbe_l5_src_b",
+            "letter": "B",
+            "type": "visual",
+            "src": "/images/dunmore_proclamation_1775.jpg",
+            "image": "/images/dunmore_proclamation_1775.jpg",
+            "title": "Source B (Strategic Emancipation): Lord Dunmore's Proclamation of Freedom to Enslaved Persons (November 1775)",
+            "caption": "Official broadside issued by John Murray, 4th Earl of Dunmore, Royal Governor of Virginia, offering freedom to all enslaved persons belonging to rebels who agreed to fight for the British Crown.",
+            "citation": "Library of Virginia, Richmond (Broadside 1775 .M87) / The National Archives, Kew (CO 5/1353).",
+            "provenance": "Printed aboard the British merchant ship William off Norfolk, Virginia on 7 November 1775.",
+            "context": "Facing armed rebellion in Virginia, Lord Dunmore issued an ultimatum declaring martial law and offering freedom to enslaved men who joined the British Army. Over 800 African Americans joined his 'Ethiopian Regiment' wearing sashes reading 'Liberty to Slaves'. **Hinge Question:** Did Lord Dunmore issue his proclamation out of genuine humanitarian concern for enslaved Africans or as a cynical military weapon?",
+            "question": "Why did Virginia's royal governor Lord Dunmore promise freedom to enslaved Africans who fled to join the British forces?",
+            "hinge_question": "Did Lord Dunmore issue his proclamation out of genuine humanitarian concern for enslaved Africans or as a cynical military weapon?",
+            "disciplinary_focus": "STRATEGIC EMANCIPATION",
+            "utility_enquiry": {
+              "question": "Why did Virginia's royal governor Lord Dunmore promise freedom to enslaved Africans who fled to join the British forces?",
+              "model_answer": "Dunmore sought to cripple the Virginia plantation economy and bolster his outnumbered British forces by encouraging thousands of enslaved workers to abandon rebel masters and bear arms for the King.",
+              "content_inferences": "Demonstrates how enslaved people actively leveraged the imperial conflict to claim their own freedom, transforming the war into a war of liberation.",
+              "provenance_evaluation": "Official royal proclamation and military tactic; deliberately targeted only the property of rebel colonists while protecting loyalist enslavers.",
+              "context_limitations": "Reflects military desperation rather than moral abolitionism; Dunmore personally owned enslaved people and returned loyalists' slaves.",
+              "bullet_points": [
+                {
+                  "label": "Economic Disruption",
+                  "text": "Dunmore knew that the threat of slave insurrections would force rebel planters to abandon the Continental Army to guard their plantations."
+                },
+                {
+                  "label": "Black Loyalist Mobilisation",
+                  "text": "Thousands of enslaved men and women escaped to British lines, serving as armed soldiers, guides, sailors, and military laborers throughout the war."
+                }
+              ],
+              "provenance_clues": [
+                "Author: John Murray, 4th Earl of Dunmore, Royal Governor of Virginia.",
+                "Audience: Enslaved African laborers, free colonists, and rebel plantation owners in Virginia.",
+                "Motive: To suppress the colonial rebellion through economic disruption and recruit an 'Ethiopian Regiment' of Black Loyalists."
+              ]
+            },
+            "question_badge": "STRATEGIC EMANCIPATION",
+            "model_answer": "Dunmore sought to cripple the Virginia plantation economy and bolster his outnumbered British forces by encouraging thousands of enslaved workers to abandon rebel masters and bear arms for the King.",
             "provenance_clues": [
-              "Author: John Trumbull, former aide-de-camp to General George Washington and official artist of the American Revolution.",
-              "Audience: Citizens of the young United States and visitors to the Capitol Rotunda in Washington D.C.",
-              "Motive: To portray the founders as dignified, united, and visionary philosophers creating a republic based on universal equality, while deliberately omitting the presence of enslaved people whose labour built their estates."
-            ],
-            "hinge_question": "Why did Trumbull omit the intense debates over slavery that nearly broke the Congress apart?",
-            "citation": "John Trumbull • United States Capitol Rotunda, Washington D.C.",
-            "discussion_ideas": [
-              "John Trumbull painted this iconic scene for the US Capitol Rotunda decades after 1776 to create a myth of unanimous, harmonious founding unity. In reality, the drafting committee (led by Thomas Jefferson) was bitterly divided: Jefferson’s original draft contained a passionate clause condemning King George III for waging 'cruel war against human nature itself' by maintaining the transatlantic slave trade. Delegates from Georgia and South Carolina furiously refused to sign unless this passage was completely excised, threatening to walk out and collapse the revolution. Trumbull erased this foundational hypocrisy, depicting 47 founding fathers standing in dignified harmony, concealing the tragic paradox that an empire of liberty was founded by slaveholders proclaiming 'all men are created equal' while keeping 500,000 Black human beings in chattel bondage."
+              "Author: John Murray, 4th Earl of Dunmore, Royal Governor of Virginia.",
+              "Audience: Enslaved African laborers, free colonists, and rebel plantation owners in Virginia.",
+              "Motive: To suppress the colonial rebellion through economic disruption and recruit an 'Ethiopian Regiment' of Black Loyalists."
             ]
           }
         },
         {
           "act": 3,
           "title": "Global Conflict & The French Alliance (1777–1780)",
-          "text": "<span class=\"para-ref\">[5.3]</span> The British Army was professional, well-drilled, and backed by the Royal Navy, repeatedly driving Washington’s inexperienced forces across New York and New Jersey. However, in October 1777, British General John Burgoyne was surrounded and forced to surrender his entire 6,000-man army in the forests of Saratoga, New York. Sensing British weakness, King Louis XVI of France formed a military alliance with the American rebels, followed by Spain and the Dutch Republic. What had begun as a localized colonial rebellion expanded into a global naval war, forcing Britain to divert ships and troops to defend its wealthy sugar islands in the Caribbean and factories in India."
+          "text": "<span class=\"para-ref\">[5.3]</span> The British Army was professional, well-drilled, and backed by the Royal Navy, repeatedly driving Washington’s inexperienced forces across New York and New Jersey. However, in October 1777, British General John Burgoyne was surrounded and forced to surrender his entire 6,000-man army in the forests of Saratoga, New York. Sensing British weakness, King Louis XVI of France formed a military alliance with the American rebels, followed by Spain and the Dutch Republic. What had begun as a localized colonial rebellion expanded into a global naval war, forcing Britain to divert ships and troops to defend its wealthy sugar islands in the Caribbean and factories in India.",
+          "source": {
+            "id": "fbe_l5_src_c",
+            "letter": "C",
+            "type": "visual",
+            "src": "/images/first_british_empire/book_of_negroes_inspection_1783.png",
+            "image": "/images/first_british_empire/book_of_negroes_inspection_1783.png",
+            "title": "Source C (Documentary Emancipation): The Book of Negroes: Inspection Certificate Signed by Samuel Birch (1783)",
+            "caption": "Official military pass and registration entry from The Book of Negroes, certifying that an emancipated Black Loyalist had been inspected and cleared to board a British evacuation vessel in New York Harbor.",
+            "citation": "The National Archives, Kew (PRO 30/55/100, Carleton Papers) / Library and Archives Canada.",
+            "provenance": "Compiled in New York City between April and November 1783 by a joint British-American inspection commission.",
+            "context": "At the end of the Revolutionary War, George Washington demanded that all runaway slaves within British lines be returned to their American masters. British Commander-in-Chief Sir Guy Carleton refused, declaring it an insult to British honor, and created The Book of Negroes to evacuate 3,000 Black Loyalists to Nova Scotia. **Hinge Question:** Why did thousands of African Americans choose to fight for the British King rather than the American Patriots who claimed to be fighting for 'liberty'?",
+            "question": "What does the meticulous documentation in The Book of Negroes reveal about the British evacuation of Black Loyalists from New York in 1783?",
+            "hinge_question": "Why did thousands of African Americans choose to fight for the British King rather than the American Patriots who claimed to be fighting for 'liberty'?",
+            "disciplinary_focus": "DOCUMENTARY EMANCIPATION",
+            "utility_enquiry": {
+              "question": "What does the meticulous documentation in The Book of Negroes reveal about the British evacuation of Black Loyalists from New York in 1783?",
+              "model_answer": "It records the names, ages, physical descriptions, and former enslavers of over 3,000 formerly enslaved African Americans, proving that the British military honored its pledge of freedom and protected them from re-enslavement.",
+              "content_inferences": "Provides invaluable biographical evidence of ordinary African Americans seizing freedom through military alliance with the British Crown.",
+              "provenance_evaluation": "Official military legal ledger signed by British officers; created to satisfy American property claims while ensuring Black Loyalists sailed away free.",
+              "context_limitations": "Documents the successful escapees, but cannot capture the thousands of Black Loyalists who were recaptured by slave patrols, died of smallpox, or were abandoned in the South.",
+              "bullet_points": [
+                {
+                  "label": "Honoring Imperial Pledges",
+                  "text": "General Carleton insisted that returning men who had shed blood for the King back into slavery was a moral impossibility."
+                },
+                {
+                  "label": "Founding the Black Loyalist Diaspora",
+                  "text": "Those evacuated in The Book of Negroes founded free Black communities in Birchtown, Nova Scotia, and later Sierra Leone (Freetown)."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Brigadier General Samuel Birch and British military inspection clerks.",
+                "Audience: General Sir Guy Carleton, General George Washington, and British naval transport captains.",
+                "Motive: To issue unassailable legal documentation guaranteeing freedom to Black Loyalists boarding ships to Nova Scotia."
+              ]
+            },
+            "question_badge": "DOCUMENTARY EMANCIPATION",
+            "model_answer": "It records the names, ages, physical descriptions, and former enslavers of over 3,000 formerly enslaved African Americans, proving that the British military honored its pledge of freedom and protected them from re-enslavement.",
+            "provenance_clues": [
+              "Author: Brigadier General Samuel Birch and British military inspection clerks.",
+              "Audience: General Sir Guy Carleton, General George Washington, and British naval transport captains.",
+              "Motive: To issue unassailable legal documentation guaranteeing freedom to Black Loyalists boarding ships to Nova Scotia."
+            ]
+          }
         },
         {
           "act": 4,
           "title": "Siege of Yorktown & British Surrender (October 1781)",
-          "text": "<span class=\"para-ref\">[5.4]</span> Britain pivoted its military strategy to the American South, hoping loyalist sentiment among southern planters would restore royal authority. But British General Charles Cornwallis found himself harassed by colonial guerrilla fighters and overextended. In September 1781, Cornwallis marched his 8,000 troops onto the Yorktown peninsula in Virginia, expecting Royal Navy resupply. Instead, a French fleet under Admiral de Grasse blockaded Chesapeake Bay, while combined American and French armies under Washington besieged Yorktown by land. Cut off from food and ammunition, Cornwallis surrendered on 19 October 1781. As the British troops marched out to lay down their muskets, British military bands bitterly played the tune <em>The World Turned Upside Down</em>."
+          "text": "<span class=\"para-ref\">[5.4]</span> Britain pivoted its military strategy to the American South, hoping loyalist sentiment among southern planters would restore royal authority. But British General Charles Cornwallis found himself harassed by colonial guerrilla fighters and overextended. In September 1781, Cornwallis marched his 8,000 troops onto the Yorktown peninsula in Virginia, expecting Royal Navy resupply. Instead, a French fleet under Admiral de Grasse blockaded Chesapeake Bay, while combined American and French armies under Washington besieged Yorktown by land. Cut off from food and ammunition, Cornwallis surrendered on 19 October 1781. As the British troops marched out to lay down their muskets, British military bands bitterly played the tune <em>The World Turned Upside Down</em>.",
+          "image": "/images/surrender_of_cornwallis_1781.jpg",
+          "image_alt": "Painting of the Surrender of Lord Cornwallis at Yorktown by John Trumbull",
+          "caption": "Surrender of Lord Cornwallis at Yorktown (John Trumbull, 1820), depicting the capitulation of General Charles O'Hara and the British army to combined American and French forces on 19 October 1781 (United States Capitol Rotunda, Washington D.C.).",
+          "source": {
+            "id": "fbe_l5_src_d",
+            "letter": "D",
+            "type": "visual",
+            "src": "/images/first_british_empire/thomas_paine_common_sense_1776.jpg",
+            "image": "/images/first_british_empire/thomas_paine_common_sense_1776.jpg",
+            "title": "Source D (Revolutionary Discourse): Thomas Paine's Common Sense Title Page (Philadelphia, January 1776)",
+            "caption": "Title page of the first edition of Thomas Paine's explosive political pamphlet Common Sense, published anonymously in Philadelphia on 10 January 1776.",
+            "citation": "Library of Congress, Rare Book and Special Collections Division (Call number: E211 .P145 1776).",
+            "provenance": "Published anonymously in Philadelphia by printer Robert Bell in January 1776.",
+            "context": "Before Common Sense, most colonists claimed they were only fighting for their traditional rights as British subjects. Paine demolished the divine right of kings, ridiculed the British monarchy, and argued that America had a moral duty to create an independent democratic republic. **Hinge Question:** What made Thomas Paine's writing style so revolutionary compared to the formal legal petitions previously sent to the King?",
+            "question": "Why was Thomas Paine's pamphlet Common Sense so uniquely persuasive in convincing ordinary colonists to demand total independence?",
+            "hinge_question": "What made Thomas Paine's writing style so revolutionary compared to the formal legal petitions previously sent to the King?",
+            "disciplinary_focus": "REVOLUTIONARY DISCOURSE",
+            "utility_enquiry": {
+              "question": "Why was Thomas Paine's pamphlet Common Sense so uniquely persuasive in convincing ordinary colonists to demand total independence?",
+              "model_answer": "Written in vigorous, accessible, plain English avoiding elite Latin phrases, Paine attacked hereditary monarchy as absurd and argued that it was common sense for an entire continent not to be ruled by a distant island.",
+              "content_inferences": "Illustrates the power of print culture in transforming elite constitutional debates into a mass popular revolution.",
+              "provenance_evaluation": "A revolutionary political manifesto designed for wide circulation; sold over 150,000 copies in a population of 2.5 million.",
+              "context_limitations": "An impassioned polemic that caricatures British institutions to persuade readers, rather than an objective analysis of imperial governance.",
+              "bullet_points": [
+                {
+                  "label": "Demystifying Monarchy",
+                  "text": "Paine called King George III 'the Royal Brute of Britain', breaking the psychological reverence ordinary colonists held for the Crown."
+                },
+                {
+                  "label": "Vision of Global Democracy",
+                  "text": "He framed America as 'an asylum for mankind', arguing that independence was not just a colonial dispute but a world-changing birth of freedom."
+                }
+              ],
+              "provenance_clues": [
+                "Author: Thomas Paine, English-born radical artisan, editor, and political pamphleteer.",
+                "Audience: Ordinary American farmers, artisans, soldiers, and colonial citizens.",
+                "Motive: To transform a colonial tax protest into an uncompromising moral campaign for universal human liberty and republican independence."
+              ]
+            },
+            "question_badge": "REVOLUTIONARY DISCOURSE",
+            "model_answer": "Written in vigorous, accessible, plain English avoiding elite Latin phrases, Paine attacked hereditary monarchy as absurd and argued that it was common sense for an entire continent not to be ruled by a distant island.",
+            "provenance_clues": [
+              "Author: Thomas Paine, English-born radical artisan, editor, and political pamphleteer.",
+              "Audience: Ordinary American farmers, artisans, soldiers, and colonial citizens.",
+              "Motive: To transform a colonial tax protest into an uncompromising moral campaign for universal human liberty and republican independence."
+            ]
+          }
         },
         {
           "act": 5,
           "title": "The Treaty of Paris & The Black Loyalists (1783)",
           "text": "<span class=\"para-ref\">[5.5]</span> In the 1783 <strong>Treaty of Paris</strong>, Great Britain formally recognised the independence of the United States of America, ceding all imperial territory between the Atlantic Ocean and the Mississippi River. The First British Empire had suffered catastrophic fracture. Despite furious demands from American slaveholders (including George Washington) that escaped slaves be returned, British commanders honourably kept their pledge to the <strong>Black Loyalists</strong>. In the spring of 1783, British ships evacuated over 3,000 formerly enslaved men, women, and children from New York to Nova Scotia, recording their names in the historic <em>Book of Negroes</em>, while thousands more resettled in London and Sierra Leone.",
           "source": {
-            "letter": "B",
-            "title": "Source B: Excerpt from Lord Dunmore’s Proclamation, Williamsburg, Virginia (November 1775)",
-            "image": "/images/dunmore_proclamation_1775.jpg",
-            "caption": "Archival text of Lord Dunmore’s revolutionary proclamation offering immediate freedom to enslaved Africans who deserted rebel plantations to fight for the British Crown.",
-            "source_context": "Issued on 7 November 1775 by John Murray, 4th Earl of Dunmore, the royal governor of Virginia, this proclamation was the first mass emancipation of enslaved Africans in American history.",
-            "text": "\"...And I do hereby further declare all indented Servants, Negroes, or others, (appertaining to Rebels,) free that are able and willing to bear Arms, they joining His MAJESTY’S Troops as soon as may be, for the more speedily reducing this Colony to a proper Sense of their Duty, to His MAJESTY’S Crown and Dignity.\"",
-            "how_useful_question": "How useful is Source B for an enquiry into British military strategy and the motivations of enslaved Africans during the American Revolution?",
+            "id": "fbe_l5_src_e",
+            "letter": "E",
+            "type": "visual",
+            "src": "/images/first_british_empire/treaty_of_paris_signatures_1783.jpg",
+            "image": "/images/first_british_empire/treaty_of_paris_signatures_1783.jpg",
+            "title": "Source E (Diplomatic Settlement & Peace): The Treaty of Paris: Signatures and Wax Seals Page (3 September 1783)",
+            "caption": "Official concluding page of the definitive Treaty of Paris, displaying the signatures and red wax seals of British envoy David Hartley and American commissioners John Adams, Benjamin Franklin, and John Jay.",
+            "citation": "US National Archives and Records Administration, Washington, D.C. (Record Group 11, Exchange Copy).",
+            "provenance": "Signed at the Hotel d'York in Paris on 3 September 1783, bringing formal conclusion to the American Revolutionary War.",
+            "context": "Signed in Paris in September 1783, the treaty ended eight years of war. Britain formally recognized the United States as independent and ceded all territory from the Atlantic to the Mississippi, marking the catastrophic collapse of the First British Empire. **Hinge Question:** Why was Great Britain willing to grant such vast western lands to its former colonies despite having undefeated garrisons in New York and Charleston?",
+            "question": "What immense territorial and political concessions did Great Britain make in the 1783 Treaty of Paris?",
+            "hinge_question": "Why was Great Britain willing to grant such vast western lands to its former colonies despite having undefeated garrisons in New York and Charleston?",
+            "disciplinary_focus": "DIPLOMATIC SETTLEMENT",
+            "utility_enquiry": {
+              "question": "What immense territorial and political concessions did Great Britain make in the 1783 Treaty of Paris?",
+              "model_answer": "Britain formally recognized the United States as free, sovereign, and independent nations, ceding all imperial territory between the Atlantic Ocean and the Mississippi River from Canada to Florida.",
+              "content_inferences": "Documents the legal dissolution of the First British Empire in North America and the emergence of a new sovereign transcontinental power.",
+              "provenance_evaluation": "Premier international diplomatic treaty binding under global law; signed with official wax seals by the chief peace plenipotentiaries.",
+              "context_limitations": "While granting western lands to the Americans, the treaty completely excluded Native American tribes who actually inhabited those territories.",
+              "bullet_points": [
+                {
+                  "label": "Recognition of Sovereignty",
+                  "text": "Article 1 formally declared the United States to be free, sovereign, and independent, relinquishing all Crown claims to government and territorial property."
+                },
+                {
+                  "label": "Vast Territorial Cession",
+                  "text": "Britain ceded all land west to the Mississippi River, doubling American territory and shutting out Native American allies from peace discussions."
+                }
+              ],
+              "provenance_clues": [
+                "Author: British plenipotentiary David Hartley and American commissioners John Adams, Benjamin Franklin, and John Jay.",
+                "Audience: The governments and citizens of Great Britain, the United States, France, Spain, and global diplomatic corps.",
+                "Motive: To establish permanent peace, settle borders, and restore commercial relations between Britain and the United States."
+              ]
+            },
+            "question_badge": "DIPLOMATIC SETTLEMENT",
+            "model_answer": "Britain formally recognized the United States as free, sovereign, and independent nations, ceding all imperial territory between the Atlantic Ocean and the Mississippi River from Canada to Florida.",
             "provenance_clues": [
-              "Author: Lord Dunmore, British Royal Governor of Virginia, writing from aboard a British warship after being driven from the governor’s palace.",
-              "Audience: Enslaved African Americans and rebel plantation owners across Virginia and Maryland.",
-              "Motive: Primarily military and economic—to cripple the rebel plantation economy and terrorise slaveholding rebels by arming their former enslaved workers."
-            ],
-            "hinge_question": "Was Dunmore motivated by moral abolition or ruthless military strategy?",
-            "citation": "Lord Dunmore • The Gilder Lehrman Institute of American History, New York.",
-            "discussion_ideas": [
-              "Ruthless Military Warfare to Crush the Rebellion: Lord Dunmore was himself a wealthy slaveowner; his November 1775 proclamation offering freedom to 'all indentured servants, Negroes, or others... able and willing to bear arms' was a desperate tactical weapon designed to cripple the Virginia plantation economy and recruit an 'Ethiopian Regiment' of 800 soldiers to save his beleaguered royal garrison.",
-              "The Inadvertent Spark for Black Liberation and Loyalism: Regardless of Dunmore's cynical imperial motives, thousands of enslaved men, women, and children seized the opportunity to escape bondage and run to the British lines; known as the Black Loyalists, over 3,000 were subsequently evacuated by the British to Nova Scotia in 1783 (recorded in the Book of Negroes), transforming a British war measure into the largest emancipation of enslaved people in North America prior to the Civil War."
+              "Author: British plenipotentiary David Hartley and American commissioners John Adams, Benjamin Franklin, and John Jay.",
+              "Audience: The governments and citizens of Great Britain, the United States, France, Spain, and global diplomatic corps.",
+              "Motive: To establish permanent peace, settle borders, and restore commercial relations between Britain and the United States."
             ]
           }
         }
       ],
       "sources": [
         {
-          "title": "Source A: John Trumbull, Declaration of Independence (1819)",
+          "id": "fbe_l5_src_a",
+          "letter": "A",
+          "type": "visual",
+          "src": "/images/declaration_of_independence.jpg",
           "image": "/images/declaration_of_independence.jpg",
-          "caption": "John Trumbull’s painting showing the drafting committee presenting the Declaration of Independence in Philadelphia.",
-          "source_context": "Commissioned by Congress decades after the Revolution to immortalise the founding of the American Republic.",
-          "how_useful_question": "How useful is Source A for an enquiry into how early American leaders wished the Declaration to be remembered?",
+          "title": "Source A (Enlightenment Ideology): Declaration of Independence (John Trumbull, 4 July 1776)",
+          "caption": "Monumental oil painting by John Trumbull depicting the Committee of Five (John Adams, Roger Sherman, Robert Livingston, Thomas Jefferson, and Benjamin Franklin) presenting the draft Declaration of Independence to John Hancock.",
+          "citation": "United States Capitol Rotunda, Washington, D.C. Oil on canvas by John Trumbull, 1818.",
+          "provenance": "Commissioned by the United States Congress in 1817 to commemorate the founding constitutional act of the republic.",
+          "context": "On 4 July 1776, the Continental Congress voted to approve the Declaration of Independence. Jefferson's preamble asserted that all men possess unalienable rights to life, liberty, and the pursuit of happiness. **Hinge Question:** How did Thomas Jefferson reconcile writing that 'all men are created equal' while personally enslaving over 600 human beings?",
+          "question": "How does John Trumbull's painting celebrate the Committee of Five presenting the Declaration of Independence to the Continental Congress?",
+          "hinge_question": "How did Thomas Jefferson reconcile writing that 'all men are created equal' while personally enslaving over 600 human beings?",
+          "disciplinary_focus": "ENLIGHTENMENT IDEOLOGY",
+          "utility_enquiry": {
+            "question": "How does John Trumbull's painting celebrate the Committee of Five presenting the Declaration of Independence to the Continental Congress?",
+            "model_answer": "It frames the moment as an orderly, dignified gathering of rational republican statesmen, emphasizing moral courage and philosophical resolve over revolutionary violence.",
+            "content_inferences": "Portrays the birth of the American republic as a noble Enlightenment act of civic courage and legal deliberation.",
+            "provenance_evaluation": "Monumental patriotic painting displayed in the heart of the US Capitol; designed to establish a sacred national visual mythology.",
+            "context_limitations": "An artistic dramatization painted 40 years later; the 47 delegates depicted were never assembled in the room simultaneously on 4 July.",
+            "bullet_points": [
+              {
+                "label": "Universal Principles of Freedom",
+                "text": "The painting glorifies the adoption of natural rights philosophy, declaring that governments derive their just powers from the consent of the governed."
+              },
+              {
+                "label": "Racial and Gender Exclusions",
+                "text": "The all-white, all-male assembly visualizes the historic paradox of a revolution fighting for liberty while entrenching chattel slavery and excluding women."
+              }
+            ],
+            "provenance_clues": [
+              "Author: John Trumbull, American painter and former aide-de-camp to General George Washington.",
+              "Audience: The citizens of the United States and international visitors to the US Capitol.",
+              "Motive: To preserve the likenesses of the founding fathers and instill national reverence for the Declaration."
+            ]
+          },
+          "question_badge": "ENLIGHTENMENT IDEOLOGY",
+          "model_answer": "It frames the moment as an orderly, dignified gathering of rational republican statesmen, emphasizing moral courage and philosophical resolve over revolutionary violence.",
           "provenance_clues": [
-            "Author: John Trumbull, official artist of the American Revolution.",
-            "Audience: Citizens of the United States and visitors to the Capitol Rotunda.",
-            "Motive: To portray the founders as dignified philosophers creating a republic based on equality."
-          ],
-          "hinge_question": "Why did Trumbull omit the intense debates over slavery that nearly broke the Congress apart?",
-          "citation": "John Trumbull • United States Capitol Rotunda, Washington D.C.",
-          "discussion_ideas": [
-            "John Trumbull painted this iconic scene for the US Capitol Rotunda decades after 1776 to create a myth of unanimous, harmonious founding unity. In reality, the drafting committee (led by Thomas Jefferson) was bitterly divided: Jefferson’s original draft contained a passionate clause condemning King George III for waging 'cruel war against human nature itself' by maintaining the transatlantic slave trade. Delegates from Georgia and South Carolina furiously refused to sign unless this passage was completely excised, threatening to walk out and collapse the revolution. Trumbull erased this foundational hypocrisy, depicting 47 founding fathers standing in dignified harmony, concealing the tragic paradox that an empire of liberty was founded by slaveholders proclaiming 'all men are created equal' while keeping 500,000 Black human beings in chattel bondage."
+            "Author: John Trumbull, American painter and former aide-de-camp to General George Washington.",
+            "Audience: The citizens of the United States and international visitors to the US Capitol.",
+            "Motive: To preserve the likenesses of the founding fathers and instill national reverence for the Declaration."
           ]
         },
         {
-          "title": "Source B: Excerpt from Lord Dunmore’s Proclamation, Williamsburg, Virginia (November 1775)",
+          "id": "fbe_l5_src_b",
+          "letter": "B",
+          "type": "visual",
+          "src": "/images/dunmore_proclamation_1775.jpg",
           "image": "/images/dunmore_proclamation_1775.jpg",
-          "caption": "Archival text of Lord Dunmore’s proclamation offering freedom to enslaved Africans who joined the British army.",
-          "source_context": "Issued in November 1775 by the royal governor of Virginia, representing the first mass emancipation in America.",
-          "text": "\"...And I do hereby further declare all indented Servants, Negroes, or others, (appertaining to Rebels,) free that are able and willing to bear Arms, they joining His MAJESTY’S Troops...\"",
-          "how_useful_question": "How useful is Source B for an enquiry into British strategy and enslaved motivations in the Revolution?",
+          "title": "Source B (Strategic Emancipation): Lord Dunmore's Proclamation of Freedom to Enslaved Persons (November 1775)",
+          "caption": "Official broadside issued by John Murray, 4th Earl of Dunmore, Royal Governor of Virginia, offering freedom to all enslaved persons belonging to rebels who agreed to fight for the British Crown.",
+          "citation": "Library of Virginia, Richmond (Broadside 1775 .M87) / The National Archives, Kew (CO 5/1353).",
+          "provenance": "Printed aboard the British merchant ship William off Norfolk, Virginia on 7 November 1775.",
+          "context": "Facing armed rebellion in Virginia, Lord Dunmore issued an ultimatum declaring martial law and offering freedom to enslaved men who joined the British Army. Over 800 African Americans joined his 'Ethiopian Regiment' wearing sashes reading 'Liberty to Slaves'. **Hinge Question:** Did Lord Dunmore issue his proclamation out of genuine humanitarian concern for enslaved Africans or as a cynical military weapon?",
+          "question": "Why did Virginia's royal governor Lord Dunmore promise freedom to enslaved Africans who fled to join the British forces?",
+          "hinge_question": "Did Lord Dunmore issue his proclamation out of genuine humanitarian concern for enslaved Africans or as a cynical military weapon?",
+          "disciplinary_focus": "STRATEGIC EMANCIPATION",
+          "utility_enquiry": {
+            "question": "Why did Virginia's royal governor Lord Dunmore promise freedom to enslaved Africans who fled to join the British forces?",
+            "model_answer": "Dunmore sought to cripple the Virginia plantation economy and bolster his outnumbered British forces by encouraging thousands of enslaved workers to abandon rebel masters and bear arms for the King.",
+            "content_inferences": "Demonstrates how enslaved people actively leveraged the imperial conflict to claim their own freedom, transforming the war into a war of liberation.",
+            "provenance_evaluation": "Official royal proclamation and military tactic; deliberately targeted only the property of rebel colonists while protecting loyalist enslavers.",
+            "context_limitations": "Reflects military desperation rather than moral abolitionism; Dunmore personally owned enslaved people and returned loyalists' slaves.",
+            "bullet_points": [
+              {
+                "label": "Economic Disruption",
+                "text": "Dunmore knew that the threat of slave insurrections would force rebel planters to abandon the Continental Army to guard their plantations."
+              },
+              {
+                "label": "Black Loyalist Mobilisation",
+                "text": "Thousands of enslaved men and women escaped to British lines, serving as armed soldiers, guides, sailors, and military laborers throughout the war."
+              }
+            ],
+            "provenance_clues": [
+              "Author: John Murray, 4th Earl of Dunmore, Royal Governor of Virginia.",
+              "Audience: Enslaved African laborers, free colonists, and rebel plantation owners in Virginia.",
+              "Motive: To suppress the colonial rebellion through economic disruption and recruit an 'Ethiopian Regiment' of Black Loyalists."
+            ]
+          },
+          "question_badge": "STRATEGIC EMANCIPATION",
+          "model_answer": "Dunmore sought to cripple the Virginia plantation economy and bolster his outnumbered British forces by encouraging thousands of enslaved workers to abandon rebel masters and bear arms for the King.",
           "provenance_clues": [
-            "Author: Lord Dunmore, British Royal Governor of Virginia.",
-            "Audience: Enslaved workers and rebel plantation owners.",
-            "Motive: To cripple the rebel economy and recruit troops by arming former slaves."
-          ],
-          "hinge_question": "Was Dunmore motivated by moral abolition or ruthless military strategy?",
-          "citation": "Lord Dunmore • The Gilder Lehrman Institute of American History, New York.",
-          "discussion_ideas": [
-            "Ruthless Military Warfare to Crush the Rebellion: Lord Dunmore was himself a wealthy slaveowner; his November 1775 proclamation offering freedom to 'all indentured servants, Negroes, or others... able and willing to bear arms' was a desperate tactical weapon designed to cripple the Virginia plantation economy and recruit an 'Ethiopian Regiment' of 800 soldiers to save his beleaguered royal garrison.",
-            "The Inadvertent Spark for Black Liberation and Loyalism: Regardless of Dunmore's cynical imperial motives, thousands of enslaved men, women, and children seized the opportunity to escape bondage and run to the British lines; known as the Black Loyalists, over 3,000 were subsequently evacuated by the British to Nova Scotia in 1783 (recorded in the Book of Negroes), transforming a British war measure into the largest emancipation of enslaved people in North America prior to the Civil War."
+            "Author: John Murray, 4th Earl of Dunmore, Royal Governor of Virginia.",
+            "Audience: Enslaved African laborers, free colonists, and rebel plantation owners in Virginia.",
+            "Motive: To suppress the colonial rebellion through economic disruption and recruit an 'Ethiopian Regiment' of Black Loyalists."
+          ]
+        },
+        {
+          "id": "fbe_l5_src_c",
+          "letter": "C",
+          "type": "visual",
+          "src": "/images/first_british_empire/book_of_negroes_inspection_1783.png",
+          "image": "/images/first_british_empire/book_of_negroes_inspection_1783.png",
+          "title": "Source C (Documentary Emancipation): The Book of Negroes: Inspection Certificate Signed by Samuel Birch (1783)",
+          "caption": "Official military pass and registration entry from The Book of Negroes, certifying that an emancipated Black Loyalist had been inspected and cleared to board a British evacuation vessel in New York Harbor.",
+          "citation": "The National Archives, Kew (PRO 30/55/100, Carleton Papers) / Library and Archives Canada.",
+          "provenance": "Compiled in New York City between April and November 1783 by a joint British-American inspection commission.",
+          "context": "At the end of the Revolutionary War, George Washington demanded that all runaway slaves within British lines be returned to their American masters. British Commander-in-Chief Sir Guy Carleton refused, declaring it an insult to British honor, and created The Book of Negroes to evacuate 3,000 Black Loyalists to Nova Scotia. **Hinge Question:** Why did thousands of African Americans choose to fight for the British King rather than the American Patriots who claimed to be fighting for 'liberty'?",
+          "question": "What does the meticulous documentation in The Book of Negroes reveal about the British evacuation of Black Loyalists from New York in 1783?",
+          "hinge_question": "Why did thousands of African Americans choose to fight for the British King rather than the American Patriots who claimed to be fighting for 'liberty'?",
+          "disciplinary_focus": "DOCUMENTARY EMANCIPATION",
+          "utility_enquiry": {
+            "question": "What does the meticulous documentation in The Book of Negroes reveal about the British evacuation of Black Loyalists from New York in 1783?",
+            "model_answer": "It records the names, ages, physical descriptions, and former enslavers of over 3,000 formerly enslaved African Americans, proving that the British military honored its pledge of freedom and protected them from re-enslavement.",
+            "content_inferences": "Provides invaluable biographical evidence of ordinary African Americans seizing freedom through military alliance with the British Crown.",
+            "provenance_evaluation": "Official military legal ledger signed by British officers; created to satisfy American property claims while ensuring Black Loyalists sailed away free.",
+            "context_limitations": "Documents the successful escapees, but cannot capture the thousands of Black Loyalists who were recaptured by slave patrols, died of smallpox, or were abandoned in the South.",
+            "bullet_points": [
+              {
+                "label": "Honoring Imperial Pledges",
+                "text": "General Carleton insisted that returning men who had shed blood for the King back into slavery was a moral impossibility."
+              },
+              {
+                "label": "Founding the Black Loyalist Diaspora",
+                "text": "Those evacuated in The Book of Negroes founded free Black communities in Birchtown, Nova Scotia, and later Sierra Leone (Freetown)."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Brigadier General Samuel Birch and British military inspection clerks.",
+              "Audience: General Sir Guy Carleton, General George Washington, and British naval transport captains.",
+              "Motive: To issue unassailable legal documentation guaranteeing freedom to Black Loyalists boarding ships to Nova Scotia."
+            ]
+          },
+          "question_badge": "DOCUMENTARY EMANCIPATION",
+          "model_answer": "It records the names, ages, physical descriptions, and former enslavers of over 3,000 formerly enslaved African Americans, proving that the British military honored its pledge of freedom and protected them from re-enslavement.",
+          "provenance_clues": [
+            "Author: Brigadier General Samuel Birch and British military inspection clerks.",
+            "Audience: General Sir Guy Carleton, General George Washington, and British naval transport captains.",
+            "Motive: To issue unassailable legal documentation guaranteeing freedom to Black Loyalists boarding ships to Nova Scotia."
+          ]
+        },
+        {
+          "id": "fbe_l5_src_d",
+          "letter": "D",
+          "type": "visual",
+          "src": "/images/first_british_empire/thomas_paine_common_sense_1776.jpg",
+          "image": "/images/first_british_empire/thomas_paine_common_sense_1776.jpg",
+          "title": "Source D (Revolutionary Discourse): Thomas Paine's Common Sense Title Page (Philadelphia, January 1776)",
+          "caption": "Title page of the first edition of Thomas Paine's explosive political pamphlet Common Sense, published anonymously in Philadelphia on 10 January 1776.",
+          "citation": "Library of Congress, Rare Book and Special Collections Division (Call number: E211 .P145 1776).",
+          "provenance": "Published anonymously in Philadelphia by printer Robert Bell in January 1776.",
+          "context": "Before Common Sense, most colonists claimed they were only fighting for their traditional rights as British subjects. Paine demolished the divine right of kings, ridiculed the British monarchy, and argued that America had a moral duty to create an independent democratic republic. **Hinge Question:** What made Thomas Paine's writing style so revolutionary compared to the formal legal petitions previously sent to the King?",
+          "question": "Why was Thomas Paine's pamphlet Common Sense so uniquely persuasive in convincing ordinary colonists to demand total independence?",
+          "hinge_question": "What made Thomas Paine's writing style so revolutionary compared to the formal legal petitions previously sent to the King?",
+          "disciplinary_focus": "REVOLUTIONARY DISCOURSE",
+          "utility_enquiry": {
+            "question": "Why was Thomas Paine's pamphlet Common Sense so uniquely persuasive in convincing ordinary colonists to demand total independence?",
+            "model_answer": "Written in vigorous, accessible, plain English avoiding elite Latin phrases, Paine attacked hereditary monarchy as absurd and argued that it was common sense for an entire continent not to be ruled by a distant island.",
+            "content_inferences": "Illustrates the power of print culture in transforming elite constitutional debates into a mass popular revolution.",
+            "provenance_evaluation": "A revolutionary political manifesto designed for wide circulation; sold over 150,000 copies in a population of 2.5 million.",
+            "context_limitations": "An impassioned polemic that caricatures British institutions to persuade readers, rather than an objective analysis of imperial governance.",
+            "bullet_points": [
+              {
+                "label": "Demystifying Monarchy",
+                "text": "Paine called King George III 'the Royal Brute of Britain', breaking the psychological reverence ordinary colonists held for the Crown."
+              },
+              {
+                "label": "Vision of Global Democracy",
+                "text": "He framed America as 'an asylum for mankind', arguing that independence was not just a colonial dispute but a world-changing birth of freedom."
+              }
+            ],
+            "provenance_clues": [
+              "Author: Thomas Paine, English-born radical artisan, editor, and political pamphleteer.",
+              "Audience: Ordinary American farmers, artisans, soldiers, and colonial citizens.",
+              "Motive: To transform a colonial tax protest into an uncompromising moral campaign for universal human liberty and republican independence."
+            ]
+          },
+          "question_badge": "REVOLUTIONARY DISCOURSE",
+          "model_answer": "Written in vigorous, accessible, plain English avoiding elite Latin phrases, Paine attacked hereditary monarchy as absurd and argued that it was common sense for an entire continent not to be ruled by a distant island.",
+          "provenance_clues": [
+            "Author: Thomas Paine, English-born radical artisan, editor, and political pamphleteer.",
+            "Audience: Ordinary American farmers, artisans, soldiers, and colonial citizens.",
+            "Motive: To transform a colonial tax protest into an uncompromising moral campaign for universal human liberty and republican independence."
+          ]
+        },
+        {
+          "id": "fbe_l5_src_e",
+          "letter": "E",
+          "type": "visual",
+          "src": "/images/first_british_empire/treaty_of_paris_signatures_1783.jpg",
+          "image": "/images/first_british_empire/treaty_of_paris_signatures_1783.jpg",
+          "title": "Source E (Diplomatic Settlement & Peace): The Treaty of Paris: Signatures and Wax Seals Page (3 September 1783)",
+          "caption": "Official concluding page of the definitive Treaty of Paris, displaying the signatures and red wax seals of British envoy David Hartley and American commissioners John Adams, Benjamin Franklin, and John Jay.",
+          "citation": "US National Archives and Records Administration, Washington, D.C. (Record Group 11, Exchange Copy).",
+          "provenance": "Signed at the Hotel d'York in Paris on 3 September 1783, bringing formal conclusion to the American Revolutionary War.",
+          "context": "Signed in Paris in September 1783, the treaty ended eight years of war. Britain formally recognized the United States as independent and ceded all territory from the Atlantic to the Mississippi, marking the catastrophic collapse of the First British Empire. **Hinge Question:** Why was Great Britain willing to grant such vast western lands to its former colonies despite having undefeated garrisons in New York and Charleston?",
+          "question": "What immense territorial and political concessions did Great Britain make in the 1783 Treaty of Paris?",
+          "hinge_question": "Why was Great Britain willing to grant such vast western lands to its former colonies despite having undefeated garrisons in New York and Charleston?",
+          "disciplinary_focus": "DIPLOMATIC SETTLEMENT",
+          "utility_enquiry": {
+            "question": "What immense territorial and political concessions did Great Britain make in the 1783 Treaty of Paris?",
+            "model_answer": "Britain formally recognized the United States as free, sovereign, and independent nations, ceding all imperial territory between the Atlantic Ocean and the Mississippi River from Canada to Florida.",
+            "content_inferences": "Documents the legal dissolution of the First British Empire in North America and the emergence of a new sovereign transcontinental power.",
+            "provenance_evaluation": "Premier international diplomatic treaty binding under global law; signed with official wax seals by the chief peace plenipotentiaries.",
+            "context_limitations": "While granting western lands to the Americans, the treaty completely excluded Native American tribes who actually inhabited those territories.",
+            "bullet_points": [
+              {
+                "label": "Recognition of Sovereignty",
+                "text": "Article 1 formally declared the United States to be free, sovereign, and independent, relinquishing all Crown claims to government and territorial property."
+              },
+              {
+                "label": "Vast Territorial Cession",
+                "text": "Britain ceded all land west to the Mississippi River, doubling American territory and shutting out Native American allies from peace discussions."
+              }
+            ],
+            "provenance_clues": [
+              "Author: British plenipotentiary David Hartley and American commissioners John Adams, Benjamin Franklin, and John Jay.",
+              "Audience: The governments and citizens of Great Britain, the United States, France, Spain, and global diplomatic corps.",
+              "Motive: To establish permanent peace, settle borders, and restore commercial relations between Britain and the United States."
+            ]
+          },
+          "question_badge": "DIPLOMATIC SETTLEMENT",
+          "model_answer": "Britain formally recognized the United States as free, sovereign, and independent nations, ceding all imperial territory between the Atlantic Ocean and the Mississippi River from Canada to Florida.",
+          "provenance_clues": [
+            "Author: British plenipotentiary David Hartley and American commissioners John Adams, Benjamin Franklin, and John Jay.",
+            "Audience: The governments and citizens of Great Britain, the United States, France, Spain, and global diplomatic corps.",
+            "Motive: To establish permanent peace, settle borders, and restore commercial relations between Britain and the United States."
           ]
         }
       ],
@@ -2119,10 +4358,77 @@ const unitData = {
           "viewing_task": "[22:00] Recall: What happened on Lexington Green on 19 April 1775 ('the shot heard 'round the world')?\n[31:00] Explain: How did Thomas Paine's radical pamphlet 'Common Sense' transform a dispute over taxes into a crusade for total independence?\n[40:15] Challenge: How did French military and naval intervention under General Rochambeau seal British defeat at the Siege of Yorktown in 1781?",
           "model_answer": "Recall: British regulars clashed with colonial minutemen, sparking a running battle along the road to Boston that began the Revolutionary War.\nExplain: Paine wrote in simple, fiery prose for common working people, arguing that it was absurd for a tiny island across the ocean to govern an entire continent, and that hereditary monarchy was inherently corrupt.\nChallenge: Without the French navy blockading the Chesapeake Bay to cut off British naval resupply, General Cornwallis would have been evacuated by sea; the Franco-American alliance transformed a colonial rebellion into an unwinnable global war for Britain."
         }
-      ]
+      ],
+      "exam_practice": {
+        "title": "Key Stage 3 Disciplinary Writing: The American Revolutionary War & Black Loyalists",
+        "tariff": "12 marks (Evaluative Statement Essay)",
+        "questions": [
+          {
+            "tariff": "12 marks",
+            "type": "evaluative_essay_12m",
+            "question": "‘British defeat in the American Revolutionary War was caused primarily by French naval intervention rather than American military strength.’ How far do you agree? [12 marks]",
+            "stimulus": [
+              "The Battle of Saratoga and the French Alliance (1777–1778)",
+              "George Washington and the Continental Army at Valley Forge"
+            ],
+            "prompt": "Construct a balanced evaluative argument: on the one hand, evaluate French naval support (Battle of the Chesapeake, Yorktown blockade) and widening the conflict into a global war; on the other hand, evaluate American resilience under Washington, guerrilla warfare, and knowledge of the terrain. Reach a weighed conclusion.",
+            "model": "To a significant extent, it is accurate to argue that British defeat was caused primarily by French military and naval intervention. While American ideological determination and tactical endurance were necessary preconditions, French entry transformed a localized colonial counter-insurgency into an unmanageable global war that neutralized Britain’s single greatest asset: the Royal Navy.<br><br>On the one hand, French naval and military intervention was the indispensable catalyst for decisive British defeat. Following the American victory at Saratoga in October 1777, France signed a formal alliance with the Continental Congress in 1778, later joined by Spain and the Dutch Republic. This transformed the conflict across Europe, the Caribbean, and India, forcing Britain to disperse its naval fleets to defend vital sugar islands and the English Channel. Crucially, the war was decided at the Siege of Yorktown in 1781. Admiral de Grasse’s French fleet defeated the Royal Navy at the Battle of the Chesapeake, cutting off General Cornwallis’s seaward evacuation route while 7,000 French soldiers under Rochambeau joined Washington’s siege lines. Without French naval superiority, Cornwallis would have been evacuated or reinforced, preventing the decisive surrender that forced Parliament to concede independence.<br><br>On the other hand, it can be argued that American military and strategic resilience was the foundational cause of British defeat. George Washington recognized that the Continental Army did not need to win set-piece battles, but merely survive to exhaust British political will. Despite enduring freezing conditions, disease, and starvation at Valley Forge in the winter of 1777–1778, training by Baron von Steuben forged the army into a disciplined regular force. Furthermore, the British army struggled with insurmountable logistical challenges, fighting across 1,000 miles of hostile, vast terrain against local militias who utilized effective guerrilla tactics. The British strategy of relying on Loyalists and Black Loyalists (freed under Lord Dunmore’s Proclamation) failed to control the countryside.<br><br>In conclusion, while American resilience ensured that the revolution survived its darkest hours, it was French intervention that delivered actual victory. By breaking British naval hegemony at the Chesapeake and trapping Cornwallis at Yorktown, France turned a war of attrition into an absolute military checkmate that Britain could not recover from.",
+            "scaffolding": {
+              "acronym": "PEEL Evaluative Essay Framework",
+              "acronym_title": "12-Mark Evaluative Statement Essay Standard",
+              "steps": [
+                {
+                  "letter": "THESIS",
+                  "name": "State Position",
+                  "prompt": "State clearly that French intervention turned the war into an unwinnable global conflict.",
+                  "starter": "To a significant extent, it is accurate to argue that..."
+                },
+                {
+                  "letter": "THEME 1",
+                  "name": "French Alliance & Naval Dominance",
+                  "prompt": "Explain 1778 Alliance, global war, Battle of the Chesapeake, Admiral de Grasse, and Yorktown.",
+                  "starter": "On the one hand, French naval and military intervention was decisive because..."
+                },
+                {
+                  "letter": "THEME 2",
+                  "name": "American Endurance & Washington",
+                  "prompt": "Evaluate Washington’s war of attrition, Valley Forge resilience, and hostile vast geography.",
+                  "starter": "On the other hand, it can be argued that American military resilience was foundational because..."
+                },
+                {
+                  "letter": "JUDGMENT",
+                  "name": "Weighed Verdict",
+                  "prompt": "Explain why Yorktown could never have been achieved without French naval control.",
+                  "starter": "In conclusion, while American endurance prevented defeat, it was French intervention that..."
+                }
+              ],
+              "sentence_starters": [
+                "To a significant extent, it is accurate to argue that...",
+                "On the one hand, French naval intervention was decisive because...",
+                "In particular, at Yorktown in 1781...",
+                "On the other hand, an alternative argument highlights American military strength, such as...",
+                "In conclusion, the most decisive factor was... because..."
+              ],
+              "connectives_bank": [
+                "Battle of Saratoga (1777)",
+                "French Alliance (1778)",
+                "George Washington",
+                "Valley Forge",
+                "Baron von Steuben",
+                "Admiral de Grasse",
+                "Battle of the Chesapeake",
+                "Siege of Yorktown (1781)",
+                "General Cornwallis"
+              ]
+            }
+          }
+        ]
+      }
     }
   ]
 };
-
-export { unitData };
-export default unitData;
+if (typeof window !== "undefined") {
+  window.FIRST_BRITISH_EMPIRE_DATA = first_british_empire_data;
+}
+export default first_british_empire_data;
+export { first_british_empire_data };

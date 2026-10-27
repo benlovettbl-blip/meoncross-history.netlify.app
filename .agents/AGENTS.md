@@ -539,3 +539,17 @@ Whenever authoring, updating, or compiling a GCSE (Key Stage 4) or in-depth comp
 8. **Strict Anonymity:** 100% institutional neutrality under *"The History Revision Hub"*, zero school names.
 9. **Turnkey Engine:** Synchronize HTML to `public/units/<unit_id>/textbook_UNIFIED.html` and export print-ready PDF to `public/pdfs/<unit_id>_textbook_UNIFIED_FINAL.pdf`.
 
+## Edexcel GCSE Paper 3 Disciplinary Source Diversity Standard (Germany & GCSE Units)
+STRICT RULE: Across all Key Topics in Weimar & Nazi Germany (Key Topics 1 to 4) and all GCSE curriculum units:
+1. **Mandatory Disciplinary Media Blend:** Layer 3 Rotated Disciplinary Sources (Sources A–E in collapsible drawers) must never rely primarily on photographs. Every lesson must systematically blend across multiple authentic disciplinary media types to prepare pupils directly for Pearson Edexcel Paper 3 Question 3(a) (8-mark Source Utility) and Question 1 (Inference):
+   - **Contemporary Written Primary Extracts:** Eyewitness diaries, contemporary memoirs, confidential diplomatic letters, keynote parliamentary/convention speeches, feminist or cultural essays, and trial testimonies. Formatted with `type: 'written'`, clean serif italic blockquote box, audio read-aloud support, 3-part provenance breakdown (Author, Audience, Motive), and targeted Paper 3 Utility questions.
+   - **Archival Photographs:** High-resolution photographs capturing concrete historical events (proclamations, street fighting, barricades, troop deployments, diplomatic conferences, municipal architecture).
+   - **Satirical Political Cartoons & Caricatures:** Contemporary cartoons from satirical publications (*Simplicissimus*, *Kladderadatsch*, *Punch*) evaluating nationalist, communist, or foreign perspectives.
+   - **Propaganda Campaign Posters & Postcards:** Political party election posters, plebiscite banners (e.g. Young Plan referendum), or ideological postcards (e.g. *Dolchstoßlegende*).
+   - **Official State Documents & Charters:** Promulgated constitutional pages (*Reichsgesetzblatt*), abdication decrees, police arrest warrants, or diplomatic treaty instruments.
+   - **Material Culture & Numismatic Artefacts:** Authentic currency banknotes (hyperinflation denominations, Rentenmark), sovereign gold bonds, and physical tokens.
+   - **Avant-Garde Fine Art:** Critical contemporary paintings (e.g. Otto Dix, George Grosz) exposing post-war social trauma and militarism.
+2. **Zero Redundant Portrait Placeholders:** Strictly eliminate static headshot portrait photos from source slots. If an individual is examined (e.g. Friedrich Ebert, Gustav Stresemann, Rosa Luxemburg, Adolf Hitler), provide their authentic written words or a dynamic historical document rather than a passive portrait.
+3. **Rigorous Quality Gates:** All written and visual sources must remain synchronized across `data/<unit_id>.json`, `units/<unit_id>/data.js`, `database.json`, and `scripts/master_rights_database.json`, with zero broken links, zero intra-lesson duplicate files, and zero school identifiers.
+
+
