@@ -17,10 +17,27 @@ admin_internal/
 public/images/Henry Cort/
 public/units/**/*.pdf
 public/screenshots/
-*.png
-*.jpg
-test_*.jpg
+/*.png
+/*.jpg
+/test_*.jpg
+!public/images/**
+!units/**/assets/**
+!src/**/assets/**
+public/images/*.zip
+public/images/**/*.zip
+public/images/Henry Cort*
+public/images/Henry Cort/**
+*.zip
+public/images/*_preview.png
+public/images/*_verified*.png
+public/images/*_audit*.png
+public/images/*_view.png
+public/images/*_bottom.png
+public/images/*_cover.png
+public/images/*_practice.png
+public/images/*_accordion.png
+public/images/verification/
 weimar_sources_report.txt
 formatted_usa_links.md
-archive/historical_scripts/
-archive/*.html
+archive/
+scripts/audit_usa_unit_comprehensive.cjs
