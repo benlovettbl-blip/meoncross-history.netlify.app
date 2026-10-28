@@ -257,22 +257,50 @@ export function updateBreadcrumbs(customTrail = null) {
     trail.unshift({ label: rootLabel, view: 'dashboard' });
   }
 
+  const isDeepTrail = trail.length >= 3;
+  if (typeof document !== 'undefined' && document.body) {
+    document.body.classList.toggle('in-lesson-active', isDeepTrail);
+  }
+
   let html = '';
   trail.forEach((item, idx) => {
     const isLast = idx === trail.length - 1;
+    const isRoot = idx === 0;
+    const isUnit = !isRoot && !isLast;
+
     if (idx > 0) {
       html += `<span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>`;
     }
     if (isLast) {
-      html += `<span class="breadcrumb-item active" title="${item.label}">${item.label}</span>`;
-    } else {
+      html += `<span class="breadcrumb-item active breadcrumb-lesson-active" title="${item.label}">${item.label}</span>`;
+    } else if (isRoot) {
+      const rootIcon = `<i class="fa-solid fa-house" style="font-size: 0.8rem; margin-right: 4px;"></i>`;
+      const rootText = `<span class="breadcrumb-root-text">${item.label}</span>`;
       if (item.action) {
-        html += `<span class="breadcrumb-item clickable" onclick="(${item.action.toString()})()">${item.label}</span>`;
+        html += `<span class="breadcrumb-item clickable breadcrumb-root-item" title="${item.label}" onclick="(${item.action.toString()})()">${rootIcon}${rootText}</span>`;
       } else if (item.view) {
         const uParam = item.unit ? `'${item.unit}'` : 'null';
-        html += `<span class="breadcrumb-item clickable" onclick="window.switchView('${item.view}', ${uParam})">${item.label}</span>`;
+        html += `<span class="breadcrumb-item clickable breadcrumb-root-item" title="${item.label}" onclick="window.switchView('${item.view}', ${uParam})">${rootIcon}${rootText}</span>`;
       } else {
-        html += `<span class="breadcrumb-item">${item.label}</span>`;
+        html += `<span class="breadcrumb-item breadcrumb-root-item" title="${item.label}">${rootIcon}${rootText}</span>`;
+      }
+    } else if (isUnit) {
+      const uParam = item.unit ? `'${item.unit}'` : 'null';
+      if (item.action) {
+        html += `<span class="breadcrumb-item clickable breadcrumb-unit-item" title="${item.label}" onclick="(${item.action.toString()})()">${item.label}</span>`;
+      } else if (item.view) {
+        html += `<span class="breadcrumb-item clickable breadcrumb-unit-item" title="${item.label}" onclick="window.switchView('${item.view}', ${uParam})">${item.label}</span>`;
+      } else {
+        html += `<span class="breadcrumb-item breadcrumb-unit-item" title="${item.label}">${item.label}</span>`;
+      }
+    } else {
+      if (item.action) {
+        html += `<span class="breadcrumb-item clickable" title="${item.label}" onclick="(${item.action.toString()})()">${item.label}</span>`;
+      } else if (item.view) {
+        const uParam = item.unit ? `'${item.unit}'` : 'null';
+        html += `<span class="breadcrumb-item clickable" title="${item.label}" onclick="window.switchView('${item.view}', ${uParam})">${item.label}</span>`;
+      } else {
+        html += `<span class="breadcrumb-item" title="${item.label}">${item.label}</span>`;
       }
     }
   });
@@ -516,16 +544,19 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     renderTimeline();
   } else if (viewName === 'booklet') {
     if (param && param !== 'all') {
-      await loadUnit(param);
+      // Direct unit-level booklet request: route cleanly to unit homepage & hero launchpad
+      await switchView('lessons', param);
+      return;
     } else if (param === 'all') {
       state.selectedUnitId = null;
       window.currentUnitId = null;
       state.activeUnitData = null;
     } else {
-      // param is null/undefined (e.g. user clicked sidebar "PDF Library & Booklets")
-      // If a unit is already selected, keep it! If none, default to cme_new
-      const targetUnit = state.selectedUnitId || window.currentUnitId || 'cme_new';
-      await loadUnit(targetUnit);
+      // param is null/undefined (e.g. user clicked global sidebar "PDF Library & Booklets")
+      if (state.selectedUnitId || window.currentUnitId) {
+        await switchView('lessons', state.selectedUnitId || window.currentUnitId);
+        return;
+      }
     }
     renderBookletView();
   } else if (viewName === 'mock-exams') {
@@ -1047,21 +1078,15 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navInteractive.dataset.view = 'interactive';
     navInteractive.dataset.unit = unitId;
     navInteractive.innerHTML =
-      '<i class="fa-solid fa-brain" style="color: #f59e0b;"></i><span>Retrieval &amp; Revision</span>';
+      '<i class="fa-solid fa-brain" style="color: #f59e0b;"></i><span>Interactive Quizzing &amp; Flashcards</span>';
     navInteractive.onclick = () => switchView('interactive', unitId);
   } else if (navInteractive) {
     navInteractive.style.display = 'none';
   }
 
-  // Unit Printable Booklet & Textbook
+  // Unit Printable Booklet & Textbook - DECOMMISSIONED in favour of Hero Curricular Launchpad
   if (navUnitBooklet) {
-    navUnitBooklet.style.display = 'flex';
-    navUnitBooklet.dataset.action = 'switch-view';
-    navUnitBooklet.dataset.view = 'booklet';
-    navUnitBooklet.dataset.unit = unitId;
-    navUnitBooklet.innerHTML =
-      '<i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i><span>Workbooks &amp; Textbooks</span>';
-    navUnitBooklet.onclick = () => switchView('booklet', unitId);
+    navUnitBooklet.style.display = 'none';
   }
 
   // GCSE Exam Practice (visible only on GCSE assessment units)
@@ -1081,6 +1106,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
   }
 
   // Hide secondary / fragmented tabs to preserve clean hierarchy
+  if (navUnitBooklet) navUnitBooklet.style.display = 'none';
   if (navIndividuals) navIndividuals.style.display = 'none';
   if (navReading) navReading.style.display = 'none';
   if (navDecisions) navDecisions.style.display = 'none';

@@ -1,12 +1,11 @@
 const first_british_empire_data = {
-  "homepage_background": "/images/first_british_empire/battle_of_plassey_1757.jpg",
-  "cover_image": "/images/shah_alam_clive.jpg",
   "id": "first_british_empire",
   "title": "The First British Empire (1600–1783)",
   "short_title": "The First British Empire",
   "period": "1600–1783",
   "enquiry": "How did trade, slavery, and rebellion shape the First British Empire?",
   "description": "From the founding of the East India Company and the horrors of the Transatlantic slave trade to Jamaican Maroon resistance and the American Revolution, explore how commercial greed, human exploitation, and colonial rebellion built and fractured the First British Empire.",
+  "cover_image": "/images/first_british_empire/battle_of_plassey_1757.jpg",
   "cover_image_position": "center 35%",
   "is_ks3": true,
   "year_group": "Year 8",
@@ -768,7 +767,11 @@ const first_british_empire_data = {
             "Author: Nathaniel Dance, prominent British royal and high-society portrait painter.",
             "Audience: British Parliament, East India Company directors, and the London political elite.",
             "Motive: To project Clive's martial authority and legitimize corporate expansion in the East Indies."
-          ]
+          ],
+          "source_context": "Clive arrived in Madras as an impoverished nineteen-year-old clerk. Exploiting the fragmentation of the Mughal Empire, he organized sepoy regiments and formed alliances with disaffected Indian bankers and generals. **Hinge Question:** Should a private trading corporation ever be permitted to recruit a private army and govern an empire?",
+          "teacher_notes": {
+            "source_context": "Clive arrived in Madras as an impoverished nineteen-year-old clerk. Exploiting the fragmentation of the Mughal Empire, he organized sepoy regiments and formed alliances with disaffected Indian bankers and generals. **Hinge Question:** Should a private trading corporation ever be permitted to recruit a private army and govern an empire?"
+          }
         },
         {
           "id": "fbe_l1_src_b",
@@ -812,7 +815,11 @@ const first_british_empire_data = {
             "Author: Benjamin West, official historical painter to King George III and President of the Royal Academy.",
             "Audience: British monarchs, aristocrats, and the Georgian public visiting London exhibitions.",
             "Motive: To depict imperial conquest as a dignified, lawful diplomatic ceremony sanctified by Mughal consent."
-          ]
+          ],
+          "source_context": "Following the Battle of Buxar (1764), Mughal Emperor Shah 'Alam II was coerced into signing the Treaty of Allahabad. This transferred the right to collect land revenues from 20 million people directly to the East India Company. **Hinge Question:** Did the Treaty of Allahabad represent genuine diplomatic cooperation or coerced imperial plunder?",
+          "teacher_notes": {
+            "source_context": "Following the Battle of Buxar (1764), Mughal Emperor Shah 'Alam II was coerced into signing the Treaty of Allahabad. This transferred the right to collect land revenues from 20 million people directly to the East India Company. **Hinge Question:** Did the Treaty of Allahabad represent genuine diplomatic cooperation or coerced imperial plunder?"
+          }
         },
         {
           "id": "fbe_l1_src_c",
@@ -856,7 +863,11 @@ const first_british_empire_data = {
             "Author: The English Crown (Queen Elizabeth I and the Privy Council).",
             "Audience: The 218 founding merchant venturers of London and foreign maritime rivals.",
             "Motive: To challenge Dutch and Portuguese spice trade dominance without expending direct Crown treasury funds."
-          ]
+          ],
+          "source_context": "Elizabeth I granted 218 London merchants a 15-year exclusive trade monopoly east of the Cape of Good Hope. The charter granted extraordinary sovereign powers to pass laws, build forts, and maintain armed vessels. **Hinge Question:** Why did European monarchs rely on chartered joint-stock companies to expand overseas rather than running imperial expeditions directly?",
+          "teacher_notes": {
+            "source_context": "Elizabeth I granted 218 London merchants a 15-year exclusive trade monopoly east of the Cape of Good Hope. The charter granted extraordinary sovereign powers to pass laws, build forts, and maintain armed vessels. **Hinge Question:** Why did European monarchs rely on chartered joint-stock companies to expand overseas rather than running imperial expeditions directly?"
+          }
         },
         {
           "id": "fbe_l1_src_d",
@@ -900,7 +911,11 @@ const first_british_empire_data = {
             "Author: British military surveyors / Major James Rennell (Surveyor General of Bengal).",
             "Audience: East India Company military planners, British commanders, and historians.",
             "Motive: To record the operational maneuvers that eliminated French influence in Bengal and established British military supremacy."
-          ]
+          ],
+          "source_context": "At Plassey, Clive fielded 3,000 troops against Siraj ud-Daulah's 50,000. Before the engagement, Clive negotiated a secret conspiracy with Mir Jafar, promising him the throne in return for withholding his 15,000 cavalry. **Hinge Question:** If Mir Jafar had remained loyal to Siraj ud-Daulah at Plassey, would British rule in India have ever begun?",
+          "teacher_notes": {
+            "source_context": "At Plassey, Clive fielded 3,000 troops against Siraj ud-Daulah's 50,000. Before the engagement, Clive negotiated a secret conspiracy with Mir Jafar, promising him the throne in return for withholding his 15,000 cavalry. **Hinge Question:** If Mir Jafar had remained loyal to Siraj ud-Daulah at Plassey, would British rule in India have ever begun?"
+          }
         },
         {
           "id": "fbe_l1_src_e",
@@ -944,7 +959,11 @@ const first_british_empire_data = {
             "Author: East India Company mint masters operating the provincial Murshidabad mint.",
             "Audience: Indian merchants, bankers, revenue collectors, and provincial populations.",
             "Motive: To maintain economic liquidity, extract agricultural taxation, and prevent civil resistance against colonial currency."
-          ]
+          ],
+          "source_context": "Even after seizing total political and economic control of Bengal, the Company continued minting silver coins displaying the name and regnal year of Mughal Emperor Shah 'Alam II. **Hinge Question:** Why is maintaining familiar symbols and currency often more effective in securing imperial conquest than imposing alien foreign institutions?",
+          "teacher_notes": {
+            "source_context": "Even after seizing total political and economic control of Bengal, the Company continued minting silver coins displaying the name and regnal year of Mughal Emperor Shah 'Alam II. **Hinge Question:** Why is maintaining familiar symbols and currency often more effective in securing imperial conquest than imposing alien foreign institutions?"
+          }
         }
       ],
       "teacher_notes": {
@@ -1013,67 +1032,7 @@ const first_british_empire_data = {
           "viewing_task": "[15:30] Recall: What constitutional status did 'coastal factories' hold in 17th-century India?\n[28:10] Explain: How did Robert Clive amass his personal fortune of £300,000 following the capture of Murshidabad in 1757?\n[42:00] Challenge: To what extent was the catastrophic Bengal Famine of 1770 a direct byproduct of Company tax extraction policies?",
           "model_answer": "Recall: Factories were fortified sovereign enclaves with warehouse vaults, private armed guards, and royal charters exempting them from local municipal taxes.\nExplain: Clive took massive cash kickbacks, gems, and annual land revenues ('jagirs') from the puppet Nawab Mir Jafar as personal reward for orchestrating the coup at Plassey.\nChallenge: While triggered by monsoon drought, the famine was catastrophic because Company collectors rigidly maintained and even increased land taxes, hoarded grain, and prohibited relief exports, prioritising corporate shareholder dividends over humanitarian survival."
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: The East India Company & Mughal Bengal",
-        "tariff": "12 marks (Explain Why Causal Analysis)",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "Explain why the East India Company was able to expand its territorial control across Bengal and India between 1600 and 1765. [12 marks]",
-            "stimulus": [
-              "Royal charters granting trade monopolies and company private armies",
-              "The grant of the Diwani (1765) by Mughal Emperor Shah Alam II"
-            ],
-            "prompt": "Explain three distinct causal reasons: the legal and military powers granted by British royal charters, the exploitation of Mughal political fragmentation culminating in the Battle of Plassey (1757), and the fiscal takeover through the Treaty of Allahabad (Diwani of Bengal 1765). Structure using PEEL paragraphs.",
-            "model": "One major reason the East India Company expanded its control was the extraordinary legal and military authority granted by British royal charters. In December 1600, Queen Elizabeth I granted the Company a royal charter giving it a complete monopoly on British trade in the Indian Ocean. Crucially, subsequent seventeenth-century charters from King Charles II authorized the Company to build fortresses, mint coins, declare war, make peace, and maintain its own private army. By employing European officers to drill Indian recruits (sepoys) in modern flintlock musket tactics, the Company created a formidable military force that could overpower regional Indian rulers.<br><br>Furthermore, a second decisive factor was the political decentralization of the Mughal Empire after the death of Emperor Aurangzeb in 1707. Regional governors (nawabs) operated virtually independently, creating intense rivalries that Company officials ruthlessly exploited. In Bengal, Nawab Siraj ud-Daulah attempted to halt unauthorized British fortifications at Fort William (Calcutta). In response, Robert Clive conspired with the Nawab’s disaffected paymaster, Mir Jafar, bribing him to withhold his troops at the Battle of Plassey in June 1757. Clive’s victory allowed the Company to depose Siraj ud-Daulah and install puppet rulers, effectively subordinating Bengal’s vast administrative machinery.<br><br>Finally, the critical turning point cementing territorial control was the fiscal conquest achieved through the 1765 Treaty of Allahabad. Following the decisive British victory at the Battle of Buxar (1764), Mughal Emperor Shah Alam II was forced to grant the Company the \"Diwani\" of Bengal, Bihar, and Orissa. The Diwani transferred the sovereign right to assess and collect all land tax revenues from thirty million people directly to the Company. With access to over two million pounds sterling in annual tax revenue, the Company funded an army of over 100,000 men without needing British taxpayer money, transforming a private mercantile corporation into an unstoppable colonial sovereign.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "REASON 1",
-                  "name": "Royal Charters & Private Armies",
-                  "prompt": "Explain Elizabeth I, Charles II, private armies, and European sepoy drilling.",
-                  "starter": "One major reason the East India Company expanded was..."
-                },
-                {
-                  "letter": "REASON 2",
-                  "name": "Mughal Fragmentation & Plassey (1757)",
-                  "prompt": "Explain Siraj ud-Daulah, Mir Jafar conspiracy, and the victory at Plassey.",
-                  "starter": "Furthermore, a second decisive factor was..."
-                },
-                {
-                  "letter": "REASON 3",
-                  "name": "The Diwani of Bengal (1765)",
-                  "prompt": "Explain the Treaty of Allahabad, Shah Alam II, collecting taxes, and funding an army of 100k.",
-                  "starter": "Finally, the critical turning point was..."
-                }
-              ],
-              "sentence_starters": [
-                "One major reason was that...",
-                "For example, royal charters granted...",
-                "This was important because...",
-                "Another key factor was...",
-                "In particular, Clive exploited...",
-                "Overall, the decisive turning point occurred in 1765 when..."
-              ],
-              "connectives_bank": [
-                "East India Company",
-                "Robert Clive",
-                "Battle of Plassey (1757)",
-                "Siraj ud-Daulah",
-                "Mir Jafar",
-                "Treaty of Allahabad (1765)",
-                "Diwani",
-                "Shah Alam II",
-                "sepoys"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_2",
@@ -1560,7 +1519,11 @@ const first_british_empire_data = {
             "Author: Plymouth Abolition Committee / Society for Effecting the Abolition of the Slave Trade (Thomas Clarkson).",
             "Audience: Members of Parliament, the British reading public, and transatlantic sympathizers.",
             "Motive: To expose the systematic cruelty of Liverpool slave merchants and demand legislative prohibition of the trade."
-          ]
+          ],
+          "source_context": "Even under the 1788 Regulated Slave Trade Act which placed limits on ship density, captive men were allotted a space just 6 feet by 16 inches. In previous voyages, the Brookes had carried over 600 people in suffocating holds. **Hinge Question:** Why was a precise, technical diagram of a ship more persuasive to eighteenth-century politicians than emotional written speeches?",
+          "teacher_notes": {
+            "source_context": "Even under the 1788 Regulated Slave Trade Act which placed limits on ship density, captive men were allotted a space just 6 feet by 16 inches. In previous voyages, the Brookes had carried over 600 people in suffocating holds. **Hinge Question:** Why was a precise, technical diagram of a ship more persuasive to eighteenth-century politicians than emotional written speeches?"
+          }
         },
         {
           "id": "fbe_l2_src_b",
@@ -1604,7 +1567,11 @@ const first_british_empire_data = {
             "Author: Daniel Orme (engraver) / Olaudah Equiano (author, publisher, and activist).",
             "Audience: British middle- and upper-class readers, politicians, and religious congregations.",
             "Motive: To establish Equiano's moral and intellectual authority as an independent author exposing chattel slavery."
-          ]
+          ],
+          "source_context": "Kidnapped as a child from the Igbo kingdom in modern Nigeria, Equiano survived the horrors of the Middle Passage and enslavement in Virginia and the Caribbean. Having purchased his freedom, he settled in London as a leading abolitionist writer. **Hinge Question:** Why was firsthand testimony from formerly enslaved survivors essential to dismantling the moral legitimacy of the slave trade?",
+          "teacher_notes": {
+            "source_context": "Kidnapped as a child from the Igbo kingdom in modern Nigeria, Equiano survived the horrors of the Middle Passage and enslavement in Virginia and the Caribbean. Having purchased his freedom, he settled in London as a leading abolitionist writer. **Hinge Question:** Why was firsthand testimony from formerly enslaved survivors essential to dismantling the moral legitimacy of the slave trade?"
+          }
         },
         {
           "id": "fbe_l2_src_c",
@@ -1648,7 +1615,11 @@ const first_british_empire_data = {
             "Author: British industrial metalworkers in Liverpool and Birmingham.",
             "Audience: Slave ship captains, merchant crews, and captive enslaved people.",
             "Motive: To enforce total physical submission and ensure maximum delivery of living human property to American markets."
-          ]
+          ],
+          "source_context": "British industrial cities profited immensely from manufacturing the instruments of enslavement. Male captives aboard Guineamen were locked into iron leg irons for the entire 6 to 12-week Atlantic voyage. **Hinge Question:** How did British manufacturing industries in northern England profit directly from the infrastructure of human enslavement?",
+          "teacher_notes": {
+            "source_context": "British industrial cities profited immensely from manufacturing the instruments of enslavement. Male captives aboard Guineamen were locked into iron leg irons for the entire 6 to 12-week Atlantic voyage. **Hinge Question:** How did British manufacturing industries in northern England profit directly from the infrastructure of human enslavement?"
+          }
         },
         {
           "id": "fbe_l2_src_d",
@@ -1692,7 +1663,11 @@ const first_british_empire_data = {
             "Author: David & John Deas, prominent transatlantic slave merchants and auction brokers.",
             "Audience: Wealthy rice, cotton, and tobacco planters in South Carolina and Georgia.",
             "Motive: To attract competitive bidding and secure top market prices for newly imported human cargo."
-          ]
+          ],
+          "source_context": "Upon surviving the Middle Passage, captive Africans were washed, oiled with lard to conceal illness, and sold at public auctions. This broadside highlighted that the captives were free from smallpox to entice wealthy plantation owners. **Hinge Question:** What strategies did colonial slave merchants use to strip human beings of their names, cultures, and identities upon arrival?",
+          "teacher_notes": {
+            "source_context": "Upon surviving the Middle Passage, captive Africans were washed, oiled with lard to conceal illness, and sold at public auctions. This broadside highlighted that the captives were free from smallpox to entice wealthy plantation owners. **Hinge Question:** What strategies did colonial slave merchants use to strip human beings of their names, cultures, and identities upon arrival?"
+          }
         },
         {
           "id": "fbe_l2_src_e",
@@ -1736,7 +1711,11 @@ const first_british_empire_data = {
             "Author: William Hackwood (modeler) and Josiah Wedgwood (industrialist and abolitionist).",
             "Audience: British middle- and upper-class consumers, particularly women driving domestic sugar boycotts.",
             "Motive: To embed abolitionist sentiment into daily Georgian culture and sustain political pressure on Parliament."
-          ]
+          ],
+          "source_context": "In 1787, master ceramic manufacturer Josiah Wedgwood joined the Committee for Abolition. He produced thousands of these cameos at personal expense, which became fashionable jewelry worn by thousands of British men and women. **Hinge Question:** Can consumer boycotts and fashion accessories ever be as powerful in achieving political change as parliamentary legislation?",
+          "teacher_notes": {
+            "source_context": "In 1787, master ceramic manufacturer Josiah Wedgwood joined the Committee for Abolition. He produced thousands of these cameos at personal expense, which became fashionable jewelry worn by thousands of British men and women. **Hinge Question:** Can consumer boycotts and fashion accessories ever be as powerful in achieving political change as parliamentary legislation?"
+          }
         }
       ],
       "teacher_notes": {
@@ -1805,112 +1784,7 @@ const first_british_empire_data = {
           "viewing_task": "[01:00] Recall: What tactics did abolitionists like Thomas Clarkson and Olaudah Equiano deploy to persuade the British public?\n[01:50] Explain: Why did powerful mercantile interests in Bristol and Liverpool fiercely resist abolition for decades?\n[02:20] Challenge: How did first-hand evidence—such as the Brookes ship diagram and Equiano's autobiography—turn public opinion against the trade?",
           "model_answer": "Recall: They published empirical witness accounts, displayed physical instruments of torture (shackles, thumbscrews), produced the Brookes ship diagram, and organised nationwide consumer boycotts of slave-grown sugar.\nExplain: Wealthy merchant lobbies, West Indian plantation owners, and City of London financiers held immense parliamentary influence and argued that ending the trade would destroy Britain's naval supremacy and commercial wealth.\nChallenge: By presenting incontrovertible forensic evidence directly to middle-class citizens and working people, abolitionists transformed an abstract overseas economic system into an urgent, inescapable moral crisis that Parliament could no longer dismiss."
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: The Transatlantic Slave Trade & The Middle Passage",
-        "tariff": "8 marks (Feature Drill [4m] & Consequence Writing [4m])",
-        "questions": [
-          {
-            "tariff": "4 marks",
-            "type": "feature_drills_4m",
-            "question": "Describe two features of conditions endured by enslaved Africans during the Middle Passage. [4 marks]",
-            "prompt": "Identify two distinct features of conditions on slave ships during the Atlantic crossing. For each feature, provide a clear identification followed by supporting factual knowledge.",
-            "model": "Feature 1: One key feature was extreme physical confinement and overcrowding below decks.<br>Detail: Captives were forced to lie chained in pairs on tiered wooden shelves with barely thirty centimetres of headroom, packed in rows that prevented them from sitting upright or turning onto their sides during the eight-week voyage.<br><br>Feature 2: A second key feature was the catastrophic lack of sanitation and virulent disease.<br>Detail: Denied ventilation, the hold filled with vomit, dysentery (the \"bloody flux\"), and extreme tropical heat, creating lethal conditions that killed between 15% and 20% of enslaved Africans before reaching the Americas.",
-            "scaffolding": {
-              "acronym": "F1 + D1 • F2 + D2",
-              "acronym_title": "4-Mark Feature Drill Formula",
-              "steps": [
-                {
-                  "letter": "F1",
-                  "name": "Feature 1 (Physical Confinement)",
-                  "prompt": "Identify the cramped wooden shelves and iron shackles.",
-                  "starter": "One key feature was that..."
-                },
-                {
-                  "letter": "D1",
-                  "name": "Detail 1",
-                  "prompt": "Add precise details (thirty centimetres headroom, chained in pairs, inability to turn).",
-                  "starter": "Specifically, this involved..."
-                },
-                {
-                  "letter": "F2",
-                  "name": "Feature 2 (Sanitation & Mortality)",
-                  "prompt": "Identify the spread of virulent disease and heat below deck.",
-                  "starter": "A second key feature was..."
-                },
-                {
-                  "letter": "D2",
-                  "name": "Detail 2",
-                  "prompt": "Add precise details (dysentery / bloody flux, 15–20% mortality rate, suffocation).",
-                  "starter": "In particular, this meant that..."
-                }
-              ],
-              "sentence_starters": [
-                "One key feature was that...",
-                "Specifically, this involved...",
-                "A second key feature was...",
-                "In particular, this meant that..."
-              ],
-              "connectives_bank": [
-                "Middle Passage",
-                "tight packing",
-                "shackles",
-                "wooden shelves",
-                "dysentery",
-                "bloody flux",
-                "15–20% mortality",
-                "slaver Brooks"
-              ]
-            }
-          },
-          {
-            "tariff": "4 marks",
-            "type": "consequence_4m",
-            "question": "Explain one consequence of the Zong massacre (1781) for the British abolitionist movement. [4 marks]",
-            "prompt": "Focus on how the captain throwing 133 enslaved Africans overboard for insurance money, and the court treating them merely as lost commercial cargo, outraged the public and galvanized Granville Sharp and Olaudah Equiano to campaign for abolition.",
-            "model": "One significant consequence of the Zong massacre in 1781 was that it exposed the barbaric legal reality of chattel slavery, providing a powerful moral catalyst that galvanized the British abolitionist campaign. When Captain Luke Collingwood ordered 133 sick enslaved Africans to be thrown alive into the sea so the ship’s owners could claim an insurance payout for lost \"cargo\", the subsequent court case (Gregson v Gilbert) focused entirely on financial reimbursement rather than murder. Lord Chief Justice Mansfield ruled that the law viewed slaves identically to horses or timber. Outraged by this dehumanisation, abolitionist pioneers Granville Sharp and Olaudah Equiano published the court transcripts and publicised the atrocity. Consequently, the case shocked British public opinion, directly inspiring the founding of the Society for the Abolition of the Slave Trade in 1787 and proving that slavery was morally indefensible.",
-            "scaffolding": {
-              "acronym": "P-F-C (Point • Fact • Consequence)",
-              "acronym_title": "High-Yield Consequence Formula (1 Concise Paragraph)",
-              "steps": [
-                {
-                  "letter": "POINT",
-                  "name": "Identify Consequence",
-                  "prompt": "State the public outrage and moral catalyst galvanizing the abolition movement.",
-                  "starter": "One significant consequence of the Zong massacre was..."
-                },
-                {
-                  "letter": "FACT",
-                  "name": "Historical Evidence",
-                  "prompt": "Cite 133 people thrown overboard, Gregson v Gilbert insurance claim, and Granville Sharp.",
-                  "starter": "In particular, when Captain Collingwood..."
-                },
-                {
-                  "letter": "CONSEQUENCE",
-                  "name": "Explain Result",
-                  "prompt": "Explain how this directly inspired the 1787 Abolition Society and legislative campaigns.",
-                  "starter": "Consequently, this directly resulted in..."
-                }
-              ],
-              "sentence_starters": [
-                "One significant consequence of the Zong massacre was that...",
-                "In particular, this occurred when...",
-                "As a direct result...",
-                "Consequently, this galvanized the abolition movement because..."
-              ],
-              "connectives_bank": [
-                "Zong massacre (1781)",
-                "Luke Collingwood",
-                "133 murdered",
-                "insurance claim",
-                "Granville Sharp",
-                "Olaudah Equiano",
-                "1787 Abolition Society"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_3",
@@ -2397,7 +2271,11 @@ const first_british_empire_data = {
             "Author: William Clark, artist and planter resident in Antigua for several years.",
             "Audience: British wealthy investors, absentee plantation owners, and the Georgian public.",
             "Motive: To showcase Caribbean sugar production as productive, civilized, and harmonious to defend against abolitionist criticism."
-          ]
+          ],
+          "source_context": "Sugar cane cultivation was one of the most grueling agricultural industries in the world. Enslaved workers labored up to 14 hours a day in intense tropical heat, cutting stalks with sharp billhooks while dodging venomous snakes. **Hinge Question:** Why did Caribbean sugar plantations operate more like dangerous modern factories than traditional agricultural farms?",
+          "teacher_notes": {
+            "source_context": "Sugar cane cultivation was one of the most grueling agricultural industries in the world. Enslaved workers labored up to 14 hours a day in intense tropical heat, cutting stalks with sharp billhooks while dodging venomous snakes. **Hinge Question:** Why did Caribbean sugar plantations operate more like dangerous modern factories than traditional agricultural farms?"
+          }
         },
         {
           "id": "fbe_l3_src_b",
@@ -2441,7 +2319,11 @@ const first_british_empire_data = {
             "Author: Jamaican National Heritage sculptors based on centuries of preserved Maroon oral tradition.",
             "Audience: The citizens of Jamaica, Commonwealth students, and international scholars of anti-slavery resistance.",
             "Motive: To celebrate Queen Nanny as a visionary military strategist and pioneer of Caribbean decolonization."
-          ]
+          ],
+          "source_context": "Queen Nanny was an Asante military and spiritual leader who established Nanny Town in the precipitous Blue Mountains. Between 1720 and 1739, her warriors repeatedly defeated British regiments by using camouflaged ambush tactics. **Hinge Question:** How did African military traditions and spiritual leadership enable Maroons to withstand the full might of the British military?",
+          "teacher_notes": {
+            "source_context": "Queen Nanny was an Asante military and spiritual leader who established Nanny Town in the precipitous Blue Mountains. Between 1720 and 1739, her warriors repeatedly defeated British regiments by using camouflaged ambush tactics. **Hinge Question:** How did African military traditions and spiritual leadership enable Maroons to withstand the full might of the British military?"
+          }
         },
         {
           "id": "fbe_l3_src_c",
@@ -2485,7 +2367,11 @@ const first_british_empire_data = {
             "Author: Robert Charles Dallas, British historical author and colonial apologist.",
             "Audience: British imperial politicians, plantation owners, and metropolitan reading audiences.",
             "Motive: To depict the British Empire as magnanimous and orderly while portraying Captain Cudjoe as a grateful subaltern."
-          ]
+          ],
+          "source_context": "Unable to conquer the Maroons through military force, British Governor Edward Trelawny was forced to sign formal peace treaties in 1739 recognizing Maroon autonomy. However, the treaty required Maroons to return future runaway slaves to plantations. **Hinge Question:** Was the 1739 Treaty a triumphant victory for Maroon independence or a tragic compromise that divided enslaved Africans against each other?",
+          "teacher_notes": {
+            "source_context": "Unable to conquer the Maroons through military force, British Governor Edward Trelawny was forced to sign formal peace treaties in 1739 recognizing Maroon autonomy. However, the treaty required Maroons to return future runaway slaves to plantations. **Hinge Question:** Was the 1739 Treaty a triumphant victory for Maroon independence or a tragic compromise that divided enslaved Africans against each other?"
+          }
         },
         {
           "id": "fbe_l3_src_d",
@@ -2529,7 +2415,11 @@ const first_british_empire_data = {
             "Author: Abraham Raimbach (engraver) after an eyewitness sketch from life in Jamaica.",
             "Audience: British regular officers, metropolitan newspaper readers, and art collectors.",
             "Motive: To satisfy metropolitan curiosity regarding the legendary Maroon leaders fighting the British Army."
-          ]
+          ],
+          "source_context": "Leonard Parkinson was an iconic Maroon guerrilla leader. His mobility and marksmanship allowed small bands of Maroon warriors to pin down hundreds of British regular soldiers and bloodhounds in the Cockpit Country. **Hinge Question:** Why did European armies repeatedly struggle when fighting against indigenous and maroon guerrilla forces in unfamiliar terrain?",
+          "teacher_notes": {
+            "source_context": "Leonard Parkinson was an iconic Maroon guerrilla leader. His mobility and marksmanship allowed small bands of Maroon warriors to pin down hundreds of British regular soldiers and bloodhounds in the Cockpit Country. **Hinge Question:** Why did European armies repeatedly struggle when fighting against indigenous and maroon guerrilla forces in unfamiliar terrain?"
+          }
         },
         {
           "id": "fbe_l3_src_e",
@@ -2573,7 +2463,11 @@ const first_british_empire_data = {
             "Author: William Clark, Antiguan planter and landscape artist.",
             "Audience: British absentee sugar magnates, members of the House of Lords, and London investors.",
             "Motive: To depict the Caribbean plantation system as an orderly agricultural machine worthy of parliamentary protection."
-          ]
+          ],
+          "source_context": "Digging cane holes was the most back-breaking labor on a Caribbean sugar estate. Field workers were forced to excavate thousands of four-foot square pits in rocky soil under the burning sun to prepare for planting. **Hinge Question:** How did plantation managers use systematic daily quotas and physical intimidation to prevent collective resistance?",
+          "teacher_notes": {
+            "source_context": "Digging cane holes was the most back-breaking labor on a Caribbean sugar estate. Field workers were forced to excavate thousands of four-foot square pits in rocky soil under the burning sun to prepare for planting. **Hinge Question:** How did plantation managers use systematic daily quotas and physical intimidation to prevent collective resistance?"
+          }
         }
       ],
       "tasks": [
@@ -2689,115 +2583,7 @@ const first_british_empire_data = {
           "viewing_task": "[12:00] Recall: Why was Jamaican sugar referred to as 'White Gold' in 18th-century London?\n[18:30] Explain: How did British sugar consumption change from a luxury for monarchs into an everyday staple for industrial working families?\n[24:10] Challenge: How did the immense wealth generated by Caribbean sugar plantations directly finance the growth of British banks, stately homes, and the Industrial Revolution?",
           "model_answer": "Recall: Sugar cane was the most profitable agricultural commodity in the world, generating vast fortunes for absentee British plantation owners.\nExplain: As imports surged and prices fell, sweetened tea became an indispensable, cheap energy source that fuelled long factory shifts for British industrial labourers.\nChallenge: Profits from slavery were funneled into London financial houses (e.g. Barclays, Bank of England), railway networks, and civic infrastructure, cementing the direct causal link between colonial exploitation and Britain's domestic modernisation."
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Plantation Reality & Maroon Resistance",
-        "tariff": "8 marks (Contrasting Historical Interpretations)",
-        "questions": [
-          {
-            "tariff": "4 marks",
-            "type": "interpretations_diff_4m",
-            "question": "Explain how Interpretations 1 and 2 differ on the nature of enslaved African resistance. [4 marks]",
-            "stimulus": [
-              "Interpretation 1: Planter Edward Long, History of Jamaica (1774) — argues enslaved people were naturally indolent and required perpetual whip discipline, claiming without European mastery order would dissolve.",
-              "Interpretation 2: Historian Hilary Beckles, Caribbean Freedom (2004) — argues enslaved Africans waged an unrelenting war of resistance through daily sabotage, spiritual preservation, and armed guerrilla struggle led by Queen Nanny."
-            ],
-            "prompt": "Explain the difference between Edward Long’s pro-slavery view of passive compliance and Hilary Beckles’s modern historical analysis of active military and cultural resistance.",
-            "model": "Interpretations 1 and 2 differ fundamentally on the agency and resistance of enslaved Africans. Interpretation 1 portrays enslaved people as naturally passive, claiming that discipline and constant threat of the whip were required to extract labour, and asserting that without white European mastery social order would dissolve. In sharp contrast, Interpretation 2 emphasizes active, organized, and unrelenting resistance. Beckles highlights that Africans continuously fought back through daily sabotage, cultural preservation, and brilliant guerrilla warfare, citing Queen Nanny of the Maroons who outmanoeuvred the British imperial army. Thus, while Long presents enslaved people as compliant subjects, Beckles reveals them as strategic fighters for freedom.",
-            "scaffolding": {
-              "acronym": "Point • Interp 1 • Interp 2 • Contrast",
-              "acronym_title": "Edexcel Paper 3 Q3(b) Interpretation Difference Formula",
-              "steps": [
-                {
-                  "letter": "POINT",
-                  "name": "State the Core Difference",
-                  "prompt": "State clearly that they differ on whether enslaved people were passive or active resisters.",
-                  "starter": "Interpretations 1 and 2 differ fundamentally on..."
-                },
-                {
-                  "letter": "INTERP 1",
-                  "name": "Exemplify Interpretation 1",
-                  "prompt": "Quote or summarize Long on natural indolence, whip discipline, and need for mastery.",
-                  "starter": "Interpretation 1 argues that..."
-                },
-                {
-                  "letter": "INTERP 2",
-                  "name": "Exemplify Interpretation 2",
-                  "prompt": "Quote or summarize Beckles on unrelenting resistance, guerrilla strategy, and Queen Nanny.",
-                  "starter": "In contrast, Interpretation 2 suggests that..."
-                },
-                {
-                  "letter": "CONTRAST",
-                  "name": "Explain the Divergence",
-                  "prompt": "Explicitly contrast the two views in a final analytical sentence.",
-                  "starter": "This is a fundamental difference because..."
-                }
-              ],
-              "sentence_starters": [
-                "Interpretations 1 and 2 differ on...",
-                "Interpretation 1 argues that...",
-                "In contrast, Interpretation 2 suggests that...",
-                "This is a difference because..."
-              ],
-              "connectives_bank": [
-                "Edward Long (1774)",
-                "Hilary Beckles (2004)",
-                "passivity vs resistance",
-                "driver’s whip",
-                "sabotage",
-                "guerrilla struggle",
-                "Queen Nanny",
-                "Blue Mountains"
-              ]
-            }
-          },
-          {
-            "tariff": "4 marks",
-            "type": "interpretations_reason_4m",
-            "question": "Suggest one reason why Interpretations 1 and 2 differ on the reality of plantation control. [4 marks]",
-            "prompt": "Explain why Edward Long and Hilary Beckles hold contrasting views. Consider their differing backgrounds, historical context, access to sources, and motives.",
-            "model": "One primary reason why Interpretations 1 and 2 differ is that the authors write from radically different historical contexts, motives, and sources. Edward Long was an 18th-century wealthy British planter and slaveholder writing in 1774. His direct motive was to justify chattel slavery and reassure British investors that harsh physical brutality was an economic and social necessity, leading him to produce racist caricatures that erased African agency. In contrast, Hilary Beckles is a 21st-century academic historian writing with modern scholarship and access to Maroon oral histories and colonial military records. Beckles’s motive is to restore historical truth and document the extensive reality of Black resistance, explaining why he reaches a completely contrary conclusion.",
-            "scaffolding": {
-              "acronym": "Origin • Motive • Evidence Contrast",
-              "acronym_title": "Edexcel Paper 3 Q3(c) Why Interpretations Differ Formula",
-              "steps": [
-                {
-                  "letter": "REASON",
-                  "name": "State Reason (Context & Motive)",
-                  "prompt": "Identify that the authors have contrasting positions: 18th-century slave owner vs modern academic.",
-                  "starter": "One reason why Interpretations 1 and 2 differ is because..."
-                },
-                {
-                  "letter": "AUTHOR 1",
-                  "name": "Analyse Long’s Motive",
-                  "prompt": "Explain Long was a planter justifying slave discipline to protect his financial profits.",
-                  "starter": "Specifically, Edward Long was writing in 1774 as a Jamaican planter who..."
-                },
-                {
-                  "letter": "AUTHOR 2",
-                  "name": "Analyse Beckles’s Perspective",
-                  "prompt": "Explain Beckles evaluates military archives and oral traditions to highlight African agency.",
-                  "starter": "In contrast, Hilary Beckles writes as a modern historian who..."
-                }
-              ],
-              "sentence_starters": [
-                "One reason why Interpretations 1 and 2 differ is because they have a different focus...",
-                "Specifically, Interpretation 1 focuses primarily on justifying...",
-                "In contrast, Interpretation 2 focuses more on documenting...",
-                "As a result, the authors reach different conclusions because..."
-              ],
-              "connectives_bank": [
-                "Jamaican planter",
-                "pro-slavery propaganda",
-                "economic justification",
-                "modern academic",
-                "oral traditions",
-                "colonial military records"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_4",
@@ -3284,7 +3070,11 @@ const first_british_empire_data = {
             "Author: Paul Revere, Boston silversmith, Son of Liberty, and revolutionary activist.",
             "Audience: Colonists across the Thirteen Colonies and Whig sympathizers in Britain.",
             "Motive: To inflame public rage, mobilize colonial resistance, and force the removal of British troops from Boston."
-          ]
+          ],
+          "source_context": "On 5 March 1770, a hostile Boston mob threw ice, oyster shells, and clubs at British sentries. A soldier was knocked down, and troops fired into the crowd, killing five colonists including Crispus Attucks. **Hinge Question:** Where is the boundary between legitimate political reporting and inflammatory propaganda during times of civil unrest?",
+          "teacher_notes": {
+            "source_context": "On 5 March 1770, a hostile Boston mob threw ice, oyster shells, and clubs at British sentries. A soldier was knocked down, and troops fired into the crowd, killing five colonists including Crispus Attucks. **Hinge Question:** Where is the boundary between legitimate political reporting and inflammatory propaganda during times of civil unrest?"
+          }
         },
         {
           "id": "fbe_l4_src_b",
@@ -3328,7 +3118,11 @@ const first_british_empire_data = {
             "Author: American historical printmakers (Sarony & Major / Currier & Ives).",
             "Audience: American citizens, patriotic historical societies, and schoolchildren.",
             "Motive: To commemorate the Boston Tea Party as a noble, courageous act of resistance against British tyranny."
-          ]
+          ],
+          "source_context": "The 1773 Tea Act allowed the East India Company to sell surplus tea directly to the colonies with a small tax, undercutting local merchants. Colonists saw this as a backdoor maneuver to force them to accept Parliament's right to tax them. **Hinge Question:** Was the destruction of private commercial property in Boston Harbor an act of principled political protest or unlawful vandalism?",
+          "teacher_notes": {
+            "source_context": "The 1773 Tea Act allowed the East India Company to sell surplus tea directly to the colonies with a small tax, undercutting local merchants. Colonists saw this as a backdoor maneuver to force them to accept Parliament's right to tax them. **Hinge Question:** Was the destruction of private commercial property in Boston Harbor an act of principled political protest or unlawful vandalism?"
+          }
         },
         {
           "id": "fbe_l4_src_c",
@@ -3372,7 +3166,11 @@ const first_british_empire_data = {
             "Author: Anonymous British satirist, published in The London Magazine (May 1774).",
             "Audience: British parliamentary Whig opposition, educated Londoners, and American colonial readers.",
             "Motive: To condemn Lord North's authoritarian measures and warn that tyrannical policies would destroy the British Empire."
-          ]
+          ],
+          "source_context": "Following the Boston Tea Party, Parliament passed the Coercive (Intolerable) Acts to punish Massachusetts. This cartoon by British sympathizers exposed Lord North's aggressive military measures as an assault on American liberty. **Hinge Question:** Why did many British politicians and cartoonists in London actively support the American colonists against their own government?",
+          "teacher_notes": {
+            "source_context": "Following the Boston Tea Party, Parliament passed the Coercive (Intolerable) Acts to punish Massachusetts. This cartoon by British sympathizers exposed Lord North's aggressive military measures as an assault on American liberty. **Hinge Question:** Why did many British politicians and cartoonists in London actively support the American colonists against their own government?"
+          }
         },
         {
           "id": "fbe_l4_src_d",
@@ -3416,7 +3214,11 @@ const first_british_empire_data = {
             "Author: King George III, the Board of Trade, and the British Cabinet.",
             "Audience: Colonial governors, settlers, fur traders, and indigenous tribal confederacies.",
             "Motive: To pacify Native American nations, halt frontier violence, and keep British colonists contained within reach of maritime trade."
-          ]
+          ],
+          "source_context": "After acquiring Canada and the Ohio Valley from France in 1763, Britain faced Pontiac's War. To prevent further frontier warfare with Native American tribes, King George III drew a line forbidding colonial settlement west of the Appalachians. **Hinge Question:** Did King George III draw the Proclamation Line to protect Native American sovereignty or simply to keep British colonists contained along the coast?",
+          "teacher_notes": {
+            "source_context": "After acquiring Canada and the Ohio Valley from France in 1763, Britain faced Pontiac's War. To prevent further frontier warfare with Native American tribes, King George III drew a line forbidding colonial settlement west of the Appalachians. **Hinge Question:** Did King George III draw the Proclamation Line to protect Native American sovereignty or simply to keep British colonists contained along the coast?"
+          }
         },
         {
           "id": "fbe_l4_src_e",
@@ -3460,7 +3262,11 @@ const first_british_empire_data = {
             "Author: British industrial potters (Leeds Pottery / Cockpit Hill, Derby).",
             "Audience: Patriotic American colonial households and British commercial merchant allies.",
             "Motive: To celebrate the resumption of profitable transatlantic trade and capitalize on colonial patriotic consumer demand."
-          ]
+          ],
+          "source_context": "When Parliament imposed the Stamp Act in 1765, American merchants enacted non-importation agreements boycotting British manufactured goods. British pottery exports plunged, leading English factory owners to petition Parliament to repeal the tax in 1766. **Hinge Question:** Why are economic boycotts often more effective in forcing imperial policy changes than armed revolts?",
+          "teacher_notes": {
+            "source_context": "When Parliament imposed the Stamp Act in 1765, American merchants enacted non-importation agreements boycotting British manufactured goods. British pottery exports plunged, leading English factory owners to petition Parliament to repeal the tax in 1766. **Hinge Question:** Why are economic boycotts often more effective in forcing imperial policy changes than armed revolts?"
+          }
         }
       ],
       "teacher_notes": {
@@ -3529,104 +3335,7 @@ const first_british_empire_data = {
           "viewing_task": "[14:20] Recall: What financial debt did the British government carry following the Seven Years' War (French and Indian War)?\n[22:45] Explain: How did the Boston Massacre of March 1770 become an explosive propaganda victory for Paul Revere and Samuel Adams?\n[33:15] Challenge: Why did British ministers in London view colonial resistance as dangerous lawlessness that threatened the entire British constitution?",
           "model_answer": "Recall: Britain's national debt had doubled to over £130 million, convincing Parliament that American colonists should help pay for their own military defence.\nExplain: Revere's sensationalised engraving depicted British soldiers firing an unprovoked volley into a peaceful crowd of unarmed citizens, turning a chaotic street clash into an enduring symbol of imperial tyranny.\nChallenge: London believed in absolute parliamentary sovereignty: if the American colonies were exempt from parliamentary taxation, the authority of the British Crown and the rule of law across the entire empire would collapse."
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Thirteen Colonies & The Boston Tea Party",
-        "tariff": "16 marks (Narrative Account [8m] & Explain Importance [8m])",
-        "questions": [
-          {
-            "tariff": "8 marks",
-            "type": "narrative_account_8m",
-            "question": "Write a narrative account analysing the key events leading from the Stamp Act (1765) to the Boston Tea Party (1773). [8 marks]",
-            "stimulus": [
-              "The Stamp Act and colonial boycotts (1765)",
-              "The Boston Massacre and the Tea Act (1770–1773)"
-            ],
-            "prompt": "Write a chronological account examining the escalation of colonial resistance: the 1765 Stamp Act crisis, the 1770 Boston Massacre, and the 1773 Tea Act leading directly to the Boston Tea Party.",
-            "model": "Between 1765 and 1773, relations between the British Parliament and the American colonies deteriorated through a cycle of imperial taxation, colonial resistance, and escalating violence.<br><br>The crisis began in 1765 when Parliament passed the Stamp Act to repay debts from the Seven Years’ War, taxing legal documents, newspapers, and playing cards. Colonists reacted with fury, establishing the Sons of Liberty and adopting the slogan \"No taxation without representation\", arguing that an unelected Parliament 3,000 miles away had no legal right to levy direct taxes. Widespread colonial boycotts of British goods forced Parliament to repeal the act in 1766, but the accompanying Declaratory Act insisted Parliament maintained sovereign power over the colonies in all cases whatsoever.<br><br>Tensions escalated dramatically with the 1767 Townshend Acts on imported glass, lead, paint, and tea. British troops were dispatched to Boston to enforce customs collections, creating friction that culminated on 5 March 1770 in the Boston Massacre, where British soldiers opened fire on an angry crowd, killing five colonists. Although Parliament repealed most Townshend duties following the massacre, it retained the tea tax as a symbol of authority.<br><br>The final catalyst occurred in May 1773 when Parliament passed the Tea Act, granting the struggling British East India Company a monopoly to sell surplus tea in America at reduced prices. Colonists recognized this as a bribe to accept parliamentary taxation. Consequently, on 16 December 1773, the Sons of Liberty disguised themselves as Mohawk warriors, boarded three East India Company ships in Boston Harbour, and dumped 342 chests of tea into the ocean, triggering the punitive Coercive Acts.",
-            "scaffolding": {
-              "acronym": "3-Stage Chronological Narrative Framework",
-              "acronym_title": "Narrative Account Formula (Beginning • Escalation • Climax)",
-              "steps": [
-                {
-                  "letter": "STAGE 1",
-                  "name": "1765 Stamp Act & Boycotts",
-                  "prompt": "Explain the tax on printed paper, \"No taxation without representation\", and boycott.",
-                  "starter": "Initially, the imperial crisis began in 1765 when..."
-                },
-                {
-                  "letter": "STAGE 2",
-                  "name": "1770 Boston Massacre",
-                  "prompt": "Explain Townshend Duties, British troops stationed in Boston, and 5 March 1770 shooting.",
-                  "starter": "Following this, tensions escalated sharply in March 1770 when..."
-                },
-                {
-                  "letter": "STAGE 3",
-                  "name": "1773 Tea Act & Boston Tea Party",
-                  "prompt": "Explain East India Company monopoly, Sons of Liberty, and 342 tea chests dumped in harbour.",
-                  "starter": "The decisive turning point occurred in December 1773 when..."
-                }
-              ],
-              "sentence_starters": [
-                "Initially, the crisis began when...",
-                "Following this, a major escalation occurred in 1770 when...",
-                "A violent turning point was reached when...",
-                "Consequently, this culminated in December 1773 when..."
-              ],
-              "connectives_bank": [
-                "Stamp Act (1765)",
-                "Sons of Liberty",
-                "No taxation without representation",
-                "Boston Massacre (1770)",
-                "Tea Act (1773)",
-                "342 tea chests",
-                "Boston Harbour",
-                "East India Company"
-              ]
-            }
-          },
-          {
-            "tariff": "8 marks",
-            "type": "explain_importance_8m",
-            "question": "Explain the importance of the Boston Tea Party (1773) for relations between Britain and the American colonies. [8 marks]",
-            "prompt": "Explain two distinct consequences: how it prompted Parliament to pass the punitive \"Coercive/Intolerable Acts\" shutting Boston port, and how it united previously divided colonies behind the First Continental Congress.",
-            "model": "One reason the Boston Tea Party was profoundly important was that it provoked a punitive and uncompromising legislative retaliation from the British government. Viewing the destruction of £10,000 worth of private property as open rebellion, King George III and Parliament passed the 1774 Coercive Acts (known in America as the \"Intolerable Acts\"). These measures closed Boston Harbour until the tea was paid for, suspended the Massachusetts colonial assembly, replaced the civilian governor with military general Thomas Gage, and quartered British troops in private buildings. By replacing colonial self-government with military rule, Britain foreclosed diplomatic compromise.<br><br>Furthermore, the Tea Party was critical because it transformed a regional dispute in Massachusetts into a united, continent-wide revolution. Rather than isolating Boston as Parliament intended, the harshness of the Coercive Acts outraged the other twelve colonies, inspiring them to send food and financial relief. More decisively, it spurred colonial leaders to convene the First Continental Congress in Philadelphia in September 1774. Representatives from twelve colonies united for the first time, establishing a coordinated continental boycott of British trade and authorizing local militias to arm themselves, paving the direct path to open warfare at Lexington and Concord in April 1775.",
-            "scaffolding": {
-              "acronym": "Importance Point 1 • Importance Point 2",
-              "acronym_title": "Edexcel Paper 2 Period Study 8-Mark Importance Standard",
-              "steps": [
-                {
-                  "letter": "IMPACT 1",
-                  "name": "British Retaliation (Coercive Acts)",
-                  "prompt": "Explain closing Boston Harbour, General Gage, martial law, and quartering troops.",
-                  "starter": "One reason the Boston Tea Party was crucial was that..."
-                },
-                {
-                  "letter": "IMPACT 2",
-                  "name": "Colonial Unification (Continental Congress)",
-                  "prompt": "Explain how it united 12 colonies, Philadelphia Congress 1774, and militia arming.",
-                  "starter": "Furthermore, the event was vital because it transformed..."
-                }
-              ],
-              "sentence_starters": [
-                "One reason why the Boston Tea Party was important was...",
-                "In particular, this led the British government to...",
-                "Furthermore, the event was critical because...",
-                "Consequently, this transformed relations because..."
-              ],
-              "connectives_bank": [
-                "Coercive Acts (1774)",
-                "Intolerable Acts",
-                "Boston Harbour closed",
-                "General Thomas Gage",
-                "First Continental Congress",
-                "colonial unity",
-                "Lexington and Concord"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_5",
@@ -4113,7 +3822,11 @@ const first_british_empire_data = {
             "Author: John Trumbull, American painter and former aide-de-camp to General George Washington.",
             "Audience: The citizens of the United States and international visitors to the US Capitol.",
             "Motive: To preserve the likenesses of the founding fathers and instill national reverence for the Declaration."
-          ]
+          ],
+          "source_context": "On 4 July 1776, the Continental Congress voted to approve the Declaration of Independence. Jefferson's preamble asserted that all men possess unalienable rights to life, liberty, and the pursuit of happiness. **Hinge Question:** How did Thomas Jefferson reconcile writing that 'all men are created equal' while personally enslaving over 600 human beings?",
+          "teacher_notes": {
+            "source_context": "On 4 July 1776, the Continental Congress voted to approve the Declaration of Independence. Jefferson's preamble asserted that all men possess unalienable rights to life, liberty, and the pursuit of happiness. **Hinge Question:** How did Thomas Jefferson reconcile writing that 'all men are created equal' while personally enslaving over 600 human beings?"
+          }
         },
         {
           "id": "fbe_l5_src_b",
@@ -4157,7 +3870,11 @@ const first_british_empire_data = {
             "Author: John Murray, 4th Earl of Dunmore, Royal Governor of Virginia.",
             "Audience: Enslaved African laborers, free colonists, and rebel plantation owners in Virginia.",
             "Motive: To suppress the colonial rebellion through economic disruption and recruit an 'Ethiopian Regiment' of Black Loyalists."
-          ]
+          ],
+          "source_context": "Facing armed rebellion in Virginia, Lord Dunmore issued an ultimatum declaring martial law and offering freedom to enslaved men who joined the British Army. Over 800 African Americans joined his 'Ethiopian Regiment' wearing sashes reading 'Liberty to Slaves'. **Hinge Question:** Did Lord Dunmore issue his proclamation out of genuine humanitarian concern for enslaved Africans or as a cynical military weapon?",
+          "teacher_notes": {
+            "source_context": "Facing armed rebellion in Virginia, Lord Dunmore issued an ultimatum declaring martial law and offering freedom to enslaved men who joined the British Army. Over 800 African Americans joined his 'Ethiopian Regiment' wearing sashes reading 'Liberty to Slaves'. **Hinge Question:** Did Lord Dunmore issue his proclamation out of genuine humanitarian concern for enslaved Africans or as a cynical military weapon?"
+          }
         },
         {
           "id": "fbe_l5_src_c",
@@ -4201,7 +3918,11 @@ const first_british_empire_data = {
             "Author: Brigadier General Samuel Birch and British military inspection clerks.",
             "Audience: General Sir Guy Carleton, General George Washington, and British naval transport captains.",
             "Motive: To issue unassailable legal documentation guaranteeing freedom to Black Loyalists boarding ships to Nova Scotia."
-          ]
+          ],
+          "source_context": "At the end of the Revolutionary War, George Washington demanded that all runaway slaves within British lines be returned to their American masters. British Commander-in-Chief Sir Guy Carleton refused, declaring it an insult to British honor, and created The Book of Negroes to evacuate 3,000 Black Loyalists to Nova Scotia. **Hinge Question:** Why did thousands of African Americans choose to fight for the British King rather than the American Patriots who claimed to be fighting for 'liberty'?",
+          "teacher_notes": {
+            "source_context": "At the end of the Revolutionary War, George Washington demanded that all runaway slaves within British lines be returned to their American masters. British Commander-in-Chief Sir Guy Carleton refused, declaring it an insult to British honor, and created The Book of Negroes to evacuate 3,000 Black Loyalists to Nova Scotia. **Hinge Question:** Why did thousands of African Americans choose to fight for the British King rather than the American Patriots who claimed to be fighting for 'liberty'?"
+          }
         },
         {
           "id": "fbe_l5_src_d",
@@ -4245,7 +3966,11 @@ const first_british_empire_data = {
             "Author: Thomas Paine, English-born radical artisan, editor, and political pamphleteer.",
             "Audience: Ordinary American farmers, artisans, soldiers, and colonial citizens.",
             "Motive: To transform a colonial tax protest into an uncompromising moral campaign for universal human liberty and republican independence."
-          ]
+          ],
+          "source_context": "Before Common Sense, most colonists claimed they were only fighting for their traditional rights as British subjects. Paine demolished the divine right of kings, ridiculed the British monarchy, and argued that America had a moral duty to create an independent democratic republic. **Hinge Question:** What made Thomas Paine's writing style so revolutionary compared to the formal legal petitions previously sent to the King?",
+          "teacher_notes": {
+            "source_context": "Before Common Sense, most colonists claimed they were only fighting for their traditional rights as British subjects. Paine demolished the divine right of kings, ridiculed the British monarchy, and argued that America had a moral duty to create an independent democratic republic. **Hinge Question:** What made Thomas Paine's writing style so revolutionary compared to the formal legal petitions previously sent to the King?"
+          }
         },
         {
           "id": "fbe_l5_src_e",
@@ -4289,7 +4014,11 @@ const first_british_empire_data = {
             "Author: British plenipotentiary David Hartley and American commissioners John Adams, Benjamin Franklin, and John Jay.",
             "Audience: The governments and citizens of Great Britain, the United States, France, Spain, and global diplomatic corps.",
             "Motive: To establish permanent peace, settle borders, and restore commercial relations between Britain and the United States."
-          ]
+          ],
+          "source_context": "Signed in Paris in September 1783, the treaty ended eight years of war. Britain formally recognized the United States as independent and ceded all territory from the Atlantic to the Mississippi, marking the catastrophic collapse of the First British Empire. **Hinge Question:** Why was Great Britain willing to grant such vast western lands to its former colonies despite having undefeated garrisons in New York and Charleston?",
+          "teacher_notes": {
+            "source_context": "Signed in Paris in September 1783, the treaty ended eight years of war. Britain formally recognized the United States as independent and ceded all territory from the Atlantic to the Mississippi, marking the catastrophic collapse of the First British Empire. **Hinge Question:** Why was Great Britain willing to grant such vast western lands to its former colonies despite having undefeated garrisons in New York and Charleston?"
+          }
         }
       ],
       "teacher_notes": {
@@ -4358,77 +4087,12 @@ const first_british_empire_data = {
           "viewing_task": "[22:00] Recall: What happened on Lexington Green on 19 April 1775 ('the shot heard 'round the world')?\n[31:00] Explain: How did Thomas Paine's radical pamphlet 'Common Sense' transform a dispute over taxes into a crusade for total independence?\n[40:15] Challenge: How did French military and naval intervention under General Rochambeau seal British defeat at the Siege of Yorktown in 1781?",
           "model_answer": "Recall: British regulars clashed with colonial minutemen, sparking a running battle along the road to Boston that began the Revolutionary War.\nExplain: Paine wrote in simple, fiery prose for common working people, arguing that it was absurd for a tiny island across the ocean to govern an entire continent, and that hereditary monarchy was inherently corrupt.\nChallenge: Without the French navy blockading the Chesapeake Bay to cut off British naval resupply, General Cornwallis would have been evacuated by sea; the Franco-American alliance transformed a colonial rebellion into an unwinnable global war for Britain."
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: The American Revolutionary War & Black Loyalists",
-        "tariff": "12 marks (Evaluative Statement Essay)",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "evaluative_essay_12m",
-            "question": "‘British defeat in the American Revolutionary War was caused primarily by French naval intervention rather than American military strength.’ How far do you agree? [12 marks]",
-            "stimulus": [
-              "The Battle of Saratoga and the French Alliance (1777–1778)",
-              "George Washington and the Continental Army at Valley Forge"
-            ],
-            "prompt": "Construct a balanced evaluative argument: on the one hand, evaluate French naval support (Battle of the Chesapeake, Yorktown blockade) and widening the conflict into a global war; on the other hand, evaluate American resilience under Washington, guerrilla warfare, and knowledge of the terrain. Reach a weighed conclusion.",
-            "model": "To a significant extent, it is accurate to argue that British defeat was caused primarily by French military and naval intervention. While American ideological determination and tactical endurance were necessary preconditions, French entry transformed a localized colonial counter-insurgency into an unmanageable global war that neutralized Britain’s single greatest asset: the Royal Navy.<br><br>On the one hand, French naval and military intervention was the indispensable catalyst for decisive British defeat. Following the American victory at Saratoga in October 1777, France signed a formal alliance with the Continental Congress in 1778, later joined by Spain and the Dutch Republic. This transformed the conflict across Europe, the Caribbean, and India, forcing Britain to disperse its naval fleets to defend vital sugar islands and the English Channel. Crucially, the war was decided at the Siege of Yorktown in 1781. Admiral de Grasse’s French fleet defeated the Royal Navy at the Battle of the Chesapeake, cutting off General Cornwallis’s seaward evacuation route while 7,000 French soldiers under Rochambeau joined Washington’s siege lines. Without French naval superiority, Cornwallis would have been evacuated or reinforced, preventing the decisive surrender that forced Parliament to concede independence.<br><br>On the other hand, it can be argued that American military and strategic resilience was the foundational cause of British defeat. George Washington recognized that the Continental Army did not need to win set-piece battles, but merely survive to exhaust British political will. Despite enduring freezing conditions, disease, and starvation at Valley Forge in the winter of 1777–1778, training by Baron von Steuben forged the army into a disciplined regular force. Furthermore, the British army struggled with insurmountable logistical challenges, fighting across 1,000 miles of hostile, vast terrain against local militias who utilized effective guerrilla tactics. The British strategy of relying on Loyalists and Black Loyalists (freed under Lord Dunmore’s Proclamation) failed to control the countryside.<br><br>In conclusion, while American resilience ensured that the revolution survived its darkest hours, it was French intervention that delivered actual victory. By breaking British naval hegemony at the Chesapeake and trapping Cornwallis at Yorktown, France turned a war of attrition into an absolute military checkmate that Britain could not recover from.",
-            "scaffolding": {
-              "acronym": "PEEL Evaluative Essay Framework",
-              "acronym_title": "12-Mark Evaluative Statement Essay Standard",
-              "steps": [
-                {
-                  "letter": "THESIS",
-                  "name": "State Position",
-                  "prompt": "State clearly that French intervention turned the war into an unwinnable global conflict.",
-                  "starter": "To a significant extent, it is accurate to argue that..."
-                },
-                {
-                  "letter": "THEME 1",
-                  "name": "French Alliance & Naval Dominance",
-                  "prompt": "Explain 1778 Alliance, global war, Battle of the Chesapeake, Admiral de Grasse, and Yorktown.",
-                  "starter": "On the one hand, French naval and military intervention was decisive because..."
-                },
-                {
-                  "letter": "THEME 2",
-                  "name": "American Endurance & Washington",
-                  "prompt": "Evaluate Washington’s war of attrition, Valley Forge resilience, and hostile vast geography.",
-                  "starter": "On the other hand, it can be argued that American military resilience was foundational because..."
-                },
-                {
-                  "letter": "JUDGMENT",
-                  "name": "Weighed Verdict",
-                  "prompt": "Explain why Yorktown could never have been achieved without French naval control.",
-                  "starter": "In conclusion, while American endurance prevented defeat, it was French intervention that..."
-                }
-              ],
-              "sentence_starters": [
-                "To a significant extent, it is accurate to argue that...",
-                "On the one hand, French naval intervention was decisive because...",
-                "In particular, at Yorktown in 1781...",
-                "On the other hand, an alternative argument highlights American military strength, such as...",
-                "In conclusion, the most decisive factor was... because..."
-              ],
-              "connectives_bank": [
-                "Battle of Saratoga (1777)",
-                "French Alliance (1778)",
-                "George Washington",
-                "Valley Forge",
-                "Baron von Steuben",
-                "Admiral de Grasse",
-                "Battle of the Chesapeake",
-                "Siege of Yorktown (1781)",
-                "General Cornwallis"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     }
-  ]
+  ],
+  "homepage_background": "/images/first_british_empire/battle_of_plassey_1757.jpg"
 };
-if (typeof window !== "undefined") {
-  window.FIRST_BRITISH_EMPIRE_DATA = first_british_empire_data;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = first_british_empire_data;
 }
 export default first_british_empire_data;
-export { first_british_empire_data };

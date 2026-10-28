@@ -483,7 +483,8 @@
           "provenance_clues": {
             "author": "Ministry of Information photographer recording wartime civil defence.",
             "audience": "British public and international newspapers.",
-            "motive": "To show the public that children were disciplined, calm, and prepared if bombs or poison gas were dropped."
+            "motive": "To show the public that children were disciplined, calm, and prepared if bombs or poison gas were dropped.",
+            "hinge_question": "Why did the government make carrying a gas mask compulsory for every child, even though poison gas was never actually used against British cities?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the government make carrying a gas mask compulsory for every child, even though poison gas was never actually used against British cities?",
@@ -502,7 +503,8 @@
               "audience": "British public and international newspapers.",
               "motive": "To show the public that children were disciplined, calm, and prepared if bombs or poison gas were dropped."
             }
-          }
+          },
+          "source_context": "From the outbreak of war, the British government feared enemy bombers would drop poison gas on civilian cities. Over 38 million gas masks were distributed, and children practiced putting them on in seconds. **Hinge Question:** Why did the government make carrying a gas mask compulsory for every child, even though poison gas was never actually used against British cities?"
         },
         {
           "id": "ks2_ww2_l1_src_b",
@@ -523,7 +525,8 @@
           "provenance_clues": {
             "author": "Air Raid Precautions (ARP) department of the British Government.",
             "audience": "Every adult, child, and baby in the United Kingdom.",
-            "motive": "To make sure everyone remembered their gas mask so they could survive an enemy chemical attack."
+            "motive": "To make sure everyone remembered their gas mask so they could survive an enemy chemical attack.",
+            "hinge_question": "Why did British people continue carrying their bulky gas mask boxes everywhere for years after the Blitz subsided?"
           },
           "teacher_notes": {
             "hinge_question": "Why did British people continue carrying their bulky gas mask boxes everywhere for years after the Blitz subsided?",
@@ -542,7 +545,8 @@
               "audience": "Every adult, child, and baby in the United Kingdom.",
               "motive": "To make sure everyone remembered their gas mask so they could survive an enemy chemical attack."
             }
-          }
+          },
+          "source_context": "Every civilian in Britain was issued a gas mask free of charge in a cardboard box. If a person was caught on a bus or entering a cinema without their box, they could be refused entry or fined. **Hinge Question:** Why did British people continue carrying their bulky gas mask boxes everywhere for years after the Blitz subsided?"
         },
         {
           "id": "ks2_ww2_l1_src_c",
@@ -563,7 +567,8 @@
           "provenance_clues": {
             "author": "Official government photographer documenting volunteer war work.",
             "audience": "The British public.",
-            "motive": "To show how ordinary citizens volunteered their spare time to keep their neighbourhoods safe."
+            "motive": "To show how ordinary citizens volunteered their spare time to keep their neighbourhoods safe.",
+            "hinge_question": "Why was strict enforcement of the blackout rules by ARP wardens critical to saving civilian lives during German night raids?"
           },
           "teacher_notes": {
             "hinge_question": "Why was strict enforcement of the blackout rules by ARP wardens critical to saving civilian lives during German night raids?",
@@ -582,7 +587,8 @@
               "audience": "The British public.",
               "motive": "To show how ordinary citizens volunteered their spare time to keep their neighbourhoods safe."
             }
-          }
+          },
+          "source_context": "Over 1.4 million volunteer ARP wardens patrolled British streets during air raids. They guided citizens to shelters, checked that blackout curtains did not leak light, helped rescue trapped families from bombed rubble, and sounded warning sirens. **Hinge Question:** Why was strict enforcement of the blackout rules by ARP wardens critical to saving civilian lives during German night raids?"
         },
         {
           "id": "ks2_ww2_l1_src_d",
@@ -603,7 +609,8 @@
           "provenance_clues": {
             "author": "Official photographer visiting a British primary school.",
             "audience": "Families and teachers across the British Empire.",
-            "motive": "To show parents that school lessons continued calmly even while children practiced safety drills."
+            "motive": "To show parents that school lessons continued calmly even while children practiced safety drills.",
+            "hinge_question": "How did practicing school lessons in gas masks help children overcome their natural fear of air raids?"
           },
           "teacher_notes": {
             "hinge_question": "How did practicing school lessons in gas masks help children overcome their natural fear of air raids?",
@@ -622,7 +629,8 @@
               "audience": "Families and teachers across the British Empire.",
               "motive": "To show parents that school lessons continued calmly even while children practiced safety drills."
             }
-          }
+          },
+          "source_context": "Teachers had to conduct lessons while pupils wore rubber gas masks for up to an hour so children became accustomed to the rubber smell and muffled sound. Pupils practiced writing and reading through foggy plastic eyepieces. **Hinge Question:** How did practicing school lessons in gas masks help children overcome their natural fear of air raids?"
         },
         {
           "id": "ks2_ww2_l1_src_e",
@@ -643,7 +651,8 @@
           "provenance_clues": {
             "author": "Ministry of Information photojournalist.",
             "audience": "City drivers, pedestrians, and transport workers.",
-            "motive": "To explain to the public how blackout rules worked to protect British cities from German bombers."
+            "motive": "To explain to the public how blackout rules worked to protect British cities from German bombers.",
+            "hinge_question": "Why did the blackout cause more civilian deaths in road traffic accidents in late 1939 than enemy bombing did?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the blackout cause more civilian deaths in road traffic accidents in late 1939 than enemy bombing did?",
@@ -662,7 +671,8 @@
               "audience": "City drivers, pedestrians, and transport workers.",
               "motive": "To explain to the public how blackout rules worked to protect British cities from German bombers."
             }
-          }
+          },
+          "source_context": "During the blackout, vehicle headlamps were covered with metal hoods with narrow horizontal slits pointing down at the road, emitting only a faint beam. Thousands of road accidents occurred in the early months of the war because drivers could not see pedestrians in the dark. **Hinge Question:** Why did the blackout cause more civilian deaths in road traffic accidents in late 1939 than enemy bombing did?"
         }
       ]
     },
@@ -1129,7 +1139,8 @@
           "provenance_clues": {
             "author": "Official government photographer documenting the mass evacuation scheme.",
             "audience": "Parents reading daily newspapers across Britain.",
-            "motive": "To reassure anxious parents that their children were safe and cared for on the journey."
+            "motive": "To reassure anxious parents that their children were safe and cared for on the journey.",
+            "hinge_question": "Why did the government choose to separate children from their parents rather than evacuating entire family units together?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the government choose to separate children from their parents rather than evacuating entire family units together?",
@@ -1148,7 +1159,8 @@
               "audience": "Parents reading daily newspapers across Britain.",
               "motive": "To reassure anxious parents that their children were safe and cared for on the journey."
             }
-          }
+          },
+          "source_context": "On 1 September 1939, two days before war was declared, the government launched 'Operation Pied Piper'. In just three days, nearly 1.5 million schoolchildren, mothers, and teachers were evacuated by train from vulnerable cities to countryside villages. **Hinge Question:** Why did the government choose to separate children from their parents rather than evacuating entire family units together?"
         },
         {
           "id": "ks2_ww2_l2_src_b",
@@ -1169,7 +1181,8 @@
           "provenance_clues": {
             "author": "Local education authorities and railway billeting officers.",
             "audience": "Railway staff, escorting teachers, and rural foster parents.",
-            "motive": "To make sure every child could be identified and kept with their brothers, sisters, or classmates."
+            "motive": "To make sure every child could be identified and kept with their brothers, sisters, or classmates.",
+            "hinge_question": "What emotional feelings might a child experience wearing a luggage label like a parcel on a crowded train to an unknown village?"
           },
           "teacher_notes": {
             "hinge_question": "What emotional feelings might a child experience wearing a luggage label like a parcel on a crowded train to an unknown village?",
@@ -1188,7 +1201,8 @@
               "audience": "Railway staff, escorting teachers, and rural foster parents.",
               "motive": "To make sure every child could be identified and kept with their brothers, sisters, or classmates."
             }
-          }
+          },
+          "source_context": "Every evacuated child had a cardboard label pinned to their coat lapel. The label recorded their name, school, home address, and evacuation party number, ensuring lost children could be reconnected with their teachers at rural stations. **Hinge Question:** What emotional feelings might a child experience wearing a luggage label like a parcel on a crowded train to an unknown village?"
         },
         {
           "id": "ks2_ww2_l2_src_c",
@@ -1209,7 +1223,8 @@
           "provenance_clues": {
             "author": "Government photojournalist covering the arrival of city evacuees in Devon.",
             "audience": "National newspaper readers.",
-            "motive": "To record the reality of city children arriving in the countryside at the start of the war."
+            "motive": "To record the reality of city children arriving in the countryside at the start of the war.",
+            "hinge_question": "Why did the 'billeting' system in village halls sometimes create heartbreak and culture clash between city children and wealthy rural hosts?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the 'billeting' system in village halls sometimes create heartbreak and culture clash between city children and wealthy rural hosts?",
@@ -1228,7 +1243,8 @@
               "audience": "National newspaper readers.",
               "motive": "To record the reality of city children arriving in the countryside at the start of the war."
             }
-          }
+          },
+          "source_context": "When evacuee trains arrived in rural villages, children were led to village halls or church rooms where local families picked which children they would take into their homes. Some children were picked immediately, while others felt unwanted as foster parents picked older boys or girls first. **Hinge Question:** Why did the 'billeting' system in village halls sometimes create heartbreak and culture clash between city children and wealthy rural hosts?"
         },
         {
           "id": "ks2_ww2_l2_src_d",
@@ -1249,7 +1265,8 @@
           "provenance_clues": {
             "author": "Photojournalist documenting second-wave wartime evacuations.",
             "audience": "National press.",
-            "motive": "To show how teachers looked after their pupils and kept them safe on the journey."
+            "motive": "To show how teachers looked after their pupils and kept them safe on the journey.",
+            "hinge_question": "How did schoolteachers act as vital emotional anchors for young children during the stressful process of evacuation?"
           },
           "teacher_notes": {
             "hinge_question": "How did schoolteachers act as vital emotional anchors for young children during the stressful process of evacuation?",
@@ -1268,7 +1285,8 @@
               "audience": "National press.",
               "motive": "To show how teachers looked after their pupils and kept them safe on the journey."
             }
-          }
+          },
+          "source_context": "Following the fall of France in summer 1940 and the start of daylight bombing, a second major wave of evacuation was launched. Teachers stayed with their school classes throughout the journey, helping comfort crying younger children and singing songs in train carriages. **Hinge Question:** How did schoolteachers act as vital emotional anchors for young children during the stressful process of evacuation?"
         },
         {
           "id": "ks2_ww2_l2_src_e",
@@ -1289,7 +1307,8 @@
           "provenance_clues": {
             "author": "Historical cartographers synthesising government Ministry of Health evacuation plans.",
             "audience": "Students investigating the spatial distribution of wartime safety.",
-            "motive": "To help families understand which danger areas had to be evacuated and where safe zones were located."
+            "motive": "To help families understand which danger areas had to be evacuated and where safe zones were located.",
+            "hinge_question": "Why were some coastal towns in Kent and Sussex evacuated for a second time in 1940 after the Battle of Britain began?"
           },
           "teacher_notes": {
             "hinge_question": "Why were some coastal towns in Kent and Sussex evacuated for a second time in 1940 after the Battle of Britain began?",
@@ -1308,7 +1327,8 @@
               "audience": "Students investigating the spatial distribution of wartime safety.",
               "motive": "To help families understand which danger areas had to be evacuated and where safe zones were located."
             }
-          }
+          },
+          "source_context": "Over 3 million people were relocated across Great Britain over the course of the war. Most evacuees from London were sent to Kent, Sussex, Berkshire, Devon, and Cornwall, while children from Liverpool and Manchester were sent to Wales and Lancashire. **Hinge Question:** Why were some coastal towns in Kent and Sussex evacuated for a second time in 1940 after the Battle of Britain began?"
         }
       ]
     },
@@ -1775,7 +1795,8 @@
           "provenance_clues": {
             "author": "Press photographer covering the first arrivals of Kindertransport children.",
             "audience": "British public and international readers.",
-            "motive": "To celebrate the safe arrival of refugee children rescued by the Kindertransport."
+            "motive": "To celebrate the safe arrival of refugee children rescued by the Kindertransport.",
+            "hinge_question": "Why did the British government agree to accept refugee children on the Kindertransport, but refuse to admit their adult parents?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the British government agree to accept refugee children on the Kindertransport, but refuse to admit their adult parents?",
@@ -1794,7 +1815,8 @@
               "audience": "British public and international readers.",
               "motive": "To celebrate the safe arrival of refugee children rescued by the Kindertransport."
             }
-          }
+          },
+          "source_context": "Following the violent Kristallnacht pogroms in Nazi Germany in November 1938, the British Parliament agreed to allow 10,000 unaccompanied refugee children under seventeen to enter Britain, provided private charities guaranteed £50 per child. **Hinge Question:** Why did the British government agree to accept refugee children on the Kindertransport, but refuse to admit their adult parents?"
         },
         {
           "id": "ks2_ww2_l3_src_b",
@@ -1815,7 +1837,8 @@
           "provenance_clues": {
             "author": "Refugee escort or Dutch railway worker.",
             "audience": "Preserved in family archives and later donated to Holocaust educational exhibits.",
-            "motive": "To show the deep personal emotions and bravery of a young child refugee fleeing Nazi danger."
+            "motive": "To show the deep personal emotions and bravery of a young child refugee fleeing Nazi danger.",
+            "hinge_question": "Why do personal childhood keepsakes like Vera's doll carry such powerful historical meaning for understanding the Holocaust?"
           },
           "teacher_notes": {
             "hinge_question": "Why do personal childhood keepsakes like Vera's doll carry such powerful historical meaning for understanding the Holocaust?",
@@ -1834,7 +1857,8 @@
               "audience": "Preserved in family archives and later donated to Holocaust educational exhibits.",
               "motive": "To show the deep personal emotions and bravery of a young child refugee fleeing Nazi danger."
             }
-          }
+          },
+          "source_context": "Refugee children on the Kindertransport were allowed only one small suitcase and no money. Vera's grandmother gave her a porcelain doll to comfort her on the journey. Vera kept the doll for the rest of her life as one of her only surviving links to her family. **Hinge Question:** Why do personal childhood keepsakes like Vera's doll carry such powerful historical meaning for understanding the Holocaust?"
         },
         {
           "id": "ks2_ww2_l3_src_c",
@@ -1855,7 +1879,8 @@
           "provenance_clues": {
             "author": "Prague passport authorities and German security police.",
             "audience": "Border guards at railway crossings in Germany and the Netherlands.",
-            "motive": "To provide official legal proof of identity and permission for a refugee child to travel to Britain."
+            "motive": "To provide official legal proof of identity and permission for a refugee child to travel to Britain.",
+            "hinge_question": "Why did Nazi authorities permit Jewish children to leave Prague on the Kindertransport in early 1939, but stop all departures once war began?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Nazi authorities permit Jewish children to leave Prague on the Kindertransport in early 1939, but stop all departures once war began?",
@@ -1874,7 +1899,8 @@
               "audience": "Border guards at railway crossings in Germany and the Netherlands.",
               "motive": "To provide official legal proof of identity and permission for a refugee child to travel to Britain."
             }
-          }
+          },
+          "source_context": "After Nazi Germany occupied Prague in March 1939, Jewish children needed both British entry permits and Nazi exit visas to leave. Nicholas Winton and Trevor Chadwick worked desperately to secure travel documents before German authorities shut the borders. **Hinge Question:** Why did Nazi authorities permit Jewish children to leave Prague on the Kindertransport in early 1939, but stop all departures once war began?"
         },
         {
           "id": "ks2_ww2_l3_src_d",
@@ -1895,7 +1921,8 @@
           "provenance_clues": {
             "author": "Rescue volunteer photographer at Prague Airport.",
             "audience": "British charitable committees in London.",
-            "motive": "To document the emergency air rescue of refugee children organised by British volunteers."
+            "motive": "To document the emergency air rescue of refugee children organised by British volunteers.",
+            "hinge_question": "Why was air evacuation rarely used compared to train transport during the Kindertransport?"
           },
           "teacher_notes": {
             "hinge_question": "Why was air evacuation rarely used compared to train transport during the Kindertransport?",
@@ -1914,7 +1941,8 @@
               "audience": "British charitable committees in London.",
               "motive": "To document the emergency air rescue of refugee children organised by British volunteers."
             }
-          }
+          },
+          "source_context": "While most Kindertransport journeys took place on trains and ferries, Nicholas Winton and Barbican Mission volunteers chartered several transport planes from Prague Airport to fly vulnerable children directly to Croydon Airport in London before trains became too dangerous. **Hinge Question:** Why was air evacuation rarely used compared to train transport during the Kindertransport?"
         },
         {
           "id": "ks2_ww2_l3_src_e",
@@ -1935,7 +1963,8 @@
           "provenance_clues": {
             "author": "Preserved by Vera Schaufeld throughout her adult life in England.",
             "audience": "Family members and educational visitors.",
-            "motive": "To remember and honour the parents who gave up their children to save their lives."
+            "motive": "To remember and honour the parents who gave up their children to save their lives.",
+            "hinge_question": "How did letters and photographs help refugee children hold on to their heritage while learning a new language and culture in Britain?"
           },
           "teacher_notes": {
             "hinge_question": "How did letters and photographs help refugee children hold on to their heritage while learning a new language and culture in Britain?",
@@ -1954,7 +1983,8 @@
               "audience": "Family members and educational visitors.",
               "motive": "To remember and honour the parents who gave up their children to save their lives."
             }
-          }
+          },
+          "source_context": "In her suitcase, Vera carried photos of her parents, a handwritten letter from her mother telling her to be good and polite, and a list of English words. These few items were all that remained of her childhood world in Czechoslovakia. **Hinge Question:** How did letters and photographs help refugee children hold on to their heritage while learning a new language and culture in Britain?"
         }
       ]
     },
@@ -2421,7 +2451,8 @@
           "provenance_clues": {
             "author": "Civil defence surveyors and borough engineers.",
             "audience": "Wartime cabinet ministers and military planners.",
-            "motive": "To record where bombs fell so rescue teams and builders could repair damage and protect citizens."
+            "motive": "To record where bombs fell so rescue teams and builders could repair damage and protect citizens.",
+            "hinge_question": "Why did the British government keep detailed bomb damage maps classified as 'MOST SECRET' during the war?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the British government keep detailed bomb damage maps classified as 'MOST SECRET' during the war?",
@@ -2440,7 +2471,8 @@
               "audience": "Wartime cabinet ministers and military planners.",
               "motive": "To record where bombs fell so rescue teams and builders could repair damage and protect citizens."
             }
-          }
+          },
+          "source_context": "Between September 1940 and May 1941, London was bombed for fifty-seven consecutive nights. The Luftwaffe dropped over 100,000 explosive bombs and millions of incendiaries, targeting docks, railways, and factories. **Hinge Question:** Why did the British government keep detailed bomb damage maps classified as 'MOST SECRET' during the war?"
         },
         {
           "id": "ks2_ww2_l4_src_b",
@@ -2461,7 +2493,8 @@
           "provenance_clues": {
             "author": "Official government photographer promoting home civil defence.",
             "audience": "Households with back gardens across Britain.",
-            "motive": "To show how ordinary families used garden shelters to protect themselves during the Blitz."
+            "motive": "To show how ordinary families used garden shelters to protect themselves during the Blitz.",
+            "hinge_question": "Why were Anderson shelters extremely effective against flying shrapnel and blast, but completely useless against a direct bomb hit?"
           },
           "teacher_notes": {
             "hinge_question": "Why were Anderson shelters extremely effective against flying shrapnel and blast, but completely useless against a direct bomb hit?",
@@ -2480,7 +2513,8 @@
               "audience": "Households with back gardens across Britain.",
               "motive": "To show how ordinary families used garden shelters to protect themselves during the Blitz."
             }
-          }
+          },
+          "source_context": "Over 2.5 million Anderson shelters were built in British gardens. Made of curved corrugated steel panels bolted together and buried six feet deep, they were covered with earth to absorb blast shockwaves from nearby bombs. **Hinge Question:** Why were Anderson shelters extremely effective against flying shrapnel and blast, but completely useless against a direct bomb hit?"
         },
         {
           "id": "ks2_ww2_l4_src_c",
@@ -2501,7 +2535,8 @@
           "provenance_clues": {
             "author": "Photojournalist documenting Londoners sheltering underground.",
             "audience": "The British public and overseas allies.",
-            "motive": "To document how ordinary Londoners turned underground train stations into communal shelters."
+            "motive": "To document how ordinary Londoners turned underground train stations into communal shelters.",
+            "hinge_question": "How did spending every night in crowded Underground stations foster a famous sense of community and the 'Blitz Spirit'?"
           },
           "teacher_notes": {
             "hinge_question": "How did spending every night in crowded Underground stations foster a famous sense of community and the 'Blitz Spirit'?",
@@ -2520,7 +2555,8 @@
               "audience": "The British public and overseas allies.",
               "motive": "To document how ordinary Londoners turned underground train stations into communal shelters."
             }
-          }
+          },
+          "source_context": "Initially, the government banned citizens from using London Underground stations as shelters, fearing disease and train disruption. However, thousands of citizens bought tickets and refused to leave, turning deep tube stations into underground subterranean cities with tea canteens and libraries. **Hinge Question:** How did spending every night in crowded Underground stations foster a famous sense of community and the 'Blitz Spirit'?"
         },
         {
           "id": "ks2_ww2_l4_src_d",
@@ -2541,7 +2577,8 @@
           "provenance_clues": {
             "author": "Official government photographer.",
             "audience": "British civilians.",
-            "motive": "To show the bravery of rescue workers and the spirit of ordinary citizens during the Blitz."
+            "motive": "To show the bravery of rescue workers and the spirit of ordinary citizens during the Blitz.",
+            "hinge_question": "Why did the catastrophic bombing of London fail to break British civilian morale as Adolf Hitler had predicted?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the catastrophic bombing of London fail to break British civilian morale as Adolf Hitler had predicted?",
@@ -2560,7 +2597,8 @@
               "audience": "British civilians.",
               "motive": "To show the bravery of rescue workers and the spirit of ordinary citizens during the Blitz."
             }
-          }
+          },
+          "source_context": "High-explosive bombs destroyed over one million London homes. Despite the devastation, shops posted handwritten signs on boarded-up windows reading: 'More open than usual' and 'Broken glass but unbroken spirit'. **Hinge Question:** Why did the catastrophic bombing of London fail to break British civilian morale as Adolf Hitler had predicted?"
         },
         {
           "id": "ks2_ww2_l4_src_e",
@@ -2581,7 +2619,8 @@
           "provenance_clues": {
             "author": "Photojournalist documenting civilian volunteer work.",
             "audience": "National newspaper readers.",
-            "motive": "To celebrate the practical kindness and help provided by women volunteers after air raids."
+            "motive": "To celebrate the practical kindness and help provided by women volunteers after air raids.",
+            "hinge_question": "Why was a simple cup of hot tea from a mobile canteen considered vital for sustaining British civilian morale after an air raid?"
           },
           "teacher_notes": {
             "hinge_question": "Why was a simple cup of hot tea from a mobile canteen considered vital for sustaining British civilian morale after an air raid?",
@@ -2600,7 +2639,8 @@
               "audience": "National newspaper readers.",
               "motive": "To celebrate the practical kindness and help provided by women volunteers after air raids."
             }
-          }
+          },
+          "source_context": "The Women's Voluntary Services (WVS) grew to over one million members. During the Blitz, their mobile tea vans arrived at bomb sites within minutes of the 'All Clear' siren, providing hot stew, tea, blankets, and dry clothes to families who had lost everything. **Hinge Question:** Why was a simple cup of hot tea from a mobile canteen considered vital for sustaining British civilian morale after an air raid?"
         }
       ]
     },
@@ -3067,7 +3107,8 @@
           "provenance_clues": {
             "author": "Admiralty naval strategists.",
             "audience": "Cabinet war committee.",
-            "motive": "To show how vital merchant ships were for bringing supplies to Britain during the war."
+            "motive": "To show how vital merchant ships were for bringing supplies to Britain during the war.",
+            "hinge_question": "Why did Winston Churchill later write that the Battle of the Atlantic was the only battle that genuinely terrified him during the entire war?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Winston Churchill later write that the Battle of the Atlantic was the only battle that genuinely terrified him during the entire war?",
@@ -3086,7 +3127,8 @@
               "audience": "Cabinet war committee.",
               "motive": "To show how vital merchant ships were for bringing supplies to Britain during the war."
             }
-          }
+          },
+          "source_context": "Britain imported over 70% of its food and raw materials by sea before the war. German U-boat submarine wolfpacks attacked Allied merchant convoys in the Atlantic, sinking thousands of ships and threatening Britain with starvation. **Hinge Question:** Why did Winston Churchill later write that the Battle of the Atlantic was the only battle that genuinely terrified him during the entire war?"
         },
         {
           "id": "ks2_ww2_l5_src_b",
@@ -3107,7 +3149,8 @@
           "provenance_clues": {
             "author": "Ministry of Food administrative designers.",
             "audience": "All British households and shopkeepers.",
-            "motive": "To ensure scarce food was shared out equally so no family was left without meals."
+            "motive": "To ensure scarce food was shared out equally so no family was left without meals.",
+            "hinge_question": "Why did the health of children from poor working-class families actually improve during wartime rationing compared to the 1930s?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the health of children from poor working-class families actually improve during wartime rationing compared to the 1930s?",
@@ -3126,7 +3169,8 @@
               "audience": "All British households and shopkeepers.",
               "motive": "To ensure scarce food was shared out equally so no family was left without meals."
             }
-          }
+          },
+          "source_context": "Rationing was introduced in January 1940 under Lord Woolton, Minister of Food. Each adult and child had a ration book tied to a local grocer and butcher. Children received blue ration books guaranteeing extra milk, orange juice, and cod liver oil. **Hinge Question:** Why did the health of children from poor working-class families actually improve during wartime rationing compared to the 1930s?"
         },
         {
           "id": "ks2_ww2_l5_src_c",
@@ -3147,7 +3191,8 @@
           "provenance_clues": {
             "author": "Government graphic artists under the Ministry of Agriculture.",
             "audience": "Homeowners, families, schools, and local councils.",
-            "motive": "To persuade every family to turn their garden into a vegetable patch to feed the country."
+            "motive": "To persuade every family to turn their garden into a vegetable patch to feed the country.",
+            "hinge_question": "Why was home vegetable gardening considered just as important to the war effort as building tanks and Spitfires?"
           },
           "teacher_notes": {
             "hinge_question": "Why was home vegetable gardening considered just as important to the war effort as building tanks and Spitfires?",
@@ -3166,7 +3211,8 @@
               "audience": "Homeowners, families, schools, and local councils.",
               "motive": "To persuade every family to turn their garden into a vegetable patch to feed the country."
             }
-          }
+          },
+          "source_context": "To replace lost food imports, the government encouraged everyone to turn gardens, parks, sports pitches, and school grounds into vegetable allotments. Over 1.4 million allotments produced millions of tons of potatoes, cabbages, and carrots. **Hinge Question:** Why was home vegetable gardening considered just as important to the war effort as building tanks and Spitfires?"
         },
         {
           "id": "ks2_ww2_l5_src_d",
@@ -3187,7 +3233,8 @@
           "provenance_clues": {
             "author": "Government nutritional scientists and domestic economists.",
             "audience": "British housewives and cooks managing weekly rations.",
-            "motive": "To teach families how to make healthy, tasty meals from the food that was available."
+            "motive": "To teach families how to make healthy, tasty meals from the food that was available.",
+            "hinge_question": "How did creative home cooks and government scientists work together to prevent vitamin deficiencies during five years of food rationing?"
           },
           "teacher_notes": {
             "hinge_question": "How did creative home cooks and government scientists work together to prevent vitamin deficiencies during five years of food rationing?",
@@ -3206,7 +3253,8 @@
               "audience": "British housewives and cooks managing weekly rations.",
               "motive": "To teach families how to make healthy, tasty meals from the food that was available."
             }
-          }
+          },
+          "source_context": "With scarce meat and no imported fruits like bananas or lemons, the Ministry of Food invented recipes like 'Woolton Pie' (a pie filled with potatoes, parsnips, and carrots) and 'mock cream'. Radio broadcasts by the 'Kitchen Front' gave morning tips on making food last. **Hinge Question:** How did creative home cooks and government scientists work together to prevent vitamin deficiencies during five years of food rationing?"
         },
         {
           "id": "ks2_ww2_l5_src_e",
@@ -3227,7 +3275,8 @@
           "provenance_clues": {
             "author": "Ministry of Food publicity artists.",
             "audience": "Children, parents, and schoolteachers.",
-            "motive": "To use a cheerful cartoon character to convince children and parents to eat plenty of potatoes."
+            "motive": "To use a cheerful cartoon character to convince children and parents to eat plenty of potatoes.",
+            "hinge_question": "Why did the government use cheerful cartoon characters to convey serious wartime economic messages to families and children?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the government use cheerful cartoon characters to convey serious wartime economic messages to families and children?",
@@ -3246,7 +3295,8 @@
               "audience": "Children, parents, and schoolteachers.",
               "motive": "To use a cheerful cartoon character to convince children and parents to eat plenty of potatoes."
             }
-          }
+          },
+          "source_context": "The Ministry of Food created cartoon mascots 'Potato Pete' and 'Doctor Carrot' with catchy songs, recipe books, and comic strips to persuade children to eat unrationed vegetables instead of bread and sweets. **Hinge Question:** Why did the government use cheerful cartoon characters to convey serious wartime economic messages to families and children?"
         }
       ]
     },
@@ -3713,7 +3763,8 @@
           "provenance_clues": {
             "author": "Official government photographer promoting the Land Army.",
             "audience": "Young women considering war service and the British public.",
-            "motive": "To show how hard women worked on farms to grow the country's food."
+            "motive": "To show how hard women worked on farms to grow the country's food.",
+            "hinge_question": "Why did many farmers who were initially sceptical of female workers come to rely completely on the Women's Land Army?"
           },
           "teacher_notes": {
             "hinge_question": "Why did many farmers who were initially sceptical of female workers come to rely completely on the Women's Land Army?",
@@ -3732,7 +3783,8 @@
               "audience": "Young women considering war service and the British public.",
               "motive": "To show how hard women worked on farms to grow the country's food."
             }
-          }
+          },
+          "source_context": "Over 80,000 women joined the Women's Land Army (WLA). Leaving city jobs and offices, 'Land Girls' moved into farm cottages, doing tough physical work: driving tractors, plowing fields, milking cows, and felling timber for the war effort. **Hinge Question:** Why did many farmers who were initially sceptical of female workers come to rely completely on the Women's Land Army?"
         },
         {
           "id": "ks2_ww2_l6_src_b",
@@ -3753,7 +3805,8 @@
           "provenance_clues": {
             "author": "Ministry of Agriculture graphic artists.",
             "audience": "Young unmarried British women.",
-            "motive": "To recruit young women into the Women's Land Army by showing it as an enjoyable, patriotic job."
+            "motive": "To recruit young women into the Women's Land Army by showing it as an enjoyable, patriotic job.",
+            "hinge_question": "How did wartime conscription of women permanently change attitudes towards women's capabilities in the British workplace?"
           },
           "teacher_notes": {
             "hinge_question": "How did wartime conscription of women permanently change attitudes towards women's capabilities in the British workplace?",
@@ -3772,7 +3825,8 @@
               "audience": "Young unmarried British women.",
               "motive": "To recruit young women into the Women's Land Army by showing it as an enjoyable, patriotic job."
             }
-          }
+          },
+          "source_context": "In December 1941, Britain became the first country in the world to conscript women. Unmarried women aged twenty to thirty were required to choose between joining the armed auxiliary services, working in munitions factories, or serving on the land. **Hinge Question:** How did wartime conscription of women permanently change attitudes towards women's capabilities in the British workplace?"
         },
         {
           "id": "ks2_ww2_l6_src_c",
@@ -3793,7 +3847,8 @@
           "provenance_clues": {
             "author": "Air Ministry photojournalist.",
             "audience": "National press and allied observers.",
-            "motive": "To document the skill and courage of female pilots delivering aircraft to frontline RAF bases."
+            "motive": "To document the skill and courage of female pilots delivering aircraft to frontline RAF bases.",
+            "hinge_question": "Why did female ATA pilots receive equal pay with male pilots in 1943, decades before equal pay became law across Britain?"
           },
           "teacher_notes": {
             "hinge_question": "Why did female ATA pilots receive equal pay with male pilots in 1943, decades before equal pay became law across Britain?",
@@ -3812,7 +3867,8 @@
               "audience": "National press and allied observers.",
               "motive": "To document the skill and courage of female pilots delivering aircraft to frontline RAF bases."
             }
-          }
+          },
+          "source_context": "The 168 female pilots of the Air Transport Auxiliary (ATA) flew unarmed combat aircraft—including Spitfires, Hurricanes, and four-engine Lancaster bombers—from factories directly to frontline RAF squadrons in all weather, navigating without radios or instruments. **Hinge Question:** Why did female ATA pilots receive equal pay with male pilots in 1943, decades before equal pay became law across Britain?"
         },
         {
           "id": "ks2_ww2_l6_src_d",
@@ -3833,7 +3889,8 @@
           "provenance_clues": {
             "author": "Photojournalist for Picture Post magazine.",
             "audience": "Millions of British magazine readers.",
-            "motive": "To celebrate the courage of women pilots and inspire others during the war."
+            "motive": "To celebrate the courage of women pilots and inspire others during the war.",
+            "hinge_question": "How did photographs of glamorous yet highly skilled women pilots challenge pre-war stereotypes about women's roles in society?"
           },
           "teacher_notes": {
             "hinge_question": "How did photographs of glamorous yet highly skilled women pilots challenge pre-war stereotypes about women's roles in society?",
@@ -3852,7 +3909,8 @@
               "audience": "Millions of British magazine readers.",
               "motive": "To celebrate the courage of women pilots and inspire others during the war."
             }
-          }
+          },
+          "source_context": "Maureen Dunlop volunteered for the ATA from Argentina, flying eighty different types of military aircraft across Britain during the war. Her photograph on the cover of *Picture Post* magazine in 1944 became an international sensation, inspiring thousands of young women. **Hinge Question:** How did photographs of glamorous yet highly skilled women pilots challenge pre-war stereotypes about women's roles in society?"
         },
         {
           "id": "ks2_ww2_l6_src_e",
@@ -3873,7 +3931,8 @@
           "provenance_clues": {
             "author": "Royal court and War Office photographer.",
             "audience": "The British public and Commonwealth nations.",
-            "motive": "To show that the Royal Family shared the same duties and hard work as ordinary British families."
+            "motive": "To show that the Royal Family shared the same duties and hard work as ordinary British families.",
+            "hinge_question": "Why was it vital for royal morale that the future Queen of England undergo identical military mechanical training alongside ordinary working girls?"
           },
           "teacher_notes": {
             "hinge_question": "Why was it vital for royal morale that the future Queen of England undergo identical military mechanical training alongside ordinary working girls?",
@@ -3892,7 +3951,8 @@
               "audience": "The British public and Commonwealth nations.",
               "motive": "To show that the Royal Family shared the same duties and hard work as ordinary British families."
             }
-          }
+          },
+          "source_context": "In early 1945, eighteen-year-old Princess Elizabeth insisted on joining the Auxiliary Territorial Service (ATS) as Subaltern Windsor. She trained as a military mechanic and heavy ambulance truck driver, learning to take engines apart and change heavy tyres. **Hinge Question:** Why was it vital for royal morale that the future Queen of England undergo identical military mechanical training alongside ordinary working girls?"
         }
       ]
     },
@@ -4359,7 +4419,8 @@
           "provenance_clues": {
             "author": "Family member taking holiday snaps.",
             "audience": "Private family photo album.",
-            "motive": "To remember the happy family childhoods that children enjoyed before the war began."
+            "motive": "To remember the happy family childhoods that children enjoyed before the war began.",
+            "hinge_question": "Why is it vital to learn about the joyful, normal lives of Jewish families before the war rather than seeing them only as victims of the Holocaust?"
           },
           "teacher_notes": {
             "hinge_question": "Why is it vital to learn about the joyful, normal lives of Jewish families before the war rather than seeing them only as victims of the Holocaust?",
@@ -4378,7 +4439,8 @@
               "audience": "Private family photo album.",
               "motive": "To remember the happy family childhoods that children enjoyed before the war began."
             }
-          }
+          },
+          "source_context": "Before the 1930s, Jewish families lived fully integrated lives across Germany and Austria as proud citizens, doctors, teachers, shopkeepers, and soldiers who had fought for Germany in the First World War. Children attended regular schools and enjoyed sports, music, and family holidays. **Hinge Question:** Why is it vital to learn about the joyful, normal lives of Jewish families before the war rather than seeing them only as victims of the Holocaust?"
         },
         {
           "id": "ks2_ww2_l7_src_b",
@@ -4399,7 +4461,8 @@
           "provenance_clues": {
             "author": "Professional neighbourhood photographer.",
             "audience": "Proud parents celebrating their children starting school.",
-            "motive": "To capture a proud, happy moment on the first day of school for young German children."
+            "motive": "To capture a proud, happy moment on the first day of school for young German children.",
+            "hinge_question": "How does this photograph show that Jewish children were completely part of German cultural tradition before Nazi laws segregated them?"
           },
           "teacher_notes": {
             "hinge_question": "How does this photograph show that Jewish children were completely part of German cultural tradition before Nazi laws segregated them?",
@@ -4418,7 +4481,8 @@
               "audience": "Proud parents celebrating their children starting school.",
               "motive": "To capture a proud, happy moment on the first day of school for young German children."
             }
-          }
+          },
+          "source_context": "In German tradition, children starting primary school are given a 'Schultüte' (a giant colourful cone filled with sweets and pencils) by their parents to celebrate their first day. These Jewish children shared the exact same cultural customs, language, and school pride as their non-Jewish neighbours. **Hinge Question:** How does this photograph show that Jewish children were completely part of German cultural tradition before Nazi laws segregated them?"
         },
         {
           "id": "ks2_ww2_l7_src_c",
@@ -4439,7 +4503,8 @@
           "provenance_clues": {
             "author": "Nazi Ministry of Education.",
             "audience": "Headteachers, school staff, and the German public.",
-            "motive": "To enforce official Nazi laws that cruelly isolated Jewish children from normal school life."
+            "motive": "To enforce official Nazi laws that cruelly isolated Jewish children from normal school life.",
+            "hinge_question": "How did being suddenly banned from school and separated from their friends affect young children emotionally?"
           },
           "teacher_notes": {
             "hinge_question": "How did being suddenly banned from school and separated from their friends affect young children emotionally?",
@@ -4458,7 +4523,8 @@
               "audience": "Headteachers, school staff, and the German public.",
               "motive": "To enforce official Nazi laws that cruelly isolated Jewish children from normal school life."
             }
-          }
+          },
+          "source_context": "On 15 November 1938, one week after the Kristallnacht pogrom, the Nazi government banned all Jewish children from attending state schools immediately. Children arrived at school to be turned away at the school gates by their former friends and teachers. **Hinge Question:** How did being suddenly banned from school and separated from their friends affect young children emotionally?"
         },
         {
           "id": "ks2_ww2_l7_src_d",
@@ -4479,7 +4545,8 @@
           "provenance_clues": {
             "author": "Holocaust educational historians.",
             "audience": "Students investigating the rise of state-sponsored discrimination.",
-            "motive": "To record the long list of unfair laws used to take away the rights of Jewish people."
+            "motive": "To record the long list of unfair laws used to take away the rights of Jewish people.",
+            "hinge_question": "Why did the Nazi regime strip away rights gradually in small steps rather than all at once in 1933?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the Nazi regime strip away rights gradually in small steps rather than all at once in 1933?",
@@ -4498,7 +4565,8 @@
               "audience": "Students investigating the rise of state-sponsored discrimination.",
               "motive": "To record the long list of unfair laws used to take away the rights of Jewish people."
             }
-          }
+          },
+          "source_context": "Persecution did not happen overnight; it was introduced gradually through hundreds of specific laws: first limiting Jewish pupil numbers to 1.5% in 1933, then banning them from school swimming pools and playgrounds, before the total expulsion in 1938. **Hinge Question:** Why did the Nazi regime strip away rights gradually in small steps rather than all at once in 1933?"
         },
         {
           "id": "ks2_ww2_l7_src_e",
@@ -4519,7 +4587,8 @@
           "provenance_clues": {
             "author": "Holocaust educational researchers.",
             "audience": "Key Stage 2 students.",
-            "motive": "To show how discriminatory laws invaded every single part of daily life and childhood."
+            "motive": "To show how discriminatory laws invaded every single part of daily life and childhood.",
+            "hinge_question": "Why did the Nazi regime specifically target children's pets and bicycles in their anti-Jewish legislation?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the Nazi regime specifically target children's pets and bicycles in their anti-Jewish legislation?",
@@ -4538,7 +4607,8 @@
               "audience": "Key Stage 2 students.",
               "motive": "To show how discriminatory laws invaded every single part of daily life and childhood."
             }
-          }
+          },
+          "source_context": "Nazi laws systematically targeted everyday joys: Jewish families were forbidden from owning radios, keeping pet cats or dogs, riding bicycles, or walking in public parks marked with yellow 'Jews Forbidden' benches. **Hinge Question:** Why did the Nazi regime specifically target children's pets and bicycles in their anti-Jewish legislation?"
         }
       ]
     },
@@ -5005,7 +5075,8 @@
           "provenance_clues": {
             "author": "German military cryptographic engineers.",
             "audience": "German army, navy, and air force signal operators.",
-            "motive": "To create secret scrambled codes that enemy forces could never read."
+            "motive": "To create secret scrambled codes that enemy forces could never read.",
+            "hinge_question": "Why were German military commanders so utterly convinced that no human or machine could ever crack the Enigma code?"
           },
           "teacher_notes": {
             "hinge_question": "Why were German military commanders so utterly convinced that no human or machine could ever crack the Enigma code?",
@@ -5024,7 +5095,8 @@
               "audience": "German army, navy, and air force signal operators.",
               "motive": "To create secret scrambled codes that enemy forces could never read."
             }
-          }
+          },
+          "source_context": "The Enigma machine scrambled secret military radio messages into random letters using three or four rotors and a plugboard, producing 158 million million million (158,962,555,217,826,360,000) possible daily settings. The German military believed it was 100% unbreakable. **Hinge Question:** Why were German military commanders so utterly convinced that no human or machine could ever crack the Enigma code?"
         },
         {
           "id": "ks2_ww2_l8_src_b",
@@ -5045,7 +5117,8 @@
           "provenance_clues": {
             "author": "Mathematicians Alan Turing and Gordon Welchman.",
             "audience": "Secret codebreakers operating in Hut 11.",
-            "motive": "To speed up codebreaking so secret German messages could be read before it was too late."
+            "motive": "To speed up codebreaking so secret German messages could be read before it was too late.",
+            "hinge_question": "How did the invention of the Bombe mark the birth of modern computer science?"
           },
           "teacher_notes": {
             "hinge_question": "How did the invention of the Bombe mark the birth of modern computer science?",
@@ -5064,7 +5137,8 @@
               "audience": "Secret codebreakers operating in Hut 11.",
               "motive": "To speed up codebreaking so secret German messages could be read before it was too late."
             }
-          }
+          },
+          "source_context": "Because no human brain could check millions of possible settings before German operators changed keys at midnight, Alan Turing and Gordon Welchman designed the 'Bombe'. These two-ton electromechanical machines spun drums to test thousands of rotor combinations every second, searching for contradictions. **Hinge Question:** How did the invention of the Bombe mark the birth of modern computer science?"
         },
         {
           "id": "ks2_ww2_l8_src_c",
@@ -5085,7 +5159,8 @@
           "provenance_clues": {
             "author": "Secret official photographer at Bletchley Park.",
             "audience": "Government intelligence records kept top secret until the 1970s.",
-            "motive": "To document the essential work done by women operating machines in the secret codebreaking huts."
+            "motive": "To document the essential work done by women operating machines in the secret codebreaking huts.",
+            "hinge_question": "Why did thousands of young women at Bletchley Park keep their wartime work completely secret from their own parents and spouses for over thirty years?"
           },
           "teacher_notes": {
             "hinge_question": "Why did thousands of young women at Bletchley Park keep their wartime work completely secret from their own parents and spouses for over thirty years?",
@@ -5104,7 +5179,8 @@
               "audience": "Government intelligence records kept top secret until the 1970s.",
               "motive": "To document the essential work done by women operating machines in the secret codebreaking huts."
             }
-          }
+          },
+          "source_context": "Over 75% of the 10,000 workers at Bletchley Park were women. Thousands of young 'Wrens' and civilian clerks plugged cables, operated heavy Bombe machinery in noisy, hot rooms, and catalogued decoded messages, sworn to complete secrecy by the Official Secrets Act. **Hinge Question:** Why did thousands of young women at Bletchley Park keep their wartime work completely secret from their own parents and spouses for over thirty years?"
         },
         {
           "id": "ks2_ww2_l8_src_d",
@@ -5125,7 +5201,8 @@
           "provenance_clues": {
             "author": "Post Office telephone engineer Tommy Flowers and Bletchley mathematicians.",
             "audience": "Allied high command reading Hitler's highest-level messages.",
-            "motive": "To build an electronic machine fast enough to break the most complex German high-command codes."
+            "motive": "To build an electronic machine fast enough to break the most complex German high-command codes.",
+            "hinge_question": "How did Colossus provide vital intelligence that ensured the success of the D-Day landings in June 1944?"
           },
           "teacher_notes": {
             "hinge_question": "How did Colossus provide vital intelligence that ensured the success of the D-Day landings in June 1944?",
@@ -5144,7 +5221,8 @@
               "audience": "Allied high command reading Hitler's highest-level messages.",
               "motive": "To build an electronic machine fast enough to break the most complex German high-command codes."
             }
-          }
+          },
+          "source_context": "To read the even more complex Lorenz cipher used by Adolf Hitler and his supreme commanders, engineer Tommy Flowers built Colossus in 1944. Using 1,500 vacuum valves to process paper tape at 5,000 characters per second, Colossus was the world's very first electronic digital computer. **Hinge Question:** How did Colossus provide vital intelligence that ensured the success of the D-Day landings in June 1944?"
         },
         {
           "id": "ks2_ww2_l8_src_e",
@@ -5165,7 +5243,8 @@
           "provenance_clues": {
             "author": "German military equipment engineers.",
             "audience": "Military radio operators.",
-            "motive": "To show the intricate electrical design that made the Enigma code so difficult to unscramble."
+            "motive": "To show the intricate electrical design that made the Enigma code so difficult to unscramble.",
+            "hinge_question": "Why did the rule that 'no letter could ever scramble to itself' provide Alan Turing with the vital clue needed to crack the code?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the rule that 'no letter could ever scramble to itself' provide Alan Turing with the vital clue needed to crack the code?",
@@ -5184,7 +5263,8 @@
               "audience": "Military radio operators.",
               "motive": "To show the intricate electrical design that made the Enigma code so difficult to unscramble."
             }
-          }
+          },
+          "source_context": "Each brass rotor inside the Enigma had 26 input pins and 26 spring-loaded output contacts connected by scrambled internal wiring. Every time a letter was typed, the right-hand rotor stepped forward one notch like an odometer, ensuring that the letter 'A' would never scramble to the same letter twice in a row. **Hinge Question:** Why did the rule that 'no letter could ever scramble to itself' provide Alan Turing with the vital clue needed to crack the code?"
         }
       ]
     },
@@ -5651,7 +5731,8 @@
           "provenance_clues": {
             "author": "Colleague working with Winton in Prague.",
             "audience": "Family and fellow rescue volunteers.",
-            "motive": "To record Nicholas Winton caring for refugee children on the rescue mission in Prague."
+            "motive": "To record Nicholas Winton caring for refugee children on the rescue mission in Prague.",
+            "hinge_question": "What motivated a young 29-year-old stockbroker to risk his job and reputation to save children he had never met?"
           },
           "teacher_notes": {
             "hinge_question": "What motivated a young 29-year-old stockbroker to risk his job and reputation to save children he had never met?",
@@ -5670,7 +5751,8 @@
               "audience": "Family and fellow rescue volunteers.",
               "motive": "To record Nicholas Winton caring for refugee children on the rescue mission in Prague."
             }
-          }
+          },
+          "source_context": "In December 1938, Nicholas Winton visited refugee camps in the Sudetenland where families lived in freezing conditions after fleeing the Nazis. Realising children were in mortal danger, Winton set up a desk in a Prague hotel dining room, taking down names of children whose parents were begging him to save them. **Hinge Question:** What motivated a young 29-year-old stockbroker to risk his job and reputation to save children he had never met?"
         },
         {
           "id": "ks2_ww2_l9_src_b",
@@ -5691,7 +5773,8 @@
           "provenance_clues": {
             "author": "Prague rescue volunteer.",
             "audience": "Preserved in family papers.",
-            "motive": "To celebrate Trevor Chadwick's courage in rescuing children from occupied Czechoslovakia."
+            "motive": "To celebrate Trevor Chadwick's courage in rescuing children from occupied Czechoslovakia.",
+            "hinge_question": "Why was Trevor Chadwick's dangerous work on the ground in Prague just as essential to the rescue as Winton's work in London?"
           },
           "teacher_notes": {
             "hinge_question": "Why was Trevor Chadwick's dangerous work on the ground in Prague just as essential to the rescue as Winton's work in London?",
@@ -5710,7 +5793,8 @@
               "audience": "Preserved in family papers.",
               "motive": "To celebrate Trevor Chadwick's courage in rescuing children from occupied Czechoslovakia."
             }
-          }
+          },
+          "source_context": "While Winton organized foster homes and paperwork in London, schoolmaster Trevor Chadwick stayed on the ground in Prague, facing constant interrogation and threats from the Gestapo. Chadwick personally accompanied frightened children onto trains and made sure German guards let them pass. **Hinge Question:** Why was Trevor Chadwick's dangerous work on the ground in Prague just as essential to the rescue as Winton's work in London?"
         },
         {
           "id": "ks2_ww2_l9_src_c",
@@ -5731,7 +5815,8 @@
           "provenance_clues": {
             "author": "Nicholas Winton compiling sponsorship files.",
             "audience": "Potential British foster parents.",
-            "motive": "To keep an exact record of every child so foster homes and visas could be arranged."
+            "motive": "To keep an exact record of every child so foster homes and visas could be arranged.",
+            "hinge_question": "Why did Nicholas Winton never brag about saving 669 children, keeping his scrapbooks locked in an attic for fifty years?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Nicholas Winton never brag about saving 669 children, keeping his scrapbooks locked in an attic for fifty years?",
@@ -5750,7 +5835,8 @@
               "audience": "Potential British foster parents.",
               "motive": "To keep an exact record of every child so foster homes and visas could be arranged."
             }
-          }
+          },
+          "source_context": "To find foster families in Britain, Winton kept large scrapbooks filled with photographs and details of the children. He showed these books to churches, synagogues, and families who agreed to take children into their homes. For fifty years, Winton never told anyone about the books until his wife found them in the attic in 1988. **Hinge Question:** Why did Nicholas Winton never brag about saving 669 children, keeping his scrapbooks locked in an attic for fifty years?"
         },
         {
           "id": "ks2_ww2_l9_src_d",
@@ -5771,7 +5857,8 @@
           "provenance_clues": {
             "author": "Nicholas Winton in London.",
             "audience": "Home Office immigration clerks and foster parents.",
-            "motive": "To match refugee children with loving British families ready to welcome them into their homes."
+            "motive": "To match refugee children with loving British families ready to welcome them into their homes.",
+            "hinge_question": "How did ordinary British families who offered their spare bedrooms to refugee children act as unsung heroes of the Kindertransport?"
           },
           "teacher_notes": {
             "hinge_question": "How did ordinary British families who offered their spare bedrooms to refugee children act as unsung heroes of the Kindertransport?",
@@ -5790,7 +5877,8 @@
               "audience": "Home Office immigration clerks and foster parents.",
               "motive": "To match refugee children with loving British families ready to welcome them into their homes."
             }
-          }
+          },
+          "source_context": "Working in the evenings after his banking job, Winton typed and indexed hundreds of filing cards tracking each child's sponsors, medical clearance, and arrival date. Every card represented a young human life saved from the death camps. **Hinge Question:** How did ordinary British families who offered their spare bedrooms to refugee children act as unsung heroes of the Kindertransport?"
         },
         {
           "id": "ks2_ww2_l9_src_e",
@@ -5811,7 +5899,8 @@
           "provenance_clues": {
             "author": "Prague rescue volunteers and railway marshals.",
             "audience": "Dutch border control and British port authorities.",
-            "motive": "To ensure every child on the train was counted and safely brought across the border to Britain."
+            "motive": "To ensure every child on the train was counted and safely brought across the border to Britain.",
+            "hinge_question": "Why did the tragedy of the ninth cancelled train haunt Nicholas Winton for the rest of his long life?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the tragedy of the ninth cancelled train haunt Nicholas Winton for the rest of his long life?",
@@ -5830,7 +5919,8 @@
               "audience": "Dutch border control and British port authorities.",
               "motive": "To ensure every child on the train was counted and safely brought across the border to Britain."
             }
-          }
+          },
+          "source_context": "Winton organized eight successful train transports carrying 669 children to safety. Tragically, the ninth and largest train with 250 children was scheduled to leave on 1 September 1939—the day Hitler invaded Poland. German authorities closed the border, and most of those 250 children perished in the Holocaust. **Hinge Question:** Why did the tragedy of the ninth cancelled train haunt Nicholas Winton for the rest of his long life?"
         }
       ]
     },
@@ -6297,7 +6387,8 @@
           "provenance_clues": {
             "author": "Government photojournalist documenting national VE Day joy.",
             "audience": "National press and international allies.",
-            "motive": "To capture the joyful spirit of neighbourhood street parties on VE Day."
+            "motive": "To capture the joyful spirit of neighbourhood street parties on VE Day.",
+            "hinge_question": "Why were VE Day street party celebrations both joyous and deeply bittersweet for families who had lost loved ones?"
           },
           "teacher_notes": {
             "hinge_question": "Why were VE Day street party celebrations both joyous and deeply bittersweet for families who had lost loved ones?",
@@ -6316,7 +6407,8 @@
               "audience": "National press and international allies.",
               "motive": "To capture the joyful spirit of neighbourhood street parties on VE Day."
             }
-          }
+          },
+          "source_context": "On Tuesday 8 May 1945, Victory in Europe (VE Day) was declared following Nazi Germany's unconditional surrender. Millions celebrated in streets draped with Union Jacks and bunting, dancing, singing, and pooling ration coupons to bake cakes for children. **Hinge Question:** Why were VE Day street party celebrations both joyous and deeply bittersweet for families who had lost loved ones?"
         },
         {
           "id": "ks2_ww2_l10_src_b",
@@ -6337,7 +6429,8 @@
           "provenance_clues": {
             "author": "Press photojournalist on VE Day.",
             "audience": "Newspaper readers.",
-            "motive": "To show the cheerful spirit and hope of children looking toward the future amidst bomb rubble."
+            "motive": "To show the cheerful spirit and hope of children looking toward the future amidst bomb rubble.",
+            "hinge_question": "How does the contrast between cheerful party flags and shattered brick rubble symbolize Britain's wartime experience?"
           },
           "teacher_notes": {
             "hinge_question": "How does the contrast between cheerful party flags and shattered brick rubble symbolize Britain's wartime experience?",
@@ -6356,7 +6449,8 @@
               "audience": "Newspaper readers.",
               "motive": "To show the cheerful spirit and hope of children looking toward the future amidst bomb rubble."
             }
-          }
+          },
+          "source_context": "Even amidst the joy of VE Day, the landscape of Britain was scarred by ruins, and thousands of fathers, brothers, and sons were still fighting in the Far East or would never return. Children celebrated peace surrounded by the physical reminders of the Blitz. **Hinge Question:** How does the contrast between cheerful party flags and shattered brick rubble symbolize Britain's wartime experience?"
         },
         {
           "id": "ks2_ww2_l10_src_c",
@@ -6377,7 +6471,8 @@
           "provenance_clues": {
             "author": "National monument photographer.",
             "audience": "Citizens of Britain and the Commonwealth.",
-            "motive": "To provide a national place of honour and respect for everyone who gave their life in war."
+            "motive": "To provide a national place of honour and respect for everyone who gave their life in war.",
+            "hinge_question": "Why was it vital to carve the memory of civilian victims of the Blitz into national war memorials alongside frontline soldiers?"
           },
           "teacher_notes": {
             "hinge_question": "Why was it vital to carve the memory of civilian victims of the Blitz into national war memorials alongside frontline soldiers?",
@@ -6396,7 +6491,8 @@
               "audience": "Citizens of Britain and the Commonwealth.",
               "motive": "To provide a national place of honour and respect for everyone who gave their life in war."
             }
-          }
+          },
+          "source_context": "Designed by Sir Edwin Lutyens after the First World War, the Cenotaph ('Empty Tomb') in Whitehall became the sacred focal point for national remembrance. In November 1945, dates '1939–1945' were carved into the stone alongside '1914–1918' to honour the 450,000 British military and civilian casualties of World War II. **Hinge Question:** Why was it vital to carve the memory of civilian victims of the Blitz into national war memorials alongside frontline soldiers?"
         },
         {
           "id": "ks2_ww2_l10_src_d",
@@ -6417,7 +6513,8 @@
           "provenance_clues": {
             "author": "Official photographer at 10 Downing Street.",
             "audience": "The British nation and worldwide listeners.",
-            "motive": "To broadcast the official news of victory in Europe to the British people and the world."
+            "motive": "To broadcast the official news of victory in Europe to the British people and the world.",
+            "hinge_question": "Why did Churchill warn the British people in his VE Day speech that the war was not yet finished, pointing to the ongoing war against Japan?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Churchill warn the British people in his VE Day speech that the war was not yet finished, pointing to the ongoing war against Japan?",
@@ -6436,7 +6533,8 @@
               "audience": "The British nation and worldwide listeners.",
               "motive": "To broadcast the official news of victory in Europe to the British people and the world."
             }
-          }
+          },
+          "source_context": "At 3:00 pm on 8 May 1945, Churchill announced over the BBC wireless: 'The German surrender is complete. Advance Britannia! Long live the cause of freedom!' Crowds cheered through tears across the country. **Hinge Question:** Why did Churchill warn the British people in his VE Day speech that the war was not yet finished, pointing to the ongoing war against Japan?"
         },
         {
           "id": "ks2_ww2_l10_src_e",
@@ -6457,7 +6555,8 @@
           "provenance_clues": {
             "author": "Official government photographer.",
             "audience": "British public and international press.",
-            "motive": "To document the enormous crowds celebrating peace and freedom in London."
+            "motive": "To document the enormous crowds celebrating peace and freedom in London.",
+            "hinge_question": "How did the lifting of the blackout on VE Day symbolize the return of light, hope, and safety to Britain?"
           },
           "teacher_notes": {
             "hinge_question": "How did the lifting of the blackout on VE Day symbolize the return of light, hope, and safety to Britain?",
@@ -6476,7 +6575,8 @@
               "audience": "British public and international press.",
               "motive": "To document the enormous crowds celebrating peace and freedom in London."
             }
-          }
+          },
+          "source_context": "Over 50,000 people packed into Trafalgar Square on VE Day, climbing lampposts, waving flags, and singing into the night as searchlights illuminated the night sky for the first time in six years without air raid sirens. **Hinge Question:** How did the lifting of the blackout on VE Day symbolize the return of light, hope, and safety to Britain?"
         }
       ]
     },
@@ -6993,7 +7093,8 @@
           "provenance_clues": {
             "author": "Central British Fund relief worker.",
             "audience": "Jewish relief charities in London and Cumbria.",
-            "motive": "To document the emergency flight bringing child Holocaust survivors to safety in Britain."
+            "motive": "To document the emergency flight bringing child Holocaust survivors to safety in Britain.",
+            "hinge_question": "Why was it essential to bring traumatised child survivors to a peaceful rural sanctuary like Lake Windermere rather than a crowded city hospital?"
           },
           "teacher_notes": {
             "hinge_question": "Why was it essential to bring traumatised child survivors to a peaceful rural sanctuary like Lake Windermere rather than a crowded city hospital?",
@@ -7012,7 +7113,8 @@
               "audience": "Jewish relief charities in London and Cumbria.",
               "motive": "To document the emergency flight bringing child Holocaust survivors to safety in Britain."
             }
-          }
+          },
+          "source_context": "In summer 1945, philanthropist Leonard Montefiore persuaded the British Home Office to admit 1,000 orphaned child Holocaust survivors. In August 1945, the first group of 300 children—many having survived Auschwitz, Theresienstadt, and Buchenwald—were airlifted by the RAF to Cumbria. **Hinge Question:** Why was it essential to bring traumatised child survivors to a peaceful rural sanctuary like Lake Windermere rather than a crowded city hospital?"
         },
         {
           "id": "ks2_ww2_l11_src_b",
@@ -7033,7 +7135,8 @@
           "provenance_clues": {
             "author": "Calgarth rehabilitation team staff member.",
             "audience": "Relief supporters and child welfare committees.",
-            "motive": "To show the gentle learning environment created to help the rescued children recover."
+            "motive": "To show the gentle learning environment created to help the rescued children recover.",
+            "hinge_question": "How did friendship and solidarity among the 'Windermere Children' help them heal from unimaginable trauma?"
           },
           "teacher_notes": {
             "hinge_question": "How did friendship and solidarity among the 'Windermere Children' help them heal from unimaginable trauma?",
@@ -7052,7 +7155,8 @@
               "audience": "Relief supporters and child welfare committees.",
               "motive": "To show the gentle learning environment created to help the rescued children recover."
             }
-          }
+          },
+          "source_context": "At Calgarth, child psychologists, doctors, and volunteer teachers provided care, fresh food, and English lessons. The children had spent years in camps where education was forbidden; learning English helped them rebuild their confidence and prepare for new lives in Britain. **Hinge Question:** How did friendship and solidarity among the 'Windermere Children' help them heal from unimaginable trauma?"
         },
         {
           "id": "ks2_ww2_l11_src_c",
@@ -7073,7 +7177,8 @@
           "provenance_clues": {
             "author": "Award-winning children's historical author Tom Palmer.",
             "audience": "Key Stage 2 and Key Stage 3 readers.",
-            "motive": "To share the inspiring true story of the Windermere Children with modern young readers."
+            "motive": "To share the inspiring true story of the Windermere Children with modern young readers.",
+            "hinge_question": "Why is historical fiction based on real survivor testimonies a powerful way for young people today to connect with Holocaust history?"
           },
           "teacher_notes": {
             "hinge_question": "Why is historical fiction based on real survivor testimonies a powerful way for young people today to connect with Holocaust history?",
@@ -7092,7 +7197,8 @@
               "audience": "Key Stage 2 and Key Stage 3 readers.",
               "motive": "To share the inspiring true story of the Windermere Children with modern young readers."
             }
-          }
+          },
+          "source_context": "Author Tom Palmer conducted in-depth research with surviving members of the '45 Aid Society—including Arek Hersh and Sir Ben Helfgott—to write his award-winning novel, introducing young readers to how children who had lost everything learned to laugh and live again by Lake Windermere. **Hinge Question:** Why is historical fiction based on real survivor testimonies a powerful way for young people today to connect with Holocaust history?"
         },
         {
           "id": "ks2_ww2_l11_src_d",
@@ -7113,7 +7219,8 @@
           "provenance_clues": {
             "author": "Calgarth Estate photographer.",
             "audience": "Refugee committee and sponsors.",
-            "motive": "To show how happy, healthy, and confident the children became after staying in the Lake District."
+            "motive": "To show how happy, healthy, and confident the children became after staying in the Lake District.",
+            "hinge_question": "Why did the surviving children describe their time at Windermere as 'paradise on earth'?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the surviving children describe their time at Windermere as 'paradise on earth'?",
@@ -7132,7 +7239,8 @@
               "audience": "Refugee committee and sponsors.",
               "motive": "To show how happy, healthy, and confident the children became after staying in the Lake District."
             }
-          }
+          },
+          "source_context": "Having known only barbed wire and crowded bunks for years, the children were amazed to have their own clean beds, sheets, running water, and freedom to walk in the hills. The boys and girls formed a tight-knit family who supported each other for the rest of their lives. **Hinge Question:** Why did the surviving children describe their time at Windermere as 'paradise on earth'?"
         },
         {
           "id": "ks2_ww2_l11_src_e",
@@ -7153,7 +7261,8 @@
           "provenance_clues": {
             "author": "RAF official service photographer.",
             "audience": "Air Ministry and public records.",
-            "motive": "To record the RAF planes that flew the children from Prague to safety at Lake Windermere."
+            "motive": "To record the RAF planes that flew the children from Prague to safety at Lake Windermere.",
+            "hinge_question": "How did the compassionate actions of the RAF crew members begin the children's healing process before they even landed on British soil?"
           },
           "teacher_notes": {
             "hinge_question": "How did the compassionate actions of the RAF crew members begin the children's healing process before they even landed on British soil?",
@@ -7172,7 +7281,8 @@
               "audience": "Air Ministry and public records.",
               "motive": "To record the RAF planes that flew the children from Prague to safety at Lake Windermere."
             }
-          }
+          },
+          "source_context": "Ten converted RAF Short Stirling bombers made round-trip flights from Prague to Cumberland in August 1945. Many children had never seen an airplane before; RAF aircrews gave them chocolate and oranges during the flight, marking their very first taste of kindness from soldiers. **Hinge Question:** How did the compassionate actions of the RAF crew members begin the children's healing process before they even landed on British soil?"
         }
       ]
     }

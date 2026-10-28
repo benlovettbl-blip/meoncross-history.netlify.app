@@ -144,9 +144,9 @@ const enquiryConfigs = [
         'A decisive factor was... &bull; Furthermore, this was significant because... &bull; On the other hand, another important factor was... &bull; In conclusion, the main reason why...',
       wordBank:
         'Henry Cort &bull; Funtley Ironworks &bull; River Meon &bull; puddling furnace &bull; grooved rollers &bull; wrought iron &bull; Portsmouth Dockyard &bull; Royal Navy &bull; naval self-sufficiency',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 1 (Funtley Puddling Furnace &bull; 1784):</strong> Sketch ironworkers at Funtley stirring molten iron in Cort’s reverberatory furnace beside the River Meon [🔥 reverberatory furnace &bull; 🥄 puddling rod &bull; 🌊 River Meon waterwheel].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (Portsmouth Dockyard Naval Trials &bull; 1787):</strong> Sketch Admiralty master smiths testing tough Funtley wrought iron anchors and mast hoops for the Royal Navy [⚓ heavy naval anchor &bull; 🔨 blacksmith anvil &bull; 🚢 warship at dockyard].',
+        '<strong>Milestones 1 &amp; 2 (1784–1787):</strong> Choose <strong>(A) Creative Sketch:</strong> Funtley puddling furnace stirring molten iron beside River Meon, or Admiralty master smiths testing naval anchors at Portsmouth [🔥 reverberatory furnace &bull; 🥄 puddling rod &bull; ⚓ naval anchor] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Iron Revolution at Funtley" (1784 Cort puddling furnace &amp; grooved rollers, Portsmouth Dockyard trials, domestic wrought iron self-sufficiency)',
     },
     leftPageQuip:
       'Fareham ironmaster Henry Cort produced the tough wrought iron that built the Royal Navy’s fighting ships right here along the River Meon.',
@@ -258,9 +258,9 @@ const enquiryConfigs = [
         wordBank:
           'Factory Act (1833) &bull; child piecers &bull; textile mills &bull; eight-hour day &bull; factory inspectors &bull; Sadler Committee &bull; state regulation',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenge 5',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 5 (The Sadler Committee on Child Labour &bull; 1832):</strong> Sketch young child piecers crawling beneath spinning mules while parliamentary commissioners record eyewitness testimonies [🧵 textile spinning mule &bull; 👶 child piecer crawling &bull; 📋 parliamentary report ledger].',
+        '<strong>Milestone 5 (1832):</strong> Choose <strong>(A) Creative Sketch:</strong> Child piecer crawling beneath whirring textile spinning mules while commissioners take notes [🧵 spinning mule &bull; 👶 child piecer &bull; 📋 Sadler report] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Factory Work &amp; Child Labour" (14-hour workdays &amp; mill discipline, 1832 Sadler Committee evidence, 1833 Factory Act establishing state inspection)',
     },
     leftPageQuip:
       'Child piecers in northern textile mills often walked up to thirty miles a day between spinning frames.',
@@ -372,9 +372,9 @@ const enquiryConfigs = [
         wordBank:
           'Great Stink (1858) &bull; River Thames &bull; Joseph Bazalgette &bull; interceptor sewers &bull; cholera &bull; Edwin Chadwick &bull; public health',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenge 7',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 7 (The Great Stink &amp; Bazalgette’s Sewers &bull; 1858):</strong> Sketch the muddy, steaming River Thames beside Parliament and the arched brickwork of Joseph Bazalgette’s subterranean interceptor sewer [🏛️ Palace of Westminster &bull; 👃 gentleman covering nose &bull; 🧱 underground brick sewer tunnel].',
+        '<strong>Milestone 7 (1858):</strong> Choose <strong>(A) Creative Sketch:</strong> Muddy steaming Thames beside Parliament with politicians holding noses, or Bazalgette’s arched brick interceptor tunnels [🏛️ Westminster &bull; 👃 soaked curtains &bull; 🧱 underground brick sewer] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Slums, Cholera &amp; Sewers" (deadly back-to-back housing cesspools, Chadwick 1842 report &amp; John Snow 1854 pump, 1858 Great Stink &amp; 82 miles of Bazalgette sewers)',
     },
     leftPageQuip:
       'During the 1832 cholera epidemic, life expectancy for labourers in industrial Manchester dropped to just 19 years.',
@@ -486,9 +486,9 @@ const enquiryConfigs = [
         wordBank:
           'Peterloo (1819) &bull; Six Acts &bull; Hampshire Swing Riots (1830) &bull; threshing machines &bull; Winchester Assizes &bull; Tolpuddle Martyrs (1834) &bull; penal transportation &bull; trade unions',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenges 3 &amp; 4',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 3 (The Peterloo Massacre &bull; 1819):</strong> Sketch the Manchester Yeomanry cavalry charging into unarmed demonstrators listening to Henry Hunt [🏇 mounted cavalry with drawn sabres &bull; 🎩 "Orator" Hunt on hustings &bull; 🚩 reform banner].<br style="display:block; margin-top:2px;"><strong>Milestone 4 (The Hampshire Swing Riots &bull; 1830):</strong> Sketch farm labourers with sledgehammers breaking a wooden threshing machine beside a Hampshire barn [🔨 heavy sledgehammer &bull; 🌾 shattered threshing drum &bull; ✉️ threatening "Swing" letter].',
+        '<strong>Milestones 3 &amp; 4 (1819 &amp; 1830):</strong> Choose <strong>(A) Creative Sketch:</strong> Yeomanry cavalry charging unarmed cotton workers at Peterloo, or Hampshire farm labourers smashing a threshing machine under Captain Swing [🏇 sabre cavalry &bull; 🔨 heavy sledgehammer &bull; 🌾 shattered threshing drum] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Radical Protest &amp; Repression" (1819 Peterloo Massacre &amp; Six Acts, 1830 Hampshire Swing Riots across Meon Valley, Winchester Assizes 101 transported)',
     },
     leftPageQuip:
       'At the 1830 Winchester Assizes, 19-year-old Henry Cook of Micheldever was hanged for striking a magistrate’s hat during the Swing Riots.',
@@ -604,9 +604,9 @@ const enquiryConfigs = [
         'A central argument is that... &bull; In particular, this mattered because... &bull; On the other hand, an alternative perspective is... &bull; In conclusion, the decisive reason was...',
       wordBank:
         'Earl Grey &bull; Great Reform Act (1832) &bull; rotten boroughs &bull; Old Sarum &bull; Manchester &amp; Birmingham &bull; £10 property qualification &bull; Bristol riots &bull; Days of May &bull; People’s Charter &bull; Secret Ballot (1872)',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 6 &amp; 8',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 6 (The 1832 Great Reform Act):</strong> Sketch Earl Grey presenting the new parliamentary map granting seats to industrial Manchester while rotten boroughs are erased [📜 1832 Reform Act roll &bull; 🏭 Manchester textile chimney &bull; 🏛️ Westminster chamber].<br style="display:block; margin-top:2px;"><strong>Milestone 8 (The Secret Ballot Act at Pontefract &bull; 1872):</strong> Sketch a working man privately dropping a folded paper into a locked ballot box sealed with red wax [🗳️ locked metal ballot box &bull; 👤 voter inside wooden privacy booth &bull; 🔴 liquorice wax seal].',
+        '<strong>Milestones 6 &amp; 8 (1832 &amp; 1872):</strong> Choose <strong>(A) Creative Sketch:</strong> Earl Grey presenting the 1832 Reform roll granting Manchester seats, or voter in private wooden booth dropping wax-sealed ballot [📜 1832 Reform roll &bull; 🏭 Manchester chimney &bull; 🗳️ locked metal ballot box] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Road to Democracy" (1832 Great Reform Act abolishing 56 rotten boroughs, Chartist People’s Charter petitions, 1872 Secret Ballot Act at Pontefract)',
     },
     leftPageQuip:
       'Before 1832, Old Sarum was an empty mound that sent two MPs to Parliament, while industrial Manchester had zero.',
@@ -1475,8 +1475,8 @@ function compileIndustrialisationWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1491,9 +1491,15 @@ function compileIndustrialisationWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Fareham ironmaster Henry Cort invents the reverberatory puddling furnace and grooved rolling mill along the River Meon, enabling Britain to produce tough naval wrought iron from domestic coal and ending reliance on Baltic imports.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 2: 1787 -->
@@ -1504,9 +1510,15 @@ function compileIndustrialisationWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Admiralty master smiths at Portsmouth Dockyard conduct rigorous metallurgical tests on Funtley iron, proving it fully equal to Swedish Orgrounds iron for ship anchors, mast hoops, and naval fittings for the Royal Navy.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 3: 1819 -->
@@ -1517,9 +1529,15 @@ function compileIndustrialisationWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Manchester magistrates order Yeomanry cavalry to charge 60,000 peaceful cotton workers demanding universal suffrage, killing 18 and injuring 650; Parliament responds with the repressive Six Acts.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 4: 1830 -->
@@ -1530,9 +1548,15 @@ function compileIndustrialisationWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Starving farm labourers in the Meon Valley, Selborne, and Fareham smash threshing machines and burn ricks under the mythical name "Captain Swing"; the Winchester Assizes sentences 101 men to penal transportation to Australia.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1551,8 +1575,8 @@ function compileIndustrialisationWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1567,9 +1591,15 @@ function compileIndustrialisationWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Michael Sadler’s parliamentary committee publishes horrifying eyewitness testimony of 14-hour days, physical beatings, and crippling injuries suffered by child piecers in northern textile mills, forcing the passage of the 1833 Factory Act.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 6: 1832 -->
@@ -1580,9 +1610,15 @@ function compileIndustrialisationWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Terrified of revolution and a run on the Bank of England, Parliament abolishes 56 rotten boroughs and grants MPs to Manchester, Birmingham, and Leeds, though the £10 franchise deliberately excludes the working class.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 7: 1858 -->
@@ -1593,9 +1629,15 @@ function compileIndustrialisationWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             A boiling heatwave turns the sewage-filled Thames into an unbearable stench that invades Parliament; MPs immediately fund Joseph Bazalgette’s 82-mile underground brick sewer network, permanently ending waterborne cholera.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 8: 1872 -->
@@ -1606,9 +1648,15 @@ function compileIndustrialisationWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             William Gladstone’s government passes the Ballot Act, abolishing corrupt open hustings and requiring private voting in wooden booths, permanently eliminating landlord coercion and employer intimidation of working voters.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>

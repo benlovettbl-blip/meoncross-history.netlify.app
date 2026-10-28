@@ -552,4 +552,13 @@ STRICT RULE: Across all Key Topics in Weimar & Nazi Germany (Key Topics 1 to 4) 
 2. **Zero Redundant Portrait Placeholders:** Strictly eliminate static headshot portrait photos from source slots. If an individual is examined (e.g. Friedrich Ebert, Gustav Stresemann, Rosa Luxemburg, Adolf Hitler), provide their authentic written words or a dynamic historical document rather than a passive portrait.
 3. **Rigorous Quality Gates:** All written and visual sources must remain synchronized across `data/<unit_id>.json`, `units/<unit_id>/data.js`, `database.json`, and `scripts/master_rights_database.json`, with zero broken links, zero intra-lesson duplicate files, and zero school identifiers.
 
+## Mandatory 3 Strategic Recommendations Protocol (Every Conversation & Turn)
+STRICT USER DIRECTIVE: At the conclusion of EVERY turn and conversation, regardless of the topic or request, you MUST provide exactly three (3) concrete, prioritized strategic recommendations for the continued development, curriculum expansion, or technical refinement of the platform.
+1. **Dynamic Prioritization:** The 3 recommendations must continuously reflect the current state of completed work, drawing proactively from `DEPARTMENT_RECOMMENDATIONS_BACKLOG.md`, `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`, and pending curriculum/reprographic milestones.
+2. **Standard 3-Tier Structure:**
+   - **Recommendation 1 (Immediate Next Priority):** The most urgent, high-yield logical next step in curriculum authoring, reprographics, or web app development.
+   - **Recommendation 2 (Secondary High-Impact Target):** A complementary task that balances frontend polish, assessment parity, or print completion.
+   - **Recommendation 3 (Strategic / Architectural Backlog):** A medium-term structural enhancement (e.g. vacation reprint cycle, new unit authoring, or exam engine capability).
+3. **Actionable Guidance:** For each recommendation, provide a clear, user-friendly rationale explaining *why* it matters and what immediate steps or scripts are involved so the user can easily guide and direct progress.
+
 

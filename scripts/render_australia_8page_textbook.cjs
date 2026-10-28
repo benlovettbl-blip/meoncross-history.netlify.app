@@ -72,11 +72,13 @@ function cleanProse(text) {
 function loadUnitData() {
   const dataPath = path.join(ROOT_DIR, 'units', 'australia', 'data.js');
   let raw = fs.readFileSync(dataPath, 'utf8');
-  raw = raw.replace(/export\s*\{[^}]*\};?/g, '').replace(/export\s+default\s+[^;]+;?/g, '');
+  raw = raw.replace(/export\s+const\s+([a-zA-Z0-9_$]+)\s*=/g, 'const $1 =')
+           .replace(/export\s*\{[^}]*\};?/g, '')
+           .replace(/export\s+default\s+[^;]+;?/g, '');
   const moduleObj = { exports: {} };
-  const sandbox = { module: moduleObj, exports: moduleObj.exports, console };
+  const sandbox = { module: moduleObj, exports: moduleObj.exports, console, unitData: {} };
   vm.runInContext(raw, vm.createContext(sandbox));
-  return moduleObj.exports;
+  return sandbox.module.exports.id ? sandbox.module.exports : (sandbox.unitData.id ? sandbox.unitData : sandbox.module.exports);
 }
 
 // Canonical unit narrative overview for Front Cover

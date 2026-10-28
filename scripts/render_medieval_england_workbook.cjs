@@ -135,9 +135,9 @@ const enquiryConfigs = [
         'A primary factor was... &bull; In particular, this caused... &bull; Furthermore, this was significant because... &bull; As a direct result... &bull; Consequently, this led to...',
       wordBank:
         'Senlac Hill &bull; shield wall &bull; feigned retreat &bull; heavy cavalry &bull; housecarls &bull; Harold Godwinson &bull; Stamford Bridge &bull; Duke William &bull; Norman archers',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 1 (The Senlac Shield Wall &bull; 1066):</strong> Sketch Anglo-Saxon housecarls with interlocking round shields and two-handed battleaxes resisting charging Norman knights [🛡️ round wooden shield &bull; 🪓 Danish battleaxe &bull; 🐎 charging Norman warhorse].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (The Feigned Retreat &bull; 1066):</strong> Sketch Norman cavalry pretending to flee downhill while undisciplined Saxon fyrdmen break ranks to pursue [🐎 retreating knight &bull; 🏹 Norman archer &bull; 👑 fallen banner].',
+        '<strong>Milestone 1 (1066):</strong> Choose <strong>(A) Creative Sketch:</strong> Saxon shield wall atop Senlac Hill vs charging Norman cavalry [🛡️ shield wall &bull; 🐎 Norman cavalry &bull; 🏹 archers] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Hastings Conquest" (Stamford Bridge exhaustion, Senlac Hill shield wall, feigned retreat tactics)',
     },
     leftPageQuip:
       'King Harold marched his army 200 miles north to beat the Vikings, then 200 miles back south in 14 days before fighting Hastings.',
@@ -234,9 +234,9 @@ const enquiryConfigs = [
         wordBank:
           'motte-and-bailey &bull; garrison &bull; timber palisade &bull; intimidation &bull; Harrying of the North &bull; Portchester Castle &bull; Domesday Book',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenge 3',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 3 (The Domesday Audit &amp; Portchester Keep &bull; 1086):</strong> Sketch royal commissioners cataloguing oxen and land into the leather-bound Domesday Book before the towering stone keep of Portchester Castle [🏰 stone Norman keep &bull; 📖 open Domesday ledger &bull; 🐂 yoked farm ox].',
+        '<strong>Milestones 2 &amp; 3 (1069–1086):</strong> Choose <strong>(A) Creative Sketch:</strong> Motte castle overlooking salted Yorkshire fields, or Domesday ledger before Portchester keep [🏰 motte castle &bull; 🔥 Harrying famine &bull; 📖 Domesday ledger] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Norman Subjugation" (Harrying of the North, 500 motte castles blitz, 1086 Domesday tax audit)',
     },
     leftPageQuip:
       'Anglo-Saxons called it the "Domesday Book" because you could no more appeal William’s tax survey than escape the Last Judgement.',
@@ -325,9 +325,9 @@ const enquiryConfigs = [
         'Suggest one reason why Interpretations 1 and 2 differ on Becket’s clash with King Henry II. [4 marks]',
       stemsC:
         'One reason why Interpretations 1 and 2 differ is because they have a different focus... &bull; Specifically, Interpretation 1 focuses primarily on... &bull; In contrast, Interpretation 2 focuses more on... &bull; As a result, the authors reach different conclusions because...',
-      timelineMissionTitle: 'Centrefold Sketch Challenge 4',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 4 (The Murder in Canterbury Cathedral &bull; 1170):</strong> Sketch Archbishop Thomas Becket standing defiant before the cathedral altar while four Norman knights draw their swords in the shadows [⛪ cathedral arch &bull; 🗡️ four knights’ swords &bull; ✝️ altar cross].',
+        '<strong>Milestone 4 (1170):</strong> Choose <strong>(A) Creative Sketch:</strong> Archbishop Becket confronting four armed Norman knights before Canterbury altar steps [⛪ cathedral arch &bull; 🗡️ four drawn swords &bull; 🕊️ martyr cross] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Church vs Crown" (Clarendon constitutions, criminous clerks dispute, 1170 Canterbury altar murder)',
     },
     leftPageQuip:
       'Henry II was so furious with Becket that he reportedly shouted: ‘Will no one rid me of this turbulent priest?’ Four knights took him literally.',
@@ -418,9 +418,9 @@ const enquiryConfigs = [
         'Initially, the sequence began when... &bull; Following this, the next development was... &bull; A turning point occurred when... &bull; Consequently... &bull; This ultimately resulted in...',
       wordBank:
         'Normandy &bull; scutage &bull; Pope Innocent III &bull; Battle of Bouvines (1214) &bull; Runnymede &bull; Clause 39 &bull; Magna Carta &bull; Robert Fitzwalter',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 5 (Runnymede &amp; The Great Charter &bull; 1215):</strong> Sketch King John seated reluctantly in a pavilion beside the River Thames pressing his Great Seal onto the parchment of Magna Carta [⛺ royal pavilion &bull; 📜 wax-sealed charter &bull; 🛡️ rebel baron banner].<br style="display:block; margin-top:2px;"><strong>Milestone 6 (Simon de Montfort’s Parliament &bull; 1265):</strong> Sketch knights from the shires and burgesses from the towns gathering for the first representative English Parliament [🏛️ Parliament hall &bull; 📜 writ of summons &bull; 👥 knights and townsmen].',
+        '<strong>Milestones 5 &amp; 6 (1215–1265):</strong> Choose <strong>(A) Creative Sketch:</strong> King John sealing Magna Carta at Runnymede, or elected burgesses gathering at Westminster [📜 Magna Carta seal &bull; 🛡️ armed rebel barons &bull; 🏛️ de Montfort Commons] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Limiting Crown Power" (Clause 39 habeas corpus, 1215 Runnymede charter, 1265 Commons parliament)',
     },
     leftPageQuip:
       'King John did not sign Magna Carta with a pen; he affixed his royal wax seal because medieval kings rarely signed documents.',
@@ -535,9 +535,9 @@ const enquiryConfigs = [
         'To a large extent, it can be argued that... &bull; On the one hand, a key factor was... &bull; Furthermore, this was significant because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why... because...',
       wordBank:
         'Black Death (1348) &bull; Yersinia pestis &bull; labour shortage &bull; Statute of Labourers (1351) &bull; sumptuary laws &bull; Poll Tax &bull; Wat Tyler &bull; John Ball &bull; serfdom / villeinage',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 7 (The Black Death &amp; Village Desolation &bull; 1348):</strong> Sketch a medieval village with black plague crosses painted on cottage doors and peasants fleeing pestilence [💀 plague skull &bull; 🚪 barred door with red/black cross &bull; 🌾 overgrown untilled field].<br style="display:block; margin-top:2px;"><strong>Milestone 8 (Wat Tyler at Smithfield &bull; 1381):</strong> Sketch 14-year-old King Richard II on horseback facing the rebel banner of Wat Tyler and the Kentish peasants outside London’s city gates [🐎 young King Richard II &bull; 🚩 peasant pitchfork &amp; banner &bull; 🗡️ Lord Mayor Walworth’s blade].',
+        '<strong>Milestones 7 &amp; 8 (1348–1381):</strong> Choose <strong>(A) Creative Sketch:</strong> Plague cottage marked with red cross, or young Richard II facing Wat Tyler at Smithfield [💀 Black Death mortality &bull; 🌾 wage demand &bull; 🚩 1381 Peasants\' Revolt] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Shattering of Serfdom" (1348 demographic collapse, labour shortage & cash wages, 1381 Poll Tax rebellion)',
     },
     leftPageQuip:
       'Preacher John Ball asked: ‘When Adam delved and Eve span, who was then the gentleman?’—arguing God never created masters and serfs.',
@@ -1506,8 +1506,8 @@ function compileMedievalWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1522,9 +1522,15 @@ function compileMedievalWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Following victory over Vikings at Stamford Bridge, Harold’s exhausted army forms a shield wall atop Senlac Hill; Norman cavalry feigned retreats shatter the line, Harold is killed, and Duke William seizes the crown.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 2: 1069–1070 -->
@@ -1535,9 +1541,15 @@ function compileMedievalWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             William crushes Anglo-Saxon resistance by systematically burning crops, salting fields, and slaughtering livestock across Yorkshire, starving over 100,000 people while erecting 500 timber motte castles across the realm.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 3: 1086 -->
@@ -1548,9 +1560,15 @@ function compileMedievalWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             William commissions an exhaustive census of all land, mills, pigs, and taxable wealth in England; towering stone keeps like Portchester are erected to permanently seal Norman military and fiscal dominance.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 4: 1170 -->
@@ -1561,9 +1579,15 @@ function compileMedievalWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Following a bitter clash over whether royal courts or church courts could try criminal priests, four of Henry II’s knights butcher Archbishop Becket on the cathedral altar steps; Becket’s shrine becomes Christendom’s greatest pilgrimage.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1582,8 +1606,8 @@ function compileMedievalWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1598,9 +1622,15 @@ function compileMedievalWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Bankrupted by military defeat at Bouvines, King John is forced by rebel barons at Runnymede to seal Magna Carta; Clause 39 guarantees that no free man can be imprisoned or stripped of land without lawful trial by his peers.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 6: 1265 -->
@@ -1611,9 +1641,15 @@ function compileMedievalWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Rebel leader Simon de Montfort summons two elected knights from each shire and two burgesses from each borough to Westminster alongside barons and bishops, creating the institutional prototype for the House of Commons.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 7: 1348–1349 -->
@@ -1624,9 +1660,15 @@ function compileMedievalWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Bubonic plague carried by shipborne black rats enters Dorset and spreads nationwide, killing between 35% and 50% of the population; severe labour shortage enables surviving serfs to demand higher cash wages.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 8: 1381 -->
@@ -1637,9 +1679,15 @@ function compileMedievalWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Enraged by three regressive poll taxes and the 1351 Statute of Labourers, Wat Tyler and radical priest John Ball lead 60,000 peasants into London; Mayor Walworth cuts down Tyler at Smithfield, but serfdom is fatally broken.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>

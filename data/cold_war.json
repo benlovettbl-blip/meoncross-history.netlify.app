@@ -535,7 +535,11 @@
             "Author: Joseph Stalin, General Secretary of the Communist Party and Soviet Premier.",
             "Audience: Soviet voters, Red Army soldiers, and Western diplomatic observers.",
             "Motive: To rally Soviet society for renewed industrial sacrifice and ideologically justify the emerging division with the West."
-          ]
+          ],
+          "source_context": "Stalin’s Bolshoi speech shattered Western hopes that wartime cooperation would continue into peacetime. In Washington, Supreme Court Justice William O. Douglas described the address as 'The Declaration of World War Three,' prompting the US State Department to urgently demand diplomatic analysis. **Hinge Question:** Why did Western leaders interpret Stalin’s ideological speech as a direct military warning to the capitalist world?",
+          "teacher_notes": {
+            "source_context": "Stalin’s Bolshoi speech shattered Western hopes that wartime cooperation would continue into peacetime. In Washington, Supreme Court Justice William O. Douglas described the address as 'The Declaration of World War Three,' prompting the US State Department to urgently demand diplomatic analysis. **Hinge Question:** Why did Western leaders interpret Stalin’s ideological speech as a direct military warning to the capitalist world?"
+          }
         },
         {
           "id": "cw_l1_src_b",
@@ -579,7 +583,11 @@
             "Author: Vladimir Ilyich Lenin, leader of the Bolshevik Revolution and founder of the USSR.",
             "Audience: Revolutionary cadres, industrial workers, and international communist delegates.",
             "Motive: To legitimize absolute one-party rule and prohibit internal factional dissent."
-          ]
+          ],
+          "source_context": "Lenin’s core text established the bedrock doctrine taught in every Soviet school and university. To Western observers, this text proved that communist states were ideologically committed to the violent destruction of capitalist democracies. **Hinge Question:** If Soviet leaders were educated on Lenin's doctrine of violent revolution, why was it difficult for Western democracies to trust Soviet promises of peace?",
+          "teacher_notes": {
+            "source_context": "Lenin’s core text established the bedrock doctrine taught in every Soviet school and university. To Western observers, this text proved that communist states were ideologically committed to the violent destruction of capitalist democracies. **Hinge Question:** If Soviet leaders were educated on Lenin's doctrine of violent revolution, why was it difficult for Western democracies to trust Soviet promises of peace?"
+          }
         },
         {
           "id": "cw_l1_src_c",
@@ -623,7 +631,11 @@
             "Author: David Low, celebrated New Zealand-born British political cartoonist.",
             "Audience: British and international newspaper readers following Churchill’s Fulton address.",
             "Motive: To satirize Soviet paranoia and warn democratic publics that wartime alliance had been replaced by totalitarian isolation."
-          ]
+          ],
+          "source_context": "David Low was widely regarded as the greatest political cartoonist of the 20th century. Here he visualizes Churchill's metaphor of the Iron Curtain, capturing the British public's growing dismay that wartime alliance with Russia had transformed into secretive hostility. **Hinge Question:** What visual symbols does the cartoonist use to show that the Soviet government was deliberately shutting itself off from the rest of the world?",
+          "teacher_notes": {
+            "source_context": "David Low was widely regarded as the greatest political cartoonist of the 20th century. Here he visualizes Churchill's metaphor of the Iron Curtain, capturing the British public's growing dismay that wartime alliance with Russia had transformed into secretive hostility. **Hinge Question:** What visual symbols does the cartoonist use to show that the Soviet government was deliberately shutting itself off from the rest of the world?"
+          }
         },
         {
           "id": "cw_l1_src_d",
@@ -667,7 +679,11 @@
             "Author: George F. Kennan, Deputy Chief of Mission at the US Embassy in Moscow.",
             "Audience: US Secretary of State James Byrnes and senior Truman administration policymakers.",
             "Motive: To convince Washington to abandon naive wartime cooperation and adopt a firm, vigilant strategy of global containment."
-          ]
+          ],
+          "source_context": "Kennan’s telegram circulated through the highest levels of the Truman administration. Kennan argued that traditional diplomacy would fail with Moscow because Soviet leaders needed external enemies to justify their own tyrannical rule at home. **Hinge Question:** How did Kennan's claim that Soviet power is 'highly sensitive to logic of force' persuade President Truman to adopt a policy of military containment?",
+          "teacher_notes": {
+            "source_context": "Kennan’s telegram circulated through the highest levels of the Truman administration. Kennan argued that traditional diplomacy would fail with Moscow because Soviet leaders needed external enemies to justify their own tyrannical rule at home. **Hinge Question:** How did Kennan's claim that Soviet power is 'highly sensitive to logic of force' persuade President Truman to adopt a policy of military containment?"
+          }
         },
         {
           "id": "cw_l1_src_e",
@@ -711,7 +727,11 @@
             "Author: State Publishing House for Political Literature (Gospolitizdat), Moscow.",
             "Audience: Soviet factory workers, collective farmers, and Red Army soldiers.",
             "Motive: To mobilize the Soviet population for exhausting post-war reconstruction while reinforcing ideological loyalty to Stalin."
-          ]
+          ],
+          "source_context": "While Western observers saw Soviet elections as rubber-stamp shams, Soviet domestic propaganda relentlessly hammered home economic comparisons: emphasizing full employment and social welfare to contrast with memories of the 1930s Western Great Depression. **Hinge Question:** Why did Soviet propaganda focus so heavily on full employment and healthcare while completely ignoring the absence of political opposition?",
+          "teacher_notes": {
+            "source_context": "While Western observers saw Soviet elections as rubber-stamp shams, Soviet domestic propaganda relentlessly hammered home economic comparisons: emphasizing full employment and social welfare to contrast with memories of the 1930s Western Great Depression. **Hinge Question:** Why did Soviet propaganda focus so heavily on full employment and healthcare while completely ignoring the absence of political opposition?"
+          }
         }
       ]
     },
@@ -1080,7 +1100,11 @@
             "Author: US Army Signal Corps / Allied Summit official photographer.",
             "Audience: Global wartime public and international press.",
             "Motive: To present an image of seamless Allied unity and confidence prior to the final defeat of Nazi Germany."
-          ]
+          ],
+          "source_context": "This iconic photograph captures the delicate summit diplomacy of the Grand Alliance. Roosevelt looks noticeably frail (he died two months later), while Stalin appears confident on home territory. **Hinge Question:** Why was it far easier for these three leaders to agree on defeating Nazi Germany than on how Europe should be governed after the war?",
+          "teacher_notes": {
+            "source_context": "This iconic photograph captures the delicate summit diplomacy of the Grand Alliance. Roosevelt looks noticeably frail (he died two months later), while Stalin appears confident on home territory. **Hinge Question:** Why was it far easier for these three leaders to agree on defeating Nazi Germany than on how Europe should be governed after the war?"
+          }
         },
         {
           "id": "cw_l2_src_b",
@@ -1124,7 +1148,11 @@
             "Author: Franklin D. Roosevelt, Winston Churchill, and Joseph Stalin.",
             "Audience: Citizens of liberated European nations and the worldwide press.",
             "Motive: To establish legitimate post-war governance and calm Western anxieties about unilateral Soviet political takeovers."
-          ]
+          ],
+          "source_context": "This declaration was hailed in the West as a triumph for democracy. However, Stalin interpreted 'democratic' governments in Eastern Europe to mean governments that were unconditionally friendly and subservient to Moscow. **Hinge Question:** Why did Stalin's definition of 'democracy' in Poland completely contradict what Churchill and Roosevelt expected when they signed this declaration?",
+          "teacher_notes": {
+            "source_context": "This declaration was hailed in the West as a triumph for democracy. However, Stalin interpreted 'democratic' governments in Eastern Europe to mean governments that were unconditionally friendly and subservient to Moscow. **Hinge Question:** Why did Stalin's definition of 'democracy' in Poland completely contradict what Churchill and Roosevelt expected when they signed this declaration?"
+          }
         },
         {
           "id": "cw_l2_src_c",
@@ -1168,7 +1196,11 @@
             "Author: Official Allied conference photographer at Cecilienhof.",
             "Audience: Diplomatic history records and international press correspondents.",
             "Motive: To record the high-level meeting where personal relationships between new American and Soviet leaders were tested."
-          ]
+          ],
+          "source_context": "Unlike the diplomatic Roosevelt, Truman was blunt and combative. Having received news of the successful Trinity atomic bomb test just hours earlier, Truman was determined to halt Soviet expansion in Eastern Europe. **Hinge Question:** Did Truman's aggressive, no-nonsense style trigger Soviet paranoia, or was Stalin already planning to dominate Eastern Europe regardless of who was US president?",
+          "teacher_notes": {
+            "source_context": "Unlike the diplomatic Roosevelt, Truman was blunt and combative. Having received news of the successful Trinity atomic bomb test just hours earlier, Truman was determined to halt Soviet expansion in Eastern Europe. **Hinge Question:** Did Truman's aggressive, no-nonsense style trigger Soviet paranoia, or was Stalin already planning to dominate Eastern Europe regardless of who was US president?"
+          }
         },
         {
           "id": "cw_l2_src_d",
@@ -1212,7 +1244,11 @@
             "Author: US Army Air Forces 509th Composite Group photographer.",
             "Audience: Military leadership, President Truman, and the global public.",
             "Motive: To document the operational success and unprecedented destructive power of the world’s first combat nuclear weapon."
-          ]
+          ],
+          "source_context": "This deeply personal diary entry shows Truman grappling with the terrifying moral weight of atomic weaponry while simultaneously realizing that it gave America supreme geopolitical supremacy over Stalin. **Hinge Question:** Truman wrote that the atomic bomb might be 'the most terrible thing ever discovered.' Why did he still choose to drop it on Hiroshima and Nagasaki two weeks later?",
+          "teacher_notes": {
+            "source_context": "This deeply personal diary entry shows Truman grappling with the terrifying moral weight of atomic weaponry while simultaneously realizing that it gave America supreme geopolitical supremacy over Stalin. **Hinge Question:** Truman wrote that the atomic bomb might be 'the most terrible thing ever discovered.' Why did he still choose to drop it on Hiroshima and Nagasaki two weeks later?"
+          }
         },
         {
           "id": "cw_l2_src_e",
@@ -1256,7 +1292,11 @@
             "Author: Official British, American, and Soviet summit secretariat.",
             "Audience: The defeated German population and the worldwide public.",
             "Motive: To formalize the four-power occupation regime and prevent Germany from ever re-emerging as a military threat."
-          ]
+          ],
+          "source_context": "While the Potsdam Agreement mandated that Germany be treated as a 'single economic unit,' the four powers (US, USSR, Britain, France) each administered their own zones completely differently. Stalin systematically stripped his Eastern zone of industrial machinery as reparations, setting the stage for the permanent division of Germany. **Hinge Question:** Why did the pledge to treat Germany as a 'single economic unit' fail within months of signing this agreement?",
+          "teacher_notes": {
+            "source_context": "While the Potsdam Agreement mandated that Germany be treated as a 'single economic unit,' the four powers (US, USSR, Britain, France) each administered their own zones completely differently. Stalin systematically stripped his Eastern zone of industrial machinery as reparations, setting the stage for the permanent division of Germany. **Hinge Question:** Why did the pledge to treat Germany as a 'single economic unit' fail within months of signing this agreement?"
+          }
         }
       ]
     },
@@ -1625,7 +1665,11 @@
             "Author: Winston S. Churchill, former British Prime Minister and wartime leader.",
             "Audience: Students and faculty at Westminster College, President Truman, and the global public.",
             "Motive: To sound the alarm against Soviet expansion and persuade the United States to commit to a permanent Anglo-American security partnership."
-          ]
+          ],
+          "source_context": "Churchill was now the leader of the opposition in Britain. Free from diplomatic office, he used his speech to issue a direct warning to the American people that Stalin had betrayed his wartime promises and was turning Eastern Europe into a prison of communist police states. **Hinge Question:** Why did Soviet newspapers immediately attack Churchill as a 'warmonger' following this speech?",
+          "teacher_notes": {
+            "source_context": "Churchill was now the leader of the opposition in Britain. Free from diplomatic office, he used his speech to issue a direct warning to the American people that Stalin had betrayed his wartime promises and was turning Eastern Europe into a prison of communist police states. **Hinge Question:** Why did Soviet newspapers immediately attack Churchill as a 'warmonger' following this speech?"
+          }
         },
         {
           "id": "cw_l3_src_b",
@@ -1669,7 +1713,11 @@
             "Author: President Harry S. Truman and State Department speechwriters.",
             "Audience: The United States Congress, American citizens, and nations worldwide.",
             "Motive: To convince an isolationist, budget-conscious Congress to break with tradition and commit American resources to defending foreign democracies."
-          ]
+          ],
+          "source_context": "Britain had informed Washington that it could no longer afford to fund the royalist Greek government fighting communist guerrillas. Truman seized the moment to announce an open-ended American commitment to intervene globally to stop the spread of communism. **Hinge Question:** Was the Truman Doctrine a noble defense of human freedom, or an aggressive American pledge to police the entire globe?",
+          "teacher_notes": {
+            "source_context": "Britain had informed Washington that it could no longer afford to fund the royalist Greek government fighting communist guerrillas. Truman seized the moment to announce an open-ended American commitment to intervene globally to stop the spread of communism. **Hinge Question:** Was the Truman Doctrine a noble defense of human freedom, or an aggressive American pledge to police the entire globe?"
+          }
         },
         {
           "id": "cw_l3_src_c",
@@ -1712,7 +1760,11 @@
             "Author: Combined Airlift Task Force (USAF and British RAF headquarters).",
             "Audience: Transport pilots, navigators, and air traffic controllers at Tempelhof and Gatow.",
             "Motive: To plot exact flight corridors that avoided triggering direct aerial combat with Soviet forces."
-          ]
+          ],
+          "source_context": "When Stalin cut all road, canal, and railway connections to West Berlin on 24 June 1948, the Allies only had a written agreement guaranteeing air access. This map dictated the flight path for over 278,000 transport sorties. **Hinge Question:** Why did Stalin stop all road and rail traffic into Berlin, but deliberately avoid shooting down Allied transport planes in these air corridors?",
+          "teacher_notes": {
+            "source_context": "When Stalin cut all road, canal, and railway connections to West Berlin on 24 June 1948, the Allies only had a written agreement guaranteeing air access. This map dictated the flight path for over 278,000 transport sorties. **Hinge Question:** Why did Stalin stop all road and rail traffic into Berlin, but deliberately avoid shooting down Allied transport planes in these air corridors?"
+          }
         },
         {
           "id": "cw_l3_src_d",
@@ -1755,7 +1807,11 @@
             "Author: US Air Force Public Relations / military press correspondents.",
             "Audience: German civilians, the American public, and international readers.",
             "Motive: To highlight Western compassion and generate domestic support for sustaining the expensive round-the-clock airlift."
-          ]
+          ],
+          "source_context": "During the 11-month blockade, Allied aircraft landed every 90 seconds, delivering over 2.3 million tons of flour, coal, and medicine. Lieutenant Gail Halvorsen began dropping candy bars attached to tiny handkerchief parachutes for Berlin children, turning a military standoff into an immense humanitarian propaganda victory. **Hinge Question:** How did the Berlin Airlift transform how ordinary Germans viewed American and British soldiers—from wartime conquerors into protectors?",
+          "teacher_notes": {
+            "source_context": "During the 11-month blockade, Allied aircraft landed every 90 seconds, delivering over 2.3 million tons of flour, coal, and medicine. Lieutenant Gail Halvorsen began dropping candy bars attached to tiny handkerchief parachutes for Berlin children, turning a military standoff into an immense humanitarian propaganda victory. **Hinge Question:** How did the Berlin Airlift transform how ordinary Germans viewed American and British soldiers—from wartime conquerors into protectors?"
+          }
         },
         {
           "id": "cw_l3_src_e",
@@ -1799,7 +1855,11 @@
             "Author: Foreign ministers of the 12 founding Western democratic nations.",
             "Audience: The Soviet Union, the citizens of member states, and the global public.",
             "Motive: To permanently deter Soviet military expansion into Western Europe by tying American nuclear power to European defence."
-          ]
+          ],
+          "source_context": "The Berlin Blockade convinced Western leaders that Stalin was prepared to use force to expand his empire. NATO was created to link American nuclear power directly to the defense of Western Europe. **Hinge Question:** Why was signing Article 5 such a historic turning point for the United States, which had avoided permanent European military alliances for 150 years?",
+          "teacher_notes": {
+            "source_context": "The Berlin Blockade convinced Western leaders that Stalin was prepared to use force to expand his empire. NATO was created to link American nuclear power directly to the defense of Western Europe. **Hinge Question:** Why was signing Article 5 such a historic turning point for the United States, which had avoided permanent European military alliances for 150 years?"
+          }
         }
       ]
     },
@@ -2171,7 +2231,11 @@
             "Author: CIA National Photographic Interpretation Center (NPIC) analysts.",
             "Audience: President John F. Kennedy and the Executive Committee of the National Security Council (ExComm).",
             "Motive: To provide undeniable photographic proof that Nikita Khrushchev had covertly stationed offensive nuclear weapons 90 miles from Florida."
-          ]
+          ],
+          "source_context": "This photograph triggered the Cuban Missile Crisis. NPIC analysts proved that Soviet technicians were constructing launch pads capable of targeting Washington, D.C., New York, and major US cities within minutes. **Hinge Question:** Why did Soviet missiles placed in Cuba pose a far greater psychological and military threat to America than missiles based inside Russia?",
+          "teacher_notes": {
+            "source_context": "This photograph triggered the Cuban Missile Crisis. NPIC analysts proved that Soviet technicians were constructing launch pads capable of targeting Washington, D.C., New York, and major US cities within minutes. **Hinge Question:** Why did Soviet missiles placed in Cuba pose a far greater psychological and military threat to America than missiles based inside Russia?"
+          }
         },
         {
           "id": "cw_l4_src_b",
@@ -2215,7 +2279,11 @@
             "Author: Leslie Gilbert Illingworth, renowned British political cartoonist.",
             "Audience: Readers of the British press and international observers following the Cuban Missile Crisis.",
             "Motive: To satirize superpower brinkmanship and demonstrate that neither leader could risk pushing the conflict to open war without destroying civilization."
-          ]
+          ],
+          "source_context": "Illingworth perfectly captured the concept of Mutually Assured Destruction (MAD). Both Kennedy and Khrushchev were trapped by their own military arsenals; pushing for victory meant total annihilation for both. **Hinge Question:** Why does the cartoonist show both leaders sweating with their fingers hovering over the detonator buttons?",
+          "teacher_notes": {
+            "source_context": "Illingworth perfectly captured the concept of Mutually Assured Destruction (MAD). Both Kennedy and Khrushchev were trapped by their own military arsenals; pushing for victory meant total annihilation for both. **Hinge Question:** Why does the cartoonist show both leaders sweating with their fingers hovering over the detonator buttons?"
+          }
         },
         {
           "id": "cw_l4_src_c",
@@ -2260,7 +2328,11 @@
             "Author: President John F. Kennedy (drafted with Theodore Sorensen and McGeorge Bundy).",
             "Audience: The American public, Soviet Premier Nikita Khrushchev, and global citizens.",
             "Motive: To inform the world of the secret Soviet deployment, justify the naval quarantine, and draw a non-negotiable red line."
-          ]
+          ],
+          "source_context": "Kennedy had concealed the crisis for six days while debating secretly with his Executive Committee (ExComm). This address informed an astonished world that nuclear armageddon was suddenly imminent. **Hinge Question:** General Curtis LeMay urged Kennedy to immediately bomb the missile sites. Why did Kennedy resist military pressure and choose a naval quarantine instead?",
+          "teacher_notes": {
+            "source_context": "Kennedy had concealed the crisis for six days while debating secretly with his Executive Committee (ExComm). This address informed an astonished world that nuclear armageddon was suddenly imminent. **Hinge Question:** General Curtis LeMay urged Kennedy to immediately bomb the missile sites. Why did Kennedy resist military pressure and choose a naval quarantine instead?"
+          }
         },
         {
           "id": "cw_l4_src_d",
@@ -2304,7 +2376,11 @@
             "Author: President John F. Kennedy and national security advisers.",
             "Audience: Premier Nikita Khrushchev and the Soviet Politburo.",
             "Motive: To communicate directly and secretly to prevent a fatal misunderstanding at sea."
-          ]
+          ],
+          "source_context": "This remarkable letter revealed to Kennedy that Khrushchev was terrified of the crisis spiraling out of control. It opened the diplomatic path that allowed both sides to reach a face-saving compromise. **Hinge Question:** Does Khrushchev’s emotional, unedited letter show a dangerous dictator backing down, or a terrified human being desperate to prevent a nuclear apocalypse?",
+          "teacher_notes": {
+            "source_context": "This remarkable letter revealed to Kennedy that Khrushchev was terrified of the crisis spiraling out of control. It opened the diplomatic path that allowed both sides to reach a face-saving compromise. **Hinge Question:** Does Khrushchev’s emotional, unedited letter show a dangerous dictator backing down, or a terrified human being desperate to prevent a nuclear apocalypse?"
+          }
         },
         {
           "id": "cw_l4_src_e",
@@ -2347,7 +2423,11 @@
             "Author: US Navy reconnaissance / Soviet naval archival records.",
             "Audience: Naval intelligence officers and post-Cold War historical accounts.",
             "Motive: To document the closest single moment human civilization came to total nuclear annihilation."
-          ]
+          ],
+          "source_context": "Submarine B-59 was armed with a 10-kiloton nuclear torpedo. Cut off from Moscow and suffering from blistering 50°C cabin heat and battery failure, Captain Savitsky and Political Officer Maslennikov both voted to launch the nuclear weapon, believing World War III had already begun. Brigade Chief of Staff **Vasili Arkhipov** used his veto power to refuse authorization, single-handedly preventing a nuclear exchange. **Hinge Question:** How does Arkhipov's story prove that the world was saved from nuclear war not just by presidents in Washington and Moscow, but by the courage of one individual officer?",
+          "teacher_notes": {
+            "source_context": "Submarine B-59 was armed with a 10-kiloton nuclear torpedo. Cut off from Moscow and suffering from blistering 50°C cabin heat and battery failure, Captain Savitsky and Political Officer Maslennikov both voted to launch the nuclear weapon, believing World War III had already begun. Brigade Chief of Staff **Vasili Arkhipov** used his veto power to refuse authorization, single-handedly preventing a nuclear exchange. **Hinge Question:** How does Arkhipov's story prove that the world was saved from nuclear war not just by presidents in Washington and Moscow, but by the courage of one individual officer?"
+          }
         }
       ]
     },
@@ -2716,7 +2796,11 @@
             "Author: Policy Planning Staff chaired by Paul Nitze for the National Security Council.",
             "Audience: President Harry S. Truman and senior cabinet secretaries.",
             "Motive: To persuade Truman to approve a massive, quadrupling of US defence spending to confront communism worldwide."
-          ]
+          ],
+          "source_context": "NSC-68 transformed US foreign policy from regional containment in Europe into a militarized global crusade. Two months after it was signed, North Korea invaded South Korea, convincing Washington that Moscow was launching its global military offensive. **Hinge Question:** Did the 'Domino Theory' accurately describe the spread of Asian communism, or did it blind American leaders to local struggles for national independence?",
+          "teacher_notes": {
+            "source_context": "NSC-68 transformed US foreign policy from regional containment in Europe into a militarized global crusade. Two months after it was signed, North Korea invaded South Korea, convincing Washington that Moscow was launching its global military offensive. **Hinge Question:** Did the 'Domino Theory' accurately describe the spread of Asian communism, or did it blind American leaders to local struggles for national independence?"
+          }
         },
         {
           "id": "cw_l5_src_b",
@@ -2760,7 +2844,11 @@
             "Author: US Army combat soldier serving on the front line.",
             "Audience: His family and parents back home in the United States.",
             "Motive: To express personal fear and the harsh human reality of guerrilla war that contradicted official military progress reports."
-          ]
+          ],
+          "source_context": "Most American soldiers in Vietnam were young draftees (average age 19, compared to 26 in WWII). This raw letter reveals the terrifying reality of asymmetric jungle warfare, where superior US firepower was neutralized by Viet Cong guerrilla tactics. **Hinge Question:** Why was high-tech American military firepower (helicopters, napalm, heavy artillery) often powerless against Viet Cong guerrilla tactics?",
+          "teacher_notes": {
+            "source_context": "Most American soldiers in Vietnam were young draftees (average age 19, compared to 26 in WWII). This raw letter reveals the terrifying reality of asymmetric jungle warfare, where superior US firepower was neutralized by Viet Cong guerrilla tactics. **Hinge Question:** Why was high-tech American military firepower (helicopters, napalm, heavy artillery) often powerless against Viet Cong guerrilla tactics?"
+          }
         },
         {
           "id": "cw_l5_src_c",
@@ -2804,7 +2892,11 @@
             "Author: Combat photographers and battlefield medical personnel.",
             "Audience: Military medical corps and wartime historical archives.",
             "Motive: To record the brutal human trauma of modern firepower deployed against guerrilla forces in rural terrain."
-          ]
+          ],
+          "source_context": "Dr. Trâm’s diary was saved from burning by an American intelligence officer who was told by his translator: 'Do not burn this, it already has fire in it.' It gives an extraordinary, deeply human voice to the Vietnamese fighters who endured relentless American bombing. **Hinge Question:** How does reading a young Vietnamese doctor’s private diary challenge the one-sided view of the Vietnam War often shown in Western movies?",
+          "teacher_notes": {
+            "source_context": "Dr. Trâm’s diary was saved from burning by an American intelligence officer who was told by his translator: 'Do not burn this, it already has fire in it.' It gives an extraordinary, deeply human voice to the Vietnamese fighters who endured relentless American bombing. **Hinge Question:** How does reading a young Vietnamese doctor’s private diary challenge the one-sided view of the Vietnam War often shown in Western movies?"
+          }
         },
         {
           "id": "cw_l5_src_d",
@@ -2847,7 +2939,11 @@
             "Author: US Army Signal Corps combat photographer.",
             "Audience: Pentagon military tacticians, commanders, and historical documentation.",
             "Motive: To document the extreme dangers faced by combat engineers attempting to clear underground enemy bunker complexes."
-          ]
+          ],
+          "source_context": "The helicopter defined the Vietnam War. Over 7,000 Hueys were deployed to airlift troops into inaccessible jungles, evacuate the wounded within minutes, and deliver massive firepower. **Hinge Question:** The US military flew over 36 million helicopter sorties in Vietnam. Why was overwhelming technological mobility still not enough to win the war?",
+          "teacher_notes": {
+            "source_context": "The helicopter defined the Vietnam War. Over 7,000 Hueys were deployed to airlift troops into inaccessible jungles, evacuate the wounded within minutes, and deliver massive firepower. **Hinge Question:** The US military flew over 36 million helicopter sorties in Vietnam. Why was overwhelming technological mobility still not enough to win the war?"
+          }
         },
         {
           "id": "cw_l5_src_e",
@@ -2890,7 +2986,11 @@
             "Author: Military Assistance Command, Vietnam (MACV) cartographic intelligence.",
             "Audience: US Joint Chiefs of Staff and national security leadership.",
             "Motive: To illustrate the unexpected breadth and coordination of the enemy’s nationwide winter-spring campaign."
-          ]
+          ],
+          "source_context": "On 31 January 1968, during the Vietnamese lunar new year (Tet), over 80,000 communist troops launched coordinated surprise attacks across South Vietnam, even breaching the US Embassy in Saigon. While militarily crushed by US firepower, Tet shattered the American public's belief that victory was near. **Hinge Question:** The US military defeated the Viet Cong militarily during Tet. Why was the offensive still considered a catastrophic political and psychological defeat for the United States?",
+          "teacher_notes": {
+            "source_context": "On 31 January 1968, during the Vietnamese lunar new year (Tet), over 80,000 communist troops launched coordinated surprise attacks across South Vietnam, even breaching the US Embassy in Saigon. While militarily crushed by US firepower, Tet shattered the American public's belief that victory was near. **Hinge Question:** The US military defeated the Viet Cong militarily during Tet. Why was the offensive still considered a catastrophic political and psychological defeat for the United States?"
+          }
         }
       ]
     },
@@ -3261,7 +3361,11 @@
             "Author: US Army Signal Corps photographer on the border line.",
             "Audience: Military intelligence commanders and global newspaper readers.",
             "Motive: To document direct Soviet-American confrontation over Allied access rights into East Berlin."
-          ]
+          ],
+          "source_context": "Following the building of the Berlin Wall in August 1961, a dispute over whether East German police could check the passports of US diplomats led to armed tanks deploying with live ammunition. For 16 hours, the world stood on the brink of World War III until Kennedy and Khrushchev privately agreed to pull back one tank at a time. **Hinge Question:** Why did the Soviet Union and East Germany feel forced to build a concrete wall across Berlin to stop their own citizens from leaving?",
+          "teacher_notes": {
+            "source_context": "Following the building of the Berlin Wall in August 1961, a dispute over whether East German police could check the passports of US diplomats led to armed tanks deploying with live ammunition. For 16 hours, the world stood on the brink of World War III until Kennedy and Khrushchev privately agreed to pull back one tank at a time. **Hinge Question:** Why did the Soviet Union and East Germany feel forced to build a concrete wall across Berlin to stop their own citizens from leaving?"
+          }
         },
         {
           "id": "cw_l6_src_b",
@@ -3305,7 +3409,11 @@
             "Author: German Federal Archives (Bundesarchiv) photographer.",
             "Audience: Official state archives and international historical record.",
             "Motive: To document the logistical construction of the \"Anti-Fascist Protection Rampart\" ordered by Walter Ulbricht."
-          ]
+          ],
+          "source_context": "Between 1949 and 1961, over 2.7 million East Germans (mostly young professionals, doctors, and engineers) fled to the West through Berlin. In 'Operation Rose', East German leader Walter Ulbricht sealed the border in a single night. **Hinge Question:** The East German government called the wall an 'Anti-Fascist Protection Rampart.' Who were the machine guns and watchtowers really pointing at?",
+          "teacher_notes": {
+            "source_context": "Between 1949 and 1961, over 2.7 million East Germans (mostly young professionals, doctors, and engineers) fled to the West through Berlin. In 'Operation Rose', East German leader Walter Ulbricht sealed the border in a single night. **Hinge Question:** The East German government called the wall an 'Anti-Fascist Protection Rampart.' Who were the machine guns and watchtowers really pointing at?"
+          }
         },
         {
           "id": "cw_l6_src_c",
@@ -3349,7 +3457,11 @@
             "Author: Archival photojournalist documenting daily life in the Soviet Union.",
             "Audience: International observers and economic researchers.",
             "Motive: To capture the stark reality of consumer goods scarcity under the Soviet centrally planned economy."
-          ]
+          ],
+          "source_context": "By 1980, the Soviet economy was stagnating. While the USSR matched America in nuclear warheads and space exploration, its planned economy was incapable of producing basic consumer goods, forcing citizens to spend hours queuing for shoes, toilet paper, and meat. **Hinge Question:** Why did the Soviet command economy excel at building nuclear missiles and space rockets, but completely fail at providing shoes, toilet paper, and cars for its people?",
+          "teacher_notes": {
+            "source_context": "By 1980, the Soviet economy was stagnating. While the USSR matched America in nuclear warheads and space exploration, its planned economy was incapable of producing basic consumer goods, forcing citizens to spend hours queuing for shoes, toilet paper, and meat. **Hinge Question:** Why did the Soviet command economy excel at building nuclear missiles and space rockets, but completely fail at providing shoes, toilet paper, and cars for its people?"
+          }
         },
         {
           "id": "cw_l6_src_d",
@@ -3392,7 +3504,11 @@
             "Author: ADN-Zentralbild (East German state news agency photographer).",
             "Audience: International journalists, worldwide television viewers, and citizens of East and West Berlin.",
             "Motive: To manage state public relations, but unexpectedly unleashing the peaceful collapse of the Berlin Wall."
-          ]
+          ],
+          "source_context": "For 28 years, the Berlin Wall had stood as the ultimate symbol of totalitarian oppression. When crowds converged on the checkpoints on the night of 9 November 1989, border guards refused to shoot. The fall of the wall signaled the peaceful end of the Cold War in Europe. **Hinge Question:** Why did the East German border guards refuse to fire on the crowds on the night of 9 November 1989?",
+          "teacher_notes": {
+            "source_context": "For 28 years, the Berlin Wall had stood as the ultimate symbol of totalitarian oppression. When crowds converged on the checkpoints on the night of 9 November 1989, border guards refused to shoot. The fall of the wall signaled the peaceful end of the Cold War in Europe. **Hinge Question:** Why did the East German border guards refuse to fire on the crowds on the night of 9 November 1989?"
+          }
         },
         {
           "id": "cw_l6_src_e",
@@ -3436,7 +3552,11 @@
             "Author: Mikhail S. Gorbachev, President of the USSR.",
             "Audience: 280 million citizens of the Soviet Union and global television viewers.",
             "Motive: To formally step down from office, preserve civil peace, and defend his historic legacy of democratic reform."
-          ]
+          ],
+          "source_context": "Gorbachev had sought to save socialism through reform (*Glasnost* and *Perestroika*), not destroy it. His refusal to use military violence to hold the Soviet empire together allowed 15 new independent nations to emerge peacefully. **Hinge Question:** Did Gorbachev's reforms destroy the Soviet Union, or was the communist system already doomed by economic failure and the arms race?",
+          "teacher_notes": {
+            "source_context": "Gorbachev had sought to save socialism through reform (*Glasnost* and *Perestroika*), not destroy it. His refusal to use military violence to hold the Soviet empire together allowed 15 new independent nations to emerge peacefully. **Hinge Question:** Did Gorbachev's reforms destroy the Soviet Union, or was the communist system already doomed by economic failure and the arms race?"
+          }
         }
       ]
     },
@@ -3804,7 +3924,11 @@
             "Author: Natural Resources Defense Council (NRDC) / Bulletin of the Atomic Scientists.",
             "Audience: Historians, defence strategists, and arms control negotiators.",
             "Motive: To provide verified quantitative evidence of the unprecedented scale of the nuclear arms race."
-          ]
+          ],
+          "source_context": "This stark table demonstrates the sheer insanity of nuclear 'overkill'. By 1986, the superpowers possessed enough explosive power to wipe out all human civilization dozens of times over. **Hinge Question:** If having 500 nuclear bombs is enough to destroy human civilization, why did the two superpowers spend billions building over 60,000 warheads?",
+          "teacher_notes": {
+            "source_context": "This stark table demonstrates the sheer insanity of nuclear 'overkill'. By 1986, the superpowers possessed enough explosive power to wipe out all human civilization dozens of times over. **Hinge Question:** If having 500 nuclear bombs is enough to destroy human civilization, why did the two superpowers spend billions building over 60,000 warheads?"
+          }
         },
         {
           "id": "cw_l7_src_b",
@@ -3847,7 +3971,11 @@
             "Author: British Home Office and Central Office of Information.",
             "Audience: British households and civil defence volunteers.",
             "Motive: To provide practical survival guidance to the public and mitigate panic during a potential nuclear emergency."
-          ]
+          ],
+          "source_context": "The booklet instructed ordinary British families to construct an 'inner core refuge' inside their homes by removing interior doors, leaning them against a wall at an angle, and piling heavy luggage and bags of earth on top. It sparked fierce public ridicule from peace campaigners (like CND and E.P. Thompson's *Protest and Survive*), who pointed out that domestic doors provided zero protection against a thermonuclear blast. **Hinge Question:** Did booklets like Protect and Survive give people genuine hope of surviving a nuclear war, or was it government propaganda to stop the public from panicking?",
+          "teacher_notes": {
+            "source_context": "The booklet instructed ordinary British families to construct an 'inner core refuge' inside their homes by removing interior doors, leaning them against a wall at an angle, and piling heavy luggage and bags of earth on top. It sparked fierce public ridicule from peace campaigners (like CND and E.P. Thompson's *Protest and Survive*), who pointed out that domestic doors provided zero protection against a thermonuclear blast. **Hinge Question:** Did booklets like Protect and Survive give people genuine hope of surviving a nuclear war, or was it government propaganda to stop the public from panicking?"
+          }
         },
         {
           "id": "cw_l7_src_c",
@@ -3890,7 +4018,11 @@
             "Author: Royal Observer Corps and UK Ministry of Defence engineers.",
             "Audience: Military personnel and heritage researchers.",
             "Motive: To construct a radiation-proof shelter capable of surviving a multi-megaton nuclear strike on northern England."
-          ]
+          ],
+          "source_context": "Beneath the suburbs of York lies a semi-sunken two-story concrete bunker. Sixty volunteer ROC observers would have been sealed inside for thirty days to plot nuclear bomb detonations, calculate radioactive fallout patterns, and broadcast the four-minute warning siren to the public. **Hinge Question:** Who was this bunker designed to protect, and what does that tell us about who the state valued most during a nuclear attack?",
+          "teacher_notes": {
+            "source_context": "Beneath the suburbs of York lies a semi-sunken two-story concrete bunker. Sixty volunteer ROC observers would have been sealed inside for thirty days to plot nuclear bomb detonations, calculate radioactive fallout patterns, and broadcast the four-minute warning siren to the public. **Hinge Question:** Who was this bunker designed to protect, and what does that tell us about who the state valued most during a nuclear attack?"
+          }
         },
         {
           "id": "cw_l7_src_d",
@@ -3933,7 +4065,11 @@
             "Author: Neil Armstrong (NASA astronaut and photographer) / NASA.",
             "Audience: Global television viewers and international public opinion.",
             "Motive: To document humanity’s first lunar landing and demonstrate America’s decisive victory in the superpower Space Race."
-          ]
+          ],
+          "source_context": "The Space Race began with Soviet triumphs: Sputnik (1957) and Yuri Gagarin (1961). President Kennedy committed America to landing a man on the moon before the decade was out. When Apollo 11 touched down, it was hailed as proof that American democracy and free-market capitalism were technologically superior to Soviet communism. **Hinge Question:** Was the Space Race a peaceful scientific adventure, or a thinly disguised competition to prove which superpower had the best rocket technology to deliver nuclear bombs?",
+          "teacher_notes": {
+            "source_context": "The Space Race began with Soviet triumphs: Sputnik (1957) and Yuri Gagarin (1961). President Kennedy committed America to landing a man on the moon before the decade was out. When Apollo 11 touched down, it was hailed as proof that American democracy and free-market capitalism were technologically superior to Soviet communism. **Hinge Question:** Was the Space Race a peaceful scientific adventure, or a thinly disguised competition to prove which superpower had the best rocket technology to deliver nuclear bombs?"
+          }
         },
         {
           "id": "cw_l7_src_e",
@@ -3977,7 +4113,11 @@
             "Author: Professor Odd Arne Westad (Cambridge/Harvard) / global diplomatic cartographers.",
             "Audience: International historians, university students, and curriculum scholars.",
             "Motive: To challenge the Eurocentric myth of the Cold War as a bloodless standoff and expose its devastating human toll on the Global South."
-          ]
+          ],
+          "source_context": "Westad’s groundbreaking work forced historians to rethink the traditional narrative. He argued that the true battlefield of the Cold War was not Europe, but the Global South, where the superpowers treated developing nations as disposable chessboard pawns. **Hinge Question:** If over 20 million people died in proxy wars between 1945 and 1991, why do many Western textbooks still describe the Cold War as an era of 'peace'?",
+          "teacher_notes": {
+            "source_context": "Westad’s groundbreaking work forced historians to rethink the traditional narrative. He argued that the true battlefield of the Cold War was not Europe, but the Global South, where the superpowers treated developing nations as disposable chessboard pawns. **Hinge Question:** If over 20 million people died in proxy wars between 1945 and 1991, why do many Western textbooks still describe the Cold War as an era of 'peace'?"
+          }
         }
       ]
     }

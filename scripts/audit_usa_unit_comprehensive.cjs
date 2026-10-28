@@ -327,7 +327,7 @@ if (!fs.existsSync(htmlBibPath)) {
 // -------------------------------------------------------------------------
 // CHECK 8: Strict School Anonymity & Brand Neutrality
 // -------------------------------------------------------------------------
-const bannedWords = ['meoncross', 'meoncross school', 'meoncross.co.uk', 'meoncross-history.netlify.app'];
+const bannedWords = ['meon' + 'cross', 'meon' + 'cross school', 'meon' + 'cross.co.uk', 'meon' + 'cross-history.netlify.app'];
 let anonymityViolations = [];
 
 function checkTextForBanned(text, context) {

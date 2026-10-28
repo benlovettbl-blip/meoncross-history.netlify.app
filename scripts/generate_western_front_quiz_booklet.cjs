@@ -1454,9 +1454,17 @@ async function compilePdf() {
   fs.writeFileSync(htmlPath, html, 'utf8');
   console.log(`✅ Saved HTML: ${htmlPath}`);
 
+  const chromePath =
+    process.env.CHROME_BIN ||
+    (process.platform === 'win32' &&
+    fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
   console.log('🖨️ Launching Puppeteer to audit and compile Master 12-Page A4 PDF...');
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: chromePath,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 

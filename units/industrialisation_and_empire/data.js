@@ -1,4 +1,4 @@
-export const unitData = {
+const industrialisation_and_empire_data = {
   "title": "KS3: The Industrial Revolution (1750–1900)",
   "short_title": "The Industrial Revolution",
   "homepage_background": "/images/coalbrookdale_by_night.jpg",
@@ -344,12 +344,7 @@ export const unitData = {
             "question_badge": "Source Inference",
             "question": "What does this dramatic night painting suggest about how industrial furnaces changed the English countryside?",
             "enquiry_question": "What does this dramatic night painting suggest about how industrial furnaces changed the English countryside?",
-            "model_answer": "The painting suggests industrial furnaces turned quiet rural valleys into a blazing, fiery world of constant noise and heavy machinery, replacing nature with intense industrial power.",
-            "provenance_clues": [
-              "Author: Philip James de Loutherbourg, a Romantic landscape painter fascinated by industrial spectacles.",
-              "Audience: British art lovers and exhibition visitors witnessing the dawn of the Industrial Age.",
-              "Motive: To capture the awe and terrifying power of iron blast furnaces lighting up the night sky."
-            ]
+            "model_answer": "The painting suggests industrial furnaces turned quiet rural valleys into a blazing, fiery world of constant noise and heavy machinery, replacing nature with intense industrial power."
           }
         },
         {
@@ -367,12 +362,7 @@ export const unitData = {
             "question_badge": "Technology & Change",
             "question": "How did Henry Cort's arched furnace design allow ironworkers to make pure, strong iron using British coal?",
             "enquiry_question": "How did Henry Cort's arched furnace design allow ironworkers to make pure, strong iron using British coal?",
-            "model_answer": "By curving the flame over a low roof to heat the metal without letting the dirty coal touch it, Cort kept the iron pure and tough enough for Royal Navy ships.",
-            "provenance_clues": [
-              "Author: Henry Cort, an innovative English ironmaster who patented the puddling process.",
-              "Audience: Patent officials, industrialists, and ironmasters across Britain.",
-              "Motive: To register and protect his revolutionary breakthrough that transformed British iron production."
-            ]
+            "model_answer": "By curving the flame over a low roof to heat the metal without letting the dirty coal touch it, Cort kept the iron pure and tough enough for Royal Navy ships."
           },
           "image": "/images/james_watt.jpg",
           "image_alt": "Portrait of Scottish inventor and mechanical engineer James Watt",
@@ -393,12 +383,7 @@ export const unitData = {
             "question_badge": "Reliability & Provenance",
             "question": "Why can historians trust this official Navy report when studying the strength of Henry Cort's new iron?",
             "enquiry_question": "Why can historians trust this official Navy report when studying the strength of Henry Cort's new iron?",
-            "model_answer": "Historians can trust this report because Navy inspectors strictly tested the iron against top-quality Swedish metal to make sure British warships would not break apart at sea.",
-            "provenance_clues": [
-              "Author: Royal Navy officials and master blacksmiths at Portsmouth Dockyard.",
-              "Audience: The Admiralty Navy Board responsible for building Britain’s battle fleet.",
-              "Motive: To test rigorously whether British iron was strong enough to replace expensive foreign imports."
-            ]
+            "model_answer": "Historians can trust this report because Navy inspectors strictly tested the iron against top-quality Swedish metal to make sure British warships would not break apart at sea."
           }
         },
         {
@@ -431,7 +416,25 @@ export const unitData = {
           "text": "<span class=\"para-ref\">[1.4]</span> Instead of having teams of exhausted blacksmiths slowly hammer hot iron blooms by hand, Cort patented water-powered <strong class=\"vocab-highlight\">grooved rollers</strong> in 1784. Driven by the surging River Meon waterwheel, these grooved cylinders squeezed out trapped slag impurities and compressed the metal into uniform naval bars at fifteen times the speed of traditional forge hammers. The physical archaeology of this triumph remains etched in the Hampshire landscape today. At Funtley, the original stone weir and circular waterwheel housing survive beside the river. Nearby stands Fontley House, with its Georgian red-brick Fareham \"Tallboy\" chimneys, and an intact dry-stone wall constructed entirely from tons of dark, glassy puddling slag excavated from Cort's ironworks.",
           "image": "/images/isambard_kingdom_brunel.jpg",
           "image_alt": "Iconic photograph of engineer Isambard Kingdom Brunel standing before the launching chains of the SS Great Eastern",
-          "caption": "Isambard Kingdom Brunel (1806–1859), master Victorian engineer whose iron bridges, railways, and steamships relied directly upon the mass-produced rolled iron techniques pioneered by Henry Cort (Robert Howlett, 1857 / National Portrait Gallery, NPG P110)."
+          "caption": "Isambard Kingdom Brunel (1806–1859), master Victorian engineer whose iron bridges, railways, and steamships relied directly upon the mass-produced rolled iron techniques pioneered by Henry Cort (Robert Howlett, 1857 / National Portrait Gallery, NPG P110).",
+          "source": {
+            "letter": "E",
+            "title": "Source E: Henry Cort, Patent Specification No. 1420 for Grooved Rollers (1784)",
+            "context": "In February 1784, Henry Cort registered Patent No. 1420 at the Court of Chancery. While his earlier 1783 patent introduced the reverberatory puddling furnace, this second breakthrough automated the shaping of red-hot iron using water-powered grooved rollers at Funtley Ironworks, accelerating production from slow manual blacksmith hammering to rapid continuous mechanical rolling. **Hinge Question:** Why was the invention of grooved rollers just as important as the puddling furnace in enabling Britain to mass-produce wrought iron for the Royal Navy?",
+            "hinge_question": "Why was the invention of grooved rollers just as important as the puddling furnace in enabling Britain to mass-produce wrought iron for the Royal Navy?",
+            "text": "“I, the said Henry Cort, have discovered a new and peculiar method of preparing, welding, and working various sorts of iron... by passing the blooms through rollers having collars and grooves of different forms and dimensions. By this operation, the fibrous texture of the iron is preserved, the liquid slag and impurities are squeezed out, and the heated iron is manufactured into bars, bolts, and plates with a speed fifteen times greater than can be performed by the heaviest forge hammer. The iron so produced possesses the highest degree of malleability and toughness, capable of supplying the Royal Navy with bolts, stays, and anchors of unyielding strength.”",
+            "caption": "Source E: Extract from Henry Cort’s Patent Specification No. 1420, enrolled in the Court of Chancery in February 1784, detailing the mechanisation of iron rolling.",
+            "discussion_ideas": [
+              "A Fifteen-Fold Leap in Industrial Velocity: Cort's grooved rolling cylinders bypassed the ancient human bottleneck of blacksmithing: where teams of hammermen could only produce a single iron bar through hours of punishing manual labour, Cort's water-powered rollers spat out finished, uniform naval bars in minutes.",
+              "Naval Self-Sufficiency and Imperial Security: By compressing the decarburized wrought iron blooms while expelling brittle slag, grooved rolling created ductile, high-tensile iron bolts and hoops that met the rigorous Admiralty standards tested at Portsmouth Dockyard, freeing Britain from reliance on Swedish and Russian iron on the eve of the Napoleonic Wars."
+            ],
+            "id": "iae_l1_source_e_cort_rollers_patent",
+            "question": "How did Henry Cort’s grooved rollers revolutionize the speed and quality of iron production according to this patent?",
+            "question_badge": "Technological Innovation & Economy",
+            "question_type": "Technological Innovation & Economy",
+            "model_answer": "Cort explains that grooved rollers squeezed out impurities and shaped hot iron into tough, durable naval bars fifteen times faster than traditional hand hammering.",
+            "citation": "Henry Cort, Patent Specification No. 1420, Enrolled 21 February 1784, Court of Chancery / The National Archives, Kew (C 210/37)."
+          }
         },
         {
           "act": 5,
@@ -448,12 +451,7 @@ export const unitData = {
             "question_badge": "Historical Significance",
             "question": "Why did admirers call Henry Cort the 'Tubal Cain of our Century' on this portrait?",
             "enquiry_question": "Why did admirers call Henry Cort the 'Tubal Cain of our Century' on this portrait?",
-            "model_answer": "They compared him to the legendary biblical blacksmith Tubal Cain to celebrate Cort as a national hero whose invention gave Britain industrial supremacy.",
-            "provenance_clues": [
-              "Author: British admirers and iron trade publishers in London.",
-              "Audience: The British public and industrial leaders proud of national technological progress.",
-              "Motive: To honor Cort's brilliance and celebrate British engineering on the global stage."
-            ]
+            "model_answer": "They compared him to the legendary biblical blacksmith Tubal Cain to celebrate Cort as a national hero whose invention gave Britain industrial supremacy."
           }
         }
       ],
@@ -836,11 +834,10 @@ export const unitData = {
           "question": "What does this dramatic night painting suggest about how industrial furnaces changed the English countryside?",
           "enquiry_question": "What does this dramatic night painting suggest about how industrial furnaces changed the English countryside?",
           "model_answer": "The painting suggests industrial furnaces turned quiet rural valleys into a blazing, fiery world of constant noise and heavy machinery, replacing nature with intense industrial power.",
-          "provenance_clues": [
-            "Author: Philip James de Loutherbourg, a Romantic landscape painter fascinated by industrial spectacles.",
-            "Audience: British art lovers and exhibition visitors witnessing the dawn of the Industrial Age.",
-            "Motive: To capture the awe and terrifying power of iron blast furnaces lighting up the night sky."
-          ]
+          "source_context": "Philipp Jakob de Loutherbourg’s 1801 painting captures the violent energy transition of the Industrial Revolution in Shropshire. Blast furnaces replaced tranquil rural darkness with 24-hour smoke and fire. **Hinge Question:** Why did the shift from water power to coal-fired blast furnaces transform both Britain’s physical landscape and the daily autonomy of its workers?",
+          "teacher_notes": {
+            "source_context": "Philipp Jakob de Loutherbourg’s 1801 painting captures the violent energy transition of the Industrial Revolution in Shropshire. Blast furnaces replaced tranquil rural darkness with 24-hour smoke and fire. **Hinge Question:** Why did the shift from water power to coal-fired blast furnaces transform both Britain’s physical landscape and the daily autonomy of its workers?"
+          }
         },
         {
           "letter": "B",
@@ -853,11 +850,10 @@ export const unitData = {
           "question": "How did Henry Cort's arched furnace design allow ironworkers to make pure, strong iron using British coal?",
           "enquiry_question": "How did Henry Cort's arched furnace design allow ironworkers to make pure, strong iron using British coal?",
           "model_answer": "By curving the flame over a low roof to heat the metal without letting the dirty coal touch it, Cort kept the iron pure and tough enough for Royal Navy ships.",
-          "provenance_clues": [
-            "Author: Henry Cort, an innovative English ironmaster who patented the puddling process.",
-            "Audience: Patent officials, industrialists, and ironmasters across Britain.",
-            "Motive: To register and protect his revolutionary breakthrough that transformed British iron production."
-          ]
+          "source_context": "Patent drawing cross-section of Henry Cort’s 1783 reverberatory puddling furnace at Funtley Ironworks, Hampshire. By reverberating flame from an arched brick ceiling down onto the hearth, Cort separated molten metal from sulphur-rich coal, solving Britain’s pig iron crisis. **Hinge Question:** How did separating coal fuel from refining metal in an arched air furnace solve the Royal Navy’s materials crisis?",
+          "teacher_notes": {
+            "source_context": "Patent drawing cross-section of Henry Cort’s 1783 reverberatory puddling furnace at Funtley Ironworks, Hampshire. By reverberating flame from an arched brick ceiling down onto the hearth, Cort separated molten metal from sulphur-rich coal, solving Britain’s pig iron crisis. **Hinge Question:** How did separating coal fuel from refining metal in an arched air furnace solve the Royal Navy’s materials crisis?"
+          }
         },
         {
           "letter": "C",
@@ -870,11 +866,10 @@ export const unitData = {
           "question": "Why can historians trust this official Navy report when studying the strength of Henry Cort's new iron?",
           "enquiry_question": "Why can historians trust this official Navy report when studying the strength of Henry Cort's new iron?",
           "model_answer": "Historians can trust this report because Navy inspectors strictly tested the iron against top-quality Swedish metal to make sure British warships would not break apart at sea.",
-          "provenance_clues": [
-            "Author: Royal Navy officials and master blacksmiths at Portsmouth Dockyard.",
-            "Audience: The Admiralty Navy Board responsible for building Britain’s battle fleet.",
-            "Motive: To test rigorously whether British iron was strong enough to replace expensive foreign imports."
-          ]
+          "source_context": "Official Navy Board trials conducted at Portsmouth Dockyard in March 1787 testing Funtley wrought iron against imported Swedish Orgrounds iron (ADM 106/2347). Proving that domestic iron equaled Swedish ore secured Royal Navy self-sufficiency before the French Revolutionary Wars. **Hinge Question:** How does this trial report demonstrate that the Industrial Revolution was driven as much by naval military necessity as commercial profit?",
+          "teacher_notes": {
+            "source_context": "Official Navy Board trials conducted at Portsmouth Dockyard in March 1787 testing Funtley wrought iron against imported Swedish Orgrounds iron (ADM 106/2347). Proving that domestic iron equaled Swedish ore secured Royal Navy self-sufficiency before the French Revolutionary Wars. **Hinge Question:** How does this trial report demonstrate that the Industrial Revolution was driven as much by naval military necessity as commercial profit?"
+          }
         },
         {
           "letter": "D",
@@ -887,11 +882,32 @@ export const unitData = {
           "question": "Why did admirers call Henry Cort the 'Tubal Cain of our Century' on this portrait?",
           "enquiry_question": "Why did admirers call Henry Cort the 'Tubal Cain of our Century' on this portrait?",
           "model_answer": "They compared him to the legendary biblical blacksmith Tubal Cain to celebrate Cort as a national hero whose invention gave Britain industrial supremacy.",
-          "provenance_clues": [
-            "Author: British admirers and iron trade publishers in London.",
-            "Audience: The British public and industrial leaders proud of national technological progress.",
-            "Motive: To honor Cort's brilliance and celebrate British engineering on the global stage."
-          ]
+          "source_context": "An authentic 18th-century dedication engraving commemorating Henry Cort as \"The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain\". **Hinge Question:** Why would contemporaries compare an 18th-century Hampshire ironmaster to an ancient heroic metalworker, and what does this reveal about Britain’s growing industrial pride?",
+          "teacher_notes": {
+            "source_context": "An authentic 18th-century dedication engraving commemorating Henry Cort as \"The Tubal Cain of our Century and of our Country, Dedicated to the Iron Trade of Great Britain\". **Hinge Question:** Why would contemporaries compare an 18th-century Hampshire ironmaster to an ancient heroic metalworker, and what does this reveal about Britain’s growing industrial pride?"
+          }
+        },
+        {
+          "letter": "E",
+          "title": "Source E: Henry Cort, Patent Specification No. 1420 for Grooved Rollers (1784)",
+          "context": "In February 1784, Henry Cort registered Patent No. 1420 at the Court of Chancery. While his earlier 1783 patent introduced the reverberatory puddling furnace, this second breakthrough automated the shaping of red-hot iron using water-powered grooved rollers at Funtley Ironworks, accelerating production from slow manual blacksmith hammering to rapid continuous mechanical rolling. **Hinge Question:** Why was the invention of grooved rollers just as important as the puddling furnace in enabling Britain to mass-produce wrought iron for the Royal Navy?",
+          "hinge_question": "Why was the invention of grooved rollers just as important as the puddling furnace in enabling Britain to mass-produce wrought iron for the Royal Navy?",
+          "text": "“I, the said Henry Cort, have discovered a new and peculiar method of preparing, welding, and working various sorts of iron... by passing the blooms through rollers having collars and grooves of different forms and dimensions. By this operation, the fibrous texture of the iron is preserved, the liquid slag and impurities are squeezed out, and the heated iron is manufactured into bars, bolts, and plates with a speed fifteen times greater than can be performed by the heaviest forge hammer. The iron so produced possesses the highest degree of malleability and toughness, capable of supplying the Royal Navy with bolts, stays, and anchors of unyielding strength.”",
+          "caption": "Source E: Extract from Henry Cort’s Patent Specification No. 1420, enrolled in the Court of Chancery in February 1784, detailing the mechanisation of iron rolling.",
+          "discussion_ideas": [
+            "A Fifteen-Fold Leap in Industrial Velocity: Cort's grooved rolling cylinders bypassed the ancient human bottleneck of blacksmithing: where teams of hammermen could only produce a single iron bar through hours of punishing manual labour, Cort's water-powered rollers spat out finished, uniform naval bars in minutes.",
+            "Naval Self-Sufficiency and Imperial Security: By compressing the decarburized wrought iron blooms while expelling brittle slag, grooved rolling created ductile, high-tensile iron bolts and hoops that met the rigorous Admiralty standards tested at Portsmouth Dockyard, freeing Britain from reliance on Swedish and Russian iron on the eve of the Napoleonic Wars."
+          ],
+          "id": "iae_l1_source_e_cort_rollers_patent",
+          "question": "How did Henry Cort’s grooved rollers revolutionize the speed and quality of iron production according to this patent?",
+          "question_badge": "Technological Innovation & Economy",
+          "question_type": "Technological Innovation & Economy",
+          "model_answer": "Cort explains that grooved rollers squeezed out impurities and shaped hot iron into tough, durable naval bars fifteen times faster than traditional hand hammering.",
+          "citation": "Henry Cort, Patent Specification No. 1420, Enrolled 21 February 1784, Court of Chancery / The National Archives, Kew (C 210/37).",
+          "source_context": "In February 1784, Henry Cort registered Patent No. 1420 at the Court of Chancery. While his earlier 1783 patent introduced the reverberatory puddling furnace, this second breakthrough automated the shaping of red-hot iron using water-powered grooved rollers at Funtley Ironworks, accelerating production from slow manual blacksmith hammering to rapid continuous mechanical rolling. **Hinge Question:** Why was the invention of grooved rollers just as important as the puddling furnace in enabling Britain to mass-produce wrought iron for the Royal Navy?",
+          "teacher_notes": {
+            "source_context": "In February 1784, Henry Cort registered Patent No. 1420 at the Court of Chancery. While his earlier 1783 patent introduced the reverberatory puddling furnace, this second breakthrough automated the shaping of red-hot iron using water-powered grooved rollers at Funtley Ironworks, accelerating production from slow manual blacksmith hammering to rapid continuous mechanical rolling. **Hinge Question:** Why was the invention of grooved rollers just as important as the puddling furnace in enabling Britain to mass-produce wrought iron for the Royal Navy?"
+          }
         }
       ],
       "exam_practice": {
@@ -1219,12 +1235,7 @@ export const unitData = {
             "question_badge": "Source Inference",
             "question": "What can you learn from this engraving about the dangers faced by children working in steam-powered mills?",
             "enquiry_question": "What can you learn from this engraving about the dangers faced by children working in steam-powered mills?",
-            "model_answer": "Children had to crawl underneath clattering, unguarded machinery and moving leather belts where a single slip could cause severe injury or death.",
-            "provenance_clues": [
-              "Author: Thomas Allom, an artist who toured northern manufacturing districts.",
-              "Audience: Middle-class readers curious about new industrial factory technology.",
-              "Motive: To show the vast scale of modern mechanised weaving while documenting child labour."
-            ]
+            "model_answer": "Children had to crawl underneath clattering, unguarded machinery and moving leather belts where a single slip could cause severe injury or death."
           }
         },
         {
@@ -1242,12 +1253,7 @@ export const unitData = {
             "question_badge": "Author's Purpose",
             "question": "Why did factory bosses write such harsh rules and fine workers a whole shilling for opening a window or whistling?",
             "enquiry_question": "Why did factory bosses write such harsh rules and fine workers a whole shilling for opening a window or whistling?",
-            "model_answer": "Factory owners used strict monetary fines to turn farmworkers into obedient, clock-watching workers who never wasted a single second of factory time.",
-            "provenance_clues": [
-              "Author: The factory management of Tyldesley Cotton Mill in Lancashire.",
-              "Audience: Mill operatives, spinners, and weavers working long daily shifts.",
-              "Motive: To enforce total silence, punctuality, and maximum machine productivity through fear of wage cuts."
-            ]
+            "model_answer": "Factory owners used strict monetary fines to turn farmworkers into obedient, clock-watching workers who never wasted a single second of factory time."
           },
           "image": "/images/spinning_mule.jpg",
           "image_alt": "Portrait of Samuel Crompton with his revolutionary spinning mule machine",
@@ -1268,19 +1274,32 @@ export const unitData = {
             "question_badge": "Cross-Referencing & Motive",
             "question": "How does Matthew Crabtree’s eyewitness testimony support the claim that factory hours ruined children's health?",
             "enquiry_question": "How does Matthew Crabtree’s eyewitness testimony support the claim that factory hours ruined children's health?",
-            "model_answer": "Crabtree explains under oath that working fourteen-hour days without breaks left children physically deformed and beaten with straps if fatigue made them late.",
-            "provenance_clues": [
-              "Author: Matthew Crabtree, a 22-year-old former factory child worker testifying under oath.",
-              "Audience: Members of Parliament investigating child labour abuses.",
-              "Motive: To expose the cruel treatment of children and convince MPs to pass laws limiting daily working hours."
-            ]
+            "model_answer": "Crabtree explains under oath that working fourteen-hour days without breaks left children physically deformed and beaten with straps if fatigue made them late."
           }
         },
         {
           "act": 4,
           "title": "The Sadler Committee & Matthew Crabtree’s Testimony (1832)",
           "theme_heading": "The Sadler Committee & Matthew Crabtree’s Testimony (1832)",
-          "text": "<span class=\"para-ref\">[2.4]</span> Outrage over factory conditions culminated in the landmark 1832 Parliamentary <strong class=\"vocab-highlight\">Sadler Committee</strong> investigation. Twenty-two-year-old former child worker Matthew Crabtree gave harrowing evidence. He recounted starting in a blanket factory at age eight, working from 6:00 AM to 9:00 PM with only forty minutes for dinner. Overlookers patrolled the aisles with heavy leather straps, brutally beating exhausted children who lagged behind. Crabtree testified that extreme fatigue caused him to drop asleep on the floor without eating, leaving his legs permanently bowed and his spine stunted by unceasing toil."
+          "text": "<span class=\"para-ref\">[2.4]</span> Outrage over factory conditions culminated in the landmark 1832 Parliamentary <strong class=\"vocab-highlight\">Sadler Committee</strong> investigation. Twenty-two-year-old former child worker Matthew Crabtree gave harrowing evidence. He recounted starting in a blanket factory at age eight, working from 6:00 AM to 9:00 PM with only forty minutes for dinner. Overlookers patrolled the aisles with heavy leather straps, brutally beating exhausted children who lagged behind. Crabtree testified that extreme fatigue caused him to drop asleep on the floor without eating, leaving his legs permanently bowed and his spine stunted by unceasing toil.",
+          "source": {
+            "letter": "E",
+            "title": "Source E: The Factory Act 1833 (3 & 4 Will. IV, c. 103)",
+            "context": "Passed by Parliament in August 1833 after intense public campaigning by Lord Ashley (later Lord Shaftesbury), the Factory Act 1833 marked the first time the British state intervened directly in private capitalist enterprise to protect child workers. Crucially, the Act created four salaried Crown Factory Inspectors empowered to enter any mill unannounced. **Hinge Question:** Why was the creation of independent factory inspectors more important than merely passing laws restricting child labour?",
+            "hinge_question": "Why was the creation of independent factory inspectors more important than merely passing laws restricting child labour?",
+            "text": "“Be it enacted that from and after the First Day of January 1834, no Person under Eighteen Years of Age shall be allowed to work in the Night in any Cotton, Woollen, or Flax Mill... And be it enacted that no Child who shall not have completed his or her Ninth Year of Age shall be employed in any such Mill or Factory... And no Child between Nine and Thirteen Years shall work more than Forty-eight Hours in any One Week, nor more than Nine Hours in any One Day... And be it enacted that it shall be lawful for His Majesty to appoint Four Persons to be Inspectors of Factories, empowered to enter any Factory or Mill by Day or by Night, to examine the Persons employed, and to enforce the Provisions of this Act.”",
+            "caption": "Source E: Key statutory clauses of the Factory Act 1833, which banned textile factory labour for children under nine and established Britain's first four factory inspectors.",
+            "discussion_ideas": [
+              "The Collapse of Unregulated Laissez-Faire: Prior to 1833, British factory owners operated under absolute laissez-faire, treating child labour as a private contract between employer and parent with zero government interference; the 1833 Act established the revolutionary constitutional principle that the state possessed the duty to regulate capitalist industry and protect vulnerable human life.",
+              "Enforcement via Independent Crown Inspectors: Previous child labour acts (such as the 1802 and 1819 Acts) were completely ignored because local magistrates were often mill owners themselves; by appointing four professional, salaried inspectors (such as Leonard Horner) with legal authority to enter mills unannounced, Parliament created real, enforceable state accountability."
+            ],
+            "id": "iae_l2_source_e_factory_act_1833",
+            "question": "What two major protections did the Factory Act 1833 establish for children working in British textile mills?",
+            "question_badge": "Legislation & State Intervention",
+            "question_type": "Legislation & State Intervention",
+            "model_answer": "The Act banned the employment of children under the age of nine and restricted children aged nine to thirteen to a maximum of nine hours of work per day.",
+            "citation": "Statutes of the United Kingdom, 3 & 4 William IV, c. 103 (29 August 1833) / Parliamentary Archives, London."
+          }
         },
         {
           "act": 5,
@@ -1297,12 +1316,7 @@ export const unitData = {
             "question_badge": "Propaganda & Persuasion",
             "question": "How did book illustrations like this persuade ordinary British people to demand an end to child labour?",
             "enquiry_question": "How did book illustrations like this persuade ordinary British people to demand an end to child labour?",
-            "model_answer": "By showing small, exhausted children crouching dangerously under looming iron wheels while an overseer watches, the picture stirred up deep public sympathy and outrage.",
-            "provenance_clues": [
-              "Author: Illustrator for Frances Trollope’s reforming novel Michael Armstrong.",
-              "Audience: The Victorian reading public and middle-class voters across Britain.",
-              "Motive: To shock readers into supporting new factory laws that would protect working children."
-            ]
+            "model_answer": "By showing small, exhausted children crouching dangerously under looming iron wheels while an overseer watches, the picture stirred up deep public sympathy and outrage."
           },
           "image": "/images/lord_shaftesbury.jpg",
           "image_alt": "Portrait of Anthony Ashley-Cooper, 7th Earl of Shaftesbury, factory reformer",
@@ -1661,11 +1675,10 @@ export const unitData = {
           "question": "What can you learn from this engraving about the dangers faced by children working in steam-powered mills?",
           "enquiry_question": "What can you learn from this engraving about the dangers faced by children working in steam-powered mills?",
           "model_answer": "Children had to crawl underneath clattering, unguarded machinery and moving leather belts where a single slip could cause severe injury or death.",
-          "provenance_clues": [
-            "Author: Thomas Allom, an artist who toured northern manufacturing districts.",
-            "Audience: Middle-class readers curious about new industrial factory technology.",
-            "Motive: To show the vast scale of modern mechanised weaving while documenting child labour."
-          ]
+          "source_context": "Thomas Allom’s 1835 engraving captures the deafening, machine-dominated landscape of a steam-driven cotton mill. Small children work as scavengers and piecers under fast-moving, unguarded drive belts and looms. **Hinge Question:** How does the physical danger of child labour in steam factories illustrate the human cost of industrial mechanization?",
+          "teacher_notes": {
+            "source_context": "Thomas Allom’s 1835 engraving captures the deafening, machine-dominated landscape of a steam-driven cotton mill. Small children work as scavengers and piecers under fast-moving, unguarded drive belts and looms. **Hinge Question:** How does the physical danger of child labour in steam factories illustrate the human cost of industrial mechanization?"
+          }
         },
         {
           "letter": "B",
@@ -1678,11 +1691,10 @@ export const unitData = {
           "question": "Why did factory bosses write such harsh rules and fine workers a whole shilling for opening a window or whistling?",
           "enquiry_question": "Why did factory bosses write such harsh rules and fine workers a whole shilling for opening a window or whistling?",
           "model_answer": "Factory owners used strict monetary fines to turn farmworkers into obedient, clock-watching workers who never wasted a single second of factory time.",
-          "provenance_clues": [
-            "Author: The factory management of Tyldesley Cotton Mill in Lancashire.",
-            "Audience: Mill operatives, spinners, and weavers working long daily shifts.",
-            "Motive: To enforce total silence, punctuality, and maximum machine productivity through fear of wage cuts."
-          ]
+          "source_context": "Official workplace regulations posted at the entrance of a Lancashire cotton mill in 1823. Mill masters enforced absolute obedience through monetary wage deductions and locked gates. **Hinge Question:** Why did factory owners choose monetary wage fines rather than dismissals to discipline industrial workers?",
+          "teacher_notes": {
+            "source_context": "Official workplace regulations posted at the entrance of a Lancashire cotton mill in 1823. Mill masters enforced absolute obedience through monetary wage deductions and locked gates. **Hinge Question:** Why did factory owners choose monetary wage fines rather than dismissals to discipline industrial workers?"
+          }
         },
         {
           "letter": "C",
@@ -1695,11 +1707,10 @@ export const unitData = {
           "question": "How does Matthew Crabtree’s eyewitness testimony support the claim that factory hours ruined children's health?",
           "enquiry_question": "How does Matthew Crabtree’s eyewitness testimony support the claim that factory hours ruined children's health?",
           "model_answer": "Crabtree explains under oath that working fourteen-hour days without breaks left children physically deformed and beaten with straps if fatigue made them late.",
-          "provenance_clues": [
-            "Author: Matthew Crabtree, a 22-year-old former factory child worker testifying under oath.",
-            "Audience: Members of Parliament investigating child labour abuses.",
-            "Motive: To expose the cruel treatment of children and convince MPs to pass laws limiting daily working hours."
-          ]
+          "source_context": "Minutes of Evidence before Michael Sadler’s 1832 Parliamentary Committee on child labour. Matthew Crabtree testified under oath regarding fourteen-hour shifts, lack of meal breaks, corporal punishment with leather straps, and physical limb deformities. **Hinge Question:** Why did firsthand testimonies before the Sadler Committee shock the British public into demanding parliamentary factory legislation?",
+          "teacher_notes": {
+            "source_context": "Minutes of Evidence before Michael Sadler’s 1832 Parliamentary Committee on child labour. Matthew Crabtree testified under oath regarding fourteen-hour shifts, lack of meal breaks, corporal punishment with leather straps, and physical limb deformities. **Hinge Question:** Why did firsthand testimonies before the Sadler Committee shock the British public into demanding parliamentary factory legislation?"
+          }
         },
         {
           "letter": "D",
@@ -1712,11 +1723,32 @@ export const unitData = {
           "question": "How did book illustrations like this persuade ordinary British people to demand an end to child labour?",
           "enquiry_question": "How did book illustrations like this persuade ordinary British people to demand an end to child labour?",
           "model_answer": "By showing small, exhausted children crouching dangerously under looming iron wheels while an overseer watches, the picture stirred up deep public sympathy and outrage.",
-          "provenance_clues": [
-            "Author: Illustrator for Frances Trollope’s reforming novel Michael Armstrong.",
-            "Audience: The Victorian reading public and middle-class voters across Britain.",
-            "Motive: To shock readers into supporting new factory laws that would protect working children."
-          ]
+          "source_context": "An 1840 illustration from Frances Trollope’s Michael Armstrong, the Factory Boy. Visual exposés published in Victorian popular fiction campaigned alongside parliamentary reports to mobilize public outrage against child labour. **Hinge Question:** Why were visual depictions of child labour often more politically powerful in shifting public opinion than dry statistical reports?",
+          "teacher_notes": {
+            "source_context": "An 1840 illustration from Frances Trollope’s Michael Armstrong, the Factory Boy. Visual exposés published in Victorian popular fiction campaigned alongside parliamentary reports to mobilize public outrage against child labour. **Hinge Question:** Why were visual depictions of child labour often more politically powerful in shifting public opinion than dry statistical reports?"
+          }
+        },
+        {
+          "letter": "E",
+          "title": "Source E: The Factory Act 1833 (3 & 4 Will. IV, c. 103)",
+          "context": "Passed by Parliament in August 1833 after intense public campaigning by Lord Ashley (later Lord Shaftesbury), the Factory Act 1833 marked the first time the British state intervened directly in private capitalist enterprise to protect child workers. Crucially, the Act created four salaried Crown Factory Inspectors empowered to enter any mill unannounced. **Hinge Question:** Why was the creation of independent factory inspectors more important than merely passing laws restricting child labour?",
+          "hinge_question": "Why was the creation of independent factory inspectors more important than merely passing laws restricting child labour?",
+          "text": "“Be it enacted that from and after the First Day of January 1834, no Person under Eighteen Years of Age shall be allowed to work in the Night in any Cotton, Woollen, or Flax Mill... And be it enacted that no Child who shall not have completed his or her Ninth Year of Age shall be employed in any such Mill or Factory... And no Child between Nine and Thirteen Years shall work more than Forty-eight Hours in any One Week, nor more than Nine Hours in any One Day... And be it enacted that it shall be lawful for His Majesty to appoint Four Persons to be Inspectors of Factories, empowered to enter any Factory or Mill by Day or by Night, to examine the Persons employed, and to enforce the Provisions of this Act.”",
+          "caption": "Source E: Key statutory clauses of the Factory Act 1833, which banned textile factory labour for children under nine and established Britain's first four factory inspectors.",
+          "discussion_ideas": [
+            "The Collapse of Unregulated Laissez-Faire: Prior to 1833, British factory owners operated under absolute laissez-faire, treating child labour as a private contract between employer and parent with zero government interference; the 1833 Act established the revolutionary constitutional principle that the state possessed the duty to regulate capitalist industry and protect vulnerable human life.",
+            "Enforcement via Independent Crown Inspectors: Previous child labour acts (such as the 1802 and 1819 Acts) were completely ignored because local magistrates were often mill owners themselves; by appointing four professional, salaried inspectors (such as Leonard Horner) with legal authority to enter mills unannounced, Parliament created real, enforceable state accountability."
+          ],
+          "id": "iae_l2_source_e_factory_act_1833",
+          "question": "What two major protections did the Factory Act 1833 establish for children working in British textile mills?",
+          "question_badge": "Legislation & State Intervention",
+          "question_type": "Legislation & State Intervention",
+          "model_answer": "The Act banned the employment of children under the age of nine and restricted children aged nine to thirteen to a maximum of nine hours of work per day.",
+          "citation": "Statutes of the United Kingdom, 3 & 4 William IV, c. 103 (29 August 1833) / Parliamentary Archives, London.",
+          "source_context": "Passed by Parliament in August 1833 after intense public campaigning by Lord Ashley (later Lord Shaftesbury), the Factory Act 1833 marked the first time the British state intervened directly in private capitalist enterprise to protect child workers. Crucially, the Act created four salaried Crown Factory Inspectors empowered to enter any mill unannounced. **Hinge Question:** Why was the creation of independent factory inspectors more important than merely passing laws restricting child labour?",
+          "teacher_notes": {
+            "source_context": "Passed by Parliament in August 1833 after intense public campaigning by Lord Ashley (later Lord Shaftesbury), the Factory Act 1833 marked the first time the British state intervened directly in private capitalist enterprise to protect child workers. Crucially, the Act created four salaried Crown Factory Inspectors empowered to enter any mill unannounced. **Hinge Question:** Why was the creation of independent factory inspectors more important than merely passing laws restricting child labour?"
+          }
         }
       ],
       "exam_practice": {
@@ -2115,12 +2147,7 @@ export const unitData = {
             "question_badge": "Source Inference",
             "question": "What does Doré's engraving suggest about the living conditions of working-class families in industrial London?",
             "enquiry_question": "What does Doré's engraving suggest about the living conditions of working-class families in industrial London?",
-            "model_answer": "It shows that families were crammed into bleak back-to-back brick houses with tiny fenced yards, living in choking smoke underneath roaring train lines.",
-            "provenance_clues": [
-              "Author: Gustave Doré, a famous French illustrator who visited London to record both its wealth and deep poverty.",
-              "Audience: Victorian readers and art buyers in Britain and Europe.",
-              "Motive: To reveal the grim, overcrowded reality of working-class slums overshadowed by modern railway tracks."
-            ]
+            "model_answer": "It shows that families were crammed into bleak back-to-back brick houses with tiny fenced yards, living in choking smoke underneath roaring train lines."
           }
         },
         {
@@ -2138,12 +2165,7 @@ export const unitData = {
             "question_badge": "Symbolism & Social Satire",
             "question": "How does John Leech use the character of 'King Cholera' to attack town leaders for neglecting filthy slums?",
             "enquiry_question": "How does John Leech use the character of 'King Cholera' to attack town leaders for neglecting filthy slums?",
-            "model_answer": "Leech draws cholera as a skeletal king ruling over rubbish heaps and dirty cesspools to warn town leaders that their neglect is killing thousands of poor citizens.",
-            "provenance_clues": [
-              "Author: John Leech, chief cartoonist for the influential satirical magazine Punch.",
-              "Audience: Middle-class Victorian voters, politicians, and municipal town councillors.",
-              "Motive: To mock government inaction and shame authorities into cleaning up dirty urban slums."
-            ]
+            "model_answer": "Leech draws cholera as a skeletal king ruling over rubbish heaps and dirty cesspools to warn town leaders that their neglect is killing thousands of poor citizens."
           }
         },
         {
@@ -2161,12 +2183,7 @@ export const unitData = {
             "question_badge": "Author's Purpose",
             "question": "Why did Edwin Chadwick compare slum deaths to battlefield casualties in his official report?",
             "enquiry_question": "Why did Edwin Chadwick compare slum deaths to battlefield casualties in his official report?",
-            "model_answer": "Chadwick compared slum deaths to war casualties to shock politicians into realizing that filthy living conditions killed far more Britons than foreign armies.",
-            "provenance_clues": [
-              "Author: Edwin Chadwick, civil servant and sanitary reformer investigating public health.",
-              "Audience: Members of Parliament and government ministers who believed in laissez-faire.",
-              "Motive: To prove statistically that bad drains and filthy water caused epidemics, demanding government public health laws."
-            ]
+            "model_answer": "Chadwick compared slum deaths to war casualties to shock politicians into realizing that filthy living conditions killed far more Britons than foreign armies."
           },
           "image": "/images/snow_cholera_map.jpg",
           "image_alt": "Dr. John Snow's famous 1854 epidemiological dot map of the Broad Street cholera outbreak in Soho, London",
@@ -2179,7 +2196,25 @@ export const unitData = {
           "text": "<span class=\"para-ref\">[3.4]</span> In 1842, reformer <strong class=\"vocab-highlight\">Edwin Chadwick</strong> published his revolutionary <em>Report on the Sanitary Condition of the Labouring Population</em>. Using groundbreaking statistical data, Chadwick proved that epidemic typhus and cholera were directly bred by environmental filth and lack of clean water. His findings were horrifying: in industrial Manchester, average working-class life expectancy had plummeted to just 17–19 years, compared to 38 years in rural Rutlandshire. Chadwick argued that building clean arterial water mains and self-flushing glazed sewers would save taxpayers money by reducing orphanhood and Poor Law relief, inspiring the landmark Public Health Act of 1848.",
           "image": "/images/chadwick.jpg",
           "image_alt": "Portrait of social reformer Sir Edwin Chadwick",
-          "caption": "Sir Edwin Chadwick (1800–1890), social reformer and Secretary to the Poor Law Commission, whose 1842 Report exposed the link between filth, disease, and poverty, laying the groundwork for the 1848 Public Health Act (National Portrait Gallery, NPG 1271)."
+          "caption": "Sir Edwin Chadwick (1800–1890), social reformer and Secretary to the Poor Law Commission, whose 1842 Report exposed the link between filth, disease, and poverty, laying the groundwork for the 1848 Public Health Act (National Portrait Gallery, NPG 1271).",
+          "source": {
+            "letter": "E",
+            "title": "Source E: Father Thames Introducing his Offspring to the Fair City of London (Punch, July 1858)",
+            "context": "During the searing summer heat wave of June–July 1858, the Thames became so choked with decomposing human sewage and industrial effluent that the resulting stench—known as the \"Great Stink\"—paralyzed the Houses of Parliament, forcing MPs to soak window curtains in chloride of lime to avoid fainting. Punch published this biting cartoon showing Father Thames presenting his deadly children—Diphtheria, Scrofula, and Cholera—to London. **Hinge Question:** How did satirical magazines like Punch use dark humor to compel a reluctant Parliament to fund massive civil engineering projects like Bazalgette’s sewers?",
+            "hinge_question": "How did satirical magazines like Punch use dark humor to compel a reluctant Parliament to fund massive civil engineering projects like Bazalgette’s sewers?",
+            "image": "/images/father_thames_punch_1858.jpg",
+            "caption": "Source E: John Leech's celebrated cartoon in Punch (3 July 1858) personifying Father Thames introducing his diseased children—Diphtheria, Scrofula, and Cholera—to London during the Great Stink.",
+            "discussion_ideas": [
+              "Personification of Lethal Waterborne Epidemics: Leech personifies the Thames not as the romantic, bountiful river god of British folklore, but as a filthy, bedraggled monster crawling from the slime to present his skeletal, diseased children—Diphtheria, Scrofula, and Cholera—to a refined, classical Britannia representing the city of London, graphically connecting environmental filth to childhood mortality.",
+              "Political Pressure Shaming Parliament into Action: The subtitle mocks Parliament ('A Design for a Fresco in the New Houses of Parliament'), highlighting the hypocrisy of Victorian politicians who spent millions gilding the Palace of Westminster while refusing to spend public money on municipal sewers; within eighteen days of this cartoon appearing, Parliament passed emergency legislation authorizing Bazalgette's £3 million interceptor sewer system."
+            ],
+            "id": "iae_l3_source_e_father_thames_1858",
+            "question": "What point was the cartoonist making about London's living conditions by calling diseases like cholera the 'offspring' of Father Thames?",
+            "question_badge": "Symbolism & Social Satire",
+            "question_type": "Symbolism & Social Satire",
+            "model_answer": "The cartoon was warning that the filthy, sewage-polluted Thames was the direct parent and cause of deadly diseases like cholera, which were poisoning London's population.",
+            "citation": "Punch, or the London Charivari, Vol. XXXV, 3 July 1858, p. 5 / British Library."
+          }
         },
         {
           "act": 5,
@@ -2196,12 +2231,7 @@ export const unitData = {
             "question_badge": "Technology & Power",
             "question": "What does this photograph reveal about how Victorian engineering solved London's deadly sewage crisis?",
             "enquiry_question": "What does this photograph reveal about how Victorian engineering solved London's deadly sewage crisis?",
-            "model_answer": "It reveals the massive scale of Bazalgette's underground brick tunnels, built to divert millions of gallons of sewage away from the Thames and halt cholera epidemics.",
-            "provenance_clues": [
-              "Author: Victorian documentary photographer recording public works.",
-              "Audience: Municipal authorities, civil engineers, and the London public.",
-              "Motive: To record the construction of the underground interceptor sewers that saved London from disease."
-            ]
+            "model_answer": "It reveals the massive scale of Bazalgette's underground brick tunnels, built to divert millions of gallons of sewage away from the Thames and halt cholera epidemics."
           }
         }
       ],
@@ -2531,11 +2561,10 @@ export const unitData = {
           "question": "What does Doré's engraving suggest about the living conditions of working-class families in industrial London?",
           "enquiry_question": "What does Doré's engraving suggest about the living conditions of working-class families in industrial London?",
           "model_answer": "It shows that families were crammed into bleak back-to-back brick houses with tiny fenced yards, living in choking smoke underneath roaring train lines.",
-          "provenance_clues": [
-            "Author: Gustave Doré, a famous French illustrator who visited London to record both its wealth and deep poverty.",
-            "Audience: Victorian readers and art buyers in Britain and Europe.",
-            "Motive: To reveal the grim, overcrowded reality of working-class slums overshadowed by modern railway tracks."
-          ]
+          "source_context": "Gustave Doré's celebrated 1872 engraving captures the claustrophobic reality of Victorian urbanisation. Packed into narrow yards without gardens or drainage, back-to-back houses were overshadowed by industrial transport infrastructure. **Hinge Question:** Does Doré portray the railway as a triumph of modern engineering or as an intrusive monster dominating the lives of the working poor?",
+          "teacher_notes": {
+            "source_context": "Gustave Doré's celebrated 1872 engraving captures the claustrophobic reality of Victorian urbanisation. Packed into narrow yards without gardens or drainage, back-to-back houses were overshadowed by industrial transport infrastructure. **Hinge Question:** Does Doré portray the railway as a triumph of modern engineering or as an intrusive monster dominating the lives of the working poor?"
+          }
         },
         {
           "letter": "B",
@@ -2548,11 +2577,10 @@ export const unitData = {
           "question": "How does John Leech use the character of 'King Cholera' to attack town leaders for neglecting filthy slums?",
           "enquiry_question": "How does John Leech use the character of 'King Cholera' to attack town leaders for neglecting filthy slums?",
           "model_answer": "Leech draws cholera as a skeletal king ruling over rubbish heaps and dirty cesspools to warn town leaders that their neglect is killing thousands of poor citizens.",
-          "provenance_clues": [
-            "Author: John Leech, chief cartoonist for the influential satirical magazine Punch.",
-            "Audience: Middle-class Victorian voters, politicians, and municipal town councillors.",
-            "Motive: To mock government inaction and shame authorities into cleaning up dirty urban slums."
-          ]
+          "source_context": "Published in Punch in 1852 during Britain's second cholera pandemic, John Leech's cartoon attacked municipal apathy. The image depicts children playing on an open dunghill and an unlined cesspool pump surrounded by dilapidated tenements. **Hinge Question:** How did satirical magazines like Punch use dark visual humor to pressure politicians into taking public health reform seriously?",
+          "teacher_notes": {
+            "source_context": "Published in Punch in 1852 during Britain's second cholera pandemic, John Leech's cartoon attacked municipal apathy. The image depicts children playing on an open dunghill and an unlined cesspool pump surrounded by dilapidated tenements. **Hinge Question:** How did satirical magazines like Punch use dark visual humor to pressure politicians into taking public health reform seriously?"
+          }
         },
         {
           "letter": "C",
@@ -2565,11 +2593,10 @@ export const unitData = {
           "question": "Why did Edwin Chadwick compare slum deaths to battlefield casualties in his official report?",
           "enquiry_question": "Why did Edwin Chadwick compare slum deaths to battlefield casualties in his official report?",
           "model_answer": "Chadwick compared slum deaths to war casualties to shock politicians into realizing that filthy living conditions killed far more Britons than foreign armies.",
-          "provenance_clues": [
-            "Author: Edwin Chadwick, civil servant and sanitary reformer investigating public health.",
-            "Audience: Members of Parliament and government ministers who believed in laissez-faire.",
-            "Motive: To prove statistically that bad drains and filthy water caused epidemics, demanding government public health laws."
-          ]
+          "source_context": "Edwin Chadwick's landmark 1842 investigation used statistical medical returns to prove that epidemic disease was directly generated by unhygienic living conditions rather than moral failing. **Hinge Question:** Why did Chadwick use a direct comparison to wartime casualties to shock Victorian MPs out of their laissez-faire complacency?",
+          "teacher_notes": {
+            "source_context": "Edwin Chadwick's landmark 1842 investigation used statistical medical returns to prove that epidemic disease was directly generated by unhygienic living conditions rather than moral failing. **Hinge Question:** Why did Chadwick use a direct comparison to wartime casualties to shock Victorian MPs out of their laissez-faire complacency?"
+          }
         },
         {
           "letter": "D",
@@ -2582,11 +2609,32 @@ export const unitData = {
           "question": "What does this photograph reveal about how Victorian engineering solved London's deadly sewage crisis?",
           "enquiry_question": "What does this photograph reveal about how Victorian engineering solved London's deadly sewage crisis?",
           "model_answer": "It reveals the massive scale of Bazalgette's underground brick tunnels, built to divert millions of gallons of sewage away from the Thames and halt cholera epidemics.",
-          "provenance_clues": [
-            "Author: Victorian documentary photographer recording public works.",
-            "Audience: Municipal authorities, civil engineers, and the London public.",
-            "Motive: To record the construction of the underground interceptor sewers that saved London from disease."
-          ]
+          "source_context": "Contemporary photograph of the cavernous Abbey Mills pumping station and underground brick interceptor sewers engineered by Sir Joseph Bazalgette following the 1858 Great Stink. **Hinge Question:** How did the construction of underground interceptor sewers demonstrate a decisive shift from individual laissez-faire to collective state public health engineering?",
+          "teacher_notes": {
+            "source_context": "Contemporary photograph of the cavernous Abbey Mills pumping station and underground brick interceptor sewers engineered by Sir Joseph Bazalgette following the 1858 Great Stink. **Hinge Question:** How did the construction of underground interceptor sewers demonstrate a decisive shift from individual laissez-faire to collective state public health engineering?"
+          }
+        },
+        {
+          "letter": "E",
+          "title": "Source E: Father Thames Introducing his Offspring to the Fair City of London (Punch, July 1858)",
+          "context": "During the searing summer heat wave of June–July 1858, the Thames became so choked with decomposing human sewage and industrial effluent that the resulting stench—known as the \"Great Stink\"—paralyzed the Houses of Parliament, forcing MPs to soak window curtains in chloride of lime to avoid fainting. Punch published this biting cartoon showing Father Thames presenting his deadly children—Diphtheria, Scrofula, and Cholera—to London. **Hinge Question:** How did satirical magazines like Punch use dark humor to compel a reluctant Parliament to fund massive civil engineering projects like Bazalgette’s sewers?",
+          "hinge_question": "How did satirical magazines like Punch use dark humor to compel a reluctant Parliament to fund massive civil engineering projects like Bazalgette’s sewers?",
+          "image": "/images/father_thames_punch_1858.jpg",
+          "caption": "Source E: John Leech's celebrated cartoon in Punch (3 July 1858) personifying Father Thames introducing his diseased children—Diphtheria, Scrofula, and Cholera—to London during the Great Stink.",
+          "discussion_ideas": [
+            "Personification of Lethal Waterborne Epidemics: Leech personifies the Thames not as the romantic, bountiful river god of British folklore, but as a filthy, bedraggled monster crawling from the slime to present his skeletal, diseased children—Diphtheria, Scrofula, and Cholera—to a refined, classical Britannia representing the city of London, graphically connecting environmental filth to childhood mortality.",
+            "Political Pressure Shaming Parliament into Action: The subtitle mocks Parliament ('A Design for a Fresco in the New Houses of Parliament'), highlighting the hypocrisy of Victorian politicians who spent millions gilding the Palace of Westminster while refusing to spend public money on municipal sewers; within eighteen days of this cartoon appearing, Parliament passed emergency legislation authorizing Bazalgette's £3 million interceptor sewer system."
+          ],
+          "id": "iae_l3_source_e_father_thames_1858",
+          "question": "What point was the cartoonist making about London's living conditions by calling diseases like cholera the 'offspring' of Father Thames?",
+          "question_badge": "Symbolism & Social Satire",
+          "question_type": "Symbolism & Social Satire",
+          "model_answer": "The cartoon was warning that the filthy, sewage-polluted Thames was the direct parent and cause of deadly diseases like cholera, which were poisoning London's population.",
+          "citation": "Punch, or the London Charivari, Vol. XXXV, 3 July 1858, p. 5 / British Library.",
+          "source_context": "During the searing summer heat wave of June–July 1858, the Thames became so choked with decomposing human sewage and industrial effluent that the resulting stench—known as the \"Great Stink\"—paralyzed the Houses of Parliament, forcing MPs to soak window curtains in chloride of lime to avoid fainting. Punch published this biting cartoon showing Father Thames presenting his deadly children—Diphtheria, Scrofula, and Cholera—to London. **Hinge Question:** How did satirical magazines like Punch use dark humor to compel a reluctant Parliament to fund massive civil engineering projects like Bazalgette’s sewers?",
+          "teacher_notes": {
+            "source_context": "During the searing summer heat wave of June–July 1858, the Thames became so choked with decomposing human sewage and industrial effluent that the resulting stench—known as the \"Great Stink\"—paralyzed the Houses of Parliament, forcing MPs to soak window curtains in chloride of lime to avoid fainting. Punch published this biting cartoon showing Father Thames presenting his deadly children—Diphtheria, Scrofula, and Cholera—to London. **Hinge Question:** How did satirical magazines like Punch use dark humor to compel a reluctant Parliament to fund massive civil engineering projects like Bazalgette’s sewers?"
+          }
         }
       ],
       "exam_practice": {
@@ -2985,12 +3033,7 @@ export const unitData = {
             "question_badge": "Author's Purpose",
             "question": "Why did the Luddites threaten to smash machines rather than just asking factory bosses for higher pay?",
             "enquiry_question": "Why did the Luddites threaten to smash machines rather than just asking factory bosses for higher pay?",
-            "model_answer": "They broke machines because new frames produced shoddy goods and undercut their wages, and wrecking them was the only way to stop factory owners replacing skilled craftsmen.",
-            "provenance_clues": [
-              "Author: Framework knitters writing under the mythical leader name 'General Ned Ludd'.",
-              "Audience: Factory owners, mill masters, and local handloom weavers.",
-              "Motive: To terrorize machine-owners into paying fair wages and halt the collapse of traditional craft weaving."
-            ]
+            "model_answer": "They broke machines because new frames produced shoddy goods and undercut their wages, and wrecking them was the only way to stop factory owners replacing skilled craftsmen."
           },
           "image": "/images/leader_of_the_luddites.jpg",
           "image_alt": "Contemporary 1812 satirical handbill showing The Leader of the Luddites in woman's dress",
@@ -3015,12 +3058,7 @@ export const unitData = {
             "question_badge": "Historical Significance",
             "question": "Why did George Cruikshank portray the Manchester Yeomanry cavalry as bloodthirsty murderers attacking innocent families?",
             "enquiry_question": "Why did George Cruikshank portray the Manchester Yeomanry cavalry as bloodthirsty murderers attacking innocent families?",
-            "model_answer": "He wanted to show the shocking brutality of the magistrates who sent armed soldiers to slice down peaceful men, women, and children asking for the right to vote.",
-            "provenance_clues": [
-              "Author: George Cruikshank, a leading radical caricaturist in London.",
-              "Audience: The British public outraged by the violent assault at St Peter's Field.",
-              "Motive: To condemn the government's violent attack on peaceful democratic protest and rally support for reform."
-            ]
+            "model_answer": "He wanted to show the shocking brutality of the magistrates who sent armed soldiers to slice down peaceful men, women, and children asking for the right to vote."
           }
         },
         {
@@ -3039,12 +3077,7 @@ export const unitData = {
             "question_badge": "Source Inference",
             "question": "What does this anonymous letter reveal about why farm labourers felt driven to burn down barns and threshing machines?",
             "enquiry_question": "What does this anonymous letter reveal about why farm labourers felt driven to burn down barns and threshing machines?",
-            "model_answer": "It reveals that farmworkers were facing literal starvation on poverty wages, and saw smashing threshing machines as their only way to survive the winter.",
-            "provenance_clues": [
-              "Author: Desperate agricultural labourers writing under the fictional name 'Captain Swing'.",
-              "Audience: Wealthy Hampshire landlords, squires, and church parsons.",
-              "Motive: To frighten landlords into paying two shillings a day by threatening nighttime arson."
-            ]
+            "model_answer": "It reveals that farmworkers were facing literal starvation on poverty wages, and saw smashing threshing machines as their only way to survive the winter."
           },
           "image": "/images/captain_swing_portrait.jpg",
           "image_alt": "Satirical print 'An original portrait of Captain Swing' (December 1830)",
@@ -3134,12 +3167,7 @@ export const unitData = {
             "question_badge": "Reliability & Provenance",
             "question": "How does this local newspaper report show the government's determination to crush rural unrest?",
             "enquiry_question": "How does this local newspaper report show the government's determination to crush rural unrest?",
-            "model_answer": "The report shows government determination by praising death sentences and mass transportations to Australia as a severe warning to keep farmworkers obedient.",
-            "provenance_clues": [
-              "Author: Journalist for the Hampshire Chronicle, representing local gentry interests.",
-              "Audience: Wealthy landowners, magistrates, and the respectable middle class.",
-              "Motive: To reassure property owners that the courts had restored order by severely punishing rioters."
-            ]
+            "model_answer": "The report shows government determination by praising death sentences and mass transportations to Australia as a severe warning to keep farmworkers obedient."
           }
         },
         {
@@ -3157,12 +3185,7 @@ export const unitData = {
             "question_badge": "Cross-Referencing & Motive",
             "question": "Why did George Loveless insist that he and his fellow labourers had done nothing wrong when forming their union?",
             "enquiry_question": "Why did George Loveless insist that he and his fellow labourers had done nothing wrong when forming their union?",
-            "model_answer": "Loveless maintained they harmed no one's property and only banded together peacefully to stop their families starving after employers cut their wages.",
-            "provenance_clues": [
-              "Author: George Loveless, Methodist lay preacher and leader of the Tolpuddle Martyrs.",
-              "Audience: The court, his fellow workers, and future generations fighting for worker rights.",
-              "Motive: To declare his moral innocence and show that forming a trade union was an act of survival, not crime."
-            ]
+            "model_answer": "Loveless maintained they harmed no one's property and only banded together peacefully to stop their families starving after employers cut their wages."
           }
         }
       ],
@@ -3512,11 +3535,10 @@ export const unitData = {
           "question": "Why did the Luddites threaten to smash machines rather than just asking factory bosses for higher pay?",
           "enquiry_question": "Why did the Luddites threaten to smash machines rather than just asking factory bosses for higher pay?",
           "model_answer": "They broke machines because new frames produced shoddy goods and undercut their wages, and wrecking them was the only way to stop factory owners replacing skilled craftsmen.",
-          "provenance_clues": [
-            "Author: Framework knitters writing under the mythical leader name 'General Ned Ludd'.",
-            "Audience: Factory owners, mill masters, and local handloom weavers.",
-            "Motive: To terrorize machine-owners into paying fair wages and halt the collapse of traditional craft weaving."
-          ]
+          "source_context": "Contemporary warning handbill delivered to stocking manufacturers in Nottinghamshire during the height of the 1811 machine-breaking raids. **Hinge Question:** Why did skilled handloom weavers direct their rage at the machinery rather than solely demanding higher wages from factory owners?",
+          "teacher_notes": {
+            "source_context": "Contemporary warning handbill delivered to stocking manufacturers in Nottinghamshire during the height of the 1811 machine-breaking raids. **Hinge Question:** Why did skilled handloom weavers direct their rage at the machinery rather than solely demanding higher wages from factory owners?"
+          }
         },
         {
           "letter": "B",
@@ -3533,11 +3555,10 @@ export const unitData = {
           "question": "Why did George Cruikshank portray the Manchester Yeomanry cavalry as bloodthirsty murderers attacking innocent families?",
           "enquiry_question": "Why did George Cruikshank portray the Manchester Yeomanry cavalry as bloodthirsty murderers attacking innocent families?",
           "model_answer": "He wanted to show the shocking brutality of the magistrates who sent armed soldiers to slice down peaceful men, women, and children asking for the right to vote.",
-          "provenance_clues": [
-            "Author: George Cruikshank, a leading radical caricaturist in London.",
-            "Audience: The British public outraged by the violent assault at St Peter's Field.",
-            "Motive: To condemn the government's violent attack on peaceful democratic protest and rally support for reform."
-          ]
+          "source_context": "George Cruikshank’s scathing satirical print attacked the Manchester magistrates and Yeomanry cavalry who charged 60,000 peaceful protesters listening to Henry Hunt. **Hinge Question:** How does Cruikshank’s satirical caption connect parliamentary disenfranchisement to economic class oppression?",
+          "teacher_notes": {
+            "source_context": "George Cruikshank’s scathing satirical print attacked the Manchester magistrates and Yeomanry cavalry who charged 60,000 peaceful protesters listening to Henry Hunt. **Hinge Question:** How does Cruikshank’s satirical caption connect parliamentary disenfranchisement to economic class oppression?"
+          }
         },
         {
           "letter": "C",
@@ -3551,11 +3572,10 @@ export const unitData = {
           "question": "What does this anonymous letter reveal about why farm labourers felt driven to burn down barns and threshing machines?",
           "enquiry_question": "What does this anonymous letter reveal about why farm labourers felt driven to burn down barns and threshing machines?",
           "model_answer": "It reveals that farmworkers were facing literal starvation on poverty wages, and saw smashing threshing machines as their only way to survive the winter.",
-          "provenance_clues": [
-            "Author: Desperate agricultural labourers writing under the fictional name 'Captain Swing'.",
-            "Audience: Wealthy Hampshire landlords, squires, and church parsons.",
-            "Motive: To frighten landlords into paying two shillings a day by threatening nighttime arson."
-          ]
+          "source_context": "Authentic threatening letter preserved in the Home Office records at The National Archives, Kew (HO 52/6). Between October and December 1830, anonymous handwritten notices signed \"Captain Swing\" were delivered to Hampshire squires, parsons, and magistrates, warning that barns and hayricks would be burned if wages were not raised and threshing machines destroyed. **Hinge Question:** Why did agricultural labourers invoke a mythical military commander (\"Captain Swing\") rather than naming real village leaders?",
+          "teacher_notes": {
+            "source_context": "Authentic threatening letter preserved in the Home Office records at The National Archives, Kew (HO 52/6). Between October and December 1830, anonymous handwritten notices signed \"Captain Swing\" were delivered to Hampshire squires, parsons, and magistrates, warning that barns and hayricks would be burned if wages were not raised and threshing machines destroyed. **Hinge Question:** Why did agricultural labourers invoke a mythical military commander (\"Captain Swing\") rather than naming real village leaders?"
+          }
         },
         {
           "letter": "D",
@@ -3568,11 +3588,10 @@ export const unitData = {
           "question": "How does this local newspaper report show the government's determination to crush rural unrest?",
           "enquiry_question": "How does this local newspaper report show the government's determination to crush rural unrest?",
           "model_answer": "The report shows government determination by praising death sentences and mass transportations to Australia as a severe warning to keep farmworkers obedient.",
-          "provenance_clues": [
-            "Author: Journalist for the Hampshire Chronicle, representing local gentry interests.",
-            "Audience: Wealthy landowners, magistrates, and the respectable middle class.",
-            "Motive: To reassure property owners that the courts had restored order by severely punishing rioters."
-          ]
+          "source_context": "Newspaper report published in the Hampshire Chronicle during the Special Commission trials in Winchester Castle’s Great Hall. **Hinge Question:** Why did the British state choose transportation to Australia rather than imprisonment inside local English county gaols?",
+          "teacher_notes": {
+            "source_context": "Newspaper report published in the Hampshire Chronicle during the Special Commission trials in Winchester Castle’s Great Hall. **Hinge Question:** Why did the British state choose transportation to Australia rather than imprisonment inside local English county gaols?"
+          }
         },
         {
           "letter": "E",
@@ -3585,11 +3604,10 @@ export const unitData = {
           "question": "Why did George Loveless insist that he and his fellow labourers had done nothing wrong when forming their union?",
           "enquiry_question": "Why did George Loveless insist that he and his fellow labourers had done nothing wrong when forming their union?",
           "model_answer": "Loveless maintained they harmed no one's property and only banded together peacefully to stop their families starving after employers cut their wages.",
-          "provenance_clues": [
-            "Author: George Loveless, Methodist lay preacher and leader of the Tolpuddle Martyrs.",
-            "Audience: The court, his fellow workers, and future generations fighting for worker rights.",
-            "Motive: To declare his moral innocence and show that forming a trade union was an act of survival, not crime."
-          ]
+          "source_context": "George Loveless was the leader of the Tolpuddle Martyrs—six Dorset agricultural labourers prosecuted under an obscure 1797 naval mutiny statute against unlawful oaths. **Hinge Question:** Why did the British government treat the formation of a peaceful agricultural trade union as an act of treason?",
+          "teacher_notes": {
+            "source_context": "George Loveless was the leader of the Tolpuddle Martyrs—six Dorset agricultural labourers prosecuted under an obscure 1797 naval mutiny statute against unlawful oaths. **Hinge Question:** Why did the British government treat the formation of a peaceful agricultural trade union as an act of treason?"
+          }
         }
       ],
       "exam_practice": {
@@ -3994,12 +4012,7 @@ export const unitData = {
             "question_badge": "Source Inference",
             "question": "What does this map suggest about how unfair the British voting system was before the 1832 Reform Act?",
             "enquiry_question": "What does this map suggest about how unfair the British voting system was before the 1832 Reform Act?",
-            "model_answer": "The map shows that tiny southern villages with few residents had dozens of MPs, while huge new industrial cities like Manchester and Birmingham had none at all.",
-            "provenance_clues": [
-              "Author: Parliamentary reformers mapping seat distribution across Britain.",
-              "Audience: Voters, politicians, and the public debating the Reform Bill.",
-              "Motive: To prove visually that ancient rotten boroughs made Parliament completely unrepresentative."
-            ]
+            "model_answer": "The map shows that tiny southern villages with few residents had dozens of MPs, while huge new industrial cities like Manchester and Birmingham had none at all."
           }
         },
         {
@@ -4017,12 +4030,7 @@ export const unitData = {
             "question_badge": "Symbolism & Social Satire",
             "question": "Why did the cartoonist draw the Duke of Wellington wearing a dunce's cap inside a classroom?",
             "enquiry_question": "Why did the cartoonist draw the Duke of Wellington wearing a dunce's cap inside a classroom?",
-            "model_answer": "The cartoonist made Wellington wear a dunce's cap to mock him for foolishly refusing to accept that Britain desperately needed political reform.",
-            "provenance_clues": [
-              "Author: S. Gans, a London print publisher supporting the Reform Act.",
-              "Audience: The politically engaged public following the bitter parliamentary debates.",
-              "Motive: To celebrate Earl Grey's leadership and ridicule anti-reform Tories as stubborn schoolboys."
-            ]
+            "model_answer": "The cartoonist made Wellington wear a dunce's cap to mock him for foolishly refusing to accept that Britain desperately needed political reform."
           }
         },
         {
@@ -4040,12 +4048,7 @@ export const unitData = {
             "question_badge": "Author's Purpose",
             "question": "Why did witnesses tell Parliament that open voting made elections unfair for ordinary workers?",
             "enquiry_question": "Why did witnesses tell Parliament that open voting made elections unfair for ordinary workers?",
-            "model_answer": "Witnesses explained that voting out loud allowed rich landlords and bosses to watch who workers voted for and evict or sack anyone who disobeyed them.",
-            "provenance_clues": [
-              "Author: Eyewitness testifying before a Parliamentary Select Committee on electoral fraud.",
-              "Audience: Members of Parliament considering whether to introduce secret voting.",
-              "Motive: To expose landlord bullying and prove that voting could only be fair if done in secret."
-            ]
+            "model_answer": "Witnesses explained that voting out loud allowed rich landlords and bosses to watch who workers voted for and evict or sack anyone who disobeyed them."
           },
           "image": "/images/earl_grey.jpg",
           "image_alt": "Portrait of Prime Minister Charles Grey, 2nd Earl Grey",
@@ -4066,12 +4069,7 @@ export const unitData = {
             "question_badge": "Historical Significance",
             "question": "Why was this photograph of the Chartist rally at Kennington Common so historic?",
             "enquiry_question": "Why was this photograph of the Chartist rally at Kennington Common so historic?",
-            "model_answer": "It was one of the earliest photographs ever taken of a working-class political rally, capturing thousands of ordinary people uniting peacefully to demand the vote.",
-            "provenance_clues": [
-              "Author: William Edward Kilburn, a pioneering early photographer using daguerreotype plates.",
-              "Audience: The British public and future historians documenting Victorian social movements.",
-              "Motive: To capture a permanent visual record of the massive Chartist assembly in London."
-            ]
+            "model_answer": "It was one of the earliest photographs ever taken of a working-class political rally, capturing thousands of ordinary people uniting peacefully to demand the vote."
           },
           "image": "/images/william_lovett.jpg",
           "image_alt": "Portrait of Chartist leader William Lovett",
@@ -4092,12 +4090,7 @@ export const unitData = {
             "question_badge": "Technology & Democracy",
             "question": "Why was this simple tin box with wax seals such an important turning point for British democracy?",
             "enquiry_question": "Why was this simple tin box with wax seals such an important turning point for British democracy?",
-            "model_answer": "The locked tin box allowed working-class men to vote in total privacy for the first time without fearing that their landlord or employer would punish them.",
-            "provenance_clues": [
-              "Author: Returning officers and election officials at the 1872 Pontefract by-election.",
-              "Audience: Local voters casting ballots and the wider British nation observing the experiment.",
-              "Motive: To guarantee absolute voting secrecy and prevent tampering by sealing the box with wax stamps."
-            ]
+            "model_answer": "The locked tin box allowed working-class men to vote in total privacy for the first time without fearing that their landlord or employer would punish them."
           }
         }
       ],
@@ -4431,11 +4424,10 @@ export const unitData = {
           "question": "What does this map suggest about how unfair the British voting system was before the 1832 Reform Act?",
           "enquiry_question": "What does this map suggest about how unfair the British voting system was before the 1832 Reform Act?",
           "model_answer": "The map shows that tiny southern villages with few residents had dozens of MPs, while huge new industrial cities like Manchester and Birmingham had none at all.",
-          "provenance_clues": [
-            "Author: Parliamentary reformers mapping seat distribution across Britain.",
-            "Audience: Voters, politicians, and the public debating the Reform Bill.",
-            "Motive: To prove visually that ancient rotten boroughs made Parliament completely unrepresentative."
-          ]
+          "source_context": "Before 1832, parliamentary representation was anchored in medieval geography. Cornwall returned 44 MPs (almost as many as all of Scotland), while booming industrial giants like Manchester and Birmingham returned zero. **Hinge Question:** Why did the geography of parliamentary representation fail to reflect the economic reality of the Industrial Revolution?",
+          "teacher_notes": {
+            "source_context": "Before 1832, parliamentary representation was anchored in medieval geography. Cornwall returned 44 MPs (almost as many as all of Scotland), while booming industrial giants like Manchester and Birmingham returned zero. **Hinge Question:** Why did the geography of parliamentary representation fail to reflect the economic reality of the Industrial Revolution?"
+          }
         },
         {
           "letter": "B",
@@ -4448,11 +4440,10 @@ export const unitData = {
           "question": "Why did the cartoonist draw the Duke of Wellington wearing a dunce's cap inside a classroom?",
           "enquiry_question": "Why did the cartoonist draw the Duke of Wellington wearing a dunce's cap inside a classroom?",
           "model_answer": "The cartoonist made Wellington wear a dunce's cap to mock him for foolishly refusing to accept that Britain desperately needed political reform.",
-          "provenance_clues": [
-            "Author: S. Gans, a London print publisher supporting the Reform Act.",
-            "Audience: The politically engaged public following the bitter parliamentary debates.",
-            "Motive: To celebrate Earl Grey's leadership and ridicule anti-reform Tories as stubborn schoolboys."
-          ]
+          "source_context": "Contemporary satirical print published by S. Gans (May 1831) during the national debate over the Great Reform Act. Prime Minister Earl Grey stands at the classroom lectern drilling anti-reform Tory politicians to conjugate \"the verb to reform\", while Lord Chancellor Brougham brandishes a giant birch rod and the Duke of Wellington weeps in a dunce’s cap (\"I cant Reform\"). **Hinge Question:** How does Source B illustrate that parliamentary reform was viewed as a strict national discipline imposed on reluctant defenders of rotten boroughs?",
+          "teacher_notes": {
+            "source_context": "Contemporary satirical print published by S. Gans (May 1831) during the national debate over the Great Reform Act. Prime Minister Earl Grey stands at the classroom lectern drilling anti-reform Tory politicians to conjugate \"the verb to reform\", while Lord Chancellor Brougham brandishes a giant birch rod and the Duke of Wellington weeps in a dunce’s cap (\"I cant Reform\"). **Hinge Question:** How does Source B illustrate that parliamentary reform was viewed as a strict national discipline imposed on reluctant defenders of rotten boroughs?"
+          }
         },
         {
           "letter": "C",
@@ -4465,11 +4456,10 @@ export const unitData = {
           "question": "Why did witnesses tell Parliament that open voting made elections unfair for ordinary workers?",
           "enquiry_question": "Why did witnesses tell Parliament that open voting made elections unfair for ordinary workers?",
           "model_answer": "Witnesses explained that voting out loud allowed rich landlords and bosses to watch who workers voted for and evict or sack anyone who disobeyed them.",
-          "provenance_clues": [
-            "Author: Eyewitness testifying before a Parliamentary Select Committee on electoral fraud.",
-            "Audience: Members of Parliament considering whether to introduce secret voting.",
-            "Motive: To expose landlord bullying and prove that voting could only be fair if done in secret."
-          ]
+          "source_context": "Official parliamentary testimony from 1869 documenting how the lack of a secret ballot allowed wealthy landlords and factory owners to intimidate working voters at the open hustings. **Hinge Question:** How does Source C prove that expanding the right to vote was meaningless without the protection of a secret ballot?",
+          "teacher_notes": {
+            "source_context": "Official parliamentary testimony from 1869 documenting how the lack of a secret ballot allowed wealthy landlords and factory owners to intimidate working voters at the open hustings. **Hinge Question:** How does Source C prove that expanding the right to vote was meaningless without the protection of a secret ballot?"
+          }
         },
         {
           "letter": "D",
@@ -4482,11 +4472,10 @@ export const unitData = {
           "question": "Why was this photograph of the Chartist rally at Kennington Common so historic?",
           "enquiry_question": "Why was this photograph of the Chartist rally at Kennington Common so historic?",
           "model_answer": "It was one of the earliest photographs ever taken of a working-class political rally, capturing thousands of ordinary people uniting peacefully to demand the vote.",
-          "provenance_clues": [
-            "Author: William Edward Kilburn, a pioneering early photographer using daguerreotype plates.",
-            "Audience: The British public and future historians documenting Victorian social movements.",
-            "Motive: To capture a permanent visual record of the massive Chartist assembly in London."
-          ]
+          "source_context": "Contemporary daguerreotype photograph by William Edward Kilburn showing the massive Chartist assembly at Kennington Common, London, gathered to present the third Monster Petition to Parliament. **Hinge Question:** Why did the British state assemble 85,000 special constables and deploy the Duke of Wellington to confront a crowd presenting a petition?",
+          "teacher_notes": {
+            "source_context": "Contemporary daguerreotype photograph by William Edward Kilburn showing the massive Chartist assembly at Kennington Common, London, gathered to present the third Monster Petition to Parliament. **Hinge Question:** Why did the British state assemble 85,000 special constables and deploy the Duke of Wellington to confront a crowd presenting a petition?"
+          }
         },
         {
           "letter": "E",
@@ -4499,11 +4488,10 @@ export const unitData = {
           "question": "Why was this simple tin box with wax seals such an important turning point for British democracy?",
           "enquiry_question": "Why was this simple tin box with wax seals such an important turning point for British democracy?",
           "model_answer": "The locked tin box allowed working-class men to vote in total privacy for the first time without fearing that their landlord or employer would punish them.",
-          "provenance_clues": [
-            "Author: Returning officers and election officials at the 1872 Pontefract by-election.",
-            "Audience: Local voters casting ballots and the wider British nation observing the experiment.",
-            "Motive: To guarantee absolute voting secrecy and prevent tampering by sealing the box with wax stamps."
-          ]
+          "source_context": "In August 1872, Hugh Childers won re-election in Pontefract in the first British election where voters cast their ballots in private voting compartments. The box was sealed with liquorice stamps from a local confectionery factory to prevent fraud. **Hinge Question:** Why was the introduction of the secret ballot box the decisive turning point that allowed the working class to vote freely?",
+          "teacher_notes": {
+            "source_context": "In August 1872, Hugh Childers won re-election in Pontefract in the first British election where voters cast their ballots in private voting compartments. The box was sealed with liquorice stamps from a local confectionery factory to prevent fraud. **Hinge Question:** Why was the introduction of the secret ballot box the decisive turning point that allowed the working class to vote freely?"
+          }
         }
       ],
       "exam_practice": {
@@ -4823,4 +4811,7 @@ export const unitData = {
     }
   ]
 };
-export default unitData;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = industrialisation_and_empire_data;
+}
+export default industrialisation_and_empire_data;

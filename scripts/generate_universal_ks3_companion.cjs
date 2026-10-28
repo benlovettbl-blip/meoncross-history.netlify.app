@@ -24,7 +24,7 @@
  *              • Q3–Q4 (▸▸): Silver Milestone • Causal Mechanisms & Historical Context (Amber)
  *              • Q5–Q6 (▸▸▸): Gold Challenge • Synoptic Significance & Turning Point Precedent (Crimson)
  *              Featuring 2 roomy write-in lines per question with strong #000000 black typography:
- *              Line 1: Core Fact: [Solid line >= 25px]
+ *              Line 1: Fact: [Solid line >= 25px]
  *              Line 2: Because... / This meant that... [Solid line >= 25px]
  *              Bottom of each page: Key Term Vault (Support Vault) with 6 vocabulary anchor terms.
  * - Page 7: Department Marking Bank (Part 1 • Enquiries 1–3 • Q1–Q18 • Bold answers + Explanations)
@@ -56,6 +56,10 @@ const UNIT_REGISTRY = {
   industrialisation_and_empire: path.join(DATA_DIR, 'industrialisation_data.cjs'),
   first_british_empire: path.join(DATA_DIR, 'first_british_empire_data.cjs'),
   second_british_empire: path.join(DATA_DIR, 'second_british_empire_data.cjs'),
+  australia: path.join(DATA_DIR, 'australia_data.cjs'),
+  post_war_britain: path.join(DATA_DIR, 'post_war_britain_data.cjs'),
+  the_shoah: path.join(DATA_DIR, 'the_shoah_data.cjs'),
+  water_and_sanitation: path.join(DATA_DIR, 'water_and_sanitation_data.cjs'),
 };
 
 // Base64 image helper for 100% offline self-contained HTML/PDF rendering
@@ -119,7 +123,7 @@ const A5_BOOKLET_CSS = `
   .a5-page {
     width: 148mm;
     height: 210mm;
-    padding: 6.5mm 9mm 6mm 9mm;
+    padding: 5.5mm 9mm 4.5mm 9mm;
     margin: 0 auto;
     page-break-after: always;
     break-after: page;
@@ -366,24 +370,11 @@ const A5_BOOKLET_CSS = `
     line-height: 1.15;
     margin-top: 1px;
   }
-  .score-line {
-    display: inline-block;
-    width: 14px;
-    border-bottom: 1.2px solid #000000;
-  }
-  .date-line {
-    display: block;
-    width: 44px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
-  }
-  .parent-sig-line {
-    display: block;
-    width: 55px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
+  .score-cell {
+    font-size: 7.2pt;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
   }
 
   /* Partner Quiz / Instructions Banner */
@@ -433,30 +424,17 @@ const A5_BOOKLET_CSS = `
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 3px;
-    padding: 2px 4px;
+    padding: 2.5px 6px;
     margin: 2px 0 2px 0;
     display: flex;
     align-items: center;
-    gap: 4px;
-  }
-  .spine-lbl {
-    font-size: 5.2pt;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: #000000;
-    white-space: nowrap;
-    border-right: 1px solid #000000;
-    padding-right: 4px;
-    line-height: 1.1;
-    text-align: center;
   }
   .spine-flow {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    gap: 2px;
+    gap: 3px;
   }
   .spine-node {
     display: flex;
@@ -471,7 +449,7 @@ const A5_BOOKLET_CSS = `
     color: #ffffff;
     font-size: 5.2pt;
     font-weight: 800;
-    padding: 0.5px 3.5px;
+    padding: 0.5px 4px;
     border-radius: 2px;
     white-space: nowrap;
     line-height: 1.1;
@@ -481,11 +459,11 @@ const A5_BOOKLET_CSS = `
     font-weight: 700;
     color: #000000;
     line-height: 1.1;
-    margin-top: 1px;
+    margin-top: 1.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 82px;
+    max-width: 95px;
   }
   .spine-arrow {
     font-size: 5.8pt;
@@ -581,7 +559,7 @@ const A5_BOOKLET_CSS = `
     color: #000000;
     white-space: nowrap;
     font-size: 7.8pt;
-    min-width: 65px;
+    min-width: 32px;
   }
   .q-line-lbl.cue {
     font-style: italic;
@@ -655,13 +633,13 @@ const A5_BOOKLET_CSS = `
   .ans-card {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
-    font-size: 6.5pt;
-    line-height: 1.15;
+    gap: 3.5px;
+    font-size: 6.3pt;
+    line-height: 1.12;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 1.2px 4.5px;
+    padding: 0.8px 4px;
     color: #000000;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -678,7 +656,7 @@ const A5_BOOKLET_CSS = `
   .ans-num {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
     line-height: 1.1;
   }
   .ans-pip {
@@ -689,7 +667,7 @@ const A5_BOOKLET_CSS = `
     line-height: 1;
   }
   .ans-pip .pip-badge {
-    font-size: 5.6pt;
+    font-size: 5.4pt;
     letter-spacing: -1px;
   }
   .ans-content {
@@ -699,13 +677,13 @@ const A5_BOOKLET_CSS = `
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
   }
   .ans-exp {
     color: #000000 !important;
     font-weight: 500 !important;
     font-style: italic !important;
-    font-size: 6.3pt;
+    font-size: 6.1pt;
   }
   .ans-ticks {
     display: flex;
@@ -723,24 +701,24 @@ const A5_BOOKLET_CSS = `
   .glossary-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    margin-top: 2.5px;
+    gap: 2.5px;
+    margin-top: 2px;
     border-top: 1.2px solid #000000;
-    padding-top: 2.5px;
+    padding-top: 2px;
   }
   .concept-card {
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 2.5px 5px;
-    font-size: 6.4pt;
-    line-height: 1.16;
+    padding: 1.8px 4.5px;
+    font-size: 5.9pt;
+    line-height: 1.13;
   }
   .concept-title {
     font-weight: 900;
     color: #000000;
     text-transform: uppercase;
-    font-size: 6.6pt;
+    font-size: 6.2pt;
   }
 `;
 
@@ -828,14 +806,10 @@ async function buildCompanionHtml(data) {
               <div class="tb-lesson-title">Enquiry ${enq.number}: ${enq.shortTitle}</div>
               <div class="tb-lesson-desc">${enq.focus || enq.enquiryFocus}</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>`,
             )
             .join('')}
@@ -884,7 +858,6 @@ async function buildCompanionHtml(data) {
 
     ${enq.milestones && enq.milestones.length ? `
     <div class="spine-strip">
-      <div class="spine-lbl">Chronological<br>Spine</div>
       <div class="spine-flow">
         ${enq.milestones.map((m, mIdx) => `
           <div class="spine-node">
@@ -916,7 +889,7 @@ async function buildCompanionHtml(data) {
           <span class="q-prompt">${q.q}${warmUpHtml}</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">

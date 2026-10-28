@@ -1657,6 +1657,104 @@ async function renderRegister() {
   console.log(`🎉 Successfully rendered Water & Sanitation Unit PDF: ${wasPdfPath}`);
   await wasPage.close();
 
+  // Render standalone Causes of the Great War Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Causes of the Great War Unit Source Bibliography...');
+  const gwPdfDir = path.join(outPdfDir, 'great_war');
+  if (!fs.existsSync(gwPdfDir)) fs.mkdirSync(gwPdfDir, { recursive: true });
+  const gwPdfPath = path.join(gwPdfDir, 'great_war_source_bibliography.pdf');
+  const gwHtml = buildHtml('great_war');
+  const gwPage = await browser.newPage();
+  await gwPage.setContent(gwHtml, { waitUntil: 'domcontentloaded' });
+  await gwPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await gwPage.pdf({
+    path: gwPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Causes of the Great War Unit PDF: ${gwPdfPath}`);
+  await gwPage.close();
+
+  // Render standalone The Great War Part 2 Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone The Great War Part 2 Unit Source Bibliography...');
+  const gw2PdfDir = path.join(outPdfDir, 'great_war_part2');
+  if (!fs.existsSync(gw2PdfDir)) fs.mkdirSync(gw2PdfDir, { recursive: true });
+  const gw2PdfPath = path.join(gw2PdfDir, 'great_war_part2_source_bibliography.pdf');
+  const gw2Html = buildHtml('great_war_part2');
+  const gw2Page = await browser.newPage();
+  await gw2Page.setContent(gw2Html, { waitUntil: 'domcontentloaded' });
+  await gw2Page.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await gw2Page.pdf({
+    path: gw2PdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered The Great War Part 2 Unit PDF: ${gw2PdfPath}`);
+  // Render standalone Australia Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Australia Unit Source Bibliography...');
+  const ausPdfDir = path.join(outPdfDir, 'australia');
+  if (!fs.existsSync(ausPdfDir)) fs.mkdirSync(ausPdfDir, { recursive: true });
+  const ausPdfPath = path.join(ausPdfDir, 'australia_source_bibliography.pdf');
+  const ausHtml = buildHtml('australia');
+  const ausPage = await browser.newPage();
+  await ausPage.setContent(ausHtml, { waitUntil: 'domcontentloaded' });
+  await ausPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await ausPage.pdf({
+    path: ausPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Australia Unit PDF: ${ausPdfPath}`);
+  await ausPage.close();
+
+  // Render standalone Post-War Britain Unit Source Bibliography
+  console.log('🖨️ Rendering Standalone Rights, Protest, and Post-War Britain Unit Source Bibliography...');
+  const pwbPdfDir = path.join(outPdfDir, 'post_war_britain');
+  if (!fs.existsSync(pwbPdfDir)) fs.mkdirSync(pwbPdfDir, { recursive: true });
+  const pwbPdfPath = path.join(pwbPdfDir, 'post_war_britain_source_bibliography.pdf');
+  const pwbHtml = buildHtml('post_war_britain');
+  const pwbPage = await browser.newPage();
+  await pwbPage.setContent(pwbHtml, { waitUntil: 'domcontentloaded' });
+  await pwbPage.evaluateHandle('document.fonts.ready');
+  await new Promise((r) => setTimeout(r, 800));
+
+  await pwbPage.pdf({
+    path: pwbPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+  console.log(`🎉 Successfully rendered Rights, Protest, and Post-War Britain Unit PDF: ${pwbPdfPath}`);
+  await pwbPage.close();
+
   await browser.close();
   console.log('🏁 All PDF rendering tasks completed successfully!');
 }

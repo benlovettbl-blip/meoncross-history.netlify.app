@@ -849,7 +849,10 @@ const edexcel_medicine_data = {
           "citation": "The British Library, London (Harley MS 5311).",
           "provenance": "Physician's folding calendar and medical almanac, England, c.1390. British Library Harley MS 5311.",
           "hinge_question": "Why did the medieval Catholic Church actively encourage astrological explanations of health while condemning other forms of divination and sorcery?",
-          "source_context": "Zodiac Man illumination from an English physician’s folded almanac, c.1390. Each anatomical region is ruled by one of the twelve constellations. Hinge Question: Why did the medieval Catholic Church actively encourage astrological explanations of health while condemning other forms of divination and sorcery?"
+          "source_context": "Zodiac Man illumination from an English physician’s folded almanac, c.1390. Each anatomical region is ruled by one of the twelve constellations. **Hinge Question:** Why did the medieval Catholic Church actively encourage astrological explanations of health while condemning other forms of divination and sorcery?",
+          "teacher_notes": {
+            "source_context": "Zodiac Man illumination from an English physician’s folded almanac, c.1390. Each anatomical region is ruled by one of the twelve constellations. **Hinge Question:** Why did the medieval Catholic Church actively encourage astrological explanations of health while condemning other forms of divination and sorcery?"
+          }
         },
         {
           "id": "med_l1_source_b",
@@ -867,8 +870,11 @@ const edexcel_medicine_data = {
           "citation": "Historical Manuscripts Commission, Archbishops' Registers of York (Register of William Zouche, fol. 268r).",
           "provenance": "Pastoral mandate of William Zouche, Archbishop of York, to the clergy of his diocese, 28 July 1348.",
           "hinge_question": "If physical medicine was considered ineffective against divine will, why did medieval monasteries maintain extensive herb gardens and infirmaries?",
-          "source_context": "Pastoral mandate from the Archbishop of York, July 1348. The Church taught that physical illness originated in moral wrongdoing. Hinge Question: If physical medicine was considered ineffective against divine will, why did medieval monasteries maintain extensive herb gardens and infirmaries?",
-          "content": "The mortal pestilence and plagues which now afflict the Christian world are the just judgments of Almighty God. For the sins of men—their pride, unchastity, and neglect of holy worship—provoke the righteous wrath of Heaven. No medicine of earthly herbs or physician's skill can avail to save the body, unless the sinner first reconcile himself to God through devout confession, fasting, and tears. We command all priests throughout our diocese to lead their people in barefoot processions, reciting litanies to appease the anger of the Lord."
+          "source_context": "Pastoral mandate from the Archbishop of York, July 1348. The Church taught that physical illness originated in moral wrongdoing. **Hinge Question:** If physical medicine was considered ineffective against divine will, why did medieval monasteries maintain extensive herb gardens and infirmaries?",
+          "content": "The mortal pestilence and plagues which now afflict the Christian world are the just judgments of Almighty God. For the sins of men—their pride, unchastity, and neglect of holy worship—provoke the righteous wrath of Heaven. No medicine of earthly herbs or physician's skill can avail to save the body, unless the sinner first reconcile himself to God through devout confession, fasting, and tears. We command all priests throughout our diocese to lead their people in barefoot processions, reciting litanies to appease the anger of the Lord.",
+          "teacher_notes": {
+            "source_context": "Pastoral mandate from the Archbishop of York, July 1348. The Church taught that physical illness originated in moral wrongdoing. **Hinge Question:** If physical medicine was considered ineffective against divine will, why did medieval monasteries maintain extensive herb gardens and infirmaries?"
+          }
         },
         {
           "id": "med_l1_source_c",
@@ -887,7 +893,10 @@ const edexcel_medicine_data = {
           "citation": "The British Museum, London (Accession ID: 1856,0701.2917).",
           "provenance": "Cast lead-alloy ampulla, Canterbury, England, c.1300. Department of Britain, Europe and Prehistory, British Museum.",
           "hinge_question": "How did pilgrimage to saintly shrines create a lucrative commercial economy alongside religious devotional faith?",
-          "source_context": "Lead ampulla from the shrine of St Thomas Becket at Canterbury Cathedral, c.1300. Pilgrims purchased these flasks filled with \"Canterbury Water\". Hinge Question: How did pilgrimage to saintly shrines create a lucrative commercial economy alongside religious devotional faith?"
+          "source_context": "Lead ampulla from the shrine of St Thomas Becket at Canterbury Cathedral, c.1300. Pilgrims purchased these flasks filled with \"Canterbury Water\". **Hinge Question:** How did pilgrimage to saintly shrines create a lucrative commercial economy alongside religious devotional faith?",
+          "teacher_notes": {
+            "source_context": "Lead ampulla from the shrine of St Thomas Becket at Canterbury Cathedral, c.1300. Pilgrims purchased these flasks filled with \"Canterbury Water\". **Hinge Question:** How did pilgrimage to saintly shrines create a lucrative commercial economy alongside religious devotional faith?"
+          }
         },
         {
           "id": "med_l1_source_d",
@@ -905,8 +914,11 @@ const edexcel_medicine_data = {
           "citation": "Salisbury Cathedral Library, Sarum Manual (Manuale ad Usum Insignis Ecclesie Sarum), c.1300.",
           "provenance": "The Sarum Liturgical Manual for the diocese of Salisbury, England, c.1300.",
           "hinge_question": "Why did medieval society view leprosy with such moral horror while other deadly diseases like dysentery were treated in community homes?",
-          "source_context": "The medieval Sarum rite for expelling lepers. Lepers were legally segregated into isolated lazar houses. Hinge Question: Why did medieval society view leprosy with such moral horror while other deadly diseases like dysentery were treated in community homes?",
-          "content": "When a man is judged by the bishop to be afflicted with leprosy, he must be cast out from the fellowship of sound men. For this terrible disease is viewed as the outward corruption of sin. The priest shall lead him to the churchyard, cast earth upon his feet as if he were already dead, and command him: \"Never again enter church, inn, mill, or bakehouse; wash not thy hands or cloths in any running spring; and speak to no man traveling upon the road except thou standest downwind from him, sounding thy wooden rattle.\""
+          "source_context": "The medieval Sarum rite for expelling lepers. Lepers were legally segregated into isolated lazar houses. **Hinge Question:** Why did medieval society view leprosy with such moral horror while other deadly diseases like dysentery were treated in community homes?",
+          "content": "When a man is judged by the bishop to be afflicted with leprosy, he must be cast out from the fellowship of sound men. For this terrible disease is viewed as the outward corruption of sin. The priest shall lead him to the churchyard, cast earth upon his feet as if he were already dead, and command him: \"Never again enter church, inn, mill, or bakehouse; wash not thy hands or cloths in any running spring; and speak to no man traveling upon the road except thou standest downwind from him, sounding thy wooden rattle.\"",
+          "teacher_notes": {
+            "source_context": "The medieval Sarum rite for expelling lepers. Lepers were legally segregated into isolated lazar houses. **Hinge Question:** Why did medieval society view leprosy with such moral horror while other deadly diseases like dysentery were treated in community homes?"
+          }
         },
         {
           "id": "med_l1_source_e",
@@ -924,8 +936,11 @@ const edexcel_medicine_data = {
           "citation": "The British Library, London (Cotton MS Tiberius C.V).",
           "provenance": "Roger Bacon, Opus Majus, Part VI: Experimental Science, sent to Pope Clement IV, c.1267.",
           "hinge_question": "Why did the medieval Catholic Church imprison Roger Bacon for his scientific writings rather than adopting his experimental methods?",
-          "source_context": "Extract from Roger Bacon’s Opus Majus, c.1267. Bacon advocated observation over blind deference to authority. Hinge Question: Why did the medieval Catholic Church imprison Roger Bacon for his scientific writings rather than adopting his experimental methods?",
-          "content": "There are four chief obstacles to grasping the truth: the example of frail and unworthy authority, long-established custom, the sense of the ignorant crowd, and the hiding of one’s own ignorance under the show of wisdom. Reasoning draws a conclusion, but it does not make the conclusion certain unless the mind discovers it by the path of experience. If a man who had never seen fire were proved by satisfactory arguments that fire burns, his mind would not be satisfied until he had placed his hand into the flame."
+          "source_context": "Extract from Roger Bacon’s Opus Majus, c.1267. Bacon advocated observation over blind deference to authority. **Hinge Question:** Why did the medieval Catholic Church imprison Roger Bacon for his scientific writings rather than adopting his experimental methods?",
+          "content": "There are four chief obstacles to grasping the truth: the example of frail and unworthy authority, long-established custom, the sense of the ignorant crowd, and the hiding of one’s own ignorance under the show of wisdom. Reasoning draws a conclusion, but it does not make the conclusion certain unless the mind discovers it by the path of experience. If a man who had never seen fire were proved by satisfactory arguments that fire burns, his mind would not be satisfied until he had placed his hand into the flame.",
+          "teacher_notes": {
+            "source_context": "Extract from Roger Bacon’s Opus Majus, c.1267. Bacon advocated observation over blind deference to authority. **Hinge Question:** Why did the medieval Catholic Church imprison Roger Bacon for his scientific writings rather than adopting his experimental methods?"
+          }
         }
       ],
       "quick_quiz": [
@@ -1776,7 +1791,10 @@ const edexcel_medicine_data = {
           "citation": "Bibliothèque Nationale de France, Paris (MS Lat. 9333).",
           "provenance": "Tacuinum Sanitatis manuscript illumination, Northern Italy, late 14th century. BNF MS Lat. 9333.",
           "hinge_question": "Why was the Four Humours theory so enduring that it remained the foundation of European medicine for over a thousand years?",
-          "source_context": "Fourteenth-century manuscript illustration of the Four Humours. Hippocrates posited that disease occurred when one of the four fluids exceeded its natural proportions. Hinge Question: Why was the Four Humours theory so enduring that it remained the foundation of European medicine for over a thousand years?"
+          "source_context": "Fourteenth-century manuscript illustration of the Four Humours. Hippocrates posited that disease occurred when one of the four fluids exceeded its natural proportions. **Hinge Question:** Why was the Four Humours theory so enduring that it remained the foundation of European medicine for over a thousand years?",
+          "teacher_notes": {
+            "source_context": "Fourteenth-century manuscript illustration of the Four Humours. Hippocrates posited that disease occurred when one of the four fluids exceeded its natural proportions. **Hinge Question:** Why was the Four Humours theory so enduring that it remained the foundation of European medicine for over a thousand years?"
+          }
         },
         {
           "id": "med_l2_source_b",
@@ -1795,7 +1813,10 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (EPB Incunabula 5b).",
           "provenance": "Woodcut diagram from Johannes de Ketham, Fasciculus Medicinae, Venice, 1491. Wellcome Library.",
           "hinge_question": "Why did medieval physicians rely so heavily on inspecting urine rather than physically touching and examining the patient’s internal body?",
-          "source_context": "Diagnostic urine wheel from Johannes de Ketham's Fasciculus Medicinae, 1491. Uroscopy was the primary clinical diagnostic tool of the trained physician. Hinge Question: Why did medieval physicians rely so heavily on inspecting urine rather than physically touching and examining the patient’s internal body?"
+          "source_context": "Diagnostic urine wheel from Johannes de Ketham's Fasciculus Medicinae, 1491. Uroscopy was the primary clinical diagnostic tool of the trained physician. **Hinge Question:** Why did medieval physicians rely so heavily on inspecting urine rather than physically touching and examining the patient’s internal body?",
+          "teacher_notes": {
+            "source_context": "Diagnostic urine wheel from Johannes de Ketham's Fasciculus Medicinae, 1491. Uroscopy was the primary clinical diagnostic tool of the trained physician. **Hinge Question:** Why did medieval physicians rely so heavily on inspecting urine rather than physically touching and examining the patient’s internal body?"
+          }
         },
         {
           "id": "med_l2_source_c",
@@ -1813,8 +1834,11 @@ const edexcel_medicine_data = {
           "citation": "British Library, London (Harley MS 3748).",
           "provenance": "Galen, Methodus Medendi (Method of Medicine), Latin translation taught at the University of Paris and Oxford, c.1280.",
           "hinge_question": "Why did Galen’s logical Theory of Opposites often prevent medieval physicians from investigating whether germs or bacteria caused infections?",
-          "source_context": "Latin university textbook text of Galen's Method of Medicine. Galen taught that diseases should be cured by opposites. Hinge Question: Why did Galen’s logical Theory of Opposites often prevent medieval physicians from investigating whether germs or bacteria caused infections?",
-          "content": "Every disease is cured by that which is contrary to its nature. If the distemper be of cold and moisture, such as phlegmatic rheum, it must be counteracted with remedies that are hot and dry. Therefore, administer pepper, mustard, and warming electuaries, and let the patient avoid damp dwellings and cooling water, so that the balance of the bodily humours may be restored. Nature strives always toward harmony, and the physician is but the servant of Nature."
+          "source_context": "Latin university textbook text of Galen's Method of Medicine. Galen taught that diseases should be cured by opposites. **Hinge Question:** Why did Galen’s logical Theory of Opposites often prevent medieval physicians from investigating whether germs or bacteria caused infections?",
+          "content": "Every disease is cured by that which is contrary to its nature. If the distemper be of cold and moisture, such as phlegmatic rheum, it must be counteracted with remedies that are hot and dry. Therefore, administer pepper, mustard, and warming electuaries, and let the patient avoid damp dwellings and cooling water, so that the balance of the bodily humours may be restored. Nature strives always toward harmony, and the physician is but the servant of Nature.",
+          "teacher_notes": {
+            "source_context": "Latin university textbook text of Galen's Method of Medicine. Galen taught that diseases should be cured by opposites. **Hinge Question:** Why did Galen’s logical Theory of Opposites often prevent medieval physicians from investigating whether germs or bacteria caused infections?"
+          }
         },
         {
           "id": "med_l2_source_d",
@@ -1832,8 +1856,11 @@ const edexcel_medicine_data = {
           "citation": "Chartularium Universitatis Parisiensis, Vol. I, ed. Denifle and Chatelain (Paris, 1889).",
           "provenance": "Statutes of the Faculty of Medicine, University of Paris, 1270. Archives Nationales, Paris.",
           "hinge_question": "How did the Church's control over medieval universities prevent young physicians from making genuine anatomical discoveries?",
-          "source_context": "University of Paris medical regulations, 1270. University medical faculties trained scholars by rote recitation of Galen and Hippocrates. Hinge Question: How did the Church's control over medieval universities prevent young physicians from making genuine anatomical discoveries?",
-          "content": "No scholar shall be admitted to the licence of Master in Medicine unless he has heard the books of Galen and Hippocrates, together with the commentaries of Avicenna, read twice in the schools. He must swear upon the Gospels that he will teach and practice according to these authorities and maintain no doctrine contrary to the ancient texts approved by the Faculty. Dissection shall be performed but once a year upon a condemned criminal, not to discover new knowledge, but solely to demonstrate the truth of Galen’s anatomy."
+          "source_context": "University of Paris medical regulations, 1270. University medical faculties trained scholars by rote recitation of Galen and Hippocrates. **Hinge Question:** How did the Church's control over medieval universities prevent young physicians from making genuine anatomical discoveries?",
+          "content": "No scholar shall be admitted to the licence of Master in Medicine unless he has heard the books of Galen and Hippocrates, together with the commentaries of Avicenna, read twice in the schools. He must swear upon the Gospels that he will teach and practice according to these authorities and maintain no doctrine contrary to the ancient texts approved by the Faculty. Dissection shall be performed but once a year upon a condemned criminal, not to discover new knowledge, but solely to demonstrate the truth of Galen’s anatomy.",
+          "teacher_notes": {
+            "source_context": "University of Paris medical regulations, 1270. University medical faculties trained scholars by rote recitation of Galen and Hippocrates. **Hinge Question:** How did the Church's control over medieval universities prevent young physicians from making genuine anatomical discoveries?"
+          }
         },
         {
           "id": "med_l2_source_e",
@@ -1851,8 +1878,11 @@ const edexcel_medicine_data = {
           "citation": "London Metropolitan Archives, City of London Assize of Nuisance Rolls (Roll 7, m. 4).",
           "provenance": "London Assize of Nuisance Roll, Guildhall Records Office, Corporation of London, 1371.",
           "hinge_question": "Why did the belief in miasma lead to beneficial public health measures even though the medical theory behind it was incorrect?",
-          "source_context": "London Assize of Nuisance court roll, 1371. The Miasma Theory linked rotting organic waste to infectious pestilence. Hinge Question: Why did the belief in miasma lead to beneficial public health measures even though the medical theory behind it was incorrect?",
-          "content": "The jurors present that the butchers of the Shambles near St Nicholas do throw entrails, blood, and corrupt offal into the public streets, whence arise horrible stenches and corrupt vapors. By these rotten miasmas the air is corrupted, whereby grave sicknesses and corrupt fevers are engendered among the King’s lieges dwelling nearby. It is ordered that the butchers remove their filth upon pain of forfeiture, and that no dung be cast into the public watercourses."
+          "source_context": "London Assize of Nuisance court roll, 1371. The Miasma Theory linked rotting organic waste to infectious pestilence. **Hinge Question:** Why did the belief in miasma lead to beneficial public health measures even though the medical theory behind it was incorrect?",
+          "content": "The jurors present that the butchers of the Shambles near St Nicholas do throw entrails, blood, and corrupt offal into the public streets, whence arise horrible stenches and corrupt vapors. By these rotten miasmas the air is corrupted, whereby grave sicknesses and corrupt fevers are engendered among the King’s lieges dwelling nearby. It is ordered that the butchers remove their filth upon pain of forfeiture, and that no dung be cast into the public watercourses.",
+          "teacher_notes": {
+            "source_context": "London Assize of Nuisance court roll, 1371. The Miasma Theory linked rotting organic waste to infectious pestilence. **Hinge Question:** Why did the belief in miasma lead to beneficial public health measures even though the medical theory behind it was incorrect?"
+          }
         }
       ],
       "quick_quiz": [
@@ -2703,7 +2733,10 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (MS 990, fol. 12v).",
           "provenance": "Medical and Astrological Miscellany, England, c.1380. Wellcome Library MS 990.",
           "hinge_question": "Why did bloodletting remain the most trusted treatment in Europe for centuries despite frequently weakening or killing patients?",
-          "source_context": "Miniature from Wellcome MS 990, c.1380. Venesection was the standard method to purge surplus blood. Hinge Question: Why did bloodletting remain the most trusted treatment in Europe for centuries despite frequently weakening or killing patients?"
+          "source_context": "Miniature from Wellcome MS 990, c.1380. Venesection was the standard method to purge surplus blood. **Hinge Question:** Why did bloodletting remain the most trusted treatment in Europe for centuries despite frequently weakening or killing patients?",
+          "teacher_notes": {
+            "source_context": "Miniature from Wellcome MS 990, c.1380. Venesection was the standard method to purge surplus blood. **Hinge Question:** Why did bloodletting remain the most trusted treatment in Europe for centuries despite frequently weakening or killing patients?"
+          }
         },
         {
           "id": "med_l3_source_b",
@@ -2721,8 +2754,11 @@ const edexcel_medicine_data = {
           "citation": "The British Library, London (Sloane MS 2002).",
           "provenance": "John of Arderne, Practica Chirurgiae (Practice of Surgery), c.1376. British Library Sloane MS 2002.",
           "hinge_question": "Why were John of Arderne’s surgical successes largely ignored by the wider medical establishment of his era?",
-          "source_context": "John of Arderne's Practica, c.1376. Arderne was England's first master surgeon. Hinge Question: Why were John of Arderne’s surgical successes largely ignored by the wider medical establishment of his era?",
-          "content": "When operating upon a fistula, let the surgeon above all things keep his instruments clean and washed with warm wine. He must not use harsh, corrosive plasters which burn and torture the flesh, but rather soothing ointments made of elderberries, white wax, and oil of roses. Let him dress the wound with clean linen bandages and give hemlock and opium juice in modest measure to make the patient sleep quietly through the cutting. Above all, let the surgeon speak comfortingly to the patient and boast not of his skill."
+          "source_context": "John of Arderne's Practica, c.1376. Arderne was England's first master surgeon. **Hinge Question:** Why were John of Arderne’s surgical successes largely ignored by the wider medical establishment of his era?",
+          "content": "When operating upon a fistula, let the surgeon above all things keep his instruments clean and washed with warm wine. He must not use harsh, corrosive plasters which burn and torture the flesh, but rather soothing ointments made of elderberries, white wax, and oil of roses. Let him dress the wound with clean linen bandages and give hemlock and opium juice in modest measure to make the patient sleep quietly through the cutting. Above all, let the surgeon speak comfortingly to the patient and boast not of his skill.",
+          "teacher_notes": {
+            "source_context": "John of Arderne's Practica, c.1376. Arderne was England's first master surgeon. **Hinge Question:** Why were John of Arderne’s surgical successes largely ignored by the wider medical establishment of his era?"
+          }
         },
         {
           "id": "med_l3_source_c",
@@ -2741,7 +2777,10 @@ const edexcel_medicine_data = {
           "citation": "The Science Museum Group Collection, London (Object No. A64228).",
           "provenance": "Cast pewter bleeding bowl, England, 15th century. Science Museum, London.",
           "hinge_question": "How does the existence of graduated surgical equipment challenge modern stereotypes that medieval medicine was entirely primitive and careless?",
-          "source_context": "Graduated pewter bleeding bowl, 15th century. Concentric rings indicated ounces of blood drawn. Hinge Question: How does the existence of graduated surgical equipment challenge modern stereotypes that medieval medicine was entirely primitive and careless?"
+          "source_context": "Graduated pewter bleeding bowl, 15th century. Concentric rings indicated ounces of blood drawn. **Hinge Question:** How does the existence of graduated surgical equipment challenge modern stereotypes that medieval medicine was entirely primitive and careless?",
+          "teacher_notes": {
+            "source_context": "Graduated pewter bleeding bowl, 15th century. Concentric rings indicated ounces of blood drawn. **Hinge Question:** How does the existence of graduated surgical equipment challenge modern stereotypes that medieval medicine was entirely primitive and careless?"
+          }
         },
         {
           "id": "med_l3_source_d",
@@ -2759,8 +2798,11 @@ const edexcel_medicine_data = {
           "citation": "Rolls Series, Materials for the History of Thomas Becket, Vol. II, ed. J.C. Robertson (London, 1876).",
           "provenance": "Benedict of Peterborough, Miracula Sancti Thomae Cantuariensis, Canterbury, c.1200.",
           "hinge_question": "Why did contemporary miracle accounts frequently mention that patients had spent all their money on useless doctors before being cured by a saint?",
-          "source_context": "Miracle collection of St Thomas Becket, c.1200. Monasteries actively promoted stories of miraculous healing to encourage pilgrim donations. Hinge Question: Why did contemporary miracle accounts frequently mention that patients had spent all their money on useless doctors before being cured by a saint?",
-          "content": "A knight of Kent, long stricken with a burning dropsy and swollen with foul water, had spent all his substance upon physicians who could do nothing to relieve his agony. Despairing of earthly aid, he made pilgrimage to Canterbury and drank of the Water of St Thomas. Immediately he voided the corrupt fluids through vomiting and sweat, and within three days departed sound in all his limbs, praising God and the holy martyr who had healed him where all doctor's potions had failed."
+          "source_context": "Miracle collection of St Thomas Becket, c.1200. Monasteries actively promoted stories of miraculous healing to encourage pilgrim donations. **Hinge Question:** Why did contemporary miracle accounts frequently mention that patients had spent all their money on useless doctors before being cured by a saint?",
+          "content": "A knight of Kent, long stricken with a burning dropsy and swollen with foul water, had spent all his substance upon physicians who could do nothing to relieve his agony. Despairing of earthly aid, he made pilgrimage to Canterbury and drank of the Water of St Thomas. Immediately he voided the corrupt fluids through vomiting and sweat, and within three days departed sound in all his limbs, praising God and the holy martyr who had healed him where all doctor's potions had failed.",
+          "teacher_notes": {
+            "source_context": "Miracle collection of St Thomas Becket, c.1200. Monasteries actively promoted stories of miraculous healing to encourage pilgrim donations. **Hinge Question:** Why did contemporary miracle accounts frequently mention that patients had spent all their money on useless doctors before being cured by a saint?"
+          }
         },
         {
           "id": "med_l3_source_e",
@@ -2778,8 +2820,11 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Library, London (MS 547, fol. 44r).",
           "provenance": "Apothecary Guild Compendium on Electuaries and Antidotes, Northern Italy, c.1400. Wellcome MS 547.",
           "hinge_question": "How did the reliance on exotic foreign ingredients in Theriac demonstrate medieval Europe’s connection to global trade networks?",
-          "source_context": "Apothecary guild treatise on compounding Theriac, c.1400. Believed to purge poison and corrupt humours from vital organs. Hinge Question: How did the reliance on exotic foreign ingredients in Theriac demonstrate medieval Europe’s connection to global trade networks?",
-          "content": "Theriac is the sovereign preservative against all poisons and corrupt pestilences. It must be compounded of sixty-four chosen simples, including the flesh of dried vipers, opium of Thebes, cinnamon, saffron, and asphaltum, boiled together in aged white wine and clarified honey. It must mature in earthen vessels for ten years before it attaineth its full virtue to expel corrupt poisons from the heart. The public compounding shall be inspected by the city magistrates to ensure no false ingredients are substituted."
+          "source_context": "Apothecary guild treatise on compounding Theriac, c.1400. Believed to purge poison and corrupt humours from vital organs. **Hinge Question:** How did the reliance on exotic foreign ingredients in Theriac demonstrate medieval Europe’s connection to global trade networks?",
+          "content": "Theriac is the sovereign preservative against all poisons and corrupt pestilences. It must be compounded of sixty-four chosen simples, including the flesh of dried vipers, opium of Thebes, cinnamon, saffron, and asphaltum, boiled together in aged white wine and clarified honey. It must mature in earthen vessels for ten years before it attaineth its full virtue to expel corrupt poisons from the heart. The public compounding shall be inspected by the city magistrates to ensure no false ingredients are substituted.",
+          "teacher_notes": {
+            "source_context": "Apothecary guild treatise on compounding Theriac, c.1400. Believed to purge poison and corrupt humours from vital organs. **Hinge Question:** How did the reliance on exotic foreign ingredients in Theriac demonstrate medieval Europe’s connection to global trade networks?"
+          }
         }
       ],
       "quick_quiz": [
@@ -3630,7 +3675,10 @@ const edexcel_medicine_data = {
           "citation": "The Royal College of Surgeons of England, London.",
           "provenance": "Painting of the Guild of Barber-Surgeons, London. Royal College of Surgeons Archive.",
           "hinge_question": "Why did medieval society view intellectual Latin scholarship as superior to skilled hands-on surgery and manual craftsmanship?",
-          "source_context": "Artwork depicting medieval barber-surgeons. Barber-surgeons were regarded as craftsmen rather than academic scholars. Hinge Question: Why did medieval society view intellectual Latin scholarship as superior to skilled hands-on surgery and manual craftsmanship?"
+          "source_context": "Artwork depicting medieval barber-surgeons. Barber-surgeons were regarded as craftsmen rather than academic scholars. **Hinge Question:** Why did medieval society view intellectual Latin scholarship as superior to skilled hands-on surgery and manual craftsmanship?",
+          "teacher_notes": {
+            "source_context": "Artwork depicting medieval barber-surgeons. Barber-surgeons were regarded as craftsmen rather than academic scholars. **Hinge Question:** Why did medieval society view intellectual Latin scholarship as superior to skilled hands-on surgery and manual craftsmanship?"
+          }
         },
         {
           "id": "med_l4_source_b",
@@ -3648,8 +3696,11 @@ const edexcel_medicine_data = {
           "citation": "St Bartholomew's Hospital Archives, London (MS SBHB/HA/1).",
           "provenance": "Statutes of the Hospital of St Bartholomew in West Smithfield, London, revised 1316. St Bartholomew's Hospital Archives.",
           "hinge_question": "Why did medieval monastic hospitals refuse admission to pregnant women, lepers, and those suffering from infectious pestilence?",
-          "source_context": "Statutes of St Bartholomew’s Hospital, 1316 revision. Monastic hospitals were designed for rest and spiritual preparation for death. Hinge Question: Why did medieval monastic hospitals refuse admission to pregnant women, lepers, and those suffering from infectious pestilence?",
-          "content": "Let the brethren receive every poor, sick, and helpless wanderer with humility and love. The patient shall be washed, laid in a clean bed with fresh sheets, and fed with nourishing bread and warm broth. Above all, a priest shall hear his confession and administer the holy sacraments, so that whether the body live or die, the immortal soul may be saved from perdition. The sick shall rest in quiet contemplation of the holy altar, but those suffering from contagious leprosy or frantic madness shall not be admitted."
+          "source_context": "Statutes of St Bartholomew’s Hospital, 1316 revision. Monastic hospitals were designed for rest and spiritual preparation for death. **Hinge Question:** Why did medieval monastic hospitals refuse admission to pregnant women, lepers, and those suffering from infectious pestilence?",
+          "content": "Let the brethren receive every poor, sick, and helpless wanderer with humility and love. The patient shall be washed, laid in a clean bed with fresh sheets, and fed with nourishing bread and warm broth. Above all, a priest shall hear his confession and administer the holy sacraments, so that whether the body live or die, the immortal soul may be saved from perdition. The sick shall rest in quiet contemplation of the holy altar, but those suffering from contagious leprosy or frantic madness shall not be admitted.",
+          "teacher_notes": {
+            "source_context": "Statutes of St Bartholomew’s Hospital, 1316 revision. Monastic hospitals were designed for rest and spiritual preparation for death. **Hinge Question:** Why did medieval monastic hospitals refuse admission to pregnant women, lepers, and those suffering from infectious pestilence?"
+          }
         },
         {
           "id": "med_l4_source_c",
@@ -3667,8 +3718,11 @@ const edexcel_medicine_data = {
           "citation": "Corporation of London Records Office, Guildhall (Letter Book G, fol. 217).",
           "provenance": "Letter Book G, Guildhall Records of the City of London, ordinances approved by the Mayor and Aldermen, 1368.",
           "hinge_question": "How did guild regulations protect patients from dangerous quackery while simultaneously restricting access to affordable healthcare?",
-          "source_context": "London Barber-Surgeons' Guild Ordinances, 1368. Urban craft guilds strictly controlled apprenticeships and prosecuted untrained practitioners. Hinge Question: How did guild regulations protect patients from dangerous quackery while simultaneously restricting access to affordable healthcare?",
-          "content": "No person shall presume to exercise the craft of barber-surgery within the City of London unless he has served a full apprenticeship of seven years under a master of the fellowship and has been examined and found expert by the Wardens. If any unregistered person or foreigner undertake dangerous phlebotomy, tooth-drawing, or bone-setting, he shall be fined forty shillings and his instruments confiscated for the protection of the people and the honour of the craft."
+          "source_context": "London Barber-Surgeons' Guild Ordinances, 1368. Urban craft guilds strictly controlled apprenticeships and prosecuted untrained practitioners. **Hinge Question:** How did guild regulations protect patients from dangerous quackery while simultaneously restricting access to affordable healthcare?",
+          "content": "No person shall presume to exercise the craft of barber-surgery within the City of London unless he has served a full apprenticeship of seven years under a master of the fellowship and has been examined and found expert by the Wardens. If any unregistered person or foreigner undertake dangerous phlebotomy, tooth-drawing, or bone-setting, he shall be fined forty shillings and his instruments confiscated for the protection of the people and the honour of the craft.",
+          "teacher_notes": {
+            "source_context": "London Barber-Surgeons' Guild Ordinances, 1368. Urban craft guilds strictly controlled apprenticeships and prosecuted untrained practitioners. **Hinge Question:** How did guild regulations protect patients from dangerous quackery while simultaneously restricting access to affordable healthcare?"
+          }
         },
         {
           "id": "med_l4_source_d",
@@ -3687,7 +3741,10 @@ const edexcel_medicine_data = {
           "citation": "St Bartholomew the Great Archive, West Smithfield, London.",
           "provenance": "Norman chancel and founder's monument, Priory Church of St Bartholomew the Great, West Smithfield, London, founded 1123.",
           "hinge_question": "Why were wealthy medieval benefactors so eager to endow hospitals and priories in their wills?",
-          "source_context": "Priory Church of St Bartholomew the Great, founded in 1123. Monastic hospitals were established as acts of pious Christian charity. Hinge Question: Why were wealthy medieval benefactors so eager to endow hospitals and priories in their wills?"
+          "source_context": "Priory Church of St Bartholomew the Great, founded in 1123. Monastic hospitals were established as acts of pious Christian charity. **Hinge Question:** Why were wealthy medieval benefactors so eager to endow hospitals and priories in their wills?",
+          "teacher_notes": {
+            "source_context": "Priory Church of St Bartholomew the Great, founded in 1123. Monastic hospitals were established as acts of pious Christian charity. **Hinge Question:** Why were wealthy medieval benefactors so eager to endow hospitals and priories in their wills?"
+          }
         },
         {
           "id": "med_l4_source_e",
@@ -3705,8 +3762,11 @@ const edexcel_medicine_data = {
           "citation": "The British Library, London (Sloane MS 521, fol. 18r).",
           "provenance": "Extract from a Middle English vernacular domestic recipe book, Norfolk, c.1450. British Library Sloane MS 521.",
           "hinge_question": "Why has the crucial role played by female domestic healers and midwives been largely overshadowed by male university physicians in written history?",
-          "source_context": "Fifteenth-century domestic herbal recipe manuscript. Most medical care in medieval England was administered at home by women. Hinge Question: Why has the crucial role played by female domestic healers and midwives been largely overshadowed by male university physicians in written history?",
-          "content": "For a feverish ague when the physician is far off or too costly: take fresh leaves of plantain, sage, and mint; crush them with pure honey and spring water, and give the sick person to drink upon waking. For aching joints, rub with warmed lard mixed with chamomile and elder-flowers. These herbs God hath planted freely in every hedgerow for the succour of the poor who have no coin for university doctors."
+          "source_context": "Fifteenth-century domestic herbal recipe manuscript. Most medical care in medieval England was administered at home by women. **Hinge Question:** Why has the crucial role played by female domestic healers and midwives been largely overshadowed by male university physicians in written history?",
+          "content": "For a feverish ague when the physician is far off or too costly: take fresh leaves of plantain, sage, and mint; crush them with pure honey and spring water, and give the sick person to drink upon waking. For aching joints, rub with warmed lard mixed with chamomile and elder-flowers. These herbs God hath planted freely in every hedgerow for the succour of the poor who have no coin for university doctors.",
+          "teacher_notes": {
+            "source_context": "Fifteenth-century domestic herbal recipe manuscript. Most medical care in medieval England was administered at home by women. **Hinge Question:** Why has the crucial role played by female domestic healers and midwives been largely overshadowed by male university physicians in written history?"
+          }
         }
       ],
       "quick_quiz": [
@@ -4557,7 +4617,10 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (L0000392).",
           "provenance": "Woodcut from Hieronymus Brunschwig, Buch der Vergift der Pestilenz, Strasbourg, 1497. Wellcome Collection.",
           "hinge_question": "Why did the distinct symptoms of pneumonic plague make it far more terrifying and rapidly lethal than bubonic plague?",
-          "source_context": "Woodcut from Brunschwig’s pestilence treatise, 1497. Bubonic plague caused high fever and agonizing lymph gland swellings. Hinge Question: Why did the distinct symptoms of pneumonic plague make it far more terrifying and rapidly lethal than bubonic plague?"
+          "source_context": "Woodcut from Brunschwig’s pestilence treatise, 1497. Bubonic plague caused high fever and agonizing lymph gland swellings. **Hinge Question:** Why did the distinct symptoms of pneumonic plague make it far more terrifying and rapidly lethal than bubonic plague?",
+          "teacher_notes": {
+            "source_context": "Woodcut from Brunschwig’s pestilence treatise, 1497. Bubonic plague caused high fever and agonizing lymph gland swellings. **Hinge Question:** Why did the distinct symptoms of pneumonic plague make it far more terrifying and rapidly lethal than bubonic plague?"
+          }
         },
         {
           "id": "med_l5_source_b",
@@ -4575,8 +4638,11 @@ const edexcel_medicine_data = {
           "citation": "The National Archives, Kew (Close Roll, 23 Edward III, Part 1, C 54/187, m. 19d).",
           "provenance": "Close Roll, 23 Edward III, Part 1, membrane 19d. The National Archives, Kew (C 54/187).",
           "hinge_question": "Why did King Edward III’s street-cleaning mandate have virtually no effect on stopping the spread of the Black Death?",
-          "source_context": "Royal writ of King Edward III to London, April 1349. Authorities believed plague was carried on miasma generated by putrid refuse. Hinge Question: Why did King Edward III’s street-cleaning mandate have virtually no effect on stopping the spread of the Black Death?",
-          "content": "Whereas the city of London, by reason of the dung, filth, and corruption lying in the streets and lanes, and the entrails of slaughtered beasts, is infected with an unbearable stench, whereby the air is corrupted and poisoned, and the plague increaseth daily among our subjects: We command you straightway that you cause the city to be cleansed of all such filth and refuse, that the anger of God may be turned away and our people preserved from death."
+          "source_context": "Royal writ of King Edward III to London, April 1349. Authorities believed plague was carried on miasma generated by putrid refuse. **Hinge Question:** Why did King Edward III’s street-cleaning mandate have virtually no effect on stopping the spread of the Black Death?",
+          "content": "Whereas the city of London, by reason of the dung, filth, and corruption lying in the streets and lanes, and the entrails of slaughtered beasts, is infected with an unbearable stench, whereby the air is corrupted and poisoned, and the plague increaseth daily among our subjects: We command you straightway that you cause the city to be cleansed of all such filth and refuse, that the anger of God may be turned away and our people preserved from death.",
+          "teacher_notes": {
+            "source_context": "Royal writ of King Edward III to London, April 1349. Authorities believed plague was carried on miasma generated by putrid refuse. **Hinge Question:** Why did King Edward III’s street-cleaning mandate have virtually no effect on stopping the spread of the Black Death?"
+          }
         },
         {
           "id": "med_l5_source_c",
@@ -4594,8 +4660,11 @@ const edexcel_medicine_data = {
           "citation": "Compendium de Epidemia per Collegium Facultatis Medicorum Parisius, 1348. Bibliothèque Nationale de France MS Lat. 7340.",
           "provenance": "Compendium de Epidemia, Report of the Medical Faculty of the University of Paris to King Philip VI of France, October 1348.",
           "hinge_question": "How did the University of Paris report provide a rational, secular alternative to the Church’s claim that plague was caused solely by human sin?",
-          "source_context": "University of Paris medical faculty consultation, October 1348. The leading medical university in Europe attributed the plague to planetary conjunction. Hinge Question: How did the University of Paris report provide a rational, secular alternative to the Church’s claim that plague was caused solely by human sin?",
-          "content": "On the twentieth day of March, 1345, there occurred a major conjunction of three superior planets—Saturn, Jupiter, and Mars—in the sign of Aquarius. This celestial conjunction drew up corrupt vapours from earth and sea, which were then corrupted by the malignant heat of Mars. A deadly poisonous wind was thereby generated which corrupted the global atmosphere and entered through the pores of human bodies, striking at the heart and liver."
+          "source_context": "University of Paris medical faculty consultation, October 1348. The leading medical university in Europe attributed the plague to planetary conjunction. **Hinge Question:** How did the University of Paris report provide a rational, secular alternative to the Church’s claim that plague was caused solely by human sin?",
+          "content": "On the twentieth day of March, 1345, there occurred a major conjunction of three superior planets—Saturn, Jupiter, and Mars—in the sign of Aquarius. This celestial conjunction drew up corrupt vapours from earth and sea, which were then corrupted by the malignant heat of Mars. A deadly poisonous wind was thereby generated which corrupted the global atmosphere and entered through the pores of human bodies, striking at the heart and liver.",
+          "teacher_notes": {
+            "source_context": "University of Paris medical faculty consultation, October 1348. The leading medical university in Europe attributed the plague to planetary conjunction. **Hinge Question:** How did the University of Paris report provide a rational, secular alternative to the Church’s claim that plague was caused solely by human sin?"
+          }
         },
         {
           "id": "med_l5_source_d",
@@ -4613,8 +4682,11 @@ const edexcel_medicine_data = {
           "citation": "Giovanni Boccaccio, Il Decameron (Introduction), Florence, 1348–1353.",
           "provenance": "Giovanni Boccaccio, The Decameron, Introduction describing the Black Death in Florence, 1348.",
           "hinge_question": "Why did the terrifying breakdown of family bonds during the Black Death permanently alter medieval European attitudes toward authority and religion?",
-          "source_context": "Eyewitness account from Boccaccio's Decameron, 1348. The extreme mortality rate caused widespread panic and social abandonment. Hinge Question: Why did the terrifying breakdown of family bonds during the Black Death permanently alter medieval European attitudes toward authority and religion?",
-          "content": "In men and women alike, it first betrayed itself by the emergence of certain tumours in the groin or the armpits, some of which grew as large as a common apple, others as an egg, which the common people called buboes. From these two parts, the deadly swellings spread rapidly over the whole body. What was still worse, this disaster struck so much terror into men's hearts that brother abandoned brother, uncle abandoned nephew, and often the wife her husband; and what is almost incredible, fathers and mothers refused to visit and tend their children."
+          "source_context": "Eyewitness account from Boccaccio's Decameron, 1348. The extreme mortality rate caused widespread panic and social abandonment. **Hinge Question:** Why did the terrifying breakdown of family bonds during the Black Death permanently alter medieval European attitudes toward authority and religion?",
+          "content": "In men and women alike, it first betrayed itself by the emergence of certain tumours in the groin or the armpits, some of which grew as large as a common apple, others as an egg, which the common people called buboes. From these two parts, the deadly swellings spread rapidly over the whole body. What was still worse, this disaster struck so much terror into men's hearts that brother abandoned brother, uncle abandoned nephew, and often the wife her husband; and what is almost incredible, fathers and mothers refused to visit and tend their children.",
+          "teacher_notes": {
+            "source_context": "Eyewitness account from Boccaccio's Decameron, 1348. The extreme mortality rate caused widespread panic and social abandonment. **Hinge Question:** Why did the terrifying breakdown of family bonds during the Black Death permanently alter medieval European attitudes toward authority and religion?"
+          }
         },
         {
           "id": "med_l5_source_e",
@@ -4633,7 +4705,10 @@ const edexcel_medicine_data = {
           "citation": "Bibliothèque Royale de Belgique, Brussels (MS 13076-77, fol. 12v).",
           "provenance": "Chronicle of Gilles li Muisis, Abbot of Saint-Martin of Tournai, 1349. Royal Library of Belgium.",
           "hinge_question": "Why did the Pope and secular kings eventually ban the Flagellants despite their display of intense religious piety?",
-          "source_context": "Contemporary chronicle miniature of Flagellants in Tournai, 1349. Extreme religious penitents whipped themselves in public squares. Hinge Question: Why did the Pope and secular kings eventually ban the Flagellants despite their display of intense religious piety?"
+          "source_context": "Contemporary chronicle miniature of Flagellants in Tournai, 1349. Extreme religious penitents whipped themselves in public squares. **Hinge Question:** Why did the Pope and secular kings eventually ban the Flagellants despite their display of intense religious piety?",
+          "teacher_notes": {
+            "source_context": "Contemporary chronicle miniature of Flagellants in Tournai, 1349. Extreme religious penitents whipped themselves in public squares. **Hinge Question:** Why did the Pope and secular kings eventually ban the Flagellants despite their display of intense religious piety?"
+          }
         }
       ],
       "quick_quiz": [
@@ -5786,9 +5861,9 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (Iconographic Collection V0023786).",
           "provenance": "Jan van der Straet (Stradanus), Nova Reperta (New Discoveries), Plate 4: Impressio Librorum, Antwerp, c.1580. Wellcome Collection.",
           "hinge_question": "Why did the rapid dissemination of medical books by printing presses sometimes reinforce old Galenic errors as well as spreading new anatomical ideas?",
-          "source_context": "Stradanus engraving of a Renaissance printing workshop, c.1580. Movable metal type transformed intellectual life across Europe. Hinge Question: Why did the rapid dissemination of medical books by printing presses sometimes reinforce old Galenic errors as well as spreading new anatomical ideas?",
+          "source_context": "Stradanus engraving of a Renaissance printing workshop, c.1580. Movable metal type transformed intellectual life across Europe. **Hinge Question:** Why did the rapid dissemination of medical books by printing presses sometimes reinforce old Galenic errors as well as spreading new anatomical ideas?",
           "teacher_notes": {
-            "source_context": "Stradanus engraving of a Renaissance printing workshop, c.1580. Movable metal type transformed intellectual life across Europe. Hinge Question: Why did the rapid dissemination of medical books by printing presses sometimes reinforce old Galenic errors as well as spreading new anatomical ideas?"
+            "source_context": "Stradanus engraving of a Renaissance printing workshop, c.1580. Movable metal type transformed intellectual life across Europe. **Hinge Question:** Why did the rapid dissemination of medical books by printing presses sometimes reinforce old Galenic errors as well as spreading new anatomical ideas?"
           }
         },
         {
@@ -5807,9 +5882,9 @@ const edexcel_medicine_data = {
           "citation": "The Royal Society Archives, London (Charter Book of the Royal Society, MS 1).",
           "provenance": "Second Royal Charter granted by King Charles II to the Royal Society of London, 22 April 1662.",
           "hinge_question": "Why did King Charles II grant a royal charter and patronage to the Royal Society while continuing to touch scrofula sufferers to cure them with the King's Evil?",
-          "source_context": "Charter granted by King Charles II to the Royal Society, 1662. The Society rejected reliance on unproven classical authorities. Hinge Question: Why did King Charles II grant a royal charter and patronage to the Royal Society while continuing to touch scrofula sufferers to cure them with the King's Evil?",
+          "source_context": "Charter granted by King Charles II to the Royal Society, 1662. The Society rejected reliance on unproven classical authorities. **Hinge Question:** Why did King Charles II grant a royal charter and patronage to the Royal Society while continuing to touch scrofula sufferers to cure them with the King's Evil?",
           "teacher_notes": {
-            "source_context": "Charter granted by King Charles II to the Royal Society, 1662. The Society rejected reliance on unproven classical authorities. Hinge Question: Why did King Charles II grant a royal charter and patronage to the Royal Society while continuing to touch scrofula sufferers to cure them with the King's Evil?"
+            "source_context": "Charter granted by King Charles II to the Royal Society, 1662. The Society rejected reliance on unproven classical authorities. **Hinge Question:** Why did King Charles II grant a royal charter and patronage to the Royal Society while continuing to touch scrofula sufferers to cure them with the King's Evil?"
           },
           "content": "We have long resolved to establish and encourage a Society whose chief design shall be to promote, by the authority of experiments, the knowledge of natural things and of all useful arts. In their assemblies, the Fellows shall admit no doctrine upon mere hearsay or ancient authority, but shall examine all hypotheses by rigorous trial, dissection, and demonstration. Their labours shall be dedicated to the glory of God the Creator, the advancement of natural philosophy, and the practical benefit of all mankind."
         },
@@ -5830,9 +5905,9 @@ const edexcel_medicine_data = {
           "citation": "The Royal Society, London (Robert Hooke, Micrographia, 1665).",
           "provenance": "Robert Hooke, Micrographia: or Some Physiological Descriptions of Minute Bodies Made by Magnifying Glasses, London, 1665. Royal Society Library.",
           "hinge_question": "Why did the discovery of intricate microscopic structures in 1665 fail to lead to any effective new medical treatments for seventeenth-century diseases?",
-          "source_context": "Engraving from Hooke’s Micrographia, 1665. The microscope allowed humans to view biological structures invisible to the naked eye. Hinge Question: Why did the discovery of intricate microscopic structures in 1665 fail to lead to any effective new medical treatments for seventeenth-century diseases?",
+          "source_context": "Engraving from Hooke’s Micrographia, 1665. The microscope allowed humans to view biological structures invisible to the naked eye. **Hinge Question:** Why did the discovery of intricate microscopic structures in 1665 fail to lead to any effective new medical treatments for seventeenth-century diseases?",
           "teacher_notes": {
-            "source_context": "Engraving from Hooke’s Micrographia, 1665. The microscope allowed humans to view biological structures invisible to the naked eye. Hinge Question: Why did the discovery of intricate microscopic structures in 1665 fail to lead to any effective new medical treatments for seventeenth-century diseases?"
+            "source_context": "Engraving from Hooke’s Micrographia, 1665. The microscope allowed humans to view biological structures invisible to the naked eye. **Hinge Question:** Why did the discovery of intricate microscopic structures in 1665 fail to lead to any effective new medical treatments for seventeenth-century diseases?"
           }
         },
         {
@@ -5851,9 +5926,9 @@ const edexcel_medicine_data = {
           "citation": "The Royal Society, London (Philosophical Transactions, Vol. 1, No. 1, p. 1).",
           "provenance": "Henry Oldenburg, Philosophical Transactions: Giving Some Accompt of the Present Undertakings, Studies, and Labours of the Ingenious, London, March 1665.",
           "hinge_question": "How did the introduction of peer-reviewed scientific journals encourage researchers to publish their work rather than guarding trade secrets?",
-          "source_context": "Oldenburg’s preface to Philosophical Transactions, 1665. The journal established the modern principle of published peer review. Hinge Question: How did the introduction of peer-reviewed scientific journals encourage researchers to publish their work rather than guarding trade secrets?",
+          "source_context": "Oldenburg’s preface to Philosophical Transactions, 1665. The journal established the modern principle of published peer review. **Hinge Question:** How did the introduction of peer-reviewed scientific journals encourage researchers to publish their work rather than guarding trade secrets?",
           "teacher_notes": {
-            "source_context": "Oldenburg’s preface to Philosophical Transactions, 1665. The journal established the modern principle of published peer review. Hinge Question: How did the introduction of peer-reviewed scientific journals encourage researchers to publish their work rather than guarding trade secrets?"
+            "source_context": "Oldenburg’s preface to Philosophical Transactions, 1665. The journal established the modern principle of published peer review. **Hinge Question:** How did the introduction of peer-reviewed scientific journals encourage researchers to publish their work rather than guarding trade secrets?"
           },
           "content": "Whereas there is nothing more necessary for promoting the improvement of Philosophical Matters, than the communicating to such as apply their Studies and Endeavours that way, such things as are discovered or put in practise by others: It is therefore thought fit to employ the Press, that such Inquiries and Discoveries as are made by Ingenious Men in all parts of the World may be impartially communicated, examined, and confirmed. Thus knowledge shall no longer be buried in private closets, but exposed to the common light of reason."
         },
@@ -5873,9 +5948,9 @@ const edexcel_medicine_data = {
           "citation": "Desiderius Erasmus, Moriae Encomium (The Praise of Folly), Basel, 1511.",
           "provenance": "Desiderius Erasmus of Rotterdam, The Praise of Folly, Latin edition, 1511.",
           "hinge_question": "Why did university medical faculties resist humanist reforms for decades even when errors in ancient translations were clearly proven?",
-          "source_context": "Extract from Erasmus’s Praise of Folly, 1511. Humanism emphasized direct study of original languages and nature over medieval scholastic authority. Hinge Question: Why did university medical faculties resist humanist reforms for decades even when errors in ancient translations were clearly proven?",
+          "source_context": "Extract from Erasmus’s Praise of Folly, 1511. Humanism emphasized direct study of original languages and nature over medieval scholastic authority. **Hinge Question:** Why did university medical faculties resist humanist reforms for decades even when errors in ancient translations were clearly proven?",
           "teacher_notes": {
-            "source_context": "Extract from Erasmus’s Praise of Folly, 1511. Humanism emphasized direct study of original languages and nature over medieval scholastic authority. Hinge Question: Why did university medical faculties resist humanist reforms for decades even when errors in ancient translations were clearly proven?"
+            "source_context": "Extract from Erasmus’s Praise of Folly, 1511. Humanism emphasized direct study of original languages and nature over medieval scholastic authority. **Hinge Question:** Why did university medical faculties resist humanist reforms for decades even when errors in ancient translations were clearly proven?"
           },
           "content": "The scholastic doctors and academic professors wrap themselves in obscure terms and ancient dogmas, fancying themselves closest to Heaven. They despise the study of Greek, preferring corrupt Latin translations of Aristotle and Galen riddled with scribal errors. They spend their days arguing over idle trifles in the university halls rather than reading original ancient texts or observing God’s living creation with their own eyes. They condemn as dangerous heretics all who dare to question their dry, bookish commentaries."
         }
@@ -6815,9 +6890,9 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (L0007635 / Public Domain).",
           "provenance": "Printed by A.C. for Walter Kettilby at the Bishop's-Head in St Paul's Churchyard, London, 1676. Title page of Thomas Sydenham's Observationes Medicae. Wellcome Collection.",
           "hinge_question": "Why did Sydenham’s practical, plain-speaking approach alienate many wealthy London physicians who charged massive fees for complex Latin consultations?",
-          "source_context": "Title page of Thomas Sydenham's 'Observationes Medicae' (1676). Sydenham classified diseases into distinct species based on meticulous bedside clinical records rather than philosophical humoral balances. Hinge Question: Why was Sydenham's insistence on treating each disease as a distinct species so revolutionary compared to Galen's four humours?",
+          "source_context": "Title page of Thomas Sydenham's 'Observationes Medicae' (1676). Sydenham classified diseases into distinct species based on meticulous bedside clinical records rather than philosophical humoral balances. **Hinge Question:** Why did Sydenham’s practical, plain-speaking approach alienate many wealthy London physicians who charged massive fees for complex Latin consultations?",
           "teacher_notes": {
-            "source_context": "Title page of Thomas Sydenham's 'Observationes Medicae' (1676). Sydenham classified diseases into distinct species based on meticulous bedside clinical records rather than philosophical humoral balances. Hinge Question: Why was Sydenham's insistence on treating each disease as a distinct species so revolutionary compared to Galen's four humours?"
+            "source_context": "Title page of Thomas Sydenham's 'Observationes Medicae' (1676). Sydenham classified diseases into distinct species based on meticulous bedside clinical records rather than philosophical humoral balances. **Hinge Question:** Why did Sydenham’s practical, plain-speaking approach alienate many wealthy London physicians who charged massive fees for complex Latin consultations?"
           }
         },
         {
@@ -6836,9 +6911,9 @@ const edexcel_medicine_data = {
           "citation": "Thomas Sydenham, Observationes Medicae circa Morborum Acutorum Historiam et Curationem, London, 1676.",
           "provenance": "Thomas Sydenham, Observationes Medicae, Preface, London, 1676. Royal College of Physicians Library.",
           "hinge_question": "Why was classifying diseases into distinct species an essential stepping stone toward discovering specific cures for illnesses?",
-          "source_context": "Preface to Sydenham’s Observationes Medicae, 1676. Sydenham argued diseases were distinct biological entities. Hinge Question: Why was classifying diseases into distinct species an essential stepping stone toward discovering specific cures for illnesses?",
+          "source_context": "Preface to Sydenham’s Observationes Medicae, 1676. Sydenham argued diseases were distinct biological entities. **Hinge Question:** Why was classifying diseases into distinct species an essential stepping stone toward discovering specific cures for illnesses?",
           "teacher_notes": {
-            "source_context": "Preface to Sydenham’s Observationes Medicae, 1676. Sydenham argued diseases were distinct biological entities. Hinge Question: Why was classifying diseases into distinct species an essential stepping stone toward discovering specific cures for illnesses?"
+            "source_context": "Preface to Sydenham’s Observationes Medicae, 1676. Sydenham argued diseases were distinct biological entities. **Hinge Question:** Why was classifying diseases into distinct species an essential stepping stone toward discovering specific cures for illnesses?"
           },
           "content": "The physician must observe nature attentively, noting the exact symptoms of disease as a botanist classifies species of plants. Sickness is not an arbitrary mystery: each disease hath its own uniform symptoms, course, and crises. He who would understand medicine must visit the sick bed, observe the fever with his own senses, and discard theoretical speculations copied from ancient books. When a student asked me what books he should read, I answered: \"Read Don Quixote, for it is a very good book; but at the bedside, observe nature alone.\""
         },
@@ -6859,9 +6934,9 @@ const edexcel_medicine_data = {
           "citation": "Rijksmuseum, Amsterdam (Object No. SK-A-388).",
           "provenance": "Jan Steen, The Quack (De kwakzalver), oil on panel, c.1660. Rijksmuseum Collection.",
           "hinge_question": "Why did satirical depictions of fraudulent physicians flourish in the 17th century despite major advances in scientific understanding?",
-          "source_context": "Jan Steen's satirical painting of a quack doctor, c.1660. Public skepticism grew as university doctors failed to prevent routine deaths. Hinge Question: Why did satirical depictions of fraudulent physicians flourish in the 17th century despite major advances in scientific understanding?",
+          "source_context": "Jan Steen's satirical painting of a quack doctor, c.1660. Public skepticism grew as university doctors failed to prevent routine deaths. **Hinge Question:** Why did satirical depictions of fraudulent physicians flourish in the 17th century despite major advances in scientific understanding?",
           "teacher_notes": {
-            "source_context": "Jan Steen's satirical painting of a quack doctor, c.1660. Public skepticism grew as university doctors failed to prevent routine deaths. Hinge Question: Why did satirical depictions of fraudulent physicians flourish in the 17th century despite major advances in scientific understanding?"
+            "source_context": "Jan Steen's satirical painting of a quack doctor, c.1660. Public skepticism grew as university doctors failed to prevent routine deaths. **Hinge Question:** Why did satirical depictions of fraudulent physicians flourish in the 17th century despite major advances in scientific understanding?"
           }
         },
         {
@@ -6880,9 +6955,9 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Library, London (EPB/B/Sydenham).",
           "provenance": "Thomas Sydenham, Observationes Medicae, Chapter on Intermittent Fevers, London, 1676.",
           "hinge_question": "Why were conservative English physicians reluctant to adopt Peruvian Bark, disparagingly calling it the \"Jesuit’s Powder\"?",
-          "source_context": "Sydenham on Cinchona bark, 1676. Peruvian bark directly treated malaria without purging humours. Hinge Question: Why were conservative English physicians reluctant to adopt Peruvian Bark, disparagingly calling it the \"Jesuit’s Powder\"?",
+          "source_context": "Sydenham on Cinchona bark, 1676. Peruvian bark directly treated malaria without purging humours. **Hinge Question:** Why were conservative English physicians reluctant to adopt Peruvian Bark, disparagingly calling it the \"Jesuit’s Powder\"?",
           "teacher_notes": {
-            "source_context": "Sydenham on Cinchona bark, 1676. Peruvian bark directly treated malaria without purging humours. Hinge Question: Why were conservative English physicians reluctant to adopt Peruvian Bark, disparagingly calling it the \"Jesuit’s Powder\"?"
+            "source_context": "Sydenham on Cinchona bark, 1676. Peruvian bark directly treated malaria without purging humours. **Hinge Question:** Why were conservative English physicians reluctant to adopt Peruvian Bark, disparagingly calling it the \"Jesuit’s Powder\"?"
           },
           "content": "Peruvian Bark (Cinchona) hath gained great credit for curing intermittents and ague fevers when given in due proportion. It cureth not by evacuating corrupt humours through bleeding or violent purges, as Galenists falsely insist all remedies must do, but by acting directly upon the specific root of the disease itself. Thus experience triumphs over scholastic dogma: for though we know not its hidden mechanism, its virtue to banish the shivering ague is undeniable."
         },
@@ -6902,9 +6977,9 @@ const edexcel_medicine_data = {
           "citation": "The British Library, London (General Reference Collection 776.b.12).",
           "provenance": "Thomas Sydenham, Observationes Medicae, Chapter III: Of the Small-Pox, London, 1676.",
           "hinge_question": "Why did contemporary doctors resist Sydenham's cool treatment for smallpox even when it visibly reduced patient deaths?",
-          "source_context": "Sydenham’s smallpox chapter, 1676. He abolished the harmful sweating method in favour of fresh air and light covers. Hinge Question: Why did contemporary doctors resist Sydenham's cool treatment for smallpox even when it visibly reduced patient deaths?",
+          "source_context": "Sydenham’s smallpox chapter, 1676. He abolished the harmful sweating method in favour of fresh air and light covers. **Hinge Question:** Why did contemporary doctors resist Sydenham's cool treatment for smallpox even when it visibly reduced patient deaths?",
           "teacher_notes": {
-            "source_context": "Sydenham’s smallpox chapter, 1676. He abolished the harmful sweating method in favour of fresh air and light covers. Hinge Question: Why did contemporary doctors resist Sydenham's cool treatment for smallpox even when it visibly reduced patient deaths?"
+            "source_context": "Sydenham’s smallpox chapter, 1676. He abolished the harmful sweating method in favour of fresh air and light covers. **Hinge Question:** Why did contemporary doctors resist Sydenham's cool treatment for smallpox even when it visibly reduced patient deaths?"
           },
           "content": "It is common practice among our doctors to stifle smallpox patients with blazing fires, heavy blankets, and heating cordials, driving the poison inward and burning the patient to death in their own sweat. I have found by experience that the patient should be kept cool, with windows opened to admit fresh air, light bedclothes, and cooling drinks of small beer and barley water. By this cooling regimen, fevers abate, pustules mature gently, and hundreds of lives are spared."
         }
@@ -7844,9 +7919,9 @@ const edexcel_medicine_data = {
           "citation": "The British Library, London (General Reference Collection C.54.k.12).",
           "provenance": "Andreas Vesalius, De Humani Corporis Fabrica Libri Septem, Johannes Oporinus, Basel, June 1543. British Library.",
           "hinge_question": "Why did Vesalius place a standing human skeleton at the very centre of the anatomy theatre in this famous frontispiece?",
-          "source_context": "Frontispiece of Vesalius’s Fabrica, 1543. Vesalius placed practical, hands-on human dissection at the core of medical education. Hinge Question: Why did Vesalius place a standing human skeleton at the very centre of the anatomy theatre in this famous frontispiece?",
+          "source_context": "Frontispiece of Vesalius’s Fabrica, 1543. Vesalius placed practical, hands-on human dissection at the core of medical education. **Hinge Question:** Why did Vesalius place a standing human skeleton at the very centre of the anatomy theatre in this famous frontispiece?",
           "teacher_notes": {
-            "source_context": "Frontispiece of Vesalius’s Fabrica, 1543. Vesalius placed practical, hands-on human dissection at the core of medical education. Hinge Question: Why did Vesalius place a standing human skeleton at the very centre of the anatomy theatre in this famous frontispiece?"
+            "source_context": "Frontispiece of Vesalius’s Fabrica, 1543. Vesalius placed practical, hands-on human dissection at the core of medical education. **Hinge Question:** Why did Vesalius place a standing human skeleton at the very centre of the anatomy theatre in this famous frontispiece?"
           }
         },
         {
@@ -7865,9 +7940,9 @@ const edexcel_medicine_data = {
           "citation": "Andreas Vesalius, De Humani Corporis Fabrica, Epistola Dedicatoria, Basel, 1543.",
           "provenance": "Andreas Vesalius, De Humani Corporis Fabrica, Preface dedicated to Emperor Charles V, Basel, 1543.",
           "hinge_question": "Why did Vesalius dedicate his revolutionary book directly to Emperor Charles V, the most powerful monarch in Europe?",
-          "source_context": "Vesalius's dedication preface to Emperor Charles V, 1543. He declared that Galen had deceived physicians by dissecting animals. Hinge Question: Why did Vesalius dedicate his revolutionary book directly to Emperor Charles V, the most powerful monarch in Europe?",
+          "source_context": "Vesalius's dedication preface to Emperor Charles V, 1543. He declared that Galen had deceived physicians by dissecting animals. **Hinge Question:** Why did Vesalius dedicate his revolutionary book directly to Emperor Charles V, the most powerful monarch in Europe?",
           "teacher_notes": {
-            "source_context": "Vesalius's dedication preface to Emperor Charles V, 1543. He declared that Galen had deceived physicians by dissecting animals. Hinge Question: Why did Vesalius dedicate his revolutionary book directly to Emperor Charles V, the most powerful monarch in Europe?"
+            "source_context": "Vesalius's dedication preface to Emperor Charles V, 1543. He declared that Galen had deceived physicians by dissecting animals. **Hinge Question:** Why did Vesalius dedicate his revolutionary book directly to Emperor Charles V, the most powerful monarch in Europe?"
           },
           "content": "Those who teach anatomy today sit aloft in a high chair like rooks, croaking with lofty pride about things they have never seen, but only learned by rote from the books of others. Meanwhile, an ignorant barber-surgeon hacketh at the cadaver without understanding what he uncovereth. Thus all things are taught wrongly in the schools, and days are wasted in ridiculous questions. I was compelled to lay my own hand to the work, dissecting human bodies myself, whereby I discovered more than two hundred errors in the anatomical writings of the divine Galen."
         },
@@ -7888,9 +7963,9 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (Vesalius Iconographic Collection).",
           "provenance": "Andreas Vesalius, De Humani Corporis Fabrica Libri Septem, Book I, p. 164, Basel, 1543. Wellcome Library.",
           "hinge_question": "How did the aesthetic beauty of Vesalius’s illustrations help convince artists and educated gentlemen to study human anatomy?",
-          "source_context": "Skeleton woodcut from Vesalius’s Fabrica, 1543. Vesalius fused scientific dissection with Renaissance artistic perspective. Hinge Question: How did the aesthetic beauty of Vesalius’s illustrations help convince artists and educated gentlemen to study human anatomy?",
+          "source_context": "Skeleton woodcut from Vesalius’s Fabrica, 1543. Vesalius fused scientific dissection with Renaissance artistic perspective. **Hinge Question:** How did the aesthetic beauty of Vesalius’s illustrations help convince artists and educated gentlemen to study human anatomy?",
           "teacher_notes": {
-            "source_context": "Skeleton woodcut from Vesalius’s Fabrica, 1543. Vesalius fused scientific dissection with Renaissance artistic perspective. Hinge Question: How did the aesthetic beauty of Vesalius’s illustrations help convince artists and educated gentlemen to study human anatomy?"
+            "source_context": "Skeleton woodcut from Vesalius’s Fabrica, 1543. Vesalius fused scientific dissection with Renaissance artistic perspective. **Hinge Question:** How did the aesthetic beauty of Vesalius’s illustrations help convince artists and educated gentlemen to study human anatomy?"
           }
         },
         {
@@ -7909,9 +7984,9 @@ const edexcel_medicine_data = {
           "citation": "Andreas Vesalius, De Humani Corporis Fabrica, Book VI, Chapter 15, Basel, 1543.",
           "provenance": "Andreas Vesalius, De Humani Corporis Fabrica, Book VI: The Heart, Basel, 1543.",
           "hinge_question": "Why did Vesalius point out the lack of pores in the heart septum without taking the next step to explain how blood actually circulated?",
-          "source_context": "Vesalius examining the heart septum, 1543. By proving the septum had no pores, he dismantled Galen’s explanation of blood flow. Hinge Question: Why did Vesalius point out the lack of pores in the heart septum without taking the next step to explain how blood actually circulated?",
+          "source_context": "Vesalius examining the heart septum, 1543. By proving the septum had no pores, he dismantled Galen’s explanation of blood flow. **Hinge Question:** Why did Vesalius point out the lack of pores in the heart septum without taking the next step to explain how blood actually circulated?",
           "teacher_notes": {
-            "source_context": "Vesalius examining the heart septum, 1543. By proving the septum had no pores, he dismantled Galen’s explanation of blood flow. Hinge Question: Why did Vesalius point out the lack of pores in the heart septum without taking the next step to explain how blood actually circulated?"
+            "source_context": "Vesalius examining the heart septum, 1543. By proving the septum had no pores, he dismantled Galen’s explanation of blood flow. **Hinge Question:** Why did Vesalius point out the lack of pores in the heart septum without taking the next step to explain how blood actually circulated?"
           },
           "content": "The septum of the heart is thick and dense, composed of the hardest muscle. Galen declared that blood sweated directly through invisible pores from the right ventricle into the left ventricle. But in truth, however much one may probe and inspect the septum, not the smallest pore or passage can be found. I am amazed at the ingenuity of Galen, who asserted a transit of blood which is nowhere visible to the human eye, and which the structure of the heart completely denieth."
         },
@@ -7931,9 +8006,9 @@ const edexcel_medicine_data = {
           "citation": "Jacobus Sylvius, Vaesani cuiusdam calumniarum in Hippocratis et Galeni rem anatomicam depulsio, Paris, 1551.",
           "provenance": "Jacobus Sylvius (Jacques Dubois), Defense of Galen against Vesalius, Paris, 1551. Bibliothèque Nationale de France.",
           "hinge_question": "How does Sylvius's bizarre argument that human bodies had changed since Roman times illustrate the extreme reluctance of scholars to abandon established beliefs?",
-          "source_context": "Jacobus Sylvius’s attack on Vesalius, 1551. Medical academics violently resisted challenges to ancient classical authority. Hinge Question: How does Sylvius's bizarre argument that human bodies had changed since Roman times illustrate the extreme reluctance of scholars to abandon established beliefs?",
+          "source_context": "Jacobus Sylvius’s attack on Vesalius, 1551. Medical academics violently resisted challenges to ancient classical authority. **Hinge Question:** How does Sylvius's bizarre argument that human bodies had changed since Roman times illustrate the extreme reluctance of scholars to abandon established beliefs?",
           "teacher_notes": {
-            "source_context": "Jacobus Sylvius’s attack on Vesalius, 1551. Medical academics violently resisted challenges to ancient classical authority. Hinge Question: How does Sylvius's bizarre argument that human bodies had changed since Roman times illustrate the extreme reluctance of scholars to abandon established beliefs?"
+            "source_context": "Jacobus Sylvius’s attack on Vesalius, 1551. Medical academics violently resisted challenges to ancient classical authority. **Hinge Question:** How does Sylvius's bizarre argument that human bodies had changed since Roman times illustrate the extreme reluctance of scholars to abandon established beliefs?"
           },
           "content": "I implore his Imperial Majesty to severely punish this monster of insolence, Andreas Vesalius, who with slanderous tongue and impious hands striveth to destroy the immortal work of Galen! If the human body today differs in any part from what Galen described, it is not Galen who was mistaken, but rather human nature which hath degenerated and altered its structure since classical antiquity. Galen remaineth the prince of physicians, whose sacred texts must not be touched by profane heretics."
         }
@@ -8870,9 +8945,9 @@ const edexcel_medicine_data = {
           "citation": "The British Library, London (General Reference Collection C.54.b.20).",
           "provenance": "William Harvey, De Motu Cordis, Chapter XIII, Frankfurt, 1628. British Library.",
           "hinge_question": "Why was this simple tourniquet experiment so powerful that any physician could easily replicate it on their own arm to confirm Harvey’s findings?",
-          "source_context": "Plate from Harvey’s De Motu Cordis, 1628. This experiment provided visual and physical proof of one-way venous blood flow. Hinge Question: Why was this simple tourniquet experiment so powerful that any physician could easily replicate it on their own arm to confirm Harvey’s findings?",
+          "source_context": "Plate from Harvey’s De Motu Cordis, 1628. This experiment provided visual and physical proof of one-way venous blood flow. **Hinge Question:** Why was this simple tourniquet experiment so powerful that any physician could easily replicate it on their own arm to confirm Harvey’s findings?",
           "teacher_notes": {
-            "source_context": "Plate from Harvey’s De Motu Cordis, 1628. This experiment provided visual and physical proof of one-way venous blood flow. Hinge Question: Why was this simple tourniquet experiment so powerful that any physician could easily replicate it on their own arm to confirm Harvey’s findings?"
+            "source_context": "Plate from Harvey’s De Motu Cordis, 1628. This experiment provided visual and physical proof of one-way venous blood flow. **Hinge Question:** Why was this simple tourniquet experiment so powerful that any physician could easily replicate it on their own arm to confirm Harvey’s findings?"
           }
         },
         {
@@ -8891,9 +8966,9 @@ const edexcel_medicine_data = {
           "citation": "William Harvey, Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus, Chapter IX, Frankfurt, 1628.",
           "provenance": "William Harvey, De Motu Cordis, Chapter IX: Quantitative Demonstration of Blood Circulation, Frankfurt, 1628.",
           "hinge_question": "Why was applying mathematical measurement to human biology such a revolutionary leap in seventeenth-century scientific thinking?",
-          "source_context": "Harvey's mathematical proof in De Motu Cordis, 1628. He was the first to use numerical calculations to prove biological functions. Hinge Question: Why was applying mathematical measurement to human biology such a revolutionary leap in seventeenth-century scientific thinking?",
+          "source_context": "Harvey's mathematical proof in De Motu Cordis, 1628. He was the first to use numerical calculations to prove biological functions. **Hinge Question:** Why was applying mathematical measurement to human biology such a revolutionary leap in seventeenth-century scientific thinking?",
           "teacher_notes": {
-            "source_context": "Harvey's mathematical proof in De Motu Cordis, 1628. He was the first to use numerical calculations to prove biological functions. Hinge Question: Why was applying mathematical measurement to human biology such a revolutionary leap in seventeenth-century scientific thinking?"
+            "source_context": "Harvey's mathematical proof in De Motu Cordis, 1628. He was the first to use numerical calculations to prove biological functions. **Hinge Question:** Why was applying mathematical measurement to human biology such a revolutionary leap in seventeenth-century scientific thinking?"
           },
           "content": "Let us calculate the quantity of blood pumped by the heart. If the left ventricle contains two ounces of blood, and the pulse beats seventy times in a minute, the heart must expel over five hundred ounces of blood in an hour—which is thrice the weight of the entire human body! Whence can all this blood come? It is impossible that the liver could continuously manufacture such an enormous mass of blood from ingested food. Therefore, I was forced to conclude that blood is driven in a perpetual circle by the beat of the heart."
         },
@@ -8914,9 +8989,9 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (Wellcome Library L0031660).",
           "provenance": "Marcello Malpighi, De Pulmonibus Observationes Anatomicae, Bologna, 1661. Wellcome Collection.",
           "hinge_question": "How does Malpighi’s discovery illustrate that medical breakthroughs often depend on the development of new technological instruments?",
-          "source_context": "Malpighi’s drawing of capillaries, 1661. Malpighi confirmed Harvey’s theory by viewing microscopic capillaries under a lens. Hinge Question: How does Malpighi’s discovery illustrate that medical breakthroughs often depend on the development of new technological instruments?",
+          "source_context": "Malpighi’s drawing of capillaries, 1661. Malpighi confirmed Harvey’s theory by viewing microscopic capillaries under a lens. **Hinge Question:** How does Malpighi’s discovery illustrate that medical breakthroughs often depend on the development of new technological instruments?",
           "teacher_notes": {
-            "source_context": "Malpighi’s drawing of capillaries, 1661. Malpighi confirmed Harvey’s theory by viewing microscopic capillaries under a lens. Hinge Question: How does Malpighi’s discovery illustrate that medical breakthroughs often depend on the development of new technological instruments?"
+            "source_context": "Malpighi’s drawing of capillaries, 1661. Malpighi confirmed Harvey’s theory by viewing microscopic capillaries under a lens. **Hinge Question:** How does Malpighi’s discovery illustrate that medical breakthroughs often depend on the development of new technological instruments?"
           }
         },
         {
@@ -8935,9 +9010,9 @@ const edexcel_medicine_data = {
           "citation": "John Aubrey, Brief Lives, chiefly of Contemporaries, set down by John Aubrey, between the Years 1669 & 1696, ed. Andrew Clark (Oxford, 1898).",
           "provenance": "John Aubrey, Brief Lives, biographical sketch of Dr William Harvey, written c.1680.",
           "hinge_question": "Why did wealthy patients often prefer traditional physicians who used familiar humoral treatments rather than innovators with new theories?",
-          "source_context": "Aubrey's Brief Lives, c.1680. Harvey faced severe hostility and loss of income after publishing De Motu Cordis. Hinge Question: Why did wealthy patients often prefer traditional physicians who used familiar humoral treatments rather than innovators with new theories?",
+          "source_context": "Aubrey's Brief Lives, c.1680. Harvey faced severe hostility and loss of income after publishing De Motu Cordis. **Hinge Question:** Why did wealthy patients often prefer traditional physicians who used familiar humoral treatments rather than innovators with new theories?",
           "teacher_notes": {
-            "source_context": "Aubrey's Brief Lives, c.1680. Harvey faced severe hostility and loss of income after publishing De Motu Cordis. Hinge Question: Why did wealthy patients often prefer traditional physicians who used familiar humoral treatments rather than innovators with new theories?"
+            "source_context": "Aubrey's Brief Lives, c.1680. Harvey faced severe hostility and loss of income after publishing De Motu Cordis. **Hinge Question:** Why did wealthy patients often prefer traditional physicians who used familiar humoral treatments rather than innovators with new theories?"
           },
           "content": "I have heard Dr Harvey say that after his book on the Circulation of the Blood came out, he fell mightily in his practice, and that it was believed by the vulgar that he was crack-brained; and all the physicians were against his opinion, and withrode it with all their might. Many of his ancient patients refused to consult him, saying they would not entrust their health to a doctor who fancied blood moved like water in a wheel."
         },
@@ -8957,9 +9032,9 @@ const edexcel_medicine_data = {
           "citation": "Jean Riolan, Encheiridium Anatomicum et Pathologicum, Paris, 1648.",
           "provenance": "Jean Riolan, Encheiridium Anatomicum, Paris, 1648. Bibliothèque Interuniversitaire de Santé, Paris.",
           "hinge_question": "Why did Galenist doctors view the human body as fragile and easily unbalanced rather than resilient and self-regulating?",
-          "source_context": "Riolan’s critique of Harvey, 1648. Conservative physicians feared circulation destroyed the foundational logic of humoral medicine. Hinge Question: Why did Galenist doctors view the human body as fragile and easily unbalanced rather than resilient and self-regulating?",
+          "source_context": "Riolan’s critique of Harvey, 1648. Conservative physicians feared circulation destroyed the foundational logic of humoral medicine. **Hinge Question:** Why did Galenist doctors view the human body as fragile and easily unbalanced rather than resilient and self-regulating?",
           "teacher_notes": {
-            "source_context": "Riolan’s critique of Harvey, 1648. Conservative physicians feared circulation destroyed the foundational logic of humoral medicine. Hinge Question: Why did Galenist doctors view the human body as fragile and easily unbalanced rather than resilient and self-regulating?"
+            "source_context": "Riolan’s critique of Harvey, 1648. Conservative physicians feared circulation destroyed the foundational logic of humoral medicine. **Hinge Question:** Why did Galenist doctors view the human body as fragile and easily unbalanced rather than resilient and self-regulating?"
           },
           "content": "If blood circulated continually throughout the entire body in minutes, the delicate balance of the four humours would be thoroughly confounded and mixed together. Fevers and inflammations could never remain localized in one limb or organ, but would instantly contaminate the whole frame. Furthermore, why should God have endowed human veins with blood if it were merely to circulate idly in a ring? We must hold fast to Galen, whose wisdom hath guided the healing art for fifteen hundred years."
         }
@@ -9900,9 +9975,9 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (Wellcome Library M0010582).",
           "provenance": "Broadside on the Great Plague of London, woodcut with letterpress, London, 1665. Wellcome Collection.",
           "hinge_question": "Why did the mass flight of wealthy citizens and doctors in 1665 cause intense social resentment among the trapped poor?",
-          "source_context": "Contemporary broadside depicting London during the Great Plague of 1665. Over 100,000 citizens died in six months. Hinge Question: Why did the mass flight of wealthy citizens and doctors in 1665 cause intense social resentment among the trapped poor?",
+          "source_context": "Contemporary broadside depicting London during the Great Plague of 1665. Over 100,000 citizens died in six months. **Hinge Question:** Why did the mass flight of wealthy citizens and doctors in 1665 cause intense social resentment among the trapped poor?",
           "teacher_notes": {
-            "source_context": "Contemporary broadside depicting London during the Great Plague of 1665. Over 100,000 citizens died in six months. Hinge Question: Why did the mass flight of wealthy citizens and doctors in 1665 cause intense social resentment among the trapped poor?"
+            "source_context": "Contemporary broadside depicting London during the Great Plague of 1665. Over 100,000 citizens died in six months. **Hinge Question:** Why did the mass flight of wealthy citizens and doctors in 1665 cause intense social resentment among the trapped poor?"
           }
         },
         {
@@ -9921,9 +9996,9 @@ const edexcel_medicine_data = {
           "citation": "Corporation of London Records Office, Guildhall, London (Printed Orders of the Mayor, 1665).",
           "provenance": "Orders Conceived and Published by the Lord Mayor and Aldermen of the City of London, Concerning the Infection of the Plague, Guildhall, London, July 1665.",
           "hinge_question": "Why did the compulsory quarantine of entire households inside infected homes often result in whole families catching the plague and dying together?",
-          "source_context": "The Lord Mayor’s Plague Orders, July 1665. The civic government attempted to isolate the disease through strict domestic quarantine. Hinge Question: Why did the compulsory quarantine of entire households inside infected homes often result in whole families catching the plague and dying together?",
+          "source_context": "The Lord Mayor’s Plague Orders, July 1665. The civic government attempted to isolate the disease through strict domestic quarantine. **Hinge Question:** Why did the compulsory quarantine of entire households inside infected homes often result in whole families catching the plague and dying together?",
           "teacher_notes": {
-            "source_context": "The Lord Mayor’s Plague Orders, July 1665. The civic government attempted to isolate the disease through strict domestic quarantine. Hinge Question: Why did the compulsory quarantine of entire households inside infected homes often result in whole families catching the plague and dying together?"
+            "source_context": "The Lord Mayor’s Plague Orders, July 1665. The civic government attempted to isolate the disease through strict domestic quarantine. **Hinge Question:** Why did the compulsory quarantine of entire households inside infected homes often result in whole families catching the plague and dying together?"
           },
           "content": "Every visited house shall be shut up with a red cross of a foot long painted on the middle of the door, with these words: \"Lord have mercy upon us\", there to continue until forty days after the infection hath ceased. Two watchmen shall be appointed to every infected house, one by day and the other by night, who shall strictly prevent any person from going in or coming forth upon pain of imprisonment. All dogs and cats shall be forthwith slaughtered by the dog-killers, lest they carry the pestilence in their fur."
         },
@@ -9944,9 +10019,9 @@ const edexcel_medicine_data = {
           "citation": "The Wellcome Collection, London (Wellcome Library M0005746).",
           "provenance": "London’s Lord Have Mercy Upon Us: A True Relation of Seven Modern Plagues or Visitations in London, printed broadsheet, London, 1665. Wellcome Library.",
           "hinge_question": "Why did seventeenth-century citizens continue to rely on religious prayers even while systematically compiling detailed weekly mortality statistics?",
-          "source_context": "Plague broadsheet from London, 1665. Medical understanding of the causes of epidemic disease remained medieval. Hinge Question: Why did seventeenth-century citizens continue to rely on religious prayers even while systematically compiling detailed weekly mortality statistics?",
+          "source_context": "Plague broadsheet from London, 1665. Medical understanding of the causes of epidemic disease remained medieval. **Hinge Question:** Why did seventeenth-century citizens continue to rely on religious prayers even while systematically compiling detailed weekly mortality statistics?",
           "teacher_notes": {
-            "source_context": "Plague broadsheet from London, 1665. Medical understanding of the causes of epidemic disease remained medieval. Hinge Question: Why did seventeenth-century citizens continue to rely on religious prayers even while systematically compiling detailed weekly mortality statistics?"
+            "source_context": "Plague broadsheet from London, 1665. Medical understanding of the causes of epidemic disease remained medieval. **Hinge Question:** Why did seventeenth-century citizens continue to rely on religious prayers even while systematically compiling detailed weekly mortality statistics?"
           }
         },
         {
@@ -9965,9 +10040,9 @@ const edexcel_medicine_data = {
           "citation": "The Diary of Samuel Pepys, transcribed and ed. Henry B. Wheatley (London, 1893).",
           "provenance": "Samuel Pepys, Diary, manuscript entry for 31 August 1665. Pepys Library, Magdalene College, Cambridge.",
           "hinge_question": "Why did Samuel Pepys believe that official parish Bills of Mortality significantly undercounted the real number of plague deaths?",
-          "source_context": "Samuel Pepys’s diary entry, August 1665. The Great Plague caused widespread economic ruin and psychological terror. Hinge Question: Why did Samuel Pepys believe that official parish Bills of Mortality significantly undercounted the real number of plague deaths?",
+          "source_context": "Samuel Pepys’s diary entry, August 1665. The Great Plague caused widespread economic ruin and psychological terror. **Hinge Question:** Why did Samuel Pepys believe that official parish Bills of Mortality significantly undercounted the real number of plague deaths?",
           "teacher_notes": {
-            "source_context": "Samuel Pepys’s diary entry, August 1665. The Great Plague caused widespread economic ruin and psychological terror. Hinge Question: Why did Samuel Pepys believe that official parish Bills of Mortality significantly undercounted the real number of plague deaths?"
+            "source_context": "Samuel Pepys’s diary entry, August 1665. The Great Plague caused widespread economic ruin and psychological terror. **Hinge Question:** Why did Samuel Pepys believe that official parish Bills of Mortality significantly undercounted the real number of plague deaths?"
           },
           "content": "In the City died this week 7,496, and of them 6,102 of the plague. But it is feared that the true number is nearer 10,000, partly by the Quakers and others that will not have any bell ring for them, and partly that the clerks do not report the dead. Thus one of the saddest sights I saw today in the street was to see how empty the City is: no boats upon the river, shops shut up, grass growing in the streets of Whitehall, and people walking down the middle of the roadway for fear of passing infected doors."
         },
@@ -9987,9 +10062,9 @@ const edexcel_medicine_data = {
           "citation": "Certain Necessary Directions as well for the Cure of the Plague as for Preventing the Infection, by the College of Physicians (London, 1665).",
           "provenance": "Royal College of Physicians of London, Directions for the Plague, London, 1665. RCP Library.",
           "hinge_question": "Why were the elite physicians of the Royal College completely unable to devise a cure for plague despite having studied Vesalius and Harvey?",
-          "source_context": "Royal College of Physicians plague tract, 1665. Medical advice in 1665 showed total continuity with fourteenth-century treatments. Hinge Question: Why were the elite physicians of the Royal College completely unable to devise a cure for plague despite having studied Vesalius and Harvey?",
+          "source_context": "Royal College of Physicians plague tract, 1665. Medical advice in 1665 showed total continuity with fourteenth-century treatments. **Hinge Question:** Why were the elite physicians of the Royal College completely unable to devise a cure for plague despite having studied Vesalius and Harvey?",
           "teacher_notes": {
-            "source_context": "Royal College of Physicians plague tract, 1665. Medical advice in 1665 showed total continuity with fourteenth-century treatments. Hinge Question: Why were the elite physicians of the Royal College completely unable to devise a cure for plague despite having studied Vesalius and Harvey?"
+            "source_context": "Royal College of Physicians plague tract, 1665. Medical advice in 1665 showed total continuity with fourteenth-century treatments. **Hinge Question:** Why were the elite physicians of the Royal College completely unable to devise a cure for plague despite having studied Vesalius and Harvey?"
           },
           "content": "To defend the brain and heart from pestilential miasmas, let fires of pitch, resin, and frankincense be kept burning in rooms and streets. Hold in the mouth a piece of angelica root, rue, or zedoary steeped in vinegar. If swellings appear, let the surgeon apply a blister-plaster to draw the poison outward, or lay the tail of a live plucked fowl to the sore until the fowl die. Bleeding may be used sparingly on the first day, provided the pulse be strong and the fever moderate."
         }
@@ -10615,9 +10690,9 @@ const edexcel_medicine_data = {
           "title": "Robert Koch & Specific Bacteria (1876–1882)",
           "theme_heading": "Robert Koch & Specific Bacteria (1876–1882)",
           "text": "<span class=\"para-ref\">[4.1]</span> The diagnostic deadlock was broken by Robert Koch, a meticulous country doctor working in Imperial Germany. Koch transformed microbiology into an exact forensic science through four breakthrough innovations: first, using solid culture media (nutrient agar jelly derived from seaweed in flat glass Petri dishes) instead of contaminated liquid broths, allowing pure, isolated bacterial colonies to be grown; second, staining transparent microbes with synthetic industrial aniline dyes (methyl violet and methylene blue), making bacteria stand out sharply against human tissue; third, fitting Zeiss compound microscopes with precision oil-immersion lenses; and fourth, photographing bacterial specimens with camera attachments (<span class=\"archival-meta-tag\">Source B</span>), producing permanent, irrefutable photographic evidence.<br><br><span class=\"para-ref\">[4.2]</span> Between 1876 and 1882, Koch and his disciples isolated the specific causative bacterial pathogens for anthrax (1876), wound infections (1878), and deadly human tuberculosis (1882). Koch formulated his celebrated <em>Four Postulates</em>: rules to prove a specific microbe causes a specific disease. Koch shifted medicine from vague guesswork to targeted bacteriological identification.",
-          "image": "/images/koch_plate_439.jpg",
+          "image": "/images/robert_koch_laboratory.jpg",
           "image_alt": "Robert Koch's scientific plate 439 illustrating stained bacterial specimens and photographic methods",
-          "caption": "Robert Koch's Microscopic Plate (1882): By utilizing methyl violet chemical dyes and solid agar jelly growth mediums, Koch isolated the specific rod-shaped bacterium Mycobacterium tuberculosis, definitively linking one microbe to one specific human disease.",
+          "caption": "Dr Robert Koch in his Berlin Laboratory (c. 1885): Koch transformed microbiology through four innovations: isolating pure bacterial colonies in flat glass Petri dishes using solid nutrient agar, staining transparent microbes with synthetic industrial aniline dyes, and examining specimen slides with precision oil-immersion Zeiss microscopes.",
           "isReversed": true,
           "sources": [
             {
@@ -10926,7 +11001,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Edelfelt's celebrated 1885 portrait captures Pasteur at the height of his prestige, surrounded by specialized chemical flasks, measuring cylinders, and experimental tissues. The composition deliberately elevates the laboratory scientist above the traditional clinical doctor. **Hinge Question:** Why did British doctors initially view laboratory experiments on liquids and animals as irrelevant to human hospital patients?"
           },
-          "enquiry_question": "Explain what Source A shows about the transformation of medical research during the late nineteenth century."
+          "enquiry_question": "Explain what Source A shows about the transformation of medical research during the late nineteenth century.",
+          "hinge_question": "Why did British doctors initially view laboratory experiments on liquids and animals as irrelevant to human hospital patients?",
+          "source_context": "Edelfelt's celebrated 1885 portrait captures Pasteur at the height of his prestige, surrounded by specialized chemical flasks, measuring cylinders, and experimental tissues. The composition deliberately elevates the laboratory scientist above the traditional clinical doctor. **Hinge Question:** Why did British doctors initially view laboratory experiments on liquids and animals as irrelevant to human hospital patients?"
         },
         {
           "id": "source_b_pasteur_sorbonne_1864",
@@ -10942,7 +11019,9 @@ const edexcel_medicine_data = {
             "source_context": "Pasteur delivered this triumphant public address before France's scientific elite, brandishing his swan-neck flasks to refute Felix Pouchet's belief that life arose spontaneously from dead matter. **Hinge Question:** If Pasteur proved in 1864 that airborne germs cause decay, why did British physicians still cling to miasma theory until the 1880s?"
           },
           "text": "Never will the doctrine of spontaneous generation recover from the mortal blow struck by this simple experiment. No, there is no circumstance known in which it can be affirmed that microscopic beings came into the world without germs, without parents similar to themselves. Those who affirm it have been the sport of illusions, of ill-conducted experiments, tainted with errors that they did not know how to perceive, or did not know how to avoid. The air contains germs which produce these living microscopic organisms; when you exclude the air's germs, life does not appear.",
-          "enquiry_question": "Explain the significance of Pasteur's findings in Source B for understanding the causes of disease."
+          "enquiry_question": "Explain the significance of Pasteur's findings in Source B for understanding the causes of disease.",
+          "hinge_question": "If Pasteur proved in 1864 that airborne germs cause decay, why did British physicians still cling to miasma theory until the 1880s?",
+          "source_context": "Pasteur delivered this triumphant public address before France's scientific elite, brandishing his swan-neck flasks to refute Felix Pouchet's belief that life arose spontaneously from dead matter. **Hinge Question:** If Pasteur proved in 1864 that airborne germs cause decay, why did British physicians still cling to miasma theory until the 1880s?"
         },
         {
           "id": "source_c_koch_bacteria",
@@ -10959,7 +11038,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Koch perfected the art of microphotography and aniline dye staining, overcoming the optical limitations of ordinary microscopes. His images could be reproduced in medical journals worldwide, enabling independent researchers to replicate his discoveries. **Hinge Question:** Why was visual photographic proof essential to convince conservative British physicians who rejected theoretical claims?"
           },
-          "enquiry_question": "Explain how Koch's bacteriological technique shown in Source C advanced ideas about the cause of illness."
+          "enquiry_question": "Explain how Koch's bacteriological technique shown in Source C advanced ideas about the cause of illness.",
+          "hinge_question": "Why was visual photographic proof essential to convince conservative British physicians who rejected theoretical claims?",
+          "source_context": "Koch perfected the art of microphotography and aniline dye staining, overcoming the optical limitations of ordinary microscopes. His images could be reproduced in medical journals worldwide, enabling independent researchers to replicate his discoveries. **Hinge Question:** Why was visual photographic proof essential to convince conservative British physicians who rejected theoretical claims?"
         },
         {
           "id": "source_d_koch_berlin_address_1882",
@@ -10975,7 +11056,9 @@ const edexcel_medicine_data = {
             "source_context": "Tuberculosis was the greatest killer in nineteenth-century industrial Europe, responsible for one in every seven deaths, previously blamed on inherited constitutional weakness or poor foul air. Koch's lecture was met with stunned silence followed by a standing ovation from leading physicians. **Hinge Question:** How did Koch's discovery change the treatment approach from moral advice (fresh air, rest) to targeted sanitary control and disinfection?"
           },
           "text": "In all tissues in which the disease process of tuberculosis has recently developed, these bacilli are present in enormous numbers. They can be isolated from these tissues and cultivated on solidified blood serum in pure cultures entirely free from foreign organisms. When these pure cultures are inoculated into healthy guinea pigs, the animals invariably develop genuine tuberculosis with typical tuberculous nodules... Tuberculosis is caused solely by this parasite, and it is a contagious parasitic disease.",
-          "enquiry_question": "Explain the importance of Koch's method described in Source D for medical progress in Britain."
+          "enquiry_question": "Explain the importance of Koch's method described in Source D for medical progress in Britain.",
+          "hinge_question": "How did Koch's discovery change the treatment approach from moral advice (fresh air, rest) to targeted sanitary control and disinfection?",
+          "source_context": "Tuberculosis was the greatest killer in nineteenth-century industrial Europe, responsible for one in every seven deaths, previously blamed on inherited constitutional weakness or poor foul air. Koch's lecture was met with stunned silence followed by a standing ovation from leading physicians. **Hinge Question:** How did Koch's discovery change the treatment approach from moral advice (fresh air, rest) to targeted sanitary control and disinfection?"
         },
         {
           "id": "source_e_bastian_lancet_1875",
@@ -10991,7 +11074,9 @@ const edexcel_medicine_data = {
             "source_context": "Dr Henry Charlton Bastian was a respected professor at University College London who fought a bitter ten-year intellectual duel in the medical press against John Tyndall and Joseph Lister, fiercely defending spontaneous generation and miasma theory well into the late 1870s. **Hinge Question:** Why did the high professional status of established British physicians like Bastian slow down the adoption of revolutionary European science?"
           },
           "text": "We must not be misled by French and German laboratory experiments on vegetable infusions and beef teas into adopting extravagant germ dogmas. The living human body is entirely different from a sterile glass flask. In hundreds of clinical cases of epidemic fever, we observe chemical ferments arising spontaneously within diseased body fluids under conditions of foul atmospheric miasma and constitutional debility. To assert that every disease is produced by a distinct external parasite enters the realm of unscientific speculation.",
-          "enquiry_question": "Explain why many British doctors were reluctant to accept the Germ Theory during the 1860s and 1870s."
+          "enquiry_question": "Explain why many British doctors were reluctant to accept the Germ Theory during the 1860s and 1870s.",
+          "hinge_question": "Why did the high professional status of established British physicians like Bastian slow down the adoption of revolutionary European science?",
+          "source_context": "Dr Henry Charlton Bastian was a respected professor at University College London who fought a bitter ten-year intellectual duel in the medical press against John Tyndall and Joseph Lister, fiercely defending spontaneous generation and miasma theory well into the late 1870s. **Hinge Question:** Why did the high professional status of established British physicians like Bastian slow down the adoption of revolutionary European science?"
         }
       ],
       "video": [
@@ -11930,7 +12015,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Gillray's savage caricature satirized the virulent anti-vaccination propaganda propagated by the Anti-Vaccine Society and religious clergy, who preached that transferring beasts' diseases into Christian humans was an ungodly abomination. **Hinge Question:** How did visual satires like Gillray's both reflect genuine public horror and advertise Jenner's breakthrough to thousands of Londoners?"
           },
-          "enquiry_question": "Explain what Source A reveals about the public reaction in Britain to Jenner's cowpox vaccine in 1802."
+          "enquiry_question": "Explain what Source A reveals about the public reaction in Britain to Jenner's cowpox vaccine in 1802.",
+          "hinge_question": "How did visual satires like Gillray's both reflect genuine public horror and advertise Jenner's breakthrough to thousands of Londoners?",
+          "source_context": "Gillray's savage caricature satirized the virulent anti-vaccination propaganda propagated by the Anti-Vaccine Society and religious clergy, who preached that transferring beasts' diseases into Christian humans was an ungodly abomination. **Hinge Question:** How did visual satires like Gillray's both reflect genuine public horror and advertise Jenner's breakthrough to thousands of Londoners?"
         },
         {
           "id": "source_b_jenner_inquiry_1798",
@@ -11946,7 +12033,9 @@ const edexcel_medicine_data = {
             "source_context": "Jenner self-published his treatise in 1798 after the prestigious Royal Society refused to print his paper, demanding further experimental proof beyond his initial twenty-three case studies. **Hinge Question:** Why did Jenner's inability to explain *why* cowpox worked make conservative physicians doubt his empirical evidence?"
           },
           "text": "In order to ascertain whether the cowpox was a certain preservative against smallpox, I selected a healthy boy, about eight years old, named James Phipps. The matter was taken from a sore on the hand of a dairymaid, Sarah Nelmes, who was infected by her master's cows, and it was inserted on the 14th of May, 1796, into the arm of the boy by means of two superficial incisions... In order to satisfy myself whether the boy was secure against smallpox contagion, on the 1st of July following, I inoculated him with variolous matter taken immediately from a pustule of smallpox. No disease followed... What renders the cowpox so peculiarly eligible is that it produces no pustules of a pestilential nature on the body, nor can it infect by effluvia.",
-          "enquiry_question": "Explain why Jenner's clinical experiment described in Source B was an important turning point in disease prevention."
+          "enquiry_question": "Explain why Jenner's clinical experiment described in Source B was an important turning point in disease prevention.",
+          "hinge_question": "Why did Jenner's inability to explain *why* cowpox worked make conservative physicians doubt his empirical evidence?",
+          "source_context": "Jenner self-published his treatise in 1798 after the prestigious Royal Society refused to print his paper, demanding further experimental proof beyond his initial twenty-three case studies. **Hinge Question:** Why did Jenner's inability to explain *why* cowpox worked make conservative physicians doubt his empirical evidence?"
         },
         {
           "id": "source_c_sarah_nelmes_cowpox_hand",
@@ -11963,7 +12052,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Jenner included this meticulous full-colour hand-tinted plate in his 1798 treatise so that other physicians could identify genuine cowpox pustules from impostor skin lesions on dairy cattle. **Hinge Question:** Why was accurate visual identification critical when early doctors attempted to gather vaccine lymph from local farm animals?"
           },
-          "enquiry_question": "Explain the role of Sarah Nelmes' infection shown in Source C in the development of the smallpox vaccine."
+          "enquiry_question": "Explain the role of Sarah Nelmes' infection shown in Source C in the development of the smallpox vaccine.",
+          "hinge_question": "Why was accurate visual identification critical when early doctors attempted to gather vaccine lymph from local farm animals?",
+          "source_context": "Jenner included this meticulous full-colour hand-tinted plate in his 1798 treatise so that other physicians could identify genuine cowpox pustules from impostor skin lesions on dairy cattle. **Hinge Question:** Why was accurate visual identification critical when early doctors attempted to gather vaccine lymph from local farm animals?"
         },
         {
           "id": "source_d_parliamentary_grant_1802",
@@ -11979,7 +12070,9 @@ const edexcel_medicine_data = {
             "source_context": "This £10,000 national grant (followed by a further £20,000 in 1807) represented unprecedented state intervention in medical science during a period of fierce laissez-faire governance, proving the immense strategic value Parliament placed on eradicating smallpox. **Hinge Question:** Why was the British government willing to spend thousands of pounds on vaccination while refusing to regulate factory conditions or city sanitation?"
           },
           "text": "Mr. Bankes reported from the Committee to whom the Petition of Edward Jenner, Doctor of Physic, was referred... That Dr. Jenner has discovered a disease called the Cow-Pox, which is introduced by inoculation, and that this disease is a complete preservative against the Small-Pox; that it is attended with no danger, produces no disfigurement, and is not infectious by effluvia... That the petitioner has sacrificed his lucrative private practice to diffuse this discovery throughout the world without personal profit. Resolved: That a sum not exceeding £10,000 be granted to His Majesty, to be paid to Dr. Edward Jenner, as a remuneration for his grand discovery.",
-          "enquiry_question": "Explain why Parliament decided to award Dr Jenner £10,000 in 1802."
+          "enquiry_question": "Explain why Parliament decided to award Dr Jenner £10,000 in 1802.",
+          "hinge_question": "Why was the British government willing to spend thousands of pounds on vaccination while refusing to regulate factory conditions or city sanitation?",
+          "source_context": "This £10,000 national grant (followed by a further £20,000 in 1807) represented unprecedented state intervention in medical science during a period of fierce laissez-faire governance, proving the immense strategic value Parliament placed on eradicating smallpox. **Hinge Question:** Why was the British government willing to spend thousands of pounds on vaccination while refusing to regulate factory conditions or city sanitation?"
         },
         {
           "id": "source_e_anti_vaccination_manifesto_1871",
@@ -11995,7 +12088,9 @@ const edexcel_medicine_data = {
             "source_context": "When the government made smallpox vaccination strictly compulsory in 1853 and introduced heavy fines and imprisonment for non-compliant parents in 1867 and 1871, massive protest marches erupted across Leicester, Keighley, and London. **Hinge Question:** Did anti-vaccination protesters object more to the medical safety of the vaccine or to the state taking away their personal freedom?"
           },
           "text": "We denounce the Compulsory Vaccination Acts as an intolerable tyranny and an assault upon the sanctity of the domestic hearth. By what authority does Parliament command that healthy English infants shall have their pure blood contaminated with foul matter taken from diseased animals or contaminated human scabs? Thousands of children have been infected with syphilis, erysipelas, and scrofula through filthy vaccine lancets. We claim our constitutional right as freeborn Britons to protect our offspring from state-sponsored poisoning and medical dictatorship.",
-          "enquiry_question": "Explain the main reasons for opposition to the Compulsory Vaccination Acts in nineteenth-century Britain."
+          "enquiry_question": "Explain the main reasons for opposition to the Compulsory Vaccination Acts in nineteenth-century Britain.",
+          "hinge_question": "Did anti-vaccination protesters object more to the medical safety of the vaccine or to the state taking away their personal freedom?",
+          "source_context": "When the government made smallpox vaccination strictly compulsory in 1853 and introduced heavy fines and imprisonment for non-compliant parents in 1867 and 1871, massive protest marches erupted across Leicester, Keighley, and London. **Hinge Question:** Did anti-vaccination protesters object more to the medical safety of the vaccine or to the state taking away their personal freedom?"
         }
       ],
       "video": [
@@ -12947,7 +13042,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Nightingale was an expert statistician and the first female fellow of the Royal Statistical Society. She invented this 'rose' or 'coxcomb' diagram because she knew politicians and generals would skip long written tables but could not ignore dramatic visual wedges. **Hinge Question:** Why was statistical visual presentation more powerful in reforming public policy than written emotive accounts of dying soldiers?"
           },
-          "enquiry_question": "Explain how Florence Nightingale used the statistical diagram in Source A to persuade the British government to reform military hospitals."
+          "enquiry_question": "Explain how Florence Nightingale used the statistical diagram in Source A to persuade the British government to reform military hospitals.",
+          "hinge_question": "Why was statistical visual presentation more powerful in reforming public policy than written emotive accounts of dying soldiers?",
+          "source_context": "Nightingale was an expert statistician and the first female fellow of the Royal Statistical Society. She invented this 'rose' or 'coxcomb' diagram because she knew politicians and generals would skip long written tables but could not ignore dramatic visual wedges. **Hinge Question:** Why was statistical visual presentation more powerful in reforming public policy than written emotive accounts of dying soldiers?"
         },
         {
           "id": "source_b_nightingale_scutari_letter_1854",
@@ -12963,7 +13060,9 @@ const edexcel_medicine_data = {
             "source_context": "Nightingale arrived at Scutari with thirty-eight nurses following shocking dispatches in The Times by war correspondent William Howard Russell. Military medical officers initially resented her intrusion and tried to block her work. **Hinge Question:** Why did the British military establishment fail to provide basic sanitary supplies until civilian pressure was exerted?"
           },
           "text": "There are no vessels for water, no soap, no towels, no bandages, no hospital clothes; the men lie in the filth of their uniforms, stiff with blood and covered with vermin. We have four miles of beds packed within eighteen inches of each other, over an uncleaned sewer that vents sewer gas directly through the floorboards into the wards. The purveyor provides neither brooms nor mops. I have had to hire 200 Turkish workmen with my own funds to scrub the floors and clear the blocked privies. Men are arriving by hundreds with frostbite and dysentery, only to be poisoned by the very air of this pesthouse.",
-          "enquiry_question": "Explain what Source B reveals about the problems facing Florence Nightingale when she arrived at Scutari."
+          "enquiry_question": "Explain what Source B reveals about the problems facing Florence Nightingale when she arrived at Scutari.",
+          "hinge_question": "Why did the British military establishment fail to provide basic sanitary supplies until civilian pressure was exerted?",
+          "source_context": "Nightingale arrived at Scutari with thirty-eight nurses following shocking dispatches in The Times by war correspondent William Howard Russell. Military medical officers initially resented her intrusion and tried to block her work. **Hinge Question:** Why did the British military establishment fail to provide basic sanitary supplies until civilian pressure was exerted?"
         },
         {
           "id": "source_c_mary_seacole_portrait",
@@ -12980,7 +13079,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "This lost portrait was rediscovered in 2003 at an auction in Warwickshire. Seacole was celebrated by British soldiers as 'Mother Seacole' and raised substantial funds from grateful veterans when she faced bankruptcy after the war. **Hinge Question:** How did Seacole's frontline, hands-on herbal treatments contrast with Nightingale's administrative and statistical approach to hospital reform?"
           },
-          "enquiry_question": "Explain the historical significance of Mary Seacole's role in the Crimean War as shown in Source C."
+          "enquiry_question": "Explain the historical significance of Mary Seacole's role in the Crimean War as shown in Source C.",
+          "hinge_question": "How did Seacole's frontline, hands-on herbal treatments contrast with Nightingale's administrative and statistical approach to hospital reform?",
+          "source_context": "This lost portrait was rediscovered in 2003 at an auction in Warwickshire. Seacole was celebrated by British soldiers as 'Mother Seacole' and raised substantial funds from grateful veterans when she faced bankruptcy after the war. **Hinge Question:** How did Seacole's frontline, hands-on herbal treatments contrast with Nightingale's administrative and statistical approach to hospital reform?"
         },
         {
           "id": "source_d_seacole_autobiography_1857",
@@ -12996,7 +13097,9 @@ const edexcel_medicine_data = {
             "source_context": "Seacole possessed extensive experience treating cholera outbreaks in Panama and yellow fever in Jamaica before travelling to London. Her practical herbal medicines often proved more effective than the bleeding and calomel administered by army surgeons. **Hinge Question:** Why did the British War Office reject experienced non-white nurses like Seacole during an acute military healthcare crisis?"
           },
           "text": "I applied to the War Office and to the Nightingale Fund to be sent out as a nurse to the Crimea, but was repeatedly rebuffed... Did these ladies shrink from accepting my aid because by blood and complexion I was of a darker caste? I resolved that if the authorities would not send me, I would go at my own expense. At Spring Hill, two miles from Sevastopol, I built the British Hotel. I had medicines and bandages continually ready. Many a time I attended poor fellows right upon the battlefield under fire, bandaging crushed limbs, staunching bleeding wounds, and administering warm broths and my own herbal cordials to soldiers dying of dysentery and cholera.",
-          "enquiry_question": "Explain how Mary Seacole's work in the Crimea differed from official government military medical care."
+          "enquiry_question": "Explain how Mary Seacole's work in the Crimea differed from official government military medical care.",
+          "hinge_question": "Why did the British War Office reject experienced non-white nurses like Seacole during an acute military healthcare crisis?",
+          "source_context": "Seacole possessed extensive experience treating cholera outbreaks in Panama and yellow fever in Jamaica before travelling to London. Her practical herbal medicines often proved more effective than the bleeding and calomel administered by army surgeons. **Hinge Question:** Why did the British War Office reject experienced non-white nurses like Seacole during an acute military healthcare crisis?"
         },
         {
           "id": "source_e_nightingale_notes_hospitals_1859",
@@ -13012,7 +13115,9 @@ const edexcel_medicine_data = {
             "source_context": "Although Nightingale based her design on miasma theory (believing bad air carried disease), her insistence on fresh airflow, strict cleanliness, washable tiled walls, and wide bed spacing achieved the exact conditions needed to stop bacterial cross-contamination. **Hinge Question:** Can a medical theory that is scientifically incorrect (miasma) still produce hygienic practices that save lives?"
           },
           "text": "The very first requirement in a hospital is that it should do the sick no harm. Yet in our existing crowded, poorly-built infirmaries, diseases are generated which kill more patients than their original ailments. The only true architectural design is the Pavilion Plan. Wards must be separate detached blocks, connected only by an open corridor, with tall opposing windows along both walls to allow a continuous draught of fresh external air. Ceilings must be high, floors made of polished impermeable wood, walls painted with non-porous plaster that can be washed down with carbolic, and beds placed at least eight feet apart to prevent the accumulation of foul hospital miasma.",
-          "enquiry_question": "Explain how Florence Nightingale's architectural ideas in Source E transformed hospital design in Britain."
+          "enquiry_question": "Explain how Florence Nightingale's architectural ideas in Source E transformed hospital design in Britain.",
+          "hinge_question": "Can a medical theory that is scientifically incorrect (miasma) still produce hygienic practices that save lives?",
+          "source_context": "Although Nightingale based her design on miasma theory (believing bad air carried disease), her insistence on fresh airflow, strict cleanliness, washable tiled walls, and wide bed spacing achieved the exact conditions needed to stop bacterial cross-contamination. **Hinge Question:** Can a medical theory that is scientifically incorrect (miasma) still produce hygienic practices that save lives?"
         }
       ],
       "video": [
@@ -13951,7 +14056,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Lister had noticed that carbolic acid (creosote) was used to deodorize and treat cattle sewage in Carlisle without harming livestock. He applied the chemical to open compound fractures and later designed this steam spray to sterilize the entire operating atmosphere. **Hinge Question:** Why did surgeons complain that the carbolic spray cracked their skin and made their eyes sting, leading to reluctance in using it?"
           },
-          "enquiry_question": "Explain what Source A shows about how Joseph Lister tackled the problem of infection in surgery."
+          "enquiry_question": "Explain what Source A shows about how Joseph Lister tackled the problem of infection in surgery.",
+          "hinge_question": "Why did surgeons complain that the carbolic spray cracked their skin and made their eyes sting, leading to reluctance in using it?",
+          "source_context": "Lister had noticed that carbolic acid (creosote) was used to deodorize and treat cattle sewage in Carlisle without harming livestock. He applied the chemical to open compound fractures and later designed this steam spray to sterilize the entire operating atmosphere. **Hinge Question:** Why did surgeons complain that the carbolic spray cracked their skin and made their eyes sting, leading to reluctance in using it?"
         },
         {
           "id": "source_b_simpson_chloroform_1847",
@@ -13967,7 +14074,9 @@ const edexcel_medicine_data = {
             "source_context": "Before anaesthesia, surgical patients had to be forcibly strapped down by muscular assistants, and speed was the sole measure of surgical greatness (e.g. Robert Liston amputating legs in 28 seconds). Simpson's discovery transformed surgery into a humane, delicate procedure. **Hinge Question:** Why did some military surgeons argue that pain was a healthy stimulant that kept wounded soldiers alive during shock?"
           },
           "text": "I have used chloroform in several surgical and obstetric cases with the most complete success. It possesses vast advantages over sulphuric ether: a much smaller quantity is required; its action is far more rapid, pleasant, and complete; it does not irritate the bronchial tubes or produce that distressing cough and headache which follow ether. In an operation performed yesterday by Professor Miller upon a young boy with necrosis of the radius, the patient was rendered entirely insensible in under a minute without the slightest struggle or cry. The diseased bone was cut away, and the wound dressed, while the boy lay in a calm, sweet sleep, waking totally unaware that the knife had touched him.",
-          "enquiry_question": "Explain the advantages of chloroform over earlier anaesthetics according to Source B."
+          "enquiry_question": "Explain the advantages of chloroform over earlier anaesthetics according to Source B.",
+          "hinge_question": "Why did some military surgeons argue that pain was a healthy stimulant that kept wounded soldiers alive during shock?",
+          "source_context": "Before anaesthesia, surgical patients had to be forcibly strapped down by muscular assistants, and speed was the sole measure of surgical greatness (e.g. Robert Liston amputating legs in 28 seconds). Simpson's discovery transformed surgery into a humane, delicate procedure. **Hinge Question:** Why did some military surgeons argue that pain was a healthy stimulant that kept wounded soldiers alive during shock?"
         },
         {
           "id": "source_c_lister_spray_apparatus",
@@ -13984,7 +14093,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Lister used several iterations of the spray, from the cumbersome hand-pumped 'donkey engine' to this polished steam boiler. Although Lister later abandoned the spray in 1887 upon realizing that hands and instruments were far more dangerous vectors of germs than ambient air, it was pivotal in proving that chemical germicides saved lives. **Hinge Question:** What does the creation of specialized mechanical apparatus tell us about how surgery was changing into an engineering-assisted science?"
           },
-          "enquiry_question": "Explain how the apparatus in Source C contributed to the development of antiseptic surgery."
+          "enquiry_question": "Explain how the apparatus in Source C contributed to the development of antiseptic surgery.",
+          "hinge_question": "What does the creation of specialized mechanical apparatus tell us about how surgery was changing into an engineering-assisted science?",
+          "source_context": "Lister used several iterations of the spray, from the cumbersome hand-pumped 'donkey engine' to this polished steam boiler. Although Lister later abandoned the spray in 1887 upon realizing that hands and instruments were far more dangerous vectors of germs than ambient air, it was pivotal in proving that chemical germicides saved lives. **Hinge Question:** What does the creation of specialized mechanical apparatus tell us about how surgery was changing into an engineering-assisted science?"
         },
         {
           "id": "source_d_lister_lancet_1867",
@@ -14000,7 +14111,9 @@ const edexcel_medicine_data = {
             "source_context": "Before Lister, compound fractures almost invariably led to amputation or death from gangrene. When Lister applied carbolic lint dressings to 11-year-old James Greenlees's crushed leg in 1865, the bone knitted together without festering, astounding traditional surgeons. **Hinge Question:** Why did Lister's mortality statistics in Glasgow convince younger doctors while senior London surgeons remained fiercely critical?"
           },
           "text": "In the course of an extended enquiry into the nature of inflammation, the author was struck with the analogy between that condition and the process of fermentation. The research of M. Pasteur had demonstrated that fermentation is caused by living microscopic organisms suspended in the atmosphere... Applying these principles to compound fractures, in which the open flesh admits air, I treated the wounds with carbolic acid, which destroys the vitality of these floating septic particles. Out of eleven consecutive cases of compound fracture treated in Glasgow Royal Infirmary, not a single one developed hospital gangrene, pyæmia, or erysipelas—conditions which previously proved fatal in nearly half our amputations.",
-          "enquiry_question": "Explain how Joseph Lister connected Louis Pasteur's research to surgery in Source D."
+          "enquiry_question": "Explain how Joseph Lister connected Louis Pasteur's research to surgery in Source D.",
+          "hinge_question": "Why did Lister's mortality statistics in Glasgow convince younger doctors while senior London surgeons remained fiercely critical?",
+          "source_context": "Before Lister, compound fractures almost invariably led to amputation or death from gangrene. When Lister applied carbolic lint dressings to 11-year-old James Greenlees's crushed leg in 1865, the bone knitted together without festering, astounding traditional surgeons. **Hinge Question:** Why did Lister's mortality statistics in Glasgow convince younger doctors while senior London surgeons remained fiercely critical?"
         },
         {
           "id": "source_e_tait_aseptic_critique_1880",
@@ -14016,7 +14129,9 @@ const edexcel_medicine_data = {
             "source_context": "Robert Lawson Tait was a brilliant Birmingham gynaecological surgeon who achieved world-record low mortality rates without using Lister's carbolic spray. His pioneering focus on steam-sterilized instruments and spotless cleanliness paved the way for modern aseptic operating theatres with autoclaves, sterile gowns, and rubber gloves. **Hinge Question:** Was Lawson Tait proving Lister wrong, or was he taking Lister's germ principle to its logical, cleaner conclusion?"
           },
           "text": "I have abandoned Professor Lister's carbolic spray entirely, and my success in abdominal surgery has increased rather than diminished. Carbolic acid is a corrosive poison; it damages healthy human tissue, chills the patient, and deadens the surgeon's fingers. The true secret of surgical success is not pouring poisons into wounds to kill germs, but absolute, scrupulous cleanliness. We must scrub the skin with boiling water and soap, boil all our instruments in steam autoclaves, use boiled silk ligatures, and wash our hands until not a speck of filth remains. Aseptic surgery—keeping germs out from the beginning—is far superior to Lister's irritating antiseptic spray.",
-          "enquiry_question": "Explain the difference between antiseptic surgery and aseptic surgery according to Source E."
+          "enquiry_question": "Explain the difference between antiseptic surgery and aseptic surgery according to Source E.",
+          "hinge_question": "Was Lawson Tait proving Lister wrong, or was he taking Lister's germ principle to its logical, cleaner conclusion?",
+          "source_context": "Robert Lawson Tait was a brilliant Birmingham gynaecological surgeon who achieved world-record low mortality rates without using Lister's carbolic spray. His pioneering focus on steam-sterilized instruments and spotless cleanliness paved the way for modern aseptic operating theatres with autoclaves, sterile gowns, and rubber gloves. **Hinge Question:** Was Lawson Tait proving Lister wrong, or was he taking Lister's germ principle to its logical, cleaner conclusion?"
         }
       ],
       "video": [
@@ -14977,7 +15092,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Snow was already a famous anaesthetist who had administered chloroform to Queen Victoria. During the terrifying September 1854 Soho outbreak, which killed over 500 people in ten days, he went door-to-door interviewing residents to record their water sources. **Hinge Question:** Why was spatial map data more convincing than general medical theories about foul city smells?"
           },
-          "enquiry_question": "Explain how Dr John Snow used the spot map in Source A to prove that cholera was waterborne."
+          "enquiry_question": "Explain how Dr John Snow used the spot map in Source A to prove that cholera was waterborne.",
+          "hinge_question": "Why was spatial map data more convincing than general medical theories about foul city smells?",
+          "source_context": "Snow was already a famous anaesthetist who had administered chloroform to Queen Victoria. During the terrifying September 1854 Soho outbreak, which killed over 500 people in ten days, he went door-to-door interviewing residents to record their water sources. **Hinge Question:** Why was spatial map data more convincing than general medical theories about foul city smells?"
         },
         {
           "id": "source_b_snow_treatise_1855",
@@ -14993,7 +15110,9 @@ const edexcel_medicine_data = {
             "source_context": "Snow's investigation solved the riddle of the Broad Street pump by discovering that an underground cesspool from 40 Broad Street had leaked sewage containing a sick infant's cholera diarrhoea directly through porous brickwork into the well. **Hinge Question:** Why did the local vestry put the pump handle back on once the epidemic subsided?"
           },
           "text": "On proceeding to the spot, I found that nearly all the deaths had taken place within a short distance of the Broad Street pump... In the Lion Brewery on Broad Street, where seventy men were employed, not a single person had died of cholera; the proprietor informed me that the men were allowed a daily ration of malt liquor and never drank the pump water. Conversely, a widow residing in distant Hampstead, who sent a servant every day to bring a bottle of Broad Street water because she preferred its taste, died of violent cholera within twenty-four hours of drinking it... I had an interview with the Board of Guardians of St James's parish on the evening of Thursday, the 7th of September, and informed them of these facts. In consequence of what I said, the handle of the pump was removed on the following day.",
-          "enquiry_question": "Explain how the evidence regarding the brewery workers and the Hampstead widow in Source B supported John Snow's theory."
+          "enquiry_question": "Explain how the evidence regarding the brewery workers and the Hampstead widow in Source B supported John Snow's theory.",
+          "hinge_question": "Why did the local vestry put the pump handle back on once the epidemic subsided?",
+          "source_context": "Snow's investigation solved the riddle of the Broad Street pump by discovering that an underground cesspool from 40 Broad Street had leaked sewage containing a sick infant's cholera diarrhoea directly through porous brickwork into the well. **Hinge Question:** Why did the local vestry put the pump handle back on once the epidemic subsided?"
         },
         {
           "id": "source_c_cholera_miasma",
@@ -15010,7 +15129,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Even after Snow removed the pump handle, the vast majority of sanitary reformers, including Edwin Chadwick and Florence Nightingale, remained convinced that diseases arose from foul atmospheric effluvia. **Hinge Question:** How did the miasma theory actually help clean up cities, even though it was scientifically wrong about the cause of cholera?"
           },
-          "enquiry_question": "Explain what Source C shows about how nineteenth-century Britons understood the spread of cholera."
+          "enquiry_question": "Explain what Source C shows about how nineteenth-century Britons understood the spread of cholera.",
+          "hinge_question": "How did the miasma theory actually help clean up cities, even though it was scientifically wrong about the cause of cholera?",
+          "source_context": "Even after Snow removed the pump handle, the vast majority of sanitary reformers, including Edwin Chadwick and Florence Nightingale, remained convinced that diseases arose from foul atmospheric effluvia. **Hinge Question:** How did the miasma theory actually help clean up cities, even though it was scientifically wrong about the cause of cholera?"
         },
         {
           "id": "source_d_board_of_health_rejection_1855",
@@ -15026,7 +15147,9 @@ const edexcel_medicine_data = {
             "source_context": "Sir John Simon and the Board of Health only finally accepted the waterborne nature of cholera in 1866, during the East London cholera epidemic, when water from the East London Waterworks Company's polluted Lea reservoir was traced to 4,000 deaths. **Hinge Question:** Why do government institutions often resist revolutionary scientific discoveries even when supported by statistical proof?"
           },
           "text": "After careful enquiry, we see no reason to adopt the belief that a specific poison, producing cholera, is conveyed in drinking water from the Broad Street pump. We are convinced that the atmospheric conditions of the locality, combining heavy, unventilated damp air with decomposing organic matter in the sewers, were the true determining causes of this catastrophic mortality. When the air is stagnant and loaded with decaying animal emanations, cholera strikes with sudden fury. To attribute this calamity entirely to water contamination is unsupported by general medical experience.",
-          "enquiry_question": "Explain why the General Board of Health rejected Dr John Snow's waterborne cholera theory in Source D."
+          "enquiry_question": "Explain why the General Board of Health rejected Dr John Snow's waterborne cholera theory in Source D.",
+          "hinge_question": "Why do government institutions often resist revolutionary scientific discoveries even when supported by statistical proof?",
+          "source_context": "Sir John Simon and the Board of Health only finally accepted the waterborne nature of cholera in 1866, during the East London cholera epidemic, when water from the East London Waterworks Company's polluted Lea reservoir was traced to 4,000 deaths. **Hinge Question:** Why do government institutions often resist revolutionary scientific discoveries even when supported by statistical proof?"
         },
         {
           "id": "source_e_public_health_act_1875",
@@ -15042,7 +15165,9 @@ const edexcel_medicine_data = {
             "source_context": "Disraeli's Conservative government passed the 1875 Act under the campaign slogan Sanitas sanitatum, omnia sanitas ('Sanitation of sanitations, all is sanitation'). Unlike the permissive 1848 Act, councils could no longer refuse to spend ratepayer money on public health. **Hinge Question:** Was the end of laissez-faire driven more by scientific fear of epidemics or by politicians competing for the votes of newly enfranchised working-class men after 1867?"
           },
           "text": "Section 13: All existing and future sewers within the district of a local authority shall vest in and be under the control of such local authority, which shall cause them to be properly cleansed and emptied... Section 64: All existing public cisterns, pumps, wells, reservoirs, and conduits used for the gratuitous supply of water to inhabitants shall be maintained and kept plentifully supplied with pure and wholesome water by the local authority... Section 189: Every urban authority shall from time to time appoint a legally qualified medical practitioner as Medical Officer of Health, and shall appoint a fit and proper person to be Inspector of Nuisances... Section 116: The Medical Officer of Health may at all reasonable times inspect any animal, carcass, meat, poultry, fish, fruit, or vegetables exposed for sale, and if unfit for the food of man, seize the same.",
-          "enquiry_question": "Explain how the Public Health Act 1875 marked the end of the government's laissez-faire attitude towards public health."
+          "enquiry_question": "Explain how the Public Health Act 1875 marked the end of the government's laissez-faire attitude towards public health.",
+          "hinge_question": "Was the end of laissez-faire driven more by scientific fear of epidemics or by politicians competing for the votes of newly enfranchised working-class men after 1867?",
+          "source_context": "Disraeli's Conservative government passed the 1875 Act under the campaign slogan Sanitas sanitatum, omnia sanitas ('Sanitation of sanitations, all is sanitation'). Unlike the permissive 1848 Act, councils could no longer refuse to spend ratepayer money on public health. **Hinge Question:** Was the end of laissez-faire driven more by scientific fear of epidemics or by politicians competing for the votes of newly enfranchised working-class men after 1867?"
         }
       ],
       "video": [
@@ -15901,7 +16026,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Watson and Crick announced their discovery at the Eagle pub in Cambridge on 28 February 1953, declaring they had 'found the secret of life'. Their model explained both how genetic information is stored and how it replicates during cell division. **Hinge Question:** Why was physical 3D model-building essential in an era before computer-generated molecular graphics existed?"
           },
-          "enquiry_question": "Explain what Source A shows about how the structure of DNA was investigated in 1953."
+          "enquiry_question": "Explain what Source A shows about how the structure of DNA was investigated in 1953.",
+          "hinge_question": "Why was physical 3D model-building essential in an era before computer-generated molecular graphics existed?",
+          "source_context": "Watson and Crick announced their discovery at the Eagle pub in Cambridge on 28 February 1953, declaring they had 'found the secret of life'. Their model explained both how genetic information is stored and how it replicates during cell division. **Hinge Question:** Why was physical 3D model-building essential in an era before computer-generated molecular graphics existed?"
         },
         {
           "id": "source_b_watson_crick_nature_1953",
@@ -15917,7 +16044,9 @@ const edexcel_medicine_data = {
             "source_context": "Watson and Crick's famous understated final sentence ('It has not escaped our notice...') became one of the most celebrated lines in scientific history, foreshadowing modern gene editing, forensic profiling, and mRNA vaccines. **Hinge Question:** Why did understanding the chemical copying mechanism matter more to doctors than just knowing DNA existed?"
           },
           "text": "We wish to suggest a structure for the salt of deoxyribose nucleic acid (D.N.A.). This structure has novel features which are of considerable biological interest... We have assumed that the bases only occur in pairs: a single base from one chain being hydrogen-bonded to a single base from the other chain. One of the pair must be a purine and the other a pyrimidine... If adenine only pairs with thymine, and guanine only with cytosine, then given the sequence of bases on one chain, that of the other is automatically determined. It has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material.",
-          "enquiry_question": "Explain the importance of the discovery described in Source B for medical understanding of heredity."
+          "enquiry_question": "Explain the importance of the discovery described in Source B for medical understanding of heredity.",
+          "hinge_question": "Why did understanding the chemical copying mechanism matter more to doctors than just knowing DNA existed?",
+          "source_context": "Watson and Crick's famous understated final sentence ('It has not escaped our notice...') became one of the most celebrated lines in scientific history, foreshadowing modern gene editing, forensic profiling, and mRNA vaccines. **Hinge Question:** Why did understanding the chemical copying mechanism matter more to doctors than just knowing DNA existed?"
         },
         {
           "id": "source_c_rosalind_franklin_portrait",
@@ -15934,7 +16063,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Franklin died of ovarian cancer in 1958 at the age of thirty-seven, four years before Watson, Crick, and Maurice Wilkins received the 1962 Nobel Prize (which is never awarded posthumously). **Hinge Question:** How does the history of Franklin's unacknowledged contribution reflect broader historical barriers faced by women in twentieth-century medical science?"
           },
-          "enquiry_question": "Explain the historical significance of Rosalind Franklin's contribution to the discovery of DNA shown in Source C."
+          "enquiry_question": "Explain the historical significance of Rosalind Franklin's contribution to the discovery of DNA shown in Source C.",
+          "hinge_question": "How does the history of Franklin's unacknowledged contribution reflect broader historical barriers faced by women in twentieth-century medical science?",
+          "source_context": "Franklin died of ovarian cancer in 1958 at the age of thirty-seven, four years before Watson, Crick, and Maurice Wilkins received the 1962 Nobel Prize (which is never awarded posthumously). **Hinge Question:** How does the history of Franklin's unacknowledged contribution reflect broader historical barriers faced by women in twentieth-century medical science?"
         },
         {
           "id": "source_d_franklin_notebook_1952",
@@ -15950,7 +16081,9 @@ const edexcel_medicine_data = {
             "source_context": "Maurice Wilkins showed Franklin's report and Photograph 51 to Watson without her knowledge or consent in early 1953. Watson later confessed that upon seeing her photograph, his 'mouth fell open and pulse began to race'. **Hinge Question:** Was the sharing of Franklin's data standard scientific collaboration or an ethical breach of intellectual property?"
           },
           "text": "Conclusion: The results show that the helical structure must be of the type in which the phosphate groups lie on the outside of the cylinder, in close contact with water, with the organic purine and pyrimidine bases packed tightly into the hydrophobic core. The crystalline 'A' form can be reversibly converted to the wet 'B' form by increasing the atmospheric humidity. The fibre axis repeats at 34 Ångströms with 10 nucleotide units per complete turn of the helix, demonstrating a double helical symmetry.",
-          "enquiry_question": "Explain how Dr Franklin's measurements in Source D contributed to solving the structure of DNA."
+          "enquiry_question": "Explain how Dr Franklin's measurements in Source D contributed to solving the structure of DNA.",
+          "hinge_question": "Was the sharing of Franklin's data standard scientific collaboration or an ethical breach of intellectual property?",
+          "source_context": "Maurice Wilkins showed Franklin's report and Photograph 51 to Watson without her knowledge or consent in early 1953. Watson later confessed that upon seeing her photograph, his 'mouth fell open and pulse began to race'. **Hinge Question:** Was the sharing of Franklin's data standard scientific collaboration or an ethical breach of intellectual property?"
         },
         {
           "id": "source_e_human_genome_announcement_2000",
@@ -15966,7 +16099,9 @@ const edexcel_medicine_data = {
             "source_context": "The Human Genome Project mapped over 20,000 human genes ahead of schedule and under budget in 2003. However, while genetic screening advanced rapidly, curing genetic illnesses (the 'treatment gap') proved far more challenging and costly. **Hinge Question:** Why has diagnosing genetic disease through screening progressed much faster than discovering genetic cures like gene editing?"
           },
           "text": "Nearly fifty years ago, in a Cambridge laboratory, Watson and Crick first deciphered the structure of DNA... Today, we are learning the language in which God created life. We are gaining ever more awe for the complexity, the beauty, and the wonder of God's most divine and sacred gift. With this profound new knowledge, humanity is on the verge of gaining immense new power to heal. Genome science will revolutionize the diagnosis, prevention, and treatment of most, if not all, human diseases. In coming decades, doctors will pinpoint the genetic causes of cancer, Alzheimer's, and diabetes, tailoring therapies to individual patients before symptoms ever appear.",
-          "enquiry_question": "Explain what Source E suggests about the impact of the Human Genome Project on future healthcare."
+          "enquiry_question": "Explain what Source E suggests about the impact of the Human Genome Project on future healthcare.",
+          "hinge_question": "Why has diagnosing genetic disease through screening progressed much faster than discovering genetic cures like gene editing?",
+          "source_context": "The Human Genome Project mapped over 20,000 human genes ahead of schedule and under budget in 2003. However, while genetic screening advanced rapidly, curing genetic illnesses (the 'treatment gap') proved far more challenging and costly. **Hinge Question:** Why has diagnosing genetic disease through screening progressed much faster than discovering genetic cures like gene editing?"
         }
       ],
       "do_now": {
@@ -16867,7 +17002,9 @@ const edexcel_medicine_data = {
             "source_context": "Hounsfield was an electrical engineer with no medical degree who worked for EMI (the record company that signed the Beatles). The massive commercial profits from Beatles records helped fund Hounsfield's revolutionary research into computed tomography. **Hinge Question:** Why did the invention of the digital computer matter as much to twentieth-century medicine as discoveries in biological laboratories?"
           },
           "provenance": "Archival clinical photograph, London, c. 1972–1975, recording clinical implementation of Godfrey Hounsfield's EMI-Scanner at Atkinson Morley's Hospital.",
-          "enquiry_question": "Explain how Godfrey Hounsfield's CT scanner in Source A revolutionized internal medical diagnosis."
+          "enquiry_question": "Explain how Godfrey Hounsfield's CT scanner in Source A revolutionized internal medical diagnosis.",
+          "hinge_question": "Why did the invention of the digital computer matter as much to twentieth-century medicine as discoveries in biological laboratories?",
+          "source_context": "Hounsfield was an electrical engineer with no medical degree who worked for EMI (the record company that signed the Beatles). The massive commercial profits from Beatles records helped fund Hounsfield's revolutionary research into computed tomography. **Hinge Question:** Why did the invention of the digital computer matter as much to twentieth-century medicine as discoveries in biological laboratories?"
         },
         {
           "id": "source_b_rontgen_paper_1895",
@@ -16883,7 +17020,9 @@ const edexcel_medicine_data = {
             "source_context": "Within weeks of Röntgen's December 1895 paper, hospitals across Europe and North America began constructing X-ray apparatus. British military doctors deployed mobile X-ray units to the Sudan Campaign in 1898 and the Boer War in 1899. **Hinge Question:** Why did surgeons adopt X-rays almost overnight while resisting Germ Theory and antiseptic surgery for decades?"
           },
           "text": "If the discharge of a fairly large induction coil be passed through a vacuum Crookes tube... a paper screen washed with barium platino-cyanide lights up brilliantly and fluoresces even at a distance of nearly two metres... It is soon discovered that all bodies are transparent to this influence, though in very different degrees. Paper is very transparent; wood is almost equally transparent; aluminium permits the rays to pass freely, while lead of 1.5 millimetres thickness is practically opaque. If the hand be held between the discharge-tube and the screen, the darker shadow of the bones is seen within the faintly illuminated outline of the soft flesh.",
-          "enquiry_question": "Explain the immediate significance of Röntgen's discovery in Source B for surgical practice."
+          "enquiry_question": "Explain the immediate significance of Röntgen's discovery in Source B for surgical practice.",
+          "hinge_question": "Why did surgeons adopt X-rays almost overnight while resisting Germ Theory and antiseptic surgery for decades?",
+          "source_context": "Within weeks of Röntgen's December 1895 paper, hospitals across Europe and North America began constructing X-ray apparatus. British military doctors deployed mobile X-ray units to the Sudan Campaign in 1898 and the Boer War in 1899. **Hinge Question:** Why did surgeons adopt X-rays almost overnight while resisting Germ Theory and antiseptic surgery for decades?"
         },
         {
           "id": "source_c_robotic_surgery",
@@ -16900,7 +17039,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Robotic systems eliminate natural human hand tremors and allow complex procedures inside pelvic or cardiac cavities that human fingers cannot reach. However, a single robotic surgical console costs over £1.5 million, raising debate over NHS funding allocation. **Hinge Question:** Does investing millions in ultra-high-tech robotic surgery provide more public health benefit than funding preventative lifestyle campaigns?"
           },
-          "enquiry_question": "Explain what Source C reveals about how modern surgical operations have evolved since the nineteenth century."
+          "enquiry_question": "Explain what Source C reveals about how modern surgical operations have evolved since the nineteenth century.",
+          "hinge_question": "Does investing millions in ultra-high-tech robotic surgery provide more public health benefit than funding preventative lifestyle campaigns?",
+          "source_context": "Robotic systems eliminate natural human hand tremors and allow complex procedures inside pelvic or cardiac cavities that human fingers cannot reach. However, a single robotic surgical console costs over £1.5 million, raising debate over NHS funding allocation. **Hinge Question:** Does investing millions in ultra-high-tech robotic surgery provide more public health benefit than funding preventative lifestyle campaigns?"
         },
         {
           "id": "source_d_hounsfield_nobel_1979",
@@ -16916,7 +17057,9 @@ const edexcel_medicine_data = {
             "source_context": "Hounsfield shared the 1979 Nobel Prize in Physiology or Medicine with South African physicist Allan Cormack. The 'Hounsfield Unit' (HU) remains the standard quantitative scale for describing radiodensity in CT scans worldwide. **Hinge Question:** How did the invention of CT scanning shift medicine from treating outward symptoms to pinpointing internal microscopic pathology?"
           },
           "text": "Conventional X-ray techniques suffer from two fundamental limitations. First, it is impossible to separate the superimposed shadow of bones from soft tissue organs lying behind or in front of them; the image is a flattened two-dimensional projection of a three-dimensional body. Second, conventional radiographs are entirely incapable of distinguishing between soft tissues whose chemical densities differ by less than ten per cent... In computed tomography, an X-ray source rotates 360 degrees around the patient, taking hundreds of thousands of readings through narrow planar slices. A digital computer processes these attenuation values, calculating absolute tissue densities and displaying an accurate transverse picture of soft tissues accurate to within one half of one per cent.",
-          "enquiry_question": "Explain the diagnostic advantages of the CT scanner over traditional X-rays according to Source D."
+          "enquiry_question": "Explain the diagnostic advantages of the CT scanner over traditional X-rays according to Source D.",
+          "hinge_question": "How did the invention of CT scanning shift medicine from treating outward symptoms to pinpointing internal microscopic pathology?",
+          "source_context": "Hounsfield shared the 1979 Nobel Prize in Physiology or Medicine with South African physicist Allan Cormack. The 'Hounsfield Unit' (HU) remains the standard quantitative scale for describing radiodensity in CT scans worldwide. **Hinge Question:** How did the invention of CT scanning shift medicine from treating outward symptoms to pinpointing internal microscopic pathology?"
         },
         {
           "id": "source_e_dhss_lifestyle_report_1976",
@@ -16932,7 +17075,9 @@ const edexcel_medicine_data = {
             "source_context": "This 1976 consultation paper marked the official recognition that twentieth-century lifestyle diseases had replaced infectious pathogens as the primary threat to British public health, prompting national campaigns like 'Look After Yourself' and dietary guidelines. **Hinge Question:** Why is persuading citizens to change personal lifestyle habits (eating, smoking) harder for governments than building sewers or providing free vaccines?"
           },
           "text": "The great infectious killers of the past—cholera, typhus, smallpox, and tuberculosis—have been conquered through clean water, improved housing, vaccination, and antibiotics. Today, the chief causes of premature death in Britain are non-communicable lifestyle conditions: coronary heart disease, stroke, and cancers of the lung and bowel... Modern medicine possesses extraordinary technological wizardry: intensive care units, coronary bypass grafts, kidney dialysis, and joint replacements. Yet these high-tech interventions are vastly expensive and merely salvage patients after organs are irreparably damaged. The future of healthcare lies not in hospital cure, but in individual prevention: reducing cigarette smoking, moderating alcohol consumption, adopting balanced diets low in animal fat and salt, and taking regular physical exercise.",
-          "enquiry_question": "Explain why the Department of Health argued in Source E that the government should focus on lifestyle prevention rather than hospital cure."
+          "enquiry_question": "Explain why the Department of Health argued in Source E that the government should focus on lifestyle prevention rather than hospital cure.",
+          "hinge_question": "Why is persuading citizens to change personal lifestyle habits (eating, smoking) harder for governments than building sewers or providing free vaccines?",
+          "source_context": "This 1976 consultation paper marked the official recognition that twentieth-century lifestyle diseases had replaced infectious pathogens as the primary threat to British public health, prompting national campaigns like 'Look After Yourself' and dietary guidelines. **Hinge Question:** Why is persuading citizens to change personal lifestyle habits (eating, smoking) harder for governments than building sewers or providing free vaccines?"
         }
       ],
       "do_now": {
@@ -17831,7 +17976,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Before 5 July 1948, millions of working-class Britons—particularly women and children not covered by National Insurance—relied on charitable voluntary hospitals, poor-law infirmaries, or suffered illnesses untreated due to doctor fees. **Hinge Question:** Why did the British Medical Association (BMA) fiercely oppose Bevan's plan for a state-run health service until the final months before launch?"
           },
-          "enquiry_question": "Explain what Source A shows about the core principles upon which the NHS was established in 1948."
+          "enquiry_question": "Explain what Source A shows about the core principles upon which the NHS was established in 1948.",
+          "hinge_question": "Why did the British Medical Association (BMA) fiercely oppose Bevan's plan for a state-run health service until the final months before launch?",
+          "source_context": "Before 5 July 1948, millions of working-class Britons—particularly women and children not covered by National Insurance—relied on charitable voluntary hospitals, poor-law infirmaries, or suffered illnesses untreated due to doctor fees. **Hinge Question:** Why did the British Medical Association (BMA) fiercely oppose Bevan's plan for a state-run health service until the final months before launch?"
         },
         {
           "id": "source_b_ehrlich_address_1913",
@@ -17847,7 +17994,9 @@ const edexcel_medicine_data = {
             "source_context": "Ehrlich had worked with Robert Koch on staining bacterial cells with chemical dyes, noticing that certain dyes only bound to specific microbes. He reasoned that if a dye could be chemically bonded with a poison like arsenic, it would kill the microbe while sparing the human host. **Hinge Question:** Why was Salvarsan 606 called a 'magic bullet' rather than an antibiotic?"
           },
           "text": "The organism of the host must be protected, while the invading parasite alone is attacked. In chemotherapy, we must learn to aim, and to aim chemically! We must search for synthetic chemical substances which possess a specific affinity for the parasitic microbes, but which have little or no affinity for the organs of the living patient. These substances are what I have termed 'magic bullets' (Zauberkugeln). They seek out the pathogenic enemies alone, destroying them completely without harming the delicate cellular tissues of the host. In Salvarsan 606, we possess our first synthetic chemical bullet capable of annihilating the spiral spirochaete of syphilis in the blood.",
-          "enquiry_question": "Explain Paul Ehrlich's concept of a 'magic bullet' described in Source B."
+          "enquiry_question": "Explain Paul Ehrlich's concept of a 'magic bullet' described in Source B.",
+          "hinge_question": "Why was Salvarsan 606 called a 'magic bullet' rather than an antibiotic?",
+          "source_context": "Ehrlich had worked with Robert Koch on staining bacterial cells with chemical dyes, noticing that certain dyes only bound to specific microbes. He reasoned that if a dye could be chemically bonded with a poison like arsenic, it would kill the microbe while sparing the human host. **Hinge Question:** Why was Salvarsan 606 called a 'magic bullet' rather than an antibiotic?"
         },
         {
           "id": "source_c_gerhard_domagk_portrait",
@@ -17864,7 +18013,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Domagk famously tested Prontosil on his own six-year-old daughter Hildegard when she developed a severe, life-threatening streptococcal blood infection from an accidental needle prick, completely curing her. He was awarded the 1939 Nobel Prize. **Hinge Question:** Why did sulphonamide drugs like Prontosil save thousands of lives in the 1930s before penicillin was ever mass-produced?"
           },
-          "enquiry_question": "Explain the importance of Gerhard Domagk's discovery shown in Source C for treating bacterial infections."
+          "enquiry_question": "Explain the importance of Gerhard Domagk's discovery shown in Source C for treating bacterial infections.",
+          "hinge_question": "Why did sulphonamide drugs like Prontosil save thousands of lives in the 1930s before penicillin was ever mass-produced?",
+          "source_context": "Domagk famously tested Prontosil on his own six-year-old daughter Hildegard when she developed a severe, life-threatening streptococcal blood infection from an accidental needle prick, completely curing her. He was awarded the 1939 Nobel Prize. **Hinge Question:** Why did sulphonamide drugs like Prontosil save thousands of lives in the 1930s before penicillin was ever mass-produced?"
         },
         {
           "id": "source_d_beveridge_report_1942",
@@ -17880,7 +18031,9 @@ const edexcel_medicine_data = {
             "source_context": "Published during the darkest days of the Second World War, the Beveridge Report became an instant sensation, selling over 600,000 copies with queues stretching around bookshops. It unified wartime British society around the promise of a fairer society after victory. **Hinge Question:** Why did the shared collective sacrifice of total war make British citizens demand free healthcare for all?"
           },
           "text": "Now, when the social fabric is in a state of flux, is a time for revolutions, not for patching... Social insurance should be treated as one part of a comprehensive policy of social progress. The Plan for Social Security is an attack upon Want. But Want is only one of five giant evils on the road of reconstruction, and in some ways the easiest to attack. The others are Disease, Ignorance, Squalor, and Idleness... Assumption B of the Plan is that there shall be established a comprehensive National Health Service, ensuring that for every citizen there is available whatever medical treatment he requires, in whatever form he requires it, domiciliary or institutional, general, specialist or surgical, without any charge at the time of treatment.",
-          "enquiry_question": "Explain how the Beveridge Report in Source D prepared the way for the creation of the NHS."
+          "enquiry_question": "Explain how the Beveridge Report in Source D prepared the way for the creation of the NHS.",
+          "hinge_question": "Why did the shared collective sacrifice of total war make British citizens demand free healthcare for all?",
+          "source_context": "Published during the darkest days of the Second World War, the Beveridge Report became an instant sensation, selling over 600,000 copies with queues stretching around bookshops. It unified wartime British society around the promise of a fairer society after victory. **Hinge Question:** Why did the shared collective sacrifice of total war make British citizens demand free healthcare for all?"
         },
         {
           "id": "source_e_bevan_commons_speech_1946",
@@ -17896,7 +18049,9 @@ const edexcel_medicine_data = {
             "source_context": "Aneurin Bevan was a former Welsh coal miner who famously overcame bitter opposition from doctors by 'stuffing their mouths with gold'—allowing hospital consultants to retain lucrative private patients within NHS pay beds. **Hinge Question:** Why was hospital nationalization in 1948 considered the most radical element of the post-war welfare reforms?"
           },
           "text": "Preventable pain is a blot upon any society which claims to be civilized... The collective principle asserts that the society protects itself against the hazards of nature and society by collective action. When a person is sick, we do not ask whether he can afford the treatment; we ask what treatment he needs... Existing hospital facilities in this country are a chaotic patchwork of bankrupt voluntary institutions and obsolete poor-law infirmaries. In many rural counties and small industrial towns, there is not a single hospital capable of performing modern thoracic or neurological surgery. We must nationalize the hospitals, plan medical facilities rationally across regional hospital boards, and ensure that the best specialist care is available equally in the mining valleys of South Wales as in Harley Street.",
-          "enquiry_question": "Explain Aneurin Bevan's arguments for taking Britain's hospitals into state ownership in Source E."
+          "enquiry_question": "Explain Aneurin Bevan's arguments for taking Britain's hospitals into state ownership in Source E.",
+          "hinge_question": "Why was hospital nationalization in 1948 considered the most radical element of the post-war welfare reforms?",
+          "source_context": "Aneurin Bevan was a former Welsh coal miner who famously overcame bitter opposition from doctors by 'stuffing their mouths with gold'—allowing hospital consultants to retain lucrative private patients within NHS pay beds. **Hinge Question:** Why was hospital nationalization in 1948 considered the most radical element of the post-war welfare reforms?"
         }
       ],
       "do_now": {
@@ -18798,7 +18953,9 @@ const edexcel_medicine_data = {
             "source_context": "Fleming had returned from a two-week family holiday in Suffolk to find mould growing on culture dishes left on his bench. While others might have scrubbed the dirty dish, Fleming investigated the clear halo. **Hinge Question:** Why was Fleming unable to turn this dramatic petri dish observation into a usable medicine in the 1930s?"
           },
           "provenance": "Microbiological specimen culture plate of Penicillium notatum and Staphylococcus colonies, St Mary's Hospital / Wellcome Collection.",
-          "enquiry_question": "Explain what Source A shows about Alexander Fleming's discovery of penicillin in 1928."
+          "enquiry_question": "Explain what Source A shows about Alexander Fleming's discovery of penicillin in 1928.",
+          "hinge_question": "Why was Fleming unable to turn this dramatic petri dish observation into a usable medicine in the 1930s?",
+          "source_context": "Fleming had returned from a two-week family holiday in Suffolk to find mould growing on culture dishes left on his bench. While others might have scrubbed the dirty dish, Fleming investigated the clear halo. **Hinge Question:** Why was Fleming unable to turn this dramatic petri dish observation into a usable medicine in the 1930s?"
         },
         {
           "id": "source_b_fleming_paper_1929",
@@ -18814,7 +18971,9 @@ const edexcel_medicine_data = {
             "source_context": "Despite writing this landmark paper in 1929, Fleming lacked the biochemical training and laboratory funding to purify penicillin, which broke down rapidly in liquid form, leaving it largely neglected for a decade. **Hinge Question:** What factors prevented Fleming from isolating pure penicillin himself between 1929 and 1939?"
           },
           "text": "While working with staphylococcus variants a number of culture-plates were set aside on the laboratory bench and examined from time to time... It was noticed that around a large colony of a contaminating mould the staphylococcal colonies became transparent and were obviously undergoing lysis (dissolution)... The mould broth juice was found to inhibit the growth of staphylococci, streptococci, and the diphtheria bacillus, while having no effect upon the typhoid bacillus or the influenza bacillus... It is non-toxic to animals in enormous doses, and does not interfere with the functioning of human white blood cells. It seems capable of being an efficient antiseptic for application to, or injection into, areas infected with penicillin-sensitive microbes.",
-          "enquiry_question": "Explain why Fleming considered penicillin potentially superior to earlier antiseptics in Source B."
+          "enquiry_question": "Explain why Fleming considered penicillin potentially superior to earlier antiseptics in Source B.",
+          "hinge_question": "What factors prevented Fleming from isolating pure penicillin himself between 1929 and 1939?",
+          "source_context": "Despite writing this landmark paper in 1929, Fleming lacked the biochemical training and laboratory funding to purify penicillin, which broke down rapidly in liquid form, leaving it largely neglected for a decade. **Hinge Question:** What factors prevented Fleming from isolating pure penicillin himself between 1929 and 1939?"
         },
         {
           "id": "source_c_penicillin_wartime_poster",
@@ -18832,7 +18991,9 @@ const edexcel_medicine_data = {
             "source_context": "By D-Day in June 1944, Allied pharmaceutical plants were producing 300 billion units of penicillin a month—enough to treat every single Allied casualty of the Normandy invasion, cutting bacterial wound deaths by 85%. **Hinge Question:** Would penicillin have been industrialized in the 1940s without the wartime financial backing of the American and British governments?"
           },
           "image_alt": "Allied wartime motivational poster from 1944 reading 'Penicillin Saves Soldiers' Lives! Men who might have died will live...'",
-          "enquiry_question": "Explain how Source C illustrates the impact of the Second World War on the development of penicillin."
+          "enquiry_question": "Explain how Source C illustrates the impact of the Second World War on the development of penicillin.",
+          "hinge_question": "Would penicillin have been industrialized in the 1940s without the wartime financial backing of the American and British governments?",
+          "source_context": "By D-Day in June 1944, Allied pharmaceutical plants were producing 300 billion units of penicillin a month—enough to treat every single Allied casualty of the Normandy invasion, cutting bacterial wound deaths by 85%. **Hinge Question:** Would penicillin have been industrialized in the 1940s without the wartime financial backing of the American and British governments?"
         },
         {
           "id": "source_d_oxford_lancet_1941",
@@ -18848,7 +19009,9 @@ const edexcel_medicine_data = {
             "source_context": "Albert Alexander's tragic death galvanized Florey and Heatley to travel to the United States in July 1941, where they convinced the US Department of Agriculture Northern Regional Research Laboratory in Peoria, Illinois, to develop deep-tank corn steep liquor fermentation. **Hinge Question:** Why was recycling penicillin out of the patient's urine necessary in the 1941 Oxford trials?"
           },
           "text": "Case 1: A policeman, aged 43, developed severe staphylococcal and streptococcal septicaemia after scratching his face on a rose thorn. When treatment began on February 12th, he was in a desperate condition: an abscess had destroyed his left eye, his scalp was covered with sloughing sores, and pus was draining from his lungs. Within twenty-four hours of intravenous penicillin administration, an astonishing improvement occurred: the fever dropped, appetite returned, and the facial ulcers began to heal... Penicillin was continuously recovered from his urine and re-injected. By the tenth day, however, our entire supply was completely exhausted. Relapse followed, and the patient died on March 15th... This tragic case nevertheless proved beyond all scientific doubt that penicillin is extraordinarily active in human blood against lethal pyogenic infections.",
-          "enquiry_question": "Explain what the case of Constable Albert Alexander in Source D demonstrated about penicillin."
+          "enquiry_question": "Explain what the case of Constable Albert Alexander in Source D demonstrated about penicillin.",
+          "hinge_question": "Why was recycling penicillin out of the patient's urine necessary in the 1941 Oxford trials?",
+          "source_context": "Albert Alexander's tragic death galvanized Florey and Heatley to travel to the United States in July 1941, where they convinced the US Department of Agriculture Northern Regional Research Laboratory in Peoria, Illinois, to develop deep-tank corn steep liquor fermentation. **Hinge Question:** Why was recycling penicillin out of the patient's urine necessary in the 1941 Oxford trials?"
         },
         {
           "id": "source_e_fleming_nobel_warning_1945",
@@ -18864,7 +19027,9 @@ const edexcel_medicine_data = {
             "source_context": "Fleming's 1945 warning proved remarkably prescient: by the late twentieth century, over-prescription of antibiotics and widespread agricultural use led to the emergence of MRSA and pan-resistant 'superbugs', creating one of modern medicine's greatest global crises. **Hinge Question:** How does the rise of antibiotic resistance prove that medical progress is an ongoing battle rather than a permanent victory?"
           },
           "text": "I would like to sound one note of warning. Penicillin may not be entirely a blessing if it is used unwisely. It is not difficult to make microbes resistant to penicillin in the laboratory by exposing them to concentrations not sufficient to kill them, and the same thing has occasionally happened in the body. The time may come when penicillin can be bought by anyone in the shops. Then there is the danger that the ignorant man may easily underdose himself and, by exposing his microbes to non-lethal quantities of the drug, make them resistant... Here is a hypothetical illustration: Mr. X has a sore throat. He buys some penicillin and takes enough to stop the symptoms but not enough to kill the streptococci. He then infects his wife with resistant bugs. She gets pneumonia and dies. Who is primarily responsible for Mrs. X's death? Why, Mr. X, whose negligent use of penicillin changed the nature of the bacterium.",
-          "enquiry_question": "Explain the prophetic warning given by Alexander Fleming in Source E regarding the future of antibiotics."
+          "enquiry_question": "Explain the prophetic warning given by Alexander Fleming in Source E regarding the future of antibiotics.",
+          "hinge_question": "How does the rise of antibiotic resistance prove that medical progress is an ongoing battle rather than a permanent victory?",
+          "source_context": "Fleming's 1945 warning proved remarkably prescient: by the late twentieth century, over-prescription of antibiotics and widespread agricultural use led to the emergence of MRSA and pan-resistant 'superbugs', creating one of modern medicine's greatest global crises. **Hinge Question:** How does the rise of antibiotic resistance prove that medical progress is an ongoing battle rather than a permanent victory?"
         }
       ],
       "do_now": {
@@ -19772,7 +19937,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Studies proved that the drab dark brown/olive-green color Pantone 448 C was rated by consumers as the 'ugliest and most repulsive color in the world'. The policy aimed directly at stripping glamour and prestige from cigarette branding. **Hinge Question:** Why did the tobacco industry spend millions of pounds in the High Court fighting plain packaging legislation?"
           },
-          "enquiry_question": "Explain how the legislation illustrated in Source A represents a shift in government public health policy towards smoking."
+          "enquiry_question": "Explain how the legislation illustrated in Source A represents a shift in government public health policy towards smoking.",
+          "hinge_question": "Why did the tobacco industry spend millions of pounds in the High Court fighting plain packaging legislation?",
+          "source_context": "Studies proved that the drab dark brown/olive-green color Pantone 448 C was rated by consumers as the 'ugliest and most repulsive color in the world'. The policy aimed directly at stripping glamour and prestige from cigarette branding. **Hinge Question:** Why did the tobacco industry spend millions of pounds in the High Court fighting plain packaging legislation?"
         },
         {
           "id": "source_b_doll_hill_bmj_1950",
@@ -19788,7 +19955,9 @@ const edexcel_medicine_data = {
             "source_context": "Prior to their research, most doctors assumed the dramatic rise in lung cancer was caused by tarred motor roads or atmospheric industrial coal smog. Doll himself was a heavy smoker who gave up cigarettes halfway through compiling the statistics. **Hinge Question:** Why did both the public and tobacco companies resist statistical epidemiological proof for over a decade after 1950?"
           },
           "text": "A statistical investigation was carried out in twenty London hospitals to determine whether patients suffering from cancer of the lung differed in their smoking habits from patients suffering from other diseases... Among 649 men with carcinoma of the lung, only two (0.3%) were non-smokers, compared with twenty-seven (4.2%) in the control group. Among heavy smokers (consuming 25 or more cigarettes a day), the ratio was even more striking: 26.0% of the lung cancer patients were heavy smokers compared with only 13.5% of the controls... The association between smoking and carcinoma of the lung is not due to chance. It is concluded that smoking is a factor, and an important factor, in the production of carcinoma of the lung.",
-          "enquiry_question": "Explain the historical significance of Doll and Hill's research in Source B for understanding the causes of disease."
+          "enquiry_question": "Explain the historical significance of Doll and Hill's research in Source B for understanding the causes of disease.",
+          "hinge_question": "Why did both the public and tobacco companies resist statistical epidemiological proof for over a decade after 1950?",
+          "source_context": "Prior to their research, most doctors assumed the dramatic rise in lung cancer was caused by tarred motor roads or atmospheric industrial coal smog. Doll himself was a heavy smoker who gave up cigarettes halfway through compiling the statistics. **Hinge Question:** Why did both the public and tobacco companies resist statistical epidemiological proof for over a decade after 1950?"
         },
         {
           "id": "source_c_richard_doll_portrait",
@@ -19805,7 +19974,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Doll's methodology became the gold standard for global epidemiology, used later to prove links between asbestos and mesothelioma, and between radiation and leukaemia. **Hinge Question:** Why was studying doctors specifically such an effective choice for a long-term medical study?"
           },
-          "enquiry_question": "Explain the importance of Sir Richard Doll's work shown in Source C for public health in Britain."
+          "enquiry_question": "Explain the importance of Sir Richard Doll's work shown in Source C for public health in Britain.",
+          "hinge_question": "Why was studying doctors specifically such an effective choice for a long-term medical study?",
+          "source_context": "Doll's methodology became the gold standard for global epidemiology, used later to prove links between asbestos and mesothelioma, and between radiation and leukaemia. **Hinge Question:** Why was studying doctors specifically such an effective choice for a long-term medical study?"
         },
         {
           "id": "source_d_rcp_report_1962",
@@ -19821,7 +19992,9 @@ const edexcel_medicine_data = {
             "source_context": "The 1962 RCP report created a media firestorm in Britain and prompted the US Surgeon General's landmark 1964 report. Television cigarette adverts were subsequently banned in the UK in 1965. **Hinge Question:** Why did it take forty-five years from the 1962 RCP report to the 2007 indoor smoking ban?"
           },
           "text": "Cigarette smoking is now so prevalent that it may be described as a social habit of the majority of adult males... The evidence that cigarette smoking is the major cause of the extraordinary rise in lung cancer deaths is now overwhelming. In 1916, fewer than 400 people died of lung cancer in England and Wales; in 1960, the number exceeded 22,000... Decisive government action is urgently demanded. We recommend: (1) More public education on the health hazards of smoking, particularly directed at schoolchildren; (2) More effective restrictions on the sale of tobacco to children; (3) Severe restrictions on tobacco advertising on television and in public places; (4) Higher taxation on cigarettes; and (5) The prohibition of smoking in public places such as buses, trains, and cinemas.",
-          "enquiry_question": "Explain what Source D reveals about the changing attitude of the medical profession towards tobacco by 1962."
+          "enquiry_question": "Explain what Source D reveals about the changing attitude of the medical profession towards tobacco by 1962.",
+          "hinge_question": "Why did it take forty-five years from the 1962 RCP report to the 2007 indoor smoking ban?",
+          "source_context": "The 1962 RCP report created a media firestorm in Britain and prompted the US Surgeon General's landmark 1964 report. Television cigarette adverts were subsequently banned in the UK in 1965. **Hinge Question:** Why did it take forty-five years from the 1962 RCP report to the 2007 indoor smoking ban?"
         },
         {
           "id": "source_e_health_act_2006",
@@ -19837,7 +20010,9 @@ const edexcel_medicine_data = {
             "source_context": "Despite predictions that British pubs would face bankruptcy, compliance with the 1 July 2007 smoking ban exceeded 98% within weeks, rapidly reshaping British social norms. **Hinge Question:** Was the 2007 public indoor smoking ban justified to protect public health, or did it infringe on personal freedom?"
           },
           "text": "Section 2: Smoke-free premises. (1) Premises are smoke-free if they are open to the public, or are used as a place of work by more than one person, or where persons are providing goods or services to the public... Section 3: Smoke-free vehicles. Regulations may provide for vehicles used for the carriage of members of the public to be smoke-free... Section 6: Offence of smoking in smoke-free place. A person who smokes in a smoke-free place commits an offence and is liable on summary conviction to a fine not exceeding level 3 on the standard scale... Section 8: Offence of failing to prevent smoking in smoke-free place. It is the duty of any person who occupies or is concerned in the management of smoke-free premises to cause a person smoking there to stop smoking.",
-          "enquiry_question": "Explain the significance of the Health Act 2006 for public health in modern Britain."
+          "enquiry_question": "Explain the significance of the Health Act 2006 for public health in modern Britain.",
+          "hinge_question": "Was the 2007 public indoor smoking ban justified to protect public health, or did it infringe on personal freedom?",
+          "source_context": "Despite predictions that British pubs would face bankruptcy, compliance with the 1 July 2007 smoking ban exceeded 98% within weeks, rapidly reshaping British social norms. **Hinge Question:** Was the 2007 public indoor smoking ban justified to protect public health, or did it infringe on personal freedom?"
         }
       ],
       "do_now": {
@@ -20501,7 +20676,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Royal Flying Corps aerial reconnaissance photograph, 1917. Aerial photography was vital for artillery spotting and mapping trench systems. **Hinge Question:** Why did the zig-zag design of trenches, while essential for blast protection, create catastrophic delays for stretcher bearers evacuating wounded soldiers?"
           },
-          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the design and layout of frontline trench systems on the Western Front?"
+          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the design and layout of frontline trench systems on the Western Front?",
+          "hinge_question": "Why did the zig-zag design of trenches, while essential for blast protection, create catastrophic delays for stretcher bearers evacuating wounded soldiers?",
+          "source_context": "Royal Flying Corps aerial reconnaissance photograph, 1917. Aerial photography was vital for artillery spotting and mapping trench systems. **Hinge Question:** Why did the zig-zag design of trenches, while essential for blast protection, create catastrophic delays for stretcher bearers evacuating wounded soldiers?"
         },
         {
           "id": "med_l21_source_b",
@@ -20518,7 +20695,9 @@ const edexcel_medicine_data = {
             "source_context": "RAMC War Diary, October 1917. The Third Battle of Ypres (Passchendaele) saw the destruction of all drainage dykes, creating unprecedented mud. **Hinge Question:** Why did delay in casualty evacuation directly increase the risk of wounded men dying from shock and gas gangrene?"
           },
           "text": "The state of the ground defies description. The communication trenches have ceased to exist, having been obliterated by continuous heavy shelling and turned into channels of liquid clay three to four feet deep. Relieving stretcher squads took six hours to convey a single severely wounded casualty over a distance of barely two miles from the frontline aid post to the dressing station. Four bearers carried the stretcher while two accompanied them with poles to haul the bearers out when they sank to their waists. Several walking wounded fell into water-filled shell craters in the dark and were drowned before assistance could reach them.",
-          "enquiry_question": "Study Source B. How could you follow up Source B to find out more about the problems of evacuating wounded soldiers in the Ypres Salient?"
+          "enquiry_question": "Study Source B. How could you follow up Source B to find out more about the problems of evacuating wounded soldiers in the Ypres Salient?",
+          "hinge_question": "Why did delay in casualty evacuation directly increase the risk of wounded men dying from shock and gas gangrene?",
+          "source_context": "RAMC War Diary, October 1917. The Third Battle of Ypres (Passchendaele) saw the destruction of all drainage dykes, creating unprecedented mud. **Hinge Question:** Why did delay in casualty evacuation directly increase the risk of wounded men dying from shock and gas gangrene?"
         },
         {
           "id": "med_l21_source_c",
@@ -20536,7 +20715,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Imperial War Museum photograph Q 10645. Flanders has a shallow water table; trenches dug deeper than 2 feet filled with water within hours. **Hinge Question:** How did the failure of trench drainage impact both combat efficiency and medical survival on the Western Front?"
           },
-          "enquiry_question": "What can be inferred from Source C about the everyday physical hazards experienced by frontline soldiers in the British sector?"
+          "enquiry_question": "What can be inferred from Source C about the everyday physical hazards experienced by frontline soldiers in the British sector?",
+          "hinge_question": "How did the failure of trench drainage impact both combat efficiency and medical survival on the Western Front?",
+          "source_context": "Imperial War Museum photograph Q 10645. Flanders has a shallow water table; trenches dug deeper than 2 feet filled with water within hours. **Hinge Question:** How did the failure of trench drainage impact both combat efficiency and medical survival on the Western Front?"
         },
         {
           "id": "med_l21_source_d",
@@ -20553,7 +20734,9 @@ const edexcel_medicine_data = {
             "source_context": "Account of Thompson's Cave, Arras, 1917. Over 24,000 British and Commonwealth troops sheltered in the Arras caves before zero hour. **Hinge Question:** Why was the subterranean chalk geology of Arras impossible to replicate in the mud and high water table of the Ypres Salient?"
           },
           "text": "Beneath the ruined city of Arras lies a subterranean city carved out of ancient chalk quarries by the New Zealand Tunnelling Company. Here, thirty feet below ground, safe from the heaviest German artillery, the RAMC has established a fully equipped hospital known as Thompson's Cave. It contains 700 hospital beds arranged in long chalk galleries, fully fitted operating theatres with electric lighting, a mortuary, and piped water. Wounded men are brought directly from the battlefront through underground communication tunnels without ever coming into view of enemy observers or exposing stretcher bearers to shellfire.",
-          "enquiry_question": "Explain the purpose of the medical officer's account in Source D in describing the subterranean hospital at Arras."
+          "enquiry_question": "Explain the purpose of the medical officer's account in Source D in describing the subterranean hospital at Arras.",
+          "hinge_question": "Why was the subterranean chalk geology of Arras impossible to replicate in the mud and high water table of the Ypres Salient?",
+          "source_context": "Account of Thompson's Cave, Arras, 1917. Over 24,000 British and Commonwealth troops sheltered in the Arras caves before zero hour. **Hinge Question:** Why was the subterranean chalk geology of Arras impossible to replicate in the mud and high water table of the Ypres Salient?"
         },
         {
           "id": "med_l21_source_e",
@@ -20570,7 +20753,9 @@ const edexcel_medicine_data = {
             "source_context": "Report by DGAMS on Somme casualties, 1916. The Somme marked the bloodiest day in British military history. **Hinge Question:** How did the medical catastrophe of 1 July 1916 compel the RAMC to expand Casualty Clearing Stations into major surgical hospitals?"
           },
           "text": "The scale of casualties on the opening day of the Somme offensive (1 July 1916) completely overwhelmed all pre-arranged medical calculations. Over 57,000 British casualties occurred in twenty-four hours, of whom nearly 20,000 were killed. Casualty Clearing Stations, designed to accommodate a maximum of 200 to 300 patients, were engulfed by upwards of a thousand casualties each before midday. Operating surgeons worked forty-eight hours without sleep, performing emergency amputations and wound dressings in tent corridors as stretchers covered acres of open farmland awaiting evacuation trains.",
-          "enquiry_question": "How does Source E corroborate historical knowledge regarding the strain placed on British medical services during major offensives?"
+          "enquiry_question": "How does Source E corroborate historical knowledge regarding the strain placed on British medical services during major offensives?",
+          "hinge_question": "How did the medical catastrophe of 1 July 1916 compel the RAMC to expand Casualty Clearing Stations into major surgical hospitals?",
+          "source_context": "Report by DGAMS on Somme casualties, 1916. The Somme marked the bloodiest day in British military history. **Hinge Question:** How did the medical catastrophe of 1 July 1916 compel the RAMC to expand Casualty Clearing Stations into major surgical hospitals?"
         }
       ],
       "vocab": [
@@ -21421,7 +21606,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "RAMC clinical photograph of trench foot, c.1915. Trench foot was caused by standing in cold water/mud between 0 and 15°C for prolonged hours. **Hinge Question:** Why did the British Army make battalion officers legally responsible for the foot health of their men, treating trench foot as a disciplinary offence rather than merely a medical illness?"
           },
-          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the nature and physical severity of trench foot among British soldiers on the Western Front?"
+          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the nature and physical severity of trench foot among British soldiers on the Western Front?",
+          "hinge_question": "Why did the British Army make battalion officers legally responsible for the foot health of their men, treating trench foot as a disciplinary offence rather than merely a medical illness?",
+          "source_context": "RAMC clinical photograph of trench foot, c.1915. Trench foot was caused by standing in cold water/mud between 0 and 15°C for prolonged hours. **Hinge Question:** Why did the British Army make battalion officers legally responsible for the foot health of their men, treating trench foot as a disciplinary offence rather than merely a medical illness?"
         },
         {
           "id": "med_l22_source_b",
@@ -21438,7 +21625,9 @@ const edexcel_medicine_data = {
             "source_context": "2nd Battalion Standing Orders, 1915. Whale oil created a waterproof barrier over the skin. **Hinge Question:** Why did the British Army rely on strict military discipline and officer inspections rather than relying solely on medical treatment by doctors to eliminate trench foot?"
           },
           "text": "1. Every man before entering the frontline trenches must grease his feet thoroughly with whale oil provided at company stores.\n2. Company commanders will ensure that every soldier carries two pairs of dry socks in his haversack. A dry pair must be put on every twelve hours, and the wet pair dried around the neck inside the tunic.\n3. Platoon officers will hold a daily foot inspection in the firebays. Every soldier will remove his boots and puttees in the presence of an officer or NCO, rub his feet with oil, and rub his comrade's feet. Any officer whose platoon reports preventable cases of trench foot will be required to explain why disciplinary standing orders were neglected.",
-          "enquiry_question": "Explain the purpose of the Routine Standing Orders in Source B in relation to preventing trench foot."
+          "enquiry_question": "Explain the purpose of the Routine Standing Orders in Source B in relation to preventing trench foot.",
+          "hinge_question": "Why did the British Army rely on strict military discipline and officer inspections rather than relying solely on medical treatment by doctors to eliminate trench foot?",
+          "source_context": "2nd Battalion Standing Orders, 1915. Whale oil created a waterproof barrier over the skin. **Hinge Question:** Why did the British Army rely on strict military discipline and officer inspections rather than relying solely on medical treatment by doctors to eliminate trench foot?"
         },
         {
           "id": "med_l22_source_c",
@@ -21456,7 +21645,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "IWM photograph Q 5730, Battle of Pilckem Ridge (Third Battle of Ypres), 31 July 1917. **Hinge Question:** Why did the concentration of hundreds of stretcher cases in the open outside dressing stations during major offensives make them so vulnerable to enemy long-range artillery?"
           },
-          "enquiry_question": "What can be inferred from Source C about how wounded soldiers were treated and managed at Advanced Dressing Stations during major offensives?"
+          "enquiry_question": "What can be inferred from Source C about how wounded soldiers were treated and managed at Advanced Dressing Stations during major offensives?",
+          "hinge_question": "Why did the concentration of hundreds of stretcher cases in the open outside dressing stations during major offensives make them so vulnerable to enemy long-range artillery?",
+          "source_context": "IWM photograph Q 5730, Battle of Pilckem Ridge (Third Battle of Ypres), 31 July 1917. **Hinge Question:** Why did the concentration of hundreds of stretcher cases in the open outside dressing stations during major offensives make them so vulnerable to enemy long-range artillery?"
         },
         {
           "id": "med_l22_source_d",
@@ -21473,7 +21664,9 @@ const edexcel_medicine_data = {
             "source_context": "War Office Trench Fever Committee Report, 1918. Over 1 million British soldiers contracted trench fever during WW1. **Hinge Question:** Why did it take until 1918 for scientists to definitively prove that body lice were the vector of trench fever?"
           },
           "text": "Trench Fever (Pyrexia of Unknown Origin) has been responsible for the loss of more rifle strength than any other single disease on the Western Front. Over 15% of all non-combat hospital admissions are due to this relapsing 5-day fever, which causes severe headaches, high pyrexia, and agonizing pain in the shins and back.\nOur laboratory investigations confirm beyond doubt that the disease is transmitted by the body louse (Pediculus humanus). The infection is not inoculated by the bite of the insect itself, but by the soldier scratching louse excreta into broken skin. Complete eradication depends entirely on regular steam delousing of uniforms in Divisional de-lousing plants and the frequent provision of clean clothing.",
-          "enquiry_question": "Study Source D. How could you follow up Source D to find out more about the methods used by the British Army to combat trench fever?"
+          "enquiry_question": "Study Source D. How could you follow up Source D to find out more about the methods used by the British Army to combat trench fever?",
+          "hinge_question": "Why did it take until 1918 for scientists to definitively prove that body lice were the vector of trench fever?",
+          "source_context": "War Office Trench Fever Committee Report, 1918. Over 1 million British soldiers contracted trench fever during WW1. **Hinge Question:** Why did it take until 1918 for scientists to definitively prove that body lice were the vector of trench fever?"
         },
         {
           "id": "med_l22_source_e",
@@ -21490,7 +21683,9 @@ const edexcel_medicine_data = {
             "source_context": "RAMC Case Notes on NYDN, 1917. Over 80,000 British soldiers were treated for shellshock during the war. **Hinge Question:** Why did the British high command introduce the neutral term 'NYDN' instead of allowing medical officers to diagnose 'shellshock' at the frontline?"
           },
           "text": "Private J. H., aged 21. Admitted to casualty post classified as NYDN (Not Yet Diagnosed, Nervous). The patient was subjected to forty-eight hours of ceaseless drumfire barrage in a dugout near Sanctuary Wood that was twice buried by high-explosive shell bursts. On arrival, he was incapable of speech (hysterical mutism), exhibited violent coarse tremors of both hands, and flinched in terror at the slightest sound. His pupils were widely dilated, and he could not stand without falling.\nIn 1915, such men were suspected of malingering or cowardice; we now recognize this acute condition as shellshock caused by severe atmospheric concussion, sensory overload, and emotional exhaustion. He has been transferred to a specialist neurological clearing hospital for rest and sedation.",
-          "enquiry_question": "Explain how the clinical notes in Source E illustrate the evolving medical attitude toward psychiatric casualties on the Western Front."
+          "enquiry_question": "Explain how the clinical notes in Source E illustrate the evolving medical attitude toward psychiatric casualties on the Western Front.",
+          "hinge_question": "Why did the British high command introduce the neutral term 'NYDN' instead of allowing medical officers to diagnose 'shellshock' at the frontline?",
+          "source_context": "RAMC Case Notes on NYDN, 1917. Over 80,000 British soldiers were treated for shellshock during the war. **Hinge Question:** Why did the British high command introduce the neutral term 'NYDN' instead of allowing medical officers to diagnose 'shellshock' at the frontline?"
         }
       ],
       "vocab": [
@@ -22331,7 +22526,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Imperial War Museum photograph Q 4016. PH hood was introduced in October 1915. **Hinge Question:** Why did the introduction of mustard gas in July 1917 render respiratory gas masks alone insufficient to protect soldiers?"
           },
-          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the methods and equipment used to protect British soldiers against gas attacks on the Western Front?"
+          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the methods and equipment used to protect British soldiers against gas attacks on the Western Front?",
+          "hinge_question": "Why did the introduction of mustard gas in July 1917 render respiratory gas masks alone insufficient to protect soldiers?",
+          "source_context": "Imperial War Museum photograph Q 4016. PH hood was introduced in October 1915. **Hinge Question:** Why did the introduction of mustard gas in July 1917 render respiratory gas masks alone insufficient to protect soldiers?"
         },
         {
           "id": "med_l23_source_b",
@@ -22348,7 +22545,9 @@ const edexcel_medicine_data = {
             "source_context": "First chlorine attack at Second Ypres, 22 April 1915. The Germans released 168 tons of chlorine from 5,730 cylinders. **Hinge Question:** Why did ammonia in human urine help neutralize chlorine gas as a desperate temporary expedient?"
           },
           "text": "At 5 p.m. a strange, greenish-yellow vapour was seen creeping toward the Allied trenches from the German lines near Langemarck. Carried on a gentle breeze, it settled into every hollow and trench bay. Within minutes, hundreds of French and Algerian soldiers staggered through our lines coughing violently, clutching their throats and tearing open their tunics in agony. Men collapsed on the roads in convulsions, their faces turning an ashen slate-blue (cyanosis) as their lungs rapidly filled with fluid.\nWe had no anti-gas respirators of any kind. Medical officers desperately ordered men to tie handkerchiefs or flannel soaked in urine or bicarbonate of soda solution across their mouths and noses to neutralize the gas, but dozens suffocated in our dressing stations before dawn.",
-          "enquiry_question": "Explain the purpose of the medical officer's account in Source B regarding the initial appearance of poison gas on the Western Front."
+          "enquiry_question": "Explain the purpose of the medical officer's account in Source B regarding the initial appearance of poison gas on the Western Front.",
+          "hinge_question": "Why did ammonia in human urine help neutralize chlorine gas as a desperate temporary expedient?",
+          "source_context": "First chlorine attack at Second Ypres, 22 April 1915. The Germans released 168 tons of chlorine from 5,730 cylinders. **Hinge Question:** Why did ammonia in human urine help neutralize chlorine gas as a desperate temporary expedient?"
         },
         {
           "id": "med_l23_source_c",
@@ -22366,7 +22565,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Archival radiograph from Professor Waymouth Reid's case (c.1916) demonstrating lead-wire coordinate localisation for intracranial foreign bodies. **Hinge Question:** Why was precise 3D radiographic localisation especially vital when operating on cranial bullet wounds compared to limb injuries?"
           },
-          "enquiry_question": "What can be inferred from Source C about how radiographic localisation technology assisted frontline surgeons treating head and ballistic wounds?"
+          "enquiry_question": "What can be inferred from Source C about how radiographic localisation technology assisted frontline surgeons treating head and ballistic wounds?",
+          "hinge_question": "Why was precise 3D radiographic localisation especially vital when operating on cranial bullet wounds compared to limb injuries?",
+          "source_context": "Archival radiograph from Professor Waymouth Reid's case (c.1916) demonstrating lead-wire coordinate localisation for intracranial foreign bodies. **Hinge Question:** Why was precise 3D radiographic localisation especially vital when operating on cranial bullet wounds compared to limb injuries?"
         },
         {
           "id": "med_l23_source_d",
@@ -22383,7 +22584,9 @@ const edexcel_medicine_data = {
             "source_context": "RAMC Report on Gas Gangrene, 1916. Clostridium perfringens flourishes without oxygen. **Hinge Question:** Why did traditional antiseptic methods like carbolic acid fail against deep war wounds, requiring revolutionary surgical excision?"
           },
           "text": "Flanders farmland is saturated with animal manure through centuries of intensive cultivation, containing dense spores of tetanus and anaerobic gas gangrene bacilli (Clostridium perfringens). When a shell splinter tears into a thigh or buttock, it drives fragments of mud-caked serge uniform deep into the lacerated muscle.\nIn the deep, oxygen-deprived wound track, the anaerobic bacteria proliferate with terrifying speed, fermenting muscle tissue and producing foul gas bubbles beneath the skin within twelve hours. The limb turns purple, cold, and crackles like dry parchment under the surgeon's touch (crepitation). Antiseptics poured onto the surface are completely useless; unless the entire wound track is widely excised (debridement) or the limb amputated immediately, the soldier dies of systemic toxaemia.",
-          "enquiry_question": "Study Source D. How could you follow up Source D to find out more about the surgical methods developed to treat gas gangrene on the Western Front?"
+          "enquiry_question": "Study Source D. How could you follow up Source D to find out more about the surgical methods developed to treat gas gangrene on the Western Front?",
+          "hinge_question": "Why did traditional antiseptic methods like carbolic acid fail against deep war wounds, requiring revolutionary surgical excision?",
+          "source_context": "RAMC Report on Gas Gangrene, 1916. Clostridium perfringens flourishes without oxygen. **Hinge Question:** Why did traditional antiseptic methods like carbolic acid fail against deep war wounds, requiring revolutionary surgical excision?"
         },
         {
           "id": "med_l23_source_e",
@@ -22400,7 +22603,9 @@ const edexcel_medicine_data = {
             "source_context": "Sir William Leishman, Medical History of the War, 1923. Emil von Behring had developed tetanus antitoxin in 1890. **Hinge Question:** Why was speed of administration at the frontline Regimental Aid Post so decisive for the success of tetanus antitoxin?"
           },
           "text": "In August and September 1914, during the retreat from Mons, tetanus was a dreadful scourge. Over 32 out of every 1,000 wounded men developed tetanus, with agonizing muscular spasms (lockjaw) and an almost 80% fatality rate. The cause was direct contamination by the manured soil of northern France.\nIn October 1914, the routine preventative administration of antitetanic serum was made compulsory at every Regimental Aid Post. Stretcher bearers and medical officers were ordered to inject 500 units of serum immediately into every casualty before evacuation rearward. By 1917, the incidence of tetanus had fallen to less than 1.4 per 1,000 casualties. This single preventative measure saved tens of thousands of lives.",
-          "enquiry_question": "How does Source E demonstrate the effectiveness of preventative medical policy on the Western Front?"
+          "enquiry_question": "How does Source E demonstrate the effectiveness of preventative medical policy on the Western Front?",
+          "hinge_question": "Why was speed of administration at the frontline Regimental Aid Post so decisive for the success of tetanus antitoxin?",
+          "source_context": "Sir William Leishman, Medical History of the War, 1923. Emil von Behring had developed tetanus antitoxin in 1890. **Hinge Question:** Why was speed of administration at the frontline Regimental Aid Post so decisive for the success of tetanus antitoxin?"
         }
       ],
       "vocab": [
@@ -23269,7 +23474,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "IWM photograph Q 5935, Third Battle of Ypres. Stretcher bearers were unarmed and sustained some of the highest casualty rates in the BEF. **Hinge Question:** Why did the difficulty of stretcher transport across mud directly lead to the decentralization of surgical units closer to the front line?"
           },
-          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the challenges faced by stretcher bearers evacuating casualties from the frontline on the Western Front?"
+          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the challenges faced by stretcher bearers evacuating casualties from the frontline on the Western Front?",
+          "hinge_question": "Why did the difficulty of stretcher transport across mud directly lead to the decentralization of surgical units closer to the front line?",
+          "source_context": "IWM photograph Q 5935, Third Battle of Ypres. Stretcher bearers were unarmed and sustained some of the highest casualty rates in the BEF. **Hinge Question:** Why did the difficulty of stretcher transport across mud directly lead to the decentralization of surgical units closer to the front line?"
         },
         {
           "id": "med_l24_source_b",
@@ -23286,7 +23493,9 @@ const edexcel_medicine_data = {
             "source_context": "Captain J. C. Dunn, 2nd Royal Welch Fusiliers. RAPs were located in dugouts, ruined cellars, or communication trenches. **Hinge Question:** Why was it vital that major surgical operations were NOT attempted at Regimental Aid Posts?"
           },
           "text": "The Regimental Aid Post was set up in a collapsed German dugout 200 yards behind the frontline trench. Throughout the bombardment, casualties poured in in an unending stream. My duty as Battalion Medical Officer is not to perform operations, but to execute rapid triage: stop severe arterial haemorrhage with tourniquets, dress wounds with sterile gauze, inject antitetanic serum, administer morphine to ease agony, and label each man with a colored tag.\nThe slightly wounded are bandaged and sent back to the firing line; men with severe shrapnel lacerations or fractured limbs are tagged for immediate stretcher transport to the Advanced Dressing Station; for the hopeless, dying cases with massive brain trauma, we can only provide morphine and a quiet corner to die.",
-          "enquiry_question": "Explain the purpose of Captain Dunn's account in Source B regarding the medical role of the Regimental Aid Post."
+          "enquiry_question": "Explain the purpose of Captain Dunn's account in Source B regarding the medical role of the Regimental Aid Post.",
+          "hinge_question": "Why was it vital that major surgical operations were NOT attempted at Regimental Aid Posts?",
+          "source_context": "Captain J. C. Dunn, 2nd Royal Welch Fusiliers. RAPs were located in dugouts, ruined cellars, or communication trenches. **Hinge Question:** Why was it vital that major surgical operations were NOT attempted at Regimental Aid Posts?"
         },
         {
           "id": "med_l24_source_c",
@@ -23304,7 +23513,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Gilbert Rogers, The Stretcher Bearer, 1919, IWM ART 2649. Rogers served in the RAMC during the war. **Hinge Question:** Why did the British high command commission artists like Gilbert Rogers to record the medical corps' role immediately after the Armistice?"
           },
-          "enquiry_question": "What can be inferred from Source C about the physical burden and emotional toll endured by RAMC stretcher bearers on the Western Front?"
+          "enquiry_question": "What can be inferred from Source C about the physical burden and emotional toll endured by RAMC stretcher bearers on the Western Front?",
+          "hinge_question": "Why did the British high command commission artists like Gilbert Rogers to record the medical corps' role immediately after the Armistice?",
+          "source_context": "Gilbert Rogers, The Stretcher Bearer, 1919, IWM ART 2649. Rogers served in the RAMC during the war. **Hinge Question:** Why did the British high command commission artists like Gilbert Rogers to record the medical corps' role immediately after the Armistice?"
         },
         {
           "id": "med_l24_source_d",
@@ -23321,7 +23532,9 @@ const edexcel_medicine_data = {
             "source_context": "FANY driver memoir, 1917. FANY was founded in 1907; the British Army formally accepted female ambulance drivers in January 1916. **Hinge Question:** Why was motor ambulance transport so critical to bridging the gap between dressing stations and Casualty Clearing Stations?"
           },
           "text": "In the winter of 1916, our FANY convoy took over the transport of casualties between the railway siding and the coastal Base Hospitals in Calais. The British military authorities had initially refused to allow women drivers near the front, claiming the work was too harrowing and dangerous for females. We proved them wrong.\nWe drive heavy motor ambulances through blizzards and pitch-black nights without headlights to avoid attracting German bomber aircraft. The roads are torn by shell holes and choked with military supply wagons. We change heavy pneumatic tyres in freezing mud, repair broken fan belts, and clean blood and vomit from the ambulance stretchers between runs. Our ambulances can transport four lying casualties on stretchers or eight sitting cases, moving men to hospital beds in minutes rather than hours.",
-          "enquiry_question": "Study Source D. How could you follow up Source D to find out more about the contribution of women drivers and nurses in the First Aid Nursing Yeomanry (FANY)?"
+          "enquiry_question": "Study Source D. How could you follow up Source D to find out more about the contribution of women drivers and nurses in the First Aid Nursing Yeomanry (FANY)?",
+          "hinge_question": "Why was motor ambulance transport so critical to bridging the gap between dressing stations and Casualty Clearing Stations?",
+          "source_context": "FANY driver memoir, 1917. FANY was founded in 1907; the British Army formally accepted female ambulance drivers in January 1916. **Hinge Question:** Why was motor ambulance transport so critical to bridging the gap between dressing stations and Casualty Clearing Stations?"
         },
         {
           "id": "med_l24_source_e",
@@ -23338,7 +23551,9 @@ const edexcel_medicine_data = {
             "source_context": "Inspection Report on ADS Becourt, Somme, 1916. ADS facilities were typically 1,000–2,000 yards behind the front line. **Hinge Question:** Why was administering hot fluids and treating surgical shock at dressing stations essential before moving casualties by motor ambulance?"
           },
           "text": "The Advanced Dressing Station at Becourt received 2,400 casualties in the space of forty-eight hours. The station comprises several reinforced sandbag huts and dugouts capable of accommodating sixty lying cases under cover. Three medical officers and twenty-four orderlies worked continuously without pause.\nThe principal work consists of inspecting frontline bandages, adjusting splints, administering warm beef tea and hot cocoa to counter surgical shock, and organizing motor ambulance convoys. Of the 2,400 men admitted, 1,800 were evacuated rearward by motor ambulance within six hours to Casualty Clearing Stations Nos. 34 and 45 at Grovetown, ensuring life-saving surgical intervention before sepsis could take hold.",
-          "enquiry_question": "How does Source E corroborate the role of the Advanced Dressing Station within the wider chain of evacuation?"
+          "enquiry_question": "How does Source E corroborate the role of the Advanced Dressing Station within the wider chain of evacuation?",
+          "hinge_question": "Why was administering hot fluids and treating surgical shock at dressing stations essential before moving casualties by motor ambulance?",
+          "source_context": "Inspection Report on ADS Becourt, Somme, 1916. ADS facilities were typically 1,000–2,000 yards behind the front line. **Hinge Question:** Why was administering hot fluids and treating surgical shock at dressing stations essential before moving casualties by motor ambulance?"
         }
       ],
       "vocab": [
@@ -24178,7 +24393,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "IWM photograph Q 33441, Operating theatre suite at No. 23 Casualty Clearing Station, France. CCSs performed over 30% of all operations on the Western Front. **Hinge Question:** Why did moving advanced surgery forward from coastal base hospitals to Casualty Clearing Stations dramatically increase casualty survival?"
           },
-          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into surgical treatment provided at Casualty Clearing Stations on the Western Front?"
+          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into surgical treatment provided at Casualty Clearing Stations on the Western Front?",
+          "hinge_question": "Why did moving advanced surgery forward from coastal base hospitals to Casualty Clearing Stations dramatically increase casualty survival?",
+          "source_context": "IWM photograph Q 33441, Operating theatre suite at No. 23 Casualty Clearing Station, France. CCSs performed over 30% of all operations on the Western Front. **Hinge Question:** Why did moving advanced surgery forward from coastal base hospitals to Casualty Clearing Stations dramatically increase casualty survival?"
         },
         {
           "id": "med_l25_source_b",
@@ -24195,7 +24412,9 @@ const edexcel_medicine_data = {
             "source_context": "Sir Robert Jones, report on the Thomas Splint, 1917. Jones was Inspector of Military Orthopaedics. **Hinge Question:** Why was applying mechanical traction on the battlefield more effective at preventing death than treating shock after arrival at hospital?"
           },
           "text": "In 1914 and 1915, fractured thigh bones (compound fractures of the femur) resulted in a mortality rate exceeding 80 per cent. The jagged bone ends, vibrating freely in transit over rutted roads, lacerated muscles, severed the femoral artery causing fatal internal haemorrhage, and pierced the skin, allowing lethal soil bacteria into the wound.\nSince the universal introduction of my late uncle Hugh Owen Thomas's knee splint to field ambulances in 1916, this appalling figure has been transformed. Every stretcher bearer is trained to apply the splint before moving a man from the battlefield. The rigid steel side bars and traction stirrup keep the broken bone completely immobilized and under continuous extension. Today, the mortality rate for compound femur fractures stands at less than 20 per cent, and thousands of men are restored to functional limbs.",
-          "enquiry_question": "Study Source B. How could you follow up Source B to find out more about the impact of the Thomas Splint on the treatment of wounded soldiers?"
+          "enquiry_question": "Study Source B. How could you follow up Source B to find out more about the impact of the Thomas Splint on the treatment of wounded soldiers?",
+          "hinge_question": "Why was applying mechanical traction on the battlefield more effective at preventing death than treating shock after arrival at hospital?",
+          "source_context": "Sir Robert Jones, report on the Thomas Splint, 1917. Jones was Inspector of Military Orthopaedics. **Hinge Question:** Why was applying mechanical traction on the battlefield more effective at preventing death than treating shock after arrival at hospital?"
         },
         {
           "id": "med_l25_source_c",
@@ -24213,7 +24432,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Marie Curie equipped 20 mobile field radiography vehicles ('petites Curies') and trained 150 female technicians, examining over one million wounded soldiers during the war. **Hinge Question:** Why was adapting X-ray machines into mobile automotive units crucial for saving lives during high-casualty frontline offensives?"
           },
-          "enquiry_question": "What can be inferred from Source C about how radiological technology was adapted to meet the demands of frontline casualty care on the Western Front?"
+          "enquiry_question": "What can be inferred from Source C about how radiological technology was adapted to meet the demands of frontline casualty care on the Western Front?",
+          "hinge_question": "Why was adapting X-ray machines into mobile automotive units crucial for saving lives during high-casualty frontline offensives?",
+          "source_context": "Marie Curie equipped 20 mobile field radiography vehicles ('petites Curies') and trained 150 female technicians, examining over one million wounded soldiers during the war. **Hinge Question:** Why was adapting X-ray machines into mobile automotive units crucial for saving lives during high-casualty frontline offensives?"
         },
         {
           "id": "med_l25_source_d",
@@ -24230,7 +24451,9 @@ const edexcel_medicine_data = {
             "source_context": "Carrel and Dakin, The Treatment of Infected Wounds, 1916. Sodium hypochlorite was unstable and had to be freshly prepared every 24 hours. **Hinge Question:** Why did the Carrel-Dakin method require complete surgical debridement before chemical irrigation could be effective?"
           },
           "text": "Traditional antiseptic treatment failed completely in war wounds because chemical agents like carbolic acid killed healthy white blood cells and coagulated proteins without reaching bacteria sheltered in deep muscle crevices.\nOur method involves two vital steps: first, the complete surgical debridement of all devitalized tissue, dead muscle, and accessible foreign matter; second, the continuous or intermittent instillation of a non-irritating antiseptic solution (buffered sodium hypochlorite, 0.5%) through a network of perforated rubber tubes embedded directly into the recesses of the wound.\nThe solution dissolves dead tissue without injuring healthy granulation cells and rapidly sterilizes the wound. Cultures taken from the wound track show that bacteria drop to zero within five to eight days, allowing us to perform secondary delayed closure without fear of gangrene.",
-          "enquiry_question": "Explain the purpose of Carrel and Dakin's publication in Source D regarding their antiseptic irrigation method."
+          "enquiry_question": "Explain the purpose of Carrel and Dakin's publication in Source D regarding their antiseptic irrigation method.",
+          "hinge_question": "Why did the Carrel-Dakin method require complete surgical debridement before chemical irrigation could be effective?",
+          "source_context": "Carrel and Dakin, The Treatment of Infected Wounds, 1916. Sodium hypochlorite was unstable and had to be freshly prepared every 24 hours. **Hinge Question:** Why did the Carrel-Dakin method require complete surgical debridement before chemical irrigation could be effective?"
         },
         {
           "id": "med_l25_source_e",
@@ -24247,7 +24470,9 @@ const edexcel_medicine_data = {
             "source_context": "Memoir of a CCS surgeon, Poperinghe, 1917. Poperinghe was the primary hospital railhead behind Ypres. **Hinge Question:** How did the concept of the 'golden hours' revolutionize the entire structure of the British evacuation chain?"
           },
           "text": "During the heavy fighting at Passchendaele, our Casualty Clearing Station operated day and night without interruption. Each surgical team worked a twelve-hour shift, but when the push peaked, we worked twenty-four to thirty-six hours at a stretch. The operating theatre was a long hut with four tables; as soon as one case was bandaged and carried away to the evacuation ward, another was placed on the table.\nThe chief enemy was time. If a soldier with a shattered limb or perforated bowel reached us within the 'golden twelve hours', we had an excellent chance of saving his life by wide wound excision and saline infusions. If he lay out in a shell hole for two or three days, bacterial invasion was so entrenched that amputation was the only option, and even then, half died of toxaemia and shock.",
-          "enquiry_question": "How does Source E illustrate the critical concept of the 'golden hours' in wartime trauma surgery?"
+          "enquiry_question": "How does Source E illustrate the critical concept of the 'golden hours' in wartime trauma surgery?",
+          "hinge_question": "How did the concept of the 'golden hours' revolutionize the entire structure of the British evacuation chain?",
+          "source_context": "Memoir of a CCS surgeon, Poperinghe, 1917. Poperinghe was the primary hospital railhead behind Ypres. **Hinge Question:** How did the concept of the 'golden hours' revolutionize the entire structure of the British evacuation chain?"
         }
       ],
       "vocab": [
@@ -25086,7 +25311,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "John Singer Sargent, Gassed, 1919, IWM ART 1460 (2.3m x 6.1m). Based on Sargent's observations at Le Bac-du-Sud in August 1918. **Hinge Question:** Why did poison gas attacks place a far greater strain on hospital logistics and nursing than traditional bullet wounds?"
           },
-          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the effects of poison gas attacks and the scale of medical casualties on the Western Front?"
+          "enquiry_question": "Study Source A. How useful is Source A for an enquiry into the effects of poison gas attacks and the scale of medical casualties on the Western Front?",
+          "hinge_question": "Why did poison gas attacks place a far greater strain on hospital logistics and nursing than traditional bullet wounds?",
+          "source_context": "John Singer Sargent, Gassed, 1919, IWM ART 1460 (2.3m x 6.1m). Based on Sargent's observations at Le Bac-du-Sud in August 1918. **Hinge Question:** Why did poison gas attacks place a far greater strain on hospital logistics and nursing than traditional bullet wounds?"
         },
         {
           "id": "med_l26_source_b",
@@ -25103,7 +25330,9 @@ const edexcel_medicine_data = {
             "source_context": "Captain Oswald Robertson, BMJ report on stored blood, 1918. Robertson was an American doctor working with the British Army. **Hinge Question:** Why was universal Group O blood essential for frontline emergency transfusions where laboratory cross-matching was impossible?"
           },
           "text": "During the Battle of Cambrai in November 1917, we established an experimental 'blood depot' at Casualty Clearing Station No. 48. Twenty-two units of universal Group O blood were collected in advance from healthy walking-wounded donors into glass bottles containing sodium citrate to prevent clotting and dextrose (glucose) to nourish the red blood cells. The bottles were packed in wooden chests insulated with sawdust and ice.\nOver the next fortnight, twenty patients suffering from severe shock, pallor, and imperceptible pulses due to massive haemorrhage were transfused with blood stored for up to twenty-six days. In eleven cases, the transfusions produced an immediate resurrection: blood pressure rose steadily, color returned to the lips, and the men survived extensive emergency operations who would otherwise have perished of collapse on the table.",
-          "enquiry_question": "Study Source B. How could you follow up Source B to find out more about the development of blood transfusion and blood storage on the Western Front?"
+          "enquiry_question": "Study Source B. How could you follow up Source B to find out more about the development of blood transfusion and blood storage on the Western Front?",
+          "hinge_question": "Why was universal Group O blood essential for frontline emergency transfusions where laboratory cross-matching was impossible?",
+          "source_context": "Captain Oswald Robertson, BMJ report on stored blood, 1918. Robertson was an American doctor working with the British Army. **Hinge Question:** Why was universal Group O blood essential for frontline emergency transfusions where laboratory cross-matching was impossible?"
         },
         {
           "id": "med_l26_source_c",
@@ -25121,7 +25350,9 @@ const edexcel_medicine_data = {
           "teacher_notes": {
             "source_context": "Harold Gillies, Plastic Surgery of the Face, 1920. Queen's Hospital opened in 1917 and treated over 11,000 facially disfigured servicemen. **Hinge Question:** Why did facial mutilation carry such severe social and psychological stigmas compared to losing a limb?"
           },
-          "enquiry_question": "What can be inferred from Source C about how specialized reconstructive surgery was organized in Britain by the end of the First World War?"
+          "enquiry_question": "What can be inferred from Source C about how specialized reconstructive surgery was organized in Britain by the end of the First World War?",
+          "hinge_question": "Why did facial mutilation carry such severe social and psychological stigmas compared to losing a limb?",
+          "source_context": "Harold Gillies, Plastic Surgery of the Face, 1920. Queen's Hospital opened in 1917 and treated over 11,000 facially disfigured servicemen. **Hinge Question:** Why did facial mutilation carry such severe social and psychological stigmas compared to losing a limb?"
         },
         {
           "id": "med_l26_source_d",
@@ -25138,7 +25369,9 @@ const edexcel_medicine_data = {
             "source_context": "Major Harvey Cushing, From a Surgeon's Journal, 1917. Cushing was an American pioneer considered the father of modern neurosurgery. **Hinge Question:** Why did Cushing insist on operating under local anaesthesia rather than general anaesthesia for brain injuries?"
           },
           "text": "At Casualty Clearing Station 46 near Ypres, the influx of head injuries during the Passchendaele offensive is continuous. Hitherto, penetrating wounds of the skull carried a mortality of over 50 to 60 per cent, largely because rough probing tore healthy brain tissue and introduced sepsis.\nWe have instituted a new operating technique: using local novocaine anaesthesia rather than general ether to prevent cerebral venous congestion, we excise the scalp wound, elevate fractured skull fragments with trephines, and use a small rubber catheter attached to a suction bulb to extract macerated brain tissue, bone chips, and shrapnel fragments. A small electromagnet is then introduced to draw out deep steel splinters. In our last series of 219 consecutive cranial operations, mortality dropped to 28.8 per cent.",
-          "enquiry_question": "Explain the purpose of Harvey Cushing's diary entry in Source D regarding his surgical techniques for penetrating head wounds."
+          "enquiry_question": "Explain the purpose of Harvey Cushing's diary entry in Source D regarding his surgical techniques for penetrating head wounds.",
+          "hinge_question": "Why did Cushing insist on operating under local anaesthesia rather than general anaesthesia for brain injuries?",
+          "source_context": "Major Harvey Cushing, From a Surgeon's Journal, 1917. Cushing was an American pioneer considered the father of modern neurosurgery. **Hinge Question:** Why did Cushing insist on operating under local anaesthesia rather than general anaesthesia for brain injuries?"
         },
         {
           "id": "med_l26_source_e",
@@ -25155,7 +25388,9 @@ const edexcel_medicine_data = {
             "source_context": "Sir Harold Gillies, Plastic Surgery of the Face, 1920. Gillies is recognized as the father of modern plastic surgery. **Hinge Question:** Why was the creation of a specialized hospital like Sidcup necessary rather than treating facial trauma in general civilian hospitals?"
           },
           "text": "The men who came to us from the front had faces shattered by bullet and shell fragments: noses blown away, jaws pulverized, eyelids burned off by chemical gas. In civilian life, such men were objects of horror who shrank from public view, avoiding their own families.\nAt the Queen's Hospital in Sidcup, opened in 1917, we established an institution designed entirely for their rehabilitation. We developed the 'tubed pedicle' graft: a flap of skin was cut from the chest or neck, rolled into a cylinder with the raw surface inside, and stitched together. This ensured the pedicle retained its own living blood supply while one end was swung up and attached to the face. Once new blood vessels had grown into the facial tissues after three weeks, the other end was severed and shaped into a new nose, jaw, or eyelid. Over 11,000 surgical procedures were carried out, restoring not merely faces, but human dignity.",
-          "enquiry_question": "How does Source E demonstrate both the surgical and psychological significance of Harold Gillies' work at Queen's Hospital, Sidcup?"
+          "enquiry_question": "How does Source E demonstrate both the surgical and psychological significance of Harold Gillies' work at Queen's Hospital, Sidcup?",
+          "hinge_question": "Why was the creation of a specialized hospital like Sidcup necessary rather than treating facial trauma in general civilian hospitals?",
+          "source_context": "Sir Harold Gillies, Plastic Surgery of the Face, 1920. Gillies is recognized as the father of modern plastic surgery. **Hinge Question:** Why was the creation of a specialized hospital like Sidcup necessary rather than treating facial trauma in general civilian hospitals?"
         }
       ],
       "vocab": [
@@ -26402,7 +26637,7 @@ const edexcel_medicine_data = {
   ],
   "edition": "2026.1"
 };
-if (typeof module !== "undefined" && module.exports) {
+if (typeof module !== 'undefined' && module.exports) {
   module.exports = edexcel_medicine_data;
 }
 export default edexcel_medicine_data;

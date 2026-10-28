@@ -1,6 +1,4 @@
 const cold_war_data = {
-  "homepage_background": "/images/cold_war_cover.jpg",
-  "cover_image": "/images/cold_war_cover.jpg",
   "id": "cold_war",
   "title": "The Cold War & Global Flashpoints (1945–1991)",
   "enquiry": "Superpower Relations and the Cold War: How did ideological rivalry divide the globe on the brink of nuclear destruction?",
@@ -171,7 +169,7 @@ const cold_war_data = {
       "id": "lesson_1",
       "title": "Ideological Clash: Why could Capitalism and Communism never peacefully coexist?",
       "enquiryQuestion": "Why did irreconcilable economic and political philosophies make conflict between the USA and USSR inevitable after 1945?",
-      "card_image": "/images/potsdam_conference_1945.jpg",
+      "card_image": "/images/cold_war_jfk_khrushchev_1961.jpg",
       "card_position": "center 25%",
       "prologue": "In 1945, the defeat of Nazi Germany left two superpowers dominating the globe: capitalist America and communist Russia. Washington championed democracy, free markets, and individual liberty; Moscow demanded classless socialism and state control. Why was genuine, lasting peace between these two irreconcilable political ideologies impossible from the very beginning?",
       "do_now": {
@@ -537,7 +535,11 @@ const cold_war_data = {
             "Author: Joseph Stalin, General Secretary of the Communist Party and Soviet Premier.",
             "Audience: Soviet voters, Red Army soldiers, and Western diplomatic observers.",
             "Motive: To rally Soviet society for renewed industrial sacrifice and ideologically justify the emerging division with the West."
-          ]
+          ],
+          "source_context": "Stalin’s Bolshoi speech shattered Western hopes that wartime cooperation would continue into peacetime. In Washington, Supreme Court Justice William O. Douglas described the address as 'The Declaration of World War Three,' prompting the US State Department to urgently demand diplomatic analysis. **Hinge Question:** Why did Western leaders interpret Stalin’s ideological speech as a direct military warning to the capitalist world?",
+          "teacher_notes": {
+            "source_context": "Stalin’s Bolshoi speech shattered Western hopes that wartime cooperation would continue into peacetime. In Washington, Supreme Court Justice William O. Douglas described the address as 'The Declaration of World War Three,' prompting the US State Department to urgently demand diplomatic analysis. **Hinge Question:** Why did Western leaders interpret Stalin’s ideological speech as a direct military warning to the capitalist world?"
+          }
         },
         {
           "id": "cw_l1_src_b",
@@ -581,7 +583,11 @@ const cold_war_data = {
             "Author: Vladimir Ilyich Lenin, leader of the Bolshevik Revolution and founder of the USSR.",
             "Audience: Revolutionary cadres, industrial workers, and international communist delegates.",
             "Motive: To legitimize absolute one-party rule and prohibit internal factional dissent."
-          ]
+          ],
+          "source_context": "Lenin’s core text established the bedrock doctrine taught in every Soviet school and university. To Western observers, this text proved that communist states were ideologically committed to the violent destruction of capitalist democracies. **Hinge Question:** If Soviet leaders were educated on Lenin's doctrine of violent revolution, why was it difficult for Western democracies to trust Soviet promises of peace?",
+          "teacher_notes": {
+            "source_context": "Lenin’s core text established the bedrock doctrine taught in every Soviet school and university. To Western observers, this text proved that communist states were ideologically committed to the violent destruction of capitalist democracies. **Hinge Question:** If Soviet leaders were educated on Lenin's doctrine of violent revolution, why was it difficult for Western democracies to trust Soviet promises of peace?"
+          }
         },
         {
           "id": "cw_l1_src_c",
@@ -625,7 +631,11 @@ const cold_war_data = {
             "Author: David Low, celebrated New Zealand-born British political cartoonist.",
             "Audience: British and international newspaper readers following Churchill’s Fulton address.",
             "Motive: To satirize Soviet paranoia and warn democratic publics that wartime alliance had been replaced by totalitarian isolation."
-          ]
+          ],
+          "source_context": "David Low was widely regarded as the greatest political cartoonist of the 20th century. Here he visualizes Churchill's metaphor of the Iron Curtain, capturing the British public's growing dismay that wartime alliance with Russia had transformed into secretive hostility. **Hinge Question:** What visual symbols does the cartoonist use to show that the Soviet government was deliberately shutting itself off from the rest of the world?",
+          "teacher_notes": {
+            "source_context": "David Low was widely regarded as the greatest political cartoonist of the 20th century. Here he visualizes Churchill's metaphor of the Iron Curtain, capturing the British public's growing dismay that wartime alliance with Russia had transformed into secretive hostility. **Hinge Question:** What visual symbols does the cartoonist use to show that the Soviet government was deliberately shutting itself off from the rest of the world?"
+          }
         },
         {
           "id": "cw_l1_src_d",
@@ -669,7 +679,11 @@ const cold_war_data = {
             "Author: George F. Kennan, Deputy Chief of Mission at the US Embassy in Moscow.",
             "Audience: US Secretary of State James Byrnes and senior Truman administration policymakers.",
             "Motive: To convince Washington to abandon naive wartime cooperation and adopt a firm, vigilant strategy of global containment."
-          ]
+          ],
+          "source_context": "Kennan’s telegram circulated through the highest levels of the Truman administration. Kennan argued that traditional diplomacy would fail with Moscow because Soviet leaders needed external enemies to justify their own tyrannical rule at home. **Hinge Question:** How did Kennan's claim that Soviet power is 'highly sensitive to logic of force' persuade President Truman to adopt a policy of military containment?",
+          "teacher_notes": {
+            "source_context": "Kennan’s telegram circulated through the highest levels of the Truman administration. Kennan argued that traditional diplomacy would fail with Moscow because Soviet leaders needed external enemies to justify their own tyrannical rule at home. **Hinge Question:** How did Kennan's claim that Soviet power is 'highly sensitive to logic of force' persuade President Truman to adopt a policy of military containment?"
+          }
         },
         {
           "id": "cw_l1_src_e",
@@ -713,115 +727,13 @@ const cold_war_data = {
             "Author: State Publishing House for Political Literature (Gospolitizdat), Moscow.",
             "Audience: Soviet factory workers, collective farmers, and Red Army soldiers.",
             "Motive: To mobilize the Soviet population for exhausting post-war reconstruction while reinforcing ideological loyalty to Stalin."
-          ]
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 & GCSE Bridging: Disciplinary Writing Practice",
-        "tariff": "8 marks (Feature Drill [4m] & Consequence Writing [4m])",
-        "questions": [
-          {
-            "tariff": "4 marks",
-            "type": "feature_drills_4m",
-            "question": "Describe two features of the ideological differences between the USA and the USSR in 1945. [4 marks]",
-            "prompt": "Identify two distinct ideological features. For each feature, provide a clear identification followed by supporting detailed knowledge.",
-            "model": "Feature 1: One key ideological difference was their conflicting economic models.<br>Detail: The United States operated on free-market capitalism, private property, and corporate enterprise, whereas the Soviet Union enforced a state-controlled command economy where the government owned all land, factories, and resources according to Marxist-Leninist principles.<br><br>Feature 2: A second fundamental difference lay in their political structures.<br>Detail: The American political system was a liberal democracy with multi-party elections, free speech, and constitutional rights, whereas the USSR was a totalitarian one-party state governed exclusively by the Communist Party with zero permitted political opposition.",
-            "scaffolding": {
-              "acronym": "F1 + D1 • F2 + D2",
-              "acronym_title": "4-Mark Feature Drill Formula",
-              "steps": [
-                {
-                  "letter": "F1",
-                  "name": "Feature 1 (Economic)",
-                  "prompt": "Identify the difference between free enterprise and a state command economy.",
-                  "starter": "One key ideological difference was that the USA was based on..."
-                },
-                {
-                  "letter": "D1",
-                  "name": "Detail 1",
-                  "prompt": "Add precise factual detail contrasting capitalism and communism.",
-                  "starter": "Specifically, this involved..."
-                },
-                {
-                  "letter": "F2",
-                  "name": "Feature 2 (Political)",
-                  "prompt": "Identify the difference between liberal democracy and a one-party dictatorship.",
-                  "starter": "A second fundamental difference was that the Soviet Union operated on..."
-                },
-                {
-                  "letter": "D2",
-                  "name": "Detail 2",
-                  "prompt": "Add precise factual detail regarding elections, political parties, and state control.",
-                  "starter": "In particular, this meant that..."
-                }
-              ],
-              "sentence_starters": [
-                "One key ideological difference was...",
-                "Specifically, this meant that...",
-                "A second fundamental difference was...",
-                "In particular, this involved..."
-              ],
-              "connectives_bank": [
-                "Capitalism",
-                "Communism",
-                "Karl Marx",
-                "Vladimir Lenin",
-                "Command Economy",
-                "Free Enterprise",
-                "Liberal Democracy",
-                "One-Party State"
-              ]
-            }
-          },
-          {
-            "tariff": "4 marks",
-            "type": "consequence_4m",
-            "question": "Explain one consequence of the American development of the atomic bomb for superpower relations in 1945. [4 marks]",
-            "prompt": "Focus on how Truman’s nuclear monopoly at Potsdam deepened Soviet insecurity and spurred an immediate crash nuclear research programme.",
-            "model": "One significant consequence of the American development of the atomic bomb was the immediate escalation of mutual suspicion and the inception of the nuclear arms race. When President Truman casually informed Joseph Stalin at the Potsdam Conference in July 1945 that the US possessed a 'weapon of unusual destructive power', Stalin recognized that the American atomic monopoly fundamentally threatened the Soviet Union's security and wartime gains in Eastern Europe. Consequently, rather than intimidating the USSR into diplomatic concessions, the bombings of Hiroshima and Nagasaki convinced Stalin that the West sought atomic blackmail. In direct response, Stalin ordered a massive, crash scientific effort—Operation Borodino—to develop a Soviet nuclear bomb, which successfully broke the American monopoly by August 1949 and entrenched the perilous 'balance of terror'.",
-            "scaffolding": {
-              "acronym": "P-F-C (Point • Fact • Consequence)",
-              "acronym_title": "High-Yield Consequence Formula (1 Concise Paragraph)",
-              "steps": [
-                {
-                  "letter": "POINT",
-                  "name": "Identify Consequence",
-                  "prompt": "State the clear consequence (e.g. Soviet insecurity and the onset of the nuclear arms race).",
-                  "starter": "One significant consequence of the atomic bomb was..."
-                },
-                {
-                  "letter": "FACT",
-                  "name": "Historical Evidence",
-                  "prompt": "Cite specific historical facts (Potsdam Conference, Truman, Hiroshima, Soviet atomic crash programme).",
-                  "starter": "In particular, at the Potsdam Conference in July 1945..."
-                },
-                {
-                  "letter": "CONSEQUENCE",
-                  "name": "Explain Result",
-                  "prompt": "Explain how this directly altered superpower relations and spurred the balance of terror.",
-                  "starter": "Consequently, this directly resulted in..."
-                }
-              ],
-              "sentence_starters": [
-                "A significant consequence was that...",
-                "In particular, this meant that...",
-                "Consequently, the impact was...",
-                "As a direct result..."
-              ],
-              "connectives_bank": [
-                "Hiroshima",
-                "Nagasaki",
-                "Nuclear Monopoly",
-                "Potsdam Conference",
-                "Harry S. Truman",
-                "Joseph Stalin",
-                "Balance of Terror",
-                "Operation Borodino"
-              ]
-            }
+          ],
+          "source_context": "While Western observers saw Soviet elections as rubber-stamp shams, Soviet domestic propaganda relentlessly hammered home economic comparisons: emphasizing full employment and social welfare to contrast with memories of the 1930s Western Great Depression. **Hinge Question:** Why did Soviet propaganda focus so heavily on full employment and healthcare while completely ignoring the absence of political opposition?",
+          "teacher_notes": {
+            "source_context": "While Western observers saw Soviet elections as rubber-stamp shams, Soviet domestic propaganda relentlessly hammered home economic comparisons: emphasizing full employment and social welfare to contrast with memories of the 1930s Western Great Depression. **Hinge Question:** Why did Soviet propaganda focus so heavily on full employment and healthcare while completely ignoring the absence of political opposition?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_2",
@@ -1188,7 +1100,11 @@ const cold_war_data = {
             "Author: US Army Signal Corps / Allied Summit official photographer.",
             "Audience: Global wartime public and international press.",
             "Motive: To present an image of seamless Allied unity and confidence prior to the final defeat of Nazi Germany."
-          ]
+          ],
+          "source_context": "This iconic photograph captures the delicate summit diplomacy of the Grand Alliance. Roosevelt looks noticeably frail (he died two months later), while Stalin appears confident on home territory. **Hinge Question:** Why was it far easier for these three leaders to agree on defeating Nazi Germany than on how Europe should be governed after the war?",
+          "teacher_notes": {
+            "source_context": "This iconic photograph captures the delicate summit diplomacy of the Grand Alliance. Roosevelt looks noticeably frail (he died two months later), while Stalin appears confident on home territory. **Hinge Question:** Why was it far easier for these three leaders to agree on defeating Nazi Germany than on how Europe should be governed after the war?"
+          }
         },
         {
           "id": "cw_l2_src_b",
@@ -1232,7 +1148,11 @@ const cold_war_data = {
             "Author: Franklin D. Roosevelt, Winston Churchill, and Joseph Stalin.",
             "Audience: Citizens of liberated European nations and the worldwide press.",
             "Motive: To establish legitimate post-war governance and calm Western anxieties about unilateral Soviet political takeovers."
-          ]
+          ],
+          "source_context": "This declaration was hailed in the West as a triumph for democracy. However, Stalin interpreted 'democratic' governments in Eastern Europe to mean governments that were unconditionally friendly and subservient to Moscow. **Hinge Question:** Why did Stalin's definition of 'democracy' in Poland completely contradict what Churchill and Roosevelt expected when they signed this declaration?",
+          "teacher_notes": {
+            "source_context": "This declaration was hailed in the West as a triumph for democracy. However, Stalin interpreted 'democratic' governments in Eastern Europe to mean governments that were unconditionally friendly and subservient to Moscow. **Hinge Question:** Why did Stalin's definition of 'democracy' in Poland completely contradict what Churchill and Roosevelt expected when they signed this declaration?"
+          }
         },
         {
           "id": "cw_l2_src_c",
@@ -1276,7 +1196,11 @@ const cold_war_data = {
             "Author: Official Allied conference photographer at Cecilienhof.",
             "Audience: Diplomatic history records and international press correspondents.",
             "Motive: To record the high-level meeting where personal relationships between new American and Soviet leaders were tested."
-          ]
+          ],
+          "source_context": "Unlike the diplomatic Roosevelt, Truman was blunt and combative. Having received news of the successful Trinity atomic bomb test just hours earlier, Truman was determined to halt Soviet expansion in Eastern Europe. **Hinge Question:** Did Truman's aggressive, no-nonsense style trigger Soviet paranoia, or was Stalin already planning to dominate Eastern Europe regardless of who was US president?",
+          "teacher_notes": {
+            "source_context": "Unlike the diplomatic Roosevelt, Truman was blunt and combative. Having received news of the successful Trinity atomic bomb test just hours earlier, Truman was determined to halt Soviet expansion in Eastern Europe. **Hinge Question:** Did Truman's aggressive, no-nonsense style trigger Soviet paranoia, or was Stalin already planning to dominate Eastern Europe regardless of who was US president?"
+          }
         },
         {
           "id": "cw_l2_src_d",
@@ -1320,7 +1244,11 @@ const cold_war_data = {
             "Author: US Army Air Forces 509th Composite Group photographer.",
             "Audience: Military leadership, President Truman, and the global public.",
             "Motive: To document the operational success and unprecedented destructive power of the world’s first combat nuclear weapon."
-          ]
+          ],
+          "source_context": "This deeply personal diary entry shows Truman grappling with the terrifying moral weight of atomic weaponry while simultaneously realizing that it gave America supreme geopolitical supremacy over Stalin. **Hinge Question:** Truman wrote that the atomic bomb might be 'the most terrible thing ever discovered.' Why did he still choose to drop it on Hiroshima and Nagasaki two weeks later?",
+          "teacher_notes": {
+            "source_context": "This deeply personal diary entry shows Truman grappling with the terrifying moral weight of atomic weaponry while simultaneously realizing that it gave America supreme geopolitical supremacy over Stalin. **Hinge Question:** Truman wrote that the atomic bomb might be 'the most terrible thing ever discovered.' Why did he still choose to drop it on Hiroshima and Nagasaki two weeks later?"
+          }
         },
         {
           "id": "cw_l2_src_e",
@@ -1364,69 +1292,13 @@ const cold_war_data = {
             "Author: Official British, American, and Soviet summit secretariat.",
             "Audience: The defeated German population and the worldwide public.",
             "Motive: To formalize the four-power occupation regime and prevent Germany from ever re-emerging as a military threat."
-          ]
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 & GCSE Bridging: Disciplinary Writing Practice",
-        "tariff": "Question 2: Narrative Account [8 marks • 12 mins]",
-        "questions": [
-          {
-            "tariff": "8 marks",
-            "type": "narrative_8",
-            "question": "Write a narrative account analysing how relations between the Grand Alliance deteriorated between February and August 1945. [8 marks]",
-            "stimulus": [
-              "The agreements reached at the Yalta Conference (February 1945)",
-              "The successful Trinity nuclear test and the Potsdam Conference (July–August 1945)"
-            ],
-            "prompt": "Write a three-paragraph chronological narrative showing clear causal links between each stage: Yalta agreements -> growing mistrust over Poland and leadership changes -> Potsdam confrontation and atomic leverage.",
-            "model": "The breakdown of relations between the Grand Alliance began with fragile compromises reached at the Yalta Conference in February 1945. Although Churchill, Roosevelt, and Stalin appeared united in agreeing to divide defeated Germany and Berlin into four occupation zones and signed the Declaration on Liberated Europe promising free elections, deep disagreements over Poland's future were merely papered over. Stalin demanded that Poland's eastern border be pushed westward to the Curzon Line to guarantee Soviet security, while insisting on the installation of the pro-Soviet Lublin Committee as Poland's provisional government.<br><br>Following Yalta, tensions escalated rapidly during the spring of 1945 as mutual trust disintegrated. Franklin D. Roosevelt died in April 1945, replaced by the combative, fiercely anti-communist Harry S. Truman, who favoured a far tougher line against Moscow. Simultaneously, the Red Army's refusal to permit democratic elections in Poland and the arrest of sixteen Polish underground leaders convinced Washington and London that Stalin intended to impose permanent totalitarian puppet regimes across Eastern Europe in direct violation of the Yalta accords.<br><br>This deterioration culminated at the Potsdam Conference in July and August 1945, where wartime partnership finally collapsed into open confrontation. Shortly before the conference opened, the US successfully detonated the world's first atomic weapon in the Trinity test. Armed with nuclear leverage, Truman adopted an uncompromising stance, fiercely resisting Stalin's demands for heavy industrial reparations from the Western German zones. Consequently, the allies could only agree to extract reparations from their own respective zones, effectively partitioning Germany economically and cementing the geopolitical division that came to define the Cold War.",
-            "scaffolding": {
-              "acronym": "Phase 1 -> Phase 2 -> Phase 3 (Chronological Narrative)",
-              "acronym_title": "Narrative Account Formula: Cause • Turning Point • Outcome",
-              "steps": [
-                {
-                  "letter": "PHASE 1",
-                  "name": "Yalta Cooperation & Tensions",
-                  "prompt": "Explain the 4-zone agreement and the underlying friction over Polish borders and free elections.",
-                  "starter": "Initially, at the Yalta Conference in February 1945..."
-                },
-                {
-                  "letter": "PHASE 2",
-                  "name": "Escalation & Leadership Change",
-                  "prompt": "Explain how Roosevelt’s death, Truman’s accession, and Soviet actions in Poland deepened suspicion.",
-                  "starter": "Following this, tensions escalated sharply when..."
-                },
-                {
-                  "letter": "PHASE 3",
-                  "name": "Potsdam & Atomic Leverage",
-                  "prompt": "Explain the impact of the Trinity nuclear test and disputes over German reparations.",
-                  "starter": "A decisive turning point occurred in July 1945 when..."
-                }
-              ],
-              "sentence_starters": [
-                "Initially, at Yalta, the Allies reached agreement on...",
-                "Following this, tensions escalated sharply when...",
-                "A decisive turning point occurred in July 1945 when...",
-                "Consequently, at Potsdam...",
-                "This culminated in..."
-              ],
-              "connectives_bank": [
-                "Yalta",
-                "Big Three",
-                "Four Zones",
-                "Declaration on Liberated Europe",
-                "Lublin Poles",
-                "Harry S. Truman",
-                "Clement Attlee",
-                "Trinity Test",
-                "Potsdam",
-                "Industrial Reparations"
-              ]
-            }
+          ],
+          "source_context": "While the Potsdam Agreement mandated that Germany be treated as a 'single economic unit,' the four powers (US, USSR, Britain, France) each administered their own zones completely differently. Stalin systematically stripped his Eastern zone of industrial machinery as reparations, setting the stage for the permanent division of Germany. **Hinge Question:** Why did the pledge to treat Germany as a 'single economic unit' fail within months of signing this agreement?",
+          "teacher_notes": {
+            "source_context": "While the Potsdam Agreement mandated that Germany be treated as a 'single economic unit,' the four powers (US, USSR, Britain, France) each administered their own zones completely differently. Stalin systematically stripped his Eastern zone of industrial machinery as reparations, setting the stage for the permanent division of Germany. **Hinge Question:** Why did the pledge to treat Germany as a 'single economic unit' fail within months of signing this agreement?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_3",
@@ -1793,7 +1665,11 @@ const cold_war_data = {
             "Author: Winston S. Churchill, former British Prime Minister and wartime leader.",
             "Audience: Students and faculty at Westminster College, President Truman, and the global public.",
             "Motive: To sound the alarm against Soviet expansion and persuade the United States to commit to a permanent Anglo-American security partnership."
-          ]
+          ],
+          "source_context": "Churchill was now the leader of the opposition in Britain. Free from diplomatic office, he used his speech to issue a direct warning to the American people that Stalin had betrayed his wartime promises and was turning Eastern Europe into a prison of communist police states. **Hinge Question:** Why did Soviet newspapers immediately attack Churchill as a 'warmonger' following this speech?",
+          "teacher_notes": {
+            "source_context": "Churchill was now the leader of the opposition in Britain. Free from diplomatic office, he used his speech to issue a direct warning to the American people that Stalin had betrayed his wartime promises and was turning Eastern Europe into a prison of communist police states. **Hinge Question:** Why did Soviet newspapers immediately attack Churchill as a 'warmonger' following this speech?"
+          }
         },
         {
           "id": "cw_l3_src_b",
@@ -1837,7 +1713,11 @@ const cold_war_data = {
             "Author: President Harry S. Truman and State Department speechwriters.",
             "Audience: The United States Congress, American citizens, and nations worldwide.",
             "Motive: To convince an isolationist, budget-conscious Congress to break with tradition and commit American resources to defending foreign democracies."
-          ]
+          ],
+          "source_context": "Britain had informed Washington that it could no longer afford to fund the royalist Greek government fighting communist guerrillas. Truman seized the moment to announce an open-ended American commitment to intervene globally to stop the spread of communism. **Hinge Question:** Was the Truman Doctrine a noble defense of human freedom, or an aggressive American pledge to police the entire globe?",
+          "teacher_notes": {
+            "source_context": "Britain had informed Washington that it could no longer afford to fund the royalist Greek government fighting communist guerrillas. Truman seized the moment to announce an open-ended American commitment to intervene globally to stop the spread of communism. **Hinge Question:** Was the Truman Doctrine a noble defense of human freedom, or an aggressive American pledge to police the entire globe?"
+          }
         },
         {
           "id": "cw_l3_src_c",
@@ -1880,7 +1760,11 @@ const cold_war_data = {
             "Author: Combined Airlift Task Force (USAF and British RAF headquarters).",
             "Audience: Transport pilots, navigators, and air traffic controllers at Tempelhof and Gatow.",
             "Motive: To plot exact flight corridors that avoided triggering direct aerial combat with Soviet forces."
-          ]
+          ],
+          "source_context": "When Stalin cut all road, canal, and railway connections to West Berlin on 24 June 1948, the Allies only had a written agreement guaranteeing air access. This map dictated the flight path for over 278,000 transport sorties. **Hinge Question:** Why did Stalin stop all road and rail traffic into Berlin, but deliberately avoid shooting down Allied transport planes in these air corridors?",
+          "teacher_notes": {
+            "source_context": "When Stalin cut all road, canal, and railway connections to West Berlin on 24 June 1948, the Allies only had a written agreement guaranteeing air access. This map dictated the flight path for over 278,000 transport sorties. **Hinge Question:** Why did Stalin stop all road and rail traffic into Berlin, but deliberately avoid shooting down Allied transport planes in these air corridors?"
+          }
         },
         {
           "id": "cw_l3_src_d",
@@ -1923,7 +1807,11 @@ const cold_war_data = {
             "Author: US Air Force Public Relations / military press correspondents.",
             "Audience: German civilians, the American public, and international readers.",
             "Motive: To highlight Western compassion and generate domestic support for sustaining the expensive round-the-clock airlift."
-          ]
+          ],
+          "source_context": "During the 11-month blockade, Allied aircraft landed every 90 seconds, delivering over 2.3 million tons of flour, coal, and medicine. Lieutenant Gail Halvorsen began dropping candy bars attached to tiny handkerchief parachutes for Berlin children, turning a military standoff into an immense humanitarian propaganda victory. **Hinge Question:** How did the Berlin Airlift transform how ordinary Germans viewed American and British soldiers—from wartime conquerors into protectors?",
+          "teacher_notes": {
+            "source_context": "During the 11-month blockade, Allied aircraft landed every 90 seconds, delivering over 2.3 million tons of flour, coal, and medicine. Lieutenant Gail Halvorsen began dropping candy bars attached to tiny handkerchief parachutes for Berlin children, turning a military standoff into an immense humanitarian propaganda victory. **Hinge Question:** How did the Berlin Airlift transform how ordinary Germans viewed American and British soldiers—from wartime conquerors into protectors?"
+          }
         },
         {
           "id": "cw_l3_src_e",
@@ -1967,71 +1855,13 @@ const cold_war_data = {
             "Author: Foreign ministers of the 12 founding Western democratic nations.",
             "Audience: The Soviet Union, the citizens of member states, and the global public.",
             "Motive: To permanently deter Soviet military expansion into Western Europe by tying American nuclear power to European defence."
-          ]
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 & GCSE Bridging: Disciplinary Writing Practice",
-        "tariff": "Question 3: Forensic Source Utility [8 marks • 10 mins]",
-        "questions": [
-          {
-            "tariff": "8 marks",
-            "type": "utility_of_sources_8m",
-            "question": "How useful are Sources A and B for an enquiry into the reasons for the Berlin Blockade and the Allied response (1948–1949)? [8 marks]",
-            "stimulus": [
-              "Source A: From a speech by British Foreign Secretary Ernest Bevin to the House of Commons, 30 June 1948.",
-              "Source B: A British political cartoon by David Low in the Evening Standard, July 1948, showing a Soviet bear looking up at an endless skyway of cargo planes landing in Berlin."
-            ],
-            "prompt": "Evaluate Source A (Content & Provenance), evaluate Source B (Content & Provenance), and reach a sustained comparative conclusion on utility.",
-            "model": "<strong>Content &amp; Context:</strong> Source A is exceptionally useful because it provides direct evidence of the British government’s official determination to resist Soviet coercion in Berlin without triggering armed conflict. Bevin explicitly identifies Stalin’s tactic—using starvation of 2.5 million West Berliners to force an Allied retreat—and states Britain’s counter-strategy of supplying the city entirely by air. This is closely corroborated by historical facts: the Western Allies launched Operation Vittles, delivering over 2.3 million tons of food, fuel, and coal across 278,000 flights, ultimately forcing Stalin to lift the blockade in May 1949.<br><br><strong>Provenance &amp; Limitations:</strong> The provenance strongly enhances its utility as an authoritative statement of state policy. Delivered in the House of Commons by the British Foreign Secretary in June 1948, it reveals the immediate geopolitical calculation of the British Cabinet. However, an analytical limitation is its political purpose: Bevin is speaking publicly to maintain parliamentary and national morale, so he intentionally downplays the catastrophic logistical risks of the early airlift and the genuine Allied fears of an accidental military confrontation. Overall, Source A remains a primary benchmark for understanding Allied political resolve.",
-            "scaffolding": {
-              "acronym": "Source A (COP) • Source B (COP) • Comparative Utility",
-              "acronym_title": "8-Mark Source Utility Structure Strip",
-              "steps": [
-                {
-                  "letter": "SOURCE A",
-                  "name": "Content & Provenance of Source A",
-                  "prompt": "Analyse Bevin’s speech: official resolve, humanitarian supply vs political morale purpose.",
-                  "starter": "Source A is exceptionally useful because it provides direct evidence of..."
-                },
-                {
-                  "letter": "SOURCE B",
-                  "name": "Content & Provenance of Source B",
-                  "prompt": "Analyse Low’s cartoon: Soviet helplessness, Allied logistics, British popular press perspective.",
-                  "starter": "Source B provides valuable visual evidence by illustrating..."
-                },
-                {
-                  "letter": "JUDGMENT",
-                  "name": "Comparative Synthesis",
-                  "prompt": "Weigh both sources together for investigating the blockade and airlift.",
-                  "starter": "Overall, both sources are highly useful because together they combine..."
-                }
-              ],
-              "sentence_starters": [
-                "Source A is useful for showing...",
-                "This is supported by my knowledge that...",
-                "However, the provenance reveals that...",
-                "Source B is useful because it visually illustrates...",
-                "Overall, both sources are highly valuable because..."
-              ],
-              "connectives_bank": [
-                "Iron Curtain",
-                "Long Telegram",
-                "Truman Doctrine",
-                "Marshall Plan",
-                "Trizonia",
-                "Deutsche Mark",
-                "Berlin Blockade",
-                "Operation Vittles",
-                "Tempelhof",
-                "Gail Halvorsen",
-                "NATO",
-                "Warsaw Pact"
-              ]
-            }
+          ],
+          "source_context": "The Berlin Blockade convinced Western leaders that Stalin was prepared to use force to expand his empire. NATO was created to link American nuclear power directly to the defense of Western Europe. **Hinge Question:** Why was signing Article 5 such a historic turning point for the United States, which had avoided permanent European military alliances for 150 years?",
+          "teacher_notes": {
+            "source_context": "The Berlin Blockade convinced Western leaders that Stalin was prepared to use force to expand his empire. NATO was created to link American nuclear power directly to the defense of Western Europe. **Hinge Question:** Why was signing Article 5 such a historic turning point for the United States, which had avoided permanent European military alliances for 150 years?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_4",
@@ -2401,7 +2231,11 @@ const cold_war_data = {
             "Author: CIA National Photographic Interpretation Center (NPIC) analysts.",
             "Audience: President John F. Kennedy and the Executive Committee of the National Security Council (ExComm).",
             "Motive: To provide undeniable photographic proof that Nikita Khrushchev had covertly stationed offensive nuclear weapons 90 miles from Florida."
-          ]
+          ],
+          "source_context": "This photograph triggered the Cuban Missile Crisis. NPIC analysts proved that Soviet technicians were constructing launch pads capable of targeting Washington, D.C., New York, and major US cities within minutes. **Hinge Question:** Why did Soviet missiles placed in Cuba pose a far greater psychological and military threat to America than missiles based inside Russia?",
+          "teacher_notes": {
+            "source_context": "This photograph triggered the Cuban Missile Crisis. NPIC analysts proved that Soviet technicians were constructing launch pads capable of targeting Washington, D.C., New York, and major US cities within minutes. **Hinge Question:** Why did Soviet missiles placed in Cuba pose a far greater psychological and military threat to America than missiles based inside Russia?"
+          }
         },
         {
           "id": "cw_l4_src_b",
@@ -2445,7 +2279,11 @@ const cold_war_data = {
             "Author: Leslie Gilbert Illingworth, renowned British political cartoonist.",
             "Audience: Readers of the British press and international observers following the Cuban Missile Crisis.",
             "Motive: To satirize superpower brinkmanship and demonstrate that neither leader could risk pushing the conflict to open war without destroying civilization."
-          ]
+          ],
+          "source_context": "Illingworth perfectly captured the concept of Mutually Assured Destruction (MAD). Both Kennedy and Khrushchev were trapped by their own military arsenals; pushing for victory meant total annihilation for both. **Hinge Question:** Why does the cartoonist show both leaders sweating with their fingers hovering over the detonator buttons?",
+          "teacher_notes": {
+            "source_context": "Illingworth perfectly captured the concept of Mutually Assured Destruction (MAD). Both Kennedy and Khrushchev were trapped by their own military arsenals; pushing for victory meant total annihilation for both. **Hinge Question:** Why does the cartoonist show both leaders sweating with their fingers hovering over the detonator buttons?"
+          }
         },
         {
           "id": "cw_l4_src_c",
@@ -2490,7 +2328,11 @@ const cold_war_data = {
             "Author: President John F. Kennedy (drafted with Theodore Sorensen and McGeorge Bundy).",
             "Audience: The American public, Soviet Premier Nikita Khrushchev, and global citizens.",
             "Motive: To inform the world of the secret Soviet deployment, justify the naval quarantine, and draw a non-negotiable red line."
-          ]
+          ],
+          "source_context": "Kennedy had concealed the crisis for six days while debating secretly with his Executive Committee (ExComm). This address informed an astonished world that nuclear armageddon was suddenly imminent. **Hinge Question:** General Curtis LeMay urged Kennedy to immediately bomb the missile sites. Why did Kennedy resist military pressure and choose a naval quarantine instead?",
+          "teacher_notes": {
+            "source_context": "Kennedy had concealed the crisis for six days while debating secretly with his Executive Committee (ExComm). This address informed an astonished world that nuclear armageddon was suddenly imminent. **Hinge Question:** General Curtis LeMay urged Kennedy to immediately bomb the missile sites. Why did Kennedy resist military pressure and choose a naval quarantine instead?"
+          }
         },
         {
           "id": "cw_l4_src_d",
@@ -2534,7 +2376,11 @@ const cold_war_data = {
             "Author: President John F. Kennedy and national security advisers.",
             "Audience: Premier Nikita Khrushchev and the Soviet Politburo.",
             "Motive: To communicate directly and secretly to prevent a fatal misunderstanding at sea."
-          ]
+          ],
+          "source_context": "This remarkable letter revealed to Kennedy that Khrushchev was terrified of the crisis spiraling out of control. It opened the diplomatic path that allowed both sides to reach a face-saving compromise. **Hinge Question:** Does Khrushchev’s emotional, unedited letter show a dangerous dictator backing down, or a terrified human being desperate to prevent a nuclear apocalypse?",
+          "teacher_notes": {
+            "source_context": "This remarkable letter revealed to Kennedy that Khrushchev was terrified of the crisis spiraling out of control. It opened the diplomatic path that allowed both sides to reach a face-saving compromise. **Hinge Question:** Does Khrushchev’s emotional, unedited letter show a dangerous dictator backing down, or a terrified human being desperate to prevent a nuclear apocalypse?"
+          }
         },
         {
           "id": "cw_l4_src_e",
@@ -2577,71 +2423,13 @@ const cold_war_data = {
             "Author: US Navy reconnaissance / Soviet naval archival records.",
             "Audience: Naval intelligence officers and post-Cold War historical accounts.",
             "Motive: To document the closest single moment human civilization came to total nuclear annihilation."
-          ]
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 & GCSE Bridging: Disciplinary Writing Practice",
-        "tariff": "Question 4: Evaluative Statement Essay [12 marks • 15 mins]",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "causal_explanation_12m",
-            "question": "‘President Kennedy’s decisive leadership and naval quarantine were the main reasons the Cuban Missile Crisis was resolved peacefully.’ How far do you agree? [12 marks]",
-            "stimulus": [
-              "Kennedy’s decision to impose a naval quarantine instead of launching airstrikes (October 1962)",
-              "Khrushchev’s willingness to compromise and the secret agreement to remove US Jupiter missiles from Turkey"
-            ],
-            "prompt": "Write a balanced, evaluative three-paragraph essay evaluating Kennedy’s quarantine vs Khrushchev’s pragmatism and the secret Turkey missile deal, concluding with a sustained verdict.",
-            "model": "To a significant extent, it can be argued that President John F. Kennedy's measured leadership and implementation of the naval quarantine were crucial in resolving the Cuban Missile Crisis peacefully. When U-2 spy plane photographs revealed Soviet SS-4 medium-range ballistic missiles in Cuba in October 1962, military chiefs in ExComm passionately urged an immediate preemptive airstrike and invasion. Kennedy demonstrated extraordinary restraint by rejecting these hawkish demands, recognizing that bombing missile sites would inevitably kill Soviet personnel and provoke an all-out nuclear war. Instead, Kennedy chose a naval 'quarantine' (blockade), which halted Soviet transport ships 800 miles off Cuba. This measured move established unyielding American resolve while buying vital time and offering Soviet Premier Nikita Khrushchev a non-lethal diplomatic off-ramp.<br><br>However, an alternative perspective demonstrates that the crisis was equally resolved by Khrushchev's willingness to de-escalate and the vital, confidential compromises negotiated between the superpowers. Despite aggressive posturing, Khrushchev was acutely aware that the United States held an overwhelming seventeen-to-one nuclear superiority and had no desire to trigger global thermonuclear annihilation. In his urgent letters of 26 and 27 October, Khrushchev offered a pragmatic compromise: the USSR would dismantle and withdraw its offensive missiles from Cuba under UN verification in exchange for an American public pledge never to invade Cuba. Crucially, secret backchannel negotiations between Robert F. Kennedy and Soviet Ambassador Anatoly Dobrynin sealed the agreement when the US secretly promised to withdraw its obsolete Jupiter nuclear missiles from Turkey within six months.<br><br>In conclusion, while Kennedy’s decisive leadership and resistance to his own generals prevented an immediate shooting war, it was the mutual recognition of Mutually Assured Destruction (MAD) that ultimately resolved the crisis. Neither leader could 'win' a nuclear exchange; therefore, peaceful resolution was achieved through bilateral compromise rather than unilateral American resolve alone.",
-            "scaffolding": {
-              "acronym": "Para 1 (Kennedy/Quarantine) • Para 2 (Khrushchev/Turkey Deal) • Para 3 (Verdict)",
-              "acronym_title": "12-Mark Evaluative Essay Structure Strip",
-              "steps": [
-                {
-                  "letter": "ARGUMENT",
-                  "name": "Kennedy’s Leadership & Quarantine",
-                  "prompt": "Explain how JFK resisted military airstrike pressure, bought time, and gave an off-ramp.",
-                  "starter": "To a large extent, it can be argued that Kennedy’s decisive leadership..."
-                },
-                {
-                  "letter": "COUNTER",
-                  "name": "Khrushchev & Secret Turkey Bargain",
-                  "prompt": "Explain Khrushchev’s letters, backchannel talks, and the secret removal of Jupiter missiles.",
-                  "starter": "On the other hand, an alternative view is that Khrushchev’s pragmatism..."
-                },
-                {
-                  "letter": "VERDICT",
-                  "name": "Criteria-Led Synthesis",
-                  "prompt": "Weigh whether American resolve or mutual dread of nuclear apocalypse (MAD) was decisive.",
-                  "starter": "In conclusion, the crisis was resolved primarily because..."
-                }
-              ],
-              "sentence_starters": [
-                "To a large extent, it can be argued that...",
-                "On the one hand, Kennedy’s leadership was pivotal because...",
-                "In particular, by implementing a quarantine rather than airstrikes...",
-                "On the other hand, an alternative view is that Khrushchev...",
-                "In conclusion, the crisis was resolved primarily because... rather than..."
-              ],
-              "connectives_bank": [
-                "Fidel Castro",
-                "Bay of Pigs",
-                "Operation Anadyr",
-                "U-2 Spy Plane",
-                "ExComm",
-                "Hawks vs Doves",
-                "Naval Quarantine",
-                "DEFCON 2",
-                "Vasili Arkhipov",
-                "Turkey Jupiter Missiles",
-                "MAD",
-                "Hotline"
-              ]
-            }
+          ],
+          "source_context": "Submarine B-59 was armed with a 10-kiloton nuclear torpedo. Cut off from Moscow and suffering from blistering 50°C cabin heat and battery failure, Captain Savitsky and Political Officer Maslennikov both voted to launch the nuclear weapon, believing World War III had already begun. Brigade Chief of Staff **Vasili Arkhipov** used his veto power to refuse authorization, single-handedly preventing a nuclear exchange. **Hinge Question:** How does Arkhipov's story prove that the world was saved from nuclear war not just by presidents in Washington and Moscow, but by the courage of one individual officer?",
+          "teacher_notes": {
+            "source_context": "Submarine B-59 was armed with a 10-kiloton nuclear torpedo. Cut off from Moscow and suffering from blistering 50°C cabin heat and battery failure, Captain Savitsky and Political Officer Maslennikov both voted to launch the nuclear weapon, believing World War III had already begun. Brigade Chief of Staff **Vasili Arkhipov** used his veto power to refuse authorization, single-handedly preventing a nuclear exchange. **Hinge Question:** How does Arkhipov's story prove that the world was saved from nuclear war not just by presidents in Washington and Moscow, but by the courage of one individual officer?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_5",
@@ -3008,7 +2796,11 @@ const cold_war_data = {
             "Author: Policy Planning Staff chaired by Paul Nitze for the National Security Council.",
             "Audience: President Harry S. Truman and senior cabinet secretaries.",
             "Motive: To persuade Truman to approve a massive, quadrupling of US defence spending to confront communism worldwide."
-          ]
+          ],
+          "source_context": "NSC-68 transformed US foreign policy from regional containment in Europe into a militarized global crusade. Two months after it was signed, North Korea invaded South Korea, convincing Washington that Moscow was launching its global military offensive. **Hinge Question:** Did the 'Domino Theory' accurately describe the spread of Asian communism, or did it blind American leaders to local struggles for national independence?",
+          "teacher_notes": {
+            "source_context": "NSC-68 transformed US foreign policy from regional containment in Europe into a militarized global crusade. Two months after it was signed, North Korea invaded South Korea, convincing Washington that Moscow was launching its global military offensive. **Hinge Question:** Did the 'Domino Theory' accurately describe the spread of Asian communism, or did it blind American leaders to local struggles for national independence?"
+          }
         },
         {
           "id": "cw_l5_src_b",
@@ -3052,7 +2844,11 @@ const cold_war_data = {
             "Author: US Army combat soldier serving on the front line.",
             "Audience: His family and parents back home in the United States.",
             "Motive: To express personal fear and the harsh human reality of guerrilla war that contradicted official military progress reports."
-          ]
+          ],
+          "source_context": "Most American soldiers in Vietnam were young draftees (average age 19, compared to 26 in WWII). This raw letter reveals the terrifying reality of asymmetric jungle warfare, where superior US firepower was neutralized by Viet Cong guerrilla tactics. **Hinge Question:** Why was high-tech American military firepower (helicopters, napalm, heavy artillery) often powerless against Viet Cong guerrilla tactics?",
+          "teacher_notes": {
+            "source_context": "Most American soldiers in Vietnam were young draftees (average age 19, compared to 26 in WWII). This raw letter reveals the terrifying reality of asymmetric jungle warfare, where superior US firepower was neutralized by Viet Cong guerrilla tactics. **Hinge Question:** Why was high-tech American military firepower (helicopters, napalm, heavy artillery) often powerless against Viet Cong guerrilla tactics?"
+          }
         },
         {
           "id": "cw_l5_src_c",
@@ -3096,7 +2892,11 @@ const cold_war_data = {
             "Author: Combat photographers and battlefield medical personnel.",
             "Audience: Military medical corps and wartime historical archives.",
             "Motive: To record the brutal human trauma of modern firepower deployed against guerrilla forces in rural terrain."
-          ]
+          ],
+          "source_context": "Dr. Trâm’s diary was saved from burning by an American intelligence officer who was told by his translator: 'Do not burn this, it already has fire in it.' It gives an extraordinary, deeply human voice to the Vietnamese fighters who endured relentless American bombing. **Hinge Question:** How does reading a young Vietnamese doctor’s private diary challenge the one-sided view of the Vietnam War often shown in Western movies?",
+          "teacher_notes": {
+            "source_context": "Dr. Trâm’s diary was saved from burning by an American intelligence officer who was told by his translator: 'Do not burn this, it already has fire in it.' It gives an extraordinary, deeply human voice to the Vietnamese fighters who endured relentless American bombing. **Hinge Question:** How does reading a young Vietnamese doctor’s private diary challenge the one-sided view of the Vietnam War often shown in Western movies?"
+          }
         },
         {
           "id": "cw_l5_src_d",
@@ -3139,7 +2939,11 @@ const cold_war_data = {
             "Author: US Army Signal Corps combat photographer.",
             "Audience: Pentagon military tacticians, commanders, and historical documentation.",
             "Motive: To document the extreme dangers faced by combat engineers attempting to clear underground enemy bunker complexes."
-          ]
+          ],
+          "source_context": "The helicopter defined the Vietnam War. Over 7,000 Hueys were deployed to airlift troops into inaccessible jungles, evacuate the wounded within minutes, and deliver massive firepower. **Hinge Question:** The US military flew over 36 million helicopter sorties in Vietnam. Why was overwhelming technological mobility still not enough to win the war?",
+          "teacher_notes": {
+            "source_context": "The helicopter defined the Vietnam War. Over 7,000 Hueys were deployed to airlift troops into inaccessible jungles, evacuate the wounded within minutes, and deliver massive firepower. **Hinge Question:** The US military flew over 36 million helicopter sorties in Vietnam. Why was overwhelming technological mobility still not enough to win the war?"
+          }
         },
         {
           "id": "cw_l5_src_e",
@@ -3182,73 +2986,13 @@ const cold_war_data = {
             "Author: Military Assistance Command, Vietnam (MACV) cartographic intelligence.",
             "Audience: US Joint Chiefs of Staff and national security leadership.",
             "Motive: To illustrate the unexpected breadth and coordination of the enemy’s nationwide winter-spring campaign."
-          ]
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 & GCSE Bridging: Disciplinary Writing Practice",
-        "tariff": "Question 2: Narrative Account [8 marks • 12 mins]",
-        "questions": [
-          {
-            "tariff": "8 marks",
-            "type": "narrative_8",
-            "question": "Write a narrative account analysing the key events in the escalation of American involvement in the Vietnam War between 1954 and 1968. [8 marks]",
-            "stimulus": [
-              "The French defeat at Dien Bien Phu and the division of Vietnam (1954)",
-              "The Gulf of Tonkin incident and the deployment of American ground combat troops (1964–1965)"
-            ],
-            "prompt": "Write a three-paragraph chronological narrative linking the French collapse and Geneva partition to the Gulf of Tonkin escalation and ground troop deployment up to the 1968 Tet Offensive.",
-            "model": "American involvement in Vietnam began following the decisive French military defeat at the Battle of Dien Bien Phu in May 1954. The subsequent Geneva Accords partitioned Vietnam temporarily along the 17th Parallel into a communist North under Ho Chi Minh and a pro-Western South. Fearing President Eisenhower's 'Domino Theory'—that the fall of Vietnam would cause Laos, Cambodia, and Thailand to collapse to communism—the United States replaced France as the primary Western power in Southeast Asia. Washington poured millions of dollars in economic aid and dispatched military advisers to prop up Ngo Dinh Diem’s repressive regime in Saigon while blocking the nationwide democratic elections scheduled for 1956.<br><br>This involvement escalated into direct military intervention following the contested Gulf of Tonkin incident in August 1964. After North Vietnamese patrol boats allegedly fired upon the USS Maddox, President Lyndon B. Johnson secured near-unanimous passage of the Gulf of Tonkin Resolution from Congress, granting him authority to take 'all necessary measures' to repel communist aggression. In February 1965, following Vietcong attacks on American bases at Pleiku, Johnson initiated Operation Rolling Thunder—a sustained, massive aerial bombing campaign against North Vietnam and the Ho Chi Minh Trail. Crucially, to protect American airfields, Johnson deployed the first 3,500 US combat Marines to Da Nang in March 1965, fundamentally transforming an advisory mission into a major ground war.<br><br>Between 1965 and 1968, American ground escalation expanded dramatically, eventually reaching over 536,000 troops. General William Westmoreland pursued a strategy of attrition through aggressive 'Search and Destroy' missions, but US forces struggled against the Vietcong's elusive guerrilla tactics, jungle booby traps, and extensive tunnel networks like Cu Chi. This spiral of escalation reached its bloody climax in January 1968 with the communist Tet Offensive. Although American and South Vietnamese forces inflicted catastrophic military casualties on the Vietcong, the sheer scale of the surprise nationwide assault shattered the Johnson administration’s claims of imminent victory, creating an insurmountable domestic credibility gap and turning American public opinion decisively against the war.",
-            "scaffolding": {
-              "acronym": "Geneva (1954) -> Tonkin & Marines (1964-65) -> Ground War & Tet (1968)",
-              "acronym_title": "Analytical Narrative Formula (Cause • Escalation • Climax)",
-              "steps": [
-                {
-                  "letter": "PHASE 1",
-                  "name": "French Defeat & Geneva Partition (1954)",
-                  "prompt": "Explain Dien Bien Phu, partition at 17th Parallel, Domino Theory, and early US aid to Diem.",
-                  "starter": "Initially, following the French defeat at Dien Bien Phu in 1954..."
-                },
-                {
-                  "letter": "PHASE 2",
-                  "name": "Tonkin Incident & Direct Combat (1964–65)",
-                  "prompt": "Explain the Gulf of Tonkin Resolution, Operation Rolling Thunder, and landing of Marines.",
-                  "starter": "A major military escalation occurred in August 1964 when..."
-                },
-                {
-                  "letter": "PHASE 3",
-                  "name": "Search & Destroy to Tet Offensive (1968)",
-                  "prompt": "Explain troop surge to 500k, guerrilla challenges, and how Tet shattered US confidence.",
-                  "starter": "This culminated in 1968 when the communist Tet Offensive..."
-                }
-              ],
-              "sentence_starters": [
-                "Initially, following the French defeat at Dien Bien Phu in 1954...",
-                "Following the Geneva partition, American involvement deepened when...",
-                "A major military escalation occurred in August 1964 with...",
-                "Consequently, in 1965, President Johnson...",
-                "This culminated in 1968 when..."
-              ],
-              "connectives_bank": [
-                "Mao Zedong",
-                "Domino Theory",
-                "NSC-68",
-                "38th Parallel",
-                "Dien Bien Phu",
-                "17th Parallel",
-                "Ho Chi Minh",
-                "Ngo Dinh Diem",
-                "Gulf of Tonkin",
-                "Rolling Thunder",
-                "Vietcong",
-                "Cu Chi",
-                "Tet Offensive",
-                "Saigon"
-              ]
-            }
+          ],
+          "source_context": "On 31 January 1968, during the Vietnamese lunar new year (Tet), over 80,000 communist troops launched coordinated surprise attacks across South Vietnam, even breaching the US Embassy in Saigon. While militarily crushed by US firepower, Tet shattered the American public's belief that victory was near. **Hinge Question:** The US military defeated the Viet Cong militarily during Tet. Why was the offensive still considered a catastrophic political and psychological defeat for the United States?",
+          "teacher_notes": {
+            "source_context": "On 31 January 1968, during the Vietnamese lunar new year (Tet), over 80,000 communist troops launched coordinated surprise attacks across South Vietnam, even breaching the US Embassy in Saigon. While militarily crushed by US firepower, Tet shattered the American public's belief that victory was near. **Hinge Question:** The US military defeated the Viet Cong militarily during Tet. Why was the offensive still considered a catastrophic political and psychological defeat for the United States?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_6",
@@ -3617,7 +3361,11 @@ const cold_war_data = {
             "Author: US Army Signal Corps photographer on the border line.",
             "Audience: Military intelligence commanders and global newspaper readers.",
             "Motive: To document direct Soviet-American confrontation over Allied access rights into East Berlin."
-          ]
+          ],
+          "source_context": "Following the building of the Berlin Wall in August 1961, a dispute over whether East German police could check the passports of US diplomats led to armed tanks deploying with live ammunition. For 16 hours, the world stood on the brink of World War III until Kennedy and Khrushchev privately agreed to pull back one tank at a time. **Hinge Question:** Why did the Soviet Union and East Germany feel forced to build a concrete wall across Berlin to stop their own citizens from leaving?",
+          "teacher_notes": {
+            "source_context": "Following the building of the Berlin Wall in August 1961, a dispute over whether East German police could check the passports of US diplomats led to armed tanks deploying with live ammunition. For 16 hours, the world stood on the brink of World War III until Kennedy and Khrushchev privately agreed to pull back one tank at a time. **Hinge Question:** Why did the Soviet Union and East Germany feel forced to build a concrete wall across Berlin to stop their own citizens from leaving?"
+          }
         },
         {
           "id": "cw_l6_src_b",
@@ -3661,7 +3409,11 @@ const cold_war_data = {
             "Author: German Federal Archives (Bundesarchiv) photographer.",
             "Audience: Official state archives and international historical record.",
             "Motive: To document the logistical construction of the \"Anti-Fascist Protection Rampart\" ordered by Walter Ulbricht."
-          ]
+          ],
+          "source_context": "Between 1949 and 1961, over 2.7 million East Germans (mostly young professionals, doctors, and engineers) fled to the West through Berlin. In 'Operation Rose', East German leader Walter Ulbricht sealed the border in a single night. **Hinge Question:** The East German government called the wall an 'Anti-Fascist Protection Rampart.' Who were the machine guns and watchtowers really pointing at?",
+          "teacher_notes": {
+            "source_context": "Between 1949 and 1961, over 2.7 million East Germans (mostly young professionals, doctors, and engineers) fled to the West through Berlin. In 'Operation Rose', East German leader Walter Ulbricht sealed the border in a single night. **Hinge Question:** The East German government called the wall an 'Anti-Fascist Protection Rampart.' Who were the machine guns and watchtowers really pointing at?"
+          }
         },
         {
           "id": "cw_l6_src_c",
@@ -3705,7 +3457,11 @@ const cold_war_data = {
             "Author: Archival photojournalist documenting daily life in the Soviet Union.",
             "Audience: International observers and economic researchers.",
             "Motive: To capture the stark reality of consumer goods scarcity under the Soviet centrally planned economy."
-          ]
+          ],
+          "source_context": "By 1980, the Soviet economy was stagnating. While the USSR matched America in nuclear warheads and space exploration, its planned economy was incapable of producing basic consumer goods, forcing citizens to spend hours queuing for shoes, toilet paper, and meat. **Hinge Question:** Why did the Soviet command economy excel at building nuclear missiles and space rockets, but completely fail at providing shoes, toilet paper, and cars for its people?",
+          "teacher_notes": {
+            "source_context": "By 1980, the Soviet economy was stagnating. While the USSR matched America in nuclear warheads and space exploration, its planned economy was incapable of producing basic consumer goods, forcing citizens to spend hours queuing for shoes, toilet paper, and meat. **Hinge Question:** Why did the Soviet command economy excel at building nuclear missiles and space rockets, but completely fail at providing shoes, toilet paper, and cars for its people?"
+          }
         },
         {
           "id": "cw_l6_src_d",
@@ -3748,7 +3504,11 @@ const cold_war_data = {
             "Author: ADN-Zentralbild (East German state news agency photographer).",
             "Audience: International journalists, worldwide television viewers, and citizens of East and West Berlin.",
             "Motive: To manage state public relations, but unexpectedly unleashing the peaceful collapse of the Berlin Wall."
-          ]
+          ],
+          "source_context": "For 28 years, the Berlin Wall had stood as the ultimate symbol of totalitarian oppression. When crowds converged on the checkpoints on the night of 9 November 1989, border guards refused to shoot. The fall of the wall signaled the peaceful end of the Cold War in Europe. **Hinge Question:** Why did the East German border guards refuse to fire on the crowds on the night of 9 November 1989?",
+          "teacher_notes": {
+            "source_context": "For 28 years, the Berlin Wall had stood as the ultimate symbol of totalitarian oppression. When crowds converged on the checkpoints on the night of 9 November 1989, border guards refused to shoot. The fall of the wall signaled the peaceful end of the Cold War in Europe. **Hinge Question:** Why did the East German border guards refuse to fire on the crowds on the night of 9 November 1989?"
+          }
         },
         {
           "id": "cw_l6_src_e",
@@ -3792,77 +3552,580 @@ const cold_war_data = {
             "Author: Mikhail S. Gorbachev, President of the USSR.",
             "Audience: 280 million citizens of the Soviet Union and global television viewers.",
             "Motive: To formally step down from office, preserve civil peace, and defend his historic legacy of democratic reform."
-          ]
+          ],
+          "source_context": "Gorbachev had sought to save socialism through reform (*Glasnost* and *Perestroika*), not destroy it. His refusal to use military violence to hold the Soviet empire together allowed 15 new independent nations to emerge peacefully. **Hinge Question:** Did Gorbachev's reforms destroy the Soviet Union, or was the communist system already doomed by economic failure and the arms race?",
+          "teacher_notes": {
+            "source_context": "Gorbachev had sought to save socialism through reform (*Glasnost* and *Perestroika*), not destroy it. His refusal to use military violence to hold the Soviet empire together allowed 15 new independent nations to emerge peacefully. **Hinge Question:** Did Gorbachev's reforms destroy the Soviet Union, or was the communist system already doomed by economic failure and the arms race?"
+          }
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 & GCSE Bridging: Disciplinary Writing Practice",
-        "tariff": "Question 4: Evaluative Statement Essay [12 marks • 15 mins]",
-        "questions": [
+      ]
+    },
+    {
+      "id": "lesson_7",
+      "title": "Assessment: Was the Cold War ever truly 'cold'?",
+      "enquiryQuestion": "To what extent is the label 'Cold War' an inaccurate Eurocentric concept that obscures the devastating human toll of global proxy conflict?",
+      "card_image": "/images/checkpoint_charlie_tanks_1961.jpg",
+      "card_position": "center 40%",
+      "prologue": "Between 1945 and 1991, the Cold War shaped global politics, espionage, nuclear weapons, and space exploration. While the superpowers never launched atomic missiles directly at each other, millions died in proxy conflicts and lived under authoritarian terror. Was the Cold War ever truly 'cold', or a global conflict in disguise?",
+      "do_now": {
+        "title": "Do Now: Retrieval from Lesson 6 (Fall of the Wall & Collapse of USSR)",
+        "type": "mixed",
+        "items": [
           {
-            "tariff": "12 marks",
-            "type": "causal_explanation_12m",
-            "question": "‘The reform policies of Mikhail Gorbachev were the main reason for the collapse of Soviet power in Eastern Europe between 1985 and 1989.’ How far do you agree? [12 marks]",
-            "stimulus": [
-              "Gorbachev’s introduction of Glasnost and Perestroika and his renunciation of the Brezhnev Doctrine",
-              "Economic bankruptcy in the Soviet bloc and the growth of grassroots protest movements (e.g. Solidarity in Poland)"
-            ],
-            "prompt": "Write a balanced three-paragraph essay evaluating Gorbachev’s policy shift vs long-term economic bankruptcy and popular protest movements, concluding with a sustained verdict.",
-            "model": "To a large extent, it can be argued that the radical reform policies of Mikhail Gorbachev were the primary catalyst for the rapid collapse of Soviet power in Eastern Europe between 1985 and 1989. When Gorbachev became General Secretary in March 1985, he recognized that the USSR could no longer afford the astronomical costs of maintaining its empire. Through Perestroika (economic restructuring) and Glasnost (openness), Gorbachev encouraged debate and critical examination of state failures. Crucially, Gorbachev publicly abandoned the Brezhnev Doctrine, which had previously justified sending Soviet tanks to crush democratic movements in Hungary (1956) and Czechoslovakia (1968). By adopting the 'Sinatra Doctrine'—explicitly warning Warsaw Pact leaders that the Red Army would not intervene to save them from domestic discontent—Gorbachev dismantled the single greatest deterrent protecting Eastern European communist regimes.<br><br>However, an alternative perspective emphasizes that Gorbachev’s reforms merely accelerated a collapse made inevitable by chronic economic bankruptcy and organized grassroots resistance. By the 1980s, Soviet-style command economies were crippled by systemic inefficiencies, catastrophic shortages of consumer goods, hyperinflation, and external debts to Western banks. Furthermore, popular anti-communist opposition had built unstoppable momentum, exemplified by the independent trade union Solidarity in Poland led by Lech Wałęsa. Protected by the moral authority of the Polish-born Pope John Paul II, Solidarity forced the communist regime into round-table talks and overwhelming electoral defeat in June 1989. Similarly, in East Germany, mass citizen protests in Leipzig and thousands fleeing via Hungary rendered the Berlin Wall untenable long before official border guards stood aside on 9 November 1989.<br><br>In conclusion, while deep economic stagnation and popular yearning for freedom created the dry kindling of revolution across Eastern Europe, Gorbachev’s actions were the decisive spark. Without his explicit refusal to use military violence to crush protests, hardline communist dictators like Erich Honecker would have employed brutal force to maintain power. Therefore, Gorbachev's conscious decision not to send Soviet tanks was the decisive factor permitting the peaceful collapse of the Soviet empire.",
-            "scaffolding": {
-              "acronym": "Para 1 (Gorbachev/Sinatra) • Para 2 (Economic Stagnation/Solidarity) • Para 3 (Verdict)",
-              "acronym_title": "12-Mark Evaluative Essay Structure Strip",
-              "steps": [
-                {
-                  "letter": "ARGUMENT",
-                  "name": "Gorbachev’s Policies",
-                  "prompt": "Explain Glasnost, Perestroika, and the renunciation of the Brezhnev Doctrine.",
-                  "starter": "To a large extent, it can be argued that Gorbachev’s radical reform policies..."
-                },
-                {
-                  "letter": "COUNTER",
-                  "name": "Economic Stagnation & Solidarity",
-                  "prompt": "Explain chronic economic bankruptcy, Polish Solidarity, and popular grassroots protests.",
-                  "starter": "On the other hand, an alternative perspective emphasizes that economic ruin..."
-                },
-                {
-                  "letter": "VERDICT",
-                  "name": "Criteria-Led Synthesis",
-                  "prompt": "Weigh whether Gorbachev’s refusal to use military violence was the decisive catalyst.",
-                  "starter": "In conclusion, while deep economic stagnation set the stage..."
-                }
-              ],
-              "sentence_starters": [
-                "To a large extent, it can be argued that...",
-                "On the one hand, Gorbachev’s policy shift was decisive because...",
-                "In particular, by signaling that the Red Army would not intervene...",
-                "On the other hand, deep underlying structural factors included...",
-                "In conclusion, while economic weakness set the stage, Gorbachev’s actions were the primary catalyst because..."
-              ],
-              "connectives_bank": [
-                "Berlin Wall",
-                "Operation Rose",
-                "Checkpoint Charlie",
-                "Peter Fechter",
-                "Afghan War",
-                "Ronald Reagan",
-                "SDI Star Wars",
-                "Mikhail Gorbachev",
-                "Glasnost",
-                "Perestroika",
-                "INF Treaty",
-                "Sinatra Doctrine",
-                "Günter Schabowski",
-                "Velvet Revolution",
-                "Dissolution 1991"
-              ]
-            }
+            "question": "Why did the East German government erect the Berlin Wall in August 1961?",
+            "answer": "To halt the massive economic and brain drain of 2.7 million skilled citizens fleeing to West Berlin."
+          },
+          {
+            "question": "What were Mikhail Gorbachev's two signature reform policies introduced in 1985?",
+            "answer": "Glasnost (openness/free speech) and Perestroika (economic restructuring)."
+          },
+          {
+            "question": "On what historic date was the Berlin Wall breached by jubilant citizens after border restrictions collapsed?",
+            "answer": "9 November 1989"
+          },
+          {
+            "question": "In what month and year did the Soviet Union officially dissolve, bringing the Cold War to an end?",
+            "answer": "December 1991"
           }
         ]
-      }
+      },
+      "narrative_blocks": [
+        {
+          "act": 1,
+          "title": "The Eurocentric Myth: The \"Long Peace\" in Europe vs Global Slaughter",
+          "text": "<span class=\"para-ref\">[7.1]</span> For decades, Western diplomatic historians described the era between 1945 and 1991 as the \"Cold War\" or the \"Long Peace\"—a period of international stability where the balance of power and nuclear deterrence successfully prevented a catastrophic World War III between the superpowers. However, contemporary global historians, such as Odd Arne Westad in <em>The Global Cold War</em>, have fundamentally challenged this Eurocentric narrative. While European capitals were spared military devastation, the conflict was neither peaceful nor \"cold\". In reality, the Cold War was a lethal, ideologically total conflict that was systematically outsourced to the Global South—Asia, Africa, the Middle East, and Latin America—where it was fought with ferocious conventional violence, leaving societies devastated and millions dead.",
+          "source": {
+            "id": "cw_l7_src_a",
+            "letter": "A",
+            "type": "visual",
+            "title": "Source A (Statistical Data Plate): Total US and Soviet Strategic Nuclear Warhead Stockpiles (1945–1990)",
+            "text": "<div class=\"archival-data-table-wrapper\" style=\"overflow-x: auto; margin: 10px 0;\">\n        <table style=\"width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.95rem; text-align: right; background: #ffffff; border: 1.5px solid #0f172a;\">\n          <thead>\n            <tr style=\"background: #0f172a; color: #ffffff;\">\n              <th style=\"padding: 8px 12px; text-align: left; border: 1px solid #334155;\">Year</th>\n              <th style=\"padding: 8px 12px; border: 1px solid #334155; color: #38bdf8;\">United States (Warheads)</th>\n              <th style=\"padding: 8px 12px; border: 1px solid #334155; color: #f87171;\">Soviet Union (Warheads)</th>\n              <th style=\"padding: 8px 12px; border: 1px solid #334155;\">Combined Global Stockpile</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1945</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">2</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">0</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">2</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1950</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">299</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">5</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">304</td></tr>\n            <tr><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1955</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">2,422</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">200</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">2,622</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1960</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">18,638</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">1,605</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">20,243</td></tr>\n            <tr><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1965</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">31,149</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">6,129</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">37,278</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1970</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">26,008</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">11,643</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">37,651</td></tr>\n            <tr><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1975</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">27,235</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">19,055</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">46,290</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1980</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">24,104</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">30,062</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">54,166</td></tr>\n            <tr style=\"background: #fee2e2; font-weight: bold;\"><td style=\"padding: 8px 12px; text-align: left; border: 1px solid #b91c1c; color: #991b1b;\">1986 (Peak)</td><td style=\"padding: 8px 12px; border: 1px solid #b91c1c; color: #0369a1;\">23,317</td><td style=\"padding: 8px 12px; border: 1px solid #b91c1c; color: #b91c1c;\">40,159</td><td style=\"padding: 8px 12px; border: 1px solid #b91c1c; color: #7f1d1d;\">63,476 Warheads</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1990</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">21,392</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">37,000</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">58,392</td></tr>\n          </tbody>\n        </table>\n      </div>",
+            "caption": "Official quantitative graph plotting the staggering growth of superpower nuclear warheads from 2 bombs in 1945 to over 70,000 warheads at the peak of the arms race in 1986.",
+            "citation": "Natural Resources Defense Council (NRDC) / Bulletin of the Atomic Scientists Nuclear Notebook Archive / SIPRI Yearbook.",
+            "provenance": "Compiled by the Natural Resources Defense Council from declassified US Department of Defense inventory reports and Soviet Ministry of Atomic Energy historical records.",
+            "context": "This stark table demonstrates the sheer insanity of nuclear 'overkill'. By 1986, the superpowers possessed enough explosive power to wipe out all human civilization dozens of times over. **Hinge Question:** If having 500 nuclear bombs is enough to destroy human civilization, why did the two superpowers spend billions building over 60,000 warheads?",
+            "question": "Look at the data plotted on this chart. Between 1945 and 1986, how did nuclear weapons explode, and which decade saw the fastest acceleration?",
+            "hinge_question": "If having 500 nuclear bombs is enough to destroy human civilization, why did the two superpowers spend billions building over 60,000 warheads?",
+            "disciplinary_focus": "Quantitative Analysis & Critical Numeracy",
+            "utility_enquiry": {
+              "question": "Look at the numbers in this table. Between 1945 and 1986, how did the number of nuclear weapons explode, and in which decade did the stockpile grow the fastest?",
+              "content_inferences": "Demonstrates the exponential climb of warhead counts, revealing that Soviet stockpiles only overtook the US in the late 1970s before peaking at 40,000.",
+              "provenance_evaluation": "Declassified statistical inventory compiled by foremost independent nuclear physicists; exceptionally accurate empirical quantitative evidence.",
+              "context_limitations": "Shows raw warhead numbers; does not reflect explosive yield (megatonnage), missile accuracy, or delivery systems (submarines vs bombers).",
+              "bullet_points": [
+                {
+                  "label": "Exponential Leap to Global Overkill",
+                  "text": "Stockpiles exploded from an American monopoly of 2 bombs in 1945 to an astonishing global peak of nearly 70,000 active nuclear warheads by 1986."
+                },
+                {
+                  "label": "The Fastest Growing Decades",
+                  "text": "The stockpile expanded most rapidly during the 1960s (as both superpowers mass-produced ICBMs and missile submarines) and surged again in the late 1970s as the USSR built over 40,000 weapons."
+                },
+                {
+                  "label": "The Madness of Overkill",
+                  "text": "Both superpowers produced vastly more nuclear warheads than needed to incinerate civilization multiple times over, trapped in the doctrine that overwhelming retaliatory capacity was the only deterrent against a surprise attack."
+                }
+              ]
+            },
+            "image": "/images/cold_war/nuclear_stockpiles_growth_chart.svg",
+            "src": "/images/cold_war/nuclear_stockpiles_growth_chart.svg",
+            "question_badge": "NUCLEAR ARMS RACE",
+            "enquiry_question": "Look at the data plotted on this chart. Between 1945 and 1986, how did nuclear weapons explode, and which decade saw the fastest acceleration?",
+            "model_answer": "Global nuclear stockpiles exploded from zero to over 70,000 weapons, with the 1960s and 1970s experiencing the steepest surge as both nations mass-produced intercontinental ballistic missiles.",
+            "provenance_clues": [
+              "Author: Natural Resources Defense Council (NRDC) / Bulletin of the Atomic Scientists.",
+              "Audience: Historians, defence strategists, and arms control negotiators.",
+              "Motive: To provide verified quantitative evidence of the unprecedented scale of the nuclear arms race."
+            ]
+          }
+        },
+        {
+          "act": 2,
+          "title": "The Human Cost of Proxy War: 20 Million Dead Across Four Continents",
+          "text": "<span class=\"para-ref\">[7.2]</span> When evaluated from a global perspective, the human cost of the Cold War was apocalyptic. Historians estimate that over <strong>twenty million human beings lost their lives</strong> in Cold War-related conflicts between 1945 and 1991. In Korea, three million people died in three years of industrial warfare; in Southeast Asia, over three million Vietnamese, Cambodians, and Laotians perished under carpet bombing, chemical defoliation, and ground sweeps. Across sub-Saharan Africa, in Angola, Mozambique, and Ethiopia, superpower funding and weapons turned local decolonization struggles into decades-long civil wars that claimed hundreds of thousands of lives. In Latin America, CIA-backed military juntas in Chile, Argentina, Guatemala, and Nicaragua unleashed ruthless \"Dirty Wars\", disappearing, torturing, and murdering tens of thousands of suspected leftists.",
+          "source": {
+            "id": "cw_l7_src_b",
+            "letter": "B",
+            "type": "visual",
+            "src": "/images/cold_war/protect_and_survive_1980.jpg",
+            "image": "/images/cold_war/protect_and_survive_1980.jpg",
+            "title": "Source B (Civil Defence Archival Plate): British Government \"Protect and Survive\" Nuclear Guide (1980)",
+            "caption": "Official cover and instructional plate from the British Home Office public information booklet \"Protect and Survive\" (May 1980), advising families how to build improvised fallout rooms inside their homes.",
+            "citation": "UK Home Office / Central Office of Information (HMSO, 1980, Crown Copyright).",
+            "provenance": "Published by Her Majesty's Stationery Office (HMSO) on behalf of the British Home Office in May 1980; prepared for mass distribution to every British household.",
+            "context": "The booklet instructed ordinary British families to construct an 'inner core refuge' inside their homes by removing interior doors, leaning them against a wall at an angle, and piling heavy luggage and bags of earth on top. It sparked fierce public ridicule from peace campaigners (like CND and E.P. Thompson's *Protest and Survive*), who pointed out that domestic doors provided zero protection against a thermonuclear blast. **Hinge Question:** Did booklets like Protect and Survive give people genuine hope of surviving a nuclear war, or was it government propaganda to stop the public from panicking?",
+            "question": "What advice did the British government give families on building an improvised fallout shelter out of interior doors and furniture?",
+            "hinge_question": "Did booklets like Protect and Survive give people genuine hope of surviving a nuclear war, or was it government propaganda to stop the public from panicking?",
+            "disciplinary_focus": "Civil Defense Ephemera & Civilian Psychology",
+            "utility_enquiry": {
+              "question": "What advice did the British government give families on building a makeshift nuclear shelter out of interior doors and earth bags inside their houses?",
+              "content_inferences": "Documents the chilling reality of government planning: assuming that civilian families would be forced to endure weeks of deadly fallout inside their homes.",
+              "provenance_evaluation": "Official British government civil defense instruction booklet; authentic evidence of state guidance, though widely mocked as hopelessly inadequate.",
+              "context_limitations": "Assumed an idealized, highly survivable scenario, ignoring the catastrophic reality of firestorms, radiation sickness, and medical collapse.",
+              "bullet_points": [
+                {
+                  "label": "An Improvised 'Fallout Room'",
+                  "text": "Families were instructed to wedge solid wooden doors against an interior wall at an angle, packing the top and sides with bags of earth, books, or heavy furniture to block gamma radiation."
+                },
+                {
+                  "label": "Living in Total Confinement",
+                  "text": "The guide advised families to stockpile 14 days of canned food, bottled water, and a chemical sanitation bucket, remaining sealed inside the shelter while radioactive fallout decayed outside."
+                },
+                {
+                  "label": "Widely Criticized as Ineffective",
+                  "text": "While designed to prevent mass panic, critics and medical scientists pointed out that makeshift wooden doors offered virtually zero protection against thermonuclear blast shockwaves, firestorms, or high-dose radiation."
+                }
+              ]
+            },
+            "question_badge": "CIVIL DEFENCE",
+            "enquiry_question": "What advice did the British government give families on building an improvised fallout shelter out of interior doors and furniture?",
+            "model_answer": "The booklet instructed civilians to wedge removed interior doors against walls and pack them with heavy suitcases, earth bags, and books to shield against deadly radioactive fallout.",
+            "provenance_clues": [
+              "Author: British Home Office and Central Office of Information.",
+              "Audience: British households and civil defence volunteers.",
+              "Motive: To provide practical survival guidance to the public and mitigate panic during a potential nuclear emergency."
+            ]
+          }
+        },
+        {
+          "act": 3,
+          "title": "The Invisible War: Espionage, Covert Action & Psychological Warfare",
+          "text": "<span class=\"para-ref\">[7.3]</span> Beyond battlefields, the Cold War was waged through an all-pervasive shadow war of espionage, covert subversion, and psychological manipulation. Intelligence agencies like the American <strong>Central Intelligence Agency (CIA)</strong> and the Soviet <strong>KGB</strong> operated worldwide networks of spies, double agents, and codebreakers. In 1953, the CIA orchestrated Operation Ajax, overthrowing the democratically elected Prime Minister of Iran, Mohammad Mossaddegh, after he nationalized British oil assets; in 1954, the CIA orchestrated a military coup in Guatemala to depose President Jacobo Árbenz. Across the Eastern Bloc, secret police networks like the East German <strong>Stasi</strong> maintained massive files on millions of citizens, deploying informants within families and workplaces to crush independent thought and enforce totalitarian conformity.",
+          "source": {
+            "id": "cw_l7_src_c",
+            "letter": "C",
+            "type": "visual",
+            "src": "/images/york_cold_war_bunker.jpg",
+            "image": "/images/york_cold_war_bunker.jpg",
+            "title": "Source C (Subterranean Bunker Plate): Blast Doors and Decontamination Lock, York Cold War Bunker",
+            "caption": "Heavy blast door and airlock entrance to the English Heritage subterranean Royal Observer Corps bunker in York, built to track nuclear fallout and coordinate government continuity.",
+            "citation": "English Heritage (York Cold War Bunker Historic Property Collection).",
+            "provenance": "Constructed in secret in 1961 by the British Home Office and Royal Observer Corps; preserved in original operational condition by English Heritage.",
+            "context": "Beneath the suburbs of York lies a semi-sunken two-story concrete bunker. Sixty volunteer ROC observers would have been sealed inside for thirty days to plot nuclear bomb detonations, calculate radioactive fallout patterns, and broadcast the four-minute warning siren to the public. **Hinge Question:** Who was this bunker designed to protect, and what does that tell us about who the state valued most during a nuclear attack?",
+            "question": "What does the sealed steel blast door and air filtration system of this bunker reveal about planning for nuclear survival?",
+            "hinge_question": "Who was this bunker designed to protect, and what does that tell us about who the state valued most during a nuclear attack?",
+            "disciplinary_focus": "Architectural Evidence & State Defense Relics",
+            "utility_enquiry": {
+              "question": "What does the sealed steel blast door and air filtration lock of this secret underground bunker tell us about how the British state planned for a nuclear war?",
+              "content_inferences": "Provides physical architectural proof that the government built fortified command nodes to survive nuclear blasts and monitor fallout.",
+              "provenance_evaluation": "Preserved historical site; supreme physical primary artifact reflecting the technological and civil defense mindset of the 1960s–1980s.",
+              "context_limitations": "A military/administrative bunker; it highlights the disparity between the fortified survival chances of 60 officials and the defenseless civilian population outside.",
+              "bullet_points": [
+                {
+                  "label": "Continuity of Command Above All Else",
+                  "text": "The reinforced concrete, massive steel blast doors, and decontamination airlocks prove the state prioritized protecting government officials and military observers who could monitor nuclear detonations and radiation levels."
+                },
+                {
+                  "label": "Prepared for Long-Term Subterranean Survival",
+                  "text": "The bunker contained independent diesel generators, filtered air systems, food stockpiles, and telecommunications, allowing 60 personnel to survive sealed underground for weeks."
+                },
+                {
+                  "label": "The Harsh Divide in Nuclear Defense",
+                  "text": "It reveals the stark reality of Cold War civil defense: while ordinary civilians were told to hide under wooden doors at home, government infrastructure was fortified deep underground."
+                }
+              ]
+            },
+            "question_badge": "BUNKER ARCHITECTURE",
+            "enquiry_question": "What does the sealed steel blast door and air filtration system of this bunker reveal about planning for nuclear survival?",
+            "model_answer": "It reveals government recognition that surface survival was impossible, necessitating heavily shielded subterranean bunkers to keep military and administrative communications alive.",
+            "provenance_clues": [
+              "Author: Royal Observer Corps and UK Ministry of Defence engineers.",
+              "Audience: Military personnel and heritage researchers.",
+              "Motive: To construct a radiation-proof shelter capable of surviving a multi-megaton nuclear strike on northern England."
+            ]
+          },
+          "image": "/images/cold_war/gary_powers_moscow_trial_1960.jpg",
+          "image_alt": "CIA U-2 pilot Francis Gary Powers standing in the dock during his espionage trial in Moscow, August 1960",
+          "caption": "American CIA U-2 spy plane pilot Francis Gary Powers stands trial before the Soviet Supreme Court in Moscow (August 1960) following his shootdown over Sverdlovsk."
+        },
+        {
+          "act": 4,
+          "title": "Technological Competition: The Space Race & The Arms Escalation",
+          "text": "<span class=\"para-ref\">[7.4]</span> The ideological rivalry between the superpowers was fought with equal ferocity in the realms of science, culture, and prestige. When the Soviet Union launched <strong>Sputnik 1</strong>, the first artificial satellite, in October 1957, and sent <strong>Yuri Gagarin</strong> into orbit as the first human in space in April 1961, American pride was profoundly shaken. President Kennedy responded by committing the nation to land an American on the moon before the decade was out, achieving the milestone with Apollo 11 in July 1969. Simultaneously, both nations spent trillions of dollars building nuclear arsenals capable of destroying the planet dozens of times over. By the 1980s, the superpowers possessed over 60,000 nuclear warheads, creating the psychological condition of Mutually Assured Destruction (MAD), where global survival rested on a terrifying balance of nuclear fear.",
+          "source": {
+            "id": "cw_l7_src_d",
+            "letter": "D",
+            "type": "visual",
+            "src": "/images/cold_war/apollo_11_aldrin_moon.jpg",
+            "image": "/images/cold_war/apollo_11_aldrin_moon.jpg",
+            "title": "Source D (Space Race Propaganda): Astronaut Buzz Aldrin beside the American Flag on the Lunar Surface (20 July 1969)",
+            "caption": "Astronaut Buzz Aldrin photographed by Neil Armstrong during the Apollo 11 moonwalk on 20 July 1969, standing beside the American flag and the Lunar Module Eagle.",
+            "citation": "NASA Photo ID: AS11-40-5903 / NASA Human Space Flight Collection.",
+            "provenance": "Photographed on color film with a modified 70mm Hasselblad camera on the lunar surface on 20 July 1969; broadcast live to 650 million viewers worldwide.",
+            "context": "The Space Race began with Soviet triumphs: Sputnik (1957) and Yuri Gagarin (1961). President Kennedy committed America to landing a man on the moon before the decade was out. When Apollo 11 touched down, it was hailed as proof that American democracy and free-market capitalism were technologically superior to Soviet communism. **Hinge Question:** Was the Space Race a peaceful scientific adventure, or a thinly disguised competition to prove which superpower had the best rocket technology to deliver nuclear bombs?",
+            "question": "Why was landing the first humans on the Moon considered one of the greatest propaganda triumphs in the entire Cold War?",
+            "hinge_question": "Was the Space Race a peaceful scientific adventure, or a thinly disguised competition to prove which superpower had the best rocket technology to deliver nuclear bombs?",
+            "disciplinary_focus": "Technological Supremacy & Cold War Prestige",
+            "utility_enquiry": {
+              "question": "Why was planting the American flag on the Moon considered one of the greatest propaganda triumphs in the entire Cold War?",
+              "content_inferences": "Documents America's triumphant leap ahead of the Soviet Union in aerospace engineering, fulfilling Kennedy's 1961 national commitment.",
+              "provenance_evaluation": "Official NASA archival photograph; celebrated as one of the most famous photographs ever taken, designed to showcase Western supremacy.",
+              "context_limitations": "Portrays the moon landing as a serene scientific milestone, masking the intense geopolitical rivalry and military missile technology underpinning it.",
+              "bullet_points": [
+                {
+                  "label": "Decisive Victory in the Space Race",
+                  "text": "After a decade of Soviet milestones (Sputnik, Yuri Gagarin, the first spacewalk), landing men on the Moon proved American technological, economic, and scientific supremacy to the entire world."
+                },
+                {
+                  "label": "Vindicating Free Enterprise and Democracy",
+                  "text": "The US government showcased the triumph as proof that a free, democratic society could out-innovate and out-produce a rigid, state-controlled communist rival."
+                },
+                {
+                  "label": "Global Television Spectacle",
+                  "text": "Broadcast live to over 650 million viewers across the planet, the planted Stars and Stripes symbolized peaceful Western technological dominance at the height of Cold War competition."
+                }
+              ]
+            },
+            "question_badge": "SPACE RACE PROPAGANDA",
+            "enquiry_question": "Why was landing the first humans on the Moon considered one of the greatest propaganda triumphs in the entire Cold War?",
+            "model_answer": "It proved overwhelming American technological, industrial, and economic superiority over the Soviet Union before a global television audience of over 600 million people.",
+            "provenance_clues": [
+              "Author: Neil Armstrong (NASA astronaut and photographer) / NASA.",
+              "Audience: Global television viewers and international public opinion.",
+              "Motive: To document humanity’s first lunar landing and demonstrate America’s decisive victory in the superpower Space Race."
+            ]
+          },
+          "image": "/images/cold_war/sputnik_1_satellite_1957.jpg",
+          "image_alt": "The polished spherical casing and four radio antennae of the Soviet Sputnik 1 satellite, launched in October 1957",
+          "caption": "Replica plate of Sputnik 1, the world’s first artificial satellite launched by the USSR on 4 October 1957, igniting the superpower Space Race and technological panic in the West."
+        },
+        {
+          "act": 5,
+          "title": "The Synoptic Verdict: An Era of Total War Without Direct Armageddon",
+          "text": "<span class=\"para-ref\">[7.5]</span> In answering whether the Cold War was truly \"cold\", historians conclude that the term is an incomplete and misleading description of a global tragedy. Direct military conflict between the US and the USSR was averted solely because nuclear weapons transformed conventional superpower war into collective suicide. Yet this avoidance of direct armageddon came at an appalling price: the superpowers projected their ideological battle into vulnerable post-colonial nations, treating developing peoples as disposable pawns in a global chess match. The Cold War was an era of total ideological confrontation—a war fought through proxy armies, proxy victims, covert terrorism, economic strangulation, and nuclear terror. While humanity survived the ultimate nuclear nightmare, the scars of this four-decade conflict continue to shape the political boundaries, conflicts, and fault lines of our modern world.",
+          "source": {
+            "id": "cw_l7_src_e",
+            "letter": "E",
+            "type": "visual",
+            "title": "Source E (Historiographical Verdict & Global Map): The Global Cold War and the Proxy Conflicts of the Third World",
+            "text": "The Cold War was not 'cold' for most of the world. While Europeans and North Americans enjoyed the longest era of peace in modern times, the Third World was torn apart by superpower intervention, civil war, and ideological slaughter. Between 1945 and 1991, an estimated twenty million people died in Cold War-related conflicts in Korea, Vietnam, Angola, Mozambique, Afghanistan, Guatemala, and Cambodia. The vast majority of these victims were not soldiers fighting on borders, but peasant civilians caught in carpet bombing, counter-insurgency sweeps, and ideological massacres funded and equipped by Washington or Moscow. The concept of the Cold War as a 'peaceful stalemate' is an entirely Eurocentric myth.",
+            "caption": "Cartographic overview of superpower global alignment and proxy battlegrounds across Latin America, Africa, and Asia by 1980, illustrating Professor Odd Arne Westad's argument that the Cold War was a violent global conflict rather than a peaceful European stalemate.",
+            "citation": "Odd Arne Westad, The Global Cold War: Third World Interventions and the Making of Our Times (Cambridge University Press, 2005) / Cartographic Historical Archive.",
+            "provenance": "Written by internationally renowned Norwegian historian Odd Arne Westad; published by Cambridge University Press after extensive research in newly opened Russian, American, and Chinese archives.",
+            "context": "Westad’s groundbreaking work forced historians to rethink the traditional narrative. He argued that the true battlefield of the Cold War was not Europe, but the Global South, where the superpowers treated developing nations as disposable chessboard pawns. **Hinge Question:** If over 20 million people died in proxy wars between 1945 and 1991, why do many Western textbooks still describe the Cold War as an era of 'peace'?",
+            "question": "Why do modern historians argue that while the superpower conflict stayed cold in Europe, it was devastatingly hot across the Global South?",
+            "hinge_question": "If over 20 million people died in proxy wars between 1945 and 1991, why do many Western textbooks still describe the Cold War as an era of 'peace'?",
+            "disciplinary_focus": "Historiographical Revision & Global Re-evaluation",
+            "utility_enquiry": {
+              "question": "Why does historian Odd Arne Westad argue that calling this global conflict a 'Cold War' is completely wrong and insensitive to the people of Asia, Africa, and Latin America?",
+              "content_inferences": "Directly refutes the idea of a 'long peace,' proving that twenty million human beings were killed in superpower-funded proxy wars across the Third World.",
+              "provenance_evaluation": "Seminal academic historical monograph based on multi-archival international research; premier modern historiographical assessment.",
+              "context_limitations": "A modern historical interpretation rather than a contemporary primary source; presents an argumentative thesis designed to shift scholarly focus toward the Global South.",
+              "bullet_points": [
+                {
+                  "label": "Twenty Million Dead in the Global South",
+                  "text": "Westad emphasizes that while peace was maintained between the superpowers in Europe, the Cold War was devastatingly 'hot' in Asia, Africa, and Latin America, causing over 20 million deaths in proxy conflicts."
+                },
+                {
+                  "label": "Destructive Interventions and Civil Wars",
+                  "text": "Both superpowers financed, armed, and prolonged catastrophic civil wars (in Korea, Vietnam, Angola, Mozambique, and Afghanistan), devastating developing societies for decades."
+                },
+                {
+                  "label": "Eurocentric Bias of the 'Long Peace'",
+                  "text": "Calling the era a peaceful 'Cold War' reflects a purely Eurocentric perspective that ignores how third-world nations were treated as expendable pawns on an ideological chessboard."
+                }
+              ]
+            },
+            "image": "/images/cold_war/cold_war_global_alliances_map_1980.svg",
+            "src": "/images/cold_war/cold_war_global_alliances_map_1980.svg",
+            "question_badge": "HISTORIOGRAPHICAL VERDICT",
+            "enquiry_question": "Why do modern historians argue that while the superpower conflict stayed cold in Europe, it was devastatingly hot across the Global South?",
+            "model_answer": "Historians emphasize that while European capitals avoided nuclear destruction, superpower proxy wars in Korea, Vietnam, Angola, and Afghanistan claimed over twenty million lives across developing nations.",
+            "provenance_clues": [
+              "Author: Professor Odd Arne Westad (Cambridge/Harvard) / global diplomatic cartographers.",
+              "Audience: International historians, university students, and curriculum scholars.",
+              "Motive: To challenge the Eurocentric myth of the Cold War as a bloodless standoff and expose its devastating human toll on the Global South."
+            ]
+          }
+        }
+      ],
+      "video": [
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=eLIF8w6QIdw",
+          "title": "Cold War Files: The Conflicts That Turned the Cold War Hot | Dark Archives",
+          "duration": "4 mins 09 secs",
+          "pathway": "Starter Hook",
+          "teacher_guidance": "Anchors the synoptic assessment debate: while Europe remained an \"armed peace\" without direct superpower combat, over 20 million people died in proxy wars across the Global South. Recommended Watch Window: 00:00–03:45 • Lesson Phase: Quick Starter Check (0–3m). Tone Alert: Fast, analytical documentary examining the global human cost of superpower rivalry.",
+          "viewing_task": "<ol><li><strong>[00:50] Quick Check:</strong> Why do many global historians argue that calling the conflict the \"Cold War\" is inaccurate and Eurocentric?</li><li><strong>[02:30] Hinge Question:</strong> How did superpower rivalry in nations like Angola, Mozambique, Nicaragua, and Afghanistan transform local civil conflicts into devastating proxy battlefields?</li></ol>",
+          "model_answer": "<ol><li><strong>Quick Check:</strong> While direct war between the US and USSR in Europe was avoided, the superpowers armed and funded proxy wars across Asia, Africa, and Latin America that resulted in over 20 million deaths, making the war extraordinarily \"hot\" for the Global South.</li><li><strong>Hinge Question:</strong> Local political and tribal struggles were weaponized by the superpowers: the CIA and KGB flooded regional conflicts with sophisticated weapons (such as Stinger anti-aircraft missiles or Kalashnikov rifles), landmines, and cash to install puppet regimes, destroying civilian infrastructure, destabilizing entire regions, and causing decades of ongoing bloodshed long after the Cold War ended.</li></ol>"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=49s1EHBzmFQ",
+          "title": "When Did the Cold War Actually Start? | History Matters",
+          "duration": "9 mins 33 secs",
+          "pathway": "Enquiry Evidence",
+          "teacher_guidance": "Historiographical capstone analyzing the three major schools of thought on Cold War origins: 1917 (Bolshevik Revolution), 1945 (Yalta/Potsdam/Hiroshima), or 1947 (Truman Doctrine/Marshall Plan). Recommended Watch Window: 01:00–07:15 • Lesson Phase: Capstone Synoptic Synthesis & Historiographical Evaluation. Tone Alert: Insightful, academically rigorous historiographical review of Cold War scholarship.",
+          "viewing_task": "<ol><li><strong>[02:15] Recall:</strong> Identify the three major competing dates proposed by historians for the outbreak of the Cold War (1917, 1945, 1947).</li><li><strong>[04:30] Explain:</strong> Explain the Orthodox (traditionalist) vs. Revisionist historical debate regarding who bears primary responsibility for starting the Cold War.</li><li><strong>[06:45] Challenge:</strong> Post-Revisionist Historiography: Assess John Lewis Gaddis' conclusion that the Cold War was caused by mutual misperception, geopolitical insecurity, and the inevitable clash of two empires rather than one-sided aggression.</li></ol>",
+          "model_answer": "<ol><li><strong>Recall:</strong> 1) 1917: The Bolshevik Revolution and Western intervention in the Russian Civil War; 2) 1945: The breakdown of the Grand Alliance at Potsdam and the atomic bombings of Japan; 3) 1947: The Truman Doctrine and Marshall Plan cementing containment.</li><li><strong>Explain:</strong> The Orthodox view (prominent in the 1950s) argued that Soviet expansionism and Stalin's aggressive violation of Yalta agreements in Eastern Europe forced the US to defend the free world. The Revisionist view (emerging in the 1960s during Vietnam) argued that American aggressive economic imperialism (\"dollar diplomacy\") and atomic intimidation forced the defensive, war-ravaged Soviet Union to build a protective buffer zone.</li><li><strong>Challenge:</strong> Post-revisionist historians like Gaddis, benefiting from opened Soviet archives after 1991, argue that neither side solely caused the conflict. Rather, the complete power vacuum left by the total destruction of Nazi Germany and Imperial Japan in 1945 made superpower rivalry structural and inevitable. Compounded by ideological dogma, conflicting postwar security needs, and mutual paranoia, both powers took defensive actions that were inevitably interpreted by the other as offensive aggression.</li></ol>"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=n3_iLOp6IhM",
+          "title": "The Lives of Others (2006, Florian Henckel von Donnersmarck) | Official Trailer",
+          "duration": "2 mins 18 secs",
+          "pathway": "Cinematic",
+          "teacher_guidance": "Academy Award-winning masterpiece portraying Stasi Captain Gerd Wiesler conducting round-the-clock audio surveillance on an East Berlin playwright in 1984, capturing the suffocating paranoia, informers, and police state control before the fall of the Wall. Recommended Watch Window: 00:00–02:18 (Full Trailer). Lesson Phase: Cinematic Starter Hook & The Reality of the Stasi Surveillance State. Tone Alert: Tense, emotionally profound German psychological thriller.",
+          "viewing_task": "<p><strong>Cinematic Discussion Focus:</strong> Notice the tape recorders, wiretapped apartments, secret index cards, and pervasive fear of betrayal depicted in this Oscar-winning film about East Germany's Stasi. How does the trailer demonstrate the human cost of totalitarian surveillance, and why did millions of citizens rejoice when the Berlin Wall and the communist police state collapsed in November 1989?</p>",
+          "model_answer": "<p><strong>Cinematic Analysis:</strong> The trailer exposes how the East German regime relied on systematic paranoia, maintaining 100,000 Stasi officers and over 170,000 civilian informants to spy on neighbors, friends, and family. It contrasts this suffocating lack of personal privacy and creative expression with the human longing for truth and artistic integrity, explaining the explosion of civic joy when the border was finally breached.</p>"
+        },
+        {
+          "type": "youtube",
+          "url": "https://www.youtube.com/watch?v=7_IBXiiT82M",
+          "title": "CNN Cold War Episode 23: The Wall Comes Down (1989) | Jeremy Isaacs Production",
+          "duration": "46 mins 32 secs",
+          "pathway": "Documentary",
+          "teacher_guidance": "Dramatic documentary covering the miraculous events of 1989: the Polish Round Table talks, the opening of Hungary's Austrian border, the peaceful mass demonstrations in Leipzig, the collapse of the Berlin Wall on 9 November, and the Velvet Revolution in Prague. Recommended Watch Window: 26:00–38:00 • Lesson Phase: Guided Instruction & The Miracle of 1989. Tone Alert: Euphoric, historically monumental documentary featuring Mikhail Gorbachev, George H.W. Bush, Helmut Kohl, and ordinary Berliners at Checkpoint Charlie.",
+          "viewing_task": "<ol><li><strong>[11:20] Recall:</strong> In which Eastern European country did the trade union movement <em>Solidarity</em> (Solidarność), led by Lech Wałęsa, force free elections in June 1989, forming the first non-communist government in the Eastern bloc?</li><li><strong>[24:10] Explain:</strong> How did Hungary’s decision to dismantle its electrified barbed-wire border with neutral Austria in May 1989 create a massive breach in the Iron Curtain for East German refugees?</li><li><strong>[36:45] Challenge:</strong> Evaluate the personal leadership and chemistry between Ronald Reagan and Mikhail Gorbachev (from Geneva 1985 to Reykjavik 1986 and the 1987 INF Treaty): was the peaceful end of the Cold War driven by Western military pressure or Soviet internal reform?</li></ol>",
+          "model_answer": "<ol><li><strong>Recall:</strong> Poland.</li><li><strong>Explain:</strong> When Hungary dismantled its border fence, tens of thousands of East German families vacationing in Hungary or Czechoslovakia simply drove across the open Hungarian border into Austria and on to West Germany. This triggered an uncontrollable migration wave, proving that East Germany's borders were obsolete and forcing the mass protests in Leipzig that culminated in the fall of the Wall.</li><li><strong>Challenge:</strong> Historians debate whether Reagan's military buildup (including SDI \"Star Wars\") forced a bankrupt USSR to surrender, or whether Gorbachev's moral conviction, rejection of violence, and desire to modernize socialism peacefully unlocked the impasse. In reality, both were vital: Gorbachev was willing to dismantle the Soviet empire rather than murder his own people, while Reagan and George H.W. Bush proved flexible enough to negotiate in good faith, signing the 1987 INF Treaty that eliminated an entire category of nuclear weapons without bloodshed.</li></ol>"
+        }
+      ],
+      "sources": [
+        {
+          "id": "cw_l7_src_a",
+          "letter": "A",
+          "type": "visual",
+          "title": "Source A (Statistical Data Plate): Total US and Soviet Strategic Nuclear Warhead Stockpiles (1945–1990)",
+          "text": "<div class=\"archival-data-table-wrapper\" style=\"overflow-x: auto; margin: 10px 0;\">\n        <table style=\"width: 100%; border-collapse: collapse; font-family: monospace; font-size: 0.95rem; text-align: right; background: #ffffff; border: 1.5px solid #0f172a;\">\n          <thead>\n            <tr style=\"background: #0f172a; color: #ffffff;\">\n              <th style=\"padding: 8px 12px; text-align: left; border: 1px solid #334155;\">Year</th>\n              <th style=\"padding: 8px 12px; border: 1px solid #334155; color: #38bdf8;\">United States (Warheads)</th>\n              <th style=\"padding: 8px 12px; border: 1px solid #334155; color: #f87171;\">Soviet Union (Warheads)</th>\n              <th style=\"padding: 8px 12px; border: 1px solid #334155;\">Combined Global Stockpile</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1945</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">2</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">0</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">2</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1950</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">299</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">5</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">304</td></tr>\n            <tr><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1955</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">2,422</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">200</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">2,622</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1960</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">18,638</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">1,605</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">20,243</td></tr>\n            <tr><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1965</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">31,149</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">6,129</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">37,278</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1970</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">26,008</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">11,643</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">37,651</td></tr>\n            <tr><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1975</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">27,235</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">19,055</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">46,290</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1980</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">24,104</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">30,062</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">54,166</td></tr>\n            <tr style=\"background: #fee2e2; font-weight: bold;\"><td style=\"padding: 8px 12px; text-align: left; border: 1px solid #b91c1c; color: #991b1b;\">1986 (Peak)</td><td style=\"padding: 8px 12px; border: 1px solid #b91c1c; color: #0369a1;\">23,317</td><td style=\"padding: 8px 12px; border: 1px solid #b91c1c; color: #b91c1c;\">40,159</td><td style=\"padding: 8px 12px; border: 1px solid #b91c1c; color: #7f1d1d;\">63,476 Warheads</td></tr>\n            <tr style=\"background: #f8fafc;\"><td style=\"padding: 6px 12px; text-align: left; border: 1px solid #e2e8f0; font-weight: bold;\">1990</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">21,392</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0;\">37,000</td><td style=\"padding: 6px 12px; border: 1px solid #e2e8f0; font-weight: bold;\">58,392</td></tr>\n          </tbody>\n        </table>\n      </div>",
+          "caption": "Official quantitative graph plotting the staggering growth of superpower nuclear warheads from 2 bombs in 1945 to over 70,000 warheads at the peak of the arms race in 1986.",
+          "citation": "Natural Resources Defense Council (NRDC) / Bulletin of the Atomic Scientists Nuclear Notebook Archive / SIPRI Yearbook.",
+          "provenance": "Compiled by the Natural Resources Defense Council from declassified US Department of Defense inventory reports and Soviet Ministry of Atomic Energy historical records.",
+          "context": "This stark table demonstrates the sheer insanity of nuclear 'overkill'. By 1986, the superpowers possessed enough explosive power to wipe out all human civilization dozens of times over. **Hinge Question:** If having 500 nuclear bombs is enough to destroy human civilization, why did the two superpowers spend billions building over 60,000 warheads?",
+          "question": "Look at the data plotted on this chart. Between 1945 and 1986, how did nuclear weapons explode, and which decade saw the fastest acceleration?",
+          "hinge_question": "If having 500 nuclear bombs is enough to destroy human civilization, why did the two superpowers spend billions building over 60,000 warheads?",
+          "disciplinary_focus": "Quantitative Analysis & Critical Numeracy",
+          "utility_enquiry": {
+            "question": "Look at the numbers in this table. Between 1945 and 1986, how did the number of nuclear weapons explode, and in which decade did the stockpile grow the fastest?",
+            "content_inferences": "Demonstrates the exponential climb of warhead counts, revealing that Soviet stockpiles only overtook the US in the late 1970s before peaking at 40,000.",
+            "provenance_evaluation": "Declassified statistical inventory compiled by foremost independent nuclear physicists; exceptionally accurate empirical quantitative evidence.",
+            "context_limitations": "Shows raw warhead numbers; does not reflect explosive yield (megatonnage), missile accuracy, or delivery systems (submarines vs bombers).",
+            "bullet_points": [
+              {
+                "label": "Exponential Leap to Global Overkill",
+                "text": "Stockpiles exploded from an American monopoly of 2 bombs in 1945 to an astonishing global peak of nearly 70,000 active nuclear warheads by 1986."
+              },
+              {
+                "label": "The Fastest Growing Decades",
+                "text": "The stockpile expanded most rapidly during the 1960s (as both superpowers mass-produced ICBMs and missile submarines) and surged again in the late 1970s as the USSR built over 40,000 weapons."
+              },
+              {
+                "label": "The Madness of Overkill",
+                "text": "Both superpowers produced vastly more nuclear warheads than needed to incinerate civilization multiple times over, trapped in the doctrine that overwhelming retaliatory capacity was the only deterrent against a surprise attack."
+              }
+            ]
+          },
+          "image": "/images/cold_war/nuclear_stockpiles_growth_chart.svg",
+          "src": "/images/cold_war/nuclear_stockpiles_growth_chart.svg",
+          "question_badge": "NUCLEAR ARMS RACE",
+          "enquiry_question": "Look at the data plotted on this chart. Between 1945 and 1986, how did nuclear weapons explode, and which decade saw the fastest acceleration?",
+          "model_answer": "Global nuclear stockpiles exploded from zero to over 70,000 weapons, with the 1960s and 1970s experiencing the steepest surge as both nations mass-produced intercontinental ballistic missiles.",
+          "provenance_clues": [
+            "Author: Natural Resources Defense Council (NRDC) / Bulletin of the Atomic Scientists.",
+            "Audience: Historians, defence strategists, and arms control negotiators.",
+            "Motive: To provide verified quantitative evidence of the unprecedented scale of the nuclear arms race."
+          ],
+          "source_context": "This stark table demonstrates the sheer insanity of nuclear 'overkill'. By 1986, the superpowers possessed enough explosive power to wipe out all human civilization dozens of times over. **Hinge Question:** If having 500 nuclear bombs is enough to destroy human civilization, why did the two superpowers spend billions building over 60,000 warheads?",
+          "teacher_notes": {
+            "source_context": "This stark table demonstrates the sheer insanity of nuclear 'overkill'. By 1986, the superpowers possessed enough explosive power to wipe out all human civilization dozens of times over. **Hinge Question:** If having 500 nuclear bombs is enough to destroy human civilization, why did the two superpowers spend billions building over 60,000 warheads?"
+          }
+        },
+        {
+          "id": "cw_l7_src_b",
+          "letter": "B",
+          "type": "visual",
+          "src": "/images/cold_war/protect_and_survive_1980.jpg",
+          "image": "/images/cold_war/protect_and_survive_1980.jpg",
+          "title": "Source B (Civil Defence Archival Plate): British Government \"Protect and Survive\" Nuclear Guide (1980)",
+          "caption": "Official cover and instructional plate from the British Home Office public information booklet \"Protect and Survive\" (May 1980), advising families how to build improvised fallout rooms inside their homes.",
+          "citation": "UK Home Office / Central Office of Information (HMSO, 1980, Crown Copyright).",
+          "provenance": "Published by Her Majesty's Stationery Office (HMSO) on behalf of the British Home Office in May 1980; prepared for mass distribution to every British household.",
+          "context": "The booklet instructed ordinary British families to construct an 'inner core refuge' inside their homes by removing interior doors, leaning them against a wall at an angle, and piling heavy luggage and bags of earth on top. It sparked fierce public ridicule from peace campaigners (like CND and E.P. Thompson's *Protest and Survive*), who pointed out that domestic doors provided zero protection against a thermonuclear blast. **Hinge Question:** Did booklets like Protect and Survive give people genuine hope of surviving a nuclear war, or was it government propaganda to stop the public from panicking?",
+          "question": "What advice did the British government give families on building an improvised fallout shelter out of interior doors and furniture?",
+          "hinge_question": "Did booklets like Protect and Survive give people genuine hope of surviving a nuclear war, or was it government propaganda to stop the public from panicking?",
+          "disciplinary_focus": "Civil Defense Ephemera & Civilian Psychology",
+          "utility_enquiry": {
+            "question": "What advice did the British government give families on building a makeshift nuclear shelter out of interior doors and earth bags inside their houses?",
+            "content_inferences": "Documents the chilling reality of government planning: assuming that civilian families would be forced to endure weeks of deadly fallout inside their homes.",
+            "provenance_evaluation": "Official British government civil defense instruction booklet; authentic evidence of state guidance, though widely mocked as hopelessly inadequate.",
+            "context_limitations": "Assumed an idealized, highly survivable scenario, ignoring the catastrophic reality of firestorms, radiation sickness, and medical collapse.",
+            "bullet_points": [
+              {
+                "label": "An Improvised 'Fallout Room'",
+                "text": "Families were instructed to wedge solid wooden doors against an interior wall at an angle, packing the top and sides with bags of earth, books, or heavy furniture to block gamma radiation."
+              },
+              {
+                "label": "Living in Total Confinement",
+                "text": "The guide advised families to stockpile 14 days of canned food, bottled water, and a chemical sanitation bucket, remaining sealed inside the shelter while radioactive fallout decayed outside."
+              },
+              {
+                "label": "Widely Criticized as Ineffective",
+                "text": "While designed to prevent mass panic, critics and medical scientists pointed out that makeshift wooden doors offered virtually zero protection against thermonuclear blast shockwaves, firestorms, or high-dose radiation."
+              }
+            ]
+          },
+          "question_badge": "CIVIL DEFENCE",
+          "enquiry_question": "What advice did the British government give families on building an improvised fallout shelter out of interior doors and furniture?",
+          "model_answer": "The booklet instructed civilians to wedge removed interior doors against walls and pack them with heavy suitcases, earth bags, and books to shield against deadly radioactive fallout.",
+          "provenance_clues": [
+            "Author: British Home Office and Central Office of Information.",
+            "Audience: British households and civil defence volunteers.",
+            "Motive: To provide practical survival guidance to the public and mitigate panic during a potential nuclear emergency."
+          ],
+          "source_context": "The booklet instructed ordinary British families to construct an 'inner core refuge' inside their homes by removing interior doors, leaning them against a wall at an angle, and piling heavy luggage and bags of earth on top. It sparked fierce public ridicule from peace campaigners (like CND and E.P. Thompson's *Protest and Survive*), who pointed out that domestic doors provided zero protection against a thermonuclear blast. **Hinge Question:** Did booklets like Protect and Survive give people genuine hope of surviving a nuclear war, or was it government propaganda to stop the public from panicking?",
+          "teacher_notes": {
+            "source_context": "The booklet instructed ordinary British families to construct an 'inner core refuge' inside their homes by removing interior doors, leaning them against a wall at an angle, and piling heavy luggage and bags of earth on top. It sparked fierce public ridicule from peace campaigners (like CND and E.P. Thompson's *Protest and Survive*), who pointed out that domestic doors provided zero protection against a thermonuclear blast. **Hinge Question:** Did booklets like Protect and Survive give people genuine hope of surviving a nuclear war, or was it government propaganda to stop the public from panicking?"
+          }
+        },
+        {
+          "id": "cw_l7_src_c",
+          "letter": "C",
+          "type": "visual",
+          "src": "/images/york_cold_war_bunker.jpg",
+          "image": "/images/york_cold_war_bunker.jpg",
+          "title": "Source C (Subterranean Bunker Plate): Blast Doors and Decontamination Lock, York Cold War Bunker",
+          "caption": "Heavy blast door and airlock entrance to the English Heritage subterranean Royal Observer Corps bunker in York, built to track nuclear fallout and coordinate government continuity.",
+          "citation": "English Heritage (York Cold War Bunker Historic Property Collection).",
+          "provenance": "Constructed in secret in 1961 by the British Home Office and Royal Observer Corps; preserved in original operational condition by English Heritage.",
+          "context": "Beneath the suburbs of York lies a semi-sunken two-story concrete bunker. Sixty volunteer ROC observers would have been sealed inside for thirty days to plot nuclear bomb detonations, calculate radioactive fallout patterns, and broadcast the four-minute warning siren to the public. **Hinge Question:** Who was this bunker designed to protect, and what does that tell us about who the state valued most during a nuclear attack?",
+          "question": "What does the sealed steel blast door and air filtration system of this bunker reveal about planning for nuclear survival?",
+          "hinge_question": "Who was this bunker designed to protect, and what does that tell us about who the state valued most during a nuclear attack?",
+          "disciplinary_focus": "Architectural Evidence & State Defense Relics",
+          "utility_enquiry": {
+            "question": "What does the sealed steel blast door and air filtration lock of this secret underground bunker tell us about how the British state planned for a nuclear war?",
+            "content_inferences": "Provides physical architectural proof that the government built fortified command nodes to survive nuclear blasts and monitor fallout.",
+            "provenance_evaluation": "Preserved historical site; supreme physical primary artifact reflecting the technological and civil defense mindset of the 1960s–1980s.",
+            "context_limitations": "A military/administrative bunker; it highlights the disparity between the fortified survival chances of 60 officials and the defenseless civilian population outside.",
+            "bullet_points": [
+              {
+                "label": "Continuity of Command Above All Else",
+                "text": "The reinforced concrete, massive steel blast doors, and decontamination airlocks prove the state prioritized protecting government officials and military observers who could monitor nuclear detonations and radiation levels."
+              },
+              {
+                "label": "Prepared for Long-Term Subterranean Survival",
+                "text": "The bunker contained independent diesel generators, filtered air systems, food stockpiles, and telecommunications, allowing 60 personnel to survive sealed underground for weeks."
+              },
+              {
+                "label": "The Harsh Divide in Nuclear Defense",
+                "text": "It reveals the stark reality of Cold War civil defense: while ordinary civilians were told to hide under wooden doors at home, government infrastructure was fortified deep underground."
+              }
+            ]
+          },
+          "question_badge": "BUNKER ARCHITECTURE",
+          "enquiry_question": "What does the sealed steel blast door and air filtration system of this bunker reveal about planning for nuclear survival?",
+          "model_answer": "It reveals government recognition that surface survival was impossible, necessitating heavily shielded subterranean bunkers to keep military and administrative communications alive.",
+          "provenance_clues": [
+            "Author: Royal Observer Corps and UK Ministry of Defence engineers.",
+            "Audience: Military personnel and heritage researchers.",
+            "Motive: To construct a radiation-proof shelter capable of surviving a multi-megaton nuclear strike on northern England."
+          ],
+          "source_context": "Beneath the suburbs of York lies a semi-sunken two-story concrete bunker. Sixty volunteer ROC observers would have been sealed inside for thirty days to plot nuclear bomb detonations, calculate radioactive fallout patterns, and broadcast the four-minute warning siren to the public. **Hinge Question:** Who was this bunker designed to protect, and what does that tell us about who the state valued most during a nuclear attack?",
+          "teacher_notes": {
+            "source_context": "Beneath the suburbs of York lies a semi-sunken two-story concrete bunker. Sixty volunteer ROC observers would have been sealed inside for thirty days to plot nuclear bomb detonations, calculate radioactive fallout patterns, and broadcast the four-minute warning siren to the public. **Hinge Question:** Who was this bunker designed to protect, and what does that tell us about who the state valued most during a nuclear attack?"
+          }
+        },
+        {
+          "id": "cw_l7_src_d",
+          "letter": "D",
+          "type": "visual",
+          "src": "/images/cold_war/apollo_11_aldrin_moon.jpg",
+          "image": "/images/cold_war/apollo_11_aldrin_moon.jpg",
+          "title": "Source D (Space Race Propaganda): Astronaut Buzz Aldrin beside the American Flag on the Lunar Surface (20 July 1969)",
+          "caption": "Astronaut Buzz Aldrin photographed by Neil Armstrong during the Apollo 11 moonwalk on 20 July 1969, standing beside the American flag and the Lunar Module Eagle.",
+          "citation": "NASA Photo ID: AS11-40-5903 / NASA Human Space Flight Collection.",
+          "provenance": "Photographed on color film with a modified 70mm Hasselblad camera on the lunar surface on 20 July 1969; broadcast live to 650 million viewers worldwide.",
+          "context": "The Space Race began with Soviet triumphs: Sputnik (1957) and Yuri Gagarin (1961). President Kennedy committed America to landing a man on the moon before the decade was out. When Apollo 11 touched down, it was hailed as proof that American democracy and free-market capitalism were technologically superior to Soviet communism. **Hinge Question:** Was the Space Race a peaceful scientific adventure, or a thinly disguised competition to prove which superpower had the best rocket technology to deliver nuclear bombs?",
+          "question": "Why was landing the first humans on the Moon considered one of the greatest propaganda triumphs in the entire Cold War?",
+          "hinge_question": "Was the Space Race a peaceful scientific adventure, or a thinly disguised competition to prove which superpower had the best rocket technology to deliver nuclear bombs?",
+          "disciplinary_focus": "Technological Supremacy & Cold War Prestige",
+          "utility_enquiry": {
+            "question": "Why was planting the American flag on the Moon considered one of the greatest propaganda triumphs in the entire Cold War?",
+            "content_inferences": "Documents America's triumphant leap ahead of the Soviet Union in aerospace engineering, fulfilling Kennedy's 1961 national commitment.",
+            "provenance_evaluation": "Official NASA archival photograph; celebrated as one of the most famous photographs ever taken, designed to showcase Western supremacy.",
+            "context_limitations": "Portrays the moon landing as a serene scientific milestone, masking the intense geopolitical rivalry and military missile technology underpinning it.",
+            "bullet_points": [
+              {
+                "label": "Decisive Victory in the Space Race",
+                "text": "After a decade of Soviet milestones (Sputnik, Yuri Gagarin, the first spacewalk), landing men on the Moon proved American technological, economic, and scientific supremacy to the entire world."
+              },
+              {
+                "label": "Vindicating Free Enterprise and Democracy",
+                "text": "The US government showcased the triumph as proof that a free, democratic society could out-innovate and out-produce a rigid, state-controlled communist rival."
+              },
+              {
+                "label": "Global Television Spectacle",
+                "text": "Broadcast live to over 650 million viewers across the planet, the planted Stars and Stripes symbolized peaceful Western technological dominance at the height of Cold War competition."
+              }
+            ]
+          },
+          "question_badge": "SPACE RACE PROPAGANDA",
+          "enquiry_question": "Why was landing the first humans on the Moon considered one of the greatest propaganda triumphs in the entire Cold War?",
+          "model_answer": "It proved overwhelming American technological, industrial, and economic superiority over the Soviet Union before a global television audience of over 600 million people.",
+          "provenance_clues": [
+            "Author: Neil Armstrong (NASA astronaut and photographer) / NASA.",
+            "Audience: Global television viewers and international public opinion.",
+            "Motive: To document humanity’s first lunar landing and demonstrate America’s decisive victory in the superpower Space Race."
+          ],
+          "source_context": "The Space Race began with Soviet triumphs: Sputnik (1957) and Yuri Gagarin (1961). President Kennedy committed America to landing a man on the moon before the decade was out. When Apollo 11 touched down, it was hailed as proof that American democracy and free-market capitalism were technologically superior to Soviet communism. **Hinge Question:** Was the Space Race a peaceful scientific adventure, or a thinly disguised competition to prove which superpower had the best rocket technology to deliver nuclear bombs?",
+          "teacher_notes": {
+            "source_context": "The Space Race began with Soviet triumphs: Sputnik (1957) and Yuri Gagarin (1961). President Kennedy committed America to landing a man on the moon before the decade was out. When Apollo 11 touched down, it was hailed as proof that American democracy and free-market capitalism were technologically superior to Soviet communism. **Hinge Question:** Was the Space Race a peaceful scientific adventure, or a thinly disguised competition to prove which superpower had the best rocket technology to deliver nuclear bombs?"
+          }
+        },
+        {
+          "id": "cw_l7_src_e",
+          "letter": "E",
+          "type": "visual",
+          "title": "Source E (Historiographical Verdict & Global Map): The Global Cold War and the Proxy Conflicts of the Third World",
+          "text": "The Cold War was not 'cold' for most of the world. While Europeans and North Americans enjoyed the longest era of peace in modern times, the Third World was torn apart by superpower intervention, civil war, and ideological slaughter. Between 1945 and 1991, an estimated twenty million people died in Cold War-related conflicts in Korea, Vietnam, Angola, Mozambique, Afghanistan, Guatemala, and Cambodia. The vast majority of these victims were not soldiers fighting on borders, but peasant civilians caught in carpet bombing, counter-insurgency sweeps, and ideological massacres funded and equipped by Washington or Moscow. The concept of the Cold War as a 'peaceful stalemate' is an entirely Eurocentric myth.",
+          "caption": "Cartographic overview of superpower global alignment and proxy battlegrounds across Latin America, Africa, and Asia by 1980, illustrating Professor Odd Arne Westad's argument that the Cold War was a violent global conflict rather than a peaceful European stalemate.",
+          "citation": "Odd Arne Westad, The Global Cold War: Third World Interventions and the Making of Our Times (Cambridge University Press, 2005) / Cartographic Historical Archive.",
+          "provenance": "Written by internationally renowned Norwegian historian Odd Arne Westad; published by Cambridge University Press after extensive research in newly opened Russian, American, and Chinese archives.",
+          "context": "Westad’s groundbreaking work forced historians to rethink the traditional narrative. He argued that the true battlefield of the Cold War was not Europe, but the Global South, where the superpowers treated developing nations as disposable chessboard pawns. **Hinge Question:** If over 20 million people died in proxy wars between 1945 and 1991, why do many Western textbooks still describe the Cold War as an era of 'peace'?",
+          "question": "Why do modern historians argue that while the superpower conflict stayed cold in Europe, it was devastatingly hot across the Global South?",
+          "hinge_question": "If over 20 million people died in proxy wars between 1945 and 1991, why do many Western textbooks still describe the Cold War as an era of 'peace'?",
+          "disciplinary_focus": "Historiographical Revision & Global Re-evaluation",
+          "utility_enquiry": {
+            "question": "Why does historian Odd Arne Westad argue that calling this global conflict a 'Cold War' is completely wrong and insensitive to the people of Asia, Africa, and Latin America?",
+            "content_inferences": "Directly refutes the idea of a 'long peace,' proving that twenty million human beings were killed in superpower-funded proxy wars across the Third World.",
+            "provenance_evaluation": "Seminal academic historical monograph based on multi-archival international research; premier modern historiographical assessment.",
+            "context_limitations": "A modern historical interpretation rather than a contemporary primary source; presents an argumentative thesis designed to shift scholarly focus toward the Global South.",
+            "bullet_points": [
+              {
+                "label": "Twenty Million Dead in the Global South",
+                "text": "Westad emphasizes that while peace was maintained between the superpowers in Europe, the Cold War was devastatingly 'hot' in Asia, Africa, and Latin America, causing over 20 million deaths in proxy conflicts."
+              },
+              {
+                "label": "Destructive Interventions and Civil Wars",
+                "text": "Both superpowers financed, armed, and prolonged catastrophic civil wars (in Korea, Vietnam, Angola, Mozambique, and Afghanistan), devastating developing societies for decades."
+              },
+              {
+                "label": "Eurocentric Bias of the 'Long Peace'",
+                "text": "Calling the era a peaceful 'Cold War' reflects a purely Eurocentric perspective that ignores how third-world nations were treated as expendable pawns on an ideological chessboard."
+              }
+            ]
+          },
+          "image": "/images/cold_war/cold_war_global_alliances_map_1980.svg",
+          "src": "/images/cold_war/cold_war_global_alliances_map_1980.svg",
+          "question_badge": "HISTORIOGRAPHICAL VERDICT",
+          "enquiry_question": "Why do modern historians argue that while the superpower conflict stayed cold in Europe, it was devastatingly hot across the Global South?",
+          "model_answer": "Historians emphasize that while European capitals avoided nuclear destruction, superpower proxy wars in Korea, Vietnam, Angola, and Afghanistan claimed over twenty million lives across developing nations.",
+          "provenance_clues": [
+            "Author: Professor Odd Arne Westad (Cambridge/Harvard) / global diplomatic cartographers.",
+            "Audience: International historians, university students, and curriculum scholars.",
+            "Motive: To challenge the Eurocentric myth of the Cold War as a bloodless standoff and expose its devastating human toll on the Global South."
+          ],
+          "source_context": "Westad’s groundbreaking work forced historians to rethink the traditional narrative. He argued that the true battlefield of the Cold War was not Europe, but the Global South, where the superpowers treated developing nations as disposable chessboard pawns. **Hinge Question:** If over 20 million people died in proxy wars between 1945 and 1991, why do many Western textbooks still describe the Cold War as an era of 'peace'?",
+          "teacher_notes": {
+            "source_context": "Westad’s groundbreaking work forced historians to rethink the traditional narrative. He argued that the true battlefield of the Cold War was not Europe, but the Global South, where the superpowers treated developing nations as disposable chessboard pawns. **Hinge Question:** If over 20 million people died in proxy wars between 1945 and 1991, why do many Western textbooks still describe the Cold War as an era of 'peace'?"
+          }
+        }
+      ]
     }
-
-  ]
+  ],
+  "homepage_background": "/images/cold_war_cover.jpg",
+  "cover_image": "/images/cold_war_cover.jpg"
 };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = cold_war_data;
+}
 export default cold_war_data;
-export { cold_war_data };

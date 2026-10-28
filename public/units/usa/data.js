@@ -1385,8 +1385,10 @@ const usa_data = {
             "hinge_question": "Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?"
           },
           "teacher_notes": {
-            "source_context": "Mississippi Department of Archives and History, State Statute Compendium. The Mississippi State Legislature for State law enforcement, business owners, and all southern residents with the objective: To codify White supremacy into statutory law and criminalise racial integration under the guise of maintaining public order.. Hinge Question: Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?"
-          }
+            "source_context": "Mississippi Department of Archives and History, State Statute Compendium. The Mississippi State Legislature for State law enforcement, business owners, and all southern residents with the objective: To codify White supremacy into statutory law and criminalise racial integration under the guise of maintaining public order.. **Hinge Question:** Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?"
+          },
+          "hinge_question": "Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?",
+          "source_context": "Mississippi Department of Archives and History, State Statute Compendium. The Mississippi State Legislature for State law enforcement, business owners, and all southern residents with the objective: To codify White supremacy into statutory law and criminalise racial integration under the guise of maintaining public order.. **Hinge Question:** Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?"
         },
         {
           "id": "usa_lesson_1_1_b",
@@ -1407,8 +1409,10 @@ const usa_data = {
             "hinge_question": "How did documentary photography directly undermine the constitutional legitimacy of the 1896 Plessy v. Ferguson ruling?"
           },
           "teacher_notes": {
-            "source_context": "Library of Congress, Prints and Photographs Division, Washington D.C.. An FSA/OWI documentary photographer documenting southern living standards for The national American public and federal civil rights reformers with the objective: To challenge constitutional fictions by exposing the degrading, substandard reality of facilities designated for Black Americans.. Hinge Question: How did documentary photography directly undermine the constitutional legitimacy of the 1896 Plessy v. Ferguson ruling?"
-          }
+            "source_context": "Library of Congress, Prints and Photographs Division, Washington D.C.. An FSA/OWI documentary photographer documenting southern living standards for The national American public and federal civil rights reformers with the objective: To challenge constitutional fictions by exposing the degrading, substandard reality of facilities designated for Black Americans.. **Hinge Question:** How did documentary photography directly undermine the constitutional legitimacy of the 1896 Plessy v. Ferguson ruling?"
+          },
+          "hinge_question": "How did documentary photography directly undermine the constitutional legitimacy of the 1896 Plessy v. Ferguson ruling?",
+          "source_context": "Library of Congress, Prints and Photographs Division, Washington D.C.. An FSA/OWI documentary photographer documenting southern living standards for The national American public and federal civil rights reformers with the objective: To challenge constitutional fictions by exposing the degrading, substandard reality of facilities designated for Black Americans.. **Hinge Question:** How did documentary photography directly undermine the constitutional legitimacy of the 1896 Plessy v. Ferguson ruling?"
         },
         {
           "id": "usa_lesson_1_1_c",
@@ -1429,8 +1433,10 @@ const usa_data = {
             "hinge_question": "Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?"
           },
           "teacher_notes": {
-            "source_context": "National Association for the Advancement of Colored People (NAACP) Legal Defense Archive. Amzie Moore, World War II veteran, local entrepreneur, and NAACP field secretary for NAACP national legal counsel and federal civil rights attorneys preparing test cases with the objective: To systematically record documented evidence of poll tax extortion and arbitrary literacy tests for federal litigation.. Hinge Question: Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?"
-          }
+            "source_context": "National Association for the Advancement of Colored People (NAACP) Legal Defense Archive. Amzie Moore, World War II veteran, local entrepreneur, and NAACP field secretary for NAACP national legal counsel and federal civil rights attorneys preparing test cases with the objective: To systematically record documented evidence of poll tax extortion and arbitrary literacy tests for federal litigation.. **Hinge Question:** Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?"
+          },
+          "hinge_question": "Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?",
+          "source_context": "National Association for the Advancement of Colored People (NAACP) Legal Defense Archive. Amzie Moore, World War II veteran, local entrepreneur, and NAACP field secretary for NAACP national legal counsel and federal civil rights attorneys preparing test cases with the objective: To systematically record documented evidence of poll tax extortion and arbitrary literacy tests for federal litigation.. **Hinge Question:** Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?"
         },
         {
           "id": "usa_lesson_1_1_d",
@@ -1451,8 +1457,10 @@ const usa_data = {
             "hinge_question": "Did international embarrassment during the Cold War help or hinder the NAACP's domestic legal campaign?"
           },
           "teacher_notes": {
-            "source_context": "Library of Congress, NAACP Records, Manuscript Division. Thurgood Marshall, future first African American Supreme Court Justice for NAACP national delegates, civil rights attorneys, and domestic journalists with the objective: To unite grassroots civil rights activists behind a coordinated constitutional strategy targeting the Fourteenth Amendment in federal courts.. Hinge Question: Did international embarrassment during the Cold War help or hinder the NAACP's domestic legal campaign?"
-          }
+            "source_context": "Library of Congress, NAACP Records, Manuscript Division. Thurgood Marshall, future first African American Supreme Court Justice for NAACP national delegates, civil rights attorneys, and domestic journalists with the objective: To unite grassroots civil rights activists behind a coordinated constitutional strategy targeting the Fourteenth Amendment in federal courts.. **Hinge Question:** Did international embarrassment during the Cold War help or hinder the NAACP's domestic legal campaign?"
+          },
+          "hinge_question": "Did international embarrassment during the Cold War help or hinder the NAACP's domestic legal campaign?",
+          "source_context": "Library of Congress, NAACP Records, Manuscript Division. Thurgood Marshall, future first African American Supreme Court Justice for NAACP national delegates, civil rights attorneys, and domestic journalists with the objective: To unite grassroots civil rights activists behind a coordinated constitutional strategy targeting the Fourteenth Amendment in federal courts.. **Hinge Question:** Did international embarrassment during the Cold War help or hinder the NAACP's domestic legal campaign?"
         },
         {
           "id": "usa_lesson_1_1_e",
@@ -1473,8 +1481,10 @@ const usa_data = {
             "hinge_question": "Why was the geographic concentration of segregation in the South significant for congressional politics in Washington?"
           },
           "teacher_notes": {
-            "source_context": "United States Census Bureau and Federal Security Agency Historical Division. Federal education analysts mapping regional constitutional compliance for Congressional committees, school district administrators, and legal scholars with the objective: To provide a geographic baseline of state-sanctioned educational segregation prior to the Supreme Court's ruling in Brown v. Board of Education.. Hinge Question: Why was the geographic concentration of segregation in the South significant for congressional politics in Washington?"
-          }
+            "source_context": "United States Census Bureau and Federal Security Agency Historical Division. Federal education analysts mapping regional constitutional compliance for Congressional committees, school district administrators, and legal scholars with the objective: To provide a geographic baseline of state-sanctioned educational segregation prior to the Supreme Court's ruling in Brown v. Board of Education.. **Hinge Question:** Why was the geographic concentration of segregation in the South significant for congressional politics in Washington?"
+          },
+          "hinge_question": "Why was the geographic concentration of segregation in the South significant for congressional politics in Washington?",
+          "source_context": "United States Census Bureau and Federal Security Agency Historical Division. Federal education analysts mapping regional constitutional compliance for Congressional committees, school district administrators, and legal scholars with the objective: To provide a geographic baseline of state-sanctioned educational segregation prior to the Supreme Court's ruling in Brown v. Board of Education.. **Hinge Question:** Why was the geographic concentration of segregation in the South significant for congressional politics in Washington?"
         }
       ],
       "video": [
@@ -2308,8 +2318,10 @@ const usa_data = {
             "hinge_question": "Why did televised and photographic footage of Little Rock decisively sway northern moderate public opinion against southern segregation?"
           },
           "teacher_notes": {
-            "source_context": "Will Counts photograph for Arkansas Democrat, Pulitzer Prize Nominated. Will Counts, photojournalist for the Arkansas Democrat for Local newspaper readers and subsequently millions of international observers with the objective: To record the volatile standoff occurring outside Central High School as state authorities resisted federal integration decrees.. Hinge Question: Why did televised and photographic footage of Little Rock decisively sway northern moderate public opinion against southern segregation?"
-          }
+            "source_context": "Will Counts photograph for Arkansas Democrat, Pulitzer Prize Nominated. Will Counts, photojournalist for the Arkansas Democrat for Local newspaper readers and subsequently millions of international observers with the objective: To record the volatile standoff occurring outside Central High School as state authorities resisted federal integration decrees.. **Hinge Question:** Why did televised and photographic footage of Little Rock decisively sway northern moderate public opinion against southern segregation?"
+          },
+          "hinge_question": "Why did televised and photographic footage of Little Rock decisively sway northern moderate public opinion against southern segregation?",
+          "source_context": "Will Counts photograph for Arkansas Democrat, Pulitzer Prize Nominated. Will Counts, photojournalist for the Arkansas Democrat for Local newspaper readers and subsequently millions of international observers with the objective: To record the volatile standoff occurring outside Central High School as state authorities resisted federal integration decrees.. **Hinge Question:** Why did televised and photographic footage of Little Rock decisively sway northern moderate public opinion against southern segregation?"
         },
         {
           "id": "usa_lesson_1_2_b",
@@ -2330,8 +2342,10 @@ const usa_data = {
             "hinge_question": "Did Eisenhower intervene at Little Rock primarily out of moral support for civil rights, or to protect federal judicial supremacy?"
           },
           "teacher_notes": {
-            "source_context": "Associated Press Wirephoto Archive, Washington D.C.. Associated Press military press corps photographer for National and global news agencies with the objective: To document the historic reassertion of federal military authority over state defiance in the former Confederacy.. Hinge Question: Did Eisenhower intervene at Little Rock primarily out of moral support for civil rights, or to protect federal judicial supremacy?"
-          }
+            "source_context": "Associated Press Wirephoto Archive, Washington D.C.. Associated Press military press corps photographer for National and global news agencies with the objective: To document the historic reassertion of federal military authority over state defiance in the former Confederacy.. **Hinge Question:** Did Eisenhower intervene at Little Rock primarily out of moral support for civil rights, or to protect federal judicial supremacy?"
+          },
+          "hinge_question": "Did Eisenhower intervene at Little Rock primarily out of moral support for civil rights, or to protect federal judicial supremacy?",
+          "source_context": "Associated Press Wirephoto Archive, Washington D.C.. Associated Press military press corps photographer for National and global news agencies with the objective: To document the historic reassertion of federal military authority over state defiance in the former Confederacy.. **Hinge Question:** Did Eisenhower intervene at Little Rock primarily out of moral support for civil rights, or to protect federal judicial supremacy?"
         },
         {
           "id": "usa_lesson_1_2_c",
@@ -2352,8 +2366,10 @@ const usa_data = {
             "hinge_question": "How did the Southern Manifesto institutionalize massive resistance beyond fringe groups like the Ku Klux Klan?"
           },
           "teacher_notes": {
-            "source_context": "Congressional Record, 84th Congress, 2nd Session, Washington D.C.. 101 southern congressmen led by Senators Strom Thurmond and Richard Russell for The American Congress, southern white voters, and state educational boards with the objective: To rally organized political defiance against federal civil rights enforcement and pledge resistance 'by all lawful means.'. Hinge Question: How did the Southern Manifesto institutionalize massive resistance beyond fringe groups like the Ku Klux Klan?"
-          }
+            "source_context": "Congressional Record, 84th Congress, 2nd Session, Washington D.C.. 101 southern congressmen led by Senators Strom Thurmond and Richard Russell for The American Congress, southern white voters, and state educational boards with the objective: To rally organized political defiance against federal civil rights enforcement and pledge resistance 'by all lawful means.'. **Hinge Question:** How did the Southern Manifesto institutionalize massive resistance beyond fringe groups like the Ku Klux Klan?"
+          },
+          "hinge_question": "How did the Southern Manifesto institutionalize massive resistance beyond fringe groups like the Ku Klux Klan?",
+          "source_context": "Congressional Record, 84th Congress, 2nd Session, Washington D.C.. 101 southern congressmen led by Senators Strom Thurmond and Richard Russell for The American Congress, southern white voters, and state educational boards with the objective: To rally organized political defiance against federal civil rights enforcement and pledge resistance 'by all lawful means.'. **Hinge Question:** How did the Southern Manifesto institutionalize massive resistance beyond fringe groups like the Ku Klux Klan?"
         },
         {
           "id": "usa_lesson_1_2_d",
@@ -2374,8 +2390,10 @@ const usa_data = {
             "hinge_question": "Why was achieving a unanimous 9–0 decision considered essential by Chief Justice Earl Warren?"
           },
           "teacher_notes": {
-            "source_context": "United States Supreme Court Reports, 347 U.S. 483. Chief Justice Earl Warren, speaking on behalf of a unanimous nine-member court for The American judicial system, state governments, and the American citizenry with the objective: To issue an unequivocal, unanimous legal mandate dismantling the constitutional foundation of racial apartheid in American education.. Hinge Question: Why was achieving a unanimous 9–0 decision considered essential by Chief Justice Earl Warren?"
-          }
+            "source_context": "United States Supreme Court Reports, 347 U.S. 483. Chief Justice Earl Warren, speaking on behalf of a unanimous nine-member court for The American judicial system, state governments, and the American citizenry with the objective: To issue an unequivocal, unanimous legal mandate dismantling the constitutional foundation of racial apartheid in American education.. **Hinge Question:** Why was achieving a unanimous 9–0 decision considered essential by Chief Justice Earl Warren?"
+          },
+          "hinge_question": "Why was achieving a unanimous 9–0 decision considered essential by Chief Justice Earl Warren?",
+          "source_context": "United States Supreme Court Reports, 347 U.S. 483. Chief Justice Earl Warren, speaking on behalf of a unanimous nine-member court for The American judicial system, state governments, and the American citizenry with the objective: To issue an unequivocal, unanimous legal mandate dismantling the constitutional foundation of racial apartheid in American education.. **Hinge Question:** Why was achieving a unanimous 9–0 decision considered essential by Chief Justice Earl Warren?"
         },
         {
           "id": "usa_lesson_1_2_e",
@@ -2396,8 +2414,10 @@ const usa_data = {
             "hinge_question": "To what extent was white political resistance to desegregation driven by electoral ambition rather than purely ideological racism?"
           },
           "teacher_notes": {
-            "source_context": "Arkansas State Archives, Governor Orval E. Faubus Papers. Governor Orval Faubus of Arkansas for The white electorate of Arkansas and national broadcast audiences with the objective: To secure conservative segregationist votes by presenting himself as a defender of Arkansas sovereignty against federal overreach.. Hinge Question: To what extent was white political resistance to desegregation driven by electoral ambition rather than purely ideological racism?"
-          }
+            "source_context": "Arkansas State Archives, Governor Orval E. Faubus Papers. Governor Orval Faubus of Arkansas for The white electorate of Arkansas and national broadcast audiences with the objective: To secure conservative segregationist votes by presenting himself as a defender of Arkansas sovereignty against federal overreach.. **Hinge Question:** To what extent was white political resistance to desegregation driven by electoral ambition rather than purely ideological racism?"
+          },
+          "hinge_question": "To what extent was white political resistance to desegregation driven by electoral ambition rather than purely ideological racism?",
+          "source_context": "Arkansas State Archives, Governor Orval E. Faubus Papers. Governor Orval Faubus of Arkansas for The white electorate of Arkansas and national broadcast audiences with the objective: To secure conservative segregationist votes by presenting himself as a defender of Arkansas sovereignty against federal overreach.. **Hinge Question:** To what extent was white political resistance to desegregation driven by electoral ambition rather than purely ideological racism?"
         }
       ],
       "video": [
@@ -3226,8 +3246,10 @@ const usa_data = {
             "hinge_question": "Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?"
           },
           "teacher_notes": {
-            "source_context": "Dan Weiner / John F. Kennedy Presidential Library and Museum. Dan Weiner, photojournalist documenting civil rights leadership for National magazine subscribers and historical record with the objective: To document the emergence of twenty-six-year-old Dr Martin Luther King Jr. as the primary orator of the nascent movement.. Hinge Question: Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?"
-          }
+            "source_context": "Dan Weiner / John F. Kennedy Presidential Library and Museum. Dan Weiner, photojournalist documenting civil rights leadership for National magazine subscribers and historical record with the objective: To document the emergence of twenty-six-year-old Dr Martin Luther King Jr. as the primary orator of the nascent movement.. **Hinge Question:** Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?"
+          },
+          "hinge_question": "Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?",
+          "source_context": "Dan Weiner / John F. Kennedy Presidential Library and Museum. Dan Weiner, photojournalist documenting civil rights leadership for National magazine subscribers and historical record with the objective: To document the emergence of twenty-six-year-old Dr Martin Luther King Jr. as the primary orator of the nascent movement.. **Hinge Question:** Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?"
         },
         {
           "id": "usa_lesson_1_3_b",
@@ -3248,8 +3270,10 @@ const usa_data = {
             "hinge_question": "Why did the NAACP choose Rosa Parks rather than earlier arrested women, such as Claudette Colvin, as the basis for their test case?"
           },
           "teacher_notes": {
-            "source_context": "Montgomery Municipal Court Archives, Alabama Department of Archives and History. Officers F.B. Day and D.W. Mixon of the Montgomery Police Department for Montgomery Municipal Court magistrate and city prosecutor with the objective: To charge an African American passenger with violating Section 11, Chapter 6 of the Montgomery City Code governing racial seating.. Hinge Question: Why did the NAACP choose Rosa Parks rather than earlier arrested women, such as Claudette Colvin, as the basis for their test case?"
-          }
+            "source_context": "Montgomery Municipal Court Archives, Alabama Department of Archives and History. Officers F.B. Day and D.W. Mixon of the Montgomery Police Department for Montgomery Municipal Court magistrate and city prosecutor with the objective: To charge an African American passenger with violating Section 11, Chapter 6 of the Montgomery City Code governing racial seating.. **Hinge Question:** Why did the NAACP choose Rosa Parks rather than earlier arrested women, such as Claudette Colvin, as the basis for their test case?"
+          },
+          "hinge_question": "Why did the NAACP choose Rosa Parks rather than earlier arrested women, such as Claudette Colvin, as the basis for their test case?",
+          "source_context": "Montgomery Municipal Court Archives, Alabama Department of Archives and History. Officers F.B. Day and D.W. Mixon of the Montgomery Police Department for Montgomery Municipal Court magistrate and city prosecutor with the objective: To charge an African American passenger with violating Section 11, Chapter 6 of the Montgomery City Code governing racial seating.. **Hinge Question:** Why did the NAACP choose Rosa Parks rather than earlier arrested women, such as Claudette Colvin, as the basis for their test case?"
         },
         {
           "id": "usa_lesson_1_3_c",
@@ -3270,8 +3294,10 @@ const usa_data = {
             "hinge_question": "To what extent has popular historical memory overemphasized King while obscuring the foundational role of the Women's Political Council?"
           },
           "teacher_notes": {
-            "source_context": "Women's Political Council Papers, Alabama State University Special Collections. Jo Ann Robinson, English professor and president of the Women's Political Council for The 45,000 Black citizens and transit riders of Montgomery with the objective: To call for an immediate, total one-day economic boycott of city buses on the Monday of Rosa Parks's trial.. Hinge Question: To what extent has popular historical memory overemphasized King while obscuring the foundational role of the Women's Political Council?"
-          }
+            "source_context": "Women's Political Council Papers, Alabama State University Special Collections. Jo Ann Robinson, English professor and president of the Women's Political Council for The 45,000 Black citizens and transit riders of Montgomery with the objective: To call for an immediate, total one-day economic boycott of city buses on the Monday of Rosa Parks's trial.. **Hinge Question:** To what extent has popular historical memory overemphasized King while obscuring the foundational role of the Women's Political Council?"
+          },
+          "hinge_question": "To what extent has popular historical memory overemphasized King while obscuring the foundational role of the Women's Political Council?",
+          "source_context": "Women's Political Council Papers, Alabama State University Special Collections. Jo Ann Robinson, English professor and president of the Women's Political Council for The 45,000 Black citizens and transit riders of Montgomery with the objective: To call for an immediate, total one-day economic boycott of city buses on the Monday of Rosa Parks's trial.. **Hinge Question:** To what extent has popular historical memory overemphasized King while obscuring the foundational role of the Women's Political Council?"
         },
         {
           "id": "usa_lesson_1_3_d",
@@ -3292,8 +3318,10 @@ const usa_data = {
             "hinge_question": "Could the Montgomery Bus Boycott have succeeded through economic pressure alone without the federal court victory in Browder v. Gayle?"
           },
           "teacher_notes": {
-            "source_context": "United States District Court for the Middle District of Alabama, 142 F. Supp. 707. Federal Judges Richard Rives and Frank Johnson Jr. for The City of Montgomery, the State of Alabama, and the federal judiciary with the objective: To apply the constitutional precedent of Brown v. Board to municipal public transportation systems.. Hinge Question: Could the Montgomery Bus Boycott have succeeded through economic pressure alone without the federal court victory in Browder v. Gayle?"
-          }
+            "source_context": "United States District Court for the Middle District of Alabama, 142 F. Supp. 707. Federal Judges Richard Rives and Frank Johnson Jr. for The City of Montgomery, the State of Alabama, and the federal judiciary with the objective: To apply the constitutional precedent of Brown v. Board to municipal public transportation systems.. **Hinge Question:** Could the Montgomery Bus Boycott have succeeded through economic pressure alone without the federal court victory in Browder v. Gayle?"
+          },
+          "hinge_question": "Could the Montgomery Bus Boycott have succeeded through economic pressure alone without the federal court victory in Browder v. Gayle?",
+          "source_context": "United States District Court for the Middle District of Alabama, 142 F. Supp. 707. Federal Judges Richard Rives and Frank Johnson Jr. for The City of Montgomery, the State of Alabama, and the federal judiciary with the objective: To apply the constitutional precedent of Brown v. Board to municipal public transportation systems.. **Hinge Question:** Could the Montgomery Bus Boycott have succeeded through economic pressure alone without the federal court victory in Browder v. Gayle?"
         },
         {
           "id": "usa_lesson_1_3_e",
@@ -3314,8 +3342,10 @@ const usa_data = {
             "hinge_question": "What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?"
           },
           "teacher_notes": {
-            "source_context": "Civil Rights Documentation Project, Moorland-Spingarn Research Center, Howard University. Reverend B.J. Simms, director of the Montgomery Improvement Association's transport committee for Oral historians and researchers studying non-violent logistics with the objective: To record the intricate daily operational mechanics required to transport thousands of daily commuters without public transit.. Hinge Question: What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?"
-          }
+            "source_context": "Civil Rights Documentation Project, Moorland-Spingarn Research Center, Howard University. Reverend B.J. Simms, director of the Montgomery Improvement Association's transport committee for Oral historians and researchers studying non-violent logistics with the objective: To record the intricate daily operational mechanics required to transport thousands of daily commuters without public transit.. **Hinge Question:** What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?"
+          },
+          "hinge_question": "What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?",
+          "source_context": "Civil Rights Documentation Project, Moorland-Spingarn Research Center, Howard University. Reverend B.J. Simms, director of the Montgomery Improvement Association's transport committee for Oral historians and researchers studying non-violent logistics with the objective: To record the intricate daily operational mechanics required to transport thousands of daily commuters without public transit.. **Hinge Question:** What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?"
         }
       ],
       "video": [
@@ -4129,8 +4159,10 @@ const usa_data = {
             "hinge_question": "Why did the lynching of Emmett Till catalyze the civil rights movement in a way that hundreds of previous unpunished lynchings had not?"
           },
           "teacher_notes": {
-            "source_context": "Chicago Defender National Edition, Historic Black Press Archive. Chicago Defender editorial staff and investigative journalists for African American communities across the North and national civil rights organizations with the objective: To expose the barbaric violence of Mississippi white supremacy and generate nationwide outrage demanding federal intervention.. Hinge Question: Why did the lynching of Emmett Till catalyze the civil rights movement in a way that hundreds of previous unpunished lynchings had not?"
-          }
+            "source_context": "Chicago Defender National Edition, Historic Black Press Archive. Chicago Defender editorial staff and investigative journalists for African American communities across the North and national civil rights organizations with the objective: To expose the barbaric violence of Mississippi white supremacy and generate nationwide outrage demanding federal intervention.. **Hinge Question:** Why did the lynching of Emmett Till catalyze the civil rights movement in a way that hundreds of previous unpunished lynchings had not?"
+          },
+          "hinge_question": "Why did the lynching of Emmett Till catalyze the civil rights movement in a way that hundreds of previous unpunished lynchings had not?",
+          "source_context": "Chicago Defender National Edition, Historic Black Press Archive. Chicago Defender editorial staff and investigative journalists for African American communities across the North and national civil rights organizations with the objective: To expose the barbaric violence of Mississippi white supremacy and generate nationwide outrage demanding federal intervention.. **Hinge Question:** Why did the lynching of Emmett Till catalyze the civil rights movement in a way that hundreds of previous unpunished lynchings had not?"
         },
         {
           "id": "usa_lesson_1_4_b",
@@ -4151,8 +4183,10 @@ const usa_data = {
             "hinge_question": "Why was economic coercion through the Citizens' Councils often more destructive to civil rights activists than physical Klan intimidation?"
           },
           "teacher_notes": {
-            "source_context": "Special Collections, Mitchell Memorial Library, Mississippi State University. Robert 'Tut' Patterson and executive leadership of the Mississippi Citizens' Councils for White business owners, civic leaders, bankers, and middle-class southern professionals with the objective: To coordinate ruthless economic sanctions against any Black citizen advocating civil rights or school integration.. Hinge Question: Why was economic coercion through the Citizens' Councils often more destructive to civil rights activists than physical Klan intimidation?"
-          }
+            "source_context": "Special Collections, Mitchell Memorial Library, Mississippi State University. Robert 'Tut' Patterson and executive leadership of the Mississippi Citizens' Councils for White business owners, civic leaders, bankers, and middle-class southern professionals with the objective: To coordinate ruthless economic sanctions against any Black citizen advocating civil rights or school integration.. **Hinge Question:** Why was economic coercion through the Citizens' Councils often more destructive to civil rights activists than physical Klan intimidation?"
+          },
+          "hinge_question": "Why was economic coercion through the Citizens' Councils often more destructive to civil rights activists than physical Klan intimidation?",
+          "source_context": "Special Collections, Mitchell Memorial Library, Mississippi State University. Robert 'Tut' Patterson and executive leadership of the Mississippi Citizens' Councils for White business owners, civic leaders, bankers, and middle-class southern professionals with the objective: To coordinate ruthless economic sanctions against any Black citizen advocating civil rights or school integration.. **Hinge Question:** Why was economic coercion through the Citizens' Councils often more destructive to civil rights activists than physical Klan intimidation?"
         },
         {
           "id": "usa_lesson_1_4_c",
@@ -4173,8 +4207,10 @@ const usa_data = {
             "hinge_question": "How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?"
           },
           "teacher_notes": {
-            "source_context": "State of Mississippi v. Roy Bryant and J.W. Milam, Tallahatchie County Court Records. J.W. Kellum, lead defense attorney representing confessed kidnappers Bryant and Milam for The all-white, twelve-man Tallahatchie County jury with the objective: To secure immediate acquittals by appealing directly to white racial solidarity against outside northern scrutiny.. Hinge Question: How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?"
-          }
+            "source_context": "State of Mississippi v. Roy Bryant and J.W. Milam, Tallahatchie County Court Records. J.W. Kellum, lead defense attorney representing confessed kidnappers Bryant and Milam for The all-white, twelve-man Tallahatchie County jury with the objective: To secure immediate acquittals by appealing directly to white racial solidarity against outside northern scrutiny.. **Hinge Question:** How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?"
+          },
+          "hinge_question": "How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?",
+          "source_context": "State of Mississippi v. Roy Bryant and J.W. Milam, Tallahatchie County Court Records. J.W. Kellum, lead defense attorney representing confessed kidnappers Bryant and Milam for The all-white, twelve-man Tallahatchie County jury with the objective: To secure immediate acquittals by appealing directly to white racial solidarity against outside northern scrutiny.. **Hinge Question:** How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?"
         },
         {
           "id": "usa_lesson_1_4_d",
@@ -4195,8 +4231,10 @@ const usa_data = {
             "hinge_question": "Why did Lyndon B. Johnson believe that passing even a severely weakened civil rights bill in 1957 was essential for future progress?"
           },
           "teacher_notes": {
-            "source_context": "United States Statutes at Large, 71 Stat. 634, Public Law 85-315. The 85th United States Congress, shepherded by Senate Majority Leader Lyndon B. Johnson for The American nation, federal courts, and southern voting registrars with the objective: To establish federal oversight over southern voter suppression while watering down enforcement to prevent a southern filibuster.. Hinge Question: Why did Lyndon B. Johnson believe that passing even a severely weakened civil rights bill in 1957 was essential for future progress?"
-          }
+            "source_context": "United States Statutes at Large, 71 Stat. 634, Public Law 85-315. The 85th United States Congress, shepherded by Senate Majority Leader Lyndon B. Johnson for The American nation, federal courts, and southern voting registrars with the objective: To establish federal oversight over southern voter suppression while watering down enforcement to prevent a southern filibuster.. **Hinge Question:** Why did Lyndon B. Johnson believe that passing even a severely weakened civil rights bill in 1957 was essential for future progress?"
+          },
+          "hinge_question": "Why did Lyndon B. Johnson believe that passing even a severely weakened civil rights bill in 1957 was essential for future progress?",
+          "source_context": "United States Statutes at Large, 71 Stat. 634, Public Law 85-315. The 85th United States Congress, shepherded by Senate Majority Leader Lyndon B. Johnson for The American nation, federal courts, and southern voting registrars with the objective: To establish federal oversight over southern voter suppression while watering down enforcement to prevent a southern filibuster.. **Hinge Question:** Why did Lyndon B. Johnson believe that passing even a severely weakened civil rights bill in 1957 was essential for future progress?"
         },
         {
           "id": "usa_lesson_1_4_e",
@@ -4217,8 +4255,10 @@ const usa_data = {
             "hinge_question": "How did statistical mapping empower federal civil rights lawyers to prove systemic discrimination under the Fourteenth Amendment?"
           },
           "teacher_notes": {
-            "source_context": "Southern Regional Council Research Series, Atlanta, Georgia. Demographic researchers of the Southern Regional Council for Federal civil rights attorneys, journalists, and philanthropic foundations with the objective: To systematically measure the catastrophic statistical reality of Black disenfranchisement across the southern Black Belt.. Hinge Question: How did statistical mapping empower federal civil rights lawyers to prove systemic discrimination under the Fourteenth Amendment?"
-          }
+            "source_context": "Southern Regional Council Research Series, Atlanta, Georgia. Demographic researchers of the Southern Regional Council for Federal civil rights attorneys, journalists, and philanthropic foundations with the objective: To systematically measure the catastrophic statistical reality of Black disenfranchisement across the southern Black Belt.. **Hinge Question:** How did statistical mapping empower federal civil rights lawyers to prove systemic discrimination under the Fourteenth Amendment?"
+          },
+          "hinge_question": "How did statistical mapping empower federal civil rights lawyers to prove systemic discrimination under the Fourteenth Amendment?",
+          "source_context": "Southern Regional Council Research Series, Atlanta, Georgia. Demographic researchers of the Southern Regional Council for Federal civil rights attorneys, journalists, and philanthropic foundations with the objective: To systematically measure the catastrophic statistical reality of Black disenfranchisement across the southern Black Belt.. **Hinge Question:** How did statistical mapping empower federal civil rights lawyers to prove systemic discrimination under the Fourteenth Amendment?"
         }
       ],
       "video": [
@@ -5047,8 +5087,10 @@ const usa_data = {
             "hinge_question": "Why did non-violent direct action intentionally provoke violent white reactions in front of television cameras?"
           },
           "teacher_notes": {
-            "source_context": "Associated Press Archive, Newsfilm and Still Photography Collection. Associated Press press photographer for National newspaper readers across the United States with the objective: To capture the dramatic, escalating confrontation at segregated commercial counters.. Hinge Question: Why did non-violent direct action intentionally provoke violent white reactions in front of television cameras?"
-          }
+            "source_context": "Associated Press Archive, Newsfilm and Still Photography Collection. Associated Press press photographer for National newspaper readers across the United States with the objective: To capture the dramatic, escalating confrontation at segregated commercial counters.. **Hinge Question:** Why did non-violent direct action intentionally provoke violent white reactions in front of television cameras?"
+          },
+          "hinge_question": "Why did non-violent direct action intentionally provoke violent white reactions in front of television cameras?",
+          "source_context": "Associated Press Archive, Newsfilm and Still Photography Collection. Associated Press press photographer for National newspaper readers across the United States with the objective: To capture the dramatic, escalating confrontation at segregated commercial counters.. **Hinge Question:** Why did non-violent direct action intentionally provoke violent white reactions in front of television cameras?"
         },
         {
           "id": "usa_lesson_2_1_b",
@@ -5069,8 +5111,10 @@ const usa_data = {
             "hinge_question": "How did the Freedom Rides force the Kennedy Administration to abandon its policy of gradualism and intervene directly in the South?"
           },
           "teacher_notes": {
-            "source_context": "Joe Postiglione photograph for The Anniston Star / Time Life Pictures. Joe Postiglione, local photojournalist for National wire services and international press with the objective: To record the horrifying aftermath of mob violence against federal interstate passengers.. Hinge Question: How did the Freedom Rides force the Kennedy Administration to abandon its policy of gradualism and intervene directly in the South?"
-          }
+            "source_context": "Joe Postiglione photograph for The Anniston Star / Time Life Pictures. Joe Postiglione, local photojournalist for National wire services and international press with the objective: To record the horrifying aftermath of mob violence against federal interstate passengers.. **Hinge Question:** How did the Freedom Rides force the Kennedy Administration to abandon its policy of gradualism and intervene directly in the South?"
+          },
+          "hinge_question": "How did the Freedom Rides force the Kennedy Administration to abandon its policy of gradualism and intervene directly in the South?",
+          "source_context": "Joe Postiglione photograph for The Anniston Star / Time Life Pictures. Joe Postiglione, local photojournalist for National wire services and international press with the objective: To record the horrifying aftermath of mob violence against federal interstate passengers.. **Hinge Question:** How did the Freedom Rides force the Kennedy Administration to abandon its policy of gradualism and intervene directly in the South?"
         },
         {
           "id": "usa_lesson_2_1_c",
@@ -5091,8 +5135,10 @@ const usa_data = {
             "hinge_question": "Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?"
           },
           "teacher_notes": {
-            "source_context": "SNCC Founding Papers, Martin Luther King Jr. Center for Nonviolent Social Change, Atlanta. James Lawson and founding executive committee of SNCC for Student volunteers, college sit-in participants, and protest coordinators with the objective: To instill rigorous philosophical and practical training in Gandhian non-violent resistance.. Hinge Question: Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?"
-          }
+            "source_context": "SNCC Founding Papers, Martin Luther King Jr. Center for Nonviolent Social Change, Atlanta. James Lawson and founding executive committee of SNCC for Student volunteers, college sit-in participants, and protest coordinators with the objective: To instill rigorous philosophical and practical training in Gandhian non-violent resistance.. **Hinge Question:** Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?"
+          },
+          "hinge_question": "Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?",
+          "source_context": "SNCC Founding Papers, Martin Luther King Jr. Center for Nonviolent Social Change, Atlanta. James Lawson and founding executive committee of SNCC for Student volunteers, college sit-in participants, and protest coordinators with the objective: To instill rigorous philosophical and practical training in Gandhian non-violent resistance.. **Hinge Question:** Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?"
         },
         {
           "id": "usa_lesson_2_1_d",
@@ -5113,8 +5159,10 @@ const usa_data = {
             "hinge_question": "Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?"
           },
           "teacher_notes": {
-            "source_context": "Bettmann Archive / Getty Images. Wire service press photographer embedded with the riders for National news readership with the objective: To document the militarized escort required to allow interstate buses to transit southern highways.. Hinge Question: Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?"
-          }
+            "source_context": "Bettmann Archive / Getty Images. Wire service press photographer embedded with the riders for National news readership with the objective: To document the militarized escort required to allow interstate buses to transit southern highways.. **Hinge Question:** Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?"
+          },
+          "hinge_question": "Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?",
+          "source_context": "Bettmann Archive / Getty Images. Wire service press photographer embedded with the riders for National news readership with the objective: To document the militarized escort required to allow interstate buses to transit southern highways.. **Hinge Question:** Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?"
         },
         {
           "id": "usa_lesson_2_1_e",
@@ -5135,8 +5183,10 @@ const usa_data = {
             "hinge_question": "Why was federal administrative regulation (like the ICC order) often more effective than Supreme Court rulings in enforcing desegregation?"
           },
           "teacher_notes": {
-            "source_context": "Interstate Commerce Commission Records, National Archives, College Park, Maryland. The Commissioners of the Interstate Commerce Commission acting under Department of Justice petition for All interstate bus, rail, and transit companies across the United States with the objective: To establish binding federal administrative penalties, including licence revocation, for terminal segregation.. Hinge Question: Why was federal administrative regulation (like the ICC order) often more effective than Supreme Court rulings in enforcing desegregation?"
-          }
+            "source_context": "Interstate Commerce Commission Records, National Archives, College Park, Maryland. The Commissioners of the Interstate Commerce Commission acting under Department of Justice petition for All interstate bus, rail, and transit companies across the United States with the objective: To establish binding federal administrative penalties, including licence revocation, for terminal segregation.. **Hinge Question:** Why was federal administrative regulation (like the ICC order) often more effective than Supreme Court rulings in enforcing desegregation?"
+          },
+          "hinge_question": "Why was federal administrative regulation (like the ICC order) often more effective than Supreme Court rulings in enforcing desegregation?",
+          "source_context": "Interstate Commerce Commission Records, National Archives, College Park, Maryland. The Commissioners of the Interstate Commerce Commission acting under Department of Justice petition for All interstate bus, rail, and transit companies across the United States with the objective: To establish binding federal administrative penalties, including licence revocation, for terminal segregation.. **Hinge Question:** Why was federal administrative regulation (like the ICC order) often more effective than Supreme Court rulings in enforcing desegregation?"
         }
       ],
       "video": [
@@ -5971,8 +6021,10 @@ const usa_data = {
             "hinge_question": "Why did King choose to ground his speech in the Declaration of Independence and the Bible rather than in contemporary political theory?"
           },
           "teacher_notes": {
-            "source_context": "National Archives and Records Administration (NARA), Still Pictures Division. United States Information Agency staff photographer for The global public and nationwide television audiences with the objective: To project American democratic ideals and demonstrate multiracial solidarity for legislative reform.. Hinge Question: Why did King choose to ground his speech in the Declaration of Independence and the Bible rather than in contemporary political theory?"
-          }
+            "source_context": "National Archives and Records Administration (NARA), Still Pictures Division. United States Information Agency staff photographer for The global public and nationwide television audiences with the objective: To project American democratic ideals and demonstrate multiracial solidarity for legislative reform.. **Hinge Question:** Why did King choose to ground his speech in the Declaration of Independence and the Bible rather than in contemporary political theory?"
+          },
+          "hinge_question": "Why did King choose to ground his speech in the Declaration of Independence and the Bible rather than in contemporary political theory?",
+          "source_context": "National Archives and Records Administration (NARA), Still Pictures Division. United States Information Agency staff photographer for The global public and nationwide television audiences with the objective: To project American democratic ideals and demonstrate multiracial solidarity for legislative reform.. **Hinge Question:** Why did King choose to ground his speech in the Declaration of Independence and the Bible rather than in contemporary political theory?"
         },
         {
           "id": "usa_lesson_2_2_b",
@@ -5993,8 +6045,10 @@ const usa_data = {
             "hinge_question": "How did television news coverage of 'Bloody Sunday' fundamentally alter the legislative timetable in Congress?"
           },
           "teacher_notes": {
-            "source_context": "Spider Martin photograph / Birmingham Civil Rights Institute Archive. Spider Martin, photojournalist documenting the Selma campaign for Television networks and international news publications with the objective: To record the unprovoked state-sponsored assault on citizens marching for the constitutional right to vote.. Hinge Question: How did television news coverage of 'Bloody Sunday' fundamentally alter the legislative timetable in Congress?"
-          }
+            "source_context": "Spider Martin photograph / Birmingham Civil Rights Institute Archive. Spider Martin, photojournalist documenting the Selma campaign for Television networks and international news publications with the objective: To record the unprovoked state-sponsored assault on citizens marching for the constitutional right to vote.. **Hinge Question:** How did television news coverage of 'Bloody Sunday' fundamentally alter the legislative timetable in Congress?"
+          },
+          "hinge_question": "How did television news coverage of 'Bloody Sunday' fundamentally alter the legislative timetable in Congress?",
+          "source_context": "Spider Martin photograph / Birmingham Civil Rights Institute Archive. Spider Martin, photojournalist documenting the Selma campaign for Television networks and international news publications with the objective: To record the unprovoked state-sponsored assault on citizens marching for the constitutional right to vote.. **Hinge Question:** How did television news coverage of 'Bloody Sunday' fundamentally alter the legislative timetable in Congress?"
         },
         {
           "id": "usa_lesson_2_2_c",
@@ -6015,8 +6069,10 @@ const usa_data = {
             "hinge_question": "Why did President Johnson famously remark after signing the Act: 'I think we just delivered the South to the Republican Party for a long time to come'?"
           },
           "teacher_notes": {
-            "source_context": "Cecil Stoughton / White House Press Office / LBJ Presidential Library. Cecil Stoughton, official White House photographer for The national press corps and American public with the objective: To immortalize the landmark signing that outlawed discrimination in public accommodations and employment.. Hinge Question: Why did President Johnson famously remark after signing the Act: 'I think we just delivered the South to the Republican Party for a long time to come'?"
-          }
+            "source_context": "Cecil Stoughton / White House Press Office / LBJ Presidential Library. Cecil Stoughton, official White House photographer for The national press corps and American public with the objective: To immortalize the landmark signing that outlawed discrimination in public accommodations and employment.. **Hinge Question:** Why did President Johnson famously remark after signing the Act: 'I think we just delivered the South to the Republican Party for a long time to come'?"
+          },
+          "hinge_question": "Why did President Johnson famously remark after signing the Act: 'I think we just delivered the South to the Republican Party for a long time to come'?",
+          "source_context": "Cecil Stoughton / White House Press Office / LBJ Presidential Library. Cecil Stoughton, official White House photographer for The national press corps and American public with the objective: To immortalize the landmark signing that outlawed discrimination in public accommodations and employment.. **Hinge Question:** Why did President Johnson famously remark after signing the Act: 'I think we just delivered the South to the Republican Party for a long time to come'?"
         },
         {
           "id": "usa_lesson_2_2_d",
@@ -6037,8 +6093,10 @@ const usa_data = {
             "hinge_question": "Why was the Voting Rights Act of 1965 vastly more enforceable than the 1957 and 1960 civil rights acts?"
           },
           "teacher_notes": {
-            "source_context": "Yoichi Okamoto / LBJ Presidential Library, Austin, Texas. Yoichi Okamoto, chief White House photographer for The American electorate and international diplomatic corps with the objective: To record the enactment of the most transformative voting rights statute in American history.. Hinge Question: Why was the Voting Rights Act of 1965 vastly more enforceable than the 1957 and 1960 civil rights acts?"
-          }
+            "source_context": "Yoichi Okamoto / LBJ Presidential Library, Austin, Texas. Yoichi Okamoto, chief White House photographer for The American electorate and international diplomatic corps with the objective: To record the enactment of the most transformative voting rights statute in American history.. **Hinge Question:** Why was the Voting Rights Act of 1965 vastly more enforceable than the 1957 and 1960 civil rights acts?"
+          },
+          "hinge_question": "Why was the Voting Rights Act of 1965 vastly more enforceable than the 1957 and 1960 civil rights acts?",
+          "source_context": "Yoichi Okamoto / LBJ Presidential Library, Austin, Texas. Yoichi Okamoto, chief White House photographer for The American electorate and international diplomatic corps with the objective: To record the enactment of the most transformative voting rights statute in American history.. **Hinge Question:** Why was the Voting Rights Act of 1965 vastly more enforceable than the 1957 and 1960 civil rights acts?"
         },
         {
           "id": "usa_lesson_2_2_e",
@@ -6059,8 +6117,10 @@ const usa_data = {
             "hinge_question": "Why did King consider the 'white moderate' who prioritized order over justice to be a greater stumbling block than the Ku Klux Klan?"
           },
           "teacher_notes": {
-            "source_context": "The King Center Archives, Atlanta, Georgia. Dr Martin Luther King Jr., incarcerated in the Birmingham city jail for Eight prominent moderate white Christian and Jewish clergymen in Alabama with the objective: To dismantle the moral argument for patience and defend the urgency of direct-action civil disobedience.. Hinge Question: Why did King consider the 'white moderate' who prioritized order over justice to be a greater stumbling block than the Ku Klux Klan?"
-          }
+            "source_context": "The King Center Archives, Atlanta, Georgia. Dr Martin Luther King Jr., incarcerated in the Birmingham city jail for Eight prominent moderate white Christian and Jewish clergymen in Alabama with the objective: To dismantle the moral argument for patience and defend the urgency of direct-action civil disobedience.. **Hinge Question:** Why did King consider the 'white moderate' who prioritized order over justice to be a greater stumbling block than the Ku Klux Klan?"
+          },
+          "hinge_question": "Why did King consider the 'white moderate' who prioritized order over justice to be a greater stumbling block than the Ku Klux Klan?",
+          "source_context": "The King Center Archives, Atlanta, Georgia. Dr Martin Luther King Jr., incarcerated in the Birmingham city jail for Eight prominent moderate white Christian and Jewish clergymen in Alabama with the objective: To dismantle the moral argument for patience and defend the urgency of direct-action civil disobedience.. **Hinge Question:** Why did King consider the 'white moderate' who prioritized order over justice to be a greater stumbling block than the Ku Klux Klan?"
         }
       ],
       "video": [
@@ -6889,8 +6949,10 @@ const usa_data = {
             "hinge_question": "Why did the US Olympic Committee immediately expel Smith and Carlos while stripping them of their credentials?"
           },
           "teacher_notes": {
-            "source_context": "John Dominis photograph for Life Magazine / International Olympic Committee Archive. John Dominis, photojournalist for Life Magazine for Millions of global viewers watching the 1968 Summer Olympic broadcast with the objective: To use the international Olympic stage to protest racial injustice, poverty, and police violence in the United States.. Hinge Question: Why did the US Olympic Committee immediately expel Smith and Carlos while stripping them of their credentials?"
-          }
+            "source_context": "John Dominis photograph for Life Magazine / International Olympic Committee Archive. John Dominis, photojournalist for Life Magazine for Millions of global viewers watching the 1968 Summer Olympic broadcast with the objective: To use the international Olympic stage to protest racial injustice, poverty, and police violence in the United States.. **Hinge Question:** Why did the US Olympic Committee immediately expel Smith and Carlos while stripping them of their credentials?"
+          },
+          "hinge_question": "Why did the US Olympic Committee immediately expel Smith and Carlos while stripping them of their credentials?",
+          "source_context": "John Dominis photograph for Life Magazine / International Olympic Committee Archive. John Dominis, photojournalist for Life Magazine for Millions of global viewers watching the 1968 Summer Olympic broadcast with the objective: To use the international Olympic stage to protest racial injustice, poverty, and police violence in the United States.. **Hinge Question:** Why did the US Olympic Committee immediately expel Smith and Carlos while stripping them of their credentials?"
         },
         {
           "id": "usa_lesson_2_3_b",
@@ -6911,8 +6973,10 @@ const usa_data = {
             "hinge_question": "Why did Malcolm X's message resonate far more powerfully in northern urban cities than King's message of southern non-violence?"
           },
           "teacher_notes": {
-            "source_context": "Schomburg Center for Research in Black Culture, New York Public Library. Editorial staff under the direction of Malcolm X and Elijah Muhammad for African American working-class communities in northern and western urban ghettos with the objective: To recruit members to the Nation of Islam and provide a radical counter-narrative to southern integrationist philosophy.. Hinge Question: Why did Malcolm X's message resonate far more powerfully in northern urban cities than King's message of southern non-violence?"
-          }
+            "source_context": "Schomburg Center for Research in Black Culture, New York Public Library. Editorial staff under the direction of Malcolm X and Elijah Muhammad for African American working-class communities in northern and western urban ghettos with the objective: To recruit members to the Nation of Islam and provide a radical counter-narrative to southern integrationist philosophy.. **Hinge Question:** Why did Malcolm X's message resonate far more powerfully in northern urban cities than King's message of southern non-violence?"
+          },
+          "hinge_question": "Why did Malcolm X's message resonate far more powerfully in northern urban cities than King's message of southern non-violence?",
+          "source_context": "Schomburg Center for Research in Black Culture, New York Public Library. Editorial staff under the direction of Malcolm X and Elijah Muhammad for African American working-class communities in northern and western urban ghettos with the objective: To recruit members to the Nation of Islam and provide a radical counter-narrative to southern integrationist philosophy.. **Hinge Question:** Why did Malcolm X's message resonate far more powerfully in northern urban cities than King's message of southern non-violence?"
         },
         {
           "id": "usa_lesson_2_3_c",
@@ -6933,8 +6997,10 @@ const usa_data = {
             "hinge_question": "How did Malcolm X's critique of the Democratic Party reflect growing Black disillusionment with liberal politicians in 1964?"
           },
           "teacher_notes": {
-            "source_context": "Malcolm X Memorial Foundation / Library of Congress Sound Recording Collection. Malcolm X (el-Hajj Malik el-Shabazz) for 3,000 community members at Cory Methodist Church and national broadcast audiences with the objective: To warn the federal government that African Americans would no longer tolerate non-violent passivity if their political rights were obstructed.. Hinge Question: How did Malcolm X's critique of the Democratic Party reflect growing Black disillusionment with liberal politicians in 1964?"
-          }
+            "source_context": "Malcolm X Memorial Foundation / Library of Congress Sound Recording Collection. Malcolm X (el-Hajj Malik el-Shabazz) for 3,000 community members at Cory Methodist Church and national broadcast audiences with the objective: To warn the federal government that African Americans would no longer tolerate non-violent passivity if their political rights were obstructed.. **Hinge Question:** How did Malcolm X's critique of the Democratic Party reflect growing Black disillusionment with liberal politicians in 1964?"
+          },
+          "hinge_question": "How did Malcolm X's critique of the Democratic Party reflect growing Black disillusionment with liberal politicians in 1964?",
+          "source_context": "Malcolm X Memorial Foundation / Library of Congress Sound Recording Collection. Malcolm X (el-Hajj Malik el-Shabazz) for 3,000 community members at Cory Methodist Church and national broadcast audiences with the objective: To warn the federal government that African Americans would no longer tolerate non-violent passivity if their political rights were obstructed.. **Hinge Question:** How did Malcolm X's critique of the Democratic Party reflect growing Black disillusionment with liberal politicians in 1964?"
         },
         {
           "id": "usa_lesson_2_3_d",
@@ -6955,8 +7021,10 @@ const usa_data = {
             "hinge_question": "Why did J. Edgar Hoover and the FBI designate the Black Panther Party as 'the greatest threat to the internal security of the country'?"
           },
           "teacher_notes": {
-            "source_context": "BPP National Headquarters, Oakland, California / Stanford University Special Collections. Huey P. Newton and Bobby Seale, co-founders of the Black Panther Party for Urban Black youth, working-class communities, and radical activist groups with the objective: To set forth the core ideological objectives and practical socialist demands of the revolutionary Black Panther Party.. Hinge Question: Why did J. Edgar Hoover and the FBI designate the Black Panther Party as 'the greatest threat to the internal security of the country'?"
-          }
+            "source_context": "BPP National Headquarters, Oakland, California / Stanford University Special Collections. Huey P. Newton and Bobby Seale, co-founders of the Black Panther Party for Urban Black youth, working-class communities, and radical activist groups with the objective: To set forth the core ideological objectives and practical socialist demands of the revolutionary Black Panther Party.. **Hinge Question:** Why did J. Edgar Hoover and the FBI designate the Black Panther Party as 'the greatest threat to the internal security of the country'?"
+          },
+          "hinge_question": "Why did J. Edgar Hoover and the FBI designate the Black Panther Party as 'the greatest threat to the internal security of the country'?",
+          "source_context": "BPP National Headquarters, Oakland, California / Stanford University Special Collections. Huey P. Newton and Bobby Seale, co-founders of the Black Panther Party for Urban Black youth, working-class communities, and radical activist groups with the objective: To set forth the core ideological objectives and practical socialist demands of the revolutionary Black Panther Party.. **Hinge Question:** Why did J. Edgar Hoover and the FBI designate the Black Panther Party as 'the greatest threat to the internal security of the country'?"
         },
         {
           "id": "usa_lesson_2_3_e",
@@ -6977,8 +7045,10 @@ const usa_data = {
             "hinge_question": "Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?"
           },
           "teacher_notes": {
-            "source_context": "SNCC Audio Archive, Tougaloo College Special Collections. Stokely Carmichael (later Kwame Ture), newly elected chairman of SNCC for Marchers, local Greenwood residents, national journalists, and Dr King with the objective: To decisively reject integrationist passivity and mobilize Black communities to seize political and economic control.. Hinge Question: Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?"
-          }
+            "source_context": "SNCC Audio Archive, Tougaloo College Special Collections. Stokely Carmichael (later Kwame Ture), newly elected chairman of SNCC for Marchers, local Greenwood residents, national journalists, and Dr King with the objective: To decisively reject integrationist passivity and mobilize Black communities to seize political and economic control.. **Hinge Question:** Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?"
+          },
+          "hinge_question": "Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?",
+          "source_context": "SNCC Audio Archive, Tougaloo College Special Collections. Stokely Carmichael (later Kwame Ture), newly elected chairman of SNCC for Marchers, local Greenwood residents, national journalists, and Dr King with the objective: To decisively reject integrationist passivity and mobilize Black communities to seize political and economic control.. **Hinge Question:** Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?"
         }
       ],
       "video": [
@@ -7792,8 +7862,10 @@ const usa_data = {
             "hinge_question": "Why did President Johnson largely ignore the recommendations of the Kerner Commission despite having appointed it?"
           },
           "teacher_notes": {
-            "source_context": "United States Government Printing Office, Washington D.C.. The 11-member presidential commission chaired by Governor Otto Kerner of Illinois for President Lyndon B. Johnson, the United States Congress, and the American public with the objective: To provide an objective, authoritative federal investigation into the root causes of the devastating urban rebellions of 1967.. Hinge Question: Why did President Johnson largely ignore the recommendations of the Kerner Commission despite having appointed it?"
-          }
+            "source_context": "United States Government Printing Office, Washington D.C.. The 11-member presidential commission chaired by Governor Otto Kerner of Illinois for President Lyndon B. Johnson, the United States Congress, and the American public with the objective: To provide an objective, authoritative federal investigation into the root causes of the devastating urban rebellions of 1967.. **Hinge Question:** Why did President Johnson largely ignore the recommendations of the Kerner Commission despite having appointed it?"
+          },
+          "hinge_question": "Why did President Johnson largely ignore the recommendations of the Kerner Commission despite having appointed it?",
+          "source_context": "United States Government Printing Office, Washington D.C.. The 11-member presidential commission chaired by Governor Otto Kerner of Illinois for President Lyndon B. Johnson, the United States Congress, and the American public with the objective: To provide an objective, authoritative federal investigation into the root causes of the devastating urban rebellions of 1967.. **Hinge Question:** Why did President Johnson largely ignore the recommendations of the Kerner Commission despite having appointed it?"
         },
         {
           "id": "usa_lesson_2_4_b",
@@ -7814,8 +7886,10 @@ const usa_data = {
             "hinge_question": "How did King's strategic shift toward economic rights and poverty alienate many of his moderate white political allies?"
           },
           "teacher_notes": {
-            "source_context": "Library of Congress, Prints and Photographs Division. Documentary photojournalist for US News & World Report for The American reading public and congressional policymakers with the objective: To record the dramatic physical presence of thousands of impoverished citizens camping directly beside the Lincoln Memorial.. Hinge Question: How did King's strategic shift toward economic rights and poverty alienate many of his moderate white political allies?"
-          }
+            "source_context": "Library of Congress, Prints and Photographs Division. Documentary photojournalist for US News & World Report for The American reading public and congressional policymakers with the objective: To record the dramatic physical presence of thousands of impoverished citizens camping directly beside the Lincoln Memorial.. **Hinge Question:** How did King's strategic shift toward economic rights and poverty alienate many of his moderate white political allies?"
+          },
+          "hinge_question": "How did King's strategic shift toward economic rights and poverty alienate many of his moderate white political allies?",
+          "source_context": "Library of Congress, Prints and Photographs Division. Documentary photojournalist for US News & World Report for The American reading public and congressional policymakers with the objective: To record the dramatic physical presence of thousands of impoverished citizens camping directly beside the Lincoln Memorial.. **Hinge Question:** How did King's strategic shift toward economic rights and poverty alienate many of his moderate white political allies?"
         },
         {
           "id": "usa_lesson_2_4_c",
@@ -7836,8 +7910,10 @@ const usa_data = {
             "hinge_question": "Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?"
           },
           "teacher_notes": {
-            "source_context": "McCone Commission Testimony, Los Angeles Public Library Special Collections. Tommy Jacquette, twenty-one-year-old Watts community organizer for The Governor's Commission on the Los Angeles Riots (McCone Commission) with the objective: To articulate the authentic collective grievances and political meaning behind the spontaneous urban violence.. Hinge Question: Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?"
-          }
+            "source_context": "McCone Commission Testimony, Los Angeles Public Library Special Collections. Tommy Jacquette, twenty-one-year-old Watts community organizer for The Governor's Commission on the Los Angeles Riots (McCone Commission) with the objective: To articulate the authentic collective grievances and political meaning behind the spontaneous urban violence.. **Hinge Question:** Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?"
+          },
+          "hinge_question": "Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?",
+          "source_context": "McCone Commission Testimony, Los Angeles Public Library Special Collections. Tommy Jacquette, twenty-one-year-old Watts community organizer for The Governor's Commission on the Los Angeles Riots (McCone Commission) with the objective: To articulate the authentic collective grievances and political meaning behind the spontaneous urban violence.. **Hinge Question:** Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?"
         },
         {
           "id": "usa_lesson_2_4_d",
@@ -7858,8 +7934,10 @@ const usa_data = {
             "hinge_question": "What does the violent national reaction to King's murder reveal about the state of American racial consensus in 1968?"
           },
           "teacher_notes": {
-            "source_context": "Robert F. Kennedy Presidential Campaign Sound Archives, JFK Library, Boston. Senator Robert F. Kennedy, presidential candidate and former Attorney General for Several thousand Black citizens gathered for a campaign rally in inner-city Indianapolis with the objective: To convey the devastating news of King's murder, prevent retaliatory violence, and appeal for national unity.. Hinge Question: What does the violent national reaction to King's murder reveal about the state of American racial consensus in 1968?"
-          }
+            "source_context": "Robert F. Kennedy Presidential Campaign Sound Archives, JFK Library, Boston. Senator Robert F. Kennedy, presidential candidate and former Attorney General for Several thousand Black citizens gathered for a campaign rally in inner-city Indianapolis with the objective: To convey the devastating news of King's murder, prevent retaliatory violence, and appeal for national unity.. **Hinge Question:** What does the violent national reaction to King's murder reveal about the state of American racial consensus in 1968?"
+          },
+          "hinge_question": "What does the violent national reaction to King's murder reveal about the state of American racial consensus in 1968?",
+          "source_context": "Robert F. Kennedy Presidential Campaign Sound Archives, JFK Library, Boston. Senator Robert F. Kennedy, presidential candidate and former Attorney General for Several thousand Black citizens gathered for a campaign rally in inner-city Indianapolis with the objective: To convey the devastating news of King's murder, prevent retaliatory violence, and appeal for national unity.. **Hinge Question:** What does the violent national reaction to King's murder reveal about the state of American racial consensus in 1968?"
         },
         {
           "id": "usa_lesson_2_4_e",
@@ -7880,8 +7958,10 @@ const usa_data = {
             "hinge_question": "Why did fair housing legislation encounter far fiercer resistance among northern white homeowners than voting rights in the South?"
           },
           "teacher_notes": {
-            "source_context": "United States Statutes at Large, 82 Stat. 73, Public Law 90-284. The 90th United States Congress, signed into law by President Lyndon B. Johnson for The American real estate industry, financial lenders, and the public with the objective: To provide a federal legislative memorial to Dr King and dismantle the legal mechanisms of residential ghettoization.. Hinge Question: Why did fair housing legislation encounter far fiercer resistance among northern white homeowners than voting rights in the South?"
-          }
+            "source_context": "United States Statutes at Large, 82 Stat. 73, Public Law 90-284. The 90th United States Congress, signed into law by President Lyndon B. Johnson for The American real estate industry, financial lenders, and the public with the objective: To provide a federal legislative memorial to Dr King and dismantle the legal mechanisms of residential ghettoization.. **Hinge Question:** Why did fair housing legislation encounter far fiercer resistance among northern white homeowners than voting rights in the South?"
+          },
+          "hinge_question": "Why did fair housing legislation encounter far fiercer resistance among northern white homeowners than voting rights in the South?",
+          "source_context": "United States Statutes at Large, 82 Stat. 73, Public Law 90-284. The 90th United States Congress, signed into law by President Lyndon B. Johnson for The American real estate industry, financial lenders, and the public with the objective: To provide a federal legislative memorial to Dr King and dismantle the legal mechanisms of residential ghettoization.. **Hinge Question:** Why did fair housing legislation encounter far fiercer resistance among northern white homeowners than voting rights in the South?"
         }
       ],
       "video": [
@@ -8710,8 +8790,10 @@ const usa_data = {
             "hinge_question": "To what extent was the 'Domino Theory' an accurate strategic assessment versus a flawed ideological simplification?"
           },
           "teacher_notes": {
-            "source_context": "Public Papers of the Presidents: Dwight D. Eisenhower, 1954. President Dwight D. Eisenhower for White House press correspondents, congressional leaders, and international diplomats with the objective: To convince a skeptical American public that financial support for the French and anti-communist forces in Indochina was vital to national security.. Hinge Question: To what extent was the 'Domino Theory' an accurate strategic assessment versus a flawed ideological simplification?"
-          }
+            "source_context": "Public Papers of the Presidents: Dwight D. Eisenhower, 1954. President Dwight D. Eisenhower for White House press correspondents, congressional leaders, and international diplomats with the objective: To convince a skeptical American public that financial support for the French and anti-communist forces in Indochina was vital to national security.. **Hinge Question:** To what extent was the 'Domino Theory' an accurate strategic assessment versus a flawed ideological simplification?"
+          },
+          "hinge_question": "To what extent was the 'Domino Theory' an accurate strategic assessment versus a flawed ideological simplification?",
+          "source_context": "Public Papers of the Presidents: Dwight D. Eisenhower, 1954. President Dwight D. Eisenhower for White House press correspondents, congressional leaders, and international diplomats with the objective: To convince a skeptical American public that financial support for the French and anti-communist forces in Indochina was vital to national security.. **Hinge Question:** To what extent was the 'Domino Theory' an accurate strategic assessment versus a flawed ideological simplification?"
         },
         {
           "id": "usa_lesson_3_1_b",
@@ -8732,8 +8814,10 @@ const usa_data = {
             "hinge_question": "Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?"
           },
           "teacher_notes": {
-            "source_context": "Malcolm Browne photograph for Associated Press, World Press Photo of the Year. Malcolm Browne, Associated Press bureau chief in Saigon for Global news readers, television viewers, and President John F. Kennedy with the objective: To document the ultimate act of religious protest against Diem's Catholic-dominated nepotistic dictatorship.. Hinge Question: Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?"
-          }
+            "source_context": "Malcolm Browne photograph for Associated Press, World Press Photo of the Year. Malcolm Browne, Associated Press bureau chief in Saigon for Global news readers, television viewers, and President John F. Kennedy with the objective: To document the ultimate act of religious protest against Diem's Catholic-dominated nepotistic dictatorship.. **Hinge Question:** Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?"
+          },
+          "hinge_question": "Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?",
+          "source_context": "Malcolm Browne photograph for Associated Press, World Press Photo of the Year. Malcolm Browne, Associated Press bureau chief in Saigon for Global news readers, television viewers, and President John F. Kennedy with the objective: To document the ultimate act of religious protest against Diem's Catholic-dominated nepotistic dictatorship.. **Hinge Question:** Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?"
         },
         {
           "id": "usa_lesson_3_1_c",
@@ -8754,8 +8838,10 @@ const usa_data = {
             "hinge_question": "Did the assassination of Diem leave the United States more deeply trapped in Vietnam, or provide an opportunity to exit?"
           },
           "teacher_notes": {
-            "source_context": "Foreign Relations of the United States (FRUS), 1961–1963, Volume IV, Vietnam. Roger Hilsman and George Ball, approved by President Kennedy for Ambassador Henry Cabot Lodge Jr. and the CIA station in Saigon with the objective: To signal to dissident South Vietnamese generals that the US would not oppose a coup to replace Diem.. Hinge Question: Did the assassination of Diem leave the United States more deeply trapped in Vietnam, or provide an opportunity to exit?"
-          }
+            "source_context": "Foreign Relations of the United States (FRUS), 1961–1963, Volume IV, Vietnam. Roger Hilsman and George Ball, approved by President Kennedy for Ambassador Henry Cabot Lodge Jr. and the CIA station in Saigon with the objective: To signal to dissident South Vietnamese generals that the US would not oppose a coup to replace Diem.. **Hinge Question:** Did the assassination of Diem leave the United States more deeply trapped in Vietnam, or provide an opportunity to exit?"
+          },
+          "hinge_question": "Did the assassination of Diem leave the United States more deeply trapped in Vietnam, or provide an opportunity to exit?",
+          "source_context": "Foreign Relations of the United States (FRUS), 1961–1963, Volume IV, Vietnam. Roger Hilsman and George Ball, approved by President Kennedy for Ambassador Henry Cabot Lodge Jr. and the CIA station in Saigon with the objective: To signal to dissident South Vietnamese generals that the US would not oppose a coup to replace Diem.. **Hinge Question:** Did the assassination of Diem leave the United States more deeply trapped in Vietnam, or provide an opportunity to exit?"
         },
         {
           "id": "usa_lesson_3_1_d",
@@ -8776,8 +8862,10 @@ const usa_data = {
             "hinge_question": "Why was the Diem government's refusal to implement genuine land reform fatal to its survival in rural Vietnam?"
           },
           "teacher_notes": {
-            "source_context": "Central Intelligence Agency Freedom of Information Act Electronic Reading Room. Office of National Estimates, Central Intelligence Agency for The President, National Security Council, and Joint Chiefs of Staff with the objective: To provide unvarnished, realistic intelligence on the catastrophic deterioration of political stability in South Vietnam.. Hinge Question: Why was the Diem government's refusal to implement genuine land reform fatal to its survival in rural Vietnam?"
-          }
+            "source_context": "Central Intelligence Agency Freedom of Information Act Electronic Reading Room. Office of National Estimates, Central Intelligence Agency for The President, National Security Council, and Joint Chiefs of Staff with the objective: To provide unvarnished, realistic intelligence on the catastrophic deterioration of political stability in South Vietnam.. **Hinge Question:** Why was the Diem government's refusal to implement genuine land reform fatal to its survival in rural Vietnam?"
+          },
+          "hinge_question": "Why was the Diem government's refusal to implement genuine land reform fatal to its survival in rural Vietnam?",
+          "source_context": "Central Intelligence Agency Freedom of Information Act Electronic Reading Room. Office of National Estimates, Central Intelligence Agency for The President, National Security Council, and Joint Chiefs of Staff with the objective: To provide unvarnished, realistic intelligence on the catastrophic deterioration of political stability in South Vietnam.. **Hinge Question:** Why was the Diem government's refusal to implement genuine land reform fatal to its survival in rural Vietnam?"
         },
         {
           "id": "usa_lesson_3_1_e",
@@ -8798,8 +8886,10 @@ const usa_data = {
             "hinge_question": "Why did the neutral status of Laos and Cambodia present an intractable military dilemma for American military commanders?"
           },
           "teacher_notes": {
-            "source_context": "United States Military Assistance Command, Vietnam (MACV) Cartographic Section. Military cartographers of the US Department of Defense for Military planners and operational commanders in Saigon and Honolulu with the objective: To map cross-border infiltration routes used by North Vietnamese regulars and Vietcong guerrillas.. Hinge Question: Why did the neutral status of Laos and Cambodia present an intractable military dilemma for American military commanders?"
-          }
+            "source_context": "United States Military Assistance Command, Vietnam (MACV) Cartographic Section. Military cartographers of the US Department of Defense for Military planners and operational commanders in Saigon and Honolulu with the objective: To map cross-border infiltration routes used by North Vietnamese regulars and Vietcong guerrillas.. **Hinge Question:** Why did the neutral status of Laos and Cambodia present an intractable military dilemma for American military commanders?"
+          },
+          "hinge_question": "Why did the neutral status of Laos and Cambodia present an intractable military dilemma for American military commanders?",
+          "source_context": "United States Military Assistance Command, Vietnam (MACV) Cartographic Section. Military cartographers of the US Department of Defense for Military planners and operational commanders in Saigon and Honolulu with the objective: To map cross-border infiltration routes used by North Vietnamese regulars and Vietcong guerrillas.. **Hinge Question:** Why did the neutral status of Laos and Cambodia present an intractable military dilemma for American military commanders?"
         }
       ],
       "video": [
@@ -9634,8 +9724,10 @@ const usa_data = {
             "hinge_question": "Why did General Westmoreland insist on deploying ground combat troops rather than relying solely on the air campaign?"
           },
           "teacher_notes": {
-            "source_context": "Larry Burrows photograph for Life Magazine / US Marine Corps Historical Center. Larry Burrows, legendary combat photojournalist for The American public and global news readership with the objective: To record the historic first wave of American combat troops arriving on the Asian mainland since the Korean War.. Hinge Question: Why did General Westmoreland insist on deploying ground combat troops rather than relying solely on the air campaign?"
-          }
+            "source_context": "Larry Burrows photograph for Life Magazine / US Marine Corps Historical Center. Larry Burrows, legendary combat photojournalist for The American public and global news readership with the objective: To record the historic first wave of American combat troops arriving on the Asian mainland since the Korean War.. **Hinge Question:** Why did General Westmoreland insist on deploying ground combat troops rather than relying solely on the air campaign?"
+          },
+          "hinge_question": "Why did General Westmoreland insist on deploying ground combat troops rather than relying solely on the air campaign?",
+          "source_context": "Larry Burrows photograph for Life Magazine / US Marine Corps Historical Center. Larry Burrows, legendary combat photojournalist for The American public and global news readership with the objective: To record the historic first wave of American combat troops arriving on the Asian mainland since the Korean War.. **Hinge Question:** Why did General Westmoreland insist on deploying ground combat troops rather than relying solely on the air campaign?"
         },
         {
           "id": "usa_lesson_3_2_b",
@@ -9656,8 +9748,10 @@ const usa_data = {
             "hinge_question": "Why did Senator Wayne Morse famously vote against the resolution, warning that Congress was 'giving the President a blank check'?"
           },
           "teacher_notes": {
-            "source_context": "United States Statutes at Large, 78 Stat. 384, 88th Congress. The United States Congress, passed 416–0 in the House and 88–2 in the Senate for President Johnson, the military command, and the North Vietnamese government with the objective: To grant blanket presidential authority to deploy armed forces and launch retaliatory airstrikes across Southeast Asia.. Hinge Question: Why did Senator Wayne Morse famously vote against the resolution, warning that Congress was 'giving the President a blank check'?"
-          }
+            "source_context": "United States Statutes at Large, 78 Stat. 384, 88th Congress. The United States Congress, passed 416–0 in the House and 88–2 in the Senate for President Johnson, the military command, and the North Vietnamese government with the objective: To grant blanket presidential authority to deploy armed forces and launch retaliatory airstrikes across Southeast Asia.. **Hinge Question:** Why did Senator Wayne Morse famously vote against the resolution, warning that Congress was 'giving the President a blank check'?"
+          },
+          "hinge_question": "Why did Senator Wayne Morse famously vote against the resolution, warning that Congress was 'giving the President a blank check'?",
+          "source_context": "United States Statutes at Large, 78 Stat. 384, 88th Congress. The United States Congress, passed 416–0 in the House and 88–2 in the Senate for President Johnson, the military command, and the North Vietnamese government with the objective: To grant blanket presidential authority to deploy armed forces and launch retaliatory airstrikes across Southeast Asia.. **Hinge Question:** Why did Senator Wayne Morse famously vote against the resolution, warning that Congress was 'giving the President a blank check'?"
         },
         {
           "id": "usa_lesson_3_2_c",
@@ -9678,8 +9772,10 @@ const usa_data = {
             "hinge_question": "Why did the Johnson Administration rush to launch retaliatory air strikes despite knowing the evidence of the second attack was questionable?"
           },
           "teacher_notes": {
-            "source_context": "National Security Agency (NSA) Declassified Gulf of Tonkin Records, Document No. 6310. Captain John J. Herrick, Task Group Commander aboard USS Maddox for Commander in Chief, Pacific Fleet (CINCPAC) and the Pentagon with the objective: To urge caution and halt planned military strikes because evidence of an attack was highly doubtful.. Hinge Question: Why did the Johnson Administration rush to launch retaliatory air strikes despite knowing the evidence of the second attack was questionable?"
-          }
+            "source_context": "National Security Agency (NSA) Declassified Gulf of Tonkin Records, Document No. 6310. Captain John J. Herrick, Task Group Commander aboard USS Maddox for Commander in Chief, Pacific Fleet (CINCPAC) and the Pentagon with the objective: To urge caution and halt planned military strikes because evidence of an attack was highly doubtful.. **Hinge Question:** Why did the Johnson Administration rush to launch retaliatory air strikes despite knowing the evidence of the second attack was questionable?"
+          },
+          "hinge_question": "Why did the Johnson Administration rush to launch retaliatory air strikes despite knowing the evidence of the second attack was questionable?",
+          "source_context": "National Security Agency (NSA) Declassified Gulf of Tonkin Records, Document No. 6310. Captain John J. Herrick, Task Group Commander aboard USS Maddox for Commander in Chief, Pacific Fleet (CINCPAC) and the Pentagon with the objective: To urge caution and halt planned military strikes because evidence of an attack was highly doubtful.. **Hinge Question:** Why did the Johnson Administration rush to launch retaliatory air strikes despite knowing the evidence of the second attack was questionable?"
         },
         {
           "id": "usa_lesson_3_2_d",
@@ -9700,8 +9796,10 @@ const usa_data = {
             "hinge_question": "Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?"
           },
           "teacher_notes": {
-            "source_context": "United States Air Force Historical Research Agency, Maxwell AFB, Alabama. USAF aerial reconnaissance combat photographer for Military planners and domestic news media with the objective: To project the devastating technological superiority of American strategic air power.. Hinge Question: Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?"
-          }
+            "source_context": "United States Air Force Historical Research Agency, Maxwell AFB, Alabama. USAF aerial reconnaissance combat photographer for Military planners and domestic news media with the objective: To project the devastating technological superiority of American strategic air power.. **Hinge Question:** Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?"
+          },
+          "hinge_question": "Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?",
+          "source_context": "United States Air Force Historical Research Agency, Maxwell AFB, Alabama. USAF aerial reconnaissance combat photographer for Military planners and domestic news media with the objective: To project the devastating technological superiority of American strategic air power.. **Hinge Question:** Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?"
         },
         {
           "id": "usa_lesson_3_2_e",
@@ -9722,8 +9820,10 @@ const usa_data = {
             "hinge_question": "Was the Gulf of Tonkin incident an unprovoked attack on US forces or the deliberate consequence of covert American operations?"
           },
           "teacher_notes": {
-            "source_context": "Foreign Broadcast Information Service (FBIS), Daily Report: Far East. The Democratic Republic of Vietnam (Hanoi Radio Ministry of Information) for The North Vietnamese population, non-aligned nations, and the international public with the objective: To denounce American naval aggression and mobilize domestic patriotic resistance against foreign invasion.. Hinge Question: Was the Gulf of Tonkin incident an unprovoked attack on US forces or the deliberate consequence of covert American operations?"
-          }
+            "source_context": "Foreign Broadcast Information Service (FBIS), Daily Report: Far East. The Democratic Republic of Vietnam (Hanoi Radio Ministry of Information) for The North Vietnamese population, non-aligned nations, and the international public with the objective: To denounce American naval aggression and mobilize domestic patriotic resistance against foreign invasion.. **Hinge Question:** Was the Gulf of Tonkin incident an unprovoked attack on US forces or the deliberate consequence of covert American operations?"
+          },
+          "hinge_question": "Was the Gulf of Tonkin incident an unprovoked attack on US forces or the deliberate consequence of covert American operations?",
+          "source_context": "Foreign Broadcast Information Service (FBIS), Daily Report: Far East. The Democratic Republic of Vietnam (Hanoi Radio Ministry of Information) for The North Vietnamese population, non-aligned nations, and the international public with the objective: To denounce American naval aggression and mobilize domestic patriotic resistance against foreign invasion.. **Hinge Question:** Was the Gulf of Tonkin incident an unprovoked attack on US forces or the deliberate consequence of covert American operations?"
         }
       ],
       "video": [
@@ -10552,8 +10652,10 @@ const usa_data = {
             "hinge_question": "Why did airmobile helicopter tactics ultimately fail to achieve permanent territorial control over the countryside?"
           },
           "teacher_notes": {
-            "source_context": "United States Army Signal Corps Archive, Fort Meade, Maryland. US Army Signal Corps combat cameraman for The Pentagon and American news media with the objective: To showcase the agility and technological prowess of the 1st Cavalry Division (Airmobile).. Hinge Question: Why did airmobile helicopter tactics ultimately fail to achieve permanent territorial control over the countryside?"
-          }
+            "source_context": "United States Army Signal Corps Archive, Fort Meade, Maryland. US Army Signal Corps combat cameraman for The Pentagon and American news media with the objective: To showcase the agility and technological prowess of the 1st Cavalry Division (Airmobile).. **Hinge Question:** Why did airmobile helicopter tactics ultimately fail to achieve permanent territorial control over the countryside?"
+          },
+          "hinge_question": "Why did airmobile helicopter tactics ultimately fail to achieve permanent territorial control over the countryside?",
+          "source_context": "United States Army Signal Corps Archive, Fort Meade, Maryland. US Army Signal Corps combat cameraman for The Pentagon and American news media with the objective: To showcase the agility and technological prowess of the 1st Cavalry Division (Airmobile).. **Hinge Question:** Why did airmobile helicopter tactics ultimately fail to achieve permanent territorial control over the countryside?"
         },
         {
           "id": "usa_lesson_3_3_b",
@@ -10574,8 +10676,10 @@ const usa_data = {
             "hinge_question": "How did the decentralized, multi-path nature of the Ho Chi Minh Trail render American interdiction bombing ineffective?"
           },
           "teacher_notes": {
-            "source_context": "Vietnam News Agency (VNA) Historical Archives, Hanoi. Official combat photographer of the North Vietnamese Ministry of Culture for The North Vietnamese population, NLF fighters, and communist bloc allies with the objective: To boost wartime morale and demonstrate that simple, decentralized logistics could survive relentless American bombardment.. Hinge Question: How did the decentralized, multi-path nature of the Ho Chi Minh Trail render American interdiction bombing ineffective?"
-          }
+            "source_context": "Vietnam News Agency (VNA) Historical Archives, Hanoi. Official combat photographer of the North Vietnamese Ministry of Culture for The North Vietnamese population, NLF fighters, and communist bloc allies with the objective: To boost wartime morale and demonstrate that simple, decentralized logistics could survive relentless American bombardment.. **Hinge Question:** How did the decentralized, multi-path nature of the Ho Chi Minh Trail render American interdiction bombing ineffective?"
+          },
+          "hinge_question": "How did the decentralized, multi-path nature of the Ho Chi Minh Trail render American interdiction bombing ineffective?",
+          "source_context": "Vietnam News Agency (VNA) Historical Archives, Hanoi. Official combat photographer of the North Vietnamese Ministry of Culture for The North Vietnamese population, NLF fighters, and communist bloc allies with the objective: To boost wartime morale and demonstrate that simple, decentralized logistics could survive relentless American bombardment.. **Hinge Question:** How did the decentralized, multi-path nature of the Ho Chi Minh Trail render American interdiction bombing ineffective?"
         },
         {
           "id": "usa_lesson_3_3_c",
@@ -10596,8 +10700,10 @@ const usa_data = {
             "hinge_question": "Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?"
           },
           "teacher_notes": {
-            "source_context": "Department of the Army, FM 5-31 Field Manual Series, Washington D.C.. Office of the Chief of Engineers, Department of the Army for Junior officers, non-commissioned officers, and infantry riflemen deploying to Vietnam with the objective: To provide critical tactical instruction on recognizing, disarming, and surviving concealed insurgent booby traps.. Hinge Question: Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?"
-          }
+            "source_context": "Department of the Army, FM 5-31 Field Manual Series, Washington D.C.. Office of the Chief of Engineers, Department of the Army for Junior officers, non-commissioned officers, and infantry riflemen deploying to Vietnam with the objective: To provide critical tactical instruction on recognizing, disarming, and surviving concealed insurgent booby traps.. **Hinge Question:** Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?"
+          },
+          "hinge_question": "Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?",
+          "source_context": "Department of the Army, FM 5-31 Field Manual Series, Washington D.C.. Office of the Chief of Engineers, Department of the Army for Junior officers, non-commissioned officers, and infantry riflemen deploying to Vietnam with the objective: To provide critical tactical instruction on recognizing, disarming, and surviving concealed insurgent booby traps.. **Hinge Question:** Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?"
         },
         {
           "id": "usa_lesson_3_3_d",
@@ -10618,8 +10724,10 @@ const usa_data = {
             "hinge_question": "Why was the 'body count' metric fundamentally flawed as a strategy for winning a counter-insurgency war?"
           },
           "teacher_notes": {
-            "source_context": "Philip Caputo, 'A Rumor of War', Holt, Rinehart and Winston (1977). Lieutenant Philip Caputo, US Marine Corps infantry platoon commander for The American reading public and historians of the Vietnam War with the objective: To provide an honest, unromanticized personal account of how attrition warfare degraded moral standards.. Hinge Question: Why was the 'body count' metric fundamentally flawed as a strategy for winning a counter-insurgency war?"
-          }
+            "source_context": "Philip Caputo, 'A Rumor of War', Holt, Rinehart and Winston (1977). Lieutenant Philip Caputo, US Marine Corps infantry platoon commander for The American reading public and historians of the Vietnam War with the objective: To provide an honest, unromanticized personal account of how attrition warfare degraded moral standards.. **Hinge Question:** Why was the 'body count' metric fundamentally flawed as a strategy for winning a counter-insurgency war?"
+          },
+          "hinge_question": "Why was the 'body count' metric fundamentally flawed as a strategy for winning a counter-insurgency war?",
+          "source_context": "Philip Caputo, 'A Rumor of War', Holt, Rinehart and Winston (1977). Lieutenant Philip Caputo, US Marine Corps infantry platoon commander for The American reading public and historians of the Vietnam War with the objective: To provide an honest, unromanticized personal account of how attrition warfare degraded moral standards.. **Hinge Question:** Why was the 'body count' metric fundamentally flawed as a strategy for winning a counter-insurgency war?"
         },
         {
           "id": "usa_lesson_3_3_e",
@@ -10640,8 +10748,10 @@ const usa_data = {
             "hinge_question": "Why could heavy B-52 carpet bombing and chemical defoliation not destroy the underground tunnel systems?"
           },
           "teacher_notes": {
-            "source_context": "MACV Combined Intelligence Center, Exploitation of Enemy Facilities Section. US military intelligence analysts and combat engineers for Infantry battalion commanders and tunnel clearance specialists with the objective: To illustrate the immense structural depth and defensive capabilities of Vietcong subterranean complexes.. Hinge Question: Why could heavy B-52 carpet bombing and chemical defoliation not destroy the underground tunnel systems?"
-          }
+            "source_context": "MACV Combined Intelligence Center, Exploitation of Enemy Facilities Section. US military intelligence analysts and combat engineers for Infantry battalion commanders and tunnel clearance specialists with the objective: To illustrate the immense structural depth and defensive capabilities of Vietcong subterranean complexes.. **Hinge Question:** Why could heavy B-52 carpet bombing and chemical defoliation not destroy the underground tunnel systems?"
+          },
+          "hinge_question": "Why could heavy B-52 carpet bombing and chemical defoliation not destroy the underground tunnel systems?",
+          "source_context": "MACV Combined Intelligence Center, Exploitation of Enemy Facilities Section. US military intelligence analysts and combat engineers for Infantry battalion commanders and tunnel clearance specialists with the objective: To illustrate the immense structural depth and defensive capabilities of Vietcong subterranean complexes.. **Hinge Question:** Why could heavy B-52 carpet bombing and chemical defoliation not destroy the underground tunnel systems?"
         }
       ],
       "video": [
@@ -11470,8 +11580,10 @@ const usa_data = {
             "hinge_question": "Why did the policy of gradual withdrawal cause American combat discipline to collapse as soldiers asked: 'Who wants to be the last man to die in Vietnam?'"
           },
           "teacher_notes": {
-            "source_context": "White House Photo Office, Richard Nixon Presidential Library, Yorba Linda, California. Oliver F. Atkins, chief White House photographer for The American voting public, international media, and armed forces with the objective: To project presidential strength and demonstrate that withdrawal was proceeding from a position of control and honor.. Hinge Question: Why did the policy of gradual withdrawal cause American combat discipline to collapse as soldiers asked: 'Who wants to be the last man to die in Vietnam?'"
-          }
+            "source_context": "White House Photo Office, Richard Nixon Presidential Library, Yorba Linda, California. Oliver F. Atkins, chief White House photographer for The American voting public, international media, and armed forces with the objective: To project presidential strength and demonstrate that withdrawal was proceeding from a position of control and honor.. **Hinge Question:** Why did the policy of gradual withdrawal cause American combat discipline to collapse as soldiers asked: 'Who wants to be the last man to die in Vietnam?'"
+          },
+          "hinge_question": "Why did the policy of gradual withdrawal cause American combat discipline to collapse as soldiers asked: 'Who wants to be the last man to die in Vietnam?'",
+          "source_context": "White House Photo Office, Richard Nixon Presidential Library, Yorba Linda, California. Oliver F. Atkins, chief White House photographer for The American voting public, international media, and armed forces with the objective: To project presidential strength and demonstrate that withdrawal was proceeding from a position of control and honor.. **Hinge Question:** Why did the policy of gradual withdrawal cause American combat discipline to collapse as soldiers asked: 'Who wants to be the last man to die in Vietnam?'"
         },
         {
           "id": "usa_lesson_3_4_b",
@@ -11492,8 +11604,10 @@ const usa_data = {
             "hinge_question": "Why was the South Vietnamese officer corps so plagued by corruption, political patronage, and military incompetence?"
           },
           "teacher_notes": {
-            "source_context": "Larry Burrows / Associated Press Archive. Associated Press photojournalist for The American public and congressional military committees with the objective: To record the chaotic, desperate retreat of South Vietnamese forces from cross-border combat in Laos.. Hinge Question: Why was the South Vietnamese officer corps so plagued by corruption, political patronage, and military incompetence?"
-          }
+            "source_context": "Larry Burrows / Associated Press Archive. Associated Press photojournalist for The American public and congressional military committees with the objective: To record the chaotic, desperate retreat of South Vietnamese forces from cross-border combat in Laos.. **Hinge Question:** Why was the South Vietnamese officer corps so plagued by corruption, political patronage, and military incompetence?"
+          },
+          "hinge_question": "Why was the South Vietnamese officer corps so plagued by corruption, political patronage, and military incompetence?",
+          "source_context": "Larry Burrows / Associated Press Archive. Associated Press photojournalist for The American public and congressional military committees with the objective: To record the chaotic, desperate retreat of South Vietnamese forces from cross-border combat in Laos.. **Hinge Question:** Why was the South Vietnamese officer corps so plagued by corruption, political patronage, and military incompetence?"
         },
         {
           "id": "usa_lesson_3_4_c",
@@ -11514,8 +11628,10 @@ const usa_data = {
             "hinge_question": "Why did the invasion of Cambodia trigger the largest wave of campus protests and student strikes in American history?"
           },
           "teacher_notes": {
-            "source_context": "Public Papers of the Presidents: Richard Nixon, 1970. President Richard Nixon for The American electorate, anti-war activists, and the North Vietnamese leadership with the objective: To rally public support for a high-risk military offensive and warn that America would not act like 'a pitiful, helpless giant.'. Hinge Question: Why did the invasion of Cambodia trigger the largest wave of campus protests and student strikes in American history?"
-          }
+            "source_context": "Public Papers of the Presidents: Richard Nixon, 1970. President Richard Nixon for The American electorate, anti-war activists, and the North Vietnamese leadership with the objective: To rally public support for a high-risk military offensive and warn that America would not act like 'a pitiful, helpless giant.'. **Hinge Question:** Why did the invasion of Cambodia trigger the largest wave of campus protests and student strikes in American history?"
+          },
+          "hinge_question": "Why did the invasion of Cambodia trigger the largest wave of campus protests and student strikes in American history?",
+          "source_context": "Public Papers of the Presidents: Richard Nixon, 1970. President Richard Nixon for The American electorate, anti-war activists, and the North Vietnamese leadership with the objective: To rally public support for a high-risk military offensive and warn that America would not act like 'a pitiful, helpless giant.'. **Hinge Question:** Why did the invasion of Cambodia trigger the largest wave of campus protests and student strikes in American history?"
         },
         {
           "id": "usa_lesson_3_4_d",
@@ -11536,8 +11652,10 @@ const usa_data = {
             "hinge_question": "Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?"
           },
           "teacher_notes": {
-            "source_context": "CBS News Television Special: 'Who, What, When, Where, Why: Report from Vietnam'. Walter Cronkite, chief anchor of CBS Evening News for Millions of American families watching prime-time evening news with the objective: To deliver an unvarnished personal journalistic verdict following his eyewitness inspection of post-Tet devastation.. Hinge Question: Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?"
-          }
+            "source_context": "CBS News Television Special: 'Who, What, When, Where, Why: Report from Vietnam'. Walter Cronkite, chief anchor of CBS Evening News for Millions of American families watching prime-time evening news with the objective: To deliver an unvarnished personal journalistic verdict following his eyewitness inspection of post-Tet devastation.. **Hinge Question:** Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?"
+          },
+          "hinge_question": "Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?",
+          "source_context": "CBS News Television Special: 'Who, What, When, Where, Why: Report from Vietnam'. Walter Cronkite, chief anchor of CBS Evening News for Millions of American families watching prime-time evening news with the objective: To deliver an unvarnished personal journalistic verdict following his eyewitness inspection of post-Tet devastation.. **Hinge Question:** Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?"
         },
         {
           "id": "usa_lesson_3_4_e",
@@ -11558,8 +11676,10 @@ const usa_data = {
             "hinge_question": "What is the ethical and historical significance of the 'decent interval' revelation for understanding American foreign policy?"
           },
           "teacher_notes": {
-            "source_context": "Nixon Presidential Materials Project, White House Tapes, National Archives, College Park. President Richard Nixon and Dr Henry Kissinger (secretly recorded by the White House taping system) for None; classified, intimate strategic deliberation with the objective: To formulate private diplomatic terms for exiting the war prior to the November 1972 presidential election.. Hinge Question: What is the ethical and historical significance of the 'decent interval' revelation for understanding American foreign policy?"
-          }
+            "source_context": "Nixon Presidential Materials Project, White House Tapes, National Archives, College Park. President Richard Nixon and Dr Henry Kissinger (secretly recorded by the White House taping system) for None; classified, intimate strategic deliberation with the objective: To formulate private diplomatic terms for exiting the war prior to the November 1972 presidential election.. **Hinge Question:** What is the ethical and historical significance of the 'decent interval' revelation for understanding American foreign policy?"
+          },
+          "hinge_question": "What is the ethical and historical significance of the 'decent interval' revelation for understanding American foreign policy?",
+          "source_context": "Nixon Presidential Materials Project, White House Tapes, National Archives, College Park. President Richard Nixon and Dr Henry Kissinger (secretly recorded by the White House taping system) for None; classified, intimate strategic deliberation with the objective: To formulate private diplomatic terms for exiting the war prior to the November 1972 presidential election.. **Hinge Question:** What is the ethical and historical significance of the 'decent interval' revelation for understanding American foreign policy?"
         }
       ],
       "video": [
@@ -12388,8 +12508,10 @@ const usa_data = {
             "hinge_question": "Why did draft deferments for college students create deep working-class resentment against the anti-war movement?"
           },
           "teacher_notes": {
-            "source_context": "National Archives and Records Administration (NARA), Selective Service System Records. Washington Post / Associated Press wire photographer for Millions of anxious young men of draft age and the American public with the objective: To document the federal government's attempt to reform the draft into an ostensibly fair, random lottery system.. Hinge Question: Why did draft deferments for college students create deep working-class resentment against the anti-war movement?"
-          }
+            "source_context": "National Archives and Records Administration (NARA), Selective Service System Records. Washington Post / Associated Press wire photographer for Millions of anxious young men of draft age and the American public with the objective: To document the federal government's attempt to reform the draft into an ostensibly fair, random lottery system.. **Hinge Question:** Why did draft deferments for college students create deep working-class resentment against the anti-war movement?"
+          },
+          "hinge_question": "Why did draft deferments for college students create deep working-class resentment against the anti-war movement?",
+          "source_context": "National Archives and Records Administration (NARA), Selective Service System Records. Washington Post / Associated Press wire photographer for Millions of anxious young men of draft age and the American public with the objective: To document the federal government's attempt to reform the draft into an ostensibly fair, random lottery system.. **Hinge Question:** Why did draft deferments for college students create deep working-class resentment against the anti-war movement?"
         },
         {
           "id": "usa_lesson_4_1_b",
@@ -12410,8 +12532,10 @@ const usa_data = {
             "hinge_question": "Why was the public reaction to the Kent State shootings so deeply polarized between student grief and conservative support for the National Guard?"
           },
           "teacher_notes": {
-            "source_context": "John Filo photograph / Valley Daily News (Pulitzer Prize Winner 1971). John Filo, journalism student at Kent State University for National and global news media with the objective: To record the horrifying reality of military force being unleashed against domestic student demonstrators.. Hinge Question: Why was the public reaction to the Kent State shootings so deeply polarized between student grief and conservative support for the National Guard?"
-          }
+            "source_context": "John Filo photograph / Valley Daily News (Pulitzer Prize Winner 1971). John Filo, journalism student at Kent State University for National and global news media with the objective: To record the horrifying reality of military force being unleashed against domestic student demonstrators.. **Hinge Question:** Why was the public reaction to the Kent State shootings so deeply polarized between student grief and conservative support for the National Guard?"
+          },
+          "hinge_question": "Why was the public reaction to the Kent State shootings so deeply polarized between student grief and conservative support for the National Guard?",
+          "source_context": "John Filo photograph / Valley Daily News (Pulitzer Prize Winner 1971). John Filo, journalism student at Kent State University for National and global news media with the objective: To record the horrifying reality of military force being unleashed against domestic student demonstrators.. **Hinge Question:** Why was the public reaction to the Kent State shootings so deeply polarized between student grief and conservative support for the National Guard?"
         },
         {
           "id": "usa_lesson_4_1_c",
@@ -12432,8 +12556,10 @@ const usa_data = {
             "hinge_question": "Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?"
           },
           "teacher_notes": {
-            "source_context": "Congressional Record, 91st Congress, 1st Session, Washington D.C.. Ron Ridenhour, Vietnam veteran who gathered accounts from fellow soldiers for Thirty members of Congress, the Secretary of Defense, and the Joint Chiefs of Staff with the objective: To demand an official congressional and military investigation into widespread atrocities and hold perpetrators accountable.. Hinge Question: Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?"
-          }
+            "source_context": "Congressional Record, 91st Congress, 1st Session, Washington D.C.. Ron Ridenhour, Vietnam veteran who gathered accounts from fellow soldiers for Thirty members of Congress, the Secretary of Defense, and the Joint Chiefs of Staff with the objective: To demand an official congressional and military investigation into widespread atrocities and hold perpetrators accountable.. **Hinge Question:** Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?"
+          },
+          "hinge_question": "Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?",
+          "source_context": "Congressional Record, 91st Congress, 1st Session, Washington D.C.. Ron Ridenhour, Vietnam veteran who gathered accounts from fellow soldiers for Thirty members of Congress, the Secretary of Defense, and the Joint Chiefs of Staff with the objective: To demand an official congressional and military investigation into widespread atrocities and hold perpetrators accountable.. **Hinge Question:** Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?"
         },
         {
           "id": "usa_lesson_4_1_d",
@@ -12454,8 +12580,10 @@ const usa_data = {
             "hinge_question": "Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?"
           },
           "teacher_notes": {
-            "source_context": "Peers Commission Inquiry into the My Lai Massacre, Department of the Army (1970). Major Hugh Thompson Jr., observation helicopter pilot of the 123rd Aviation Battalion for Lieutenant General William Peers and the official military inquiry board with the objective: To provide sworn testimony regarding the war crimes committed by Charlie Company, 11th Infantry Brigade.. Hinge Question: Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?"
-          }
+            "source_context": "Peers Commission Inquiry into the My Lai Massacre, Department of the Army (1970). Major Hugh Thompson Jr., observation helicopter pilot of the 123rd Aviation Battalion for Lieutenant General William Peers and the official military inquiry board with the objective: To provide sworn testimony regarding the war crimes committed by Charlie Company, 11th Infantry Brigade.. **Hinge Question:** Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?"
+          },
+          "hinge_question": "Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?",
+          "source_context": "Peers Commission Inquiry into the My Lai Massacre, Department of the Army (1970). Major Hugh Thompson Jr., observation helicopter pilot of the 123rd Aviation Battalion for Lieutenant General William Peers and the official military inquiry board with the objective: To provide sworn testimony regarding the war crimes committed by Charlie Company, 11th Infantry Brigade.. **Hinge Question:** Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?"
         },
         {
           "id": "usa_lesson_4_1_e",
@@ -12476,8 +12604,10 @@ const usa_data = {
             "hinge_question": "Did the anti-war movement succeed in shortening the war, or did it inadvertently trigger a conservative political backlash that prolonged it?"
           },
           "teacher_notes": {
-            "source_context": "Library of Congress, Prints and Photographs Division, Artists' Anti-War Portfolio. Artists and student activists of the Student Mobilization Committee for College students, draft-age youth, and anti-war rally attendees with the objective: To mobilize nationwide student strikes following the Cambodian invasion and the Kent State shootings.. Hinge Question: Did the anti-war movement succeed in shortening the war, or did it inadvertently trigger a conservative political backlash that prolonged it?"
-          }
+            "source_context": "Library of Congress, Prints and Photographs Division, Artists' Anti-War Portfolio. Artists and student activists of the Student Mobilization Committee for College students, draft-age youth, and anti-war rally attendees with the objective: To mobilize nationwide student strikes following the Cambodian invasion and the Kent State shootings.. **Hinge Question:** Did the anti-war movement succeed in shortening the war, or did it inadvertently trigger a conservative political backlash that prolonged it?"
+          },
+          "hinge_question": "Did the anti-war movement succeed in shortening the war, or did it inadvertently trigger a conservative political backlash that prolonged it?",
+          "source_context": "Library of Congress, Prints and Photographs Division, Artists' Anti-War Portfolio. Artists and student activists of the Student Mobilization Committee for College students, draft-age youth, and anti-war rally attendees with the objective: To mobilize nationwide student strikes following the Cambodian invasion and the Kent State shootings.. **Hinge Question:** Did the anti-war movement succeed in shortening the war, or did it inadvertently trigger a conservative political backlash that prolonged it?"
         }
       ],
       "video": [
@@ -13312,8 +13442,10 @@ const usa_data = {
             "hinge_question": "Why did Nixon's 'Silent Majority' speech result in an immediate 77% surge in public approval ratings despite ongoing war casualties?"
           },
           "teacher_notes": {
-            "source_context": "Public Papers of the Presidents: Richard Nixon, 1969. President Richard Nixon for The American television audience, estimated at over 70 million citizens with the objective: To buy political time for his Vietnamization strategy and neutralize the massive anti-war Moratorium demonstrations.. Hinge Question: Why did Nixon's 'Silent Majority' speech result in an immediate 77% surge in public approval ratings despite ongoing war casualties?"
-          }
+            "source_context": "Public Papers of the Presidents: Richard Nixon, 1969. President Richard Nixon for The American television audience, estimated at over 70 million citizens with the objective: To buy political time for his Vietnamization strategy and neutralize the massive anti-war Moratorium demonstrations.. **Hinge Question:** Why did Nixon's 'Silent Majority' speech result in an immediate 77% surge in public approval ratings despite ongoing war casualties?"
+          },
+          "hinge_question": "Why did Nixon's 'Silent Majority' speech result in an immediate 77% surge in public approval ratings despite ongoing war casualties?",
+          "source_context": "Public Papers of the Presidents: Richard Nixon, 1969. President Richard Nixon for The American television audience, estimated at over 70 million citizens with the objective: To buy political time for his Vietnamization strategy and neutralize the massive anti-war Moratorium demonstrations.. **Hinge Question:** Why did Nixon's 'Silent Majority' speech result in an immediate 77% surge in public approval ratings despite ongoing war casualties?"
         },
         {
           "id": "usa_lesson_4_2_b",
@@ -13334,8 +13466,10 @@ const usa_data = {
             "hinge_question": "Why was the testimony of Vietnam Veterans Against the War far more politically damaging to the Nixon Administration than student protests?"
           },
           "teacher_notes": {
-            "source_context": "Owen Franken photograph / Corbis / National Archives Still Pictures. Owen Franken, photojournalist covering the Washington anti-war encampment for Members of Congress, the national news media, and the American public with the objective: To visually repudiate the military honors bestowed upon them for fighting in what they denounced as an unjust, criminal war.. Hinge Question: Why was the testimony of Vietnam Veterans Against the War far more politically damaging to the Nixon Administration than student protests?"
-          }
+            "source_context": "Owen Franken photograph / Corbis / National Archives Still Pictures. Owen Franken, photojournalist covering the Washington anti-war encampment for Members of Congress, the national news media, and the American public with the objective: To visually repudiate the military honors bestowed upon them for fighting in what they denounced as an unjust, criminal war.. **Hinge Question:** Why was the testimony of Vietnam Veterans Against the War far more politically damaging to the Nixon Administration than student protests?"
+          },
+          "hinge_question": "Why was the testimony of Vietnam Veterans Against the War far more politically damaging to the Nixon Administration than student protests?",
+          "source_context": "Owen Franken photograph / Corbis / National Archives Still Pictures. Owen Franken, photojournalist covering the Washington anti-war encampment for Members of Congress, the national news media, and the American public with the objective: To visually repudiate the military honors bestowed upon them for fighting in what they denounced as an unjust, criminal war.. **Hinge Question:** Why was the testimony of Vietnam Veterans Against the War far more politically damaging to the Nixon Administration than student protests?"
         },
         {
           "id": "usa_lesson_4_2_c",
@@ -13356,8 +13490,10 @@ const usa_data = {
             "hinge_question": "How did the 'Hard Hat Riot' demonstrate that the Vietnam War was as much a domestic class war as an overseas military conflict?"
           },
           "teacher_notes": {
-            "source_context": "Don Hogan Charles photograph / The New York Times Archive. Don Hogan Charles, staff photographer for The New York Times for Readers of The New York Times and national news networks with the objective: To capture the violent physical clash between blue-collar patriotic workers and affluent anti-war student demonstrators.. Hinge Question: How did the 'Hard Hat Riot' demonstrate that the Vietnam War was as much a domestic class war as an overseas military conflict?"
-          }
+            "source_context": "Don Hogan Charles photograph / The New York Times Archive. Don Hogan Charles, staff photographer for The New York Times for Readers of The New York Times and national news networks with the objective: To capture the violent physical clash between blue-collar patriotic workers and affluent anti-war student demonstrators.. **Hinge Question:** How did the 'Hard Hat Riot' demonstrate that the Vietnam War was as much a domestic class war as an overseas military conflict?"
+          },
+          "hinge_question": "How did the 'Hard Hat Riot' demonstrate that the Vietnam War was as much a domestic class war as an overseas military conflict?",
+          "source_context": "Don Hogan Charles photograph / The New York Times Archive. Don Hogan Charles, staff photographer for The New York Times for Readers of The New York Times and national news networks with the objective: To capture the violent physical clash between blue-collar patriotic workers and affluent anti-war student demonstrators.. **Hinge Question:** How did the 'Hard Hat Riot' demonstrate that the Vietnam War was as much a domestic class war as an overseas military conflict?"
         },
         {
           "id": "usa_lesson_4_2_d",
@@ -13378,8 +13514,10 @@ const usa_data = {
             "hinge_question": "Why did a majority of Americans who opposed the war simultaneously detest the anti-war protesters?"
           },
           "teacher_notes": {
-            "source_context": "The Gallup Poll: Public Opinion 1935–1971, Volume 3, Random House. George Gallup and the American Institute of Public Opinion for Newspaper subscribers, political strategists, and academic researchers with the objective: To measure scientifically validated cross-sections of American public sentiment during national crises.. Hinge Question: Why did a majority of Americans who opposed the war simultaneously detest the anti-war protesters?"
-          }
+            "source_context": "The Gallup Poll: Public Opinion 1935–1971, Volume 3, Random House. George Gallup and the American Institute of Public Opinion for Newspaper subscribers, political strategists, and academic researchers with the objective: To measure scientifically validated cross-sections of American public sentiment during national crises.. **Hinge Question:** Why did a majority of Americans who opposed the war simultaneously detest the anti-war protesters?"
+          },
+          "hinge_question": "Why did a majority of Americans who opposed the war simultaneously detest the anti-war protesters?",
+          "source_context": "The Gallup Poll: Public Opinion 1935–1971, Volume 3, Random House. George Gallup and the American Institute of Public Opinion for Newspaper subscribers, political strategists, and academic researchers with the objective: To measure scientifically validated cross-sections of American public sentiment during national crises.. **Hinge Question:** Why did a majority of Americans who opposed the war simultaneously detest the anti-war protesters?"
         },
         {
           "id": "usa_lesson_4_2_e",
@@ -13400,8 +13538,10 @@ const usa_data = {
             "hinge_question": "How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?"
           },
           "teacher_notes": {
-            "source_context": "New York Daily News Editorial Board, May 1970. The Editorial Board of the New York Daily News (the nation's largest circulation tabloid) for Millions of working-class and trade-union readers in the New York metropolitan area with the objective: To defend blue-collar patriotism and legitimize popular resistance against campus radicalism.. Hinge Question: How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?"
-          }
+            "source_context": "New York Daily News Editorial Board, May 1970. The Editorial Board of the New York Daily News (the nation's largest circulation tabloid) for Millions of working-class and trade-union readers in the New York metropolitan area with the objective: To defend blue-collar patriotism and legitimize popular resistance against campus radicalism.. **Hinge Question:** How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?"
+          },
+          "hinge_question": "How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?",
+          "source_context": "New York Daily News Editorial Board, May 1970. The Editorial Board of the New York Daily News (the nation's largest circulation tabloid) for Millions of working-class and trade-union readers in the New York metropolitan area with the objective: To defend blue-collar patriotism and legitimize popular resistance against campus radicalism.. **Hinge Question:** How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?"
         }
       ],
       "video": [
@@ -14230,8 +14370,10 @@ const usa_data = {
             "hinge_question": "Why did South Vietnamese President Nguyen Van Thieu view the Paris Peace Accords as a betrayal of his country?"
           },
           "teacher_notes": {
-            "source_context": "Associated Press Wirephoto / United States Department of State Archives. Associated Press diplomatic press pool photographer for The global diplomatic community and the international public with the objective: To record the historic ceremony concluding direct American military engagement in the Vietnam War.. Hinge Question: Why did South Vietnamese President Nguyen Van Thieu view the Paris Peace Accords as a betrayal of his country?"
-          }
+            "source_context": "Associated Press Wirephoto / United States Department of State Archives. Associated Press diplomatic press pool photographer for The global diplomatic community and the international public with the objective: To record the historic ceremony concluding direct American military engagement in the Vietnam War.. **Hinge Question:** Why did South Vietnamese President Nguyen Van Thieu view the Paris Peace Accords as a betrayal of his country?"
+          },
+          "hinge_question": "Why did South Vietnamese President Nguyen Van Thieu view the Paris Peace Accords as a betrayal of his country?",
+          "source_context": "Associated Press Wirephoto / United States Department of State Archives. Associated Press diplomatic press pool photographer for The global diplomatic community and the international public with the objective: To record the historic ceremony concluding direct American military engagement in the Vietnam War.. **Hinge Question:** Why did South Vietnamese President Nguyen Van Thieu view the Paris Peace Accords as a betrayal of his country?"
         },
         {
           "id": "usa_lesson_4_3_b",
@@ -14252,8 +14394,10 @@ const usa_data = {
             "hinge_question": "Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?"
           },
           "teacher_notes": {
-            "source_context": "United States Treaties and Other International Agreements, 24 UST 1, TIAS 7542. Chief negotiators William P. Rogers, Nguyen Duy Trinh, Tran Van Lam, and Nguyen Thi Binh for The United Nations, international governments, and the combatant nations with the objective: To legally codify the terms of immediate American military withdrawal and prisoner-of-war repatriation.. Hinge Question: Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?"
-          }
+            "source_context": "United States Treaties and Other International Agreements, 24 UST 1, TIAS 7542. Chief negotiators William P. Rogers, Nguyen Duy Trinh, Tran Van Lam, and Nguyen Thi Binh for The United Nations, international governments, and the combatant nations with the objective: To legally codify the terms of immediate American military withdrawal and prisoner-of-war repatriation.. **Hinge Question:** Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?"
+          },
+          "hinge_question": "Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?",
+          "source_context": "United States Treaties and Other International Agreements, 24 UST 1, TIAS 7542. Chief negotiators William P. Rogers, Nguyen Duy Trinh, Tran Van Lam, and Nguyen Thi Binh for The United Nations, international governments, and the combatant nations with the objective: To legally codify the terms of immediate American military withdrawal and prisoner-of-war repatriation.. **Hinge Question:** Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?"
         },
         {
           "id": "usa_lesson_4_3_c",
@@ -14274,8 +14418,10 @@ const usa_data = {
             "hinge_question": "Did the emotional focus on POWs serve to divert public attention from the strategic failure of the overall war?"
           },
           "teacher_notes": {
-            "source_context": "United States Air Force Combat Camera Service / NARA. US Air Force documentary combat cameraman for The American public and families of prisoners of war with the objective: To document the joyous repatriation of long-held American aviators during Operation Homecoming.. Hinge Question: Did the emotional focus on POWs serve to divert public attention from the strategic failure of the overall war?"
-          }
+            "source_context": "United States Air Force Combat Camera Service / NARA. US Air Force documentary combat cameraman for The American public and families of prisoners of war with the objective: To document the joyous repatriation of long-held American aviators during Operation Homecoming.. **Hinge Question:** Did the emotional focus on POWs serve to divert public attention from the strategic failure of the overall war?"
+          },
+          "hinge_question": "Did the emotional focus on POWs serve to divert public attention from the strategic failure of the overall war?",
+          "source_context": "United States Air Force Combat Camera Service / NARA. US Air Force documentary combat cameraman for The American public and families of prisoners of war with the objective: To document the joyous repatriation of long-held American aviators during Operation Homecoming.. **Hinge Question:** Did the emotional focus on POWs serve to divert public attention from the strategic failure of the overall war?"
         },
         {
           "id": "usa_lesson_4_3_d",
@@ -14296,8 +14442,10 @@ const usa_data = {
             "hinge_question": "Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?"
           },
           "teacher_notes": {
-            "source_context": "General Van Tien Dung, 'Our Great Spring Victory', Foreign Languages Publishing House, Hanoi (1977). General Van Tien Dung, Chief of the General Staff of the Vietnam People's Army for Military historians and the reunited population of Vietnam with the objective: To record the military planning and execution of the final 55-day offensive that captured Saigon.. Hinge Question: Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?"
-          }
+            "source_context": "General Van Tien Dung, 'Our Great Spring Victory', Foreign Languages Publishing House, Hanoi (1977). General Van Tien Dung, Chief of the General Staff of the Vietnam People's Army for Military historians and the reunited population of Vietnam with the objective: To record the military planning and execution of the final 55-day offensive that captured Saigon.. **Hinge Question:** Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?"
+          },
+          "hinge_question": "Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?",
+          "source_context": "General Van Tien Dung, 'Our Great Spring Victory', Foreign Languages Publishing House, Hanoi (1977). General Van Tien Dung, Chief of the General Staff of the Vietnam People's Army for Military historians and the reunited population of Vietnam with the objective: To record the military planning and execution of the final 55-day offensive that captured Saigon.. **Hinge Question:** Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?"
         },
         {
           "id": "usa_lesson_4_3_e",
@@ -14318,8 +14466,10 @@ const usa_data = {
             "hinge_question": "How did the War Powers Act of 1973 and the Watergate scandal prevent President Ford from using air power to save South Vietnam in 1975?"
           },
           "teacher_notes": {
-            "source_context": "Gerald R. Ford Presidential Library and Museum, Ann Arbor, Michigan. President Gerald R. Ford for Faculty and students at Tulane University and the national broadcast audience with the objective: To prepare the American public psychologically for the imminent fall of Saigon and signal a turn toward the future.. Hinge Question: How did the War Powers Act of 1973 and the Watergate scandal prevent President Ford from using air power to save South Vietnam in 1975?"
-          }
+            "source_context": "Gerald R. Ford Presidential Library and Museum, Ann Arbor, Michigan. President Gerald R. Ford for Faculty and students at Tulane University and the national broadcast audience with the objective: To prepare the American public psychologically for the imminent fall of Saigon and signal a turn toward the future.. **Hinge Question:** How did the War Powers Act of 1973 and the Watergate scandal prevent President Ford from using air power to save South Vietnam in 1975?"
+          },
+          "hinge_question": "How did the War Powers Act of 1973 and the Watergate scandal prevent President Ford from using air power to save South Vietnam in 1975?",
+          "source_context": "Gerald R. Ford Presidential Library and Museum, Ann Arbor, Michigan. President Gerald R. Ford for Faculty and students at Tulane University and the national broadcast audience with the objective: To prepare the American public psychologically for the imminent fall of Saigon and signal a turn toward the future.. **Hinge Question:** How did the War Powers Act of 1973 and the Watergate scandal prevent President Ford from using air power to save South Vietnam in 1975?"
         }
       ],
       "video": [
@@ -15134,8 +15284,10 @@ const usa_data = {
             "hinge_question": "Why did the one-year individual tour of duty (DEROS) destroy unit cohesion and long-term military effectiveness in Vietnam?"
           },
           "teacher_notes": {
-            "source_context": "National Archives Still Pictures, Record Group 111, Washington D.C.. US Army combat photojournalist for The American military establishment and domestic public with the objective: To record the human cost and physical degradation endured by frontline infantrymen.. Hinge Question: Why did the one-year individual tour of duty (DEROS) destroy unit cohesion and long-term military effectiveness in Vietnam?"
-          }
+            "source_context": "National Archives Still Pictures, Record Group 111, Washington D.C.. US Army combat photojournalist for The American military establishment and domestic public with the objective: To record the human cost and physical degradation endured by frontline infantrymen.. **Hinge Question:** Why did the one-year individual tour of duty (DEROS) destroy unit cohesion and long-term military effectiveness in Vietnam?"
+          },
+          "hinge_question": "Why did the one-year individual tour of duty (DEROS) destroy unit cohesion and long-term military effectiveness in Vietnam?",
+          "source_context": "National Archives Still Pictures, Record Group 111, Washington D.C.. US Army combat photojournalist for The American military establishment and domestic public with the objective: To record the human cost and physical degradation endured by frontline infantrymen.. **Hinge Question:** Why did the one-year individual tour of duty (DEROS) destroy unit cohesion and long-term military effectiveness in Vietnam?"
         },
         {
           "id": "usa_lesson_4_4_b",
@@ -15156,8 +15308,10 @@ const usa_data = {
             "hinge_question": "Could the United States have ever cut the Ho Chi Minh Trail without invading Laos and Cambodia and risking war with China?"
           },
           "teacher_notes": {
-            "source_context": "Museum of the Vietnamese Revolution, Hanoi. North Vietnamese state documentary archive for International socialist allies and the Vietnamese people with the objective: To commemorate the epic logistical achievement that sustained the anti-imperialist liberation struggle.. Hinge Question: Could the United States have ever cut the Ho Chi Minh Trail without invading Laos and Cambodia and risking war with China?"
-          }
+            "source_context": "Museum of the Vietnamese Revolution, Hanoi. North Vietnamese state documentary archive for International socialist allies and the Vietnamese people with the objective: To commemorate the epic logistical achievement that sustained the anti-imperialist liberation struggle.. **Hinge Question:** Could the United States have ever cut the Ho Chi Minh Trail without invading Laos and Cambodia and risking war with China?"
+          },
+          "hinge_question": "Could the United States have ever cut the Ho Chi Minh Trail without invading Laos and Cambodia and risking war with China?",
+          "source_context": "Museum of the Vietnamese Revolution, Hanoi. North Vietnamese state documentary archive for International socialist allies and the Vietnamese people with the objective: To commemorate the epic logistical achievement that sustained the anti-imperialist liberation struggle.. **Hinge Question:** Could the United States have ever cut the Ho Chi Minh Trail without invading Laos and Cambodia and risking war with China?"
         },
         {
           "id": "usa_lesson_4_4_c",
@@ -15178,8 +15332,10 @@ const usa_data = {
             "hinge_question": "How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?"
           },
           "teacher_notes": {
-            "source_context": "United States Statutes at Large, 87 Stat. 555, Public Law 93-148. The 93rd United States Congress, overriding Nixon's presidential veto by a two-thirds majority for The Executive Branch, the American public, and future commanders-in-chief with the objective: To prevent future presidents from entangling the United States in foreign wars through unilateral executive action.. Hinge Question: How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?"
-          }
+            "source_context": "United States Statutes at Large, 87 Stat. 555, Public Law 93-148. The 93rd United States Congress, overriding Nixon's presidential veto by a two-thirds majority for The Executive Branch, the American public, and future commanders-in-chief with the objective: To prevent future presidents from entangling the United States in foreign wars through unilateral executive action.. **Hinge Question:** How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?"
+          },
+          "hinge_question": "How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?",
+          "source_context": "United States Statutes at Large, 87 Stat. 555, Public Law 93-148. The 93rd United States Congress, overriding Nixon's presidential veto by a two-thirds majority for The Executive Branch, the American public, and future commanders-in-chief with the objective: To prevent future presidents from entangling the United States in foreign wars through unilateral executive action.. **Hinge Question:** How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?"
         },
         {
           "id": "usa_lesson_4_4_d",
@@ -15200,8 +15356,10 @@ const usa_data = {
             "hinge_question": "Was American defeat primarily caused by military failures in Vietnam or political collapse at home?"
           },
           "teacher_notes": {
-            "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. Hinge Question: Was American defeat primarily caused by military failures in Vietnam or political collapse at home?"
-          }
+            "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. **Hinge Question:** Was American defeat primarily caused by military failures in Vietnam or political collapse at home?"
+          },
+          "hinge_question": "Was American defeat primarily caused by military failures in Vietnam or political collapse at home?",
+          "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. **Hinge Question:** Was American defeat primarily caused by military failures in Vietnam or political collapse at home?"
         },
         {
           "id": "usa_lesson_4_4_e",
@@ -15222,8 +15380,10 @@ const usa_data = {
             "hinge_question": "How did the 'Vietnam Syndrome' fundamentally constrain American foreign policy and military interventions for the next two decades?"
           },
           "teacher_notes": {
-            "source_context": "Office of the Secretary of Defense (Comptroller), Southeast Asia Statistical Tables. Pentagon statisticians and Department of Defense comptrollers for The United States Congress, veterans' organizations, and the historical record with the objective: To provide the definitive official statistical record of the personnel and financial costs of the conflict.. Hinge Question: How did the 'Vietnam Syndrome' fundamentally constrain American foreign policy and military interventions for the next two decades?"
-          }
+            "source_context": "Office of the Secretary of Defense (Comptroller), Southeast Asia Statistical Tables. Pentagon statisticians and Department of Defense comptrollers for The United States Congress, veterans' organizations, and the historical record with the objective: To provide the definitive official statistical record of the personnel and financial costs of the conflict.. **Hinge Question:** How did the 'Vietnam Syndrome' fundamentally constrain American foreign policy and military interventions for the next two decades?"
+          },
+          "hinge_question": "How did the 'Vietnam Syndrome' fundamentally constrain American foreign policy and military interventions for the next two decades?",
+          "source_context": "Office of the Secretary of Defense (Comptroller), Southeast Asia Statistical Tables. Pentagon statisticians and Department of Defense comptrollers for The United States Congress, veterans' organizations, and the historical record with the objective: To provide the definitive official statistical record of the personnel and financial costs of the conflict.. **Hinge Question:** How did the 'Vietnam Syndrome' fundamentally constrain American foreign policy and military interventions for the next two decades?"
         }
       ],
       "video": [
@@ -15284,3 +15444,4 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = usa_data;
 }
 export default usa_data;
+export { usa_data };

@@ -911,11 +911,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Commissioned by Bishop Odo of Bayeux, Duke William's half-brother, to legitimise the Norman Conquest.",
             "audience": "Anglo-Norman aristocracy and visitors to Bayeux Cathedral, establishing William as the rightful, consecrated King.",
-            "motive": "To portray Harold Godwinson as an illegitimate, deceitful usurper whose defeat was an act of divine justice."
+            "motive": "To portray Harold Godwinson as an illegitimate, deceitful usurper whose defeat was an act of divine justice.",
+            "hinge_question": "Why was depicting Harold as an ungodly oath-breaker vital to securing Papal backing and European volunteers for William's invasion in 1066?"
           },
           "teacher_notes": {
             "hinge_question": "Why was depicting Harold as an ungodly oath-breaker vital to securing Papal backing and European volunteers for William's invasion in 1066?",
-            "source_context": "The scene depicts Harold standing between two draped reliquary altars with hands outstretched, swearing allegiance to Duke William who watches from his throne. In medieval Christian theology, breaking an oath sworn over saints' bones meant automatic eternal damnation.",
+            "source_context": "The scene depicts Harold standing between two draped reliquary altars with hands outstretched, swearing allegiance to Duke William who watches from his throne. In medieval Christian theology, breaking an oath sworn over saints' bones meant automatic eternal damnation. **Hinge Question:** Why was depicting Harold as an ungodly oath-breaker vital to securing Papal backing and European volunteers for William's invasion in 1066?",
             "provenance_breakdown": {
               "author": "Bishop Odo of Bayeux, Norman patron and warrior-prelate.",
               "audience": "Norman barons, churchmen, and conquered English subjects.",
@@ -930,7 +931,8 @@ const medieval_england_data = {
               "audience": "Anglo-Norman nobility and cathedral pilgrims.",
               "motive": "Proving that Harold forfeited his moral and legal claim to the crown by violating his holy oath."
             }
-          }
+          },
+          "source_context": "The scene depicts Harold standing between two draped reliquary altars with hands outstretched, swearing allegiance to Duke William who watches from his throne. In medieval Christian theology, breaking an oath sworn over saints' bones meant automatic eternal damnation. **Hinge Question:** Why was depicting Harold as an ungodly oath-breaker vital to securing Papal backing and European volunteers for William's invasion in 1066?"
         },
         {
           "id": "medieval_england_l1_src_b",
@@ -950,11 +952,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Norman-commissioned embroidery designed shortly after Hastings.",
             "audience": "Anglo-Norman nobility, celebrating Duke William's total battlefield triumph.",
-            "motive": "Recording the dramatic climax of the battle and proving conclusively that God had abandoned the Saxon king."
+            "motive": "Recording the dramatic climax of the battle and proving conclusively that God had abandoned the Saxon king.",
+            "hinge_question": "Did the Normans win the Battle of Hastings primarily due to tactical superiority or the sudden death of King Harold on the battlefield?"
           },
           "teacher_notes": {
             "hinge_question": "Did the Normans win the Battle of Hastings primarily due to tactical superiority or the sudden death of King Harold on the battlefield?",
-            "source_context": "The scene juxtaposes a Saxon warrior clutching an arrow in his face with a fallen warrior being hacked down by a charging Norman knight, beneath the clear inscription 'Here King Harold was killed'.",
+            "source_context": "The scene juxtaposes a Saxon warrior clutching an arrow in his face with a fallen warrior being hacked down by a charging Norman knight, beneath the clear inscription 'Here King Harold was killed'. **Hinge Question:** Did the Normans win the Battle of Hastings primarily due to tactical superiority or the sudden death of King Harold on the battlefield?",
             "provenance_breakdown": {
               "author": "Embroidery workshop, likely English seamstresses directed by Norman clerics.",
               "audience": "The newly installed Norman ruling class.",
@@ -969,7 +972,8 @@ const medieval_england_data = {
               "audience": "Elite medieval viewers at court and church feasts.",
               "motive": "Demonstrating that Harold's death sealed William's right of conquest."
             }
-          }
+          },
+          "source_context": "The scene juxtaposes a Saxon warrior clutching an arrow in his face with a fallen warrior being hacked down by a charging Norman knight, beneath the clear inscription 'Here King Harold was killed'. **Hinge Question:** Did the Normans win the Battle of Hastings primarily due to tactical superiority or the sudden death of King Harold on the battlefield?"
         },
         {
           "id": "medieval_england_l1_src_c",
@@ -989,11 +993,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Official royal moneyers acting under direct instruction of King Harold's treasury.",
             "audience": "Merchants, lords, and common subjects circulating currency across the realm.",
-            "motive": "Reassuring the populace that the new Godwinson dynasty guaranteed legal stability and royal peace despite foreign threats."
+            "motive": "Reassuring the populace that the new Godwinson dynasty guaranteed legal stability and royal peace despite foreign threats.",
+            "hinge_question": "Why did Harold choose the bold inscription 'PAX' (Peace) on his coinage at the very moment England faced imminent invasion from both Normandy and Scandinavia?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Harold choose the bold inscription 'PAX' (Peace) on his coinage at the very moment England faced imminent invasion from both Normandy and Scandinavia?",
-            "source_context": "Anglo-Saxon England possessed the most sophisticated currency system in Western Europe. Harold's ability to produce millions of pennies with his title '+HAROLD REX ANGLORUM' within nine months proves the centralised administrative power of the late Saxon state.",
+            "source_context": "Anglo-Saxon England possessed the most sophisticated currency system in Western Europe. Harold's ability to produce millions of pennies with his title '+HAROLD REX ANGLORUM' within nine months proves the centralised administrative power of the late Saxon state. **Hinge Question:** Why did Harold choose the bold inscription 'PAX' (Peace) on his coinage at the very moment England faced imminent invasion from both Normandy and Scandinavia?",
             "provenance_breakdown": {
               "author": "King Harold II and the London moneyers.",
               "audience": "The entire population of England.",
@@ -1008,7 +1013,8 @@ const medieval_england_data = {
               "audience": "English trading classes and feudal subjects.",
               "motive": "Asserting dynastic legitimacy and economic stability across England."
             }
-          }
+          },
+          "source_context": "Anglo-Saxon England possessed the most sophisticated currency system in Western Europe. Harold's ability to produce millions of pennies with his title '+HAROLD REX ANGLORUM' within nine months proves the centralised administrative power of the late Saxon state. **Hinge Question:** Why did Harold choose the bold inscription 'PAX' (Peace) on his coinage at the very moment England faced imminent invasion from both Normandy and Scandinavia?"
         },
         {
           "id": "medieval_england_l1_src_d",
@@ -1028,11 +1034,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Norman-sponsored visual record celebrating ducal valour.",
             "audience": "Feudal lords and knights admiring martial heroism.",
-            "motive": "Praising William's indomitable willpower as the primary reason for Norman triumph."
+            "motive": "Praising William's indomitable willpower as the primary reason for Norman triumph.",
+            "hinge_question": "Was the Norman 'feigned retreat' a pre-planned tactical stratagem or a desperate improvisation born from near-disaster?"
           },
           "teacher_notes": {
             "hinge_question": "Was the Norman 'feigned retreat' a pre-planned tactical stratagem or a desperate improvisation born from near-disaster?",
-            "source_context": "Medieval cavalry helmets with nose-guards made leaders unrecognisable at a distance. When horsemen shouted that William was down, his decision to expose his bare head to enemy missiles saved his army from total collapse.",
+            "source_context": "Medieval cavalry helmets with nose-guards made leaders unrecognisable at a distance. When horsemen shouted that William was down, his decision to expose his bare head to enemy missiles saved his army from total collapse. **Hinge Question:** Was the Norman 'feigned retreat' a pre-planned tactical stratagem or a desperate improvisation born from near-disaster?",
             "provenance_breakdown": {
               "author": "Bishop Odo's commissioned embroidery artists.",
               "audience": "The Anglo-Norman royal court.",
@@ -1047,7 +1054,8 @@ const medieval_england_data = {
               "audience": "Feudal nobility and churchmen.",
               "motive": "Highlighting William's decisive tactical command under extreme pressure."
             }
-          }
+          },
+          "source_context": "Medieval cavalry helmets with nose-guards made leaders unrecognisable at a distance. When horsemen shouted that William was down, his decision to expose his bare head to enemy missiles saved his army from total collapse. **Hinge Question:** Was the Norman 'feigned retreat' a pre-planned tactical stratagem or a desperate improvisation born from near-disaster?"
         },
         {
           "id": "medieval_england_l1_src_e",
@@ -1067,11 +1075,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Royal foundation charter and architecture commissioned by King William I.",
             "audience": "God, the Papacy, the English people, and future generations of Norman kings.",
-            "motive": "Atoning for the horrific bloodshed of Hastings while physically anchoring Norman victory onto the sacred English landscape."
+            "motive": "Atoning for the horrific bloodshed of Hastings while physically anchoring Norman victory onto the sacred English landscape.",
+            "hinge_question": "Was Battle Abbey constructed primarily as an act of pious Christian repentance, or as a colossal stone monument celebrating Norman conquest?"
           },
           "teacher_notes": {
             "hinge_question": "Was Battle Abbey constructed primarily as an act of pious Christian repentance, or as a colossal stone monument celebrating Norman conquest?",
-            "source_context": "The abbey was built on an awkward hillside ridge lacking fresh water, specifically because William refused the monks' plea to move it to a more practical site, insisting that the altar must sit directly upon the blood-soaked crest where Harold died.",
+            "source_context": "The abbey was built on an awkward hillside ridge lacking fresh water, specifically because William refused the monks' plea to move it to a more practical site, insisting that the altar must sit directly upon the blood-soaked crest where Harold died. **Hinge Question:** Was Battle Abbey constructed primarily as an act of pious Christian repentance, or as a colossal stone monument celebrating Norman conquest?",
             "provenance_breakdown": {
               "author": "King William the Conqueror and Benedictine architects.",
               "audience": "The Catholic Church and conquered Saxon subjects.",
@@ -1086,69 +1095,10 @@ const medieval_england_data = {
               "audience": "Medieval Christendom and English subjects.",
               "motive": "Combining religious atonement with monumental imperial commemoration."
             }
-          }
+          },
+          "source_context": "The abbey was built on an awkward hillside ridge lacking fresh water, specifically because William refused the monks' plea to move it to a more practical site, insisting that the altar must sit directly upon the blood-soaked crest where Harold died. **Hinge Question:** Was Battle Abbey constructed primarily as an act of pious Christian repentance, or as a colossal stone monument celebrating Norman conquest?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: The Battle of Hastings (1066)",
-        "tariff": "12 marks (Explain Why Causal Analysis)",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "Explain why William of Normandy achieved victory at the Battle of Hastings in 1066. [12 marks]",
-            "stimulus": [
-              "Norman military tactics, heavy cavalry, and the feigned retreat",
-              "Anglo-Saxon exhaustion and loss of shield-wall discipline"
-            ],
-            "prompt": "Explain three distinct causal reasons: William’s combined-arms tactics (archers, infantry, and heavy cavalry) and the decisive feigned retreat; King Harold Godwinson’s physical and military exhaustion following the Battle of Stamford Bridge; and the fatal breakdown of Anglo-Saxon shield-wall discipline at the top of Senlac Hill.",
-            "model": "One primary reason William of Normandy achieved victory was his superior combined-arms military tactics and the devastating deployment of the \"feigned retreat\". Unlike King Harold’s exclusively infantry army, William commanded a modern, integrated force comprising long-range archers, heavy foot soldiers, and armoured mounted knights. When early Norman charges failed to penetrate the Anglo-Saxon shield wall, William exploited rumours of his death by lifting his helmet to rally his men, before ordering his cavalry to simulate panicked retreats down Senlac Hill. When undisciplined Saxon soldiers broke ranks to pursue the fleeing Normans, William’s knights wheeled around and surrounded them on the open slopes, decimating Harold’s defensive perimeter.<br><br>Furthermore, a second decisive factor was the acute exhaustion and depletion of Harold Godwinson’s army. In September 1066, Harold was forced to march his elite housecarls 190 miles north in just four days to confront King Harald Hardrada of Norway at the Battle of Stamford Bridge. Although victorious, Harold suffered heavy casualties among his best-trained veterans. Hearing that William had landed at Pevensey, Harold marched his exhausted men 250 miles back south to London and straight to Hastings without waiting for regional levies from the northern earls, Edwin and Morcar. Consequently, many Saxon soldiers were tired, wounded, and supplemented by untrained peasant fyrd wielding simple farming implements.<br><br>Finally, the battle was decided by the loss of Saxon shield-wall discipline and the death of Harold Godwinson. The Anglo-Saxon shield wall was formidable when locked tight, but as hours passed and soldiers repeatedly broke formation to chase retreating Normans, gaps opened in the Saxon line. Late in the afternoon, William ordered his archers to fire high in the air, creating a deadly rain of falling arrows while heavy cavalry charged through the fractured line. Harold was killed alongside his brothers Gyrth and Leofwine; deprived of their king and leadership, the remaining Saxon fyrd dissolved into panic and fled into the woods, handing Duke William total military victory.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "REASON 1",
-                  "name": "Combined Arms & Feigned Retreat",
-                  "prompt": "Explain William’s archers, heavy cavalry, lifting helmet, and fake retreat drawing Saxons downhill.",
-                  "starter": "One primary reason William won was his superior tactics, such as..."
-                },
-                {
-                  "letter": "REASON 2",
-                  "name": "Saxon Exhaustion (Stamford Bridge March)",
-                  "prompt": "Explain Stamford Bridge battle against Hardrada, 400 miles marching in 3 weeks, and missing levies.",
-                  "starter": "Furthermore, a second decisive factor was Harold’s army being exhausted because..."
-                },
-                {
-                  "letter": "REASON 3",
-                  "name": "Shield Wall Collapse & Harold’s Death",
-                  "prompt": "Explain discipline breaking, high-angled archery, death of Harold, and rout of the fyrd.",
-                  "starter": "Finally, the battle was decided when the Saxon shield wall collapsed because..."
-                }
-              ],
-              "sentence_starters": [
-                "One primary reason was that...",
-                "For example, the deployment of...",
-                "This led directly to Norman victory because...",
-                "Another key factor was Harold’s exhaustion, such as...",
-                "Consequently, this meant that...",
-                "Ultimately, this resulted in..."
-              ],
-              "connectives_bank": [
-                "William of Normandy",
-                "Harold Godwinson",
-                "Senlac Hill",
-                "shield wall",
-                "feigned retreat",
-                "heavy cavalry",
-                "Stamford Bridge",
-                "housecarls",
-                "fyrd"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_2",
@@ -1735,11 +1685,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Norman military architects and garrison commanders.",
             "audience": "Norman garrisons and intimidated local Saxon villagers.",
-            "motive": "Establishing instant, impregnable strongholds to suppress rebellion and collect taxes."
+            "motive": "Establishing instant, impregnable strongholds to suppress rebellion and collect taxes.",
+            "hinge_question": "Why was the earthen motte-and-bailey design far more devastatingly effective for rapid military conquest than building slow, expensive stone keeps?"
           },
           "teacher_notes": {
             "hinge_question": "Why was the earthen motte-and-bailey design far more devastatingly effective for rapid military conquest than building slow, expensive stone keeps?",
-            "source_context": "A motte (mound) of 10 to 15 metres high surrounded by a deep ditch and enclosed bailey courtyard allowed as few as thirty mounted knights to dominate thousands of surrounding villagers and withdraw to high ground if attacked.",
+            "source_context": "A motte (mound) of 10 to 15 metres high surrounded by a deep ditch and enclosed bailey courtyard allowed as few as thirty mounted knights to dominate thousands of surrounding villagers and withdraw to high ground if attacked. **Hinge Question:** Why was the earthen motte-and-bailey design far more devastatingly effective for rapid military conquest than building slow, expensive stone keeps?",
             "provenance_breakdown": {
               "author": "Robert, Count of Mortain, half-brother to William I.",
               "audience": "Conquered English peasants and rebel thegns.",
@@ -1754,7 +1705,8 @@ const medieval_england_data = {
               "audience": "Norman garrisons and Saxon subjects.",
               "motive": "Controlling key chokepoints and crushing native resistance."
             }
-          }
+          },
+          "source_context": "A motte (mound) of 10 to 15 metres high surrounded by a deep ditch and enclosed bailey courtyard allowed as few as thirty mounted knights to dominate thousands of surrounding villagers and withdraw to high ground if attacked. **Hinge Question:** Why was the earthen motte-and-bailey design far more devastatingly effective for rapid military conquest than building slow, expensive stone keeps?"
         },
         {
           "id": "medieval_england_l2_src_b",
@@ -1774,11 +1726,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Royal chancery scribes working under King William's direct order.",
             "audience": "The King's exchequer officials, sheriffs, and tenant-in-chief barons.",
-            "motive": "Maximising royal tax revenues and recording indisputable legal title to all confiscated English estates."
+            "motive": "Maximising royal tax revenues and recording indisputable legal title to all confiscated English estates.",
+            "hinge_question": "Why did the English people nickname William's survey 'Domesday' (Doomsday), comparing it to Christ's Last Judgment?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the English people nickname William's survey 'Domesday' (Doomsday), comparing it to Christ's Last Judgment?",
-            "source_context": "By 1086, less than 5% of English land remained in the hands of native Anglo-Saxon nobles. Domesday was unappealable: once an estate was written down in the King's book, no court could overturn the verdict.",
+            "source_context": "By 1086, less than 5% of English land remained in the hands of native Anglo-Saxon nobles. Domesday was unappealable: once an estate was written down in the King's book, no court could overturn the verdict. **Hinge Question:** Why did the English people nickname William's survey 'Domesday' (Doomsday), comparing it to Christ's Last Judgment?",
             "provenance_breakdown": {
               "author": "King William's commissioners and sworn local juries.",
               "audience": "Royal tax collectors and Norman landholders.",
@@ -1793,7 +1746,8 @@ const medieval_england_data = {
               "audience": "The King's treasury and baronial tenants.",
               "motive": "Codifying Norman property ownership and guaranteeing royal feudal revenue."
             }
-          }
+          },
+          "source_context": "By 1086, less than 5% of English land remained in the hands of native Anglo-Saxon nobles. Domesday was unappealable: once an estate was written down in the King's book, no court could overturn the verdict. **Hinge Question:** Why did the English people nickname William's survey 'Domesday' (Doomsday), comparing it to Christ's Last Judgment?"
         },
         {
           "id": "medieval_england_l2_src_c",
@@ -1813,11 +1767,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "English monk writing in the vernacular Anglo-Saxon language at Peterborough.",
             "audience": "Fellow monastic brethren and surviving English literate clergy.",
-            "motive": "Preserving an honest historical record of the suffering, taxation, and loss of liberty endured by the English nation."
+            "motive": "Preserving an honest historical record of the suffering, taxation, and loss of liberty endured by the English nation.",
+            "hinge_question": "Did William's scorched-earth policy in the North constitute a legitimate medieval military strategy against foreign-backed rebels or deliberate genocidal terror?"
           },
           "teacher_notes": {
             "hinge_question": "Did William's scorched-earth policy in the North constitute a legitimate medieval military strategy against foreign-backed rebels or deliberate genocidal terror?",
-            "source_context": "Even the Norman-sympathising chronicler Orderic Vitalis lamented the Harrying, writing that God would surely punish William for condemning innocent women and children to starve in ditches.",
+            "source_context": "Even the Norman-sympathising chronicler Orderic Vitalis lamented the Harrying, writing that God would surely punish William for condemning innocent women and children to starve in ditches. **Hinge Question:** Did William's scorched-earth policy in the North constitute a legitimate medieval military strategy against foreign-backed rebels or deliberate genocidal terror?",
             "provenance_breakdown": {
               "author": "Peterborough Abbey monk, writing in Old English.",
               "audience": "Future generations of English religious houses.",
@@ -1832,7 +1787,8 @@ const medieval_england_data = {
               "audience": "English monastic community.",
               "motive": "Recording the devastating human cost of Norman imperial pacification."
             }
-          }
+          },
+          "source_context": "Even the Norman-sympathising chronicler Orderic Vitalis lamented the Harrying, writing that God would surely punish William for condemning innocent women and children to starve in ditches. **Hinge Question:** Did William's scorched-earth policy in the North constitute a legitimate medieval military strategy against foreign-backed rebels or deliberate genocidal terror?"
         },
         {
           "id": "medieval_england_l2_src_d",
@@ -1852,11 +1808,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Norman royal builders and Augustinian canons supported by royal charters.",
             "audience": "Sailors, soldiers, coastal villagers, and crossing royal retinues.",
-            "motive": "Anchoring royal authority over Channel trade routes while sanctifying Norman rule with religious institutions."
+            "motive": "Anchoring royal authority over Channel trade routes while sanctifying Norman rule with religious institutions.",
+            "hinge_question": "Why did the Normans choose to build castles and priories directly inside Roman shore forts rather than constructing them on fresh greenfield sites?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the Normans choose to build castles and priories directly inside Roman shore forts rather than constructing them on fresh greenfield sites?",
-            "source_context": "Reusing Roman stone fort walls saved vast quantities of quarrying and labour while giving the Norman monarchs an aura of Roman imperial majesty. Kings Henry I and Henry II frequently embarked for Normandy from Portchester.",
+            "source_context": "Reusing Roman stone fort walls saved vast quantities of quarrying and labour while giving the Norman monarchs an aura of Roman imperial majesty. Kings Henry I and Henry II frequently embarked for Normandy from Portchester. **Hinge Question:** Why did the Normans choose to build castles and priories directly inside Roman shore forts rather than constructing them on fresh greenfield sites?",
             "provenance_breakdown": {
               "author": "King Henry I and Augustinian priory founders.",
               "audience": "Norman and English coastal inhabitants.",
@@ -1871,7 +1828,8 @@ const medieval_england_data = {
               "audience": "Regional population and royal courts.",
               "motive": "Demonstrating physical dominance and religious piety in a strategic coastal harbour."
             }
-          }
+          },
+          "source_context": "Reusing Roman stone fort walls saved vast quantities of quarrying and labour while giving the Norman monarchs an aura of Roman imperial majesty. Kings Henry I and Henry II frequently embarked for Normandy from Portchester. **Hinge Question:** Why did the Normans choose to build castles and priories directly inside Roman shore forts rather than constructing them on fresh greenfield sites?"
         },
         {
           "id": "medieval_england_l2_src_e",
@@ -1891,11 +1849,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Master engravers of the Norman royal chancery.",
             "audience": "All lords, sheriffs, judges, and subjects receiving royal executive writs.",
-            "motive": "Proving the royal authenticity of decrees and reinforcing that William held total military power alongside royal majesty."
+            "motive": "Proving the royal authenticity of decrees and reinforcing that William held total military power alongside royal majesty.",
+            "hinge_question": "Why was it essential for William to show himself on horseback as a warrior duke on one side of his seal, and seated peacefully on a throne on the other?"
           },
           "teacher_notes": {
             "hinge_question": "Why was it essential for William to show himself on horseback as a warrior duke on one side of his seal, and seated peacefully on a throne on the other?",
-            "source_context": "Before 1066, Anglo-Saxon kings used one-sided seals. William's double-sided seal set a precedent followed by English monarchs for nine centuries, combining Anglo-Saxon legal bureaucratic tradition with continental chivalric cavalry culture.",
+            "source_context": "Before 1066, Anglo-Saxon kings used one-sided seals. William's double-sided seal set a precedent followed by English monarchs for nine centuries, combining Anglo-Saxon legal bureaucratic tradition with continental chivalric cavalry culture. **Hinge Question:** Why was it essential for William to show himself on horseback as a warrior duke on one side of his seal, and seated peacefully on a throne on the other?",
             "provenance_breakdown": {
               "author": "King William I's chancery.",
               "audience": "The baronage and legal courts of England and Normandy.",
@@ -1910,113 +1869,10 @@ const medieval_england_data = {
               "audience": "English and Norman subjects receiving royal charters.",
               "motive": "Displaying unquestionable royal authority through both legal majesty and military strength."
             }
-          }
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Castles, Terror & The Domesday Survey",
-        "tariff": "8 marks (Feature Drill [4m] & Consequence Writing [4m])",
-        "questions": [
-          {
-            "tariff": "4 marks",
-            "type": "feature_drills_4m",
-            "question": "Describe two features of Norman motte-and-bailey castles. [4 marks]",
-            "prompt": "Identify two distinct architectural features of motte-and-bailey castles. For each feature, provide a clear identification followed by supporting factual knowledge.",
-            "model": "Feature 1: One key feature was the motte, an artificial steep earthen mound crowned by a wooden keep.<br>Detail: The motte was constructed between five and ten metres high using earth dug from a surrounding ditch, providing Norman garrisons with an elevated watchtower and defensive stronghold accessible only via a steep wooden drawbridge.<br><br>Feature 2: A second key feature was the bailey, an enclosed courtyard at the base of the mound.<br>Detail: Protected by a wooden palisade fence and ditch, the bailey housed barracks, stables, workshops, and livestock, serving as the daily military garrison that controlled the surrounding English countryside.",
-            "scaffolding": {
-              "acronym": "F1 + D1 • F2 + D2",
-              "acronym_title": "4-Mark Feature Drill Formula",
-              "steps": [
-                {
-                  "letter": "F1",
-                  "name": "Feature 1 (The Motte & Keep)",
-                  "prompt": "Identify the artificial mound, surrounding ditch, and wooden lookout keep.",
-                  "starter": "One key feature was the motte, which was..."
-                },
-                {
-                  "letter": "D1",
-                  "name": "Detail 1",
-                  "prompt": "Add precise details (5–10m high, earth mound, elevated lookout, drawbridge).",
-                  "starter": "Specifically, this involved..."
-                },
-                {
-                  "letter": "F2",
-                  "name": "Feature 2 (The Bailey Courtyard)",
-                  "prompt": "Identify the enclosed lower courtyard with living quarters and stables.",
-                  "starter": "A second key feature was the bailey, which..."
-                },
-                {
-                  "letter": "D2",
-                  "name": "Detail 2",
-                  "prompt": "Add precise details (palisade fence, ditch, barracks, workshops, livestock).",
-                  "starter": "In particular, this meant that..."
-                }
-              ],
-              "sentence_starters": [
-                "One key feature was that...",
-                "Specifically, this involved...",
-                "A second key feature was...",
-                "In particular, this served to..."
-              ],
-              "connectives_bank": [
-                "motte",
-                "bailey",
-                "wooden keep",
-                "palisade",
-                "ditch",
-                "drawbridge",
-                "garrison",
-                "quick construction"
-              ]
-            }
           },
-          {
-            "tariff": "4 marks",
-            "type": "consequence_4m",
-            "question": "Explain one consequence of the motte-and-bailey blitz for Anglo-Saxon resistance against Norman rule. [4 marks]",
-            "prompt": "Focus on how the rapid construction of over 500 motte-and-bailey castles within a few decades permanently suppressed rebellions and established psychological intimidation over the hostile English population.",
-            "model": "One significant consequence of the motte-and-bailey castle blitz was the permanent suppression of Anglo-Saxon rebellions and the total subjugation of the English population. Because motte-and-bailey castles could be assembled in as little as eight to fourteen days using forced Anglo-Saxon labour, William planted over 500 castles at strategic crossroads, river crossings, and rebellious cities (such as York). Each castle housed armoured Norman cavalry capable of riding out within minutes to crush local insurrections before rebels could unite. Consequently, these fortifications operated as permanent psychological instruments of terror, depriving Anglo-Saxons of their weapons and ensuring that a tiny Norman ruling elite of roughly 7,000 men could successfully dominate two million hostile English subjects.",
-            "scaffolding": {
-              "acronym": "P-F-C (Point • Fact • Consequence)",
-              "acronym_title": "High-Yield Consequence Formula (1 Concise Paragraph)",
-              "steps": [
-                {
-                  "letter": "POINT",
-                  "name": "Identify Consequence",
-                  "prompt": "State the permanent suppression of Saxon rebellion and psychological terror.",
-                  "starter": "One significant consequence of the castle blitz was..."
-                },
-                {
-                  "letter": "FACT",
-                  "name": "Historical Evidence",
-                  "prompt": "Cite 500 castles, quick construction, cavalry strike capacity, and controlling 2 million people.",
-                  "starter": "In particular, because castles could be built in under two weeks..."
-                },
-                {
-                  "letter": "CONSEQUENCE",
-                  "name": "Explain Result",
-                  "prompt": "Explain how 7,000 Normans dominated 2 million hostile English.",
-                  "starter": "Consequently, this directly resulted in..."
-                }
-              ],
-              "sentence_starters": [
-                "One significant consequence of the castle blitz was that...",
-                "In particular, this meant that...",
-                "As a direct result...",
-                "Consequently, this transformed Norman control because..."
-              ],
-              "connectives_bank": [
-                "500 castles",
-                "castle blitz",
-                "suppression of rebellion",
-                "Norman cavalry patrols",
-                "Harrying of the North",
-                "psychological intimidation"
-              ]
-            }
-          }
-        ]
-      }
+          "source_context": "Before 1066, Anglo-Saxon kings used one-sided seals. William's double-sided seal set a precedent followed by English monarchs for nine centuries, combining Anglo-Saxon legal bureaucratic tradition with continental chivalric cavalry culture. **Hinge Question:** Why was it essential for William to show himself on horseback as a warrior duke on one side of his seal, and seated peacefully on a throne on the other?"
+        }
+      ]
     },
     {
       "id": "lesson_3",
@@ -2591,11 +2447,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Sympathetic Anglo-French monastic illuminator created after Becket's martyrdom.",
             "audience": "Devout medieval nobility and pilgrims venerating Saint Thomas.",
-            "motive": "Portraying Henry II as a tyrannical, vindictive persecutor and Becket's supporters as holy, suffering martyrs."
+            "motive": "Portraying Henry II as a tyrannical, vindictive persecutor and Becket's supporters as holy, suffering martyrs.",
+            "hinge_question": "Why did the personal feud between Henry II and Thomas Becket escalate into an international constitutional crisis involving the King of France and the Pope?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the personal feud between Henry II and Thomas Becket escalate into an international constitutional crisis involving the King of France and the Pope?",
-            "source_context": "The Becket Leaves are among the finest surviving English gothic illuminations. This miniature highlights the stark vulnerability of women and infants bundled into winter exile while the king points his sceptre menacingly.",
+            "source_context": "The Becket Leaves are among the finest surviving English gothic illuminations. This miniature highlights the stark vulnerability of women and infants bundled into winter exile while the king points his sceptre menacingly. **Hinge Question:** Why did the personal feud between Henry II and Thomas Becket escalate into an international constitutional crisis involving the King of France and the Pope?",
             "provenance_breakdown": {
               "author": "High-status manuscript artist, likely working at St Albans or Canterbury.",
               "audience": "Aristocratic patrons devoted to the cult of Saint Thomas.",
@@ -2610,7 +2467,8 @@ const medieval_england_data = {
               "audience": "Christian pilgrims and ecclesiastical readers.",
               "motive": "Contrasting tyrannical royal wrath with saintly martyrdom."
             }
-          }
+          },
+          "source_context": "The Becket Leaves are among the finest surviving English gothic illuminations. This miniature highlights the stark vulnerability of women and infants bundled into winter exile while the king points his sceptre menacingly. **Hinge Question:** Why did the personal feud between Henry II and Thomas Becket escalate into an international constitutional crisis involving the King of France and the Pope?"
         },
         {
           "id": "medieval_england_l3_src_b",
@@ -2630,11 +2488,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "English psalter artist writing eighty years after the assassination.",
             "audience": "Elite monks and churchgoers meditating on holy sacrifice.",
-            "motive": "Immortalising the horrific sacrilege of the murder in holy ground and celebrating Becket's ultimate martyrdom."
+            "motive": "Immortalising the horrific sacrilege of the murder in holy ground and celebrating Becket's ultimate martyrdom.",
+            "hinge_question": "Did Henry II intend for his knights to assassinate the Archbishop of Canterbury, or did they disastrously misunderstand a burst of royal temper?"
           },
           "teacher_notes": {
             "hinge_question": "Did Henry II intend for his knights to assassinate the Archbishop of Canterbury, or did they disastrously misunderstand a burst of royal temper?",
-            "source_context": "Eyewitness Edward Grim, a visiting clerk, shielded Becket with his own arm, which was fractured by FitzUrse's sword blow. The slaughter sent shockwaves throughout Europe and forced Henry into complete political capitulation.",
+            "source_context": "Eyewitness Edward Grim, a visiting clerk, shielded Becket with his own arm, which was fractured by FitzUrse's sword blow. The slaughter sent shockwaves throughout Europe and forced Henry into complete political capitulation. **Hinge Question:** Did Henry II intend for his knights to assassinate the Archbishop of Canterbury, or did they disastrously misunderstand a burst of royal temper?",
             "provenance_breakdown": {
               "author": "Monastic scribe and miniaturist.",
               "audience": "Devotional Christian readers.",
@@ -2649,7 +2508,8 @@ const medieval_england_data = {
               "audience": "Devout ecclesiastical readers.",
               "motive": "Emphasising the sacred sanctity of the altar and the brutality of the knights."
             }
-          }
+          },
+          "source_context": "Eyewitness Edward Grim, a visiting clerk, shielded Becket with his own arm, which was fractured by FitzUrse's sword blow. The slaughter sent shockwaves throughout Europe and forced Henry into complete political capitulation. **Hinge Question:** Did Henry II intend for his knights to assassinate the Archbishop of Canterbury, or did they disastrously misunderstand a burst of royal temper?"
         },
         {
           "id": "medieval_england_l3_src_c",
@@ -2669,11 +2529,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Thirteenth-century monastic painter.",
             "audience": "Medieval church patrons affirming clerical independence from royal law.",
-            "motive": "Demonstrating that papal and episcopal authority ranked supreme over worldly crowns."
+            "motive": "Demonstrating that papal and episcopal authority ranked supreme over worldly crowns.",
+            "hinge_question": "Was Henry II's demand to try criminous clerks a reasonable pursuit of equal justice for all, or an assault on the ancient liberties of the Church?"
           },
           "teacher_notes": {
             "hinge_question": "Was Henry II's demand to try criminous clerks a reasonable pursuit of equal justice for all, or an assault on the ancient liberties of the Church?",
-            "source_context": "Over one-sixth of the male population in 12th-century England had minor clerical orders (tonsure) and could escape royal hanging by claiming 'benefit of clergy'. Henry saw this as an intolerable loophole that encouraged violent crime.",
+            "source_context": "Over one-sixth of the male population in 12th-century England had minor clerical orders (tonsure) and could escape royal hanging by claiming 'benefit of clergy'. Henry saw this as an intolerable loophole that encouraged violent crime. **Hinge Question:** Was Henry II's demand to try criminous clerks a reasonable pursuit of equal justice for all, or an assault on the ancient liberties of the Church?",
             "provenance_breakdown": {
               "author": "Becket Leaves master illuminator.",
               "audience": "Ecclesiastical elite and religious pilgrims.",
@@ -2688,7 +2549,8 @@ const medieval_england_data = {
               "audience": "Church officials and devout aristocracy.",
               "motive": "Showing that spiritual authority possessed the power to defy royal magistrates."
             }
-          }
+          },
+          "source_context": "Over one-sixth of the male population in 12th-century England had minor clerical orders (tonsure) and could escape royal hanging by claiming 'benefit of clergy'. Henry saw this as an intolerable loophole that encouraged violent crime. **Hinge Question:** Was Henry II's demand to try criminous clerks a reasonable pursuit of equal justice for all, or an assault on the ancient liberties of the Church?"
         },
         {
           "id": "medieval_england_l3_src_d",
@@ -2708,11 +2570,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Canterbury metalworkers licensed by cathedral monks.",
             "audience": "Ordinary Christian pilgrims wearing badges home to villages across Britain and Europe.",
-            "motive": "Selling protective talismans containing traces of Becket's holy blood diluted in holy water ('Canterbury Water')."
+            "motive": "Selling protective talismans containing traces of Becket's holy blood diluted in holy water ('Canterbury Water').",
+            "hinge_question": "How did the rapid emergence of the cult of Saint Thomas transform Canterbury into an economic and political powerhouse that rivalled the Crown?"
           },
           "teacher_notes": {
             "hinge_question": "How did the rapid emergence of the cult of Saint Thomas transform Canterbury into an economic and political powerhouse that rivalled the Crown?",
-            "source_context": "The Cathedral monks generated vast wealth from pilgrims' offerings at the golden shrine. Henry VIII was so infuriated by Becket's legacy of defying royal authority that in 1538 he destroyed the shrine and declared Becket a traitor.",
+            "source_context": "The Cathedral monks generated vast wealth from pilgrims' offerings at the golden shrine. Henry VIII was so infuriated by Becket's legacy of defying royal authority that in 1538 he destroyed the shrine and declared Becket a traitor. **Hinge Question:** How did the rapid emergence of the cult of Saint Thomas transform Canterbury into an economic and political powerhouse that rivalled the Crown?",
             "provenance_breakdown": {
               "author": "Medieval pewter and lead foundry artisans.",
               "audience": "Pilgrims travelling along the Pilgrim's Way.",
@@ -2727,7 +2590,8 @@ const medieval_england_data = {
               "audience": "Ordinary European pilgrims.",
               "motive": "Providing portable physical proof of pilgrimage and spiritual blessing."
             }
-          }
+          },
+          "source_context": "The Cathedral monks generated vast wealth from pilgrims' offerings at the golden shrine. Henry VIII was so infuriated by Becket's legacy of defying royal authority that in 1538 he destroyed the shrine and declared Becket a traitor. **Hinge Question:** How did the rapid emergence of the cult of Saint Thomas transform Canterbury into an economic and political powerhouse that rivalled the Crown?"
         },
         {
           "id": "medieval_england_l3_src_e",
@@ -2747,11 +2611,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Master enamel artisans of Limoges, southern France.",
             "audience": "Wealthy European bishops, cathedral chapters, and royal treasuries.",
-            "motive": "Enshrining holy relics in precious, unmissable containers that promoted the universal veneration of Saint Thomas."
+            "motive": "Enshrining holy relics in precious, unmissable containers that promoted the universal veneration of Saint Thomas.",
+            "hinge_question": "Why did monarchs and churches across Europe eagerly collect relics of an English archbishop who had been murdered for rebelling against his king?"
           },
           "teacher_notes": {
             "hinge_question": "Why did monarchs and churches across Europe eagerly collect relics of an English archbishop who had been murdered for rebelling against his king?",
-            "source_context": "Over forty surviving Limoges Becket chasses exist today, making Becket the most depicted historical martyr in medieval Europe. The upper roof panel shows angels carrying Becket's soul directly into heaven.",
+            "source_context": "Over forty surviving Limoges Becket chasses exist today, making Becket the most depicted historical martyr in medieval Europe. The upper roof panel shows angels carrying Becket's soul directly into heaven. **Hinge Question:** Why did monarchs and churches across Europe eagerly collect relics of an English archbishop who had been murdered for rebelling against his king?",
             "provenance_breakdown": {
               "author": "French craft guilds.",
               "audience": "International Christian worshippers.",
@@ -2766,117 +2631,10 @@ const medieval_england_data = {
               "audience": "Cathedral chapters and European nobility.",
               "motive": "Visualising Becket's immediate ascension to heaven as an eternal saint."
             }
-          }
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Crown vs Church: Henry II & Thomas Becket",
-        "tariff": "8 marks (Contrasting Historical Interpretations)",
-        "questions": [
-          {
-            "tariff": "4 marks",
-            "type": "interpretations_diff_4m",
-            "question": "Explain how Interpretations 1 and 2 differ on Thomas Becket’s motives and character. [4 marks]",
-            "stimulus": [
-              "Interpretation 1: Edward Grim, Eyewitness Monk & Chronicler, Life of St Thomas (c. 1175) — praises Becket as a saintly martyr who defended holy Church liberties against a tyrannical king, dying with serene Christian courage in Canterbury Cathedral.",
-              "Interpretation 2: Historian W. L. Warren, Henry II (1973) — portrays Becket as an obstinate, arrogant politician who provoked his own downfall by stubbornly defying royal legal reforms and excommunicating fellow bishops to satisfy his personal vanity."
-            ],
-            "prompt": "Explain the difference between Edward Grim’s contemporary hagiographical view of a saintly, selfless martyr and W. L. Warren’s modern historical analysis of an arrogant, stubborn political fanatic.",
-            "model": "Interpretations 1 and 2 differ fundamentally on the character, motives, and conduct of Thomas Becket. Interpretation 1, written by eyewitness monk Edward Grim shortly after Becket’s murder, depicts Becket as a holy, self-sacrificing martyr for Christ. Grim presents Becket as a courageous defender of Church independence who meekly offered his life rather than compromise sacred liberties against royal tyranny. In sharp contrast, Interpretation 2, by modern biographer W. L. Warren, portrays Becket as an arrogant, obstinate, and politically reckless figure. Warren contends that Becket was driven by personal pride and vanity rather than pure religious devotion, arguing that he deliberately provoked King Henry II by stubbornly obstructing necessary legal reforms and vindictively excommunicating fellow bishops. Thus, Grim sees a righteous saint, while Warren sees an inflexible, self-destructive politician.",
-            "scaffolding": {
-              "acronym": "Point • Interp 1 • Interp 2 • Contrast",
-              "acronym_title": "Edexcel Paper 3 Q3(b) Interpretation Difference Formula",
-              "steps": [
-                {
-                  "letter": "POINT",
-                  "name": "State the Core Difference",
-                  "prompt": "State clearly that they differ on whether Becket was a holy martyr or an arrogant politician.",
-                  "starter": "Interpretations 1 and 2 differ fundamentally on..."
-                },
-                {
-                  "letter": "INTERP 1",
-                  "name": "Exemplify Grim (Holy Martyr)",
-                  "prompt": "Quote or summarize Grim on defending Church liberties, holy courage, and martyrdom.",
-                  "starter": "Interpretation 1 argues that..."
-                },
-                {
-                  "letter": "INTERP 2",
-                  "name": "Exemplify Warren (Arrogant Politician)",
-                  "prompt": "Quote or summarize Warren on obstinate vanity, excommunications, and provoking Henry II.",
-                  "starter": "In contrast, Interpretation 2 suggests that..."
-                },
-                {
-                  "letter": "CONTRAST",
-                  "name": "Synthesize the Divergence",
-                  "prompt": "Explicitly synthesize the difference between spiritual martyrdom and secular arrogance.",
-                  "starter": "This is a fundamental difference because..."
-                }
-              ],
-              "sentence_starters": [
-                "Interpretations 1 and 2 differ on...",
-                "Interpretation 1 argues that...",
-                "In contrast, Interpretation 2 suggests that...",
-                "This is a difference because..."
-              ],
-              "connectives_bank": [
-                "Edward Grim (c. 1175)",
-                "W. L. Warren (1973)",
-                "Constitutions of Clarendon",
-                "saintly martyr vs arrogant politician",
-                "benefit of clergy",
-                "excommunication",
-                "Canterbury Cathedral"
-              ]
-            }
           },
-          {
-            "tariff": "4 marks",
-            "type": "interpretations_reason_4m",
-            "question": "Suggest one reason why Interpretations 1 and 2 differ on Becket’s clash with King Henry II. [4 marks]",
-            "prompt": "Explain why Grim and Warren arrive at contrasting conclusions. Consider Grim’s medieval monastic veneration and eyewitness loyalty to Becket versus Warren’s modern secular evaluation of administrative statecraft and royal legal reform.",
-            "model": "One primary reason why Interpretations 1 and 2 differ is that the authors write from radically different historical eras, religious perspectives, and analytical motives. Edward Grim was a medieval Catholic monk who personally witnessed Becket’s murder inside Canterbury Cathedral in December 1170. Writing during Becket’s rapid canonisation as Europe’s most revered saint, Grim’s motive was hagiographical—to inspire Christian pilgrimage, venerate Becket’s holiness, and cast King Henry II’s knights as demonic villains. In contrast, W. L. Warren is a twentieth-century secular academic historian evaluating Henry II’s reign as a whole. Warren’s focus is on Henry II’s pioneering creation of English common law and royal judicial circuits, leading him to view Becket’s defence of \"benefit of clergy\" (criminous clerks escaping royal courts) as an unreasonable obstacle to royal justice, explaining why he reaches a critical verdict.",
-            "scaffolding": {
-              "acronym": "Context Contrast • Monastic Veneration vs Administrative Law",
-              "acronym_title": "Edexcel Paper 3 Q3(c) Why Interpretations Differ Formula",
-              "steps": [
-                {
-                  "letter": "REASON",
-                  "name": "Era & Purpose",
-                  "prompt": "Identify medieval hagiography for pilgrims vs modern secular legal history.",
-                  "starter": "One reason why Interpretations 1 and 2 differ is because they write from..."
-                },
-                {
-                  "letter": "AUTHOR 1",
-                  "name": "Grim’s Monastic Purpose",
-                  "prompt": "Explain Grim witnessed the murder and wrote to promote saintly martyrdom.",
-                  "starter": "Specifically, Edward Grim was a medieval monk whose purpose was to..."
-                },
-                {
-                  "letter": "AUTHOR 2",
-                  "name": "Warren’s Institutional Focus",
-                  "prompt": "Explain Warren analyzes Henry II’s common law and judges Becket by modern statecraft.",
-                  "starter": "In contrast, W. L. Warren writes as a modern historian analyzing Henry II’s legal system..."
-                }
-              ],
-              "sentence_starters": [
-                "One reason why Interpretations 1 and 2 differ is because they have different purposes...",
-                "Specifically, Interpretation 1 was written in the 1170s to promote...",
-                "In contrast, Interpretation 2 was written in 1973 to evaluate...",
-                "As a result, the authors reach different conclusions because..."
-              ],
-              "connectives_bank": [
-                "hagiography",
-                "eyewitness monk",
-                "canonisation of St Thomas",
-                "common law creation",
-                "benefit of clergy",
-                "criminous clerks",
-                "secular administration"
-              ]
-            }
-          }
-        ]
-      }
+          "source_context": "Over forty surviving Limoges Becket chasses exist today, making Becket the most depicted historical martyr in medieval Europe. The upper roof panel shows angels carrying Becket's soul directly into heaven. **Hinge Question:** Why did monarchs and churches across Europe eagerly collect relics of an English archbishop who had been murdered for rebelling against his king?"
+        }
+      ]
     },
     {
       "id": "lesson_4",
@@ -3426,11 +3184,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Royal sculptors commissioned by William Marshal and the regents of young Henry III.",
             "audience": "Worcester pilgrims and subjects visiting the royal choir.",
-            "motive": "Restoring the prestige and sanctity of the monarchy after civil war and baronial rebellion."
+            "motive": "Restoring the prestige and sanctity of the monarchy after civil war and baronial rebellion.",
+            "hinge_question": "Why did the regents of John's nine-year-old son Henry III commission a magnificent royal marble effigy depicting John as a serene, pious sovereign?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the regents of John's nine-year-old son Henry III commission a magnificent royal marble effigy depicting John as a serene, pious sovereign?",
-            "source_context": "This is the oldest surviving royal effigy of an English monarch in England. Chronicler Matthew Paris wrote savagely of John: 'Foul as it is, hell itself is defiled by the fouler presence of John.'",
+            "source_context": "This is the oldest surviving royal effigy of an English monarch in England. Chronicler Matthew Paris wrote savagely of John: 'Foul as it is, hell itself is defiled by the fouler presence of John.' **Hinge Question:** Why did the regents of John's nine-year-old son Henry III commission a magnificent royal marble effigy depicting John as a serene, pious sovereign?",
             "provenance_breakdown": {
               "author": "Regency administration of King Henry III.",
               "audience": "English feudal nobility and church hierarchy.",
@@ -3445,7 +3204,8 @@ const medieval_england_data = {
               "audience": "Medieval church visitors and political elites.",
               "motive": "Projecting calm royal authority after years of devastating baronial war."
             }
-          }
+          },
+          "source_context": "This is the oldest surviving royal effigy of an English monarch in England. Chronicler Matthew Paris wrote savagely of John: 'Foul as it is, hell itself is defiled by the fouler presence of John.' **Hinge Question:** Why did the regents of John's nine-year-old son Henry III commission a magnificent royal marble effigy depicting John as a serene, pious sovereign?"
         },
         {
           "id": "medieval_england_l4_src_b",
@@ -3465,11 +3225,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Jointly formulated by baronial lawyers and Archbishop Stephen Langton, engrossed by royal chancery clerks.",
             "audience": "Sheriffs, courts, and all free men throughout the kingdom.",
-            "motive": "Placing legally binding, enforceable limits upon King John's extortionate financial and judicial abuses."
+            "motive": "Placing legally binding, enforceable limits upon King John's extortionate financial and judicial abuses.",
+            "hinge_question": "Was Magna Carta truly a foundation stone of universal human liberty, or merely a selfish treaty designed to protect the feudal privileges of a wealthy baronial oligarchy?"
           },
           "teacher_notes": {
             "hinge_question": "Was Magna Carta truly a foundation stone of universal human liberty, or merely a selfish treaty designed to protect the feudal privileges of a wealthy baronial oligarchy?",
-            "source_context": "In 1215, 'free men' represented less than 20% of England's population; the vast majority of peasants were unfree serfs (villeins) who gained few immediate rights. Yet the principle that the Crown must obey the rule of law became the bedrock of British and international constitutional liberty.",
+            "source_context": "In 1215, 'free men' represented less than 20% of England's population; the vast majority of peasants were unfree serfs (villeins) who gained few immediate rights. Yet the principle that the Crown must obey the rule of law became the bedrock of British and international constitutional liberty. **Hinge Question:** Was Magna Carta truly a foundation stone of universal human liberty, or merely a selfish treaty designed to protect the feudal privileges of a wealthy baronial oligarchy?",
             "provenance_breakdown": {
               "author": "Archbishop Langton and baronial negotiators.",
               "audience": "The English political nation and royal administration.",
@@ -3484,7 +3245,8 @@ const medieval_england_data = {
               "audience": "All county courts and free subjects across England.",
               "motive": "Establishing the rule of customary law over the arbitrary personal will of the king."
             }
-          }
+          },
+          "source_context": "In 1215, 'free men' represented less than 20% of England's population; the vast majority of peasants were unfree serfs (villeins) who gained few immediate rights. Yet the principle that the Crown must obey the rule of law became the bedrock of British and international constitutional liberty. **Hinge Question:** Was Magna Carta truly a foundation stone of universal human liberty, or merely a selfish treaty designed to protect the feudal privileges of a wealthy baronial oligarchy?"
         },
         {
           "id": "medieval_england_l4_src_c",
@@ -3504,11 +3266,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Italian fresco artist depicting the supreme head of Western Christendom.",
             "audience": "Pilgrims and monks acknowledging supreme papal jurisdiction.",
-            "motive": "Celebrating the supreme spiritual majesty of Pope Innocent III, who claimed to judge all kings on earth."
+            "motive": "Celebrating the supreme spiritual majesty of Pope Innocent III, who claimed to judge all kings on earth.",
+            "hinge_question": "Why did the Pope—who had fiercely opposed King John for six years—suddenly become John's most aggressive ally against Magna Carta?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the Pope—who had fiercely opposed King John for six years—suddenly become John's most aggressive ally against Magna Carta?",
-            "source_context": "The papal bull reached England in September 1215, just three months after Runnymede. Its arrival instantly reignited civil war: the barons invited Prince Louis of France to invade England and take the crown.",
+            "source_context": "The papal bull reached England in September 1215, just three months after Runnymede. Its arrival instantly reignited civil war: the barons invited Prince Louis of France to invade England and take the crown. **Hinge Question:** Why did the Pope—who had fiercely opposed King John for six years—suddenly become John's most aggressive ally against Magna Carta?",
             "provenance_breakdown": {
               "author": "Sacro Speco monastic painter.",
               "audience": "Medieval Catholic hierarchy.",
@@ -3523,7 +3286,8 @@ const medieval_england_data = {
               "audience": "Catholic faithful and ecclesiastical courts.",
               "motive": "Reflecting the papacy's supreme authority over European monarchs and treaties."
             }
-          }
+          },
+          "source_context": "The papal bull reached England in September 1215, just three months after Runnymede. Its arrival instantly reignited civil war: the barons invited Prince Louis of France to invade England and take the crown. **Hinge Question:** Why did the Pope—who had fiercely opposed King John for six years—suddenly become John's most aggressive ally against Magna Carta?"
         },
         {
           "id": "medieval_england_l4_src_d",
@@ -3543,11 +3307,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Chancery clerks affixing John's personal seal under direct baronial surveillance at Runnymede.",
             "audience": "Judges, barons, foreign crowns, and the whole realm.",
-            "motive": "Providing undeniable, irreversible physical proof that King John had bound himself and his heirs to the terms of the charter."
+            "motive": "Providing undeniable, irreversible physical proof that King John had bound himself and his heirs to the terms of the charter.",
+            "hinge_question": "Why did medieval legal contracts require a physical wax impression of the Great Seal rather than a handwritten royal signature?"
           },
           "teacher_notes": {
             "hinge_question": "Why did medieval legal contracts require a physical wax impression of the Great Seal rather than a handwritten royal signature?",
-            "source_context": "Illiteracy was high even among baronial elites, making handwritten signatures easy to forge. The Great Seal was kept under lock and key by the Chancellor; its impression proved authentic royal assent.",
+            "source_context": "Illiteracy was high even among baronial elites, making handwritten signatures easy to forge. The Great Seal was kept under lock and key by the Chancellor; its impression proved authentic royal assent. **Hinge Question:** Why did medieval legal contracts require a physical wax impression of the Great Seal rather than a handwritten royal signature?",
             "provenance_breakdown": {
               "author": "King John's Royal Chancery.",
               "audience": "The baronage and legal magistrates of England.",
@@ -3562,7 +3327,8 @@ const medieval_england_data = {
               "audience": "Feudal courts and county sheriffs.",
               "motive": "Certifying royal agreement to baronial demands with the ultimate symbol of executive power."
             }
-          }
+          },
+          "source_context": "Illiteracy was high even among baronial elites, making handwritten signatures easy to forge. The Great Seal was kept under lock and key by the Chancellor; its impression proved authentic royal assent. **Hinge Question:** Why did medieval legal contracts require a physical wax impression of the Great Seal rather than a handwritten royal signature?"
         },
         {
           "id": "medieval_england_l4_src_e",
@@ -3582,11 +3348,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Physical architectural evidence of medieval siege warfare and sapping.",
             "audience": "Rebel barons, French invaders, and contemporary chroniclers.",
-            "motive": "Sending an unmistakable warning to the baronial confederacy that the king would utterly destroy any garrison that resisted him."
+            "motive": "Sending an unmistakable warning to the baronial confederacy that the king would utterly destroy any garrison that resisted him.",
+            "hinge_question": "How does the brutal siege of Rochester Castle challenge the view of King John as a weak, cowardly 'Softsword'?"
           },
           "teacher_notes": {
             "hinge_question": "How does the brutal siege of Rochester Castle challenge the view of King John as a weak, cowardly 'Softsword'?",
-            "source_context": "The rebuilt south-east tower at Rochester is round rather than square because round towers had no corners for sappers to undermine. Rochester was one of the greatest siege operations in medieval British history.",
+            "source_context": "The rebuilt south-east tower at Rochester is round rather than square because round towers had no corners for sappers to undermine. Rochester was one of the greatest siege operations in medieval British history. **Hinge Question:** How does the brutal siege of Rochester Castle challenge the view of King John as a weak, cowardly 'Softsword'?",
             "provenance_breakdown": {
               "author": "King John's sappers and engineers.",
               "audience": "The rebel baronage and Prince Louis of France.",
@@ -3601,67 +3368,10 @@ const medieval_england_data = {
               "audience": "Contemporaries observing the First Barons' War.",
               "motive": "Displaying the terrifying destructive power of royal siegecraft against rebellious nobles."
             }
-          }
+          },
+          "source_context": "The rebuilt south-east tower at Rochester is round rather than square because round towers had no corners for sappers to undermine. Rochester was one of the greatest siege operations in medieval British history. **Hinge Question:** How does the brutal siege of Rochester Castle challenge the view of King John as a weak, cowardly 'Softsword'?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: King John & The Sealing of Magna Carta (1215)",
-        "tariff": "8 marks (Narrative Account)",
-        "questions": [
-          {
-            "tariff": "8 marks",
-            "type": "narrative_account_8m",
-            "question": "Write a narrative account analysing the key events leading from the loss of Normandy (1204) to the sealing of Magna Carta (1215). [8 marks]",
-            "stimulus": [
-              "The loss of Normandy and heavy scutage taxation",
-              "The defeat at the Battle of Bouvines (1214)"
-            ],
-            "prompt": "Write a chronological account examining the escalation: King John’s loss of ancestral Norman lands in 1204, his exorbitant financial exactions (scutage, wardship fines) to finance reconquest, his humiliating defeat at Bouvines in 1214, and the baronial rebellion forcing the sealing of Magna Carta at Runnymede in June 1215.",
-            "model": "Between 1204 and 1215, King John’s catastrophic military failures and tyrannical extortion provoked a unified baronial rebellion that fundamentally transformed English medieval kingship.<br><br>The crisis began in 1204 when King Philip II of France conquered Normandy and Anjou, stripping John of his ancestral continental empire. Desperate to fund an army to reconquer his lands, John subjected his English subjects to unprecedented financial extortion. He levied eleven \"scutage\" taxes (shield money in place of military service) in sixteen years, extorted massive arbitrary relief payments from young heirs, seized church properties during his six-year quarrel with Pope Innocent III, and abused forest laws. Known as \"Softsword\", John alienated both the northern barons and the Church by ruling through personal caprice rather than feudal custom.<br><br>The decisive military turning point occurred on 27 July 1214 at the Battle of Bouvines. John had spent hundreds of thousands of pounds assembling a grand coalition with the Holy Roman Emperor Otto IV to crush Philip II. However, John’s coalition was utterly routed at Bouvines, shattering his dream of reclaiming Normandy and bankrupting the royal treasury. Barons who had paid exorbitant scutage returned home furious that their money had been squandered on a humiliating foreign defeat.<br><br>Consequently, when John demanded yet another tax, a coalition of northern and eastern barons rebelled in May 1215, renouncing their feudal homage and capturing London. Deprived of military support, John was forced to meet the rebel barons at Runnymede meadow beside the River Thames. On 15 June 1215, John affixed the Great Seal to Magna Carta, legally establishing for the first time that the English monarch was not above the law and could not levy taxes without the common counsel of the realm.",
-            "scaffolding": {
-              "acronym": "3-Stage Chronological Narrative Framework",
-              "acronym_title": "Narrative Account Formula (Beginning • Escalation • Climax)",
-              "steps": [
-                {
-                  "letter": "STAGE 1",
-                  "name": "1204 Loss of Normandy & Scutage Extortion",
-                  "prompt": "Explain losing Normandy, 11 scutages, relief fines, and baronial resentment.",
-                  "starter": "Initially, the road to Magna Carta began in 1204 when King John..."
-                },
-                {
-                  "letter": "STAGE 2",
-                  "name": "July 1214 Disaster at Bouvines",
-                  "prompt": "Explain spending royal wealth, total rout at Bouvines, and shattered prestige.",
-                  "starter": "Following a decade of heavy taxation, the decisive military disaster occurred in July 1214 at..."
-                },
-                {
-                  "letter": "STAGE 3",
-                  "name": "May–June 1215 Baronial Rebellion & Runnymede",
-                  "prompt": "Explain barons renouncing homage, capturing London, and sealing Magna Carta at Runnymede.",
-                  "starter": "The culmination of the rebellion occurred in the spring of 1215 when..."
-                }
-              ],
-              "sentence_starters": [
-                "Initially, the crisis began when King John...",
-                "Following this, financial oppression escalated when...",
-                "A decisive military turning point was reached in 1214 when...",
-                "Consequently, this culminated in June 1215 when..."
-              ],
-              "connectives_bank": [
-                "loss of Normandy (1204)",
-                "Philip II of France",
-                "scutage taxation",
-                "relief fines",
-                "Pope Innocent III",
-                "Battle of Bouvines (1214)",
-                "rebel barons",
-                "Runnymede (1215)",
-                "Magna Carta"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_5",
@@ -4211,11 +3921,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Henry Knighton, an educated Augustinian canon whose monastic abbey depended on feudal tenant labour.",
             "audience": "Monastic brethren, clerical landlords, and future medieval historians.",
-            "motive": "Expressing aristocratic dismay at the insubordination and greed of peasant workers who refused to accept customary servitude."
+            "motive": "Expressing aristocratic dismay at the insubordination and greed of peasant workers who refused to accept customary servitude.",
+            "hinge_question": "Why did the sudden death of half the population produce an economic golden age for surviving English peasants while terrifying the feudal aristocracy?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the sudden death of half the population produce an economic golden age for surviving English peasants while terrifying the feudal aristocracy?",
-            "source_context": "Knighton lamented: 'Servants, having no regard for the ordinance, were scarcely willing to serve anyone for less than triple the customary wage.' Parliament responded with the Statute of Labourers (1351), fixing wages by force and outlawing mobility.",
+            "source_context": "Knighton lamented: 'Servants, having no regard for the ordinance, were scarcely willing to serve anyone for less than triple the customary wage.' Parliament responded with the Statute of Labourers (1351), fixing wages by force and outlawing mobility. **Hinge Question:** Why did the sudden death of half the population produce an economic golden age for surviving English peasants while terrifying the feudal aristocracy?",
             "provenance_breakdown": {
               "author": "Canon Henry Knighton of Leicester.",
               "audience": "Church landowners and elite estate managers.",
@@ -4230,7 +3941,8 @@ const medieval_england_data = {
               "audience": "Literate feudal ruling class.",
               "motive": "Criticising lower-class workers for exploiting a national tragedy to demand higher wages."
             }
-          }
+          },
+          "source_context": "Knighton lamented: 'Servants, having no regard for the ordinance, were scarcely willing to serve anyone for less than triple the customary wage.' Parliament responded with the Statute of Labourers (1351), fixing wages by force and outlawing mobility. **Hinge Question:** Why did the sudden death of half the population produce an economic golden age for surviving English peasants while terrifying the feudal aristocracy?"
         },
         {
           "id": "medieval_england_l5_src_b",
@@ -4250,11 +3962,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Flemish manuscript artist illustrating Jean Froissart, a chronicler who openly despised the peasantry and wrote exclusively for aristocratic patrons.",
             "audience": "Kings, dukes, and noble courtiers across England, France, and Burgundy.",
-            "motive": "Praising the young king's courage and celebrating the violent restoration of social hierarchy over peasant insolence."
+            "motive": "Praising the young king's courage and celebrating the violent restoration of social hierarchy over peasant insolence.",
+            "hinge_question": "Was the killing of Wat Tyler at Smithfield an act of self-defence by Mayor Walworth, or a premeditated royal ambush to eliminate the rebel leader?"
           },
           "teacher_notes": {
             "hinge_question": "Was the killing of Wat Tyler at Smithfield an act of self-defence by Mayor Walworth, or a premeditated royal ambush to eliminate the rebel leader?",
-            "source_context": "When Tyler fell, the peasant bowmen notched arrows to shoot, but Richard II rode boldly toward them shouting: 'You shall have no leader but me; I am your king, follow me!' He led them into St John's fields while troops encircled them, then revoked all promises.",
+            "source_context": "When Tyler fell, the peasant bowmen notched arrows to shoot, but Richard II rode boldly toward them shouting: 'You shall have no leader but me; I am your king, follow me!' He led them into St John's fields while troops encircled them, then revoked all promises. **Hinge Question:** Was the killing of Wat Tyler at Smithfield an act of self-defence by Mayor Walworth, or a premeditated royal ambush to eliminate the rebel leader?",
             "provenance_breakdown": {
               "author": "Workshop of the Master of Anthony of Burgundy.",
               "audience": "Courtiers of the Burgundian and English courts.",
@@ -4269,7 +3982,8 @@ const medieval_england_data = {
               "audience": "Noble courts of England and France.",
               "motive": "Legitimising the summary execution of lower-class rebellion leaders."
             }
-          }
+          },
+          "source_context": "When Tyler fell, the peasant bowmen notched arrows to shoot, but Richard II rode boldly toward them shouting: 'You shall have no leader but me; I am your king, follow me!' He led them into St John's fields while troops encircled them, then revoked all promises. **Hinge Question:** Was the killing of Wat Tyler at Smithfield an act of self-defence by Mayor Walworth, or a premeditated royal ambush to eliminate the rebel leader?"
         },
         {
           "id": "medieval_england_l5_src_c",
@@ -4289,11 +4003,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Manuscript artist illustrating Froissart, who viewed Ball as a dangerous, mad heretic.",
             "audience": "Noble landowners terrified of social revolution and religious heresy.",
-            "motive": "Documenting the intoxicating religious rhetoric that inspired commoners to march on London and execute the Archbishop of Canterbury."
+            "motive": "Documenting the intoxicating religious rhetoric that inspired commoners to march on London and execute the Archbishop of Canterbury.",
+            "hinge_question": "Why did John Ball's sermon represent a far more dangerous threat to the medieval ruling class than a mere tax riot?"
           },
           "teacher_notes": {
             "hinge_question": "Why did John Ball's sermon represent a far more dangerous threat to the medieval ruling class than a mere tax riot?",
-            "source_context": "Ball argued: 'Matters cannot go well in England until all things are held in common, and there are neither serfs nor gentlemen, but we are all one.' Following the collapse of the revolt, Ball was hanged, drawn, and quartered at St Albans in July 1381.",
+            "source_context": "Ball argued: 'Matters cannot go well in England until all things are held in common, and there are neither serfs nor gentlemen, but we are all one.' Following the collapse of the revolt, Ball was hanged, drawn, and quartered at St Albans in July 1381. **Hinge Question:** Why did John Ball's sermon represent a far more dangerous threat to the medieval ruling class than a mere tax riot?",
             "provenance_breakdown": {
               "author": "Flemish gothic artist.",
               "audience": "Aristocratic readers reflecting on popular rebellion.",
@@ -4308,7 +4023,8 @@ const medieval_england_data = {
               "audience": "Feudal lords and royalty.",
               "motive": "Showing the ideological subversion that motivated peasant insurrection."
             }
-          }
+          },
+          "source_context": "Ball argued: 'Matters cannot go well in England until all things are held in common, and there are neither serfs nor gentlemen, but we are all one.' Following the collapse of the revolt, Ball was hanged, drawn, and quartered at St Albans in July 1381. **Hinge Question:** Why did John Ball's sermon represent a far more dangerous threat to the medieval ruling class than a mere tax riot?"
         },
         {
           "id": "medieval_england_l5_src_d",
@@ -4328,11 +4044,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Flemish manuscript workshop illustrating Froissart's history of Anglo-French chivalry.",
             "audience": "Royal courtiers and European feudal aristocracy.",
-            "motive": "Illustrating the dramatic confrontation between royal majesty and popular insurrection."
+            "motive": "Illustrating the dramatic confrontation between royal majesty and popular insurrection.",
+            "hinge_question": "Did fourteen-year-old King Richard II genuinely intend to abolish serfdom when he promised charters at Mile End, or was he playing for time to save his own life?"
           },
           "teacher_notes": {
             "hinge_question": "Did fourteen-year-old King Richard II genuinely intend to abolish serfdom when he promised charters at Mile End, or was he playing for time to save his own life?",
-            "source_context": "Once Tyler was dead and royal armies assembled in Essex, Richard famously retracted all promises, telling the peasants: 'Villeins you are, and villeins you shall remain; in greater servitude than before.' Yet landlords never again attempted to impose a poll tax, and serfdom quietly withered away within a century.",
+            "source_context": "Once Tyler was dead and royal armies assembled in Essex, Richard famously retracted all promises, telling the peasants: 'Villeins you are, and villeins you shall remain; in greater servitude than before.' Yet landlords never again attempted to impose a poll tax, and serfdom quietly withered away within a century. **Hinge Question:** Did fourteen-year-old King Richard II genuinely intend to abolish serfdom when he promised charters at Mile End, or was he playing for time to save his own life?",
             "provenance_breakdown": {
               "author": "BnF Froissart illuminator.",
               "audience": "French and English royal courts.",
@@ -4347,7 +4064,8 @@ const medieval_england_data = {
               "audience": "European noble readers.",
               "motive": "Portraying the mortal danger faced by the Plantagenet crown during the revolt."
             }
-          }
+          },
+          "source_context": "Once Tyler was dead and royal armies assembled in Essex, Richard famously retracted all promises, telling the peasants: 'Villeins you are, and villeins you shall remain; in greater servitude than before.' Yet landlords never again attempted to impose a poll tax, and serfdom quietly withered away within a century. **Hinge Question:** Did fourteen-year-old King Richard II genuinely intend to abolish serfdom when he promised charters at Mile End, or was he playing for time to save his own life?"
         },
         {
           "id": "medieval_england_l5_src_e",
@@ -4367,11 +4085,12 @@ const medieval_england_data = {
           "provenance_clues": {
             "author": "Commissioned by the Worshipful Company of Fishmongers, one of the Great Twelve City of London livery companies.",
             "audience": "Guild members, city aldermen, visiting dignitaries, and the royal court.",
-            "motive": "Celebrating the guild's heroic history and cementing the alliance between London's wealthy mercantile oligarchy and the Crown."
+            "motive": "Celebrating the guild's heroic history and cementing the alliance between London's wealthy mercantile oligarchy and the Crown.",
+            "hinge_question": "Why did the ruling merchant oligarchy of London celebrate Walworth's assassination of Wat Tyler as a heroic patriotic act for hundreds of years?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the ruling merchant oligarchy of London celebrate Walworth's assassination of Wat Tyler as a heroic patriotic act for hundreds of years?",
-            "source_context": "Walworth was not just a mayor; he was a wealthy merchant capitalist who loaned huge sums to the Crown and managed the collection of the hated Poll Taxes in London. Slaying Tyler protected his own fortune as much as the king's crown.",
+            "source_context": "Walworth was not just a mayor; he was a wealthy merchant capitalist who loaned huge sums to the Crown and managed the collection of the hated Poll Taxes in London. Slaying Tyler protected his own fortune as much as the king's crown. **Hinge Question:** Why did the ruling merchant oligarchy of London celebrate Walworth's assassination of Wat Tyler as a heroic patriotic act for hundreds of years?",
             "provenance_breakdown": {
               "author": "Fishmongers' Company portrait painter.",
               "audience": "London's commercial elite.",
@@ -4386,82 +4105,16 @@ const medieval_england_data = {
               "audience": "London merchants and civic magistrates.",
               "motive": "Immortalising civic loyalty to the monarchy through physical weapons of state."
             }
-          }
+          },
+          "source_context": "Walworth was not just a mayor; he was a wealthy merchant capitalist who loaned huge sums to the Crown and managed the collection of the hated Poll Taxes in London. Slaying Tyler protected his own fortune as much as the king's crown. **Hinge Question:** Why did the ruling merchant oligarchy of London celebrate Walworth's assassination of Wat Tyler as a heroic patriotic act for hundreds of years?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: The Black Death & The Breakdown of Feudalism",
-        "tariff": "12 marks (Evaluative Statement Essay)",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "evaluative_essay_12m",
-            "question": "‘The Black Death of 1348 was the main cause of the breakdown of the feudal system in medieval England.’ How far do you agree? [12 marks]",
-            "stimulus": [
-              "The demographic collapse and labour shortage caused by the Black Death (1348–1350)",
-              "The 1351 Statute of Labourers and the Peasants’ Revolt of 1381"
-            ],
-            "prompt": "Construct a balanced evaluative argument: on the one hand, evaluate how the Black Death’s 40–50% mortality created an acute labour shortage, allowing serfs to demand higher wages and flee bondage; on the other hand, evaluate how the feudal system survived through reactionary laws (1351 Statute of Labourers) and how it was the Poll Taxes and the 1381 Peasants’ Revolt that permanently shattered the feudal order. Reach a weighed conclusion.",
-            "model": "To a significant extent, the Black Death of 1348 was the fundamental economic catalyst that doomed the feudal system in England. While the legal structures of serfdom were not dismantled overnight, the demographic annihilation of nearly half the population irrevocably shattered the basic premise of feudalism: that land was scarce and labour was cheap and expendable.<br><br>On the one hand, the Black Death triggered an unprecedented demographic collapse that fundamentally reversed economic power between lords and peasants. Arriving in Dorset in the summer of 1348, the bubonic and pneumonic plague killed between 40% and 50% of the English population within eighteen months. Fields were left unharvested and livestock wandered through abandoned villages. With an acute scarcity of labour, surviving peasants and serfs suddenly possessed immense economic leverage. Peasants demanded double or triple their pre-plague wages, while bondmen (villeins) threatened to flee to neighbouring manors unless lords reduced labor services (corvée) and converted obligations into cash rents. This spontaneous economic revolution began the rapid erosion of customary serfdom.<br><br>On the other hand, it can be argued that feudalism was broken not by the plague itself, but by the violent political clash between peasant aspirations and reactionary state repression. In response to the labour shortage, the landowning nobility passed the 1351 Statute of Labourers, fixing wages at pre-plague 1346 levels and criminalizing peasants who travelled to seek higher pay. For thirty years, justices enforced these punitive laws. Tensions exploded when the crown levied three successive flat-rate Poll Taxes between 1377 and 1381 to pay for the Hundred Years’ War. Led by Wat Tyler and radical priest John Ball (who preached \"When Adam delved and Eve span, who was then the gentleman?\"), the Peasants’ Revolt of 1381 marched on London, burning manorial rolls and executing the Archbishop of Canterbury. Although Richard II betrayed the rebels and executed Tyler, the aristocracy recognized that serfdom could no longer be enforced by fear without risking social annihilation.<br><br>In conclusion, while the 1381 Peasants’ Revolt delivered the political coup de grâce that made lords abandon serfdom, it was the Black Death that created the underlying conditions. By halving the workforce and transforming human labour into a scarce, valuable commodity, the plague dealt feudalism a fatal economic wound from which it could never recover.",
-            "scaffolding": {
-              "acronym": "PEEL Evaluative Essay Framework",
-              "acronym_title": "12-Mark Evaluative Statement Essay Standard",
-              "steps": [
-                {
-                  "letter": "THESIS",
-                  "name": "State Position",
-                  "prompt": "State clearly that the plague created the labour scarcity that made feudal serfdom economically unviable.",
-                  "starter": "To a significant extent, the Black Death was the fundamental catalyst because..."
-                },
-                {
-                  "letter": "THEME 1",
-                  "name": "Plague Mortality & Labour Leverage",
-                  "prompt": "Explain 40–50% death toll, labour scarcity, demanding higher wages, and fleeing to other manors.",
-                  "starter": "On the one hand, the Black Death shattered feudal power dynamics because..."
-                },
-                {
-                  "letter": "THEME 2",
-                  "name": "Statute of Labourers & 1381 Revolt",
-                  "prompt": "Evaluate 1351 Statute of Labourers, Poll Taxes, Wat Tyler, John Ball, and manorial rolls burned.",
-                  "starter": "On the other hand, it can be argued that political resistance was decisive because..."
-                },
-                {
-                  "letter": "JUDGMENT",
-                  "name": "Weighed Verdict",
-                  "prompt": "Synthesize why economic labour scarcity drove the political crisis of 1381.",
-                  "starter": "In conclusion, while the 1381 revolt delivered the final blow, the Black Death was the true cause because..."
-                }
-              ],
-              "sentence_starters": [
-                "To a significant extent, it can be argued that...",
-                "On the one hand, the demographic collapse transformed the economy because...",
-                "In particular, peasants were able to demand...",
-                "On the other hand, an alternative argument highlights political repression and revolt, such as...",
-                "In conclusion, the most decisive factor was... because..."
-              ],
-              "connectives_bank": [
-                "Black Death (1348)",
-                "40–50% mortality",
-                "labour shortage",
-                "Statute of Labourers (1351)",
-                "Poll Tax (1381)",
-                "Peasants’ Revolt",
-                "Wat Tyler",
-                "John Ball",
-                "villeins / serfdom",
-                "manorial rolls"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     }
   ],
   "edition": "3-Layer Pedagogical Architecture Gold Standard (2026)",
   "homepage_background": "/images/medieval_england/source_b_bayeux_harold_death.jpg"
 };
-
-if (typeof module !== "undefined" && module.exports) {
+if (typeof module !== 'undefined' && module.exports) {
   module.exports = medieval_england_data;
 }
 export default medieval_england_data;

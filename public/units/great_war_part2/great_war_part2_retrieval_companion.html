@@ -29,7 +29,7 @@
   .a5-page {
     width: 148mm;
     height: 210mm;
-    padding: 6.5mm 9mm 6mm 9mm;
+    padding: 5.5mm 9mm 4.5mm 9mm;
     margin: 0 auto;
     page-break-after: always;
     break-after: page;
@@ -276,24 +276,11 @@
     line-height: 1.15;
     margin-top: 1px;
   }
-  .score-line {
-    display: inline-block;
-    width: 14px;
-    border-bottom: 1.2px solid #000000;
-  }
-  .date-line {
-    display: block;
-    width: 44px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
-  }
-  .parent-sig-line {
-    display: block;
-    width: 55px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
+  .score-cell {
+    font-size: 7.2pt;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
   }
 
   /* Partner Quiz / Instructions Banner */
@@ -343,30 +330,17 @@
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 3px;
-    padding: 2px 4px;
+    padding: 2.5px 6px;
     margin: 2px 0 2px 0;
     display: flex;
     align-items: center;
-    gap: 4px;
-  }
-  .spine-lbl {
-    font-size: 5.2pt;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: #000000;
-    white-space: nowrap;
-    border-right: 1px solid #000000;
-    padding-right: 4px;
-    line-height: 1.1;
-    text-align: center;
   }
   .spine-flow {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    gap: 2px;
+    gap: 3px;
   }
   .spine-node {
     display: flex;
@@ -381,7 +355,7 @@
     color: #ffffff;
     font-size: 5.2pt;
     font-weight: 800;
-    padding: 0.5px 3.5px;
+    padding: 0.5px 4px;
     border-radius: 2px;
     white-space: nowrap;
     line-height: 1.1;
@@ -391,11 +365,11 @@
     font-weight: 700;
     color: #000000;
     line-height: 1.1;
-    margin-top: 1px;
+    margin-top: 1.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 82px;
+    max-width: 95px;
   }
   .spine-arrow {
     font-size: 5.8pt;
@@ -491,7 +465,7 @@
     color: #000000;
     white-space: nowrap;
     font-size: 7.8pt;
-    min-width: 65px;
+    min-width: 32px;
   }
   .q-line-lbl.cue {
     font-style: italic;
@@ -565,13 +539,13 @@
   .ans-card {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
-    font-size: 6.5pt;
-    line-height: 1.15;
+    gap: 3.5px;
+    font-size: 6.3pt;
+    line-height: 1.12;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 1.2px 4.5px;
+    padding: 0.8px 4px;
     color: #000000;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -588,7 +562,7 @@
   .ans-num {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
     line-height: 1.1;
   }
   .ans-pip {
@@ -599,7 +573,7 @@
     line-height: 1;
   }
   .ans-pip .pip-badge {
-    font-size: 5.6pt;
+    font-size: 5.4pt;
     letter-spacing: -1px;
   }
   .ans-content {
@@ -609,13 +583,13 @@
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
   }
   .ans-exp {
     color: #000000 !important;
     font-weight: 500 !important;
     font-style: italic !important;
-    font-size: 6.3pt;
+    font-size: 6.1pt;
   }
   .ans-ticks {
     display: flex;
@@ -633,24 +607,24 @@
   .glossary-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    margin-top: 2.5px;
+    gap: 2.5px;
+    margin-top: 2px;
     border-top: 1.2px solid #000000;
-    padding-top: 2.5px;
+    padding-top: 2px;
   }
   .concept-card {
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 2.5px 5px;
-    font-size: 6.4pt;
-    line-height: 1.16;
+    padding: 1.8px 4.5px;
+    font-size: 5.9pt;
+    line-height: 1.13;
   }
   .concept-title {
     font-weight: 900;
     color: #000000;
     text-transform: uppercase;
-    font-size: 6.6pt;
+    font-size: 6.2pt;
   }
 
   </style>
@@ -705,70 +679,50 @@
               <div class="tb-lesson-title">Enquiry 1: Recruitment & Propaganda</div>
               <div class="tb-lesson-desc">Lord Kitchener's recruitment call, Pals Battalions, patriotic propaganda, 'Over by Christmas' myth & 1914 BEF</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 2: Trench Warfare & The Somme</div>
               <div class="tb-lesson-desc">Trench system stalemate, artillery bombardments, Sir Douglas Haig, 1916 Battle of the Somme & combined arms</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 3: Empire Troops & Global Reach</div>
               <div class="tb-lesson-desc">1.3 million Indian Army troops, 1915 Gallipoli landings (ANZAC), British West Indies Regiment & global supply lines</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 4: Home Front & Women at War</div>
               <div class="tb-lesson-desc">1914 Defence of the Realm Act (DORA), Munitionettes ('Canary Girls'), food queues, 1916 conscription & 1918 vote</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 5: 1918 Armistice & Remembrance</div>
               <div class="tb-lesson-desc">1918 German Spring Offensive, Allied Hundred Days Offensive, Kiel Mutiny, 11 November 1918 Armistice & Remembrance</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
@@ -818,7 +772,7 @@
           <span class="q-prompt">Who appeared on famous recruitment posters pointing his finger with the slogan "Your Country Needs You"?<span class="q-warmup-choice">[ Lord Kitchener  /  Winston Churchill ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -835,7 +789,7 @@
           <span class="q-prompt">What was the nickname given to battalions of friends, workmates, and neighbours who enlisted together in 1914?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -852,7 +806,7 @@
           <span class="q-prompt">Why did hundreds of thousands of young British men rush to enlist in August and September 1914?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -869,7 +823,7 @@
           <span class="q-prompt">What symbol of cowardice was publicly handed to young men in civilian clothes on British streets?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -886,7 +840,7 @@
           <span class="q-prompt">Why did the concept of "Pals Battalions" ultimately prove to be a catastrophic social tragedy?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -903,7 +857,7 @@
           <span class="q-prompt">How did the transition from a small professional army to a mass citizen army transform British society?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -949,7 +903,7 @@
           <span class="q-prompt">Which weapon was responsible for approximately 60% of all combat casualties on the Western Front?<span class="q-warmup-choice">[ Heavy Artillery  /  Poison Gas ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -966,7 +920,7 @@
           <span class="q-prompt">What painful medical condition was caused by soldiers standing in cold, waterlogged mud for days?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -983,7 +937,7 @@
           <span class="q-prompt">Why were frontline trenches constructed in a zig-zag or traverse pattern rather than straight lines?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1000,7 +954,7 @@
           <span class="q-prompt">Why did the week-long British artillery bombardment fail to destroy German defenses before the Somme in 1916?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1017,7 +971,7 @@
           <span class="q-prompt">Why is Field Marshal Sir Douglas Haig remembered both as the "Butcher of the Somme" and the architect of victory?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1034,7 +988,7 @@
           <span class="q-prompt">How did the development of tanks and creeping barrages eventually break the trench deadlock in 1918?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1080,7 +1034,7 @@
           <span class="q-prompt">Approximately how many Indian soldiers and labourers served the British Empire during the Great War?<span class="q-warmup-choice">[ Over 1.3 million  /  50,000 ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1097,7 +1051,7 @@
           <span class="q-prompt">What acronym was given to the Australian and New Zealand Army Corps who landed at Gallipoli in 1915?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1114,7 +1068,7 @@
           <span class="q-prompt">What strategic objective did Winston Churchill hope to achieve by attacking the Ottoman Empire at Gallipoli in 1915?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1131,7 +1085,7 @@
           <span class="q-prompt">Why were soldiers of the British West Indies Regiment often denied front-line combat roles?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1148,7 +1102,7 @@
           <span class="q-prompt">Why was the global contribution of colonial and African troops largely erased from popular British memory after 1918?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1165,7 +1119,7 @@
           <span class="q-prompt">How did participation in the Great War accelerate demands for national independence across the British Empire?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1211,7 +1165,7 @@
           <span class="q-prompt">What landmark law passed in August 1914 gave the British government sweeping emergency powers over daily life?<span class="q-warmup-choice">[ DORA (Defence of the Realm Act)  /  The Factory Act ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1228,7 +1182,7 @@
           <span class="q-prompt">What nickname was given to female munitions workers whose skin turned yellow from handling toxic TNT chemicals?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1245,7 +1199,7 @@
           <span class="q-prompt">Why was compulsory conscription introduced for unmarried British men aged 18 to 41 in January 1916?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1262,7 +1216,7 @@
           <span class="q-prompt">Why did the British government introduce compulsory food rationing for sugar, butter, and meat in early 1918?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1279,7 +1233,7 @@
           <span class="q-prompt">How did women’s wartime work permanently shatter traditional Victorian gender stereotypes?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1296,7 +1250,7 @@
           <span class="q-prompt">To what extent did women’s war work directly lead to women gaining the parliamentary vote in 1918?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1342,7 +1296,7 @@
           <span class="q-prompt">On what date and at what exact time did the First World War armistice officially come into effect?<span class="q-warmup-choice">[ 11 November 1918 at 11:00 am  /  28 June 1919 at midnight ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1359,7 +1313,7 @@
           <span class="q-prompt">What mutiny by German sailors in late October 1918 sparked a revolution that forced Kaiser Wilhelm II to abdicate?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1376,7 +1330,7 @@
           <span class="q-prompt">Why did Germany’s massive Spring Offensive (Kaiserschlacht) fail despite initial breakthroughs in March 1918?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1393,7 +1347,7 @@
           <span class="q-prompt">What malicious myth claimed that the German army was not defeated in the field but betrayed by socialists at home?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1410,7 +1364,7 @@
           <span class="q-prompt">Why was the burial of the "Unknown Warrior" in Westminster Abbey in 1920 so emotionally powerful for grieving families?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1427,7 +1381,7 @@
           <span class="q-prompt">How did the human cost of the Great War shape European attitudes toward future conflict in the 1920s and 1930s?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">

@@ -23,7 +23,7 @@ if (typeof window !== 'undefined') {
       ? btn.closest('#lesson-chronology-spine')
       : document.getElementById('lesson-chronology-spine');
     if (!spine) return;
-    const drawers = spine.querySelectorAll('.cme-spine-causal-drawer');
+    const drawers = spine.querySelectorAll('.cme-domino-step, .cme-spine-causal-drawer');
     const hasClosed = Array.from(drawers).some((d) => !d.open);
     drawers.forEach((d) => {
       d.open = hasClosed;
@@ -1350,7 +1350,9 @@ function renderCausalDominoSpine(spine) {
             <div class="domino-content-model" style="font-size: 0.78rem; color: #713f12; line-height: 1.35;">
               ${s.because}
             </div>
-            
+            <div class="domino-content-practice" style="display: none; font-size: 0.74rem; color: #a16207; font-style: italic; background: rgba(254, 240, 138, 0.45); padding: 4px 6px; border-radius: 4px; border: 1px dashed #fde047;">
+              ❓ <em>Why did they take this action? (Recall motive...)</em>
+            </div>
           </div>
 
           <!-- Row 3: The 'Therefore' (Consequence) -->
@@ -1361,10 +1363,15 @@ function renderCausalDominoSpine(spine) {
             <div class="domino-content-model" style="font-size: 0.78rem; color: #14532d; line-height: 1.35;">
               ${s.therefore}
             </div>
-            
+            <div class="domino-content-practice" style="display: none; font-size: 0.74rem; color: #15803d; font-style: italic; background: rgba(187, 247, 208, 0.45); padding: 4px 6px; border-radius: 4px; border: 1px dashed #86efac;">
+              ⚡ <em>What direct outcome occurred? (Recall result...)</em>
+            </div>
           </div>
 
-          
+          <!-- Per-Card Interactive Reveal Button (Practice Mode) -->
+          <button type="button" class="domino-card-reveal-btn" id="btn-reveal-stage-${s.step}" onclick="window.revealSingleStage(${s.step})" style="display: none; width: 100%; margin-top: 4px; margin-bottom: 6px; padding: 5px 8px; font-size: 0.72rem; font-weight: 700; background: #0284c7; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; transition: all 0.2s ease;">
+            <i class="fa-solid fa-eye"></i> Click to Reveal Stage ${s.step} Motive &amp; Result
+          </button>
 
           <!-- Connective Step Banner -->
           ${
@@ -1441,6 +1448,15 @@ function renderCausalDominoSpine(spine) {
 
         <!-- Mode Toggle & Copy Actions -->
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <!-- Dual Mode Toggle Button Group -->
+          <div style="display: inline-flex; background: #1e293b; border-radius: 6px; padding: 2px; border: 1px solid #334155;">
+            <button type="button" id="domino-btn-model" class="btn-domino-mode active" onclick="window.switchDominoMode('model')" style="padding: 5px 12px; font-size: 0.74rem; font-weight: 800; background: #0284c7; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-chalkboard-user"></i> Full Model
+            </button>
+            <button type="button" id="domino-btn-practice" class="btn-domino-mode" onclick="window.switchDominoMode('practice')" style="padding: 5px 12px; font-size: 0.74rem; font-weight: 800; background: transparent; color: #94a3b8; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-mask"></i> Active Recall Quiz
+            </button>
+          </div>
           <button type="button" onclick="window.copyDominoNotes()" id="btn-copy-domino" style="padding: 6px 12px; font-size: 0.74rem; font-weight: 700; background: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;" title="Copy all 5 stages as text notes to paste into your book/OneNote">
             <i class="fa-solid fa-copy"></i> Copy Notes
           </button>
@@ -1571,27 +1587,31 @@ if (typeof window !== 'undefined') {
     cards.forEach((c) => {
       const stage = c.dataset.stage || '';
       const title = c.querySelector('h4, h5')?.textContent?.trim() || '';
+      const question =
+        c.querySelector('.cme-spine-question')?.textContent?.replace(/Workbook Enquiry:/i, '')?.trim() || '';
       const trigger =
+        c.querySelector('.cme-action-content')?.textContent?.trim() ||
         c.querySelector('.cme-spine-desc')?.textContent?.trim() ||
-        c
-          .querySelector('.causal-domino-card > div > div:nth-child(4) > div:last-child')
-          ?.textContent?.trim() ||
         '';
       const because =
-        c.querySelector('.cme-drawer-because .cme-quiz-content')?.textContent?.trim() ||
-        c.querySelector('.cme-drawer-because span')?.textContent?.trim() ||
-        c.querySelector('.domino-because-box .domino-content-model')?.textContent?.trim() ||
+        c.querySelector('.cme-motive-content')?.textContent?.trim() ||
+        c.querySelector('.cme-spine-motive')?.textContent?.trim() ||
         '';
       const therefore =
-        c.querySelector('.cme-drawer-therefore .cme-quiz-content')?.textContent?.trim() ||
-        c.querySelector('.cme-drawer-therefore span')?.textContent?.trim() ||
-        c.querySelector('.domino-therefore-box .domino-content-model')?.textContent?.trim() ||
+        c.querySelector('.cme-outcome-content')?.textContent?.trim() ||
+        c.querySelector('.cme-spine-therefore')?.textContent?.trim() ||
+        '';
+      const connective =
+        c.querySelector('.cme-chain-content')?.textContent?.trim() ||
+        c.querySelector('.cme-spine-consequence')?.textContent?.trim() ||
         '';
 
       out += `STAGE ${stage}: ${title}\n`;
+      if (question) out += `• Enquiry Question: ${question}\n`;
       if (trigger) out += `• 1. Action / Trigger: ${trigger}\n`;
-      if (because) out += `• 2. Because (Motive): ${because}\n`;
-      if (therefore) out += `• 3. Therefore (Consequence): ${therefore}\n`;
+      if (because) out += `• 2. Motive (Why): ${because}\n`;
+      if (therefore) out += `• 3. Outcome (Consequence): ${therefore}\n`;
+      if (connective) out += `• 4. Domino Link: ${connective}\n`;
       out += '\n';
     });
 
@@ -3275,10 +3295,11 @@ export function renderLesson(lesson) {
       activeUnit.is_ks3 ||
       !isGCSE);
   const hasInlineNarrativeSources =
-    Array.isArray(lesson.narrative_blocks) &&
-    lesson.narrative_blocks.some(
-      (b) => b && (b.source || b.sources),
-    );
+    (Array.isArray(lesson.narrative_blocks) &&
+      lesson.narrative_blocks.some((b) => b && (b.source || b.sources))) ||
+    (Array.isArray(lesson.narrative_blocks) &&
+      Array.isArray(lesson.sources) &&
+      lesson.sources.length > 0);
   let htmlDoNow = '',
     htmlDoNowInner = '',
     htmlVocabInner = '',
@@ -4031,30 +4052,6 @@ export function renderLesson(lesson) {
                       </div>
                     `
                           : ''
-                    }
-                    ${
-                      source.provenance_clues && !isKs2 && !isKs3
-                        ? (() => {
-                            const cluesList = Array.isArray(source.provenance_clues)
-                              ? source.provenance_clues
-                              : typeof source.provenance_clues === 'object' && source.provenance_clues !== null
-                                ? [
-                                    source.provenance_clues.author ? `Author: ${source.provenance_clues.author}` : null,
-                                    source.provenance_clues.audience ? `Audience: ${source.provenance_clues.audience}` : null,
-                                    source.provenance_clues.motive ? `Motive: ${source.provenance_clues.motive}` : null
-                                  ].filter(Boolean)
-                                : [String(source.provenance_clues)];
-
-                            return `
-                      <div style="padding-top: ${source.model_answer || (source.discussion_ideas && source.discussion_ideas.length) ? '10px; border-top: 1px dashed #cbd5e1;' : '0;'}">
-                        <strong style="color: #14532d; display: block; margin-bottom: 6px; font-size: 0.80rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-magnifying-glass" style="color: #16a34a; margin-right: 6px;"></i>Provenance Clues (Author &bull; Audience &bull; Motive):</strong>
-                        <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #166534; line-height: 1.55;">
-                          ${cluesList.map((c) => `<li style="margin-bottom: 4px;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(c) : c}</li>`).join('')}
-                        </ul>
-                      </div>
-                    `;
-                          })()
-                        : ''
                     }
                   </div>
                 </details>
@@ -5073,6 +5070,9 @@ export function renderLesson(lesson) {
               <button type="button" class="btn btn-toggle-all-spine-stages" onclick="event.stopPropagation(); window.toggleAllSpineDrawers(this);" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #0369a1; background: #ffffff; border: 1.2px solid #bae6fd; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Expand or collapse all 5 stage drawers at once">
                 <i class="fa-solid fa-arrows-up-down" style="font-size: 0.65rem;"></i> <span class="toggle-spine-text">Expand All</span>
               </button>
+              <button type="button" class="btn btn-copy-spine-notes" onclick="event.stopPropagation(); window.copyDominoNotes();" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #475569; background: #ffffff; border: 1.2px solid #cbd5e1; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Copy all milestone notes to clipboard">
+                <i class="fa-solid fa-copy" style="font-size: 0.65rem;"></i> <span>Copy Notes</span>
+              </button>
               <span style="font-size: 0.74rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
             </div>
           </div>
@@ -5080,6 +5080,7 @@ export function renderLesson(lesson) {
             ${spineItems
               .map((item, idx) => {
                 const isLast = idx === spineItems.length - 1;
+                const displayDate = item.date ? item.date.replace('October–November', 'Oct–Nov') : '';
                 return `
               <div class="cme-spine-card" data-stage="${item.step}">
                 ${
@@ -5092,89 +5093,146 @@ export function renderLesson(lesson) {
                 }
                 
                 <!-- Baseline Narrative Zone (Row 1: Enquiry Focus) -->
-                <div class="cme-spine-narrative-zone" style="display: flex; flex-direction: column; flex: 1; box-sizing: border-box;">
-                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px;">
-                    <span style="font-family: 'Inter', sans-serif; font-size: 0.74rem; font-weight: 800; color: #0284c7; line-height: 1.25;" title="${item.date}">${item.date}</span>
+                <div class="cme-spine-narrative-zone">
+                  <div class="cme-spine-date-row">
+                    <span class="cme-spine-date-badge" title="${item.date}">${displayDate}</span>
+                    <span class="cme-spine-stage-pill">STAGE ${item.step}</span>
                   </div>
 
                   ${
                     item.tag || item.actor
                       ? `
-                  <div style="font-size: 0.63rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 5px; line-height: 1.35;" title="${item.tag || ''} • ${item.actor || ''}">
+                  <div class="cme-spine-subtitle" title="${item.tag || ''} • ${item.actor || ''}">
                     ${item.tag ? `${item.tag} &bull; ` : ''}<strong style="color: #334155;">${item.actor || ''}</strong>
                   </div>`
                       : ''
                   }
 
-                  <h5 style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.88rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0; line-height: 1.25;">
+                  <h5 class="cme-spine-title">
                     ${item.title}
                   </h5>
 
                   ${
-                    item.question || item.exam_link
+                    item.question
                       ? `
-                  <div class="cme-spine-question" style="font-size: 0.74rem; font-weight: 700; color: #0369a1; font-style: italic; line-height: 1.35; margin-bottom: 6px; background: #f0f9ff; padding: 6px 8px; border-radius: 4px; border-left: 2.5px solid #0284c7;">
-                    ${item.question || item.exam_link}
+                  <div class="cme-spine-question">
+                    <div class="cme-spine-question-label">
+                      <i class="fa-solid fa-book-open"></i> Workbook Enquiry:
+                    </div>
+                    <div class="cme-spine-question-text">
+                      "${item.question}"
+                    </div>
                   </div>`
                       : ''
                   }
                 </div>
 
-                <!-- Collapsible Details: Narrative Evidence & Causal Consequence -->
-                ${
-                  item.desc || item.connective
-                    ? `
-                <details class="cme-spine-causal-drawer" style="margin-top: auto; padding-top: 6px;">
-                  <summary style="cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; font-size: 0.70rem; font-weight: 700; color: #1d4ed8; background: #eff6ff; padding: 4px 8px; border-radius: 4px; border: 1px solid #bfdbfe; transition: all 0.15s ease;">
-                    <span style="display: inline-flex; align-items: center; gap: 6px;">
-                      <i class="fa-solid fa-arrow-right"></i>
-                      <span style="font-size: 0.68rem; letter-spacing: 0.2px;">Evidence &amp; Outcome</span>
-                    </span>
-                    <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.62rem; color: #3b82f6;"></i>
-                  </summary>
-                  <div style="margin-top: 6px; display: flex; flex-direction: column; gap: 6px;">
-                    ${
-                      item.desc
-                        ? `
-                    <div class="cme-spine-desc" style="font-size: 0.73rem; color: #1e293b; line-height: 1.38; padding: 6px 8px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px;">
+                <!-- Stepped Causal Domino Cascade (Progressive Disclosure) -->
+                <div class="cme-spine-stepped-domino" style="display: flex; flex-direction: column; gap: 5px; margin: 4px 0 8px 0;">
+                  <!-- Step 1: Action / Trigger -->
+                  ${
+                    item.desc
+                      ? `
+                  <details class="cme-domino-step cme-step-action">
+                    <summary>
+                      <span class="cme-step-summary-title">
+                        <i class="fa-solid fa-play" style="font-size: 0.55rem;"></i> 1. Action / Trigger
+                      </span>
+                      <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.60rem;"></i>
+                    </summary>
+                    <div class="cme-domino-step-content cme-action-content">
                       ${item.desc}
-                    </div>`
-                        : ''
-                    }
-                    ${
-                      item.connective
-                        ? `
-                    <div class="cme-spine-consequence" style="font-size: 0.73rem; color: #1e3a8a; line-height: 1.38; padding: 6px 8px; background: #eff6ff; border: 1px solid #bfdbfe; border-left: 3px solid #2563eb; border-radius: 4px;">
-                      <strong style="color: #1d4ed8; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.4px; display: block; margin-bottom: 2px;">
-                        <i class="fa-solid fa-arrow-right"></i> Consequence:
-                      </strong>
+                    </div>
+                  </details>`
+                      : ''
+                  }
+
+                  <!-- Step 2: Motive (Why they acted) -->
+                  ${
+                    item.because
+                      ? `
+                  <details class="cme-domino-step cme-step-motive">
+                    <summary>
+                      <span class="cme-step-summary-title">
+                        <i class="fa-solid fa-lightbulb" style="font-size: 0.58rem;"></i> 2. Motive (Why?)
+                      </span>
+                      <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.60rem;"></i>
+                    </summary>
+                    <div class="cme-domino-step-content cme-motive-content">
+                      ${item.because}
+                    </div>
+                  </details>`
+                      : ''
+                  }
+
+                  <!-- Step 3: Consequence & Outcome -->
+                  ${
+                    item.therefore
+                      ? `
+                  <details class="cme-domino-step cme-step-outcome">
+                    <summary>
+                      <span class="cme-step-summary-title">
+                        <i class="fa-solid fa-bolt" style="font-size: 0.58rem;"></i> 3. Outcome / Result
+                      </span>
+                      <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.60rem;"></i>
+                    </summary>
+                    <div class="cme-domino-step-content cme-outcome-content">
+                      ${item.therefore}
+                    </div>
+                  </details>`
+                      : ''
+                  }
+
+                  <!-- Step 4: Causal Domino Trigger -->
+                  ${
+                    item.connective && item.connective !== item.therefore
+                      ? `
+                  <details class="cme-domino-step cme-step-chain">
+                    <summary>
+                      <span class="cme-step-summary-title">
+                        <i class="fa-solid fa-arrow-right" style="font-size: 0.58rem;"></i> 4. Domino Link &rarr;
+                      </span>
+                      <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.60rem;"></i>
+                    </summary>
+                    <div class="cme-domino-step-content cme-chain-content">
                       ${item.connective}
-                    </div>`
-                        : ''
-                    }
-                  </div>
-                </details>`
-                    : ''
-                }
-                ${
-                  item.para_ref
-                    ? `
-                <div style="margin-top: 6px; padding-top: 4px; border-top: 1px dashed #e2e8f0; display: flex; justify-content: flex-end;">
-                  <button type="button" onclick="
-                    const pNum = '${item.para_ref}'.match(/\\d+\\.\\d+/)?.[0] || '';
-                    const chunk = Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes(pNum))?.closest('.narrative-chunk') || Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes(pNum));
-                    if (chunk) {
-                      chunk.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      chunk.style.transition = 'all 0.4s ease';
-                      chunk.style.boxShadow = '0 0 0 4px #0284c7, 0 8px 24px rgba(2,132,199,0.25)';
-                      setTimeout(() => { chunk.style.boxShadow = ''; }, 2500);
-                    }
-                  " style="font-size: 0.66rem; font-weight: 700; background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 3px; cursor: pointer; display: inline-flex; align-items: center; gap: 3px;" title="Scroll directly to Paragraph ${item.para_ref}">
-                    <i class="fa-solid fa-arrow-down" style="font-size: 0.58rem;"></i> Jump to Text
-                  </button>
-                </div>`
-                    : ''
-                }
+                    </div>
+                  </details>`
+                      : ''
+                  }
+                </div>
+
+                <!-- Footer: Exam Link & Jump to Text -->
+                <div class="cme-spine-footer">
+                  ${
+                    item.exam_link
+                      ? `
+                  <div class="cme-spine-exam-link">
+                    <i class="fa-solid fa-bullseye" style="color: #dc2626; margin-top: 2px; flex-shrink: 0;"></i>
+                    <span>${item.exam_link}</span>
+                  </div>`
+                      : ''
+                  }
+                  ${
+                    item.para_ref
+                      ? `
+                  <div style="display: flex; justify-content: flex-end; margin-top: 2px;">
+                    <button type="button" onclick="
+                      const pNum = '${item.para_ref}'.match(/\\d+\\.\\d+/)?.[0] || '';
+                      const chunk = Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes(pNum))?.closest('.narrative-chunk') || Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes(pNum));
+                      if (chunk) {
+                        chunk.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        chunk.style.transition = 'all 0.4s ease';
+                        chunk.style.boxShadow = '0 0 0 4px #0284c7, 0 8px 24px rgba(2,132,199,0.25)';
+                        setTimeout(() => { chunk.style.boxShadow = ''; }, 2500);
+                      }
+                    " class="cme-spine-jump-btn" title="Scroll directly to Paragraph ${item.para_ref}">
+                      <i class="fa-solid fa-arrow-down" style="font-size: 0.58rem;"></i> Jump to Text [${item.para_ref}]
+                    </button>
+                  </div>`
+                      : ''
+                  }
+                </div>
               </div>
               ${
                 !isLast
@@ -5222,18 +5280,6 @@ export function renderLesson(lesson) {
             `,
               )
               .join('')}
-            ${
-              lesson.causal_domino_spine
-                ? `
-              <div style="grid-column: 1 / -1; margin-top: 6px; padding-top: 10px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-                <span style="font-size: 0.8rem; color: #64748b; font-style: italic;"><i class="fa-solid fa-circle-info" style="color: #0284c7;"></i> Master Chronology: Macro-framework covering key causal turning points.</span>
-                <button type="button" onclick="document.getElementById('causal-domino-scaffold')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 4px 10px; font-size: 0.76rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                  <i class="fa-solid fa-diagram-project"></i> Jump to 5-Stage Causal Domino Note Scaffold (Pre-Exam Synthesis) &darr;
-                </button>
-              </div>
-            `
-                : ''
-            }
           </div>
         </div>
       `;
@@ -6437,30 +6483,6 @@ export function renderLesson(lesson) {
                   `
                         : ''
                   }
-                  ${
-                    rawSource.provenance_clues && !isKs2 && !isKs3 && !rawSource.hide_provenance_box && !/infer/i.test(rawSource.question_type || rawSource.question_badge || '')
-                      ? (() => {
-                          const cluesList = Array.isArray(rawSource.provenance_clues)
-                            ? rawSource.provenance_clues
-                            : typeof rawSource.provenance_clues === 'object' && rawSource.provenance_clues !== null
-                              ? [
-                                  rawSource.provenance_clues.author ? `Author: ${rawSource.provenance_clues.author}` : null,
-                                  rawSource.provenance_clues.audience ? `Audience: ${rawSource.provenance_clues.audience}` : null,
-                                  rawSource.provenance_clues.motive ? `Motive: ${rawSource.provenance_clues.motive}` : null
-                                ].filter(Boolean)
-                              : [String(rawSource.provenance_clues)];
-
-                          return `
-                    <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px; margin-top: 8px;">
-                      <strong style="color: #14532d; display: block; margin-bottom: 6px; font-size: 0.80rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-stamp" style="color: #16a34a; margin-right: 5px;"></i>Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
-                      <ul style="margin: 0; padding-left: 18px; font-size: 0.86rem; color: #166534; line-height: 1.5;">
-                        ${cluesList.map((c) => `<li>${c}</li>`).join('')}
-                      </ul>
-                    </div>
-                  `;
-                        })()
-                      : ''
-                  }
                 </div>
               </details>
             `;
@@ -6740,6 +6762,26 @@ export function renderLesson(lesson) {
           source_context: block.image_context || '',
           question: block.source_question || '',
         });
+      } else if (
+        Array.isArray(lesson.sources) &&
+        lesson.sources.length > 0
+      ) {
+        if (lesson.sources[index]) {
+          rawSourcesList.push(lesson.sources[index]);
+        }
+        // If this is the final narrative block, append any extra sources so nothing is ever dropped
+        if (
+          index === lesson.narrative_blocks.length - 1 &&
+          lesson.sources.length > lesson.narrative_blocks.length
+        ) {
+          for (
+            let extra = lesson.narrative_blocks.length;
+            extra < lesson.sources.length;
+            extra++
+          ) {
+            rawSourcesList.push(lesson.sources[extra]);
+          }
+        }
       }
 
       let blockSourceHtml = rawSourcesList.map((s) => renderSingleArchivalSource(s)).join('');
@@ -8635,6 +8677,24 @@ export function renderLesson(lesson) {
     }
 
     if (epQuestions.length > 0 || epStimulus.length > 0) {
+      const isKs3Unit =
+        unitId === 'great_war' ||
+        unitId === 'great_war_part2' ||
+        unitId === 'water_and_sanitation' ||
+        unitId === 'early_modern_world' ||
+        unitId === 'medieval_england' ||
+        unitId === 'industrialisation_and_empire' ||
+        unitId === 'first_british_empire' ||
+        unitId === 'second_british_empire' ||
+        unitId === 'the_shoah' ||
+        unitId === 'monarchy_religion_power' ||
+        (typeof unit !== 'undefined' && unit && unit.is_ks3);
+
+      const practiceHeading = isKs3Unit
+        ? 'Pupil Workbook Activity &bull; Key Stage 3 Disciplinary Practice'
+        : 'Pupil Workbook Activity &bull; GCSE Examination Practice';
+      const practiceIcon = isKs3Unit ? 'fa-book-open-reader' : 'fa-graduation-cap';
+
       htmlExamPractice += `
           <div class="phase-card" style="margin-top: 30px; border: 2px solid #3b82f6; border-radius: 8px;">
             <div style="background: #eff6ff; padding: 16px 20px; border-bottom: 2px solid #bfdbfe; border-radius: 6px 6px 0 0; margin: -20px -20px 20px -20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
@@ -8645,7 +8705,7 @@ export function renderLesson(lesson) {
                   <span>RIGHT-HAND SPREAD (RECTO)</span>
                 </div>
                 <h3 style="margin: 0; color: #1e3a8a; font-size: 1.25rem; font-family: 'Playfair Display', Georgia, serif; display: flex; align-items: center; gap: 8px;">
-                  <i class="fa-solid fa-graduation-cap" style="color: #2563eb;"></i> Pupil Workbook Activity &bull; GCSE Examination Practice
+                  <i class="fa-solid ${practiceIcon}" style="color: #2563eb;"></i> ${practiceHeading}
                 </h3>
               </div>
               <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
@@ -9577,7 +9637,28 @@ export function renderLesson(lesson) {
         }
 
         if (epQuestions.length > 0) {
+          const inWbQuestions = [];
+          const digExtQuestions = [];
           epQuestions.forEach((q, qIdx) => {
+            const meta = getWorkbookTaskMeta(
+              unitId,
+              lesson.id,
+              q,
+              q.question || q.prompt || '',
+              qIdx,
+              lesson,
+            );
+            if (meta && meta.inWorkbook === false) {
+              digExtQuestions.push({ q, qIdx });
+            } else {
+              inWbQuestions.push({ q, qIdx });
+            }
+          });
+
+          inWbQuestions.forEach(({ q, qIdx }) => {
+            htmlExamPractice += renderQuestion(q, qIdx);
+          });
+          digExtQuestions.forEach(({ q, qIdx }) => {
             htmlExamPractice += renderQuestion(q, qIdx);
           });
         }
@@ -9799,6 +9880,7 @@ export function renderLesson(lesson) {
       htmlSpotlightDrawers +
       (lesson.narrative_blocks && lesson.narrative_blocks.length > 0 ? '' : htmlPrimary) +
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
+      htmlExamPractice +
       htmlTasks +
       htmlVocabDeck +
       htmlExtended +
@@ -9815,9 +9897,9 @@ export function renderLesson(lesson) {
       htmlSpotlightDrawers +
       (lesson.narrative_blocks && lesson.narrative_blocks.length > 0 ? '' : htmlPrimary) +
       htmlSources1 +
-      htmlTasks +
-      htmlDominoSpine +
       htmlExamPractice +
+      htmlDominoSpine +
+      htmlTasks +
       htmlVocabDeck +
       htmlExtended +
       htmlPairShare +
@@ -11311,10 +11393,10 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
   // 3. Narrative Blocks
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
-      if (block.source && block.source.question) block.source.qNum = globalQNum++;
+      if (block.source && block.source.question && !block.source.qNum) block.source.qNum = globalQNum++;
       if (Array.isArray(block.sources) && (!lesson.sources || lesson.sources.length === 0)) {
         block.sources.forEach((s) => {
-          if (s && s.question) s.qNum = globalQNum++;
+          if (s && s.question && !s.qNum) s.qNum = globalQNum++;
         });
       }
       if (block.tasks) {

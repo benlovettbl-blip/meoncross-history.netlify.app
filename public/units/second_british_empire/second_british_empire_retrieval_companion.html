@@ -29,7 +29,7 @@
   .a5-page {
     width: 148mm;
     height: 210mm;
-    padding: 6.5mm 9mm 6mm 9mm;
+    padding: 5.5mm 9mm 4.5mm 9mm;
     margin: 0 auto;
     page-break-after: always;
     break-after: page;
@@ -276,24 +276,11 @@
     line-height: 1.15;
     margin-top: 1px;
   }
-  .score-line {
-    display: inline-block;
-    width: 14px;
-    border-bottom: 1.2px solid #000000;
-  }
-  .date-line {
-    display: block;
-    width: 44px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
-  }
-  .parent-sig-line {
-    display: block;
-    width: 55px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
+  .score-cell {
+    font-size: 7.2pt;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
   }
 
   /* Partner Quiz / Instructions Banner */
@@ -343,30 +330,17 @@
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 3px;
-    padding: 2px 4px;
+    padding: 2.5px 6px;
     margin: 2px 0 2px 0;
     display: flex;
     align-items: center;
-    gap: 4px;
-  }
-  .spine-lbl {
-    font-size: 5.2pt;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: #000000;
-    white-space: nowrap;
-    border-right: 1px solid #000000;
-    padding-right: 4px;
-    line-height: 1.1;
-    text-align: center;
   }
   .spine-flow {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    gap: 2px;
+    gap: 3px;
   }
   .spine-node {
     display: flex;
@@ -381,7 +355,7 @@
     color: #ffffff;
     font-size: 5.2pt;
     font-weight: 800;
-    padding: 0.5px 3.5px;
+    padding: 0.5px 4px;
     border-radius: 2px;
     white-space: nowrap;
     line-height: 1.1;
@@ -391,11 +365,11 @@
     font-weight: 700;
     color: #000000;
     line-height: 1.1;
-    margin-top: 1px;
+    margin-top: 1.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 82px;
+    max-width: 95px;
   }
   .spine-arrow {
     font-size: 5.8pt;
@@ -491,7 +465,7 @@
     color: #000000;
     white-space: nowrap;
     font-size: 7.8pt;
-    min-width: 65px;
+    min-width: 32px;
   }
   .q-line-lbl.cue {
     font-style: italic;
@@ -565,13 +539,13 @@
   .ans-card {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
-    font-size: 6.5pt;
-    line-height: 1.15;
+    gap: 3.5px;
+    font-size: 6.3pt;
+    line-height: 1.12;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 1.2px 4.5px;
+    padding: 0.8px 4px;
     color: #000000;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -588,7 +562,7 @@
   .ans-num {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
     line-height: 1.1;
   }
   .ans-pip {
@@ -599,7 +573,7 @@
     line-height: 1;
   }
   .ans-pip .pip-badge {
-    font-size: 5.6pt;
+    font-size: 5.4pt;
     letter-spacing: -1px;
   }
   .ans-content {
@@ -609,13 +583,13 @@
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
   }
   .ans-exp {
     color: #000000 !important;
     font-weight: 500 !important;
     font-style: italic !important;
-    font-size: 6.3pt;
+    font-size: 6.1pt;
   }
   .ans-ticks {
     display: flex;
@@ -633,24 +607,24 @@
   .glossary-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    margin-top: 2.5px;
+    gap: 2.5px;
+    margin-top: 2px;
     border-top: 1.2px solid #000000;
-    padding-top: 2.5px;
+    padding-top: 2px;
   }
   .concept-card {
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 2.5px 5px;
-    font-size: 6.4pt;
-    line-height: 1.16;
+    padding: 1.8px 4.5px;
+    font-size: 5.9pt;
+    line-height: 1.13;
   }
   .concept-title {
     font-weight: 900;
     color: #000000;
     text-transform: uppercase;
-    font-size: 6.6pt;
+    font-size: 6.2pt;
   }
 
   </style>
@@ -705,70 +679,50 @@
               <div class="tb-lesson-title">Enquiry 1: Engines of Empire & Naval Power</div>
               <div class="tb-lesson-desc">1805 Battle of Trafalgar, mercantilism, HMS Warrior (1860), Portsmouth Block Mills & Pax Britannica</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 2: The British Raj & 1857 Rebellion</div>
               <div class="tb-lesson-desc">Doctrine of Lapse, Enfield greased cartridges, 1857 Meerut Mutiny, Rani Lakshmibai & 1858 British Raj</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 3: Settler Colonialism in Australia</div>
               <div class="tb-lesson-desc">1788 First Fleet, Botany Bay, Terra Nullius doctrine, Australian Frontier Wars & Pemulwuy resistance</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 4: Scramble for Africa & Plunder</div>
               <div class="tb-lesson-desc">1884 Berlin Conference, Maxim machine gun, Cecil Rhodes, Social Darwinism & 1898 Battle of Omdurman</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 5: The Imperial Verdict: Drain of Wealth</div>
               <div class="tb-lesson-desc">Dadabhai Naoroji, Drain of Wealth theory, 1876–79 Madras Famine, imperial railways & anti-colonial critique</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
@@ -818,7 +772,7 @@
           <span class="q-prompt">In what year did Admiral Nelson defeat the combined French and Spanish fleets at Trafalgar, securing British naval supremacy for a century?<span class="q-warmup-choice">[ 1805 at Trafalgar  /  1815 at Waterloo ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -835,7 +789,7 @@
           <span class="q-prompt">What revolutionary ironclad warship launched in 1860 with 4.5-inch wrought-iron armour made all wooden battlefleets obsolete?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -852,7 +806,7 @@
           <span class="q-prompt">What official naval policy mandated that the Royal Navy must equal the combined battle strength of the next two strongest fleets in the world?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -869,7 +823,7 @@
           <span class="q-prompt">What economic system mandated that British colonies trade exclusively with the mother country to accumulate national wealth and bullion?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -886,7 +840,7 @@
           <span class="q-prompt">How did naval industrial infrastructure enable Britain to enforce "gunboat diplomacy" across the Victorian world?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -903,7 +857,7 @@
           <span class="q-prompt">Why was Pax Britannica ("British Peace") an imperial illusion for millions of colonized subjects?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -949,7 +903,7 @@
           <span class="q-prompt">In what month and year did the Indian Rebellion break out when Indian sepoys mutinied at Meerut?<span class="q-warmup-choice">[ May 1857 at Meerut  /  July 1914 at Sarajevo ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -966,7 +920,7 @@
           <span class="q-prompt">Which famous warrior queen of Jhansi led rebel forces into battle on horseback until she fell fighting the British in June 1858?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -983,7 +937,7 @@
           <span class="q-prompt">What new firearm cartridge served as the immediate religious catalyst of the 1857 sepoy mutiny?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1000,7 +954,7 @@
           <span class="q-prompt">What term describes how cheap British factory cotton decimated traditional Indian handloom weaving in ancient centres like Dhaka?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1017,7 +971,7 @@
           <span class="q-prompt">What historic legislation passed by Parliament in August 1858 abolished the East India Company and transferred rule to the British Crown?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1034,7 +988,7 @@
           <span class="q-prompt">Why did the 1857 Rebellion mark a permanent turning point in British racial attitudes and governance in India?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1080,7 +1034,7 @@
           <span class="q-prompt">In what year did Captain Arthur Phillip arrive with the First Fleet of eleven convict ships at Botany Bay and Sydney Cove?<span class="q-warmup-choice">[ 1788  /  1857 ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1097,7 +1051,7 @@
           <span class="q-prompt">What Latin legal fiction meaning "land belonging to no one" was declared by the British Crown to dispossess First Nations Australians?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1114,7 +1068,7 @@
           <span class="q-prompt">Why did the loss of the American colonies in 1783 directly cause the British decision to colonize Australia?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1131,7 +1085,7 @@
           <span class="q-prompt">Who was the famous Bidjigal resistance warrior who led a twelve-year guerrilla war against British settlement around Sydney (1790–1802)?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1148,7 +1102,7 @@
           <span class="q-prompt">Why was the introduction of European diseases such as smallpox so devastating to First Nations Australians?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1165,7 +1119,7 @@
           <span class="q-prompt">How did the Australian Frontier Wars reshape modern historical understanding of British settlement?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1211,7 +1165,7 @@
           <span class="q-prompt">What international diplomatic conference hosted by Bismarck in 1884–1885 laid down the rules for carving up Africa?<span class="q-warmup-choice">[ The Berlin Conference  /  The Treaty of Versailles ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1228,7 +1182,7 @@
           <span class="q-prompt">What percentage of the African continent was seized and colonized by European empires between 1881 and 1914?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1245,7 +1199,7 @@
           <span class="q-prompt">What deadly rapid-firing technological weapon invented in 1884 gave European imperial armies overwhelming battlefield superiority in Africa?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1262,7 +1216,7 @@
           <span class="q-prompt">What imperialist ideology misapplied biological evolution to claim white Europeans had a racial duty to rule "inferior" races?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1279,7 +1233,7 @@
           <span class="q-prompt">How did imperialist tycoon Cecil Rhodes use the British South Africa Company to conquer Zimbabwe and Zambia for private profit?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1296,7 +1250,7 @@
           <span class="q-prompt">Why was the 1898 Battle of Omdurman in Sudan a horrific symbol of mechanized imperial slaughter?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1342,7 +1296,7 @@
           <span class="q-prompt">Who was the pioneering Indian economist and first Indian Member of the British Parliament who formulated the "Drain of Wealth" theory?<span class="q-warmup-choice">[ Dadabhai Naoroji  /  Mahatma Gandhi ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1359,7 +1313,7 @@
           <span class="q-prompt">How much capital did Dadabhai Naoroji calculate Britain systematically extracted from India annually without equivalent return?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1376,7 +1330,7 @@
           <span class="q-prompt">Why did British imperial apologists claim that constructing 25,000 miles of Indian railways was a benevolent gift of modernisation?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1393,7 +1347,7 @@
           <span class="q-prompt">Why did devastating famines kill between 6 and 10 million Indians in the 1870s and 1890s while India exported record grain to Britain?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1410,7 +1364,7 @@
           <span class="q-prompt">How did British rule transform India from the world’s leading exporter of manufactured goods into an impoverished supplier of raw materials?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1427,7 +1381,7 @@
           <span class="q-prompt">What is the balanced historical verdict on the legacy of the British Empire?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">

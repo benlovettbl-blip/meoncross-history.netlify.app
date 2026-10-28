@@ -128,9 +128,9 @@ const enquiryConfigs = [
         'One primary reason was... &bull; This encouraged enlistment because... &bull; Furthermore, social pressure contributed to... &bull; Crucially, shared identity ensured that... &bull; In consequence, this resulted in...',
       wordBank:
         'Pals Battalions &bull; Lord Kitchener &bull; Treaty of London &bull; Pompey Pals &bull; King’s Shilling &bull; White Feather &bull; voluntary enlistment &bull; civic patriotism &bull; 750,000 recruits',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 3',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 1 (August 1914):</strong> Turn to Centrefold (Pages 8–9). Sketch Lord Kitchener’s pointing finger and the massive voluntary recruitment queues outside town halls [👉 pointing finger &bull; 📜 enlistment papers &bull; 🚶‍♂️ queue of volunteers].',
+        '<strong>Milestone 1 (August 1914):</strong> Choose <strong>(A) Creative Sketch:</strong> Lord Kitchener pointing finger and voluntary recruitment queues outside town halls [👉 pointing finger &bull; 📜 enlistment papers &bull; 🚶‍♂️ queue of volunteers] &bull; OR &bull; <strong>(B) Mind Map:</strong> "1914 Voluntary Mobilisation" (750,000 recruits in 8 weeks, civic Pals Battalions e.g. Pompey Pals, King’s Shilling &amp; white feather pressure)',
     },
     leftPageQuip:
       'In August and September 1914 alone, over 750,000 British men volunteered—creating the largest citizen army in British history.',
@@ -221,9 +221,9 @@ const enquiryConfigs = [
         wordBank:
           'General Sir Douglas Haig &bull; 7-day bombardment &bull; uncut barbed wire &bull; concrete dugouts &bull; Spandau Maxim machine guns &bull; No Man’s Land &bull; 57,470 casualties',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenges 2 &amp; 3',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 3 (1 July 1916 &bull; The Somme):</strong> Turn to Centrefold (Pages 8–9). Sketch the German concrete machine-gun redoubt firing across uncut wire at the advancing Pals Battalions [🧱 concrete bunker &bull; ⚙️ Maxim gun &bull; 🕸️ barbed wire].',
+        '<strong>Milestones 3 &amp; 4 (1916):</strong> Choose <strong>(A) Creative Sketch:</strong> German Maxim machine-gun redoubt firing across uncut wire, or rhomboid Mark I tank crushing trenches [🧱 concrete bunker &bull; ⚙️ Maxim gun &bull; 🚜 rhomboid tank] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Somme &amp; Armoured Breakthrough" (1 July 57,470 casualties, failure of 7-day bombardment, September 1916 first tank deployment at Flers-Courcelette)',
     },
     leftPageQuip:
       'On 1 July 1916, the British Army suffered 57,470 casualties—including 19,240 dead—the bloodiest single day in British military history.',
@@ -317,9 +317,9 @@ const enquiryConfigs = [
         'Task B: Suggest one reason why Interpretations 1 and 2 differ about the role of empire soldiers. [4 marks]',
       stemsC:
         'One reason why Interpretations 1 and 2 differ is because they have a different focus... &bull; Specifically, Interpretation 1 focuses primarily on... &bull; In contrast, Interpretation 2 focuses more on... &bull; As a result, the authors reach different conclusions because...',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 2 &amp; 6',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 2 (April 1915 &bull; Gallipoli &amp; Empire):</strong> Turn to Centrefold (Pages 8–9). In Milestone 2, sketch Indian cavalry and ANZAC troops landing under Turkish fire on the steep cliffs of Gallipoli [🌊 landing boat &bull; ⛰️ rugged cliffs &bull; 👳‍♂️ Indian turban &amp; slouch hat].',
+        '<strong>Milestones 2 &amp; 6 (1915 &amp; 1917–18):</strong> Choose <strong>(A) Creative Sketch:</strong> Indian cavalry and ANZAC troops landing on steep cliffs under fire, or troopships crossing oceans with Victoria Cross [🌊 landing boat &bull; ⛰️ Gallipoli cliffs &bull; 👳‍♂️ Indian turban &amp; slouch hat &bull; 🎖️ Victoria Cross] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Global Empire Mobilisation" (1.5 million Indian soldiers in Flanders/Mesopotamia, ANZAC Gallipoli forge, 4 million non-white troops/labourers)',
     },
     leftPageQuip:
       'Over 1.5 million Indian soldiers served in the Great War; Sepoy Khudadad Khan was the first South Asian recipient of the Victoria Cross.',
@@ -424,9 +424,9 @@ const enquiryConfigs = [
         wordBank:
           'Canary Girls &bull; TNT poisoning &bull; Silvertown explosion &bull; Ministry of Munitions &bull; Representation of the People Act 1918',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenges 4 &amp; 5',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 5 (1916–1917 &bull; Home Front):</strong> Turn to Centrefold (Pages 8–9). Sketch a factory of "Canary Girls" loading heavy artillery shells beside a queue of women holding 1918 rationing books [🏭 munitions factory &bull; 💣 artillery shell &bull; 📕 ration book].',
+        '<strong>Milestone 5 (1916–1917):</strong> Choose <strong>(A) Creative Sketch:</strong> "Canary Girls" loading heavy artillery shells beside a queue holding ration books [🏭 munitions factory &bull; 💣 artillery shell &bull; 📕 ration book] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Home Front &amp; Total War" (1916 Military Service Act conscription, 1 million female munitions workers producing 80% shells, German U-boat blockade rationing)',
     },
     leftPageQuip:
       'Under DORA, it was illegal to buy rounds of drinks in pubs, feed bread to pigeons, ring church bells, or fly a kite in Britain.',
@@ -536,9 +536,9 @@ const enquiryConfigs = [
         'A compelling argument supporting this statement is that... &bull; In particular, economic factors were significant because... &bull; On the other hand, an alternative perspective is that... &bull; Crucially, geopolitical balance demonstrated that... &bull; In conclusion, the decisive reason was... because...',
       wordBank:
         'Article 231 &bull; £6.6 billion reparations &bull; Diktat &bull; Georges Clemenceau &bull; David Lloyd George &bull; Woodrow Wilson &bull; Polish Corridor &bull; John Maynard Keynes &bull; League of Nations',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 8 (28 June 1919 &bull; Hall of Mirrors):</strong> Turn to Centrefold (Pages 8–9). Sketch the signing of the Treaty of Versailles under the arched mirrors of Versailles [🏛️ Hall of Mirrors &bull; 🖋️ quill pen &bull; 📜 Article 231 document].',
+        '<strong>Milestones 7 &amp; 8 (1918 &amp; 1919):</strong> Choose <strong>(A) Creative Sketch:</strong> Foch’s railway carriage at 11:00 am, or signing the treaty under arched mirrors in the Hall of Mirrors [🚂 railway carriage &bull; ⏰ 11:00 am &bull; 🏛️ Hall of Mirrors &bull; 📜 Article 231] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Armistice &amp; Treaty of Versailles" (11 Nov 1918 Hundred Days &amp; Hindenburg Line, Article 231 War Guilt &amp; £6.6bn reparations, Keynes "Carthaginian Peace" warning)',
     },
     leftPageQuip:
       'John Maynard Keynes resigned from the British delegation in protest, warning the treaty would reduce Germany to starvation and bring down European civilization.',
@@ -1541,8 +1541,8 @@ function compileGreatWarPart2Workbook() {
           </h2>
         </div>
 
-        <div style="border: 1px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1562,8 +1562,11 @@ function compileGreatWarPart2Workbook() {
               Following the German invasion of Belgium, Lord Kitchener issues his recruiting appeal; over 750,000 volunteers enlist in eight weeks, creating the civic Pals Battalions across Britain.
             </p>
           </div>
-          <div style="flex: 1; min-height: 28mm; border: 1px dashed #94a3b8; border-radius: 2px; margin-top: 3px; display: flex; align-items: center; justify-content: center; background: #ffffff;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">[Sketch: 👉 pointing finger &bull; 📜 enlistment papers &bull; 🚶‍♂️ queue of volunteers]</span>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 22mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-top: 3px; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
           </div>
         </div>
 
@@ -1580,8 +1583,11 @@ function compileGreatWarPart2Workbook() {
               British, French, Indian, and Australian/New Zealand (ANZAC) forces land on Gallipoli to knock the Ottoman Empire out of the war; eight months of bloody stalemate forge Australian national consciousness.
             </p>
           </div>
-          <div style="flex: 1; min-height: 28mm; border: 1px dashed #94a3b8; border-radius: 2px; margin-top: 3px; display: flex; align-items: center; justify-content: center; background: #ffffff;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">[Sketch: 🌊 landing boat &bull; ⛰️ rugged cliffs &bull; 👳‍♂️ Indian turban &amp; slouch hat]</span>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 22mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-top: 3px; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
           </div>
         </div>
 
@@ -1598,8 +1604,11 @@ function compileGreatWarPart2Workbook() {
               Following a seven-day artillery bombardment, 100,000 British infantry assault intact German wire; 19,240 men are killed in hours, devastating entire towns and wiping out civic volunteer battalions.
             </p>
           </div>
-          <div style="flex: 1; min-height: 28mm; border: 1px dashed #94a3b8; border-radius: 2px; margin-top: 3px; display: flex; align-items: center; justify-content: center; background: #ffffff;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">[Sketch: 🧱 concrete bunker &bull; ⚙️ Maxim gun &bull; 🕸️ barbed wire]</span>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 22mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-top: 3px; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
           </div>
         </div>
 
@@ -1616,8 +1625,11 @@ function compileGreatWarPart2Workbook() {
               Britain unveils the Mark I tank on the Somme, driving over trenches and crushing barbed wire; while mechanically unreliable, it inaugurates modern combined-arms armoured warfare.
             </p>
           </div>
-          <div style="flex: 1; min-height: 28mm; border: 1px dashed #94a3b8; border-radius: 2px; margin-top: 3px; display: flex; align-items: center; justify-content: center; background: #ffffff;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">[Sketch: 🚜 rhomboid tank &bull; ⚙️ caterpillar tracks &bull; 💥 trench obstacle]</span>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 22mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-top: 3px; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
           </div>
         </div>
 
@@ -1645,8 +1657,8 @@ function compileGreatWarPart2Workbook() {
           </h2>
         </div>
 
-        <div style="border: 1px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1666,8 +1678,11 @@ function compileGreatWarPart2Workbook() {
               Parliament enforces military conscription for all eligible men while 1 million women enter munitions factories ("Canary Girls") and transport; German U-boat attacks bring Britain within weeks of starvation.
             </p>
           </div>
-          <div style="flex: 1; min-height: 28mm; border: 1px dashed #94a3b8; border-radius: 2px; margin-top: 3px; display: flex; align-items: center; justify-content: center; background: #ffffff;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">[Sketch: 🏭 munitions factory &bull; 💣 artillery shell &bull; 📕 ration book]</span>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 22mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-top: 3px; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
           </div>
         </div>
 
@@ -1684,8 +1699,11 @@ function compileGreatWarPart2Workbook() {
               Over 1.5 million Indian soldiers and hundreds of thousands of African, Caribbean, and Dominion troops fight across Europe, Africa, and the Middle East, sustaining the Allied war effort.
             </p>
           </div>
-          <div style="flex: 1; min-height: 28mm; border: 1px dashed #94a3b8; border-radius: 2px; margin-top: 3px; display: flex; align-items: center; justify-content: center; background: #ffffff;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">[Sketch: 🌍 global globe &bull; 🚢 imperial troopship &bull; 🎖️ Victoria Cross]</span>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 22mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-top: 3px; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
           </div>
         </div>
 
@@ -1702,8 +1720,11 @@ function compileGreatWarPart2Workbook() {
               Allied combined-arms offensives break the Hindenburg Line; facing revolution and starvation at home, Germany signs the Armistice in Marshal Foch’s railway carriage, ending active combat.
             </p>
           </div>
-          <div style="flex: 1; min-height: 28mm; border: 1px dashed #94a3b8; border-radius: 2px; margin-top: 3px; display: flex; align-items: center; justify-content: center; background: #ffffff;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">[Sketch: 🚂 railway carriage &bull; ⏰ 11:00 am clock &bull; 🕊️ peace dove]</span>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 22mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-top: 3px; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
           </div>
         </div>
 
@@ -1720,8 +1741,11 @@ function compileGreatWarPart2Workbook() {
               In the Hall of Mirrors at Versailles, Allied powers force Germany to accept Article 231 (War Guilt), pay £6.6 billion in reparations, and surrender 13% of its territory, creating a fragile peace.
             </p>
           </div>
-          <div style="flex: 1; min-height: 28mm; border: 1px dashed #94a3b8; border-radius: 2px; margin-top: 3px; display: flex; align-items: center; justify-content: center; background: #ffffff;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">[Sketch: 🏛️ Hall of Mirrors &bull; 🖋️ quill pen &bull; 📜 Article 231 document]</span>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 22mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-top: 3px; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
           </div>
         </div>
 

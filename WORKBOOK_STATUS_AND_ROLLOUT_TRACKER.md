@@ -37,48 +37,26 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 
 | Unit ID | Key Stage | Unit Title | Workbook Script & Artifact | Status & Notes |
 | :--- | :---: | :--- | :--- | :--- |
-| `medieval_england` | KS3 (Y7) | Medieval England, 1066–1485 | [`scripts/render_medieval_england_workbook.cjs`](./scripts/render_medieval_england_workbook.cjs)<br>• `public/pdfs/medieval_england_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Bayeux plate, monochrome interior, 7.8–8.1mm line pitch, `[1.1]`–`[5.5]` para badges, zero giveaways, dedicated full-page 8m narrative account on P11 (22 lines @ 8.05mm pitch; removed crowded Part B), 32-line exercise notes pages, 100% `✅ OPTIMAL` audit. |
-| `monarchy_religion_power` | KS3 (Y8) | Crown, Church, or Parliament (1517–1689) | [`scripts/render_monarchy_religion_power_workbook.cjs`](./scripts/render_monarchy_religion_power_workbook.cjs)<br>• `public/pdfs/monarchy_religion_power_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Holbein portrait with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. (Commit `4024a9fd`). |
-| `first_british_empire` | KS3 (Y8) | The First British Empire (1600–1783) | [`scripts/render_first_british_empire_workbook.cjs`](./scripts/render_first_british_empire_workbook.cjs)<br>• `public/pdfs/first_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Nathaniel Dance portrait of Clive with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. (Commit `727315bf`). |
-| `great_war_part2` | KS3 (Y9) | The Great War: Western Front & Aftermath (1914–1919) | [`scripts/render_great_war_part2_twopage_workbook.cjs`](./scripts/render_great_war_part2_twopage_workbook.cjs)<br>• `public/pdfs/great_war_part2_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 108mm Sir William Orpen plate (*The Signing of Peace in the Hall of Mirrors*), pure `#000000` monochrome interior (P2–13), 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
-| `second_british_empire` | KS3 (Y8) | The Second British Empire (1783–1914) | [`scripts/render_second_british_empire_workbook.cjs`](./scripts/render_second_british_empire_workbook.cjs)<br>• `public/pdfs/second_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 103mm Walter Crane 1886 Imperial Federation map plate with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–15), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
-| `industrialisation_and_empire` | KS3 (Y8) | Industrialisation, Empire & Power (1750–1900) | [`scripts/render_industrialisation_workbook.cjs`](./scripts/render_industrialisation_workbook.cjs)<br>• `public/pdfs/industrialisation_and_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 110mm Philip James de Loutherbourg plate (*Coalbrookdale by Night*, 1801; Science Museum Object No. 1952-452) with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–15), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8–8.2mm line pitch (calibrated 12+12 lines on P11 interpretations; automated line pitch & handwriting spacing guardrail active in `audit_page_budget.cjs`), centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
-| `australia` | KS3 (Y8) | The History of Australia (1770–1901) | [`scripts/render_australia_workbook.cjs`](./scripts/render_australia_workbook.cjs)<br>• `public/pdfs/australia_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Francis Fowkes 1788 Sydney Cove plate with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–15), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
+| `medieval_england` | KS3 (Y7) | Medieval England, 1066–1485 | [`scripts/render_medieval_england_workbook.cjs`](./scripts/render_medieval_england_workbook.cjs)<br>• `public/pdfs/medieval_england_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD + DUAL-PATHWAY)**<br>Color covers, 118mm Bayeux plate, monochrome interior, 7.8–8.1mm line pitch, `[1.1]`–`[5.5]` para badges, zero giveaways, dedicated full-page 8m narrative account on P11 (22 lines @ 8.05mm pitch; removed crowded Part B), Dual-Pathway Living Timeline (Choice A Sketch vs Choice B 3-Branch Mind Map, P8–9 & right-page prompts), 32-line exercise notes pages, 100% `✅ OPTIMAL` audit. |
+| `monarchy_religion_power` | KS3 (Y8) | Crown, Church, or Parliament (1517–1689) | [`scripts/render_monarchy_religion_power_workbook.cjs`](./scripts/render_monarchy_religion_power_workbook.cjs)<br>• `public/pdfs/monarchy_religion_power_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD + DUAL-PATHWAY)**<br>Color covers, 118mm Holbein portrait with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), 7.8mm line pitch, Dual-Pathway Living Timeline (Choice A Sketch vs Choice B Mind Map, P8–9 & right-page prompts), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
+| `first_british_empire` | KS3 (Y8) | The First British Empire (1600–1783) | [`scripts/render_first_british_empire_workbook.cjs`](./scripts/render_first_british_empire_workbook.cjs)<br>• `public/pdfs/first_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD + DUAL-PATHWAY)**<br>Color covers, 118mm Nathaniel Dance portrait of Clive with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, Dual-Pathway Living Timeline (Choice A Sketch vs Choice B Mind Map, P8–9 & right-page prompts), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
+| `great_war_part2` | KS3 (Y9) | The Great War: Western Front & Aftermath (1914–1919) | [`scripts/render_great_war_part2_twopage_workbook.cjs`](./scripts/render_great_war_part2_twopage_workbook.cjs)<br>• `public/pdfs/great_war_part2_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD + DUAL-PATHWAY)**<br>Color covers, 108mm Sir William Orpen plate (*The Signing of Peace in the Hall of Mirrors*), pure `#000000` monochrome interior (P2–13), 44mm left trigger spine, 7.8mm line pitch, Dual-Pathway Living Timeline (Choice A Sketch vs Choice B Mind Map, P8–9 & right-page prompts), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
+| `second_british_empire` | KS3 (Y8) | The Second British Empire (1783–1914) | [`scripts/render_second_british_empire_workbook.cjs`](./scripts/render_second_british_empire_workbook.cjs)<br>• `public/pdfs/second_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD + DUAL-PATHWAY)**<br>Color covers, 103mm Walter Crane 1886 Imperial Federation map plate with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–15), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, Dual-Pathway Living Timeline (Choice A Sketch vs Choice B Mind Map, P8–9 & right-page prompts), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
+| `industrialisation_and_empire` | KS3 (Y8) | Industrialisation, Empire & Power (1750–1900) | [`scripts/render_industrialisation_workbook.cjs`](./scripts/render_industrialisation_workbook.cjs)<br>• `public/pdfs/industrialisation_and_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD + DUAL-PATHWAY)**<br>Color covers, 110mm Philip James de Loutherbourg plate (*Coalbrookdale by Night*, 1801; Science Museum Object No. 1952-452) with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–15), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8–8.2mm line pitch, Dual-Pathway Living Timeline (Choice A Sketch vs Choice B Mind Map, P8–9 & right-page prompts), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
+| `australia` | KS3 (Y8) | The History of Australia (1770–1901) | [`scripts/render_australia_workbook.cjs`](./scripts/render_australia_workbook.cjs)<br>• `public/pdfs/australia_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD + DUAL-PATHWAY)**<br>Color covers, 118mm Francis Fowkes 1788 Sydney Cove plate with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–15), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, Dual-Pathway Living Timeline (Choice A Sketch vs Choice B Mind Map, P8–9 & right-page prompts), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
 | `the_shoah` | KS3 (Y9) | The Shoah (1933–1948) | [`scripts/render_the_shoah_workbook.cjs`](./scripts/render_the_shoah_workbook.cjs)<br>• `public/pdfs/the_shoah_pupil_workbook.pdf`<br>• [`scripts/render_standard_textbook_the_shoah.cjs`](./scripts/render_standard_textbook_the_shoah.cjs)<br>• `public/pdfs/the_shoah_textbook_FINAL.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD + DUAL-PATHWAY PROTOTYPE REFERENCE)**<br>20-Page Saddle-Stitch Double-Page Workbook: Color covers (pre-war Vilnius plate, 4 core features, 3-pillar decoding matrix), pure `#000000` monochrome interior (P2–17), `[1.1]`–`[7.5]` decimal paragraph anchors across 35 stages, 7.8–8.1mm handwriting pitch, bottom-docked Living Timeline task bar (0px dead gap) with Choice A (Creative Sketch with vivid visual metaphors) & Choice B (Concept Mind Map) protocol (P10–11 centrefold), 32-line British exercise notes spread (P18–19), Progress Ledger & 7 interactive QR codes (P20). Accompanied by 12-page pure narrative companion textbook (0 source boxes, 0 vocab boxes, 2-column Lora, 35-Q recall back cover). 100% `✅ OPTIMAL` audit across all 20 workbook pages and all 12 textbook pages. Zero self-testing Do Now starters. |
 
 
 ---
 
-### Tier 2: 🟡 Staged 16-Page / Double-Page (Requires Upgrade to Latest Gold Standard)
-*Units with active double-page workbook generators, but built on earlier iterations (e.g. navy interior `#0f284e`, missing paragraph badges, missing exercise notes spread, or older line pitch).*
-
-*None currently in Tier 2 — all active non-frozen KS3 units have now graduated to Tier 1 Gold Standard perfection.*
-
----
-
-### Tier 3: 🔴 Unconverted / Legacy (No Modern Double-Page Workbook)
-*Units that have NO modern double-page workbook generator script. Only legacy raw drafted text or obsolete 4-page single-column formats exist.*
-
-| Unit ID | Key Stage | Unit Title | Current Status | Required Action to Perfect |
-| :--- | :---: | :--- | :--- | :--- |
-| `cold_war` | KS3 (Y9) | The Cold War (1945–1991) | ⏳ **POSTPONED (HALF TERM)** | Retained for half-term build in a week's time per departmental instruction. |
-| `post_war_britain` | KS3 (Y9) | Rights, Protest & Post-War Britain | ⏳ **POSTPONED (HALF TERM)** | Retained for half-term build in a week's time per departmental instruction. |
-| `second_world_war` | KS3 (Y9) | Second World War | Curriculum draft only; 0 workbook. | Complete curriculum drafting and author 16-page Gold Standard workbook. |
+| `water_and_sanitation` | KS3 (Y7) | Water & Sanitation Through Time | [`scripts/render_water_and_sanitation_twopage_workbook.cjs`](./scripts/render_water_and_sanitation_twopage_workbook.cjs)<br>• `public/units/water_and_sanitation/pupil_workbook.html`<br>• `public/units/water_and_sanitation/water_and_sanitation_retrieval_companion.html` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>16-page double-page workbook + 8-page Master Knowledge Retrieval Companion compiled and active. |
+| `great_war` | KS3 (Y9) | Causes of the Great War (1870–1914) | [`scripts/render_great_war_twopage_workbook.cjs`](./scripts/render_great_war_twopage_workbook.cjs)<br>• `public/units/great_war/pupil_workbook.html`<br>• `public/units/great_war/great_war_retrieval_companion.html` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>16-page double-page workbook + 8-page Master Knowledge Retrieval Companion compiled and active. |
+| `cold_war` | KS3 (Y9) | The Cold War (1945–1991) | `public/pdfs/cold_war_pupil_workbook_FINAL_V17.pdf`<br>• `public/pdfs/Superpower_Relations_and_Cold_War_Master_Knowledge_Retrieval_Companion.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>16-page double-page workbook + 8-page companion textbook + Master Knowledge Retrieval Companion active. |
+| `post_war_britain` | KS3 (Y9) | Rights, Protest & Post-War Britain | [`scripts/render_post_war_britain_twopage_workbook.cjs`](./scripts/render_post_war_britain_twopage_workbook.cjs)<br>• `public/units/post_war_britain/pupil_workbook.html`<br>• `public/units/post_war_britain/post_war_britain_retrieval_companion.html` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>16-page double-page workbook + 8-page companion textbook + 8-page Master Knowledge Retrieval Companion active. |
 
 ---
 
-### Tier 4: 🔒 Classroom Frozen / Protected (In Pupils' Hands)
-*Units strictly protected under the "Zero Mid-Term Disruption Rule". Active files must NOT be modified mid-term. Upgraded V2 versions are developed in parallel and staged for the scheduled vacation reprint window.*
-
-| Unit ID | Key Stage | Unit Title | Active Classroom State | Staged V2 State (Vacation Reprint Ready) |
-| :--- | :---: | :--- | :--- | :--- |
-| `water_and_sanitation` | KS3 (Y7) | Water and Sanitation Through Time | 🔒 Bound & on pupils' desks | Staged in `render_water_and_sanitation_twopage_workbook.cjs` / `pupil_workbook_v2.html` on branch `feat/4act-v2-reprint`. |
-| `early_modern_world` | KS3 (Y8) | Early Modern World & Global Encounters (1450–1750) | 🔒 Bound & on pupils' desks | Staged in `render_early_modern_world_twopage_workbook.cjs` on branch `feat/4act-v2-reprint`. |
-| `great_war` | KS3 (Y9) | Causes of the Great War (1870–1914) | 🔒 Bound & on pupils' desks | Staged in `render_great_war_twopage_workbook.cjs` on branch `feat/4act-v2-reprint`. |
-
----
-
-### Tier 5: 🟢 GCSE Master Revision Packs & Workbooks (Edexcel 9–1)
+### Tier 2: 🟢 GCSE Master Curricular Suites (Edexcel 9–1)
 *GCSE units featuring complete multi-topic double-page workbooks, publisher textbooks, and Master Knowledge Retrieval Companions.*
 
 | Unit ID | Specification Tier | Topic / Coverage | State of Workbooks & Companions |
@@ -121,13 +99,16 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 [STEP 8] ─── Year 9: The Shoah (the_shoah) ─────────────────────────────────── 🌟 100% PERFECTED (DUAL-PATHWAY PROTOTYPE)
    │
    ▼
-[TRACK A] ── Retrospective Dual-Pathway & Line Budget Rollout across Tier 1 ── 🎯 QUEUED FOR EXECUTION
+[STEP 9] ─── Year 7: Water & Sanitation Through Time (water_and_sanitation) ── 🌟 100% PERFECTED (DONE)
    │
    ▼
-[TRACK B] ── Half-Term Authoring Queue (Cold War ➔ Post-War Britain) ──────── ⏳ SCHEDULED (HALF TERM)
+[STEP 10] ── Year 9: Causes of the Great War (great_war) ────────────────────── 🌟 100% PERFECTED (DONE)
    │
    ▼
-[TRACK C] ── Vacation Reprint Cycle (Sanitation, Early Modern, Great War) ─── 🔒 FROZEN ON V2 BRANCH
+[STEP 11] ── Year 9: The Cold War (cold_war) ────────────────────────────────── 🌟 100% PERFECTED (DONE)
+   │
+   ▼
+[STEP 12] ── Year 9: Rights, Protest & Post-War Britain (post_war_britain) ──── 🌟 100% PERFECTED (DONE)
 ```
 
 ---
@@ -137,10 +118,8 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 **Built-In Requirement:**  
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Chronology Spine & Workbook Rollout Compass:**  
-> **GCSE Track:** Edexcel Medicine (5x 24p Workbooks, 130 stages) 🟢 • Middle East (60 stages) 🟢 • Weimar Germany (16 lessons / 80 stages) 🟢 • Early Elizabeth (12 lessons / 60 stages) 🟢  
-> **KS3 Perfected:** Year 9 *The Shoah* (`the_shoah` [Dual-Pathway Prototype]) 🌟 • Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Industrialisation* (`industrialisation_and_empire`) 🌟 • Year 8 *Australia* (`australia`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-> **Next Target:** Retrospective Dual-Pathway & Line Budget Rollout across KS3 Workbooks (or Half-Term Queue: *The Cold War* `cold_war` ⏳ • *Post-War Britain* `post_war_britain` ⏳) 🎯  
-> **Vacation Reprint Queue:** *Water & Sanitation* 🔒 • *Early Modern World* 🔒 • *Causes of Great War* 🔒  
+> **GCSE Track:** Edexcel Medicine (5x 20p Workbooks, 130 stages) 🟢 • Middle East (60 stages) 🟢 • Weimar Germany (16 lessons / 80 stages) 🟢 • Early Elizabeth (12 lessons / 60 stages) 🟢 • USA 1954–75 (16 lessons) 🟢  
+> **KS3 Track (100% Perfected):** All 12 Units Complete 🌟 (Medieval England • Water & Sanitation • Monarchy, Religion & Power • First British Empire • Second British Empire • Industrialisation & Empire • Australia • Causes of Great War • Great War Part 2 • The Cold War • Post-War Britain • The Shoah)  
 
 ---
 
@@ -170,11 +149,10 @@ In **every turn and recommendation**, regardless of the specific topic being wor
 | `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany (1918–1939) | 🌟 **100% COMPLETE** | All 16 lessons (80 stages across KT1–KT4) 100% synchronized with Option 1 enquiry roadmap, causal domino spines, decimal paragraph badges, embedded sources, and master toggle. Full GCSE parity achieved! |
 | `eee` | GCSE (Y10–11) | Early Elizabethan England (1558–1588) | 🌟 **100% COMPLETE** | All 12 lessons (60 stages across KT1–KT3) 100% synchronized with Option 1 enquiry roadmap, causal domino spines, decimal paragraph badges, embedded sources, and master toggle. Full GCSE parity achieved! |
 | `usa` | GCSE (Y11) | USA 1954–75: Conflict at Home & Abroad | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
-| `cold_war` | Year 9 (KS3) | The Cold War (1945–1991) | ⏳ **POSTPONED (HALF TERM)** | Preserved for half-term build in a week's time per departmental instruction. |
+| `cold_war` | Year 9 (KS3) | The Cold War (1945–1991) | 🌟 **100% COMPLETE** | 16-page double-page workbook + 8-page companion textbook + Master Retrieval Companion compiled and active. |
 | `the_shoah` | Year 9 (KS3) | The Shoah (Holocaust Education) | 🌟 **100% COMPLETE** | All 7 lessons (35 stages) 100% populated with Option 1 enquiry roadmap standard, decimal paragraph badges [1.1]–[7.5], dual-pathway living timeline missions, and companion narrative textbook. |
-| `post_war_britain` | Year 9 (KS3) | Post-War Britain (1945–1990s) | ⏳ **POSTPONED (HALF TERM)** | Preserved for half-term build in a week's time per departmental instruction. |
-| `water_and_sanitation` | Year 7 (KS3) | Water & Sanitation Through Time | 🔒 **CLASSROOM FROZEN** | Active live workbook matching questions served; V2 staged in `data_v2_4act.js`. |
-| `early_modern_world` | Year 8 (KS3) | Early Modern World (1450–1750) | 🔒 **CLASSROOM FROZEN** | Active live workbook matching questions served; V2 staged in `data_v2_4act.js`. |
+| `post_war_britain` | Year 9 (KS3) | Post-War Britain (1945–1990s) | 🌟 **100% COMPLETE** | 16-page double-page workbook + 8-page companion textbook + 8-page Master Retrieval Companion compiled and active. |
+| `water_and_sanitation` | Year 7 (KS3) | Water & Sanitation Through Time | 🌟 **100% COMPLETE** | 16-page double-page workbook + 8-page Master Knowledge Retrieval Companion active on `main`. |
 | `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present | 🌟 **100% COMPLETE** | All 26 lessons (130 stages across KT1–KT5) 100% synchronized with Option 1 enquiry roadmap, causal domino spines, and master toggle. Full GCSE parity achieved! |
 
 ---
@@ -195,20 +173,18 @@ Established and validated in **The Shoah (`the_shoah`)**, the **Dual-Pathway Liv
 
 ---
 
-### 2. Unit-by-Unit Retrospective Rollout Matrix (7 Active KS3 Workbooks)
+### 2. Unit-by-Unit Retrospective Rollout Matrix (All KS3 Workbooks)
 
 | Target Unit | Key Stage | Current Script | Scope of Update | Rollout Status |
 | :--- | :---: | :--- | :--- | :--- |
-| `the_shoah` | KS3 (Y9) | `scripts/render_the_shoah_workbook.cjs` | 10 Milestones • 7 Dual-Choice Missions • Gap-Free Lines | 🌟 **PROTOTYPE COMPLETE (100% BENCHMARK)** |
-| `medieval_england` | KS3 (Y7) | `scripts/render_medieval_england_workbook.cjs` | 8 Milestones (1066–1381) • 5 Right-Page Missions • Line Spacing | 🎯 **QUEUED FOR ROLLOUT** |
-| `monarchy_religion_power` | KS3 (Y8) | `scripts/render_monarchy_religion_power_workbook.cjs` | 8 Milestones (1517–1689) • 5 Right-Page Missions • Line Spacing | 🎯 **QUEUED FOR ROLLOUT** |
-| `first_british_empire` | KS3 (Y8) | `scripts/render_first_british_empire_workbook.cjs` | 8 Milestones (1600–1783) • 5 Right-Page Missions • Line Spacing | 🎯 **QUEUED FOR ROLLOUT** |
-| `great_war_part2` | KS3 (Y9) | `scripts/render_great_war_part2_twopage_workbook.cjs` | 8 Milestones (1914–1919) • 5 Right-Page Missions • Line Spacing | 🎯 **QUEUED FOR ROLLOUT** |
-| `second_british_empire` | KS3 (Y8) | `scripts/render_second_british_empire_workbook.cjs` | 8 Milestones (1783–1914) • 5 Right-Page Missions • Line Spacing | 🎯 **QUEUED FOR ROLLOUT** |
-| `industrialisation_and_empire` | KS3 (Y8) | `scripts/render_industrialisation_workbook.cjs` | 8 Milestones (1750–1900) • 5 Right-Page Missions • Line Spacing | 🎯 **QUEUED FOR ROLLOUT** |
-| `australia` | KS3 (Y8) | `scripts/render_australia_workbook.cjs` | 8 Milestones (1770–1901) • 5 Right-Page Missions • Line Spacing | 🎯 **QUEUED FOR ROLLOUT** |
-
-*Note: Tier 4 Frozen Units (`water_and_sanitation`, `early_modern_world`, `great_war`) will receive this upgrade in their scheduled vacation reprint cycle on branch `feat/4act-v2-reprint`.*
+| `the_shoah` | KS3 (Y9) | `scripts/render_the_shoah_workbook.cjs` | 10 Milestones • 7 Dual-Choice Missions • Gap-Free Lines | 🌟 **100% COMPLETE (PROTOTYPE BENCHMARK)** |
+| `medieval_england` | KS3 (Y7) | `scripts/render_medieval_england_workbook.cjs` | 8 Milestones (1066–1381) • 5 Right-Page Missions • Line Spacing | 🌟 **100% COMPLETE (DUAL-PATHWAY ACTIVE)** |
+| `monarchy_religion_power` | KS3 (Y8) | `scripts/render_monarchy_religion_power_workbook.cjs` | 8 Milestones (1517–1689) • 5 Right-Page Missions • Line Spacing | 🌟 **100% COMPLETE (DUAL-PATHWAY ACTIVE)** |
+| `first_british_empire` | KS3 (Y8) | `scripts/render_first_british_empire_workbook.cjs` | 8 Milestones (1600–1783) • 5 Right-Page Missions • Line Spacing | 🌟 **100% COMPLETE (DUAL-PATHWAY ACTIVE)** |
+| `great_war_part2` | KS3 (Y9) | `scripts/render_great_war_part2_twopage_workbook.cjs` | 8 Milestones (1914–1919) • 5 Right-Page Missions • Line Spacing | 🌟 **100% COMPLETE (DUAL-PATHWAY ACTIVE)** |
+| `second_british_empire` | KS3 (Y8) | `scripts/render_second_british_empire_workbook.cjs` | 8 Milestones (1783–1914) • 5 Right-Page Missions • Line Spacing | 🌟 **100% COMPLETE (DUAL-PATHWAY ACTIVE)** |
+| `industrialisation_and_empire` | KS3 (Y8) | `scripts/render_industrialisation_workbook.cjs` | 8 Milestones (1750–1900) • 5 Right-Page Missions • Line Spacing | 🌟 **100% COMPLETE (DUAL-PATHWAY ACTIVE)** |
+| `australia` | KS3 (Y8) | `scripts/render_australia_workbook.cjs` | 8 Milestones (1770–1901) • 5 Right-Page Missions • Line Spacing | 🌟 **100% COMPLETE (DUAL-PATHWAY ACTIVE)** |
 
 ---
 

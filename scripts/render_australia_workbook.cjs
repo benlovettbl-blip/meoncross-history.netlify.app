@@ -138,9 +138,9 @@ const enquiryConfigs = [
         'A primary reason for this development was that... &bull; In particular, a decisive factor was... &bull; Furthermore, strategic naval factors demonstrated that... &bull; Crucially, an important legal justification occurred when... &bull; Consequently, this resulted in...',
       wordBank:
         'Captain James Cook &bull; Admiralty secret orders &bull; Tupaia &bull; Endeavour &bull; Botany Bay &bull; Gweagal clan &bull; Possession Island &bull; King George III &bull; terra nullius &bull; dispossession',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 1 (Cook &amp; Tupaia at Botany Bay &bull; 1770):</strong> Sketch an 18th-century sailing ship anchor crossed with a carved Aboriginal hardwood shield [⚓ ship anchor &bull; 🛡️ bark shield &bull; 🌿 eucalyptus branch].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (First Fleet at Sydney Cove &bull; 1788):</strong> Sketch a British naval flag planted in sand beside a line of convict iron leg-shackles [🇬🇧 Union Jack &bull; ⛓️ iron leg-shackles &bull; ⛺ canvas tent].',
+        '<strong>Milestones 1 &amp; 2 (1770–1788):</strong> Choose <strong>(A) Creative Sketch:</strong> draw ship anchor crossed with Aboriginal hardwood shield / Union Jack beside convict leg-shackles; &bull; OR &bull; <strong>(B) Mind Map:</strong> &ldquo;Imperial Invasion&rdquo; (Cook/Tupaia 1770, First Fleet 1788, terra nullius legal fiction).',
     },
     leftPageQuip:
       'Polynesian navigator Tupaia could map 130 Pacific islands across 3,000 miles entirely from memory.',
@@ -244,9 +244,9 @@ const enquiryConfigs = [
         wordBank:
           'prison hulks &bull; Bloody Code &bull; First Fleet &bull; Captain Arthur Phillip &bull; Sydney Cove &bull; starvation crisis &bull; rations &bull; emancipists',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenge 3',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 3 (The 1789 Smallpox Epidemic &bull; 1789):</strong> Sketch an empty bark canoe drifting on water beneath a weeping eucalyptus branch [🛶 empty canoe &bull; 🌿 eucalyptus branch &bull; 💧 water ripple].',
+        '<strong>Milestone 3 (1789):</strong> Choose <strong>(A) Creative Sketch:</strong> draw an empty bark canoe drifting on water beneath a weeping eucalyptus branch; &bull; OR &bull; <strong>(B) Mind Map:</strong> &ldquo;Biological Catastrophe&rdquo; (gal-galla smallpox epidemic, 50–70% Eora mortality, loss of law-keepers/elders).',
     },
     leftPageQuip:
       'Convict Mary Wade was sentenced to transportation at age 11 for stealing an 8-penny cotton frock.',
@@ -364,9 +364,9 @@ const enquiryConfigs = [
         wordBank:
           'Pemulwuy &bull; Bidjigal clan &bull; guerrilla tactics &bull; burning crops &bull; Battle of Parramatta &bull; Governor King &bull; frontier warfare',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenge 4',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 4 (Pemulwuy &amp; Parramatta &bull; 1797):</strong> Sketch a barbed multi-prong hunting spear crossed with a burning colonial wheat sheaf [🗡️ barbed spear &bull; 🌾 burning wheat &bull; 🛡️ shield].',
+        '<strong>Milestone 4 (1797):</strong> Choose <strong>(A) Creative Sketch:</strong> draw a barbed hunting spear crossed with a burning colonial wheat sheaf and shield; &bull; OR &bull; <strong>(B) Mind Map:</strong> &ldquo;Pemulwuy\'s Resistance&rdquo; (Bidjigal guerrilla war, burning crops/flocks, 1797 Battle of Parramatta).',
     },
     leftPageQuip:
       'First Nations Australians have maintained continuous cultural custodianship of the continent for 65,000 years.',
@@ -458,9 +458,9 @@ const enquiryConfigs = [
         'Suggest one reason why Interpretations 1 and 2 differ on the reality of the Frontier Wars. [4 marks]',
       stemsC:
         'One reason why Interpretations 1 and 2 differ is because they rely on different historical sources... &bull; Specifically, Interpretation 1 uses... &bull; In contrast, Interpretation 2 focuses primarily on... &bull; As a result, the authors reach different conclusions because...',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 5 (Martial Law &amp; The Black Line &bull; 1828):</strong> Sketch a military proclamation board pinned to a gum tree beside a row of redcoat bayonets [📜 proclamation board &bull; 🌲 gum tree &bull; 🗡️ bayonet rifle].<br style="display:block; margin-top:2px;"><strong>Milestone 6 (The Myall Creek Reckoning &bull; 1838):</strong> Sketch a magistrate\'s wooden gavel resting upon an uncoiled stockman\'s tethering rope [🔨 wooden gavel &bull; 🪢 coiled rope &bull; ⚖️ scales of justice].',
+        '<strong>Milestones 5 &amp; 6 (1828–1838):</strong> Choose <strong>(A) Creative Sketch:</strong> draw proclamation board pinned to gum tree / magistrate\'s gavel on tethering rope; &bull; OR &bull; <strong>(B) Mind Map:</strong> &ldquo;Frontier Warfare&rdquo; (Tasmanian martial law 1828, 1830 Black Line, 1838 Myall Creek hanging of stockmen).',
     },
     leftPageQuip:
       'The 1830 ‘Black Line’ swept 2,200 armed men across Tasmania for seven weeks—and captured just two people.',
@@ -576,9 +576,9 @@ const enquiryConfigs = [
         'A compelling argument supporting this statement is that... &bull; In particular, demographic and democratic changes were decisive because... &bull; On the other hand, an alternative perspective is that... &bull; Crucially, frontier and economic evidence demonstrates that... &bull; In conclusion, the more significant development was... because...',
       wordBank:
         'Edward Hargraves &bull; Ballarat &bull; 30-shilling licence &bull; Southern Cross flag &bull; Peter Lalor &bull; manhood suffrage &bull; squatter pastoralists &bull; Merino wool &bull; Myall Creek &bull; terra nullius &bull; First Nations survival',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 7 (The Gold Rush Discovery &bull; 1851):</strong> Sketch a miner’s iron pickaxe crossed with a tin washing pan filled with glittering gold nuggets [⛏️ pickaxe &bull; 🪙 tin wash pan &bull; 🪨 gold nuggets].<br style="display:block; margin-top:2px;"><strong>Milestone 8 (The Eureka Southern Cross &bull; 1854):</strong> Sketch the blue-and-white Southern Cross Eureka flag flying above rough timber palisades [🚩 Southern Cross flag &bull; 🪵 wooden stockade &bull; ⚔️ crossed muskets].',
+        '<strong>Milestones 7 &amp; 8 (1851–1854):</strong> Choose <strong>(A) Creative Sketch:</strong> draw miner’s pickaxe crossed with gold wash pan / Eureka Southern Cross flag flying over wooden stockade; &bull; OR &bull; <strong>(B) Mind Map:</strong> &ldquo;Gold &amp; Democracy&rdquo; (1851 Ballarat rush, 30-shilling licence tax, 1854 Eureka armed uprising &amp; ballot).',
     },
     leftPageQuip:
       'The Southern Cross flag was sewn from silk petticoats by women on the Ballarat goldfield in 1854.',
@@ -1467,8 +1467,8 @@ function compileAustraliaWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1483,9 +1483,15 @@ function compileAustraliaWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Guided across Oceania by Polynesian navigator Tupaia, Cook enters Botany Bay, clashes with Gweagal warriors, and claims the eastern coast under the myth of terra nullius.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 2: 1788 -->
@@ -1496,9 +1502,15 @@ function compileAustraliaWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Governor Arthur Phillip lands 11 ships carrying roughly 750 convicts at Sydney Cove, raising the Union Jack to establish Britain’s first Australian penal settlement.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 3: 1789 -->
@@ -1509,9 +1521,15 @@ function compileAustraliaWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             A deadly smallpox epidemic sweeps through the Sydney Basin, killing between 50% and 70% of the local Eora population and fatally weakening clan leadership.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 4: 1797 -->
@@ -1522,9 +1540,15 @@ function compileAustraliaWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Bidjigal resistance leader Pemulwuy leads 100 warriors in a direct daytime assault on colonial troops at Parramatta during a 12-year guerrilla war defending country.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1543,8 +1567,8 @@ function compileAustraliaWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1559,9 +1583,15 @@ function compileAustraliaWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Governor George Arthur declares martial law in Tasmania, deploying soldiers and settlers in the 1830 ‘Black Line’ cordon to drive Indigenous Tasmanians from ancestral lands.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 6: 1838 -->
@@ -1572,9 +1602,15 @@ function compileAustraliaWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Eleven white stockmen murder 28 unarmed Wirrayaraay women, children, and elders; seven perpetrators are convicted and hanged in an unprecedented colonial trial.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 7: 1851 -->
@@ -1585,9 +1621,15 @@ function compileAustraliaWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Payable gold is discovered at Summerhill Creek and Ballarat, triggering an immense global gold rush that triples Australia’s population to over 1.2 million in a decade.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 8: 1854 -->
@@ -1598,9 +1640,15 @@ function compileAustraliaWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Over 120 Ballarat gold miners swear allegiance to the Southern Cross flag in an armed revolt against corrupt police licence hunts, winning male voting rights and democracy.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>

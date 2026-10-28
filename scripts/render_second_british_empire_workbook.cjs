@@ -133,9 +133,9 @@ const enquiryConfigs = [
         'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
       wordBank:
         'Portsmouth Dockyard &bull; HMS Warrior &bull; Two-Power Standard &bull; mercantilism &bull; ironclad &bull; Royal Navy &bull; Pax Britannica &bull; naval supremacy',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 1 (HMS Warrior Ironclad &bull; 1860):</strong> Sketch the revolutionary iron-hulled steam battleship HMS Warrior with its black smokestack and iron armour plates [🚢 iron battleship &bull; 🛡️ armour plate &bull; ⚓ heavy anchor].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (Portsmouth Royal Dockyard &bull; 19th Century):</strong> Sketch Admiralty master smiths operating hydraulic machinery inside the Portsmouth block mills [🏭 brick dockyard &bull; ⚙️ steam engine &bull; ⛵ Royal Navy warship].',
+        '<strong>Milestones 1, 5 &amp; 7 (1805–1889):</strong> Choose <strong>(A) Creative Sketch:</strong> HMS Warrior ironclad steam battleship with black smokestack, or Portsmouth dockyard smiths forging anchor chains [🚢 iron battleship &bull; 🛡️ iron armour &bull; 🏭 dockyard block mill] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Pax Britannica &amp; Naval Power" (Portsmouth Royal Dockyard factory base, 1860 HMS Warrior ironclad revolution, 1889 Two-Power Standard)',
     },
     leftPageQuip:
       'Portsmouth Royal Dockyard was the industrial beating heart of the British Empire, building the ironclads that commanded the oceans.',
@@ -235,9 +235,9 @@ const enquiryConfigs = [
         'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
       wordBank:
         'De-industrialisation &bull; captive market &bull; Calico Acts &bull; Dhaka muslin &bull; tariff disparity &bull; Lancashire cotton &bull; Diwani &bull; Lord William Bentinck',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 3 &amp; 4',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 3 (Bengal Handloom Weavers &bull; 1750):</strong> Sketch an Indian artisan weaving delicate muslin cloth on a wooden village pit loom [🧵 wooden loom &bull; 📜 fine muslin &bull; 🌾 Bengal village].<br style="display:block; margin-top:2px;"><strong>Milestone 4 (Lancashire Steam Mills &bull; 1830):</strong> Sketch British merchant ships unloading thousands of bales of factory cloth at Calcutta docks [🏭 cotton mill &bull; 📦 factory bales &bull; 🚢 merchant ship].',
+        '<strong>Milestone 2 (1813–1834):</strong> Choose <strong>(A) Creative Sketch:</strong> Bengali pit-loom artisan weaving muslin beside British merchant ships dumping factory cotton crates [🧵 wooden loom &bull; 📜 fine muslin &bull; 📦 factory bales] &bull; OR &bull; <strong>(B) Mind Map:</strong> "De-industrialisation of India" (25% pre-colonial world textile share, British protective Calico tariffs, 1834 Bentinck report on weavers bleaching plains)',
     },
     leftPageQuip:
       'Before British rule, India produced 25% of the world’s manufactured goods; by 1947, colonial de-industrialisation reduced that share to under 2%.',
@@ -331,9 +331,9 @@ const enquiryConfigs = [
         'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
       wordBank:
         'Sepoy &bull; Doctrine of Lapse &bull; Awadh &bull; Enfield rifle &bull; Rani Lakshmibai &bull; Bahadur Shah Zafar &bull; Azamgarh Proclamation &bull; British Raj &bull; Queen Victoria',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 5 (The Enfield Cartridge Crisis &bull; 1857):</strong> Sketch a sepoy soldier hesitating to bite open the greased paper cartridge [🔫 Enfield rifle &bull; 📜 paper cartridge &bull; 🪖 sepoy uniform].<br style="display:block; margin-top:2px;"><strong>Milestone 6 (Rani Lakshmibai at Gwalior &bull; 1858):</strong> Sketch the Queen of Jhansi on horseback with drawn curved talwar sword leading her cavalry [🐎 galloping horse &bull; 🗡️ curved sword &bull; 🛡️ royal armor].',
+        '<strong>Milestones 3 &amp; 4 (1857–1858):</strong> Choose <strong>(A) Creative Sketch:</strong> Sepoy refusing to bite the greased cartridge, or Rani Lakshmibai on horseback with curved talwar sword [🔫 Enfield cartridge &bull; 🐎 galloping horse &bull; 🗡️ curved talwar] &bull; OR &bull; <strong>(B) Mind Map:</strong> "1857 Rebellion &amp; The British Raj" (Enfield cow/pig fat crisis, Rani Lakshmibai at Jhansi/Gwalior, 1858 Government of India Act dissolving Company)',
     },
     leftPageQuip:
       'Rani Lakshmibai declared "I shall not give up my Jhansi!" and died fighting on horseback, respected even by her British adversaries.',
@@ -429,9 +429,9 @@ const enquiryConfigs = [
         'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
       wordBank:
         'Scramble for Africa &bull; Berlin Conference &bull; Effective Occupation &bull; Maxim gun &bull; quinine &bull; Battle of Omdurman &bull; Rudyard Kipling &bull; E. D. Morel &bull; resource extraction',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 7 (The Berlin Conference Caricature &bull; 1884):</strong> Sketch European diplomats sitting around a map table slicing up a large cake labelled "Afrique" [🎂 cake labelled Africa &bull; 🗡️ carving knife &bull; 🗺️ imperial map].<br style="display:block; margin-top:2px;"><strong>Milestone 8 (The Maxim Machine Gun &bull; 1898):</strong> Sketch British colonial troops operating a Maxim machine gun mounted on a carriage [🔫 Maxim machine gun &bull; 💨 bullet smoke &bull; 🪖 khaki sun helmet].',
+        '<strong>Milestones 6 &amp; 8 (1884 &amp; 1898):</strong> Choose <strong>(A) Creative Sketch:</strong> European diplomats around a table carving up a cake labelled "Afrique", or Maxim gun crew at Omdurman [🎂 cake labelled Africa &bull; 🗡️ carving knife &bull; 🔫 Maxim gun] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Scramble for Africa" (1884–85 Berlin Conference Effective Occupation, Maxim gun &amp; quinine military edge, Morel "Black Man’s Burden" resource theft)',
     },
     leftPageQuip:
       'Hilaire Belloc captured the brutal technological reality of the Scramble: "Whatever happens, we have got / The Maxim Gun, and they have not."',
@@ -533,9 +533,9 @@ const enquiryConfigs = [
         'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
       wordBank:
         'Drain of Wealth &bull; Dadabhai Naoroji &bull; Crystal Palace &bull; Great Exhibition &bull; famine &bull; infrastructure &bull; railways &bull; Optimist vs Pessimist &bull; historiography',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 9 &amp; 10',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 9 (The Crystal Palace Exhibition &bull; 1851):</strong> Sketch the monumental glass-and-iron barrel roof of the Crystal Palace in Hyde Park [🏛️ glass palace &bull; ⚙️ giant steam engine &bull; 💎 Koh-i-Noor diamond].<br style="display:block; margin-top:2px;"><strong>Milestone 10 (Dadabhai Naoroji at Westminster &bull; 1892):</strong> Sketch Dadabhai Naoroji standing at the dispatch box in the House of Commons presenting his book to MPs [🏛️ Parliament chamber &bull; 📜 economic ledger &bull; 👓 Victorian statesman].',
+        '<strong>Milestone 8 &amp; Imperial Verdict (1851–1901):</strong> Choose <strong>(A) Creative Sketch:</strong> Crystal Palace barrel-vault glass roof with Koh-i-Noor diamond, or Dadabhai Naoroji presenting drain of wealth ledgers [🏛️ Crystal Palace &bull; 💎 Koh-i-Noor &bull; 📜 economic ledger] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Workshop vs Exploitation" (1851 Crystal Palace industrial supremacy, 25,000 miles colonial railways, Naoroji Drain of Wealth &amp; Victorian famines)',
     },
     leftPageQuip:
       'Dadabhai Naoroji, Britain’s first Indian MP, used official British records to prove that colonial taxation bled India of industrial capital.',
@@ -1400,8 +1400,8 @@ function compileEmpireWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1416,9 +1416,15 @@ function compileEmpireWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Portsmouth Royal Dockyard operates as the world’s largest industrial factory complex, building and maintaining the Royal Navy fleet that secures total command of global sea lanes at Trafalgar.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 2: 1813–1834 -->
@@ -1429,9 +1435,15 @@ function compileEmpireWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             British protectionist tariffs and steam-powered Lancashire mills flood India with cheap machine cloth; Dhaka’s historic handloom weaving collapses, impoverishing millions of weavers.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 3: 1857 -->
@@ -1442,9 +1454,15 @@ function compileEmpireWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Sepoys at Meerut revolt after being forced to bite paper cartridges greased with cow and pig fat, marching on Delhi to restore Emperor Bahadur Shah Zafar as symbolic head of the rebellion.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 4: 1858 -->
@@ -1455,9 +1473,15 @@ function compileEmpireWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             The Queen of Jhansi is killed fighting on horseback at Gwalior; Parliament abolishes the East India Company and passes the 1858 Government of India Act, inaugurating the direct British Raj.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1476,8 +1500,8 @@ function compileEmpireWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -1492,9 +1516,15 @@ function compileEmpireWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Britain launches the revolutionary iron-hulled steam warship HMS Warrior; protected by four-inch wrought iron armour plates, it renders all existing wooden navies instantaneously obsolete.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 6: 1884–1885 -->
@@ -1505,9 +1535,15 @@ function compileEmpireWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Fourteen European powers meet in Berlin to partition Africa under the principle of Effective Occupation; zero African leaders are invited as Europeans draw arbitrary border lines across the continent.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 7: 1889 -->
@@ -1518,9 +1554,15 @@ function compileEmpireWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Parliament passes the Naval Defence Act, legally requiring the Royal Navy to maintain a fleet of battleships equal to or greater than the combined naval strength of the next two strongest world navies.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 8: 1898–1901 -->
@@ -1531,9 +1573,15 @@ function compileEmpireWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiries 4 &amp; 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Automatic Maxim guns slaughter 10,000 Sudanese warriors at Omdurman; Dadabhai Naoroji publishes his book proving Britain extracted millions in unreturned taxes from India.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>

@@ -132,8 +132,9 @@ const enquiryConfigs = [
         'A primary factor was... &bull; In particular, this caused... &bull; Furthermore, this was significant because... &bull; As a direct result... &bull; Consequently, this led to...',
       wordBank:
         'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 1 (Wittenberg Door &bull; 1517):</strong> Sketch Martin Luther nailing the 95 Theses to the church door while the Pope counts indulgence coins [🔨 hammer &bull; 📜 95 Theses &bull; 💰 crossed-out gold coins].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (The Double-Crown Snip &amp; Abbey Meltdown &bull; 1534–40):</strong> Sketch Henry VIII using golden shears to snip the papal cable while Cromwell carts away abbey lead [✂️ shears &bull; 👑 double crown &bull; 🛒 melted lead handcart].',
+        '<strong>Milestones 1 &amp; 2 (1517–1540):</strong> Choose <strong>(A) Creative Sketch:</strong> Luther nailing 95 Theses to Wittenberg door, or Henry VIII severing papal ties while Cromwell melts abbey lead [🔨 hammer &bull; 📜 95 Theses &bull; ✂️ royal shears &bull; 🛒 melted lead] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Reformation &amp; Royal Supremacy" (corrupt indulgence trade, 1534 Act of Supremacy, dissolution of 800 monasteries)',
     },
     leftPageQuip:
       'In 1534, questioning Henry VIII’s marriage was high treason punishable by death at Tower Hill.',
@@ -234,9 +235,9 @@ const enquiryConfigs = [
         wordBank:
           'Via Media &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity &bull; Book of Common Prayer &bull; Recusancy fines &bull; outward conformity',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenge 3',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 3 (The Tudor Tightrope Walk &bull; 1559):</strong> Sketch Queen Elizabeth I balancing on a tightrope labelled ‘Via Media’, holding an English Protestant Bible in one hand and a Catholic crucifix in the other, smiling as Catholic and Puritan extremists shout below [🎪 tightrope walker &bull; 📖 open Bible &bull; ⚖️ balancing cross].',
+        '<strong>Milestone 3 (1559):</strong> Choose <strong>(A) Creative Sketch:</strong> Queen Elizabeth balancing on a tightrope labelled \'Via Media\', holding English Bible and crucifix [🎪 tightrope walker &bull; 📖 English Bible &bull; ⚖️ crucifix balance] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Elizabethan Middle Way" (1559 Act of Supremacy, Book of Common Prayer uniformity, recusancy fines)',
     },
     leftPageQuip:
       'Elizabeth I had ‘no desire to make windows into men’s souls’—pay your Sunday fines and keep private doubts to yourself.',
@@ -344,9 +345,9 @@ const enquiryConfigs = [
         wordBank:
           'Spanish Armada &bull; Medina Sidonia &bull; crescent formation &bull; Calais &bull; fireships (hellburners) &bull; Battle of Gravelines &bull; race-built galleons &bull; culverins &bull; Protestant Wind',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenge 4',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 4 (The Midnight Hellburners of Calais &bull; 1588):</strong> Sketch eight blazing English fireships crashing into the anchored Spanish Armada at Calais at midnight, with Spanish galleons desperately slicing anchor cables in panic as the crescent formation shatters [🔥 blazing sails &bull; ⚓ sliced anchor cable &bull; ⛵ scattering galleons].',
+        '<strong>Milestone 4 (1588):</strong> Choose <strong>(A) Creative Sketch:</strong> Eight blazing English fireships crashing into anchored Spanish Armada at Calais at midnight [🔥 blazing sails &bull; ⚓ cut anchor cables &bull; ⛵ scattering galleons] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Defeat of the Armada" (Calais fireships panic, Gravelines standoff broadsides, Protestant Wind storms)',
     },
     leftPageQuip:
       'The Armada carried 130 ships and 30,000 soldiers. Unfortunately for Philip II, none of it stopped English fireships.',
@@ -452,9 +453,9 @@ const enquiryConfigs = [
         'A decisive factor was... &bull; In particular, this led to... &bull; Furthermore, an additional cause was... &bull; Crucially, this exacerbated tensions because... &bull; Consequently, this culminated in...',
       wordBank:
         'Divine Right of Kings &bull; Personal Rule (1629–1640) &bull; Ship Money &bull; Oliver Cromwell &bull; New Model Army &bull; Battle of Naseby &bull; ‘Man of Blood’ &bull; Second Civil War (1648) &bull; Pride’s Purge &bull; Rump Parliament &bull; Regicide (30 Jan 1649)',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 5 (The Inland Navy Absurdity &bull; 1629–40):</strong> Sketch King Charles I’s royal sheriff demanding coastal Ship Money gold from a bewildered farmer in a landlocked field miles from the sea [👨‍🌾 bewildered farmer &bull; 🌾 landlocked haystack &bull; 💰 royal tax bag].<br style="display:block; margin-top:2px;"><strong>Milestone 6 (The Crown on the Block &bull; 1649):</strong> Sketch the executioner’s chopping block outside the Banqueting House at Whitehall on 30 January 1649, with the fallen royal crown resting on the block before a silent crowd [🪓 chopping block &bull; 👑 fallen crown &bull; 🏛️ Whitehall window].',
+        '<strong>Milestones 5 &amp; 6 (1629–1649):</strong> Choose <strong>(A) Creative Sketch:</strong> Royal sheriff demanding Ship Money in an inland field, or executioner\'s chopping block outside Whitehall [💰 inland Ship Money &bull; 🪓 chopping block &bull; 👑 fallen crown] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Road to Regicide" (11 years Personal Rule, Battle of Naseby New Model Army, 30 Jan 1649 Charles I execution)',
     },
     leftPageQuip:
       'Charles I insisted no earthly court could try a king; three days later, Parliament had him beheaded outside Whitehall.',
@@ -569,9 +570,9 @@ const enquiryConfigs = [
         wordBank:
           'Regicide (1649) &bull; Divine Right of Kings &bull; High Court of Justice &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William and Mary &bull; Constitutional Monarchy &bull; Parliamentary Sovereignty',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
+      timelineMissionTitle: 'Timeline Task &bull; pp. 8–9',
       timelineMission:
-        '<strong>Milestone 7 (The Midnight Thames Splash &bull; 1688):</strong> Sketch King James II fleeing London by rowboat at midnight, secretly hurling the heavy Great Seal of the Realm into the cold, dark River Thames [🚣 rowboat in fog &bull; 🌊 sinking Great Seal &bull; 👑 cloaked king].<br style="display:block; margin-top:2px;"><strong>Milestone 8 (The Clipped Crown Contract &bull; 1689):</strong> Sketch Parliament presenting the Crown to William III and Mary II, with legal hedge-clippers trimming away royal powers over taxes, laws, and standing armies [📜 legal scroll &bull; 👑 trimmed crown &bull; 🏛️ parliamentary mace].',
+        '<strong>Milestones 7 &amp; 8 (1688–1689):</strong> Choose <strong>(A) Creative Sketch:</strong> James II throwing the Great Seal into the foggy Thames, or Parliament presenting clipped crown to William and Mary [🚣 rowboat in fog &bull; 🌊 sinking Great Seal &bull; 📜 Bill of Rights contract] &bull; OR &bull; <strong>(B) Mind Map:</strong> "Constitutional Monarchy" (fears of Catholic dynasty, 1688 Dutch invasion, 1689 Bill of Rights constraints)',
     },
     leftPageQuip:
       'In 1689, William III accepted the Bill of Rights to secure war taxes, legally subordinating the Crown to Parliament.',
@@ -2094,8 +2095,8 @@ function compileMonarchyWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -2110,9 +2111,15 @@ function compileMonarchyWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Martin Luther nails his 95 Theses to the Wittenberg church door, attacking corrupt papal indulgences and shattering Catholic unity; King Henry VIII writes in defence of the Pope, earning the title ‘Defender of the Faith’.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 2: 1534–1540 -->
@@ -2123,9 +2130,15 @@ function compileMonarchyWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Parliament passes the Act of Supremacy declaring Henry VIII ‘Supreme Head’ of the Church; Thomas Cromwell surveys and dissolves over 800 monasteries, confiscating gold, lead, and church lands for the Crown.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 3: 1559 -->
@@ -2136,9 +2149,15 @@ function compileMonarchyWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             The Acts of Supremacy and Uniformity establish the Via Media (‘Middle Way’), making Elizabeth ‘Supreme Governor’ and enforcing the 1559 Book of Common Prayer.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 4: 1588 -->
@@ -2149,9 +2168,15 @@ function compileMonarchyWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             English fireships scatter King Philip II’s 130-ship Armada off Calais; broadside cannons and fierce North Sea gales destroy Spanish hopes of restoring Catholicism.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>
@@ -2170,8 +2195,8 @@ function compileMonarchyWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 2.5px 6px; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Choice:</strong> For each milestone, choose either <strong>(A) Creative Sketch:</strong> draw historical symbols, dramatic scenes, or visual metaphors; OR <strong>(B) Mind Map:</strong> create a central concept bubble with 3 key historical facts.
         </div>
       </div>
 
@@ -2186,9 +2211,15 @@ function compileMonarchyWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Charles I rules without Parliament for eleven years, raising unparliamentary funds through Ship Money; John Hampden’s refusal to pay sparks nationwide tax resistance.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 6: 1649 -->
@@ -2199,9 +2230,15 @@ function compileMonarchyWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Pride’s Purge clears moderate MPs; the Rump Parliament convicts Charles I of high treason as a ‘tyrant, traitor, and murderer’; the King is beheaded on 30 January 1649.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 7: 1688 -->
@@ -2212,9 +2249,15 @@ function compileMonarchyWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             Fearing a permanent Catholic dynasty under James II, seven prominent peers invite Dutch Prince William of Orange; James flees and William lands with 15,000 troops.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 8: 1689 -->
@@ -2225,9 +2268,15 @@ function compileMonarchyWorkbook() {
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.25;">
             William III and Mary II accept the Crown subject to the Bill of Rights, establishing that the King cannot raise taxes, suspend laws, or keep a standing army without Parliament.
           </p>
+          <!-- Open Dual-Coding / Concept Web Drawing Canvas for Pupils -->
+          <div style="flex: 1; min-height: 16mm; background: #ffffff; border-bottom: 1px solid #cbd5e1; margin-bottom: 2px; display: flex; flex-direction: column; justify-content: flex-end;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.3px; text-align: right; padding-right: 4px; padding-bottom: 1px;">
+              [ Choice A: Creative Sketch &bull; OR &bull; Choice B: Mind Map ]
+            </div>
+          </div>
         </div>
 
       </div>

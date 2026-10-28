@@ -522,7 +522,7 @@ function attachReaderEvents() {
     btnExit.onclick = () => {
       stopAudioNarration();
       if (window.switchView) {
-        window.switchView('booklet', currentReader.unitId);
+        window.switchView('lessons', currentReader.unitId);
       }
     };
   }

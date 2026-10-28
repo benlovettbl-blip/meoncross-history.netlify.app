@@ -44,6 +44,15 @@ const SECOND_EMPIRE_PEDAGOGY = {
         "Coercive De-Industrialization of the Indian Economy: Once steam-powered British mechanization lowered production costs, the British government used its political dominance to eliminate all import duties on British manufactured textiles entering India; this flooded Indian bazaars with cheap Lancashire machine-made cloth, destroying the livelihoods of millions of skilled Bengali weavers and reducing India from the world's premier textile exporter into a dependent, impoverished supplier of raw cotton for British mills.",
       ],
     },
+    {
+      match: /East India House|east_india_house/i,
+      hinge_question:
+        'Why was a private joint-stock commercial company in London permitted by Parliament to govern a foreign empire and wage offensive wars?',
+      discussion_ideas: [
+        'Corporate Monopoly Ruling a Subcontinent: The imposing neoclassical facade of East India House, with its six Ionic columns and high pediment topped by Britannia, visually projected royal and imperial authority; yet it was the boardroom of a private corporation of City of London investors who ruled over 200 million people without constitutional accountability to the populations they taxed.',
+        'Global Trade and City Commerce: The foreground reveals Persian and Asian merchants in turbans and robes conducting business on the London cobblestones alongside English merchants and draymen moving heavy barrels of colonial commodities, illustrating how the plunder of India and oceanic commerce directly transformed London into the financial capital of the global economy.',
+      ],
+    },
   ],
 
   // LESSON 2: How did corporate exploitation spark the 1857 Indian Rebellion and destroy the East India Company?
@@ -80,6 +89,15 @@ const SECOND_EMPIRE_PEDAGOGY = {
         'Why did Queen Victoria promise religious tolerance and respect for Indian princes after the 1857 uprising?',
       discussion_ideas: [
         "The Royal Proclamation of 1858 marked the formal dissolution of the discredited East India Company and the direct assumption of rule by the British Crown (the British Raj). Recognizing that the catastrophic rebellion of 1857 was provoked by aggressive Christian missionary interference, cultural arrogance, and Lord Dalhousie's annexation of native princely states under the Doctrine of Lapse, Queen Victoria and Prime Minister Lord Derby sought to pacify Indian society through conservative conciliation. The proclamation explicitly pledged that the British government would neither impose Christianity nor interfere in ancient religious customs and caste traditions, while promising to honor the territorial integrity and treaty rights of remaining Indian princes. By transforming loyal maharajas and conservative landowners into aristocratic allies of the Crown, the British regime sought to construct an enduring bulwark against future nationalist uprisings.",
+      ],
+    },
+    {
+      match: /Military Campaign Map|indian_rebellion_1857/i,
+      hinge_question:
+        'Why was the geographic concentration of the rebellion in northern India both its greatest strength and its fatal military weakness?',
+      discussion_ideas: [
+        'Strategic Concentration along the Grand Trunk Highway: The uprising was centered primarily along the fertile Gangetic plain and Grand Trunk Road, connecting garrison towns like Meerut, Delhi, Cawnpore, and Lucknow where high-caste Hindu and Muslim sepoys shared common grievances over pay, pensions, and religious desecration.',
+        'Regional Fragmentation and Colonial Advantage: Crucially, the map reveals that vast swathes of India—including Bombay, Madras, and newly conquered Punjab—did not join the rebellion, allowing the British to deploy loyal Sikh and Gurkha regiments, secure telegraph communications, and use railway lines to isolate and crush rebel centres one by one.',
       ],
     },
   ],
@@ -120,6 +138,15 @@ const SECOND_EMPIRE_PEDAGOGY = {
         "The Eureka Stockade rebellion of December 1854 on the Ballarat goldfields demonstrated that the democratic aspirations of the British working class had traveled across the globe to Australia. Tens of thousands of international and British diggers resented the authoritarian colonial government, which imposed an extortionate monthly gold licence fee of 30 shillings regardless of whether a miner found gold, enforced through brutal, armed police raids ('digger hunts'). Furthermore, the diggers were completely disenfranchised, possessing zero representation in the colonial Legislative Council. Under the Southern Cross flag, led by Peter Lalor, the miners swore an oath to defend their liberties and built a wooden stockade to resist royal troops. Although royal soldiers brutally crushed the stockade, killing over twenty diggers, the uprising horrified the public and forced colonial authorities to replace the hated licence with an affordable 'Miner's Right', grant universal male suffrage, and establish parliamentary democracy in Victoria.",
       ],
     },
+    {
+      match: /Governor Arthur’s Proclamation Board|governor_arthur_proclamation_board/i,
+      hinge_question:
+        'Why did colonial authorities use visual cartoon panels rather than written treaties, and how did this board conceal the violent reality of frontier dispossession?',
+      discussion_ideas: [
+        'Colonial Propaganda vs Frontier Reality: The board claimed that British justice was impartial and colour-blind, showing a settler hanging from a tree for shooting an Aboriginal man; in historical fact, the colonial government declared martial law in 1828, deploying settler roving parties and the "Black Line" military cordon to violently clear Indigenous Tasmanians off their ancestral hunting grounds.',
+        'Visual Communication Across Cultural Divides: Recognizing that Indigenous Tasmanians did not read English, the colonial administration turned to sequential graphic art as an instrument of state authority, attempting to enforce European notions of individual criminal guilt and crown sovereignty without negotiating formal land treaties.',
+      ],
+    },
   ],
 
   // LESSON 4: Why did European powers scramble for Africa, and how was empire justified?
@@ -158,6 +185,15 @@ const SECOND_EMPIRE_PEDAGOGY = {
         "The Physical Destruction of Indigenous Societies: Morel emphasized that modern industrial exploitation was far more deadly to the African than ancient chattel slavery: by confiscating land, imposing forced rubber quotas under penalty of mutilation and murder (as in Leopold II's Congo Free State), and destroying traditional agricultural food systems, European syndicates tore apart African family life and inflicted demographic catastrophe.",
       ],
     },
+    {
+      match: /King Lobengula|lobengula_letter/i,
+      hinge_question:
+        'Why did Cecil Rhodes and European imperialists rely on deceptive legal contracts alongside Maxim guns to seize African territories?',
+      discussion_ideas: [
+        'The Fraud of Imperial Concessions: King Lobengula\'s letter exposes the legal deceit at the heart of the Scramble for Africa: colonial chartered companies had interpreters deliberately mistranslate terms, securing signatures from African rulers that ceded total sovereignty and mineral rights under the false pretense of granting minor prospecting permits.',
+        'African Diplomatic Agency and the Chameleon Metaphor: Lobengula\'s evocative comparison of Britain to a stalking chameleon capturing a helpless fly shows acute political awareness of imperial expansion tactics: advancing step by step through trade, missionaries, and treaties before deploying military force (the British South Africa Company\'s Maxim guns) to annihilate African independence.',
+      ],
+    },
   ],
 
   // LESSON 5: Who truly benefited from the British Empire?
@@ -194,6 +230,15 @@ const SECOND_EMPIRE_PEDAGOGY = {
         'How does Leech use visual contrast in Source D to challenge the Victorian narrative of universal industrial progress?',
       discussion_ideas: [
         "John Leech's celebrated Punch cartoon 'Capital and Labour' uses brutal visual antithesis to demolish the triumphant Victorian narrative that industrialization was lifting all boats. Leech splits the page into two morally conflicting worlds: the upper panel shows 'Capital'—a luxurious, sunlit drawing room where a corpulent mine-owner sits surrounded by velvet cushions, fine wines, and obedient servants, enjoying idle aristocratic decadence. The lower panel plunges into the subterranean gloom of 'Labour'—a dank, rat-infested coal mine where barefoot children and skeletal women crawl on hands and knees dragging heavy coal carts in iron chains. By juxtaposing lavish capitalist leisure with dehumanizing industrial slavery, Leech visually forces comfortable readers to confront the fundamental moral truth of the Victorian economy: that the dazzling wealth and imperial power of modern Britain was bought through the direct physical torment and subjugation of the working class.",
+      ],
+    },
+    {
+      match: /Lord Curzon|curzon_speech/i,
+      hinge_question:
+        'Why did Victorian imperial administrators like Curzon view British rule as a "providential instrument for good", while Indian nationalists viewed it as systematic economic exploitation?',
+      discussion_ideas: [
+        'The Imperialist "Optimist" Self-Justification: Curzon articulates the high-Victorian paternalist belief that British rule was a moral blessing: substituting uniform British law for local despotism, eliminating inter-tribal warfare, and building the technological sinews of modern life (canals, railways, and telegraphs).',
+        'Conflict with Nationalist Drain Theory: Curzon\'s claim that railways and canals shielded Indians from famine stood in stark contrast to the analysis of Dadabhai Naoroji and Romesh Chunder Dutt, who proved that British railways were built with guaranteed British investor profits and accelerated famine by rushing grain out of starving rural districts to export markets in Britain.',
       ],
     },
   ],

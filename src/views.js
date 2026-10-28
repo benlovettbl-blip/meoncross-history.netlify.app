@@ -1352,8 +1352,8 @@ export function renderInteractiveQuiz() {
             <span style="color: #64748b; font-size: 0.82rem;">${retrievalTitle} and complete pupil workbooks with full teacher mark schemes are available in Workbooks &amp; Textbooks.</span>
           </div>
         </div>
-        <button type="button" onclick="window.switchView('booklet', '${unitId}')" style="background: #f8fafc; border: 1.5px solid #cbd5e1; color: #0f172a; padding: 8px 16px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#e2e8f0';" onmouseout="this.style.background='#f8fafc';">
-          <span>Go to Workbooks &amp; Textbooks</span> <i class="fa-solid fa-arrow-right"></i>
+        <button type="button" onclick="window.switchView('lessons', '${unitId}')" style="background: #f8fafc; border: 1.5px solid #cbd5e1; color: #0f172a; padding: 8px 16px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#e2e8f0';" onmouseout="this.style.background='#f8fafc';">
+          <span>View Unit Textbooks &amp; Workbooks</span> <i class="fa-solid fa-arrow-right"></i>
         </button>
       </div>
 
@@ -2790,8 +2790,8 @@ export async function renderMockExamsView() {
         <button class="btn" data-action="switch-view" data-view="lessons" data-unit="${unitId}" style="padding: 9px 18px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; background: #ffffff; color: #000000; border: 2px solid #000000;">
           &larr; Return to Lessons
         </button>
-        <button class="btn" data-action="switch-view" data-view="booklet" data-unit="${unitId}" style="padding: 9px 18px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; background: #000000; color: #ffffff; border: 2px solid #000000;">
-          Visit Print &amp; PDF Hub
+        <button class="btn" data-action="switch-view" data-view="lessons" data-unit="${unitId}" style="padding: 9px 18px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; background: #000000; color: #ffffff; border: 2px solid #000000;">
+          View Master Textbooks &amp; Workbooks
         </button>
       </div>
     </div>

@@ -288,19 +288,6 @@ function buildCompanionHtml(unitData) {
       margin: 3px 0 4px 0;
       display: flex;
       align-items: center;
-      gap: 6px;
-    }
-    .spine-lbl {
-      font-size: 6.2pt;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      color: #0f172a;
-      white-space: nowrap;
-      border-right: 1.2px solid #0f172a;
-      padding-right: 6px;
-      line-height: 1.1;
-      text-align: center;
     }
     .spine-flow {
       display: flex;
@@ -621,29 +608,9 @@ function buildCompanionHtml(unitData) {
       letter-spacing: 0.3px;
       white-space: nowrap;
     }
-    .score-line {
-      display: inline-block;
-      width: 28px;
-      border-bottom: 1.2px solid #94a3b8;
-      height: 13px;
-      margin-right: 3px;
-      vertical-align: middle;
-    }
     .score-denom {
       color: #0f172a;
       font-weight: 800;
-    }
-    .td-date-line {
-      display: inline-block;
-      width: 52px;
-      border-bottom: 1.2px solid #94a3b8;
-      height: 13px;
-    }
-    .td-sign-line {
-      display: inline-block;
-      width: 85px;
-      border-bottom: 1.2px solid #94a3b8;
-      height: 13px;
     }
 
     /* PROTOCOLS BANNER */
@@ -791,10 +758,10 @@ function buildCompanionHtml(unitData) {
                 <div class="td-focus-title">${enq.topicCode}: ${enq.title}</div>
                 <div class="td-focus-desc">${enq.focus}</div>
               </td>
-              <td class="td-center"><span class="td-date-line"></span></td>
-              <td class="td-center td-score-cell"><span class="score-line"></span><span class="score-denom">/ 16</span></td>
-              <td class="td-center td-score-cell"><span class="score-line"></span><span class="score-denom">/ 16</span></td>
-              <td class="td-center"><span class="td-sign-line"></span></td>
+              <td class="td-center"></td>
+              <td class="td-center td-score-cell"><span class="score-denom">/ 16</span></td>
+              <td class="td-center td-score-cell"><span class="score-denom">/ 16</span></td>
+              <td class="td-center"></td>
             </tr>
           `).join('')}
         </tbody>
@@ -841,7 +808,6 @@ function buildCompanionHtml(unitData) {
 
         ${enq.milestones && enq.milestones.length ? `
         <div class="spine-strip">
-          <div class="spine-lbl">Chronological<br>Spine</div>
           <div class="spine-flow">
             ${enq.milestones.map((m, mIdx) => `
               <div class="spine-node">
@@ -864,7 +830,7 @@ function buildCompanionHtml(unitData) {
               </div>
               <div class="dual-lines-container">
                 <div class="handwriting-line">
-                  <span class="line-prefix">Core Fact:</span>
+                  <span class="line-prefix">Fact:</span>
                   <span class="line-rule"></span>
                 </div>
                 <div class="handwriting-line">

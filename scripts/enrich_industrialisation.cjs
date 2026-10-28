@@ -44,6 +44,15 @@ const INDUSTRIALISATION_PEDAGOGY = {
         "Nationalist Commercial Pride and Imperial Autonomy: By freeing Britain from dependence on Baltic iron imports, Cort's breakthrough was celebrated as a patriotic triumph of British science and imperial self-sufficiency, embodying the Enlightenment belief that British commercial ingenuity and free trade were creating an invincible global empire.",
       ],
     },
+    {
+      match: /Patent Specification No\. 1420|Grooved Rollers|cort_rollers_patent/i,
+      hinge_question:
+        'Why was the invention of grooved rollers just as important as the puddling furnace in enabling Britain to mass-produce wrought iron for the Royal Navy?',
+      discussion_ideas: [
+        'A Fifteen-Fold Leap in Industrial Velocity: Cort\'s grooved rolling cylinders bypassed the ancient human bottleneck of blacksmithing: where teams of hammermen could only produce a single iron bar through hours of punishing manual labour, Cort\'s water-powered rollers spat out finished, uniform naval bars in minutes.',
+        'Naval Self-Sufficiency and Imperial Security: By compressing the decarburized wrought iron blooms while expelling brittle slag, grooved rolling created ductile, high-tensile iron bolts and hoops that met the rigorous Admiralty standards tested at Portsmouth Dockyard, freeing Britain from reliance on Swedish and Russian iron on the eve of the Napoleonic Wars.',
+      ],
+    },
   ],
 
   // LESSON 2: Was industrial work progress or punishment?
@@ -82,6 +91,15 @@ const INDUSTRIALISATION_PEDAGOGY = {
         'While parliamentary statistical tables and blue books provided undeniable numerical evidence of industrial exploitation, they were read almost exclusively by educated politicians and civil servants. High-impact engravings and political prints, by contrast, communicated the visceral cruelty of the factory floor directly to the wider public: showing frail, barefoot young children in tattered clothes cowering beneath towering iron looms while brutish overlookers brandished heavy straps. These poignant visual images mobilized powerful middle-class Christian empathy, moral indignation, and philanthropic pressure, transforming economic debate into an urgent humanitarian crusade that factory owners could no longer dismiss as abstract political theory.',
       ],
     },
+    {
+      match: /Factory Act 1833|factory_act_1833/i,
+      hinge_question:
+        'Why was the creation of independent factory inspectors more important than merely passing laws restricting child labour?',
+      discussion_ideas: [
+        'The Collapse of Unregulated Laissez-Faire: Prior to 1833, British factory owners operated under absolute laissez-faire, treating child labour as a private contract between employer and parent with zero government interference; the 1833 Act established the revolutionary constitutional principle that the state possessed the duty to regulate capitalist industry and protect vulnerable human life.',
+        'Enforcement via Independent Crown Inspectors: Previous child labour acts (such as the 1802 and 1819 Acts) were completely ignored because local magistrates were often mill owners themselves; by appointing four professional, salaried inspectors (such as Leonard Horner) with legal authority to enter mills unannounced, Parliament created real, enforceable state accountability.',
+      ],
+    },
   ],
 
   // LESSON 3: Did industrialisation make British towns unlivable?
@@ -118,6 +136,15 @@ const INDUSTRIALISATION_PEDAGOGY = {
         'How did the construction of underground interceptor sewers demonstrate a decisive shift from individual laissez-faire to collective state public health engineering?',
       discussion_ideas: [
         "Throughout the early nineteenth century, British municipal governance adhered strictly to laissez-faire philosophy: waste disposal was treated as an individual householder's private responsibility, resulting in over 200,000 leaking cesspools and raw sewage discharging directly into the Thames. The construction of Sir Joseph Bazalgette's 1,100-mile subterranean interceptor sewer network marked the birth of modern municipal socialism and civil public health engineering. Prompted by the unbearable stench of the 1858 'Great Stink' that threatened Parliament itself, the Metropolitan Board of Works spent over £4 million in public tax revenues to construct monumental brick tunnels that intercepted London's waste and diverted it twelve miles downstream before discharging into the tidal Thames. This massive civil engineering project proved that urban survival in an industrial society required coordinated state planning, public investment, and centralized sanitation infrastructure over individual private enterprise.",
+      ],
+    },
+    {
+      match: /Father Thames|father_thames/i,
+      hinge_question:
+        'How did satirical magazines like Punch use dark humor to compel a reluctant Parliament to fund massive civil engineering projects like Bazalgette’s sewers?',
+      discussion_ideas: [
+        'Personification of Lethal Waterborne Epidemics: Leech personifies the Thames not as the romantic, bountiful river god of British folklore, but as a filthy, bedraggled monster crawling from the slime to present his skeletal, diseased children—Diphtheria, Scrofula, and Cholera—to a refined, classical Britannia representing the city of London, graphically connecting environmental filth to childhood mortality.',
+        'Political Pressure Shaming Parliament into Action: The subtitle mocks Parliament (\'A Design for a Fresco in the New Houses of Parliament\'), highlighting the hypocrisy of Victorian politicians who spent millions gilding the Palace of Westminster while refusing to spend public money on municipal sewers; within eighteen days of this cartoon appearing, Parliament passed emergency legislation authorizing Bazalgette\'s £3 million interceptor sewer system.',
       ],
     },
   ],

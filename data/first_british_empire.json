@@ -767,7 +767,11 @@
             "Author: Nathaniel Dance, prominent British royal and high-society portrait painter.",
             "Audience: British Parliament, East India Company directors, and the London political elite.",
             "Motive: To project Clive's martial authority and legitimize corporate expansion in the East Indies."
-          ]
+          ],
+          "source_context": "Clive arrived in Madras as an impoverished nineteen-year-old clerk. Exploiting the fragmentation of the Mughal Empire, he organized sepoy regiments and formed alliances with disaffected Indian bankers and generals. **Hinge Question:** Should a private trading corporation ever be permitted to recruit a private army and govern an empire?",
+          "teacher_notes": {
+            "source_context": "Clive arrived in Madras as an impoverished nineteen-year-old clerk. Exploiting the fragmentation of the Mughal Empire, he organized sepoy regiments and formed alliances with disaffected Indian bankers and generals. **Hinge Question:** Should a private trading corporation ever be permitted to recruit a private army and govern an empire?"
+          }
         },
         {
           "id": "fbe_l1_src_b",
@@ -811,7 +815,11 @@
             "Author: Benjamin West, official historical painter to King George III and President of the Royal Academy.",
             "Audience: British monarchs, aristocrats, and the Georgian public visiting London exhibitions.",
             "Motive: To depict imperial conquest as a dignified, lawful diplomatic ceremony sanctified by Mughal consent."
-          ]
+          ],
+          "source_context": "Following the Battle of Buxar (1764), Mughal Emperor Shah 'Alam II was coerced into signing the Treaty of Allahabad. This transferred the right to collect land revenues from 20 million people directly to the East India Company. **Hinge Question:** Did the Treaty of Allahabad represent genuine diplomatic cooperation or coerced imperial plunder?",
+          "teacher_notes": {
+            "source_context": "Following the Battle of Buxar (1764), Mughal Emperor Shah 'Alam II was coerced into signing the Treaty of Allahabad. This transferred the right to collect land revenues from 20 million people directly to the East India Company. **Hinge Question:** Did the Treaty of Allahabad represent genuine diplomatic cooperation or coerced imperial plunder?"
+          }
         },
         {
           "id": "fbe_l1_src_c",
@@ -855,7 +863,11 @@
             "Author: The English Crown (Queen Elizabeth I and the Privy Council).",
             "Audience: The 218 founding merchant venturers of London and foreign maritime rivals.",
             "Motive: To challenge Dutch and Portuguese spice trade dominance without expending direct Crown treasury funds."
-          ]
+          ],
+          "source_context": "Elizabeth I granted 218 London merchants a 15-year exclusive trade monopoly east of the Cape of Good Hope. The charter granted extraordinary sovereign powers to pass laws, build forts, and maintain armed vessels. **Hinge Question:** Why did European monarchs rely on chartered joint-stock companies to expand overseas rather than running imperial expeditions directly?",
+          "teacher_notes": {
+            "source_context": "Elizabeth I granted 218 London merchants a 15-year exclusive trade monopoly east of the Cape of Good Hope. The charter granted extraordinary sovereign powers to pass laws, build forts, and maintain armed vessels. **Hinge Question:** Why did European monarchs rely on chartered joint-stock companies to expand overseas rather than running imperial expeditions directly?"
+          }
         },
         {
           "id": "fbe_l1_src_d",
@@ -899,7 +911,11 @@
             "Author: British military surveyors / Major James Rennell (Surveyor General of Bengal).",
             "Audience: East India Company military planners, British commanders, and historians.",
             "Motive: To record the operational maneuvers that eliminated French influence in Bengal and established British military supremacy."
-          ]
+          ],
+          "source_context": "At Plassey, Clive fielded 3,000 troops against Siraj ud-Daulah's 50,000. Before the engagement, Clive negotiated a secret conspiracy with Mir Jafar, promising him the throne in return for withholding his 15,000 cavalry. **Hinge Question:** If Mir Jafar had remained loyal to Siraj ud-Daulah at Plassey, would British rule in India have ever begun?",
+          "teacher_notes": {
+            "source_context": "At Plassey, Clive fielded 3,000 troops against Siraj ud-Daulah's 50,000. Before the engagement, Clive negotiated a secret conspiracy with Mir Jafar, promising him the throne in return for withholding his 15,000 cavalry. **Hinge Question:** If Mir Jafar had remained loyal to Siraj ud-Daulah at Plassey, would British rule in India have ever begun?"
+          }
         },
         {
           "id": "fbe_l1_src_e",
@@ -943,7 +959,11 @@
             "Author: East India Company mint masters operating the provincial Murshidabad mint.",
             "Audience: Indian merchants, bankers, revenue collectors, and provincial populations.",
             "Motive: To maintain economic liquidity, extract agricultural taxation, and prevent civil resistance against colonial currency."
-          ]
+          ],
+          "source_context": "Even after seizing total political and economic control of Bengal, the Company continued minting silver coins displaying the name and regnal year of Mughal Emperor Shah 'Alam II. **Hinge Question:** Why is maintaining familiar symbols and currency often more effective in securing imperial conquest than imposing alien foreign institutions?",
+          "teacher_notes": {
+            "source_context": "Even after seizing total political and economic control of Bengal, the Company continued minting silver coins displaying the name and regnal year of Mughal Emperor Shah 'Alam II. **Hinge Question:** Why is maintaining familiar symbols and currency often more effective in securing imperial conquest than imposing alien foreign institutions?"
+          }
         }
       ],
       "teacher_notes": {
@@ -1499,7 +1519,11 @@
             "Author: Plymouth Abolition Committee / Society for Effecting the Abolition of the Slave Trade (Thomas Clarkson).",
             "Audience: Members of Parliament, the British reading public, and transatlantic sympathizers.",
             "Motive: To expose the systematic cruelty of Liverpool slave merchants and demand legislative prohibition of the trade."
-          ]
+          ],
+          "source_context": "Even under the 1788 Regulated Slave Trade Act which placed limits on ship density, captive men were allotted a space just 6 feet by 16 inches. In previous voyages, the Brookes had carried over 600 people in suffocating holds. **Hinge Question:** Why was a precise, technical diagram of a ship more persuasive to eighteenth-century politicians than emotional written speeches?",
+          "teacher_notes": {
+            "source_context": "Even under the 1788 Regulated Slave Trade Act which placed limits on ship density, captive men were allotted a space just 6 feet by 16 inches. In previous voyages, the Brookes had carried over 600 people in suffocating holds. **Hinge Question:** Why was a precise, technical diagram of a ship more persuasive to eighteenth-century politicians than emotional written speeches?"
+          }
         },
         {
           "id": "fbe_l2_src_b",
@@ -1543,7 +1567,11 @@
             "Author: Daniel Orme (engraver) / Olaudah Equiano (author, publisher, and activist).",
             "Audience: British middle- and upper-class readers, politicians, and religious congregations.",
             "Motive: To establish Equiano's moral and intellectual authority as an independent author exposing chattel slavery."
-          ]
+          ],
+          "source_context": "Kidnapped as a child from the Igbo kingdom in modern Nigeria, Equiano survived the horrors of the Middle Passage and enslavement in Virginia and the Caribbean. Having purchased his freedom, he settled in London as a leading abolitionist writer. **Hinge Question:** Why was firsthand testimony from formerly enslaved survivors essential to dismantling the moral legitimacy of the slave trade?",
+          "teacher_notes": {
+            "source_context": "Kidnapped as a child from the Igbo kingdom in modern Nigeria, Equiano survived the horrors of the Middle Passage and enslavement in Virginia and the Caribbean. Having purchased his freedom, he settled in London as a leading abolitionist writer. **Hinge Question:** Why was firsthand testimony from formerly enslaved survivors essential to dismantling the moral legitimacy of the slave trade?"
+          }
         },
         {
           "id": "fbe_l2_src_c",
@@ -1587,7 +1615,11 @@
             "Author: British industrial metalworkers in Liverpool and Birmingham.",
             "Audience: Slave ship captains, merchant crews, and captive enslaved people.",
             "Motive: To enforce total physical submission and ensure maximum delivery of living human property to American markets."
-          ]
+          ],
+          "source_context": "British industrial cities profited immensely from manufacturing the instruments of enslavement. Male captives aboard Guineamen were locked into iron leg irons for the entire 6 to 12-week Atlantic voyage. **Hinge Question:** How did British manufacturing industries in northern England profit directly from the infrastructure of human enslavement?",
+          "teacher_notes": {
+            "source_context": "British industrial cities profited immensely from manufacturing the instruments of enslavement. Male captives aboard Guineamen were locked into iron leg irons for the entire 6 to 12-week Atlantic voyage. **Hinge Question:** How did British manufacturing industries in northern England profit directly from the infrastructure of human enslavement?"
+          }
         },
         {
           "id": "fbe_l2_src_d",
@@ -1631,7 +1663,11 @@
             "Author: David & John Deas, prominent transatlantic slave merchants and auction brokers.",
             "Audience: Wealthy rice, cotton, and tobacco planters in South Carolina and Georgia.",
             "Motive: To attract competitive bidding and secure top market prices for newly imported human cargo."
-          ]
+          ],
+          "source_context": "Upon surviving the Middle Passage, captive Africans were washed, oiled with lard to conceal illness, and sold at public auctions. This broadside highlighted that the captives were free from smallpox to entice wealthy plantation owners. **Hinge Question:** What strategies did colonial slave merchants use to strip human beings of their names, cultures, and identities upon arrival?",
+          "teacher_notes": {
+            "source_context": "Upon surviving the Middle Passage, captive Africans were washed, oiled with lard to conceal illness, and sold at public auctions. This broadside highlighted that the captives were free from smallpox to entice wealthy plantation owners. **Hinge Question:** What strategies did colonial slave merchants use to strip human beings of their names, cultures, and identities upon arrival?"
+          }
         },
         {
           "id": "fbe_l2_src_e",
@@ -1675,7 +1711,11 @@
             "Author: William Hackwood (modeler) and Josiah Wedgwood (industrialist and abolitionist).",
             "Audience: British middle- and upper-class consumers, particularly women driving domestic sugar boycotts.",
             "Motive: To embed abolitionist sentiment into daily Georgian culture and sustain political pressure on Parliament."
-          ]
+          ],
+          "source_context": "In 1787, master ceramic manufacturer Josiah Wedgwood joined the Committee for Abolition. He produced thousands of these cameos at personal expense, which became fashionable jewelry worn by thousands of British men and women. **Hinge Question:** Can consumer boycotts and fashion accessories ever be as powerful in achieving political change as parliamentary legislation?",
+          "teacher_notes": {
+            "source_context": "In 1787, master ceramic manufacturer Josiah Wedgwood joined the Committee for Abolition. He produced thousands of these cameos at personal expense, which became fashionable jewelry worn by thousands of British men and women. **Hinge Question:** Can consumer boycotts and fashion accessories ever be as powerful in achieving political change as parliamentary legislation?"
+          }
         }
       ],
       "teacher_notes": {
@@ -2231,7 +2271,11 @@
             "Author: William Clark, artist and planter resident in Antigua for several years.",
             "Audience: British wealthy investors, absentee plantation owners, and the Georgian public.",
             "Motive: To showcase Caribbean sugar production as productive, civilized, and harmonious to defend against abolitionist criticism."
-          ]
+          ],
+          "source_context": "Sugar cane cultivation was one of the most grueling agricultural industries in the world. Enslaved workers labored up to 14 hours a day in intense tropical heat, cutting stalks with sharp billhooks while dodging venomous snakes. **Hinge Question:** Why did Caribbean sugar plantations operate more like dangerous modern factories than traditional agricultural farms?",
+          "teacher_notes": {
+            "source_context": "Sugar cane cultivation was one of the most grueling agricultural industries in the world. Enslaved workers labored up to 14 hours a day in intense tropical heat, cutting stalks with sharp billhooks while dodging venomous snakes. **Hinge Question:** Why did Caribbean sugar plantations operate more like dangerous modern factories than traditional agricultural farms?"
+          }
         },
         {
           "id": "fbe_l3_src_b",
@@ -2275,7 +2319,11 @@
             "Author: Jamaican National Heritage sculptors based on centuries of preserved Maroon oral tradition.",
             "Audience: The citizens of Jamaica, Commonwealth students, and international scholars of anti-slavery resistance.",
             "Motive: To celebrate Queen Nanny as a visionary military strategist and pioneer of Caribbean decolonization."
-          ]
+          ],
+          "source_context": "Queen Nanny was an Asante military and spiritual leader who established Nanny Town in the precipitous Blue Mountains. Between 1720 and 1739, her warriors repeatedly defeated British regiments by using camouflaged ambush tactics. **Hinge Question:** How did African military traditions and spiritual leadership enable Maroons to withstand the full might of the British military?",
+          "teacher_notes": {
+            "source_context": "Queen Nanny was an Asante military and spiritual leader who established Nanny Town in the precipitous Blue Mountains. Between 1720 and 1739, her warriors repeatedly defeated British regiments by using camouflaged ambush tactics. **Hinge Question:** How did African military traditions and spiritual leadership enable Maroons to withstand the full might of the British military?"
+          }
         },
         {
           "id": "fbe_l3_src_c",
@@ -2319,7 +2367,11 @@
             "Author: Robert Charles Dallas, British historical author and colonial apologist.",
             "Audience: British imperial politicians, plantation owners, and metropolitan reading audiences.",
             "Motive: To depict the British Empire as magnanimous and orderly while portraying Captain Cudjoe as a grateful subaltern."
-          ]
+          ],
+          "source_context": "Unable to conquer the Maroons through military force, British Governor Edward Trelawny was forced to sign formal peace treaties in 1739 recognizing Maroon autonomy. However, the treaty required Maroons to return future runaway slaves to plantations. **Hinge Question:** Was the 1739 Treaty a triumphant victory for Maroon independence or a tragic compromise that divided enslaved Africans against each other?",
+          "teacher_notes": {
+            "source_context": "Unable to conquer the Maroons through military force, British Governor Edward Trelawny was forced to sign formal peace treaties in 1739 recognizing Maroon autonomy. However, the treaty required Maroons to return future runaway slaves to plantations. **Hinge Question:** Was the 1739 Treaty a triumphant victory for Maroon independence or a tragic compromise that divided enslaved Africans against each other?"
+          }
         },
         {
           "id": "fbe_l3_src_d",
@@ -2363,7 +2415,11 @@
             "Author: Abraham Raimbach (engraver) after an eyewitness sketch from life in Jamaica.",
             "Audience: British regular officers, metropolitan newspaper readers, and art collectors.",
             "Motive: To satisfy metropolitan curiosity regarding the legendary Maroon leaders fighting the British Army."
-          ]
+          ],
+          "source_context": "Leonard Parkinson was an iconic Maroon guerrilla leader. His mobility and marksmanship allowed small bands of Maroon warriors to pin down hundreds of British regular soldiers and bloodhounds in the Cockpit Country. **Hinge Question:** Why did European armies repeatedly struggle when fighting against indigenous and maroon guerrilla forces in unfamiliar terrain?",
+          "teacher_notes": {
+            "source_context": "Leonard Parkinson was an iconic Maroon guerrilla leader. His mobility and marksmanship allowed small bands of Maroon warriors to pin down hundreds of British regular soldiers and bloodhounds in the Cockpit Country. **Hinge Question:** Why did European armies repeatedly struggle when fighting against indigenous and maroon guerrilla forces in unfamiliar terrain?"
+          }
         },
         {
           "id": "fbe_l3_src_e",
@@ -2407,7 +2463,11 @@
             "Author: William Clark, Antiguan planter and landscape artist.",
             "Audience: British absentee sugar magnates, members of the House of Lords, and London investors.",
             "Motive: To depict the Caribbean plantation system as an orderly agricultural machine worthy of parliamentary protection."
-          ]
+          ],
+          "source_context": "Digging cane holes was the most back-breaking labor on a Caribbean sugar estate. Field workers were forced to excavate thousands of four-foot square pits in rocky soil under the burning sun to prepare for planting. **Hinge Question:** How did plantation managers use systematic daily quotas and physical intimidation to prevent collective resistance?",
+          "teacher_notes": {
+            "source_context": "Digging cane holes was the most back-breaking labor on a Caribbean sugar estate. Field workers were forced to excavate thousands of four-foot square pits in rocky soil under the burning sun to prepare for planting. **Hinge Question:** How did plantation managers use systematic daily quotas and physical intimidation to prevent collective resistance?"
+          }
         }
       ],
       "tasks": [
@@ -3010,7 +3070,11 @@
             "Author: Paul Revere, Boston silversmith, Son of Liberty, and revolutionary activist.",
             "Audience: Colonists across the Thirteen Colonies and Whig sympathizers in Britain.",
             "Motive: To inflame public rage, mobilize colonial resistance, and force the removal of British troops from Boston."
-          ]
+          ],
+          "source_context": "On 5 March 1770, a hostile Boston mob threw ice, oyster shells, and clubs at British sentries. A soldier was knocked down, and troops fired into the crowd, killing five colonists including Crispus Attucks. **Hinge Question:** Where is the boundary between legitimate political reporting and inflammatory propaganda during times of civil unrest?",
+          "teacher_notes": {
+            "source_context": "On 5 March 1770, a hostile Boston mob threw ice, oyster shells, and clubs at British sentries. A soldier was knocked down, and troops fired into the crowd, killing five colonists including Crispus Attucks. **Hinge Question:** Where is the boundary between legitimate political reporting and inflammatory propaganda during times of civil unrest?"
+          }
         },
         {
           "id": "fbe_l4_src_b",
@@ -3054,7 +3118,11 @@
             "Author: American historical printmakers (Sarony & Major / Currier & Ives).",
             "Audience: American citizens, patriotic historical societies, and schoolchildren.",
             "Motive: To commemorate the Boston Tea Party as a noble, courageous act of resistance against British tyranny."
-          ]
+          ],
+          "source_context": "The 1773 Tea Act allowed the East India Company to sell surplus tea directly to the colonies with a small tax, undercutting local merchants. Colonists saw this as a backdoor maneuver to force them to accept Parliament's right to tax them. **Hinge Question:** Was the destruction of private commercial property in Boston Harbor an act of principled political protest or unlawful vandalism?",
+          "teacher_notes": {
+            "source_context": "The 1773 Tea Act allowed the East India Company to sell surplus tea directly to the colonies with a small tax, undercutting local merchants. Colonists saw this as a backdoor maneuver to force them to accept Parliament's right to tax them. **Hinge Question:** Was the destruction of private commercial property in Boston Harbor an act of principled political protest or unlawful vandalism?"
+          }
         },
         {
           "id": "fbe_l4_src_c",
@@ -3098,7 +3166,11 @@
             "Author: Anonymous British satirist, published in The London Magazine (May 1774).",
             "Audience: British parliamentary Whig opposition, educated Londoners, and American colonial readers.",
             "Motive: To condemn Lord North's authoritarian measures and warn that tyrannical policies would destroy the British Empire."
-          ]
+          ],
+          "source_context": "Following the Boston Tea Party, Parliament passed the Coercive (Intolerable) Acts to punish Massachusetts. This cartoon by British sympathizers exposed Lord North's aggressive military measures as an assault on American liberty. **Hinge Question:** Why did many British politicians and cartoonists in London actively support the American colonists against their own government?",
+          "teacher_notes": {
+            "source_context": "Following the Boston Tea Party, Parliament passed the Coercive (Intolerable) Acts to punish Massachusetts. This cartoon by British sympathizers exposed Lord North's aggressive military measures as an assault on American liberty. **Hinge Question:** Why did many British politicians and cartoonists in London actively support the American colonists against their own government?"
+          }
         },
         {
           "id": "fbe_l4_src_d",
@@ -3142,7 +3214,11 @@
             "Author: King George III, the Board of Trade, and the British Cabinet.",
             "Audience: Colonial governors, settlers, fur traders, and indigenous tribal confederacies.",
             "Motive: To pacify Native American nations, halt frontier violence, and keep British colonists contained within reach of maritime trade."
-          ]
+          ],
+          "source_context": "After acquiring Canada and the Ohio Valley from France in 1763, Britain faced Pontiac's War. To prevent further frontier warfare with Native American tribes, King George III drew a line forbidding colonial settlement west of the Appalachians. **Hinge Question:** Did King George III draw the Proclamation Line to protect Native American sovereignty or simply to keep British colonists contained along the coast?",
+          "teacher_notes": {
+            "source_context": "After acquiring Canada and the Ohio Valley from France in 1763, Britain faced Pontiac's War. To prevent further frontier warfare with Native American tribes, King George III drew a line forbidding colonial settlement west of the Appalachians. **Hinge Question:** Did King George III draw the Proclamation Line to protect Native American sovereignty or simply to keep British colonists contained along the coast?"
+          }
         },
         {
           "id": "fbe_l4_src_e",
@@ -3186,7 +3262,11 @@
             "Author: British industrial potters (Leeds Pottery / Cockpit Hill, Derby).",
             "Audience: Patriotic American colonial households and British commercial merchant allies.",
             "Motive: To celebrate the resumption of profitable transatlantic trade and capitalize on colonial patriotic consumer demand."
-          ]
+          ],
+          "source_context": "When Parliament imposed the Stamp Act in 1765, American merchants enacted non-importation agreements boycotting British manufactured goods. British pottery exports plunged, leading English factory owners to petition Parliament to repeal the tax in 1766. **Hinge Question:** Why are economic boycotts often more effective in forcing imperial policy changes than armed revolts?",
+          "teacher_notes": {
+            "source_context": "When Parliament imposed the Stamp Act in 1765, American merchants enacted non-importation agreements boycotting British manufactured goods. British pottery exports plunged, leading English factory owners to petition Parliament to repeal the tax in 1766. **Hinge Question:** Why are economic boycotts often more effective in forcing imperial policy changes than armed revolts?"
+          }
         }
       ],
       "teacher_notes": {
@@ -3742,7 +3822,11 @@
             "Author: John Trumbull, American painter and former aide-de-camp to General George Washington.",
             "Audience: The citizens of the United States and international visitors to the US Capitol.",
             "Motive: To preserve the likenesses of the founding fathers and instill national reverence for the Declaration."
-          ]
+          ],
+          "source_context": "On 4 July 1776, the Continental Congress voted to approve the Declaration of Independence. Jefferson's preamble asserted that all men possess unalienable rights to life, liberty, and the pursuit of happiness. **Hinge Question:** How did Thomas Jefferson reconcile writing that 'all men are created equal' while personally enslaving over 600 human beings?",
+          "teacher_notes": {
+            "source_context": "On 4 July 1776, the Continental Congress voted to approve the Declaration of Independence. Jefferson's preamble asserted that all men possess unalienable rights to life, liberty, and the pursuit of happiness. **Hinge Question:** How did Thomas Jefferson reconcile writing that 'all men are created equal' while personally enslaving over 600 human beings?"
+          }
         },
         {
           "id": "fbe_l5_src_b",
@@ -3786,7 +3870,11 @@
             "Author: John Murray, 4th Earl of Dunmore, Royal Governor of Virginia.",
             "Audience: Enslaved African laborers, free colonists, and rebel plantation owners in Virginia.",
             "Motive: To suppress the colonial rebellion through economic disruption and recruit an 'Ethiopian Regiment' of Black Loyalists."
-          ]
+          ],
+          "source_context": "Facing armed rebellion in Virginia, Lord Dunmore issued an ultimatum declaring martial law and offering freedom to enslaved men who joined the British Army. Over 800 African Americans joined his 'Ethiopian Regiment' wearing sashes reading 'Liberty to Slaves'. **Hinge Question:** Did Lord Dunmore issue his proclamation out of genuine humanitarian concern for enslaved Africans or as a cynical military weapon?",
+          "teacher_notes": {
+            "source_context": "Facing armed rebellion in Virginia, Lord Dunmore issued an ultimatum declaring martial law and offering freedom to enslaved men who joined the British Army. Over 800 African Americans joined his 'Ethiopian Regiment' wearing sashes reading 'Liberty to Slaves'. **Hinge Question:** Did Lord Dunmore issue his proclamation out of genuine humanitarian concern for enslaved Africans or as a cynical military weapon?"
+          }
         },
         {
           "id": "fbe_l5_src_c",
@@ -3830,7 +3918,11 @@
             "Author: Brigadier General Samuel Birch and British military inspection clerks.",
             "Audience: General Sir Guy Carleton, General George Washington, and British naval transport captains.",
             "Motive: To issue unassailable legal documentation guaranteeing freedom to Black Loyalists boarding ships to Nova Scotia."
-          ]
+          ],
+          "source_context": "At the end of the Revolutionary War, George Washington demanded that all runaway slaves within British lines be returned to their American masters. British Commander-in-Chief Sir Guy Carleton refused, declaring it an insult to British honor, and created The Book of Negroes to evacuate 3,000 Black Loyalists to Nova Scotia. **Hinge Question:** Why did thousands of African Americans choose to fight for the British King rather than the American Patriots who claimed to be fighting for 'liberty'?",
+          "teacher_notes": {
+            "source_context": "At the end of the Revolutionary War, George Washington demanded that all runaway slaves within British lines be returned to their American masters. British Commander-in-Chief Sir Guy Carleton refused, declaring it an insult to British honor, and created The Book of Negroes to evacuate 3,000 Black Loyalists to Nova Scotia. **Hinge Question:** Why did thousands of African Americans choose to fight for the British King rather than the American Patriots who claimed to be fighting for 'liberty'?"
+          }
         },
         {
           "id": "fbe_l5_src_d",
@@ -3874,7 +3966,11 @@
             "Author: Thomas Paine, English-born radical artisan, editor, and political pamphleteer.",
             "Audience: Ordinary American farmers, artisans, soldiers, and colonial citizens.",
             "Motive: To transform a colonial tax protest into an uncompromising moral campaign for universal human liberty and republican independence."
-          ]
+          ],
+          "source_context": "Before Common Sense, most colonists claimed they were only fighting for their traditional rights as British subjects. Paine demolished the divine right of kings, ridiculed the British monarchy, and argued that America had a moral duty to create an independent democratic republic. **Hinge Question:** What made Thomas Paine's writing style so revolutionary compared to the formal legal petitions previously sent to the King?",
+          "teacher_notes": {
+            "source_context": "Before Common Sense, most colonists claimed they were only fighting for their traditional rights as British subjects. Paine demolished the divine right of kings, ridiculed the British monarchy, and argued that America had a moral duty to create an independent democratic republic. **Hinge Question:** What made Thomas Paine's writing style so revolutionary compared to the formal legal petitions previously sent to the King?"
+          }
         },
         {
           "id": "fbe_l5_src_e",
@@ -3918,7 +4014,11 @@
             "Author: British plenipotentiary David Hartley and American commissioners John Adams, Benjamin Franklin, and John Jay.",
             "Audience: The governments and citizens of Great Britain, the United States, France, Spain, and global diplomatic corps.",
             "Motive: To establish permanent peace, settle borders, and restore commercial relations between Britain and the United States."
-          ]
+          ],
+          "source_context": "Signed in Paris in September 1783, the treaty ended eight years of war. Britain formally recognized the United States as independent and ceded all territory from the Atlantic to the Mississippi, marking the catastrophic collapse of the First British Empire. **Hinge Question:** Why was Great Britain willing to grant such vast western lands to its former colonies despite having undefeated garrisons in New York and Charleston?",
+          "teacher_notes": {
+            "source_context": "Signed in Paris in September 1783, the treaty ended eight years of war. Britain formally recognized the United States as independent and ceded all territory from the Atlantic to the Mississippi, marking the catastrophic collapse of the First British Empire. **Hinge Question:** Why was Great Britain willing to grant such vast western lands to its former colonies despite having undefeated garrisons in New York and Charleston?"
+          }
         }
       ],
       "teacher_notes": {

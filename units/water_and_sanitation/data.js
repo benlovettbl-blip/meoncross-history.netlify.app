@@ -1,4 +1,4 @@
-export const water_and_sanitationData = {
+const water_and_sanitation_data = {
   "id": "water_and_sanitation",
   "edition": "2026.1",
   "title": "KS3: Water and Sanitation Through Time",
@@ -1156,7 +1156,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Imperial Roman foundry craftsmen casting plumbing infrastructure.",
             "audience": "Municipal engineers and imperial administrative overseers.",
-            "motive": "Supplying pressurized hot spring water to the public thermae at Aquae Sulis."
+            "motive": "Supplying pressurized hot spring water to the public thermae at Aquae Sulis.",
+            "hinge_question": "Why did the Romans continue using lead pipes even though writers like Vitruvius warned that lead water caused workers to become pale, sick, and poisoned?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the Romans continue using lead pipes even though writers like Vitruvius warned that lead water caused workers to become pale, sick, and poisoned?",
@@ -1166,7 +1167,8 @@ export const water_and_sanitationData = {
               "audience": "Municipal engineers and imperial administrative overseers.",
               "motive": "Supplying pressurized hot spring water to the public thermae at Aquae Sulis."
             }
-          }
+          },
+          "source_context": "Roman plumbers cast flat lead sheets and folded them into teardrop-shaped pipes (fistulae) soldered with lead-tin alloy. **Hinge Question:** Why did the Romans continue using lead pipes even though writers like Vitruvius warned that lead water caused workers to become pale, sick, and poisoned?"
         },
         {
           "id": "water_l1_src_b",
@@ -1186,7 +1188,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Archaeological architectural illustrator reconstructing Roman technology.",
             "audience": "Historians, students, and museum visitors.",
-            "motive": "Visualizing the complex underground furnace and air circulation systems of a Roman bathhouse."
+            "motive": "Visualizing the complex underground furnace and air circulation systems of a Roman bathhouse.",
+            "hinge_question": "Did public bathhouses genuinely improve Roman public health, or did unchlorinated, shared bathwater spread infectious skin and eye diseases?"
           },
           "teacher_notes": {
             "hinge_question": "Did public bathhouses genuinely improve Roman public health, or did unchlorinated, shared bathwater spread infectious skin and eye diseases?",
@@ -1196,7 +1199,8 @@ export const water_and_sanitationData = {
               "audience": "Historians, students, and museum visitors.",
               "motive": "Visualizing the complex underground furnace and air circulation systems of a Roman bathhouse."
             }
-          }
+          },
+          "source_context": "Roman thermae were civic palaces designed for progressive sweating, scraping, and bathing. **Hinge Question:** Did public bathhouses genuinely improve Roman public health, or did unchlorinated, shared bathwater spread infectious skin and eye diseases?"
         },
         {
           "id": "water_l1_src_c",
@@ -1216,7 +1220,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Roman bronze metal artisan.",
             "audience": "Roman citizens attending public or private thermae.",
-            "motive": "Providing personal hygiene tools for scraping oil and dirt from the body."
+            "motive": "Providing personal hygiene tools for scraping oil and dirt from the body.",
+            "hinge_question": "How does this toiletry set reflect the social divide between wealthy citizens with slaves to scrape them and poorer citizens?"
           },
           "teacher_notes": {
             "hinge_question": "How does this toiletry set reflect the social divide between wealthy citizens with slaves to scrape them and poorer citizens?",
@@ -1226,7 +1231,8 @@ export const water_and_sanitationData = {
               "audience": "Roman citizens attending public or private thermae.",
               "motive": "Providing personal hygiene tools for scraping oil and dirt from the body."
             }
-          }
+          },
+          "source_context": "The Romans had no detergents or chemical soap for skin washing. **Hinge Question:** How does this toiletry set reflect the social divide between wealthy citizens with slaves to scrape them and poorer citizens?"
         },
         {
           "id": "water_l1_src_d",
@@ -1247,7 +1253,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Seneca, wealthy Stoic philosopher and imperial advisor.",
             "audience": "His friend Lucilius and educated Roman elite readers.",
-            "motive": "Complaining humorously about sensory distraction while studying philosophy above noisy public baths."
+            "motive": "Complaining humorously about sensory distraction while studying philosophy above noisy public baths.",
+            "hinge_question": "Does Seneca's account suggest that Romans visited bathhouses primarily for physical hygiene or for social entertainment?"
           },
           "teacher_notes": {
             "hinge_question": "Does Seneca's account suggest that Romans visited bathhouses primarily for physical hygiene or for social entertainment?",
@@ -1257,7 +1264,8 @@ export const water_and_sanitationData = {
               "audience": "His friend Lucilius and educated Roman elite readers.",
               "motive": "Complaining humorously about sensory distraction while studying philosophy above noisy public baths."
             }
-          }
+          },
+          "source_context": "Seneca lived in rented lodgings directly above public baths in Rome. **Hinge Question:** Does Seneca's account suggest that Romans visited bathhouses primarily for physical hygiene or for social entertainment?"
         },
         {
           "id": "water_l1_src_e",
@@ -1277,7 +1285,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Modern archaeological excavation photography team.",
             "audience": "Historians, students, and visitors to Fishbourne Palace.",
-            "motive": "Recording intact Roman hypocaust tile pillars in southern Britain."
+            "motive": "Recording intact Roman hypocaust tile pillars in southern Britain.",
+            "hinge_question": "Why did sophisticated hypocaust systems completely disappear from Britain after the Roman legions withdrew in AD 410?"
           },
           "teacher_notes": {
             "hinge_question": "Why did sophisticated hypocaust systems completely disappear from Britain after the Roman legions withdrew in AD 410?",
@@ -1287,65 +1296,10 @@ export const water_and_sanitationData = {
               "audience": "Historians, students, and visitors to Fishbourne Palace.",
               "motive": "Recording intact Roman hypocaust tile pillars in southern Britain."
             }
-          }
+          },
+          "source_context": "Fishbourne Roman Palace was built shortly after the Roman invasion, likely for client king Cogidubnus. **Hinge Question:** Why did sophisticated hypocaust systems completely disappear from Britain after the Roman legions withdrew in AD 410?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Enquiry 1",
-        "tariff": "Question 2: Explain Why [12 marks • 15 mins]",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "Explain why the Romans built sophisticated water supply and sanitation systems in Britain after AD 43. [12 marks]",
-            "stimulus": [
-              "The need for fresh water and hygiene in densely populated towns like Londinium",
-              "Displaying imperial power, Romanitas, and luxury at sites like Fishbourne Palace"
-            ],
-            "prompt": "Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link for every paragraph.",
-            "model": "A primary catalyst explaining why the Romans built sophisticated water supply systems was the urgent need to sustain dense urban populations after the AD 43 invasion. Unlike the small, dispersed Celtic farming roundhouses that relied on local streams and shallow garden cesspits, Roman administrators gathered thousands of legionaries and civilians into cramped, stone-walled cities such as Londinium and Verulamium. In these densely populated environments, local rivers quickly became fouled with refuse and sewage, threatening lethal outbreaks of dysentery. Roman military engineers solved this crisis by surveying distant hill springs and constructing monumental masonry aqueducts with precise mathematical downward gradients. Piped into castella water towers, millions of gallons of clean spring water were distributed to street fountains, flushing sewers, and communal latrines, proving that urban survival was an essential reason why the Romans built sanitation systems.<br><br>Furthermore, a decisive underlying motive explaining why the Romans built monumental bathhouses was the political desire to project imperial power and civilize conquered peoples through Romanitas. Public thermae were not merely hygiene facilities; they were grand cultural monuments equipped with heated hypocaust floors, mosaic plunge pools, and social halls. Accessible for the minimal fee of a single copper quadrans, the baths encouraged Celtic Britons to adopt Roman dress, language, and leisure routines. At luxury sites like Fishbourne Roman Palace in Sussex, jointed lead conduits and pressurized water channels fed ornamental garden fountains and private bathing suites. These lavish waterworks demonstrated the technological and financial supremacy of Rome, winning the loyalty of local client rulers and showing that imperial vanity and political control were vital reasons behind Roman water engineering.<br><br>Ultimately, while imperial prestige was prominent, the decisive factor explaining why Roman water systems were constructed was military efficiency and imperial defence. The Roman Empire depended entirely on the physical stamina and marching discipline of its standing army. Sick, dehydrated soldiers plagued by water-borne illnesses could neither build roads nor suppress provincial rebellions. This military imperative was proven when the Roman legions were withdrawn from Britain in AD 410: without imperial military command, taxes, and municipal maintenance, aqueducts choked with silt and lead pipes were melted down. Therefore, while Roman public health created impressive civil engineering, it was fundamentally driven by the practical demands of military conquest and urban defence rather than genuine humanitarian medicine.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "1",
-                  "name": "URBAN DENSITY & HYGIENE",
-                  "prompt": "Explain how founding crowded stone towns (Londinium, York) forced Romans to construct gravity aqueducts and flushing latrines to prevent devastating epidemics [1.1, 1.2].",
-                  "starter": "A primary catalyst explaining why the Romans built sophisticated water supply systems was the urgent need to sustain dense urban populations..."
-                },
-                {
-                  "letter": "2",
-                  "name": "IMPERIAL POWER & ROMANITAS",
-                  "prompt": "Explain how grand thermae, heated hypocausts, and luxury lead pipes at Fishbourne Palace were designed to display imperial supremacy (*romanitas*) [1.3, 1.5].",
-                  "starter": "Furthermore, a decisive underlying motive explaining why the Romans built monumental bathhouses was the political desire to project imperial power..."
-                },
-                {
-                  "letter": "3",
-                  "name": "MILITARY READINESS & VERDICT",
-                  "prompt": "Weigh whether practical military survival or imperial vanity was more decisive in driving Roman engineering [1.4, 1.5].",
-                  "starter": "Ultimately, while imperial prestige was prominent, the decisive factor explaining why Roman water systems were constructed was military efficiency..."
-                }
-              ],
-              "sentence_starters": [
-                "A primary catalyst explaining why the Romans built sophisticated water supply systems was the urgent need to sustain dense urban populations...",
-                "Furthermore, a decisive underlying motive explaining why the Romans built monumental bathhouses was the political desire to project imperial power...",
-                "Ultimately, while imperial prestige was prominent, the decisive factor explaining why Roman water systems were constructed was military efficiency..."
-              ],
-              "connectives_bank": [
-                "Aqueduct",
-                "Thermae",
-                "Hypocaust",
-                "Strigil",
-                "Latrine",
-                "Tersorium",
-                "Plumbism",
-                "Romanitas"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_2",
@@ -2370,7 +2324,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Winchester borough jurors recording local legal violations.",
             "audience": "Town bailiffs, magistrates, and the borough community.",
-            "motive": "Enforcing borough by-laws against dumping butchers' waste and blocking street kennels."
+            "motive": "Enforcing borough by-laws against dumping butchers' waste and blocking street kennels.",
+            "hinge_question": "Why were small municipal fines of 6d or 12d ineffective at permanently keeping medieval streets clean?"
           },
           "teacher_notes": {
             "hinge_question": "Why were small municipal fines of 6d or 12d ineffective at permanently keeping medieval streets clean?",
@@ -2380,7 +2335,8 @@ export const water_and_sanitationData = {
               "audience": "Town bailiffs, magistrates, and the borough community.",
               "motive": "Enforcing borough by-laws against dumping butchers' waste and blocking street kennels."
             }
-          }
+          },
+          "source_context": "Medieval towns held Court Leet hearings twice a year where neighbours reported sanitation offences. **Hinge Question:** Why were small municipal fines of 6d or 12d ineffective at permanently keeping medieval streets clean?"
         },
         {
           "id": "water_l2_src_b",
@@ -2400,7 +2356,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Prior Wibert of Canterbury Priory documenting his engineering works.",
             "audience": "Benedictine monks of Christ Church and future priory custodians.",
-            "motive": "Recording the exact underground routes of water pipes for maintenance and repair."
+            "motive": "Recording the exact underground routes of water pipes for maintenance and repair.",
+            "hinge_question": "Why were monastic water supply systems so much cleaner and more advanced than town water systems?"
           },
           "teacher_notes": {
             "hinge_question": "Why were monastic water supply systems so much cleaner and more advanced than town water systems?",
@@ -2410,7 +2367,8 @@ export const water_and_sanitationData = {
               "audience": "Benedictine monks of Christ Church and future priory custodians.",
               "motive": "Recording the exact underground routes of water pipes for maintenance and repair."
             }
-          }
+          },
+          "source_context": "Created around 1165, this Canterbury drawing is Europe's earliest surviving civil engineering diagram. **Hinge Question:** Why were monastic water supply systems so much cleaner and more advanced than town water systems?"
         },
         {
           "id": "water_l2_src_c",
@@ -2430,7 +2388,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Archaeological survey team recording medieval monastic waterworks.",
             "audience": "Heritage conservationists and historical researchers.",
-            "motive": "Documenting the sophisticated stone conduits used by medieval religious orders."
+            "motive": "Documenting the sophisticated stone conduits used by medieval religious orders.",
+            "hinge_question": "What happened to these monastic water channels when Henry VIII dissolved the monasteries in 1537?"
           },
           "teacher_notes": {
             "hinge_question": "What happened to these monastic water channels when Henry VIII dissolved the monasteries in 1537?",
@@ -2440,7 +2399,8 @@ export const water_and_sanitationData = {
               "audience": "Heritage conservationists and historical researchers.",
               "motive": "Documenting the sophisticated stone conduits used by medieval religious orders."
             }
-          }
+          },
+          "source_context": "Founded in 1232, Titchfield Abbey diverted the River Meon into engineered channels. **Hinge Question:** What happened to these monastic water channels when Henry VIII dissolved the monasteries in 1537?"
         },
         {
           "id": "water_l2_src_d",
@@ -2460,7 +2420,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Manuscript illuminator creating religious and medical scenes.",
             "audience": "Wealthy noble patrons and church scholars.",
-            "motive": "Illustrating medical responses to biblical plagues and contemporary pestilence."
+            "motive": "Illustrating medical responses to biblical plagues and contemporary pestilence.",
+            "hinge_question": "Why did medieval doctors believe foul-smelling air (miasma) was the primary cause of plague rather than fleas and rats?"
           },
           "teacher_notes": {
             "hinge_question": "Why did medieval doctors believe foul-smelling air (miasma) was the primary cause of plague rather than fleas and rats?",
@@ -2470,7 +2431,8 @@ export const water_and_sanitationData = {
               "audience": "Wealthy noble patrons and church scholars.",
               "motive": "Illustrating medical responses to biblical plagues and contemporary pestilence."
             }
-          }
+          },
+          "source_context": "Medieval medical theory believed the body contained four humours. **Hinge Question:** Why did medieval doctors believe foul-smelling air (miasma) was the primary cause of plague rather than fleas and rats?"
         },
         {
           "id": "water_l2_src_e",
@@ -2491,7 +2453,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "English Crown and Parliament under King Richard II.",
             "audience": "Town mayors, sheriffs, bailiffs, and urban citizens throughout England.",
-            "motive": "Halting river pollution to eliminate the foul air believed to cause plague."
+            "motive": "Halting river pollution to eliminate the foul air believed to cause plague.",
+            "hinge_question": "Why was a national law from Parliament nearly impossible to enforce in distant provincial towns without a modern police force?"
           },
           "teacher_notes": {
             "hinge_question": "Why was a national law from Parliament nearly impossible to enforce in distant provincial towns without a modern police force?",
@@ -2501,65 +2464,10 @@ export const water_and_sanitationData = {
               "audience": "Town mayors, sheriffs, bailiffs, and urban citizens throughout England.",
               "motive": "Halting river pollution to eliminate the foul air believed to cause plague."
             }
-          }
+          },
+          "source_context": "Following recurring outbreaks of pestilence after 1348, Parliament enacted the 1388 Statute of Cambridge. **Hinge Question:** Why was a national law from Parliament nearly impossible to enforce in distant provincial towns without a modern police force?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Enquiry 2",
-        "tariff": "Question 4: Explain Why [12 marks • 15 mins]",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "Explain why living conditions and public health in medieval towns were so much worse than in medieval monasteries. [12 marks]",
-            "stimulus": [
-              "The design and funding of monastic water systems such as Canterbury Priory",
-              "The rapid, unregulated growth of commercial towns and lack of central taxation"
-            ],
-            "prompt": "Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link for every paragraph.",
-            "model": "A decisive reason explaining why living conditions in medieval towns were so much worse than in monasteries was the chaotic, uncoordinated growth of urban centres following the Norman Conquest. As market boroughs like London, Winchester, and Norwich expanded, thousands of traders and craftsmen were packed into narrow, unpaved thoroughfares lined with multi-storey timber buildings with overhanging jetties. Towns lacked centralized Roman aqueducts and municipal sewage networks. Instead, households dug shallow back-garden cesspits that frequently leaked liquid waste through porous soil into parish wells and local rivers. Furthermore, butchers dumped rotting offal into street gutters, and roaming pigs churned roadways into filthy mud. Although town councils employed rakers and hired nocturnal gong farmers to empty cesspits, municipal court fines at Court Leet inquests could not keep pace with rapid urban squalor, ensuring that town drinking water was routinely contaminated with water-borne pathogens.<br><br>In sharp contrast, public health was far superior in medieval monasteries because religious orders possessed immense financial wealth, royal land endowments, and a disciplined community structure that prioritized cleanliness. Monastic rules, such as the Rule of Saint Benedict, required personal bodily washing and clean clothes before daily prayers and meals. At institutions like Christ Church Priory in Canterbury, Prior Wibert engineered an extraordinary hydraulic network in c.1165. Spring water was collected over a mile outside the city walls and conveyed through underground lead pipes into five successive settling tanks that filtered out mud and silt. Purified water was then distributed to sculleries, the infirmary, and an ornate circular lavatorium where monks washed before meals, before flushing the communal reredorter latrines directly into the river. Similarly, at Titchfield Abbey in Hampshire, canons canalized local river channels and excavated stone-lined fishponds. This level of planned hydraulic engineering ensured that monks drank clean water and avoided the intestinal parasites that plagued town dwellers.<br><br>Ultimately, the decisive factor explaining why living conditions in monasteries surpassed towns was the combination of long-term financial endowments and unified institutional authority. Monasteries were planned, self-contained sanctuaries constructed with private funds before monks even took up residence, allowing engineers to lay complex underground conduits without disrupting private property. In contrast, commercial boroughs were governed by divided town councils that lacked central tax revenue and faced furious ratepayer resistance whenever they attempted to levy taxes for street paving or sewage drainage. While towns were forced to rely on reactive emergency measures like the 1388 Statute of Cambridge, monasteries enjoyed proactive hydraulic infrastructure. Therefore, institutional wealth and long-term planning explain why monastic sanitation remained centuries ahead of squalid medieval towns.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "1",
-                  "name": "TOWN SQUALOR & LACK OF INFRASTRUCTURE",
-                  "prompt": "Explain how rapid population growth, unpaved streets, animal butchery, and leaking cesspits contaminated town water supplies [2.1, 2.2].",
-                  "starter": "A decisive reason explaining why living conditions in medieval towns were so much worse than in monasteries was the chaotic, uncoordinated growth of urban centres..."
-                },
-                {
-                  "letter": "2",
-                  "name": "MONASTIC WEALTH & HYDRAULIC PLANNING",
-                  "prompt": "Explain how vast land endowments enabled monasteries (Canterbury, Titchfield) to construct settling tanks, lead conduits, and flushing reredorters [2.3].",
-                  "starter": "In sharp contrast, public health was far superior in medieval monasteries because religious orders possessed immense wealth, land, and hydraulic planning..."
-                },
-                {
-                  "letter": "3",
-                  "name": "COMPARATIVE VERDICT",
-                  "prompt": "Weigh whether financial wealth or geographical isolation was more decisive in explaining the health divide between towns and monasteries [2.3, 2.5].",
-                  "starter": "Ultimately, the decisive factor explaining why living conditions in monasteries surpassed towns was the combination of religious wealth and long-term planning..."
-                }
-              ],
-              "sentence_starters": [
-                "A decisive reason explaining why living conditions in medieval towns were so much worse than in monasteries was the chaotic, uncoordinated growth of urban centres...",
-                "In sharp contrast, public health was far superior in medieval monasteries because religious orders possessed immense wealth, land, and hydraulic planning...",
-                "Ultimately, the decisive factor explaining why living conditions in monasteries surpassed towns was the combination of religious wealth and long-term planning..."
-              ],
-              "connectives_bank": [
-                "Borough",
-                "Gong Farmer",
-                "Cesspit",
-                "Miasma",
-                "Settling Tank",
-                "Lavatorium",
-                "Black Death",
-                "Statute of Cambridge"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_3",
@@ -3584,7 +3492,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Sir John Harington, Elizabethan courtier and inventor.",
             "audience": "Educated Elizabethan nobility and court society.",
-            "motive": "Promoting his mechanical water closet invention while satirizing court politics."
+            "motive": "Promoting his mechanical water closet invention while satirizing court politics.",
+            "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
@@ -3594,7 +3503,8 @@ export const water_and_sanitationData = {
               "audience": "Educated Elizabethan nobility and court society.",
               "motive": "Promoting his mechanical water closet invention while satirizing court politics."
             }
-          }
+          },
+          "source_context": "Harington described his water closet in a satirical pamphlet. **Hinge Question:** Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
         },
         {
           "id": "water_l3_src_b",
@@ -3615,7 +3525,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Samuel Pepys, senior civil servant in the Navy Office.",
             "audience": "Private personal diary written in secret Shelton shorthand.",
-            "motive": "Recording candid daily events without intention of public publication."
+            "motive": "Recording candid daily events without intention of public publication.",
+            "hinge_question": "How does Pepys' casual reaction show that sewage leaks were seen as an annoying everyday inconvenience rather than a medical danger?"
           },
           "teacher_notes": {
             "hinge_question": "How does Pepys' casual reaction show that sewage leaks were seen as an annoying everyday inconvenience rather than a medical danger?",
@@ -3625,7 +3536,8 @@ export const water_and_sanitationData = {
               "audience": "Private personal diary written in secret Shelton shorthand.",
               "motive": "Recording candid daily events without intention of public publication."
             }
-          }
+          },
+          "source_context": "London townhouses had brick or timber cesspools beneath basements. **Hinge Question:** How does Pepys' casual reaction show that sewage leaks were seen as an annoying everyday inconvenience rather than a medical danger?"
         },
         {
           "id": "water_l3_src_c",
@@ -3645,7 +3557,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Engraver and publisher Paulus Fürst.",
             "audience": "European public seeking medical pamphlets during plague epidemics.",
-            "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients."
+            "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients.",
+            "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?"
           },
           "teacher_notes": {
             "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
@@ -3655,7 +3568,8 @@ export const water_and_sanitationData = {
               "audience": "European public seeking medical pamphlets during plague epidemics.",
               "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients."
             }
-          }
+          },
+          "source_context": "Invented by Charles de Lorme in 1619, the plague suit was treated with wax. **Hinge Question:** Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?"
         },
         {
           "id": "water_l3_src_d",
@@ -3676,7 +3590,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Parish searchers and clerks surveying London churches.",
             "audience": "Citizens of London, city magistrates, and the Crown.",
-            "motive": "Publishing official weekly totals of births and infectious deaths across London."
+            "motive": "Publishing official weekly totals of births and infectious deaths across London.",
+            "hinge_question": "Why were mortality rates so much higher in crowded out-parishes like Whitechapel and Stepney than inside the city walls?"
           },
           "teacher_notes": {
             "hinge_question": "Why were mortality rates so much higher in crowded out-parishes like Whitechapel and Stepney than inside the city walls?",
@@ -3686,7 +3601,8 @@ export const water_and_sanitationData = {
               "audience": "Citizens of London, city magistrates, and the Crown.",
               "motive": "Publishing official weekly totals of births and infectious deaths across London."
             }
-          }
+          },
+          "source_context": "London Bills of Mortality were compiled weekly from parish church wardens. **Hinge Question:** Why were mortality rates so much higher in crowded out-parishes like Whitechapel and Stepney than inside the city walls?"
         },
         {
           "id": "water_l3_src_e",
@@ -3707,7 +3623,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Lord Mayor Sir John Lawrence and London Aldermen.",
             "audience": "Constables, parish officers, watchmen, and London citizens.",
-            "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets."
+            "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets.",
+            "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?"
           },
           "teacher_notes": {
             "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
@@ -3717,65 +3634,10 @@ export const water_and_sanitationData = {
               "audience": "Constables, parish officers, watchmen, and London citizens.",
               "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets."
             }
-          }
+          },
+          "source_context": "London's 1665 plague orders mandated 28 days of strict confinement. **Hinge Question:** Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Enquiry 3",
-        "tariff": "Question 3: Evaluative Statement Essay [12 marks • 15 mins]",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "‘Early Modern towns made substantial progress in water supply and sanitation between 1500 and 1700.’ How far do you agree? [12 marks]",
-            "stimulus": [
-              "Inventions and infrastructure like Harington’s water closet (1596) and Myddelton’s New River (1613)",
-              "Domestic conditions documented by Samuel Pepys and the devastating Great Plague of 1665"
-            ],
-            "prompt": "Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link for every paragraph.",
-            "model": "On the one hand, it can be argued that early modern towns made substantial progress in water supply and sanitation because groundbreaking engineering innovations emerged during the Renaissance. In 1596, Sir John Harington invented the world’s first valve-operated flushing water closet, using an overhead cistern to flush waste down a lead pipe into an outdoor cesspool. Furthermore, in 1613, Sir Hugh Myddelton completed the monumental New River project, an extraordinary 38-mile man-made canal that transported pristine spring water from Hertfordshire into an Islington reservoir, distributing water across London through hollowed-out elm-tree pipes. These projects proved that early modern Britons possessed advanced hydraulic ambitions, demonstrating that technological progress occurred in this period.<br><br>On the other hand, it is far more accurate to argue that substantial progress was not achieved for the wider population, because explosive urban growth far outpaced sanitation infrastructure. Between 1500 and 1700, London’s population expanded tenfold from 60,000 to over 500,000, packing families into subdivided timber tenements with cantilevered jetties that blocked air and light. Inventions like Harington’s flush toilet were useless for 99% of citizens who lacked pressurized running water and municipal sewers. Piped water from Myddelton’s New River was an expensive luxury restricted to wealthy subscribers who paid fees, while poor slums drank from the polluted Thames. Furthermore, domestic sanitation remained squalid: as naval administrator Samuel Pepys recorded in October 1660, his neighbour’s cesspit cracked and seeped human waste directly through the cellar wall into his own basement. The complete failure of early modern sanitation was exposed during the Great Plague of 1665, when 100,000 citizens perished while authorities resorted to medieval miasma bonfires and locking families inside infected houses.<br><br>In conclusion, I disagree that early modern towns made substantial progress between 1500 and 1700. While individual visionaries like Harington and Myddelton created brilliant technological foundations, their innovations remained private, isolated luxuries for the wealthy elite. For the vast majority of ordinary townspeople, the rapid doubling of England’s population intensified urban squalor, leaving them dependent on chamber pots, nightsoil men, and disease-ridden rivers. Therefore, rather than experiencing substantial progress, early modern towns suffered a deepening public health crisis as population pressure outstripped pre-industrial engineering.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "1",
-                  "name": "TECHNOLOGICAL PROGRESS & INNOVATION",
-                  "prompt": "Explain how Harington’s flush toilet (1596) and Myddelton’s New River (1613) demonstrated genuine engineering progress [3.2, 3.3].",
-                  "starter": "On the one hand, it can be argued that early modern towns made substantial progress because groundbreaking engineering innovations emerged..."
-                },
-                {
-                  "letter": "2",
-                  "name": "POPULATION PRESSURE & SQUALOR",
-                  "prompt": "Explain how explosive population growth, overflowing cesspits (Pepys), and the 1665 Great Plague proved ordinary conditions worsened [3.1, 3.4, 3.5].",
-                  "starter": "On the other hand, it is far more accurate to argue that progress was severely limited because explosive population growth overwhelmed urban sanitation..."
-                },
-                {
-                  "letter": "3",
-                  "name": "SUSTAINED HISTORICAL VERDICT",
-                  "prompt": "Weigh whether private elite breakthroughs or widespread public squalor defined the era [3.5].",
-                  "starter": "In conclusion, I disagree that early modern towns made substantial progress; while elite engineering foundations were established, for the vast majority..."
-                }
-              ],
-              "sentence_starters": [
-                "On the one hand, it can be argued that early modern towns made substantial progress because groundbreaking engineering innovations emerged...",
-                "On the other hand, it is far more accurate to argue that progress was severely limited because explosive population growth overwhelmed urban sanitation...",
-                "In conclusion, I disagree that early modern towns made substantial progress; while elite engineering foundations were established, for the vast majority..."
-              ],
-              "connectives_bank": [
-                "Metropolis",
-                "Water Closet",
-                "Sir John Harington",
-                "New River",
-                "Samuel Pepys",
-                "Searchers of the Dead",
-                "Nightsoil",
-                "Bills of Mortality"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_4",
@@ -4777,7 +4639,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "John Leech, reformist satirical cartoonist for Punch.",
             "audience": "Middle-class and parliamentary readers of Punch magazine.",
-            "motive": "Shaming landlords and the British government into clearing slum filth that caused recurring cholera outbreaks."
+            "motive": "Shaming landlords and the British government into clearing slum filth that caused recurring cholera outbreaks.",
+            "hinge_question": "Why did middle-class Victorian readers find this cartoon of child poverty both shocking and morally shaming?"
           },
           "teacher_notes": {
             "hinge_question": "Why did middle-class Victorian readers find this cartoon of child poverty both shocking and morally shaming?",
@@ -4787,7 +4650,8 @@ export const water_and_sanitationData = {
               "audience": "Middle-class and parliamentary readers of Punch magazine.",
               "motive": "Shaming landlords and the British government into clearing slum filth that caused recurring cholera outbreaks."
             }
-          }
+          },
+          "source_context": "Published after the 1848–49 cholera outbreak killed over 50,000 Britons. **Hinge Question:** Why did middle-class Victorian readers find this cartoon of child poverty both shocking and morally shaming?"
         },
         {
           "id": "water_l4_src_b",
@@ -4807,7 +4671,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Edwin Chadwick, utilitarian social reformer.",
             "audience": "British Parliament, Prime Minister Sir Robert Peel, and local authorities.",
-            "motive": "Proving with statistics that investing in clean water and sewers would reduce national spending on poor relief."
+            "motive": "Proving with statistics that investing in clean water and sewers would reduce national spending on poor relief.",
+            "hinge_question": "How did Chadwick use economic arguments (e.g. sick workers cost taxpayers more in poor relief) to convince a reluctant Parliament to act?"
           },
           "teacher_notes": {
             "hinge_question": "How did Chadwick use economic arguments (e.g. sick workers cost taxpayers more in poor relief) to convince a reluctant Parliament to act?",
@@ -4817,7 +4682,8 @@ export const water_and_sanitationData = {
               "audience": "British Parliament, Prime Minister Sir Robert Peel, and local authorities.",
               "motive": "Proving with statistics that investing in clean water and sewers would reduce national spending on poor relief."
             }
-          }
+          },
+          "source_context": "Chadwick surveyed doctors, guardians, and town councils across England. **Hinge Question:** How did Chadwick use economic arguments (e.g. sick workers cost taxpayers more in poor relief) to convince a reluctant Parliament to act?"
         },
         {
           "id": "water_l4_src_c",
@@ -4837,7 +4703,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "George Godwin, editor of The Builder and sanitary investigator.",
             "audience": "Victorian middle class and parliamentary architectural reformers.",
-            "motive": "Exposing the wretched water supply available to working-class families in London tenements."
+            "motive": "Exposing the wretched water supply available to working-class families in London tenements.",
+            "hinge_question": "Why were private water companies unwilling to lay clean water pipes into the homes of poor tenants?"
           },
           "teacher_notes": {
             "hinge_question": "Why were private water companies unwilling to lay clean water pipes into the homes of poor tenants?",
@@ -4847,7 +4714,8 @@ export const water_and_sanitationData = {
               "audience": "Victorian middle class and parliamentary architectural reformers.",
               "motive": "Exposing the wretched water supply available to working-class families in London tenements."
             }
-          }
+          },
+          "source_context": "Private water companies supplied water to slum standpipes for only an hour a few days a week. **Hinge Question:** Why were private water companies unwilling to lay clean water pipes into the homes of poor tenants?"
         },
         {
           "id": "water_l4_src_d",
@@ -4868,7 +4736,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Dr Thomas Southwood Smith, leading medical sanitarian.",
             "audience": "Medical practitioners, Poor Law commissioners, and government officials.",
-            "motive": "Arguing that urban ventilation and street cleansing were essential to prevent toxic miasma from causing epidemic fever."
+            "motive": "Arguing that urban ventilation and street cleansing were essential to prevent toxic miasma from causing epidemic fever.",
+            "hinge_question": "Why did the miasma theory actually result in cleaner streets, even though the medical science behind it was completely wrong?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the miasma theory actually result in cleaner streets, even though the medical science behind it was completely wrong?",
@@ -4878,7 +4747,8 @@ export const water_and_sanitationData = {
               "audience": "Medical practitioners, Poor Law commissioners, and government officials.",
               "motive": "Arguing that urban ventilation and street cleansing were essential to prevent toxic miasma from causing epidemic fever."
             }
-          }
+          },
+          "source_context": "Before the discovery of bacteria, Victorian physicians believed diseases spread through toxic gases. **Hinge Question:** Why did the miasma theory actually result in cleaner streets, even though the medical science behind it was completely wrong?"
         },
         {
           "id": "water_l4_src_e",
@@ -4899,7 +4769,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "British Parliament under Prime Minister Lord John Russell.",
             "audience": "Town councils, ratepayer associations, and municipal authorities across Britain.",
-            "motive": "Providing legal powers for towns to form local health boards to combat epidemic cholera."
+            "motive": "Providing legal powers for towns to form local health boards to combat epidemic cholera.",
+            "hinge_question": "Why did the Victorian belief in 'laissez-faire' (leaving things alone without government interference) delay public health reform?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the Victorian belief in 'laissez-faire' (leaving things alone without government interference) delay public health reform?",
@@ -4909,65 +4780,10 @@ export const water_and_sanitationData = {
               "audience": "Town councils, ratepayer associations, and municipal authorities across Britain.",
               "motive": "Providing legal powers for towns to form local health boards to combat epidemic cholera."
             }
-          }
+          },
+          "source_context": "Passed in panic as cholera returned in 1848, this law created a central Board of Health. **Hinge Question:** Why did the Victorian belief in 'laissez-faire' (leaving things alone without government interference) delay public health reform?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Enquiry 4",
-        "tariff": "Question 4: Explain Why [12 marks • 15 mins]",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "Explain why public health in industrial towns deteriorated into a national crisis in the period 1800–1850. [12 marks]",
-            "stimulus": [
-              "The rapid rate of urbanisation and construction of back-to-back housing",
-              "The Victorian political belief in laissez-faire and opposition from ratepayers"
-            ],
-            "prompt": "Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link for every paragraph.",
-            "model": "A primary catalyst explaining why public health in industrial towns deteriorated into a national crisis was the unprecedented pace of urbanisation and the chaotic construction of back-to-back housing between 1800 and 1850. As steam-powered textile mills and ironworks expanded, millions of rural labourers flooded into northern boomtowns like Manchester, whose population exploded tenfold to over 300,000. Because towns possessed no building codes or town planning regulations, speculative landlords built cramped rows of back-to-back houses that shared party walls on three sides, entirely eliminating through-ventilation. Entire families were packed into damp, unpaved cellar dwellings, while up to one hundred workers shared a single outdoor privy midden. These open pits overflowed into courtyards, creating mountains of decomposing nightsoil that contaminated the soil and made urban living conditions utterly squalid.<br><br>Furthermore, the public health crisis deepened into a national catastrophe because polluted water supplies collided with the lethal arrival of Asiatic Cholera in 1831. Industrial towns lacked municipal piped water networks; private water companies operated for profit, turning on street standpipes for merely twenty minutes three days a week. As a consequence, working-class families drank from shallow wells that had absorbed liquid sewage leaking from neighbouring cesspools. When cholera arrived through Sunderland in October 1831, the pathogen spread with terrifying speed, killing over 32,000 people nationwide by inducing fatal dehydration within hours. Because the medical establishment dogmatically believed in miasma theory, local authorities wasted time lighting tar bonfires and whitewashing alleys rather than purifying drinking water. As Edwin Chadwick proved in his 1842 Sanitary Report, the average life expectancy for a factory labourer in Manchester collapsed to just seventeen years, demonstrating that water contamination had created an unprecedented humanitarian emergency.<br><br>Ultimately, the decisive underlying reason why the public health crisis persisted without remedy was the entrenched Victorian political ideology of laissez-faire and fierce resistance from middle-class ratepayers. Victorian politicians believed that the state should \"leave alone\" private enterprise and not interfere in property rights or impose taxes. When Parliament finally passed the 1848 Public Health Act during a second cholera panic, the law was fatally compromised by being made permissive (optional) rather than compulsory. Wealthy landlords and ratepayer associations furiously resisted paying taxes for underground sewers, denouncing health inspectors as tyrannical dictators. This taxpayer backlash culminated in the sacking of Edwin Chadwick in 1854 and the dismantling of the General Board of Health. Therefore, while urban density provided the physical conditions for disease, it was the stubborn refusal of the state to abandon laissez-faire that explains why public health deteriorated into an unresolved national crisis.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "1",
-                  "name": "UNCONTROLLED URBANISATION & HOUSING",
-                  "prompt": "Explain how rapid population migration created back-to-back housing, damp cellar dwellings, and overflowing privy middens without sewers [4.1, 4.2].",
-                  "starter": "A primary catalyst explaining why public health in industrial towns deteriorated into a national crisis was the unprecedented pace of urbanisation..."
-                },
-                {
-                  "letter": "2",
-                  "name": "WATER CONTAMINATION & CHOLERA",
-                  "prompt": "Explain how shallow wells contaminated with sewage collided with the 1831 arrival of Asiatic Cholera and miasma dogma [4.2, 4.3].",
-                  "starter": "Furthermore, the crisis deepened into a national catastrophe because polluted water supplies collided with the lethal arrival of Asiatic Cholera..."
-                },
-                {
-                  "letter": "3",
-                  "name": "LAISSEZ-FAIRE & POLITICAL GRIDLOCK",
-                  "prompt": "Explain how the ideology of laissez-faire and ratepayer resistance crippled the 1848 Public Health Act [4.4, 4.5].",
-                  "starter": "Ultimately, the underlying reason why the public health crisis persisted without remedy was the entrenched Victorian ideology of laissez-faire..."
-                }
-              ],
-              "sentence_starters": [
-                "A primary catalyst explaining why public health in industrial towns deteriorated into a national crisis was the unprecedented pace of urbanisation...",
-                "Furthermore, the crisis deepened into a national catastrophe because polluted water supplies collided with the lethal arrival of Asiatic Cholera...",
-                "Ultimately, the underlying reason why the public health crisis persisted without remedy was the entrenched Victorian ideology of laissez-faire..."
-              ],
-              "connectives_bank": [
-                "Urbanisation",
-                "Back-to-back housing",
-                "Privy Midden",
-                "Asiatic Cholera",
-                "Edwin Chadwick",
-                "Public Health Act 1848",
-                "Laissez-Faire",
-                "Ratepayer"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_5",
@@ -5991,7 +5807,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "John Leech, satirical illustrator for Punch.",
             "audience": "British public, politicians, and London ratepayers.",
-            "motive": "Humiliating Parliament into taking action to clean up the foul, disease-ridden River Thames."
+            "motive": "Humiliating Parliament into taking action to clean up the foul, disease-ridden River Thames.",
+            "hinge_question": "Why did middle-class Victorians blame the river itself for disease, rather than the water supply piped into their own drinking cups?"
           },
           "teacher_notes": {
             "hinge_question": "Why did middle-class Victorians blame the river itself for disease, rather than the water supply piped into their own drinking cups?",
@@ -6001,7 +5818,8 @@ export const water_and_sanitationData = {
               "audience": "British public, politicians, and London ratepayers.",
               "motive": "Humiliating Parliament into taking action to clean up the foul, disease-ridden River Thames."
             }
-          }
+          },
+          "source_context": "During the heatwave of June–July 1858, the Thames became a fermenting reservoir of sewage. **Hinge Question:** Why did middle-class Victorians blame the river itself for disease, rather than the water supply piped into their own drinking cups?"
         },
         {
           "id": "water_l5_src_b",
@@ -6021,7 +5839,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Portsmouth borough civil engineering records team.",
             "audience": "Citizens of Portsmouth, sanitary inspectors, and naval dockyard authorities.",
-            "motive": "Documenting the municipal steam pumping works constructed to drain the town."
+            "motive": "Documenting the municipal steam pumping works constructed to drain the town.",
+            "hinge_question": "Did pumping raw sewage directly into the sea solve the health problem or simply move the pollution somewhere else?"
           },
           "teacher_notes": {
             "hinge_question": "Did pumping raw sewage directly into the sea solve the health problem or simply move the pollution somewhere else?",
@@ -6031,7 +5850,8 @@ export const water_and_sanitationData = {
               "audience": "Citizens of Portsmouth, sanitary inspectors, and naval dockyard authorities.",
               "motive": "Documenting the municipal steam pumping works constructed to drain the town."
             }
-          }
+          },
+          "source_context": "Opened in 1865, Eastney Pumping Station used two 60-horsepower steam beam engines. **Hinge Question:** Did pumping raw sewage directly into the sea solve the health problem or simply move the pollution somewhere else?"
         },
         {
           "id": "water_l5_src_c",
@@ -6052,7 +5872,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Official Hansard parliamentary reporters.",
             "audience": "Parliament, the British public, and newspapers.",
-            "motive": "Recording verbatim the complaints of MPs and Disraeli's commitment to fund sewer construction."
+            "motive": "Recording verbatim the complaints of MPs and Disraeli's commitment to fund sewer construction.",
+            "hinge_question": "Why were wealthy politicians willing to ignore slum cholera for 25 years, but acted within 18 days when the stink reached their own chamber?"
           },
           "teacher_notes": {
             "hinge_question": "Why were wealthy politicians willing to ignore slum cholera for 25 years, but acted within 18 days when the stink reached their own chamber?",
@@ -6062,7 +5883,8 @@ export const water_and_sanitationData = {
               "audience": "Parliament, the British public, and newspapers.",
               "motive": "Recording verbatim the complaints of MPs and Disraeli's commitment to fund sewer construction."
             }
-          }
+          },
+          "source_context": "MPs attempted to soak curtains in lime chloride and debated moving Parliament. **Hinge Question:** Why were wealthy politicians willing to ignore slum cholera for 25 years, but acted within 18 days when the stink reached their own chamber?"
         },
         {
           "id": "water_l5_src_d",
@@ -6082,7 +5904,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Illustrated London News staff artist.",
             "audience": "Victorian reading public fascinated by British industrial and civil engineering triumphs.",
-            "motive": "Celebrating the unprecedented subterranean engineering works transforming London."
+            "motive": "Celebrating the unprecedented subterranean engineering works transforming London.",
+            "hinge_question": "Why did Bazalgette insist on testing every single batch of Portland cement, and how did this decision save London from sewer collapses?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Bazalgette insist on testing every single batch of Portland cement, and how did this decision save London from sewer collapses?",
@@ -6092,7 +5915,8 @@ export const water_and_sanitationData = {
               "audience": "Victorian reading public fascinated by British industrial and civil engineering triumphs.",
               "motive": "Celebrating the unprecedented subterranean engineering works transforming London."
             }
-          }
+          },
+          "source_context": "Bazalgette oversaw the laying of 318 million bricks. **Hinge Question:** Why did Bazalgette insist on testing every single batch of Portland cement, and how did this decision save London from sewer collapses?"
         },
         {
           "id": "water_l5_src_e",
@@ -6113,7 +5937,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Disraeli's Conservative government and Parliament.",
             "audience": "Every municipal corporation, urban sanitary district, and ratepayer in England and Wales.",
-            "motive": "Replacing voluntary public health measures with mandatory national standards for water, drainage, and medical inspection."
+            "motive": "Replacing voluntary public health measures with mandatory national standards for water, drainage, and medical inspection.",
+            "hinge_question": "Why is the 1875 Act considered the final death blow to the Victorian philosophy of laissez-faire?"
           },
           "teacher_notes": {
             "hinge_question": "Why is the 1875 Act considered the final death blow to the Victorian philosophy of laissez-faire?",
@@ -6123,65 +5948,10 @@ export const water_and_sanitationData = {
               "audience": "Every municipal corporation, urban sanitary district, and ratepayer in England and Wales.",
               "motive": "Replacing voluntary public health measures with mandatory national standards for water, drainage, and medical inspection."
             }
-          }
+          },
+          "source_context": "Passed under Disraeli's policy, the 1875 Act consolidated over 100 previous acts. **Hinge Question:** Why is the 1875 Act considered the final death blow to the Victorian philosophy of laissez-faire?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Enquiry 5",
-        "tariff": "Question 2: Explain Why [12 marks • 15 mins]",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "Explain why the British government finally took decisive action to build London’s sewer network after 1858. [12 marks]",
-            "stimulus": [
-              "The Great Stink of June 1858 and its impact on politicians in Parliament",
-              "The engineering proposals of Joseph Bazalgette and fear of recurring cholera epidemics"
-            ],
-            "prompt": "Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link for every paragraph.",
-            "model": "A decisive catalyst explaining why the British government finally took decisive action to build London’s sewer network after 1858 was the immediate terror and physical panic caused by the Great Stink. For over two decades, the River Thames had been turned into an open cesspool as hundreds of thousands of flushing water closets were plumbed into old storm drains. While cholera devastated working-class slums in 1831 and 1848, politicians clinging to laissez-faire refused to intervene. However, in June 1858, an unprecedented heatwave cooked the raw human excrement exposed on the tidal mudbanks of the river. The resulting stench was so suffocating that it penetrated the Houses of Parliament, forcing MPs and Prime Minister Benjamin Disraeli to flee committee rooms with handkerchiefs clamped to their mouths. Desperate attempts to soak library curtains in chloride of lime failed to block the fumes. Convinced by miasma theory that the foul vapors would strike them dead in their seats, Parliament shattered twenty years of political gridlock in just eighteen days, passing an emergency statute granting £3 million and absolute power to clean the Thames.<br><br>Furthermore, the government was able to act swiftly because Chief Engineer Joseph Bazalgette had already drawn up comprehensive, ready-to-build engineering blueprints that offered a definitive solution to recurring cholera epidemics. Appointed chief engineer to the Metropolitan Board of Works, Bazalgette recognized that widening street gutters was futile; instead, he planned an audacious 82-mile network of underground intercepting sewers running parallel to the Thames to catch sewage before it could touch the river. When terrified MPs demanded action, Bazalgette’s plans were immediately ready to execute. Between 1859 and 1865, Bazalgette directed thousands of navvies using 318 million bricks and waterproof Portland cement to create oval egg-shaped sewers that channeled sewage eastward to outfall reservoirs at Barking and Crossness. The persistent fear that another cholera epidemic would paralyze the capital gave the government the political willpower to fund Bazalgette’s massive engineering intervention.<br><br>Ultimately, while Bazalgette’s brilliant engineering made the solution possible, the decisive factor explaining why the government took action was raw political self-preservation among the ruling elite. For decades, Edwin Chadwick had provided indisputable statistical proof that slum filth killed thousands of factory workers, yet wealthy MPs dismissed sanitary reform as expensive tyranny. It was only when the lethal stench breached the walls of Parliament and directly threatened the lives of ministers themselves that politicians abandoned laissez-faire. As demonstrated in 1866 when London’s connected districts escaped a cholera outbreak entirely, Bazalgette’s sewers permanently conquered water-borne disease in the capital. Therefore, while engineering readiness provided the means, it was selfish aristocratic panic during the Great Stink of 1858 that provided the non-negotiable spark for government action.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "1",
-                  "name": "THE GREAT STINK & PARLIAMENTARY PANIC",
-                  "prompt": "Explain how the blistering June 1858 heatwave cooked Thames sewage, driving MPs from committee rooms and forcing an emergency sewer bill in 18 days [5.1, 5.2].",
-                  "starter": "A decisive catalyst explaining why the British government finally took decisive action after 1858 was the immediate panic caused by the Great Stink..."
-                },
-                {
-                  "letter": "2",
-                  "name": "BAZALGETTE’S BLUEPRINT & CHOLERA FEAR",
-                  "prompt": "Explain how Joseph Bazalgette’s ready-to-build plans and recurring cholera epidemics gave politicians a proven engineering solution [5.3].",
-                  "starter": "Furthermore, the government was able to act swiftly because Chief Engineer Joseph Bazalgette had already drawn up comprehensive engineering blueprints..."
-                },
-                {
-                  "letter": "3",
-                  "name": "COMPARATIVE VERDICT",
-                  "prompt": "Weigh whether selfish fear of dying or long-term sanitary vision was more decisive in breaking the laissez-faire gridlock [5.2, 5.5].",
-                  "starter": "Ultimately, while Bazalgette’s engineering was essential, the decisive factor explaining why the government acted was raw political self-preservation..."
-                }
-              ],
-              "sentence_starters": [
-                "A decisive catalyst explaining why the British government finally took decisive action after 1858 was the immediate panic caused by the Great Stink...",
-                "Furthermore, the government was able to act swiftly because Chief Engineer Joseph Bazalgette had already drawn up comprehensive engineering blueprints...",
-                "Ultimately, while Bazalgette’s engineering was essential, the decisive factor explaining why the government acted was raw political self-preservation..."
-              ],
-              "connectives_bank": [
-                "The Great Stink",
-                "Joseph Bazalgette",
-                "Intercepting Sewer",
-                "Portland Cement",
-                "Beam Engine",
-                "Louis Pasteur",
-                "Germ Theory",
-                "Public Health Act 1875"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_6",
@@ -7182,7 +6952,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Dr John Snow, investigating the Soho cholera epidemic.",
             "audience": "Medical profession, Epidemiological Society of London, and parliamentary sanitary authorities.",
-            "motive": "Providing visual epidemiological proof that cholera was water-borne rather than airborne miasma."
+            "motive": "Providing visual epidemiological proof that cholera was water-borne rather than airborne miasma.",
+            "hinge_question": "How did Snow's map use geography and mathematics to disprove the theory that cholera was carried on the wind (miasma)?"
           },
           "teacher_notes": {
             "hinge_question": "How did Snow's map use geography and mathematics to disprove the theory that cholera was carried on the wind (miasma)?",
@@ -7192,7 +6963,8 @@ export const water_and_sanitationData = {
               "audience": "Medical profession, Epidemiological Society of London, and parliamentary sanitary authorities.",
               "motive": "Providing visual epidemiological proof that cholera was water-borne rather than airborne miasma."
             }
-          }
+          },
+          "source_context": "In August–September 1854, over 600 people died in Soho within ten days. **Hinge Question:** How did Snow's map use geography and mathematics to disprove the theory that cholera was carried on the wind (miasma)?"
         },
         {
           "id": "water_l6_src_b",
@@ -7213,7 +6985,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Dr John Snow recording eyewitness interviews.",
             "audience": "Medical colleagues, parish vestrymen of St James, and sanitary commissioners.",
-            "motive": "Explaining why a business surrounded by cholera deaths had zero casualties, proving water was the sole transmission route."
+            "motive": "Explaining why a business surrounded by cholera deaths had zero casualties, proving water was the sole transmission route.",
+            "hinge_question": "Why did the Board of Health refuse to believe Snow's brewery evidence in 1854, insisting cholera must still be caused by miasma?"
           },
           "teacher_notes": {
             "hinge_question": "Why did the Board of Health refuse to believe Snow's brewery evidence in 1854, insisting cholera must still be caused by miasma?",
@@ -7223,7 +6996,8 @@ export const water_and_sanitationData = {
               "audience": "Medical colleagues, parish vestrymen of St James, and sanitary commissioners.",
               "motive": "Explaining why a business surrounded by cholera deaths had zero casualties, proving water was the sole transmission route."
             }
-          }
+          },
+          "source_context": "The brewery stood directly opposite the dying neighborhood in Broad Street. **Hinge Question:** Why did the Board of Health refuse to believe Snow's brewery evidence in 1854, insisting cholera must still be caused by miasma?"
         },
         {
           "id": "water_l6_src_c",
@@ -7243,7 +7017,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Dr John Snow compiling Registrar-General death returns.",
             "audience": "Epidemiological Society, Royal College of Physicians, and Parliament.",
-            "motive": "Demonstrating that water source alone explained the fourteen-fold difference in cholera mortality in identical streets."
+            "motive": "Demonstrating that water source alone explained the fourteen-fold difference in cholera mortality in identical streets.",
+            "hinge_question": "Why did Snow describe this situation as an experiment 'on the grandest scale'?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Snow describe this situation as an experiment 'on the grandest scale'?",
@@ -7253,7 +7028,8 @@ export const water_and_sanitationData = {
               "audience": "Epidemiological Society, Royal College of Physicians, and Parliament.",
               "motive": "Demonstrating that water source alone explained the fourteen-fold difference in cholera mortality in identical streets."
             }
-          }
+          },
+          "source_context": "In 1852, Lambeth moved its intake upstream while Southwark & Vauxhall did not. **Hinge Question:** Why did Snow describe this situation as an experiment 'on the grandest scale'?"
         },
         {
           "id": "water_l6_src_d",
@@ -7273,7 +7049,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Louis Pasteur presenting experimental evidence.",
             "audience": "French Academy of Sciences and international scientific community.",
-            "motive": "Disproving spontaneous generation and establishing Germ Theory as the scientific basis of fermentation and disease."
+            "motive": "Disproving spontaneous generation and establishing Germ Theory as the scientific basis of fermentation and disease.",
+            "hinge_question": "How did proving that microscopic germs exist in the air revolutionize hospital hygiene and water purification?"
           },
           "teacher_notes": {
             "hinge_question": "How did proving that microscopic germs exist in the air revolutionize hospital hygiene and water purification?",
@@ -7283,7 +7060,8 @@ export const water_and_sanitationData = {
               "audience": "French Academy of Sciences and international scientific community.",
               "motive": "Disproving spontaneous generation and establishing Germ Theory as the scientific basis of fermentation and disease."
             }
-          }
+          },
+          "source_context": "For centuries, natural philosophers believed living organisms spontaneously appeared from rotting matter. **Hinge Question:** How did proving that microscopic germs exist in the air revolutionize hospital hygiene and water purification?"
         },
         {
           "id": "water_l6_src_e",
@@ -7303,7 +7081,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Dr Robert Koch, Imperial Health Office, Berlin.",
             "audience": "International medical congresses and public health authorities.",
-            "motive": "Isolating the specific microbiological pathogen responsible for cholera epidemics."
+            "motive": "Isolating the specific microbiological pathogen responsible for cholera epidemics.",
+            "hinge_question": "Why did British medical officials in India resist Koch's discovery for years after 1884?"
           },
           "teacher_notes": {
             "hinge_question": "Why did British medical officials in India resist Koch's discovery for years after 1884?",
@@ -7313,65 +7092,10 @@ export const water_and_sanitationData = {
               "audience": "International medical congresses and public health authorities.",
               "motive": "Isolating the specific microbiological pathogen responsible for cholera epidemics."
             }
-          }
+          },
+          "source_context": "Koch led a medical expedition to Alexandria and Calcutta. **Hinge Question:** Why did British medical officials in India resist Koch's discovery for years after 1884?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Enquiry 6",
-        "tariff": "Question 5: Disciplinary Evaluation [12 marks • 15 mins]",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "Explain why Dr John Snow’s investigation of the 1854 Broad Street cholera epidemic was a decisive turning point in medicine. [12 marks]",
-            "stimulus": [
-              "The cartographic and geographical evidence of the 1854 Cholera Spot Map",
-              "The persistence of miasma theory and delayed acceptance by the Board of Health"
-            ],
-            "prompt": "Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link for every paragraph.",
-            "model": "A decisive reason explaining why Dr John Snow’s investigation was a major turning point in medicine was his revolutionary use of scientific detective work, clinical logic, and geographical mapping to pioneer the discipline of epidemiology. While the medical establishment insisted that the sudden August 1854 Soho outbreak was caused by foul sewer gases, Snow deduced that because cholera caused sudden vomiting and violent diarrhea rather than respiratory failure, the poison had to be ingested through water. Snow substantiated this hypothesis by creating his famous 1854 Cholera Spot Map, plotting all 616 deaths as black bars stacked outside houses around the Broad Street pump. Furthermore, Snow tested his theory by investigating anomalies: he proved that seventy workers at the local Lion Brewery suffered zero fatalities because they drank free malt liquor instead of water, while a widow in distant Hampstead (Susanna Eley) died after having Broad Street water delivered to her home. By persuading the St James parish vestry to remove the pump handle on 8 September 1854, Snow caused the epidemic to collapse, demonstrating for the first time that spatial data could identify and halt an infectious disease.<br><br>Furthermore, Snow’s investigation was a decisive turning point because it uncovered the physical mechanism of water-borne contamination, striking a fatal blow against the ancient doctrine of miasma. In collaboration with Reverend Henry Whitehead, Snow traced the outbreak back to its index case: five-month-old Baby Lewis at No. 40 Broad Street. His mother had washed his cholera-stained diapers in warm water and dumped the waste into a basement cesspool. When surveyor Peter York excavated the ground beneath the street, he discovered that the brick lining of the cesspool was cracked, allowing liquid sewage to seep through two feet and eight inches of porous gravel directly into the drinking water well of the pump. This forensic excavation provided undeniable physical proof that cholera was transmitted by human waste contaminating drinking water, paving the way for the biological revolution of Germ Theory.<br><br>Ultimately, while the General Board of Health stubbornly rejected Snow’s findings in 1855 due to entrenched miasma dogma, Snow’s work was a decisive turning point because it laid the empirical foundation for modern public health. Although Snow died tragically in 1858 before achieving full recognition, his hypothesis was conclusively validated in 1884 when German microbiologist Robert Koch isolated the comma-shaped Vibrio cholerae bacterium under the microscope. Snow’s investigation proved that municipal authorities had to separate drinking water from human sewage, directly inspiring the compulsory regulations of the 1875 Public Health Act. Therefore, Dr John Snow’s investigation transformed medicine by replacing centuries of superstitious miasma theory with rigorous scientific epidemiology, establishing clean water as a non-negotiable human right.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "1",
-                  "name": "SCIENTIFIC METHODOLOGY & MAPPING",
-                  "prompt": "Explain how Snow used clinical logic, the 1854 Spot Map, the brewery anomaly, and removing the pump handle to pioneer modern epidemiology [6.2, 6.3].",
-                  "starter": "A decisive reason explaining why Dr John Snow’s investigation was a major turning point was his revolutionary use of scientific detective work and mapping..."
-                },
-                {
-                  "letter": "2",
-                  "name": "DISPROVING MIASMA & REVEALING SEWAGE",
-                  "prompt": "Explain how uncovering Baby Lewis’s diaper and the leaking cesspool at No. 40 proved that water-borne bacteria, not bad air, caused cholera [6.4].",
-                  "starter": "Furthermore, Snow’s investigation was a decisive turning point because it provided physical proof that cholera was caused by sewage-tainted water rather than miasma..."
-                },
-                {
-                  "letter": "3",
-                  "name": "COMPARATIVE VERDICT & LONG-TERM IMPACT",
-                  "prompt": "Weigh the immediate rejection by the Board of Health against the ultimate vindication by Robert Koch in 1884 [6.5].",
-                  "starter": "Ultimately, while the Board of Health initially resisted his findings, Snow’s work was a profound turning point because it established modern epidemiology..."
-                }
-              ],
-              "sentence_starters": [
-                "A decisive reason explaining why Dr John Snow’s investigation was a major turning point was his revolutionary use of scientific detective work and mapping...",
-                "Furthermore, Snow’s investigation was a decisive turning point because it provided physical proof that cholera was caused by sewage-tainted water rather than miasma...",
-                "Ultimately, while the Board of Health initially resisted his findings, Snow’s work was a profound turning point because it established modern epidemiology..."
-              ],
-              "connectives_bank": [
-                "Epidemiology",
-                "Dr John Snow",
-                "Broad Street Pump",
-                "Spot Map",
-                "Brewery Anomaly",
-                "Baby Lewis",
-                "Robert Koch",
-                "Point Source Epidemic"
-              ]
-            }
-          }
-        ]
-      }
+      ]
     },
     {
       "id": "lesson_7",
@@ -7384,28 +7108,6 @@ export const water_and_sanitationData = {
       "banner": "/images/water_local_eastney_opt.jpg",
       "cover_image": "/images/water_local_eastney_opt.jpg",
       "prologue": "Welcome to your November Assessment Masterclass! In this workshop, you will prepare for your 30-minute formal assessment: \"Explain why there was rapid progress in Public Health 1800–1900?\". You will write three developed PEEL paragraphs explaining how scientific investigation (Dr John Snow), civil engineering (Sir Joseph Bazalgette), laboratory microbiology (Louis Pasteur), and compulsory government legislation (the 1875 Public Health Act) transformed British public health from deadly squalor into modern sanitary safety. Over half term, you are permitted to prepare ONE single sheet of A4 lined paper containing bullet points, mind maps, statistics, and dates to bring directly into the assessment room!",
-      "do_now": [
-        {
-          "q": "What scientific theory, published by Louis Pasteur in 1861, proved that microscopic airborne organisms caused decay and disease?",
-          "a": "Germ Theory."
-        },
-        {
-          "q": "Which 1875 parliamentary act made it strictly compulsory for every local council in Britain to supply clean water and collect sewage?",
-          "a": "The Public Health Act 1875."
-        },
-        {
-          "q": "What 1858 environmental crisis in London finally forced Parliament to fund Joseph Bazalgette’s underground sewer network?",
-          "a": "The Great Stink."
-        },
-        {
-          "q": "Which physician proved in 1854 that cholera was water-borne by mapping deaths and removing the handle of the contaminated Broad Street pump?",
-          "a": "Dr John Snow."
-        },
-        {
-          "q": "Which ancient civilization built gravity-fed stone aqueducts and public bathhouses across Roman Britain, which fell into disuse after AD 410?",
-          "a": "The Romans."
-        }
-      ],
       "teacher_notes": {
         "primer": "This masterclass synthesizes 19th-century public health progress across four key causal factors: scientific epidemiology (Snow), civil engineering (Bazalgette), laboratory microbiology (Pasteur), and state intervention (the 1875 Public Health Act). Guides Year 7 pupils to structure high-calibre PEEL paragraphs with explicit causal link sentences.",
         "objectives": [
@@ -8249,7 +7951,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Dr John Snow, independent physician researcher.",
             "audience": "Medical profession and London sanitary boards.",
-            "motive": "Publishing incontrovertible statistical and cartographic evidence that cholera is an intestinal water-borne disease."
+            "motive": "Publishing incontrovertible statistical and cartographic evidence that cholera is an intestinal water-borne disease.",
+            "hinge_question": "In an exam essay, how would you evaluate whether Snow's research or Bazalgette's engineering had the greater impact on saving lives?"
           },
           "teacher_notes": {
             "hinge_question": "In an exam essay, how would you evaluate whether Snow's research or Bazalgette's engineering had the greater impact on saving lives?",
@@ -8259,7 +7962,8 @@ export const water_and_sanitationData = {
               "audience": "Medical profession and London sanitary boards.",
               "motive": "Publishing incontrovertible statistical and cartographic evidence that cholera is an intestinal water-borne disease."
             }
-          }
+          },
+          "source_context": "Snow published his expanded findings in 1855 at his own expense. **Hinge Question:** In an exam essay, how would you evaluate whether Snow's research or Bazalgette's engineering had the greater impact on saving lives?"
         },
         {
           "id": "water_l7_src_b",
@@ -8279,7 +7983,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Dr Arthur Hill Hassall, pioneer of food and water microscopy.",
             "audience": "General Board of Health and London magistrates.",
-            "motive": "Providing visual scientific proof of gross fecal contamination in Broad Street pump water."
+            "motive": "Providing visual scientific proof of gross fecal contamination in Broad Street pump water.",
+            "hinge_question": "Why did Victorian officials initially dismiss microscopic particles in drinking water as 'harmless vegetable matter'?"
           },
           "teacher_notes": {
             "hinge_question": "Why did Victorian officials initially dismiss microscopic particles in drinking water as 'harmless vegetable matter'?",
@@ -8289,7 +7994,8 @@ export const water_and_sanitationData = {
               "audience": "General Board of Health and London magistrates.",
               "motive": "Providing visual scientific proof of gross fecal contamination in Broad Street pump water."
             }
-          }
+          },
+          "source_context": "Dr Arthur Hill Hassall analysed water samples from Soho during the outbreak. **Hinge Question:** Why did Victorian officials initially dismiss microscopic particles in drinking water as 'harmless vegetable matter'?"
         },
         {
           "id": "water_l7_src_c",
@@ -8309,7 +8015,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Institut Pasteur Museum photography.",
             "audience": "Historians, scientists, and students worldwide.",
-            "motive": "Preserving the original physical glassware that founded modern microbiology."
+            "motive": "Preserving the original physical glassware that founded modern microbiology.",
+            "hinge_question": "How did Germ Theory change the focus of public health from cleaning bad smells to destroying invisible microscopic organisms?"
           },
           "teacher_notes": {
             "hinge_question": "How did Germ Theory change the focus of public health from cleaning bad smells to destroying invisible microscopic organisms?",
@@ -8319,7 +8026,8 @@ export const water_and_sanitationData = {
               "audience": "Historians, scientists, and students worldwide.",
               "motive": "Preserving the original physical glassware that founded modern microbiology."
             }
-          }
+          },
+          "source_context": "Pasteur's flasks proved microbes do not generate spontaneously. **Hinge Question:** How did Germ Theory change the focus of public health from cleaning bad smells to destroying invisible microscopic organisms?"
         },
         {
           "id": "water_l7_src_d",
@@ -8339,7 +8047,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Victorian studio portrait photographer.",
             "audience": "Victorian society, parliamentary reformers, and posterity.",
-            "motive": "Documenting the influential architect of the English public health movement."
+            "motive": "Documenting the influential architect of the English public health movement.",
+            "hinge_question": "Why is Chadwick considered the father of British public health despite his mistaken belief in miasma?"
           },
           "teacher_notes": {
             "hinge_question": "Why is Chadwick considered the father of British public health despite his mistaken belief in miasma?",
@@ -8349,7 +8058,8 @@ export const water_and_sanitationData = {
               "audience": "Victorian society, parliamentary reformers, and posterity.",
               "motive": "Documenting the influential architect of the English public health movement."
             }
-          }
+          },
+          "source_context": "Chadwick was a dogmatic social reformer who believed filthy living conditions caused pauperism. **Hinge Question:** Why is Chadwick considered the father of British public health despite his mistaken belief in miasma?"
         },
         {
           "id": "water_l7_src_e",
@@ -8369,7 +8079,8 @@ export const water_and_sanitationData = {
           "provenance_clues": {
             "author": "Portsmouth borough surveyor records.",
             "audience": "Town council, local ratepayers, and water engineers.",
-            "motive": "Documenting the completion of municipal clean water storage for the city."
+            "motive": "Documenting the completion of municipal clean water storage for the city.",
+            "hinge_question": "Looking across the entire 19th century, which factor was most decisive in transforming public health: science, engineering, or government laws?"
           },
           "teacher_notes": {
             "hinge_question": "Looking across the entire 19th century, which factor was most decisive in transforming public health: science, engineering, or government laws?",
@@ -8379,66 +8090,14 @@ export const water_and_sanitationData = {
               "audience": "Town council, local ratepayers, and water engineers.",
               "motive": "Documenting the completion of municipal clean water storage for the city."
             }
-          }
+          },
+          "source_context": "By the late 19th century, clean water was recognized as a fundamental public right. **Hinge Question:** Looking across the entire 19th century, which factor was most decisive in transforming public health: science, engineering, or government laws?"
         }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Enquiry 7",
-        "tariff": "November Assessment: Explain Why [12 marks • 30 mins]",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "explain_why_12m",
-            "question": "Explain why there was rapid progress in Public Health between 1800 and 1900. [12 marks • 30 mins]",
-            "stimulus": [
-              "Dr John Snow and the Broad Street pump investigation (1854)",
-              "Joseph Bazalgette and the London intercepting sewer network (1858–1865)",
-              "Louis Pasteur and the Germ Theory of disease (1861)",
-              "The 1875 Public Health Act and compulsory government legislation"
-            ],
-            "prompt": "Write a structured 3-paragraph PEEL response choosing 3 of the 4 factors above, followed by a sustained evaluative conclusion. Use your 1 sheet of A4 revision notes to deploy precise facts, statistics, and dates.",
-            "model": "A primary catalyst explaining why there was rapid progress in public health between 1800 and 1900 was Dr John Snow’s pioneering epidemiological investigation during the 1854 Soho cholera outbreak. For decades, the medical establishment clung to the unproven miasma theory, believing disease was inhaled from foul vapours. Snow challenged this orthodoxy by reasoning that because cholera attacked the digestive tract with violent sickness and diarrhea, the poison had to be swallowed through drinking water. When cholera killed over five hundred people in Soho in August 1854, Snow plotted each fatality on a detailed spot map, proving that deaths clustered directly around the Broad Street water pump. By discovering that brewery workers drinking beer were unharmed, Snow convinced the local vestry to remove the pump handle, causing the epidemic to collapse. This was a critical reason for rapid progress because Snow provided empirical proof that cholera was a water-borne infection, directing public health away from purifying air toward the vital necessity of securing pure drinking water.<br><br>Furthermore, a decisive technological factor explaining why rapid progress occurred was Sir Joseph Bazalgette’s construction of London’s monumental underground sewer network between 1859 and 1865. The invention of flushing water closets had accidentally transformed the River Thames into a fermenting open sewer. In the sweltering heatwave of June 1858, the resulting \"Great Stink\" became so unbearable that MPs in the Houses of Parliament fled river committee rooms in panic. Terrified for their own lives, Parliament abandoned its traditional laissez-faire principles and passed emergency legislation in just eighteen days to grant £3 million for London’s drainage. As Chief Engineer, Bazalgette constructed 82 miles of underground brick intercepting sewers using 318 million bricks and newly invented waterproof Portland cement. Using gravity and steam pumping stations at Crossness and Abbey Mills, Bazalgette transported 420 million gallons of sewage daily eastward past the capital, safely away from drinking intakes. This engineering triumph was a fundamental reason for progress because it permanently separated clean water from human waste, eradicating cholera epidemics from London forever.<br><br>Additionally, the decisive legal factor explaining why public health improved nationwide was the passage of the landmark 1875 Public Health Act under Prime Minister Benjamin Disraeli. Earlier legislation, such as Edwin Chadwick’s 1848 Public Health Act, had largely failed because forming health boards was permissive (optional), allowing penny-pinching ratepayers to block sanitation spending. However, following Louis Pasteur’s 1861 Germ Theory—which disproved spontaneous generation and proved living microbes caused disease—the government had scientific proof that sanitation was a biological imperative. The 1875 Act made public health compulsory: for the first time, every local council in Britain was legally forced to appoint a Medical Officer of Health, inspect market food, pave streets, and guarantee clean piped water and covered sewers to all households. This legislation was essential because it forced even the poorest rural and industrial towns to implement sanitary engineering, ending laissez-faire and ensuring that scientific breakthroughs protected every citizen.<br><br>In conclusion, while John Snow provided the scientific diagnosis and Louis Pasteur proved microbial pathology, the most decisive factor driving rapid progress was the combination of Bazalgette’s civil engineering and the 1875 Public Health Act. Without Bazalgette’s sewers, Snow’s discovery would have remained an unused theory; without the compulsory 1875 Act, modern sanitation would have remained confined to wealthy districts of London. Therefore, rapid progress occurred because parliamentary law transformed engineering and medical science into a compulsory national reality.",
-            "scaffolding": {
-              "acronym": "3-Paragraph Causal Analysis (PEEL)",
-              "acronym_title": "12-Mark Explain Why Standard",
-              "steps": [
-                {
-                  "letter": "1",
-                  "name": "PARAGRAPH 1 (FACTOR 1)",
-                  "prompt": "Deploy your first chosen factor (e.g. Dr John Snow & the 1854 Broad Street investigation). State your point clearly, explain the evidence (spot map, pump handle), and link directly to why it caused rapid progress [7.2].",
-                  "starter": "A primary catalyst explaining why there was rapid progress in public health was Dr John Snow’s scientific breakthrough during the 1854 Soho cholera outbreak..."
-                },
-                {
-                  "letter": "2",
-                  "name": "PARAGRAPH 2 (FACTOR 2)",
-                  "prompt": "Deploy your second chosen factor (e.g. Sir Joseph Bazalgette & the Great Stink of 1858). Detail the 82 miles of brick intercepting sewers, Portland cement, and eliminating Thames pollution [7.3].",
-                  "starter": "Furthermore, a decisive engineering factor explaining why rapid progress occurred was Sir Joseph Bazalgette’s construction of London’s underground sewer network..."
-                },
-                {
-                  "letter": "3",
-                  "name": "PARAGRAPH 3 (FACTOR 3)",
-                  "prompt": "Deploy your third chosen factor (e.g. Louis Pasteur’s Germ Theory in 1861 OR the compulsory 1875 Public Health Act). Explain how biological proof or legal force destroyed laissez-faire [7.4, 7.5].",
-                  "starter": "Additionally, a fundamental reason explaining why public health advanced rapidly was the passage of the landmark 1875 Public Health Act..."
-                },
-                {
-                  "letter": "4",
-                  "name": "CONCLUSION / EVALUATIVE LINK",
-                  "prompt": "Weigh which factor was the true master catalyst. Explain how science, engineering, and government law combined to conquer water-borne disease.",
-                  "starter": "In conclusion, while John Snow identified the cause and Bazalgette built the engineering solution, the most decisive factor was..."
-                }
-              ],
-              "sentence_starters": [
-                "A primary catalyst explaining why there was rapid progress in public health was Dr John Snow’s scientific breakthrough during the 1854 Soho cholera outbreak...",
-                "Furthermore, a decisive engineering factor explaining why rapid progress occurred was Sir Joseph Bazalgette’s construction of London’s underground sewer network...",
-                "Additionally, a fundamental reason explaining why public health advanced rapidly was the passage of the landmark 1875 Public Health Act...",
-                "In conclusion, while John Snow identified the cause and Bazalgette built the engineering solution, the most decisive factor was..."
-              ],
-              "connectives_bank": []
-            }
-          }
-        ]
-      }
+      ]
     }
   ]
 };
-export default water_and_sanitationData;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = water_and_sanitation_data;
+}
+export default water_and_sanitation_data;

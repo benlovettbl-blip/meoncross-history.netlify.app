@@ -1,4 +1,4 @@
-export const unitData = {
+const the_shoah_data = {
   "lesson_reflection": {
     "prompt": "You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.",
     "instructions": [
@@ -563,7 +563,11 @@ export const unitData = {
             "Author: Demographic historians using official 1933 national census data.",
             "Audience: History students and researchers studying pre-war European populations.",
             "Motive: To show the vast geographic distribution of Jewish life across Europe before Nazi destruction."
-          ]
+          ],
+          "source_context": "Before the outbreak of the Second World War, Jewish communities had lived across Europe for over two millennia, creating an extraordinary mosaic of cultures, languages, and social traditions. The overwhelming demographic centre of European Jewish life was Eastern Europe, where millions of Yiddish-speaking Ashkenazi Jews lived in major urban centres and historic market towns (shtetls). **Hinge Question:** Why did the immense geographic concentration of Jewish populations in Poland and the western USSR make Nazi eastward military conquest after 1939 immediately catastrophic for European Jewry?",
+          "teacher_notes": {
+            "source_context": "Before the outbreak of the Second World War, Jewish communities had lived across Europe for over two millennia, creating an extraordinary mosaic of cultures, languages, and social traditions. The overwhelming demographic centre of European Jewish life was Eastern Europe, where millions of Yiddish-speaking Ashkenazi Jews lived in major urban centres and historic market towns (shtetls). **Hinge Question:** Why did the immense geographic concentration of Jewish populations in Poland and the western USSR make Nazi eastward military conquest after 1939 immediately catastrophic for European Jewry?"
+          }
         },
         {
           "letter": "B",
@@ -594,7 +598,11 @@ export const unitData = {
             "Motive: To record the vibrant intellectual, artistic, and political life of Europe's largest Jewish city."
           ],
           "image": "/images/warsaw_nalewki_street_bookstore_1930s.jpg",
-          "src": "/images/warsaw_nalewki_street_bookstore_1930s.jpg"
+          "src": "/images/warsaw_nalewki_street_bookstore_1930s.jpg",
+          "source_context": "Eastern European Jewry was not a static or isolated population, but a dynamic, highly literate, and politically diverse society that produced world-renowned literature, journalism, and science. **Hinge Question:** How does the flourishing Yiddish press and theatre culture challenge modern misconceptions that pre-war Eastern European Jews lived in isolated, impoverished isolation?",
+          "teacher_notes": {
+            "source_context": "Eastern European Jewry was not a static or isolated population, but a dynamic, highly literate, and politically diverse society that produced world-renowned literature, journalism, and science. **Hinge Question:** How does the flourishing Yiddish press and theatre culture challenge modern misconceptions that pre-war Eastern European Jews lived in isolated, impoverished isolation?"
+          }
         },
         {
           "letter": "C",
@@ -625,7 +633,11 @@ export const unitData = {
             "Author: Imperial German Army battlefield photographer.",
             "Audience: German soldiers, families at home, and the German public.",
             "Motive: To document soldiers observing religious traditions on the Western Front during the winter of 1916."
-          ]
+          ],
+          "source_context": "During the First World War, German Jews served with patriotic devotion alongside their Christian comrades, demonstrating their deep integration into German civil society and national life. The virulent anti-Semitic 'stab-in-the-back' myth (Dolchstoßlegende) propagated by Nazi ideologues after 1918 directly contradicted this verified historical reality. **Hinge Question:** Why did the widespread military service of German Jews in WWI make the Nazi regime's subsequent anti-Semitic laws feel so disorienting and shocking to German Jewish citizens after 1933?",
+          "teacher_notes": {
+            "source_context": "During the First World War, German Jews served with patriotic devotion alongside their Christian comrades, demonstrating their deep integration into German civil society and national life. The virulent anti-Semitic 'stab-in-the-back' myth (Dolchstoßlegende) propagated by Nazi ideologues after 1918 directly contradicted this verified historical reality. **Hinge Question:** Why did the widespread military service of German Jews in WWI make the Nazi regime's subsequent anti-Semitic laws feel so disorienting and shocking to German Jewish citizens after 1933?"
+          }
         },
         {
           "letter": "D",
@@ -656,7 +668,11 @@ export const unitData = {
             "Motive: To register maritime shipping schedules and respect the port's weekly Sabbath closures."
           ],
           "image": "/images/thessaloniki_jewish_heritage.jpg",
-          "src": "/images/thessaloniki_jewish_heritage.jpg"
+          "src": "/images/thessaloniki_jewish_heritage.jpg",
+          "source_context": "The Sephardic Jewish community in Greece and the Mediterranean preserved a distinct linguistic, liturgical, and civic culture over four centuries under Ottoman and Greek rule. **Hinge Question:** In what ways did the Sephardic cultural world of Thessaloniki differ from the Ashkenazi world of Eastern Europe, and why is this distinction historically significant?",
+          "teacher_notes": {
+            "source_context": "The Sephardic Jewish community in Greece and the Mediterranean preserved a distinct linguistic, liturgical, and civic culture over four centuries under Ottoman and Greek rule. **Hinge Question:** In what ways did the Sephardic cultural world of Thessaloniki differ from the Ashkenazi world of Eastern Europe, and why is this distinction historically significant?"
+          }
         },
         {
           "letter": "E",
@@ -687,113 +703,13 @@ export const unitData = {
             "Motive: To argue that Jews posed an unchangeable biological threat to Germany that politics could not fix."
           ],
           "image": "/images/wilhelm_marr_antisemitismus_1880.jpg",
-          "src": "/images/wilhelm_marr_antisemitismus_1880.jpg"
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Pre-War Life & Racial Antisemitism",
-        "tariff": "8 marks (Feature Drill [4m] & Consequence Writing [4m])",
-        "questions": [
-          {
-            "tariff": "4 marks",
-            "type": "feature_drills_4m",
-            "question": "Describe two features of pre-war Jewish life in Eastern Europe. [4 marks]",
-            "prompt": "Identify two distinct features of Eastern European Jewish society before 1939. For each feature, provide a clear identification followed by supporting factual knowledge.",
-            "model": "Feature 1: One key feature was that Eastern Europe was the vibrant heartland of Yiddish culture and language.<br>Detail: Over three million Jewish people lived in Poland, creating an irreplaceable intellectual world of Yiddish daily newspapers, professional theatre, literature, and secular schools like the Tarbut network in towns such as Kostopol.<br><br>Feature 2: A second key feature was the distinct demographic division between traditional rural shtetls and urban centers.<br>Detail: While thousands lived in small close-knit market towns maintaining observant religious traditions, cities like Warsaw and Vilna hosted renowned talmudic academies and active trade union movements.",
-            "scaffolding": {
-              "acronym": "F1 + D1 • F2 + D2",
-              "acronym_title": "4-Mark Feature Drill Formula",
-              "steps": [
-                {
-                  "letter": "F1",
-                  "name": "Feature 1 (Yiddish Culture)",
-                  "prompt": "Identify the cultural heartland of Yiddish language and literature.",
-                  "starter": "One key feature was that..."
-                },
-                {
-                  "letter": "D1",
-                  "name": "Detail 1",
-                  "prompt": "Add precise factual detail (3 million Jews in Poland, newspapers, Tarbut schools).",
-                  "starter": "Specifically, this involved..."
-                },
-                {
-                  "letter": "F2",
-                  "name": "Feature 2 (Shtetls vs Urban Centres)",
-                  "prompt": "Identify the demographic contrast between small shtetls and major cities.",
-                  "starter": "A second key feature was..."
-                },
-                {
-                  "letter": "D2",
-                  "name": "Detail 2",
-                  "prompt": "Add precise factual detail (Warsaw, Vilna, academies, Bund trade unions).",
-                  "starter": "In particular, this meant that..."
-                }
-              ],
-              "sentence_starters": [
-                "One key feature was that...",
-                "Specifically, this involved...",
-                "A second key feature was...",
-                "In particular, this meant that..."
-              ],
-              "connectives_bank": [
-                "Yiddishland",
-                "shtetl",
-                "assimilation",
-                "100,000 German soldiers",
-                "Thessaloniki",
-                "anti-Judaism",
-                "biological racism",
-                "Wilhelm Marr"
-              ]
-            }
-          },
-          {
-            "tariff": "4 marks",
-            "type": "consequence_4m",
-            "question": "Explain one consequence of the development of 19th-century racial antisemitism for European Jews. [4 marks]",
-            "prompt": "Focus on how pseudo-scientific biology treated Jewish identity as an unalterable genetic trait in the blood, removing baptism or conversion as an escape.",
-            "model": "One significant consequence of 19th-century racial antisemitism was the shift from religious prejudice to biological determinism. Under medieval Christian anti-Judaism, hostility was rooted in religious beliefs, meaning conversion or baptism offered a path to societal acceptance. However, 19th-century theorists like Wilhelm Marr redefined Jewish identity as an immutable biological race carried in the blood. As a direct result, religious conversion was rendered completely irrelevant; Jews were categorized as permanent racial enemies of the state. Consequently, this biological racism provided the ideological foundation for the 1935 Nuremberg Laws and the Nazi regime’s eventual policy of total physical annihilation.",
-            "scaffolding": {
-              "acronym": "P-F-C (Point • Fact • Consequence)",
-              "acronym_title": "High-Yield Consequence Formula (1 Concise Paragraph)",
-              "steps": [
-                {
-                  "letter": "POINT",
-                  "name": "Identify Consequence",
-                  "prompt": "State the shift from religious hostility to immutable biological determinism.",
-                  "starter": "One significant consequence of 19th-century racial antisemitism was..."
-                },
-                {
-                  "letter": "FACT",
-                  "name": "Historical Evidence",
-                  "prompt": "Cite Wilhelm Marr, the concept of blood heritage, and the invalidation of baptism.",
-                  "starter": "In particular, racial theorists argued that..."
-                },
-                {
-                  "letter": "CONSEQUENCE",
-                  "name": "Explain Result",
-                  "prompt": "Explain how this directly laid the groundwork for the 1935 Nuremberg Race Laws and extermination.",
-                  "starter": "Consequently, this directly resulted in..."
-                }
-              ],
-              "sentence_starters": [
-                "A significant consequence was that...",
-                "In particular, this meant that...",
-                "As a direct result...",
-                "Consequently, the impact was..."
-              ],
-              "connectives_bank": [
-                "biological racism",
-                "immutable blood",
-                "Wilhelm Marr",
-                "conversion invalid",
-                "Nuremberg Laws",
-                "racial determinism"
-              ]
-            }
+          "src": "/images/wilhelm_marr_antisemitismus_1880.jpg",
+          "source_context": "In 1879, German journalist Wilhelm Marr coined the term *Antisemitismus* to replace traditional Christian religious prejudice with modern pseudo-scientific racial theory. Under medieval anti-Judaism, baptism offered an escape; under racial antisemitism, identity was locked irreversibly in biological blood. **Hinge Question:** Why did defining Jewish identity as an unchangeable biological condition make modern antisemitism far more lethal than medieval religious anti-Judaism?",
+          "teacher_notes": {
+            "source_context": "In 1879, German journalist Wilhelm Marr coined the term *Antisemitismus* to replace traditional Christian religious prejudice with modern pseudo-scientific racial theory. Under medieval anti-Judaism, baptism offered an escape; under racial antisemitism, identity was locked irreversibly in biological blood. **Hinge Question:** Why did defining Jewish identity as an unchangeable biological condition make modern antisemitism far more lethal than medieval religious anti-Judaism?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_2",
@@ -1257,7 +1173,11 @@ export const unitData = {
             "Author: German photojournalist documenting Nazi Party actions in central Berlin.",
             "Audience: The German public and international newspapers.",
             "Motive: To showcase the Nazi regime's nationwide boycott and publicly isolate Jewish businesses."
-          ]
+          ],
+          "source_context": "On 1 April 1933, the Nazi state initiated its first nationwide, coordinated anti-Jewish action, followed six days later by the Law for the Restoration of the Professional Civil Service, which expelled Jews from universities, courts, and schools. **Hinge Question:** Why did the Nazi leadership orchestrate a public, visible boycott before passing legislation to purge the civil service?",
+          "teacher_notes": {
+            "source_context": "On 1 April 1933, the Nazi state initiated its first nationwide, coordinated anti-Jewish action, followed six days later by the Law for the Restoration of the Professional Civil Service, which expelled Jews from universities, courts, and schools. **Hinge Question:** Why did the Nazi leadership orchestrate a public, visible boycott before passing legislation to purge the civil service?"
+          }
         },
         {
           "letter": "B",
@@ -1288,7 +1208,11 @@ export const unitData = {
             "Author: Reich Ministry of the Interior civil servants and lawyers.",
             "Audience: German judges, civil servants, police officers, and doctors.",
             "Motive: To provide clear legal rules for enforcing the Nuremberg Laws and segregating the population."
-          ]
+          ],
+          "source_context": "Announced at the annual Nuremberg Party Rally in September 1935, the Reich Citizenship Law stripped Jews of German citizenship, while the Law for the Protection of German Blood and German Honour banned marriages and sexual relations between Jews and citizens of \"German or related blood\". **Hinge Question:** Why did the Nazi regime define Jewishness based on the religious records of grandparents rather than physical appearance or genetic science?",
+          "teacher_notes": {
+            "source_context": "Announced at the annual Nuremberg Party Rally in September 1935, the Reich Citizenship Law stripped Jews of German citizenship, while the Law for the Protection of German Blood and German Honour banned marriages and sexual relations between Jews and citizens of \"German or related blood\". **Hinge Question:** Why did the Nazi regime define Jewishness based on the religious records of grandparents rather than physical appearance or genetic science?"
+          }
         },
         {
           "letter": "C",
@@ -1319,7 +1243,11 @@ export const unitData = {
             "Motive: To keep an unvarnished eyewitness record of how Nazi laws progressively ruined daily life."
           ],
           "image": "/images/victor_klemperer_dresden_1938.jpg",
-          "src": "/images/victor_klemperer_dresden_1938.jpg"
+          "src": "/images/victor_klemperer_dresden_1938.jpg",
+          "source_context": "Between 1933 and 1939, over 400 separate discriminatory laws and regulations systematically dismantled the civic, economic, and social existence of German Jews. **Hinge Question:** In what ways was the psychological process of \"social death\" as destructive to German Jews as the economic and legal restrictions?",
+          "teacher_notes": {
+            "source_context": "Between 1933 and 1939, over 400 separate discriminatory laws and regulations systematically dismantled the civic, economic, and social existence of German Jews. **Hinge Question:** In what ways was the psychological process of \"social death\" as destructive to German Jews as the economic and legal restrictions?"
+          }
         },
         {
           "letter": "D",
@@ -1350,7 +1278,11 @@ export const unitData = {
             "Author: Eyewitness photographer in Frankfurt am Main.",
             "Audience: Local residents and German authorities.",
             "Motive: To record the destruction of the city's historic synagogue during the November Pogrom."
-          ]
+          ],
+          "source_context": "The November Pogrom resulted in the murder of over 91 Jews, the destruction of more than 1,400 synagogues, the looting of 7,500 Jewish-owned shops, and the mass arrest and incarceration of 30,000 Jewish men in Dachau, Buchenwald, and Sachsenhausen. **Hinge Question:** What does the deliberate instruction to emergency fire crews to protect only \"Aryan\" buildings reveal about the role of the state in Kristallnacht?",
+          "teacher_notes": {
+            "source_context": "The November Pogrom resulted in the murder of over 91 Jews, the destruction of more than 1,400 synagogues, the looting of 7,500 Jewish-owned shops, and the mass arrest and incarceration of 30,000 Jewish men in Dachau, Buchenwald, and Sachsenhausen. **Hinge Question:** What does the deliberate instruction to emergency fire crews to protect only \"Aryan\" buildings reveal about the role of the state in Kristallnacht?"
+          }
         },
         {
           "letter": "E",
@@ -1381,68 +1313,13 @@ export const unitData = {
             "Motive: To defend Australia's strict immigration quotas and justify rejecting Jewish refugees."
           ],
           "image": "/images/evian_conference_refugees_1938.png",
-          "src": "/images/evian_conference_refugees_1938.png"
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Persecution & The Stripping of Rights (1933–1939)",
-        "tariff": "8 marks (Narrative Account)",
-        "questions": [
-          {
-            "tariff": "8 marks",
-            "type": "narrative_account_8m",
-            "question": "Write a narrative account analysing the key stages in the persecution of German Jews between 1933 and 1939. [8 marks]",
-            "stimulus": [
-              "The enactment of the Nuremberg Laws (1935)",
-              "The November Pogrom (Kristallnacht, 1938)"
-            ],
-            "prompt": "Write a structured chronological account examining the escalation from initial economic and civic exclusion (1933), to legal racial segregation (1935), and finally to state-sponsored physical violence (1938–1939). Use linking connectives to show cause and consequence.",
-            "model": "Between 1933 and 1939, Nazi anti-Jewish policy escalated systematically from economic marginalisation to legal segregation and state-directed terror. Initially, persecution began in April 1933 with the nationwide one-day boycott of Jewish shops and doctors, rapidly followed by the Law for the Restoration of the Professional Civil Service, which summarily purged Jews from the civil service, judiciary, and universities.<br><br>Following this initial exclusion, a major legislative turning point occurred in September 1935 with the enactment of the Nuremberg Laws. The Reich Citizenship Law revoked German citizenship for Jews, reducing them to second-class \"subjects\", while the Law for the Protection of German Blood and German Honour criminalized marriage and sexual relations between Jews and \"Aryans\". Over the subsequent three years, over 400 separate bureaucratic decrees enforced total \"social death\", banning Jews from parks, public transit, and professional careers.<br><br>The culmination of this pre-war escalation occurred on 9–10 November 1938 with the November Pogrom (Kristallnacht). Instigated by Joseph Goebbels and executed by the SA and SS, over 1,400 synagogues were burned, thousands of businesses destroyed, and 30,000 Jewish men incarcerated in concentration camps. Consequently, this state-sponsored violence eliminated any remaining legal security and triggered frantic, desperate efforts to emigrate, concluding the transition from civic exclusion to violent physical expulsion.",
-            "scaffolding": {
-              "acronym": "3-Stage Chronological Narrative Framework",
-              "acronym_title": "Narrative Account Formula (Beginning • Escalation • Climax & Outcome)",
-              "steps": [
-                {
-                  "letter": "STAGE 1",
-                  "name": "1933 Civic & Economic Purges",
-                  "prompt": "Explain the April 1933 boycott and Civil Service Law excluding Jews from public institutions.",
-                  "starter": "Initially, persecution began in April 1933 when..."
-                },
-                {
-                  "letter": "STAGE 2",
-                  "name": "1935 Nuremberg Laws & Social Death",
-                  "prompt": "Explain how citizenship was revoked, intermarriage banned, and 400 decrees isolated families.",
-                  "starter": "Following this, a decisive escalation occurred in September 1935 when..."
-                },
-                {
-                  "letter": "STAGE 3",
-                  "name": "1938 Kristallnacht & Forced Emigration",
-                  "prompt": "Explain the November Pogrom, burning of synagogues, camp arrests, and flight.",
-                  "starter": "The violent culmination of pre-war policy occurred in November 1938 when..."
-                }
-              ],
-              "sentence_starters": [
-                "Initially, persecution began when...",
-                "Following this, a major escalation occurred in 1935 when...",
-                "A violent turning point was reached when...",
-                "Consequently, this resulted in...",
-                "This ultimately led to..."
-              ],
-              "connectives_bank": [
-                "April Boycott (1933)",
-                "Civil Service Law",
-                "Reich Citizenship Law",
-                "Blood Protection Law",
-                "Victor Klemperer",
-                "Kristallnacht",
-                "30,000 arrested",
-                "Evian Conference",
-                "Kindertransport"
-              ]
-            }
+          "src": "/images/evian_conference_refugees_1938.png",
+          "source_context": "In July 1938, delegates from 32 nations convened at Évian to address the Jewish refugee crisis, yet virtually all countries refused to raise their immigration quotas, leaving German and Austrian Jews trapped. Following Kristallnacht, Britain approved the Kindertransport, which rescued nearly 10,000 unaccompanied refugee children. **Hinge Question:** How did the international community’s refusal to open borders at the Évian Conference signal to Hitler that the world would not intervene to protect European Jews?",
+          "teacher_notes": {
+            "source_context": "In July 1938, delegates from 32 nations convened at Évian to address the Jewish refugee crisis, yet virtually all countries refused to raise their immigration quotas, leaving German and Austrian Jews trapped. Following Kristallnacht, Britain approved the Kindertransport, which rescued nearly 10,000 unaccompanied refugee children. **Hinge Question:** How did the international community’s refusal to open borders at the Évian Conference signal to Hitler that the world would not intervene to protect European Jews?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_3",
@@ -1906,7 +1783,11 @@ export const unitData = {
             "Motive: To organize the rapid ghettoization and concentration of Polish Jews along rail lines."
           ],
           "image": "/images/reinhard_heydrich_schnellbrief_1939.jpg",
-          "src": "/images/reinhard_heydrich_schnellbrief_1939.jpg"
+          "src": "/images/reinhard_heydrich_schnellbrief_1939.jpg",
+          "source_context": "Written three weeks after the invasion of Poland, Heydrich’s directive established the foundational policy of expelling Jews from the countryside, concentrating them in major urban ghettos, and establishing Jewish Councils (Judenräte) to execute German orders. **Hinge Question:** Why is the distinction Heydrich draws between \"short-term stages\" and the \"final aim\" central to historical debates on the development of the Holocaust?",
+          "teacher_notes": {
+            "source_context": "Written three weeks after the invasion of Poland, Heydrich’s directive established the foundational policy of expelling Jews from the countryside, concentrating them in major urban ghettos, and establishing Jewish Councils (Judenräte) to execute German orders. **Hinge Question:** Why is the distinction Heydrich draws between \"short-term stages\" and the \"final aim\" central to historical debates on the development of the Holocaust?"
+          }
         },
         {
           "letter": "B",
@@ -1937,7 +1818,11 @@ export const unitData = {
             "Motive: To enforce racial segregation and make all Jewish citizens immediately identifiable."
           ],
           "image": "/images/yellow_badge_armband_poland_1939.jpg",
-          "src": "/images/yellow_badge_armband_poland_1939.jpg"
+          "src": "/images/yellow_badge_armband_poland_1939.jpg",
+          "source_context": "Forced identification was introduced in occupied Poland within months of the invasion, separating Jews from their fellow citizens, exposing them to random beatings and round-ups for forced labour, and criminalising ordinary public movement. **Hinge Question:** How did the forced wearing of distinctive armbands and badges prepare the psychological and physical groundwork for ghettoisation?",
+          "teacher_notes": {
+            "source_context": "Forced identification was introduced in occupied Poland within months of the invasion, separating Jews from their fellow citizens, exposing them to random beatings and round-ups for forced labour, and criminalising ordinary public movement. **Hinge Question:** How did the forced wearing of distinctive armbands and badges prepare the psychological and physical groundwork for ghettoisation?"
+          }
         },
         {
           "letter": "C",
@@ -1968,7 +1853,11 @@ export const unitData = {
             "Author: German municipal occupation architects in Warsaw.",
             "Audience: German military authorities, SS administrators, and border guards.",
             "Motive: To mark the brick walls, guard posts, and restricted perimeter gates enclosing the ghetto."
-          ]
+          ],
+          "source_context": "The establishment of enclosed ghettos in occupied Poland was a calculated Nazi strategy of spatial isolation, economic expropriation, and demographic containment. By severing the ghetto from the surrounding city with brick walls, armed sentries, and checkpoint gates (ulice wjazdowe), the occupation authorities created conditions of catastrophic overcrowding and weaponised starvation. **Hinge Question:** What does the deliberate isolation of over 400,000 people within a sealed 1.3-square-mile zone reveal about the Nazi regime's true strategic purpose for the ghettos?",
+          "teacher_notes": {
+            "source_context": "The establishment of enclosed ghettos in occupied Poland was a calculated Nazi strategy of spatial isolation, economic expropriation, and demographic containment. By severing the ghetto from the surrounding city with brick walls, armed sentries, and checkpoint gates (ulice wjazdowe), the occupation authorities created conditions of catastrophic overcrowding and weaponised starvation. **Hinge Question:** What does the deliberate isolation of over 400,000 people within a sealed 1.3-square-mile zone reveal about the Nazi regime's true strategic purpose for the ghettos?"
+          }
         },
         {
           "letter": "D",
@@ -1999,7 +1888,11 @@ export const unitData = {
             "Motive: To record the everyday bravery, hunger, and suffering of ghetto youth."
           ],
           "image": "/images/warsaw_ghetto_child_smuggler_1941.jpg",
-          "src": "/images/warsaw_ghetto_child_smuggler_1941.jpg"
+          "src": "/images/warsaw_ghetto_child_smuggler_1941.jpg",
+          "source_context": "Deliberate starvation and rampant typhus epidemics claimed the lives of over 83,000 people in the Warsaw Ghetto between 1940 and mid-1942 before deportations to Treblinka even began. **Hinge Question:** Why did ghetto inhabitants regard child food smuggling as an act of courageous resistance rather than illegal conduct?",
+          "teacher_notes": {
+            "source_context": "Deliberate starvation and rampant typhus epidemics claimed the lives of over 83,000 people in the Warsaw Ghetto between 1940 and mid-1942 before deportations to Treblinka even began. **Hinge Question:** Why did ghetto inhabitants regard child food smuggling as an act of courageous resistance rather than illegal conduct?"
+          }
         },
         {
           "letter": "E",
@@ -2030,66 +1923,13 @@ export const unitData = {
             "Author: David Graber, a 19-year-old archivist working with Emanuel Ringelblum.",
             "Audience: Future generations and historians worldwide after the war.",
             "Motive: To hide eyewitness evidence of Nazi crimes beneath the ghetto ruins before being killed."
-          ]
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: The Warsaw Ghetto & Ringelblum Archive",
-        "tariff": "8 marks (Forensic Source Utility)",
-        "questions": [
-          {
-            "tariff": "8 marks",
-            "type": "source_utility_8m",
-            "question": "How useful is Source A for an enquiry into the living conditions and physical confinement of Jews in the Warsaw Ghetto? [8 marks]",
-            "stimulus": [
-              "Source A: Extract from the diary of 16-year-old Mary Berg, written inside the sealed Warsaw Ghetto, January 1941."
-            ],
-            "prompt": "Evaluate Source A for its historical utility. Analyse its content with contextual knowledge (caloric rationing, overcrowding, disease) and interrogate its provenance (first-hand contemporary diary, limitations of localized viewpoint).",
-            "model": "Content & Context: Source A is highly useful because it provides vivid, direct eyewitness evidence of the physical and psychological enclosure imposed on Warsaw’s Jews. Berg details how the 3-metre brick wall severed contact with the outside world and documents the severe starvation and cold suffered by children. This aligns precisely with historical knowledge: official ghetto rations supplied merely 180 calories per day, causing over 80,000 deaths from starvation and typhus. Crucially, Berg also reveals spiritual resistance—describing clandestine cellar classes defying Nazi bans.<br><br>Provenance & Limitations: The provenance significantly enhances its utility. Written contemporaneously in January 1941 by a 16-year-old resident inside the sealed ghetto, it captures immediate raw observations free from the distortion of post-war hindsight. However, a historian must recognize its limitations: as a private diary, it reflects only Berg’s localized sector of the ghetto, and she could not possess knowledge of the high-level extermination directives being formulated in Berlin. Overall, Source A remains exceptionally valuable for understanding daily human survival under confinement.",
-            "scaffolding": {
-              "acronym": "C-K-P (Content • Knowledge • Provenance)",
-              "acronym_title": "Edexcel GCSE Forensic Source Utility Framework",
-              "steps": [
-                {
-                  "letter": "CONTENT",
-                  "name": "Analyse Source Detail",
-                  "prompt": "Identify what Berg reveals about physical walls, starving children, and cellar classes.",
-                  "starter": "Source A is highly useful because its content reveals that..."
-                },
-                {
-                  "letter": "KNOWLEDGE",
-                  "name": "Contextual Corroboration",
-                  "prompt": "Corroborate with 180-calorie daily rations, 80,000 starvation deaths, and typhus epidemics.",
-                  "starter": "From my own historical knowledge, I know that..."
-                },
-                {
-                  "letter": "PROVENANCE",
-                  "name": "Evaluate Origin & Motive",
-                  "prompt": "Evaluate the strength of a contemporaneous eyewitness diary vs localized observational limits.",
-                  "starter": "Furthermore, the provenance makes it valuable because..."
-                }
-              ],
-              "sentence_starters": [
-                "Source A is useful because of its content, which reveals that...",
-                "In particular, it shows that living conditions were...",
-                "Furthermore, the provenance makes it valuable because it was written by...",
-                "However, a historian must also consider its limitations, such as..."
-              ],
-              "connectives_bank": [
-                "Warsaw Ghetto wall",
-                "180 calories",
-                "starvation",
-                "typhus",
-                "child smugglers",
-                "Mary Berg",
-                "Oneg Shabbat",
-                "Emanuel Ringelblum",
-                "milk cans"
-              ]
-            }
+          ],
+          "source_context": "Historian Emanuel Ringelblum organised a covert network of writers, doctors, and rabbis to document every aspect of ghetto life and Nazi crimes. In August 1942, as deportations raged, 19-year-old David Graber wrote before burying the cans: \"What we were unable to shout out to the world, we buried in the ground... May this treasure fall into good hands.\" **Hinge Question:** Why did the creators of the Oneg Shabbat archive risk their lives to preserve written records, poems, and drawings under conditions of total annihilation?",
+          "teacher_notes": {
+            "source_context": "Historian Emanuel Ringelblum organised a covert network of writers, doctors, and rabbis to document every aspect of ghetto life and Nazi crimes. In August 1942, as deportations raged, 19-year-old David Graber wrote before burying the cans: \"What we were unable to shout out to the world, we buried in the ground... May this treasure fall into good hands.\" **Hinge Question:** Why did the creators of the Oneg Shabbat archive risk their lives to preserve written records, poems, and drawings under conditions of total annihilation?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_4",
@@ -2553,7 +2393,11 @@ export const unitData = {
             "Motive: To turn the invasion of the Soviet Union into a war of ideological and racial extermination."
           ],
           "image": "/images/kommissarbefehl_order_1941.jpg",
-          "src": "/images/kommissarbefehl_order_1941.jpg"
+          "src": "/images/kommissarbefehl_order_1941.jpg",
+          "source_context": "Signed on 6 June 1941 before the invasion of the Soviet Union, the Commissar Order explicitly instructed the German military to bypass the Geneva Conventions and murder captured political officers, fusing anti-communism with antisemitic extermination. **Hinge Question:** How did the German High Command’s official orders prepare ordinary soldiers to accept and facilitate mass atrocities against civilian populations?",
+          "teacher_notes": {
+            "source_context": "Signed on 6 June 1941 before the invasion of the Soviet Union, the Commissar Order explicitly instructed the German military to bypass the Geneva Conventions and murder captured political officers, fusing anti-communism with antisemitic extermination. **Hinge Question:** How did the German High Command’s official orders prepare ordinary soldiers to accept and facilitate mass atrocities against civilian populations?"
+          }
         },
         {
           "letter": "B",
@@ -2584,7 +2428,11 @@ export const unitData = {
             "Author: SS-Brigadeführer Franz Walter Stahlecker, Commander of Einsatzgruppe A.",
             "Audience: SS chief Heinrich Himmler and Adolf Hitler in Berlin.",
             "Motive: To report the total number of Jewish civilians murdered during the initial months of Operation Barbarossa."
-          ]
+          ],
+          "source_context": "Following the German invasion of the Soviet Union in June 1941 (Operation Barbarossa), four SS paramilitary formations (Einsatzgruppen A, B, C, D) followed the Wehrmacht forward lines to execute systematic mass shootings. Stahlecker’s map served as chilling bureaucratic proof of the murder of over 218,000 human beings in five months. **Hinge Question:** How does this top-secret Nazi map provide irrefutable primary evidence that the mass murder of European Jews was an orchestrated state policy rather than sporadic military violence?",
+          "teacher_notes": {
+            "source_context": "Following the German invasion of the Soviet Union in June 1941 (Operation Barbarossa), four SS paramilitary formations (Einsatzgruppen A, B, C, D) followed the Wehrmacht forward lines to execute systematic mass shootings. Stahlecker’s map served as chilling bureaucratic proof of the murder of over 218,000 human beings in five months. **Hinge Question:** How does this top-secret Nazi map provide irrefutable primary evidence that the mass murder of European Jews was an orchestrated state policy rather than sporadic military violence?"
+          }
         },
         {
           "letter": "C",
@@ -2615,7 +2463,11 @@ export const unitData = {
             "Motive: To summarize daily arrest figures and murder tallies from the Eastern Front."
           ],
           "image": "/images/babi_yar_massacre_1941.jpg",
-          "src": "/images/babi_yar_massacre_1941.jpg"
+          "src": "/images/babi_yar_massacre_1941.jpg",
+          "source_context": "At Babi Yar, a ravine northwest of Kyiv, nearly 34,000 Jewish men, women, and children were forced to strip, march into the ravine, and lie down atop corpses before being shot in layers by SS and police units over two days. **Hinge Question:** What does the calm, administrative vocabulary of this official report reveal about how perpetrators normalized industrial slaughter?",
+          "teacher_notes": {
+            "source_context": "At Babi Yar, a ravine northwest of Kyiv, nearly 34,000 Jewish men, women, and children were forced to strip, march into the ravine, and lie down atop corpses before being shot in layers by SS and police units over two days. **Hinge Question:** What does the calm, administrative vocabulary of this official report reveal about how perpetrators normalized industrial slaughter?"
+          }
         },
         {
           "letter": "D",
@@ -2646,7 +2498,11 @@ export const unitData = {
             "Motive: To keep an accurate, day-by-day eyewitness record of the 70,000 murders at Ponary."
           ],
           "image": "/images/ponary_forest_execution_pits_1941.png",
-          "src": "/images/ponary_forest_execution_pits_1941.png"
+          "src": "/images/ponary_forest_execution_pits_1941.png",
+          "source_context": "In Lithuania, Latvia, and parts of Ukraine, local auxiliary police and nationalist militias eagerly collaborated with German death squads, often initiating pogroms and conducting the direct shooting of their Jewish neighbours. **Hinge Question:** Why is examining local collaboration across Eastern Europe essential for understanding the catastrophic speed of the \"Holocaust by Bullets\"?",
+          "teacher_notes": {
+            "source_context": "In Lithuania, Latvia, and parts of Ukraine, local auxiliary police and nationalist militias eagerly collaborated with German death squads, often initiating pogroms and conducting the direct shooting of their Jewish neighbours. **Hinge Question:** Why is examining local collaboration across Eastern Europe essential for understanding the catastrophic speed of the \"Holocaust by Bullets\"?"
+          }
         },
         {
           "letter": "E",
@@ -2677,73 +2533,13 @@ export const unitData = {
             "Motive: To recommend mechanical improvements to make gas vans kill more efficiently."
           ],
           "image": "/images/chelmno_gas_van_site_1942.jpg",
-          "src": "/images/chelmno_gas_van_site_1942.jpg"
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Operation Barbarossa & The Holocaust by Bullets",
-        "tariff": "12 marks (Evaluative Statement Essay)",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "evaluative_essay_12m",
-            "question": "‘The invasion of the Soviet Union in June 1941 was the main turning point in the development of the Holocaust.’ How far do you agree? [12 marks]",
-            "stimulus": [
-              "The invasion of the Soviet Union and the Einsatzgruppen mass shootings (1941)",
-              "The enactment of the Nuremberg Laws and Kristallnacht (1935–1938)"
-            ],
-            "prompt": "Construct a balanced evaluative argument weighing the decisive military watershed of Operation Barbarossa against prior peacetime legal and social persecution. Reach a supported conclusion.",
-            "model": "To a large extent, the invasion of the Soviet Union in June 1941 was indeed the decisive turning point in the development of the Holocaust, marking the irrevocable transition from forced emigration and confinement to systematic, state-organized physical extermination.<br><br>On the one hand, Operation Barbarossa fundamentally transformed the nature and scale of Nazi persecution. Hitler framed the invasion as a Vernichtungskrieg (war of annihilation) against \"Judeo-Bolshevism\", suspending conventional military rules. Following directly behind the Wehrmacht, four SS Einsatzgruppen squads and Order Police battalions initiated mass face-to-face shootings of entire Jewish communities. At Babi Yar in September 1941, 33,771 Jewish people were murdered in just 36 hours. Over 1.5 million victims were shot into ravines across Ukraine, Lithuania, and Belarus in the \"Holocaust by Bullets\" before stationary gas chambers were operational. This demonstrated that physical annihilation had become official, active state policy.<br><br>On the other hand, it can be argued that pre-1941 developments established the indispensable ideological, legal, and institutional preconditions for genocide. The 1935 Nuremberg Laws stripped German Jews of citizenship, while over 400 decrees systematically dehumanized them. The November Pogrom of 1938 proved that the regime was prepared to deploy state violence openly. Without this domestic radicalization and the subsequent ghettoization of Polish Jews in 1939–1940, the psychological acclimatization required for mass murder could not have occurred.<br><br>In conclusion, while pre-1941 persecution established the administrative machinery and ideological hatred, Operation Barbarossa was the decisive catalyst. It was in June 1941 that the regime crossed the barrier from violent discrimination and starvation to total biological murder, making it the true watershed of the Holocaust.",
-            "scaffolding": {
-              "acronym": "PEEL Evaluative Framework",
-              "acronym_title": "12-Mark Evaluative Statement Essay Standard",
-              "steps": [
-                {
-                  "letter": "THESIS",
-                  "name": "State Position",
-                  "prompt": "State clearly to what extent Barbarossa was the primary watershed turning point.",
-                  "starter": "To a large extent, it can be argued that..."
-                },
-                {
-                  "letter": "THEME 1",
-                  "name": "Barbarossa & Einsatzgruppen (1941)",
-                  "prompt": "Explain Vernichtungskrieg, mobile killing squads, Babi Yar, and 1.5m shot face-to-face.",
-                  "starter": "On the one hand, Operation Barbarossa was decisive because..."
-                },
-                {
-                  "letter": "THEME 2",
-                  "name": "Pre-1941 Foundation (1935–1939)",
-                  "prompt": "Evaluate counter-arguments: Nuremberg Laws, social death, Kristallnacht, and ghettos.",
-                  "starter": "On the other hand, an alternative view is that..."
-                },
-                {
-                  "letter": "JUDGMENT",
-                  "name": "Weighed Conclusion",
-                  "prompt": "Explain why the transition to active physical extermination makes June 1941 the decisive turning point.",
-                  "starter": "In conclusion, the primary turning point was... because..."
-                }
-              ],
-              "sentence_starters": [
-                "To a large extent, it can be argued that...",
-                "On the one hand, Operation Barbarossa was decisive because...",
-                "In particular, this meant that...",
-                "On the other hand, an alternative view is that...",
-                "In conclusion, the primary turning point was... because..."
-              ],
-              "connectives_bank": [
-                "Operation Barbarossa",
-                "Vernichtungskrieg",
-                "Einsatzgruppen",
-                "Babi Yar (33,771 dead)",
-                "Ponary",
-                "Christopher Browning",
-                "Ordinary Men",
-                "Chełmno gas vans"
-              ]
-            }
+          "src": "/images/chelmno_gas_van_site_1942.jpg",
+          "source_context": "Face-to-face shooting created severe psychological stress and drunkenness among German firing squads. To ease the burden on perpetrators and maximize slaughter, the Nazi leadership developed sealed gas vans at Chełmno (operational December 1941), initiating the transition to industrial gas chambers. **Hinge Question:** How does the technical language of this engineering report demonstrate the dehumanization of both victims and perpetrators?",
+          "teacher_notes": {
+            "source_context": "Face-to-face shooting created severe psychological stress and drunkenness among German firing squads. To ease the burden on perpetrators and maximize slaughter, the Nazi leadership developed sealed gas vans at Chełmno (operational December 1941), initiating the transition to industrial gas chambers. **Hinge Question:** How does the technical language of this engineering report demonstrate the dehumanization of both victims and perpetrators?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_5",
@@ -3226,7 +3022,11 @@ export const unitData = {
             "Motive: To record government agreement on coordinating deportations to death camps across Europe."
           ],
           "image": "/images/wannsee_heydrich_endlosung_directive_1941.jpg",
-          "src": "/images/wannsee_heydrich_endlosung_directive_1941.jpg"
+          "src": "/images/wannsee_heydrich_endlosung_directive_1941.jpg",
+          "source_context": "Convened by Reinhard Heydrich at a lakeside villa in Wannsee, Berlin, 15 senior government ministry directors, jurists, and SS generals met for 90 minutes over cognac to coordinate the state machinery for deporting and exterminating 11 million European Jews. **Hinge Question:** How does the Wannsee Protocol prove that the \"Final Solution\" was an enterprise of the entire German civil service, not merely rogue SS fanatics?",
+          "teacher_notes": {
+            "source_context": "Convened by Reinhard Heydrich at a lakeside villa in Wannsee, Berlin, 15 senior government ministry directors, jurists, and SS generals met for 90 minutes over cognac to coordinate the state machinery for deporting and exterminating 11 million European Jews. **Hinge Question:** How does the Wannsee Protocol prove that the \"Final Solution\" was an enterprise of the entire German civil service, not merely rogue SS fanatics?"
+          }
         },
         {
           "letter": "B",
@@ -3257,7 +3057,11 @@ export const unitData = {
             "Motive: To transmit year-end death toll statistics across the four Operation Reinhard death camps."
           ],
           "image": "/images/hofle_telegram_intercept_1943.jpg",
-          "src": "/images/hofle_telegram_intercept_1943.jpg"
+          "src": "/images/hofle_telegram_intercept_1943.jpg",
+          "source_context": "Codenamed *Aktion Reinhard* in memory of Heydrich, these three purpose-built death camps existed solely to murder. Victims were stripped and forced directly into carbon monoxide gas chambers within two hours of arrival; over 1.7 million Jews were murdered in under 18 months. **Hinge Question:** Why is the Höfle Telegram considered one of the most conclusive pieces of documentary evidence verifying the scale of Operation Reinhard?",
+          "teacher_notes": {
+            "source_context": "Codenamed *Aktion Reinhard* in memory of Heydrich, these three purpose-built death camps existed solely to murder. Victims were stripped and forced directly into carbon monoxide gas chambers within two hours of arrival; over 1.7 million Jews were murdered in under 18 months. **Hinge Question:** Why is the Höfle Telegram considered one of the most conclusive pieces of documentary evidence verifying the scale of Operation Reinhard?"
+          }
         },
         {
           "letter": "C",
@@ -3307,7 +3111,11 @@ export const unitData = {
             "Author: SS Central Construction Office architects and German railway schedulers.",
             "Audience: German construction firms, camp engineers, and train conductors.",
             "Motive: To design, construct, and operate industrial extermination facilities at Auschwitz-Birkenau."
-          ]
+          ],
+          "source_context": "The Nazi 'Final Solution' operated on a dual scale: a continent-wide logistical system coordinating state railways (Deutsche Reichsbahn) to deport millions across thousands of miles, and a localized industrial killing apparatus using modern engineering (Topf & Söhne cremation ovens and hermetically sealed gas chambers). **Hinge Question:** How do the continental railway deportation network (Plate 1) and the industrial engineering blueprints of Birkenau's crematoria (Plate 2) demonstrate that the Holocaust was an integrated continental operation requiring modern logistical, corporate, and technological systems?",
+          "teacher_notes": {
+            "source_context": "The Nazi 'Final Solution' operated on a dual scale: a continent-wide logistical system coordinating state railways (Deutsche Reichsbahn) to deport millions across thousands of miles, and a localized industrial killing apparatus using modern engineering (Topf & Söhne cremation ovens and hermetically sealed gas chambers). **Hinge Question:** How do the continental railway deportation network (Plate 1) and the industrial engineering blueprints of Birkenau's crematoria (Plate 2) demonstrate that the Holocaust was an integrated continental operation requiring modern logistical, corporate, and technological systems?"
+          }
         },
         {
           "letter": "D",
@@ -3338,7 +3146,11 @@ export const unitData = {
             "Author: German propaganda photographer accompanying SS General Jürgen Stroop.",
             "Audience: Reichsführer-SS Heinrich Himmler in Berlin.",
             "Motive: To boast about crushing the Warsaw Ghetto Uprising and burning the ghetto."
-          ]
+          ],
+          "source_context": "On 19 April 1943, several hundred young Jewish fighters armed with pistols, Molotov cocktails, and a few rifles held off heavily armed German forces for nearly a month. Leader Mordechai Anielewicz wrote: \"The dream of my life has risen to become reality: self-defence in the ghetto has become a fact.\" **Hinge Question:** Why did the young fighters of the Warsaw Ghetto choose to fight, knowing that military rescue or victory was impossible?",
+          "teacher_notes": {
+            "source_context": "On 19 April 1943, several hundred young Jewish fighters armed with pistols, Molotov cocktails, and a few rifles held off heavily armed German forces for nearly a month. Leader Mordechai Anielewicz wrote: \"The dream of my life has risen to become reality: self-defence in the ghetto has become a fact.\" **Hinge Question:** Why did the young fighters of the Warsaw Ghetto choose to fight, knowing that military rescue or victory was impossible?"
+          }
         },
         {
           "letter": "E",
@@ -3369,117 +3181,13 @@ export const unitData = {
             "Motive: To remember the courage of the women and men who destroyed a gas chamber building."
           ],
           "image": "/images/auschwitz_crematorium_iv_ruins_1944.jpg",
-          "src": "/images/auschwitz_crematorium_iv_ruins_1944.jpg"
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Operation Reinhard & Death Camp Resistance",
-        "tariff": "12 marks (Feature Drill [4m] & Causal Analysis [8m])",
-        "questions": [
-          {
-            "tariff": "4 marks",
-            "type": "feature_drills_4m",
-            "question": "Describe two features of the Operation Reinhard extermination camps. [4 marks]",
-            "prompt": "Identify two distinct features of Bełżec, Sobibór, or Treblinka. For each feature, provide a clear identification followed by supporting factual knowledge.",
-            "model": "Feature 1: One key feature was that Operation Reinhard camps were designed purely for immediate extermination with zero selection for labour.<br>Detail: Arriving transports of up to 5,000 men, women, and children at Treblinka, Bełżec, and Sobibór were stripped, marched into carbon monoxide gas chambers, and murdered within two hours of train arrival.<br><br>Feature 2: A second key feature was the extensive use of psychological deception and camouflage.<br>Detail: Treblinka was constructed with a fake railway station complete with painted ticket booths, timetables, and an artificial clock to keep victims calm until they were pushed into the gas chambers.",
-            "scaffolding": {
-              "acronym": "F1 + D1 • F2 + D2",
-              "acronym_title": "4-Mark Feature Drill Formula",
-              "steps": [
-                {
-                  "letter": "F1",
-                  "name": "Feature 1 (Immediate Murder)",
-                  "prompt": "Identify the total lack of selection for labour compared to concentration camps.",
-                  "starter": "One key feature was that..."
-                },
-                {
-                  "letter": "D1",
-                  "name": "Detail 1",
-                  "prompt": "Add precise details (carbon monoxide, dead within 2 hours, Bełżec, Sobibór, Treblinka).",
-                  "starter": "Specifically, this involved..."
-                },
-                {
-                  "letter": "F2",
-                  "name": "Feature 2 (Deception & Camouflage)",
-                  "prompt": "Identify the fake railway facades and deceptive announcements.",
-                  "starter": "A second key feature was..."
-                },
-                {
-                  "letter": "D2",
-                  "name": "Detail 2",
-                  "prompt": "Add precise details (painted ticket booths, fake clocks, false promises of transit).",
-                  "starter": "In particular, this meant that..."
-                }
-              ],
-              "sentence_starters": [
-                "One key feature was that...",
-                "Specifically, this involved...",
-                "A second key feature was...",
-                "This served the purpose of..."
-              ],
-              "connectives_bank": [
-                "Wannsee Protocol",
-                "Operation Reinhard",
-                "Treblinka",
-                "Auschwitz-Birkenau",
-                "Zyklon B",
-                "selection",
-                "Mordechai Anielewicz",
-                "ŻOB",
-                "Sonderkommando revolt"
-              ]
-            }
-          },
-          {
-            "tariff": "8 marks",
-            "type": "explain_why_8m",
-            "question": "Explain why Jewish fighters in the Warsaw Ghetto chose to launch an armed uprising in April 1943. [8 marks]",
-            "prompt": "Focus on the deportation of 300,000 residents during the Grossaktion Warsaw, the determination to die with dignity and honour, and the organized leadership of the ŻOB under Mordechai Anielewicz.",
-            "model": "One primary reason for the Warsaw Ghetto Uprising was the catastrophic reality of mass deportations in the summer of 1942. During the \"Grossaktion Warsaw\", SS authorities deported over 300,000 ghetto residents directly to the gas chambers of Treblinka under the guise of \"resettlement in the East\". When underground couriers discovered the truth of Treblinka’s extermination facilities, the remaining 60,000 residents recognized that deportation meant certain death, shattering any remaining illusions of compliance.<br><br>Furthermore, the uprising was driven by a resolute moral determination to die with honour rather than surrender silently. Led by 23-year-old Mordechai Anielewicz, the Jewish Combat Organization (ŻOB) and the Jewish Military Union (ŻZW) acquired small arms, built underground bunkers, and prepared for battle. As Anielewicz famously declared, their goal was not military victory, but to prove that Jewish people would resist Nazi tyranny with arms in hand. Consequently, when German forces entered the ghetto on 19 April 1943 to conduct the final liquidation, Jewish fighters held off heavily armed SS troops and tanks for 27 heroic days.",
-            "scaffolding": {
-              "acronym": "P-E-E-L Dual Causal Analysis",
-              "acronym_title": "8-Mark Causal Explanation Framework",
-              "steps": [
-                {
-                  "letter": "CAUSE 1",
-                  "name": "Grossaktion Deportations to Treblinka",
-                  "prompt": "Explain how the deportation of 300,000 people and uncovering Treblinka removed all hope.",
-                  "starter": "A primary reason was that..."
-                },
-                {
-                  "letter": "CAUSE 2",
-                  "name": "Determination to Resist with Honour",
-                  "prompt": "Explain Mordechai Anielewicz, ŻOB organization, and dying with arms in hand.",
-                  "starter": "Furthermore, the fighters were driven by..."
-                },
-                {
-                  "letter": "LINK",
-                  "name": "Synthesize Outcome",
-                  "prompt": "Explain the 27 days of armed defiance that delayed German liquidation.",
-                  "starter": "Consequently, this resulted in..."
-                }
-              ],
-              "sentence_starters": [
-                "A primary reason was that...",
-                "In particular, this meant that...",
-                "Furthermore, this was significant because...",
-                "A secondary factor was...",
-                "Consequently, this resulted in..."
-              ],
-              "connectives_bank": [
-                "Grossaktion Warsaw",
-                "Treblinka",
-                "ŻOB",
-                "Mordechai Anielewicz",
-                "bunkers",
-                "27 days",
-                "armed resistance",
-                "spiritual dignity"
-              ]
-            }
+          "src": "/images/auschwitz_crematorium_iv_ruins_1944.jpg",
+          "source_context": "Armed uprisings occurred not only in ghettos but also inside the death camps of Treblinka (August 1943), Sobibór (October 1943), and Auschwitz-Birkenau (October 1944), alongside tens of thousands of Jewish partisans fighting in the forests of Poland and Belarus. **Hinge Question:** How does the history of camp revolts and forest partisans dismantle the persistent, harmful myth of Jewish passivity during the Holocaust?",
+          "teacher_notes": {
+            "source_context": "Armed uprisings occurred not only in ghettos but also inside the death camps of Treblinka (August 1943), Sobibór (October 1943), and Auschwitz-Birkenau (October 1944), alongside tens of thousands of Jewish partisans fighting in the forests of Poland and Belarus. **Hinge Question:** How does the history of camp revolts and forest partisans dismantle the persistent, harmful myth of Jewish passivity during the Holocaust?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_6",
@@ -3943,7 +3651,11 @@ export const unitData = {
             "Motive: To bill the SS passenger fares and ensure deportation trains ran on time."
           ],
           "image": "/images/auschwitz_ramp_deportation_train_1944.jpg",
-          "src": "/images/auschwitz_ramp_deportation_train_1944.jpg"
+          "src": "/images/auschwitz_ramp_deportation_train_1944.jpg",
+          "source_context": "In *The Destruction of the European Jews*, historian Raul Hilberg demonstrated that the genocide was executed not by monsters, but by clerks, engineers, and accountants operating standard administrative routines. **Hinge Question:** How does an ordinary railway timetable illustrate the concept of the \"banality of evil\" formulated by philosopher Hannah Arendt?",
+          "teacher_notes": {
+            "source_context": "In *The Destruction of the European Jews*, historian Raul Hilberg demonstrated that the genocide was executed not by monsters, but by clerks, engineers, and accountants operating standard administrative routines. **Hinge Question:** How does an ordinary railway timetable illustrate the concept of the \"banality of evil\" formulated by philosopher Hannah Arendt?"
+          }
         },
         {
           "letter": "B",
@@ -3974,7 +3686,11 @@ export const unitData = {
             "Motive: To report the total number of foreign and French-born Jews arrested across Paris."
           ],
           "image": "/images/vel_d_hiv_pithiviers_camp_1942.jpg",
-          "src": "/images/vel_d_hiv_pithiviers_camp_1942.jpg"
+          "src": "/images/vel_d_hiv_pithiviers_camp_1942.jpg",
+          "source_context": "The Holocaust was an all-European catastrophe that required the active assistance of local police forces, civil servants, and fascist collaborators in France, the Netherlands, Slovakia, Hungary, Romania, Croatia, and the Baltic States. **Hinge Question:** Why did the Nazi authorities depend so heavily on local non-German police forces to carry out round-ups and deportations?",
+          "teacher_notes": {
+            "source_context": "The Holocaust was an all-European catastrophe that required the active assistance of local police forces, civil servants, and fascist collaborators in France, the Netherlands, Slovakia, Hungary, Romania, Croatia, and the Baltic States. **Hinge Question:** Why did the Nazi authorities depend so heavily on local non-German police forces to carry out round-ups and deportations?"
+          }
         },
         {
           "letter": "C",
@@ -4005,7 +3721,11 @@ export const unitData = {
             "Motive: To denounce Nazi crimes against humanity and inspire peaceful resistance."
           ],
           "image": "/images/white_rose_leaflet_scholl_1943.jpg",
-          "src": "/images/white_rose_leaflet_scholl_1943.jpg"
+          "src": "/images/white_rose_leaflet_scholl_1943.jpg",
+          "source_context": "Distributed by Hans Scholl, Sophie Scholl, and Christoph Probst at Munich University on 18 February 1943. Within days, they were arrested by the Gestapo, tried by the notorious People's Court, and guillotined that same afternoon. **Hinge Question:** What enabled the tiny minority of students in the White Rose to overcome the silence and passivity that engulfed most German bystanders?",
+          "teacher_notes": {
+            "source_context": "Distributed by Hans Scholl, Sophie Scholl, and Christoph Probst at Munich University on 18 February 1943. Within days, they were arrested by the Gestapo, tried by the notorious People's Court, and guillotined that same afternoon. **Hinge Question:** What enabled the tiny minority of students in the White Rose to overcome the silence and passivity that engulfed most German bystanders?"
+          }
         },
         {
           "letter": "D",
@@ -4036,7 +3756,11 @@ export const unitData = {
             "Motive: To issue life-saving transit visas across Japan based on humanitarian duty."
           ],
           "image": "/images/sugihara_visas_for_life_1940.jpg",
-          "src": "/images/sugihara_visas_for_life_1940.jpg"
+          "src": "/images/sugihara_visas_for_life_1940.jpg",
+          "source_context": "Yad Vashem has recognized over 28,000 non-Jews as \"Righteous Among the Nations\" (including Chiune Sugihara, Irena Sendler, and Raoul Wallenberg) who risked their careers, freedom, or lives to rescue Jewish people without financial gain. **Hinge Question:** What personal qualities or moral convictions distinguished rescuers from the overwhelming majority of citizens who remained passive bystanders?",
+          "teacher_notes": {
+            "source_context": "Yad Vashem has recognized over 28,000 non-Jews as \"Righteous Among the Nations\" (including Chiune Sugihara, Irena Sendler, and Raoul Wallenberg) who risked their careers, freedom, or lives to rescue Jewish people without financial gain. **Hinge Question:** What personal qualities or moral convictions distinguished rescuers from the overwhelming majority of citizens who remained passive bystanders?"
+          }
         },
         {
           "letter": "E",
@@ -4067,66 +3791,13 @@ export const unitData = {
             "Author: Danish resistance archives and local maritime historians.",
             "Audience: The Danish public and international maritime museums.",
             "Motive: To document the wooden fishing vessels that saved thousands from Nazi capture."
-          ]
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Allied Response & The Rescue of European Jewry",
-        "tariff": "8 marks (Narrative Account)",
-        "questions": [
-          {
-            "tariff": "8 marks",
-            "type": "narrative_account_8m",
-            "question": "Write a narrative account analysing how the international community and Allied powers responded to the Holocaust between 1938 and 1944. [8 marks]",
-            "stimulus": [
-              "The failure of the Evian Conference (1938)",
-              "The Allied Joint Declaration on Nazi extermination (December 1942)"
-            ],
-            "prompt": "Write a structured chronological account examining the international response from pre-war closed borders (Evian 1938), to wartime eyewitness intelligence and diplomatic condemnation (1942), and the military prioritization debate over bombing death camp infrastructure (1944).",
-            "model": "Between 1938 and 1944, the international community’s response to the persecution and mass murder of European Jews transitioned from pre-war diplomatic paralysis to moral condemnation, yet stopped short of direct military rescue operations.<br><br>Initially, the international response was defined by diplomatic inaction and closed borders. In July 1938, delegates from 32 nations met at the Evian Conference to address the desperate German-Jewish refugee crisis. However, almost all participating nations—including Britain, the United States, and Canada—refused to expand immigration quotas, leaving hundreds of thousands trapped inside expanding Nazi territory. Although Britain subsequently permitted 10,000 unaccompanied children to enter via the Kindertransport following Kristallnacht, adult borders remained firmly locked.<br><br>Following the outbreak of war and the commencement of the \"Final Solution\", detailed intelligence reached Allied capitals. Eyewitness couriers like Jan Karski were smuggled out of Poland to deliver first-hand accounts of death camps to Winston Churchill and Franklin D. Roosevelt. In response, on 17 December 1942, eleven Allied governments issued a formal Joint Declaration condemning Germany’s \"bestial policy of cold-blooded extermination\" and promising post-war retribution.<br><br>However, in practice, the Allies strictly subordinated humanitarian rescue to total military victory. Despite urgent appeals in 1944 from Jewish leaders to bomb the railway lines leading to Auschwitz-Birkenau to halt the deportation of 437,000 Hungarian Jews, Allied air commands repeatedly refused, arguing that military aircraft could not be diverted from combat operations. Consequently, international action remained largely diplomatic until Allied soldiers physically overran the concentration camps in 1945.",
-            "scaffolding": {
-              "acronym": "3-Stage Chronological Narrative Framework",
-              "acronym_title": "Narrative Account Formula (Pre-War • Mid-War • Late-War)",
-              "steps": [
-                {
-                  "letter": "STAGE 1",
-                  "name": "Evian 1938 & Closed Borders",
-                  "prompt": "Explain the 32 nations at Evian refusing quotas, leaving refugees trapped.",
-                  "starter": "Initially, before the war began, international policy was characterized by..."
-                },
-                {
-                  "letter": "STAGE 2",
-                  "name": "Jan Karski & Dec 1942 Declaration",
-                  "prompt": "Explain Polish underground intelligence and the 11-nation Allied condemnation.",
-                  "starter": "Following the outbreak of war, detailed intelligence arrived when..."
-                },
-                {
-                  "letter": "STAGE 3",
-                  "name": "1944 Rail Bombing Debate & Priority",
-                  "prompt": "Explain why Allied commands refused to bomb Auschwitz railway tracks.",
-                  "starter": "However, in the final stages of the war, military priorities meant that..."
-                }
-              ],
-              "sentence_starters": [
-                "Initially, before the war began...",
-                "Following the outbreak of war, detailed intelligence arrived when...",
-                "A diplomatic milestone occurred in December 1942 when...",
-                "However, in practice...",
-                "Consequently, this resulted in..."
-              ],
-              "connectives_bank": [
-                "Evian Conference",
-                "Kindertransport",
-                "Jan Karski",
-                "Joint Declaration (1942)",
-                "Bermuda Conference",
-                "Auschwitz rail bombing debate",
-                "War Refugee Board"
-              ]
-            }
+          ],
+          "source_context": "When German occupation authorities ordered the sudden round-up and deportation of Danish Jews in October 1943, Danish citizens, doctors, pastors, and fishermen mounted a spontaneous nationwide rescue effort. Over several weeks, hundreds of small fishing cutters covertly transported Danish Jews across the narrow Øresund strait to sanctuary in neutral Sweden. **Hinge Question:** What conditions in Denmark—such as local resistance networks, maritime proximity to Sweden, and broad societal solidarity—enabled the rescue of over 95% of Danish Jews, whereas in countries like the Netherlands over 70% were murdered?",
+          "teacher_notes": {
+            "source_context": "When German occupation authorities ordered the sudden round-up and deportation of Danish Jews in October 1943, Danish citizens, doctors, pastors, and fishermen mounted a spontaneous nationwide rescue effort. Over several weeks, hundreds of small fishing cutters covertly transported Danish Jews across the narrow Øresund strait to sanctuary in neutral Sweden. **Hinge Question:** What conditions in Denmark—such as local resistance networks, maritime proximity to Sweden, and broad societal solidarity—enabled the rescue of over 95% of Danish Jews, whereas in countries like the Netherlands over 70% were murdered?"
           }
-        ]
-      }
+        }
+      ]
     },
     {
       "id": "lesson_7",
@@ -4590,7 +4261,11 @@ export const unitData = {
             "Motive: To bear witness to the suffering of his father and fellow prisoners during the death march."
           ],
           "image": "/images/death_march_dachau_auschwitz_1945.jpg",
-          "src": "/images/death_march_dachau_auschwitz_1945.jpg"
+          "src": "/images/death_march_dachau_auschwitz_1945.jpg",
+          "source_context": "Between late 1944 and May 1945, the SS forcibly marched over 250,000 camp prisoners westward into Germany in brutal winter conditions to prevent their liberation by the Red Army, murdering an estimated 70,000 to 100,000 people. **Hinge Question:** Why did the Nazi regime expend military resources to march dying prisoners into the interior of Germany when the war was already decisively lost?",
+          "teacher_notes": {
+            "source_context": "Between late 1944 and May 1945, the SS forcibly marched over 250,000 camp prisoners westward into Germany in brutal winter conditions to prevent their liberation by the Red Army, murdering an estimated 70,000 to 100,000 people. **Hinge Question:** Why did the Nazi regime expend military resources to march dying prisoners into the interior of Germany when the war was already decisively lost?"
+          }
         },
         {
           "letter": "B",
@@ -4621,7 +4296,11 @@ export const unitData = {
             "Author: British Army Film and Photographic Unit (AFPU).",
             "Audience: British military command, the international press, and the Nuremberg trial judges.",
             "Motive: To gather forensic evidence of Nazi atrocities for the world to see."
-          ]
+          ],
+          "source_context": "When British troops entered Bergen-Belsen on 15 April 1945 under a localized truce arranged to contain a catastrophic typhus epidemic, they were confronted with human suffering on an unprecedented scale. British medical units worked tirelessly to establish emergency hospitals, but over 13,000 survivors died in the weeks following liberation due to severe malnutrition and disease. **Hinge Question:** Why was photographic and film documentation produced by Allied military units at Bergen-Belsen and Dachau in 1945 decisive in defeating Nazi wartime attempts to conceal the Holocaust?",
+          "teacher_notes": {
+            "source_context": "When British troops entered Bergen-Belsen on 15 April 1945 under a localized truce arranged to contain a catastrophic typhus epidemic, they were confronted with human suffering on an unprecedented scale. British medical units worked tirelessly to establish emergency hospitals, but over 13,000 survivors died in the weeks following liberation due to severe malnutrition and disease. **Hinge Question:** Why was photographic and film documentation produced by Allied military units at Bergen-Belsen and Dachau in 1945 decisive in defeating Nazi wartime attempts to conceal the Holocaust?"
+          }
         },
         {
           "letter": "C",
@@ -4652,7 +4331,11 @@ export const unitData = {
             "Author: International photojournalists covering post-war refugee crises in the Mediterranean.",
             "Audience: Global newspaper readers and United Nations delegates.",
             "Motive: To highlight the plight of 4,500 Jewish survivors turned back from Palestine."
-          ]
+          ],
+          "source_context": "In the immediate aftermath of liberation, hundreds of thousands of surviving European Jews found themselves stateless displaced persons (DPs), unable or unwilling to return to homes and communities where anti-Semitic pogroms still erupted (such as the Kielce pogrom of July 1946). The plight of the SS Exodus passengers became an international symbol of the ongoing crisis of Jewish displacement. **Hinge Question:** Why did the plight of displaced Holocaust survivors between 1945 and 1948 accelerate international support for the United Nations Partition Plan for Palestine?",
+          "teacher_notes": {
+            "source_context": "In the immediate aftermath of liberation, hundreds of thousands of surviving European Jews found themselves stateless displaced persons (DPs), unable or unwilling to return to homes and communities where anti-Semitic pogroms still erupted (such as the Kielce pogrom of July 1946). The plight of the SS Exodus passengers became an international symbol of the ongoing crisis of Jewish displacement. **Hinge Question:** Why did the plight of displaced Holocaust survivors between 1945 and 1948 accelerate international support for the United Nations Partition Plan for Palestine?"
+          }
         },
         {
           "letter": "D",
@@ -4683,7 +4366,11 @@ export const unitData = {
             "Author: Allied military photojournalists documenting the International Military Tribunal.",
             "Audience: Citizens worldwide and future legal courts.",
             "Motive: To document Nazi leaders being tried under international law for aggressive war and genocide."
-          ]
+          ],
+          "source_context": "The Nuremberg Trials (1945–1946) established the historic precedent that individuals, regardless of state rank, could be held legally accountable for crimes against peace, war crimes, and crimes against humanity. Polish-Jewish jurist Raphael Lemkin coined the term 'genocide' in 1944, leading directly to the 1948 UN Convention on the Prevention and Punishment of the Crime of Genocide. **Hinge Question:** Why was conducting public, evidence-based trials at Nuremberg critical for establishing the historical truth of the Holocaust?",
+          "teacher_notes": {
+            "source_context": "The Nuremberg Trials (1945–1946) established the historic precedent that individuals, regardless of state rank, could be held legally accountable for crimes against peace, war crimes, and crimes against humanity. Polish-Jewish jurist Raphael Lemkin coined the term 'genocide' in 1944, leading directly to the 1948 UN Convention on the Prevention and Punishment of the Crime of Genocide. **Hinge Question:** Why was conducting public, evidence-based trials at Nuremberg critical for establishing the historical truth of the Holocaust?"
+          }
         },
         {
           "letter": "E",
@@ -4714,88 +4401,17 @@ export const unitData = {
             "Motive: To challenge humanity never to let such systematic dehumanisation happen again."
           ],
           "image": "/images/primo_levi_testimony_1947.jpg",
-          "src": "/images/primo_levi_testimony_1947.jpg"
-        }
-      ],
-      "exam_practice": {
-        "title": "Key Stage 3 Disciplinary Writing: Liberation, DP Camps & The Struggle for Justice",
-        "tariff": "12 marks (Evaluative Statement Essay)",
-        "questions": [
-          {
-            "tariff": "12 marks",
-            "type": "evaluative_essay_12m",
-            "question": "‘The liberation of the concentration camps in 1945 marked the end of the suffering of Holocaust survivors.’ How far do you agree? [12 marks]",
-            "stimulus": [
-              "The liberation of Bergen-Belsen and Auschwitz (1945) and ongoing mortality in Displaced Persons (DP) camps",
-              "The struggle of survivors attempting to reach British Mandate Palestine (e.g. SS Exodus 1947) and the movement for a Jewish homeland"
-            ],
-            "prompt": "Construct a balanced evaluative argument examining whether physical liberation ended survivor suffering, or whether bereavement, virulent antisemitism in Europe, statelessness in DP camps, and geopolitical conflict prolonged their agony. Reach a nuanced conclusion.",
-            "model": "To a significant extent, it is inaccurate to claim that liberation in 1945 marked the end of survivor suffering. While the arrival of Allied forces halted industrial mass murder, liberation was not a moment of sudden joy, but the beginning of an agonizing period of physical collapse, bereavement, statelessness, and geopolitical conflict.<br><br>On the one hand, liberation brought immediate deliverance from Nazi extermination and the winter death marches. When British troops entered Bergen-Belsen on 15 April 1945, they disarmed the SS guards and established emergency hospital wards, ending the gas chambers and summary shootings. For survivors, liberation meant physical survival was finally possible under international protection.<br><br>However, profound physical and emotional suffering persisted long after the guns fell silent. Extreme starvation and virulent typhus meant that over 14,000 liberated prisoners died at Bergen-Belsen within weeks of British arrival. Furthermore, when survivors attempted to return to their hometowns in Poland, they discovered their entire families had been murdered, their homes confiscated, and they faced violent pogroms—most infamously at Kielce in July 1946, where 42 Jewish survivors were murdered by local mobs. Consequently, over 250,000 homeless Jewish survivors were forced to live behind barbed wire in Allied Displaced Persons (DP) camps across Germany for years.<br><br>Crucially, survivor suffering was compounded by the geopolitical crisis in British Mandate Palestine. Enforcing the 1939 White Paper immigration quotas, the British government blockaded Palestine and turned back refugee vessels. In July 1947, the Royal Navy intercepted the SS Exodus 1947 carrying 4,500 Holocaust survivors, attacking the ship in international waters and forcibly returning the refugees to camps in Germany. This outrage galvanized global Zionist resolve, convincing survivors that true safety required sovereign self-determination. This pressure directly accelerated the 1947 UN Partition Plan (Resolution 181) and the establishment of the State of Israel in May 1948.<br><br>In conclusion, liberation was not the end of suffering, but the conclusion of physical extermination. The psychological trauma of the obliterated Yiddishland, the loss of entire family trees, and the desperate post-war struggle for a sovereign homeland meant that for survivors, the struggle to rebuild their lives lasted for decades.",
-            "scaffolding": {
-              "acronym": "PEEL Evaluative Framework",
-              "acronym_title": "12-Mark Evaluative Statement Essay Standard",
-              "steps": [
-                {
-                  "letter": "THESIS",
-                  "name": "Evaluative Argument",
-                  "prompt": "State clearly that liberation halted physical murder but began an agonizing period of statelessness and trauma.",
-                  "starter": "To a significant extent, it is inaccurate to claim that liberation ended survivor suffering because..."
-                },
-                {
-                  "letter": "THEME 1",
-                  "name": "Physical Deliverance & Medical Rescue",
-                  "prompt": "Explain the end of death marches, medical wards at Bergen-Belsen, and international protection.",
-                  "starter": "On the one hand, Allied liberation brought immediate deliverance from..."
-                },
-                {
-                  "letter": "THEME 2",
-                  "name": "Ongoing Trauma, Kielce & DP Camps",
-                  "prompt": "Explain 14,000 post-liberation deaths, annihilated families, Kielce Pogrom 1946, and 250,000 in DP camps.",
-                  "starter": "However, intense physical and emotional suffering persisted because..."
-                },
-                {
-                  "letter": "THEME 3",
-                  "name": "British Mandate Palestine & SS Exodus",
-                  "prompt": "Explain the 1939 White Paper blockade, the SS Exodus 1947 tragedy, and Zionist struggle leading to 1948 statehood.",
-                  "starter": "Crucially, survivor suffering was compounded by the geopolitical crisis over..."
-                },
-                {
-                  "letter": "JUDGMENT",
-                  "name": "Nuanced Conclusion",
-                  "prompt": "Synthesize why physical liberation was distinct from the enduring emotional and political struggle.",
-                  "starter": "In conclusion, liberation was not the end of suffering, but rather... because..."
-                }
-              ],
-              "sentence_starters": [
-                "To a large extent, it can be argued that...",
-                "On the one hand, Allied liberation brought immediate deliverance from...",
-                "However, intense suffering endured because...",
-                "In particular, the geopolitical struggle over British Mandate Palestine meant that...",
-                "Consequently, for tens of thousands of survivors on ships like the SS Exodus 1947...",
-                "In conclusion, liberation was not the end of suffering but rather... because..."
-              ],
-              "connectives_bank": [
-                "Bergen-Belsen",
-                "typhus",
-                "Displaced Persons (DP) camps",
-                "Windermere Children",
-                "Kielce Pogrom 1946",
-                "British Mandate Palestine",
-                "1939 White Paper",
-                "Aliyah Bet",
-                "SS Exodus 1947",
-                "Zionism",
-                "UN Resolution 181",
-                "State of Israel",
-                "Nuremberg Trials",
-                "Raphael Lemkin",
-                "1948 Genocide Convention"
-              ]
-            }
+          "src": "/images/primo_levi_testimony_1947.jpg",
+          "source_context": "Approximately six million Jewish people—two-thirds of Europe’s Jewish population, including 1.5 million children—were murdered. Whole worlds of language, literature, scholarship, and community were permanently erased from the European continent. **Hinge Question:** Why does Primo Levi demand that future generations actively \"carve\" the memory of the Shoah into their hearts rather than passively acknowledging it as past history?",
+          "teacher_notes": {
+            "source_context": "Approximately six million Jewish people—two-thirds of Europe’s Jewish population, including 1.5 million children—were murdered. Whole worlds of language, literature, scholarship, and community were permanently erased from the European continent. **Hinge Question:** Why does Primo Levi demand that future generations actively \"carve\" the memory of the Shoah into their hearts rather than passively acknowledging it as past history?"
           }
-        ]
-      }
+        }
+      ]
     }
   ]
 };
-export default unitData;
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = the_shoah_data;
+}
+export default the_shoah_data;

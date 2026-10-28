@@ -648,7 +648,7 @@
           "text": "<span class=\"para-ref\">[1.4]</span> Following Wolsey’s downfall, a brilliant, ruthless lawyer named Thomas Cromwell showed Henry how to cut the Roman knot. Cromwell argued that Henry did not need papal permission: England was an independent \"Empire,\" answerable to no foreign bishop. Between 1529 and 1533, Cromwell used the Reformation Parliament to pass a series of revolutionary <strong>statute</strong> laws. Parliament forced the English clergy to submit to royal control and cut off Church taxes to Rome. In 1533, the landmark Act in Restraint of Appeals banned all legal appeals to the Pope. Archbishop Thomas Cranmer immediately declared Henry’s marriage to Catherine null and void, and crowned Anne Boleyn Queen of England.",
           "image": "/images/thomas_cromwell.jpg",
           "image_alt": "Portrait of Thomas Cromwell, Earl of Essex, by Hans Holbein the Younger",
-          "caption": "Thomas Cromwell (c. 1485–1540), Earl of Essex and Henry VIII's chief minister, who orchestrated the statutory break with Rome via the Reformation Parliament (Hans Holbein the Younger, Frick Collection / NPG 472).",
+          "caption": "Thomas Cromwell (c. 1485–1540), Earl of Essex and King Henry VIII's chief minister, who orchestrated the statutory break with Rome via the Reformation Parliament (Hans Holbein the Younger, 1532–1533, The Frick Collection, New York / Accession 1915.1.79).",
           "source": {
             "id": "mrp_l1_src_d",
             "letter": "D",
@@ -813,7 +813,11 @@
             "Author: Lucas Cranach the Elder, master Renaissance artist and chief visual publicist of the German Reformation.",
             "Audience: German princes, university scholars, and the Protestant reading public.",
             "Motive: To project Luther's spiritual integrity, piety, and learned biblical authority across Europe."
-          ]
+          ],
+          "source_context": "In 1517, German monk Martin Luther nailed his Ninety-Five Theses to Wittenberg church door, arguing that salvation was attained by faith alone (sola fide) rather than papal pardons. **Hinge Question:** Why did Martin Luther's attack on the Catholic Church spread like wildfire across Europe while earlier heretics had been easily suppressed?",
+          "teacher_notes": {
+            "source_context": "In 1517, German monk Martin Luther nailed his Ninety-Five Theses to Wittenberg church door, arguing that salvation was attained by faith alone (sola fide) rather than papal pardons. **Hinge Question:** Why did Martin Luther's attack on the Catholic Church spread like wildfire across Europe while earlier heretics had been easily suppressed?"
+          }
         },
         {
           "id": "mrp_l1_src_b",
@@ -857,7 +861,11 @@
             "Author: Unknown Whitehall palace court painter in the circle of Hans Holbein the Younger.",
             "Audience: Visiting foreign ambassadors, noble courtiers, and royal councilors at Hampton Court.",
             "Motive: To assert undisputed Tudor dynastic strength and deter foreign Catholic invasions after Henry's death."
-          ]
+          ],
+          "source_context": "Henry broke with the Pope primarily because Catherine of Aragon failed to produce a surviving male heir. Having executed Anne Boleyn, Henry married Jane Seymour, who gave birth to Edward in 1537 before dying of fever. **Hinge Question:** How does this painting reveal that Henry VIII's break with Rome was driven by dynastic obsession rather than Protestant theology?",
+          "teacher_notes": {
+            "source_context": "Henry broke with the Pope primarily because Catherine of Aragon failed to produce a surviving male heir. Having executed Anne Boleyn, Henry married Jane Seymour, who gave birth to Edward in 1537 before dying of fever. **Hinge Question:** How does this painting reveal that Henry VIII's break with Rome was driven by dynastic obsession rather than Protestant theology?"
+          }
         },
         {
           "id": "mrp_l1_src_c",
@@ -901,7 +909,11 @@
             "Author: Hans Holbein the Younger, King's Painter and master northern Renaissance portraitist.",
             "Audience: English subjects, aristocratic courtiers, and foreign monarchs (Francis I and Charles V).",
             "Motive: To project Henry as a fearless, unshakeable ruler who had successfully broken with the papacy."
-          ]
+          ],
+          "source_context": "Following the 1534 Act of Supremacy, Henry declared himself 'the only supreme head in earth of the Church of England'. Anyone who refused the oath, like Sir Thomas More, was beheaded for treason. **Hinge Question:** Why did Holbein paint Henry VIII looking directly at the viewer with legs apart and fists clenched?",
+          "teacher_notes": {
+            "source_context": "Following the 1534 Act of Supremacy, Henry declared himself 'the only supreme head in earth of the Church of England'. Anyone who refused the oath, like Sir Thomas More, was beheaded for treason. **Hinge Question:** Why did Holbein paint Henry VIII looking directly at the viewer with legs apart and fists clenched?"
+          }
         },
         {
           "id": "mrp_l1_src_d",
@@ -945,7 +957,11 @@
             "Author: Hans Holbein the Younger, commissioned by Vicar-General Thomas Cromwell.",
             "Audience: English clergy, churchwardens, and parishioners across every parish in England.",
             "Motive: To instruct ordinary people that royal supremacy was ordained by God and that reading the English Bible required loyalty to Henry."
-          ]
+          ],
+          "source_context": "In 1538, Cromwell ordered that every parish church in England must purchase a copy of the English Bible. Holbein's frontispiece illustrated the new religious hierarchy: God spoke to Henry, who instructed the church and nobility, while the crowd below cried 'God save the King'. **Hinge Question:** Why did distributing the Bible in English increase the King's political power rather than weakening it?",
+          "teacher_notes": {
+            "source_context": "In 1538, Cromwell ordered that every parish church in England must purchase a copy of the English Bible. Holbein's frontispiece illustrated the new religious hierarchy: God spoke to Henry, who instructed the church and nobility, while the crowd below cried 'God save the King'. **Hinge Question:** Why did distributing the Bible in English increase the King's political power rather than weakening it?"
+          }
         },
         {
           "id": "mrp_l1_src_e",
@@ -989,7 +1005,11 @@
             "Author: English Heritage / Cistercian architectural archaeological record.",
             "Audience: Historians of the English Reformation and visitors to the historic ruins.",
             "Motive: To preserve the physical evidence of Henry VIII's total suppression of England's Catholic monastic network."
-          ]
+          ],
+          "source_context": "Between 1536 and 1540, Henry VIII and Thomas Cromwell dissolved over 800 monasteries, confiscating lands generating £200,000 annually. Fountains Abbey was stripped for raw materials to finance coastal fortifications and foreign wars. **Hinge Question:** Did Henry VIII dissolve the monasteries out of genuine Protestant religious zeal, or simply to fund his wars against France and Scotland?",
+          "teacher_notes": {
+            "source_context": "Between 1536 and 1540, Henry VIII and Thomas Cromwell dissolved over 800 monasteries, confiscating lands generating £200,000 annually. Fountains Abbey was stripped for raw materials to finance coastal fortifications and foreign wars. **Hinge Question:** Did Henry VIII dissolve the monasteries out of genuine Protestant religious zeal, or simply to fund his wars against France and Scotland?"
+          }
         }
       ],
       "teacher_notes": {
@@ -1775,7 +1795,11 @@
             "Author: Robert Peake the Elder, English court portraitist and Serjeant Painter.",
             "Audience: English aristocracy, foreign diplomats, and wealthy gentry households.",
             "Motive: To commemorate noble hospitality and celebrate Elizabeth's enduring domestic popularity."
-          ]
+          ],
+          "source_context": "Elizabeth cultivated a public image of radiant majesty, using annual summer progresses to travel across southern England, allowing ordinary citizens to see their sovereign. **Hinge Question:** Why was public visibility and pageantry essential for a female monarch ruling in a deeply patriarchal sixteenth-century society?",
+          "teacher_notes": {
+            "source_context": "Elizabeth cultivated a public image of radiant majesty, using annual summer progresses to travel across southern England, allowing ordinary citizens to see their sovereign. **Hinge Question:** Why was public visibility and pageantry essential for a female monarch ruling in a deeply patriarchal sixteenth-century society?"
+          }
         },
         {
           "id": "mrp_l2_src_b",
@@ -1819,7 +1843,11 @@
             "Author: Hans Eworth, Flemish portrait painter working in London.",
             "Audience: The English court, Habsburg diplomats in Brussels and Madrid, and the European public.",
             "Motive: To legitimize Mary's reign, celebrate her Spanish royal marriage, and project Catholic revival."
-          ]
+          ],
+          "source_context": "Henry VIII's eldest daughter Mary I attempted to reverse the Reformation, repealing royal supremacy and burning 284 Protestants as heretics. Her marriage to Philip II sparked widespread xenophobic rebellion. **Hinge Question:** Why did Mary I's determination to bring England back to Roman Catholicism ultimately make the country more fiercely anti-Catholic?",
+          "teacher_notes": {
+            "source_context": "Henry VIII's eldest daughter Mary I attempted to reverse the Reformation, repealing royal supremacy and burning 284 Protestants as heretics. Her marriage to Philip II sparked widespread xenophobic rebellion. **Hinge Question:** Why did Mary I's determination to bring England back to Roman Catholicism ultimately make the country more fiercely anti-Catholic?"
+          }
         },
         {
           "id": "mrp_l2_src_c",
@@ -1863,7 +1891,11 @@
             "Author: George Gower (Serjeant Painter to Queen Elizabeth I).",
             "Audience: Royal courtiers, foreign ambassadors, and future generations of English subjects.",
             "Motive: To immortalize the 1588 triumph, legitimize Elizabeth's Protestant Settlement, and project imperial confidence."
-          ]
+          ],
+          "source_context": "Following the defeat of the Spanish Armada, Elizabeth had herself depicted as an imperial world sovereign. Her pearls symbolize virgin purity, while her fingers rest over the Atlantic ocean pointing toward English exploration in the New World. **Hinge Question:** Why did Elizabeth choose to be painted with her hand resting on the globe rather than holding a royal scepter?",
+          "teacher_notes": {
+            "source_context": "Following the defeat of the Spanish Armada, Elizabeth had herself depicted as an imperial world sovereign. Her pearls symbolize virgin purity, while her fingers rest over the Atlantic ocean pointing toward English exploration in the New World. **Hinge Question:** Why did Elizabeth choose to be painted with her hand resting on the globe rather than holding a royal scepter?"
+          }
         },
         {
           "id": "mrp_l2_src_d",
@@ -1907,7 +1939,11 @@
             "Author: John Foxe (author) and anonymous woodcut artists, published by John Day, London.",
             "Audience: Elizabethan churchgoers, magistrates, and the reading public.",
             "Motive: To immortalize Protestant victims of the Marian persecutions and ensure England never returned to papal obedience."
-          ]
+          ],
+          "source_context": "During Mary I's reign, Latimer and Ridley were condemned for heresy. As the faggots were lit, Latimer spoke his legendary words: 'Be of good comfort, Master Ridley, and play the man; we shall this day light such a candle, by God's grace, in England, as I trust shall never be put out.' **Hinge Question:** Why did the public burning of Protestant leaders backfire on Mary I by turning her victims into celebrated national heroes?",
+          "teacher_notes": {
+            "source_context": "During Mary I's reign, Latimer and Ridley were condemned for heresy. As the faggots were lit, Latimer spoke his legendary words: 'Be of good comfort, Master Ridley, and play the man; we shall this day light such a candle, by God's grace, in England, as I trust shall never be put out.' **Hinge Question:** Why did the public burning of Protestant leaders backfire on Mary I by turning her victims into celebrated national heroes?"
+          }
         },
         {
           "id": "mrp_l2_src_e",
@@ -1951,7 +1987,11 @@
             "Author: Contemporary Northern European / Dutch Protestant engraver (Antwerp/Amsterdam).",
             "Audience: European diplomatic courts, Protestant supporters in the Netherlands, and English observers.",
             "Motive: To visually record the historic trial and execution that shattered the sanctity of royal immunity in Western Europe."
-          ]
+          ],
+          "source_context": "Imprisoned in England for nineteen years, Mary was Catholic heir to the English throne. After Walsingham intercepted ciphered letters proving her approval of the Babington Plot to murder Elizabeth, Parliament demanded her execution. **Hinge Question:** Was Elizabeth I justified in executing an anointed rival monarch to protect national security?",
+          "teacher_notes": {
+            "source_context": "Imprisoned in England for nineteen years, Mary was Catholic heir to the English throne. After Walsingham intercepted ciphered letters proving her approval of the Babington Plot to murder Elizabeth, Parliament demanded her execution. **Hinge Question:** Was Elizabeth I justified in executing an anointed rival monarch to protect national security?"
+          }
         }
       ],
       "teacher_notes": {
@@ -2716,7 +2756,11 @@
             "Author: English maritime painter in the British naval commemorative tradition.",
             "Audience: English naval officers, patriotic historians, and visitors to the Queen's House.",
             "Motive: To glorify Drake's aggressive privateer tactics and celebrate English naval superiority."
-          ]
+          ],
+          "source_context": "Hearing that Philip II was assembling an invasion armada, Elizabeth dispatched Drake on a raiding mission. Entering heavily fortified Cadiz harbor, Drake burned supply transports, stole seasoned barrel staves, and captured the Portuguese carrack San Felipe. **Hinge Question:** Why was destroying Spain's barrel staves at Cadiz more damaging to the Armada than destroying warships?",
+          "teacher_notes": {
+            "source_context": "Hearing that Philip II was assembling an invasion armada, Elizabeth dispatched Drake on a raiding mission. Entering heavily fortified Cadiz harbor, Drake burned supply transports, stole seasoned barrel staves, and captured the Portuguese carrack San Felipe. **Hinge Question:** Why was destroying Spain's barrel staves at Cadiz more damaging to the Armada than destroying warships?"
+          }
         },
         {
           "id": "mrp_l3_src_b",
@@ -2760,7 +2804,11 @@
             "Author: Hendrick Cornelisz Vroom, founding father of Dutch marine art.",
             "Audience: European admirals, Protestant patrons in the Netherlands, and English naval commanders.",
             "Motive: To record the decisive Anglo-Dutch maritime triumph that halted Habsburg Catholic hegemony in Northern Europe."
-          ]
+          ],
+          "source_context": "After the fireship attack broke the Spanish formation at Calais, the English fleet attacked at daybreak off Gravelines. English ships maneuvered swiftly, maintaining a deadly bombardment that sank several Spanish galleons and drove the rest toward North Sea shallows. **Hinge Question:** Why did superior English artillery range and ship maneuverability make traditional Spanish boarding tactics completely useless?",
+          "teacher_notes": {
+            "source_context": "After the fireship attack broke the Spanish formation at Calais, the English fleet attacked at daybreak off Gravelines. English ships maneuvered swiftly, maintaining a deadly bombardment that sank several Spanish galleons and drove the rest toward North Sea shallows. **Hinge Question:** Why did superior English artillery range and ship maneuverability make traditional Spanish boarding tactics completely useless?"
+          }
         },
         {
           "id": "mrp_l3_src_c",
@@ -2804,7 +2852,11 @@
             "Author: Robert Adams (Surveyor of the Queen's Works) and Augustine Ryther (engraver).",
             "Audience: Queen Elizabeth I, Lord Howard of Effingham, and high naval command.",
             "Motive: To provide an unassailable scientific hydrographic record proving that English sailing tactics dismantled the Spanish invasion."
-          ]
+          ],
+          "source_context": "Robert Adams surveyed the exact course of the Armada campaign. Chart X captures the climax: English ships harassing the Armada as strong southwesterly gales prevent Medina Sidonia from turning back toward the Channel. **Hinge Question:** Did English gunnery defeat the Armada, or did unfavorable winds and treacherous Flemish shallows seal Spain's fate?",
+          "teacher_notes": {
+            "source_context": "Robert Adams surveyed the exact course of the Armada campaign. Chart X captures the climax: English ships harassing the Armada as strong southwesterly gales prevent Medina Sidonia from turning back toward the Channel. **Hinge Question:** Did English gunnery defeat the Armada, or did unfavorable winds and treacherous Flemish shallows seal Spain's fate?"
+          }
         },
         {
           "id": "mrp_l3_src_d",
@@ -2848,7 +2900,11 @@
             "Author: British marine historical painter (Royal Museums Greenwich collection, BHC0263).",
             "Audience: British maritime historians, naval officers, and visitors to Greenwich.",
             "Motive: To depict the chaotic night action that broke the Spanish invasion fleet before it could embark the Duke of Parma's army."
-          ]
+          ],
+          "source_context": "Anchored off Calais, the Armada was waiting to transport 27,000 Spanish soldiers from Flanders. Drake loaded eight obsolete ships with pitch, brimstone, and gunpowder, setting them on fire and steering them with the tide directly into the anchored fleet. **Hinge Question:** Why is psychological panic in naval warfare often more devastating than direct artillery bombardment?",
+          "teacher_notes": {
+            "source_context": "Anchored off Calais, the Armada was waiting to transport 27,000 Spanish soldiers from Flanders. Drake loaded eight obsolete ships with pitch, brimstone, and gunpowder, setting them on fire and steering them with the tide directly into the anchored fleet. **Hinge Question:** Why is psychological panic in naval warfare often more devastating than direct artillery bombardment?"
+          }
         },
         {
           "id": "mrp_l3_src_e",
@@ -2892,7 +2948,11 @@
             "Author: Royal Mint engravers under order of Queen Elizabeth I and the Privy Council.",
             "Audience: Senior naval commanders, foreign European courts, and the English Protestant populace.",
             "Motive: To immortalize the naval triumph as undeniable divine proof of Protestant legitimacy and royal sanctity."
-          ]
+          ],
+          "source_context": "Following the Armada's retreat, Elizabeth had commemorative medals struck for commanders. Rather than boasting of English naval power, the medal gave credit to divine intervention: 'God blew with His wind, and they were scattered'. **Hinge Question:** Why was attributing military victory to divine weather more politically powerful for Elizabeth than taking personal credit as commander?",
+          "teacher_notes": {
+            "source_context": "Following the Armada's retreat, Elizabeth had commemorative medals struck for commanders. Rather than boasting of English naval power, the medal gave credit to divine intervention: 'God blew with His wind, and they were scattered'. **Hinge Question:** Why was attributing military victory to divine weather more politically powerful for Elizabeth than taking personal credit as commander?"
+          }
         }
       ],
       "teacher_notes": {
@@ -3643,7 +3703,11 @@
             "Author: Sir Anthony van Dyck, Principal Painter in Ordinary to Their Majesties.",
             "Audience: Italian sculptor Bernini, the papal court in Rome, and the royal family.",
             "Motive: To provide accurate spatial profiles for a sculpted bust and celebrate Charles's sacred royal charisma."
-          ]
+          ],
+          "source_context": "Charles I believed fervently in the Divine Right of Kings—the doctrine that monarchs are appointed directly by God and answerable to no earthly court or parliament. Between 1629 and 1640, he ruled without calling Parliament at all (the 'Eleven Years' Tyranny'). **Hinge Question:** Why did Charles I's belief that he was answerable only to God make political compromise with Parliament impossible?",
+          "teacher_notes": {
+            "source_context": "Charles I believed fervently in the Divine Right of Kings—the doctrine that monarchs are appointed directly by God and answerable to no earthly court or parliament. Between 1629 and 1640, he ruled without calling Parliament at all (the 'Eleven Years' Tyranny'). **Hinge Question:** Why did Charles I's belief that he was answerable only to God make political compromise with Parliament impossible?"
+          }
         },
         {
           "id": "mrp_l4_src_b",
@@ -3687,7 +3751,11 @@
             "Author: Edward Radclyffe (printmaker) after British military historical compositions.",
             "Audience: Parliamentary supporters, military historians, and seventeenth-century political observers.",
             "Motive: To commemorate the decisive military engagement that destroyed Charles I's main field army."
-          ]
+          ],
+          "source_context": "At Naseby, Parliament's newly organized New Model Army crushed the Royalists. Cromwell's disciplined cavalry routed the King's horsemen, wheeled around, and struck the Royalist center. Charles fled, leaving behind his personal correspondence exposing his attempts to enlist Irish Catholic troops. **Hinge Question:** Did Parliament win the English Civil War through military professionalism or religious zeal?",
+          "teacher_notes": {
+            "source_context": "At Naseby, Parliament's newly organized New Model Army crushed the Royalists. Cromwell's disciplined cavalry routed the King's horsemen, wheeled around, and struck the Royalist center. Charles fled, leaving behind his personal correspondence exposing his attempts to enlist Irish Catholic troops. **Hinge Question:** Did Parliament win the English Civil War through military professionalism or religious zeal?"
+          }
         },
         {
           "id": "mrp_l4_src_c",
@@ -3731,7 +3799,11 @@
             "Author: Contemporary German/Dutch printmaker based on letters from London correspondents.",
             "Audience: European royal courts, diplomatic embassies, and shocked continental citizens.",
             "Motive: To record the sensational news that the English Parliament had put their own King to death."
-          ]
+          ],
+          "source_context": "On a bitterly cold morning in January 1649, Charles I was led onto a scaffold. Wearing two shirts so he would not shiver and appear afraid, he declared himself a 'martyr of the people'. When the axe fell, a massive groan rose from the assembled thousands. **Hinge Question:** Was the execution of Charles I an act of righteous justice against a tyrant, or an unlawful military murder?",
+          "teacher_notes": {
+            "source_context": "On a bitterly cold morning in January 1649, Charles I was led onto a scaffold. Wearing two shirts so he would not shiver and appear afraid, he declared himself a 'martyr of the people'. When the axe fell, a massive groan rose from the assembled thousands. **Hinge Question:** Was the execution of Charles I an act of righteous justice against a tyrant, or an unlawful military murder?"
+          }
         },
         {
           "id": "mrp_l4_src_d",
@@ -3775,7 +3847,11 @@
             "Author: High Court of Justice commissioners (John Bradshaw, Oliver Cromwell, and 57 others).",
             "Audience: King Charles I, the English populace, the European monarchies, and posterity.",
             "Motive: To legally codify and execute the sovereign ruler of England for waging war against his own Parliament and people."
-          ]
+          ],
+          "source_context": "Preserved in the House of Lords archives, this parchment ordered the public execution of the King. To ensure that no single individual could be blamed, 59 army officers and republican politicians signed and sealed it, signing their own potential death warrants if the monarchy was ever restored. **Hinge Question:** Can a king commit treason against his own kingdom if the legal definition of treason was originally an attack upon the king?",
+          "teacher_notes": {
+            "source_context": "Preserved in the House of Lords archives, this parchment ordered the public execution of the King. To ensure that no single individual could be blamed, 59 army officers and republican politicians signed and sealed it, signing their own potential death warrants if the monarchy was ever restored. **Hinge Question:** Can a king commit treason against his own kingdom if the legal definition of treason was originally an attack upon the king?"
+          }
         },
         {
           "id": "mrp_l4_src_e",
@@ -3819,7 +3895,11 @@
             "Author: London Parliamentary printmakers and propagandists (published in 1643).",
             "Audience: London citizens, Puritan congregations, and Parliamentary recruit levies.",
             "Motive: To ridicule Royalist military commanders and justify total war by framing the Cavaliers as corrupt, ungodly sorcerers."
-          ]
+          ],
+          "source_context": "Prince Rupert of the Rhine, Charles I's charismatic cavalry commander, brought a rare white poodle named Boy onto the battlefield. Roundhead pamphleteers claimed the dog spoke multiple languages, found hidden treasure, and caught musket balls in its teeth. **Hinge Question:** How did seventeenth-century political propaganda exploit superstitious fears of witchcraft to dehumanize civil war opponents?",
+          "teacher_notes": {
+            "source_context": "Prince Rupert of the Rhine, Charles I's charismatic cavalry commander, brought a rare white poodle named Boy onto the battlefield. Roundhead pamphleteers claimed the dog spoke multiple languages, found hidden treasure, and caught musket balls in its teeth. **Hinge Question:** How did seventeenth-century political propaganda exploit superstitious fears of witchcraft to dehumanize civil war opponents?"
+          }
         }
       ],
       "teacher_notes": {
@@ -4563,7 +4643,11 @@
             "Author: The Lords Spiritual and Temporal and Commons assembled at Westminster.",
             "Audience: King William III, Queen Mary II, the British people, and the legal courts.",
             "Motive: To permanently settle the constitutional boundaries of the monarchy and prevent any return to Stuart absolutism."
-          ]
+          ],
+          "source_context": "Following the Glorious Revolution of 1688, Parliament presented the Bill of Rights to William and Mary. It established that the monarch could not suspend laws, levy taxes without consent, or maintain a standing army without parliamentary approval. **Hinge Question:** Why did the 1689 Bill of Rights mark the permanent death of royal absolutism in Britain?",
+          "teacher_notes": {
+            "source_context": "Following the Glorious Revolution of 1688, Parliament presented the Bill of Rights to William and Mary. It established that the monarch could not suspend laws, levy taxes without consent, or maintain a standing army without parliamentary approval. **Hinge Question:** Why did the 1689 Bill of Rights mark the permanent death of royal absolutism in Britain?"
+          }
         },
         {
           "id": "mrp_l5_src_b",
@@ -4607,7 +4691,11 @@
             "Author: Dutch-English maritime artist in the circle of Willem van de Velde.",
             "Audience: The new joint monarchs William and Mary, and supporters of the Protestant succession.",
             "Motive: To depict the invasion as an orderly, righteous mission to liberate England from popery and arbitrary rule."
-          ]
+          ],
+          "source_context": "Alarmed by James II's Catholic heir and arbitrary rule, seven leading English nobles sent an invitation to Dutch Stadtholder William of Orange. On 5 November 1688 (Guy Fawkes Day), William landed at Torbay. James II's army deserted him, and he fled to France. **Hinge Question:** Was the Glorious Revolution a peaceful constitutional uprising or a successful Dutch foreign invasion?",
+          "teacher_notes": {
+            "source_context": "Alarmed by James II's Catholic heir and arbitrary rule, seven leading English nobles sent an invitation to Dutch Stadtholder William of Orange. On 5 November 1688 (Guy Fawkes Day), William landed at Torbay. James II's army deserted him, and he fled to France. **Hinge Question:** Was the Glorious Revolution a peaceful constitutional uprising or a successful Dutch foreign invasion?"
+          }
         },
         {
           "id": "mrp_l5_src_c",
@@ -4651,7 +4739,11 @@
             "Author: British constitutional historical artist.",
             "Audience: Members of Parliament, civic visitors to Westminster, and constitutional scholars.",
             "Motive: To commemorate the founding moment of modern British parliamentary democracy."
-          ]
+          ],
+          "source_context": "On 13 February 1689 in the very room from which Charles I had walked to his execution forty years earlier, Parliament offered the Crown to William and Mary. They were forced to listen to the Declaration of Rights read aloud before being offered the throne. **Hinge Question:** Why did presenting the Declaration of Rights in the Banqueting House symbolize that the monarchy had been fundamentally transformed?",
+          "teacher_notes": {
+            "source_context": "On 13 February 1689 in the very room from which Charles I had walked to his execution forty years earlier, Parliament offered the Crown to William and Mary. They were forced to listen to the Declaration of Rights read aloud before being offered the throne. **Hinge Question:** Why did presenting the Declaration of Rights in the Banqueting House symbolize that the monarchy had been fundamentally transformed?"
+          }
         },
         {
           "id": "mrp_l5_src_d",
@@ -4695,7 +4787,11 @@
             "Author: Abraham Bosse (French artist and engraver) collaborating closely with philosopher Thomas Hobbes.",
             "Audience: European political philosophers, exiled royalists in Paris, and post-Civil War English intellectuals.",
             "Motive: To provide a philosophical defense of undivided absolute sovereignty as the only cure for the bloody horrors of civil war."
-          ]
+          ],
+          "source_context": "Writing in exile during the English Civil War, Thomas Hobbes argued that without an absolute sovereign power to enforce law, human society collapsed into a 'state of nature' where life was 'solitary, poor, nasty, brutish, and short'. **Hinge Question:** Is an absolute sovereign necessary to prevent civil war, or does absolute power inevitably lead to tyranny?",
+          "teacher_notes": {
+            "source_context": "Writing in exile during the English Civil War, Thomas Hobbes argued that without an absolute sovereign power to enforce law, human society collapsed into a 'state of nature' where life was 'solitary, poor, nasty, brutish, and short'. **Hinge Question:** Is an absolute sovereign necessary to prevent civil war, or does absolute power inevitably lead to tyranny?"
+          }
         },
         {
           "id": "mrp_l5_src_e",
@@ -4739,7 +4835,11 @@
             "Author: Contemporary British historical engraver / Court of King's Bench records.",
             "Audience: English gentry, Anglican clergy, and parliamentary leaders.",
             "Motive: To document the sensational trial where the judicial system stood against royal absolutism, triggering the invitation to William of Orange."
-          ]
+          ],
+          "source_context": "When King James II ordered his Declaration of Indulgence read in every pulpit, Archbishop Sancroft and six bishops petitioned that the King had no legal dispensing power to suspend parliamentary statutes. James imprisoned them in the Tower and put them on trial for sedition. The jury's verdict of 'Not Guilty' triggered joyous street celebrations and united Tories and Whigs against the King. **Hinge Question:** Why did the trial of seven Anglican bishops unite rival Whig and Tory politicians to overthrow King James II?",
+          "teacher_notes": {
+            "source_context": "When King James II ordered his Declaration of Indulgence read in every pulpit, Archbishop Sancroft and six bishops petitioned that the King had no legal dispensing power to suspend parliamentary statutes. James imprisoned them in the Tower and put them on trial for sedition. The jury's verdict of 'Not Guilty' triggered joyous street celebrations and united Tories and Whigs against the King. **Hinge Question:** Why did the trial of seven Anglican bishops unite rival Whig and Tory politicians to overthrow King James II?"
+          }
         }
       ],
       "teacher_notes": {

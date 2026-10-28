@@ -1386,7 +1386,7 @@ export function renderWorkbooksZone(container, unitData) {
           <label for="hubUnitQuickSwitcher" style="font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.4px;">
             <i class="fa-solid fa-arrow-right-arrow-left" style="margin-right: 4px;"></i>Switch Unit:
           </label>
-          <select id="hubUnitQuickSwitcher" onchange="window.switchView('booklet', this.value)" style="font-size: 0.76rem; font-weight: 700; color: #0f172a; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 5px 10px; cursor: pointer; outline: none;">
+          <select id="hubUnitQuickSwitcher" onchange="if (this.value === 'all') { window.switchView('booklet', 'all'); } else { window.switchView('lessons', this.value); }" style="font-size: 0.76rem; font-weight: 700; color: #0f172a; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 5px 10px; cursor: pointer; outline: none;">
             <option value="all">-- All Units Directory --</option>
             <optgroup label="Edexcel GCSE History (Years 10–11)">
               <option value="edexcel_medicine" ${activeUnitId === 'edexcel_medicine' ? 'selected' : ''}>Medicine in Britain (Paper 1)</option>
@@ -1573,7 +1573,7 @@ export function renderWorkbooksZone(container, unitData) {
                     <span style="color: #64748b; font-size: 0.70rem;">${u.spec}</span>
                   </div>
                 </div>
-                <button type="button" onclick="window.switchView('booklet', '${u.id}')" style="background: #0f172a; color: #ffffff; border: none; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                <button type="button" onclick="window.switchView('lessons', '${u.id}')" style="background: #0f172a; color: #ffffff; border: none; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
                   <span>Open Master Publications</span>
                   <i class="fa-solid fa-arrow-right" style="font-size: 0.65rem;"></i>
                 </button>
@@ -1597,7 +1597,7 @@ export function renderWorkbooksZone(container, unitData) {
             ${ks3Units
               .map(
                 (u) => `
-              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.15s ease;" onclick="window.switchView('booklet', '${u.id}')" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#0284c7';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.15s ease;" onclick="window.switchView('lessons', '${u.id}')" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#0284c7';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
                 <div style="display: flex; align-items: center; gap: 8px; overflow: hidden;">
                   <i class="fa-solid ${u.icon}" style="color: #64748b; font-size: 0.85rem; flex-shrink: 0;"></i>
                   <div style="overflow: hidden;">
@@ -1633,7 +1633,7 @@ export function renderWorkbooksZone(container, unitData) {
               <span style="color: #64748b; font-size: 0.70rem;">Complete 24-Page Pupil Workbook • 10-Lesson Scheme of Work • 40-Question Knowledge Retrieval Companion</span>
             </div>
           </div>
-          <button type="button" onclick="window.switchView('booklet', 'ks2_ww2')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+          <button type="button" onclick="window.switchView('lessons', 'ks2_ww2')" style="background: #1e3a8a; color: #ffffff; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
             <span>Open KS2 Master Publications</span>
             <i class="fa-solid fa-arrow-right" style="font-size: 0.65rem;"></i>
           </button>
