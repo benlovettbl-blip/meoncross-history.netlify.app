@@ -425,11 +425,10 @@ const the_shoah_data = {
             image: '/images/warsaw_nalewki_street_bookstore_1930s.jpg',
             src: '/images/warsaw_nalewki_street_bookstore_1930s.jpg',
           },
-          image: '/images/jewish_population_europe_1933_map.jpg',
-          image_alt:
-            'Demographic distribution map of 9.5 million Jewish people across the nations of Europe in 1933',
+          image: '/images/yiddishland_lodz_students_prewar.jpg',
+          image_alt: 'Jewish schoolboys studying in Łódź, Poland, before the Second World War',
           caption:
-            'Pre-war demographic map illustrating the geographic distribution of over 9.5 million Jewish people across Europe in 1933, with the largest communities concentrated in Poland, the Soviet Union, and Romania.',
+            'Young Jewish students studying in Łódź, Poland, before the Second World War, exemplifying the rich educational and communal traditions of Eastern European Yiddishland.',
         },
         {
           act: 3,
@@ -483,10 +482,10 @@ const the_shoah_data = {
             letter: 'D',
             type: 'visual',
             title:
-              'Source D (Archival Record & Photograph): Sephardic Jewish Port Workers and Maritime Trade, Salonica (c. 1910–1930)',
-            text: 'For centuries, Thessaloniki was celebrated across the Mediterranean as "La Madre de Israel" (The Mother of Israel). It was the only major European commercial port where maritime shipping, customs houses, and downtown trade shut down completely every Friday evening for the Jewish Sabbath. From dockworkers and stevedores to doctors, bank directors, and philosophers, the community spoke Judeo-Spanish (Ladino), maintaining medieval Spanish ballads and traditions dating back to their expulsion from Spain in 1492.',
+              'Source D (Archival Record & Photograph): Sephardic Jewish Trade Guild Marching in Salonica (c. 1908–1912)',
+            text: 'For centuries, Thessaloniki was celebrated across the Mediterranean as "La Madre de Israel" (The Mother of Israel). It was the only major European commercial port where maritime shipping, customs houses, and downtown trade shut down completely every Friday evening for the Jewish Sabbath. From dockworkers and trade guild members to doctors, bank directors, and philosophers, the community spoke Judeo-Spanish (Ladino), maintaining medieval Spanish ballads and traditions dating back to their expulsion from Spain in 1492.',
             caption:
-              'Sephardic Jewish stevedores and dockworkers at the port of Salonica (Thessaloniki), Greece, where maritime trade stopped on the Jewish Sabbath.',
+              'Members of the Corporation des cordonniers israélites de Salonique marching through Salonica beneath their trade guild banner emblazoned in French and Hebrew with the Star of David.',
             citation: 'Jewish Museum of Thessaloniki / USHMM Document Collection (RG-68.046M).',
             context:
               'The Sephardic Jewish community in Greece and the Mediterranean preserved a distinct linguistic, liturgical, and civic culture over four centuries under Ottoman and Greek rule. **Hinge Question:** In what ways did the Sephardic cultural world of Thessaloniki differ from the Ashkenazi world of Eastern Europe, and why is this distinction historically significant?',
@@ -769,10 +768,10 @@ const the_shoah_data = {
           letter: 'D',
           type: 'visual',
           title:
-            'Source D (Archival Record & Photograph): Sephardic Jewish Port Workers and Maritime Trade, Salonica (c. 1910–1930)',
-          text: 'For centuries, Thessaloniki was celebrated across the Mediterranean as "La Madre de Israel" (The Mother of Israel). It was the only major European commercial port where maritime shipping, customs houses, and downtown trade shut down completely every Friday evening for the Jewish Sabbath. From dockworkers and stevedores to doctors, bank directors, and philosophers, the community spoke Judeo-Spanish (Ladino), maintaining medieval Spanish ballads and traditions dating back to their expulsion from Spain in 1492.',
+            'Source D (Archival Record & Photograph): Sephardic Jewish Trade Guild Marching in Salonica (c. 1908–1912)',
+          text: 'For centuries, Thessaloniki was celebrated across the Mediterranean as "La Madre de Israel" (The Mother of Israel). It was the only major European commercial port where maritime shipping, customs houses, and downtown trade shut down completely every Friday evening for the Jewish Sabbath. From dockworkers and trade guild members to doctors, bank directors, and philosophers, the community spoke Judeo-Spanish (Ladino), maintaining medieval Spanish ballads and traditions dating back to their expulsion from Spain in 1492.',
           caption:
-            'Sephardic Jewish stevedores and dockworkers at the port of Salonica (Thessaloniki), Greece, where maritime trade stopped on the Jewish Sabbath.',
+            'Members of the Corporation des cordonniers israélites de Salonique marching through Salonica beneath their trade guild banner emblazoned in French and Hebrew with the Star of David.',
           citation: 'Jewish Museum of Thessaloniki / USHMM Document Collection (RG-68.046M).',
           context:
             'The Sephardic Jewish community in Greece and the Mediterranean preserved a distinct linguistic, liturgical, and civic culture over four centuries under Ottoman and Greek rule. **Hinge Question:** In what ways did the Sephardic cultural world of Thessaloniki differ from the Ashkenazi world of Eastern Europe, and why is this distinction historically significant?',
@@ -2963,10 +2962,10 @@ const the_shoah_data = {
             letter: 'E',
             type: 'visual',
             title:
-              'Source E (Forensic Archival Plate): Ruins and Memorial of the Chełmno Gas Van Extermination Camp (Kulmhof)',
+              'Source E (Forensic Archival Photograph): Magirus-Deutz Gas Van Recovered at Chełmno Extermination Camp (1945)',
             text: 'SS-Obersturmbannführer Willy Just to Reich Criminal Police Office, Berlin: Subject: Technical modifications to special vehicles (Saurer gas vans). Since December 1941, ninety-seven thousand have been processed through three vehicles in service, without defect. The application of carbon monoxide exhaust gas must be made more uniform... The connecting hose from the exhaust to the van interior often tears. Furthermore, shortening the freight cargo bed by one metre prevents the shifting of the load towards the rear door, which otherwise creates extreme difficulty for the unloading commandos.',
             caption:
-              'Forensic site of Chełmno (Kulmhof), the first extermination camp established in December 1941, utilizing specially modified Saurer vans pumping carbon monoxide exhaust.',
+              'Forensic investigators examining a Magirus-Deutz gas van at Koło near Chełmno (Kulmhof) in 1945, showing the sealed rear compartment used by the SS to pump lethal carbon monoxide exhaust into victims.',
             citation: 'Nuremberg Trial Documents (Document PS-501) / German Federal Archives.',
             context:
               'Face-to-face shooting created severe psychological stress and drunkenness among German firing squads. To ease the burden on perpetrators and maximize slaughter, the Nazi leadership developed sealed gas vans at Chełmno (operational December 1941), initiating the transition to industrial gas chambers. **Hinge Question:** How does the technical language of this engineering report demonstrate the dehumanization of both victims and perpetrators?',
@@ -3253,10 +3252,10 @@ const the_shoah_data = {
           letter: 'E',
           type: 'visual',
           title:
-            'Source E (Forensic Archival Plate): Ruins and Memorial of the Chełmno Gas Van Extermination Camp (Kulmhof)',
+            'Source E (Forensic Archival Photograph): Magirus-Deutz Gas Van Recovered at Chełmno Extermination Camp (1945)',
           text: 'SS-Obersturmbannführer Willy Just to Reich Criminal Police Office, Berlin: Subject: Technical modifications to special vehicles (Saurer gas vans). Since December 1941, ninety-seven thousand have been processed through three vehicles in service, without defect. The application of carbon monoxide exhaust gas must be made more uniform... The connecting hose from the exhaust to the van interior often tears. Furthermore, shortening the freight cargo bed by one metre prevents the shifting of the load towards the rear door, which otherwise creates extreme difficulty for the unloading commandos.',
           caption:
-            'Forensic site of Chełmno (Kulmhof), the first extermination camp established in December 1941, utilizing specially modified Saurer vans pumping carbon monoxide exhaust.',
+            'Forensic investigators examining a Magirus-Deutz gas van at Koło near Chełmno (Kulmhof) in 1945, showing the sealed rear compartment used by the SS to pump lethal carbon monoxide exhaust into victims.',
           citation: 'Nuremberg Trial Documents (Document PS-501) / German Federal Archives.',
           context:
             'Face-to-face shooting created severe psychological stress and drunkenness among German firing squads. To ease the burden on perpetrators and maximize slaughter, the Nazi leadership developed sealed gas vans at Chełmno (operational December 1941), initiating the transition to industrial gas chambers. **Hinge Question:** How does the technical language of this engineering report demonstrate the dehumanization of both victims and perpetrators?',
@@ -3796,10 +3795,10 @@ const the_shoah_data = {
             letter: 'E',
             type: 'visual',
             title:
-              'Source E (Forensic Archival Photograph): Blown-Up Ruins of Crematorium IV at Auschwitz-Birkenau (Sonderkommando Revolt, October 1944)',
+              'Source E (Primary Archival Portrait & Testimony): Roza Robota and the Sonderkommando Revolt at Crematorium IV (Auschwitz-Birkenau, October 1944)',
             text: "Survivor Noah Zabludowicz: \"Four young Jewish women working in the Weichsel-Union munitions factory—Roza Robota, Ala Gertner, Ester Wajcblum, and Regina Safirsztajn—smuggled tiny parcels of gunpowder inside their clothes to the Sonderkommando in Birkenau. On 7 October 1944, the Sonderkommando attacked the SS guards with axes and crowbars, set fire to Crematorium IV, and blew the building apart. The four young women were betrayed, tortured by the Gestapo for weeks, and hanged before the assembled camp. Just before the trapdoor fell, Roza shouted: 'Hazak V'ematz!' (Be strong and courageous!)\"",
             caption:
-              'The collapsed brick ruins of Crematorium IV at Birkenau, dynamited on 7 October 1944 by Jewish Sonderkommando prisoners using gunpowder smuggled into the camp by young Jewish women workers including Roza Robota.',
+              'Roza Robota (1921–1945), one of the four heroic young Jewish women in the Auschwitz underground resistance who smuggled gunpowder out of the Weichsel-Union munitions factory to arm the Sonderkommando revolt that destroyed Crematorium IV.',
             citation:
               "Yad Vashem Survivor Testimony Collection (M.11) / Ghetto Fighters' House Archives.",
             context:
@@ -4115,10 +4114,10 @@ const the_shoah_data = {
           letter: 'E',
           type: 'visual',
           title:
-            'Source E (Forensic Archival Photograph): Blown-Up Ruins of Crematorium IV at Auschwitz-Birkenau (Sonderkommando Revolt, October 1944)',
+            'Source E (Primary Archival Portrait & Testimony): Roza Robota and the Sonderkommando Revolt at Crematorium IV (Auschwitz-Birkenau, October 1944)',
           text: "Survivor Noah Zabludowicz: \"Four young Jewish women working in the Weichsel-Union munitions factory—Roza Robota, Ala Gertner, Ester Wajcblum, and Regina Safirsztajn—smuggled tiny parcels of gunpowder inside their clothes to the Sonderkommando in Birkenau. On 7 October 1944, the Sonderkommando attacked the SS guards with axes and crowbars, set fire to Crematorium IV, and blew the building apart. The four young women were betrayed, tortured by the Gestapo for weeks, and hanged before the assembled camp. Just before the trapdoor fell, Roza shouted: 'Hazak V'ematz!' (Be strong and courageous!)\"",
           caption:
-            'The collapsed brick ruins of Crematorium IV at Birkenau, dynamited on 7 October 1944 by Jewish Sonderkommando prisoners using gunpowder smuggled into the camp by young Jewish women workers including Roza Robota.',
+            'Roza Robota (1921–1945), one of the four heroic young Jewish women in the Auschwitz underground resistance who smuggled gunpowder out of the Weichsel-Union munitions factory to arm the Sonderkommando revolt that destroyed Crematorium IV.',
           citation:
             "Yad Vashem Survivor Testimony Collection (M.11) / Ghetto Fighters' House Archives.",
           context:
@@ -5449,10 +5448,10 @@ const the_shoah_data = {
             letter: 'E',
             type: 'visual',
             title:
-              "Source E (Primary Archival Plate): Primo Levi and the First Edition of 'Se questo è un uomo' (1947)",
+              "Source E (Primary Archival Photograph & Testimony): Primo Levi and the Testament of 'Se questo è un uomo' (1947)",
             text: 'Primo Levi (Auschwitz Survivor No. 174517): "You who live safe in your warm houses, you who find on returning in the evening hot food and friendly faces: Consider if this is a man who works in the mud, who knows no peace, who fights for half a crust of bread, who dies because of a yes or a no. Consider if this is a woman, without hair and without name, with no more strength to remember, her eyes empty and her womb cold like a frog in winter. Meditate that what has been was; I commend these words to you. Carve them in your hearts... Or may your house crumble, disease afflict you, and your children turn their faces from you."',
             caption:
-              "Primo Levi, Italian Jewish survivor of Auschwitz-Monowitz, whose 1947 masterpiece 'If This Is a Man' demanded that humanity remember the systematic destruction of human dignity.",
+              "Primo Levi (1919–1987), Italian Jewish chemist and survivor of Auschwitz-Monowitz (Camp No. 174517), whose 1947 memoir 'If This Is a Man' stands as one of literature's most profound examinations of human dignity.",
             citation:
               'Primo Levi, Se questo è un uomo (1947) / Centro di Documentazione Ebraica Contemporanea (CDEC), Milan.',
             context:
@@ -5740,10 +5739,10 @@ const the_shoah_data = {
           letter: 'E',
           type: 'visual',
           title:
-            "Source E (Primary Archival Plate): Primo Levi and the First Edition of 'Se questo è un uomo' (1947)",
+            "Source E (Primary Archival Photograph & Testimony): Primo Levi and the Testament of 'Se questo è un uomo' (1947)",
           text: 'Primo Levi (Auschwitz Survivor No. 174517): "You who live safe in your warm houses, you who find on returning in the evening hot food and friendly faces: Consider if this is a man who works in the mud, who knows no peace, who fights for half a crust of bread, who dies because of a yes or a no. Consider if this is a woman, without hair and without name, with no more strength to remember, her eyes empty and her womb cold like a frog in winter. Meditate that what has been was; I commend these words to you. Carve them in your hearts... Or may your house crumble, disease afflict you, and your children turn their faces from you."',
           caption:
-            "Primo Levi, Italian Jewish survivor of Auschwitz-Monowitz, whose 1947 masterpiece 'If This Is a Man' demanded that humanity remember the systematic destruction of human dignity.",
+            "Primo Levi (1919–1987), Italian Jewish chemist and survivor of Auschwitz-Monowitz (Camp No. 174517), whose 1947 memoir 'If This Is a Man' stands as one of literature's most profound examinations of human dignity.",
           citation:
             'Primo Levi, Se questo è un uomo (1947) / Centro di Documentazione Ebraica Contemporanea (CDEC), Milan.',
           context:

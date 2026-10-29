@@ -46,7 +46,15 @@ const FOUR_ACT_UNITS = [
 ];
 
 // GCSE units with dedicated Paper 1, Paper 2, and Paper 3 disciplinary source questions
-const GCSE_UNITS = ['cme_new', 'usa', 'edexcel_medicine', 'cold_war', 'weimar_nazi_germany', 'eee'];
+const GCSE_UNITS = [
+  'cme_new',
+  'usa',
+  'edexcel_medicine',
+  'cold_war',
+  'weimar_nazi_germany',
+  'eee',
+  'the_shoah',
+];
 
 // Units held to strict 5-Stage Chronological Inquiry Spine & 5-Block Narrative Architecture
 const FIVE_STAGE_UNITS = ['cme_new', 'usa', 'weimar_nazi_germany'];

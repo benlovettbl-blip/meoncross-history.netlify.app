@@ -67,12 +67,12 @@ function cleanProse(text) {
 function loadUnitData() {
   const dataPath = path.join(ROOT_DIR, 'units', 'the_shoah', 'data.js');
   let raw = fs.readFileSync(dataPath, 'utf8');
-  raw =
-    raw
-      .replace(/export\s+const\s+unitData\s*=/g, 'const unitData =')
-      .replace(/export\s+default\s+unitData;?/g, '')
-      .replace(/export\s*\{[^}]*\};?/g, '') + '; unitData;';
-  return vm.runInNewContext(raw);
+  raw = raw.replace(/export\s+default\s+[^;]+;?/g, '');
+  const sandbox = { module: { exports: {} } };
+  vm.runInNewContext(raw, sandbox);
+  return sandbox.module.exports.lessons
+    ? sandbox.module.exports
+    : sandbox.the_shoah_data || sandbox.unitData;
 }
 
 // Canonical unit narrative synopsis from src/unit_synopses.js
