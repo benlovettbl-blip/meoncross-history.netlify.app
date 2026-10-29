@@ -1,0 +1,289 @@
+{
+  "australia": {
+    "totalLessons": 5,
+    "totalSources": 25,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "cme_new": {
+    "totalLessons": 12,
+    "totalSources": 60,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "cold_war": {
+    "totalLessons": 7,
+    "totalSources": 35,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "edexcel_medicine": {
+    "totalLessons": 26,
+    "totalSources": 130,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "eee": {
+    "totalLessons": 12,
+    "totalSources": 60,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [
+      {
+        "lesson": "lesson_3_1",
+        "letter": "D",
+        "title": "Source D: Thomas Harriot, Mathematician, Astronomer, and Oxford Scholar",
+        "image": "/units/eee/assets/portraits/harriot.jpg",
+        "reason": "Filename matches portrait but title claims action/event"
+      }
+    ],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "first_british_empire": {
+    "totalLessons": 5,
+    "totalSources": 25,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "great_war": {
+    "totalLessons": 6,
+    "totalSources": 30,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "great_war_part2": {
+    "totalLessons": 5,
+    "totalSources": 25,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "industrialisation_and_empire": {
+    "totalLessons": 5,
+    "totalSources": 25,
+    "nonStandardBlockCount": 2,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": [
+      "L1 Block 4 has 0 sources",
+      "L4 Block 4 has 0 sources"
+    ]
+  },
+  "ks2_ww2": {
+    "totalLessons": 11,
+    "totalSources": 55,
+    "nonStandardBlockCount": 11,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": [
+      "L1 Block 1 has 2 sources",
+      "L1 Block 3 has 2 sources",
+      "L2 Block 1 has 2 sources",
+      "L2 Block 2 has 2 sources",
+      "L3 Block 2 has 2 sources",
+      "L3 Block 3 has 2 sources",
+      "L4 Block 1 has 2 sources",
+      "L4 Block 3 has 2 sources",
+      "L5 Block 2 has 2 sources",
+      "L5 Block 3 has 2 sources",
+      "L6 Block 1 has 2 sources",
+      "L6 Block 3 has 2 sources",
+      "L7 Block 1 has 2 sources",
+      "L7 Block 2 has 2 sources",
+      "L8 Block 1 has 2 sources",
+      "L8 Block 3 has 2 sources",
+      "L9 Block 3 has 3 sources",
+      "L10 Block 1 has 2 sources",
+      "L10 Block 2 has 2 sources",
+      "L11 Block 1 has 2 sources",
+      "L11 Block 2 has 2 sources",
+      "L11 Block 4 has 0 sources"
+    ]
+  },
+  "medieval_england": {
+    "totalLessons": 5,
+    "totalSources": 25,
+    "nonStandardBlockCount": 1,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": [
+      "L2 Block 6 has 0 sources"
+    ]
+  },
+  "monarchy_religion_power": {
+    "totalLessons": 5,
+    "totalSources": 25,
+    "nonStandardBlockCount": 1,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": [
+      "L1 Block 6 has 0 sources"
+    ]
+  },
+  "post_war_britain": {
+    "totalLessons": 5,
+    "totalSources": 25,
+    "nonStandardBlockCount": 5,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": [
+      "L1 Block 1 has 0 sources",
+      "L1 Block 2 has 0 sources",
+      "L1 Block 3 has 0 sources",
+      "L2 Block 1 has 0 sources",
+      "L2 Block 2 has 0 sources",
+      "L2 Block 3 has 0 sources",
+      "L3 Block 1 has 0 sources",
+      "L3 Block 2 has 0 sources",
+      "L3 Block 3 has 0 sources",
+      "L4 Block 1 has 0 sources",
+      "L4 Block 2 has 0 sources",
+      "L4 Block 3 has 0 sources",
+      "L5 Block 1 has 0 sources",
+      "L5 Block 2 has 0 sources",
+      "L5 Block 3 has 0 sources"
+    ]
+  },
+  "second_british_empire": {
+    "totalLessons": 5,
+    "totalSources": 25,
+    "nonStandardBlockCount": 5,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "the_shoah": {
+    "totalLessons": 7,
+    "totalSources": 35,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "trip_ypres": {
+    "totalLessons": 14,
+    "totalSources": 0,
+    "nonStandardBlockCount": 13,
+    "nonStandardSourceCount": 14,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": [
+      "L1 Block 1 has 0 sources",
+      "L1 Block 2 has 0 sources",
+      "L1 Block 3 has 0 sources",
+      "L1 Block 4 has 0 sources",
+      "L1 Block 5 has 0 sources",
+      "L1 Block 6 has 0 sources",
+      "L2 Block 1 has 0 sources",
+      "L2 Block 2 has 0 sources",
+      "L2 Block 3 has 0 sources",
+      "L2 Block 4 has 0 sources",
+      "L2 Block 5 has 0 sources",
+      "L2 Block 6 has 0 sources",
+      "L2 Block 7 has 0 sources",
+      "L3 Block 1 has 0 sources",
+      "L3 Block 2 has 0 sources",
+      "L3 Block 3 has 0 sources",
+      "L3 Block 4 has 0 sources",
+      "L3 Block 5 has 0 sources",
+      "L3 Block 6 has 0 sources",
+      "L4 Block 1 has 0 sources",
+      "L4 Block 2 has 0 sources",
+      "L4 Block 3 has 0 sources",
+      "L4 Block 4 has 0 sources",
+      "L4 Block 5 has 0 sources",
+      "L5 Block 1 has 0 sources",
+      "L6 Block 1 has 0 sources",
+      "L7 Block 1 has 0 sources",
+      "L8 Block 1 has 0 sources",
+      "L9 Block 1 has 0 sources",
+      "L10 Block 1 has 0 sources",
+      "L11 Block 1 has 0 sources",
+      "L12 Block 1 has 0 sources",
+      "L13 Block 1 has 0 sources",
+      "L14 Block 1 has 0 sources",
+      "L14 Block 2 has 0 sources",
+      "L14 Block 3 has 0 sources",
+      "L14 Block 4 has 0 sources",
+      "L14 Block 5 has 0 sources",
+      "L14 Block 6 has 0 sources",
+      "L14 Block 7 has 0 sources",
+      "L14 Block 8 has 0 sources",
+      "L14 Block 9 has 0 sources"
+    ]
+  },
+  "usa": {
+    "totalLessons": 16,
+    "totalSources": 80,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "water_and_sanitation": {
+    "totalLessons": 7,
+    "totalSources": 35,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  },
+  "weimar_nazi_germany": {
+    "totalLessons": 16,
+    "totalSources": 80,
+    "nonStandardBlockCount": 0,
+    "nonStandardSourceCount": 0,
+    "mismatchedSrcImage": [],
+    "portraitSources": [],
+    "emptySources": [],
+    "unlinkedBlockSources": []
+  }
+}
