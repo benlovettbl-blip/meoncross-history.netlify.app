@@ -217,8 +217,42 @@ export function toggleThinkDiscuss(btn, targetId) {
     }
   }
 }
+
+export function jumpToNarrativeBlock(stageNum) {
+  const el = document.getElementById(`para-${stageNum}`);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.style.transition = 'all 0.4s ease';
+    el.style.boxShadow = '0 0 0 4px #0284c7, 0 8px 24px rgba(2, 132, 199, 0.35)';
+    setTimeout(() => {
+      el.style.boxShadow = '';
+    }, 2500);
+  }
+}
+
+export function jumpToSpineCard(stageNum) {
+  const spine = document.getElementById('lesson-chronology-spine');
+  if (spine) {
+    const card = spine.querySelector(`.cme-spine-card[data-stage="${stageNum}"]`);
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.style.transition = 'all 0.4s ease';
+      card.style.boxShadow = '0 0 0 4px #0284c7, 0 8px 24px rgba(2, 132, 199, 0.35)';
+      card.style.transform = 'translateY(-3px)';
+      setTimeout(() => {
+        card.style.boxShadow = '';
+        card.style.transform = '';
+      }, 2500);
+    } else {
+      spine.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}
+
 if (typeof window !== 'undefined') {
   window.toggleThinkDiscuss = toggleThinkDiscuss;
+  window.jumpToNarrativeBlock = jumpToNarrativeBlock;
+  window.jumpToSpineCard = jumpToSpineCard;
 }
 
 export function getFallbackDiscussionIdeas(qText, sourceObj = {}) {
@@ -5331,25 +5365,11 @@ export function renderLesson(lesson) {
                   </div>`
                       : ''
                   }
-                  ${
-                    item.para_ref
-                      ? `
-                  <div style="display: flex; justify-content: flex-end; margin-top: 2px;">
-                    <button type="button" onclick="
-                      const pNum = '${item.para_ref}'.match(/\\d+\\.\\d+/)?.[0] || '';
-                      const chunk = Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes(pNum))?.closest('.narrative-chunk') || Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes(pNum));
-                      if (chunk) {
-                        chunk.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        chunk.style.transition = 'all 0.4s ease';
-                        chunk.style.boxShadow = '0 0 0 4px #0284c7, 0 8px 24px rgba(2,132,199,0.25)';
-                        setTimeout(() => { chunk.style.boxShadow = ''; }, 2500);
-                      }
-                    " class="cme-spine-jump-btn" title="Scroll directly to Paragraph ${item.para_ref}">
-                      <i class="fa-solid fa-arrow-down" style="font-size: 0.58rem;"></i> Jump to Text [${item.para_ref}]
+                  <div style="display: flex; justify-content: flex-end; margin-top: 4px;">
+                    <button type="button" onclick="if(window.jumpToNarrativeBlock){window.jumpToNarrativeBlock(${item.step});}event.stopPropagation();" class="cme-spine-jump-btn" title="Scroll directly to Stage ${item.step} narrative reading [${item.step}.1]–[${item.step}.2]" style="background: #0284c7; color: #ffffff; border: none; padding: 4px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s ease;">
+                      <i class="fa-solid fa-book-open" style="font-size: 0.65rem;"></i> Read Stage ${item.step} Text [${item.step}.1] &darr;
                     </button>
-                  </div>`
-                      : ''
-                  }
+                  </div>
                 </div>
               </div>
               ${
@@ -6992,6 +7012,39 @@ export function renderLesson(lesson) {
       const hasPureVisual = Boolean(block.image && !block.image_context);
       const isReversed = hasPureVisual ? visualPlateCounter++ % 2 === 1 : index % 2 === 1;
 
+      let stageBannerHtml = '';
+      if (
+        lesson.causal_domino_spine &&
+        Array.isArray(lesson.causal_domino_spine.stages) &&
+        lesson.causal_domino_spine.stages[index]
+      ) {
+        const stageObj = lesson.causal_domino_spine.stages[index];
+        const stageNum = stageObj.step || index + 1;
+        const stageDate = stageObj.date || '';
+        const stageQ = stageObj.question || '';
+
+        if (stageQ) {
+          stageBannerHtml = `
+            <div class="workbook-stage-question-banner" id="stage-banner-${stageNum}" onclick="if(window.jumpToSpineCard){window.jumpToSpineCard(${stageNum});}" title="Click to view Stage ${stageNum} causal dominoes in Chronology Spine above" style="margin-bottom: 12px; background: #0f172a; border: 1.5px solid #334155; border-left: 4px solid #0284c7; border-radius: 6px; padding: 10px 14px; color: #ffffff; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 5px rgba(15,23,42,0.15);">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 7px; flex-wrap: wrap;">
+                  <span class="stage-pill-badge" style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 900; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.5px; text-transform: uppercase;">
+                    <i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> Stage ${stageNum} Workbook Enquiry
+                  </span>
+                  ${stageDate ? `<span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f59e0b; background: rgba(245,158,11,0.12); padding: 2px 7px; border-radius: 3px; border: 1px solid rgba(245,158,11,0.25);">${stageDate}</span>` : ''}
+                </div>
+                <span class="stage-jump-link" style="font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 700; color: #38bdf8; display: inline-flex; align-items: center; gap: 4px;">
+                  <i class="fa-solid fa-arrow-up"></i> Chronology Spine &bull; Motive &amp; Result &rarr;
+                </span>
+              </div>
+              <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: #f8fafc; line-height: 1.35; margin-top: 2px;">
+                &ldquo;${stageQ}&rdquo;
+              </div>
+            </div>
+          `;
+        }
+      }
+
       const narrativeChunkHtml = `
               <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; flex-direction: column; margin-bottom: ${hasPureVisual ? '0' : '15px'}; padding: 16px 18px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05); flex: 1 1 58%; min-width: 0;">
                 <div class="narrative-chunk-header" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: ${themeHeadingHtml || showParaNumber ? '10px' : '4px'}; flex-wrap: wrap;">
@@ -7003,6 +7056,7 @@ export function renderLesson(lesson) {
                     ${renderAudioPlaybackBar('Read Aloud Paragraph')}
                   </div>
                 </div>
+                ${stageBannerHtml}
                 <div class="narrative-text" style="width: 100%; line-height: 1.65; color: #1e293b; font-size: 1.05rem;">${styledContent}</div>
               </div>
       `;

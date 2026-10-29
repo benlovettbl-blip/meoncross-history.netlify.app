@@ -6750,6 +6750,26 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
   box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08) !important;
   border-color: #93c5fd !important;
 }
+.cme-spine-jump-btn {
+  transition: all 0.18s ease;
+}
+.cme-spine-jump-btn:hover {
+  background: #0369a1 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3) !important;
+}
+.workbook-stage-question-banner {
+  transition: all 0.2s ease;
+}
+.workbook-stage-question-banner:hover {
+  background: #1e293b !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28) !important;
+  transform: translateY(-1.5px);
+}
+.workbook-stage-question-banner:hover .stage-jump-link {
+  color: #7dd3fc !important;
+}
 .cme-causal-drawer summary {
   list-style: none;
 }
@@ -6840,6 +6860,26 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08) !important;
   border-color: #93c5fd !important;
+}
+.cme-spine-jump-btn {
+  transition: all 0.18s ease;
+}
+.cme-spine-jump-btn:hover {
+  background: #0369a1 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3) !important;
+}
+.workbook-stage-question-banner {
+  transition: all 0.2s ease;
+}
+.workbook-stage-question-banner:hover {
+  background: #1e293b !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28) !important;
+  transform: translateY(-1.5px);
+}
+.workbook-stage-question-banner:hover .stage-jump-link {
+  color: #7dd3fc !important;
 }
 
 /* Equalized Baseline Narrative Zone */
