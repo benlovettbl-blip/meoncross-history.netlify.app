@@ -713,12 +713,17 @@ const cme_new_data = {
       extra_videos: [],
       narrative_blocks: [
         {
-          theme_heading:
-            '1. The Imperial Dismemberment: Collapse of the Ottoman Empire & Sykes-Picot (1916)',
-          text: 'At the outbreak of the First World War in 1914, the Middle East had been ruled by the Turkish Ottoman Empire for over four centuries. As the Ottoman Empire joined the Central Powers (Germany and Austria-Hungary), British imperial planners feared for the security of their vital maritime lifeline—the Suez Canal—which connected Britain to British India and its Far East empire.<br><br>\nIn May 1916, British diplomat Sir Mark Sykes and French diplomat François Georges-Picot negotiated the secret <strong>Sykes-Picot Agreement</strong>. Assuming Allied victory, the treaty carved up the Ottoman Arab provinces into direct and indirect zones of European imperial influence: France claimed Syria and Lebanon, while Great Britain secured Mesopotamia (modern Iraq) and Transjordan.<br><br>\nCrucially, Palestine was designated for international administration due to the sensitivities surrounding the Christian, Islamic, and Jewish holy sites of Jerusalem. When the terms were leaked by revolutionary Russian Bolsheviks in November 1917, the agreement was denounced across the Arab world as an act of imperial betrayal, confirming that European powers intended to replace Ottoman domination with British and French colonial control.',
+          title: 'The Dismemberment of the Ottoman Empire & Sykes-Picot',
+          paragraphs: [
+            '<span class="para-ref">[1.1]</span> For over four centuries leading up to the First World War, the lands of the Middle East were ruled as provinces of the Turkish Ottoman Empire. When the Ottomans entered the war on the side of Imperial Germany in October 1914, British and French imperial planners moved swiftly to orchestrate the partition of the Sultan\'s empire. In May 1916, British diplomat Sir Mark Sykes and French diplomat François Georges-Picot concluded the secret **Sykes-Picot Agreement**. Using rulers across desert maps, they divided the Levant into imperial spheres of influence: France claimed direct control over Syria and Lebanon, while Britain secured Mesopotamia (Iraq) and **Transjordan** to safeguard maritime routes to India and vital oil supplies in the Persian Gulf.',
+            '<span class="para-ref">[1.2]</span> Following the Allied military conquest of Jerusalem by **General Edmund Allenby** in December 1917, the newly formed **League of Nations** formalised this partition through the Mandate System. Under Article 22 of the League Covenant, Britain was granted temporary administrative control over Mandatory Palestine. However, these arbitrary imperial boundaries ignored historic tribal, ethnic, and religious realities, creating an artificial political arena in which competing national movements would collide.',
+          ],
+          act: 1,
+          act_title: 'Context & Catalyst — The Dismemberment of the Ottoman Empire & Sykes-Picot',
+          text: '<span class="para-ref">[1.1]</span> For over four centuries leading up to the First World War, the lands of the Middle East were ruled as provinces of the Turkish Ottoman Empire. When the Ottomans entered the war on the side of Imperial Germany in October 1914, British and French imperial planners moved swiftly to orchestrate the partition of the Sultan\'s empire. In May 1916, British diplomat Sir Mark Sykes and French diplomat François Georges-Picot concluded the secret **Sykes-Picot Agreement**. Using rulers across desert maps, they divided the Levant into imperial spheres of influence: France claimed direct control over Syria and Lebanon, while Britain secured Mesopotamia (Iraq) and **Transjordan** to safeguard maritime routes to India and vital oil supplies in the Persian Gulf.\n\n<span class="para-ref">[1.2]</span> Following the Allied military conquest of Jerusalem by **General Edmund Allenby** in December 1917, the newly formed **League of Nations** formalised this partition through the Mandate System. Under Article 22 of the League Covenant, Britain was granted temporary administrative control over Mandatory Palestine. However, these arbitrary imperial boundaries ignored historic tribal, ethnic, and religious realities, creating an artificial political arena in which competing national movements would collide.',
           image: '/images/cme_allenby_jerusalem_1917.jpg',
           image_alt:
-            'General Edmund Allenby entering Jerusalem on foot through Jaffa Gate in December 1917',
+            'General Allenby entering Jerusalem on foot through the Jaffa Gate, December 1917',
           caption:
             'General Allenby Enters Jerusalem (December 1917): Disclosing British military conquest of Ottoman Palestine, entering on foot out of respect for the holy city.',
           isReversed: false,
@@ -738,7 +743,7 @@ const cme_new_data = {
               hinge_question:
                 'Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
               source_context:
-                'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War. It divided the Levant into imperial spheres of control while ignoring wartime promises of sovereign Arab independence made to Sharif Hussein. Hinge Question: Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+                'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War. It divided the Levant into imperial spheres of control while ignoring wartime promises of sovereign Arab independence made to Sharif Hussein. **Hinge Question:** Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
               context:
                 'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War.',
               question_badge: 'Historical Utility',
@@ -753,14 +758,26 @@ const cme_new_data = {
                 audience: 'British Foreign Office and French Ministry of Foreign Affairs cabinets.',
                 motive:
                   'To carve up Ottoman territorial spoils and safeguard imperial trade and naval pipelines before the war concluded.',
+                hinge_question:
+                  'Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+              },
+              teacher_notes: {
+                source_context:
+                  'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War. It divided the Levant into imperial spheres of control while ignoring wartime promises of sovereign Arab independence made to Sharif Hussein. **Hinge Question:** Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
               },
             },
           ],
         },
         {
-          theme_heading:
-            '2. The McMahon-Hussein Correspondence (1915–16): Arab Independence Pledges',
-          text: "Concurrently with secret negotiations with France, the British government sought to ignite an armed Arab rebellion behind Ottoman lines to divert Turkish troops from the Suez Canal and Gallipoli.<br><br>\nBetween July 1915 and March 1916, <strong>Sir Henry McMahon</strong>, British High Commissioner in Egypt, exchanged ten confidential letters with <strong>Sharif Hussein of Mecca</strong>, the guardian of Islam's holiest cities. McMahon pledged that if the Arabs launched a general military uprising against the Turks, Great Britain would recognize and support full Arab sovereign independence across the vast territory bounded by the Red Sea, Arabian Sea, and Persian Gulf.<br><br>\nHowever, McMahon inserted ambiguous geographic exclusions, stating that portions of Syria lying west of the districts of Damascus, Homs, Hama, and Aleppo could not be said to be purely Arab and must be excluded. Arab leaders firmly believed this referred only to coastal Lebanon, leaving Palestine within the promised independent Arab realm. British officials later insisted Palestine was excluded, creating an irreconcilable diplomatic dispute that poisoned Anglo-Arab relations for decades.",
+          title: 'Contradictory Pledges: McMahon-Hussein vs The Balfour Declaration',
+          paragraphs: [
+            '<span class="para-ref">[2.1]</span> To secure military alliances during the desperate fighting of the First World War, the British government issued contradictory, irreconcilable promises to Arab nationalists and Zionist leaders. Between July 1915 and March 1916, British High Commissioner Sir Henry McMahon conducted a secret correspondence with Sharif Hussein of Mecca, the guardian of Islam\'s holy sites. McMahon promised that if the Arabs launched a military revolt against the Ottoman Turks, Great Britain would recognise an independent Arab kingdom spanning the Arabian peninsula and the Fertile Crescent. Arab leaders understood this guarantee to include Palestine as an integral part of their future sovereign homeland.',
+            '<span class="para-ref">[2.2]</span> Simultaneously, British Prime Minister **David Lloyd George** and Foreign Secretary **Arthur Balfour** sought to win international Jewish support for the Allied war effort, particularly in revolutionary Russia and the United States. On 2 November 1917, Balfour addressed an official 67-word letter to Lord Walter Rothschild, declared British government support for the establishment in Palestine of "a national home for the Jewish people." Crucially, the declaration pledged that existing non-Jewish communal rights would not be prejudiced. This dual commitment sowed profound division. This created deep resentment.',
+          ],
+          act: 2,
+          act_title:
+            'Escalation & Conflict — Contradictory Pledges: McMahon-Hussein vs The Balfour Declaration',
+          text: '<span class="para-ref">[2.1]</span> To secure military alliances during the desperate fighting of the First World War, the British government issued contradictory, irreconcilable promises to Arab nationalists and Zionist leaders. Between July 1915 and March 1916, British High Commissioner Sir Henry McMahon conducted a secret correspondence with Sharif Hussein of Mecca, the guardian of Islam\'s holy sites. McMahon promised that if the Arabs launched a military revolt against the Ottoman Turks, Great Britain would recognise an independent Arab kingdom spanning the Arabian peninsula and the Fertile Crescent. Arab leaders understood this guarantee to include Palestine as an integral part of their future sovereign homeland.\n\n<span class="para-ref">[2.2]</span> Simultaneously, British Prime Minister **David Lloyd George** and Foreign Secretary **Arthur Balfour** sought to win international Jewish support for the Allied war effort, particularly in revolutionary Russia and the United States. On 2 November 1917, Balfour addressed an official 67-word letter to Lord Walter Rothschild, declared British government support for the establishment in Palestine of "a national home for the Jewish people." Crucially, the declaration pledged that existing non-Jewish communal rights would not be prejudiced. This dual commitment sowed profound division. This created deep resentment.',
           sources: [
             {
               id: 'cme_l1_source_b',
@@ -777,7 +794,7 @@ const cme_new_data = {
               hinge_question:
                 "How did the phrasing 'national home for the Jewish people' deliberately create ambiguity regarding future statehood?",
               source_context:
-                "Official public statement issued by the British government during the First World War announcing support for establishing a Jewish national home in Palestine, while stipulating that nothing should prejudice the civil and religious rights of existing non-Jewish communities. Hinge Question: How did the phrasing 'national home for the Jewish people' deliberately create ambiguity regarding future statehood?",
+                "Official public statement issued by the British government during the First World War announcing support for establishing a Jewish national home in Palestine, while stipulating that nothing should prejudice the civil and religious rights of existing non-Jewish communities. **Hinge Question:** How did the phrasing 'national home for the Jewish people' deliberately create ambiguity regarding future statehood?",
               context:
                 'Official public statement issued by the British government during the First World War.',
               question_badge: 'Author’s Purpose',
@@ -792,14 +809,31 @@ const cme_new_data = {
                   'Lord Rothschild, the Zionist Federation, and international diplomatic observers.',
                 motive:
                   'To win global Jewish financial and diplomatic backing for the Allies while laying claim to a strategic postwar buffer zone in Palestine.',
+                hinge_question:
+                  "How did the phrasing 'national home for the Jewish people' deliberately create ambiguity regarding future statehood?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Official public statement issued by the British government during the First World War announcing support for establishing a Jewish national home in Palestine, while stipulating that nothing should prejudice the civil and religious rights of existing non-Jewish communities. **Hinge Question:** How did the phrasing 'national home for the Jewish people' deliberately create ambiguity regarding future statehood?",
               },
             },
           ],
         },
         {
-          theme_heading:
-            '3. The Balfour Declaration (1917): Zionist Aspirations and British War Strategy',
-          text: 'As the First World War entered its critical phase in 1917, the British War Cabinet sought to win the financial and political backing of world Jewry, particularly in the United States and Russia. On 2 November 1917, British Foreign Secretary <strong>Arthur Balfour</strong> wrote an official letter to <strong>Lord Walter Rothschild</strong>, a leading British Zionist, which became known as the <strong>Balfour Declaration</strong>.<br><br>\nThe letter announced that the British government viewed with favour <em>"the establishment in Palestine of a national home for the Jewish people"</em>, and would use their best endeavours to facilitate the achievement of this object. To reassure existing inhabitants and anti-Zionist British Jews, the declaration stipulated that nothing should be done to prejudice the civil and religious rights of existing non-Jewish communities in Palestine, nor the political status enjoyed by Jews elsewhere.<br><br>\nThe declaration electrified the Zionist movement, established by <strong>Theodor Herzl</strong> in 1897, which argued that Jewish people could only achieve security from anti-Semitism through national self-determination. However, for Palestinian Arabs, who constituted over 90% of the population, the declaration was viewed as a catastrophic injustice: an imperial power had promised their ancestral homeland to another people without consulting the indigenous inhabitants.',
+          title: 'Zionist Pioneers, Arab Dispossession & Communal Clashes',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> Throughout the 1920s and 1930s, the Zionist movement—founded in 1897 by **Theodor Herzl**—translated the **Balfour Declaration** into physical reality on the ground. Financed by the **Jewish National Fund**, hundreds of thousands of European Jewish immigrants arrived in Palestine, purchasing agricultural land from absentee Ottoman landlords and draining malaria-ridden swamps to establish collective farming settlements (kibbutzim). Between 1922 and 1936, the Jewish population surged from 84,000 (11%) to over 400,000 (nearly 30% of the total population), driven by virulent antisemitic persecution and the rise of Adolf Hitler in Germany.',
+            '<span class="para-ref">[3.2]</span> For Palestinian Arabs, this rapid influx represented an existential threat of imperial colonization and economic dispossession. Arab tenant farmers, evicted from estates purchased by Zionist agencies that operated a strict policy of "Hebrew Labor," congregated in impoverished shantytowns around Jaffa, Haifa, and Jerusalem. Communal riots erupted with increasing ferocity, most notably the 1929 Western Wall clashes which left 133 Jews and 116 Arabs dead. British Royal Commissions consistently warned that economic growth could not reconcile the contradictory aims of Arab self-determination and Jewish state-building. This deep communal polarization entrenched bitter rivalries that resisted diplomatic mediation.',
+          ],
+          act: 3,
+          act_title:
+            'Forensic Evidence & Turning Point — Zionist Pioneers, Arab Dispossession & Communal Clashes',
+          text: '<span class="para-ref">[3.1]</span> Throughout the 1920s and 1930s, the Zionist movement—founded in 1897 by **Theodor Herzl**—translated the **Balfour Declaration** into physical reality on the ground. Financed by the **Jewish National Fund**, hundreds of thousands of European Jewish immigrants arrived in Palestine, purchasing agricultural land from absentee Ottoman landlords and draining malaria-ridden swamps to establish collective farming settlements (kibbutzim). Between 1922 and 1936, the Jewish population surged from 84,000 (11%) to over 400,000 (nearly 30% of the total population), driven by virulent antisemitic persecution and the rise of Adolf Hitler in Germany.\n\n<span class="para-ref">[3.2]</span> For Palestinian Arabs, this rapid influx represented an existential threat of imperial colonization and economic dispossession. Arab tenant farmers, evicted from estates purchased by Zionist agencies that operated a strict policy of "Hebrew Labor," congregated in impoverished shantytowns around Jaffa, Haifa, and Jerusalem. Communal riots erupted with increasing ferocity, most notably the 1929 Western Wall clashes which left 133 Jews and 116 Arabs dead. British Royal Commissions consistently warned that economic growth could not reconcile the contradictory aims of Arab self-determination and Jewish state-building. This deep communal polarization entrenched bitter rivalries that resisted diplomatic mediation.',
+          image: '/images/cme_middle_east_mandates_1921_map.jpg',
+          image_alt: 'League of Nations Mandates Map of the Middle East, 1921',
+          caption:
+            'League of Nations Mandates (1921): Carving the collapsed Ottoman Empire into British (Palestine, Transjordan, Iraq) and French (Syria, Lebanon) administrative zones.',
+          isReversed: true,
           sources: [
             {
               id: 'cme_l1_source_c',
@@ -816,7 +850,7 @@ const cme_new_data = {
               hinge_question:
                 "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
               source_context:
-                "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. Hinge Question: How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
+                "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
               context:
                 'Portrait of Theodor Herzl, who formulated political Zionism in response to European anti-Semitism.',
               question_badge: 'Source Inference',
@@ -830,30 +864,37 @@ const cme_new_data = {
                 audience: 'Delegates to the Basel Congress and European Jewish communities.',
                 motive:
                   'To present Herzl as a dignified, visionary statesman capable of negotiating with European monarchs and imperial cabinets.',
+                hinge_question:
+                  "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
               },
             },
           ],
         },
         {
-          theme_heading:
-            '4. The Mandate System & San Remo: Carving Imperial Spheres into League Mandates (1920–1922)',
-          text: "Following the Allied defeat of Ottoman armies and General Allenby's formal entry into Jerusalem in December 1917, the newly created <strong>League of Nations</strong> formalized European imperial dominance at the San Remo Conference in 1920.<br><br>\nRather than granting outright colonial sovereignty, the League established the <strong>Mandate System</strong> under Article 22 of its Covenant. Class A Mandates were designated for former Ottoman provinces considered provisionally independent nations subject to administrative advice and assistance by a mandatory power until they could stand alone.<br><br>\nGreat Britain was awarded the Mandate for Palestine and Transjordan, while France was awarded Syria and Lebanon. Incorporated directly into the text of the British Mandate was the Balfour Declaration, requiring the British administration to facilitate Jewish immigration and encourage close settlement by Jews on the land. By transforming wartime pledges into binding international law, the Mandate placed Britain in an impossible governing position: charged with preparing the Arab majority for democratic self-government while simultaneously fostering a Jewish national home against the majority's will.",
-          image: '/images/cme_middle_east_mandates_1921_map.jpg',
-          image_alt:
-            'Map of the League of Nations Middle East Mandates established at San Remo, 1920-1921',
-          caption:
-            'League of Nations Mandates (1921): Carving the collapsed Ottoman Empire into British (Palestine, Transjordan, Iraq) and French (Syria, Lebanon) administrative zones.',
-          isReversed: true,
+          title: 'The Great Arab Revolt & The 1939 MacDonald White Paper',
+          paragraphs: [
+            '<span class="para-ref">[4.1]</span> In April 1936, Palestinian frustration boiled over into the **Great Arab Revolt**. Led by the **Arab Higher Committee** and the Grand Mufti of Jerusalem, Amin al-Husseini, Arab workers launched a six-month general strike, demanding an immediate halt to Jewish immigration, a prohibition on land sales, and national independence. When peaceful resistance failed, armed guerrilla bands mobilized in the hill country, sabotaging oil pipelines, railway tracks, and British military outposts. Britain deployed over 25,000 troops, ruthlessly crushing the rebellion by 1939 using collective punishment, village demolitions, and aerial bombardment, disarming and devastating the Palestinian Arab leadership on the eve of the post-war crisis.',
+            '<span class="para-ref">[4.2]</span> Desperate to pacify the Arab world to secure Middle Eastern oil and communications as war with Nazi Germany loomed, the British government executed a stunning policy reversal. In May 1939, Colonial Secretary Malcolm MacDonald published the 1939 **White Paper**. The document renounced the partition of Palestine, capped Jewish immigration at 75,000 over the next five years, and stipulated that any further immigration would require Arab consent. Zionists condemned the **White Paper** as a cowardly betrayal of the **Balfour Declaration** that trapped European Jews on the eve of the **Holocaust**.',
+          ],
+          act: 4,
+          act_title:
+            'Historical Verdict & Assessment — The Great Arab Revolt & The 1939 MacDonald White Paper',
+          text: '<span class="para-ref">[4.1]</span> In April 1936, Palestinian frustration boiled over into the **Great Arab Revolt**. Led by the **Arab Higher Committee** and the Grand Mufti of Jerusalem, Amin al-Husseini, Arab workers launched a six-month general strike, demanding an immediate halt to Jewish immigration, a prohibition on land sales, and national independence. When peaceful resistance failed, armed guerrilla bands mobilized in the hill country, sabotaging oil pipelines, railway tracks, and British military outposts. Britain deployed over 25,000 troops, ruthlessly crushing the rebellion by 1939 using collective punishment, village demolitions, and aerial bombardment, disarming and devastating the Palestinian Arab leadership on the eve of the post-war crisis.\n\n<span class="para-ref">[4.2]</span> Desperate to pacify the Arab world to secure Middle Eastern oil and communications as war with Nazi Germany loomed, the British government executed a stunning policy reversal. In May 1939, Colonial Secretary Malcolm MacDonald published the 1939 **White Paper**. The document renounced the partition of Palestine, capped Jewish immigration at 75,000 over the next five years, and stipulated that any further immigration would require Arab consent. Zionists condemned the **White Paper** as a cowardly betrayal of the **Balfour Declaration** that trapped European Jews on the eve of the **Holocaust**.',
           sources: [
             {
               id: 'cme_l1_source_d',
               letter: 'D',
-              title: 'Source D: The McMahon-Hussein Correspondence Territorial Boundaries',
+              title:
+                'Source D: The McMahon-Hussein Correspondence Territorial Boundaries Map (1915–1916)',
               src: '/units/cme_new/assets/map_lesson1.png',
-              image: '/units/cme_new/assets/map_lesson1.png',
+              image: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
               source: '/units/cme_new/assets/map_lesson1.png',
               caption:
-                'Cartographic representation showing the conflicting territorial exclusions and pledges exchanged between Sir Henry McMahon and Sharif Hussein of Mecca (1915-1916).',
+                'Cartographic representation showing the conflicting territorial exclusions and pledges exchanged between Sir Henry McMahon and Sharif Hussein of Mecca (1915–1916).',
               desc: 'Historical map analyzing the contested zones of the McMahon-Hussein letters.',
               provenance:
                 'The National Archives, Kew (FO 371/2486), British Arab Bureau records, 1916.',
@@ -861,7 +902,7 @@ const cme_new_data = {
               hinge_question:
                 "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
               source_context:
-                "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. Hinge Question: Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+                "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
               context:
                 'British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces.',
               question_badge: 'Cross-Referencing',
@@ -876,24 +917,23 @@ const cme_new_data = {
                   'British War Office, Foreign Office strategists, and imperial commanders.',
                 motive:
                   'To define military operational jurisdictions while keeping postwar political commitments deliberately flexible.',
+                hinge_question:
+                  "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+              },
+              teacher_notes: {
+                source_context:
+                  "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
               },
             },
-          ],
-        },
-        {
-          theme_heading:
-            '5. The Four Geo-Strategic Flashpoints of Mandate Palestine: Land, Demographics, and Sacred Space',
-          text: 'The structural contradictions of the British Mandate produced four enduring geo-strategic flashpoints that made violent conflict virtually inevitable across Palestine throughout the interwar years.<br><br>\nFirst, <strong>Land and Displacement:</strong> Zionist organizations such as the Jewish National Fund purchased agricultural land from absentee Arab landowners, often resulting in the eviction of Palestinian tenant farmers (fellahin) who had tilled the soil for generations.<br><br>\nSecond, <strong>Demographic Transformation:</strong> Successive waves of Jewish immigration (Aliyah) steadily raised the Jewish proportion of the population from roughly 10% in 1919 to over 30% by the late 1930s, stoking intense Arab fears of demographic and political subjugation.<br><br>\nThird, <strong>Sacred Geography:</strong> The city of Jerusalem, home to the Western Wall, the Dome of the Rock, and the Church of the Holy Sepulchre, became a volatile sectarian powder keg, culminating in the violent 1929 Western Wall Riots.<br><br>\nFourth, <strong>Security and Paramilitarism:</strong> Lacking trust in British protection, the Jewish community established the underground <strong>Haganah</strong> defense force, while Palestinian frustration erupted into the great Arab Rebellion of 1936–1939, forcing Britain to deploy 20,000 soldiers and brutally suppress Arab civil society.',
-          sources: [
             {
               id: 'cme_l1_source_e',
               letter: 'E',
-              title: 'Source E: Archival Panorama of British Mandate Jerusalem (1920s)',
+              title: 'Source E: Archival Panorama of British Mandate Jerusalem (c. 1918–1920)',
               src: '/images/cme_cover.jpg',
-              image: '/images/cme_cover.jpg',
+              image: '/images/jerusalem_mandate_panorama_1920.jpg',
               source: '/images/cme_cover.jpg',
               caption:
-                'Panoramic view over the Old City of Jerusalem and the Dome of the Rock under early British civil administration in the 1920s.',
+                'Panoramic view over the Old City of Jerusalem and the Temple Mount / Haram al-Sharif under early British civil administration, c. 1920.',
               desc: 'Archival landscape photograph of Mandate Jerusalem.',
               provenance:
                 'Library of Congress, Prints & Photographs Division (LC-DIG-matpc-05743), c. 1925.',
@@ -901,7 +941,7 @@ const cme_new_data = {
               hinge_question:
                 "How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
               source_context:
-                "Photographic record of Jerusalem under the British Mandate. Britain governed Palestine under a League of Nations Class A Mandate from 1923, tasked with the incompatible obligations of preparing the local Arab majority for self-rule while facilitating Jewish immigration. Hinge Question: How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
+                "Photographic record of Jerusalem under the British Mandate. Britain governed Palestine under a League of Nations Class A Mandate from 1923, tasked with the incompatible obligations of preparing the local Arab majority for self-rule while facilitating Jewish immigration. **Hinge Question:** How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
               context: 'Photographic record of Jerusalem under the British Mandate.',
               question_badge: 'Reliability & Provenance',
               question_type: 'Reliability & Provenance',
@@ -915,6 +955,12 @@ const cme_new_data = {
                 audience: 'International tourists, scholars, and British colonial administrators.',
                 motive:
                   'To capture the timeless sacred architecture of the Holy Land for archival and publishing markets.',
+                hinge_question:
+                  "How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Photographic record of Jerusalem under the British Mandate. Britain governed Palestine under a League of Nations Class A Mandate from 1923, tasked with the incompatible obligations of preparing the local Arab majority for self-rule while facilitating Jewish immigration. **Hinge Question:** How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
               },
             },
           ],
@@ -2265,40 +2311,21 @@ const cme_new_data = {
       },
       narrative_blocks: [
         {
-          theme_heading: '1. The Post-War Crisis & Conflicting Demands (1945)',
-          text: 'Following World War Two in 1945, Great Britain found itself trapped in an untenable position in its Palestine Mandate. Over 250,000 Jewish Holocaust survivors languished in European Displaced Persons (DP) camps, prompting Zionist demands for 100,000 immediate immigration certificates. However, Foreign Secretary <strong>Ernest Bevin</strong> strictly enforced the 1939 White Paper quota of 1,500 monthly permits to protect British oil interests with Arab states, provoking fierce condemnation from US President Harry S. Truman.',
-          level_4:
-            'Following World War Two in 1945, Britain faced irreconcilable demands in Palestine. Zionist leaders demanded 100,000 entry certificates for Holocaust survivors in European DP camps, but Foreign Secretary Ernest Bevin strictly enforced the 1,500 monthly quota to placate Arab states.',
+          title: 'Holocaust Survivors, The White Paper & Zionist Insurgency',
+          paragraphs: [
+            '<span class="para-ref">[1.1]</span> In the summer of 1945, the liberation of Nazi concentration camps confronted the world with the horrifying reality of the **Holocaust**: six million European Jews had been murdered. Over 250,000 traumatised Jewish survivors remained languishing in squalid **Displaced Persons** camps across Germany and Austria, desperate to emigrate to Palestine. Newly elected British Prime Minister **Clement Attlee** and Foreign Secretary **Ernest Bevin**, terrified of alienating oil-rich Arab nations, strictly enforced the 1939 **White Paper** quota of 1,500 immigrants per month, intercepting refugee ships and deporting **Holocaust** survivors to barbed-wire detention camps on Cyprus.',
+            '<span class="para-ref">[1.2]</span> In response, the three major Zionist underground paramilitary groups formed the **United Resistance Movement**. The **Haganah** (the official defense force of the Jewish Agency, led by **David Ben-Gurion**) organized the clandestine **Aliyah Bet** immigration network, sailing rickety vessels through the British naval blockade. Simultaneously, radical right-wing militant groups—the **Irgun** (commanded by **Menachem Begin**) and the **Lehi** (the **Stern Gang**)—unleashed a ferocious guerrilla war against British infrastructure, ambushing patrols, blowing up rail junctions, and assassinating police officers.',
+          ],
+          act: 1,
+          act_title:
+            'Context & Catalyst — Holocaust Survivors, The White Paper & Zionist Insurgency',
+          text: '<span class="para-ref">[1.1]</span> In the summer of 1945, the liberation of Nazi concentration camps confronted the world with the horrifying reality of the **Holocaust**: six million European Jews had been murdered. Over 250,000 traumatised Jewish survivors remained languishing in squalid **Displaced Persons** camps across Germany and Austria, desperate to emigrate to Palestine. Newly elected British Prime Minister **Clement Attlee** and Foreign Secretary **Ernest Bevin**, terrified of alienating oil-rich Arab nations, strictly enforced the 1939 **White Paper** quota of 1,500 immigrants per month, intercepting refugee ships and deporting **Holocaust** survivors to barbed-wire detention camps on Cyprus.\n\n<span class="para-ref">[1.2]</span> In response, the three major Zionist underground paramilitary groups formed the **United Resistance Movement**. The **Haganah** (the official defense force of the Jewish Agency, led by **David Ben-Gurion**) organized the clandestine **Aliyah Bet** immigration network, sailing rickety vessels through the British naval blockade. Simultaneously, radical right-wing militant groups—the **Irgun** (commanded by **Menachem Begin**) and the **Lehi** (the **Stern Gang**)—unleashed a ferocious guerrilla war against British infrastructure, ambushing patrols, blowing up rail junctions, and assassinating police officers.',
           image: '/units/cme_new/assets/king_david_ruins.png',
           image_alt:
             'The devastated southwestern wing of the King David Hotel in Jerusalem following the Irgun bombing in July 1946',
           caption:
             "The King David Hotel Bombing (22 July 1946): Menachem Begin's Irgun destroyed British military headquarters, killing 91 people and shattering British resolve.",
           isReversed: false,
-        },
-        {
-          theme_heading: '2. Arab Opposition & The Arab League',
-          text: 'Palestinian Arabs—who formed a two-thirds majority of Palestine—firmly rejected partition and mass Jewish immigration. Weakened by the suppression of the 1936–39 Revolt, Palestinian leaders argued European antisemitism should not be resolved at their expense. The newly formed <strong>Arab League</strong> warned that imposing a Jewish state on Arab land would trigger armed conflict across the entire Middle East.',
-          level_4:
-            'The Palestinian Arab majority vehemently opposed partition and unrestricted immigration, arguing they bore zero responsibility for European crimes. The Arab League warned Britain that establishing a Jewish state would trigger war across the region.',
-        },
-        {
-          theme_heading: '3. The Jewish Insurgency Begins (Autumn 1945)',
-          text: 'Outraged by Bevin’s immigration restrictions, Jewish militias ended their wartime cooperation with Britain and launched the armed <strong>Jewish Insurgency</strong>. The moderate <strong>Haganah</strong> allied with militant paramilitary splinter groups, the <strong>Irgun</strong> (led by Menachem Begin) and <strong>Lehi</strong>. Together, they executed coordinated sabotage operations, blowing up bridges and severing railway networks to paralyse British military communications.',
-          level_4:
-            'Angered by immigration quotas, Zionist paramilitary groups launched the Jewish Insurgency. The moderate Haganah united with the militant Irgun (led by Menachem Begin) and Lehi to sabotage British transport and communications.',
-        },
-        {
-          theme_heading: '4. Urban Guerrilla Warfare & Sabotage (1946)',
-          text: 'Between 1945 and 1947, Zionist paramilitary groups escalated attacks against British military infrastructure, raiding airfields, sabotaging oil pipelines, and ambushing colonial patrols. In response to British curfews and martial law, the Irgun waged aggressive psychological warfare, demonstrating that 100,000 British soldiers could not maintain security or governance in Palestine.',
-          level_4:
-            'Paramilitary groups escalated sabotage operations against airfields, railways, and oil pipelines, proving that 100,000 British troops could not maintain military control in Palestine.',
-        },
-        {
-          theme_heading: '5. The Bombing of the King David Hotel (22 July 1946)',
-          text: 'On 22 July 1946, the <strong>Irgun</strong> bombed the <strong>King David Hotel</strong> in Jerusalem, the central headquarters of British civil administration and military command. Smuggling explosives into the basement in milk cans, the blast collapsed the entire south-western wing, killing 91 British, Arab, and Jewish staff. The attack shocked British domestic opinion and proved the Mandate was becoming financially and militarily unsustainable.',
-          level_4:
-            'On 22 July 1946, the Irgun bombed the King David Hotel in Jerusalem, the British civil and military headquarters, killing 91 people. The catastrophic destruction proved the Mandate was ungovernable.',
           sources: [
             {
               id: 'cme_l2_source_a',
@@ -2315,7 +2342,7 @@ const cme_new_data = {
               hinge_question:
                 'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
               source_context:
-                'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. Hinge Question: Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+                'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
               context:
                 'In July 1947, the Irgun executed two abducted British intelligence sergeants in retaliation for British executions.',
               question_badge: 'Historical Utility',
@@ -2329,15 +2356,26 @@ const cme_new_data = {
                 audience: "British War Office high command, coroner's inquest, and British press.",
                 motive:
                   'To record the evidence of Irgun booby-traps and terrorism for legal and military reports.',
+                hinge_question:
+                  'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+              },
+              teacher_notes: {
+                source_context:
+                  'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
               },
             },
           ],
         },
         {
-          theme_heading: '6. The Sergeants Affair & British Public Backlash (July 1947)',
-          text: 'In July 1947, the insurgency reached a climax in the <strong>Sergeants Affair</strong>: the Irgun abducted and hanged two 20-year-old British Army intelligence sergeants (Clifford Martin and Mervyn Paice) in retaliation for British executions of Irgun militants, booby-trapping their bodies. The incident ignited anti-Jewish riots across British cities and triggered furious public demands to "bring our boys home", destroying any remaining British political resolve.',
-          level_4:
-            'In July 1947, during the Sergeants Affair, the Irgun hanged two kidnapped British sergeants, triggering anti-Jewish riots in the UK and public demands for immediate military withdrawal.',
+          title: 'The King David Hotel Bombing, Sergeants Affair & UN Handover',
+          paragraphs: [
+            '<span class="para-ref">[2.1]</span> On 22 July 1946, the Zionist insurgency reached a devastating climax. Disguised as milkmen delivering dairy churns, **Irgun** militants smuggled 350 kilograms of explosives into the basement restaurant of the **King David Hotel** in Jerusalem—the headquarters of the British civil administration and military command. The resulting explosion collapsed the entire six-story south-west wing into rubble, killing 91 people, including British officers, Arab civil servants, and Jewish secretaries. The attack sent shockwaves through Westminster and cemented British public weariness with the mandate. The audacity of the bombing shocked the British establishment to its core.',
+            '<span class="para-ref">[2.2]</span> Tensions escalated further in July 1947 with the "**Sergeants Affair**," when the **Irgun** kidnapped and hanged two British intelligence sergeants in retaliation for the execution of three **Irgun** members, booby-trapping their corpses in a net of eucalyptus trees. When the British navy boarded the refugee ship **SS Exodus** in international waters, forcing 4,500 **Holocaust** survivors back to British-occupied Germany in full glare of global media, British prestige collapsed. Exhausted by wartime debt and imperial overreach, Foreign Secretary Bevin announced in February 1947 that Britain was handing the "insoluble problem" of Palestine to the United Nations.',
+          ],
+          act: 2,
+          act_title:
+            'Escalation & Conflict — The King David Hotel Bombing, Sergeants Affair & UN Handover',
+          text: '<span class="para-ref">[2.1]</span> On 22 July 1946, the Zionist insurgency reached a devastating climax. Disguised as milkmen delivering dairy churns, **Irgun** militants smuggled 350 kilograms of explosives into the basement restaurant of the **King David Hotel** in Jerusalem—the headquarters of the British civil administration and military command. The resulting explosion collapsed the entire six-story south-west wing into rubble, killing 91 people, including British officers, Arab civil servants, and Jewish secretaries. The attack sent shockwaves through Westminster and cemented British public weariness with the mandate. The audacity of the bombing shocked the British establishment to its core.\n\n<span class="para-ref">[2.2]</span> Tensions escalated further in July 1947 with the "**Sergeants Affair**," when the **Irgun** kidnapped and hanged two British intelligence sergeants in retaliation for the execution of three **Irgun** members, booby-trapping their corpses in a net of eucalyptus trees. When the British navy boarded the refugee ship **SS Exodus** in international waters, forcing 4,500 **Holocaust** survivors back to British-occupied Germany in full glare of global media, British prestige collapsed. Exhausted by wartime debt and imperial overreach, Foreign Secretary Bevin announced in February 1947 that Britain was handing the "insoluble problem" of Palestine to the United Nations.',
           sources: [
             {
               id: 'cme_l2_source_b',
@@ -2355,7 +2393,7 @@ const cme_new_data = {
               hinge_question:
                 "How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
               source_context:
-                "The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates. Royal Navy warships rammed the vessel off the coast of Palestine. Foreign Secretary Ernest Bevin ordered the passengers deported back to displaced persons camps in British-occupied Germany, generating international condemnation. Hinge Question: How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
+                "The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates. Royal Navy warships rammed the vessel off the coast of Palestine. Foreign Secretary Ernest Bevin ordered the passengers deported back to displaced persons camps in British-occupied Germany, generating international condemnation. **Hinge Question:** How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
               context:
                 'The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates.',
               question_badge: 'Source Inference',
@@ -2370,27 +2408,84 @@ const cme_new_data = {
                   'International press, US Congress, and United Nations Special Committee on Palestine (UNSCOP).',
                 motive:
                   'To document the plight of displaced Holocaust survivors confronting armed British military power.',
+                hinge_question:
+                  "How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
+              },
+              teacher_notes: {
+                source_context:
+                  "The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates. Royal Navy warships rammed the vessel off the coast of Palestine. Foreign Secretary Ernest Bevin ordered the passengers deported back to displaced persons camps in British-occupied Germany, generating international condemnation. **Hinge Question:** How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
               },
             },
           ],
         },
         {
-          theme_heading: '7. The SS Exodus & Handover to the UN (Summer 1947)',
-          text: 'In July 1947, the Royal Navy intercepted the <strong>SS Exodus</strong> carrying 4,500 Holocaust survivors and forcibly deported them back to detention camps in Germany. Photographs of British troops turning away destitute refugees provoked global moral outrage and alienated US financial support. Facing economic exhaustion and military quagmire, Britain announced in September 1947 that it would terminate the Mandate and withdraw all forces by 15 May 1948, referring Palestine to the <strong>United Nations</strong>.',
-          level_4:
-            'In July 1947, Britain forcibly deported 4,500 Holocaust survivors aboard the SS Exodus back to Germany, causing worldwide outrage. Facing economic collapse and public pressure, Britain announced it would surrender Palestine to the UN and withdraw by 15 May 1948.',
+          title: 'UN Resolution 181 (The Partition Plan) & Civil War',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> In November 1947, the United Nations General Assembly passed **Resolution 181** by a vote of 33 to 13. The **Partition Plan** recommended dividing Palestine into two sovereign states: an Arab state covering 43% of the land, and a Jewish state covering 56% (including the fertile coastal plain and the **Negev** desert), with Jerusalem designated an international corpus separatum under UN administration. **David Ben-Gurion** and the Jewish Agency pragmatically accepted the plan as legal recognition of statehood. The **Arab Higher Committee** and the entire Arab League rejected it outright, pointing out that Jews made up only 33% of the population and owned just 7% of the land.',
+            '<span class="para-ref">[3.2]</span> The morning after the UN vote, armed violence erupted across Palestine, transforming into a brutal intercommunal civil war. Arab irregulars blockaded the 100,000 Jewish residents of Jerusalem by severing the mountainous Tel Aviv highway, while Zionist forces implemented **Plan Dalet** (Plan D) in April 1948—a military directive to capture strategic towns, secure transportation corridors, and forcibly evacuate hostile Arab villages. The massacre of over 100 Arab civilians by **Irgun** and **Lehi** fighters at the village of **Deir Yassin** sparked widespread panic, triggering an accelerating exodus of Arab families from their homes.',
+          ],
+          act: 3,
+          act_title:
+            'Forensic Evidence & Turning Point — UN Resolution 181 (The Partition Plan) & Civil War',
+          text: '<span class="para-ref">[3.1]</span> In November 1947, the United Nations General Assembly passed **Resolution 181** by a vote of 33 to 13. The **Partition Plan** recommended dividing Palestine into two sovereign states: an Arab state covering 43% of the land, and a Jewish state covering 56% (including the fertile coastal plain and the **Negev** desert), with Jerusalem designated an international corpus separatum under UN administration. **David Ben-Gurion** and the Jewish Agency pragmatically accepted the plan as legal recognition of statehood. The **Arab Higher Committee** and the entire Arab League rejected it outright, pointing out that Jews made up only 33% of the population and owned just 7% of the land.\n\n<span class="para-ref">[3.2]</span> The morning after the UN vote, armed violence erupted across Palestine, transforming into a brutal intercommunal civil war. Arab irregulars blockaded the 100,000 Jewish residents of Jerusalem by severing the mountainous Tel Aviv highway, while Zionist forces implemented **Plan Dalet** (Plan D) in April 1948—a military directive to capture strategic towns, secure transportation corridors, and forcibly evacuate hostile Arab villages. The massacre of over 100 Arab civilians by **Irgun** and **Lehi** fighters at the village of **Deir Yassin** sparked widespread panic, triggering an accelerating exodus of Arab families from their homes.',
           image: '/images/cme_1948_arab_invasion_map.png',
           image_alt:
-            'Military map depicting the multi-front invasion by five Arab armies into the former Mandate territory on 15 May 1948',
+            'Map of the 1948 Arab-Israeli War showing invading armies from Egypt, Transjordan, Syria, Iraq, and Lebanon',
           caption:
             'The 1948 Arab-Israeli War: Egypt, Jordan, Syria, Iraq, and Lebanon invaded the fledgling state immediately following the termination of the British Mandate.',
           isReversed: true,
+          sources: [
+            {
+              id: 'cme_l2_source_c',
+              letter: 'C',
+              title: 'Source C: David Ben-Gurion Declaring Israeli Independence (14 May 1948)',
+              src: '/images/cme_bengurion_declaration_1948.jpg',
+              image: '/images/cme_bengurion_declaration_1948.jpg',
+              source: '/images/cme_bengurion_declaration_1948.jpg',
+              caption:
+                'David Ben-Gurion reading the Declaration of the Establishment of the State of Israel beneath a portrait of Theodor Herzl at the Tel Aviv Museum on 14 May 1948.',
+              desc: 'Iconic photograph by Rudi Weissenstein of the birth of the State of Israel.',
+              provenance: 'Israel Government Press Office (GPO D1-073), 14 May 1948.',
+              citation: 'Israel Government Press Office / Rudi Weissenstein.',
+              hinge_question:
+                'Why was the declaration of statehood made hours before the British Mandate officially expired at midnight on 14 May 1948?',
+              source_context:
+                'At 4:00 PM on Friday 14 May 1948, hours before the British Mandate officially ended and Shabbat commenced, David Ben-Gurion read the Israeli Declaration of Independence, proclaiming sovereign statehood. Within hours, President Truman recognized the state and neighboring Arab armies crossed the borders. **Hinge Question:** Why was the declaration of statehood made hours before the British Mandate officially expired at midnight on 14 May 1948?',
+              context:
+                'David Ben-Gurion read the Israeli Declaration of Independence on 14 May 1948.',
+              question_badge: 'Author’s Purpose',
+              question_type: 'Author’s Purpose',
+              enquiry_question:
+                "What was Ben-Gurion's central purpose in staging the public reading of the Declaration beneath Herzl's portrait in Source C?",
+              model_answer:
+                "Ben-Gurion deliberately staged the ceremony beneath Theodor Herzl's image to visually establish historical continuity, affirming that the new state was the legitimate culmination of fifty years of political Zionist struggle and divine national redemption.",
+              provenance_clues: {
+                author:
+                  'Rudi Weissenstein, accredited official photographer for the Jewish Agency.',
+                audience:
+                  'The global Jewish diaspora, sovereign foreign governments, and the Israeli public.',
+                motive:
+                  'To create an enduring, solemn founding image of Israeli sovereign self-determination.',
+                hinge_question:
+                  'Why was the declaration of statehood made hours before the British Mandate officially expired at midnight on 14 May 1948?',
+              },
+              teacher_notes: {
+                source_context:
+                  'At 4:00 PM on Friday 14 May 1948, hours before the British Mandate officially ended and Shabbat commenced, David Ben-Gurion read the Israeli Declaration of Independence, proclaiming sovereign statehood. Within hours, President Truman recognized the state and neighboring Arab armies crossed the borders. **Hinge Question:** Why was the declaration of statehood made hours before the British Mandate officially expired at midnight on 14 May 1948?',
+              },
+            },
+          ],
         },
         {
-          theme_heading: '8. UN Resolution 181: The Partition Plan (November 1947)',
-          text: 'On 29 November 1947, the UN General Assembly approved <strong>Resolution 181</strong> to partition Palestine: 55% was allocated to a Jewish state, 45% to an Arab state, with Jerusalem designated an international zone (<em>corpus separatum</em>) under UN control. Zionist leaders accepted partition to gain sovereign legitimacy, but Palestinian Arabs and the Arab League rejected it as an unjust imperial partition of their homeland, triggering immediate civil war.',
-          level_4:
-            'UN Resolution 181 partitioned Palestine into a Jewish state (55%) and an Arab state (45%), with Jerusalem under international control. Zionists accepted the plan, but Arab leaders rejected it, triggering immediate communal civil war.',
+          title: 'The Proclamation of Israel, The Arab Invasion & The Green Line',
+          paragraphs: [
+            '<span class="para-ref">[4.1]</span> On 14 May 1948, eight hours before the final British High Commissioner sailed from Haifa, **David Ben-Gurion** stood beneath a portrait of **Theodor Herzl** in the Tel Aviv Museum and read the Declaration of Independence, proclaiming the State of Israel. The following morning, armies from five Arab nations—Egypt, Syria, **Transjordan**, Iraq, and Lebanon—invaded Palestine to crush the fledgling state. Despite initial Arab advances, the newly unified Israel Defense Forces (**IDF**) proved superior in discipline, organization, and motivation, having mobilized 60,000 troops under unified command.',
+            '<span class="para-ref">[4.2]</span> During a crucial four-week UN truce in June 1948, Israel broke the international arms embargo by purchasing modern fighter aircraft, artillery, and rifles from Czechoslovakia (with Soviet approval). When fighting resumed, the **IDF** launched sweeping counter-offensives (Operations Yoav and Horev), driving Egyptian forces out of the **Negev** and capturing Galilee. Between February and July 1949, UN mediator Ralph Bunche brokered bilateral armistice agreements on the island of Rhodes. The resulting ceasefire borders—known as the "**Green Line**"—left Israel in control of 78% of Mandatory Palestine, while **Transjordan** annexed the **West Bank** and East Jerusalem, and Egypt occupied the **Gaza Strip**. This armistice partition established thirty years of confrontation.',
+          ],
+          act: 4,
+          act_title:
+            'Historical Verdict & Assessment — The Proclamation of Israel, The Arab Invasion & The Green Line',
+          text: '<span class="para-ref">[4.1]</span> On 14 May 1948, eight hours before the final British High Commissioner sailed from Haifa, **David Ben-Gurion** stood beneath a portrait of **Theodor Herzl** in the Tel Aviv Museum and read the Declaration of Independence, proclaiming the State of Israel. The following morning, armies from five Arab nations—Egypt, Syria, **Transjordan**, Iraq, and Lebanon—invaded Palestine to crush the fledgling state. Despite initial Arab advances, the newly unified Israel Defense Forces (**IDF**) proved superior in discipline, organization, and motivation, having mobilized 60,000 troops under unified command.\n\n<span class="para-ref">[4.2]</span> During a crucial four-week UN truce in June 1948, Israel broke the international arms embargo by purchasing modern fighter aircraft, artillery, and rifles from Czechoslovakia (with Soviet approval). When fighting resumed, the **IDF** launched sweeping counter-offensives (Operations Yoav and Horev), driving Egyptian forces out of the **Negev** and capturing Galilee. Between February and July 1949, UN mediator Ralph Bunche brokered bilateral armistice agreements on the island of Rhodes. The resulting ceasefire borders—known as the "**Green Line**"—left Israel in control of 78% of Mandatory Palestine, while **Transjordan** annexed the **West Bank** and East Jerusalem, and Egypt occupied the **Gaza Strip**. This armistice partition established thirty years of confrontation.',
           sources: [
             {
               id: 'cme_l2_source_d',
@@ -2408,7 +2503,7 @@ const cme_new_data = {
               hinge_question:
                 'Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
               source_context:
-                'On 29 November 1947, the UN General Assembly voted 33 to 13 (with 10 abstentions) to partition Palestine. The plan allocated 56% of the land to the Jewish minority (one-third of the population) and 43% to the Arab majority. Arab leadership rejected the partition as an imperial theft of their ancestral land. Hinge Question: Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
+                'On 29 November 1947, the UN General Assembly voted 33 to 13 (with 10 abstentions) to partition Palestine. The plan allocated 56% of the land to the Jewish minority (one-third of the population) and 43% to the Arab majority. Arab leadership rejected the partition as an imperial theft of their ancestral land. **Hinge Question:** Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
               context:
                 'On 29 November 1947, the UN General Assembly voted to partition Palestine into separate Arab and Jewish states.',
               question_badge: 'Cross-Referencing',
@@ -2422,69 +2517,14 @@ const cme_new_data = {
                 audience: 'UN General Assembly delegates, member states, and world public.',
                 motive:
                   'To devise an equitable administrative compromise between irreconcilable nationalist claims.',
+                hinge_question:
+                  'Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
+              },
+              teacher_notes: {
+                source_context:
+                  'On 29 November 1947, the UN General Assembly voted 33 to 13 (with 10 abstentions) to partition Palestine. The plan allocated 56% of the land to the Jewish minority (one-third of the population) and 43% to the Arab majority. Arab leadership rejected the partition as an imperial theft of their ancestral land. **Hinge Question:** Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
               },
             },
-          ],
-        },
-        {
-          theme_heading: '9. Communal Civil War & Plan Dalet (Spring 1948)',
-          text: 'From December 1947, violent civil conflict erupted as British forces progressively disengaged. In March 1948, the Haganah launched <strong>Plan Dalet (Plan D)</strong>—an operational military plan designed to secure Jewish settlements, open vital supply corridors (especially the besieged road between Tel Aviv and Jerusalem), and clear hostile villages in anticipation of invasion by regular Arab armies. The civil war descended into a vicious spiral of communal violence and retaliatory massacres. On 9 April 1948, radical underground fighters from the Irgun and Lehi attacked the Arab village of <strong>Deir Yassin</strong>, killing over 100 villagers including women and children (an atrocity publicly condemned by the Haganah leadership and Jewish Agency). Four days later, on 13 April, Arab militants ambushed the <strong>Hadassah medical convoy</strong> on Mount Scopus, killing 78 Jewish doctors, nurses, and university students in retaliation. News and exaggerated rumours of these atrocities spread terror across the region, triggering the flight and expulsion of over 250,000 Palestinian Arabs before the formal expiration of the British Mandate.',
-          level_4:
-            'From Dec 1947, civil war erupted. The Haganah implemented Plan Dalet to secure vital supply lines. The Irgun-Lehi massacre at Deir Yassin and the retaliatory Arab massacre of the Hadassah medical convoy triggered widespread panic, prompting over 250,000 Palestinian Arabs to flee.',
-        },
-        {
-          theme_heading: '10. The Declaration of the State of Israel (14 May 1948)',
-          text: 'On 14 May 1948, as the British Mandate officially expired and the last British troops departed, <strong>David Ben-Gurion</strong> declared the birth of the sovereign <strong>State of Israel</strong> beneath a portrait of Theodor Herzl in Tel Aviv. The United States and Soviet Union immediately extended diplomatic recognition, while neighboring Arab states mobilised for an all-out military assault.',
-          level_4:
-            'On 14 May 1948, as the British Mandate expired, David Ben-Gurion proclaimed the State of Israel in Tel Aviv. The US and USSR recognized the new state, while five Arab armies prepared to invade.',
-          sources: [
-            {
-              id: 'cme_l2_source_c',
-              letter: 'C',
-              title: 'Source C: David Ben-Gurion Declaring Israeli Independence (14 May 1948)',
-              src: '/images/cme_bengurion_declaration_1948.jpg',
-              image: '/images/cme_bengurion_declaration_1948.jpg',
-              source: '/images/cme_bengurion_declaration_1948.jpg',
-              caption:
-                'David Ben-Gurion reading the Declaration of the Establishment of the State of Israel beneath a portrait of Theodor Herzl at the Tel Aviv Museum on 14 May 1948.',
-              desc: 'Iconic photograph by Rudi Weissenstein of the birth of the State of Israel.',
-              provenance: 'Israel Government Press Office (GPO D1-073), 14 May 1948.',
-              citation: 'Israel Government Press Office / Rudi Weissenstein.',
-              hinge_question:
-                'Why was the declaration of statehood made hours before the British Mandate officially expired at midnight on 14 May 1948?',
-              source_context:
-                'At 4:00 PM on Friday 14 May 1948, hours before the British Mandate officially ended and Shabbat commenced, David Ben-Gurion read the Israeli Declaration of Independence, proclaiming sovereign statehood. Within hours, President Truman recognized the state and neighboring Arab armies crossed the borders. Hinge Question: Why was the declaration of statehood made hours before the British Mandate officially expired at midnight on 14 May 1948?',
-              context:
-                'David Ben-Gurion read the Israeli Declaration of Independence on 14 May 1948.',
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
-              enquiry_question:
-                "What was Ben-Gurion's central purpose in staging the public reading of the Declaration beneath Herzl's portrait in Source C?",
-              model_answer:
-                "Ben-Gurion deliberately staged the ceremony beneath Theodor Herzl's image to visually establish historical continuity, affirming that the new state was the legitimate culmination of fifty years of political Zionist struggle and divine national redemption.",
-              provenance_clues: {
-                author:
-                  'Rudi Weissenstein, accredited official photographer for the Jewish Agency.',
-                audience:
-                  'The global Jewish diaspora, sovereign foreign governments, and the Israeli public.',
-                motive:
-                  'To create an enduring, solemn founding image of Israeli sovereign self-determination.',
-              },
-            },
-          ],
-        },
-        {
-          theme_heading: '11. The 1948–49 War, First UN Truce & Czech Arms',
-          text: 'On 15 May 1948, five Arab League armies (Egypt, Transjordan, Syria, Iraq, and Lebanon) invaded Israel. Although initially pushed to the brink, Israel used the four-week <strong>First UN Truce (June 1948)</strong> with decisive effect: secretly importing modern weapons and fighter aircraft from Czechoslovakia, and integrating forces into the unified <strong>Israeli Defence Forces (IDF)</strong>. Resuming combat in July 1948 in the "Ten Days Offensive", the IDF reopened the besieged corridor to Jerusalem and drove Egyptian forces from the Negev. Subsequent autumn campaigns secured the entire Galilee, compelling Arab commanders to negotiate separate armistices.',
-          level_4:
-            'Five Arab armies invaded on 15 May 1948. Israel used the June 1948 UN truce to import heavy Czechoslovakian weapons and organize the IDF, launching successful counter-offensives that defeated the divided Arab forces.',
-        },
-        {
-          theme_heading: '12. The 1949 Armistice Agreements & The Green Line',
-          text: 'Between February and July 1949, UN armistice agreements established the <strong>Green Line</strong>. Israel expanded its territory to 79% of mandatory Palestine—far exceeding the UN Partition allocation. Transjordan occupied and annexed the West Bank and East Jerusalem, while Egypt controlled the Gaza Strip. Over 700,000 Palestinian Arabs were permanently displaced from their homes, an enduring catastrophe Palestinians mourn as the <strong>Nakba</strong>.',
-          level_4:
-            "The 1949 Armistice Agreements established the Green Line, expanding Israeli control to 79% of Palestine. Jordan annexed the West Bank and Egypt held Gaza. Over 700,000 Palestinian refugees were displaced in what Palestinians mourn as the Nakba ('The Catastrophe').",
-          sources: [
             {
               id: 'cme_l2_source_e',
               letter: 'E',
@@ -2500,7 +2540,7 @@ const cme_new_data = {
               hinge_question:
                 'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
               source_context:
-                'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. Hinge Question: Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
+                'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
               context:
                 'Bilateral armistice agreements were signed in Rhodes in 1949, establishing the Green Line.',
               question_badge: 'Reliability & Provenance',
@@ -2515,6 +2555,12 @@ const cme_new_data = {
                   'Signatory states (Israel, Egypt, Jordan, Syria, Lebanon) and UN Security Council.',
                 motive:
                   'To codify military ceasefire positions without prejudicing final territorial claims.',
+                hinge_question:
+                  'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
+              },
+              teacher_notes: {
+                source_context:
+                  'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
               },
             },
           ],
@@ -3596,34 +3642,32 @@ const cme_new_data = {
       ],
       narrative_blocks: [
         {
-          theme_heading: '1. The Palestinian Nakba & Creation of UNRWA (1948–1949)',
-          text: 'The 1948–49 war resulted in what Palestinians mourn as the <strong>Nakba</strong> ("Catastrophe"), displacing approximately 700,000 Palestinian Arabs from their ancestral homes and villages. Flight was driven by wartime terror from massacres like Deir Yassin, the collapse of local administration, and military expulsions under Plan Dalet. Refugees fled into squalid tent camps in the West Bank, Gaza, Jordan, Syria, and Lebanon. In December 1949, the UN established <strong>UNRWA</strong> to provide emergency food, medical clinics, and schooling across 59 refugee camps.',
-          level_4:
-            'Between 700,000 and 750,000 Palestinians became refugees in the 1948 Nakba, fleeing terror and military expulsions into tent camps. In Dec 1949, UNRWA was created to provide emergency relief, food rations, and schooling across 59 refugee camps.',
+          title: 'Al-Nakba (The Catastrophe) & The Palestinian Refugee Exodus',
+          paragraphs: [
+            '<span class="para-ref">[1.1]</span> The 1948–49 War resulted in a catastrophic humanitarian disaster for the indigenous Arab population of Palestine, known in Arabic as **Al-Nakba** (The Catastrophe). Approximately 700,000 to 750,000 Palestinian Arabs—over half the pre-war population—fled or were expelled from their ancestral homes, farms, and villages in areas that fell under Israeli sovereignty. Palestinian society was shattered: wealthy urban elites evacuated early to Cairo and Beirut, while hundreds of thousands of impoverished rural villagers were forced onto roads at gunpoint, carrying only the iron keys to their stone houses and identity deeds in their pockets.',
+            '<span class="para-ref">[1.2]</span> Historians debate the complex causes of the exodus: Arab radio broadcasts urged civilians to seek temporary shelter until Arab armies triumphed, while Israeli military expulsions (such as the forced marches from Lydda and Ramle ordered by **Yitzhak Rabin**) and psychological terror after **Deir Yassin** generated widespread panic. In December 1949, the United Nations established the United Nations Relief and Works Agency (**UNRWA**) to provide emergency food, healthcare, and tented shelter. Over 50 permanent refugee camps sprung up across Gaza, the **West Bank**, Jordan, Syria, and Lebanon, becoming permanent monuments to Palestinian statelessness. This entrenched decades of national grievance.',
+          ],
+          act: 1,
+          act_title:
+            'Context & Catalyst — Al-Nakba (The Catastrophe) & The Palestinian Refugee Exodus',
+          text: '<span class="para-ref">[1.1]</span> The 1948–49 War resulted in a catastrophic humanitarian disaster for the indigenous Arab population of Palestine, known in Arabic as **Al-Nakba** (The Catastrophe). Approximately 700,000 to 750,000 Palestinian Arabs—over half the pre-war population—fled or were expelled from their ancestral homes, farms, and villages in areas that fell under Israeli sovereignty. Palestinian society was shattered: wealthy urban elites evacuated early to Cairo and Beirut, while hundreds of thousands of impoverished rural villagers were forced onto roads at gunpoint, carrying only the iron keys to their stone houses and identity deeds in their pockets.\n\n<span class="para-ref">[1.2]</span> Historians debate the complex causes of the exodus: Arab radio broadcasts urged civilians to seek temporary shelter until Arab armies triumphed, while Israeli military expulsions (such as the forced marches from Lydda and Ramle ordered by **Yitzhak Rabin**) and psychological terror after **Deir Yassin** generated widespread panic. In December 1949, the United Nations established the United Nations Relief and Works Agency (**UNRWA**) to provide emergency food, healthcare, and tented shelter. Over 50 permanent refugee camps sprung up across Gaza, the **West Bank**, Jordan, Syria, and Lebanon, becoming permanent monuments to Palestinian statelessness. This entrenched decades of national grievance.',
           image: '/images/cme_palestinian_refugees_1948.jpg',
           image_alt:
-            'Palestinian families and children fleeing their ancestral villages with bundles of possessions during the 1948 war',
+            'Displaced Palestinian refugees carrying possessions along rural roads in 1948',
           caption:
             "The Nakba ('The Catastrophe', 1948): Over 700,000 Palestinian Arabs were expelled or fled from their homes during the military campaigns of 1948.",
           isReversed: false,
-        },
-        {
-          theme_heading: '2. Territorial Changes & The 1949 Green Line',
-          text: 'The 1949 Armistice Agreements fundamentally redrew the political map along the <strong>Green Line</strong>. Israel expanded its territorial control to 79% of mandatory Palestine—over 20% more than allocated by the 1947 UN Partition Plan. The proposed Palestinian Arab state was extinguished: the Kingdom of Jordan occupied and annexed the West Bank and East Jerusalem, while Egypt placed the Gaza Strip under military administration, leaving Jerusalem bitterly divided by concrete walls and barbed wire.',
-          level_4:
-            'The remaining portions of mandate Palestine were occupied by neighboring Arab states, preventing the creation of a Palestinian state. Under the 1949 Armistice Green Line, Israel expanded its control to 79% of the land.',
           sources: [
             {
               id: 'cme_l3_source_a',
               letter: 'A',
-              title: 'Source A: Displaced Palestinian Families in Gaza Camp (1949)',
+              title: 'Source A: Displaced Palestinian Families in Khan Yunis Camp (1948–1949)',
               src: '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
-              image:
-                '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
+              image: '/images/nakba_unrwa_khan_younis_1948.jpg',
               source:
                 '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
               caption:
-                'Palestinian refugee children and mothers sheltered under temporary canvas tents in the overcrowded Khan Yunis camp in the Egyptian-controlled Gaza Strip, 1949.',
+                'Palestinian refugee mother and children sheltered beside temporary canvas conical tents in the overcrowded Khan Yunis refugee camp in the Gaza Strip, 1948–1949.',
               desc: 'Documentary photograph of early Palestinian refugee encampments in Gaza.',
               provenance:
                 'Getty Images / Hulton Archive (1354487454), UNRWA photographic collection, 1949.',
@@ -3631,7 +3675,7 @@ const cme_new_data = {
               hinge_question:
                 'How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
               source_context:
-                'Following the 1948 war, over 200,000 Palestinian refugees flooded into the narrow Gaza Strip, tripling its resident population overnight. Families lived in canvas tents with open sewers and severe food shortages under Egyptian military administration. Hinge Question: How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
+                'Following the 1948 war, over 200,000 Palestinian refugees flooded into the narrow Gaza Strip, tripling its resident population overnight. Families lived in canvas tents with open sewers and severe food shortages under Egyptian military administration. **Hinge Question:** How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
               context:
                 'Over 200,000 Palestinian refugees flooded into the narrow Gaza Strip following the 1948 war.',
               question_badge: 'Historical Utility',
@@ -3647,15 +3691,25 @@ const cme_new_data = {
                   'United Nations donor nations, Western charitable organizations, and the global public.',
                 motive:
                   'To expose the catastrophic scale of the refugee emergency and secure urgent financial relief.',
+                hinge_question:
+                  'How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
+              },
+              teacher_notes: {
+                source_context:
+                  'Following the 1948 war, over 200,000 Palestinian refugees flooded into the narrow Gaza Strip, tripling its resident population overnight. Families lived in canvas tents with open sewers and severe food shortages under Egyptian military administration. **Hinge Question:** How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
               },
             },
           ],
         },
         {
-          theme_heading: '3. UN Resolution 194 & The Refugee Deadlock',
-          text: 'In December 1948, UN General Assembly <strong>Resolution 194</strong> stated that Palestinian refugees wishing to return and live at peace should be permitted to do so, or receive financial compensation. Israel strictly rejected this "Right of Return", arguing it would destroy the Jewish demographic majority and endanger national security. Conversely, Arab host states (except Jordan) refused to grant refugees citizenship, leaving generations stranded in permanent, impoverished UNRWA camps.',
-          level_4:
-            'UN Resolution 194 called for the right of return or compensation for refugees. Israel refused on security and demographic grounds, while Arab states refused resettlement, leaving generations of Palestinians stranded in camps.',
+          title: 'UN Resolution 194 & The Right of Return Deadlock',
+          paragraphs: [
+            '<span class="para-ref">[2.1]</span> In December 1948, the United Nations General Assembly passed **Resolution 194**, resolving that refugees wishing to return to their homes and live at peace with their neighbours should be permitted to do so at the earliest practicable date, and that compensation should be paid for the property of those choosing not to return. Arab governments demanded the immediate, unconditional repatriation of all refugees as a prerequisite for any peace negotiations. Israel adamantly rejected repatriation, asserting that allowing a hostile Arab population to return would destroy the Jewish state from within. This transformed regional security forever.',
+            '<span class="para-ref">[2.2]</span> Instead, the Israeli government enacted the **Absentee Property Law** of 1950, which legally confiscated all land, citrus orchards, commercial premises, and houses belonging to Palestinians who had fled during the war. Over 400 depopulated Arab villages were systematically bulldozed or reforested by the **Jewish National Fund** to prevent any return, while vacant properties in Jaffa, Haifa, and West Jerusalem were reassigned to house incoming Jewish immigrants. The refugee question was frozen into an immovable political barrier. The swift military reprisals deepened regional bitterness, transforming the armistice borders into active frontline combat zones.',
+          ],
+          act: 2,
+          act_title: 'Escalation & Conflict — UN Resolution 194 & The Right of Return Deadlock',
+          text: '<span class="para-ref">[2.1]</span> In December 1948, the United Nations General Assembly passed **Resolution 194**, resolving that refugees wishing to return to their homes and live at peace with their neighbours should be permitted to do so at the earliest practicable date, and that compensation should be paid for the property of those choosing not to return. Arab governments demanded the immediate, unconditional repatriation of all refugees as a prerequisite for any peace negotiations. Israel adamantly rejected repatriation, asserting that allowing a hostile Arab population to return would destroy the Jewish state from within. This transformed regional security forever.\n\n<span class="para-ref">[2.2]</span> Instead, the Israeli government enacted the **Absentee Property Law** of 1950, which legally confiscated all land, citrus orchards, commercial premises, and houses belonging to Palestinians who had fled during the war. Over 400 depopulated Arab villages were systematically bulldozed or reforested by the **Jewish National Fund** to prevent any return, while vacant properties in Jaffa, Haifa, and West Jerusalem were reassigned to house incoming Jewish immigrants. The refugee question was frozen into an immovable political barrier. The swift military reprisals deepened regional bitterness, transforming the armistice borders into active frontline combat zones.',
           sources: [
             {
               id: 'cme_l3_source_b',
@@ -3673,7 +3727,7 @@ const cme_new_data = {
               hinge_question:
                 'Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
               source_context:
-                'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs. Israeli military planners argued that a state with a near-equal Arab minority and hostile bordering armies would face an insurmountable internal fifth column during wartime. Hinge Question: Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
+                'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs. Israeli military planners argued that a state with a near-equal Arab minority and hostile bordering armies would face an insurmountable internal fifth column during wartime. **Hinge Question:** Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
               context:
                 'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs.',
               question_badge: 'Author’s Purpose',
@@ -3687,15 +3741,32 @@ const cme_new_data = {
                 audience: 'UNSCOP commissioners and the British Colonial Office.',
                 motive:
                   'To assess whether ethnic partition was practically feasible without forced transfer.',
+                hinge_question:
+                  'Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
+              },
+              teacher_notes: {
+                source_context:
+                  'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs. Israeli military planners argued that a state with a near-equal Arab minority and hostile bordering armies would face an insurmountable internal fifth column during wartime. **Hinge Question:** Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
               },
             },
           ],
         },
         {
-          theme_heading: '4. The Law of Return (1950) & Demographic Boom',
-          text: "In July 1950, the Israeli Knesset passed the landmark <strong>Law of Return</strong>, granting every Jewish person worldwide the automatic right to settle in Israel and receive immediate citizenship. This triggered mass immigration of over 700,000 newcomers within four years, rapidly doubling Israel’s population. Crucially, alongside European Holocaust survivors from Displaced Persons camps, Israel absorbed hundreds of thousands of <strong>Sephardic and Mizrahi Jews</strong> fleeing anti-Jewish riots, legal disenfranchisement, and property confiscation across the Arab world. Between 1948 and the 1970s, approximately 850,000 Jews left or were expelled from historic communities in Iraq, Yemen (Operation Magic Carpet), Egypt, Syria, and North Africa. Most arrived destitute and were housed in primitive canvas transit camps (<em>ma'abarot</em>) amid strict food rationing, creating a second major refugee population in the Middle East and fundamentally transforming Israeli society.",
-          level_4:
-            "The July 1950 Law of Return granted every Jewish individual worldwide the right to settle in Israel. It absorbed both European Holocaust survivors and over 850,000 Sephardic/Mizrahi Jews fleeing persecution and expulsion across Arab states, who were housed in transit camps (ma'abarot).",
+          title: 'The Law of Return, IDF Creation & US Economic Aid',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> While Palestinian Arabs were barred from returning, the Knesset passed the landmark **Law of Return** in July 1950, declaring that every Jewish person anywhere in the world possessed the absolute right to immigrate to Israel and gain automatic citizenship. Between 1948 and 1952, Israel\'s population doubled from 650,000 to 1.4 million. Alongside 300,000 European **Holocaust** survivors, over 300,000 Sephardic and Mizrahi Jews arrived after being expelled or fleeing anti-Zionist riots and persecution in Arab nations like Iraq, Yemen, Morocco, and Egypt. This transformed the cultural landscape.',
+            '<span class="para-ref">[3.2]</span> This demographic explosion pushed the young state to the brink of economic collapse. Immigrants were housed in squalid transit camps (Ma\'abarot) made of canvas tents and tin shacks, surviving under strict food rationing. Israel survived through vital **US economic and military aid to Israel**, private American loans, and the controversial 1952 Reparations Agreement with West Germany, which pumped $822 million into infrastructure. To integrate this diverse population and defend against hostile neighbors, **David Ben-Gurion** established the **Israeli Defence Forces (**IDF**)** as the central engine of national cohesion, introducing universal conscription. By transforming immigration into an engine of nation-building, Israel expanded its workforce and military readiness.',
+          ],
+          act: 3,
+          act_title:
+            'Forensic Evidence & Turning Point — The Law of Return, IDF Creation & US Economic Aid',
+          text: '<span class="para-ref">[3.1]</span> While Palestinian Arabs were barred from returning, the Knesset passed the landmark **Law of Return** in July 1950, declaring that every Jewish person anywhere in the world possessed the absolute right to immigrate to Israel and gain automatic citizenship. Between 1948 and 1952, Israel\'s population doubled from 650,000 to 1.4 million. Alongside 300,000 European **Holocaust** survivors, over 300,000 Sephardic and Mizrahi Jews arrived after being expelled or fleeing anti-Zionist riots and persecution in Arab nations like Iraq, Yemen, Morocco, and Egypt. This transformed the cultural landscape.\n\n<span class="para-ref">[3.2]</span> This demographic explosion pushed the young state to the brink of economic collapse. Immigrants were housed in squalid transit camps (Ma\'abarot) made of canvas tents and tin shacks, surviving under strict food rationing. Israel survived through vital **US economic and military aid to Israel**, private American loans, and the controversial 1952 Reparations Agreement with West Germany, which pumped $822 million into infrastructure. To integrate this diverse population and defend against hostile neighbors, **David Ben-Gurion** established the **Israeli Defence Forces (**IDF**)** as the central engine of national cohesion, introducing universal conscription. By transforming immigration into an engine of nation-building, Israel expanded its workforce and military readiness.',
+          image: '/images/cme_palestinian_refugees_leaving_gaza.webp',
+          image_alt:
+            'Stateless Palestinian refugees gathered in emergency encampments in Gaza, 1949',
+          caption:
+            'Refugee Dispersal (1949): Stateless Palestinian populations concentrated in sprawling camps across Gaza, the West Bank, Jordan, Syria, and Lebanon.',
+          isReversed: true,
           sources: [
             {
               id: 'cme_l3_source_c',
@@ -3715,7 +3786,7 @@ const cme_new_data = {
               hinge_question:
                 'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
               source_context:
-                'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. Hinge Question: Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+                'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
               context:
                 'UNRWA was established by UN Resolution 302 to provide relief for Palestinian refugees.',
               question_badge: 'Source Inference',
@@ -3730,44 +3801,43 @@ const cme_new_data = {
                   'Member states, donor governments, and displaced Palestinian communities.',
                 motive:
                   'To avert starvation and stabilize the Middle East through humanitarian aid while permanent political solutions were sought.',
+                hinge_question:
+                  'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+              },
+              teacher_notes: {
+                source_context:
+                  'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
               },
             },
           ],
         },
         {
-          theme_heading: '5. Creation of the Israeli Defence Forces (IDF) & Universal Conscription',
-          text: 'To guarantee survival along vulnerable borders, Prime Minister David Ben-Gurion unified all independent underground militias under the official <strong>Israeli Defence Forces (IDF)</strong>. Enacted under the <strong>Defence Service Law of 1949</strong>, Israel instituted universal compulsory military conscription for all 18-year-old citizens (men and women), backed by regular reserve service until age 45. This forged Israel into a "nation in arms" capable of mobilising a combat-ready citizen army within 48 hours.',
-          level_4:
-            "David Ben-Gurion unified all militias into the Israeli Defence Forces (IDF). Under the Defence Service Law of 1949, compulsory conscription for all 18-year-olds forged Israel into a 'nation in arms' ready to mobilize within 48 hours.",
-          image: '/images/cme_palestinian_refugees_leaving_gaza.webp',
-          image_alt:
-            'Displaced Palestinian refugees arriving in designated UN camps in the Gaza Strip, 1949',
-          caption:
-            'Refugee Dispersal (1949): Stateless Palestinian populations concentrated in sprawling camps across Gaza, the West Bank, Jordan, Syria, and Lebanon.',
-          isReversed: true,
-        },
-        {
-          theme_heading: '6. Economic Survival: US Financial Aid & Reparations',
-          text: 'In its early years, Israel faced near-total economic insolvency from mass immigration and military expenditure. Survival was secured through two crucial financial lifelines. First, US President Harry S. Truman provided over $135 million in emergency loans and grants, cementing a vital diplomatic and financial partnership. Second, in September 1952, Ben-Gurion signed the West German Reparations Agreement, securing $822 million to finance modern industrial infrastructure, agricultural irrigation, and merchant shipping.',
-          level_4:
-            'Facing severe economic insolvency, Israel survived through two financial lifelines: over $135 million in US emergency loans and grants, and $822 million from the 1952 West German Reparations Agreement to industrialize the country.',
+          title: 'Relations with Egypt: Fedayeen Border Raids & Unit 101 Reprisals',
+          paragraphs: [
+            '<span class="para-ref">[4.1]</span> The unfortified 1949 armistice **Green Line** was porous, running through backyards, dividing farms from water wells, and cutting olive groves in half. Displaced Palestinians living in wretched poverty in refugee camps began crossing the border back into Israel. Initially, the vast majority of infiltrators were unarmed peasants seeking to harvest crops, recover hidden valuables, or visit relatives. However, Israeli authorities treated all infiltration as an existential security threat, adopting a shoot-to-kill border policy.',
+            '<span class="para-ref">[4.2]</span> By 1953, infiltration had escalated into armed fedayeen (self-sacrificers) guerrilla warfare, sponsored by Egyptian military intelligence in Gaza and Jordanian authorities in the **West Bank**. **Fedayeen** squads planted landmines on Israeli roads, derailed trains, and attacked civilian kibbutzim. In response, Prime Minister Ben-Gurion and Chief of Staff Moshe Dayan established **Unit 101**—a clandestine elite commando unit commanded by 25-year-old **Ariel Sharon**. **Unit 101** pioneered a doctrine of disproportionate retaliation, culminating in the October 1953 Qibya raid, where Sharon’s commandos blew up 45 houses in a Jordanian village, killing 69 civilians and sparking international condemnation. Reprisal operations commanded by Sharon cemented a doctrine of disproportionate deterrence that became central to **IDF** strategic doctrine.',
+          ],
+          act: 4,
+          act_title:
+            'Historical Verdict & Assessment — Relations with Egypt: Fedayeen Border Raids & Unit 101 Reprisals',
+          text: '<span class="para-ref">[4.1]</span> The unfortified 1949 armistice **Green Line** was porous, running through backyards, dividing farms from water wells, and cutting olive groves in half. Displaced Palestinians living in wretched poverty in refugee camps began crossing the border back into Israel. Initially, the vast majority of infiltrators were unarmed peasants seeking to harvest crops, recover hidden valuables, or visit relatives. However, Israeli authorities treated all infiltration as an existential security threat, adopting a shoot-to-kill border policy.\n\n<span class="para-ref">[4.2]</span> By 1953, infiltration had escalated into armed fedayeen (self-sacrificers) guerrilla warfare, sponsored by Egyptian military intelligence in Gaza and Jordanian authorities in the **West Bank**. **Fedayeen** squads planted landmines on Israeli roads, derailed trains, and attacked civilian kibbutzim. In response, Prime Minister Ben-Gurion and Chief of Staff Moshe Dayan established **Unit 101**—a clandestine elite commando unit commanded by 25-year-old **Ariel Sharon**. **Unit 101** pioneered a doctrine of disproportionate retaliation, culminating in the October 1953 Qibya raid, where Sharon’s commandos blew up 45 houses in a Jordanian village, killing 69 civilians and sparking international condemnation. Reprisal operations commanded by Sharon cemented a doctrine of disproportionate deterrence that became central to **IDF** strategic doctrine.',
           sources: [
             {
               id: 'cme_l3_source_d',
               letter: 'D',
-              title: 'Source D: Jewish Immigrants Arriving in Jaffa Port (1950)',
+              title: 'Source D: Jewish Immigrants Arriving in Haifa Port (February 1949)',
               src: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
-              image: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
+              image: '/units/cme_new/assets/jewish_immigrants_haifa_1949.jpg',
               source: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
               caption:
-                "Mizrahi and European Jewish immigrants disembarking at Jaffa harbour under Israel's Law of Return, transforming the demography of the new state between 1948 and 1952.",
+                "Mizrahi and European Jewish immigrants disembarking at Haifa harbour under Israel's Law of Return beneath a welcome banner ('ברוכים הבאים'), February 1949.",
               desc: 'Archival photograph of immigrants arriving at the Port of Jaffa.',
               provenance: 'Israel Government Press Office (GPO 997008136796005171), c. 1950.',
               citation: 'Israel Government Press Office, Jerusalem.',
               hinge_question:
                 "How did the rapid influx of nearly 700,000 Jewish immigrants explain Israel's refusal to permit Palestinian refugees to return?",
               source_context:
-                "Between May 1948 and 1951, Israel doubled its Jewish population by absorbing nearly 700,000 immigrants, including European Holocaust survivors and Jewish communities fleeing persecution and expulsion across Arab states (Iraq, Yemen, North Africa). Abandoned Arab properties and villages were quickly resettled. Hinge Question: How did the rapid influx of nearly 700,000 Jewish immigrants explain Israel's refusal to permit Palestinian refugees to return?",
+                "Between May 1948 and 1951, Israel doubled its Jewish population by absorbing nearly 700,000 immigrants, including European Holocaust survivors and Jewish communities fleeing persecution and expulsion across Arab states (Iraq, Yemen, North Africa). Abandoned Arab properties and villages were quickly resettled. **Hinge Question:** How did the rapid influx of nearly 700,000 Jewish immigrants explain Israel's refusal to permit Palestinian refugees to return?",
               context:
                 'Between May 1948 and 1951, Israel doubled its Jewish population by absorbing nearly 700,000 immigrants.',
               question_badge: 'Cross-Referencing',
@@ -3782,16 +3852,14 @@ const cme_new_data = {
                   'Israeli citizenry and the international Jewish diaspora fundraising campaigns.',
                 motive:
                   "To celebrate the ingathering of exiles and highlight Israel's humanitarian rescue mission.",
+                hinge_question:
+                  "How did the rapid influx of nearly 700,000 Jewish immigrants explain Israel's refusal to permit Palestinian refugees to return?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Between May 1948 and 1951, Israel doubled its Jewish population by absorbing nearly 700,000 immigrants, including European Holocaust survivors and Jewish communities fleeing persecution and expulsion across Arab states (Iraq, Yemen, North Africa). Abandoned Arab properties and villages were quickly resettled. **Hinge Question:** How did the rapid influx of nearly 700,000 Jewish immigrants explain Israel's refusal to permit Palestinian refugees to return?",
               },
             },
-          ],
-        },
-        {
-          theme_heading: '7. Arab Blockades & Cross-Border Fedayeen Raids',
-          text: 'Hostile relations persisted as Arab neighbours enforced a strict diplomatic and trade boycott against Israel. Egypt banned Israeli shipping from the Suez Canal and established a military blockade at the <strong>Straits of Tiran</strong> (Sharm el-Sheikh), choking off Israeli trade from Eilat. Concurrently, displaced Palestinians launched cross-border guerrilla raids known as <strong>Fedayeen</strong> ("self-sacrificers") from Gaza and the West Bank to lay mines, ambush roads, and sabotage infrastructure.',
-          level_4:
-            'Egypt closed the Suez Canal to Israeli shipping and blockaded the Straits of Tiran. Across the borders, displaced Palestinian Fedayeen launched guerrilla raids into Israel to sabotage infrastructure and ambush civilians.',
-          sources: [
             {
               id: 'cme_l3_source_e',
               letter: 'E',
@@ -3808,7 +3876,7 @@ const cme_new_data = {
               hinge_question:
                 'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
               source_context:
-                'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. Hinge Question: Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+                'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
               context:
                 'In 1947, the UN considered two solutions: full partition versus a single federal state.',
               question_badge: 'Reliability & Provenance',
@@ -3822,15 +3890,15 @@ const cme_new_data = {
                 audience: 'UN General Assembly delegates and diplomatic legal advisors.',
                 motive:
                   "To present clear territorial alternatives for the formal plenary vote on Palestine's future.",
+                hinge_question:
+                  'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+              },
+              teacher_notes: {
+                source_context:
+                  'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
               },
             },
           ],
-        },
-        {
-          theme_heading: '8. Israeli Deterrence Doctrine & Retaliatory Raids (1953)',
-          text: 'To establish psychological deterrence along its borders, Israel adopted an aggressive reprisal policy: every cross-border raid was met with disproportionate military retaliation. In August 1953, the IDF formed <strong>Unit 101</strong>, a commando unit led by Ariel Sharon. Following a fatal civilian attack in Israel, Unit 101 raided the West Bank village of <strong>Qibya</strong>, blowing up 45 houses and killing 69 civilians. While drawing intense global condemnation, the raid solidified Israel’s uncompromising deterrence doctrine.',
-          level_4:
-            'Determined to establish deterrence, Israel met every border raid with disproportionate military retaliation. In 1953, Ariel Sharon’s Unit 101 raided the village of Qibya, killing 69 civilians and cementing Israel’s reprisal doctrine.',
         },
       ],
       quiz: [
@@ -5480,40 +5548,39 @@ const cme_new_data = {
       },
       narrative_blocks: [
         {
-          theme_heading: '1. Gamal Abdel Nasser & Egyptian Arab Leadership (1954)',
-          text: 'In 1954, Colonel <strong>Gamal Abdel Nasser</strong> became President of Egypt, emerging as the undisputed champion of <strong>Pan-Arabism</strong>—uniting Arab nations to end Western colonial influence and confront Israel. Nasser negotiated the withdrawal of 80,000 British troops from the Suez Canal Zone and planned the colossal <strong>Aswan High Dam</strong> on the River Nile to generate electricity, control flooding, and irrigate desert agriculture, requiring major foreign financing.',
-          level_4:
-            'By 1954, Gamal Abdel Nasser became President of Egypt, championing Pan-Arabism to end Western imperialism. He agreed the withdrawal of 80,000 British troops from the Suez Canal Zone and planned the Aswan High Dam to industrialize Egypt.',
+          title: 'Gamal Abdel Nasser, Pan-Arab Pride & The Czech Arms Deal',
+          paragraphs: [
+            '<span class="para-ref">[1.1]</span> In 1954, a charismatic young army colonel named **Gamal Abdel Nasser** seized absolute power in Egypt. A veteran of the 1948 War who had been besieged in the Faluja Pocket, Nasser blamed corrupt Arab monarchs and European imperialists for the Arab defeat. Broadcasting across the region via the powerful Voice of the Arabs radio station in Cairo, Nasser electrified the Arab world with the doctrine of Pan-Arabism—calling for Arab unity, social justice, and the complete elimination of Western colonial domination. This ideological vision resonated deeply across post-colonial societies.',
+            '<span class="para-ref">[1.2]</span> In February 1955, the **Israeli attack on Gaza** killed 38 Egyptian soldiers, exposing Egypt\'s catastrophic military weakness and humiliating Nasser. Rebuffed by the United States and Britain when requesting weapons, Nasser executed a stunning geopolitical masterstroke: in September 1955, he signed the massive Czech Arms Deal with the Soviet bloc, purchasing 200 modern MiG-15 fighter jets, 300 heavy tanks, and submarines in exchange for Egyptian cotton. For the first time, the Soviet Union gained a strategic foothold in the Middle East, terrifying British Prime Minister Anthony Eden and Israeli leaders who watched the balance of power shift. The Czech arms shipment shattered Western military dominance, demonstrating the growing geopolitical reach of the Soviet Union.',
+          ],
+          act: 1,
+          act_title:
+            'Context & Catalyst — Gamal Abdel Nasser, Pan-Arab Pride & The Czech Arms Deal',
+          text: '<span class="para-ref">[1.1]</span> In 1954, a charismatic young army colonel named **Gamal Abdel Nasser** seized absolute power in Egypt. A veteran of the 1948 War who had been besieged in the Faluja Pocket, Nasser blamed corrupt Arab monarchs and European imperialists for the Arab defeat. Broadcasting across the region via the powerful Voice of the Arabs radio station in Cairo, Nasser electrified the Arab world with the doctrine of Pan-Arabism—calling for Arab unity, social justice, and the complete elimination of Western colonial domination. This ideological vision resonated deeply across post-colonial societies.\n\n<span class="para-ref">[1.2]</span> In February 1955, the **Israeli attack on Gaza** killed 38 Egyptian soldiers, exposing Egypt\'s catastrophic military weakness and humiliating Nasser. Rebuffed by the United States and Britain when requesting weapons, Nasser executed a stunning geopolitical masterstroke: in September 1955, he signed the massive Czech Arms Deal with the Soviet bloc, purchasing 200 modern MiG-15 fighter jets, 300 heavy tanks, and submarines in exchange for Egyptian cotton. For the first time, the Soviet Union gained a strategic foothold in the Middle East, terrifying British Prime Minister Anthony Eden and Israeli leaders who watched the balance of power shift. The Czech arms shipment shattered Western military dominance, demonstrating the growing geopolitical reach of the Soviet Union.',
           image: '/images/cme_port_said_british_troops_1956.jpg',
           image_alt:
-            'British Royal Marine Commandos landing from assault craft onto the quayside at Port Said during Operation Musketeer, November 1956',
+            'British troops patrolling the streets of Port Said during the Anglo-French Suez operation in November 1956',
           caption:
             'Anglo-French Invasion at Port Said (November 1956): British and French troops deployed under the secret Sèvres Protocol to seize the nationalised Suez Canal.',
           isReversed: false,
-        },
-        {
-          theme_heading: '2. The Gaza Raid (Feb 1955) & The Czech Arms Deal',
-          text: 'Tensions escalated on 28 February 1955 when Israeli paratroopers launched a devastating raid into the <strong>Gaza Strip</strong>, killing 37 Egyptian soldiers and exposing Egyptian military vulnerability. Humiliated, Nasser sought modern weapons. When Western powers refused sales without political conditions, Nasser signed the <strong>Czech Arms Deal</strong> in September 1955, importing 200 Soviet MiG-15 jets and 300 tanks via Czechoslovakia. This broke the Western arms monopoly and drew the Cold War into the Middle East.',
-          level_4:
-            'In February 1955, an Israeli raid on Gaza killed 37 Egyptian soldiers, exposing Egypt’s military weakness. Nasser responded with the September 1955 Czech Arms Deal, buying 200 Soviet MiG jets and 300 tanks via Czechoslovakia, shattering the Western arms monopoly.',
           sources: [
             {
               id: 'cme_l4_source_a',
               letter: 'A',
-              title: 'Source A: British Cartoon on Nasser Seizing the Canal (1956)',
+              title: 'Source A: Political Cartoon on Nasser Controlling the Canal (1956)',
               src: '/images/cme_nasser_suez_cartoon_1956.jpg',
               image: '/images/cme_nasser_suez_cartoon_1956.jpg',
               source: '/images/cme_nasser_suez_cartoon_1956.jpg',
               caption:
-                'Leslie Illingworth cartoon from Punch (August 1956) depicting President Gamal Abdel Nasser as a crocodile or pirate grasping the throat of Western oil trade through Suez.',
+                "Fritz Behrendt political cartoon 'Der Mann am Hahnen' ('The Man at the Tap', 1956), depicting President Gamal Abdel Nasser turning off the Suez Canal oil valve to Western Europe.",
               desc: "British editorial political cartoon satirizing Nasser's canal nationalization.",
               provenance:
                 'Punch Magazine / British Cartoon Archive, University of Kent (IL0156), August 1956.',
               citation: 'Punch Magazine, London.',
               hinge_question:
-                "How did British depictions of Nasser as a 'dictator on the Nile' echo wartime propaganda against Hitler and Mussolini?",
+                'How did Western political cartoons frame Egyptian canal nationalization as economic blackmail threatening European industry?',
               source_context:
-                "British Prime Minister Anthony Eden viewed Nasser's nationalization of the Suez Canal Company as an intolerable act of international theft that threatened Britain's imperial communications and Persian Gulf oil supply. British press cartoons routinely portrayed Nasser as a dangerous fascist dictator. Hinge Question: How did British depictions of Nasser as a 'dictator on the Nile' echo wartime propaganda against Hitler and Mussolini?",
+                "British Prime Minister Anthony Eden viewed Nasser's nationalization of the Suez Canal Company as an intolerable act of international theft that threatened Britain's imperial communications and Persian Gulf oil supply. In this cartoon by Dutch-German artist Fritz Behrendt, Nasser is depicted choking off the oil flow to Western European industry. **Hinge Question:** How did Western political cartoons frame Egyptian canal nationalization as economic blackmail threatening European industry?",
               context:
                 "British Prime Minister Anthony Eden viewed Nasser's nationalization of the Suez Canal as a direct threat to British power.",
               question_badge: 'Author’s Purpose',
@@ -5521,22 +5588,33 @@ const cme_new_data = {
               enquiry_question:
                 "What was the cartoonist's primary purpose in publishing Source A in August 1956?",
               model_answer:
-                'The cartoonist sought to mobilize British public hostility against Nasser by framing canal nationalization not as legitimate anti-colonial assertion, but as dangerous blackmail threatening the economic lifeblood and oil supplies of Western Europe.',
+                'The cartoonist sought to mobilize Western public hostility against Nasser by framing canal nationalization not as legitimate anti-colonial sovereignty, but as dangerous economic extortion threatening the lifeblood and industrial fuel supplies of Western Europe.',
               provenance_clues: {
                 author: 'Leslie Illingworth, conservative political cartoonist for Punch.',
                 audience:
                   'The British middle-class public, political elite, and international press.',
                 motive:
                   'To caricature Nasser as an aggressive despot and justify British military or diplomatic retaliation.',
+                hinge_question:
+                  "How did British depictions of Nasser as a 'dictator on the Nile' echo wartime propaganda against Hitler and Mussolini?",
+              },
+              teacher_notes: {
+                source_context:
+                  "British Prime Minister Anthony Eden viewed Nasser's nationalization of the Suez Canal Company as an intolerable act of international theft that threatened Britain's imperial communications and Persian Gulf oil supply. British press cartoons routinely portrayed Nasser as a dangerous fascist dictator. **Hinge Question:** How did British depictions of Nasser as a 'dictator on the Nile' echo wartime propaganda against Hitler and Mussolini?",
               },
             },
           ],
         },
         {
-          theme_heading: '3. Cancellation of Aswan Dam Loans & Suez Nationalisation (July 1956)',
-          text: 'Alarmed by Nasser’s Soviet arms deal and recognition of Communist China, the United States and Britain abruptly cancelled funding for the Aswan High Dam in July 1956. Nasser reacted defiantly. On <strong>26 July 1956</strong> in Alexandria, Nasser announced the <strong>nationalisation of the Suez Canal Company</strong>, declaring that Egypt would use its £35 million annual tolls to finance the dam. British Prime Minister Anthony Eden viewed Nasser’s control of imperial oil routes as an intolerable threat to Britain’s global standing.',
-          level_4:
-            'When the US and Britain abruptly cancelled loans for the Aswan High Dam in July 1956, Nasser responded on 26 July 1956 by nationalising the Suez Canal Company, vowing to use its tolls to fund dam construction.',
+          title: 'The Aswan Dam Cancellation & Nationalisation of the Suez Canal',
+          paragraphs: [
+            '<span class="para-ref">[2.1]</span> Nasser’s central ambition was to industrialise Egypt by constructing the massive **Aswan High Dam** across the River Nile to provide electricity and control annual floods. Furious at Nasser\'s recognition of Communist China and his flirtation with Moscow, US Secretary of State John Foster Dulles abruptly cancelled a promised $56 million World Bank loan package in July 1956, expecting to humiliate the Egyptian leader and topple his government.',
+            '<span class="para-ref">[2.2]</span> Nasser’s retaliation was audacious and swift. On 26 July 1956, speaking before an ecstatic crowd of 250,000 in Alexandria, Nasser pronounced the codeword "de Lesseps" (the French engineer who built the canal). At that signal, Egyptian troops stormed the headquarters of the Universal **Suez Canal Company**, seizing control of the vital international waterway. Nasser declared that Egypt would use the canal’s $100 million annual toll revenues to fund the Aswan Dam. British Prime Minister Anthony Eden denounced Nasser as a "Moslem Mussolini" who had "his thumb on Britain\'s windpipe," privately vowing to destroy him. Nasser’s charismatic oratory rallied millions across the Arab world, positioning Cairo as the epicentre of anti-imperial resistance.',
+          ],
+          act: 2,
+          act_title:
+            'Escalation & Conflict — The Aswan Dam Cancellation & Nationalisation of the Suez Canal',
+          text: '<span class="para-ref">[2.1]</span> Nasser’s central ambition was to industrialise Egypt by constructing the massive **Aswan High Dam** across the River Nile to provide electricity and control annual floods. Furious at Nasser\'s recognition of Communist China and his flirtation with Moscow, US Secretary of State John Foster Dulles abruptly cancelled a promised $56 million World Bank loan package in July 1956, expecting to humiliate the Egyptian leader and topple his government.\n\n<span class="para-ref">[2.2]</span> Nasser’s retaliation was audacious and swift. On 26 July 1956, speaking before an ecstatic crowd of 250,000 in Alexandria, Nasser pronounced the codeword "de Lesseps" (the French engineer who built the canal). At that signal, Egyptian troops stormed the headquarters of the Universal **Suez Canal Company**, seizing control of the vital international waterway. Nasser declared that Egypt would use the canal’s $100 million annual toll revenues to fund the Aswan Dam. British Prime Minister Anthony Eden denounced Nasser as a "Moslem Mussolini" who had "his thumb on Britain\'s windpipe," privately vowing to destroy him. Nasser’s charismatic oratory rallied millions across the Arab world, positioning Cairo as the epicentre of anti-imperial resistance.',
           sources: [
             {
               id: 'cme_l4_source_b',
@@ -5553,7 +5631,7 @@ const cme_new_data = {
               hinge_question:
                 'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
               source_context:
-                'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. Hinge Question: Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
+                'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
               context:
                 'On 26 July 1956, Nasser announced the nationalization of the Suez Canal Company to fund the Aswan High Dam.',
               question_badge: 'Historical Utility',
@@ -5567,33 +5645,50 @@ const cme_new_data = {
                 audience: 'The Egyptian public and pan-Arab readers across the Middle East.',
                 motive:
                   "To rally massive patriotic support behind Nasser's confrontation with Britain and France.",
+                hinge_question:
+                  'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
+              },
+              teacher_notes: {
+                source_context:
+                  'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
               },
             },
           ],
         },
         {
-          theme_heading: '4. The Secret Tripartite Agreement (October 1956)',
-          text: 'Canal nationalisation outraged Britain and France. France sought to punish Nasser for aiding Algerian rebels, while Israel wanted to crush fedayeen bases and reopen the <strong>Straits of Tiran</strong>. In October 1956, the three nations secretly signed the tripartite agreement: Israel would launch a surprise invasion of Sinai, allowing Britain and France to issue an ultimatum demanding both sides withdraw from the canal. When Egypt refused, Anglo-French forces would invade Port Said under the guise of "peacekeepers" to seize the canal and depose Nasser.',
-          level_4:
-            'Outraged by the canal nationalisation, Britain, France, and Israel secretly signed the tripartite agreement in October 1956. Israel would invade Sinai, giving Britain and France the false pretext to intervene as "peacekeepers" to seize the canal and depose Nasser.',
+          title: 'The Secret Sèvres Protocol & The Tripartite Invasion',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> Unable to secure American support for military intervention, Britain and France turned to Israel. In late October 1956, French diplomats convened a secret meeting in a secluded villa at Sèvres, outside Paris, attended by Anthony Eden\'s representatives, French Prime Minister Guy Mollet, and Israeli Prime Minister **David Ben-Gurion** with Moshe Dayan. Together, they forged the notorious Protocol of Sèvres—a cynical, pre-planned conspiracy. Israel would invade the Egyptian **Sinai Peninsula** on 29 October, advancing towards the Suez Canal; Britain and France would then pose as impartial peacekeepers, issuing an ultimatum for both sides to withdraw from the canal zone, and invade Egypt when Nasser inevitably refused. French military planners coordinated air and naval assets directly with Israeli commanders.',
+            '<span class="para-ref">[3.2]</span> The plan was executed with mechanical precision. On 29 October, Israeli paratroopers dropped near the **Mitla Pass**, while armored columns swept across Sinai, routing Egyptian defenders, occupying the **Gaza Strip**, and capturing **Sharm el-Sheikh** to reopen the **Straits of Tiran** to Israeli shipping. The next day, London and Paris issued their ultimatum, and on 31 October, Anglo-French bombers pulverised Egyptian airfields. On 5 November, British and French paratroopers landed at Port Said in Operation Musketeer, seizing the canal zone amid bitter urban combat.',
+          ],
+          act: 3,
+          act_title:
+            'Forensic Evidence & Turning Point — The Secret Sèvres Protocol & The Tripartite Invasion',
+          text: '<span class="para-ref">[3.1]</span> Unable to secure American support for military intervention, Britain and France turned to Israel. In late October 1956, French diplomats convened a secret meeting in a secluded villa at Sèvres, outside Paris, attended by Anthony Eden\'s representatives, French Prime Minister Guy Mollet, and Israeli Prime Minister **David Ben-Gurion** with Moshe Dayan. Together, they forged the notorious Protocol of Sèvres—a cynical, pre-planned conspiracy. Israel would invade the Egyptian **Sinai Peninsula** on 29 October, advancing towards the Suez Canal; Britain and France would then pose as impartial peacekeepers, issuing an ultimatum for both sides to withdraw from the canal zone, and invade Egypt when Nasser inevitably refused. French military planners coordinated air and naval assets directly with Israeli commanders.\n\n<span class="para-ref">[3.2]</span> The plan was executed with mechanical precision. On 29 October, Israeli paratroopers dropped near the **Mitla Pass**, while armored columns swept across Sinai, routing Egyptian defenders, occupying the **Gaza Strip**, and capturing **Sharm el-Sheikh** to reopen the **Straits of Tiran** to Israeli shipping. The next day, London and Paris issued their ultimatum, and on 31 October, Anglo-French bombers pulverised Egyptian airfields. On 5 November, British and French paratroopers landed at Port Said in Operation Musketeer, seizing the canal zone amid bitter urban combat.',
+          image: '/images/cme_port_said_from_air.jpg',
+          image_alt:
+            'Aerial photograph of Port Said harbour with sunken ships blocking the Suez Canal waterway',
+          caption:
+            "Air Reconnaissance over Port Said: Demonstrating the physical destruction of harbour infrastructure and Egypt's defensive scuttling of canal shipping.",
+          isReversed: true,
           sources: [
             {
               id: 'cme_l4_source_c',
               letter: 'C',
-              title: 'Source C: President Gamal Abdel Nasser Addressing the Nation (1956)',
+              title: 'Source C: British Psychological Warfare Propaganda Leaflet (November 1956)',
               src: '/images/cme_nasser_1956.jpg',
-              image: '/images/cme_nasser_1956.jpg',
+              image: '/images/british_psyops_leaflet_suez_1956.jpg',
               source: '/images/cme_nasser_1956.jpg',
               caption:
-                'President Gamal Abdel Nasser speaking with charismatic passion to an audience of hundreds of thousands in Manshiyya Square, Alexandria, 26 July 1956.',
+                'British psy-ops propaganda leaflet dropped by RAF bombers over Cairo and Alexandria during Operation Musketeer, warning civilians of airstrikes and blaming Nasser for the war.',
               desc: 'Archival photograph of President Nasser during his historic Alexandria address.',
               provenance:
                 'Egyptian State Information Service / AP Images (560726012), 26 July 1956.',
               citation: 'Egyptian State Information Service / Associated Press.',
               hinge_question:
-                "How did Nasser's use of radio broadcasting (Voice of the Arabs) amplify his charismatic authority across the entire Arab world?",
+                'How did British aerial leaflets use psychological warfare to undermine Egyptian civilian support for Nasser during the Anglo-French assault?',
               source_context:
-                "In a three-hour speech, Nasser uttered the code word 'Ferdinand de Lesseps', signalling Egyptian army units to seize the Suez Canal offices in Port Said, Ismailia, and Suez. His defiance of Britain transformed him into the undisputed champion of pan-Arab nationalism and the Non-Aligned Movement. Hinge Question: How did Nasser's use of radio broadcasting (Voice of the Arabs) amplify his charismatic authority across the entire Arab world?",
+                "British psychological warfare teams printed millions of propaganda leaflets urging Egyptian civilians and soldiers to abandon Nasser's regime, claiming Britain was acting to protect international navigation. **Hinge Question:** How did British aerial leaflets use psychological warfare to undermine Egyptian civilian support for Nasser during the Anglo-French assault?",
               context:
                 'President Nasser delivered his historic three-hour address in Alexandria announcing canal nationalization.',
               question_badge: 'Source Inference',
@@ -5601,34 +5696,33 @@ const cme_new_data = {
               enquiry_question:
                 'What can you infer from Source C about the personal leadership style of Gamal Abdel Nasser during the Suez Crisis?',
               model_answer:
-                'Source C reveals that Nasser relied on fiery populist rhetoric and direct emotional connection with the masses, successfully portraying himself as the courageous defender of common Arab dignity standing up to Western imperial arrogance.',
+                "Source C reveals how Britain utilized aerial propaganda drops to bypass Egyptian state censorship, attempting to fracture public unity and convince civilians that Nasser's reckless nationalization had brought unnecessary military devastation upon Egypt.",
               provenance_clues: {
                 author: 'Official Egyptian presidency press photographer.',
                 audience:
                   'Domestic Egyptian crowds, Arab world radio listeners, and Western diplomats.',
                 motive:
                   "To capture Nasser's magnetic popularity and project unyielding revolutionary resolve.",
+                hinge_question:
+                  "How did Nasser's use of radio broadcasting (Voice of the Arabs) amplify his charismatic authority across the entire Arab world?",
+              },
+              teacher_notes: {
+                source_context:
+                  "In a three-hour speech, Nasser uttered the code word 'Ferdinand de Lesseps', signalling Egyptian army units to seize the Suez Canal offices in Port Said, Ismailia, and Suez. His defiance of Britain transformed him into the undisputed champion of pan-Arab nationalism and the Non-Aligned Movement. **Hinge Question:** How did Nasser's use of radio broadcasting (Voice of the Arabs) amplify his charismatic authority across the entire Arab world?",
               },
             },
           ],
         },
         {
-          theme_heading: '5. The Sinai Campaign & Tripartite Invasion (Oct–Nov 1956)',
-          text: 'On 29 October 1956, Israel launched the <strong>Sinai campaign</strong>, advancing across the desert to Sharm el-Sheikh and lifting the blockade of the Straits of Tiran. Britain and France issued their pre-planned ultimatum. When Egypt refused to withdraw from its sovereign territory, Anglo-French forces bombed airfields and landed troops at Port Said on 5 November. Nasser responded by scuttling over 40 ships, completely blocking the Suez Canal to international shipping.',
-          level_4:
-            'Israel invaded Sinai on 29 October 1956, advancing toward the canal. Citing their ultimatum, Anglo-French forces bombed airfields and invaded Port Said on 5 November. Nasser responded by sinking over 40 ships, completely blocking the canal.',
-          image: '/images/cme_port_said_from_air.jpg',
-          image_alt:
-            'Aerial reconnaissance photograph showing smoke rising over Port Said and scuttled ships blocking the northern mouth of the Suez Canal, November 1956',
-          caption:
-            "Air Reconnaissance over Port Said: Demonstrating the physical destruction of harbour infrastructure and Egypt's defensive scuttling of canal shipping.",
-          isReversed: true,
-        },
-        {
-          theme_heading: '6. Superpower Intervention: Eisenhower’s Financial Ultimatum',
-          text: 'The invasion collapsed under decisive superpower pressure. Furious at being deceived, US President <strong>Dwight D. Eisenhower</strong> refused emergency IMF loans and threatened to collapse the British pound sterling by dumping US holdings of British currency, while the Soviet Union threatened rocket attacks on London and Paris. Facing imminent financial bankruptcy, British Prime Minister Anthony Eden was forced to order a ceasefire on 6 November 1956, compelling an ignominious military retreat.',
-          level_4:
-            'US President Eisenhower furiously condemned the invasion, threatening to dump British currency reserves and collapse the pound sterling. Under severe American financial pressure, Britain halted military action on 6 November 1956 and withdrew.',
+          title: 'Eisenhower’s Ultimatum, Imperial Humiliation & Birth of UNEF',
+          paragraphs: [
+            '<span class="para-ref">[4.1]</span> The Anglo-French invasion sparked a furious international crisis. US President **Dwight D. Eisenhower**, facing re-election and outraged that his closest allies had launched a colonial war behind his back while Soviet tanks were crushing the Hungarian Uprising, issued an uncompromising ultimatum. Washington threatened to block emergency IMF loans and dump British sterling reserves on currency markets, precipitating the catastrophic collapse of the British pound. Soviet Premier Nikolai Bulganin went further, threatening rocket attacks against London and Paris.',
+            '<span class="para-ref">[4.2]</span> Under intense US pressure, Israel withdrew from Sinai in March 1957. In exchange, the United Nations deployed the first international peacekeeping force—the United Nations Emergency Force (**UNEF**)—along the armistice border and at **Sharm el-Sheikh**, guaranteeing Israeli maritime passage through the **Straits of Tiran** for the next decade. The crisis elevated Nasser into the undisputed hero of Pan-Arabism, culminating in the **formation of the United Arab Republic (UAR) in 1958**—the revolutionary political union of Egypt and Syria under Nasser\'s presidency. Although the UAR collapsed in 1961, it entrenched Nasser\'s regional hegemony and intensified Israeli fears of hostile Arab encirclement across both frontiers.',
+          ],
+          act: 4,
+          act_title:
+            'Historical Verdict & Assessment — Eisenhower’s Ultimatum, Imperial Humiliation & Birth of UNEF',
+          text: '<span class="para-ref">[4.1]</span> The Anglo-French invasion sparked a furious international crisis. US President **Dwight D. Eisenhower**, facing re-election and outraged that his closest allies had launched a colonial war behind his back while Soviet tanks were crushing the Hungarian Uprising, issued an uncompromising ultimatum. Washington threatened to block emergency IMF loans and dump British sterling reserves on currency markets, precipitating the catastrophic collapse of the British pound. Soviet Premier Nikolai Bulganin went further, threatening rocket attacks against London and Paris.\n\n<span class="para-ref">[4.2]</span> Under intense US pressure, Israel withdrew from Sinai in March 1957. In exchange, the United Nations deployed the first international peacekeeping force—the United Nations Emergency Force (**UNEF**)—along the armistice border and at **Sharm el-Sheikh**, guaranteeing Israeli maritime passage through the **Straits of Tiran** for the next decade. The crisis elevated Nasser into the undisputed hero of Pan-Arabism, culminating in the **formation of the United Arab Republic (UAR) in 1958**—the revolutionary political union of Egypt and Syria under Nasser\'s presidency. Although the UAR collapsed in 1961, it entrenched Nasser\'s regional hegemony and intensified Israeli fears of hostile Arab encirclement across both frontiers.',
           sources: [
             {
               id: 'cme_l4_source_d',
@@ -5645,7 +5739,7 @@ const cme_new_data = {
               hinge_question:
                 'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
               source_context:
-                "Under the secret Protocol of Sèvres signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. Hinge Question: Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
+                "Under the secret Protocol of Sèvres signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
               context:
                 'British forces landed in Port Said under Operation Musketeer before being forced into an abrupt withdrawal by US pressure.',
               question_badge: 'Reliability & Provenance',
@@ -5659,16 +5753,14 @@ const cme_new_data = {
                 audience: 'British War Office, Ministry of Defence, and domestic newsreels.',
                 motive:
                   'To demonstrate effective military execution and control over tactical objectives in Port Said.',
+                hinge_question:
+                  'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Under the secret Protocol of Sèvres signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
               },
             },
-          ],
-        },
-        {
-          theme_heading: '7. Geopolitical Consequences of the Suez Crisis',
-          text: 'The Suez Crisis permanently transformed Middle Eastern and global geopolitics:<br><br>\n• <strong>End of European Imperial Power:</strong> Britain and France were exposed as second-tier powers unable to act without US consent; Prime Minister Anthony Eden resigned in disgrace.<br>\n• <strong>Nasser’s Political Triumph:</strong> Despite battlefield defeat, Nasser emerged as an undisputed Pan-Arab folk hero for defying European empires and retaining control of the canal.<br>\n• <strong>Israeli Strategic Gains:</strong> The IDF demonstrated decisive military superiority, opening the Gulf of Aqaba to Israeli commerce and establishing effective border deterrence.<br>\n• <strong>Cold War Realignment:</strong> The Middle East became a direct Cold War arena, with expanding US support for Israel and Soviet patronage for Egypt and Syria.',
-          level_4:
-            'The Suez Crisis ended British and French imperial dominance in the Middle East. Eden resigned, while Nasser emerged as a Pan-Arab hero for keeping the canal. Israel proved its military superiority and opened the Straits of Tiran, while the region became a Cold War proxy theater.',
-          sources: [
             {
               id: 'cme_l4_source_e',
               letter: 'E',
@@ -5684,7 +5776,7 @@ const cme_new_data = {
               hinge_question:
                 'How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
               source_context:
-                'The map illustrates the tripartite campaign against Egypt. Israel captured the entire Sinai Peninsula in eight days, while British and French bombers destroyed the Egyptian air force and landed paratroopers in Port Said. The invasion ended when the United Nations deployed UNEF peacekeepers and forced total Anglo-French withdrawal. Hinge Question: How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
+                'The map illustrates the tripartite campaign against Egypt. Israel captured the entire Sinai Peninsula in eight days, while British and French bombers destroyed the Egyptian air force and landed paratroopers in Port Said. The invasion ended when the United Nations deployed UNEF peacekeepers and forced total Anglo-French withdrawal. **Hinge Question:** How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
               context:
                 'Operational map tracing the coordinated Israeli, British, and French military attacks against Egypt in 1956.',
               question_badge: 'Cross-Referencing',
@@ -5698,15 +5790,15 @@ const cme_new_data = {
                 audience: 'Operational task force commanders and naval headquarters.',
                 motive:
                   'To coordinate synchronized air, amphibious, and armored maneuvers across Egypt.',
+                hinge_question:
+                  'How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
+              },
+              teacher_notes: {
+                source_context:
+                  'The map illustrates the tripartite campaign against Egypt. Israel captured the entire Sinai Peninsula in eight days, while British and French bombers destroyed the Egyptian air force and landed paratroopers in Port Said. The invasion ended when the United Nations deployed UNEF peacekeepers and forced total Anglo-French withdrawal. **Hinge Question:** How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
               },
             },
           ],
-        },
-        {
-          theme_heading: '8. UNEF Peacekeepers & The United Arab Republic (1958)',
-          text: 'In 1957, the United Nations deployed the <strong>United Nations Emergency Force (UNEF)</strong> along the Gaza-Sinai frontier and Sharm el-Sheikh to deter fedayeen attacks and guarantee passage through the <strong>Straits of Tiran</strong>. Capitalising on his anti-imperialist prestige, Nasser formed the <strong>United Arab Republic (UAR)</strong> in February 1958, a political union between Egypt and Syria that cemented Egypt’s leadership of the Arab world.',
-          level_4:
-            'UN peacekeepers (UNEF) deployed in Sinai to prevent border raids, and the Straits of Tiran were reopened to Israeli ships. Nasser emerged as a Pan-Arab folk hero, leading to the creation of the United Arab Republic (UAR) with Syria in February 1958.',
         },
       ],
       draw_tasks: [],

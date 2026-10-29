@@ -2,7 +2,7 @@ import { cleanQuestionText } from '../data_parser.js';
 import { generateKeyIndividualEmbedHTML } from '../key_individuals.js';
 import { appStore } from './store.js';
 import { getAssetUrl } from './assets.js';
-import { getWorkbookPageAnchor } from './workbook_page_map.js';
+import { WORKBOOK_PAGE_MAP, getWorkbookPageAnchor } from './workbook_page_map.js';
 import { renderAudioPlaybackBar } from './speech.js';
 import {
   parseDurationToSeconds,
@@ -9188,24 +9188,40 @@ export function renderLesson(lesson) {
 
         // 4. CONFLICT IN THE MIDDLE EAST (cme_new)
         if (unitId === 'cme_new') {
-          const startPg = 2 + lNum * 2;
-          const endPg = startPg + 1;
+          const mapEntry =
+            WORKBOOK_PAGE_MAP?.cme_new?.[lessonId] ||
+            WORKBOOK_PAGE_MAP?.cme_new?.[`lesson_${lNum}`] ||
+            WORKBOOK_PAGE_MAP?.cme_new?.[`lesson_${ktNum}_${lNum}`];
+          const examStartPg = mapEntry?.examPage || (mapEntry?.page ? mapEntry.page + 2 : 6);
+          const examEndPg = mapEntry?.examEndPage || examStartPg + 1;
+          const booklet = mapEntry?.booklet || 'Key Topic Booklet';
+
           if (
             tariff.includes('4 mark') ||
             type.includes('4-mark') ||
+            type.includes('consequence') ||
             type.includes('consequence_4')
           ) {
-            return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
+            return {
+              inWorkbook: true,
+              label: `In Printed Workbook • Page ${examStartPg} (${booklet})`,
+            };
           }
           if (
             tariff.includes('8 mark') ||
             tariff.includes('12 mark') ||
-            type.includes('narrative_8') ||
-            type.includes('importance_8')
+            type.includes('narrative') ||
+            type.includes('importance')
           ) {
-            return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+            return {
+              inWorkbook: true,
+              label: `In Printed Workbook • Pages ${examStartPg}–${examEndPg} (${booklet})`,
+            };
           }
-          return { inWorkbook: true, label: `In Printed Workbook • Pages ${startPg}–${endPg}` };
+          return {
+            inWorkbook: true,
+            label: `In Printed Workbook • Pages ${examStartPg}–${examEndPg} (${booklet})`,
+          };
         }
 
         // 5. USA: CONFLICT AT HOME AND ABROAD (usa)
@@ -9380,7 +9396,7 @@ export function renderLesson(lesson) {
           !qText.includes('3(d)') &&
           (qType.includes('consequence') ||
             qType === 'consequence_4m' ||
-            /explain\s+(?:two\s+)?consequences/i.test(qText));
+            /explain\s+(?:one\s+|two\s+)?consequences?/i.test(qText));
 
         const isInference =
           qText.includes('infer') ||
@@ -9402,6 +9418,19 @@ export function renderLesson(lesson) {
 
         const isFeatures = qText.includes('describe two features') || qType.includes('features');
 
+        const isImportance =
+          !isConsequence &&
+          (qType.includes('importance') ||
+            qText.includes('explain the importance') ||
+            /\bimportance of\b/i.test(qText));
+
+        const isNarrative =
+          !isConsequence &&
+          !isImportance &&
+          (qType.includes('narrative') ||
+            qText.includes('narrative account') ||
+            /\bnarrative account\b/i.test(qText));
+
         const isUtility =
           !isConsequence &&
           !isFeatures &&
@@ -9409,10 +9438,12 @@ export function renderLesson(lesson) {
           !isInterpDiff &&
           !isInterpWhy &&
           !isFollowUp &&
-          (qTariff.includes('8 mark') ||
-            qType.includes('utility') ||
+          !isImportance &&
+          !isNarrative &&
+          (qType.includes('utility') ||
             qText.includes('how useful') ||
-            qText.includes('source utility'));
+            qText.includes('source utility') ||
+            (qTariff.includes('8 mark') && !isCme && !isImportance && !isNarrative));
 
         let stampHtml = '';
         if (isConsequence) {
@@ -9429,6 +9460,38 @@ export function renderLesson(lesson) {
                 <div><strong>Evidence (Historical Detail):</strong> <em>"Specifically, [names, dates, treaties, or figures]..."</em> (Deploy precise factual proof)</div>
                 <span style="background: #0284c7; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">E</span>
                 <div><strong>Explanation (Causal Impact):</strong> <em>"This resulted in... / Consequently, this led to..."</em> (Explain the ongoing historical effect)</div>
+              </div>
+            </div>
+          `;
+        } else if (isImportance) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #059669; border-radius: 8px; background: #ecfdf5; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #a7f3d0; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #065f46; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-scale-balanced" style="margin-right: 6px;"></i> Edexcel 8-Mark Importance Structure Strip (Paper 2 Q3)</span>
+                <span style="background: #059669; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[8 marks &bull; 12 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #059669; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">A1</span>
+                <div><strong>Aspect 1 (Direct Impact &amp; Cause) [4m]:</strong> <em>"One key reason [Event] was important for [Outcome] was that..."</em> (Deploy precise factual evidence and explain the direct mechanism of change)</div>
+                <span style="background: #059669; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">A2</span>
+                <div><strong>Aspect 2 (Long-Term / Broader Impact) [4m]:</strong> <em>"Furthermore, [Event] was decisive for [Outcome] because..."</em> (Explain a second distinct causal development or long-term consequence)</div>
+              </div>
+            </div>
+          `;
+        } else if (isNarrative) {
+          stampHtml = `
+            <div class="edexcel-peel-stamp" style="margin: 10px 0 16px 0; border: 2px solid #b45309; border-radius: 8px; background: #fffbeb; padding: 12px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1.5px solid #fde68a; padding-bottom: 6px;">
+                <span style="font-weight: 800; font-size: 0.92rem; color: #92400e; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-timeline" style="margin-right: 6px;"></i> Edexcel 8-Mark Narrative Account Structure Strip (Paper 2 Q2)</span>
+                <span style="background: #b45309; color: white; font-size: 0.78rem; font-weight: 700; padding: 2px 8px; border-radius: 12px;">[8 marks &bull; 12 mins]</span>
+              </div>
+              <div style="display: grid; grid-template-columns: auto 1fr; gap: 8px 12px; font-size: 0.88rem; line-height: 1.4; color: #0f172a;">
+                <span style="background: #b45309; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">N1</span>
+                <div><strong>Beginning / Catalyst [2–3m]:</strong> State the initial cause or starting condition with precise historical evidence.</div>
+                <span style="background: #b45309; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">N2</span>
+                <div><strong>Development / Causal Link [3–4m]:</strong> <em>"This directly led to..."</em> (Use chronological connectives to bridge to the next turning point)</div>
+                <span style="background: #b45309; color: white; font-weight: 800; padding: 2px 8px; border-radius: 4px; font-family: monospace; text-align: center; height: fit-content;">N3</span>
+                <div><strong>Outcome / Consequence [2–3m]:</strong> <em>"Consequently, the decisive result was..."</em> (Explain the final outcome and its immediate consequence)</div>
               </div>
             </div>
           `;
