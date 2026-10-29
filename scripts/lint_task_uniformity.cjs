@@ -45,6 +45,9 @@ const FOUR_ACT_UNITS = [
   'water_and_sanitation',
 ];
 
+// Units held to strict 5-Stage Chronological Inquiry Spine & 5-Block Narrative Architecture
+const FIVE_STAGE_UNITS = ['cme_new'];
+
 const NON_PROSE_TYPES = new Set([
   'causal_domino',
   'visual_annotation',
@@ -131,6 +134,28 @@ async function runLinter() {
   lessons.forEach((lesson, lIdx) => {
     const lessonNum = lIdx + 1;
     const lTitle = lesson.title || `Lesson ${lessonNum}`;
+
+    // 0. Check 5-Stage Chronological Inquiry Spine & 5-Block Narrative Standard
+    if (FIVE_STAGE_UNITS.includes(unitId)) {
+      if (!lesson.narrative_blocks || lesson.narrative_blocks.length !== 5) {
+        errors.push(
+          `[L${lessonNum}] 5-Block Narrative Standard Violation: Unit '${unitId}' enforces the 5-Stage Chronological Inquiry Spine and must have strictly 5 discrete narrative blocks (found ${lesson.narrative_blocks ? lesson.narrative_blocks.length : 0}).`,
+        );
+      } else {
+        lesson.narrative_blocks.forEach((b, bIdx) => {
+          if (b.act !== bIdx + 1) {
+            errors.push(
+              `[L${lessonNum}] Narrative block ${bIdx + 1} has act '${b.act}', expected '${bIdx + 1}'.`,
+            );
+          }
+          if (!b.paragraphs || b.paragraphs.length < 2) {
+            warnings.push(
+              `[L${lessonNum}] Narrative block ${bIdx + 1} ("${b.title}") has fewer than 2 paragraphs. Expected at least 2 structured paragraphs.`,
+            );
+          }
+        });
+      }
+    }
 
     // 1. Check for Dual-Location Source Residency (prohibit simultaneous root sources: [] and inline act.source)
     const hasRootSources = Array.isArray(lesson.sources) && lesson.sources.length > 0;
