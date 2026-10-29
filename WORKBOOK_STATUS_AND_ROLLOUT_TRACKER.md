@@ -61,11 +61,11 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 
 | Unit ID | Specification Tier | Topic / Coverage | State of Workbooks & Companions |
 | :--- | :--- | :--- | :--- |
-| `cme_new` | Paper 2 (Conflict in Middle East) | KT1, KT2, KT3 (1945–1995) | 🟢 **COMPLETE:** 3x 24-page physical pupil workbooks (KT1, KT2, KT3 = 72 pages total, 6 folded A3 sheets each) + 20-page Master Companion. 100% audited with 0px overflow and 99% space utilization. |
+| `cme_new` | Paper 2 (Conflict in Middle East) | KT1, KT2, KT3 (1945–1995) | 🟢 **COMPLETE:** 3x 24-page physical pupil workbooks (KT1, KT2, KT3 = 72 pages total, 6 folded A3 sheets each) + 36-page complete Mastery Exam Pack (`cme_mastery_pack_FULL.pdf`) + 20-page Master Companion. 100% audited with 0px overflow and 99% space utilization. |
 | `edexcel_medicine` | Paper 1 (Medicine & Western Front) | Medieval, Renaissance, 18th-19th, Modern, Western Front | 🟢 **COMPLETE:** 4x 20-page thematic period workbooks (Medieval, Renaissance, 18th-19th, Modern) + 28p Western Front Historic Environment = 108 physical pages total + 28p Thematic Master Companion + 8p Western Front Companion. 100% audited with 0px overflow and 99% space utilization. |
 | `eee` | Paper 2 (Early Elizabethan England) | Key Topics 1, 2, 3 (1558–1588) | 🟢 **COMPLETE:** 3x 16-page physical pupil workbooks (KT1, KT2, KT3 = 48 pages total, 4 folded A3 sheets each) + 24-Page Master Knowledge Retrieval Companion. 100% audited with 0px overflow and 99% space utilization. |
 | `weimar_nazi_germany` | Paper 3 (Weimar & Nazi Germany) | Key Topics 1, 2, 3, 4 (1918–1939) | 🟢 **COMPLETE:** 4x 20-page physical pupil workbooks (KT1, KT2, KT3, KT4 = 80 pages total, 5 folded A3 sheets each) + 28-Page Master Knowledge Retrieval Companion. 100% audited with 0px overflow and 99% space utilization. |
-| `usa` | Paper 3 (The USA, 1954–1975) | Key Topics 1, 2, 3, 4 (Full Master Compendium) | 🟢 **COMPLETE:** 48-Page Unified Master Compendium (`usa_mastery_FULL.html`, `usa_mastery_pack_FULL.pdf` = 12 folded A3 sheets) + 24-page Master Knowledge Retrieval Companion. 100% audited with 0px overflow across all 48 pages and 97% space utilization. |
+| `usa` | Paper 3 (The USA, 1954–1975) | Key Topics 1, 2, 3, 4 (Full Master Compendium) | 🟢 **COMPLETE:** 48-Page Unified Mastery Exam Pack (`usa_mastery_FULL.html`, `usa_mastery_pack_FULL.pdf` = 12 folded A3 sheets) + 24-page Master Knowledge Retrieval Companion. 100% audited with 0px overflow across all 48 pages and 97% space utilization. |
 | `cold_war` | Paper 2 (Superpower Relations) | Cold War Full Unit | 🟢 **COMPLETE:** 16-page physical pupil workbook (4 folded A3 sheets) + 8-page Master Companion. 100% audited with 0px overflow and 99% space utilization. |
 
 ---

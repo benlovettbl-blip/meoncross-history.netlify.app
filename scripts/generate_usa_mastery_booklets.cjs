@@ -3720,7 +3720,7 @@ function renderBookletHtml(ktKey, meta) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conflict at Home and Abroad: the USA, 1954–75 — Paper 3 Complete Exam Master Pack (48 Pages)</title>
+    <title>Conflict at Home and Abroad: the USA, 1954–75 — Paper 3 Complete Mastery Exam Pack (48 Pages)</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>${COMMON_CSS}</style>
 </head>

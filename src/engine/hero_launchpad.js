@@ -294,7 +294,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
     workbook: {
       title:
-        'Conflict at Home and Abroad: the USA, 1954–75 Paper 3 Complete Exam Master Pack (48 Pages)',
+        'Conflict at Home and Abroad: the USA, 1954–75 Paper 3 Complete Mastery Exam Pack (48 Pages)',
       label: 'Mastery Exam Pack (48 Pages)',
       htmlUrl: '/units/usa/booklets/usa_mastery_FULL.html',
       pdfUrl: '/pdfs/usa_mastery_pack_FULL.pdf',
