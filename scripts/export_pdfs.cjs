@@ -69,13 +69,9 @@ function getFileHash(filePath) {
     if (fs.existsSync(unitDir)) {
       let files = fs.readdirSync(unitDir).filter((f) => f.endsWith('.html'));
 
-      // Only generate PDFs for core required documents
-      const allowedPrefixes = [
-        'textbook',
-        'pupil_workbook',
-        'mastery_pack_full',
-        'mastery_pack_KT',
-      ];
+      // Only generate canonical PDFs for active core documents (Pillars 1 & 2)
+      // Mastery packs and legacy workbooks are permanently retired
+      const allowedPrefixes = ['textbook', 'pupil_workbook'];
       files = files.filter((f) =>
         allowedPrefixes.some((prefix) => f.startsWith(prefix) && f.endsWith('.html')),
       );
@@ -88,20 +84,21 @@ function getFileHash(filePath) {
         files = files.filter((f) => f !== 'pupil_workbook.html');
       }
 
-      // Exclude workbooks with dedicated high-performance compilers (already compiled by sync_unit)
-      if (
-        unit === 'great_war' ||
-        unit === 'water_and_sanitation' ||
-        unit === 'cme_new' ||
-        unit === 'monarchy_religion_power' ||
-        unit === 'first_british_empire' ||
-        unit === 'second_british_empire' ||
-        unit === 'industrialisation_and_empire' ||
-        unit === 'medieval_england' ||
-        unit === 'great_war_part2' ||
-        unit === 'australia'
-      ) {
-        files = files.filter((f) => !f.startsWith('pupil_workbook'));
+      // Exclude units with dedicated high-performance compilers (already compiled by sync_unit)
+      const dedicatedUnits = [
+        'great_war',
+        'water_and_sanitation',
+        'cme_new',
+        'monarchy_religion_power',
+        'first_british_empire',
+        'second_british_empire',
+        'industrialisation_and_empire',
+        'medieval_england',
+        'great_war_part2',
+        'australia',
+      ];
+      if (dedicatedUnits.includes(unit)) {
+        files = files.filter((f) => !f.startsWith('pupil_workbook') && !f.startsWith('textbook'));
       }
 
       if (targetFile) {
@@ -109,7 +106,7 @@ function getFileHash(filePath) {
       }
       for (const file of files) {
         const htmlPath = path.join(unitDir, file);
-        const pdfFileName = unit + '_' + file.replace('.html', '_FINAL_V17.pdf');
+        const pdfFileName = unit + '_' + file.replace('.html', '.pdf');
         const pdfPath = path.join(pdfsDir, pdfFileName);
 
         const currentHash = getFileHash(htmlPath);

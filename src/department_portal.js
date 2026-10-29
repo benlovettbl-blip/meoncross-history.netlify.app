@@ -224,7 +224,7 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (5 L)',
     mapStatus: 'embedded',
     mapText: '✅ First Fleet & Indigenous Territories',
-    workbookPdf: '/units/australia/workbook.html',
+    workbookPdf: '/pdfs/australia_pupil_workbook.pdf',
     textbookPdf: null,
   },
   {
@@ -240,7 +240,7 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (6 L)',
     mapStatus: 'embedded',
     mapText: '✅ Western Front & Schlieffen Plan',
-    workbookPdf: '/pdfs/great_war_workbook.pdf',
+    workbookPdf: '/pdfs/great_war_pupil_workbook.pdf',
     textbookPdf: '/pdfs/great_war_textbook.pdf',
   },
   {
@@ -304,7 +304,7 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (7 L)',
     mapStatus: 'embedded',
     mapText: '✅ Divided Berlin & NATO/Warsaw',
-    workbookPdf: '/units/cold_war/workbook.html',
+    workbookPdf: '/pdfs/cold_war_pupil_workbook.pdf',
     textbookPdf: '/pdfs/cold_war_textbook.pdf',
   },
   {

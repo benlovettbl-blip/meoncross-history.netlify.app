@@ -1936,14 +1936,6 @@ async function main() {
   await page.setContent(html, { waitUntil: 'networkidle0' });
 
   const outPdfPath = path.join(ROOT_DIR, 'public', 'pdfs', 'great_war_pupil_workbook.pdf');
-  const outPdf16pPath = path.join(ROOT_DIR, 'public', 'pdfs', 'great_war_16p_workbook.pdf');
-  const outPdfV17Path = path.join(
-    ROOT_DIR,
-    'public',
-    'pdfs',
-    'great_war_pupil_workbook_FINAL_V17.pdf',
-  );
-  const outPdfV2Path = path.join(ROOT_DIR, 'public', 'pdfs', 'great_war_pupil_workbook_V2.pdf');
 
   await page.pdf({
     path: outPdfPath,
@@ -1957,16 +1949,8 @@ async function main() {
     },
   });
 
-  // Mirror to aliases
-  fs.copyFileSync(outPdfPath, outPdf16pPath);
-  fs.copyFileSync(outPdfPath, outPdfV17Path);
-  fs.copyFileSync(outPdfPath, outPdfV2Path);
-
   await browser.close();
-  console.log(`[OK] PDF successfully compiled: ${outPdfPath}`);
-  console.log(`[OK] 16P PDF alias compiled: ${outPdf16pPath}`);
-  console.log(`[OK] V17 PDF alias compiled: ${outPdfV17Path}`);
-  console.log(`[OK] V2 PDF alias compiled: ${outPdfV2Path}`);
+  console.log(`[OK] Canonical PDF successfully compiled: ${outPdfPath}`);
 }
 
 if (require.main === module) {

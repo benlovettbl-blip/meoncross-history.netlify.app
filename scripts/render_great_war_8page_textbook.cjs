@@ -1275,20 +1275,15 @@ async function run() {
   const pdfOutputDir = path.join(ROOT_DIR, 'public', 'pdfs');
   if (!fs.existsSync(pdfOutputDir)) fs.mkdirSync(pdfOutputDir, { recursive: true });
 
-  const pdfPath = path.join(pdfOutputDir, 'great_war_textbook_FINAL_V17.pdf');
+  const standardPdfPath = path.join(pdfOutputDir, 'great_war_textbook.pdf');
   await page.pdf({
-    path: pdfPath,
+    path: standardPdfPath,
     format: 'A4',
     printBackground: true,
     margin: { top: '0px', right: '0px', bottom: '0px', left: '0px' },
     preferCSSPageSize: true,
   });
-  console.log(`[OK] Master 8-Page Textbook PDF compiled to: ${pdfPath}`);
-
-  // Mirror PDF
-  const standardPdfPath = path.join(pdfOutputDir, 'great_war_textbook.pdf');
-  fs.copyFileSync(pdfPath, standardPdfPath);
-  console.log(`[OK] Mirrored PDF to: ${standardPdfPath}`);
+  console.log(`[OK] Master 8-Page Textbook PDF compiled to: ${standardPdfPath}`);
 
   await browser.close();
   console.log('8-Page Causes of the Great War Textbook compilation completed successfully.');

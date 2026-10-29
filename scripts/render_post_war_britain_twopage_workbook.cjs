@@ -213,11 +213,7 @@ const enquiryConfigs = [
         date: 'Dec 1942',
         paraRef: '[2.2]',
         questionHeading: 'Why did the 1942 Beveridge Report become a wartime sensation?',
-        bullets: [
-          '630,000 Copies Sold',
-          'Slaying the Five Giants',
-          'Cradle to Grave Security',
-        ],
+        bullets: ['630,000 Copies Sold', 'Slaying the Five Giants', 'Cradle to Grave Security'],
         focusClue:
           'Why did Beveridge’s promise to conquer Want, Disease, Ignorance, Squalor, and Idleness give wartime citizens a passionate vision to fight for?',
       },
@@ -268,15 +264,17 @@ const enquiryConfigs = [
       partA: {
         tariff: 'Question 1: Describe Two Features [4 marks &bull; 5 mins]',
         badge: 'FEATURE DRILL',
-        question:
-          'Describe two features of the 1942 Beveridge Report. [4 marks]',
+        question: 'Describe two features of the 1942 Beveridge Report. [4 marks]',
       },
       partB: {
         tariff: 'Question 2: Explain One Consequence [4 marks &bull; 5 mins]',
         badge: 'STRUCTURED WRITING',
         question:
           'Explain one consequence of the Second World War for the creation of the National Health Service in 1948. [4 marks]',
-        stimulus: ['The experience of evacuation and rationing', 'The July 1945 general election landslide'],
+        stimulus: [
+          'The experience of evacuation and rationing',
+          'The July 1945 general election landslide',
+        ],
         connectives:
           'A decisive consequence was... &bull; This happened because... &bull; As a direct result... &bull; Consequently, this led to... &bull; Ultimately, this meant that...',
         wordBank:
@@ -373,11 +371,13 @@ const enquiryConfigs = [
       tariff: 'Question 3: Historiographical Interpretations [12 marks &bull; 15 mins]',
       badge: 'HISTORIOGRAPHICAL ANALYSIS',
       interpretation1: {
-        author: 'Historian Peter Fryer, Staying Power: The History of Black People in Britain (1984)',
-        text: '“The Windrush pioneers arrived with high hopes, believing they were returning to their ancestral Mother Country as proud British subjects. Instead, they were met with cold weather, squalid housing, and an open colour bar. Landlords slammed doors in their faces, and employers relegated skilled tradesmen to the most menial jobs. Yet through mutual-aid \'Pardner\' schemes, church fellowships, and sheer resilience, they built vibrant communities that enriched the cultural life of the nation.”',
+        author:
+          'Historian Peter Fryer, Staying Power: The History of Black People in Britain (1984)',
+        text: "“The Windrush pioneers arrived with high hopes, believing they were returning to their ancestral Mother Country as proud British subjects. Instead, they were met with cold weather, squalid housing, and an open colour bar. Landlords slammed doors in their faces, and employers relegated skilled tradesmen to the most menial jobs. Yet through mutual-aid 'Pardner' schemes, church fellowships, and sheer resilience, they built vibrant communities that enriched the cultural life of the nation.”",
       },
       interpretation2: {
-        author: 'Sociologist Sheila Patterson, Dark Strangers: A Study of West Indians in London (1963)',
+        author:
+          'Sociologist Sheila Patterson, Dark Strangers: A Study of West Indians in London (1963)',
         text: '“Post-war British society was not intentionally hostile, but rather deeply insular and bewildered by sudden cultural diversity. The initial friction in housing and employment was primarily a clash of customs, dialects, and social expectations rather than systemic racial prejudice. Given time, full employment, and gradual assimilation into British working-class neighbourhoods, Commonwealth migrants would be absorbed harmoniously into the fabric of British life.”',
       },
       questionB:
@@ -476,8 +476,11 @@ const enquiryConfigs = [
         tariff: 'Question 1: Narrative Account [8 marks &bull; 10 mins]',
         badge: 'PART A &bull; NARRATIVE',
         question:
-          'Write a narrative account analysing how the 1963 Bristol Bus Boycott led to the defeat of the company\'s colour bar. [8 marks]',
-        stimulus: ['Guy Bailey’s cancelled job interview (March 1963)', 'The student protest marches and pickets (May 1963)'],
+          "Write a narrative account analysing how the 1963 Bristol Bus Boycott led to the defeat of the company's colour bar. [8 marks]",
+        stimulus: [
+          'Guy Bailey’s cancelled job interview (March 1963)',
+          'The student protest marches and pickets (May 1963)',
+        ],
         connectives:
           'Initially... &bull; This led directly to... &bull; Following this... &bull; Consequently... &bull; As an outcome of this...',
         wordBank:
@@ -488,7 +491,10 @@ const enquiryConfigs = [
         badge: 'PART B &bull; IMPORTANCE',
         question:
           'Explain the importance of the 1963 Bristol Bus Boycott for the development of civil rights legislation in post-war Britain. [8 marks]',
-        stimulus: ['The capitulation on 28 August 1963', 'Harold Wilson’s 1965 and 1968 Race Relations Acts'],
+        stimulus: [
+          'The capitulation on 28 August 1963',
+          'Harold Wilson’s 1965 and 1968 Race Relations Acts',
+        ],
         connectives:
           'A decisive factor was... &bull; This was important because... &bull; Furthermore... &bull; As a direct result... &bull; Ultimately, this meant that...',
         wordBank:
@@ -1866,7 +1872,13 @@ async function main() {
   const html = compilePostWarBritainWorkbook();
 
   // Save HTML targets
-  const outHtmlPublic = path.join(ROOT_DIR, 'public', 'units', 'post_war_britain', 'pupil_workbook.html');
+  const outHtmlPublic = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'post_war_britain',
+    'pupil_workbook.html',
+  );
   const outHtmlUnits = path.join(ROOT_DIR, 'units', 'post_war_britain', 'pupil_workbook.html');
 
   fs.writeFileSync(outHtmlPublic, html, 'utf8');
@@ -1924,14 +1936,6 @@ async function main() {
   }
 
   const outPdfPath = path.join(ROOT_DIR, 'public', 'pdfs', 'post_war_britain_pupil_workbook.pdf');
-  const outPdf16pPath = path.join(ROOT_DIR, 'public', 'pdfs', 'post_war_britain_16p_workbook.pdf');
-  const outPdfV17Path = path.join(
-    ROOT_DIR,
-    'public',
-    'pdfs',
-    'post_war_britain_pupil_workbook_FINAL_V17.pdf',
-  );
-  const outPdfV2Path = path.join(ROOT_DIR, 'public', 'pdfs', 'post_war_britain_pupil_workbook_V2.pdf');
 
   await page.pdf({
     path: outPdfPath,
@@ -1945,16 +1949,8 @@ async function main() {
     },
   });
 
-  // Mirror to aliases
-  fs.copyFileSync(outPdfPath, outPdf16pPath);
-  fs.copyFileSync(outPdfPath, outPdfV17Path);
-  fs.copyFileSync(outPdfPath, outPdfV2Path);
-
   await browser.close();
-  console.log(`[OK] PDF successfully compiled: ${outPdfPath}`);
-  console.log(`[OK] 16P PDF alias compiled: ${outPdf16pPath}`);
-  console.log(`[OK] V17 PDF alias compiled: ${outPdfV17Path}`);
-  console.log(`[OK] V2 PDF alias compiled: ${outPdfV2Path}`);
+  console.log(`[OK] Canonical PDF successfully compiled: ${outPdfPath}`);
 }
 
 if (require.main === module) {
