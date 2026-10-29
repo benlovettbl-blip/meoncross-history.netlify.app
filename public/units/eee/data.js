@@ -482,11 +482,7 @@ const eee_data = {
               "In sixteenth-century patriarchal England, female rule was widely viewed as unnatural and politically fragile—a prejudice famously voiced in John Knox's contemporary polemic 'The First Blast of the Trumpet Against the Monstruous Regiment of Women'. Elizabeth countered these doubts by commissioning coronation iconography that fused imperial majesty with sacred legitimacy: depicted crowned with flowing virgin hair (symbolizing purity and dedication to the realm), clad in opulent cloth-of-gold robes, and holding the orb and sceptre, the portrait presented her as God's chosen sovereign, deliberately projecting sacred royal permanence and mystical majesty rather than mortal female vulnerability.",
             ],
           },
-          image: '/images/elizabeth_coronation_robes.jpg',
-          image_alt:
-            'Queen Elizabeth I depicted in her coronation robes adorned with Tudor roses and royal ermine',
-          caption:
-            'The Coronation of Elizabeth I (January 1559): Crowned at Westminster Abbey amidst deep financial debt and intense factional intrigue.',
+
           isReversed: false,
           sources: [
             {
@@ -4380,11 +4376,11 @@ const eee_data = {
               "The Threat of an Active Catholic Focal Point: If Elizabeth allowed Mary to travel abroad to Catholic France or live freely in England, Mary's legitimate blood claim to the English crown (as Henry VII's great-granddaughter) would serve as a permanent magnetic rallying point for English Catholic plotters and Spanish or French invasion forces seeking to depose the excommunicated Protestant queen.",
             ],
           },
-          image: '/images/mary_queen_of_scots_white_mourning.jpg',
+          image: '/images/mary_queen_of_scots_pink_portrait.jpg',
           image_alt:
-            'Mary, Queen of Scots in white mourning robes (Deuil Blanc) following the death of King Francis II of France',
+            'Portrait miniature of Mary, Queen of Scots wearing an embroidered bodice and lace ruff',
           caption:
-            'Mary in White Mourning (c. 1560): A French-educated Catholic queen with a legitimate, direct royal claim to the throne of England.',
+            'Mary, Queen of Scots (1542–1587): An anointed Catholic monarch with a direct genealogical claim to the English crown.',
           isReversed: false,
           sources: [
             {
@@ -5331,8 +5327,8 @@ const eee_data = {
         "In May 1568, a small fishing boat washed ashore at Workington on the stormy coast of Cumberland. Stepping onto English gravel was twenty-five-year-old Mary Stuart, Queen of Scots, fleeing her rebellious Protestant lords after the suspicious gunpowder murder of her husband, Lord Darnley. Mary arrived not as an enemy, but as Elizabeth's closest blood cousin—and the anointed Catholic claimant to the English crown. For Elizabeth and William Cecil, Mary's arrival was a living nightmare: a captive queen who instantly became a magnetic lightning rod for Catholic rebellion.",
       extra_videos: [],
       banner: '/images/mary_queen_of_scots_white_mourning.jpg',
-      card_image: '/images/mary_queen_of_scots_white_mourning.jpg',
-      hero_image: '/images/mary_queen_of_scots_white_mourning.jpg',
+      card_image: '/images/mary_queen_of_scots_pink_portrait.jpg',
+      hero_image: '/images/mary_queen_of_scots_pink_portrait.jpg',
       banner_position: 'center 15%',
       card_position: 'center 15%',
     },
@@ -5857,9 +5853,9 @@ const eee_data = {
               id: 'eee_l5_source_d',
               letter: 'D',
               title: 'Source D: Anthony Babington and the 1586 Conspiracy',
-              src: '/images/anthony_babington.jpg',
-              image: '/images/anthony_babington.jpg',
-              source: '/images/anthony_babington.jpg',
+              src: '/images/portrait_anthony_babington.jpg',
+              image: '/images/portrait_anthony_babington.jpg',
+              source: '/images/portrait_anthony_babington.jpg',
               caption:
                 'Anthony Babington (1561–1586), a young Derbyshire Catholic gentleman who led the conspiracy to assassinate Elizabeth and rescue Mary Queen of Scots from Chartley Manor.',
               desc: 'Portrait of Anthony Babington, executed for high treason in 1586.',
@@ -6265,9 +6261,9 @@ const eee_data = {
           id: 'eee_l5_source_d',
           letter: 'D',
           title: 'Source D: Anthony Babington and the 1586 Conspiracy',
-          src: '/images/anthony_babington.jpg',
-          image: '/images/anthony_babington.jpg',
-          source: '/images/anthony_babington.jpg',
+          src: '/images/portrait_anthony_babington.jpg',
+          image: '/images/portrait_anthony_babington.jpg',
+          source: '/images/portrait_anthony_babington.jpg',
           caption:
             'Anthony Babington (1561–1586), a young Derbyshire Catholic gentleman who led the conspiracy to assassinate Elizabeth and rescue Mary Queen of Scots from Chartley Manor.',
           desc: 'Portrait of Anthony Babington, executed for high treason in 1586.',
@@ -10916,11 +10912,6 @@ const eee_data = {
           text: '<span class="para-ref">[2.1]</span> The Elizabethan era witnessed a dramatic expansion in secondary education, with over <strong>seventy new endowed Grammar Schools</strong> founded across the realm, including Queen Elizabeth\'s Grammar School in Blackburn. These schools were independent of church control and charged fees, though funded scholarships allowed bright boys from yeoman and merchant backgrounds to attend.<br><br><span class="para-ref">[2.2]</span> The curriculum was rigorously academic, concentrating on <strong>Latin grammar, classical literature (Cicero, Virgil), Greek, and rhetoric</strong>. School days were intensely demanding, lasting from 6:00 am to 5:00 pm, six days a week, reinforced by strict corporal punishment with the birch rod to instill discipline and deference to authority.',
           level_4:
             'Over 70 new grammar schools provided classical education in Latin and rhetoric for sons of merchants and gentry. The rigorous routine instilled strict social discipline through corporal punishment.',
-          image: '/images/tudor_wooden_hornbook_alphabet.jpg',
-          image_alt:
-            "Elizabethan wooden hornbook with printed alphabet, vowels, and Lord's Prayer protected by transparent horn",
-          caption:
-            'The Elizabethan Hornbook: The foundational tool for children in petty schools learning literacy, Latin vowels, and religious prayers.',
           isReversed: false,
           sources: [
             {
@@ -11039,11 +11030,6 @@ const eee_data = {
           text: '<span class="para-ref">[4.1]</span> Elizabethan leisure pursuits closely mirrored the rigid class structure of society. The nobility indulged in exclusive, expensive sports such as <strong>hunting deer, hawking, real tennis, and fencing</strong>, which reinforced aristocratic chivalry and martial prowess.<br><br><span class="para-ref">[4.2]</span> In contrast, common working people engaged in rowdy, violent community pastimes on holidays, including <strong>football</strong>—an unregulated, brutal brawl between rival villages that frequently resulted in broken limbs and fatal injuries. However, blood sports were enjoyed by all social classes: <strong>bear-baiting, bull-baiting, and cockfighting</strong> drew huge, enthusiastic crowds from nobles to vagrants at purpose-built arenas such as the Paris Garden in Southwark, where spectators gambled heavily on the outcome.',
           level_4:
             'Leisure was sharply divided by class: elites enjoyed hunting, hawking, and tennis, while commoners played violent village football. However, blood sports like bear-baiting were loved by all social ranks.',
-          image: '/images/elizabethan_bear_baiting_southwark.jpg',
-          image_alt:
-            'Contemporary engraving of bear-baiting inside an amphitheatre pit on Bankside, Southwark',
-          caption:
-            "Bear-Baiting at Bankside: One of Tudor London's most popular mass spectacles, attracting royalty, nobility, and crowds of ordinary Londoners.",
           isReversed: true,
           sources: [
             {
@@ -12225,11 +12211,7 @@ const eee_data = {
           text: '<span class="para-ref">[2.1]</span> Agrarian restructuring intensified rural unemployment. Landowners realized that sheep farming for the booming wool and cloth trade—which accounted for <strong>80% of English exports</strong>—was far more profitable than traditional arable grain farming. Consequently, landlords carried out <strong>enclosure</strong>, fencing off open communal fields and common waste land to create large private sheep pastures.<br><br><span class="para-ref">[2.2]</span> Unlike labour-intensive crop cultivation, sheep farming required only a handful of shepherds. Landlords dramatically raised rents (<strong>rack-renting</strong>) and evicted thousands of tenant cottagers and strip farmers, forcing dispossessed rural families to wander the country in search of employment as landless vagrants.',
           level_4:
             'Landlords enclosed common land to graze sheep for the profitable wool trade, which required few workers. Evicted tenant farmers were driven off the land and forced into vagrancy.',
-          image: '/images/tudor_vagrant_whipping_cart.jpg',
-          image_alt:
-            'Woodcut showing a vagrant tied to the tail of a horse-drawn cart and whipped through the streets',
-          caption:
-            'The 1572 Vagrancy Act: Able-bodied vagrants ordered to be whipped until bloody and burned through the ear with an inch-wide hot iron.',
+
           isReversed: false,
           sources: [
             {
@@ -12304,12 +12286,15 @@ const eee_data = {
               id: 'eee_l10_source_c',
               letter: 'C',
               title:
-                'Source C: Contemporary Woodcut of Vagrants Punished in Stocks and at the Cart-Tail',
-              src: '/images/tudor_vagrant_whipping.jpg',
-              image: '/images/tudor_vagrant_whipping.jpg',
-              source: '/images/tudor_vagrant_whipping.jpg',
+                'Source C: William Harrison on the Three Categories of the Elizabethan Poor (1577)',
+              type: 'written',
+              text: 'With us the poor is commonly divided into three sorts, so that some are poor by the impotency of nature or accident (the fatherless child, the aged, blind, or lame); some by casualty (the wounded soldier, the decayed householder); and the third sort are the thriftless poor (the rioter, the vagabond, and the sturdy rogue who will rather beg and steal than work). For the first two sorts, merciful provision is made in their parishes; but for the third sort, they are whipped and stocked, and if they do not amend, sent to the house of correction to be kept at hard labour.',
               caption:
-                'Sixteenth-century woodcut illustrating the public punishment of vagrants: tied to the end of a cart and stripped to the waist to be flogged.',
+                "Extract from William Harrison's Description of England (1577), defining the tripartite Elizabethan classification of the poor into the impotent, the casual, and the thriftless vagabonds.",
+              desc: "Harrison's Description of England establishing the canonical tripartite division of Elizabethan paupers.",
+              provenance:
+                "William Harrison, The Description of England, Holinshed's Chronicles, London, 1577.",
+              citation: 'William Harrison, The Description of England (1577).',
               desc: 'Broadsheet woodcut of vagrants whipped through town.',
               provenance: 'British Library, London (Broadside Collection C.121.g.9), c. 1580.',
               citation: 'British Library, London.',
@@ -12749,38 +12734,38 @@ const eee_data = {
           id: 'eee_l10_source_c',
           letter: 'C',
           title:
-            'Source C: Contemporary Woodcut of Vagrants Punished in Stocks and at the Cart-Tail',
-          src: '/images/tudor_vagrant_whipping.jpg',
-          image: '/images/tudor_vagrant_whipping.jpg',
-          source: '/images/tudor_vagrant_whipping.jpg',
+            'Source C: William Harrison on the Three Categories of the Elizabethan Poor (1577)',
+          type: 'written',
+          text: 'With us the poor is commonly divided into three sorts, so that some are poor by the impotency of nature or accident (the fatherless child, the aged, blind, or lame); some by casualty (the wounded soldier, the decayed householder); and the third sort are the thriftless poor (the rioter, the vagabond, and the sturdy rogue who will rather beg and steal than work). For the first two sorts, merciful provision is made in their parishes; but for the third sort, they are whipped and stocked, and if they do not amend, sent to the house of correction to be kept at hard labour.',
           caption:
-            'Sixteenth-century woodcut illustrating the public punishment of vagrants: tied to the end of a cart and stripped to the waist to be flogged.',
-          desc: 'Broadsheet woodcut of vagrants whipped through town.',
-          provenance: 'British Library, London (Broadside Collection C.121.g.9), c. 1580.',
-          citation: 'British Library, London.',
+            "Extract from William Harrison's Description of England (1577), defining the tripartite Elizabethan classification of the poor into the impotent, the casual, and the thriftless vagabonds.",
+          desc: "Harrison's Description of England establishing the canonical tripartite division of Elizabethan paupers.",
+          provenance:
+            "William Harrison, The Description of England, Holinshed's Chronicles, London, 1577.",
+          citation: 'William Harrison, The Description of England (1577).',
           hinge_question:
-            'What does the severity of corporal punishments in Tudor woodcuts reveal about Elizabethan fears of social disorder and roving gangs?',
+            "How did William Harrison's division of the poor into three distinct classes shape Elizabethan welfare and penal legislation?",
           source_context:
-            'Under the 1572 Vagrancy Act, anyone aged fourteen or over found begging without a license was to be arrested, severely whipped, and have a hole burned through the gristle of their right ear with a hot iron. Repeat offenders faced death as felons. **Hinge Question:** What does the severity of corporal punishments in Tudor woodcuts reveal about Elizabethan fears of social disorder and roving gangs?',
+            "In his landmark 1577 Description of England, clergyman William Harrison codified contemporary Tudor thinking on social class and destitution. Harrison distinguished between those unable to work through bodily infirmity, those thrown into hardship by misfortune, and idle rogues who refused work. **Hinge Question:** How did William Harrison's division of the poor into three distinct classes shape Elizabethan welfare and penal legislation?",
           context:
-            'Under the 1572 Vagrancy Act, anyone aged fourteen or over found begging without a license was to be arrested.',
+            'William Harrison codified contemporary Tudor thinking on social class and destitution in 1577.',
           question_badge: 'Source Inference',
           question_type: 'Source Inference',
           enquiry_question:
-            'What can you infer from Source C about Elizabethan attitudes towards able-bodied unemployed people?',
+            'What can you infer from Source C about Elizabethan attitudes towards distinguishing between different categories of poor people?',
           model_answer:
-            'Source C reveals that the Tudor ruling class viewed able-bodied unemployment not as an economic misfortune, but as a moral failing and threat to public order that had to be brutally deterred through public physical violence.',
+            'Source C reveals that Elizabethan society clearly separated those unable to work through illness or misfortune (who deserved parish charity) from able-bodied vagrants who chose not to work and were therefore viewed as dangerous criminals requiring corporal punishment and forced labour.',
           provenance_clues: {
-            author: 'Tudor broadside illustrator recording parish judicial punishments.',
-            audience: 'Common townspeople and rural laborers.',
+            author: 'William Harrison, Elizabethan clergyman and topographer.',
+            audience: 'Educated Elizabethan gentry, magistrates, and scholars.',
             motive:
-              'To serve as a stark visual deterrent against roaming without employment or begging without a license.',
+              'To provide a comprehensive, moralizing survey of English social institutions and legal customs.',
             hinge_question:
-              'What does the severity of corporal punishments in Tudor woodcuts reveal about Elizabethan fears of social disorder and roving gangs?',
+              "How did William Harrison's division of the poor into three distinct classes shape Elizabethan welfare and penal legislation?",
           },
           teacher_notes: {
             source_context:
-              'Under the 1572 Vagrancy Act, anyone aged fourteen or over found begging without a license was to be arrested, severely whipped, and have a hole burned through the gristle of their right ear with a hot iron. Repeat offenders faced death as felons. **Hinge Question:** What does the severity of corporal punishments in Tudor woodcuts reveal about Elizabethan fears of social disorder and roving gangs?',
+              "Harrison's tripartite classification became the intellectual foundation for the Poor Relief Acts of 1597 and 1601. **Hinge Question:** Why did Elizabethan authorities believe it was essential to strictly separate the impotent poor from the idle vagabond?",
           },
         },
         {
@@ -12824,10 +12809,9 @@ const eee_data = {
         {
           id: 'eee_l10_source_e',
           letter: 'E',
-          title: 'Source E: The Elizabethan Poor Law Statute of 1601 (Parliamentary Roll)',
-          src: '/images/poor_law_1601.jpg',
-          image: '/images/poor_law_1601.jpg',
-          source: '/images/poor_law_1601.jpg',
+          title: 'Source E: The Act for the Relief of the Poor (43 Elizabeth I c. 2, 1601)',
+          type: 'written',
+          text: 'Be it enacted by the authority of this present Parliament, that the churchwardens of every parish, and four, three or two substantial householders there... shall be called Overseers of the Poor of the same parish; and they shall take order from time to time... for setting to work the children of all such whose parents shall not be thought able to keep and maintain them; and also for setting to work all such persons, married or unmarried, having no means to maintain them, and use no ordinary and daily trade of life to get their living by; and also to raise weekly or otherwise... a convenient stock of flax, hemp, wool, thread, iron, and other necessary ware and stuff, to set the poor on work; and also competent sums of money for and towards the necessary relief of the lame, impotent, old, blind, and such other among them being poor and not able to work...',
           caption:
             'The official parliamentary roll of the 1601 Poor Law: codifying the parish rate, appointing Overseers of the Poor, providing raw materials for the able-bodied, and establishing almshouses for the impotent poor.',
           desc: 'The 1601 Elizabethan Poor Law statute, which remained the bedrock of British welfare legislation for over 230 years.',
@@ -13581,11 +13565,7 @@ const eee_data = {
           text: '<span class="para-ref">[2.1]</span> English oceanic voyages were made possible by major transformations in naval architecture led by Sir John Hawkins. Departing from traditional, high-castled Spanish carraks, Hawkins developed the <strong>race-built galleon</strong>—a ship with a longer keel, lower forecastles, and a streamlined hull that reduced water resistance.<br><br><span class="para-ref">[2.2]</span> These ships incorporated triangular <strong>lateen sails</strong> alongside square sails, giving them exceptional maneuverability to "tack" close to the wind in violent Atlantic weather. Crucially, English shipwrights redesigned gun decks to mount heavy <strong>culverin cannons on compact four-wheeled truck carriages</strong>, allowing English crews to fire rapid broadsides through low gunports without destabilizing the ship.',
           level_4:
             "Hawkins designed streamlined 'race-built galleons' with lower forecastles and lateen sails for superior handling. English ships carried heavy culverin cannons on four-wheel carriages for rapid broadside firing.",
-          image: '/images/mariners_astrolabe_1603.jpg',
-          image_alt:
-            "Cast brass 16th-century mariner's astrolabe showing navigational altitude scales",
-          caption:
-            "The Mariner's Astrolabe: Navigational breakthrough allowing Elizabethan mariners to calculate latitude using the midday sun and Pole Star.",
+
           isReversed: false,
           sources: [
             {
@@ -13702,11 +13682,11 @@ const eee_data = {
               "National Pride and Oceanic Mastery: As the first Englishman—and only the second commander in world history—to successfully navigate the globe and survive, Drake shattered the myth of Spanish and Portuguese maritime invincibility, claiming 'Nova Albion' (California) for Elizabeth and establishing England as a daring, global seafaring power.",
             ],
           },
-          image: '/images/francis_drake_circumnavigation.jpg',
+          image: '/images/sir_francis_drake_portrait.jpg',
           image_alt:
-            'Engraving depicting Sir Francis Drake navigating the Golden Hind and landing on foreign shores',
+            '1591 oil portrait of Sir Francis Drake with a terrestrial globe and navigational divider',
           caption:
-            'Drake’s Circumnavigation (1577–1580): First Englishman to circumnavigate the globe, returning £500,000 in silver and gold.',
+            'Sir Francis Drake (1540–1596): Celebrated privateer and navigator who led the circumnavigation of the globe (1577–1580).',
           isReversed: true,
           sources: [
             {

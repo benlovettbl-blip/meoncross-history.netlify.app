@@ -152,33 +152,17 @@
   "post_war_britain": {
     "totalLessons": 5,
     "totalSources": 25,
-    "nonStandardBlockCount": 5,
+    "nonStandardBlockCount": 0,
     "nonStandardSourceCount": 0,
     "mismatchedSrcImage": [],
     "portraitSources": [],
     "emptySources": [],
-    "unlinkedBlockSources": [
-      "L1 Block 1 has 0 sources",
-      "L1 Block 2 has 0 sources",
-      "L1 Block 3 has 0 sources",
-      "L2 Block 1 has 0 sources",
-      "L2 Block 2 has 0 sources",
-      "L2 Block 3 has 0 sources",
-      "L3 Block 1 has 0 sources",
-      "L3 Block 2 has 0 sources",
-      "L3 Block 3 has 0 sources",
-      "L4 Block 1 has 0 sources",
-      "L4 Block 2 has 0 sources",
-      "L4 Block 3 has 0 sources",
-      "L5 Block 1 has 0 sources",
-      "L5 Block 2 has 0 sources",
-      "L5 Block 3 has 0 sources"
-    ]
+    "unlinkedBlockSources": []
   },
   "second_british_empire": {
     "totalLessons": 5,
     "totalSources": 25,
-    "nonStandardBlockCount": 5,
+    "nonStandardBlockCount": 0,
     "nonStandardSourceCount": 0,
     "mismatchedSrcImage": [],
     "portraitSources": [],

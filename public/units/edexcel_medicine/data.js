@@ -2059,10 +2059,11 @@ const edexcel_medicine_data = {
           content:
             "Trained medieval physicians practised clinical observation through non-invasive physical examination. The two primary diagnostics were taking the patient’s pulse and inspecting their urine (uroscopy). Physicians collected urine in a glass flask called a jordan and compared its colour, density, smell, and even taste against printed urine wheels. A dark, thick urine indicated burning yellow bile, whereas thin, pale urine pointed to excessive phlegm. By combining uroscopy with the patient's astrological chart and temperament, the physician determined which humour required expelling.",
           text: "Trained medieval physicians practised clinical observation through non-invasive physical examination. The two primary diagnostics were taking the patient’s pulse and inspecting their urine (uroscopy). Physicians collected urine in a glass flask called a jordan and compared its colour, density, smell, and even taste against printed urine wheels. A dark, thick urine indicated burning yellow bile, whereas thin, pale urine pointed to excessive phlegm. By combining uroscopy with the patient's astrological chart and temperament, the physician determined which humour required expelling.",
-          image: '/images/uroscopy_inspection.jpg',
+          image: '/images/zodiac_man.jpg',
           caption:
-            "Medieval physician inspecting the colour and sediment of a patient's urine in a flask.",
-          image_alt: 'Physician examining urine flask in a study',
+            '15th-century astrological Zodiac Man manuscript illumination illustrating the cosmological influence of astrological signs over each region of the human body.',
+          image_alt:
+            'Manuscript illustration of the Zodiac Man showing astrological correspondences to anatomical organs',
           isReversed: true,
           sources: [
             {
