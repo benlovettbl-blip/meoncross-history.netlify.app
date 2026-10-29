@@ -1,6 +1,3 @@
-// Edexcel GCSE History: Medicine Through Time (c1250–present)
-// Standardized 5-Block Narrative & Aligned Sources
-
 const edexcel_medicine_data = {
   lesson_reflection: {
     prompt:
@@ -6795,6 +6792,7 @@ const edexcel_medicine_data = {
           text: 'Around 1440 in Mainz, Germany, Johannes Gutenberg developed movable metal type, sparking an information revolution across Europe. By 1476, William Caxton had established England’s first commercial press in Westminster. Previously, medical knowledge was trapped in hand-illuminated Latin manuscripts laboriously copied by monastic scribes; errors compounded over centuries, and texts cost the equivalent of a small estate. The printing press allowed thousands of identical, accurate copies of anatomical treatises and clinical manuals to be produced rapidly and cheaply. Crucially, the Catholic Church lost its ability to censor scientific ideas or suppress works that questioned traditional dogma.',
           theme_heading: 'The Printing Press and the End of Monastic Monopoly',
           title: 'The Printing Press and the End of Monastic Monopoly',
+          act: 1,
         },
         {
           theme: 'Renaissance Humanism: Returning to Original Greek Sources',
@@ -6843,6 +6841,7 @@ const edexcel_medicine_data = {
           text: 'Beginning in fifteenth-century Italy, Renaissance Humanism championed human intellectual potential, direct curiosity, and a return to original classical manuscripts (ad fontes). Humanist scholars learned ancient Greek and bypassed corrupt medieval Latin translations. When scholars reread original Greek editions of Hippocrates and Galen, they discovered that medieval monks had distorted ancient texts to fit Christian theology. While humanism initially revived admiration for Galen, it also fostered a daring new spirit of skepticism: scholars began to test whether ancient assertions matched what could be observed in the living natural world.',
           theme_heading: 'Renaissance Humanism: Returning to Original Greek Sources',
           title: 'Renaissance Humanism: Returning to Original Greek Sources',
+          act: 2,
         },
         {
           theme: 'The Royal Society and the Motto ‘Nullius in Verba’',
@@ -6884,6 +6883,7 @@ const edexcel_medicine_data = {
           text: "In November 1660, a group of natural philosophers—including Christopher Wren, Robert Boyle, and John Wilkins—gathered at Gresham College in London to establish the Royal Society. Granted a royal charter by King Charles II in 1662, the Society met weekly to witness practical laboratory experiments rather than debate philosophical theory. Its official motto, Nullius in Verba ('Take nobody’s word for it'), served as a revolutionary declaration: scientific truth could never be established by appealing to ancient authorities like Galen or church tradition, but solely through observable, repeatable empirical proof.",
           theme_heading: 'The Royal Society and the Motto ‘Nullius in Verba’',
           title: 'The Royal Society and the Motto ‘Nullius in Verba’',
+          act: 3,
         },
         {
           theme: 'Philosophical Transactions and Global Peer Review',
@@ -6933,6 +6933,7 @@ const edexcel_medicine_data = {
           text: 'In 1665, the Royal Society’s secretary, Henry Oldenburg, founded Philosophical Transactions, the world’s first scientific journal. The journal created a global network of peer review: physicians and natural philosophers across Europe submitted experimental papers, clinical case notes, and technological inventions to be read, challenged, and verified by fellow scholars. Rather than keeping discoveries secret, scientists now had a professional incentive to publish rapidly to claim intellectual priority, dramatically accelerating the pace of medical debate.',
           theme_heading: 'Philosophical Transactions and Global Peer Review',
           title: 'Philosophical Transactions and Global Peer Review',
+          act: 4,
         },
         {
           theme: 'The Microscope and the Renaissance Paradox',
@@ -6975,6 +6976,7 @@ const edexcel_medicine_data = {
           text: "New scientific instruments expanded human observation beyond natural sight. In 1665, Robert Hooke published Micrographia, containing stunning magnified engravings of insects, bird feathers, and plant cells made using a compound microscope. A decade later, Antonie van Leeuwenhoek observed microscopic 'animalcules' (bacteria and protozoa) in tooth scrapings. Yet despite these revolutionary breakthroughs, a major historical paradox remained: because microscopes were too crude to connect microorganisms to infection, Renaissance physicians still possessed no effective treatments or cures for lethal epidemics.",
           theme_heading: 'The Microscope and the Renaissance Paradox',
           title: 'The Microscope and the Renaissance Paradox',
+          act: 5,
         },
       ],
       tasks: [
@@ -8028,6 +8030,7 @@ const edexcel_medicine_data = {
           text: "During the mid-seventeenth century, Dr Thomas Sydenham (1624–1689) revolutionised medical practice in London. While most university-trained physicians spent consultations reading Latin textbooks, casting horoscopes, and inspecting urine flasks, Sydenham insisted that true medical knowledge could only be gained at the patient’s bedside. He famously advised a prospective medical student to read Don Quixote rather than medical textbooks, arguing that scholastic book learning blinded doctors to the actual reality of sickness. Because he revived Hippocrates’ ancient method of close clinical observation, contemporaries honoured him as the 'English Hippocrates'.",
           theme_heading: 'The English Hippocrates: Rejecting Bookish Theory',
           title: 'The English Hippocrates: Rejecting Bookish Theory',
+          act: 1,
         },
         {
           theme: 'Disease Classification: Observationes Medicae (1676)',
@@ -8076,6 +8079,7 @@ const edexcel_medicine_data = {
           text: 'Sydenham’s greatest breakthrough was treating diseases as distinct biological entities rather than unique personal imbalances. For 1,500 years, humoral theory held that every patient had a unique humoral complexion; if two people had a fever, physicians believed they suffered from two entirely different imbalances. In his masterwork Observationes Medicae (1676), Sydenham argued that diseases should be classified into specific species, exactly as botanists classify plants and flowers. Measles, scarlet fever, and smallpox each had uniform, predictable symptoms and followed specific courses regardless of who caught them.',
           theme_heading: 'Disease Classification: Observationes Medicae (1676)',
           title: 'Disease Classification: Observationes Medicae (1676)',
+          act: 2,
         },
         {
           theme: 'The Cool Therapy for Smallpox Fevers',
@@ -8116,6 +8120,7 @@ const edexcel_medicine_data = {
           text: "Sydenham’s observational approach led him to abandon dangerous traditional therapies. Standard medical treatment for smallpox involved the 'sweating method': sealing patients in stifling rooms with shuttered windows, roaring fires, heavy blankets, and scorching cordials to force humours out through the skin. Sydenham observed that this treatment worsened delirium and caused fatal dehydration. Instead, he pioneered 'cool therapy': opening windows for fresh air, removing heavy blankets, giving cool barley water, and lowering the patient’s temperature. Mortality rates plummeted under his care.",
           theme_heading: 'The Cool Therapy for Smallpox Fevers',
           title: 'The Cool Therapy for Smallpox Fevers',
+          act: 3,
         },
         {
           theme: 'Empirical Therapeutics: Cinchona Bark and Laudanum',
@@ -8164,6 +8169,7 @@ const edexcel_medicine_data = {
           text: "Sydenham championed remedies proven by practical results rather than humoral theory. He popularized the use of Peruvian Bark (Cinchona / Jesuit's Bark), which contained quinine, to successfully treat intermittent agues (malaria). Galenist doctors had fiercely opposed Cinchona because it cured fevers without causing purging or vomiting, violating humoral logic. Sydenham also refined laudanum (opium dissolved in alcohol), establishing standardized dosages for pain relief, cardiac distress, and dysentery, creating one of the most effective analgesics in early modern medicine.",
           theme_heading: 'Empirical Therapeutics: Cinchona Bark and Laudanum',
           title: 'Empirical Therapeutics: Cinchona Bark and Laudanum',
+          act: 4,
         },
         {
           theme: 'The Limits of Sydenham’s Legacy',
@@ -8206,6 +8212,7 @@ const edexcel_medicine_data = {
           text: 'While Sydenham fundamentally altered clinical methodology, he remained a product of his era. He had no understanding of microscopic bacteria or contagion, continuing to believe that epidemic fevers were caused by unwholesome atmospheric miasmas. He also continued to use moderate bloodletting for selected ailments. Nevertheless, by establishing that diseases were specific external illnesses that attacked the body rather than personal humoral deficiencies, Sydenham laid the essential groundwork for modern pathology.',
           theme_heading: 'The Limits of Sydenham’s Legacy',
           title: 'The Limits of Sydenham’s Legacy',
+          act: 5,
         },
       ],
       tasks: [
@@ -9266,6 +9273,7 @@ const edexcel_medicine_data = {
           text: 'Andreas Vesalius (1514–1564), born in Brussels, was appointed Professor of Surgery and Anatomy at the prestigious University of Padua in Italy in 1537 at the remarkable age of twenty-three. Rejecting medieval tradition—where aristocratic professors sat in elevated chairs reading Galen while uneducated barber-surgeons chopped at cadavers below—Vesalius descended from the rostrum, gripped the dissection scalpel with his own hands, and encouraged students to examine human tissues and organs directly.',
           theme_heading: 'The Young Professor of Surgery at Padua',
           title: 'The Young Professor of Surgery at Padua',
+          act: 1,
         },
         {
           theme: 'Uncovering Two Hundred Galenic Errors',
@@ -9315,6 +9323,7 @@ const edexcel_medicine_data = {
           text: 'By performing dozens of dissections on executed criminals, Vesalius made a staggering discovery: Galen’s anatomical writings contained over two hundred major errors. Because ancient Roman law forbade the dissection of human bodies, Galen had dissected apes, pigs, and dogs, wrongly assuming human anatomy was identical. Vesalius proved that the human lower jaw was a single solid bone, not two as Galen claimed; the human breastbone (sternum) had three segments, not seven; the liver had two lobes, not five; and men and women had the exact same number of ribs, directly contradicting religious mythology.',
           theme_heading: 'Uncovering Two Hundred Galenic Errors',
           title: 'Uncovering Two Hundred Galenic Errors',
+          act: 2,
         },
         {
           theme: 'De Humani Corporis Fabrica (1543): A Masterpiece of Print and Art',
@@ -9356,6 +9365,7 @@ const edexcel_medicine_data = {
           text: "In 1543, at the age of twenty-eight, Vesalius published De Humani Corporis Fabrica ('On the Fabric of the Human Body') in Basel. The book was a triumph of Renaissance art and Gutenberg’s printing technology. Illustrated by master artists from Titian’s workshop in Venice, Fabrica featured over two hundred extraordinarily precise, realistic woodcuts. The illustrations depicted animated cadavers in dramatic classical poses set against rolling Italian landscapes, stripping away muscle layers step-by-step to reveal deep musculature, bone structures, and vascular networks.",
           theme_heading: 'De Humani Corporis Fabrica (1543): A Masterpiece of Print and Art',
           title: 'De Humani Corporis Fabrica (1543): A Masterpiece of Print and Art',
+          act: 3,
         },
         {
           theme: 'Fierce Academic Resistance and Backlash',
@@ -9405,6 +9415,7 @@ const edexcel_medicine_data = {
           text: 'Publication of Fabrica unleashed ferocious academic backlash across Europe. Conservative medical professors, horrified that an upstart youth had declared the revered Galen wrong, attacked Vesalius bitterly. His former teacher at Paris, Jacobus Sylvius, denounced him as an arrogant madman, claiming that if the human body did not match Galen’s descriptions, human anatomy must have physically degenerated since ancient times! Disheartened by professional hostility, Vesalius resigned his professorship at Padua to become court physician to Holy Roman Emperor Charles V.',
           theme_heading: 'Fierce Academic Resistance and Backlash',
           title: 'Fierce Academic Resistance and Backlash',
+          act: 4,
         },
         {
           theme: 'Dissemination in Britain and the Limits of Impact',
@@ -9448,6 +9459,7 @@ const edexcel_medicine_data = {
           text: 'In 1545, Thomas Geminus published Compendiosa in London, copying Vesalius’s anatomical plates onto copper engravings with English text. Geminus’s manual became an indispensable guide for English barber-surgeons. Yet Vesalius’s anatomical breakthroughs carried a major limitation: while he accurately mapped the human body, knowing the correct shape of an organ did not reveal how it functioned or provide cures for lethal diseases. Real medical progress required understanding physiology—a breakthrough that arrived eight decades later with William Harvey.',
           theme_heading: 'Dissemination in Britain and the Limits of Impact',
           title: 'Dissemination in Britain and the Limits of Impact',
+          act: 5,
         },
       ],
       tasks: [
@@ -10490,6 +10502,7 @@ const edexcel_medicine_data = {
           text: 'English physician William Harvey (1578–1657) studied medicine at the University of Padua under Hieronymus Fabricius, who discovered that human veins contained one-way valves. Returning to London, Harvey was appointed Physician to St Bartholomew’s Hospital and personal doctor to King James I and King Charles I. Fascinated by the motion of the heart, Harvey dissected dozens of living cold-blooded animals—such as frogs, toads, and eels—whose sluggish heartbeats allowed him to observe how the muscular chambers contracted and pumped in sequence.',
           theme_heading: 'Padua Foundations and Dissecting Living Animals',
           title: 'Padua Foundations and Dissecting Living Animals',
+          act: 1,
         },
         {
           theme: 'The Mechanical Pump: Challenging Galen’s Liver Theory',
@@ -10538,6 +10551,7 @@ const edexcel_medicine_data = {
           text: 'For 1,500 years, Galenic doctrine held that the liver continuously manufactured fresh venous blood from digested food (chyle), which was carried through veins to be consumed like fuel by body tissues, while the heart produced arterial blood carrying vital spirits. Harvey demolished this theory by treating the heart as a mechanical pump, influenced by contemporary fire engines and water pumps. Through rigorous calculations, Harvey proved that in one hour, the heart pumped over three times the entire weight of a human body in blood. It was biologically impossible for the liver to produce such enormous volume, meaning blood had to circulate continuously in a closed loop.',
           theme_heading: 'The Mechanical Pump: Challenging Galen’s Liver Theory',
           title: 'The Mechanical Pump: Challenging Galen’s Liver Theory',
+          act: 2,
         },
         {
           theme: 'De Motu Cordis (1628) and the Tourniquet Proof',
@@ -10579,6 +10593,7 @@ const edexcel_medicine_data = {
           text: "In 1628, Harvey published his findings in Frankfurt in Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus ('On the Motion of the Heart and Blood in Animals'). To prove circulation on living humans, Harvey devised a simple forearm ligature experiment: tying a tight tourniquet blocked arterial blood from entering the arm; loosening it slightly allowed arterial blood through, engorging the veins. When he pressed a finger along a vein, the one-way valves prevented blood from flowing backwards, proving conclusively that arterial blood flowed away from the heart, and venous blood returned toward it.",
           theme_heading: 'De Motu Cordis (1628) and the Tourniquet Proof',
           title: 'De Motu Cordis (1628) and the Tourniquet Proof',
+          act: 3,
         },
         {
           theme: 'Professional Ridicule and Backlash',
@@ -10628,6 +10643,7 @@ const edexcel_medicine_data = {
           text: "Harvey’s discovery was met with furious ridicule. Conservative physicians, mocking him as a 'circulator' (a Latin pun meaning charlatan or wandering quack), refused to accept that Galen was wrong. Prominent doctors like Jean Riolan in Paris argued that continuous blood circulation would disrupt the delicate balance of the four humours. The biographer John Aubrey noted that after publishing De Motu Cordis, Harvey 'fell mightily in his practice' as wealthy patients refused to consult a doctor whose theories were considered eccentric and mad.",
           theme_heading: 'Professional Ridicule and Backlash',
           title: 'Professional Ridicule and Backlash',
+          act: 4,
         },
         {
           theme: 'The Limits of Harvey’s Impact on Treatment',
@@ -10670,6 +10686,7 @@ const edexcel_medicine_data = {
           text: 'Although Harvey’s work marked the birth of modern physiology, its immediate impact on treating sick patients was almost non-existent. Harvey had no compound microscope powerful enough to see the tiny capillaries linking arteries and veins (which Marcello Malpighi finally observed in frog lungs in 1661). Furthermore, understanding blood circulation offered no new treatments: doctors could not perform blood transfusions or surgical vascular repairs, and physicians continued to prescribe phlebotomy, purging, and herbal cordials for another two centuries.',
           theme_heading: 'The Limits of Harvey’s Impact on Treatment',
           title: 'The Limits of Harvey’s Impact on Treatment',
+          act: 5,
         },
       ],
       tasks: [
@@ -11720,6 +11737,7 @@ const edexcel_medicine_data = {
           text: 'In the spring of 1665, bubonic plague struck London with ferocity. Originating in the squalid suburban parish of St Giles-in-the-Fields, the epidemic exploded during an unusually hot, dry summer. Between June and November 1665, an estimated 100,000 Londoners—nearly one-quarter of the capital’s population—perished. King Charles II, his court, Parliament, and virtually all wealthy physicians fled to Oxford and the countryside, leaving poor citizens, parish watchmen, and a handful of devoted apothecaries to confront the devastation.',
           theme_heading: 'The Outbreak in St Giles-in-the-Fields (Spring 1665)',
           title: 'The Outbreak in St Giles-in-the-Fields (Spring 1665)',
+          act: 1,
         },
         {
           theme: 'Continuity of Ideas: Sin, Miasma, and Astrology',
@@ -11769,6 +11787,7 @@ const edexcel_medicine_data = {
           text: 'Despite the anatomical discoveries of Vesalius and Harvey, seventeenth-century explanations of the plague were almost identical to those of 1348. The Church proclaimed the pestilence was God’s wrath punishing London for vice, drunkenness, and the sins of the Restoration court. Physicians blamed poisonous miasma arising from open sewers, filthy city ditches, and foul vapours. Astrologers cited unusual comets and celestial alignments in late 1664. Because the true bacterial vector—Yersinia pestis carried by fleas living on black rats—remained unknown, medicine was entirely powerless.',
           theme_heading: 'Continuity of Ideas: Sin, Miasma, and Astrology',
           title: 'Continuity of Ideas: Sin, Miasma, and Astrology',
+          act: 2,
         },
         {
           theme: 'The Lord Mayor’s Orders: Quarantines and Red Crosses',
@@ -11810,6 +11829,7 @@ const edexcel_medicine_data = {
           text: "Civic authorities intervened with stricter regulatory force than in 1348. The Lord Mayor of London issued detailed plague orders: houses where infection was detected were forcibly boarded up for forty days. A red cross one foot high was painted on the front door alongside the prayer 'Lord have mercy upon us'. Armed watchmen guarded doors day and night to prevent residents from escaping. Parishes appointed 'searchers of the dead' (usually elderly women) to inspect corpses and report causes of death for the weekly Bills of Mortality.",
           theme_heading: 'The Lord Mayor’s Orders: Quarantines and Red Crosses',
           title: 'The Lord Mayor’s Orders: Quarantines and Red Crosses',
+          act: 3,
         },
         {
           theme: 'Misguided Prevention: Slaughter of Dogs and Tar Fires',
@@ -11859,6 +11879,7 @@ const edexcel_medicine_data = {
           text: 'Because authorities believed bad air and animal fur carried infection, they enacted counterproductive measures. Believing household pets spread miasma, the Lord Mayor ordered the slaughter of over 40,000 dogs and 200,000 cats. This catastrophic blunder eliminated the primary natural predators of black rats, allowing the rodent population and their plague-carrying fleas to multiply uncontrollably. Streets were choked with dense, suffocating smoke as civic authorities burned barrels of pitch, brimstone, and coal day and night to purify the air.',
           theme_heading: 'Misguided Prevention: Slaughter of Dogs and Tar Fires',
           title: 'Misguided Prevention: Slaughter of Dogs and Tar Fires',
+          act: 4,
         },
         {
           theme: 'Desperate Treatments and Demographic Collapse',
@@ -11902,6 +11923,7 @@ const edexcel_medicine_data = {
           text: "Medical treatments in 1665 revealed the complete failure of Renaissance science to improve bedside therapeutics. Doctors prescribed smoking tobacco to repel foul air, holding vinegar-soaked sponges, taking London Treacle (an electuary of Theriac and herbs), and strapping live plucked chickens or dried toads to swollen buboes to 'draw out' poison. At night, dead carts trundled through deserted streets accompanied by the mournful cry 'Bring out your dead!', dumping bodies into vast mass trenches at Holywell Mount and Bunhill Fields. The plague finally abated during the freezing winter of 1665–1666, followed by the Great Fire of London in September 1666.",
           theme_heading: 'Desperate Treatments and Demographic Collapse',
           title: 'Desperate Treatments and Demographic Collapse',
+          act: 5,
         },
       ],
       tasks: [
@@ -32091,7 +32113,6 @@ const edexcel_medicine_data = {
   ],
   edition: '2026.1',
 };
-
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = edexcel_medicine_data;
 }

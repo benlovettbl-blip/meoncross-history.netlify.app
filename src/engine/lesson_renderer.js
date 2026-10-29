@@ -6411,12 +6411,17 @@ export function renderLesson(lesson) {
         const bLetter = bLetterMatch ? bLetterMatch[1].toUpperCase() : rawSource.letter || '';
         const isInteractiveSourceUnit =
           window.currentUnitId === 'cme_new' ||
+          unitId === 'cme_new' ||
           window.currentUnitId === 'edexcel_medicine' ||
           unitId === 'edexcel_medicine' ||
           window.currentUnitId === 'eee' ||
           unitId === 'eee' ||
           window.currentUnitId === 'weimar_nazi_germany' ||
-          unitId === 'weimar_nazi_germany';
+          unitId === 'weimar_nazi_germany' ||
+          window.currentUnitId === 'usa' ||
+          unitId === 'usa' ||
+          window.currentUnitId === 'cold_war' ||
+          unitId === 'cold_war';
         const bCardIdAttr =
           bLetter && isInteractiveSourceUnit
             ? `id="source-card-${bLetter}" data-source-letter="${bLetter}"`
@@ -12008,16 +12013,13 @@ ${poem.poem_text}
   return html;
 }
 
+const isGCSEInteractiveUnit = (uId) =>
+  ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany', 'usa', 'cold_war'].includes(uId);
+
 if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
   window._cmeSourceHighlightBound = true;
   document.addEventListener('mouseover', (e) => {
-    if (
-      window.currentUnitId !== 'cme_new' &&
-      window.currentUnitId !== 'edexcel_medicine' &&
-      window.currentUnitId !== 'eee' &&
-      window.currentUnitId !== 'weimar_nazi_germany'
-    )
-      return;
+    if (!isGCSEInteractiveUnit(window.currentUnitId)) return;
     const box = e.target.closest('[data-target-source]');
     if (box) {
       const letter = box.getAttribute('data-target-source');
@@ -12032,13 +12034,7 @@ if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
     }
   });
   document.addEventListener('mouseout', (e) => {
-    if (
-      window.currentUnitId !== 'cme_new' &&
-      window.currentUnitId !== 'edexcel_medicine' &&
-      window.currentUnitId !== 'eee' &&
-      window.currentUnitId !== 'weimar_nazi_germany'
-    )
-      return;
+    if (!isGCSEInteractiveUnit(window.currentUnitId)) return;
     const box = e.target.closest('[data-target-source]');
     if (box) {
       const letter = box.getAttribute('data-target-source');
@@ -12053,13 +12049,7 @@ if (typeof window !== 'undefined' && !window._cmeSourceHighlightBound) {
     }
   });
   document.addEventListener('click', (e) => {
-    if (
-      window.currentUnitId !== 'cme_new' &&
-      window.currentUnitId !== 'edexcel_medicine' &&
-      window.currentUnitId !== 'eee' &&
-      window.currentUnitId !== 'weimar_nazi_germany'
-    )
-      return;
+    if (!isGCSEInteractiveUnit(window.currentUnitId)) return;
     const box = e.target.closest('[data-target-source]');
     if (box) {
       const letter = box.getAttribute('data-target-source');

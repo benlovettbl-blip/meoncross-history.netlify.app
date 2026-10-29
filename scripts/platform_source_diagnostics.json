@@ -45,15 +45,7 @@
     "nonStandardBlockCount": 0,
     "nonStandardSourceCount": 0,
     "mismatchedSrcImage": [],
-    "portraitSources": [
-      {
-        "lesson": "lesson_3_1",
-        "letter": "D",
-        "title": "Source D: Thomas Harriot, Mathematician, Astronomer, and Oxford Scholar",
-        "image": "/units/eee/assets/portraits/harriot.jpg",
-        "reason": "Filename matches portrait but title claims action/event"
-      }
-    ],
+    "portraitSources": [],
     "emptySources": [],
     "unlinkedBlockSources": []
   },

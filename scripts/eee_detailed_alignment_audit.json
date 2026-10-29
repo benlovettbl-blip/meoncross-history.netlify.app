@@ -1,0 +1,614 @@
+[
+  {
+    "id": "lesson_1_1",
+    "title": "KT 1.1: The Situation on Elizabeth’s Accession, 1558",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "Hatfield Oak to the Tower: Inheriting Bankruptcy and Cecil's Partnership (1558)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Queen Elizabeth I Coronation Portrait (1559)",
+        "sourceImg": "/images/elizabeth_coronation_portrait.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "The Royal Court & Privy Council: Patronage, Factional Flattery and the 19-Man Council (1558)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Sir William Cecil, Lord Burghley, Elizabeth’s Chief Minister",
+        "sourceImg": "/images/sir_william_cecil_lord_burghley.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "Challenges of Gender & Marriage: Female Monarchical Rule, Legitimacy and Knox's Opposition (1558)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Contemporary Portrait of Queen Anne Boleyn (c. 1534)",
+        "sourceImg": "/units/eee/assets/portraits/anne_boleyn.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "Whitehall to the Shires: Reluctant Parliaments and Unpaid Country JPs (1559)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: King Henry VIII in Royal Splendour (c. 1540)",
+        "sourceImg": "/units/eee/assets/portraits/henry_viii.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Catholic Pincer: The Surrender of Calais and French Troops on the Tweed (1558–1560)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Queen Mary I and the Inheritance of War and Debt (1554)",
+        "sourceImg": "/images/queen_mary_i_mary_tudor.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      }
+    ]
+  },
+  {
+    "id": "lesson_1_2",
+    "title": "KT 1.2: The 'Settlement' of Religion, 1559",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "A Fractured Realm: Marian Burnings, Geneva Exiles and the Search for Peace (1558–1559)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: The 1559 Act of Supremacy (Parliamentary Roll)",
+        "sourceImg": "/images/act_of_supremacy.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "The Crown Restored: The Act of Supremacy and the Title of Supreme Governor (1559)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Title Page of the 1559 Book of Common Prayer",
+        "sourceImg": "/images/book_of_common_prayer_1559_authentic.png",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "The Altar of Compromise: The Act of Uniformity, Liturgy and One-Shilling Recusancy (1559)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Memorandum by Sir William Cecil on the Uniformity Bill (1559)",
+        "sourceImg": "/units/eee/assets/portraits/william_cecil.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "The Royal Injunctions: Crucifix Bans, Clerical Surplices and Church Visitations (1559)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: Engraving of the House of Lords Passing the 1559 Settlement",
+        "sourceImg": "/images/elizabeth_i_in_parliament_engraving.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Pulpit of the Realm: Church Courts, Royal Homilies and Community Feasts (1559–1560s)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Papal Dispatch of Pope Pius V Condemning the Elizabethan Settlement",
+        "sourceImg": "/units/eee/assets/portraits/pius_v.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      }
+    ]
+  },
+  {
+    "id": "lesson_1_3",
+    "title": "KT 1.3: Challenge to the Religious Settlement",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "The Puritan Challenge: Beliefs, Demands and the Crucifix Controversy (1559–1563)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Papal Bull Regnans in Excelsis Excommunicating Elizabeth (1570)",
+        "sourceImg": "/images/regnans_in_excelsis_1570.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "The Vestments Controversy: Archbishop Parker, the Surplice Dispute and Puritan Defiance (1566)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Contemporary Woodcut of Father Edmund Campion SJ at the Tyburn Gallows (1581)",
+        "sourceImg": "/images/edmund_campion.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "The Catholic Stronghold: Northern Magnates, Manor Altars and Church Papists (1559–1568)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Historical Map of Catholic Resistance, Priest Holes, and Seminary Networks",
+        "sourceImg": "/images/elizabethan_england_catholic_revolt_mary_scots_map.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "The Counter-Reformation Shadow: Alba's Tercios, Douai Seminaries and the Jesuit Mission (1562–1568)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: Portrait of Father Edmund Campion SJ, Catholic Scholar and Priest",
+        "sourceImg": "/units/eee/assets/portraits/campion.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Genoese Loan: Spanish Silver, Trade Embargoes and the Edge of War (1568–1569)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Sir Francis Walsingham’s Surveillance Network on Jesuit Safehouses",
+        "sourceImg": "/units/eee/assets/portraits/walsingham.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      }
+    ]
+  },
+  {
+    "id": "lesson_1_4",
+    "title": "KT 1.4: The Problem of Mary, Queen of Scots, 1568–69",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "Two Anointed Queens: The Scottish Succession, Bloodline Rivalry and the French Pincer (1560–1565)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Portrait of Mary Stuart, Queen of Scots (c. 1565)",
+        "sourceImg": "/images/mary_queen_of_scots_mary_stuart.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "Kirk o' Field: Gunpowder Treason, Bothwell's Ambition and Darnley's Murder (1567)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Sir Francis Walsingham's Intelligence Dossier on Mary Stuart",
+        "sourceImg": "/images/sir_francis_walsingham.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "Lochleven to the Solway: Abdication, Island Dungeon and Mary's Desperate Flight (1567–1568)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Portrait of Mary of Guise, Queen Regent of Scotland",
+        "sourceImg": "/units/eee/assets/portraits/mary_of_guise.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "The York Inquiry: The Mysterious Casket Letters and Cecil's Stalemate (1568–1569)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: King Francis II of France and Mary's Claim to the English Royal Arms",
+        "sourceImg": "/units/eee/assets/portraits/francis_ii.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Gilded Cage: Bolton Castle, Northern Vigilance and the Threat to Whitehall (1569)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Henri, Duke of Guise, Leader of the French Catholic League",
+        "sourceImg": "/units/eee/assets/portraits/duke_of_guise.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      }
+    ]
+  },
+  {
+    "id": "lesson_2_1",
+    "title": "KT 2.1: Plots and Revolts at Home, 1569–1587",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "The Northern Fire: Catholic Earls, Durham Cathedral and Tudor Vengeance (1569–1570)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Thomas Percy, 7th Earl of Northumberland, Leader of the 1569 Revolt",
+        "sourceImg": "/images/the_earl_of_northumberland_thomas_percy.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "Regnans in Excelsis & The Ridolfi Conspiracy: Intercepted Ciphers and Norfolk's Axe (1570–1572)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Thomas Howard, 4th Duke of Norfolk, Executed for the 1571 Ridolfi Plot",
+        "sourceImg": "/images/the_duke_of_norfolk_thomas_howard.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "The Jesuit Shadow & Throckmorton's Confession: The Rack and the Bond of Association (1583–1584)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Francis Throckmorton and the 1583 Catholic Conspiracy",
+        "sourceImg": "/images/francis_throckmorton.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "The Beer Barrel Cryptograms: Walsingham's Trap and Babington's Fatal Sign-Off (1586)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: Anthony Babington and the 1586 Conspiracy",
+        "sourceImg": "/images/anthony_babington.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Great Hall at Fotheringhay: The Regicide Dilemma and Mary's Red Execution (1587)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Walsingham and Phelippes' Intercepted Babington Cipher Postscript (1586)",
+        "sourceImg": "/images/babington_cipher_postscript.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      }
+    ]
+  },
+  {
+    "id": "lesson_2_2",
+    "title": "KT 2.2: Relations with Spain, 1569–1585",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "The Spanish Superpower: Philip II's Empire, the Dutch Revolt and English Sympathy (1570–1577)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Robert Dudley, Earl of Leicester, Advocate of Protestant Intervention",
+        "sourceImg": "/images/robert_dudley_earl_of_leicester.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "The Silver Route: John Hawkins, Caribbean Privateering and the Cacafuego Loot (1570–1579)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Sir Francis Drake, Privateer and Circumnavigator (c. 1581)",
+        "sourceImg": "/images/sir_francis_drake.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "The Golden Hind: Drake's Oceanic Voyage, Pacific Plunder and the Plymouth Return (1577–1580)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Sir John Hawkins, Naval Commander and Atlantic Privateer",
+        "sourceImg": "/images/sir_john_hawkins.JPG",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "The Deptford Knighting: Elizabeth's Defiance, Philip's Outrage and the £10,000 Reward (1580–1581)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: Jodocus Hondius's 1595 Map of Drake’s Global Circumnavigation and Raids",
+        "sourceImg": "/images/hondius_drake_circumnavigation_map_1595.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Alliance Hardens: The French Catholic League, Joinville and the Treaty of Nonsuch (1584–1585)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Alexander Farnese, Duke of Parma, Commander of the Army of Flanders",
+        "sourceImg": "/units/eee/assets/portraits/parma.png",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      }
+    ]
+  },
+  {
+    "id": "lesson_2_3",
+    "title": "KT 2.3: The Outbreak of War with Spain, 1585–1588",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "The Treaty of Nonsuch: Leicester's Expedition and the Defense of Flushing (1585–1586)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Sir Francis Drake Planning the Pre-emptive Raid on Cadiz (1587)",
+        "sourceImg": "/images/drake.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "Disaster in the Low Countries: Zutphen, Desertions and Leicester's Resignation (1586–1587)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Queen Elizabeth I Addressing the Troops at Tilbury (August 1588)",
+        "sourceImg": "/images/elizabeth_tilbury_speech.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "Singeing the King of Spain's Beard: Drake's Daring Raid on Cadiz Harbour (1587)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Alonso Pérez de Guzmán, 7th Duke of Medina Sidonia",
+        "sourceImg": "/units/eee/assets/portraits/medina_sidonia.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "The Logistical Shock: Seasoned Barrel Hoops, Scorched Fleets and Spanish Delay (1587–1588)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: Robert Dudley Organizing the Militia Camp at West Tilbury (1588)",
+        "sourceImg": "/units/eee/assets/portraits/robert_dudley.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Enterprise of England: Medina Sidonia Assembles the Great Fleet at Lisbon (1588)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Parma’s Army of Flanders Assembled on the Coast of Dunkirk (1588)",
+        "sourceImg": "/images/the_duke_of_parma.png",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      }
+    ]
+  },
+  {
+    "id": "lesson_2_4",
+    "title": "KT 2.4: The Spanish Armada: Strategy, Conflict & Defeat, 1588",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "The Crescent Advances: Channel Skirmishes from Plymouth to the Isle of Wight (1588)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: The Battle of Gravelines and the Fireships (8 August 1588)",
+        "sourceImg": "/images/battle_of_gravelines_1588.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "Midnight at Calais Roads: Hell-Burners, Severed Anchors and Broken Formation (1588)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: The Armada Portrait of Queen Elizabeth I (1588)",
+        "sourceImg": "/images/armada_portrait.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "The Bloodbath at Gravelines: Hawkins' Race-Built Galleons and Close-Range Broadside (1588)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Cartographic Route of the Armada's Flight Around Scotland and Ireland",
+        "sourceImg": "/images/spanish_armada_1588_route_battle_map.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "The Protestant Wind: The Ordeal of the Scottish Isles and Shipwrecks on Irish Rocks (1588)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: Duke of Medina Sidonia's Post-Action Report to King Philip II (1588)",
+        "sourceImg": "/images/the_duke_of_medina_sidonia.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Protestant Deliverance: Elizabeth at Tilbury, Medals of Gold and English Triumph (1588–1589)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Queen Elizabeth in Triumphal Procession to St Paul's Cathedral (1588)",
+        "sourceImg": "/images/elizabeth_armada_thanksgiving_st_pauls.png",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      }
+    ]
+  },
+  {
+    "id": "lesson_3_1",
+    "title": "KT 3.1: Education and Leisure in Elizabethan England, 1558–1588",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "Humanism & The Hornbook: The Printing Press, Illiteracy and the Protestant Drive for Reading",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Queen Elizabeth in Royal Procession Surrounded by Nobles (1601)",
+        "sourceImg": "/images/elizabeth_procession_1601.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "The Latin Grammar School: Rote Chant, Birch Rods and the Making of the Tudor Elite",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Johannes de Witt’s Sketch of the Swan Theatre Interior (c. 1596)",
+        "sourceImg": "/images/swan_theatre_interior_de_witt.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "Oxford, Cambridge & The Inns of Court: Gentlemen Scholars, Lawyers and Private Tutors",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Engraving of an Elizabethan Public Amphitheatre on the South Bank",
+        "sourceImg": "/images/theatre.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "Blood Sports and Tavern Dice: Football Brawls, Cockfighting and Aristocratic Hunting",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: Thomas Harriot, Mathematician, Astronomer, and Oxford Scholar",
+        "sourceImg": "/units/eee/assets/portraits/harriot.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Elizabethan Playhouse: Commercial Theatres, Groundlings and Puritan Opposition",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Tudor Herbarium and Botanical Woodcuts from Parkinson's Botanical Compendium",
+        "sourceImg": "/images/botany_parkinson.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      }
+    ]
+  },
+  {
+    "id": "lesson_3_2",
+    "title": "KT 3.2: The Problem of the Poor and Vagrancy, 1558–1588",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "The Hungry Generation: Population Explosion, Harvest Failures and Soaring Bread Prices",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Thomas Harman’s Caveat for Common Cursitors (1567)",
+        "sourceImg": "/images/caveat_for_cursitors.png",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "Enclosure and Rural Poverty: Sheep Farming, Rising Rents and Displaced Villagers",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: The Elizabethan Poor Law Statute of 1601 (Parliamentary Roll)",
+        "sourceImg": "/images/poor_law_1601.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "The Fear of Vagrancy: 'Deserving Poor' vs 'Idle Beggars' and Social Anxieties",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Contemporary Woodcut of Vagrants Punished in Stocks and at the Cart-Tail",
+        "sourceImg": "/images/tudor_vagrant_whipping.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "Branded with the Red-Hot Iron: The 1572 Vagabonds Act and Compulsory Poor Rates",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: William Cecil's Parliamentary Memoranda on Grain Inflation and Enclosure (1570s)",
+        "sourceImg": "/units/eee/assets/portraits/william_cecil.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "Raw Wool and the House of Correction: The 1576 Act and the Foundations of Modern Welfare",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Quarter Sessions Records of Justices of the Peace in Norfolk",
+        "sourceImg": "/units/eee/assets/portraits/norfolk.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      }
+    ]
+  },
+  {
+    "id": "lesson_3_3",
+    "title": "KT 3.3: Exploration and Voyages of Discovery, 1558–1588",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "Navigating the Ocean Sea: Astrolabes, Magnetic Compasses and Mercator's Projection (1558–1575)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: English Naval Galleons with Low-Profile Race-Built Hulls (c. 1585)",
+        "sourceImg": "/images/spanish_armada.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "The Race-Built Galleon: John Hawkins' Low Forecastles, Lateen Sails and Heavy Culvers (1558–1577)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: Sir Francis Drake with Navigational Compass and Terrestrial Globe",
+        "sourceImg": "/images/francis_drake.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "The Quest for Cathay: The Muscovy Company, Guinea Gold and the Northwest Passage (1550s–1570s)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: Augustine Ryther's Sea Chart of the English Channel and Atlantic Approaches",
+        "sourceImg": "/images/spanish_armada_1588_ryther_maritime_museum_auth.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "Around the Globe: Drake's Golden Hind, the Straits of Magellan and Nova Albion (1577–1580)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: Sir John Hawkins, Treasurer of the Royal Navy and Slave Trade Pioneer",
+        "sourceImg": "/units/eee/assets/portraits/hawkins.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Spoils of the Pacific: Stolen Silver, King Philip's Humiliation and Global Geopolitics (1580–1588)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: Sir Richard Grenville, Vice-Admiral and Commander of the 1585 Virginia Expedition",
+        "sourceImg": "/images/sir_richard_grenville.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      }
+    ]
+  },
+  {
+    "id": "lesson_3_4",
+    "title": "KT 3.4: Raleigh and the Colonisation of Virginia, 1584–1590",
+    "pairs": [
+      {
+        "slot": 1,
+        "blockHeading": "The Imperial Vision: Raleigh's Royal Patent, Arthur Barlowe's Expedition and Virginia (1584)",
+        "sourceLetter": "A",
+        "sourceTitle": "Source A: Sir Walter Raleigh, Courtier, Explorer, and Coloniser (c. 1588)",
+        "sourceImg": "/images/sir_walter_raleigh.jpg",
+        "hasText": false,
+        "questionBadge": "Author’s Purpose"
+      },
+      {
+        "slot": 2,
+        "blockHeading": "Mismatched Colonists: Soldiers, Alchemists, Grenville's Command and Lane's Fort (1584–1585)",
+        "sourceLetter": "B",
+        "sourceTitle": "Source B: The Roanoke Island Colony Map by John White (1585)",
+        "sourceImg": "/images/john_white_roanoke_map_1585_authentic.jpg",
+        "hasText": false,
+        "questionBadge": "Historical Utility"
+      },
+      {
+        "slot": 3,
+        "blockHeading": "Shoals and Spoiled Corn: The Tiger Wreck, Food Shortages and Secotan Hostility (1585–1586)",
+        "sourceLetter": "C",
+        "sourceTitle": "Source C: John White Watercolor of an Algonquin Chief (Herowan) of Roanoke (1585)",
+        "sourceImg": "/images/john_white_chief_herowan.jpg",
+        "hasText": false,
+        "questionBadge": "Source Inference"
+      },
+      {
+        "slot": 4,
+        "blockHeading": "The Severed Thread: The Death of Wingina, Drake's Rescue and the First Evacuation (1586)",
+        "sourceLetter": "D",
+        "sourceTitle": "Source D: John White's Painting of an Algonquin Religious Feast and Dance at Secotan",
+        "sourceImg": "/images/john_white_ceremony_dance.jpg",
+        "hasText": false,
+        "questionBadge": "Reliability & Provenance"
+      },
+      {
+        "slot": 5,
+        "blockHeading": "The Lost Colony: John White's Families, the Armada Embargo and the Mystery of CROATOAN (1587–1590)",
+        "sourceLetter": "E",
+        "sourceTitle": "Source E: John White Watercolor of an Algonquin Man and Woman Eating at Meat (1585)",
+        "sourceImg": "/images/john_white_sitting_at_meat.jpg",
+        "hasText": false,
+        "questionBadge": "Cross-Referencing"
+      }
+    ]
+  }
+]
