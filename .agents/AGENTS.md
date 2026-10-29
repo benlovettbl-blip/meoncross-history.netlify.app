@@ -558,13 +558,5 @@ STRICT RULE: Across all Key Topics in Weimar & Nazi Germany (Key Topics 1 to 4) 
 2. **Zero Redundant Portrait Placeholders:** Strictly eliminate static headshot portrait photos from source slots. If an individual is examined (e.g. Friedrich Ebert, Gustav Stresemann, Rosa Luxemburg, Adolf Hitler), provide their authentic written words or a dynamic historical document rather than a passive portrait.
 3. **Rigorous Quality Gates:** All written and visual sources must remain synchronized across `data/<unit_id>.json`, `units/<unit_id>/data.js`, `database.json`, and `scripts/master_rights_database.json`, with zero broken links, zero intra-lesson duplicate files, and zero school identifiers.
 
-## Mandatory 3 Strategic Recommendations Protocol (Every Conversation & Turn)
-STRICT USER DIRECTIVE: At the conclusion of EVERY turn and conversation, provide exactly three (3) simple, prioritized recommendations for next steps.
-1. **Strict 1–2 Line Format:** Each recommendation MUST be strictly 1 or 2 concise lines only. Never output multi-paragraph rationale essays or nested bullet lists.
-2. **Dynamic Prioritization (3 Tiers):**
-   - **Recommendation 1 (Immediate Next Priority):** The single most logical next step.
-   - **Recommendation 2 (Secondary Target):** A complementary frontend, print, or curriculum polish target.
-   - **Recommendation 3 (Strategic / Backlog Target):** A structural or new unit enhancement.
-3. **Zero Compass Churn:** Do not print the Rollout Compass. Keep the output clean, fast, and high-signal.
 
 
