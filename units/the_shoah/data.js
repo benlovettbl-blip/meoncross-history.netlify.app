@@ -517,11 +517,6 @@ const the_shoah_data = {
             image: '/images/thessaloniki_jewish_heritage.jpg',
             src: '/images/thessaloniki_jewish_heritage.jpg',
           },
-          image: '/images/thessaloniki_jewish_heritage.jpg',
-          image_alt:
-            'Historic Sephardic Jewish community and port workers of Salonica (Thessaloniki), Greece',
-          caption:
-            'The vibrant Sephardic Jewish community of Thessaloniki (Salonica), Greece, an ancient Ladino-speaking maritime and cultural hub where commercial port activity ceased on the Sabbath.',
         },
         {
           act: 5,
@@ -2199,11 +2194,6 @@ const the_shoah_data = {
               'Motive: To hide eyewitness evidence of Nazi crimes beneath the ghetto ruins before being killed.',
             ],
           },
-          image: '/images/warsaw_ghetto_child_smuggler_1941.jpg',
-          image_alt:
-            'Polish Jewish child squeezing through an opening in the brick Warsaw Ghetto wall to smuggle food',
-          caption:
-            'A Jewish child squeezes through a breach in the brick ghetto wall to smuggle potatoes and bread into the starving Warsaw Ghetto, risking immediate execution by German guards.',
         },
       ],
       pair_share: {
@@ -3007,11 +2997,6 @@ const the_shoah_data = {
             image: '/images/chelmno_gas_van_site_1942.jpg',
             src: '/images/chelmno_gas_van_site_1942.jpg',
           },
-          image: '/images/chelmno_gas_van_site_1942.jpg',
-          image_alt:
-            'Archaeological and forensic site of the Chełmno extermination camp manor house and gas van loading area',
-          caption:
-            'Forensic excavation site of Chełmno (Kulmhof), the first dedicated extermination camp opened in December 1941, where victims were murdered inside specially modified Saurer exhaust vans.',
         },
       ],
       pair_share: {
@@ -3802,11 +3787,6 @@ const the_shoah_data = {
               'Motive: To boast about crushing the Warsaw Ghetto Uprising and burning the ghetto.',
             ],
           },
-          image: '/images/warsaw_ghetto_uprising_1943.jpg',
-          image_alt:
-            'German troops and SS forces watching smoke rise over burning residential blocks during the Warsaw Ghetto Uprising, May 1943',
-          caption:
-            'Smoke rises from burning residential blocks in the Warsaw Ghetto in May 1943 as SS General Jürgen Stroop ordered the ghetto burned block-by-block to crush the armed Jewish Combat Organisation (ŻOB) resistance.',
         },
         {
           act: 5,
@@ -4567,11 +4547,6 @@ const the_shoah_data = {
             image: '/images/vel_d_hiv_pithiviers_camp_1942.jpg',
             src: '/images/vel_d_hiv_pithiviers_camp_1942.jpg',
           },
-          image: '/images/vel_d_hiv_pithiviers_camp_1942.jpg',
-          image_alt:
-            'Barbed wire perimeter and barracks of the Pithiviers internment camp in occupied France, 1942',
-          caption:
-            'The Pithiviers internment camp in occupied France, where thousands of Jewish families rounded up by French police during the July 1942 Vél d’Hiv raid were held before deportation to Auschwitz.',
         },
         {
           act: 3,
@@ -5377,11 +5352,6 @@ const the_shoah_data = {
               'Motive: To gather forensic evidence of Nazi atrocities for the world to see.',
             ],
           },
-          image: '/images/bergen_belsen_liberation_british_1945.jpg',
-          image_alt:
-            'British Army medical vehicles entering Bergen-Belsen concentration camp in northwest Germany, April 1945',
-          caption:
-            'British Army medical and military units enter Bergen-Belsen concentration camp in April 1945, discovering tens of thousands of unburied corpses and starving survivors dying of typhus and dysentery.',
         },
         {
           act: 3,
@@ -5470,11 +5440,6 @@ const the_shoah_data = {
               'Motive: To document Nazi leaders being tried under international law for aggressive war and genocide.',
             ],
           },
-          image: '/images/nuremberg_trial_defendants_dock_1945.jpg',
-          image_alt:
-            'Hermann Göring, Rudolf Hess, and senior Nazi defendants seated in Courtroom 600 during the Nuremberg Trials, 1945',
-          caption:
-            'Twenty-one principal Nazi defendants seated in Courtroom 600 at the Palace of Justice in Nuremberg during the International Military Tribunal (1945–1946), prosecuted for Crimes Against Humanity.',
         },
         {
           act: 5,
@@ -5881,4 +5846,7 @@ const the_shoah_data = {
   ],
 };
 
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = the_shoah_data;
+}
 export default the_shoah_data;

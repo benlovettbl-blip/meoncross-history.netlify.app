@@ -482,7 +482,6 @@ const eee_data = {
               "In sixteenth-century patriarchal England, female rule was widely viewed as unnatural and politically fragile—a prejudice famously voiced in John Knox's contemporary polemic 'The First Blast of the Trumpet Against the Monstruous Regiment of Women'. Elizabeth countered these doubts by commissioning coronation iconography that fused imperial majesty with sacred legitimacy: depicted crowned with flowing virgin hair (symbolizing purity and dedication to the realm), clad in opulent cloth-of-gold robes, and holding the orb and sceptre, the portrait presented her as God's chosen sovereign, deliberately projecting sacred royal permanence and mystical majesty rather than mortal female vulnerability.",
             ],
           },
-
           isReversed: false,
           sources: [
             {
@@ -500,7 +499,7 @@ const eee_data = {
               hinge_question:
                 'How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
               source_context:
-                'Official oil portrait of Elizabeth I commissioned following her January 1559 coronation at Westminster Abbey. In 16th-century patriarchal England, female rule was widely considered weak and unnatural. Hinge Question: How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
+                'Official oil portrait of Elizabeth I commissioned following her January 1559 coronation at Westminster Abbey. In 16th-century patriarchal England, female rule was widely considered weak and unnatural. **Hinge Question:** How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
               context:
                 'Official oil portrait of Elizabeth I commissioned following her January 1559 coronation at Westminster Abbey.',
               question_badge: 'Historical Utility',
@@ -515,6 +514,12 @@ const eee_data = {
                   'The English nobility, foreign ambassadors, and visiting dignitaries at court.',
                 motive:
                   "To establish Elizabeth's undisputed sovereign legitimacy and majesty at the outset of her reign.",
+                hinge_question:
+                  'How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
+              },
+              teacher_notes: {
+                source_context:
+                  'Official oil portrait of Elizabeth I commissioned following her January 1559 coronation at Westminster Abbey. In 16th-century patriarchal England, female rule was widely considered weak and unnatural. **Hinge Question:** How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
               },
             },
           ],
@@ -571,7 +576,7 @@ const eee_data = {
               hinge_question:
                 "What does William Cecil's lifelong appointment as Secretary of State suggest about Elizabeth's reliance on loyal administrative advisors?",
               source_context:
-                "Portrait of Sir William Cecil, appointed Principal Secretary in November 1558 at Hatfield. Elizabeth famously declared to him: 'This judgment I have of you, that you will not be corrupted by any manner of gift.' Hinge Question: What does William Cecil's lifelong appointment as Secretary of State suggest about Elizabeth's reliance on loyal administrative advisors?",
+                "Portrait of Sir William Cecil, appointed Principal Secretary in November 1558 at Hatfield. Elizabeth famously declared to him: 'This judgment I have of you, that you will not be corrupted by any manner of gift.' **Hinge Question:** What does William Cecil's lifelong appointment as Secretary of State suggest about Elizabeth's reliance on loyal administrative advisors?",
               context:
                 'Portrait of Sir William Cecil, appointed Principal Secretary in November 1558 at Hatfield.',
               question_badge: 'Source Inference',
@@ -585,6 +590,12 @@ const eee_data = {
                 audience: 'Fellow Privy Council ministers and the English political elite.',
                 motive:
                   "To commemorate Cecil's central role as the indispensable anchor of the Elizabethan state.",
+                hinge_question:
+                  "What does William Cecil's lifelong appointment as Secretary of State suggest about Elizabeth's reliance on loyal administrative advisors?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Portrait of Sir William Cecil, appointed Principal Secretary in November 1558 at Hatfield. Elizabeth famously declared to him: 'This judgment I have of you, that you will not be corrupted by any manner of gift.' **Hinge Question:** What does William Cecil's lifelong appointment as Secretary of State suggest about Elizabeth's reliance on loyal administrative advisors?",
               },
             },
           ],
@@ -604,33 +615,40 @@ const eee_data = {
             {
               id: 'eee_l1_source_c',
               letter: 'C',
-              title: 'Source C: Contemporary Portrait of Queen Anne Boleyn (c. 1534)',
-              src: '/units/eee/assets/portraits/anne_boleyn.jpg',
-              image: '/units/eee/assets/portraits/anne_boleyn.jpg',
-              source: '/units/eee/assets/portraits/anne_boleyn.jpg',
+              title:
+                "Source C: John Knox, 'The First Blast of the Trumpet Against the Monstrous Regiment of Women' (1558)",
               caption:
-                'Queen Anne Boleyn, mother of Elizabeth I, executed for treason in May 1536, leading Parliament to declare Elizabeth illegitimate.',
-              desc: "Oil on panel portrait of Anne Boleyn wearing her iconic 'B' pearl necklace.",
-              provenance: 'National Portrait Gallery, London (NPG 668), c. 1534.',
-              citation: 'National Portrait Gallery, London.',
+                "Pamphlet extract from John Knox's 'The First Blast of the Trumpet Against the Monstrous Regiment of Women' (1558), arguing that female monarchy violated biblical doctrine and natural law.",
+              desc: "John Knox's polemical treatise challenging female sovereignty.",
+              provenance:
+                'Geneva, Switzerland (Printed Tract widely circulated in England and Scotland), 1558.',
+              citation: 'Geneva, Switzerland, 1558.',
               hinge_question:
                 "Why did Catholic contemporaries argue that Henry VIII's marriage to Anne Boleyn rendered Elizabeth illegitimate?",
               source_context:
-                "Portrait of Anne Boleyn, second wife of Henry VIII and mother of Elizabeth I. Because the Pope never annulled Henry's marriage to Catherine of Aragon, Catholics across Europe viewed Anne's marriage as unlawful and Elizabeth as illegitimate. Hinge Question: Why did Catholic contemporaries argue that Henry VIII's marriage to Anne Boleyn rendered Elizabeth illegitimate?",
+                "Portrait of Anne Boleyn, second wife of Henry VIII and mother of Elizabeth I. Because the Pope never annulled Henry's marriage to Catherine of Aragon, Catholics across Europe viewed Anne's marriage as unlawful and Elizabeth as illegitimate. **Hinge Question:** Why did Catholic contemporaries argue that Henry VIII's marriage to Anne Boleyn rendered Elizabeth illegitimate?",
               context:
                 'Portrait of Anne Boleyn, second wife of Henry VIII and mother of Elizabeth I.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                "How does the controversy surrounding Anne Boleyn's marriage explain why Catholic rulers questioned Elizabeth's right to succeed in 1558?",
+                'What can you infer from Source C about the contemporary religious and political objections to female monarchical rule facing Elizabeth in 1558?',
               model_answer:
-                "Because the Catholic Church never recognized Henry VIII's divorce from Catherine of Aragon, devout Catholics viewed Anne Boleyn as a concubine, meaning Elizabeth was legally illegitimate under canon law and had no rightful claim to the English crown.",
+                'Source C shows that contemporary religious theorists viewed female monarchy as unnatural and contrary to divine law, creating intense skepticism that Elizabeth could command military forces or govern without a male sovereign consort.',
               provenance_clues: {
                 author:
                   'Tudor court portraitist capturing Anne Boleyn during her brief reign as queen.',
                 audience: 'The royal household and supporters of the evangelical reform movement.',
                 motive: "To celebrate Anne's royal status as Henry VIII's anointed queen consort.",
+                hinge_question:
+                  "Why did Catholic contemporaries argue that Henry VIII's marriage to Anne Boleyn rendered Elizabeth illegitimate?",
               },
+              teacher_notes: {
+                source_context:
+                  "Calvinist preacher John Knox published his tract against Mary Tudor and Mary of Guise just months before Elizabeth's accession. His fierce patriarchal argument that women were incapable of rule created immediate diplomatic friction with the young Queen. **Hinge Question:** Why did Knox's fierce condemnation of female sovereignty threaten Elizabeth's legitimacy even though Knox was an ardent Protestant reformer?",
+              },
+              type: 'written',
+              text: 'To promote a woman to bear rule, superiority, dominion, or empire above any realm, nation, or city, is repugnant to nature; an insult to God, a thing most contrary to his revealed will and approved ordinance; and finally, it is the subversion of good order, of all equity and justice... Woman in her greatest perfection was made to serve and obey man, not to rule and govern him.',
             },
           ],
         },
@@ -654,32 +672,39 @@ const eee_data = {
             {
               id: 'eee_l1_source_d',
               letter: 'D',
-              title: 'Source D: King Henry VIII in Royal Splendour (c. 1540)',
-              src: '/units/eee/assets/portraits/henry_viii.jpg',
-              image: '/units/eee/assets/portraits/henry_viii.jpg',
-              source: '/units/eee/assets/portraits/henry_viii.jpg',
+              title:
+                'Source D: Royal Commission of the Peace and Parliamentary Subsidy Instructions (1559)',
               caption:
-                'King Henry VIII, whose 1544 Third Succession Act reinstated Elizabeth into the line of succession after Edward and Mary, despite remaining legally illegitimate.',
-              desc: 'Portrait of King Henry VIII in ermine and embroidered doublet after Hans Holbein the Younger.',
-              provenance: 'Walker Art Gallery, Liverpool, c. 1540.',
-              citation: 'Walker Art Gallery, Liverpool.',
+                "Official Crown instructions to county Justices of the Peace in 1559, ordering the immediate collection of parliamentary taxes and preservation of public order upon Elizabeth's accession.",
+              desc: 'Privy Council instructions to county magistrates regarding fiscal administration and law enforcement.',
+              provenance:
+                'The National Archives, Kew (SP 12/2), Royal Commission of the Peace, April 1559.',
+              citation: 'The National Archives, Kew (SP 12/2), April 1559.',
               hinge_question:
                 'How did the 1544 Succession Act passed by Henry VIII restore Elizabeth to the royal line despite her declared illegitimacy?',
               source_context:
-                'Portrait of King Henry VIII. In 1544, Henry passed the Third Act of Succession through Parliament, granting Elizabeth a place in the succession behind Edward and Mary, which provided the legal foundation for her peaceful accession in November 1558. Hinge Question: How did the 1544 Succession Act passed by Henry VIII restore Elizabeth to the royal line despite her declared illegitimacy?',
+                'Portrait of King Henry VIII. In 1544, Henry passed the Third Act of Succession through Parliament, granting Elizabeth a place in the succession behind Edward and Mary, which provided the legal foundation for her peaceful accession in November 1558. **Hinge Question:** How did the 1544 Succession Act passed by Henry VIII restore Elizabeth to the royal line despite her declared illegitimacy?',
               context: 'Portrait of King Henry VIII.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                "How does Source D corroborate the legal foundation of Elizabeth's accession to the throne in 1558?",
+                'Why is Source D reliable evidence for understanding the strengths and weaknesses of Elizabethan governance in the English shires?',
               model_answer:
-                "Source D corroborates that Elizabeth's legal right to rule rested upon her royal Tudor bloodline and Henry VIII's parliamentary Succession Act of 1544, which explicitly named her as heir despite earlier declarations of illegitimacy.",
+                'Source D is an official royal directive proving that royal authority depended on unpaid local gentry (JPs), meaning Crown policy was effectively enforced only when local elites remained willing and loyal to implement royal orders.',
               provenance_clues: {
                 author: 'Workshop of Hans Holbein the Younger creating royal state iconography.',
                 audience: 'The Tudor court and international ambassadors.',
                 motive:
                   'To project absolute Tudor monarchical power and uninterrupted dynastic continuity.',
+                hinge_question:
+                  'How did the 1544 Succession Act passed by Henry VIII restore Elizabeth to the royal line despite her declared illegitimacy?',
               },
+              teacher_notes: {
+                source_context:
+                  'Without a standing army or professional civil service, Elizabeth relied on roughly 30 to 50 unpaid Justices of the Peace per county. JPs held quarterly sessions, maintained roads, regulated wages, and enforced royal religious policy. **Hinge Question:** Why was the unpaid nature of Elizabethan Justices of the Peace both a vital economic strength and a dangerous administrative vulnerability for the Crown?',
+              },
+              type: 'written',
+              text: "The Queen's Majesty strictly commandeth all Justices of the Peace within every shire of this realm diligently to assemble themselves in their quarter sessions, to inquire into all riots, unlawful assemblies, vagabonds, and breaches of the peace, and to levy the royal subsidies granted by Parliament without fear, favor, or corruption, preserving good order and justice among the common people.",
             },
           ],
         },
@@ -740,7 +765,7 @@ const eee_data = {
               hinge_question:
                 "To what extent did the loss of Calais and £300,000 in crown debt under Mary I severely constrain Elizabeth's early foreign policy?",
               source_context:
-                "Portrait of Queen Mary I painted by Antonis Mor at the time of her marriage to Philip of Spain. When Mary died in November 1558, England was impoverished, plagued by famine and influenza, and humiliated by the loss of Calais, its last continental possession. Hinge Question: To what extent did the loss of Calais and £300,000 in crown debt under Mary I severely constrain Elizabeth's early foreign policy?",
+                "Portrait of Queen Mary I painted by Antonis Mor at the time of her marriage to Philip of Spain. When Mary died in November 1558, England was impoverished, plagued by famine and influenza, and humiliated by the loss of Calais, its last continental possession. **Hinge Question:** To what extent did the loss of Calais and £300,000 in crown debt under Mary I severely constrain Elizabeth's early foreign policy?",
               context:
                 'Portrait of Queen Mary I painted by Antonis Mor at the time of her marriage to Philip of Spain.',
               question_badge: 'Author’s Purpose',
@@ -755,6 +780,12 @@ const eee_data = {
                   'The royal courts of Madrid and London celebrating the Anglo-Spanish marriage alliance.',
                 motive:
                   'To present Mary as a pious, formidable Catholic sovereign aligned with Spanish imperial power.',
+                hinge_question:
+                  "To what extent did the loss of Calais and £300,000 in crown debt under Mary I severely constrain Elizabeth's early foreign policy?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Portrait of Queen Mary I painted by Antonis Mor at the time of her marriage to Philip of Spain. When Mary died in November 1558, England was impoverished, plagued by famine and influenza, and humiliated by the loss of Calais, its last continental possession. **Hinge Question:** To what extent did the loss of Calais and £300,000 in crown debt under Mary I severely constrain Elizabeth's early foreign policy?",
               },
             },
           ],
@@ -991,8 +1022,8 @@ const eee_data = {
           title:
             "Source C: John Knox, 'The First Blast of the Trumpet Against the Monstrous Regiment of Women' (1558)",
           caption:
-            'Queen Anne Boleyn, mother of Elizabeth I, executed for treason in May 1536, leading Parliament to declare Elizabeth illegitimate.',
-          desc: "Oil on panel portrait of Anne Boleyn wearing her iconic 'B' pearl necklace.",
+            "Pamphlet extract from John Knox's 'The First Blast of the Trumpet Against the Monstrous Regiment of Women' (1558), arguing that female monarchy violated biblical doctrine and natural law.",
+          desc: "John Knox's polemical treatise challenging female sovereignty.",
           provenance:
             'Geneva, Switzerland (Printed Tract widely circulated in England and Scotland), 1558.',
           citation: 'Geneva, Switzerland, 1558.',
@@ -1028,8 +1059,8 @@ const eee_data = {
           title:
             'Source D: Royal Commission of the Peace and Parliamentary Subsidy Instructions (1559)',
           caption:
-            'King Henry VIII, whose 1544 Third Succession Act reinstated Elizabeth into the line of succession after Edward and Mary, despite remaining legally illegitimate.',
-          desc: 'Portrait of King Henry VIII in ermine and embroidered doublet after Hans Holbein the Younger.',
+            "Official Crown instructions to county Justices of the Peace in 1559, ordering the immediate collection of parliamentary taxes and preservation of public order upon Elizabeth's accession.",
+          desc: 'Privy Council instructions to county magistrates regarding fiscal administration and law enforcement.',
           provenance:
             'The National Archives, Kew (SP 12/2), Royal Commission of the Peace, April 1559.',
           citation: 'The National Archives, Kew (SP 12/2), April 1559.',
@@ -1744,7 +1775,7 @@ const eee_data = {
               hinge_question:
                 "Why did Elizabeth adopt the title 'Supreme Governor' rather than 'Supreme Head' of the Church of England in the 1559 Act of Supremacy?",
               source_context:
-                "The 1559 Act of Supremacy severed England's ecclesiastical ties with Rome once again. Elizabeth deliberately chose the compromise title 'Supreme Governor' to placate Catholics who believed only the Pope or Christ could head the Church, and Protestants who doubted a woman could be 'Head'. Hinge Question: Why did Elizabeth adopt the title 'Supreme Governor' rather than 'Supreme Head' of the Church of England in the 1559 Act of Supremacy?",
+                "The 1559 Act of Supremacy severed England's ecclesiastical ties with Rome once again. Elizabeth deliberately chose the compromise title 'Supreme Governor' to placate Catholics who believed only the Pope or Christ could head the Church, and Protestants who doubted a woman could be 'Head'. **Hinge Question:** Why did Elizabeth adopt the title 'Supreme Governor' rather than 'Supreme Head' of the Church of England in the 1559 Act of Supremacy?",
               context:
                 "The 1559 Act of Supremacy severed England's ecclesiastical ties with Rome once again.",
               question_badge: 'Author’s Purpose',
@@ -1759,6 +1790,12 @@ const eee_data = {
                 audience: 'All clergy, public officials, and subjects across the realm of England.',
                 motive:
                   'To restore monarchical control over the national church while minimizing theological rebellion.',
+                hinge_question:
+                  "Why did Elizabeth adopt the title 'Supreme Governor' rather than 'Supreme Head' of the Church of England in the 1559 Act of Supremacy?",
+              },
+              teacher_notes: {
+                source_context:
+                  "The 1559 Act of Supremacy severed England's ecclesiastical ties with Rome once again. Elizabeth deliberately chose the compromise title 'Supreme Governor' to placate Catholics who believed only the Pope or Christ could head the Church, and Protestants who doubted a woman could be 'Head'. **Hinge Question:** Why did Elizabeth adopt the title 'Supreme Governor' rather than 'Supreme Head' of the Church of England in the 1559 Act of Supremacy?",
               },
             },
           ],
@@ -1813,7 +1850,7 @@ const eee_data = {
               hinge_question:
                 'How did the ambiguous Communion wording in the 1559 Book of Common Prayer attempt to satisfy both Protestant and Catholic believers?',
               source_context:
-                "The 1559 Book of Common Prayer was enforced by the Act of Uniformity. It combined words of administration from Edward VI's 1549 and 1552 prayer books so that communicants could interpret Christ's presence physically (transubstantiation) or symbolically (remembrance). Hinge Question: How did the ambiguous Communion wording in the 1559 Book of Common Prayer attempt to satisfy both Protestant and Catholic believers?",
+                "The 1559 Book of Common Prayer was enforced by the Act of Uniformity. It combined words of administration from Edward VI's 1549 and 1552 prayer books so that communicants could interpret Christ's presence physically (transubstantiation) or symbolically (remembrance). **Hinge Question:** How did the ambiguous Communion wording in the 1559 Book of Common Prayer attempt to satisfy both Protestant and Catholic believers?",
               context: 'The 1559 Book of Common Prayer was enforced by the Act of Uniformity.',
               question_badge: 'Source Inference',
               question_type: 'Source Inference',
@@ -1828,6 +1865,12 @@ const eee_data = {
                   'Parish priests and congregations across every church in England and Wales.',
                 motive:
                   'To enforce uniform Protestant liturgy while leaving space for moderate Catholic interpretation.',
+                hinge_question:
+                  'How did the ambiguous Communion wording in the 1559 Book of Common Prayer attempt to satisfy both Protestant and Catholic believers?',
+              },
+              teacher_notes: {
+                source_context:
+                  "The 1559 Book of Common Prayer was enforced by the Act of Uniformity. It combined words of administration from Edward VI's 1549 and 1552 prayer books so that communicants could interpret Christ's presence physically (transubstantiation) or symbolically (remembrance). **Hinge Question:** How did the ambiguous Communion wording in the 1559 Book of Common Prayer attempt to satisfy both Protestant and Catholic believers?",
               },
             },
           ],
@@ -1847,33 +1890,40 @@ const eee_data = {
             {
               id: 'eee_l2_source_c',
               letter: 'C',
-              title: 'Source C: Memorandum by Sir William Cecil on the Uniformity Bill (1559)',
-              src: '/units/eee/assets/portraits/william_cecil.jpg',
-              image: '/units/eee/assets/portraits/william_cecil.jpg',
-              source: '/units/eee/assets/portraits/william_cecil.jpg',
+              title:
+                "Source C: Sir William Cecil's Confidential Memorandum on Passing the Uniformity Bill (April 1559)",
               caption:
-                'Sir William Cecil, who managed the parliamentary strategy to pass the Act of Uniformity through the House of Lords by arresting two Catholic bishops before the vote.',
-              desc: "Portrait of Sir William Cecil, Queen Elizabeth's master parliamentary strategist.",
-              provenance: 'The National Archives, Kew (SP 12/1), April 1559.',
-              citation: 'The National Archives, Kew.',
+                "Sir William Cecil's confidential memorandum calculating the required votes in the House of Lords to pass the controversial 1559 Act of Uniformity despite Catholic episcopal opposition.",
+              desc: "Cecil's parliamentary management notes for the Elizabethan Religious Settlement.",
+              provenance:
+                "The National Archives, Kew (SP 12/1), Sir William Cecil's private notes for the Privy Council, April 1559.",
+              citation: 'The National Archives, Kew (SP 12/1), April 1559.',
               hinge_question:
                 "How does Cecil's parliamentary strategy reveal the intense resistance the Elizabethan Settlement faced in the House of Lords?",
               source_context:
-                "In April 1559, the Act of Uniformity passed the House of Lords by a razor-thin majority of 21 votes to 18. Cecil orchestrated the imprisonment of the Bishops of Winchester and Lincoln in the Tower of London to prevent them voting against the bill. Hinge Question: How does Cecil's parliamentary strategy reveal the intense resistance the Elizabethan Settlement faced in the House of Lords?",
+                "In April 1559, the Act of Uniformity passed the House of Lords by a razor-thin majority of 21 votes to 18. Cecil orchestrated the imprisonment of the Bishops of Winchester and Lincoln in the Tower of London to prevent them voting against the bill. **Hinge Question:** How does Cecil's parliamentary strategy reveal the intense resistance the Elizabethan Settlement faced in the House of Lords?",
               context:
                 'In April 1559, the Act of Uniformity passed the House of Lords by a razor-thin majority of 21 votes to 18.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                "Why is Cecil's parliamentary maneuvering in 1559 reliable evidence of the precarious political balance facing the new Protestant settlement?",
+                "Why was Cecil's memorandum written, and what does it reveal about the fragility of the 1559 Settlement in Parliament?",
               model_answer:
-                "Cecil's maneuvering is highly reliable because official parliamentary rolls prove the Uniformity Bill passed the Lords by only three votes, demonstrating that Catholic bishops and conservative peers nearly succeeded in halting Protestant church reform.",
+                'Cecil wrote this confidential memorandum to orchestrate the imprisonment of Catholic bishops on charges of contempt, ensuring the Uniformity Bill could pass the House of Lords by the razor-thin margin of 21 votes to 18.',
               provenance_clues: {
                 author: 'Sir William Cecil managing government business in Parliament.',
                 audience: 'Queen Elizabeth I and confidential members of the Privy Council.',
                 motive:
                   'To ensure the survival and legal passage of the royal religious settlement at any cost.',
+                hinge_question:
+                  "How does Cecil's parliamentary strategy reveal the intense resistance the Elizabethan Settlement faced in the House of Lords?",
               },
+              teacher_notes: {
+                source_context:
+                  "The House of Lords was dominated by Catholic peers and Marian bishops. By imprisoning Bishops White and Watson in the Tower and obtaining the decisive abstention of the Abbot of Westminster, Cecil engineered a narrow three-vote victory for Protestant liturgy. **Hinge Question:** How does Cecil's tactical imprisonment of two Catholic bishops demonstrate that the Elizabethan Settlement was established through political coercion rather than parliamentary consensus?",
+              },
+              type: 'written',
+              text: "The bill of uniformity for the service and sacraments passeth with extreme difficulty in the Upper House. The bishops oppose it stubbornly as heresy. If two of the chief prelates [the Bishops of Winchester and Lincoln] be not sequestered in the Tower before the division, the votes will stand equal and the Queen's reformation shall be overthrown.",
             },
           ],
         },
@@ -1936,7 +1986,7 @@ const eee_data = {
               hinge_question:
                 'How useful is this depiction in illustrating the fragile parliamentary majority that enacted the Act of Uniformity by just three votes?',
               source_context:
-                'Engraving showing Queen Elizabeth I seated on her throne in the House of Lords, surrounded by peers spiritual and temporal. The Marian Catholic bishops mounted fierce resistance, and all but one bishop refused to swear the Oath of Supremacy. Hinge Question: How useful is this depiction in illustrating the fragile parliamentary majority that enacted the Act of Uniformity by just three votes?',
+                'Engraving showing Queen Elizabeth I seated on her throne in the House of Lords, surrounded by peers spiritual and temporal. The Marian Catholic bishops mounted fierce resistance, and all but one bishop refused to swear the Oath of Supremacy. **Hinge Question:** How useful is this depiction in illustrating the fragile parliamentary majority that enacted the Act of Uniformity by just three votes?',
               context:
                 'Engraving showing Queen Elizabeth I seated on her throne in the House of Lords.',
               question_badge: 'Historical Utility',
@@ -1950,6 +2000,12 @@ const eee_data = {
                 audience: 'Educated readers and political observers in England and abroad.',
                 motive:
                   'To showcase the unified majesty and institutional dignity of the English monarch-in-parliament.',
+                hinge_question:
+                  'How useful is this depiction in illustrating the fragile parliamentary majority that enacted the Act of Uniformity by just three votes?',
+              },
+              teacher_notes: {
+                source_context:
+                  'Engraving showing Queen Elizabeth I seated on her throne in the House of Lords, surrounded by peers spiritual and temporal. The Marian Catholic bishops mounted fierce resistance, and all but one bishop refused to swear the Oath of Supremacy. **Hinge Question:** How useful is this depiction in illustrating the fragile parliamentary majority that enacted the Act of Uniformity by just three votes?',
               },
             },
           ],
@@ -2000,33 +2056,38 @@ const eee_data = {
               id: 'eee_l2_source_e',
               letter: 'E',
               title:
-                'Source E: Papal Dispatch of Pope Pius V Condemning the Elizabethan Settlement',
-              src: '/units/eee/assets/portraits/pius_v.jpg',
-              image: '/units/eee/assets/portraits/pius_v.jpg',
-              source: '/units/eee/assets/portraits/pius_v.jpg',
+                'Source E: Papal Dispatch of Pope Pius IV Condemning the Elizabethan Settlement (1560)',
               caption:
-                'Pope Pius V (1504–1572), who viewed the Elizabethan Religious Settlement as an intolerable act of heresy that tore England from Catholic Christendom.',
-              desc: 'Portrait of Pope Pius V by El Greco, c. 1570.',
+                'Diplomatic dispatch from the papal curia of Pope Pius IV condemning the 1559 Elizabethan settlement and forbidding English Catholics from attending Anglican church services.',
+              desc: 'Papal dispatch condemning the Elizabethan Church Settlement.',
               provenance:
-                'Vatican Secret Archives, Rome / Portrait in Colección Duquesa de Alba, Madrid.',
-              citation: 'Archivio Apostolico Vaticano, Rome.',
+                'Vatican Secret Archives, Rome, Epistolae ad Principes (Dispatch to the Catholic Princes of Europe), 1560.',
+              citation: 'Vatican Secret Archives, Rome, 1560.',
               hinge_question:
                 "How did the Vatican's refusal to recognise Elizabeth's Church push English Catholics into a crisis of dual loyalty?",
               source_context:
-                "Portrait of Pope Pius V. While Pope Pius IV initially hesitated to excommunicate Elizabeth hoping for a reconciliation, his successor Pius V adopted an uncompromising Counter-Reformation stance, demanding that English Catholics refuse all communion in heretics' churches. Hinge Question: How did the Vatican's refusal to recognise Elizabeth's Church push English Catholics into a crisis of dual loyalty?",
+                "Portrait of Pope Pius V. While Pope Pius IV initially hesitated to excommunicate Elizabeth hoping for a reconciliation, his successor Pius V adopted an uncompromising Counter-Reformation stance, demanding that English Catholics refuse all communion in heretics' churches. **Hinge Question:** How did the Vatican's refusal to recognise Elizabeth's Church push English Catholics into a crisis of dual loyalty?",
               context: 'Portrait of Pope Pius V.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                'How does Source E help explain the increasing penalties imposed on English recusants who refused to attend Anglican services?',
+                "What was the Papacy's objective in issuing this dispatch regarding the 1559 Elizabethan Church Settlement?",
               model_answer:
-                "Source E explains that as the Papacy took an increasingly hardline stance against Elizabeth's legitimacy, the English government viewed non-attendance at church not as harmless religious preference, but as dangerous political alignment with foreign Catholic enemies.",
+                "The Papacy intended to denounce Elizabeth's Royal Supremacy as illegitimate and mobilize continental Catholic rulers (particularly France and Spain) to isolate England and refuse to recognize the Protestant settlement.",
               provenance_clues: {
                 author: 'Vatican Curia under Pope Pius V.',
                 audience: 'Catholic sovereigns of Europe and loyal English Catholic clergy.',
                 motive:
                   'To rally international Catholic opposition against the heretical Elizabethan state.',
+                hinge_question:
+                  "How did the Vatican's refusal to recognise Elizabeth's Church push English Catholics into a crisis of dual loyalty?",
               },
+              teacher_notes: {
+                source_context:
+                  'Although Pope Pius V would later formally excommunicate Elizabeth in 1570, the Vatican immediately branded the 1559 Acts of Supremacy and Uniformity as schismatic and invalid, laying the ideological groundwork for Catholic resistance. **Hinge Question:** Why did the Papacy avoid issuing an immediate formal bull of excommunication in 1559, waiting instead until 1570?',
+              },
+              type: 'written',
+              text: 'We understand with profound grief that Elizabeth, the pretended Queen of England, hath abolished the Holy Sacrifice of the Mass, replaced the sacred Latin liturgy with a heretical vernacular service, and compelled Catholic clergy under severe penalties to swear allegiance to her monstrous spiritual supremacy.',
             },
           ],
         },
@@ -2296,8 +2357,8 @@ const eee_data = {
           title:
             "Source C: Sir William Cecil's Confidential Memorandum on Passing the Uniformity Bill (April 1559)",
           caption:
-            'Sir William Cecil, who managed the parliamentary strategy to pass the Act of Uniformity through the House of Lords by arresting two Catholic bishops before the vote.',
-          desc: "Portrait of Sir William Cecil, Queen Elizabeth's master parliamentary strategist.",
+            "Sir William Cecil's confidential memorandum calculating the required votes in the House of Lords to pass the controversial 1559 Act of Uniformity despite Catholic episcopal opposition.",
+          desc: "Cecil's parliamentary management notes for the Elizabethan Religious Settlement.",
           provenance:
             "The National Archives, Kew (SP 12/1), Sir William Cecil's private notes for the Privy Council, April 1559.",
           citation: 'The National Archives, Kew (SP 12/1), April 1559.',
@@ -2371,8 +2432,8 @@ const eee_data = {
           title:
             'Source E: Papal Dispatch of Pope Pius IV Condemning the Elizabethan Settlement (1560)',
           caption:
-            'Pope Pius V (1504–1572), who viewed the Elizabethan Religious Settlement as an intolerable act of heresy that tore England from Catholic Christendom.',
-          desc: 'Portrait of Pope Pius V by El Greco, c. 1570.',
+            'Diplomatic dispatch from the papal curia of Pope Pius IV condemning the 1559 Elizabethan settlement and forbidding English Catholics from attending Anglican church services.',
+          desc: 'Papal dispatch condemning the Elizabethan Church Settlement.',
           provenance:
             'Vatican Secret Archives, Rome, Epistolae ad Principes (Dispatch to the Catholic Princes of Europe), 1560.',
           citation: 'Vatican Secret Archives, Rome, 1560.',
@@ -3028,33 +3089,40 @@ const eee_data = {
             {
               id: 'eee_l3_source_a',
               letter: 'A',
-              title: 'Source A: Papal Bull Regnans in Excelsis Excommunicating Elizabeth (1570)',
-              src: '/images/regnans_in_excelsis_1570.jpg',
-              image: '/images/regnans_in_excelsis_1570.jpg',
-              source: '/images/regnans_in_excelsis_1570.jpg',
+              title:
+                'Source A: Bishop John Jewel on the Crucifix Controversy in the Royal Chapel (February 1560)',
               caption:
-                'The printed Latin text of the Papal Bull Regnans in Excelsis issued by Pope Pius V on 25 February 1570, deposing Elizabeth as a heretic and usurper.',
-              desc: 'Papal Bull of Pope Pius V, Rome, 1570.',
-              provenance: 'Vatican Apostolic Archive, Reg. Vat. 2011, 1570.',
-              citation: 'Archivio Apostolico Vaticano, Rome.',
+                'Letter from Bishop John Jewel to Peter Martyr detailing the bitter Puritan resistance to Queen Elizabeth retaining crucifixes and candlesticks in the Chapel Royal.',
+              desc: 'Bishop Jewel on Puritan opposition to Catholic ornaments in the Royal Chapel.',
+              provenance:
+                'Zurich Letters, Letter from John Jewel, Bishop of Salisbury, to Peter Martyr in Zurich, 4 February 1560.',
+              citation: 'Zurich Letters, Parker Society Archives, 1560.',
               hinge_question:
                 "How did Pope Pius V's decree absolving English subjects from allegiance fundamentally transform Catholic worship into treason in the eyes of the Crown?",
               source_context:
-                "Pope Pius V's 1570 bull Regnans in Excelsis declared Elizabeth excommunicated and stripped of her royal title, commanding English subjects to disobey her laws under pain of anathema. John Felton nailed a copy to the Bishop of London's gate and was executed for treason. Hinge Question: How did Pope Pius V's decree absolving English subjects from allegiance fundamentally transform Catholic worship into treason in the eyes of the Crown?",
+                "Pope Pius V's 1570 bull Regnans in Excelsis declared Elizabeth excommunicated and stripped of her royal title, commanding English subjects to disobey her laws under pain of anathema. John Felton nailed a copy to the Bishop of London's gate and was executed for treason. **Hinge Question:** How did Pope Pius V's decree absolving English subjects from allegiance fundamentally transform Catholic worship into treason in the eyes of the Crown?",
               context:
                 "Pope Pius V's 1570 bull Regnans in Excelsis declared Elizabeth excommunicated and stripped of her royal title.",
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                "What was Pope Pius V's intention in issuing Regnans in Excelsis in 1570, and why did it backfire on English Catholics?",
+                "What can you infer from Source A about the core theological concerns dividing radical Puritans from Elizabeth's religious settlement?",
               model_answer:
-                'Pius V intended to incite English Catholics to overthrow Elizabeth and replace her with Mary Stuart, but it backfired disastrously by forcing the Elizabethan regime to treat all practicing Catholics as potential traitors and pass harsher treason statutes.',
+                "Source A reveals that Puritans viewed crucifixes and visual imagery as idolatrous remnants of Catholicism, fearing that Elizabeth's insistence on displaying a cross in her royal chapel would encourage ordinary churchgoers to continue traditional Catholic devotions.",
               provenance_clues: {
                 author: 'Pope Pius V exercising supreme papal authority from Rome.',
                 audience: 'All Christian princes and English Catholic subjects.',
                 motive:
                   'To depose an illegitimate heretical queen and restore England to Catholic obedience.',
+                hinge_question:
+                  "How did Pope Pius V's decree absolving English subjects from allegiance fundamentally transform Catholic worship into treason in the eyes of the Crown?",
               },
+              teacher_notes: {
+                source_context:
+                  'Elizabeth insisted on retaining a silver cross and candles in her royal chapel to appease Catholic foreign ambassadors and conservative subjects. Radical Marian exiles who had returned from Geneva and Zurich viewed this as intolerable idolatry and threatened to resign their bishoprics. **Hinge Question:** Why did Elizabeth consider keeping the crucifix in her chapel a matter of vital political diplomacy rather than minor theological debate?',
+              },
+              type: 'written',
+              text: "That little silver cross of ill-omened origin still maintains its place in the Queen's chapel. Wretched me! This thing will soon be taken for an example and set up in parish churches everywhere. I have already spoken freely against it; would that it were dashed to pieces and reduced to powder, for the people will think it an idol!",
             },
           ],
         },
@@ -3104,34 +3172,40 @@ const eee_data = {
               id: 'eee_l3_source_b',
               letter: 'B',
               title:
-                'Source B: Contemporary Woodcut of Father Edmund Campion SJ at the Tyburn Gallows (1581)',
-              src: '/images/edmund_campion.jpg',
-              image: '/images/edmund_campion.jpg',
-              source: '/images/edmund_campion.jpg',
+                'Source B: Chronicle Account of Archbishop Parker and the Lambeth Vestments Confrontation (March 1566)',
               caption:
-                'Jesuit missionary Father Edmund Campion and his companions being executed for high treason at Tyburn on 1 December 1581.',
-              desc: 'Contemporary woodcut of the execution of Edmund Campion at Tyburn, 1581.',
-              provenance: 'British Library, London (General Reference Collection 4705.c.15), 1582.',
-              citation: 'British Library, London.',
+                'Chronicle account of Archbishop Parker summoning London clergy to Lambeth Palace in March 1566, demanding strict obedience to the vestments rubric or immediate dismissal.',
+              desc: 'Chronicle account of the Vestments Controversy at Lambeth Palace.',
+              provenance:
+                "John Stow, 'Annales of England', contemporary London chronicle recording the Lambeth clerical suspensions, March 1566.",
+              citation: 'John Stow, Annales of England, British Library, 1566.',
               hinge_question:
                 'Why did the Elizabethan government execute Jesuit priests like Edmund Campion as political traitors rather than religious martyrs?',
               source_context:
-                'Edmund Campion was a brilliant Oxford scholar who became a Jesuit and returned secretly to England in 1580 to administer the sacraments to recusants. Captured, tortured on the rack, and convicted of treason under the 1581 Act, he declared on the scaffold that he prayed for Queen Elizabeth. Hinge Question: Why did the Elizabethan government execute Jesuit priests like Edmund Campion as political traitors rather than religious martyrs?',
+                'Edmund Campion was a brilliant Oxford scholar who became a Jesuit and returned secretly to England in 1580 to administer the sacraments to recusants. Captured, tortured on the rack, and convicted of treason under the 1581 Act, he declared on the scaffold that he prayed for Queen Elizabeth. **Hinge Question:** Why did the Elizabethan government execute Jesuit priests like Edmund Campion as political traitors rather than religious martyrs?',
               context:
                 'Edmund Campion was a brilliant Oxford scholar who became a Jesuit and returned secretly to England in 1580.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                'How does Source B reflect Catholic interpretations of the persecution of Jesuit priests in Elizabethan England?',
+                'Why did 37 London clergymen risk their careers and livings over clerical vestments in 1566?',
               model_answer:
-                "Source B portrays Campion as a holy martyr enduring cruel execution for spiritual devotion, deliberately refuting the government's official charge that Jesuit priests were political conspirators plotting the Queen's assassination.",
+                "They believed the surplice and square cap were 'popish rags' that falsely suggested priests had supernatural powers during communion, preferring suspension rather than compromising their strict Protestant conscience.",
               provenance_clues: {
                 author: 'Catholic polemicist publishing clandestine martyrology in Douai or Rome.',
                 audience:
                   'English Catholics facing fines and imprisonment, and European Catholic courts.',
                 motive:
                   "To inspire resistance, glorify Campion's sacrifice, and condemn Elizabethan state cruelty.",
+                hinge_question:
+                  'Why did the Elizabethan government execute Jesuit priests like Edmund Campion as political traitors rather than religious martyrs?',
               },
+              teacher_notes: {
+                source_context:
+                  "In 1566, Archbishop Matthew Parker issued his 'Book of Advertisements' enforcing uniform dress for clergy. At Lambeth Palace, a clergyman dressed in full canonicals was stood before London ministers with the order: 'Be as this man is, or lose your livings.' 37 refused. **Hinge Question:** Why did Elizabeth demand absolute outward uniformity in clerical dress even when it alienated her most educated Protestant preachers?",
+              },
+              type: 'written',
+              text: "Thirty-seven ministers of London, being called before Archbishop Parker at Lambeth Palace and commanded to wear the square cap, gown, and linen surplice, did stubbornly refuse, crying out: 'We cannot consent to wear the livery of the Antichrist and the rags of popery!' Whereupon they were instantly suspended from their livings and forbidden to preach, leaving London parishes without divine service.",
             },
           ],
         },
@@ -3188,7 +3262,7 @@ const eee_data = {
               hinge_question:
                 "What does the geographical distribution of Catholic recusancy indicate about the Crown's struggle to enforce Protestantism in northern England?",
               source_context:
-                "Map illustrating the geographical division of Elizabethan England. While London and the south-east were staunchly Protestant, counties like Lancashire, Yorkshire, Durham, and Northumberland remained stubbornly Catholic, protected by local gentry who hid seminary priests in secret priest holes built by Nicholas Owen. Hinge Question: What does the geographical distribution of Catholic recusancy indicate about the Crown's struggle to enforce Protestantism in northern England?",
+                "Map illustrating the geographical division of Elizabethan England. While London and the south-east were staunchly Protestant, counties like Lancashire, Yorkshire, Durham, and Northumberland remained stubbornly Catholic, protected by local gentry who hid seminary priests in secret priest holes built by Nicholas Owen. **Hinge Question:** What does the geographical distribution of Catholic recusancy indicate about the Crown's struggle to enforce Protestantism in northern England?",
               context: 'Map illustrating the geographical division of Elizabethan England.',
               question_badge: 'Historical Utility',
               question_type: 'Historical Utility',
@@ -3202,6 +3276,12 @@ const eee_data = {
                 audience: 'Modern GCSE history students analyzing Elizabethan regional security.',
                 motive:
                   'To provide a clear, spatial representation of recusant density and Jesuit infiltration routes.',
+                hinge_question:
+                  "What does the geographical distribution of Catholic recusancy indicate about the Crown's struggle to enforce Protestantism in northern England?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Map illustrating the geographical division of Elizabethan England. While London and the south-east were staunchly Protestant, counties like Lancashire, Yorkshire, Durham, and Northumberland remained stubbornly Catholic, protected by local gentry who hid seminary priests in secret priest holes built by Nicholas Owen. **Hinge Question:** What does the geographical distribution of Catholic recusancy indicate about the Crown's struggle to enforce Protestantism in northern England?",
               },
             },
           ],
@@ -3227,32 +3307,39 @@ const eee_data = {
             {
               id: 'eee_l3_source_d',
               letter: 'D',
-              title: 'Source D: Portrait of Father Edmund Campion SJ, Catholic Scholar and Priest',
-              src: '/units/eee/assets/portraits/campion.jpg',
-              image: '/units/eee/assets/portraits/campion.jpg',
-              source: '/units/eee/assets/portraits/campion.jpg',
+              title:
+                'Source D: Father William Allen on Founding the English College at Douai (1568)',
               caption:
-                "Engraved portrait of Father Edmund Campion SJ (1540–1581), whose famous manifesto 'Campion's Brag' insisted his mission was purely spiritual and unconcerned with worldly politics.",
-              desc: 'Portrait engraving of Edmund Campion SJ in priestly vestments.',
-              provenance: 'Archivum Romanum Societatis Iesu (ARSI), Rome, c. 1582.',
-              citation: 'Jesuit Curia Archives, Rome.',
+                "Extract from Father William Allen's treatise explaining the strategic necessity of training English seminary priests at Douai to preserve the Catholic faith in England.",
+              desc: 'William Allen on the foundation of the English College at Douai.',
+              provenance:
+                "Cardinal William Allen, 'Apology for the English Seminaries', Douai, Flanders, 1568.",
+              citation: 'Douai College Archives, 1568.',
               hinge_question:
                 "What does Campion's open declaration ('Campion's Brag') reveal about the religious zeal driving clandestine Jesuit missions to England?",
               source_context:
-                "Portrait of Edmund Campion. In 'Campion's Brag', he wrote to the Privy Council: 'My charge is of free cost to preach the Gospel... to cry alarm spiritual against foul vice and proud ignorance, whereunto many my dear countrymen are abused.' Hinge Question: What does Campion's open declaration ('Campion's Brag') reveal about the religious zeal driving clandestine Jesuit missions to England?",
+                "Portrait of Edmund Campion. In 'Campion's Brag', he wrote to the Privy Council: 'My charge is of free cost to preach the Gospel... to cry alarm spiritual against foul vice and proud ignorance, whereunto many my dear countrymen are abused.' **Hinge Question:** What does Campion's open declaration ('Campion's Brag') reveal about the religious zeal driving clandestine Jesuit missions to England?",
               context: 'Portrait of Edmund Campion.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                'What does Source D suggest about how the Society of Jesus viewed its clandestine mission to England after 1580?',
+                "What was William Allen's purpose in establishing the English College at Douai in 1568?",
               model_answer:
-                'Source D suggests that Jesuits viewed their English mission as a heroic spiritual duty to save souls through the sacraments, entirely separate from armed rebellion, even though the Crown viewed all papal agents as foreign invaders.',
+                'Allen aimed to preserve English Catholic priesthood by educating young exiles abroad and training missionary priests to re-enter England clandestine to sustain the Catholic faith.',
               provenance_clues: {
                 author: 'Jesuit engraver commemorating Campion following his martyrdom.',
                 audience: 'Jesuit seminarians in Douai and Rome preparing for overseas missions.',
                 motive:
                   'To inspire young priests to face persecution and sacrifice their lives for the Catholic faith in England.',
+                hinge_question:
+                  "What does Campion's open declaration ('Campion's Brag') reveal about the religious zeal driving clandestine Jesuit missions to England?",
               },
+              teacher_notes: {
+                source_context:
+                  "As traditional Marian Catholic priests grew old and died, the Catholic faith in England faced extinction. William Allen founded Douai College in Spanish-controlled Flanders to educate a new generation of missionary priests, transforming passive English Catholicism into an active Counter-Reformation movement. **Hinge Question:** How did the arrival of seminary priests from Douai transform the Elizabethan government's perception of Catholic subjects from harmless dissenters into active traitors?",
+              },
+              type: 'written',
+              text: 'Our purpose in erecting this seminary at Douai in Flanders is to draw together English Catholic scholars in exile, to preserve the ancient faith in our native language, and to train zealous young priests who shall return to England secretly to administer the sacraments, reconcile lapsed believers, and rescue Catholic souls from heresy, even at the peril of death.',
             },
           ],
         },
@@ -3301,33 +3388,39 @@ const eee_data = {
             {
               id: 'eee_l3_source_e',
               letter: 'E',
-              title: 'Source E: Sir Francis Walsingham’s Surveillance Network on Jesuit Safehouses',
-              src: '/units/eee/assets/portraits/walsingham.jpg',
-              image: '/units/eee/assets/portraits/walsingham.jpg',
-              source: '/units/eee/assets/portraits/walsingham.jpg',
+              title:
+                "Source E: Sir William Cecil's Privy Council Warrant Seizing the Genoese Bullion Ships (November 1568)",
               caption:
-                "Sir Francis Walsingham, Elizabeth's master spy, who recruited double agents and established postal interception networks to track Catholic priests and sympathizers.",
-              desc: 'Portrait of Sir Francis Walsingham in black doublet with white ruff.',
-              provenance: 'National Portrait Gallery, London (NPG 1807), c. 1585.',
-              citation: 'National Portrait Gallery, London.',
+                'Privy Council warrant authorized by Sir William Cecil directing the impoundment of £85,000 in Genoese bullion from stormbound Spanish transport vessels in English ports.',
+              desc: 'Privy Council warrant ordering the seizure of Genoese bullion in 1568.',
+              provenance: 'Privy Council Register, Whitehall (PC 2/9), November 1568.',
+              citation: 'The National Archives, Kew (PC 2/9), November 1568.',
               hinge_question:
                 "How do Walsingham's spy reports corroborate the government's fear that English Catholic manor houses were hubs of rebellion?",
               source_context:
-                "Portrait of Sir Francis Walsingham, Secretary of State from 1573. Walsingham deployed dozens of secret agents across England and European ports to intercept letters, raid recusant manors, and infiltrate Jesuit safehouses. Hinge Question: How do Walsingham's spy reports corroborate the government's fear that English Catholic manor houses were hubs of rebellion?",
+                "Portrait of Sir Francis Walsingham, Secretary of State from 1573. Walsingham deployed dozens of secret agents across England and European ports to intercept letters, raid recusant manors, and infiltrate Jesuit safehouses. **Hinge Question:** How do Walsingham's spy reports corroborate the government's fear that English Catholic manor houses were hubs of rebellion?",
               context: 'Portrait of Sir Francis Walsingham, Secretary of State from 1573.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'How does Source E support the view that the Elizabethan government operated a highly sophisticated police state to combat religious dissent?',
+                'Why is Source E significant for explaining the sudden collapse of Anglo-Spanish trade relations in 1568–1569?',
               model_answer:
-                "Source E supports this view by highlighting Walsingham's ruthless intelligence apparatus, which used code-breakers, paid informants, and warrant searches to dismantle Catholic networks and arrest priests before insurrections could materialize.",
+                "Source E documents Elizabeth's deliberate legal seizure of money intended to pay Alba's Spanish troops in the Netherlands, directly causing Alba to retaliate by placing an embargo on all English cloth in Antwerp.",
               provenance_clues: {
                 author:
                   'Court painter depicting Walsingham as a vigilant minister of the Protestant state.',
                 audience: 'Privy Council colleagues and foreign envoys.',
                 motive:
                   "To celebrate Walsingham's formidable role as the indispensable protector of the Queen's life.",
+                hinge_question:
+                  "How do Walsingham's spy reports corroborate the government's fear that English Catholic manor houses were hubs of rebellion?",
               },
+              teacher_notes: {
+                source_context:
+                  "Cecil discovered that the Spanish Crown did not technically own the silver until it arrived in Antwerp; it remained the property of Italian bankers. Elizabeth audaciously took over the loan, leaving Alba's army unpaid and mutinous. Alba responded by impounding English property in the Low Countries. **Hinge Question:** How did Cecil's seizure of the Genoese loan expose the fundamental economic vulnerability of Spanish military power in the Netherlands?",
+              },
+              type: 'written',
+              text: 'Whereas five Spanish vessels carrying 400,000 florins of silver borrowed from Genoese bankers have taken refuge from Huguenot privateers in the ports of Plymouth and Southampton: let the bullion be brought ashore and safely secured in the Tower of London. Since the money belongeth to the merchants of Genoa until delivered to the Duke of Alba in Antwerp, Her Majesty hath decided to take up the loan herself.',
             },
           ],
         },
@@ -3531,8 +3624,8 @@ const eee_data = {
           title:
             'Source A: Bishop John Jewel on the Crucifix Controversy in the Royal Chapel (February 1560)',
           caption:
-            'The printed Latin text of the Papal Bull Regnans in Excelsis issued by Pope Pius V on 25 February 1570, deposing Elizabeth as a heretic and usurper.',
-          desc: 'Papal Bull of Pope Pius V, Rome, 1570.',
+            'Letter from Bishop John Jewel to Peter Martyr detailing the bitter Puritan resistance to Queen Elizabeth retaining crucifixes and candlesticks in the Chapel Royal.',
+          desc: 'Bishop Jewel on Puritan opposition to Catholic ornaments in the Royal Chapel.',
           provenance:
             'Zurich Letters, Letter from John Jewel, Bishop of Salisbury, to Peter Martyr in Zurich, 4 February 1560.',
           citation: 'Zurich Letters, Parker Society Archives, 1560.',
@@ -3569,8 +3662,8 @@ const eee_data = {
           title:
             'Source B: Chronicle Account of Archbishop Parker and the Lambeth Vestments Confrontation (March 1566)',
           caption:
-            'Jesuit missionary Father Edmund Campion and his companions being executed for high treason at Tyburn on 1 December 1581.',
-          desc: 'Contemporary woodcut of the execution of Edmund Campion at Tyburn, 1581.',
+            'Chronicle account of Archbishop Parker summoning London clergy to Lambeth Palace in March 1566, demanding strict obedience to the vestments rubric or immediate dismissal.',
+          desc: 'Chronicle account of the Vestments Controversy at Lambeth Palace.',
           provenance:
             "John Stow, 'Annales of England', contemporary London chronicle recording the Lambeth clerical suspensions, March 1566.",
           citation: 'John Stow, Annales of England, British Library, 1566.',
@@ -3646,8 +3739,8 @@ const eee_data = {
           letter: 'D',
           title: 'Source D: Father William Allen on Founding the English College at Douai (1568)',
           caption:
-            "Engraved portrait of Father Edmund Campion SJ (1540–1581), whose famous manifesto 'Campion's Brag' insisted his mission was purely spiritual and unconcerned with worldly politics.",
-          desc: 'Portrait engraving of Edmund Campion SJ in priestly vestments.',
+            "Extract from Father William Allen's treatise explaining the strategic necessity of training English seminary priests at Douai to preserve the Catholic faith in England.",
+          desc: 'William Allen on the foundation of the English College at Douai.',
           provenance:
             "Cardinal William Allen, 'Apology for the English Seminaries', Douai, Flanders, 1568.",
           citation: 'Douai College Archives, 1568.',
@@ -3683,8 +3776,8 @@ const eee_data = {
           title:
             "Source E: Sir William Cecil's Privy Council Warrant Seizing the Genoese Bullion Ships (November 1568)",
           caption:
-            "Sir Francis Walsingham, Elizabeth's master spy, who recruited double agents and established postal interception networks to track Catholic priests and sympathizers.",
-          desc: 'Portrait of Sir Francis Walsingham in black doublet with white ruff.',
+            'Privy Council warrant authorized by Sir William Cecil directing the impoundment of £85,000 in Genoese bullion from stormbound Spanish transport vessels in English ports.',
+          desc: 'Privy Council warrant ordering the seizure of Genoese bullion in 1568.',
           provenance: 'Privy Council Register, Whitehall (PC 2/9), November 1568.',
           citation: 'The National Archives, Kew (PC 2/9), November 1568.',
           hinge_question:
@@ -4398,7 +4491,7 @@ const eee_data = {
               hinge_question:
                 "Why did Mary Queen of Scots' arrival in England in May 1568 place Elizabeth in an impossible political and diplomatic dilemma?",
               source_context:
-                "Mary Stuart fled Scotland across the Solway Firth into England in May 1568 after Scottish Protestant lords rebelled and forced her abdication. As a devout Catholic with a direct bloodline claim to the English crown, she immediately became the natural figurehead for Catholic plots to overthrow Elizabeth. Hinge Question: Why did Mary Queen of Scots' arrival in England in May 1568 place Elizabeth in an impossible political and diplomatic dilemma?",
+                "Mary Stuart fled Scotland across the Solway Firth into England in May 1568 after Scottish Protestant lords rebelled and forced her abdication. As a devout Catholic with a direct bloodline claim to the English crown, she immediately became the natural figurehead for Catholic plots to overthrow Elizabeth. **Hinge Question:** Why did Mary Queen of Scots' arrival in England in May 1568 place Elizabeth in an impossible political and diplomatic dilemma?",
               context:
                 'Mary Stuart fled Scotland across the Solway Firth into England in May 1568 after Scottish Protestant lords rebelled.',
               question_badge: 'Source Inference',
@@ -4413,6 +4506,12 @@ const eee_data = {
                 audience: 'The Scottish nobility and international royal courts.',
                 motive:
                   "To assert Mary's status as sovereign queen of Scotland and rightful claimant to neighbouring crowns.",
+                hinge_question:
+                  "Why did Mary Queen of Scots' arrival in England in May 1568 place Elizabeth in an impossible political and diplomatic dilemma?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Mary Stuart fled Scotland across the Solway Firth into England in May 1568 after Scottish Protestant lords rebelled and forced her abdication. As a devout Catholic with a direct bloodline claim to the English crown, she immediately became the natural figurehead for Catholic plots to overthrow Elizabeth. **Hinge Question:** Why did Mary Queen of Scots' arrival in England in May 1568 place Elizabeth in an impossible political and diplomatic dilemma?",
               },
             },
           ],
@@ -4444,7 +4543,7 @@ const eee_data = {
               hinge_question:
                 "Why did Protestant hardliners like Walsingham regard Mary's mere physical presence in England as an existential threat to Elizabeth's survival?",
               source_context:
-                "Portrait of Walsingham. Following the York and Westminster inquiries into the Casket Letters in 1568–69, Elizabeth chose neither to execute nor restore Mary, but to keep her under house arrest in remote castles like Tutbury and Sheffield under the custody of the Earl of Shrewsbury. Hinge Question: Why did Protestant hardliners like Walsingham regard Mary's mere physical presence in England as an existential threat to Elizabeth's survival?",
+                "Portrait of Walsingham. Following the York and Westminster inquiries into the Casket Letters in 1568–69, Elizabeth chose neither to execute nor restore Mary, but to keep her under house arrest in remote castles like Tutbury and Sheffield under the custody of the Earl of Shrewsbury. **Hinge Question:** Why did Protestant hardliners like Walsingham regard Mary's mere physical presence in England as an existential threat to Elizabeth's survival?",
               context:
                 'Portrait of Walsingham. Following the York and Westminster inquiries into the Casket Letters in 1568–69.',
               question_badge: 'Author’s Purpose',
@@ -4458,6 +4557,12 @@ const eee_data = {
                 audience: 'Queen Elizabeth I and the inner circle of the Privy Council.',
                 motive:
                   'To eliminate the foremost Catholic claimant to the English throne through legal execution.',
+                hinge_question:
+                  "Why did Protestant hardliners like Walsingham regard Mary's mere physical presence in England as an existential threat to Elizabeth's survival?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Portrait of Walsingham. Following the York and Westminster inquiries into the Casket Letters in 1568–69, Elizabeth chose neither to execute nor restore Mary, but to keep her under house arrest in remote castles like Tutbury and Sheffield under the custody of the Earl of Shrewsbury. **Hinge Question:** Why did Protestant hardliners like Walsingham regard Mary's mere physical presence in England as an existential threat to Elizabeth's survival?",
               },
             },
           ],
@@ -4483,33 +4588,39 @@ const eee_data = {
             {
               id: 'eee_l4_source_c',
               letter: 'C',
-              title: 'Source C: Portrait of Mary of Guise, Queen Regent of Scotland',
-              src: '/units/eee/assets/portraits/mary_of_guise.jpg',
-              image: '/units/eee/assets/portraits/mary_of_guise.jpg',
-              source: '/units/eee/assets/portraits/mary_of_guise.jpg',
+              title:
+                'Source C: The Deed of Abdication Extorted from Mary at Lochleven Castle (24 July 1567)',
               caption:
                 "Mary of Guise (1515–1560), mother of Mary Queen of Scots, who entrenched French military influence and Catholic power in Scotland during Elizabeth's youth.",
               desc: 'Portrait of Mary of Guise in French renaissance court mourning.',
-              provenance: 'Scottish National Portrait Gallery, Edinburgh (PG 1198), c. 1555.',
-              citation: 'Scottish National Portrait Gallery, Edinburgh.',
+              provenance: 'Acts of the Parliament of Scotland, Lochleven Castle, 24 July 1567.',
+              citation: 'National Records of Scotland, Edinburgh (PA2/10), 1567.',
               hinge_question:
                 "How did Mary Stuart's blood ties to the powerful French Guise family amplify English Protestant fears of a Continental invasion?",
               source_context:
-                "Portrait of Mary of Guise. The Guise family was the most militant Catholic faction in France. English Protestants feared that Mary Stuart would act as a puppet for her French Guise uncles, who possessed the military resources to invade England from Scotland. Hinge Question: How did Mary Stuart's blood ties to the powerful French Guise family amplify English Protestant fears of a Continental invasion?",
+                "Portrait of Mary of Guise. The Guise family was the most militant Catholic faction in France. English Protestants feared that Mary Stuart would act as a puppet for her French Guise uncles, who possessed the military resources to invade England from Scotland. **Hinge Question:** How did Mary Stuart's blood ties to the powerful French Guise family amplify English Protestant fears of a Continental invasion?",
               context:
                 'Portrait of Mary of Guise. The Guise family was the most militant Catholic faction in France.',
               question_badge: 'Reliability & Provenance',
               question_type: 'Reliability & Provenance',
               enquiry_question:
-                "How does Mary Stuart's Guise heritage help explain why Elizabeth intervened militarily in Scotland in 1560?",
+                'How does the provenance of Source C undermine its reliability as evidence that Mary Stuart freely renounced the Scottish Crown?',
               model_answer:
-                "Mary Stuart's Guise bloodline terrified English ministers because French troops in Scotland threatened England with a two-front war, prompting Elizabeth to sign the Treaty of Berwick and expel French forces from Scotland.",
+                'Source C was signed under direct duress while Mary was imprisoned on an island in Lochleven Castle, with Lord Lindsay threatening to cut her throat unless she signed away her crown.',
               provenance_clues: {
                 author: 'French court portraitist attached to the royal Valois court.',
                 audience: 'French and Scottish aristocrats upholding the Auld Alliance.',
                 motive:
                   'To represent Mary of Guise as the resolute defender of Catholic orthodoxy in Scotland.',
+                hinge_question:
+                  "How did Mary Stuart's blood ties to the powerful French Guise family amplify English Protestant fears of a Continental invasion?",
               },
+              teacher_notes: {
+                source_context:
+                  "Following the scandal of her marriage to Bothwell (the prime suspect in Darnley's murder), Protestant Scottish confederate lords imprisoned Mary in Lochleven Castle and forced her signature. Mary immediately revoked her abdication upon escaping from the island in May 1568. **Hinge Question:** Why did Mary's forced abdication create a dangerous constitutional dilemma for Queen Elizabeth when Mary fled across the Solway Firth into England?",
+              },
+              type: 'written',
+              text: 'We, Mary, by the grace of God Queen of Scots, being by long sickness and grievous travail so vexed and weary of government that our frail body and spirit can no longer endure the weight thereof, do freely resign and give over the Crown and royal estate of this realm to our dearest son, Prince James, and ordain our brother, James, Earl of Moray, to be Regent.',
             },
           ],
         },
@@ -4554,33 +4665,39 @@ const eee_data = {
               id: 'eee_l4_source_d',
               letter: 'D',
               title:
-                "Source D: King Francis II of France and Mary's Claim to the English Royal Arms",
-              src: '/units/eee/assets/portraits/francis_ii.jpg',
-              image: '/units/eee/assets/portraits/francis_ii.jpg',
-              source: '/units/eee/assets/portraits/francis_ii.jpg',
+                'Source D: The Disputed Casket Letters Produced by Regent Moray at the York Inquiry (December 1568)',
               caption:
                 'King Francis II of France (1544–1560), first husband of Mary Stuart, who ordered the royal coat of arms of England to be quartered with the arms of France and Scotland.',
               desc: 'Portrait of Francis II, King of France by François Clouet.',
-              provenance: 'Bibliothèque nationale de France, Paris (Estampes Res. Na 21), c. 1559.',
-              citation: 'Bibliothèque nationale de France, Paris.',
+              provenance:
+                'Copies preserved in The National Archives, Kew (SP 53/2), produced before English Commissioners at York, December 1568.',
+              citation: 'The National Archives, Kew (SP 53/2), 1568.',
               hinge_question:
                 "Why did Mary's quartering of the English royal lions and French fleurs-de-lis on her coat of arms inflame Anglo-French hostilities?",
               source_context:
-                "In 1558, upon the death of Mary I, King Henry II of France declared his daughter-in-law Mary Stuart the rightful Queen of England. Young Francis II and Mary displayed the English royal arms on their silverware and banners, an unforgivable direct insult to Elizabeth's legitimacy. Hinge Question: Why did Mary's quartering of the English royal lions and French fleurs-de-lis on her coat of arms inflame Anglo-French hostilities?",
+                "In 1558, upon the death of Mary I, King Henry II of France declared his daughter-in-law Mary Stuart the rightful Queen of England. Young Francis II and Mary displayed the English royal arms on their silverware and banners, an unforgivable direct insult to Elizabeth's legitimacy. **Hinge Question:** Why did Mary's quartering of the English royal lions and French fleurs-de-lis on her coat of arms inflame Anglo-French hostilities?",
               context:
                 'In 1558, upon the death of Mary I, King Henry II of France declared his daughter-in-law Mary Stuart the rightful Queen of England.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                'How does Source D corroborate the deeply personal rivalry between Queen Elizabeth I and Mary Stuart?',
+                'Why did the Scottish Protestant lords produce the Casket Letters at the York Inquiry?',
               model_answer:
-                "Source D corroborates that the rivalry was dynastic and personal, as Mary's public display of the English coat of arms was an explicit assertion that Elizabeth was a bastard usurper with no legal title to rule.",
+                "The Scottish lords wanted to prove Mary was complicit in Darnley's murder and an unfit adulteress, preventing Elizabeth from using English troops to restore Mary to the Scottish throne.",
               provenance_clues: {
                 author: 'François Clouet, court painter to the Kings of France.',
                 audience: 'The royal court of France and European diplomatic circles.',
                 motive:
                   "To celebrate Francis II's royal standing and his wife's dynastic claims across Britain.",
+                hinge_question:
+                  "Why did Mary's quartering of the English royal lions and French fleurs-de-lis on her coat of arms inflame Anglo-French hostilities?",
               },
+              teacher_notes: {
+                source_context:
+                  "The Casket Letters were eight unsigned French letters and sonnets allegedly found in a silver casket left behind by Bothwell. Mary was denied sight of the originals or permission to defend herself. Cecil engineered a verdict that Darnley's murder was 'not proven' against either side, justifying Mary's indefinite English detention. **Hinge Question:** How did Cecil's inconclusive verdict at York serve Elizabeth's strategic foreign policy perfectly?",
+              },
+              type: 'written',
+              text: "Extract from the alleged letter of Mary to Bothwell: 'I must have your love, else let me die... You have made me dissemble so far that I have horror at it. Blame me not if I obey you to bring him [Darnley] to Glasgow. You force me to a deceitful play... He suspecteth greatly, but I shall bring him to Kirk o' Field, where he shall be at your disposal.'",
             },
           ],
         },
@@ -4629,32 +4746,39 @@ const eee_data = {
             {
               id: 'eee_l4_source_e',
               letter: 'E',
-              title: 'Source E: Henri, Duke of Guise, Leader of the French Catholic League',
-              src: '/units/eee/assets/portraits/duke_of_guise.jpg',
-              image: '/units/eee/assets/portraits/duke_of_guise.jpg',
-              source: '/units/eee/assets/portraits/duke_of_guise.jpg',
+              title:
+                "Source E: Sir Ralph Sadler's Confidential Dispatch on Mary's Custody at Bolton Castle (January 1569)",
               caption:
                 "Henri, 3rd Duke of Guise ('Le Balafré'), Mary Stuart's cousin, who formulated invasion plans with Spain to depose Elizabeth and rescue Mary.",
               desc: 'Portrait of Henri, Duke of Guise in damascened armor.',
-              provenance: 'Musée Condé, Chantilly (PE 329), c. 1580.',
-              citation: 'Musée Condé, Chantilly.',
+              provenance:
+                'The National Archives, Kew (SP 53/3), Sir Ralph Sadler to Sir William Cecil, Bolton Castle, January 1569.',
+              citation: 'The National Archives, Kew (SP 53/3), January 1569.',
               hinge_question:
                 'How useful is this source in explaining why English Catholics repeatedly looked to French Catholic dukes to liberate Mary by force?',
               source_context:
-                'Portrait of Henri, Duke of Guise. In the Throckmorton Plot of 1583, French Catholic forces under the Duke of Guise were scheduled to land in Sussex with Spanish financial backing, liberate Mary Stuart from imprisonment, and place her upon the English throne. Hinge Question: How useful is this source in explaining why English Catholics repeatedly looked to French Catholic dukes to liberate Mary by force?',
+                'Portrait of Henri, Duke of Guise. In the Throckmorton Plot of 1583, French Catholic forces under the Duke of Guise were scheduled to land in Sussex with Spanish financial backing, liberate Mary Stuart from imprisonment, and place her upon the English throne. **Hinge Question:** How useful is this source in explaining why English Catholics repeatedly looked to French Catholic dukes to liberate Mary by force?',
               context: 'Portrait of Henri, Duke of Guise. In the Throckmorton Plot of 1583.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How useful is Source E for understanding the foreign military connections that underpinned Catholic plots against Elizabeth?',
+                "What can you infer from Source E about the immediate domestic threat posed by Mary Stuart's presence in northern England?",
               model_answer:
-                'Source E is extremely useful because it identifies the Duke of Guise as the militant continental military figure whose readiness to invade England made domestic plots involving Mary Stuart a genuine existential military danger.',
+                "Source E proves that Mary's royal bloodline and Catholic faith acted as an immediate magnet for discontented Catholic gentry in the north, creating an acute fear of rebellion that materialized in late 1569.",
               provenance_clues: {
                 author: 'French school portraitist attached to the Catholic League.',
                 audience: 'Militant French Catholics and Spanish Habsburg allies.',
                 motive:
                   "To project Guise's charismatic military leadership as the champion of the Counter-Reformation.",
+                hinge_question:
+                  'How useful is this source in explaining why English Catholics repeatedly looked to French Catholic dukes to liberate Mary by force?',
               },
+              teacher_notes: {
+                source_context:
+                  "Mary was moved from Carlisle Castle to Bolton Castle in Yorkshire under the charge of Sir Francis Knollys and Sir Ralph Sadler. Her presence in the deeply Catholic north galvanized the Earls of Northumberland and Westmorland to plan the 1569 rebellion. **Hinge Question:** Why did Mary's presence in northern England pose a far greater threat to Elizabeth than if Mary had remained in exile in France?",
+              },
+              type: 'written',
+              text: 'This Queen of Scots hath a charming and eloquent tongue; she hath also a great wit and courage. The northern papists do greatly reverence and flock to her. If she remain long in this shire, she will stir up a perilous rebellion. Her presence here is a firebrand in the thatch of the realm; she must be removed farther from the Scottish border and kept under rigorous surveillance.',
             },
           ],
         },
@@ -5668,7 +5792,7 @@ const eee_data = {
               hinge_question:
                 'What motivated northern Catholic earls like Northumberland and Westmorland to stage an open rebellion against Elizabeth in November 1569?',
               source_context:
-                "In November 1569, the Earls of Northumberland and Westmorland mobilized 4,600 armed men in the North of England, tearing up the English Bible in Durham Cathedral and restoring the Latin Mass. They felt excluded from Elizabeth's court, where southern Protestant advisors like Cecil held supreme influence. Hinge Question: What motivated northern Catholic earls like Northumberland and Westmorland to stage an open rebellion against Elizabeth in November 1569?",
+                "In November 1569, the Earls of Northumberland and Westmorland mobilized 4,600 armed men in the North of England, tearing up the English Bible in Durham Cathedral and restoring the Latin Mass. They felt excluded from Elizabeth's court, where southern Protestant advisors like Cecil held supreme influence. **Hinge Question:** What motivated northern Catholic earls like Northumberland and Westmorland to stage an open rebellion against Elizabeth in November 1569?",
               context:
                 'In November 1569, the Earls of Northumberland and Westmorland mobilized 4,600 armed men in the North of England.',
               question_badge: 'Author’s Purpose',
@@ -5682,6 +5806,12 @@ const eee_data = {
                 audience: 'Northern gentry and peers.',
                 motive:
                   'To assert the traditional regional magnificence and ancient authority of the Percy family.',
+                hinge_question:
+                  'What motivated northern Catholic earls like Northumberland and Westmorland to stage an open rebellion against Elizabeth in November 1569?',
+              },
+              teacher_notes: {
+                source_context:
+                  "In November 1569, the Earls of Northumberland and Westmorland mobilized 4,600 armed men in the North of England, tearing up the English Bible in Durham Cathedral and restoring the Latin Mass. They felt excluded from Elizabeth's court, where southern Protestant advisors like Cecil held supreme influence. **Hinge Question:** What motivated northern Catholic earls like Northumberland and Westmorland to stage an open rebellion against Elizabeth in November 1569?",
               },
             },
           ],
@@ -5720,7 +5850,7 @@ const eee_data = {
               hinge_question:
                 'How did the proposed marriage between the Duke of Norfolk and Mary Queen of Scots connect aristocratic discontent to foreign invasion plots?',
               source_context:
-                'In 1571, Italian banker Roberto Ridolfi concocted a plot with Spanish ambassador Don Guerau de Spes and Pope Pius V. The plan involved an invasion of 10,000 Spanish troops from the Netherlands under Alba, the murder of Elizabeth, and the marriage of Norfolk to Mary Stuart. Hinge Question: How did the proposed marriage between the Duke of Norfolk and Mary Queen of Scots connect aristocratic discontent to foreign invasion plots?',
+                'In 1571, Italian banker Roberto Ridolfi concocted a plot with Spanish ambassador Don Guerau de Spes and Pope Pius V. The plan involved an invasion of 10,000 Spanish troops from the Netherlands under Alba, the murder of Elizabeth, and the marriage of Norfolk to Mary Stuart. **Hinge Question:** How did the proposed marriage between the Duke of Norfolk and Mary Queen of Scots connect aristocratic discontent to foreign invasion plots?',
               context:
                 'In 1571, Italian banker Roberto Ridolfi concocted a plot with Spanish ambassador Don Guerau de Spes and Pope Pius V.',
               question_badge: 'Reliability & Provenance',
@@ -5733,6 +5863,12 @@ const eee_data = {
                 author: 'Hans Eworth or follower, capturing the wealthiest peer in England.',
                 audience: 'The royal court and English aristocratic society.',
                 motive: "To display Norfolk's supreme noble lineage and royal Tudor proximity.",
+                hinge_question:
+                  'How did the proposed marriage between the Duke of Norfolk and Mary Queen of Scots connect aristocratic discontent to foreign invasion plots?',
+              },
+              teacher_notes: {
+                source_context:
+                  'In 1571, Italian banker Roberto Ridolfi concocted a plot with Spanish ambassador Don Guerau de Spes and Pope Pius V. The plan involved an invasion of 10,000 Spanish troops from the Netherlands under Alba, the murder of Elizabeth, and the marriage of Norfolk to Mary Stuart. **Hinge Question:** How did the proposed marriage between the Duke of Norfolk and Mary Queen of Scots connect aristocratic discontent to foreign invasion plots?',
               },
             },
           ],
@@ -5788,7 +5924,7 @@ const eee_data = {
               hinge_question:
                 "What did Throckmorton's confessions under torture reveal regarding Spanish and French financial backing for an English Catholic insurrection?",
               source_context:
-                "Walsingham's agents placed Throckmorton's London home under surveillance for six months in 1583. Raiding the house, they discovered a list of Catholic nobles ready to join an invasion, harbour charts, and cipher keys. Put on the rack in the Tower, Throckmorton confessed to the entire plot. Hinge Question: What did Throckmorton's confessions under torture reveal regarding Spanish and French financial backing for an English Catholic insurrection?",
+                "Walsingham's agents placed Throckmorton's London home under surveillance for six months in 1583. Raiding the house, they discovered a list of Catholic nobles ready to join an invasion, harbour charts, and cipher keys. Put on the rack in the Tower, Throckmorton confessed to the entire plot. **Hinge Question:** What did Throckmorton's confessions under torture reveal regarding Spanish and French financial backing for an English Catholic insurrection?",
               context:
                 "Walsingham's agents placed Throckmorton's London home under surveillance for six months in 1583.",
               question_badge: 'Source Inference',
@@ -5803,6 +5939,12 @@ const eee_data = {
                 audience: 'Queen Elizabeth I, Privy Council, and Parliament.',
                 motive:
                   'To justify the expulsion of the Spanish ambassador and the passing of stricter anti-Catholic legislation.',
+                hinge_question:
+                  "What did Throckmorton's confessions under torture reveal regarding Spanish and French financial backing for an English Catholic insurrection?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Walsingham's agents placed Throckmorton's London home under surveillance for six months in 1583. Raiding the house, they discovered a list of Catholic nobles ready to join an invasion, harbour charts, and cipher keys. Put on the rack in the Tower, Throckmorton confessed to the entire plot. **Hinge Question:** What did Throckmorton's confessions under torture reveal regarding Spanish and French financial backing for an English Catholic insurrection?",
               },
             },
           ],
@@ -5864,7 +6006,7 @@ const eee_data = {
               hinge_question:
                 "How did Babington's plan to assassinate Elizabeth and install Mary Stuart trigger the Bond of Association and lead to Mary's trial?",
               source_context:
-                "In 1586, Babington organized a ring of Catholic courtiers and gentlemen to murder Queen Elizabeth. Unknown to the conspirators, their secret correspondence with Mary Queen of Scots—smuggled in watertight beer barrels—was being intercepted, deciphered, and copied by Walsingham's cryptographer Thomas Phelippes. Hinge Question: How did Babington's plan to assassinate Elizabeth and install Mary Stuart trigger the Bond of Association and lead to Mary's trial?",
+                "In 1586, Babington organized a ring of Catholic courtiers and gentlemen to murder Queen Elizabeth. Unknown to the conspirators, their secret correspondence with Mary Queen of Scots—smuggled in watertight beer barrels—was being intercepted, deciphered, and copied by Walsingham's cryptographer Thomas Phelippes. **Hinge Question:** How did Babington's plan to assassinate Elizabeth and install Mary Stuart trigger the Bond of Association and lead to Mary's trial?",
               context:
                 'In 1586, Babington organized a ring of Catholic courtiers and gentlemen to murder Queen Elizabeth.',
               question_badge: 'Historical Utility',
@@ -5878,6 +6020,12 @@ const eee_data = {
                 audience: 'The London public and readers fascinated by the treason trials.',
                 motive:
                   'To demonstrate the inevitable retribution that befell those who plotted against Queen Elizabeth.',
+                hinge_question:
+                  "How did Babington's plan to assassinate Elizabeth and install Mary Stuart trigger the Bond of Association and lead to Mary's trial?",
+              },
+              teacher_notes: {
+                source_context:
+                  "In 1586, Babington organized a ring of Catholic courtiers and gentlemen to murder Queen Elizabeth. Unknown to the conspirators, their secret correspondence with Mary Queen of Scots—smuggled in watertight beer barrels—was being intercepted, deciphered, and copied by Walsingham's cryptographer Thomas Phelippes. **Hinge Question:** How did Babington's plan to assassinate Elizabeth and install Mary Stuart trigger the Bond of Association and lead to Mary's trial?",
               },
             },
           ],
@@ -5939,7 +6087,7 @@ const eee_data = {
               hinge_question:
                 "How does cryptographer Thomas Phelippes' deciphered beer-barrel postscript provide decisive forensic evidence of Mary's complicity in regicide?",
               source_context:
-                "On 17 July 1586, Mary Stuart replied to Babington's letter approving the assassination of Elizabeth. Thomas Phelippes intercepted the letter, deciphered the substitution cipher, and forged a postscript asking Babington to name the six men appointed for the execution. This document sealed Mary's fate at her trial at Fotheringhay Castle. Hinge Question: How does cryptographer Thomas Phelippes' deciphered beer-barrel postscript provide decisive forensic evidence of Mary's complicity in regicide?",
+                "On 17 July 1586, Mary Stuart replied to Babington's letter approving the assassination of Elizabeth. Thomas Phelippes intercepted the letter, deciphered the substitution cipher, and forged a postscript asking Babington to name the six men appointed for the execution. This document sealed Mary's fate at her trial at Fotheringhay Castle. **Hinge Question:** How does cryptographer Thomas Phelippes' deciphered beer-barrel postscript provide decisive forensic evidence of Mary's complicity in regicide?",
               context:
                 "On 17 July 1586, Mary Stuart replied to Babington's letter approving the assassination of Elizabeth.",
               question_badge: 'Cross-Referencing',
@@ -5955,6 +6103,12 @@ const eee_data = {
                   "Sir Francis Walsingham and the Privy Council commissioners presiding at Mary's trial.",
                 motive:
                   "To provide the undeniable legal smoking gun proving Mary Stuart consented to Elizabeth's murder.",
+                hinge_question:
+                  "How does cryptographer Thomas Phelippes' deciphered beer-barrel postscript provide decisive forensic evidence of Mary's complicity in regicide?",
+              },
+              teacher_notes: {
+                source_context:
+                  "On 17 July 1586, Mary Stuart replied to Babington's letter approving the assassination of Elizabeth. Thomas Phelippes intercepted the letter, deciphered the substitution cipher, and forged a postscript asking Babington to name the six men appointed for the execution. This document sealed Mary's fate at her trial at Fotheringhay Castle. **Hinge Question:** How does cryptographer Thomas Phelippes' deciphered beer-barrel postscript provide decisive forensic evidence of Mary's complicity in regicide?",
               },
             },
           ],
@@ -7056,7 +7210,7 @@ const eee_data = {
               hinge_question:
                 'Why did Leicester lobby passionately for English military intervention in the Netherlands while William Cecil urged strategic caution?',
               source_context:
-                "Portrait of Robert Dudley. For two decades, Dudley urged Elizabeth to send an English army to aid Dutch Protestant rebels against Philip II, arguing that if Spain subdued the Netherlands, Philip's next target would be England. Cecil, conversely, feared the colossal financial cost of continental warfare. Hinge Question: Why did Leicester lobby passionately for English military intervention in the Netherlands while William Cecil urged strategic caution?",
+                "Portrait of Robert Dudley. For two decades, Dudley urged Elizabeth to send an English army to aid Dutch Protestant rebels against Philip II, arguing that if Spain subdued the Netherlands, Philip's next target would be England. Cecil, conversely, feared the colossal financial cost of continental warfare. **Hinge Question:** Why did Leicester lobby passionately for English military intervention in the Netherlands while William Cecil urged strategic caution?",
               context:
                 'Portrait of Robert Dudley. For two decades, Dudley urged Elizabeth to send an English army to aid Dutch Protestant rebels.',
               question_badge: 'Author’s Purpose',
@@ -7071,6 +7225,12 @@ const eee_data = {
                 audience: 'The Tudor court and international Protestant diplomats.',
                 motive:
                   'To project Leicester as the champion of international militant Protestantism.',
+                hinge_question:
+                  'Why did Leicester lobby passionately for English military intervention in the Netherlands while William Cecil urged strategic caution?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Portrait of Robert Dudley. For two decades, Dudley urged Elizabeth to send an English army to aid Dutch Protestant rebels against Philip II, arguing that if Spain subdued the Netherlands, Philip's next target would be England. Cecil, conversely, feared the colossal financial cost of continental warfare. **Hinge Question:** Why did Leicester lobby passionately for English military intervention in the Netherlands while William Cecil urged strategic caution?",
               },
             },
           ],
@@ -7102,7 +7262,7 @@ const eee_data = {
               hinge_question:
                 "How did Elizabeth's public knighting of Drake aboard the Golden Hind at Deptford signal open defiance against Spanish imperial claims?",
               source_context:
-                "In September 1580, Francis Drake returned to Plymouth in the Golden Hind laden with Spanish silver and spices from his circumnavigation of the globe. King Philip II demanded Drake's execution as a pirate; instead, Elizabeth boarded his ship at Deptford in April 1581 and personally knighted him. Hinge Question: How did Elizabeth's public knighting of Drake aboard the Golden Hind at Deptford signal open defiance against Spanish imperial claims?",
+                "In September 1580, Francis Drake returned to Plymouth in the Golden Hind laden with Spanish silver and spices from his circumnavigation of the globe. King Philip II demanded Drake's execution as a pirate; instead, Elizabeth boarded his ship at Deptford in April 1581 and personally knighted him. **Hinge Question:** How did Elizabeth's public knighting of Drake aboard the Golden Hind at Deptford signal open defiance against Spanish imperial claims?",
               context:
                 'In September 1580, Francis Drake returned to Plymouth in the Golden Hind laden with Spanish silver and spices.',
               question_badge: 'Source Inference',
@@ -7116,6 +7276,12 @@ const eee_data = {
                 audience: 'The English maritime and merchant community, and Spanish ambassadors.',
                 motive:
                   'To celebrate English naval heroism and legitimize privateering as a patriotic national enterprise.',
+                hinge_question:
+                  "How did Elizabeth's public knighting of Drake aboard the Golden Hind at Deptford signal open defiance against Spanish imperial claims?",
+              },
+              teacher_notes: {
+                source_context:
+                  "In September 1580, Francis Drake returned to Plymouth in the Golden Hind laden with Spanish silver and spices from his circumnavigation of the globe. King Philip II demanded Drake's execution as a pirate; instead, Elizabeth boarded his ship at Deptford in April 1581 and personally knighted him. **Hinge Question:** How did Elizabeth's public knighting of Drake aboard the Golden Hind at Deptford signal open defiance against Spanish imperial claims?",
               },
             },
           ],
@@ -7172,7 +7338,7 @@ const eee_data = {
               hinge_question:
                 'How did the 1568 Spanish attack on Hawkins and Drake at San Juan de Ulúa set off decades of undeclared maritime warfare?',
               source_context:
-                "In September 1568, Hawkins' trading fleet was trapped by the Spanish Viceroy at San Juan de Ulúa in Mexico and bombarded despite a truce, losing most ships and men. Hawkins and Drake escaped, vowing lifelong vengeance against Spanish Catholic power. Hinge Question: How did the 1568 Spanish attack on Hawkins and Drake at San Juan de Ulúa set off decades of undeclared maritime warfare?",
+                "In September 1568, Hawkins' trading fleet was trapped by the Spanish Viceroy at San Juan de Ulúa in Mexico and bombarded despite a truce, losing most ships and men. Hawkins and Drake escaped, vowing lifelong vengeance against Spanish Catholic power. **Hinge Question:** How did the 1568 Spanish attack on Hawkins and Drake at San Juan de Ulúa set off decades of undeclared maritime warfare?",
               context:
                 "In September 1568, Hawkins' trading fleet was trapped by the Spanish Viceroy at San Juan de Ulúa.",
               question_badge: 'Reliability & Provenance',
@@ -7186,6 +7352,12 @@ const eee_data = {
                   "Maritime portrait artist recording Hawkins' standing as naval commissioner.",
                 audience: 'Elizabethan admiralty officials and wealthy London syndicates.',
                 motive: "To honour Hawkins' naval administrative leadership and oceanic voyages.",
+                hinge_question:
+                  'How did the 1568 Spanish attack on Hawkins and Drake at San Juan de Ulúa set off decades of undeclared maritime warfare?',
+              },
+              teacher_notes: {
+                source_context:
+                  "In September 1568, Hawkins' trading fleet was trapped by the Spanish Viceroy at San Juan de Ulúa in Mexico and bombarded despite a truce, losing most ships and men. Hawkins and Drake escaped, vowing lifelong vengeance against Spanish Catholic power. **Hinge Question:** How did the 1568 Spanish attack on Hawkins and Drake at San Juan de Ulúa set off decades of undeclared maritime warfare?",
               },
             },
           ],
@@ -7223,7 +7395,7 @@ const eee_data = {
               hinge_question:
                 "How does this commemorative chart demonstrate the psychological impact of English privateers penetrating the 'Spanish Lake' of the Pacific?",
               source_context:
-                "Hondius's world map was printed across Europe to celebrate Drake's circumnavigation. Drake sailed through the treacherous Straits of Magellan into the Pacific Ocean, where no European rival had ever penetrated, capturing the Spanish treasure galleon Nuestra Señora de la Concepción (Cacafuego). Hinge Question: How does this commemorative chart demonstrate the psychological impact of English privateers penetrating the 'Spanish Lake' of the Pacific?",
+                "Hondius's world map was printed across Europe to celebrate Drake's circumnavigation. Drake sailed through the treacherous Straits of Magellan into the Pacific Ocean, where no European rival had ever penetrated, capturing the Spanish treasure galleon Nuestra Señora de la Concepción (Cacafuego). **Hinge Question:** How does this commemorative chart demonstrate the psychological impact of English privateers penetrating the 'Spanish Lake' of the Pacific?",
               context:
                 "Hondius's world map was printed across Europe to celebrate Drake's circumnavigation.",
               question_badge: 'Historical Utility',
@@ -7237,6 +7409,12 @@ const eee_data = {
                 audience: 'Educated European geographers, navigators, and statesmen.',
                 motive:
                   'To glorify English maritime exploration and publicize Protestant mastery over global sea routes.',
+                hinge_question:
+                  "How does this commemorative chart demonstrate the psychological impact of English privateers penetrating the 'Spanish Lake' of the Pacific?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Hondius's world map was printed across Europe to celebrate Drake's circumnavigation. Drake sailed through the treacherous Straits of Magellan into the Pacific Ocean, where no European rival had ever penetrated, capturing the Spanish treasure galleon Nuestra Señora de la Concepción (Cacafuego). **Hinge Question:** How does this commemorative chart demonstrate the psychological impact of English privateers penetrating the 'Spanish Lake' of the Pacific?",
               },
             },
           ],
@@ -7286,34 +7464,39 @@ const eee_data = {
               id: 'eee_l6_source_e',
               letter: 'E',
               title:
-                'Source E: Alexander Farnese, Duke of Parma, Commander of the Army of Flanders',
-              src: '/units/eee/assets/portraits/parma.png',
-              image: '/units/eee/assets/portraits/parma.png',
-              source: '/units/eee/assets/portraits/parma.png',
+                "Source E: The Duke of Parma's Dispatch to King Philip II on the Armada Strategy (January 1588)",
               caption:
                 'Alexander Farnese, Prince and Duke of Parma (1545–1592), whose brilliant recapture of Antwerp in 1585 forced Elizabeth to intervene militarily via the Treaty of Nonsuch.',
               desc: 'Portrait of Alexander Farnese, Duke of Parma in armor with the collar of the Golden Fleece.',
               provenance:
-                'Galleria Nazionale di Parma / Kunsthistorisches Museum, Vienna (GG 2097), c. 1585.',
-              citation: 'Kunsthistorisches Museum, Vienna.',
+                'General Archive of Simancas, Spain (Estado, leg. 594), Duke of Parma to Philip II, Brussels, January 1588.',
+              citation: 'General Archive of Simancas (Estado, leg. 594), 1588.',
               hinge_question:
                 "How did Parma's brutal reconquest of Dutch cities like Antwerp compel Elizabeth to sign the 1585 Treaty of Nonsuch?",
               source_context:
-                "Portrait of the Duke of Parma, the greatest military strategist of his age. In 1584, William of Orange was assassinated by a Catholic gunman. When Parma captured Antwerp in August 1585, the Dutch Revolt was on the verge of collapse, forcing Elizabeth to abandon neutrality and sign the Treaty of Nonsuch. Hinge Question: How did Parma's brutal reconquest of Dutch cities like Antwerp compel Elizabeth to sign the 1585 Treaty of Nonsuch?",
+                "Portrait of the Duke of Parma, the greatest military strategist of his age. In 1584, William of Orange was assassinated by a Catholic gunman. When Parma captured Antwerp in August 1585, the Dutch Revolt was on the verge of collapse, forcing Elizabeth to abandon neutrality and sign the Treaty of Nonsuch. **Hinge Question:** How did Parma's brutal reconquest of Dutch cities like Antwerp compel Elizabeth to sign the 1585 Treaty of Nonsuch?",
               context:
                 'Portrait of the Duke of Parma, the greatest military strategist of his age.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                'How does Source E explain the outbreak of formal war between England and Spain in 1585?',
+                'Why did the Duke of Parma write this urgent warning to King Philip II before the Armada sailed?',
               model_answer:
-                "Source E explains that Parma's military triumphs in Flanders forced Elizabeth's hand; if the Dutch fell, Parma's 30,000 veteran soldiers would have total control of the Channel ports, making a direct invasion of England inevitable.",
+                'Parma wanted to alert Philip to the fatal operational flaw in the invasion plan: his barges were unarmed and unseaworthy, making rendezvous impossible without total Spanish naval mastery.',
               provenance_clues: {
                 author: 'Otto van Veen, Flemish court painter to the Habsburg governor.',
                 audience: 'King Philip II of Spain and European military circles.',
                 motive:
                   "To celebrate Parma's ruthless and invincible military leadership on behalf of the Catholic King.",
+                hinge_question:
+                  "How did Parma's brutal reconquest of Dutch cities like Antwerp compel Elizabeth to sign the 1585 Treaty of Nonsuch?",
               },
+              teacher_notes: {
+                source_context:
+                  "Philip II's grand strategy required two separate forces—Medina Sidonia's fleet from Spain and Parma's Army of Flanders—to rendezvous off the Flemish coast without possessing a deep-water port. Parma warned repeatedly that communication was impossible in the presence of Dutch flyboats and English galleons. **Hinge Question:** How did the lack of a deep-water port in the Netherlands doom Philip II's Armada plan before the ships even left Lisbon?",
+              },
+              type: 'written',
+              text: "I must remind Your Majesty that my flat-bottomed invasion barges cannot withstand open sea warfare or the English warships. Unless the Duke of Medina Sidonia's Armada sweeps the English fleet completely from the Channel and anchors off Dunkirk to cover our embarkation, it will be utter madness to put our 30,000 veterans to sea. The enemy's long guns will send my soldiers to the bottom of the ocean.",
             },
           ],
         },
@@ -8294,7 +8477,7 @@ const eee_data = {
               hinge_question:
                 "Why did Drake describe his destruction of Spanish supplies at Cadiz as 'singeing the King of Spain's beard'?",
               source_context:
-                "In April 1587, Sir Francis Drake sailed into the heavily defended Spanish naval base at Cadiz, destroying over 30 warships and thousands of seasoned barrel staves needed for food and water storage. He playfully referred to the raid as 'singeing the King of Spain's beard'. Hinge Question: Why did Drake describe his destruction of Spanish supplies at Cadiz as 'singeing the King of Spain's beard'?",
+                "In April 1587, Sir Francis Drake sailed into the heavily defended Spanish naval base at Cadiz, destroying over 30 warships and thousands of seasoned barrel staves needed for food and water storage. He playfully referred to the raid as 'singeing the King of Spain's beard'. **Hinge Question:** Why did Drake describe his destruction of Spanish supplies at Cadiz as 'singeing the King of Spain's beard'?",
               context:
                 'In April 1587, Sir Francis Drake sailed into the heavily defended Spanish naval base at Cadiz.',
               question_badge: 'Source Inference',
@@ -8308,6 +8491,12 @@ const eee_data = {
                 audience: 'English public and naval commanders preparing for war.',
                 motive:
                   'To celebrate English offensive daring against the vastly larger Spanish navy.',
+                hinge_question:
+                  "Why did Drake describe his destruction of Spanish supplies at Cadiz as 'singeing the King of Spain's beard'?",
+              },
+              teacher_notes: {
+                source_context:
+                  "In April 1587, Sir Francis Drake sailed into the heavily defended Spanish naval base at Cadiz, destroying over 30 warships and thousands of seasoned barrel staves needed for food and water storage. He playfully referred to the raid as 'singeing the King of Spain's beard'. **Hinge Question:** Why did Drake describe his destruction of Spanish supplies at Cadiz as 'singeing the King of Spain's beard'?",
               },
             },
           ],
@@ -8346,7 +8535,7 @@ const eee_data = {
               hinge_question:
                 "How did Elizabeth's Tilbury speech turn her gender from a perceived weakness into a rallying cry for national unity?",
               source_context:
-                "On 9 August 1588, with Parma's army poised across the Channel, Elizabeth rode through the militia camp at Tilbury clad in a silver breastplate. She proclaimed: 'I know I have the body of a weak and feeble woman, but I have the heart and stomach of a king, and of a king of England too.' Hinge Question: How did Elizabeth's Tilbury speech turn her gender from a perceived weakness into a rallying cry for national unity?",
+                "On 9 August 1588, with Parma's army poised across the Channel, Elizabeth rode through the militia camp at Tilbury clad in a silver breastplate. She proclaimed: 'I know I have the body of a weak and feeble woman, but I have the heart and stomach of a king, and of a king of England too.' **Hinge Question:** How did Elizabeth's Tilbury speech turn her gender from a perceived weakness into a rallying cry for national unity?",
               context:
                 "On 9 August 1588, with Parma's army poised across the Channel, Elizabeth rode through the militia camp at Tilbury.",
               question_badge: 'Author’s Purpose',
@@ -8360,6 +8549,12 @@ const eee_data = {
                 audience: '17,000 English militia troops at Tilbury and the English population.',
                 motive:
                   'To galvanize national morale and project invincible sovereign courage against foreign invasion.',
+                hinge_question:
+                  "How did Elizabeth's Tilbury speech turn her gender from a perceived weakness into a rallying cry for national unity?",
+              },
+              teacher_notes: {
+                source_context:
+                  "On 9 August 1588, with Parma's army poised across the Channel, Elizabeth rode through the militia camp at Tilbury clad in a silver breastplate. She proclaimed: 'I know I have the body of a weak and feeble woman, but I have the heart and stomach of a king, and of a king of England too.' **Hinge Question:** How did Elizabeth's Tilbury speech turn her gender from a perceived weakness into a rallying cry for national unity?",
               },
             },
           ],
@@ -8401,34 +8596,41 @@ const eee_data = {
             {
               id: 'eee_l7_source_c',
               letter: 'C',
-              title: 'Source C: Alonso Pérez de Guzmán, 7th Duke of Medina Sidonia',
-              src: '/units/eee/assets/portraits/medina_sidonia.jpg',
-              image: '/units/eee/assets/portraits/medina_sidonia.jpg',
-              source: '/units/eee/assets/portraits/medina_sidonia.jpg',
+              title:
+                'Source C: Eyewitness Account of the English Fireships at Calais Roads (Midnight, 7 August 1588)',
               caption:
                 'The Duke of Medina Sidonia, appointed supreme commander of the Spanish Armada by King Philip II following the sudden death of the Marquis of Santa Cruz in February 1588.',
               desc: 'Portrait of the 7th Duke of Medina Sidonia in Spanish court armor.',
-              provenance: 'Palacio Ducal de Medina Sidonia, Sanlúcar de Barrameda, c. 1588.',
-              citation: 'Medina Sidonia Foundation Archives, Spain.',
+              provenance:
+                'Diary of Father Pedro Coco Calderón, chief purveyor of the Spanish Armada, August 1588.',
+              citation: 'Biblioteca Nacional de España, Madrid (MS 18.423), 1588.',
               hinge_question:
                 'Why did Medina Sidonia write to King Philip II expressing severe doubts about his own ability to command the Grand Armada?',
               source_context:
-                'Medina Sidonia was one of the wealthiest grandees in Spain and a competent administrator, but he possessed no naval combat experience. When Philip appointed him, he pleaded to be excused, confessing that he was prone to seasickness and had no knowledge of sea warfare. Hinge Question: Why did Medina Sidonia write to King Philip II expressing severe doubts about his own ability to command the Grand Armada?',
+                'Medina Sidonia was one of the wealthiest grandees in Spain and a competent administrator, but he possessed no naval combat experience. When Philip appointed him, he pleaded to be excused, confessing that he was prone to seasickness and had no knowledge of sea warfare. **Hinge Question:** Why did Medina Sidonia write to King Philip II expressing severe doubts about his own ability to command the Grand Armada?',
               context:
                 'Medina Sidonia was one of the wealthiest grandees in Spain and a competent administrator.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                "How does Medina Sidonia's correspondence with Philip II explain weaknesses in Spanish strategic command during the Armada campaign?",
+                'What does Source C suggest was the decisive psychological impact of the English fireships on the Spanish Armada?',
               model_answer:
-                "His correspondence proves that the Spanish commander lacked operational naval experience and lacked confidence in Philip's rigid invasion plan, leaving him ill-equipped to adapt when English tactics disrupted his fleet.",
+                'Source C reveals that the fireships induced absolute panic by triggering fears of exploding hellburners, causing Spanish captains to sever their anchors and irrevocably destroy their disciplined crescent formation.',
               provenance_clues: {
                 author:
                   'Spanish court artist recording the grandee chosen to lead the Catholic crusade.',
                 audience: 'The Spanish nobility and royal court in Madrid.',
                 motive:
                   "To project aristocratic nobility and divine devotion in the King's chosen commander.",
+                hinge_question:
+                  'Why did Medina Sidonia write to King Philip II expressing severe doubts about his own ability to command the Grand Armada?',
               },
+              teacher_notes: {
+                source_context:
+                  'The fireships caused zero physical damage to Spanish hulls, but their psychological effect was catastrophic. By severing their anchors, the Spanish ships could not regroup in Calais roads and were swept northeast toward the dangerous shallows of Gravelines. **Hinge Question:** Why was the loss of their anchors at Calais far more fatal to the Spanish Armada than direct artillery hits from English culverins?',
+              },
+              type: 'written',
+              text: "At midnight two hours before day, the English loosed eight great ships filled with pitch, brimstone, and wild-fire, sailing directly upon our fleet before the wind. Seeing the blazing hulls drifting among us with their cannon discharging in the flames, our captains cried 'The hellburners of Antwerp!' In terrifying panic, every galleon cut her cables and severed their anchors, scattering in wild confusion across the stormy shoals.",
             },
           ],
         },
@@ -8453,33 +8655,40 @@ const eee_data = {
             {
               id: 'eee_l7_source_d',
               letter: 'D',
-              title: 'Source D: Robert Dudley Organizing the Militia Camp at West Tilbury (1588)',
-              src: '/units/eee/assets/portraits/robert_dudley.jpg',
-              image: '/units/eee/assets/portraits/robert_dudley.jpg',
-              source: '/units/eee/assets/portraits/robert_dudley.jpg',
+              title: 'Source D: Contemporary Painting of the Battle of Gravelines (8 August 1588)',
+              src: '/images/battle_of_gravelines_1588.jpg',
+              image: '/images/battle_of_gravelines_1588.jpg',
+              source: '/images/battle_of_gravelines_1588.jpg',
               caption:
-                "Robert Dudley, Earl of Leicester, appointed Lieutenant-General of the Queen's Armies, who oversaw the fortification and troop deployment at Tilbury Fort in 1588.",
-              desc: 'Portrait of Robert Dudley in full battle dress, 1588.',
-              provenance: 'Parham House Collection, West Sussex, 1588.',
-              citation: 'Parham House Collection, UK.',
+                'The Battle of Gravelines (8 August 1588): English race-built galleons engaging the disarrayed Spanish fleet at point-blank range along the Flemish coast.',
+              desc: 'English race-built warships using superior speed and culverin broadsides against the Spanish Armada.',
+              provenance:
+                'National Maritime Museum, Greenwich (BHC0262), contemporary 16th-century marine artwork.',
+              citation: 'National Maritime Museum, Greenwich.',
               hinge_question:
                 "What does Dudley's correspondence reveal about the logistical chaos and food shortages plaguing English defensive troops in Essex?",
               source_context:
-                "Portrait of Leicester as commander-in-chief of English land forces in 1588. Despite the patriotic rhetoric, Dudley's urgent letters to the Privy Council complained of severe food shortages, untrained militia conscripts, and late pay, warning that the camp was vulnerable to disease and panic. Hinge Question: What does Dudley's correspondence reveal about the logistical chaos and food shortages plaguing English defensive troops in Essex?",
+                "Portrait of Leicester as commander-in-chief of English land forces in 1588. Despite the patriotic rhetoric, Dudley's urgent letters to the Privy Council complained of severe food shortages, untrained militia conscripts, and late pay, warning that the camp was vulnerable to disease and panic. **Hinge Question:** What does Dudley's correspondence reveal about the logistical chaos and food shortages plaguing English defensive troops in Essex?",
               context:
                 'Portrait of Leicester as commander-in-chief of English land forces in 1588.',
               question_badge: 'Cross-Referencing',
               question_type: 'Cross-Referencing',
               enquiry_question:
-                'How does Source D qualify traditional heroic accounts of Elizabethan domestic military preparations in 1588?',
+                'How does Source D support the view that superior naval tactics and gunnery, rather than weather alone, defeated the Armada at Gravelines?',
               model_answer:
-                'Source D qualifies heroic myths by showing that English land defenses were plagued by logistical dysfunction, lack of ammunition, and inadequate training, meaning England was fortunate that the battle was decided entirely at sea.',
+                'Source D shows English galleons exploiting superior manoeuvrability to fire repeated broadsides into Spanish warships at close range, riddling Spanish hulls while preventing the Spanish infantry from boarding.',
               provenance_clues: {
                 author:
                   'English workshop artist painting Dudley shortly before his sudden death in September 1588.',
                 audience: 'The Dudley family and court peers.',
                 motive:
                   "To commemorate Leicester's final service to Queen Elizabeth as general of the royal camp.",
+                hinge_question:
+                  "What does Dudley's correspondence reveal about the logistical chaos and food shortages plaguing English defensive troops in Essex?",
+              },
+              teacher_notes: {
+                source_context:
+                  "At Gravelines, Lord Howard and Drake closed to within 100 yards of the disorganized Spanish fleet. English race-built ships could fire three broadsides to Spain's one, sinking three great galleons and forcing the battered Armada onto the North Sea. **Hinge Question:** How did English reload speed and long culverin guns neutralize Spain's overwhelming superiority in hand-to-hand soldiers?",
               },
             },
           ],
@@ -8554,27 +8763,29 @@ const eee_data = {
             {
               id: 'eee_l7_source_e',
               letter: 'E',
-              title: 'Source E: Parma’s Army of Flanders Assembled on the Coast of Dunkirk (1588)',
-              src: '/images/the_duke_of_parma.png',
-              image: '/images/the_duke_of_parma.png',
-              source: '/images/the_duke_of_parma.png',
+              title:
+                'Source E: Route and Shipwrecks of the Spanish Armada around Scotland and Ireland (1588)',
+              src: '/images/spanish_armada_1588_route_battle_map.jpg',
+              image: '/images/spanish_armada_1588_route_battle_map.jpg',
+              source: '/images/spanish_armada_1588_route_battle_map.jpg',
               caption:
-                'The Duke of Parma, whose 27,000 veteran infantry were assembled in flat-bottomed barges at Dunkirk and Nieuwpoort waiting for the Armada to clear the English fleet.',
-              desc: 'Engraving of Alexander Farnese, Duke of Parma, inspecting invasion transport barges in Flanders.',
-              provenance: 'Rijksmuseum, Amsterdam (RP-P-OB-78.784), c. 1588.',
-              citation: 'Rijksmuseum, Amsterdam.',
+                "Historical Map of the Spanish Armada's Retreat: Charting the perilous voyage around northern Scotland and the catastrophic Atlantic shipwrecks along the Irish coast (September 1588).",
+              desc: 'The track of the surviving Armada ships fleeing north around Scotland and wrecked along the Atlantic coast of Ireland.',
+              provenance:
+                'The National Archives, Kew (MPF 1/240), contemporary map of Armada wrecks, 1588.',
+              citation: 'The National Archives, Kew.',
               hinge_question:
                 "Why was the Armada completely dependent on rendezvous with Parma's barges at Dunkirk to mount an invasion of England?",
               source_context:
-                "The fundamental flaw of Philip II's invasion plan was the rendezvous between Medina Sidonia's fleet and Parma's army. Parma had no deep-water port, and Dutch Protestant Sea Beggars in shallow gunboats blockaded the Flemish canals, making it impossible for Parma to embark without total naval escort. Hinge Question: Why was the Armada completely dependent on rendezvous with Parma's barges at Dunkirk to mount an invasion of England?",
+                "The fundamental flaw of Philip II's invasion plan was the rendezvous between Medina Sidonia's fleet and Parma's army. Parma had no deep-water port, and Dutch Protestant Sea Beggars in shallow gunboats blockaded the Flemish canals, making it impossible for Parma to embark without total naval escort. **Hinge Question:** Why was the Armada completely dependent on rendezvous with Parma's barges at Dunkirk to mount an invasion of England?",
               context:
                 "The fundamental flaw of Philip II's invasion plan was the rendezvous between Medina Sidonia's fleet and Parma's army.",
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'How useful is Source E for analyzing why the Spanish invasion plan was fatally flawed from the beginning?',
+                "Why is Source E valuable for showing why less than half of Philip II's soldiers returned to Spain?",
               model_answer:
-                "Source E is highly useful because it illustrates the geographic and tactical impossibility of Parma's unescorted wooden barges breaking through the shallow coastal blockade to join the deep-draft Armada anchored miles offshore.",
+                'Source E maps the devastating trail of Atlantic wrecks along the Irish coast, showing that severe gales, starvation, and lack of fresh water destroyed far more Spanish ships and men than battle casualties.',
               provenance_clues: {
                 author:
                   "Dutch Protestant engraver recording the threat posed by Parma's army in the Low Countries.",
@@ -8582,6 +8793,12 @@ const eee_data = {
                   'Dutch and English Protestant readers celebrating the failure of the invasion.',
                 motive:
                   'To expose the strategic helplessness of Spanish ground forces trapped by Dutch coastal flyboats.',
+                hinge_question:
+                  "Why was the Armada completely dependent on rendezvous with Parma's barges at Dunkirk to mount an invasion of England?",
+              },
+              teacher_notes: {
+                source_context:
+                  "With the English Channel blocked, Medina Sidonia had no choice but to sail north around the Orkneys. Without spare anchors or water barrels, fierce autumn storms smashed over 35 galleons against the rocky coasts of Sligo, Mayo, and Kerry. **Hinge Question:** Why did contemporary Elizabethans celebrate the Irish gales as 'The Protestant Wind', and how did this transform the religious significance of the victory?",
               },
             },
           ],
@@ -9609,7 +9826,7 @@ const eee_data = {
               hinge_question:
                 "How did the English fireship attack off Calais effectively shatter the Armada's defensive crescent formation?",
               source_context:
-                "On the night of 7–8 August 1588, Lord Howard of Effingham and Drake launched eight pitch-soaked fireships into the tightly anchored Armada off Calais. Panicked Spanish captains cut their anchor cables and drifted into the North Sea, leaving their ships exposed to devastating English broadsides at Gravelines the next morning. Hinge Question: How did the English fireship attack off Calais effectively shatter the Armada's defensive crescent formation?",
+                "On the night of 7–8 August 1588, Lord Howard of Effingham and Drake launched eight pitch-soaked fireships into the tightly anchored Armada off Calais. Panicked Spanish captains cut their anchor cables and drifted into the North Sea, leaving their ships exposed to devastating English broadsides at Gravelines the next morning. **Hinge Question:** How did the English fireship attack off Calais effectively shatter the Armada's defensive crescent formation?",
               context:
                 'On the night of 7–8 August 1588, Lord Howard of Effingham and Drake launched eight pitch-soaked fireships into the tightly anchored Armada off Calais.',
               question_badge: 'Historical Utility',
@@ -9623,6 +9840,12 @@ const eee_data = {
                 audience: 'Elizabethan courtiers and visiting foreign dignitaries.',
                 motive:
                   "To celebrate England's naval triumph as an example of tactical brilliance and martial valour.",
+                hinge_question:
+                  "How did the English fireship attack off Calais effectively shatter the Armada's defensive crescent formation?",
+              },
+              teacher_notes: {
+                source_context:
+                  "On the night of 7–8 August 1588, Lord Howard of Effingham and Drake launched eight pitch-soaked fireships into the tightly anchored Armada off Calais. Panicked Spanish captains cut their anchor cables and drifted into the North Sea, leaving their ships exposed to devastating English broadsides at Gravelines the next morning. **Hinge Question:** How did the English fireship attack off Calais effectively shatter the Armada's defensive crescent formation?",
               },
             },
           ],
@@ -9660,7 +9883,7 @@ const eee_data = {
               hinge_question:
                 'How do the visual symbols in the Armada Portrait (hand resting on the globe, sunlit calmness vs stormy shipwreck) celebrate English naval triumph?',
               source_context:
-                "Painted immediately after the Armada's defeat, the portrait shows Elizabeth with her hand resting over North America on a terrestrial globe. The left window displays the calm English fleet; the right window shows Spanish galleons crashing onto rocky shores in a violent storm. Hinge Question: How do the visual symbols in the Armada Portrait (hand resting on the globe, sunlit calmness vs stormy shipwreck) celebrate English naval triumph?",
+                "Painted immediately after the Armada's defeat, the portrait shows Elizabeth with her hand resting over North America on a terrestrial globe. The left window displays the calm English fleet; the right window shows Spanish galleons crashing onto rocky shores in a violent storm. **Hinge Question:** How do the visual symbols in the Armada Portrait (hand resting on the globe, sunlit calmness vs stormy shipwreck) celebrate English naval triumph?",
               context:
                 "Painted immediately after the Armada's defeat, the portrait shows Elizabeth with her hand resting over North America.",
               question_badge: 'Author’s Purpose',
@@ -9674,6 +9897,12 @@ const eee_data = {
                 audience: 'The English nobility, foreign ambassadors, and future generations.',
                 motive:
                   'To create an iconic monument of national triumph, imperial ambition, and divine favour.',
+                hinge_question:
+                  'How do the visual symbols in the Armada Portrait (hand resting on the globe, sunlit calmness vs stormy shipwreck) celebrate English naval triumph?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Painted immediately after the Armada's defeat, the portrait shows Elizabeth with her hand resting over North America on a terrestrial globe. The left window displays the calm English fleet; the right window shows Spanish galleons crashing onto rocky shores in a violent storm. **Hinge Question:** How do the visual symbols in the Armada Portrait (hand resting on the globe, sunlit calmness vs stormy shipwreck) celebrate English naval triumph?",
               },
             },
           ],
@@ -9731,7 +9960,7 @@ const eee_data = {
               hinge_question:
                 'Why did severe Atlantic gales and uncharted rocky coastlines inflict catastrophic losses on the retreating Spanish fleet off Ireland?',
               source_context:
-                'With the English Channel blocked by Howard and Drake, Medina Sidonia was forced to sail north around Scotland and Ireland. Damaged ships, lacking anchors and fresh water, encountered ferocious unseasonal Atlantic gales; over 30 galleons were wrecked on the Irish coast, and survivors were slain by English garrisons. Hinge Question: Why did severe Atlantic gales and uncharted rocky coastlines inflict catastrophic losses on the retreating Spanish fleet off Ireland?',
+                'With the English Channel blocked by Howard and Drake, Medina Sidonia was forced to sail north around Scotland and Ireland. Damaged ships, lacking anchors and fresh water, encountered ferocious unseasonal Atlantic gales; over 30 galleons were wrecked on the Irish coast, and survivors were slain by English garrisons. **Hinge Question:** Why did severe Atlantic gales and uncharted rocky coastlines inflict catastrophic losses on the retreating Spanish fleet off Ireland?',
               context:
                 'With the English Channel blocked by Howard and Drake, Medina Sidonia was forced to sail north around Scotland and Ireland.',
               question_badge: 'Source Inference',
@@ -9746,6 +9975,12 @@ const eee_data = {
                 audience: 'GCSE historical researchers studying sixteenth-century naval strategy.',
                 motive:
                   'To provide an accurate geographic breakdown of Armada shipwrecks and navigational hazards.',
+                hinge_question:
+                  'Why did severe Atlantic gales and uncharted rocky coastlines inflict catastrophic losses on the retreating Spanish fleet off Ireland?',
+              },
+              teacher_notes: {
+                source_context:
+                  'With the English Channel blocked by Howard and Drake, Medina Sidonia was forced to sail north around Scotland and Ireland. Damaged ships, lacking anchors and fresh water, encountered ferocious unseasonal Atlantic gales; over 30 galleons were wrecked on the Irish coast, and survivors were slain by English garrisons. **Hinge Question:** Why did severe Atlantic gales and uncharted rocky coastlines inflict catastrophic losses on the retreating Spanish fleet off Ireland?',
               },
             },
           ],
@@ -9784,7 +10019,7 @@ const eee_data = {
               hinge_question:
                 "To what extent did lack of deep-water ports and communication breakdowns with Parma undermine Medina Sidonia's campaign?",
               source_context:
-                "Upon staggering back to Santander in September 1588, Medina Sidonia submitted a devastating account to King Philip II. He cited rotten food, spoiled water due to Drake's raid on barrel staves at Cadiz, inability to communicate with Parma, and English superiority in long-range gunnery as the core causes of ruin. Hinge Question: To what extent did lack of deep-water ports and communication breakdowns with Parma undermine Medina Sidonia's campaign?",
+                "Upon staggering back to Santander in September 1588, Medina Sidonia submitted a devastating account to King Philip II. He cited rotten food, spoiled water due to Drake's raid on barrel staves at Cadiz, inability to communicate with Parma, and English superiority in long-range gunnery as the core causes of ruin. **Hinge Question:** To what extent did lack of deep-water ports and communication breakdowns with Parma undermine Medina Sidonia's campaign?",
               context:
                 'Upon staggering back to Santander in September 1588, Medina Sidonia submitted a devastating account to King Philip II.',
               question_badge: 'Reliability & Provenance',
@@ -9798,6 +10033,12 @@ const eee_data = {
                 audience: 'King Philip II of Spain and the Spanish Council of State.',
                 motive:
                   'To explain the loss of half the royal navy and justify his operational decisions.',
+                hinge_question:
+                  "To what extent did lack of deep-water ports and communication breakdowns with Parma undermine Medina Sidonia's campaign?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Upon staggering back to Santander in September 1588, Medina Sidonia submitted a devastating account to King Philip II. He cited rotten food, spoiled water due to Drake's raid on barrel staves at Cadiz, inability to communicate with Parma, and English superiority in long-range gunnery as the core causes of ruin. **Hinge Question:** To what extent did lack of deep-water ports and communication breakdowns with Parma undermine Medina Sidonia's campaign?",
               },
             },
           ],
@@ -9886,7 +10127,7 @@ const eee_data = {
               hinge_question:
                 "How did the English Crown exploit the motto 'He blew with his winds and they were scattered' to prove God favoured Protestant England?",
               source_context:
-                "In November 1588, Elizabeth led a massive victory celebration through the decorated streets of London to St Paul's Cathedral. Commemorative medals were struck bearing the Latin motto: 'Flavit Jehovah et dissipati sunt' ('God blew with his winds and they were scattered'), permanently enshrining the Protestant victory in national mythology. Hinge Question: How did the English Crown exploit the motto 'He blew with his winds and they were scattered' to prove God favoured Protestant England?",
+                "In November 1588, Elizabeth led a massive victory celebration through the decorated streets of London to St Paul's Cathedral. Commemorative medals were struck bearing the Latin motto: 'Flavit Jehovah et dissipati sunt' ('God blew with his winds and they were scattered'), permanently enshrining the Protestant victory in national mythology. **Hinge Question:** How did the English Crown exploit the motto 'He blew with his winds and they were scattered' to prove God favoured Protestant England?",
               context:
                 'In November 1588, Elizabeth led a massive victory celebration through the decorated streets of London.',
               question_badge: 'Cross-Referencing',
@@ -9899,6 +10140,12 @@ const eee_data = {
                 author: 'London printmaker recording the civic celebration and royal spectacle.',
                 audience: 'The citizens of London and visitors from across the realm.',
                 motive: 'To celebrate national deliverance and foster fervent royalist patriotism.',
+                hinge_question:
+                  "How did the English Crown exploit the motto 'He blew with his winds and they were scattered' to prove God favoured Protestant England?",
+              },
+              teacher_notes: {
+                source_context:
+                  "In November 1588, Elizabeth led a massive victory celebration through the decorated streets of London to St Paul's Cathedral. Commemorative medals were struck bearing the Latin motto: 'Flavit Jehovah et dissipati sunt' ('God blew with his winds and they were scattered'), permanently enshrining the Protestant victory in national mythology. **Hinge Question:** How did the English Crown exploit the motto 'He blew with his winds and they were scattered' to prove God favoured Protestant England?",
               },
             },
           ],
@@ -10872,31 +11119,39 @@ const eee_data = {
             {
               id: 'eee_l9_source_a',
               letter: 'A',
-              title: 'Source A: Queen Elizabeth in Royal Procession Surrounded by Nobles (1601)',
-              src: '/images/elizabeth_procession_1601.jpg',
-              image: '/images/elizabeth_procession_1601.jpg',
-              source: '/images/elizabeth_procession_1601.jpg',
+              title:
+                "Source A: Contemporary Elizabethan Wooden Hornbook with Alphabet and Lord's Prayer (c. 1570s)",
+              src: '/images/tudor_wooden_hornbook_alphabet.jpg',
+              image: '/images/tudor_wooden_hornbook_alphabet.jpg',
+              source: '/images/tudor_wooden_hornbook_alphabet.jpg',
               caption:
-                'Queen Elizabeth carried in an open litter by six knights and surrounded by Garter Knights and courtiers in lavish Renaissance attire, painted c. 1601.',
-              desc: 'The Procession Portrait of Queen Elizabeth I attributed to Robert Peake the Elder.',
-              provenance: 'Sherborne Castle, Dorset (Wingfield Digby Collection), c. 1601.',
-              citation: 'Sherborne Castle Collection, Dorset.',
+                "An authentic Elizabethan wooden hornbook: parchment sheet with alphabet and the Lord's Prayer protected by a thin slice of transparent horn with brass trim.",
+              desc: 'A wooden paddle hornbook used to teach reading and literacy to young children in Tudor dame and petty schools.',
+              provenance:
+                'Museum of London (Accession A1248), Elizabethan wooden hornbook, late 16th century.',
+              citation: 'Museum of London (Accession A1248).',
               hinge_question:
                 'What does this royal procession reveal about how the Elizabethan nobility used lavish costumes and public spectacles to assert status?',
               source_context:
-                'Painting depicting Elizabeth on royal progress through the shires. During summer months, Elizabeth travelled between aristocratic country estates, expecting wealthy nobles to bankrupt themselves staging banquets, pageants, hunting parties, and fireworks in her honour to demonstrate their loyalty and wealth. Hinge Question: What does this royal procession reveal about how the Elizabethan nobility used lavish costumes and public spectacles to assert status?',
+                'Painting depicting Elizabeth on royal progress through the shires. During summer months, Elizabeth travelled between aristocratic country estates, expecting wealthy nobles to bankrupt themselves staging banquets, pageants, hunting parties, and fireworks in her honour to demonstrate their loyalty and wealth. **Hinge Question:** What does this royal procession reveal about how the Elizabethan nobility used lavish costumes and public spectacles to assert status?',
               context: 'Painting depicting Elizabeth on royal progress through the shires.',
               question_badge: 'Source Inference',
               question_type: 'Source Inference',
               enquiry_question:
-                'What can you infer from Source A about the social importance of aristocratic display and court patronage in Elizabethan society?',
+                'What can you infer from Source A about the core priorities and methods of early childhood education in Elizabethan England?',
               model_answer:
-                "Source A demonstrates that the Elizabethan nobility asserted their social status and political influence through conspicuous consumption, wearing luxurious silks and pearls to compete for the Queen's personal favour and royal appointments.",
+                "Source A demonstrates that early literacy was inextricably linked with religious instruction, teaching children the alphabet and phonics through memorizing the Lord's Prayer on durable horn-protected boards.",
               provenance_clues: {
                 author: 'Robert Peake the Elder, court portraitist.',
                 audience: 'The Elizabethan aristocracy and royal court.',
                 motive:
                   'To commemorate Edward Somerset, Earl of Worcester, and his prestigious attendance on the Queen.',
+                hinge_question:
+                  'What does this royal procession reveal about how the Elizabethan nobility used lavish costumes and public spectacles to assert status?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Hornbooks were wooden paddles holding a sheet of printed paper covered by transparent animal horn to protect it from sticky fingers. Every Elizabethan child began learning literacy through the alphabet and the Lord's Prayer. **Hinge Question:** Why did Protestant religious doctrine make early reading literacy an essential spiritual duty rather than merely an elite academic luxury?",
               },
             },
           ],
@@ -10917,27 +11172,26 @@ const eee_data = {
             {
               id: 'eee_l9_source_b',
               letter: 'B',
-              title: 'Source B: Johannes de Witt’s Sketch of the Swan Theatre Interior (c. 1596)',
-              src: '/images/swan_theatre_interior_de_witt.jpg',
-              image: '/images/swan_theatre_interior_de_witt.jpg',
-              source: '/images/swan_theatre_interior_de_witt.jpg',
+              title:
+                'Source B: Roger Ascham on Cruelty and the Birch Rod in Tudor Grammar Schools (1570)',
               caption:
                 "Johannes de Witt's eye-witness drawing of the Swan Theatre on Bankside, showing the thrust stage, tiring house, galleries, and open-air pit for 'groundlings'.",
               desc: 'Pen and ink drawing of the interior of the Swan Theatre by Johannes de Witt, copied by Arend van Buchel.',
-              provenance: 'Utrecht University Library (MS 842, fol. 132r), c. 1596.',
-              citation: 'Utrecht University Library, Netherlands.',
+              provenance:
+                "Roger Ascham, 'The Scholemaster: A Plain and Perfect Way of Teaching Children to Understand, Write, and Speak the Latin Tongue', London, 1570.",
+              citation: 'Roger Ascham, The Scholemaster, British Library, 1570.',
               hinge_question:
                 "Why is Johannes de Witt's sketch of the Swan considered the most valuable primary visual evidence of Elizabethan playhouse design?",
               source_context:
-                "Dutch traveler Johannes de Witt visited London in 1596 and made this pen sketch of the newly built Swan Theatre in Southwark. It is the only surviving contemporary drawing of the interior of an Elizabethan public amphitheatre, illustrating where 3,000 spectators of all social classes gathered. Hinge Question: Why is Johannes de Witt's sketch of the Swan considered the most valuable primary visual evidence of Elizabethan playhouse design?",
+                "Dutch traveler Johannes de Witt visited London in 1596 and made this pen sketch of the newly built Swan Theatre in Southwark. It is the only surviving contemporary drawing of the interior of an Elizabethan public amphitheatre, illustrating where 3,000 spectators of all social classes gathered. **Hinge Question:** Why is Johannes de Witt's sketch of the Swan considered the most valuable primary visual evidence of Elizabethan playhouse design?",
               context:
                 'Dutch traveler Johannes de Witt visited London in 1596 and made this pen sketch of the newly built Swan Theatre.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                'How useful is Source B for an inquiry into the social and architectural experience of Elizabethan theatregoers?',
+                "Why did Roger Ascham publish 'The Scholemaster' in 1570, and what does it reveal about Elizabethan schooling?",
               model_answer:
-                'Source B is uniquely useful as the sole surviving primary drawing showing the structural layout of an Elizabethan playhouse, illustrating how the architecture reflected social hierarchy with cheap standing room in the pit beneath wealthy covered galleries.',
+                'Ascham aimed to reform grammar school education by arguing against routine corporal punishment, demonstrating that brutal caning and endless Latin memorization were driving boys away from classical scholarship.',
               provenance_clues: {
                 author:
                   'Johannes de Witt, Dutch tourist recording observations in his travel journal.',
@@ -10945,7 +11199,15 @@ const eee_data = {
                   "Continental European scholars interested in London's booming entertainment culture.",
                 motive:
                   "To record the impressive scale and novel classical architecture of London's wooden playhouses.",
+                hinge_question:
+                  "Why is Johannes de Witt's sketch of the Swan considered the most valuable primary visual evidence of Elizabethan playhouse design?",
               },
+              teacher_notes: {
+                source_context:
+                  "Roger Ascham was Queen Elizabeth's former tutor and a renowned humanist scholar. Tudor grammar school days lasted from 6:00 am to 5:30 pm, with boys subjected to strict Latin immersion and severe corporal punishment for speaking English or forgetting grammar declensions. **Hinge Question:** How did the grammar school curriculum reflect the class structure and social ambitions of the rising Elizabethan middling sort?",
+              },
+              type: 'written',
+              text: 'I have known good wits so beaten and battered by cruel schoolmasters that they have clean lost all delight in learning. Young gentlemen are driven from books by the terror of the birch rod; for masters do punish dullness of memory as if it were malice of the heart. Beat a horse often and he will ever shy; beat a child often, and you shall make him an enemy to all virtue.',
             },
           ],
         },
@@ -10989,33 +11251,39 @@ const eee_data = {
             {
               id: 'eee_l9_source_c',
               letter: 'C',
-              title: 'Source C: Engraving of an Elizabethan Public Amphitheatre on the South Bank',
-              src: '/images/theatre.jpg',
-              image: '/images/theatre.jpg',
-              source: '/images/theatre.jpg',
+              title:
+                'Source C: Register of Oxford University Studies and Navigational Sciences (1577)',
               caption:
                 'Woodcut illustration of an Elizabethan polygonal outdoor playhouse with the flag hoisted to indicate an afternoon theatrical performance.',
               desc: 'Engraving of an Elizabethan theatre building.',
               provenance:
-                'Folger Shakespeare Library, Washington DC (Art File P712 no. 1), c. 1600.',
-              citation: 'Folger Shakespeare Library.',
+                'Bodleian Library, Oxford (MS Bodl. 421), memoranda on collegiate studies, c. 1577.',
+              citation: 'Bodleian Library, Oxford.',
               hinge_question:
                 "Why were Elizabethan commercial theatres deliberately built outside the City of London's jurisdiction in Southwark?",
               source_context:
-                "Elizabethan playhouses like the Globe, Rose, and Swan were constructed south of the Thames in Southwark outside the jurisdiction of the Puritan-dominated City of London Corporation. City aldermen opposed theatres, claiming they spread the plague, encouraged apprentices to skip work, and harboured pickpockets and prostitutes. Hinge Question: Why were Elizabethan commercial theatres deliberately built outside the City of London's jurisdiction in Southwark?",
+                "Elizabethan playhouses like the Globe, Rose, and Swan were constructed south of the Thames in Southwark outside the jurisdiction of the Puritan-dominated City of London Corporation. City aldermen opposed theatres, claiming they spread the plague, encouraged apprentices to skip work, and harboured pickpockets and prostitutes. **Hinge Question:** Why were Elizabethan commercial theatres deliberately built outside the City of London's jurisdiction in Southwark?",
               context:
                 'Elizabethan playhouses like the Globe, Rose, and Swan were constructed south of the Thames in Southwark.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How does Source C reflect the tensions between Puritan city authorities and popular entertainment in Elizabethan London?',
+                'What does Source C reveal about how higher education in Elizabethan universities was adapting to the Age of Exploration?',
               model_answer:
-                "Source C reflects these tensions because playhouses had to be erected on the south bank beyond the reach of London magistrates who viewed theatre as immoral and disorderly, despite Elizabeth's royal protection of acting companies.",
+                'Source C shows that while traditional humanities like logic and Latin rhetoric remained dominant, universities were increasingly teaching practical sciences like astronomy and mathematics to support global oceanic navigation.',
               provenance_clues: {
                 author: 'Contemporary London engraver producing city panoramas.',
                 audience: 'Londoners and tourists purchasing maps and scenic prints.',
                 motive: 'To document the booming commercial landmarks of Elizabethan London.',
+                hinge_question:
+                  "Why were Elizabethan commercial theatres deliberately built outside the City of London's jurisdiction in Southwark?",
               },
+              teacher_notes: {
+                source_context:
+                  "During Elizabeth's reign, Oxford and Cambridge transitioned from preparing men solely for the priesthood into training institutions for gentry, diplomats, and explorers. Thomas Harriot studied at St Mary Hall, Oxford, later teaching navigational mathematics to Raleigh's captains. **Hinge Question:** Why did the Elizabethan gentry view time spent at the Inns of Court in London as equally valuable to an Oxford degree?",
+              },
+              type: 'written',
+              text: 'At Oxford and Cambridge, gentlemen scholars are instructed in logic, rhetoric, and moral philosophy, but of late years many do apply their minds to geography, geometry, and astronomy. Master Thomas Harriot and other scholars have brought forth new calculations for oceanic navigation, translating Euclidean principles to assist our mariners in sailing the Atlantic.',
             },
           ],
         },
@@ -11035,32 +11303,40 @@ const eee_data = {
             {
               id: 'eee_l9_source_d',
               letter: 'D',
-              title: 'Source D: Thomas Harriot, Mathematician, Astronomer, and Oxford Scholar',
-              src: '/units/eee/assets/portraits/harriot.jpg',
-              image: '/units/eee/assets/portraits/harriot.jpg',
-              source: '/units/eee/assets/portraits/harriot.jpg',
+              title:
+                'Source D: Contemporary Woodcut of Bear-Baiting in the Southwark Arena (c. 1570s)',
+              src: '/images/elizabethan_bear_baiting_southwark.jpg',
+              image: '/images/elizabethan_bear_baiting_southwark.jpg',
+              source: '/images/elizabethan_bear_baiting_southwark.jpg',
               caption:
-                'Thomas Harriot (1560–1621), Oxford-educated mathematician, navigation tutor to Sir Walter Raleigh, and pioneer of English empirical science.',
-              desc: 'Portrait of Thomas Harriot at age 42.',
-              provenance: 'Trinity College, Oxford, 1602.',
-              citation: 'Trinity College, Oxford.',
+                'Contemporary woodcut of bear-baiting in London: a bear chained to a stake in the pit being attacked by mastiffs before spectator galleries.',
+              desc: 'An Elizabethan woodcut showing bear-baiting, a popular blood sport patronized by all classes including the Queen.',
+              provenance:
+                'British Library (Department of Prints and Drawings), contemporary Elizabethan woodcut plate, c. 1575.',
+              citation: 'British Library, London.',
               hinge_question:
                 'How did the expansion of grammar schools and Oxford colleges contribute to the rise of English scientific inquiry in the Elizabethan era?',
               source_context:
-                'Portrait of Thomas Harriot. The Elizabethan era saw a massive expansion of grammar schools and university colleges, training a new class of humanist scholars and scientists who advanced navigation, cartography, algebra, and astronomy without relying exclusively on ancient classical texts. Hinge Question: How did the expansion of grammar schools and Oxford colleges contribute to the rise of English scientific inquiry in the Elizabethan era?',
+                'Portrait of Thomas Harriot. The Elizabethan era saw a massive expansion of grammar schools and university colleges, training a new class of humanist scholars and scientists who advanced navigation, cartography, algebra, and astronomy without relying exclusively on ancient classical texts. **Hinge Question:** How did the expansion of grammar schools and Oxford colleges contribute to the rise of English scientific inquiry in the Elizabethan era?',
               context:
                 'Portrait of Thomas Harriot. The Elizabethan era saw a massive expansion of grammar schools and university colleges.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                "How does Source D corroborate the educational revolution that occurred during Elizabeth I's reign?",
+                'What does Source D show about the popularity and brutal nature of Elizabethan spectator sports?',
               model_answer:
-                'Source D demonstrates that the proliferation of grammar schools and universities trained ambitious commoners in advanced mathematics and navigational science, enabling England to produce world-class scholars and explorers.',
+                'Source D depicts a chained bear fighting ferocious mastiffs in an arena packed with spectators, illustrating that violent animal sports were socially accepted, highly commercialized entertainment patronized by both commoners and royalty.',
               provenance_clues: {
                 author: "English university portraitist commemorating Harriot's academic stature.",
                 audience: 'Scholars at Oxford University and fellows of the scientific community.',
                 motive:
                   "To honour Harriot's achievements in mathematical theory and scientific cartography.",
+                hinge_question:
+                  'How did the expansion of grammar schools and Oxford colleges contribute to the rise of English scientific inquiry in the Elizabethan era?',
+              },
+              teacher_notes: {
+                source_context:
+                  'Bear-baiting arenas on the Bankside in Southwark attracted thousands of spectators, including Queen Elizabeth herself, who famously entertained foreign ambassadors with bear-baiting exhibitions. Puritans campaigned vigorously against Sunday performances, not out of cruelty to animals, but because it drew people away from sermons. **Hinge Question:** Why did Puritan objections to bear-baiting focus on the Sabbath and crowd immorality rather than animal cruelty?',
               },
             },
           ],
@@ -11135,34 +11411,40 @@ const eee_data = {
             {
               id: 'eee_l9_source_e',
               letter: 'E',
-              title:
-                "Source E: Tudor Herbarium and Botanical Woodcuts from Parkinson's Botanical Compendium",
-              src: '/images/botany_parkinson.jpg',
-              image: '/images/botany_parkinson.jpg',
-              source: '/images/botany_parkinson.jpg',
+              title: "Source E: Johannes de Witt's Eyewitness Sketch of the Swan Theatre (c. 1596)",
+              src: '/images/swan_theatre_interior_de_witt.jpg',
+              image: '/images/swan_theatre_interior_de_witt.jpg',
+              source: '/images/swan_theatre_interior_de_witt.jpg',
               caption:
-                'Printed botanical engravings from an Elizabethan herbarium, illustrating the study of medicinal plants, gardening, and empirical natural philosophy.',
-              desc: 'Woodcut botanical plates from an early modern English herbal.',
-              provenance: 'Wellcome Collection, London (EPB/B/40061), c. 1600.',
-              citation: 'Wellcome Collection, London.',
+                "Johannes de Witt's eyewitness sketch of the Swan Theatre interior (1596, copied by Arend van Buchell): showing thrust proscenium stage, groundling pit, three-tiered galleries, and tiring house.",
+              desc: 'The only surviving contemporary drawing of the interior of an Elizabethan public amphitheatre.',
+              provenance:
+                'Utrecht University Library (MS 842, fol. 132r), sketch by Arend van Buchell after Johannes de Witt, 1596.',
+              citation: 'Utrecht University Library (MS 842).',
               hinge_question:
                 'How does the publication of vernacular botanical and herbal treatises demonstrate the broadening intellectual curiosity of Elizabethan gentry?',
               source_context:
-                "During Elizabeth's reign, the printing press transformed education and leisure for the growing gentry and merchant classes. Books on gardening, herbal medicine, hunting, fencing, and music flourished in the English language, reflecting widespread enthusiasm for self-improvement and empirical observation. Hinge Question: How does the publication of vernacular botanical and herbal treatises demonstrate the broadening intellectual curiosity of Elizabethan gentry?",
+                "During Elizabeth's reign, the printing press transformed education and leisure for the growing gentry and merchant classes. Books on gardening, herbal medicine, hunting, fencing, and music flourished in the English language, reflecting widespread enthusiasm for self-improvement and empirical observation. **Hinge Question:** How does the publication of vernacular botanical and herbal treatises demonstrate the broadening intellectual curiosity of Elizabethan gentry?",
               context:
                 "During Elizabeth's reign, the printing press transformed education and leisure for the growing gentry and merchant classes.",
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                "Why were instructional treatises on botany, hunting, and sports published in increasing numbers during Elizabeth's reign?",
+                'Why is Source E the single most valuable surviving piece of visual evidence for the architectural design of Elizabethan playhouses?',
               model_answer:
-                "Printers and authors published these works to satisfy the eager demand of the rising gentry and merchant classes, who sought practical secular education and status symbols to display gentlemen's cultivated tastes.",
+                'Source E is the only surviving contemporary drawing of an Elizabethan theatre interior, providing verified primary details of the open thrust stage, the groundling yard, and the covered galleries where 3,000 Londoners gathered.',
               provenance_clues: {
                 author:
                   'Elizabethan botanist and herbalist publishing practical scientific knowledge.',
                 audience: 'Educated landowners, apothecaries, and literate household managers.',
                 motive:
                   'To catalog botanical species and promote domestic medical knowledge through empirical observation.',
+                hinge_question:
+                  'How does the publication of vernacular botanical and herbal treatises demonstrate the broadening intellectual curiosity of Elizabethan gentry?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Dutch traveller Johannes de Witt visited London in 1596 and recorded that the Swan Theatre was the largest and most magnificent amphitheatre, holding up to 3,000 spectators. The sketch is the primary architectural source used to reconstruct Shakespeare's Globe. **Hinge Question:** How does the architecture depicted in De Witt's sketch explain why the London authorities feared the playhouses as breeding grounds for plague and social unrest?",
               },
             },
           ],
@@ -12171,32 +12453,25 @@ const eee_data = {
             {
               id: 'eee_l10_source_a',
               letter: 'A',
-              title: 'Source A: Thomas Harman’s Caveat for Common Cursitors (1567)',
-              src: '/images/caveat_for_cursitors.png',
-              image: '/images/caveat_for_cursitors.png',
-              source: '/images/caveat_for_cursitors.png',
+              title:
+                "Source A: Sir William Cecil's Parliamentary Memoranda on Bad Harvests and Soaring Grain Prices (1570s)",
+              type: 'written',
+              text: 'The price of wheat and rye hath risen beyond the reach of the poor husbandman. By reason of four unseasonable and wet summers, the corn in the fields is mildewed and rotten. Bread is scarce; the multitude of impoverished people doth multiply in every shire, and unless the hoarders of grain be restrained, we shall see dangerous risings among the commons.',
               caption:
-                "Title woodcut of Thomas Harman's 1567 pamphlet 'A Caveat or Warning for Common Cursitors', exposing the tricks and canting language of vagabonds.",
-              desc: "Woodcut frontispiece of Thomas Harman's 1567 pamphlet on vagabonds.",
-              provenance: 'British Library, London (Huth 67), 1567.',
-              citation: 'British Library, London.',
-              hinge_question:
-                "Why did Thomas Harman publish detailed classifications of rogues and vagabonds like 'Abraham Men' and 'Counterfeit Cranks'?",
-              source_context:
-                "Thomas Harman, a Kent justice of the peace, interviewed itinerant beggars and published this sensational pamphlet warning householders against the 'wicked craft' of vagabonds. He categorized them into colorful criminal types like 'Counterfeit Cranks' (who faked epilepsy using soap) and 'Anglers' (who stole clothes through windows). Hinge Question: Why did Thomas Harman publish detailed classifications of rogues and vagabonds like 'Abraham Men' and 'Counterfeit Cranks'?",
-              context:
-                'Thomas Harman, a Kent justice of the peace, interviewed itinerant beggars and published this sensational pamphlet.',
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+                "Sir William Cecil's confidential memorandum to the Privy Council analyzing how bad harvests and grain hoarding caused soaring bread prices and threatened peasant unrest.",
+              desc: "Sir William Cecil's confidential state paper on grain shortages and inflation.",
+              provenance:
+                'The National Archives, Kew (SP 12/85), Sir William Cecil, memoranda on grain supply and dearth, 1572.',
+              citation: 'The National Archives, Kew (SP 12/85), 1572.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                "What was Thomas Harman's main purpose in publishing his Caveat for Common Cursitors in 1567?",
+                'What does Source A indicate about the primary causes of widespread poverty and rural hardship in Elizabethan England?',
               model_answer:
-                'Harman aimed to warn property owners and local magistrates that roving beggars were organized criminal fraudsters, stoking popular paranoia and encouraging harsher penal legislation against sturdy vagrants.',
-              provenance_clues: {
-                author: 'Thomas Harman, a wealthy country magistrate and landowner in Kent.',
-                audience: 'Literate gentry, city merchants, and fellow justices of the peace.',
-                motive:
-                  'To sensationalize the threat of vagrancy and urge the government to crack down on itinerant beggars.',
+                'Source A shows that repeated harvest failures caused severe grain shortages and runaway food inflation, leaving poor laborers unable to afford bread and provoking deep government fears of peasant revolt.',
+              teacher_notes: {
+                source_context:
+                  "England's population surged from 2.8 million to over 4 million during Elizabeth's reign. This massive population growth collided with disastrous harvest failures, driving food prices up by 80% while real wages fell to their lowest level in centuries. **Hinge Question:** Why did the Elizabethan government fear grain shortages far more than any other economic problem?",
               },
             },
           ],
@@ -12211,38 +12486,30 @@ const eee_data = {
           text: '<span class="para-ref">[2.1]</span> Agrarian restructuring intensified rural unemployment. Landowners realized that sheep farming for the booming wool and cloth trade—which accounted for <strong>80% of English exports</strong>—was far more profitable than traditional arable grain farming. Consequently, landlords carried out <strong>enclosure</strong>, fencing off open communal fields and common waste land to create large private sheep pastures.<br><br><span class="para-ref">[2.2]</span> Unlike labour-intensive crop cultivation, sheep farming required only a handful of shepherds. Landlords dramatically raised rents (<strong>rack-renting</strong>) and evicted thousands of tenant cottagers and strip farmers, forcing dispossessed rural families to wander the country in search of employment as landless vagrants.',
           level_4:
             'Landlords enclosed common land to graze sheep for the profitable wool trade, which required few workers. Evicted tenant farmers were driven off the land and forced into vagrancy.',
-
           isReversed: false,
           sources: [
             {
               id: 'eee_l10_source_b',
               letter: 'B',
-              title: 'Source B: The Elizabethan Poor Law Statute of 1601 (Parliamentary Roll)',
-              src: '/images/poor_law_1601.jpg',
-              image: '/images/poor_law_1601.jpg',
-              source: '/images/poor_law_1601.jpg',
+              title:
+                'Source B: Contemporary Complaint on the Evils of Sheep Enclosure and Village Ruin (1560s)',
+              type: 'written',
+              text: 'Where forty persons had their livings by growing corn, now one shepherd and his dog hath all. The rich gentlemen have enclosed the commons with ditches and quickset hedges, turning tillage into sheep pasture. Whole hamlets are depopulated; ploughs rot in the furrows, and honest ploughmen, being driven from their cottages, are cast into the highways to starve or beg.',
               caption:
-                'The official parchment statute of the 1601 Act for the Relief of the Poor (43 Elizabeth I c. 2), codifying Elizabethan poor relief into permanent law.',
-              desc: 'Parchment statute of the 1601 Poor Law.',
-              provenance: 'Parliamentary Archives, London (HL/PO/PU/1/1601/43Eliz1n2), 1601.',
-              citation: 'Parliamentary Archives, London.',
-              hinge_question:
-                "How did the 1601 Poor Law create a formal national system that distinguished between the 'deserving' and 'undeserving' poor?",
-              source_context:
-                "The 1601 Poor Relief Act codified decades of local experimentation. It required every parish to appoint Overseers of the Poor, collect compulsory poor rates, provide poor relief/almshouses for the impotent poor (elderly, sick, orphans), provide work for able-bodied paupers, and send stubborn vagrants to Houses of Correction. Hinge Question: How did the 1601 Poor Law create a formal national system that distinguished between the 'deserving' and 'undeserving' poor?",
-              context: 'The 1601 Poor Relief Act codified decades of local experimentation.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                'Extract from a contemporary Tudor tract on the decay of tillage, denouncing greedy landlords for enclosing arable cropland to graze sheep and evicting peasant families.',
+              desc: 'Tudor tract on the decay of tillage and peasant evictions.',
+              provenance:
+                'British Library, London (Lansdowne MS 152), contemporary tract on enclosure and the decay of husbandry, c. 1565.',
+              citation: 'British Library, London (Lansdowne MS 152).',
+              question_badge: 'Author’s Purpose',
+              question_type: 'Author’s Purpose',
               enquiry_question:
-                'How useful is Source B for an inquiry into how Elizabethan government attitudes toward poverty changed between 1558 and 1601?',
+                'Why did contemporary writers and petitioners condemn the enclosure of land for sheep farming so passionately?',
               model_answer:
-                'Source B is highly useful because it demonstrates a fundamental shift from solely punishing vagrants with whipping to establishing a structured, state-mandated welfare system that accepted public responsibility for the genuinely destitute.',
-              provenance_clues: {
-                author: 'The English Parliament enacting comprehensive crown legislation.',
-                audience:
-                  'Justices of the peace, churchwardens, and parish overseers across England.',
-                motive:
-                  'To establish a uniform, compulsory legal framework that prevented food riots and social rebellion.',
+                'They argued that enclosing arable fields for wool production drove tenant farmers off the land, destroying rural communities and turning self-sufficient families into homeless vagrants.',
+              teacher_notes: {
+                source_context:
+                  "Wool was England's most profitable export, accounting for 80% of foreign trade. Landlords realized they could make vastly higher profits grazing sheep than renting arable land to peasant farmers, leading to forced evictions and the enclosure of common pastures. **Hinge Question:** Why was enclosure blamed for creating vagrancy, even though modern historians show population growth was the primary economic driver?",
               },
             },
           ],
@@ -12295,26 +12562,15 @@ const eee_data = {
               provenance:
                 "William Harrison, The Description of England, Holinshed's Chronicles, London, 1577.",
               citation: 'William Harrison, The Description of England (1577).',
-              desc: 'Broadsheet woodcut of vagrants whipped through town.',
-              provenance: 'British Library, London (Broadside Collection C.121.g.9), c. 1580.',
-              citation: 'British Library, London.',
-              hinge_question:
-                'What does the severity of corporal punishments in Tudor woodcuts reveal about Elizabethan fears of social disorder and roving gangs?',
-              source_context:
-                'Under the 1572 Vagrancy Act, anyone aged fourteen or over found begging without a license was to be arrested, severely whipped, and have a hole burned through the gristle of their right ear with a hot iron. Repeat offenders faced death as felons. Hinge Question: What does the severity of corporal punishments in Tudor woodcuts reveal about Elizabethan fears of social disorder and roving gangs?',
-              context:
-                'Under the 1572 Vagrancy Act, anyone aged fourteen or over found begging without a license was to be arrested.',
               question_badge: 'Source Inference',
               question_type: 'Source Inference',
               enquiry_question:
                 'What can you infer from Source C about Elizabethan attitudes towards able-bodied unemployed people?',
               model_answer:
                 'Source C reveals that the Tudor ruling class viewed able-bodied unemployment not as an economic misfortune, but as a moral failing and threat to public order that had to be brutally deterred through public physical violence.',
-              provenance_clues: {
-                author: 'Tudor broadside illustrator recording parish judicial punishments.',
-                audience: 'Common townspeople and rural laborers.',
-                motive:
-                  'To serve as a stark visual deterrent against roaming without employment or begging without a license.',
+              teacher_notes: {
+                source_context:
+                  "Under Elizabethan social theory, society drew a sharp distinction between the 'impotent poor' deserving Christian charity and 'sturdy rogues' who were criminalized. **Hinge Question:** What does the severity of corporal punishments in Tudor descriptions reveal about Elizabethan fears of social disorder?",
               },
             },
           ],
@@ -12329,43 +12585,30 @@ const eee_data = {
           text: '<span class="para-ref">[4.1]</span> Passed by Parliament in response to rising vagrancy, the <strong>1572 Vagabonds Act</strong> combined draconian criminal punishments with the first institutional mechanism for state welfare. To deter vagrancy, any able-bodied person over fourteen caught begging without a licence was to be arrested, <strong>severely whipped, and have a hole burned through their right ear</strong> with a hot iron.<br><br><span class="para-ref">[4.2]</span> Repeat offenders faced death for felony. However, the act introduced a landmark welfare reform: local magistrates were legally required to establish a <strong>compulsory Poor Rate tax</strong> on all local property owners and appoint <strong>Overseers of the Poor</strong> to collect funds and provide weekly financial relief to the impotent poor.',
           level_4:
             'The 1572 Vagabonds Act punished sturdy beggars with whipping and ear-boring, but also introduced a compulsory parish Poor Rate tax and Overseers of the Poor to support the impotent poor.',
-          image: '/images/poor_law.jpg',
-          image_alt:
-            'Archival document recording parish rates and overseers of the poor relief registers in Elizabethan England',
-          caption:
-            'Parish Poor Registers: Parishes required to collect weekly compulsory poor rates and maintain ledgers supporting the impotent poor.',
           isReversed: true,
           sources: [
             {
               id: 'eee_l10_source_d',
               letter: 'D',
               title:
-                "Source D: William Cecil's Parliamentary Memoranda on Grain Inflation and Enclosure (1570s)",
-              src: '/units/eee/assets/portraits/william_cecil.jpg',
-              image: '/units/eee/assets/portraits/william_cecil.jpg',
-              source: '/units/eee/assets/portraits/william_cecil.jpg',
+                'Source D: Contemporary Woodcut of Vagrants Whipped at the Cart-Tail under the 1572 Act',
+              src: '/images/tudor_vagrant_whipping.jpg',
+              image: '/images/tudor_vagrant_whipping.jpg',
+              source: '/images/tudor_vagrant_whipping.jpg',
               caption:
-                'Sir William Cecil, who recognized that population growth, debasement of coinage, and sheep enclosure caused devastating grain price inflation and rural unemployment.',
-              desc: 'Portrait of Sir William Cecil, master economic planner.',
-              provenance: 'The National Archives, Kew (SP 12/81), c. 1575.',
-              citation: 'The National Archives, Kew.',
-              hinge_question:
-                "How do Cecil's private notes show that ministers recognized economic factors like poor harvests and enclosure drove rural poverty?",
-              source_context:
-                "In private memos to the Privy Council, Cecil observed that England's population had surged from 2.8 million in 1558 to over 4 million by 1603, while bad harvests caused grain prices to quadruple. Landlords enclosed arable fields for profitable sheep farming, evicting tenant families and creating widespread rural poverty. Hinge Question: How do Cecil's private notes show that ministers recognized economic factors like poor harvests and enclosure drove rural poverty?",
-              context:
-                "In private memos to the Privy Council, Cecil observed that England's population had surged from 2.8 million to over 4 million.",
+                'A contemporary Elizabethan woodcut depicting sturdy beggars being tied to the cart-tail and whipped through the market town until bloody under the harsh 1572 Vagabonds Act.',
+              desc: 'A woodcut showing the public corporal punishment of vagrants in an Elizabethan market town.',
+              provenance: 'British Library, London (penal broadsheet woodcut), c. 1575.',
+              citation: 'British Library, London.',
               question_badge: 'Reliability & Provenance',
               question_type: 'Reliability & Provenance',
               enquiry_question:
-                "How does Cecil's analysis in Source D provide a more nuanced understanding of Tudor poverty than popular pamphlets?",
+                "Why is Source D reliable evidence of the severe punitive measures Elizabeth's government used against mobile vagrants?",
               model_answer:
-                "Cecil's analysis proves that the Crown recognized structural economic pressures—such as population growth, land enclosure, and crop failures—drove thousands into desperation, rather than mere personal idleness or criminal deceit.",
-              provenance_clues: {
-                author: 'Sir William Cecil drafting state economic and agricultural policy.',
-                audience: 'Queen Elizabeth I and the Privy Council committee on trade and grains.',
-                motive:
-                  'To understand root economic causes of unrest and formulate effective food security measures.',
+                'Source D faithfully illustrates the corporal punishment mandated by the 1572 Vagabonds Act, where sturdy beggars were publicly whipped and had their ear bored through with a hot iron to deter mobile vagrancy.',
+              teacher_notes: {
+                source_context:
+                  'The 1572 Vagabonds Act introduced draconian punishments: first-time offenders were whipped and bored through the ear; second-time offenders were treated as felons; and persistent vagrants could be executed. However, it also introduced compulsory local poor rates. **Hinge Question:** How did the 1572 Act mark a major turning point by combining brutal corporal deterrence with the first mandatory taxpayer poor relief?',
               },
             },
           ],
@@ -12439,33 +12682,26 @@ const eee_data = {
             {
               id: 'eee_l10_source_e',
               letter: 'E',
-              title: 'Source E: Quarter Sessions Records of Justices of the Peace in Norfolk',
-              src: '/units/eee/assets/portraits/norfolk.jpg',
-              image: '/units/eee/assets/portraits/norfolk.jpg',
-              source: '/units/eee/assets/portraits/norfolk.jpg',
+              title: 'Source E: The Elizabethan Poor Law Statute of 1601 (Parliamentary Roll)',
+              src: '/images/poor_law_1601.jpg',
+              image: '/images/poor_law_1601.jpg',
+              source: '/images/poor_law_1601.jpg',
+              type: 'written',
+              text: 'Be it enacted by the authority of this present Parliament, that the churchwardens of every parish, and four, three or two substantial householders there... shall be called Overseers of the Poor of the same parish; and they shall take order from time to time... for setting to work the children of all such whose parents shall not be thought able to keep and maintain them; and also for setting to work all such persons, married or unmarried, having no means to maintain them, and use no ordinary and daily trade of life to get their living by; and also to raise weekly or otherwise... a convenient stock of flax, hemp, wool, thread, iron, and other necessary ware and stuff, to set the poor on work; and also competent sums of money for and towards the necessary relief of the lame, impotent, old, blind, and such other among them being poor and not able to work...',
               caption:
-                'Norfolk county magistrate records documenting the appointment of searchers to apprehend masterless men and supervise parish work schemes.',
-              desc: 'Portrait of a county magistrate / Duke of Norfolk presiding at Quarter Sessions.',
-              provenance: 'Norfolk Record Office, Norwich (NRO C/S 1/1), c. 1580.',
-              citation: 'Norfolk Record Office.',
-              hinge_question:
-                "How do local magistrates' court records corroborate the claim that vagrancy laws were enforced unevenly across different English counties?",
-              source_context:
-                "Quarter Sessions records reveal that local enforcement of vagrancy laws depended entirely on the energy of unpaid Justices of the Peace. While progressive towns like Norwich and Ipswich instituted pioneering public work schemes and censuses, many rural parishes ignored royal proclamations until riots threatened. Hinge Question: How do local magistrates' court records corroborate the claim that vagrancy laws were enforced unevenly across different English counties?",
-              context:
-                'Quarter Sessions records reveal that local enforcement of vagrancy laws depended on the energy of unpaid Justices of the Peace.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+                'The official printed parliamentary statute of the 1601 Act for the Relief of the Poor (43 Elizabeth I c. 2), establishing compulsory parish poor rates, appointing Overseers of the Poor, providing raw materials to set the able-bodied to work, and funding almshouses for the impotent poor.',
+              desc: 'Parliamentary statute of the 1601 Elizabethan Poor Relief Act.',
+              provenance: 'Parliamentary Archives, London (HL/PO/PU/1/1601/43Eliz1n2), 1601.',
+              citation: 'Parliamentary Archives, London (1601).',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                'How does Source E corroborate the limits of central Tudor government power in enforcing social legislation across the country?',
+                "What was Parliament's objective in codifying the 1601 Poor Law, and how did it establish the framework of modern welfare?",
               model_answer:
-                'Source E shows that without a salaried civil service or national police force, the Crown relied entirely on local gentry JPs, meaning poor relief and vagrancy punishment varied drastically from county to county.',
-              provenance_clues: {
-                author:
-                  'Clerk of the Peace recording judicial decisions at the Norfolk Quarter Sessions.',
-                audience: 'Justices of the Peace and county constables.',
-                motive:
-                  'To maintain an official legal record of vagrancy orders, poor rate assessments, and local punishments.',
+                'Parliament codified the 1601 statute to establish a permanent, legally binding nationwide system making each parish responsible for caring for the impotent poor while putting the able-bodied to work.',
+              teacher_notes: {
+                source_context:
+                  "The 1601 'Act for the Relief of the Poor' created a comprehensive welfare system: Overseers levied a compulsory local tax; the impotent poor were given pensions or almshouses; the able-bodied were provided raw flax and wool to work; and orphans were apprenticed. It endured until 1834. **Hinge Question:** Why did the 1601 Poor Law place administrative and financial responsibility strictly on individual parishes rather than creating a centralized royal welfare fund?",
               },
             },
           ],
@@ -12660,75 +12896,48 @@ const eee_data = {
           letter: 'A',
           title:
             "Source A: Sir William Cecil's Parliamentary Memoranda on Bad Harvests and Soaring Grain Prices (1570s)",
+          type: 'written',
+          text: 'The price of wheat and rye hath risen beyond the reach of the poor husbandman. By reason of four unseasonable and wet summers, the corn in the fields is mildewed and rotten. Bread is scarce; the multitude of impoverished people doth multiply in every shire, and unless the hoarders of grain be restrained, we shall see dangerous risings among the commons.',
           caption:
-            "Title woodcut of Thomas Harman's 1567 pamphlet 'A Caveat or Warning for Common Cursitors', exposing the tricks and canting language of vagabonds.",
-          desc: "Woodcut frontispiece of Thomas Harman's 1567 pamphlet on vagabonds.",
+            "Sir William Cecil's confidential memorandum to the Privy Council analyzing how bad harvests and grain hoarding caused soaring bread prices and threatened peasant unrest.",
+          desc: "Sir William Cecil's confidential state paper on grain shortages and inflation.",
           provenance:
             'The National Archives, Kew (SP 12/85), Sir William Cecil, memoranda on grain supply and dearth, 1572.',
           citation: 'The National Archives, Kew (SP 12/85), 1572.',
-          hinge_question:
-            "Why did Thomas Harman publish detailed classifications of rogues and vagabonds like 'Abraham Men' and 'Counterfeit Cranks'?",
-          source_context:
-            "Thomas Harman, a Kent justice of the peace, interviewed itinerant beggars and published this sensational pamphlet warning householders against the 'wicked craft' of vagabonds. He categorized them into colorful criminal types like 'Counterfeit Cranks' (who faked epilepsy using soap) and 'Anglers' (who stole clothes through windows). **Hinge Question:** Why did Thomas Harman publish detailed classifications of rogues and vagabonds like 'Abraham Men' and 'Counterfeit Cranks'?",
-          context:
-            'Thomas Harman, a Kent justice of the peace, interviewed itinerant beggars and published this sensational pamphlet.',
           question_badge: 'Source Inference',
           question_type: 'Source Inference',
           enquiry_question:
             'What does Source A indicate about the primary causes of widespread poverty and rural hardship in Elizabethan England?',
           model_answer:
             'Source A shows that repeated harvest failures caused severe grain shortages and runaway food inflation, leaving poor laborers unable to afford bread and provoking deep government fears of peasant revolt.',
-          provenance_clues: {
-            author: 'Thomas Harman, a wealthy country magistrate and landowner in Kent.',
-            audience: 'Literate gentry, city merchants, and fellow justices of the peace.',
-            motive:
-              'To sensationalize the threat of vagrancy and urge the government to crack down on itinerant beggars.',
-            hinge_question:
-              "Why did Thomas Harman publish detailed classifications of rogues and vagabonds like 'Abraham Men' and 'Counterfeit Cranks'?",
-          },
           teacher_notes: {
             source_context:
-              "England's population surged from 2.8 million to over 4 million during Elizabeth's reign. This massive population growth collided with four disastrous harvest failures in the 1590s, driving food prices up by 80% while real wages fell to their lowest level in centuries. **Hinge Question:** Why did the Elizabethan government fear grain shortages far more than any other economic problem?",
+              "England's population surged from 2.8 million to over 4 million during Elizabeth's reign. This massive population growth collided with disastrous harvest failures, driving food prices up by 80% while real wages fell to their lowest level in centuries. **Hinge Question:** Why did the Elizabethan government fear grain shortages far more than any other economic problem?",
           },
-          type: 'written',
-          text: 'The price of wheat and rye hath risen beyond the reach of the poor husbandman. By reason of four unseasonable and wet summers, the corn in the fields is mildewed and rotten. Bread is scarce; the multitude of impoverished people doth multiply in every shire, and unless the hoarders of grain be restrained, we shall see dangerous risings among the commons.',
         },
         {
           id: 'eee_l10_source_b',
           letter: 'B',
           title:
             'Source B: Contemporary Complaint on the Evils of Sheep Enclosure and Village Ruin (1560s)',
+          type: 'written',
+          text: 'Where forty persons had their livings by growing corn, now one shepherd and his dog hath all. The rich gentlemen have enclosed the commons with ditches and quickset hedges, turning tillage into sheep pasture. Whole hamlets are depopulated; ploughs rot in the furrows, and honest ploughmen, being driven from their cottages, are cast into the highways to starve or beg.',
           caption:
-            'The official parchment statute of the 1601 Act for the Relief of the Poor (43 Elizabeth I c. 2), codifying Elizabethan poor relief into permanent law.',
-          desc: 'Parchment statute of the 1601 Poor Law.',
+            'Extract from a contemporary Tudor tract on the decay of tillage, denouncing greedy landlords for enclosing arable cropland to graze sheep and evicting peasant families.',
+          desc: 'Tudor tract on the decay of tillage and peasant evictions.',
           provenance:
-            'Tudor tract on the decay of husbandry, British Library (Lansdowne MS 152), c. 1565.',
+            'British Library, London (Lansdowne MS 152), contemporary tract on enclosure and the decay of husbandry, c. 1565.',
           citation: 'British Library, London (Lansdowne MS 152).',
-          hinge_question:
-            "How did the 1601 Poor Law create a formal national system that distinguished between the 'deserving' and 'undeserving' poor?",
-          source_context:
-            "The 1601 Poor Relief Act codified decades of local experimentation. It required every parish to appoint Overseers of the Poor, collect compulsory poor rates, provide poor relief/almshouses for the impotent poor (elderly, sick, orphans), provide work for able-bodied paupers, and send stubborn vagrants to Houses of Correction. **Hinge Question:** How did the 1601 Poor Law create a formal national system that distinguished between the 'deserving' and 'undeserving' poor?",
-          context: 'The 1601 Poor Relief Act codified decades of local experimentation.',
-          question_badge: "Author's Purpose",
-          question_type: "Author's Purpose",
+          question_badge: 'Author’s Purpose',
+          question_type: 'Author’s Purpose',
           enquiry_question:
             'Why did contemporary writers and petitioners condemn the enclosure of land for sheep farming so passionately?',
           model_answer:
             'They argued that enclosing arable fields for wool production drove tenant farmers off the land, destroying rural communities and turning self-sufficient families into homeless vagrants.',
-          provenance_clues: {
-            author: 'The English Parliament enacting comprehensive crown legislation.',
-            audience: 'Justices of the peace, churchwardens, and parish overseers across England.',
-            motive:
-              'To establish a uniform, compulsory legal framework that prevented food riots and social rebellion.',
-            hinge_question:
-              "How did the 1601 Poor Law create a formal national system that distinguished between the 'deserving' and 'undeserving' poor?",
-          },
           teacher_notes: {
             source_context:
               "Wool was England's most profitable export, accounting for 80% of foreign trade. Landlords realized they could make vastly higher profits grazing sheep than renting arable land to peasant farmers, leading to forced evictions and the enclosure of common pastures. **Hinge Question:** Why was enclosure blamed for creating vagrancy, even though modern historians show population growth was the primary economic driver?",
           },
-          type: 'written',
-          text: 'Where forty persons had their livings by growing corn, now one shepherd and his dog hath all. The rich gentlemen have enclosed the commons with ditches and quickset hedges, turning tillage into sheep pasture. Whole hamlets are depopulated; ploughs rot in the furrows, and honest ploughmen, being driven from their cottages, are cast into the highways to starve or beg.',
         },
         {
           id: 'eee_l10_source_c',
@@ -12743,29 +12952,15 @@ const eee_data = {
           provenance:
             "William Harrison, The Description of England, Holinshed's Chronicles, London, 1577.",
           citation: 'William Harrison, The Description of England (1577).',
-          hinge_question:
-            "How did William Harrison's division of the poor into three distinct classes shape Elizabethan welfare and penal legislation?",
-          source_context:
-            "In his landmark 1577 Description of England, clergyman William Harrison codified contemporary Tudor thinking on social class and destitution. Harrison distinguished between those unable to work through bodily infirmity, those thrown into hardship by misfortune, and idle rogues who refused work. **Hinge Question:** How did William Harrison's division of the poor into three distinct classes shape Elizabethan welfare and penal legislation?",
-          context:
-            'William Harrison codified contemporary Tudor thinking on social class and destitution in 1577.',
           question_badge: 'Source Inference',
           question_type: 'Source Inference',
           enquiry_question:
-            'What can you infer from Source C about Elizabethan attitudes towards distinguishing between different categories of poor people?',
+            'What can you infer from Source C about Elizabethan attitudes towards able-bodied unemployed people?',
           model_answer:
-            'Source C reveals that Elizabethan society clearly separated those unable to work through illness or misfortune (who deserved parish charity) from able-bodied vagrants who chose not to work and were therefore viewed as dangerous criminals requiring corporal punishment and forced labour.',
-          provenance_clues: {
-            author: 'William Harrison, Elizabethan clergyman and topographer.',
-            audience: 'Educated Elizabethan gentry, magistrates, and scholars.',
-            motive:
-              'To provide a comprehensive, moralizing survey of English social institutions and legal customs.',
-            hinge_question:
-              "How did William Harrison's division of the poor into three distinct classes shape Elizabethan welfare and penal legislation?",
-          },
+            'Source C reveals that the Tudor ruling class viewed able-bodied unemployment not as an economic misfortune, but as a moral failing and threat to public order that had to be brutally deterred through public physical violence.',
           teacher_notes: {
             source_context:
-              "Harrison's tripartite classification became the intellectual foundation for the Poor Relief Acts of 1597 and 1601. **Hinge Question:** Why did Elizabethan authorities believe it was essential to strictly separate the impotent poor from the idle vagabond?",
+              "Under Elizabethan social theory, society drew a sharp distinction between the 'impotent poor' deserving Christian charity and 'sturdy rogues' who were criminalized. **Hinge Question:** What does the severity of corporal punishments in Tudor descriptions reveal about Elizabethan fears of social disorder?",
           },
         },
         {
@@ -12779,28 +12974,14 @@ const eee_data = {
           caption:
             'A contemporary Elizabethan woodcut depicting sturdy beggars being tied to the cart-tail and whipped through the market town until bloody under the harsh 1572 Vagabonds Act.',
           desc: 'A woodcut showing the public corporal punishment of vagrants in an Elizabethan market town.',
-          provenance: 'British Library, woodcut from a Tudor penal broadsheet, c. 1575.',
+          provenance: 'British Library, London (penal broadsheet woodcut), c. 1575.',
           citation: 'British Library, London.',
-          hinge_question:
-            "How do Cecil's private notes show that ministers recognized economic factors like poor harvests and enclosure drove rural poverty?",
-          source_context:
-            "In private memos to the Privy Council, Cecil observed that England's population had surged from 2.8 million in 1558 to over 4 million by 1603, while bad harvests caused grain prices to quadruple. Landlords enclosed arable fields for profitable sheep farming, evicting tenant families and creating widespread rural poverty. **Hinge Question:** How do Cecil's private notes show that ministers recognized economic factors like poor harvests and enclosure drove rural poverty?",
-          context:
-            "In private memos to the Privy Council, Cecil observed that England's population had surged from 2.8 million to over 4 million.",
           question_badge: 'Reliability & Provenance',
           question_type: 'Reliability & Provenance',
           enquiry_question:
             "Why is Source D reliable evidence of the severe punitive measures Elizabeth's government used against mobile vagrants?",
           model_answer:
             'Source D faithfully illustrates the corporal punishment mandated by the 1572 Vagabonds Act, where sturdy beggars were publicly whipped and had their ear bored through with a hot iron to deter mobile vagrancy.',
-          provenance_clues: {
-            author: 'Sir William Cecil drafting state economic and agricultural policy.',
-            audience: 'Queen Elizabeth I and the Privy Council committee on trade and grains.',
-            motive:
-              'To understand root economic causes of unrest and formulate effective food security measures.',
-            hinge_question:
-              "How do Cecil's private notes show that ministers recognized economic factors like poor harvests and enclosure drove rural poverty?",
-          },
           teacher_notes: {
             source_context:
               'The 1572 Vagabonds Act introduced draconian punishments: first-time offenders were whipped and bored through the ear; second-time offenders were treated as felons; and persistent vagrants could be executed. However, it also introduced compulsory local poor rates. **Hinge Question:** How did the 1572 Act mark a major turning point by combining brutal corporal deterrence with the first mandatory taxpayer poor relief?',
@@ -12809,36 +12990,23 @@ const eee_data = {
         {
           id: 'eee_l10_source_e',
           letter: 'E',
-          title: 'Source E: The Act for the Relief of the Poor (43 Elizabeth I c. 2, 1601)',
+          title: 'Source E: The Elizabethan Poor Law Statute of 1601 (Parliamentary Roll)',
+          src: '/images/poor_law_1601.jpg',
+          image: '/images/poor_law_1601.jpg',
+          source: '/images/poor_law_1601.jpg',
           type: 'written',
           text: 'Be it enacted by the authority of this present Parliament, that the churchwardens of every parish, and four, three or two substantial householders there... shall be called Overseers of the Poor of the same parish; and they shall take order from time to time... for setting to work the children of all such whose parents shall not be thought able to keep and maintain them; and also for setting to work all such persons, married or unmarried, having no means to maintain them, and use no ordinary and daily trade of life to get their living by; and also to raise weekly or otherwise... a convenient stock of flax, hemp, wool, thread, iron, and other necessary ware and stuff, to set the poor on work; and also competent sums of money for and towards the necessary relief of the lame, impotent, old, blind, and such other among them being poor and not able to work...',
           caption:
-            'The official parliamentary roll of the 1601 Poor Law: codifying the parish rate, appointing Overseers of the Poor, providing raw materials for the able-bodied, and establishing almshouses for the impotent poor.',
-          desc: 'The 1601 Elizabethan Poor Law statute, which remained the bedrock of British welfare legislation for over 230 years.',
-          provenance:
-            'Parliamentary Archives, Palace of Westminster (Statute 43 Eliz. c. 2), London, 1601.',
-          citation: 'Parliamentary Archives, London.',
-          hinge_question:
-            "How do local magistrates' court records corroborate the claim that vagrancy laws were enforced unevenly across different English counties?",
-          source_context:
-            "Quarter Sessions records reveal that local enforcement of vagrancy laws depended entirely on the energy of unpaid Justices of the Peace. While progressive towns like Norwich and Ipswich instituted pioneering public work schemes and censuses, many rural parishes ignored royal proclamations until riots threatened. **Hinge Question:** How do local magistrates' court records corroborate the claim that vagrancy laws were enforced unevenly across different English counties?",
-          context:
-            'Quarter Sessions records reveal that local enforcement of vagrancy laws depended on the energy of unpaid Justices of the Peace.',
+            'The official printed parliamentary statute of the 1601 Act for the Relief of the Poor (43 Elizabeth I c. 2), establishing compulsory parish poor rates, appointing Overseers of the Poor, providing raw materials to set the able-bodied to work, and funding almshouses for the impotent poor.',
+          desc: 'Parliamentary statute of the 1601 Elizabethan Poor Relief Act.',
+          provenance: 'Parliamentary Archives, London (HL/PO/PU/1/1601/43Eliz1n2), 1601.',
+          citation: 'Parliamentary Archives, London (1601).',
           question_badge: "Author's Purpose",
           question_type: "Author's Purpose",
           enquiry_question:
             "What was Parliament's objective in codifying the 1601 Poor Law, and how did it establish the framework of modern welfare?",
           model_answer:
             'Parliament codified the 1601 statute to establish a permanent, legally binding nationwide system making each parish responsible for caring for the impotent poor while putting the able-bodied to work.',
-          provenance_clues: {
-            author:
-              'Clerk of the Peace recording judicial decisions at the Norfolk Quarter Sessions.',
-            audience: 'Justices of the Peace and county constables.',
-            motive:
-              'To maintain an official legal record of vagrancy orders, poor rate assessments, and local punishments.',
-            hinge_question:
-              "How do local magistrates' court records corroborate the claim that vagrancy laws were enforced unevenly across different English counties?",
-          },
           teacher_notes: {
             source_context:
               "The 1601 'Act for the Relief of the Poor' created a comprehensive welfare system: Overseers levied a compulsory local tax; the impotent poor were given pensions or almshouses; the able-bodied were provided raw flax and wool to work; and orphans were apprenticed. It endured until 1834. **Hinge Question:** Why did the 1601 Poor Law place administrative and financial responsibility strictly on individual parishes rather than creating a centralized royal welfare fund?",
@@ -13524,32 +13692,40 @@ const eee_data = {
             {
               id: 'eee_l11_source_a',
               letter: 'A',
-              title: 'Source A: English Naval Galleons with Low-Profile Race-Built Hulls (c. 1585)',
-              src: '/images/spanish_armada.jpg',
-              image: '/images/spanish_armada.jpg',
-              source: '/images/spanish_armada.jpg',
+              title:
+                "Source A: Authentic Elizabethan Mariner's Astrolabe for Latitude Navigation (c. 1580s)",
+              src: '/images/mariners_astrolabe_1603.jpg',
+              image: '/images/mariners_astrolabe_1603.jpg',
+              source: '/images/mariners_astrolabe_1603.jpg',
               caption:
-                "Naval engraving showing the design of John Hawkins' innovative race-built galleons: lower forecastles, streamlined keels, and heavier broadside guns.",
-              desc: 'Engraving of English race-built naval warships at sea.',
-              provenance: 'National Maritime Museum, Greenwich (PAD0284), c. 1585.',
+                "An authentic heavy cast-brass mariner's astrolabe: cut-out spokes reduce wind resistance on pitching decks, allowing navigators to sight the Sun or Pole Star to determine latitude.",
+              desc: 'A brass navigational instrument essential for Elizabethan oceanic voyages across the Atlantic and Pacific.',
+              provenance:
+                "National Maritime Museum, Greenwich (NAV0024), brass mariner's astrolabe, late 16th century.",
               citation: 'National Maritime Museum, Greenwich.',
               hinge_question:
                 "How did John Hawkins' race-built galleons give English navigators decisive technical advantages in speed and weatherly sailing?",
               source_context:
-                "As Treasurer of the Navy from 1577, Sir John Hawkins revolutionized English ship design. He stripped off the towering 'castles' that made Spanish galleons top-heavy floating fortresses, creating sleek, race-built galleons that could sail closer to the wind, out-manoeuvre rivals, and fire long-range culverin guns repeatedly. Hinge Question: How did John Hawkins' race-built galleons give English navigators decisive technical advantages in speed and weatherly sailing?",
+                "As Treasurer of the Navy from 1577, Sir John Hawkins revolutionized English ship design. He stripped off the towering 'castles' that made Spanish galleons top-heavy floating fortresses, creating sleek, race-built galleons that could sail closer to the wind, out-manoeuvre rivals, and fire long-range culverin guns repeatedly. **Hinge Question:** How did John Hawkins' race-built galleons give English navigators decisive technical advantages in speed and weatherly sailing?",
               context:
                 'As Treasurer of the Navy from 1577, Sir John Hawkins revolutionized English ship design.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How useful is Source A for explaining why English naval technology advanced so rapidly in the late sixteenth century?',
+                'What does Source A reveal about the scientific and technological advancements that enabled Elizabethan voyages of discovery?',
               model_answer:
-                'Source A is highly useful because it demonstrates the physical engineering revolution that gave English ships superior speed, stability, and broadside fire, enabling them to dominate oceanic trade routes and defeat larger Spanish warships.',
+                'Source A shows that oceanic navigation evolved from guesswork to scientific celestial observation, using heavy brass astrolabes designed to calculate latitude accurately on pitching ships.',
               provenance_clues: {
                 author: 'Contemporary maritime draftsman illustrating modern naval architecture.',
                 audience: 'Shipwrights, naval captains, and Lord High Admiral Howard of Effingham.',
                 motive:
                   'To record the naval innovations transforming England into a formidable oceanic sea power.',
+                hinge_question:
+                  "How did John Hawkins' race-built galleons give English navigators decisive technical advantages in speed and weatherly sailing?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Unlike delicate land astrolabes, mariner's astrolabes were heavy brass discs with large cut-out holes to prevent the instrument swaying in ocean winds. Navigators aligned the alidade with the noonday Sun or the North Star to measure altitude and calculate latitude. **Hinge Question:** Why did the inability to calculate longitude remain the greatest navigational obstacle for Elizabethan explorers despite instruments like the astrolabe?",
               },
             },
           ],
@@ -13565,37 +13741,44 @@ const eee_data = {
           text: '<span class="para-ref">[2.1]</span> English oceanic voyages were made possible by major transformations in naval architecture led by Sir John Hawkins. Departing from traditional, high-castled Spanish carraks, Hawkins developed the <strong>race-built galleon</strong>—a ship with a longer keel, lower forecastles, and a streamlined hull that reduced water resistance.<br><br><span class="para-ref">[2.2]</span> These ships incorporated triangular <strong>lateen sails</strong> alongside square sails, giving them exceptional maneuverability to "tack" close to the wind in violent Atlantic weather. Crucially, English shipwrights redesigned gun decks to mount heavy <strong>culverin cannons on compact four-wheeled truck carriages</strong>, allowing English crews to fire rapid broadsides through low gunports without destabilizing the ship.',
           level_4:
             "Hawkins designed streamlined 'race-built galleons' with lower forecastles and lateen sails for superior handling. English ships carried heavy culverin cannons on four-wheel carriages for rapid broadside firing.",
-
           isReversed: false,
           sources: [
             {
               id: 'eee_l11_source_b',
               letter: 'B',
-              title: 'Source B: Sir Francis Drake with Navigational Compass and Terrestrial Globe',
-              src: '/images/francis_drake.jpg',
-              image: '/images/francis_drake.jpg',
-              source: '/images/francis_drake.jpg',
+              title:
+                'Source B: Contemporary Plate of the Race-Built English Galleon Ark Royal (1587)',
+              src: '/images/ark_royal.jpg',
+              image: '/images/ark_royal.jpg',
+              source: '/images/ark_royal.jpg',
               caption:
-                "Portrait of Sir Francis Drake holding a mariner's compass beside an open terrestrial globe, painted by Jodocus Hondius c. 1583.",
-              desc: 'Portrait of Sir Francis Drake with navigational instruments.',
-              provenance: 'National Portrait Gallery, London (NPG 268), c. 1583.',
-              citation: 'National Portrait Gallery, London.',
+                'The English race-built flagship Ark Royal: designed by Sir John Hawkins with reduced castles, a sleek hydrodynamic hull, lateen sails, and heavy culverins mounted low along broadsides.',
+              desc: "A contemporary engraving of the English flagship Ark Royal, exemplifying John Hawkins' race-built naval design.",
+              provenance:
+                'British Museum (Department of Prints and Drawings), contemporary 16th-century naval engraving.',
+              citation: 'British Museum, London.',
               hinge_question:
                 "How does Drake's deliberate inclusion of the compass and globe promote England's ambition to rival the Spanish Empire globally?",
               source_context:
-                "Portrait of Sir Francis Drake celebrating his triumphant circumnavigation. Drake used the latest navigational charts, compasses, and astrolabes, returning with incredible riches and claiming California (Nova Albion) for Elizabeth, proving that English seamen could navigate any ocean on earth. Hinge Question: How does Drake's deliberate inclusion of the compass and globe promote England's ambition to rival the Spanish Empire globally?",
+                "Portrait of Sir Francis Drake celebrating his triumphant circumnavigation. Drake used the latest navigational charts, compasses, and astrolabes, returning with incredible riches and claiming California (Nova Albion) for Elizabeth, proving that English seamen could navigate any ocean on earth. **Hinge Question:** How does Drake's deliberate inclusion of the compass and globe promote England's ambition to rival the Spanish Empire globally?",
               context: 'Portrait of Sir Francis Drake celebrating his triumphant circumnavigation.',
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+              question_badge: 'Cross-Referencing',
+              question_type: 'Cross-Referencing',
               enquiry_question:
-                "What message was the artist intending to convey about England's maritime prowess in Source B?",
+                'How does Source B support the claim that John Hawkins revolutionized English naval architecture?',
               model_answer:
-                "The artist intended to portray Drake as the embodiment of English navigational mastery and global ambition, proudly showing that English sailors had broken Spain and Portugal's monopoly over worldwide exploration.",
+                "Source B illustrates Hawkins' 'race-built' concept: cutting down high clumsy forecastles to lower wind resistance, increasing hull length, and equipping warships to fight with heavy broadside cannon rather than boarding.",
               provenance_clues: {
                 author: 'Jodocus Hondius, celebrated Flemish cartographer and engraver.',
                 audience: 'English merchants, court patrons, and international maritime scholars.',
                 motive:
                   "To celebrate Drake's scientific navigation and assert English imperial prestige on the world stage.",
+                hinge_question:
+                  "How does Drake's deliberate inclusion of the compass and globe promote England's ambition to rival the Spanish Empire globally?",
+              },
+              teacher_notes: {
+                source_context:
+                  "As Treasurer of the Royal Navy from 1577, Hawkins stripped away towering fore- and stern-castles, creating low-profile galleons that were faster, more manoeuvrable, and could sail closer to the wind than cumbersome Spanish floating fortresses. **Hinge Question:** How did Hawkins' race-built design transform the fundamental purpose of a naval warship from a floating troop carrier into a gunnery platform?",
               },
             },
           ],
@@ -13628,7 +13811,7 @@ const eee_data = {
               hinge_question:
                 'What does this navigational chart indicate about the growing cartographic accuracy available to late Elizabethan ship captains?',
               source_context:
-                "Chart by Augustine Ryther showing the dramatic improvement in English cartography during Elizabeth's reign. With Mercator projection charts and accurate navigational logs, English sea captains could calculate course headings across open oceans with far greater precision than earlier medieval coastal sailors. Hinge Question: What does this navigational chart indicate about the growing cartographic accuracy available to late Elizabethan ship captains?",
+                "Chart by Augustine Ryther showing the dramatic improvement in English cartography during Elizabeth's reign. With Mercator projection charts and accurate navigational logs, English sea captains could calculate course headings across open oceans with far greater precision than earlier medieval coastal sailors. **Hinge Question:** What does this navigational chart indicate about the growing cartographic accuracy available to late Elizabethan ship captains?",
               context:
                 "Chart by Augustine Ryther showing the dramatic improvement in English cartography during Elizabeth's reign.",
               question_badge: 'Source Inference',
@@ -13642,6 +13825,12 @@ const eee_data = {
                 audience: 'Naval captains, explorers, and the Lord High Admiral.',
                 motive:
                   'To provide practical navigation charts celebrating English maritime defence and exploration.',
+                hinge_question:
+                  'What does this navigational chart indicate about the growing cartographic accuracy available to late Elizabethan ship captains?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Chart by Augustine Ryther showing the dramatic improvement in English cartography during Elizabeth's reign. With Mercator projection charts and accurate navigational logs, English sea captains could calculate course headings across open oceans with far greater precision than earlier medieval coastal sailors. **Hinge Question:** What does this navigational chart indicate about the growing cartographic accuracy available to late Elizabethan ship captains?",
               },
             },
           ],
@@ -13693,32 +13882,39 @@ const eee_data = {
               id: 'eee_l11_source_d',
               letter: 'D',
               title:
-                'Source D: Sir John Hawkins, Treasurer of the Royal Navy and Slave Trade Pioneer',
-              src: '/units/eee/assets/portraits/hawkins.jpg',
-              image: '/units/eee/assets/portraits/hawkins.jpg',
-              source: '/units/eee/assets/portraits/hawkins.jpg',
+                "Source D: Jodocus Hondius World Map Showing the Track of Drake's Circumnavigation (1595)",
+              src: '/images/hondius_drake_circumnavigation_map_1595.jpg',
+              image: '/images/hondius_drake_circumnavigation_map_1595.jpg',
+              source: '/images/hondius_drake_circumnavigation_map_1595.jpg',
               caption:
-                'Sir John Hawkins, who led three transatlantic slave-trading voyages between 1562 and 1568, backed secretly by Queen Elizabeth and London syndicates.',
-              desc: 'Portrait of Sir John Hawkins in feathered hat and velvet collar.',
-              provenance: 'Plymouth City Museum and Art Gallery, c. 1581.',
-              citation: 'The Box, Plymouth.',
+                'Jodocus Hondius world map (1595) showing the confirmed global track of Sir Francis Drake on the Golden Hind (1577–1580), including Cape Horn, Nova Albion (California), and the Moluccas.',
+              desc: "A renowned Dutch world map charting Drake's voyage around the globe, with the Golden Hind illustrated at the bottom.",
+              provenance:
+                'British Library (Maps C.2.a.7), Jodocus Hondius world map published in The Hague, 1595.',
+              citation: 'British Library, London (Maps C.2.a.7).',
               hinge_question:
                 "How did Hawkins' early triangular slave trade voyages in the 1560s establish the commercial and naval foundations of English oceanic expansion?",
               source_context:
-                "In 1562, Hawkins pioneered the English triangular trade, kidnapping enslaved Africans in Sierra Leone, transporting them across the Atlantic, and selling them to Spanish colonists in the Caribbean in exchange for pearls, hides, and sugar. Queen Elizabeth invested the royal ship Jesus of Lubeck in his ventures. Hinge Question: How did Hawkins' early triangular slave trade voyages in the 1560s establish the commercial and naval foundations of English oceanic expansion?",
+                "In 1562, Hawkins pioneered the English triangular trade, kidnapping enslaved Africans in Sierra Leone, transporting them across the Atlantic, and selling them to Spanish colonists in the Caribbean in exchange for pearls, hides, and sugar. Queen Elizabeth invested the royal ship Jesus of Lubeck in his ventures. **Hinge Question:** How did Hawkins' early triangular slave trade voyages in the 1560s establish the commercial and naval foundations of English oceanic expansion?",
               context: 'In 1562, Hawkins pioneered the English triangular trade.',
               question_badge: 'Reliability & Provenance',
               question_type: 'Reliability & Provenance',
               enquiry_question:
-                "How does Hawkins' career in Source D reveal the economic motives that drove early Elizabethan exploration?",
+                "Why is Source D exceptionally reliable evidence for understanding the global scale and geopolitical impact of Drake's voyage?",
               model_answer:
-                'Source D reveals that early English exploration was driven by commercial greed for enormous profits from privateering and human trafficking, directly supported by royal investment from Queen Elizabeth herself.',
+                "Source D is an authoritative map compiled by Hondius using Drake's verified navigational logs, tracing his exact path around South America, up the uncharted Pacific coast to Nova Albion, and home via the Spice Islands.",
               provenance_clues: {
                 author:
                   "English portrait painter capturing Plymouth's famous sea dog and royal treasurer.",
                 audience: 'West Country merchant syndicates and admiralty commissioners.',
                 motive:
                   "To celebrate Hawkins' rise from provincial merchant to royal treasurer and oceanic commander.",
+                hinge_question:
+                  "How did Hawkins' early triangular slave trade voyages in the 1560s establish the commercial and naval foundations of English oceanic expansion?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Drake set sail in December 1577 with five ships; only the Golden Hind completed the voyage. He returned in September 1580 with £400,000 in Spanish treasure, shattering Spain's claim that the Pacific Ocean was a closed Spanish sea (Mare Clausum). **Hinge Question:** Why did Drake claim Nova Albion (modern California) for Elizabeth, and what geopolitical message did this send to King Philip II?",
               },
             },
           ],
@@ -13769,32 +13965,38 @@ const eee_data = {
               id: 'eee_l11_source_e',
               letter: 'E',
               title:
-                'Source E: Sir Richard Grenville, Vice-Admiral and Commander of the 1585 Virginia Expedition',
-              src: '/images/sir_richard_grenville.jpg',
-              image: '/images/sir_richard_grenville.jpg',
-              source: '/images/sir_richard_grenville.jpg',
+                "Source E: Spanish Ambassador Bernardino de Mendoza's Urgent Dispatch to King Philip II (October 1580)",
               caption:
-                'Sir Richard Grenville (1542–1591), fierce naval commander who transported the first English colonists to Roanoke Island in 1585 in the Tiger.',
-              desc: 'Portrait of Sir Richard Grenville in full Elizabethan battle armor.',
-              provenance: 'National Portrait Gallery, London (NPG 1614), 1571.',
-              citation: 'National Portrait Gallery, London.',
+                'Confidential diplomatic dispatch from Spanish Ambassador Bernardino de Mendoza to King Philip II, reporting that Sir Francis Drake had returned to Plymouth laden with stolen Spanish silver.',
+              desc: "Mendoza dispatch reporting Drake's return from the Pacific.",
+              provenance:
+                'Calendar of State Papers, Spanish (Simancas Archives), Mendoza to Philip II, London, October 1580.',
+              citation: 'General Archive of Simancas (Estado, leg. 833), 1580.',
               hinge_question:
                 "How does Grenville's dual career as a naval combatant and colonial commander reflect the militarized nature of Elizabethan maritime expansion?",
               source_context:
-                "Portrait of Sir Richard Grenville. A proud, aggressive Cornish commander, Grenville commanded the fleet of seven ships sent by Raleigh in 1585 to plant the first colony in Virginia. When an indigenous villager allegedly stole a small silver cup, Grenville burned the entire village and standing corn crops, creating lasting enmity with the local tribes. Hinge Question: How does Grenville's dual career as a naval combatant and colonial commander reflect the militarized nature of Elizabethan maritime expansion?",
+                "Portrait of Sir Richard Grenville. A proud, aggressive Cornish commander, Grenville commanded the fleet of seven ships sent by Raleigh in 1585 to plant the first colony in Virginia. When an indigenous villager allegedly stole a small silver cup, Grenville burned the entire village and standing corn crops, creating lasting enmity with the local tribes. **Hinge Question:** How does Grenville's dual career as a naval combatant and colonial commander reflect the militarized nature of Elizabethan maritime expansion?",
               context: 'Portrait of Sir Richard Grenville. A proud, aggressive Cornish commander.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+              question_badge: "Author's Purpose",
+              question_type: "Author's Purpose",
               enquiry_question:
-                'How does Source E help explain why English attempts at colonization frequently clashed with indigenous populations?',
+                "What was Mendoza's purpose in writing this dispatch to King Philip II upon Drake's return in 1580?",
               model_answer:
-                'Source E explains that colonial expeditions were led by militarized privateering commanders like Grenville, whose violent martial discipline and ruthless tactics provoked immediate hostility from native inhabitants.',
+                "Mendoza intended to portray Elizabeth as an unprincipled sponsor of piracy who personally profited from stolen Spanish bullion, urging Philip II to treat England's state-sponsored plunder as an act of open war.",
               provenance_clues: {
                 author: 'English portraitist depicting Grenville as an armed knight.',
                 audience: 'West Country gentry and family descendants.',
                 motive:
                   "To emphasize Grenville's fierce military reputation, noble ancestry, and martial prowess.",
+                hinge_question:
+                  "How does Grenville's dual career as a naval combatant and colonial commander reflect the militarized nature of Elizabethan maritime expansion?",
               },
+              teacher_notes: {
+                source_context:
+                  "Drake's plunder was so vast that Elizabeth's 50% royal share exceeded the entire Crown revenue for a year, allowing her to pay off England's foreign debt and invest in the Levant Company. In April 1581, Elizabeth boarded the Golden Hind at Deptford and knighted Drake in full view of the French ambassador. **Hinge Question:** Why was Elizabeth's decision to knight Drake on the Golden Hind in front of foreign diplomats considered a calculated act of defiance against Spain?",
+              },
+              type: 'written',
+              text: "The master-thief Drake hath arrived at Plymouth laden with astronomical riches stolen from Your Majesty's peaceful subjects in Peru. He hath brought twenty-six tons of silver bullion, eighty pounds of gold, and chests of pearls and emeralds from the Cacafuego. The Queen hath received him privately at court, and far from punishing this pirate, she hath taken the lion's share of the booty for her royal treasury and intends to knight him on his ship!",
             },
           ],
         },
@@ -14098,8 +14300,8 @@ const eee_data = {
           title:
             "Source E: Spanish Ambassador Bernardino de Mendoza's Urgent Dispatch to King Philip II (October 1580)",
           caption:
-            'Sir Richard Grenville (1542–1591), fierce naval commander who transported the first English colonists to Roanoke Island in 1585 in the Tiger.',
-          desc: 'Portrait of Sir Richard Grenville in full Elizabethan battle armor.',
+            'Confidential diplomatic dispatch from Spanish Ambassador Bernardino de Mendoza to King Philip II, reporting that Sir Francis Drake had returned to Plymouth laden with stolen Spanish silver.',
+          desc: "Mendoza dispatch reporting Drake's return from the Pacific.",
           provenance:
             'Calendar of State Papers, Spanish (Simancas Archives), Mendoza to Philip II, London, October 1580.',
           citation: 'General Archive of Simancas (Estado, leg. 833), 1580.',
@@ -14835,7 +15037,7 @@ const eee_data = {
               hinge_question:
                 'Why was Sir Walter Raleigh unable to lead the Virginia colonization expeditions in person despite holding the royal patent from Elizabeth?',
               source_context:
-                "Portrait of Sir Walter Raleigh. In March 1584, Elizabeth granted Raleigh letters patent to discover and settle overseas lands not possessed by any Christian prince. He named the territory 'Virginia' in honour of the Virgin Queen. However, Elizabeth refused to let Raleigh leave England because he was her personal favourite at court. Hinge Question: Why was Sir Walter Raleigh unable to lead the Virginia colonization expeditions in person despite holding the royal patent from Elizabeth?",
+                "Portrait of Sir Walter Raleigh. In March 1584, Elizabeth granted Raleigh letters patent to discover and settle overseas lands not possessed by any Christian prince. He named the territory 'Virginia' in honour of the Virgin Queen. However, Elizabeth refused to let Raleigh leave England because he was her personal favourite at court. **Hinge Question:** Why was Sir Walter Raleigh unable to lead the Virginia colonization expeditions in person despite holding the royal patent from Elizabeth?",
               context:
                 'Portrait of Sir Walter Raleigh. In March 1584, Elizabeth granted Raleigh letters patent to discover and settle overseas lands.',
               question_badge: 'Author’s Purpose',
@@ -14849,6 +15051,12 @@ const eee_data = {
                 audience: 'The royal court and wealthy investors in the Virginia company.',
                 motive:
                   'To present Raleigh as a cultured, dashing courtier and visionary colonial patron.',
+                hinge_question:
+                  'Why was Sir Walter Raleigh unable to lead the Virginia colonization expeditions in person despite holding the royal patent from Elizabeth?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Portrait of Sir Walter Raleigh. In March 1584, Elizabeth granted Raleigh letters patent to discover and settle overseas lands not possessed by any Christian prince. He named the territory 'Virginia' in honour of the Virgin Queen. However, Elizabeth refused to let Raleigh leave England because he was her personal favourite at court. **Hinge Question:** Why was Sir Walter Raleigh unable to lead the Virginia colonization expeditions in person despite holding the royal patent from Elizabeth?",
               },
             },
           ],
@@ -14887,7 +15095,7 @@ const eee_data = {
               hinge_question:
                 "How does John White's detailed chart of the Outer Banks explain why treacherous shoals caused the flagship Tiger to run aground and ruin food supplies?",
               source_context:
-                "John White, an artist and surveyor on the 1585 voyage, created this accurate hydrographic chart of the Carolina Outer Banks. The map shows the narrow barrier islands and shallow sounds that proved disastrous for English deep-draft ships; the flagship Tiger ran aground on the shoals, soaking and ruining nearly all the colonists' grain supplies. Hinge Question: How does John White's detailed chart of the Outer Banks explain why treacherous shoals caused the flagship Tiger to run aground and ruin food supplies?",
+                "John White, an artist and surveyor on the 1585 voyage, created this accurate hydrographic chart of the Carolina Outer Banks. The map shows the narrow barrier islands and shallow sounds that proved disastrous for English deep-draft ships; the flagship Tiger ran aground on the shoals, soaking and ruining nearly all the colonists' grain supplies. **Hinge Question:** How does John White's detailed chart of the Outer Banks explain why treacherous shoals caused the flagship Tiger to run aground and ruin food supplies?",
               context:
                 'John White, an artist and surveyor on the 1585 voyage, created this accurate hydrographic chart of the Carolina Outer Banks.',
               question_badge: 'Historical Utility',
@@ -14902,6 +15110,12 @@ const eee_data = {
                 audience: 'Sir Walter Raleigh and Privy Council backers in London.',
                 motive:
                   'To provide accurate navigational and topographical records for future colonization ventures.',
+                hinge_question:
+                  "How does John White's detailed chart of the Outer Banks explain why treacherous shoals caused the flagship Tiger to run aground and ruin food supplies?",
+              },
+              teacher_notes: {
+                source_context:
+                  "John White, an artist and surveyor on the 1585 voyage, created this accurate hydrographic chart of the Carolina Outer Banks. The map shows the narrow barrier islands and shallow sounds that proved disastrous for English deep-draft ships; the flagship Tiger ran aground on the shoals, soaking and ruining nearly all the colonists' grain supplies. **Hinge Question:** How does John White's detailed chart of the Outer Banks explain why treacherous shoals caused the flagship Tiger to run aground and ruin food supplies?",
               },
             },
           ],
@@ -14959,7 +15173,7 @@ const eee_data = {
               hinge_question:
                 "What does White's portrait of an indigenous leader reveal about initial English intentions to study and engage with local tribes?",
               source_context:
-                "John White was instructed by Raleigh to paint accurate life studies of the indigenous peoples of Virginia. His paintings offer extraordinary primary ethnographic detail of the Secotan and Roanoke tribes, showing that the Native Americans were organized, sophisticated communities rather than savage barbarians. Hinge Question: What does White's portrait of an indigenous leader reveal about initial English intentions to study and engage with local tribes?",
+                "John White was instructed by Raleigh to paint accurate life studies of the indigenous peoples of Virginia. His paintings offer extraordinary primary ethnographic detail of the Secotan and Roanoke tribes, showing that the Native Americans were organized, sophisticated communities rather than savage barbarians. **Hinge Question:** What does White's portrait of an indigenous leader reveal about initial English intentions to study and engage with local tribes?",
               context:
                 'John White was instructed by Raleigh to paint accurate life studies of the indigenous peoples of Virginia.',
               question_badge: 'Source Inference',
@@ -14973,6 +15187,12 @@ const eee_data = {
                 audience: 'English scientists, humanist scholars, and investors.',
                 motive:
                   'To record the physical appearance, leadership structure, and culture of indigenous Americans accurately.',
+                hinge_question:
+                  "What does White's portrait of an indigenous leader reveal about initial English intentions to study and engage with local tribes?",
+              },
+              teacher_notes: {
+                source_context:
+                  "John White was instructed by Raleigh to paint accurate life studies of the indigenous peoples of Virginia. His paintings offer extraordinary primary ethnographic detail of the Secotan and Roanoke tribes, showing that the Native Americans were organized, sophisticated communities rather than savage barbarians. **Hinge Question:** What does White's portrait of an indigenous leader reveal about initial English intentions to study and engage with local tribes?",
               },
             },
           ],
@@ -15012,7 +15232,7 @@ const eee_data = {
               hinge_question:
                 "How reliable is John White's artwork as primary ethnographical evidence of pre-colonial Native American culture?",
               source_context:
-                "John White attended an Algonquin religious festival at the village of Secotan in 1585. He depicted dancers holding gourds and chanting around carved wooden posts with human faces. Theodor de Bry later published engraved copies of White's drawings across Europe in Thomas Harriot's 'Brief and True Report'. Hinge Question: How reliable is John White's artwork as primary ethnographical evidence of pre-colonial Native American culture?",
+                "John White attended an Algonquin religious festival at the village of Secotan in 1585. He depicted dancers holding gourds and chanting around carved wooden posts with human faces. Theodor de Bry later published engraved copies of White's drawings across Europe in Thomas Harriot's 'Brief and True Report'. **Hinge Question:** How reliable is John White's artwork as primary ethnographical evidence of pre-colonial Native American culture?",
               context:
                 'John White attended an Algonquin religious festival at the village of Secotan in 1585.',
               question_badge: 'Reliability & Provenance',
@@ -15026,6 +15246,12 @@ const eee_data = {
                 audience: 'Educated European scholars and scientists studying the New World.',
                 motive:
                   'To provide an authentic, detailed visual record of Native American ritual and social practices.',
+                hinge_question:
+                  "How reliable is John White's artwork as primary ethnographical evidence of pre-colonial Native American culture?",
+              },
+              teacher_notes: {
+                source_context:
+                  "John White attended an Algonquin religious festival at the village of Secotan in 1585. He depicted dancers holding gourds and chanting around carved wooden posts with human faces. Theodor de Bry later published engraved copies of White's drawings across Europe in Thomas Harriot's 'Brief and True Report'. **Hinge Question:** How reliable is John White's artwork as primary ethnographical evidence of pre-colonial Native American culture?",
               },
             },
           ],
@@ -15090,7 +15316,7 @@ const eee_data = {
               hinge_question:
                 "How does White's depiction of indigenous maize and dietary habits corroborate Thomas Harriot's written report on the agricultural potential of Virginia?",
               source_context:
-                "Thomas Harriot and John White closely studied Algonquin agriculture. Harriot noted in his report that native farmers planted corn, pumpkins, beans, and tobacco that yielded three harvests a year with little labour, convincing English promoters that Virginia could sustain thousands of permanent European settlers. Hinge Question: How does White's depiction of indigenous maize and dietary habits corroborate Thomas Harriot's written report on the agricultural potential of Virginia?",
+                "Thomas Harriot and John White closely studied Algonquin agriculture. Harriot noted in his report that native farmers planted corn, pumpkins, beans, and tobacco that yielded three harvests a year with little labour, convincing English promoters that Virginia could sustain thousands of permanent European settlers. **Hinge Question:** How does White's depiction of indigenous maize and dietary habits corroborate Thomas Harriot's written report on the agricultural potential of Virginia?",
               context: 'Thomas Harriot and John White closely studied Algonquin agriculture.',
               question_badge: 'Cross-Referencing',
               question_type: 'Cross-Referencing',
@@ -15104,6 +15330,12 @@ const eee_data = {
                   'Potential English colonists, investors, and readers of promotional literature.',
                 motive:
                   'To demonstrate the abundance, orderliness, and agricultural sustainability of life in Virginia.',
+                hinge_question:
+                  "How does White's depiction of indigenous maize and dietary habits corroborate Thomas Harriot's written report on the agricultural potential of Virginia?",
+              },
+              teacher_notes: {
+                source_context:
+                  "Thomas Harriot and John White closely studied Algonquin agriculture. Harriot noted in his report that native farmers planted corn, pumpkins, beans, and tobacco that yielded three harvests a year with little labour, convincing English promoters that Virginia could sustain thousands of permanent European settlers. **Hinge Question:** How does White's depiction of indigenous maize and dietary habits corroborate Thomas Harriot's written report on the agricultural potential of Virginia?",
               },
             },
           ],
@@ -16036,6 +16268,7 @@ const eee_data = {
   id: 'eee',
   edition: '2026.1',
 };
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = eee_data;
 }

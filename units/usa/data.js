@@ -762,12 +762,10 @@ const usa_data = {
             {
               id: 'usa_lesson_1_1_a',
               letter: 'A',
-              type: 'official_statute',
+              type: 'written',
               title:
                 'Source A: Mississippi State Code Statute Enforcing Separate Public Facilities (1942, reissued 1952)',
               date: '1952',
-              image: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
-              image_url: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
               attribution:
                 'Mississippi Department of Archives and History, State Statute Compendium',
               question_badge: 'Source Inference',
@@ -791,14 +789,13 @@ const usa_data = {
                 'Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?',
               source_context:
                 'Mississippi Department of Archives and History, State Statute Compendium. The Mississippi State Legislature for State law enforcement, business owners, and all southern residents with the objective: To codify White supremacy into statutory law and criminalise racial integration under the guise of maintaining public order.. **Hinge Question:** Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?',
-              src: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
-              source: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
+              text: 'The Mississippi State Code (§7785): All railroad companies and bus operators carrying passengers in this state shall provide equal but separate accommodations for the white and colored races by providing separate cars, coaches, or waiting rooms... No person shall be permitted to occupy a seat in a coach or room other than the one assigned to his or her race. Any conductor or official willfully failing to enforce this law shall be guilty of a misdemeanor.',
             },
           ],
-          image: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
-          image_alt: 'Enforced Jim Crow sign directing Black citizens to separate facilities',
+          image: '/units/usa/assets/usa_civil_rights_deep_south_map.jpg',
+          image_alt: 'Map of the Jim Crow South showing states with mandatory segregation laws',
           caption:
-            "Plate 1.1: 'Colored Waiting Room' enamel sign displayed at a southern bus terminal in North Carolina under state segregation statutes (c. 1950s).",
+            'Plate 1.1: Cartographic map of the Jim Crow South, illustrating the seventeen states and District of Columbia enforcing compulsory racial segregation by law in the early 1950s.',
           isReversed: false,
         },
         {
@@ -817,7 +814,7 @@ const usa_data = {
               letter: 'B',
               type: 'photograph',
               title:
-                'Source B: Archival Photograph of Segregated Public Drinking Fountains in a North Carolina County Courthouse (c. 1950)',
+                "Source B: Archival Photograph of 'Colored Waiting Room' Sign at a Southern Transit Terminal (c. 1950s)",
               date: 'c. 1950',
               image: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
               image_url: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
@@ -863,12 +860,10 @@ const usa_data = {
             {
               id: 'usa_lesson_1_1_c',
               letter: 'C',
-              type: 'eyewitness_testimony',
+              type: 'written',
               title:
                 'Source C: Sworn Deposition of Amzie Moore, NAACP Field Worker, on Voter Registration Obstacles in Cleveland, Mississippi (1954)',
               date: '1954',
-              image: '/units/usa/assets/sources/portraits/thurgood_marshall.jpg',
-              image_url: '/units/usa/assets/sources/portraits/thurgood_marshall.jpg',
               attribution:
                 'National Association for the Advancement of Colored People (NAACP) Legal Defense Archive',
               question_badge: 'Reliability & Provenance',
@@ -894,11 +889,10 @@ const usa_data = {
                 'Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?',
               source_context:
                 'National Association for the Advancement of Colored People (NAACP) Legal Defense Archive. Amzie Moore, World War II veteran, local entrepreneur, and NAACP field secretary for NAACP national legal counsel and federal civil rights attorneys preparing test cases with the objective: To systematically record documented evidence of poll tax extortion and arbitrary literacy tests for federal litigation.. **Hinge Question:** Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?',
-              src: '/units/usa/assets/sources/portraits/thurgood_marshall.jpg',
-              source: '/units/usa/assets/sources/portraits/thurgood_marshall.jpg',
+              text: "When Black citizens attempted to register to vote in Sunflower County, the white circuit clerk demanded that they copy and interpret complex sections of the Mississippi State Constitution, such as the section dealing with habeas corpus or writ of mandamus. If an applicant missed a single comma, the registrar pronounced them illiterate and rejected their application. Those who persisted were visited by the Citizens' Council, fired from their jobs, and denied bank loans.",
             },
           ],
-          image: '/units/usa/assets/sources/warren-court-1954.jpg',
+          image: '/units/usa/assets/sources/kkk-march-washington-1926.jpg',
           image_alt: 'Robed members of the Ku Klux Klan marching in formation',
           caption:
             'Plate 1.2: Robed Ku Klux Klan members parading through Washington D.C., demonstrating the institutional entrenchment of white supremacy across the early twentieth century.',
@@ -1614,12 +1608,10 @@ const usa_data = {
         {
           id: 'usa_lesson_1_1_a',
           letter: 'A',
-          type: 'official_statute',
+          type: 'written',
           title:
             'Source A: Mississippi State Code Statute Enforcing Separate Public Facilities (1942, reissued 1952)',
           date: '1952',
-          image: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
-          image_url: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
           attribution: 'Mississippi Department of Archives and History, State Statute Compendium',
           question_badge: 'Source Inference',
           question:
@@ -1642,15 +1634,14 @@ const usa_data = {
             'Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?',
           source_context:
             'Mississippi Department of Archives and History, State Statute Compendium. The Mississippi State Legislature for State law enforcement, business owners, and all southern residents with the objective: To codify White supremacy into statutory law and criminalise racial integration under the guise of maintaining public order.. **Hinge Question:** Why was de jure (legal) segregation in the South significantly harder to overturn than de facto (customary) segregation in the North?',
-          src: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
-          source: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
+          text: 'The Mississippi State Code (§7785): All railroad companies and bus operators carrying passengers in this state shall provide equal but separate accommodations for the white and colored races by providing separate cars, coaches, or waiting rooms... No person shall be permitted to occupy a seat in a coach or room other than the one assigned to his or her race. Any conductor or official willfully failing to enforce this law shall be guilty of a misdemeanor.',
         },
         {
           id: 'usa_lesson_1_1_b',
           letter: 'B',
           type: 'photograph',
           title:
-            'Source B: Archival Photograph of Segregated Public Drinking Fountains in a North Carolina County Courthouse (c. 1950)',
+            "Source B: Archival Photograph of 'Colored Waiting Room' Sign at a Southern Transit Terminal (c. 1950s)",
           date: 'c. 1950',
           image: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
           image_url: '/units/usa/assets/sources/colored-waiting-room-sign.jpg',
@@ -1682,12 +1673,10 @@ const usa_data = {
         {
           id: 'usa_lesson_1_1_c',
           letter: 'C',
-          type: 'eyewitness_testimony',
+          type: 'written',
           title:
             'Source C: Sworn Deposition of Amzie Moore, NAACP Field Worker, on Voter Registration Obstacles in Cleveland, Mississippi (1954)',
           date: '1954',
-          image: '/units/usa/assets/sources/portraits/thurgood_marshall.jpg',
-          image_url: '/units/usa/assets/sources/portraits/thurgood_marshall.jpg',
           attribution:
             'National Association for the Advancement of Colored People (NAACP) Legal Defense Archive',
           question_badge: 'Reliability & Provenance',
@@ -1713,8 +1702,7 @@ const usa_data = {
             'Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?',
           source_context:
             'National Association for the Advancement of Colored People (NAACP) Legal Defense Archive. Amzie Moore, World War II veteran, local entrepreneur, and NAACP field secretary for NAACP national legal counsel and federal civil rights attorneys preparing test cases with the objective: To systematically record documented evidence of poll tax extortion and arbitrary literacy tests for federal litigation.. **Hinge Question:** Why did southern white registrars prioritize disenfranchising Black citizens above all other forms of segregation?',
-          src: '/units/usa/assets/sources/portraits/thurgood_marshall.jpg',
-          source: '/units/usa/assets/sources/portraits/thurgood_marshall.jpg',
+          text: "When Black citizens attempted to register to vote in Sunflower County, the white circuit clerk demanded that they copy and interpret complex sections of the Mississippi State Constitution, such as the section dealing with habeas corpus or writ of mandamus. If an applicant missed a single comma, the registrar pronounced them illiterate and rejected their application. Those who persisted were visited by the Citizens' Council, fired from their jobs, and denied bank loans.",
         },
         {
           id: 'usa_lesson_1_1_d',
@@ -3247,10 +3235,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/rosa-parks-fingerprint.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/rosa-parks-fingerprint.jpg',
-          image_alt: 'Police booking photograph showing Rosa Parks having her fingerprints taken',
-          caption:
-            'Plate 1.5: Rosa Parks being fingerprinted by Montgomery police on 22 February 1956 during mass indictments of boycott leaders under local anti-boycott ordinances.',
           isReversed: false,
         },
         {
@@ -3317,12 +3301,10 @@ const usa_data = {
             {
               id: 'usa_lesson_1_3_a',
               letter: 'C',
-              type: 'photograph',
+              type: 'written',
               title:
                 'Source C: Dr Martin Luther King Jr. Addressing 5,000 Boycott Supporters at Holt Street Baptist Church (5 December 1955)',
               date: '5 December 1955',
-              image: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-              image_url: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
               attribution: 'Dan Weiner / John F. Kennedy Presidential Library and Museum',
               question_badge: 'Source Inference',
               question:
@@ -3345,14 +3327,9 @@ const usa_data = {
                 'Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?',
               source_context:
                 'Dan Weiner / John F. Kennedy Presidential Library and Museum. Dan Weiner, photojournalist documenting civil rights leadership for National magazine subscribers and historical record with the objective: To document the emergence of twenty-six-year-old Dr Martin Luther King Jr. as the primary orator of the nascent movement.. **Hinge Question:** Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?',
-              src: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-              source: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
+              text: 'We are here this evening for serious business. We are here in a general sense because first and foremost we are American citizens, and we are determined to apply our citizenship to the fullness of its meaning. We are here because of our love for democracy. And you know, my friends, there comes a time when people get tired of being trampled over by the iron feet of oppression. There comes a time, my friends, when people get tired of being plunged across the abyss of humiliation.',
             },
           ],
-          image: '/units/usa/assets/sources/rosa-parks-bus-1956.jpg',
-          image_alt: 'Rosa Parks seated peacefully at the front of an integrated municipal bus',
-          caption:
-            'Plate 1.6: Rosa Parks seated in the front rows of a Montgomery city bus on 21 December 1956, the first day federal desegregation orders took legal effect.',
           isReversed: true,
         },
         {
@@ -3370,12 +3347,10 @@ const usa_data = {
             {
               id: 'usa_lesson_1_3_e',
               letter: 'D',
-              type: 'oral_history',
+              type: 'written',
               title:
                 'Source D: Oral History Account by Reverend B.J. Simms on Directing the Montgomery Volunteer Carpool Fleet (Recorded 1972)',
               date: '1972',
-              image: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-              image_url: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
               attribution:
                 'Civil Rights Documentation Project, Moorland-Spingarn Research Center, Howard University',
               question_badge: 'Cross-Referencing',
@@ -3400,8 +3375,7 @@ const usa_data = {
                 "What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?",
               source_context:
                 "Civil Rights Documentation Project, Moorland-Spingarn Research Center, Howard University. Reverend B.J. Simms, director of the Montgomery Improvement Association's transport committee for Oral historians and researchers studying non-violent logistics with the objective: To record the intricate daily operational mechanics required to transport thousands of daily commuters without public transit.. **Hinge Question:** What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?",
-              src: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-              source: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
+              text: "We had over three hundred cars running every morning from five o'clock until nine, and from four in the afternoon until eight at night. We established forty-eight dispatch stations all over Montgomery. The white police commissioner tried to break the car pools by arresting our drivers for carrying more passengers than insurance allowed, and insurance companies cancelled policies on church vehicles. But we kept rollin'.",
             },
           ],
           isReversed: true,
@@ -4102,12 +4076,10 @@ const usa_data = {
         {
           id: 'usa_lesson_1_3_a',
           letter: 'C',
-          type: 'photograph',
+          type: 'written',
           title:
             'Source C: Dr Martin Luther King Jr. Addressing 5,000 Boycott Supporters at Holt Street Baptist Church (5 December 1955)',
           date: '5 December 1955',
-          image: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-          image_url: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
           attribution: 'Dan Weiner / John F. Kennedy Presidential Library and Museum',
           question_badge: 'Source Inference',
           question:
@@ -4130,18 +4102,15 @@ const usa_data = {
             'Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?',
           source_context:
             'Dan Weiner / John F. Kennedy Presidential Library and Museum. Dan Weiner, photojournalist documenting civil rights leadership for National magazine subscribers and historical record with the objective: To document the emergence of twenty-six-year-old Dr Martin Luther King Jr. as the primary orator of the nascent movement.. **Hinge Question:** Why were southern Black churches uniquely insulated from white economic retaliation compared to other community institutions?',
-          src: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-          source: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
+          text: 'We are here this evening for serious business. We are here in a general sense because first and foremost we are American citizens, and we are determined to apply our citizenship to the fullness of its meaning. We are here because of our love for democracy. And you know, my friends, there comes a time when people get tired of being trampled over by the iron feet of oppression. There comes a time, my friends, when people get tired of being plunged across the abyss of humiliation.',
         },
         {
           id: 'usa_lesson_1_3_e',
           letter: 'D',
-          type: 'oral_history',
+          type: 'written',
           title:
             'Source D: Oral History Account by Reverend B.J. Simms on Directing the Montgomery Volunteer Carpool Fleet (Recorded 1972)',
           date: '1972',
-          image: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-          image_url: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
           attribution:
             'Civil Rights Documentation Project, Moorland-Spingarn Research Center, Howard University',
           question_badge: 'Cross-Referencing',
@@ -4166,8 +4135,7 @@ const usa_data = {
             "What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?",
           source_context:
             "Civil Rights Documentation Project, Moorland-Spingarn Research Center, Howard University. Reverend B.J. Simms, director of the Montgomery Improvement Association's transport committee for Oral historians and researchers studying non-violent logistics with the objective: To record the intricate daily operational mechanics required to transport thousands of daily commuters without public transit.. **Hinge Question:** What does the success of the carpool network reveal about the class solidarity of Montgomery's Black community?",
-          src: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
-          source: '/units/usa/assets/sources/mlk-boycott-speech-1955.jpg',
+          text: "We had over three hundred cars running every morning from five o'clock until nine, and from four in the afternoon until eight at night. We established forty-eight dispatch stations all over Montgomery. The white police commissioner tried to break the car pools by arresting our drivers for carrying more passengers than insurance allowed, and insurance companies cancelled policies on church vehicles. But we kept rollin'.",
         },
         {
           id: 'usa_lesson_1_3_d',
@@ -4525,12 +4493,10 @@ const usa_data = {
             {
               id: 'usa_lesson_1_4_c',
               letter: 'C',
-              type: 'trial_transcript',
+              type: 'written',
               title:
                 'Source C: From the Closing Arguments of Defense Counsel J.W. Kellum in the Emmett Till Murder Trial in Sumner, Mississippi (September 1955)',
               date: 'September 1955',
-              image: '/units/usa/assets/sources/portraits/emmett_till.jpg',
-              image_url: '/units/usa/assets/sources/portraits/emmett_till.jpg',
               attribution:
                 'State of Mississippi v. Roy Bryant and J.W. Milam, Tallahatchie County Court Records',
               question_badge: 'Reliability & Provenance',
@@ -4555,8 +4521,7 @@ const usa_data = {
                 'How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?',
               source_context:
                 'State of Mississippi v. Roy Bryant and J.W. Milam, Tallahatchie County Court Records. J.W. Kellum, lead defense attorney representing confessed kidnappers Bryant and Milam for The all-white, twelve-man Tallahatchie County jury with the objective: To secure immediate acquittals by appealing directly to white racial solidarity against outside northern scrutiny.. **Hinge Question:** How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?',
-              src: '/units/usa/assets/sources/portraits/emmett_till.jpg',
-              source: '/units/usa/assets/sources/portraits/emmett_till.jpg',
+              text: "Question by Special Prosecutor: 'Mr. Wright, do you see the man in this courtroom who came to your house that night and took your grandnephew, Emmett Till?'\nMose Wright stood up in the witness box, extended his trembling arm, pointed his finger straight at J.W. Milam, and answered clearly: 'Thar he.' In Mississippi in 1955, for a Black man to point his finger at a white man and accuse him of kidnapping and murder was almost certain death.",
             },
           ],
           image: '/units/usa/assets/sources/little-rock-nine-1957.jpg',
@@ -5305,12 +5270,10 @@ const usa_data = {
         {
           id: 'usa_lesson_1_4_c',
           letter: 'C',
-          type: 'trial_transcript',
+          type: 'written',
           title:
             'Source C: From the Closing Arguments of Defense Counsel J.W. Kellum in the Emmett Till Murder Trial in Sumner, Mississippi (September 1955)',
           date: 'September 1955',
-          image: '/units/usa/assets/sources/portraits/emmett_till.jpg',
-          image_url: '/units/usa/assets/sources/portraits/emmett_till.jpg',
           attribution:
             'State of Mississippi v. Roy Bryant and J.W. Milam, Tallahatchie County Court Records',
           question_badge: 'Reliability & Provenance',
@@ -5335,8 +5298,7 @@ const usa_data = {
             'How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?',
           source_context:
             'State of Mississippi v. Roy Bryant and J.W. Milam, Tallahatchie County Court Records. J.W. Kellum, lead defense attorney representing confessed kidnappers Bryant and Milam for The all-white, twelve-man Tallahatchie County jury with the objective: To secure immediate acquittals by appealing directly to white racial solidarity against outside northern scrutiny.. **Hinge Question:** How did the exclusion of Black citizens from voter rolls directly corrupt the jury trial system in the southern states?',
-          src: '/units/usa/assets/sources/portraits/emmett_till.jpg',
-          source: '/units/usa/assets/sources/portraits/emmett_till.jpg',
+          text: "Question by Special Prosecutor: 'Mr. Wright, do you see the man in this courtroom who came to your house that night and took your grandnephew, Emmett Till?'\nMose Wright stood up in the witness box, extended his trembling arm, pointed his finger straight at J.W. Milam, and answered clearly: 'Thar he.' In Mississippi in 1955, for a Black man to point his finger at a white man and accuse him of kidnapping and murder was almost certain death.",
         },
         {
           id: 'usa_lesson_1_4_d',
@@ -5655,10 +5617,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/greensboro-sit-in-counter.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/greensboro-sit-in-counter.jpg',
-          image_alt: 'The Greensboro Four college students walking to Woolworths lunch counter',
-          caption:
-            "Plate 2.1: Ezell Blair Jr., Franklin McCain, Joseph McNeil, and David Richmond departing the Woolworth's lunch counter in Greensboro, North Carolina on 1 February 1960.",
           isReversed: false,
         },
         {
@@ -5675,12 +5633,10 @@ const usa_data = {
             {
               id: 'usa_lesson_2_1_c',
               letter: 'B',
-              type: 'directive_document',
+              type: 'written',
               title:
                 'Source B: Non-Violent Direct Action Guidelines Issued by the Student Nonviolent Coordinating Committee (SNCC) (October 1960)',
               date: 'October 1960',
-              image: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
-              image_url: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
               attribution:
                 'SNCC Founding Papers, Martin Luther King Jr. Center for Nonviolent Social Change, Atlanta',
               question_badge: "Author's Purpose",
@@ -5705,8 +5661,7 @@ const usa_data = {
                 'Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?',
               source_context:
                 'SNCC Founding Papers, Martin Luther King Jr. Center for Nonviolent Social Change, Atlanta. James Lawson and founding executive committee of SNCC for Student volunteers, college sit-in participants, and protest coordinators with the objective: To instill rigorous philosophical and practical training in Gandhian non-violent resistance.. **Hinge Question:** Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?',
-              src: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
-              source: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
+              text: "Student Nonviolent Coordinating Committee (SNCC) Statement of Purpose & Field Rules (October 1960):\n'Do not strike back or curse if abused. Do not laugh out. Do not hold conversations with the floor walker. Do not block the aisles. Do not leave your seat until your leader has given you permission. If you are assaulted, curl into a ball to protect your head and vital organs. Maintain eye contact with dignity and Christian love. Through non-violence, courage displaces fear; love transforms hate. Acceptance replaces prejudice, and peace triumphs over violence.'",
             },
           ],
           isReversed: true,
@@ -5780,12 +5735,10 @@ const usa_data = {
             {
               id: 'usa_lesson_2_1_d',
               letter: 'D',
-              type: 'photograph',
+              type: 'written',
               title:
-                'Source D: Freedom Riders Seated Aboard an Interstate Bus Under the Protection of Armed National Guardsmen (May 1961)',
+                'Source D: Eyewitness Testimony of Freedom Rider Jim Peck on the Mob Assault in Birmingham, Alabama (14 May 1961)',
               date: 'May 1961',
-              image: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
-              image_url: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
               attribution: 'Bettmann Archive / Getty Images',
               question_badge: 'Reliability & Provenance',
               question:
@@ -5808,8 +5761,7 @@ const usa_data = {
                 "Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?",
               source_context:
                 "Bettmann Archive / Getty Images. Wire service press photographer embedded with the riders for National news readership with the objective: To document the militarized escort required to allow interstate buses to transit southern highways.. **Hinge Question:** Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?",
-              src: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
-              source: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
+              text: "When the Trailways bus pulled into the Birmingham terminal on Mother's Day, not a single police officer was in sight. Within seconds, a mob of forty men carrying iron pipes, lead clubs, and baseball bats stormed the waiting room. Before I could say a word, six men pounced on me, clubbing me over the head. I fell forward onto the concrete floor, bleeding profusely, and they kicked me repeatedly in the ribs. The police department under Bull Connor had agreed to give the Ku Klux Klan fifteen minutes to beat the Freedom Riders before dispatching a single squad car.",
             },
           ],
           isReversed: true,
@@ -6473,12 +6425,10 @@ const usa_data = {
         {
           id: 'usa_lesson_2_1_c',
           letter: 'B',
-          type: 'directive_document',
+          type: 'written',
           title:
             'Source B: Non-Violent Direct Action Guidelines Issued by the Student Nonviolent Coordinating Committee (SNCC) (October 1960)',
           date: 'October 1960',
-          image: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
-          image_url: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
           attribution:
             'SNCC Founding Papers, Martin Luther King Jr. Center for Nonviolent Social Change, Atlanta',
           question_badge: "Author's Purpose",
@@ -6502,8 +6452,7 @@ const usa_data = {
             'Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?',
           source_context:
             'SNCC Founding Papers, Martin Luther King Jr. Center for Nonviolent Social Change, Atlanta. James Lawson and founding executive committee of SNCC for Student volunteers, college sit-in participants, and protest coordinators with the objective: To instill rigorous philosophical and practical training in Gandhian non-violent resistance.. **Hinge Question:** Why was rigorous non-violent roleplaying training essential before demonstrators were allowed onto the streets?',
-          src: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
-          source: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
+          text: "Student Nonviolent Coordinating Committee (SNCC) Statement of Purpose & Field Rules (October 1960):\n'Do not strike back or curse if abused. Do not laugh out. Do not hold conversations with the floor walker. Do not block the aisles. Do not leave your seat until your leader has given you permission. If you are assaulted, curl into a ball to protect your head and vital organs. Maintain eye contact with dignity and Christian love. Through non-violence, courage displaces fear; love transforms hate. Acceptance replaces prejudice, and peace triumphs over violence.'",
         },
         {
           id: 'usa_lesson_2_1_b',
@@ -6542,12 +6491,10 @@ const usa_data = {
         {
           id: 'usa_lesson_2_1_d',
           letter: 'D',
-          type: 'photograph',
+          type: 'written',
           title:
-            'Source D: Freedom Riders Seated Aboard an Interstate Bus Under the Protection of Armed National Guardsmen (May 1961)',
+            'Source D: Eyewitness Testimony of Freedom Rider Jim Peck on the Mob Assault in Birmingham, Alabama (14 May 1961)',
           date: 'May 1961',
-          image: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
-          image_url: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
           attribution: 'Bettmann Archive / Getty Images',
           question_badge: 'Reliability & Provenance',
           question:
@@ -6570,8 +6517,7 @@ const usa_data = {
             "Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?",
           source_context:
             "Bettmann Archive / Getty Images. Wire service press photographer embedded with the riders for National news readership with the objective: To document the militarized escort required to allow interstate buses to transit southern highways.. **Hinge Question:** Was Robert F. Kennedy's primary motive during the Freedom Rides civil rights justice or maintaining federal law and order?",
-          src: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
-          source: '/units/usa/assets/sources/freedom-riders-bus-1961.jpg',
+          text: "When the Trailways bus pulled into the Birmingham terminal on Mother's Day, not a single police officer was in sight. Within seconds, a mob of forty men carrying iron pipes, lead clubs, and baseball bats stormed the waiting room. Before I could say a word, six men pounced on me, clubbing me over the head. I fell forward onto the concrete floor, bleeding profusely, and they kicked me repeatedly in the ribs. The police department under Bull Connor had agreed to give the Ku Klux Klan fifteen minutes to beat the Freedom Riders before dispatching a single squad car.",
         },
         {
           id: 'usa_lesson_2_1_e',
@@ -9310,10 +9256,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/portraits/mlk.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/detroit-riot-guard-1967.jpg',
-          image_alt: 'National Guard tanks and soldiers patrolling burning streets of Detroit',
-          caption:
-            'Plate 2.7: Heavily armed Michigan National Guard troops patrolling a street corner during the 1967 Detroit rebellion (12th Street Riot), which left 43 dead.',
           isReversed: false,
         },
         {
@@ -9416,10 +9358,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/mourners-mlk-assassination.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/poor-peoples-campaign-1968.jpg',
-          image_alt: 'Mourners in tears following the assassination of Martin Luther King Jr',
-          caption:
-            'Plate 2.8: Grieving citizens gathered outside the Lorraine Motel in Memphis, Tennessee on 4 April 1968 following the assassination of Dr Martin Luther King Jr.',
           isReversed: true,
         },
         {
@@ -11705,10 +11643,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/uss-maddox.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/marines-landing-danang.jpg',
-          image_alt: 'The destroyer USS Maddox underway in the Gulf of Tonkin',
-          caption:
-            'Plate 3.3: The destroyer USS Maddox (DD-731) on patrol in international waters of the Gulf of Tonkin off the North Vietnamese coast (August 1964).',
           isReversed: false,
         },
         {
@@ -12918,11 +12852,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/huey_combat_landing_vietnam.jpg',
-          image_alt:
-            'American tunnel rat soldier armed with a flashlight and pistol entering a narrow underground hole',
-          caption:
-            "Plate 3.5: An American 'Tunnel Rat' soldier preparing to descend into the complex underground bunker network of Cu Chi (1967).",
           isReversed: false,
         },
         {
@@ -12939,12 +12868,10 @@ const usa_data = {
             {
               id: 'usa_lesson_3_3_c',
               letter: 'B',
-              type: 'military_manual',
+              type: 'written',
               title:
                 "Source B: Excerpt from US Military Assistance Command Vietnam (MACV) Field Manual: 'Viet Cong Booby Traps and Mines' (1967)",
               date: '1967',
-              image: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
-              image_url: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
               attribution: 'Department of the Army, FM 5-31 Field Manual Series, Washington D.C.',
               question_badge: 'Reliability & Provenance',
               question:
@@ -12968,8 +12895,7 @@ const usa_data = {
                 'Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?',
               source_context:
                 'Department of the Army, FM 5-31 Field Manual Series, Washington D.C.. Office of the Chief of Engineers, Department of the Army for Junior officers, non-commissioned officers, and infantry riflemen deploying to Vietnam with the objective: To provide critical tactical instruction on recognizing, disarming, and surviving concealed insurgent booby traps.. **Hinge Question:** Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?',
-              src: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
-              source: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
+              text: "From MACV Field Manual (FM 5-31): The Viet Cong employ simple, highly lethal booby traps constructed from local bamboo, barbed wire, and unexploded American ordnance. The punji stake pit consists of sharpened bamboo sticks hardened over fire and smeared with human or animal excrement to cause rapid gangrenous infection. These are concealed under thin layers of leaves along jungle tracks, designed not only to inflict casualties but to shatter the patrol's psychological morale.",
             },
           ],
           isReversed: true,
@@ -13022,10 +12948,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/ho-chi-minh-trail-bicycles.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
-          image_alt: 'US Air Force planes spraying chemical defoliants over dense jungle',
-          caption:
-            'Plate 3.6: US Air Force UC-123 Provider aircraft spraying chemical defoliant Agent Orange during Operation Ranch Hand (c. 1966).',
           isReversed: true,
         },
         {
@@ -13736,12 +13658,10 @@ const usa_data = {
         {
           id: 'usa_lesson_3_3_c',
           letter: 'B',
-          type: 'military_manual',
+          type: 'written',
           title:
             "Source B: Excerpt from US Military Assistance Command Vietnam (MACV) Field Manual: 'Viet Cong Booby Traps and Mines' (1967)",
           date: '1967',
-          image: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
-          image_url: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
           attribution: 'Department of the Army, FM 5-31 Field Manual Series, Washington D.C.',
           question_badge: 'Reliability & Provenance',
           question:
@@ -13765,8 +13685,7 @@ const usa_data = {
             'Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?',
           source_context:
             'Department of the Army, FM 5-31 Field Manual Series, Washington D.C.. Office of the Chief of Engineers, Department of the Army for Junior officers, non-commissioned officers, and infantry riflemen deploying to Vietnam with the objective: To provide critical tactical instruction on recognizing, disarming, and surviving concealed insurgent booby traps.. **Hinge Question:** Why did the invisible nature of booby trap warfare cause American soldiers to develop deep resentment and paranoia toward all Vietnamese villagers?',
-          src: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
-          source: '/units/usa/assets/sources/cu-chi-tunnel-rats-1967.jpg',
+          text: "From MACV Field Manual (FM 5-31): The Viet Cong employ simple, highly lethal booby traps constructed from local bamboo, barbed wire, and unexploded American ordnance. The punji stake pit consists of sharpened bamboo sticks hardened over fire and smeared with human or animal excrement to cause rapid gangrenous infection. These are concealed under thin layers of leaves along jungle tracks, designed not only to inflict casualties but to shatter the patrol's psychological morale.",
         },
         {
           id: 'usa_lesson_3_3_b',
@@ -15430,10 +15349,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/vietnam-draft-lottery.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg',
-          image_alt: 'Protesters marching on the Pentagon facing armed military police',
-          caption:
-            'Plate 4.2: Demonstrators confronting lines of armed US Military Police on the steps of the Pentagon during the March on the Pentagon (21 October 1967).',
           isReversed: true,
         },
         {
@@ -16642,11 +16557,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/hard-hat-riot-1970.jpg',
-          image_alt:
-            'Construction workers in hard hats clashing with student anti-war demonstrators near City Hall',
-          caption:
-            'Plate 4.4: Construction workers wearing hard hats storming past police cordons to confront anti-war student protesters in Lower Manhattan (8 May 1970).',
           isReversed: true,
         },
         {
@@ -17777,12 +17687,10 @@ const usa_data = {
             {
               id: 'usa_lesson_4_3_b',
               letter: 'B',
-              type: 'treaty_text',
+              type: 'written',
               title:
                 "Source B: Key Articles from the 'Agreement on Ending the War and Restoring Peace in Viet-Nam' (27 January 1973)",
               date: '27 January 1973',
-              image: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
-              image_url: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
               attribution:
                 'United States Treaties and Other International Agreements, 24 UST 1, TIAS 7542',
               question_badge: "Author's Purpose",
@@ -17808,8 +17716,7 @@ const usa_data = {
                 'Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?',
               source_context:
                 'United States Treaties and Other International Agreements, 24 UST 1, TIAS 7542. Chief negotiators William P. Rogers, Nguyen Duy Trinh, Tran Van Lam, and Nguyen Thi Binh for The United Nations, international governments, and the combatant nations with the objective: To legally codify the terms of immediate American military withdrawal and prisoner-of-war repatriation.. **Hinge Question:** Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?',
-              src: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
-              source: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
+              text: 'Agreement on Ending the War and Restoring Peace in Viet-Nam (Signed 27 January 1973):\nArticle 2: A cease-fire shall be observed throughout South Viet-Nam as of 24:00 hours G.M.T. on January 27, 1973.\nArticle 3: The United States will stop all its military activities against the territory of the Democratic Republic of Viet-Nam.\nArticle 5: Within sixty days of the signing of this Agreement, there will be a complete withdrawal from South Viet-Nam of all troops, military personnel, weapons, and war material of the United States.\nArticle 8: The return of captured military personnel and foreign civilians shall be completed within the same sixty-day time limit.',
             },
           ],
           isReversed: true,
@@ -17860,10 +17767,6 @@ const usa_data = {
               source: '/units/usa/assets/sources/operation-homecoming-pows-1973.jpg',
             },
           ],
-          image: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
-          image_alt: 'Air America helicopter evacuating people from a rooftop in Saigon',
-          caption:
-            'Plate 4.6: An Air America Bell 205 helicopter evacuating officials from the rooftop of 22 Gia Long Street during the frantic Fall of Saigon (29 April 1975).',
           isReversed: true,
         },
         {
@@ -18587,12 +18490,10 @@ const usa_data = {
         {
           id: 'usa_lesson_4_3_b',
           letter: 'B',
-          type: 'treaty_text',
+          type: 'written',
           title:
             "Source B: Key Articles from the 'Agreement on Ending the War and Restoring Peace in Viet-Nam' (27 January 1973)",
           date: '27 January 1973',
-          image: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
-          image_url: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
           attribution:
             'United States Treaties and Other International Agreements, 24 UST 1, TIAS 7542',
           question_badge: "Author's Purpose",
@@ -18617,8 +18518,7 @@ const usa_data = {
             'Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?',
           source_context:
             'United States Treaties and Other International Agreements, 24 UST 1, TIAS 7542. Chief negotiators William P. Rogers, Nguyen Duy Trinh, Tran Van Lam, and Nguyen Thi Binh for The United Nations, international governments, and the combatant nations with the objective: To legally codify the terms of immediate American military withdrawal and prisoner-of-war repatriation.. **Hinge Question:** Why did North Vietnam agree to sign the Paris Accords in January 1973 after having rejected identical terms months earlier?',
-          src: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
-          source: '/units/usa/assets/sources/paris-peace-accords-signing.jpg',
+          text: 'Agreement on Ending the War and Restoring Peace in Viet-Nam (Signed 27 January 1973):\nArticle 2: A cease-fire shall be observed throughout South Viet-Nam as of 24:00 hours G.M.T. on January 27, 1973.\nArticle 3: The United States will stop all its military activities against the territory of the Democratic Republic of Viet-Nam.\nArticle 5: Within sixty days of the signing of this Agreement, there will be a complete withdrawal from South Viet-Nam of all troops, military personnel, weapons, and war material of the United States.\nArticle 8: The return of captured military personnel and foreign civilians shall be completed within the same sixty-day time limit.',
         },
         {
           id: 'usa_lesson_4_3_c',
@@ -19996,8 +19896,8 @@ const usa_data = {
     },
   ],
 };
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = usa_data;
 }
 export default usa_data;
-export { usa_data };
