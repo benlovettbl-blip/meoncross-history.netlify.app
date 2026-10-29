@@ -49,7 +49,7 @@ const FOUR_ACT_UNITS = [
 const GCSE_UNITS = ['cme_new', 'usa', 'edexcel_medicine', 'cold_war', 'weimar_nazi_germany', 'eee'];
 
 // Units held to strict 5-Stage Chronological Inquiry Spine & 5-Block Narrative Architecture
-const FIVE_STAGE_UNITS = ['cme_new'];
+const FIVE_STAGE_UNITS = ['cme_new', 'usa', 'weimar_nazi_germany'];
 
 const NON_PROSE_TYPES = new Set([
   'causal_domino',
