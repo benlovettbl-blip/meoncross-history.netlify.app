@@ -3082,11 +3082,7 @@ async function generateBooklets() {
   });
 
   fs.copyFileSync(masterPdfPath, path.join(globalPdfsDir, 'cme_mastery_pack_FULL.pdf'));
-  fs.copyFileSync(masterPdfPath, path.join(globalPdfsDir, 'cme_new_pupil_workbook.pdf'));
-  fs.copyFileSync(masterPdfPath, path.join(globalPdfsDir, 'cme_pupil_workbook.pdf'));
-  console.log(
-    '   ✅ Exported Master PDF: cme_mastery_pack_FULL.pdf / cme_new_pupil_workbook.pdf (36 Pages)',
-  );
+  console.log('   ✅ Exported Master PDF: cme_mastery_pack_FULL.pdf (36 Pages)');
 
   await masterPage.close();
   await browser.close();

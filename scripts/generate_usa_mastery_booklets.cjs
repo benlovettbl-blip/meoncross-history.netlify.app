@@ -3802,12 +3802,12 @@ function renderBookletHtml(ktKey, meta) {
     const fullPdfPath = path.join(pdfsDir, 'usa_mastery_pack_FULL.pdf');
     await renderPdf(fullHtmlPath, fullPdfPath, 'usa_mastery_pack_FULL.pdf');
 
-    // Sync to public/pdfs/ root
+    // Sync to public/pdfs/ root (Single Source of Truth)
     fs.copyFileSync(fullPdfPath, path.join(globalPdfsDir, 'usa_mastery_pack_FULL.pdf'));
-    fs.copyFileSync(fullPdfPath, path.join(globalPdfsDir, 'usa_pupil_workbook.pdf'));
 
-    // Clean up any old split KT PDFs in pdfsDir and globalPdfsDir
+    // Clean up any old duplicate or split KT PDFs in pdfsDir and globalPdfsDir
     [
+      'usa_pupil_workbook.pdf',
       'usa_mastery_pack_KT1.pdf',
       'usa_mastery_pack_KT2.pdf',
       'usa_mastery_pack_KT3.pdf',

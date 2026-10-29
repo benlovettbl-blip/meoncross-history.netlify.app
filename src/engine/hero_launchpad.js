@@ -272,10 +272,11 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/cme_new_textbook_UNIFIED.pdf',
     },
     workbook: {
-      title: 'Conflict in the Middle East Master Compendium Workbook',
-      label: 'Pupil Workbook (36 Pages)',
+      title: 'Conflict in the Middle East Complete Mastery Exam Pack (36 Pages)',
+      label: 'Mastery Exam Pack (36 Pages)',
       htmlUrl: '/units/cme_new/booklets/cme_mastery_FULL.html',
       pdfUrl: '/pdfs/cme_mastery_pack_FULL.pdf',
+      icon: 'fa-solid fa-file-signature',
     },
     retrieval: {
       title: 'Conflict in the Middle East Master Knowledge Retrieval Companion',
@@ -292,10 +293,12 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/usa_textbook_UNIFIED.pdf',
     },
     workbook: {
-      title: 'USA 1954–1975 Master Compendium Workbook',
-      label: 'Pupil Workbook (48 Pages)',
+      title:
+        'Conflict at Home and Abroad: the USA, 1954–75 Paper 3 Complete Exam Master Pack (48 Pages)',
+      label: 'Mastery Exam Pack (48 Pages)',
       htmlUrl: '/units/usa/booklets/usa_mastery_FULL.html',
       pdfUrl: '/pdfs/usa_mastery_pack_FULL.pdf',
+      icon: 'fa-solid fa-file-signature',
     },
     retrieval: {
       title: 'USA 1954–1975 Master Knowledge Retrieval Companion',
@@ -436,15 +439,27 @@ export function renderHeroCurricularLaunchpad(unitId, unitData) {
         </div>`
     : '';
 
+  const isExamPack = wb?.label?.includes('Exam') || wb?.icon?.includes('signature');
+  const wbIcon =
+    wb?.icon || (isExamPack ? 'fa-solid fa-file-signature' : 'fa-solid fa-pen-to-square');
+  const wbPillClass = isExamPack
+    ? 'launchpad-pill-group pill-workbook pill-exam-pack'
+    : 'launchpad-pill-group pill-workbook';
+  const wbAction = isExamPack ? 'EXAM_PACK' : 'WORKBOOK';
+  const wbTooltip = isExamPack
+    ? `Open ${wb.label} in classroom reader`
+    : 'Open Pupil Workbook in classroom reader';
+  const wbDownloadTooltip = isExamPack ? `Download ${wb.label} PDF` : 'Download Pupil Workbook PDF';
+
   const workbookPill = wb
     ? `
-        <!-- Pillar 2: Pupil Workbook -->
-        <div class="launchpad-pill-group pill-workbook">
-          <button type="button" class="launchpad-pill-btn" onclick="window.openCurricularPillar('${wb.htmlUrl}', '${cleanWbTitle}', '${wb.pdfUrl}', 'WORKBOOK')" title="Open Pupil Workbook in classroom reader">
-            <i class="fa-solid fa-pen-to-square"></i>
+        <!-- Pillar 2: Pupil Workbook / Mastery Exam Pack -->
+        <div class="${wbPillClass}">
+          <button type="button" class="launchpad-pill-btn" onclick="window.openCurricularPillar('${wb.htmlUrl}', '${cleanWbTitle}', '${wb.pdfUrl}', '${wbAction}')" title="${wbTooltip}">
+            <i class="${wbIcon}"></i>
             <span>${wb.label}</span>
           </button>
-          <a href="${wb.pdfUrl}" target="_blank" download title="Download Pupil Workbook PDF" class="launchpad-pill-pdf">
+          <a href="${wb.pdfUrl}" target="_blank" download title="${wbDownloadTooltip}" class="launchpad-pill-pdf">
             <i class="fa-solid fa-file-pdf"></i>
           </a>
         </div>`
