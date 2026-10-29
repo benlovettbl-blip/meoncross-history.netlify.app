@@ -75,7 +75,6 @@ export function renderDashboard() {
           <a href="#year9-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year9-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 9</a>
           <a href="#year10-section" class="jump-chip jump-gcse" onclick="event.preventDefault(); window.scrollToSection('year10-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; cursor: pointer; transition: all 0.15s;">Year 10</a>
           <a href="#year11-section" class="jump-chip jump-gcse" onclick="event.preventDefault(); window.scrollToSection('year11-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; cursor: pointer; transition: all 0.15s;">Year 11</a>
-          <a href="#gcse-trip-section" class="jump-chip jump-fieldwork" onclick="event.preventDefault(); window.scrollToSection('gcse-trip-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; cursor: pointer; transition: all 0.15s;"><i class="fa-solid fa-compass" style="margin-right:4px;"></i> Fieldwork</a>
         </nav>
       </div>
   `;
@@ -352,46 +351,6 @@ export function renderDashboard() {
     `;
   }
 
-  // Trips & Tours Grouping
-  if (tripUnits.length > 0) {
-    tripUnits.forEach((unit) => {
-      const imageUrl =
-        unit.homepage_background || unit.cover_image || 'images/stubbington_memorial.jpg';
-      const title = 'GCSE Battlefield Tour: Ypres &amp; The Salient';
-
-      html += `
-        <div class="dashboard-curriculum-block stage-block-gcse stage-block-fieldwork" id="block-trip">
-          <h3 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin-bottom: 12px;">
-            Historic Environment &amp; Fieldwork
-            <span style="font-size:0.68em;font-weight:700;background:#ede9fe;color:#5b21b6;border:1px solid #ddd6fe;padding:2px 10px;border-radius:12px;vertical-align:middle;margin-left:8px;">On-Site Study</span>
-          </h3>
-          <div id="gcse-trip-section" class="featured-trip-banner" style="display: flex; flex-wrap: wrap; width: 100%; margin-top: 0; margin-bottom: 2rem; background: var(--bg-card, #ffffff); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 1px solid var(--border-glass, #e2e8f0); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">
-            <div style="flex: 3; min-width: 260px; padding: 22px 32px; display: flex; flex-direction: column; justify-content: center;">
-              <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px;">
-                <span style="background: #fef3c7; color: #92400e; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 0.75rem; white-space:nowrap; border: 1px solid #fde68a;"><i class="fa-solid fa-graduation-cap"></i> GCSE Years 10–11</span>
-                <span style="background: rgba(59,130,246,0.1); color: #2563eb; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-calendar-days"></i> Autumn Term GCSE Fieldwork Study</span>
-                <span style="background: #ede9fe; color: #6d28d9; padding: 3px 10px; border-radius: 20px; font-weight: 600; font-size: 0.75rem; white-space:nowrap;"><i class="fa-solid fa-notes-medical"></i> Paper 1: Western Front Historic Environment</span>
-              </div>
-              <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--primary, #1e3a8a); margin: 0 0 6px 0; line-height: 1.2;">${title}</h2>
-              <p style="margin: 0 0 12px 0; font-size: 0.85rem; color: var(--text-muted, #64748b); line-height: 1.4;">
-                On-site historic environment study investigating the British sector of the Western Front, casualty evacuation chains (dressing stations, clearing stations), and local Fallen commemorations.
-              </p>
-              <div style="display: flex; gap: 10px; align-items:center; flex-wrap: wrap;">
-                <span style="background: rgba(16,185,129,0.1); color: #059669; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-map-location-dot"></i> Itinerary</span>
-                <span style="background: rgba(245,158,11,0.1); color: #d97706; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-suitcase-rolling"></i> Prep Pack</span>
-                <span style="background: rgba(139,92,246,0.1); color: #7c3aed; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.8rem;"><i class="fa-solid fa-book-open-reader"></i> Site Guide</span>
-                <button class="btn-pedagogy-primary" style="padding: 8px 20px; font-size: 0.95rem; border-radius: 6px; font-weight: 600; cursor: pointer; border: none; background: #2563eb; color: white; margin-left:auto;" data-action="launch-subapp" data-unit="${unit.id}" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
-                  <i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Launch Tour App
-                </button>
-              </div>
-            </div>
-            <div style="flex: 1; min-width: 200px; min-height: 130px; max-height: 160px; background-image: url('${imageUrl}'); background-position: center; background-size: cover; border-left: 3px solid var(--primary, #1e3a8a);"></div>
-          </div>
-        </div>
-      `;
-    });
-  }
-
   // Academic Enrichment & Co-Curricular Section (Bottom Tier)
   html += `
     <div id="enrichment-section" style="margin-top: 36px; padding-top: 26px; border-top: 1.5px solid var(--border-glass, #e2e8f0);">
@@ -508,8 +467,6 @@ function attachDashboardStageFilter(container) {
       const jumpKs2 = container.querySelectorAll('.jump-ks2');
       const jumpKs3 = container.querySelectorAll('.jump-ks3');
       const jumpGcse = container.querySelectorAll('.jump-gcse');
-      const jumpFieldwork = container.querySelectorAll('.jump-fieldwork');
-      const tripBlock = container.querySelector('#block-trip');
 
       if (stage === 'all') {
         ks2Blocks.forEach((el) => (el.style.display = ''));
@@ -518,7 +475,6 @@ function attachDashboardStageFilter(container) {
         jumpKs2.forEach((el) => (el.style.display = ''));
         jumpKs3.forEach((el) => (el.style.display = ''));
         jumpGcse.forEach((el) => (el.style.display = ''));
-        jumpFieldwork.forEach((el) => (el.style.display = ''));
       } else if (stage === 'ks2') {
         ks2Blocks.forEach((el) => (el.style.display = ''));
         ks3Blocks.forEach((el) => (el.style.display = 'none'));
@@ -526,7 +482,6 @@ function attachDashboardStageFilter(container) {
         jumpKs2.forEach((el) => (el.style.display = ''));
         jumpKs3.forEach((el) => (el.style.display = 'none'));
         jumpGcse.forEach((el) => (el.style.display = 'none'));
-        jumpFieldwork.forEach((el) => (el.style.display = 'none'));
       } else if (stage === 'ks3') {
         ks2Blocks.forEach((el) => (el.style.display = 'none'));
         ks3Blocks.forEach((el) => (el.style.display = ''));
@@ -534,7 +489,6 @@ function attachDashboardStageFilter(container) {
         jumpKs2.forEach((el) => (el.style.display = 'none'));
         jumpKs3.forEach((el) => (el.style.display = ''));
         jumpGcse.forEach((el) => (el.style.display = 'none'));
-        jumpFieldwork.forEach((el) => (el.style.display = 'none'));
       } else if (stage === 'gcse') {
         ks2Blocks.forEach((el) => (el.style.display = 'none'));
         ks3Blocks.forEach((el) => (el.style.display = 'none'));
@@ -542,19 +496,6 @@ function attachDashboardStageFilter(container) {
         jumpKs2.forEach((el) => (el.style.display = 'none'));
         jumpKs3.forEach((el) => (el.style.display = 'none'));
         jumpGcse.forEach((el) => (el.style.display = ''));
-        jumpFieldwork.forEach((el) => (el.style.display = ''));
-      } else if (stage === 'fieldwork') {
-        ks2Blocks.forEach((el) => (el.style.display = 'none'));
-        ks3Blocks.forEach((el) => (el.style.display = 'none'));
-        gcseBlocks.forEach((el) => (el.style.display = 'none'));
-        jumpKs2.forEach((el) => (el.style.display = 'none'));
-        jumpKs3.forEach((el) => (el.style.display = 'none'));
-        jumpGcse.forEach((el) => (el.style.display = 'none'));
-        jumpFieldwork.forEach((el) => (el.style.display = ''));
-        if (tripBlock) {
-          tripBlock.style.display = '';
-          window.scrollToSection('gcse-trip-section');
-        }
       }
     };
   });

@@ -3412,11 +3412,6 @@ window.openEmergencyCoverModal = async function (initialUnitId, initialUnitData)
       title: 'Paper 3: Conflict at Home and Abroad: USA (1954–1975)',
       group: 'GCSE History',
     },
-    {
-      id: 'trip_ypres',
-      title: 'GCSE Battlefield Tour: Ypres & The Salient',
-      group: 'GCSE History',
-    },
     // Key Stage 3
     { id: 'medieval_england', title: 'KS3: Medieval England (1066–1485)', group: 'Key Stage 3' },
     {
