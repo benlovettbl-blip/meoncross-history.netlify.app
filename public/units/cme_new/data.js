@@ -1,3 +1,6 @@
+// Conflict in the Middle East, 1945-1995 (Edexcel GCSE Paper 2)
+// Curriculum data with 5-Block Narrative & 1-to-1 Chronological Primary Source Alignment
+
 const cme_new_data = {
   lesson_reflection: {
     prompt:
@@ -376,7 +379,46 @@ const cme_new_data = {
         {
           id: 'cme_l1_source_a',
           letter: 'A',
-          title: 'Source A: The Sykes-Picot Agreement Partition Map (May 1916)',
+          title:
+            'Source A: The McMahon-Hussein Correspondence Territorial Boundaries Map (1915–1916)',
+          src: '/units/cme_new/assets/map_lesson1.png',
+          image: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
+          source: '/units/cme_new/assets/map_lesson1.png',
+          caption:
+            'Cartographic representation showing the conflicting territorial exclusions and pledges exchanged between Sir Henry McMahon and Sharif Hussein of Mecca (1915–1916).',
+          desc: 'Historical map analyzing the contested zones of the McMahon-Hussein letters.',
+          provenance:
+            'The National Archives, Kew (FO 371/2486), British Arab Bureau records, 1916.',
+          citation: 'The National Archives, Kew.',
+          hinge_question:
+            "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+          source_context:
+            "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+          context:
+            'British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces.',
+          question_badge: 'Cross-Referencing',
+          question_type: 'Cross-Referencing',
+          enquiry_question:
+            'How does Source A support or challenge the claim that Great Britain acted in bad faith towards Arab leaders during World War I?',
+          model_answer:
+            'Source A strongly supports the accusation of bad faith by showing how vague geographical exclusions allowed Britain to promise overlapping territorial sovereignty to both Sharif Hussein and European imperial allies simultaneously.',
+          provenance_clues: {
+            author: 'British military cartographers and Arab Bureau intelligence officers.',
+            audience: 'British War Office, Foreign Office strategists, and imperial commanders.',
+            motive:
+              'To define military operational jurisdictions while keeping postwar political commitments deliberately flexible.',
+            hinge_question:
+              "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+          },
+          teacher_notes: {
+            source_context:
+              "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+          },
+        },
+        {
+          id: 'cme_l1_source_b',
+          letter: 'B',
+          title: 'Source B: The Sykes-Picot Agreement Partition Map (May 1916)',
           src: '/images/cme_sykes_picot_1916_map.jpg',
           image: '/images/cme_sykes_picot_1916_map.jpg',
           source: '/images/cme_sykes_picot_1916_map.jpg',
@@ -394,9 +436,9 @@ const cme_new_data = {
           question_badge: 'Historical Utility',
           question_type: 'Historical Utility',
           enquiry_question:
-            'How useful is Source A for an enquiry into the conflicting wartime promises made by Great Britain regarding the future of the Middle East?',
+            'How useful is Source B for an enquiry into the conflicting wartime promises made by Great Britain regarding the future of the Middle East?',
           model_answer:
-            'Source A is exceptionally valuable because it provides direct documentary proof that British imperial strategists prioritized territorial division with France over their contemporaneous pledges of self-determination made to Arab leaders fighting the Ottomans.',
+            'Source B is exceptionally valuable because it provides direct documentary proof that British imperial strategists prioritized territorial division with France over their contemporaneous pledges of self-determination made to Arab leaders fighting the Ottomans.',
           provenance_clues: {
             author:
               'Sir Mark Sykes (Britain) and François Georges-Picot (France), senior imperial diplomats.',
@@ -412,9 +454,9 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l1_source_b',
-          letter: 'B',
-          title: 'Source B: The Balfour Declaration Official Letter (November 1917)',
+          id: 'cme_l1_source_c',
+          letter: 'C',
+          title: 'Source C: The Balfour Declaration Official Letter (November 1917)',
           src: '/images/cme_balfour_declaration_1917.jpg',
           image: '/images/cme_balfour_declaration_1917.jpg',
           source: '/images/cme_balfour_declaration_1917.jpg',
@@ -450,85 +492,9 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l1_source_c',
-          letter: 'C',
-          title: 'Source C: Theodor Herzl, Founder of the Modern Zionist Movement',
-          src: '/units/cme_new/assets/theodor_herzl.jpg',
-          image: '/units/cme_new/assets/theodor_herzl.jpg',
-          source: '/units/cme_new/assets/theodor_herzl.jpg',
-          caption:
-            "Austro-Hungarian journalist Theodor Herzl, author of 'Der Judenstaat' (1896) and convenor of the First Zionist Congress in Basel, 1897.",
-          desc: 'Archival portrait photograph of Zionist visionary Theodor Herzl.',
-          provenance: 'Central Zionist Archives, Jerusalem (PHG/1012), c. 1897.',
-          citation: 'Central Zionist Archives, Jerusalem.',
-          hinge_question:
-            "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
-          source_context:
-            "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
-          context:
-            'Portrait of Theodor Herzl, who formulated political Zionism in response to European anti-Semitism.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
-          enquiry_question:
-            'What can you infer from Source C about the ideological foundations of modern political Zionism at the turn of the twentieth century?',
-          model_answer:
-            'Source C illustrates that political Zionism was framed as an urgent, modern national liberation movement driven by the realization that European anti-Semitism was structural and incurable through civic assimilation alone.',
-          provenance_clues: {
-            author: 'Official portraitist of the First Zionist Congress.',
-            audience: 'Delegates to the Basel Congress and European Jewish communities.',
-            motive:
-              'To present Herzl as a dignified, visionary statesman capable of negotiating with European monarchs and imperial cabinets.',
-            hinge_question:
-              "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
-          },
-          teacher_notes: {
-            source_context:
-              "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
-          },
-        },
-        {
           id: 'cme_l1_source_d',
           letter: 'D',
-          title:
-            'Source D: The McMahon-Hussein Correspondence Territorial Boundaries Map (1915–1916)',
-          src: '/units/cme_new/assets/map_lesson1.png',
-          image: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
-          source: '/units/cme_new/assets/map_lesson1.png',
-          caption:
-            'Cartographic representation showing the conflicting territorial exclusions and pledges exchanged between Sir Henry McMahon and Sharif Hussein of Mecca (1915–1916).',
-          desc: 'Historical map analyzing the contested zones of the McMahon-Hussein letters.',
-          provenance:
-            'The National Archives, Kew (FO 371/2486), British Arab Bureau records, 1916.',
-          citation: 'The National Archives, Kew.',
-          hinge_question:
-            "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
-          source_context:
-            "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
-          context:
-            'British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces.',
-          question_badge: 'Cross-Referencing',
-          question_type: 'Cross-Referencing',
-          enquiry_question:
-            'How does Source D support or challenge the claim that Great Britain acted in bad faith towards Arab leaders during World War I?',
-          model_answer:
-            'Source D strongly supports the accusation of bad faith by showing how vague geographical exclusions allowed Britain to promise overlapping territorial sovereignty to both Sharif Hussein and European imperial allies simultaneously.',
-          provenance_clues: {
-            author: 'British military cartographers and Arab Bureau intelligence officers.',
-            audience: 'British War Office, Foreign Office strategists, and imperial commanders.',
-            motive:
-              'To define military operational jurisdictions while keeping postwar political commitments deliberately flexible.',
-            hinge_question:
-              "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
-          },
-          teacher_notes: {
-            source_context:
-              "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
-          },
-        },
-        {
-          id: 'cme_l1_source_e',
-          letter: 'E',
-          title: 'Source E: Archival Panorama of British Mandate Jerusalem (c. 1918–1920)',
+          title: 'Source D: Archival Panorama of British Mandate Jerusalem (c. 1918–1920)',
           src: '/images/cme_cover.jpg',
           image: '/images/jerusalem_mandate_panorama_1920.jpg',
           source: '/images/cme_cover.jpg',
@@ -546,9 +512,9 @@ const cme_new_data = {
           question_badge: 'Reliability & Provenance',
           question_type: 'Reliability & Provenance',
           enquiry_question:
-            'How reliable is Source E for understanding the deep religious and geopolitical tensions facing the British Mandate authorities in Palestine?',
+            'How reliable is Source D for understanding the deep religious and geopolitical tensions facing the British Mandate authorities in Palestine?',
           model_answer:
-            'While Source E accurately depicts the monumental religious landscape of Jerusalem that made compromise impossible, as an official topographical record it masks the volatile intercommunal civil violence and economic boycotts brewing on the ground.',
+            'While Source D accurately depicts the monumental religious landscape of Jerusalem that made compromise impossible, as an official topographical record it masks the volatile intercommunal civil violence and economic boycotts brewing on the ground.',
           provenance_clues: {
             author:
               'American Colony Photo Department, professional Jerusalem documentary photographers.',
@@ -561,6 +527,43 @@ const cme_new_data = {
           teacher_notes: {
             source_context:
               "Photographic record of Jerusalem under the British Mandate. Britain governed Palestine under a League of Nations Class A Mandate from 1923, tasked with the incompatible obligations of preparing the local Arab majority for self-rule while facilitating Jewish immigration. **Hinge Question:** How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
+          },
+        },
+        {
+          id: 'cme_l1_source_e',
+          letter: 'E',
+          title: 'Source E: Theodor Herzl, Founder of the Modern Zionist Movement',
+          src: '/units/cme_new/assets/theodor_herzl.jpg',
+          image: '/units/cme_new/assets/theodor_herzl.jpg',
+          source: '/units/cme_new/assets/theodor_herzl.jpg',
+          caption:
+            "Austro-Hungarian journalist Theodor Herzl, author of 'Der Judenstaat' (1896) and convenor of the First Zionist Congress in Basel, 1897.",
+          desc: 'Archival portrait photograph of Zionist visionary Theodor Herzl.',
+          provenance: 'Central Zionist Archives, Jerusalem (PHG/1012), c. 1897.',
+          citation: 'Central Zionist Archives, Jerusalem.',
+          hinge_question:
+            "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
+          source_context:
+            "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
+          context:
+            'Portrait of Theodor Herzl, who formulated political Zionism in response to European anti-Semitism.',
+          question_badge: 'Source Inference',
+          question_type: 'Source Inference',
+          enquiry_question:
+            'What can you infer from Source E about the ideological foundations of modern political Zionism at the turn of the twentieth century?',
+          model_answer:
+            'Source E illustrates that political Zionism was framed as an urgent, modern national liberation movement driven by the realization that European anti-Semitism was structural and incurable through civic assimilation alone.',
+          provenance_clues: {
+            author: 'Official portraitist of the First Zionist Congress.',
+            audience: 'Delegates to the Basel Congress and European Jewish communities.',
+            motive:
+              'To present Herzl as a dignified, visionary statesman capable of negotiating with European monarchs and imperial cabinets.',
+            hinge_question:
+              "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
+          },
+          teacher_notes: {
+            source_context:
+              "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
           },
         },
       ],
@@ -727,39 +730,41 @@ const cme_new_data = {
             {
               id: 'cme_l1_source_a',
               letter: 'A',
-              title: 'Source A: The Sykes-Picot Agreement Partition Map (May 1916)',
-              src: '/images/cme_sykes_picot_1916_map.jpg',
-              image: '/images/cme_sykes_picot_1916_map.jpg',
-              source: '/images/cme_sykes_picot_1916_map.jpg',
+              title:
+                'Source A: The McMahon-Hussein Correspondence Territorial Boundaries Map (1915–1916)',
+              src: '/units/cme_new/assets/map_lesson1.png',
+              image: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
+              source: '/units/cme_new/assets/map_lesson1.png',
               caption:
-                'Signed by Sir Mark Sykes and François Georges-Picot, partitioning Arab provinces of the Ottoman Empire into direct and indirect zones of British and French imperial influence.',
-              desc: 'Cartographic map detailing the secret Anglo-French partition of the Levant.',
-              provenance: 'The National Archives, Kew (FO 93/110/68), 16 May 1916.',
-              citation: 'The National Archives, Kew, UK.',
+                'Cartographic representation showing the conflicting territorial exclusions and pledges exchanged between Sir Henry McMahon and Sharif Hussein of Mecca (1915–1916).',
+              desc: 'Historical map analyzing the contested zones of the McMahon-Hussein letters.',
+              provenance:
+                'The National Archives, Kew (FO 371/2486), British Arab Bureau records, 1916.',
+              citation: 'The National Archives, Kew.',
               hinge_question:
-                'Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+                "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
               source_context:
-                'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War. It divided the Levant into imperial spheres of control while ignoring wartime promises of sovereign Arab independence made to Sharif Hussein. **Hinge Question:** Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+                "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
               context:
-                'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                'British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces.',
+              question_badge: 'Cross-Referencing',
+              question_type: 'Cross-Referencing',
               enquiry_question:
-                'How useful is Source A for an enquiry into the conflicting wartime promises made by Great Britain regarding the future of the Middle East?',
+                'How does Source A support or challenge the claim that Great Britain acted in bad faith towards Arab leaders during World War I?',
               model_answer:
-                'Source A is exceptionally valuable because it provides direct documentary proof that British imperial strategists prioritized territorial division with France over their contemporaneous pledges of self-determination made to Arab leaders fighting the Ottomans.',
+                'Source A strongly supports the accusation of bad faith by showing how vague geographical exclusions allowed Britain to promise overlapping territorial sovereignty to both Sharif Hussein and European imperial allies simultaneously.',
               provenance_clues: {
-                author:
-                  'Sir Mark Sykes (Britain) and François Georges-Picot (France), senior imperial diplomats.',
-                audience: 'British Foreign Office and French Ministry of Foreign Affairs cabinets.',
+                author: 'British military cartographers and Arab Bureau intelligence officers.',
+                audience:
+                  'British War Office, Foreign Office strategists, and imperial commanders.',
                 motive:
-                  'To carve up Ottoman territorial spoils and safeguard imperial trade and naval pipelines before the war concluded.',
+                  'To define military operational jurisdictions while keeping postwar political commitments deliberately flexible.',
                 hinge_question:
-                  'Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+                  "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
               },
               teacher_notes: {
                 source_context:
-                  'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War. It divided the Levant into imperial spheres of control while ignoring wartime promises of sovereign Arab independence made to Sharif Hussein. **Hinge Question:** Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+                  "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
               },
             },
           ],
@@ -779,7 +784,65 @@ const cme_new_data = {
             {
               id: 'cme_l1_source_b',
               letter: 'B',
-              title: 'Source B: The Balfour Declaration Official Letter (November 1917)',
+              title: 'Source B: The Sykes-Picot Agreement Partition Map (May 1916)',
+              src: '/images/cme_sykes_picot_1916_map.jpg',
+              image: '/images/cme_sykes_picot_1916_map.jpg',
+              source: '/images/cme_sykes_picot_1916_map.jpg',
+              caption:
+                'Signed by Sir Mark Sykes and François Georges-Picot, partitioning Arab provinces of the Ottoman Empire into direct and indirect zones of British and French imperial influence.',
+              desc: 'Cartographic map detailing the secret Anglo-French partition of the Levant.',
+              provenance: 'The National Archives, Kew (FO 93/110/68), 16 May 1916.',
+              citation: 'The National Archives, Kew, UK.',
+              hinge_question:
+                'Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+              source_context:
+                'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War. It divided the Levant into imperial spheres of control while ignoring wartime promises of sovereign Arab independence made to Sharif Hussein. **Hinge Question:** Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+              context:
+                'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
+              enquiry_question:
+                'How useful is Source B for an enquiry into the conflicting wartime promises made by Great Britain regarding the future of the Middle East?',
+              model_answer:
+                'Source B is exceptionally valuable because it provides direct documentary proof that British imperial strategists prioritized territorial division with France over their contemporaneous pledges of self-determination made to Arab leaders fighting the Ottomans.',
+              provenance_clues: {
+                author:
+                  'Sir Mark Sykes (Britain) and François Georges-Picot (France), senior imperial diplomats.',
+                audience: 'British Foreign Office and French Ministry of Foreign Affairs cabinets.',
+                motive:
+                  'To carve up Ottoman territorial spoils and safeguard imperial trade and naval pipelines before the war concluded.',
+                hinge_question:
+                  'Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+              },
+              teacher_notes: {
+                source_context:
+                  'Secret diplomatic convention negotiated between Britain and France with Russian consent during the First World War. It divided the Levant into imperial spheres of control while ignoring wartime promises of sovereign Arab independence made to Sharif Hussein. **Hinge Question:** Why did the secret Sykes-Picot Agreement provoke enduring Arab resentment when its terms were exposed by the Bolsheviks in 1917?',
+              },
+            },
+          ],
+          image: '/images/cme_allenby_jerusalem_1917.jpg',
+          image_alt:
+            'General Allenby entering Jerusalem on foot through the Jaffa Gate, December 1917',
+          caption:
+            'General Allenby Enters Jerusalem (December 1917): Disclosing British military conquest of Ottoman Palestine, entering on foot out of respect for the holy city.',
+          isReversed: false,
+        },
+        {
+          title: 'The Balfour Declaration',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> By late 1917, Britain faced immense pressure on the Western Front following the collapse of Tsarist Russia and German submarine warfare. To mobilize international Jewish diplomatic and financial influence—particularly in the United States and Russia—Prime Minister **David Lloyd George** and Foreign Secretary **Arthur Balfour** courted the British Zionist Federation. On **2 November 1917**, Balfour issued an official letter to Lord **Walter Rothschild**, proclaiming that the British Government viewed with favour "the establishment in Palestine of a national home for the Jewish people."',
+            '<span class="para-ref">[3.2]</span> To appease internal critics and Arab allies, Balfour added a famous safeguard clause: "nothing shall be done which may prejudice the civil and religious rights of existing non-Jewish communities." At the time, Arab Muslims and Christians formed over **90% of the population** of Palestine, while Jews comprised fewer than 10%. By promising to foster a national Jewish home in an Arab-majority land while pledging not to harm Arab rights, the British Cabinet created a fatal, irreconcilable contradiction that would inflame communal conflict for decades.',
+          ],
+          act: 3,
+          act_title:
+            'Stage 3: The Balfour Declaration — How did the Balfour Declaration create contradictory British commitments?',
+          theme_heading: 'The Balfour Declaration',
+          text: '<span class="para-ref">[3.1]</span> By late 1917, Britain faced immense pressure on the Western Front following the collapse of Tsarist Russia and German submarine warfare. To mobilize international Jewish diplomatic and financial influence—particularly in the United States and Russia—Prime Minister **David Lloyd George** and Foreign Secretary **Arthur Balfour** courted the British Zionist Federation. On **2 November 1917**, Balfour issued an official letter to Lord **Walter Rothschild**, proclaiming that the British Government viewed with favour "the establishment in Palestine of a national home for the Jewish people."\n\n<span class="para-ref">[3.2]</span> To appease internal critics and Arab allies, Balfour added a famous safeguard clause: "nothing shall be done which may prejudice the civil and religious rights of existing non-Jewish communities." At the time, Arab Muslims and Christians formed over **90% of the population** of Palestine, while Jews comprised fewer than 10%. By promising to foster a national Jewish home in an Arab-majority land while pledging not to harm Arab rights, the British Cabinet created a fatal, irreconcilable contradiction that would inflame communal conflict for decades.',
+          sources: [
+            {
+              id: 'cme_l1_source_c',
+              letter: 'C',
+              title: 'Source C: The Balfour Declaration Official Letter (November 1917)',
               src: '/images/cme_balfour_declaration_1917.jpg',
               image: '/images/cme_balfour_declaration_1917.jpg',
               source: '/images/cme_balfour_declaration_1917.jpg',
@@ -815,63 +878,6 @@ const cme_new_data = {
               },
             },
           ],
-          image: '/images/cme_allenby_jerusalem_1917.jpg',
-          image_alt:
-            'General Allenby entering Jerusalem on foot through the Jaffa Gate, December 1917',
-          caption:
-            'General Allenby Enters Jerusalem (December 1917): Disclosing British military conquest of Ottoman Palestine, entering on foot out of respect for the holy city.',
-          isReversed: false,
-        },
-        {
-          title: 'The Balfour Declaration',
-          paragraphs: [
-            '<span class="para-ref">[3.1]</span> By late 1917, Britain faced immense pressure on the Western Front following the collapse of Tsarist Russia and German submarine warfare. To mobilize international Jewish diplomatic and financial influence—particularly in the United States and Russia—Prime Minister **David Lloyd George** and Foreign Secretary **Arthur Balfour** courted the British Zionist Federation. On **2 November 1917**, Balfour issued an official letter to Lord **Walter Rothschild**, proclaiming that the British Government viewed with favour "the establishment in Palestine of a national home for the Jewish people."',
-            '<span class="para-ref">[3.2]</span> To appease internal critics and Arab allies, Balfour added a famous safeguard clause: "nothing shall be done which may prejudice the civil and religious rights of existing non-Jewish communities." At the time, Arab Muslims and Christians formed over **90% of the population** of Palestine, while Jews comprised fewer than 10%. By promising to foster a national Jewish home in an Arab-majority land while pledging not to harm Arab rights, the British Cabinet created a fatal, irreconcilable contradiction that would inflame communal conflict for decades.',
-          ],
-          act: 3,
-          act_title:
-            'Stage 3: The Balfour Declaration — How did the Balfour Declaration create contradictory British commitments?',
-          theme_heading: 'The Balfour Declaration',
-          text: '<span class="para-ref">[3.1]</span> By late 1917, Britain faced immense pressure on the Western Front following the collapse of Tsarist Russia and German submarine warfare. To mobilize international Jewish diplomatic and financial influence—particularly in the United States and Russia—Prime Minister **David Lloyd George** and Foreign Secretary **Arthur Balfour** courted the British Zionist Federation. On **2 November 1917**, Balfour issued an official letter to Lord **Walter Rothschild**, proclaiming that the British Government viewed with favour "the establishment in Palestine of a national home for the Jewish people."\n\n<span class="para-ref">[3.2]</span> To appease internal critics and Arab allies, Balfour added a famous safeguard clause: "nothing shall be done which may prejudice the civil and religious rights of existing non-Jewish communities." At the time, Arab Muslims and Christians formed over **90% of the population** of Palestine, while Jews comprised fewer than 10%. By promising to foster a national Jewish home in an Arab-majority land while pledging not to harm Arab rights, the British Cabinet created a fatal, irreconcilable contradiction that would inflame communal conflict for decades.',
-          sources: [
-            {
-              id: 'cme_l1_source_c',
-              letter: 'C',
-              title: 'Source C: Theodor Herzl, Founder of the Modern Zionist Movement',
-              src: '/units/cme_new/assets/theodor_herzl.jpg',
-              image: '/units/cme_new/assets/theodor_herzl.jpg',
-              source: '/units/cme_new/assets/theodor_herzl.jpg',
-              caption:
-                "Austro-Hungarian journalist Theodor Herzl, author of 'Der Judenstaat' (1896) and convenor of the First Zionist Congress in Basel, 1897.",
-              desc: 'Archival portrait photograph of Zionist visionary Theodor Herzl.',
-              provenance: 'Central Zionist Archives, Jerusalem (PHG/1012), c. 1897.',
-              citation: 'Central Zionist Archives, Jerusalem.',
-              hinge_question:
-                "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
-              source_context:
-                "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
-              context:
-                'Portrait of Theodor Herzl, who formulated political Zionism in response to European anti-Semitism.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
-              enquiry_question:
-                'What can you infer from Source C about the ideological foundations of modern political Zionism at the turn of the twentieth century?',
-              model_answer:
-                'Source C illustrates that political Zionism was framed as an urgent, modern national liberation movement driven by the realization that European anti-Semitism was structural and incurable through civic assimilation alone.',
-              provenance_clues: {
-                author: 'Official portraitist of the First Zionist Congress.',
-                audience: 'Delegates to the Basel Congress and European Jewish communities.',
-                motive:
-                  'To present Herzl as a dignified, visionary statesman capable of negotiating with European monarchs and imperial cabinets.',
-                hinge_question:
-                  "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
-              },
-              teacher_notes: {
-                source_context:
-                  "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
-              },
-            },
-          ],
         },
         {
           title: 'The British Mandate & Rising Immigration',
@@ -888,41 +894,39 @@ const cme_new_data = {
             {
               id: 'cme_l1_source_d',
               letter: 'D',
-              title:
-                'Source D: The McMahon-Hussein Correspondence Territorial Boundaries Map (1915–1916)',
-              src: '/units/cme_new/assets/map_lesson1.png',
-              image: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
-              source: '/units/cme_new/assets/map_lesson1.png',
+              title: 'Source D: Archival Panorama of British Mandate Jerusalem (c. 1918–1920)',
+              src: '/images/cme_cover.jpg',
+              image: '/images/jerusalem_mandate_panorama_1920.jpg',
+              source: '/images/cme_cover.jpg',
               caption:
-                'Cartographic representation showing the conflicting territorial exclusions and pledges exchanged between Sir Henry McMahon and Sharif Hussein of Mecca (1915–1916).',
-              desc: 'Historical map analyzing the contested zones of the McMahon-Hussein letters.',
+                'Panoramic view over the Old City of Jerusalem and the Temple Mount / Haram al-Sharif under early British civil administration, c. 1920.',
+              desc: 'Archival landscape photograph of Mandate Jerusalem.',
               provenance:
-                'The National Archives, Kew (FO 371/2486), British Arab Bureau records, 1916.',
-              citation: 'The National Archives, Kew.',
+                'Library of Congress, Prints & Photographs Division (LC-DIG-matpc-05743), c. 1925.',
+              citation: 'Library of Congress, Washington D.C.',
               hinge_question:
-                "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+                "How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
               source_context:
-                "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
-              context:
-                'British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+                "Photographic record of Jerusalem under the British Mandate. Britain governed Palestine under a League of Nations Class A Mandate from 1923, tasked with the incompatible obligations of preparing the local Arab majority for self-rule while facilitating Jewish immigration. **Hinge Question:** How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
+              context: 'Photographic record of Jerusalem under the British Mandate.',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'How does Source D support or challenge the claim that Great Britain acted in bad faith towards Arab leaders during World War I?',
+                'How reliable is Source D for understanding the deep religious and geopolitical tensions facing the British Mandate authorities in Palestine?',
               model_answer:
-                'Source D strongly supports the accusation of bad faith by showing how vague geographical exclusions allowed Britain to promise overlapping territorial sovereignty to both Sharif Hussein and European imperial allies simultaneously.',
+                'While Source D accurately depicts the monumental religious landscape of Jerusalem that made compromise impossible, as an official topographical record it masks the volatile intercommunal civil violence and economic boycotts brewing on the ground.',
               provenance_clues: {
-                author: 'British military cartographers and Arab Bureau intelligence officers.',
-                audience:
-                  'British War Office, Foreign Office strategists, and imperial commanders.',
+                author:
+                  'American Colony Photo Department, professional Jerusalem documentary photographers.',
+                audience: 'International tourists, scholars, and British colonial administrators.',
                 motive:
-                  'To define military operational jurisdictions while keeping postwar political commitments deliberately flexible.',
+                  'To capture the timeless sacred architecture of the Holy Land for archival and publishing markets.',
                 hinge_question:
-                  "Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+                  "How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
               },
               teacher_notes: {
                 source_context:
-                  "British High Commissioner McMahon promised British recognition of Arab independence in exchange for an Arab armed revolt against Ottoman forces. The exclusion of areas 'west of Damascus' led Arabs to believe Palestine was promised to them, while Britain later claimed it was excluded. **Hinge Question:** Why did the omission of explicit reference to Palestine in McMahon's letters trigger decades of bitter diplomatic dispute?",
+                  "Photographic record of Jerusalem under the British Mandate. Britain governed Palestine under a League of Nations Class A Mandate from 1923, tasked with the incompatible obligations of preparing the local Arab majority for self-rule while facilitating Jewish immigration. **Hinge Question:** How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
               },
             },
           ],
@@ -947,39 +951,38 @@ const cme_new_data = {
             {
               id: 'cme_l1_source_e',
               letter: 'E',
-              title: 'Source E: Archival Panorama of British Mandate Jerusalem (c. 1918–1920)',
-              src: '/images/cme_cover.jpg',
-              image: '/images/jerusalem_mandate_panorama_1920.jpg',
-              source: '/images/cme_cover.jpg',
+              title: 'Source E: Theodor Herzl, Founder of the Modern Zionist Movement',
+              src: '/units/cme_new/assets/theodor_herzl.jpg',
+              image: '/units/cme_new/assets/theodor_herzl.jpg',
+              source: '/units/cme_new/assets/theodor_herzl.jpg',
               caption:
-                'Panoramic view over the Old City of Jerusalem and the Temple Mount / Haram al-Sharif under early British civil administration, c. 1920.',
-              desc: 'Archival landscape photograph of Mandate Jerusalem.',
-              provenance:
-                'Library of Congress, Prints & Photographs Division (LC-DIG-matpc-05743), c. 1925.',
-              citation: 'Library of Congress, Washington D.C.',
+                "Austro-Hungarian journalist Theodor Herzl, author of 'Der Judenstaat' (1896) and convenor of the First Zionist Congress in Basel, 1897.",
+              desc: 'Archival portrait photograph of Zionist visionary Theodor Herzl.',
+              provenance: 'Central Zionist Archives, Jerusalem (PHG/1012), c. 1897.',
+              citation: 'Central Zionist Archives, Jerusalem.',
               hinge_question:
-                "How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
+                "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
               source_context:
-                "Photographic record of Jerusalem under the British Mandate. Britain governed Palestine under a League of Nations Class A Mandate from 1923, tasked with the incompatible obligations of preparing the local Arab majority for self-rule while facilitating Jewish immigration. **Hinge Question:** How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
-              context: 'Photographic record of Jerusalem under the British Mandate.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+                "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
+              context:
+                'Portrait of Theodor Herzl, who formulated political Zionism in response to European anti-Semitism.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How reliable is Source E for understanding the deep religious and geopolitical tensions facing the British Mandate authorities in Palestine?',
+                'What can you infer from Source E about the ideological foundations of modern political Zionism at the turn of the twentieth century?',
               model_answer:
-                'While Source E accurately depicts the monumental religious landscape of Jerusalem that made compromise impossible, as an official topographical record it masks the volatile intercommunal civil violence and economic boycotts brewing on the ground.',
+                'Source E illustrates that political Zionism was framed as an urgent, modern national liberation movement driven by the realization that European anti-Semitism was structural and incurable through civic assimilation alone.',
               provenance_clues: {
-                author:
-                  'American Colony Photo Department, professional Jerusalem documentary photographers.',
-                audience: 'International tourists, scholars, and British colonial administrators.',
+                author: 'Official portraitist of the First Zionist Congress.',
+                audience: 'Delegates to the Basel Congress and European Jewish communities.',
                 motive:
-                  'To capture the timeless sacred architecture of the Holy Land for archival and publishing markets.',
+                  'To present Herzl as a dignified, visionary statesman capable of negotiating with European monarchs and imperial cabinets.',
                 hinge_question:
-                  "How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
+                  "How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
               },
               teacher_notes: {
                 source_context:
-                  "Photographic record of Jerusalem under the British Mandate. Britain governed Palestine under a League of Nations Class A Mandate from 1923, tasked with the incompatible obligations of preparing the local Arab majority for self-rule while facilitating Jewish immigration. **Hinge Question:** How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
+                  "Portrait of Theodor Herzl, who concluded following the Dreyfus Affair in France that Jews could only escape pervasive European persecution through establishing an internationally recognized sovereign Jewish homeland. **Hinge Question:** How did Herzl's experience of anti-Semitism in Europe convince him that assimilation could never guarantee Jewish safety?",
               },
             },
           ],
@@ -1864,44 +1867,7 @@ const cme_new_data = {
         {
           id: 'cme_l2_source_a',
           letter: 'A',
-          title: 'Source A: The Sergeants Affair Aftermath in Netanya (July 1947)',
-          src: '/images/cme_sergeants_affair_1947.jpg',
-          image: '/images/cme_sergeants_affair_1947.jpg',
-          source: '/images/cme_sergeants_affair_1947.jpg',
-          caption:
-            'British soldiers examining the booby-trapped eucalyptus grove near Netanya where the Irgun hanged British sergeants Mervyn Paice and Clifford Martin in retaliation for executions of Jewish militants.',
-          desc: 'Archival military photograph of the Sergeants Affair crime scene.',
-          provenance: 'Imperial War Museum, London (IWM NYP 68066), 31 July 1947.',
-          citation: 'Imperial War Museum, London.',
-          hinge_question:
-            'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
-          source_context:
-            'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
-          context:
-            'In July 1947, the Irgun executed two abducted British intelligence sergeants in retaliation for British executions.',
-          question_badge: 'Historical Utility',
-          question_type: 'Historical Utility',
-          enquiry_question:
-            'How useful is Source A for an inquiry into why Britain decided to terminate its Mandate and evacuate Palestine in 1947?',
-          model_answer:
-            "Source A is profoundly useful because it captures the brutal insurgency tactics that eroded the British domestic public's willingness to sustain financial debt and military casualties to maintain order between warring communities in Palestine.",
-          provenance_clues: {
-            author: 'British Army official photographer attached to 6th Airborne Division.',
-            audience: "British War Office high command, coroner's inquest, and British press.",
-            motive:
-              'To record the evidence of Irgun booby-traps and terrorism for legal and military reports.',
-            hinge_question:
-              'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
-          },
-          teacher_notes: {
-            source_context:
-              'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
-          },
-        },
-        {
-          id: 'cme_l2_source_b',
-          letter: 'B',
-          title: 'Source B: The SS Exodus 1947 Arriving in Haifa Harbour',
+          title: 'Source A: The SS Exodus 1947 Arriving in Haifa Harbour',
           src: '/units/cme_new/assets/exodus_ship.jpg',
           image: '/units/cme_new/assets/exodus_ship.jpg',
           source: '/units/cme_new/assets/exodus_ship.jpg',
@@ -1920,9 +1886,9 @@ const cme_new_data = {
           question_badge: 'Source Inference',
           question_type: 'Source Inference',
           enquiry_question:
-            'What can you infer from Source B about the methods used by Zionist organizations to win international moral sympathy for a Jewish state?',
+            'What can you infer from Source A about the methods used by Zionist organizations to win international moral sympathy for a Jewish state?',
           model_answer:
-            'Source B demonstrates that the Haganah intentionally deployed unarmed refugee ships packed with European Holocaust survivors to expose the cruelty of British immigration quotas before visiting United Nations investigators.',
+            'Source A demonstrates that the Haganah intentionally deployed unarmed refugee ships packed with European Holocaust survivors to expose the cruelty of British immigration quotas before visiting United Nations investigators.',
           provenance_clues: {
             author: 'News agency photojournalist documenting the Royal Navy boarding in Haifa.',
             audience:
@@ -1938,9 +1904,9 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l2_source_c',
-          letter: 'C',
-          title: 'Source C: David Ben-Gurion Declaring Israeli Independence (14 May 1948)',
+          id: 'cme_l2_source_b',
+          letter: 'B',
+          title: 'Source B: David Ben-Gurion Declaring Israeli Independence (14 May 1948)',
           src: '/images/cme_bengurion_declaration_1948.jpg',
           image: '/images/cme_bengurion_declaration_1948.jpg',
           source: '/images/cme_bengurion_declaration_1948.jpg',
@@ -1957,7 +1923,7 @@ const cme_new_data = {
           question_badge: 'Author’s Purpose',
           question_type: 'Author’s Purpose',
           enquiry_question:
-            "What was Ben-Gurion's central purpose in staging the public reading of the Declaration beneath Herzl's portrait in Source C?",
+            "What was Ben-Gurion's central purpose in staging the public reading of the Declaration beneath Herzl's portrait in Source B?",
           model_answer:
             "Ben-Gurion deliberately staged the ceremony beneath Theodor Herzl's image to visually establish historical continuity, affirming that the new state was the legitimate culmination of fifty years of political Zionist struggle and divine national redemption.",
           provenance_clues: {
@@ -1975,9 +1941,84 @@ const cme_new_data = {
           },
         },
         {
+          id: 'cme_l2_source_c',
+          letter: 'C',
+          title: 'Source C: The King David Hotel Bombing Ruins (22 July 1946)',
+          src: '/units/cme_new/assets/king_david_ruins.png',
+          image: '/units/cme_new/assets/king_david_ruins.png',
+          source: '/units/cme_new/assets/king_david_ruins.png',
+          caption:
+            'The collapsed southwestern wing of the King David Hotel in Jerusalem following the Irgun bomb attack on 22 July 1946, killing 91 British, Arab, and Jewish civil servants and soldiers.',
+          desc: 'Archival photograph of the devastated King David Hotel wing.',
+          provenance:
+            'Imperial War Museum, London / British Mandate Police Archives, 22 July 1946.',
+          citation: 'Imperial War Museum, London.',
+          hinge_question:
+            'Why did the Irgun target the King David Hotel specifically rather than a British military garrison?',
+          source_context:
+            "On 22 July 1946, Menachem Begin's Irgun detonated milk churns packed with 350kg of explosives in the basement of the King David Hotel, which housed the British Secretariat and Military Headquarters. The blast killed 91 people, dealt a catastrophic psychological blow to British authority, and isolated the Irgun from moderate Zionist leaders. **Hinge Question:** Why did the Irgun target the King David Hotel specifically rather than a British military garrison?",
+          context:
+            'The Irgun detonated 350kg of explosives in the basement of the King David Hotel on 22 July 1946, killing 91 people.',
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
+          enquiry_question:
+            'How useful is Source C for an enquiry into the impact of Zionist paramilitary attacks on British governance in Palestine?',
+          model_answer:
+            "Source C is exceptionally useful because the physical devastation of the British administrative and military headquarters provides direct visual proof of the Irgun's capability to strike the nerve-centre of imperial control, destroying Britain's illusion of maintaining public order.",
+          provenance_clues: {
+            author: 'British Army official photographer attached to Palestine Command.',
+            audience: 'British Cabinet and War Office investigative commission.',
+            motive:
+              'To record forensic evidence of the structural collapse and casualty extent for the official inquiry.',
+            hinge_question:
+              'Why did the Irgun target the King David Hotel specifically rather than a British military garrison?',
+          },
+          teacher_notes: {
+            source_context:
+              "On 22 July 1946, Menachem Begin's Irgun detonated milk churns packed with 350kg of explosives in the basement of the King David Hotel, which housed the British Secretariat and Military Headquarters. The blast killed 91 people, dealt a catastrophic psychological blow to British authority, and isolated the Irgun from moderate Zionist leaders. **Hinge Question:** Why did the Irgun target the King David Hotel specifically rather than a British military garrison?",
+          },
+        },
+        {
           id: 'cme_l2_source_d',
           letter: 'D',
-          title: 'Source D: United Nations Partition Plan for Palestine (Resolution 181)',
+          title: 'Source D: The Sergeants Affair Aftermath in Netanya (July 1947)',
+          src: '/images/cme_sergeants_affair_1947.jpg',
+          image: '/images/cme_sergeants_affair_1947.jpg',
+          source: '/images/cme_sergeants_affair_1947.jpg',
+          caption:
+            'British soldiers examining the booby-trapped eucalyptus grove near Netanya where the Irgun hanged British sergeants Mervyn Paice and Clifford Martin in retaliation for executions of Jewish militants.',
+          desc: 'Archival military photograph of the Sergeants Affair crime scene.',
+          provenance: 'Imperial War Museum, London (IWM NYP 68066), 31 July 1947.',
+          citation: 'Imperial War Museum, London.',
+          hinge_question:
+            'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+          source_context:
+            'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+          context:
+            'In July 1947, the Irgun executed two abducted British intelligence sergeants in retaliation for British executions.',
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
+          enquiry_question:
+            'How useful is Source D for an inquiry into why Britain decided to terminate its Mandate and evacuate Palestine in 1947?',
+          model_answer:
+            "Source D is profoundly useful because it captures the brutal insurgency tactics that eroded the British domestic public's willingness to sustain financial debt and military casualties to maintain order between warring communities in Palestine.",
+          provenance_clues: {
+            author: 'British Army official photographer attached to 6th Airborne Division.',
+            audience: "British War Office high command, coroner's inquest, and British press.",
+            motive:
+              'To record the evidence of Irgun booby-traps and terrorism for legal and military reports.',
+            hinge_question:
+              'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+          },
+          teacher_notes: {
+            source_context:
+              'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+          },
+        },
+        {
+          id: 'cme_l2_source_e',
+          letter: 'E',
+          title: 'Source E: United Nations Partition Plan for Palestine (Resolution 181)',
           src: '/units/cme_new/assets/palestine_1947_map.png',
           image: '/units/cme_new/assets/palestine_1947_map.png',
           source: '/units/cme_new/assets/palestine_1947_map.png',
@@ -1996,9 +2037,9 @@ const cme_new_data = {
           question_badge: 'Cross-Referencing',
           question_type: 'Cross-Referencing',
           enquiry_question:
-            'How does the territorial allocation shown in Source D help explain why civil warfare erupted immediately between Arabs and Jews in December 1947?',
+            'How does the territorial allocation shown in Source E help explain why civil warfare erupted immediately between Arabs and Jews in December 1947?',
           model_answer:
-            'Source D illustrates that both proposed states were fractured into non-contiguous enclaves with indefensible borders and interwoven populations, ensuring that any attempt to establish sovereignty would instantly trigger violent clashes over vital roads and towns.',
+            'Source E illustrates that both proposed states were fractured into non-contiguous enclaves with indefensible borders and interwoven populations, ensuring that any attempt to establish sovereignty would instantly trigger violent clashes over vital roads and towns.',
           provenance_clues: {
             author: 'United Nations Special Committee on Palestine (UNSCOP) cartographers.',
             audience: 'UN General Assembly delegates, member states, and world public.',
@@ -2010,44 +2051,6 @@ const cme_new_data = {
           teacher_notes: {
             source_context:
               'On 29 November 1947, the UN General Assembly voted 33 to 13 (with 10 abstentions) to partition Palestine. The plan allocated 56% of the land to the Jewish minority (one-third of the population) and 43% to the Arab majority. Arab leadership rejected the partition as an imperial theft of their ancestral land. **Hinge Question:** Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
-          },
-        },
-        {
-          id: 'cme_l2_source_e',
-          letter: 'E',
-          title: 'Source E: The 1949 Armistice Green Line Boundaries Map',
-          src: '/units/cme_new/assets/palestine_1949_map.png',
-          image: '/units/cme_new/assets/palestine_1949_map.png',
-          source: '/units/cme_new/assets/palestine_1949_map.png',
-          caption:
-            'Map depicting the 1949 Armistice Agreements (Green Line) following the war: Israel expanded to 78% of Mandate territory; Jordan annexed the West Bank; Egypt administered the Gaza Strip.',
-          desc: 'Cartographic map of the 1949 Rhodes Armistice ceasefire demarcation lines.',
-          provenance: 'United Nations Truce Supervision Organization (UNTSO), Rhodes, 1949.',
-          citation: 'UNTSO / United Nations Archives.',
-          hinge_question:
-            'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
-          source_context:
-            'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
-          context:
-            'Bilateral armistice agreements were signed in Rhodes in 1949, establishing the Green Line.',
-          question_badge: 'Reliability & Provenance',
-          question_type: 'Reliability & Provenance',
-          enquiry_question:
-            'How reliable is Source E for demonstrating the geopolitical outcome of the 1948–49 Arab-Israeli War?',
-          model_answer:
-            'Source E is highly reliable because it records the precise military armistice lines negotiated under UN supervision; however, it reflects a temporary cessation of hostilities rather than a de jure peace treaty recognized by neighboring Arab states.',
-          provenance_clues: {
-            author: 'UNTSO military surveyors and diplomatic negotiators.',
-            audience:
-              'Signatory states (Israel, Egypt, Jordan, Syria, Lebanon) and UN Security Council.',
-            motive:
-              'To codify military ceasefire positions without prejudicing final territorial claims.',
-            hinge_question:
-              'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
-          },
-          teacher_notes: {
-            source_context:
-              'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
           },
         },
       ],
@@ -2342,38 +2345,40 @@ const cme_new_data = {
             {
               id: 'cme_l2_source_a',
               letter: 'A',
-              title: 'Source A: The Sergeants Affair Aftermath in Netanya (July 1947)',
-              src: '/images/cme_sergeants_affair_1947.jpg',
-              image: '/images/cme_sergeants_affair_1947.jpg',
-              source: '/images/cme_sergeants_affair_1947.jpg',
+              title: 'Source A: The SS Exodus 1947 Arriving in Haifa Harbour',
+              src: '/units/cme_new/assets/exodus_ship.jpg',
+              image: '/units/cme_new/assets/exodus_ship.jpg',
+              source: '/units/cme_new/assets/exodus_ship.jpg',
               caption:
-                'British soldiers examining the booby-trapped eucalyptus grove near Netanya where the Irgun hanged British sergeants Mervyn Paice and Clifford Martin in retaliation for executions of Jewish militants.',
-              desc: 'Archival military photograph of the Sergeants Affair crime scene.',
-              provenance: 'Imperial War Museum, London (IWM NYP 68066), 31 July 1947.',
-              citation: 'Imperial War Museum, London.',
+                'The battered immigrant ship SS Exodus 1947, carrying over 4,500 Holocaust survivors, escorted by the Royal Navy into Haifa before passengers were forcibly returned to Germany.',
+              desc: 'Documentary photograph of the Exodus 1947 crowded with Jewish refugees.',
+              provenance:
+                'United States Holocaust Memorial Museum, courtesy of National Archives and Records Administration (USHMM 24195), July 1947.',
+              citation: 'United States Holocaust Memorial Museum / NARA.',
               hinge_question:
-                'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+                "How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
               source_context:
-                'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+                "The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates. Royal Navy warships rammed the vessel off the coast of Palestine. Foreign Secretary Ernest Bevin ordered the passengers deported back to displaced persons camps in British-occupied Germany, generating international condemnation. **Hinge Question:** How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
               context:
-                'In July 1947, the Irgun executed two abducted British intelligence sergeants in retaliation for British executions.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                'The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How useful is Source A for an inquiry into why Britain decided to terminate its Mandate and evacuate Palestine in 1947?',
+                'What can you infer from Source A about the methods used by Zionist organizations to win international moral sympathy for a Jewish state?',
               model_answer:
-                "Source A is profoundly useful because it captures the brutal insurgency tactics that eroded the British domestic public's willingness to sustain financial debt and military casualties to maintain order between warring communities in Palestine.",
+                'Source A demonstrates that the Haganah intentionally deployed unarmed refugee ships packed with European Holocaust survivors to expose the cruelty of British immigration quotas before visiting United Nations investigators.',
               provenance_clues: {
-                author: 'British Army official photographer attached to 6th Airborne Division.',
-                audience: "British War Office high command, coroner's inquest, and British press.",
+                author: 'News agency photojournalist documenting the Royal Navy boarding in Haifa.',
+                audience:
+                  'International press, US Congress, and United Nations Special Committee on Palestine (UNSCOP).',
                 motive:
-                  'To record the evidence of Irgun booby-traps and terrorism for legal and military reports.',
+                  'To document the plight of displaced Holocaust survivors confronting armed British military power.',
                 hinge_question:
-                  'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+                  "How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
               },
               teacher_notes: {
                 source_context:
-                  'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
+                  "The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates. Royal Navy warships rammed the vessel off the coast of Palestine. Foreign Secretary Ernest Bevin ordered the passengers deported back to displaced persons camps in British-occupied Germany, generating international condemnation. **Hinge Question:** How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
               },
             },
           ],
@@ -2393,66 +2398,7 @@ const cme_new_data = {
             {
               id: 'cme_l2_source_b',
               letter: 'B',
-              title: 'Source B: The SS Exodus 1947 Arriving in Haifa Harbour',
-              src: '/units/cme_new/assets/exodus_ship.jpg',
-              image: '/units/cme_new/assets/exodus_ship.jpg',
-              source: '/units/cme_new/assets/exodus_ship.jpg',
-              caption:
-                'The battered immigrant ship SS Exodus 1947, carrying over 4,500 Holocaust survivors, escorted by the Royal Navy into Haifa before passengers were forcibly returned to Germany.',
-              desc: 'Documentary photograph of the Exodus 1947 crowded with Jewish refugees.',
-              provenance:
-                'United States Holocaust Memorial Museum, courtesy of National Archives and Records Administration (USHMM 24195), July 1947.',
-              citation: 'United States Holocaust Memorial Museum / NARA.',
-              hinge_question:
-                "How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
-              source_context:
-                "The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates. Royal Navy warships rammed the vessel off the coast of Palestine. Foreign Secretary Ernest Bevin ordered the passengers deported back to displaced persons camps in British-occupied Germany, generating international condemnation. **Hinge Question:** How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
-              context:
-                'The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
-              enquiry_question:
-                'What can you infer from Source B about the methods used by Zionist organizations to win international moral sympathy for a Jewish state?',
-              model_answer:
-                'Source B demonstrates that the Haganah intentionally deployed unarmed refugee ships packed with European Holocaust survivors to expose the cruelty of British immigration quotas before visiting United Nations investigators.',
-              provenance_clues: {
-                author: 'News agency photojournalist documenting the Royal Navy boarding in Haifa.',
-                audience:
-                  'International press, US Congress, and United Nations Special Committee on Palestine (UNSCOP).',
-                motive:
-                  'To document the plight of displaced Holocaust survivors confronting armed British military power.',
-                hinge_question:
-                  "How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
-              },
-              teacher_notes: {
-                source_context:
-                  "The Haganah ship Exodus sailed from France with 4,514 Jewish refugees without immigration certificates. Royal Navy warships rammed the vessel off the coast of Palestine. Foreign Secretary Ernest Bevin ordered the passengers deported back to displaced persons camps in British-occupied Germany, generating international condemnation. **Hinge Question:** How did the British naval blockade of immigrant ships like the Exodus become an international public relations disaster for Clement Attlee's government?",
-              },
-            },
-          ],
-          image: '/units/cme_new/assets/king_david_ruins.png',
-          image_alt:
-            'The devastated southwestern wing of the King David Hotel in Jerusalem following the Irgun bombing in July 1946',
-          caption:
-            "The King David Hotel Bombing (22 July 1946): Menachem Begin's Irgun destroyed British military headquarters, killing 91 people and shattering British resolve.",
-          isReversed: false,
-        },
-        {
-          title: 'The King David Hotel Bombing',
-          paragraphs: [
-            '<span class="para-ref">[3.1]</span> On **22 July 1946**, the Irgun executed a catastrophic strike against the administrative nerve-centre of the British Mandate. Six Irgun operatives disguised as Arab milk deliverymen slipped into the basement of the **King David Hotel** in Jerusalem, which housed the British Military Headquarters and Civil Secretariat. They rolled milk churns packed with 350 kilograms of explosives beneath the building\'s south-west support pillars.',
-            '<span class="para-ref">[3.2]</span> The thunderous blast collapsed the entire six-storey southern wing into rubble, killing **91 people**—including 28 British administrative officials, 41 Arab civil servants, 17 Jewish employees, and 5 bystanders. The massacre horrified world opinion and caused the mainstream Haganah to withdraw from the United Resistance Movement. For Britain, the bombing proved Palestine had become ungovernable without full-scale military occupation, forcing British personnel into heavily fortified, barbed-wire security enclaves derisively called "**Bevingrads**."',
-          ],
-          act: 3,
-          act_title:
-            'Stage 3: The King David Hotel Bombing — Why did targeting the King David Hotel prove Palestine was ungovernable?',
-          theme_heading: 'The King David Hotel Bombing',
-          text: '<span class="para-ref">[3.1]</span> On **22 July 1946**, the Irgun executed a catastrophic strike against the administrative nerve-centre of the British Mandate. Six Irgun operatives disguised as Arab milk deliverymen slipped into the basement of the **King David Hotel** in Jerusalem, which housed the British Military Headquarters and Civil Secretariat. They rolled milk churns packed with 350 kilograms of explosives beneath the building\'s south-west support pillars.\n\n<span class="para-ref">[3.2]</span> The thunderous blast collapsed the entire six-storey southern wing into rubble, killing **91 people**—including 28 British administrative officials, 41 Arab civil servants, 17 Jewish employees, and 5 bystanders. The massacre horrified world opinion and caused the mainstream Haganah to withdraw from the United Resistance Movement. For Britain, the bombing proved Palestine had become ungovernable without full-scale military occupation, forcing British personnel into heavily fortified, barbed-wire security enclaves derisively called "**Bevingrads**."',
-          sources: [
-            {
-              id: 'cme_l2_source_c',
-              letter: 'C',
-              title: 'Source C: David Ben-Gurion Declaring Israeli Independence (14 May 1948)',
+              title: 'Source B: David Ben-Gurion Declaring Israeli Independence (14 May 1948)',
               src: '/images/cme_bengurion_declaration_1948.jpg',
               image: '/images/cme_bengurion_declaration_1948.jpg',
               source: '/images/cme_bengurion_declaration_1948.jpg',
@@ -2470,7 +2416,7 @@ const cme_new_data = {
               question_badge: 'Author’s Purpose',
               question_type: 'Author’s Purpose',
               enquiry_question:
-                "What was Ben-Gurion's central purpose in staging the public reading of the Declaration beneath Herzl's portrait in Source C?",
+                "What was Ben-Gurion's central purpose in staging the public reading of the Declaration beneath Herzl's portrait in Source B?",
               model_answer:
                 "Ben-Gurion deliberately staged the ceremony beneath Theodor Herzl's image to visually establish historical continuity, affirming that the new state was the legitimate culmination of fifty years of political Zionist struggle and divine national redemption.",
               provenance_clues: {
@@ -2486,6 +2432,64 @@ const cme_new_data = {
               teacher_notes: {
                 source_context:
                   'At 4:00 PM on Friday 14 May 1948, hours before the British Mandate officially ended and Shabbat commenced, David Ben-Gurion read the Israeli Declaration of Independence, proclaiming sovereign statehood. Within hours, President Truman recognized the state and neighboring Arab armies crossed the borders. **Hinge Question:** Why was the declaration of statehood made hours before the British Mandate officially expired at midnight on 14 May 1948?',
+              },
+            },
+          ],
+          image: '/units/cme_new/assets/cme_david_ben_gurion__d597_087_.jpg',
+          image_alt:
+            'The devastated southwestern wing of the King David Hotel in Jerusalem following the Irgun bombing in July 1946',
+          caption:
+            'David Ben-Gurion, Chairman of the Jewish Agency Executive, who directed Zionist political strategy and paramilitary operations during the post-war insurgency against British rule.',
+          isReversed: false,
+        },
+        {
+          title: 'The King David Hotel Bombing',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> On **22 July 1946**, the Irgun executed a catastrophic strike against the administrative nerve-centre of the British Mandate. Six Irgun operatives disguised as Arab milk deliverymen slipped into the basement of the **King David Hotel** in Jerusalem, which housed the British Military Headquarters and Civil Secretariat. They rolled milk churns packed with 350 kilograms of explosives beneath the building\'s south-west support pillars.',
+            '<span class="para-ref">[3.2]</span> The thunderous blast collapsed the entire six-storey southern wing into rubble, killing **91 people**—including 28 British administrative officials, 41 Arab civil servants, 17 Jewish employees, and 5 bystanders. The massacre horrified world opinion and caused the mainstream Haganah to withdraw from the United Resistance Movement. For Britain, the bombing proved Palestine had become ungovernable without full-scale military occupation, forcing British personnel into heavily fortified, barbed-wire security enclaves derisively called "**Bevingrads**."',
+          ],
+          act: 3,
+          act_title:
+            'Stage 3: The King David Hotel Bombing — Why did targeting the King David Hotel prove Palestine was ungovernable?',
+          theme_heading: 'The King David Hotel Bombing',
+          text: '<span class="para-ref">[3.1]</span> On **22 July 1946**, the Irgun executed a catastrophic strike against the administrative nerve-centre of the British Mandate. Six Irgun operatives disguised as Arab milk deliverymen slipped into the basement of the **King David Hotel** in Jerusalem, which housed the British Military Headquarters and Civil Secretariat. They rolled milk churns packed with 350 kilograms of explosives beneath the building\'s south-west support pillars.\n\n<span class="para-ref">[3.2]</span> The thunderous blast collapsed the entire six-storey southern wing into rubble, killing **91 people**—including 28 British administrative officials, 41 Arab civil servants, 17 Jewish employees, and 5 bystanders. The massacre horrified world opinion and caused the mainstream Haganah to withdraw from the United Resistance Movement. For Britain, the bombing proved Palestine had become ungovernable without full-scale military occupation, forcing British personnel into heavily fortified, barbed-wire security enclaves derisively called "**Bevingrads**."',
+          sources: [
+            {
+              id: 'cme_l2_source_c',
+              letter: 'C',
+              title: 'Source C: The King David Hotel Bombing Ruins (22 July 1946)',
+              src: '/units/cme_new/assets/king_david_ruins.png',
+              image: '/units/cme_new/assets/king_david_ruins.png',
+              source: '/units/cme_new/assets/king_david_ruins.png',
+              caption:
+                'The collapsed southwestern wing of the King David Hotel in Jerusalem following the Irgun bomb attack on 22 July 1946, killing 91 British, Arab, and Jewish civil servants and soldiers.',
+              desc: 'Archival photograph of the devastated King David Hotel wing.',
+              provenance:
+                'Imperial War Museum, London / British Mandate Police Archives, 22 July 1946.',
+              citation: 'Imperial War Museum, London.',
+              hinge_question:
+                'Why did the Irgun target the King David Hotel specifically rather than a British military garrison?',
+              source_context:
+                "On 22 July 1946, Menachem Begin's Irgun detonated milk churns packed with 350kg of explosives in the basement of the King David Hotel, which housed the British Secretariat and Military Headquarters. The blast killed 91 people, dealt a catastrophic psychological blow to British authority, and isolated the Irgun from moderate Zionist leaders. **Hinge Question:** Why did the Irgun target the King David Hotel specifically rather than a British military garrison?",
+              context:
+                'The Irgun detonated 350kg of explosives in the basement of the King David Hotel on 22 July 1946, killing 91 people.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
+              enquiry_question:
+                'How useful is Source C for an enquiry into the impact of Zionist paramilitary attacks on British governance in Palestine?',
+              model_answer:
+                "Source C is exceptionally useful because the physical devastation of the British administrative and military headquarters provides direct visual proof of the Irgun's capability to strike the nerve-centre of imperial control, destroying Britain's illusion of maintaining public order.",
+              provenance_clues: {
+                author: 'British Army official photographer attached to Palestine Command.',
+                audience: 'British Cabinet and War Office investigative commission.',
+                motive:
+                  'To record forensic evidence of the structural collapse and casualty extent for the official inquiry.',
+                hinge_question:
+                  'Why did the Irgun target the King David Hotel specifically rather than a British military garrison?',
+              },
+              teacher_notes: {
+                source_context:
+                  "On 22 July 1946, Menachem Begin's Irgun detonated milk churns packed with 350kg of explosives in the basement of the King David Hotel, which housed the British Secretariat and Military Headquarters. The blast killed 91 people, dealt a catastrophic psychological blow to British authority, and isolated the Irgun from moderate Zionist leaders. **Hinge Question:** Why did the Irgun target the King David Hotel specifically rather than a British military garrison?",
               },
             },
           ],
@@ -2505,39 +2509,38 @@ const cme_new_data = {
             {
               id: 'cme_l2_source_d',
               letter: 'D',
-              title: 'Source D: United Nations Partition Plan for Palestine (Resolution 181)',
-              src: '/units/cme_new/assets/palestine_1947_map.png',
-              image: '/units/cme_new/assets/palestine_1947_map.png',
-              source: '/units/cme_new/assets/palestine_1947_map.png',
+              title: 'Source D: The Sergeants Affair Aftermath in Netanya (July 1947)',
+              src: '/images/cme_sergeants_affair_1947.jpg',
+              image: '/images/cme_sergeants_affair_1947.jpg',
+              source: '/images/cme_sergeants_affair_1947.jpg',
               caption:
-                'Official cartographic projection of the UN General Assembly Resolution 181 partition proposal: 56% allocated for a Jewish state, 43% for an Arab state, and an international regime (Corpus Separatum) for Jerusalem.',
-              desc: 'United Nations official map of Resolution 181 passed on 29 November 1947.',
-              provenance: 'United Nations Archives, New York (Map No. 93(b)), November 1947.',
-              citation:
-                'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
+                'British soldiers examining the booby-trapped eucalyptus grove near Netanya where the Irgun hanged British sergeants Mervyn Paice and Clifford Martin in retaliation for executions of Jewish militants.',
+              desc: 'Archival military photograph of the Sergeants Affair crime scene.',
+              provenance: 'Imperial War Museum, London (IWM NYP 68066), 31 July 1947.',
+              citation: 'Imperial War Museum, London.',
               hinge_question:
-                'Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
+                'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
               source_context:
-                'On 29 November 1947, the UN General Assembly voted 33 to 13 (with 10 abstentions) to partition Palestine. The plan allocated 56% of the land to the Jewish minority (one-third of the population) and 43% to the Arab majority. Arab leadership rejected the partition as an imperial theft of their ancestral land. **Hinge Question:** Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
+                'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
               context:
-                'On 29 November 1947, the UN General Assembly voted to partition Palestine into separate Arab and Jewish states.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+                'In July 1947, the Irgun executed two abducted British intelligence sergeants in retaliation for British executions.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
               enquiry_question:
-                'How does the territorial allocation shown in Source D help explain why civil warfare erupted immediately between Arabs and Jews in December 1947?',
+                'How useful is Source D for an inquiry into why Britain decided to terminate its Mandate and evacuate Palestine in 1947?',
               model_answer:
-                'Source D illustrates that both proposed states were fractured into non-contiguous enclaves with indefensible borders and interwoven populations, ensuring that any attempt to establish sovereignty would instantly trigger violent clashes over vital roads and towns.',
+                "Source D is profoundly useful because it captures the brutal insurgency tactics that eroded the British domestic public's willingness to sustain financial debt and military casualties to maintain order between warring communities in Palestine.",
               provenance_clues: {
-                author: 'United Nations Special Committee on Palestine (UNSCOP) cartographers.',
-                audience: 'UN General Assembly delegates, member states, and world public.',
+                author: 'British Army official photographer attached to 6th Airborne Division.',
+                audience: "British War Office high command, coroner's inquest, and British press.",
                 motive:
-                  'To devise an equitable administrative compromise between irreconcilable nationalist claims.',
+                  'To record the evidence of Irgun booby-traps and terrorism for legal and military reports.',
                 hinge_question:
-                  'Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
+                  'Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
               },
               teacher_notes: {
                 source_context:
-                  'On 29 November 1947, the UN General Assembly voted 33 to 13 (with 10 abstentions) to partition Palestine. The plan allocated 56% of the land to the Jewish minority (one-third of the population) and 43% to the Arab majority. Arab leadership rejected the partition as an imperial theft of their ancestral land. **Hinge Question:** Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
+                  'In July 1947, the Irgun executed two abducted British intelligence sergeants and booby-trapped their corpses after three Irgun members were executed at Acre Prison. The outrage sparked anti-Semitic riots in Liverpool and convinced the British public that troops must be brought home. **Hinge Question:** Why did the hanging of the British sergeants destroy public and political support in Britain for maintaining the Palestine Mandate?',
               },
             },
           ],
@@ -2563,39 +2566,39 @@ const cme_new_data = {
             {
               id: 'cme_l2_source_e',
               letter: 'E',
-              title: 'Source E: The 1949 Armistice Green Line Boundaries Map',
-              src: '/units/cme_new/assets/palestine_1949_map.png',
-              image: '/units/cme_new/assets/palestine_1949_map.png',
-              source: '/units/cme_new/assets/palestine_1949_map.png',
+              title: 'Source E: United Nations Partition Plan for Palestine (Resolution 181)',
+              src: '/units/cme_new/assets/palestine_1947_map.png',
+              image: '/units/cme_new/assets/palestine_1947_map.png',
+              source: '/units/cme_new/assets/palestine_1947_map.png',
               caption:
-                'Map depicting the 1949 Armistice Agreements (Green Line) following the war: Israel expanded to 78% of Mandate territory; Jordan annexed the West Bank; Egypt administered the Gaza Strip.',
-              desc: 'Cartographic map of the 1949 Rhodes Armistice ceasefire demarcation lines.',
-              provenance: 'United Nations Truce Supervision Organization (UNTSO), Rhodes, 1949.',
-              citation: 'UNTSO / United Nations Archives.',
+                'Official cartographic projection of the UN General Assembly Resolution 181 partition proposal: 56% allocated for a Jewish state, 43% for an Arab state, and an international regime (Corpus Separatum) for Jerusalem.',
+              desc: 'United Nations official map of Resolution 181 passed on 29 November 1947.',
+              provenance: 'United Nations Archives, New York (Map No. 93(b)), November 1947.',
+              citation:
+                'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
               hinge_question:
-                'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
+                'Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
               source_context:
-                'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
+                'On 29 November 1947, the UN General Assembly voted 33 to 13 (with 10 abstentions) to partition Palestine. The plan allocated 56% of the land to the Jewish minority (one-third of the population) and 43% to the Arab majority. Arab leadership rejected the partition as an imperial theft of their ancestral land. **Hinge Question:** Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
               context:
-                'Bilateral armistice agreements were signed in Rhodes in 1949, establishing the Green Line.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+                'On 29 November 1947, the UN General Assembly voted to partition Palestine into separate Arab and Jewish states.',
+              question_badge: 'Cross-Referencing',
+              question_type: 'Cross-Referencing',
               enquiry_question:
-                'How reliable is Source E for demonstrating the geopolitical outcome of the 1948–49 Arab-Israeli War?',
+                'How does the territorial allocation shown in Source E help explain why civil warfare erupted immediately between Arabs and Jews in December 1947?',
               model_answer:
-                'Source E is highly reliable because it records the precise military armistice lines negotiated under UN supervision; however, it reflects a temporary cessation of hostilities rather than a de jure peace treaty recognized by neighboring Arab states.',
+                'Source E illustrates that both proposed states were fractured into non-contiguous enclaves with indefensible borders and interwoven populations, ensuring that any attempt to establish sovereignty would instantly trigger violent clashes over vital roads and towns.',
               provenance_clues: {
-                author: 'UNTSO military surveyors and diplomatic negotiators.',
-                audience:
-                  'Signatory states (Israel, Egypt, Jordan, Syria, Lebanon) and UN Security Council.',
+                author: 'United Nations Special Committee on Palestine (UNSCOP) cartographers.',
+                audience: 'UN General Assembly delegates, member states, and world public.',
                 motive:
-                  'To codify military ceasefire positions without prejudicing final territorial claims.',
+                  'To devise an equitable administrative compromise between irreconcilable nationalist claims.',
                 hinge_question:
-                  'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
+                  'Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
               },
               teacher_notes: {
                 source_context:
-                  'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
+                  'On 29 November 1947, the UN General Assembly voted 33 to 13 (with 10 abstentions) to partition Palestine. The plan allocated 56% of the land to the Jewish minority (one-third of the population) and 43% to the Arab majority. Arab leadership rejected the partition as an imperial theft of their ancestral land. **Hinge Question:** Why did the Arab Higher Committee reject UN Resolution 181 as fundamentally unjust to the indigenous majority?',
               },
             },
           ],
@@ -3691,42 +3694,39 @@ const cme_new_data = {
             {
               id: 'cme_l3_source_a',
               letter: 'A',
-              title: 'Source A: Displaced Palestinian Families in Khan Yunis Camp (1948–1949)',
-              src: '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
-              image: '/images/nakba_unrwa_khan_younis_1948.jpg',
-              source:
-                '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
+              title: 'Source A: UN Ad Hoc Committee Draft Partition Proposals (1947)',
+              src: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
+              image: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
+              source: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
               caption:
-                'Palestinian refugee mother and children sheltered beside temporary canvas conical tents in the overcrowded Khan Yunis refugee camp in the Gaza Strip, 1948–1949.',
-              desc: 'Documentary photograph of early Palestinian refugee encampments in Gaza.',
+                'Cartographic comparison of the UNSCOP Majority Plan (partition with economic union) versus the Minority Plan (federal single state with autonomous cantons).',
+              desc: 'Official United Nations draft maps showing alternative constitutional models for Palestine.',
               provenance:
-                'Getty Images / Hulton Archive (1354487454), UNRWA photographic collection, 1949.',
-              citation: 'Getty Images / UNRWA Archives.',
+                'United Nations Ad Hoc Committee on the Palestinian Question (A/AC.14/32), October 1947.',
+              citation: 'United Nations Archives, Geneva / New York.',
               hinge_question:
-                'How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
+                'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
               source_context:
-                'Following the 1948 war, over 200,000 Palestinian refugees flooded into the narrow Gaza Strip, tripling its resident population overnight. Families lived in canvas tents with open sewers and severe food shortages under Egyptian military administration. **Hinge Question:** How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
+                'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
               context:
-                'Over 200,000 Palestinian refugees flooded into the narrow Gaza Strip following the 1948 war.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                'In 1947, the UN considered two solutions: full partition versus a single federal state.',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'How useful is Source A for an enquiry into the humanitarian consequences of the 1948 Palestinian exodus (Nakba)?',
+                "How reliable is Source A for understanding the international diplomatic debate surrounding Palestine's constitutional future in 1947?",
               model_answer:
-                'Source A is profoundly useful because it captures the squalid, dehumanizing conditions endured by hundreds of thousands of displaced non-combatants, illustrating how the war permanently transformed thriving agrarian communities into destitute refugees dependent on international charity.',
+                'Source A is extremely reliable as an official United Nations legal record showing the actual legislative alternatives debated by member states; it demonstrates that partition was chosen not because it was ideal, but because shared binational governance was judged completely unattainable.',
               provenance_clues: {
-                author:
-                  'International humanitarian relief photographer working with the Red Cross and UN.',
-                audience:
-                  'United Nations donor nations, Western charitable organizations, and the global public.',
+                author: 'UN Ad Hoc Secretariat cartographic drafting division.',
+                audience: 'UN General Assembly delegates and diplomatic legal advisors.',
                 motive:
-                  'To expose the catastrophic scale of the refugee emergency and secure urgent financial relief.',
+                  "To present clear territorial alternatives for the formal plenary vote on Palestine's future.",
                 hinge_question:
-                  'How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
+                  'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
               },
               teacher_notes: {
                 source_context:
-                  'Following the 1948 war, over 200,000 Palestinian refugees flooded into the narrow Gaza Strip, tripling its resident population overnight. Families lived in canvas tents with open sewers and severe food shortages under Egyptian military administration. **Hinge Question:** How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
+                  'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
               },
             },
           ],
@@ -3746,39 +3746,42 @@ const cme_new_data = {
             {
               id: 'cme_l3_source_b',
               letter: 'B',
-              title: 'Source B: Comparative Analysis of UN Partition Boundaries',
-              src: '/units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947_fixed.png',
-              image: '/units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947_fixed.png',
-              source: '/units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947_fixed.png',
+              title: 'Source B: Displaced Palestinian Families in Khan Yunis Camp (1948–1949)',
+              src: '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
+              image: '/images/nakba_unrwa_khan_younis_1948.jpg',
+              source:
+                '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
               caption:
-                'Cartographic diagram demonstrating the demographic concentration of Arab villages and landholdings across the Galilee, coastal plain, and central highlands before the 1948 war.',
-              desc: 'Demographic and territorial analysis map of Mandate Palestine.',
+                'Palestinian refugee mother and children sheltered beside temporary canvas conical tents in the overcrowded Khan Yunis refugee camp in the Gaza Strip, 1948–1949.',
+              desc: 'Documentary photograph of early Palestinian refugee encampments in Gaza.',
               provenance:
-                'Survey of Palestine / Anglo-American Committee of Inquiry records, 1946–1947.',
-              citation: 'Survey of Palestine / British Crown Copyright.',
+                'Getty Images / Hulton Archive (1354487454), UNRWA photographic collection, 1949.',
+              citation: 'Getty Images / UNRWA Archives.',
               hinge_question:
-                'Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
+                'How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
               source_context:
-                'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs. Israeli military planners argued that a state with a near-equal Arab minority and hostile bordering armies would face an insurmountable internal fifth column during wartime. **Hinge Question:** Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
+                'Following the 1948 war, over 200,000 Palestinian refugees flooded into the narrow Gaza Strip, tripling its resident population overnight. Families lived in canvas tents with open sewers and severe food shortages under Egyptian military administration. **Hinge Question:** How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
               context:
-                'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs.',
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+                'Over 200,000 Palestinian refugees flooded into the narrow Gaza Strip following the 1948 war.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
               enquiry_question:
-                'What was the purpose of British and UN surveyors in producing detailed village demographic maps like Source B?',
+                'How useful is Source B for an enquiry into the humanitarian consequences of the 1948 Palestinian exodus (Nakba)?',
               model_answer:
-                'Surveyors sought to provide empirical demographic data to establish whether a viable partition could be enacted without causing massive involuntary population displacement between mutually hostile communities.',
+                'Source B is profoundly useful because it captures the squalid, dehumanizing conditions endured by hundreds of thousands of displaced non-combatants, illustrating how the war permanently transformed thriving agrarian communities into destitute refugees dependent on international charity.',
               provenance_clues: {
-                author: 'British colonial civil surveyors and demographers.',
-                audience: 'UNSCOP commissioners and the British Colonial Office.',
+                author:
+                  'International humanitarian relief photographer working with the Red Cross and UN.',
+                audience:
+                  'United Nations donor nations, Western charitable organizations, and the global public.',
                 motive:
-                  'To assess whether ethnic partition was practically feasible without forced transfer.',
+                  'To expose the catastrophic scale of the refugee emergency and secure urgent financial relief.',
                 hinge_question:
-                  'Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
+                  'How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
               },
               teacher_notes: {
                 source_context:
-                  'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs. Israeli military planners argued that a state with a near-equal Arab minority and hostile bordering armies would face an insurmountable internal fifth column during wartime. **Hinge Question:** Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
+                  'Following the 1948 war, over 200,000 Palestinian refugees flooded into the narrow Gaza Strip, tripling its resident population overnight. Families lived in canvas tents with open sewers and severe food shortages under Egyptian military administration. **Hinge Question:** How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
               },
             },
           ],
@@ -3804,42 +3807,39 @@ const cme_new_data = {
             {
               id: 'cme_l3_source_c',
               letter: 'C',
-              title:
-                'Source C: UNRWA Emergency Bread & Ration Distribution to Displaced Palestinian Refugees (c. 1949)',
-              src: '/images/nakba_unrwa_women_bread_1948.jpg',
-              image: '/images/nakba_unrwa_women_bread_1948.jpg',
-              source: '/images/nakba_unrwa_women_bread_1948.jpg',
+              title: 'Source C: The 1949 Armistice Green Line Boundaries Map',
+              src: '/units/cme_new/assets/palestine_1949_map.png',
+              image: '/units/cme_new/assets/palestine_1949_map.png',
+              source: '/units/cme_new/assets/palestine_1949_map.png',
               caption:
-                'Archival photograph from the UNRWA Film & Photo Archive showing Palestinian refugee women and children in a temporary tent camp queuing to receive emergency flour and daily bread rations under UN General Assembly Resolution 302.',
-              desc: 'Archival photograph of Palestinian refugee women and children receiving emergency UNRWA rations in a tent encampment.',
-              provenance:
-                'Official documentary photograph by the United Nations Relief and Works Agency (UNRWA), c. 1949–1950. UN Archives.',
-              citation:
-                'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
+                'Map depicting the 1949 Armistice Agreements (Green Line) following the war: Israel expanded to 78% of Mandate territory; Jordan annexed the West Bank; Egypt administered the Gaza Strip.',
+              desc: 'Cartographic map of the 1949 Rhodes Armistice ceasefire demarcation lines.',
+              provenance: 'United Nations Truce Supervision Organization (UNTSO), Rhodes, 1949.',
+              citation: 'UNTSO / United Nations Archives.',
               hinge_question:
-                'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+                'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
               source_context:
-                'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+                'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
               context:
-                'UNRWA was established by UN Resolution 302 to provide relief for Palestinian refugees.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
+                'Bilateral armistice agreements were signed in Rhodes in 1949, establishing the Green Line.',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'What does Source C reveal about the daily living conditions and survival needs of Palestinian refugees following the 1948 Nakba?',
+                'How reliable is Source C for demonstrating the geopolitical outcome of the 1948–49 Arab-Israeli War?',
               model_answer:
-                'Source C reveals that displaced Palestinian refugees lived in severe destitution in tent encampments, completely dependent on emergency international aid and daily UNRWA bread distributions for their basic survival.',
+                'Source C is highly reliable because it records the precise military armistice lines negotiated under UN supervision; however, it reflects a temporary cessation of hostilities rather than a de jure peace treaty recognized by neighboring Arab states.',
               provenance_clues: {
-                author: 'United Nations General Assembly.',
+                author: 'UNTSO military surveyors and diplomatic negotiators.',
                 audience:
-                  'Member states, donor governments, and displaced Palestinian communities.',
+                  'Signatory states (Israel, Egypt, Jordan, Syria, Lebanon) and UN Security Council.',
                 motive:
-                  'To avert starvation and stabilize the Middle East through humanitarian aid while permanent political solutions were sought.',
+                  'To codify military ceasefire positions without prejudicing final territorial claims.',
                 hinge_question:
-                  'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+                  'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
               },
               teacher_notes: {
                 source_context:
-                  'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+                  'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
               },
             },
           ],
@@ -3877,9 +3877,9 @@ const cme_new_data = {
               question_badge: 'Cross-Referencing',
               question_type: 'Cross-Referencing',
               enquiry_question:
-                'How does Source D cross-reference with the Palestinian refugee experience shown in Source A to explain why the conflict became intractable?',
+                'How does Source D cross-reference with the Palestinian refugee experience shown in Source D to explain why the conflict became intractable?',
               model_answer:
-                'Source D demonstrates that as hundreds of thousands of Jewish refugees were resettled into vacant homes and lands across Israel, the physical reality on the ground was irrevocably altered, rendering the physical return of Palestinian refugees in Source A politically and demographically impossible for Israel.',
+                'Source D demonstrates that as hundreds of thousands of Jewish refugees were resettled into vacant homes and lands across Israel, the physical reality on the ground was irrevocably altered, rendering the physical return of Palestinian refugees in Source D politically and demographically impossible for Israel.',
               provenance_clues: {
                 author: 'Official photographer for the Ministry of Immigrant Absorption.',
                 audience:
@@ -3917,39 +3917,42 @@ const cme_new_data = {
             {
               id: 'cme_l3_source_e',
               letter: 'E',
-              title: 'Source E: UN Ad Hoc Committee Draft Partition Proposals (1947)',
-              src: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
-              image: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
-              source: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
+              title:
+                'Source E: UNRWA Emergency Bread & Ration Distribution to Displaced Palestinian Refugees (c. 1949)',
+              src: '/images/nakba_unrwa_women_bread_1948.jpg',
+              image: '/images/nakba_unrwa_women_bread_1948.jpg',
+              source: '/images/nakba_unrwa_women_bread_1948.jpg',
               caption:
-                'Cartographic comparison of the UNSCOP Majority Plan (partition with economic union) versus the Minority Plan (federal single state with autonomous cantons).',
-              desc: 'Official United Nations draft maps showing alternative constitutional models for Palestine.',
+                'Archival photograph from the UNRWA Film & Photo Archive showing Palestinian refugee women and children in a temporary tent camp queuing to receive emergency flour and daily bread rations under UN General Assembly Resolution 302.',
+              desc: 'Archival photograph of Palestinian refugee women and children receiving emergency UNRWA rations in a tent encampment.',
               provenance:
-                'United Nations Ad Hoc Committee on the Palestinian Question (A/AC.14/32), October 1947.',
-              citation: 'United Nations Archives, Geneva / New York.',
+                'Official documentary photograph by the United Nations Relief and Works Agency (UNRWA), c. 1949–1950. UN Archives.',
+              citation:
+                'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
               hinge_question:
-                'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+                'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
               source_context:
-                'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+                'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
               context:
-                'In 1947, the UN considered two solutions: full partition versus a single federal state.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+                'UNRWA was established by UN Resolution 302 to provide relief for Palestinian refugees.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                "How reliable is Source E for understanding the international diplomatic debate surrounding Palestine's constitutional future in 1947?",
+                'What does Source E reveal about the daily living conditions and survival needs of Palestinian refugees following the 1948 Nakba?',
               model_answer:
-                'Source E is extremely reliable as an official United Nations legal record showing the actual legislative alternatives debated by member states; it demonstrates that partition was chosen not because it was ideal, but because shared binational governance was judged completely unattainable.',
+                'Source E reveals that displaced Palestinian refugees lived in severe destitution in tent encampments, completely dependent on emergency international aid and daily UNRWA bread distributions for their basic survival.',
               provenance_clues: {
-                author: 'UN Ad Hoc Secretariat cartographic drafting division.',
-                audience: 'UN General Assembly delegates and diplomatic legal advisors.',
+                author: 'United Nations General Assembly.',
+                audience:
+                  'Member states, donor governments, and displaced Palestinian communities.',
                 motive:
-                  "To present clear territorial alternatives for the formal plenary vote on Palestine's future.",
+                  'To avert starvation and stabilize the Middle East through humanitarian aid while permanent political solutions were sought.',
                 hinge_question:
-                  'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+                  'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
               },
               teacher_notes: {
                 source_context:
-                  'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+                  'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
               },
             },
           ],
@@ -4380,7 +4383,45 @@ const cme_new_data = {
         {
           id: 'cme_l3_source_a',
           letter: 'A',
-          title: 'Source A: Displaced Palestinian Families in Khan Yunis Camp (1948–1949)',
+          title: 'Source A: UN Ad Hoc Committee Draft Partition Proposals (1947)',
+          src: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
+          image: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
+          source: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
+          caption:
+            'Cartographic comparison of the UNSCOP Majority Plan (partition with economic union) versus the Minority Plan (federal single state with autonomous cantons).',
+          desc: 'Official United Nations draft maps showing alternative constitutional models for Palestine.',
+          provenance:
+            'United Nations Ad Hoc Committee on the Palestinian Question (A/AC.14/32), October 1947.',
+          citation: 'United Nations Archives, Geneva / New York.',
+          hinge_question:
+            'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+          source_context:
+            'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+          context:
+            'In 1947, the UN considered two solutions: full partition versus a single federal state.',
+          question_badge: 'Reliability & Provenance',
+          question_type: 'Reliability & Provenance',
+          enquiry_question:
+            "How reliable is Source A for understanding the international diplomatic debate surrounding Palestine's constitutional future in 1947?",
+          model_answer:
+            'Source A is extremely reliable as an official United Nations legal record showing the actual legislative alternatives debated by member states; it demonstrates that partition was chosen not because it was ideal, but because shared binational governance was judged completely unattainable.',
+          provenance_clues: {
+            author: 'UN Ad Hoc Secretariat cartographic drafting division.',
+            audience: 'UN General Assembly delegates and diplomatic legal advisors.',
+            motive:
+              "To present clear territorial alternatives for the formal plenary vote on Palestine's future.",
+            hinge_question:
+              'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+          },
+          teacher_notes: {
+            source_context:
+              'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+          },
+        },
+        {
+          id: 'cme_l3_source_b',
+          letter: 'B',
+          title: 'Source B: Displaced Palestinian Families in Khan Yunis Camp (1948–1949)',
           src: '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
           image: '/images/nakba_unrwa_khan_younis_1948.jpg',
           source:
@@ -4400,9 +4441,9 @@ const cme_new_data = {
           question_badge: 'Historical Utility',
           question_type: 'Historical Utility',
           enquiry_question:
-            'How useful is Source A for an enquiry into the humanitarian consequences of the 1948 Palestinian exodus (Nakba)?',
+            'How useful is Source B for an enquiry into the humanitarian consequences of the 1948 Palestinian exodus (Nakba)?',
           model_answer:
-            'Source A is profoundly useful because it captures the squalid, dehumanizing conditions endured by hundreds of thousands of displaced non-combatants, illustrating how the war permanently transformed thriving agrarian communities into destitute refugees dependent on international charity.',
+            'Source B is profoundly useful because it captures the squalid, dehumanizing conditions endured by hundreds of thousands of displaced non-combatants, illustrating how the war permanently transformed thriving agrarian communities into destitute refugees dependent on international charity.',
           provenance_clues: {
             author:
               'International humanitarian relief photographer working with the Red Cross and UN.',
@@ -4419,81 +4460,41 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l3_source_b',
-          letter: 'B',
-          title: 'Source B: Comparative Analysis of UN Partition Boundaries',
-          src: '/units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947_fixed.png',
-          image: '/units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947_fixed.png',
-          source: '/units/cme_new/assets/UN_Partition_Plan_For_Palestine_1947_fixed.png',
-          caption:
-            'Cartographic diagram demonstrating the demographic concentration of Arab villages and landholdings across the Galilee, coastal plain, and central highlands before the 1948 war.',
-          desc: 'Demographic and territorial analysis map of Mandate Palestine.',
-          provenance:
-            'Survey of Palestine / Anglo-American Committee of Inquiry records, 1946–1947.',
-          citation: 'Survey of Palestine / British Crown Copyright.',
-          hinge_question:
-            'Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
-          source_context:
-            'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs. Israeli military planners argued that a state with a near-equal Arab minority and hostile bordering armies would face an insurmountable internal fifth column during wartime. **Hinge Question:** Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
-          context:
-            'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs.',
-          question_badge: 'Author’s Purpose',
-          question_type: 'Author’s Purpose',
-          enquiry_question:
-            'What was the purpose of British and UN surveyors in producing detailed village demographic maps like Source B?',
-          model_answer:
-            'Surveyors sought to provide empirical demographic data to establish whether a viable partition could be enacted without causing massive involuntary population displacement between mutually hostile communities.',
-          provenance_clues: {
-            author: 'British colonial civil surveyors and demographers.',
-            audience: 'UNSCOP commissioners and the British Colonial Office.',
-            motive:
-              'To assess whether ethnic partition was practically feasible without forced transfer.',
-            hinge_question:
-              'Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
-          },
-          teacher_notes: {
-            source_context:
-              'Under the UN partition proposal, the designated Jewish state contained approximately 500,000 Jews and 400,000 Arabs. Israeli military planners argued that a state with a near-equal Arab minority and hostile bordering armies would face an insurmountable internal fifth column during wartime. **Hinge Question:** Why did the presence of large Arab populations inside the proposed Jewish state create deep security fears for Zionist leaders?',
-          },
-        },
-        {
           id: 'cme_l3_source_c',
           letter: 'C',
-          title:
-            'Source C: UNRWA Emergency Bread & Ration Distribution to Displaced Palestinian Refugees (c. 1949)',
-          src: '/images/nakba_unrwa_women_bread_1948.jpg',
-          image: '/images/nakba_unrwa_women_bread_1948.jpg',
-          source: '/images/nakba_unrwa_women_bread_1948.jpg',
+          title: 'Source C: The 1949 Armistice Green Line Boundaries Map',
+          src: '/units/cme_new/assets/palestine_1949_map.png',
+          image: '/units/cme_new/assets/palestine_1949_map.png',
+          source: '/units/cme_new/assets/palestine_1949_map.png',
           caption:
-            'Archival photograph from the UNRWA Film & Photo Archive showing Palestinian refugee women and children in a temporary tent camp queuing to receive emergency flour and daily bread rations under UN General Assembly Resolution 302.',
-          desc: 'Archival photograph of Palestinian refugee women and children receiving emergency UNRWA rations in a tent encampment.',
-          provenance:
-            'Official documentary photograph by the United Nations Relief and Works Agency (UNRWA), c. 1949–1950. UN Archives.',
-          citation:
-            'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
+            'Map depicting the 1949 Armistice Agreements (Green Line) following the war: Israel expanded to 78% of Mandate territory; Jordan annexed the West Bank; Egypt administered the Gaza Strip.',
+          desc: 'Cartographic map of the 1949 Rhodes Armistice ceasefire demarcation lines.',
+          provenance: 'United Nations Truce Supervision Organization (UNTSO), Rhodes, 1949.',
+          citation: 'UNTSO / United Nations Archives.',
           hinge_question:
-            'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+            'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
           source_context:
-            'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+            'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
           context:
-            'UNRWA was established by UN Resolution 302 to provide relief for Palestinian refugees.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
+            'Bilateral armistice agreements were signed in Rhodes in 1949, establishing the Green Line.',
+          question_badge: 'Reliability & Provenance',
+          question_type: 'Reliability & Provenance',
           enquiry_question:
-            'What does Source C reveal about the daily living conditions and survival needs of Palestinian refugees following the 1948 Nakba?',
+            'How reliable is Source C for demonstrating the geopolitical outcome of the 1948–49 Arab-Israeli War?',
           model_answer:
-            'Source C reveals that displaced Palestinian refugees lived in severe destitution in tent encampments, completely dependent on emergency international aid and daily UNRWA bread distributions for their basic survival.',
+            'Source C is highly reliable because it records the precise military armistice lines negotiated under UN supervision; however, it reflects a temporary cessation of hostilities rather than a de jure peace treaty recognized by neighboring Arab states.',
           provenance_clues: {
-            author: 'United Nations General Assembly.',
-            audience: 'Member states, donor governments, and displaced Palestinian communities.',
+            author: 'UNTSO military surveyors and diplomatic negotiators.',
+            audience:
+              'Signatory states (Israel, Egypt, Jordan, Syria, Lebanon) and UN Security Council.',
             motive:
-              'To avert starvation and stabilize the Middle East through humanitarian aid while permanent political solutions were sought.',
+              'To codify military ceasefire positions without prejudicing final territorial claims.',
             hinge_question:
-              'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+              'Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
           },
           teacher_notes: {
             source_context:
-              'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
+              'Following nineteen months of warfare, bilateral armistice agreements were signed in Rhodes between Israel and Egypt, Lebanon, Jordan, and Syria. The resulting Green Line granted Israel 22% more territory than the UN partition plan, while no independent Palestinian state was established. **Hinge Question:** Why did the 1949 armistice agreements fail to create permanent, recognized international borders?',
           },
         },
         {
@@ -4517,9 +4518,9 @@ const cme_new_data = {
           question_badge: 'Cross-Referencing',
           question_type: 'Cross-Referencing',
           enquiry_question:
-            'How does Source D cross-reference with the Palestinian refugee experience shown in Source A to explain why the conflict became intractable?',
+            'How does Source D cross-reference with the Palestinian refugee experience shown in Source D to explain why the conflict became intractable?',
           model_answer:
-            'Source D demonstrates that as hundreds of thousands of Jewish refugees were resettled into vacant homes and lands across Israel, the physical reality on the ground was irrevocably altered, rendering the physical return of Palestinian refugees in Source A politically and demographically impossible for Israel.',
+            'Source D demonstrates that as hundreds of thousands of Jewish refugees were resettled into vacant homes and lands across Israel, the physical reality on the ground was irrevocably altered, rendering the physical return of Palestinian refugees in Source D politically and demographically impossible for Israel.',
           provenance_clues: {
             author: 'Official photographer for the Ministry of Immigrant Absorption.',
             audience:
@@ -4537,39 +4538,41 @@ const cme_new_data = {
         {
           id: 'cme_l3_source_e',
           letter: 'E',
-          title: 'Source E: UN Ad Hoc Committee Draft Partition Proposals (1947)',
-          src: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
-          image: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
-          source: '/units/cme_new/assets/cme_un_palestine_partition_versions_1947.jpg',
+          title:
+            'Source E: UNRWA Emergency Bread & Ration Distribution to Displaced Palestinian Refugees (c. 1949)',
+          src: '/images/nakba_unrwa_women_bread_1948.jpg',
+          image: '/images/nakba_unrwa_women_bread_1948.jpg',
+          source: '/images/nakba_unrwa_women_bread_1948.jpg',
           caption:
-            'Cartographic comparison of the UNSCOP Majority Plan (partition with economic union) versus the Minority Plan (federal single state with autonomous cantons).',
-          desc: 'Official United Nations draft maps showing alternative constitutional models for Palestine.',
+            'Archival photograph from the UNRWA Film & Photo Archive showing Palestinian refugee women and children in a temporary tent camp queuing to receive emergency flour and daily bread rations under UN General Assembly Resolution 302.',
+          desc: 'Archival photograph of Palestinian refugee women and children receiving emergency UNRWA rations in a tent encampment.',
           provenance:
-            'United Nations Ad Hoc Committee on the Palestinian Question (A/AC.14/32), October 1947.',
-          citation: 'United Nations Archives, Geneva / New York.',
+            'Official documentary photograph by the United Nations Relief and Works Agency (UNRWA), c. 1949–1950. UN Archives.',
+          citation:
+            'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
           hinge_question:
-            'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+            'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
           source_context:
-            'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+            'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
           context:
-            'In 1947, the UN considered two solutions: full partition versus a single federal state.',
-          question_badge: 'Reliability & Provenance',
-          question_type: 'Reliability & Provenance',
+            'UNRWA was established by UN Resolution 302 to provide relief for Palestinian refugees.',
+          question_badge: 'Source Inference',
+          question_type: 'Source Inference',
           enquiry_question:
-            "How reliable is Source E for understanding the international diplomatic debate surrounding Palestine's constitutional future in 1947?",
+            'What does Source E reveal about the daily living conditions and survival needs of Palestinian refugees following the 1948 Nakba?',
           model_answer:
-            'Source E is extremely reliable as an official United Nations legal record showing the actual legislative alternatives debated by member states; it demonstrates that partition was chosen not because it was ideal, but because shared binational governance was judged completely unattainable.',
+            'Source E reveals that displaced Palestinian refugees lived in severe destitution in tent encampments, completely dependent on emergency international aid and daily UNRWA bread distributions for their basic survival.',
           provenance_clues: {
-            author: 'UN Ad Hoc Secretariat cartographic drafting division.',
-            audience: 'UN General Assembly delegates and diplomatic legal advisors.',
+            author: 'United Nations General Assembly.',
+            audience: 'Member states, donor governments, and displaced Palestinian communities.',
             motive:
-              "To present clear territorial alternatives for the formal plenary vote on Palestine's future.",
+              'To avert starvation and stabilize the Middle East through humanitarian aid while permanent political solutions were sought.',
             hinge_question:
-              'Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+              'Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
           },
           teacher_notes: {
             source_context:
-              'In 1947, the UN considered two solutions: a majority plan proposing two independent states joined by economic union, and a minority plan proposing a single federal state with Jewish and Arab internal cantons. The federal model was rejected by both sides as unworkable given the intense nationalist animosity. **Hinge Question:** Why did the UN reject the federal single-state model in favor of full partition in November 1947?',
+              'UNRWA was created to carry out direct relief and public works programs for Palestine refugees. Unlike the standard UN refugee agency (UNHCR), UNRWA has a specific mandate covering only Palestine refugees, defining them as persons whose normal place of residence was Palestine between 1 June 1946 and 15 May 1948 and who lost both home and means of livelihood. **Hinge Question:** Why did Arab states insist on creating a dedicated agency (UNRWA) rather than folding Palestinian refugees into the UN High Commissioner for Refugees (UNHCR)?',
           },
         },
       ],
@@ -5562,7 +5565,7 @@ const cme_new_data = {
             tag: 'The Secret Conspiracy',
             para_ref: '[4.5]',
             workbook_question:
-              'How did the secret Protocol of Sèvres orchestrate a pretext for invading Egypt?',
+              'How did the secret Sèvres Agreement orchestrate a pretext for invading Egypt?',
             trigger:
               'Britain, France, and Israel secretly plan an attack; Israel invades the Sinai Desert, and Anglo-French forces bomb Egyptian airfields and land troops at Port Said.',
             because:
@@ -5574,7 +5577,7 @@ const cme_new_data = {
             exam_link:
               'Q2 Narrative Account: Showed how the imperial conspiracy collapsed under diplomatic and financial pressure from the superpowers.',
             question:
-              'How did the secret Protocol of Sèvres orchestrate a pretext for invading Egypt?',
+              'How did the secret Sèvres Agreement orchestrate a pretext for invading Egypt?',
           },
           {
             step: 5,
@@ -5669,38 +5672,40 @@ const cme_new_data = {
             {
               id: 'cme_l4_source_b',
               letter: 'B',
-              title: 'Source B: Front Page of Al-Ahram Announcing Nationalization (27 July 1956)',
-              src: '/images/cme_alahram_suez_1956.jpg',
-              image: '/images/cme_alahram_suez_1956.jpg',
-              source: '/images/cme_alahram_suez_1956.jpg',
+              title: 'Source B: British Psychological Warfare Propaganda Leaflet (November 1956)',
+              src: '/images/cme_nasser_1956.jpg',
+              image: '/images/british_psyops_leaflet_suez_1956.jpg',
+              source: '/images/cme_nasser_1956.jpg',
               caption:
-                "Front page of Egyptian daily newspaper Al-Ahram declaring in banner headlines: 'We Have Nationalized the Suez Canal Company' following Nasser's speech in Alexandria.",
-              desc: "Egyptian newspaper front page with celebratory headlines and Nasser's portrait.",
-              provenance: 'Al-Ahram Archives, Cairo, Issue No. 25482, 27 July 1956.',
-              citation: 'Al-Ahram, Cairo.',
+                'British psy-ops propaganda leaflet dropped by RAF bombers over Cairo and Alexandria during Operation Musketeer, warning civilians of airstrikes and blaming Nasser for the war.',
+              desc: 'Archival photograph of President Nasser during his historic Alexandria address.',
+              provenance:
+                'Egyptian State Information Service / AP Images (560726012), 26 July 1956.',
+              citation: 'Egyptian State Information Service / Associated Press.',
               hinge_question:
-                'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
+                'How did British aerial leaflets use psychological warfare to undermine Egyptian civilian support for Nasser during the Anglo-French assault?',
               source_context:
-                'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
+                "British psychological warfare teams printed millions of propaganda leaflets urging Egyptian civilians and soldiers to abandon Nasser's regime, claiming Britain was acting to protect international navigation. **Hinge Question:** How did British aerial leaflets use psychological warfare to undermine Egyptian civilian support for Nasser during the Anglo-French assault?",
               context:
-                'On 26 July 1956, Nasser announced the nationalization of the Suez Canal Company to fund the Aswan High Dam.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                'President Nasser delivered his historic three-hour address in Alexandria announcing canal nationalization.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How useful is Source B for an enquiry into Egyptian domestic attitudes toward the Suez Crisis in 1956?',
+                'What can you infer from Source B about the personal leadership style of Gamal Abdel Nasser during the Suez Crisis?',
               model_answer:
-                'Source B is immensely useful because its triumphalist tone and celebratory headlines capture the immense nationalist pride felt by Egyptians, who viewed taking control of the canal as reclaiming their sovereign wealth from decades of imperial exploitation.',
+                "Source B reveals how Britain utilized aerial propaganda drops to bypass Egyptian state censorship, attempting to fracture public unity and convince civilians that Nasser's reckless nationalization had brought unnecessary military devastation upon Egypt.",
               provenance_clues: {
-                author: 'Egyptian editorial staff of Al-Ahram under state censorship.',
-                audience: 'The Egyptian public and pan-Arab readers across the Middle East.',
+                author: 'Official Egyptian presidency press photographer.',
+                audience:
+                  'Domestic Egyptian crowds, Arab world radio listeners, and Western diplomats.',
                 motive:
-                  "To rally massive patriotic support behind Nasser's confrontation with Britain and France.",
+                  "To capture Nasser's magnetic popularity and project unyielding revolutionary resolve.",
                 hinge_question:
-                  'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
+                  "How did Nasser's use of radio broadcasting (Voice of the Arabs) amplify his charismatic authority across the entire Arab world?",
               },
               teacher_notes: {
                 source_context:
-                  'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
+                  "In a three-hour speech, Nasser uttered the code word 'Ferdinand de Lesseps', signalling Egyptian army units to seize the Suez Canal offices in Port Said, Ismailia, and Suez. His defiance of Britain transformed him into the undisputed champion of pan-Arab nationalism and the Non-Aligned Movement. **Hinge Question:** How did Nasser's use of radio broadcasting (Voice of the Arabs) amplify his charismatic authority across the entire Arab world?",
               },
             },
           ],
@@ -5726,40 +5731,38 @@ const cme_new_data = {
             {
               id: 'cme_l4_source_c',
               letter: 'C',
-              title: 'Source C: British Psychological Warfare Propaganda Leaflet (November 1956)',
-              src: '/images/cme_nasser_1956.jpg',
-              image: '/images/british_psyops_leaflet_suez_1956.jpg',
-              source: '/images/cme_nasser_1956.jpg',
+              title: 'Source C: Front Page of Al-Ahram Announcing Nationalization (27 July 1956)',
+              src: '/images/cme_alahram_suez_1956.jpg',
+              image: '/images/cme_alahram_suez_1956.jpg',
+              source: '/images/cme_alahram_suez_1956.jpg',
               caption:
-                'British psy-ops propaganda leaflet dropped by RAF bombers over Cairo and Alexandria during Operation Musketeer, warning civilians of airstrikes and blaming Nasser for the war.',
-              desc: 'Archival photograph of President Nasser during his historic Alexandria address.',
-              provenance:
-                'Egyptian State Information Service / AP Images (560726012), 26 July 1956.',
-              citation: 'Egyptian State Information Service / Associated Press.',
+                "Front page of Egyptian daily newspaper Al-Ahram declaring in banner headlines: 'We Have Nationalized the Suez Canal Company' following Nasser's speech in Alexandria.",
+              desc: "Egyptian newspaper front page with celebratory headlines and Nasser's portrait.",
+              provenance: 'Al-Ahram Archives, Cairo, Issue No. 25482, 27 July 1956.',
+              citation: 'Al-Ahram, Cairo.',
               hinge_question:
-                'How did British aerial leaflets use psychological warfare to undermine Egyptian civilian support for Nasser during the Anglo-French assault?',
+                'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
               source_context:
-                "British psychological warfare teams printed millions of propaganda leaflets urging Egyptian civilians and soldiers to abandon Nasser's regime, claiming Britain was acting to protect international navigation. **Hinge Question:** How did British aerial leaflets use psychological warfare to undermine Egyptian civilian support for Nasser during the Anglo-French assault?",
+                'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
               context:
-                'President Nasser delivered his historic three-hour address in Alexandria announcing canal nationalization.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
+                'On 26 July 1956, Nasser announced the nationalization of the Suez Canal Company to fund the Aswan High Dam.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
               enquiry_question:
-                'What can you infer from Source C about the personal leadership style of Gamal Abdel Nasser during the Suez Crisis?',
+                'How useful is Source C for an enquiry into Egyptian domestic attitudes toward the Suez Crisis in 1956?',
               model_answer:
-                "Source C reveals how Britain utilized aerial propaganda drops to bypass Egyptian state censorship, attempting to fracture public unity and convince civilians that Nasser's reckless nationalization had brought unnecessary military devastation upon Egypt.",
+                'Source C is immensely useful because its triumphalist tone and celebratory headlines capture the immense nationalist pride felt by Egyptians, who viewed taking control of the canal as reclaiming their sovereign wealth from decades of imperial exploitation.',
               provenance_clues: {
-                author: 'Official Egyptian presidency press photographer.',
-                audience:
-                  'Domestic Egyptian crowds, Arab world radio listeners, and Western diplomats.',
+                author: 'Egyptian editorial staff of Al-Ahram under state censorship.',
+                audience: 'The Egyptian public and pan-Arab readers across the Middle East.',
                 motive:
-                  "To capture Nasser's magnetic popularity and project unyielding revolutionary resolve.",
+                  "To rally massive patriotic support behind Nasser's confrontation with Britain and France.",
                 hinge_question:
-                  "How did Nasser's use of radio broadcasting (Voice of the Arabs) amplify his charismatic authority across the entire Arab world?",
+                  'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
               },
               teacher_notes: {
                 source_context:
-                  "In a three-hour speech, Nasser uttered the code word 'Ferdinand de Lesseps', signalling Egyptian army units to seize the Suez Canal offices in Port Said, Ismailia, and Suez. His defiance of Britain transformed him into the undisputed champion of pan-Arab nationalism and the Non-Aligned Movement. **Hinge Question:** How did Nasser's use of radio broadcasting (Voice of the Arabs) amplify his charismatic authority across the entire Arab world?",
+                  'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
               },
             },
           ],
@@ -5767,50 +5770,50 @@ const cme_new_data = {
         {
           title: 'The Secret Sèvres Plot & Invasion',
           paragraphs: [
-            '<span class="para-ref">[4.1]</span> Between 22 and 24 October 1956, senior British, French, and Israeli officials met covertly at a private villa in **Sèvres**, France. Anthony Eden, French Prime Minister Guy Mollet, and Israeli Prime Minister David Ben-Gurion signed the secret **Protocol of Sèvres**, orchestrating a cynical military conspiracy: Israel would launch a surprise invasion of the Sinai Peninsula toward the Suez Canal; Britain and France would then issue an ultimatum commanding both sides to withdraw ten miles from the waterway and intervene to "separate the combatants."',
+            '<span class="para-ref">[4.1]</span> Between 22 and 24 October 1956, senior British, French, and Israeli officials met covertly at a private villa in **Sèvres**, France. Anthony Eden, French Prime Minister Guy Mollet, and Israeli Prime Minister David Ben-Gurion signed the secret **Sèvres Agreement**, orchestrating a cynical military conspiracy: Israel would launch a surprise invasion of the Sinai Peninsula toward the Suez Canal; Britain and France would then issue an ultimatum commanding both sides to withdraw ten miles from the waterway and intervene to "separate the combatants."',
             '<span class="para-ref">[4.2]</span> On **29 October 1956**, Israeli paratroopers under Ariel Sharon dropped near the **Mitla Pass**, while Israeli armoured columns surged across the Sinai. On 30 October, London and Paris issued their pre-planned ultimatum, which Nasser predictably rejected. On 31 October, Anglo-French air forces bombed Egyptian airfields, destroying Nasser\'s air force, before dropping British paratroopers and Royal Marine commandos to seize **Port Said** on 5 November.',
           ],
           act: 4,
           act_title:
-            'Stage 4: The Secret Sèvres Plot & Invasion — How did the secret Protocol of Sèvres orchestrate a pretext for invading Egypt?',
+            'Stage 4: The Secret Sèvres Plot & Invasion — How did the secret Sèvres Agreement orchestrate a pretext for invading Egypt?',
           theme_heading: 'The Secret Sèvres Plot & Invasion',
-          text: '<span class="para-ref">[4.1]</span> Between 22 and 24 October 1956, senior British, French, and Israeli officials met covertly at a private villa in **Sèvres**, France. Anthony Eden, French Prime Minister Guy Mollet, and Israeli Prime Minister David Ben-Gurion signed the secret **Protocol of Sèvres**, orchestrating a cynical military conspiracy: Israel would launch a surprise invasion of the Sinai Peninsula toward the Suez Canal; Britain and France would then issue an ultimatum commanding both sides to withdraw ten miles from the waterway and intervene to "separate the combatants."\n\n<span class="para-ref">[4.2]</span> On **29 October 1956**, Israeli paratroopers under Ariel Sharon dropped near the **Mitla Pass**, while Israeli armoured columns surged across the Sinai. On 30 October, London and Paris issued their pre-planned ultimatum, which Nasser predictably rejected. On 31 October, Anglo-French air forces bombed Egyptian airfields, destroying Nasser\'s air force, before dropping British paratroopers and Royal Marine commandos to seize **Port Said** on 5 November.',
+          text: '<span class="para-ref">[4.1]</span> Between 22 and 24 October 1956, senior British, French, and Israeli officials met covertly at a private villa in **Sèvres**, France. Anthony Eden, French Prime Minister Guy Mollet, and Israeli Prime Minister David Ben-Gurion signed the secret **Sèvres Agreement**, orchestrating a cynical military conspiracy: Israel would launch a surprise invasion of the Sinai Peninsula toward the Suez Canal; Britain and France would then issue an ultimatum commanding both sides to withdraw ten miles from the waterway and intervene to "separate the combatants."\n\n<span class="para-ref">[4.2]</span> On **29 October 1956**, Israeli paratroopers under Ariel Sharon dropped near the **Mitla Pass**, while Israeli armoured columns surged across the Sinai. On 30 October, London and Paris issued their pre-planned ultimatum, which Nasser predictably rejected. On 31 October, Anglo-French air forces bombed Egyptian airfields, destroying Nasser\'s air force, before dropping British paratroopers and Royal Marine commandos to seize **Port Said** on 5 November.',
           sources: [
             {
               id: 'cme_l4_source_d',
               letter: 'D',
-              title: 'Source D: British Centurion Tanks in Port Said Streets (November 1956)',
-              src: '/images/cme_british_tanks_port_said_1956.jpg',
-              image: '/images/cme_british_tanks_port_said_1956.jpg',
-              source: '/images/cme_british_tanks_port_said_1956.jpg',
+              title: 'Source D: Military Operational Map of the 1956 Suez Campaign',
+              src: '/images/cme_suez_1956_campaign_map.jpg',
+              image: '/images/cme_suez_1956_campaign_map.jpg',
+              source: '/images/cme_suez_1956_campaign_map.jpg',
               caption:
-                'British Centurion tanks of the 6th Royal Tank Regiment advancing through the war-damaged commercial streets of Port Said during Operation Musketeer.',
-              desc: 'Military photograph of British heavy armour deployed during the Port Said landings.',
-              provenance: 'Imperial War Museum, London (IWM FLM 3478), November 1956.',
-              citation: 'Imperial War Museum, London.',
+                'Operational map tracing the Israeli paratrooper drop at Mitla Pass, IDF armored advances across Sinai, and Anglo-French sea landings at Port Said.',
+              desc: 'Operational theatre map showing the three-nation coordinated attack on Egypt.',
+              provenance: 'IDF Historical Branch / British Ministry of Defence Archives, 1956.',
+              citation: 'IDF Historical Archives / British MoD.',
               hinge_question:
-                'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
+                'How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
               source_context:
-                "Under the secret Protocol of Sèvres signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
+                'The map illustrates the tripartite campaign against Egypt. Israel captured the entire Sinai Peninsula in eight days, while British and French bombers destroyed the Egyptian air force and landed paratroopers in Port Said. The invasion ended when the United Nations deployed UNEF peacekeepers and forced total Anglo-French withdrawal. **Hinge Question:** How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
               context:
-                'British forces landed in Port Said under Operation Musketeer before being forced into an abrupt withdrawal by US pressure.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+                'Operational map tracing the coordinated Israeli, British, and French military attacks against Egypt in 1956.',
+              question_badge: 'Cross-Referencing',
+              question_type: 'Cross-Referencing',
               enquiry_question:
-                'How reliable is Source D for demonstrating the nature of the British military operation in Egypt in 1956?',
+                'How does Source D corroborate evidence that the British and French intervention was a pre-planned conspiracy with Israel rather than a genuine peacekeeping mission?',
               model_answer:
-                'Source D is highly reliable as an official photographic record of British mechanized firepower deployed in Egyptian urban centers; however, it obscures the reality that Britain was diplomatically isolated and economically powerless once Washington refused to back the pound.',
+                "Source D shows that the British and French landings occurred precisely along the canal axis timed exactly to intercept retreating Egyptian forces, directly disproving Eden's claim of an impartial peacekeeping intervention between warring armies.",
               provenance_clues: {
-                author: 'British Army Official Film and Photographic Unit.',
-                audience: 'British War Office, Ministry of Defence, and domestic newsreels.',
+                author: 'Joint allied military planning staff.',
+                audience: 'Operational task force commanders and naval headquarters.',
                 motive:
-                  'To demonstrate effective military execution and control over tactical objectives in Port Said.',
+                  'To coordinate synchronized air, amphibious, and armored maneuvers across Egypt.',
                 hinge_question:
-                  'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
+                  'How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
               },
               teacher_notes: {
                 source_context:
-                  "Under the secret Protocol of Sèvres signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
+                  'The map illustrates the tripartite campaign against Egypt. Israel captured the entire Sinai Peninsula in eight days, while British and French bombers destroyed the Egyptian air force and landed paratroopers in Port Said. The invasion ended when the United Nations deployed UNEF peacekeepers and forced total Anglo-French withdrawal. **Hinge Question:** How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
               },
             },
           ],
@@ -5836,38 +5839,38 @@ const cme_new_data = {
             {
               id: 'cme_l4_source_e',
               letter: 'E',
-              title: 'Source E: Military Operational Map of the 1956 Suez Campaign',
-              src: '/images/cme_suez_1956_campaign_map.jpg',
-              image: '/images/cme_suez_1956_campaign_map.jpg',
-              source: '/images/cme_suez_1956_campaign_map.jpg',
+              title: 'Source E: British Centurion Tanks in Port Said Streets (November 1956)',
+              src: '/images/cme_british_tanks_port_said_1956.jpg',
+              image: '/images/cme_british_tanks_port_said_1956.jpg',
+              source: '/images/cme_british_tanks_port_said_1956.jpg',
               caption:
-                'Operational map tracing the Israeli paratrooper drop at Mitla Pass, IDF armored advances across Sinai, and Anglo-French sea landings at Port Said.',
-              desc: 'Operational theatre map showing the three-nation coordinated attack on Egypt.',
-              provenance: 'IDF Historical Branch / British Ministry of Defence Archives, 1956.',
-              citation: 'IDF Historical Archives / British MoD.',
+                'British Centurion tanks of the 6th Royal Tank Regiment advancing through the war-damaged commercial streets of Port Said during Operation Musketeer.',
+              desc: 'Military photograph of British heavy armour deployed during the Port Said landings.',
+              provenance: 'Imperial War Museum, London (IWM FLM 3478), November 1956.',
+              citation: 'Imperial War Museum, London.',
               hinge_question:
-                'How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
+                'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
               source_context:
-                'The map illustrates the tripartite campaign against Egypt. Israel captured the entire Sinai Peninsula in eight days, while British and French bombers destroyed the Egyptian air force and landed paratroopers in Port Said. The invasion ended when the United Nations deployed UNEF peacekeepers and forced total Anglo-French withdrawal. **Hinge Question:** How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
+                "Under the secret Sèvres Agreement signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
               context:
-                'Operational map tracing the coordinated Israeli, British, and French military attacks against Egypt in 1956.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+                'British forces landed in Port Said under Operation Musketeer before being forced into an abrupt withdrawal by US pressure.',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'How does Source E corroborate evidence that the British and French intervention was a pre-planned conspiracy with Israel rather than a genuine peacekeeping mission?',
+                'How reliable is Source E for demonstrating the nature of the British military operation in Egypt in 1956?',
               model_answer:
-                "Source E shows that the British and French landings occurred precisely along the canal axis timed exactly to intercept retreating Egyptian forces, directly disproving Eden's claim of an impartial peacekeeping intervention between warring armies.",
+                'Source E is highly reliable as an official photographic record of British mechanized firepower deployed in Egyptian urban centers; however, it obscures the reality that Britain was diplomatically isolated and economically powerless once Washington refused to back the pound.',
               provenance_clues: {
-                author: 'Joint allied military planning staff.',
-                audience: 'Operational task force commanders and naval headquarters.',
+                author: 'British Army Official Film and Photographic Unit.',
+                audience: 'British War Office, Ministry of Defence, and domestic newsreels.',
                 motive:
-                  'To coordinate synchronized air, amphibious, and armored maneuvers across Egypt.',
+                  'To demonstrate effective military execution and control over tactical objectives in Port Said.',
                 hinge_question:
-                  'How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
+                  'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
               },
               teacher_notes: {
                 source_context:
-                  'The map illustrates the tripartite campaign against Egypt. Israel captured the entire Sinai Peninsula in eight days, while British and French bombers destroyed the Egyptian air force and landed paratroopers in Port Said. The invasion ended when the United Nations deployed UNEF peacekeepers and forced total Anglo-French withdrawal. **Hinge Question:** How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
+                  "Under the secret Sèvres Agreement signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
               },
             },
           ],
@@ -5917,44 +5920,7 @@ const cme_new_data = {
         {
           id: 'cme_l4_source_b',
           letter: 'B',
-          title: 'Source B: Front Page of Al-Ahram Announcing Nationalization (27 July 1956)',
-          src: '/images/cme_alahram_suez_1956.jpg',
-          image: '/images/cme_alahram_suez_1956.jpg',
-          source: '/images/cme_alahram_suez_1956.jpg',
-          caption:
-            "Front page of Egyptian daily newspaper Al-Ahram declaring in banner headlines: 'We Have Nationalized the Suez Canal Company' following Nasser's speech in Alexandria.",
-          desc: "Egyptian newspaper front page with celebratory headlines and Nasser's portrait.",
-          provenance: 'Al-Ahram Archives, Cairo, Issue No. 25482, 27 July 1956.',
-          citation: 'Al-Ahram, Cairo.',
-          hinge_question:
-            'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
-          source_context:
-            'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
-          context:
-            'On 26 July 1956, Nasser announced the nationalization of the Suez Canal Company to fund the Aswan High Dam.',
-          question_badge: 'Historical Utility',
-          question_type: 'Historical Utility',
-          enquiry_question:
-            'How useful is Source B for an enquiry into Egyptian domestic attitudes toward the Suez Crisis in 1956?',
-          model_answer:
-            'Source B is immensely useful because its triumphalist tone and celebratory headlines capture the immense nationalist pride felt by Egyptians, who viewed taking control of the canal as reclaiming their sovereign wealth from decades of imperial exploitation.',
-          provenance_clues: {
-            author: 'Egyptian editorial staff of Al-Ahram under state censorship.',
-            audience: 'The Egyptian public and pan-Arab readers across the Middle East.',
-            motive:
-              "To rally massive patriotic support behind Nasser's confrontation with Britain and France.",
-            hinge_question:
-              'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
-          },
-          teacher_notes: {
-            source_context:
-              'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
-          },
-        },
-        {
-          id: 'cme_l4_source_c',
-          letter: 'C',
-          title: 'Source C: British Psychological Warfare Propaganda Leaflet (November 1956)',
+          title: 'Source B: British Psychological Warfare Propaganda Leaflet (November 1956)',
           src: '/images/cme_nasser_1956.jpg',
           image: '/images/british_psyops_leaflet_suez_1956.jpg',
           source: '/images/cme_nasser_1956.jpg',
@@ -5972,9 +5938,9 @@ const cme_new_data = {
           question_badge: 'Source Inference',
           question_type: 'Source Inference',
           enquiry_question:
-            'What can you infer from Source C about the personal leadership style of Gamal Abdel Nasser during the Suez Crisis?',
+            'What can you infer from Source B about the personal leadership style of Gamal Abdel Nasser during the Suez Crisis?',
           model_answer:
-            "Source C reveals how Britain utilized aerial propaganda drops to bypass Egyptian state censorship, attempting to fracture public unity and convince civilians that Nasser's reckless nationalization had brought unnecessary military devastation upon Egypt.",
+            "Source B reveals how Britain utilized aerial propaganda drops to bypass Egyptian state censorship, attempting to fracture public unity and convince civilians that Nasser's reckless nationalization had brought unnecessary military devastation upon Egypt.",
           provenance_clues: {
             author: 'Official Egyptian presidency press photographer.',
             audience:
@@ -5990,46 +5956,46 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l4_source_d',
-          letter: 'D',
-          title: 'Source D: British Centurion Tanks in Port Said Streets (November 1956)',
-          src: '/images/cme_british_tanks_port_said_1956.jpg',
-          image: '/images/cme_british_tanks_port_said_1956.jpg',
-          source: '/images/cme_british_tanks_port_said_1956.jpg',
+          id: 'cme_l4_source_c',
+          letter: 'C',
+          title: 'Source C: Front Page of Al-Ahram Announcing Nationalization (27 July 1956)',
+          src: '/images/cme_alahram_suez_1956.jpg',
+          image: '/images/cme_alahram_suez_1956.jpg',
+          source: '/images/cme_alahram_suez_1956.jpg',
           caption:
-            'British Centurion tanks of the 6th Royal Tank Regiment advancing through the war-damaged commercial streets of Port Said during Operation Musketeer.',
-          desc: 'Military photograph of British heavy armour deployed during the Port Said landings.',
-          provenance: 'Imperial War Museum, London (IWM FLM 3478), November 1956.',
-          citation: 'Imperial War Museum, London.',
+            "Front page of Egyptian daily newspaper Al-Ahram declaring in banner headlines: 'We Have Nationalized the Suez Canal Company' following Nasser's speech in Alexandria.",
+          desc: "Egyptian newspaper front page with celebratory headlines and Nasser's portrait.",
+          provenance: 'Al-Ahram Archives, Cairo, Issue No. 25482, 27 July 1956.',
+          citation: 'Al-Ahram, Cairo.',
           hinge_question:
-            'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
+            'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
           source_context:
-            "Under the secret Protocol of Sèvres signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
+            'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
           context:
-            'British forces landed in Port Said under Operation Musketeer before being forced into an abrupt withdrawal by US pressure.',
-          question_badge: 'Reliability & Provenance',
-          question_type: 'Reliability & Provenance',
+            'On 26 July 1956, Nasser announced the nationalization of the Suez Canal Company to fund the Aswan High Dam.',
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
           enquiry_question:
-            'How reliable is Source D for demonstrating the nature of the British military operation in Egypt in 1956?',
+            'How useful is Source C for an enquiry into Egyptian domestic attitudes toward the Suez Crisis in 1956?',
           model_answer:
-            'Source D is highly reliable as an official photographic record of British mechanized firepower deployed in Egyptian urban centers; however, it obscures the reality that Britain was diplomatically isolated and economically powerless once Washington refused to back the pound.',
+            'Source C is immensely useful because its triumphalist tone and celebratory headlines capture the immense nationalist pride felt by Egyptians, who viewed taking control of the canal as reclaiming their sovereign wealth from decades of imperial exploitation.',
           provenance_clues: {
-            author: 'British Army Official Film and Photographic Unit.',
-            audience: 'British War Office, Ministry of Defence, and domestic newsreels.',
+            author: 'Egyptian editorial staff of Al-Ahram under state censorship.',
+            audience: 'The Egyptian public and pan-Arab readers across the Middle East.',
             motive:
-              'To demonstrate effective military execution and control over tactical objectives in Port Said.',
+              "To rally massive patriotic support behind Nasser's confrontation with Britain and France.",
             hinge_question:
-              'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
+              'Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
           },
           teacher_notes: {
             source_context:
-              "Under the secret Protocol of Sèvres signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
+              'On 26 July 1956, Nasser announced the nationalization of the French-British Suez Canal Company to fund the construction of the Aswan High Dam after the US and World Bank cancelled loan funding. The announcement provoked ecstatic popular celebrations across the Arab world. **Hinge Question:** Why was nationalizing the canal viewed by Egyptians as an essential act of national sovereignty rather than mere economic policy?',
           },
         },
         {
-          id: 'cme_l4_source_e',
-          letter: 'E',
-          title: 'Source E: Military Operational Map of the 1956 Suez Campaign',
+          id: 'cme_l4_source_d',
+          letter: 'D',
+          title: 'Source D: Military Operational Map of the 1956 Suez Campaign',
           src: '/images/cme_suez_1956_campaign_map.jpg',
           image: '/images/cme_suez_1956_campaign_map.jpg',
           source: '/images/cme_suez_1956_campaign_map.jpg',
@@ -6047,9 +6013,9 @@ const cme_new_data = {
           question_badge: 'Cross-Referencing',
           question_type: 'Cross-Referencing',
           enquiry_question:
-            'How does Source E corroborate evidence that the British and French intervention was a pre-planned conspiracy with Israel rather than a genuine peacekeeping mission?',
+            'How does Source D corroborate evidence that the British and French intervention was a pre-planned conspiracy with Israel rather than a genuine peacekeeping mission?',
           model_answer:
-            "Source E shows that the British and French landings occurred precisely along the canal axis timed exactly to intercept retreating Egyptian forces, directly disproving Eden's claim of an impartial peacekeeping intervention between warring armies.",
+            "Source D shows that the British and French landings occurred precisely along the canal axis timed exactly to intercept retreating Egyptian forces, directly disproving Eden's claim of an impartial peacekeeping intervention between warring armies.",
           provenance_clues: {
             author: 'Joint allied military planning staff.',
             audience: 'Operational task force commanders and naval headquarters.',
@@ -6061,6 +6027,43 @@ const cme_new_data = {
           teacher_notes: {
             source_context:
               'The map illustrates the tripartite campaign against Egypt. Israel captured the entire Sinai Peninsula in eight days, while British and French bombers destroyed the Egyptian air force and landed paratroopers in Port Said. The invasion ended when the United Nations deployed UNEF peacekeepers and forced total Anglo-French withdrawal. **Hinge Question:** How does the synchronized coordination between Israeli and British forces on this map expose the secret Sèvres collusion?',
+          },
+        },
+        {
+          id: 'cme_l4_source_e',
+          letter: 'E',
+          title: 'Source E: British Centurion Tanks in Port Said Streets (November 1956)',
+          src: '/images/cme_british_tanks_port_said_1956.jpg',
+          image: '/images/cme_british_tanks_port_said_1956.jpg',
+          source: '/images/cme_british_tanks_port_said_1956.jpg',
+          caption:
+            'British Centurion tanks of the 6th Royal Tank Regiment advancing through the war-damaged commercial streets of Port Said during Operation Musketeer.',
+          desc: 'Military photograph of British heavy armour deployed during the Port Said landings.',
+          provenance: 'Imperial War Museum, London (IWM FLM 3478), November 1956.',
+          citation: 'Imperial War Museum, London.',
+          hinge_question:
+            'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
+          source_context:
+            "Under the secret Sèvres Agreement signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
+          context:
+            'British forces landed in Port Said under Operation Musketeer before being forced into an abrupt withdrawal by US pressure.',
+          question_badge: 'Reliability & Provenance',
+          question_type: 'Reliability & Provenance',
+          enquiry_question:
+            'How reliable is Source E for demonstrating the nature of the British military operation in Egypt in 1956?',
+          model_answer:
+            'Source E is highly reliable as an official photographic record of British mechanized firepower deployed in Egyptian urban centers; however, it obscures the reality that Britain was diplomatically isolated and economically powerless once Washington refused to back the pound.',
+          provenance_clues: {
+            author: 'British Army Official Film and Photographic Unit.',
+            audience: 'British War Office, Ministry of Defence, and domestic newsreels.',
+            motive:
+              'To demonstrate effective military execution and control over tactical objectives in Port Said.',
+            hinge_question:
+              'Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?',
+          },
+          teacher_notes: {
+            source_context:
+              "Under the secret Sèvres Agreement signed with Israel and France, Israeli forces invaded Sinai on 29 October, providing Britain and France the pretext to issue an ultimatum and land troops to 'separate the combatants'. However, US President Eisenhower threatened financial sanctions against sterling, forcing a humiliating British ceasefire within days. **Hinge Question:** Why did the military success of the Anglo-French assault turn into a catastrophic political defeat?",
           },
         },
       ],
@@ -6605,9 +6608,9 @@ const cme_new_data = {
           duration: '14 mins 04 secs',
           pathway: 'Strategic Overview',
           teacher_guidance:
-            'Detailed cartographic breakdown of the secret Protocol of Sèvres collusion between Britain, France, and Israel to stage an Israeli attack on Sinai to justify Anglo-French intervention. Recommended Watch Window: 00:00–07:30 • Lesson Phase: Guided Instruction & Dual-Coding. Tone Alert: Objective military-cartographic animation; reveals the clandestine diplomatic deception that destroyed British international moral standing.',
+            'Detailed cartographic breakdown of the secret Sèvres Agreement collusion between Britain, France, and Israel to stage an Israeli attack on Sinai to justify Anglo-French intervention. Recommended Watch Window: 00:00–07:30 • Lesson Phase: Guided Instruction & Dual-Coding. Tone Alert: Objective military-cartographic animation; reveals the clandestine diplomatic deception that destroyed British international moral standing.',
           viewing_task:
-            '<ol><li><strong>[02:15] Recall:</strong> In which private villa outside Paris did British, French, and Israeli delegations sign the secret Protocol of Sèvres in October 1956?</li><li><strong>[04:20] Explain:</strong> What three-part military timetable did the conspirators arrange at Sèvres to provide Britain and France with a pretext to seize the Suez Canal?</li><li><strong>[06:10] Challenge:</strong> Analyze the strategic motives of Israel: why was Prime Minister David Ben-Gurion willing to collude with colonial powers Britain and France to invade the Sinai Peninsula?</li></ol>',
+            '<ol><li><strong>[02:15] Recall:</strong> In which private villa outside Paris did British, French, and Israeli delegations sign the secret Sèvres Agreement in October 1956?</li><li><strong>[04:20] Explain:</strong> What three-part military timetable did the conspirators arrange at Sèvres to provide Britain and France with a pretext to seize the Suez Canal?</li><li><strong>[06:10] Challenge:</strong> Analyze the strategic motives of Israel: why was Prime Minister David Ben-Gurion willing to collude with colonial powers Britain and France to invade the Sinai Peninsula?</li></ol>',
           model_answer:
             "<ol><li><strong>Recall:</strong> At a secluded private villa in Sèvres, south-west of Paris.</li><li><strong>Explain:</strong> Under the secret plan, Israel would launch an armored invasion of Sinai advancing toward the Canal; Britain and France would then issue an ultimatum ordering both Egyptian and Israeli forces to withdraw 10 miles from the waterway; when Egypt predictably refused to abandon its sovereign territory, Anglo-French forces would invade Port Said under the guise of 'separating the combatants' and restoring free navigation.</li><li><strong>Challenge:</strong> Israel felt existentially threatened by Egyptian-backed fedayeen cross-border guerrilla raids from Gaza, Egypt's blockade of the Straits of Tiran choking Israel's southern port of Eilat, and Nasser's massive 1955 Soviet/Czechoslovak arms deal. Invading Sinai offered Israel the opportunity to destroy Egyptian military infrastructure, reopen maritime access to the Red Sea, and break its regional isolation.</li></ol>",
         },
@@ -6824,39 +6827,41 @@ const cme_new_data = {
             {
               id: 'cme_l5_source_a',
               letter: 'A',
-              title: "Source A: Israel's National Water Carrier Schematic Map (1964)",
-              src: '/images/israel_national_water_carrier_1964_map.png',
-              image: '/images/israel_national_water_carrier_1964_map.png',
-              source: '/images/israel_national_water_carrier_1964_map.png',
+              title: 'Source A: President Nasser During the Non-Aligned Summit (1962)',
+              src: '/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg',
+              image:
+                '/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg',
+              source:
+                '/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg',
               caption:
-                "Engineering map of Israel's National Water Carrier pipeline network, pumping fresh water from the Sea of Galilee across the coastal plain down to the arid Negev Desert.",
-              desc: "Technical cartographic diagram of Israel's trans-national water diversion project.",
-              provenance: 'Mekorot Water Company Archives, Tel Aviv, 1964.',
-              citation: 'Mekorot Archives, Tel Aviv.',
+                'President Gamal Abdel Nasser photographed in Belgrade articulating his doctrine of Arab socialism, anti-imperialism, and leadership of the Non-Aligned Movement.',
+              desc: 'Archival portrait of President Nasser by Yugoslav photographer Stevan Kragujević.',
+              provenance:
+                'Museum of Yugoslav History / Stevan Kragujević Collection, Belgrade, 1962.',
+              citation: 'Museum of Yugoslav History, Belgrade.',
               hinge_question:
-                "Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
+                "How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
               source_context:
-                "Completed in 1964, the National Water Carrier diverted water from Lake Kinneret (Sea of Galilee) to enable agriculture and settlement growth in the southern desert. Arab states viewed this as an illegal appropriation of international waters designed to facilitate massive Jewish immigration and expand Israel's demographic strength. **Hinge Question:** Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
+                "Nasser projected Egypt as the leader of both the Arab world and the Third World. When Syrian leaders and Jordan accused him in 1966 of 'hiding behind UNEF' peacekeepers in Sinai while Syrians faced Israeli attacks, Nasser felt compelled to take aggressive actions in May 1967 to preserve his pan-Arab prestige. **Hinge Question:** How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
               context:
-                'In 1964, Israel completed the National Water Carrier, pumping water from Lake Kinneret to the Negev.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                'President Nasser projected Egypt as the leading force of pan-Arab nationalism and the Non-Aligned Movement.',
+              question_badge: 'Author’s Purpose',
+              question_type: 'Author’s Purpose',
               enquiry_question:
-                'How useful is Source A for an inquiry into the root causes of the rising border tensions between Israel and its Arab neighbours between 1964 and 1967?',
+                'What was the significance of Nasser projecting an image of unshakeable international stature in Source A during the 1960s?',
               model_answer:
-                'Source A is exceptionally useful because it illustrates the hydraulic geography of the conflict, proving that competition over scarce water resources was just as decisive in triggering military confrontation as political ideology and border skirmishes.',
+                'Projecting sovereign stature enabled Nasser to extract massive Soviet economic and military hardware while positioning Egypt as an untouchable superpower within Arab politics, which later made any public retreat before Israel unthinkable.',
               provenance_clues: {
-                author: 'Mekorot civil engineers and Israeli water planning authority.',
-                audience:
-                  'Israeli government ministries, agricultural kibbutz planners, and international engineers.',
+                author: 'Stevan Kragujević, official Yugoslav state photojournalist.',
+                audience: 'International diplomatic press and Non-Aligned delegations.',
                 motive:
-                  "To document the completion of the country's most vital economic infrastructure project.",
+                  'To portray Nasser as an influential, dignified global statesman alongside Tito and Nehru.',
                 hinge_question:
-                  "Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
+                  "How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
               },
               teacher_notes: {
                 source_context:
-                  "Completed in 1964, the National Water Carrier diverted water from Lake Kinneret (Sea of Galilee) to enable agriculture and settlement growth in the southern desert. Arab states viewed this as an illegal appropriation of international waters designed to facilitate massive Jewish immigration and expand Israel's demographic strength. **Hinge Question:** Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
+                  "Nasser projected Egypt as the leader of both the Arab world and the Third World. When Syrian leaders and Jordan accused him in 1966 of 'hiding behind UNEF' peacekeepers in Sinai while Syrians faced Israeli attacks, Nasser felt compelled to take aggressive actions in May 1967 to preserve his pan-Arab prestige. **Hinge Question:** How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
               },
             },
           ],
@@ -6876,38 +6881,39 @@ const cme_new_data = {
             {
               id: 'cme_l5_source_b',
               letter: 'B',
-              title: 'Source B: Relief Map of the Golan Heights Artillery Positions (1967)',
-              src: '/images/cme_golan_heights_relief_map_1967.jpg',
-              image: '/images/cme_golan_heights_relief_map_1967.jpg',
-              source: '/images/cme_golan_heights_relief_map_1967.jpg',
+              title: "Source B: Israel's National Water Carrier Schematic Map (1964)",
+              src: '/images/israel_national_water_carrier_1964_map.png',
+              image: '/images/israel_national_water_carrier_1964_map.png',
+              source: '/images/israel_national_water_carrier_1964_map.png',
               caption:
-                'Topographical relief map illustrating Syrian artillery emplacements perched 1,000 feet above Israeli farming kibbutzim (Ein Gev, Tel Katzir) in the vulnerable Hula Valley below.',
-              desc: 'Topographical military map showing the strategic elevation of the Golan Heights.',
-              provenance: 'IDF Northern Command Intelligence Division, Nazareth, 1967.',
-              citation: 'IDF Historical Branch.',
+                "Engineering map of Israel's National Water Carrier pipeline network, pumping fresh water from the Sea of Galilee across the coastal plain down to the arid Negev Desert.",
+              desc: "Technical cartographic diagram of Israel's trans-national water diversion project.",
+              provenance: 'Mekorot Water Company Archives, Tel Aviv, 1964.',
+              citation: 'Mekorot Archives, Tel Aviv.',
               hinge_question:
-                'How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
+                "Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
               source_context:
-                'From 1948 to 1967, the Syrian Army fortified the basalt ridge of the Golan Heights with Soviet artillery bunkers. Syrian gunners regularly shelled Israeli farmers cultivating land in the Demilitarized Zones (DMZs), while Israel deliberately sent armoured tractors into disputed fields to provoke exchanges. **Hinge Question:** How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
+                "Completed in 1964, the National Water Carrier diverted water from Lake Kinneret (Sea of Galilee) to enable agriculture and settlement growth in the southern desert. Arab states viewed this as an illegal appropriation of international waters designed to facilitate massive Jewish immigration and expand Israel's demographic strength. **Hinge Question:** Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
               context:
-                'Syrian forces fortified the Golan Heights, routinely shelling Israeli settlements in the valley below.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
+                'In 1964, Israel completed the National Water Carrier, pumping water from Lake Kinneret to the Negev.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
               enquiry_question:
-                'What can you infer from Source B about why Israeli military leaders considered the Golan Heights an unbearable security threat before 1967?',
+                'How useful is Source B for an inquiry into the root causes of the rising border tensions between Israel and its Arab neighbours between 1964 and 1967?',
               model_answer:
-                'Source B demonstrates that Syrian forces held commanding high ground that left Israeli border kibbutzim in the valley completely exposed to direct artillery observation and bombardment, making normal civilian life virtually impossible without seizing the plateau.',
+                'Source B is exceptionally useful because it illustrates the hydraulic geography of the conflict, proving that competition over scarce water resources was just as decisive in triggering military confrontation as political ideology and border skirmishes.',
               provenance_clues: {
-                author: 'IDF Northern Command intelligence cartographers.',
-                audience: 'General Staff officers and Cabinet defense ministers.',
+                author: 'Mekorot civil engineers and Israeli water planning authority.',
+                audience:
+                  'Israeli government ministries, agricultural kibbutz planners, and international engineers.',
                 motive:
-                  'To illustrate tactical vulnerabilities and provide operational planning for preemptive strike operations.',
+                  "To document the completion of the country's most vital economic infrastructure project.",
                 hinge_question:
-                  'How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
+                  "Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
               },
               teacher_notes: {
                 source_context:
-                  'From 1948 to 1967, the Syrian Army fortified the basalt ridge of the Golan Heights with Soviet artillery bunkers. Syrian gunners regularly shelled Israeli farmers cultivating land in the Demilitarized Zones (DMZs), while Israel deliberately sent armoured tractors into disputed fields to provoke exchanges. **Hinge Question:** How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
+                  "Completed in 1964, the National Water Carrier diverted water from Lake Kinneret (Sea of Galilee) to enable agriculture and settlement growth in the southern desert. Arab states viewed this as an illegal appropriation of international waters designed to facilitate massive Jewish immigration and expand Israel's demographic strength. **Hinge Question:** Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
               },
             },
           ],
@@ -6933,38 +6939,38 @@ const cme_new_data = {
             {
               id: 'cme_l5_source_c',
               letter: 'C',
-              title: 'Source C: The Arab Headwaters Diversion Plan Schematic (1964–1966)',
-              src: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
-              image: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
-              source: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
+              title: 'Source C: Relief Map of the Golan Heights Artillery Positions (1967)',
+              src: '/images/cme_golan_heights_relief_map_1967.jpg',
+              image: '/images/cme_golan_heights_relief_map_1967.jpg',
+              source: '/images/cme_golan_heights_relief_map_1967.jpg',
               caption:
-                'Schematic flow chart illustrating the Arab League plan to divert the Hasbani and Banyas tributaries away from the Jordan River basin into the Yarmouk River in Jordan.',
-              desc: 'Cartographic flow diagram of the disputed Jordan River headwaters.',
-              provenance: 'Arab League Permanent Military Committee, Cairo, 1965.',
-              citation: 'Arab League Archives, Cairo.',
+                'Topographical relief map illustrating Syrian artillery emplacements perched 1,000 feet above Israeli farming kibbutzim (Ein Gev, Tel Katzir) in the vulnerable Hula Valley below.',
+              desc: 'Topographical military map showing the strategic elevation of the Golan Heights.',
+              provenance: 'IDF Northern Command Intelligence Division, Nazareth, 1967.',
+              citation: 'IDF Historical Branch.',
               hinge_question:
-                'Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?',
+                'How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
               source_context:
-                "In response to Israel's National Water Carrier, the Arab League resolved to divert the Banyas and Hasbani rivers to cut Israel's water supply by 35%. Between 1965 and 1966, Israeli tanks and aircraft repeatedly bombed the Syrian engineering construction sites, completely halting the diversion. **Hinge Question:** Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?",
+                'From 1948 to 1967, the Syrian Army fortified the basalt ridge of the Golan Heights with Soviet artillery bunkers. Syrian gunners regularly shelled Israeli farmers cultivating land in the Demilitarized Zones (DMZs), while Israel deliberately sent armoured tractors into disputed fields to provoke exchanges. **Hinge Question:** How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
               context:
-                'The Arab League initiated a diversion project on the Banyas and Hasbani rivers, which Israel destroyed via airstrikes.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+                'Syrian forces fortified the Golan Heights, routinely shelling Israeli settlements in the valley below.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How does Source C cross-reference with Source A to explain why border clashes escalated into air combat over Damascus by April 1967?',
+                'What can you infer from Source C about why Israeli military leaders considered the Golan Heights an unbearable security threat before 1967?',
               model_answer:
-                'Source C demonstrates that Arab states attempted to physically cut off the water supply feeding the carrier in Source A, prompting Israel to retaliate with decisive military strikes that directly destroyed Syrian engineering machinery and set the stage for open war.',
+                'Source C demonstrates that Syrian forces held commanding high ground that left Israeli border kibbutzim in the valley completely exposed to direct artillery observation and bombardment, making normal civilian life virtually impossible without seizing the plateau.',
               provenance_clues: {
-                author: 'Arab League water resources and military advisory commission.',
-                audience: 'Heads of Arab states and military chiefs of staff.',
+                author: 'IDF Northern Command intelligence cartographers.',
+                audience: 'General Staff officers and Cabinet defense ministers.',
                 motive:
-                  "To devise a non-military strategy to neutralize Israel's agricultural expansion by choking its primary water supply.",
+                  'To illustrate tactical vulnerabilities and provide operational planning for preemptive strike operations.',
                 hinge_question:
-                  'Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?',
+                  'How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
               },
               teacher_notes: {
                 source_context:
-                  "In response to Israel's National Water Carrier, the Arab League resolved to divert the Banyas and Hasbani rivers to cut Israel's water supply by 35%. Between 1965 and 1966, Israeli tanks and aircraft repeatedly bombed the Syrian engineering construction sites, completely halting the diversion. **Hinge Question:** Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?",
+                  'From 1948 to 1967, the Syrian Army fortified the basalt ridge of the Golan Heights with Soviet artillery bunkers. Syrian gunners regularly shelled Israeli farmers cultivating land in the Demilitarized Zones (DMZs), while Israel deliberately sent armoured tractors into disputed fields to provoke exchanges. **Hinge Question:** How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
               },
             },
           ],
@@ -6984,41 +6990,38 @@ const cme_new_data = {
             {
               id: 'cme_l5_source_d',
               letter: 'D',
-              title: 'Source D: President Nasser During the Non-Aligned Summit (1962)',
-              src: '/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg',
-              image:
-                '/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg',
-              source:
-                '/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg',
+              title: 'Source D: The Arab Headwaters Diversion Plan Schematic (1964–1966)',
+              src: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
+              image: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
+              source: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
               caption:
-                'President Gamal Abdel Nasser photographed in Belgrade articulating his doctrine of Arab socialism, anti-imperialism, and leadership of the Non-Aligned Movement.',
-              desc: 'Archival portrait of President Nasser by Yugoslav photographer Stevan Kragujević.',
-              provenance:
-                'Museum of Yugoslav History / Stevan Kragujević Collection, Belgrade, 1962.',
-              citation: 'Museum of Yugoslav History, Belgrade.',
+                'Schematic flow chart illustrating the Arab League plan to divert the Hasbani and Banyas tributaries away from the Jordan River basin into the Yarmouk River in Jordan.',
+              desc: 'Cartographic flow diagram of the disputed Jordan River headwaters.',
+              provenance: 'Arab League Permanent Military Committee, Cairo, 1965.',
+              citation: 'Arab League Archives, Cairo.',
               hinge_question:
-                "How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
+                'Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?',
               source_context:
-                "Nasser projected Egypt as the leader of both the Arab world and the Third World. When Syrian leaders and Jordan accused him in 1966 of 'hiding behind UNEF' peacekeepers in Sinai while Syrians faced Israeli attacks, Nasser felt compelled to take aggressive actions in May 1967 to preserve his pan-Arab prestige. **Hinge Question:** How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
+                "In response to Israel's National Water Carrier, the Arab League resolved to divert the Banyas and Hasbani rivers to cut Israel's water supply by 35%. Between 1965 and 1966, Israeli tanks and aircraft repeatedly bombed the Syrian engineering construction sites, completely halting the diversion. **Hinge Question:** Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?",
               context:
-                'President Nasser projected Egypt as the leading force of pan-Arab nationalism and the Non-Aligned Movement.',
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+                'The Arab League initiated a diversion project on the Banyas and Hasbani rivers, which Israel destroyed via airstrikes.',
+              question_badge: 'Cross-Referencing',
+              question_type: 'Cross-Referencing',
               enquiry_question:
-                'What was the significance of Nasser projecting an image of unshakeable international stature in Source D during the 1960s?',
+                'How does Source D cross-reference with Source D to explain why border clashes escalated into air combat over Damascus by April 1967?',
               model_answer:
-                'Projecting sovereign stature enabled Nasser to extract massive Soviet economic and military hardware while positioning Egypt as an untouchable superpower within Arab politics, which later made any public retreat before Israel unthinkable.',
+                'Source D demonstrates that Arab states attempted to physically cut off the water supply feeding the carrier in Source D, prompting Israel to retaliate with decisive military strikes that directly destroyed Syrian engineering machinery and set the stage for open war.',
               provenance_clues: {
-                author: 'Stevan Kragujević, official Yugoslav state photojournalist.',
-                audience: 'International diplomatic press and Non-Aligned delegations.',
+                author: 'Arab League water resources and military advisory commission.',
+                audience: 'Heads of Arab states and military chiefs of staff.',
                 motive:
-                  'To portray Nasser as an influential, dignified global statesman alongside Tito and Nehru.',
+                  "To devise a non-military strategy to neutralize Israel's agricultural expansion by choking its primary water supply.",
                 hinge_question:
-                  "How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
+                  'Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?',
               },
               teacher_notes: {
                 source_context:
-                  "Nasser projected Egypt as the leader of both the Arab world and the Third World. When Syrian leaders and Jordan accused him in 1966 of 'hiding behind UNEF' peacekeepers in Sinai while Syrians faced Israeli attacks, Nasser felt compelled to take aggressive actions in May 1967 to preserve his pan-Arab prestige. **Hinge Question:** How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
+                  "In response to Israel's National Water Carrier, the Arab League resolved to divert the Banyas and Hasbani rivers to cut Israel's water supply by 35%. Between 1965 and 1966, Israeli tanks and aircraft repeatedly bombed the Syrian engineering construction sites, completely halting the diversion. **Hinge Question:** Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?",
               },
             },
           ],
@@ -7087,119 +7090,7 @@ const cme_new_data = {
         {
           id: 'cme_l5_source_a',
           letter: 'A',
-          title: "Source A: Israel's National Water Carrier Schematic Map (1964)",
-          src: '/images/israel_national_water_carrier_1964_map.png',
-          image: '/images/israel_national_water_carrier_1964_map.png',
-          source: '/images/israel_national_water_carrier_1964_map.png',
-          caption:
-            "Engineering map of Israel's National Water Carrier pipeline network, pumping fresh water from the Sea of Galilee across the coastal plain down to the arid Negev Desert.",
-          desc: "Technical cartographic diagram of Israel's trans-national water diversion project.",
-          provenance: 'Mekorot Water Company Archives, Tel Aviv, 1964.',
-          citation: 'Mekorot Archives, Tel Aviv.',
-          hinge_question:
-            "Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
-          source_context:
-            "Completed in 1964, the National Water Carrier diverted water from Lake Kinneret (Sea of Galilee) to enable agriculture and settlement growth in the southern desert. Arab states viewed this as an illegal appropriation of international waters designed to facilitate massive Jewish immigration and expand Israel's demographic strength. **Hinge Question:** Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
-          context:
-            'In 1964, Israel completed the National Water Carrier, pumping water from Lake Kinneret to the Negev.',
-          question_badge: 'Historical Utility',
-          question_type: 'Historical Utility',
-          enquiry_question:
-            'How useful is Source A for an inquiry into the root causes of the rising border tensions between Israel and its Arab neighbours between 1964 and 1967?',
-          model_answer:
-            'Source A is exceptionally useful because it illustrates the hydraulic geography of the conflict, proving that competition over scarce water resources was just as decisive in triggering military confrontation as political ideology and border skirmishes.',
-          provenance_clues: {
-            author: 'Mekorot civil engineers and Israeli water planning authority.',
-            audience:
-              'Israeli government ministries, agricultural kibbutz planners, and international engineers.',
-            motive:
-              "To document the completion of the country's most vital economic infrastructure project.",
-            hinge_question:
-              "Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
-          },
-          teacher_notes: {
-            source_context:
-              "Completed in 1964, the National Water Carrier diverted water from Lake Kinneret (Sea of Galilee) to enable agriculture and settlement growth in the southern desert. Arab states viewed this as an illegal appropriation of international waters designed to facilitate massive Jewish immigration and expand Israel's demographic strength. **Hinge Question:** Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
-          },
-        },
-        {
-          id: 'cme_l5_source_b',
-          letter: 'B',
-          title: 'Source B: Relief Map of the Golan Heights Artillery Positions (1967)',
-          src: '/images/cme_golan_heights_relief_map_1967.jpg',
-          image: '/images/cme_golan_heights_relief_map_1967.jpg',
-          source: '/images/cme_golan_heights_relief_map_1967.jpg',
-          caption:
-            'Topographical relief map illustrating Syrian artillery emplacements perched 1,000 feet above Israeli farming kibbutzim (Ein Gev, Tel Katzir) in the vulnerable Hula Valley below.',
-          desc: 'Topographical military map showing the strategic elevation of the Golan Heights.',
-          provenance: 'IDF Northern Command Intelligence Division, Nazareth, 1967.',
-          citation: 'IDF Historical Branch.',
-          hinge_question:
-            'How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
-          source_context:
-            'From 1948 to 1967, the Syrian Army fortified the basalt ridge of the Golan Heights with Soviet artillery bunkers. Syrian gunners regularly shelled Israeli farmers cultivating land in the Demilitarized Zones (DMZs), while Israel deliberately sent armoured tractors into disputed fields to provoke exchanges. **Hinge Question:** How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
-          context:
-            'Syrian forces fortified the Golan Heights, routinely shelling Israeli settlements in the valley below.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
-          enquiry_question:
-            'What can you infer from Source B about why Israeli military leaders considered the Golan Heights an unbearable security threat before 1967?',
-          model_answer:
-            'Source B demonstrates that Syrian forces held commanding high ground that left Israeli border kibbutzim in the valley completely exposed to direct artillery observation and bombardment, making normal civilian life virtually impossible without seizing the plateau.',
-          provenance_clues: {
-            author: 'IDF Northern Command intelligence cartographers.',
-            audience: 'General Staff officers and Cabinet defense ministers.',
-            motive:
-              'To illustrate tactical vulnerabilities and provide operational planning for preemptive strike operations.',
-            hinge_question:
-              'How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
-          },
-          teacher_notes: {
-            source_context:
-              'From 1948 to 1967, the Syrian Army fortified the basalt ridge of the Golan Heights with Soviet artillery bunkers. Syrian gunners regularly shelled Israeli farmers cultivating land in the Demilitarized Zones (DMZs), while Israel deliberately sent armoured tractors into disputed fields to provoke exchanges. **Hinge Question:** How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
-          },
-        },
-        {
-          id: 'cme_l5_source_c',
-          letter: 'C',
-          title: 'Source C: The Arab Headwaters Diversion Plan Schematic (1964–1966)',
-          src: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
-          image: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
-          source: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
-          caption:
-            'Schematic flow chart illustrating the Arab League plan to divert the Hasbani and Banyas tributaries away from the Jordan River basin into the Yarmouk River in Jordan.',
-          desc: 'Cartographic flow diagram of the disputed Jordan River headwaters.',
-          provenance: 'Arab League Permanent Military Committee, Cairo, 1965.',
-          citation: 'Arab League Archives, Cairo.',
-          hinge_question:
-            'Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?',
-          source_context:
-            "In response to Israel's National Water Carrier, the Arab League resolved to divert the Banyas and Hasbani rivers to cut Israel's water supply by 35%. Between 1965 and 1966, Israeli tanks and aircraft repeatedly bombed the Syrian engineering construction sites, completely halting the diversion. **Hinge Question:** Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?",
-          context:
-            'The Arab League initiated a diversion project on the Banyas and Hasbani rivers, which Israel destroyed via airstrikes.',
-          question_badge: 'Cross-Referencing',
-          question_type: 'Cross-Referencing',
-          enquiry_question:
-            'How does Source C cross-reference with Source A to explain why border clashes escalated into air combat over Damascus by April 1967?',
-          model_answer:
-            'Source C demonstrates that Arab states attempted to physically cut off the water supply feeding the carrier in Source A, prompting Israel to retaliate with decisive military strikes that directly destroyed Syrian engineering machinery and set the stage for open war.',
-          provenance_clues: {
-            author: 'Arab League water resources and military advisory commission.',
-            audience: 'Heads of Arab states and military chiefs of staff.',
-            motive:
-              "To devise a non-military strategy to neutralize Israel's agricultural expansion by choking its primary water supply.",
-            hinge_question:
-              'Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?',
-          },
-          teacher_notes: {
-            source_context:
-              "In response to Israel's National Water Carrier, the Arab League resolved to divert the Banyas and Hasbani rivers to cut Israel's water supply by 35%. Between 1965 and 1966, Israeli tanks and aircraft repeatedly bombed the Syrian engineering construction sites, completely halting the diversion. **Hinge Question:** Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?",
-          },
-        },
-        {
-          id: 'cme_l5_source_d',
-          letter: 'D',
-          title: 'Source D: President Nasser During the Non-Aligned Summit (1962)',
+          title: 'Source A: President Nasser During the Non-Aligned Summit (1962)',
           src: '/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg',
           image:
             '/units/cme_new/assets/cme_stevan_kragujevic__gamal_abdel_naser_u_beogradu__1962.jpg',
@@ -7219,7 +7110,7 @@ const cme_new_data = {
           question_badge: 'Author’s Purpose',
           question_type: 'Author’s Purpose',
           enquiry_question:
-            'What was the significance of Nasser projecting an image of unshakeable international stature in Source D during the 1960s?',
+            'What was the significance of Nasser projecting an image of unshakeable international stature in Source A during the 1960s?',
           model_answer:
             'Projecting sovereign stature enabled Nasser to extract massive Soviet economic and military hardware while positioning Egypt as an untouchable superpower within Arab politics, which later made any public retreat before Israel unthinkable.',
           provenance_clues: {
@@ -7233,6 +7124,118 @@ const cme_new_data = {
           teacher_notes: {
             source_context:
               "Nasser projected Egypt as the leader of both the Arab world and the Third World. When Syrian leaders and Jordan accused him in 1966 of 'hiding behind UNEF' peacekeepers in Sinai while Syrians faced Israeli attacks, Nasser felt compelled to take aggressive actions in May 1967 to preserve his pan-Arab prestige. **Hinge Question:** How did Nasser's prestige as a global anti-imperialist leader trap him into escalatory rhetoric against Israel in May 1967?",
+          },
+        },
+        {
+          id: 'cme_l5_source_b',
+          letter: 'B',
+          title: "Source B: Israel's National Water Carrier Schematic Map (1964)",
+          src: '/images/israel_national_water_carrier_1964_map.png',
+          image: '/images/israel_national_water_carrier_1964_map.png',
+          source: '/images/israel_national_water_carrier_1964_map.png',
+          caption:
+            "Engineering map of Israel's National Water Carrier pipeline network, pumping fresh water from the Sea of Galilee across the coastal plain down to the arid Negev Desert.",
+          desc: "Technical cartographic diagram of Israel's trans-national water diversion project.",
+          provenance: 'Mekorot Water Company Archives, Tel Aviv, 1964.',
+          citation: 'Mekorot Archives, Tel Aviv.',
+          hinge_question:
+            "Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
+          source_context:
+            "Completed in 1964, the National Water Carrier diverted water from Lake Kinneret (Sea of Galilee) to enable agriculture and settlement growth in the southern desert. Arab states viewed this as an illegal appropriation of international waters designed to facilitate massive Jewish immigration and expand Israel's demographic strength. **Hinge Question:** Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
+          context:
+            'In 1964, Israel completed the National Water Carrier, pumping water from Lake Kinneret to the Negev.',
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
+          enquiry_question:
+            'How useful is Source B for an inquiry into the root causes of the rising border tensions between Israel and its Arab neighbours between 1964 and 1967?',
+          model_answer:
+            'Source B is exceptionally useful because it illustrates the hydraulic geography of the conflict, proving that competition over scarce water resources was just as decisive in triggering military confrontation as political ideology and border skirmishes.',
+          provenance_clues: {
+            author: 'Mekorot civil engineers and Israeli water planning authority.',
+            audience:
+              'Israeli government ministries, agricultural kibbutz planners, and international engineers.',
+            motive:
+              "To document the completion of the country's most vital economic infrastructure project.",
+            hinge_question:
+              "Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
+          },
+          teacher_notes: {
+            source_context:
+              "Completed in 1964, the National Water Carrier diverted water from Lake Kinneret (Sea of Galilee) to enable agriculture and settlement growth in the southern desert. Arab states viewed this as an illegal appropriation of international waters designed to facilitate massive Jewish immigration and expand Israel's demographic strength. **Hinge Question:** Why did Arab states perceive Israel's water diversion to the Negev as an existential economic and military threat?",
+          },
+        },
+        {
+          id: 'cme_l5_source_c',
+          letter: 'C',
+          title: 'Source C: Relief Map of the Golan Heights Artillery Positions (1967)',
+          src: '/images/cme_golan_heights_relief_map_1967.jpg',
+          image: '/images/cme_golan_heights_relief_map_1967.jpg',
+          source: '/images/cme_golan_heights_relief_map_1967.jpg',
+          caption:
+            'Topographical relief map illustrating Syrian artillery emplacements perched 1,000 feet above Israeli farming kibbutzim (Ein Gev, Tel Katzir) in the vulnerable Hula Valley below.',
+          desc: 'Topographical military map showing the strategic elevation of the Golan Heights.',
+          provenance: 'IDF Northern Command Intelligence Division, Nazareth, 1967.',
+          citation: 'IDF Historical Branch.',
+          hinge_question:
+            'How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
+          source_context:
+            'From 1948 to 1967, the Syrian Army fortified the basalt ridge of the Golan Heights with Soviet artillery bunkers. Syrian gunners regularly shelled Israeli farmers cultivating land in the Demilitarized Zones (DMZs), while Israel deliberately sent armoured tractors into disputed fields to provoke exchanges. **Hinge Question:** How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
+          context:
+            'Syrian forces fortified the Golan Heights, routinely shelling Israeli settlements in the valley below.',
+          question_badge: 'Source Inference',
+          question_type: 'Source Inference',
+          enquiry_question:
+            'What can you infer from Source C about why Israeli military leaders considered the Golan Heights an unbearable security threat before 1967?',
+          model_answer:
+            'Source C demonstrates that Syrian forces held commanding high ground that left Israeli border kibbutzim in the valley completely exposed to direct artillery observation and bombardment, making normal civilian life virtually impossible without seizing the plateau.',
+          provenance_clues: {
+            author: 'IDF Northern Command intelligence cartographers.',
+            audience: 'General Staff officers and Cabinet defense ministers.',
+            motive:
+              'To illustrate tactical vulnerabilities and provide operational planning for preemptive strike operations.',
+            hinge_question:
+              'How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
+          },
+          teacher_notes: {
+            source_context:
+              'From 1948 to 1967, the Syrian Army fortified the basalt ridge of the Golan Heights with Soviet artillery bunkers. Syrian gunners regularly shelled Israeli farmers cultivating land in the Demilitarized Zones (DMZs), while Israel deliberately sent armoured tractors into disputed fields to provoke exchanges. **Hinge Question:** How did the Syrian military use their topographical dominance on the Golan to harass Israeli agricultural communities below?',
+          },
+        },
+        {
+          id: 'cme_l5_source_d',
+          letter: 'D',
+          title: 'Source D: The Arab Headwaters Diversion Plan Schematic (1964–1966)',
+          src: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
+          image: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
+          source: '/units/cme_new/assets/israel_national_water_carrier_1964_map.svg',
+          caption:
+            'Schematic flow chart illustrating the Arab League plan to divert the Hasbani and Banyas tributaries away from the Jordan River basin into the Yarmouk River in Jordan.',
+          desc: 'Cartographic flow diagram of the disputed Jordan River headwaters.',
+          provenance: 'Arab League Permanent Military Committee, Cairo, 1965.',
+          citation: 'Arab League Archives, Cairo.',
+          hinge_question:
+            'Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?',
+          source_context:
+            "In response to Israel's National Water Carrier, the Arab League resolved to divert the Banyas and Hasbani rivers to cut Israel's water supply by 35%. Between 1965 and 1966, Israeli tanks and aircraft repeatedly bombed the Syrian engineering construction sites, completely halting the diversion. **Hinge Question:** Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?",
+          context:
+            'The Arab League initiated a diversion project on the Banyas and Hasbani rivers, which Israel destroyed via airstrikes.',
+          question_badge: 'Cross-Referencing',
+          question_type: 'Cross-Referencing',
+          enquiry_question:
+            'How does Source D cross-reference with Source D to explain why border clashes escalated into air combat over Damascus by April 1967?',
+          model_answer:
+            'Source D demonstrates that Arab states attempted to physically cut off the water supply feeding the carrier in Source D, prompting Israel to retaliate with decisive military strikes that directly destroyed Syrian engineering machinery and set the stage for open war.',
+          provenance_clues: {
+            author: 'Arab League water resources and military advisory commission.',
+            audience: 'Heads of Arab states and military chiefs of staff.',
+            motive:
+              "To devise a non-military strategy to neutralize Israel's agricultural expansion by choking its primary water supply.",
+            hinge_question:
+              'Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?',
+          },
+          teacher_notes: {
+            source_context:
+              "In response to Israel's National Water Carrier, the Arab League resolved to divert the Banyas and Hasbani rivers to cut Israel's water supply by 35%. Between 1965 and 1966, Israeli tanks and aircraft repeatedly bombed the Syrian engineering construction sites, completely halting the diversion. **Hinge Question:** Why did Israel treat the Arab headwaters diversion project as a legitimate casus belli (act of war)?",
           },
         },
         {
@@ -7814,11 +7817,11 @@ const cme_new_data = {
           duration: '59 mins 02 secs',
           pathway: 'Documentary',
           teacher_guidance:
-            'Superb BBC reconstruction tracking the 3-week waiting period (Hamtana), Israeli domestic panic, and the decision to launch Operation Focus. Recommended Watch Window: 02:00–11:30 • Lesson Phase: High-Attainer Stretch & Oral History Investigation. Tone Alert: Immersive BBC dramatized documentary with firsthand Israeli cabinet and military testimonies.',
+            'Superb BBC reconstruction tracking the 3-week waiting period (Hamtana), Israeli domestic panic, and the decision to launch the pre-emptive air strike. Recommended Watch Window: 02:00–11:30 • Lesson Phase: High-Attainer Stretch & Oral History Investigation. Tone Alert: Immersive BBC dramatized documentary with firsthand Israeli cabinet and military testimonies.',
           viewing_task:
             '<ol><li><strong>[03:40] Recall:</strong> What Hebrew term was given to the agonizing three-week period of national dread, diplomatic paralysis, and military waiting in Israel between 16 May and 5 June 1967?</li><li><strong>[06:15] Explain:</strong> Why did the Israeli coalition cabinet under Prime Minister Levi Eshkol and newly appointed Defence Minister Moshe Dayan conclude that pre-emptive offensive action was necessary for national survival?</li><li><strong>[09:50] Challenge:</strong> Contrast the intense public terror among Israeli civilians (who dug 10,000 mass graves in public parks in Tel Aviv) with the meticulous operational confidence of Israeli Air Force commanders.</li></ol>',
           model_answer:
-            "<ol><li><strong>Recall:</strong> <em>Hamtana</em> ('The Waiting Period').</li><li><strong>Explain:</strong> Israel possessed no strategic depth: in central Israel, the country was barely 9 miles wide from the Jordanian border to the Mediterranean Sea. Mobilizing 250,000 reservists had shut down factories, schools, and transport, meaning Israel would face economic bankruptcy within weeks if it simply waited. Striking first to eliminate hostile air forces was the only military doctrine that prevented catastrophic urban devastation.</li><li><strong>Challenge:</strong> While civilians prepared for a second Holocaust amidst bloodcurdling Arab radio threats, IAF Commander Mordechai Hod had spent fifteen years rehearsing Operation Focus: photographing every Arab runway and pilot briefing room. This stark juxtaposition illustrates how defensive existential dread among political leaders and the public coexisted with world-class offensive military planning.</li></ol>",
+            "<ol><li><strong>Recall:</strong> <em>Hamtana</em> ('The Waiting Period').</li><li><strong>Explain:</strong> Israel possessed no strategic depth: in central Israel, the country was barely 9 miles wide from the Jordanian border to the Mediterranean Sea. Mobilizing 250,000 reservists had shut down factories, schools, and transport, meaning Israel would face economic bankruptcy within weeks if it simply waited. Striking first to eliminate hostile air forces was the only military doctrine that prevented catastrophic urban devastation.</li><li><strong>Challenge:</strong> While civilians prepared for a second Holocaust amidst bloodcurdling Arab radio threats, IAF Commander Mordechai Hod had spent fifteen years rehearsing the pre-emptive air strike: photographing every Arab runway and pilot briefing room. This stark juxtaposition illustrates how defensive existential dread among political leaders and the public coexisted with world-class offensive military planning.</li></ol>",
         },
       ],
       extra_videos: [],
@@ -8006,41 +8009,40 @@ const cme_new_data = {
             {
               id: 'cme_l6_source_a',
               letter: 'A',
-              title: 'Source A: Israeli Paratroopers at the Western Wall (7 June 1967)',
-              src: '/images/cme_paratroopers_western_wall_1967.jpg',
-              image: '/images/cme_paratroopers_western_wall_1967.jpg',
-              source: '/images/cme_paratroopers_western_wall_1967.jpg',
+              title:
+                "Source A: Israeli Command Entering Jerusalem Through Lions' Gate (7 June 1967)",
+              src: '/units/cme_new/assets/western_wall_1967.jpg',
+              image: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
+              source: '/units/cme_new/assets/western_wall_1967.jpg',
               caption:
-                "David Rubinger's photograph of Israeli paratroopers (Zion Karasenti, Yitzhak Yifat, and Haim Oshri) standing in awe before the Western Wall in the captured Old City of Jerusalem, 7 June 1967.",
-              desc: 'Iconic photograph of paratroopers at the Western Wall.',
+                "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Central Command General Uzi Narkiss walking through Lions' Gate into the Old City of Jerusalem on 7 June 1967.",
+              desc: 'Iconic historical photograph of Israeli military leadership entering Jerusalem.',
               provenance:
-                'Israel Government Press Office / David Rubinger (GPO D1-1967), 7 June 1967.',
-              citation: 'Israel Government Press Office / David Rubinger.',
+                'Israel Government Press Office / Ilan Bruner (GPO D835-081), 7 June 1967.',
+              citation: 'Israel Government Press Office / Ilan Bruner.',
               hinge_question:
-                'Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?',
+                "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
               source_context:
-                "On the third day of the Six-Day War, the 55th Paratroopers Brigade breached the Lions' Gate and seized the Old City of Jerusalem, which had been under Jordanian control since 1948. David Rubinger's photograph became the defining national symbol of the war and the emotional reunion with Judaism's holiest prayer site. **Hinge Question:** Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?",
+                "Moshe Dayan famously declared: 'We have reunited Jerusalem, the divided capital of Israel. We have returned to the holiest of our holy places, never to part from it again.' This dramatic entrance sealed Israeli administrative control over East Jerusalem. **Hinge Question:** How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
               context:
-                'On 7 June 1967, Israeli paratroopers captured the Old City of Jerusalem and reached the Western Wall.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Uzi Narkiss entered the Old City through Lions' Gate.",
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'How useful is Source A for an inquiry into the psychological and emotional impact of the Six-Day War on Israeli society?',
+                'How reliable is Source A for demonstrating the political and military authority of Moshe Dayan during the Six-Day War?',
               model_answer:
-                'Source A is exceptionally useful because it captures the raw emotional transition from the mortal dread of annihilation preceding June 5 to an overwhelming sense of miraculous historical vindication, cementing national attachment to the newly captured territories.',
+                'Source A is extremely reliable as an official document of the triumphant moment of entry; however, it was carefully composed to project Dayan as the indispensable military hero of the nation, overshadowing the meticulous planning of Prime Minister Eshkol and Chief of Staff Rabin.',
               provenance_clues: {
-                author:
-                  'David Rubinger, veteran Israeli photojournalist embedded with the paratroopers.',
-                audience:
-                  'The Israeli public, world media, and Jewish communities internationally.',
+                author: 'Ilan Bruner, official photographer for the Ministry of Defense.',
+                audience: 'World press, Israeli public, and domestic political rivals.',
                 motive:
-                  "To document the historic capture of Jerusalem's Old City for history and the press.",
+                  'To immortalize Dayan and Rabin as victorious conquerors of biblical Jerusalem.',
                 hinge_question:
-                  'Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?',
+                  "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
               },
               teacher_notes: {
                 source_context:
-                  "On the third day of the Six-Day War, the 55th Paratroopers Brigade breached the Lions' Gate and seized the Old City of Jerusalem, which had been under Jordanian control since 1948. David Rubinger's photograph became the defining national symbol of the war and the emotional reunion with Judaism's holiest prayer site. **Hinge Question:** Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?",
+                  "Moshe Dayan famously declared: 'We have reunited Jerusalem, the divided capital of Israel. We have returned to the holiest of our holy places, never to part from it again.' While Dayan handed administrative control of the Temple Mount (Haram al-Sharif) back to the Islamic Waqf to prevent a holy war, Israel formally annexed East Jerusalem weeks later. **Hinge Question:** How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
               },
             },
           ],
@@ -8060,47 +8062,48 @@ const cme_new_data = {
             {
               id: 'cme_l6_source_b',
               letter: 'B',
-              title: 'Source B: Map of Israeli Conquests in the Six-Day War (June 1967)',
-              src: '/images/palestine_1967_six_day_war_map.png',
-              image: '/images/palestine_1967_six_day_war_map.png',
-              source: '/images/palestine_1967_six_day_war_map.png',
+              title:
+                'Source B: Cartographic Map of the Straits of Tiran & Sharm el-Sheikh Blockade (May 1967)',
+              src: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
+              image: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
+              source: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
               caption:
-                'Cartographic map showing the dramatic expansion of Israeli control in June 1967: seizing the Sinai Peninsula and Gaza Strip from Egypt, the West Bank from Jordan, and the Golan Heights from Syria.',
-              desc: "Military map illustrating Israel's three-fold territorial conquests.",
-              provenance: 'Israel Ministry of Defense / Carta Jerusalem, June 1967.',
-              citation: 'Carta Jerusalem / Israel MoD.',
+                'Strategic map highlighting the maritime choke point at the Straits of Tiran and Sharm el-Sheikh, where Egyptian forces blocked Israeli shipping to the port of Eilat on 22 May 1967.',
+              desc: 'Cartographic map of the Straits of Tiran maritime choke point.',
+              provenance: 'Israeli Ministry of Foreign Affairs briefing chart, May 1967.',
+              citation: 'Israel State Archives / MFA.',
               hinge_question:
-                "How did Israel's capture of these specific territories radically shift its strategic defense doctrine from vulnerability to strategic depth?",
+                'Why did Israel define the closure of the Straits of Tiran as an unambiguous act of war (casus belli)?',
               source_context:
-                "In just six days (5–10 June 1967), the IDF destroyed the armed forces of Egypt, Syria, and Jordan. Israel captured 42,000 square miles of territory—more than three times its pre-war size—replacing narrow vulnerable waistlines (only 9 miles wide near Netanya) with natural defensive borders on the Jordan River, Suez Canal, and Golan Ridge. **Hinge Question:** How did Israel's capture of these specific territories radically shift its strategic defense doctrine from vulnerability to strategic depth?",
+                "On 22 May 1967, President Nasser announced the closure of the Straits of Tiran to all Israeli-flagged vessels and strategic cargo bound for Eilat. Because this cut off 90% of Israel's vital oil imports, Israeli leaders viewed the blockade as an existential chokehold that justified pre-emptive military action. **Hinge Question:** Why did Israel define the closure of the Straits of Tiran as an unambiguous act of war (casus belli)?",
               context:
-                'In six days, Israel conquered the Sinai, Gaza, West Bank, East Jerusalem, and the Golan Heights.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
+                "President Nasser announced the closure of the Straits of Tiran on 22 May 1967, cutting off Israel's oil route.",
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
               enquiry_question:
-                'What can you infer from Source B about why the results of the Six-Day War fundamentally destabilized long-term Middle Eastern diplomacy?',
+                'How useful is Source B for an enquiry into why Israel considered the Egyptian naval blockade a decisive catalyst for the Six-Day War?',
               model_answer:
-                'Source B reveals that by quadrupling its physical footprint and bringing more than a million Palestinian Arabs under direct military occupation, Israel acquired immense strategic bargaining chips that simultaneously trapped it in an intractable permanent colonial policing dilemma.',
+                "Source B is profoundly useful because it visually demonstrates Israel's absolute geographic vulnerability at the southern entrance to the Gulf of Aqaba, proving that the closure of the straits severed Israel's primary commercial lifeline to Asia and the Persian Gulf.",
               provenance_clues: {
-                author: 'Military cartographers of the IDF General Staff.',
+                author: 'Israeli military and diplomatic cartographers.',
                 audience:
-                  'Cabinet ministers, foreign military attachés, and the Israeli electorate.',
+                  'Western diplomats, UN Security Council members, and the international press.',
                 motive:
-                  "To illustrate the total extent of Israel's new ceasefire lines and strategic depth.",
+                  'To convince world powers that Egypt had committed an explicit act of war requiring international intervention or Israeli retaliation.',
                 hinge_question:
-                  "How did Israel's capture of these specific territories radically shift its strategic defense doctrine from vulnerability to strategic depth?",
+                  'Why did Israel define the closure of the Straits of Tiran as an unambiguous act of war (casus belli)?',
               },
               teacher_notes: {
                 source_context:
-                  "In just six days (5–10 June 1967), the IDF destroyed the armed forces of Egypt, Syria, and Jordan. Israel captured 42,000 square miles of territory—more than three times its pre-war size—replacing narrow vulnerable waistlines (only 9 miles wide near Netanya) with natural defensive borders on the Jordan River, Suez Canal, and Golan Ridge. **Hinge Question:** How did Israel's capture of these specific territories radically shift its strategic defense doctrine from vulnerability to strategic depth?",
+                  "On 22 May 1967, President Nasser announced the closure of the Straits of Tiran to all Israeli-flagged vessels and strategic cargo bound for Eilat. Because this cut off 90% of Israel's vital oil imports, Israeli leaders viewed the blockade as an existential chokehold that justified pre-emptive military action. **Hinge Question:** Why did Israel define the closure of the Straits of Tiran as an unambiguous act of war (casus belli)?",
               },
             },
           ],
           image: '/images/cme_six_day_war_airfield_1967.jpg',
           image_alt:
-            'Burned out Egyptian MiG-21 jet fighters destroyed on tarmac runways during Operation Focus, 5 June 1967',
+            'Burned out Egyptian MiG-21 jet fighters destroyed on tarmac runways during the pre-emptive air strike, 5 June 1967',
           caption:
-            'Operation Focus (5 June 1967): The Israeli Air Force destroyed over 300 Egyptian combat aircraft on the ground in three hours, securing absolute air supremacy.',
+            'the pre-emptive air strike (5 June 1967): The Israeli Air Force destroyed over 300 Egyptian combat aircraft on the ground in three hours, securing absolute air supremacy.',
           isReversed: false,
         },
         {
@@ -8157,14 +8160,14 @@ const cme_new_data = {
         {
           title: 'The Pre-Emptive Air Strike',
           paragraphs: [
-            '<span class="para-ref">[4.1]</span> At 07:45 on Monday, **5 June 1967**, the Israeli Air Force launched **Operation Focus** (**Mivtza Moked**), masterminded by IAF Commander **Mordechai Hod**. Nearly 200 Israeli combat aircraft flew low under Arab radar over the Mediterranean Sea, maintaining strict radio silence, and struck eleven Egyptian airbases just as Egyptian pilots finished their morning patrols and commanders were stuck in Cairo traffic.',
+            '<span class="para-ref">[4.1]</span> At 07:45 on Monday, **5 June 1967**, the Israeli Air Force launched **the pre-emptive air strike** (**Mivtza Moked**), masterminded by IAF Commander **Mordechai Hod**. Nearly 200 Israeli combat aircraft flew low under Arab radar over the Mediterranean Sea, maintaining strict radio silence, and struck eleven Egyptian airbases just as Egyptian pilots finished their morning patrols and commanders were stuck in Cairo traffic.',
             '<span class="para-ref">[4.2]</span> Utilizing specialized French runway-cratering bombs, Israeli jets pulverized tarmac runways, trapping Egyptian aircraft before destroying them with cannon fire. Within three hours, the IAF annihilated **over 300 Egyptian combat aircraft** on the ground. Later that afternoon, when Syrian, Jordanian, and Iraqi air forces attacked, Israeli jets eliminated another 100 enemy planes. By sunset on 5 June, Israel had established absolute **air supremacy**, effectively deciding the outcome of the war on its very first morning.',
           ],
           act: 4,
           act_title:
-            'Stage 4: The Pre-Emptive Air Strike — How did Operation Focus destroy Arab air power on the first morning?',
+            'Stage 4: The Pre-Emptive Air Strike — How did the pre-emptive air strike destroy Arab air power on the first morning?',
           theme_heading: 'The Pre-Emptive Air Strike',
-          text: '<span class="para-ref">[4.1]</span> At 07:45 on Monday, **5 June 1967**, the Israeli Air Force launched **Operation Focus** (**Mivtza Moked**), masterminded by IAF Commander **Mordechai Hod**. Nearly 200 Israeli combat aircraft flew low under Arab radar over the Mediterranean Sea, maintaining strict radio silence, and struck eleven Egyptian airbases just as Egyptian pilots finished their morning patrols and commanders were stuck in Cairo traffic.\n\n<span class="para-ref">[4.2]</span> Utilizing specialized French runway-cratering bombs, Israeli jets pulverized tarmac runways, trapping Egyptian aircraft before destroying them with cannon fire. Within three hours, the IAF annihilated **over 300 Egyptian combat aircraft** on the ground. Later that afternoon, when Syrian, Jordanian, and Iraqi air forces attacked, Israeli jets eliminated another 100 enemy planes. By sunset on 5 June, Israel had established absolute **air supremacy**, effectively deciding the outcome of the war on its very first morning.',
+          text: '<span class="para-ref">[4.1]</span> At 07:45 on Monday, **5 June 1967**, the Israeli Air Force launched **the pre-emptive air strike** (**Mivtza Moked**), masterminded by IAF Commander **Mordechai Hod**. Nearly 200 Israeli combat aircraft flew low under Arab radar over the Mediterranean Sea, maintaining strict radio silence, and struck eleven Egyptian airbases just as Egyptian pilots finished their morning patrols and commanders were stuck in Cairo traffic.\n\n<span class="para-ref">[4.2]</span> Utilizing specialized French runway-cratering bombs, Israeli jets pulverized tarmac runways, trapping Egyptian aircraft before destroying them with cannon fire. Within three hours, the IAF annihilated **over 300 Egyptian combat aircraft** on the ground. Later that afternoon, when Syrian, Jordanian, and Iraqi air forces attacked, Israeli jets eliminated another 100 enemy planes. By sunset on 5 June, Israel had established absolute **air supremacy**, effectively deciding the outcome of the war on its very first morning.',
           sources: [
             {
               id: 'cme_l6_source_d',
@@ -8188,9 +8191,9 @@ const cme_new_data = {
               question_badge: 'Cross-Referencing',
               question_type: 'Cross-Referencing',
               enquiry_question:
-                "How does Source D cross-reference with the opening airstrikes of Operation Focus to explain the speed of Israel's victory in Sinai?",
+                "How does Source D cross-reference with the opening airstrikes of the pre-emptive air strike to explain the speed of Israel's victory in Sinai?",
               model_answer:
-                'Source D demonstrates that because Operation Focus had wiped out Egyptian air defenses on the first morning, retreating Egyptian armored columns shown trapped in the Mitla and Giddi passes had zero protection from relentless Israeli close-air support, turning retreat into an outright massacre.',
+                'Source D demonstrates that because the pre-emptive air strike had wiped out Egyptian air defenses on the first morning, retreating Egyptian armored columns shown trapped in the Mitla and Giddi passes had zero protection from relentless Israeli close-air support, turning retreat into an outright massacre.',
               provenance_clues: {
                 author: 'Military staff historians and intelligence analysts.',
                 audience: 'General staff commanders and war college tacticians.',
@@ -8227,40 +8230,41 @@ const cme_new_data = {
             {
               id: 'cme_l6_source_e',
               letter: 'E',
-              title:
-                "Source E: Israeli Command Entering Jerusalem Through Lions' Gate (7 June 1967)",
-              src: '/units/cme_new/assets/western_wall_1967.jpg',
-              image: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
-              source: '/units/cme_new/assets/western_wall_1967.jpg',
+              title: 'Source E: Israeli Paratroopers at the Western Wall (7 June 1967)',
+              src: '/images/cme_paratroopers_western_wall_1967.jpg',
+              image: '/images/cme_paratroopers_western_wall_1967.jpg',
+              source: '/images/cme_paratroopers_western_wall_1967.jpg',
               caption:
-                "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Central Command General Uzi Narkiss walking through Lions' Gate into the Old City of Jerusalem on 7 June 1967.",
-              desc: 'Iconic historical photograph of Israeli military leadership entering Jerusalem.',
+                "David Rubinger's photograph of Israeli paratroopers (Zion Karasenti, Yitzhak Yifat, and Haim Oshri) standing in awe before the Western Wall in the captured Old City of Jerusalem, 7 June 1967.",
+              desc: 'Iconic photograph of paratroopers at the Western Wall.',
               provenance:
-                'Israel Government Press Office / Ilan Bruner (GPO D835-081), 7 June 1967.',
-              citation: 'Israel Government Press Office / Ilan Bruner.',
+                'Israel Government Press Office / David Rubinger (GPO D1-1967), 7 June 1967.',
+              citation: 'Israel Government Press Office / David Rubinger.',
               hinge_question:
-                "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
+                'Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?',
               source_context:
-                "Moshe Dayan famously declared: 'We have reunited Jerusalem, the divided capital of Israel. We have returned to the holiest of our holy places, never to part from it again.' This dramatic entrance sealed Israeli administrative control over East Jerusalem. **Hinge Question:** How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
+                "On the third day of the Six-Day War, the 55th Paratroopers Brigade breached the Lions' Gate and seized the Old City of Jerusalem, which had been under Jordanian control since 1948. David Rubinger's photograph became the defining national symbol of the war and the emotional reunion with Judaism's holiest prayer site. **Hinge Question:** Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?",
               context:
-                "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Uzi Narkiss entered the Old City through Lions' Gate.",
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+                'On 7 June 1967, Israeli paratroopers captured the Old City of Jerusalem and reached the Western Wall.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
               enquiry_question:
-                'How reliable is Source E for demonstrating the political and military authority of Moshe Dayan during the Six-Day War?',
+                'How useful is Source E for an inquiry into the psychological and emotional impact of the Six-Day War on Israeli society?',
               model_answer:
-                'Source E is extremely reliable as an official document of the triumphant moment of entry; however, it was carefully composed to project Dayan as the indispensable military hero of the nation, overshadowing the meticulous planning of Prime Minister Eshkol and Chief of Staff Rabin.',
+                'Source E is exceptionally useful because it captures the raw emotional transition from the mortal dread of annihilation preceding June 5 to an overwhelming sense of miraculous historical vindication, cementing national attachment to the newly captured territories.',
               provenance_clues: {
-                author: 'Ilan Bruner, official photographer for the Ministry of Defense.',
-                audience: 'World press, Israeli public, and domestic political rivals.',
+                author:
+                  'David Rubinger, veteran Israeli photojournalist embedded with the paratroopers.',
+                audience:
+                  'The Israeli public, world media, and Jewish communities internationally.',
                 motive:
-                  'To immortalize Dayan and Rabin as victorious conquerors of biblical Jerusalem.',
+                  "To document the historic capture of Jerusalem's Old City for history and the press.",
                 hinge_question:
-                  "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
+                  'Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?',
               },
               teacher_notes: {
                 source_context:
-                  "Moshe Dayan famously declared: 'We have reunited Jerusalem, the divided capital of Israel. We have returned to the holiest of our holy places, never to part from it again.' While Dayan handed administrative control of the Temple Mount (Haram al-Sharif) back to the Islamic Waqf to prevent a holy war, Israel formally annexed East Jerusalem weeks later. **Hinge Question:** How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
+                  "On the third day of the Six-Day War, the 55th Paratroopers Brigade breached the Lions' Gate and seized the Old City of Jerusalem, which had been under Jordanian control since 1948. David Rubinger's photograph became the defining national symbol of the war and the emotional reunion with Judaism's holiest prayer site. **Hinge Question:** Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?",
               },
             },
           ],
@@ -8270,76 +8274,77 @@ const cme_new_data = {
         {
           id: 'cme_l6_source_a',
           letter: 'A',
-          title: 'Source A: Israeli Paratroopers at the Western Wall (7 June 1967)',
-          src: '/images/cme_paratroopers_western_wall_1967.jpg',
-          image: '/images/cme_paratroopers_western_wall_1967.jpg',
-          source: '/images/cme_paratroopers_western_wall_1967.jpg',
+          title: "Source A: Israeli Command Entering Jerusalem Through Lions' Gate (7 June 1967)",
+          src: '/units/cme_new/assets/western_wall_1967.jpg',
+          image: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
+          source: '/units/cme_new/assets/western_wall_1967.jpg',
           caption:
-            "David Rubinger's photograph of Israeli paratroopers (Zion Karasenti, Yitzhak Yifat, and Haim Oshri) standing in awe before the Western Wall in the captured Old City of Jerusalem, 7 June 1967.",
-          desc: 'Iconic photograph of paratroopers at the Western Wall.',
-          provenance: 'Israel Government Press Office / David Rubinger (GPO D1-1967), 7 June 1967.',
-          citation: 'Israel Government Press Office / David Rubinger.',
+            "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Central Command General Uzi Narkiss walking through Lions' Gate into the Old City of Jerusalem on 7 June 1967.",
+          desc: 'Iconic historical photograph of Israeli military leadership entering Jerusalem.',
+          provenance: 'Israel Government Press Office / Ilan Bruner (GPO D835-081), 7 June 1967.',
+          citation: 'Israel Government Press Office / Ilan Bruner.',
           hinge_question:
-            'Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?',
+            "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
           source_context:
-            "On the third day of the Six-Day War, the 55th Paratroopers Brigade breached the Lions' Gate and seized the Old City of Jerusalem, which had been under Jordanian control since 1948. David Rubinger's photograph became the defining national symbol of the war and the emotional reunion with Judaism's holiest prayer site. **Hinge Question:** Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?",
+            "Moshe Dayan famously declared: 'We have reunited Jerusalem, the divided capital of Israel. We have returned to the holiest of our holy places, never to part from it again.' This dramatic entrance sealed Israeli administrative control over East Jerusalem. **Hinge Question:** How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
           context:
-            'On 7 June 1967, Israeli paratroopers captured the Old City of Jerusalem and reached the Western Wall.',
-          question_badge: 'Historical Utility',
-          question_type: 'Historical Utility',
+            "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Uzi Narkiss entered the Old City through Lions' Gate.",
+          question_badge: 'Reliability & Provenance',
+          question_type: 'Reliability & Provenance',
           enquiry_question:
-            'How useful is Source A for an inquiry into the psychological and emotional impact of the Six-Day War on Israeli society?',
+            'How reliable is Source A for demonstrating the political and military authority of Moshe Dayan during the Six-Day War?',
           model_answer:
-            'Source A is exceptionally useful because it captures the raw emotional transition from the mortal dread of annihilation preceding June 5 to an overwhelming sense of miraculous historical vindication, cementing national attachment to the newly captured territories.',
+            'Source A is extremely reliable as an official document of the triumphant moment of entry; however, it was carefully composed to project Dayan as the indispensable military hero of the nation, overshadowing the meticulous planning of Prime Minister Eshkol and Chief of Staff Rabin.',
           provenance_clues: {
-            author:
-              'David Rubinger, veteran Israeli photojournalist embedded with the paratroopers.',
-            audience: 'The Israeli public, world media, and Jewish communities internationally.',
+            author: 'Ilan Bruner, official photographer for the Ministry of Defense.',
+            audience: 'World press, Israeli public, and domestic political rivals.',
             motive:
-              "To document the historic capture of Jerusalem's Old City for history and the press.",
+              'To immortalize Dayan and Rabin as victorious conquerors of biblical Jerusalem.',
             hinge_question:
-              'Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?',
+              "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
           },
           teacher_notes: {
             source_context:
-              "On the third day of the Six-Day War, the 55th Paratroopers Brigade breached the Lions' Gate and seized the Old City of Jerusalem, which had been under Jordanian control since 1948. David Rubinger's photograph became the defining national symbol of the war and the emotional reunion with Judaism's holiest prayer site. **Hinge Question:** Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?",
+              "Moshe Dayan famously declared: 'We have reunited Jerusalem, the divided capital of Israel. We have returned to the holiest of our holy places, never to part from it again.' While Dayan handed administrative control of the Temple Mount (Haram al-Sharif) back to the Islamic Waqf to prevent a holy war, Israel formally annexed East Jerusalem weeks later. **Hinge Question:** How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
           },
         },
         {
           id: 'cme_l6_source_b',
           letter: 'B',
-          title: 'Source B: Map of Israeli Conquests in the Six-Day War (June 1967)',
-          src: '/images/palestine_1967_six_day_war_map.png',
-          image: '/images/palestine_1967_six_day_war_map.png',
-          source: '/images/palestine_1967_six_day_war_map.png',
+          title:
+            'Source B: Cartographic Map of the Straits of Tiran & Sharm el-Sheikh Blockade (May 1967)',
+          src: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
+          image: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
+          source: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
           caption:
-            'Cartographic map showing the dramatic expansion of Israeli control in June 1967: seizing the Sinai Peninsula and Gaza Strip from Egypt, the West Bank from Jordan, and the Golan Heights from Syria.',
-          desc: "Military map illustrating Israel's three-fold territorial conquests.",
-          provenance: 'Israel Ministry of Defense / Carta Jerusalem, June 1967.',
-          citation: 'Carta Jerusalem / Israel MoD.',
+            'Strategic map highlighting the maritime choke point at the Straits of Tiran and Sharm el-Sheikh, where Egyptian forces blocked Israeli shipping to the port of Eilat on 22 May 1967.',
+          desc: 'Cartographic map of the Straits of Tiran maritime choke point.',
+          provenance: 'Israeli Ministry of Foreign Affairs briefing chart, May 1967.',
+          citation: 'Israel State Archives / MFA.',
           hinge_question:
-            "How did Israel's capture of these specific territories radically shift its strategic defense doctrine from vulnerability to strategic depth?",
+            'Why did Israel define the closure of the Straits of Tiran as an unambiguous act of war (casus belli)?',
           source_context:
-            "In just six days (5–10 June 1967), the IDF destroyed the armed forces of Egypt, Syria, and Jordan. Israel captured 42,000 square miles of territory—more than three times its pre-war size—replacing narrow vulnerable waistlines (only 9 miles wide near Netanya) with natural defensive borders on the Jordan River, Suez Canal, and Golan Ridge. **Hinge Question:** How did Israel's capture of these specific territories radically shift its strategic defense doctrine from vulnerability to strategic depth?",
+            "On 22 May 1967, President Nasser announced the closure of the Straits of Tiran to all Israeli-flagged vessels and strategic cargo bound for Eilat. Because this cut off 90% of Israel's vital oil imports, Israeli leaders viewed the blockade as an existential chokehold that justified pre-emptive military action. **Hinge Question:** Why did Israel define the closure of the Straits of Tiran as an unambiguous act of war (casus belli)?",
           context:
-            'In six days, Israel conquered the Sinai, Gaza, West Bank, East Jerusalem, and the Golan Heights.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
+            "President Nasser announced the closure of the Straits of Tiran on 22 May 1967, cutting off Israel's oil route.",
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
           enquiry_question:
-            'What can you infer from Source B about why the results of the Six-Day War fundamentally destabilized long-term Middle Eastern diplomacy?',
+            'How useful is Source B for an enquiry into why Israel considered the Egyptian naval blockade a decisive catalyst for the Six-Day War?',
           model_answer:
-            'Source B reveals that by quadrupling its physical footprint and bringing more than a million Palestinian Arabs under direct military occupation, Israel acquired immense strategic bargaining chips that simultaneously trapped it in an intractable permanent colonial policing dilemma.',
+            "Source B is profoundly useful because it visually demonstrates Israel's absolute geographic vulnerability at the southern entrance to the Gulf of Aqaba, proving that the closure of the straits severed Israel's primary commercial lifeline to Asia and the Persian Gulf.",
           provenance_clues: {
-            author: 'Military cartographers of the IDF General Staff.',
-            audience: 'Cabinet ministers, foreign military attachés, and the Israeli electorate.',
+            author: 'Israeli military and diplomatic cartographers.',
+            audience:
+              'Western diplomats, UN Security Council members, and the international press.',
             motive:
-              "To illustrate the total extent of Israel's new ceasefire lines and strategic depth.",
+              'To convince world powers that Egypt had committed an explicit act of war requiring international intervention or Israeli retaliation.',
             hinge_question:
-              "How did Israel's capture of these specific territories radically shift its strategic defense doctrine from vulnerability to strategic depth?",
+              'Why did Israel define the closure of the Straits of Tiran as an unambiguous act of war (casus belli)?',
           },
           teacher_notes: {
             source_context:
-              "In just six days (5–10 June 1967), the IDF destroyed the armed forces of Egypt, Syria, and Jordan. Israel captured 42,000 square miles of territory—more than three times its pre-war size—replacing narrow vulnerable waistlines (only 9 miles wide near Netanya) with natural defensive borders on the Jordan River, Suez Canal, and Golan Ridge. **Hinge Question:** How did Israel's capture of these specific territories radically shift its strategic defense doctrine from vulnerability to strategic depth?",
+              "On 22 May 1967, President Nasser announced the closure of the Straits of Tiran to all Israeli-flagged vessels and strategic cargo bound for Eilat. Because this cut off 90% of Israel's vital oil imports, Israeli leaders viewed the blockade as an existential chokehold that justified pre-emptive military action. **Hinge Question:** Why did Israel define the closure of the Straits of Tiran as an unambiguous act of war (casus belli)?",
           },
         },
         {
@@ -8401,9 +8406,9 @@ const cme_new_data = {
           question_badge: 'Cross-Referencing',
           question_type: 'Cross-Referencing',
           enquiry_question:
-            "How does Source D cross-reference with the opening airstrikes of Operation Focus to explain the speed of Israel's victory in Sinai?",
+            "How does Source D cross-reference with the opening airstrikes of the pre-emptive air strike to explain the speed of Israel's victory in Sinai?",
           model_answer:
-            'Source D demonstrates that because Operation Focus had wiped out Egyptian air defenses on the first morning, retreating Egyptian armored columns shown trapped in the Mitla and Giddi passes had zero protection from relentless Israeli close-air support, turning retreat into an outright massacre.',
+            'Source D demonstrates that because the pre-emptive air strike had wiped out Egyptian air defenses on the first morning, retreating Egyptian armored columns shown trapped in the Mitla and Giddi passes had zero protection from relentless Israeli close-air support, turning retreat into an outright massacre.',
           provenance_clues: {
             author: 'Military staff historians and intelligence analysts.',
             audience: 'General staff commanders and war college tacticians.',
@@ -8420,38 +8425,39 @@ const cme_new_data = {
         {
           id: 'cme_l6_source_e',
           letter: 'E',
-          title: "Source E: Israeli Command Entering Jerusalem Through Lions' Gate (7 June 1967)",
-          src: '/units/cme_new/assets/western_wall_1967.jpg',
-          image: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
-          source: '/units/cme_new/assets/western_wall_1967.jpg',
+          title: 'Source E: Israeli Paratroopers at the Western Wall (7 June 1967)',
+          src: '/images/cme_paratroopers_western_wall_1967.jpg',
+          image: '/images/cme_paratroopers_western_wall_1967.jpg',
+          source: '/images/cme_paratroopers_western_wall_1967.jpg',
           caption:
-            "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Central Command General Uzi Narkiss walking through Lions' Gate into the Old City of Jerusalem on 7 June 1967.",
-          desc: 'Iconic historical photograph of Israeli military leadership entering Jerusalem.',
-          provenance: 'Israel Government Press Office / Ilan Bruner (GPO D835-081), 7 June 1967.',
-          citation: 'Israel Government Press Office / Ilan Bruner.',
+            "David Rubinger's photograph of Israeli paratroopers (Zion Karasenti, Yitzhak Yifat, and Haim Oshri) standing in awe before the Western Wall in the captured Old City of Jerusalem, 7 June 1967.",
+          desc: 'Iconic photograph of paratroopers at the Western Wall.',
+          provenance: 'Israel Government Press Office / David Rubinger (GPO D1-1967), 7 June 1967.',
+          citation: 'Israel Government Press Office / David Rubinger.',
           hinge_question:
-            "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
+            'Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?',
           source_context:
-            "Moshe Dayan famously declared: 'We have reunited Jerusalem, the divided capital of Israel. We have returned to the holiest of our holy places, never to part from it again.' This dramatic entrance sealed Israeli administrative control over East Jerusalem. **Hinge Question:** How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
+            "On the third day of the Six-Day War, the 55th Paratroopers Brigade breached the Lions' Gate and seized the Old City of Jerusalem, which had been under Jordanian control since 1948. David Rubinger's photograph became the defining national symbol of the war and the emotional reunion with Judaism's holiest prayer site. **Hinge Question:** Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?",
           context:
-            "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Uzi Narkiss entered the Old City through Lions' Gate.",
-          question_badge: 'Reliability & Provenance',
-          question_type: 'Reliability & Provenance',
+            'On 7 June 1967, Israeli paratroopers captured the Old City of Jerusalem and reached the Western Wall.',
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
           enquiry_question:
-            'How reliable is Source E for demonstrating the political and military authority of Moshe Dayan during the Six-Day War?',
+            'How useful is Source E for an inquiry into the psychological and emotional impact of the Six-Day War on Israeli society?',
           model_answer:
-            'Source E is extremely reliable as an official document of the triumphant moment of entry; however, it was carefully composed to project Dayan as the indispensable military hero of the nation, overshadowing the meticulous planning of Prime Minister Eshkol and Chief of Staff Rabin.',
+            'Source E is exceptionally useful because it captures the raw emotional transition from the mortal dread of annihilation preceding June 5 to an overwhelming sense of miraculous historical vindication, cementing national attachment to the newly captured territories.',
           provenance_clues: {
-            author: 'Ilan Bruner, official photographer for the Ministry of Defense.',
-            audience: 'World press, Israeli public, and domestic political rivals.',
+            author:
+              'David Rubinger, veteran Israeli photojournalist embedded with the paratroopers.',
+            audience: 'The Israeli public, world media, and Jewish communities internationally.',
             motive:
-              'To immortalize Dayan and Rabin as victorious conquerors of biblical Jerusalem.',
+              "To document the historic capture of Jerusalem's Old City for history and the press.",
             hinge_question:
-              "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
+              'Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?',
           },
           teacher_notes: {
             source_context:
-              "Moshe Dayan famously declared: 'We have reunited Jerusalem, the divided capital of Israel. We have returned to the holiest of our holy places, never to part from it again.' While Dayan handed administrative control of the Temple Mount (Haram al-Sharif) back to the Islamic Waqf to prevent a holy war, Israel formally annexed East Jerusalem weeks later. **Hinge Question:** How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
+              "On the third day of the Six-Day War, the 55th Paratroopers Brigade breached the Lions' Gate and seized the Old City of Jerusalem, which had been under Jordanian control since 1948. David Rubinger's photograph became the defining national symbol of the war and the emotional reunion with Judaism's holiest prayer site. **Hinge Question:** Why did the capture of the Old City and the Western Wall transform Israeli public attitudes from existential dread to religious and national euphoria?",
           },
         },
       ],
@@ -8652,7 +8658,8 @@ const cme_new_data = {
               'With total air superiority, Israeli ground forces advanced rapidly on all three fronts...',
             exam_link:
               'Q1 Consequence: Destroyed Arab air power in three hours, guaranteeing Israel’s total battlefield victory in the Six-Day War.',
-            question: 'How did Operation Focus destroy Arab air power on the first morning?',
+            question:
+              'How did the pre-emptive air strike destroy Arab air power on the first morning?',
           },
           {
             step: 5,
@@ -8966,7 +8973,7 @@ const cme_new_data = {
           viewing_task:
             '<ol><li><strong>[01:05] Recall:</strong> What was the military codename of the surprise Israeli pre-emptive air strike launched at 07:45 on the morning of 5 June 1967?</li><li><strong>[02:30] Explain:</strong> Explain how the destruction of over 300 Egyptian combat aircraft on the ground in the first three hours decided the entire outcome of the Six-Day War.</li><li><strong>[03:50] Challenge:</strong> By 10 June 1967, Israel had captured territories three times its original size. How did this astonishing victory transform Israel from a vulnerable state into an occupying power with complex demographic problems?</li></ol>',
           model_answer:
-            '<ol><li><strong>Recall:</strong> Operation Focus (<em>Mivtza Moked</em>).</li><li><strong>Explain:</strong> Achieving total air supremacy allowed Israeli Mirages and Super Mystères to act as flying artillery with complete freedom. Israeli ground forces advancing across Sinai, the West Bank, and the Golan Heights faced zero hostile air attacks, while retreating Egyptian, Jordanian, and Syrian armor was mercilessly pulverized from the air.</li><li><strong>Challenge:</strong> While conquering the Sinai, Gaza Strip, West Bank, East Jerusalem, and Golan Heights provided unprecedented geographical buffer zones, it brought over one million disenfranchised Palestinian Arabs under Israeli military control, creating a profound, permanent dilemma between democratic principles and demographic preservation.</li></ol>',
+            '<ol><li><strong>Recall:</strong> the pre-emptive air strike (<em>Mivtza Moked</em>).</li><li><strong>Explain:</strong> Achieving total air supremacy allowed Israeli Mirages and Super Mystères to act as flying artillery with complete freedom. Israeli ground forces advancing across Sinai, the West Bank, and the Golan Heights faced zero hostile air attacks, while retreating Egyptian, Jordanian, and Syrian armor was mercilessly pulverized from the air.</li><li><strong>Challenge:</strong> While conquering the Sinai, Gaza Strip, West Bank, East Jerusalem, and Golan Heights provided unprecedented geographical buffer zones, it brought over one million disenfranchised Palestinian Arabs under Israeli military control, creating a profound, permanent dilemma between democratic principles and demographic preservation.</li></ol>',
         },
         {
           type: 'youtube',
@@ -10380,38 +10387,40 @@ const cme_new_data = {
             {
               id: 'cme_l8_source_a',
               letter: 'A',
-              title: "Source A: PFLP Guerrillas Blowing Up Airplanes at Dawson's Field (1970)",
-              src: '/images/cme_dawsons_field_1970.jpg',
-              image: '/images/cme_dawsons_field_1970.jpg',
-              source: '/images/cme_dawsons_field_1970.jpg',
+              title: 'Source A: Yasser Arafat in Military Battle Fatigues (1969)',
+              src: '/units/cme_new/assets/yasser_arafat.jpg',
+              image: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
+              source: '/units/cme_new/assets/yasser_arafat.jpg',
               caption:
-                'Three hijacked Western airliners (BOAC, Swissair, TWA) detonated by Marxist PFLP guerrillas on a desert airstrip in Jordan on 12 September 1970 after releasing 300 passengers.',
-              desc: 'Documentary photograph of hijacked jetliners exploding in the Jordanian desert.',
-              provenance: 'Associated Press / AP Images (700912089), 12 September 1970.',
-              citation: 'Associated Press / British Movietone.',
+                'Yasser Arafat, Chairman of the PLO and leader of Fatah, wearing his trademark checkered kaffiyeh and olive-green military battle fatigues in a Jordanian base, 1969.',
+              desc: 'Archival portrait photograph of PLO leader Yasser Arafat.',
+              provenance:
+                'Palestinian National Authority Information Department / Gamma-Rapho, c. 1970.',
+              citation: 'Gamma-Rapho / Getty Images.',
               hinge_question:
-                'How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?',
+                "How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
               source_context:
-                "In September 1970, George Habash's Popular Front for the Liberation of Palestine (PFLP) hijacked four airliners and forced three to land at Dawson's Field in Jordan. The spectacle of masked guerrillas blowing up $50 million of aircraft humiliated King Hussein and precipitated the bloody Jordanian civil war known as Black September. **Hinge Question:** How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?",
+                "After the 1968 Battle of Karameh in Jordan, where Fatah fighters inflicted heavy casualties on an Israeli raid, Arafat emerged as the preeminent symbol of armed Palestinian nationalism. In 1969, he was elected Chairman of the PLO Executive Committee. **Hinge Question:** How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
               context:
-                "The PFLP hijacked commercial airliners to Dawson's Field in Jordan, challenging the authority of King Hussein.",
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                'Yasser Arafat took leadership of the PLO in 1969, making armed struggle central to its mission.',
+              question_badge: 'Author’s Purpose',
+              question_type: 'Author’s Purpose',
               enquiry_question:
-                'How useful is Source A for an enquiry into the tactics adopted by militant Palestinian factions after the defeat of conventional Arab armies in 1967?',
+                "What was the purpose behind Arafat's calculated public image shown in Source A?",
               model_answer:
-                'Source A is profoundly useful because it captures the transition from conventional state warfare to international asymmetric terror spectacles designed to bypass Arab regimes and compel global media coverage of Palestinian grievances.',
+                'Arafat deliberately cultivated the persona of an austere guerrilla commander to establish his authority over competing factional rivals and prove to Palestinian refugees that their liberation lay in self-reliant armed resistance rather than reliance on untrustworthy Arab monarchs.',
               provenance_clues: {
-                author: "International photojournalists allowed onto Dawson's Field by the PFLP.",
-                audience: 'Global television news networks and Western governments.',
+                author: 'PLO executive media committee photographer.',
+                audience:
+                  'Palestinian refugee camp youth, Arab revolutionary movements, and the international left.',
                 motive:
-                  'To maximize media drama, demonstrate PFLP defiance, and force the release of imprisoned militants in Europe.',
+                  'To legitimize Arafat as the fearless, authentic commander of the Palestinian revolution.',
                 hinge_question:
-                  'How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?',
+                  "How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
               },
               teacher_notes: {
                 source_context:
-                  "In September 1970, George Habash's Popular Front for the Liberation of Palestine (PFLP) hijacked four airliners and forced three to land at Dawson's Field in Jordan. The spectacle of masked guerrillas blowing up $50 million of aircraft humiliated King Hussein and precipitated the bloody Jordanian civil war known as Black September. **Hinge Question:** How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?",
+                  "After the 1968 Battle of Karameh in Jordan, where Fatah fighters inflicted heavy casualties on an Israeli raid, Arafat emerged as the preeminent symbol of Palestinian armed struggle. In 1969, Fatah took control of the Palestine Liberation Organization (PLO), declaring that armed struggle was the only way to liberate Palestine. **Hinge Question:** How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
               },
             },
           ],
@@ -10431,48 +10440,46 @@ const cme_new_data = {
             {
               id: 'cme_l8_source_b',
               letter: 'B',
-              title: 'Source B: Yasser Arafat in Military Battle Fatigues (1969)',
-              src: '/units/cme_new/assets/yasser_arafat.jpg',
-              image: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
-              source: '/units/cme_new/assets/yasser_arafat.jpg',
+              title: "Source B: PFLP Guerrillas Blowing Up Airplanes at Dawson's Field (1970)",
+              src: '/images/cme_dawsons_field_1970.jpg',
+              image: '/images/cme_dawsons_field_1970.jpg',
+              source: '/images/cme_dawsons_field_1970.jpg',
               caption:
-                'Yasser Arafat, Chairman of the PLO and leader of Fatah, wearing his trademark checkered kaffiyeh and olive-green military battle fatigues in a Jordanian base, 1969.',
-              desc: 'Archival portrait photograph of PLO leader Yasser Arafat.',
-              provenance:
-                'Palestinian National Authority Information Department / Gamma-Rapho, c. 1970.',
-              citation: 'Gamma-Rapho / Getty Images.',
+                'Three hijacked Western airliners (BOAC, Swissair, TWA) detonated by Marxist PFLP guerrillas on a desert airstrip in Jordan on 12 September 1970 after releasing 300 passengers.',
+              desc: 'Documentary photograph of hijacked jetliners exploding in the Jordanian desert.',
+              provenance: 'Associated Press / AP Images (700912089), 12 September 1970.',
+              citation: 'Associated Press / British Movietone.',
               hinge_question:
-                "How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
+                'How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?',
               source_context:
-                "After the 1968 Battle of Karameh in Jordan, where Fatah fighters inflicted heavy casualties on an Israeli raid, Arafat emerged as the preeminent symbol of armed Palestinian nationalism. In 1969, he was elected Chairman of the PLO Executive Committee. **Hinge Question:** How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
+                "In September 1970, George Habash's Popular Front for the Liberation of Palestine (PFLP) hijacked four airliners and forced three to land at Dawson's Field in Jordan. The spectacle of masked guerrillas blowing up $50 million of aircraft humiliated King Hussein and precipitated the bloody Jordanian civil war known as Black September. **Hinge Question:** How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?",
               context:
-                'Yasser Arafat took leadership of the PLO in 1969, making armed struggle central to its mission.',
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+                "The PFLP hijacked commercial airliners to Dawson's Field in Jordan, challenging the authority of King Hussein.",
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
               enquiry_question:
-                "What was the purpose behind Arafat's calculated public image shown in Source B?",
+                'How useful is Source B for an enquiry into the tactics adopted by militant Palestinian factions after the defeat of conventional Arab armies in 1967?',
               model_answer:
-                'Arafat deliberately cultivated the persona of an austere guerrilla commander to establish his authority over competing factional rivals and prove to Palestinian refugees that their liberation lay in self-reliant armed resistance rather than reliance on untrustworthy Arab monarchs.',
+                'Source B is profoundly useful because it captures the transition from conventional state warfare to international asymmetric terror spectacles designed to bypass Arab regimes and compel global media coverage of Palestinian grievances.',
               provenance_clues: {
-                author: 'PLO executive media committee photographer.',
-                audience:
-                  'Palestinian refugee camp youth, Arab revolutionary movements, and the international left.',
+                author: "International photojournalists allowed onto Dawson's Field by the PFLP.",
+                audience: 'Global television news networks and Western governments.',
                 motive:
-                  'To legitimize Arafat as the fearless, authentic commander of the Palestinian revolution.',
+                  'To maximize media drama, demonstrate PFLP defiance, and force the release of imprisoned militants in Europe.',
                 hinge_question:
-                  "How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
+                  'How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?',
               },
               teacher_notes: {
                 source_context:
-                  "After the 1968 Battle of Karameh in Jordan, where Fatah fighters inflicted heavy casualties on an Israeli raid, Arafat emerged as the preeminent symbol of Palestinian armed struggle. In 1969, Fatah took control of the Palestine Liberation Organization (PLO), declaring that armed struggle was the only way to liberate Palestine. **Hinge Question:** How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
+                  "In September 1970, George Habash's Popular Front for the Liberation of Palestine (PFLP) hijacked four airliners and forced three to land at Dawson's Field in Jordan. The spectacle of masked guerrillas blowing up $50 million of aircraft humiliated King Hussein and precipitated the bloody Jordanian civil war known as Black September. **Hinge Question:** How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?",
               },
             },
           ],
-          image: '/images/cme_jordan_fedayeen_1970_map.png',
+          image: '/units/cme_new/assets/black_september.svg',
           image_alt:
             'Tactical map showing the Palestinian fedayeen armed enclaves in Amman and the Jordanian Army counter-offensive during Black September 1970',
           caption:
-            "Black September (September 1970): King Hussein deployed the Royal Jordanian Army to crush armed PLO militias operating as an autonomous 'state-within-a-state'.",
+            "The Escalation of Black September (1970): Schematic timeline showing the clash between King Hussein's Jordanian Arab Army and the armed Palestinian fedayeen.",
           isReversed: false,
         },
         {
@@ -10490,61 +10497,8 @@ const cme_new_data = {
             {
               id: 'cme_l8_source_c',
               letter: 'C',
-              title: 'Source C: Yasser Arafat Addressing the UN General Assembly (1974)',
-              src: '/images/cme_arafat_un_1974.png',
-              image: '/images/cme_arafat_un_1974.png',
-              source: '/images/cme_arafat_un_1974.png',
-              caption:
-                "Yasser Arafat addressing the United Nations General Assembly in New York on 13 November 1974, famously concluding: 'I come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch fall from my hand.'",
-              desc: "Photograph of Yasser Arafat's historic address to the UN General Assembly.",
-              provenance: 'United Nations Photo Archives (UN Photo 128456), 13 November 1974.',
-              citation:
-                'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
-              hinge_question:
-                "How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
-              source_context:
-                "In 1974, the Arab League summit in Rabat recognized the PLO as the 'sole legitimate representative of the Palestinian people'. Shortly after, the UN invited Arafat to address the General Assembly as a head of state—the first leader of a non-member organization to do so. The UN subsequently recognized the Palestinian right to self-determination and granted the PLO observer status. **Hinge Question:** How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
-              context:
-                'On 13 November 1974, Yasser Arafat addressed the UN General Assembly, securing international diplomatic standing.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
-              enquiry_question:
-                'What can you infer from Source C about how the international standing of the Palestinian national movement transformed by 1974?',
-              model_answer:
-                'Source C demonstrates that the Palestinian national movement had successfully evolved from being treated merely as an anonymous humanitarian refugee problem into an internationally recognized sovereign political nation with legitimate claims to self-determination.',
-              provenance_clues: {
-                author: 'United Nations official press photographer.',
-                audience:
-                  'UN General Assembly delegates, international heads of state, and world television audiences.',
-                motive:
-                  'To document the unprecedented diplomatic breakthrough of the PLO on the highest world stage.',
-                hinge_question:
-                  "How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
-              },
-              teacher_notes: {
-                source_context:
-                  "In 1974, the Arab League summit in Rabat recognized the PLO as the 'sole legitimate representative of the Palestinian people'. Shortly after, the UN invited Arafat to address the General Assembly as a head of state—the first leader of a non-member organization to do so. The UN subsequently recognized the Palestinian right to self-determination and granted the PLO observer status. **Hinge Question:** How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
-              },
-            },
-          ],
-        },
-        {
-          title: 'The Munich Olympics Massacre',
-          paragraphs: [
-            '<span class="para-ref">[4.1]</span> In the early morning hours of **5 September 1972**, eight commandos belonging to a clandestine Fatah-linked terrorist cell calling itself **Black September** infiltrated the Olympic Village at the Munich Games in West Germany. Armed with assault rifles and grenades, they stormed the quarters of the Israeli Olympic delegation at 31 Connollystraße, killing wrestling coach Moshe Weinberg and weightlifter Yossef Romano, and taking **nine Israeli athletes and coaches hostage**.',
-            '<span class="para-ref">[4.2]</span> The terrorists demanded the immediate release of 234 Palestinian prisoners in Israel and German radicals Andreas Baader and Ulrike Meinhof. That night, during a botched, chaotic rescue attempt by Bavarian police at the **Fürstenfeldbruck airfield**, the terrorists detonated a hand grenade inside a helicopter and shot the bound hostages. All **eleven Israeli athletes**, five terrorists, and one German police officer were killed, horrifying a live global television audience of 900 million viewers.',
-          ],
-          act: 4,
-          act_title:
-            'Stage 4: The Munich Olympics Massacre — What was the global impact of the Munich Olympics massacre in 1972?',
-          theme_heading: 'The Munich Olympics Massacre',
-          text: '<span class="para-ref">[4.1]</span> In the early morning hours of **5 September 1972**, eight commandos belonging to a clandestine Fatah-linked terrorist cell calling itself **Black September** infiltrated the Olympic Village at the Munich Games in West Germany. Armed with assault rifles and grenades, they stormed the quarters of the Israeli Olympic delegation at 31 Connollystraße, killing wrestling coach Moshe Weinberg and weightlifter Yossef Romano, and taking **nine Israeli athletes and coaches hostage**.\n\n<span class="para-ref">[4.2]</span> The terrorists demanded the immediate release of 234 Palestinian prisoners in Israel and German radicals Andreas Baader and Ulrike Meinhof. That night, during a botched, chaotic rescue attempt by Bavarian police at the **Fürstenfeldbruck airfield**, the terrorists detonated a hand grenade inside a helicopter and shot the bound hostages. All **eleven Israeli athletes**, five terrorists, and one German police officer were killed, horrifying a live global television audience of 900 million viewers.',
-          sources: [
-            {
-              id: 'cme_l8_source_d',
-              letter: 'D',
               title:
-                'Source D: Military Cartographic Operations Map of Black September, Jordan (September 1970)',
+                'Source C: Military Cartographic Operations Map of Black September, Jordan (September 1970)',
               src: '/images/cme_jordan_fedayeen_1970_map.png',
               image: '/images/cme_jordan_fedayeen_1970_map.png',
               source: '/images/cme_jordan_fedayeen_1970_map.png',
@@ -10564,9 +10518,9 @@ const cme_new_data = {
               question_badge: 'Cross-Referencing',
               question_type: 'Cross-Referencing',
               enquiry_question:
-                "How does Source D cross-reference with the creation of 'Fatahland' in Lebanon to explain the regional destabilization of the early 1970s?",
+                "How does Source C cross-reference with the creation of 'Fatahland' in Lebanon to explain the regional destabilization of the early 1970s?",
               model_answer:
-                "Source D shows the violent military expulsion of PLO forces from Jordan, which directly caused thousands of armed militants to relocate into southern Lebanon, overwhelming Lebanon's fragile sectarian balance and provoking the 1975 civil war.",
+                "Source C shows the violent military expulsion of PLO forces from Jordan, which directly caused thousands of armed militants to relocate into southern Lebanon, overwhelming Lebanon's fragile sectarian balance and provoking the 1975 civil war.",
               provenance_clues: {
                 author: 'Hashemite military intelligence historians.',
                 audience:
@@ -10579,6 +10533,57 @@ const cme_new_data = {
               teacher_notes: {
                 source_context:
                   'By 1970, armed fedayeen openly defied Jordanian law in Amman, set up armed roadblocks, collected illegal taxes, and survived assassination attempts against King Hussein. In September 1970, King Hussein ordered the army to clear the cities. Over 3,000 Palestinians were killed in ten days of fierce fighting, and the PLO was expelled to southern Lebanon. **Hinge Question:** Why did King Hussein perceive the armed PLO presence as an intolerable threat to the survival of the Hashemite monarchy?',
+              },
+            },
+          ],
+        },
+        {
+          title: 'The Munich Olympics Massacre',
+          paragraphs: [
+            '<span class="para-ref">[4.1]</span> In the early morning hours of **5 September 1972**, eight commandos belonging to a clandestine Fatah-linked terrorist cell calling itself **Black September** infiltrated the Olympic Village at the Munich Games in West Germany. Armed with assault rifles and grenades, they stormed the quarters of the Israeli Olympic delegation at 31 Connollystraße, killing wrestling coach Moshe Weinberg and weightlifter Yossef Romano, and taking **nine Israeli athletes and coaches hostage**.',
+            '<span class="para-ref">[4.2]</span> The terrorists demanded the immediate release of 234 Palestinian prisoners in Israel and German radicals Andreas Baader and Ulrike Meinhof. That night, during a botched, chaotic rescue attempt by Bavarian police at the **Fürstenfeldbruck airfield**, the terrorists detonated a hand grenade inside a helicopter and shot the bound hostages. All **eleven Israeli athletes**, five terrorists, and one German police officer were killed, horrifying a live global television audience of 900 million viewers.',
+          ],
+          act: 4,
+          act_title:
+            'Stage 4: The Munich Olympics Massacre — What was the global impact of the Munich Olympics massacre in 1972?',
+          theme_heading: 'The Munich Olympics Massacre',
+          text: '<span class="para-ref">[4.1]</span> In the early morning hours of **5 September 1972**, eight commandos belonging to a clandestine Fatah-linked terrorist cell calling itself **Black September** infiltrated the Olympic Village at the Munich Games in West Germany. Armed with assault rifles and grenades, they stormed the quarters of the Israeli Olympic delegation at 31 Connollystraße, killing wrestling coach Moshe Weinberg and weightlifter Yossef Romano, and taking **nine Israeli athletes and coaches hostage**.\n\n<span class="para-ref">[4.2]</span> The terrorists demanded the immediate release of 234 Palestinian prisoners in Israel and German radicals Andreas Baader and Ulrike Meinhof. That night, during a botched, chaotic rescue attempt by Bavarian police at the **Fürstenfeldbruck airfield**, the terrorists detonated a hand grenade inside a helicopter and shot the bound hostages. All **eleven Israeli athletes**, five terrorists, and one German police officer were killed, horrifying a live global television audience of 900 million viewers.',
+          sources: [
+            {
+              id: 'cme_l8_source_d',
+              letter: 'D',
+              title: "Source D: Cartographic Map of 'Fatahland' in Southern Lebanon",
+              src: '/units/cme_new/assets/fatahland.svg',
+              image: '/units/cme_new/assets/fatahland.svg',
+              source: '/units/cme_new/assets/fatahland.svg',
+              caption:
+                "Cartographic map detailing PLO operational bases, weapons caches, and Katyusha rocket launch zones across the Arkoub region ('Fatahland') along the Lebanese-Israeli border.",
+              desc: 'Strategic military map of PLO military build-up in southern Lebanon.',
+              provenance: 'IDF Northern Command Intelligence Directorate, Safed, 1972.',
+              citation: 'IDF Northern Command Archives.',
+              hinge_question:
+                'How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?',
+              source_context:
+                "Under the 1969 Cairo Agreement brokered by Nasser, the weak Lebanese government granted the PLO autonomy to manage refugee camps and conduct armed operations against Israel from southern Lebanon. This created 'Fatahland', sparking regular cross-border Israeli artillery strikes and commando raids against Lebanese villages. **Hinge Question:** How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?",
+              context:
+                'The PLO established a major armed base in southern Lebanon, launching cross-border attacks into northern Israel.',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
+              enquiry_question:
+                "How reliable is Source D for demonstrating the military threat posed by the PLO along Israel's northern frontier in the early 1970s?",
+              model_answer:
+                'Source D is highly reliable regarding IDF intelligence assessments of rocket launch corridors; however, because it was produced to justify Israeli cross-border incursions into Lebanon, it emphasizes guerrilla infrastructure while minimizing the heavy collateral casualties inflicted on Lebanese civilians.',
+              provenance_clues: {
+                author: 'IDF Northern Command cartographic intelligence unit.',
+                audience: 'IDF Chief of Staff, Northern Command officers, and Ministry of Defense.',
+                motive:
+                  'To map Palestinian guerrilla artillery emplacements and justify cross-border retaliatory strikes.',
+                hinge_question:
+                  'How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Under the 1969 Cairo Agreement brokered by Nasser, the weak Lebanese government granted the PLO autonomy to manage refugee camps and conduct armed operations against Israel from southern Lebanon. This created 'Fatahland', sparking regular cross-border Israeli artillery strikes and commando raids against Lebanese villages. **Hinge Question:** How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?",
               },
             },
           ],
@@ -10604,38 +10609,40 @@ const cme_new_data = {
             {
               id: 'cme_l8_source_e',
               letter: 'E',
-              title: "Source E: Cartographic Map of 'Fatahland' in Southern Lebanon",
-              src: '/units/cme_new/assets/fatahland.svg',
-              image: '/units/cme_new/assets/fatahland.svg',
-              source: '/units/cme_new/assets/fatahland.svg',
+              title: 'Source E: Yasser Arafat Addressing the UN General Assembly (1974)',
+              src: '/images/cme_arafat_un_1974.png',
+              image: '/images/cme_arafat_un_1974.png',
+              source: '/images/cme_arafat_un_1974.png',
               caption:
-                "Cartographic map detailing PLO operational bases, weapons caches, and Katyusha rocket launch zones across the Arkoub region ('Fatahland') along the Lebanese-Israeli border.",
-              desc: 'Strategic military map of PLO military build-up in southern Lebanon.',
-              provenance: 'IDF Northern Command Intelligence Directorate, Safed, 1972.',
-              citation: 'IDF Northern Command Archives.',
+                "Yasser Arafat addressing the United Nations General Assembly in New York on 13 November 1974, famously concluding: 'I come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch fall from my hand.'",
+              desc: "Photograph of Yasser Arafat's historic address to the UN General Assembly.",
+              provenance: 'United Nations Photo Archives (UN Photo 128456), 13 November 1974.',
+              citation:
+                'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
               hinge_question:
-                'How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?',
+                "How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
               source_context:
-                "Under the 1969 Cairo Agreement brokered by Nasser, the weak Lebanese government granted the PLO autonomy to manage refugee camps and conduct armed operations against Israel from southern Lebanon. This created 'Fatahland', sparking regular cross-border Israeli artillery strikes and commando raids against Lebanese villages. **Hinge Question:** How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?",
+                "In 1974, the Arab League summit in Rabat recognized the PLO as the 'sole legitimate representative of the Palestinian people'. Shortly after, the UN invited Arafat to address the General Assembly as a head of state—the first leader of a non-member organization to do so. The UN subsequently recognized the Palestinian right to self-determination and granted the PLO observer status. **Hinge Question:** How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
               context:
-                'The PLO established a major armed base in southern Lebanon, launching cross-border attacks into northern Israel.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+                'On 13 November 1974, Yasser Arafat addressed the UN General Assembly, securing international diplomatic standing.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                "How reliable is Source E for demonstrating the military threat posed by the PLO along Israel's northern frontier in the early 1970s?",
+                'What can you infer from Source E about how the international standing of the Palestinian national movement transformed by 1974?',
               model_answer:
-                'Source E is highly reliable regarding IDF intelligence assessments of rocket launch corridors; however, because it was produced to justify Israeli cross-border incursions into Lebanon, it emphasizes guerrilla infrastructure while minimizing the heavy collateral casualties inflicted on Lebanese civilians.',
+                'Source E demonstrates that the Palestinian national movement had successfully evolved from being treated merely as an anonymous humanitarian refugee problem into an internationally recognized sovereign political nation with legitimate claims to self-determination.',
               provenance_clues: {
-                author: 'IDF Northern Command cartographic intelligence unit.',
-                audience: 'IDF Chief of Staff, Northern Command officers, and Ministry of Defense.',
+                author: 'United Nations official press photographer.',
+                audience:
+                  'UN General Assembly delegates, international heads of state, and world television audiences.',
                 motive:
-                  'To map Palestinian guerrilla artillery emplacements and justify cross-border retaliatory strikes.',
+                  'To document the unprecedented diplomatic breakthrough of the PLO on the highest world stage.',
                 hinge_question:
-                  'How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?',
+                  "How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
               },
               teacher_notes: {
                 source_context:
-                  "Under the 1969 Cairo Agreement brokered by Nasser, the weak Lebanese government granted the PLO autonomy to manage refugee camps and conduct armed operations against Israel from southern Lebanon. This created 'Fatahland', sparking regular cross-border Israeli artillery strikes and commando raids against Lebanese villages. **Hinge Question:** How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?",
+                  "In 1974, the Arab League summit in Rabat recognized the PLO as the 'sole legitimate representative of the Palestinian people'. Shortly after, the UN invited Arafat to address the General Assembly as a head of state—the first leader of a non-member organization to do so. The UN subsequently recognized the Palestinian right to self-determination and granted the PLO observer status. **Hinge Question:** How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
               },
             },
           ],
@@ -10645,44 +10652,7 @@ const cme_new_data = {
         {
           id: 'cme_l8_source_a',
           letter: 'A',
-          title: "Source A: PFLP Guerrillas Blowing Up Airplanes at Dawson's Field (1970)",
-          src: '/images/cme_dawsons_field_1970.jpg',
-          image: '/images/cme_dawsons_field_1970.jpg',
-          source: '/images/cme_dawsons_field_1970.jpg',
-          caption:
-            'Three hijacked Western airliners (BOAC, Swissair, TWA) detonated by Marxist PFLP guerrillas on a desert airstrip in Jordan on 12 September 1970 after releasing 300 passengers.',
-          desc: 'Documentary photograph of hijacked jetliners exploding in the Jordanian desert.',
-          provenance: 'Associated Press / AP Images (700912089), 12 September 1970.',
-          citation: 'Associated Press / British Movietone.',
-          hinge_question:
-            'How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?',
-          source_context:
-            "In September 1970, George Habash's Popular Front for the Liberation of Palestine (PFLP) hijacked four airliners and forced three to land at Dawson's Field in Jordan. The spectacle of masked guerrillas blowing up $50 million of aircraft humiliated King Hussein and precipitated the bloody Jordanian civil war known as Black September. **Hinge Question:** How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?",
-          context:
-            "The PFLP hijacked commercial airliners to Dawson's Field in Jordan, challenging the authority of King Hussein.",
-          question_badge: 'Historical Utility',
-          question_type: 'Historical Utility',
-          enquiry_question:
-            'How useful is Source A for an enquiry into the tactics adopted by militant Palestinian factions after the defeat of conventional Arab armies in 1967?',
-          model_answer:
-            'Source A is profoundly useful because it captures the transition from conventional state warfare to international asymmetric terror spectacles designed to bypass Arab regimes and compel global media coverage of Palestinian grievances.',
-          provenance_clues: {
-            author: "International photojournalists allowed onto Dawson's Field by the PFLP.",
-            audience: 'Global television news networks and Western governments.',
-            motive:
-              'To maximize media drama, demonstrate PFLP defiance, and force the release of imprisoned militants in Europe.',
-            hinge_question:
-              'How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?',
-          },
-          teacher_notes: {
-            source_context:
-              "In September 1970, George Habash's Popular Front for the Liberation of Palestine (PFLP) hijacked four airliners and forced three to land at Dawson's Field in Jordan. The spectacle of masked guerrillas blowing up $50 million of aircraft humiliated King Hussein and precipitated the bloody Jordanian civil war known as Black September. **Hinge Question:** How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?",
-          },
-        },
-        {
-          id: 'cme_l8_source_b',
-          letter: 'B',
-          title: 'Source B: Yasser Arafat in Military Battle Fatigues (1969)',
+          title: 'Source A: Yasser Arafat in Military Battle Fatigues (1969)',
           src: '/units/cme_new/assets/yasser_arafat.jpg',
           image: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
           source: '/units/cme_new/assets/yasser_arafat.jpg',
@@ -10701,7 +10671,7 @@ const cme_new_data = {
           question_badge: 'Author’s Purpose',
           question_type: 'Author’s Purpose',
           enquiry_question:
-            "What was the purpose behind Arafat's calculated public image shown in Source B?",
+            "What was the purpose behind Arafat's calculated public image shown in Source A?",
           model_answer:
             'Arafat deliberately cultivated the persona of an austere guerrilla commander to establish his authority over competing factional rivals and prove to Palestinian refugees that their liberation lay in self-reliant armed resistance rather than reliance on untrustworthy Arab monarchs.',
           provenance_clues: {
@@ -10719,49 +10689,47 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l8_source_c',
-          letter: 'C',
-          title: 'Source C: Yasser Arafat Addressing the UN General Assembly (1974)',
-          src: '/images/cme_arafat_un_1974.png',
-          image: '/images/cme_arafat_un_1974.png',
-          source: '/images/cme_arafat_un_1974.png',
+          id: 'cme_l8_source_b',
+          letter: 'B',
+          title: "Source B: PFLP Guerrillas Blowing Up Airplanes at Dawson's Field (1970)",
+          src: '/images/cme_dawsons_field_1970.jpg',
+          image: '/images/cme_dawsons_field_1970.jpg',
+          source: '/images/cme_dawsons_field_1970.jpg',
           caption:
-            "Yasser Arafat addressing the United Nations General Assembly in New York on 13 November 1974, famously concluding: 'I come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch fall from my hand.'",
-          desc: "Photograph of Yasser Arafat's historic address to the UN General Assembly.",
-          provenance: 'United Nations Photo Archives (UN Photo 128456), 13 November 1974.',
-          citation:
-            'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
+            'Three hijacked Western airliners (BOAC, Swissair, TWA) detonated by Marxist PFLP guerrillas on a desert airstrip in Jordan on 12 September 1970 after releasing 300 passengers.',
+          desc: 'Documentary photograph of hijacked jetliners exploding in the Jordanian desert.',
+          provenance: 'Associated Press / AP Images (700912089), 12 September 1970.',
+          citation: 'Associated Press / British Movietone.',
           hinge_question:
-            "How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
+            'How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?',
           source_context:
-            "In 1974, the Arab League summit in Rabat recognized the PLO as the 'sole legitimate representative of the Palestinian people'. Shortly after, the UN invited Arafat to address the General Assembly as a head of state—the first leader of a non-member organization to do so. The UN subsequently recognized the Palestinian right to self-determination and granted the PLO observer status. **Hinge Question:** How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
+            "In September 1970, George Habash's Popular Front for the Liberation of Palestine (PFLP) hijacked four airliners and forced three to land at Dawson's Field in Jordan. The spectacle of masked guerrillas blowing up $50 million of aircraft humiliated King Hussein and precipitated the bloody Jordanian civil war known as Black September. **Hinge Question:** How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?",
           context:
-            'On 13 November 1974, Yasser Arafat addressed the UN General Assembly, securing international diplomatic standing.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
+            "The PFLP hijacked commercial airliners to Dawson's Field in Jordan, challenging the authority of King Hussein.",
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
           enquiry_question:
-            'What can you infer from Source C about how the international standing of the Palestinian national movement transformed by 1974?',
+            'How useful is Source B for an enquiry into the tactics adopted by militant Palestinian factions after the defeat of conventional Arab armies in 1967?',
           model_answer:
-            'Source C demonstrates that the Palestinian national movement had successfully evolved from being treated merely as an anonymous humanitarian refugee problem into an internationally recognized sovereign political nation with legitimate claims to self-determination.',
+            'Source B is profoundly useful because it captures the transition from conventional state warfare to international asymmetric terror spectacles designed to bypass Arab regimes and compel global media coverage of Palestinian grievances.',
           provenance_clues: {
-            author: 'United Nations official press photographer.',
-            audience:
-              'UN General Assembly delegates, international heads of state, and world television audiences.',
+            author: "International photojournalists allowed onto Dawson's Field by the PFLP.",
+            audience: 'Global television news networks and Western governments.',
             motive:
-              'To document the unprecedented diplomatic breakthrough of the PLO on the highest world stage.',
+              'To maximize media drama, demonstrate PFLP defiance, and force the release of imprisoned militants in Europe.',
             hinge_question:
-              "How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
+              'How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?',
           },
           teacher_notes: {
             source_context:
-              "In 1974, the Arab League summit in Rabat recognized the PLO as the 'sole legitimate representative of the Palestinian people'. Shortly after, the UN invited Arafat to address the General Assembly as a head of state—the first leader of a non-member organization to do so. The UN subsequently recognized the Palestinian right to self-determination and granted the PLO observer status. **Hinge Question:** How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
+              "In September 1970, George Habash's Popular Front for the Liberation of Palestine (PFLP) hijacked four airliners and forced three to land at Dawson's Field in Jordan. The spectacle of masked guerrillas blowing up $50 million of aircraft humiliated King Hussein and precipitated the bloody Jordanian civil war known as Black September. **Hinge Question:** How did dramatic international airliner hijackings by groups like the PFLP force the Palestinian cause into global consciousness?",
           },
         },
         {
-          id: 'cme_l8_source_d',
-          letter: 'D',
+          id: 'cme_l8_source_c',
+          letter: 'C',
           title:
-            'Source D: Military Cartographic Operations Map of Black September, Jordan (September 1970)',
+            'Source C: Military Cartographic Operations Map of Black September, Jordan (September 1970)',
           src: '/images/cme_jordan_fedayeen_1970_map.png',
           image: '/images/cme_jordan_fedayeen_1970_map.png',
           source: '/images/cme_jordan_fedayeen_1970_map.png',
@@ -10781,9 +10749,9 @@ const cme_new_data = {
           question_badge: 'Cross-Referencing',
           question_type: 'Cross-Referencing',
           enquiry_question:
-            "How does Source D cross-reference with the creation of 'Fatahland' in Lebanon to explain the regional destabilization of the early 1970s?",
+            "How does Source C cross-reference with the creation of 'Fatahland' in Lebanon to explain the regional destabilization of the early 1970s?",
           model_answer:
-            "Source D shows the violent military expulsion of PLO forces from Jordan, which directly caused thousands of armed militants to relocate into southern Lebanon, overwhelming Lebanon's fragile sectarian balance and provoking the 1975 civil war.",
+            "Source C shows the violent military expulsion of PLO forces from Jordan, which directly caused thousands of armed militants to relocate into southern Lebanon, overwhelming Lebanon's fragile sectarian balance and provoking the 1975 civil war.",
           provenance_clues: {
             author: 'Hashemite military intelligence historians.',
             audience: 'King Hussein, Prime Minister Wasfi Tal, and military brigade commanders.',
@@ -10798,9 +10766,9 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l8_source_e',
-          letter: 'E',
-          title: "Source E: Cartographic Map of 'Fatahland' in Southern Lebanon",
+          id: 'cme_l8_source_d',
+          letter: 'D',
+          title: "Source D: Cartographic Map of 'Fatahland' in Southern Lebanon",
           src: '/units/cme_new/assets/fatahland.svg',
           image: '/units/cme_new/assets/fatahland.svg',
           source: '/units/cme_new/assets/fatahland.svg',
@@ -10818,9 +10786,9 @@ const cme_new_data = {
           question_badge: 'Reliability & Provenance',
           question_type: 'Reliability & Provenance',
           enquiry_question:
-            "How reliable is Source E for demonstrating the military threat posed by the PLO along Israel's northern frontier in the early 1970s?",
+            "How reliable is Source D for demonstrating the military threat posed by the PLO along Israel's northern frontier in the early 1970s?",
           model_answer:
-            'Source E is highly reliable regarding IDF intelligence assessments of rocket launch corridors; however, because it was produced to justify Israeli cross-border incursions into Lebanon, it emphasizes guerrilla infrastructure while minimizing the heavy collateral casualties inflicted on Lebanese civilians.',
+            'Source D is highly reliable regarding IDF intelligence assessments of rocket launch corridors; however, because it was produced to justify Israeli cross-border incursions into Lebanon, it emphasizes guerrilla infrastructure while minimizing the heavy collateral casualties inflicted on Lebanese civilians.',
           provenance_clues: {
             author: 'IDF Northern Command cartographic intelligence unit.',
             audience: 'IDF Chief of Staff, Northern Command officers, and Ministry of Defense.',
@@ -10832,6 +10800,45 @@ const cme_new_data = {
           teacher_notes: {
             source_context:
               "Under the 1969 Cairo Agreement brokered by Nasser, the weak Lebanese government granted the PLO autonomy to manage refugee camps and conduct armed operations against Israel from southern Lebanon. This created 'Fatahland', sparking regular cross-border Israeli artillery strikes and commando raids against Lebanese villages. **Hinge Question:** How did the 1969 Cairo Agreement between Lebanon and the PLO compromise Lebanese state sovereignty in the south?",
+          },
+        },
+        {
+          id: 'cme_l8_source_e',
+          letter: 'E',
+          title: 'Source E: Yasser Arafat Addressing the UN General Assembly (1974)',
+          src: '/images/cme_arafat_un_1974.png',
+          image: '/images/cme_arafat_un_1974.png',
+          source: '/images/cme_arafat_un_1974.png',
+          caption:
+            "Yasser Arafat addressing the United Nations General Assembly in New York on 13 November 1974, famously concluding: 'I come bearing an olive branch and a freedom fighter's gun. Do not let the olive branch fall from my hand.'",
+          desc: "Photograph of Yasser Arafat's historic address to the UN General Assembly.",
+          provenance: 'United Nations Photo Archives (UN Photo 128456), 13 November 1974.',
+          citation:
+            'UNRWA Film & Photo Archive, Gaza / West Bank (UN Archive ID UNRWA-HIST-1949-042).',
+          hinge_question:
+            "How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
+          source_context:
+            "In 1974, the Arab League summit in Rabat recognized the PLO as the 'sole legitimate representative of the Palestinian people'. Shortly after, the UN invited Arafat to address the General Assembly as a head of state—the first leader of a non-member organization to do so. The UN subsequently recognized the Palestinian right to self-determination and granted the PLO observer status. **Hinge Question:** How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
+          context:
+            'On 13 November 1974, Yasser Arafat addressed the UN General Assembly, securing international diplomatic standing.',
+          question_badge: 'Source Inference',
+          question_type: 'Source Inference',
+          enquiry_question:
+            'What can you infer from Source E about how the international standing of the Palestinian national movement transformed by 1974?',
+          model_answer:
+            'Source E demonstrates that the Palestinian national movement had successfully evolved from being treated merely as an anonymous humanitarian refugee problem into an internationally recognized sovereign political nation with legitimate claims to self-determination.',
+          provenance_clues: {
+            author: 'United Nations official press photographer.',
+            audience:
+              'UN General Assembly delegates, international heads of state, and world television audiences.',
+            motive:
+              'To document the unprecedented diplomatic breakthrough of the PLO on the highest world stage.',
+            hinge_question:
+              "How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
+          },
+          teacher_notes: {
+            source_context:
+              "In 1974, the Arab League summit in Rabat recognized the PLO as the 'sole legitimate representative of the Palestinian people'. Shortly after, the UN invited Arafat to address the General Assembly as a head of state—the first leader of a non-member organization to do so. The UN subsequently recognized the Palestinian right to self-determination and granted the PLO observer status. **Hinge Question:** How did Arafat's speech signal a shift in PLO strategy from pure guerrilla warfare to international diplomatic recognition?",
           },
         },
       ],
@@ -11588,39 +11595,39 @@ const cme_new_data = {
             {
               id: 'cme_l9_source_a',
               letter: 'A',
-              title: 'Source A: Egyptian Troops Breaching the Bar Lev Line (October 1973)',
-              src: '/images/cme_egyptians_crossing_suez_1973.jpg',
-              image: '/images/cme_egyptians_crossing_suez_1973.jpg',
-              source: '/images/cme_egyptians_crossing_suez_1973.jpg',
+              title:
+                'Source A: Tactical Blueprint of Bar-Lev Line Fortifications Along the Suez Canal (1969–1970)',
+              src: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
+              image: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
+              source: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
               caption:
-                'Egyptian Second Army assault troops crossing the Suez Canal in rubber dinghies under heavy covering fire during Operation Badr on the afternoon of 6 October 1973.',
-              desc: 'Iconic combat photograph of the Egyptian crossing of the Suez Canal.',
-              provenance:
-                'Egyptian Ministry of Defense / Al-Ahram Archive (Badr-73), 6 October 1973.',
-              citation: 'Egyptian Armed Forces Moral Affairs Department.',
+                'Engineering schematic of the Israeli Bar-Lev Line along the eastern bank of the Suez Canal, illustrating the massive sand ramparts, reinforced concrete bunkers, and artillery observation posts constructed during the War of Attrition.',
+              desc: 'Tactical engineering schematic of the Bar-Lev Line fortifications.',
+              provenance: 'Israel Defense Forces Engineering Corps archival blueprint, 1969.',
+              citation: 'IDF Archives, Tel HaShomer.',
               hinge_question:
-                "How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
+                'Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
               source_context:
-                "At 2:00 PM on 6 October 1973 (Yom Kippur and tenth of Ramadan), Egypt launched Operation Badr. Over 200 Egyptian aircraft struck Israeli airfields and radar posts, while 8,000 infantry crossed the canal in the first 20 minutes. Using high-pressure water cannons, engineering units washed away 3 million cubic meters of sand ramparts in six hours. **Hinge Question:** How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
+                'During the 1969–70 War of Attrition, Israel invested over $500 million to construct the Bar-Lev Line, a 160km defensive barrier featuring 20m high sand berms designed to withstand heavy artillery and prevent amphibious canal crossings. **Hinge Question:** Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
               context:
-                'On 6 October 1973, Egypt launched Operation Badr, successfully crossing the Suez Canal and taking the Bar Lev Line.',
+                'The Bar-Lev Line was built along the Suez Canal between 1968 and 1970 as a fortified defensive barrier.',
               question_badge: 'Historical Utility',
               question_type: 'Historical Utility',
               enquiry_question:
-                'How useful is Source A for an inquiry into why the opening phase of the 1973 Yom Kippur War was viewed as a triumph in Egypt?',
+                'How useful is Source A for an enquiry into the defensive strategy adopted by Israel following the Six-Day War?',
               model_answer:
-                "Source A is exceptionally useful because it provides vivid photographic testimony of the meticulous military planning and morale that allowed Egyptian infantry to breach an unassailable defensive obstacle, shattering Israel's myth of invincibility.",
+                "Source A is exceptionally useful because it illustrates the IDF's reliance on static, heavily fortified concrete strongpoints and massive earthen barriers to deter Egyptian offensive actions and protect the Sinai buffer zone.",
               provenance_clues: {
-                author: 'Egyptian military combat camera unit embedded with crossing waves.',
-                audience: 'The Egyptian public, Arab world media, and military archives.',
+                author: 'IDF Combat Engineering Corps officers under General Haim Bar-Lev.',
+                audience: 'General Staff and regional commanders of Southern Command.',
                 motive:
-                  'To document the heroic crossing and restore Arab national honor following the humiliation of 1967.',
+                  'To detail defensive firing arcs, minefield layouts, and bunker reinforcement specifications.',
                 hinge_question:
-                  "How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
+                  'Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
               },
               teacher_notes: {
                 source_context:
-                  "At 2:00 PM on 6 October 1973 (Yom Kippur and tenth of Ramadan), Egypt launched Operation Badr. Over 200 Egyptian aircraft struck Israeli airfields and radar posts, while 8,000 infantry crossed the canal in the first 20 minutes. Using high-pressure water cannons, engineering units washed away 3 million cubic meters of sand ramparts in six hours. **Hinge Question:** How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
+                  'During the 1969–70 War of Attrition, Israel invested over $500 million to construct the Bar-Lev Line, a 160km defensive barrier featuring 20m high sand berms designed to withstand heavy artillery and prevent amphibious canal crossings. **Hinge Question:** Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
               },
             },
           ],
@@ -11640,39 +11647,40 @@ const cme_new_data = {
             {
               id: 'cme_l9_source_b',
               letter: 'B',
-              title: 'Source B: Israeli Tanks Crossing Pontoon Bridge to Egypt (October 1973)',
-              src: '/images/cme_israeli_crossing_suez_1973.jpg',
-              image: '/images/cme_israeli_crossing_suez_1973.jpg',
-              source: '/images/cme_israeli_crossing_suez_1973.jpg',
+              title:
+                'Source B: President Sadat Reviewing Battle Plans in Center 10 Operations Room (6 October 1973)',
+              src: '/units/cme_new/assets/anwar_sadat.jpg',
+              image: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
+              source: '/units/cme_new/assets/anwar_sadat.jpg',
               caption:
-                "General Ariel Sharon's 143rd Armoured Division crossing the pontoon bridge at Deversoir to the west bank of the Suez Canal during Operation Stouthearted Men (Abirey-Halev), mid-October 1973.",
-              desc: 'Combat photograph of Israeli armored columns counter-crossing into mainland Egypt.',
+                'President Anwar Sadat studying operational military charts in the Egyptian Armed Forces Center 10 Operations Room alongside War Minister Ahmad Ismail Ali and Chief of Staff Saad el-Shazly during the surprise attack, 6 October 1973.',
+              desc: 'Archival portrait of President Anwar Sadat in military uniform.',
               provenance:
-                'Israel Government Press Office / Avi Simhoni (GPO D1-73), 16 October 1973.',
-              citation: 'Israel Government Press Office / IDF Archives.',
+                'Egyptian Presidency Information Agency / Al-Ahram Archive, October 1973.',
+              citation: 'Egyptian State Archives, Cairo.',
               hinge_question:
-                "Why was Sharon's counter-crossing into mainland Egypt the turning point that forced Egypt to accept a ceasefire?",
+                "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
               source_context:
-                "After stabilizing the Golan front, the IDF discovered a seam between the Egyptian Second and Third Armies at Deversoir. Commanded by Ariel Sharon, paratroopers and tanks bridged the canal into the Egyptian mainland, destroying Egyptian SAM missile sites, clearing airspace for the IAF, and completely encircling the 20,000-man Egyptian Third Army. **Hinge Question:** Why was Sharon's counter-crossing into mainland Egypt the turning point that forced Egypt to accept a ceasefire?",
+                "Unlike Nasser, Sadat did not seek the military destruction of Israel, knowing it was militarily impossible. His goal was a limited war: to cross the canal, seize a 10-mile bridgehead in Sinai, shatter the diplomatic deadlock, and force the United States to intervene and pressure Israel into returning occupied Egyptian land. **Hinge Question:** How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
               context:
-                'In mid-October 1973, the IDF counter-attacked across the Suez Canal, encircling the Egyptian Third Army.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
+                'President Sadat planned a limited war to break the diplomatic stalemate and restore Arab pride.',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'What can you infer from Source B about how Israeli tactical commanders regained the military initiative after the initial shock of the surprise attack?',
+                "How reliable is Source B for understanding Anwar Sadat's wartime calculations during the 1973 conflict?",
               model_answer:
-                'Source B demonstrates that aggressive, improvisational armored maneuvering allowed Israeli field commanders to bypass fortified Egyptian lines and strike directly into the vulnerable Egyptian rear, completely reversing the military momentum.',
+                "Source B accurately reflects Sadat's wartime role as Supreme Commander; however, as an official state photograph, it obscures his later strategic blunder in ordering Egyptian armor out from under their SAM missile umbrella on 14 October, which led to disastrous tank losses.",
               provenance_clues: {
-                author: "Avi Simhoni, IDF combat photographer attached to Sharon's division.",
-                audience: 'Israeli military command, anxious home front public, and global press.',
+                author: 'Official Egyptian presidential staff photographer.',
+                audience: 'The Egyptian public and military officer corps.',
                 motive:
-                  'To prove that the IDF had turned the tide of the war and was advancing toward Cairo.',
+                  'To present Sadat as a calm, decisive wartime strategist orchestrating the reclamation of Egyptian sovereignty.',
                 hinge_question:
-                  "Why was Sharon's counter-crossing into mainland Egypt the turning point that forced Egypt to accept a ceasefire?",
+                  "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
               },
               teacher_notes: {
                 source_context:
-                  "After stabilizing the Golan front, the IDF discovered a seam between the Egyptian Second and Third Armies at Deversoir. Commanded by Ariel Sharon, paratroopers and tanks bridged the canal into the Egyptian mainland, destroying Egyptian SAM missile sites, clearing airspace for the IAF, and completely encircling the 20,000-man Egyptian Third Army. **Hinge Question:** Why was Sharon's counter-crossing into mainland Egypt the turning point that forced Egypt to accept a ceasefire?",
+                  "Unlike Nasser, Sadat did not seek the military destruction of Israel, knowing it was militarily impossible. His goal was a limited war: to cross the canal, seize a 10-mile bridgehead in Sinai, shatter the diplomatic deadlock, and force the United States to intervene and pressure Israel into returning occupied Egyptian land. **Hinge Question:** How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
               },
             },
           ],
@@ -11686,50 +11694,51 @@ const cme_new_data = {
         {
           title: 'The Surprise Attack on Yom Kippur',
           paragraphs: [
-            '<span class="para-ref">[3.1]</span> At 14:00 on Saturday, **6 October 1973**, Egypt and Syria launched **Operation Badr**, a coordinated two-front surprise assault. They struck on **Yom Kippur** (the Day of Atonement), the holiest day in Judaism, when Israeli radio was silent, transportation was halted, and military units were operating with skeleton crews. In the north, three Syrian infantry divisions and 800 tanks smashed into Israeli lines on the **Golan Heights**, outnumbering the defenders eleven-to-one.',
+            '<span class="para-ref">[3.1]</span> At 14:00 on Saturday, **6 October 1973**, Egypt and Syria launched **the surprise attack**, a coordinated two-front surprise assault. They struck on **Yom Kippur** (the Day of Atonement), the holiest day in Judaism, when Israeli radio was silent, transportation was halted, and military units were operating with skeleton crews. In the north, three Syrian infantry divisions and 800 tanks smashed into Israeli lines on the **Golan Heights**, outnumbering the defenders eleven-to-one.',
             '<span class="para-ref">[3.2]</span> In the south, 80,000 Egyptian troops crossed the Suez Canal under cover of a ferocious 2,000-gun artillery bombardment. Using high-pressure water cannons mounted on pontoons, Egyptian engineering teams blasted **60 massive breaches** through the 20-metre sand rampart of the Bar-Lev Line in less than ten hours. Egyptian infantry armed with portable Soviet **Sagger wire-guided anti-tank missiles** and mobile **SAM batteries** decimated counter-attacking Israeli tanks and jets, establishing a solid six-mile beachhead in Sinai.',
           ],
           act: 3,
           act_title:
             'Stage 3: The Surprise Attack on Yom Kippur — How did Egyptian and Syrian forces achieve tactical surprise on Yom Kippur?',
           theme_heading: 'The Surprise Attack on Yom Kippur',
-          text: '<span class="para-ref">[3.1]</span> At 14:00 on Saturday, **6 October 1973**, Egypt and Syria launched **Operation Badr**, a coordinated two-front surprise assault. They struck on **Yom Kippur** (the Day of Atonement), the holiest day in Judaism, when Israeli radio was silent, transportation was halted, and military units were operating with skeleton crews. In the north, three Syrian infantry divisions and 800 tanks smashed into Israeli lines on the **Golan Heights**, outnumbering the defenders eleven-to-one.\n\n<span class="para-ref">[3.2]</span> In the south, 80,000 Egyptian troops crossed the Suez Canal under cover of a ferocious 2,000-gun artillery bombardment. Using high-pressure water cannons mounted on pontoons, Egyptian engineering teams blasted **60 massive breaches** through the 20-metre sand rampart of the Bar-Lev Line in less than ten hours. Egyptian infantry armed with portable Soviet **Sagger wire-guided anti-tank missiles** and mobile **SAM batteries** decimated counter-attacking Israeli tanks and jets, establishing a solid six-mile beachhead in Sinai.',
+          text: '<span class="para-ref">[3.1]</span> At 14:00 on Saturday, **6 October 1973**, Egypt and Syria launched **the surprise attack**, a coordinated two-front surprise assault. They struck on **Yom Kippur** (the Day of Atonement), the holiest day in Judaism, when Israeli radio was silent, transportation was halted, and military units were operating with skeleton crews. In the north, three Syrian infantry divisions and 800 tanks smashed into Israeli lines on the **Golan Heights**, outnumbering the defenders eleven-to-one.\n\n<span class="para-ref">[3.2]</span> In the south, 80,000 Egyptian troops crossed the Suez Canal under cover of a ferocious 2,000-gun artillery bombardment. Using high-pressure water cannons mounted on pontoons, Egyptian engineering teams blasted **60 massive breaches** through the 20-metre sand rampart of the Bar-Lev Line in less than ten hours. Egyptian infantry armed with portable Soviet **Sagger wire-guided anti-tank missiles** and mobile **SAM batteries** decimated counter-attacking Israeli tanks and jets, establishing a solid six-mile beachhead in Sinai.',
           sources: [
             {
               id: 'cme_l9_source_c',
               letter: 'C',
-              title: 'Source C: Israeli Armor Crossing the Deversoir Pontoon Bridge (October 1973)',
-              src: '/units/cme_new/assets/yom_kippur_crossing.png',
-              image: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
-              source: '/units/cme_new/assets/yom_kippur_crossing.png',
+              title: 'Source C: Egyptian Troops Breaching the Bar Lev Line (October 1973)',
+              src: '/images/cme_egyptians_crossing_suez_1973.jpg',
+              image: '/images/cme_egyptians_crossing_suez_1973.jpg',
+              source: '/images/cme_egyptians_crossing_suez_1973.jpg',
               caption:
-                "Israeli Defense Forces Centurion and M60 Patton tanks of General Sharon's 143rd Armoured Division crossing the pontoon bridge at Deversoir into the Egyptian mainland on the west bank of the Suez Canal, October 1973.",
-              desc: 'Aerial photograph of the strategic Israeli crossing point at Deversoir.',
-              provenance: 'Israeli Air Force Reconnaissance Wing / IDF Archives, October 1973.',
-              citation: 'IAF Reconnaissance Archives.',
+                'Egyptian Second Army assault troops crossing the Suez Canal in rubber dinghies under heavy covering fire during the surprise attack on the afternoon of 6 October 1973.',
+              desc: 'Iconic combat photograph of the Egyptian crossing of the Suez Canal.',
+              provenance:
+                'Egyptian Ministry of Defense / Al-Ahram Archive (Badr-73), 6 October 1973.',
+              citation: 'Egyptian Armed Forces Moral Affairs Department.',
               hinge_question:
-                'How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
+                "How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
               source_context:
-                'In the first week of combat, Israel burned through half its tank inventory and immense ammunition stocks. President Richard Nixon ordered Operation Nickel Grass, flying 22,000 tons of tanks, artillery, and anti-tank missiles on giant C-5 Galaxy transports directly to Lod airport. This massive replenishment gave Israel the hardware needed to bridge the canal. **Hinge Question:** How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
+                "At 2:00 PM on 6 October 1973 (Yom Kippur and tenth of Ramadan), Egypt launched the surprise attack. Over 200 Egyptian aircraft struck Israeli airfields and radar posts, while 8,000 infantry crossed the canal in the first 20 minutes. Using high-pressure water cannons, engineering units washed away 3 million cubic meters of sand ramparts in six hours. **Hinge Question:** How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
               context:
-                "Operation Nickel Grass provided crucial US military supplies that sustained Israel's counter-offensive.",
+                'On 6 October 1973, Egypt launched the surprise attack, successfully crossing the Suez Canal and taking the Bar Lev Line.',
               question_badge: 'Historical Utility',
               question_type: 'Historical Utility',
               enquiry_question:
-                'How useful is Source C for understanding the logistical engineering required to alter the outcome of the Yom Kippur War?',
+                'How useful is Source C for an inquiry into why the opening phase of the 1973 Yom Kippur War was viewed as a triumph in Egypt?',
               model_answer:
-                'Source C is highly useful because it reveals that military victory hinged on monumental combat engineering feats—towing pre-fabricated steel roller bridges under relentless artillery fire to establish an unbreakable supply bridgehead into Africa.',
+                "Source C is exceptionally useful because it provides vivid photographic testimony of the meticulous military planning and morale that allowed Egyptian infantry to breach an unassailable defensive obstacle, shattering Israel's myth of invincibility.",
               provenance_clues: {
-                author: 'IAF photographic interpretation squadron.',
-                audience: 'IDF Chief of Staff David Elazar and Prime Minister Golda Meir.',
+                author: 'Egyptian military combat camera unit embedded with crossing waves.',
+                audience: 'The Egyptian public, Arab world media, and military archives.',
                 motive:
-                  'To confirm that heavy bridgeheads were secure and capable of sustaining heavy division traffic.',
+                  'To document the heroic crossing and restore Arab national honor following the humiliation of 1967.',
                 hinge_question:
-                  'How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
+                  "How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
               },
               teacher_notes: {
                 source_context:
-                  'In the first week of combat, Israel burned through half its tank inventory and immense ammunition stocks. President Richard Nixon ordered Operation Nickel Grass, flying 22,000 tons of tanks, artillery, and anti-tank missiles on giant C-5 Galaxy transports directly to Lod airport. This massive replenishment gave Israel the hardware needed to bridge the canal. **Hinge Question:** How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
+                  "At 2:00 PM on 6 October 1973 (Yom Kippur and tenth of Ramadan), Egypt launched the surprise attack. Over 200 Egyptian aircraft struck Israeli airfields and radar posts, while 8,000 infantry crossed the canal in the first 20 minutes. Using high-pressure water cannons, engineering units washed away 3 million cubic meters of sand ramparts in six hours. **Hinge Question:** How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
               },
             },
           ],
@@ -11749,40 +11758,38 @@ const cme_new_data = {
             {
               id: 'cme_l9_source_d',
               letter: 'D',
-              title:
-                'Source D: Henry Kissinger Conferring with Golda Meir and Richard Nixon (November 1973)',
-              src: '/units/cme_new/assets/henry_kissinger.jpg',
-              image: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
-              source: '/units/cme_new/assets/henry_kissinger.jpg',
+              title: 'Source D: Israeli Armor Crossing the Deversoir Pontoon Bridge (October 1973)',
+              src: '/units/cme_new/assets/yom_kippur_crossing.png',
+              image: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
+              source: '/units/cme_new/assets/yom_kippur_crossing.png',
               caption:
-                'US Secretary of State Henry Kissinger conferring with Israeli Prime Minister Golda Meir and President Richard Nixon in the Oval Office during post-war ceasefire and disengagement negotiations, 1 November 1973.',
-              desc: 'Archival photograph of Henry Kissinger during shuttle diplomacy.',
-              provenance:
-                'Gerald R. Ford Presidential Library / White House Photographic Office, October 1973.',
-              citation: 'Ford Presidential Library / US National Archives.',
+                "Israeli Defense Forces Centurion and M60 Patton tanks of General Sharon's 143rd Armoured Division crossing the pontoon bridge at Deversoir into the Egyptian mainland on the west bank of the Suez Canal, October 1973.",
+              desc: 'Aerial photograph of the strategic Israeli crossing point at Deversoir.',
+              provenance: 'Israeli Air Force Reconnaissance Wing / IDF Archives, October 1973.',
+              citation: 'IAF Reconnaissance Archives.',
               hinge_question:
-                'Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?',
+                'How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
               source_context:
-                "Kissinger realized that total Israeli humiliation of Egypt would make peace negotiations impossible. He deliberately restrained Israel from annihilating the trapped Third Army and pressured both sides into UN Resolution 338. Kissinger then launched months of 'shuttle diplomacy' flying between Jerusalem, Cairo, and Damascus to negotiate troop disengagement pacts. **Hinge Question:** Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?",
+                'In the first week of combat, Israel burned through half its tank inventory and immense ammunition stocks. President Richard Nixon ordered Operation Nickel Grass, flying 22,000 tons of tanks, artillery, and anti-tank missiles on giant C-5 Galaxy transports directly to Lod airport. This massive replenishment gave Israel the hardware needed to bridge the canal. **Hinge Question:** How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
               context:
-                'Henry Kissinger conducted shuttle diplomacy to negotiate ceasefires and disengagement agreements.',
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+                "Operation Nickel Grass provided crucial US military supplies that sustained Israel's counter-offensive.",
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
               enquiry_question:
-                "What was Henry Kissinger's primary diplomatic objective during the negotiations shown in Source D?",
+                'How useful is Source D for understanding the logistical engineering required to alter the outcome of the Yom Kippur War?',
               model_answer:
-                'Kissinger sought to maintain a stalemate where neither side achieved total victory, thereby ending Soviet influence in Cairo, restoring American diplomatic hegemony, and nudging Sadat into bilateral negotiations with Washington and Israel.',
+                'Source D is highly useful because it reveals that military victory hinged on monumental combat engineering feats—towing pre-fabricated steel roller bridges under relentless artillery fire to establish an unbreakable supply bridgehead into Africa.',
               provenance_clues: {
-                author: 'White House photojournalist accompanying the Secretary of State.',
-                audience: 'US executive branch leadership and international diplomatic press.',
+                author: 'IAF photographic interpretation squadron.',
+                audience: 'IDF Chief of Staff David Elazar and Prime Minister Golda Meir.',
                 motive:
-                  'To project Kissinger as the indispensable global diplomat capable of resolving superpower nuclear confrontation.',
+                  'To confirm that heavy bridgeheads were secure and capable of sustaining heavy division traffic.',
                 hinge_question:
-                  'Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?',
+                  'How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
               },
               teacher_notes: {
                 source_context:
-                  "Kissinger realized that total Israeli humiliation of Egypt would make peace negotiations impossible. He deliberately restrained Israel from annihilating the trapped Third Army and pressured both sides into UN Resolution 338. Kissinger then launched months of 'shuttle diplomacy' flying between Jerusalem, Cairo, and Damascus to negotiate troop disengagement pacts. **Hinge Question:** Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?",
+                  'In the first week of combat, Israel burned through half its tank inventory and immense ammunition stocks. President Richard Nixon ordered Operation Nickel Grass, flying 22,000 tons of tanks, artillery, and anti-tank missiles on giant C-5 Galaxy transports directly to Lod airport. This massive replenishment gave Israel the hardware needed to bridge the canal. **Hinge Question:** How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
               },
             },
           ],
@@ -11809,39 +11816,39 @@ const cme_new_data = {
               id: 'cme_l9_source_e',
               letter: 'E',
               title:
-                'Source E: President Sadat Reviewing Battle Plans in Center 10 Operations Room (6 October 1973)',
-              src: '/units/cme_new/assets/anwar_sadat.jpg',
-              image: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
-              source: '/units/cme_new/assets/anwar_sadat.jpg',
+                'Source E: Henry Kissinger Conferring with Golda Meir and Richard Nixon (November 1973)',
+              src: '/units/cme_new/assets/henry_kissinger.jpg',
+              image: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
+              source: '/units/cme_new/assets/henry_kissinger.jpg',
               caption:
-                'President Anwar Sadat studying operational military charts in the Egyptian Armed Forces Center 10 Operations Room alongside War Minister Ahmad Ismail Ali and Chief of Staff Saad el-Shazly during Operation Badr, 6 October 1973.',
-              desc: 'Archival portrait of President Anwar Sadat in military uniform.',
+                'US Secretary of State Henry Kissinger conferring with Israeli Prime Minister Golda Meir and President Richard Nixon in the Oval Office during post-war ceasefire and disengagement negotiations, 1 November 1973.',
+              desc: 'Archival photograph of Henry Kissinger during shuttle diplomacy.',
               provenance:
-                'Egyptian Presidency Information Agency / Al-Ahram Archive, October 1973.',
-              citation: 'Egyptian State Archives, Cairo.',
+                'Gerald R. Ford Presidential Library / White House Photographic Office, October 1973.',
+              citation: 'Ford Presidential Library / US National Archives.',
               hinge_question:
-                "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
+                'Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?',
               source_context:
-                "Unlike Nasser, Sadat did not seek the military destruction of Israel, knowing it was militarily impossible. His goal was a limited war: to cross the canal, seize a 10-mile bridgehead in Sinai, shatter the diplomatic deadlock, and force the United States to intervene and pressure Israel into returning occupied Egyptian land. **Hinge Question:** How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
+                "Kissinger realized that total Israeli humiliation of Egypt would make peace negotiations impossible. He deliberately restrained Israel from annihilating the trapped Third Army and pressured both sides into UN Resolution 338. Kissinger then launched months of 'shuttle diplomacy' flying between Jerusalem, Cairo, and Damascus to negotiate troop disengagement pacts. **Hinge Question:** Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?",
               context:
-                'President Sadat planned a limited war to break the diplomatic stalemate and restore Arab pride.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
+                'Henry Kissinger conducted shuttle diplomacy to negotiate ceasefires and disengagement agreements.',
+              question_badge: 'Author’s Purpose',
+              question_type: 'Author’s Purpose',
               enquiry_question:
-                "How reliable is Source E for understanding Anwar Sadat's wartime calculations during the 1973 conflict?",
+                "What was Henry Kissinger's primary diplomatic objective during the negotiations shown in Source E?",
               model_answer:
-                "Source E accurately reflects Sadat's wartime role as Supreme Commander; however, as an official state photograph, it obscures his later strategic blunder in ordering Egyptian armor out from under their SAM missile umbrella on 14 October, which led to disastrous tank losses.",
+                'Kissinger sought to maintain a stalemate where neither side achieved total victory, thereby ending Soviet influence in Cairo, restoring American diplomatic hegemony, and nudging Sadat into bilateral negotiations with Washington and Israel.',
               provenance_clues: {
-                author: 'Official Egyptian presidential staff photographer.',
-                audience: 'The Egyptian public and military officer corps.',
+                author: 'White House photojournalist accompanying the Secretary of State.',
+                audience: 'US executive branch leadership and international diplomatic press.',
                 motive:
-                  'To present Sadat as a calm, decisive wartime strategist orchestrating the reclamation of Egyptian sovereignty.',
+                  'To project Kissinger as the indispensable global diplomat capable of resolving superpower nuclear confrontation.',
                 hinge_question:
-                  "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
+                  'Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?',
               },
               teacher_notes: {
                 source_context:
-                  "Unlike Nasser, Sadat did not seek the military destruction of Israel, knowing it was militarily impossible. His goal was a limited war: to cross the canal, seize a 10-mile bridgehead in Sinai, shatter the diplomatic deadlock, and force the United States to intervene and pressure Israel into returning occupied Egyptian land. **Hinge Question:** How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
+                  "Kissinger realized that total Israeli humiliation of Egypt would make peace negotiations impossible. He deliberately restrained Israel from annihilating the trapped Third Army and pressured both sides into UN Resolution 338. Kissinger then launched months of 'shuttle diplomacy' flying between Jerusalem, Cairo, and Damascus to negotiate troop disengagement pacts. **Hinge Question:** Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?",
               },
             },
           ],
@@ -11851,27 +11858,103 @@ const cme_new_data = {
         {
           id: 'cme_l9_source_a',
           letter: 'A',
-          title: 'Source A: Egyptian Troops Breaching the Bar Lev Line (October 1973)',
+          title:
+            'Source A: Tactical Blueprint of Bar-Lev Line Fortifications Along the Suez Canal (1969–1970)',
+          src: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
+          image: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
+          source: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
+          caption:
+            'Engineering schematic of the Israeli Bar-Lev Line along the eastern bank of the Suez Canal, illustrating the massive sand ramparts, reinforced concrete bunkers, and artillery observation posts constructed during the War of Attrition.',
+          desc: 'Tactical engineering schematic of the Bar-Lev Line fortifications.',
+          provenance: 'Israel Defense Forces Engineering Corps archival blueprint, 1969.',
+          citation: 'IDF Archives, Tel HaShomer.',
+          hinge_question:
+            'Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
+          source_context:
+            'During the 1969–70 War of Attrition, Israel invested over $500 million to construct the Bar-Lev Line, a 160km defensive barrier featuring 20m high sand berms designed to withstand heavy artillery and prevent amphibious canal crossings. **Hinge Question:** Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
+          context:
+            'The Bar-Lev Line was built along the Suez Canal between 1968 and 1970 as a fortified defensive barrier.',
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
+          enquiry_question:
+            'How useful is Source A for an enquiry into the defensive strategy adopted by Israel following the Six-Day War?',
+          model_answer:
+            "Source A is exceptionally useful because it illustrates the IDF's reliance on static, heavily fortified concrete strongpoints and massive earthen barriers to deter Egyptian offensive actions and protect the Sinai buffer zone.",
+          provenance_clues: {
+            author: 'IDF Combat Engineering Corps officers under General Haim Bar-Lev.',
+            audience: 'General Staff and regional commanders of Southern Command.',
+            motive:
+              'To detail defensive firing arcs, minefield layouts, and bunker reinforcement specifications.',
+            hinge_question:
+              'Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
+          },
+          teacher_notes: {
+            source_context:
+              'During the 1969–70 War of Attrition, Israel invested over $500 million to construct the Bar-Lev Line, a 160km defensive barrier featuring 20m high sand berms designed to withstand heavy artillery and prevent amphibious canal crossings. **Hinge Question:** Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
+          },
+        },
+        {
+          id: 'cme_l9_source_b',
+          letter: 'B',
+          title:
+            'Source B: President Sadat Reviewing Battle Plans in Center 10 Operations Room (6 October 1973)',
+          src: '/units/cme_new/assets/anwar_sadat.jpg',
+          image: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
+          source: '/units/cme_new/assets/anwar_sadat.jpg',
+          caption:
+            'President Anwar Sadat studying operational military charts in the Egyptian Armed Forces Center 10 Operations Room alongside War Minister Ahmad Ismail Ali and Chief of Staff Saad el-Shazly during the surprise attack, 6 October 1973.',
+          desc: 'Archival portrait of President Anwar Sadat in military uniform.',
+          provenance: 'Egyptian Presidency Information Agency / Al-Ahram Archive, October 1973.',
+          citation: 'Egyptian State Archives, Cairo.',
+          hinge_question:
+            "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
+          source_context:
+            "Unlike Nasser, Sadat did not seek the military destruction of Israel, knowing it was militarily impossible. His goal was a limited war: to cross the canal, seize a 10-mile bridgehead in Sinai, shatter the diplomatic deadlock, and force the United States to intervene and pressure Israel into returning occupied Egyptian land. **Hinge Question:** How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
+          context:
+            'President Sadat planned a limited war to break the diplomatic stalemate and restore Arab pride.',
+          question_badge: 'Reliability & Provenance',
+          question_type: 'Reliability & Provenance',
+          enquiry_question:
+            "How reliable is Source B for understanding Anwar Sadat's wartime calculations during the 1973 conflict?",
+          model_answer:
+            "Source B accurately reflects Sadat's wartime role as Supreme Commander; however, as an official state photograph, it obscures his later strategic blunder in ordering Egyptian armor out from under their SAM missile umbrella on 14 October, which led to disastrous tank losses.",
+          provenance_clues: {
+            author: 'Official Egyptian presidential staff photographer.',
+            audience: 'The Egyptian public and military officer corps.',
+            motive:
+              'To present Sadat as a calm, decisive wartime strategist orchestrating the reclamation of Egyptian sovereignty.',
+            hinge_question:
+              "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
+          },
+          teacher_notes: {
+            source_context:
+              "Unlike Nasser, Sadat did not seek the military destruction of Israel, knowing it was militarily impossible. His goal was a limited war: to cross the canal, seize a 10-mile bridgehead in Sinai, shatter the diplomatic deadlock, and force the United States to intervene and pressure Israel into returning occupied Egyptian land. **Hinge Question:** How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
+          },
+        },
+        {
+          id: 'cme_l9_source_c',
+          letter: 'C',
+          title: 'Source C: Egyptian Troops Breaching the Bar Lev Line (October 1973)',
           src: '/images/cme_egyptians_crossing_suez_1973.jpg',
           image: '/images/cme_egyptians_crossing_suez_1973.jpg',
           source: '/images/cme_egyptians_crossing_suez_1973.jpg',
           caption:
-            'Egyptian Second Army assault troops crossing the Suez Canal in rubber dinghies under heavy covering fire during Operation Badr on the afternoon of 6 October 1973.',
+            'Egyptian Second Army assault troops crossing the Suez Canal in rubber dinghies under heavy covering fire during the surprise attack on the afternoon of 6 October 1973.',
           desc: 'Iconic combat photograph of the Egyptian crossing of the Suez Canal.',
           provenance: 'Egyptian Ministry of Defense / Al-Ahram Archive (Badr-73), 6 October 1973.',
           citation: 'Egyptian Armed Forces Moral Affairs Department.',
           hinge_question:
             "How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
           source_context:
-            "At 2:00 PM on 6 October 1973 (Yom Kippur and tenth of Ramadan), Egypt launched Operation Badr. Over 200 Egyptian aircraft struck Israeli airfields and radar posts, while 8,000 infantry crossed the canal in the first 20 minutes. Using high-pressure water cannons, engineering units washed away 3 million cubic meters of sand ramparts in six hours. **Hinge Question:** How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
+            "At 2:00 PM on 6 October 1973 (Yom Kippur and tenth of Ramadan), Egypt launched the surprise attack. Over 200 Egyptian aircraft struck Israeli airfields and radar posts, while 8,000 infantry crossed the canal in the first 20 minutes. Using high-pressure water cannons, engineering units washed away 3 million cubic meters of sand ramparts in six hours. **Hinge Question:** How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
           context:
-            'On 6 October 1973, Egypt launched Operation Badr, successfully crossing the Suez Canal and taking the Bar Lev Line.',
+            'On 6 October 1973, Egypt launched the surprise attack, successfully crossing the Suez Canal and taking the Bar Lev Line.',
           question_badge: 'Historical Utility',
           question_type: 'Historical Utility',
           enquiry_question:
-            'How useful is Source A for an inquiry into why the opening phase of the 1973 Yom Kippur War was viewed as a triumph in Egypt?',
+            'How useful is Source C for an inquiry into why the opening phase of the 1973 Yom Kippur War was viewed as a triumph in Egypt?',
           model_answer:
-            "Source A is exceptionally useful because it provides vivid photographic testimony of the meticulous military planning and morale that allowed Egyptian infantry to breach an unassailable defensive obstacle, shattering Israel's myth of invincibility.",
+            "Source C is exceptionally useful because it provides vivid photographic testimony of the meticulous military planning and morale that allowed Egyptian infantry to breach an unassailable defensive obstacle, shattering Israel's myth of invincibility.",
           provenance_clues: {
             author: 'Egyptian military combat camera unit embedded with crossing waves.',
             audience: 'The Egyptian public, Arab world media, and military archives.',
@@ -11882,50 +11965,13 @@ const cme_new_data = {
           },
           teacher_notes: {
             source_context:
-              "At 2:00 PM on 6 October 1973 (Yom Kippur and tenth of Ramadan), Egypt launched Operation Badr. Over 200 Egyptian aircraft struck Israeli airfields and radar posts, while 8,000 infantry crossed the canal in the first 20 minutes. Using high-pressure water cannons, engineering units washed away 3 million cubic meters of sand ramparts in six hours. **Hinge Question:** How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
+              "At 2:00 PM on 6 October 1973 (Yom Kippur and tenth of Ramadan), Egypt launched the surprise attack. Over 200 Egyptian aircraft struck Israeli airfields and radar posts, while 8,000 infantry crossed the canal in the first 20 minutes. Using high-pressure water cannons, engineering units washed away 3 million cubic meters of sand ramparts in six hours. **Hinge Question:** How did the technological innovation of using German high-pressure water pumps neutralize Israel's massive sand barriers?",
           },
         },
         {
-          id: 'cme_l9_source_b',
-          letter: 'B',
-          title: 'Source B: Israeli Tanks Crossing Pontoon Bridge to Egypt (October 1973)',
-          src: '/images/cme_israeli_crossing_suez_1973.jpg',
-          image: '/images/cme_israeli_crossing_suez_1973.jpg',
-          source: '/images/cme_israeli_crossing_suez_1973.jpg',
-          caption:
-            "General Ariel Sharon's 143rd Armoured Division crossing the pontoon bridge at Deversoir to the west bank of the Suez Canal during Operation Stouthearted Men (Abirey-Halev), mid-October 1973.",
-          desc: 'Combat photograph of Israeli armored columns counter-crossing into mainland Egypt.',
-          provenance: 'Israel Government Press Office / Avi Simhoni (GPO D1-73), 16 October 1973.',
-          citation: 'Israel Government Press Office / IDF Archives.',
-          hinge_question:
-            "Why was Sharon's counter-crossing into mainland Egypt the turning point that forced Egypt to accept a ceasefire?",
-          source_context:
-            "After stabilizing the Golan front, the IDF discovered a seam between the Egyptian Second and Third Armies at Deversoir. Commanded by Ariel Sharon, paratroopers and tanks bridged the canal into the Egyptian mainland, destroying Egyptian SAM missile sites, clearing airspace for the IAF, and completely encircling the 20,000-man Egyptian Third Army. **Hinge Question:** Why was Sharon's counter-crossing into mainland Egypt the turning point that forced Egypt to accept a ceasefire?",
-          context:
-            'In mid-October 1973, the IDF counter-attacked across the Suez Canal, encircling the Egyptian Third Army.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
-          enquiry_question:
-            'What can you infer from Source B about how Israeli tactical commanders regained the military initiative after the initial shock of the surprise attack?',
-          model_answer:
-            'Source B demonstrates that aggressive, improvisational armored maneuvering allowed Israeli field commanders to bypass fortified Egyptian lines and strike directly into the vulnerable Egyptian rear, completely reversing the military momentum.',
-          provenance_clues: {
-            author: "Avi Simhoni, IDF combat photographer attached to Sharon's division.",
-            audience: 'Israeli military command, anxious home front public, and global press.',
-            motive:
-              'To prove that the IDF had turned the tide of the war and was advancing toward Cairo.',
-            hinge_question:
-              "Why was Sharon's counter-crossing into mainland Egypt the turning point that forced Egypt to accept a ceasefire?",
-          },
-          teacher_notes: {
-            source_context:
-              "After stabilizing the Golan front, the IDF discovered a seam between the Egyptian Second and Third Armies at Deversoir. Commanded by Ariel Sharon, paratroopers and tanks bridged the canal into the Egyptian mainland, destroying Egyptian SAM missile sites, clearing airspace for the IAF, and completely encircling the 20,000-man Egyptian Third Army. **Hinge Question:** Why was Sharon's counter-crossing into mainland Egypt the turning point that forced Egypt to accept a ceasefire?",
-          },
-        },
-        {
-          id: 'cme_l9_source_c',
-          letter: 'C',
-          title: 'Source C: Israeli Armor Crossing the Deversoir Pontoon Bridge (October 1973)',
+          id: 'cme_l9_source_d',
+          letter: 'D',
+          title: 'Source D: Israeli Armor Crossing the Deversoir Pontoon Bridge (October 1973)',
           src: '/units/cme_new/assets/yom_kippur_crossing.png',
           image: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
           source: '/units/cme_new/assets/yom_kippur_crossing.png',
@@ -11943,9 +11989,9 @@ const cme_new_data = {
           question_badge: 'Historical Utility',
           question_type: 'Historical Utility',
           enquiry_question:
-            'How useful is Source C for understanding the logistical engineering required to alter the outcome of the Yom Kippur War?',
+            'How useful is Source D for understanding the logistical engineering required to alter the outcome of the Yom Kippur War?',
           model_answer:
-            'Source C is highly useful because it reveals that military victory hinged on monumental combat engineering feats—towing pre-fabricated steel roller bridges under relentless artillery fire to establish an unbreakable supply bridgehead into Africa.',
+            'Source D is highly useful because it reveals that military victory hinged on monumental combat engineering feats—towing pre-fabricated steel roller bridges under relentless artillery fire to establish an unbreakable supply bridgehead into Africa.',
           provenance_clues: {
             author: 'IAF photographic interpretation squadron.',
             audience: 'IDF Chief of Staff David Elazar and Prime Minister Golda Meir.',
@@ -11960,10 +12006,10 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l9_source_d',
-          letter: 'D',
+          id: 'cme_l9_source_e',
+          letter: 'E',
           title:
-            'Source D: Henry Kissinger Conferring with Golda Meir and Richard Nixon (November 1973)',
+            'Source E: Henry Kissinger Conferring with Golda Meir and Richard Nixon (November 1973)',
           src: '/units/cme_new/assets/henry_kissinger.jpg',
           image: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
           source: '/units/cme_new/assets/henry_kissinger.jpg',
@@ -11982,7 +12028,7 @@ const cme_new_data = {
           question_badge: 'Author’s Purpose',
           question_type: 'Author’s Purpose',
           enquiry_question:
-            "What was Henry Kissinger's primary diplomatic objective during the negotiations shown in Source D?",
+            "What was Henry Kissinger's primary diplomatic objective during the negotiations shown in Source E?",
           model_answer:
             'Kissinger sought to maintain a stalemate where neither side achieved total victory, thereby ending Soviet influence in Cairo, restoring American diplomatic hegemony, and nudging Sadat into bilateral negotiations with Washington and Israel.',
           provenance_clues: {
@@ -11996,44 +12042,6 @@ const cme_new_data = {
           teacher_notes: {
             source_context:
               "Kissinger realized that total Israeli humiliation of Egypt would make peace negotiations impossible. He deliberately restrained Israel from annihilating the trapped Third Army and pressured both sides into UN Resolution 338. Kissinger then launched months of 'shuttle diplomacy' flying between Jerusalem, Cairo, and Damascus to negotiate troop disengagement pacts. **Hinge Question:** Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?",
-          },
-        },
-        {
-          id: 'cme_l9_source_e',
-          letter: 'E',
-          title:
-            'Source E: President Sadat Reviewing Battle Plans in Center 10 Operations Room (6 October 1973)',
-          src: '/units/cme_new/assets/anwar_sadat.jpg',
-          image: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
-          source: '/units/cme_new/assets/anwar_sadat.jpg',
-          caption:
-            'President Anwar Sadat studying operational military charts in the Egyptian Armed Forces Center 10 Operations Room alongside War Minister Ahmad Ismail Ali and Chief of Staff Saad el-Shazly during Operation Badr, 6 October 1973.',
-          desc: 'Archival portrait of President Anwar Sadat in military uniform.',
-          provenance: 'Egyptian Presidency Information Agency / Al-Ahram Archive, October 1973.',
-          citation: 'Egyptian State Archives, Cairo.',
-          hinge_question:
-            "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
-          source_context:
-            "Unlike Nasser, Sadat did not seek the military destruction of Israel, knowing it was militarily impossible. His goal was a limited war: to cross the canal, seize a 10-mile bridgehead in Sinai, shatter the diplomatic deadlock, and force the United States to intervene and pressure Israel into returning occupied Egyptian land. **Hinge Question:** How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
-          context:
-            'President Sadat planned a limited war to break the diplomatic stalemate and restore Arab pride.',
-          question_badge: 'Reliability & Provenance',
-          question_type: 'Reliability & Provenance',
-          enquiry_question:
-            "How reliable is Source E for understanding Anwar Sadat's wartime calculations during the 1973 conflict?",
-          model_answer:
-            "Source E accurately reflects Sadat's wartime role as Supreme Commander; however, as an official state photograph, it obscures his later strategic blunder in ordering Egyptian armor out from under their SAM missile umbrella on 14 October, which led to disastrous tank losses.",
-          provenance_clues: {
-            author: 'Official Egyptian presidential staff photographer.',
-            audience: 'The Egyptian public and military officer corps.',
-            motive:
-              'To present Sadat as a calm, decisive wartime strategist orchestrating the reclamation of Egyptian sovereignty.',
-            hinge_question:
-              "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
-          },
-          teacher_notes: {
-            source_context:
-              "Unlike Nasser, Sadat did not seek the military destruction of Israel, knowing it was militarily impossible. His goal was a limited war: to cross the canal, seize a 10-mile bridgehead in Sinai, shatter the diplomatic deadlock, and force the United States to intervene and pressure Israel into returning occupied Egyptian land. **Hinge Question:** How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
           },
         },
       ],
@@ -12535,7 +12543,7 @@ const cme_new_data = {
           duration: '3 mins 08 secs',
           pathway: 'Starter Hook',
           teacher_guidance:
-            'Fast-paced overview of Sadat and Assad launching Operation Badr on Yom Kippur / Ramadan, shattering the myth of Israeli invincibility. Recommended Watch Window: 00:00–03:08 (Full Clip) • Lesson Phase: Starter Hook (0–5m). Tone Alert: Rapid historical explainer outlining the shock of the joint Egyptian-Syrian assault.',
+            'Fast-paced overview of Sadat and Assad launching the surprise attack on Yom Kippur / Ramadan, shattering the myth of Israeli invincibility. Recommended Watch Window: 00:00–03:08 (Full Clip) • Lesson Phase: Starter Hook (0–5m). Tone Alert: Rapid historical explainer outlining the shock of the joint Egyptian-Syrian assault.',
           viewing_task:
             "<ol><li><strong>[00:45] Recall:</strong> On what Jewish holy day and during what Muslim holy month did Egypt and Syria launch their joint surprise offensive on 6 October 1973?</li><li><strong>[01:30] Explain:</strong> What was the Israeli intelligence failure known as <em>the Conceptzya</em> ('The Concept'), and why did it blind Israeli military leaders to clear warnings of war?</li><li><strong>[02:25] Challenge:</strong> How did the successful surprise crossing of the Suez Canal shatter the psychological myth of Israeli military invincibility established after 1967?</li></ol>",
           model_answer:
@@ -13189,38 +13197,38 @@ const cme_new_data = {
             {
               id: 'cme_l10_source_a',
               letter: 'A',
-              title: 'Source A: The Historic White House Lawn Peace Handshake (March 1979)',
-              src: '/images/cme_treaty_triple_handshake_1979.jpg',
-              image: '/images/cme_treaty_triple_handshake_1979.jpg',
-              source: '/images/cme_treaty_triple_handshake_1979.jpg',
+              title: 'Source A: Israeli Prime Minister Menachem Begin (1978)',
+              src: '/units/cme_new/assets/menachem_begin.jpeg',
+              image: '/units/cme_new/assets/menachem_begin.jpeg',
+              source: '/units/cme_new/assets/menachem_begin.jpeg',
               caption:
-                'Egyptian President Anwar Sadat, US President Jimmy Carter, and Israeli Prime Minister Menachem Begin joining hands on the South Lawn of the White House after signing the Egypt-Israel Peace Treaty on 26 March 1979.',
-              desc: 'Iconic photograph of the Egypt-Israel Peace Treaty signing ceremony.',
-              provenance: 'Jimmy Carter Presidential Library (NAID 175653), 26 March 1979.',
-              citation: 'Jimmy Carter Library / National Archives.',
+                'Menachem Begin, former underground Irgun commander and Likud Prime Minister who negotiated the historic peace agreement with Egypt, 1978.',
+              desc: 'Archival portrait photograph of Israeli Prime Minister Menachem Begin.',
+              provenance: 'Israel Government Press Office (GPO D1-1978), 1978.',
+              citation: 'Israel Government Press Office, Jerusalem.',
               hinge_question:
-                'Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?',
+                'Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
               source_context:
-                "The Washington treaty formalized the Camp David Accords. Israel agreed to return the entire Sinai Peninsula and its oilfields to Egypt, dismantle all 18 Jewish settlements in Sinai, and open normal diplomatic and trade ties. However, the treaty relegated the Palestinian question to a vague 'autonomy' council that was never implemented, leading the Arab League to expel Egypt. **Hinge Question:** Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?",
+                'As a right-wing Revisionist Zionist who had fiercely opposed earlier compromises, Begin possessed the unimpeachable nationalist credentials needed to evacuate Jewish settlements like Yamit in Sinai without being branded a traitor. Crucially, Begin gave up Sinai to secure Egyptian neutrality, allowing Israel to retain permanent control over Judea and Samaria (the West Bank). **Hinge Question:** Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
               context:
-                'On 26 March 1979, Egypt and Israel signed the historic peace treaty on the White House lawn.',
-              question_badge: 'Historical Utility',
-              question_type: 'Historical Utility',
+                'Likud Prime Minister Menachem Begin agreed to return the entire Sinai in exchange for a separate peace with Egypt.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How useful is Source A for an enquiry into the breakthrough achieved in Arab-Israeli diplomacy by the end of the 1970s?',
+                'What can you infer from Source A about the ideological trade-offs made by Menachem Begin at Camp David?',
               model_answer:
-                'Source A is exceptionally useful because it captures the monumental breakthrough of the first peace treaty between Israel and an Arab neighbor, fundamentally dismantling the Arab military coalition by removing Egypt—the largest Arab army—from future conflict.',
+                'Source A indicates that Begin made painful territorial concessions in the non-biblical Sinai Peninsula specifically to split the Arab world and protect Israeli sovereignty over the biblically sacred heartland of Judea and Samaria.',
               provenance_clues: {
-                author: 'White House official photographer.',
-                audience: 'Global media, American voters, and citizens across the Middle East.',
+                author: "Official photographer for the Prime Minister's Office.",
+                audience: 'The Israeli electorate, Knesset members, and international diplomats.',
                 motive:
-                  'To celebrate a triumphant foreign policy masterpiece brokered by the Carter administration.',
+                  'To project Begin as a resolute, principled legal statesman capable of defending vital national interests.',
                 hinge_question:
-                  'Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?',
+                  'Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
               },
               teacher_notes: {
                 source_context:
-                  "The Washington treaty formalized the Camp David Accords. Israel agreed to return the entire Sinai Peninsula and its oilfields to Egypt, dismantle all 18 Jewish settlements in Sinai, and open normal diplomatic and trade ties. However, the treaty relegated the Palestinian question to a vague 'autonomy' council that was never implemented, leading the Arab League to expel Egypt. **Hinge Question:** Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?",
+                  'As a right-wing Revisionist Zionist who had fiercely opposed earlier compromises, Begin possessed the unimpeachable nationalist credentials needed to evacuate Jewish settlements like Yamit in Sinai without being branded a traitor. Crucially, Begin gave up Sinai to secure Egyptian neutrality, allowing Israel to retain permanent control over Judea and Samaria (the West Bank). **Hinge Question:** Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
               },
             },
           ],
@@ -13299,38 +13307,39 @@ const cme_new_data = {
             {
               id: 'cme_l10_source_c',
               letter: 'C',
-              title: 'Source C: Israeli Prime Minister Menachem Begin (1978)',
-              src: '/units/cme_new/assets/menachem_begin.jpeg',
-              image: '/units/cme_new/assets/menachem_begin.jpeg',
-              source: '/units/cme_new/assets/menachem_begin.jpeg',
+              title: 'Source C: The Camp David Accords Framework Document (September 1978)',
+              src: '/units/cme_new/assets/camp_david_accords.png',
+              image: '/units/cme_new/assets/camp_david_accords.png',
+              source: '/units/cme_new/assets/camp_david_accords.png',
               caption:
-                'Menachem Begin, former underground Irgun commander and Likud Prime Minister who negotiated the historic peace agreement with Egypt, 1978.',
-              desc: 'Archival portrait photograph of Israeli Prime Minister Menachem Begin.',
-              provenance: 'Israel Government Press Office (GPO D1-1978), 1978.',
-              citation: 'Israel Government Press Office, Jerusalem.',
+                "Facsimile copy of the signed 'Framework for Peace in the Middle East' signed by Anwar Sadat and Menachem Begin at Camp David on 17 September 1978.",
+              desc: 'Documentary photograph of the signed Camp David Accords text.',
+              provenance:
+                'US National Archives, Washington D.C. (RG 59 / Department of State Treaties), September 1978.',
+              citation: 'US National Archives, Washington D.C.',
               hinge_question:
-                'Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
+                'Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
               source_context:
-                'As a right-wing Revisionist Zionist who had fiercely opposed earlier compromises, Begin possessed the unimpeachable nationalist credentials needed to evacuate Jewish settlements like Yamit in Sinai without being branded a traitor. Crucially, Begin gave up Sinai to secure Egyptian neutrality, allowing Israel to retain permanent control over Judea and Samaria (the West Bank). **Hinge Question:** Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
+                'The Camp David framework contained two parts: a detailed bilateral treaty between Egypt and Israel, and a vague outline for five years of interim Palestinian administrative self-government in the West Bank and Gaza. Because the framework granted no guarantee of an independent state and gave Israel veto power over return of refugees, Palestinian leaders completely rejected it as a sham. **Hinge Question:** Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
               context:
-                'Likud Prime Minister Menachem Begin agreed to return the entire Sinai in exchange for a separate peace with Egypt.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
+                'The Camp David Accords established a framework for Egyptian-Israeli peace and interim Palestinian autonomy.',
+              question_badge: 'Reliability & Provenance',
+              question_type: 'Reliability & Provenance',
               enquiry_question:
-                'What can you infer from Source C about the ideological trade-offs made by Menachem Begin at Camp David?',
+                'How reliable is Source C for understanding the limitations of the Camp David Accords regarding the Palestinian issue?',
               model_answer:
-                'Source C indicates that Begin made painful territorial concessions in the non-biblical Sinai Peninsula specifically to split the Arab world and protect Israeli sovereignty over the biblically sacred heartland of Judea and Samaria.',
+                'Source C is extremely reliable as an official primary legal text, demonstrating that while the bilateral treaty with Egypt was ironclad and binding, the Palestinian autonomy sections were deliberately vague, aspirational, and unenforceable without Palestinian representation.',
               provenance_clues: {
-                author: "Official photographer for the Prime Minister's Office.",
-                audience: 'The Israeli electorate, Knesset members, and international diplomats.',
+                author: 'Legal counsel for the United States, Egypt, and Israel.',
+                audience: 'Signatory cabinets, the UN Security Council, and world governments.',
                 motive:
-                  'To project Begin as a resolute, principled legal statesman capable of defending vital national interests.',
+                  'To codify the historic breakthrough while disguising irreconcilable differences over Palestinian statehood.',
                 hinge_question:
-                  'Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
+                  'Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
               },
               teacher_notes: {
                 source_context:
-                  'As a right-wing Revisionist Zionist who had fiercely opposed earlier compromises, Begin possessed the unimpeachable nationalist credentials needed to evacuate Jewish settlements like Yamit in Sinai without being branded a traitor. Crucially, Begin gave up Sinai to secure Egyptian neutrality, allowing Israel to retain permanent control over Judea and Samaria (the West Bank). **Hinge Question:** Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
+                  'The Camp David framework contained two parts: a detailed bilateral treaty between Egypt and Israel, and a vague outline for five years of interim Palestinian administrative self-government in the West Bank and Gaza. Because the framework granted no guarantee of an independent state and gave Israel veto power over return of refugees, Palestinian leaders completely rejected it as a sham. **Hinge Question:** Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
               },
             },
           ],
@@ -13350,7 +13359,64 @@ const cme_new_data = {
             {
               id: 'cme_l10_source_d',
               letter: 'D',
-              title: 'Source D: Map of the Phased Israeli Withdrawal from Sinai (1979–1982)',
+              title: 'Source D: The Historic White House Lawn Peace Handshake (March 1979)',
+              src: '/images/cme_treaty_triple_handshake_1979.jpg',
+              image: '/images/cme_treaty_triple_handshake_1979.jpg',
+              source: '/images/cme_treaty_triple_handshake_1979.jpg',
+              caption:
+                'Egyptian President Anwar Sadat, US President Jimmy Carter, and Israeli Prime Minister Menachem Begin joining hands on the South Lawn of the White House after signing the Egypt-Israel Peace Treaty on 26 March 1979.',
+              desc: 'Iconic photograph of the Egypt-Israel Peace Treaty signing ceremony.',
+              provenance: 'Jimmy Carter Presidential Library (NAID 175653), 26 March 1979.',
+              citation: 'Jimmy Carter Library / National Archives.',
+              hinge_question:
+                'Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?',
+              source_context:
+                "The Washington treaty formalized the Camp David Accords. Israel agreed to return the entire Sinai Peninsula and its oilfields to Egypt, dismantle all 18 Jewish settlements in Sinai, and open normal diplomatic and trade ties. However, the treaty relegated the Palestinian question to a vague 'autonomy' council that was never implemented, leading the Arab League to expel Egypt. **Hinge Question:** Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?",
+              context:
+                'On 26 March 1979, Egypt and Israel signed the historic peace treaty on the White House lawn.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
+              enquiry_question:
+                'How useful is Source D for an enquiry into the breakthrough achieved in Arab-Israeli diplomacy by the end of the 1970s?',
+              model_answer:
+                'Source D is exceptionally useful because it captures the monumental breakthrough of the first peace treaty between Israel and an Arab neighbor, fundamentally dismantling the Arab military coalition by removing Egypt—the largest Arab army—from future conflict.',
+              provenance_clues: {
+                author: 'White House official photographer.',
+                audience: 'Global media, American voters, and citizens across the Middle East.',
+                motive:
+                  'To celebrate a triumphant foreign policy masterpiece brokered by the Carter administration.',
+                hinge_question:
+                  'Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?',
+              },
+              teacher_notes: {
+                source_context:
+                  "The Washington treaty formalized the Camp David Accords. Israel agreed to return the entire Sinai Peninsula and its oilfields to Egypt, dismantle all 18 Jewish settlements in Sinai, and open normal diplomatic and trade ties. However, the treaty relegated the Palestinian question to a vague 'autonomy' council that was never implemented, leading the Arab League to expel Egypt. **Hinge Question:** Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?",
+              },
+            },
+          ],
+          image: '/images/cme_sadat_memorial_1981.jpg',
+          image_alt:
+            'The Unknown Soldier Memorial in Nasr City, Cairo, where Anwar Sadat was assassinated during the annual military victory parade on 6 October 1981',
+          caption:
+            'Assassination of Anwar Sadat (6 October 1981): Islamic Jihad militants murdered Sadat during a military parade, viewing the separate peace with Israel as treason.',
+          isReversed: true,
+        },
+        {
+          title: 'Arab Boycott & The Assassination of Sadat',
+          paragraphs: [
+            '<span class="para-ref">[5.1]</span> While celebrated in the West, Sadat’s separate peace provoked incandescent fury across the Arab world. Arab governments condemned Sadat as a traitor who had sold out the Palestinian cause to reclaim Egyptian desert sand. The Arab League expelled Egypt from its membership, relocated its headquarters from Cairo to Tunis, severed diplomatic ties, and enacted a total economic boycott against Egyptian trade.',
+            '<span class="para-ref">[5.2]</span> Within Egypt, Islamic fundamentalist groups organized fierce domestic opposition. On **6 October 1981**, during the annual military parade in Cairo celebrating the eighth anniversary of the Yom Kippur canal crossing, Islamic Jihad militants led by Lieutenant **Khalid Islambouli** jumped from an artillery truck, hurling grenades and firing assault rifles into the reviewing stand. **Anwar Sadat was assassinated**, paying with his life for the peace treaty, but his successor **Sadat’s successor** chose to honor the treaty, preserving the uneasy peace with Israel.',
+          ],
+          act: 5,
+          act_title:
+            'Stage 5: Arab Boycott & The Assassination of Sadat — Why did Egyptian Islamic Jihad assassinate Anwar Sadat in October 1981?',
+          theme_heading: 'Arab Boycott & The Assassination of Sadat',
+          text: '<span class="para-ref">[5.1]</span> While celebrated in the West, Sadat’s separate peace provoked incandescent fury across the Arab world. Arab governments condemned Sadat as a traitor who had sold out the Palestinian cause to reclaim Egyptian desert sand. The Arab League expelled Egypt from its membership, relocated its headquarters from Cairo to Tunis, severed diplomatic ties, and enacted a total economic boycott against Egyptian trade.\n\n<span class="para-ref">[5.2]</span> Within Egypt, Islamic fundamentalist groups organized fierce domestic opposition. On **6 October 1981**, during the annual military parade in Cairo celebrating the eighth anniversary of the Yom Kippur canal crossing, Islamic Jihad militants led by Lieutenant **Khalid Islambouli** jumped from an artillery truck, hurling grenades and firing assault rifles into the reviewing stand. **Anwar Sadat was assassinated**, paying with his life for the peace treaty, but his successor **Sadat’s successor** chose to honor the treaty, preserving the uneasy peace with Israel.',
+          sources: [
+            {
+              id: 'cme_l10_source_e',
+              letter: 'E',
+              title: 'Source E: Map of the Phased Israeli Withdrawal from Sinai (1979–1982)',
               src: '/units/cme_new/assets/sinai_returned.svg',
               image: '/units/cme_new/assets/sinai_returned.svg',
               source: '/units/cme_new/assets/sinai_returned.svg',
@@ -13369,9 +13435,9 @@ const cme_new_data = {
               question_badge: 'Cross-Referencing',
               question_type: 'Cross-Referencing',
               enquiry_question:
-                "How does Source D cross-reference with UN Resolution 242 to demonstrate the practical application of 'Land for Peace'?",
+                "How does Source E cross-reference with UN Resolution 242 to demonstrate the practical application of 'Land for Peace'?",
               model_answer:
-                "Source D provides concrete territorial proof of 'Land for Peace' in practice, showing that when an Arab state agreed to full diplomatic recognition, demilitarized zones, and secure borders, Israel completely surrendered conquered territory.",
+                "Source E provides concrete territorial proof of 'Land for Peace' in practice, showing that when an Arab state agreed to full diplomatic recognition, demilitarized zones, and secure borders, Israel completely surrendered conquered territory.",
               provenance_clues: {
                 author: 'US Department of State and MFO military surveyors.',
                 audience:
@@ -13387,64 +13453,6 @@ const cme_new_data = {
               },
             },
           ],
-          image: '/images/cme_sadat_memorial_1981.jpg',
-          image_alt:
-            'The Unknown Soldier Memorial in Nasr City, Cairo, where Anwar Sadat was assassinated during the annual military victory parade on 6 October 1981',
-          caption:
-            'Assassination of Anwar Sadat (6 October 1981): Islamic Jihad militants murdered Sadat during a military parade, viewing the separate peace with Israel as treason.',
-          isReversed: true,
-        },
-        {
-          title: 'Arab Boycott & The Assassination of Sadat',
-          paragraphs: [
-            '<span class="para-ref">[5.1]</span> While celebrated in the West, Sadat’s separate peace provoked incandescent fury across the Arab world. Arab governments condemned Sadat as a traitor who had sold out the Palestinian cause to reclaim Egyptian desert sand. The Arab League expelled Egypt from its membership, relocated its headquarters from Cairo to Tunis, severed diplomatic ties, and enacted a total economic boycott against Egyptian trade.',
-            '<span class="para-ref">[5.2]</span> Within Egypt, Islamic fundamentalist groups organized fierce domestic opposition. On **6 October 1981**, during the annual military parade in Cairo celebrating the eighth anniversary of the Yom Kippur canal crossing, Islamic Jihad militants led by Lieutenant **Khalid Islambouli** jumped from an artillery truck, hurling grenades and firing assault rifles into the reviewing stand. **Anwar Sadat was assassinated**, paying with his life for the peace treaty, but his successor **Hosni Mubarak** chose to honor the treaty, preserving the cold peace with Israel.',
-          ],
-          act: 5,
-          act_title:
-            'Stage 5: Arab Boycott & The Assassination of Sadat — Why did Egyptian Islamic Jihad assassinate Anwar Sadat in October 1981?',
-          theme_heading: 'Arab Boycott & The Assassination of Sadat',
-          text: '<span class="para-ref">[5.1]</span> While celebrated in the West, Sadat’s separate peace provoked incandescent fury across the Arab world. Arab governments condemned Sadat as a traitor who had sold out the Palestinian cause to reclaim Egyptian desert sand. The Arab League expelled Egypt from its membership, relocated its headquarters from Cairo to Tunis, severed diplomatic ties, and enacted a total economic boycott against Egyptian trade.\n\n<span class="para-ref">[5.2]</span> Within Egypt, Islamic fundamentalist groups organized fierce domestic opposition. On **6 October 1981**, during the annual military parade in Cairo celebrating the eighth anniversary of the Yom Kippur canal crossing, Islamic Jihad militants led by Lieutenant **Khalid Islambouli** jumped from an artillery truck, hurling grenades and firing assault rifles into the reviewing stand. **Anwar Sadat was assassinated**, paying with his life for the peace treaty, but his successor **Hosni Mubarak** chose to honor the treaty, preserving the cold peace with Israel.',
-          sources: [
-            {
-              id: 'cme_l10_source_e',
-              letter: 'E',
-              title: 'Source E: The Camp David Accords Framework Document (September 1978)',
-              src: '/units/cme_new/assets/camp_david_accords.png',
-              image: '/units/cme_new/assets/camp_david_accords.png',
-              source: '/units/cme_new/assets/camp_david_accords.png',
-              caption:
-                "Facsimile copy of the signed 'Framework for Peace in the Middle East' signed by Anwar Sadat and Menachem Begin at Camp David on 17 September 1978.",
-              desc: 'Documentary photograph of the signed Camp David Accords text.',
-              provenance:
-                'US National Archives, Washington D.C. (RG 59 / Department of State Treaties), September 1978.',
-              citation: 'US National Archives, Washington D.C.',
-              hinge_question:
-                'Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
-              source_context:
-                'The Camp David framework contained two parts: a detailed bilateral treaty between Egypt and Israel, and a vague outline for five years of interim Palestinian administrative self-government in the West Bank and Gaza. Because the framework granted no guarantee of an independent state and gave Israel veto power over return of refugees, Palestinian leaders completely rejected it as a sham. **Hinge Question:** Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
-              context:
-                'The Camp David Accords established a framework for Egyptian-Israeli peace and interim Palestinian autonomy.',
-              question_badge: 'Reliability & Provenance',
-              question_type: 'Reliability & Provenance',
-              enquiry_question:
-                'How reliable is Source E for understanding the limitations of the Camp David Accords regarding the Palestinian issue?',
-              model_answer:
-                'Source E is extremely reliable as an official primary legal text, demonstrating that while the bilateral treaty with Egypt was ironclad and binding, the Palestinian autonomy sections were deliberately vague, aspirational, and unenforceable without Palestinian representation.',
-              provenance_clues: {
-                author: 'Legal counsel for the United States, Egypt, and Israel.',
-                audience: 'Signatory cabinets, the UN Security Council, and world governments.',
-                motive:
-                  'To codify the historic breakthrough while disguising irreconcilable differences over Palestinian statehood.',
-                hinge_question:
-                  'Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
-              },
-              teacher_notes: {
-                source_context:
-                  'The Camp David framework contained two parts: a detailed bilateral treaty between Egypt and Israel, and a vague outline for five years of interim Palestinian administrative self-government in the West Bank and Gaza. Because the framework granted no guarantee of an independent state and gave Israel veto power over return of refugees, Palestinian leaders completely rejected it as a sham. **Hinge Question:** Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
-              },
-            },
-          ],
         },
       ],
       draw_tasks: [],
@@ -13453,38 +13461,38 @@ const cme_new_data = {
         {
           id: 'cme_l10_source_a',
           letter: 'A',
-          title: 'Source A: The Historic White House Lawn Peace Handshake (March 1979)',
-          src: '/images/cme_treaty_triple_handshake_1979.jpg',
-          image: '/images/cme_treaty_triple_handshake_1979.jpg',
-          source: '/images/cme_treaty_triple_handshake_1979.jpg',
+          title: 'Source A: Israeli Prime Minister Menachem Begin (1978)',
+          src: '/units/cme_new/assets/menachem_begin.jpeg',
+          image: '/units/cme_new/assets/menachem_begin.jpeg',
+          source: '/units/cme_new/assets/menachem_begin.jpeg',
           caption:
-            'Egyptian President Anwar Sadat, US President Jimmy Carter, and Israeli Prime Minister Menachem Begin joining hands on the South Lawn of the White House after signing the Egypt-Israel Peace Treaty on 26 March 1979.',
-          desc: 'Iconic photograph of the Egypt-Israel Peace Treaty signing ceremony.',
-          provenance: 'Jimmy Carter Presidential Library (NAID 175653), 26 March 1979.',
-          citation: 'Jimmy Carter Library / National Archives.',
+            'Menachem Begin, former underground Irgun commander and Likud Prime Minister who negotiated the historic peace agreement with Egypt, 1978.',
+          desc: 'Archival portrait photograph of Israeli Prime Minister Menachem Begin.',
+          provenance: 'Israel Government Press Office (GPO D1-1978), 1978.',
+          citation: 'Israel Government Press Office, Jerusalem.',
           hinge_question:
-            'Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?',
+            'Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
           source_context:
-            "The Washington treaty formalized the Camp David Accords. Israel agreed to return the entire Sinai Peninsula and its oilfields to Egypt, dismantle all 18 Jewish settlements in Sinai, and open normal diplomatic and trade ties. However, the treaty relegated the Palestinian question to a vague 'autonomy' council that was never implemented, leading the Arab League to expel Egypt. **Hinge Question:** Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?",
+            'As a right-wing Revisionist Zionist who had fiercely opposed earlier compromises, Begin possessed the unimpeachable nationalist credentials needed to evacuate Jewish settlements like Yamit in Sinai without being branded a traitor. Crucially, Begin gave up Sinai to secure Egyptian neutrality, allowing Israel to retain permanent control over Judea and Samaria (the West Bank). **Hinge Question:** Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
           context:
-            'On 26 March 1979, Egypt and Israel signed the historic peace treaty on the White House lawn.',
-          question_badge: 'Historical Utility',
-          question_type: 'Historical Utility',
+            'Likud Prime Minister Menachem Begin agreed to return the entire Sinai in exchange for a separate peace with Egypt.',
+          question_badge: 'Source Inference',
+          question_type: 'Source Inference',
           enquiry_question:
-            'How useful is Source A for an enquiry into the breakthrough achieved in Arab-Israeli diplomacy by the end of the 1970s?',
+            'What can you infer from Source A about the ideological trade-offs made by Menachem Begin at Camp David?',
           model_answer:
-            'Source A is exceptionally useful because it captures the monumental breakthrough of the first peace treaty between Israel and an Arab neighbor, fundamentally dismantling the Arab military coalition by removing Egypt—the largest Arab army—from future conflict.',
+            'Source A indicates that Begin made painful territorial concessions in the non-biblical Sinai Peninsula specifically to split the Arab world and protect Israeli sovereignty over the biblically sacred heartland of Judea and Samaria.',
           provenance_clues: {
-            author: 'White House official photographer.',
-            audience: 'Global media, American voters, and citizens across the Middle East.',
+            author: "Official photographer for the Prime Minister's Office.",
+            audience: 'The Israeli electorate, Knesset members, and international diplomats.',
             motive:
-              'To celebrate a triumphant foreign policy masterpiece brokered by the Carter administration.',
+              'To project Begin as a resolute, principled legal statesman capable of defending vital national interests.',
             hinge_question:
-              'Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?',
+              'Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
           },
           teacher_notes: {
             source_context:
-              "The Washington treaty formalized the Camp David Accords. Israel agreed to return the entire Sinai Peninsula and its oilfields to Egypt, dismantle all 18 Jewish settlements in Sinai, and open normal diplomatic and trade ties. However, the treaty relegated the Palestinian question to a vague 'autonomy' council that was never implemented, leading the Arab League to expel Egypt. **Hinge Question:** Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?",
+              'As a right-wing Revisionist Zionist who had fiercely opposed earlier compromises, Begin possessed the unimpeachable nationalist credentials needed to evacuate Jewish settlements like Yamit in Sinai without being branded a traitor. Crucially, Begin gave up Sinai to secure Egyptian neutrality, allowing Israel to retain permanent control over Judea and Samaria (the West Bank). **Hinge Question:** Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
           },
         },
         {
@@ -13529,83 +13537,7 @@ const cme_new_data = {
         {
           id: 'cme_l10_source_c',
           letter: 'C',
-          title: 'Source C: Israeli Prime Minister Menachem Begin (1978)',
-          src: '/units/cme_new/assets/menachem_begin.jpeg',
-          image: '/units/cme_new/assets/menachem_begin.jpeg',
-          source: '/units/cme_new/assets/menachem_begin.jpeg',
-          caption:
-            'Menachem Begin, former underground Irgun commander and Likud Prime Minister who negotiated the historic peace agreement with Egypt, 1978.',
-          desc: 'Archival portrait photograph of Israeli Prime Minister Menachem Begin.',
-          provenance: 'Israel Government Press Office (GPO D1-1978), 1978.',
-          citation: 'Israel Government Press Office, Jerusalem.',
-          hinge_question:
-            'Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
-          source_context:
-            'As a right-wing Revisionist Zionist who had fiercely opposed earlier compromises, Begin possessed the unimpeachable nationalist credentials needed to evacuate Jewish settlements like Yamit in Sinai without being branded a traitor. Crucially, Begin gave up Sinai to secure Egyptian neutrality, allowing Israel to retain permanent control over Judea and Samaria (the West Bank). **Hinge Question:** Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
-          context:
-            'Likud Prime Minister Menachem Begin agreed to return the entire Sinai in exchange for a separate peace with Egypt.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
-          enquiry_question:
-            'What can you infer from Source C about the ideological trade-offs made by Menachem Begin at Camp David?',
-          model_answer:
-            'Source C indicates that Begin made painful territorial concessions in the non-biblical Sinai Peninsula specifically to split the Arab world and protect Israeli sovereignty over the biblically sacred heartland of Judea and Samaria.',
-          provenance_clues: {
-            author: "Official photographer for the Prime Minister's Office.",
-            audience: 'The Israeli electorate, Knesset members, and international diplomats.',
-            motive:
-              'To project Begin as a resolute, principled legal statesman capable of defending vital national interests.',
-            hinge_question:
-              'Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
-          },
-          teacher_notes: {
-            source_context:
-              'As a right-wing Revisionist Zionist who had fiercely opposed earlier compromises, Begin possessed the unimpeachable nationalist credentials needed to evacuate Jewish settlements like Yamit in Sinai without being branded a traitor. Crucially, Begin gave up Sinai to secure Egyptian neutrality, allowing Israel to retain permanent control over Judea and Samaria (the West Bank). **Hinge Question:** Why was a hardline nationalist like Begin capable of surrendering the entire Sinai when Labor leaders could not?',
-          },
-        },
-        {
-          id: 'cme_l10_source_d',
-          letter: 'D',
-          title: 'Source D: Map of the Phased Israeli Withdrawal from Sinai (1979–1982)',
-          src: '/units/cme_new/assets/sinai_returned.svg',
-          image: '/units/cme_new/assets/sinai_returned.svg',
-          source: '/units/cme_new/assets/sinai_returned.svg',
-          caption:
-            'Cartographic diagram displaying the three-stage withdrawal of the IDF from the Sinai Peninsula (1979-1982) and the creation of demilitarized security zones monitored by the Multinational Force and Observers (MFO).',
-          desc: 'Operational map tracing the return of the Sinai Peninsula to Egypt.',
-          provenance:
-            'Multinational Force and Observers (MFO) Archives / US Department of State, 1982.',
-          citation: 'MFO Historical Records.',
-          hinge_question:
-            'How did the deployment of the MFO international peacekeeping force guarantee the demilitarization of the Sinai?',
-          source_context:
-            'Under the peace treaty, the Sinai was divided into security zones (Zones A, B, C, D) severely restricting Egyptian military forces and forbidding Egyptian tanks near the Israeli border. In April 1982, the final Israeli soldiers evacuated Yamit after forcibly removing resisting Israeli settlers, completing the return of the entire 60,000 square km peninsula to Egyptian sovereignty. **Hinge Question:** How did the deployment of the MFO international peacekeeping force guarantee the demilitarization of the Sinai?',
-          context:
-            'Israel completed its three-stage military withdrawal from Sinai in April 1982 under the terms of the treaty.',
-          question_badge: 'Cross-Referencing',
-          question_type: 'Cross-Referencing',
-          enquiry_question:
-            "How does Source D cross-reference with UN Resolution 242 to demonstrate the practical application of 'Land for Peace'?",
-          model_answer:
-            "Source D provides concrete territorial proof of 'Land for Peace' in practice, showing that when an Arab state agreed to full diplomatic recognition, demilitarized zones, and secure borders, Israel completely surrendered conquered territory.",
-          provenance_clues: {
-            author: 'US Department of State and MFO military surveyors.',
-            audience:
-              'Egyptian Ministry of Foreign Affairs, IDF Southern Command, and UN observers.',
-            motive:
-              'To demarcate precise verification zones for treaty compliance and international troop monitoring.',
-            hinge_question:
-              'How did the deployment of the MFO international peacekeeping force guarantee the demilitarization of the Sinai?',
-          },
-          teacher_notes: {
-            source_context:
-              'Under the peace treaty, the Sinai was divided into security zones (Zones A, B, C, D) severely restricting Egyptian military forces and forbidding Egyptian tanks near the Israeli border. In April 1982, the final Israeli soldiers evacuated Yamit after forcibly removing resisting Israeli settlers, completing the return of the entire 60,000 square km peninsula to Egyptian sovereignty. **Hinge Question:** How did the deployment of the MFO international peacekeeping force guarantee the demilitarization of the Sinai?',
-          },
-        },
-        {
-          id: 'cme_l10_source_e',
-          letter: 'E',
-          title: 'Source E: The Camp David Accords Framework Document (September 1978)',
+          title: 'Source C: The Camp David Accords Framework Document (September 1978)',
           src: '/units/cme_new/assets/camp_david_accords.png',
           image: '/units/cme_new/assets/camp_david_accords.png',
           source: '/units/cme_new/assets/camp_david_accords.png',
@@ -13624,9 +13556,9 @@ const cme_new_data = {
           question_badge: 'Reliability & Provenance',
           question_type: 'Reliability & Provenance',
           enquiry_question:
-            'How reliable is Source E for understanding the limitations of the Camp David Accords regarding the Palestinian issue?',
+            'How reliable is Source C for understanding the limitations of the Camp David Accords regarding the Palestinian issue?',
           model_answer:
-            'Source E is extremely reliable as an official primary legal text, demonstrating that while the bilateral treaty with Egypt was ironclad and binding, the Palestinian autonomy sections were deliberately vague, aspirational, and unenforceable without Palestinian representation.',
+            'Source C is extremely reliable as an official primary legal text, demonstrating that while the bilateral treaty with Egypt was ironclad and binding, the Palestinian autonomy sections were deliberately vague, aspirational, and unenforceable without Palestinian representation.',
           provenance_clues: {
             author: 'Legal counsel for the United States, Egypt, and Israel.',
             audience: 'Signatory cabinets, the UN Security Council, and world governments.',
@@ -13638,6 +13570,82 @@ const cme_new_data = {
           teacher_notes: {
             source_context:
               'The Camp David framework contained two parts: a detailed bilateral treaty between Egypt and Israel, and a vague outline for five years of interim Palestinian administrative self-government in the West Bank and Gaza. Because the framework granted no guarantee of an independent state and gave Israel veto power over return of refugees, Palestinian leaders completely rejected it as a sham. **Hinge Question:** Why was the Palestinian autonomy framework in the Camp David Accords rejected by both the PLO and Jordan?',
+          },
+        },
+        {
+          id: 'cme_l10_source_d',
+          letter: 'D',
+          title: 'Source D: The Historic White House Lawn Peace Handshake (March 1979)',
+          src: '/images/cme_treaty_triple_handshake_1979.jpg',
+          image: '/images/cme_treaty_triple_handshake_1979.jpg',
+          source: '/images/cme_treaty_triple_handshake_1979.jpg',
+          caption:
+            'Egyptian President Anwar Sadat, US President Jimmy Carter, and Israeli Prime Minister Menachem Begin joining hands on the South Lawn of the White House after signing the Egypt-Israel Peace Treaty on 26 March 1979.',
+          desc: 'Iconic photograph of the Egypt-Israel Peace Treaty signing ceremony.',
+          provenance: 'Jimmy Carter Presidential Library (NAID 175653), 26 March 1979.',
+          citation: 'Jimmy Carter Library / National Archives.',
+          hinge_question:
+            'Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?',
+          source_context:
+            "The Washington treaty formalized the Camp David Accords. Israel agreed to return the entire Sinai Peninsula and its oilfields to Egypt, dismantle all 18 Jewish settlements in Sinai, and open normal diplomatic and trade ties. However, the treaty relegated the Palestinian question to a vague 'autonomy' council that was never implemented, leading the Arab League to expel Egypt. **Hinge Question:** Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?",
+          context:
+            'On 26 March 1979, Egypt and Israel signed the historic peace treaty on the White House lawn.',
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
+          enquiry_question:
+            'How useful is Source D for an enquiry into the breakthrough achieved in Arab-Israeli diplomacy by the end of the 1970s?',
+          model_answer:
+            'Source D is exceptionally useful because it captures the monumental breakthrough of the first peace treaty between Israel and an Arab neighbor, fundamentally dismantling the Arab military coalition by removing Egypt—the largest Arab army—from future conflict.',
+          provenance_clues: {
+            author: 'White House official photographer.',
+            audience: 'Global media, American voters, and citizens across the Middle East.',
+            motive:
+              'To celebrate a triumphant foreign policy masterpiece brokered by the Carter administration.',
+            hinge_question:
+              'Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?',
+          },
+          teacher_notes: {
+            source_context:
+              "The Washington treaty formalized the Camp David Accords. Israel agreed to return the entire Sinai Peninsula and its oilfields to Egypt, dismantle all 18 Jewish settlements in Sinai, and open normal diplomatic and trade ties. However, the treaty relegated the Palestinian question to a vague 'autonomy' council that was never implemented, leading the Arab League to expel Egypt. **Hinge Question:** Why was the bilateral treaty between Egypt and Israel denounced as betrayal by the PLO and wider Arab world?",
+          },
+        },
+        {
+          id: 'cme_l10_source_e',
+          letter: 'E',
+          title: 'Source E: Map of the Phased Israeli Withdrawal from Sinai (1979–1982)',
+          src: '/units/cme_new/assets/sinai_returned.svg',
+          image: '/units/cme_new/assets/sinai_returned.svg',
+          source: '/units/cme_new/assets/sinai_returned.svg',
+          caption:
+            'Cartographic diagram displaying the three-stage withdrawal of the IDF from the Sinai Peninsula (1979-1982) and the creation of demilitarized security zones monitored by the Multinational Force and Observers (MFO).',
+          desc: 'Operational map tracing the return of the Sinai Peninsula to Egypt.',
+          provenance:
+            'Multinational Force and Observers (MFO) Archives / US Department of State, 1982.',
+          citation: 'MFO Historical Records.',
+          hinge_question:
+            'How did the deployment of the MFO international peacekeeping force guarantee the demilitarization of the Sinai?',
+          source_context:
+            'Under the peace treaty, the Sinai was divided into security zones (Zones A, B, C, D) severely restricting Egyptian military forces and forbidding Egyptian tanks near the Israeli border. In April 1982, the final Israeli soldiers evacuated Yamit after forcibly removing resisting Israeli settlers, completing the return of the entire 60,000 square km peninsula to Egyptian sovereignty. **Hinge Question:** How did the deployment of the MFO international peacekeeping force guarantee the demilitarization of the Sinai?',
+          context:
+            'Israel completed its three-stage military withdrawal from Sinai in April 1982 under the terms of the treaty.',
+          question_badge: 'Cross-Referencing',
+          question_type: 'Cross-Referencing',
+          enquiry_question:
+            "How does Source E cross-reference with UN Resolution 242 to demonstrate the practical application of 'Land for Peace'?",
+          model_answer:
+            "Source E provides concrete territorial proof of 'Land for Peace' in practice, showing that when an Arab state agreed to full diplomatic recognition, demilitarized zones, and secure borders, Israel completely surrendered conquered territory.",
+          provenance_clues: {
+            author: 'US Department of State and MFO military surveyors.',
+            audience:
+              'Egyptian Ministry of Foreign Affairs, IDF Southern Command, and UN observers.',
+            motive:
+              'To demarcate precise verification zones for treaty compliance and international troop monitoring.',
+            hinge_question:
+              'How did the deployment of the MFO international peacekeeping force guarantee the demilitarization of the Sinai?',
+          },
+          teacher_notes: {
+            source_context:
+              'Under the peace treaty, the Sinai was divided into security zones (Zones A, B, C, D) severely restricting Egyptian military forces and forbidding Egyptian tanks near the Israeli border. In April 1982, the final Israeli soldiers evacuated Yamit after forcibly removing resisting Israeli settlers, completing the return of the entire 60,000 square km peninsula to Egyptian sovereignty. **Hinge Question:** How did the deployment of the MFO international peacekeeping force guarantee the demilitarization of the Sinai?',
           },
         },
       ],
@@ -14947,39 +14955,40 @@ const cme_new_data = {
             {
               id: 'cme_l11_source_b',
               letter: 'B',
-              title: 'Source B: Palestinian Youth Confronting IDF Troops During the First Intifada',
-              src: '/units/cme_new/assets/first_intifada.png',
-              image: '/units/cme_new/assets/first_intifada.png',
-              source: '/units/cme_new/assets/first_intifada.png',
+              title: 'Source B: Topographical Map of the Sabra and Shatila Camps (September 1982)',
+              src: '/units/cme_new/assets/sabra_shatila.svg',
+              image: '/units/cme_new/assets/sabra_shatila.svg',
+              source: '/units/cme_new/assets/sabra_shatila.svg',
               caption:
-                'Palestinian youths using slingshots to throw stones against Israeli armored vehicles in the Gaza Strip during the First Intifada (1987-1988).',
-              desc: 'Documentary photograph of street clashes during the First Intifada.',
-              provenance: 'Associated Press / AP Images (871215012), December 1987.',
-              citation: 'Associated Press / Getty Images.',
+                'Topographical overview showing the perimeter of Sabra and Shatila refugee camps in West Beirut, Israeli observation posts, and Lebanese Phalangist militia entry routes (16-18 September 1982).',
+              desc: 'Investigative map produced for the Kahan Commission of Inquiry.',
+              provenance:
+                'Israel Commission of Inquiry into the Events at the Refugee Camps in Beirut (Kahan Commission Report), February 1983.',
+              citation: 'Israel State Archives / Kahan Commission.',
               hinge_question:
-                'How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?',
+                "Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
               source_context:
-                "In December 1987, after four Palestinian laborers were killed when an IDF tank transporter collided with their vehicle in Jabalya refugee camp, spontaneous riots erupted across Gaza and the West Bank. Known as the Intifada ('shaking off'), this grassroots uprising relied on stone-throwing, commercial strikes, and civil disobedience, creating a David-versus-Goliath public relations disaster for Israel. **Hinge Question:** How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?",
+                "Following the assassination of Lebanese Christian President Bashir Gemayel, the IDF entered West Beirut and allowed Christian Phalangist militias into the Sabra and Shatila camps to 'clear terrorists'. Over 36 hours, Phalangists slaughtered between 800 and 2,000 Palestinian civilians while Israeli flares lit the night sky. The outrage prompted 400,000 Israelis to protest in Tel Aviv. **Hinge Question:** Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
               context:
-                'In December 1987, the First Intifada erupted across Gaza and the West Bank as a popular uprising.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
+                'Between 16-18 September 1982, Christian Phalangist militias murdered hundreds of Palestinian civilians in Sabra and Shatila.',
+              question_badge: 'Author’s Purpose',
+              question_type: 'Author’s Purpose',
               enquiry_question:
-                'What can you infer from Source B about why the First Intifada proved so difficult for the Israeli military to suppress?',
+                'What was the purpose of the Israeli Supreme Court Kahan Commission in publishing detailed site maps like Source B?',
               model_answer:
-                'Source B demonstrates that the uprising was driven by widespread, unarmed civilian youth rather than foreign guerrilla armies, making standard IDF heavy mechanized warfare ineffective and morally damaging under the glare of international television cameras.',
+                'The Commission published the maps to independently investigate the spatial sightlines and proximity of IDF command posts to the camps, establishing whether Israeli generals knew the slaughter was taking place and failed to intervene.',
               provenance_clues: {
-                author: 'Foreign news photojournalists reporting from refugee camps in Gaza.',
-                audience:
-                  'International television news viewers, US public, and Western parliaments.',
+                author:
+                  'Judicial investigative team of the Kahan Commission headed by Chief Justice Yitzhak Kahan.',
+                audience: 'The Israeli Knesset, judiciary, and international legal community.',
                 motive:
-                  'To document the dramatic asymmetrical clashes between young demonstrators and the Israeli army.',
+                  'To conduct a transparent, rigorous legal inquiry into Israeli military culpability and restore democratic rule of law.',
                 hinge_question:
-                  'How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?',
+                  "Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
               },
               teacher_notes: {
                 source_context:
-                  "In December 1987, after four Palestinian laborers were killed when an IDF tank transporter collided with their vehicle in Jabalya refugee camp, spontaneous riots erupted across Gaza and the West Bank. Known as the Intifada ('shaking off'), this grassroots uprising relied on stone-throwing, commercial strikes, and civil disobedience, creating a David-versus-Goliath public relations disaster for Israel. **Hinge Question:** How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?",
+                  "Following the assassination of Lebanese Christian President Bashir Gemayel, the IDF entered West Beirut and allowed Christian Phalangist militias into the Sabra and Shatila camps to 'clear terrorists'. Over 36 hours, Phalangists slaughtered between 800 and 2,000 Palestinian civilians while Israeli flares lit the night sky. The outrage prompted 400,000 Israelis to protest in Tel Aviv. **Hinge Question:** Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
               },
             },
           ],
@@ -15005,40 +15014,39 @@ const cme_new_data = {
             {
               id: 'cme_l11_source_c',
               letter: 'C',
-              title: 'Source C: Topographical Map of the Sabra and Shatila Camps (September 1982)',
-              src: '/units/cme_new/assets/sabra_shatila.svg',
-              image: '/units/cme_new/assets/sabra_shatila.svg',
-              source: '/units/cme_new/assets/sabra_shatila.svg',
+              title: 'Source C: Palestinian Youth Confronting IDF Troops During the First Intifada',
+              src: '/units/cme_new/assets/first_intifada.png',
+              image: '/units/cme_new/assets/first_intifada.png',
+              source: '/units/cme_new/assets/first_intifada.png',
               caption:
-                'Topographical overview showing the perimeter of Sabra and Shatila refugee camps in West Beirut, Israeli observation posts, and Lebanese Phalangist militia entry routes (16-18 September 1982).',
-              desc: 'Investigative map produced for the Kahan Commission of Inquiry.',
-              provenance:
-                'Israel Commission of Inquiry into the Events at the Refugee Camps in Beirut (Kahan Commission Report), February 1983.',
-              citation: 'Israel State Archives / Kahan Commission.',
+                'Palestinian youths using slingshots to throw stones against Israeli armored vehicles in the Gaza Strip during the First Intifada (1987-1988).',
+              desc: 'Documentary photograph of street clashes during the First Intifada.',
+              provenance: 'Associated Press / AP Images (871215012), December 1987.',
+              citation: 'Associated Press / Getty Images.',
               hinge_question:
-                "Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
+                'How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?',
               source_context:
-                "Following the assassination of Lebanese Christian President Bashir Gemayel, the IDF entered West Beirut and allowed Christian Phalangist militias into the Sabra and Shatila camps to 'clear terrorists'. Over 36 hours, Phalangists slaughtered between 800 and 2,000 Palestinian civilians while Israeli flares lit the night sky. The outrage prompted 400,000 Israelis to protest in Tel Aviv. **Hinge Question:** Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
+                "In December 1987, after four Palestinian laborers were killed when an IDF tank transporter collided with their vehicle in Jabalya refugee camp, spontaneous riots erupted across Gaza and the West Bank. Known as the Intifada ('shaking off'), this grassroots uprising relied on stone-throwing, commercial strikes, and civil disobedience, creating a David-versus-Goliath public relations disaster for Israel. **Hinge Question:** How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?",
               context:
-                'Between 16-18 September 1982, Christian Phalangist militias murdered hundreds of Palestinian civilians in Sabra and Shatila.',
-              question_badge: 'Author’s Purpose',
-              question_type: 'Author’s Purpose',
+                'In December 1987, the First Intifada erupted across Gaza and the West Bank as a popular uprising.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'What was the purpose of the Israeli Supreme Court Kahan Commission in publishing detailed site maps like Source C?',
+                'What can you infer from Source C about why the First Intifada proved so difficult for the Israeli military to suppress?',
               model_answer:
-                'The Commission published the maps to independently investigate the spatial sightlines and proximity of IDF command posts to the camps, establishing whether Israeli generals knew the slaughter was taking place and failed to intervene.',
+                'Source C demonstrates that the uprising was driven by widespread, unarmed civilian youth rather than foreign guerrilla armies, making standard IDF heavy mechanized warfare ineffective and morally damaging under the glare of international television cameras.',
               provenance_clues: {
-                author:
-                  'Judicial investigative team of the Kahan Commission headed by Chief Justice Yitzhak Kahan.',
-                audience: 'The Israeli Knesset, judiciary, and international legal community.',
+                author: 'Foreign news photojournalists reporting from refugee camps in Gaza.',
+                audience:
+                  'International television news viewers, US public, and Western parliaments.',
                 motive:
-                  'To conduct a transparent, rigorous legal inquiry into Israeli military culpability and restore democratic rule of law.',
+                  'To document the dramatic asymmetrical clashes between young demonstrators and the Israeli army.',
                 hinge_question:
-                  "Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
+                  'How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?',
               },
               teacher_notes: {
                 source_context:
-                  "Following the assassination of Lebanese Christian President Bashir Gemayel, the IDF entered West Beirut and allowed Christian Phalangist militias into the Sabra and Shatila camps to 'clear terrorists'. Over 36 hours, Phalangists slaughtered between 800 and 2,000 Palestinian civilians while Israeli flares lit the night sky. The outrage prompted 400,000 Israelis to protest in Tel Aviv. **Hinge Question:** Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
+                  "In December 1987, after four Palestinian laborers were killed when an IDF tank transporter collided with their vehicle in Jabalya refugee camp, spontaneous riots erupted across Gaza and the West Bank. Known as the Intifada ('shaking off'), this grassroots uprising relied on stone-throwing, commercial strikes, and civil disobedience, creating a David-versus-Goliath public relations disaster for Israel. **Hinge Question:** How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?",
               },
             },
           ],
@@ -15078,9 +15086,9 @@ const cme_new_data = {
               question_badge: 'Cross-Referencing',
               question_type: 'Cross-Referencing',
               enquiry_question:
-                'How does Source D cross-reference with Source B to explain why Defense Minister Yitzhak Rabin eventually concluded that the conflict required a political rather than military solution?',
+                'How does Source D cross-reference with Source D to explain why Defense Minister Yitzhak Rabin eventually concluded that the conflict required a political rather than military solution?',
               model_answer:
-                "Source D shows that the Intifada was organized as a disciplined, society-wide civil rebellion using underground mimeographed strike orders rather than conventional military forces; cross-referenced with the widespread street clashes in Source B, it demonstrates why Rabin realized that military force ('breaking bones') could not defeat a whole civilian population committed to total economic and civil non-cooperation.",
+                "Source D shows that the Intifada was organized as a disciplined, society-wide civil rebellion using underground mimeographed strike orders rather than conventional military forces; cross-referenced with the widespread street clashes in Source D, it demonstrates why Rabin realized that military force ('breaking bones') could not defeat a whole civilian population committed to total economic and civil non-cooperation.",
               provenance_clues: {
                 author:
                   'Underground cadres of the Unified National Leadership of the Uprising (UNLU) in the West Bank and Gaza.',
@@ -15198,44 +15206,7 @@ const cme_new_data = {
         {
           id: 'cme_l11_source_b',
           letter: 'B',
-          title: 'Source B: Palestinian Youth Confronting IDF Troops During the First Intifada',
-          src: '/units/cme_new/assets/first_intifada.png',
-          image: '/units/cme_new/assets/first_intifada.png',
-          source: '/units/cme_new/assets/first_intifada.png',
-          caption:
-            'Palestinian youths using slingshots to throw stones against Israeli armored vehicles in the Gaza Strip during the First Intifada (1987-1988).',
-          desc: 'Documentary photograph of street clashes during the First Intifada.',
-          provenance: 'Associated Press / AP Images (871215012), December 1987.',
-          citation: 'Associated Press / Getty Images.',
-          hinge_question:
-            'How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?',
-          source_context:
-            "In December 1987, after four Palestinian laborers were killed when an IDF tank transporter collided with their vehicle in Jabalya refugee camp, spontaneous riots erupted across Gaza and the West Bank. Known as the Intifada ('shaking off'), this grassroots uprising relied on stone-throwing, commercial strikes, and civil disobedience, creating a David-versus-Goliath public relations disaster for Israel. **Hinge Question:** How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?",
-          context:
-            'In December 1987, the First Intifada erupted across Gaza and the West Bank as a popular uprising.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
-          enquiry_question:
-            'What can you infer from Source B about why the First Intifada proved so difficult for the Israeli military to suppress?',
-          model_answer:
-            'Source B demonstrates that the uprising was driven by widespread, unarmed civilian youth rather than foreign guerrilla armies, making standard IDF heavy mechanized warfare ineffective and morally damaging under the glare of international television cameras.',
-          provenance_clues: {
-            author: 'Foreign news photojournalists reporting from refugee camps in Gaza.',
-            audience: 'International television news viewers, US public, and Western parliaments.',
-            motive:
-              'To document the dramatic asymmetrical clashes between young demonstrators and the Israeli army.',
-            hinge_question:
-              'How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?',
-          },
-          teacher_notes: {
-            source_context:
-              "In December 1987, after four Palestinian laborers were killed when an IDF tank transporter collided with their vehicle in Jabalya refugee camp, spontaneous riots erupted across Gaza and the West Bank. Known as the Intifada ('shaking off'), this grassroots uprising relied on stone-throwing, commercial strikes, and civil disobedience, creating a David-versus-Goliath public relations disaster for Israel. **Hinge Question:** How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?",
-          },
-        },
-        {
-          id: 'cme_l11_source_c',
-          letter: 'C',
-          title: 'Source C: Topographical Map of the Sabra and Shatila Camps (September 1982)',
+          title: 'Source B: Topographical Map of the Sabra and Shatila Camps (September 1982)',
           src: '/units/cme_new/assets/sabra_shatila.svg',
           image: '/units/cme_new/assets/sabra_shatila.svg',
           source: '/units/cme_new/assets/sabra_shatila.svg',
@@ -15254,7 +15225,7 @@ const cme_new_data = {
           question_badge: 'Author’s Purpose',
           question_type: 'Author’s Purpose',
           enquiry_question:
-            'What was the purpose of the Israeli Supreme Court Kahan Commission in publishing detailed site maps like Source C?',
+            'What was the purpose of the Israeli Supreme Court Kahan Commission in publishing detailed site maps like Source B?',
           model_answer:
             'The Commission published the maps to independently investigate the spatial sightlines and proximity of IDF command posts to the camps, establishing whether Israeli generals knew the slaughter was taking place and failed to intervene.',
           provenance_clues: {
@@ -15269,6 +15240,43 @@ const cme_new_data = {
           teacher_notes: {
             source_context:
               "Following the assassination of Lebanese Christian President Bashir Gemayel, the IDF entered West Beirut and allowed Christian Phalangist militias into the Sabra and Shatila camps to 'clear terrorists'. Over 36 hours, Phalangists slaughtered between 800 and 2,000 Palestinian civilians while Israeli flares lit the night sky. The outrage prompted 400,000 Israelis to protest in Tel Aviv. **Hinge Question:** Why did the Kahan Commission find Defense Minister Ariel Sharon 'indirectly responsible' for the massacre?",
+          },
+        },
+        {
+          id: 'cme_l11_source_c',
+          letter: 'C',
+          title: 'Source C: Palestinian Youth Confronting IDF Troops During the First Intifada',
+          src: '/units/cme_new/assets/first_intifada.png',
+          image: '/units/cme_new/assets/first_intifada.png',
+          source: '/units/cme_new/assets/first_intifada.png',
+          caption:
+            'Palestinian youths using slingshots to throw stones against Israeli armored vehicles in the Gaza Strip during the First Intifada (1987-1988).',
+          desc: 'Documentary photograph of street clashes during the First Intifada.',
+          provenance: 'Associated Press / AP Images (871215012), December 1987.',
+          citation: 'Associated Press / Getty Images.',
+          hinge_question:
+            'How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?',
+          source_context:
+            "In December 1987, after four Palestinian laborers were killed when an IDF tank transporter collided with their vehicle in Jabalya refugee camp, spontaneous riots erupted across Gaza and the West Bank. Known as the Intifada ('shaking off'), this grassroots uprising relied on stone-throwing, commercial strikes, and civil disobedience, creating a David-versus-Goliath public relations disaster for Israel. **Hinge Question:** How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?",
+          context:
+            'In December 1987, the First Intifada erupted across Gaza and the West Bank as a popular uprising.',
+          question_badge: 'Source Inference',
+          question_type: 'Source Inference',
+          enquiry_question:
+            'What can you infer from Source C about why the First Intifada proved so difficult for the Israeli military to suppress?',
+          model_answer:
+            'Source C demonstrates that the uprising was driven by widespread, unarmed civilian youth rather than foreign guerrilla armies, making standard IDF heavy mechanized warfare ineffective and morally damaging under the glare of international television cameras.',
+          provenance_clues: {
+            author: 'Foreign news photojournalists reporting from refugee camps in Gaza.',
+            audience: 'International television news viewers, US public, and Western parliaments.',
+            motive:
+              'To document the dramatic asymmetrical clashes between young demonstrators and the Israeli army.',
+            hinge_question:
+              'How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?',
+          },
+          teacher_notes: {
+            source_context:
+              "In December 1987, after four Palestinian laborers were killed when an IDF tank transporter collided with their vehicle in Jabalya refugee camp, spontaneous riots erupted across Gaza and the West Bank. Known as the Intifada ('shaking off'), this grassroots uprising relied on stone-throwing, commercial strikes, and civil disobedience, creating a David-versus-Goliath public relations disaster for Israel. **Hinge Question:** How did the visual contrast between stone-throwing youths and heavily armed soldiers reverse traditional international perceptions of the conflict?",
           },
         },
         {
@@ -15294,9 +15302,9 @@ const cme_new_data = {
           question_badge: 'Cross-Referencing',
           question_type: 'Cross-Referencing',
           enquiry_question:
-            'How does Source D cross-reference with Source B to explain why Defense Minister Yitzhak Rabin eventually concluded that the conflict required a political rather than military solution?',
+            'How does Source D cross-reference with Source D to explain why Defense Minister Yitzhak Rabin eventually concluded that the conflict required a political rather than military solution?',
           model_answer:
-            "Source D shows that the Intifada was organized as a disciplined, society-wide civil rebellion using underground mimeographed strike orders rather than conventional military forces; cross-referenced with the widespread street clashes in Source B, it demonstrates why Rabin realized that military force ('breaking bones') could not defeat a whole civilian population committed to total economic and civil non-cooperation.",
+            "Source D shows that the Intifada was organized as a disciplined, society-wide civil rebellion using underground mimeographed strike orders rather than conventional military forces; cross-referenced with the widespread street clashes in Source D, it demonstrates why Rabin realized that military force ('breaking bones') could not defeat a whole civilian population committed to total economic and civil non-cooperation.",
           provenance_clues: {
             author:
               'Underground cadres of the Unified National Leadership of the Uprising (UNLU) in the West Bank and Gaza.',
@@ -16326,39 +16334,41 @@ const cme_new_data = {
             {
               id: 'cme_l12_source_a',
               letter: 'A',
-              title: 'Source A: The Historic Oslo Handshake on the White House Lawn (1993)',
-              src: '/images/cme_oslo_handshake_1993.jpg',
-              image: '/images/cme_oslo_handshake_1993.jpg',
-              source: '/images/cme_oslo_handshake_1993.jpg',
+              title:
+                'Source A: The Opening Plenary of the Madrid Peace Conference (30 October 1991)',
+              src: '/images/cme_madrid_conference_1991.jpg',
+              image: '/images/cme_madrid_conference_1991.jpg',
+              source: '/images/cme_madrid_conference_1991.jpg',
               caption:
-                'Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shaking hands on the White House South Lawn, encouraged by President Bill Clinton, following the signing of the Oslo Declaration of Principles on 13 September 1993.',
-              desc: 'Iconic photograph of the Rabin-Arafat handshake at the White House.',
+                'Delegations from Israel, Syria, Lebanon, and a joint Jordanian-Palestinian delegation assembling at the Royal Palace of Madrid, co-chaired by US President George H.W. Bush and Soviet President Mikhail Gorbachev.',
+              desc: 'Official documentary photograph of the Madrid Peace Conference opening plenary.',
               provenance:
-                'White House Photographic Office / William J. Clinton Presidential Library (P08392-05), 13 September 1993.',
-              citation: 'Clinton Presidential Library / US National Archives.',
+                'White House Photographic Collection / US National Archives, 30 October 1991.',
+              citation: 'US National Archives, College Park, MD.',
               hinge_question:
-                'Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?',
+                'Why was the joint sponsorship of both the United States and the Soviet Union essential for bringing Arab and Israeli delegations together at Madrid?',
               source_context:
-                "Negotiated secretly in Norway by Israeli academics and PLO officials, the Oslo Accord required mutual recognition: the PLO recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the representative of the Palestinian people. Rabin famously declared: 'We who have fought against you, the Palestinians, we say to you today in a loud and clear voice: Enough of blood and tears. Enough!' **Hinge Question:** Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?",
+                'In October 1991, following the Gulf War and the imminent collapse of the Soviet Union, US Secretary of State James Baker convened the historic Madrid Conference. For the first time, Israeli diplomats sat directly opposite Syrian, Lebanese, and Palestinian representatives in a multilateral framework to pursue comprehensive regional peace. **Hinge Question:** Why was the joint sponsorship of both the United States and the Soviet Union essential for bringing Arab and Israeli delegations together at Madrid?',
               context:
-                'On 13 September 1993, Israel and the PLO signed the Oslo Accord on the White House lawn.',
+                'The Madrid Peace Conference in October 1991 brought Israeli and Arab leaders together for the first face-to-face negotiations.',
               question_badge: 'Historical Utility',
               question_type: 'Historical Utility',
               enquiry_question:
-                'How useful is Source A for an inquiry into the symbolic significance of the Oslo Accords in 1993?',
+                'How useful is Source A for an enquiry into the breakthrough nature of direct Arab-Israeli diplomatic negotiations in the early 1990s?',
               model_answer:
-                "Source A is monumentally useful because it visually captures the historic paradigm shift whereby mortal enemies formally recognized each other's national existence, transforming the conflict from an existential zero-sum war into a negotiated bilateral peace process.",
+                'Source A is profoundly useful because it captures the unprecedented visual evidence of Israeli, Arab, and superpower leaders assembled in a single diplomatic hall, proving that the end of the Cold War fundamentally dissolved decades of diplomatic boycott.',
               provenance_clues: {
-                author: 'White House Chief Official Photographer.',
-                audience: 'Global media, American public, and Israeli and Palestinian populations.',
+                author: 'Official White House press photographer accompanying the US delegation.',
+                audience:
+                  'Global media outlets, diplomatic services, and citizens across the Middle East.',
                 motive:
-                  'To celebrate an unprecedented diplomatic breakthrough orchestrated under American sponsorship.',
+                  'To project superpower diplomatic leadership and publicize the historic inauguration of direct Middle East peace talks.',
                 hinge_question:
-                  'Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?',
+                  'Why was the joint sponsorship of both the United States and the Soviet Union essential for bringing Arab and Israeli delegations together at Madrid?',
               },
               teacher_notes: {
                 source_context:
-                  "Negotiated secretly in Norway by Israeli academics and PLO officials, the Oslo Accord required mutual recognition: the PLO recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the representative of the Palestinian people. Rabin famously declared: 'We who have fought against you, the Palestinians, we say to you today in a loud and clear voice: Enough of blood and tears. Enough!' **Hinge Question:** Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?",
+                  'In October 1991, following the Gulf War and the imminent collapse of the Soviet Union, US Secretary of State James Baker convened the historic Madrid Conference. For the first time, Israeli diplomats sat directly opposite Syrian, Lebanese, and Palestinian representatives in a multilateral framework to pursue comprehensive regional peace. **Hinge Question:** Why was the joint sponsorship of both the United States and the Soviet Union essential for bringing Arab and Israeli delegations together at Madrid?',
               },
             },
           ],
@@ -16378,65 +16388,7 @@ const cme_new_data = {
             {
               id: 'cme_l12_source_b',
               letter: 'B',
-              title: 'Source B: The Oslo II Cartographic Division of the West Bank (1995)',
-              src: '/images/cme_oslo_areas_map.png',
-              image: '/images/cme_oslo_areas_map.png',
-              source: '/images/cme_oslo_areas_map.png',
-              caption:
-                'Cartographic map illustrating the fragmentation of the West Bank into Areas A (full Palestinian civil and security control), B (Palestinian civil and joint Israeli security control), and C (exclusive Israeli control covering 60% of territory).',
-              desc: 'Territorial map of the West Bank partition under the Oslo II Agreement.',
-              provenance:
-                'United Nations Office for the Coordination of Humanitarian Affairs (OCHA-OPT), Jerusalem, 1995.',
-              citation: 'UN OCHA / PASSIA.',
-              hinge_question:
-                'How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
-              source_context:
-                'Signed in Taba in September 1995, Oslo II divided the West Bank into three zones: Area A (major Palestinian cities, 18% of land, full PA control), Area B (Palestinian towns/villages, 22% of land, PA civil control/IDF security control), and Area C (Jewish settlements, military bases, Jordan Valley, 60% of land, exclusive Israeli control). Palestinians were left with fragmented islands surrounded by Israeli checkpoints. **Hinge Question:** How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
-              context: 'The 1995 Oslo II Agreement divided the West Bank into Areas A, B, and C.',
-              question_badge: 'Source Inference',
-              question_type: 'Source Inference',
-              enquiry_question:
-                "What can you infer from Source B about why critics described the Oslo II territorial division as a 'cantonization' or 'Bantustan' system?",
-              model_answer:
-                'Source B reveals that Palestinian administrative zones (Areas A and B) were cut into dozens of non-contiguous territorial islands completely encircled by Area C, ensuring that Israel retained absolute control over water, roads, airspace, and freedom of movement.',
-              provenance_clues: {
-                author: 'UN humanitarian cartographers and boundary analysts.',
-                audience:
-                  'International aid agencies, diplomats, and human rights monitoring bodies.',
-                motive:
-                  'To document the practical administrative and territorial reality created by the Oslo II Interim Agreement.',
-                hinge_question:
-                  'How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
-              },
-              teacher_notes: {
-                source_context:
-                  'Signed in Taba in September 1995, Oslo II divided the West Bank into three zones: Area A (major Palestinian cities, 18% of land, full PA control), Area B (Palestinian towns/villages, 22% of land, PA civil control/IDF security control), and Area C (Jewish settlements, military bases, Jordan Valley, 60% of land, exclusive Israeli control). Palestinians were left with fragmented islands surrounded by Israeli checkpoints. **Hinge Question:** How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
-              },
-            },
-          ],
-          image: '/images/cme_madrid_conference_1991.jpg',
-          image_alt:
-            'Plenary assembly of the Madrid Middle East Peace Conference co-chaired by President George H.W. Bush and President Mikhail Gorbachev, October 1991',
-          caption:
-            'The Madrid Peace Conference (October 1991): Post-Cold War summit bringing Israeli, Arab state, and Palestinian representatives into face-to-face negotiations.',
-          isReversed: false,
-        },
-        {
-          title: 'The Oslo I Accord & The White House Handshake',
-          paragraphs: [
-            '<span class="para-ref">[3.1]</span> On **13 September 1993**, on the South Lawn of the White House, President **Bill Clinton** hosted the historic signing of the **Declaration of Principles on Interim Self-Government Arrangements** (**Oslo I**). Before 3,000 dignitaries and a global television audience, Yitzhak Rabin and Yasser Arafat exchanged a hesitant, historic handshake, sealing an agreement to end decades of existential conflict.',
-            '<span class="para-ref">[3.2]</span> Oslo I established the "**Gaza-Jericho First**" formula: Israel agreed to withdraw its military forces from the Gaza Strip and the West Bank town of Jericho, transferring civil administration to a newly formed **Palestinian Authority** (PA) headed by Arafat. A five-year interim period was established during which permanent status issues—including the status of Jerusalem, Palestinian refugees, Jewish settlements, and final borders—would be resolved through future negotiations.',
-          ],
-          act: 3,
-          act_title:
-            'Stage 3: The Oslo I Accord & The White House Handshake — What did the "Gaza-Jericho First" formula provide for Palestinians?',
-          theme_heading: 'The Oslo I Accord & The White House Handshake',
-          text: '<span class="para-ref">[3.1]</span> On **13 September 1993**, on the South Lawn of the White House, President **Bill Clinton** hosted the historic signing of the **Declaration of Principles on Interim Self-Government Arrangements** (**Oslo I**). Before 3,000 dignitaries and a global television audience, Yitzhak Rabin and Yasser Arafat exchanged a hesitant, historic handshake, sealing an agreement to end decades of existential conflict.\n\n<span class="para-ref">[3.2]</span> Oslo I established the "**Gaza-Jericho First**" formula: Israel agreed to withdraw its military forces from the Gaza Strip and the West Bank town of Jericho, transferring civil administration to a newly formed **Palestinian Authority** (PA) headed by Arafat. A five-year interim period was established during which permanent status issues—including the status of Jerusalem, Palestinian refugees, Jewish settlements, and final borders—would be resolved through future negotiations.',
-          sources: [
-            {
-              id: 'cme_l12_source_c',
-              letter: 'C',
-              title: 'Source C: Official Israeli-Palestinian Negotiating Map for Oslo II (1995)',
+              title: 'Source B: Official Israeli-Palestinian Negotiating Map for Oslo II (1995)',
               src: '/images/cme_oslo_ii_official_map.jpg',
               image: '/images/cme_oslo_ii_official_map.jpg',
               source: '/images/cme_oslo_ii_official_map.jpg',
@@ -16455,7 +16407,7 @@ const cme_new_data = {
               question_badge: 'Author’s Purpose',
               question_type: 'Author’s Purpose',
               enquiry_question:
-                'What was the purpose of the gradual phased redeployment schedule depicted on the official map in Source C?',
+                'What was the purpose of the gradual phased redeployment schedule depicted on the official map in Source B?',
               model_answer:
                 'Negotiators designed a multi-year phased redeployment to allow both societies to build mutual confidence through joint security coordination before tackling the existential questions of Jerusalem and Palestinian statehood.',
               provenance_clues: {
@@ -16470,6 +16422,64 @@ const cme_new_data = {
               teacher_notes: {
                 source_context:
                   "To keep negotiations from collapsing, the architects of Oslo adopted a gradualist approach, leaving the most explosive issues—the status of Jerusalem, right of return for refugees, borders, and Israeli settlements—for 'final status' talks planned for 1999. In the interim, both Hamas suicide bombings and Israeli settlement expansion undermined public trust on both sides. **Hinge Question:** Why did the Oslo process defer final status issues (Jerusalem, refugees, borders, settlements) to later negotiations rather than resolving them immediately?",
+              },
+            },
+          ],
+          image: '/units/cme_new/assets/oslo_cover.png',
+          image_alt:
+            'Plenary assembly of the Madrid Middle East Peace Conference co-chaired by President George H.W. Bush and President Mikhail Gorbachev, October 1991',
+          caption:
+            'Archival document representing the confidential Norwegian-brokered bilateral channel conducted in suburban Oslo between Israeli academic Yair Hirschfeld and PLO negotiator Ahmed Qurei in 1993.',
+          isReversed: false,
+        },
+        {
+          title: 'The Oslo I Accord & The White House Handshake',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> On **13 September 1993**, on the South Lawn of the White House, President **Bill Clinton** hosted the historic signing of the **Declaration of Principles on Interim Self-Government Arrangements** (**Oslo I**). Before 3,000 dignitaries and a global television audience, Yitzhak Rabin and Yasser Arafat exchanged a hesitant, historic handshake, sealing an agreement to end decades of existential conflict.',
+            '<span class="para-ref">[3.2]</span> Oslo I established the "**Gaza-Jericho First**" formula: Israel agreed to withdraw its military forces from the Gaza Strip and the West Bank town of Jericho, transferring civil administration to a newly formed **Palestinian Authority** (PA) headed by Arafat. A five-year interim period was established during which permanent status issues—including the status of Jerusalem, Palestinian refugees, Jewish settlements, and final borders—would be resolved through future negotiations.',
+          ],
+          act: 3,
+          act_title:
+            'Stage 3: The Oslo I Accord & The White House Handshake — What did the "Gaza-Jericho First" formula provide for Palestinians?',
+          theme_heading: 'The Oslo I Accord & The White House Handshake',
+          text: '<span class="para-ref">[3.1]</span> On **13 September 1993**, on the South Lawn of the White House, President **Bill Clinton** hosted the historic signing of the **Declaration of Principles on Interim Self-Government Arrangements** (**Oslo I**). Before 3,000 dignitaries and a global television audience, Yitzhak Rabin and Yasser Arafat exchanged a hesitant, historic handshake, sealing an agreement to end decades of existential conflict.\n\n<span class="para-ref">[3.2]</span> Oslo I established the "**Gaza-Jericho First**" formula: Israel agreed to withdraw its military forces from the Gaza Strip and the West Bank town of Jericho, transferring civil administration to a newly formed **Palestinian Authority** (PA) headed by Arafat. A five-year interim period was established during which permanent status issues—including the status of Jerusalem, Palestinian refugees, Jewish settlements, and final borders—would be resolved through future negotiations.',
+          sources: [
+            {
+              id: 'cme_l12_source_c',
+              letter: 'C',
+              title: 'Source C: The Historic Oslo Handshake on the White House Lawn (1993)',
+              src: '/images/cme_oslo_handshake_1993.jpg',
+              image: '/images/cme_oslo_handshake_1993.jpg',
+              source: '/images/cme_oslo_handshake_1993.jpg',
+              caption:
+                'Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shaking hands on the White House South Lawn, encouraged by President Bill Clinton, following the signing of the Oslo Declaration of Principles on 13 September 1993.',
+              desc: 'Iconic photograph of the Rabin-Arafat handshake at the White House.',
+              provenance:
+                'White House Photographic Office / William J. Clinton Presidential Library (P08392-05), 13 September 1993.',
+              citation: 'Clinton Presidential Library / US National Archives.',
+              hinge_question:
+                'Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?',
+              source_context:
+                "Negotiated secretly in Norway by Israeli academics and PLO officials, the Oslo Accord required mutual recognition: the PLO recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the representative of the Palestinian people. Rabin famously declared: 'We who have fought against you, the Palestinians, we say to you today in a loud and clear voice: Enough of blood and tears. Enough!' **Hinge Question:** Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?",
+              context:
+                'On 13 September 1993, Israel and the PLO signed the Oslo Accord on the White House lawn.',
+              question_badge: 'Historical Utility',
+              question_type: 'Historical Utility',
+              enquiry_question:
+                'How useful is Source C for an inquiry into the symbolic significance of the Oslo Accords in 1993?',
+              model_answer:
+                "Source C is monumentally useful because it visually captures the historic paradigm shift whereby mortal enemies formally recognized each other's national existence, transforming the conflict from an existential zero-sum war into a negotiated bilateral peace process.",
+              provenance_clues: {
+                author: 'White House Chief Official Photographer.',
+                audience: 'Global media, American public, and Israeli and Palestinian populations.',
+                motive:
+                  'To celebrate an unprecedented diplomatic breakthrough orchestrated under American sponsorship.',
+                hinge_question:
+                  'Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?',
+              },
+              teacher_notes: {
+                source_context:
+                  "Negotiated secretly in Norway by Israeli academics and PLO officials, the Oslo Accord required mutual recognition: the PLO recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the representative of the Palestinian people. Rabin famously declared: 'We who have fought against you, the Palestinians, we say to you today in a loud and clear voice: Enough of blood and tears. Enough!' **Hinge Question:** Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?",
               },
             },
           ],
@@ -16489,40 +16499,39 @@ const cme_new_data = {
             {
               id: 'cme_l12_source_d',
               letter: 'D',
-              title: 'Source D: Geographic Analysis of Israeli Settlement Corridors in Area C',
-              src: '/images/cme_west_bank_oslo_areas.png',
-              image: '/images/cme_west_bank_oslo_areas.png',
-              source: '/images/cme_west_bank_oslo_areas.png',
+              title: 'Source D: The Oslo II Cartographic Division of the West Bank (1995)',
+              src: '/images/cme_oslo_areas_map.png',
+              image: '/images/cme_oslo_areas_map.png',
+              source: '/images/cme_oslo_areas_map.png',
               caption:
-                "Geographical analysis map demonstrating how Israeli bypass roads and settlement blocs (Ariel, Ma'ale Adumim, Gush Etzion) bisect the West Bank into northern and southern sectors.",
-              desc: 'Cartographic analysis of settlements and bypass roads across Area C.',
+                'Cartographic map illustrating the fragmentation of the West Bank into Areas A (full Palestinian civil and security control), B (Palestinian civil and joint Israeli security control), and C (exclusive Israeli control covering 60% of territory).',
+              desc: 'Territorial map of the West Bank partition under the Oslo II Agreement.',
               provenance:
-                'Peace Now Settlement Watch / Applied Research Institute Jerusalem (ARIJ), 1995.',
-              citation: 'Peace Now / ARIJ GIS Unit.',
+                'United Nations Office for the Coordination of Humanitarian Affairs (OCHA-OPT), Jerusalem, 1995.',
+              citation: 'UN OCHA / PASSIA.',
               hinge_question:
-                'Why did ongoing settlement expansion during the Oslo peace years lead Palestinians to conclude that Israel had no intention of granting genuine independence?',
+                'How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
               source_context:
-                'Between 1993 and 2000, while peace negotiations were underway, the Israeli settler population in the West Bank and Gaza doubled from approximately 110,000 to over 200,000. Extensive bypass roads were paved connecting settlements directly to Israel proper, bypassing Palestinian towns and reinforcing Israeli permanent infrastructure in Area C. **Hinge Question:** Why did ongoing settlement expansion during the Oslo peace years lead Palestinians to conclude that Israel had no intention of granting genuine independence?',
-              context:
-                'Settlement construction accelerated significantly during the Oslo peace process.',
-              question_badge: 'Cross-Referencing',
-              question_type: 'Cross-Referencing',
+                'Signed in Taba in September 1995, Oslo II divided the West Bank into three zones: Area A (major Palestinian cities, 18% of land, full PA control), Area B (Palestinian towns/villages, 22% of land, PA civil control/IDF security control), and Area C (Jewish settlements, military bases, Jordan Valley, 60% of land, exclusive Israeli control). Palestinians were left with fragmented islands surrounded by Israeli checkpoints. **Hinge Question:** How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
+              context: 'The 1995 Oslo II Agreement divided the West Bank into Areas A, B, and C.',
+              question_badge: 'Source Inference',
+              question_type: 'Source Inference',
               enquiry_question:
-                'How does Source D cross-reference with the rise of rejectionist militant groups like Hamas to explain why the Oslo peace process faltered?',
+                "What can you infer from Source D about why critics described the Oslo II territorial division as a 'cantonization' or 'Bantustan' system?",
               model_answer:
-                'Source D demonstrates that continued settlement construction on the ground convinced ordinary Palestinians that diplomacy was being used as cover for permanent annexation, providing fertile recruiting ground for Hamas militants who launched suicide bombings to destroy the peace process.',
+                'Source D reveals that Palestinian administrative zones (Areas A and B) were cut into dozens of non-contiguous territorial islands completely encircled by Area C, ensuring that Israel retained absolute control over water, roads, airspace, and freedom of movement.',
               provenance_clues: {
-                author: 'Peace Now Israeli monitoring team and Palestinian geographic researchers.',
+                author: 'UN humanitarian cartographers and boundary analysts.',
                 audience:
-                  'Israeli peace activists, international human rights groups, and PA negotiators.',
+                  'International aid agencies, diplomats, and human rights monitoring bodies.',
                 motive:
-                  'To reveal how infrastructure facts on the ground were quietly predetermining final borders.',
+                  'To document the practical administrative and territorial reality created by the Oslo II Interim Agreement.',
                 hinge_question:
-                  'Why did ongoing settlement expansion during the Oslo peace years lead Palestinians to conclude that Israel had no intention of granting genuine independence?',
+                  'How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
               },
               teacher_notes: {
                 source_context:
-                  'Between 1993 and 2000, while peace negotiations were underway, the Israeli settler population in the West Bank and Gaza doubled from approximately 110,000 to over 200,000. Extensive bypass roads were paved connecting settlements directly to Israel proper, bypassing Palestinian towns and reinforcing Israeli permanent infrastructure in Area C. **Hinge Question:** Why did ongoing settlement expansion during the Oslo peace years lead Palestinians to conclude that Israel had no intention of granting genuine independence?',
+                  'Signed in Taba in September 1995, Oslo II divided the West Bank into three zones: Area A (major Palestinian cities, 18% of land, full PA control), Area B (Palestinian towns/villages, 22% of land, PA civil control/IDF security control), and Area C (Jewish settlements, military bases, Jordan Valley, 60% of land, exclusive Israeli control). Palestinians were left with fragmented islands surrounded by Israeli checkpoints. **Hinge Question:** How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
               },
             },
           ],
@@ -17095,82 +17104,46 @@ const cme_new_data = {
         {
           id: 'cme_l12_source_a',
           letter: 'A',
-          title: 'Source A: The Historic Oslo Handshake on the White House Lawn (1993)',
-          src: '/images/cme_oslo_handshake_1993.jpg',
-          image: '/images/cme_oslo_handshake_1993.jpg',
-          source: '/images/cme_oslo_handshake_1993.jpg',
+          title: 'Source A: The Opening Plenary of the Madrid Peace Conference (30 October 1991)',
+          src: '/images/cme_madrid_conference_1991.jpg',
+          image: '/images/cme_madrid_conference_1991.jpg',
+          source: '/images/cme_madrid_conference_1991.jpg',
           caption:
-            'Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shaking hands on the White House South Lawn, encouraged by President Bill Clinton, following the signing of the Oslo Declaration of Principles on 13 September 1993.',
-          desc: 'Iconic photograph of the Rabin-Arafat handshake at the White House.',
+            'Delegations from Israel, Syria, Lebanon, and a joint Jordanian-Palestinian delegation assembling at the Royal Palace of Madrid, co-chaired by US President George H.W. Bush and Soviet President Mikhail Gorbachev.',
+          desc: 'Official documentary photograph of the Madrid Peace Conference opening plenary.',
           provenance:
-            'White House Photographic Office / William J. Clinton Presidential Library (P08392-05), 13 September 1993.',
-          citation: 'Clinton Presidential Library / US National Archives.',
+            'White House Photographic Collection / US National Archives, 30 October 1991.',
+          citation: 'US National Archives, College Park, MD.',
           hinge_question:
-            'Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?',
+            'Why was the joint sponsorship of both the United States and the Soviet Union essential for bringing Arab and Israeli delegations together at Madrid?',
           source_context:
-            "Negotiated secretly in Norway by Israeli academics and PLO officials, the Oslo Accord required mutual recognition: the PLO recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the representative of the Palestinian people. Rabin famously declared: 'We who have fought against you, the Palestinians, we say to you today in a loud and clear voice: Enough of blood and tears. Enough!' **Hinge Question:** Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?",
+            'In October 1991, following the Gulf War and the imminent collapse of the Soviet Union, US Secretary of State James Baker convened the historic Madrid Conference. For the first time, Israeli diplomats sat directly opposite Syrian, Lebanese, and Palestinian representatives in a multilateral framework to pursue comprehensive regional peace. **Hinge Question:** Why was the joint sponsorship of both the United States and the Soviet Union essential for bringing Arab and Israeli delegations together at Madrid?',
           context:
-            'On 13 September 1993, Israel and the PLO signed the Oslo Accord on the White House lawn.',
+            'The Madrid Peace Conference in October 1991 brought Israeli and Arab leaders together for the first face-to-face negotiations.',
           question_badge: 'Historical Utility',
           question_type: 'Historical Utility',
           enquiry_question:
-            'How useful is Source A for an inquiry into the symbolic significance of the Oslo Accords in 1993?',
+            'How useful is Source A for an enquiry into the breakthrough nature of direct Arab-Israeli diplomatic negotiations in the early 1990s?',
           model_answer:
-            "Source A is monumentally useful because it visually captures the historic paradigm shift whereby mortal enemies formally recognized each other's national existence, transforming the conflict from an existential zero-sum war into a negotiated bilateral peace process.",
+            'Source A is profoundly useful because it captures the unprecedented visual evidence of Israeli, Arab, and superpower leaders assembled in a single diplomatic hall, proving that the end of the Cold War fundamentally dissolved decades of diplomatic boycott.',
           provenance_clues: {
-            author: 'White House Chief Official Photographer.',
-            audience: 'Global media, American public, and Israeli and Palestinian populations.',
+            author: 'Official White House press photographer accompanying the US delegation.',
+            audience:
+              'Global media outlets, diplomatic services, and citizens across the Middle East.',
             motive:
-              'To celebrate an unprecedented diplomatic breakthrough orchestrated under American sponsorship.',
+              'To project superpower diplomatic leadership and publicize the historic inauguration of direct Middle East peace talks.',
             hinge_question:
-              'Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?',
+              'Why was the joint sponsorship of both the United States and the Soviet Union essential for bringing Arab and Israeli delegations together at Madrid?',
           },
           teacher_notes: {
             source_context:
-              "Negotiated secretly in Norway by Israeli academics and PLO officials, the Oslo Accord required mutual recognition: the PLO recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the representative of the Palestinian people. Rabin famously declared: 'We who have fought against you, the Palestinians, we say to you today in a loud and clear voice: Enough of blood and tears. Enough!' **Hinge Question:** Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?",
+              'In October 1991, following the Gulf War and the imminent collapse of the Soviet Union, US Secretary of State James Baker convened the historic Madrid Conference. For the first time, Israeli diplomats sat directly opposite Syrian, Lebanese, and Palestinian representatives in a multilateral framework to pursue comprehensive regional peace. **Hinge Question:** Why was the joint sponsorship of both the United States and the Soviet Union essential for bringing Arab and Israeli delegations together at Madrid?',
           },
         },
         {
           id: 'cme_l12_source_b',
           letter: 'B',
-          title: 'Source B: The Oslo II Cartographic Division of the West Bank (1995)',
-          src: '/images/cme_oslo_areas_map.png',
-          image: '/images/cme_oslo_areas_map.png',
-          source: '/images/cme_oslo_areas_map.png',
-          caption:
-            'Cartographic map illustrating the fragmentation of the West Bank into Areas A (full Palestinian civil and security control), B (Palestinian civil and joint Israeli security control), and C (exclusive Israeli control covering 60% of territory).',
-          desc: 'Territorial map of the West Bank partition under the Oslo II Agreement.',
-          provenance:
-            'United Nations Office for the Coordination of Humanitarian Affairs (OCHA-OPT), Jerusalem, 1995.',
-          citation: 'UN OCHA / PASSIA.',
-          hinge_question:
-            'How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
-          source_context:
-            'Signed in Taba in September 1995, Oslo II divided the West Bank into three zones: Area A (major Palestinian cities, 18% of land, full PA control), Area B (Palestinian towns/villages, 22% of land, PA civil control/IDF security control), and Area C (Jewish settlements, military bases, Jordan Valley, 60% of land, exclusive Israeli control). Palestinians were left with fragmented islands surrounded by Israeli checkpoints. **Hinge Question:** How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
-          context: 'The 1995 Oslo II Agreement divided the West Bank into Areas A, B, and C.',
-          question_badge: 'Source Inference',
-          question_type: 'Source Inference',
-          enquiry_question:
-            "What can you infer from Source B about why critics described the Oslo II territorial division as a 'cantonization' or 'Bantustan' system?",
-          model_answer:
-            'Source B reveals that Palestinian administrative zones (Areas A and B) were cut into dozens of non-contiguous territorial islands completely encircled by Area C, ensuring that Israel retained absolute control over water, roads, airspace, and freedom of movement.',
-          provenance_clues: {
-            author: 'UN humanitarian cartographers and boundary analysts.',
-            audience: 'International aid agencies, diplomats, and human rights monitoring bodies.',
-            motive:
-              'To document the practical administrative and territorial reality created by the Oslo II Interim Agreement.',
-            hinge_question:
-              'How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
-          },
-          teacher_notes: {
-            source_context:
-              'Signed in Taba in September 1995, Oslo II divided the West Bank into three zones: Area A (major Palestinian cities, 18% of land, full PA control), Area B (Palestinian towns/villages, 22% of land, PA civil control/IDF security control), and Area C (Jewish settlements, military bases, Jordan Valley, 60% of land, exclusive Israeli control). Palestinians were left with fragmented islands surrounded by Israeli checkpoints. **Hinge Question:** How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
-          },
-        },
-        {
-          id: 'cme_l12_source_c',
-          letter: 'C',
-          title: 'Source C: Official Israeli-Palestinian Negotiating Map for Oslo II (1995)',
+          title: 'Source B: Official Israeli-Palestinian Negotiating Map for Oslo II (1995)',
           src: '/images/cme_oslo_ii_official_map.jpg',
           image: '/images/cme_oslo_ii_official_map.jpg',
           source: '/images/cme_oslo_ii_official_map.jpg',
@@ -17189,7 +17162,7 @@ const cme_new_data = {
           question_badge: 'Author’s Purpose',
           question_type: 'Author’s Purpose',
           enquiry_question:
-            'What was the purpose of the gradual phased redeployment schedule depicted on the official map in Source C?',
+            'What was the purpose of the gradual phased redeployment schedule depicted on the official map in Source B?',
           model_answer:
             'Negotiators designed a multi-year phased redeployment to allow both societies to build mutual confidence through joint security coordination before tackling the existential questions of Jerusalem and Palestinian statehood.',
           provenance_clues: {
@@ -17207,42 +17180,78 @@ const cme_new_data = {
           },
         },
         {
-          id: 'cme_l12_source_d',
-          letter: 'D',
-          title: 'Source D: Geographic Analysis of Israeli Settlement Corridors in Area C',
-          src: '/images/cme_west_bank_oslo_areas.png',
-          image: '/images/cme_west_bank_oslo_areas.png',
-          source: '/images/cme_west_bank_oslo_areas.png',
+          id: 'cme_l12_source_c',
+          letter: 'C',
+          title: 'Source C: The Historic Oslo Handshake on the White House Lawn (1993)',
+          src: '/images/cme_oslo_handshake_1993.jpg',
+          image: '/images/cme_oslo_handshake_1993.jpg',
+          source: '/images/cme_oslo_handshake_1993.jpg',
           caption:
-            "Geographical analysis map demonstrating how Israeli bypass roads and settlement blocs (Ariel, Ma'ale Adumim, Gush Etzion) bisect the West Bank into northern and southern sectors.",
-          desc: 'Cartographic analysis of settlements and bypass roads across Area C.',
+            'Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shaking hands on the White House South Lawn, encouraged by President Bill Clinton, following the signing of the Oslo Declaration of Principles on 13 September 1993.',
+          desc: 'Iconic photograph of the Rabin-Arafat handshake at the White House.',
           provenance:
-            'Peace Now Settlement Watch / Applied Research Institute Jerusalem (ARIJ), 1995.',
-          citation: 'Peace Now / ARIJ GIS Unit.',
+            'White House Photographic Office / William J. Clinton Presidential Library (P08392-05), 13 September 1993.',
+          citation: 'Clinton Presidential Library / US National Archives.',
           hinge_question:
-            'Why did ongoing settlement expansion during the Oslo peace years lead Palestinians to conclude that Israel had no intention of granting genuine independence?',
+            'Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?',
           source_context:
-            'Between 1993 and 2000, while peace negotiations were underway, the Israeli settler population in the West Bank and Gaza doubled from approximately 110,000 to over 200,000. Extensive bypass roads were paved connecting settlements directly to Israel proper, bypassing Palestinian towns and reinforcing Israeli permanent infrastructure in Area C. **Hinge Question:** Why did ongoing settlement expansion during the Oslo peace years lead Palestinians to conclude that Israel had no intention of granting genuine independence?',
+            "Negotiated secretly in Norway by Israeli academics and PLO officials, the Oslo Accord required mutual recognition: the PLO recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the representative of the Palestinian people. Rabin famously declared: 'We who have fought against you, the Palestinians, we say to you today in a loud and clear voice: Enough of blood and tears. Enough!' **Hinge Question:** Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?",
           context:
-            'Settlement construction accelerated significantly during the Oslo peace process.',
-          question_badge: 'Cross-Referencing',
-          question_type: 'Cross-Referencing',
+            'On 13 September 1993, Israel and the PLO signed the Oslo Accord on the White House lawn.',
+          question_badge: 'Historical Utility',
+          question_type: 'Historical Utility',
           enquiry_question:
-            'How does Source D cross-reference with the rise of rejectionist militant groups like Hamas to explain why the Oslo peace process faltered?',
+            'How useful is Source C for an inquiry into the symbolic significance of the Oslo Accords in 1993?',
           model_answer:
-            'Source D demonstrates that continued settlement construction on the ground convinced ordinary Palestinians that diplomacy was being used as cover for permanent annexation, providing fertile recruiting ground for Hamas militants who launched suicide bombings to destroy the peace process.',
+            "Source C is monumentally useful because it visually captures the historic paradigm shift whereby mortal enemies formally recognized each other's national existence, transforming the conflict from an existential zero-sum war into a negotiated bilateral peace process.",
           provenance_clues: {
-            author: 'Peace Now Israeli monitoring team and Palestinian geographic researchers.',
-            audience:
-              'Israeli peace activists, international human rights groups, and PA negotiators.',
+            author: 'White House Chief Official Photographer.',
+            audience: 'Global media, American public, and Israeli and Palestinian populations.',
             motive:
-              'To reveal how infrastructure facts on the ground were quietly predetermining final borders.',
+              'To celebrate an unprecedented diplomatic breakthrough orchestrated under American sponsorship.',
             hinge_question:
-              'Why did ongoing settlement expansion during the Oslo peace years lead Palestinians to conclude that Israel had no intention of granting genuine independence?',
+              'Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?',
           },
           teacher_notes: {
             source_context:
-              'Between 1993 and 2000, while peace negotiations were underway, the Israeli settler population in the West Bank and Gaza doubled from approximately 110,000 to over 200,000. Extensive bypass roads were paved connecting settlements directly to Israel proper, bypassing Palestinian towns and reinforcing Israeli permanent infrastructure in Area C. **Hinge Question:** Why did ongoing settlement expansion during the Oslo peace years lead Palestinians to conclude that Israel had no intention of granting genuine independence?',
+              "Negotiated secretly in Norway by Israeli academics and PLO officials, the Oslo Accord required mutual recognition: the PLO recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the representative of the Palestinian people. Rabin famously declared: 'We who have fought against you, the Palestinians, we say to you today in a loud and clear voice: Enough of blood and tears. Enough!' **Hinge Question:** Why was Yitzhak Rabin visibly hesitant before extending his hand to shake that of Yasser Arafat?",
+          },
+        },
+        {
+          id: 'cme_l12_source_d',
+          letter: 'D',
+          title: 'Source D: The Oslo II Cartographic Division of the West Bank (1995)',
+          src: '/images/cme_oslo_areas_map.png',
+          image: '/images/cme_oslo_areas_map.png',
+          source: '/images/cme_oslo_areas_map.png',
+          caption:
+            'Cartographic map illustrating the fragmentation of the West Bank into Areas A (full Palestinian civil and security control), B (Palestinian civil and joint Israeli security control), and C (exclusive Israeli control covering 60% of territory).',
+          desc: 'Territorial map of the West Bank partition under the Oslo II Agreement.',
+          provenance:
+            'United Nations Office for the Coordination of Humanitarian Affairs (OCHA-OPT), Jerusalem, 1995.',
+          citation: 'UN OCHA / PASSIA.',
+          hinge_question:
+            'How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
+          source_context:
+            'Signed in Taba in September 1995, Oslo II divided the West Bank into three zones: Area A (major Palestinian cities, 18% of land, full PA control), Area B (Palestinian towns/villages, 22% of land, PA civil control/IDF security control), and Area C (Jewish settlements, military bases, Jordan Valley, 60% of land, exclusive Israeli control). Palestinians were left with fragmented islands surrounded by Israeli checkpoints. **Hinge Question:** How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
+          context: 'The 1995 Oslo II Agreement divided the West Bank into Areas A, B, and C.',
+          question_badge: 'Source Inference',
+          question_type: 'Source Inference',
+          enquiry_question:
+            "What can you infer from Source D about why critics described the Oslo II territorial division as a 'cantonization' or 'Bantustan' system?",
+          model_answer:
+            'Source D reveals that Palestinian administrative zones (Areas A and B) were cut into dozens of non-contiguous territorial islands completely encircled by Area C, ensuring that Israel retained absolute control over water, roads, airspace, and freedom of movement.',
+          provenance_clues: {
+            author: 'UN humanitarian cartographers and boundary analysts.',
+            audience: 'International aid agencies, diplomats, and human rights monitoring bodies.',
+            motive:
+              'To document the practical administrative and territorial reality created by the Oslo II Interim Agreement.',
+            hinge_question:
+              'How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
+          },
+          teacher_notes: {
+            source_context:
+              'Signed in Taba in September 1995, Oslo II divided the West Bank into three zones: Area A (major Palestinian cities, 18% of land, full PA control), Area B (Palestinian towns/villages, 22% of land, PA civil control/IDF security control), and Area C (Jewish settlements, military bases, Jordan Valley, 60% of land, exclusive Israeli control). Palestinians were left with fragmented islands surrounded by Israeli checkpoints. **Hinge Question:** How did the division of the West Bank into disconnected enclaves in Areas A and B hinder the emergence of a viable independent Palestinian state?',
           },
         },
         {
