@@ -6767,9 +6767,6 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
   box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28) !important;
   transform: translateY(-1.5px);
 }
-.workbook-stage-question-banner:hover .stage-jump-link {
-  color: #7dd3fc !important;
-}
 .cme-causal-drawer summary {
   list-style: none;
 }
@@ -6877,9 +6874,6 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
   border-color: #38bdf8 !important;
   box-shadow: 0 4px 14px rgba(2, 132, 199, 0.28) !important;
   transform: translateY(-1.5px);
-}
-.workbook-stage-question-banner:hover .stage-jump-link {
-  color: #7dd3fc !important;
 }
 
 /* Equalized Baseline Narrative Zone */

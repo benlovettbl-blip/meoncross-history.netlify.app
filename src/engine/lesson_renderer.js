@@ -7026,16 +7026,11 @@ export function renderLesson(lesson) {
         if (stageQ) {
           stageBannerHtml = `
             <div class="workbook-stage-question-banner" id="stage-banner-${stageNum}" onclick="if(window.jumpToSpineCard){window.jumpToSpineCard(${stageNum});}" title="Click to view Stage ${stageNum} causal dominoes in Chronology Spine above" style="margin-bottom: 12px; background: #0f172a; border: 1.5px solid #334155; border-left: 4px solid #0284c7; border-radius: 6px; padding: 10px 14px; color: #ffffff; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 5px rgba(15,23,42,0.15);">
-              <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; flex-wrap: wrap;">
-                <div style="display: flex; align-items: center; gap: 7px; flex-wrap: wrap;">
-                  <span class="stage-pill-badge" style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 900; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.5px; text-transform: uppercase;">
-                    <i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> Stage ${stageNum} Workbook Enquiry
-                  </span>
-                  ${stageDate ? `<span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f59e0b; background: rgba(245,158,11,0.12); padding: 2px 7px; border-radius: 3px; border: 1px solid rgba(245,158,11,0.25);">${stageDate}</span>` : ''}
-                </div>
-                <span class="stage-jump-link" style="font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 700; color: #38bdf8; display: inline-flex; align-items: center; gap: 4px;">
-                  <i class="fa-solid fa-arrow-up"></i> Chronology Spine &bull; Motive &amp; Result &rarr;
+              <div style="display: flex; align-items: center; justify-content: flex-start; gap: 7px; margin-bottom: 4px; flex-wrap: wrap;">
+                <span class="stage-pill-badge" style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 900; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.5px; text-transform: uppercase;">
+                  <i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> Stage ${stageNum} Workbook Enquiry
                 </span>
+                ${stageDate ? `<span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f59e0b; background: rgba(245,158,11,0.12); padding: 2px 7px; border-radius: 3px; border: 1px solid rgba(245,158,11,0.25);">${stageDate}</span>` : ''}
               </div>
               <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: #f8fafc; line-height: 1.35; margin-top: 2px;">
                 &ldquo;${stageQ}&rdquo;
