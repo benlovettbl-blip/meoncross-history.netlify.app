@@ -20,6 +20,7 @@ async function buildDatabase() {
   }
 
   for (const unitId of dirs) {
+    if (unitId === 'trip_ypres') continue; // Decommissioned: Ypres trip has concluded
     let dataPath = path.join(unitsDir, unitId, isV2 ? 'data_v2_4act.js' : 'data.js');
     if (isV2 && !fs.existsSync(dataPath)) {
       dataPath = path.join(unitsDir, unitId, 'data.js');

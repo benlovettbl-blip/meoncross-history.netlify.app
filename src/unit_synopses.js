@@ -187,18 +187,6 @@ export const unitSynopses = {
       'Federation & The White Australia Policy',
     ],
   },
-  trip_ypres: {
-    period: '1914 – 1918 (Fieldwork 2026)',
-    synopsis:
-      'From the preserved trenches of Sanctuary Wood and the gas-choked banks of the Yser Canal to the colossal crater of Lochnagar and the imposing arch of the Thiepval Memorial. This expedition links archival primary evidence—including the remarkable personal combat dossier of 2nd Lieutenant Ernest Crummack MC, DCM—directly to the scarred landscapes of Flanders and the Somme, transforming textbook military history into vivid, unforgettable fieldwork.',
-    tags: [
-      'Sanctuary Wood & Essex Farm',
-      'Menin Gate & The Last Post',
-      'Lochnagar Crater & Thiepval',
-      '2nd Lt Crummack MC Action',
-      'Commonwealth War Graves',
-    ],
-  },
   the_shoah: {
     period: '1933 – 1948',
     synopsis:

@@ -1403,7 +1403,6 @@ export function renderWorkbooksZone(container, unitData) {
               <option value="australia" ${activeUnitId === 'australia' ? 'selected' : ''}>Indigenous Australia &amp; Colony (Year 8)</option>
               <option value="cold_war" ${activeUnitId === 'cold_war' ? 'selected' : ''}>Superpower Relations &amp; Cold War (KS3)</option>
               <option value="post_war_britain" ${activeUnitId === 'post_war_britain' ? 'selected' : ''}>Post-War Britain &amp; Windrush (Year 9)</option>
-              <option value="trip_ypres" ${activeUnitId === 'trip_ypres' ? 'selected' : ''}>Ypres Battlefield Tour Companion</option>
             </optgroup>
             <optgroup label="Key Stage 2 Primary History">
               <option value="ks2_ww2" ${activeUnitId === 'ks2_ww2' ? 'selected' : ''}>World War II &amp; The Home Front (Key Stage 2)</option>
@@ -1539,12 +1538,6 @@ export function renderWorkbooksZone(container, unitData) {
         name: 'Crown, Church & Parliament (1517–1689)',
         year: 'Year 8',
         icon: 'fa-chess-rook',
-      },
-      {
-        id: 'trip_ypres',
-        name: 'Ypres Battlefield Tour Field Companion',
-        year: 'Field Trip',
-        icon: 'fa-map-location-dot',
       },
     ];
 

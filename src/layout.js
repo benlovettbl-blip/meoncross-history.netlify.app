@@ -451,9 +451,7 @@ export function bindEvents() {
     ]);
     const year10Units = getOrderedUnits(['cme_new', 'weimar_nazi_germany']);
     const year11Units = getOrderedUnits(['edexcel_medicine', 'eee', 'usa']);
-    const tripUnits = getOrderedUnits(['trip_ypres']);
 
-    renderAccordionGroup('GCSE Battlefield Tour (Y10–11)', tripUnits, false);
     renderAccordionGroup('Year 7', year7Units, false);
     renderAccordionGroup('Year 8', year8Units, false);
 

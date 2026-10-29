@@ -72,9 +72,9 @@ export const competitionsData = [
         category: 'Year 9 & GCSE · Remembrance',
         desc: 'Investigate the lives, civilian jobs, and wartime service of local Hampshire men commemorated on the Stubbington village war memorial using Commonwealth War Graves Commission (CWGC) archives and census records.',
         badge: 'In Our Curriculum',
-        unitId: 'trip_ypres',
-        lessonIndex: 0,
-        lessonLabel: 'View Tour App: Stubbington Memorial',
+        unitId: 'great_war',
+        lessonIndex: 4,
+        lessonLabel: 'View Great War: Western Front Remembrance',
       },
       {
         title: 'Portsmouth Dockyard & Solent D-Day Embarkation',
@@ -174,7 +174,7 @@ export const competitionsData = [
       {
         title: 'British Operations in the Great War (Ypres & Somme)',
         category: 'Year 9 & GCSE · First World War Prize',
-        desc: 'Draw upon our Ypres battlefield tour studies, trench tactical evolution, and casualty evacuation networks to construct a competitive essay on the 1914–18 Western Front.',
+        desc: 'Draw upon our Western Front battlefield studies, trench tactical evolution, and casualty evacuation networks to construct a competitive essay on the 1914–18 Western Front.',
         badge: 'Connects to GCSE Paper 1',
         unitId: 'great_war_part2',
         lessonIndex: 0,

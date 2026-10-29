@@ -126,11 +126,8 @@ export function renderDashboard() {
     .filter((u) => year11Order.includes(u.id))
     .sort((a, b) => year11Order.indexOf(a.id) - year11Order.indexOf(b.id));
 
-  // Trips & Tours Grouping
-  const tripOrder = ['trip_ypres'];
-  const tripUnits = units
-    .filter((u) => tripOrder.includes(u.id))
-    .sort((a, b) => tripOrder.indexOf(a.id) - tripOrder.indexOf(b.id));
+  // Trips & Tours Grouping (Decommissioned)
+  const tripUnits = [];
 
   const renderUnitCard = (unit, index) => {
     const isUnlocked = true;
@@ -1948,7 +1945,7 @@ export async function renderLessonsView() {
     `;
   }
 
-  const isTrip = unitId === 'trip_ypres' || (data && data.type === 'trip');
+  const isTrip = data && data.type === 'trip';
 
   container.innerHTML = `
     <div class="card" style="animation: fadeInUp 0.3s ease-out; padding: 0; overflow: hidden; background: white;">

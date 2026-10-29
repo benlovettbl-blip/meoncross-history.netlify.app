@@ -177,7 +177,6 @@ export function updateBreadcrumbs(customTrail = null) {
     if (id === 'eee') return 'Early Elizabethan England (1558–1588)';
     if (id === 'weimar_nazi_germany') return 'Weimar and Nazi Germany (1918–1939)';
     if (id === 'usa') return 'Conflict at Home and Abroad: USA (1954–75)';
-    if (id === 'trip_ypres') return 'Ypres Expedition & The Salient';
     if (id === 'great_war') return 'Causes of the Great War';
     if (id === 'ks2_ww2') return 'World War II & The Home Front (1939–1945)';
     return id.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
@@ -824,7 +823,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
   const unitKeystage = document.getElementById('sidebar-unit-keystage');
   const unitTitleEl = document.getElementById('sidebar-unit-title');
 
-  const isTrip = unitId === 'trip_ypres' || unitData.type === 'trip';
+  const isTrip = unitData && unitData.type === 'trip';
 
   // Set KeyStage badge
   let ksLabel = 'KS3 HISTORY';

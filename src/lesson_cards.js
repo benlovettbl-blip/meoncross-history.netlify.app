@@ -480,13 +480,9 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
     });
   } else if (
     (unitData &&
-      (unitData.type === 'trip' ||
-        unitData.id === 'trip_ypres' ||
-        (unitData.title && unitData.title.includes('Battlefield')))) ||
-    currentUnitId === 'trip_ypres' ||
+      (unitData.type === 'trip' || (unitData.title && unitData.title.includes('Battlefield')))) ||
     (currentUnitData &&
       (currentUnitData.type === 'trip' ||
-        currentUnitData.id === 'trip_ypres' ||
         (currentUnitData.title && currentUnitData.title.includes('Battlefield'))))
   ) {
     const targetData = unitData && unitData.lessons ? unitData : currentUnitData || {};

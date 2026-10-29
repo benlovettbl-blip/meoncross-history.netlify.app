@@ -141,7 +141,6 @@ function getCleanUnitTitle(unitId, unitData) {
     weimar_nazi_germany: 'Weimar & Nazi Germany (1918–1939)',
     cme_new: 'Conflict in the Middle East (1945–1995)',
     usa: 'Conflict at Home & Abroad: USA (1954–1975)',
-    trip_ypres: 'Ypres & Western Front Battlefields Tour',
   };
   return titles[unitId] || unitId.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 }
@@ -168,7 +167,6 @@ function getYearStageBadge(unitId) {
     return 'Year 9';
   if (['edexcel_medicine', 'eee', 'weimar_nazi_germany', 'cme_new', 'usa'].includes(unitId))
     return 'GCSE';
-  if (unitId === 'trip_ypres') return 'Fieldwork';
   return 'Curriculum';
 }
 
