@@ -5815,9 +5815,9 @@ const cme_new_data = {
           ],
           image: '/images/cme_port_said_from_air.jpg',
           image_alt:
-            'Aerial photograph of Port Said harbour with sunken ships blocking the Suez Canal waterway',
+            'Aerial reconnaissance photograph of Port Said showing dense black smoke rising from burning oil storage tanks beside the Suez Canal following Anglo-French air strikes (5 November 1956)',
           caption:
-            "Air Reconnaissance over Port Said: Demonstrating the physical destruction of harbour infrastructure and Egypt's defensive scuttling of canal shipping.",
+            'Air Reconnaissance over Port Said (5 November 1956): British RAF reconnaissance plate capturing dense black smoke billowing from bombed oil storage installations along the canal entrance (IWM MH 23509).',
           isReversed: true,
         },
         {

@@ -8152,10 +8152,10 @@ const usa_data = {
               letter: 'C',
               type: 'speech_transcript',
               title:
-                "Source C: Stokely Carmichael Addressing the March Against Fear Crowd in Greenwood, Mississippi, Introducing 'Black Power' (16 June 1966)",
+                'Source C: SNCC Chairman Stokely Carmichael Speaking in Mississippi During the March Against Fear (June 1966)',
               date: '16 June 1966',
-              image: '/units/usa/assets/sources/portraits/stokely_carmichael.jpg',
-              image_url: '/units/usa/assets/sources/portraits/stokely_carmichael.jpg',
+              image: '/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg',
+              image_url: '/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg',
               attribution: 'SNCC Audio Archive, Tougaloo College Special Collections',
               question_badge: 'Reliability & Provenance',
               question:
@@ -8178,8 +8178,8 @@ const usa_data = {
                 "Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?",
               source_context:
                 "SNCC Audio Archive, Tougaloo College Special Collections. Stokely Carmichael (later Kwame Ture), newly elected chairman of SNCC for Marchers, local Greenwood residents, national journalists, and Dr King with the objective: To decisively reject integrationist passivity and mobilize Black communities to seize political and economic control.. **Hinge Question:** Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?",
-              src: '/units/usa/assets/sources/portraits/stokely_carmichael.jpg',
-              source: '/units/usa/assets/sources/portraits/stokely_carmichael.jpg',
+              src: '/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg',
+              source: '/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg',
             },
           ],
           image: '/units/usa/assets/sources/black-panthers-marching.jpg',
@@ -8967,10 +8967,10 @@ const usa_data = {
           letter: 'C',
           type: 'speech_transcript',
           title:
-            "Source C: Stokely Carmichael Addressing the March Against Fear Crowd in Greenwood, Mississippi, Introducing 'Black Power' (16 June 1966)",
+            'Source C: SNCC Chairman Stokely Carmichael Speaking in Mississippi During the March Against Fear (June 1966)',
           date: '16 June 1966',
-          image: '/units/usa/assets/sources/portraits/stokely_carmichael.jpg',
-          image_url: '/units/usa/assets/sources/portraits/stokely_carmichael.jpg',
+          image: '/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg',
+          image_url: '/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg',
           attribution: 'SNCC Audio Archive, Tougaloo College Special Collections',
           question_badge: 'Reliability & Provenance',
           question:
@@ -8993,8 +8993,8 @@ const usa_data = {
             "Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?",
           source_context:
             "SNCC Audio Archive, Tougaloo College Special Collections. Stokely Carmichael (later Kwame Ture), newly elected chairman of SNCC for Marchers, local Greenwood residents, national journalists, and Dr King with the objective: To decisively reject integrationist passivity and mobilize Black communities to seize political and economic control.. **Hinge Question:** Why did the slogan 'Black Power' deeply alarm white liberals while electrifying young African Americans?",
-          src: '/units/usa/assets/sources/portraits/stokely_carmichael.jpg',
-          source: '/units/usa/assets/sources/portraits/stokely_carmichael.jpg',
+          src: '/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg',
+          source: '/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg',
         },
         {
           id: 'usa_lesson_2_3_d',
@@ -10584,8 +10584,8 @@ const usa_data = {
               title:
                 'Source C: Self-Immolation of Buddhist Monk Thich Quang Duc in Protest Against the Diem Regime in Saigon (11 June 1963)',
               date: '11 June 1963',
-              image: '/units/usa/assets/sources/portraits/thich_quang_duc.jpg',
-              image_url: '/units/usa/assets/sources/portraits/thich_quang_duc.jpg',
+              image: '/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg',
+              image_url: '/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg',
               attribution:
                 'Malcolm Browne photograph for Associated Press, World Press Photo of the Year',
               question_badge: "Author's Purpose",
@@ -10609,8 +10609,8 @@ const usa_data = {
                 "Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?",
               source_context:
                 "Malcolm Browne photograph for Associated Press, World Press Photo of the Year. Malcolm Browne, Associated Press bureau chief in Saigon for Global news readers, television viewers, and President John F. Kennedy with the objective: To document the ultimate act of religious protest against Diem's Catholic-dominated nepotistic dictatorship.. **Hinge Question:** Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?",
-              src: '/units/usa/assets/sources/portraits/thich_quang_duc.jpg',
-              source: '/units/usa/assets/sources/portraits/thich_quang_duc.jpg',
+              src: '/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg',
+              source: '/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg',
             },
           ],
           image: '/units/usa/assets/sources/buddhist-protests-1963.jpg',
@@ -11359,8 +11359,8 @@ const usa_data = {
           title:
             'Source C: Self-Immolation of Buddhist Monk Thich Quang Duc in Protest Against the Diem Regime in Saigon (11 June 1963)',
           date: '11 June 1963',
-          image: '/units/usa/assets/sources/portraits/thich_quang_duc.jpg',
-          image_url: '/units/usa/assets/sources/portraits/thich_quang_duc.jpg',
+          image: '/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg',
+          image_url: '/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg',
           attribution:
             'Malcolm Browne photograph for Associated Press, World Press Photo of the Year',
           question_badge: "Author's Purpose",
@@ -11384,8 +11384,8 @@ const usa_data = {
             "Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?",
           source_context:
             "Malcolm Browne photograph for Associated Press, World Press Photo of the Year. Malcolm Browne, Associated Press bureau chief in Saigon for Global news readers, television viewers, and President John F. Kennedy with the objective: To document the ultimate act of religious protest against Diem's Catholic-dominated nepotistic dictatorship.. **Hinge Question:** Why did President Kennedy famously state that 'no news photograph in history has generated so much emotion around the world as that one'?",
-          src: '/units/usa/assets/sources/portraits/thich_quang_duc.jpg',
-          source: '/units/usa/assets/sources/portraits/thich_quang_duc.jpg',
+          src: '/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg',
+          source: '/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg',
         },
         {
           id: 'usa_lesson_3_1_c',
@@ -15292,10 +15292,10 @@ const usa_data = {
               letter: 'A',
               type: 'eyewitness_account',
               title:
-                'Source A: Eyewitness Testimony of Helicopter Pilot Major Hugh Thompson Jr. on Intervening to Halt the My Lai Killings (16 March 1968)',
+                'Source A: Helicopter Pilot Warrant Officer Hugh Thompson Jr., Who Intervened to Halt the My Lai Killings (March 1968)',
               date: '16 March 1968',
-              image: '/units/usa/assets/sources/portraits/william_calley.jpg',
-              image_url: '/units/usa/assets/sources/portraits/william_calley.jpg',
+              image: '/units/usa/assets/sources/hugh_thompson_jr_1968.jpg',
+              image_url: '/units/usa/assets/sources/hugh_thompson_jr_1968.jpg',
               attribution:
                 'Peers Commission Inquiry into the My Lai Massacre, Department of the Army (1970)',
               question_badge: 'Reliability & Provenance',
@@ -15321,8 +15321,8 @@ const usa_data = {
                 'Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?',
               source_context:
                 'Peers Commission Inquiry into the My Lai Massacre, Department of the Army (1970). Major Hugh Thompson Jr., observation helicopter pilot of the 123rd Aviation Battalion for Lieutenant General William Peers and the official military inquiry board with the objective: To provide sworn testimony regarding the war crimes committed by Charlie Company, 11th Infantry Brigade.. **Hinge Question:** Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?',
-              src: '/units/usa/assets/sources/portraits/william_calley.jpg',
-              source: '/units/usa/assets/sources/portraits/william_calley.jpg',
+              src: '/units/usa/assets/sources/hugh_thompson_jr_1968.jpg',
+              source: '/units/usa/assets/sources/hugh_thompson_jr_1968.jpg',
             },
           ],
           image: '/units/usa/assets/sources/draft-card-burning-nyc-1967.jpg',
@@ -15349,10 +15349,10 @@ const usa_data = {
               letter: 'B',
               type: 'investigative_letter',
               title:
-                "Source B: Former Soldier Ron Ridenhour's Letter to Congress and the Pentagon Exposing the My Lai Massacre (29 March 1969)",
+                "Source B: US Army Combat Photographer Ronald L. Haeberle's Photograph of Soldiers Burning Dwellings in My Lai (16 March 1968)",
               date: '29 March 1969',
-              image: '/units/usa/assets/sources/portraits/william_calley.jpg',
-              image_url: '/units/usa/assets/sources/portraits/william_calley.jpg',
+              image: '/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg',
+              image_url: '/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg',
               attribution: 'Congressional Record, 91st Congress, 1st Session, Washington D.C.',
               question_badge: "Author's Purpose",
               question:
@@ -15376,8 +15376,8 @@ const usa_data = {
                 'Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?',
               source_context:
                 'Congressional Record, 91st Congress, 1st Session, Washington D.C.. Ron Ridenhour, Vietnam veteran who gathered accounts from fellow soldiers for Thirty members of Congress, the Secretary of Defense, and the Joint Chiefs of Staff with the objective: To demand an official congressional and military investigation into widespread atrocities and hold perpetrators accountable.. **Hinge Question:** Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?',
-              src: '/units/usa/assets/sources/portraits/william_calley.jpg',
-              source: '/units/usa/assets/sources/portraits/william_calley.jpg',
+              src: '/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg',
+              source: '/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg',
             },
           ],
           isReversed: true,
@@ -16125,10 +16125,10 @@ const usa_data = {
           letter: 'A',
           type: 'eyewitness_account',
           title:
-            'Source A: Eyewitness Testimony of Helicopter Pilot Major Hugh Thompson Jr. on Intervening to Halt the My Lai Killings (16 March 1968)',
+            'Source A: Helicopter Pilot Warrant Officer Hugh Thompson Jr., Who Intervened to Halt the My Lai Killings (March 1968)',
           date: '16 March 1968',
-          image: '/units/usa/assets/sources/portraits/william_calley.jpg',
-          image_url: '/units/usa/assets/sources/portraits/william_calley.jpg',
+          image: '/units/usa/assets/sources/hugh_thompson_jr_1968.jpg',
+          image_url: '/units/usa/assets/sources/hugh_thompson_jr_1968.jpg',
           attribution:
             'Peers Commission Inquiry into the My Lai Massacre, Department of the Army (1970)',
           question_badge: 'Reliability & Provenance',
@@ -16153,18 +16153,18 @@ const usa_data = {
             'Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?',
           source_context:
             'Peers Commission Inquiry into the My Lai Massacre, Department of the Army (1970). Major Hugh Thompson Jr., observation helicopter pilot of the 123rd Aviation Battalion for Lieutenant General William Peers and the official military inquiry board with the objective: To provide sworn testimony regarding the war crimes committed by Charlie Company, 11th Infantry Brigade.. **Hinge Question:** Why was Hugh Thompson initially denounced as a traitor by members of Congress before being recognized as a national hero decades later?',
-          src: '/units/usa/assets/sources/portraits/william_calley.jpg',
-          source: '/units/usa/assets/sources/portraits/william_calley.jpg',
+          src: '/units/usa/assets/sources/hugh_thompson_jr_1968.jpg',
+          source: '/units/usa/assets/sources/hugh_thompson_jr_1968.jpg',
         },
         {
           id: 'usa_lesson_4_1_c',
           letter: 'B',
           type: 'investigative_letter',
           title:
-            "Source B: Former Soldier Ron Ridenhour's Letter to Congress and the Pentagon Exposing the My Lai Massacre (29 March 1969)",
+            "Source B: US Army Combat Photographer Ronald L. Haeberle's Photograph of Soldiers Burning Dwellings in My Lai (16 March 1968)",
           date: '29 March 1969',
-          image: '/units/usa/assets/sources/portraits/william_calley.jpg',
-          image_url: '/units/usa/assets/sources/portraits/william_calley.jpg',
+          image: '/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg',
+          image_url: '/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg',
           attribution: 'Congressional Record, 91st Congress, 1st Session, Washington D.C.',
           question_badge: "Author's Purpose",
           question:
@@ -16188,8 +16188,8 @@ const usa_data = {
             'Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?',
           source_context:
             'Congressional Record, 91st Congress, 1st Session, Washington D.C.. Ron Ridenhour, Vietnam veteran who gathered accounts from fellow soldiers for Thirty members of Congress, the Secretary of Defense, and the Joint Chiefs of Staff with the objective: To demand an official congressional and military investigation into widespread atrocities and hold perpetrators accountable.. **Hinge Question:** Why did the revelation of the My Lai Massacre shatter the moral certainty of millions of Americans regarding the righteousness of the war?',
-          src: '/units/usa/assets/sources/portraits/william_calley.jpg',
-          source: '/units/usa/assets/sources/portraits/william_calley.jpg',
+          src: '/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg',
+          source: '/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg',
         },
         {
           id: 'usa_lesson_4_1_a',
@@ -16610,10 +16610,10 @@ const usa_data = {
               letter: 'C',
               type: 'editorial',
               title:
-                'Source C: From an Editorial in the New York Daily News Defending Patriotic Blue-Collar Demonstration (11 May 1970)',
+                'Source C: Construction Union Hard Hats on the White House Cabinet Table Following the Hard Hat Riots (26 May 1970)',
               date: '11 May 1970',
-              image: '/units/usa/assets/sources/portraits/nixon.jpg',
-              image_url: '/units/usa/assets/sources/portraits/nixon.jpg',
+              image: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
+              image_url: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
               attribution: 'New York Daily News Editorial Board, May 1970',
               question_badge: 'Cross-Referencing',
               question:
@@ -16638,8 +16638,8 @@ const usa_data = {
                 'How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?',
               source_context:
                 "New York Daily News Editorial Board, May 1970. The Editorial Board of the New York Daily News (the nation's largest circulation tabloid) for Millions of working-class and trade-union readers in the New York metropolitan area with the objective: To defend blue-collar patriotism and legitimize popular resistance against campus radicalism.. **Hinge Question:** How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?",
-              src: '/units/usa/assets/sources/portraits/nixon.jpg',
-              source: '/units/usa/assets/sources/portraits/nixon.jpg',
+              src: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
+              source: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
             },
           ],
           image: '/units/usa/assets/sources/hard-hat-riot-1970.jpg',
@@ -17411,10 +17411,10 @@ const usa_data = {
           letter: 'C',
           type: 'editorial',
           title:
-            'Source C: From an Editorial in the New York Daily News Defending Patriotic Blue-Collar Demonstration (11 May 1970)',
+            'Source C: Construction Union Hard Hats on the White House Cabinet Table Following the Hard Hat Riots (26 May 1970)',
           date: '11 May 1970',
-          image: '/units/usa/assets/sources/portraits/nixon.jpg',
-          image_url: '/units/usa/assets/sources/portraits/nixon.jpg',
+          image: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
+          image_url: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
           attribution: 'New York Daily News Editorial Board, May 1970',
           question_badge: 'Cross-Referencing',
           question:
@@ -17439,8 +17439,8 @@ const usa_data = {
             'How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?',
           source_context:
             "New York Daily News Editorial Board, May 1970. The Editorial Board of the New York Daily News (the nation's largest circulation tabloid) for Millions of working-class and trade-union readers in the New York metropolitan area with the objective: To defend blue-collar patriotism and legitimize popular resistance against campus radicalism.. **Hinge Question:** How did Nixon successfully recruit traditional working-class Democratic union voters into the new Republican majority in 1972?",
-          src: '/units/usa/assets/sources/portraits/nixon.jpg',
-          source: '/units/usa/assets/sources/portraits/nixon.jpg',
+          src: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
+          source: '/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg',
         },
         {
           id: 'usa_lesson_4_2_d',

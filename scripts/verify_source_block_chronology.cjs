@@ -16,7 +16,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
-const FIVE_BLOCK_UNITS = ['cme_new', 'usa', 'weimar_nazi_germany'];
+const FIVE_BLOCK_UNITS = ['cme_new', 'usa', 'weimar_nazi_germany', 'cold_war'];
 
 console.log('======================================================================');
 console.log('🛡️  AUTOMATED 5-BLOCK SOURCE-TO-NARRATIVE CHRONOLOGY LINTER');

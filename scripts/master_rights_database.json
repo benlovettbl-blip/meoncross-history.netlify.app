@@ -2151,14 +2151,14 @@
           "lesson_num": 4,
           "lesson_title": "KT 1.3: Increased Tension, Nasser, and the Suez Crisis, 1955–1963",
           "source_id": "Narrative Plate 5",
-          "artifact_title": "Air Reconnaissance over Port Said",
-          "date": "c. 19th–20th Century",
-          "creator": "Official Archival Record / Contemporary Artist",
-          "repository": "Israel State Archives / UNRWA Archives / National Archives (UK)",
-          "accession_id": "ISA / UNRWA Photo Archive / FCO 93",
-          "rights_status": "Public Domain / Educational Fair Dealing (Section 29 CDPA 1988)",
+          "artifact_title": "Air Reconnaissance over Port Said: Oil Tanks Burning",
+          "date": "5 November 1956",
+          "creator": "Royal Air Force Official Photographer / British Ministry of Defence",
+          "repository": "Imperial War Museums (IWM), London",
+          "accession_id": "IWM MH 23509",
+          "rights_status": "Public Domain (UK Crown Copyright Expired)",
           "commercial_use_permitted": true,
-          "source_url": "https://www.archives.gov.il",
+          "source_url": "https://www.iwm.org.uk/collections/item/object/205164214",
           "asset_path": "/images/cme_port_said_from_air.jpg"
         },
         {
@@ -8445,6 +8445,61 @@
           "commercial_use_permitted": true,
           "source_url": "https://commons.wikimedia.org",
           "asset_path": "/units/usa/assets/sources/paris-peace-accords-signing.jpg"
+        },
+        {
+          "asset_path": "/units/usa/assets/sources/stokely_carmichael_mississippi_1966.jpg",
+          "artifact_title": "Source C: SNCC Chairman Stokely Carmichael Speaking in Mississippi During the March Against Fear (June 1966)",
+          "date": "1966",
+          "creator": "Associated Press / Unidentified Photographer",
+          "repository": "Library of Congress Prints and Photographs Division",
+          "accession_id": "USA-L7-C-RELIABILITY_PROVENANCE",
+          "rights_status": "Public Domain (Published in the US without copyright notice, 1966)",
+          "commercial_use_permitted": true,
+          "source_url": "https://commons.wikimedia.org/wiki/File:Kwame_Ture_at_a_1966_Mississippi_press_conference.jpg"
+        },
+        {
+          "asset_path": "/units/usa/assets/sources/thich_quang_duc_self_immolation_1963.jpg",
+          "artifact_title": "Source C: The Self-Immolation of Buddhist Monk Thich Quang Duc in Saigon (11 June 1963)",
+          "date": "11 June 1963",
+          "creator": "Malcolm Browne (Associated Press)",
+          "repository": "World Press Photo Archive / Associated Press",
+          "accession_id": "USA-L9-C-AUTHORS_PURPOSE",
+          "rights_status": "Public Domain (Pre-1978 without copyright notice) / Educational Fair Dealing",
+          "commercial_use_permitted": true,
+          "source_url": "https://commons.wikimedia.org/wiki/File:Th%C3%ADch_Qu%E1%BA%A3ng_%C4%90%E1%BB%A9c_self-immolation.jpg"
+        },
+        {
+          "asset_path": "/units/usa/assets/sources/hugh_thompson_jr_1968.jpg",
+          "artifact_title": "Source A: Helicopter Pilot Warrant Officer Hugh Thompson Jr., Who Intervened to Halt the My Lai Killings (March 1968)",
+          "date": "1968",
+          "creator": "US Army Aviation Center and School (Official US Army Photo)",
+          "repository": "National Archives and Records Administration (Record Group 111)",
+          "accession_id": "USA-L13-A-RELIABILITY_PROVENANCE",
+          "rights_status": "Public Domain (Official Work of the US Federal Government)",
+          "commercial_use_permitted": true,
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hugh_Tompson_Jr.jpg"
+        },
+        {
+          "asset_path": "/units/usa/assets/sources/my_lai_soldier_hut_fire_1968.jpg",
+          "artifact_title": "Source B: US Army Combat Photographer Ronald L. Haeberle's Photograph of Soldiers Burning Dwellings in My Lai (16 March 1968)",
+          "date": "16 March 1968",
+          "creator": "Ronald L. Haeberle (US Army Combat Photographer)",
+          "repository": "Peers Commission Inquiry Exhibits / National Archives (Record Group 111, Exhibit P-14)",
+          "accession_id": "USA-L13-B-AUTHORS_PURPOSE",
+          "rights_status": "Public Domain (Official US Army Investigative Exhibit / US Gov Work)",
+          "commercial_use_permitted": true,
+          "source_url": "https://commons.wikimedia.org/wiki/File:Haeberlehutonfire.jpg"
+        },
+        {
+          "asset_path": "/units/usa/assets/sources/hard_hat_riot_cabinet_table_1970.jpg",
+          "artifact_title": "Source C: Construction Union Hard Hats on the White House Cabinet Table Following the Hard Hat Riots (26 May 1970)",
+          "date": "26 May 1970",
+          "creator": "Oliver F. Atkins (White House Photo Office)",
+          "repository": "Richard Nixon Presidential Library and Museum, National Archives (NLN-WHPO-MPF-E3444)",
+          "accession_id": "USA-L14-C-CROSS_REFERENCING",
+          "rights_status": "Public Domain (Official Work of the US Federal Government)",
+          "commercial_use_permitted": true,
+          "source_url": "https://commons.wikimedia.org/wiki/File:Hard_hats_on_Nixon_cabinet_table_May_26,_1970.jpg"
         }
       ]
     },
