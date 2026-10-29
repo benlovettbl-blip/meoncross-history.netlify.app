@@ -3991,7 +3991,7 @@ export function renderLesson(lesson) {
         const displayTitle = source.title
           ? source.title.replace(/^(?:Source|Map|Diagram)\s+[A-Z0-9]+[:\s-]*/i, '').trim()
           : source.caption || 'Archival Evidence';
-        const rawSrc = source.src || source.source || source.image;
+        const rawSrc = source.image || source.src || source.source;
         const sourceImgUrl = rawSrc ? getAssetUrl(rawSrc) : '';
         const sourceText = (source.text || source.content || '').trim();
         let contextText = source.source_context || source.context || '';
@@ -4227,12 +4227,12 @@ export function renderLesson(lesson) {
               </div>
             </div>
             ${
-              source.src || source.source || source.image
+              source.image || source.src || source.source
                 ? `
               <div class="archival-source-split-layout">
                 <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
                   <div style="position: relative; width: 100%; display: flex; justify-content: center;">
-                    <img src="${getAssetUrl(source.src || source.source || source.image)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.src || source.source || source.image)}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
+                    <img src="${getAssetUrl(source.image || source.src || source.source)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.image || source.src || source.source)}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
                     <div class="archival-source-inspect-badge">
                       <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
                       <span>Pan-Zoom</span>
@@ -4343,11 +4343,11 @@ export function renderLesson(lesson) {
               ${source.title ? `<h4 style="color: var(--primary); margin-top: 0; text-align: left;">${source.title}</h4>` : ''}
               
               ${
-                source.src || source.source || source.image
+                source.image || source.src || source.source
                   ? `
                 <div style="display: inline-flex; flex-direction: column; position: relative; max-width: 100%; text-align: left; margin: 15px 0;">
                   <div style="position: relative;">
-                    <img src="${getAssetUrl(source.src || source.source || source.image)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" data-action="open-modal" data-src="${getAssetUrl(source.src || source.source || source.image)}">
+                    <img src="${getAssetUrl(source.image || source.src || source.source)}" alt="Source Image" style="max-width: 100%; max-height: 400px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border: 1px solid #cbd5e1; cursor: zoom-in; display: block;" data-action="open-modal" data-src="${getAssetUrl(source.image || source.src || source.source)}">
                   </div>
                   ${
                     source.caption
@@ -4579,7 +4579,7 @@ export function renderLesson(lesson) {
                </div>
              `;
       } else {
-        const utilSourceSrc = getAssetUrl(source.source || source.src || source.image);
+        const utilSourceSrc = getAssetUrl(source.image || source.source || source.src);
         sourceContentHtml = `
                 <div class="utility-source-visual">
                   <img class="utility-source-img" src="${utilSourceSrc}" alt="${source.title || 'Historical Source'}" data-action="open-modal" data-src="${utilSourceSrc}">
@@ -6384,15 +6384,15 @@ export function renderLesson(lesson) {
       const renderSingleArchivalSource = (rawSource) => {
         if (!rawSource) return '';
         const rawImgSrc =
-          (typeof rawSource.src === 'string' &&
-          rawSource.src.trim() &&
-          rawSource.src !== 'undefined'
-            ? rawSource.src.trim()
-            : '') ||
           (typeof rawSource.image === 'string' &&
           rawSource.image.trim() &&
           rawSource.image !== 'undefined'
             ? rawSource.image.trim()
+            : '') ||
+          (typeof rawSource.src === 'string' &&
+          rawSource.src.trim() &&
+          rawSource.src !== 'undefined'
+            ? rawSource.src.trim()
             : '') ||
           (typeof rawSource.source === 'string' &&
           rawSource.source.trim() &&

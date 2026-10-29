@@ -381,12 +381,12 @@ const cme_new_data = {
           letter: 'A',
           title:
             'Source A: The McMahon-Hussein Correspondence Territorial Boundaries Map (1915–1916)',
-          src: '/units/cme_new/assets/map_lesson1.png',
+          src: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
           image: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
-          source: '/units/cme_new/assets/map_lesson1.png',
+          source: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
           caption:
-            'Cartographic representation showing the conflicting territorial exclusions and pledges exchanged between Sir Henry McMahon and Sharif Hussein of Mecca (1915–1916).',
-          desc: 'Historical map analyzing the contested zones of the McMahon-Hussein letters.',
+            'Cartographic map delineating the proposed borders of an independent Arab state pledged by Sir Henry McMahon to Sharif Hussein of Mecca (1915–1916).',
+          desc: 'Historical cartographic boundary map analyzing the territorial pledges of the McMahon-Hussein Correspondence (1915–1916).',
           provenance:
             'The National Archives, Kew (FO 371/2486), British Arab Bureau records, 1916.',
           citation: 'The National Archives, Kew.',
@@ -495,14 +495,14 @@ const cme_new_data = {
           id: 'cme_l1_source_d',
           letter: 'D',
           title: 'Source D: Archival Panorama of British Mandate Jerusalem (c. 1918–1920)',
-          src: '/images/cme_cover.jpg',
+          src: '/images/jerusalem_mandate_panorama_1920.jpg',
           image: '/images/jerusalem_mandate_panorama_1920.jpg',
-          source: '/images/cme_cover.jpg',
+          source: '/images/jerusalem_mandate_panorama_1920.jpg',
           caption:
-            'Panoramic view over the Old City of Jerusalem and the Temple Mount / Haram al-Sharif under early British civil administration, c. 1920.',
-          desc: 'Archival landscape photograph of Mandate Jerusalem.',
+            'Panoramic landscape photograph of British Mandate Jerusalem looking toward the Old City and the Dome of the Rock from the Mount of Olives (c. 1920).',
+          desc: 'Archival panoramic landscape photograph of British Mandate Jerusalem from the Mount of Olives (c. 1920).',
           provenance:
-            'Library of Congress, Prints & Photographs Division (LC-DIG-matpc-05743), c. 1925.',
+            'Library of Congress, Prints & Photographs Division (Bain Collection LC-DIG-matpc-05743), c. 1920.',
           citation: 'Library of Congress, Washington D.C.',
           hinge_question:
             "How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
@@ -732,12 +732,12 @@ const cme_new_data = {
               letter: 'A',
               title:
                 'Source A: The McMahon-Hussein Correspondence Territorial Boundaries Map (1915–1916)',
-              src: '/units/cme_new/assets/map_lesson1.png',
+              src: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
               image: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
-              source: '/units/cme_new/assets/map_lesson1.png',
+              source: '/units/cme_new/assets/mcmahon_hussein_map_1915.png',
               caption:
-                'Cartographic representation showing the conflicting territorial exclusions and pledges exchanged between Sir Henry McMahon and Sharif Hussein of Mecca (1915–1916).',
-              desc: 'Historical map analyzing the contested zones of the McMahon-Hussein letters.',
+                'Cartographic map delineating the proposed borders of an independent Arab state pledged by Sir Henry McMahon to Sharif Hussein of Mecca (1915–1916).',
+              desc: 'Historical cartographic boundary map analyzing the territorial pledges of the McMahon-Hussein Correspondence (1915–1916).',
               provenance:
                 'The National Archives, Kew (FO 371/2486), British Arab Bureau records, 1916.',
               citation: 'The National Archives, Kew.',
@@ -895,14 +895,14 @@ const cme_new_data = {
               id: 'cme_l1_source_d',
               letter: 'D',
               title: 'Source D: Archival Panorama of British Mandate Jerusalem (c. 1918–1920)',
-              src: '/images/cme_cover.jpg',
+              src: '/images/jerusalem_mandate_panorama_1920.jpg',
               image: '/images/jerusalem_mandate_panorama_1920.jpg',
-              source: '/images/cme_cover.jpg',
+              source: '/images/jerusalem_mandate_panorama_1920.jpg',
               caption:
-                'Panoramic view over the Old City of Jerusalem and the Temple Mount / Haram al-Sharif under early British civil administration, c. 1920.',
-              desc: 'Archival landscape photograph of Mandate Jerusalem.',
+                'Panoramic landscape photograph of British Mandate Jerusalem looking toward the Old City and the Dome of the Rock from the Mount of Olives (c. 1920).',
+              desc: 'Archival panoramic landscape photograph of British Mandate Jerusalem from the Mount of Olives (c. 1920).',
               provenance:
-                'Library of Congress, Prints & Photographs Division (LC-DIG-matpc-05743), c. 1925.',
+                'Library of Congress, Prints & Photographs Division (Bain Collection LC-DIG-matpc-05743), c. 1920.',
               citation: 'Library of Congress, Washington D.C.',
               hinge_question:
                 "How did Jerusalem's shared sacred geography make peaceful partition virtually impossible under British colonial administration?",
@@ -3747,16 +3747,14 @@ const cme_new_data = {
               id: 'cme_l3_source_b',
               letter: 'B',
               title: 'Source B: Displaced Palestinian Families in Khan Yunis Camp (1948–1949)',
-              src: '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
+              src: '/images/nakba_unrwa_khan_younis_1948.jpg',
               image: '/images/nakba_unrwa_khan_younis_1948.jpg',
-              source:
-                '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
+              source: '/images/nakba_unrwa_khan_younis_1948.jpg',
               caption:
-                'Palestinian refugee mother and children sheltered beside temporary canvas conical tents in the overcrowded Khan Yunis refugee camp in the Gaza Strip, 1948–1949.',
-              desc: 'Documentary photograph of early Palestinian refugee encampments in Gaza.',
-              provenance:
-                'Getty Images / Hulton Archive (1354487454), UNRWA photographic collection, 1949.',
-              citation: 'Getty Images / UNRWA Archives.',
+                'UNRWA archival photograph of a displaced Palestinian mother and young child standing outside makeshift tent shelters in the Khan Yunis refugee camp in Gaza (1948–1949).',
+              desc: 'Documentary photograph of displaced Palestinian families in Khan Yunis refugee camp, Gaza (1948–1949).',
+              provenance: 'UNRWA Photographic Archive (Gaza-1948-KY), 1948–1949.',
+              citation: 'UNRWA Photographic Archive.',
               hinge_question:
                 'How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
               source_context:
@@ -3860,13 +3858,13 @@ const cme_new_data = {
               id: 'cme_l3_source_d',
               letter: 'D',
               title: 'Source D: Jewish Immigrants Arriving in Haifa Port (February 1949)',
-              src: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
+              src: '/units/cme_new/assets/jewish_immigrants_haifa_1949.jpg',
               image: '/units/cme_new/assets/jewish_immigrants_haifa_1949.jpg',
-              source: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
+              source: '/units/cme_new/assets/jewish_immigrants_haifa_1949.jpg',
               caption:
-                "Mizrahi and European Jewish immigrants disembarking at Haifa harbour under Israel's Law of Return beneath a welcome banner ('ברוכים הבאים'), February 1949.",
-              desc: 'Archival photograph of immigrants arriving at the Port of Jaffa.',
-              provenance: 'Israel Government Press Office (GPO 997008136796005171), c. 1950.',
+                'Thousands of Jewish immigrants arriving at Haifa Port aboard the Pan Yorkshire (February 1949) greeted by crowds beneath a Hebrew banner reading "ברוכים הבאים" (Welcome).',
+              desc: 'Archival photograph of Jewish immigrants arriving at the Port of Haifa (February 1949).',
+              provenance: 'Israel Government Press Office (GPO 997008136796005171), February 1949.',
               citation: 'Israel Government Press Office, Jerusalem.',
               hinge_question:
                 "How did the rapid influx of nearly 700,000 Jewish immigrants explain Israel's refusal to permit Palestinian refugees to return?",
@@ -4422,16 +4420,14 @@ const cme_new_data = {
           id: 'cme_l3_source_b',
           letter: 'B',
           title: 'Source B: Displaced Palestinian Families in Khan Yunis Camp (1948–1949)',
-          src: '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
+          src: '/images/nakba_unrwa_khan_younis_1948.jpg',
           image: '/images/nakba_unrwa_khan_younis_1948.jpg',
-          source:
-            '/units/cme_new/assets/cme_palestinian_refugees_leaving_gaza_gettyimages_1354487454.webp',
+          source: '/images/nakba_unrwa_khan_younis_1948.jpg',
           caption:
-            'Palestinian refugee mother and children sheltered beside temporary canvas conical tents in the overcrowded Khan Yunis refugee camp in the Gaza Strip, 1948–1949.',
-          desc: 'Documentary photograph of early Palestinian refugee encampments in Gaza.',
-          provenance:
-            'Getty Images / Hulton Archive (1354487454), UNRWA photographic collection, 1949.',
-          citation: 'Getty Images / UNRWA Archives.',
+            'UNRWA archival photograph of a displaced Palestinian mother and young child standing outside makeshift tent shelters in the Khan Yunis refugee camp in Gaza (1948–1949).',
+          desc: 'Documentary photograph of displaced Palestinian families in Khan Yunis refugee camp, Gaza (1948–1949).',
+          provenance: 'UNRWA Photographic Archive (Gaza-1948-KY), 1948–1949.',
+          citation: 'UNRWA Photographic Archive.',
           hinge_question:
             'How did the permanence of refugee tent camps undermine Arab hopes of an immediate return to their villages?',
           source_context:
@@ -4501,13 +4497,13 @@ const cme_new_data = {
           id: 'cme_l3_source_d',
           letter: 'D',
           title: 'Source D: Jewish Immigrants Arriving in Haifa Port (February 1949)',
-          src: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
+          src: '/units/cme_new/assets/jewish_immigrants_haifa_1949.jpg',
           image: '/units/cme_new/assets/jewish_immigrants_haifa_1949.jpg',
-          source: '/units/cme_new/assets/cme_tel_aviv_yafo__997008136796005171_.jpg',
+          source: '/units/cme_new/assets/jewish_immigrants_haifa_1949.jpg',
           caption:
-            "Mizrahi and European Jewish immigrants disembarking at Haifa harbour under Israel's Law of Return beneath a welcome banner ('ברוכים הבאים'), February 1949.",
-          desc: 'Archival photograph of immigrants arriving at the Port of Jaffa.',
-          provenance: 'Israel Government Press Office (GPO 997008136796005171), c. 1950.',
+            'Thousands of Jewish immigrants arriving at Haifa Port aboard the Pan Yorkshire (February 1949) greeted by crowds beneath a Hebrew banner reading "ברוכים הבאים" (Welcome).',
+          desc: 'Archival photograph of Jewish immigrants arriving at the Port of Haifa (February 1949).',
+          provenance: 'Israel Government Press Office (GPO 997008136796005171), February 1949.',
           citation: 'Israel Government Press Office, Jerusalem.',
           hinge_question:
             "How did the rapid influx of nearly 700,000 Jewish immigrants explain Israel's refusal to permit Palestinian refugees to return?",
@@ -5673,15 +5669,15 @@ const cme_new_data = {
               id: 'cme_l4_source_b',
               letter: 'B',
               title: 'Source B: British Psychological Warfare Propaganda Leaflet (November 1956)',
-              src: '/images/cme_nasser_1956.jpg',
+              src: '/images/british_psyops_leaflet_suez_1956.jpg',
               image: '/images/british_psyops_leaflet_suez_1956.jpg',
-              source: '/images/cme_nasser_1956.jpg',
+              source: '/images/british_psyops_leaflet_suez_1956.jpg',
               caption:
-                'British psy-ops propaganda leaflet dropped by RAF bombers over Cairo and Alexandria during Operation Musketeer, warning civilians of airstrikes and blaming Nasser for the war.',
-              desc: 'Archival photograph of President Nasser during his historic Alexandria address.',
+                'British psychological warfare propaganda leaflet dropped over Egyptian cities during Operation Musketeer, depicting Nasser hiding behind a young civilian soldier (November 1956).',
+              desc: 'British psychological warfare propaganda leaflet dropped over Egyptian cities during the Suez Crisis (November 1956).',
               provenance:
-                'Egyptian State Information Service / AP Images (560726012), 26 July 1956.',
-              citation: 'Egyptian State Information Service / Associated Press.',
+                'The National Archives, Kew (FO 953/1689), British Psychological Warfare Branch, 1956.',
+              citation: 'The National Archives, Kew.',
               hinge_question:
                 'How did British aerial leaflets use psychological warfare to undermine Egyptian civilian support for Nasser during the Anglo-French assault?',
               source_context:
@@ -5921,14 +5917,15 @@ const cme_new_data = {
           id: 'cme_l4_source_b',
           letter: 'B',
           title: 'Source B: British Psychological Warfare Propaganda Leaflet (November 1956)',
-          src: '/images/cme_nasser_1956.jpg',
+          src: '/images/british_psyops_leaflet_suez_1956.jpg',
           image: '/images/british_psyops_leaflet_suez_1956.jpg',
-          source: '/images/cme_nasser_1956.jpg',
+          source: '/images/british_psyops_leaflet_suez_1956.jpg',
           caption:
-            'British psy-ops propaganda leaflet dropped by RAF bombers over Cairo and Alexandria during Operation Musketeer, warning civilians of airstrikes and blaming Nasser for the war.',
-          desc: 'Archival photograph of President Nasser during his historic Alexandria address.',
-          provenance: 'Egyptian State Information Service / AP Images (560726012), 26 July 1956.',
-          citation: 'Egyptian State Information Service / Associated Press.',
+            'British psychological warfare propaganda leaflet dropped over Egyptian cities during Operation Musketeer, depicting Nasser hiding behind a young civilian soldier (November 1956).',
+          desc: 'British psychological warfare propaganda leaflet dropped over Egyptian cities during the Suez Crisis (November 1956).',
+          provenance:
+            'The National Archives, Kew (FO 953/1689), British Psychological Warfare Branch, 1956.',
+          citation: 'The National Archives, Kew.',
           hinge_question:
             'How did British aerial leaflets use psychological warfare to undermine Egyptian civilian support for Nasser during the Anglo-French assault?',
           source_context:
@@ -8011,15 +8008,15 @@ const cme_new_data = {
               letter: 'A',
               title:
                 "Source A: Israeli Command Entering Jerusalem Through Lions' Gate (7 June 1967)",
-              src: '/units/cme_new/assets/western_wall_1967.jpg',
+              src: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
               image: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
-              source: '/units/cme_new/assets/western_wall_1967.jpg',
+              source: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
               caption:
-                "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Central Command General Uzi Narkiss walking through Lions' Gate into the Old City of Jerusalem on 7 June 1967.",
-              desc: 'Iconic historical photograph of Israeli military leadership entering Jerusalem.',
+                "David Rubinger's iconic photograph showing Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and General Uzi Narkiss walking through Lions' Gate into the Old City of Jerusalem, 7 June 1967.",
+              desc: "David Rubinger photograph of Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and General Uzi Narkiss entering Jerusalem through Lions' Gate on 7 June 1967.",
               provenance:
-                'Israel Government Press Office / Ilan Bruner (GPO D835-081), 7 June 1967.',
-              citation: 'Israel Government Press Office / Ilan Bruner.',
+                'Israel Government Press Office / David Rubinger (GPO D835-081), 7 June 1967.',
+              citation: 'Israel Government Press Office / David Rubinger.',
               hinge_question:
                 "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
               source_context:
@@ -8122,12 +8119,12 @@ const cme_new_data = {
               id: 'cme_l6_source_c',
               letter: 'C',
               title: 'Source C: Chief Rabbi Goren Blowing the Shofar at the Wall (7 June 1967)',
-              src: '/images/israeli_troops_wall.jpg',
+              src: '/images/rabbi_goren_shofar_western_wall_1967.jpg',
               image: '/images/rabbi_goren_shofar_western_wall_1967.jpg',
-              source: '/images/israeli_troops_wall.jpg',
+              source: '/images/rabbi_goren_shofar_western_wall_1967.jpg',
               caption:
-                "IDF Chief Rabbi Shlomo Goren carrying a Torah scroll and blowing the ceremonial shofar (ram's horn) before Israeli soldiers at the Western Wall, 7 June 1967.",
-              desc: 'Archival photograph of religious celebration at the liberated Western Wall.',
+                'IDF Chief Rabbi Shlomo Goren blowing the shofar while holding a Torah scroll surrounded by paratroopers at the liberated Western Wall on 7 June 1967.',
+              desc: 'Archival photograph of IDF Chief Rabbi Shlomo Goren blowing the shofar at the Western Wall on 7 June 1967.',
               provenance: 'Israel Government Press Office (GPO D1-1967), 7 June 1967.',
               citation: 'Israel Government Press Office, Jerusalem.',
               hinge_question:
@@ -8275,14 +8272,15 @@ const cme_new_data = {
           id: 'cme_l6_source_a',
           letter: 'A',
           title: "Source A: Israeli Command Entering Jerusalem Through Lions' Gate (7 June 1967)",
-          src: '/units/cme_new/assets/western_wall_1967.jpg',
+          src: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
           image: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
-          source: '/units/cme_new/assets/western_wall_1967.jpg',
+          source: '/units/cme_new/assets/dayan_rabin_lions_gate_1967.jpg',
           caption:
-            "Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and Central Command General Uzi Narkiss walking through Lions' Gate into the Old City of Jerusalem on 7 June 1967.",
-          desc: 'Iconic historical photograph of Israeli military leadership entering Jerusalem.',
-          provenance: 'Israel Government Press Office / Ilan Bruner (GPO D835-081), 7 June 1967.',
-          citation: 'Israel Government Press Office / Ilan Bruner.',
+            "David Rubinger's iconic photograph showing Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and General Uzi Narkiss walking through Lions' Gate into the Old City of Jerusalem, 7 June 1967.",
+          desc: "David Rubinger photograph of Defense Minister Moshe Dayan, Chief of Staff Yitzhak Rabin, and General Uzi Narkiss entering Jerusalem through Lions' Gate on 7 June 1967.",
+          provenance:
+            'Israel Government Press Office / David Rubinger (GPO D835-081), 7 June 1967.',
+          citation: 'Israel Government Press Office / David Rubinger.',
           hinge_question:
             "How did Moshe Dayan's famous declaration at the Wall ('We have returned to our holiest site, never to part from it again') bind future Israeli governments?",
           source_context:
@@ -8351,12 +8349,12 @@ const cme_new_data = {
           id: 'cme_l6_source_c',
           letter: 'C',
           title: 'Source C: Chief Rabbi Goren Blowing the Shofar at the Wall (7 June 1967)',
-          src: '/images/israeli_troops_wall.jpg',
+          src: '/images/rabbi_goren_shofar_western_wall_1967.jpg',
           image: '/images/rabbi_goren_shofar_western_wall_1967.jpg',
-          source: '/images/israeli_troops_wall.jpg',
+          source: '/images/rabbi_goren_shofar_western_wall_1967.jpg',
           caption:
-            "IDF Chief Rabbi Shlomo Goren carrying a Torah scroll and blowing the ceremonial shofar (ram's horn) before Israeli soldiers at the Western Wall, 7 June 1967.",
-          desc: 'Archival photograph of religious celebration at the liberated Western Wall.',
+            'IDF Chief Rabbi Shlomo Goren blowing the shofar while holding a Torah scroll surrounded by paratroopers at the liberated Western Wall on 7 June 1967.',
+          desc: 'Archival photograph of IDF Chief Rabbi Shlomo Goren blowing the shofar at the Western Wall on 7 June 1967.',
           provenance: 'Israel Government Press Office (GPO D1-1967), 7 June 1967.',
           citation: 'Israel Government Press Office, Jerusalem.',
           hinge_question:
@@ -9367,15 +9365,15 @@ const cme_new_data = {
               letter: 'D',
               title:
                 'Source D: The Bar Lev Line Fortress Fortifications on the Suez Canal (1969–1973)',
-              src: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
+              src: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
               image: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
-              source: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
+              source: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
               caption:
-                'Detailed tactical engineering map of the Bar Lev Line along the Suez Canal, showing the chain of fortified strongpoints (Maozim), sand ramparts, and artillery firing ramps erected between 1969 and 1973.',
-              desc: 'Engineering and strategic fortification plan along the Suez Canal.',
+                'Tactical map and engineering plan of the Bar-Lev Line fortifications along the eastern bank of the Suez Canal, showing fortified Maoz strongpoints and observation bunkers.',
+              desc: 'Tactical engineering plan of the Bar Lev Line fortress fortifications along the Suez Canal.',
               provenance:
                 'IDF Combat Engineering Corps / Ministry of Defense Archives, Tel Aviv, 1969.',
-              citation: 'IDF Engineering Records.',
+              citation: 'IDF Combat Engineering Archives.',
               hinge_question:
                 "How did Israeli reliance on the massive physical ramparts of the Bar Lev Line breed dangerous military complacency (the 'Conception') before 1973?",
               source_context:
@@ -9581,15 +9579,15 @@ const cme_new_data = {
           id: 'cme_l7_source_d',
           letter: 'D',
           title: 'Source D: The Bar Lev Line Fortress Fortifications on the Suez Canal (1969–1973)',
-          src: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
+          src: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
           image: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
-          source: '/units/cme_new/assets/cme_sinai_peninsula_map.jpg',
+          source: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
           caption:
-            'Detailed tactical engineering map of the Bar Lev Line along the Suez Canal, showing the chain of fortified strongpoints (Maozim), sand ramparts, and artillery firing ramps erected between 1969 and 1973.',
-          desc: 'Engineering and strategic fortification plan along the Suez Canal.',
+            'Tactical map and engineering plan of the Bar-Lev Line fortifications along the eastern bank of the Suez Canal, showing fortified Maoz strongpoints and observation bunkers.',
+          desc: 'Tactical engineering plan of the Bar Lev Line fortress fortifications along the Suez Canal.',
           provenance:
             'IDF Combat Engineering Corps / Ministry of Defense Archives, Tel Aviv, 1969.',
-          citation: 'IDF Engineering Records.',
+          citation: 'IDF Combat Engineering Archives.',
           hinge_question:
             "How did Israeli reliance on the massive physical ramparts of the Bar Lev Line breed dangerous military complacency (the 'Conception') before 1973?",
           source_context:
@@ -10388,15 +10386,15 @@ const cme_new_data = {
               id: 'cme_l8_source_a',
               letter: 'A',
               title: 'Source A: Yasser Arafat in Military Battle Fatigues (1969)',
-              src: '/units/cme_new/assets/yasser_arafat.jpg',
+              src: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
               image: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
-              source: '/units/cme_new/assets/yasser_arafat.jpg',
+              source: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
               caption:
-                'Yasser Arafat, Chairman of the PLO and leader of Fatah, wearing his trademark checkered kaffiyeh and olive-green military battle fatigues in a Jordanian base, 1969.',
-              desc: 'Archival portrait photograph of PLO leader Yasser Arafat.',
+                'Yasser Arafat in military battle fatigues and checkered kaffiyeh during a diplomatic and military summit following the 1968 Battle of Karameh (1969).',
+              desc: 'Archival photograph of PLO Chairman Yasser Arafat in military battle fatigues and kaffiyeh (1969).',
               provenance:
-                'Palestinian National Authority Information Department / Gamma-Rapho, c. 1970.',
-              citation: 'Gamma-Rapho / Getty Images.',
+                'Palestinian National Authority Information Department / Gamma-Rapho, c. 1969.',
+              citation: 'Palestinian National Authority Information Department / Gamma-Rapho.',
               hinge_question:
                 "How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
               source_context:
@@ -10653,15 +10651,15 @@ const cme_new_data = {
           id: 'cme_l8_source_a',
           letter: 'A',
           title: 'Source A: Yasser Arafat in Military Battle Fatigues (1969)',
-          src: '/units/cme_new/assets/yasser_arafat.jpg',
+          src: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
           image: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
-          source: '/units/cme_new/assets/yasser_arafat.jpg',
+          source: '/units/cme_new/assets/arafat_fatigues_1969.jpg',
           caption:
-            'Yasser Arafat, Chairman of the PLO and leader of Fatah, wearing his trademark checkered kaffiyeh and olive-green military battle fatigues in a Jordanian base, 1969.',
-          desc: 'Archival portrait photograph of PLO leader Yasser Arafat.',
+            'Yasser Arafat in military battle fatigues and checkered kaffiyeh during a diplomatic and military summit following the 1968 Battle of Karameh (1969).',
+          desc: 'Archival photograph of PLO Chairman Yasser Arafat in military battle fatigues and kaffiyeh (1969).',
           provenance:
-            'Palestinian National Authority Information Department / Gamma-Rapho, c. 1970.',
-          citation: 'Gamma-Rapho / Getty Images.',
+            'Palestinian National Authority Information Department / Gamma-Rapho, c. 1969.',
+          citation: 'Palestinian National Authority Information Department / Gamma-Rapho.',
           hinge_question:
             "How did Arafat's consistent adoption of military uniform project the image of an active guerrilla warrior rather than a desk-bound diplomat?",
           source_context:
@@ -11601,10 +11599,11 @@ const cme_new_data = {
               image: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
               source: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
               caption:
-                'Engineering schematic of the Israeli Bar-Lev Line along the eastern bank of the Suez Canal, illustrating the massive sand ramparts, reinforced concrete bunkers, and artillery observation posts constructed during the War of Attrition.',
-              desc: 'Tactical engineering schematic of the Bar-Lev Line fortifications.',
-              provenance: 'Israel Defense Forces Engineering Corps archival blueprint, 1969.',
-              citation: 'IDF Archives, Tel HaShomer.',
+                'Tactical map and engineering plan of the Bar-Lev Line fortifications along the eastern bank of the Suez Canal, showing fortified Maoz strongpoints and observation bunkers.',
+              desc: 'Tactical engineering plan of the Bar Lev Line fortress fortifications along the Suez Canal.',
+              provenance:
+                'IDF Combat Engineering Corps / Ministry of Defense Archives, Tel Aviv, 1969.',
+              citation: 'IDF Combat Engineering Archives.',
               hinge_question:
                 'Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
               source_context:
@@ -11649,15 +11648,15 @@ const cme_new_data = {
               letter: 'B',
               title:
                 'Source B: President Sadat Reviewing Battle Plans in Center 10 Operations Room (6 October 1973)',
-              src: '/units/cme_new/assets/anwar_sadat.jpg',
+              src: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
               image: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
-              source: '/units/cme_new/assets/anwar_sadat.jpg',
+              source: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
               caption:
                 'President Anwar Sadat studying operational military charts in the Egyptian Armed Forces Center 10 Operations Room alongside War Minister Ahmad Ismail Ali and Chief of Staff Saad el-Shazly during the surprise attack, 6 October 1973.',
-              desc: 'Archival portrait of President Anwar Sadat in military uniform.',
+              desc: 'Archival photograph of President Anwar Sadat studying operational charts in the Egyptian Armed Forces Center 10 Operations Room alongside War Minister Ahmad Ismail Ali and Chief of Staff Saad el-Shazly on 6 October 1973.',
               provenance:
                 'Egyptian Presidency Information Agency / Al-Ahram Archive, October 1973.',
-              citation: 'Egyptian State Archives, Cairo.',
+              citation: 'Egyptian State Archives / Al-Ahram.',
               hinge_question:
                 "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
               source_context:
@@ -11759,14 +11758,14 @@ const cme_new_data = {
               id: 'cme_l9_source_d',
               letter: 'D',
               title: 'Source D: Israeli Armor Crossing the Deversoir Pontoon Bridge (October 1973)',
-              src: '/units/cme_new/assets/yom_kippur_crossing.png',
+              src: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
               image: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
-              source: '/units/cme_new/assets/yom_kippur_crossing.png',
+              source: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
               caption:
-                "Israeli Defense Forces Centurion and M60 Patton tanks of General Sharon's 143rd Armoured Division crossing the pontoon bridge at Deversoir into the Egyptian mainland on the west bank of the Suez Canal, October 1973.",
-              desc: 'Aerial photograph of the strategic Israeli crossing point at Deversoir.',
-              provenance: 'Israeli Air Force Reconnaissance Wing / IDF Archives, October 1973.',
-              citation: 'IAF Reconnaissance Archives.',
+                'Israeli Patton and Centurion tanks crossing the Suez Canal onto the Egyptian mainland over Gillois amphibious pontoon bridges at Deversoir, October 1973.',
+              desc: 'Combat photograph of Israeli Patton and Centurion tanks crossing the Suez Canal at Deversoir on pontoon rafts (October 1973).',
+              provenance: 'Israel Defense Forces Archives / Ministry of Defense, October 1973.',
+              citation: 'IDF Archives, Tel Aviv.',
               hinge_question:
                 'How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
               source_context:
@@ -11817,15 +11816,15 @@ const cme_new_data = {
               letter: 'E',
               title:
                 'Source E: Henry Kissinger Conferring with Golda Meir and Richard Nixon (November 1973)',
-              src: '/units/cme_new/assets/henry_kissinger.jpg',
+              src: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
               image: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
-              source: '/units/cme_new/assets/henry_kissinger.jpg',
+              source: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
               caption:
-                'US Secretary of State Henry Kissinger conferring with Israeli Prime Minister Golda Meir and President Richard Nixon in the Oval Office during post-war ceasefire and disengagement negotiations, 1 November 1973.',
-              desc: 'Archival photograph of Henry Kissinger during shuttle diplomacy.',
+                'Prime Minister Golda Meir conferring with US President Richard Nixon and Secretary of State Henry Kissinger in the White House Oval Office, November 1973.',
+              desc: 'Archival photograph of Prime Minister Golda Meir conferring with US President Richard Nixon and Henry Kissinger in the White House Oval Office, November 1973.',
               provenance:
-                'Gerald R. Ford Presidential Library / White House Photographic Office, October 1973.',
-              citation: 'Ford Presidential Library / US National Archives.',
+                'White House Photo Office / Richard Nixon Presidential Library (NLN-WHPO-MP-E1748), 1 November 1973.',
+              citation: 'Nixon Presidential Library / US National Archives.',
               hinge_question:
                 'Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?',
               source_context:
@@ -11864,10 +11863,11 @@ const cme_new_data = {
           image: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
           source: '/units/cme_new/assets/bar_lev_line_fortifications_map.png',
           caption:
-            'Engineering schematic of the Israeli Bar-Lev Line along the eastern bank of the Suez Canal, illustrating the massive sand ramparts, reinforced concrete bunkers, and artillery observation posts constructed during the War of Attrition.',
-          desc: 'Tactical engineering schematic of the Bar-Lev Line fortifications.',
-          provenance: 'Israel Defense Forces Engineering Corps archival blueprint, 1969.',
-          citation: 'IDF Archives, Tel HaShomer.',
+            'Tactical map and engineering plan of the Bar-Lev Line fortifications along the eastern bank of the Suez Canal, showing fortified Maoz strongpoints and observation bunkers.',
+          desc: 'Tactical engineering plan of the Bar Lev Line fortress fortifications along the Suez Canal.',
+          provenance:
+            'IDF Combat Engineering Corps / Ministry of Defense Archives, Tel Aviv, 1969.',
+          citation: 'IDF Combat Engineering Archives.',
           hinge_question:
             'Why did Israeli military strategists believe the massive sand ramparts of the Bar-Lev Line made a surprise Egyptian crossing impossible?',
           source_context:
@@ -11898,14 +11898,14 @@ const cme_new_data = {
           letter: 'B',
           title:
             'Source B: President Sadat Reviewing Battle Plans in Center 10 Operations Room (6 October 1973)',
-          src: '/units/cme_new/assets/anwar_sadat.jpg',
+          src: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
           image: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
-          source: '/units/cme_new/assets/anwar_sadat.jpg',
+          source: '/units/cme_new/assets/sadat_operations_center_1973.jpg',
           caption:
             'President Anwar Sadat studying operational military charts in the Egyptian Armed Forces Center 10 Operations Room alongside War Minister Ahmad Ismail Ali and Chief of Staff Saad el-Shazly during the surprise attack, 6 October 1973.',
-          desc: 'Archival portrait of President Anwar Sadat in military uniform.',
+          desc: 'Archival photograph of President Anwar Sadat studying operational charts in the Egyptian Armed Forces Center 10 Operations Room alongside War Minister Ahmad Ismail Ali and Chief of Staff Saad el-Shazly on 6 October 1973.',
           provenance: 'Egyptian Presidency Information Agency / Al-Ahram Archive, October 1973.',
-          citation: 'Egyptian State Archives, Cairo.',
+          citation: 'Egyptian State Archives / Al-Ahram.',
           hinge_question:
             "How did Sadat's political objective differ from earlier Arab leaders who sought the total military destruction of Israel?",
           source_context:
@@ -11972,14 +11972,14 @@ const cme_new_data = {
           id: 'cme_l9_source_d',
           letter: 'D',
           title: 'Source D: Israeli Armor Crossing the Deversoir Pontoon Bridge (October 1973)',
-          src: '/units/cme_new/assets/yom_kippur_crossing.png',
+          src: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
           image: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
-          source: '/units/cme_new/assets/yom_kippur_crossing.png',
+          source: '/units/cme_new/assets/israeli_deversoir_crossing_1973.jpg',
           caption:
-            "Israeli Defense Forces Centurion and M60 Patton tanks of General Sharon's 143rd Armoured Division crossing the pontoon bridge at Deversoir into the Egyptian mainland on the west bank of the Suez Canal, October 1973.",
-          desc: 'Aerial photograph of the strategic Israeli crossing point at Deversoir.',
-          provenance: 'Israeli Air Force Reconnaissance Wing / IDF Archives, October 1973.',
-          citation: 'IAF Reconnaissance Archives.',
+            'Israeli Patton and Centurion tanks crossing the Suez Canal onto the Egyptian mainland over Gillois amphibious pontoon bridges at Deversoir, October 1973.',
+          desc: 'Combat photograph of Israeli Patton and Centurion tanks crossing the Suez Canal at Deversoir on pontoon rafts (October 1973).',
+          provenance: 'Israel Defense Forces Archives / Ministry of Defense, October 1973.',
+          citation: 'IDF Archives, Tel Aviv.',
           hinge_question:
             'How did the US emergency airlift (Operation Nickel Grass) enable Israel to execute this massive counter-offensive?',
           source_context:
@@ -12010,15 +12010,15 @@ const cme_new_data = {
           letter: 'E',
           title:
             'Source E: Henry Kissinger Conferring with Golda Meir and Richard Nixon (November 1973)',
-          src: '/units/cme_new/assets/henry_kissinger.jpg',
+          src: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
           image: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
-          source: '/units/cme_new/assets/henry_kissinger.jpg',
+          source: '/units/cme_new/assets/kissinger_golda_meir_1973.jpg',
           caption:
-            'US Secretary of State Henry Kissinger conferring with Israeli Prime Minister Golda Meir and President Richard Nixon in the Oval Office during post-war ceasefire and disengagement negotiations, 1 November 1973.',
-          desc: 'Archival photograph of Henry Kissinger during shuttle diplomacy.',
+            'Prime Minister Golda Meir conferring with US President Richard Nixon and Secretary of State Henry Kissinger in the White House Oval Office, November 1973.',
+          desc: 'Archival photograph of Prime Minister Golda Meir conferring with US President Richard Nixon and Henry Kissinger in the White House Oval Office, November 1973.',
           provenance:
-            'Gerald R. Ford Presidential Library / White House Photographic Office, October 1973.',
-          citation: 'Ford Presidential Library / US National Archives.',
+            'White House Photo Office / Richard Nixon Presidential Library (NLN-WHPO-MP-E1748), 1 November 1973.',
+          citation: 'Nixon Presidential Library / US National Archives.',
           hinge_question:
             'Why did Kissinger prevent Israel from destroying the encircled Egyptian Third Army at the end of the war?',
           source_context:
@@ -13250,14 +13250,15 @@ const cme_new_data = {
               letter: 'B',
               title:
                 'Source B: President Jimmy Carter Addressing Congress on Camp David (18 September 1978)',
-              src: '/units/cme_new/assets/jimmy_carter.jpg',
+              src: '/units/cme_new/assets/carter_congress_camp_david_1978.jpg',
               image: '/units/cme_new/assets/carter_congress_camp_david_1978.jpg',
-              source: '/units/cme_new/assets/jimmy_carter.jpg',
+              source: '/units/cme_new/assets/carter_congress_camp_david_1978.jpg',
               caption:
-                'US President Jimmy Carter delivering a televised address to a joint session of Congress in Washington announcing the historic breakthrough and framework agreements signed at Camp David, 18 September 1978.',
-              desc: 'Archival photograph of President Carter addressing Congress on Middle East peace.',
-              provenance: 'Library of Congress / US Senate Historical Office, September 1978.',
-              citation: 'US National Archives / Carter Library.',
+                'President Jimmy Carter delivering his historic address to a joint session of the United States Congress announcing the signing of the Camp David Accords, 18 September 1978.',
+              desc: 'Archival photograph of President Jimmy Carter addressing a joint session of Congress on the Camp David Accords, 18 September 1978.',
+              provenance:
+                'Library of Congress, Prints & Photographs Division (LC-U9-36657), 18 September 1978.',
+              citation: 'Library of Congress, Washington D.C.',
               hinge_question:
                 "How did Jimmy Carter's personal mediation and persistence prevent the Camp David negotiations from collapsing?",
               source_context:
@@ -13500,14 +13501,15 @@ const cme_new_data = {
           letter: 'B',
           title:
             'Source B: President Jimmy Carter Addressing Congress on Camp David (18 September 1978)',
-          src: '/units/cme_new/assets/jimmy_carter.jpg',
+          src: '/units/cme_new/assets/carter_congress_camp_david_1978.jpg',
           image: '/units/cme_new/assets/carter_congress_camp_david_1978.jpg',
-          source: '/units/cme_new/assets/jimmy_carter.jpg',
+          source: '/units/cme_new/assets/carter_congress_camp_david_1978.jpg',
           caption:
-            'US President Jimmy Carter delivering a televised address to a joint session of Congress in Washington announcing the historic breakthrough and framework agreements signed at Camp David, 18 September 1978.',
-          desc: 'Archival photograph of President Carter addressing Congress on Middle East peace.',
-          provenance: 'Library of Congress / US Senate Historical Office, September 1978.',
-          citation: 'US National Archives / Carter Library.',
+            'President Jimmy Carter delivering his historic address to a joint session of the United States Congress announcing the signing of the Camp David Accords, 18 September 1978.',
+          desc: 'Archival photograph of President Jimmy Carter addressing a joint session of Congress on the Camp David Accords, 18 September 1978.',
+          provenance:
+            'Library of Congress, Prints & Photographs Division (LC-U9-36657), 18 September 1978.',
+          citation: 'Library of Congress, Washington D.C.',
           hinge_question:
             "How did Jimmy Carter's personal mediation and persistence prevent the Camp David negotiations from collapsing?",
           source_context:
@@ -16559,12 +16561,12 @@ const cme_new_data = {
               letter: 'E',
               title:
                 'Source E: Prime Minister Yitzhak Rabin Debating the Oslo II Accord in the Knesset (5 October 1995)',
-              src: '/units/cme_new/assets/yitzhak_rabin.jpg',
+              src: '/units/cme_new/assets/rabin_knesset_oslo2_1995.jpg',
               image: '/units/cme_new/assets/rabin_knesset_oslo2_1995.jpg',
-              source: '/units/cme_new/assets/yitzhak_rabin.jpg',
+              source: '/units/cme_new/assets/rabin_knesset_oslo2_1995.jpg',
               caption:
-                'Prime Minister Yitzhak Rabin defending the ratification of the Oslo II Agreement before a stormy Knesset plenum in Jerusalem on 5 October 1995, one month before his assassination.',
-              desc: 'Archival portrait of Prime Minister Yitzhak Rabin delivering his final major parliamentary address.',
+                'Prime Minister Yitzhak Rabin addressing the Knesset chamber during the impassioned debate on the Oslo II Interim Agreement, 5 October 1995.',
+              desc: 'Archival photograph of Prime Minister Yitzhak Rabin addressing the Knesset during the debate on the Oslo II Accord, 5 October 1995.',
               provenance: 'Israel Government Press Office (GPO D1-1995), 5 October 1995.',
               citation: 'Israel Government Press Office, Jerusalem.',
               hinge_question:
@@ -17259,12 +17261,12 @@ const cme_new_data = {
           letter: 'E',
           title:
             'Source E: Prime Minister Yitzhak Rabin Debating the Oslo II Accord in the Knesset (5 October 1995)',
-          src: '/units/cme_new/assets/yitzhak_rabin.jpg',
+          src: '/units/cme_new/assets/rabin_knesset_oslo2_1995.jpg',
           image: '/units/cme_new/assets/rabin_knesset_oslo2_1995.jpg',
-          source: '/units/cme_new/assets/yitzhak_rabin.jpg',
+          source: '/units/cme_new/assets/rabin_knesset_oslo2_1995.jpg',
           caption:
-            'Prime Minister Yitzhak Rabin defending the ratification of the Oslo II Agreement before a stormy Knesset plenum in Jerusalem on 5 October 1995, one month before his assassination.',
-          desc: 'Archival portrait of Prime Minister Yitzhak Rabin delivering his final major parliamentary address.',
+            'Prime Minister Yitzhak Rabin addressing the Knesset chamber during the impassioned debate on the Oslo II Interim Agreement, 5 October 1995.',
+          desc: 'Archival photograph of Prime Minister Yitzhak Rabin addressing the Knesset during the debate on the Oslo II Accord, 5 October 1995.',
           provenance: 'Israel Government Press Office (GPO D1-1995), 5 October 1995.',
           citation: 'Israel Government Press Office, Jerusalem.',
           hinge_question:

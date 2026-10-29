@@ -230,6 +230,24 @@ async function runLinter() {
             `[L${lessonNum}] Source letter '${letter}' contains sub-index numbers. Strictly forbidden!`,
           );
         }
+        if (src.src && src.image && src.src !== src.image) {
+          errors.push(
+            `[L${lessonNum}] Source ${letter || sIdx + 1} has mismatched src ('${src.src}') vs image ('${src.image}'). They must be identical!`,
+          );
+        }
+      });
+    }
+
+    // 2b. Check narrative block sources for src vs image mismatch
+    if (lesson.narrative_blocks && Array.isArray(lesson.narrative_blocks)) {
+      lesson.narrative_blocks.forEach((block, bIdx) => {
+        (block.sources || []).forEach((src, sIdx) => {
+          if (src.src && src.image && src.src !== src.image) {
+            errors.push(
+              `[L${lessonNum}] Block ${bIdx + 1} Source ${src.letter || sIdx + 1} has mismatched src ('${src.src}') vs image ('${src.image}'). They must be identical!`,
+            );
+          }
+        });
       });
     }
 
