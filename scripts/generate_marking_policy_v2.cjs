@@ -475,12 +475,12 @@ const htmlContent = `<!DOCTYPE html>
       </div>
     </div>
 
-    <div class="sub-heading">Visual Evidence: End-of-Unit Reflection & Pupil Voice</div>
+    <div class="sub-heading">Visual Evidence: Retrieval Companion Marking Bank & Green-Pen Self-Scoring</div>
     <div class="figure-container" style="margin: 2px 0 0 0;">
-      <img src="${fig2Base64}" class="figure-image" style="max-height: 48mm; object-fit: contain;" alt="Figure 2: End of Unit Reflection & Pupil Voice">
+      <img src="${fig2Base64}" class="figure-image" style="max-height: 48mm; object-fit: contain;" alt="Figure 2: Retrieval Companion Marking Bank">
       <div class="figure-caption">
-        <strong>Figure 2: End of Unit Metacognitive Reflection & Pupil Voice (Workbook Final Page).</strong>
-        Students record What Went Well (WWW), Even Better If (EBI), self-score effort (1–5), and set forward targets validated through teacher coaching.
+        <strong>Figure 2: Department Marking Bank & Green-Pen Verification Key (Retrieval Companion, pp. 7–8).</strong>
+        Pupils complete low-stakes retrieval starters from memory, then immediately verify accuracy in green pen using the Marking Bank. Binary verification ticks [✓] and query tags [?] drive immediate metacognitive self-regulation before circulating teacher intervention.
       </div>
     </div>
   </div>
@@ -497,10 +497,10 @@ const htmlContent = `<!DOCTYPE html>
     </p>
 
     <div class="figure-container" style="margin: 2px 0 6px 0;">
-      <img src="${fig3Base64}" class="figure-image" style="max-height: 40mm; object-fit: contain;" alt="Figure 3: GCSE Assessment Tracker">
+      <img src="${fig3Base64}" class="figure-image" style="max-height: 40mm; object-fit: contain;" alt="Figure 3: GCSE Assessment Record & Tariffs">
       <div class="figure-caption">
-        <strong>Figure 3: GCSE Section B Progress & Assessment Tracker (Edexcel Medicine Master Suite).</strong>
-        Tracks student progression across Round 1 (Stepped Enquiries with PEEL scaffolding), Round 2 (Dual-Track Enquiries for Grades 7–9), and Round 3 (Timed 55-minute Exam Hall Simulations).
+        <strong>Figure 3: Key Topic Assessment & Progress Record (Edexcel Medicine & Western Front Workbook, Page 28).</strong>
+        Lesson-by-lesson audit tracking Pearson Edexcel exam question tariffs (Q1 4m Features, Q2a 8m Utility, Q2b 4m Follow-Up), pupil scores, and targeted teacher next steps.
       </div>
     </div>
 
