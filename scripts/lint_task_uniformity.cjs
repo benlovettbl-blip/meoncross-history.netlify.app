@@ -45,6 +45,9 @@ const FOUR_ACT_UNITS = [
   'water_and_sanitation',
 ];
 
+// GCSE units with dedicated Paper 1, Paper 2, and Paper 3 disciplinary source questions
+const GCSE_UNITS = ['cme_new', 'usa', 'edexcel_medicine', 'cold_war', 'weimar_nazi_germany', 'eee'];
+
 // Units held to strict 5-Stage Chronological Inquiry Spine & 5-Block Narrative Architecture
 const FIVE_STAGE_UNITS = ['cme_new'];
 
@@ -190,11 +193,11 @@ async function runLinter() {
       );
     }
 
-    // 1a. Check for rogue source.question in sources array (prohibited across ALL units except deliberate GCSE Paper 2 cme_new and legacy print edition)
+    // 1a. Check for rogue source.question in sources array (prohibited across KS3 units where sources belong inline in acts)
     if (
       lesson.sources &&
       Array.isArray(lesson.sources) &&
-      unitId !== 'cme_new' &&
+      !GCSE_UNITS.includes(unitId) &&
       !isPrintEdition
     ) {
       lesson.sources.forEach((src, sIdx) => {

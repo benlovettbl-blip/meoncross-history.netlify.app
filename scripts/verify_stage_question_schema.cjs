@@ -74,16 +74,8 @@ Object.keys(db).forEach((unitId) => {
 
       // Rule 4: Valid question text
       if (!st.question || typeof st.question !== 'string') {
-        if (unitId === 'usa') {
-          // Warning for USA which has causal dominoes but pending question property injection
-          warnings.push(
-            `[${unitId}] ${lesson.id} Stage ${expectedStep}: Pending stage enquiry question`,
-          );
-          totalWarnings++;
-        } else {
-          issues.push(`[${unitId}] ${lesson.id} Stage ${expectedStep}: Missing question string`);
-          totalErrors++;
-        }
+        issues.push(`[${unitId}] ${lesson.id} Stage ${expectedStep}: Missing question string`);
+        totalErrors++;
       } else {
         const q = st.question.trim();
         if (q.length < 10) {
@@ -114,11 +106,7 @@ Object.keys(db).forEach((unitId) => {
       }
     });
 
-    if (unitId !== 'usa') {
-      console.log(`  ✅ Lesson ${lIdx + 1}: 5/5 stages conform to canonical schema`);
-    } else {
-      console.log(`  ⚠️ Lesson ${lIdx + 1}: 5/5 stages valid dominoes (enquiry questions pending)`);
-    }
+    console.log(`  ✅ Lesson ${lIdx + 1}: 5/5 stages conform to canonical schema`);
   });
 });
 
@@ -129,7 +117,7 @@ console.log(`Units Scanned:    ${totalUnitsScanned}`);
 console.log(`Lessons Audited:  ${totalLessonsAudited}`);
 console.log(`Stages Audited:   ${totalStagesAudited}`);
 console.log(`Total Errors:     ${totalErrors}`);
-console.log(`Total Warnings:   ${totalWarnings} (USA pending question injection)`);
+console.log(`Total Warnings:   ${totalWarnings}`);
 
 if (totalErrors === 0) {
   console.log('\n🎉 100% SCHEMA VALIDATION PASS: Every stage question strictly adheres');
