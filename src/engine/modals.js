@@ -332,7 +332,7 @@ export function openTaskWhiteboard() {
           ? '<strong>[Vocabulary Starter]</strong> '
           : qNum === 'Do Now'
             ? '<strong>[Do Now]</strong> '
-            : (qNum === 'Discussion Prompt' || qNum === 'Hinge Question')
+            : qNum === 'Discussion Prompt' || qNum === 'Hinge Question'
               ? '<strong>[Discussion Prompt]</strong> '
               : qNum && qNum !== '-'
                 ? `<strong>[${qNum}]</strong> `
@@ -2896,32 +2896,32 @@ window.openTeacherPrintPreview = function (fileBaseName, title, pdfUrl) {
   if (!pdfUrl || pdfUrl === '#' || pdfUrl === 'undefined') {
     if (htmlUrl.includes('/units/ks2_ww2/')) {
       if (htmlUrl.includes('pupil_workbook')) {
-        pdfUrl = '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf';
+        pdfUrl = '/pdfs/ks2_ww2_pupil_workbook.pdf';
       } else if (htmlUrl.includes('quiz_pack')) {
-        pdfUrl = '/pdfs/ks2_ww2_quiz_pack_FINAL_V17.pdf';
+        pdfUrl = '/pdfs/ks2_ww2_quiz_pack.pdf';
       } else if (htmlUrl.includes('textbook')) {
-        pdfUrl = '/pdfs/ks2_ww2_textbook_FINAL_V1.pdf';
+        pdfUrl = '/pdfs/ks2_ww2_textbook.pdf';
       } else if (htmlUrl.includes('/worksheets/')) {
         const file = htmlUrl.split('/').pop().replace('.html', '.pdf');
         pdfUrl = `/pdfs/ks2_ww2/${file}`;
       } else {
-        pdfUrl = '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf';
+        pdfUrl = '/pdfs/ks2_ww2_pupil_workbook.pdf';
       }
     } else if (htmlUrl.includes('/units/medieval_england/')) {
       if (htmlUrl.includes('pupil_workbook')) {
         pdfUrl = '/pdfs/medieval_england_pupil_workbook.pdf';
       } else if (htmlUrl.includes('quiz_pack')) {
-        pdfUrl = '/pdfs/medieval_england_quiz_pack_FINAL_V1.pdf';
+        pdfUrl = '/pdfs/medieval_england_quiz_pack.pdf';
       } else {
-        pdfUrl = '/pdfs/medieval_england_textbook_FINAL_V17.pdf';
+        pdfUrl = '/pdfs/medieval_england_textbook.pdf';
       }
     } else if (htmlUrl.includes('/units/great_war_part2/')) {
       pdfUrl = '/pdfs/great_war_part2_pupil_workbook.pdf';
     } else if (htmlUrl.includes('/units/great_war/')) {
       if (htmlUrl.includes('pupil_workbook')) {
-        pdfUrl = '/pdfs/great_war_pupil_workbook_FINAL_V17.pdf';
+        pdfUrl = '/pdfs/great_war_pupil_workbook.pdf';
       } else {
-        pdfUrl = '/pdfs/great_war_quiz_pack_FINAL_V17.pdf';
+        pdfUrl = '/pdfs/great_war_quiz_pack.pdf';
       }
     } else if (htmlUrl.includes('/units/cme_new/')) {
       const pdfBase = fileBaseName

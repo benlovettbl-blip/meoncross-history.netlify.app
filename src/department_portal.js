@@ -145,7 +145,7 @@ const UNIT_HEALTH_DATA = [
     mapStatus: 'optimal',
     mapText: '✅ Evacuation & Kindertransport Atlas',
     workbookPdf: '/pdfs/ks2_ww2/ks2_ww2_pupil_workbook.pdf',
-    textbookPdf: '/pdfs/ks2_ww2_textbook_FINAL_V1.pdf',
+    textbookPdf: '/pdfs/ks2_ww2_textbook.pdf',
   },
   {
     year: 'Year 7',
@@ -160,8 +160,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (6 L)',
     mapStatus: 'embedded',
     mapText: '✅ Broad Street & Roman Maps',
-    workbookPdf: '/pdfs/water_and_sanitation_pupil_workbook_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/water_and_sanitation_textbook_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/water_and_sanitation_pupil_workbook.pdf',
+    textbookPdf: '/pdfs/water_and_sanitation_textbook.pdf',
   },
   {
     year: 'Year 7',
@@ -177,7 +177,7 @@ const UNIT_HEALTH_DATA = [
     mapStatus: 'embedded',
     mapText: '✅ Battle of Hastings & Castles',
     workbookPdf: '/pdfs/medieval_england_pupil_workbook.pdf',
-    textbookPdf: '/pdfs/medieval_england_textbook_FINAL_V17.pdf',
+    textbookPdf: '/pdfs/medieval_england_textbook.pdf',
   },
   {
     year: 'Year 8',
@@ -192,8 +192,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (9 L)',
     mapStatus: 'embedded',
     mapText: '✅ Global Trade & Exploration',
-    workbookPdf: '/pdfs/early_modern_world_pupil_workbook_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/early_modern_world_textbook_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/early_modern_world_pupil_workbook.pdf',
+    textbookPdf: '/pdfs/early_modern_world_textbook.pdf',
   },
   {
     year: 'Year 8',
@@ -209,7 +209,7 @@ const UNIT_HEALTH_DATA = [
     mapStatus: 'embedded',
     mapText: '✅ British Empire & Canal Network',
     workbookPdf: '/pdfs/industrialisation_and_empire_pupil_workbook.pdf',
-    textbookPdf: '/pdfs/industrialisation_and_empire_textbook_FINAL_V17.pdf',
+    textbookPdf: '/pdfs/industrialisation_and_empire_textbook.pdf',
   },
   {
     year: 'Year 8',
@@ -241,7 +241,7 @@ const UNIT_HEALTH_DATA = [
     mapStatus: 'embedded',
     mapText: '✅ Western Front & Schlieffen Plan',
     workbookPdf: '/pdfs/great_war_workbook.pdf',
-    textbookPdf: '/pdfs/great_war_textbook_FINAL_V17.pdf',
+    textbookPdf: '/pdfs/great_war_textbook.pdf',
   },
   {
     year: 'Year 9',
@@ -257,7 +257,7 @@ const UNIT_HEALTH_DATA = [
     mapStatus: 'embedded',
     mapText: '✅ Somme & Ypres Battlegrounds',
     workbookPdf: '/pdfs/great_war_part2_pupil_workbook.pdf',
-    textbookPdf: '/pdfs/great_war_part2_textbook_FINAL.pdf',
+    textbookPdf: '/pdfs/great_war_part2_textbook.pdf',
   },
   {
     year: 'Year 9',
@@ -272,8 +272,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (7 L)',
     mapStatus: 'embedded',
     mapText: '✅ Camp Network & Resistance',
-    workbookPdf: '/pdfs/the_shoah_pupil_workbook_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/the_shoah_textbook_FINAL.pdf',
+    workbookPdf: '/pdfs/the_shoah_pupil_workbook.pdf',
+    textbookPdf: '/pdfs/the_shoah_textbook.pdf',
   },
   {
     year: 'Year 9',
@@ -288,8 +288,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (6 L)',
     mapStatus: 'embedded',
     mapText: '✅ Windrush Routes & NHS Districts',
-    workbookPdf: '/pdfs/post_war_britain_pupil_workbook_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/post_war_britain_textbook_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/post_war_britain_pupil_workbook.pdf',
+    textbookPdf: '/pdfs/post_war_britain_textbook.pdf',
   },
   {
     year: 'Year 9',
@@ -305,7 +305,7 @@ const UNIT_HEALTH_DATA = [
     mapStatus: 'embedded',
     mapText: '✅ Divided Berlin & NATO/Warsaw',
     workbookPdf: '/units/cold_war/workbook.html',
-    textbookPdf: '/pdfs/cold_war_textbook_FINAL_V17.pdf',
+    textbookPdf: '/pdfs/cold_war_textbook.pdf',
   },
   {
     year: 'Year 10',
@@ -320,8 +320,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (12 L)',
     mapStatus: 'optimal',
     mapText: '✅ 1949 Line, Suez, 1967, 1973, Oslo',
-    workbookPdf: '/pdfs/cme_new_pupil_workbook_KT1_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/cme_new_textbook_UNIFIED_FINAL.pdf',
+    workbookPdf: '/pdfs/cme_new_pupil_workbook_KT1.pdf',
+    textbookPdf: '/pdfs/cme_new_textbook_UNIFIED.pdf',
   },
   {
     year: 'Year 10',
@@ -336,8 +336,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (16 L)',
     mapStatus: 'embedded',
     mapText: '✅ Weimar Territory & Plebiscites',
-    workbookPdf: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/weimar_nazi_germany_textbook_UNIFIED_FINAL.pdf',
+    workbookPdf: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1.pdf',
+    textbookPdf: '/pdfs/weimar_nazi_germany_textbook_UNIFIED.pdf',
   },
   {
     year: 'Year 11',
@@ -352,8 +352,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (12 L)',
     mapStatus: 'embedded',
     mapText: '✅ Armada Route & Drake Circumnavigation',
-    workbookPdf: '/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/eee_textbook_UNIFIED_FINAL.pdf',
+    workbookPdf: '/pdfs/eee_pupil_workbook_KT1.pdf',
+    textbookPdf: '/pdfs/eee_textbook_UNIFIED.pdf',
   },
   {
     year: 'Year 11',
@@ -368,8 +368,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (26 L)',
     mapStatus: 'embedded',
     mapText: '✅ Western Front Casualty Evacuation',
-    workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_medieval.pdf',
+    textbookPdf: '/pdfs/edexcel_medicine_textbook_medieval.pdf',
   },
   {
     year: 'Year 11',
@@ -384,8 +384,8 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (16 L)',
     mapStatus: 'embedded',
     mapText: '✅ Civil Rights Marches & Vietnam War',
-    workbookPdf: '/pdfs/usa_pupil_workbook_KT1_FINAL_V17.pdf',
-    textbookPdf: '/pdfs/usa_textbook_UNIFIED_FINAL.pdf',
+    workbookPdf: '/pdfs/usa_pupil_workbook_KT1.pdf',
+    textbookPdf: '/pdfs/usa_textbook_UNIFIED.pdf',
   },
 ];
 

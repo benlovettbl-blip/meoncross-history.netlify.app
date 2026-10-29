@@ -2681,7 +2681,7 @@ const monarchy_religion_power_data = {
           duration: '5 mins 48 secs',
           pathway: 'Enquiry Evidence',
           teacher_guidance:
-            "Detailed breakdown of the 1559 Via Media: the Act of Supremacy ('Supreme Governor') and the Act of Uniformity (Common Prayer Book and clerical vestments). Recommended Watch Window: 00:45–05:00 • Lesson Phase: Guided Instruction & Legislative Analysis. Tone Alert: Structured GCSE syllabus breakdown with primary text extracts.",
+            "Detailed breakdown of the 1559 Via Media: the Act of Supremacy ('Supreme Governor') and the Act of Uniformity (Common Prayer Book and clerical vestments). Recommended Watch Window: 00:45–05:00 • Lesson Phase: Guided Instruction & Legislative Analysis. Tone Alert: Structured Key Stage 3 syllabus breakdown with primary text extracts.",
           viewing_task:
             '<ol><li><strong>[01:20] Recall:</strong> What specific title did Elizabeth choose in the 1559 Act of Supremacy, and why did she reject her father\'s title of "Supreme Head"?</li><li><strong>[03:15] Explain:</strong> Explain how the 1559 Act of Uniformity combined Protestant theology with traditional Catholic ceremony to appease both sides.</li><li><strong>[04:45] Challenge:</strong> Evaluate why both Catholic recusants and radical Puritans fiercely criticized Elizabeth\'s compromise: why did the Middle Way satisfy neither extreme?</li></ol>',
           model_answer:

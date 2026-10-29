@@ -29,7 +29,7 @@
   .a5-page {
     width: 148mm;
     height: 210mm;
-    padding: 6.5mm 9mm 6mm 9mm;
+    padding: 5.5mm 9mm 4.5mm 9mm;
     margin: 0 auto;
     page-break-after: always;
     break-after: page;
@@ -276,24 +276,11 @@
     line-height: 1.15;
     margin-top: 1px;
   }
-  .score-line {
-    display: inline-block;
-    width: 14px;
-    border-bottom: 1.2px solid #000000;
-  }
-  .date-line {
-    display: block;
-    width: 44px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
-  }
-  .parent-sig-line {
-    display: block;
-    width: 55px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
+  .score-cell {
+    font-size: 7.2pt;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
   }
 
   /* Partner Quiz / Instructions Banner */
@@ -343,30 +330,17 @@
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 3px;
-    padding: 2px 4px;
+    padding: 2.5px 6px;
     margin: 2px 0 2px 0;
     display: flex;
     align-items: center;
-    gap: 4px;
-  }
-  .spine-lbl {
-    font-size: 5.2pt;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: #000000;
-    white-space: nowrap;
-    border-right: 1px solid #000000;
-    padding-right: 4px;
-    line-height: 1.1;
-    text-align: center;
   }
   .spine-flow {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    gap: 2px;
+    gap: 3px;
   }
   .spine-node {
     display: flex;
@@ -381,7 +355,7 @@
     color: #ffffff;
     font-size: 5.2pt;
     font-weight: 800;
-    padding: 0.5px 3.5px;
+    padding: 0.5px 4px;
     border-radius: 2px;
     white-space: nowrap;
     line-height: 1.1;
@@ -391,11 +365,11 @@
     font-weight: 700;
     color: #000000;
     line-height: 1.1;
-    margin-top: 1px;
+    margin-top: 1.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 82px;
+    max-width: 95px;
   }
   .spine-arrow {
     font-size: 5.8pt;
@@ -491,7 +465,7 @@
     color: #000000;
     white-space: nowrap;
     font-size: 7.8pt;
-    min-width: 65px;
+    min-width: 32px;
   }
   .q-line-lbl.cue {
     font-style: italic;
@@ -565,13 +539,13 @@
   .ans-card {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
-    font-size: 6.5pt;
-    line-height: 1.15;
+    gap: 3.5px;
+    font-size: 6.3pt;
+    line-height: 1.12;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 1.2px 4.5px;
+    padding: 0.8px 4px;
     color: #000000;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -588,7 +562,7 @@
   .ans-num {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
     line-height: 1.1;
   }
   .ans-pip {
@@ -599,7 +573,7 @@
     line-height: 1;
   }
   .ans-pip .pip-badge {
-    font-size: 5.6pt;
+    font-size: 5.4pt;
     letter-spacing: -1px;
   }
   .ans-content {
@@ -609,13 +583,13 @@
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
   }
   .ans-exp {
     color: #000000 !important;
     font-weight: 500 !important;
     font-style: italic !important;
-    font-size: 6.3pt;
+    font-size: 6.1pt;
   }
   .ans-ticks {
     display: flex;
@@ -633,24 +607,24 @@
   .glossary-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    margin-top: 2.5px;
+    gap: 2.5px;
+    margin-top: 2px;
     border-top: 1.2px solid #000000;
-    padding-top: 2.5px;
+    padding-top: 2px;
   }
   .concept-card {
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 2.5px 5px;
-    font-size: 6.4pt;
-    line-height: 1.16;
+    padding: 1.8px 4.5px;
+    font-size: 5.9pt;
+    line-height: 1.13;
   }
   .concept-title {
     font-weight: 900;
     color: #000000;
     text-transform: uppercase;
-    font-size: 6.6pt;
+    font-size: 6.2pt;
   }
 
   </style>
@@ -705,70 +679,50 @@
               <div class="tb-lesson-title">Enquiry 1: Iron & Steam Revolution</div>
               <div class="tb-lesson-desc">James Watt's steam engine (1769), puddling iron furnaces, Henry Cort, canal networks & factory coal demand</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 2: Factory System & Child Labour</div>
               <div class="tb-lesson-desc">Cotton mills, child piecers & scavengers, byssinosis, 1832 Sadler Report & 1833 Factory Act</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 3: Slums, Cholera & Sanitation</div>
               <div class="tb-lesson-desc">Back-to-back slums, cesspools, waterborne cholera, Edwin Chadwick's 1842 Report & 1875 Public Health Act</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 4: Peterloo & The Tolpuddle Martyrs</div>
               <div class="tb-lesson-desc">1819 Peterloo Massacre, Six Acts, 1830 Captain Swing riots, threshing machines & 1834 Tolpuddle Martyrs</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 5: Chartism & Democracy</div>
               <div class="tb-lesson-desc">1838 People's Charter, Six Points, universal male suffrage, secret ballot, Feargus O'Connor & moral vs physical force</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
@@ -818,7 +772,7 @@
           <span class="q-prompt">In what year did James Watt patent his revolutionary separate condenser for the steam engine, multiplying fuel efficiency?<span class="q-warmup-choice">[ 1769  /  1833 ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -835,7 +789,7 @@
           <span class="q-prompt">Why was early British iron called "pig iron", and why was it useless for steam boilers and warships?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -852,7 +806,7 @@
           <span class="q-prompt">How did Henry Cort’s 1783 reverberatory puddling furnace chemically refine pig iron without coal contamination?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -869,7 +823,7 @@
           <span class="q-prompt">Why were Cort’s patented grooved rollers (1784) fifteen times faster than traditional forging hammers?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -886,7 +840,7 @@
           <span class="q-prompt">Why did naval demand from Portsmouth Royal Dockyard determine the success of Cort’s iron breakthroughs?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -903,7 +857,7 @@
           <span class="q-prompt">How did the transformation of the iron and steam industries give Britain an overwhelming global economic advantage?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -949,7 +903,7 @@
           <span class="q-prompt">What dangerous factory jobs were assigned to young children in textile mills because of their small size and nimble fingers?<span class="q-warmup-choice">[ Scavengers and piecers  /  Overseers and clerks ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -966,7 +920,7 @@
           <span class="q-prompt">What severe chronic lung disease was caused by inhaling toxic airborne cotton dust in unventilated textile mills?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -983,7 +937,7 @@
           <span class="q-prompt">What historic legislation in 1833 banned textile work for children under nine and created factory inspectors to enforce the law?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1000,7 +954,7 @@
           <span class="q-prompt">What prevailing economic doctrine of government non-intervention did mill owners cite to resist safety regulations?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1017,7 +971,7 @@
           <span class="q-prompt">How did the parliamentary Sadler Committee Report of 1832 shock the British public into accepting labor reforms?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1034,7 +988,7 @@
           <span class="q-prompt">Why did the transition to factory work fundamentally alter human time discipline and family life?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1080,7 +1034,7 @@
           <span class="q-prompt">What deadly waterborne bacterium struck British industrial cities in terrifying epidemics in 1831, 1848, 1853, and 1866?<span class="q-warmup-choice">[ Cholera  /  The Black Death ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1097,7 +1051,7 @@
           <span class="q-prompt">What prevailing medical theory wrongly claimed that epidemic diseases were spread by inhaling foul, toxic airborne vapors from rotting filth?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1114,7 +1068,7 @@
           <span class="q-prompt">Why was the average life expectancy for a working-class labourer in 1840s Manchester and Liverpool under 20 years?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1131,7 +1085,7 @@
           <span class="q-prompt">What landmark 1842 report by social reformer Edwin Chadwick proved that disease caused poverty and demanded clean water?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1148,7 +1102,7 @@
           <span class="q-prompt">How did Dr John Snow’s famous 1854 Broad Street pump investigation in Soho disprove the miasma theory of cholera?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1165,7 +1119,7 @@
           <span class="q-prompt">Why was the Public Health Act of 1875 the decisive statutory turning point for British urban living conditions?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1211,7 +1165,7 @@
           <span class="q-prompt">What 1819 event in Manchester saw armed cavalry charge a peaceful crowd of 60,000 men, women, and children demanding parliamentary reform?<span class="q-warmup-choice">[ The Peterloo Massacre  /  The Boston Massacre ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1228,7 +1182,7 @@
           <span class="q-prompt">What mythical collective name was signed to threatening letters sent by agricultural labourers smashing farm machinery in 1830?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1245,7 +1199,7 @@
           <span class="q-prompt">Why did the Great Reform Act of 1832 cause profound fury and betrayal among working-class Britons who campaigned for it?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1262,7 +1216,7 @@
           <span class="q-prompt">Why were six Dorset agricultural labourers, the Tolpuddle Martyrs, sentenced to seven years’ penal transportation to Australia in 1834?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1279,7 +1233,7 @@
           <span class="q-prompt">How did the public outcry over the Tolpuddle Martyrs demonstrate the growing power of organized working-class solidarity?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1296,7 +1250,7 @@
           <span class="q-prompt">Why did state repression at Peterloo and Tolpuddle convince working people that only parliamentary representation could secure justice?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1342,7 +1296,7 @@
           <span class="q-prompt">What radical 1838 working-class manifesto drafted by William Lovett demanded democratic voting rights for all men?<span class="q-warmup-choice">[ The People’s Charter  /  The Bill of Rights ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1359,7 +1313,7 @@
           <span class="q-prompt">Name two of the famous Six Points of the People’s Charter.</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1376,7 +1330,7 @@
           <span class="q-prompt">Why was the demand for MPs to receive a salary essential for working-class representation in Parliament?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1393,7 +1347,7 @@
           <span class="q-prompt">What was the fundamental tactical division between "Moral Force" and "Physical Force" Chartists?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1410,7 +1364,7 @@
           <span class="q-prompt">Why did Parliament repeatedly reject the massive Chartist petitions of 1839, 1842, and 1848 containing millions of signatures?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1427,7 +1381,7 @@
           <span class="q-prompt">Why can Chartism be considered one of the most successful "failed" political movements in British history?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">

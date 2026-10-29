@@ -33,7 +33,7 @@ const htmlContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>The History Department - Marking & Feedback Policy (Version 2: Core + Visual Appendix)</title>
+  <title>The History Department - Marking & Feedback Policy (Tripartite Curriculum Standard)</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
     
@@ -45,8 +45,8 @@ const htmlContent = `<!DOCTYPE html>
       background: #ffffff; 
       margin: 0; 
       padding: 0; 
-      font-size: 10pt; 
-      line-height: 1.45;
+      font-size: 9pt; 
+      line-height: 1.4;
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
     }
@@ -58,13 +58,13 @@ const htmlContent = `<!DOCTYPE html>
       font-weight: 700;
     }
 
-    p { margin: 0 0 8px 0; }
+    p { margin: 0 0 6px 0; }
 
     .page {
       width: 100%;
       height: 256mm;
       max-height: 256mm;
-      padding: 30px 45px;
+      padding: 24px 38px;
       margin: 0;
       display: flex;
       flex-direction: column;
@@ -88,40 +88,55 @@ const htmlContent = `<!DOCTYPE html>
       align-items: center; 
       text-align: center; 
       background: #f8fafc; 
-      border: 10px solid #1b365d; 
-      padding: 40px; 
+      border: 8px solid #1b365d; 
+      padding: 36px; 
       box-sizing: border-box;
       page-break-after: always;
     }
-    .cover-title { font-size: 40pt; font-weight: 700; color: #1b365d; margin-bottom: 16px; line-height: 1.15; }
-    .cover-subtitle { font-size: 20pt; color: #d97706; font-family: 'Outfit', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
+    .cover-title { font-size: 34pt; font-weight: 700; color: #1b365d; margin-bottom: 12px; line-height: 1.15; }
+    .cover-subtitle { font-size: 16pt; color: #d97706; font-family: 'Outfit', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
+    .cover-pill-box {
+      display: flex;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .cover-pill {
+      background: #e2e8f0;
+      color: #0f2942;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 8.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
     /* Header Banners */
     .header-banner { 
       background: #1b365d; 
       color: #ffffff; 
-      padding: 12px 20px; 
+      padding: 9px 16px; 
       text-align: center; 
-      border-radius: 6px; 
-      margin-bottom: 16px; 
-      border-bottom: 4px solid #d97706; 
+      border-radius: 5px; 
+      margin-bottom: 10px; 
+      border-bottom: 3px solid #d97706; 
     }
-    .header-banner h1 { color: #ffffff; margin: 0; font-size: 18pt; font-weight: 700; }
+    .header-banner h1 { color: #ffffff; margin: 0; font-size: 15pt; font-weight: 700; }
     
     .section-banner-appendix {
       background: #0f2942;
       color: #ffffff;
-      padding: 10px 16px;
-      border-radius: 6px;
-      margin-bottom: 12px;
-      border-left: 5px solid #d97706;
+      padding: 8px 14px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border-left: 4px solid #d97706;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .section-banner-appendix h2 {
       color: #ffffff;
-      font-size: 13pt;
+      font-size: 12pt;
       margin: 0;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
@@ -130,30 +145,47 @@ const htmlContent = `<!DOCTYPE html>
     }
     .section-badge {
       font-family: 'Outfit', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7pt;
       text-transform: uppercase;
       letter-spacing: 1.5px;
       color: #fef3c7;
       background: rgba(217, 119, 6, 0.35);
-      padding: 2px 8px;
+      padding: 2px 7px;
       border-radius: 4px;
       font-weight: 700;
     }
 
-    .primer-box { 
-      background: #fef3c7; 
-      border: 1px solid #fde68a; 
-      border-left: 4px solid #d97706; 
-      padding: 10px 14px; 
-      border-radius: 4px; 
-      margin: 10px 0; 
-      font-size: 9pt;
+    .pillar-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 8px 0 10px 0;
     }
-    .primer-box h4 { margin: 0 0 6px 0; color: #92400e; font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 9pt; letter-spacing: 1px; }
+    .pillar-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-top: 3px solid #1b365d;
+      border-radius: 4px;
+      padding: 8px 10px;
+    }
+    .pillar-card strong {
+      display: block;
+      color: #1b365d;
+      font-size: 8.5pt;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pillar-card p {
+      font-size: 7.8pt;
+      line-height: 1.35;
+      margin: 0;
+      color: #475569;
+    }
 
     .sub-heading {
       font-family: 'Outfit', sans-serif;
-      font-size: 10pt;
+      font-size: 9.5pt;
       font-weight: 700;
       color: #0f2942;
       margin: 8px 0 4px 0;
@@ -165,17 +197,17 @@ const htmlContent = `<!DOCTYPE html>
       content: "";
       display: inline-block;
       width: 4px;
-      height: 11px;
+      height: 10px;
       background: #d97706;
       border-radius: 2px;
     }
 
     /* Tables */
-    table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 9pt; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 8px; font-size: 8.5pt; }
     tr { border-bottom: 1px solid #e2e8f0; }
     tr:nth-child(even) { background-color: #f8fafc; }
-    th { background: #0f172a; color: #ffffff; text-align: left; padding: 7px 10px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 9pt; border: none; }
-    td { padding: 6px 10px; border: none; vertical-align: top; color: #334155; }
+    th { background: #0f172a; color: #ffffff; text-align: left; padding: 5px 8px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 8.5pt; border: none; }
+    td { padding: 5px 8px; border: none; vertical-align: top; color: #334155; }
     
     .symbol-pill {
       display: inline-block;
@@ -183,50 +215,50 @@ const htmlContent = `<!DOCTYPE html>
       font-weight: 700;
       color: #0f2942;
       background: #e2e8f0;
-      padding: 1px 6px;
-      border-radius: 4px;
-      font-size: 8.5pt;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 8pt;
     }
 
     /* Visual Figures */
     .figure-container {
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 6px;
-      margin: 6px 0 8px 0;
-      box-shadow: 0 2px 6px rgba(15, 41, 66, 0.05);
+      border-radius: 5px;
+      padding: 5px;
+      margin: 4px 0 6px 0;
+      box-shadow: 0 1px 4px rgba(15, 41, 66, 0.04);
     }
     .figure-image {
       width: 100%;
       height: auto;
-      border-radius: 4px;
+      border-radius: 3px;
       display: block;
       border: 1px solid #e2e8f0;
     }
     .figure-caption {
-      font-size: 7.8pt;
+      font-size: 7.5pt;
       color: #475569;
-      margin-top: 4px;
-      padding: 4px 6px;
+      margin-top: 3px;
+      padding: 3px 5px;
       background: #f8fafc;
       border-left: 3px solid #0f2942;
-      border-radius: 3px;
-      line-height: 1.35;
+      border-radius: 2px;
+      line-height: 1.3;
     }
     .figure-caption strong { color: #0f2942; }
 
     .two-col-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 8px;
+      gap: 10px;
+      margin-bottom: 6px;
     }
     .col-card {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 8px 12px;
+      border-radius: 5px;
+      padding: 7px 10px;
     }
   </style>
 </head>
@@ -234,42 +266,69 @@ const htmlContent = `<!DOCTYPE html>
 
   <!-- ==================== PAGE 1: COVER PAGE ==================== -->
   <div class="cover-page">
-    <div style="font-family: 'Outfit', sans-serif; font-size: 14pt; letter-spacing: 3px; text-transform: uppercase; color: #64748b; margin-bottom: 12px; font-weight: 700;">Faculty of Humanities</div>
-    <div class="cover-title">History Department</div>
-    <div class="cover-subtitle">Marking & Feedback Policy</div>
-    <div style="margin-top: 40px; font-size: 13pt; color: #475569; font-weight: 500;">Approved for Academic Year 2026–2027</div>
-    <div style="margin-top: 20px; font-size: 10pt; color: #94a3b8;">Head of History: Department Lead</div>
+    <div style="font-family: 'Outfit', sans-serif; font-size: 13pt; letter-spacing: 3px; text-transform: uppercase; color: #64748b; margin-bottom: 10px; font-weight: 700;">The History Department</div>
+    <div class="cover-title">Marking & Feedback Policy</div>
+    <div class="cover-subtitle">The Tripartite Curriculum Architecture</div>
+    
+    <div class="cover-pill-box">
+      <div class="cover-pill">1. Master Textbooks</div>
+      <div class="cover-pill">2. Pupil Workbooks</div>
+      <div class="cover-pill">3. Retrieval Companions</div>
+    </div>
+
+    <div style="margin-top: 36px; font-size: 12pt; color: #475569; font-weight: 500;">Approved for Academic Year 2026–2027</div>
+    <div style="margin-top: 14px; font-size: 9.5pt; color: #94a3b8;">Department Lead • The History Revision Hub Platform Standards</div>
   </div>
 
-  <!-- ==================== PAGE 2: PART 1 - RATIONALE, FREQUENCY & TYPES ==================== -->
+  <!-- ==================== PAGE 2: PART 1 - RATIONALE, TRIPARTITE MODEL & FREQUENCY ==================== -->
   <div class="page">
     <div class="header-banner">
-      <h1>Part 1: Departmental Rationale & Policy</h1>
+      <h1>Part 1: Departmental Rationale & Tripartite Architecture</h1>
     </div>
     
-    <p>The History Department prioritizes meaningful, manageable, and motivating feedback by focusing on the impact of teacher interventions rather than performative volume. In line with this, the department has shifted its primary focus toward handwritten work completed directly in pupil printed workbooks.</p>
-    
-    <p>Formal assessments are recorded centrally, while individual feedback is delivered through live verbal coaching and whole-class modelling to ensure student effort is redirected into active reflection and improvement rather than administrative record-keeping.</p>
-    
-    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-left: 5px solid #3b82f6; padding: 12px 16px; border-radius: 4px; margin: 10px 0;">
-      <h3 style="color: #1e3a8a; margin-top: 0; margin-bottom: 4px; font-size: 11pt;">Centring Pupil Voice</h3>
-      <p style="margin: 0; font-size: 9.5pt; color: #1e40af;">
-        Feedback is a two-way dialogue, not a monologue. Our policy is fundamentally driven by <strong>Pupil Voice</strong>. Throughout all lessons, live marking requires pupils to vocalize their understanding and misconceptions during teacher coaching. Furthermore, at the end of every unit, pupils complete structured reflections to explicitly voice what they found engaging or challenging, directly informing and adapting future teacher planning.
+    <p>The History Department prioritises meaningful, manageable, and motivating feedback, focusing on high-impact live intervention, whole-class modelling, and structured pupil self-regulation over performative red-pen marking. Our feedback system is integrated into a unified <strong>Tripartite Curriculum Model</strong>:</p>
+
+    <div class="pillar-strip">
+      <div class="pillar-card">
+        <strong>Pillar 1: Master Textbooks</strong>
+        <p>Pure narrative reading anthologies (zero source boxes, zero rubrics) providing immersive, high-challenge prose during whole-class reading before writing begins.</p>
+      </div>
+      <div class="pillar-card">
+        <strong>Pillar 2: Pupil Workbooks</strong>
+        <p>16–20 page saddle-stitch workbooks. Verso: 5-Stage Chronological Inquiry Spine; Recto: Disciplinary writing on calibrated ~7.8mm–8.1mm ruled handwriting lines.</p>
+      </div>
+      <div class="pillar-card">
+        <strong>Pillar 3: Retrieval Companions</strong>
+        <p>8-page (KS3) and 16–28 page (GCSE) companions featuring Domino causal flowcharts, 2-line dual retrieval, and self-scoring Marking Banks.</p>
+      </div>
+    </div>
+
+    <div style="background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #3b82f6; padding: 8px 12px; border-radius: 4px; margin: 6px 0;">
+      <h3 style="color: #1e3a8a; margin: 0 0 3px 0; font-size: 9.5pt;">Centring Pupil Voice & Live Metacognition</h3>
+      <p style="margin: 0; font-size: 8.5pt; color: #1e40af; line-height: 1.35;">
+        Feedback is an active dialogue, not a retrospective teacher chore. Live marking during circulating coaching prompts pupils to vocalise historical reasoning, correct misconceptions in real time with green pen, and complete end-of-unit reflection grids in their workbooks to document progress and set immediate targets.
       </p>
     </div>
 
-    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 4px; margin-top: 14px; font-size: 12pt;">Presentation & Workbooks</h2>
-    <p style="font-size: 9.5pt;">The history department utilizes structured A4 workbooks for all Key Stage 3 year groups and GCSE Mastery Booklets for Key Stage 4. This reduces the reliance on loose worksheets and the time spent managing traditional exercise books. By pairing these structured workbooks with our bespoke digital learning app, we create a unified system: the app drives retrieval practice and interactive revision, while the workbook provides a permanent, high-quality physical record for extended writing and core knowledge.</p>
+    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 3px; margin-top: 10px; font-size: 11pt;">Zero Knowledge Giveaways in Scaffolds</h2>
+    <p style="font-size: 8.5pt;">Sentence stems and connectives in pupil workbooks provide purely structural, disciplinary scaffolding—never factual answers. Key Terms banks supply technical vocabulary (e.g. <em>Diktat, Article 231, £6.6bn reparations</em>), but connectives remain strictly content-free (e.g. <em>In particular, a decisive factor was...</em>), forcing pupils to retrieve historical knowledge from memory rather than transcribing hints.</p>
 
-    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 4px; margin-top: 14px; font-size: 12pt;">Frequency of Marking</h2>
+    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 3px; margin-top: 10px; font-size: 11pt;">Frequency of Marking</h2>
     
-    <h3 style="color: #1e40af; margin-bottom: 4px; font-size: 10pt;">Key Stage 3</h3>
-    <p style="font-size: 9pt;">Teachers will provide two pieces of feedback-focused homework each half term: one 'Read Out Loud' task (self-graded on Teams) to support literacy across the curriculum, and one short written piece graded by the teacher using the KS3 levels. Routine classwork is not formally stamped; instead, teacher time is reinvested into high-quality planning and live verbal feedback during lessons.</p>
-    
-    <h3 style="color: #1e40af; margin-bottom: 4px; font-size: 10pt;">Key Stage 4</h3>
-    <p style="font-size: 9pt;">At Key Stage 4, there is increased flexibility in assessment methods depending on the unit being studied. Generally, this involves ongoing, low-stakes informal assessment conducted at regular intervals in class. Feedback is primarily delivered verbally, focusing on teacher modelling of answers and exam technique, with a particular emphasis on source-based questions.</p>
-    
-    <p style="font-size: 9pt; margin-bottom: 0;">To ensure progress is monitored effectively, a formal tracking sheet is utilized within Teams Assignments. This includes CAT4 target grades, which serve as a minimum target rate with the clear aspiration for pupils to exceed them.</p>
+    <div class="two-col-grid" style="margin-top: 6px; margin-bottom: 0;">
+      <div class="col-card">
+        <h3 style="color: #1e40af; margin-bottom: 2px; font-size: 9pt;">Key Stage 3</h3>
+        <p style="font-size: 8pt; margin: 0; line-height: 1.35;">
+          Routine classwork is reviewed via live circulating coaching and self-marking with the Knowledge Retrieval Companion's Marking Bank. Teachers assess one substantial disciplinary extended writing task (Explain Why 12m, Narrative Account 8m, or Interpretations 8m) per half term using the 5 Pathway Levels.
+        </p>
+      </div>
+      <div class="col-card">
+        <h3 style="color: #1e40af; margin-bottom: 2px; font-size: 9pt;">Key Stage 4 (GCSE)</h3>
+        <p style="font-size: 8pt; margin: 0; line-height: 1.35;">
+          Regular low-stakes rehearsals using Pearson Edexcel past questions. Teachers provide live exemplar modelling and mark formal timed assessments across Paper 1 (Medicine & Western Front), Paper 2 (Elizabeth & Middle East), and Paper 3 (Weimar & USA) against Pearson 9–1 mark criteria and CAT4 benchmarks.
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- ==================== PAGE 3: PART 2 - TYPES, STANDARDS & GRADING ==================== -->
@@ -278,29 +337,29 @@ const htmlContent = `<!DOCTYPE html>
       <h1>Part 2: Standards, Grading & Feedback Types</h1>
     </div>
 
-    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 4px; margin-top: 0; font-size: 12pt;">Types of Marking & Feedback</h2>
+    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 3px; margin-top: 0; font-size: 11pt;">Types of Marking & Feedback</h2>
     
-    <div class="two-col-grid" style="margin-bottom: 8px;">
+    <div class="two-col-grid" style="margin-bottom: 6px;">
       <div>
-        <h3 style="color: #1e40af; font-size: 9.5pt; margin-bottom: 2px;">Live In-The-Moment Marking</h3>
-        <p style="font-size: 8.5pt;">Intervention marking within the lesson to prompt deeper thinking and address misconceptions. Occurs through effective verbal questioning to clarify or refocus tasks.</p>
+        <h3 style="color: #1e40af; font-size: 9pt; margin-bottom: 2px;">1. Live In-The-Moment Coaching</h3>
+        <p style="font-size: 8pt; line-height: 1.3;">Teacher circulates while pupils write on ruled lines, checking historical precision and intervening immediately with verbal coaching and green-pen margin codes.</p>
         
-        <h3 style="color: #1e40af; font-size: 9.5pt; margin-bottom: 2px;">Self & Peer Assessment</h3>
-        <p style="font-size: 8.5pt;">Pupils are given regular opportunities to assess their own or peers' work against explicit success criteria or structured checklists before teacher corroboration.</p>
+        <h3 style="color: #1e40af; font-size: 9pt; margin-bottom: 2px;">2. Retrieval Companion Self-Scoring</h3>
+        <p style="font-size: 8pt; line-height: 1.3;">Pupils complete low-stakes starters and self-mark immediately using the verified Marking Bank at the back of the companion, cementing factual recall and schema retention.</p>
       </div>
       <div>
-        <h3 style="color: #1e40af; font-size: 9.5pt; margin-bottom: 2px;">End of Unit Assessments & Pupil Voice</h3>
-        <p style="font-size: 8.5pt;">Written feedback based on set criteria or formal mark schemes. Following assessment, pupils complete the <strong>Pupil Reflection Area</strong> in their workbooks to document progress and set forward targets.</p>
+        <h3 style="color: #1e40af; font-size: 9pt; margin-bottom: 2px;">3. Disciplinary Writing Assessment</h3>
+        <p style="font-size: 8pt; line-height: 1.3;">End-of-enquiry written pieces are assessed against national progression criteria (KS3) or Pearson Edexcel 9–1 criteria (GCSE), recorded on the workbook back cover ledger.</p>
 
-        <h3 style="color: #1e40af; font-size: 9.5pt; margin-bottom: 2px;">Automated Digital Marking</h3>
-        <p style="font-size: 8.5pt;">Spaced retrieval quizzes set on our custom history app provide instant self-marking and diagnostic feedback, with completion monitored centrally.</p>
+        <h3 style="color: #1e40af; font-size: 9pt; margin-bottom: 2px;">4. Spaced App Quizzing & QR Retrieval</h3>
+        <p style="font-size: 8pt; line-height: 1.3;">Dual-QR codes on workbook back covers link pupils directly to interactive 20-question digital quizzes on the History Revision Hub, automating diagnostics and homework retrieval.</p>
       </div>
     </div>
 
-    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 4px; margin-top: 10px; font-size: 12pt;">Spelling, Punctuation & Grammar (SPaG)</h2>
-    <p style="font-size: 8.5pt;">We follow the English department's marking guide to set clear, consistent standards across the humanities:</p>
+    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 3px; margin-top: 6px; font-size: 11pt;">Spelling, Punctuation & Grammar (SPaG)</h2>
+    <p style="font-size: 8pt; margin-bottom: 4px;">Consistent whole-school marking symbols applied across all humanities written work:</p>
     
-    <table style="font-size: 8.5pt; margin-bottom: 10px;">
+    <table style="font-size: 8pt; margin-bottom: 8px;">
       <thead>
         <tr>
           <th style="width: 14%;">Symbol</th>
@@ -312,58 +371,58 @@ const htmlContent = `<!DOCTYPE html>
       <tbody>
         <tr>
           <td><span class="symbol-pill">Sp</span></td>
-          <td>Incorrect spelling</td>
+          <td>Incorrect spelling (write 3x in margin)</td>
           <td><span class="symbol-pill">^</span></td>
           <td>Word omitted</td>
         </tr>
         <tr>
           <td><span class="symbol-pill">P</span></td>
-          <td>Punctuation issue</td>
+          <td>Punctuation error (. , ! ?)</td>
           <td><span class="symbol-pill">?</span></td>
-          <td>Meaning is unclear</td>
+          <td>Meaning unclear / historical confusion</td>
         </tr>
         <tr>
           <td><span class="symbol-pill">G</span></td>
-          <td>Grammar problem</td>
+          <td>Grammar error / sentence structure</td>
           <td><span class="symbol-pill">!</span></td>
-          <td>Basic historical error</td>
+          <td>Factual / chronological inaccuracy</td>
         </tr>
         <tr>
           <td><span class="symbol-pill">C</span></td>
-          <td>Capital letter needed</td>
+          <td>Capital letter required (proper noun/date)</td>
           <td><span class="symbol-pill" style="color: #166534; background: #dcfce7;">✓</span></td>
-          <td>Good point / valid evidence</td>
+          <td>Valid historical evidence / explanation</td>
         </tr>
         <tr>
           <td><span class="symbol-pill">//</span></td>
-          <td>New paragraph needed</td>
+          <td>New paragraph required</td>
           <td><span class="symbol-pill" style="color: #166534; background: #dcfce7;">✓✓</span></td>
-          <td>Exceptional point / insight</td>
+          <td>Exceptional analytical insight / causal link</td>
         </tr>
       </tbody>
     </table>
 
-    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 4px; margin-top: 8px; font-size: 12pt;">Assessment & Grading Framework</h2>
+    <h2 style="color: #1b365d; border-bottom: 2px solid #d97706; padding-bottom: 3px; margin-top: 6px; font-size: 11pt;">Assessment & Grading Framework</h2>
     
-    <p style="font-size: 8.5pt; margin-bottom: 6px;">
-      <strong>Recording Progress:</strong> Progress tracking is maintained using the assessment grid located on the inside front cover of the pupil workbooks. 
-      <strong>Progress Categories:</strong> Awarded based on work produced against set success criteria:
+    <p style="font-size: 8pt; margin-bottom: 4px;">
+      Progress tracking is maintained using the ledger on the inside front/back cover of workbooks, aligned to national standards and indicative GCSE outcomes:
     </p>
 
-    <table style="font-size: 8.5pt; margin-bottom: 0;">
+    <table style="font-size: 8pt; margin-bottom: 0;">
       <thead>
         <tr>
-          <th>Pathway Level</th>
-          <th>Percentage Band</th>
-          <th>GCSE Indicative Grades</th>
+          <th style="width: 25%;">Pathway Level</th>
+          <th style="width: 20%;">Score Band</th>
+          <th style="width: 25%;">Indicative GCSE</th>
+          <th>Disciplinary Writing Standard</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td><strong>GD (Greater Depth)</strong></td><td>80% – 100%</td><td>Grades 8 – 9</td></tr>
-        <tr><td><strong>Exp + (Expected +)</strong></td><td>60% – 79%</td><td>Grades 6 – 7</td></tr>
-        <tr><td><strong>Exp (Expected)</strong></td><td>40% – 59%</td><td>Grades 4 – 5</td></tr>
-        <tr><td><strong>EM + (Emerging +)</strong></td><td>30% – 39%</td><td>Grade 3</td></tr>
-        <tr><td><strong>EM (Emerging)</strong></td><td>10% – 29%</td><td>Grades 1 – 2</td></tr>
+        <tr><td><strong>GD (Greater Depth)</strong></td><td>80% – 100%</td><td>Grades 8 – 9</td><td>Sustained causal argument, conceptual hierarchy, nuanced evaluation.</td></tr>
+        <tr><td><strong>Exp + (Expected +)</strong></td><td>60% – 79%</td><td>Grades 6 – 7</td><td>Consistent analytical structure, detailed evidence deployment, clear links.</td></tr>
+        <tr><td><strong>Exp (Expected)</strong></td><td>40% – 59%</td><td>Grades 4 – 5</td><td>Accurate historical knowledge, structured explanation, sound PEEL points.</td></tr>
+        <tr><td><strong>EM + (Emerging +)</strong></td><td>30% – 39%</td><td>Grade 3</td><td>Descriptive accounts, basic causal awareness, emerging terminology.</td></tr>
+        <tr><td><strong>EM (Emerging)</strong></td><td>10% – 29%</td><td>Grades 1 – 2</td><td>Fragmentary recall, simple narrative statements requiring teacher guidance.</td></tr>
       </tbody>
     </table>
   </div>
@@ -375,39 +434,38 @@ const htmlContent = `<!DOCTYPE html>
       <span class="section-badge">Visual Appendix • KS3</span>
     </div>
 
-    <p style="font-size: 8.8pt;">
-      To illustrate the policy in practice, every Key Stage 3 student workbook incorporates systematic front-cover tracking and back-page pupil reflection:
+    <p style="font-size: 8.2pt; margin-bottom: 6px;">
+      Key Stage 3 workbooks embed our double-page spread architecture: Verso inquiry spine [1.1]–[5.5] with left-trigger keywords; Recto writing tasks on calibrated ~7.8mm–8.1mm handwriting pitch with zero knowledge giveaways in scaffolds.
     </p>
 
-    <div style="display: grid; grid-template-columns: 88mm 1fr; gap: 14px; align-items: start; margin-bottom: 8px;">
+    <div style="display: grid; grid-template-columns: 85mm 1fr; gap: 12px; align-items: start; margin-bottom: 6px;">
       <div>
         <div class="figure-container" style="margin: 0;">
-          <img src="${fig1Base64}" class="figure-image" style="max-height: 120mm; object-fit: contain;" alt="Figure 1: KS3 Inside Front Cover Tracker">
+          <img src="${fig1Base64}" class="figure-image" style="max-height: 108mm; object-fit: contain;" alt="Figure 1: KS3 Progress Tracker">
           <div class="figure-caption">
-            <strong>Figure 1: Inside Front Cover Progress & Assessment Tracker (KS3 Workbook).</strong>
-            Lesson-by-lesson chronological audit trail tracking Effort (1–5), Pathway standard, and teacher/self dialogue.
+            <strong>Figure 1: Progress & Assessment Ledger (KS3 Workbook).</strong>
+            Lesson-by-lesson audit trail recording Effort (1–5), Pathway Standard (EM to GD), and formative teacher/pupil dialogue.
           </div>
         </div>
       </div>
 
       <div>
-        <div class="sub-heading" style="margin-top: 0;">Inside Front Cover Tracking Grid</div>
-        <p style="font-size: 8.2pt;">
-          Serves as an ongoing dialogue between pupil, teacher, and parents:
+        <div class="sub-heading" style="margin-top: 0;">Dual-Pathway Centrefold Timeline</div>
+        <p style="font-size: 7.8pt; line-height: 1.35; margin-bottom: 4px;">
+          The centrefold (Pages 8–9 or 10–11) features our Panoramic Living Timeline with a binary dual-coding protocol:
         </p>
-        <ul style="font-size: 8pt; padding-left: 14px; margin: 0 0 6px 0; color: #334155;">
-          <li><strong>Effort Logging (1–5):</strong> Fosters personal responsibility and evaluates active participation.</li>
-          <li><strong>Pathway Level:</strong> Records progress towards Greater Depth (GD) against National Curriculum criteria.</li>
-          <li><strong>Formative Feedback:</strong> Focuses teacher comments on actionable praise and immediate targets.</li>
+        <ul style="font-size: 7.8pt; padding-left: 12px; margin: 0 0 6px 0; color: #334155; line-height: 1.3;">
+          <li><strong>Choice A (Visual Dual-Coding):</strong> Pupils draw a symbolic icon representing the decisive causal mechanism.</li>
+          <li><strong>Choice B (Concept Mind Map):</strong> Pupils construct a 3-branch analytical web linking cause, event, and consequence.</li>
         </ul>
 
         <div class="sub-heading">Effort Scoring Rubric (1–5)</div>
-        <table style="font-size: 7.5pt; margin-bottom: 0;">
+        <table style="font-size: 7.2pt; margin-bottom: 0;">
           <thead>
-            <tr><th style="width: 25%;">Score</th><th>Pupil Focus & Diligence</th></tr>
+            <tr><th style="width: 28%;">Score</th><th>Pupil Focus & Diligence</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>5 • Exemplary</strong></td><td>Proactive curiosity; voluntary extension; impeccable pride.</td></tr>
+            <tr><td><strong>5 • Exemplary</strong></td><td>Proactive curiosity; voluntary extension; exceptional pride.</td></tr>
             <tr><td><strong>4 • Good</strong></td><td>Consistent engagement; thoughtful contributions; complete work.</td></tr>
             <tr><td><strong>3 • Satisfactory</strong></td><td>Meets baseline; requires occasional prompting.</td></tr>
             <tr><td><strong>2 • Inconsistent</strong></td><td>Incomplete written tasks; frequent off-task reminders.</td></tr>
@@ -418,58 +476,58 @@ const htmlContent = `<!DOCTYPE html>
     </div>
 
     <div class="sub-heading">Visual Evidence: End-of-Unit Reflection & Pupil Voice</div>
-    <div class="figure-container" style="margin: 4px 0 0 0;">
-      <img src="${fig2Base64}" class="figure-image" style="max-height: 52mm; object-fit: contain;" alt="Figure 2: End of Unit Reflection & Pupil Voice">
+    <div class="figure-container" style="margin: 2px 0 0 0;">
+      <img src="${fig2Base64}" class="figure-image" style="max-height: 48mm; object-fit: contain;" alt="Figure 2: End of Unit Reflection & Pupil Voice">
       <div class="figure-caption">
-        <strong>Figure 2: End of Unit Reflection & Two-Way Pupil Voice (Workbook Final Page).</strong>
-        Students document successes (WWW), voice misconceptions for reteaching (EBI), self-score effort (1–5), and set forward targets validated by teacher coaching.
+        <strong>Figure 2: End of Unit Metacognitive Reflection & Pupil Voice (Workbook Final Page).</strong>
+        Students record What Went Well (WWW), Even Better If (EBI), self-score effort (1–5), and set forward targets validated through teacher coaching.
       </div>
     </div>
   </div>
 
-  <!-- ==================== PAGE 5: PART 3 - VISUAL EVIDENCE (KEY STAGE 4) ==================== -->
+  <!-- ==================== PAGE 5: PART 4 - VISUAL EVIDENCE (KEY STAGE 4) ==================== -->
   <div class="page">
     <div class="section-banner-appendix">
-      <h2>Part 3: Exemplar Implementation & Visual Evidence (Key Stage 4)</h2>
+      <h2>Part 4: Exemplar Implementation & Visual Evidence (Key Stage 4)</h2>
       <span class="section-badge">Visual Appendix • KS4</span>
     </div>
 
-    <p style="font-size: 8.8pt;">
-      At Key Stage 4, feedback is structured through PEE/PEEL Structure Strips, Causal Connective Banks, mastery booklets, and targeted exam question intelligence:
+    <p style="font-size: 8.2pt; margin-bottom: 6px;">
+      At Key Stage 4, feedback is structured around Pearson Edexcel exam question tariffs, PEEL writing frames with content-free connectives, and targeted question intelligence:
     </p>
 
-    <div class="figure-container" style="margin: 4px 0 8px 0;">
-      <img src="${fig3Base64}" class="figure-image" style="max-height: 42mm; object-fit: contain;" alt="Figure 3: Section B Mastery Tracker">
+    <div class="figure-container" style="margin: 2px 0 6px 0;">
+      <img src="${fig3Base64}" class="figure-image" style="max-height: 40mm; object-fit: contain;" alt="Figure 3: GCSE Assessment Tracker">
       <div class="figure-caption">
-        <strong>Figure 3: GCSE Section B Progress & Assessment Tracker (Edexcel Medicine Mastery Booklet).</strong>
-        Maps student progression across Round 1 (Stepped Enquiries with PEE/PEEL Structure Strips and Causal Connective Banks), Round 2 (Dual-Track Enquiries for Grades 7–9), and Round 3 (Timed 55-minute Exam Hall Simulations).
+        <strong>Figure 3: GCSE Section B Progress & Assessment Tracker (Edexcel Medicine Master Suite).</strong>
+        Tracks student progression across Round 1 (Stepped Enquiries with PEEL scaffolding), Round 2 (Dual-Track Enquiries for Grades 7–9), and Round 3 (Timed 55-minute Exam Hall Simulations).
       </div>
     </div>
 
     <div class="two-col-grid" style="margin-bottom: 6px;">
-      <div class="col-card" style="font-size: 8pt;">
-        <div class="sub-heading" style="margin-top: 0;">Specification-Specific PEE/PEEL Structure Strips</div>
-        <ul style="padding-left: 14px; margin: 0; color: #334155;">
+      <div class="col-card" style="font-size: 7.8pt;">
+        <div class="sub-heading" style="margin-top: 0;">Specification-Specific Question Tariffs</div>
+        <ul style="padding-left: 12px; margin: 0; color: #334155; line-height: 1.3;">
           <li><strong>Paper 1 (Western Front):</strong> Feature questions exist <em>strictly</em> as two separate 2-mark questions: Q1(a) [2m] and Q1(b) [2m].</li>
           <li><strong>Paper 2 (Elizabethan):</strong> Two distinct 2-mark feature questions: Q1(a) [2m] and Q1(b) [2m].</li>
           <li><strong>Paper 2 (Middle East):</strong> Updated single 4-mark consequence format ('Explain one consequence of...').</li>
         </ul>
       </div>
 
-      <div class="col-card" style="font-size: 8pt;">
-        <div class="sub-heading" style="margin-top: 0;">Provenance Clues ('How Useful' PEE/PEEL Structure Strips)</div>
-        <p style="margin: 0; line-height: 1.35;">
-          Explicit prompt boxes guide students to evaluate <strong>Author</strong> (role, firsthand access), <strong>Audience</strong> (private diary vs propaganda), and <strong>Motive</strong> (purpose of publication), moving beyond generic utility comments.
+      <div class="col-card" style="font-size: 7.8pt;">
+        <div class="sub-heading" style="margin-top: 0;">Provenance Clues ('How Useful' Utility Prompts)</div>
+        <p style="margin: 0; line-height: 1.3;">
+          Scaffolding boxes guide students to evaluate <strong>Author</strong> (access, expertise), <strong>Audience</strong> (private diary vs mass propaganda), and <strong>Motive</strong> (substantive purpose) against verified historical context, eliminating generic speculation.
         </p>
       </div>
     </div>
 
     <div class="sub-heading">Longitudinal Exam Trend Intelligence & Automated Quizzing</div>
-    <div class="figure-container" style="margin: 4px 0 0 0;">
-      <img src="${fig4Base64}" class="figure-image" style="max-height: 70mm; object-fit: contain;" alt="Figure 4: Exam Trend Matrix Wide Table">
+    <div class="figure-container" style="margin: 2px 0 0 0;">
+      <img src="${fig4Base64}" class="figure-image" style="max-height: 66mm; object-fit: contain;" alt="Figure 4: Exam Trend Matrix Wide Table">
       <div class="figure-caption">
         <strong>Figure 4: Pearson Edexcel Past Exam Question Matrix (8-Series Analysis, 2018–2026).</strong>
-        Departmental tracking across Medicine, Elizabethan, Middle East, Germany, and USA. Flags overdue question tariffs and unexamined syllabus themes, allowing teachers to deliver high-yield classroom rehearsals and automated 20-question mastery quizzes.
+        Departmental tracking across Medicine, Elizabethan, Middle East, Germany, and USA. Flags unexamined syllabus themes, allowing teachers to deliver high-yield classroom rehearsals and automated 20-question mastery quizzes.
       </div>
     </div>
   </div>
@@ -483,10 +541,17 @@ const htmlContent = `<!DOCTYPE html>
   fs.writeFileSync(outHtmlPath, htmlContent, 'utf8');
   console.log('✅ Wrote HTML template to:', outHtmlPath);
 
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
   console.log('Launching Puppeteer to render Version 2 PDF...');
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    executablePath: chromePath,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--allow-file-access-from-files'],
   });
 
   const page = await browser.newPage();

@@ -1,1 +1,168 @@
-<svg id="my-svg" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 276px; background-color: transparent;" viewBox="0 0 276 478" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#my-svg{font-family:arial;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:hsl(60, 100%, 100%);}#my-svg .error-text{fill:#000000;stroke:#000000;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:arial;font-size:16px;}#my-svg p{margin:0;}#my-svg .label{font-family:arial;color:#333;}#my-svg .cluster-label text{fill:#000000;}#my-svg .cluster-label span{color:#000000;}#my-svg .cluster-label span p{background-color:transparent;}#my-svg .label text,#my-svg span{fill:#333;color:#333;}#my-svg .node rect,#my-svg .node circle,#my-svg .node ellipse,#my-svg .node polygon,#my-svg .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#my-svg .rough-node .label text,#my-svg .node .label text,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-anchor:middle;}#my-svg .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#my-svg .rough-node .label,#my-svg .node .label,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-align:center;}#my-svg .node.clickable{cursor:pointer;}#my-svg .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#my-svg .arrowheadPath{fill:#0b0b0b;}#my-svg .edgePath .path{stroke:#333333;stroke-width:1px;}#my-svg .flowchart-link{stroke:#333333;fill:none;}#my-svg .edgeLabel{background-color:hsl(120, 100%, 96.2745098039%);text-align:center;}#my-svg .edgeLabel p{background-color:hsl(120, 100%, 96.2745098039%);}#my-svg .edgeLabel rect{opacity:0.5;background-color:hsl(120, 100%, 96.2745098039%);fill:hsl(120, 100%, 96.2745098039%);}#my-svg .labelBkg{background-color:rgba(235.9999999999, 255, 235.9999999999, 0.5);}#my-svg .cluster rect{fill:hsl(60, 100%, 100%);stroke:hsl(60, 60%, 90%);stroke-width:1px;}#my-svg .cluster text{fill:#000000;}#my-svg .cluster span{color:#000000;}#my-svg div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:arial;font-size:12px;background:hsl(60, 100%, 100%);border:1px solid hsl(60, 60%, 90%);border-radius:2px;pointer-events:none;z-index:100;}#my-svg .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#my-svg rect.text{fill:none;stroke-width:0;}#my-svg .icon-shape,#my-svg .image-shape{background-color:hsl(120, 100%, 96.2745098039%);text-align:center;}#my-svg .icon-shape p,#my-svg .image-shape p{background-color:hsl(120, 100%, 96.2745098039%);padding:2px;}#my-svg .icon-shape .label rect,#my-svg .image-shape .label rect{opacity:0.5;background-color:hsl(120, 100%, 96.2745098039%);fill:hsl(120, 100%, 96.2745098039%);}#my-svg .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#my-svg .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#my-svg .node .neo-node{stroke:#9370DB;}#my-svg [data-look="neo"].node rect,#my-svg [data-look="neo"].cluster rect,#my-svg [data-look="neo"].node polygon{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].swimlane.cluster rect{filter:none;}#my-svg [data-look="neo"].node path{stroke:url(#my-svg-gradient);stroke-width:1px;}#my-svg [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node .neo-line path{stroke:#9370DB;filter:none;}#my-svg [data-look="neo"].node circle{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node circle .state-start{fill:#000000;}#my-svg [data-look="neo"].icon-shape .icon{fill:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].icon-shape .icon-neo path{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="my-svg_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"/></marker><marker id="my-svg_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edgePaths"><path d="M138,86L138,90.167C138,94.333,138,102.667,138,110.333C138,118,138,125,138,128.5L138,132" id="my-svg-L_A_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A_B_0" data-points="W3sieCI6MTM4LCJ5Ijo4Nn0seyJ4IjoxMzgsInkiOjExMX0seyJ4IjoxMzgsInkiOjEzNn1d" data-look="classic" marker-end="url(#my-svg_flowchart-v2-pointEnd)"/><path d="M138,214L138,218.167C138,222.333,138,230.667,138,238.333C138,246,138,253,138,256.5L138,260" id="my-svg-L_B_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_B_C_0" data-points="W3sieCI6MTM4LCJ5IjoyMTR9LHsieCI6MTM4LCJ5IjoyMzl9LHsieCI6MTM4LCJ5IjoyNjR9XQ==" data-look="classic" marker-end="url(#my-svg_flowchart-v2-pointEnd)"/><path d="M138,342L138,346.167C138,350.333,138,358.667,138,366.333C138,374,138,381,138,384.5L138,388" id="my-svg-L_C_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C_D_0" data-points="W3sieCI6MTM4LCJ5IjozNDJ9LHsieCI6MTM4LCJ5IjozNjd9LHsieCI6MTM4LCJ5IjozOTJ9XQ==" data-look="classic" marker-end="url(#my-svg_flowchart-v2-pointEnd)"/></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_A_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_B_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_C_D_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="my-svg-flowchart-A-0" data-look="classic" transform="translate(138, 47)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Sinai returned to Egypt phased</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-B-1" data-look="classic" transform="translate(138, 175)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Egypt grants diplomatic recognition to Israel</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-C-3" data-look="classic" transform="translate(138, 303)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Sinai demilitarised &amp; monitored</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-D-5" data-look="classic" transform="translate(138, 431)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Suez Canal &amp; Straits of Tiran fully open to IDF</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="my-svg-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><defs><filter id="my-svg-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><linearGradient id="my-svg-gradient" gradientUnits="objectBoundingBox" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9370DB" stop-opacity="1"/><stop offset="100%" stop-color="hsl(120, 60%, 86.2745098039%)" stop-opacity="1"/></linearGradient></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 800" width="100%" height="100%" style="background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <filter id="subtle-shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base Map -->
+  <rect width="900" height="800" fill="#f8fafc"/>
+  
+  <!-- Map Title Banner / Archival Header -->
+  <rect x="0" y="0" width="900" height="68" fill="#0f172a"/>
+  <text x="24" y="28" font-size="16" font-weight="800" fill="#ffffff" letter-spacing="1.5">MAP OF PHASED ISRAELI WITHDRAWAL FROM SINAI</text>
+  <text x="24" y="48" font-size="12" font-weight="500" fill="#94a3b8">EGYPT-ISRAEL PEACE TREATY (1979) • SECURITY ZONES A, B, C, D &amp; MFO STATIONS (1979–1982)</text>
+  <rect x="740" y="16" width="136" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="808" y="38" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">TREATY ANNEX I</text>
+
+  <!-- Water Bodies -->
+  <!-- Mediterranean Sea (North) -->
+  <path d="M 0,68 L 900,68 L 900,160 C 720,160 520,150 350,170 C 200,185 80,180 0,190 Z" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="450" y="125" font-size="14" font-weight="800" fill="#0284c7" text-anchor="middle" letter-spacing="2">MEDITERRANEAN SEA</text>
+
+  <!-- Gulf of Suez (South-West) -->
+  <path d="M 0,380 C 40,420 100,500 150,600 C 190,670 240,740 280,800 L 0,800 Z" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.5"/>
+  <text transform="translate(100, 680) rotate(-55)" font-size="13" font-weight="800" fill="#0284c7" letter-spacing="1.5">GULF OF SUEZ</text>
+
+  <!-- Gulf of Aqaba (South-East) -->
+  <path d="M 720,800 C 680,720 650,640 640,540 C 630,480 640,420 660,390 L 710,400 C 700,450 710,540 760,650 C 790,720 830,760 860,800 Z" fill="#e0f2fe" stroke="#38bdf8" stroke-width="1.5"/>
+  <text transform="translate(710, 640) rotate(70)" font-size="12" font-weight="800" fill="#0284c7" letter-spacing="1.5">GULF OF AQABA</text>
+
+  <!-- Red Sea (South) -->
+  <path d="M 280,800 C 350,780 430,760 480,790 C 530,820 620,810 720,800 Z" fill="#e0f2fe"/>
+  <text x="500" y="785" font-size="11" font-weight="800" fill="#0284c7" text-anchor="middle">Ras Mohammad</text>
+
+  <!-- Suez Canal (West) -->
+  <path d="M 120,180 L 120,270 L 110,310 L 120,380" stroke="#0284c7" stroke-width="6" fill="none"/>
+  <text transform="translate(105, 290) rotate(-90)" font-size="10" font-weight="800" fill="#0369a1" letter-spacing="1">SUEZ CANAL</text>
+
+  <!-- SINAI PENINSULA SECURITY ZONES (Treaty Annex I) -->
+
+  <!-- ZONE A (West - up to ~50km east of Canal: 1 Egyptian Mechanized Division) -->
+  <path d="M 120,180 L 250,175 L 280,380 L 220,580 L 150,600 L 110,380 Z" fill="#fef3c7" fill-opacity="0.8" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="180" y="320" font-size="12" font-weight="900" fill="#b45309" text-anchor="middle">ZONE A</text>
+  <text x="180" y="336" font-size="8.5" font-weight="700" fill="#d97706" text-anchor="middle">1 Egyptian Div.</text>
+  <text x="180" y="348" font-size="8" font-weight="600" fill="#b45309" text-anchor="middle">(Max 22,000 troops)</text>
+
+  <!-- ZONE B (Central - Light Egyptian border units: 4 Battalions) -->
+  <path d="M 250,175 L 430,170 L 460,450 L 370,680 L 220,580 L 280,380 Z" fill="#ecfdf5" fill-opacity="0.85" stroke="#10b981" stroke-width="1.5"/>
+  <text x="350" y="360" font-size="13" font-weight="900" fill="#047857" text-anchor="middle">ZONE B</text>
+  <text x="350" y="376" font-size="8.5" font-weight="700" fill="#059669" text-anchor="middle">4 Border Bns.</text>
+  <text x="350" y="388" font-size="8" font-weight="600" fill="#047857" text-anchor="middle">(Civil Police Arms)</text>
+
+  <!-- ZONE C (Eastern Sinai - Demilitarized; Civil Police & MFO Peacekeepers) -->
+  <path d="M 430,170 L 660,170 L 660,390 C 640,420 630,480 640,540 C 650,640 680,720 720,800 C 620,810 530,820 480,790 C 430,760 350,780 280,800 L 370,680 L 460,450 Z" fill="#eff6ff" fill-opacity="0.9" stroke="#3b82f6" stroke-width="2"/>
+  <text x="540" y="420" font-size="14" font-weight="900" fill="#1d4ed8" text-anchor="middle">ZONE C</text>
+  <text x="540" y="438" font-size="10" font-weight="800" fill="#2563eb" text-anchor="middle">DEMILITARIZED ZONE</text>
+  <text x="540" y="452" font-size="8.5" font-weight="600" fill="#1e40af" text-anchor="middle">Egyptian Civil Police + MFO Force</text>
+
+  <!-- ZONE D (Narrow Strip in Israel along border - Max 4 Infantry Bns) -->
+  <path d="M 660,170 L 720,170 L 720,400 L 660,390 Z" fill="#fdf2f8" stroke="#ec4899" stroke-width="1.5"/>
+  <text transform="translate(685, 290) rotate(90)" font-size="9.5" font-weight="800" fill="#be185d" text-anchor="middle">ZONE D (Israel Strip)</text>
+
+  <!-- WITHDRAWAL PHASE LINES -->
+  <!-- Phase 1 Line (1979): El Arish to Ras Mohammad Line -->
+  <path d="M 430,170 L 460,450 L 480,790" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="6 3"/>
+  <rect x="360" y="240" width="130" height="24" rx="3" fill="#ffffff" stroke="#dc2626" stroke-width="1" filter="url(#subtle-shadow)"/>
+  <text x="425" y="256" font-size="8.5" font-weight="800" fill="#b91c1c" text-anchor="middle">PHASE 1 LINE (1979)</text>
+
+  <!-- Phase 2 Line (1980): Central Staging -->
+  <!-- Phase 3 / Final International Border Line (April 1982: Rafah to Taba) -->
+  <path d="M 660,170 L 660,390" fill="none" stroke="#1e3a8a" stroke-width="4.5"/>
+  <rect x="610" y="210" width="160" height="28" rx="3" fill="#1e3a8a" filter="url(#shadow)"/>
+  <text x="690" y="228" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">FINAL BORDER (APRIL 1982)</text>
+
+  <!-- Key Settlement & City Markers -->
+  <!-- Yamit (Dismantled Israeli Settlement) -->
+  <g transform="translate(640, 180)" filter="url(#subtle-shadow)">
+    <circle cx="0" cy="0" r="5" fill="#dc2626" stroke="#ffffff" stroke-width="1"/>
+    <text x="-8" y="-8" font-size="9.5" font-weight="800" fill="#991b1b" text-anchor="end">Yamit</text>
+    <text x="-8" y="3" font-size="7.5" font-weight="600" fill="#b91c1c" text-anchor="end">(Evacuated Apr 1982)</text>
+  </g>
+
+  <!-- El Arish -->
+  <circle cx="430" cy="180" r="5" fill="#0f172a"/>
+  <text x="430" y="198" font-size="9.5" font-weight="800" fill="#0f172a" text-anchor="middle">El Arish</text>
+
+  <!-- Taba / Eilat -->
+  <circle cx="660" cy="395" r="5" fill="#1e3a8a"/>
+  <text x="675" y="398" font-size="9.5" font-weight="800" fill="#1e3a8a">Taba / Eilat</text>
+
+  <!-- Sharm el-Sheikh -->
+  <circle cx="560" cy="760" r="5" fill="#0f172a"/>
+  <text x="575" y="764" font-size="9.5" font-weight="800" fill="#0f172a">Sharm el-Sheikh</text>
+
+  <!-- MFO (Multinational Force & Observers) Bases -->
+  <!-- North Camp (El Gorah) -->
+  <g transform="translate(610, 195)">
+    <rect x="-8" y="-8" width="16" height="16" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="-12" y="4" font-size="8" font-weight="800" fill="#1d4ed8" text-anchor="end">MFO North Base</text>
+  </g>
+  <!-- South Camp (Sharm el-Sheikh) -->
+  <g transform="translate(530, 740)">
+    <rect x="-8" y="-8" width="16" height="16" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="-12" y="4" font-size="8" font-weight="800" fill="#1d4ed8" text-anchor="end">MFO South Base</text>
+  </g>
+
+  <!-- MAP COMPASS & SCALE -->
+  <g transform="translate(60, 240)">
+    <circle cx="0" cy="0" r="18" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" filter="url(#subtle-shadow)"/>
+    <polygon points="0,-14 4,-2 -4,-2" fill="#0f172a"/>
+    <polygon points="0,14 4,2 -4,2" fill="#94a3b8"/>
+    <text x="0" y="-18" font-size="8.5" font-weight="900" fill="#0f172a" text-anchor="middle">N</text>
+  </g>
+  <g transform="translate(50, 750)">
+    <rect x="0" y="0" width="140" height="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" rx="2"/>
+    <rect x="10" y="6" width="60" height="6" fill="#0f172a"/>
+    <rect x="70" y="6" width="60" height="6" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+    <text x="10" y="4" font-size="7.5" font-weight="700" fill="#334155">0</text>
+    <text x="70" y="4" font-size="7.5" font-weight="700" fill="#334155">50km</text>
+    <text x="130" y="4" font-size="7.5" font-weight="700" fill="#334155">100km</text>
+  </g>
+
+  <!-- MAP LEGEND (Bottom Right Floating Card) -->
+  <g transform="translate(570, 500)" filter="url(#shadow)">
+    <rect width="310" height="270" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect width="310" height="28" rx="6 6 0 0" fill="#1e293b"/>
+    <text x="155" y="19" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">TREATY SECURITY ZONES LEGEND</text>
+
+    <!-- Zone A -->
+    <rect x="14" y="38" width="22" height="14" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="46" y="50" font-size="9.5" font-weight="700" fill="#1e293b">Zone A: 1 Mechanized Infantry Div. (Egypt)</text>
+
+    <!-- Zone B -->
+    <rect x="14" y="62" width="22" height="14" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+    <text x="46" y="74" font-size="9.5" font-weight="700" fill="#1e293b">Zone B: 4 Border Battalions (Light Arms)</text>
+
+    <!-- Zone C -->
+    <rect x="14" y="86" width="22" height="14" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="46" y="98" font-size="9.5" font-weight="700" fill="#1e293b">Zone C: Fully Demilitarized (MFO Monitors)</text>
+
+    <!-- Zone D -->
+    <rect x="14" y="110" width="22" height="14" fill="#fdf2f8" stroke="#ec4899" stroke-width="1.5"/>
+    <text x="46" y="122" font-size="9.5" font-weight="700" fill="#1e293b">Zone D: Israel Border Strip (4 Bns Only)</text>
+
+    <!-- Phase 1 Line -->
+    <line x1="14" y1="142" x2="36" y2="142" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4 2"/>
+    <text x="46" y="146" font-size="9.5" font-weight="700" fill="#1e293b">Phase 1 Line (El Arish–Ras Mohammad, 1979)</text>
+
+    <!-- Final Border Line -->
+    <line x1="14" y1="168" x2="36" y2="168" stroke="#1e3a8a" stroke-width="4"/>
+    <text x="46" y="172" font-size="9.5" font-weight="700" fill="#1e293b">Final International Border (25 April 1982)</text>
+
+    <!-- MFO Station -->
+    <rect x="18" y="190" width="14" height="14" fill="#1d4ed8" stroke="#ffffff" stroke-width="1"/>
+    <text x="46" y="201" font-size="9.5" font-weight="700" fill="#1e293b">MFO Peacekeeper Base Stations</text>
+
+    <!-- Yamit Evacuation -->
+    <circle cx="25" cy="224" r="5" fill="#dc2626"/>
+    <text x="46" y="228" font-size="9.5" font-weight="700" fill="#1e293b">Yamit Settlement Evacuation Area</text>
+
+    <!-- Footer Note -->
+    <text x="155" y="258" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle">Egypt–Israel Peace Treaty (Signed 26 March 1979)</text>
+  </g>
+</svg>

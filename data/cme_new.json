@@ -12136,49 +12136,55 @@
             {
               "id": "cme_l11_source_d",
               "letter": "D",
-              "title": "Source D: Diagram of Grassroots Intifada Escalation (1987–1988)",
-              "src": "/units/cme_new/assets/intifada_escalation.svg",
-              "image": "/units/cme_new/assets/intifada_escalation.svg",
-              "source": "/units/cme_new/assets/intifada_escalation.svg",
-              "caption": "Analytical schematic showing how local popular committees and the Unified National Leadership of the Uprising (UNLU) coordinated strikes and leaflets independently of the exiled PLO leadership in Tunis.",
-              "desc": "Sociological flowchart explaining the grassroots organizational structure of the Intifada.",
-              "provenance": "Palestinian Academic Society for the Study of International Affairs (PASSIA), East Jerusalem, 1988.",
-              "citation": "PASSIA Archives, Jerusalem.",
-              "hinge_question": "Why did the rise of local leadership inside the occupied territories force Yasser Arafat to moderate his diplomatic stance?",
-              "source_context": "The First Intifada was launched not by Arafat's exiled PLO in Tunisia, but by young local Palestinians who had grown up entirely under Israeli occupation. Fearing irrelevance, Arafat moved rapidly in November 1988 in Algiers to proclaim Palestinian independence, recognize UN Resolution 242, and renounce terrorism, thereby opening official dialogue with the United States. Hinge Question: Why did the rise of local leadership inside the occupied territories force Yasser Arafat to moderate his diplomatic stance?",
-              "context": "The Intifada was directed by local popular committees, compelling Arafat to pursue diplomatic recognition.",
+              "title": "Source D: Original Clandestine UNLU Leaflet (Bayan No. 1) Calling for General Strike (8 January 1988)",
+              "src": "/units/cme_new/assets/cme_unlu_bayan_no1_1988.jpg",
+              "image": "/units/cme_new/assets/cme_unlu_bayan_no1_1988.jpg",
+              "source": "/units/cme_new/assets/cme_unlu_bayan_no1_1988.jpg",
+              "caption": "Original mimeographed underground leaflet (Bayan No. 1) issued by the Unified National Leadership of the Uprising (UNLU) on 8 January 1988, directing nationwide merchant shutdowns, labor strikes, and popular committee solidarity.",
+              "desc": "Primary archival scan of the original mimeographed UNLU Communiqué No. 1 distributed across the West Bank and Gaza in January 1988.",
+              "provenance": "Birzeit University Digital Palestinian Archives (Awraq Collection #8777) / Palestinian Museum Digital Archive (PMDA), 8 January 1988.",
+              "citation": "Birzeit University Archives / Palestinian Museum Digital Archive.",
+              "hinge_question": "Why did the underground UNLU leaflets prove more effective at mobilizing the Palestinian population than orders from the exiled PLO leadership in Tunis?",
+              "source_context": "On 8 January 1988, one month after the outbreak of the First Intifada, the Unified National Leadership of the Uprising (UNLU) distributed its first serialized mimeographed leaflet (Bayan No. 1). Circulated clandestinely at dawn, it instructed the population to participate in a general commercial and labor strike, boycott Israeli institutions, and organize popular committees for mutual aid. The leaflets established the UNLU as the internal steering authority of the rebellion. **Hinge Question:** Why did the underground UNLU leaflets prove more effective at mobilizing the Palestinian population than orders from the exiled PLO leadership in Tunis?",
+              "context": "The Unified National Leadership of the Uprising (UNLU) coordinated the First Intifada through clandestine mimeographed circulars, enforcing general strikes and civic non-cooperation.",
               "question_badge": "Cross-Referencing",
               "question_type": "Cross-Referencing",
               "enquiry_question": "How does Source D cross-reference with Source B to explain why Defense Minister Yitzhak Rabin eventually concluded that the conflict required a political rather than military solution?",
-              "model_answer": "Sources D and B together show that the Intifada was a deeply rooted civil rebellion that permeated everyday Palestinian society; despite Rabin ordering troops to 'break their bones', military force could not extinguish a popular national uprising.",
+              "model_answer": "Source D shows that the Intifada was organized as a disciplined, society-wide civil rebellion using underground mimeographed strike orders rather than conventional military forces; cross-referenced with the widespread street clashes in Source B, it demonstrates why Rabin realized that military force ('breaking bones') could not defeat a whole civilian population committed to total economic and civil non-cooperation.",
               "provenance_clues": {
-                "author": "Palestinian social scientists and political analysts.",
-                "audience": "International NGOs, foreign diplomats, and Palestinian civil organizers.",
-                "motive": "To document how non-violent popular committees and civic boycott structures sustained national resistance."
+                "author": "Underground cadres of the Unified National Leadership of the Uprising (UNLU) in the West Bank and Gaza.",
+                "audience": "Palestinian workers, merchants, transport drivers, and the wider civilian population.",
+                "motive": "To coordinate a disciplined general strike, enforce economic non-cooperation with the military administration, and mobilize popular committees."
+              },
+              "teacher_notes": {
+                "source_context": "On 8 January 1988, one month after the outbreak of the First Intifada, the Unified National Leadership of the Uprising (UNLU) distributed its first serialized mimeographed leaflet (Bayan No. 1). Circulated clandestinely at dawn, it instructed the population to participate in a general commercial and labor strike, boycott Israeli institutions, and organize popular committees for mutual aid. The leaflets established the UNLU as the internal steering authority of the rebellion. **Hinge Question:** Why did the underground UNLU leaflets prove more effective at mobilizing the Palestinian population than orders from the exiled PLO leadership in Tunis?"
               }
             },
             {
               "id": "cme_l11_source_e",
               "letter": "E",
-              "title": "Source E: Defense Minister Ariel Sharon Testifying Before the Kahan Commission",
-              "src": "/units/cme_new/assets/ariel_sharon.webp",
-              "image": "/units/cme_new/assets/ariel_sharon.webp",
-              "source": "/units/cme_new/assets/ariel_sharon.webp",
-              "caption": "Defense Minister Ariel Sharon defending his decisions during testimony before the Kahan Commission of Inquiry in Jerusalem, October 1982.",
-              "desc": "Archival photograph of Ariel Sharon giving evidence under oath.",
-              "provenance": "Israel Government Press Office / Moshe Milner (GPO D1-1982), 25 October 1982.",
+              "title": "Source E: Defense Minister Ariel Sharon Overlooking West Beirut During the Siege (August 1982)",
+              "src": "/units/cme_new/assets/sharon_beirut_1982.jpg",
+              "image": "/units/cme_new/assets/sharon_beirut_1982.jpg",
+              "source": "/units/cme_new/assets/sharon_beirut_1982.jpg",
+              "caption": "Defense Minister Ariel Sharon surveying military positions and artillery lines overlooking besieged West Beirut from an IDF observation post with operational maps, August 1982.",
+              "desc": "Archival photograph of Ariel Sharon directing the siege of West Beirut in August 1982.",
+              "provenance": "Israel Government Press Office / Moshe Milner (GPO D1-1982), August 1982.",
               "citation": "Israel Government Press Office / Moshe Milner.",
-              "hinge_question": "Why did the Kahan Commission recommend that Ariel Sharon be removed from his post as Minister of Defense?",
-              "source_context": "The Kahan Commission concluded that Sharon bore personal responsibility for ignoring the danger of acts of vengeance by Phalangists after Gemayel's assassination. The report forced Sharon to resign as Defense Minister, although he remained in the Cabinet as Minister without Portfolio. Hinge Question: Why did the Kahan Commission recommend that Ariel Sharon be removed from his post as Minister of Defense?",
-              "context": "Ariel Sharon was forced to resign as Defense Minister following the Kahan Commission's findings.",
-              "question_badge": "Reliability & Provenance",
-              "question_type": "Reliability & Provenance",
-              "enquiry_question": "How reliable is Source E for understanding Ariel Sharon's response to the allegations of Israeli complicity in the Sabra and Shatila massacres?",
-              "model_answer": "Source E accurately depicts Sharon's defiant public defense that the massacre was committed exclusively by Arab Christians against Arab Muslims; however, it masks the judicial evidence proving he knew of the danger and failed to take basic protective steps.",
+              "hinge_question": "How does Sharon's direct presence overlooking Beirut illustrate why Israeli critics accused him of fighting a personal war beyond the Cabinet's approved mandate?",
+              "source_context": "During Operation Peace for Galilee in the summer of 1982, Defense Minister Ariel Sharon pushed IDF forces far beyond the 40-kilometer security zone approved by the Israeli Cabinet, trapping 15,000 PLO fighters and Chairman Yasser Arafat inside West Beirut. For ten weeks, Israeli artillery and air strikes pounded the capital until multinational peacekeepers evacuated the PLO to Tunisia. Sharon’s aggressive forward command sparked severe domestic controversy, culminating in his resignation following the Kahan Commission inquiry into the Sabra and Shatila massacres. **Hinge Question:** How does Sharon's direct presence overlooking Beirut illustrate why Israeli critics accused him of fighting a personal war beyond the Cabinet's approved mandate?",
+              "context": "Defense Minister Ariel Sharon personally directed the forward encirclement of West Beirut in August 1982, drawing severe public and political criticism.",
+              "question_badge": "Historical Utility",
+              "question_type": "Historical Utility",
+              "enquiry_question": "How useful is Source E for an inquiry into the extent of Ariel Sharon's personal direction of the 1982 military campaign in Lebanon?",
+              "model_answer": "Source E is exceptionally useful because it visually captures Sharon on the forward frontline overlooking the Lebanese capital with operational maps, demonstrating his hands-on command and personal determination to destroy the PLO infrastructure in West Beirut.",
               "provenance_clues": {
                 "author": "Moshe Milner, senior photographer for the Israeli Government Press Office.",
-                "audience": "The Israeli public, judicial commissioners, and international media.",
-                "motive": "To document the high-profile public hearings of the democratic commission of inquiry."
+                "audience": "Israeli cabinet members, military commanders, and the public record.",
+                "motive": "To document Defense Minister Sharon's strategic surveillance of West Beirut during active operations."
+              },
+              "teacher_notes": {
+                "source_context": "During Operation Peace for Galilee in the summer of 1982, Defense Minister Ariel Sharon pushed IDF forces far beyond the 40-kilometer security zone approved by the Israeli Cabinet, trapping 15,000 PLO fighters and Chairman Yasser Arafat inside West Beirut. For ten weeks, Israeli artillery and air strikes pounded the capital until multinational peacekeepers evacuated the PLO to Tunisia. Sharon’s aggressive forward command sparked severe domestic controversy, culminating in his resignation following the Kahan Commission inquiry into the Sabra and Shatila massacres. **Hinge Question:** How does Sharon's direct presence overlooking Beirut illustrate why Israeli critics accused him of fighting a personal war beyond the Cabinet's approved mandate?"
               }
             }
           ]
@@ -12274,57 +12280,55 @@
         {
           "id": "cme_l11_source_d",
           "letter": "D",
-          "title": "Source D: Diagram of Grassroots Intifada Escalation (1987–1988)",
-          "src": "/units/cme_new/assets/intifada_escalation.svg",
-          "image": "/units/cme_new/assets/intifada_escalation.svg",
-          "source": "/units/cme_new/assets/intifada_escalation.svg",
-          "caption": "Analytical schematic showing how local popular committees and the Unified National Leadership of the Uprising (UNLU) coordinated strikes and leaflets independently of the exiled PLO leadership in Tunis.",
-          "desc": "Sociological flowchart explaining the grassroots organizational structure of the Intifada.",
-          "provenance": "Palestinian Academic Society for the Study of International Affairs (PASSIA), East Jerusalem, 1988.",
-          "citation": "PASSIA Archives, Jerusalem.",
-          "hinge_question": "Why did the rise of local leadership inside the occupied territories force Yasser Arafat to moderate his diplomatic stance?",
-          "source_context": "The First Intifada was launched not by Arafat's exiled PLO in Tunisia, but by young local Palestinians who had grown up entirely under Israeli occupation. Fearing irrelevance, Arafat moved rapidly in November 1988 in Algiers to proclaim Palestinian independence, recognize UN Resolution 242, and renounce terrorism, thereby opening official dialogue with the United States. **Hinge Question:** Why did the rise of local leadership inside the occupied territories force Yasser Arafat to moderate his diplomatic stance?",
-          "context": "The Intifada was directed by local popular committees, compelling Arafat to pursue diplomatic recognition.",
+          "title": "Source D: Original Clandestine UNLU Leaflet (Bayan No. 1) Calling for General Strike (8 January 1988)",
+          "src": "/units/cme_new/assets/cme_unlu_bayan_no1_1988.jpg",
+          "image": "/units/cme_new/assets/cme_unlu_bayan_no1_1988.jpg",
+          "source": "/units/cme_new/assets/cme_unlu_bayan_no1_1988.jpg",
+          "caption": "Original mimeographed underground leaflet (Bayan No. 1) issued by the Unified National Leadership of the Uprising (UNLU) on 8 January 1988, directing nationwide merchant shutdowns, labor strikes, and popular committee solidarity.",
+          "desc": "Primary archival scan of the original mimeographed UNLU Communiqué No. 1 distributed across the West Bank and Gaza in January 1988.",
+          "provenance": "Birzeit University Digital Palestinian Archives (Awraq Collection #8777) / Palestinian Museum Digital Archive (PMDA), 8 January 1988.",
+          "citation": "Birzeit University Archives / Palestinian Museum Digital Archive.",
+          "hinge_question": "Why did the underground UNLU leaflets prove more effective at mobilizing the Palestinian population than orders from the exiled PLO leadership in Tunis?",
+          "source_context": "On 8 January 1988, one month after the outbreak of the First Intifada, the Unified National Leadership of the Uprising (UNLU) distributed its first serialized mimeographed leaflet (Bayan No. 1). Circulated clandestinely at dawn, it instructed the population to participate in a general commercial and labor strike, boycott Israeli institutions, and organize popular committees for mutual aid. The leaflets established the UNLU as the internal steering authority of the rebellion. **Hinge Question:** Why did the underground UNLU leaflets prove more effective at mobilizing the Palestinian population than orders from the exiled PLO leadership in Tunis?",
+          "context": "The Unified National Leadership of the Uprising (UNLU) coordinated the First Intifada through clandestine mimeographed circulars, enforcing general strikes and civic non-cooperation.",
           "question_badge": "Cross-Referencing",
           "question_type": "Cross-Referencing",
           "enquiry_question": "How does Source D cross-reference with Source B to explain why Defense Minister Yitzhak Rabin eventually concluded that the conflict required a political rather than military solution?",
-          "model_answer": "Sources D and B together show that the Intifada was a deeply rooted civil rebellion that permeated everyday Palestinian society; despite Rabin ordering troops to 'break their bones', military force could not extinguish a popular national uprising.",
+          "model_answer": "Source D shows that the Intifada was organized as a disciplined, society-wide civil rebellion using underground mimeographed strike orders rather than conventional military forces; cross-referenced with the widespread street clashes in Source B, it demonstrates why Rabin realized that military force ('breaking bones') could not defeat a whole civilian population committed to total economic and civil non-cooperation.",
           "provenance_clues": {
-            "author": "Palestinian social scientists and political analysts.",
-            "audience": "International NGOs, foreign diplomats, and Palestinian civil organizers.",
-            "motive": "To document how non-violent popular committees and civic boycott structures sustained national resistance.",
-            "hinge_question": "Why did the rise of local leadership inside the occupied territories force Yasser Arafat to moderate his diplomatic stance?"
+            "author": "Underground cadres of the Unified National Leadership of the Uprising (UNLU) in the West Bank and Gaza.",
+            "audience": "Palestinian workers, merchants, transport drivers, and the wider civilian population.",
+            "motive": "To coordinate a disciplined general strike, enforce economic non-cooperation with the military administration, and mobilize popular committees."
           },
           "teacher_notes": {
-            "source_context": "The First Intifada was launched not by Arafat's exiled PLO in Tunisia, but by young local Palestinians who had grown up entirely under Israeli occupation. Fearing irrelevance, Arafat moved rapidly in November 1988 in Algiers to proclaim Palestinian independence, recognize UN Resolution 242, and renounce terrorism, thereby opening official dialogue with the United States. **Hinge Question:** Why did the rise of local leadership inside the occupied territories force Yasser Arafat to moderate his diplomatic stance?"
+            "source_context": "On 8 January 1988, one month after the outbreak of the First Intifada, the Unified National Leadership of the Uprising (UNLU) distributed its first serialized mimeographed leaflet (Bayan No. 1). Circulated clandestinely at dawn, it instructed the population to participate in a general commercial and labor strike, boycott Israeli institutions, and organize popular committees for mutual aid. The leaflets established the UNLU as the internal steering authority of the rebellion. **Hinge Question:** Why did the underground UNLU leaflets prove more effective at mobilizing the Palestinian population than orders from the exiled PLO leadership in Tunis?"
           }
         },
         {
           "id": "cme_l11_source_e",
           "letter": "E",
-          "title": "Source E: Defense Minister Ariel Sharon Testifying Before the Kahan Commission",
-          "src": "/units/cme_new/assets/ariel_sharon.webp",
-          "image": "/units/cme_new/assets/ariel_sharon.webp",
-          "source": "/units/cme_new/assets/ariel_sharon.webp",
-          "caption": "Defense Minister Ariel Sharon defending his decisions during testimony before the Kahan Commission of Inquiry in Jerusalem, October 1982.",
-          "desc": "Archival photograph of Ariel Sharon giving evidence under oath.",
-          "provenance": "Israel Government Press Office / Moshe Milner (GPO D1-1982), 25 October 1982.",
+          "title": "Source E: Defense Minister Ariel Sharon Overlooking West Beirut During the Siege (August 1982)",
+          "src": "/units/cme_new/assets/sharon_beirut_1982.jpg",
+          "image": "/units/cme_new/assets/sharon_beirut_1982.jpg",
+          "source": "/units/cme_new/assets/sharon_beirut_1982.jpg",
+          "caption": "Defense Minister Ariel Sharon surveying military positions and artillery lines overlooking besieged West Beirut from an IDF observation post with operational maps, August 1982.",
+          "desc": "Archival photograph of Ariel Sharon directing the siege of West Beirut in August 1982.",
+          "provenance": "Israel Government Press Office / Moshe Milner (GPO D1-1982), August 1982.",
           "citation": "Israel Government Press Office / Moshe Milner.",
-          "hinge_question": "Why did the Kahan Commission recommend that Ariel Sharon be removed from his post as Minister of Defense?",
-          "source_context": "The Kahan Commission concluded that Sharon bore personal responsibility for ignoring the danger of acts of vengeance by Phalangists after Gemayel's assassination. The report forced Sharon to resign as Defense Minister, although he remained in the Cabinet as Minister without Portfolio. **Hinge Question:** Why did the Kahan Commission recommend that Ariel Sharon be removed from his post as Minister of Defense?",
-          "context": "Ariel Sharon was forced to resign as Defense Minister following the Kahan Commission's findings.",
-          "question_badge": "Reliability & Provenance",
-          "question_type": "Reliability & Provenance",
-          "enquiry_question": "How reliable is Source E for understanding Ariel Sharon's response to the allegations of Israeli complicity in the Sabra and Shatila massacres?",
-          "model_answer": "Source E accurately depicts Sharon's defiant public defense that the massacre was committed exclusively by Arab Christians against Arab Muslims; however, it masks the judicial evidence proving he knew of the danger and failed to take basic protective steps.",
+          "hinge_question": "How does Sharon's direct presence overlooking Beirut illustrate why Israeli critics accused him of fighting a personal war beyond the Cabinet's approved mandate?",
+          "source_context": "During Operation Peace for Galilee in the summer of 1982, Defense Minister Ariel Sharon pushed IDF forces far beyond the 40-kilometer security zone approved by the Israeli Cabinet, trapping 15,000 PLO fighters and Chairman Yasser Arafat inside West Beirut. For ten weeks, Israeli artillery and air strikes pounded the capital until multinational peacekeepers evacuated the PLO to Tunisia. Sharon’s aggressive forward command sparked severe domestic controversy, culminating in his resignation following the Kahan Commission inquiry into the Sabra and Shatila massacres. **Hinge Question:** How does Sharon's direct presence overlooking Beirut illustrate why Israeli critics accused him of fighting a personal war beyond the Cabinet's approved mandate?",
+          "context": "Defense Minister Ariel Sharon personally directed the forward encirclement of West Beirut in August 1982, drawing severe public and political criticism.",
+          "question_badge": "Historical Utility",
+          "question_type": "Historical Utility",
+          "enquiry_question": "How useful is Source E for an inquiry into the extent of Ariel Sharon's personal direction of the 1982 military campaign in Lebanon?",
+          "model_answer": "Source E is exceptionally useful because it visually captures Sharon on the forward frontline overlooking the Lebanese capital with operational maps, demonstrating his hands-on command and personal determination to destroy the PLO infrastructure in West Beirut.",
           "provenance_clues": {
             "author": "Moshe Milner, senior photographer for the Israeli Government Press Office.",
-            "audience": "The Israeli public, judicial commissioners, and international media.",
-            "motive": "To document the high-profile public hearings of the democratic commission of inquiry.",
-            "hinge_question": "Why did the Kahan Commission recommend that Ariel Sharon be removed from his post as Minister of Defense?"
+            "audience": "Israeli cabinet members, military commanders, and the public record.",
+            "motive": "To document Defense Minister Sharon's strategic surveillance of West Beirut during active operations."
           },
           "teacher_notes": {
-            "source_context": "The Kahan Commission concluded that Sharon bore personal responsibility for ignoring the danger of acts of vengeance by Phalangists after Gemayel's assassination. The report forced Sharon to resign as Defense Minister, although he remained in the Cabinet as Minister without Portfolio. **Hinge Question:** Why did the Kahan Commission recommend that Ariel Sharon be removed from his post as Minister of Defense?"
+            "source_context": "During Operation Peace for Galilee in the summer of 1982, Defense Minister Ariel Sharon pushed IDF forces far beyond the 40-kilometer security zone approved by the Israeli Cabinet, trapping 15,000 PLO fighters and Chairman Yasser Arafat inside West Beirut. For ten weeks, Israeli artillery and air strikes pounded the capital until multinational peacekeepers evacuated the PLO to Tunisia. Sharon’s aggressive forward command sparked severe domestic controversy, culminating in his resignation following the Kahan Commission inquiry into the Sabra and Shatila massacres. **Hinge Question:** How does Sharon's direct presence overlooking Beirut illustrate why Israeli critics accused him of fighting a personal war beyond the Cabinet's approved mandate?"
           }
         }
       ],

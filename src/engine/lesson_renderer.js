@@ -14,6 +14,73 @@ import {
 } from './video_utils.js';
 import './ks2_guidance.js';
 
+// Canonical Key Stage Taxonomy Constants
+export const KS2_CANONICAL_UNITS = ['ks2_ww2'];
+export const KS3_CANONICAL_UNITS = [
+  'medieval_england',
+  'monarchy_religion_power',
+  'first_british_empire',
+  'second_british_empire',
+  'industrialisation_and_empire',
+  'great_war',
+  'great_war_part2',
+  'australia',
+  'post_war_britain',
+  'the_shoah',
+  'water_and_sanitation',
+  'early_modern_world',
+];
+export const GCSE_CANONICAL_UNITS = [
+  'cme_new',
+  'edexcel_medicine',
+  'eee',
+  'weimar_nazi_germany',
+  'cold_war',
+  'usa',
+];
+
+export function checkIsKs2(unitId, unitObj) {
+  if (unitId === 'ks2_ww2' || (typeof unitId === 'string' && unitId.startsWith('ks2_')))
+    return true;
+  if (unitObj && (unitObj.is_ks2 || (unitObj.year_group && unitObj.year_group.includes('KS2'))))
+    return true;
+  if (
+    typeof window !== 'undefined' &&
+    window.currentUnitId &&
+    window.currentUnitId.startsWith('ks2_')
+  )
+    return true;
+  return false;
+}
+
+export function checkIsKs3(unitId, unitObj) {
+  if (checkIsKs2(unitId, unitObj)) return false;
+  const rawId = unitId || (typeof window !== 'undefined' ? window.currentUnitId : null);
+  if (rawId && KS3_CANONICAL_UNITS.includes(rawId)) return true;
+  if (
+    unitObj &&
+    (unitObj.is_ks3 || (unitObj.year_group && /Year\s*[789]/i.test(unitObj.year_group)))
+  )
+    return true;
+  if (rawId && GCSE_CANONICAL_UNITS.includes(rawId)) return false;
+  if (unitObj && (unitObj.isGCSE || unitObj.is_gcse)) return false;
+  return false;
+}
+
+export function checkIsGCSE(unitId, unitObj) {
+  if (checkIsKs2(unitId, unitObj) || checkIsKs3(unitId, unitObj)) return false;
+  const rawId = unitId || (typeof window !== 'undefined' ? window.currentUnitId : null);
+  if (rawId && GCSE_CANONICAL_UNITS.includes(rawId)) return true;
+  if (
+    unitObj &&
+    (unitObj.isGCSE ||
+      unitObj.is_gcse ||
+      (unitObj.year_group && /Year\s*1[01]/i.test(unitObj.year_group)))
+  )
+    return true;
+  return true;
+}
+
 // Module-level fallback to ensure isGCSE never throws ReferenceError
 var isGCSE = false;
 
@@ -172,9 +239,13 @@ export function getArchivalSourceDiscussionComponents(
     if (
       !effectiveQ &&
       sourceObj.source_context &&
-      /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(sourceObj.source_context)
+      /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(
+        sourceObj.source_context,
+      )
     ) {
-      const parts = sourceObj.source_context.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
+      const parts = sourceObj.source_context.split(
+        /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i,
+      );
       if (parts[1]) effectiveQ = parts[1].trim();
     }
   }
@@ -1588,7 +1659,10 @@ if (typeof window !== 'undefined') {
       const stage = c.dataset.stage || '';
       const title = c.querySelector('h4, h5')?.textContent?.trim() || '';
       const question =
-        c.querySelector('.cme-spine-question')?.textContent?.replace(/Workbook Enquiry:/i, '')?.trim() || '';
+        c
+          .querySelector('.cme-spine-question')
+          ?.textContent?.replace(/Workbook Enquiry:/i, '')
+          ?.trim() || '';
       const trigger =
         c.querySelector('.cme-action-content')?.textContent?.trim() ||
         c.querySelector('.cme-spine-desc')?.textContent?.trim() ||
@@ -1635,18 +1709,24 @@ if (typeof window !== 'undefined') {
     }
   };
 
-  window.toggleAllCausalSpineDrawers = function () {
-    const drawers = document.querySelectorAll('.cme-causal-drawer');
+  window.toggleAllCausalSpineDrawers = function (btn) {
+    const spine = document.getElementById('lesson-chronology-spine');
+    const drawers = spine
+      ? spine.querySelectorAll('.cme-causal-drawer')
+      : document.querySelectorAll('.cme-causal-drawer');
     if (!drawers || drawers.length === 0) return;
-    const labelEl = document.getElementById('toggle-causal-label');
+    const labelEl =
+      document.getElementById('toggle-causal-label') ||
+      (btn && btn.querySelector('.toggle-spine-text'));
     const anyClosed = Array.from(drawers).some((d) => !d.open);
     drawers.forEach((d) => {
       d.open = anyClosed;
     });
     if (labelEl) {
-      labelEl.textContent = anyClosed ? 'Collapse Causal Analysis' : 'Expand Causal Analysis';
+      labelEl.textContent = anyClosed ? 'Collapse All' : 'Expand All';
     }
   };
+  window.toggleAllSpineDrawers = window.toggleAllCausalSpineDrawers;
 
   window.toggleCmeSpineQuizMode = function () {
     const spine = document.getElementById('lesson-chronology-spine');
@@ -1724,6 +1804,35 @@ if (typeof window !== 'undefined') {
       btn.innerHTML = anyUnrevealed
         ? '<i class="fa-solid fa-eye-slash"></i> Hide All'
         : '<i class="fa-solid fa-eye"></i> Reveal All';
+    }
+  };
+
+  window.openSpineTabAndScroll = function () {
+    const launchpad = document.querySelector('.lesson-launchpad-container');
+    if (launchpad) {
+      const drawer = launchpad.querySelector('.lesson-launchpad-drawer');
+      const allTabs = launchpad.querySelectorAll('.launchpad-tab-btn');
+      const allPanels = launchpad.querySelectorAll('.launchpad-panel');
+      const closeBtn = launchpad.querySelector('.launchpad-close-btn');
+
+      if (drawer) drawer.style.display = 'block';
+      allTabs.forEach((t) => t.classList.toggle('active', t.dataset.tab === 'spine'));
+      allPanels.forEach((p) => {
+        p.style.display = p.dataset.panel === 'spine' ? 'block' : 'none';
+      });
+      if (closeBtn) closeBtn.style.display = 'inline-flex';
+    }
+
+    const spine = document.getElementById('lesson-chronology-spine');
+    if (spine) {
+      setTimeout(() => {
+        spine.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        spine.style.transition = 'all 0.4s ease';
+        spine.style.boxShadow = '0 0 0 4px #0284c7, 0 8px 24px rgba(2,132,199,0.25)';
+        setTimeout(() => {
+          spine.style.boxShadow = '';
+        }, 2500);
+      }, 80);
     }
   };
 }
@@ -2496,6 +2605,20 @@ export function renderLessonLaunchpad({
             .join('')}
         </div>
         <div class="launchpad-actions-group">
+          ${
+            hasSpine
+              ? `
+          <button type="button"
+            class="btn-causal-spine-jump launchpad-jump-spine-btn"
+            onclick="window.openSpineTabAndScroll();"
+            title="Jump directly to Chronology &amp; Causal Domino Spine"
+            style="background: #e0f2fe; color: #0284c7; border: 1.2px solid #bae6fd; font-weight: 700; font-size: 0.76rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+            <i class="fa-solid fa-timeline"></i>
+            <span>Causal Spine &darr;</span>
+          </button>
+          `
+              : ''
+          }
           <button type="button"
             class="launchpad-start-reading-btn"
             data-action="launchpad-start-reading"
@@ -3263,37 +3386,9 @@ export function renderLesson(lesson) {
     window.currentUnitId;
   const isEarlyModern = unitId === 'early_modern_world';
   const isCme = unitId === 'cme_new';
-  const isGCSE =
-    unitId === 'weimar_nazi_germany' ||
-    unitId === 'cme_new' ||
-    unitId === 'usa' ||
-    unitId === 'eee' ||
-    unitId === 'edexcel_medicine' ||
-    activeUnit.isGCSE ||
-    false;
-  const isKs2 =
-    unitId === 'ks2_ww2' ||
-    (typeof unitId === 'string' && unitId.startsWith('ks2_')) ||
-    Boolean(window.currentUnitData && window.currentUnitData.is_ks2) ||
-    Boolean(window.currentUnitId && window.currentUnitId.startsWith('ks2_')) ||
-    Boolean(
-      typeof appStore !== 'undefined' &&
-      appStore.state &&
-      appStore.state.activeUnitData &&
-      appStore.state.activeUnitData.is_ks2,
-    );
-  const isKs3 =
-    !isKs2 &&
-    (unitId === 'early_modern_world' ||
-      unitId === 'water_and_sanitation' ||
-      unitId === 'great_war' ||
-      unitId === 'great_war_part2' ||
-      unitId === 'medieval_england' ||
-      unitId === 'industrialisation_and_empire' ||
-      unitId === 'first_british_empire' ||
-      unitId === 'monarchy_religion_power' ||
-      activeUnit.is_ks3 ||
-      !isGCSE);
+  const isKs2 = checkIsKs2(unitId, activeUnit);
+  const isKs3 = checkIsKs3(unitId, activeUnit);
+  const isGCSE = checkIsGCSE(unitId, activeUnit);
   const hasInlineNarrativeSources =
     (Array.isArray(lesson.narrative_blocks) &&
       lesson.narrative_blocks.some((b) => b && (b.source || b.sources))) ||
@@ -3533,9 +3628,7 @@ export function renderLesson(lesson) {
     typeof document !== 'undefined' && document.body.classList.contains('whiteboard-mode-active');
   const hasActiveTool = isTeacherActive || isWbActive;
 
-  const isGCSEUnit = ['cme_new', 'edexcel_medicine', 'eee', 'weimar_nazi_germany', 'usa'].includes(
-    unitId || (typeof window !== 'undefined' && window.currentUnitId),
-  );
+  const isGCSEUnit = isGCSE;
   let stickyCountLabel = '';
   if (allUnitLessons.length > 0) {
     stickyCountLabel = isGCSEUnit
@@ -3594,6 +3687,7 @@ export function renderLesson(lesson) {
                   ? `<button class="btn btn-note-scaffold-jump" onclick="const sc = document.getElementById('lesson-note-scaffold'); if(sc) { sc.open = true; sc.scrollIntoView({ behavior: 'smooth' }); }" style="padding: 6px 12px; font-size: 0.88rem; background: #f0fdf4; color: #166534; border: 1.5px solid #86efac; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Active Lesson Task"><i class="fa-solid fa-pen-to-square" style="color: #16a34a;"></i> Core Lesson Task</button>`
                   : ''
               }
+
             `
           }
         </div>
@@ -3702,7 +3796,11 @@ export function renderLesson(lesson) {
             ? 'Edexcel Paper 2 &bull; Specification Anchor'
             : unitId === 'weimar_nazi_germany'
               ? 'Edexcel Paper 3 &bull; Specification Anchor'
-              : 'Edexcel GCSE &bull; Specification Anchor';
+              : isKs3
+                ? 'Key Stage 3 &bull; Curriculum Anchor'
+                : isKs2
+                  ? 'Key Stage 2 &bull; Curriculum Anchor'
+                  : 'Edexcel GCSE &bull; Specification Anchor';
 
     html += `
       <div class="gcse-spec-anchor-strip">
@@ -3886,8 +3984,14 @@ export function renderLesson(lesson) {
         const sourceText = (source.text || source.content || '').trim();
         let contextText = source.source_context || source.context || '';
         let hingeText = source.hinge_question || source.question || '';
-        if (/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(contextText)) {
-          const parts = contextText.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
+        if (
+          /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(
+            contextText,
+          )
+        ) {
+          const parts = contextText.split(
+            /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i,
+          );
           contextText = parts[0].trim();
           if (!hingeText && parts[1]) {
             hingeText = parts[1].trim();
@@ -4008,16 +4112,29 @@ export function renderLesson(lesson) {
               ${
                 source.question || source.enquiry_question || source.how_useful_question
                   ? (() => {
-                      const qPrompt = source.question || source.enquiry_question || source.how_useful_question;
-                      const dynamicBadge = source.question_badge || source.question_type || (() => {
-                        if (/what can you infer|what does .* reveal|what does .* show/i.test(qPrompt)) return 'Source Inference';
-                        if (/why was|why did|purpose|intended|motive|propaganda/i.test(qPrompt)) return 'Author’s Purpose';
-                        if (/differ|support|challenge|corroborat|contrast|counter/i.test(qPrompt)) return 'Cross-Referencing';
-                        if (/reliable|convincing|trustworthy|provenance|weight/i.test(qPrompt)) return 'Reliability & Provenance';
-                        if (/how useful/i.test(qPrompt)) return 'Source Utility';
-                        if (/significance|commemorat|myth/i.test(qPrompt)) return 'Historical Significance';
-                        return 'Enquiry Question';
-                      })();
+                      const qPrompt =
+                        source.question || source.enquiry_question || source.how_useful_question;
+                      const dynamicBadge =
+                        source.question_badge ||
+                        source.question_type ||
+                        (() => {
+                          if (
+                            /what can you infer|what does .* reveal|what does .* show/i.test(
+                              qPrompt,
+                            )
+                          )
+                            return 'Source Inference';
+                          if (/why was|why did|purpose|intended|motive|propaganda/i.test(qPrompt))
+                            return 'Author’s Purpose';
+                          if (/differ|support|challenge|corroborat|contrast|counter/i.test(qPrompt))
+                            return 'Cross-Referencing';
+                          if (/reliable|convincing|trustworthy|provenance|weight/i.test(qPrompt))
+                            return 'Reliability & Provenance';
+                          if (/how useful/i.test(qPrompt)) return 'Source Utility';
+                          if (/significance|commemorat|myth/i.test(qPrompt))
+                            return 'Historical Significance';
+                          return 'Enquiry Question';
+                        })();
 
                       return `
                 <details class="source-enquiry-reveal">
@@ -4042,7 +4159,9 @@ export function renderLesson(lesson) {
                         <div style="font-size: 0.90rem; color: #1e293b; line-height: 1.6;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.model_answer) : source.model_answer}</div>
                       </div>
                     `
-                        : source.discussion_ideas && Array.isArray(source.discussion_ideas) && source.discussion_ideas.length > 0
+                        : source.discussion_ideas &&
+                            Array.isArray(source.discussion_ideas) &&
+                            source.discussion_ideas.length > 0
                           ? `
                       <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
                         <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Disciplinary Guidance:</strong>
@@ -5067,8 +5186,11 @@ export function renderLesson(lesson) {
             </span>
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
               ${pageAnchor ? `<span style="font-size: 0.74rem; font-weight: 700; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; padding: 2px 8px; border-radius: 12px;"><i class="fa-solid fa-book-open" style="color: #0284c7; margin-right: 4px;"></i> Workbook: ${pageAnchor.label}</span>` : ''}
-              <button type="button" class="btn btn-toggle-all-spine-stages" onclick="event.stopPropagation(); window.toggleAllSpineDrawers(this);" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #0369a1; background: #ffffff; border: 1.2px solid #bae6fd; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Expand or collapse all 5 stage drawers at once">
-                <i class="fa-solid fa-arrows-up-down" style="font-size: 0.65rem;"></i> <span class="toggle-spine-text">Expand All</span>
+              <button type="button" id="btn-toggle-all-causal" class="btn btn-toggle-all-spine-stages" onclick="event.stopPropagation(); window.toggleAllCausalSpineDrawers(this);" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #0369a1; background: #ffffff; border: 1.2px solid #bae6fd; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Expand or collapse all 5 stage drawers at once">
+                <i class="fa-solid fa-arrows-up-down" style="font-size: 0.65rem;"></i> <span id="toggle-causal-label" class="toggle-spine-text">Expand All</span>
+              </button>
+              <button type="button" class="btn btn-cme-quiz-mode" id="btn-cme-quiz-mode" onclick="event.stopPropagation(); window.toggleCmeSpineQuizMode();" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #854d0e; background: #fefce8; border: 1.2px solid #fef08a; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Test your memory: blank out motives &amp; results and click to reveal">
+                <i class="fa-solid fa-mask" style="font-size: 0.65rem;"></i> <span id="cme-quiz-label">Self-Quiz Mode</span>
               </button>
               <button type="button" class="btn btn-copy-spine-notes" onclick="event.stopPropagation(); window.copyDominoNotes();" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #475569; background: #ffffff; border: 1.2px solid #cbd5e1; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Copy all milestone notes to clipboard">
                 <i class="fa-solid fa-copy" style="font-size: 0.65rem;"></i> <span>Copy Notes</span>
@@ -5076,11 +5198,24 @@ export function renderLesson(lesson) {
               <span style="font-size: 0.74rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
             </div>
           </div>
+
+          <!-- Active Recall Subbar -->
+          <div id="cme-quiz-subbar" style="display: none; background: #fefce8; border-bottom: 1px solid #fef08a; padding: 7px 18px; font-size: 0.8rem; font-weight: 700; color: #854d0e; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+            <span style="display: flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-circle-question" style="color: #eab308;"></i> <strong>Active Recall Self-Quiz Mode Active:</strong> Motives and consequences are masked. Click any dashed box to test your recall!
+            </span>
+            <button type="button" id="btn-reveal-all-quiz" onclick="window.revealAllCmeQuizBlanks();" style="padding: 3px 10px; font-size: 0.72rem; font-weight: 800; background: #854d0e; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-eye"></i> Reveal All
+            </button>
+          </div>
+
           <div class="cme-chronology-spine-grid" style="--spine-cols: ${spineItems.length};">
             ${spineItems
               .map((item, idx) => {
                 const isLast = idx === spineItems.length - 1;
-                const displayDate = item.date ? item.date.replace('October–November', 'Oct–Nov') : '';
+                const displayDate = item.date
+                  ? item.date.replace('October–November', 'Oct–Nov')
+                  : '';
                 return `
               <div class="cme-spine-card" data-stage="${item.step}">
                 ${
@@ -5133,7 +5268,7 @@ export function renderLesson(lesson) {
                   ${
                     item.desc
                       ? `
-                  <details class="cme-domino-step cme-step-action">
+                  <details class="cme-domino-step cme-step-action cme-causal-drawer">
                     <summary>
                       <span class="cme-step-summary-title">
                         <i class="fa-solid fa-play" style="font-size: 0.55rem;"></i> 1. Action / Trigger
@@ -5151,7 +5286,7 @@ export function renderLesson(lesson) {
                   ${
                     item.because
                       ? `
-                  <details class="cme-domino-step cme-step-motive">
+                  <details class="cme-domino-step cme-step-motive cme-causal-drawer">
                     <summary>
                       <span class="cme-step-summary-title">
                         <i class="fa-solid fa-lightbulb" style="font-size: 0.58rem;"></i> 2. Motive (Why?)
@@ -5159,7 +5294,10 @@ export function renderLesson(lesson) {
                       <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.60rem;"></i>
                     </summary>
                     <div class="cme-domino-step-content cme-motive-content">
-                      ${item.because}
+                      <div class="cme-quiz-target" data-quiz-type="motive" onclick="window.revealQuizTarget(this, event)">
+                        <span class="cme-quiz-mask"><i class="fa-solid fa-eye"></i> Click to reveal Motive...</span>
+                        <span class="cme-quiz-content">${item.because}</span>
+                      </div>
                     </div>
                   </details>`
                       : ''
@@ -5169,7 +5307,7 @@ export function renderLesson(lesson) {
                   ${
                     item.therefore
                       ? `
-                  <details class="cme-domino-step cme-step-outcome">
+                  <details class="cme-domino-step cme-step-outcome cme-causal-drawer">
                     <summary>
                       <span class="cme-step-summary-title">
                         <i class="fa-solid fa-bolt" style="font-size: 0.58rem;"></i> 3. Outcome / Result
@@ -5177,7 +5315,10 @@ export function renderLesson(lesson) {
                       <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.60rem;"></i>
                     </summary>
                     <div class="cme-domino-step-content cme-outcome-content">
-                      ${item.therefore}
+                      <div class="cme-quiz-target" data-quiz-type="result" onclick="window.revealQuizTarget(this, event)">
+                        <span class="cme-quiz-mask"><i class="fa-solid fa-eye"></i> Click to reveal Result...</span>
+                        <span class="cme-quiz-content">${item.therefore}</span>
+                      </div>
                     </div>
                   </details>`
                       : ''
@@ -5187,7 +5328,7 @@ export function renderLesson(lesson) {
                   ${
                     item.connective && item.connective !== item.therefore
                       ? `
-                  <details class="cme-domino-step cme-step-chain">
+                  <details class="cme-domino-step cme-step-chain cme-causal-drawer">
                     <summary>
                       <span class="cme-step-summary-title">
                         <i class="fa-solid fa-arrow-right" style="font-size: 0.58rem;"></i> 4. Domino Link &rarr;
@@ -5832,7 +5973,11 @@ export function renderLesson(lesson) {
                 const limStarter = lim.starter || lim.sentence_starter || '';
                 const synthesisPrompt =
                   task.synthesis_prompt ||
-                  'Write a balanced GCSE exam paragraph evaluating both sides.';
+                  (isKs3
+                    ? 'Write a balanced analytical paragraph evaluating both sides.'
+                    : isKs2
+                      ? 'Write your historian explanation evaluating both sides.'
+                      : 'Write a balanced GCSE exam paragraph evaluating both sides.');
                 const connectives = task.synthesis_connectives || [
                   'Although...',
                   'However, in practical terms...',
@@ -5845,7 +5990,7 @@ export function renderLesson(lesson) {
                   <div class="task-box two-sided-argument-interactive" style="margin-bottom: 16px; background: #ffffff; padding: 16px; border-radius: 8px; border: 2px solid #0f766e; box-shadow: 0 3px 10px rgba(15, 118, 110, 0.08);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ccfbf1; padding-bottom: 8px;">
                       <h4 style="margin: 0; color: #0f766e; font-size: 1.1rem;"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> ${qNumPrefix}${task.topic || task.text || 'Two-Sided Argument Analysis'}</h4>
-                      <span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">GCSE Two-Sided Argument</span>
+                      <span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">${isKs3 ? 'KS3 Two-Sided Argument' : isKs2 ? 'Historian Argument' : 'GCSE Two-Sided Argument'}</span>
                     </div>
                     ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 14px;">${task.instruction}</p>` : ''}
                     
@@ -5873,10 +6018,10 @@ export function renderLesson(lesson) {
                       </div>
                     </div>
 
-                    <!-- Synthesis: GCSE Paragraph Builder -->
+                    <!-- Synthesis: Paragraph Builder -->
                     <div style="background: #fffbeb; border: 1.5px solid #fcd34d; border-radius: 6px; padding: 12px;">
                       <h5 style="margin: 0 0 6px 0; color: #92400e; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
-                        <i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis
+                        <i class="fa-solid fa-pen-nib"></i> ${isKs3 ? 'Paragraph Builder: Evaluative Synthesis' : isKs2 ? 'Historian Paragraph Builder' : 'GCSE Paragraph Builder: Evaluative Synthesis'}
                       </h5>
                       <p style="font-size: 0.9rem; color: #78350f; font-weight: 600; margin: 0 0 8px 0;">${synthesisPrompt}</p>
                       
@@ -5885,7 +6030,7 @@ export function renderLesson(lesson) {
                         ${connectives.map((c) => `<span style="background: #ffffff; border: 1px solid #fde68a; color: #b45309; padding: 2px 7px; border-radius: 10px; font-size: 0.78rem; font-weight: 600;">${c}</span>`).join('')}
                       </div>
 
-                      <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 80px; padding: 8px; border: 1px solid #fde68a; border-radius: 5px; font-size: 0.9rem; font-family: inherit; resize: vertical;" placeholder="Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph..."></textarea>
+                      <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 80px; padding: 8px; border: 1px solid #fde68a; border-radius: 5px; font-size: 0.9rem; font-family: inherit; resize: vertical;" placeholder="${isKs3 ? 'Combine the evidence and counter-evidence above to write your complex, balanced analytical paragraph...' : isKs2 ? 'Write your historian answer using the evidence above...' : 'Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph...'}"></textarea>
 
                       ${
                         modelAnswer
@@ -6092,11 +6237,17 @@ export function renderLesson(lesson) {
 
                      let contextText = img.image_context || '';
                      let hingeText = '';
-                     if (/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(contextText)) {
-                        const parts = contextText.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
-                        contextText = parts[0].trim();
-                        hingeText = parts[1].trim();
-                      } else if (contextText.includes('Hinge Question:')) {
+                     if (
+                       /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(
+                         contextText,
+                       )
+                     ) {
+                       const parts = contextText.split(
+                         /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i,
+                       );
+                       contextText = parts[0].trim();
+                       hingeText = parts[1].trim();
+                     } else if (contextText.includes('Hinge Question:')) {
                        const parts = contextText.split('Hinge Question:');
                        contextText = parts[0].trim();
                        hingeText = parts[1].trim();
@@ -6307,8 +6458,14 @@ export function renderLesson(lesson) {
 
         let rawContextVal = rawSource.source_context || rawSource.context || '';
         let cleanContextVal = rawContextVal;
-        if (/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(cleanContextVal)) {
-          const parts = cleanContextVal.split(/\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i);
+        if (
+          /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i.test(
+            cleanContextVal,
+          )
+        ) {
+          const parts = cleanContextVal.split(
+            /\*{0,2}(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\*{0,2}/i,
+          );
           cleanContextVal = parts[0].trim();
           if (
             !rawSource.hinge_question &&
@@ -6323,9 +6480,17 @@ export function renderLesson(lesson) {
         // Pre-build utility enquiry / guidance card if present
         const utilityCardHtml = (() => {
           const utilityObj = rawSource.utility_enquiry || rawSource.utilityEnquiry;
-          if (utilityObj && (utilityObj.is_exam_rubric === true || (!rawSource.model_answer && (utilityObj.bullet_points || utilityObj.key_points)))) {
+          if (
+            utilityObj &&
+            (utilityObj.is_exam_rubric === true ||
+              (!rawSource.model_answer && (utilityObj.bullet_points || utilityObj.key_points)))
+          ) {
             const uPrompt =
-              utilityObj.question || utilityObj.prompt || utilityObj.enquiry || rawSource.question || '';
+              utilityObj.question ||
+              utilityObj.prompt ||
+              utilityObj.enquiry ||
+              rawSource.question ||
+              '';
 
             // Check if explicit exam rubric is requested (e.g. designated mock exam units)
             const isExamRubric = utilityObj.is_exam_rubric === true;
@@ -6335,7 +6500,10 @@ export function renderLesson(lesson) {
                 utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
               const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
               const uContext =
-                utilityObj.context_limitations || utilityObj.limitations || utilityObj.context || '';
+                utilityObj.context_limitations ||
+                utilityObj.limitations ||
+                utilityObj.context ||
+                '';
 
               const isMedicineWesternFront =
                 (unitId === 'edexcel_medicine' || window.currentUnitId === 'edexcel_medicine') &&
@@ -6344,9 +6512,14 @@ export function renderLesson(lesson) {
                 utilityObj.exam_label ||
                 (isMedicineWesternFront
                   ? 'Edexcel Paper 1 &bull; Q2(a) Source Utility Enquiry [8 Marks]'
-                  : unitId === 'weimar_nazi_germany' || window.currentUnitId === 'weimar_nazi_germany'
+                  : unitId === 'weimar_nazi_germany' ||
+                      window.currentUnitId === 'weimar_nazi_germany'
                     ? 'Edexcel Paper 3 &bull; Q3(a) Source Utility Enquiry [8 Marks]'
-                    : 'GCSE Source Utility Enquiry [8 Marks]');
+                    : isKs3
+                      ? 'KS3 Primary Source Enquiry'
+                      : isKs2
+                        ? 'Key Stage 2 Historian Enquiry'
+                        : 'GCSE Source Utility Enquiry [8 Marks]');
 
               return `
                 <details class="source-enquiry-reveal edexcel-paper3-utility-card">
@@ -6374,44 +6547,74 @@ export function renderLesson(lesson) {
             }
 
             // DEFAULT CHILD-FRIENDLY MODEL: 2 to 3 direct bullet points
-            let points = utilityObj.bullet_points || utilityObj.key_points || utilityObj.model_answers || utilityObj.answers;
+            let points =
+              utilityObj.bullet_points ||
+              utilityObj.key_points ||
+              utilityObj.model_answers ||
+              utilityObj.answers;
             if (!points || !Array.isArray(points) || points.length === 0) {
-              const uInferences = utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
+              const uInferences =
+                utilityObj.content_inferences || utilityObj.inferences || utilityObj.content || '';
               const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
-              const uContext = utilityObj.context_limitations || utilityObj.limitations || utilityObj.context || '';
+              const uContext =
+                utilityObj.context_limitations ||
+                utilityObj.limitations ||
+                utilityObj.context ||
+                '';
               points = [];
               if (uInferences) points.push({ label: 'What the Source Shows', text: uInferences });
               if (uProv) points.push({ label: 'Historical Meaning', text: uProv });
-              if (uContext && !uContext.toLowerCase().includes('does not show')) points.push({ label: 'Deeper Context', text: uContext });
+              if (uContext && !uContext.toLowerCase().includes('does not show'))
+                points.push({ label: 'Deeper Context', text: uContext });
             }
 
-            const renderedBullets = points.map(pt => {
-              let lbl = '';
-              let txt = '';
-              if (typeof pt === 'string') {
-                txt = pt;
-              } else if (pt && typeof pt === 'object') {
-                if (pt.label) {
-                  const cleanLabel = (pt.label || '').toLowerCase();
-                  if (!['what the source shows', 'historical context', 'key takeaway', 'takeaway', 'point 1', 'point 2', 'point 3'].includes(cleanLabel)) {
-                    lbl = `<strong style="color: #166534;">${pt.label}:</strong> `;
+            const renderedBullets = points
+              .map((pt) => {
+                let lbl = '';
+                let txt = '';
+                if (typeof pt === 'string') {
+                  txt = pt;
+                } else if (pt && typeof pt === 'object') {
+                  if (pt.label) {
+                    const cleanLabel = (pt.label || '').toLowerCase();
+                    if (
+                      ![
+                        'what the source shows',
+                        'historical context',
+                        'key takeaway',
+                        'takeaway',
+                        'point 1',
+                        'point 2',
+                        'point 3',
+                      ].includes(cleanLabel)
+                    ) {
+                      lbl = `<strong style="color: #166534;">${pt.label}:</strong> `;
+                    }
                   }
+                  txt = pt.text || pt.content || pt.answer || '';
                 }
-                txt = pt.text || pt.content || pt.answer || '';
-              }
-              const formattedTxt = typeof window !== 'undefined' && window.formatBold ? window.formatBold(txt) : txt;
-              return `<li style="margin-bottom: 8px; line-height: 1.55; color: #1e293b; font-size: 0.88rem;">${lbl}${formattedTxt}</li>`;
-            }).join('');
+                const formattedTxt =
+                  typeof window !== 'undefined' && window.formatBold ? window.formatBold(txt) : txt;
+                return `<li style="margin-bottom: 8px; line-height: 1.55; color: #1e293b; font-size: 0.88rem;">${lbl}${formattedTxt}</li>`;
+              })
+              .join('');
 
-            const dynamicBadge = rawSource.question_badge || rawSource.question_type || (() => {
-              if (/what can you infer|what does .* reveal|what does .* show/i.test(uPrompt)) return 'Source Inference';
-              if (/why was|why did|purpose|intended|motive|propaganda/i.test(uPrompt)) return 'Author’s Purpose';
-              if (/differ|support|challenge|corroborat|contrast|counter/i.test(uPrompt)) return 'Cross-Referencing';
-              if (/reliable|convincing|trustworthy|provenance|weight/i.test(uPrompt)) return 'Reliability & Provenance';
-              if (/how useful/i.test(uPrompt)) return 'Source Utility';
-              if (/significance|commemorat|myth/i.test(uPrompt)) return 'Historical Significance';
-              return 'Enquiry Question';
-            })();
+            const dynamicBadge =
+              rawSource.question_badge ||
+              rawSource.question_type ||
+              (() => {
+                if (/what can you infer|what does .* reveal|what does .* show/i.test(uPrompt))
+                  return 'Source Inference';
+                if (/why was|why did|purpose|intended|motive|propaganda/i.test(uPrompt))
+                  return 'Author’s Purpose';
+                if (/differ|support|challenge|corroborat|contrast|counter/i.test(uPrompt))
+                  return 'Cross-Referencing';
+                if (/reliable|convincing|trustworthy|provenance|weight/i.test(uPrompt))
+                  return 'Reliability & Provenance';
+                if (/how useful/i.test(uPrompt)) return 'Source Utility';
+                if (/significance|commemorat|myth/i.test(uPrompt)) return 'Historical Significance';
+                return 'Enquiry Question';
+              })();
 
             return `
               <details class="source-enquiry-reveal">
@@ -6437,17 +6640,29 @@ export function renderLesson(lesson) {
                 </div>
               </details>
             `;
-          } else if (rawSource.question || rawSource.enquiry_question || rawSource.how_useful_question) {
-            const qPrompt = rawSource.question || rawSource.enquiry_question || rawSource.how_useful_question;
-            const dynamicBadge = rawSource.question_badge || rawSource.question_type || (() => {
-              if (/what can you infer|what does .* reveal|what does .* show/i.test(qPrompt)) return 'Source Inference';
-              if (/why was|why did|purpose|intended|motive|propaganda/i.test(qPrompt)) return 'Author’s Purpose';
-              if (/differ|support|challenge|corroborat|contrast|counter/i.test(qPrompt)) return 'Cross-Referencing';
-              if (/reliable|convincing|trustworthy|provenance|weight/i.test(qPrompt)) return 'Reliability & Provenance';
-              if (/how useful/i.test(qPrompt)) return 'Source Utility';
-              if (/significance|commemorat|myth/i.test(qPrompt)) return 'Historical Significance';
-              return 'Enquiry Question';
-            })();
+          } else if (
+            rawSource.question ||
+            rawSource.enquiry_question ||
+            rawSource.how_useful_question
+          ) {
+            const qPrompt =
+              rawSource.question || rawSource.enquiry_question || rawSource.how_useful_question;
+            const dynamicBadge =
+              rawSource.question_badge ||
+              rawSource.question_type ||
+              (() => {
+                if (/what can you infer|what does .* reveal|what does .* show/i.test(qPrompt))
+                  return 'Source Inference';
+                if (/why was|why did|purpose|intended|motive|propaganda/i.test(qPrompt))
+                  return 'Author’s Purpose';
+                if (/differ|support|challenge|corroborat|contrast|counter/i.test(qPrompt))
+                  return 'Cross-Referencing';
+                if (/reliable|convincing|trustworthy|provenance|weight/i.test(qPrompt))
+                  return 'Reliability & Provenance';
+                if (/how useful/i.test(qPrompt)) return 'Source Utility';
+                if (/significance|commemorat|myth/i.test(qPrompt)) return 'Historical Significance';
+                return 'Enquiry Question';
+              })();
 
             return `
               <details class="source-enquiry-reveal">
@@ -6472,7 +6687,9 @@ export function renderLesson(lesson) {
                       <div style="font-size: 0.90rem; color: #1e293b; line-height: 1.6;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.model_answer) : rawSource.model_answer}</div>
                     </div>
                   `
-                      : rawSource.discussion_ideas && Array.isArray(rawSource.discussion_ideas) && rawSource.discussion_ideas.length > 0
+                      : rawSource.discussion_ideas &&
+                          Array.isArray(rawSource.discussion_ideas) &&
+                          rawSource.discussion_ideas.length > 0
                         ? `
                     <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
                       <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Disciplinary Guidance:</strong>
@@ -6492,7 +6709,10 @@ export function renderLesson(lesson) {
 
         const hasUtilityCard = Boolean(utilityCardHtml);
 
-        const orientingIntro = rawSource.intro || rawSource.caption || (cleanContextVal ? cleanContextVal.split('.')[0] + '.' : '');
+        const orientingIntro =
+          rawSource.intro ||
+          rawSource.caption ||
+          (cleanContextVal ? cleanContextVal.split('.')[0] + '.' : '');
 
         let sourceBodyHtml = '';
         if (isWrittenSource) {
@@ -6762,10 +6982,7 @@ export function renderLesson(lesson) {
           source_context: block.image_context || '',
           question: block.source_question || '',
         });
-      } else if (
-        Array.isArray(lesson.sources) &&
-        lesson.sources.length > 0
-      ) {
+      } else if (Array.isArray(lesson.sources) && lesson.sources.length > 0) {
         if (lesson.sources[index]) {
           rawSourcesList.push(lesson.sources[index]);
         }
@@ -6774,11 +6991,7 @@ export function renderLesson(lesson) {
           index === lesson.narrative_blocks.length - 1 &&
           lesson.sources.length > lesson.narrative_blocks.length
         ) {
-          for (
-            let extra = lesson.narrative_blocks.length;
-            extra < lesson.sources.length;
-            extra++
-          ) {
+          for (let extra = lesson.narrative_blocks.length; extra < lesson.sources.length; extra++) {
             rawSourcesList.push(lesson.sources[extra]);
           }
         }
@@ -6801,9 +7014,7 @@ export function renderLesson(lesson) {
         unitId === 'first_british_empire';
 
       const hasPureVisual = Boolean(block.image && !block.image_context);
-      const isReversed = hasPureVisual
-        ? visualPlateCounter++ % 2 === 1
-        : index % 2 === 1;
+      const isReversed = hasPureVisual ? visualPlateCounter++ % 2 === 1 : index % 2 === 1;
 
       const narrativeChunkHtml = `
               <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; flex-direction: column; margin-bottom: ${hasPureVisual ? '0' : '15px'}; padding: 16px 18px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05); flex: 1 1 58%; min-width: 0;">
@@ -7270,7 +7481,11 @@ export function renderLesson(lesson) {
             const limStarter = lim.starter || lim.sentence_starter || '';
             const synthesisPrompt =
               task.synthesis_prompt ||
-              'Write a balanced GCSE exam paragraph evaluating both sides.';
+              (isKs3
+                ? 'Write a balanced analytical paragraph evaluating both sides.'
+                : isKs2
+                  ? 'Write your historian explanation evaluating both sides.'
+                  : 'Write a balanced GCSE exam paragraph evaluating both sides.');
             const connectives = task.synthesis_connectives || [
               'Although...',
               'However, in practical terms...',
@@ -7283,7 +7498,7 @@ export function renderLesson(lesson) {
               <div class="task-box two-sided-argument-interactive" style="margin-bottom: 25px; background: #ffffff; padding: 20px; border-radius: 10px; border: 2px solid #0f766e; box-shadow: 0 4px 12px rgba(15, 118, 110, 0.08);">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px solid #ccfbf1; padding-bottom: 10px;">
                   <h4 style="margin: 0; color: #0f766e; font-size: 1.15rem;"><i class="fa-solid fa-scale-balanced" style="margin-right: 8px;"></i> ${qNumPrefix}${task.topic || task.text || 'Two-Sided Argument Analysis'}</h4>
-                  <span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]</span>
+                  <span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> ${isKs3 ? 'Target: Key Stage 3 Evaluative Essay' : isKs2 ? 'Target: Key Stage 2 Historian Enquiry' : 'Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]'}</span>
                 </div>
                 ${task.instruction ? `<p style="font-size: 0.95rem; color: #475569; font-style: italic; margin-top: 0; margin-bottom: 15px;">${task.instruction}</p>` : ''}
                 
@@ -7311,10 +7526,10 @@ export function renderLesson(lesson) {
                   </div>
                 </div>
 
-                <!-- Synthesis: GCSE Paragraph Builder -->
+                <!-- Synthesis: Paragraph Builder -->
                 <div style="background: #fffbeb; border: 1.5px solid #fcd34d; border-radius: 8px; padding: 14px;">
                   <h5 style="margin: 0 0 8px 0; color: #92400e; font-size: 1rem; display: flex; align-items: center; gap: 6px;">
-                    <i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis
+                    <i class="fa-solid fa-pen-nib"></i> ${isKs3 ? 'Paragraph Builder: Evaluative Synthesis' : isKs2 ? 'Historian Paragraph Builder' : 'GCSE Paragraph Builder: Evaluative Synthesis'}
                   </h5>
                   <p style="font-size: 0.92rem; color: #78350f; font-weight: 600; margin: 0 0 10px 0;">${synthesisPrompt}</p>
                   
@@ -7323,13 +7538,13 @@ export function renderLesson(lesson) {
                     ${connectives.map((c) => `<button type="button" class="connective-chip" data-connective="${c.replace(/"/g, '&quot;')}" style="background: #ffffff; border: 1px solid #fde68a; color: #b45309; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease;" title="Click to insert at cursor">${c}</button>`).join('')}
                   </div>
 
-                  <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 90px; padding: 10px; border: 1px solid #fde68a; border-radius: 6px; font-size: 0.92rem; font-family: inherit; resize: vertical;" placeholder="Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph..."></textarea>
+                  <textarea class="interactive-textarea" style="width: 100%; box-sizing: border-box; min-height: 90px; padding: 10px; border: 1px solid #fde68a; border-radius: 6px; font-size: 0.92rem; font-family: inherit; resize: vertical;" placeholder="${isKs3 ? 'Combine the evidence and counter-evidence above to write your complex, balanced analytical paragraph...' : isKs2 ? 'Write your historian answer using the evidence above...' : 'Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph...'}"></textarea>
 
                   ${
                     modelAnswer
                       ? `
                     <details class="model-paragraph-reveal" style="margin-top: 12px; border: 1px dashed #d97706; border-radius: 6px; padding: 8px 12px; background: #fffbeb;">
-                      <summary style="cursor: pointer; color: #b45309; font-weight: 700; font-size: 0.88rem; outline: none; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-eye"></i> [ Show Examiner-Grade Model Paragraph ]</summary>
+                      <summary style="cursor: pointer; color: #b45309; font-weight: 700; font-size: 0.88rem; outline: none; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-eye"></i> ${isKs2 ? '[ Show Model Historian Answer ]' : isKs3 ? '[ Show Model Analytical Response ]' : '[ Show Examiner-Grade Model Paragraph ]'}</summary>
                       <div class="scaffold-box model-box" style="margin-top: 10px; padding: 12px 15px; background: #ffffff; border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.92rem; color: #78350f; line-height: 1.6; border: 1px solid #fde68a;">
                         ${modelAnswer}
                       </div>
@@ -7513,26 +7728,16 @@ export function renderLesson(lesson) {
                 : [];
             const words = scaf.word_bank || [];
             const criteria = scaf.evaluative_criteria || [];
-            const isKs2 =
-              window.currentUnitId === 'ks2_ww2' ||
-              (typeof unit !== 'undefined' && unit && (unit.is_ks2 || unit.id === 'ks2_ww2'));
-            const isKs3 =
-              !isKs2 &&
-              (window.currentUnitId === 'early_modern_world' ||
-                window.currentUnitId === 'water_and_sanitation' ||
-                window.currentUnitId === 'great_war' ||
-                window.currentUnitId === 'great_war_part2' ||
-                window.currentUnitId === 'medieval_england' ||
-                window.currentUnitId === 'industrialisation_and_empire' ||
-                (typeof unit !== 'undefined' && unit && unit.is_ks3));
-            const badgeText = isKs2
+            const isLocalKs2 = checkIsKs2(unitId, activeUnit);
+            const isLocalKs3 = checkIsKs3(unitId, activeUnit);
+            const badgeText = isLocalKs2
               ? 'Key Stage 2 Historian Challenge'
-              : isKs3
+              : isLocalKs3
                 ? 'KS3 Analytical Masterclass'
                 : 'GCSE Analytical Masterclass';
-            const vocabBadgeText = isKs2
+            const vocabBadgeText = isLocalKs2
               ? 'Historian Word Bank'
-              : isKs3
+              : isLocalKs3
                 ? 'Core Disciplinary Vocabulary'
                 : 'GCSE Key Vocabulary Bank';
             const questionTitle =
@@ -7895,25 +8100,55 @@ export function renderLesson(lesson) {
           `
           : '';
 
+        const isWorkbookTask =
+          isKs3 ||
+          (!lesson.exam_practice && !isGCSE) ||
+          lesson.tasks.some(
+            (t) =>
+              t.type === 'extended_writing' ||
+              (t.topic && (t.topic.includes('Marks') || t.topic.includes('Disciplinary'))) ||
+              (t.question && t.question.includes('Explain why')),
+          );
+
+        const tasksCategoryBadge = isWorkbookTask
+          ? `<span style="background: #dbeafe; color: #1e40af; padding: 1.5px 7px; border-radius: 4px; font-weight: 800;"><i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> PUPIL WORKBOOK ACTIVITY</span>`
+          : `<span style="background: #e0f2fe; color: #0369a1; padding: 1.5px 7px; border-radius: 4px; font-weight: 800;"><i class="fa-solid fa-pen-nib" style="margin-right: 4px;"></i> DIGITAL EXTENSION</span>`;
+
+        const tasksSecondaryBadge = isWorkbookTask
+          ? `RIGHT-HAND SPREAD (RECTO)`
+          : `DISCIPLINARY WRITING PRACTICE`;
+
+        const tasksHeading = isWorkbookTask
+          ? isKs3
+            ? 'Pupil Workbook Activity &bull; Key Stage 3 Disciplinary Writing'
+            : 'Pupil Workbook Activity &bull; Disciplinary Writing Practice'
+          : 'Disciplinary Writing Tasks &bull; Classroom Extension';
+
+        const tasksCountLabel = isWorkbookTask
+          ? `${lesson.tasks.length} Workbook Task${lesson.tasks.length > 1 ? 's' : ''}`
+          : `${lesson.tasks.length} Extension Task${lesson.tasks.length > 1 ? 's' : ''}`;
+
+        const iconBg = isWorkbookTask ? '#2563eb' : '#0284c7';
+
         htmlTasks += `
             <details class="lesson-tasks-accordion phase-card" open style="margin-top: 32px; border: 1.5px solid #cbd5e1; border-radius: 12px; background: #ffffff; overflow: hidden; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05); padding: 0;">
               <summary style="cursor: pointer; padding: 16px 22px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); display: flex; justify-content: space-between; align-items: center; user-select: none; border-bottom: 1px solid #e2e8f0; list-style: none; outline: none; transition: background 0.15s ease;">
                 <div style="display: flex; align-items: center; gap: 14px;">
-                  <div style="width: 38px; height: 38px; border-radius: 8px; background: #0284c7; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);">
+                  <div style="width: 38px; height: 38px; border-radius: 8px; background: ${iconBg}; color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);">
                     <i class="fa-solid fa-book-open"></i>
                   </div>
                   <div>
-                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #0369a1; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-                      <span style="background: #e0f2fe; color: #0369a1; padding: 1.5px 7px; border-radius: 4px; font-weight: 800;"><i class="fa-solid fa-pen-nib" style="margin-right: 4px;"></i> DIGITAL EXTENSION</span>
+                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                      ${tasksCategoryBadge}
                       <span style="color: #94a3b8;">&bull;</span>
-                      <span>DISCIPLINARY WRITING PRACTICE</span>
+                      <span>${tasksSecondaryBadge}</span>
                     </div>
-                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #0f172a;">Disciplinary Writing Tasks &bull; Classroom Extension</div>
+                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: #0f172a;">${tasksHeading}</div>
                   </div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 12px;">
-                  <span style="font-size: 0.78rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 14px; display: inline-flex; align-items: center; gap: 5px;">
-                    <i class="fa-solid fa-layer-group"></i> ${lesson.tasks.length} Extension Tasks
+                  <span style="font-size: 0.78rem; font-weight: 700; background: #dbeafe; color: #1e40af; padding: 4px 10px; border-radius: 14px; display: inline-flex; align-items: center; gap: 5px;">
+                    <i class="fa-solid fa-layer-group"></i> ${tasksCountLabel}
                   </span>
                   <span style="font-size: 0.85rem; font-weight: 700; color: #64748b; display: inline-flex; align-items: center; gap: 6px;">
                     <span>Click to Collapse/Expand</span>
@@ -7966,27 +8201,20 @@ export function renderLesson(lesson) {
           }
           if (task.type === 'two_sided_argument') {
             const hasTaskPrefix = task.topic && /^Task\s*\d+/i.test(task.topic);
-            const isKs2 =
-              window.currentUnitId === 'ks2_ww2' ||
-              (typeof unit !== 'undefined' && unit && (unit.is_ks2 || unit.id === 'ks2_ww2'));
-            const isKs3 =
-              !isKs2 &&
-              (window.currentUnitId === 'early_modern_world' ||
-                window.currentUnitId === 'water_and_sanitation' ||
-                window.currentUnitId === 'great_war' ||
-                window.currentUnitId === 'great_war_part2' ||
-                window.currentUnitId === 'medieval_england' ||
-                window.currentUnitId === 'industrialisation_and_empire' ||
-                (typeof unit !== 'undefined' && unit && unit.is_ks3));
+            const isLocalKs2 = checkIsKs2(unitId, activeUnit);
+            const isLocalKs3 = checkIsKs3(unitId, activeUnit);
             const qNumPrefix =
-              task.qNum && !hasTaskPrefix && !isKs3 && !isKs2 ? `Q${task.qNum}. ` : '';
+              task.qNum && !hasTaskPrefix && !isLocalKs3 && !isLocalKs2 ? `Q${task.qNum}. ` : '';
             const adv = task.advancement || {};
             const lim = task.limitations || {};
             const advTitle =
-              adv.title || (isKs2 ? 'Successes & Advances' : 'Advancement & Progress (Change)');
+              adv.title ||
+              (isLocalKs2 ? 'Successes & Advances' : 'Advancement & Progress (Change)');
             const limTitle =
               lim.title ||
-              (isKs2 ? 'Challenges & Obstacles' : 'Critical Limitations & Stagnation (Continuity)');
+              (isLocalKs2
+                ? 'Challenges & Obstacles'
+                : 'Critical Limitations & Stagnation (Continuity)');
             const advPoints = adv.points || [];
             const limPoints = lim.points || [];
             const advStarter = adv.starter || adv.sentence_starter || '';
@@ -7994,12 +8222,12 @@ export function renderLesson(lesson) {
             const synthesisPrompt =
               task.synthesis_prompt ||
               task.question ||
-              (isKs2
+              (isLocalKs2
                 ? 'Write your historian answer weighing up both sides.'
                 : 'Write a balanced analytical paragraph evaluating both sides.');
             const connectives =
               task.synthesis_connectives ||
-              (isKs2
+              (isLocalKs2
                 ? [
                     'On the one hand...',
                     'For example...',
@@ -8015,19 +8243,19 @@ export function renderLesson(lesson) {
                     'Overall, while...',
                   ]);
             const modelAnswer = task.model_answer || task.model || '';
-            const targetBadge = isKs2
+            const targetBadge = isLocalKs2
               ? `<span style="background: #1e3a8a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-award" style="color: #93c5fd;"></i> Key Stage 2 Historian Investigation</span>`
-              : isKs3
+              : isLocalKs3
                 ? `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bridge" style="color: #5eead4;"></i> Planning Bridge &bull; Evidence Extraction</span>`
                 : `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]</span>`;
-            const synthesisTitle = isKs2
+            const synthesisTitle = isLocalKs2
               ? `<i class="fa-solid fa-pen-nib"></i> Paragraph Builder: Historian Writing`
-              : isKs3
+              : isLocalKs3
                 ? `<i class="fa-solid fa-pen-nib"></i> Paragraph Builder &bull; Evaluative Synthesis`
                 : `<i class="fa-solid fa-pen-nib"></i> GCSE Paragraph Builder: Evaluative Synthesis`;
-            const placeholderText = isKs2
+            const placeholderText = isLocalKs2
               ? 'Use the clues and evidence above to write your historian explanation...'
-              : isKs3
+              : isLocalKs3
                 ? 'Combine the evidence and counter-evidence above to write your complex, balanced analytical paragraph...'
                 : 'Combine the evidence and counter-evidence above to write your complex, balanced GCSE exam paragraph...';
 
@@ -8155,7 +8383,7 @@ export function renderLesson(lesson) {
                     modelAnswer
                       ? `
                     <details class="model-paragraph-reveal" style="margin-top: 12px; border: 1px dashed #d97706; border-radius: 6px; padding: 8px 12px; background: #fffbeb;">
-                      <summary style="cursor: pointer; color: #b45309; font-weight: 700; font-size: 0.88rem; outline: none; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-eye"></i> [ Show Examiner-Grade Model Paragraph ]</summary>
+                      <summary style="cursor: pointer; color: #b45309; font-weight: 700; font-size: 0.88rem; outline: none; display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-eye"></i> ${isLocalKs2 ? '[ Show Model Historian Answer ]' : isLocalKs3 ? '[ Show Model Analytical Response ]' : '[ Show Examiner-Grade Model Paragraph ]'}</summary>
                       <div class="scaffold-box model-box" style="margin-top: 10px; padding: 12px 15px; background: #ffffff; border-left: 3px solid #f59e0b; border-radius: 4px; font-size: 0.92rem; color: #78350f; line-height: 1.6; border: 1px solid #fde68a;">
                         ${modelAnswer}
                       </div>
@@ -8248,37 +8476,30 @@ export function renderLesson(lesson) {
           }
           if (task.type === 'extended_writing' || task.type === 'narrative_account') {
             const hasTaskPrefix = task.topic && /^Task\s*\d+/i.test(task.topic);
-            const isKs2 =
-              window.currentUnitId === 'ks2_ww2' ||
-              (typeof unit !== 'undefined' && unit && (unit.is_ks2 || unit.id === 'ks2_ww2'));
-            const isKs3 =
-              !isKs2 &&
-              (window.currentUnitId === 'early_modern_world' ||
-                window.currentUnitId === 'water_and_sanitation' ||
-                window.currentUnitId === 'great_war' ||
-                window.currentUnitId === 'great_war_part2' ||
-                window.currentUnitId === 'medieval_england' ||
-                window.currentUnitId === 'industrialisation_and_empire' ||
-                (typeof unit !== 'undefined' && unit && unit.is_ks3));
+            const isLocalKs2 = checkIsKs2(unitId, activeUnit);
+            const isLocalKs3 = checkIsKs3(unitId, activeUnit);
             const qNumPrefix =
-              task.qNum && !hasTaskPrefix && !isKs3 && !isKs2 ? `Q${task.qNum}. ` : '';
+              task.qNum && !hasTaskPrefix && !isLocalKs3 && !isLocalKs2 ? `Q${task.qNum}. ` : '';
             const taskTitle =
               task.tariff ||
               task.title ||
               task.topic ||
-              (isKs2
+              (isLocalKs2
                 ? 'Historian Writing Challenge'
-                : isKs3
+                : isLocalKs3
                   ? 'Enquiry Writing Task'
                   : 'Task 4: Analytical Synthesis & Historical Essay');
             const badgeText =
               task.badge ||
-              (isKs2
+              (isLocalKs2
                 ? 'Key Stage 2 Historian Challenge'
-                : isKs3
+                : isLocalKs3
                   ? task.type === 'narrative_account'
                     ? '8 MARKS &bull; NARRATIVE ACCOUNT'
-                    : 'KS3 Enquiry Essay &bull; Structured Writing'
+                    : (task.topic && task.topic.includes('12 Marks')) ||
+                        (task.question && task.question.includes('12 marks'))
+                      ? '12 MARKS &bull; EXPLAIN WHY'
+                      : 'KS3 Enquiry Essay &bull; Structured Writing'
                   : 'GCSE Analytical Masterclass');
             const questionPrompt = task.question || task.text || task.prompt || '';
             const hints = Array.isArray(task.hints) ? task.hints : [];
@@ -8390,9 +8611,12 @@ export function renderLesson(lesson) {
                     <i class="fa-solid fa-feather-pointed" style="color: #0284c7;"></i>
                     <span>${qNumPrefix}${taskTitle}</span>
                   </h4>
-                  <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
-                    <i class="fa-solid fa-graduation-cap"></i> ${badgeText}
-                  </span>
+                  <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+                    ${isLocalKs3 ? `<span style="background: #e0f2fe; color: #0369a1; font-size: 0.72rem; font-weight: 800; padding: 4px 9px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-book-open"></i> In Pupil Workbook &bull; Page ${currentIndex < 3 ? 3 + currentIndex * 2 : 5 + currentIndex * 2}</span>` : ''}
+                    <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
+                      <i class="fa-solid fa-graduation-cap"></i> ${badgeText}
+                    </span>
+                  </div>
                 </div>
 
                 ${
@@ -8441,7 +8665,7 @@ export function renderLesson(lesson) {
                       ? `
                     <details class="model-paragraph-reveal" style="margin-top: 14px; border: 1px dashed #0284c7; border-radius: 8px; padding: 10px 14px; background: #ffffff;">
                       <summary style="cursor: pointer; color: #0369a1; font-weight: 700; font-size: 0.9rem; outline: none; display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-eye"></i> ${isKs2 ? '[ Show Model Historian Answer ]' : '[ Show Examiner-Grade Model Response ]'}
+                        <i class="fa-solid fa-eye"></i> ${isKs2 ? '[ Show Model Historian Answer ]' : isLocalKs3 ? '[ Show Model Analytical Response ]' : '[ Show Examiner-Grade Model Response ]'}
                       </summary>
                       <div class="scaffold-box model-box" style="margin-top: 12px; padding: 14px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 4px; font-size: 0.95rem; color: #1e293b; line-height: 1.65; border: 1px solid #e2e8f0; font-family: 'Georgia', serif;">
                         ${
@@ -8511,6 +8735,7 @@ export function renderLesson(lesson) {
             </div>
           `;
         });
+
         htmlTasks += `</div></details>`;
       }
     }
@@ -8714,9 +8939,16 @@ export function renderLesson(lesson) {
             </div>
         `;
       const isPaper3Weimar =
-        (typeof unitId !== 'undefined' && (unitId === 'weimar_nazi_germany' || unitId === 'germany')) ||
-        (typeof activeUnit !== 'undefined' && activeUnit && activeUnit.id === 'weimar_nazi_germany') ||
-        (typeof window !== 'undefined' && (window.currentUnitId === 'weimar_nazi_germany' || (window.location && window.location.search && window.location.search.includes('weimar_nazi_germany'))));
+        (typeof unitId !== 'undefined' &&
+          (unitId === 'weimar_nazi_germany' || unitId === 'germany')) ||
+        (typeof activeUnit !== 'undefined' &&
+          activeUnit &&
+          activeUnit.id === 'weimar_nazi_germany') ||
+        (typeof window !== 'undefined' &&
+          (window.currentUnitId === 'weimar_nazi_germany' ||
+            (window.location &&
+              window.location.search &&
+              window.location.search.includes('weimar_nazi_germany'))));
 
       const formatExamQuestionTitle = (qText, fallbackIdx, qObj) => {
         if (!qText) return '';
@@ -8729,7 +8961,10 @@ export function renderLesson(lesson) {
 
         if (isPaper3Weimar) {
           let cleanStr = str.replace(/^(?:Q\d+[\.:\s]+|Question\s+\d+[\.:\s]+)*/i, '');
-          cleanStr = cleanStr.replace(/^(?:(?:\d+[\.:\s]+)*3\s*\([a-d]\)[\.:\s]*|\d+[\.:\s]+)+/i, '');
+          cleanStr = cleanStr.replace(
+            /^(?:(?:\d+[\.:\s]+)*3\s*\([a-d]\)[\.:\s]*|\d+[\.:\s]+)+/i,
+            '',
+          );
           cleanStr = cleanStr.replace(/^3\s*\([a-d]\)[\.:\s]*/i, '');
           cleanStr = cleanStr.replace(/\s*\[\s*\d+\s*marks?(?:\s*\(\+4\s*spag\))?\s*\]\s*$/i, '');
           cleanStr = cleanStr.replace(/\n/g, '<br>');
@@ -8737,9 +8972,17 @@ export function renderLesson(lesson) {
           let badge = '';
           if (qType.includes('inference') || /give two things you can infer/i.test(str)) {
             badge = 'Question 1 [4 marks]: Source Inference';
-          } else if (qType.includes('causation') || qType.includes('explain_why') || qTariff.includes('12')) {
+          } else if (
+            qType.includes('causation') ||
+            qType.includes('explain_why') ||
+            qTariff.includes('12')
+          ) {
             badge = 'Question 2 [12 marks]: Causation Essay';
-          } else if (qType.includes('utility_comp') || /COP Comparative/i.test(str) || /Part 1:/i.test(str)) {
+          } else if (
+            qType.includes('utility_comp') ||
+            /COP Comparative/i.test(str) ||
+            /Part 1:/i.test(str)
+          ) {
             badge = 'Question 3(a) Foundation Drill [4 marks]: Content & Provenance Analysis';
           } else if (qType.includes('utility') || /how useful are sources/i.test(str)) {
             badge = 'Question 3(a) [8 marks]: Source Utility';
@@ -8747,7 +8990,10 @@ export function renderLesson(lesson) {
             badge = 'Question 3(b) [4 marks]: Difference in Historical Views';
           } else if (/suggest one reason why interpretations/i.test(str)) {
             badge = 'Question 3(c) [4 marks]: Reason for Difference in Views';
-          } else if (qType.includes('verdict') || /how far do you agree with interpretation/i.test(str)) {
+          } else if (
+            qType.includes('verdict') ||
+            /how far do you agree with interpretation/i.test(str)
+          ) {
             badge = 'Question 3(d) [16+4 marks]: Evaluative Historical Verdict';
           } else {
             badge = `Question ${fallbackIdx + 1}`;
@@ -8777,7 +9023,10 @@ export function renderLesson(lesson) {
           /how useful is source/i.test(str)
         ) {
           let cleanStr = str.replace(/^(?:Q\d+[\.:\s]+|Question\s+\d+[\.:\s]+)*/i, '');
-          cleanStr = cleanStr.replace(/^(?:(?:\d+[\.:\s]+)*3\s*\([a-d]\)[\.:\s]*|\d+[\.:\s]+)+/i, '');
+          cleanStr = cleanStr.replace(
+            /^(?:(?:\d+[\.:\s]+)*3\s*\([a-d]\)[\.:\s]*|\d+[\.:\s]+)+/i,
+            '',
+          );
           cleanStr = cleanStr.replace(/\[4 marks\]/gi, '[8 marks]'); // Correct 8-mark utility tariff in stem
           cleanStr = cleanStr.replace(/\s*\[\s*8\s*marks\s*\]\s*$/i, ''); // Strip trailing mark tag to prevent duplicate
           cleanStr = cleanStr.replace(/\n/g, '<br>');
@@ -8931,10 +9180,7 @@ export function renderLesson(lesson) {
           const startPg = 2 + lNum * 2;
           const endPg = startPg + 1;
 
-          if (
-            type.includes('inference') ||
-            text.includes('two things you can infer')
-          ) {
+          if (type.includes('inference') || text.includes('two things you can infer')) {
             return { inWorkbook: true, label: `In Printed Workbook • Page ${endPg}` };
           }
           if (
@@ -9440,10 +9686,19 @@ export function renderLesson(lesson) {
         } else {
           const cleanSourceTitle = stimTitle.replace(/^Source\s+[A-Z0-9]+[:\s-]*/i, '').trim();
           const sourceCardId = `source-card-${srcLetter}`;
-          const stimImg = typeof stim === 'object' && stim !== null ? (stim.image || stim.src || stim.image_url || stim.asset_path || '') : '';
+          const stimImg =
+            typeof stim === 'object' && stim !== null
+              ? stim.image || stim.src || stim.image_url || stim.asset_path || ''
+              : '';
           const stimImgUrl = stimImg ? getAssetUrl(stimImg) : '';
-          const stimCaption = typeof stim === 'object' && stim !== null ? (stim.caption || '') : '';
-          const stimProvenance = typeof stim === 'object' && stim !== null ? (stim.provenance || stim.citation || cleanSourceTitle || 'Contemporary Written Record') : (cleanSourceTitle || 'Contemporary Written Record');
+          const stimCaption = typeof stim === 'object' && stim !== null ? stim.caption || '' : '';
+          const stimProvenance =
+            typeof stim === 'object' && stim !== null
+              ? stim.provenance ||
+                stim.citation ||
+                cleanSourceTitle ||
+                'Contemporary Written Record'
+              : cleanSourceTitle || 'Contemporary Written Record';
 
           return `
             <details class="cme-source-drawer weimar-source-drawer archival-drawer gcse-source-container archival-source-box" id="${sourceCardId}" data-source-letter="${srcLetter}" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
@@ -9457,7 +9712,9 @@ export function renderLesson(lesson) {
                 </span>
               </summary>
               <div class="weimar-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
-                ${stimImgUrl ? `
+                ${
+                  stimImgUrl
+                    ? `
                   <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 12px;">
                     <div style="flex: 0 0 280px; max-width: 320px; position: relative; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
                       <img src="${stimImgUrl}" alt="${cleanSourceTitle || 'Source ' + srcLetter}" data-action="open-modal" data-src="${stimImgUrl}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: 240px; object-fit: contain; display: block; margin: 0 auto; border-radius: 4px;">
@@ -9467,23 +9724,33 @@ export function renderLesson(lesson) {
                       </div>
                     </div>
                     <div style="flex: 1 1 300px;">
-                      ${stimContent ? `
+                      ${
+                        stimContent
+                          ? `
                         <div class="archival-source-body" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.02rem; line-height: 1.7; color: #1e293b; background: #fffdfa; padding: 12px 16px; border-left: 4px solid #1e40af; border-radius: 4px; margin-bottom: 10px;">
                           ${typeof formatBold !== 'undefined' ? formatBold(stimContent) : stimContent}
                         </div>
-                      ` : ''}
-                      ${stimCaption ? `
+                      `
+                          : ''
+                      }
+                      ${
+                        stimCaption
+                          ? `
                         <div style="font-size: 0.86rem; color: #475569; line-height: 1.45; margin-bottom: 8px;">
                           <strong style="color: #1e3a8a;">Archival Caption:</strong> ${stimCaption}
                         </div>
-                      ` : ''}
+                      `
+                          : ''
+                      }
                     </div>
                   </div>
-                ` : `
+                `
+                    : `
                   <div class="archival-source-body" style="font-family: 'Georgia', serif; font-style: italic; font-size: 1.05rem; line-height: 1.75; color: #1e293b; background: #fffdfa; padding: 14px 18px; border-left: 4px solid #1e40af; border-radius: 4px;">
                     ${typeof formatBold !== 'undefined' ? formatBold(stimContent) : stimContent}
                   </div>
-                `}
+                `
+                }
                 <div class="archival-citation-footer" style="font-size: 0.8rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 12px; display: flex; justify-content: space-between; align-items: center;">
                   <span><strong>Provenance:</strong> ${stimProvenance}</span>
                   <span class="archival-shelfmark-stamp" style="font-family: monospace; font-size: 0.72rem; color: #64748b; background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">SOURCE ${srcLetter}</span>
@@ -9501,7 +9768,12 @@ export function renderLesson(lesson) {
         epQuestions.forEach((q, idx) => {
           const type = (q.type || '').toLowerCase();
           const tariff = (q.tariff || '').toLowerCase();
-          if (type.includes('inference') || type.includes('causation') || type.includes('explain_why') || tariff.includes('12')) {
+          if (
+            type.includes('inference') ||
+            type.includes('causation') ||
+            type.includes('explain_why') ||
+            tariff.includes('12')
+          ) {
             secAQuestions.push({ q, idx });
           } else {
             secBQuestions.push({ q, idx });
@@ -9578,8 +9850,12 @@ export function renderLesson(lesson) {
         }
         // 3. Lessons with ONLY Section B (Lessons 3, 4, 7, 8, 11, 12, 15, 16):
         else {
-          const isInterpUnit = epStimulus.some(s => /Interpretation/i.test(typeof s === 'string' ? s : (s.title || '')));
-          const secTitle = isInterpUnit ? 'Section B: Historiographical Interpretations' : 'Section B: Historical Enquiry & Source Utility';
+          const isInterpUnit = epStimulus.some((s) =>
+            /Interpretation/i.test(typeof s === 'string' ? s : s.title || ''),
+          );
+          const secTitle = isInterpUnit
+            ? 'Section B: Historiographical Interpretations'
+            : 'Section B: Historical Enquiry & Source Utility';
           const secBadge = isInterpUnit ? 'Questions 3(b) & 3(d)' : 'Question 3(a)';
           htmlExamPractice += `
             <div class="exam-section-wrapper exam-section-b-wrapper" style="margin-bottom: 20px;">
@@ -11393,7 +11669,8 @@ export function assignQuestionNumbers(lesson, targetUnitId) {
   // 3. Narrative Blocks
   if (lesson.narrative_blocks) {
     lesson.narrative_blocks.forEach((block) => {
-      if (block.source && block.source.question && !block.source.qNum) block.source.qNum = globalQNum++;
+      if (block.source && block.source.question && !block.source.qNum)
+        block.source.qNum = globalQNum++;
       if (Array.isArray(block.sources) && (!lesson.sources || lesson.sources.length === 0)) {
         block.sources.forEach((s) => {
           if (s && s.question && !s.qNum) s.qNum = globalQNum++;

@@ -29,7 +29,7 @@
   .a5-page {
     width: 148mm;
     height: 210mm;
-    padding: 6.5mm 9mm 6mm 9mm;
+    padding: 5.5mm 9mm 4.5mm 9mm;
     margin: 0 auto;
     page-break-after: always;
     break-after: page;
@@ -276,24 +276,11 @@
     line-height: 1.15;
     margin-top: 1px;
   }
-  .score-line {
-    display: inline-block;
-    width: 14px;
-    border-bottom: 1.2px solid #000000;
-  }
-  .date-line {
-    display: block;
-    width: 44px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
-  }
-  .parent-sig-line {
-    display: block;
-    width: 55px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
+  .score-cell {
+    font-size: 7.2pt;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
   }
 
   /* Partner Quiz / Instructions Banner */
@@ -343,30 +330,17 @@
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 3px;
-    padding: 2px 4px;
+    padding: 2.5px 6px;
     margin: 2px 0 2px 0;
     display: flex;
     align-items: center;
-    gap: 4px;
-  }
-  .spine-lbl {
-    font-size: 5.2pt;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: #000000;
-    white-space: nowrap;
-    border-right: 1px solid #000000;
-    padding-right: 4px;
-    line-height: 1.1;
-    text-align: center;
   }
   .spine-flow {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    gap: 2px;
+    gap: 3px;
   }
   .spine-node {
     display: flex;
@@ -381,7 +355,7 @@
     color: #ffffff;
     font-size: 5.2pt;
     font-weight: 800;
-    padding: 0.5px 3.5px;
+    padding: 0.5px 4px;
     border-radius: 2px;
     white-space: nowrap;
     line-height: 1.1;
@@ -391,11 +365,11 @@
     font-weight: 700;
     color: #000000;
     line-height: 1.1;
-    margin-top: 1px;
+    margin-top: 1.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 82px;
+    max-width: 95px;
   }
   .spine-arrow {
     font-size: 5.8pt;
@@ -491,7 +465,7 @@
     color: #000000;
     white-space: nowrap;
     font-size: 7.8pt;
-    min-width: 65px;
+    min-width: 32px;
   }
   .q-line-lbl.cue {
     font-style: italic;
@@ -565,13 +539,13 @@
   .ans-card {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
-    font-size: 6.5pt;
-    line-height: 1.15;
+    gap: 3.5px;
+    font-size: 6.3pt;
+    line-height: 1.12;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 1.2px 4.5px;
+    padding: 0.8px 4px;
     color: #000000;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -588,7 +562,7 @@
   .ans-num {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
     line-height: 1.1;
   }
   .ans-pip {
@@ -599,7 +573,7 @@
     line-height: 1;
   }
   .ans-pip .pip-badge {
-    font-size: 5.6pt;
+    font-size: 5.4pt;
     letter-spacing: -1px;
   }
   .ans-content {
@@ -609,13 +583,13 @@
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
   }
   .ans-exp {
     color: #000000 !important;
     font-weight: 500 !important;
     font-style: italic !important;
-    font-size: 6.3pt;
+    font-size: 6.1pt;
   }
   .ans-ticks {
     display: flex;
@@ -633,24 +607,24 @@
   .glossary-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    margin-top: 2.5px;
+    gap: 2.5px;
+    margin-top: 2px;
     border-top: 1.2px solid #000000;
-    padding-top: 2.5px;
+    padding-top: 2px;
   }
   .concept-card {
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 2.5px 5px;
-    font-size: 6.4pt;
-    line-height: 1.16;
+    padding: 1.8px 4.5px;
+    font-size: 5.9pt;
+    line-height: 1.13;
   }
   .concept-title {
     font-weight: 900;
     color: #000000;
     text-transform: uppercase;
-    font-size: 6.6pt;
+    font-size: 6.2pt;
   }
 
   </style>
@@ -705,70 +679,50 @@
               <div class="tb-lesson-title">Enquiry 1: German Unification & Revanche</div>
               <div class="tb-lesson-desc">1871 German Unification, Franco-Prussian War, annexation of Alsace-Lorraine, French revanche & Otto von Bismarck</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 2: Imperial Rivalry & Morocco</div>
               <div class="tb-lesson-desc">Kaiser Wilhelm II, Weltpolitik, Scramble for Africa, 1905 Tangier Crisis & 1911 Agadir Crisis (SMS Panther)</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 3: Naval Arms Race & Dreadnought</div>
               <div class="tb-lesson-desc">1906 HMS Dreadnought, Admiral Alfred von Tirpitz, German Naval Laws, Two-Power Standard & North Sea blockade plans</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 4: Alliances & Balkan Powder Keg</div>
               <div class="tb-lesson-desc">Triple Alliance, Triple Entente, Ottoman decline, Balkan Powder Keg & 1908 Austrian annexation of Bosnia</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 5: Sarajevo & The July Crisis</div>
               <div class="tb-lesson-desc">28 June 1914 Sarajevo assassination, Gavrilo Princip, German 'Blank Cheque', Schlieffen Plan & British entry</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
@@ -807,7 +761,6 @@
 
     
     <div class="spine-strip">
-      <div class="spine-lbl">Chronological<br>Spine</div>
       <div class="spine-flow">
         
           <div class="spine-node">
@@ -854,7 +807,7 @@
           <span class="q-prompt">Which powerful military kingdom united the 39 German states under Berlin in 1871?<span class="q-warmup-choice">[ Prussia  /  Bavaria ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -871,7 +824,7 @@
           <span class="q-prompt">Which mineral-rich French border territory was seized by Germany following the Franco-Prussian War?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -888,7 +841,7 @@
           <span class="q-prompt">Why was a "war on two fronts" the German military’s greatest strategic nightmare?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -905,7 +858,7 @@
           <span class="q-prompt">How did Chancellor Otto von Bismarck use "Blood and Iron" diplomacy to protect the new German Empire?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -922,7 +875,7 @@
           <span class="q-prompt">Why did Kaiser Wilhelm II’s dismissal of Bismarck in 1890 trigger a European diplomatic crisis?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -939,7 +892,7 @@
           <span class="q-prompt">How did the creation of the German Empire in 1871 permanently destabilize the European balance of power?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -974,7 +927,6 @@
 
     
     <div class="spine-strip">
-      <div class="spine-lbl">Chronological<br>Spine</div>
       <div class="spine-flow">
         
           <div class="spine-node">
@@ -1021,7 +973,7 @@
           <span class="q-prompt">What phrase describes Kaiser Wilhelm II’s aggressive demand for an overseas German colonial empire?<span class="q-warmup-choice">[ A "place in the sun"  /  "Splendid Isolation" ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1038,7 +990,7 @@
           <span class="q-prompt">What term describes the rapid colonisation and partition of the African continent by European powers (1881–1914)?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1055,7 +1007,7 @@
           <span class="q-prompt">Why did Kaiser Wilhelm II land at Tangier in 1905 to trigger the First Moroccan Crisis?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1072,7 +1024,7 @@
           <span class="q-prompt">Why did Germany send the gunboat SMS Panther to Agadir during the Second Moroccan Crisis in 1911?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1089,7 +1041,7 @@
           <span class="q-prompt">Why did the two Moroccan Crises ironically strengthen rather than weaken the Anglo-French Entente?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1106,7 +1058,7 @@
           <span class="q-prompt">To what extent did imperial rivalry in Africa make a general European war more likely?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1141,7 +1093,6 @@
 
     
     <div class="spine-strip">
-      <div class="spine-lbl">Chronological<br>Spine</div>
       <div class="spine-flow">
         
           <div class="spine-node">
@@ -1188,7 +1139,7 @@
           <span class="q-prompt">Which revolutionary, all-big-gun British battleship launched in 1906 rendered all existing warships obsolete?<span class="q-warmup-choice">[ HMS Dreadnought  /  SMS Panther ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1205,7 +1156,7 @@
           <span class="q-prompt">Which German Admiral directed the rapid expansion and modern construction of the High Seas Fleet?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1222,7 +1173,7 @@
           <span class="q-prompt">Why was unquestioned naval supremacy a matter of life and death for Great Britain?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1239,7 +1190,7 @@
           <span class="q-prompt">What was Admiral Tirpitz’s "Risk Theory" (Risikotheorie)?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1256,7 +1207,7 @@
           <span class="q-prompt">Why did the launch of HMS Dreadnought ironically endanger Britain’s established naval supremacy?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1273,7 +1224,7 @@
           <span class="q-prompt">How did the naval arms race permanently transform relations between Britain and Germany?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1308,7 +1259,6 @@
 
     
     <div class="spine-strip">
-      <div class="spine-lbl">Chronological<br>Spine</div>
       <div class="spine-flow">
         
           <div class="spine-node">
@@ -1355,7 +1305,7 @@
           <span class="q-prompt">Which three nations united into the defensive Triple Entente by 1907?<span class="q-warmup-choice">[ Britain, France, Russia  /  Germany, Austria, Italy ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1372,7 +1322,7 @@
           <span class="q-prompt">Which three empires formed the rival Triple Alliance signed in 1882?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1389,7 +1339,7 @@
           <span class="q-prompt">Why was the mountainous Balkan peninsula known as the "Powder Keg of Europe"?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1406,7 +1356,7 @@
           <span class="q-prompt">Why was Serbia furious when Austria-Hungary annexed Bosnia-Herzegovina in 1908?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1423,7 +1373,7 @@
           <span class="q-prompt">Why was the Bosnian Crisis of 1908 a fatal rehearsal for the outbreak of general war in 1914?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1440,7 +1390,7 @@
           <span class="q-prompt">How did the rigid alliance systems turn a local Balkan confrontation into a world war?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1475,7 +1425,6 @@
 
     
     <div class="spine-strip">
-      <div class="spine-lbl">Chronological<br>Spine</div>
       <div class="spine-flow">
         
           <div class="spine-node">
@@ -1522,7 +1471,7 @@
           <span class="q-prompt">Who was assassinated in Sarajevo on 28 June 1914, providing the immediate catalyst for the First World War?<span class="q-warmup-choice">[ Archduke Franz Ferdinand  /  Kaiser Wilhelm II ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1539,7 +1488,7 @@
           <span class="q-prompt">What secret Serbian nationalist military society armed and trained the 19-year-old assassin Gavrilo Princip?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1556,7 +1505,7 @@
           <span class="q-prompt">What unconditional pledge of military backing did Germany grant Austria-Hungary on 5 July 1914?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1573,7 +1522,7 @@
           <span class="q-prompt">What German military operational plan aimed to knock out France in six weeks before turning to face Russia?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1590,7 +1539,7 @@
           <span class="q-prompt">Why did the German invasion of neutral Belgium directly force Great Britain to enter the war on 4 August 1914?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1607,7 +1556,7 @@
           <span class="q-prompt">Was the outbreak of war in August 1914 caused primarily by calculated political decisions or inflexible rail timetables?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">

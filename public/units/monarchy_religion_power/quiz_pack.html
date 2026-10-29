@@ -29,7 +29,7 @@
   .a5-page {
     width: 148mm;
     height: 210mm;
-    padding: 6.5mm 9mm 6mm 9mm;
+    padding: 5.5mm 9mm 4.5mm 9mm;
     margin: 0 auto;
     page-break-after: always;
     break-after: page;
@@ -276,24 +276,11 @@
     line-height: 1.15;
     margin-top: 1px;
   }
-  .score-line {
-    display: inline-block;
-    width: 14px;
-    border-bottom: 1.2px solid #000000;
-  }
-  .date-line {
-    display: block;
-    width: 44px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
-  }
-  .parent-sig-line {
-    display: block;
-    width: 55px;
-    margin: 0 auto;
-    border-bottom: 1.2px solid #000000;
-    height: 12px;
+  .score-cell {
+    font-size: 7.2pt;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
   }
 
   /* Partner Quiz / Instructions Banner */
@@ -343,30 +330,17 @@
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 3px;
-    padding: 2px 4px;
+    padding: 2.5px 6px;
     margin: 2px 0 2px 0;
     display: flex;
     align-items: center;
-    gap: 4px;
-  }
-  .spine-lbl {
-    font-size: 5.2pt;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    color: #000000;
-    white-space: nowrap;
-    border-right: 1px solid #000000;
-    padding-right: 4px;
-    line-height: 1.1;
-    text-align: center;
   }
   .spine-flow {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex: 1;
-    gap: 2px;
+    gap: 3px;
   }
   .spine-node {
     display: flex;
@@ -381,7 +355,7 @@
     color: #ffffff;
     font-size: 5.2pt;
     font-weight: 800;
-    padding: 0.5px 3.5px;
+    padding: 0.5px 4px;
     border-radius: 2px;
     white-space: nowrap;
     line-height: 1.1;
@@ -391,11 +365,11 @@
     font-weight: 700;
     color: #000000;
     line-height: 1.1;
-    margin-top: 1px;
+    margin-top: 1.5px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 82px;
+    max-width: 95px;
   }
   .spine-arrow {
     font-size: 5.8pt;
@@ -491,7 +465,7 @@
     color: #000000;
     white-space: nowrap;
     font-size: 7.8pt;
-    min-width: 65px;
+    min-width: 32px;
   }
   .q-line-lbl.cue {
     font-style: italic;
@@ -565,13 +539,13 @@
   .ans-card {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
-    font-size: 6.5pt;
-    line-height: 1.15;
+    gap: 3.5px;
+    font-size: 6.3pt;
+    line-height: 1.12;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 1.2px 4.5px;
+    padding: 0.8px 4px;
     color: #000000;
     page-break-inside: avoid;
     break-inside: avoid;
@@ -588,7 +562,7 @@
   .ans-num {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
     line-height: 1.1;
   }
   .ans-pip {
@@ -599,7 +573,7 @@
     line-height: 1;
   }
   .ans-pip .pip-badge {
-    font-size: 5.6pt;
+    font-size: 5.4pt;
     letter-spacing: -1px;
   }
   .ans-content {
@@ -609,13 +583,13 @@
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
   }
   .ans-exp {
     color: #000000 !important;
     font-weight: 500 !important;
     font-style: italic !important;
-    font-size: 6.3pt;
+    font-size: 6.1pt;
   }
   .ans-ticks {
     display: flex;
@@ -633,24 +607,24 @@
   .glossary-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3px;
-    margin-top: 2.5px;
+    gap: 2.5px;
+    margin-top: 2px;
     border-top: 1.2px solid #000000;
-    padding-top: 2.5px;
+    padding-top: 2px;
   }
   .concept-card {
     background: #f8fafc;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 2.5px 5px;
-    font-size: 6.4pt;
-    line-height: 1.16;
+    padding: 1.8px 4.5px;
+    font-size: 5.9pt;
+    line-height: 1.13;
   }
   .concept-title {
     font-weight: 900;
     color: #000000;
     text-transform: uppercase;
-    font-size: 6.6pt;
+    font-size: 6.2pt;
   }
 
   </style>
@@ -705,70 +679,50 @@
               <div class="tb-lesson-title">Enquiry 1: Reformation & Break with Rome</div>
               <div class="tb-lesson-desc">Martin Luther (1517), Catherine of Aragon, 1534 Act of Supremacy, Dissolution of Monasteries & Thomas Cromwell</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 2: Elizabeth I & The Middle Way</div>
               <div class="tb-lesson-desc">1559 Elizabethan Settlement, Supreme Governor, Via Media, recusancy fines & Mary Queen of Scots</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 3: The Spanish Armada (1588)</div>
               <div class="tb-lesson-desc">Francis Drake, 1587 Cadiz Raid, Spanish Crescent formation, Calais fireships & Battle of Gravelines</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 4: Civil War, Regicide & 1689</div>
               <div class="tb-lesson-desc">Divine Right, Ship Money, English Civil War, New Model Army, 1649 Regicide & 1689 Bill of Rights</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
           <tr>
             <td class="left-title">
               <div class="tb-lesson-title">Enquiry 5: Crown, Church or Parliament Verdict</div>
               <div class="tb-lesson-desc">Supreme Governor, Act of Uniformity, King-in-Parliament, 1688 Glorious Revolution & constitutional monarchy</div>
             </td>
-            <td>
-              <span class="date-line"></span>
-            </td>
-            <td><span class="score-line"></span> / 6</td>
-            <td><span class="score-line"></span> / 6</td>
-            <td>
-              <span class="parent-sig-line"></span>
-            </td>
+            <td></td>
+            <td class="score-cell">/ 6</td>
+            <td class="score-cell">/ 6</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
@@ -818,7 +772,7 @@
           <span class="q-prompt">In what year did German monk Martin Luther nail his 95 Theses to the church door in Wittenberg, sparking the Protestant Reformation?<span class="q-warmup-choice">[ 1517 in Wittenberg  /  1588 in London ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -835,7 +789,7 @@
           <span class="q-prompt">What landmark statutory law passed by Parliament in 1534 officially declared Henry VIII the Supreme Head of the Church of England?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -852,7 +806,7 @@
           <span class="q-prompt">Why did Pope Clement VII refuse to grant Henry VIII an annulment from his first wife, Catherine of Aragon, in 1527?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -869,7 +823,7 @@
           <span class="q-prompt">How did chief minister Thomas Cromwell use the Dissolution of the Monasteries (1536–1540) to transform royal finances?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -886,7 +840,7 @@
           <span class="q-prompt">Why did Sir Thomas More choose execution rather than swear Henry VIII’s Oath of Supremacy in 1535?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -903,7 +857,7 @@
           <span class="q-prompt">Why did Henry VIII’s use of parliamentary statutes to break with Rome inadvertently elevate Parliament’s future sovereignty?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -949,7 +903,7 @@
           <span class="q-prompt">What moderate title did Elizabeth I adopt in the 1559 Act of Supremacy to avoid offending both Catholics and Protestants?<span class="q-warmup-choice">[ Supreme Governor  /  Supreme Head ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -966,7 +920,7 @@
           <span class="q-prompt">What Latin term describes Elizabeth I’s strategic policy of balancing Protestant doctrine with traditional ceremonial rituals?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -983,7 +937,7 @@
           <span class="q-prompt">Why did the 1559 Act of Uniformity impose 12d fines on Catholic recusants rather than executing them for heresy?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1000,7 +954,7 @@
           <span class="q-prompt">Why did Mary, Queen of Scots become a lethal existential threat to Elizabeth following her flight to England in 1568?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1017,7 +971,7 @@
           <span class="q-prompt">How did Sir Francis Walsingham’s intelligence network uncover undeniable proof of Mary’s treason in the 1586 Babington Plot?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1034,7 +988,7 @@
           <span class="q-prompt">Why was the execution of Mary, Queen of Scots at Fotheringhay Castle in February 1587 such a dangerous gamble for Elizabeth?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1080,7 +1034,7 @@
           <span class="q-prompt">In what year did Sir Francis Drake lead a daring raid on Cadiz harbour, famously "singeing the King of Spain’s beard"?<span class="q-warmup-choice">[ 1587 at Cadiz  /  1588 at Plymouth ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1097,7 +1051,7 @@
           <span class="q-prompt">What disciplined, impenetrable defensive naval formation did the 130 ships of the Spanish Armada maintain sailing up the Channel?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1114,7 +1068,7 @@
           <span class="q-prompt">How did Lord Howard and Drake break the defensive Spanish crescent formation off Calais on the night of 7 August 1588?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1131,7 +1085,7 @@
           <span class="q-prompt">Why were English "race-built" galleons technologically superior to the floating fortress galleons of the Spanish Armada?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1148,7 +1102,7 @@
           <span class="q-prompt">Why was the Battle of Gravelines (8 August 1588) the decisive turning point that ended the Spanish invasion threat?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1165,7 +1119,7 @@
           <span class="q-prompt">How did Elizabethan propaganda use the stormy "Protestant Wind" to legitimize the English victory?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1211,7 +1165,7 @@
           <span class="q-prompt">What political doctrine held that King Charles I was chosen directly by God and could not be questioned by Parliament?<span class="q-warmup-choice">[ The Divine Right of Kings  /  Constitutional Monarchy ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1228,7 +1182,7 @@
           <span class="q-prompt">What controversial coastal naval tax did Charles I illegally enforce on inland English counties without parliamentary consent in 1635?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1245,7 +1199,7 @@
           <span class="q-prompt">What disciplined, religiously zealous military force did Oliver Cromwell organise that crushed the Royalist Cavaliers at Naseby in 1645?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1262,7 +1216,7 @@
           <span class="q-prompt">On what historic date was King Charles I publicly beheaded outside the Banqueting House in Whitehall for high treason against his people?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1279,7 +1233,7 @@
           <span class="q-prompt">Why was the trial and execution of King Charles I an unprecedented constitutional earthquake across Europe?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1296,7 +1250,7 @@
           <span class="q-prompt">How did the landmark Bill of Rights (1689) permanently transform the British system of government?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1342,7 +1296,7 @@
           <span class="q-prompt">In 1517, to which foreign spiritual leader was the English church and monarch legally subordinate?<span class="q-warmup-choice">[ The Pope in Rome  /  The Archbishop of York ]</span></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1359,7 +1313,7 @@
           <span class="q-prompt">What foundational constitutional term describes supreme sovereignty held jointly by the monarch, House of Lords, and House of Commons?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1376,7 +1330,7 @@
           <span class="q-prompt">Why did James II’s attempt to restore Catholic absolutism trigger the bloodless Glorious Revolution of 1688?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1393,7 +1347,7 @@
           <span class="q-prompt">How did the Toleration Act of 1689 begin to end 170 years of violent religious persecution in England?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1410,7 +1364,7 @@
           <span class="q-prompt">Between Crown, Church, and Parliament, which institution emerged as the ultimate victor by 1689?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
@@ -1427,7 +1381,7 @@
           <span class="q-prompt">How did the constitutional settlement of 1689 lay the foundation for Britain’s rise as an industrial and global empire?</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Core Fact:</span>
+          <span class="q-line-lbl">Fact:</span>
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">

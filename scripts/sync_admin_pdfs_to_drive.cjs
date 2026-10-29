@@ -1,10 +1,11 @@
 /**
- * Synchronize Curriculum, Admin, Trips & Co-Curricular PDFs to Google Drive Department File
+ * Synchronize Modern 3-Pillars Curriculum, Admin, Trips & Resources to Google Drive Department File
  *
- * Automatically organizes and syncs all master textbooks, pupil workbooks,
- * mastery packs, schemes of work, and department policies from `public/pdfs/`
- * into clean, categorized Year Group and Department folders in Department Lead's
- * Google Drive Department File (`G:\My Drive\AAMX\Dep File\`).
+ * Automatically organizes and syncs:
+ * - 01_Curriculum_and_Key_Stages (KS3 & GCSE): Strictly the 3 Curricular Pillars matching Hero Launchpad
+ * - 02_Department_Admin_and_Strategy: Department policies, SOWs, and exam analysis
+ * - 03_Fieldwork_Trips_and_Enrichment: Fieldwork guides, parent packs, and enrichment
+ * - 04_Cover_and_Staff_Resources: Emergency cover lessons, markbooks, and timetables
  */
 
 const fs = require('fs');
@@ -13,997 +14,567 @@ const { PATHS } = require('./config.cjs');
 
 const DRIVE_DEP_DIR = PATHS.GOOGLE_DRIVE_DEP_FILE || 'G:\\My Drive\\AAMX\\Dep File';
 
-// Mapping: Source in public/pdfs -> Target folder & clean canonical filename in Google Drive Dep File
-const PDF_MAPPINGS = [
-  // 00 - Department Admin & Policies
+// 1. Department Admin, Policies, Schemes of Work, Fieldwork, and Cover
+const STATIC_MAPPINGS = [
+  // 02 - Department Admin & Strategy
   {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'history_department_development_plan_2026_2027.pdf',
-    dest: 'History Department Development Plan 2026-2027.pdf',
-    category: 'Admin',
-  },
-  {
-    folder: '00_Department_Admin_and_Policies',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Department_Policies'),
     src: 'history_marking_and_feedback_policy_v2.pdf',
     dest: 'History Marking and Feedback Policy (with Visual Appendix).pdf',
     category: 'Admin',
   },
   {
-    folder: '00_Department_Admin_and_Policies',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Department_Policies'),
     src: 'whole_school_curriculum_overview.pdf',
     dest: 'Whole School History Curriculum Overview (Executive).pdf',
     category: 'Admin',
   },
   {
-    folder: '00_Department_Admin_and_Policies',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Department_Policies'),
     src: 'curriculum_overview_tabular.pdf',
     dest: 'Whole School History Curriculum Overview (Tabular).pdf',
     category: 'Admin',
   },
   {
-    folder: '00_Department_Admin_and_Policies',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Department_Policies'),
     src: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).pdf',
     dest: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).pdf',
     category: 'Admin',
   },
   {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).docx',
-    dest: 'Research Dossier - 2nd Lt Ernest Crummack (AI Case Study).docx',
-    category: 'Admin',
-  },
-  {
-    folder: '00_Department_Admin_and_Policies',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Department_Policies'),
     src: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
     dest: 'AI Guide for Family Military Historians (Edward Pearson).pdf',
     category: 'Admin',
   },
-  {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'AI Guide for Family Military Historians (Edward Pearson).docx',
-    dest: 'AI Guide for Family Military Historians (Edward Pearson).docx',
-    category: 'Admin',
-  },
-  {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'History_Curriculum_Master_Roadmap_16_Units.docx',
-    dest: 'History Curriculum Master Roadmap 16 Units.docx',
-    category: 'Admin',
-  },
-  {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'Departmental_Master_Roadmap_and_16Page_Booklet_Blueprint_2026.pdf',
-    dest: 'Departmental Master Roadmap & 16-Page Booklet Blueprint (2026).pdf',
-    category: 'Admin',
-  },
-  {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'history_department_open_evening_a3.pdf',
-    dest: 'History Department Open Evening (A3 Poster).pdf',
-    category: 'Admin',
-  },
-  {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'GCSE History Curriculum Audit Table (2026).pdf',
-    dest: 'GCSE History Curriculum Audit Table (2026).pdf',
-    category: 'Admin',
-  },
-  {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'GCSE_Three_Pillars_Conversion_Ledger_2026.pdf',
-    dest: 'GCSE Three Pillars Conversion Ledger (2026).pdf',
-    category: 'Admin',
-  },
-  {
-    folder: '00_Department_Admin_and_Policies',
-    src: 'History Department Master Plan & Curriculum Tracker (2026).pdf',
-    dest: 'History Department Master Plan & Curriculum Tracker (2026).pdf',
-    category: 'Admin',
-  },
 
-  // 01 - Schemes of Work (All 5 in one dedicated folder for 1-click batch upload)
+  // 02 - Schemes of Work
   {
-    folder: '01_Schemes_of_Work',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Schemes_of_Work'),
     src: 'year_7_sow.pdf',
     dest: 'Year 7 Scheme of Work (History).pdf',
     category: 'Scheme of Work',
   },
   {
-    folder: '01_Schemes_of_Work',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Schemes_of_Work'),
     src: 'year_8_sow.pdf',
     dest: 'Year 8 Scheme of Work (History).pdf',
     category: 'Scheme of Work',
   },
   {
-    folder: '01_Schemes_of_Work',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Schemes_of_Work'),
     src: 'year_9_sow.pdf',
     dest: 'Year 9 Scheme of Work (History).pdf',
     category: 'Scheme of Work',
   },
   {
-    folder: '01_Schemes_of_Work',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Schemes_of_Work'),
     src: 'year_10_sow.pdf',
     dest: 'Year 10 Scheme of Work (History).pdf',
     category: 'Scheme of Work',
   },
   {
-    folder: '01_Schemes_of_Work',
+    folder: path.join('02_Department_Admin_and_Strategy', 'Schemes_of_Work'),
     src: 'year_11_sow.pdf',
     dest: 'Year 11 Scheme of Work (History).pdf',
     category: 'Scheme of Work',
   },
 
-  // 02 - Fieldwork & Battlefield Tours
+  // 03 - Fieldwork & Enrichment
   {
-    folder: '02_Fieldwork_and_Expeditions',
+    folder: path.join('03_Fieldwork_Trips_and_Enrichment', 'Fieldwork_and_Expeditions'),
     src: 'ypres_tour_leader_companion_a4.pdf',
     dest: 'Ypres 1914-1918 Tour Leader Field Companion (A4 Master).pdf',
     category: 'Fieldwork',
   },
   {
-    folder: '02_Fieldwork_and_Expeditions',
+    folder: path.join('03_Fieldwork_Trips_and_Enrichment', 'Fieldwork_and_Expeditions'),
     src: 'ypres_2026_parent_information_pack_v2.pdf',
     dest: 'Ypres 2026 Parent Information Pack (v2).pdf',
     category: 'Fieldwork',
   },
-
-  // Year 7
   {
-    folder: path.join('Year 7', 'Medieval England'),
-    src: 'medieval_england_pupil_workbook.pdf',
-    dest: 'Medieval England Pupil Workbook.pdf',
-    category: 'Year 7',
+    folder: path.join('03_Fieldwork_Trips_and_Enrichment', 'Fieldwork_and_Expeditions'),
+    src: 'ypres_1914_1918_pupil_field_guide.pdf',
+    dest: 'Ypres 1914-1918 Pupil Field Guide.pdf',
+    category: 'Fieldwork',
   },
   {
-    folder: path.join('Year 7', 'Medieval England'),
-    src: 'medieval_england_textbook_FINAL_V17.pdf',
-    dest: 'Medieval England Master Textbook.pdf',
-    category: 'Year 7',
+    folder: path.join('03_Fieldwork_Trips_and_Enrichment', 'Fieldwork_and_Expeditions'),
+    src: 'ypres_1914_1918_teacher_companion.pdf',
+    dest: 'Ypres 1914-1918 Teacher Companion.pdf',
+    category: 'Fieldwork',
   },
   {
-    folder: path.join('Year 7', 'Medieval England'),
-    src: 'medieval_england_mastery_pack_full_FINAL_V17.pdf',
-    dest: 'Medieval England Complete Mastery Pack.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Water and Sanitation'),
-    src: 'water_and_sanitation_pupil_workbook_FINAL_V17.pdf',
-    dest: 'Water and Sanitation Pupil Workbook.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Water and Sanitation'),
-    src: 'water_and_sanitation_textbook_FINAL_V17.pdf',
-    dest: 'Water and Sanitation Master Textbook.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Water and Sanitation'),
-    src: 'water_and_sanitation_mastery_pack_full_FINAL_V17.pdf',
-    dest: 'Water and Sanitation Complete Mastery Pack.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Water and Sanitation'),
-    src: 'Water_and_Sanitation_A5_Quiz_Booklet.pdf',
-    dest: 'Water and Sanitation A5 Knowledge Recall Quiz Booklet.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Industrialisation and Empire'),
-    src: 'industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
-    dest: 'Industrialisation and Empire Pupil Workbook.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Industrialisation and Empire'),
-    src: 'industrialisation_and_empire_textbook_FINAL_V17.pdf',
-    dest: 'Industrialisation and Empire Master Textbook.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Industrialisation and Empire'),
-    src: 'industrialisation_and_empire_mastery_pack_full_FINAL_V17.pdf',
-    dest: 'Industrialisation and Empire Complete Mastery Pack.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Industrialisation and Empire'),
-    src: 'henry_cort_funtley_primary_source_pack.pdf',
-    dest: 'Henry Cort & Funtley Iron Works Primary Source Pack.pdf',
-    category: 'Year 7',
-  },
-  {
-    folder: path.join('Year 7', 'Industrialisation and Empire'),
-    src: 'hampshire_archives_competition_poster.pdf',
-    dest: 'Hampshire Archives Competition Poster.pdf',
-    category: 'Year 7',
-  },
-
-  // Year 8
-  {
-    folder: path.join('Year 8', 'Early Modern World'),
-    src: 'early_modern_world_pupil_workbook_FINAL_V17.pdf',
-    dest: 'Early Modern World Pupil Workbook.pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'Early Modern World'),
-    src: 'early_modern_world_textbook_FINAL_V17.pdf',
-    dest: 'Early Modern World Master Textbook.pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'Early Modern World'),
-    src: 'early_modern_world_mastery_pack_full_FINAL_V17.pdf',
-    dest: 'Early Modern World Complete Mastery Pack.pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'Early Modern World'),
-    src: 'Early_Modern_World_A5_Quiz_Booklet.pdf',
-    dest: 'Early Modern World A5 Knowledge Recall Quiz Booklet.pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'The Great War', '01_Live_Classroom_Editions (In Use Sept 2026)'),
-    src: 'great_war_pupil_workbook_FINAL_V17.pdf',
-    dest: 'The Great War (Part 1 - 1914-1916) Pupil Workbook [LIVE CLASSROOM EDITION].pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'The Great War', '01_Live_Classroom_Editions (In Use Sept 2026)'),
-    src: 'great_war_textbook_FINAL_V17.pdf',
-    dest: 'The Great War (Part 1 - 1914-1916) Master Textbook [LIVE CLASSROOM EDITION].pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'The Great War', '01_Live_Classroom_Editions (In Use Sept 2026)'),
-    src: 'great_war_mastery_pack_full_FINAL_V17.pdf',
-    dest: 'The Great War (Part 1 - 1914-1916) Complete Mastery Pack [LIVE CLASSROOM EDITION].pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'The Great War', '01_Live_Classroom_Editions (In Use Sept 2026)'),
-    src: 'great_war_part2_pupil_workbook.pdf',
-    dest: 'The Great War (Part 2 - 1917-1918) Pupil Workbook [LIVE CLASSROOM EDITION].pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'The Great War', '01_Live_Classroom_Editions (In Use Sept 2026)'),
-    src: 'great_war_part2_textbook_FINAL_V17.pdf',
-    dest: 'The Great War (Part 2 - 1917-1918) Master Textbook [LIVE CLASSROOM EDITION].pdf',
-    category: 'Year 8',
-  },
-  {
-    folder: path.join('Year 8', 'The Great War', '01_Live_Classroom_Editions (In Use Sept 2026)'),
-    src: 'great_war_part2_mastery_pack_full_FINAL_V17.pdf',
-    dest: 'The Great War (Part 2 - 1917-1918) Complete Mastery Pack [LIVE CLASSROOM EDITION].pdf',
-    category: 'Year 8',
-  },
-
-  // Year 9
-  {
-    folder: path.join('Year 9', 'The Great War'),
-    src: 'great_war_recall_quiz_FULL.pdf',
-    dest: 'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'The Great War'),
-    src: 'great_war_recall_quiz_FULL.pdf',
-    dest: 'Causes of the Great War Knowledge Recall Quiz (All 48 Questions).pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'The Great War'),
-    src: 'great_war_pupil_workbook_FINAL_V17.pdf',
-    dest: 'Causes of the Great War Pupil Workbook.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'The Great War'),
-    src: 'great_war_textbook_FINAL_V17.pdf',
-    dest: 'Causes of the Great War Master Textbook.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'The Great War'),
-    src: 'great_war_mastery_pack_full_FINAL_V17.pdf',
-    dest: 'Causes of the Great War Complete Mastery Pack.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'The Great War'),
-    src: 'standalone_cover_yr9_christmas_truce.pdf',
-    dest: 'The Christmas Truce of 1914 Standalone Emergency Cover Pack (Double Period).pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'The Shoah (Holocaust)'),
-    src: 'the_shoah_pupil_workbook_FINAL_V17.pdf',
-    dest: 'The Shoah (Holocaust) Pupil Workbook.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'The Shoah (Holocaust)'),
-    src: 'the_shoah_textbook_FINAL_V17.pdf',
-    dest: 'The Shoah (Holocaust) Master Textbook.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'Post-War Britain'),
-    src: 'post_war_britain_pupil_workbook_FINAL_V17.pdf',
-    dest: 'Post-War Britain Pupil Workbook.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'Post-War Britain'),
-    src: 'post_war_britain_textbook_FINAL_V17.pdf',
-    dest: 'Post-War Britain Master Textbook.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'Post-War Britain'),
-    src: 'cold_war_pupil_workbook_FINAL_V17.pdf',
-    dest: 'Cold War Context Pupil Workbook.pdf',
-    category: 'Year 9',
-  },
-  {
-    folder: path.join('Year 9', 'Post-War Britain'),
-    src: 'cold_war_textbook_FINAL_V17.pdf',
-    dest: 'Cold War Context Master Textbook.pdf',
-    category: 'Year 9',
-  },
-
-  // Year 11 (GCSE) - Medicine Through Time
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
-    dest: 'Medicine Pupil Workbook (1. Medieval).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (1. Medieval).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_pupil_workbook_renaissance_FINAL_V17.pdf',
-    dest: 'Medicine Pupil Workbook (2. Renaissance).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_renaissance_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (2. Renaissance).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf',
-    dest: 'Medicine Pupil Workbook (3. 18th & 19th Century).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_18th_19th_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (3. 18th & 19th Century).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_pupil_workbook_modern_FINAL_V17.pdf',
-    dest: 'Medicine Pupil Workbook (4. Modern).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_modern_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (4. Modern).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
-    dest: 'Medicine Pupil Workbook (5. Western Front).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_textbook_western_front_FINAL_V17.pdf',
-    dest: 'Medicine Master Textbook (5. Western Front).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_visual_revision_and_exam_guide.pdf',
-    dest: 'Edexcel GCSE Medicine Visual Revision and Exam Guide.pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'med_mastery_pack_FULL.pdf',
-    dest: 'Medicine Complete Mastery & Exam Practice Guide.pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'med_recall_quiz_pack_FULL.pdf',
-    dest: 'Medicine Master Knowledge Recall Quiz (All 380 Questions).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf',
-    dest: 'Medicine Pupil Workbook (Complete All Eras Master).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Medicine Thematic Study Master Knowledge Retrieval Companion.pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Western Front Master Knowledge Retrieval Companion.pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_specification_and_limitations_audit.pdf',
-    dest: 'Medicine Specification & Limitations Audit.pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_32_page_compendium.pdf',
-    dest: 'Edexcel Paper 1 Medicine 32-Page Ultimate Compendium.pdf',
-    category: 'Year 11 GCSE',
-  },
-
-  // Year 11 (GCSE) - Early Elizabethan England
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_pupil_workbook_KT1_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Pupil Workbook (KT1).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_textbook_KT1_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Master Textbook (KT1).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_mastery_pack_KT1_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Mastery Pack (KT1).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_pupil_workbook_KT2_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Pupil Workbook (KT2).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_textbook_KT2_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Master Textbook (KT2).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_mastery_pack_KT2_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Mastery Pack (KT2).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_pupil_workbook_KT3_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Pupil Workbook (KT3).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_textbook_KT3_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Master Textbook (KT3).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'eee_mastery_pack_KT3_FINAL_V17.pdf',
-    dest: 'Early Elizabethan England Mastery Pack (KT3).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 2 - Early Elizabethan England'),
-    src: 'Early_Elizabethan_England_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Early Elizabethan England Master Knowledge Retrieval Companion.pdf',
-    category: 'Year 11 GCSE',
-  },
-
-  // Year 10 (GCSE) - Conflict in the Middle East
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_timeline.pdf',
-    dest: 'Conflict in the Middle East Visual Timeline.pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_revision_guide.pdf',
-    dest: 'Conflict in the Middle East Visual Revision & Exam Guide.pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_mastery_pack_FULL.pdf',
-    dest: 'Conflict in the Middle East Complete Mastery Revision & Exam Practice Guide.pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_mastery_pack_KT1_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Mastery Pack (KT1).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_mastery_pack_KT2_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Mastery Pack (KT2).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_mastery_pack_KT3_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Mastery Pack (KT3).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_pupil_workbook_KT1_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Pupil Workbook (KT1).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_textbook_KT1_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Master Textbook (KT1).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_pupil_workbook_KT2_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Pupil Workbook (KT2).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_textbook_KT2_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Master Textbook (KT2).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_pupil_workbook_KT3_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Pupil Workbook (KT3).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_new_textbook_KT3_FINAL_V17.pdf',
-    dest: 'Conflict in the Middle East Master Textbook (KT3).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_recall_quiz_FULL.pdf',
-    dest: 'Conflict in the Middle East Master Knowledge Recall Quiz (All 200 Questions).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'cme_cover_lesson_double_period.pdf',
-    dest: 'Conflict in the Middle East Cover Lesson (Double Period).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Conflict in the Middle East Master Knowledge Retrieval Companion.pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'CME_Lesson_4_Causal_Domino_Note_Companion.pdf',
-    dest: 'Conflict in the Middle East Lesson 4 Causal Domino Note Companion.pdf',
-    category: 'Year 10 GCSE',
-  },
-
-  // Year 11 (GCSE) - USA 1954-75
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_visual_revision_guide.pdf',
-    dest: 'Edexcel GCSE USA Visual Revision and Exam Guide.pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_mastery_pack_FULL.pdf',
-    dest: 'USA 1954-75 Complete Mastery Revision & Exam Practice Guide.pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_recall_quiz_FULL.pdf',
-    dest: 'USA 1954-75 Master Knowledge Recall Quiz (All 320 Questions).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_pupil_workbook_KT1_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Pupil Workbook (KT1).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_textbook_KT1_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Master Textbook (KT1).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_pupil_workbook_KT2_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Pupil Workbook (KT2).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_textbook_KT2_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Master Textbook (KT2).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_pupil_workbook_KT3_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Pupil Workbook (KT3).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_textbook_KT3_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Master Textbook (KT3).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_pupil_workbook_KT4_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Pupil Workbook (KT4).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'usa_textbook_KT4_FINAL_V17.pdf',
-    dest: 'USA 1954-75 Master Textbook (KT4).pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'year11_usa_overdue_booster.pdf',
-    dest: 'Year 11 USA Overdue Work & Revision Booster.pdf',
-    category: 'Year 11 GCSE',
-  },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
-    src: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'USA 1954-75 Master Knowledge Retrieval Companion.pdf',
-    category: 'Year 11 GCSE',
-  },
-
-  // Year 10 (GCSE) - Weimar and Nazi Germany
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Pupil Workbook (KT1).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_textbook_KT1_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Master Textbook (KT1).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_mastery_pack_KT1_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Mastery Pack (KT1).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_pupil_workbook_KT2_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Pupil Workbook (KT2).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_textbook_KT2_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Master Textbook (KT2).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_mastery_pack_KT2_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Mastery Pack (KT2).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_pupil_workbook_KT3_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Pupil Workbook (KT3).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_textbook_KT3_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Master Textbook (KT3).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_mastery_pack_KT3_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Mastery Pack (KT3).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_pupil_workbook_KT4_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Pupil Workbook (KT4).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_textbook_KT4_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Master Textbook (KT4).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'weimar_nazi_germany_mastery_pack_KT4_FINAL_V17.pdf',
-    dest: 'Weimar and Nazi Germany Mastery Pack (KT4).pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'year10_germany_overdue_booster.pdf',
-    dest: 'Year 10 Germany Overdue Work & Revision Booster.pdf',
-    category: 'Year 10 GCSE',
-  },
-  {
-    folder: path.join('Year 10 (GCSE)', 'Paper 3 - Weimar and Nazi Germany'),
-    src: 'Weimar_and_Nazi_Germany_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Weimar and Nazi Germany Master Knowledge Retrieval Companion.pdf',
-    category: 'Year 10 GCSE',
-  },
-
-  // Trips - Battlefield Tour - Ypres (Streamlined Suite)
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'ypres_2026_parent_information_pack_v2.pdf',
-    dest: 'Ypres 2026 Parent Information Pack.pdf',
-    category: 'Trips',
-  },
-  {
-    folder: path.join('Trips', 'Battlefield Tour - Ypres'),
-    src: 'ypres_tour_leader_companion_a4.pdf',
-    dest: 'Ypres 1914-1918 Tour Leader Field Companion (A4).pdf',
-    category: 'Trips',
-  },
-
-  // Chess Club
-  {
-    folder: 'Chess Club',
+    folder: path.join('03_Fieldwork_Trips_and_Enrichment', 'Chess_Club'),
     src: 'chess_board_qr_stands.pdf',
     dest: 'The History Portal Chess Board QR Table Stands.pdf',
-    category: 'Chess Club',
+    category: 'Enrichment',
   },
 
-  // Mastery & Quiz Packs (Central Printing Hub)
+  // Primary Source Packs in KS3
   {
-    folder: 'Mastery & Quiz Packs',
-    src: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Medicine Thematic Study Master Knowledge Retrieval Companion.pdf',
-    category: 'Mastery & Quizzes',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 7 - Industrialisation and Empire',
+    ),
+    src: 'henry_cort_funtley_primary_source_pack.pdf',
+    dest: 'Henry Cort & Funtley Iron Works Primary Source Pack.pdf',
+    category: 'Source Pack',
   },
   {
-    folder: 'Mastery & Quiz Packs',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 7 - Industrialisation and Empire',
+    ),
+    src: 'hampshire_archives_competition_poster.pdf',
+    dest: 'Hampshire Archives Competition Poster.pdf',
+    category: 'Source Pack',
+  },
+];
+
+// Unit folder mapping configuration for the 3 Curricular Pillars
+const UNIT_FOLDER_CONFIG = {
+  // KS3 Units
+  medieval_england: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 7 - Medieval England',
+    ),
+    prefix: 'Medieval England',
+  },
+  water_and_sanitation: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 7 - Water and Sanitation',
+    ),
+    prefix: 'Water and Sanitation',
+  },
+  industrialisation_and_empire: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 7 - Industrialisation and Empire',
+    ),
+    prefix: 'Industrialisation and Empire',
+  },
+  early_modern_world: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 8 - Early Modern World',
+    ),
+    prefix: 'Early Modern World',
+  },
+  monarchy_religion_power: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 8 - Crown, Church or Parliament',
+    ),
+    prefix: 'Crown, Church or Parliament',
+  },
+  great_war: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 8 - Causes of the Great War (Part 1)',
+    ),
+    prefix: 'Causes of the Great War',
+  },
+  great_war_part2: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 8 - The Course of the Great War (Part 2)',
+    ),
+    prefix: 'The Course of the Great War',
+  },
+  australia: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 8 - The History of Australia',
+    ),
+    prefix: 'The History of Australia',
+  },
+  first_british_empire: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 8 - The First British Empire',
+    ),
+    prefix: 'The First British Empire',
+  },
+  second_british_empire: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 8 - The Second British Empire',
+    ),
+    prefix: 'The Second British Empire',
+  },
+  the_shoah: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 9 - The Shoah (Holocaust)',
+    ),
+    prefix: 'The Shoah (Holocaust)',
+  },
+  post_war_britain: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 9 - Post-War Britain',
+    ),
+    prefix: 'Post-War Britain',
+  },
+  cold_war: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'KS3 (Years 7-9)',
+      'Year 9 - Superpower Relations & Cold War',
+    ),
+    prefix: 'Superpower Relations & Cold War',
+  },
+
+  // GCSE Units
+  edexcel_medicine: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 1 - Medicine Through Time',
+    ),
+    prefix: 'Medicine in Britain',
+  },
+  eee: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 2 - Early Elizabethan England',
+    ),
+    prefix: 'Early Elizabethan England',
+  },
+  cme_new: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 2 - Conflict in the Middle East',
+    ),
+    prefix: 'Conflict in the Middle East',
+  },
+  weimar_nazi_germany: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - Weimar & Nazi Germany',
+    ),
+    prefix: 'Weimar & Nazi Germany',
+  },
+  usa: {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - The USA 1954-1975',
+    ),
+    prefix: 'The USA 1954-1975',
+  },
+};
+
+// Sub-workbooks and textbooks for GCSE units (multi-topic architecture)
+const GCSE_MULTI_TOPIC_EXTRAS = [
+  // Medicine Eras
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 1 - Medicine Through Time',
+    ),
+    src: 'edexcel_medicine_pupil_workbook_medieval.pdf',
+    dest: 'Medicine Pupil Workbook (1. Medieval).pdf',
+    category: 'GCSE Medicine',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 1 - Medicine Through Time',
+    ),
+    src: 'edexcel_medicine_pupil_workbook_renaissance.pdf',
+    dest: 'Medicine Pupil Workbook (2. Renaissance).pdf',
+    category: 'GCSE Medicine',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 1 - Medicine Through Time',
+    ),
+    src: 'edexcel_medicine_pupil_workbook_18th_19th.pdf',
+    dest: 'Medicine Pupil Workbook (3. 18th & 19th Century).pdf',
+    category: 'GCSE Medicine',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 1 - Medicine Through Time',
+    ),
+    src: 'edexcel_medicine_pupil_workbook_modern.pdf',
+    dest: 'Medicine Pupil Workbook (4. Modern).pdf',
+    category: 'GCSE Medicine',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 1 - Medicine Through Time',
+    ),
+    src: 'edexcel_medicine_pupil_workbook_western_front.pdf',
+    dest: 'Medicine Pupil Workbook (5. Western Front).pdf',
+    category: 'GCSE Medicine',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 1 - Medicine Through Time',
+    ),
     src: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
     dest: 'Western Front Master Knowledge Retrieval Companion.pdf',
-    category: 'Mastery & Quizzes',
-  },
-  {
-    folder: 'Mastery & Quiz Packs',
-    src: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Conflict in the Middle East Master Knowledge Retrieval Companion.pdf',
-    category: 'Mastery & Quizzes',
-  },
-  {
-    folder: 'Mastery & Quiz Packs',
-    src: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'USA 1954-75 Master Knowledge Retrieval Companion.pdf',
-    category: 'Mastery & Quizzes',
-  },
-  {
-    folder: 'Mastery & Quiz Packs',
-    src: 'water_sanitation_quiz_pack.pdf',
-    dest: 'Year 7 - Water and Sanitation Knowledge Recall Quiz (All 48 Questions).pdf',
-    category: 'Mastery & Quizzes',
-  },
-  {
-    folder: 'Mastery & Quiz Packs',
-    src: 'early_modern_world_quiz_pack.pdf',
-    dest: 'Year 8 - Early Modern World Knowledge Recall Quiz (All 72 Questions).pdf',
-    category: 'Mastery & Quizzes',
-  },
-  {
-    folder: 'Mastery & Quiz Packs',
-    src: 'great_war_quiz_pack.pdf',
-    dest: 'Causes of the Great War Knowledge Recall Quiz (All 72 Questions).pdf',
-    category: 'Mastery & Quizzes',
-  },
-  {
-    folder: 'Mastery & Quiz Packs',
-    src: 'great_war_part2_quiz_pack.pdf',
-    dest: 'Causes of the Great War Part 2 Knowledge Recall Quiz.pdf',
-    category: 'Mastery & Quizzes',
+    category: 'GCSE Medicine',
   },
 
-  // 02. GCSE (Years 10-11) Active Printing Mirrors
+  // Early Elizabeth Key Topics
   {
-    folder: path.join('02. GCSE (Years 10-11)', 'Paper 1 - Medicine Through Time'),
-    src: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-    category: 'GCSE Mirror',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 2 - Early Elizabethan England',
+    ),
+    src: 'eee_pupil_workbook_KT1.pdf',
+    dest: 'Early Elizabethan England Pupil Workbook (KT1).pdf',
+    category: 'GCSE EEE',
   },
   {
-    folder: path.join('02. GCSE (Years 10-11)', 'Paper 1 - Medicine Through Time'),
-    src: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Western Front Master Knowledge Retrieval Companion.pdf',
-    category: 'GCSE Mirror',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 2 - Early Elizabethan England',
+    ),
+    src: 'eee_pupil_workbook_KT2.pdf',
+    dest: 'Early Elizabethan England Pupil Workbook (KT2).pdf',
+    category: 'GCSE EEE',
   },
   {
-    folder: path.join('02. GCSE (Years 10-11)', 'Paper 2 - Conflict in the Middle East'),
-    src: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
-    category: 'GCSE Mirror',
-  },
-  {
-    folder: path.join('02. GCSE (Years 10-11)', 'Paper 3 - USA 1954-75'),
-    src: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
-    category: 'GCSE Mirror',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 2 - Early Elizabethan England',
+    ),
+    src: 'eee_pupil_workbook_KT3.pdf',
+    dest: 'Early Elizabethan England Pupil Workbook (KT3).pdf',
+    category: 'GCSE EEE',
   },
 
-  // Root pdfs Mirrors
+  // Conflict in the Middle East Key Topics
   {
-    folder: 'pdfs',
-    src: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-    category: 'PDFs Mirror',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 2 - Conflict in the Middle East',
+    ),
+    src: 'cme_new_pupil_workbook_KT1.pdf',
+    dest: 'Conflict in the Middle East Pupil Workbook (KT1).pdf',
+    category: 'GCSE CME',
   },
   {
-    folder: 'pdfs',
-    src: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
-    category: 'PDFs Mirror',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 2 - Conflict in the Middle East',
+    ),
+    src: 'cme_new_pupil_workbook_KT2.pdf',
+    dest: 'Conflict in the Middle East Pupil Workbook (KT2).pdf',
+    category: 'GCSE CME',
   },
   {
-    folder: 'pdfs',
-    src: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
-    category: 'PDFs Mirror',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 2 - Conflict in the Middle East',
+    ),
+    src: 'cme_new_pupil_workbook_KT3.pdf',
+    dest: 'Conflict in the Middle East Pupil Workbook (KT3).pdf',
+    category: 'GCSE CME',
+  },
+
+  // Weimar Key Topics
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - Weimar & Nazi Germany',
+    ),
+    src: 'weimar_nazi_germany_pupil_workbook_KT1.pdf',
+    dest: 'Weimar and Nazi Germany Pupil Workbook (KT1).pdf',
+    category: 'GCSE Weimar',
   },
   {
-    folder: 'pdfs',
-    src: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
-    dest: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
-    category: 'PDFs Mirror',
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - Weimar & Nazi Germany',
+    ),
+    src: 'weimar_nazi_germany_pupil_workbook_KT2.pdf',
+    dest: 'Weimar and Nazi Germany Pupil Workbook (KT2).pdf',
+    category: 'GCSE Weimar',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - Weimar & Nazi Germany',
+    ),
+    src: 'weimar_nazi_germany_pupil_workbook_KT3.pdf',
+    dest: 'Weimar and Nazi Germany Pupil Workbook (KT3).pdf',
+    category: 'GCSE Weimar',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - Weimar & Nazi Germany',
+    ),
+    src: 'weimar_nazi_germany_pupil_workbook_KT4.pdf',
+    dest: 'Weimar and Nazi Germany Pupil Workbook (KT4).pdf',
+    category: 'GCSE Weimar',
+  },
+
+  // USA Key Topics
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - The USA 1954-1975',
+    ),
+    src: 'usa_pupil_workbook_KT1.pdf',
+    dest: 'USA 1954-75 Pupil Workbook (KT1).pdf',
+    category: 'GCSE USA',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - The USA 1954-1975',
+    ),
+    src: 'usa_pupil_workbook_KT2.pdf',
+    dest: 'USA 1954-75 Pupil Workbook (KT2).pdf',
+    category: 'GCSE USA',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - The USA 1954-1975',
+    ),
+    src: 'usa_pupil_workbook_KT3.pdf',
+    dest: 'USA 1954-75 Pupil Workbook (KT3).pdf',
+    category: 'GCSE USA',
+  },
+  {
+    folder: path.join(
+      '01_Curriculum_and_Key_Stages',
+      'GCSE (Years 10-11)',
+      'Paper 3 - The USA 1954-1975',
+    ),
+    src: 'usa_pupil_workbook_KT4.pdf',
+    dest: 'USA 1954-75 Pupil Workbook (KT4).pdf',
+    category: 'GCSE USA',
   },
 ];
 
-// List of legacy loose file names previously written to root that should be cleaned up after sync
-const LEGACY_ROOT_FILES = [
-  'Year 7 Scheme of Work (History).pdf',
-  'Year 8 Scheme of Work (History).pdf',
-  'Year 9 Scheme of Work (History).pdf',
-  'Year 10 Scheme of Work (History).pdf',
-  'Year 11 Scheme of Work (History).pdf',
-  'Whole School History Curriculum Overview (Executive).pdf',
-  'Whole School History Curriculum Overview (Tabular).pdf',
-  'History Marking and Feedback Policy (with Visual Appendix).pdf',
-  'History Department Development Plan 2026-2027.pdf',
-  'Edexcel GCSE Medicine Visual Revision and Exam Guide.pdf',
-  'Edexcel GCSE USA Visual Revision and Exam Guide.pdf',
-  'Conflict in the Middle East Visual Timeline.pdf',
-  'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
-  'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf',
-  'Water_and_Sanitation_A5_Quiz_Booklet.pdf',
-  'Early_Modern_World_A5_Quiz_Booklet.pdf',
-  'Departmental_Master_Roadmap_and_16Page_Booklet_Blueprint_2026.pdf',
-  'History_Curriculum_Master_Roadmap_16_Units.docx',
-  'History Department Master Plan & Curriculum Tracker (2026).pdf',
-  'History Department Master Plan & Curriculum Tracker (2026).md',
-  'GCSE_Three_Pillars_Conversion_Ledger_2026.pdf',
-  'GCSE History Curriculum Audit Table (2026).pdf',
-  'history_department_open_evening_a3.pdf',
-];
+function loadCurricularPillarsCatalog() {
+  const launchpadFile = path.join(PATHS.ROOT, 'src', 'engine', 'hero_launchpad.js');
+  if (!fs.existsSync(launchpadFile)) return {};
+  const content = fs.readFileSync(launchpadFile, 'utf8');
+  const match = content.match(/export const CURRICULAR_PILLARS_CATALOG = ({[\s\S]*?});\n\n\/\*\*/);
+  if (!match) return {};
+  try {
+    return eval('(' + match[1] + ')');
+  } catch (e) {
+    return {};
+  }
+}
 
-// Subfolder legacy files / duplicates to clean up
-const LEGACY_SUBFOLDER_FILES = [
-  // Loose in Year 11 (GCSE) root
-  path.join(
-    'Year 11 (GCSE)',
-    'GCSE Emergency Cover - The Bombing of Dresden Interpretations Clash (Double Period).pdf',
-  ),
-  // Loose in Year 10 (GCSE) root
-  path.join(
-    'Year 10 (GCSE)',
-    'GCSE Emergency Cover - Jack the Ripper Source Utility Masterclass (Double Period).pdf',
-  ),
-  // Duplicates / raw codes in Medicine
-  path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time', 'med_mastery_pack_FULL.pdf'),
-  path.join(
-    'Year 11 (GCSE)',
-    'Paper 1 - Medicine Through Time',
-    'Medicine in Britain Complete Mastery Pack.pdf',
-  ),
-  path.join(
-    'Year 11 (GCSE)',
-    'Paper 1 - Medicine Through Time',
-    'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-  ),
-  // Duplicates / raw codes in Middle East
-  path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East', 'cme_mastery_pack_FULL.pdf'),
-  path.join(
-    'Year 10 (GCSE)',
-    'Paper 2 - Conflict in the Middle East',
-    'cme_visual_revision_guide.pdf',
-  ),
-  path.join(
-    'Year 10 (GCSE)',
-    'Paper 2 - Conflict in the Middle East',
-    'Conflict in the Middle East Visual Revision Guide.pdf',
-  ),
-  path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East', 'cme_revision_guide.pdf'),
-  path.join(
-    'Year 10 (GCSE)',
-    'Paper 2 - Conflict in the Middle East',
-    'Conflict in the Middle East Revision Guide.pdf',
-  ),
-  path.join(
-    'Year 10 (GCSE)',
-    'Paper 2 - Conflict in the Middle East',
-    'Conflict in the Middle East Complete Mastery Pack.pdf',
-  ),
-  // Duplicates in USA
-  path.join(
-    'Year 11 (GCSE)',
-    'Paper 3 - USA 1954-75',
-    'edexcel_usa_visual_revision_and_exam_guide.pdf',
-  ),
-  path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75', 'usa_visual_revision_guide.pdf'),
-];
+function resolvePdfSource(filename) {
+  if (!filename) return null;
+  const clean = filename.replace(/^\/pdfs\//, '');
+  const candidates = [
+    path.join(PATHS.PDFS, clean),
+    path.join(PATHS.PUBLIC, 'docs', clean),
+    path.join(PATHS.PUBLIC, clean),
+    path.join(PATHS.ROOT, clean),
+  ];
+
+  for (const cand of candidates) {
+    if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+      return cand;
+    }
+  }
+  return null;
+}
+
+function buildDynamicPillarsMappings() {
+  const catalog = loadCurricularPillarsCatalog();
+  const mappings = [];
+
+  for (const [unitId, cfg] of Object.entries(UNIT_FOLDER_CONFIG)) {
+    const entry = catalog[unitId];
+    if (!entry) continue;
+
+    // Pillar 1: Master Textbook
+    if (entry.textbook && entry.textbook.pdfUrl) {
+      mappings.push({
+        folder: cfg.folder,
+        src: path.basename(entry.textbook.pdfUrl),
+        dest: `${cfg.prefix} Master Textbook.pdf`,
+        category: 'Textbook',
+      });
+    }
+
+    // Pillar 2: Pupil Workbook
+    if (entry.workbook && entry.workbook.pdfUrl) {
+      mappings.push({
+        folder: cfg.folder,
+        src: path.basename(entry.workbook.pdfUrl),
+        dest: `${cfg.prefix} Pupil Workbook.pdf`,
+        category: 'Workbook',
+      });
+    }
+
+    // Pillar 3: Master Retrieval Companion
+    if (entry.retrieval && entry.retrieval.pdfUrl) {
+      mappings.push({
+        folder: cfg.folder,
+        src: path.basename(entry.retrieval.pdfUrl),
+        dest: `${cfg.prefix} Master Knowledge Retrieval Companion.pdf`,
+        category: 'Retrieval Companion',
+      });
+    }
+  }
+
+  return mappings;
+}
 
 function syncAdminPdfsToDrive() {
   console.log('====================================================');
-  console.log('📂 SYNCHRONIZING DEPARTMENT FILE TO GOOGLE DRIVE');
+  console.log('📂 SYNCHRONIZING 4-ZONE DEPARTMENT HUB TO GOOGLE DRIVE');
   console.log('====================================================');
 
   if (!fs.existsSync(DRIVE_DEP_DIR)) {
@@ -1014,34 +585,20 @@ function syncAdminPdfsToDrive() {
 
   console.log(`📁 Target Directory: ${DRIVE_DEP_DIR}\n`);
 
+  const dynamicPillars = buildDynamicPillarsMappings();
+  const allMappings = [...STATIC_MAPPINGS, ...dynamicPillars, ...GCSE_MULTI_TOPIC_EXTRAS];
+
   let syncedCount = 0;
   let skippedCount = 0;
   let errorCount = 0;
 
-  for (const item of PDF_MAPPINGS) {
-    let srcPath = path.join(PATHS.PDFS, item.src);
-    if (!fs.existsSync(srcPath)) {
-      const candidates = [
-        path.join(PATHS.PUBLIC, 'docs', item.src),
-        path.join(PATHS.PUBLIC, item.src),
-        path.join(PATHS.ROOT, item.src),
-        path.join(PATHS.ROOT, 'public', 'docs', item.src),
-      ];
-      for (const cand of candidates) {
-        if (fs.existsSync(cand)) {
-          srcPath = cand;
-          break;
-        }
-      }
-    }
-
+  for (const item of allMappings) {
+    const srcPath = resolvePdfSource(item.src);
     const targetFolder = path.join(DRIVE_DEP_DIR, item.folder);
     const destPath = path.join(targetFolder, item.dest);
 
-    if (!fs.existsSync(srcPath)) {
-      console.log(
-        `   ⏭️ Skipped [${item.category}]: ${item.src} (not yet generated in public/pdfs)`,
-      );
+    if (!srcPath) {
+      console.log(`   ⏭️ Skipped [${item.category}]: ${item.src} (not found in public/pdfs)`);
       skippedCount++;
       continue;
     }
@@ -1060,44 +617,8 @@ function syncAdminPdfsToDrive() {
     }
   }
 
-  // Clean up legacy loose copies from root if they exist and are safely in their subfolders
-  console.log('\n🧹 Checking for legacy loose PDF copies in root directory...');
-  let cleanedCount = 0;
-  for (const legacyName of LEGACY_ROOT_FILES) {
-    const legacyPath = path.join(DRIVE_DEP_DIR, legacyName);
-    if (fs.existsSync(legacyPath)) {
-      try {
-        fs.unlinkSync(legacyPath);
-        console.log(`   🗑️ Cleaned loose root copy: ${legacyName}`);
-        cleanedCount++;
-      } catch (e) {
-        console.warn(`   ⚠️ Could not remove loose root copy ${legacyName}: ${e.message}`);
-      }
-    }
-  }
-
-  // Clean up legacy subfolder duplicate files
-  console.log('\n🧹 Checking for duplicate/obsolete filenames in subfolders...');
-  for (const relPath of LEGACY_SUBFOLDER_FILES) {
-    const fullPath = path.join(DRIVE_DEP_DIR, relPath);
-    if (fs.existsSync(fullPath)) {
-      try {
-        fs.unlinkSync(fullPath);
-        console.log(`   🗑️ Cleaned subfolder duplicate: ${relPath}`);
-        cleanedCount++;
-      } catch (e) {
-        console.warn(`   ⚠️ Could not remove subfolder duplicate ${relPath}: ${e.message}`);
-      }
-    }
-  }
-
-  // Keep active print mirrors (pdfs/ and 02. GCSE/) intact and synchronized
-  console.log('   📂 Active print mirrors (pdfs/ and 02. GCSE/) preserved and synchronized.');
-
-  console.log('----------------------------------------------------');
-  console.log(
-    `📊 Result: ${syncedCount} synced, ${skippedCount} skipped, ${cleanedCount} files cleaned, ${errorCount} errors.`,
-  );
+  console.log('\n----------------------------------------------------');
+  console.log(`📊 Result: ${syncedCount} synced, ${skippedCount} skipped, ${errorCount} errors.`);
   console.log('====================================================\n');
   return errorCount === 0;
 }
@@ -1108,6 +629,5 @@ if (require.main === module) {
 
 module.exports = {
   syncAdminPdfsToDrive,
-  PDF_MAPPINGS,
   DRIVE_DEP_DIR,
 };

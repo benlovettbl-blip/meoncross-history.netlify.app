@@ -20,7 +20,7 @@ export const SCHEMES_OF_WORK_DATA = {
     subtitle: 'Conquest, Feudal Control, Crown vs Church, Demography & Popular Revolt',
     overarchingEnquiry:
       'How was royal power constructed, contested, and transformed in medieval England between Hastings and Bosworth?',
-    textbookPdf: '/pdfs/medieval_england_textbook_FINAL_V17.pdf',
+    textbookPdf: '/pdfs/medieval_england_textbook.pdf',
     workbookPdf: '/pdfs/medieval_england_pupil_workbook.pdf',
     enquiries: [
       {
@@ -180,7 +180,7 @@ export const SCHEMES_OF_WORK_DATA = {
     overarchingEnquiry:
       'How did early modern commerce, religious conflict, and ideological revolution reshape Britain and the global balance of power between 1450 and 1750?',
     textbookPdf: null,
-    workbookPdf: '/pdfs/early_modern_world_pupil_workbook_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/early_modern_world_pupil_workbook.pdf',
     enquiries: [
       {
         num: 1,

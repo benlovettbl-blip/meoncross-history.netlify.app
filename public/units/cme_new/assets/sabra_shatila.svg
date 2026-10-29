@@ -1,1 +1,265 @@
-<svg id="my-svg" width="100%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="flowchart" style="max-width: 276px; background-color: transparent;" viewBox="0 0 276 734" role="graphics-document document" aria-roledescription="flowchart-v2"><style>#my-svg{font-family:arial;font-size:16px;fill:#333;}@keyframes edge-animation-frame{from{stroke-dashoffset:0;}}@keyframes dash{to{stroke-dashoffset:0;}}#my-svg .edge-animation-slow{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 50s linear infinite;stroke-linecap:round;}#my-svg .edge-animation-fast{stroke-dasharray:9,5!important;stroke-dashoffset:900;animation:dash 20s linear infinite;stroke-linecap:round;}#my-svg .error-icon{fill:hsl(60, 100%, 100%);}#my-svg .error-text{fill:#000000;stroke:#000000;}#my-svg .edge-thickness-normal{stroke-width:1px;}#my-svg .edge-thickness-thick{stroke-width:3.5px;}#my-svg .edge-pattern-solid{stroke-dasharray:0;}#my-svg .edge-thickness-invisible{stroke-width:0;fill:none;}#my-svg .edge-pattern-dashed{stroke-dasharray:3;}#my-svg .edge-pattern-dotted{stroke-dasharray:2;}#my-svg .marker{fill:#333333;stroke:#333333;}#my-svg .marker.cross{stroke:#333333;}#my-svg svg{font-family:arial;font-size:16px;}#my-svg p{margin:0;}#my-svg .label{font-family:arial;color:#333;}#my-svg .cluster-label text{fill:#000000;}#my-svg .cluster-label span{color:#000000;}#my-svg .cluster-label span p{background-color:transparent;}#my-svg .label text,#my-svg span{fill:#333;color:#333;}#my-svg .node rect,#my-svg .node circle,#my-svg .node ellipse,#my-svg .node polygon,#my-svg .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#my-svg .rough-node .label text,#my-svg .node .label text,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-anchor:middle;}#my-svg .node .katex path{fill:#000;stroke:#000;stroke-width:1px;}#my-svg .rough-node .label,#my-svg .node .label,#my-svg .image-shape .label,#my-svg .icon-shape .label{text-align:center;}#my-svg .node.clickable{cursor:pointer;}#my-svg .root .anchor path{fill:#333333!important;stroke-width:0;stroke:#333333;}#my-svg .arrowheadPath{fill:#0b0b0b;}#my-svg .edgePath .path{stroke:#333333;stroke-width:1px;}#my-svg .flowchart-link{stroke:#333333;fill:none;}#my-svg .edgeLabel{background-color:hsl(120, 100%, 96.2745098039%);text-align:center;}#my-svg .edgeLabel p{background-color:hsl(120, 100%, 96.2745098039%);}#my-svg .edgeLabel rect{opacity:0.5;background-color:hsl(120, 100%, 96.2745098039%);fill:hsl(120, 100%, 96.2745098039%);}#my-svg .labelBkg{background-color:rgba(235.9999999999, 255, 235.9999999999, 0.5);}#my-svg .cluster rect{fill:hsl(60, 100%, 100%);stroke:hsl(60, 60%, 90%);stroke-width:1px;}#my-svg .cluster text{fill:#000000;}#my-svg .cluster span{color:#000000;}#my-svg div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:arial;font-size:12px;background:hsl(60, 100%, 100%);border:1px solid hsl(60, 60%, 90%);border-radius:2px;pointer-events:none;z-index:100;}#my-svg .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#my-svg rect.text{fill:none;stroke-width:0;}#my-svg .icon-shape,#my-svg .image-shape{background-color:hsl(120, 100%, 96.2745098039%);text-align:center;}#my-svg .icon-shape p,#my-svg .image-shape p{background-color:hsl(120, 100%, 96.2745098039%);padding:2px;}#my-svg .icon-shape .label rect,#my-svg .image-shape .label rect{opacity:0.5;background-color:hsl(120, 100%, 96.2745098039%);fill:hsl(120, 100%, 96.2745098039%);}#my-svg .label-icon{display:inline-block;height:1em;overflow:visible;vertical-align:-0.125em;}#my-svg .node .label-icon path{fill:currentColor;stroke:revert;stroke-width:revert;}#my-svg .node .neo-node{stroke:#9370DB;}#my-svg [data-look="neo"].node rect,#my-svg [data-look="neo"].cluster rect,#my-svg [data-look="neo"].node polygon{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].swimlane.cluster rect{filter:none;}#my-svg [data-look="neo"].node path{stroke:url(#my-svg-gradient);stroke-width:1px;}#my-svg [data-look="neo"].node .outer-path{filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node .neo-line path{stroke:#9370DB;filter:none;}#my-svg [data-look="neo"].node circle{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].node circle .state-start{fill:#000000;}#my-svg [data-look="neo"].icon-shape .icon{fill:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg [data-look="neo"].icon-shape .icon-neo path{stroke:url(#my-svg-gradient);filter:drop-shadow( 1px 2px 2px rgba(185,185,185,1));}#my-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style><g><marker id="my-svg_flowchart-v2-pointEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="4.5" refY="5" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 5 L 10 10 L 10 0 z" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointEnd-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="11.5" refY="7" markerUnits="userSpaceOnUse" markerWidth="10.5" markerHeight="14" orient="auto"><path d="M 0 0 L 11.5 7 L 0 14 z" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-pointStart-margin" class="marker flowchart-v2" viewBox="0 0 11.5 14" refX="1" refY="7" markerUnits="userSpaceOnUse" markerWidth="11.5" markerHeight="14" orient="auto"><polygon points="0,7 11.5,14 11.5,0" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd" class="marker flowchart-v2" viewBox="0 0 10 10" refX="11" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-1" refY="5" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleEnd-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refY="5" refX="12.25" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-circleStart-margin" class="marker flowchart-v2" viewBox="0 0 10 10" refX="-2" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><circle cx="5" cy="5" r="5" class="arrowMarkerPath" style="stroke-width: 0; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="12" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossStart" class="marker cross flowchart-v2" viewBox="0 0 11 11" refX="-1" refY="5.2" markerUnits="userSpaceOnUse" markerWidth="11" markerHeight="11" orient="auto"><path d="M 1,1 l 9,9 M 10,1 l -9,9" class="arrowMarkerPath" style="stroke-width: 2; stroke-dasharray: 1, 0;"/></marker><marker id="my-svg_flowchart-v2-crossEnd-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="17.7" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5;"/></marker><marker id="my-svg_flowchart-v2-crossStart-margin" class="marker cross flowchart-v2" viewBox="0 0 15 15" refX="-3.5" refY="7.5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M 1,1 L 14,14 M 1,14 L 14,1" class="arrowMarkerPath" style="stroke-width: 2.5; stroke-dasharray: 1, 0;"/></marker><g class="root"><g class="clusters"/><g class="edgePaths"><path d="M138,86L138,90.167C138,94.333,138,102.667,138,110.333C138,118,138,125,138,128.5L138,132" id="my-svg-L_A_B_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_A_B_0" data-points="W3sieCI6MTM4LCJ5Ijo4Nn0seyJ4IjoxMzgsInkiOjExMX0seyJ4IjoxMzgsInkiOjEzNn1d" data-look="classic" marker-end="url(#my-svg_flowchart-v2-pointEnd)"/><path d="M138,214L138,218.167C138,222.333,138,230.667,138,238.333C138,246,138,253,138,256.5L138,260" id="my-svg-L_B_C_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_B_C_0" data-points="W3sieCI6MTM4LCJ5IjoyMTR9LHsieCI6MTM4LCJ5IjoyMzl9LHsieCI6MTM4LCJ5IjoyNjR9XQ==" data-look="classic" marker-end="url(#my-svg_flowchart-v2-pointEnd)"/><path d="M138,342L138,346.167C138,350.333,138,358.667,138,366.333C138,374,138,381,138,384.5L138,388" id="my-svg-L_C_D_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_C_D_0" data-points="W3sieCI6MTM4LCJ5IjozNDJ9LHsieCI6MTM4LCJ5IjozNjd9LHsieCI6MTM4LCJ5IjozOTJ9XQ==" data-look="classic" marker-end="url(#my-svg_flowchart-v2-pointEnd)"/><path d="M138,470L138,474.167C138,478.333,138,486.667,138,494.333C138,502,138,509,138,512.5L138,516" id="my-svg-L_D_E_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_D_E_0" data-points="W3sieCI6MTM4LCJ5Ijo0NzB9LHsieCI6MTM4LCJ5Ijo0OTV9LHsieCI6MTM4LCJ5Ijo1MjB9XQ==" data-look="classic" marker-end="url(#my-svg_flowchart-v2-pointEnd)"/><path d="M138,598L138,602.167C138,606.333,138,614.667,138,622.333C138,630,138,637,138,640.5L138,644" id="my-svg-L_E_F_0" class="edge-thickness-normal edge-pattern-solid edge-thickness-normal edge-pattern-solid flowchart-link" style=";" data-edge="true" data-et="edge" data-id="L_E_F_0" data-points="W3sieCI6MTM4LCJ5Ijo1OTh9LHsieCI6MTM4LCJ5Ijo2MjN9LHsieCI6MTM4LCJ5Ijo2NDh9XQ==" data-look="classic" marker-end="url(#my-svg_flowchart-v2-pointEnd)"/></g><g class="edgeLabels"><g class="edgeLabel"><g class="label" data-id="L_A_B_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_B_C_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_C_D_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_D_E_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g><g class="edgeLabel"><g class="label" data-id="L_E_F_0" transform="translate(0, 0)"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" class="labelBkg" style="display: table-cell; white-space: nowrap; line-height: 1.5; max-width: 200px; text-align: center;"><span class="edgeLabel"></span></div></foreignObject></g></g></g><g class="nodes"><g class="node default" id="my-svg-flowchart-A-0" data-look="classic" transform="translate(138, 47)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Bashir Gemayel Assassinated 14 Sept</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-B-1" data-look="classic" transform="translate(138, 175)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>IDF Encirclement of Sabra &amp; Shatila Camps</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-C-3" data-look="classic" transform="translate(138, 303)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Phalangist Militias Allowed Into Camps</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-D-5" data-look="classic" transform="translate(138, 431)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Three-Day Brutal Massacre of Civilians</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-E-7" data-look="classic" transform="translate(138, 559)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Global Outrage &amp; Kahan Commission</p></span></div></foreignObject></g></g><g class="node default" id="my-svg-flowchart-F-9" data-look="classic" transform="translate(138, 687)"><rect class="basic label-container" style="" x="-130" y="-39" width="260" height="78"/><g class="label" style="" transform="translate(-100, -24)"><rect/><foreignObject width="200" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="display: table; white-space: break-spaces; line-height: 1.5; max-width: 200px; text-align: center; width: 200px;"><span class="nodeLabel"><p>Ariel Sharon Forced to Resign</p></span></div></foreignObject></g></g></g></g></g><defs><filter id="my-svg-drop-shadow" height="130%" width="130%"><feDropShadow dx="4" dy="4" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><defs><filter id="my-svg-drop-shadow-small" height="150%" width="150%"><feDropShadow dx="2" dy="2" stdDeviation="0" flood-opacity="0.06" flood-color="#000000"/></filter></defs><linearGradient id="my-svg-gradient" gradientUnits="objectBoundingBox" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#9370DB" stop-opacity="1"/><stop offset="100%" stop-color="hsl(120, 60%, 86.2745098039%)" stop-opacity="1"/></linearGradient></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 800" width="100%" height="100%" style="background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Map drop shadows & filters -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+    <filter id="subtle-shadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+
+    <!-- Hatch patterns for built-up refugee camp areas -->
+    <pattern id="campHatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#dc2626" stroke-width="1.5" stroke-opacity="0.25"/>
+    </pattern>
+    <pattern id="sabraHatch" width="8" height="8" patternTransform="rotate(-45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#ea580c" stroke-width="1.2" stroke-opacity="0.2"/>
+    </pattern>
+    <pattern id="parkHatch" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#15803d" fill-opacity="0.3"/>
+      <circle cx="7" cy="7" r="1.5" fill="#15803d" fill-opacity="0.3"/>
+    </pattern>
+
+    <!-- Arrow markers -->
+    <marker id="arrow-phalangist" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#b91c1c"/>
+    </marker>
+    <marker id="arrow-idf" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1d4ed8"/>
+    </marker>
+  </defs>
+
+  <!-- Background Base Map Grid -->
+  <rect width="900" height="800" fill="#f8fafc"/>
+  
+  <!-- Map Title Banner / Archival Header -->
+  <rect x="0" y="0" width="900" height="68" fill="#0f172a"/>
+  <text x="24" y="28" font-size="16" font-weight="800" fill="#ffffff" letter-spacing="1.5">TOPOGRAPHICAL SITE PLAN: SABRA &amp; SHATILA SECTOR</text>
+  <text x="24" y="48" font-size="12" font-weight="500" fill="#94a3b8">WEST BEIRUT • INVESTIGATIVE SITE MAP ENTERED INTO EVIDENCE BY THE KAHAN COMMISSION (16–18 SEPT 1982)</text>
+  <rect x="760" y="16" width="116" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="818" y="38" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">EXHIBIT K-42</text>
+
+  <!-- District Backgrounds -->
+  <!-- Bir Hassan / West Sector -->
+  <path d="M 50,68 L 320,68 L 300,740 L 50,740 Z" fill="#f1f5f9"/>
+  <!-- Southern Suburbs Base -->
+  <path d="M 320,68 L 850,68 L 850,740 L 300,740 Z" fill="#f8fafc"/>
+
+  <!-- Horsh Beirut (Pine Forest) to the North-East -->
+  <path d="M 640,90 C 700,90 780,120 840,160 L 840,240 C 760,210 680,190 620,180 Z" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <path d="M 640,90 C 700,90 780,120 840,160 L 840,240 C 760,210 680,190 620,180 Z" fill="url(#parkHatch)"/>
+  <text x="730" y="150" font-size="11" font-weight="700" fill="#166534" text-anchor="middle" letter-spacing="1">HORSH BEIRUT</text>
+  <text x="730" y="166" font-size="9.5" font-weight="500" fill="#15803d" text-anchor="middle">(PINE FOREST)</text>
+
+  <!-- Camille Chamoun Sports City Stadium Complex (West) -->
+  <g transform="translate(140, 260)" filter="url(#subtle-shadow)">
+    <!-- Outer Stadium Oval -->
+    <ellipse cx="65" cy="85" rx="65" ry="85" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+    <!-- Inner Stadium Field -->
+    <ellipse cx="65" cy="85" rx="42" ry="58" fill="#cbd5e1" stroke="#64748b" stroke-width="1.5"/>
+    <text x="65" y="80" font-size="10.5" font-weight="800" fill="#334155" text-anchor="middle">CAMILLE CHAMOUN</text>
+    <text x="65" y="94" font-size="10" font-weight="700" fill="#475569" text-anchor="middle">SPORTS CITY STADIUM</text>
+    <text x="65" y="108" font-size="8.5" font-weight="600" fill="#64748b" text-anchor="middle">(Damaged / Staging Site)</text>
+  </g>
+
+  <!-- Major Road Networks -->
+  <!-- Rue de l'Aéroport (Airport Highway - Western North-South Axis) -->
+  <path d="M 110,68 L 110,740" stroke="#94a3b8" stroke-width="14" fill="none"/>
+  <path d="M 110,68 L 110,740" stroke="#f8fafc" stroke-width="2" stroke-dasharray="8 6" fill="none"/>
+  <text transform="translate(98, 480) rotate(-90)" font-size="10" font-weight="700" fill="#475569" letter-spacing="1">AIRPORT HIGHWAY (RUE DE L'AÉROPORT)</text>
+
+  <!-- Cité Sportive Avenue (East-West Boulevard) -->
+  <path d="M 110,220 L 850,220" stroke="#94a3b8" stroke-width="10" fill="none"/>
+  <text x="210" y="212" font-size="9" font-weight="700" fill="#475569">AVENUE DE LA CITÉ SPORTIVE</text>
+
+  <!-- Old Sidon Road (Eastern Axis) -->
+  <path d="M 680,68 L 650,420 L 610,740" stroke="#94a3b8" stroke-width="12" fill="none"/>
+  <text transform="translate(640, 560) rotate(82)" font-size="10" font-weight="700" fill="#475569" letter-spacing="1">OLD SIDON ROAD (ROUTE DE SAÏDA)</text>
+
+  <!-- Rue Sabra (Central North-South Camp Spine) -->
+  <path d="M 450,110 L 460,340 L 450,480 L 430,680" stroke="#cbd5e1" stroke-width="8" fill="none"/>
+  <text transform="translate(470, 310) rotate(87)" font-size="9" font-weight="700" fill="#64748b">RUE SABRA (MAIN SPINE)</text>
+
+  <!-- Minor connecting roads & alleys -->
+  <path d="M 110,480 L 450,480 L 630,480" stroke="#e2e8f0" stroke-width="6" fill="none"/>
+  <path d="M 280,340 L 660,340" stroke="#e2e8f0" stroke-width="5" fill="none"/>
+  <path d="M 330,600 L 620,600" stroke="#e2e8f0" stroke-width="5" fill="none"/>
+  <path d="M 320,130 L 680,130" stroke="#e2e8f0" stroke-width="5" fill="none"/>
+
+  <!-- Kuwaiti Embassy Roundabout Complex (South-West) -->
+  <g transform="translate(230, 540)">
+    <circle cx="0" cy="0" r="28" fill="#e2e8f0" stroke="#64748b" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="10" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1"/>
+    <!-- Embassy Building -->
+    <rect x="-70" y="-20" width="38" height="40" rx="3" fill="#cbd5e1" stroke="#475569" stroke-width="1.5" filter="url(#subtle-shadow)"/>
+    <text x="-51" y="-26" font-size="9" font-weight="800" fill="#1e293b" text-anchor="middle">KUWAITI</text>
+    <text x="-51" y="-14" font-size="9" font-weight="800" fill="#1e293b" text-anchor="middle">EMBASSY</text>
+    <text x="36" y="5" font-size="8.5" font-weight="700" fill="#475569">Traffic Circle</text>
+  </g>
+
+  <!-- REFUGEE CAMP BOUNDARIES -->
+  <!-- 1. Sabra Neighborhood (North - Dense Urban Area) -->
+  <path d="M 370,120 L 580,120 L 590,320 L 360,320 Z" fill="#ffedd5" stroke="#f97316" stroke-width="2" stroke-dasharray="4 2" filter="url(#subtle-shadow)"/>
+  <path d="M 370,120 L 580,120 L 590,320 L 360,320 Z" fill="url(#sabraHatch)"/>
+  
+  <!-- 2. Shatila Refugee Camp (South - Formal UNRWA Perimeter) -->
+  <path d="M 350,330 L 590,330 L 580,570 L 340,570 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5" filter="url(#subtle-shadow)"/>
+  <path d="M 350,330 L 590,330 L 580,570 L 340,570 Z" fill="url(#campHatch)"/>
+
+  <!-- Camp District Labels -->
+  <rect x="400" y="180" width="150" height="38" rx="4" fill="#ffffff" fill-opacity="0.9" stroke="#ea580c" stroke-width="1"/>
+  <text x="475" y="198" font-size="12" font-weight="800" fill="#c2410c" text-anchor="middle" letter-spacing="1">SABRA DISTRICT</text>
+  <text x="475" y="211" font-size="9" font-weight="600" fill="#ea580c" text-anchor="middle">(Urban Refugee Quarter)</text>
+
+  <rect x="390" y="410" width="170" height="46" rx="4" fill="#ffffff" fill-opacity="0.92" stroke="#dc2626" stroke-width="1.5" filter="url(#subtle-shadow)"/>
+  <text x="475" y="430" font-size="13" font-weight="900" fill="#991b1b" text-anchor="middle" letter-spacing="1.5">SHATILA CAMP</text>
+  <text x="475" y="446" font-size="9.5" font-weight="700" fill="#dc2626" text-anchor="middle">UNRWA FORMAL PERIMETER</text>
+
+  <!-- Medical Facilities -->
+  <!-- Gaza Hospital (North edge of Sabra) -->
+  <g transform="translate(480, 95)" filter="url(#subtle-shadow)">
+    <rect x="-35" y="-12" width="70" height="24" rx="3" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="0" y="4" font-size="9.5" font-weight="800" fill="#0369a1" text-anchor="middle">GAZA HOSP.</text>
+    <circle cx="-25" cy="0" r="5" fill="#ef4444"/>
+    <rect x="-27" y="-1" width="4" height="2" fill="#ffffff"/>
+    <rect x="-26" y="-2" width="2" height="4" fill="#ffffff"/>
+  </g>
+
+  <!-- Akka Hospital (South of Shatila, near roundabout) -->
+  <g transform="translate(360, 595)" filter="url(#subtle-shadow)">
+    <rect x="-35" y="-12" width="70" height="24" rx="3" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <text x="0" y="4" font-size="9.5" font-weight="800" fill="#0369a1" text-anchor="middle">AKKA HOSP.</text>
+    <circle cx="-25" cy="0" r="5" fill="#ef4444"/>
+    <rect x="-27" y="-1" width="4" height="2" fill="#ffffff"/>
+    <rect x="-26" y="-2" width="2" height="4" fill="#ffffff"/>
+  </g>
+
+  <!-- KEY MILITARY & INVESTIGATIVE FINDINGS (KAHAN COMMISSION) -->
+
+  <!-- 1. IDF FORWARD COMMAND OBSERVATION POST (7-Story Rooftop) -->
+  <!-- Position: ~200m Southwest of Shatila on 7-story building overlooking camp -->
+  <g transform="translate(230, 480)">
+    <!-- Visual Line of Sight Cone into Shatila -->
+    <path d="M 0,0 L 130,-110 L 210,50 Z" fill="#3b82f6" fill-opacity="0.18" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4 3"/>
+    
+    <!-- Observation Post Icon -->
+    <rect x="-14" y="-14" width="28" height="28" rx="4" fill="#1e3a8a" stroke="#ffffff" stroke-width="2" filter="url(#shadow)"/>
+    <polygon points="-8,-6 8,-6 5,8 -5,8" fill="#60a5fa"/>
+    <circle cx="0" cy="1" r="3" fill="#ffffff"/>
+
+    <!-- Annotation Box -->
+    <rect x="-175" y="-65" width="165" height="52" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="-92" y="-48" font-size="10" font-weight="800" fill="#60a5fa" text-anchor="middle">IDF FORWARD COMMAND POST</text>
+    <text x="-92" y="-35" font-size="8.5" font-weight="600" fill="#e2e8f0" text-anchor="middle">7-Story Rooftop Observation</text>
+    <text x="-92" y="-22" font-size="8" font-weight="500" fill="#94a3b8" text-anchor="middle">Direct Sightline into Shatila (~200m)</text>
+    
+    <!-- Sightline arrow label -->
+    <text x="80" y="-20" font-size="8.5" font-weight="700" fill="#1d4ed8" transform="rotate(-25 80 -20)">Visual Sightline Cone</text>
+  </g>
+
+  <!-- 2. IDF PERIMETER CORDON & CHECKPOINTS (West Beirut Encirclement) -->
+  <!-- The Cordon Line -->
+  <path d="M 210,100 L 290,230 L 270,410 L 240,580 L 320,680 L 520,680" fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="6 4"/>
+  <path d="M 640,100 L 620,230 L 610,410 L 600,680" fill="none" stroke="#2563eb" stroke-width="3" stroke-dasharray="6 4"/>
+
+  <!-- Checkpoint markers -->
+  <g transform="translate(290, 230)">
+    <circle cx="0" cy="0" r="7" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="3" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">CP</text>
+  </g>
+  <g transform="translate(260, 420)">
+    <circle cx="0" cy="0" r="7" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="3" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">CP</text>
+  </g>
+  <g transform="translate(250, 620)">
+    <circle cx="0" cy="0" r="7" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="3" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">CP</text>
+  </g>
+  <g transform="translate(420, 680)">
+    <circle cx="0" cy="0" r="7" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="3" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">CP</text>
+  </g>
+  <g transform="translate(615, 340)">
+    <circle cx="0" cy="0" r="7" fill="#1d4ed8" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="0" y="3" font-size="8" font-weight="900" fill="#ffffff" text-anchor="middle">CP</text>
+  </g>
+
+  <!-- 3. PHALANGIST MILITIA ENTRY AXES (16 September 1982, ~17:00) -->
+  <!-- Primary entry from south (Beirut Airport staging area) into southern gate of Shatila -->
+  <path d="M 440,730 L 440,650 L 450,575" fill="none" stroke="#b91c1c" stroke-width="5" marker-end="url(#arrow-phalangist)"/>
+  <rect x="450" y="650" width="180" height="28" rx="3" fill="#7f1d1d" stroke="#f87171" stroke-width="1" filter="url(#subtle-shadow)"/>
+  <text x="540" y="668" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">PRIMARY PHALANGIST ENTRY</text>
+
+  <!-- Secondary entry axis from East -->
+  <path d="M 680,450 L 590,450" fill="none" stroke="#b91c1c" stroke-width="4.5" marker-end="url(#arrow-phalangist)"/>
+  <rect x="635" y="415" width="150" height="26" rx="3" fill="#7f1d1d" stroke="#f87171" stroke-width="1"/>
+  <text x="710" y="432" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle">SECONDARY ENTRY AXIS</text>
+
+  <!-- Illumination flares indicator over camp -->
+  <g transform="translate(470, 360)">
+    <circle cx="0" cy="0" r="50" fill="#fef08a" fill-opacity="0.25" stroke="#facc15" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <text x="0" y="-30" font-size="8" font-weight="700" fill="#854d0e" text-anchor="middle">IDF Mortar Flare Arc</text>
+    <text x="0" y="-18" font-size="7.5" font-weight="600" fill="#a16207" text-anchor="middle">(Night Illumination)</text>
+  </g>
+
+  <!-- MAP COMPASS & SCALE -->
+  <g transform="translate(80, 140)">
+    <circle cx="0" cy="0" r="20" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" filter="url(#subtle-shadow)"/>
+    <polygon points="0,-16 5,-2 -5,-2" fill="#0f172a"/>
+    <polygon points="0,16 5,2 -5,2" fill="#94a3b8"/>
+    <text x="0" y="-20" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">N</text>
+  </g>
+  <g transform="translate(50, 715)">
+    <rect x="0" y="0" width="140" height="18" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" rx="2"/>
+    <rect x="10" y="6" width="60" height="6" fill="#0f172a"/>
+    <rect x="70" y="6" width="60" height="6" fill="#ffffff" stroke="#0f172a" stroke-width="1"/>
+    <text x="10" y="4" font-size="7.5" font-weight="700" fill="#334155">0</text>
+    <text x="70" y="4" font-size="7.5" font-weight="700" fill="#334155">250m</text>
+    <text x="130" y="4" font-size="7.5" font-weight="700" fill="#334155">500m</text>
+  </g>
+
+  <!-- MAP LEGEND (Bottom Right Floating Card) -->
+  <g transform="translate(580, 520)" filter="url(#shadow)">
+    <rect width="300" height="240" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <rect width="300" height="28" rx="6 6 0 0" fill="#1e293b"/>
+    <text x="150" y="19" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">INVESTIGATIVE MAP LEGEND</text>
+
+    <!-- Legend Items -->
+    <!-- Shatila Camp -->
+    <rect x="14" y="38" width="22" height="14" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+    <line x1="14" y1="38" x2="36" y2="52" stroke="#dc2626" stroke-width="1"/>
+    <text x="46" y="50" font-size="9.5" font-weight="700" fill="#1e293b">Shatila Camp (UNRWA Perimeter)</text>
+
+    <!-- Sabra District -->
+    <rect x="14" y="60" width="22" height="14" fill="#ffedd5" stroke="#f97316" stroke-width="1.5"/>
+    <line x1="14" y1="74" x2="36" y2="60" stroke="#ea580c" stroke-width="1"/>
+    <text x="46" y="72" font-size="9.5" font-weight="700" fill="#1e293b">Sabra Urban Refugee District</text>
+
+    <!-- IDF Command Post -->
+    <rect x="16" y="83" width="18" height="18" rx="3" fill="#1e3a8a" stroke="#3b82f6" stroke-width="1"/>
+    <circle cx="25" cy="92" r="3" fill="#ffffff"/>
+    <text x="46" y="96" font-size="9.5" font-weight="700" fill="#1e293b">IDF Forward Command Rooftop Post</text>
+
+    <!-- Sightline Cone -->
+    <polygon points="14,120 36,110 36,130" fill="#3b82f6" fill-opacity="0.3" stroke="#2563eb" stroke-width="1"/>
+    <text x="46" y="123" font-size="9.5" font-weight="700" fill="#1e293b">Direct Visual Sighting Arc (~200m)</text>
+
+    <!-- IDF Cordon -->
+    <line x1="14" y1="144" x2="36" y2="144" stroke="#2563eb" stroke-width="3" stroke-dasharray="4 3"/>
+    <circle cx="25" cy="144" r="5" fill="#1d4ed8"/>
+    <text x="46" y="148" font-size="9.5" font-weight="700" fill="#1e293b">IDF Perimeter Cordon &amp; Checkpoints</text>
+
+    <!-- Phalangist Route -->
+    <line x1="14" y1="170" x2="34" y2="170" stroke="#b91c1c" stroke-width="4" marker-end="url(#arrow-phalangist)"/>
+    <text x="46" y="174" font-size="9.5" font-weight="700" fill="#1e293b">Phalangist Militia Entry Routes (16 Sept)</text>
+
+    <!-- Hospitals -->
+    <rect x="18" y="192" width="14" height="14" rx="2" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+    <circle cx="25" cy="199" r="4" fill="#ef4444"/>
+    <text x="46" y="203" font-size="9.5" font-weight="700" fill="#1e293b">Medical Facilities (Gaza &amp; Akka)</text>
+
+    <!-- Footer Note -->
+    <text x="150" y="228" font-size="8" font-weight="600" fill="#64748b" text-anchor="middle">Evidence evaluated under Supreme Court Justice Y. Kahan</text>
+  </g>
+</svg>

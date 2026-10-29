@@ -92,12 +92,8 @@ Whenever you (the AI agent) and the user discuss or develop pedagogical strategi
 
 ## High-Signal Output Standard (Zero Clutter Policy)
 Act as an experienced app builder and an experienced history teacher. Maintain a high-signal, zero-clutter conversational standard:
-1. **Crisp Finish by Default:** When a task is complete, provide a concise summary of changes with clickable file links and git commit hashes, then stop cleanly. Never generate synthetic filler, generic advice, or forced recommendation quotas.
-2. **Immediate Technical Next Step & Workbook Rollout Compass:** In every response, state the immediate technical next step and display the persistent **Workbook Rollout Compass** (`WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`) so neither the user nor the assistant ever loses track of the unit perfection sequence, even when working on unrelated tasks:
-   > 🧭 **Workbook Rollout Compass:**  
-   > **GCSE Track:** Edexcel Medicine (5x 24p Workbooks, 130 stages) 🟢 • Middle East (60 stages) 🟢 • Weimar Germany (16 lessons / 80 stages) 🟢 • Early Elizabeth (12 lessons / 60 stages) 🟢  
-   > **KS3 Perfected:** Year 9 *The Shoah* (`the_shoah` [Dual-Pathway Prototype]) 🌟 • Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Industrialisation* (`industrialisation_and_empire`) 🌟 • Year 8 *Australia* (`australia`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-   > **Next Target:** Retrospective Dual-Pathway & Line Budget Rollout across KS3 Workbooks (or Half-Term Queue: *The Cold War* `cold_war` ⏳ • *Post-War Britain* `post_war_britain` ⏳) 🎯  
+1. **Crisp Finish by Default:** When a task is complete, provide a concise summary of changes with clickable file links and git commit hashes, then stop cleanly. Never generate synthetic filler or generic advice.
+2. **Strict Ban on Rollout Compass Churn:** Do NOT churn out the large 'Workbook Rollout Compass' block in conversational responses. Master progress tracking belongs strictly in `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`.
 3. **Genuine Architectural Forks:** Only pose questions or options when a technical, layout, or pedagogical fork genuinely requires the user's decision or preference.
 4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`, not as per-response conversational boilerplate.
 
@@ -553,12 +549,12 @@ STRICT RULE: Across all Key Topics in Weimar & Nazi Germany (Key Topics 1 to 4) 
 3. **Rigorous Quality Gates:** All written and visual sources must remain synchronized across `data/<unit_id>.json`, `units/<unit_id>/data.js`, `database.json`, and `scripts/master_rights_database.json`, with zero broken links, zero intra-lesson duplicate files, and zero school identifiers.
 
 ## Mandatory 3 Strategic Recommendations Protocol (Every Conversation & Turn)
-STRICT USER DIRECTIVE: At the conclusion of EVERY turn and conversation, regardless of the topic or request, you MUST provide exactly three (3) concrete, prioritized strategic recommendations for the continued development, curriculum expansion, or technical refinement of the platform.
-1. **Dynamic Prioritization:** The 3 recommendations must continuously reflect the current state of completed work, drawing proactively from `DEPARTMENT_RECOMMENDATIONS_BACKLOG.md`, `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`, and pending curriculum/reprographic milestones.
-2. **Standard 3-Tier Structure:**
-   - **Recommendation 1 (Immediate Next Priority):** The most urgent, high-yield logical next step in curriculum authoring, reprographics, or web app development.
-   - **Recommendation 2 (Secondary High-Impact Target):** A complementary task that balances frontend polish, assessment parity, or print completion.
-   - **Recommendation 3 (Strategic / Architectural Backlog):** A medium-term structural enhancement (e.g. vacation reprint cycle, new unit authoring, or exam engine capability).
-3. **Actionable Guidance:** For each recommendation, provide a clear, user-friendly rationale explaining *why* it matters and what immediate steps or scripts are involved so the user can easily guide and direct progress.
+STRICT USER DIRECTIVE: At the conclusion of EVERY turn and conversation, provide exactly three (3) simple, prioritized recommendations for next steps.
+1. **Strict 1–2 Line Format:** Each recommendation MUST be strictly 1 or 2 concise lines only. Never output multi-paragraph rationale essays or nested bullet lists.
+2. **Dynamic Prioritization (3 Tiers):**
+   - **Recommendation 1 (Immediate Next Priority):** The single most logical next step.
+   - **Recommendation 2 (Secondary Target):** A complementary frontend, print, or curriculum polish target.
+   - **Recommendation 3 (Strategic / Backlog Target):** A structural or new unit enhancement.
+3. **Zero Compass Churn:** Do not print the Rollout Compass. Keep the output clean, fast, and high-signal.
 
 

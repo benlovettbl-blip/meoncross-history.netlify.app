@@ -979,7 +979,7 @@ export function renderInteractiveQuiz() {
   const catalogRetrieval = CURRICULAR_PILLARS_CATALOG[unitId]?.retrieval || {};
   const retrievalTitle =
     catalogRetrieval.title || `${data.title || 'Curriculum'} Master Knowledge Retrieval Companion`;
-  const retrievalPdf = catalogRetrieval.pdfUrl || `/pdfs/${unitId}_quiz_pack_FINAL_V1.pdf`;
+  const retrievalPdf = catalogRetrieval.pdfUrl || `/pdfs/${unitId}_quiz_pack.pdf`;
 
   // Build topic dropdown options
   let topicOptionsHtml = `

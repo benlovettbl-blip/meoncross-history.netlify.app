@@ -396,7 +396,7 @@ function generateEraHtml(eraKey, unitData) {
     </div>
     `;
 
-    const trenchImgUri = getBase64Image('public/images/gw_trench_diagram.jpg');
+    const trenchImgUri = getBase64Image('public/images/trench_construction_diagram_1914.png');
     const evacImgUri = getBase64Image('public/images/ramc_chain_of_evacuation.jpg');
 
     wfPage15Html = `

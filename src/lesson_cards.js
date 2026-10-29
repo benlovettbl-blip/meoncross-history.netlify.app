@@ -270,16 +270,16 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
       let pdfWorkbookUrl = '';
       let digitalWorkbookUrl = '';
       if (currentUnitId === 'edexcel_medicine') {
-        pdfWorkbookUrl = `/pdfs/edexcel_medicine_pupil_workbook_${p.id}_FINAL_V17.pdf`;
+        pdfWorkbookUrl = `/pdfs/edexcel_medicine_pupil_workbook_${p.id}.pdf`;
         digitalWorkbookUrl = `/units/edexcel_medicine/pupil_workbook_${p.id}.html`;
       } else if (currentUnitId === 'cme_new') {
-        pdfWorkbookUrl = `/pdfs/cme_new_pupil_workbook_${p.id}_FINAL_V17.pdf`;
+        pdfWorkbookUrl = `/pdfs/cme_new_pupil_workbook_${p.id}.pdf`;
         digitalWorkbookUrl = `/units/cme_new/pupil_workbook_${p.id}.html`;
       } else if (currentUnitId === 'eee') {
-        pdfWorkbookUrl = `/pdfs/eee_pupil_workbook_${p.id}_FINAL_V17.pdf`;
+        pdfWorkbookUrl = `/pdfs/eee_pupil_workbook_${p.id}.pdf`;
         digitalWorkbookUrl = `/units/eee/pupil_workbook_${p.id}.html`;
       } else if (currentUnitId === 'weimar_nazi_germany') {
-        pdfWorkbookUrl = `/pdfs/weimar_nazi_germany_pupil_workbook_${p.id}_FINAL_V17.pdf`;
+        pdfWorkbookUrl = `/pdfs/weimar_nazi_germany_pupil_workbook_${p.id}.pdf`;
         digitalWorkbookUrl = `/units/weimar_nazi_germany/pupil_workbook_${p.id}.html`;
       }
 
@@ -331,17 +331,30 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
           if (p.id === 'KT1') {
             isMatch =
               (lesson.title && /KT\s*1\b/i.test(lesson.title)) ||
-              (lesson.id && (lesson.id.startsWith('lesson_1_') || ['lesson_1', 'lesson_2', 'lesson_3', 'lesson_4'].includes(lesson.id))) ||
+              (lesson.id &&
+                (lesson.id.startsWith('lesson_1_') ||
+                  ['lesson_1', 'lesson_2', 'lesson_3', 'lesson_4'].includes(lesson.id))) ||
               index < 4;
           } else if (p.id === 'KT2') {
             isMatch =
               (lesson.title && /KT\s*2\b/i.test(lesson.title)) ||
-              (lesson.id && (lesson.id.startsWith('lesson_2_') || ['lesson_5', 'lesson_6', 'lesson_7', 'lesson_8', 'lesson_9', 'lesson_10'].includes(lesson.id))) ||
+              (lesson.id &&
+                (lesson.id.startsWith('lesson_2_') ||
+                  [
+                    'lesson_5',
+                    'lesson_6',
+                    'lesson_7',
+                    'lesson_8',
+                    'lesson_9',
+                    'lesson_10',
+                  ].includes(lesson.id))) ||
               (index >= 4 && index < 9);
           } else if (p.id === 'KT3') {
             isMatch =
               (lesson.title && /KT\s*3\b/i.test(lesson.title)) ||
-              (lesson.id && (lesson.id.startsWith('lesson_3_') || ['lesson_11', 'lesson_12', 'lesson_13'].includes(lesson.id))) ||
+              (lesson.id &&
+                (lesson.id.startsWith('lesson_3_') ||
+                  ['lesson_11', 'lesson_12', 'lesson_13'].includes(lesson.id))) ||
               index >= 9;
           }
         }

@@ -35,32 +35,32 @@ window.openInPagePreview = function (url, title, pdfUrl, options = {}) {
   ) {
     if (url.includes('/units/ks2_ww2/')) {
       if (url.includes('pupil_workbook')) {
-        resolvedPdfUrl = '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf';
+        resolvedPdfUrl = '/pdfs/ks2_ww2_pupil_workbook.pdf';
       } else if (url.includes('quiz_pack')) {
-        resolvedPdfUrl = '/pdfs/ks2_ww2_quiz_pack_FINAL_V17.pdf';
+        resolvedPdfUrl = '/pdfs/ks2_ww2_quiz_pack.pdf';
       } else if (url.includes('textbook')) {
-        resolvedPdfUrl = '/pdfs/ks2_ww2_textbook_FINAL_V1.pdf';
+        resolvedPdfUrl = '/pdfs/ks2_ww2_textbook.pdf';
       } else if (url.includes('/worksheets/')) {
         const file = url.split('/').pop().replace('.html', '.pdf');
         resolvedPdfUrl = `/pdfs/ks2_ww2/${file}`;
       } else {
-        resolvedPdfUrl = '/pdfs/ks2_ww2_pupil_workbook_FINAL_V17.pdf';
+        resolvedPdfUrl = '/pdfs/ks2_ww2_pupil_workbook.pdf';
       }
     } else if (url.includes('/units/medieval_england/')) {
       if (url.includes('pupil_workbook')) {
         resolvedPdfUrl = '/pdfs/medieval_england_pupil_workbook.pdf';
       } else if (url.includes('quiz_pack')) {
-        resolvedPdfUrl = '/pdfs/medieval_england_quiz_pack_FINAL_V1.pdf';
+        resolvedPdfUrl = '/pdfs/medieval_england_quiz_pack.pdf';
       } else {
-        resolvedPdfUrl = '/pdfs/medieval_england_textbook_FINAL_V17.pdf';
+        resolvedPdfUrl = '/pdfs/medieval_england_textbook.pdf';
       }
     } else if (url.includes('/units/great_war_part2/')) {
       resolvedPdfUrl = '/pdfs/great_war_part2_pupil_workbook.pdf';
     } else if (url.includes('/units/great_war/')) {
       if (url.includes('pupil_workbook')) {
-        resolvedPdfUrl = '/pdfs/great_war_pupil_workbook_FINAL_V17.pdf';
+        resolvedPdfUrl = '/pdfs/great_war_pupil_workbook.pdf';
       } else {
-        resolvedPdfUrl = '/pdfs/great_war_quiz_pack_FINAL_V17.pdf';
+        resolvedPdfUrl = '/pdfs/great_war_quiz_pack.pdf';
       }
     } else if (url.includes('/units/cme_new/')) {
       const clean = url.split('/').pop().replace('.html', '');
@@ -259,7 +259,7 @@ const UNIT_PUBLICATIONS = {
           pages: '28 Pages',
           desc: 'Complete 28-page pure narrative classroom textbook. 12 Enquiry Spreads, Chronological Milestone Spine, Dual Cartographic Perspectives & Master 60-Question Retrieval Quiz.',
           readUrl: '/units/cme_new/textbook_UNIFIED.html',
-          pdfUrl: '/pdfs/cme_new_textbook_UNIFIED_FINAL.pdf',
+          pdfUrl: '/pdfs/cme_new_textbook_UNIFIED.pdf',
         },
       ],
     },
@@ -285,7 +285,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Photocopier-ready classroom workbook for KT1. Guided recall, enquiry spreads, source analysis, and stepped exam ladders.',
           readUrl: '/units/cme_new/pupil_workbook_KT1.html',
-          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT1.pdf',
         },
         {
           id: 'KT2',
@@ -294,7 +294,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Photocopier-ready classroom workbook for KT2. Six-Day War analysis, military tactics, Resolution 242 evaluation, and 12-mark causation scaffolds.',
           readUrl: '/units/cme_new/pupil_workbook_KT2.html',
-          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT2_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT2.pdf',
         },
         {
           id: 'KT3',
@@ -303,7 +303,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Photocopier-ready classroom workbook for KT3. Camp David treaties, First Intifada timeline, Oslo Accords peace process, and 16-mark essays.',
           readUrl: '/units/cme_new/pupil_workbook_KT3.html',
-          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT3_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT3.pdf',
         },
       ],
     },
@@ -340,7 +340,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Complete 12-page pure narrative classroom textbook. 6 Double-Page Enquiry Spreads, Chronological Milestone Spine, Cartographic Battle Plan & Master Retrieval Quiz.',
           readUrl: '/units/medieval_england/textbook.html',
-          pdfUrl: '/pdfs/medieval_england_textbook_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/medieval_england_textbook.pdf',
         },
       ],
     },
@@ -374,7 +374,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: '40 core factual questions across all enquiries with dual handwriting lines, front tracking ledger, and teacher marking bank.',
           readUrl: '/units/medieval_england/quiz_pack.html',
-          pdfUrl: '/pdfs/medieval_england_quiz_pack_FINAL_V1.pdf',
+          pdfUrl: '/pdfs/medieval_england_quiz_pack.pdf',
         },
       ],
     },
@@ -394,7 +394,7 @@ const UNIT_PUBLICATIONS = {
           pages: '28 Pages',
           desc: 'Complete 28-page pure narrative classroom textbook. 12 Canonical Disciplinary Enquiries, Chronological Milestone Spine, Geopolitical Theater Atlas & 4 Strategic Flashpoints, and Master 60-Question Retrieval Quiz.',
           readUrl: '/units/usa/textbook_UNIFIED.html',
-          pdfUrl: '/pdfs/usa_textbook_UNIFIED_FINAL.pdf',
+          pdfUrl: '/pdfs/usa_textbook_UNIFIED.pdf',
         },
         {
           id: 'all',
@@ -429,7 +429,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Pupil consumable workbook for KT1 with source utility grids, stepped essay scaffolding, and retrieval tasks.',
           readUrl: '/units/usa/pupil_workbook_KT1.html',
-          pdfUrl: '/pdfs/usa_pupil_workbook_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/usa_pupil_workbook_KT1.pdf',
         },
         {
           id: 'KT2',
@@ -438,7 +438,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Pupil consumable workbook for KT2 with Black Panther source analysis and 16-mark essay frameworks.',
           readUrl: '/units/usa/pupil_workbook_KT2.html',
-          pdfUrl: '/pdfs/usa_pupil_workbook_KT2_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/usa_pupil_workbook_KT2.pdf',
         },
         {
           id: 'KT3',
@@ -447,7 +447,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: "Pupil consumable workbook for KT3 covering counterculture, women's rights, and student demonstrations.",
           readUrl: '/units/usa/pupil_workbook_KT3.html',
-          pdfUrl: '/pdfs/usa_pupil_workbook_KT3_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/usa_pupil_workbook_KT3.pdf',
         },
         {
           id: 'KT4',
@@ -456,7 +456,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Pupil consumable workbook for KT4 with tactical analysis grids, Tet Offensive evaluation, and exam drills.',
           readUrl: '/units/usa/pupil_workbook_KT4.html',
-          pdfUrl: '/pdfs/usa_pupil_workbook_KT4_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/usa_pupil_workbook_KT4.pdf',
         },
       ],
     },
@@ -493,7 +493,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: '12-page publisher-grade master classroom textbook. Dual-column narrative, Four Humours, Medieval Church, and the Black Death.',
           readUrl: '/units/edexcel_medicine/textbook_medieval_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval.pdf',
         },
         {
           id: 'textbook_renaissance',
@@ -502,7 +502,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: '12-page publisher-grade master classroom textbook. Vesalius, William Harvey, Thomas Sydenham, and the Great Plague of 1665.',
           readUrl: '/units/edexcel_medicine/textbook_renaissance_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_renaissance_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_renaissance.pdf',
         },
         {
           id: 'textbook_18th_19th',
@@ -511,7 +511,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: '12-page publisher-grade master classroom textbook. Jenner, Germ Theory, Florence Nightingale, Joseph Lister, and Public Health.',
           readUrl: '/units/edexcel_medicine/textbook_18th_19th_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_18th_19th_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_18th_19th.pdf',
         },
         {
           id: 'textbook_modern',
@@ -520,7 +520,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: '12-page publisher-grade master classroom textbook. Antibiotics, NHS, High-Technology Medicine, DNA, and Lung Cancer.',
           readUrl: '/units/edexcel_medicine/textbook_modern_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_modern_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_modern.pdf',
         },
         {
           id: 'textbook_western_front',
@@ -529,7 +529,7 @@ const UNIT_PUBLICATIONS = {
           pages: '14 Pages',
           desc: '14-page publisher-grade master classroom textbook. Evacuation chain, RAMC/FANY, gas attacks, wounds, and National Archives/RAMC sources.',
           readUrl: '/units/edexcel_medicine/textbook_western_front_PUBLISHER.html',
-          pdfUrl: '/pdfs/edexcel_medicine_textbook_western_front_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_western_front.pdf',
         },
         {
           id: 'all',
@@ -555,7 +555,7 @@ const UNIT_PUBLICATIONS = {
           pages: '96 Pages',
           desc: 'The definitive photocopier-ready classroom workbook binding Section A (Western Front) and all four Section B chronological eras together.',
           readUrl: '/units/edexcel_medicine/booklets/medicine_mastery_compendium_32page.html',
-          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_master.pdf',
         },
         {
           id: 'medieval',
@@ -564,7 +564,7 @@ const UNIT_PUBLICATIONS = {
           pages: '16 Pages',
           desc: 'Black Death causation grids, Four Humours enquiry tasks, and 12-mark causation essay ladders.',
           readUrl: '/units/edexcel_medicine/pupil_workbook_medieval.html',
-          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_medieval.pdf',
         },
         {
           id: 'renaissance',
@@ -573,7 +573,7 @@ const UNIT_PUBLICATIONS = {
           pages: '16 Pages',
           desc: 'Vesalius vs Galen anatomical analysis, Harvey blood circulation tasks, and similarity/difference exam drills.',
           readUrl: '/units/edexcel_medicine/pupil_workbook_renaissance.html',
-          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_renaissance_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_renaissance.pdf',
         },
         {
           id: '18th_19th',
@@ -582,7 +582,7 @@ const UNIT_PUBLICATIONS = {
           pages: '16 Pages',
           desc: 'Germ Theory timelines, Nightingale hospital reform, Lister antiseptics, and 16-mark essay scaffolding.',
           readUrl: '/units/edexcel_medicine/pupil_workbook_18th_19th.html',
-          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_18th_19th.pdf',
         },
         {
           id: 'modern',
@@ -591,7 +591,7 @@ const UNIT_PUBLICATIONS = {
           pages: '16 Pages',
           desc: 'Penicillin discovery and mass production, NHS creation, DNA structure, and synoptic factor evaluation.',
           readUrl: '/units/edexcel_medicine/pupil_workbook_modern.html',
-          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_modern_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_modern.pdf',
         },
         {
           id: 'western_front',
@@ -600,7 +600,7 @@ const UNIT_PUBLICATIONS = {
           pages: '16 Pages',
           desc: 'Evacuation chain mapping, trench conditions source analysis, and Q1/Q2 exam technique worksheets.',
           readUrl: '/units/edexcel_medicine/pupil_workbook_western_front.html',
-          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_western_front.pdf',
         },
       ],
     },
@@ -655,7 +655,7 @@ const UNIT_PUBLICATIONS = {
           pages: '28 Pages',
           desc: 'Complete 28-page pure narrative classroom textbook. 12 Canonical Disciplinary Enquiries, Chronological Milestone Spine, Dual Cartographic Perspectives & 4 Strategic Flashpoints, and Master 60-Question Retrieval Quiz.',
           readUrl: '/units/eee/textbook_UNIFIED.html',
-          pdfUrl: '/pdfs/eee_textbook_UNIFIED_FINAL.pdf',
+          pdfUrl: '/pdfs/eee_textbook_UNIFIED.pdf',
         },
       ],
     },
@@ -672,7 +672,7 @@ const UNIT_PUBLICATIONS = {
           pages: '36 Pages',
           desc: 'Comprehensive classroom pupil workbook volume combining KT1, KT2, and KT3 with 2-mark feature drills, 12-mark causation, and 16-mark essays.',
           readUrl: '/units/eee/pupil_workbook_KT1.html',
-          pdfUrl: '/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/eee_pupil_workbook_KT1.pdf',
         },
         {
           id: 'KT1',
@@ -681,7 +681,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Pupil consumable workbook for KT1 with religious settlement tables and stepped writing scaffolds.',
           readUrl: '/units/eee/pupil_workbook_KT1.html',
-          pdfUrl: '/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/eee_pupil_workbook_KT1.pdf',
         },
         {
           id: 'KT2',
@@ -690,7 +690,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Pupil consumable workbook for KT2 with plot comparison matrices and Armada battle analysis.',
           readUrl: '/units/eee/pupil_workbook_KT2.html',
-          pdfUrl: '/pdfs/eee_pupil_workbook_KT2_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/eee_pupil_workbook_KT2.pdf',
         },
         {
           id: 'KT3',
@@ -699,7 +699,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Pupil consumable workbook for KT3 with social hierarchy tasks and Virginia voyage evaluations.',
           readUrl: '/units/eee/pupil_workbook_KT3.html',
-          pdfUrl: '/pdfs/eee_pupil_workbook_KT3_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/eee_pupil_workbook_KT3.pdf',
         },
       ],
     },
@@ -734,7 +734,7 @@ const UNIT_PUBLICATIONS = {
           pages: '24 Pages',
           desc: 'Factual retrieval questions across KT1–KT3 with 8.4mm handwriting lines, chronology flowcharts, and marking banks.',
           readUrl: '/units/eee/mastery_pack_KT1.html',
-          pdfUrl: '/pdfs/eee_mastery_pack_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/eee_mastery_pack_KT1.pdf',
         },
       ],
     },
@@ -754,7 +754,7 @@ const UNIT_PUBLICATIONS = {
           pages: '28 Pages',
           desc: 'Complete 28-page pure narrative classroom textbook. 12 Canonical Disciplinary Enquiries, Chronological Milestone Spine, Dual Cartographic Perspectives & 4 Strategic Flashpoints, and Master 60-Question Retrieval Quiz.',
           readUrl: '/units/weimar_nazi_germany/textbook_UNIFIED.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_UNIFIED_FINAL.pdf',
+          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_UNIFIED.pdf',
         },
         {
           id: 'all',
@@ -763,7 +763,7 @@ const UNIT_PUBLICATIONS = {
           pages: '64 Pages',
           desc: "Complete specification text across the Weimar Republic, Hitler's rise, Nazi dictatorship, and life in the Police State.",
           readUrl: '/units/weimar_nazi_germany/visual_revision_guide.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT1.pdf',
         },
       ],
     },
@@ -780,7 +780,7 @@ const UNIT_PUBLICATIONS = {
           pages: '48 Pages',
           desc: 'Comprehensive pupil workbook volume combining KT1, KT2, KT3, and KT4 with Q1 inference, Q2 causation, Q3(a) utility, Q3(b/c) interpretations, and Q3(d) essays.',
           readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT1.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1.pdf',
         },
         {
           id: 'KT1',
@@ -789,7 +789,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Weimar Constitution analysis, hyperinflation sources, and Stresemann utility drills.',
           readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT1.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1.pdf',
         },
         {
           id: 'KT2',
@@ -798,7 +798,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Depression election analysis, backstairs intrigue, and 12-mark causation scaffolds.',
           readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT2.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT2_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT2.pdf',
         },
         {
           id: 'KT3',
@@ -807,7 +807,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Police State sources, church opposition, and Interpretation difference questions.',
           readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT3.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT3_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT3.pdf',
         },
         {
           id: 'KT4',
@@ -816,7 +816,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Youth and women policy comparisons, standard of living evaluations, and 16-mark essay frameworks.',
           readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT4.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT4_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT4.pdf',
         },
       ],
     },
@@ -842,7 +842,7 @@ const UNIT_PUBLICATIONS = {
           pages: '24 Pages',
           desc: 'Comprehensive factual recall questions across KT1–KT4 with 8.4mm handwriting lines, chronology flowcharts, and marking banks.',
           readUrl: '/units/weimar_nazi_germany/mastery_pack_KT1.html',
-          pdfUrl: '/pdfs/weimar_nazi_germany_mastery_pack_KT1_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/weimar_nazi_germany_mastery_pack_KT1.pdf',
         },
       ],
     },
@@ -862,7 +862,7 @@ const UNIT_PUBLICATIONS = {
           pages: '8 Pages',
           desc: '8-page pure narrative reading anthology. Alliances, imperialism, arms race, Bosnian crisis, Sarajevo assassination, and July Crisis.',
           readUrl: '/units/great_war/textbook.html',
-          pdfUrl: '/pdfs/great_war_textbook_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/great_war_textbook.pdf',
         },
         {
           id: 'part2',
@@ -871,7 +871,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: '12-page pure narrative classroom textbook. Trench warfare, Somme, Passchendaele, Russian withdrawal, Ludendorff Offensive, and Armistice.',
           readUrl: '/units/great_war_part2/textbook.html',
-          pdfUrl: '/pdfs/great_war_part2_textbook_FINAL.pdf',
+          pdfUrl: '/pdfs/great_war_part2_textbook.pdf',
         },
       ],
     },
@@ -888,7 +888,7 @@ const UNIT_PUBLICATIONS = {
           pages: 'Photocopier Ready',
           desc: 'Structured writing tasks, recall challenges, source evaluation tables, and extended writing scaffolds. Print once for the unit.',
           readUrl: '/units/great_war/pupil_workbook.html',
-          pdfUrl: '/pdfs/great_war_pupil_workbook_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/great_war_pupil_workbook.pdf',
         },
         {
           id: 'part2',
@@ -914,7 +914,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages (A5 Booklet)',
           desc: '48 core factual questions across all 6 lessons with two handwriting lines, 1871–1914 domino flowchart, front tracking ledger, marking bank, and assessment architect.',
           readUrl: '/units/great_war/quiz_pack.html',
-          pdfUrl: '/pdfs/great_war_quiz_pack_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/great_war_quiz_pack.pdf',
         },
       ],
     },
@@ -934,7 +934,7 @@ const UNIT_PUBLICATIONS = {
           pages: '24 Pages (A4)',
           desc: 'Definitive 24-page pure narrative classroom companion (6 folded A3 saddle-stitch sheets). 10 double-page enquiry spreads, 20 authentic primary visual sources with Think & Discuss tasks, Chronological Milestone Spine, Dual Cartographic Perspectives, and Master 40-Question Retrieval Quiz.',
           readUrl: '/units/ks2_ww2/textbook.html',
-          pdfUrl: '/pdfs/ks2_ww2_textbook_FINAL_V1.pdf',
+          pdfUrl: '/pdfs/ks2_ww2_textbook.pdf',
         },
         {
           id: 'all',
@@ -1076,7 +1076,7 @@ const UNIT_PUBLICATIONS = {
           pages: '4 Pages (40 Questions)',
           desc: 'Streamlined 4-page A4 companion (1 folded A3 sheet) covering all 10 enquiries. Features 40 recall checkpoints, student tracking ledger, complete Department Marking Bank, and teacher feedback rubric.',
           readUrl: '/units/ks2_ww2/quiz_pack.html',
-          pdfUrl: '/pdfs/ks2_ww2_quiz_pack_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/ks2_ww2_quiz_pack.pdf',
         },
       ],
     },
@@ -1096,7 +1096,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: '12-page pure narrative companion textbook. 7 Canonical Enquiries, Chronological Milestone Spine, Cartographic Theater & 4 Strategic Flashpoints, Disciplinary Historiography, and Master 35-Question Retrieval Quiz.',
           readUrl: '/units/cold_war/textbook.html',
-          pdfUrl: '/pdfs/cold_war_textbook_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/cold_war_textbook.pdf',
         },
       ],
     },
@@ -1113,7 +1113,7 @@ const UNIT_PUBLICATIONS = {
           pages: '16 Pages',
           desc: '16-page Gold Standard saddle-stitch pupil workbook. 6 Two-Page Enquiry Spreads with 5-Stage Chronological Inquiry Spines, Centrefold Living Timeline, and Assessment Progress Ledger.',
           readUrl: '/units/cold_war/pupil_workbook.html',
-          pdfUrl: '/pdfs/cold_war_pupil_workbook_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/cold_war_pupil_workbook.pdf',
         },
       ],
     },
@@ -1130,7 +1130,7 @@ const UNIT_PUBLICATIONS = {
           pages: '12 Pages',
           desc: 'Factual retrieval questions across all 7 enquiries with handwriting lines, chronology flowcharts, and marking banks.',
           readUrl: '/units/cold_war/quiz_pack.html',
-          pdfUrl: '/pdfs/cold_war_quiz_pack_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/cold_war_quiz_pack.pdf',
         },
       ],
     },
@@ -1157,9 +1157,7 @@ function getGenericUnitPublications(unitId, unitData) {
         ? `/units/${unitId}/textbook_PUBLISHER.html`
         : `/units/${unitId}/textbook.html`;
     const textbookPdf =
-      unitId === 'the_shoah'
-        ? `/pdfs/${unitId}_textbook_FINAL.pdf`
-        : `/pdfs/${unitId}_textbook_FINAL_V17.pdf`;
+      unitId === 'the_shoah' ? `/pdfs/${unitId}_textbook.pdf` : `/pdfs/${unitId}_textbook.pdf`;
 
     pillar1 = {
       key: 'pillar1',
@@ -1196,7 +1194,7 @@ function getGenericUnitPublications(unitId, unitData) {
           pages: 'Photocopier Ready',
           desc: 'Structured writing spaces, enquiry challenges, source evaluation tables, and extended writing scaffolds for every lesson in the unit.',
           readUrl: `/units/${unitId}/pupil_workbook.html`,
-          pdfUrl: `/pdfs/${unitId}_pupil_workbook_FINAL_V17.pdf`,
+          pdfUrl: `/pdfs/${unitId}_pupil_workbook.pdf`,
         },
       ],
     },
@@ -1213,7 +1211,7 @@ function getGenericUnitPublications(unitId, unitData) {
           pages: 'Deep Revision Pack',
           desc: 'Deep knowledge retrieval, stepped ladder tasks, essay frameworks, and synoptic assessment challenges.',
           readUrl: `/units/${unitId}/mastery_pack_full.html`,
-          pdfUrl: `/pdfs/${unitId}_mastery_pack_full_FINAL_V17.pdf`,
+          pdfUrl: `/pdfs/${unitId}_mastery_pack_full.pdf`,
         },
       ],
     },

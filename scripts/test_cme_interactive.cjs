@@ -2,7 +2,11 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
   const page = await browser.newPage();
   await page.setViewport({ width: 1440, height: 1000 });
 
@@ -18,14 +22,32 @@ const path = require('path');
   console.log('Hero jump button exists:', !!heroJumpBtn);
   if (heroJumpBtn) {
     await heroJumpBtn.click();
-    await new Promise((r) => setTimeout(r, 500));
+    await new Promise((r) => setTimeout(r, 600));
   }
+
+  const debugState = await page.evaluate(() => {
+    const btn = document.querySelector('#btn-toggle-all-causal');
+    const panel = btn ? btn.closest('.launchpad-panel') : null;
+    const drawer = btn ? btn.closest('.lesson-launchpad-drawer') : null;
+    return {
+      btnExists: !!btn,
+      panelDisplay: panel ? panel.style.display : null,
+      drawerDisplay: drawer ? drawer.style.display : null,
+      tabActive: !!document
+        .querySelector('.launchpad-tab-btn[data-tab="spine"]')
+        ?.classList.contains('active'),
+    };
+  });
+  console.log('State after jump button click:', debugState);
 
   // 2. Expand all causal drawers
   const toggleBtn = await page.$('#btn-toggle-all-causal');
   console.log('Toggle Causal Analysis button exists:', !!toggleBtn);
   if (toggleBtn) {
-    await toggleBtn.click();
+    await page.evaluate(() => {
+      const b = document.querySelector('#btn-toggle-all-causal');
+      if (b) b.click();
+    });
     await new Promise((r) => setTimeout(r, 500));
   }
 
