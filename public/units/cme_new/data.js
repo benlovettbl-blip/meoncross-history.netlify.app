@@ -1116,6 +1116,8 @@ const cme_new_data = {
               'While promising independence to Arab leaders, Britain secretly made a conflicting partition deal with its European ally...',
             exam_link:
               'Q1 Consequence: Created lasting Arab distrust of British imperial motives when contradictory promises were later revealed.',
+            question:
+              'Why did Arabs believe Britain promised them independent sovereignty in 1915?',
           },
           {
             step: 2,
@@ -1133,6 +1135,7 @@ const cme_new_data = {
               'Britain then issued a third, fateful pledge to win international wartime support...',
             exam_link:
               'Q2 Narrative Account: Formed the second conflicting imperial pledge that made competing territorial claims in Palestine inevitable.',
+            question: 'Why was the secret Sykes-Picot Agreement viewed as an imperial betrayal?',
           },
           {
             step: 3,
@@ -1150,6 +1153,7 @@ const cme_new_data = {
               'Following Allied victory, Britain was given international authority to govern Palestine and manage these rival promises...',
             exam_link:
               'Q1 Consequence: Provided the international legal backing for the Zionist movement to establish a national Jewish homeland in Palestine.',
+            question: 'How did the Balfour Declaration create contradictory British commitments?',
           },
           {
             step: 4,
@@ -1167,6 +1171,8 @@ const cme_new_data = {
               'Simmering Arab anger boiled over into a full-scale armed rebellion against British rule...',
             exam_link:
               'Q2 Narrative Account: Demographic transformation and land purchases created the grassroots friction that triggered the 1936 Arab Revolt.',
+            question:
+              'Why did rising Jewish immigration spark communal violence under the Mandate?',
           },
           {
             step: 5,
@@ -1184,6 +1190,7 @@ const cme_new_data = {
               'The 1939 White Paper convinced Jewish groups that Britain had broken its promises, leading to post-war armed insurgency...',
             exam_link:
               'Q1 Consequence: Convinced Zionist leaders that only armed resistance against Britain could secure an independent Jewish state.',
+            question: 'Why did the 1939 White Paper turn Zionists against British rule?',
           },
         ],
       },
@@ -2093,6 +2100,8 @@ const cme_new_data = {
               'The guerrilla campaign escalated into a devastating attack on the heart of British military administration...',
             exam_link:
               'Q2 Narrative Account: Shows how British immigration restrictions drove Jewish groups to launch the armed campaign that forced Britain to withdraw.',
+            question:
+              'How did Zionist paramilitaries paralyze British infrastructure in Palestine?',
           },
           {
             step: 2,
@@ -2110,6 +2119,7 @@ const cme_new_data = {
               'Exhausted by casualties, financial debt, and public outrage, the British government decided to walk away from Palestine...',
             exam_link:
               'Q1 Consequence: Convinced the British government that governing Palestine was no longer sustainable, leading directly to the decision to hand it to the UN.',
+            question: 'Why did targeting the King David Hotel prove Palestine was ungovernable?',
           },
           {
             step: 3,
@@ -2127,6 +2137,8 @@ const cme_new_data = {
               'The United Nations investigated on the ground and produced a formal plan to divide the country into two separate states...',
             exam_link:
               'Q2 Narrative Account: Transferred responsibility from the British Empire to the international community, setting the stage for UN Resolution 181.',
+            question:
+              'How did the SS Exodus crisis force Britain to surrender the Mandate to the UN?',
           },
           {
             step: 4,
@@ -2144,6 +2156,8 @@ const cme_new_data = {
               'As the final British soldiers packed up and departed, the civil conflict erupted into a regional war...',
             exam_link:
               'Q1 Consequence: Sparked intense communal fighting that escalated directly into the 1948–49 Arab-Israeli War.',
+            question:
+              'Why did Plan Dalet ignite intense fighting along the Tel Aviv–Jerusalem corridor?',
           },
           {
             step: 5,
@@ -2161,6 +2175,8 @@ const cme_new_data = {
               'The 1948–49 war completely redrew the map of the Middle East and created a permanent refugee crisis...',
             exam_link:
               'Q1 Consequence: Established the sovereign State of Israel while creating the lasting Palestinian refugee issue.',
+            question:
+              'Why did Ben-Gurion proclaim statehood hours before the British Mandate expired?',
           },
         ],
       },
@@ -3467,6 +3483,8 @@ const cme_new_data = {
               'As the fighting swept through towns and villages, hundreds of thousands of civilians were forced from their homes...',
             exam_link:
               'Q2 Narrative Account: Explains how Israel used the UN truce to rearm and overcome Arab numerical superiority.',
+            question:
+              'How did the 4-week UN truce enable Israel to decisively shift military momentum?',
           },
           {
             step: 2,
@@ -3484,6 +3502,8 @@ const cme_new_data = {
               'The active fighting was halted by temporary ceasefire agreements that completely redrew the borders...',
             exam_link:
               'Q1 Consequence: Created the lasting Palestinian refugee crisis that became one of the main obstacles to Middle East peace.',
+            question:
+              'Why is the cause of the 1948 Palestinian refugee flight (Al-Nakba) contested?',
           },
           {
             step: 3,
@@ -3501,6 +3521,7 @@ const cme_new_data = {
               'With its new borders secured, the Israeli government passed laws to rapidly build up its population...',
             exam_link:
               'Q1 Consequence: Wiped the proposed Arab state off the map and established borders that left Israel with narrow, vulnerable frontiers.',
+            question: 'How did the 1949 Green Line transform the territory allocated by the UN?',
           },
           {
             step: 4,
@@ -3518,6 +3539,8 @@ const cme_new_data = {
               'Border friction grew intense as displaced Palestinians began staging raids back across the armistice lines...',
             exam_link:
               'Q1 Consequence: Transformed Israeli society and cemented the policy of barring displaced Palestinians from reclaiming their land.',
+            question:
+              'How did the Law of Return transform Israel’s demographics and economy by 1953?',
           },
           {
             step: 5,
@@ -3535,6 +3558,7 @@ const cme_new_data = {
               'Rising border violence and Egyptian support for the Fedayeen convinced Israeli leaders to seek a military showdown with Egypt...',
             exam_link:
               'Q2 Narrative Account: Demonstrates how post-1949 border raids created the military escalation that sparked the 1956 Suez Crisis.',
+            question: 'Why did cross-border infiltration trigger Sharon’s Unit 101 raid on Qibya?',
           },
         ],
       },
@@ -5362,6 +5386,8 @@ const cme_new_data = {
               'Blocked from buying weapons by Western powers, Nasser turned directly to the Communist Eastern Bloc...',
             exam_link:
               'Q1 Consequence: Convinced Nasser to buy Soviet weapons, which brought Cold War rivalries directly into the Middle East conflict.',
+            question:
+              'Why did Ben-Gurion’s Gaza raid convince Nasser he needed modern heavy weapons?',
           },
           {
             step: 2,
@@ -5382,6 +5408,7 @@ const cme_new_data = {
               'Alarmed by Egypt’s friendship with the Soviet Union, the United States retaliated economically...',
             exam_link:
               'Q2 Narrative Account: Led the USA to cancel financial funding for the Aswan High Dam, triggering the Suez nationalisation.',
+            question: 'Why did the Czech arms deal alarm Britain, France, and Israel in 1955?',
           },
           {
             step: 3,
@@ -5402,6 +5429,8 @@ const cme_new_data = {
               'Britain and France secretly allied with Israel to launch an unprovoked military invasion...',
             exam_link:
               'Q1 Consequence: Sparked the military crisis by giving Britain and France an excuse to plan an invasion to reclaim the canal.',
+            question:
+              'Why did Britain and France view canal nationalisation as an intolerable threat?',
           },
           {
             step: 4,
@@ -5422,6 +5451,8 @@ const cme_new_data = {
               'The invasion provoked intense fury from the superpowers, bringing immediate international pressure...',
             exam_link:
               'Q2 Narrative Account: Showed how the imperial conspiracy collapsed under diplomatic and financial pressure from the superpowers.',
+            question:
+              'How did the secret Protocol of Sèvres orchestrate a pretext for invading Egypt?',
           },
           {
             step: 5,
@@ -5442,6 +5473,8 @@ const cme_new_data = {
               'UN peacekeepers kept the border peaceful for a decade, until rising Arab nationalism triggered the 1967 crisis...',
             exam_link:
               'Q1 Consequence: Ended British imperial dominance in the Middle East and made Nasser the undisputed hero of Arab nationalism.',
+            question:
+              'Why did the Suez Crisis end in political triumph for Nasser despite military defeat?',
           },
         ],
       },
@@ -7169,6 +7202,7 @@ const cme_new_data = {
               'Disputes over vital water supplies soon escalated border clashes between Israel and Syria...',
             exam_link:
               'Q2 Narrative Account: Marked the formal revival of Palestinian national resistance, leading to cross-border guerrilla raids.',
+            question: 'Why did Arab leaders meet in Cairo and create the PLO in 1964?',
           },
           {
             step: 2,
@@ -7186,6 +7220,7 @@ const cme_new_data = {
               'A radical new government in Syria began actively funding guerrilla attacks against Israel...',
             exam_link:
               'Q1 Consequence: Escalated border tensions between Israel and Syria, making military clashes frequent on the northern frontier.',
+            question: 'How did the dispute over River Jordan water spark military conflict?',
           },
           {
             step: 3,
@@ -7203,6 +7238,7 @@ const cme_new_data = {
               'Israel launched a large retaliatory raid across the Jordanian border to deter infiltrators...',
             exam_link:
               'Q2 Narrative Account: Syrian state backing for Fatah provoked heavy Israeli retaliation, bringing the region closer to war.',
+            question: 'Why did Syria sponsor Fatah guerrilla raids across the border?',
           },
           {
             step: 4,
@@ -7220,6 +7256,7 @@ const cme_new_data = {
               'Tensions reached boiling point in a major aerial clash over the Syrian border...',
             exam_link:
               'Q1 Consequence: Deepened divisions between Arab leaders and pressured Nasser into taking aggressive action to restore his leadership.',
+            question: 'What were the consequences of the Israeli reprisal raid on Samu?',
           },
           {
             step: 5,
@@ -7237,6 +7274,7 @@ const cme_new_data = {
               'Desperate to deter another Israeli attack on Syria, the Soviet Union issued a fateful false warning to Nasser...',
             exam_link:
               'Q2 Narrative Account: The destruction of Syrian jets pushed Syria and the USSR to provoke the crisis that started the Six-Day War.',
+            question: 'How did the 7 April dogfight escalate tensions toward all-out war?',
           },
         ],
       },
@@ -8291,6 +8329,7 @@ const cme_new_data = {
               'To prove he was serious, Nasser took two dramatic steps that directly provoked Israel...',
             exam_link:
               'Q2 Narrative Account: Triggered the rapid chain of events in May 1967 that made a pre-emptive strike by Israel inevitable.',
+            question: 'How did Soviet false warnings trigger Egyptian troop mobilisation in Sinai?',
           },
           {
             step: 2,
@@ -8308,6 +8347,7 @@ const cme_new_data = {
               'Jordan then signed a joint military alliance with Egypt, completely surrounding Israel on three sides...',
             exam_link:
               'Q1 Consequence: Closing the Straits of Tiran cut off vital oil supplies and provided Israel with the immediate justification for war.',
+            question: 'Why was closing the Straits of Tiran treated by Israel as a casus belli?',
           },
           {
             step: 3,
@@ -8325,6 +8365,8 @@ const cme_new_data = {
               'Fearing an imminent attack from three sides, Israel decided to launch a surprise pre-emptive strike...',
             exam_link:
               'Q2 Narrative Account: Convinced Israeli leaders that waiting would lead to national destruction, prompting the pre-emptive air strike.',
+            question:
+              'How did the Egyptian-Jordanian Defence Pact encircle Israel on three fronts?',
           },
           {
             step: 4,
@@ -8342,6 +8384,7 @@ const cme_new_data = {
               'With total air superiority, Israeli ground forces advanced rapidly on all three fronts...',
             exam_link:
               'Q1 Consequence: Destroyed Arab air power in three hours, guaranteeing Israel’s total battlefield victory in the Six-Day War.',
+            question: 'How did Operation Focus destroy Arab air power on the first morning?',
           },
           {
             step: 5,
@@ -8359,6 +8402,7 @@ const cme_new_data = {
               'The stunning conquest of vast Arab lands created the central dilemma of modern Middle Eastern history...',
             exam_link:
               'Q1 Consequence: Transformed the geography of the conflict by giving Israel the occupied territories of Sinai, Gaza, the West Bank, and Golan Heights.',
+            question: 'What territories did Israel conquer during the six days of fighting?',
           },
         ],
       },
@@ -9422,6 +9466,7 @@ const cme_new_data = {
               'Stunned by their catastrophic battlefield defeat, Arab leaders gathered to coordinate a response...',
             exam_link:
               'Q1 Consequence: Made Jerusalem the most sacred and intractable dispute between Israelis and Palestinians.',
+            question: 'Why did the capture and annexation of East Jerusalem cause global outcry?',
           },
           {
             step: 2,
@@ -9439,6 +9484,7 @@ const cme_new_data = {
               'To break the diplomatic deadlock, the United Nations drafted a historic peace formula...',
             exam_link:
               'Q1 Consequence: Blocked early peace negotiations and entrenched the diplomatic stalemate after the 1967 war.',
+            question: 'Why did the Arab League issue the "Three Noes" at the Khartoum Summit?',
           },
           {
             step: 3,
@@ -9456,6 +9502,7 @@ const cme_new_data = {
               'Expecting no quick peace deal, Israel built heavy military fortifications along the new borders...',
             exam_link:
               'Q1 Consequence: Established the international framework of "Land for Peace" that underpinned all subsequent peace talks (Camp David and Oslo).',
+            question: 'How did UN Resolution 242 establish the principle of "Land for Peace"?',
           },
           {
             step: 4,
@@ -9473,6 +9520,7 @@ const cme_new_data = {
               'Alongside military forts, Israeli civilians began settling inside the captured Arab territories...',
             exam_link:
               'Q2 Narrative Account: Bred the military overconfidence that left Israeli forces unprepared for the surprise Egyptian canal crossing in 1973.',
+            question: 'Why did Israel build the fortified Bar-Lev Line along the Suez Canal?',
           },
           {
             step: 5,
@@ -9490,6 +9538,7 @@ const cme_new_data = {
               'Faced with permanent occupation and defeated Arab armies, Palestinians turned to armed guerrilla warfare...',
             exam_link:
               'Q1 Consequence: Created permanent Jewish settlements in Palestinian territory, which became a major barrier to a two-state solution.',
+            question: 'How did permanent Israeli settlements transform the occupied territories?',
           },
         ],
       },
@@ -10557,6 +10606,7 @@ const cme_new_data = {
               'Radical Palestinian factions turned to international terrorism to gain worldwide television attention...',
             exam_link:
               'Q2 Narrative Account: Established Yasser Arafat and Fatah as the dominant leaders of the Palestinian national struggle.',
+            question: 'How did the Battle of Karameh establish Yasser Arafat as leader of the PLO?',
           },
           {
             step: 2,
@@ -10574,6 +10624,7 @@ const cme_new_data = {
               'Furious at being humiliated in his own country, King Hussein ordered his army to crush the PLO...',
             exam_link:
               'Q1 Consequence: Brought the Palestinian issue to global attention, but provoked King Hussein into launching military action against the PLO.',
+            question: 'Why did the PFLP hijack Western airliners to Dawson’s Field in 1970?',
           },
           {
             step: 3,
@@ -10591,6 +10642,7 @@ const cme_new_data = {
               'A vengeful new faction named after the Jordanian defeat carried out a shocking attack on the world stage...',
             exam_link:
               'Q1 Consequence: Led to the expulsion of the PLO from Jordan and the relocation of their bases to Lebanon.',
+            question: 'Why did King Hussein expel the PLO during Black September in 1970?',
           },
           {
             step: 4,
@@ -10608,6 +10660,7 @@ const cme_new_data = {
               'In response to Munich, Israeli Prime Minister Golda Meir ordered a covert campaign against those responsible...',
             exam_link:
               'Q1 Consequence: Branded the Palestinian cause with international terrorism and prompted Israel to launch covert retaliatory strikes.',
+            question: 'What was the global impact of the Munich Olympics massacre in 1972?',
           },
           {
             step: 5,
@@ -10625,6 +10678,7 @@ const cme_new_data = {
               'While the covert war raged, Egypt and Syria prepared a massive conventional surprise attack on Israel...',
             exam_link:
               'Q2 Narrative Account: Shows how Israel used targeted assassinations in Europe to restore deterrence after the Munich attack.',
+            question: 'How did Israel retaliate through Operation Wrath of God covert strikes?',
           },
         ],
       },
@@ -11705,6 +11759,7 @@ const cme_new_data = {
               'Egypt’s new president tried diplomacy to regain Sinai, but his overtures were ignored...',
             exam_link:
               'Q2 Narrative Account: Showed Egypt’s refusal to accept the loss of Sinai, setting the stage for the Yom Kippur War.',
+            question: 'Why did Nasser launch the War of Attrition along the Suez Canal?',
           },
           {
             step: 2,
@@ -11722,6 +11777,7 @@ const cme_new_data = {
               'Sadat coordinated with Syria to launch a shock attack on the holiest day of the Jewish year...',
             exam_link:
               'Q1 Consequence: Convinced Sadat that war was the only way to shatter Israeli complacency and force diplomatic negotiations.',
+            question: 'Why did Anwar Sadat expel 15,000 Soviet advisers from Egypt in 1972?',
           },
           {
             step: 3,
@@ -11739,6 +11795,7 @@ const cme_new_data = {
               'Facing catastrophic losses, Israel turned to the United States for an emergency resupply...',
             exam_link:
               'Q1 Consequence: Shattered Israeli military overconfidence and proved that Arab armies could mount sophisticated, coordinated offensives.',
+            question: 'How did Egyptian and Syrian forces achieve tactical surprise on Yom Kippur?',
           },
           {
             step: 4,
@@ -11756,6 +11813,7 @@ const cme_new_data = {
               'To stop the Israeli advance and punish Western allies, Arab oil producers deployed an economic weapon...',
             exam_link:
               'Q2 Narrative Account: Massive US military aid saved Israel from defeat, while Israeli counter-attacks forced the superpowers to broker a ceasefire.',
+            question: 'How did the US airlift enable General Sharon’s canal counter-crossing?',
           },
           {
             step: 5,
@@ -11773,6 +11831,7 @@ const cme_new_data = {
               'The oil shock forced the US government to lead intense diplomatic negotiations to prevent future wars...',
             exam_link:
               'Q1 Consequence: The oil crisis made Middle Eastern peace an urgent priority for US foreign policy, leading directly to Kissinger’s shuttle diplomacy.',
+            question: 'How did the Arab OPEC oil embargo transform global superpower diplomacy?',
           },
         ],
       },
@@ -12582,6 +12641,8 @@ const cme_new_data = {
               'President Sadat decided to take a dramatic personal gamble to break thirty years of deadlock...',
             exam_link:
               'Q2 Narrative Account: Restored civilian shipping through the Suez Canal and established the US as the primary mediator in Middle East diplomacy.',
+            question:
+              'How did Kissinger’s step-by-step shuttle diplomacy separate the frontline armies?',
           },
           {
             step: 2,
@@ -12599,6 +12660,8 @@ const cme_new_data = {
               'When negotiations stalled over the details, the US President stepped in to force a breakthrough...',
             exam_link:
               'Q1 Consequence: Shattered psychological barriers between Egypt and Israel, paving the way for the Camp David summit.',
+            question:
+              'Why was Sadat’s speech to the Israeli Knesset such a profound psychological breakthrough?',
           },
           {
             step: 3,
@@ -12616,6 +12679,7 @@ const cme_new_data = {
               'The Camp David breakthrough culminated in a formal peace treaty signed on the White House lawn...',
             exam_link:
               'Q1 Consequence: Established the framework that produced the first peace treaty between Israel and an Arab nation.',
+            question: 'How did Jimmy Carter prevent the 13-day Camp David summit from collapsing?',
           },
           {
             step: 4,
@@ -12633,6 +12697,7 @@ const cme_new_data = {
               'However, signing a separate peace treaty provoked fury across the rest of the Arab world...',
             exam_link:
               'Q1 Consequence: Ended the military threat from Egypt, securing Israel’s southern border for the first time since 1948.',
+            question: 'What territorial concessions did Israel make under the 1979 Peace Treaty?',
           },
           {
             step: 5,
@@ -12650,6 +12715,7 @@ const cme_new_data = {
               'With Egypt at peace, the focus of the Arab-Israeli conflict shifted north to Lebanon and the Palestinian issue...',
             exam_link:
               'Q1 Consequence: Left Egypt diplomatically isolated in the Arab world and showed the extreme danger facing leaders who compromised with Israel.',
+            question: 'Why did Egyptian Islamic Jihad assassinate Anwar Sadat in October 1981?',
           },
         ],
       },
@@ -14233,6 +14299,8 @@ const cme_new_data = {
               'In the chaotic aftermath of the PLO’s departure, a horrific atrocity was carried out against civilians...',
             exam_link:
               'Q1 Consequence: Expelled the PLO military leadership from Lebanon, scattering them across the Arab world to distant Tunisia.',
+            question:
+              'Why did Ariel Sharon expand the invasion far beyond the cabinet’s 40km limit?',
           },
           {
             step: 2,
@@ -14250,6 +14318,8 @@ const cme_new_data = {
               'With the PLO exiled far away in Tunisia, frustration among Palestinians in the occupied territories reached breaking point...',
             exam_link:
               'Q1 Consequence: Triggered international condemnation and led to the resignation of Israeli Defence Minister Ariel Sharon.',
+            question:
+              'Why was Israel held internationally accountable for the Phalangist massacre?',
           },
           {
             step: 3,
@@ -14267,6 +14337,7 @@ const cme_new_data = {
               'As the Israeli military struggled to control civilian protests, a radical new movement emerged...',
             exam_link:
               'Q1 Consequence: Transformed the conflict from cross-border military attacks into a mass grassroots civilian uprising inside the occupied territories.',
+            question: 'Why did a traffic collision in the Gaza Strip spark the First Intifada?',
           },
           {
             step: 4,
@@ -14284,6 +14355,7 @@ const cme_new_data = {
               'Pressured by the uprising and the rise of Hamas, Yasser Arafat made a historic diplomatic pivot...',
             exam_link:
               'Q2 Narrative Account: The rise of Hamas divided Palestinian leadership, introducing suicide bombings and challenging Arafat’s authority.',
+            question: 'Why did the rise of Hamas threaten Yasser Arafat and the PLO’s leadership?',
           },
           {
             step: 5,
@@ -14301,6 +14373,7 @@ const cme_new_data = {
               'This diplomatic breakthrough, combined with the end of the Cold War, opened the door to peace talks in the 1990s...',
             exam_link:
               'Q1 Consequence: Opened direct diplomatic relations between the US and the PLO, paving the way for the Madrid and Oslo peace talks.',
+            question: 'Why was Arafat’s 1988 Geneva speech a historic turning point for the PLO?',
           },
         ],
       },
@@ -15618,6 +15691,8 @@ const cme_new_data = {
               'Frustrated by stalled public talks, Israeli and Palestinian negotiators opened a secret backchannel in Europe...',
             exam_link:
               'Q2 Narrative Account: Brought Israeli and Arab leaders together for the first time, paving the way for secret bilateral negotiations.',
+            question:
+              'Why did the end of the Cold War and the Gulf War make the Madrid Conference possible?',
           },
           {
             step: 2,
@@ -15635,6 +15710,7 @@ const cme_new_data = {
               'The secret Norwegian breakthrough led to an unforgettable ceremony on the world stage...',
             exam_link:
               'Q1 Consequence: Bypassed public political posturing and produced the historic Declaration of Principles.',
+            question: 'Why was strict secrecy essential for the Oslo negotiators in Norway?',
           },
           {
             step: 3,
@@ -15652,6 +15728,7 @@ const cme_new_data = {
               'The momentum of Oslo immediately unlocked a second peace treaty on Israel’s eastern border...',
             exam_link:
               'Q1 Consequence: Created the Palestinian Authority and established the framework for Palestinian self-rule in Gaza and the West Bank.',
+            question: 'What did the "Gaza-Jericho First" formula provide for Palestinians?',
           },
           {
             step: 4,
@@ -15669,6 +15746,8 @@ const cme_new_data = {
               'Territorial compromises provoked violent anger from extremists on both fringes...',
             exam_link:
               'Q1 Consequence: Secured Israel’s eastern frontier with Jordan and established the three administrative zones in the West Bank.',
+            question:
+              'How did the division of the West Bank into Areas A, B, and C leave territory fragmented?',
           },
           {
             step: 5,
@@ -15686,6 +15765,8 @@ const cme_new_data = {
               'Rabin’s murder and continued terror attacks led to the election of right-wing leader Benjamin Netanyahu in 1996, stalling the Oslo process.',
             exam_link:
               'Q1 Consequence: Shattered the momentum of the Oslo peace process and deepened division within Israeli society.',
+            question:
+              'Why did Jewish extremist Yigal Amir assassinate Prime Minister Yitzhak Rabin?',
           },
         ],
       },

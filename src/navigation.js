@@ -20,7 +20,6 @@ import { renderChessHubView } from './chess_zone.js';
 
 import { renderCurriculumMap } from './curriculum_map.js';
 import { renderDepartmentPortal } from './department_portal.js';
-import { renderSidebarVideoBadgeHTML } from './engine/video_utils.js';
 
 // Subscribe to state changes to handle DOM updates independently of the router
 export function initNavigationUI() {
@@ -983,11 +982,9 @@ function updateSidebarForUnit(unitId, unitData = {}) {
         item.setAttribute('data-lesson-index', idx);
         const rawTitle = sub.title || `Lesson ${idx + 1}`;
         const cleanTitle = rawTitle.replace(/^(?:Enquiry|Lesson)\s*\d+:\s*/i, '').trim();
-        const vBadgeHtml = renderSidebarVideoBadgeHTML(sub);
         item.innerHTML = `
           <span class="sidebar-lesson-badge">${idx + 1}</span>
           <span class="sidebar-lesson-title-text" title="${cleanTitle.replace(/"/g, '&quot;')}">${cleanTitle}</span>
-          ${vBadgeHtml}
         `;
         item.addEventListener('click', (e) => {
           e.stopPropagation();

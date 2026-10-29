@@ -6850,6 +6850,65 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
   flex: 0 0 auto;
   min-height: 0;
 }
+.cme-spine-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+.cme-spine-date-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #0284c7;
+  line-height: 1.25;
+}
+.cme-spine-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.63rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+.cme-spine-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+.cme-spine-question {
+  background: #f0f9ff;
+  border-left: 3px solid #0284c7;
+  padding: 5px 8px;
+  border-radius: 0 4px 4px 0;
+  margin: 4px 0 8px 0;
+  box-sizing: border-box;
+}
+.cme-spine-question-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #0369a1;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.cme-spine-question-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.32;
+  font-style: italic;
+}
 .cme-spine-causal-drawer[open] .drawer-chevron,
 .cme-domino-step[open] > summary .drawer-chevron {
   transform: rotate(180deg);

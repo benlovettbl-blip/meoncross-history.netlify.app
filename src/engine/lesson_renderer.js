@@ -1392,8 +1392,7 @@ function renderCausalDominoSpine(spine) {
       <div class="causal-domino-card" data-stage="${s.step}" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid ${idx === 4 ? '#10b981' : '#0284c7'}; border-radius: 8px; padding: 12px 10px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 6px rgba(0,0,0,0.04); min-width: 0; box-sizing: border-box; position: relative;">
         <div>
           <!-- Header -->
-          <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 6px;">
-            <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">STAGE ${s.step}</span>
+          <div style="display: flex; align-items: center; justify-content: flex-end; gap: 4px; margin-bottom: 6px;">
             <span style="font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; color: #0284c7; text-align: right; line-height: 1.25;" title="${s.date}">${s.date}</span>
           </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 0.63rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 5px; line-height: 1.35;" title="${s.tag} • ${s.actor}">
@@ -2605,27 +2604,6 @@ export function renderLessonLaunchpad({
             .join('')}
         </div>
         <div class="launchpad-actions-group">
-          ${
-            hasSpine
-              ? `
-          <button type="button"
-            class="btn-causal-spine-jump launchpad-jump-spine-btn"
-            onclick="window.openSpineTabAndScroll();"
-            title="Jump directly to Chronology &amp; Causal Domino Spine"
-            style="background: #e0f2fe; color: #0284c7; border: 1.2px solid #bae6fd; font-weight: 700; font-size: 0.76rem; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-timeline"></i>
-            <span>Causal Spine &darr;</span>
-          </button>
-          `
-              : ''
-          }
-          <button type="button"
-            class="launchpad-start-reading-btn"
-            data-action="launchpad-start-reading"
-            title="Jump directly to lesson narrative reading">
-            <i class="fa-solid fa-book-open-reader"></i>
-            <span>Start Reading &darr;</span>
-          </button>
           <button type="button"
             class="launchpad-close-btn"
             data-action="close-launchpad"
@@ -5231,7 +5209,6 @@ export function renderLesson(lesson) {
                 <div class="cme-spine-narrative-zone">
                   <div class="cme-spine-date-row">
                     <span class="cme-spine-date-badge" title="${item.date}">${displayDate}</span>
-                    <span class="cme-spine-stage-pill">STAGE ${item.step}</span>
                   </div>
 
                   ${
@@ -5468,7 +5445,6 @@ export function renderLesson(lesson) {
                   <div>
                     <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap;">
                       <div style="display: inline-flex; align-items: center; gap: 4px;">
-                        <span style="background: #0f284e; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 900; padding: 1px 6px; border-radius: 3px;">STAGE ${st.step}</span>
                         ${st.para_ref || st.paraRef ? `<span style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: monospace; font-size: 0.65rem; font-weight: 800; padding: 1px 5px; border-radius: 3px;">Text ${st.para_ref || st.paraRef}</span>` : ''}
                       </div>
                       <span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; color: #2563eb;">${st.date}</span>
