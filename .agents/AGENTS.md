@@ -108,15 +108,11 @@ To ensure the Christine Counsell 4-Act V2 workbooks (staged in `data_v2_4act.js`
 3. **Zero Spam Policy:** If the conversation is NOT about printing, reprographics, term reprint, or these three frozen units, do NOT output this reminder.
 
 
-## Printed Workbook Vocabulary Tasks
-Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, you MUST ensure that the vocabulary exercises dynamically rotate between three distinct pedagogical styles (e.g., based on the lesson index: `lessonIndex % 3`):
-1. **Contextual Cloze:** A fill-in-the-blank summary using the words.
-2. **Vocabulary Mapping:** A task asking the student to write a historically accurate sentence connecting two terms from a provided glossary box.
-3. **Dual-Term Analytical Distinction:** A task asking the student to explain the crucial historical difference between two easily confused terms (e.g., *Wrought Iron vs. Pig Iron*, *Nationalism vs. Imperialism*). DO NOT use Frayer models.
-This prevents pupil fatigue and ensures diverse cognitive engagement.
-
-## Printed Workbook Timeline Tasks
-Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, if a lesson contains a `do_now.type === "timeline"`, you MUST render it as a 'Domino Flowchart'. The script must print the events inside randomly scattered/shuffled CSS boxes on the page. The instructions must tell the student to 'draw arrows connecting the events in the correct chronological and causal order'.
+## Strict Ban on In-Workbook "Do Now" Tasks & Standalone Vocab Fillers
+STRICT RULE: Modern Gold Standard printed pupil workbooks must NEVER contain "Do Now" retrieval starters or standalone vocabulary tasks (such as cloze summaries, vocabulary mapping, odd-one-out, or Frayer models).
+1. **Separation of Interactive Starters vs Printed Workbooks:** "Do Now" retrieval starter tasks belong strictly in the digital interactive web application or front-of-class starter slides. Printing them in workbooks wastes valuable physical page budget that must be dedicated to chronological note-taking and extended disciplinary writing.
+2. **Zero Standalone Vocab Drills:** Standalone vocabulary exercises (cloze passages, definition copying, match-ups) are strictly prohibited in printed pupil workbooks.
+3. **Clean Vocabulary Banks on Writing Pages:** Key terminology must appear ONLY as a clean, concise `Key Terms:` or `Key Vocabulary Bank:` alongside extended writing prompts on the right-hand page (Recto), giving students active lexical support as they write their analytical arguments.
 
 ## Zero Knowledge Giveaways in Printed Workbook Scaffolds (Workbook vs Web App Separation)
 STRICT RULE: Sentence stems, analytical connectives, and writing frames in printed pupil workbooks must provide purely structural, cognitive, and disciplinary scaffolding—NEVER factual historical knowledge, specific answers, or prescribed paragraph points.
@@ -187,8 +183,15 @@ Ensure all exam practice forms, UI templates, and generated assessments reflect 
 ### Fallback for Hotlink-Protected Images
 If a Wikimedia Commons URL works via the API (or curl) but returns a 403 Forbidden broken image icon in the browser (due to Wikimedia's hotlinking protection on high-traffic images), you MUST completely bypass hotlinking. Download the 500px thumbnail image directly into the `public/images/` directory using a Node script or curl, and update the JSON curriculum data to reference the local file path (e.g., `/images/vesalius.jpg`). This guarantees the image will always load flawlessly in the web app.
 
-## Edexcel GCSE Exam Specification: Consequence Questions
-Whenever generating or evaluating Edexcel GCSE History exam questions specifically for Paper 2 (Middle East), remember that the 'consequences' question format has changed. There is no longer an 8-mark question asking to 'Explain two consequences of...'. It is now a single 4-mark question asking to 'Explain one consequence of...'. Ensure all exam practice forms, UI templates, and generated assessments reflect this updated 4-mark format.
+## Edexcel GCSE Paper 2 Period Study Exam Architecture (Option P5: Conflict in the Middle East, 1945–95)
+STRICT RULE: Pearson Edexcel Paper 2 Period Study (Option P5: Conflict in the Middle East, 1945–95) has a total of 32 marks across strictly THREE question types. It contains STRICTLY ZERO 12-mark questions.
+1. **Q1(a) & Q1(b): Two Consequence Questions [4 marks each = 8 marks total]:**
+   - 'Explain one consequence of...' [4 marks each]. Requires 1 identified consequence and supporting historical detail/explanation. (Spend ~6 mins each).
+2. **Q2: One Analytical Narrative Question [8 marks]:**
+   - 'Write an analytical narrative explaining...' [8 marks]. Requires a clear chronological sequence showing causation and consequence (2 stimulus points provided + required own knowledge). (Spend ~15 mins).
+3. **Q3: Two Importance / Explanation Questions from a Choice of Three [8 marks each = 16 marks total]:**
+   - Choice of two questions from three: 'Explain the importance of X for Y' [8 marks each]. (Spend ~15 mins each).
+4. **Total Marks:** Strictly 32 marks. (There are NO 12-mark explanation questions on Paper 2 Period Study. 12-mark questions belong strictly to Paper 1 Medicine, Paper 2 Section A Early Elizabethan England, and Paper 3 Modern Depth Studies USA/Weimar).
 
 ## Auto-Git Checkpoint
 Before running any automated extraction scripts, rebuilding the database, or making large structural refactors to curriculum files, you MUST automatically run `git add .` and `git commit -m "Auto-backup checkpoint before <task>"` if the workspace is clean and has untracked or modified files. This ensures a robust version history that can be instantly restored if anything breaks.
@@ -370,8 +373,8 @@ All future GCSE key topic workbooks and KS3 enquiry booklets moving forward MUST
    - Right Column (66mm wide): Docked editorial panels with zero dead space: Pupil Portfolio card (Name, Class, Teacher, 5-enquiry tracking table), Section A Exam Architecture & Tariffs, Section B Specification Enquiry Sequence (with titles, dates, enquiry questions, specification bullets, concepts, and exam tariffs), Section C 10-Milestone Chronological Anchors, and Section D PFC Writing Technique with 4/4 benchmark model answer.
 2. **Pages 2–3: Living Timeline & Panoramic Dual-Coding Spread:** 6 milestones across the period with 48mm sketch canvases for dual-coding.
 3. **Pages 4–13: 5x Double-Page Enquiry Spreads (2 Pages per Enquiry):**
-   - Verso (Left Page): 10-question retrieval Do Now, Vocab analytical distinction, 2x Q1 Consequence [4m+4m] with stems & 7.0mm ruled response lines.
-   - Recto (Right Page): Full 8m / 16m extended writing practice with Mastery Structure Strip, analytical connectives, word bank, timeline mission, and full-page ruled lines.
+   - Verso (Left Page): 5-Stage Chronological Inquiry Spine with decimal badges ([X.1]–[X.5]), high-impact banners, 44mm spec-anchored 3-keyword trigger spine, and 6 ruled note-taking lines per stage (strictly ZERO Do Now starters and ZERO standalone vocab tasks).
+   - Recto (Right Page): Disciplinary Writing Practice (Part A/B or Single 8m/16m Extended Writing) with calibrated handwriting pitch (~7.8mm–9.4mm British exercise book pitch), single clean Analytical Connectives row, concise Key Terms vocabulary bank, and Timeline Mission signpost.
 4. **Page 14: Master Knowledge Organiser:** Bilingual Hebrew & Arabic / specialized terminology glossary, high-yield thematic tables, cause & consequence matrices.
 5. **Page 15: Grade 9 Extended Writing Masterclass & Band 4 Rubric:** Point-Fact-Consequence model, analytical connectives, evaluative criteria prompts, sustained judgment.
 6. **Page 16: Outside Back Cover:** Assessment Tracker, WWW/EBI Teacher Feedback Grid, and Mobile QR Quiz Matrix.
@@ -421,8 +424,8 @@ All Key Stage 3 units (Years 7, 8, and 9: `early_modern_world`, `industrialisati
    - **Page 1: Master Front Cover:** Customizer `data-department-name="The History Department"` enclosing `<span class="school-brand-target">The History Department</span>`, pupil info strip (`Name`, `Class`, `Teacher` — strictly NO target grade fields on KS3 covers), 52mm primary image plate with archival shelfmark, 8-enquiry roadmap grid, and "How to Write Like a Historian" anchor box.
    - **Pages 2–3: Living Timeline & Panoramic Dual-Coding Spread:** 8 milestone anchors with 48mm sketch canvases and retrieval check questions.
    - **Pages 4–19: 8x Double-Page Enquiry Spreads:**
-     - **Verso (Left Page):** 5-question Do Now retrieval grid (strictly prior knowledge, never current lesson), Task 1 rotating disciplinary vocabulary (Contextual Cloze, Vocabulary Mapping, Dual-Term Analytical Distinction) or Domino Flowchart, and Task 2 Archival Forensic Interrogation with ruled response lines.
-     - **Recto (Right Page):** Act 4 Extended Analytical Writing. Prominent blue banner displaying the Enquiry Question verbatim, 3-column disciplinary structure strip, PEEL writing framework, dynamic flexbox auto-filling ruled lines (`data-auto-lines="true"`, capped at 17 lines, zero underflow, zero overflow), teacher assessment rubric, and timeline mission signpost.
+     - **Verso (Left Page):** 5-Stage Chronological Inquiry Spine with prominent decimal badges (`[1.1]`–`[1.5]`), high-impact question banners, 44mm spec-anchored 3-keyword trigger spine, and 6 ruled note-taking lines per stage (strictly ZERO Do Now starters and ZERO standalone vocab tasks).
+     - **Recto (Right Page):** Disciplinary Writing Practice (Part A/B or Single 12m/16m Essay) with calibrated handwriting pitch (~7.8mm–9.4mm British exercise book pitch), single clean `Analytical Connectives:` row, concise `Key Terms:` vocabulary bank, and Timeline Mission signpost.
    - **Page 20: Universal KS3 Outside Back Cover:** Comprehensive pupil assessment record and mobile QR quizzing matrix linking directly to app lessons.
 3. **Master Publisher Companion Textbook Standard:**
    - **Front Cover:** Series masthead `Key Stage 3 Master Curriculum Series`, poetic subtitle, authentic historical artwork, and publisher imprint `The History Revision Hub • Student Textbook Edition`.

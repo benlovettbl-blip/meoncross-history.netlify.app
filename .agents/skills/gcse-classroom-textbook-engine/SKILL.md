@@ -7,7 +7,7 @@ description: Publishing standard and automated compiler engine for authoring, st
 
 ## Core Philosophy: The Pure Narrative Textbook
 A **GCSE Classroom Textbook** is a durable, multi-year classroom resource. It is NOT a consumable pupil workbook, revision guide, or exam practice pad.
-- **The Pupil Workbook:** Consumable workspace for Do Nows, vocabulary, primary source forensics, 8m/12m/16m essay lines, and teacher rubrics.
+- **The Pupil Workbook:** Consumable workspace for the 5-Stage Chronological Inquiry Spine, lecture/reading note-taking, disciplinary writing practice, and living timelines.
 - **The Interactive Web Application:** Multimedia digital portal with audio narrations, interactive flashcards, primary source galleries, and quizzes.
 - **The Classroom Textbook (Exactly 28 Pages):** The student's continuous, immersive reading text. Its sole purpose is **rich, unbroken disciplinary historical narrative reading** during teacher-led instruction, guided reading, and independent study.
 

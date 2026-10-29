@@ -70,16 +70,16 @@ All KS3 pupil workbooks must strictly enforce the 2-page double-page spread arch
 2. **Pages 2–3: Living Timeline & Panoramic Dual-Coding Spread:**
    - Chronological spine of 8 milestones with 48mm sketch canvases for dual-coding.
    - Retrieval timeline check questions at the bottom of both pages.
-3. **Verso (Left Page) — Curated Evidence Launchpad & Retrieval:**
-   - **Do Now Retrieval Grid:** Exactly 5 questions strictly testing recall from *prior* lessons (never current content).
-   - **Task 1: Disciplinary Vocabulary Practice:** Dynamically rotating between Contextual Cloze, Vocabulary Mapping, and Dual-Term Analytical Distinction (or Domino Flowchart for timeline tasks).
-   - **Task 2: Archival Forensic Interrogation:** Primary source excerpt with 2-3 scaffolded analysis questions and ruled response lines.
+3. **Verso (Left Page) — Chronological Inquiry Spine & Note-Taking Canvas:**
+   - **5-Stage Chronological Inquiry Spine:** Stages tagged with prominent decimal badges (`[1.1]`–`[1.5]` or `[X.1]`–`[X.5]`).
+   - **High-Impact Stage Banners:** Displaying stage step, date, and key question prompt.
+   - **44mm Trigger Keyword Spine:** 3 spec-anchored keywords per stage aligned directly with note-taking lines.
+   - **6 Ruled Note-Taking Lines per Stage:** Structured handwriting lines for lecture/reading notes.
+   - **Strictly ZERO In-Workbook Do Nows or Vocab Cloze:** Starter retrieval is reserved for digital starter slides/web app; vocabulary appears strictly as clean lexical banks on writing pages.
 4. **Recto (Right Page) — Extended Disciplinary Writing:**
-   - **Enquiry Callout Box:** Prominent blue banner displaying the Enquiry Question verbatim.
-   - **3-Column Disciplinary Structure Strip:** Providing analytical guidance for each stage of the response.
-   - **PEEL Mastery Writing Strip:** Point, Evidence, Explanation, Link stems.
-   - **Dynamic Auto-Lines Flex Target (`data-auto-lines="true"`):** Measured client-side in Puppeteer before printing to fill available height with 7.8mm ruled lines (capped at 17 lines), eliminating underflow gaps while guaranteeing 0px overflow.
-   - **Teacher Assessment Rubric & Timeline Mission Signpost:** Quick marking checklist and page reference back to the Pages 2–3 sketchpad.
+   - **Disciplinary Writing Tasks:** Calibrated handwriting pitch (~7.8mm–8.1mm) for Part A/B questions or single 12m/16m essay prompts.
+   - **Key Terms & Analytical Connectives Rows:** Clean vocabulary bank and sentence connectives (no fill-in-the-blank busywork).
+   - **Timeline Mission Signpost:** Direct cross-reference linking back to the centrefold dual-coding timeline.
 5. **Spiral Curriculum Thematic Strands (Single Source of Truth):**
    - Centrally defined in `src/curriculum_strands.cjs` (`MASTER_DISCIPLINARY_STRANDS` & `UNIT_THEMATIC_STRANDS`).
    - Every KS3 workbook automatically queries `getThematicStrandsForUnit(unitId)` and renders the **"The 4 Big Storylines to Track"** panel on the Page 1 Front Cover:

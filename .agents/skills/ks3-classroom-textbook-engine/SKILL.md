@@ -7,7 +7,7 @@ description: Publishing standard and automated compiler engine for authoring, st
 
 ## Core Philosophy: The Textbook vs. The Workbook
 A **Classroom Textbook** is a durable, multi-year classroom resource that stays in the school. It is NOT a consumable student workbook.
-- **The Pupil Workbook (16 or 20 pages):** The student's personal examination workspace containing Do Now retrieval grids, vocabulary cloze exercises, primary source forensic analysis, 8m/12m/16m ruled writing lines, and teacher marking rubrics.
+- **The Pupil Workbook (16 or 20 pages):** The student's personal examination workspace containing the 5-Stage Chronological Inquiry Spine, trigger note-taking lines, calibrated Part A/B and 8m/12m/16m ruled writing lines, and centrefold living timeline.
 - **The Interactive Web Application:** The multimedia digital portal containing audio narrations, interactive flashcards, 10-question self-marking retrieval quizzes, and full primary source galleries.
 - **The Classroom Companion Textbook:** The student's continuous reading text. Its sole purpose is **immersive, high-legibility, narrative reading** during teacher-led instruction and guided reading.
 
