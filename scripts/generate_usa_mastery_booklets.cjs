@@ -3804,6 +3804,7 @@ function renderBookletHtml(ktKey, meta) {
 
     // Sync to public/pdfs/ root
     fs.copyFileSync(fullPdfPath, path.join(globalPdfsDir, 'usa_mastery_pack_FULL.pdf'));
+    fs.copyFileSync(fullPdfPath, path.join(globalPdfsDir, 'usa_pupil_workbook.pdf'));
 
     // Clean up any old split KT PDFs in pdfsDir and globalPdfsDir
     [
