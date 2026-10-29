@@ -35,6 +35,12 @@ jobs:
           node scripts/verify_source_lettering.cjs
           node scripts/verify_images.cjs
 
+      - name: Source Alignment & Zero-Duplicate Gates
+        run: |
+          node scripts/verify_source_block_chronology.cjs
+          node scripts/audit_intra_lesson_duplicates.cjs
+          node scripts/check_all_units_source_sync.cjs
+
   space_budget_matrix:
     name: Space Budget Matrix (${{ matrix.unit }})
     runs-on: ubuntu-latest

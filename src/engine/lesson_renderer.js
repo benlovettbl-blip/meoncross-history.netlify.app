@@ -249,10 +249,28 @@ export function jumpToSpineCard(stageNum) {
   }
 }
 
+export function jumpToSourceDrawer(letter) {
+  const card = document.getElementById(`source-card-${letter}`);
+  if (card) {
+    if (card.tagName && card.tagName.toLowerCase() === 'details') {
+      card.open = true;
+    }
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.add('source-card-highlighted');
+    card.style.transition = 'all 0.4s ease';
+    card.style.boxShadow = '0 0 0 4px #0284c7, 0 8px 24px rgba(2, 132, 199, 0.35)';
+    setTimeout(() => {
+      card.classList.remove('source-card-highlighted');
+      card.style.boxShadow = '';
+    }, 2500);
+  }
+}
+
 if (typeof window !== 'undefined') {
   window.toggleThinkDiscuss = toggleThinkDiscuss;
   window.jumpToNarrativeBlock = jumpToNarrativeBlock;
   window.jumpToSpineCard = jumpToSpineCard;
+  window.jumpToSourceDrawer = jumpToSourceDrawer;
 }
 
 export function getFallbackDiscussionIdeas(qText, sourceObj = {}) {
@@ -6929,9 +6947,14 @@ export function renderLesson(lesson) {
                   <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2;">${sLetter ? `SOURCE ${sLetter}` : 'ARCHIVAL EVIDENCE'}</span>
                   <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.84rem; color: #1e293b; font-weight: 700; line-height: 1.2;">${displayTitle}</span>
                 </div>
-                <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
-                  Archival Evidence &bull; <span class="drawer-state-expand">Expand</span><span class="drawer-state-collapse" style="display: none;">Collapse</span> <span class="drawer-caret">&#9660;</span>
-                </span>
+                <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                  <button type="button" class="source-to-narrative-jump-btn" onclick="event.stopPropagation(); if(window.jumpToNarrativeBlock){window.jumpToNarrativeBlock(${index + 1});}" style="background: rgba(15, 23, 42, 0.06); border: 1px solid #cbd5e1; color: #475569; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.2s ease;" title="Jump up to Stage ${index + 1} Narrative Reading">
+                    <i class="fa-solid fa-arrow-up"></i> Stage ${index + 1} Text
+                  </button>
+                  <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0;">
+                    Archival Evidence &bull; <span class="drawer-state-expand">Expand</span><span class="drawer-state-collapse" style="display: none;">Collapse</span> <span class="drawer-caret">&#9660;</span>
+                  </span>
+                </div>
               </summary>
               <div class="cme-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
                 ${sourceBodyHtml}
@@ -7029,13 +7052,34 @@ export function renderLesson(lesson) {
         const stageQ = stageObj.question || '';
 
         if (stageQ) {
+          const matchingLetter = ['A', 'B', 'C', 'D', 'E'][index];
+          const isFiveBlockUnit = [
+            'cme_new',
+            'usa',
+            'weimar_nazi_germany',
+            'eee',
+            'cold_war',
+            'edexcel_medicine',
+          ].includes(window.currentUnitId || unitId);
+
           stageBannerHtml = `
             <div class="workbook-stage-question-banner" id="stage-banner-${stageNum}" onclick="if(window.jumpToSpineCard){window.jumpToSpineCard(${stageNum});}" title="Click to view Stage ${stageNum} causal dominoes in Chronology Spine above" style="margin-bottom: 12px; background: #0f172a; border: 1.5px solid #334155; border-left: 4px solid #0284c7; border-radius: 6px; padding: 10px 14px; color: #ffffff; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 5px rgba(15,23,42,0.15);">
-              <div style="display: flex; align-items: center; justify-content: flex-start; gap: 7px; margin-bottom: 4px; flex-wrap: wrap;">
-                <span class="stage-pill-badge" style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 900; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.5px; text-transform: uppercase;">
-                  <i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> Stage ${stageNum} Workbook Enquiry
-                </span>
-                ${stageDate ? `<span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f59e0b; background: rgba(245,158,11,0.12); padding: 2px 7px; border-radius: 3px; border: 1px solid rgba(245,158,11,0.25);">${stageDate}</span>` : ''}
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 7px; margin-bottom: 4px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 7px; flex-wrap: wrap;">
+                  <span class="stage-pill-badge" style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 900; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.5px; text-transform: uppercase;">
+                    <i class="fa-solid fa-book-open" style="margin-right: 4px;"></i> Stage ${stageNum} Workbook Enquiry
+                  </span>
+                  ${stageDate ? `<span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; color: #f59e0b; background: rgba(245,158,11,0.12); padding: 2px 7px; border-radius: 3px; border: 1px solid rgba(245,158,11,0.25);">${stageDate}</span>` : ''}
+                </div>
+                ${
+                  matchingLetter && isFiveBlockUnit
+                    ? `
+                  <button type="button" class="stage-source-jump-btn" onclick="event.stopPropagation(); if(window.jumpToSourceDrawer){window.jumpToSourceDrawer('${matchingLetter}');}" style="background: rgba(2, 132, 199, 0.22); border: 1px solid rgba(56, 189, 248, 0.45); color: #7dd3fc; font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 800; padding: 3px 9px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;" title="Jump directly to Source ${matchingLetter} Evidence Drawer below">
+                    <i class="fa-solid fa-scroll" style="color: #38bdf8;"></i> Jump to Source ${matchingLetter}
+                  </button>
+                `
+                    : ''
+                }
               </div>
               <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: #f8fafc; line-height: 1.35; margin-top: 2px;">
                 &ldquo;${stageQ}&rdquo;
