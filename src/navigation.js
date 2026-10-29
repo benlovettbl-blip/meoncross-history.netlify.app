@@ -482,12 +482,6 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     if (globalNav) globalNav.style.display = 'flex';
     if (unitWorkspace) unitWorkspace.style.display = 'none';
 
-    const navBooklet = document.getElementById('nav-booklet');
-    if (navBooklet) {
-      navBooklet.style.display = 'flex';
-      navBooklet.onclick = () => switchView('booklet', 'all');
-    }
-
     [
       'nav-lessons',
       'nav-interactive',
@@ -541,22 +535,13 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     await loadUnit(targetUnit);
     renderTimeline();
   } else if (viewName === 'booklet') {
-    if (param && param !== 'all') {
-      // Direct unit-level booklet request: route cleanly to unit homepage & hero launchpad
-      await switchView('lessons', param);
-      return;
-    } else if (param === 'all') {
-      state.selectedUnitId = null;
-      window.currentUnitId = null;
-      state.activeUnitData = null;
-    } else {
-      // param is null/undefined (e.g. user clicked global sidebar "PDF Library & Booklets")
-      if (state.selectedUnitId || window.currentUnitId) {
-        await switchView('lessons', state.selectedUnitId || window.currentUnitId);
-        return;
-      }
-    }
-    renderBookletView();
+    // Legacy booklet view decommissioned in favour of Hero Curricular Launchpads
+    const targetUnit =
+      param && param !== 'all'
+        ? param
+        : state.selectedUnitId || window.currentUnitId || 'edexcel_medicine';
+    await switchView('lessons', targetUnit);
+    return;
   } else if (viewName === 'mock-exams') {
     if (param) await loadUnit(param);
     renderMockExamsView();

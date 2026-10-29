@@ -153,7 +153,9 @@
         var c = document.getElementById('page-curtain');
         if (c && !c.classList.contains('hidden')) {
           c.classList.add('hidden');
-          setTimeout(function () { c.style.display = 'none'; }, 400);
+          setTimeout(function () {
+            c.style.display = 'none';
+          }, 400);
         }
       }, 3500);
     </script>
@@ -219,10 +221,6 @@
                 "
                 >Y11</span
               >
-            </div>
-            <div class="nav-item" id="nav-booklet" onclick="window.switchView('booklet', 'all')">
-              <i class="fa-solid fa-file-pdf" style="color: #ef4444"></i>
-              <span>PDF Library &amp; Booklets</span>
             </div>
 
             <!-- Enrichment & Co-Curricular (Secondary) -->
