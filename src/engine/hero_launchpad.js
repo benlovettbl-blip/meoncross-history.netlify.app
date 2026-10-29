@@ -272,10 +272,10 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/cme_new_textbook_UNIFIED.pdf',
     },
     workbook: {
-      title: 'Conflict in the Middle East Pupil Workbook',
-      label: 'Pupil Workbook (24 Pages)',
-      htmlUrl: '/units/cme_new/pupil_workbook_KT1.html',
-      pdfUrl: '/pdfs/cme_new_pupil_workbook_KT1.pdf',
+      title: 'Conflict in the Middle East Master Compendium Workbook',
+      label: 'Pupil Workbook (36 Pages)',
+      htmlUrl: '/units/cme_new/booklets/cme_mastery_FULL.html',
+      pdfUrl: '/pdfs/cme_mastery_pack_FULL.pdf',
     },
     retrieval: {
       title: 'Conflict in the Middle East Master Knowledge Retrieval Companion',
