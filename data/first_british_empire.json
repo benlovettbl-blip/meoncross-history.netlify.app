@@ -1032,6 +1032,62 @@
           "viewing_task": "[15:30] Recall: What constitutional status did 'coastal factories' hold in 17th-century India?\n[28:10] Explain: How did Robert Clive amass his personal fortune of £300,000 following the capture of Murshidabad in 1757?\n[42:00] Challenge: To what extent was the catastrophic Bengal Famine of 1770 a direct byproduct of Company tax extraction policies?",
           "model_answer": "Recall: Factories were fortified sovereign enclaves with warehouse vaults, private armed guards, and royal charters exempting them from local municipal taxes.\nExplain: Clive took massive cash kickbacks, gems, and annual land revenues ('jagirs') from the puppet Nawab Mir Jafar as personal reward for orchestrating the coup at Plassey.\nChallenge: While triggered by monsoon drought, the famine was catastrophic because Company collectors rigidly maintained and even increased land taxes, hoarded grain, and prohibited relief exports, prioritising corporate shareholder dividends over humanitarian survival."
         }
+      ],
+      "tasks": [
+        {
+          "id": "fbe_l1_explain_why_eic",
+          "type": "extended_writing",
+          "tariff": "Question 2: Explain Why [12 marks • 15 mins]",
+          "title": "Question 2: Explain Why [12 marks • 15 mins]",
+          "question": "Explain why the East India Company was able to expand its territorial control across Bengal and India between 1600 and 1765. [12 marks]",
+          "stimulus": [
+            "Royal charters granting trade monopolies and company private armies",
+            "The grant of the Diwani (1765) by Mughal Emperor Shah Alam II"
+          ],
+          "hints": [
+            "Point: State how royal charters granted by the Crown gave the East India Company unprecedented powers to raise private armies and build fortifications [1.1, 1.2].",
+            "Evidence: Cite the 1757 Battle of Plassey where Robert Clive defeated Nawab Siraj ud-Daulah using European military tactics and conspiratorial alliances [1.4].",
+            "Explanation: Explain how the 1765 Treaty of Allahabad and the grant of the Diwani allowed the Company to collect land revenues directly from 20 million Bengalis [1.5].",
+            "Link: Show how financial extraction and military supremacy transformed a commercial trading venture into a territorial sovereign power."
+          ],
+          "scaffolding": {
+            "structure_strip": [
+              "PEEL 1 (Corporate Charters & Private Military Force): Explain how Elizabeth I’s 1600 charter and subsequent royal backing allowed the EIC to recruit sepoy armies and fortify trading factories [1.1, 1.2].",
+              "PEEL 2 (Military Conquest at Plassey): Explain how Robert Clive exploited internal divisions within the Nawab’s court to achieve victory at Plassey in 1757 [1.4].",
+              "PEEL 3 (The 1765 Diwani & Revenue Collection): Explain how obtaining sovereign tax-collecting rights in Bengal provided endless capital to fund further territorial conquest [1.5].",
+              "Conclusion: Weigh whether military technology, political manipulation, or financial taxation was the most decisive factor."
+            ],
+            "sentence_starters": [
+              "A primary reason why the East India Company expanded its territorial control was...",
+              "Under its royal charter, the Company was uniquely empowered to...",
+              "Crucially, military events at the Battle of Plassey (1757) proved decisive because...",
+              "Furthermore, in 1765 Emperor Shah Alam II signed the Treaty of Allahabad, which granted...",
+              "Consequently, obtaining the Diwani meant that the Company could...",
+              "In conclusion, the decisive factor in establishing British dominance was... because..."
+            ],
+            "connective_bank": [
+              "A primary reason for this development was that...",
+              "In particular, a decisive factor was...",
+              "Furthermore, military events demonstrated that...",
+              "Crucially, an important turning point occurred when...",
+              "Consequently, this resulted in..."
+            ],
+            "word_bank": [
+              "East India Company",
+              "Robert Clive",
+              "Battle of Plassey (1757)",
+              "Diwani (1765)",
+              "Shah Alam II",
+              "Bengal",
+              "private army",
+              "corporate monopoly",
+              "tax extraction",
+              "Siraj ud-Daulah"
+            ]
+          },
+          "model_answer": "A primary reason why the East India Company was able to expand its territorial control across Bengal was the royal charters granted by the British Crown [1.1, 1.2]. From 1600 onwards, royal charters awarded the Company a commercial monopoly, judicial authority, and the unprecedented legal right to raise its own private armies and construct military fortresses. By recruiting and drilling indigenous Indian soldiers (sepoys) under European officers, the Company created an expansive private army that rivalled sovereign nations, allowing corporate merchants to enforce trade terms at gunpoint.\n\nCrucially, military victory at the Battle of Plassey in 1757 transformed the Company from coastal traders into political kingmakers [1.4]. Robert Clive conspired with disgruntled Mughal general Mir Jafar to overthrow the young Nawab Siraj ud-Daulah. Clive’s decisive victory gave the Company complete military dominance over the wealthy province of Bengal, installing puppet rulers who ceded massive financial indemnities to Company directors.\n\nFurthermore, the formal grant of the Diwani in 1765 permanently consolidated British territorial sovereignty [1.5]. Following the Battle of Buxar, Mughal Emperor Shah Alam II signed the Treaty of Allahabad, granting the Company the right to collect land revenues across Bengal, Bihar, and Orissa. This gave the EIC direct taxation power over 20 million people, generating millions in annual revenue that financed further imperial conquest across the subcontinent.\n\nIn conclusion, while royal charters provided the military apparatus, it was the acquisition of the Diwani that provided the vast taxation wealth required to sustain permanent territorial control.",
+          "topic": "Question 2: Explain Why [12 marks • 15 mins]"
+        }
       ]
     },
     {
@@ -1784,6 +1840,70 @@
           "viewing_task": "[01:00] Recall: What tactics did abolitionists like Thomas Clarkson and Olaudah Equiano deploy to persuade the British public?\n[01:50] Explain: Why did powerful mercantile interests in Bristol and Liverpool fiercely resist abolition for decades?\n[02:20] Challenge: How did first-hand evidence—such as the Brookes ship diagram and Equiano's autobiography—turn public opinion against the trade?",
           "model_answer": "Recall: They published empirical witness accounts, displayed physical instruments of torture (shackles, thumbscrews), produced the Brookes ship diagram, and organised nationwide consumer boycotts of slave-grown sugar.\nExplain: Wealthy merchant lobbies, West Indian plantation owners, and City of London financiers held immense parliamentary influence and argued that ending the trade would destroy Britain's naval supremacy and commercial wealth.\nChallenge: By presenting incontrovertible forensic evidence directly to middle-class citizens and working people, abolitionists transformed an abstract overseas economic system into an urgent, inescapable moral crisis that Parliament could no longer dismiss."
         }
+      ],
+      "tasks": [
+        {
+          "id": "fbe_l2_two_features_middle_passage",
+          "type": "two_features",
+          "tariff": "Question 1: Describe Two Features [4 marks • 5 mins]",
+          "title": "Question 1: Describe Two Features [4 marks • 5 mins]",
+          "question": "Describe two features of conditions endured by enslaved Africans during the Middle Passage. [4 marks]",
+          "feature_1": {
+            "prompt": "Feature 1: Identify one physical condition or confinement hazard on slave ships and provide supporting detail.",
+            "starter": "One key feature was... Specifically, on slave ships captives were...",
+            "model": "One key feature was extreme physical overcrowding and brutal confinement below deck [2.3]. Specifically, enslaved people were packed into shelves with less than 60 centimetres of headroom, chained together in pairs by iron leg irons for up to 23 hours a day."
+          },
+          "feature_2": {
+            "prompt": "Feature 2: Identify a second feature regarding disease, mortality, or food and water deprivation.",
+            "starter": "A second key feature was... This caused horrific suffering because...",
+            "model": "A second key feature was rampant disease and catastrophic mortality rates [2.4]. For example, foul air, contaminated food, and stagnant bilge water bred dysentery (\"the bloody flux\") and smallpox, causing approximately 15% of captives to die during the voyage."
+          },
+          "topic": "Question 1: Describe Two Features [4 marks • 5 mins]"
+        },
+        {
+          "id": "fbe_l2_consequence_zong_massacre",
+          "type": "extended_writing",
+          "tariff": "Question 2: Explain One Consequence [4 marks • 5 mins]",
+          "title": "Question 2: Explain One Consequence [4 marks • 5 mins]",
+          "question": "Explain one consequence of the Zong massacre (1781) for the British abolitionist movement. [4 marks]",
+          "hints": [
+            "Point: State how the Zong court case (Gregson v Gilbert) exposed the dehumanising legal fiction of treating human beings as insured cargo [2.5].",
+            "Evidence: Cite Granville Sharp and Olaudah Equiano bringing the murder of 133 enslaved Africans to national public attention.",
+            "Explanation: Explain how public shock at Captain Collingwood’s actions galvanized the founding of the Society for Effecting the Abolition of the Slave Trade in 1787."
+          ],
+          "scaffolding": {
+            "structure_strip": [
+              "Point: Identify the decisive consequence—the exposure of the slave trade’s legal brutality and the galvanisation of public abolitionist campaigning.",
+              "Evidence: Reference Captain Collingwood throwing 133 captive Africans overboard and the ship owners claiming insurance for lost \"cargo\" [2.5].",
+              "Explanation: Explain how activist Granville Sharp publicised the court proceedings, shocking middle-class British society and disproving claims that the trade was humane."
+            ],
+            "sentence_starters": [
+              "A significant consequence of the Zong massacre was...",
+              "Specifically, when Captain Collingwood ordered 133 enslaved Africans thrown overboard...",
+              "The resulting court case, Gregson v Gilbert, treated human lives merely as...",
+              "Abolitionist campaigners like Granville Sharp and Olaudah Equiano used this evidence to...",
+              "Consequently, this transformed public opinion and led directly to..."
+            ],
+            "connective_bank": [
+              "A significant consequence was that...",
+              "For instance, evidence demonstrated that...",
+              "Furthermore, this led directly to...",
+              "Consequently, public opinion..."
+            ],
+            "word_bank": [
+              "Zong massacre (1781)",
+              "Captain Collingwood",
+              "Granville Sharp",
+              "Olaudah Equiano",
+              "Gregson v Gilbert",
+              "human cargo",
+              "insurance fraud",
+              "abolitionist movement"
+            ]
+          },
+          "model_answer": "One significant consequence of the Zong massacre (1781) was that it exposed the moral obscenity of chattel slavery and galvanized the British abolitionist movement [2.5]. When Captain Luke Collingwood threw 133 living enslaved Africans into the Caribbean Sea to fraudulently claim insurance payouts, the subsequent court case (Gregson v Gilbert) shocked the nation by treating human murder purely as a commercial dispute over damaged property. Campaigner Granville Sharp brought the atrocities to national attention, providing early abolitionists like Thomas Clarkson and Olaudah Equiano with incontrovertible evidence that mobilized public opinion and led to the founding of the Society for Effecting the Abolition of the Slave Trade in 1787.",
+          "topic": "Question 2: Explain One Consequence [4 marks • 5 mins]"
+        }
       ]
     },
     {
@@ -2472,49 +2592,30 @@
       ],
       "tasks": [
         {
-          "id": "fbe_l3_q3_interpretations",
+          "id": "fbe_l3_contrasting_interpretations",
           "type": "historical_interpretations",
-          "qNum": 3,
-          "topic": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
+          "tariff": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
           "title": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
-          "text": "Explain how Interpretations 1 and 2 differ on the nature of enslaved African resistance, and suggest one reason why they differ on the reality of plantation control. [8 marks]",
-          "interp1": {
-            "title": "Interpretation 1",
-            "badge": "Colonial Planter Perspective (1774)",
-            "author": "Planter Edward Long, History of Jamaica (1774)",
-            "text": "“The plantation negroes are naturally indolent and require the perpetual surveillance and discipline of the driver’s whip to extract labour. Without European mastery, order would instantly dissolve into ruin.”"
+          "question": "Explain how Interpretations 1 and 2 differ on the nature of enslaved African resistance and suggest why they reach contrasting conclusions. [8 marks]",
+          "interpretation_1": {
+            "author": "Edward Long (Planter & Colonial Official)",
+            "work": "History of Jamaica (1774)",
+            "extract": "The plantation negroes are naturally indolent and require the perpetual surveillance and discipline of the driver’s whip to extract labour. Without European mastery, order would instantly dissolve into ruin."
           },
-          "interp2": {
-            "title": "Interpretation 2",
-            "badge": "Modern Caribbean Historiography (2004)",
-            "author": "Historian Hilary Beckles, Caribbean Freedom (2004)",
-            "text": "“Enslaved Africans waged an unrelenting war of resistance through daily sabotage, spiritual preservation, and armed guerrilla struggle. Queen Nanny proved that African military strategy could humble the British imperial army.”"
+          "interpretation_2": {
+            "author": "Hilary Beckles (Academic Historian)",
+            "work": "Caribbean Freedom (2004)",
+            "extract": "Enslaved Africans waged an unrelenting war of resistance through daily sabotage, spiritual preservation, and armed guerrilla struggle. Queen Nanny proved that African military strategy could humble the British imperial army."
           },
-          "matrix": [
-            {
-              "col": "1. QUESTION 3(B): CONTENT & DIFFERENCE [4 MARKS]",
-              "text": "Contrast the main arguments: Long depicts enslaved Africans as passive and dependent on European control, whereas Beckles emphasizes continuous, organized resistance and strategic military defiance."
-            },
-            {
-              "col": "2. QUESTION 3(C): DIFFERENT FOCUS & EMPHASIS [4 MARKS]",
-              "text": "Explain why they differ: Long focuses primarily on planter disciplinary mechanisms and justifying colonial control, whereas Beckles focuses on enslaved agency, daily resistance, and Maroon guerrilla victories."
-            },
-            {
-              "col": "3. HISTORICAL JUDGEMENT",
-              "text": "Evaluate which interpretation provides a more historically rigorous analysis of Caribbean plantation realities."
-            }
-          ],
-          "connectives": [
-            "Interpretations 1 and 2 differ regarding...",
-            "Interpretation 1 argues that...",
-            "In sharp contrast, Interpretation 2 suggests that...",
-            "This is a difference because...",
-            "One reason why Interpretations 1 and 2 differ is because they have a different focus...",
-            "Specifically, Interpretation 1 focuses primarily on...",
-            "In contrast, Interpretation 2 focuses more on...",
-            "As a result, the authors reach different conclusions because..."
-          ],
-          "model_answer": "<strong>Part B (Difference between Interpretations):</strong><br>Interpretations 1 and 2 differ fundamentally over the nature of enslaved African resistance and plantation control.<br><br>Interpretation 1 portrays enslaved people as passive, claiming that order and labour were solely maintained through European surveillance and discipline. In sharp contrast, Interpretation 2 argues that enslaved Africans engaged in an unrelenting, active struggle against slavery through cultural preservation, sabotage, and armed guerrilla warfare.<br><br><strong>Part C (Reason Why Interpretations Differ):</strong><br>A primary reason why Interpretations 1 and 2 differ is that the authors have a different focus. Interpretation 1 focuses primarily on the planters' mechanisms of colonial surveillance, viewing plantation life through the disciplinary framework of the slave-owners. In contrast, Interpretation 2 focuses primarily on African resistance, agency, and military strategy, highlighting Queen Nanny and the Maroons' victories against the British imperial army. Because the authors focus on entirely different aspects of the plantation system (planter control mechanisms versus enslaved resistance and rebellion), they reach opposing conclusions."
+          "sub_question_b": {
+            "prompt": "Explain how Interpretations 1 and 2 differ on the nature of enslaved African resistance. [4 marks]",
+            "model": "Interpretations 1 and 2 differ sharply over the autonomy and agency of enslaved Africans [3.2, 3.4]. Interpretation 1 depicts enslaved people as passive and dependent, claiming they required European surveillance and the whip to maintain order. In stark contrast, Interpretation 2 portrays enslaved Africans as active historical agents who conducted organized resistance and sophisticated military campaigns, highlighting Queen Nanny’s Maroon guerrilla tactics."
+          },
+          "sub_question_c": {
+            "prompt": "Suggest one reason why Interpretations 1 and 2 differ on the reality of plantation control. [4 marks]",
+            "model": "One reason why the interpretations differ is the divergent backgrounds and motives of the authors [3.1, 3.5]. Edward Long was an 18th-century Jamaican plantation owner whose wealth depended directly on the slave trade; he wrote to justify white supremacist control and defend slavery from British criticism. In contrast, Professor Hilary Beckles is a 21st-century Caribbean historian analysing archival records of Maroon warfare to recover the suppressed agency and military achievements of enslaved people."
+          },
+          "topic": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]"
         }
       ],
       "teacher_notes": {
@@ -3335,6 +3436,54 @@
           "viewing_task": "[14:20] Recall: What financial debt did the British government carry following the Seven Years' War (French and Indian War)?\n[22:45] Explain: How did the Boston Massacre of March 1770 become an explosive propaganda victory for Paul Revere and Samuel Adams?\n[33:15] Challenge: Why did British ministers in London view colonial resistance as dangerous lawlessness that threatened the entire British constitution?",
           "model_answer": "Recall: Britain's national debt had doubled to over £130 million, convincing Parliament that American colonists should help pay for their own military defence.\nExplain: Revere's sensationalised engraving depicted British soldiers firing an unprovoked volley into a peaceful crowd of unarmed citizens, turning a chaotic street clash into an enduring symbol of imperial tyranny.\nChallenge: London believed in absolute parliamentary sovereignty: if the American colonies were exempt from parliamentary taxation, the authority of the British Crown and the rule of law across the entire empire would collapse."
         }
+      ],
+      "tasks": [
+        {
+          "id": "fbe_l4_narrative_account_tea_party",
+          "type": "narrative_account",
+          "tariff": "Question 2: Narrative Account [8 marks • 10 mins]",
+          "title": "Question 2: Narrative Account [8 marks • 10 mins]",
+          "question": "Write a narrative account analysing the key events leading from the Stamp Act (1765) to the Boston Tea Party (1773). [8 marks]",
+          "hints": [
+            "Beginning (1765): Explain how the Stamp Act introduced direct imperial taxation without colonial consent, sparking the rallying cry \"No taxation without representation\" [4.1].",
+            "Middle (1767–1770): Explain how the Townshend Acts and the arrival of British redcoats led directly to street clashes and the Boston Massacre of 1770 [4.2].",
+            "End (1773): Explain how Parliament’s 1773 Tea Act granted a monopoly to the East India Company, culminating in the Sons of Liberty dumping 342 chests into Boston Harbour [4.4]."
+          ],
+          "scaffolding": {
+            "structure_strip": [
+              "Paragraph 1 (The Initial Breach - 1765 Stamp Act): How British wartime debts prompted taxation and sparked inter-colonial boycotts [4.1].",
+              "Paragraph 2 (Rising Violence - 1767–1770): Townshend duties, military occupation of Boston, and the 1770 Boston Massacre [4.2, 4.3].",
+              "Paragraph 3 (The Flashpoint - 1773 Boston Tea Party): Sons of Liberty, Dartmouth tea ships, and 342 chests dumped overboard [4.4]."
+            ],
+            "sentence_starters": [
+              "The conflict began in 1765 when the British Parliament passed the Stamp Act to...",
+              "Colonial merchants and assemblies fiercely resisted because...",
+              "Following this, tensions escalated sharply when British troops occupied Boston, culminating in...",
+              "Although most duties were repealed, Parliament retained the tea duty and passed the 1773 Tea Act to...",
+              "Consequently, on the night of 16 December 1773, the Sons of Liberty took decisive action by..."
+            ],
+            "connective_bank": [
+              "Initially, the crisis began when...",
+              "This caused widespread outrage because...",
+              "Following this development...",
+              "Tensions deepened further when...",
+              "Ultimately, this culminated in..."
+            ],
+            "word_bank": [
+              "Stamp Act (1765)",
+              "Sons of Liberty",
+              "Samuel Adams",
+              "Townshend Duties",
+              "Boston Massacre (1770)",
+              "Tea Act (1773)",
+              "Boston Harbour",
+              "342 tea chests",
+              "No taxation without representation"
+            ]
+          },
+          "model_answer": "The crisis began in 1765 when the British Parliament passed the Stamp Act to recover massive debts incurred during the Seven Years’ War [4.1]. Because the American colonists had no elected members of Parliament, this direct tax provoked fury, leading to the rallying cry \"No taxation without representation\" and coordinated colonial boycotts that forced Parliament to repeal the act.\n\nFollowing this initial clash, relations deteriorated further when Chancellor Charles Townshend imposed new import duties on glass, lead, paper, and tea in 1767 [4.2]. To enforce customs collection, the Crown stationed British redcoats in Boston, creating constant friction with local workers. In March 1770, this simmering hostility erupted into the Boston Massacre, where nervous soldiers fired into an angry crowd, killing five colonists and fueling revolutionary propaganda.\n\nUltimately, the conflict reached an irreversible boiling point with the passage of the 1773 Tea Act [4.4]. Designed to bail out the struggling East India Company by granting it a monopoly on tea sales, the act threatened local colonial merchants. On 16 December 1773, the Sons of Liberty disguised themselves as Mohawk warriors, boarded three East India Company ships in Boston Harbour, and dumped 342 chests of tea into the water, triggering severe British retaliation that made war inevitable.",
+          "topic": "Question 2: Narrative Account [8 marks • 10 mins]"
+        }
       ]
     },
     {
@@ -4086,6 +4235,61 @@
           "teacher_guidance": "Recommended Watch Window: 20:00–45:00 | Lesson Phase: Flipped Learning / Extension | Tone Alert: Explores the outbreak of war at Lexington and Concord and the ideological birth of the American republic.",
           "viewing_task": "[22:00] Recall: What happened on Lexington Green on 19 April 1775 ('the shot heard 'round the world')?\n[31:00] Explain: How did Thomas Paine's radical pamphlet 'Common Sense' transform a dispute over taxes into a crusade for total independence?\n[40:15] Challenge: How did French military and naval intervention under General Rochambeau seal British defeat at the Siege of Yorktown in 1781?",
           "model_answer": "Recall: British regulars clashed with colonial minutemen, sparking a running battle along the road to Boston that began the Revolutionary War.\nExplain: Paine wrote in simple, fiery prose for common working people, arguing that it was absurd for a tiny island across the ocean to govern an entire continent, and that hereditary monarchy was inherently corrupt.\nChallenge: Without the French navy blockading the Chesapeake Bay to cut off British naval resupply, General Cornwallis would have been evacuated by sea; the Franco-American alliance transformed a colonial rebellion into an unwinnable global war for Britain."
+        }
+      ],
+      "tasks": [
+        {
+          "id": "fbe_l5_evaluative_essay_independence",
+          "type": "extended_writing",
+          "tariff": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]",
+          "title": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]",
+          "question": "‘British defeat in the American Revolutionary War was caused primarily by French naval intervention rather than American military strength.’ How far do you agree? [12 marks]",
+          "stimulus": [
+            "George Washington and the Continental Army’s strategy of survival",
+            "French naval intervention and the Battle of the Chesapeake (1781)"
+          ],
+          "hints": [
+            "Point: Assess how French naval intervention cut off British army resupply at Yorktown in 1781 [5.4].",
+            "Evidence: Cite Admiral de Grasse blockading Chesapeake Bay and Rochambeau’s ground troops trapping General Cornwallis.",
+            "Explanation: Contrast this with Washington’s defensive strategy and the victory at Saratoga (1777) that convinced France to enter the war [5.2, 5.3].",
+            "Link: Reach a balanced conclusion evaluating whether French naval power or American persistence was the decisive factor."
+          ],
+          "scaffolding": {
+            "structure_strip": [
+              "PEEL 1 (French Naval Intervention): Explain how Admiral de Grasse’s fleet trapped Cornwallis at Yorktown in 1781, preventing Royal Navy evacuation [5.4].",
+              "PEEL 2 (American Military Resilience): Explain how Washington kept the Continental Army intact, won at Saratoga, and utilized local militia knowledge [5.2, 5.3].",
+              "PEEL 3 (British Strategic Failures): Explain how vast transatlantic supply lines and hostile local populations made British reconquest impossible [5.1].",
+              "Conclusion: Provide an evaluative judgment weighing which factor was truly decisive."
+            ],
+            "sentence_starters": [
+              "To a large extent, it can be argued that French naval intervention was the decisive factor because...",
+              "At the Siege of Yorktown in 1781, Admiral de Grasse’s fleet succeeded in...",
+              "On the other hand, American military persistence under George Washington was essential because...",
+              "Furthermore, the American victory at Saratoga (1777) was critical as it...",
+              "Additionally, Britain suffered from insurmountable logistical weaknesses, including...",
+              "In conclusion, while American resilience sustained the war, French naval intervention was decisive because..."
+            ],
+            "connective_bank": [
+              "A compelling argument supporting this statement is that...",
+              "In particular, naval factors were significant because...",
+              "On the other hand, an alternative perspective is that...",
+              "Crucially, ground campaigns demonstrated that...",
+              "In conclusion, the decisive reason was... because..."
+            ],
+            "word_bank": [
+              "George Washington",
+              "Continental Army",
+              "Saratoga (1777)",
+              "French Alliance",
+              "King Louis XVI",
+              "Admiral de Grasse",
+              "General Cornwallis",
+              "Siege of Yorktown (1781)",
+              "Treaty of Paris (1783)"
+            ]
+          },
+          "model_answer": "To a large extent, it can be argued that French naval intervention was the decisive cause of British defeat in the American Revolutionary War [5.4]. Until France entered the war following the American victory at Saratoga in 1777, the Royal Navy held unchallenged command of the Atlantic, allowing Britain to move troops and supplies freely along the eastern seaboard. However, the arrival of the French fleet transformed a colonial rebellion into a global war. In September 1781, French Admiral de Grasse defeated the British fleet at the Battle of the Chesapeake, establishing a total naval blockade that trapped General Cornwallis’s army at Yorktown and made surrender unavoidable.\n\nOn the other hand, American military persistence and tactical strategy were indispensable in exhausting British resources [5.2, 5.3]. General George Washington recognized that the Continental Army did not need to win every battle; it only needed to survive. By adopting a war of attrition, evading major encirclements, and enduring brutal winters at Valley Forge, Washington denied the British a knockout blow. Furthermore, victory at Saratoga was achieved entirely by American forces under General Gates, demonstrating that colonial troops could defeat regular British redcoats in open battle.\n\nAdditionally, British strategic errors and immense logistical distances severely hindered imperial operations [5.1]. Supplying an army of 50,000 soldiers across 3,000 miles of stormy ocean took up to three months, and British commanders failed to mobilize loyalist support or secure the vast, hostile rural interior.\n\nIn conclusion, while Washington’s resilience kept the rebellion alive, it was French naval intervention at the Chesapeake that delivered the decisive strategic stroke by removing Britain’s naval lifeline at Yorktown.",
+          "topic": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]"
         }
       ]
     }

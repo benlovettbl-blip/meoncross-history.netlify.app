@@ -923,7 +923,63 @@
             }
           }
         ]
-      }
+      },
+      "tasks": [
+        {
+          "id": "aus_l1_explain_why_terra_nullius",
+          "type": "extended_writing",
+          "tariff": "Question 2: Explain Why [12 marks • 15 mins]",
+          "title": "Question 2: Explain Why [12 marks • 15 mins]",
+          "question": "Explain why the British Empire claimed eastern Australia and declared it terra nullius between 1768 and 1788. [12 marks]",
+          "stimulus": [
+            "Captain James Cook’s secret Admiralty instructions and Tupaia’s navigation",
+            "The loss of the American colonies and the crisis of overflowing prison hulks"
+          ],
+          "hints": [
+            "Point: Explain how the American Revolutionary War cut off Britain’s penal colonies, creating a severe prison crisis [1.1, 1.2].",
+            "Evidence: Cite overcrowding on Thames prison hulks and Joseph Banks recommending Botany Bay as a penal settlement [1.3].",
+            "Explanation: Explain why Cook used the legal fiction of \"terra nullius\" (land belonging to no one) to claim the continent without negotiating a treaty [1.4, 1.5].",
+            "Link: Show how imperial naval rivalry against France made securing an ocean base in the Pacific urgent."
+          ],
+          "scaffolding": {
+            "structure_strip": [
+              "PEEL 1 (The Domestic Penal Crisis): The American Revolution ending transportation to Virginia and prison hulks overflowing [1.1, 1.2].",
+              "PEEL 2 (Strategic Pacific Naval Ambition): Cook’s secret orders, Joseph Banks, and forestalling French exploration [1.3, 1.4].",
+              "PEEL 3 (The Legal Fiction of Terra Nullius): Ignoring First Nations cultivation and claiming land without treaty [1.5].",
+              "Conclusion: Weigh whether penal overcrowding or legal imperial justification was most decisive."
+            ],
+            "sentence_starters": [
+              "A primary catalyst for the British colonisation of Australia was the acute penal crisis caused by...",
+              "Following Britain’s defeat in the American Revolutionary War, convicts could no longer be transported to...",
+              "Consequently, prison hulks on the River Thames became dangerously overcrowded, leading the government to...",
+              "Furthermore, Captain Cook was guided by secret Admiralty instructions to claim southern lands to pre-empt...",
+              "Crucially, the British Crown justified annexing eastern Australia without a treaty by proclaiming the legal fiction of...",
+              "In conclusion, Britain claimed Australia because penal urgency provided the immediate need, while terra nullius provided the legal pretext."
+            ],
+            "connective_bank": [
+              "A primary reason for this was that...",
+              "In particular, the domestic crisis meant that...",
+              "Furthermore, strategic naval factors demonstrated that...",
+              "Crucially, an important legal justification occurred when...",
+              "Consequently, this resulted in..."
+            ],
+            "word_bank": [
+              "Captain James Cook",
+              "Admiralty secret orders",
+              "Tupaia",
+              "Endeavour",
+              "Botany Bay",
+              "Gweagal clan",
+              "Possession Island",
+              "King George III",
+              "terra nullius",
+              "dispossession"
+            ]
+          },
+          "model_answer": "A primary catalyst for the British decision to claim and settle eastern Australia was the acute domestic penal crisis following the American Revolutionary War [1.1, 1.2]. For over a century, Britain had transported roughly a thousand convicts annually to Maryland and Virginia. Defeat in 1783 abruptly severed this route, causing British gaols and decommissioned prison hulks on the River Thames to overflow with prisoners in squalid, disease-ridden conditions. Desperate for a distant overseas penal colony, Prime Minister William Pitt’s government seized upon botanist Joseph Banks’s enthusiastic recommendation of Botany Bay.\n\nFurthermore, strategic Pacific ambitions and imperial rivalry with France made claiming the continent urgent [1.3, 1.4]. In 1768, Captain James Cook sailed on the HMS Endeavour with secret Admiralty instructions to explore the southern oceans and claim unmapped territories for the Crown before rival European powers could do so. Guided by Polynesian high priest Tupaia’s celestial navigation, Cook mapped the eastern coastline in 1770, identifying Australia as a crucial naval bastion for Pacific trade and timber resources.\n\nCrucially, Britain claimed ownership of the entire continent by imposing the legal fiction of terra nullius (\"land belonging to no one\") [1.5]. Although Cook observed First Nations peoples along the coast, British legal doctrine recognized land ownership only through European-style agriculture and permanent architecture. Ignoring over 65,000 years of continuous Indigenous sovereignty, Cook raised the Union Jack at Possession Island in August 1770, claiming eastern Australia without offering gifts, negotiating treaties, or seeking consent.\n\nIn conclusion, while the overflowing prison hulks created the urgent necessity for a penal colony, it was the convenient doctrine of terra nullius that provided the legal justification for British annexation.",
+          "topic": "Question 2: Explain Why [12 marks • 15 mins]"
+        }
+      ]
     },
     {
       "id": "lesson_2",
@@ -1609,7 +1665,72 @@
             }
           }
         ]
-      }
+      },
+      "tasks": [
+        {
+          "id": "aus_l2_two_features_prison_hulks",
+          "type": "two_features",
+          "tariff": "Question 1: Describe Two Features [4 marks • 5 mins]",
+          "title": "Question 1: Describe Two Features [4 marks • 5 mins]",
+          "question": "Describe two features of life on board the Thames prison hulks in the 1780s. [4 marks]",
+          "feature_1": {
+            "prompt": "Feature 1: Identify one physical condition or sanitation hazard on the prison hulks.",
+            "starter": "One key feature was... For instance, prisoners endured...",
+            "model": "One key feature was severe overcrowding and squalid, disease-ridden conditions below deck [2.1]. For instance, decommissioned warship hulks on the Thames held hundreds of convicts packed together in darkness, where typhus (\"gaol fever\") and dysentery killed nearly 30% of inmates."
+          },
+          "feature_2": {
+            "prompt": "Feature 2: Identify a second feature regarding hard labour, rations, or discipline.",
+            "starter": "A second key feature was... Specifically, convicts were forced to...",
+            "model": "A second key feature was grueling physical hard labour in leg irons [2.2]. Specifically, convicts were rowed ashore every day in heavy chains to dredge gravel from the Thames or construct military dockyards under threat of the cat-o'-nine-tails lash."
+          },
+          "topic": "Question 1: Describe Two Features [4 marks • 5 mins]"
+        },
+        {
+          "id": "aus_l2_source_utility_sydney_cove",
+          "type": "extended_writing",
+          "tariff": "Question 2: Source Utility [8 marks • 10 mins]",
+          "title": "Question 2: Source Utility [8 marks • 10 mins]",
+          "question": "How useful are Sources A and B for an enquiry into the challenges faced by convicts and colonial authorities during the founding of Sydney Cove (1788–1792)? [8 marks]",
+          "hints": [
+            "Content: Evaluate what the sources reveal about starvation, poor soil, lack of farming tools, and conflict [2.3, 2.4].",
+            "Provenance: Consider the perspective of Governor Arthur Phillip and convict journal writers like Watkin Tench.",
+            "Judgment: Explain why both sources are useful despite selective viewpoints in official reports."
+          ],
+          "scaffolding": {
+            "structure_strip": [
+              "Source A Evaluation: Analyze content, inferences, and utility regarding crop failures and food rationing [2.3].",
+              "Source B Evaluation: Analyze content, inferences, and utility regarding convict discipline and resistance [2.4].",
+              "Conclusion: Provide an evaluative judgment weighing the combined utility of both sources."
+            ],
+            "sentence_starters": [
+              "Source A is highly useful for investigating the challenges of founding Sydney Cove because it shows...",
+              "From Source A, it can be inferred that colonial authorities faced severe crises regarding...",
+              "The utility of Source A is strengthened by its provenance as...",
+              "In contrast, Source B provides valuable evidence regarding...",
+              "Taken together, both sources are extremely useful because..."
+            ],
+            "connective_bank": [
+              "Source A is useful for investigating... because...",
+              "For instance, evidence indicates that...",
+              "However, its utility is limited by...",
+              "In contrast, Source B provides valuable evidence of...",
+              "Taken together, both sources..."
+            ],
+            "word_bank": [
+              "First Fleet (1788)",
+              "Governor Arthur Phillip",
+              "Sydney Cove",
+              "Watkin Tench",
+              "starvation rations",
+              "Sirius shipwreck",
+              "Port Jackson",
+              "convict labour"
+            ]
+          },
+          "model_answer": "Source A is exceptionally useful for investigating the existential survival challenges at Sydney Cove because it directly documents the catastrophic food shortages and crop failures of the early colony [2.3]. It details how thin sandstone soil, broken farming tools, and livestock losses reduced Governor Arthur Phillip’s settlement to near-starvation rations. Its utility is reinforced by its provenance: written by an eyewitness naval officer, it provides an authentic, unvarnished record of how close the colony came to complete collapse before supply ships arrived.\n\nSimilarly, Source B is valuable because it highlights the severe challenges colonial authorities faced in controlling an unwilling convict workforce [2.4]. It illustrates that convicts lacked agricultural skills, suffered from scurvy, and routinely attempted to escape into the bush. However, its utility has slight limitations because official colonial dispatches often exaggerated convict indolence to explain away administrative failures.\n\nTaken together, both sources are highly useful because they corroborate each other, proving that the survival of the First Fleet rested on extreme rationing, harsh discipline, and desperate dependence on overseas relief.",
+          "topic": "Question 2: Source Utility [8 marks • 10 mins]"
+        }
+      ]
     },
     {
       "id": "lesson_3",
@@ -2280,7 +2401,55 @@
             }
           }
         ]
-      }
+      },
+      "tasks": [
+        {
+          "id": "aus_l3_narrative_account_resistance",
+          "type": "narrative_account",
+          "tariff": "Question 2: Narrative Account [8 marks • 10 mins]",
+          "title": "Question 2: Narrative Account [8 marks • 10 mins]",
+          "question": "Write a narrative account analysing the key events of Indigenous resistance and frontier conflict in New South Wales between 1788 and 1802. [8 marks]",
+          "hints": [
+            "Beginning (1788–1790): Initial contact, the catastrophic smallpox epidemic wiping out over 50% of the coastal population, and Bennelong’s mediation [3.1, 3.2].",
+            "Middle (1792–1797): Pemulwuy’s guerrilla resistance in the Hawkesbury and Parramatta basins, including burning settler crops and the Battle of Parramatta [3.3].",
+            "End (1797–1802): Escalating colonial military expeditions, Pemulwuy’s death in 1802, and his symbolic status as a national resistance hero [3.4]."
+          ],
+          "scaffolding": {
+            "structure_strip": [
+              "Paragraph 1 (Initial Contact & Smallpox Outbreak - 1788–1790): Dispossession of coastal fishing grounds and the devastating 1789 smallpox epidemic [3.1, 3.2].",
+              "Paragraph 2 (Pemulwuy’s Armed Guerrilla Campaign - 1792–1797): Bidjigal warrior Pemulwuy leading coordinated raids and the 1797 Battle of Parramatta [3.3].",
+              "Paragraph 3 (Retaliation & Aftermath - 1797–1802): Governor King placing a bounty on Pemulwuy, his death in 1802, and the expansion of the frontier [3.4]."
+            ],
+            "sentence_starters": [
+              "The frontier conflict began shortly after 1788 when British settlement dispossessed First Nations peoples of...",
+              "In 1789, the Indigenous population suffered a catastrophic blow when a mysterious smallpox epidemic...",
+              "Following this, Bidjigal warrior leader Pemulwuy launched a dedicated guerrilla resistance by...",
+              "The conflict escalated dramatically in 1797 at the Battle of Parramatta, where...",
+              "Ultimately, the resistance suffered a severe setback in 1802 when Pemulwuy was killed, resulting in..."
+            ],
+            "connective_bank": [
+              "The conflict began when...",
+              "This caused immediate catastrophe because...",
+              "In response, resistance leaders launched...",
+              "Crucially, this culminated in...",
+              "Ultimately, the outcome was..."
+            ],
+            "word_bank": [
+              "Pemulwuy",
+              "Bidjigal clan",
+              "smallpox epidemic (1789)",
+              "Bennelong",
+              "Governor Arthur Phillip",
+              "Battle of Parramatta (1797)",
+              "guerrilla warfare",
+              "Hawkesbury River",
+              "Frontier Wars"
+            ]
+          },
+          "model_answer": "Frontier conflict began in 1788 as British settlers rapidly fenced off water holes, cleared sacred woodlands, and drove First Nations clans away from their ancestral coastal fishing grounds [3.1]. In 1789, Indigenous resistance suffered a devastating blow when an outbreak of smallpox decimated between 50% and 70% of the Sydney basin’s population, destroying elders, kinship networks, and social structures.\n\nDespite this catastrophe, Bidjigal warrior leader Pemulwuy launched an organized guerrilla campaign to repel British expansion across the Hawkesbury and Toongabbie farming settlements [3.3]. Pemulwuy coordinated lightning raids, burned wheat fields, and speared livestock, disrupting the colony’s food supply. In 1797, he led an armed assault on government buildings during the Battle of Parramatta, surviving multiple gunshot wounds that cemented his legendary status as an invincible fighter.\n\nUltimately, colonial authorities escalated military retaliation, with Governor Philip Gidley King outlawing Indigenous people from gathering and issuing a dead-or-alive bounty on Pemulwuy [3.4]. In June 1802, Pemulwuy was shot and killed by an English sailor, and his severed head was sent to botanist Joseph Banks in London. However, Pemulwuy’s twelve-year war demonstrated sophisticated military adaptation and inspired continuing resistance across the Australian frontier.",
+          "topic": "Question 2: Narrative Account [8 marks • 10 mins]"
+        }
+      ]
     },
     {
       "id": "lesson_4",
@@ -2961,7 +3130,35 @@
             }
           }
         ]
-      }
+      },
+      "tasks": [
+        {
+          "id": "aus_l4_contrasting_interpretations",
+          "type": "historical_interpretations",
+          "tariff": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
+          "title": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
+          "question": "Explain how Interpretations 1 and 2 differ on the nature of the Australian Frontier Wars and suggest why they reach contrasting conclusions. [8 marks]",
+          "interpretation_1": {
+            "author": "Keith Windschuttle (Revisionist Historian)",
+            "work": "The Fabrication of Aboriginal History (2002)",
+            "extract": "Frontier conflict in Australia was minimal and consisted mostly of isolated criminal murders and livestock theft rather than warfare. British authorities consistently sought to uphold the rule of law and protect Indigenous people from rogue bushrangers."
+          },
+          "interpretation_2": {
+            "author": "Henry Reynolds (Academic Historian)",
+            "work": "The Other Side of the Frontier (1981)",
+            "extract": "A protracted, bloody war of conquest was fought across the entire continent. At least 20,000 Indigenous Australians died defending their ancestral lands against military forces, mounted police, and squatter vigilantes in a true war of national resistance."
+          },
+          "sub_question_b": {
+            "prompt": "Explain how Interpretations 1 and 2 differ on the nature and scale of frontier conflict in Australia. [4 marks]",
+            "model": "Interpretations 1 and 2 differ fundamentally over the scale, intent, and organisation of frontier violence [4.2, 4.4]. Interpretation 1 downplays the conflict, characterizing it as minor criminal skirmishes and livestock theft while claiming British authorities upheld the rule of law. In sharp contrast, Interpretation 2 argues that a full-scale, coordinated war of territorial conquest took place across the continent, resulting in tens of thousands of Indigenous deaths in defense of their homelands."
+          },
+          "sub_question_c": {
+            "prompt": "Suggest one reason why Interpretations 1 and 2 differ on the reality of the Frontier Wars. [4 marks]",
+            "model": "One reason why the authors reach different conclusions is their divergent historiographical approaches to historical evidence [4.1, 4.5]. Keith Windschuttle relies strictly on colonial courtroom records, official police archives, and written British government dispatches, which frequently omitted unlawful massacres. Henry Reynolds, on the other hand, pioneered the use of Indigenous oral histories, settler diaries, and missionary letters to uncover unrecorded pastoral violence, producing a comprehensive history of the Frontier Wars."
+          },
+          "topic": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]"
+        }
+      ]
     },
     {
       "id": "lesson_5",
@@ -3602,7 +3799,64 @@
             }
           }
         ]
-      }
+      },
+      "tasks": [
+        {
+          "id": "aus_l5_evaluative_essay_eureka",
+          "type": "extended_writing",
+          "tariff": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]",
+          "title": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]",
+          "question": "‘The discovery of gold and the Eureka Stockade were the most important turning points in 19th-century Australian history.’ How far do you agree? Explain your answer. [12 marks]",
+          "stimulus": [
+            "The Ballarat gold rush, democratic manhood suffrage, and the Southern Cross flag",
+            "Pastoral wool expansion, the Frontier Wars, and First Nations dispossession"
+          ],
+          "hints": [
+            "Point: Explain how the 1851 gold rushes and the 1854 Eureka Stockade catalyzed democratic reform and population explosion [5.1, 5.2].",
+            "Evidence: Cite the 30-shilling monthly licence fee, Peter Lalor leading 500 miners, and the subsequent abolition of licences in favor of manhood suffrage [5.2, 5.3].",
+            "Explanation: Contrast this with the pastoral wool boom and systematic frontier dispossession that defined 19th-century colonial expansion [5.4].",
+            "Link: Conclude by assessing whether democratic political rights or structural land theft was the defining turning point."
+          ],
+          "scaffolding": {
+            "structure_strip": [
+              "PEEL 1 (Gold Rush & Democratic Revolution): Eureka Stockade (1854), the Southern Cross flag, secret ballot, and ending autocratic colonial rule [5.1, 5.2].",
+              "PEEL 2 (Economic & Demographic Transformation): Massive immigration trebling Australia’s population and creating Melbourne as a global financial metropolis [5.3].",
+              "PEEL 3 (The Darker Turning Point - Dispossession): Pastoral squatters claiming millions of acres and accelerating the Frontier Wars [5.4].",
+              "Conclusion: Reach a balanced judgment weighing political democracy against permanent First Nations dispossession."
+            ],
+            "sentence_starters": [
+              "A compelling argument supporting the view that gold and Eureka were the most important turning points is...",
+              "In December 1854, the rebellion at the Eureka Stockade in Ballarat was triggered by...",
+              "Consequently, the sacrifice of the diggers forced the British Crown to concede...",
+              "Furthermore, the gold rush transformed Australia demographically by...",
+              "On the other hand, an alternative perspective is that the pastoral wool boom and frontier dispossession were more significant because...",
+              "In conclusion, while the gold rush birthed Australian democracy, its significance must be balanced against..."
+            ],
+            "connective_bank": [
+              "A compelling argument supporting this statement is that...",
+              "In particular, demographic and democratic changes were decisive because...",
+              "On the other hand, an alternative perspective is that...",
+              "Crucially, frontier and economic evidence demonstrates that...",
+              "In conclusion, the more significant development was... because..."
+            ],
+            "word_bank": [
+              "Edward Hargraves",
+              "Ballarat",
+              "30-shilling licence",
+              "Southern Cross flag",
+              "Peter Lalor",
+              "manhood suffrage",
+              "squatter pastoralists",
+              "Merino wool",
+              "Myall Creek",
+              "terra nullius",
+              "First Nations survival"
+            ]
+          },
+          "model_answer": "To a large extent, it can be argued that the discovery of gold in 1851 and the Eureka Stockade in 1854 were the most transformative turning points in 19th-century Australian history [5.1, 5.2]. Prior to gold, Australia was an authoritarian, convict-dominated pastoral society ruled by wealthy British governors and squatter elites. When over 300,000 international diggers flooded the Victorian goldfields, they fiercely resented paying an exorbitant 30-shilling monthly licence fee without political representation. On 3 December 1854, diggers led by Peter Lalor swore an oath under the Southern Cross flag at the Eureka Stockade and clashed with British soldiers. Although the rebellion was brutally crushed, the political fallout was revolutionary: public outrage forced the colonial government to abolish the licence, introduce the Miner’s Right, grant universal male suffrage, and institute the world-first secret ballot (the \"Australian Ballot\"), laying the foundation for modern Australian democracy.\n\nDemographically and economically, the gold rush reshaped the nation’s global standing [5.3]. Australia’s non-Indigenous population trebled from 430,000 in 1851 to 1.1 million in 1860. Massive wealth poured into Melbourne, transforming it into \"Marvellous Melbourne\"—one of the richest cities in the world with grand Victorian architecture, universities, and railway infrastructure.\n\nOn the other hand, historians argue that the expansion of the pastoral wool industry and the Frontier Wars were far more consequential in shaping Australia’s territorial reality [5.4]. Millions of sheep introduced by squatter pastoralists consumed native grasslands, driving First Nations peoples off millions of acres of ancestral land. Massacres like Myall Creek (1838) and the Tasmanian Black War permanently cemented Indigenous dispossession under terra nullius—a reality that the gold rushes intensified rather than resolved.\n\nIn conclusion, while the pastoral boom established the economy, the discovery of gold and Eureka were the definitive turning points because they dismantled autocratic rule and created Australia’s democratic, multi-ethnic society.",
+          "topic": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]"
+        }
+      ]
     }
   ]
 }

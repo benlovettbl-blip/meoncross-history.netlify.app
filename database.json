@@ -118671,13 +118671,13 @@
                   "id": "usa_lesson_1_4_e",
                   "letter": "E",
                   "type": "cartographic_map",
-                  "title": "Source E: Map Documenting African American Voter Registration Percentages by County Across the Deep South (1958)",
+                  "title": "Source E: Thematic Cartographic Map of the Southern Civil Rights Movement (1954–1968), Highlighting the Black Belt Region and Campaign Flashpoints",
                   "date": "1958",
                   "image": "/images/usa_civil_rights_deep_south_map.jpg",
                   "image_url": "/images/usa_civil_rights_deep_south_map.jpg",
                   "attribution": "Southern Regional Council Research Series, Atlanta, Georgia",
                   "question_badge": "Cross-Referencing",
-                  "question": "How does the cartographic evidence in Source E corroborate the claims of institutional disenfranchisement made in Source B and Source C?",
+                  "question": "What does Source E reveal about the geographical concentration of civil rights struggles and white resistance across the American South between 1954 and 1968?",
                   "model_answer": "Source E provides conclusive quantitative corroboration by showing that in heavily Black counties across Mississippi, Alabama, and Louisiana, Black voter registration remained below 5%—and in several counties was literally zero. This proves that white resistance through legal trickery, economic reprisal, and violence completely neutralized constitutional voting rights.",
                   "provenance_clues": {
                     "author": "Demographic researchers of the Southern Regional Council",
@@ -119292,13 +119292,13 @@
               "id": "usa_lesson_1_4_e",
               "letter": "E",
               "type": "cartographic_map",
-              "title": "Source E: Map Documenting African American Voter Registration Percentages by County Across the Deep South (1958)",
+              "title": "Source E: Thematic Cartographic Map of the Southern Civil Rights Movement (1954–1968), Highlighting the Black Belt Region and Campaign Flashpoints",
               "date": "1958",
               "image": "/images/usa_civil_rights_deep_south_map.jpg",
               "image_url": "/images/usa_civil_rights_deep_south_map.jpg",
               "attribution": "Southern Regional Council Research Series, Atlanta, Georgia",
               "question_badge": "Cross-Referencing",
-              "question": "How does the cartographic evidence in Source E corroborate the claims of institutional disenfranchisement made in Source B and Source C?",
+              "question": "What does Source E reveal about the geographical concentration of civil rights struggles and white resistance across the American South between 1954 and 1968?",
               "model_answer": "Source E provides conclusive quantitative corroboration by showing that in heavily Black counties across Mississippi, Alabama, and Louisiana, Black voter registration remained below 5%—and in several counties was literally zero. This proves that white resistance through legal trickery, economic reprisal, and violence completely neutralized constitutional voting rights.",
               "provenance_clues": {
                 "author": "Demographic researchers of the Southern Regional Council",
@@ -122485,11 +122485,11 @@
                   "type": "eyewitness_testimony",
                   "title": "Source A: Statement of Watts Resident Tommy Jacquette on the Causes of the Los Angeles Uprising (August 1965)",
                   "date": "August 1965",
-                  "image": "/units/usa/assets/sources/portraits/mlk.jpg",
-                  "image_url": "/units/usa/assets/sources/portraits/mlk.jpg",
+                  "image": "/units/usa/assets/sources/watts_riots_avalon_blvd_1965.jpg",
+                  "image_url": "/units/usa/assets/sources/watts_riots_avalon_blvd_1965.jpg",
                   "attribution": "McCone Commission Testimony, Los Angeles Public Library Special Collections",
                   "question_badge": "Reliability & Provenance",
-                  "question": "How does Tommy Jacquette's perspective as a local community resident affect the historical value of Source C?",
+                  "question": "How does Tommy Jacquette's perspective as a local community resident affect the historical value of Source A?",
                   "model_answer": "Jacquette’s testimony provides invaluable authentic insight into the pent-up rage of urban Black youth who viewed the police as an occupying army. He rejected the label of 'riot,' describing it instead as a 'rebellion' against decades of police brutality, joblessness, and white arrogance that civil rights laws in the South had done nothing to solve.",
                   "provenance_clues": {
                     "author": "Tommy Jacquette, twenty-one-year-old Watts community organizer",
@@ -122502,8 +122502,8 @@
                   },
                   "hinge_question": "Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?",
                   "source_context": "McCone Commission Testimony, Los Angeles Public Library Special Collections. Tommy Jacquette, twenty-one-year-old Watts community organizer for The Governor's Commission on the Los Angeles Riots (McCone Commission) with the objective: To articulate the authentic collective grievances and political meaning behind the spontaneous urban violence.. **Hinge Question:** Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?",
-                  "src": "/units/usa/assets/sources/portraits/mlk.jpg",
-                  "source": "/units/usa/assets/sources/portraits/mlk.jpg"
+                  "src": "/units/usa/assets/sources/watts_riots_avalon_blvd_1965.jpg",
+                  "source": "/units/usa/assets/sources/watts_riots_avalon_blvd_1965.jpg"
                 }
               ],
               "isReversed": false
@@ -123164,11 +123164,11 @@
               "type": "eyewitness_testimony",
               "title": "Source A: Statement of Watts Resident Tommy Jacquette on the Causes of the Los Angeles Uprising (August 1965)",
               "date": "August 1965",
-              "image": "/units/usa/assets/sources/portraits/mlk.jpg",
-              "image_url": "/units/usa/assets/sources/portraits/mlk.jpg",
+              "image": "/units/usa/assets/sources/watts_riots_avalon_blvd_1965.jpg",
+              "image_url": "/units/usa/assets/sources/watts_riots_avalon_blvd_1965.jpg",
               "attribution": "McCone Commission Testimony, Los Angeles Public Library Special Collections",
               "question_badge": "Reliability & Provenance",
-              "question": "How does Tommy Jacquette's perspective as a local community resident affect the historical value of Source C?",
+              "question": "How does Tommy Jacquette's perspective as a local community resident affect the historical value of Source A?",
               "model_answer": "Jacquette’s testimony provides invaluable authentic insight into the pent-up rage of urban Black youth who viewed the police as an occupying army. He rejected the label of 'riot,' describing it instead as a 'rebellion' against decades of police brutality, joblessness, and white arrogance that civil rights laws in the South had done nothing to solve.",
               "provenance_clues": {
                 "author": "Tommy Jacquette, twenty-one-year-old Watts community organizer",
@@ -123181,8 +123181,8 @@
               },
               "hinge_question": "Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?",
               "source_context": "McCone Commission Testimony, Los Angeles Public Library Special Collections. Tommy Jacquette, twenty-one-year-old Watts community organizer for The Governor's Commission on the Los Angeles Riots (McCone Commission) with the objective: To articulate the authentic collective grievances and political meaning behind the spontaneous urban violence.. **Hinge Question:** Why did northern urban rebellions break out immediately after the landmark Voting Rights Act was signed in 1965?",
-              "src": "/units/usa/assets/sources/portraits/mlk.jpg",
-              "source": "/units/usa/assets/sources/portraits/mlk.jpg"
+              "src": "/units/usa/assets/sources/watts_riots_avalon_blvd_1965.jpg",
+              "source": "/units/usa/assets/sources/watts_riots_avalon_blvd_1965.jpg"
             },
             {
               "id": "usa_lesson_2_4_a",
@@ -124587,8 +124587,8 @@
                   "type": "photograph",
                   "title": "Source D: United States Air Force B-52 Stratofortress Dropping Ordnance During Operation Rolling Thunder (c. 1966)",
                   "date": "c. 1966",
-                  "image": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg",
-                  "image_url": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg",
+                  "image": "/units/usa/assets/sources/b52_rolling_thunder_vietnam.jpg",
+                  "image_url": "/units/usa/assets/sources/b52_rolling_thunder_vietnam.jpg",
                   "attribution": "United States Air Force Historical Research Agency, Maxwell AFB, Alabama",
                   "question_badge": "Historical Context",
                   "question": "Explain the strategic objectives of Operation Rolling Thunder as illustrated in Source D.",
@@ -124604,8 +124604,8 @@
                   },
                   "hinge_question": "Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?",
                   "source_context": "United States Air Force Historical Research Agency, Maxwell AFB, Alabama. USAF aerial reconnaissance combat photographer for Military planners and domestic news media with the objective: To project the devastating technological superiority of American strategic air power.. **Hinge Question:** Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?",
-                  "src": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg",
-                  "source": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg"
+                  "src": "/units/usa/assets/sources/b52_rolling_thunder_vietnam.jpg",
+                  "source": "/units/usa/assets/sources/b52_rolling_thunder_vietnam.jpg"
                 }
               ],
               "isReversed": true
@@ -125247,8 +125247,8 @@
               "type": "photograph",
               "title": "Source D: United States Air Force B-52 Stratofortress Dropping Ordnance During Operation Rolling Thunder (c. 1966)",
               "date": "c. 1966",
-              "image": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg",
-              "image_url": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg",
+              "image": "/units/usa/assets/sources/b52_rolling_thunder_vietnam.jpg",
+              "image_url": "/units/usa/assets/sources/b52_rolling_thunder_vietnam.jpg",
               "attribution": "United States Air Force Historical Research Agency, Maxwell AFB, Alabama",
               "question_badge": "Historical Context",
               "question": "Explain the strategic objectives of Operation Rolling Thunder as illustrated in Source D.",
@@ -125264,8 +125264,8 @@
               },
               "hinge_question": "Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?",
               "source_context": "United States Air Force Historical Research Agency, Maxwell AFB, Alabama. USAF aerial reconnaissance combat photographer for Military planners and domestic news media with the objective: To project the devastating technological superiority of American strategic air power.. **Hinge Question:** Why did overwhelming American air superiority fail to destroy a pre-industrial agrarian adversary in Vietnam?",
-              "src": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg",
-              "source": "/units/usa/assets/sources/huey_combat_landing_vietnam.jpg"
+              "src": "/units/usa/assets/sources/b52_rolling_thunder_vietnam.jpg",
+              "source": "/units/usa/assets/sources/b52_rolling_thunder_vietnam.jpg"
             },
             {
               "id": "usa_lesson_3_2_a",
@@ -126460,11 +126460,11 @@
                   "type": "television_broadcast",
                   "title": "Source A: Editorial Declaration by CBS Evening News Anchor Walter Cronkite Following the Tet Offensive (27 February 1968)",
                   "date": "27 February 1968",
-                  "image": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg",
-                  "image_url": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg",
+                  "image": "/units/usa/assets/sources/walter_cronkite_vietnam_hue_1968.jpg",
+                  "image_url": "/units/usa/assets/sources/walter_cronkite_vietnam_hue_1968.jpg",
                   "attribution": "CBS News Television Special: 'Who, What, When, Where, Why: Report from Vietnam'",
                   "question_badge": "Cross-Referencing",
-                  "question": "How does Walter Cronkite's public assessment in Source D explain the political collapse of President Johnson's war policy?",
+                  "question": "How does Walter Cronkite's public assessment in Source A explain the political collapse of President Johnson's war policy?",
                   "model_answer": "Cronkite, revered as 'the most trusted man in America,' declared that the only rational conclusion was that the war was 'mired in stalemate' and that negotiations were the only path out. When Cronkite broke with the official administration line, President Johnson privately remarked: 'If I've lost Cronkite, I've lost Middle America,' leading directly to his withdrawal from the 1968 election.",
                   "provenance_clues": {
                     "author": "Walter Cronkite, chief anchor of CBS Evening News",
@@ -126477,8 +126477,8 @@
                   },
                   "hinge_question": "Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?",
                   "source_context": "CBS News Television Special: 'Who, What, When, Where, Why: Report from Vietnam'. Walter Cronkite, chief anchor of CBS Evening News for Millions of American families watching prime-time evening news with the objective: To deliver an unvarnished personal journalistic verdict following his eyewitness inspection of post-Tet devastation.. **Hinge Question:** Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?",
-                  "src": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg",
-                  "source": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg"
+                  "src": "/units/usa/assets/sources/walter_cronkite_vietnam_hue_1968.jpg",
+                  "source": "/units/usa/assets/sources/walter_cronkite_vietnam_hue_1968.jpg"
                 }
               ],
               "image": "/units/usa/assets/sources/general-westmoreland.jpg",
@@ -127159,11 +127159,11 @@
               "type": "television_broadcast",
               "title": "Source A: Editorial Declaration by CBS Evening News Anchor Walter Cronkite Following the Tet Offensive (27 February 1968)",
               "date": "27 February 1968",
-              "image": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg",
-              "image_url": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg",
+              "image": "/units/usa/assets/sources/walter_cronkite_vietnam_hue_1968.jpg",
+              "image_url": "/units/usa/assets/sources/walter_cronkite_vietnam_hue_1968.jpg",
               "attribution": "CBS News Television Special: 'Who, What, When, Where, Why: Report from Vietnam'",
               "question_badge": "Cross-Referencing",
-              "question": "How does Walter Cronkite's public assessment in Source D explain the political collapse of President Johnson's war policy?",
+              "question": "How does Walter Cronkite's public assessment in Source A explain the political collapse of President Johnson's war policy?",
               "model_answer": "Cronkite, revered as 'the most trusted man in America,' declared that the only rational conclusion was that the war was 'mired in stalemate' and that negotiations were the only path out. When Cronkite broke with the official administration line, President Johnson privately remarked: 'If I've lost Cronkite, I've lost Middle America,' leading directly to his withdrawal from the 1968 election.",
               "provenance_clues": {
                 "author": "Walter Cronkite, chief anchor of CBS Evening News",
@@ -127176,8 +127176,8 @@
               },
               "hinge_question": "Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?",
               "source_context": "CBS News Television Special: 'Who, What, When, Where, Why: Report from Vietnam'. Walter Cronkite, chief anchor of CBS Evening News for Millions of American families watching prime-time evening news with the objective: To deliver an unvarnished personal journalistic verdict following his eyewitness inspection of post-Tet devastation.. **Hinge Question:** Why was the 1968 Tet Offensive considered a catastrophic political defeat for the US even though American forces won a military victory?",
-              "src": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg",
-              "source": "/units/usa/assets/sources/hamburger-hill-101st-airborne-1969.jpg"
+              "src": "/units/usa/assets/sources/walter_cronkite_vietnam_hue_1968.jpg",
+              "source": "/units/usa/assets/sources/walter_cronkite_vietnam_hue_1968.jpg"
             },
             {
               "id": "usa_lesson_3_4_a",
@@ -129581,8 +129581,8 @@
                   "type": "military_dispatch",
                   "title": "Source D: From General Van Tien Dung's Official Account of the Final Communist 'Ho Chi Minh Campaign' on Saigon (April 1975)",
                   "date": "April 1975",
-                  "image": "/units/usa/assets/sources/portraits/creighton_abrams.jpg",
-                  "image_url": "/units/usa/assets/sources/portraits/creighton_abrams.jpg",
+                  "image": "/units/usa/assets/sources/portraits/general_van_tien_dung.jpg",
+                  "image_url": "/units/usa/assets/sources/portraits/general_van_tien_dung.jpg",
                   "attribution": "General Van Tien Dung, 'Our Great Spring Victory', Foreign Languages Publishing House, Hanoi (1977)",
                   "question_badge": "Reliability & Provenance",
                   "question": "How does General Dung's perspective as commander of the North Vietnamese offensive affect the historical value of Source D?",
@@ -129598,8 +129598,8 @@
                   },
                   "hinge_question": "Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?",
                   "source_context": "General Van Tien Dung, 'Our Great Spring Victory', Foreign Languages Publishing House, Hanoi (1977). General Van Tien Dung, Chief of the General Staff of the Vietnam People's Army for Military historians and the reunited population of Vietnam with the objective: To record the military planning and execution of the final 55-day offensive that captured Saigon.. **Hinge Question:** Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?",
-                  "src": "/units/usa/assets/sources/portraits/creighton_abrams.jpg",
-                  "source": "/units/usa/assets/sources/portraits/creighton_abrams.jpg"
+                  "src": "/units/usa/assets/sources/portraits/general_van_tien_dung.jpg",
+                  "source": "/units/usa/assets/sources/portraits/general_van_tien_dung.jpg"
                 }
               ],
               "isReversed": true
@@ -130231,8 +130231,8 @@
               "type": "military_dispatch",
               "title": "Source D: From General Van Tien Dung's Official Account of the Final Communist 'Ho Chi Minh Campaign' on Saigon (April 1975)",
               "date": "April 1975",
-              "image": "/units/usa/assets/sources/portraits/creighton_abrams.jpg",
-              "image_url": "/units/usa/assets/sources/portraits/creighton_abrams.jpg",
+              "image": "/units/usa/assets/sources/portraits/general_van_tien_dung.jpg",
+              "image_url": "/units/usa/assets/sources/portraits/general_van_tien_dung.jpg",
               "attribution": "General Van Tien Dung, 'Our Great Spring Victory', Foreign Languages Publishing House, Hanoi (1977)",
               "question_badge": "Reliability & Provenance",
               "question": "How does General Dung's perspective as commander of the North Vietnamese offensive affect the historical value of Source D?",
@@ -130248,8 +130248,8 @@
               },
               "hinge_question": "Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?",
               "source_context": "General Van Tien Dung, 'Our Great Spring Victory', Foreign Languages Publishing House, Hanoi (1977). General Van Tien Dung, Chief of the General Staff of the Vietnam People's Army for Military historians and the reunited population of Vietnam with the objective: To record the military planning and execution of the final 55-day offensive that captured Saigon.. **Hinge Question:** Why did South Vietnamese military resistance collapse in only 55 days in 1975 when military analysts predicted it would last at least two years?",
-              "src": "/units/usa/assets/sources/portraits/creighton_abrams.jpg",
-              "source": "/units/usa/assets/sources/portraits/creighton_abrams.jpg"
+              "src": "/units/usa/assets/sources/portraits/general_van_tien_dung.jpg",
+              "source": "/units/usa/assets/sources/portraits/general_van_tien_dung.jpg"
             },
             {
               "id": "usa_lesson_4_3_e",
@@ -130537,8 +130537,8 @@
                   "type": "congressional_statute",
                   "title": "Source C: Excerpt from the War Powers Resolution Passed by Congress Over President Nixon's Veto (7 November 1973)",
                   "date": "7 November 1973",
-                  "image": "/units/usa/assets/sources/portraits/nixon.jpg",
-                  "image_url": "/units/usa/assets/sources/portraits/nixon.jpg",
+                  "image": "/units/usa/assets/sources/war_powers_resolution_1973_statute.png",
+                  "image_url": "/units/usa/assets/sources/war_powers_resolution_1973_statute.png",
                   "attribution": "United States Statutes at Large, 87 Stat. 555, Public Law 93-148",
                   "question_badge": "Author's Purpose",
                   "question": "What was the purpose of Congress in passing the War Powers Resolution over President Nixon's veto in Source C?",
@@ -130554,8 +130554,8 @@
                   },
                   "hinge_question": "How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?",
                   "source_context": "United States Statutes at Large, 87 Stat. 555, Public Law 93-148. The 93rd United States Congress, overriding Nixon's presidential veto by a two-thirds majority for The Executive Branch, the American public, and future commanders-in-chief with the objective: To prevent future presidents from entangling the United States in foreign wars through unilateral executive action.. **Hinge Question:** How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?",
-                  "src": "/units/usa/assets/sources/portraits/nixon.jpg",
-                  "source": "/units/usa/assets/sources/portraits/nixon.jpg"
+                  "src": "/units/usa/assets/sources/war_powers_resolution_1973_statute.png",
+                  "source": "/units/usa/assets/sources/war_powers_resolution_1973_statute.png"
                 }
               ],
               "image": "/units/usa/assets/sources/us-troops-bogged-down.jpg",
@@ -130579,12 +130579,10 @@
                   "type": "statistical_summary",
                   "title": "Source D: Official United States Department of Defense Statistical Summary of Human and Economic Costs of the Vietnam War (1975)",
                   "date": "1975",
-                  "image": "/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg",
-                  "image_url": "/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg",
                   "attribution": "Office of the Secretary of Defense (Comptroller), Southeast Asia Statistical Tables",
                   "question_badge": "Cross-Referencing",
-                  "question": "How do the statistical casualties and economic expenditures in Source E corroborate the profound societal trauma left by the war?",
-                  "model_answer": "Source E presents the staggering, tragic balance sheet of the conflict: 58,220 American military deaths, over 300,000 wounded, and over $168 billion spent ($1 trillion in modern terms), fueling catastrophic inflation and national division. For an estimated 2 to 3 million Vietnamese lives lost, the war achieved none of its strategic objectives, leaving deep enduring trauma known as the 'Vietnam Syndrome.'",
+                  "question": "How do the statistical casualties and economic expenditures in Source D corroborate the profound societal trauma left by the war?",
+                  "model_answer": "Source D presents the staggering, tragic balance sheet of the conflict: 58,220 American military deaths, over 300,000 wounded, and over $168 billion spent ($1 trillion in modern terms), fueling catastrophic inflation and national division. For an estimated 2 to 3 million Vietnamese lives lost, the war achieved none of its strategic objectives, leaving deep enduring trauma known as the 'Vietnam Syndrome.'",
                   "provenance_clues": {
                     "author": "Pentagon statisticians and Department of Defense comptrollers",
                     "audience": "The United States Congress, veterans' organizations, and the historical record",
@@ -130619,11 +130617,9 @@
                   "type": "historian_analysis",
                   "title": "Source E: From an Analysis by Military Historian George C. Herring in 'America's Longest War' (1979)",
                   "date": "1979",
-                  "image": "/units/usa/assets/sources/portraits/westmoreland.jpg",
-                  "image_url": "/units/usa/assets/sources/portraits/westmoreland.jpg",
                   "attribution": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press",
                   "question_badge": "Reliability & Provenance",
-                  "question": "How does Professor Herring’s academic evaluation in Source D synthesize the military and political causes of American defeat?",
+                  "question": "How does Professor Herring's academic evaluation in Source E synthesize the military and political causes of American defeat?",
                   "model_answer": "Herring provides a balanced, scholarly synthesis that avoids simple scapegoating. He argues that American defeat was caused by a fatal mismatch: the US relied on conventional industrial firepower to solve what was fundamentally a complex political struggle, while underestimating the revolutionary nationalism and tenacity of a Vietnamese adversary fighting on its own soil.",
                   "provenance_clues": {
                     "author": "Professor George C. Herring, leading diplomatic and military historian of the Vietnam War",
@@ -130635,9 +130631,7 @@
                     "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. **Hinge Question:** Was American defeat primarily caused by military failures in Vietnam or political collapse at home?"
                   },
                   "hinge_question": "Was American defeat primarily caused by military failures in Vietnam or political collapse at home?",
-                  "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. **Hinge Question:** Was American defeat primarily caused by military failures in Vietnam or political collapse at home?",
-                  "src": "/units/usa/assets/sources/portraits/westmoreland.jpg",
-                  "source": "/units/usa/assets/sources/portraits/westmoreland.jpg"
+                  "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. **Hinge Question:** Was American defeat primarily caused by military failures in Vietnam or political collapse at home?"
                 }
               ],
               "isReversed": false
@@ -131192,8 +131186,8 @@
               "type": "congressional_statute",
               "title": "Source C: Excerpt from the War Powers Resolution Passed by Congress Over President Nixon's Veto (7 November 1973)",
               "date": "7 November 1973",
-              "image": "/units/usa/assets/sources/portraits/nixon.jpg",
-              "image_url": "/units/usa/assets/sources/portraits/nixon.jpg",
+              "image": "/units/usa/assets/sources/war_powers_resolution_1973_statute.png",
+              "image_url": "/units/usa/assets/sources/war_powers_resolution_1973_statute.png",
               "attribution": "United States Statutes at Large, 87 Stat. 555, Public Law 93-148",
               "question_badge": "Author's Purpose",
               "question": "What was the purpose of Congress in passing the War Powers Resolution over President Nixon's veto in Source C?",
@@ -131209,8 +131203,8 @@
               },
               "hinge_question": "How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?",
               "source_context": "United States Statutes at Large, 87 Stat. 555, Public Law 93-148. The 93rd United States Congress, overriding Nixon's presidential veto by a two-thirds majority for The Executive Branch, the American public, and future commanders-in-chief with the objective: To prevent future presidents from entangling the United States in foreign wars through unilateral executive action.. **Hinge Question:** How did the War Powers Resolution reflect a profound loss of national trust in the federal government following the Vietnam War?",
-              "src": "/units/usa/assets/sources/portraits/nixon.jpg",
-              "source": "/units/usa/assets/sources/portraits/nixon.jpg"
+              "src": "/units/usa/assets/sources/war_powers_resolution_1973_statute.png",
+              "source": "/units/usa/assets/sources/war_powers_resolution_1973_statute.png"
             },
             {
               "id": "usa_lesson_4_4_e",
@@ -131218,12 +131212,10 @@
               "type": "statistical_summary",
               "title": "Source D: Official United States Department of Defense Statistical Summary of Human and Economic Costs of the Vietnam War (1975)",
               "date": "1975",
-              "image": "/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg",
-              "image_url": "/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg",
               "attribution": "Office of the Secretary of Defense (Comptroller), Southeast Asia Statistical Tables",
               "question_badge": "Cross-Referencing",
-              "question": "How do the statistical casualties and economic expenditures in Source E corroborate the profound societal trauma left by the war?",
-              "model_answer": "Source E presents the staggering, tragic balance sheet of the conflict: 58,220 American military deaths, over 300,000 wounded, and over $168 billion spent ($1 trillion in modern terms), fueling catastrophic inflation and national division. For an estimated 2 to 3 million Vietnamese lives lost, the war achieved none of its strategic objectives, leaving deep enduring trauma known as the 'Vietnam Syndrome.'",
+              "question": "How do the statistical casualties and economic expenditures in Source D corroborate the profound societal trauma left by the war?",
+              "model_answer": "Source D presents the staggering, tragic balance sheet of the conflict: 58,220 American military deaths, over 300,000 wounded, and over $168 billion spent ($1 trillion in modern terms), fueling catastrophic inflation and national division. For an estimated 2 to 3 million Vietnamese lives lost, the war achieved none of its strategic objectives, leaving deep enduring trauma known as the 'Vietnam Syndrome.'",
               "provenance_clues": {
                 "author": "Pentagon statisticians and Department of Defense comptrollers",
                 "audience": "The United States Congress, veterans' organizations, and the historical record",
@@ -131244,11 +131236,9 @@
               "type": "historian_analysis",
               "title": "Source E: From an Analysis by Military Historian George C. Herring in 'America's Longest War' (1979)",
               "date": "1979",
-              "image": "/units/usa/assets/sources/portraits/westmoreland.jpg",
-              "image_url": "/units/usa/assets/sources/portraits/westmoreland.jpg",
               "attribution": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press",
               "question_badge": "Reliability & Provenance",
-              "question": "How does Professor Herring’s academic evaluation in Source D synthesize the military and political causes of American defeat?",
+              "question": "How does Professor Herring's academic evaluation in Source E synthesize the military and political causes of American defeat?",
               "model_answer": "Herring provides a balanced, scholarly synthesis that avoids simple scapegoating. He argues that American defeat was caused by a fatal mismatch: the US relied on conventional industrial firepower to solve what was fundamentally a complex political struggle, while underestimating the revolutionary nationalism and tenacity of a Vietnamese adversary fighting on its own soil.",
               "provenance_clues": {
                 "author": "Professor George C. Herring, leading diplomatic and military historian of the Vietnam War",
@@ -131260,9 +131250,7 @@
                 "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. **Hinge Question:** Was American defeat primarily caused by military failures in Vietnam or political collapse at home?"
               },
               "hinge_question": "Was American defeat primarily caused by military failures in Vietnam or political collapse at home?",
-              "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. **Hinge Question:** Was American defeat primarily caused by military failures in Vietnam or political collapse at home?",
-              "src": "/units/usa/assets/sources/portraits/westmoreland.jpg",
-              "source": "/units/usa/assets/sources/portraits/westmoreland.jpg"
+              "source_context": "George C. Herring, 'America's Longest War: The United States and Vietnam, 1950–1975', Temple University Press. Professor George C. Herring, leading diplomatic and military historian of the Vietnam War for University students, academic historians, and military strategists with the objective: To provide a rigorous, objective historical autopsy of the comprehensive failure of US intervention.. **Hinge Question:** Was American defeat primarily caused by military failures in Vietnam or political collapse at home?"
             }
           ],
           "video": [
