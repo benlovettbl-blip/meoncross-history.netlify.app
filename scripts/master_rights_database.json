@@ -11885,34 +11885,6 @@
           "lesson_num": 4,
           "lesson_title": "How did the Industrial Revolution lead to a public health crisis?",
           "source_id": "Source A",
-          "artifact_title": "'A Court for King Cholera' by John Leech (Punch Magazine, September 1852)",
-          "date": "September 1852",
-          "creator": "John Leech, Illustrator for Punch Magazine",
-          "repository": "Wellcome Collection / British Library",
-          "accession_id": "Punch Vol. XXIII, p. 139 / Wellcome Library 38471i",
-          "rights_status": "Public Domain (19th-Century Periodical Satire)",
-          "commercial_use_permitted": true,
-          "source_url": "https://wellcomecollection.org/works/k3w8k2r2",
-          "asset_path": "/images/court_for_king_cholera.png"
-        },
-        {
-          "lesson_num": 4,
-          "lesson_title": "How did the Industrial Revolution lead to a public health crisis?",
-          "source_id": "Source B",
-          "artifact_title": "Edwin Chadwick's 'Report on the Sanitary Condition of the Labouring Population' (1842)",
-          "date": "1842",
-          "creator": "Edwin Chadwick, Secretary to the Poor Law Commission",
-          "repository": "Wellcome Collection, London",
-          "accession_id": "Wellcome Library EPB/B/15949 / Parliamentary Blue Book",
-          "rights_status": "Public Domain (19th-Century Government Report)",
-          "commercial_use_permitted": true,
-          "source_url": "https://wellcomecollection.org/works/z8m4n2w9",
-          "asset_path": "/images/chadwick_sanitary_report_1842.jpg"
-        },
-        {
-          "lesson_num": 4,
-          "lesson_title": "How did the Industrial Revolution lead to a public health crisis?",
-          "source_id": "Source C",
           "artifact_title": "Gustave Doré, 'Over London by Rail' (London: A Pilgrimage, 1872)",
           "date": "1872",
           "creator": "Gustave Doré & Blanchard Jerrold",
@@ -11926,7 +11898,21 @@
         {
           "lesson_num": 4,
           "lesson_title": "How did the Industrial Revolution lead to a public health crisis?",
-          "source_id": "Source D",
+          "source_id": "Source B",
+          "artifact_title": "'A Court for King Cholera' by John Leech (Punch Magazine, September 1852)",
+          "date": "September 1852",
+          "creator": "John Leech, Illustrator for Punch Magazine",
+          "repository": "Wellcome Collection / British Library",
+          "accession_id": "Punch Vol. XXIII, p. 139 / Wellcome Library 38471i",
+          "rights_status": "Public Domain (19th-Century Periodical Satire)",
+          "commercial_use_permitted": true,
+          "source_url": "https://wellcomecollection.org/works/k3w8k2r2",
+          "asset_path": "/images/court_for_king_cholera.png"
+        },
+        {
+          "lesson_num": 4,
+          "lesson_title": "How did the Industrial Revolution lead to a public health crisis?",
+          "source_id": "Source C",
           "artifact_title": "Dr Thomas Southwood Smith, 'Treatise on Fever and Sanitation' (1844)",
           "date": "1844",
           "creator": "Dr Thomas Southwood Smith, Physician & Sanitarian",
@@ -11935,7 +11921,21 @@
           "rights_status": "Public Domain (19th-Century Medical Monograph)",
           "commercial_use_permitted": true,
           "source_url": "https://wellcomecollection.org/",
-          "asset_path": "/images/cholera_miasma.jpg"
+          "asset_path": ""
+        },
+        {
+          "lesson_num": 4,
+          "lesson_title": "How did the Industrial Revolution lead to a public health crisis?",
+          "source_id": "Source D",
+          "artifact_title": "Edwin Chadwick's 'Report on the Sanitary Condition of the Labouring Population' (1842)",
+          "date": "1842",
+          "creator": "Edwin Chadwick, Secretary to the Poor Law Commission",
+          "repository": "Wellcome Collection, London",
+          "accession_id": "Wellcome Library EPB/B/15949 / Parliamentary Blue Book",
+          "rights_status": "Public Domain (19th-Century Government Report)",
+          "commercial_use_permitted": true,
+          "source_url": "https://wellcomecollection.org/works/z8m4n2w9",
+          "asset_path": "/images/chadwick_sanitary_report_1842.jpg"
         },
         {
           "lesson_num": 4,
@@ -11949,7 +11949,7 @@
           "rights_status": "Open Government Licence / Public Domain (Parliamentary Statute)",
           "commercial_use_permitted": true,
           "source_url": "https://discovery.nationalarchives.gov.uk/",
-          "asset_path": "/units/water_and_sanitation/assets/was_industrial_street.png"
+          "asset_path": ""
         },
         {
           "lesson_num": 5,
@@ -11969,20 +11969,6 @@
           "lesson_num": 5,
           "lesson_title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
           "source_id": "Source B",
-          "artifact_title": "Eastney Beam Engine House and Sewage Pumping Station (Portsmouth, 1865)",
-          "date": "1865",
-          "creator": "Portsmouth Municipal Borough Engineering Team",
-          "repository": "Portsmouth Museums / Historic England",
-          "accession_id": "PM-EBE-1865 / Scheduled Ancient Monument 1001874",
-          "rights_status": "Educational Fair Dealing / CDPA 1988",
-          "commercial_use_permitted": false,
-          "source_url": "https://portsmouthmuseums.co.uk/",
-          "asset_path": "/images/water_local_eastney.jpg"
-        },
-        {
-          "lesson_num": 5,
-          "lesson_title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
-          "source_id": "Source C",
           "artifact_title": "Hansard Parliamentary Debates: The Great Stink in the House of Commons (18 June 1858)",
           "date": "18 June 1858",
           "creator": "Honourable Members of Parliament, House of Commons",
@@ -11991,12 +11977,12 @@
           "rights_status": "Open Government Licence / Public Domain (Parliamentary Debates)",
           "commercial_use_permitted": true,
           "source_url": "https://hansard.parliament.uk/",
-          "asset_path": "/images/bazalgette.jpg"
+          "asset_path": ""
         },
         {
           "lesson_num": 5,
           "lesson_title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
-          "source_id": "Source D",
+          "source_id": "Source C",
           "artifact_title": "Construction of the Low-Level Intercepting Sewer (The Illustrated London News, 1862)",
           "date": "1862",
           "creator": "The Illustrated London News Special Artist",
@@ -12010,6 +11996,20 @@
         {
           "lesson_num": 5,
           "lesson_title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
+          "source_id": "Source D",
+          "artifact_title": "Eastney Beam Engine House and Sewage Pumping Station (Portsmouth, 1865)",
+          "date": "1865",
+          "creator": "Portsmouth Municipal Borough Engineering Team",
+          "repository": "Portsmouth Museums / Historic England",
+          "accession_id": "PM-EBE-1865 / Scheduled Ancient Monument 1001874",
+          "rights_status": "Educational Fair Dealing / CDPA 1988",
+          "commercial_use_permitted": false,
+          "source_url": "https://portsmouthmuseums.co.uk/",
+          "asset_path": "/images/water_local_eastney.jpg"
+        },
+        {
+          "lesson_num": 5,
+          "lesson_title": "Why did it take the 'Great Stink' to finally clean up Britain's streets?",
           "source_id": "Source E",
           "artifact_title": "The Public Health Act of 1875 (38 & 39 Vict. c. 55)",
           "date": "1875",
@@ -12019,7 +12019,7 @@
           "rights_status": "Open Government Licence / Public Domain (Parliamentary Statute)",
           "commercial_use_permitted": true,
           "source_url": "https://discovery.nationalarchives.gov.uk/",
-          "asset_path": "/images/father_thames_punch_1858.jpg"
+          "asset_path": ""
         },
         {
           "lesson_num": 6,
@@ -12092,9 +12092,9 @@
           "asset_path": "/images/koch_bacteria.jpg"
         },
         {
-          "lesson_num": 7,
-          "lesson_title": "November Assessment Masterclass: Rapid Progress in Public Health (1800–1900)",
-          "source_id": "Source A",
+          "lesson_num": 6,
+          "lesson_title": "Why did it take the scientific revolution of Germ Theory to finally conquer water-borne disease?",
+          "source_id": "Narrative Plate 1",
           "artifact_title": "Title Page of Dr John Snow's 'On the Mode of Communication of Cholera' (1855)",
           "date": "1855",
           "creator": "Dr John Snow, MD",
@@ -12104,6 +12104,20 @@
           "commercial_use_permitted": true,
           "source_url": "https://wellcomecollection.org/works/z9r1k4m8",
           "asset_path": "/images/snow_mode_of_communication_title_1855.jpg"
+        },
+        {
+          "lesson_num": 7,
+          "lesson_title": "November Assessment Masterclass: Rapid Progress in Public Health (1800–1900)",
+          "source_id": "Source A",
+          "artifact_title": "Portrait and Sanitary Campaign of Edwin Chadwick (1800–1890)",
+          "date": "c. 1860",
+          "creator": "Victorian Portrait Studio",
+          "repository": "National Portrait Gallery, London",
+          "accession_id": "NPG x12882 / Photographs Collection",
+          "rights_status": "Public Domain (Photographic Portrait)",
+          "commercial_use_permitted": true,
+          "source_url": "https://www.npg.org.uk/collections/search/portrait/mw107771",
+          "asset_path": "/units/water_and_sanitation/assets/edwin_chadwick.jpg"
         },
         {
           "lesson_num": 7,
@@ -12123,6 +12137,20 @@
           "lesson_num": 7,
           "lesson_title": "November Assessment Masterclass: Rapid Progress in Public Health (1800–1900)",
           "source_id": "Source C",
+          "artifact_title": "Construction of the Low-Level Intercepting Sewer (The Illustrated London News, 1862)",
+          "date": "1862",
+          "creator": "The Illustrated London News Special Artist",
+          "repository": "Wellcome Collection, London",
+          "accession_id": "ILN 1862, Vol. 41 / Wellcome Library 38481i",
+          "rights_status": "Public Domain (19th-Century Illustrated Press)",
+          "commercial_use_permitted": true,
+          "source_url": "https://wellcomecollection.org/works/b8w1k7r4",
+          "asset_path": "/units/water_and_sanitation/assets/bazalgette_sewer.jpg"
+        },
+        {
+          "lesson_num": 7,
+          "lesson_title": "November Assessment Masterclass: Rapid Progress in Public Health (1800–1900)",
+          "source_id": "Source D",
           "artifact_title": "Louis Pasteur's Original Glass Swan-Neck Flask (Institut Pasteur, Paris)",
           "date": "1861 / Modern Photograph",
           "creator": "Institut Pasteur Museum Curators",
@@ -12132,20 +12160,6 @@
           "commercial_use_permitted": false,
           "source_url": "https://www.pasteur.fr/en/institut-pasteur/museum",
           "asset_path": "/images/pasteur_actual_flask.jpg"
-        },
-        {
-          "lesson_num": 7,
-          "lesson_title": "November Assessment Masterclass: Rapid Progress in Public Health (1800–1900)",
-          "source_id": "Source D",
-          "artifact_title": "Portrait and Sanitary Campaign of Edwin Chadwick (1800–1890)",
-          "date": "c. 1860",
-          "creator": "Victorian Portrait Studio",
-          "repository": "National Portrait Gallery, London",
-          "accession_id": "NPG x12882 / Photographs Collection",
-          "rights_status": "Public Domain (Photographic Portrait)",
-          "commercial_use_permitted": true,
-          "source_url": "https://www.npg.org.uk/collections/search/portrait/mw107771",
-          "asset_path": "/units/water_and_sanitation/assets/edwin_chadwick.jpg"
         },
         {
           "lesson_num": 7,
