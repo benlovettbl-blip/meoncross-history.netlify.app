@@ -4029,6 +4029,71 @@ export function renderLesson(lesson) {
         }
         const citationText = source.citation || source.provenance || '';
 
+        const sourceEnquiryHtml =
+          source.question || source.enquiry_question || source.how_useful_question
+            ? (() => {
+                const qPrompt =
+                  source.question || source.enquiry_question || source.how_useful_question;
+                const dynamicBadge =
+                  source.question_badge ||
+                  source.question_type ||
+                  (() => {
+                    if (/what can you infer|what does .* reveal|what does .* show/i.test(qPrompt))
+                      return 'Source Inference';
+                    if (/why was|why did|purpose|intended|motive|propaganda/i.test(qPrompt))
+                      return 'Author’s Purpose';
+                    if (/differ|support|challenge|corroborat|contrast|counter/i.test(qPrompt))
+                      return 'Cross-Referencing';
+                    if (/reliable|convincing|trustworthy|provenance|weight/i.test(qPrompt))
+                      return 'Reliability & Provenance';
+                    if (/how useful/i.test(qPrompt)) return 'Source Utility';
+                    if (/significance|commemorat|myth/i.test(qPrompt))
+                      return 'Historical Significance';
+                    return 'Enquiry Question';
+                  })();
+
+                return `
+                <details class="source-enquiry-reveal">
+                  <summary style="padding: 10px 14px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; list-style: none; user-select: none; background: #f0fdf4; transition: background 0.15s ease; box-sizing: border-box; width: 100%;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;">
+                      <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0;">${dynamicBadge}</span>
+                      <span class="reveal-answer-pill" style="flex-shrink: 0;">
+                        <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                        <span class="reveal-text-closed">Reveal Model Answer</span>
+                        <span class="reveal-text-open">Hide Model Answer</span>
+                        <span class="reveal-arrow">&#9660;</span>
+                      </span>
+                    </div>
+                    <div class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.96rem; color: #14532d; font-weight: 700; line-height: 1.45; width: 100%; word-break: normal; overflow-wrap: break-word;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(qPrompt) : qPrompt}</div>
+                  </summary>
+                  <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
+                    ${
+                      source.model_answer
+                        ? `
+                      <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
+                        <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Answer:</strong>
+                        <div style="font-size: 0.90rem; color: #1e293b; line-height: 1.6;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.model_answer) : source.model_answer}</div>
+                      </div>
+                    `
+                        : source.discussion_ideas &&
+                            Array.isArray(source.discussion_ideas) &&
+                            source.discussion_ideas.length > 0
+                          ? `
+                      <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
+                        <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Disciplinary Guidance:</strong>
+                        <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #1e293b; line-height: 1.55;">
+                          ${source.discussion_ideas.map((d) => `<li style="margin-bottom: 6px;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(d) : d}</li>`).join('')}
+                        </ul>
+                      </div>
+                    `
+                          : ''
+                    }
+                  </div>
+                </details>
+              `;
+              })()
+            : '';
+
         const isSourceArtwork = isPaintingSource(source, displayTitle);
         const sourceSpotlightBtn = isSourceArtwork
           ? `
@@ -4079,7 +4144,7 @@ export function renderLesson(lesson) {
                         : ''
                     }
                   </div>
-                  <div class="archival-source-details-col">
+                  <div class="archival-source-details-col" style="display: flex; flex-direction: column; justify-content: flex-start; gap: 10px;">
                     <div>
                       ${
                         source.caption
@@ -4102,6 +4167,11 @@ export function renderLesson(lesson) {
                       }
                       ${disc.promptHtml}
                     </div>
+                    ${
+                      sourceEnquiryHtml
+                        ? `<div class="archival-source-inline-enquiry" style="width: 100%; margin-top: 6px;">${sourceEnquiryHtml}</div>`
+                        : ''
+                    }
                   </div>
                 </div>
                 ${disc.panelHtml}
@@ -4136,77 +4206,13 @@ export function renderLesson(lesson) {
                       : ''
                   }
                   ${renderArchivalSourceDiscussionBox(hingeText, source, isKs2, '12px')}
+                  ${
+                    sourceEnquiryHtml
+                      ? `<div class="archival-source-fullwidth-enquiry" style="width: 100%; margin-top: 12px;">${sourceEnquiryHtml}</div>`
+                      : ''
+                  }
                 </div>
               `
-              }
-              ${
-                source.question || source.enquiry_question || source.how_useful_question
-                  ? (() => {
-                      const qPrompt =
-                        source.question || source.enquiry_question || source.how_useful_question;
-                      const dynamicBadge =
-                        source.question_badge ||
-                        source.question_type ||
-                        (() => {
-                          if (
-                            /what can you infer|what does .* reveal|what does .* show/i.test(
-                              qPrompt,
-                            )
-                          )
-                            return 'Source Inference';
-                          if (/why was|why did|purpose|intended|motive|propaganda/i.test(qPrompt))
-                            return 'Author’s Purpose';
-                          if (/differ|support|challenge|corroborat|contrast|counter/i.test(qPrompt))
-                            return 'Cross-Referencing';
-                          if (/reliable|convincing|trustworthy|provenance|weight/i.test(qPrompt))
-                            return 'Reliability & Provenance';
-                          if (/how useful/i.test(qPrompt)) return 'Source Utility';
-                          if (/significance|commemorat|myth/i.test(qPrompt))
-                            return 'Historical Significance';
-                          return 'Enquiry Question';
-                        })();
-
-                      return `
-                <details class="source-enquiry-reveal">
-                  <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
-                    <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
-                      <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${dynamicBadge}</span>
-                      <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(qPrompt) : qPrompt}</span>
-                    </div>
-                    <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
-                      <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
-                      <span class="reveal-text-closed">Reveal Model Answer</span>
-                      <span class="reveal-text-open">Hide Model Answer</span>
-                      <span class="reveal-arrow">&#9660;</span>
-                    </span>
-                  </summary>
-                  <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
-                    ${
-                      source.model_answer
-                        ? `
-                      <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
-                        <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Answer:</strong>
-                        <div style="font-size: 0.90rem; color: #1e293b; line-height: 1.6;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.model_answer) : source.model_answer}</div>
-                      </div>
-                    `
-                        : source.discussion_ideas &&
-                            Array.isArray(source.discussion_ideas) &&
-                            source.discussion_ideas.length > 0
-                          ? `
-                      <div style="margin-bottom: 12px; background: #f8fafc; border-left: 3.5px solid #16a34a; padding: 10px 14px; border-radius: 0 4px 4px 0;">
-                        <strong style="color: #166534; display: block; margin-bottom: 4px; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px;"><i class="fa-solid fa-graduation-cap" style="color: #16a34a; margin-right: 6px;"></i>Model Disciplinary Guidance:</strong>
-                        <ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #1e293b; line-height: 1.55;">
-                          ${source.discussion_ideas.map((d) => `<li style="margin-bottom: 6px;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(d) : d}</li>`).join('')}
-                        </ul>
-                      </div>
-                    `
-                          : ''
-                    }
-                  </div>
-                </details>
-              `;
-                    })()
-                  : ''
               }
             </div>
           </details>
@@ -6551,17 +6557,17 @@ export function renderLesson(lesson) {
 
               return `
                 <details class="source-enquiry-reveal edexcel-paper3-utility-card">
-                  <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
-                    <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
-                      <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${examBadgeTitle}</span>
-                      <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</span>
+                  <summary style="padding: 10px 14px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; list-style: none; user-select: none; background: #f0fdf4; transition: background 0.15s ease; box-sizing: border-box; width: 100%;">
+                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;">
+                      <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0;">${examBadgeTitle}</span>
+                      <span class="reveal-answer-pill" style="flex-shrink: 0;">
+                        <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                        <span class="reveal-text-closed">Reveal Exam Guidance</span>
+                        <span class="reveal-text-open">Hide Exam Guidance</span>
+                        <span class="reveal-arrow">&#9660;</span>
+                      </span>
                     </div>
-                    <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
-                      <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
-                      <span class="reveal-text-closed">Reveal Exam Guidance</span>
-                      <span class="reveal-text-open">Hide Exam Guidance</span>
-                      <span class="reveal-arrow">&#9660;</span>
-                    </span>
+                    <div class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.96rem; color: #14532d; font-weight: 700; line-height: 1.45; width: 100%; word-break: normal; overflow-wrap: break-word;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</div>
                   </summary>
                   <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 4px;">
@@ -6646,17 +6652,17 @@ export function renderLesson(lesson) {
 
             return `
               <details class="source-enquiry-reveal">
-                <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
-                  <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
-                    <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${dynamicBadge}</span>
-                    <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</span>
+                <summary style="padding: 10px 14px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; list-style: none; user-select: none; background: #f0fdf4; transition: background 0.15s ease; box-sizing: border-box; width: 100%;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;">
+                    <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0;">${dynamicBadge}</span>
+                    <span class="reveal-answer-pill" style="flex-shrink: 0;">
+                      <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                      <span class="reveal-text-closed">Reveal Model Answer</span>
+                      <span class="reveal-text-open">Hide Model Answer</span>
+                      <span class="reveal-arrow">&#9660;</span>
+                    </span>
                   </div>
-                  <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
-                    <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
-                    <span class="reveal-text-closed">Reveal Model Answer</span>
-                    <span class="reveal-text-open">Hide Model Answer</span>
-                    <span class="reveal-arrow">&#9660;</span>
-                  </span>
+                  <div class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.96rem; color: #14532d; font-weight: 700; line-height: 1.45; width: 100%; word-break: normal; overflow-wrap: break-word;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</div>
                 </summary>
                 <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
                   <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; letter-spacing: 0.5px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
@@ -6694,17 +6700,17 @@ export function renderLesson(lesson) {
 
             return `
               <details class="source-enquiry-reveal">
-                <summary style="padding: 12px 16px; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; list-style: none; user-select: none; background: #f0fdf4; gap: 14px; transition: background 0.15s ease;">
-                  <div style="display: flex; align-items: baseline; gap: 10px; flex: 1 1 auto; min-width: 0; flex-wrap: wrap;">
-                    <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0; margin-top: 2px;">${dynamicBadge}</span>
-                    <span class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #14532d; font-weight: 700; line-height: 1.45; word-break: break-word; white-space: normal; overflow: visible; display: inline-block; flex: 1 1 auto;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(qPrompt) : qPrompt}</span>
+                <summary style="padding: 10px 14px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; list-style: none; user-select: none; background: #f0fdf4; transition: background 0.15s ease; box-sizing: border-box; width: 100%;">
+                  <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;">
+                    <span style="font-size: 0.70rem; font-weight: 800; text-transform: uppercase; color: #166534; background: #dcfce7; border: 1px solid #bbf7d0; padding: 3px 8px; border-radius: 12px; letter-spacing: 0.5px; flex-shrink: 0;">${dynamicBadge}</span>
+                    <span class="reveal-answer-pill" style="flex-shrink: 0;">
+                      <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
+                      <span class="reveal-text-closed">Reveal Model Answer</span>
+                      <span class="reveal-text-open">Hide Model Answer</span>
+                      <span class="reveal-arrow">&#9660;</span>
+                    </span>
                   </div>
-                  <span class="reveal-answer-pill" style="flex-shrink: 0; align-self: flex-start; margin-top: 2px;">
-                    <i class="fa-solid fa-lightbulb" style="color: #16a34a;"></i>
-                    <span class="reveal-text-closed">Reveal Model Answer</span>
-                    <span class="reveal-text-open">Hide Model Answer</span>
-                    <span class="reveal-arrow">&#9660;</span>
-                  </span>
+                  <div class="source-enquiry-prompt" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.96rem; color: #14532d; font-weight: 700; line-height: 1.45; width: 100%; word-break: normal; overflow-wrap: break-word;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(qPrompt) : qPrompt}</div>
                 </summary>
                 <div class="source-enquiry-answer-body" style="padding: 16px 20px 14px 20px; background: #ffffff; border-top: 1.5px solid #86efac;">
                   ${
@@ -6890,16 +6896,15 @@ export function renderLesson(lesson) {
                 `
                     : ''
                 }
-                ${!hasUtilityCard ? primaryDisc.promptHtml || '' : ''}
+                ${
+                  utilityCardHtml
+                    ? `<div class="archival-source-inline-enquiry" style="width: 100%; margin-top: 6px;">${utilityCardHtml}</div>`
+                    : !hasUtilityCard
+                      ? `${primaryDisc.promptHtml || ''}${primaryDisc.panelHtml || ''}`
+                      : ''
+                }
               </div>
             </div>
-            ${
-              utilityCardHtml
-                ? `<div class="archival-source-fullwidth-enquiry" style="width: 100%; margin-top: 12px;">${utilityCardHtml}</div>`
-                : !hasUtilityCard
-                  ? primaryDisc.panelHtml
-                  : ''
-            }
           `;
         }
 

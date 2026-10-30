@@ -9740,3 +9740,17 @@ details.source-enquiry-reveal .reveal-arrow {
     align-self: flex-start;
   }
 }
+
+/* Right-Column Docked Source Enquiry Box (Zero Dead Whitespace Architecture) */
+.archival-source-details-col details.source-enquiry-reveal,
+.archival-source-inline-enquiry details.source-enquiry-reveal {
+  margin-top: 6px !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.archival-source-details-col .archival-source-inline-enquiry {
+  width: 100%;
+  margin-top: 4px;
+}
