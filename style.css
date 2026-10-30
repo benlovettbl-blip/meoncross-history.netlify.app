@@ -5068,36 +5068,7 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
 }
 
 .archival-source-inspect-badge {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(15, 23, 42, 0.92);
-  color: #f1f5f9;
-  font-family:
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    sans-serif;
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 3px 9px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  pointer-events: none;
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  transition: all 0.2s ease;
-}
-
-.archival-source-media-col:hover .archival-source-inspect-badge {
-  background: rgba(30, 58, 138, 0.95);
-  border-color: rgba(147, 197, 253, 0.5);
-  color: #ffffff;
+  display: none !important;
 }
 
 .archival-source-details-col {

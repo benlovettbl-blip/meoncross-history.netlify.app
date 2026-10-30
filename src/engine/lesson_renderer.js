@@ -4130,10 +4130,6 @@ export function renderLesson(lesson) {
                   <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
                     <div style="position: relative; width: 100%; display: flex; justify-content: center;">
                       <img src="${sourceImgUrl}" alt="${displayTitle}" data-action="open-modal" data-src="${sourceImgUrl}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
-                      <div class="archival-source-inspect-badge">
-                        <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
-                        <span>Pan-Zoom</span>
-                      </div>
                     </div>
                     ${sourceSpotlightBtn}
                     ${
@@ -4257,10 +4253,6 @@ export function renderLesson(lesson) {
                 <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
                   <div style="position: relative; width: 100%; display: flex; justify-content: center;">
                     <img src="${getAssetUrl(source.image || source.src || source.source)}" alt="${source.title || 'Source Image'}" data-action="open-modal" data-src="${getAssetUrl(source.image || source.src || source.source)}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
-                    <div class="archival-source-inspect-badge">
-                      <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
-                      <span>Pan-Zoom</span>
-                    </div>
                   </div>
                 </div>
                 <div class="archival-source-details-col">
@@ -4450,10 +4442,6 @@ export function renderLesson(lesson) {
               <div class="archival-source-split-layout">
                 <div class="archival-source-media-col">
                   ${srcs.map((src) => `<img src="${getAssetUrl(src)}" alt="${lesson.primary_source.title}" data-action="open-modal" data-src="${getAssetUrl(src)}" style="cursor: zoom-in;">`).join('')}
-                  <div class="archival-source-inspect-badge">
-                    <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
-                    <span>Pan-Zoom</span>
-                  </div>
                 </div>
                 <div class="archival-source-details-col">
                   <div>
@@ -6310,10 +6298,6 @@ export function renderLesson(lesson) {
                              <div class="archival-source-split-layout">
                                <div class="archival-source-media-col">
                                  <img src="${imgSrc}" alt="${displayCaption}" style="width: 100%; max-height: 380px; object-fit: contain; background: #fff; border-radius: 6px; box-shadow: 0 2px 5px rgba(0,0,0,0.08); border: 1px solid #cbd5e1; cursor: zoom-in;" data-action="open-gallery" data-gallery="${galleryData}" data-index="${idx}">
-                                 <div class="archival-source-inspect-badge">
-                                   <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
-                                    <span>Pan-Zoom</span>
-                                 </div>
                                  ${
                                    !isKs2
                                      ? `<div class="archival-media-provenance" style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 8px; font-size: 0.74rem; line-height: 1.35; color: #94a3b8; text-align: left;">
@@ -6813,10 +6797,6 @@ export function renderLesson(lesson) {
                       </div>
                       <div style="position: relative; width: 100%; display: flex; justify-content: center; background: #f8fafc; border-radius: 4px; overflow: hidden;">
                         <img src="${plateImgUrl}" alt="${plate.title || `Plate ${pIdx + 1}`}" data-action="open-modal" data-src="${plateImgUrl}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: 200px; object-fit: contain; display: block; border-radius: 4px;">
-                        <div class="archival-source-inspect-badge">
-                          <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
-                          <span>Pan-Zoom</span>
-                        </div>
                       </div>
                       ${plate.caption ? `<div style="font-size: 0.78rem; color: #475569; margin-top: 6px; line-height: 1.35; font-style: italic;">${plate.caption}</div>` : ''}
                     </div>
@@ -6831,10 +6811,6 @@ export function renderLesson(lesson) {
               <div class="archival-source-media-col${isKs2 ? ' ks2-source-media-col' : ''}">
                 <div style="position: relative; width: 100%; display: flex; justify-content: center;">
                   <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" ${rawSource.default_zoom || rawSource.defaultZoom || (rawSourceImgUrl && rawSourceImgUrl.includes('vesalius_fabrica_frontispiece')) ? `data-default-zoom="${rawSource.default_zoom || rawSource.defaultZoom || '2x'}"` : ''} style="cursor: zoom-in; width: auto; max-width: 100%; max-height: ${isKs2 ? '380px' : '280px'}; object-fit: contain; display: block; border-radius: 6px;">
-                  <div class="archival-source-inspect-badge">
-                    <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
-                    <span>Pan-Zoom</span>
-                  </div>
                 </div>
                 ${examSpotlightBtn}
                 ${primaryProvenanceHtml}
@@ -9876,10 +9852,6 @@ export function renderLesson(lesson) {
                   <div style="display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 12px;">
                     <div style="flex: 0 0 280px; max-width: 320px; position: relative; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
                       <img src="${stimImgUrl}" alt="${cleanSourceTitle || 'Source ' + srcLetter}" data-action="open-modal" data-src="${stimImgUrl}" style="cursor: zoom-in; width: auto; max-width: 100%; max-height: 240px; object-fit: contain; display: block; margin: 0 auto; border-radius: 4px;">
-                      <div class="archival-source-inspect-badge" style="position: absolute; bottom: 12px; right: 12px; background: rgba(15, 23, 42, 0.75); color: #fff; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; pointer-events: none; display: inline-flex; align-items: center; gap: 4px;">
-                        <i class="fa-solid fa-magnifying-glass-plus" style="font-size: 0.65rem; color: #93c5fd;"></i>
-                        <span>Pan-Zoom</span>
-                      </div>
                     </div>
                     <div style="flex: 1 1 300px;">
                       ${
