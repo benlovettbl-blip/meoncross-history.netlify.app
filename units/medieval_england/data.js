@@ -445,6 +445,8 @@ const medieval_england_data = {
             connective:
               'Prompted the Anglo-Saxon Witan council to swiftly elect Harold Godwinson, triggering furious invasion preparations from rival claimants in Norway and Normandy.',
             question: 'Why did the death of Edward the Confessor trigger a succession crisis?',
+            para_ref: '[1.1]',
+            paraRef: '[1.1]',
           },
           {
             step: 2,
@@ -457,6 +459,8 @@ const medieval_england_data = {
             connective:
               'Forced England into a two-front defence, forcing Harold to guard the southern coast against Normandy while Viking invaders massed across the North Sea.',
             question: 'Who were the three rival claimants contending for the English crown?',
+            para_ref: '[1.2]',
+            paraRef: '[1.2]',
           },
           {
             step: 3,
@@ -470,6 +474,8 @@ const medieval_england_data = {
               'Eliminated the Viking threat, but left Harold’s elite housecarls decimated and forced a gruelling return march south just as Duke William landed at Pevensey.',
             question:
               'How did the Battle of Stamford Bridge exhaust King Harold’s northern forces?',
+            para_ref: '[1.3]',
+            paraRef: '[1.3]',
           },
           {
             step: 4,
@@ -483,6 +489,8 @@ const medieval_england_data = {
               'Repulsed wave after wave of Norman cavalry and infantry charges for over six hours, threatening Duke William with catastrophic tactical failure.',
             question:
               'How did the Anglo-Saxon shield wall withstand repeated Norman charges on Senlac Hill?',
+            para_ref: '[1.4]',
+            paraRef: '[1.4]',
           },
           {
             step: 5,
@@ -496,6 +504,8 @@ const medieval_england_data = {
               'Decimated the fractured shield wall, killed King Harold, and decisively handed the English Crown to William the Conqueror.',
             question:
               'How did the feigned retreat tactic break the shield wall and secure Norman victory?',
+            para_ref: '[1.5]',
+            paraRef: '[1.5]',
           },
         ],
       },
@@ -1346,6 +1356,8 @@ const medieval_england_data = {
               'Allowed tiny garrisons of heavily armed knights to dominate vast hostile populations, surveil river routes, and rapidly crush local insurgencies.',
             question:
               'How did the motte-and-bailey blitz allow 10,000 Normans to dominate 2 million Saxons?',
+            para_ref: '[2.1]',
+            paraRef: '[2.1]',
           },
           {
             step: 2,
@@ -1358,6 +1370,8 @@ const medieval_england_data = {
             connective:
               'Burned crops, slaughtered herds, and salted fields, causing over 100,000 peasants to starve and permanently eliminating the North as a centre of rebellion.',
             question: 'Why did William unleash the brutal scorched-earth Harrying of the North?',
+            para_ref: '[2.2]',
+            paraRef: '[2.2]',
           },
           {
             step: 3,
@@ -1371,6 +1385,8 @@ const medieval_england_data = {
               'Projected permanent imperial authority over strategic harbours, ensuring sea communications with the Duchy of Normandy remained secure.',
             question:
               'How did massive stone keeps like Portchester Castle project permanent imperial permanence?',
+            para_ref: '[2.3]',
+            paraRef: '[2.3]',
           },
           {
             step: 4,
@@ -1384,6 +1400,8 @@ const medieval_england_data = {
               'Catalogued every hide of land, mill, pig, and ox, providing the Crown with an inescapable tax ledger and sealing Norman administrative dominance.',
             question:
               'Why did William commission the exhaustive Domesday Book audit at Gloucester?',
+            para_ref: '[2.4]',
+            paraRef: '[2.4]',
           },
           {
             step: 5,
@@ -1397,6 +1415,8 @@ const medieval_england_data = {
               'Enshrined the feudal pyramid where all land belonged to the Crown, locking the English peasantry into centuries of manorial serfdom.',
             question:
               'What does the local Domesday hundred reveal about Anglo-Saxon land dispossession?',
+            para_ref: '[2.5]',
+            paraRef: '[2.5]',
           },
         ],
       },
@@ -2279,6 +2299,8 @@ const medieval_england_data = {
               'Sought to install a pliable royal puppet who would bring the wealthy English Catholic Church firmly under royal Crown control.',
             question:
               'Why did Henry II appoint his worldly drinking companion Becket as Archbishop?',
+            para_ref: '[3.1]',
+            paraRef: '[3.1]',
           },
           {
             step: 2,
@@ -2291,6 +2313,8 @@ const medieval_england_data = {
             connective:
               'Shattered Henry’s political strategy, turning his closest royal friend into an unbending champion of papal independence and ecclesiastical immunity.',
             question: 'How did Becket’s sudden spiritual transformation shock King Henry?',
+            para_ref: '[3.2]',
+            paraRef: '[3.2]',
           },
           {
             step: 3,
@@ -2304,6 +2328,8 @@ const medieval_england_data = {
               'Provoked Becket to refuse royal jurisdiction, triggering a constitutional crisis that forced Becket to flee secretly into a six-year French exile.',
             question:
               'Why did the Constitutions of Clarendon and ‘criminous clerks’ provoke an open rift?',
+            para_ref: '[3.3]',
+            paraRef: '[3.3]',
           },
           {
             step: 4,
@@ -2316,6 +2342,8 @@ const medieval_england_data = {
             connective:
               'Shocked Christian Europe, turned Becket into an instant international martyr, and severely endangered Henry II’s continental empire with excommunication.',
             question: 'How did royal rage culminate in brutal murder in Canterbury Cathedral?',
+            para_ref: '[3.4]',
+            paraRef: '[3.4]',
           },
           {
             step: 5,
@@ -2328,6 +2356,8 @@ const medieval_england_data = {
             connective:
               'Secured papal absolution, but forced the Crown to abandon the Constitutions of Clarendon and left Church courts exempt from royal control until the Tudors.',
             question: 'Why was Henry II forced to perform barefoot public penance at Canterbury?',
+            para_ref: '[3.5]',
+            paraRef: '[3.5]',
           },
         ],
       },
@@ -3206,6 +3236,8 @@ const medieval_england_data = {
               'Deprived the English Crown of its ancestral continental heartland and made John fanatically obsessed with wringing silver from English barons to fund reconquest.',
             question:
               'Why did the loss of Normandy earn King John the mocking nickname ‘Softsword’?',
+            para_ref: '[4.1]',
+            paraRef: '[4.1]',
           },
           {
             step: 2,
@@ -3218,6 +3250,8 @@ const medieval_england_data = {
             connective:
               'Silenced church bells, left the dead unburied in ditches, and pushed deeply religious barons toward active conspiracy and open rebellion.',
             question: 'How did scutage tax extortion and the papal interdict alienate the realm?',
+            para_ref: '[4.2]',
+            paraRef: '[4.2]',
           },
           {
             step: 3,
@@ -3231,6 +3265,8 @@ const medieval_england_data = {
               'Emptied the royal treasury, obliterated John’s military prestige, and left him bankrupt and helpless when armed barons captured London in May 1215.',
             question:
               'How did the catastrophic defeat at the Battle of Bouvines shatter John’s authority?',
+            para_ref: '[4.3]',
+            paraRef: '[4.3]',
           },
           {
             step: 4,
@@ -3243,6 +3279,8 @@ const medieval_england_data = {
             connective:
               'Established the revolutionary constitutional principle that the monarch is subject to the law, permanently restricting arbitrary royal tyranny.',
             question: 'What revolutionary legal principle was enshrined in Clause 39 at Runnymede?',
+            para_ref: '[4.4]',
+            paraRef: '[4.4]',
           },
           {
             step: 5,
@@ -3256,6 +3294,8 @@ const medieval_england_data = {
               'Prompted rebel barons to invite Prince Louis of France to take the throne, ending only with John’s sudden death and the charter’s reissuing by the regency.',
             question:
               'Why did the First Barons’ War erupt immediately after the charter was sealed?',
+            para_ref: '[4.5]',
+            paraRef: '[4.5]',
           },
         ],
       },
@@ -4105,6 +4145,8 @@ const medieval_england_data = {
             connective:
               'Decimated agricultural villages, emptied manors, and created an acute, unprecedented national labour shortage across the feudal countryside.',
             question: 'How did the Black Death wipe out nearly half the population of England?',
+            para_ref: '[5.1]',
+            paraRef: '[5.1]',
           },
           {
             step: 2,
@@ -4117,6 +4159,8 @@ const medieval_england_data = {
             connective:
               'Permanently weakened the economic grip of feudal landlords, giving ordinary peasants unprecedented bargaining power and social mobility.',
             question: 'Why did demographic collapse trigger an unprecedented economic power shift?',
+            para_ref: '[5.2]',
+            paraRef: '[5.2]',
           },
           {
             step: 3,
@@ -4130,6 +4174,8 @@ const medieval_england_data = {
               'Provoked bitter generational class resentment among rural workers, who defied the wage caps and forged underground networks of mutual resistance.',
             question:
               'How did the Statute of Labourers and sumptuary laws provoke bitter class resentment?',
+            para_ref: '[5.3]',
+            paraRef: '[5.3]',
           },
           {
             step: 4,
@@ -4143,6 +4189,8 @@ const medieval_england_data = {
               'Ignited armed insurrection when villagers drove royal tax collector John Bampton out of Brentwood, sparking a coordinated march on London.',
             question:
               'Why did the regressive Poll Taxes of 1377–1381 spark armed peasant uprising?',
+            para_ref: '[5.4]',
+            paraRef: '[5.4]',
           },
           {
             step: 5,
@@ -4156,6 +4204,8 @@ const medieval_england_data = {
               'Although Richard revoked his promises of freedom, Parliament abandoned future Poll Taxes, and serfdom withered away over the next century.',
             question:
               'How did the showdown at Smithfield shatter the myth of unquestioned feudal authority?',
+            para_ref: '[5.5]',
+            paraRef: '[5.5]',
           },
         ],
       },
@@ -4960,7 +5010,7 @@ const medieval_england_data = {
   edition: '3-Layer Pedagogical Architecture Gold Standard (2026)',
   homepage_background: '/images/medieval_england/source_b_bayeux_harold_death.jpg',
 };
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = medieval_england_data;
-}
+
+if (typeof window !== 'undefined') window.medieval_england_data = medieval_england_data;
+if (typeof module !== 'undefined') module.exports = medieval_england_data;
 export default medieval_england_data;

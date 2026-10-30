@@ -237,16 +237,14 @@ function buildNarrativeTextbookHtml() {
   });
 
   // Master Knowledge Retrieval Quiz (5 Enquiry Boxes matching the 5 textbook spreads)
-  const enquiry1Qs = UNIT_DATA.data.lessons[0].quiz.slice(10, 20).map((q) => q.q || q.question);
-  const enquiry2Qs = UNIT_DATA.data.lessons[1].quiz.slice(10, 20).map((q) => q.q || q.question);
-  const enquiry3Qs = UNIT_DATA.data.lessons[2].quiz.slice(10, 20).map((q) => q.q || q.question);
-  const enquiry4Qs = UNIT_DATA.data.lessons[3].quiz.slice(10, 20).map((q) => q.q || q.question);
-  const enquiry5PartAQs = UNIT_DATA.data.lessons[5].quiz
-    .slice(10, 20)
-    .map((q) => q.q || q.question); // Black Death
-  const enquiry5PartBQs = UNIT_DATA.data.lessons[6].quiz
-    .slice(10, 20)
-    .map((q) => q.q || q.question); // Peasants' Revolt
+  const qPack = UNIT_DATA.quizzing_pack || (UNIT_DATA.data && UNIT_DATA.data.quizzing_pack) || {};
+  const enquiries = qPack.enquiries || [];
+  const enquiry1Qs = (enquiries[0]?.questions || []).map((q) => q.q || q.question);
+  const enquiry2Qs = (enquiries[1]?.questions || []).map((q) => q.q || q.question);
+  const enquiry3Qs = (enquiries[2]?.questions || []).map((q) => q.q || q.question);
+  const enquiry4Qs = (enquiries[3]?.questions || []).map((q) => q.q || q.question);
+  const enquiry5PartAQs = (enquiries[4]?.questions || []).slice(0, 2).map((q) => q.q || q.question); // Black Death
+  const enquiry5PartBQs = (enquiries[4]?.questions || []).slice(2, 5).map((q) => q.q || q.question); // Peasants' Revolt
 
   let globalQNum = 1;
   function renderQList(questions) {

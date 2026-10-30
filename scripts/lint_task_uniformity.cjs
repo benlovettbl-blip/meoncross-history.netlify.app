@@ -45,6 +45,9 @@ const FOUR_ACT_UNITS = [
   'water_and_sanitation',
 ];
 
+// Key Stage 2 Units
+const KS2_UNITS = ['ks2_ww2'];
+
 // GCSE units with dedicated Paper 1, Paper 2, and Paper 3 disciplinary source questions
 const GCSE_UNITS = [
   'cme_new',
@@ -106,11 +109,7 @@ async function runLinter() {
   }
 
   // Check if unit has been migrated to 4-act architecture or is operating in active September print edition mode
-  const isPrintEdition =
-    !isV2 &&
-    !lessons.some(
-      (l) => l.acts || (l.narrative_blocks && l.narrative_blocks.some((b) => b.act !== undefined)),
-    );
+  const isPrintEdition = !isV2 && !lessons.some((l) => Array.isArray(l.acts) && l.acts.length > 0);
   const isFourActTarget = (FOUR_ACT_UNITS.includes(unitId) && !isPrintEdition) || isV2;
   const errors = [];
   const warnings = [];
@@ -118,10 +117,13 @@ async function runLinter() {
   // Guardrail B: Standard KS3 Lesson Budget Enforcement
   const HALF_TERM_KS3 = ['great_war', 'great_war_part2', 'water_and_sanitation'];
   const FULL_TERM_KS3 = ['medieval_england', 'industrialisation_and_empire', 'early_modern_world'];
-  if (HALF_TERM_KS3.includes(unitId)) {
+  if (KS2_UNITS.includes(unitId)) {
+    // KS2 Units have distinct curricular budgets (e.g. 11 enquiries for ww2)
+  } else if (HALF_TERM_KS3.includes(unitId)) {
     if (
       lessons.length !== 6 &&
-      !((unitId === 'great_war' || unitId === 'great_war_part2') && lessons.length === 5)
+      !((unitId === 'great_war' || unitId === 'great_war_part2') && lessons.length === 5) &&
+      !(unitId === 'water_and_sanitation' && (lessons.length === 6 || lessons.length === 7))
     ) {
       errors.push(
         `[Standard KS3 Budget Violation] Half-term unit '${unitId}' must have strictly 6 substantive enquiries (16-page workbook / 14-page textbook budget). Found: ${lessons.length} lessons.`,

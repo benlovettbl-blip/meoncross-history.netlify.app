@@ -1005,9 +1005,9 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 5,
     },
     lesson_7: {
-      page: 14,
-      endPage: 15,
-      spread: 'pp. 14–15',
+      page: 16,
+      endPage: 17,
+      spread: 'pp. 16–17',
       booklet: 'Pupil Workbook',
       unitId: 'water_and_sanitation',
       lessonIndex: 6,
