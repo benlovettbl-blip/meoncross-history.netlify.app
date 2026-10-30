@@ -1276,15 +1276,6 @@ window.openAnthologyModal = async function () {
       window.appStore.state &&
       window.appStore.state.activeUnitData?.poetry_dossiers);
 
-  if (!dossiers) {
-    try {
-      const mod = await import('../../units/trip_ypres/poetry_data.js');
-      dossiers = mod.poetryDossiers;
-    } catch (e) {
-      console.warn('Failed to load poetry dossiers dynamically:', e);
-    }
-  }
-
   if (!dossiers) return;
 
   const overlay = document.createElement('div');
