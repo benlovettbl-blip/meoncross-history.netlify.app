@@ -550,7 +550,7 @@ const monarchy_religion_power_data = {
           title: 'The Spark at Wittenberg (1517–1521)',
           text: '<span class="para-ref">[1.1]</span> In October 1517, a furious German monk named Martin Luther stormed up to the castle church in Wittenberg and nailed 95 fiery arguments to the oak door. Luther was disgusted by corrupt Catholic friars selling an <strong>indulgence</strong>—a printed certificate promising wealthy sinners that their deceased relatives would escape the agony of <strong>Purgatory</strong> for cash. Thanks to the newly invented printing press, Luther’s ideas swept across Europe like wildfire, triggering the Protestant <strong>Reformation</strong>. Luther boldly declared that ordinary Christians did not need priests or Latin rituals to reach God: faith and the Bible in their own language were enough. The Pope condemned Luther for wicked <strong>heresy</strong>, but German princes sheltered him, fracturing Western Christendom forever.',
           source: {
-            id: 'mrp_l1_src_a',
+            id: 'monarchy_religion_power_l1_src_a',
             letter: 'A',
             type: 'visual',
             src: '/images/martin_luther_portrait.jpg',
@@ -558,60 +558,62 @@ const monarchy_religion_power_data = {
             title:
               "Source A (Theological Schism): Martin Luther in Academic Doctor's Robes (Lucas Cranach the Elder, 1529)",
             caption:
-              "Lucas Cranach the Elder's iconic portrait of German reformer Martin Luther, who ignited the European Reformation by attacking the sale of papal indulgences in 1517.",
-            citation: 'Uffizi Gallery, Florence (Inv. 1890 n. 1150). Oil on panel, 1529.',
-            provenance:
-              'Painted in Wittenberg by Cranach, a close personal friend and artistic ally of Martin Luther.',
-            context:
-              "In 1517, German monk Martin Luther nailed his Ninety-Five Theses to Wittenberg church door, arguing that salvation was attained by faith alone (sola fide) rather than papal pardons. **Hinge Question:** Why did Martin Luther's attack on the Catholic Church spread like wildfire across Europe while earlier heretics had been easily suppressed?",
+              "Oil on panel by Lucas Cranach the Elder (St. Anne's Museum, Lübeck) depicting Martin Luther with Bible in hand, the catalyst of European Protestantism.",
+            author: 'Lucas Cranach the Elder',
+            date: '1529',
+            question_badge: 'THEOLOGICAL SCHISM & REFORMATION SPARK',
             question:
-              'Why did Martin Luther believe the Roman Catholic Church had corrupted the fundamental message of the Christian Gospels?',
-            hinge_question:
-              "Why did Martin Luther's attack on the Catholic Church spread like wildfire across Europe while earlier heretics had been easily suppressed?",
-            disciplinary_focus: 'THEOLOGICAL SCHISM',
-            utility_enquiry: {
-              question:
-                'Why did Martin Luther believe the Roman Catholic Church had corrupted the fundamental message of the Christian Gospels?',
-              model_answer:
-                'Luther argued that the Pope had monetized religion through corrupt indulgence sales, insisting that salvation was a free gift of divine grace found in scripture alone rather than through church rituals.',
-              content_inferences:
-                'Documents the revolutionary theological challenge that shattered the unified religious authority of Western Christendom.',
-              provenance_evaluation:
-                'Sympathetic portrait by a fellow Protestant reformer; portrays Luther as a solemn, scholarly doctor of theology rather than a reckless fanatic.',
-              context_limitations:
-                "Focuses on Luther's intellectual dignity, omitting the violent social unrest and peasant wars triggered by the spread of his doctrines.",
-              bullet_points: [
-                {
-                  label: 'Authority of Scripture',
-                  text: 'Luther rejected papal infallibility, demanding that all Christian teaching must be grounded strictly in the Bible rather than Vatican traditions.',
-                },
-                {
-                  label: 'Anti-Clerical Resentment',
-                  text: 'His writings resonated across northern Europe because local rulers resented sending massive tax revenues to Rome to fund Renaissance popes.',
-                },
-              ],
-              provenance_clues: [
-                'Author: Lucas Cranach the Elder, master Renaissance artist and chief visual publicist of the German Reformation.',
-                'Audience: German princes, university scholars, and the Protestant reading public.',
-                "Motive: To project Luther's spiritual integrity, piety, and learned biblical authority across Europe.",
-              ],
-            },
-            question_badge: 'THEOLOGICAL SCHISM',
+              "How does Cranach's portrait present Martin Luther as a courageous scholar-theologian rather than a rebellious heretic?",
             model_answer:
-              'Luther argued that the Pope had monetized religion through corrupt indulgence sales, insisting that salvation was a free gift of divine grace found in scripture alone rather than through church rituals.',
-            provenance_clues: [
-              'Author: Lucas Cranach the Elder, master Renaissance artist and chief visual publicist of the German Reformation.',
-              'Audience: German princes, university scholars, and the Protestant reading public.',
-              "Motive: To project Luther's spiritual integrity, piety, and learned biblical authority across Europe.",
-            ],
+              'Cranach depicts Luther wearing dignified academic robes and holding the Holy Scriptures, gazing firmly forward. This portrays him not as an anarchic heretic, but as an authoritative biblical scholar defending divine truth against corrupt papal indulgences.',
+            context:
+              'In October 1517, Martin Luther attacked papal corruption by circulating his 95 Theses in Wittenberg, sparking the Protestant Reformation across Europe.',
+            hinge_question:
+              "Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
+            teacher_notes: {
+              hinge_question:
+                "Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
+              source_context:
+                "Luther's 95 Theses attacked papal indulgence sales in 1517, sparking the European Protestant Reformation. **Hinge Question:** Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l1_src_a',
+              letter: 'A',
+              type: 'visual',
+              src: '/images/martin_luther_portrait.jpg',
+              image: '/images/martin_luther_portrait.jpg',
+              title:
+                "Source A (Theological Schism): Martin Luther in Academic Doctor's Robes (Lucas Cranach the Elder, 1529)",
+              caption:
+                "Oil on panel by Lucas Cranach the Elder (St. Anne's Museum, Lübeck) depicting Martin Luther with Bible in hand, the catalyst of European Protestantism.",
+              author: 'Lucas Cranach the Elder',
+              date: '1529',
+              question_badge: 'THEOLOGICAL SCHISM & REFORMATION SPARK',
+              question:
+                "How does Cranach's portrait present Martin Luther as a courageous scholar-theologian rather than a rebellious heretic?",
+              model_answer:
+                'Cranach depicts Luther wearing dignified academic robes and holding the Holy Scriptures, gazing firmly forward. This portrays him not as an anarchic heretic, but as an authoritative biblical scholar defending divine truth against corrupt papal indulgences.',
+              context:
+                'In October 1517, Martin Luther attacked papal corruption by circulating his 95 Theses in Wittenberg, sparking the Protestant Reformation across Europe.',
+              hinge_question:
+                "Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
+              teacher_notes: {
+                hinge_question:
+                  "Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
+                source_context:
+                  "Luther's 95 Theses attacked papal indulgence sales in 1517, sparking the European Protestant Reformation. **Hinge Question:** Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
+              },
+            },
+          ],
         },
         {
           act: 2,
           title: 'The King’s Dynastic Crisis (1525–1527)',
           text: '<span class="para-ref">[1.2]</span> Across the English Channel, King Henry VIII initially despised Luther, writing a book defending the Catholic sacraments that earned him the papal title <em>Defender of the Faith</em>. But by 1527, Henry faced an agonizing <strong>dynastic</strong> emergency. His Spanish wife, Catherine of Aragon, was past forty and had produced only one living child: a girl, Princess Mary. Convinced that England would collapse into bloody civil war without a legitimate male heir, Henry fell passionately in love with the clever, reform-minded Anne Boleyn. Believing his marriage was cursed by God because Catherine had previously been married to his deceased brother Arthur, Henry demanded an official <strong>annulment</strong> from Rome to ensure the Tudor royal <strong>succession</strong>.',
           source: {
-            id: 'mrp_l1_src_b',
+            id: 'monarchy_religion_power_l1_src_b',
             letter: 'B',
             type: 'visual',
             src: '/images/family_of_henry_viii_c1545.jpg',
@@ -619,54 +621,55 @@ const monarchy_religion_power_data = {
             title:
               'Source B (Dynastic Propaganda): The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545)',
             caption:
-              'Monumental dynastic allegory showing Henry VIII enthroned flanked by his deceased third wife Jane Seymour, his legitimate male heir Prince Edward, Princess Mary, and Princess Elizabeth.',
-            citation:
-              'Royal Collection Trust, Hampton Court Palace (RCIN 405796). Oil on canvas, c. 1545.',
-            provenance:
-              "Commissioned by the royal court toward the end of Henry VIII's reign to codify the Protestant Tudor line of succession.",
-            context:
-              "Henry broke with the Pope primarily because Catherine of Aragon failed to produce a surviving male heir. Having executed Anne Boleyn, Henry married Jane Seymour, who gave birth to Edward in 1537 before dying of fever. **Hinge Question:** How does this painting reveal that Henry VIII's break with Rome was driven by dynastic obsession rather than Protestant theology?",
+              'Allegorical dynastic painting (Royal Collection Trust) showing Henry VIII flanked by Jane Seymour and Prince Edward, with Mary and Philip (war) on the left and Elizabeth with Peace and Plenty on the right.',
+            author: 'English Court School Painter',
+            date: 'c. 1545',
+            question_badge: 'DYNASTIC SURVIVAL & TUDOR SUCCESSION',
             question:
-              "How does this allegorical portrait celebrate Henry VIII's desperate quest to secure an undisputed male succession for the Tudor dynasty?",
-            hinge_question:
-              "How does this painting reveal that Henry VIII's break with Rome was driven by dynastic obsession rather than Protestant theology?",
-            disciplinary_focus: 'DYNASTIC PROPAGANDA',
-            utility_enquiry: {
-              question:
-                "How does this allegorical portrait celebrate Henry VIII's desperate quest to secure an undisputed male succession for the Tudor dynasty?",
-              model_answer:
-                'Henry is seated in supreme majesty gesturing toward Prince Edward at his right hand, flanked by Jane Seymour—the only wife who gave him a living son—while Mary and Elizabeth stand in subordinate positions.',
-              content_inferences:
-                'Illustrates how Henry manipulated his wives and children in royal portraiture to project dynastic stability after decades of religious upheaval.',
-              provenance_evaluation:
-                "Official royal court painting; an ideological fabrication that depicts Jane Seymour alive years after her death to emphasize Edward's legitimacy.",
-              context_limitations:
-                'Completely erases Catherine of Aragon and Anne Boleyn, rewriting Tudor family history to present an orderly, unbroken royal lineage.',
-              bullet_points: [
-                {
-                  label: 'Primacy of the Male Heir',
-                  text: 'Prince Edward is placed on a raised platform immediately beside his father, confirming him as the sole lawful successor to the English throne.',
-                },
-                {
-                  label: 'Inclusion of the Excluded Daughters',
-                  text: 'Mary and Elizabeth are positioned in flanking doorways, reflecting the 1544 Succession Act that restored them to the line of succession after Edward.',
-                },
-              ],
-              provenance_clues: [
-                'Author: Unknown Whitehall palace court painter in the circle of Hans Holbein the Younger.',
-                'Audience: Visiting foreign ambassadors, noble courtiers, and royal councilors at Hampton Court.',
-                "Motive: To assert undisputed Tudor dynastic strength and deter foreign Catholic invasions after Henry's death.",
-              ],
-            },
-            question_badge: 'DYNASTIC PROPAGANDA',
+              'What does Source B reveal about why King Henry VIII was obsessed with securing a male heir?',
             model_answer:
-              'Henry is seated in supreme majesty gesturing toward Prince Edward at his right hand, flanked by Jane Seymour—the only wife who gave him a living son—while Mary and Elizabeth stand in subordinate positions.',
-            provenance_clues: [
-              'Author: Unknown Whitehall palace court painter in the circle of Hans Holbein the Younger.',
-              'Audience: Visiting foreign ambassadors, noble courtiers, and royal councilors at Hampton Court.',
-              "Motive: To assert undisputed Tudor dynastic strength and deter foreign Catholic invasions after Henry's death.",
-            ],
+              "The painting places young Prince Edward at the absolute centre alongside Henry and the deceased Jane Seymour. This demonstrates Henry's conviction that only a male Tudor heir could guarantee dynastic legitimacy and prevent England from descending into renewed civil war.",
+            context:
+              "Henry VIII's desperate quest for a legitimate male heir led him to seek the annulment of his marriage to Catherine of Aragon, triggering the Break with Rome.",
+            hinge_question:
+              "Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
+            teacher_notes: {
+              hinge_question:
+                "Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
+              source_context:
+                "Henry's obsession with a male heir led to his marriage annulment and break from the Catholic Church. **Hinge Question:** Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l1_src_b',
+              letter: 'B',
+              type: 'visual',
+              src: '/images/family_of_henry_viii_c1545.jpg',
+              image: '/images/family_of_henry_viii_c1545.jpg',
+              title:
+                'Source B (Dynastic Propaganda): The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545)',
+              caption:
+                'Allegorical dynastic painting (Royal Collection Trust) showing Henry VIII flanked by Jane Seymour and Prince Edward, with Mary and Philip (war) on the left and Elizabeth with Peace and Plenty on the right.',
+              author: 'English Court School Painter',
+              date: 'c. 1545',
+              question_badge: 'DYNASTIC SURVIVAL & TUDOR SUCCESSION',
+              question:
+                'What does Source B reveal about why King Henry VIII was obsessed with securing a male heir?',
+              model_answer:
+                "The painting places young Prince Edward at the absolute centre alongside Henry and the deceased Jane Seymour. This demonstrates Henry's conviction that only a male Tudor heir could guarantee dynastic legitimacy and prevent England from descending into renewed civil war.",
+              context:
+                "Henry VIII's desperate quest for a legitimate male heir led him to seek the annulment of his marriage to Catherine of Aragon, triggering the Break with Rome.",
+              hinge_question:
+                "Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
+              teacher_notes: {
+                hinge_question:
+                  "Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
+                source_context:
+                  "Henry's obsession with a male heir led to his marriage annulment and break from the Catholic Church. **Hinge Question:** Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
+              },
+            },
+          ],
         },
         {
           act: 3,
@@ -678,7 +681,7 @@ const monarchy_religion_power_data = {
           caption:
             'Cardinal Thomas Wolsey (c. 1473–1530), Lord Chancellor and Archbishop of York, charged by Henry VIII with securing the papal annulment from Pope Clement VII (National Portrait Gallery, London / NPG 320).',
           source: {
-            id: 'mrp_l1_src_c',
+            id: 'monarchy_religion_power_l1_src_c',
             letter: 'C',
             type: 'visual',
             src: '/images/henry_viii.jpg',
@@ -686,54 +689,55 @@ const monarchy_religion_power_data = {
             title:
               'Source C (Monarchical Supremacy): Portrait of King Henry VIII (Hans Holbein the Younger, c. 1537)',
             caption:
-              "Hans Holbein the Younger's definitive portrait of King Henry VIII standing broad-shouldered, hands on hips and dagger, projecting intimidating physical dominance and absolute royal supremacy.",
-            citation:
-              'Walker Art Gallery, National Museums Liverpool (WAG 1350) / Royal Collection.',
-            provenance:
-              'Workshop of Hans Holbein the Younger, derived from the celebrated Whitehall Palace dynastic privy chamber mural (1537).',
-            context:
-              "Following the 1534 Act of Supremacy, Henry declared himself 'the only supreme head in earth of the Church of England'. Anyone who refused the oath, like Sir Thomas More, was beheaded for treason. **Hinge Question:** Why did Holbein paint Henry VIII looking directly at the viewer with legs apart and fists clenched?",
+              'Monumental royal portrait by Hans Holbein the Younger (Walker Art Gallery, Liverpool), projecting absolute monarchical majesty, physical bulk, and sovereign defiance.',
+            author: 'Hans Holbein the Younger',
+            date: 'c. 1537',
+            question_badge: 'SOVEREIGN MAJESTY & IMPERIAL KINGSHIP',
             question:
-              "How did Hans Holbein use posture, clothing, and proportion in this portrait to project Henry VIII's absolute political and religious power?",
-            hinge_question:
-              'Why did Holbein paint Henry VIII looking directly at the viewer with legs apart and fists clenched?',
-            disciplinary_focus: 'MONARCHICAL SUPREMACY',
-            utility_enquiry: {
-              question:
-                "How did Hans Holbein use posture, clothing, and proportion in this portrait to project Henry VIII's absolute political and religious power?",
-              model_answer:
-                "Holbein widened Henry's shoulders with padded ermine fur, exaggerated his broad stance and prominent codpiece, and had him stare aggressively at the viewer to project unchallengeable masculine authority and royal power.",
-              content_inferences:
-                'Documents how Renaissance visual artistry was marshaled to forge an intimidating cult of personality around an absolute monarch.',
-              provenance_evaluation:
-                'The official master template for Tudor royal authority; replicated across aristocratic estates to demand loyalty to the Crown.',
-              context_limitations:
-                "Flattering state propaganda that concealed Henry's ulcerated legs, severe obesity, and volatile paranoia in his later years.",
-              bullet_points: [
-                {
-                  label: 'Imposing Physical Presence',
-                  text: 'Henry fills the entire frame from edge to edge, projecting immense physical strength and daring subjects to question his will.',
-                },
-                {
-                  label: 'Symbols of Sovereign Wealth',
-                  text: 'Gold embroidery, ruby rings, and jeweled daggers reflected the vast wealth seized from dissolved monasteries and asserted imperial majesty.',
-                },
-              ],
-              provenance_clues: [
-                "Author: Hans Holbein the Younger, King's Painter and master northern Renaissance portraitist.",
-                'Audience: English subjects, aristocratic courtiers, and foreign monarchs (Francis I and Charles V).',
-                'Motive: To project Henry as a fearless, unshakeable ruler who had successfully broken with the papacy.',
-              ],
-            },
-            question_badge: 'MONARCHICAL SUPREMACY',
+              "How does Holbein use posture and imperial symbolism to convey Henry VIII's supreme royal authority over both Church and State?",
             model_answer:
-              "Holbein widened Henry's shoulders with padded ermine fur, exaggerated his broad stance and prominent codpiece, and had him stare aggressively at the viewer to project unchallengeable masculine authority and royal power.",
-            provenance_clues: [
-              "Author: Hans Holbein the Younger, King's Painter and master northern Renaissance portraitist.",
-              'Audience: English subjects, aristocratic courtiers, and foreign monarchs (Francis I and Charles V).',
-              'Motive: To project Henry as a fearless, unshakeable ruler who had successfully broken with the papacy.',
-            ],
+              'Holbein paints Henry frontally with legs braced apart, opulent jewel-encrusted robes, and hands grasping a dagger and gloves. This imposing stance projects unyielding power, communicating that Henry acknowledged no earthly or papal superior over the English kingdom.',
+            context:
+              'Following the Break with Rome, Henry used royal portraiture to project supreme imperium, styling himself as an Old Testament king and Supreme Head of the Church.',
+            hinge_question:
+              "How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
+            teacher_notes: {
+              hinge_question:
+                "How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
+              source_context:
+                "Holbein's iconic portrait projected Henry's supreme sovereignty over Church and State. **Hinge Question:** How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l1_src_c',
+              letter: 'C',
+              type: 'visual',
+              src: '/images/henry_viii.jpg',
+              image: '/images/henry_viii.jpg',
+              title:
+                'Source C (Monarchical Supremacy): Portrait of King Henry VIII (Hans Holbein the Younger, c. 1537)',
+              caption:
+                'Monumental royal portrait by Hans Holbein the Younger (Walker Art Gallery, Liverpool), projecting absolute monarchical majesty, physical bulk, and sovereign defiance.',
+              author: 'Hans Holbein the Younger',
+              date: 'c. 1537',
+              question_badge: 'SOVEREIGN MAJESTY & IMPERIAL KINGSHIP',
+              question:
+                "How does Holbein use posture and imperial symbolism to convey Henry VIII's supreme royal authority over both Church and State?",
+              model_answer:
+                'Holbein paints Henry frontally with legs braced apart, opulent jewel-encrusted robes, and hands grasping a dagger and gloves. This imposing stance projects unyielding power, communicating that Henry acknowledged no earthly or papal superior over the English kingdom.',
+              context:
+                'Following the Break with Rome, Henry used royal portraiture to project supreme imperium, styling himself as an Old Testament king and Supreme Head of the Church.',
+              hinge_question:
+                "How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
+              teacher_notes: {
+                hinge_question:
+                  "How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
+                source_context:
+                  "Holbein's iconic portrait projected Henry's supreme sovereignty over Church and State. **Hinge Question:** How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
+              },
+            },
+          ],
         },
         {
           act: 4,
@@ -744,7 +748,7 @@ const monarchy_religion_power_data = {
           caption:
             "Thomas Cromwell (c. 1485–1540), Earl of Essex and King Henry VIII's chief minister, who orchestrated the statutory break with Rome via the Reformation Parliament (Hans Holbein the Younger, 1532–1533, The Frick Collection, New York / Accession 1915.1.79).",
           source: {
-            id: 'mrp_l1_src_d',
+            id: 'monarchy_religion_power_l1_src_d',
             letter: 'D',
             type: 'visual',
             src: '/images/great_bible_frontispiece.jpg',
@@ -752,61 +756,62 @@ const monarchy_religion_power_data = {
             title:
               'Source D (Vernacular Scripture & Statecraft): Title Page of the Great Bible (Hans Holbein the Younger, 1539)',
             caption:
-              'The engraved woodcut title page of the Great Bible, depicting King Henry VIII receiving the Word of God directly from Heaven and handing it down to Archbishop Thomas Cranmer and Thomas Cromwell.',
-            citation:
-              'British Library, Rare Books (C.18.d.10). Woodcut frontispiece, London, 1539.',
-            provenance:
-              'Commissioned by Thomas Cromwell and printed in London in 1539 under royal patent.',
-            context:
-              "In 1538, Cromwell ordered that every parish church in England must purchase a copy of the English Bible. Holbein's frontispiece illustrated the new religious hierarchy: God spoke to Henry, who instructed the church and nobility, while the crowd below cried 'God save the King'. **Hinge Question:** Why did distributing the Bible in English increase the King's political power rather than weakening it?",
+              'Woodcut title page of the Great Bible (British Library), showing King Henry VIII receiving the Word of God directly and distributing it downward to Archbishop Cranmer and Cromwell.',
+            author: 'Hans Holbein the Younger / Thomas Cromwell',
+            date: '1539',
+            question_badge: 'STATE-SANCTIONED REFORMATION & HIERARCHY',
             question:
-              "How does the frontispiece of the Great Bible visually assert Henry VIII's supreme authority over both church and state?",
-            hinge_question:
-              "Why did distributing the Bible in English increase the King's political power rather than weakening it?",
-            disciplinary_focus: 'VERNACULAR SCRIPTURE',
-            utility_enquiry: {
-              question:
-                "How does the frontispiece of the Great Bible visually assert Henry VIII's supreme authority over both church and state?",
-              model_answer:
-                "Henry VIII is seated on a towering throne receiving the Word of God directly from Heaven, while handing copies down to Archbishop Cranmer and Vicegerent Cromwell, while common subjects below shout 'Vivat Rex' (Long Live the King).",
-              content_inferences:
-                'Proves that the English Reformation subordinated the clergy entirely to royal state authority, replacing the Pope with the monarch.',
-              provenance_evaluation:
-                'Official state-mandated artwork seen by every parishioner in England; an unparalleled vehicle for Tudor religious propaganda.',
-              context_limitations:
-                'Portrays universal joy and loyalty, concealing widespread popular resistance such as the Pilgrimage of Grace (1536) against religious changes.',
-              bullet_points: [
-                {
-                  label: 'Divine Right of the Supreme Head',
-                  text: 'The Pope is completely absent; Henry receives divine scripture directly from God, eliminating 1,000 years of papal mediation.',
-                },
-                {
-                  label: 'Obedient Social Hierarchy',
-                  text: 'Nobles, bishops, and imprisoned debtors all shout praise to the King, presenting obedience to the Crown as a religious duty.',
-                },
-              ],
-              provenance_clues: [
-                'Author: Hans Holbein the Younger, commissioned by Vicar-General Thomas Cromwell.',
-                'Audience: English clergy, churchwardens, and parishioners across every parish in England.',
-                'Motive: To instruct ordinary people that royal supremacy was ordained by God and that reading the English Bible required loyalty to Henry.',
-              ],
-            },
-            question_badge: 'VERNACULAR SCRIPTURE',
+              'How does the frontispiece of the Great Bible illustrate the new hierarchy of power established by the Henrician Reformation?',
             model_answer:
-              "Henry VIII is seated on a towering throne receiving the Word of God directly from Heaven, while handing copies down to Archbishop Cranmer and Vicegerent Cromwell, while common subjects below shout 'Vivat Rex' (Long Live the King).",
-            provenance_clues: [
-              'Author: Hans Holbein the Younger, commissioned by Vicar-General Thomas Cromwell.',
-              'Audience: English clergy, churchwardens, and parishioners across every parish in England.',
-              'Motive: To instruct ordinary people that royal supremacy was ordained by God and that reading the English Bible required loyalty to Henry.',
-            ],
+              "God appears at the top passing scripture directly to King Henry, completely bypassing the Pope. Henry distributes the Bible to Cranmer (clergy) and Cromwell (nobility), while ordinary subjects shout 'Vivat Rex!' below. This frames the King as God's sole terrestrial vicar on earth.",
+            context:
+              'In 1538, Cromwell ordered every parish church in England to purchase a copy of the English Great Bible, placing vernacular scripture under royal oversight.',
+            hinge_question:
+              'Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
+            teacher_notes: {
+              hinge_question:
+                'Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
+              source_context:
+                'In 1539, the Great Bible placed English scripture under royal authority, bypassing Rome. **Hinge Question:** Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l1_src_d',
+              letter: 'D',
+              type: 'visual',
+              src: '/images/great_bible_frontispiece.jpg',
+              image: '/images/great_bible_frontispiece.jpg',
+              title:
+                'Source D (Vernacular Scripture & Statecraft): Title Page of the Great Bible (Hans Holbein the Younger, 1539)',
+              caption:
+                'Woodcut title page of the Great Bible (British Library), showing King Henry VIII receiving the Word of God directly and distributing it downward to Archbishop Cranmer and Cromwell.',
+              author: 'Hans Holbein the Younger / Thomas Cromwell',
+              date: '1539',
+              question_badge: 'STATE-SANCTIONED REFORMATION & HIERARCHY',
+              question:
+                'How does the frontispiece of the Great Bible illustrate the new hierarchy of power established by the Henrician Reformation?',
+              model_answer:
+                "God appears at the top passing scripture directly to King Henry, completely bypassing the Pope. Henry distributes the Bible to Cranmer (clergy) and Cromwell (nobility), while ordinary subjects shout 'Vivat Rex!' below. This frames the King as God's sole terrestrial vicar on earth.",
+              context:
+                'In 1538, Cromwell ordered every parish church in England to purchase a copy of the English Great Bible, placing vernacular scripture under royal oversight.',
+              hinge_question:
+                'Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
+              teacher_notes: {
+                hinge_question:
+                  'Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
+                source_context:
+                  'In 1539, the Great Bible placed English scripture under royal authority, bypassing Rome. **Hinge Question:** Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
+              },
+            },
+          ],
         },
         {
           act: 5,
           title: 'Royal Supremacy & Monastic Meltdown (1534–1540)',
           text: '<span class="para-ref">[1.5]</span> In November 1534, Parliament passed the historic <strong>Act of Supremacy</strong>, formally declaring King Henry VIII the sole "Supreme Head" of the Church of England. Refusing to swear the mandatory Oath of <strong>Supremacy</strong> was classified as high <strong>treason</strong>; Henry’s revered former Chancellor Sir Thomas More was promptly beheaded for remaining loyal to the Pope. Royal power was immense, but church wealth was even sweeter. Between 1536 and 1540, Cromwell orchestrated the systematic <strong>dissolution</strong> of over 800 Catholic monasteries, abbeys, and nunneries. Henry melted their lead roofs, confiscated their gold chalices, and sold their vast estates to wealthy nobles to fund national coastal defences and continental wars. Locally in Hampshire, Henry granted the dissolved Titchfield Abbey on the River Meon to his ruthless secretary Thomas Wriothesley, who demolished the abbey nave to construct "Place House"—a grand Tudor mansion whose four-turreted gatehouse still stands today. Along the coast, Henry used lead and stone stripped from dissolved religious houses to build Southsea Castle (1544) to defend Portsmouth Harbour.',
           source: {
-            id: 'mrp_l1_src_e',
+            id: 'monarchy_religion_power_l1_src_e',
             letter: 'E',
             type: 'visual',
             src: '/images/monarchy_religion_power/fountains_abbey_ruins.jpg',
@@ -814,86 +819,87 @@ const monarchy_religion_power_data = {
             title:
               'Source E (Dissolution & Appropriation): The Ruined Nave and Tower of Fountains Abbey (North Yorkshire)',
             caption:
-              "The majestic ruins of Fountains Abbey, once England's wealthiest Cistercian monastery, stripped of its lead roofs, glass, and stone during Henry VIII's Dissolution of the Monasteries (1539).",
-            citation:
-              'Historic England / National Trust (Heritage List Entry: 1000094). Fountains Abbey Estate.',
-            provenance:
-              'Suppressed and surrendered to royal commissioners on 26 November 1539; lands sold to merchant Sir Richard Gresham.',
-            context:
-              'Between 1536 and 1540, Henry VIII and Thomas Cromwell dissolved over 800 monasteries, confiscating lands generating £200,000 annually. Fountains Abbey was stripped for raw materials to finance coastal fortifications and foreign wars. **Hinge Question:** Did Henry VIII dissolve the monasteries out of genuine Protestant religious zeal, or simply to fund his wars against France and Scotland?',
+              'Remains of Fountains Abbey (UNESCO / National Trust), dissolved in 1539. Its lead roofs, stone fabric, and monastic estates were seized by the Crown to finance Tudor fortifications and royal patronage.',
+            author: 'Cistercian Master Masons / Dissolution Commissioners',
+            date: 'Dissolved November 1539',
+            question_badge: 'DISSOLUTION & REDISTRIBUTION OF WEALTH',
             question:
-              'What does the physical ruin of Fountains Abbey reveal about the radical transformation of wealth and religion during the Dissolution of the Monasteries?',
-            hinge_question:
-              'Did Henry VIII dissolve the monasteries out of genuine Protestant religious zeal, or simply to fund his wars against France and Scotland?',
-            disciplinary_focus: 'DISSOLUTION & APPROPRIATION',
-            utility_enquiry: {
-              question:
-                'What does the physical ruin of Fountains Abbey reveal about the radical transformation of wealth and religion during the Dissolution of the Monasteries?',
-              model_answer:
-                "The stripped roofs, demolished cloisters, and confiscated lead and stone reflect Cromwell's systematic plunder of monastic wealth, transferring vast estates to the Crown and creating a new class of loyal gentry landowners.",
-              content_inferences:
-                'Provides tangible architectural evidence of the permanent destruction of Roman Catholic institutional power in the English countryside.',
-              provenance_evaluation:
-                'Physical archaeological monument; an authentic witness to the state-directed dismantling of centuries of Catholic monastic culture.',
-              context_limitations:
-                'Modern romantic ruins mask the acute social catastrophe of 1539, which displaced monks and stripped local communities of charity, healthcare, and education.',
-              bullet_points: [
-                {
-                  label: 'Financial Confiscation',
-                  text: "Cromwell's Valor Ecclesiasticus surveyed every abbey, allowing the Crown to seize silver plate, bells, and timber to fund royal coastal forts.",
-                },
-                {
-                  label: 'Social Restructuring',
-                  text: 'Selling monastic lands to gentry families permanently bound the English ruling class to the Reformation, ensuring monasteries could never be restored.',
-                },
-              ],
-              provenance_clues: [
-                'Author: English Heritage / Cistercian architectural archaeological record.',
-                'Audience: Historians of the English Reformation and visitors to the historic ruins.',
-                "Motive: To preserve the physical evidence of Henry VIII's total suppression of England's Catholic monastic network.",
-              ],
-            },
-            question_badge: 'DISSOLUTION & APPROPRIATION',
+              'What does the physical destruction of monasteries like Fountains Abbey reveal about the consequences of the Dissolution?',
             model_answer:
-              "The stripped roofs, demolished cloisters, and confiscated lead and stone reflect Cromwell's systematic plunder of monastic wealth, transferring vast estates to the Crown and creating a new class of loyal gentry landowners.",
-            provenance_clues: [
-              'Author: English Heritage / Cistercian architectural archaeological record.',
-              'Audience: Historians of the English Reformation and visitors to the historic ruins.',
-              "Motive: To preserve the physical evidence of Henry VIII's total suppression of England's Catholic monastic network.",
+              "The stripped roofs and hollowed walls show the ruthless plunder of monastic wealth. Selling monastic land to gentry and nobility created a vested economic class committed to defending the Break with Rome, permanently ending the Catholic Church's independent economic power in England.",
+            context:
+              'Between 1536 and 1540, Thomas Cromwell dissolved over 800 monasteries, confiscating monastic revenues and redistributing vast estates to royal loyalists.',
+            hinge_question:
+              'Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
+            teacher_notes: {
+              hinge_question:
+                'Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
+              source_context:
+                'Between 1536 and 1540, Cromwell dissolved over 800 monasteries, enriching the Crown. **Hinge Question:** Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
+            },
+          },
+          photo_slider: {
+            type: 'photo_slider',
+            collapsible: true,
+            accordion_title: 'Local Fieldwork Study • Titchfield Abbey & The Dissolution',
+            tag: 'Tudor Dissolution & Landscape Forensics',
+            title: 'Titchfield Abbey: Monastic Grandeur to Tudor "Place House"',
+            description:
+              'Slide to compare the 1890s Ordnance Survey 25-inch survey with modern aerial topography. In 1537, Henry VIII granted the dissolved Premonstratensian abbey on the River Meon to his ruthless secretary Thomas Wriothesley, who demolished the abbey nave to construct "Place House"—a grand Tudor mansion whose four-turreted gatehouse still stands today. Stone and lead stripped from local religious houses were simultaneously used to construct Henry VIII\'s coastal Device Forts, including Southsea Castle (1544) guarding Portsmouth Harbour.',
+            before_image: '/images/titchfield/titchfield_abbey_historic_os_map_1890s.jpg',
+            before_label: '1890s OS 25-Inch Map (Abbey & Stew Ponds)',
+            after_image: '/images/titchfield/titchfield_abbey_modern_map.jpg',
+            after_label: 'Modern Street Map (Place House Ruins)',
+            satellite_image: '/images/titchfield/titchfield_abbey_modern_satellite.jpg',
+            satellite_label: 'Modern Satellite Aerial View',
+            links: [
+              {
+                label: 'English Heritage: History of Titchfield Abbey & Place House',
+                url: 'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/history/',
+                icon: 'fa-solid fa-landmark',
+              },
+              {
+                label: 'English Heritage: Southsea Castle (Henry VIII Device Fort)',
+                url: 'https://www.english-heritage.org.uk/visit/places/southsea-castle/',
+                icon: 'fa-solid fa-shield-halved',
+              },
             ],
           },
-        },
-        {
-          type: 'photo_slider',
-          collapsible: true,
-          accordion_title: 'Local Fieldwork Study • Titchfield Abbey & The Dissolution',
-          tag: 'Tudor Dissolution & Landscape Forensics',
-          title: 'Titchfield Abbey: Monastic Grandeur to Tudor "Place House"',
-          description:
-            'Slide to compare the 1890s Ordnance Survey 25-inch survey with modern aerial topography. In 1537, Henry VIII granted the dissolved Premonstratensian abbey on the River Meon to his ruthless secretary Thomas Wriothesley, who demolished the abbey nave to construct "Place House"—a grand Tudor mansion whose four-turreted gatehouse still stands today. Stone and lead stripped from local religious houses were simultaneously used to construct Henry VIII\'s coastal Device Forts, including Southsea Castle (1544) guarding Portsmouth Harbour.',
-          before_image: '/images/titchfield/titchfield_abbey_historic_os_map_1890s.jpg',
-          before_label: '1890s OS 25-Inch Map (Abbey & Stew Ponds)',
-          after_image: '/images/titchfield/titchfield_abbey_modern_map.jpg',
-          after_label: 'Modern Street Map (Place House Ruins)',
-          satellite_image: '/images/titchfield/titchfield_abbey_modern_satellite.jpg',
-          satellite_label: 'Modern Satellite Aerial View',
-          links: [
+          sources: [
             {
-              label: 'English Heritage: History of Titchfield Abbey & Place House',
-              url: 'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/history/',
-              icon: 'fa-solid fa-landmark',
-            },
-            {
-              label: 'English Heritage: Southsea Castle (Henry VIII Device Fort)',
-              url: 'https://www.english-heritage.org.uk/visit/places/southsea-castle/',
-              icon: 'fa-solid fa-shield-halved',
+              id: 'monarchy_religion_power_l1_src_e',
+              letter: 'E',
+              type: 'visual',
+              src: '/images/monarchy_religion_power/fountains_abbey_ruins.jpg',
+              image: '/images/monarchy_religion_power/fountains_abbey_ruins.jpg',
+              title:
+                'Source E (Dissolution & Appropriation): The Ruined Nave and Tower of Fountains Abbey (North Yorkshire)',
+              caption:
+                'Remains of Fountains Abbey (UNESCO / National Trust), dissolved in 1539. Its lead roofs, stone fabric, and monastic estates were seized by the Crown to finance Tudor fortifications and royal patronage.',
+              author: 'Cistercian Master Masons / Dissolution Commissioners',
+              date: 'Dissolved November 1539',
+              question_badge: 'DISSOLUTION & REDISTRIBUTION OF WEALTH',
+              question:
+                'What does the physical destruction of monasteries like Fountains Abbey reveal about the consequences of the Dissolution?',
+              model_answer:
+                "The stripped roofs and hollowed walls show the ruthless plunder of monastic wealth. Selling monastic land to gentry and nobility created a vested economic class committed to defending the Break with Rome, permanently ending the Catholic Church's independent economic power in England.",
+              context:
+                'Between 1536 and 1540, Thomas Cromwell dissolved over 800 monasteries, confiscating monastic revenues and redistributing vast estates to royal loyalists.',
+              hinge_question:
+                'Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
+              teacher_notes: {
+                hinge_question:
+                  'Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
+                source_context:
+                  'Between 1536 and 1540, Cromwell dissolved over 800 monasteries, enriching the Crown. **Hinge Question:** Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
+              },
             },
           ],
         },
       ],
       sources: [
         {
-          id: 'mrp_l1_src_a',
+          id: 'monarchy_religion_power_l1_src_a',
           letter: 'A',
           type: 'visual',
           src: '/images/martin_luther_portrait.jpg',
@@ -901,61 +907,27 @@ const monarchy_religion_power_data = {
           title:
             "Source A (Theological Schism): Martin Luther in Academic Doctor's Robes (Lucas Cranach the Elder, 1529)",
           caption:
-            "Lucas Cranach the Elder's iconic portrait of German reformer Martin Luther, who ignited the European Reformation by attacking the sale of papal indulgences in 1517.",
-          citation: 'Uffizi Gallery, Florence (Inv. 1890 n. 1150). Oil on panel, 1529.',
-          provenance:
-            'Painted in Wittenberg by Cranach, a close personal friend and artistic ally of Martin Luther.',
-          context:
-            "In 1517, German monk Martin Luther nailed his Ninety-Five Theses to Wittenberg church door, arguing that salvation was attained by faith alone (sola fide) rather than papal pardons. **Hinge Question:** Why did Martin Luther's attack on the Catholic Church spread like wildfire across Europe while earlier heretics had been easily suppressed?",
+            "Oil on panel by Lucas Cranach the Elder (St. Anne's Museum, Lübeck) depicting Martin Luther with Bible in hand, the catalyst of European Protestantism.",
+          author: 'Lucas Cranach the Elder',
+          date: '1529',
+          question_badge: 'THEOLOGICAL SCHISM & REFORMATION SPARK',
           question:
-            'Why did Martin Luther believe the Roman Catholic Church had corrupted the fundamental message of the Christian Gospels?',
-          hinge_question:
-            "Why did Martin Luther's attack on the Catholic Church spread like wildfire across Europe while earlier heretics had been easily suppressed?",
-          disciplinary_focus: 'THEOLOGICAL SCHISM',
-          utility_enquiry: {
-            question:
-              'Why did Martin Luther believe the Roman Catholic Church had corrupted the fundamental message of the Christian Gospels?',
-            model_answer:
-              'Luther argued that the Pope had monetized religion through corrupt indulgence sales, insisting that salvation was a free gift of divine grace found in scripture alone rather than through church rituals.',
-            content_inferences:
-              'Documents the revolutionary theological challenge that shattered the unified religious authority of Western Christendom.',
-            provenance_evaluation:
-              'Sympathetic portrait by a fellow Protestant reformer; portrays Luther as a solemn, scholarly doctor of theology rather than a reckless fanatic.',
-            context_limitations:
-              "Focuses on Luther's intellectual dignity, omitting the violent social unrest and peasant wars triggered by the spread of his doctrines.",
-            bullet_points: [
-              {
-                label: 'Authority of Scripture',
-                text: 'Luther rejected papal infallibility, demanding that all Christian teaching must be grounded strictly in the Bible rather than Vatican traditions.',
-              },
-              {
-                label: 'Anti-Clerical Resentment',
-                text: 'His writings resonated across northern Europe because local rulers resented sending massive tax revenues to Rome to fund Renaissance popes.',
-              },
-            ],
-            provenance_clues: [
-              'Author: Lucas Cranach the Elder, master Renaissance artist and chief visual publicist of the German Reformation.',
-              'Audience: German princes, university scholars, and the Protestant reading public.',
-              "Motive: To project Luther's spiritual integrity, piety, and learned biblical authority across Europe.",
-            ],
-          },
-          question_badge: 'THEOLOGICAL SCHISM',
+            "How does Cranach's portrait present Martin Luther as a courageous scholar-theologian rather than a rebellious heretic?",
           model_answer:
-            'Luther argued that the Pope had monetized religion through corrupt indulgence sales, insisting that salvation was a free gift of divine grace found in scripture alone rather than through church rituals.',
-          provenance_clues: [
-            'Author: Lucas Cranach the Elder, master Renaissance artist and chief visual publicist of the German Reformation.',
-            'Audience: German princes, university scholars, and the Protestant reading public.',
-            "Motive: To project Luther's spiritual integrity, piety, and learned biblical authority across Europe.",
-          ],
-          source_context:
-            "In 1517, German monk Martin Luther nailed his Ninety-Five Theses to Wittenberg church door, arguing that salvation was attained by faith alone (sola fide) rather than papal pardons. **Hinge Question:** Why did Martin Luther's attack on the Catholic Church spread like wildfire across Europe while earlier heretics had been easily suppressed?",
+            'Cranach depicts Luther wearing dignified academic robes and holding the Holy Scriptures, gazing firmly forward. This portrays him not as an anarchic heretic, but as an authoritative biblical scholar defending divine truth against corrupt papal indulgences.',
+          context:
+            'In October 1517, Martin Luther attacked papal corruption by circulating his 95 Theses in Wittenberg, sparking the Protestant Reformation across Europe.',
+          hinge_question:
+            "Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
           teacher_notes: {
+            hinge_question:
+              "Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
             source_context:
-              "In 1517, German monk Martin Luther nailed his Ninety-Five Theses to Wittenberg church door, arguing that salvation was attained by faith alone (sola fide) rather than papal pardons. **Hinge Question:** Why did Martin Luther's attack on the Catholic Church spread like wildfire across Europe while earlier heretics had been easily suppressed?",
+              "Luther's 95 Theses attacked papal indulgence sales in 1517, sparking the European Protestant Reformation. **Hinge Question:** Why was the invention of printing crucial for turning Luther's local protest into an unstoppable European revolution?",
           },
         },
         {
-          id: 'mrp_l1_src_b',
+          id: 'monarchy_religion_power_l1_src_b',
           letter: 'B',
           type: 'visual',
           src: '/images/family_of_henry_viii_c1545.jpg',
@@ -963,62 +935,27 @@ const monarchy_religion_power_data = {
           title:
             'Source B (Dynastic Propaganda): The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545)',
           caption:
-            'Monumental dynastic allegory showing Henry VIII enthroned flanked by his deceased third wife Jane Seymour, his legitimate male heir Prince Edward, Princess Mary, and Princess Elizabeth.',
-          citation:
-            'Royal Collection Trust, Hampton Court Palace (RCIN 405796). Oil on canvas, c. 1545.',
-          provenance:
-            "Commissioned by the royal court toward the end of Henry VIII's reign to codify the Protestant Tudor line of succession.",
-          context:
-            "Henry broke with the Pope primarily because Catherine of Aragon failed to produce a surviving male heir. Having executed Anne Boleyn, Henry married Jane Seymour, who gave birth to Edward in 1537 before dying of fever. **Hinge Question:** How does this painting reveal that Henry VIII's break with Rome was driven by dynastic obsession rather than Protestant theology?",
+            'Allegorical dynastic painting (Royal Collection Trust) showing Henry VIII flanked by Jane Seymour and Prince Edward, with Mary and Philip (war) on the left and Elizabeth with Peace and Plenty on the right.',
+          author: 'English Court School Painter',
+          date: 'c. 1545',
+          question_badge: 'DYNASTIC SURVIVAL & TUDOR SUCCESSION',
           question:
-            "How does this allegorical portrait celebrate Henry VIII's desperate quest to secure an undisputed male succession for the Tudor dynasty?",
-          hinge_question:
-            "How does this painting reveal that Henry VIII's break with Rome was driven by dynastic obsession rather than Protestant theology?",
-          disciplinary_focus: 'DYNASTIC PROPAGANDA',
-          utility_enquiry: {
-            question:
-              "How does this allegorical portrait celebrate Henry VIII's desperate quest to secure an undisputed male succession for the Tudor dynasty?",
-            model_answer:
-              'Henry is seated in supreme majesty gesturing toward Prince Edward at his right hand, flanked by Jane Seymour—the only wife who gave him a living son—while Mary and Elizabeth stand in subordinate positions.',
-            content_inferences:
-              'Illustrates how Henry manipulated his wives and children in royal portraiture to project dynastic stability after decades of religious upheaval.',
-            provenance_evaluation:
-              "Official royal court painting; an ideological fabrication that depicts Jane Seymour alive years after her death to emphasize Edward's legitimacy.",
-            context_limitations:
-              'Completely erases Catherine of Aragon and Anne Boleyn, rewriting Tudor family history to present an orderly, unbroken royal lineage.',
-            bullet_points: [
-              {
-                label: 'Primacy of the Male Heir',
-                text: 'Prince Edward is placed on a raised platform immediately beside his father, confirming him as the sole lawful successor to the English throne.',
-              },
-              {
-                label: 'Inclusion of the Excluded Daughters',
-                text: 'Mary and Elizabeth are positioned in flanking doorways, reflecting the 1544 Succession Act that restored them to the line of succession after Edward.',
-              },
-            ],
-            provenance_clues: [
-              'Author: Unknown Whitehall palace court painter in the circle of Hans Holbein the Younger.',
-              'Audience: Visiting foreign ambassadors, noble courtiers, and royal councilors at Hampton Court.',
-              "Motive: To assert undisputed Tudor dynastic strength and deter foreign Catholic invasions after Henry's death.",
-            ],
-          },
-          question_badge: 'DYNASTIC PROPAGANDA',
+            'What does Source B reveal about why King Henry VIII was obsessed with securing a male heir?',
           model_answer:
-            'Henry is seated in supreme majesty gesturing toward Prince Edward at his right hand, flanked by Jane Seymour—the only wife who gave him a living son—while Mary and Elizabeth stand in subordinate positions.',
-          provenance_clues: [
-            'Author: Unknown Whitehall palace court painter in the circle of Hans Holbein the Younger.',
-            'Audience: Visiting foreign ambassadors, noble courtiers, and royal councilors at Hampton Court.',
-            "Motive: To assert undisputed Tudor dynastic strength and deter foreign Catholic invasions after Henry's death.",
-          ],
-          source_context:
-            "Henry broke with the Pope primarily because Catherine of Aragon failed to produce a surviving male heir. Having executed Anne Boleyn, Henry married Jane Seymour, who gave birth to Edward in 1537 before dying of fever. **Hinge Question:** How does this painting reveal that Henry VIII's break with Rome was driven by dynastic obsession rather than Protestant theology?",
+            "The painting places young Prince Edward at the absolute centre alongside Henry and the deceased Jane Seymour. This demonstrates Henry's conviction that only a male Tudor heir could guarantee dynastic legitimacy and prevent England from descending into renewed civil war.",
+          context:
+            "Henry VIII's desperate quest for a legitimate male heir led him to seek the annulment of his marriage to Catherine of Aragon, triggering the Break with Rome.",
+          hinge_question:
+            "Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
           teacher_notes: {
+            hinge_question:
+              "Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
             source_context:
-              "Henry broke with the Pope primarily because Catherine of Aragon failed to produce a surviving male heir. Having executed Anne Boleyn, Henry married Jane Seymour, who gave birth to Edward in 1537 before dying of fever. **Hinge Question:** How does this painting reveal that Henry VIII's break with Rome was driven by dynastic obsession rather than Protestant theology?",
+              "Henry's obsession with a male heir led to his marriage annulment and break from the Catholic Church. **Hinge Question:** Was Henry VIII's break with Rome driven primarily by religious conviction, romantic passion, or dynastic survival?",
           },
         },
         {
-          id: 'mrp_l1_src_c',
+          id: 'monarchy_religion_power_l1_src_c',
           letter: 'C',
           type: 'visual',
           src: '/images/henry_viii.jpg',
@@ -1026,61 +963,27 @@ const monarchy_religion_power_data = {
           title:
             'Source C (Monarchical Supremacy): Portrait of King Henry VIII (Hans Holbein the Younger, c. 1537)',
           caption:
-            "Hans Holbein the Younger's definitive portrait of King Henry VIII standing broad-shouldered, hands on hips and dagger, projecting intimidating physical dominance and absolute royal supremacy.",
-          citation: 'Walker Art Gallery, National Museums Liverpool (WAG 1350) / Royal Collection.',
-          provenance:
-            'Workshop of Hans Holbein the Younger, derived from the celebrated Whitehall Palace dynastic privy chamber mural (1537).',
-          context:
-            "Following the 1534 Act of Supremacy, Henry declared himself 'the only supreme head in earth of the Church of England'. Anyone who refused the oath, like Sir Thomas More, was beheaded for treason. **Hinge Question:** Why did Holbein paint Henry VIII looking directly at the viewer with legs apart and fists clenched?",
+            'Monumental royal portrait by Hans Holbein the Younger (Walker Art Gallery, Liverpool), projecting absolute monarchical majesty, physical bulk, and sovereign defiance.',
+          author: 'Hans Holbein the Younger',
+          date: 'c. 1537',
+          question_badge: 'SOVEREIGN MAJESTY & IMPERIAL KINGSHIP',
           question:
-            "How did Hans Holbein use posture, clothing, and proportion in this portrait to project Henry VIII's absolute political and religious power?",
-          hinge_question:
-            'Why did Holbein paint Henry VIII looking directly at the viewer with legs apart and fists clenched?',
-          disciplinary_focus: 'MONARCHICAL SUPREMACY',
-          utility_enquiry: {
-            question:
-              "How did Hans Holbein use posture, clothing, and proportion in this portrait to project Henry VIII's absolute political and religious power?",
-            model_answer:
-              "Holbein widened Henry's shoulders with padded ermine fur, exaggerated his broad stance and prominent codpiece, and had him stare aggressively at the viewer to project unchallengeable masculine authority and royal power.",
-            content_inferences:
-              'Documents how Renaissance visual artistry was marshaled to forge an intimidating cult of personality around an absolute monarch.',
-            provenance_evaluation:
-              'The official master template for Tudor royal authority; replicated across aristocratic estates to demand loyalty to the Crown.',
-            context_limitations:
-              "Flattering state propaganda that concealed Henry's ulcerated legs, severe obesity, and volatile paranoia in his later years.",
-            bullet_points: [
-              {
-                label: 'Imposing Physical Presence',
-                text: 'Henry fills the entire frame from edge to edge, projecting immense physical strength and daring subjects to question his will.',
-              },
-              {
-                label: 'Symbols of Sovereign Wealth',
-                text: 'Gold embroidery, ruby rings, and jeweled daggers reflected the vast wealth seized from dissolved monasteries and asserted imperial majesty.',
-              },
-            ],
-            provenance_clues: [
-              "Author: Hans Holbein the Younger, King's Painter and master northern Renaissance portraitist.",
-              'Audience: English subjects, aristocratic courtiers, and foreign monarchs (Francis I and Charles V).',
-              'Motive: To project Henry as a fearless, unshakeable ruler who had successfully broken with the papacy.',
-            ],
-          },
-          question_badge: 'MONARCHICAL SUPREMACY',
+            "How does Holbein use posture and imperial symbolism to convey Henry VIII's supreme royal authority over both Church and State?",
           model_answer:
-            "Holbein widened Henry's shoulders with padded ermine fur, exaggerated his broad stance and prominent codpiece, and had him stare aggressively at the viewer to project unchallengeable masculine authority and royal power.",
-          provenance_clues: [
-            "Author: Hans Holbein the Younger, King's Painter and master northern Renaissance portraitist.",
-            'Audience: English subjects, aristocratic courtiers, and foreign monarchs (Francis I and Charles V).',
-            'Motive: To project Henry as a fearless, unshakeable ruler who had successfully broken with the papacy.',
-          ],
-          source_context:
-            "Following the 1534 Act of Supremacy, Henry declared himself 'the only supreme head in earth of the Church of England'. Anyone who refused the oath, like Sir Thomas More, was beheaded for treason. **Hinge Question:** Why did Holbein paint Henry VIII looking directly at the viewer with legs apart and fists clenched?",
+            'Holbein paints Henry frontally with legs braced apart, opulent jewel-encrusted robes, and hands grasping a dagger and gloves. This imposing stance projects unyielding power, communicating that Henry acknowledged no earthly or papal superior over the English kingdom.',
+          context:
+            'Following the Break with Rome, Henry used royal portraiture to project supreme imperium, styling himself as an Old Testament king and Supreme Head of the Church.',
+          hinge_question:
+            "How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
           teacher_notes: {
+            hinge_question:
+              "How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
             source_context:
-              "Following the 1534 Act of Supremacy, Henry declared himself 'the only supreme head in earth of the Church of England'. Anyone who refused the oath, like Sir Thomas More, was beheaded for treason. **Hinge Question:** Why did Holbein paint Henry VIII looking directly at the viewer with legs apart and fists clenched?",
+              "Holbein's iconic portrait projected Henry's supreme sovereignty over Church and State. **Hinge Question:** How did Holbein's visual propaganda help establish the concept of the 'Imperial Crown' of England?",
           },
         },
         {
-          id: 'mrp_l1_src_d',
+          id: 'monarchy_religion_power_l1_src_d',
           letter: 'D',
           type: 'visual',
           src: '/images/great_bible_frontispiece.jpg',
@@ -1088,61 +991,27 @@ const monarchy_religion_power_data = {
           title:
             'Source D (Vernacular Scripture & Statecraft): Title Page of the Great Bible (Hans Holbein the Younger, 1539)',
           caption:
-            'The engraved woodcut title page of the Great Bible, depicting King Henry VIII receiving the Word of God directly from Heaven and handing it down to Archbishop Thomas Cranmer and Thomas Cromwell.',
-          citation: 'British Library, Rare Books (C.18.d.10). Woodcut frontispiece, London, 1539.',
-          provenance:
-            'Commissioned by Thomas Cromwell and printed in London in 1539 under royal patent.',
-          context:
-            "In 1538, Cromwell ordered that every parish church in England must purchase a copy of the English Bible. Holbein's frontispiece illustrated the new religious hierarchy: God spoke to Henry, who instructed the church and nobility, while the crowd below cried 'God save the King'. **Hinge Question:** Why did distributing the Bible in English increase the King's political power rather than weakening it?",
+            'Woodcut title page of the Great Bible (British Library), showing King Henry VIII receiving the Word of God directly and distributing it downward to Archbishop Cranmer and Cromwell.',
+          author: 'Hans Holbein the Younger / Thomas Cromwell',
+          date: '1539',
+          question_badge: 'STATE-SANCTIONED REFORMATION & HIERARCHY',
           question:
-            "How does the frontispiece of the Great Bible visually assert Henry VIII's supreme authority over both church and state?",
-          hinge_question:
-            "Why did distributing the Bible in English increase the King's political power rather than weakening it?",
-          disciplinary_focus: 'VERNACULAR SCRIPTURE',
-          utility_enquiry: {
-            question:
-              "How does the frontispiece of the Great Bible visually assert Henry VIII's supreme authority over both church and state?",
-            model_answer:
-              "Henry VIII is seated on a towering throne receiving the Word of God directly from Heaven, while handing copies down to Archbishop Cranmer and Vicegerent Cromwell, while common subjects below shout 'Vivat Rex' (Long Live the King).",
-            content_inferences:
-              'Proves that the English Reformation subordinated the clergy entirely to royal state authority, replacing the Pope with the monarch.',
-            provenance_evaluation:
-              'Official state-mandated artwork seen by every parishioner in England; an unparalleled vehicle for Tudor religious propaganda.',
-            context_limitations:
-              'Portrays universal joy and loyalty, concealing widespread popular resistance such as the Pilgrimage of Grace (1536) against religious changes.',
-            bullet_points: [
-              {
-                label: 'Divine Right of the Supreme Head',
-                text: 'The Pope is completely absent; Henry receives divine scripture directly from God, eliminating 1,000 years of papal mediation.',
-              },
-              {
-                label: 'Obedient Social Hierarchy',
-                text: 'Nobles, bishops, and imprisoned debtors all shout praise to the King, presenting obedience to the Crown as a religious duty.',
-              },
-            ],
-            provenance_clues: [
-              'Author: Hans Holbein the Younger, commissioned by Vicar-General Thomas Cromwell.',
-              'Audience: English clergy, churchwardens, and parishioners across every parish in England.',
-              'Motive: To instruct ordinary people that royal supremacy was ordained by God and that reading the English Bible required loyalty to Henry.',
-            ],
-          },
-          question_badge: 'VERNACULAR SCRIPTURE',
+            'How does the frontispiece of the Great Bible illustrate the new hierarchy of power established by the Henrician Reformation?',
           model_answer:
-            "Henry VIII is seated on a towering throne receiving the Word of God directly from Heaven, while handing copies down to Archbishop Cranmer and Vicegerent Cromwell, while common subjects below shout 'Vivat Rex' (Long Live the King).",
-          provenance_clues: [
-            'Author: Hans Holbein the Younger, commissioned by Vicar-General Thomas Cromwell.',
-            'Audience: English clergy, churchwardens, and parishioners across every parish in England.',
-            'Motive: To instruct ordinary people that royal supremacy was ordained by God and that reading the English Bible required loyalty to Henry.',
-          ],
-          source_context:
-            "In 1538, Cromwell ordered that every parish church in England must purchase a copy of the English Bible. Holbein's frontispiece illustrated the new religious hierarchy: God spoke to Henry, who instructed the church and nobility, while the crowd below cried 'God save the King'. **Hinge Question:** Why did distributing the Bible in English increase the King's political power rather than weakening it?",
+            "God appears at the top passing scripture directly to King Henry, completely bypassing the Pope. Henry distributes the Bible to Cranmer (clergy) and Cromwell (nobility), while ordinary subjects shout 'Vivat Rex!' below. This frames the King as God's sole terrestrial vicar on earth.",
+          context:
+            'In 1538, Cromwell ordered every parish church in England to purchase a copy of the English Great Bible, placing vernacular scripture under royal oversight.',
+          hinge_question:
+            'Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
           teacher_notes: {
+            hinge_question:
+              'Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
             source_context:
-              "In 1538, Cromwell ordered that every parish church in England must purchase a copy of the English Bible. Holbein's frontispiece illustrated the new religious hierarchy: God spoke to Henry, who instructed the church and nobility, while the crowd below cried 'God save the King'. **Hinge Question:** Why did distributing the Bible in English increase the King's political power rather than weakening it?",
+              'In 1539, the Great Bible placed English scripture under royal authority, bypassing Rome. **Hinge Question:** Why did Henry VIII allow the Bible in English while brutally burning Protestants who challenged Catholic doctrine?',
           },
         },
         {
-          id: 'mrp_l1_src_e',
+          id: 'monarchy_religion_power_l1_src_e',
           letter: 'E',
           type: 'visual',
           src: '/images/monarchy_religion_power/fountains_abbey_ruins.jpg',
@@ -1150,58 +1019,23 @@ const monarchy_religion_power_data = {
           title:
             'Source E (Dissolution & Appropriation): The Ruined Nave and Tower of Fountains Abbey (North Yorkshire)',
           caption:
-            "The majestic ruins of Fountains Abbey, once England's wealthiest Cistercian monastery, stripped of its lead roofs, glass, and stone during Henry VIII's Dissolution of the Monasteries (1539).",
-          citation:
-            'Historic England / National Trust (Heritage List Entry: 1000094). Fountains Abbey Estate.',
-          provenance:
-            'Suppressed and surrendered to royal commissioners on 26 November 1539; lands sold to merchant Sir Richard Gresham.',
-          context:
-            'Between 1536 and 1540, Henry VIII and Thomas Cromwell dissolved over 800 monasteries, confiscating lands generating £200,000 annually. Fountains Abbey was stripped for raw materials to finance coastal fortifications and foreign wars. **Hinge Question:** Did Henry VIII dissolve the monasteries out of genuine Protestant religious zeal, or simply to fund his wars against France and Scotland?',
+            'Remains of Fountains Abbey (UNESCO / National Trust), dissolved in 1539. Its lead roofs, stone fabric, and monastic estates were seized by the Crown to finance Tudor fortifications and royal patronage.',
+          author: 'Cistercian Master Masons / Dissolution Commissioners',
+          date: 'Dissolved November 1539',
+          question_badge: 'DISSOLUTION & REDISTRIBUTION OF WEALTH',
           question:
-            'What does the physical ruin of Fountains Abbey reveal about the radical transformation of wealth and religion during the Dissolution of the Monasteries?',
-          hinge_question:
-            'Did Henry VIII dissolve the monasteries out of genuine Protestant religious zeal, or simply to fund his wars against France and Scotland?',
-          disciplinary_focus: 'DISSOLUTION & APPROPRIATION',
-          utility_enquiry: {
-            question:
-              'What does the physical ruin of Fountains Abbey reveal about the radical transformation of wealth and religion during the Dissolution of the Monasteries?',
-            model_answer:
-              "The stripped roofs, demolished cloisters, and confiscated lead and stone reflect Cromwell's systematic plunder of monastic wealth, transferring vast estates to the Crown and creating a new class of loyal gentry landowners.",
-            content_inferences:
-              'Provides tangible architectural evidence of the permanent destruction of Roman Catholic institutional power in the English countryside.',
-            provenance_evaluation:
-              'Physical archaeological monument; an authentic witness to the state-directed dismantling of centuries of Catholic monastic culture.',
-            context_limitations:
-              'Modern romantic ruins mask the acute social catastrophe of 1539, which displaced monks and stripped local communities of charity, healthcare, and education.',
-            bullet_points: [
-              {
-                label: 'Financial Confiscation',
-                text: "Cromwell's Valor Ecclesiasticus surveyed every abbey, allowing the Crown to seize silver plate, bells, and timber to fund royal coastal forts.",
-              },
-              {
-                label: 'Social Restructuring',
-                text: 'Selling monastic lands to gentry families permanently bound the English ruling class to the Reformation, ensuring monasteries could never be restored.',
-              },
-            ],
-            provenance_clues: [
-              'Author: English Heritage / Cistercian architectural archaeological record.',
-              'Audience: Historians of the English Reformation and visitors to the historic ruins.',
-              "Motive: To preserve the physical evidence of Henry VIII's total suppression of England's Catholic monastic network.",
-            ],
-          },
-          question_badge: 'DISSOLUTION & APPROPRIATION',
+            'What does the physical destruction of monasteries like Fountains Abbey reveal about the consequences of the Dissolution?',
           model_answer:
-            "The stripped roofs, demolished cloisters, and confiscated lead and stone reflect Cromwell's systematic plunder of monastic wealth, transferring vast estates to the Crown and creating a new class of loyal gentry landowners.",
-          provenance_clues: [
-            'Author: English Heritage / Cistercian architectural archaeological record.',
-            'Audience: Historians of the English Reformation and visitors to the historic ruins.',
-            "Motive: To preserve the physical evidence of Henry VIII's total suppression of England's Catholic monastic network.",
-          ],
-          source_context:
-            'Between 1536 and 1540, Henry VIII and Thomas Cromwell dissolved over 800 monasteries, confiscating lands generating £200,000 annually. Fountains Abbey was stripped for raw materials to finance coastal fortifications and foreign wars. **Hinge Question:** Did Henry VIII dissolve the monasteries out of genuine Protestant religious zeal, or simply to fund his wars against France and Scotland?',
+            "The stripped roofs and hollowed walls show the ruthless plunder of monastic wealth. Selling monastic land to gentry and nobility created a vested economic class committed to defending the Break with Rome, permanently ending the Catholic Church's independent economic power in England.",
+          context:
+            'Between 1536 and 1540, Thomas Cromwell dissolved over 800 monasteries, confiscating monastic revenues and redistributing vast estates to royal loyalists.',
+          hinge_question:
+            'Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
           teacher_notes: {
+            hinge_question:
+              'Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
             source_context:
-              'Between 1536 and 1540, Henry VIII and Thomas Cromwell dissolved over 800 monasteries, confiscating lands generating £200,000 annually. Fountains Abbey was stripped for raw materials to finance coastal fortifications and foreign wars. **Hinge Question:** Did Henry VIII dissolve the monasteries out of genuine Protestant religious zeal, or simply to fund his wars against France and Scotland?',
+              'Between 1536 and 1540, Cromwell dissolved over 800 monasteries, enriching the Crown. **Hinge Question:** Was the Dissolution of the Monasteries primarily a religious reform or an act of financial plunder?',
           },
         },
       ],
@@ -1772,7 +1606,7 @@ const monarchy_religion_power_data = {
           caption:
             "Title page of Queen Elizabeth I's 1559 Book of Common Prayer, establishing standardized uniform liturgy across all English parish churches under the Act of Uniformity (British Library, C.25.m.7).",
           source: {
-            id: 'mrp_l2_src_a',
+            id: 'monarchy_religion_power_l2_src_a',
             letter: 'A',
             type: 'visual',
             src: '/images/elizabeth_procession_1601.jpg',
@@ -1780,177 +1614,189 @@ const monarchy_religion_power_data = {
             title:
               'Source A (Civic Ceremonial): Queen Elizabeth I Carried in Royal Procession (Robert Peake the Elder, c. 1601)',
             caption:
-              'Queen Elizabeth I carried in an open litter surrounded by Garter Knights and courtiers in Blackfriars, illustrating her mastery of royal progresses and public pageantry.',
-            citation:
-              'Sherborne Castle, Dorset (Wingfield Digby Collection). Oil on canvas, c. 1601.',
-            provenance:
-              "Commissioned to commemorate the Queen's ceremonial visit to celebrate the marriage of Lord Herbert.",
-            context:
-              'Elizabeth cultivated a public image of radiant majesty, using annual summer progresses to travel across southern England, allowing ordinary citizens to see their sovereign. **Hinge Question:** Why was public visibility and pageantry essential for a female monarch ruling in a deeply patriarchal sixteenth-century society?',
+              'Oil painting (Sherborne Castle) showing Queen Elizabeth I borne on an open litter by her courtiers through the streets, surrounded by loyal subjects and Knights of the Garter.',
+            author: 'Robert Peake the Elder',
+            date: 'c. 1601',
+            question_badge: 'CIVIC CEREMONIAL & ROYAL POPULARITY',
             question:
-              'How did Queen Elizabeth I use elaborate public processions to maintain political stability and popular loyalty across England?',
-            hinge_question:
-              'Why was public visibility and pageantry essential for a female monarch ruling in a deeply patriarchal sixteenth-century society?',
-            disciplinary_focus: 'CIVIC CEREMONIAL',
-            utility_enquiry: {
-              question:
-                'How did Queen Elizabeth I use elaborate public processions to maintain political stability and popular loyalty across England?',
-              model_answer:
-                'By appearing publicly in open litters surrounded by handsome noblemen and dazzling jewels, Elizabeth made her royal presence accessible to common citizens, transforming herself into a living icon of national unity and Protestant peace.',
-              content_inferences:
-                "Demonstrates the deliberate use of royal theater and chivalric pageantry to compensate for the Crown's lack of a standing army or police force.",
-              provenance_evaluation:
-                'Celebratory court painting depicting an elite social ritual; flatters the Queen as an ageless, adored maiden ruler late in her reign.',
-              context_limitations:
-                "Presents an idealized harmony, ignoring heavy taxation, harvest failures, and Catholic recusancy laws enforced by Walsingham's secret police.",
-              bullet_points: [
-                {
-                  label: 'Securing Nobility Loyalty',
-                  text: 'Surrounding herself with leading noblemen competing to carry her litter bound aristocrats to royal court patronage.',
-                },
-                {
-                  label: 'Cult of Gloriana',
-                  text: "Dressed in virginal white and silver, Elizabeth positioned herself as the 'Virgin Queen' married only to England and her people.",
-                },
-              ],
-              provenance_clues: [
-                'Author: Robert Peake the Elder, English court portraitist and Serjeant Painter.',
-                'Audience: English aristocracy, foreign diplomats, and wealthy gentry households.',
-                "Motive: To commemorate noble hospitality and celebrate Elizabeth's enduring domestic popularity.",
-              ],
-            },
-            question_badge: 'CIVIC CEREMONIAL',
+              'How did Elizabeth I use public royal processions to heal religious divisions and command national allegiance?',
             model_answer:
-              'By appearing publicly in open litters surrounded by handsome noblemen and dazzling jewels, Elizabeth made her royal presence accessible to common citizens, transforming herself into a living icon of national unity and Protestant peace.',
-            provenance_clues: [
-              'Author: Robert Peake the Elder, English court portraitist and Serjeant Painter.',
-              'Audience: English aristocracy, foreign diplomats, and wealthy gentry households.',
-              "Motive: To commemorate noble hospitality and celebrate Elizabeth's enduring domestic popularity.",
-            ],
+              'Elizabeth presented herself in public on an elevated litter, directly accessible to ordinary people while projecting courtly splendour. By styling herself as the mother of the Protestant nation, she fostered intense personal loyalty that transcended factional religious hostility.',
+            context:
+              "Inheriting a fractured realm following Mary I's Marian persecutions, Elizabeth embarked on frequent summer progresses to consolidate public popularity.",
+            hinge_question:
+              'Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
+            teacher_notes: {
+              hinge_question:
+                'Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
+              source_context:
+                'Elizabeth used royal progresses and accessible ceremonies to win public popularity. **Hinge Question:** Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l2_src_a',
+              letter: 'A',
+              type: 'visual',
+              src: '/images/elizabeth_procession_1601.jpg',
+              image: '/images/elizabeth_procession_1601.jpg',
+              title:
+                'Source A (Civic Ceremonial): Queen Elizabeth I Carried in Royal Procession (Robert Peake the Elder, c. 1601)',
+              caption:
+                'Oil painting (Sherborne Castle) showing Queen Elizabeth I borne on an open litter by her courtiers through the streets, surrounded by loyal subjects and Knights of the Garter.',
+              author: 'Robert Peake the Elder',
+              date: 'c. 1601',
+              question_badge: 'CIVIC CEREMONIAL & ROYAL POPULARITY',
+              question:
+                'How did Elizabeth I use public royal processions to heal religious divisions and command national allegiance?',
+              model_answer:
+                'Elizabeth presented herself in public on an elevated litter, directly accessible to ordinary people while projecting courtly splendour. By styling herself as the mother of the Protestant nation, she fostered intense personal loyalty that transcended factional religious hostility.',
+              context:
+                "Inheriting a fractured realm following Mary I's Marian persecutions, Elizabeth embarked on frequent summer progresses to consolidate public popularity.",
+              hinge_question:
+                'Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
+              teacher_notes: {
+                hinge_question:
+                  'Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
+                source_context:
+                  'Elizabeth used royal progresses and accessible ceremonies to win public popularity. **Hinge Question:** Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
+              },
+            },
+          ],
         },
         {
           act: 2,
           title: 'Restoring Control: Supreme Governor (1559)',
           text: '<span class="para-ref">[2.2]</span> Elizabeth was a moderate Protestant, but she was above all an exceptionally shrewd politician. In January 1559, she summoned Parliament to construct a lasting religious settlement. Her first landmark statute was the new Act of Supremacy. Instead of reclaiming Henry VIII’s provocative title of "Supreme Head," Elizabeth agreed to a diplomatic <strong>compromise</strong>, adopting the softer title of <strong>Supreme Governor</strong> of the Church of England. This clever wording defused Catholic theological objections that only Jesus Christ or the Pope could be head of the Church, while placating Puritan Protestants who fiercely opposed a woman holding spiritual supremacy over male bishops. All clergy were required to swear an oath accepting her governance or forfeit their jobs.',
           source: {
-            id: 'mrp_l2_src_b',
+            id: 'monarchy_religion_power_l2_src_b',
             letter: 'B',
-            type: 'visual',
-            src: '/images/queen_mary_i_mary_tudor.jpg',
-            image: '/images/queen_mary_i_mary_tudor.jpg',
+            type: 'written',
+            src: '',
+            image: '',
             title:
-              'Source B (Counter-Reformation): Portrait of Queen Mary I / Mary Tudor (Hans Eworth, 1554)',
+              'Source B (Statutory Reformation): The Act of Supremacy 1559 (1 Eliz. 1 c. 1) & The Oath of Supremacy',
             caption:
-              "Hans Eworth's formal portrait of Queen Mary I wearing a jeweled pearl cross, painted during her marriage negotiations with Prince Philip of Spain to restore England to Roman Catholicism.",
-            citation: 'National Portrait Gallery, London (NPG 4827). Oil on panel, 1554.',
-            provenance:
-              "Commissioned following Mary's accession and marriage to Philip II of Spain.",
-            context:
-              "Henry VIII's eldest daughter Mary I attempted to reverse the Reformation, repealing royal supremacy and burning 284 Protestants as heretics. Her marriage to Philip II sparked widespread xenophobic rebellion. **Hinge Question:** Why did Mary I's determination to bring England back to Roman Catholicism ultimately make the country more fiercely anti-Catholic?",
+              'Parliamentary statute restoring royal supremacy over the Church of England while styling Queen Elizabeth I as "Supreme Governor" rather than "Supreme Head".',
+            author: 'Parliament of England under Queen Elizabeth I',
+            date: 'April 1559',
+            content:
+              'The Queen’s highness is the only supreme governor of this realm, and of all other her highness’s dominions and countries, as well in all spiritual or ecclesiastical things or causes, as temporal... And that no foreign prince, person, prelate, state or potentate, spiritual or temporal, hath or ought to have any jurisdiction, power, superiority, preeminence, or authority, ecclesiastical or spiritual, within this realm.',
+            question_badge: 'THE ELIZABETHAN SETTLEMENT & TITLE COMPROMISE',
             question:
-              "How does this official portrait reflect Queen Mary I's uncompromising determination to restore Roman Catholicism to England?",
-            hinge_question:
-              "Why did Mary I's determination to bring England back to Roman Catholicism ultimately make the country more fiercely anti-Catholic?",
-            disciplinary_focus: 'COUNTER-REFORMATION',
-            utility_enquiry: {
-              question:
-                "How does this official portrait reflect Queen Mary I's uncompromising determination to restore Roman Catholicism to England?",
-              model_answer:
-                'Mary prominently displays a large jeweled gold crucifix and Habsburg pendant given by Philip II, projecting austere religious piety and an unshakeable commitment to papal authority and Spanish Catholic alliance.',
-              content_inferences:
-                'Documents the intense religious pendulum swings of the mid-Tudor crisis, where monarchs imposed their personal religious convictions upon the realm.',
-              provenance_evaluation:
-                'Official court portrait painted by Flemish master Hans Eworth; presents Mary as a resolute, legitimate Tudor queen.',
-              context_limitations:
-                "Portrays serene religious majesty, concealing Mary's deep political unpopularity, phantom pregnancies, and the public revulsion provoked by heresy burnings.",
-              bullet_points: [
-                {
-                  label: 'Asserting Catholic Identity',
-                  text: "Wearing the heavy cruciform pendant signaled Mary's rejection of her father's royal supremacy and Edward VI's Protestant reforms.",
-                },
-                {
-                  label: 'The Spanish Alliance',
-                  text: 'The portrait commemorated her controversial marriage to Philip II, which deeply alarmed English Protestants who feared Spanish Inquisition rule.',
-                },
-              ],
-              provenance_clues: [
-                'Author: Hans Eworth, Flemish portrait painter working in London.',
-                'Audience: The English court, Habsburg diplomats in Brussels and Madrid, and the European public.',
-                "Motive: To legitimize Mary's reign, celebrate her Spanish royal marriage, and project Catholic revival.",
-              ],
-            },
-            question_badge: 'COUNTER-REFORMATION',
+              "Why was Elizabeth's change of title from 'Supreme Head' to 'Supreme Governor' a masterstroke of political compromise?",
             model_answer:
-              'Mary prominently displays a large jeweled gold crucifix and Habsburg pendant given by Philip II, projecting austere religious piety and an unshakeable commitment to papal authority and Spanish Catholic alliance.',
-            provenance_clues: [
-              'Author: Hans Eworth, Flemish portrait painter working in London.',
-              'Audience: The English court, Habsburg diplomats in Brussels and Madrid, and the European public.',
-              "Motive: To legitimize Mary's reign, celebrate her Spanish royal marriage, and project Catholic revival.",
-            ],
+              "Strict Catholics believed only the Pope could head Christ's Church, while Puritans felt no woman or earthly monarch could claim Christ's headship. Adopting the title 'Supreme Governor' satisfied both moderates and Protestants by asserting state control over administration without claiming sacramental authority.",
+            context:
+              'In 1559, Parliament passed the Acts of Supremacy and Uniformity, creating the Elizabethan Religious Settlement (the Via Media).',
+            hinge_question:
+              "Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
+            teacher_notes: {
+              hinge_question:
+                "Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
+              source_context:
+                "In 1559, Elizabeth adopted the title 'Supreme Governor' to placate Catholics and Puritans. **Hinge Question:** Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l2_src_b',
+              letter: 'B',
+              type: 'written',
+              src: '',
+              image: '',
+              title:
+                'Source B (Statutory Reformation): The Act of Supremacy 1559 (1 Eliz. 1 c. 1) & The Oath of Supremacy',
+              caption:
+                'Parliamentary statute restoring royal supremacy over the Church of England while styling Queen Elizabeth I as "Supreme Governor" rather than "Supreme Head".',
+              author: 'Parliament of England under Queen Elizabeth I',
+              date: 'April 1559',
+              content:
+                'The Queen’s highness is the only supreme governor of this realm, and of all other her highness’s dominions and countries, as well in all spiritual or ecclesiastical things or causes, as temporal... And that no foreign prince, person, prelate, state or potentate, spiritual or temporal, hath or ought to have any jurisdiction, power, superiority, preeminence, or authority, ecclesiastical or spiritual, within this realm.',
+              question_badge: 'THE ELIZABETHAN SETTLEMENT & TITLE COMPROMISE',
+              question:
+                "Why was Elizabeth's change of title from 'Supreme Head' to 'Supreme Governor' a masterstroke of political compromise?",
+              model_answer:
+                "Strict Catholics believed only the Pope could head Christ's Church, while Puritans felt no woman or earthly monarch could claim Christ's headship. Adopting the title 'Supreme Governor' satisfied both moderates and Protestants by asserting state control over administration without claiming sacramental authority.",
+              context:
+                'In 1559, Parliament passed the Acts of Supremacy and Uniformity, creating the Elizabethan Religious Settlement (the Via Media).',
+              hinge_question:
+                "Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
+              teacher_notes: {
+                hinge_question:
+                  "Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
+                source_context:
+                  "In 1559, Elizabeth adopted the title 'Supreme Governor' to placate Catholics and Puritans. **Hinge Question:** Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
+              },
+            },
+          ],
         },
         {
           act: 3,
           title: 'The Via Media & The Prayer Book (1559)',
           text: '<span class="para-ref">[2.3]</span> Alongside her supremacy, Elizabeth passed the 1559 Act of <strong>Uniformity</strong>, forging her famous <strong>Via Media</strong>—the "Middle Way." Church was made compulsory: every subject had to attend English Protestant services every Sunday or pay a steep 12d fine as a <strong>recusant</strong>. However, to avoid alienating Catholic subjects, the 1559 Book of Common Prayer deliberately retained traditional priestly vestments, church music, and ambiguous communion wording. A Catholic worshipper could take communion believing in the Real Presence of Christ, while a Protestant could take it as a simple remembrance. Elizabeth famously refused to "make windows into men’s souls"—demanding public loyalty rather than policing private conscience.',
           source: {
-            id: 'mrp_l2_src_c',
+            id: 'monarchy_religion_power_l2_src_c',
             letter: 'C',
-            type: 'visual',
-            src: '/images/armada_portrait.jpg',
-            image: '/images/armada_portrait.jpg',
+            type: 'written',
+            src: '',
+            image: '',
             title:
-              'Source C (Imperial Majesty & Global Power): The Armada Portrait of Queen Elizabeth I (George Gower, 1588)',
+              'Source C (Liturgy & Via Media): The Book of Common Prayer (1559): The Ornaments Rubric and Communion Formula',
             caption:
-              'The iconic Armada Portrait, showing Elizabeth I resting her hand upon the globe over the Americas, flanked by windows showing the English fleet advancing and the Spanish Armada shipwrecked.',
-            citation:
-              'Woburn Abbey Collection / National Maritime Museum, Greenwich (ZBA8540). Oil on oak panel, 1588.',
-            provenance:
-              "Commissioned by Sir Francis Drake or George Gower to celebrate England's miraculous victory over Spain in 1588.",
-            context:
-              'Following the defeat of the Spanish Armada, Elizabeth had herself depicted as an imperial world sovereign. Her pearls symbolize virgin purity, while her fingers rest over the Atlantic ocean pointing toward English exploration in the New World. **Hinge Question:** Why did Elizabeth choose to be painted with her hand resting on the globe rather than holding a royal scepter?',
+              'The official liturgy of the 1559 Settlement, deliberately blending the Catholic 1549 prayer formula with the Protestant 1552 wording for the administration of the bread.',
+            author: 'Church of England under Archbishop Matthew Parker',
+            date: '1559',
+            content:
+              'The body of our Lord Jesus Christ, which was given for thee, preserve thy body and soul into everlasting life. Take and eat this in remembrance that Christ died for thee, and feed on him in thy heart by faith with thanksgiving.',
+            question_badge: 'THE VIA MEDIA & THEOLOGICAL AMBIGUITY',
             question:
-              "How does the symbolism in the Armada Portrait celebrate both the defeat of Spain and England's emerging global imperial ambitions?",
-            hinge_question:
-              'Why did Elizabeth choose to be painted with her hand resting on the globe rather than holding a royal scepter?',
-            disciplinary_focus: 'IMPERIAL MAJESTY',
-            utility_enquiry: {
-              question:
-                "How does the symbolism in the Armada Portrait celebrate both the defeat of Spain and England's emerging global imperial ambitions?",
-              model_answer:
-                'Elizabeth rests her hand directly over the Americas on a terrestrial globe, flanked by views of the defeated Spanish Armada crashing on Irish rocks, presenting England as a Protestant maritime empire blessed by God.',
-              content_inferences:
-                'Documents the pivotal transition of England from a vulnerable island kingdom into an assertive transatlantic maritime power.',
-              provenance_evaluation:
-                'Triumphant court propaganda; masterfully weaves naval victory, providential destiny, and monarchical majesty into an indelible national icon.',
-              context_limitations:
-                'Dramatizes English naval supremacy, ignoring that the Anglo-Spanish War dragged on for another sixteen exhausting, expensive years until 1604.',
-              bullet_points: [
-                {
-                  label: 'Divine Providential Weather',
-                  text: 'The stormy sea in the right window shows Catholic ships wrecked on cliffs, reinforcing the belief that God blew Protestant winds to protect England.',
-                },
-                {
-                  label: 'Global Transatlantic Horizon',
-                  text: "Placing her hand upon North America announced England's intent to colonize the New World in direct defiance of the Spanish Empire.",
-                },
-              ],
-              provenance_clues: [
-                'Author: George Gower (Serjeant Painter to Queen Elizabeth I).',
-                'Audience: Royal courtiers, foreign ambassadors, and future generations of English subjects.',
-                "Motive: To immortalize the 1588 triumph, legitimize Elizabeth's Protestant Settlement, and project imperial confidence.",
-              ],
-            },
-            question_badge: 'IMPERIAL MAJESTY',
+              "How does the 1559 communion formula in Source C demonstrate Elizabeth's desire to avoid making 'windows into men's souls'?",
             model_answer:
-              'Elizabeth rests her hand directly over the Americas on a terrestrial globe, flanked by views of the defeated Spanish Armada crashing on Irish rocks, presenting England as a Protestant maritime empire blessed by God.',
-            provenance_clues: [
-              'Author: George Gower (Serjeant Painter to Queen Elizabeth I).',
-              'Audience: Royal courtiers, foreign ambassadors, and future generations of English subjects.',
-              "Motive: To immortalize the 1588 triumph, legitimize Elizabeth's Protestant Settlement, and project imperial confidence.",
-            ],
+              'The formula combined two opposing views: the first sentence suggested Catholic real presence, while the second emphasized Protestant memorialism. This deliberate ambiguity allowed Catholics and Protestants to hear what their consciences preferred, keeping outward uniformity without enforcing theological conformity.',
+            context:
+              'The 1559 Book of Common Prayer was designed to encompass as many moderate believers as possible, penalising non-attendance with small 12d recusancy fines.',
+            hinge_question:
+              'Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
+            teacher_notes: {
+              hinge_question:
+                'Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
+              source_context:
+                'The 1559 Prayer Book blended Catholic and Protestant wording to achieve broad conformity. **Hinge Question:** Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l2_src_c',
+              letter: 'C',
+              type: 'written',
+              src: '',
+              image: '',
+              title:
+                'Source C (Liturgy & Via Media): The Book of Common Prayer (1559): The Ornaments Rubric and Communion Formula',
+              caption:
+                'The official liturgy of the 1559 Settlement, deliberately blending the Catholic 1549 prayer formula with the Protestant 1552 wording for the administration of the bread.',
+              author: 'Church of England under Archbishop Matthew Parker',
+              date: '1559',
+              content:
+                'The body of our Lord Jesus Christ, which was given for thee, preserve thy body and soul into everlasting life. Take and eat this in remembrance that Christ died for thee, and feed on him in thy heart by faith with thanksgiving.',
+              question_badge: 'THE VIA MEDIA & THEOLOGICAL AMBIGUITY',
+              question:
+                "How does the 1559 communion formula in Source C demonstrate Elizabeth's desire to avoid making 'windows into men's souls'?",
+              model_answer:
+                'The formula combined two opposing views: the first sentence suggested Catholic real presence, while the second emphasized Protestant memorialism. This deliberate ambiguity allowed Catholics and Protestants to hear what their consciences preferred, keeping outward uniformity without enforcing theological conformity.',
+              context:
+                'The 1559 Book of Common Prayer was designed to encompass as many moderate believers as possible, penalising non-attendance with small 12d recusancy fines.',
+              hinge_question:
+                'Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
+              teacher_notes: {
+                hinge_question:
+                  'Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
+                source_context:
+                  'The 1559 Prayer Book blended Catholic and Protestant wording to achieve broad conformity. **Hinge Question:** Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
+              },
+            },
+          ],
         },
         {
           act: 4,
@@ -1961,69 +1807,74 @@ const monarchy_religion_power_data = {
           caption:
             "Pope Pius V's papal bull 'Regnans in Excelsis' (25 February 1570), excommunicating Elizabeth I as a heretic and releasing English Catholic subjects from their oath of allegiance (Vatican Secret Archives).",
           source: {
-            id: 'mrp_l2_src_d',
+            id: 'monarchy_religion_power_l2_src_d',
             letter: 'D',
-            type: 'visual',
-            src: '/images/monarchy_religion_power/latimer_ridley_oxford_1555.jpg',
-            image: '/images/monarchy_religion_power/latimer_ridley_oxford_1555.jpg',
+            type: 'written',
+            src: '',
+            image: '',
             title:
-              "Source D (Martyrdom & Protestant Identity): The Burning of Bishops Latimer and Ridley at Oxford (Foxe's Book of Martyrs, 1563)",
+              'Source D (Papal Excommunication): Pope Pius V, Papal Bull Regnans in Excelsis (25 February 1570)',
             caption:
-              "Historic woodcut from John Foxe's Acts and Monuments, depicting the burning at the stake of Protestant Bishops Hugh Latimer and Nicholas Ridley outside Balliol College, Oxford on 16 October 1555.",
-            citation:
-              'British Library, General Reference (G.12101). Woodcut illustration, John Day, London, 1563.',
-            provenance:
-              'Published in London in 1563; ordered by the Privy Council to be placed in cathedral churches and guildhalls across England.',
-            context:
-              "During Mary I's reign, Latimer and Ridley were condemned for heresy. As the faggots were lit, Latimer spoke his legendary words: 'Be of good comfort, Master Ridley, and play the man; we shall this day light such a candle, by God's grace, in England, as I trust shall never be put out.' **Hinge Question:** Why did the public burning of Protestant leaders backfire on Mary I by turning her victims into celebrated national heroes?",
+              'Papal bull issued by Pope Pius V excommunicating Queen Elizabeth I, declaring her a heretic and absolving all English subjects from their oaths of allegiance.',
+            author: 'Pope Pius V',
+            date: '25 February 1570',
+            content:
+              'We do out of the fullness of our Apostolic power declare the aforesaid Elizabeth to be a heretic and an encourager of heretics, and her adherents in the matters aforesaid to have incurred the sentence of excommunication... And we do also declare her to be deprived of her pretended title to the aforesaid kingdom... and all subjects absolved from any manner of duty, allegiance, and obedience.',
+            question_badge: 'PAPAL EXCOMMUNICATION & TREASON CRISIS',
             question:
-              "How did John Foxe's woodcut and narrative of Latimer and Ridley's execution cement anti-Catholic sentiment in Elizabethan England?",
-            hinge_question:
-              'Why did the public burning of Protestant leaders backfire on Mary I by turning her victims into celebrated national heroes?',
-            disciplinary_focus: 'MARTYRDOM & PROTESTANT IDENTITY',
-            utility_enquiry: {
-              question:
-                "How did John Foxe's woodcut and narrative of Latimer and Ridley's execution cement anti-Catholic sentiment in Elizabethan England?",
-              model_answer:
-                "By depicting the Protestant bishops dying serenely amid the flames while Latimer urged Ridley to 'play the man' and light an unquenchable candle in England, the print framed Mary I's regime as savagely cruel and glorified Protestant resilience.",
-              content_inferences:
-                'Reveals how print culture and horrific imagery were harnessed to forge an enduring, militant anti-papal national mythology.',
-              provenance_evaluation:
-                'A Protestant martyrology designed to inflame anti-Catholic feeling; became the second most widely read book in England after the Bible.',
-              context_limitations:
-                'A partisan polemic that omits how Protestant regimes, including Henry VIII and Elizabeth I, also tortured and executed religious dissidents (Catholics and Anabaptists).',
-              bullet_points: [
-                {
-                  label: 'Visual Horror of the Stake',
-                  text: 'The graphic depiction of chains, burning wood, and preaching friars horrified readers, creating deep psychological revulsion toward Roman Catholicism.',
-                },
-                {
-                  label: 'Unquenchable Protestant Candle',
-                  text: "Latimer's dying words became a national rallying cry, convincing Elizabeth's subjects that English liberty was indivisible from the Protestant faith.",
-                },
-              ],
-              provenance_clues: [
-                'Author: John Foxe (author) and anonymous woodcut artists, published by John Day, London.',
-                'Audience: Elizabethan churchgoers, magistrates, and the reading public.',
-                'Motive: To immortalize Protestant victims of the Marian persecutions and ensure England never returned to papal obedience.',
-              ],
-            },
-            question_badge: 'MARTYRDOM & PROTESTANT IDENTITY',
+              "Why did Pope Pius V's papal bull make it impossible for English Catholics to remain loyal to both Queen and Church?",
             model_answer:
-              "By depicting the Protestant bishops dying serenely amid the flames while Latimer urged Ridley to 'play the man' and light an unquenchable candle in England, the print framed Mary I's regime as savagely cruel and glorified Protestant resilience.",
-            provenance_clues: [
-              'Author: John Foxe (author) and anonymous woodcut artists, published by John Day, London.',
-              'Audience: Elizabethan churchgoers, magistrates, and the reading public.',
-              'Motive: To immortalize Protestant victims of the Marian persecutions and ensure England never returned to papal obedience.',
-            ],
+              'The papal bull declared Elizabeth deposed and ordered Catholics not to obey her laws under pain of excommunication. This forced every English Catholic into an impossible dilemma: obedience to the Pope was now treason against the Crown, turning religious dissent into existential threat of rebellion.',
+            context:
+              "Following the 1569 Northern Rebellion, Pius V issued Regnans in Excelsis, inciting assassination plots and ushering in Walsingham's surveillance network.",
+            hinge_question:
+              "Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
+            teacher_notes: {
+              hinge_question:
+                "Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
+              source_context:
+                "In 1570, Pope Pius V excommunicated Elizabeth, absolving English subjects of loyalty. **Hinge Question:** Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l2_src_d',
+              letter: 'D',
+              type: 'written',
+              src: '',
+              image: '',
+              title:
+                'Source D (Papal Excommunication): Pope Pius V, Papal Bull Regnans in Excelsis (25 February 1570)',
+              caption:
+                'Papal bull issued by Pope Pius V excommunicating Queen Elizabeth I, declaring her a heretic and absolving all English subjects from their oaths of allegiance.',
+              author: 'Pope Pius V',
+              date: '25 February 1570',
+              content:
+                'We do out of the fullness of our Apostolic power declare the aforesaid Elizabeth to be a heretic and an encourager of heretics, and her adherents in the matters aforesaid to have incurred the sentence of excommunication... And we do also declare her to be deprived of her pretended title to the aforesaid kingdom... and all subjects absolved from any manner of duty, allegiance, and obedience.',
+              question_badge: 'PAPAL EXCOMMUNICATION & TREASON CRISIS',
+              question:
+                "Why did Pope Pius V's papal bull make it impossible for English Catholics to remain loyal to both Queen and Church?",
+              model_answer:
+                'The papal bull declared Elizabeth deposed and ordered Catholics not to obey her laws under pain of excommunication. This forced every English Catholic into an impossible dilemma: obedience to the Pope was now treason against the Crown, turning religious dissent into existential threat of rebellion.',
+              context:
+                "Following the 1569 Northern Rebellion, Pius V issued Regnans in Excelsis, inciting assassination plots and ushering in Walsingham's surveillance network.",
+              hinge_question:
+                "Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
+              teacher_notes: {
+                hinge_question:
+                  "Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
+                source_context:
+                  "In 1570, Pope Pius V excommunicated Elizabeth, absolving English subjects of loyalty. **Hinge Question:** Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
+              },
+            },
+          ],
         },
         {
           act: 5,
           title: 'Spies, Ciphers & The Scaffold (1571–1588)',
           text: '<span class="para-ref">[2.5]</span> With Elizabeth’s life under constant threat from foreign Catholic assassins and Jesuit infiltration, her brilliant spymaster Sir Francis Walsingham established an elite network of <strong>espionage</strong> across Europe. Walsingham’s cryptographers intercepted conspiratorial letters written in secret <strong>cipher</strong>, culminating in the 1586 Babington Plot. Deciphered letters proved that Mary Queen of Scots had explicitly approved Elizabeth’s assassination. In February 1587, Elizabeth reluctantly signed Mary’s death warrant; the Scottish queen was beheaded at Fotheringhay Castle. Outraged by the execution of a Catholic queen, King Philip II of Spain ordered his colossal Armada to sail for England, testing Elizabeth’s Protestant nation in total war.',
           source: {
-            id: 'mrp_l2_src_e',
+            id: 'monarchy_religion_power_l2_src_e',
             letter: 'E',
             type: 'visual',
             src: '/images/mary_queen_of_scots_execution_fotheringhay_1587.jpg',
@@ -2031,59 +1882,60 @@ const monarchy_religion_power_data = {
             title:
               'Source E (Regicide & Dynastic Threat): Contemporary Dutch Engraving: The Execution of Mary, Queen of Scots (1587)',
             caption:
-              'Contemporary European engraving illustrating the dramatic execution of Mary, Queen of Scots in the Great Hall of Fotheringhay Castle on 8 February 1587, attended by weeping ladies-in-waiting and the Earl of Shrewsbury.',
-            citation:
-              'National Portrait Gallery, London / Scottish National Portrait Gallery (SP II 102.1). Engraving, 1587.',
-            provenance:
-              "Published in the Netherlands and London shortly after Mary Stuart's execution.",
-            context:
-              'Imprisoned in England for nineteen years, Mary was Catholic heir to the English throne. After Walsingham intercepted ciphered letters proving her approval of the Babington Plot to murder Elizabeth, Parliament demanded her execution. **Hinge Question:** Was Elizabeth I justified in executing an anointed rival monarch to protect national security?',
+              'Historical engraving (National Portrait Gallery, London) showing the scaffold in the Great Hall of Fotheringhay Castle on 8 February 1587, where Mary Queen of Scots was beheaded for treason.',
+            author: 'Contemporary Dutch Engraver',
+            date: '1587',
+            question_badge: 'REGICIDE & BABINGTON CONSPIRACY',
             question:
-              'Why was the execution of Mary, Queen of Scots in 1587 both a relief and a terrifying constitutional dilemma for Queen Elizabeth I?',
-            hinge_question:
-              'Was Elizabeth I justified in executing an anointed rival monarch to protect national security?',
-            disciplinary_focus: 'REGICIDE & DYNASTIC THREAT',
-            utility_enquiry: {
-              question:
-                'Why was the execution of Mary, Queen of Scots in 1587 both a relief and a terrifying constitutional dilemma for Queen Elizabeth I?',
-              model_answer:
-                "Beheading Mary permanently eliminated the central Catholic figurehead of domestic assassination plots, but executing an anointed sovereign monarch set a dangerous legal precedent that directly provoked Philip II's Spanish Armada.",
-              content_inferences:
-                'Exposes the acute vulnerability of Elizabethan England to Catholic conspiracies and the unprecedented legal crisis of executing a foreign crowned head.',
-              provenance_evaluation:
-                'Contemporary visual chronicle from northern Europe; captures the somber theatrical dignity Mary orchestrated for her martyrdom.',
-              context_limitations:
-                "Sympathetically emphasizes Mary's pious dignity holding a crucifix, obscuring her treasonous complicity in plotting Elizabeth's murder.",
-              bullet_points: [
-                {
-                  label: 'Elimination of Catholic Claimant',
-                  text: "Mary's death extinguished the primary dynastic rival that Catholic rebels and foreign powers intended to place on the English throne.",
-                },
-                {
-                  label: 'Catalyst for Spanish Invasion',
-                  text: 'Outraged by the execution of a Catholic queen, Philip II obtained papal blessing and launched the Armada the following year to punish England.',
-                },
-              ],
-              provenance_clues: [
-                'Author: Contemporary Northern European / Dutch Protestant engraver (Antwerp/Amsterdam).',
-                'Audience: European diplomatic courts, Protestant supporters in the Netherlands, and English observers.',
-                'Motive: To visually record the historic trial and execution that shattered the sanctity of royal immunity in Western Europe.',
-              ],
-            },
-            question_badge: 'REGICIDE & DYNASTIC THREAT',
+              'Why did Elizabeth I resist signing the death warrant of Mary Queen of Scots despite proven evidence of the Babington Plot?',
             model_answer:
-              "Beheading Mary permanently eliminated the central Catholic figurehead of domestic assassination plots, but executing an anointed sovereign monarch set a dangerous legal precedent that directly provoked Philip II's Spanish Armada.",
-            provenance_clues: [
-              'Author: Contemporary Northern European / Dutch Protestant engraver (Antwerp/Amsterdam).',
-              'Audience: European diplomatic courts, Protestant supporters in the Netherlands, and English observers.',
-              'Motive: To visually record the historic trial and execution that shattered the sanctity of royal immunity in Western Europe.',
-            ],
+              "Mary was an anointed sovereign queen. Executing a divinely appointed monarch created a terrifying precedent for regicide, horrified fellow European rulers, and made an immediate Spanish Catholic invasion inevitable. Only Walsingham's intercepted cipher letters forced Elizabeth's hand.",
+            context:
+              "In 1586, Sir Francis Walsingham unmasked the Babington Plot to assassinate Elizabeth and install Mary on the English throne, leading to Mary's execution in February 1587.",
+            hinge_question:
+              "Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
+            teacher_notes: {
+              hinge_question:
+                "Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
+              source_context:
+                "In February 1587, Mary Queen of Scots was beheaded following the Babington Plot. **Hinge Question:** Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l2_src_e',
+              letter: 'E',
+              type: 'visual',
+              src: '/images/mary_queen_of_scots_execution_fotheringhay_1587.jpg',
+              image: '/images/mary_queen_of_scots_execution_fotheringhay_1587.jpg',
+              title:
+                'Source E (Regicide & Dynastic Threat): Contemporary Dutch Engraving: The Execution of Mary, Queen of Scots (1587)',
+              caption:
+                'Historical engraving (National Portrait Gallery, London) showing the scaffold in the Great Hall of Fotheringhay Castle on 8 February 1587, where Mary Queen of Scots was beheaded for treason.',
+              author: 'Contemporary Dutch Engraver',
+              date: '1587',
+              question_badge: 'REGICIDE & BABINGTON CONSPIRACY',
+              question:
+                'Why did Elizabeth I resist signing the death warrant of Mary Queen of Scots despite proven evidence of the Babington Plot?',
+              model_answer:
+                "Mary was an anointed sovereign queen. Executing a divinely appointed monarch created a terrifying precedent for regicide, horrified fellow European rulers, and made an immediate Spanish Catholic invasion inevitable. Only Walsingham's intercepted cipher letters forced Elizabeth's hand.",
+              context:
+                "In 1586, Sir Francis Walsingham unmasked the Babington Plot to assassinate Elizabeth and install Mary on the English throne, leading to Mary's execution in February 1587.",
+              hinge_question:
+                "Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
+              teacher_notes: {
+                hinge_question:
+                  "Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
+                source_context:
+                  "In February 1587, Mary Queen of Scots was beheaded following the Babington Plot. **Hinge Question:** Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
+              },
+            },
+          ],
         },
       ],
       sources: [
         {
-          id: 'mrp_l2_src_a',
+          id: 'monarchy_religion_power_l2_src_a',
           letter: 'A',
           type: 'visual',
           src: '/images/elizabeth_procession_1601.jpg',
@@ -2091,249 +1943,117 @@ const monarchy_religion_power_data = {
           title:
             'Source A (Civic Ceremonial): Queen Elizabeth I Carried in Royal Procession (Robert Peake the Elder, c. 1601)',
           caption:
-            'Queen Elizabeth I carried in an open litter surrounded by Garter Knights and courtiers in Blackfriars, illustrating her mastery of royal progresses and public pageantry.',
-          citation:
-            'Sherborne Castle, Dorset (Wingfield Digby Collection). Oil on canvas, c. 1601.',
-          provenance:
-            "Commissioned to commemorate the Queen's ceremonial visit to celebrate the marriage of Lord Herbert.",
-          context:
-            'Elizabeth cultivated a public image of radiant majesty, using annual summer progresses to travel across southern England, allowing ordinary citizens to see their sovereign. **Hinge Question:** Why was public visibility and pageantry essential for a female monarch ruling in a deeply patriarchal sixteenth-century society?',
+            'Oil painting (Sherborne Castle) showing Queen Elizabeth I borne on an open litter by her courtiers through the streets, surrounded by loyal subjects and Knights of the Garter.',
+          author: 'Robert Peake the Elder',
+          date: 'c. 1601',
+          question_badge: 'CIVIC CEREMONIAL & ROYAL POPULARITY',
           question:
-            'How did Queen Elizabeth I use elaborate public processions to maintain political stability and popular loyalty across England?',
-          hinge_question:
-            'Why was public visibility and pageantry essential for a female monarch ruling in a deeply patriarchal sixteenth-century society?',
-          disciplinary_focus: 'CIVIC CEREMONIAL',
-          utility_enquiry: {
-            question:
-              'How did Queen Elizabeth I use elaborate public processions to maintain political stability and popular loyalty across England?',
-            model_answer:
-              'By appearing publicly in open litters surrounded by handsome noblemen and dazzling jewels, Elizabeth made her royal presence accessible to common citizens, transforming herself into a living icon of national unity and Protestant peace.',
-            content_inferences:
-              "Demonstrates the deliberate use of royal theater and chivalric pageantry to compensate for the Crown's lack of a standing army or police force.",
-            provenance_evaluation:
-              'Celebratory court painting depicting an elite social ritual; flatters the Queen as an ageless, adored maiden ruler late in her reign.',
-            context_limitations:
-              "Presents an idealized harmony, ignoring heavy taxation, harvest failures, and Catholic recusancy laws enforced by Walsingham's secret police.",
-            bullet_points: [
-              {
-                label: 'Securing Nobility Loyalty',
-                text: 'Surrounding herself with leading noblemen competing to carry her litter bound aristocrats to royal court patronage.',
-              },
-              {
-                label: 'Cult of Gloriana',
-                text: "Dressed in virginal white and silver, Elizabeth positioned herself as the 'Virgin Queen' married only to England and her people.",
-              },
-            ],
-            provenance_clues: [
-              'Author: Robert Peake the Elder, English court portraitist and Serjeant Painter.',
-              'Audience: English aristocracy, foreign diplomats, and wealthy gentry households.',
-              "Motive: To commemorate noble hospitality and celebrate Elizabeth's enduring domestic popularity.",
-            ],
-          },
-          question_badge: 'CIVIC CEREMONIAL',
+            'How did Elizabeth I use public royal processions to heal religious divisions and command national allegiance?',
           model_answer:
-            'By appearing publicly in open litters surrounded by handsome noblemen and dazzling jewels, Elizabeth made her royal presence accessible to common citizens, transforming herself into a living icon of national unity and Protestant peace.',
-          provenance_clues: [
-            'Author: Robert Peake the Elder, English court portraitist and Serjeant Painter.',
-            'Audience: English aristocracy, foreign diplomats, and wealthy gentry households.',
-            "Motive: To commemorate noble hospitality and celebrate Elizabeth's enduring domestic popularity.",
-          ],
-          source_context:
-            'Elizabeth cultivated a public image of radiant majesty, using annual summer progresses to travel across southern England, allowing ordinary citizens to see their sovereign. **Hinge Question:** Why was public visibility and pageantry essential for a female monarch ruling in a deeply patriarchal sixteenth-century society?',
+            'Elizabeth presented herself in public on an elevated litter, directly accessible to ordinary people while projecting courtly splendour. By styling herself as the mother of the Protestant nation, she fostered intense personal loyalty that transcended factional religious hostility.',
+          context:
+            "Inheriting a fractured realm following Mary I's Marian persecutions, Elizabeth embarked on frequent summer progresses to consolidate public popularity.",
+          hinge_question:
+            'Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
           teacher_notes: {
+            hinge_question:
+              'Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
             source_context:
-              'Elizabeth cultivated a public image of radiant majesty, using annual summer progresses to travel across southern England, allowing ordinary citizens to see their sovereign. **Hinge Question:** Why was public visibility and pageantry essential for a female monarch ruling in a deeply patriarchal sixteenth-century society?',
+              'Elizabeth used royal progresses and accessible ceremonies to win public popularity. **Hinge Question:** Why was female royal display so crucial for securing obedience in a patriarchal sixteenth-century society?',
           },
         },
         {
-          id: 'mrp_l2_src_b',
+          id: 'monarchy_religion_power_l2_src_b',
           letter: 'B',
-          type: 'visual',
-          src: '/images/queen_mary_i_mary_tudor.jpg',
-          image: '/images/queen_mary_i_mary_tudor.jpg',
+          type: 'written',
+          src: '',
+          image: '',
           title:
-            'Source B (Counter-Reformation): Portrait of Queen Mary I / Mary Tudor (Hans Eworth, 1554)',
+            'Source B (Statutory Reformation): The Act of Supremacy 1559 (1 Eliz. 1 c. 1) & The Oath of Supremacy',
           caption:
-            "Hans Eworth's formal portrait of Queen Mary I wearing a jeweled pearl cross, painted during her marriage negotiations with Prince Philip of Spain to restore England to Roman Catholicism.",
-          citation: 'National Portrait Gallery, London (NPG 4827). Oil on panel, 1554.',
-          provenance: "Commissioned following Mary's accession and marriage to Philip II of Spain.",
-          context:
-            "Henry VIII's eldest daughter Mary I attempted to reverse the Reformation, repealing royal supremacy and burning 284 Protestants as heretics. Her marriage to Philip II sparked widespread xenophobic rebellion. **Hinge Question:** Why did Mary I's determination to bring England back to Roman Catholicism ultimately make the country more fiercely anti-Catholic?",
+            'Parliamentary statute restoring royal supremacy over the Church of England while styling Queen Elizabeth I as "Supreme Governor" rather than "Supreme Head".',
+          author: 'Parliament of England under Queen Elizabeth I',
+          date: 'April 1559',
+          content:
+            'The Queen’s highness is the only supreme governor of this realm, and of all other her highness’s dominions and countries, as well in all spiritual or ecclesiastical things or causes, as temporal... And that no foreign prince, person, prelate, state or potentate, spiritual or temporal, hath or ought to have any jurisdiction, power, superiority, preeminence, or authority, ecclesiastical or spiritual, within this realm.',
+          question_badge: 'THE ELIZABETHAN SETTLEMENT & TITLE COMPROMISE',
           question:
-            "How does this official portrait reflect Queen Mary I's uncompromising determination to restore Roman Catholicism to England?",
-          hinge_question:
-            "Why did Mary I's determination to bring England back to Roman Catholicism ultimately make the country more fiercely anti-Catholic?",
-          disciplinary_focus: 'COUNTER-REFORMATION',
-          utility_enquiry: {
-            question:
-              "How does this official portrait reflect Queen Mary I's uncompromising determination to restore Roman Catholicism to England?",
-            model_answer:
-              'Mary prominently displays a large jeweled gold crucifix and Habsburg pendant given by Philip II, projecting austere religious piety and an unshakeable commitment to papal authority and Spanish Catholic alliance.',
-            content_inferences:
-              'Documents the intense religious pendulum swings of the mid-Tudor crisis, where monarchs imposed their personal religious convictions upon the realm.',
-            provenance_evaluation:
-              'Official court portrait painted by Flemish master Hans Eworth; presents Mary as a resolute, legitimate Tudor queen.',
-            context_limitations:
-              "Portrays serene religious majesty, concealing Mary's deep political unpopularity, phantom pregnancies, and the public revulsion provoked by heresy burnings.",
-            bullet_points: [
-              {
-                label: 'Asserting Catholic Identity',
-                text: "Wearing the heavy cruciform pendant signaled Mary's rejection of her father's royal supremacy and Edward VI's Protestant reforms.",
-              },
-              {
-                label: 'The Spanish Alliance',
-                text: 'The portrait commemorated her controversial marriage to Philip II, which deeply alarmed English Protestants who feared Spanish Inquisition rule.',
-              },
-            ],
-            provenance_clues: [
-              'Author: Hans Eworth, Flemish portrait painter working in London.',
-              'Audience: The English court, Habsburg diplomats in Brussels and Madrid, and the European public.',
-              "Motive: To legitimize Mary's reign, celebrate her Spanish royal marriage, and project Catholic revival.",
-            ],
-          },
-          question_badge: 'COUNTER-REFORMATION',
+            "Why was Elizabeth's change of title from 'Supreme Head' to 'Supreme Governor' a masterstroke of political compromise?",
           model_answer:
-            'Mary prominently displays a large jeweled gold crucifix and Habsburg pendant given by Philip II, projecting austere religious piety and an unshakeable commitment to papal authority and Spanish Catholic alliance.',
-          provenance_clues: [
-            'Author: Hans Eworth, Flemish portrait painter working in London.',
-            'Audience: The English court, Habsburg diplomats in Brussels and Madrid, and the European public.',
-            "Motive: To legitimize Mary's reign, celebrate her Spanish royal marriage, and project Catholic revival.",
-          ],
-          source_context:
-            "Henry VIII's eldest daughter Mary I attempted to reverse the Reformation, repealing royal supremacy and burning 284 Protestants as heretics. Her marriage to Philip II sparked widespread xenophobic rebellion. **Hinge Question:** Why did Mary I's determination to bring England back to Roman Catholicism ultimately make the country more fiercely anti-Catholic?",
+            "Strict Catholics believed only the Pope could head Christ's Church, while Puritans felt no woman or earthly monarch could claim Christ's headship. Adopting the title 'Supreme Governor' satisfied both moderates and Protestants by asserting state control over administration without claiming sacramental authority.",
+          context:
+            'In 1559, Parliament passed the Acts of Supremacy and Uniformity, creating the Elizabethan Religious Settlement (the Via Media).',
+          hinge_question:
+            "Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
           teacher_notes: {
+            hinge_question:
+              "Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
             source_context:
-              "Henry VIII's eldest daughter Mary I attempted to reverse the Reformation, repealing royal supremacy and burning 284 Protestants as heretics. Her marriage to Philip II sparked widespread xenophobic rebellion. **Hinge Question:** Why did Mary I's determination to bring England back to Roman Catholicism ultimately make the country more fiercely anti-Catholic?",
+              "In 1559, Elizabeth adopted the title 'Supreme Governor' to placate Catholics and Puritans. **Hinge Question:** Did the compromise title of 'Supreme Governor' reflect genuine moderation or cunning political pragmatism?",
           },
         },
         {
-          id: 'mrp_l2_src_c',
+          id: 'monarchy_religion_power_l2_src_c',
           letter: 'C',
-          type: 'visual',
-          src: '/images/armada_portrait.jpg',
-          image: '/images/armada_portrait.jpg',
+          type: 'written',
+          src: '',
+          image: '',
           title:
-            'Source C (Imperial Majesty & Global Power): The Armada Portrait of Queen Elizabeth I (George Gower, 1588)',
+            'Source C (Liturgy & Via Media): The Book of Common Prayer (1559): The Ornaments Rubric and Communion Formula',
           caption:
-            'The iconic Armada Portrait, showing Elizabeth I resting her hand upon the globe over the Americas, flanked by windows showing the English fleet advancing and the Spanish Armada shipwrecked.',
-          citation:
-            'Woburn Abbey Collection / National Maritime Museum, Greenwich (ZBA8540). Oil on oak panel, 1588.',
-          provenance:
-            "Commissioned by Sir Francis Drake or George Gower to celebrate England's miraculous victory over Spain in 1588.",
-          context:
-            'Following the defeat of the Spanish Armada, Elizabeth had herself depicted as an imperial world sovereign. Her pearls symbolize virgin purity, while her fingers rest over the Atlantic ocean pointing toward English exploration in the New World. **Hinge Question:** Why did Elizabeth choose to be painted with her hand resting on the globe rather than holding a royal scepter?',
+            'The official liturgy of the 1559 Settlement, deliberately blending the Catholic 1549 prayer formula with the Protestant 1552 wording for the administration of the bread.',
+          author: 'Church of England under Archbishop Matthew Parker',
+          date: '1559',
+          content:
+            'The body of our Lord Jesus Christ, which was given for thee, preserve thy body and soul into everlasting life. Take and eat this in remembrance that Christ died for thee, and feed on him in thy heart by faith with thanksgiving.',
+          question_badge: 'THE VIA MEDIA & THEOLOGICAL AMBIGUITY',
           question:
-            "How does the symbolism in the Armada Portrait celebrate both the defeat of Spain and England's emerging global imperial ambitions?",
-          hinge_question:
-            'Why did Elizabeth choose to be painted with her hand resting on the globe rather than holding a royal scepter?',
-          disciplinary_focus: 'IMPERIAL MAJESTY',
-          utility_enquiry: {
-            question:
-              "How does the symbolism in the Armada Portrait celebrate both the defeat of Spain and England's emerging global imperial ambitions?",
-            model_answer:
-              'Elizabeth rests her hand directly over the Americas on a terrestrial globe, flanked by views of the defeated Spanish Armada crashing on Irish rocks, presenting England as a Protestant maritime empire blessed by God.',
-            content_inferences:
-              'Documents the pivotal transition of England from a vulnerable island kingdom into an assertive transatlantic maritime power.',
-            provenance_evaluation:
-              'Triumphant court propaganda; masterfully weaves naval victory, providential destiny, and monarchical majesty into an indelible national icon.',
-            context_limitations:
-              'Dramatizes English naval supremacy, ignoring that the Anglo-Spanish War dragged on for another sixteen exhausting, expensive years until 1604.',
-            bullet_points: [
-              {
-                label: 'Divine Providential Weather',
-                text: 'The stormy sea in the right window shows Catholic ships wrecked on cliffs, reinforcing the belief that God blew Protestant winds to protect England.',
-              },
-              {
-                label: 'Global Transatlantic Horizon',
-                text: "Placing her hand upon North America announced England's intent to colonize the New World in direct defiance of the Spanish Empire.",
-              },
-            ],
-            provenance_clues: [
-              'Author: George Gower (Serjeant Painter to Queen Elizabeth I).',
-              'Audience: Royal courtiers, foreign ambassadors, and future generations of English subjects.',
-              "Motive: To immortalize the 1588 triumph, legitimize Elizabeth's Protestant Settlement, and project imperial confidence.",
-            ],
-          },
-          question_badge: 'IMPERIAL MAJESTY',
+            "How does the 1559 communion formula in Source C demonstrate Elizabeth's desire to avoid making 'windows into men's souls'?",
           model_answer:
-            'Elizabeth rests her hand directly over the Americas on a terrestrial globe, flanked by views of the defeated Spanish Armada crashing on Irish rocks, presenting England as a Protestant maritime empire blessed by God.',
-          provenance_clues: [
-            'Author: George Gower (Serjeant Painter to Queen Elizabeth I).',
-            'Audience: Royal courtiers, foreign ambassadors, and future generations of English subjects.',
-            "Motive: To immortalize the 1588 triumph, legitimize Elizabeth's Protestant Settlement, and project imperial confidence.",
-          ],
-          source_context:
-            'Following the defeat of the Spanish Armada, Elizabeth had herself depicted as an imperial world sovereign. Her pearls symbolize virgin purity, while her fingers rest over the Atlantic ocean pointing toward English exploration in the New World. **Hinge Question:** Why did Elizabeth choose to be painted with her hand resting on the globe rather than holding a royal scepter?',
+            'The formula combined two opposing views: the first sentence suggested Catholic real presence, while the second emphasized Protestant memorialism. This deliberate ambiguity allowed Catholics and Protestants to hear what their consciences preferred, keeping outward uniformity without enforcing theological conformity.',
+          context:
+            'The 1559 Book of Common Prayer was designed to encompass as many moderate believers as possible, penalising non-attendance with small 12d recusancy fines.',
+          hinge_question:
+            'Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
           teacher_notes: {
+            hinge_question:
+              'Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
             source_context:
-              'Following the defeat of the Spanish Armada, Elizabeth had herself depicted as an imperial world sovereign. Her pearls symbolize virgin purity, while her fingers rest over the Atlantic ocean pointing toward English exploration in the New World. **Hinge Question:** Why did Elizabeth choose to be painted with her hand resting on the globe rather than holding a royal scepter?',
+              'The 1559 Prayer Book blended Catholic and Protestant wording to achieve broad conformity. **Hinge Question:** Can an intentionally ambiguous religious service maintain long-term peace in a deeply divided country?',
           },
         },
         {
-          id: 'mrp_l2_src_d',
+          id: 'monarchy_religion_power_l2_src_d',
           letter: 'D',
-          type: 'visual',
-          src: '/images/monarchy_religion_power/latimer_ridley_oxford_1555.jpg',
-          image: '/images/monarchy_religion_power/latimer_ridley_oxford_1555.jpg',
+          type: 'written',
+          src: '',
+          image: '',
           title:
-            "Source D (Martyrdom & Protestant Identity): The Burning of Bishops Latimer and Ridley at Oxford (Foxe's Book of Martyrs, 1563)",
+            'Source D (Papal Excommunication): Pope Pius V, Papal Bull Regnans in Excelsis (25 February 1570)',
           caption:
-            "Historic woodcut from John Foxe's Acts and Monuments, depicting the burning at the stake of Protestant Bishops Hugh Latimer and Nicholas Ridley outside Balliol College, Oxford on 16 October 1555.",
-          citation:
-            'British Library, General Reference (G.12101). Woodcut illustration, John Day, London, 1563.',
-          provenance:
-            'Published in London in 1563; ordered by the Privy Council to be placed in cathedral churches and guildhalls across England.',
-          context:
-            "During Mary I's reign, Latimer and Ridley were condemned for heresy. As the faggots were lit, Latimer spoke his legendary words: 'Be of good comfort, Master Ridley, and play the man; we shall this day light such a candle, by God's grace, in England, as I trust shall never be put out.' **Hinge Question:** Why did the public burning of Protestant leaders backfire on Mary I by turning her victims into celebrated national heroes?",
+            'Papal bull issued by Pope Pius V excommunicating Queen Elizabeth I, declaring her a heretic and absolving all English subjects from their oaths of allegiance.',
+          author: 'Pope Pius V',
+          date: '25 February 1570',
+          content:
+            'We do out of the fullness of our Apostolic power declare the aforesaid Elizabeth to be a heretic and an encourager of heretics, and her adherents in the matters aforesaid to have incurred the sentence of excommunication... And we do also declare her to be deprived of her pretended title to the aforesaid kingdom... and all subjects absolved from any manner of duty, allegiance, and obedience.',
+          question_badge: 'PAPAL EXCOMMUNICATION & TREASON CRISIS',
           question:
-            "How did John Foxe's woodcut and narrative of Latimer and Ridley's execution cement anti-Catholic sentiment in Elizabethan England?",
-          hinge_question:
-            'Why did the public burning of Protestant leaders backfire on Mary I by turning her victims into celebrated national heroes?',
-          disciplinary_focus: 'MARTYRDOM & PROTESTANT IDENTITY',
-          utility_enquiry: {
-            question:
-              "How did John Foxe's woodcut and narrative of Latimer and Ridley's execution cement anti-Catholic sentiment in Elizabethan England?",
-            model_answer:
-              "By depicting the Protestant bishops dying serenely amid the flames while Latimer urged Ridley to 'play the man' and light an unquenchable candle in England, the print framed Mary I's regime as savagely cruel and glorified Protestant resilience.",
-            content_inferences:
-              'Reveals how print culture and horrific imagery were harnessed to forge an enduring, militant anti-papal national mythology.',
-            provenance_evaluation:
-              'A Protestant martyrology designed to inflame anti-Catholic feeling; became the second most widely read book in England after the Bible.',
-            context_limitations:
-              'A partisan polemic that omits how Protestant regimes, including Henry VIII and Elizabeth I, also tortured and executed religious dissidents (Catholics and Anabaptists).',
-            bullet_points: [
-              {
-                label: 'Visual Horror of the Stake',
-                text: 'The graphic depiction of chains, burning wood, and preaching friars horrified readers, creating deep psychological revulsion toward Roman Catholicism.',
-              },
-              {
-                label: 'Unquenchable Protestant Candle',
-                text: "Latimer's dying words became a national rallying cry, convincing Elizabeth's subjects that English liberty was indivisible from the Protestant faith.",
-              },
-            ],
-            provenance_clues: [
-              'Author: John Foxe (author) and anonymous woodcut artists, published by John Day, London.',
-              'Audience: Elizabethan churchgoers, magistrates, and the reading public.',
-              'Motive: To immortalize Protestant victims of the Marian persecutions and ensure England never returned to papal obedience.',
-            ],
-          },
-          question_badge: 'MARTYRDOM & PROTESTANT IDENTITY',
+            "Why did Pope Pius V's papal bull make it impossible for English Catholics to remain loyal to both Queen and Church?",
           model_answer:
-            "By depicting the Protestant bishops dying serenely amid the flames while Latimer urged Ridley to 'play the man' and light an unquenchable candle in England, the print framed Mary I's regime as savagely cruel and glorified Protestant resilience.",
-          provenance_clues: [
-            'Author: John Foxe (author) and anonymous woodcut artists, published by John Day, London.',
-            'Audience: Elizabethan churchgoers, magistrates, and the reading public.',
-            'Motive: To immortalize Protestant victims of the Marian persecutions and ensure England never returned to papal obedience.',
-          ],
-          source_context:
-            "During Mary I's reign, Latimer and Ridley were condemned for heresy. As the faggots were lit, Latimer spoke his legendary words: 'Be of good comfort, Master Ridley, and play the man; we shall this day light such a candle, by God's grace, in England, as I trust shall never be put out.' **Hinge Question:** Why did the public burning of Protestant leaders backfire on Mary I by turning her victims into celebrated national heroes?",
+            'The papal bull declared Elizabeth deposed and ordered Catholics not to obey her laws under pain of excommunication. This forced every English Catholic into an impossible dilemma: obedience to the Pope was now treason against the Crown, turning religious dissent into existential threat of rebellion.',
+          context:
+            "Following the 1569 Northern Rebellion, Pius V issued Regnans in Excelsis, inciting assassination plots and ushering in Walsingham's surveillance network.",
+          hinge_question:
+            "Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
           teacher_notes: {
+            hinge_question:
+              "Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
             source_context:
-              "During Mary I's reign, Latimer and Ridley were condemned for heresy. As the faggots were lit, Latimer spoke his legendary words: 'Be of good comfort, Master Ridley, and play the man; we shall this day light such a candle, by God's grace, in England, as I trust shall never be put out.' **Hinge Question:** Why did the public burning of Protestant leaders backfire on Mary I by turning her victims into celebrated national heroes?",
+              "In 1570, Pope Pius V excommunicated Elizabeth, absolving English subjects of loyalty. **Hinge Question:** Did the Pope's bull protect English Catholics or seal their doom as suspected traitors?",
           },
         },
         {
-          id: 'mrp_l2_src_e',
+          id: 'monarchy_religion_power_l2_src_e',
           letter: 'E',
           type: 'visual',
           src: '/images/mary_queen_of_scots_execution_fotheringhay_1587.jpg',
@@ -2341,58 +2061,23 @@ const monarchy_religion_power_data = {
           title:
             'Source E (Regicide & Dynastic Threat): Contemporary Dutch Engraving: The Execution of Mary, Queen of Scots (1587)',
           caption:
-            'Contemporary European engraving illustrating the dramatic execution of Mary, Queen of Scots in the Great Hall of Fotheringhay Castle on 8 February 1587, attended by weeping ladies-in-waiting and the Earl of Shrewsbury.',
-          citation:
-            'National Portrait Gallery, London / Scottish National Portrait Gallery (SP II 102.1). Engraving, 1587.',
-          provenance:
-            "Published in the Netherlands and London shortly after Mary Stuart's execution.",
-          context:
-            'Imprisoned in England for nineteen years, Mary was Catholic heir to the English throne. After Walsingham intercepted ciphered letters proving her approval of the Babington Plot to murder Elizabeth, Parliament demanded her execution. **Hinge Question:** Was Elizabeth I justified in executing an anointed rival monarch to protect national security?',
+            'Historical engraving (National Portrait Gallery, London) showing the scaffold in the Great Hall of Fotheringhay Castle on 8 February 1587, where Mary Queen of Scots was beheaded for treason.',
+          author: 'Contemporary Dutch Engraver',
+          date: '1587',
+          question_badge: 'REGICIDE & BABINGTON CONSPIRACY',
           question:
-            'Why was the execution of Mary, Queen of Scots in 1587 both a relief and a terrifying constitutional dilemma for Queen Elizabeth I?',
-          hinge_question:
-            'Was Elizabeth I justified in executing an anointed rival monarch to protect national security?',
-          disciplinary_focus: 'REGICIDE & DYNASTIC THREAT',
-          utility_enquiry: {
-            question:
-              'Why was the execution of Mary, Queen of Scots in 1587 both a relief and a terrifying constitutional dilemma for Queen Elizabeth I?',
-            model_answer:
-              "Beheading Mary permanently eliminated the central Catholic figurehead of domestic assassination plots, but executing an anointed sovereign monarch set a dangerous legal precedent that directly provoked Philip II's Spanish Armada.",
-            content_inferences:
-              'Exposes the acute vulnerability of Elizabethan England to Catholic conspiracies and the unprecedented legal crisis of executing a foreign crowned head.',
-            provenance_evaluation:
-              'Contemporary visual chronicle from northern Europe; captures the somber theatrical dignity Mary orchestrated for her martyrdom.',
-            context_limitations:
-              "Sympathetically emphasizes Mary's pious dignity holding a crucifix, obscuring her treasonous complicity in plotting Elizabeth's murder.",
-            bullet_points: [
-              {
-                label: 'Elimination of Catholic Claimant',
-                text: "Mary's death extinguished the primary dynastic rival that Catholic rebels and foreign powers intended to place on the English throne.",
-              },
-              {
-                label: 'Catalyst for Spanish Invasion',
-                text: 'Outraged by the execution of a Catholic queen, Philip II obtained papal blessing and launched the Armada the following year to punish England.',
-              },
-            ],
-            provenance_clues: [
-              'Author: Contemporary Northern European / Dutch Protestant engraver (Antwerp/Amsterdam).',
-              'Audience: European diplomatic courts, Protestant supporters in the Netherlands, and English observers.',
-              'Motive: To visually record the historic trial and execution that shattered the sanctity of royal immunity in Western Europe.',
-            ],
-          },
-          question_badge: 'REGICIDE & DYNASTIC THREAT',
+            'Why did Elizabeth I resist signing the death warrant of Mary Queen of Scots despite proven evidence of the Babington Plot?',
           model_answer:
-            "Beheading Mary permanently eliminated the central Catholic figurehead of domestic assassination plots, but executing an anointed sovereign monarch set a dangerous legal precedent that directly provoked Philip II's Spanish Armada.",
-          provenance_clues: [
-            'Author: Contemporary Northern European / Dutch Protestant engraver (Antwerp/Amsterdam).',
-            'Audience: European diplomatic courts, Protestant supporters in the Netherlands, and English observers.',
-            'Motive: To visually record the historic trial and execution that shattered the sanctity of royal immunity in Western Europe.',
-          ],
-          source_context:
-            'Imprisoned in England for nineteen years, Mary was Catholic heir to the English throne. After Walsingham intercepted ciphered letters proving her approval of the Babington Plot to murder Elizabeth, Parliament demanded her execution. **Hinge Question:** Was Elizabeth I justified in executing an anointed rival monarch to protect national security?',
+            "Mary was an anointed sovereign queen. Executing a divinely appointed monarch created a terrifying precedent for regicide, horrified fellow European rulers, and made an immediate Spanish Catholic invasion inevitable. Only Walsingham's intercepted cipher letters forced Elizabeth's hand.",
+          context:
+            "In 1586, Sir Francis Walsingham unmasked the Babington Plot to assassinate Elizabeth and install Mary on the English throne, leading to Mary's execution in February 1587.",
+          hinge_question:
+            "Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
           teacher_notes: {
+            hinge_question:
+              "Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
             source_context:
-              'Imprisoned in England for nineteen years, Mary was Catholic heir to the English throne. After Walsingham intercepted ciphered letters proving her approval of the Babington Plot to murder Elizabeth, Parliament demanded her execution. **Hinge Question:** Was Elizabeth I justified in executing an anointed rival monarch to protect national security?',
+              "In February 1587, Mary Queen of Scots was beheaded following the Babington Plot. **Hinge Question:** Was the execution of Mary Queen of Scots necessary for Elizabeth's survival or an act of illegal regicide?",
           },
         },
       ],
@@ -2939,122 +2624,130 @@ const monarchy_religion_power_data = {
           caption:
             "King Philip II of Spain (1527–1598), ruler of the global Spanish Empire and architect of the 'Enterprise of England' to overthrow Elizabeth I and restore Catholicism (Sofonisba Anguissola / Museo del Prado, P001036).",
           source: {
-            id: 'mrp_l3_src_a',
+            id: 'monarchy_religion_power_l3_src_a',
             letter: 'A',
-            type: 'visual',
-            src: '/images/drake_cadiz_1587.jpg',
-            image: '/images/drake_cadiz_1587.jpg',
+            type: 'written',
+            src: '',
+            image: '',
             title:
-              "Source A (Preemptive Strike): Sir Francis Drake Singeing the King of Spain's Beard at Cadiz (April 1587)",
+              'Source A (Papal Crusade & Imperial Ambition): Pope Sixtus V Promises 1,000,000 Gold Ducats for the Enterprise of England (1587)',
             caption:
-              'Historic composition depicting Sir Francis Drake sailing his four royal galleons into Cadiz harbor in April 1587, destroying over thirty Spanish supply ships and delaying the Armada by a full year.',
-            citation: 'National Maritime Museum, Greenwich, London (BHC0262). Oil painting.',
-            provenance:
-              "Painted to celebrate Drake's audacious naval raid that disrupted Spanish invasion preparations.",
-            context:
-              "Hearing that Philip II was assembling an invasion armada, Elizabeth dispatched Drake on a raiding mission. Entering heavily fortified Cadiz harbor, Drake burned supply transports, stole seasoned barrel staves, and captured the Portuguese carrack San Felipe. **Hinge Question:** Why was destroying Spain's barrel staves at Cadiz more damaging to the Armada than destroying warships?",
+              'Papal treaty dispatch from Rome confirming financial subsidy and plenary indulgences to King Philip II of Spain for the overthrow of Elizabeth I and restoration of Catholicism.',
+            author: 'Papal Secretariat of Pope Sixtus V',
+            date: 'July 1587',
+            content:
+              'His Holiness promises to give to the Catholic King, as soon as his fleet shall have set foot on English territory, a million ducats of gold... to aid in so holy and pious an undertaking, which is designed for the total extirpation of heresy and the restoration of that ancient kingdom to the Holy Catholic Church.',
+            question_badge: 'HOLY CRUSADE & GLOBAL GEOPOLITICS',
             question:
-              "How did Sir Francis Drake's preemptive naval raid on Cadiz in 1587 critically undermine the logistics of the Spanish Armada?",
-            hinge_question:
-              "Why was destroying Spain's barrel staves at Cadiz more damaging to the Armada than destroying warships?",
-            disciplinary_focus: 'PREEMPTIVE STRIKE',
-            utility_enquiry: {
-              question:
-                "How did Sir Francis Drake's preemptive naval raid on Cadiz in 1587 critically undermine the logistics of the Spanish Armada?",
-              model_answer:
-                'Drake destroyed over thirty Spanish transports and burned seasoned wood staves meant for food barrels, forcing the Spanish to use green wood that leaked and spoiled their provisions during the 1588 campaign.',
-              content_inferences:
-                'Illustrates the critical importance of maritime logistics and raiding warfare in disrupting massive amphibious invasions.',
-              provenance_evaluation:
-                'Heroic English naval painting; celebrates English daring and tactical seamanship against cumbersome imperial rivals.',
-              context_limitations:
-                "Focuses on Drake's glory, downplaying Elizabeth's anger that he had exceeded royal orders and made peace negotiations with Spain impossible.",
-              bullet_points: [
-                {
-                  label: 'Logistical Sabotage',
-                  text: 'Destroying water casks and salted meat barrels doomed the Armada to acute food spoilage, dysentery, and thirst before they ever fired a cannon.',
-                },
-                {
-                  label: 'Crucial Year of Preparation',
-                  text: 'Delaying the invasion until summer 1588 gave English shipwrights and militia commanders twelve months to fortify coastal defenses.',
-                },
-              ],
-              provenance_clues: [
-                'Author: English maritime painter in the British naval commemorative tradition.',
-                "Audience: English naval officers, patriotic historians, and visitors to the Queen's House.",
-                "Motive: To glorify Drake's aggressive privateer tactics and celebrate English naval superiority.",
-              ],
-            },
-            question_badge: 'PREEMPTIVE STRIKE',
+              'How does Source A illustrate that the Spanish Armada was regarded as a sacred international crusade rather than a simple territorial war?',
             model_answer:
-              'Drake destroyed over thirty Spanish transports and burned seasoned wood staves meant for food barrels, forcing the Spanish to use green wood that leaked and spoiled their provisions during the 1588 campaign.',
-            provenance_clues: [
-              'Author: English maritime painter in the British naval commemorative tradition.',
-              "Audience: English naval officers, patriotic historians, and visitors to the Queen's House.",
-              "Motive: To glorify Drake's aggressive privateer tactics and celebrate English naval superiority.",
-            ],
+              "Pope Sixtus V offered one million ducats of gold and full spiritual remission of sins for troops participating in the 'Enterprise of England'. This shows that Philip II acted not merely as King of Spain, but as the military champion of the Counter-Reformation tasked with crushing northern Protestant heresy.",
+            context:
+              "Following the execution of Mary Stuart and Elizabeth's Treaty of Nonsuch aiding Dutch rebels, Philip II assembled the Armada with papal blessing.",
+            hinge_question:
+              'Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?',
+            teacher_notes: {
+              hinge_question:
+                'Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?',
+              source_context:
+                "Pope Sixtus V pledged 1,000,000 gold ducats to support Philip II's Armada. **Hinge Question:** Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l3_src_a',
+              letter: 'A',
+              type: 'written',
+              src: '',
+              image: '',
+              title:
+                'Source A (Papal Crusade & Imperial Ambition): Pope Sixtus V Promises 1,000,000 Gold Ducats for the Enterprise of England (1587)',
+              caption:
+                'Papal treaty dispatch from Rome confirming financial subsidy and plenary indulgences to King Philip II of Spain for the overthrow of Elizabeth I and restoration of Catholicism.',
+              author: 'Papal Secretariat of Pope Sixtus V',
+              date: 'July 1587',
+              content:
+                'His Holiness promises to give to the Catholic King, as soon as his fleet shall have set foot on English territory, a million ducats of gold... to aid in so holy and pious an undertaking, which is designed for the total extirpation of heresy and the restoration of that ancient kingdom to the Holy Catholic Church.',
+              question_badge: 'HOLY CRUSADE & GLOBAL GEOPOLITICS',
+              question:
+                'How does Source A illustrate that the Spanish Armada was regarded as a sacred international crusade rather than a simple territorial war?',
+              model_answer:
+                "Pope Sixtus V offered one million ducats of gold and full spiritual remission of sins for troops participating in the 'Enterprise of England'. This shows that Philip II acted not merely as King of Spain, but as the military champion of the Counter-Reformation tasked with crushing northern Protestant heresy.",
+              context:
+                "Following the execution of Mary Stuart and Elizabeth's Treaty of Nonsuch aiding Dutch rebels, Philip II assembled the Armada with papal blessing.",
+              hinge_question:
+                'Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?',
+              teacher_notes: {
+                hinge_question:
+                  'Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?',
+                source_context:
+                  "Pope Sixtus V pledged 1,000,000 gold ducats to support Philip II's Armada. **Hinge Question:** Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?",
+              },
+            },
+          ],
         },
         {
           act: 2,
           title: 'Singeing the King’s Beard (April 1587)',
           text: '<span class="para-ref">[3.2]</span> Before the Spanish fleet could assemble, Sir Francis Drake struck a devastating pre-emptive blow. In April 1587, Drake sailed four Royal Navy warships audaciously into Spain’s chief naval harbour at Cadiz. In a whirlwind 36-hour attack, Drake destroyed over thirty Spanish transports and captured immense supplies. He triumphantly boasted to Queen Elizabeth that he had "singed the King of Spain’s beard." Far more critically, Drake burned thousands of tons of seasoned oak barrel staves. This catastrophic blow to Spanish naval <strong>logistics</strong> delayed the invasion by a full year, forcing the Spanish to store their provisions in unseasoned green wood barrels that leaked fresh water and rotted food long before reaching England.',
           source: {
-            id: 'mrp_l3_src_b',
+            id: 'monarchy_religion_power_l3_src_b',
             letter: 'B',
             type: 'visual',
-            src: '/images/battle_of_gravelines_1588.jpg',
-            image: '/images/battle_of_gravelines_1588.jpg',
-            title: 'Source B (Naval Tactics & Artillery): The Battle of Gravelines (8 August 1588)',
+            src: '/images/drake_cadiz_1587.jpg',
+            image: '/images/drake_cadiz_1587.jpg',
+            title:
+              "Source B (Preemptive Strike): Sir Francis Drake Singeing the King of Spain's Beard at Cadiz (April 1587)",
             caption:
-              "Hendrick Cornelisz Vroom's dynamic naval action painting of the Battle of Gravelines, where English race-built galleons pounded the disordered Spanish fleet with heavy culverin broadsides at close range.",
-            citation:
-              'Tiroler Landesmuseum Ferdinandeum, Innsbruck / Royal Museums Greenwich. Oil on canvas, c. 1600.',
-            provenance:
-              'Painted by pioneering Dutch marine artist Hendrick Vroom based on eyewitness accounts from English and Dutch captains.',
-            context:
-              'After the fireship attack broke the Spanish formation at Calais, the English fleet attacked at daybreak off Gravelines. English ships maneuvered swiftly, maintaining a deadly bombardment that sank several Spanish galleons and drove the rest toward North Sea shallows. **Hinge Question:** Why did superior English artillery range and ship maneuverability make traditional Spanish boarding tactics completely useless?',
+              'Engraving of Drake’s raid on Cadiz harbour, where four royal naval galleons destroyed over 30 Spanish transports and tons of seasoned barrel staves.',
+            author: 'Contemporary Dutch Engraver',
+            date: 'April 1587',
+            question_badge: 'PREEMPTIVE STRIKE & SUPPLY LOGISTICS',
             question:
-              "How did the design of English 'race-built' galleons give Lord Howard and Drake a decisive advantage over the Spanish Armada at Gravelines?",
-            hinge_question:
-              'Why did superior English artillery range and ship maneuverability make traditional Spanish boarding tactics completely useless?',
-            disciplinary_focus: 'NAVAL TACTICS & ARTILLERY',
-            utility_enquiry: {
-              question:
-                "How did the design of English 'race-built' galleons give Lord Howard and Drake a decisive advantage over the Spanish Armada at Gravelines?",
-              model_answer:
-                'English ships were lower, faster, and mounted long-range culverin guns on rapid-reloading four-wheeled carriages, allowing English gunners to batter Spanish hulls from a safe distance while refusing to let Spanish soldiers board.',
-              content_inferences:
-                'Documents a technological revolution in naval warfare: the decisive shift from boarding combat to stand-off broadside artillery duels.',
-              provenance_evaluation:
-                "Monumental painting by Europe's premier marine master; offers unmatched technical accuracy regarding hull rigging, cannon smoke, and battle chaos.",
-              context_limitations:
-                'Depicts dramatic destruction, but in truth, English ships ran completely out of gunpowder by late afternoon and were forced to break off pursuit.',
-              bullet_points: [
-                {
-                  label: 'Technological Revolution',
-                  text: 'Lower forecastles designed by John Hawkins allowed English ships to sail closer to the wind and out-maneuver top-heavy Spanish floating castles.',
-                },
-                {
-                  label: 'Neutralisation of Spanish Infantry',
-                  text: "Spain's 19,000 elite soldiers were trapped aboard ships that could neither close with the enemy nor return effective long-range cannon fire.",
-                },
-              ],
-              provenance_clues: [
-                'Author: Hendrick Cornelisz Vroom, founding father of Dutch marine art.',
-                'Audience: European admirals, Protestant patrons in the Netherlands, and English naval commanders.',
-                'Motive: To record the decisive Anglo-Dutch maritime triumph that halted Habsburg Catholic hegemony in Northern Europe.',
-              ],
-            },
-            question_badge: 'NAVAL TACTICS & ARTILLERY',
+              "Why was Drake's raid on Cadiz in Source B decisive in disrupting the Spanish Armada's invasion timetable?",
             model_answer:
-              'English ships were lower, faster, and mounted long-range culverin guns on rapid-reloading four-wheeled carriages, allowing English gunners to batter Spanish hulls from a safe distance while refusing to let Spanish soldiers board.',
-            provenance_clues: [
-              'Author: Hendrick Cornelisz Vroom, founding father of Dutch marine art.',
-              'Audience: European admirals, Protestant patrons in the Netherlands, and English naval commanders.',
-              'Motive: To record the decisive Anglo-Dutch maritime triumph that halted Habsburg Catholic hegemony in Northern Europe.',
-            ],
+              "Drake audaciously sailed into Cadiz harbour, sinking over 30 ships and burning thousands of seasoned wooden staves meant for food and water casks. This delayed the Armada's sailing by over a year and forced the Spanish to use green wood, causing their provisions to spoil and water to rot during the voyage.",
+            context:
+              "In April 1587, Elizabeth dispatched Drake to 'singe the King of Spain's beard'. His tactical triumph delayed the invasion until the summer of 1588.",
+            hinge_question:
+              'Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
+            teacher_notes: {
+              hinge_question:
+                'Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
+              source_context:
+                'In April 1587, Drake attacked Cadiz, destroying supplies and delaying the Armada for a year. **Hinge Question:** Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l3_src_b',
+              letter: 'B',
+              type: 'visual',
+              src: '/images/drake_cadiz_1587.jpg',
+              image: '/images/drake_cadiz_1587.jpg',
+              title:
+                "Source B (Preemptive Strike): Sir Francis Drake Singeing the King of Spain's Beard at Cadiz (April 1587)",
+              caption:
+                'Engraving of Drake’s raid on Cadiz harbour, where four royal naval galleons destroyed over 30 Spanish transports and tons of seasoned barrel staves.',
+              author: 'Contemporary Dutch Engraver',
+              date: 'April 1587',
+              question_badge: 'PREEMPTIVE STRIKE & SUPPLY LOGISTICS',
+              question:
+                "Why was Drake's raid on Cadiz in Source B decisive in disrupting the Spanish Armada's invasion timetable?",
+              model_answer:
+                "Drake audaciously sailed into Cadiz harbour, sinking over 30 ships and burning thousands of seasoned wooden staves meant for food and water casks. This delayed the Armada's sailing by over a year and forced the Spanish to use green wood, causing their provisions to spoil and water to rot during the voyage.",
+              context:
+                "In April 1587, Elizabeth dispatched Drake to 'singe the King of Spain's beard'. His tactical triumph delayed the invasion until the summer of 1588.",
+              hinge_question:
+                'Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
+              teacher_notes: {
+                hinge_question:
+                  'Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
+                source_context:
+                  'In April 1587, Drake attacked Cadiz, destroying supplies and delaying the Armada for a year. **Hinge Question:** Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
+              },
+            },
+          ],
         },
         {
           act: 3,
@@ -3065,7 +2758,7 @@ const monarchy_religion_power_data = {
           caption:
             'The Ark Royal (originally Ark Ralegh), 38-gun English race-built galleon and flagship of Lord High Admiral Howard of Effingham during the Armada campaign of 1588 (British Museum, 1864,0611.187).',
           source: {
-            id: 'mrp_l3_src_c',
+            id: 'monarchy_religion_power_l3_src_c',
             letter: 'C',
             type: 'visual',
             src: '/images/armada_gravelines_chart_1590.jpg',
@@ -3073,61 +2766,62 @@ const monarchy_religion_power_data = {
             title:
               'Source C (Cartographic Forensics): Chart of the Armada Off Gravelines (Robert Adams and Augustine Ryther, 1590)',
             caption:
-              "Plate X from Robert Adams' Expeditionis Hispanorum in Angliam vera descriptio, showing the English fleet engaging the Spanish Armada off Gravelines as fierce winds drive Spanish ships toward the Flemish banks.",
-            citation:
-              'British Library, Maps Collections (Maps C.7.c.1). Copper engraving by Augustine Ryther after Robert Adams, 1590.',
-            provenance:
-              'Commissioned by Lord High Admiral Howard of Effingham to provide an official cartographic record of the naval campaign.',
-            context:
-              "Robert Adams surveyed the exact course of the Armada campaign. Chart X captures the climax: English ships harassing the Armada as strong southwesterly gales prevent Medina Sidonia from turning back toward the Channel. **Hinge Question:** Did English gunnery defeat the Armada, or did unfavorable winds and treacherous Flemish shallows seal Spain's fate?",
+              'Detailed maritime cartography engraved by Augustine Ryther showing the crescent formation of the Armada broken up by English long-range artillery in the Narrow Seas.',
+            author: 'Robert Adams and Augustine Ryther',
+            date: '1590',
+            question_badge: 'TACTICAL CARTOGRAPHY & ARTILLERY SUPERIORITY',
             question:
-              "How does Robert Adams' 1590 navigation chart illustrate the decisive geographic and tactical turning point of the Armada campaign?",
-            hinge_question:
-              "Did English gunnery defeat the Armada, or did unfavorable winds and treacherous Flemish shallows seal Spain's fate?",
-            disciplinary_focus: 'CARTOGRAPHIC FORENSICS',
-            utility_enquiry: {
-              question:
-                "How does Robert Adams' 1590 navigation chart illustrate the decisive geographic and tactical turning point of the Armada campaign?",
-              model_answer:
-                'The chart maps the Spanish fleet being pushed northeast into the dangerous shoals of Zeeland by relentless English broadsides, showing how westerly winds trapped Medina Sidonia and made returning to the Channel impossible.',
-              content_inferences:
-                'Provides objective hydrographic and tactical evidence of how geography and prevailing weather combined to destroy Spanish invasion plans.',
-              provenance_evaluation:
-                'Official survey commissioned by the commanding English Lord Admiral; considered the primary scientific cartographic record of the 1588 campaign.',
-              context_limitations:
-                'Presents an orderly geometric progression of ships, simplifying the terrifying nighttime panic, fog, and navigational chaos experienced by both fleets.',
-              bullet_points: [
-                {
-                  label: 'Geographic Bottleneck',
-                  text: "Adams illustrates how English squadrons drove the Spanish past the rendezvous port of Dunkirk, permanently separating the fleet from Parma's army.",
-                },
-                {
-                  label: 'Trapped by Prevailing Winds',
-                  text: 'With southwesterly gales blowing, Medina Sidonia had no choice but to sail north around Scotland, leading to horrific shipwrecks on the Irish coast.',
-                },
-              ],
-              provenance_clues: [
-                "Author: Robert Adams (Surveyor of the Queen's Works) and Augustine Ryther (engraver).",
-                'Audience: Queen Elizabeth I, Lord Howard of Effingham, and high naval command.',
-                'Motive: To provide an unassailable scientific hydrographic record proving that English sailing tactics dismantled the Spanish invasion.',
-              ],
-            },
-            question_badge: 'CARTOGRAPHIC FORENSICS',
+              'What does the cartography in Source C reveal about English naval tactics during the Channel running battles?',
             model_answer:
-              'The chart maps the Spanish fleet being pushed northeast into the dangerous shoals of Zeeland by relentless English broadsides, showing how westerly winds trapped Medina Sidonia and made returning to the Channel impossible.',
-            provenance_clues: [
-              "Author: Robert Adams (Surveyor of the Queen's Works) and Augustine Ryther (engraver).",
-              'Audience: Queen Elizabeth I, Lord Howard of Effingham, and high naval command.',
-              'Motive: To provide an unassailable scientific hydrographic record proving that English sailing tactics dismantled the Spanish invasion.',
-            ],
+              'The chart shows English race-built galleons exploiting the windward gauge, staying out of range of Spanish grappling hooks while firing rapid broadsides from long-range culverin cannons. This neutralised the superior Spanish infantry by keeping the fight strictly an artillery duel at sea.',
+            context:
+              'Under John Hawkins, English shipwrights stripped tall forecastles off warships, creating sleek, fast galleons equipped for stand-off broadside gunnery.',
+            hinge_question:
+              'Why was naval artillery technology more decisive than fleet size in the Channel fighting?',
+            teacher_notes: {
+              hinge_question:
+                'Why was naval artillery technology more decisive than fleet size in the Channel fighting?',
+              source_context:
+                "Adams and Ryther's 1590 chart illustrates English broadside gunnery breaking the Spanish crescent. **Hinge Question:** Why was naval artillery technology more decisive than fleet size in the Channel fighting?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l3_src_c',
+              letter: 'C',
+              type: 'visual',
+              src: '/images/armada_gravelines_chart_1590.jpg',
+              image: '/images/armada_gravelines_chart_1590.jpg',
+              title:
+                'Source C (Cartographic Forensics): Chart of the Armada Off Gravelines (Robert Adams and Augustine Ryther, 1590)',
+              caption:
+                'Detailed maritime cartography engraved by Augustine Ryther showing the crescent formation of the Armada broken up by English long-range artillery in the Narrow Seas.',
+              author: 'Robert Adams and Augustine Ryther',
+              date: '1590',
+              question_badge: 'TACTICAL CARTOGRAPHY & ARTILLERY SUPERIORITY',
+              question:
+                'What does the cartography in Source C reveal about English naval tactics during the Channel running battles?',
+              model_answer:
+                'The chart shows English race-built galleons exploiting the windward gauge, staying out of range of Spanish grappling hooks while firing rapid broadsides from long-range culverin cannons. This neutralised the superior Spanish infantry by keeping the fight strictly an artillery duel at sea.',
+              context:
+                'Under John Hawkins, English shipwrights stripped tall forecastles off warships, creating sleek, fast galleons equipped for stand-off broadside gunnery.',
+              hinge_question:
+                'Why was naval artillery technology more decisive than fleet size in the Channel fighting?',
+              teacher_notes: {
+                hinge_question:
+                  'Why was naval artillery technology more decisive than fleet size in the Channel fighting?',
+                source_context:
+                  "Adams and Ryther's 1590 chart illustrates English broadside gunnery breaking the Spanish crescent. **Hinge Question:** Why was naval artillery technology more decisive than fleet size in the Channel fighting?",
+              },
+            },
+          ],
         },
         {
           act: 4,
           title: 'Midnight Hellburners at Calais (7–8 August 1588)',
           text: '<span class="para-ref">[3.4]</span> On 6 August, Medina Sidonia anchored his fleet off Calais to await the Duke of Parma’s army. But Parma’s troops were blockaded in port by Dutch flyboats and not ready to embark. Sensing a golden opportunity, Drake and Lord Howard executed a terrifying tactical strike. Just after midnight on 7 August, the English steered eight blazing <strong>fireship</strong> vessels—packed with gunpowder, pitch, and ordnance—directly into the crowded Spanish <strong>anchorage</strong>. Terrified Spanish captains panicked, chopped their heavy iron anchor cables, and scattered blindly into the pitch-black night. The unbreakable crescent formation was irrevocably broken, leaving Spanish ships disordered and drifting toward shallow Flemish sandbanks.',
           source: {
-            id: 'mrp_l3_src_d',
+            id: 'monarchy_religion_power_l3_src_d',
             letter: 'D',
             type: 'visual',
             src: '/images/monarchy_religion_power/armada_fireships_calais_1588.jpg',
@@ -3135,61 +2829,62 @@ const monarchy_religion_power_data = {
             title:
               'Source D (Psychological Warfare): The Launch of Fireships Against the Spanish Armada at Calais (Midnight 7–8 August 1588)',
             caption:
-              'Dramatic night painting of English fireships drifting ablaze on the midnight tide into the Spanish anchorage at Calais roadstead, illuminating terrified Spanish galleons desperately cutting their anchor cables.',
-            citation:
-              'Royal Museums Greenwich, London (BHC0263). Oil on canvas, seventeenth century.',
-            provenance:
-              "Commissioned by British naval patrons to commemorate Drake's psychological masterstroke at Calais.",
-            context:
-              'Anchored off Calais, the Armada was waiting to transport 27,000 Spanish soldiers from Flanders. Drake loaded eight obsolete ships with pitch, brimstone, and gunpowder, setting them on fire and steering them with the tide directly into the anchored fleet. **Hinge Question:** Why is psychological panic in naval warfare often more devastating than direct artillery bombardment?',
+              'Dramatic maritime oil painting (National Maritime Museum, Greenwich) showing eight English vessels packed with pitch and gunpowder set ablaze and drifted into the Spanish anchorage.',
+            author: 'Anglo-Dutch Marine School',
+            date: 'c. 1590–1600',
+            question_badge: 'PSYCHOLOGICAL DISRUPTION & TACTICAL BREAKDOWN',
             question:
-              "Why did Sir Francis Drake's midnight fireship assault off Calais throw the Spanish Armada into total, fatal disarray?",
-            hinge_question:
-              'Why is psychological panic in naval warfare often more devastating than direct artillery bombardment?',
-            disciplinary_focus: 'PSYCHOLOGICAL WARFARE',
-            utility_enquiry: {
-              question:
-                "Why did Sir Francis Drake's midnight fireship assault off Calais throw the Spanish Armada into total, fatal disarray?",
-              model_answer:
-                "Terrified that the eight blazing vessels were deadly Dutch 'hellburners' packed with gunpowder, Spanish captains panicked, cut their heavy anchor cables in the dark, and permanently broke their invincible defensive crescent formation.",
-              content_inferences:
-                'Demonstrates how low-cost tactical ingenuity and psychological terror overcame an otherwise impregnable naval defensive formation.',
-              provenance_evaluation:
-                'Atmospheric historical canvas; highlights the fiery contrast between English audacity and Spanish terror in the midnight waters of the Channel.',
-              context_limitations:
-                "While the fireships didn't burn a single Spanish ship directly, their true damage was stripping the Armada of its anchors, leaving ships helpless in subsequent storms.",
-              bullet_points: [
-                {
-                  label: 'Permanent Loss of Anchors',
-                  text: 'Cutting their anchor cables left Spanish galleons unable to anchor safely when terrible gales drove them toward the Scottish and Irish coasts.',
-                },
-                {
-                  label: 'Shattered Defensive Crescent',
-                  text: 'By morning, the Armada was scattered across miles of open sea, allowing English galleons to pick off isolated Spanish flagships at Gravelines.',
-                },
-              ],
-              provenance_clues: [
-                'Author: British marine historical painter (Royal Museums Greenwich collection, BHC0263).',
-                'Audience: British maritime historians, naval officers, and visitors to Greenwich.',
-                "Motive: To depict the chaotic night action that broke the Spanish invasion fleet before it could embark the Duke of Parma's army.",
-              ],
-            },
-            question_badge: 'PSYCHOLOGICAL WARFARE',
+              "Why did the fireship attack at Calais in Source D permanently destroy the Spanish Armada's invasion plan?",
             model_answer:
-              "Terrified that the eight blazing vessels were deadly Dutch 'hellburners' packed with gunpowder, Spanish captains panicked, cut their heavy anchor cables in the dark, and permanently broke their invincible defensive crescent formation.",
-            provenance_clues: [
-              'Author: British marine historical painter (Royal Museums Greenwich collection, BHC0263).',
-              'Audience: British maritime historians, naval officers, and visitors to Greenwich.',
-              "Motive: To depict the chaotic night action that broke the Spanish invasion fleet before it could embark the Duke of Parma's army.",
-            ],
+              "The Armada was securely anchored in tightly packed lines off Calais waiting for the Duke of Parma's invasion barges. When eight blazing hellburners bore down with the tide, panic erupted; Spanish captains severed their anchor cables and scattered into the darkness, making it impossible to reform their defensive crescent.",
+            context:
+              'At midnight on 7 August 1588, Lord Howard and Drake launched eight loaded fireships towards Calais roads, scattering the Spanish fleet into open waters.',
+            hinge_question:
+              'Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
+            teacher_notes: {
+              hinge_question:
+                'Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
+              source_context:
+                'At midnight on 7–8 August 1588, English fireships scattered the Armada off Calais. **Hinge Question:** Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l3_src_d',
+              letter: 'D',
+              type: 'visual',
+              src: '/images/monarchy_religion_power/armada_fireships_calais_1588.jpg',
+              image: '/images/monarchy_religion_power/armada_fireships_calais_1588.jpg',
+              title:
+                'Source D (Psychological Warfare): The Launch of Fireships Against the Spanish Armada at Calais (Midnight 7–8 August 1588)',
+              caption:
+                'Dramatic maritime oil painting (National Maritime Museum, Greenwich) showing eight English vessels packed with pitch and gunpowder set ablaze and drifted into the Spanish anchorage.',
+              author: 'Anglo-Dutch Marine School',
+              date: 'c. 1590–1600',
+              question_badge: 'PSYCHOLOGICAL DISRUPTION & TACTICAL BREAKDOWN',
+              question:
+                "Why did the fireship attack at Calais in Source D permanently destroy the Spanish Armada's invasion plan?",
+              model_answer:
+                "The Armada was securely anchored in tightly packed lines off Calais waiting for the Duke of Parma's invasion barges. When eight blazing hellburners bore down with the tide, panic erupted; Spanish captains severed their anchor cables and scattered into the darkness, making it impossible to reform their defensive crescent.",
+              context:
+                'At midnight on 7 August 1588, Lord Howard and Drake launched eight loaded fireships towards Calais roads, scattering the Spanish fleet into open waters.',
+              hinge_question:
+                'Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
+              teacher_notes: {
+                hinge_question:
+                  'Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
+                source_context:
+                  'At midnight on 7–8 August 1588, English fireships scattered the Armada off Calais. **Hinge Question:** Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
+              },
+            },
+          ],
         },
         {
           act: 5,
           title: 'Gravelines & The Protestant Wind (August–September 1588)',
           text: '<span class="para-ref">[3.5]</span> At dawn on 8 August, the English closed in for the decisive Battle of Gravelines. In an eight-hour running battle, English race-built galleons pounded the scattered, anchorless Spanish ships with over 100,000 cannonballs at point-blank range, killing thousands of soldiers and puncturing hulls. Then, divine <strong>providence</strong> intervened. Ferocious south-westerly gales—celebrated across England as the "Protestant Wind"—drove the battered Armada north into the treacherous North Sea. Lacking anchors and starving on foul rations, Spanish captains were forced to circumnavigate Scotland and Ireland. Fierce Atlantic hurricanes smashed dozens of galleons against the rocky Irish cliffs; over 50 ships and 15,000 men perished, turning the invasion into an utter catastrophe.',
           source: {
-            id: 'mrp_l3_src_e',
+            id: 'monarchy_religion_power_l3_src_e',
             letter: 'E',
             type: 'visual',
             src: '/images/monarchy_religion_power/armada_victory_medal_1588.jpg',
@@ -3197,183 +2892,118 @@ const monarchy_religion_power_data = {
             title:
               "Source E (Providential Propaganda): Naval Reward Medal of Queen Elizabeth I: 'God Blew and They Were Scattered' (1588)",
             caption:
-              'Gold and silver Naval Reward Medal struck by the Royal Mint in 1588. The reverse depicts the Spanish fleet battered by tempestuous waves with the Latin inscription Flavit Jehovah et dissipati sunt.',
-            citation:
-              'Metropolitan Museum of Art, New York (Accession: DP-180-159) / British Museum (M.7011).',
-            provenance:
-              'Commissioned by Queen Elizabeth I and the Privy Council and awarded to senior naval captains who fought in the 1588 campaign.',
-            context:
-              "Following the Armada's retreat, Elizabeth had commemorative medals struck for commanders. Rather than boasting of English naval power, the medal gave credit to divine intervention: 'God blew with His wind, and they were scattered'. **Hinge Question:** Why was attributing military victory to divine weather more politically powerful for Elizabeth than taking personal credit as commander?",
+              "Silver victory medal (British Museum) struck to reward English naval officers, bearing the Latin inscription 'Flavit Jehovah et dissipati sunt' (God blew and they were scattered).",
+            author: 'Royal Mint under Queen Elizabeth I',
+            date: 'Autumn 1588',
+            question_badge: 'PROVIDENTIAL PROPAGANDA & DIVINE FAVOUR',
             question:
-              "What theological message did Queen Elizabeth I project by stamping the Latin inscription 'Flavit Jehovah et Dissipati Sunt' upon her Armada victory medals?",
-            hinge_question:
-              'Why was attributing military victory to divine weather more politically powerful for Elizabeth than taking personal credit as commander?',
-            disciplinary_focus: 'PROVIDENTIAL PROPAGANDA',
-            utility_enquiry: {
-              question:
-                "What theological message did Queen Elizabeth I project by stamping the Latin inscription 'Flavit Jehovah et Dissipati Sunt' upon her Armada victory medals?",
-              model_answer:
-                "Elizabeth attributed the Armada's destruction directly to divine intervention, claiming that God sent Protestant winds and storms to scatter the Catholic invaders and prove that England was under Almighty protection.",
-              content_inferences:
-                'Reveals how early modern states utilized numismatic propaganda to sanctify their foreign wars as holy crusades blessed by God.',
-              provenance_evaluation:
-                'Official royal reward medal; physical numismatic evidence of how the Crown immortalized naval victory as divine favor.',
-              context_limitations:
-                'Downplays the desperate hand-to-hand fighting, skilled navigation of English sailors, and devastating culverin gunnery that actually disabled the fleet.',
-              bullet_points: [
-                {
-                  label: 'Divine Endorsement of Protestantism',
-                  text: "Attributing victory to God proved to international observers that the Pope's excommunication of Elizabeth was null and void in heaven.",
-                },
-                {
-                  label: 'Humility as Royal Statecraft',
-                  text: "Framing England as a humble David protected by God against the Spanish Goliath bolstered Elizabeth's moral authority across Protestant Europe.",
-                },
-              ],
-              provenance_clues: [
-                'Author: Royal Mint engravers under order of Queen Elizabeth I and the Privy Council.',
-                'Audience: Senior naval commanders, foreign European courts, and the English Protestant populace.',
-                'Motive: To immortalize the naval triumph as undeniable divine proof of Protestant legitimacy and royal sanctity.',
-              ],
-            },
-            question_badge: 'PROVIDENTIAL PROPAGANDA',
+              'How does the victory medal in Source E use weather and providential theology to cement the English Protestant national myth?',
             model_answer:
-              "Elizabeth attributed the Armada's destruction directly to divine intervention, claiming that God sent Protestant winds and storms to scatter the Catholic invaders and prove that England was under Almighty protection.",
-            provenance_clues: [
-              'Author: Royal Mint engravers under order of Queen Elizabeth I and the Privy Council.',
-              'Audience: Senior naval commanders, foreign European courts, and the English Protestant populace.',
-              'Motive: To immortalize the naval triumph as undeniable divine proof of Protestant legitimacy and royal sanctity.',
-            ],
+              "The medal attributes the Armada's destruction directly to God's Protestant wind, which blew the battered Spanish ships into the North Sea and around the dangerous rocky coasts of Scotland and Ireland. It promoted the belief that England was God's chosen Protestant nation protected by divine intervention.",
+            context:
+              'Following the Battle of Gravelines, prevailing south-westerly gales drove the Armada north into the Atlantic, wrecking dozens of ships on Irish shores.',
+            hinge_question:
+              'Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
+            teacher_notes: {
+              hinge_question:
+                'Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
+              source_context:
+                'Struck in 1588, this medal proclaimed that God intervened to scatter the Spanish Armada. **Hinge Question:** Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l3_src_e',
+              letter: 'E',
+              type: 'visual',
+              src: '/images/monarchy_religion_power/armada_victory_medal_1588.jpg',
+              image: '/images/monarchy_religion_power/armada_victory_medal_1588.jpg',
+              title:
+                "Source E (Providential Propaganda): Naval Reward Medal of Queen Elizabeth I: 'God Blew and They Were Scattered' (1588)",
+              caption:
+                "Silver victory medal (British Museum) struck to reward English naval officers, bearing the Latin inscription 'Flavit Jehovah et dissipati sunt' (God blew and they were scattered).",
+              author: 'Royal Mint under Queen Elizabeth I',
+              date: 'Autumn 1588',
+              question_badge: 'PROVIDENTIAL PROPAGANDA & DIVINE FAVOUR',
+              question:
+                'How does the victory medal in Source E use weather and providential theology to cement the English Protestant national myth?',
+              model_answer:
+                "The medal attributes the Armada's destruction directly to God's Protestant wind, which blew the battered Spanish ships into the North Sea and around the dangerous rocky coasts of Scotland and Ireland. It promoted the belief that England was God's chosen Protestant nation protected by divine intervention.",
+              context:
+                'Following the Battle of Gravelines, prevailing south-westerly gales drove the Armada north into the Atlantic, wrecking dozens of ships on Irish shores.',
+              hinge_question:
+                'Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
+              teacher_notes: {
+                hinge_question:
+                  'Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
+                source_context:
+                  'Struck in 1588, this medal proclaimed that God intervened to scatter the Spanish Armada. **Hinge Question:** Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
+              },
+            },
+          ],
         },
       ],
       sources: [
         {
-          id: 'mrp_l3_src_a',
+          id: 'monarchy_religion_power_l3_src_a',
           letter: 'A',
+          type: 'written',
+          src: '',
+          image: '',
+          title:
+            'Source A (Papal Crusade & Imperial Ambition): Pope Sixtus V Promises 1,000,000 Gold Ducats for the Enterprise of England (1587)',
+          caption:
+            'Papal treaty dispatch from Rome confirming financial subsidy and plenary indulgences to King Philip II of Spain for the overthrow of Elizabeth I and restoration of Catholicism.',
+          author: 'Papal Secretariat of Pope Sixtus V',
+          date: 'July 1587',
+          content:
+            'His Holiness promises to give to the Catholic King, as soon as his fleet shall have set foot on English territory, a million ducats of gold... to aid in so holy and pious an undertaking, which is designed for the total extirpation of heresy and the restoration of that ancient kingdom to the Holy Catholic Church.',
+          question_badge: 'HOLY CRUSADE & GLOBAL GEOPOLITICS',
+          question:
+            'How does Source A illustrate that the Spanish Armada was regarded as a sacred international crusade rather than a simple territorial war?',
+          model_answer:
+            "Pope Sixtus V offered one million ducats of gold and full spiritual remission of sins for troops participating in the 'Enterprise of England'. This shows that Philip II acted not merely as King of Spain, but as the military champion of the Counter-Reformation tasked with crushing northern Protestant heresy.",
+          context:
+            "Following the execution of Mary Stuart and Elizabeth's Treaty of Nonsuch aiding Dutch rebels, Philip II assembled the Armada with papal blessing.",
+          hinge_question:
+            'Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?',
+          teacher_notes: {
+            hinge_question:
+              'Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?',
+            source_context:
+              "Pope Sixtus V pledged 1,000,000 gold ducats to support Philip II's Armada. **Hinge Question:** Did Philip II launch the Armada out of genuine religious duty or strategic imperial ambition?",
+          },
+        },
+        {
+          id: 'monarchy_religion_power_l3_src_b',
+          letter: 'B',
           type: 'visual',
           src: '/images/drake_cadiz_1587.jpg',
           image: '/images/drake_cadiz_1587.jpg',
           title:
-            "Source A (Preemptive Strike): Sir Francis Drake Singeing the King of Spain's Beard at Cadiz (April 1587)",
+            "Source B (Preemptive Strike): Sir Francis Drake Singeing the King of Spain's Beard at Cadiz (April 1587)",
           caption:
-            'Historic composition depicting Sir Francis Drake sailing his four royal galleons into Cadiz harbor in April 1587, destroying over thirty Spanish supply ships and delaying the Armada by a full year.',
-          citation: 'National Maritime Museum, Greenwich, London (BHC0262). Oil painting.',
-          provenance:
-            "Painted to celebrate Drake's audacious naval raid that disrupted Spanish invasion preparations.",
-          context:
-            "Hearing that Philip II was assembling an invasion armada, Elizabeth dispatched Drake on a raiding mission. Entering heavily fortified Cadiz harbor, Drake burned supply transports, stole seasoned barrel staves, and captured the Portuguese carrack San Felipe. **Hinge Question:** Why was destroying Spain's barrel staves at Cadiz more damaging to the Armada than destroying warships?",
+            'Engraving of Drake’s raid on Cadiz harbour, where four royal naval galleons destroyed over 30 Spanish transports and tons of seasoned barrel staves.',
+          author: 'Contemporary Dutch Engraver',
+          date: 'April 1587',
+          question_badge: 'PREEMPTIVE STRIKE & SUPPLY LOGISTICS',
           question:
-            "How did Sir Francis Drake's preemptive naval raid on Cadiz in 1587 critically undermine the logistics of the Spanish Armada?",
-          hinge_question:
-            "Why was destroying Spain's barrel staves at Cadiz more damaging to the Armada than destroying warships?",
-          disciplinary_focus: 'PREEMPTIVE STRIKE',
-          utility_enquiry: {
-            question:
-              "How did Sir Francis Drake's preemptive naval raid on Cadiz in 1587 critically undermine the logistics of the Spanish Armada?",
-            model_answer:
-              'Drake destroyed over thirty Spanish transports and burned seasoned wood staves meant for food barrels, forcing the Spanish to use green wood that leaked and spoiled their provisions during the 1588 campaign.',
-            content_inferences:
-              'Illustrates the critical importance of maritime logistics and raiding warfare in disrupting massive amphibious invasions.',
-            provenance_evaluation:
-              'Heroic English naval painting; celebrates English daring and tactical seamanship against cumbersome imperial rivals.',
-            context_limitations:
-              "Focuses on Drake's glory, downplaying Elizabeth's anger that he had exceeded royal orders and made peace negotiations with Spain impossible.",
-            bullet_points: [
-              {
-                label: 'Logistical Sabotage',
-                text: 'Destroying water casks and salted meat barrels doomed the Armada to acute food spoilage, dysentery, and thirst before they ever fired a cannon.',
-              },
-              {
-                label: 'Crucial Year of Preparation',
-                text: 'Delaying the invasion until summer 1588 gave English shipwrights and militia commanders twelve months to fortify coastal defenses.',
-              },
-            ],
-            provenance_clues: [
-              'Author: English maritime painter in the British naval commemorative tradition.',
-              "Audience: English naval officers, patriotic historians, and visitors to the Queen's House.",
-              "Motive: To glorify Drake's aggressive privateer tactics and celebrate English naval superiority.",
-            ],
-          },
-          question_badge: 'PREEMPTIVE STRIKE',
+            "Why was Drake's raid on Cadiz in Source B decisive in disrupting the Spanish Armada's invasion timetable?",
           model_answer:
-            'Drake destroyed over thirty Spanish transports and burned seasoned wood staves meant for food barrels, forcing the Spanish to use green wood that leaked and spoiled their provisions during the 1588 campaign.',
-          provenance_clues: [
-            'Author: English maritime painter in the British naval commemorative tradition.',
-            "Audience: English naval officers, patriotic historians, and visitors to the Queen's House.",
-            "Motive: To glorify Drake's aggressive privateer tactics and celebrate English naval superiority.",
-          ],
-          source_context:
-            "Hearing that Philip II was assembling an invasion armada, Elizabeth dispatched Drake on a raiding mission. Entering heavily fortified Cadiz harbor, Drake burned supply transports, stole seasoned barrel staves, and captured the Portuguese carrack San Felipe. **Hinge Question:** Why was destroying Spain's barrel staves at Cadiz more damaging to the Armada than destroying warships?",
+            "Drake audaciously sailed into Cadiz harbour, sinking over 30 ships and burning thousands of seasoned wooden staves meant for food and water casks. This delayed the Armada's sailing by over a year and forced the Spanish to use green wood, causing their provisions to spoil and water to rot during the voyage.",
+          context:
+            "In April 1587, Elizabeth dispatched Drake to 'singe the King of Spain's beard'. His tactical triumph delayed the invasion until the summer of 1588.",
+          hinge_question:
+            'Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
           teacher_notes: {
+            hinge_question:
+              'Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
             source_context:
-              "Hearing that Philip II was assembling an invasion armada, Elizabeth dispatched Drake on a raiding mission. Entering heavily fortified Cadiz harbor, Drake burned supply transports, stole seasoned barrel staves, and captured the Portuguese carrack San Felipe. **Hinge Question:** Why was destroying Spain's barrel staves at Cadiz more damaging to the Armada than destroying warships?",
+              'In April 1587, Drake attacked Cadiz, destroying supplies and delaying the Armada for a year. **Hinge Question:** Why do logistics, food, and water barrels matter just as much as cannons in winning naval campaigns?',
           },
         },
         {
-          id: 'mrp_l3_src_b',
-          letter: 'B',
-          type: 'visual',
-          src: '/images/battle_of_gravelines_1588.jpg',
-          image: '/images/battle_of_gravelines_1588.jpg',
-          title: 'Source B (Naval Tactics & Artillery): The Battle of Gravelines (8 August 1588)',
-          caption:
-            "Hendrick Cornelisz Vroom's dynamic naval action painting of the Battle of Gravelines, where English race-built galleons pounded the disordered Spanish fleet with heavy culverin broadsides at close range.",
-          citation:
-            'Tiroler Landesmuseum Ferdinandeum, Innsbruck / Royal Museums Greenwich. Oil on canvas, c. 1600.',
-          provenance:
-            'Painted by pioneering Dutch marine artist Hendrick Vroom based on eyewitness accounts from English and Dutch captains.',
-          context:
-            'After the fireship attack broke the Spanish formation at Calais, the English fleet attacked at daybreak off Gravelines. English ships maneuvered swiftly, maintaining a deadly bombardment that sank several Spanish galleons and drove the rest toward North Sea shallows. **Hinge Question:** Why did superior English artillery range and ship maneuverability make traditional Spanish boarding tactics completely useless?',
-          question:
-            "How did the design of English 'race-built' galleons give Lord Howard and Drake a decisive advantage over the Spanish Armada at Gravelines?",
-          hinge_question:
-            'Why did superior English artillery range and ship maneuverability make traditional Spanish boarding tactics completely useless?',
-          disciplinary_focus: 'NAVAL TACTICS & ARTILLERY',
-          utility_enquiry: {
-            question:
-              "How did the design of English 'race-built' galleons give Lord Howard and Drake a decisive advantage over the Spanish Armada at Gravelines?",
-            model_answer:
-              'English ships were lower, faster, and mounted long-range culverin guns on rapid-reloading four-wheeled carriages, allowing English gunners to batter Spanish hulls from a safe distance while refusing to let Spanish soldiers board.',
-            content_inferences:
-              'Documents a technological revolution in naval warfare: the decisive shift from boarding combat to stand-off broadside artillery duels.',
-            provenance_evaluation:
-              "Monumental painting by Europe's premier marine master; offers unmatched technical accuracy regarding hull rigging, cannon smoke, and battle chaos.",
-            context_limitations:
-              'Depicts dramatic destruction, but in truth, English ships ran completely out of gunpowder by late afternoon and were forced to break off pursuit.',
-            bullet_points: [
-              {
-                label: 'Technological Revolution',
-                text: 'Lower forecastles designed by John Hawkins allowed English ships to sail closer to the wind and out-maneuver top-heavy Spanish floating castles.',
-              },
-              {
-                label: 'Neutralisation of Spanish Infantry',
-                text: "Spain's 19,000 elite soldiers were trapped aboard ships that could neither close with the enemy nor return effective long-range cannon fire.",
-              },
-            ],
-            provenance_clues: [
-              'Author: Hendrick Cornelisz Vroom, founding father of Dutch marine art.',
-              'Audience: European admirals, Protestant patrons in the Netherlands, and English naval commanders.',
-              'Motive: To record the decisive Anglo-Dutch maritime triumph that halted Habsburg Catholic hegemony in Northern Europe.',
-            ],
-          },
-          question_badge: 'NAVAL TACTICS & ARTILLERY',
-          model_answer:
-            'English ships were lower, faster, and mounted long-range culverin guns on rapid-reloading four-wheeled carriages, allowing English gunners to batter Spanish hulls from a safe distance while refusing to let Spanish soldiers board.',
-          provenance_clues: [
-            'Author: Hendrick Cornelisz Vroom, founding father of Dutch marine art.',
-            'Audience: European admirals, Protestant patrons in the Netherlands, and English naval commanders.',
-            'Motive: To record the decisive Anglo-Dutch maritime triumph that halted Habsburg Catholic hegemony in Northern Europe.',
-          ],
-          source_context:
-            'After the fireship attack broke the Spanish formation at Calais, the English fleet attacked at daybreak off Gravelines. English ships maneuvered swiftly, maintaining a deadly bombardment that sank several Spanish galleons and drove the rest toward North Sea shallows. **Hinge Question:** Why did superior English artillery range and ship maneuverability make traditional Spanish boarding tactics completely useless?',
-          teacher_notes: {
-            source_context:
-              'After the fireship attack broke the Spanish formation at Calais, the English fleet attacked at daybreak off Gravelines. English ships maneuvered swiftly, maintaining a deadly bombardment that sank several Spanish galleons and drove the rest toward North Sea shallows. **Hinge Question:** Why did superior English artillery range and ship maneuverability make traditional Spanish boarding tactics completely useless?',
-          },
-        },
-        {
-          id: 'mrp_l3_src_c',
+          id: 'monarchy_religion_power_l3_src_c',
           letter: 'C',
           type: 'visual',
           src: '/images/armada_gravelines_chart_1590.jpg',
@@ -3381,62 +3011,27 @@ const monarchy_religion_power_data = {
           title:
             'Source C (Cartographic Forensics): Chart of the Armada Off Gravelines (Robert Adams and Augustine Ryther, 1590)',
           caption:
-            "Plate X from Robert Adams' Expeditionis Hispanorum in Angliam vera descriptio, showing the English fleet engaging the Spanish Armada off Gravelines as fierce winds drive Spanish ships toward the Flemish banks.",
-          citation:
-            'British Library, Maps Collections (Maps C.7.c.1). Copper engraving by Augustine Ryther after Robert Adams, 1590.',
-          provenance:
-            'Commissioned by Lord High Admiral Howard of Effingham to provide an official cartographic record of the naval campaign.',
-          context:
-            "Robert Adams surveyed the exact course of the Armada campaign. Chart X captures the climax: English ships harassing the Armada as strong southwesterly gales prevent Medina Sidonia from turning back toward the Channel. **Hinge Question:** Did English gunnery defeat the Armada, or did unfavorable winds and treacherous Flemish shallows seal Spain's fate?",
+            'Detailed maritime cartography engraved by Augustine Ryther showing the crescent formation of the Armada broken up by English long-range artillery in the Narrow Seas.',
+          author: 'Robert Adams and Augustine Ryther',
+          date: '1590',
+          question_badge: 'TACTICAL CARTOGRAPHY & ARTILLERY SUPERIORITY',
           question:
-            "How does Robert Adams' 1590 navigation chart illustrate the decisive geographic and tactical turning point of the Armada campaign?",
-          hinge_question:
-            "Did English gunnery defeat the Armada, or did unfavorable winds and treacherous Flemish shallows seal Spain's fate?",
-          disciplinary_focus: 'CARTOGRAPHIC FORENSICS',
-          utility_enquiry: {
-            question:
-              "How does Robert Adams' 1590 navigation chart illustrate the decisive geographic and tactical turning point of the Armada campaign?",
-            model_answer:
-              'The chart maps the Spanish fleet being pushed northeast into the dangerous shoals of Zeeland by relentless English broadsides, showing how westerly winds trapped Medina Sidonia and made returning to the Channel impossible.',
-            content_inferences:
-              'Provides objective hydrographic and tactical evidence of how geography and prevailing weather combined to destroy Spanish invasion plans.',
-            provenance_evaluation:
-              'Official survey commissioned by the commanding English Lord Admiral; considered the primary scientific cartographic record of the 1588 campaign.',
-            context_limitations:
-              'Presents an orderly geometric progression of ships, simplifying the terrifying nighttime panic, fog, and navigational chaos experienced by both fleets.',
-            bullet_points: [
-              {
-                label: 'Geographic Bottleneck',
-                text: "Adams illustrates how English squadrons drove the Spanish past the rendezvous port of Dunkirk, permanently separating the fleet from Parma's army.",
-              },
-              {
-                label: 'Trapped by Prevailing Winds',
-                text: 'With southwesterly gales blowing, Medina Sidonia had no choice but to sail north around Scotland, leading to horrific shipwrecks on the Irish coast.',
-              },
-            ],
-            provenance_clues: [
-              "Author: Robert Adams (Surveyor of the Queen's Works) and Augustine Ryther (engraver).",
-              'Audience: Queen Elizabeth I, Lord Howard of Effingham, and high naval command.',
-              'Motive: To provide an unassailable scientific hydrographic record proving that English sailing tactics dismantled the Spanish invasion.',
-            ],
-          },
-          question_badge: 'CARTOGRAPHIC FORENSICS',
+            'What does the cartography in Source C reveal about English naval tactics during the Channel running battles?',
           model_answer:
-            'The chart maps the Spanish fleet being pushed northeast into the dangerous shoals of Zeeland by relentless English broadsides, showing how westerly winds trapped Medina Sidonia and made returning to the Channel impossible.',
-          provenance_clues: [
-            "Author: Robert Adams (Surveyor of the Queen's Works) and Augustine Ryther (engraver).",
-            'Audience: Queen Elizabeth I, Lord Howard of Effingham, and high naval command.',
-            'Motive: To provide an unassailable scientific hydrographic record proving that English sailing tactics dismantled the Spanish invasion.',
-          ],
-          source_context:
-            "Robert Adams surveyed the exact course of the Armada campaign. Chart X captures the climax: English ships harassing the Armada as strong southwesterly gales prevent Medina Sidonia from turning back toward the Channel. **Hinge Question:** Did English gunnery defeat the Armada, or did unfavorable winds and treacherous Flemish shallows seal Spain's fate?",
+            'The chart shows English race-built galleons exploiting the windward gauge, staying out of range of Spanish grappling hooks while firing rapid broadsides from long-range culverin cannons. This neutralised the superior Spanish infantry by keeping the fight strictly an artillery duel at sea.',
+          context:
+            'Under John Hawkins, English shipwrights stripped tall forecastles off warships, creating sleek, fast galleons equipped for stand-off broadside gunnery.',
+          hinge_question:
+            'Why was naval artillery technology more decisive than fleet size in the Channel fighting?',
           teacher_notes: {
+            hinge_question:
+              'Why was naval artillery technology more decisive than fleet size in the Channel fighting?',
             source_context:
-              "Robert Adams surveyed the exact course of the Armada campaign. Chart X captures the climax: English ships harassing the Armada as strong southwesterly gales prevent Medina Sidonia from turning back toward the Channel. **Hinge Question:** Did English gunnery defeat the Armada, or did unfavorable winds and treacherous Flemish shallows seal Spain's fate?",
+              "Adams and Ryther's 1590 chart illustrates English broadside gunnery breaking the Spanish crescent. **Hinge Question:** Why was naval artillery technology more decisive than fleet size in the Channel fighting?",
           },
         },
         {
-          id: 'mrp_l3_src_d',
+          id: 'monarchy_religion_power_l3_src_d',
           letter: 'D',
           type: 'visual',
           src: '/images/monarchy_religion_power/armada_fireships_calais_1588.jpg',
@@ -3444,62 +3039,27 @@ const monarchy_religion_power_data = {
           title:
             'Source D (Psychological Warfare): The Launch of Fireships Against the Spanish Armada at Calais (Midnight 7–8 August 1588)',
           caption:
-            'Dramatic night painting of English fireships drifting ablaze on the midnight tide into the Spanish anchorage at Calais roadstead, illuminating terrified Spanish galleons desperately cutting their anchor cables.',
-          citation:
-            'Royal Museums Greenwich, London (BHC0263). Oil on canvas, seventeenth century.',
-          provenance:
-            "Commissioned by British naval patrons to commemorate Drake's psychological masterstroke at Calais.",
-          context:
-            'Anchored off Calais, the Armada was waiting to transport 27,000 Spanish soldiers from Flanders. Drake loaded eight obsolete ships with pitch, brimstone, and gunpowder, setting them on fire and steering them with the tide directly into the anchored fleet. **Hinge Question:** Why is psychological panic in naval warfare often more devastating than direct artillery bombardment?',
+            'Dramatic maritime oil painting (National Maritime Museum, Greenwich) showing eight English vessels packed with pitch and gunpowder set ablaze and drifted into the Spanish anchorage.',
+          author: 'Anglo-Dutch Marine School',
+          date: 'c. 1590–1600',
+          question_badge: 'PSYCHOLOGICAL DISRUPTION & TACTICAL BREAKDOWN',
           question:
-            "Why did Sir Francis Drake's midnight fireship assault off Calais throw the Spanish Armada into total, fatal disarray?",
-          hinge_question:
-            'Why is psychological panic in naval warfare often more devastating than direct artillery bombardment?',
-          disciplinary_focus: 'PSYCHOLOGICAL WARFARE',
-          utility_enquiry: {
-            question:
-              "Why did Sir Francis Drake's midnight fireship assault off Calais throw the Spanish Armada into total, fatal disarray?",
-            model_answer:
-              "Terrified that the eight blazing vessels were deadly Dutch 'hellburners' packed with gunpowder, Spanish captains panicked, cut their heavy anchor cables in the dark, and permanently broke their invincible defensive crescent formation.",
-            content_inferences:
-              'Demonstrates how low-cost tactical ingenuity and psychological terror overcame an otherwise impregnable naval defensive formation.',
-            provenance_evaluation:
-              'Atmospheric historical canvas; highlights the fiery contrast between English audacity and Spanish terror in the midnight waters of the Channel.',
-            context_limitations:
-              "While the fireships didn't burn a single Spanish ship directly, their true damage was stripping the Armada of its anchors, leaving ships helpless in subsequent storms.",
-            bullet_points: [
-              {
-                label: 'Permanent Loss of Anchors',
-                text: 'Cutting their anchor cables left Spanish galleons unable to anchor safely when terrible gales drove them toward the Scottish and Irish coasts.',
-              },
-              {
-                label: 'Shattered Defensive Crescent',
-                text: 'By morning, the Armada was scattered across miles of open sea, allowing English galleons to pick off isolated Spanish flagships at Gravelines.',
-              },
-            ],
-            provenance_clues: [
-              'Author: British marine historical painter (Royal Museums Greenwich collection, BHC0263).',
-              'Audience: British maritime historians, naval officers, and visitors to Greenwich.',
-              "Motive: To depict the chaotic night action that broke the Spanish invasion fleet before it could embark the Duke of Parma's army.",
-            ],
-          },
-          question_badge: 'PSYCHOLOGICAL WARFARE',
+            "Why did the fireship attack at Calais in Source D permanently destroy the Spanish Armada's invasion plan?",
           model_answer:
-            "Terrified that the eight blazing vessels were deadly Dutch 'hellburners' packed with gunpowder, Spanish captains panicked, cut their heavy anchor cables in the dark, and permanently broke their invincible defensive crescent formation.",
-          provenance_clues: [
-            'Author: British marine historical painter (Royal Museums Greenwich collection, BHC0263).',
-            'Audience: British maritime historians, naval officers, and visitors to Greenwich.',
-            "Motive: To depict the chaotic night action that broke the Spanish invasion fleet before it could embark the Duke of Parma's army.",
-          ],
-          source_context:
-            'Anchored off Calais, the Armada was waiting to transport 27,000 Spanish soldiers from Flanders. Drake loaded eight obsolete ships with pitch, brimstone, and gunpowder, setting them on fire and steering them with the tide directly into the anchored fleet. **Hinge Question:** Why is psychological panic in naval warfare often more devastating than direct artillery bombardment?',
+            "The Armada was securely anchored in tightly packed lines off Calais waiting for the Duke of Parma's invasion barges. When eight blazing hellburners bore down with the tide, panic erupted; Spanish captains severed their anchor cables and scattered into the darkness, making it impossible to reform their defensive crescent.",
+          context:
+            'At midnight on 7 August 1588, Lord Howard and Drake launched eight loaded fireships towards Calais roads, scattering the Spanish fleet into open waters.',
+          hinge_question:
+            'Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
           teacher_notes: {
+            hinge_question:
+              'Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
             source_context:
-              'Anchored off Calais, the Armada was waiting to transport 27,000 Spanish soldiers from Flanders. Drake loaded eight obsolete ships with pitch, brimstone, and gunpowder, setting them on fire and steering them with the tide directly into the anchored fleet. **Hinge Question:** Why is psychological panic in naval warfare often more devastating than direct artillery bombardment?',
+              'At midnight on 7–8 August 1588, English fireships scattered the Armada off Calais. **Hinge Question:** Why was panic in the dark more dangerous to the Armada than a pitched battle by day?',
           },
         },
         {
-          id: 'mrp_l3_src_e',
+          id: 'monarchy_religion_power_l3_src_e',
           letter: 'E',
           type: 'visual',
           src: '/images/monarchy_religion_power/armada_victory_medal_1588.jpg',
@@ -3507,58 +3067,23 @@ const monarchy_religion_power_data = {
           title:
             "Source E (Providential Propaganda): Naval Reward Medal of Queen Elizabeth I: 'God Blew and They Were Scattered' (1588)",
           caption:
-            'Gold and silver Naval Reward Medal struck by the Royal Mint in 1588. The reverse depicts the Spanish fleet battered by tempestuous waves with the Latin inscription Flavit Jehovah et dissipati sunt.',
-          citation:
-            'Metropolitan Museum of Art, New York (Accession: DP-180-159) / British Museum (M.7011).',
-          provenance:
-            'Commissioned by Queen Elizabeth I and the Privy Council and awarded to senior naval captains who fought in the 1588 campaign.',
-          context:
-            "Following the Armada's retreat, Elizabeth had commemorative medals struck for commanders. Rather than boasting of English naval power, the medal gave credit to divine intervention: 'God blew with His wind, and they were scattered'. **Hinge Question:** Why was attributing military victory to divine weather more politically powerful for Elizabeth than taking personal credit as commander?",
+            "Silver victory medal (British Museum) struck to reward English naval officers, bearing the Latin inscription 'Flavit Jehovah et dissipati sunt' (God blew and they were scattered).",
+          author: 'Royal Mint under Queen Elizabeth I',
+          date: 'Autumn 1588',
+          question_badge: 'PROVIDENTIAL PROPAGANDA & DIVINE FAVOUR',
           question:
-            "What theological message did Queen Elizabeth I project by stamping the Latin inscription 'Flavit Jehovah et Dissipati Sunt' upon her Armada victory medals?",
-          hinge_question:
-            'Why was attributing military victory to divine weather more politically powerful for Elizabeth than taking personal credit as commander?',
-          disciplinary_focus: 'PROVIDENTIAL PROPAGANDA',
-          utility_enquiry: {
-            question:
-              "What theological message did Queen Elizabeth I project by stamping the Latin inscription 'Flavit Jehovah et Dissipati Sunt' upon her Armada victory medals?",
-            model_answer:
-              "Elizabeth attributed the Armada's destruction directly to divine intervention, claiming that God sent Protestant winds and storms to scatter the Catholic invaders and prove that England was under Almighty protection.",
-            content_inferences:
-              'Reveals how early modern states utilized numismatic propaganda to sanctify their foreign wars as holy crusades blessed by God.',
-            provenance_evaluation:
-              'Official royal reward medal; physical numismatic evidence of how the Crown immortalized naval victory as divine favor.',
-            context_limitations:
-              'Downplays the desperate hand-to-hand fighting, skilled navigation of English sailors, and devastating culverin gunnery that actually disabled the fleet.',
-            bullet_points: [
-              {
-                label: 'Divine Endorsement of Protestantism',
-                text: "Attributing victory to God proved to international observers that the Pope's excommunication of Elizabeth was null and void in heaven.",
-              },
-              {
-                label: 'Humility as Royal Statecraft',
-                text: "Framing England as a humble David protected by God against the Spanish Goliath bolstered Elizabeth's moral authority across Protestant Europe.",
-              },
-            ],
-            provenance_clues: [
-              'Author: Royal Mint engravers under order of Queen Elizabeth I and the Privy Council.',
-              'Audience: Senior naval commanders, foreign European courts, and the English Protestant populace.',
-              'Motive: To immortalize the naval triumph as undeniable divine proof of Protestant legitimacy and royal sanctity.',
-            ],
-          },
-          question_badge: 'PROVIDENTIAL PROPAGANDA',
+            'How does the victory medal in Source E use weather and providential theology to cement the English Protestant national myth?',
           model_answer:
-            "Elizabeth attributed the Armada's destruction directly to divine intervention, claiming that God sent Protestant winds and storms to scatter the Catholic invaders and prove that England was under Almighty protection.",
-          provenance_clues: [
-            'Author: Royal Mint engravers under order of Queen Elizabeth I and the Privy Council.',
-            'Audience: Senior naval commanders, foreign European courts, and the English Protestant populace.',
-            'Motive: To immortalize the naval triumph as undeniable divine proof of Protestant legitimacy and royal sanctity.',
-          ],
-          source_context:
-            "Following the Armada's retreat, Elizabeth had commemorative medals struck for commanders. Rather than boasting of English naval power, the medal gave credit to divine intervention: 'God blew with His wind, and they were scattered'. **Hinge Question:** Why was attributing military victory to divine weather more politically powerful for Elizabeth than taking personal credit as commander?",
+            "The medal attributes the Armada's destruction directly to God's Protestant wind, which blew the battered Spanish ships into the North Sea and around the dangerous rocky coasts of Scotland and Ireland. It promoted the belief that England was God's chosen Protestant nation protected by divine intervention.",
+          context:
+            'Following the Battle of Gravelines, prevailing south-westerly gales drove the Armada north into the Atlantic, wrecking dozens of ships on Irish shores.',
+          hinge_question:
+            'Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
           teacher_notes: {
+            hinge_question:
+              'Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
             source_context:
-              "Following the Armada's retreat, Elizabeth had commemorative medals struck for commanders. Rather than boasting of English naval power, the medal gave credit to divine intervention: 'God blew with His wind, and they were scattered'. **Hinge Question:** Why was attributing military victory to divine weather more politically powerful for Elizabeth than taking personal credit as commander?",
+              'Struck in 1588, this medal proclaimed that God intervened to scatter the Spanish Armada. **Hinge Question:** Did England win because of naval superior gunnery or because of North Atlantic gale force winds?',
           },
         },
       ],
@@ -4094,7 +3619,7 @@ const monarchy_religion_power_data = {
           title: 'The Eleven Years’ Tyranny (1629–1640)',
           text: '<span class="para-ref">[4.1]</span> In 1625, Charles I inherited the English throne, holding a fanatical belief in the <strong>Divine Right</strong> of Kings. Charles believed he was appointed directly by God Almighty and that no earthly court or parliament had the right to limit his power. When MPs in Parliament challenged his royal policies, Charles dismissed them in 1629, initiating eleven years of absolute <strong>Personal Rule</strong>. To finance his royal court without parliamentary taxation, Charles revived obsolete feudal fines. Most notoriously, he imposed <strong>Ship Money</strong>—an emergency tax traditionally levied on coastal ports during war—and forced inland farming towns to pay it every year in peacetime. When inland MP John Hampden refused to pay in 1637, constitutional outrage erupted across England.',
           source: {
-            id: 'mrp_l4_src_a',
+            id: 'monarchy_religion_power_l4_src_a',
             letter: 'A',
             type: 'visual',
             src: '/images/charles_first.jpg',
@@ -4102,54 +3627,55 @@ const monarchy_religion_power_data = {
             title:
               'Source A (Divine Monarchy): King Charles I in Three Positions (Sir Anthony van Dyck, 1635–1636)',
             caption:
-              "Sir Anthony van Dyck's triple portrait of King Charles I in three viewpoints, commissioned for the Italian sculptor Gian Lorenzo Bernini to create a marble bust, capturing the King's regal aloofness.",
-            citation:
-              'Royal Collection Trust, Windsor Castle (RCIN 404420). Oil on canvas, 1635–1636.',
-            provenance:
-              "Commissioned by Queen Henrietta Maria and sent to Rome for Bernini's sculpture.",
-            context:
-              "Charles I believed fervently in the Divine Right of Kings—the doctrine that monarchs are appointed directly by God and answerable to no earthly court or parliament. Between 1629 and 1640, he ruled without calling Parliament at all (the 'Eleven Years' Tyranny'). **Hinge Question:** Why did Charles I's belief that he was answerable only to God make political compromise with Parliament impossible?",
+              'Triple portrait painted by Anthony van Dyck (Royal Collection Trust) for the sculptor Bernini in Rome, capturing the aloof majesty and Divine Right ideology of Charles I.',
+            author: 'Sir Anthony van Dyck',
+            date: '1635–1636',
+            question_badge: 'DIVINE RIGHT OF KINGS & PERSONAL RULE',
             question:
-              "How does Sir Anthony van Dyck's triple portrait convey King Charles I's profound belief in divine royal majesty?",
-            hinge_question:
-              "Why did Charles I's belief that he was answerable only to God make political compromise with Parliament impossible?",
-            disciplinary_focus: 'DIVINE MONARCHY',
-            utility_enquiry: {
-              question:
-                "How does Sir Anthony van Dyck's triple portrait convey King Charles I's profound belief in divine royal majesty?",
-              model_answer:
-                'Van Dyck portrays Charles with delicate features, melancholic dignity, and luxurious silk garments, projecting an aura of sacred, untouchable royal authority far removed from the turbulent demands of elected parliamentarians.',
-              content_inferences:
-                'Documents the refined, absolutist court culture that alienated Puritan members of Parliament and provincial gentry.',
-              provenance_evaluation:
-                "Masterwork of royal baroque portraiture; designed to showcase Charles as Europe's most cultured, pious, and divine monarch.",
-              context_limitations:
-                "Conceals Charles's disastrous political obstinacy, financial desperation through illegal Ship Money taxes, and inability to read public mood.",
-              bullet_points: [
-                {
-                  label: 'Aura of Divine Separation',
-                  text: 'Charles looks out with aristocratic detachment, reinforcing his ideological view that royal prerogative was beyond parliamentary scrutiny.',
-                },
-                {
-                  label: 'Sensory Splendor',
-                  text: "The elaborate lace collars and satin robes reflected a lavish court aesthetic that Puritans condemned as sinful, 'popish' extravagance.",
-                },
-              ],
-              provenance_clues: [
-                'Author: Sir Anthony van Dyck, Principal Painter in Ordinary to Their Majesties.',
-                'Audience: Italian sculptor Bernini, the papal court in Rome, and the royal family.',
-                "Motive: To provide accurate spatial profiles for a sculpted bust and celebrate Charles's sacred royal charisma.",
-              ],
-            },
-            question_badge: 'DIVINE MONARCHY',
+              "How does Van Dyck's triple portrait encapsulate Charles I's unbending belief in his divine prerogative?",
             model_answer:
-              'Van Dyck portrays Charles with delicate features, melancholic dignity, and luxurious silk garments, projecting an aura of sacred, untouchable royal authority far removed from the turbulent demands of elected parliamentarians.',
-            provenance_clues: [
-              'Author: Sir Anthony van Dyck, Principal Painter in Ordinary to Their Majesties.',
-              'Audience: Italian sculptor Bernini, the papal court in Rome, and the royal family.',
-              "Motive: To provide accurate spatial profiles for a sculpted bust and celebrate Charles's sacred royal charisma.",
-            ],
+              'Van Dyck paints Charles with refined melancholic poise, wearing rich silk and the blue sash of the Garter. The three serene profiles convey an unapproachable monarch who believed he was accountable to God alone, viewing parliamentary criticism as insolent treason.',
+            context:
+              "Between 1629 and 1640, Charles I ruled without calling Parliament (the 'Eleven Years\\' Tyranny'), raising illegal revenues through Ship Money and Distraint of Knighthood.",
+            hinge_question:
+              'Can an absolutist king rule indefinitely without parliamentary taxation?',
+            teacher_notes: {
+              hinge_question:
+                'Can an absolutist king rule indefinitely without parliamentary taxation?',
+              source_context:
+                "Van Dyck's portrait captured Charles I's divine right ideology during his 11-year Personal Rule. **Hinge Question:** Can an absolutist king rule indefinitely without parliamentary taxation?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l4_src_a',
+              letter: 'A',
+              type: 'visual',
+              src: '/images/charles_first.jpg',
+              image: '/images/charles_first.jpg',
+              title:
+                'Source A (Divine Monarchy): King Charles I in Three Positions (Sir Anthony van Dyck, 1635–1636)',
+              caption:
+                'Triple portrait painted by Anthony van Dyck (Royal Collection Trust) for the sculptor Bernini in Rome, capturing the aloof majesty and Divine Right ideology of Charles I.',
+              author: 'Sir Anthony van Dyck',
+              date: '1635–1636',
+              question_badge: 'DIVINE RIGHT OF KINGS & PERSONAL RULE',
+              question:
+                "How does Van Dyck's triple portrait encapsulate Charles I's unbending belief in his divine prerogative?",
+              model_answer:
+                'Van Dyck paints Charles with refined melancholic poise, wearing rich silk and the blue sash of the Garter. The three serene profiles convey an unapproachable monarch who believed he was accountable to God alone, viewing parliamentary criticism as insolent treason.',
+              context:
+                "Between 1629 and 1640, Charles I ruled without calling Parliament (the 'Eleven Years\\' Tyranny'), raising illegal revenues through Ship Money and Distraint of Knighthood.",
+              hinge_question:
+                'Can an absolutist king rule indefinitely without parliamentary taxation?',
+              teacher_notes: {
+                hinge_question:
+                  'Can an absolutist king rule indefinitely without parliamentary taxation?',
+                source_context:
+                  "Van Dyck's portrait captured Charles I's divine right ideology during his 11-year Personal Rule. **Hinge Question:** Can an absolutist king rule indefinitely without parliamentary taxation?",
+              },
+            },
+          ],
         },
         {
           act: 2,
@@ -4161,131 +3687,137 @@ const monarchy_religion_power_data = {
           caption:
             'William Laud (1573–1645), Archbishop of Canterbury under Charles I, whose High Church Arminian reforms and persecution of Puritans triggered fierce parliamentary opposition (Studio of Anthony van Dyck / Fitzwilliam Museum).',
           source: {
-            id: 'mrp_l4_src_b',
+            id: 'monarchy_religion_power_l4_src_b',
             letter: 'B',
-            type: 'visual',
-            src: '/images/monarchy_religion_power/battle_of_naseby_1645.jpg',
-            image: '/images/monarchy_religion_power/battle_of_naseby_1645.jpg',
+            type: 'written',
+            src: '',
+            image: '',
             title:
-              'Source B (New Model Army Tactics): The Battle of Naseby (Edward Radclyffe, 14 June 1645)',
+              'Source B (Parliamentary Protest): The Grand Remonstrance (1 December 1641), Clauses 10 and 197',
             caption:
-              "Historic composition depicting the climactic Battle of Naseby in Northamptonshire, where Sir Thomas Fairfax and Oliver Cromwell's disciplined New Model Army shattered the main Royalist field army.",
-            citation:
-              'Yale Center for British Art, Paul Mellon Collection (B1998.14.672). Engraving by Edward Radclyffe.',
-            provenance:
-              "Published in London to commemorate Parliament's decisive military victory over Royalist Cavalier forces.",
-            context:
-              "At Naseby, Parliament's newly organized New Model Army crushed the Royalists. Cromwell's disciplined cavalry routed the King's horsemen, wheeled around, and struck the Royalist center. Charles fled, leaving behind his personal correspondence exposing his attempts to enlist Irish Catholic troops. **Hinge Question:** Did Parliament win the English Civil War through military professionalism or religious zeal?",
+              'The sweeping parliamentary indictment compiled by John Pym listing 204 grievances against royal tyranny and demanding parliamentary approval for the King’s ministers.',
+            author: 'The House of Commons under John Pym',
+            date: '1 December 1641',
+            content:
+              'The root of all this mischief was a malignant and pernicious design of subverting the fundamental laws and principles of government, upon which the religion and justice of this kingdom are firmly established... That his Majesty may be pleased to employ such persons in his great affairs and about him as his Parliament may have cause to confide in, without which we cannot give his Majesty such supplies as he desireth.',
+            question_badge: 'CONSTITUTIONAL BREAKDOWN & ARMED CONFLICT',
             question:
-              "How does this depiction of the Battle of Naseby illustrate the superiority of Parliament's disciplined New Model Army over Royalist cavalier forces?",
-            hinge_question:
-              'Did Parliament win the English Civil War through military professionalism or religious zeal?',
-            disciplinary_focus: 'NEW MODEL ARMY TACTICS',
-            utility_enquiry: {
-              question:
-                "How does this depiction of the Battle of Naseby illustrate the superiority of Parliament's disciplined New Model Army over Royalist cavalier forces?",
-              model_answer:
-                "It shows Cromwell's disciplined Ironside cavalry routing the King's left wing and immediately regrouping to crush the royalist infantry in the center, while Prince Rupert's undisciplined cavaliers wasted time looting baggage trains.",
-              content_inferences:
-                'Demonstrates how professional military organization, promotion by merit, and iron discipline destroyed the feudal cavalier army.',
-              provenance_evaluation:
-                'Parliamentary historical composition; celebrates Fairfax and Cromwell as victorious champions of Protestant liberty and constitutional order.',
-              context_limitations:
-                'Dramatizes battlefield valor, omitting the post-battle slaughter of over 100 Welsh camp-follower women whom Roundheads mistook for Irish Catholics.',
-              bullet_points: [
-                {
-                  label: 'Iron Cavalry Discipline',
-                  text: "Unlike Royalist cavaliers who galloped off the battlefield chasing plunder, Cromwell's horsemen stayed grouped and delivered the decisive hammer blow.",
-                },
-                {
-                  label: 'Destruction of the Royalist Cause',
-                  text: "Capturing Charles's private baggage at Naseby proved he was secretly inviting French and Irish armies to invade England, shattering his political credibility.",
-                },
-              ],
-              provenance_clues: [
-                'Author: Edward Radclyffe (printmaker) after British military historical compositions.',
-                'Audience: Parliamentary supporters, military historians, and seventeenth-century political observers.',
-                "Motive: To commemorate the decisive military engagement that destroyed Charles I's main field army.",
-              ],
-            },
-            question_badge: 'NEW MODEL ARMY TACTICS',
+              'Why did the Grand Remonstrance in Source B push the political standoff between King and Parliament towards armed civil war?',
             model_answer:
-              "It shows Cromwell's disciplined Ironside cavalry routing the King's left wing and immediately regrouping to crush the royalist infantry in the center, while Prince Rupert's undisciplined cavaliers wasted time looting baggage trains.",
-            provenance_clues: [
-              'Author: Edward Radclyffe (printmaker) after British military historical compositions.',
-              'Audience: Parliamentary supporters, military historians, and seventeenth-century political observers.',
-              "Motive: To commemorate the decisive military engagement that destroyed Charles I's main field army.",
-            ],
+              'By demanding parliamentary control over royal ministers and printing the grievances for the public, Pym transformed a dispute over taxes into an attack on royal sovereignty. It convinced Charles that MPs intended to strip his royal prerogative, leading directly to his armed raid on Parliament.',
+            context:
+              'Passed by only 11 votes in November 1641, the Grand Remonstrance split Parliament and provoked Charles into his failed attempt to arrest the Five Members in January 1642.',
+            hinge_question:
+              'Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+            teacher_notes: {
+              hinge_question:
+                'Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+              source_context:
+                'In December 1641, Parliament presented the Grand Remonstrance, precipitating the Civil War. **Hinge Question:** Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l4_src_b',
+              letter: 'B',
+              type: 'written',
+              src: '',
+              image: '',
+              title:
+                'Source B (Parliamentary Protest): The Grand Remonstrance (1 December 1641), Clauses 10 and 197',
+              caption:
+                'The sweeping parliamentary indictment compiled by John Pym listing 204 grievances against royal tyranny and demanding parliamentary approval for the King’s ministers.',
+              author: 'The House of Commons under John Pym',
+              date: '1 December 1641',
+              content:
+                'The root of all this mischief was a malignant and pernicious design of subverting the fundamental laws and principles of government, upon which the religion and justice of this kingdom are firmly established... That his Majesty may be pleased to employ such persons in his great affairs and about him as his Parliament may have cause to confide in, without which we cannot give his Majesty such supplies as he desireth.',
+              question_badge: 'CONSTITUTIONAL BREAKDOWN & ARMED CONFLICT',
+              question:
+                'Why did the Grand Remonstrance in Source B push the political standoff between King and Parliament towards armed civil war?',
+              model_answer:
+                'By demanding parliamentary control over royal ministers and printing the grievances for the public, Pym transformed a dispute over taxes into an attack on royal sovereignty. It convinced Charles that MPs intended to strip his royal prerogative, leading directly to his armed raid on Parliament.',
+              context:
+                'Passed by only 11 votes in November 1641, the Grand Remonstrance split Parliament and provoked Charles into his failed attempt to arrest the Five Members in January 1642.',
+              hinge_question:
+                'Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+              teacher_notes: {
+                hinge_question:
+                  'Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+                source_context:
+                  'In December 1641, Parliament presented the Grand Remonstrance, precipitating the Civil War. **Hinge Question:** Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+              },
+            },
+          ],
         },
         {
           act: 3,
           title: 'War & The New Model Army (1642–1648)',
           text: '<span class="para-ref">[4.3]</span> The English Civil War divided the kingdom between Royalist "Cavaliers" (nobles and traditional Anglicans) and Parliamentary "Roundheads" (merchants, yeomen, and Puritans). At first, Royalist cavalry had the upper hand. The tide turned decisively with the rise of Oliver Cromwell, who created the revolutionary <strong>New Model Army</strong> in 1645. Unlike aristocratic armies where officer commissions were bought, Cromwell promoted officers strictly on military talent and religious zeal. At the Battle of Naseby in June 1645, the disciplined Parliamentary cavalry smashed the King’s army. Charles surrendered to the Scots in 1646, but while negotiating peace terms, he secretly signed a pact with Scottish factions, igniting a bloody Second Civil War in 1648 that branded him a "man of blood."',
           source: {
-            id: 'mrp_l4_src_c',
+            id: 'monarchy_religion_power_l4_src_c',
             letter: 'C',
             type: 'visual',
-            src: '/images/charles_i_execution.jpg',
-            image: '/images/charles_i_execution.jpg',
+            src: '/images/monarchy_religion_power/battle_of_naseby_1645.jpg',
+            image: '/images/monarchy_religion_power/battle_of_naseby_1645.jpg',
             title:
-              'Source C (Regicide & Republican Rupture): The Execution of King Charles I Outside the Banqueting House (30 January 1649)',
+              'Source C (New Model Army Tactics): The Battle of Naseby (Edward Radclyffe, 14 June 1645)',
             caption:
-              'Contemporary European engraving illustrating the public beheading of King Charles I upon a black scaffold erected outside the Banqueting House in Whitehall, London, as the executioner holds up his severed head to the horrified crowd.',
-            citation:
-              'National Portrait Gallery, London (NPG D27003) / British Museum (BM 1868,0808.3262).',
-            provenance:
-              'Published in Germany and the Netherlands in 1649, documenting the astonishing regicide that stunned European monarchies.',
-            context:
-              "On a bitterly cold morning in January 1649, Charles I was led onto a scaffold. Wearing two shirts so he would not shiver and appear afraid, he declared himself a 'martyr of the people'. When the axe fell, a massive groan rose from the assembled thousands. **Hinge Question:** Was the execution of Charles I an act of righteous justice against a tyrant, or an unlawful military murder?",
+              'Tactical battlefield panorama (National Army Museum) showing Sir Thomas Fairfax and Oliver Cromwell’s New Model Army crushing the Royalist army in Northamptonshire.',
+            author: 'Edward Radclyffe / Contemporary Engraver',
+            date: '14 June 1645',
+            question_badge: 'MILITARY REVOLUTION & THE NEW MODEL ARMY',
             question:
-              'How did the execution of King Charles I in January 1649 represent an unprecedented, earth-shattering revolution in British history?',
-            hinge_question:
-              'Was the execution of Charles I an act of righteous justice against a tyrant, or an unlawful military murder?',
-            disciplinary_focus: 'REGICIDE & REPUBLICAN RUPTURE',
-            utility_enquiry: {
-              question:
-                'How did the execution of King Charles I in January 1649 represent an unprecedented, earth-shattering revolution in British history?',
-              model_answer:
-                'For the first time in European history, an anointed monarch was formally tried, condemned, and publicly executed by his own subjects for treason against the people, destroying the sacred myth of the Divine Right of Kings.',
-              content_inferences:
-                'Documents the radical climax of the Civil War: the abolition of the monarchy and House of Lords to declare England a republican Commonwealth.',
-              provenance_evaluation:
-                'Eyewitness-based European broadsheet print; captures the solemn, horrifying shock that reverberated through Christian monarchies across the Continent.',
-              context_limitations:
-                "While the print emphasizes the crowd's shock, it omits that the execution was forced through by a purged army minority ('Pride's Purge') against majority parliamentary sentiment.",
-              bullet_points: [
-                {
-                  label: 'Public Trial of Sovereign',
-                  text: 'Subjecting the King to a public legal court established the revolutionary doctrine that sovereign authority ultimately rests with the people, not the Crown.',
-                },
-                {
-                  label: 'Abolition of the Throne',
-                  text: "Within weeks of the beheading, Parliament abolished the office of King as 'unnecessary, burdensome, and dangerous to the liberty of the people'.",
-                },
-              ],
-              provenance_clues: [
-                'Author: Contemporary German/Dutch printmaker based on letters from London correspondents.',
-                'Audience: European royal courts, diplomatic embassies, and shocked continental citizens.',
-                'Motive: To record the sensational news that the English Parliament had put their own King to death.',
-              ],
-            },
-            question_badge: 'REGICIDE & REPUBLICAN RUPTURE',
+              'What does the Battle of Naseby in Source C reveal about why Parliament won the English Civil War?',
             model_answer:
-              'For the first time in European history, an anointed monarch was formally tried, condemned, and publicly executed by his own subjects for treason against the people, destroying the sacred myth of the Divine Right of Kings.',
-            provenance_clues: [
-              'Author: Contemporary German/Dutch printmaker based on letters from London correspondents.',
-              'Audience: European royal courts, diplomatic embassies, and shocked continental citizens.',
-              'Motive: To record the sensational news that the English Parliament had put their own King to death.',
-            ],
+              'Naseby demonstrated the decisive superiority of the New Model Army. Unlike regional militia, Fairfax and Cromwell commanded a disciplined, religiously committed professional force whose cavalry did not loot when victorious, but regrouped to crush the Royalist infantry in the flank.',
+            context:
+              "On 14 June 1645, the New Model Army destroyed Charles I's main field army at Naseby, capturing royal baggage containing secret letters proving Charles sought foreign Catholic troops.",
+            hinge_question:
+              'Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
+            teacher_notes: {
+              hinge_question:
+                'Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
+              source_context:
+                'On 14 June 1645, Cromwell and Fairfax destroyed the Royalist army at Naseby. **Hinge Question:** Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l4_src_c',
+              letter: 'C',
+              type: 'visual',
+              src: '/images/monarchy_religion_power/battle_of_naseby_1645.jpg',
+              image: '/images/monarchy_religion_power/battle_of_naseby_1645.jpg',
+              title:
+                'Source C (New Model Army Tactics): The Battle of Naseby (Edward Radclyffe, 14 June 1645)',
+              caption:
+                'Tactical battlefield panorama (National Army Museum) showing Sir Thomas Fairfax and Oliver Cromwell’s New Model Army crushing the Royalist army in Northamptonshire.',
+              author: 'Edward Radclyffe / Contemporary Engraver',
+              date: '14 June 1645',
+              question_badge: 'MILITARY REVOLUTION & THE NEW MODEL ARMY',
+              question:
+                'What does the Battle of Naseby in Source C reveal about why Parliament won the English Civil War?',
+              model_answer:
+                'Naseby demonstrated the decisive superiority of the New Model Army. Unlike regional militia, Fairfax and Cromwell commanded a disciplined, religiously committed professional force whose cavalry did not loot when victorious, but regrouped to crush the Royalist infantry in the flank.',
+              context:
+                "On 14 June 1645, the New Model Army destroyed Charles I's main field army at Naseby, capturing royal baggage containing secret letters proving Charles sought foreign Catholic troops.",
+              hinge_question:
+                'Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
+              teacher_notes: {
+                hinge_question:
+                  'Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
+                source_context:
+                  'On 14 June 1645, Cromwell and Fairfax destroyed the Royalist army at Naseby. **Hinge Question:** Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
+              },
+            },
+          ],
         },
         {
           act: 4,
           title: 'The Trial & Execution of Charles I (1648–1649)',
           text: '<span class="para-ref">[4.4]</span> Furious that Charles had provoked renewed bloodshed, the New Model Army purged Parliament of moderate MPs in Pride’s Purge, leaving a radical "Rump Parliament." In January 1649, this Rump established a High Court of Justice to try King Charles I for <strong>high treason</strong> against his own people. Charles boycotted the trial, refusing to remove his hat or enter a plea, insisting that no earthly court had the legal authority to try an anointed king. Found guilty of tyranny and treason, Charles was sentenced to death. On 30 January 1649, the world watched in stunned disbelief as Charles was publicly beheaded outside the Banqueting House at Whitehall. Monarchy was abolished, and England was declared a republican Commonwealth.',
           source: {
-            id: 'mrp_l4_src_d',
+            id: 'monarchy_religion_power_l4_src_d',
             letter: 'D',
             type: 'visual',
             src: '/images/monarchy_religion_power/death_warrant_charles_i_1649.jpg',
@@ -4293,54 +3825,55 @@ const monarchy_religion_power_data = {
             title:
               'Source D (Legal Revolution & Regicide): The Death Warrant of King Charles I Signed by 59 Commissioners (29 January 1649)',
             caption:
-              'The original parchment death warrant issued by the High Court of Justice, ordering the decapitation of King Charles I, bearing the signatures and personal red wax seals of 59 regicides led by John Bradshaw, Lord Grey, and Oliver Cromwell.',
-            citation:
-              'UK Parliamentary Archives, London (HL/PO/JO/10/1/297). Manuscript vellum document, 1649.',
-            provenance:
-              'Drafted and sealed at Westminster on 29 January 1649 by order of the High Court of Justice.',
-            context:
-              'Preserved in the House of Lords archives, this parchment ordered the public execution of the King. To ensure that no single individual could be blamed, 59 army officers and republican politicians signed and sealed it, signing their own potential death warrants if the monarchy was ever restored. **Hinge Question:** Can a king commit treason against his own kingdom if the legal definition of treason was originally an attack upon the king?',
+              'Original parchment death warrant (Parliamentary Archives HL/PO/JO/10/1/297) bearing the red wax seals and signatures of 59 regicides ordering Charles Stuart to be beheaded.',
+            author: 'High Court of Justice / John Bradshaw and Oliver Cromwell',
+            date: '29 January 1649',
+            question_badge: 'REPUBLICAN REVOLUTION & REGICIDE',
             question:
-              "What revolutionary legal principle did the 59 commissioners assert by signing King Charles I's death warrant?",
-            hinge_question:
-              'Can a king commit treason against his own kingdom if the legal definition of treason was originally an attack upon the king?',
-            disciplinary_focus: 'LEGAL REVOLUTION',
-            utility_enquiry: {
-              question:
-                "What revolutionary legal principle did the 59 commissioners assert by signing King Charles I's death warrant?",
-              model_answer:
-                "They established that an English monarch is not above the law, declaring Charles Stuart guilty of high treason as a 'tyrant, traitor, murderer, and public enemy to the good people of this nation.'",
-              content_inferences:
-                'Constitutes the supreme constitutional artifact of the English Revolution, establishing the supremacy of law over royal prerogative.',
-              provenance_evaluation:
-                "Official state legal instrument; the physical signatures and red wax seals provide indisputable forensic proof of the regicides' collective responsibility.",
-              context_limitations:
-                'Close forensic inspection shows scraped erasures on the parchment, proving that Cromwell and Bradshaw had to bully and intimidate several reluctant judges into signing.',
-              bullet_points: [
-                {
-                  label: 'Monarch Bound by Law',
-                  text: 'The warrant stated that kings govern under a social contract, and that violating that contract to murder citizens rendered the ruler a criminal.',
-                },
-                {
-                  label: 'Irreversible Collective Blood Guilt',
-                  text: 'Signing the warrant committed the regicides to a point of no return; when Charles II was restored in 1660, surviving signatories were hanged, drawn, and quartered.',
-                },
-              ],
-              provenance_clues: [
-                'Author: High Court of Justice commissioners (John Bradshaw, Oliver Cromwell, and 57 others).',
-                'Audience: King Charles I, the English populace, the European monarchies, and posterity.',
-                'Motive: To legally codify and execute the sovereign ruler of England for waging war against his own Parliament and people.',
-              ],
-            },
-            question_badge: 'LEGAL REVOLUTION',
+              "Why did signing the King's death warrant represent an irreversible constitutional revolution in English history?",
             model_answer:
-              "They established that an English monarch is not above the law, declaring Charles Stuart guilty of high treason as a 'tyrant, traitor, murderer, and public enemy to the good people of this nation.'",
-            provenance_clues: [
-              'Author: High Court of Justice commissioners (John Bradshaw, Oliver Cromwell, and 57 others).',
-              'Audience: King Charles I, the English populace, the European monarchies, and posterity.',
-              'Motive: To legally codify and execute the sovereign ruler of England for waging war against his own Parliament and people.',
-            ],
+              "The death warrant declared that King Charles was a 'tyrant, traitor, murderer and public enemy to the good people of this nation'. By putting their 59 seals to execute a consecrated king in the name of the sovereign people, the regicides extinguished divine right monarchy and established a Commonwealth republic.",
+            context:
+              "Following Charles's secret alliance with the Scots in the Second Civil War, the Army purged Parliament (Pride's Purge) and tried the King for treason.",
+            hinge_question:
+              'Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
+            teacher_notes: {
+              hinge_question:
+                'Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
+              source_context:
+                'On 29 January 1649, 59 commissioners signed the death warrant of King Charles I. **Hinge Question:** Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l4_src_d',
+              letter: 'D',
+              type: 'visual',
+              src: '/images/monarchy_religion_power/death_warrant_charles_i_1649.jpg',
+              image: '/images/monarchy_religion_power/death_warrant_charles_i_1649.jpg',
+              title:
+                'Source D (Legal Revolution & Regicide): The Death Warrant of King Charles I Signed by 59 Commissioners (29 January 1649)',
+              caption:
+                'Original parchment death warrant (Parliamentary Archives HL/PO/JO/10/1/297) bearing the red wax seals and signatures of 59 regicides ordering Charles Stuart to be beheaded.',
+              author: 'High Court of Justice / John Bradshaw and Oliver Cromwell',
+              date: '29 January 1649',
+              question_badge: 'REPUBLICAN REVOLUTION & REGICIDE',
+              question:
+                "Why did signing the King's death warrant represent an irreversible constitutional revolution in English history?",
+              model_answer:
+                "The death warrant declared that King Charles was a 'tyrant, traitor, murderer and public enemy to the good people of this nation'. By putting their 59 seals to execute a consecrated king in the name of the sovereign people, the regicides extinguished divine right monarchy and established a Commonwealth republic.",
+              context:
+                "Following Charles's secret alliance with the Scots in the Second Civil War, the Army purged Parliament (Pride's Purge) and tried the King for treason.",
+              hinge_question:
+                'Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
+              teacher_notes: {
+                hinge_question:
+                  'Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
+                source_context:
+                  'On 29 January 1649, 59 commissioners signed the death warrant of King Charles I. **Hinge Question:** Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
+              },
+            },
+          ],
         },
         {
           act: 5,
@@ -4352,67 +3885,68 @@ const monarchy_religion_power_data = {
           caption:
             'Oliver Cromwell (1599–1658), commander of the New Model Army and Lord Protector of the Commonwealth (1653–1658), whose military rule followed the execution of Charles I (Samuel Cooper / National Portrait Gallery, NPG 520).',
           source: {
-            id: 'mrp_l4_src_e',
+            id: 'monarchy_religion_power_l4_src_e',
             letter: 'E',
             type: 'visual',
-            src: '/images/monarchy_religion_power/prince_rupert_boye_propaganda_1643.png',
-            image: '/images/monarchy_religion_power/prince_rupert_boye_propaganda_1643.png',
+            src: '/images/bill_of_rights.jpg',
+            image: '/images/bill_of_rights.jpg',
             title:
-              "Source E (Satirical Demonisation): Roundhead Propaganda Pamphlet: Prince Rupert and His Dog 'Boye' (1643)",
+              'Source E (Constitutional Monarchy): The Bill of Rights Parchment Roll (16 December 1689)',
             caption:
-              "Sensational Parliamentary propaganda woodcut depicting Prince Rupert's white hunting poodle 'Boye' sitting at table, claiming the animal was a demonic witch's familiar endowed with supernatural powers to protect Cavaliers.",
-            citation:
-              'British Library, Thomason Tracts (E.100[13]). Woodcut pamphlet cover, London, 1643.',
-            provenance:
-              'Printed in London by Parliamentary propagandists during the height of the First Civil War.',
-            context:
-              "Prince Rupert of the Rhine, Charles I's charismatic cavalry commander, brought a rare white poodle named Boy onto the battlefield. Roundhead pamphleteers claimed the dog spoke multiple languages, found hidden treasure, and caught musket balls in its teeth. **Hinge Question:** How did seventeenth-century political propaganda exploit superstitious fears of witchcraft to dehumanize civil war opponents?",
+              'The landmark statute (Parliamentary Archives HL/PO/PU/1/1689/1W&M2s2n1) establishing that monarchs cannot suspend laws, levy taxes, or raise armies without parliamentary consent.',
+            author: 'Convention Parliament of England under William and Mary',
+            date: '16 December 1689',
+            question_badge: 'PARLIAMENTARY SUPREMACY & RULE OF LAW',
             question:
-              "How did Parliamentary pamphleteers use satirical propaganda to demonize Prince Rupert and his pet poodle 'Boye' during the Civil War?",
-            hinge_question:
-              'How did seventeenth-century political propaganda exploit superstitious fears of witchcraft to dehumanize civil war opponents?',
-            disciplinary_focus: 'SATIRICAL DEMONISATION',
-            utility_enquiry: {
-              question:
-                "How did Parliamentary pamphleteers use satirical propaganda to demonize Prince Rupert and his pet poodle 'Boye' during the Civil War?",
-              model_answer:
-                "They portrayed the white poodle as a demonic 'witch's familiar' with supernatural powers to find hidden money and catch bullets in its mouth, playing on Puritan fears of witchcraft and Catholic sorcery.",
-              content_inferences:
-                'Demonstrates how popular print culture weaponized religious paranoia, folk superstition, and satire to mobilize ordinary citizens for civil war.',
-              provenance_evaluation:
-                'Popular partisan street pamphlet sold for pennies in London taverns; designed to ridicule royalist leadership and steel Puritan resolve.',
-              context_limitations:
-                "An absurd work of deliberate political satire and yellow journalism, bearing zero resemblance to Prince Rupert's actual battlefield tactics.",
-              bullet_points: [
-                {
-                  label: 'Exploiting Witchcraft Hysteria',
-                  text: 'During the 1640s, witch-finding was widespread; accusing Royalist leaders of harboring supernatural familiars framed the war as a cosmic battle between Christ and Satan.',
-                },
-                {
-                  label: 'Demoralising Cavalier Troops',
-                  text: 'When Boy was tragically killed at the Battle of Marston Moor (1644), Roundheads celebrated his death as proof that God had broken royalist witchcraft.',
-                },
-              ],
-              provenance_clues: [
-                'Author: London Parliamentary printmakers and propagandists (published in 1643).',
-                'Audience: London citizens, Puritan congregations, and Parliamentary recruit levies.',
-                'Motive: To ridicule Royalist military commanders and justify total war by framing the Cavaliers as corrupt, ungodly sorcerers.',
-              ],
-            },
-            question_badge: 'SATIRICAL DEMONISATION',
+              'How did the 1689 Bill of Rights permanently resolve the 17th-century power struggle between Crown and Parliament?',
             model_answer:
-              "They portrayed the white poodle as a demonic 'witch's familiar' with supernatural powers to find hidden money and catch bullets in its mouth, playing on Puritan fears of witchcraft and Catholic sorcery.",
-            provenance_clues: [
-              'Author: London Parliamentary printmakers and propagandists (published in 1643).',
-              'Audience: London citizens, Puritan congregations, and Parliamentary recruit levies.',
-              'Motive: To ridicule Royalist military commanders and justify total war by framing the Cavaliers as corrupt, ungodly sorcerers.',
-            ],
+              "The Bill of Rights abolished divine right monarchy forever. By making royal taxation, standing armies, and suspension of laws strictly illegal without Parliament's consent, it created a constitutional monarchy where sovereignty rests with the King-in-Parliament.",
+            context:
+              'Following the Glorious Revolution of 1688 which ousted the Catholic James II, Parliament presented the Declaration of Rights to William III and Mary II.',
+            hinge_question:
+              'Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
+            teacher_notes: {
+              hinge_question:
+                'Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
+              source_context:
+                'The 1689 Bill of Rights permanently established parliamentary supremacy over the British Crown. **Hinge Question:** Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l4_src_e',
+              letter: 'E',
+              type: 'visual',
+              src: '/images/bill_of_rights.jpg',
+              image: '/images/bill_of_rights.jpg',
+              title:
+                'Source E (Constitutional Monarchy): The Bill of Rights Parchment Roll (16 December 1689)',
+              caption:
+                'The landmark statute (Parliamentary Archives HL/PO/PU/1/1689/1W&M2s2n1) establishing that monarchs cannot suspend laws, levy taxes, or raise armies without parliamentary consent.',
+              author: 'Convention Parliament of England under William and Mary',
+              date: '16 December 1689',
+              question_badge: 'PARLIAMENTARY SUPREMACY & RULE OF LAW',
+              question:
+                'How did the 1689 Bill of Rights permanently resolve the 17th-century power struggle between Crown and Parliament?',
+              model_answer:
+                "The Bill of Rights abolished divine right monarchy forever. By making royal taxation, standing armies, and suspension of laws strictly illegal without Parliament's consent, it created a constitutional monarchy where sovereignty rests with the King-in-Parliament.",
+              context:
+                'Following the Glorious Revolution of 1688 which ousted the Catholic James II, Parliament presented the Declaration of Rights to William III and Mary II.',
+              hinge_question:
+                'Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
+              teacher_notes: {
+                hinge_question:
+                  'Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
+                source_context:
+                  'The 1689 Bill of Rights permanently established parliamentary supremacy over the British Crown. **Hinge Question:** Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
+              },
+            },
+          ],
         },
       ],
       sources: [
         {
-          id: 'mrp_l4_src_a',
+          id: 'monarchy_religion_power_l4_src_a',
           letter: 'A',
           type: 'visual',
           src: '/images/charles_first.jpg',
@@ -4420,188 +3954,85 @@ const monarchy_religion_power_data = {
           title:
             'Source A (Divine Monarchy): King Charles I in Three Positions (Sir Anthony van Dyck, 1635–1636)',
           caption:
-            "Sir Anthony van Dyck's triple portrait of King Charles I in three viewpoints, commissioned for the Italian sculptor Gian Lorenzo Bernini to create a marble bust, capturing the King's regal aloofness.",
-          citation:
-            'Royal Collection Trust, Windsor Castle (RCIN 404420). Oil on canvas, 1635–1636.',
-          provenance:
-            "Commissioned by Queen Henrietta Maria and sent to Rome for Bernini's sculpture.",
-          context:
-            "Charles I believed fervently in the Divine Right of Kings—the doctrine that monarchs are appointed directly by God and answerable to no earthly court or parliament. Between 1629 and 1640, he ruled without calling Parliament at all (the 'Eleven Years' Tyranny'). **Hinge Question:** Why did Charles I's belief that he was answerable only to God make political compromise with Parliament impossible?",
+            'Triple portrait painted by Anthony van Dyck (Royal Collection Trust) for the sculptor Bernini in Rome, capturing the aloof majesty and Divine Right ideology of Charles I.',
+          author: 'Sir Anthony van Dyck',
+          date: '1635–1636',
+          question_badge: 'DIVINE RIGHT OF KINGS & PERSONAL RULE',
           question:
-            "How does Sir Anthony van Dyck's triple portrait convey King Charles I's profound belief in divine royal majesty?",
-          hinge_question:
-            "Why did Charles I's belief that he was answerable only to God make political compromise with Parliament impossible?",
-          disciplinary_focus: 'DIVINE MONARCHY',
-          utility_enquiry: {
-            question:
-              "How does Sir Anthony van Dyck's triple portrait convey King Charles I's profound belief in divine royal majesty?",
-            model_answer:
-              'Van Dyck portrays Charles with delicate features, melancholic dignity, and luxurious silk garments, projecting an aura of sacred, untouchable royal authority far removed from the turbulent demands of elected parliamentarians.',
-            content_inferences:
-              'Documents the refined, absolutist court culture that alienated Puritan members of Parliament and provincial gentry.',
-            provenance_evaluation:
-              "Masterwork of royal baroque portraiture; designed to showcase Charles as Europe's most cultured, pious, and divine monarch.",
-            context_limitations:
-              "Conceals Charles's disastrous political obstinacy, financial desperation through illegal Ship Money taxes, and inability to read public mood.",
-            bullet_points: [
-              {
-                label: 'Aura of Divine Separation',
-                text: 'Charles looks out with aristocratic detachment, reinforcing his ideological view that royal prerogative was beyond parliamentary scrutiny.',
-              },
-              {
-                label: 'Sensory Splendor',
-                text: "The elaborate lace collars and satin robes reflected a lavish court aesthetic that Puritans condemned as sinful, 'popish' extravagance.",
-              },
-            ],
-            provenance_clues: [
-              'Author: Sir Anthony van Dyck, Principal Painter in Ordinary to Their Majesties.',
-              'Audience: Italian sculptor Bernini, the papal court in Rome, and the royal family.',
-              "Motive: To provide accurate spatial profiles for a sculpted bust and celebrate Charles's sacred royal charisma.",
-            ],
-          },
-          question_badge: 'DIVINE MONARCHY',
+            "How does Van Dyck's triple portrait encapsulate Charles I's unbending belief in his divine prerogative?",
           model_answer:
-            'Van Dyck portrays Charles with delicate features, melancholic dignity, and luxurious silk garments, projecting an aura of sacred, untouchable royal authority far removed from the turbulent demands of elected parliamentarians.',
-          provenance_clues: [
-            'Author: Sir Anthony van Dyck, Principal Painter in Ordinary to Their Majesties.',
-            'Audience: Italian sculptor Bernini, the papal court in Rome, and the royal family.',
-            "Motive: To provide accurate spatial profiles for a sculpted bust and celebrate Charles's sacred royal charisma.",
-          ],
-          source_context:
-            "Charles I believed fervently in the Divine Right of Kings—the doctrine that monarchs are appointed directly by God and answerable to no earthly court or parliament. Between 1629 and 1640, he ruled without calling Parliament at all (the 'Eleven Years' Tyranny'). **Hinge Question:** Why did Charles I's belief that he was answerable only to God make political compromise with Parliament impossible?",
+            'Van Dyck paints Charles with refined melancholic poise, wearing rich silk and the blue sash of the Garter. The three serene profiles convey an unapproachable monarch who believed he was accountable to God alone, viewing parliamentary criticism as insolent treason.',
+          context:
+            "Between 1629 and 1640, Charles I ruled without calling Parliament (the 'Eleven Years\\' Tyranny'), raising illegal revenues through Ship Money and Distraint of Knighthood.",
+          hinge_question:
+            'Can an absolutist king rule indefinitely without parliamentary taxation?',
           teacher_notes: {
+            hinge_question:
+              'Can an absolutist king rule indefinitely without parliamentary taxation?',
             source_context:
-              "Charles I believed fervently in the Divine Right of Kings—the doctrine that monarchs are appointed directly by God and answerable to no earthly court or parliament. Between 1629 and 1640, he ruled without calling Parliament at all (the 'Eleven Years' Tyranny'). **Hinge Question:** Why did Charles I's belief that he was answerable only to God make political compromise with Parliament impossible?",
+              "Van Dyck's portrait captured Charles I's divine right ideology during his 11-year Personal Rule. **Hinge Question:** Can an absolutist king rule indefinitely without parliamentary taxation?",
           },
         },
         {
-          id: 'mrp_l4_src_b',
+          id: 'monarchy_religion_power_l4_src_b',
           letter: 'B',
+          type: 'written',
+          src: '',
+          image: '',
+          title:
+            'Source B (Parliamentary Protest): The Grand Remonstrance (1 December 1641), Clauses 10 and 197',
+          caption:
+            'The sweeping parliamentary indictment compiled by John Pym listing 204 grievances against royal tyranny and demanding parliamentary approval for the King’s ministers.',
+          author: 'The House of Commons under John Pym',
+          date: '1 December 1641',
+          content:
+            'The root of all this mischief was a malignant and pernicious design of subverting the fundamental laws and principles of government, upon which the religion and justice of this kingdom are firmly established... That his Majesty may be pleased to employ such persons in his great affairs and about him as his Parliament may have cause to confide in, without which we cannot give his Majesty such supplies as he desireth.',
+          question_badge: 'CONSTITUTIONAL BREAKDOWN & ARMED CONFLICT',
+          question:
+            'Why did the Grand Remonstrance in Source B push the political standoff between King and Parliament towards armed civil war?',
+          model_answer:
+            'By demanding parliamentary control over royal ministers and printing the grievances for the public, Pym transformed a dispute over taxes into an attack on royal sovereignty. It convinced Charles that MPs intended to strip his royal prerogative, leading directly to his armed raid on Parliament.',
+          context:
+            'Passed by only 11 votes in November 1641, the Grand Remonstrance split Parliament and provoked Charles into his failed attempt to arrest the Five Members in January 1642.',
+          hinge_question:
+            'Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+          teacher_notes: {
+            hinge_question:
+              'Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+            source_context:
+              'In December 1641, Parliament presented the Grand Remonstrance, precipitating the Civil War. **Hinge Question:** Was the Grand Remonstrance a reasonable safeguard of English liberties or an unconstitutional coup by Parliament?',
+          },
+        },
+        {
+          id: 'monarchy_religion_power_l4_src_c',
+          letter: 'C',
           type: 'visual',
           src: '/images/monarchy_religion_power/battle_of_naseby_1645.jpg',
           image: '/images/monarchy_religion_power/battle_of_naseby_1645.jpg',
           title:
-            'Source B (New Model Army Tactics): The Battle of Naseby (Edward Radclyffe, 14 June 1645)',
+            'Source C (New Model Army Tactics): The Battle of Naseby (Edward Radclyffe, 14 June 1645)',
           caption:
-            "Historic composition depicting the climactic Battle of Naseby in Northamptonshire, where Sir Thomas Fairfax and Oliver Cromwell's disciplined New Model Army shattered the main Royalist field army.",
-          citation:
-            'Yale Center for British Art, Paul Mellon Collection (B1998.14.672). Engraving by Edward Radclyffe.',
-          provenance:
-            "Published in London to commemorate Parliament's decisive military victory over Royalist Cavalier forces.",
-          context:
-            "At Naseby, Parliament's newly organized New Model Army crushed the Royalists. Cromwell's disciplined cavalry routed the King's horsemen, wheeled around, and struck the Royalist center. Charles fled, leaving behind his personal correspondence exposing his attempts to enlist Irish Catholic troops. **Hinge Question:** Did Parliament win the English Civil War through military professionalism or religious zeal?",
+            'Tactical battlefield panorama (National Army Museum) showing Sir Thomas Fairfax and Oliver Cromwell’s New Model Army crushing the Royalist army in Northamptonshire.',
+          author: 'Edward Radclyffe / Contemporary Engraver',
+          date: '14 June 1645',
+          question_badge: 'MILITARY REVOLUTION & THE NEW MODEL ARMY',
           question:
-            "How does this depiction of the Battle of Naseby illustrate the superiority of Parliament's disciplined New Model Army over Royalist cavalier forces?",
-          hinge_question:
-            'Did Parliament win the English Civil War through military professionalism or religious zeal?',
-          disciplinary_focus: 'NEW MODEL ARMY TACTICS',
-          utility_enquiry: {
-            question:
-              "How does this depiction of the Battle of Naseby illustrate the superiority of Parliament's disciplined New Model Army over Royalist cavalier forces?",
-            model_answer:
-              "It shows Cromwell's disciplined Ironside cavalry routing the King's left wing and immediately regrouping to crush the royalist infantry in the center, while Prince Rupert's undisciplined cavaliers wasted time looting baggage trains.",
-            content_inferences:
-              'Demonstrates how professional military organization, promotion by merit, and iron discipline destroyed the feudal cavalier army.',
-            provenance_evaluation:
-              'Parliamentary historical composition; celebrates Fairfax and Cromwell as victorious champions of Protestant liberty and constitutional order.',
-            context_limitations:
-              'Dramatizes battlefield valor, omitting the post-battle slaughter of over 100 Welsh camp-follower women whom Roundheads mistook for Irish Catholics.',
-            bullet_points: [
-              {
-                label: 'Iron Cavalry Discipline',
-                text: "Unlike Royalist cavaliers who galloped off the battlefield chasing plunder, Cromwell's horsemen stayed grouped and delivered the decisive hammer blow.",
-              },
-              {
-                label: 'Destruction of the Royalist Cause',
-                text: "Capturing Charles's private baggage at Naseby proved he was secretly inviting French and Irish armies to invade England, shattering his political credibility.",
-              },
-            ],
-            provenance_clues: [
-              'Author: Edward Radclyffe (printmaker) after British military historical compositions.',
-              'Audience: Parliamentary supporters, military historians, and seventeenth-century political observers.',
-              "Motive: To commemorate the decisive military engagement that destroyed Charles I's main field army.",
-            ],
-          },
-          question_badge: 'NEW MODEL ARMY TACTICS',
+            'What does the Battle of Naseby in Source C reveal about why Parliament won the English Civil War?',
           model_answer:
-            "It shows Cromwell's disciplined Ironside cavalry routing the King's left wing and immediately regrouping to crush the royalist infantry in the center, while Prince Rupert's undisciplined cavaliers wasted time looting baggage trains.",
-          provenance_clues: [
-            'Author: Edward Radclyffe (printmaker) after British military historical compositions.',
-            'Audience: Parliamentary supporters, military historians, and seventeenth-century political observers.',
-            "Motive: To commemorate the decisive military engagement that destroyed Charles I's main field army.",
-          ],
-          source_context:
-            "At Naseby, Parliament's newly organized New Model Army crushed the Royalists. Cromwell's disciplined cavalry routed the King's horsemen, wheeled around, and struck the Royalist center. Charles fled, leaving behind his personal correspondence exposing his attempts to enlist Irish Catholic troops. **Hinge Question:** Did Parliament win the English Civil War through military professionalism or religious zeal?",
+            'Naseby demonstrated the decisive superiority of the New Model Army. Unlike regional militia, Fairfax and Cromwell commanded a disciplined, religiously committed professional force whose cavalry did not loot when victorious, but regrouped to crush the Royalist infantry in the flank.',
+          context:
+            "On 14 June 1645, the New Model Army destroyed Charles I's main field army at Naseby, capturing royal baggage containing secret letters proving Charles sought foreign Catholic troops.",
+          hinge_question:
+            'Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
           teacher_notes: {
+            hinge_question:
+              'Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
             source_context:
-              "At Naseby, Parliament's newly organized New Model Army crushed the Royalists. Cromwell's disciplined cavalry routed the King's horsemen, wheeled around, and struck the Royalist center. Charles fled, leaving behind his personal correspondence exposing his attempts to enlist Irish Catholic troops. **Hinge Question:** Did Parliament win the English Civil War through military professionalism or religious zeal?",
+              'On 14 June 1645, Cromwell and Fairfax destroyed the Royalist army at Naseby. **Hinge Question:** Why was meritocratic promotion in the New Model Army more effective than aristocratic lineage in the Royalist cavalry?',
           },
         },
         {
-          id: 'mrp_l4_src_c',
-          letter: 'C',
-          type: 'visual',
-          src: '/images/charles_i_execution.jpg',
-          image: '/images/charles_i_execution.jpg',
-          title:
-            'Source C (Regicide & Republican Rupture): The Execution of King Charles I Outside the Banqueting House (30 January 1649)',
-          caption:
-            'Contemporary European engraving illustrating the public beheading of King Charles I upon a black scaffold erected outside the Banqueting House in Whitehall, London, as the executioner holds up his severed head to the horrified crowd.',
-          citation:
-            'National Portrait Gallery, London (NPG D27003) / British Museum (BM 1868,0808.3262).',
-          provenance:
-            'Published in Germany and the Netherlands in 1649, documenting the astonishing regicide that stunned European monarchies.',
-          context:
-            "On a bitterly cold morning in January 1649, Charles I was led onto a scaffold. Wearing two shirts so he would not shiver and appear afraid, he declared himself a 'martyr of the people'. When the axe fell, a massive groan rose from the assembled thousands. **Hinge Question:** Was the execution of Charles I an act of righteous justice against a tyrant, or an unlawful military murder?",
-          question:
-            'How did the execution of King Charles I in January 1649 represent an unprecedented, earth-shattering revolution in British history?',
-          hinge_question:
-            'Was the execution of Charles I an act of righteous justice against a tyrant, or an unlawful military murder?',
-          disciplinary_focus: 'REGICIDE & REPUBLICAN RUPTURE',
-          utility_enquiry: {
-            question:
-              'How did the execution of King Charles I in January 1649 represent an unprecedented, earth-shattering revolution in British history?',
-            model_answer:
-              'For the first time in European history, an anointed monarch was formally tried, condemned, and publicly executed by his own subjects for treason against the people, destroying the sacred myth of the Divine Right of Kings.',
-            content_inferences:
-              'Documents the radical climax of the Civil War: the abolition of the monarchy and House of Lords to declare England a republican Commonwealth.',
-            provenance_evaluation:
-              'Eyewitness-based European broadsheet print; captures the solemn, horrifying shock that reverberated through Christian monarchies across the Continent.',
-            context_limitations:
-              "While the print emphasizes the crowd's shock, it omits that the execution was forced through by a purged army minority ('Pride's Purge') against majority parliamentary sentiment.",
-            bullet_points: [
-              {
-                label: 'Public Trial of Sovereign',
-                text: 'Subjecting the King to a public legal court established the revolutionary doctrine that sovereign authority ultimately rests with the people, not the Crown.',
-              },
-              {
-                label: 'Abolition of the Throne',
-                text: "Within weeks of the beheading, Parliament abolished the office of King as 'unnecessary, burdensome, and dangerous to the liberty of the people'.",
-              },
-            ],
-            provenance_clues: [
-              'Author: Contemporary German/Dutch printmaker based on letters from London correspondents.',
-              'Audience: European royal courts, diplomatic embassies, and shocked continental citizens.',
-              'Motive: To record the sensational news that the English Parliament had put their own King to death.',
-            ],
-          },
-          question_badge: 'REGICIDE & REPUBLICAN RUPTURE',
-          model_answer:
-            'For the first time in European history, an anointed monarch was formally tried, condemned, and publicly executed by his own subjects for treason against the people, destroying the sacred myth of the Divine Right of Kings.',
-          provenance_clues: [
-            'Author: Contemporary German/Dutch printmaker based on letters from London correspondents.',
-            'Audience: European royal courts, diplomatic embassies, and shocked continental citizens.',
-            'Motive: To record the sensational news that the English Parliament had put their own King to death.',
-          ],
-          source_context:
-            "On a bitterly cold morning in January 1649, Charles I was led onto a scaffold. Wearing two shirts so he would not shiver and appear afraid, he declared himself a 'martyr of the people'. When the axe fell, a massive groan rose from the assembled thousands. **Hinge Question:** Was the execution of Charles I an act of righteous justice against a tyrant, or an unlawful military murder?",
-          teacher_notes: {
-            source_context:
-              "On a bitterly cold morning in January 1649, Charles I was led onto a scaffold. Wearing two shirts so he would not shiver and appear afraid, he declared himself a 'martyr of the people'. When the axe fell, a massive groan rose from the assembled thousands. **Hinge Question:** Was the execution of Charles I an act of righteous justice against a tyrant, or an unlawful military murder?",
-          },
-        },
-        {
-          id: 'mrp_l4_src_d',
+          id: 'monarchy_religion_power_l4_src_d',
           letter: 'D',
           type: 'visual',
           src: '/images/monarchy_religion_power/death_warrant_charles_i_1649.jpg',
@@ -4609,121 +4040,51 @@ const monarchy_religion_power_data = {
           title:
             'Source D (Legal Revolution & Regicide): The Death Warrant of King Charles I Signed by 59 Commissioners (29 January 1649)',
           caption:
-            'The original parchment death warrant issued by the High Court of Justice, ordering the decapitation of King Charles I, bearing the signatures and personal red wax seals of 59 regicides led by John Bradshaw, Lord Grey, and Oliver Cromwell.',
-          citation:
-            'UK Parliamentary Archives, London (HL/PO/JO/10/1/297). Manuscript vellum document, 1649.',
-          provenance:
-            'Drafted and sealed at Westminster on 29 January 1649 by order of the High Court of Justice.',
-          context:
-            'Preserved in the House of Lords archives, this parchment ordered the public execution of the King. To ensure that no single individual could be blamed, 59 army officers and republican politicians signed and sealed it, signing their own potential death warrants if the monarchy was ever restored. **Hinge Question:** Can a king commit treason against his own kingdom if the legal definition of treason was originally an attack upon the king?',
+            'Original parchment death warrant (Parliamentary Archives HL/PO/JO/10/1/297) bearing the red wax seals and signatures of 59 regicides ordering Charles Stuart to be beheaded.',
+          author: 'High Court of Justice / John Bradshaw and Oliver Cromwell',
+          date: '29 January 1649',
+          question_badge: 'REPUBLICAN REVOLUTION & REGICIDE',
           question:
-            "What revolutionary legal principle did the 59 commissioners assert by signing King Charles I's death warrant?",
-          hinge_question:
-            'Can a king commit treason against his own kingdom if the legal definition of treason was originally an attack upon the king?',
-          disciplinary_focus: 'LEGAL REVOLUTION',
-          utility_enquiry: {
-            question:
-              "What revolutionary legal principle did the 59 commissioners assert by signing King Charles I's death warrant?",
-            model_answer:
-              "They established that an English monarch is not above the law, declaring Charles Stuart guilty of high treason as a 'tyrant, traitor, murderer, and public enemy to the good people of this nation.'",
-            content_inferences:
-              'Constitutes the supreme constitutional artifact of the English Revolution, establishing the supremacy of law over royal prerogative.',
-            provenance_evaluation:
-              "Official state legal instrument; the physical signatures and red wax seals provide indisputable forensic proof of the regicides' collective responsibility.",
-            context_limitations:
-              'Close forensic inspection shows scraped erasures on the parchment, proving that Cromwell and Bradshaw had to bully and intimidate several reluctant judges into signing.',
-            bullet_points: [
-              {
-                label: 'Monarch Bound by Law',
-                text: 'The warrant stated that kings govern under a social contract, and that violating that contract to murder citizens rendered the ruler a criminal.',
-              },
-              {
-                label: 'Irreversible Collective Blood Guilt',
-                text: 'Signing the warrant committed the regicides to a point of no return; when Charles II was restored in 1660, surviving signatories were hanged, drawn, and quartered.',
-              },
-            ],
-            provenance_clues: [
-              'Author: High Court of Justice commissioners (John Bradshaw, Oliver Cromwell, and 57 others).',
-              'Audience: King Charles I, the English populace, the European monarchies, and posterity.',
-              'Motive: To legally codify and execute the sovereign ruler of England for waging war against his own Parliament and people.',
-            ],
-          },
-          question_badge: 'LEGAL REVOLUTION',
+            "Why did signing the King's death warrant represent an irreversible constitutional revolution in English history?",
           model_answer:
-            "They established that an English monarch is not above the law, declaring Charles Stuart guilty of high treason as a 'tyrant, traitor, murderer, and public enemy to the good people of this nation.'",
-          provenance_clues: [
-            'Author: High Court of Justice commissioners (John Bradshaw, Oliver Cromwell, and 57 others).',
-            'Audience: King Charles I, the English populace, the European monarchies, and posterity.',
-            'Motive: To legally codify and execute the sovereign ruler of England for waging war against his own Parliament and people.',
-          ],
-          source_context:
-            'Preserved in the House of Lords archives, this parchment ordered the public execution of the King. To ensure that no single individual could be blamed, 59 army officers and republican politicians signed and sealed it, signing their own potential death warrants if the monarchy was ever restored. **Hinge Question:** Can a king commit treason against his own kingdom if the legal definition of treason was originally an attack upon the king?',
+            "The death warrant declared that King Charles was a 'tyrant, traitor, murderer and public enemy to the good people of this nation'. By putting their 59 seals to execute a consecrated king in the name of the sovereign people, the regicides extinguished divine right monarchy and established a Commonwealth republic.",
+          context:
+            "Following Charles's secret alliance with the Scots in the Second Civil War, the Army purged Parliament (Pride's Purge) and tried the King for treason.",
+          hinge_question:
+            'Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
           teacher_notes: {
+            hinge_question:
+              'Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
             source_context:
-              'Preserved in the House of Lords archives, this parchment ordered the public execution of the King. To ensure that no single individual could be blamed, 59 army officers and republican politicians signed and sealed it, signing their own potential death warrants if the monarchy was ever restored. **Hinge Question:** Can a king commit treason against his own kingdom if the legal definition of treason was originally an attack upon the king?',
+              'On 29 January 1649, 59 commissioners signed the death warrant of King Charles I. **Hinge Question:** Was the execution of Charles I a lawful trial of a traitor or an armed military coup?',
           },
         },
         {
-          id: 'mrp_l4_src_e',
+          id: 'monarchy_religion_power_l4_src_e',
           letter: 'E',
           type: 'visual',
-          src: '/images/monarchy_religion_power/prince_rupert_boye_propaganda_1643.png',
-          image: '/images/monarchy_religion_power/prince_rupert_boye_propaganda_1643.png',
+          src: '/images/bill_of_rights.jpg',
+          image: '/images/bill_of_rights.jpg',
           title:
-            "Source E (Satirical Demonisation): Roundhead Propaganda Pamphlet: Prince Rupert and His Dog 'Boye' (1643)",
+            'Source E (Constitutional Monarchy): The Bill of Rights Parchment Roll (16 December 1689)',
           caption:
-            "Sensational Parliamentary propaganda woodcut depicting Prince Rupert's white hunting poodle 'Boye' sitting at table, claiming the animal was a demonic witch's familiar endowed with supernatural powers to protect Cavaliers.",
-          citation:
-            'British Library, Thomason Tracts (E.100[13]). Woodcut pamphlet cover, London, 1643.',
-          provenance:
-            'Printed in London by Parliamentary propagandists during the height of the First Civil War.',
-          context:
-            "Prince Rupert of the Rhine, Charles I's charismatic cavalry commander, brought a rare white poodle named Boy onto the battlefield. Roundhead pamphleteers claimed the dog spoke multiple languages, found hidden treasure, and caught musket balls in its teeth. **Hinge Question:** How did seventeenth-century political propaganda exploit superstitious fears of witchcraft to dehumanize civil war opponents?",
+            'The landmark statute (Parliamentary Archives HL/PO/PU/1/1689/1W&M2s2n1) establishing that monarchs cannot suspend laws, levy taxes, or raise armies without parliamentary consent.',
+          author: 'Convention Parliament of England under William and Mary',
+          date: '16 December 1689',
+          question_badge: 'PARLIAMENTARY SUPREMACY & RULE OF LAW',
           question:
-            "How did Parliamentary pamphleteers use satirical propaganda to demonize Prince Rupert and his pet poodle 'Boye' during the Civil War?",
-          hinge_question:
-            'How did seventeenth-century political propaganda exploit superstitious fears of witchcraft to dehumanize civil war opponents?',
-          disciplinary_focus: 'SATIRICAL DEMONISATION',
-          utility_enquiry: {
-            question:
-              "How did Parliamentary pamphleteers use satirical propaganda to demonize Prince Rupert and his pet poodle 'Boye' during the Civil War?",
-            model_answer:
-              "They portrayed the white poodle as a demonic 'witch's familiar' with supernatural powers to find hidden money and catch bullets in its mouth, playing on Puritan fears of witchcraft and Catholic sorcery.",
-            content_inferences:
-              'Demonstrates how popular print culture weaponized religious paranoia, folk superstition, and satire to mobilize ordinary citizens for civil war.',
-            provenance_evaluation:
-              'Popular partisan street pamphlet sold for pennies in London taverns; designed to ridicule royalist leadership and steel Puritan resolve.',
-            context_limitations:
-              "An absurd work of deliberate political satire and yellow journalism, bearing zero resemblance to Prince Rupert's actual battlefield tactics.",
-            bullet_points: [
-              {
-                label: 'Exploiting Witchcraft Hysteria',
-                text: 'During the 1640s, witch-finding was widespread; accusing Royalist leaders of harboring supernatural familiars framed the war as a cosmic battle between Christ and Satan.',
-              },
-              {
-                label: 'Demoralising Cavalier Troops',
-                text: 'When Boy was tragically killed at the Battle of Marston Moor (1644), Roundheads celebrated his death as proof that God had broken royalist witchcraft.',
-              },
-            ],
-            provenance_clues: [
-              'Author: London Parliamentary printmakers and propagandists (published in 1643).',
-              'Audience: London citizens, Puritan congregations, and Parliamentary recruit levies.',
-              'Motive: To ridicule Royalist military commanders and justify total war by framing the Cavaliers as corrupt, ungodly sorcerers.',
-            ],
-          },
-          question_badge: 'SATIRICAL DEMONISATION',
+            'How did the 1689 Bill of Rights permanently resolve the 17th-century power struggle between Crown and Parliament?',
           model_answer:
-            "They portrayed the white poodle as a demonic 'witch's familiar' with supernatural powers to find hidden money and catch bullets in its mouth, playing on Puritan fears of witchcraft and Catholic sorcery.",
-          provenance_clues: [
-            'Author: London Parliamentary printmakers and propagandists (published in 1643).',
-            'Audience: London citizens, Puritan congregations, and Parliamentary recruit levies.',
-            'Motive: To ridicule Royalist military commanders and justify total war by framing the Cavaliers as corrupt, ungodly sorcerers.',
-          ],
-          source_context:
-            "Prince Rupert of the Rhine, Charles I's charismatic cavalry commander, brought a rare white poodle named Boy onto the battlefield. Roundhead pamphleteers claimed the dog spoke multiple languages, found hidden treasure, and caught musket balls in its teeth. **Hinge Question:** How did seventeenth-century political propaganda exploit superstitious fears of witchcraft to dehumanize civil war opponents?",
+            "The Bill of Rights abolished divine right monarchy forever. By making royal taxation, standing armies, and suspension of laws strictly illegal without Parliament's consent, it created a constitutional monarchy where sovereignty rests with the King-in-Parliament.",
+          context:
+            'Following the Glorious Revolution of 1688 which ousted the Catholic James II, Parliament presented the Declaration of Rights to William III and Mary II.',
+          hinge_question:
+            'Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
           teacher_notes: {
+            hinge_question:
+              'Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
             source_context:
-              "Prince Rupert of the Rhine, Charles I's charismatic cavalry commander, brought a rare white poodle named Boy onto the battlefield. Roundhead pamphleteers claimed the dog spoke multiple languages, found hidden treasure, and caught musket balls in its teeth. **Hinge Question:** How did seventeenth-century political propaganda exploit superstitious fears of witchcraft to dehumanize civil war opponents?",
+              'The 1689 Bill of Rights permanently established parliamentary supremacy over the British Crown. **Hinge Question:** Did the Bill of Rights give power to ordinary British people or merely to wealthy aristocratic landowners?',
           },
         },
       ],
@@ -5248,124 +4609,128 @@ const monarchy_religion_power_data = {
           caption:
             'The Great Seal of England, representing sovereign constitutional authority and the transition from royal prerogative to parliamentary statute (The National Archives, PRO 30/26/1).',
           source: {
-            id: 'mrp_l5_src_a',
+            id: 'monarchy_religion_power_l5_src_a',
             letter: 'A',
-            type: 'visual',
-            src: '/images/bill_of_rights.jpg',
-            image: '/images/bill_of_rights.jpg',
-            title:
-              'Source A (Constitutional Monarchy): The Bill of Rights Parchment Roll (16 December 1689)',
+            type: 'written',
+            src: '',
+            image: '',
+            title: 'Source A (Royal Sovereignty): The Act of Supremacy 1534 (26 Hen. 8 c. 1)',
             caption:
-              'The landmark Bill of Rights statute roll (1 Will. & Mar. sess. 2 c. 2), permanently establishing parliamentary supremacy, free elections, regular parliaments, and banning royal standing armies in peacetime.',
-            citation:
-              'UK Parliamentary Archives, London (HL/PO/PU/1/1689/1W&Ms2n2). Official parchment act.',
-            provenance:
-              'Passed by the Convention Parliament and enacted with royal assent by William III and Mary II in December 1689.',
-            context:
-              'Following the Glorious Revolution of 1688, Parliament presented the Bill of Rights to William and Mary. It established that the monarch could not suspend laws, levy taxes without consent, or maintain a standing army without parliamentary approval. **Hinge Question:** Why did the 1689 Bill of Rights mark the permanent death of royal absolutism in Britain?',
+              'The foundation statute of the English Reformation declaring King Henry VIII to be the sole supreme head on earth of the Church of England.',
+            author: 'Reformation Parliament of England under King Henry VIII',
+            date: 'November 1534',
+            content:
+              'Albeit the King’s Majesty justly and rightfully is and oweth to be the supreme head of the Church of England... Be it enacted by authority of this present Parliament, that the King our sovereign lord, his heirs and successors kings of this realm, shall be taken, accepted, and reputed the only supreme head in earth of the Church of England called Anglicana Ecclesia.',
+            question_badge: 'SYNOPTIC FOUNDATION: ROYAL AUTONOMY',
             question:
-              'How did the 1689 Bill of Rights permanently curtail the powers of the British monarchy and establish parliamentary supremacy?',
-            hinge_question:
-              'Why did the 1689 Bill of Rights mark the permanent death of royal absolutism in Britain?',
-            disciplinary_focus: 'CONSTITUTIONAL MONARCHY',
-            utility_enquiry: {
-              question:
-                'How did the 1689 Bill of Rights permanently curtail the powers of the British monarchy and establish parliamentary supremacy?',
-              model_answer:
-                'It banned the monarch from suspending laws, levying taxes without parliamentary approval, or keeping a standing army in peacetime, establishing that the Crown ruled strictly under the law and with parliamentary consent.',
-              content_inferences:
-                'Constitutes the foundation of the modern British uncodified constitution, permanently establishing a constitutional monarchy.',
-              provenance_evaluation:
-                'Supreme statutory constitutional record; binding primary legal text that settled the 170-year struggle between Crown and Parliament.',
-              context_limitations:
-                'Presents the settlement as an orderly restoration of ancient liberties, omitting that it excluded 98% of the population from voting and barred Catholics from the throne.',
-              bullet_points: [
-                {
-                  label: 'Control of the Purse and Sword',
-                  text: 'By requiring annual parliamentary approval for taxes and the army, Parliament ensured monarchs could never govern alone again.',
-                },
-                {
-                  label: 'Free Parliamentary Debate',
-                  text: 'Article 9 established parliamentary privilege, guaranteeing that MPs could debate and criticize the government without fear of royal arrest.',
-                },
-              ],
-              provenance_clues: [
-                'Author: The Lords Spiritual and Temporal and Commons assembled at Westminster.',
-                'Audience: King William III, Queen Mary II, the British people, and the legal courts.',
-                'Motive: To permanently settle the constitutional boundaries of the monarchy and prevent any return to Stuart absolutism.',
-              ],
-            },
-            question_badge: 'CONSTITUTIONAL MONARCHY',
+              "How did Henry VIII's Act of Supremacy in 1534 lay the groundwork for 150 years of religious and political turmoil in England?",
             model_answer:
-              'It banned the monarch from suspending laws, levying taxes without parliamentary approval, or keeping a standing army in peacetime, establishing that the Crown ruled strictly under the law and with parliamentary consent.',
-            provenance_clues: [
-              'Author: The Lords Spiritual and Temporal and Commons assembled at Westminster.',
-              'Audience: King William III, Queen Mary II, the British people, and the legal courts.',
-              'Motive: To permanently settle the constitutional boundaries of the monarchy and prevent any return to Stuart absolutism.',
-            ],
+              'By uniting spiritual and temporal sword in the Crown, Henry abolished papal authority and made religious doctrine a matter of royal command. Every subsequent monarch could reshape church law, turning succession into a life-or-death ideological battleground between Catholics, Anglicans, and Puritans.',
+            context:
+              'In 1534, Parliament passed the Act of Supremacy, officially severing England from the Roman Catholic Church and vesting supreme ecclesiastical power in the monarch.',
+            hinge_question:
+              'Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
+            teacher_notes: {
+              hinge_question:
+                'Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
+              source_context:
+                'Passed in 1534, the Act of Supremacy inaugurated English royal church sovereignty. **Hinge Question:** Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l5_src_a',
+              letter: 'A',
+              type: 'written',
+              src: '',
+              image: '',
+              title: 'Source A (Royal Sovereignty): The Act of Supremacy 1534 (26 Hen. 8 c. 1)',
+              caption:
+                'The foundation statute of the English Reformation declaring King Henry VIII to be the sole supreme head on earth of the Church of England.',
+              author: 'Reformation Parliament of England under King Henry VIII',
+              date: 'November 1534',
+              content:
+                'Albeit the King’s Majesty justly and rightfully is and oweth to be the supreme head of the Church of England... Be it enacted by authority of this present Parliament, that the King our sovereign lord, his heirs and successors kings of this realm, shall be taken, accepted, and reputed the only supreme head in earth of the Church of England called Anglicana Ecclesia.',
+              question_badge: 'SYNOPTIC FOUNDATION: ROYAL AUTONOMY',
+              question:
+                "How did Henry VIII's Act of Supremacy in 1534 lay the groundwork for 150 years of religious and political turmoil in England?",
+              model_answer:
+                'By uniting spiritual and temporal sword in the Crown, Henry abolished papal authority and made religious doctrine a matter of royal command. Every subsequent monarch could reshape church law, turning succession into a life-or-death ideological battleground between Catholics, Anglicans, and Puritans.',
+              context:
+                'In 1534, Parliament passed the Act of Supremacy, officially severing England from the Roman Catholic Church and vesting supreme ecclesiastical power in the monarch.',
+              hinge_question:
+                'Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
+              teacher_notes: {
+                hinge_question:
+                  'Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
+                source_context:
+                  'Passed in 1534, the Act of Supremacy inaugurated English royal church sovereignty. **Hinge Question:** Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
+              },
+            },
+          ],
         },
         {
           act: 2,
           title: 'The Elizabethan Protestant Identity (1558–1603)',
           text: '<span class="para-ref">[5.2]</span> Under Elizabeth I, the English state forged an unshakeable national identity centered on Protestantism and parliamentary partnership. Through the 1559 Via Media, Elizabeth demonstrated political pragmatism: enforcing public <strong>conformity</strong> while avoiding the wholesale burnings of her predecessor Mary I. When Catholic assassination plots and Philip II’s 1588 Armada threatened England, Elizabeth rallied her subjects behind the Protestant Crown. Defeating the Armada convinced generations of English citizens that God Almighty had personally chosen England as a Protestant champion. Crucially, Elizabeth managed Parliament as a trusted partner, consulting MPs on trade, defense, and succession, leaving the Crown immensely popular and financially secure.',
           source: {
-            id: 'mrp_l5_src_b',
+            id: 'monarchy_religion_power_l5_src_b',
             letter: 'B',
             type: 'visual',
-            src: '/images/william_landing_1688.jpg',
-            image: '/images/william_landing_1688.jpg',
+            src: '/images/armada_portrait.jpg',
+            image: '/images/armada_portrait.jpg',
             title:
-              'Source B (Invasion & Glorious Revolution): The Landing of William III, Prince of Orange, at Torbay (5 November 1688)',
+              'Source B (Imperial Protestant Identity): The Armada Portrait of Queen Elizabeth I (George Gower, 1588)',
             caption:
-              "Contemporary painting of William III's Dutch armada of over 400 transport ships and 15,000 troops landing safely at Brixham in Torbay under a favorable 'Protestant wind'.",
-            citation:
-              'Royal Collection Trust, Hampton Court Palace (RCIN 404847). Oil on canvas, c. 1689.',
-            provenance:
-              'Commissioned to commemorate the naval invasion that overthrew King James II.',
-            context:
-              "Alarmed by James II's Catholic heir and arbitrary rule, seven leading English nobles sent an invitation to Dutch Stadtholder William of Orange. On 5 November 1688 (Guy Fawkes Day), William landed at Torbay. James II's army deserted him, and he fled to France. **Hinge Question:** Was the Glorious Revolution a peaceful constitutional uprising or a successful Dutch foreign invasion?",
+              'Monumental royal portrait (Woburn Abbey / Queen’s House, Greenwich) showing Elizabeth resting her hand upon the global sphere with the destroyed Spanish Armada in the background.',
+            author: 'George Gower',
+            date: 'c. 1588',
+            question_badge: 'SYNOPTIC THEME: NATIONAL PROTESTANT IDENTITY',
             question:
-              "How does this depiction of William of Orange's massive landing at Torbay reveal the military scale of the 'Glorious Revolution' of 1688?",
-            hinge_question:
-              'Was the Glorious Revolution a peaceful constitutional uprising or a successful Dutch foreign invasion?',
-            disciplinary_focus: 'INVASION & GLORIOUS REVOLUTION',
-            utility_enquiry: {
-              question:
-                "How does this depiction of William of Orange's massive landing at Torbay reveal the military scale of the 'Glorious Revolution' of 1688?",
-              model_answer:
-                'It displays a colossal Dutch fleet of hundreds of war vessels disembarking 15,000 seasoned soldiers, proving that the Glorious Revolution was a formidable, high-stakes military invasion rather than an effortless domestic transition.',
-              content_inferences:
-                "Challenges the traditional Whig myth of a 'bloodless' revolution, highlighting Dutch military intervention in English constitutional history.",
-              provenance_evaluation:
-                "Triumphant Dutch-English court painting; celebrates the landing as providential, with calm waters and banner proclaiming 'For Religion and Liberty'.",
-              context_limitations:
-                'Downplays the intense anti-Dutch anxiety among English officers and the bloody warfare in Ireland and Scotland (Boyne and Killiecrankie) that followed.',
-              bullet_points: [
-                {
-                  label: 'Formidable Military Force',
-                  text: "William's armada was four times larger than the Spanish Armada of 1588, landing cavalry, artillery, and professional infantry onto English soil.",
-                },
-                {
-                  label: "Collapse of James II's Authority",
-                  text: "When Royal commanders like John Churchill defected to William's camp, James realized his army would not fight to defend Catholic absolutism.",
-                },
-              ],
-              provenance_clues: [
-                'Author: Dutch-English maritime artist in the circle of Willem van de Velde.',
-                'Audience: The new joint monarchs William and Mary, and supporters of the Protestant succession.',
-                'Motive: To depict the invasion as an orderly, righteous mission to liberate England from popery and arbitrary rule.',
-              ],
-            },
-            question_badge: 'INVASION & GLORIOUS REVOLUTION',
+              'How does the Armada Portrait symbolize the transformation of England into an independent, global Protestant maritime power?',
             model_answer:
-              'It displays a colossal Dutch fleet of hundreds of war vessels disembarking 15,000 seasoned soldiers, proving that the Glorious Revolution was a formidable, high-stakes military invasion rather than an effortless domestic transition.',
-            provenance_clues: [
-              'Author: Dutch-English maritime artist in the circle of Willem van de Velde.',
-              'Audience: The new joint monarchs William and Mary, and supporters of the Protestant succession.',
-              'Motive: To depict the invasion as an orderly, righteous mission to liberate England from popery and arbitrary rule.',
-            ],
+              'Elizabeth rests her hand directly over the Americas on the globe, flanked by windows showing the stormy destruction of the Catholic Armada on one side and peaceful English ships on the other. It projects that under the Protestant Crown, England had defeated European Catholic hegemony and stood destined for global empire.',
+            context:
+              'Commissioned following the defeat of the Spanish Armada in 1588, the portrait forged an indissoluble bond between English national identity and Protestantism.',
+            hinge_question:
+              'How did anti-Catholicism become the glue of English national identity under the Tudors?',
+            teacher_notes: {
+              hinge_question:
+                'How did anti-Catholicism become the glue of English national identity under the Tudors?',
+              source_context:
+                "The 1588 Armada Portrait celebrated England's emergence as an imperial Protestant maritime power. **Hinge Question:** How did anti-Catholicism become the glue of English national identity under the Tudors?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l5_src_b',
+              letter: 'B',
+              type: 'visual',
+              src: '/images/armada_portrait.jpg',
+              image: '/images/armada_portrait.jpg',
+              title:
+                'Source B (Imperial Protestant Identity): The Armada Portrait of Queen Elizabeth I (George Gower, 1588)',
+              caption:
+                'Monumental royal portrait (Woburn Abbey / Queen’s House, Greenwich) showing Elizabeth resting her hand upon the global sphere with the destroyed Spanish Armada in the background.',
+              author: 'George Gower',
+              date: 'c. 1588',
+              question_badge: 'SYNOPTIC THEME: NATIONAL PROTESTANT IDENTITY',
+              question:
+                'How does the Armada Portrait symbolize the transformation of England into an independent, global Protestant maritime power?',
+              model_answer:
+                'Elizabeth rests her hand directly over the Americas on the globe, flanked by windows showing the stormy destruction of the Catholic Armada on one side and peaceful English ships on the other. It projects that under the Protestant Crown, England had defeated European Catholic hegemony and stood destined for global empire.',
+              context:
+                'Commissioned following the defeat of the Spanish Armada in 1588, the portrait forged an indissoluble bond between English national identity and Protestantism.',
+              hinge_question:
+                'How did anti-Catholicism become the glue of English national identity under the Tudors?',
+              teacher_notes: {
+                hinge_question:
+                  'How did anti-Catholicism become the glue of English national identity under the Tudors?',
+                source_context:
+                  "The 1588 Armada Portrait celebrated England's emergence as an imperial Protestant maritime power. **Hinge Question:** How did anti-Catholicism become the glue of English national identity under the Tudors?",
+              },
+            },
+          ],
         },
         {
           act: 3,
@@ -5376,501 +4741,337 @@ const monarchy_religion_power_data = {
           caption:
             "King James I of England and VI of Scotland (1566–1625), who articulated the doctrine of the Divine Right of Kings in 'The True Law of Free Monarchies' (John de Critz / National Portrait Gallery, NPG 548).",
           source: {
-            id: 'mrp_l5_src_c',
+            id: 'monarchy_religion_power_l5_src_c',
             letter: 'C',
-            type: 'visual',
-            src: '/images/william_mary_declaration_of_rights_1689.jpg',
-            image: '/images/william_mary_declaration_of_rights_1689.jpg',
+            type: 'written',
+            src: '',
+            image: '',
             title:
-              'Source C (Parliamentary Conditionality): Presentation of the Declaration of Rights to William and Mary (13 February 1689)',
+              'Source C (Stuart Absolutism): King James I, Speech to Parliament on the Divine Right of Kings (21 March 1610)',
             caption:
-              'Historic composition depicting the Marquis of Halifax and parliamentary leaders offering the Crown of England to William and Mary in the Banqueting House at Whitehall, conditional on their acceptance of the Declaration of Rights.',
-            citation:
-              'Palace of Westminster Collection / UK Parliamentary Art Collection (WOA 2588).',
-            provenance:
-              "Commissioned to illustrate the pivotal constitutional moment of the dual monarchy's coronation settlement.",
-            context:
-              'On 13 February 1689 in the very room from which Charles I had walked to his execution forty years earlier, Parliament offered the Crown to William and Mary. They were forced to listen to the Declaration of Rights read aloud before being offered the throne. **Hinge Question:** Why did presenting the Declaration of Rights in the Banqueting House symbolize that the monarchy had been fundamentally transformed?',
+              'Address to both Houses of Parliament by James I asserting that kings are God’s lieutenants upon earth and hold absolute authority over statute law and taxation.',
+            author: 'King James I of England (James VI of Scotland)',
+            date: '21 March 1610',
+            content:
+              'The state of monarchy is the supremest thing upon earth; for kings are not only God’s lieutenants upon earth, and sit upon God’s throne, but even by God himself they are called gods... As to dispute what God may do is blasphemy... so is it sedition in subjects to dispute what a king may do in the height of his power.',
+            question_badge: 'SYNOPTIC THEME: STUART DIVINE RIGHT FRICTION',
             question:
-              'How did the formal presentation of the Declaration of Rights establish that royal authority was now conditional upon parliamentary consent?',
-            hinge_question:
-              'Why did presenting the Declaration of Rights in the Banqueting House symbolize that the monarchy had been fundamentally transformed?',
-            disciplinary_focus: 'PARLIAMENTARY CONDITIONALITY',
-            utility_enquiry: {
-              question:
-                'How did the formal presentation of the Declaration of Rights establish that royal authority was now conditional upon parliamentary consent?',
-              model_answer:
-                'By forcing William and Mary to formally hear and accept the Declaration of Rights before offering them the crown, Parliament established that kings ruled by contract with Parliament, not by divine birthright.',
-              content_inferences:
-                'Illustrates the permanent institutional triumph of parliamentary sovereignty over hereditary absolutism.',
-              provenance_evaluation:
-                'Parliamentary historical artwork; celebrates the moment of constitutional compromise that ended over a century of civil war and revolution.',
-              context_limitations:
-                'Frames the transfer of power as dignified and consensual, glossing over the intense political bargaining between Whig republicans and Tory royalists.',
-              bullet_points: [
-                {
-                  label: 'Conditional Monarchy',
-                  text: 'Accepting the Crown upon statutory terms meant that if a monarch violated parliamentary rights, they forfeited their legitimate right to rule.',
-                },
-                {
-                  label: 'Symbolic Banqueting House Location',
-                  text: 'Held in the hall where Charles I was condemned, the ceremony was an unspoken reminder of the ultimate fate of monarchs who defied Parliament.',
-                },
-              ],
-              provenance_clues: [
-                'Author: British constitutional historical artist.',
-                'Audience: Members of Parliament, civic visitors to Westminster, and constitutional scholars.',
-                'Motive: To commemorate the founding moment of modern British parliamentary democracy.',
-              ],
-            },
-            question_badge: 'PARLIAMENTARY CONDITIONALITY',
+              "Why did James I's ideological stance on the Divine Right of Kings alienate an increasingly assertive Parliament?",
             model_answer:
-              'By forcing William and Mary to formally hear and accept the Declaration of Rights before offering them the crown, Parliament established that kings ruled by contract with Parliament, not by divine birthright.',
-            provenance_clues: [
-              'Author: British constitutional historical artist.',
-              'Audience: Members of Parliament, civic visitors to Westminster, and constitutional scholars.',
-              'Motive: To commemorate the founding moment of modern British parliamentary democracy.',
-            ],
+              "James explicitly claimed that kings possessed absolute power above the law and that questioning royal actions was seditious blasphemy. This directly collided with English common law traditions and the House of Commons' belief that their parliamentary liberties and tax approvals were ancient constitutional rights.",
+            context:
+              'The accession of the Scottish Stuart dynasty in 1603 imported absolutist political theories that caused escalating constitutional conflict with Parliament.',
+            hinge_question:
+              'Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?',
+            teacher_notes: {
+              hinge_question:
+                'Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?',
+              source_context:
+                "In 1610, James I told Parliament that questioning the King's prerogative was blasphemy. **Hinge Question:** Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l5_src_c',
+              letter: 'C',
+              type: 'written',
+              src: '',
+              image: '',
+              title:
+                'Source C (Stuart Absolutism): King James I, Speech to Parliament on the Divine Right of Kings (21 March 1610)',
+              caption:
+                'Address to both Houses of Parliament by James I asserting that kings are God’s lieutenants upon earth and hold absolute authority over statute law and taxation.',
+              author: 'King James I of England (James VI of Scotland)',
+              date: '21 March 1610',
+              content:
+                'The state of monarchy is the supremest thing upon earth; for kings are not only God’s lieutenants upon earth, and sit upon God’s throne, but even by God himself they are called gods... As to dispute what God may do is blasphemy... so is it sedition in subjects to dispute what a king may do in the height of his power.',
+              question_badge: 'SYNOPTIC THEME: STUART DIVINE RIGHT FRICTION',
+              question:
+                "Why did James I's ideological stance on the Divine Right of Kings alienate an increasingly assertive Parliament?",
+              model_answer:
+                "James explicitly claimed that kings possessed absolute power above the law and that questioning royal actions was seditious blasphemy. This directly collided with English common law traditions and the House of Commons' belief that their parliamentary liberties and tax approvals were ancient constitutional rights.",
+              context:
+                'The accession of the Scottish Stuart dynasty in 1603 imported absolutist political theories that caused escalating constitutional conflict with Parliament.',
+              hinge_question:
+                'Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?',
+              teacher_notes: {
+                hinge_question:
+                  'Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?',
+                source_context:
+                  "In 1610, James I told Parliament that questioning the King's prerogative was blasphemy. **Hinge Question:** Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?",
+              },
+            },
+          ],
         },
         {
           act: 4,
           title: 'The Shock of Regicide & Republic (1642–1649)',
           text: '<span class="para-ref">[5.4]</span> The Civil War of 1642–1648 shattered centuries of royal mystique. When Parliament’s New Model Army defeated the King at Naseby and Charles refused to negotiate peace, the Army executed Pride’s Purge and established a revolutionary <strong>Commonwealth</strong> republic. Putting an anointed monarch on trial for high treason and beheading Charles I on 30 January 1649 was the most radical constitutional earthquake in British history. It established the permanent legal <strong>precedent</strong> that British monarchs were not above the law: if a king ruled as a tyrant and shed his people’s blood, he could be held legally accountable and executed by the nation.',
           source: {
-            id: 'mrp_l5_src_d',
+            id: 'monarchy_religion_power_l5_src_d',
             letter: 'D',
             type: 'visual',
             src: '/images/monarchy_religion_power/hobbes_leviathan_frontispiece_1651.jpg',
             image: '/images/monarchy_religion_power/hobbes_leviathan_frontispiece_1651.jpg',
             title:
-              "Source D (Political Philosophy & Absolutism): Frontispiece of Thomas Hobbes' Leviathan (Abraham Bosse, 1651)",
+              'Source D (Political Philosophy & Statecraft): Frontispiece of Thomas Hobbes’ Leviathan (Abraham Bosse, 1651)',
             caption:
-              "Abraham Bosse's engraved title page for Thomas Hobbes' masterpiece of political philosophy, Leviathan, depicting a colossal sovereign monarch wielding sword and crosier, whose body is composed of hundreds of individual citizens.",
-            citation:
-              'British Library, Rare Books (C.59.i.11). Engraved frontispiece, London, 1651.',
-            provenance:
-              'Designed by French master engraver Abraham Bosse under direct philosophical supervision from Thomas Hobbes in Paris, 1651.',
-            context:
-              "Writing in exile during the English Civil War, Thomas Hobbes argued that without an absolute sovereign power to enforce law, human society collapsed into a 'state of nature' where life was 'solitary, poor, nasty, brutish, and short'. **Hinge Question:** Is an absolute sovereign necessary to prevent civil war, or does absolute power inevitably lead to tyranny?",
+              'Etching by Abraham Bosse for Thomas Hobbes (British Library): A giant sovereign composed of hundreds of individual citizens rising above the landscape, holding sword and crosier.',
+            author: 'Abraham Bosse and Thomas Hobbes',
+            date: '1651',
+            question_badge: 'SYNOPTIC THEME: SOCIAL CONTRACT & CIVIL CHAOS',
             question:
-              "How does Abraham Bosse's engraved frontispiece for Thomas Hobbes' Leviathan visualize the concept of the sovereign state?",
-            hinge_question:
-              'Is an absolute sovereign necessary to prevent civil war, or does absolute power inevitably lead to tyranny?',
-            disciplinary_focus: 'POLITICAL PHILOSOPHY & ABSOLUTISM',
-            utility_enquiry: {
-              question:
-                "How does Abraham Bosse's engraved frontispiece for Thomas Hobbes' Leviathan visualize the concept of the sovereign state?",
-              model_answer:
-                'A colossal crowned ruler rises above the peaceful landscape, whose entire body is constructed from hundreds of individual citizens, symbolizing that individuals surrender their natural freedom to an absolute sovereign in exchange for protection from violent anarchy.',
-              content_inferences:
-                'Documents the birth of modern secular political theory, grounding royal absolutism in a rational social contract rather than divine right.',
-              provenance_evaluation:
-                'One of the most famous visual allegories in intellectual history; closely directed by Hobbes to encapsulate his political philosophy in a single image.',
-              context_limitations:
-                'Argues that any rebellion against the sovereign is irrational, dismissing parliamentary democracy and individual civil liberties as dangerous chaos.',
-              bullet_points: [
-                {
-                  label: "The Sovereign as 'Mortall God'",
-                  text: 'Holding the sword of temporal military power and the crosier of spiritual church authority, the sovereign wields total, undivided control.',
-                },
-                {
-                  label: 'Social Contract Through Fear',
-                  text: "Citizens willingly fuse into the Leviathan's body because the terror of civil war and violent death outweighs the burden of absolute obedience.",
-                },
-              ],
-              provenance_clues: [
-                'Author: Abraham Bosse (French artist and engraver) collaborating closely with philosopher Thomas Hobbes.',
-                'Audience: European political philosophers, exiled royalists in Paris, and post-Civil War English intellectuals.',
-                'Motive: To provide a philosophical defense of undivided absolute sovereignty as the only cure for the bloody horrors of civil war.',
-              ],
-            },
-            question_badge: 'POLITICAL PHILOSOPHY & ABSOLUTISM',
+              'How does the frontispiece of Leviathan reflect the traumatic impact of the English Civil War on seventeenth-century political thought?',
             model_answer:
-              'A colossal crowned ruler rises above the peaceful landscape, whose entire body is constructed from hundreds of individual citizens, symbolizing that individuals surrender their natural freedom to an absolute sovereign in exchange for protection from violent anarchy.',
-            provenance_clues: [
-              'Author: Abraham Bosse (French artist and engraver) collaborating closely with philosopher Thomas Hobbes.',
-              'Audience: European political philosophers, exiled royalists in Paris, and post-Civil War English intellectuals.',
-              'Motive: To provide a philosophical defense of undivided absolute sovereignty as the only cure for the bloody horrors of civil war.',
-            ],
+              "Writing in the immediate aftermath of regicide and civil war, Hobbes argued that without an absolute sovereign authority, human life descends into a state of nature that is 'solitary, poor, nasty, brutish, and short'. The image shows citizens willingly merging into one Commonwealth to preserve peace and escape civil slaughter.",
+            context:
+              'Published in 1651 during the Cromwellian Commonwealth, Leviathan founded modern political philosophy by arguing that government authority rests on a social contract to prevent anarchy.',
+            hinge_question:
+              "Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
+            teacher_notes: {
+              hinge_question:
+                "Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
+              source_context:
+                "Published in 1651, Hobbes' Leviathan examined how sovereign authority prevents civil chaos. **Hinge Question:** Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l5_src_d',
+              letter: 'D',
+              type: 'visual',
+              src: '/images/monarchy_religion_power/hobbes_leviathan_frontispiece_1651.jpg',
+              image: '/images/monarchy_religion_power/hobbes_leviathan_frontispiece_1651.jpg',
+              title:
+                'Source D (Political Philosophy & Statecraft): Frontispiece of Thomas Hobbes’ Leviathan (Abraham Bosse, 1651)',
+              caption:
+                'Etching by Abraham Bosse for Thomas Hobbes (British Library): A giant sovereign composed of hundreds of individual citizens rising above the landscape, holding sword and crosier.',
+              author: 'Abraham Bosse and Thomas Hobbes',
+              date: '1651',
+              question_badge: 'SYNOPTIC THEME: SOCIAL CONTRACT & CIVIL CHAOS',
+              question:
+                'How does the frontispiece of Leviathan reflect the traumatic impact of the English Civil War on seventeenth-century political thought?',
+              model_answer:
+                "Writing in the immediate aftermath of regicide and civil war, Hobbes argued that without an absolute sovereign authority, human life descends into a state of nature that is 'solitary, poor, nasty, brutish, and short'. The image shows citizens willingly merging into one Commonwealth to preserve peace and escape civil slaughter.",
+              context:
+                'Published in 1651 during the Cromwellian Commonwealth, Leviathan founded modern political philosophy by arguing that government authority rests on a social contract to prevent anarchy.',
+              hinge_question:
+                "Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
+              teacher_notes: {
+                hinge_question:
+                  "Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
+                source_context:
+                  "Published in 1651, Hobbes' Leviathan examined how sovereign authority prevents civil chaos. **Hinge Question:** Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
+              },
+            },
+          ],
         },
         {
           act: 5,
           title: 'The 1689 Bill of Rights: Parliamentary Supremacy (1689)',
           text: '<span class="para-ref">[5.5]</span> Although the monarchy was restored in 1660, the Stuart ambition for absolute power died forever in the 1688 Glorious Revolution. When James II attempted to rule by decree and promote Catholicism, Parliament expelled him and invited William and Mary to take the throne on statutory terms. By signing the 1689 Bill of Rights, William and Mary accepted a permanent <strong>constitutional monarchy</strong>. The Crown lost its royal <strong>veto</strong> over legislation, lost the power to levy taxes without parliamentary approval, and was barred from keeping a peacetime standing army. Over 170 years of violent conflict, sovereignty had shifted irreversibly: Britain was now ruled not by the personal will of a King, but by the King-in-Parliament.',
           source: {
-            id: 'mrp_l5_src_e',
+            id: 'monarchy_religion_power_l5_src_e',
             letter: 'E',
             type: 'visual',
-            src: '/images/monarchy_religion_power/trial_of_seven_bishops_1688.jpg',
-            image: '/images/monarchy_religion_power/trial_of_seven_bishops_1688.jpg',
+            src: '/images/william_mary_declaration_of_rights_1689.jpg',
+            image: '/images/william_mary_declaration_of_rights_1689.jpg',
             title:
-              "Source E (Church Resistance & Rule of Law): The Trial of the Seven Bishops in the Court of King's Bench (June 1688)",
+              'Source E (Parliamentary Conditionality): Presentation of the Declaration of Rights to William and Mary (13 February 1689)',
             caption:
-              'Historic composition depicting the sensational trial of Archbishop William Sancroft and six Anglican bishops at Westminster Hall, charged with seditious libel by King James II for refusing to read his royal Declaration of Indulgence.',
-            citation:
-              'UK Parliamentary Art Collection / British Museum (BM 1877,1013.916). Engraving, 1688.',
-            provenance:
-              "Published in London in 1688 to celebrate the jury's unanimous verdict acquitting the bishops.",
-            context:
-              "When King James II ordered his Declaration of Indulgence read in every pulpit, Archbishop Sancroft and six bishops petitioned that the King had no legal dispensing power to suspend parliamentary statutes. James imprisoned them in the Tower and put them on trial for sedition. The jury's verdict of 'Not Guilty' triggered joyous street celebrations and united Tories and Whigs against the King. **Hinge Question:** Why did the trial of seven Anglican bishops unite rival Whig and Tory politicians to overthrow King James II?",
+              'Contemporary engraving (British Museum) showing the Speaker of the House of Commons presenting the Declaration of Rights to William III and Mary II in the Banqueting House at Whitehall.',
+            author: 'Contemporary London Printmaker',
+            date: 'February 1689',
+            question_badge: 'SYNOPTIC RESOLUTION: PARLIAMENTARY SOVEREIGNTY',
             question:
-              'Why did the acquittal of the Seven Bishops in June 1688 make the downfall of King James II inevitable?',
-            hinge_question:
-              'Why did the trial of seven Anglican bishops unite rival Whig and Tory politicians to overthrow King James II?',
-            disciplinary_focus: 'CHURCH RESISTANCE & RULE OF LAW',
-            utility_enquiry: {
-              question:
-                'Why did the acquittal of the Seven Bishops in June 1688 make the downfall of King James II inevitable?',
-              model_answer:
-                "When an English jury found the Archbishop of Canterbury and six bishops innocent of seditious libel for refusing to read the King's Declaration of Indulgence, it proved that the Anglican Church, the courts, and the public completely rejected James II's royal dispensing power.",
-              content_inferences:
-                'Demonstrates how royal attacks on the established Anglican Church destroyed the traditional Tory doctrine of passive obedience, uniting the political nation in revolt.',
-              provenance_evaluation:
-                'Popular celebratory print from London; captures the dramatic courtroom drama where the English common law successfully checked royal absolutism.',
-              context_limitations:
-                'Depicts the bishops as champions of religious liberty, although they opposed James II primarily to defend the Anglican monopoly and suppress religious dissenters.',
-              bullet_points: [
-                {
-                  label: 'Rejection of the Royal Dispensing Power',
-                  text: "The verdict established that the King could not unilaterally suspend parliamentary laws, invalidating James II's main instrument of rule.",
-                },
-                {
-                  label: 'Immediate Invitation to William of Orange',
-                  text: "On the very night of the acquittal (30 June 1688), the 'Immortal Seven' politicians secretly dispatched the invitation to William of Orange to invade England.",
-                },
-              ],
-              provenance_clues: [
-                "Author: Contemporary British historical engraver / Court of King's Bench records.",
-                'Audience: English gentry, Anglican clergy, and parliamentary leaders.',
-                'Motive: To document the sensational trial where the judicial system stood against royal absolutism, triggering the invitation to William of Orange.',
-              ],
-            },
-            question_badge: 'CHURCH RESISTANCE & RULE OF LAW',
+              'How does the ceremony depicted in Source E symbolize the ultimate outcome of the 1517–1689 struggle for power in England?',
             model_answer:
-              "When an English jury found the Archbishop of Canterbury and six bishops innocent of seditious libel for refusing to read the King's Declaration of Indulgence, it proved that the Anglican Church, the courts, and the public completely rejected James II's royal dispensing power.",
-            provenance_clues: [
-              "Author: Contemporary British historical engraver / Court of King's Bench records.",
-              'Audience: English gentry, Anglican clergy, and parliamentary leaders.',
-              'Motive: To document the sensational trial where the judicial system stood against royal absolutism, triggering the invitation to William of Orange.',
-            ],
+              "In the very Banqueting House where Charles I was stepped out to his execution in 1649, William and Mary were offered the English crown only on strict condition that they accept Parliament's Declaration of Rights. Monarchy was transformed from divine right to a contract revocable by Parliament.",
+            context:
+              'On 13 February 1689, the Convention Parliament formally offered the joint crown to William of Orange and Mary Stuart on condition of upholding parliamentary supremacy.',
+            hinge_question:
+              'By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
+            teacher_notes: {
+              hinge_question:
+                'By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
+              source_context:
+                'In February 1689, William and Mary accepted the Crown on condition of parliamentary rights. **Hinge Question:** By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
+            },
           },
+          sources: [
+            {
+              id: 'monarchy_religion_power_l5_src_e',
+              letter: 'E',
+              type: 'visual',
+              src: '/images/william_mary_declaration_of_rights_1689.jpg',
+              image: '/images/william_mary_declaration_of_rights_1689.jpg',
+              title:
+                'Source E (Parliamentary Conditionality): Presentation of the Declaration of Rights to William and Mary (13 February 1689)',
+              caption:
+                'Contemporary engraving (British Museum) showing the Speaker of the House of Commons presenting the Declaration of Rights to William III and Mary II in the Banqueting House at Whitehall.',
+              author: 'Contemporary London Printmaker',
+              date: 'February 1689',
+              question_badge: 'SYNOPTIC RESOLUTION: PARLIAMENTARY SOVEREIGNTY',
+              question:
+                'How does the ceremony depicted in Source E symbolize the ultimate outcome of the 1517–1689 struggle for power in England?',
+              model_answer:
+                "In the very Banqueting House where Charles I was stepped out to his execution in 1649, William and Mary were offered the English crown only on strict condition that they accept Parliament's Declaration of Rights. Monarchy was transformed from divine right to a contract revocable by Parliament.",
+              context:
+                'On 13 February 1689, the Convention Parliament formally offered the joint crown to William of Orange and Mary Stuart on condition of upholding parliamentary supremacy.',
+              hinge_question:
+                'By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
+              teacher_notes: {
+                hinge_question:
+                  'By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
+                source_context:
+                  'In February 1689, William and Mary accepted the Crown on condition of parliamentary rights. **Hinge Question:** By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
+              },
+            },
+          ],
         },
       ],
       sources: [
         {
-          id: 'mrp_l5_src_a',
+          id: 'monarchy_religion_power_l5_src_a',
           letter: 'A',
-          type: 'visual',
-          src: '/images/bill_of_rights.jpg',
-          image: '/images/bill_of_rights.jpg',
-          title:
-            'Source A (Constitutional Monarchy): The Bill of Rights Parchment Roll (16 December 1689)',
+          type: 'written',
+          src: '',
+          image: '',
+          title: 'Source A (Royal Sovereignty): The Act of Supremacy 1534 (26 Hen. 8 c. 1)',
           caption:
-            'The landmark Bill of Rights statute roll (1 Will. & Mar. sess. 2 c. 2), permanently establishing parliamentary supremacy, free elections, regular parliaments, and banning royal standing armies in peacetime.',
-          citation:
-            'UK Parliamentary Archives, London (HL/PO/PU/1/1689/1W&Ms2n2). Official parchment act.',
-          provenance:
-            'Passed by the Convention Parliament and enacted with royal assent by William III and Mary II in December 1689.',
-          context:
-            'Following the Glorious Revolution of 1688, Parliament presented the Bill of Rights to William and Mary. It established that the monarch could not suspend laws, levy taxes without consent, or maintain a standing army without parliamentary approval. **Hinge Question:** Why did the 1689 Bill of Rights mark the permanent death of royal absolutism in Britain?',
+            'The foundation statute of the English Reformation declaring King Henry VIII to be the sole supreme head on earth of the Church of England.',
+          author: 'Reformation Parliament of England under King Henry VIII',
+          date: 'November 1534',
+          content:
+            'Albeit the King’s Majesty justly and rightfully is and oweth to be the supreme head of the Church of England... Be it enacted by authority of this present Parliament, that the King our sovereign lord, his heirs and successors kings of this realm, shall be taken, accepted, and reputed the only supreme head in earth of the Church of England called Anglicana Ecclesia.',
+          question_badge: 'SYNOPTIC FOUNDATION: ROYAL AUTONOMY',
           question:
-            'How did the 1689 Bill of Rights permanently curtail the powers of the British monarchy and establish parliamentary supremacy?',
-          hinge_question:
-            'Why did the 1689 Bill of Rights mark the permanent death of royal absolutism in Britain?',
-          disciplinary_focus: 'CONSTITUTIONAL MONARCHY',
-          utility_enquiry: {
-            question:
-              'How did the 1689 Bill of Rights permanently curtail the powers of the British monarchy and establish parliamentary supremacy?',
-            model_answer:
-              'It banned the monarch from suspending laws, levying taxes without parliamentary approval, or keeping a standing army in peacetime, establishing that the Crown ruled strictly under the law and with parliamentary consent.',
-            content_inferences:
-              'Constitutes the foundation of the modern British uncodified constitution, permanently establishing a constitutional monarchy.',
-            provenance_evaluation:
-              'Supreme statutory constitutional record; binding primary legal text that settled the 170-year struggle between Crown and Parliament.',
-            context_limitations:
-              'Presents the settlement as an orderly restoration of ancient liberties, omitting that it excluded 98% of the population from voting and barred Catholics from the throne.',
-            bullet_points: [
-              {
-                label: 'Control of the Purse and Sword',
-                text: 'By requiring annual parliamentary approval for taxes and the army, Parliament ensured monarchs could never govern alone again.',
-              },
-              {
-                label: 'Free Parliamentary Debate',
-                text: 'Article 9 established parliamentary privilege, guaranteeing that MPs could debate and criticize the government without fear of royal arrest.',
-              },
-            ],
-            provenance_clues: [
-              'Author: The Lords Spiritual and Temporal and Commons assembled at Westminster.',
-              'Audience: King William III, Queen Mary II, the British people, and the legal courts.',
-              'Motive: To permanently settle the constitutional boundaries of the monarchy and prevent any return to Stuart absolutism.',
-            ],
-          },
-          question_badge: 'CONSTITUTIONAL MONARCHY',
+            "How did Henry VIII's Act of Supremacy in 1534 lay the groundwork for 150 years of religious and political turmoil in England?",
           model_answer:
-            'It banned the monarch from suspending laws, levying taxes without parliamentary approval, or keeping a standing army in peacetime, establishing that the Crown ruled strictly under the law and with parliamentary consent.',
-          provenance_clues: [
-            'Author: The Lords Spiritual and Temporal and Commons assembled at Westminster.',
-            'Audience: King William III, Queen Mary II, the British people, and the legal courts.',
-            'Motive: To permanently settle the constitutional boundaries of the monarchy and prevent any return to Stuart absolutism.',
-          ],
-          source_context:
-            'Following the Glorious Revolution of 1688, Parliament presented the Bill of Rights to William and Mary. It established that the monarch could not suspend laws, levy taxes without consent, or maintain a standing army without parliamentary approval. **Hinge Question:** Why did the 1689 Bill of Rights mark the permanent death of royal absolutism in Britain?',
+            'By uniting spiritual and temporal sword in the Crown, Henry abolished papal authority and made religious doctrine a matter of royal command. Every subsequent monarch could reshape church law, turning succession into a life-or-death ideological battleground between Catholics, Anglicans, and Puritans.',
+          context:
+            'In 1534, Parliament passed the Act of Supremacy, officially severing England from the Roman Catholic Church and vesting supreme ecclesiastical power in the monarch.',
+          hinge_question:
+            'Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
           teacher_notes: {
+            hinge_question:
+              'Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
             source_context:
-              'Following the Glorious Revolution of 1688, Parliament presented the Bill of Rights to William and Mary. It established that the monarch could not suspend laws, levy taxes without consent, or maintain a standing army without parliamentary approval. **Hinge Question:** Why did the 1689 Bill of Rights mark the permanent death of royal absolutism in Britain?',
+              'Passed in 1534, the Act of Supremacy inaugurated English royal church sovereignty. **Hinge Question:** Looking back across 1517–1689, was Henry VIII the creator of royal power or the accidental spark of its ultimate downfall?',
           },
         },
         {
-          id: 'mrp_l5_src_b',
+          id: 'monarchy_religion_power_l5_src_b',
           letter: 'B',
           type: 'visual',
-          src: '/images/william_landing_1688.jpg',
-          image: '/images/william_landing_1688.jpg',
+          src: '/images/armada_portrait.jpg',
+          image: '/images/armada_portrait.jpg',
           title:
-            'Source B (Invasion & Glorious Revolution): The Landing of William III, Prince of Orange, at Torbay (5 November 1688)',
+            'Source B (Imperial Protestant Identity): The Armada Portrait of Queen Elizabeth I (George Gower, 1588)',
           caption:
-            "Contemporary painting of William III's Dutch armada of over 400 transport ships and 15,000 troops landing safely at Brixham in Torbay under a favorable 'Protestant wind'.",
-          citation:
-            'Royal Collection Trust, Hampton Court Palace (RCIN 404847). Oil on canvas, c. 1689.',
-          provenance:
-            'Commissioned to commemorate the naval invasion that overthrew King James II.',
-          context:
-            "Alarmed by James II's Catholic heir and arbitrary rule, seven leading English nobles sent an invitation to Dutch Stadtholder William of Orange. On 5 November 1688 (Guy Fawkes Day), William landed at Torbay. James II's army deserted him, and he fled to France. **Hinge Question:** Was the Glorious Revolution a peaceful constitutional uprising or a successful Dutch foreign invasion?",
+            'Monumental royal portrait (Woburn Abbey / Queen’s House, Greenwich) showing Elizabeth resting her hand upon the global sphere with the destroyed Spanish Armada in the background.',
+          author: 'George Gower',
+          date: 'c. 1588',
+          question_badge: 'SYNOPTIC THEME: NATIONAL PROTESTANT IDENTITY',
           question:
-            "How does this depiction of William of Orange's massive landing at Torbay reveal the military scale of the 'Glorious Revolution' of 1688?",
-          hinge_question:
-            'Was the Glorious Revolution a peaceful constitutional uprising or a successful Dutch foreign invasion?',
-          disciplinary_focus: 'INVASION & GLORIOUS REVOLUTION',
-          utility_enquiry: {
-            question:
-              "How does this depiction of William of Orange's massive landing at Torbay reveal the military scale of the 'Glorious Revolution' of 1688?",
-            model_answer:
-              'It displays a colossal Dutch fleet of hundreds of war vessels disembarking 15,000 seasoned soldiers, proving that the Glorious Revolution was a formidable, high-stakes military invasion rather than an effortless domestic transition.',
-            content_inferences:
-              "Challenges the traditional Whig myth of a 'bloodless' revolution, highlighting Dutch military intervention in English constitutional history.",
-            provenance_evaluation:
-              "Triumphant Dutch-English court painting; celebrates the landing as providential, with calm waters and banner proclaiming 'For Religion and Liberty'.",
-            context_limitations:
-              'Downplays the intense anti-Dutch anxiety among English officers and the bloody warfare in Ireland and Scotland (Boyne and Killiecrankie) that followed.',
-            bullet_points: [
-              {
-                label: 'Formidable Military Force',
-                text: "William's armada was four times larger than the Spanish Armada of 1588, landing cavalry, artillery, and professional infantry onto English soil.",
-              },
-              {
-                label: "Collapse of James II's Authority",
-                text: "When Royal commanders like John Churchill defected to William's camp, James realized his army would not fight to defend Catholic absolutism.",
-              },
-            ],
-            provenance_clues: [
-              'Author: Dutch-English maritime artist in the circle of Willem van de Velde.',
-              'Audience: The new joint monarchs William and Mary, and supporters of the Protestant succession.',
-              'Motive: To depict the invasion as an orderly, righteous mission to liberate England from popery and arbitrary rule.',
-            ],
-          },
-          question_badge: 'INVASION & GLORIOUS REVOLUTION',
+            'How does the Armada Portrait symbolize the transformation of England into an independent, global Protestant maritime power?',
           model_answer:
-            'It displays a colossal Dutch fleet of hundreds of war vessels disembarking 15,000 seasoned soldiers, proving that the Glorious Revolution was a formidable, high-stakes military invasion rather than an effortless domestic transition.',
-          provenance_clues: [
-            'Author: Dutch-English maritime artist in the circle of Willem van de Velde.',
-            'Audience: The new joint monarchs William and Mary, and supporters of the Protestant succession.',
-            'Motive: To depict the invasion as an orderly, righteous mission to liberate England from popery and arbitrary rule.',
-          ],
-          source_context:
-            "Alarmed by James II's Catholic heir and arbitrary rule, seven leading English nobles sent an invitation to Dutch Stadtholder William of Orange. On 5 November 1688 (Guy Fawkes Day), William landed at Torbay. James II's army deserted him, and he fled to France. **Hinge Question:** Was the Glorious Revolution a peaceful constitutional uprising or a successful Dutch foreign invasion?",
+            'Elizabeth rests her hand directly over the Americas on the globe, flanked by windows showing the stormy destruction of the Catholic Armada on one side and peaceful English ships on the other. It projects that under the Protestant Crown, England had defeated European Catholic hegemony and stood destined for global empire.',
+          context:
+            'Commissioned following the defeat of the Spanish Armada in 1588, the portrait forged an indissoluble bond between English national identity and Protestantism.',
+          hinge_question:
+            'How did anti-Catholicism become the glue of English national identity under the Tudors?',
           teacher_notes: {
+            hinge_question:
+              'How did anti-Catholicism become the glue of English national identity under the Tudors?',
             source_context:
-              "Alarmed by James II's Catholic heir and arbitrary rule, seven leading English nobles sent an invitation to Dutch Stadtholder William of Orange. On 5 November 1688 (Guy Fawkes Day), William landed at Torbay. James II's army deserted him, and he fled to France. **Hinge Question:** Was the Glorious Revolution a peaceful constitutional uprising or a successful Dutch foreign invasion?",
+              "The 1588 Armada Portrait celebrated England's emergence as an imperial Protestant maritime power. **Hinge Question:** How did anti-Catholicism become the glue of English national identity under the Tudors?",
           },
         },
         {
-          id: 'mrp_l5_src_c',
+          id: 'monarchy_religion_power_l5_src_c',
           letter: 'C',
-          type: 'visual',
-          src: '/images/william_mary_declaration_of_rights_1689.jpg',
-          image: '/images/william_mary_declaration_of_rights_1689.jpg',
+          type: 'written',
+          src: '',
+          image: '',
           title:
-            'Source C (Parliamentary Conditionality): Presentation of the Declaration of Rights to William and Mary (13 February 1689)',
+            'Source C (Stuart Absolutism): King James I, Speech to Parliament on the Divine Right of Kings (21 March 1610)',
           caption:
-            'Historic composition depicting the Marquis of Halifax and parliamentary leaders offering the Crown of England to William and Mary in the Banqueting House at Whitehall, conditional on their acceptance of the Declaration of Rights.',
-          citation:
-            'Palace of Westminster Collection / UK Parliamentary Art Collection (WOA 2588).',
-          provenance:
-            "Commissioned to illustrate the pivotal constitutional moment of the dual monarchy's coronation settlement.",
-          context:
-            'On 13 February 1689 in the very room from which Charles I had walked to his execution forty years earlier, Parliament offered the Crown to William and Mary. They were forced to listen to the Declaration of Rights read aloud before being offered the throne. **Hinge Question:** Why did presenting the Declaration of Rights in the Banqueting House symbolize that the monarchy had been fundamentally transformed?',
+            'Address to both Houses of Parliament by James I asserting that kings are God’s lieutenants upon earth and hold absolute authority over statute law and taxation.',
+          author: 'King James I of England (James VI of Scotland)',
+          date: '21 March 1610',
+          content:
+            'The state of monarchy is the supremest thing upon earth; for kings are not only God’s lieutenants upon earth, and sit upon God’s throne, but even by God himself they are called gods... As to dispute what God may do is blasphemy... so is it sedition in subjects to dispute what a king may do in the height of his power.',
+          question_badge: 'SYNOPTIC THEME: STUART DIVINE RIGHT FRICTION',
           question:
-            'How did the formal presentation of the Declaration of Rights establish that royal authority was now conditional upon parliamentary consent?',
-          hinge_question:
-            'Why did presenting the Declaration of Rights in the Banqueting House symbolize that the monarchy had been fundamentally transformed?',
-          disciplinary_focus: 'PARLIAMENTARY CONDITIONALITY',
-          utility_enquiry: {
-            question:
-              'How did the formal presentation of the Declaration of Rights establish that royal authority was now conditional upon parliamentary consent?',
-            model_answer:
-              'By forcing William and Mary to formally hear and accept the Declaration of Rights before offering them the crown, Parliament established that kings ruled by contract with Parliament, not by divine birthright.',
-            content_inferences:
-              'Illustrates the permanent institutional triumph of parliamentary sovereignty over hereditary absolutism.',
-            provenance_evaluation:
-              'Parliamentary historical artwork; celebrates the moment of constitutional compromise that ended over a century of civil war and revolution.',
-            context_limitations:
-              'Frames the transfer of power as dignified and consensual, glossing over the intense political bargaining between Whig republicans and Tory royalists.',
-            bullet_points: [
-              {
-                label: 'Conditional Monarchy',
-                text: 'Accepting the Crown upon statutory terms meant that if a monarch violated parliamentary rights, they forfeited their legitimate right to rule.',
-              },
-              {
-                label: 'Symbolic Banqueting House Location',
-                text: 'Held in the hall where Charles I was condemned, the ceremony was an unspoken reminder of the ultimate fate of monarchs who defied Parliament.',
-              },
-            ],
-            provenance_clues: [
-              'Author: British constitutional historical artist.',
-              'Audience: Members of Parliament, civic visitors to Westminster, and constitutional scholars.',
-              'Motive: To commemorate the founding moment of modern British parliamentary democracy.',
-            ],
-          },
-          question_badge: 'PARLIAMENTARY CONDITIONALITY',
+            "Why did James I's ideological stance on the Divine Right of Kings alienate an increasingly assertive Parliament?",
           model_answer:
-            'By forcing William and Mary to formally hear and accept the Declaration of Rights before offering them the crown, Parliament established that kings ruled by contract with Parliament, not by divine birthright.',
-          provenance_clues: [
-            'Author: British constitutional historical artist.',
-            'Audience: Members of Parliament, civic visitors to Westminster, and constitutional scholars.',
-            'Motive: To commemorate the founding moment of modern British parliamentary democracy.',
-          ],
-          source_context:
-            'On 13 February 1689 in the very room from which Charles I had walked to his execution forty years earlier, Parliament offered the Crown to William and Mary. They were forced to listen to the Declaration of Rights read aloud before being offered the throne. **Hinge Question:** Why did presenting the Declaration of Rights in the Banqueting House symbolize that the monarchy had been fundamentally transformed?',
+            "James explicitly claimed that kings possessed absolute power above the law and that questioning royal actions was seditious blasphemy. This directly collided with English common law traditions and the House of Commons' belief that their parliamentary liberties and tax approvals were ancient constitutional rights.",
+          context:
+            'The accession of the Scottish Stuart dynasty in 1603 imported absolutist political theories that caused escalating constitutional conflict with Parliament.',
+          hinge_question:
+            'Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?',
           teacher_notes: {
+            hinge_question:
+              'Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?',
             source_context:
-              'On 13 February 1689 in the very room from which Charles I had walked to his execution forty years earlier, Parliament offered the Crown to William and Mary. They were forced to listen to the Declaration of Rights read aloud before being offered the throne. **Hinge Question:** Why did presenting the Declaration of Rights in the Banqueting House symbolize that the monarchy had been fundamentally transformed?',
+              "In 1610, James I told Parliament that questioning the King's prerogative was blasphemy. **Hinge Question:** Why did the Stuart belief in Divine Right lead to civil war under Charles I, while the Tudors ruled without rebellion?",
           },
         },
         {
-          id: 'mrp_l5_src_d',
+          id: 'monarchy_religion_power_l5_src_d',
           letter: 'D',
           type: 'visual',
           src: '/images/monarchy_religion_power/hobbes_leviathan_frontispiece_1651.jpg',
           image: '/images/monarchy_religion_power/hobbes_leviathan_frontispiece_1651.jpg',
           title:
-            "Source D (Political Philosophy & Absolutism): Frontispiece of Thomas Hobbes' Leviathan (Abraham Bosse, 1651)",
+            'Source D (Political Philosophy & Statecraft): Frontispiece of Thomas Hobbes’ Leviathan (Abraham Bosse, 1651)',
           caption:
-            "Abraham Bosse's engraved title page for Thomas Hobbes' masterpiece of political philosophy, Leviathan, depicting a colossal sovereign monarch wielding sword and crosier, whose body is composed of hundreds of individual citizens.",
-          citation: 'British Library, Rare Books (C.59.i.11). Engraved frontispiece, London, 1651.',
-          provenance:
-            'Designed by French master engraver Abraham Bosse under direct philosophical supervision from Thomas Hobbes in Paris, 1651.',
-          context:
-            "Writing in exile during the English Civil War, Thomas Hobbes argued that without an absolute sovereign power to enforce law, human society collapsed into a 'state of nature' where life was 'solitary, poor, nasty, brutish, and short'. **Hinge Question:** Is an absolute sovereign necessary to prevent civil war, or does absolute power inevitably lead to tyranny?",
+            'Etching by Abraham Bosse for Thomas Hobbes (British Library): A giant sovereign composed of hundreds of individual citizens rising above the landscape, holding sword and crosier.',
+          author: 'Abraham Bosse and Thomas Hobbes',
+          date: '1651',
+          question_badge: 'SYNOPTIC THEME: SOCIAL CONTRACT & CIVIL CHAOS',
           question:
-            "How does Abraham Bosse's engraved frontispiece for Thomas Hobbes' Leviathan visualize the concept of the sovereign state?",
-          hinge_question:
-            'Is an absolute sovereign necessary to prevent civil war, or does absolute power inevitably lead to tyranny?',
-          disciplinary_focus: 'POLITICAL PHILOSOPHY & ABSOLUTISM',
-          utility_enquiry: {
-            question:
-              "How does Abraham Bosse's engraved frontispiece for Thomas Hobbes' Leviathan visualize the concept of the sovereign state?",
-            model_answer:
-              'A colossal crowned ruler rises above the peaceful landscape, whose entire body is constructed from hundreds of individual citizens, symbolizing that individuals surrender their natural freedom to an absolute sovereign in exchange for protection from violent anarchy.',
-            content_inferences:
-              'Documents the birth of modern secular political theory, grounding royal absolutism in a rational social contract rather than divine right.',
-            provenance_evaluation:
-              'One of the most famous visual allegories in intellectual history; closely directed by Hobbes to encapsulate his political philosophy in a single image.',
-            context_limitations:
-              'Argues that any rebellion against the sovereign is irrational, dismissing parliamentary democracy and individual civil liberties as dangerous chaos.',
-            bullet_points: [
-              {
-                label: "The Sovereign as 'Mortall God'",
-                text: 'Holding the sword of temporal military power and the crosier of spiritual church authority, the sovereign wields total, undivided control.',
-              },
-              {
-                label: 'Social Contract Through Fear',
-                text: "Citizens willingly fuse into the Leviathan's body because the terror of civil war and violent death outweighs the burden of absolute obedience.",
-              },
-            ],
-            provenance_clues: [
-              'Author: Abraham Bosse (French artist and engraver) collaborating closely with philosopher Thomas Hobbes.',
-              'Audience: European political philosophers, exiled royalists in Paris, and post-Civil War English intellectuals.',
-              'Motive: To provide a philosophical defense of undivided absolute sovereignty as the only cure for the bloody horrors of civil war.',
-            ],
-          },
-          question_badge: 'POLITICAL PHILOSOPHY & ABSOLUTISM',
+            'How does the frontispiece of Leviathan reflect the traumatic impact of the English Civil War on seventeenth-century political thought?',
           model_answer:
-            'A colossal crowned ruler rises above the peaceful landscape, whose entire body is constructed from hundreds of individual citizens, symbolizing that individuals surrender their natural freedom to an absolute sovereign in exchange for protection from violent anarchy.',
-          provenance_clues: [
-            'Author: Abraham Bosse (French artist and engraver) collaborating closely with philosopher Thomas Hobbes.',
-            'Audience: European political philosophers, exiled royalists in Paris, and post-Civil War English intellectuals.',
-            'Motive: To provide a philosophical defense of undivided absolute sovereignty as the only cure for the bloody horrors of civil war.',
-          ],
-          source_context:
-            "Writing in exile during the English Civil War, Thomas Hobbes argued that without an absolute sovereign power to enforce law, human society collapsed into a 'state of nature' where life was 'solitary, poor, nasty, brutish, and short'. **Hinge Question:** Is an absolute sovereign necessary to prevent civil war, or does absolute power inevitably lead to tyranny?",
+            "Writing in the immediate aftermath of regicide and civil war, Hobbes argued that without an absolute sovereign authority, human life descends into a state of nature that is 'solitary, poor, nasty, brutish, and short'. The image shows citizens willingly merging into one Commonwealth to preserve peace and escape civil slaughter.",
+          context:
+            'Published in 1651 during the Cromwellian Commonwealth, Leviathan founded modern political philosophy by arguing that government authority rests on a social contract to prevent anarchy.',
+          hinge_question:
+            "Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
           teacher_notes: {
+            hinge_question:
+              "Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
             source_context:
-              "Writing in exile during the English Civil War, Thomas Hobbes argued that without an absolute sovereign power to enforce law, human society collapsed into a 'state of nature' where life was 'solitary, poor, nasty, brutish, and short'. **Hinge Question:** Is an absolute sovereign necessary to prevent civil war, or does absolute power inevitably lead to tyranny?",
+              "Published in 1651, Hobbes' Leviathan examined how sovereign authority prevents civil chaos. **Hinge Question:** Did the shock of Charles I's execution prove that England required an absolute ruler or constitutional checks?",
           },
         },
         {
-          id: 'mrp_l5_src_e',
+          id: 'monarchy_religion_power_l5_src_e',
           letter: 'E',
           type: 'visual',
-          src: '/images/monarchy_religion_power/trial_of_seven_bishops_1688.jpg',
-          image: '/images/monarchy_religion_power/trial_of_seven_bishops_1688.jpg',
+          src: '/images/william_mary_declaration_of_rights_1689.jpg',
+          image: '/images/william_mary_declaration_of_rights_1689.jpg',
           title:
-            "Source E (Church Resistance & Rule of Law): The Trial of the Seven Bishops in the Court of King's Bench (June 1688)",
+            'Source E (Parliamentary Conditionality): Presentation of the Declaration of Rights to William and Mary (13 February 1689)',
           caption:
-            'Historic composition depicting the sensational trial of Archbishop William Sancroft and six Anglican bishops at Westminster Hall, charged with seditious libel by King James II for refusing to read his royal Declaration of Indulgence.',
-          citation:
-            'UK Parliamentary Art Collection / British Museum (BM 1877,1013.916). Engraving, 1688.',
-          provenance:
-            "Published in London in 1688 to celebrate the jury's unanimous verdict acquitting the bishops.",
-          context:
-            "When King James II ordered his Declaration of Indulgence read in every pulpit, Archbishop Sancroft and six bishops petitioned that the King had no legal dispensing power to suspend parliamentary statutes. James imprisoned them in the Tower and put them on trial for sedition. The jury's verdict of 'Not Guilty' triggered joyous street celebrations and united Tories and Whigs against the King. **Hinge Question:** Why did the trial of seven Anglican bishops unite rival Whig and Tory politicians to overthrow King James II?",
+            'Contemporary engraving (British Museum) showing the Speaker of the House of Commons presenting the Declaration of Rights to William III and Mary II in the Banqueting House at Whitehall.',
+          author: 'Contemporary London Printmaker',
+          date: 'February 1689',
+          question_badge: 'SYNOPTIC RESOLUTION: PARLIAMENTARY SOVEREIGNTY',
           question:
-            'Why did the acquittal of the Seven Bishops in June 1688 make the downfall of King James II inevitable?',
-          hinge_question:
-            'Why did the trial of seven Anglican bishops unite rival Whig and Tory politicians to overthrow King James II?',
-          disciplinary_focus: 'CHURCH RESISTANCE & RULE OF LAW',
-          utility_enquiry: {
-            question:
-              'Why did the acquittal of the Seven Bishops in June 1688 make the downfall of King James II inevitable?',
-            model_answer:
-              "When an English jury found the Archbishop of Canterbury and six bishops innocent of seditious libel for refusing to read the King's Declaration of Indulgence, it proved that the Anglican Church, the courts, and the public completely rejected James II's royal dispensing power.",
-            content_inferences:
-              'Demonstrates how royal attacks on the established Anglican Church destroyed the traditional Tory doctrine of passive obedience, uniting the political nation in revolt.',
-            provenance_evaluation:
-              'Popular celebratory print from London; captures the dramatic courtroom drama where the English common law successfully checked royal absolutism.',
-            context_limitations:
-              'Depicts the bishops as champions of religious liberty, although they opposed James II primarily to defend the Anglican monopoly and suppress religious dissenters.',
-            bullet_points: [
-              {
-                label: 'Rejection of the Royal Dispensing Power',
-                text: "The verdict established that the King could not unilaterally suspend parliamentary laws, invalidating James II's main instrument of rule.",
-              },
-              {
-                label: 'Immediate Invitation to William of Orange',
-                text: "On the very night of the acquittal (30 June 1688), the 'Immortal Seven' politicians secretly dispatched the invitation to William of Orange to invade England.",
-              },
-            ],
-            provenance_clues: [
-              "Author: Contemporary British historical engraver / Court of King's Bench records.",
-              'Audience: English gentry, Anglican clergy, and parliamentary leaders.',
-              'Motive: To document the sensational trial where the judicial system stood against royal absolutism, triggering the invitation to William of Orange.',
-            ],
-          },
-          question_badge: 'CHURCH RESISTANCE & RULE OF LAW',
+            'How does the ceremony depicted in Source E symbolize the ultimate outcome of the 1517–1689 struggle for power in England?',
           model_answer:
-            "When an English jury found the Archbishop of Canterbury and six bishops innocent of seditious libel for refusing to read the King's Declaration of Indulgence, it proved that the Anglican Church, the courts, and the public completely rejected James II's royal dispensing power.",
-          provenance_clues: [
-            "Author: Contemporary British historical engraver / Court of King's Bench records.",
-            'Audience: English gentry, Anglican clergy, and parliamentary leaders.',
-            'Motive: To document the sensational trial where the judicial system stood against royal absolutism, triggering the invitation to William of Orange.',
-          ],
-          source_context:
-            "When King James II ordered his Declaration of Indulgence read in every pulpit, Archbishop Sancroft and six bishops petitioned that the King had no legal dispensing power to suspend parliamentary statutes. James imprisoned them in the Tower and put them on trial for sedition. The jury's verdict of 'Not Guilty' triggered joyous street celebrations and united Tories and Whigs against the King. **Hinge Question:** Why did the trial of seven Anglican bishops unite rival Whig and Tory politicians to overthrow King James II?",
+            "In the very Banqueting House where Charles I was stepped out to his execution in 1649, William and Mary were offered the English crown only on strict condition that they accept Parliament's Declaration of Rights. Monarchy was transformed from divine right to a contract revocable by Parliament.",
+          context:
+            'On 13 February 1689, the Convention Parliament formally offered the joint crown to William of Orange and Mary Stuart on condition of upholding parliamentary supremacy.',
+          hinge_question:
+            'By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
           teacher_notes: {
+            hinge_question:
+              'By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
             source_context:
-              "When King James II ordered his Declaration of Indulgence read in every pulpit, Archbishop Sancroft and six bishops petitioned that the King had no legal dispensing power to suspend parliamentary statutes. James imprisoned them in the Tower and put them on trial for sedition. The jury's verdict of 'Not Guilty' triggered joyous street celebrations and united Tories and Whigs against the King. **Hinge Question:** Why did the trial of seven Anglican bishops unite rival Whig and Tory politicians to overthrow King James II?",
+              'In February 1689, William and Mary accepted the Crown on condition of parliamentary rights. **Hinge Question:** By 1689, who held supreme power in Britain: the Crown, the Church, or Parliament?',
           },
         },
       ],
@@ -6189,7 +5390,8 @@ const monarchy_religion_power_data = {
   ],
   homepage_background: '/images/family_of_henry_viii_c1545.jpg',
 };
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = monarchy_religion_power_data;
-}
+
+if (typeof window !== 'undefined')
+  window.monarchy_religion_power_data = monarchy_religion_power_data;
+if (typeof module !== 'undefined') module.exports = monarchy_religion_power_data;
 export default monarchy_religion_power_data;

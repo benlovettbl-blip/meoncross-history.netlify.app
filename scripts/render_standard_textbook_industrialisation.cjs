@@ -38,12 +38,15 @@ if (!fs.existsSync(dataPath)) {
 
 // Safely parse units/industrialisation_and_empire/data.js
 let rawData = fs.readFileSync(dataPath, 'utf8');
-rawData =
-  rawData
-    .replace(/export\s+const\s+unitData\s*=/g, 'const unitData =')
-    .replace(/export\s+default\s+unitData;?/g, '')
-    .replace(/export\s*\{[^}]*\};?/g, '') + '; unitData;';
-const unitData = vm.runInNewContext(rawData);
+rawData = rawData
+  .replace(/export\s+const\s+\w+\s*=/g, 'const unitData =')
+  .replace(/export\s+default\s+[\w$]+;?/g, '')
+  .replace(/export\s*\{[^}]*\};?/g, '');
+const sandbox = { module: { exports: {} }, window: {} };
+vm.runInNewContext(rawData, sandbox);
+const unitData = sandbox.module.exports?.lessons
+  ? sandbox.module.exports
+  : sandbox.window?.UNIT_DATA || sandbox.industrialisation_and_empire_data || sandbox.unitData;
 
 const lessons = unitData.lessons || [];
 console.log(`Loaded ${lessons.length} Industrialisation lessons for publisher textbook.`);

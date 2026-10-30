@@ -5526,131 +5526,257 @@ export function renderLesson(lesson) {
 
     let renderedKeyIndividual = false;
     let visualPlateCounter = 0;
-    lesson.narrative_blocks.forEach((block, index) => {
-      if (block.type === 'interactive_hotspot_map') {
-        const mapId = block.id || 'hotspot-map-' + index;
-        const initialSpot = block.hotspots && block.hotspots[0] ? block.hotspots[0] : null;
 
-        htmlNarrative += `
-          <div class="interactive-hotspot-map-container" id="${mapId}-wrapper" style="margin: 32px 0; background: #0f172a; border: 1.5px solid #334155; border-radius: 12px; padding: 22px; color: #f8fafc; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 12px; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
-              <div>
-                <span style="background: rgba(14, 165, 233, 0.2); border: 1px solid #0ea5e9; color: #38bdf8; padding: 2.5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-                  <i class="fa-solid fa-map-location-dot" style="margin-right: 5px;"></i> Interactive Primary Map
-                </span>
-                <h3 style="margin: 6px 0 0 0; font-size: 1.35rem; font-family: 'Playfair Display', Georgia, serif; color: #ffffff;">${block.title}</h3>
-                ${block.subtitle ? `<div style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;">${block.subtitle}</div>` : ''}
-              </div>
-              ${block.shelfmark ? `<span style="font-family: monospace; font-size: 0.70rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1);">${block.shelfmark}</span>` : ''}
+    const renderInteractiveHotspotMapHTML = (mapBlock, mIndex) => {
+      const mapId = mapBlock.id || 'hotspot-map-' + mIndex;
+      const initialSpot = mapBlock.hotspots && mapBlock.hotspots[0] ? mapBlock.hotspots[0] : null;
+
+      let mapHtml = `
+        <div class="interactive-hotspot-map-container" id="${mapId}-wrapper" style="margin: 32px 0; background: #0f172a; border: 1.5px solid #334155; border-radius: 12px; padding: 22px; color: #f8fafc; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 12px; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+            <div>
+              <span style="background: rgba(14, 165, 233, 0.2); border: 1px solid #0ea5e9; color: #38bdf8; padding: 2.5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+                <i class="fa-solid fa-map-location-dot" style="margin-right: 5px;"></i> Interactive Primary Map
+              </span>
+              <h3 style="margin: 6px 0 0 0; font-size: 1.35rem; font-family: 'Playfair Display', Georgia, serif; color: #ffffff;">${mapBlock.title}</h3>
+              ${mapBlock.subtitle ? `<div style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;">${mapBlock.subtitle}</div>` : ''}
             </div>
+            ${mapBlock.shelfmark ? `<span style="font-family: monospace; font-size: 0.70rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1);">${mapBlock.shelfmark}</span>` : ''}
+          </div>
 
-            <!-- Map Viewport with Hotspots -->
-            <div class="hotspot-map-viewport" style="position: relative; width: 100%; min-height: 520px; background: #1e293b; border-radius: 8px; overflow: hidden; border: 1px solid #334155; margin-bottom: 16px; display: flex; justify-content: center; align-items: center; padding: 14px 10px;">
-              <div class="hotspot-map-stage" style="position: relative; display: inline-block; max-height: 520px; line-height: 0;">
-                <img src="${getAssetUrl(block.image)}" alt="${block.title}" style="max-height: 520px; max-width: 100%; width: auto; height: auto; display: block; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); filter: contrast(1.05) brightness(0.95); pointer-events: none; user-select: none;" />
-                
-                <!-- Hotspot Pins -->
-                ${(block.hotspots || [])
-                  .map((spot, sIdx) => {
-                    const isFirst = sIdx === 0;
-                    const isLeftAligned = (spot.x || 0) > 75 || spot.align === 'left';
-                    return `
-                  <div class="map-hotspot-pin ${isFirst ? 'active-pin' : ''} ${isLeftAligned ? 'pin-align-left' : ''}" id="${mapId}-pin-${spot.id}" data-spot-id="${spot.id}" style="left: ${spot.x}%; top: ${spot.y}%;" title="${spot.title}">
-                    <div class="pin-pulse" style="background: ${spot.color || '#b91c1c'};"></div>
-                    <div class="pin-marker" style="background: ${spot.color || '#b91c1c'};"></div>
-                    <div class="pin-label">
-                      ${spot.label || spot.title.split(':')[0]}
-                    </div>
-                  </div>
-                  `;
-                  })
-                  .join('')}
-              </div>
-            </div>
-
-            <!-- Hotspot Dispatch Banner -->
-            <div id="${mapId}-intel-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-left: 4px solid ${initialSpot ? initialSpot.color || '#38bdf8' : '#38bdf8'}; border-radius: 8px; padding: 16px 20px;">
-              ${
-                initialSpot
-                  ? `
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
-                  <div>
-                    <span style="background: ${initialSpot.color || '#0284c7'}; color: #ffffff; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">${initialSpot.badge || 'Archival Incident'}</span>
-                    <h4 style="margin: 4px 0 0 0; font-size: 1.15rem; color: #ffffff; font-family: 'Playfair Display', Georgia, serif;">${initialSpot.title}</h4>
-                  </div>
-                  <span style="font-size: 0.8rem; font-weight: 700; color: #f59e0b;">${initialSpot.date || ''}</span>
-                </div>
-                <p style="margin: 0 0 10px 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${initialSpot.details}</p>
-                ${initialSpot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${initialSpot.hinge.replace(/^(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\s*/i, 'Discussion Prompt: ')}</div>` : ''}
-              `
-                  : ''
-              }
-            </div>
-
-            <!-- Hotspot Buttons Row -->
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; justify-content: center;">
-              ${(block.hotspots || [])
+          <!-- Map Viewport with Hotspots -->
+          <div class="hotspot-map-viewport" style="position: relative; width: 100%; min-height: 520px; background: #1e293b; border-radius: 8px; overflow: hidden; border: 1px solid #334155; margin-bottom: 16px; display: flex; justify-content: center; align-items: center; padding: 14px 10px;">
+            <div class="hotspot-map-stage" style="position: relative; display: inline-block; max-height: 520px; line-height: 0;">
+              <img src="${getAssetUrl(mapBlock.image)}" alt="${mapBlock.title}" style="max-height: 520px; max-width: 100%; width: auto; height: auto; display: block; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); filter: contrast(1.05) brightness(0.95); pointer-events: none; user-select: none;" />
+              
+              <!-- Hotspot Pins -->
+              ${(mapBlock.hotspots || [])
                 .map((spot, sIdx) => {
                   const isFirst = sIdx === 0;
+                  const isLeftAligned = (spot.x || 0) > 75 || spot.align === 'left';
                   return `
-                <button type="button" class="btn btn-sm ${mapId}-nav-btn" data-spot-id="${spot.id}" style="background: ${isFirst ? spot.color || '#0284c7' : 'rgba(255,255,255,0.08)'}; color: #ffffff; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 0.74rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">
-                  <span style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: ${spot.color || '#0284c7'}; color: #fff; text-align: center; line-height: 16px; font-size: 0.62rem; margin-right: 5px;">${sIdx + 1}</span>
-                  ${spot.label || spot.title.split(':')[0]}
-                </button>
+                <div class="map-hotspot-pin ${isFirst ? 'active-pin' : ''} ${isLeftAligned ? 'pin-align-left' : ''}" id="${mapId}-pin-${spot.id}" data-spot-id="${spot.id}" style="left: ${spot.x}%; top: ${spot.y}%;" title="${spot.title}">
+                  <div class="pin-pulse" style="background: ${spot.color || '#b91c1c'};"></div>
+                  <div class="pin-marker" style="background: ${spot.color || '#b91c1c'};"></div>
+                  <div class="pin-label">
+                    ${spot.label || spot.title.split(':')[0]}
+                  </div>
+                </div>
                 `;
                 })
                 .join('')}
             </div>
           </div>
-        `;
 
-        window.postRenderHooks.push(() => {
-          if (!document.getElementById('crummack-interactive-styles')) {
-            initCrummackInteractiveFeatures();
-          }
-          const container = document.getElementById(`${mapId}-wrapper`);
-          if (!container) return;
-          const pins = container.querySelectorAll('.map-hotspot-pin');
-          const navBtns = container.querySelectorAll(`.${mapId}-nav-btn`);
-          const card = document.getElementById(`${mapId}-intel-card`);
-          const spotMap = {};
-          (block.hotspots || []).forEach((s) => {
-            spotMap[s.id] = s;
-          });
-
-          function selectSpot(spotId) {
-            const spot = spotMap[spotId];
-            if (!spot || !card) return;
-
-            pins.forEach((p) => p.classList.toggle('active-pin', p.dataset.spotId === spotId));
-            navBtns.forEach((b) => {
-              const active = b.dataset.spotId === spotId;
-              b.style.background = active ? spot.color || '#0284c7' : 'rgba(255,255,255,0.08)';
-              b.style.borderColor = active ? '#ffffff' : 'rgba(255,255,255,0.15)';
-            });
-
-            card.style.borderLeftColor = spot.color || '#38bdf8';
-            card.innerHTML = `
+          <!-- Hotspot Dispatch Banner -->
+          <div id="${mapId}-intel-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-left: 4px solid ${initialSpot ? initialSpot.color || '#38bdf8' : '#38bdf8'}; border-radius: 8px; padding: 16px 20px;">
+            ${
+              initialSpot
+                ? `
               <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
                 <div>
-                  <span style="background: ${spot.color || '#0284c7'}; color: #ffffff; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">${spot.badge || 'Archival Incident'}</span>
-                  <h4 style="margin: 4px 0 0 0; font-size: 1.15rem; color: #ffffff; font-family: 'Playfair Display', Georgia, serif;">${spot.title}</h4>
+                  <span style="background: ${initialSpot.color || '#0284c7'}; color: #ffffff; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">${initialSpot.badge || 'Archival Incident'}</span>
+                  <h4 style="margin: 4px 0 0 0; font-size: 1.15rem; color: #ffffff; font-family: 'Playfair Display', Georgia, serif;">${initialSpot.title}</h4>
                 </div>
-                <span style="font-size: 0.8rem; font-weight: 700; color: #f59e0b;">${spot.date || ''}</span>
+                <span style="font-size: 0.8rem; font-weight: 700; color: #f59e0b;">${initialSpot.date || ''}</span>
               </div>
-              <p style="margin: 0 0 10px 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${spot.details}</p>
-              ${spot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${spot.hinge.replace(/^(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\s*/i, 'Discussion Prompt: ')}</div>` : ''}
-            `;
-          }
+              <p style="margin: 0 0 10px 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${initialSpot.details}</p>
+              ${initialSpot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${initialSpot.hinge.replace(/^(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\s*/i, 'Discussion Prompt: ')}</div>` : ''}
+            `
+                : ''
+            }
+          </div>
 
-          pins.forEach((p) => {
-            p.addEventListener('click', () => selectSpot(p.dataset.spotId));
-          });
-          navBtns.forEach((b) => {
-            b.addEventListener('click', () => selectSpot(b.dataset.spotId));
-          });
+          <!-- Hotspot Buttons Row -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; justify-content: center;">
+            ${(mapBlock.hotspots || [])
+              .map((spot, sIdx) => {
+                const isFirst = sIdx === 0;
+                return `
+              <button type="button" class="btn btn-sm ${mapId}-nav-btn" data-spot-id="${spot.id}" style="background: ${isFirst ? spot.color || '#0284c7' : 'rgba(255,255,255,0.08)'}; color: #ffffff; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 0.74rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">
+                <span style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: ${spot.color || '#0284c7'}; color: #fff; text-align: center; line-height: 16px; font-size: 0.62rem; margin-right: 5px;">${sIdx + 1}</span>
+                ${spot.label || spot.title.split(':')[0]}
+              </button>
+              `;
+              })
+              .join('')}
+          </div>
+        </div>
+      `;
+
+      window.postRenderHooks.push(() => {
+        if (!document.getElementById('crummack-interactive-styles')) {
+          initCrummackInteractiveFeatures();
+        }
+        const container = document.getElementById(`${mapId}-wrapper`);
+        if (!container) return;
+        const pins = container.querySelectorAll('.map-hotspot-pin');
+        const navBtns = container.querySelectorAll(`.${mapId}-nav-btn`);
+        const card = document.getElementById(`${mapId}-intel-card`);
+        const spotMap = {};
+        (mapBlock.hotspots || []).forEach((s) => {
+          spotMap[s.id] = s;
         });
 
+        function selectSpot(spotId) {
+          const spot = spotMap[spotId];
+          if (!spot || !card) return;
+
+          pins.forEach((p) => p.classList.toggle('active-pin', p.dataset.spotId === spotId));
+          navBtns.forEach((b) => {
+            const active = b.dataset.spotId === spotId;
+            b.style.background = active ? spot.color || '#0284c7' : 'rgba(255,255,255,0.08)';
+            b.style.borderColor = active ? '#ffffff' : 'rgba(255,255,255,0.15)';
+          });
+
+          card.style.borderLeftColor = spot.color || '#38bdf8';
+          card.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+              <div>
+                <span style="background: ${spot.color || '#0284c7'}; color: #ffffff; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">${spot.badge || 'Archival Incident'}</span>
+                <h4 style="margin: 4px 0 0 0; font-size: 1.15rem; color: #ffffff; font-family: 'Playfair Display', Georgia, serif;">${spot.title}</h4>
+              </div>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #f59e0b;">${spot.date || ''}</span>
+            </div>
+            <p style="margin: 0 0 10px 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${spot.details}</p>
+            ${spot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${spot.hinge.replace(/^(?:Hinge Question|Discussion Prompt|Discussion Question|Question):\s*/i, 'Discussion Prompt: ')}</div>` : ''}
+          `;
+        }
+
+        pins.forEach((p) => {
+          p.addEventListener('click', () => selectSpot(p.dataset.spotId));
+        });
+        navBtns.forEach((b) => {
+          b.addEventListener('click', () => selectSpot(b.dataset.spotId));
+        });
+      });
+
+      return mapHtml;
+    };
+
+    const renderPhotoSliderHTML = (sliderBlock) => {
+      const sliderId = 'slider-' + Math.random().toString(36).substr(2, 9);
+      const hasSat = !!sliderBlock.satellite_image;
+      const isCollapsible = !!sliderBlock.collapsible;
+
+      let sliderHtml = `
+          <div class="photo-slider-container" id="${sliderId}-container" style="margin: ${isCollapsible ? '16px 0 8px 0' : '32px 0'}; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px;">
+              <span class="archival-meta-tag" style="background: #e0e7ff; color: #3730a3; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">${sliderBlock.tag || 'Cartographic Analysis'}</span>
+            </div>
+            <h3 style="margin: 6px 0 10px 0; color: #0f172a; font-family: 'Playfair Display', Georgia, serif; font-size: 1.45rem;">
+              <i class="fa-solid fa-map-location-dot" style="margin-right: 8px; color: #1e3a8a;"></i> ${sliderBlock.title || 'Then & Now: Map Slider'}
+            </h3>
+            ${sliderBlock.description ? `<p style="font-size: 0.92rem; color: #475569; margin: 0 auto 16px auto; max-width: 760px; line-height: 1.5;">${sliderBlock.description}</p>` : ''}
+            
+            ${
+              hasSat
+                ? `
+            <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 14px;">
+              <button type="button" class="btn btn-sm" id="${sliderId}-btn-street" onclick="
+                const container = document.getElementById('${sliderId}-container');
+                const baseImg = container.querySelector('.slider-base-img');
+                baseImg.src = '${getAssetUrl(sliderBlock.after_image)}';
+                container.querySelector('#${sliderId}-after-text').innerHTML = '${sliderBlock.after_label || 'Modern Street Map'} <i class=\\'fa-solid fa-arrow-right\\' style=\\'margin-left: 4px;\\'></i>';
+                this.style.background = '#1e3a8a'; this.style.color = '#fff';
+                document.getElementById('${sliderId}-btn-sat').style.background = '#f1f5f9';
+                document.getElementById('${sliderId}-btn-sat').style.color = '#475569';
+              " style="padding: 6px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; background: #1e3a8a; color: #ffffff; border: 1px solid #1e3a8a; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+                <i class="fa-solid fa-road"></i> Modern Street Map
+              </button>
+              <button type="button" class="btn btn-sm" id="${sliderId}-btn-sat" onclick="
+                const container = document.getElementById('${sliderId}-container');
+                const baseImg = container.querySelector('.slider-base-img');
+                baseImg.src = '${getAssetUrl(sliderBlock.satellite_image)}';
+                container.querySelector('#${sliderId}-after-text').innerHTML = '${sliderBlock.satellite_label || 'Modern Satellite Aerial'} <i class=\\'fa-solid fa-arrow-right\\' style=\\'margin-left: 4px;\\'></i>';
+                this.style.background = '#1e3a8a'; this.style.color = '#fff';
+                document.getElementById('${sliderId}-btn-street').style.background = '#f1f5f9';
+                document.getElementById('${sliderId}-btn-street').style.color = '#475569';
+              " style="padding: 6px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+                <i class="fa-solid fa-satellite"></i> Satellite Aerial Photo
+              </button>
+            </div>`
+                : ''
+            }
+
+            <!-- Viewport -->
+            <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: ${sliderBlock.aspect_ratio || '1 / 1'}; margin: 0 auto; overflow: hidden; border-radius: 10px; border: 2px solid #94a3b8; background: #0f172a; box-shadow: 0 4px 14px rgba(0,0,0,0.18); user-select: none;">
+              <!-- After (Base) Image -->
+              <img class="slider-base-img" src="${getAssetUrl(sliderBlock.after_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: ${sliderBlock.object_fit || 'cover'}; pointer-events: none;" alt="${sliderBlock.after_label || 'After'}">
+              
+              <!-- Before (Top) Image clipped -->
+              <img class="slider-before-img" src="${getAssetUrl(sliderBlock.before_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: ${sliderBlock.object_fit || 'cover'}; pointer-events: none; clip-path: inset(0 50% 0 0); -webkit-clip-path: inset(0 50% 0 0);" alt="${sliderBlock.before_label || 'Before'}">
+              
+              <!-- Center Divider Line -->
+              <div class="slider-divider" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #2563eb; box-shadow: 0 0 10px rgba(0,0,0,0.6); pointer-events: none; z-index: 2;"></div>
+
+              <!-- Slider Handle Visual -->
+              <div class="slider-handle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: #ffffff; border: 2.5px solid #2563eb; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 3px 12px rgba(0,0,0,0.45); pointer-events: none; z-index: 3;">
+                <i class="fa-solid fa-arrows-left-right" style="color: #2563eb; font-size: 15px;"></i>
+              </div>
+
+              <!-- Invisible Range Input covering entire viewport -->
+              <input type="range" min="0" max="100" value="50" class="photo-range-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 4; margin: 0; padding: 0;" oninput="
+                const p = this.parentElement;
+                const before = p.querySelector('.slider-before-img');
+                const div = p.querySelector('.slider-divider');
+                const h = p.querySelector('.slider-handle');
+                const v = this.value;
+                before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+                before.style.webkitClipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
+                div.style.left = v + '%';
+                h.style.left = v + '%';
+              ">
+            </div>
+
+            <!-- Labels Bar -->
+            <div style="display: flex; justify-content: space-between; max-width: 720px; margin: 12px auto 0 auto; color: #1e293b; font-size: 0.88rem; font-weight: 700;">
+              <span style="color: #1e3a8a;"><i class="fa-solid fa-arrow-left" style="margin-right: 4px;"></i> ${sliderBlock.before_label || 'Before'}</span>
+              <span id="${sliderId}-after-text" style="color: #0f172a;">${sliderBlock.after_label || 'After'} <i class="fa-solid fa-arrow-right" style="margin-left: 4px;"></i></span>
+            </div>
+
+            ${
+              sliderBlock.links && sliderBlock.links.length
+                ? `
+            <div style="margin-top: 16px; padding-top: 14px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+              ${sliderBlock.links
+                .map(
+                  (l) => `
+                <a href="${l.url}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; text-decoration: none; transition: all 0.15s ease;" onmouseover="this.style.background='#dbeafe';" onmouseout="this.style.background='#eff6ff';">
+                  <i class="${l.icon || 'fa-solid fa-arrow-up-right-from-square'}"></i> ${l.label}
+                </a>
+              `,
+                )
+                .join('')}
+            </div>`
+                : ''
+            }
+          </div>
+      `;
+
+      if (isCollapsible) {
+        return `
+          <details class="local-study-accordion" style="margin: 24px 0; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #16a34a; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
+            <summary style="padding: 14px 20px; font-weight: 700; color: #166534; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f0fdf4;">
+              <span style="display: flex; align-items: center; gap: 10px; font-size: 0.98rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                <i class="fa-solid fa-location-dot" style="color: #16a34a;"></i> ${sliderBlock.accordion_title || 'Local Fieldwork Study &bull; Interactive Cartography'}
+              </span>
+              <span style="font-size: 0.82rem; font-weight: 600; color: #15803d; display: inline-flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-map"></i> View Map &amp; Links <i class="fa-solid fa-chevron-down"></i>
+              </span>
+            </summary>
+            <div style="padding: 8px 16px 16px 16px;">
+              ${sliderHtml}
+            </div>
+          </details>
+        `;
+      }
+      return sliderHtml;
+    };
+
+    lesson.narrative_blocks.forEach((block, index) => {
+      if (block.type === 'interactive_hotspot_map') {
+        htmlNarrative += renderInteractiveHotspotMapHTML(block, index);
         return;
       }
 
@@ -5731,124 +5857,7 @@ export function renderLesson(lesson) {
       }
 
       if (block.type === 'photo_slider') {
-        const sliderId = 'slider-' + Math.random().toString(36).substr(2, 9);
-        const hasSat = !!block.satellite_image;
-        const isCollapsible = !!block.collapsible;
-
-        let sliderHtml = `
-            <div class="photo-slider-container" id="${sliderId}-container" style="margin: ${isCollapsible ? '16px 0 8px 0' : '32px 0'}; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
-              <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px;">
-                <span class="archival-meta-tag" style="background: #e0e7ff; color: #3730a3; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">${block.tag || 'Cartographic Analysis'}</span>
-              </div>
-              <h3 style="margin: 6px 0 10px 0; color: #0f172a; font-family: 'Playfair Display', Georgia, serif; font-size: 1.45rem;">
-                <i class="fa-solid fa-map-location-dot" style="margin-right: 8px; color: #1e3a8a;"></i> ${block.title || 'Then & Now: Map Slider'}
-              </h3>
-              ${block.description ? `<p style="font-size: 0.92rem; color: #475569; margin: 0 auto 16px auto; max-width: 760px; line-height: 1.5;">${block.description}</p>` : ''}
-              
-              ${
-                hasSat
-                  ? `
-              <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 14px;">
-                <button type="button" class="btn btn-sm" id="${sliderId}-btn-street" onclick="
-                  const container = document.getElementById('${sliderId}-container');
-                  const baseImg = container.querySelector('.slider-base-img');
-                  baseImg.src = '${getAssetUrl(block.after_image)}';
-                  container.querySelector('#${sliderId}-after-text').innerHTML = '${block.after_label || 'Modern Street Map'} <i class=\\'fa-solid fa-arrow-right\\' style=\\'margin-left: 4px;\\'></i>';
-                  this.style.background = '#1e3a8a'; this.style.color = '#fff';
-                  document.getElementById('${sliderId}-btn-sat').style.background = '#f1f5f9';
-                  document.getElementById('${sliderId}-btn-sat').style.color = '#475569';
-                " style="padding: 6px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; background: #1e3a8a; color: #ffffff; border: 1px solid #1e3a8a; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-                  <i class="fa-solid fa-road"></i> Modern Street Map
-                </button>
-                <button type="button" class="btn btn-sm" id="${sliderId}-btn-sat" onclick="
-                  const container = document.getElementById('${sliderId}-container');
-                  const baseImg = container.querySelector('.slider-base-img');
-                  baseImg.src = '${getAssetUrl(block.satellite_image)}';
-                  container.querySelector('#${sliderId}-after-text').innerHTML = '${block.satellite_label || 'Modern Satellite Aerial'} <i class=\\'fa-solid fa-arrow-right\\' style=\\'margin-left: 4px;\\'></i>';
-                  this.style.background = '#1e3a8a'; this.style.color = '#fff';
-                  document.getElementById('${sliderId}-btn-street').style.background = '#f1f5f9';
-                  document.getElementById('${sliderId}-btn-street').style.color = '#475569';
-                " style="padding: 6px 14px; font-size: 0.82rem; font-weight: 700; border-radius: 6px; background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
-                  <i class="fa-solid fa-satellite"></i> Satellite Aerial Photo
-                </button>
-              </div>`
-                  : ''
-              }
-
-              <!-- Viewport -->
-              <div style="position: relative; width: 100%; max-width: 720px; aspect-ratio: ${block.aspect_ratio || '1 / 1'}; margin: 0 auto; overflow: hidden; border-radius: 10px; border: 2px solid #94a3b8; background: #0f172a; box-shadow: 0 4px 14px rgba(0,0,0,0.18); user-select: none;">
-                <!-- After (Base) Image -->
-                <img class="slider-base-img" src="${getAssetUrl(block.after_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: ${block.object_fit || 'cover'}; pointer-events: none;" alt="${block.after_label || 'After'}">
-                
-                <!-- Before (Top) Image clipped -->
-                <img class="slider-before-img" src="${getAssetUrl(block.before_image)}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: ${block.object_fit || 'cover'}; pointer-events: none; clip-path: inset(0 50% 0 0); -webkit-clip-path: inset(0 50% 0 0);" alt="${block.before_label || 'Before'}">
-                
-                <!-- Center Divider Line -->
-                <div class="slider-divider" style="position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #2563eb; box-shadow: 0 0 10px rgba(0,0,0,0.6); pointer-events: none; z-index: 2;"></div>
-
-                <!-- Slider Handle Visual -->
-                <div class="slider-handle" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; background: #ffffff; border: 2.5px solid #2563eb; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 3px 12px rgba(0,0,0,0.45); pointer-events: none; z-index: 3;">
-                  <i class="fa-solid fa-arrows-left-right" style="color: #2563eb; font-size: 15px;"></i>
-                </div>
-
-                <!-- Invisible Range Input covering entire viewport -->
-                <input type="range" min="0" max="100" value="50" class="photo-range-slider" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 4; margin: 0; padding: 0;" oninput="
-                  const p = this.parentElement;
-                  const before = p.querySelector('.slider-before-img');
-                  const div = p.querySelector('.slider-divider');
-                  const h = p.querySelector('.slider-handle');
-                  const v = this.value;
-                  before.style.clipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
-                  before.style.webkitClipPath = 'inset(0 ' + (100 - v) + '% 0 0)';
-                  div.style.left = v + '%';
-                  h.style.left = v + '%';
-                ">
-              </div>
-
-              <!-- Labels Bar -->
-              <div style="display: flex; justify-content: space-between; max-width: 720px; margin: 12px auto 0 auto; color: #1e293b; font-size: 0.88rem; font-weight: 700;">
-                <span style="color: #1e3a8a;"><i class="fa-solid fa-arrow-left" style="margin-right: 4px;"></i> ${block.before_label || 'Before'}</span>
-                <span id="${sliderId}-after-text" style="color: #0f172a;">${block.after_label || 'After'} <i class="fa-solid fa-arrow-right" style="margin-left: 4px;"></i></span>
-              </div>
-
-              ${
-                block.links && block.links.length
-                  ? `
-              <div style="margin-top: 16px; padding-top: 14px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-                ${block.links
-                  .map(
-                    (l) => `
-                  <a href="${l.url}" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe; padding: 6px 12px; border-radius: 6px; text-decoration: none; transition: all 0.15s ease;" onmouseover="this.style.background='#dbeafe';" onmouseout="this.style.background='#eff6ff';">
-                    <i class="${l.icon || 'fa-solid fa-arrow-up-right-from-square'}"></i> ${l.label}
-                  </a>
-                `,
-                  )
-                  .join('')}
-              </div>`
-                  : ''
-              }
-            </div>
-        `;
-
-        if (isCollapsible) {
-          htmlNarrative += `
-            <details class="local-study-accordion" style="margin: 24px 0; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #16a34a; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
-              <summary style="padding: 14px 20px; font-weight: 700; color: #166534; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f0fdf4;">
-                <span style="display: flex; align-items: center; gap: 10px; font-size: 0.98rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                  <i class="fa-solid fa-location-dot" style="color: #16a34a;"></i> ${block.accordion_title || 'Local Fieldwork Study &bull; Interactive Cartography'}
-                </span>
-                <span style="font-size: 0.82rem; font-weight: 600; color: #15803d; display: inline-flex; align-items: center; gap: 6px;">
-                  <i class="fa-solid fa-map"></i> View Map &amp; Links <i class="fa-solid fa-chevron-down"></i>
-                </span>
-              </summary>
-              <div style="padding: 8px 16px 16px 16px;">
-                ${sliderHtml}
-              </div>
-            </details>
-          `;
-        } else {
-          htmlNarrative += sliderHtml;
-        }
+        htmlNarrative += renderPhotoSliderHTML(block);
         return;
       }
 
@@ -8117,6 +8126,13 @@ export function renderLesson(lesson) {
           `;
           renderedKeyIndividual = true;
         }
+      }
+
+      if (block.interactive_hotspot_map) {
+        htmlNarrative += renderInteractiveHotspotMapHTML(block.interactive_hotspot_map, index);
+      }
+      if (block.photo_slider) {
+        htmlNarrative += renderPhotoSliderHTML(block.photo_slider);
       }
     });
     htmlNarrative += '</div>';

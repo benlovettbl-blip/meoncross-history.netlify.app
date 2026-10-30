@@ -38,15 +38,15 @@ Every lesson across Key Stage 2, Key Stage 3, and GCSE must enforce:
 | `cold_war` | GCSE (Y10–11) | 7 | 35 | ✅ 100% (35/35) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. Gold Standard locked. |
 | `the_shoah` | KS3 (Y9) | 7 | 35 | ✅ 100% (35/35) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. Gold Standard locked. |
 | `great_war_part2` | KS3 (Y9) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. Gold Standard locked. |
-| `great_war` | KS3 (Y9) | 6 | 30 | ✅ 100% (30/30) | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Verify topic-to-block parity across 6 lessons. |
+| `great_war` | KS3 (Y9) | 6 | 30 | ✅ 100% (30/30) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. 1:1 nested, 0 duplicates, full sync. |
 | `water_and_sanitation` | KS3 (Y7) | 7 | 35 | ✅ 100% (35/35) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. All 7 lessons de-duplicated, 1:1 nested, and verified. |
-| `medieval_england` | KS3 (Y7) | 5 | 25 | ⚠️ 1 non-5x5 | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Standardize L5 blocks and audit source thematic match. |
-| `monarchy_religion_power` | KS3 (Y8) | 5 | 25 | ⚠️ 1 non-5x5 | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Standardize L5 blocks and audit source thematic match. |
-| `industrialisation_and_empire`| KS3 (Y8) | 5 | 25 | ⚠️ 2 non-5x5 | 🔴 **NEEDS ALIGNMENT** | ✅ 0 Duplicates | Standardize 5x5 structure; nest missing block sources. |
-| `first_british_empire` | KS3 (Y8) | 5 | 25 | ✅ 100% (25/25) | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Audit source thematic alignment across 5 lessons. |
-| `second_british_empire` | KS3 (Y8) | 5 | 25 | ✅ 100% (25/25) | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Audit source thematic alignment across 5 lessons. |
-| `australia` | KS3 (Y8) | 5 | 25 | ✅ 100% (25/25) | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Audit source thematic alignment across 5 lessons. |
-| `post_war_britain` | KS3 (Y9) | 5 | 25 | ✅ 100% (25/25) | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Audit source thematic alignment across 5 lessons. |
+| `medieval_england` | KS3 (Y7) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. 5x5 standardized, 1:1 nested, full sync. |
+| `monarchy_religion_power` | KS3 (Y8) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. 5x5 standardized, 1:1 nested, full sync. |
+| `industrialisation_and_empire`| KS3 (Y8) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. 5x5 standardized, widgets nested, full sync. |
+| `first_british_empire` | KS3 (Y8) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. Pristine chronological order, 1:1 nested, full sync. |
+| `second_british_empire` | KS3 (Y8) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. 1:1 nested, chronological order, full sync. |
+| `australia` | KS3 (Y8) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. Standardized IDs, 1:1 nested, full sync. |
+| `post_war_britain` | KS3 (Y9) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. 1:1 nested, chronological order, full sync. |
 | `ks2_ww2` | KS2 (Y5–6) | 11 | 55 | ⚠️ KS2 variable | 🟢 **ALIGNED** | ✅ 0 Duplicates | Verified clean in prior turn. |
 
 ---

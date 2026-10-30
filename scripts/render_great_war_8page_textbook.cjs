@@ -72,12 +72,15 @@ function cleanProse(text) {
 function loadUnitData() {
   const dataPath = path.join(ROOT_DIR, 'units', 'great_war', 'data.js');
   let raw = fs.readFileSync(dataPath, 'utf8');
-  raw =
-    raw
-      .replace(/export\s+const\s+unitData\s*=/g, 'const unitData =')
-      .replace(/export\s+default\s+unitData;?/g, '')
-      .replace(/export\s*\{[^}]*\};?/g, '') + '; unitData;';
-  return vm.runInNewContext(raw);
+  raw = raw
+    .replace(/export\s+const\s+\w+\s*=/g, 'const unitData =')
+    .replace(/export\s+default\s+[\w$]+;?/g, '')
+    .replace(/export\s*\{[^}]*\};?/g, '');
+  const sandbox = { module: { exports: {} }, window: {} };
+  vm.runInNewContext(raw, sandbox);
+  return sandbox.module.exports?.lessons
+    ? sandbox.module.exports
+    : sandbox.window?.UNIT_DATA || sandbox.great_war_data || sandbox.unitData;
 }
 
 // Canonical unit narrative synopsis

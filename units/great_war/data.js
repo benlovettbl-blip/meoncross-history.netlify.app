@@ -310,6 +310,13 @@ const great_war_data = {
               'Strategic encirclement fears: Placed a potential military superpower between France and Russia.',
               'Disruption of Vienna Settlement: Overturned the 1815 balance of power that had kept major European wars contained for over fifty years.',
             ],
+            source_context:
+              'The unification of Germany in 1871 shattered the traditional balance of power established at the Congress of Vienna in 1815. In place of a fragmented buffer zone of weak German principalities, a single industrial and military titan emerged at the heart of Europe. **Hinge Question:** Why did the sudden creation of a unified, industrialized Germany in Central Europe inherently threaten the strategic security of both France and Russia?',
+            teacher_notes: {
+              source_context:
+                'The unification of Germany in 1871 shattered the traditional balance of power established at the Congress of Vienna in 1815. In place of a fragmented buffer zone of weak German principalities, a single industrial and military titan emerged at the heart of Europe. **Hinge Question:** Why did the sudden creation of a unified, industrialized Germany in Central Europe inherently threaten the strategic security of both France and Russia?',
+            },
+            id: 'gw_l1_src_a',
           },
           sources: [
             {
@@ -338,6 +345,13 @@ const great_war_data = {
                 'Strategic encirclement fears: Placed a potential military superpower between France and Russia.',
                 'Disruption of Vienna Settlement: Overturned the 1815 balance of power that had kept major European wars contained for over fifty years.',
               ],
+              source_context:
+                'The unification of Germany in 1871 shattered the traditional balance of power established at the Congress of Vienna in 1815. In place of a fragmented buffer zone of weak German principalities, a single industrial and military titan emerged at the heart of Europe. **Hinge Question:** Why did the sudden creation of a unified, industrialized Germany in Central Europe inherently threaten the strategic security of both France and Russia?',
+              teacher_notes: {
+                source_context:
+                  'The unification of Germany in 1871 shattered the traditional balance of power established at the Congress of Vienna in 1815. In place of a fragmented buffer zone of weak German principalities, a single industrial and military titan emerged at the heart of Europe. **Hinge Question:** Why did the sudden creation of a unified, industrialized Germany in Central Europe inherently threaten the strategic security of both France and Russia?',
+              },
+              id: 'gw_l1_src_a',
             },
           ],
         },
@@ -349,7 +363,7 @@ const great_war_data = {
             letter: 'B',
             type: 'visual',
             title:
-              'Source B (Primary Oil Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (18 January 1871)',
+              'Source B (Historical Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (1871)',
             image: '/units/great_war/assets/werner_versailles_1871_highres.jpg',
             src: '/units/great_war/assets/werner_versailles_1871_highres.jpg',
             is_artwork: true,
@@ -373,13 +387,20 @@ const great_war_data = {
               'Psychological scarring: Cemented deep French resentment that persisted until 1914.',
               'Centrality of Bismarck: Visually placing Bismarck in brilliant white at the centre of the composition to highlight his political mastery.',
             ],
+            source_context:
+              'Following the catastrophic French defeat at Sedan, Bismarck orchestrated the coronation of Kaiser Wilhelm I inside the Hall of Mirrors at Versailles—the historic palace of French royalty and power. This deliberate humiliation of France on its own soil ignited an enduring desire for national revenge (revanche). **Hinge Question:** How did staging the German coronation inside the French Palace of Versailles transform a military defeat into an irreconcilable national feud?',
+            teacher_notes: {
+              source_context:
+                'Following the catastrophic French defeat at Sedan, Bismarck orchestrated the coronation of Kaiser Wilhelm I inside the Hall of Mirrors at Versailles—the historic palace of French royalty and power. This deliberate humiliation of France on its own soil ignited an enduring desire for national revenge (revanche). **Hinge Question:** How did staging the German coronation inside the French Palace of Versailles transform a military defeat into an irreconcilable national feud?',
+            },
+            id: 'gw_l1_src_b',
           },
           sources: [
             {
               letter: 'B',
               type: 'visual',
               title:
-                'Source B (Primary Oil Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (18 January 1871)',
+                'Source B (Historical Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (1871)',
               image: '/units/great_war/assets/werner_versailles_1871_highres.jpg',
               src: '/units/great_war/assets/werner_versailles_1871_highres.jpg',
               is_artwork: true,
@@ -403,6 +424,13 @@ const great_war_data = {
                 'Psychological scarring: Cemented deep French resentment that persisted until 1914.',
                 'Centrality of Bismarck: Visually placing Bismarck in brilliant white at the centre of the composition to highlight his political mastery.',
               ],
+              source_context:
+                'Following the catastrophic French defeat at Sedan, Bismarck orchestrated the coronation of Kaiser Wilhelm I inside the Hall of Mirrors at Versailles—the historic palace of French royalty and power. This deliberate humiliation of France on its own soil ignited an enduring desire for national revenge (revanche). **Hinge Question:** How did staging the German coronation inside the French Palace of Versailles transform a military defeat into an irreconcilable national feud?',
+              teacher_notes: {
+                source_context:
+                  'Following the catastrophic French defeat at Sedan, Bismarck orchestrated the coronation of Kaiser Wilhelm I inside the Hall of Mirrors at Versailles—the historic palace of French royalty and power. This deliberate humiliation of France on its own soil ignited an enduring desire for national revenge (revanche). **Hinge Question:** How did staging the German coronation inside the French Palace of Versailles transform a military defeat into an irreconcilable national feud?',
+              },
+              id: 'gw_l1_src_b',
             },
           ],
         },
@@ -435,6 +463,15 @@ const great_war_data = {
               'National outrage: Denying the inhabitants of Alsace-Lorraine a vote generated a permanent grievance.',
               'Geopolitical trap: The annexation locked Germany into an adversarial relationship with France for over four decades.',
             ],
+            source_context:
+              'Under the Treaty of Frankfurt, Germany annexed the mineral-rich provinces of Alsace and eastern Lorraine without a plebiscite and forced France to pay a staggering 5 billion gold franc indemnity. This treaty created a permanent grievance in French political life. **Hinge Question:** Why did the seizure of Alsace-Lorraine guarantee that Franco-German relations could never be genuinely normalized under Bismarck?',
+            teacher_notes: {
+              source_context:
+                'Under the Treaty of Frankfurt, Germany annexed the mineral-rich provinces of Alsace and eastern Lorraine without a plebiscite and forced France to pay a staggering 5 billion gold franc indemnity. This treaty created a permanent grievance in French political life. **Hinge Question:** Why did the seizure of Alsace-Lorraine guarantee that Franco-German relations could never be genuinely normalized under Bismarck?',
+            },
+            id: 'gw_l1_src_c',
+            src: '',
+            image: '',
           },
           sources: [
             {
@@ -463,6 +500,15 @@ const great_war_data = {
                 'National outrage: Denying the inhabitants of Alsace-Lorraine a vote generated a permanent grievance.',
                 'Geopolitical trap: The annexation locked Germany into an adversarial relationship with France for over four decades.',
               ],
+              source_context:
+                'Under the Treaty of Frankfurt, Germany annexed the mineral-rich provinces of Alsace and eastern Lorraine without a plebiscite and forced France to pay a staggering 5 billion gold franc indemnity. This treaty created a permanent grievance in French political life. **Hinge Question:** Why did the seizure of Alsace-Lorraine guarantee that Franco-German relations could never be genuinely normalized under Bismarck?',
+              teacher_notes: {
+                source_context:
+                  'Under the Treaty of Frankfurt, Germany annexed the mineral-rich provinces of Alsace and eastern Lorraine without a plebiscite and forced France to pay a staggering 5 billion gold franc indemnity. This treaty created a permanent grievance in French political life. **Hinge Question:** Why did the seizure of Alsace-Lorraine guarantee that Franco-German relations could never be genuinely normalized under Bismarck?',
+              },
+              id: 'gw_l1_src_c',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -502,6 +548,13 @@ const great_war_data = {
               'Militarisation of education: The students wear cadet-style battalion uniforms and hold military focus.',
               'Cultural permanence: Illustrates why peaceful reconciliation was politically impossible for any French leader.',
             ],
+            source_context:
+              "Following 1871, the French Third Republic mobilized the state education system to keep the memory of the 'lost provinces' alive. Schoolboys were instructed in military drill, gymnastics, and patriotic history under the doctrine of revanche (revenge). **Hinge Question:** How did state-sponsored schoolroom indoctrination like that shown in Bettannier's painting ensure the hatred of Germany was passed down across generations?",
+            teacher_notes: {
+              source_context:
+                "Following 1871, the French Third Republic mobilized the state education system to keep the memory of the 'lost provinces' alive. Schoolboys were instructed in military drill, gymnastics, and patriotic history under the doctrine of revanche (revenge). **Hinge Question:** How did state-sponsored schoolroom indoctrination like that shown in Bettannier's painting ensure the hatred of Germany was passed down across generations?",
+            },
+            id: 'gw_l1_src_d',
           },
           sources: [
             {
@@ -531,6 +584,13 @@ const great_war_data = {
                 'Militarisation of education: The students wear cadet-style battalion uniforms and hold military focus.',
                 'Cultural permanence: Illustrates why peaceful reconciliation was politically impossible for any French leader.',
               ],
+              source_context:
+                "Following 1871, the French Third Republic mobilized the state education system to keep the memory of the 'lost provinces' alive. Schoolboys were instructed in military drill, gymnastics, and patriotic history under the doctrine of revanche (revenge). **Hinge Question:** How did state-sponsored schoolroom indoctrination like that shown in Bettannier's painting ensure the hatred of Germany was passed down across generations?",
+              teacher_notes: {
+                source_context:
+                  "Following 1871, the French Third Republic mobilized the state education system to keep the memory of the 'lost provinces' alive. Schoolboys were instructed in military drill, gymnastics, and patriotic history under the doctrine of revanche (revenge). **Hinge Question:** How did state-sponsored schoolroom indoctrination like that shown in Bettannier's painting ensure the hatred of Germany was passed down across generations?",
+              },
+              id: 'gw_l1_src_d',
             },
           ],
         },
@@ -542,7 +602,7 @@ const great_war_data = {
             letter: 'E',
             type: 'written',
             title:
-              'Source E (Secret Treaty): The Reinsurance Treaty Between Germany and Russia, Articles I & II (18 June 1887)',
+              'Source E (Secret Treaty): The Reinsurance Treaty Between Germany and Russia (18 June 1887)',
             text: 'Article I: In case one of the High Contracting Parties should find itself at war with a third Great Power, the other would maintain a benevolent neutrality toward it, and would devote its efforts to the localization of the conflict. This provision would not apply to a war against Austria or France in case this war should result from an attack directed against one of these two latter Powers by one of the High Contracting Parties.<br><br>Article II: Germany recognizes the legitimacy of the decisive influence which Russia exercises in Bulgaria... Both courts pledge to take diplomatic steps to prevent any alteration of the territorial status quo on the Balkan Peninsula.',
             caption:
               'Confidential treaty negotiated secretly by Bismarck in Berlin, binding Germany and the Russian Empire in mutual benevolent neutrality.',
@@ -564,13 +624,22 @@ const great_war_data = {
               "Prevention of two-front trap: Bismarck's overriding strategic terror was a hostile coalition east and west.",
               "Consequences of abandonment: Dropping the treaty in 1890 immediately drove Tsarist Russia into France's arms.",
             ],
+            source_context:
+              "Bismarck recognized that if France ever allied with Tsarist Russia, Germany would face the existential nightmare of a two-front war. To prevent this, he negotiated the ultra-secret Reinsurance Treaty of 1887, guaranteeing Russian neutrality. When Kaiser Wilhelm II dismissed Bismarck in 1890, he disastrously refused to renew this treaty. **Hinge Question:** Why did Kaiser Wilhelm II's abandonment of the Reinsurance Treaty in 1890 create the exact strategic catastrophe that Bismarck had spent twenty years preventing?",
+            teacher_notes: {
+              source_context:
+                "Bismarck recognized that if France ever allied with Tsarist Russia, Germany would face the existential nightmare of a two-front war. To prevent this, he negotiated the ultra-secret Reinsurance Treaty of 1887, guaranteeing Russian neutrality. When Kaiser Wilhelm II dismissed Bismarck in 1890, he disastrously refused to renew this treaty. **Hinge Question:** Why did Kaiser Wilhelm II's abandonment of the Reinsurance Treaty in 1890 create the exact strategic catastrophe that Bismarck had spent twenty years preventing?",
+            },
+            id: 'gw_l1_src_e',
+            src: '',
+            image: '',
           },
           sources: [
             {
               letter: 'E',
               type: 'written',
               title:
-                'Source E (Secret Treaty): The Reinsurance Treaty Between Germany and Russia, Articles I & II (18 June 1887)',
+                'Source E (Secret Treaty): The Reinsurance Treaty Between Germany and Russia (18 June 1887)',
               text: 'Article I: In case one of the High Contracting Parties should find itself at war with a third Great Power, the other would maintain a benevolent neutrality toward it, and would devote its efforts to the localization of the conflict. This provision would not apply to a war against Austria or France in case this war should result from an attack directed against one of these two latter Powers by one of the High Contracting Parties.<br><br>Article II: Germany recognizes the legitimacy of the decisive influence which Russia exercises in Bulgaria... Both courts pledge to take diplomatic steps to prevent any alteration of the territorial status quo on the Balkan Peninsula.',
               caption:
                 'Confidential treaty negotiated secretly by Bismarck in Berlin, binding Germany and the Russian Empire in mutual benevolent neutrality.',
@@ -592,6 +661,15 @@ const great_war_data = {
                 "Prevention of two-front trap: Bismarck's overriding strategic terror was a hostile coalition east and west.",
                 "Consequences of abandonment: Dropping the treaty in 1890 immediately drove Tsarist Russia into France's arms.",
               ],
+              source_context:
+                "Bismarck recognized that if France ever allied with Tsarist Russia, Germany would face the existential nightmare of a two-front war. To prevent this, he negotiated the ultra-secret Reinsurance Treaty of 1887, guaranteeing Russian neutrality. When Kaiser Wilhelm II dismissed Bismarck in 1890, he disastrously refused to renew this treaty. **Hinge Question:** Why did Kaiser Wilhelm II's abandonment of the Reinsurance Treaty in 1890 create the exact strategic catastrophe that Bismarck had spent twenty years preventing?",
+              teacher_notes: {
+                source_context:
+                  "Bismarck recognized that if France ever allied with Tsarist Russia, Germany would face the existential nightmare of a two-front war. To prevent this, he negotiated the ultra-secret Reinsurance Treaty of 1887, guaranteeing Russian neutrality. When Kaiser Wilhelm II dismissed Bismarck in 1890, he disastrously refused to renew this treaty. **Hinge Question:** Why did Kaiser Wilhelm II's abandonment of the Reinsurance Treaty in 1890 create the exact strategic catastrophe that Bismarck had spent twenty years preventing?",
+              },
+              id: 'gw_l1_src_e',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -926,12 +1004,13 @@ const great_war_data = {
             source_context:
               'The unification of Germany in 1871 shattered the traditional balance of power established at the Congress of Vienna in 1815. In place of a fragmented buffer zone of weak German principalities, a single industrial and military titan emerged at the heart of Europe. **Hinge Question:** Why did the sudden creation of a unified, industrialized Germany in Central Europe inherently threaten the strategic security of both France and Russia?',
           },
+          id: 'gw_l1_src_a',
         },
         {
           letter: 'B',
           type: 'visual',
           title:
-            'Source B (Primary Oil Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (18 January 1871)',
+            'Source B (Historical Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (1871)',
           image: '/units/great_war/assets/werner_versailles_1871_highres.jpg',
           src: '/units/great_war/assets/werner_versailles_1871_highres.jpg',
           is_artwork: true,
@@ -961,6 +1040,7 @@ const great_war_data = {
             source_context:
               'Following the catastrophic French defeat at Sedan, Bismarck orchestrated the coronation of Kaiser Wilhelm I inside the Hall of Mirrors at Versailles—the historic palace of French royalty and power. This deliberate humiliation of France on its own soil ignited an enduring desire for national revenge (revanche). **Hinge Question:** How did staging the German coronation inside the French Palace of Versailles transform a military defeat into an irreconcilable national feud?',
           },
+          id: 'gw_l1_src_b',
         },
         {
           letter: 'C',
@@ -992,6 +1072,9 @@ const great_war_data = {
             source_context:
               'Under the Treaty of Frankfurt, Germany annexed the mineral-rich provinces of Alsace and eastern Lorraine without a plebiscite and forced France to pay a staggering 5 billion gold franc indemnity. This treaty created a permanent grievance in French political life. **Hinge Question:** Why did the seizure of Alsace-Lorraine guarantee that Franco-German relations could never be genuinely normalized under Bismarck?',
           },
+          id: 'gw_l1_src_c',
+          src: '',
+          image: '',
         },
         {
           letter: 'D',
@@ -1026,12 +1109,13 @@ const great_war_data = {
             source_context:
               "Following 1871, the French Third Republic mobilized the state education system to keep the memory of the 'lost provinces' alive. Schoolboys were instructed in military drill, gymnastics, and patriotic history under the doctrine of revanche (revenge). **Hinge Question:** How did state-sponsored schoolroom indoctrination like that shown in Bettannier's painting ensure the hatred of Germany was passed down across generations?",
           },
+          id: 'gw_l1_src_d',
         },
         {
           letter: 'E',
           type: 'written',
           title:
-            'Source E (Secret Treaty): The Reinsurance Treaty Between Germany and Russia, Articles I & II (18 June 1887)',
+            'Source E (Secret Treaty): The Reinsurance Treaty Between Germany and Russia (18 June 1887)',
           text: 'Article I: In case one of the High Contracting Parties should find itself at war with a third Great Power, the other would maintain a benevolent neutrality toward it, and would devote its efforts to the localization of the conflict. This provision would not apply to a war against Austria or France in case this war should result from an attack directed against one of these two latter Powers by one of the High Contracting Parties.<br><br>Article II: Germany recognizes the legitimacy of the decisive influence which Russia exercises in Bulgaria... Both courts pledge to take diplomatic steps to prevent any alteration of the territorial status quo on the Balkan Peninsula.',
           caption:
             'Confidential treaty negotiated secretly by Bismarck in Berlin, binding Germany and the Russian Empire in mutual benevolent neutrality.',
@@ -1059,6 +1143,9 @@ const great_war_data = {
             source_context:
               "Bismarck recognized that if France ever allied with Tsarist Russia, Germany would face the existential nightmare of a two-front war. To prevent this, he negotiated the ultra-secret Reinsurance Treaty of 1887, guaranteeing Russian neutrality. When Kaiser Wilhelm II dismissed Bismarck in 1890, he disastrously refused to renew this treaty. **Hinge Question:** Why did Kaiser Wilhelm II's abandonment of the Reinsurance Treaty in 1890 create the exact strategic catastrophe that Bismarck had spent twenty years preventing?",
           },
+          id: 'gw_l1_src_e',
+          src: '',
+          image: '',
         },
       ],
     },
@@ -1316,258 +1403,9 @@ const great_war_data = {
             'Geopolitical partition of Africa following the 1884–1885 Berlin Conference, showing vast British and French colonial empires alongside late-arriving German territories.',
           source: {
             letter: 'A',
-            type: 'written',
-            title:
-              "Source A (Parliamentary Speech): Bernhard von Bülow, Speech to the Reichstag on Germany's 'Place in the Sun' (6 December 1897)",
-            text: 'The days when Germans abandoned the land to one neighbor and the sea to another, reserving for themselves only the heavens where pure doctrine reigns—those days are over! We do not want to put anyone into the shade, but we too demand our place in the sun (*einen Platz an der Sonne*). In East Asia and Africa, we cannot and will not allow any foreign power to push us aside or monopolize economic trade.',
-            caption:
-              "Speech delivered by German Foreign Secretary (later Chancellor) Bernhard von Bülow to the Reichstag in Berlin, inaugurating Germany's aggressive global foreign policy (*Weltpolitik*).",
-            citation:
-              'Stenographische Berichte über die Verhandlungen des Deutschen Reichstages, 1897, Vol. 1, p. 60.',
-            context:
-              "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
-            hinge_question:
-              "How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
-            question_badge: 'Author’s Purpose',
-            question:
-              'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
-            enquiry_question:
-              'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
-            model_answer:
-              "Bülow delivered the speech to rally parliamentary and public support for expanding Germany's colonial empire and navy, declaring that Germany would aggressively challenge existing British and French dominance to secure global prestige.",
-            discussion_ideas: [
-              'Break with Bismarckian caution: Marked the end of seeing Germany as a satisfied European power.',
-              'Imperial envy: Evident frustration that Britain and France had claimed the most lucrative territories.',
-              'Domestic mobilisation: Used patriotic colonial rhetoric to unite disparate German political parties.',
-            ],
-          },
-          sources: [
-            {
-              letter: 'A',
-              type: 'written',
-              title:
-                "Source A (Parliamentary Speech): Bernhard von Bülow, Speech to the Reichstag on Germany's 'Place in the Sun' (6 December 1897)",
-              text: 'The days when Germans abandoned the land to one neighbor and the sea to another, reserving for themselves only the heavens where pure doctrine reigns—those days are over! We do not want to put anyone into the shade, but we too demand our place in the sun (*einen Platz an der Sonne*). In East Asia and Africa, we cannot and will not allow any foreign power to push us aside or monopolize economic trade.',
-              caption:
-                "Speech delivered by German Foreign Secretary (later Chancellor) Bernhard von Bülow to the Reichstag in Berlin, inaugurating Germany's aggressive global foreign policy (*Weltpolitik*).",
-              citation:
-                'Stenographische Berichte über die Verhandlungen des Deutschen Reichstages, 1897, Vol. 1, p. 60.',
-              context:
-                "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
-              hinge_question:
-                "How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
-              question_badge: 'Author’s Purpose',
-              question:
-                'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
-              enquiry_question:
-                'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
-              model_answer:
-                "Bülow delivered the speech to rally parliamentary and public support for expanding Germany's colonial empire and navy, declaring that Germany would aggressively challenge existing British and French dominance to secure global prestige.",
-              discussion_ideas: [
-                'Break with Bismarckian caution: Marked the end of seeing Germany as a satisfied European power.',
-                'Imperial envy: Evident frustration that Britain and France had claimed the most lucrative territories.',
-                'Domestic mobilisation: Used patriotic colonial rhetoric to unite disparate German political parties.',
-              ],
-            },
-          ],
-        },
-        {
-          act: 2,
-          title: 'Kaiser Wilhelm II,"Weltpolitik" & "A Place in the Sun" (1890–1897)',
-          text: '<span class="para-ref">[2.2]</span> Bismarck insisted Germany was a satisfied European power with no need for distant colonies. Pointing to a map, he declared: <em>"Here lies Russia, and here lies France, and we are in the middle; that is my map of Africa."</em> But in 1888, the young, ambitious <strong>Kaiser Wilhelm II</strong> took the German throne. Wilhelm wanted personal glory and dismissed Bismarck in 1890, an event dubbed "Dropping the Pilot."<br><br><span class="para-ref">[2.3]</span> The Kaiser demanded that Germany become a global superpower. In 1897, Bernhard von Bülow announced that Germany demanded its <strong>"place in the sun" (Platz an der Sonne)</strong>. This aggressive imperial policy was called <strong>Weltpolitik</strong> ("World Policy"). Because Britain and France already owned the richest territories, Wilhelm decided to build a mighty battlefleet, putting Germany on a direct collision course with Britain.',
-          source: {
-            letter: 'B',
-            type: 'written',
-            title:
-              'Source B (Imperial Diplomatic Dispatch): Kaiser Wilhelm II, Telegram from Tangier to Chancellor Bülow (31 March 1905)',
-            text: "Today I visited the Sultan's representative in Tangier and announced in person that I regard the Sultan of Morocco as an absolutely free and independent sovereign, subject to no foreign control. I declared that Germany insists upon equal commercial rights for all nations, and will never suffer any other power [France] to establish an exclusive protectorate here without international consent.",
-            caption:
-              "Kaiser Wilhelm II's official dispatch describing his provocative visit to Tangier, Morocco, designed to test and break the newly signed 1904 Anglo-French Entente Cordiale.",
-            citation:
-              'Die Große Politik der Europäischen Kabinette 1871–1914, Vol. 20, Part 2, Document 6589.',
-            context:
-              "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
-            hinge_question:
-              "Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
-            question_badge: 'Source Inference',
-            question:
-              "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
-            enquiry_question:
-              "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
-            model_answer:
-              'The dispatch reveals that the Kaiser used the pretence of Moroccan independence to directly challenge French colonial expansion, aiming to humiliate France and test whether Britain would honour its diplomatic support.',
-            discussion_ideas: [
-              'Testing the Entente: Germany believed Britain would not risk a war over French colonial ambitions in North Africa.',
-              "Public posturing: Wilhelm II's theatrical arrival on a white horse created intense international drama.",
-              'Diplomatic misfire: Rather than isolating France, only Austria-Hungary supported Germany at the resulting Algeciras Conference.',
-            ],
-          },
-          sources: [
-            {
-              letter: 'B',
-              type: 'written',
-              title:
-                'Source B (Imperial Diplomatic Dispatch): Kaiser Wilhelm II, Telegram from Tangier to Chancellor Bülow (31 March 1905)',
-              text: "Today I visited the Sultan's representative in Tangier and announced in person that I regard the Sultan of Morocco as an absolutely free and independent sovereign, subject to no foreign control. I declared that Germany insists upon equal commercial rights for all nations, and will never suffer any other power [France] to establish an exclusive protectorate here without international consent.",
-              caption:
-                "Kaiser Wilhelm II's official dispatch describing his provocative visit to Tangier, Morocco, designed to test and break the newly signed 1904 Anglo-French Entente Cordiale.",
-              citation:
-                'Die Große Politik der Europäischen Kabinette 1871–1914, Vol. 20, Part 2, Document 6589.',
-              context:
-                "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
-              hinge_question:
-                "Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
-              question_badge: 'Source Inference',
-              question:
-                "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
-              enquiry_question:
-                "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
-              model_answer:
-                'The dispatch reveals that the Kaiser used the pretence of Moroccan independence to directly challenge French colonial expansion, aiming to humiliate France and test whether Britain would honour its diplomatic support.',
-              discussion_ideas: [
-                'Testing the Entente: Germany believed Britain would not risk a war over French colonial ambitions in North Africa.',
-                "Public posturing: Wilhelm II's theatrical arrival on a white horse created intense international drama.",
-                'Diplomatic misfire: Rather than isolating France, only Austria-Hungary supported Germany at the resulting Algeciras Conference.',
-              ],
-            },
-          ],
-        },
-        {
-          act: 3,
-          title: 'The First Moroccan Crisis & The Landing at Tangier (March 1905)',
-          text: '<span class="para-ref">[2.3]</span> In April 1904, alarmed by rising German power, Britain and France signed the <strong>Entente Cordiale</strong> ("Friendly Understanding"). This was a colonial pact rather than a military alliance. France accepted British control of Egypt, while Britain accepted French influence over the Sultanate of <strong>Morocco</strong>. German leaders feared this new friendship would surround them.<br><br><span class="para-ref">[2.4]</span> On 31 March 1905, Kaiser Wilhelm II triggered the <strong>First Moroccan Crisis</strong>. Arriving in the Moroccan port of <strong>Tangier</strong> on a white horse, Wilhelm announced his support for the Sultan\'s independence. He challenged French control and demanded equal German trading rights. The Kaiser gambled that France would back down and that Britain would not support Paris. His gamble failed completely.',
-          source: {
-            letter: 'C',
-            type: 'written',
-            title:
-              'Source C (Public Warning Speech): David Lloyd George, Chancellor of the Exchequer, The Mansion House Speech (21 July 1911)',
-            text: "I am also bound to say this: that I believe it is essential in the highest interests, not merely of this country, but of the world, that Britain should at all hazards maintain her place and her prestige amongst the Great Powers of the world... If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won with centuries of heroism and achievement, by allowing Britain to be treated where her interests were vitally affected as if she didn't count in the Cabinet of Nations, then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.",
-            caption:
-              "David Lloyd George addressing the annual Bankers' Dinner at Mansion House, delivering an unambiguous public warning to Germany following the dispatch of the gunboat Panther to Agadir.",
-            citation: 'The Times (London), 22 July 1911, p. 7; Hansard Parliamentary Debates.',
-            context:
-              "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
-            hinge_question:
-              "Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
-            question_badge: 'Reliability & Provenance',
-            question:
-              "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
-            enquiry_question:
-              "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
-            model_answer:
-              'The speech is exceptionally significant because Lloyd George was a leading radical politician who had previously opposed war; his firm warning demonstrated that the entire British Cabinet was unified in standing militarily with France against German intimidation.',
-            discussion_ideas: [
-              'Cabinet solidarity: Ended German hopes that Liberal internal divisions would prevent British action.',
-              'Deterrence signaling: Clearly staked British prestige on opposing unilateral German expansion in the Atlantic.',
-              'German domestic backlash: German nationalists felt publicly insulted and demanded accelerated naval construction.',
-            ],
-          },
-          sources: [
-            {
-              letter: 'C',
-              type: 'written',
-              title:
-                'Source C (Public Warning Speech): David Lloyd George, Chancellor of the Exchequer, The Mansion House Speech (21 July 1911)',
-              text: "I am also bound to say this: that I believe it is essential in the highest interests, not merely of this country, but of the world, that Britain should at all hazards maintain her place and her prestige amongst the Great Powers of the world... If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won with centuries of heroism and achievement, by allowing Britain to be treated where her interests were vitally affected as if she didn't count in the Cabinet of Nations, then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.",
-              caption:
-                "David Lloyd George addressing the annual Bankers' Dinner at Mansion House, delivering an unambiguous public warning to Germany following the dispatch of the gunboat Panther to Agadir.",
-              citation: 'The Times (London), 22 July 1911, p. 7; Hansard Parliamentary Debates.',
-              context:
-                "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
-              hinge_question:
-                "Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
-              question_badge: 'Reliability & Provenance',
-              question:
-                "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
-              enquiry_question:
-                "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
-              model_answer:
-                'The speech is exceptionally significant because Lloyd George was a leading radical politician who had previously opposed war; his firm warning demonstrated that the entire British Cabinet was unified in standing militarily with France against German intimidation.',
-              discussion_ideas: [
-                'Cabinet solidarity: Ended German hopes that Liberal internal divisions would prevent British action.',
-                'Deterrence signaling: Clearly staked British prestige on opposing unilateral German expansion in the Atlantic.',
-                'German domestic backlash: German nationalists felt publicly insulted and demanded accelerated naval construction.',
-              ],
-            },
-          ],
-        },
-        {
-          act: 4,
-          title: 'The Algeciras Conference & German Diplomatic Isolation (1906)',
-          text: '<span class="para-ref">[2.4]</span> To resolve the Moroccan standoff, Germany demanded an international conference, expecting global support. In January 1906, diplomats met at the <strong>Algeciras Conference</strong> in southern Spain. The meeting ended in complete humiliation for Germany.<br><br><span class="para-ref">[2.5]</span> Instead of splitting Britain and France, German pressure pushed them closer together. British Foreign Secretary Sir Edward Grey firmly backed France. Russia, Italy, Spain, and the United States all voted to give France control over Moroccan police and banking. Only Austria-Hungary voted alongside Germany. Kaiser Wilhelm II left Algeciras furious. He was now convinced that the Great Powers were conspiring to encircle Germany, a paranoid fear known as <strong>Einkreisung</strong> (encirclement).',
-          image: '/units/great_war/assets/sms_panther_agadir_1911.jpg',
-          image_alt:
-            'Archival photograph of the German Imperial Navy gunboat SMS Panther deployed to Agadir harbour in July 1911',
-          caption:
-            "The German gunboat SMS Panther anchored off the Moroccan port of Agadir in July 1911, a classic display of aggressive 'gunboat diplomacy' that precipitated the Second Moroccan Crisis.",
-          source: {
-            letter: 'D',
             type: 'visual',
             title:
-              "Source D (Archival Imperial Cartography): Walter Crane, 'Imperial Federation Map of the World Showing the Extent of the British Empire' (1886)",
-            image: '/units/great_war/assets/map_lesson2_b.png',
-            src: '/units/great_war/assets/map_lesson2_b.png',
-            caption:
-              "Walter Crane's iconic 1886 map for The Graphic, illustrating the vast global expanse of the British Empire (shaded in red), Britannia seated on the globe, and imperial statistics compiled by Captain J.C.R. Colomb.",
-            citation:
-              'The Graphic, London (24 July 1886) / Norman B. Leventhal Map Center, Boston Public Library (Call No. G3201.F7 1886 .C7).',
-            context:
-              "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
-            hinge_question:
-              'Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?',
-            question_badge: 'Cartographic Evidence',
-            question:
-              "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
-            enquiry_question:
-              "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
-            model_answer:
-              'The map illustrates that the British Empire already encompassed a vast global network across every ocean—including Canada, India, Australia, and key African territories—demonstrating to German leaders that the most valuable colonial and maritime positions were already monopolized by Britain.',
-            discussion_ideas: [
-              'Global dominance: The British Empire colored pink across five continents left virtually no room for newly unified nations like Germany.',
-              "Imperial envy: Explains German rhetoric about wanting 'our place in the sun' rather than remaining in Britain's shadow.",
-              'Naval dependency: Emphasizes why an empire of this scale required the Royal Navy and why German naval expansion was seen as an existential threat.',
-            ],
-          },
-          sources: [
-            {
-              letter: 'D',
-              type: 'visual',
-              title:
-                "Source D (Archival Imperial Cartography): Walter Crane, 'Imperial Federation Map of the World Showing the Extent of the British Empire' (1886)",
-              image: '/units/great_war/assets/map_lesson2_b.png',
-              src: '/units/great_war/assets/map_lesson2_b.png',
-              caption:
-                "Walter Crane's iconic 1886 map for The Graphic, illustrating the vast global expanse of the British Empire (shaded in red), Britannia seated on the globe, and imperial statistics compiled by Captain J.C.R. Colomb.",
-              citation:
-                'The Graphic, London (24 July 1886) / Norman B. Leventhal Map Center, Boston Public Library (Call No. G3201.F7 1886 .C7).',
-              context:
-                "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
-              hinge_question:
-                'Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?',
-              question_badge: 'Cartographic Evidence',
-              question:
-                "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
-              enquiry_question:
-                "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
-              model_answer:
-                'The map illustrates that the British Empire already encompassed a vast global network across every ocean—including Canada, India, Australia, and key African territories—demonstrating to German leaders that the most valuable colonial and maritime positions were already monopolized by Britain.',
-              discussion_ideas: [
-                'Global dominance: The British Empire colored pink across five continents left virtually no room for newly unified nations like Germany.',
-                "Imperial envy: Explains German rhetoric about wanting 'our place in the sun' rather than remaining in Britain's shadow.",
-                'Naval dependency: Emphasizes why an empire of this scale required the Royal Navy and why German naval expansion was seen as an existential threat.',
-              ],
-            },
-          ],
-        },
-        {
-          act: 5,
-          title: 'The Second Moroccan Crisis: The Panther at Agadir & Mansion House (July 1911)',
-          text: '<span class="para-ref">[2.5]</span> In spring 1911, Moroccan tribes rebelled against the Sultan in Fez. France sent troops to restore order. Accusing France of breaking the Algeciras agreement, Germany used <strong>gunboat diplomacy</strong>. On <strong>1 July 1911</strong>, Germany sent the gunboat <strong>SMS Panther</strong> to the Atlantic port of <strong>Agadir</strong>, trying to force France into handing over the French Congo.<br><br><span class="para-ref">[2.6]</span> The gunboat provoked outrage in London because Agadir lay near vital British shipping routes. On 21 July 1911, British Chancellor <strong>David Lloyd George</strong> gave his famous <strong>Mansion House Speech</strong>. He warned that Britain would fight rather than accept peace through national humiliation. Germany backed down and accepted a small piece of the Congo. The crisis backfired on Germany: Britain and France were pushed into secret joint military talks to defend against a German invasion.',
-          source: {
-            letter: 'E',
-            type: 'visual',
-            title:
-              "Source E (Primary Political Cartoon): John Tenniel, 'The Greedy Boy' (Punch, 10 January 1885)",
+              'Source A (Political Cartoon): John Tenniel, "The Greedy Boy" (Punch, 10 January 1885)',
             image: '/units/great_war/assets/was_greedy_boy.png',
             src: '/units/great_war/assets/was_greedy_boy.png',
             is_artwork: true,
@@ -1591,13 +1429,20 @@ const great_war_data = {
               'British entitlement: Reflects the assumption among British elites that unclaimed territories naturally belonged to Britain.',
               "Early colonial tension: Shows that Anglo-German imperial friction began well before Wilhelm II's 'Place in the Sun' speech.",
             ],
+            source_context:
+              "At the 1884–1885 Berlin Conference, Chancellor Bismarck orchestrated the formal partition of Africa, acquiring Germany's first official protectorates in South-West Africa (Angra Pequena/Namibia), Togoland, Cameroon, and German New Guinea. British public opinion was startled by Germany's sudden entry into colonial expansion, portraying Bismarck as a greedy table-companion taking colonial territories Britain considered its natural sphere of influence. **Hinge Question:** How does Tenniel's depiction of Bismarck taking 'Angra Pequena' reveal Britain's resentment when other European powers claimed colonial territory?",
+            teacher_notes: {
+              source_context:
+                "At the 1884–1885 Berlin Conference, Chancellor Bismarck orchestrated the formal partition of Africa, acquiring Germany's first official protectorates in South-West Africa (Angra Pequena/Namibia), Togoland, Cameroon, and German New Guinea. British public opinion was startled by Germany's sudden entry into colonial expansion, portraying Bismarck as a greedy table-companion taking colonial territories Britain considered its natural sphere of influence. **Hinge Question:** How does Tenniel's depiction of Bismarck taking 'Angra Pequena' reveal Britain's resentment when other European powers claimed colonial territory?",
+            },
+            id: 'gw_l2_src_a',
           },
           sources: [
             {
-              letter: 'E',
+              letter: 'A',
               type: 'visual',
               title:
-                "Source E (Primary Political Cartoon): John Tenniel, 'The Greedy Boy' (Punch, 10 January 1885)",
+                'Source A (Political Cartoon): John Tenniel, "The Greedy Boy" (Punch, 10 January 1885)',
               image: '/units/great_war/assets/was_greedy_boy.png',
               src: '/units/great_war/assets/was_greedy_boy.png',
               is_artwork: true,
@@ -1621,6 +1466,330 @@ const great_war_data = {
                 'British entitlement: Reflects the assumption among British elites that unclaimed territories naturally belonged to Britain.',
                 "Early colonial tension: Shows that Anglo-German imperial friction began well before Wilhelm II's 'Place in the Sun' speech.",
               ],
+              source_context:
+                "At the 1884–1885 Berlin Conference, Chancellor Bismarck orchestrated the formal partition of Africa, acquiring Germany's first official protectorates in South-West Africa (Angra Pequena/Namibia), Togoland, Cameroon, and German New Guinea. British public opinion was startled by Germany's sudden entry into colonial expansion, portraying Bismarck as a greedy table-companion taking colonial territories Britain considered its natural sphere of influence. **Hinge Question:** How does Tenniel's depiction of Bismarck taking 'Angra Pequena' reveal Britain's resentment when other European powers claimed colonial territory?",
+              teacher_notes: {
+                source_context:
+                  "At the 1884–1885 Berlin Conference, Chancellor Bismarck orchestrated the formal partition of Africa, acquiring Germany's first official protectorates in South-West Africa (Angra Pequena/Namibia), Togoland, Cameroon, and German New Guinea. British public opinion was startled by Germany's sudden entry into colonial expansion, portraying Bismarck as a greedy table-companion taking colonial territories Britain considered its natural sphere of influence. **Hinge Question:** How does Tenniel's depiction of Bismarck taking 'Angra Pequena' reveal Britain's resentment when other European powers claimed colonial territory?",
+              },
+              id: 'gw_l2_src_a',
+            },
+          ],
+        },
+        {
+          act: 2,
+          title: 'Kaiser Wilhelm II,"Weltpolitik" & "A Place in the Sun" (1890–1897)',
+          text: '<span class="para-ref">[2.2]</span> Bismarck insisted Germany was a satisfied European power with no need for distant colonies. Pointing to a map, he declared: <em>"Here lies Russia, and here lies France, and we are in the middle; that is my map of Africa."</em> But in 1888, the young, ambitious <strong>Kaiser Wilhelm II</strong> took the German throne. Wilhelm wanted personal glory and dismissed Bismarck in 1890, an event dubbed "Dropping the Pilot."<br><br><span class="para-ref">[2.3]</span> The Kaiser demanded that Germany become a global superpower. In 1897, Bernhard von Bülow announced that Germany demanded its <strong>"place in the sun" (Platz an der Sonne)</strong>. This aggressive imperial policy was called <strong>Weltpolitik</strong> ("World Policy"). Because Britain and France already owned the richest territories, Wilhelm decided to build a mighty battlefleet, putting Germany on a direct collision course with Britain.',
+          source: {
+            letter: 'B',
+            type: 'written',
+            title:
+              'Source B (Parliamentary Speech): Bernhard von Bülow, Speech on Germany\'s "Place in the Sun" (1897)',
+            text: 'The days when Germans abandoned the land to one neighbor and the sea to another, reserving for themselves only the heavens where pure doctrine reigns—those days are over! We do not want to put anyone into the shade, but we too demand our place in the sun (*einen Platz an der Sonne*). In East Asia and Africa, we cannot and will not allow any foreign power to push us aside or monopolize economic trade.',
+            caption:
+              "Speech delivered by German Foreign Secretary (later Chancellor) Bernhard von Bülow to the Reichstag in Berlin, inaugurating Germany's aggressive global foreign policy (*Weltpolitik*).",
+            citation:
+              'Stenographische Berichte über die Verhandlungen des Deutschen Reichstages, 1897, Vol. 1, p. 60.',
+            context:
+              "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+            hinge_question:
+              "How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+            question_badge: 'Author’s Purpose',
+            question:
+              'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
+            enquiry_question:
+              'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
+            model_answer:
+              "Bülow delivered the speech to rally parliamentary and public support for expanding Germany's colonial empire and navy, declaring that Germany would aggressively challenge existing British and French dominance to secure global prestige.",
+            discussion_ideas: [
+              'Break with Bismarckian caution: Marked the end of seeing Germany as a satisfied European power.',
+              'Imperial envy: Evident frustration that Britain and France had claimed the most lucrative territories.',
+              'Domestic mobilisation: Used patriotic colonial rhetoric to unite disparate German political parties.',
+            ],
+            source_context:
+              "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+            teacher_notes: {
+              source_context:
+                "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+            },
+            id: 'gw_l2_src_b',
+            src: '',
+            image: '',
+          },
+          sources: [
+            {
+              letter: 'B',
+              type: 'written',
+              title:
+                'Source B (Parliamentary Speech): Bernhard von Bülow, Speech on Germany\'s "Place in the Sun" (1897)',
+              text: 'The days when Germans abandoned the land to one neighbor and the sea to another, reserving for themselves only the heavens where pure doctrine reigns—those days are over! We do not want to put anyone into the shade, but we too demand our place in the sun (*einen Platz an der Sonne*). In East Asia and Africa, we cannot and will not allow any foreign power to push us aside or monopolize economic trade.',
+              caption:
+                "Speech delivered by German Foreign Secretary (later Chancellor) Bernhard von Bülow to the Reichstag in Berlin, inaugurating Germany's aggressive global foreign policy (*Weltpolitik*).",
+              citation:
+                'Stenographische Berichte über die Verhandlungen des Deutschen Reichstages, 1897, Vol. 1, p. 60.',
+              context:
+                "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+              hinge_question:
+                "How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+              question_badge: 'Author’s Purpose',
+              question:
+                'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
+              enquiry_question:
+                'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
+              model_answer:
+                "Bülow delivered the speech to rally parliamentary and public support for expanding Germany's colonial empire and navy, declaring that Germany would aggressively challenge existing British and French dominance to secure global prestige.",
+              discussion_ideas: [
+                'Break with Bismarckian caution: Marked the end of seeing Germany as a satisfied European power.',
+                'Imperial envy: Evident frustration that Britain and France had claimed the most lucrative territories.',
+                'Domestic mobilisation: Used patriotic colonial rhetoric to unite disparate German political parties.',
+              ],
+              source_context:
+                "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+              teacher_notes: {
+                source_context:
+                  "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+              },
+              id: 'gw_l2_src_b',
+              src: '',
+              image: '',
+            },
+          ],
+        },
+        {
+          act: 3,
+          title: 'The First Moroccan Crisis & The Landing at Tangier (March 1905)',
+          text: '<span class="para-ref">[2.3]</span> In April 1904, alarmed by rising German power, Britain and France signed the <strong>Entente Cordiale</strong> ("Friendly Understanding"). This was a colonial pact rather than a military alliance. France accepted British control of Egypt, while Britain accepted French influence over the Sultanate of <strong>Morocco</strong>. German leaders feared this new friendship would surround them.<br><br><span class="para-ref">[2.4]</span> On 31 March 1905, Kaiser Wilhelm II triggered the <strong>First Moroccan Crisis</strong>. Arriving in the Moroccan port of <strong>Tangier</strong> on a white horse, Wilhelm announced his support for the Sultan\'s independence. He challenged French control and demanded equal German trading rights. The Kaiser gambled that France would back down and that Britain would not support Paris. His gamble failed completely.',
+          source: {
+            letter: 'C',
+            type: 'visual',
+            title:
+              'Source C (Archival Cartography): Walter Crane, Imperial Federation Map of the World (1886)',
+            image: '/units/great_war/assets/map_lesson2_b.png',
+            src: '/units/great_war/assets/map_lesson2_b.png',
+            caption:
+              "Walter Crane's iconic 1886 map for The Graphic, illustrating the vast global expanse of the British Empire (shaded in red), Britannia seated on the globe, and imperial statistics compiled by Captain J.C.R. Colomb.",
+            citation:
+              'The Graphic, London (24 July 1886) / Norman B. Leventhal Map Center, Boston Public Library (Call No. G3201.F7 1886 .C7).',
+            context:
+              "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+            hinge_question:
+              'Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?',
+            question_badge: 'Cartographic Evidence',
+            question:
+              "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
+            enquiry_question:
+              "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
+            model_answer:
+              'The map illustrates that the British Empire already encompassed a vast global network across every ocean—including Canada, India, Australia, and key African territories—demonstrating to German leaders that the most valuable colonial and maritime positions were already monopolized by Britain.',
+            discussion_ideas: [
+              'Global dominance: The British Empire colored pink across five continents left virtually no room for newly unified nations like Germany.',
+              "Imperial envy: Explains German rhetoric about wanting 'our place in the sun' rather than remaining in Britain's shadow.",
+              'Naval dependency: Emphasizes why an empire of this scale required the Royal Navy and why German naval expansion was seen as an existential threat.',
+            ],
+            source_context:
+              "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+            teacher_notes: {
+              source_context:
+                "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+            },
+            id: 'gw_l2_src_c',
+          },
+          sources: [
+            {
+              letter: 'C',
+              type: 'visual',
+              title:
+                'Source C (Archival Cartography): Walter Crane, Imperial Federation Map of the World (1886)',
+              image: '/units/great_war/assets/map_lesson2_b.png',
+              src: '/units/great_war/assets/map_lesson2_b.png',
+              caption:
+                "Walter Crane's iconic 1886 map for The Graphic, illustrating the vast global expanse of the British Empire (shaded in red), Britannia seated on the globe, and imperial statistics compiled by Captain J.C.R. Colomb.",
+              citation:
+                'The Graphic, London (24 July 1886) / Norman B. Leventhal Map Center, Boston Public Library (Call No. G3201.F7 1886 .C7).',
+              context:
+                "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+              hinge_question:
+                'Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?',
+              question_badge: 'Cartographic Evidence',
+              question:
+                "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
+              enquiry_question:
+                "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
+              model_answer:
+                'The map illustrates that the British Empire already encompassed a vast global network across every ocean—including Canada, India, Australia, and key African territories—demonstrating to German leaders that the most valuable colonial and maritime positions were already monopolized by Britain.',
+              discussion_ideas: [
+                'Global dominance: The British Empire colored pink across five continents left virtually no room for newly unified nations like Germany.',
+                "Imperial envy: Explains German rhetoric about wanting 'our place in the sun' rather than remaining in Britain's shadow.",
+                'Naval dependency: Emphasizes why an empire of this scale required the Royal Navy and why German naval expansion was seen as an existential threat.',
+              ],
+              source_context:
+                "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+              teacher_notes: {
+                source_context:
+                  "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+              },
+              id: 'gw_l2_src_c',
+            },
+          ],
+        },
+        {
+          act: 4,
+          title: 'The Algeciras Conference & German Diplomatic Isolation (1906)',
+          text: '<span class="para-ref">[2.4]</span> To resolve the Moroccan standoff, Germany demanded an international conference, expecting global support. In January 1906, diplomats met at the <strong>Algeciras Conference</strong> in southern Spain. The meeting ended in complete humiliation for Germany.<br><br><span class="para-ref">[2.5]</span> Instead of splitting Britain and France, German pressure pushed them closer together. British Foreign Secretary Sir Edward Grey firmly backed France. Russia, Italy, Spain, and the United States all voted to give France control over Moroccan police and banking. Only Austria-Hungary voted alongside Germany. Kaiser Wilhelm II left Algeciras furious. He was now convinced that the Great Powers were conspiring to encircle Germany, a paranoid fear known as <strong>Einkreisung</strong> (encirclement).',
+          image: '/units/great_war/assets/sms_panther_agadir_1911.jpg',
+          image_alt:
+            'Archival photograph of the German Imperial Navy gunboat SMS Panther deployed to Agadir harbour in July 1911',
+          caption:
+            "The German gunboat SMS Panther anchored off the Moroccan port of Agadir in July 1911, a classic display of aggressive 'gunboat diplomacy' that precipitated the Second Moroccan Crisis.",
+          source: {
+            letter: 'D',
+            type: 'written',
+            title:
+              'Source D (Imperial Telegram): Kaiser Wilhelm II, Telegram from Tangier to Chancellor Bülow (1905)',
+            text: "Today I visited the Sultan's representative in Tangier and announced in person that I regard the Sultan of Morocco as an absolutely free and independent sovereign, subject to no foreign control. I declared that Germany insists upon equal commercial rights for all nations, and will never suffer any other power [France] to establish an exclusive protectorate here without international consent.",
+            caption:
+              "Kaiser Wilhelm II's official dispatch describing his provocative visit to Tangier, Morocco, designed to test and break the newly signed 1904 Anglo-French Entente Cordiale.",
+            citation:
+              'Die Große Politik der Europäischen Kabinette 1871–1914, Vol. 20, Part 2, Document 6589.',
+            context:
+              "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+            hinge_question:
+              "Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+            question_badge: 'Source Inference',
+            question:
+              "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
+            enquiry_question:
+              "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
+            model_answer:
+              'The dispatch reveals that the Kaiser used the pretence of Moroccan independence to directly challenge French colonial expansion, aiming to humiliate France and test whether Britain would honour its diplomatic support.',
+            discussion_ideas: [
+              'Testing the Entente: Germany believed Britain would not risk a war over French colonial ambitions in North Africa.',
+              "Public posturing: Wilhelm II's theatrical arrival on a white horse created intense international drama.",
+              'Diplomatic misfire: Rather than isolating France, only Austria-Hungary supported Germany at the resulting Algeciras Conference.',
+            ],
+            source_context:
+              "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+            teacher_notes: {
+              source_context:
+                "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+            },
+            id: 'gw_l2_src_d',
+            src: '',
+            image: '',
+          },
+          sources: [
+            {
+              letter: 'D',
+              type: 'written',
+              title:
+                'Source D (Imperial Telegram): Kaiser Wilhelm II, Telegram from Tangier to Chancellor Bülow (1905)',
+              text: "Today I visited the Sultan's representative in Tangier and announced in person that I regard the Sultan of Morocco as an absolutely free and independent sovereign, subject to no foreign control. I declared that Germany insists upon equal commercial rights for all nations, and will never suffer any other power [France] to establish an exclusive protectorate here without international consent.",
+              caption:
+                "Kaiser Wilhelm II's official dispatch describing his provocative visit to Tangier, Morocco, designed to test and break the newly signed 1904 Anglo-French Entente Cordiale.",
+              citation:
+                'Die Große Politik der Europäischen Kabinette 1871–1914, Vol. 20, Part 2, Document 6589.',
+              context:
+                "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+              hinge_question:
+                "Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+              question_badge: 'Source Inference',
+              question:
+                "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
+              enquiry_question:
+                "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
+              model_answer:
+                'The dispatch reveals that the Kaiser used the pretence of Moroccan independence to directly challenge French colonial expansion, aiming to humiliate France and test whether Britain would honour its diplomatic support.',
+              discussion_ideas: [
+                'Testing the Entente: Germany believed Britain would not risk a war over French colonial ambitions in North Africa.',
+                "Public posturing: Wilhelm II's theatrical arrival on a white horse created intense international drama.",
+                'Diplomatic misfire: Rather than isolating France, only Austria-Hungary supported Germany at the resulting Algeciras Conference.',
+              ],
+              source_context:
+                "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+              teacher_notes: {
+                source_context:
+                  "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+              },
+              id: 'gw_l2_src_d',
+              src: '',
+              image: '',
+            },
+          ],
+        },
+        {
+          act: 5,
+          title: 'The Second Moroccan Crisis: The Panther at Agadir & Mansion House (July 1911)',
+          text: '<span class="para-ref">[2.5]</span> In spring 1911, Moroccan tribes rebelled against the Sultan in Fez. France sent troops to restore order. Accusing France of breaking the Algeciras agreement, Germany used <strong>gunboat diplomacy</strong>. On <strong>1 July 1911</strong>, Germany sent the gunboat <strong>SMS Panther</strong> to the Atlantic port of <strong>Agadir</strong>, trying to force France into handing over the French Congo.<br><br><span class="para-ref">[2.6]</span> The gunboat provoked outrage in London because Agadir lay near vital British shipping routes. On 21 July 1911, British Chancellor <strong>David Lloyd George</strong> gave his famous <strong>Mansion House Speech</strong>. He warned that Britain would fight rather than accept peace through national humiliation. Germany backed down and accepted a small piece of the Congo. The crisis backfired on Germany: Britain and France were pushed into secret joint military talks to defend against a German invasion.',
+          source: {
+            letter: 'E',
+            type: 'written',
+            title:
+              'Source E (Ministerial Speech): David Lloyd George, The Mansion House Speech (21 July 1911)',
+            text: "I am also bound to say this: that I believe it is essential in the highest interests, not merely of this country, but of the world, that Britain should at all hazards maintain her place and her prestige amongst the Great Powers of the world... If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won with centuries of heroism and achievement, by allowing Britain to be treated where her interests were vitally affected as if she didn't count in the Cabinet of Nations, then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.",
+            caption:
+              "David Lloyd George addressing the annual Bankers' Dinner at Mansion House, delivering an unambiguous public warning to Germany following the dispatch of the gunboat Panther to Agadir.",
+            citation: 'The Times (London), 22 July 1911, p. 7; Hansard Parliamentary Debates.',
+            context:
+              "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+            hinge_question:
+              "Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+            question_badge: 'Reliability & Provenance',
+            question:
+              "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
+            enquiry_question:
+              "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
+            model_answer:
+              'The speech is exceptionally significant because Lloyd George was a leading radical politician who had previously opposed war; his firm warning demonstrated that the entire British Cabinet was unified in standing militarily with France against German intimidation.',
+            discussion_ideas: [
+              'Cabinet solidarity: Ended German hopes that Liberal internal divisions would prevent British action.',
+              'Deterrence signaling: Clearly staked British prestige on opposing unilateral German expansion in the Atlantic.',
+              'German domestic backlash: German nationalists felt publicly insulted and demanded accelerated naval construction.',
+            ],
+            source_context:
+              "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+            teacher_notes: {
+              source_context:
+                "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+            },
+            id: 'gw_l2_src_e',
+            src: '',
+            image: '',
+          },
+          sources: [
+            {
+              letter: 'E',
+              type: 'written',
+              title:
+                'Source E (Ministerial Speech): David Lloyd George, The Mansion House Speech (21 July 1911)',
+              text: "I am also bound to say this: that I believe it is essential in the highest interests, not merely of this country, but of the world, that Britain should at all hazards maintain her place and her prestige amongst the Great Powers of the world... If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won with centuries of heroism and achievement, by allowing Britain to be treated where her interests were vitally affected as if she didn't count in the Cabinet of Nations, then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.",
+              caption:
+                "David Lloyd George addressing the annual Bankers' Dinner at Mansion House, delivering an unambiguous public warning to Germany following the dispatch of the gunboat Panther to Agadir.",
+              citation: 'The Times (London), 22 July 1911, p. 7; Hansard Parliamentary Debates.',
+              context:
+                "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+              hinge_question:
+                "Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+              question_badge: 'Reliability & Provenance',
+              question:
+                "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
+              enquiry_question:
+                "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
+              model_answer:
+                'The speech is exceptionally significant because Lloyd George was a leading radical politician who had previously opposed war; his firm warning demonstrated that the entire British Cabinet was unified in standing militarily with France against German intimidation.',
+              discussion_ideas: [
+                'Cabinet solidarity: Ended German hopes that Liberal internal divisions would prevent British action.',
+                'Deterrence signaling: Clearly staked British prestige on opposing unilateral German expansion in the Atlantic.',
+                'German domestic backlash: German nationalists felt publicly insulted and demanded accelerated naval construction.',
+              ],
+              source_context:
+                "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+              teacher_notes: {
+                source_context:
+                  "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+              },
+              id: 'gw_l2_src_e',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -1938,141 +2107,9 @@ const great_war_data = {
       sources: [
         {
           letter: 'A',
-          type: 'written',
-          title:
-            "Source A (Parliamentary Speech): Bernhard von Bülow, Speech to the Reichstag on Germany's 'Place in the Sun' (6 December 1897)",
-          text: 'The days when Germans abandoned the land to one neighbor and the sea to another, reserving for themselves only the heavens where pure doctrine reigns—those days are over! We do not want to put anyone into the shade, but we too demand our place in the sun (*einen Platz an der Sonne*). In East Asia and Africa, we cannot and will not allow any foreign power to push us aside or monopolize economic trade.',
-          caption:
-            "Speech delivered by German Foreign Secretary (later Chancellor) Bernhard von Bülow to the Reichstag in Berlin, inaugurating Germany's aggressive global foreign policy (*Weltpolitik*).",
-          citation:
-            'Stenographische Berichte über die Verhandlungen des Deutschen Reichstages, 1897, Vol. 1, p. 60.',
-          context:
-            "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
-          hinge_question:
-            "How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
-          question_badge: 'Author’s Purpose',
-          question:
-            'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
-          enquiry_question:
-            'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
-          model_answer:
-            "Bülow delivered the speech to rally parliamentary and public support for expanding Germany's colonial empire and navy, declaring that Germany would aggressively challenge existing British and French dominance to secure global prestige.",
-          discussion_ideas: [
-            'Break with Bismarckian caution: Marked the end of seeing Germany as a satisfied European power.',
-            'Imperial envy: Evident frustration that Britain and France had claimed the most lucrative territories.',
-            'Domestic mobilisation: Used patriotic colonial rhetoric to unite disparate German political parties.',
-          ],
-          source_context:
-            "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
-          teacher_notes: {
-            source_context:
-              "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
-          },
-        },
-        {
-          letter: 'B',
-          type: 'written',
-          title:
-            'Source B (Imperial Diplomatic Dispatch): Kaiser Wilhelm II, Telegram from Tangier to Chancellor Bülow (31 March 1905)',
-          text: "Today I visited the Sultan's representative in Tangier and announced in person that I regard the Sultan of Morocco as an absolutely free and independent sovereign, subject to no foreign control. I declared that Germany insists upon equal commercial rights for all nations, and will never suffer any other power [France] to establish an exclusive protectorate here without international consent.",
-          caption:
-            "Kaiser Wilhelm II's official dispatch describing his provocative visit to Tangier, Morocco, designed to test and break the newly signed 1904 Anglo-French Entente Cordiale.",
-          citation:
-            'Die Große Politik der Europäischen Kabinette 1871–1914, Vol. 20, Part 2, Document 6589.',
-          context:
-            "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
-          hinge_question:
-            "Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
-          question_badge: 'Source Inference',
-          question:
-            "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
-          enquiry_question:
-            "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
-          model_answer:
-            'The dispatch reveals that the Kaiser used the pretence of Moroccan independence to directly challenge French colonial expansion, aiming to humiliate France and test whether Britain would honour its diplomatic support.',
-          discussion_ideas: [
-            'Testing the Entente: Germany believed Britain would not risk a war over French colonial ambitions in North Africa.',
-            "Public posturing: Wilhelm II's theatrical arrival on a white horse created intense international drama.",
-            'Diplomatic misfire: Rather than isolating France, only Austria-Hungary supported Germany at the resulting Algeciras Conference.',
-          ],
-          source_context:
-            "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
-          teacher_notes: {
-            source_context:
-              "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
-          },
-        },
-        {
-          letter: 'C',
-          type: 'written',
-          title:
-            'Source C (Public Warning Speech): David Lloyd George, Chancellor of the Exchequer, The Mansion House Speech (21 July 1911)',
-          text: "I am also bound to say this: that I believe it is essential in the highest interests, not merely of this country, but of the world, that Britain should at all hazards maintain her place and her prestige amongst the Great Powers of the world... If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won with centuries of heroism and achievement, by allowing Britain to be treated where her interests were vitally affected as if she didn't count in the Cabinet of Nations, then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.",
-          caption:
-            "David Lloyd George addressing the annual Bankers' Dinner at Mansion House, delivering an unambiguous public warning to Germany following the dispatch of the gunboat Panther to Agadir.",
-          citation: 'The Times (London), 22 July 1911, p. 7; Hansard Parliamentary Debates.',
-          context:
-            "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
-          hinge_question:
-            "Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
-          question_badge: 'Reliability & Provenance',
-          question:
-            "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
-          enquiry_question:
-            "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
-          model_answer:
-            'The speech is exceptionally significant because Lloyd George was a leading radical politician who had previously opposed war; his firm warning demonstrated that the entire British Cabinet was unified in standing militarily with France against German intimidation.',
-          discussion_ideas: [
-            'Cabinet solidarity: Ended German hopes that Liberal internal divisions would prevent British action.',
-            'Deterrence signaling: Clearly staked British prestige on opposing unilateral German expansion in the Atlantic.',
-            'German domestic backlash: German nationalists felt publicly insulted and demanded accelerated naval construction.',
-          ],
-          source_context:
-            "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
-          teacher_notes: {
-            source_context:
-              "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
-          },
-        },
-        {
-          letter: 'D',
           type: 'visual',
           title:
-            "Source D (Archival Imperial Cartography): Walter Crane, 'Imperial Federation Map of the World Showing the Extent of the British Empire' (1886)",
-          image: '/units/great_war/assets/map_lesson2_b.png',
-          src: '/units/great_war/assets/map_lesson2_b.png',
-          caption:
-            "Walter Crane's iconic 1886 map for The Graphic, illustrating the vast global expanse of the British Empire (shaded in red), Britannia seated on the globe, and imperial statistics compiled by Captain J.C.R. Colomb.",
-          citation:
-            'The Graphic, London (24 July 1886) / Norman B. Leventhal Map Center, Boston Public Library (Call No. G3201.F7 1886 .C7).',
-          context:
-            "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
-          hinge_question:
-            'Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?',
-          question_badge: 'Cartographic Evidence',
-          question:
-            "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
-          enquiry_question:
-            "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
-          model_answer:
-            'The map illustrates that the British Empire already encompassed a vast global network across every ocean—including Canada, India, Australia, and key African territories—demonstrating to German leaders that the most valuable colonial and maritime positions were already monopolized by Britain.',
-          discussion_ideas: [
-            'Global dominance: The British Empire colored pink across five continents left virtually no room for newly unified nations like Germany.',
-            "Imperial envy: Explains German rhetoric about wanting 'our place in the sun' rather than remaining in Britain's shadow.",
-            'Naval dependency: Emphasizes why an empire of this scale required the Royal Navy and why German naval expansion was seen as an existential threat.',
-          ],
-          source_context:
-            "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
-          teacher_notes: {
-            source_context:
-              "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
-          },
-        },
-        {
-          letter: 'E',
-          type: 'visual',
-          title:
-            "Source E (Primary Political Cartoon): John Tenniel, 'The Greedy Boy' (Punch, 10 January 1885)",
+            'Source A (Political Cartoon): John Tenniel, "The Greedy Boy" (Punch, 10 January 1885)',
           image: '/units/great_war/assets/was_greedy_boy.png',
           src: '/units/great_war/assets/was_greedy_boy.png',
           is_artwork: true,
@@ -2102,6 +2139,149 @@ const great_war_data = {
             source_context:
               "At the 1884–1885 Berlin Conference, Chancellor Bismarck orchestrated the formal partition of Africa, acquiring Germany's first official protectorates in South-West Africa (Angra Pequena/Namibia), Togoland, Cameroon, and German New Guinea. British public opinion was startled by Germany's sudden entry into colonial expansion, portraying Bismarck as a greedy table-companion taking colonial territories Britain considered its natural sphere of influence. **Hinge Question:** How does Tenniel's depiction of Bismarck taking 'Angra Pequena' reveal Britain's resentment when other European powers claimed colonial territory?",
           },
+          id: 'gw_l2_src_a',
+        },
+        {
+          letter: 'B',
+          type: 'written',
+          title:
+            'Source B (Parliamentary Speech): Bernhard von Bülow, Speech on Germany\'s "Place in the Sun" (1897)',
+          text: 'The days when Germans abandoned the land to one neighbor and the sea to another, reserving for themselves only the heavens where pure doctrine reigns—those days are over! We do not want to put anyone into the shade, but we too demand our place in the sun (*einen Platz an der Sonne*). In East Asia and Africa, we cannot and will not allow any foreign power to push us aside or monopolize economic trade.',
+          caption:
+            "Speech delivered by German Foreign Secretary (later Chancellor) Bernhard von Bülow to the Reichstag in Berlin, inaugurating Germany's aggressive global foreign policy (*Weltpolitik*).",
+          citation:
+            'Stenographische Berichte über die Verhandlungen des Deutschen Reichstages, 1897, Vol. 1, p. 60.',
+          context:
+            "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+          hinge_question:
+            "How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+          question_badge: 'Author’s Purpose',
+          question:
+            'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
+          enquiry_question:
+            'Why did Bernhard von Bülow deliver this speech to the German Reichstag in December 1897?',
+          model_answer:
+            "Bülow delivered the speech to rally parliamentary and public support for expanding Germany's colonial empire and navy, declaring that Germany would aggressively challenge existing British and French dominance to secure global prestige.",
+          discussion_ideas: [
+            'Break with Bismarckian caution: Marked the end of seeing Germany as a satisfied European power.',
+            'Imperial envy: Evident frustration that Britain and France had claimed the most lucrative territories.',
+            'Domestic mobilisation: Used patriotic colonial rhetoric to unite disparate German political parties.',
+          ],
+          source_context:
+            "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+          teacher_notes: {
+            source_context:
+              "In 1897, the German government abandoned Bismarck's cautious continental diplomacy in favour of Weltpolitik (world policy), demanding global colonies and prestige equivalent to Britain's. **Hinge Question:** How did the rhetoric of demanding a 'place in the sun' convince other European powers that Germany was no longer a satisfied power, but an aggressive challenger?",
+          },
+          id: 'gw_l2_src_b',
+          src: '',
+          image: '',
+        },
+        {
+          letter: 'C',
+          type: 'visual',
+          title:
+            'Source C (Archival Cartography): Walter Crane, Imperial Federation Map of the World (1886)',
+          image: '/units/great_war/assets/map_lesson2_b.png',
+          src: '/units/great_war/assets/map_lesson2_b.png',
+          caption:
+            "Walter Crane's iconic 1886 map for The Graphic, illustrating the vast global expanse of the British Empire (shaded in red), Britannia seated on the globe, and imperial statistics compiled by Captain J.C.R. Colomb.",
+          citation:
+            'The Graphic, London (24 July 1886) / Norman B. Leventhal Map Center, Boston Public Library (Call No. G3201.F7 1886 .C7).',
+          context:
+            "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+          hinge_question:
+            'Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?',
+          question_badge: 'Cartographic Evidence',
+          question:
+            "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
+          enquiry_question:
+            "What does this map reveal about why Imperial Germany felt 'in the shade' during the late nineteenth-century Scramble for Empire?",
+          model_answer:
+            'The map illustrates that the British Empire already encompassed a vast global network across every ocean—including Canada, India, Australia, and key African territories—demonstrating to German leaders that the most valuable colonial and maritime positions were already monopolized by Britain.',
+          discussion_ideas: [
+            'Global dominance: The British Empire colored pink across five continents left virtually no room for newly unified nations like Germany.',
+            "Imperial envy: Explains German rhetoric about wanting 'our place in the sun' rather than remaining in Britain's shadow.",
+            'Naval dependency: Emphasizes why an empire of this scale required the Royal Navy and why German naval expansion was seen as an existential threat.',
+          ],
+          source_context:
+            "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+          teacher_notes: {
+            source_context:
+              "By the late 19th century, Great Britain governed an empire covering approximately a quarter of the globe and one-fifth of the world's population. When Kaiser Wilhelm II and Chancellor Bülow demanded Germany's 'place in the sun' in the late 1890s, they looked with intense envy at British global dominance illustrated in imperial maps like Crane's, feeling that Germany was confined to Central Europe while Britain monopolized global commerce and colonies. **Hinge Question:** Why did the overwhelming visual reality of the British Empire across the globe make German leaders believe that peaceful commercial expansion was impossible without challenging British hegemony?",
+          },
+          id: 'gw_l2_src_c',
+        },
+        {
+          letter: 'D',
+          type: 'written',
+          title:
+            'Source D (Imperial Telegram): Kaiser Wilhelm II, Telegram from Tangier to Chancellor Bülow (1905)',
+          text: "Today I visited the Sultan's representative in Tangier and announced in person that I regard the Sultan of Morocco as an absolutely free and independent sovereign, subject to no foreign control. I declared that Germany insists upon equal commercial rights for all nations, and will never suffer any other power [France] to establish an exclusive protectorate here without international consent.",
+          caption:
+            "Kaiser Wilhelm II's official dispatch describing his provocative visit to Tangier, Morocco, designed to test and break the newly signed 1904 Anglo-French Entente Cordiale.",
+          citation:
+            'Die Große Politik der Europäischen Kabinette 1871–1914, Vol. 20, Part 2, Document 6589.',
+          context:
+            "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+          hinge_question:
+            "Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+          question_badge: 'Source Inference',
+          question:
+            "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
+          enquiry_question:
+            "What does this dispatch reveal about Kaiser Wilhelm II's underlying strategy during the First Moroccan Crisis?",
+          model_answer:
+            'The dispatch reveals that the Kaiser used the pretence of Moroccan independence to directly challenge French colonial expansion, aiming to humiliate France and test whether Britain would honour its diplomatic support.',
+          discussion_ideas: [
+            'Testing the Entente: Germany believed Britain would not risk a war over French colonial ambitions in North Africa.',
+            "Public posturing: Wilhelm II's theatrical arrival on a white horse created intense international drama.",
+            'Diplomatic misfire: Rather than isolating France, only Austria-Hungary supported Germany at the resulting Algeciras Conference.',
+          ],
+          source_context:
+            "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+          teacher_notes: {
+            source_context:
+              "In 1905, Germany provoked the First Moroccan Crisis by landing Kaiser Wilhelm II at Tangier to champion Moroccan independence against French colonial claims. Germany hoped to expose the 1904 Entente Cordiale as weak; instead, the crisis backfired and drew Britain and France closer together. **Hinge Question:** Why did the Kaiser's dramatic intervention at Tangier ultimately strengthen Anglo-French military cooperation instead of fracturing it?",
+          },
+          id: 'gw_l2_src_d',
+          src: '',
+          image: '',
+        },
+        {
+          letter: 'E',
+          type: 'written',
+          title:
+            'Source E (Ministerial Speech): David Lloyd George, The Mansion House Speech (21 July 1911)',
+          text: "I am also bound to say this: that I believe it is essential in the highest interests, not merely of this country, but of the world, that Britain should at all hazards maintain her place and her prestige amongst the Great Powers of the world... If a situation were to be forced upon us in which peace could only be preserved by the surrender of the great and beneficent position Britain has won with centuries of heroism and achievement, by allowing Britain to be treated where her interests were vitally affected as if she didn't count in the Cabinet of Nations, then I say emphatically that peace at that price would be a humiliation intolerable for a great country like ours to endure.",
+          caption:
+            "David Lloyd George addressing the annual Bankers' Dinner at Mansion House, delivering an unambiguous public warning to Germany following the dispatch of the gunboat Panther to Agadir.",
+          citation: 'The Times (London), 22 July 1911, p. 7; Hansard Parliamentary Debates.',
+          context:
+            "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+          hinge_question:
+            "Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+          question_badge: 'Reliability & Provenance',
+          question:
+            "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
+          enquiry_question:
+            "What makes Lloyd George's Mansion House speech particularly significant as evidence of British foreign policy in 1911?",
+          model_answer:
+            'The speech is exceptionally significant because Lloyd George was a leading radical politician who had previously opposed war; his firm warning demonstrated that the entire British Cabinet was unified in standing militarily with France against German intimidation.',
+          discussion_ideas: [
+            'Cabinet solidarity: Ended German hopes that Liberal internal divisions would prevent British action.',
+            'Deterrence signaling: Clearly staked British prestige on opposing unilateral German expansion in the Atlantic.',
+            'German domestic backlash: German nationalists felt publicly insulted and demanded accelerated naval construction.',
+          ],
+          source_context:
+            "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+          teacher_notes: {
+            source_context:
+              "During the Second Moroccan Crisis (1911), Chancellor David Lloyd George—previously regarded as a pacifist-leaning Radical—delivered a blistering public warning that Britain would fight rather than allow Germany to bully France or threaten maritime routes. **Hinge Question:** Why was Lloyd George's Mansion House speech a decisive psychological turning point in the road to the Great War?",
+          },
+          id: 'gw_l2_src_e',
+          src: '',
+          image: '',
         },
       ],
     },
@@ -2354,9 +2534,78 @@ const great_war_data = {
           text: '<span class="para-ref">[3.1]</span> For Great Britain, naval supremacy was essential for national survival. As an island nation, Britain could not feed its people without ocean imports. By 1900, Britain imported four-fifths of its wheat and meat on merchant ships. If enemy battleships cut these supply routes, Britain would starve within six weeks. The Royal Navy also defended a global empire of four hundred million subjects.<br><br><span class="para-ref">[3.2]</span> In the <strong>Naval Defence Act of 1889</strong>, Britain established the <strong>Two-Power Standard</strong>. This law required the Royal Navy to be as large as the world\'s next two biggest navies combined (then France and Russia). British leaders believed that unmatched sea power was the best way to prevent continental wars.',
           source: {
             letter: 'A',
+            id: 'gw_l3_src_a',
             type: 'written',
             title:
-              'Source A (German Imperial Legislation): The Second German Naval Law (Flottengesetz), Preamble (14 June 1900)',
+              'Source A (Statute Law): The Naval Defence Act 1889 (The Two-Power Standard, 52 & 53 Vict. c. 8)',
+            context:
+              'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+            hinge_question:
+              'Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+            text: '“For the safety of the United Kingdom, the protection of commerce, and the security of the colonies, it is expedient to make provisions for building and equipping seventy ships of war... The standard of naval strength which this nation must invariably maintain is that the battle fleet of the Royal Navy should at least be equal to the combined strength of any two of the next strongest naval powers in the world.”',
+            caption:
+              'Source A: Extract from the preamble of the Naval Defence Act 1889 formalising the British Two-Power Standard.',
+            question_badge: 'Strategic Doctrine',
+            question:
+              'According to the 1889 Act, why was the Royal Navy required to match the strength of the next two largest navies combined?',
+            enquiry_question:
+              'According to the 1889 Act, why was the Royal Navy required to match the strength of the next two largest navies combined?',
+            model_answer:
+              'The Act stated that maintaining a fleet equal to the next two largest navies was essential to protect Britain from invasion, secure its worldwide merchant trade routes, and protect its overseas empire.',
+            source_context:
+              'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+            teacher_notes: {
+              source_context:
+                'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+            },
+            src: '',
+            image: '',
+          },
+          sources: [
+            {
+              letter: 'A',
+              id: 'gw_l3_src_a',
+              type: 'written',
+              title:
+                'Source A (Statute Law): The Naval Defence Act 1889 (The Two-Power Standard, 52 & 53 Vict. c. 8)',
+              context:
+                'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+              hinge_question:
+                'Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+              text: '“For the safety of the United Kingdom, the protection of commerce, and the security of the colonies, it is expedient to make provisions for building and equipping seventy ships of war... The standard of naval strength which this nation must invariably maintain is that the battle fleet of the Royal Navy should at least be equal to the combined strength of any two of the next strongest naval powers in the world.”',
+              caption:
+                'Source A: Extract from the preamble of the Naval Defence Act 1889 formalising the British Two-Power Standard.',
+              question_badge: 'Strategic Doctrine',
+              question:
+                'According to the 1889 Act, why was the Royal Navy required to match the strength of the next two largest navies combined?',
+              enquiry_question:
+                'According to the 1889 Act, why was the Royal Navy required to match the strength of the next two largest navies combined?',
+              model_answer:
+                'The Act stated that maintaining a fleet equal to the next two largest navies was essential to protect Britain from invasion, secure its worldwide merchant trade routes, and protect its overseas empire.',
+              source_context:
+                'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+              teacher_notes: {
+                source_context:
+                  'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+              },
+              src: '',
+              image: '',
+            },
+          ],
+        },
+        {
+          act: 2,
+          title: 'Admiral von Tirpitz, German Naval Laws & "Risk Theory" (1898–1900)',
+          text: '<span class="para-ref">[3.2]</span> In 1897, Kaiser Wilhelm II appointed <strong>Admiral Alfred von Tirpitz</strong> to run the Imperial Navy. Tirpitz believed Germany could not become a world empire without a powerful battlefleet. In 1898 and 1900, Tirpitz passed the famous <strong>German Naval Laws</strong> through the Reichstag, funding dozens of battleships for the new <strong>High Seas Fleet</strong>.<br><br><span class="para-ref">[3.3]</span> Tirpitz justified this cost using his <strong>Risk Theory (Risikotheorie)</strong>. Britain\'s navy was scattered around the globe protecting colonies. Germany would instead concentrate its fleet across the North Sea in ports like Wilhelmshaven and Kiel. Tirpitz argued that Britain would not risk a battle because heavy losses would ruin its naval supremacy over rivals. Tirpitz expected Britain to give in to German colonial demands. It was a disastrous miscalculation.',
+          image: '/units/great_war/assets/was_dreadnought_blueprint.png',
+          image_alt: 'Technical blueprint and cross-section schematic of HMS Dreadnought (1906)',
+          caption:
+            'Admiralty architectural blueprint showing the revolutionary all-big-gun centerline layout and Parsons steam-turbine arrangement of HMS Dreadnought.',
+          source: {
+            letter: 'B',
+            type: 'written',
+            title:
+              'Source B (German Imperial Legislation): The Second German Naval Law (Flottengesetz), Preamble (1900)',
             text: "To protect Germany's sea trade and colonies, there is only one means: Germany must have a battle fleet so strong that even for the adversary with the greatest sea power [Great Britain], a war against it would involve such perils as to imperil the position of that Power as a world power... It is not necessary for this purpose that the German battle fleet should be as strong as that of the greatest sea power at all times, because the greatest sea power will generally not be in a position to concentrate all of its forces against us.",
             caption:
               "Official preamble to the Second German Naval Law drafted by State Secretary Alfred von Tirpitz, defining Germany's strategic 'Risk Theory' (Risikogedanke).",
@@ -2377,13 +2626,22 @@ const great_war_data = {
               'Strategic delusion: Underestimated British willingness to concentrate its global fleets in the North Sea.',
               'Arms race catalyst: Triggered immediate British counter-construction rather than intimidation.',
             ],
+            source_context:
+              "Under Admiral Alfred von Tirpitz, Germany passed a series of Naval Laws aiming to build a battle fleet so powerful that Britain would not dare challenge it without risking its own naval supremacy. This 'Risk Theory' directly threatened Britain's national security. **Hinge Question:** Why did Germany's 'Risk Theory' backfire catastrophically by pushing Britain to abandon its policy of 'splendid isolation'?",
+            teacher_notes: {
+              source_context:
+                "Under Admiral Alfred von Tirpitz, Germany passed a series of Naval Laws aiming to build a battle fleet so powerful that Britain would not dare challenge it without risking its own naval supremacy. This 'Risk Theory' directly threatened Britain's national security. **Hinge Question:** Why did Germany's 'Risk Theory' backfire catastrophically by pushing Britain to abandon its policy of 'splendid isolation'?",
+            },
+            id: 'gw_l3_src_b',
+            src: '',
+            image: '',
           },
           sources: [
             {
-              letter: 'A',
+              letter: 'B',
               type: 'written',
               title:
-                'Source A (German Imperial Legislation): The Second German Naval Law (Flottengesetz), Preamble (14 June 1900)',
+                'Source B (German Imperial Legislation): The Second German Naval Law (Flottengesetz), Preamble (1900)',
               text: "To protect Germany's sea trade and colonies, there is only one means: Germany must have a battle fleet so strong that even for the adversary with the greatest sea power [Great Britain], a war against it would involve such perils as to imperil the position of that Power as a world power... It is not necessary for this purpose that the German battle fleet should be as strong as that of the greatest sea power at all times, because the greatest sea power will generally not be in a position to concentrate all of its forces against us.",
               caption:
                 "Official preamble to the Second German Naval Law drafted by State Secretary Alfred von Tirpitz, defining Germany's strategic 'Risk Theory' (Risikogedanke).",
@@ -2405,22 +2663,27 @@ const great_war_data = {
                 'Strategic delusion: Underestimated British willingness to concentrate its global fleets in the North Sea.',
                 'Arms race catalyst: Triggered immediate British counter-construction rather than intimidation.',
               ],
+              source_context:
+                "Under Admiral Alfred von Tirpitz, Germany passed a series of Naval Laws aiming to build a battle fleet so powerful that Britain would not dare challenge it without risking its own naval supremacy. This 'Risk Theory' directly threatened Britain's national security. **Hinge Question:** Why did Germany's 'Risk Theory' backfire catastrophically by pushing Britain to abandon its policy of 'splendid isolation'?",
+              teacher_notes: {
+                source_context:
+                  "Under Admiral Alfred von Tirpitz, Germany passed a series of Naval Laws aiming to build a battle fleet so powerful that Britain would not dare challenge it without risking its own naval supremacy. This 'Risk Theory' directly threatened Britain's national security. **Hinge Question:** Why did Germany's 'Risk Theory' backfire catastrophically by pushing Britain to abandon its policy of 'splendid isolation'?",
+              },
+              id: 'gw_l3_src_b',
+              src: '',
+              image: '',
             },
           ],
         },
         {
-          act: 2,
-          title: 'Admiral von Tirpitz, German Naval Laws & "Risk Theory" (1898–1900)',
-          text: '<span class="para-ref">[3.2]</span> In 1897, Kaiser Wilhelm II appointed <strong>Admiral Alfred von Tirpitz</strong> to run the Imperial Navy. Tirpitz believed Germany could not become a world empire without a powerful battlefleet. In 1898 and 1900, Tirpitz passed the famous <strong>German Naval Laws</strong> through the Reichstag, funding dozens of battleships for the new <strong>High Seas Fleet</strong>.<br><br><span class="para-ref">[3.3]</span> Tirpitz justified this cost using his <strong>Risk Theory (Risikotheorie)</strong>. Britain\'s navy was scattered around the globe protecting colonies. Germany would instead concentrate its fleet across the North Sea in ports like Wilhelmshaven and Kiel. Tirpitz argued that Britain would not risk a battle because heavy losses would ruin its naval supremacy over rivals. Tirpitz expected Britain to give in to German colonial demands. It was a disastrous miscalculation.',
-          image: '/units/great_war/assets/was_dreadnought_blueprint.png',
-          image_alt: 'Technical blueprint and cross-section schematic of HMS Dreadnought (1906)',
-          caption:
-            'Admiralty architectural blueprint showing the revolutionary all-big-gun centerline layout and Parsons steam-turbine arrangement of HMS Dreadnought.',
+          act: 3,
+          title: 'The Dreadnought Revolution: All-Big-Gun Technology (February 1906)',
+          text: '<span class="para-ref">[3.3]</span> Britain met the German challenge under First Sea Lord <strong>Admiral Sir John "Jackie" Fisher</strong>. Fisher recognized that older warships with mixed gun sizes were outdated. Building in secret at Portsmouth Dockyard, Fisher launched <strong>HMS Dreadnought</strong> in February 1906.<br><br><span class="para-ref">[3.4]</span> <em>Dreadnought</em> transformed naval warfare. It was the world\'s first "all-big-gun" battleship, armed with ten 12-inch heavy guns that fired 850-pound shells over eight miles. Powered by modern steam turbines, it cruised at 21 knots, faster than any battleship afloat. However, <em>Dreadnought</em> created a serious problem for Britain. By making older ships obsolete, it erased Britain\'s big lead of fifty pre-dreadnoughts to Germany\'s twenty. The naval race was reset to zero: <strong>Britain 1, Germany 0</strong>. Germany could now build dreadnoughts of its own.',
           source: {
-            letter: 'B',
+            letter: 'C',
             type: 'written',
             title:
-              'Source B (Confidential Naval Memorandum): Admiral Sir John Fisher, First Sea Lord, Memorandum to the Admiralty Board (December 1904)',
+              'Source C (Confidential Memorandum): Admiral Sir John Fisher, Memorandum to the Admiralty Board (1904)',
             text: 'The sole purpose of the British Navy is to strike the enemy instantly and decisively. Our only probable enemy is Germany. Germany keeps her whole fleet concentrated within a few hours of England. We must keep a fleet twice as powerful concentrated within a few hours of Germany... My new design of battleship [HMS Dreadnought] will be armed only with twelve-inch guns and driven by turbine engines. It will out-range and out-steam any warship floating, rendering every foreign navy obsolescent at a single stroke.',
             caption:
               "Confidential policy paper submitted by Admiral Sir John 'Jackie' Fisher to the British Board of Admiralty, detailing the strategic justification for building HMS Dreadnought.",
@@ -2441,13 +2704,22 @@ const great_war_data = {
               "Technological radicalism: Willing to render Britain's own pre-dreadnought fleet obsolete to stay ahead.",
               'Global fleet recall: Ended the historic practice of scattering warships across distant colonial stations.',
             ],
+            source_context:
+              "Upon becoming First Sea Lord in 1904, Admiral Fisher reorganized the entire Royal Navy, recalling battleships from across the empire to concentrate overwhelming force in home waters against the German High Seas Fleet. **Hinge Question:** How did Fisher's decision to build Dreadnought paradoxically erase Britain's massive numerical advantage in older battleships?",
+            teacher_notes: {
+              source_context:
+                "Upon becoming First Sea Lord in 1904, Admiral Fisher reorganized the entire Royal Navy, recalling battleships from across the empire to concentrate overwhelming force in home waters against the German High Seas Fleet. **Hinge Question:** How did Fisher's decision to build Dreadnought paradoxically erase Britain's massive numerical advantage in older battleships?",
+            },
+            id: 'gw_l3_src_c',
+            src: '',
+            image: '',
           },
           sources: [
             {
-              letter: 'B',
+              letter: 'C',
               type: 'written',
               title:
-                'Source B (Confidential Naval Memorandum): Admiral Sir John Fisher, First Sea Lord, Memorandum to the Admiralty Board (December 1904)',
+                'Source C (Confidential Memorandum): Admiral Sir John Fisher, Memorandum to the Admiralty Board (1904)',
               text: 'The sole purpose of the British Navy is to strike the enemy instantly and decisively. Our only probable enemy is Germany. Germany keeps her whole fleet concentrated within a few hours of England. We must keep a fleet twice as powerful concentrated within a few hours of Germany... My new design of battleship [HMS Dreadnought] will be armed only with twelve-inch guns and driven by turbine engines. It will out-range and out-steam any warship floating, rendering every foreign navy obsolescent at a single stroke.',
               caption:
                 "Confidential policy paper submitted by Admiral Sir John 'Jackie' Fisher to the British Board of Admiralty, detailing the strategic justification for building HMS Dreadnought.",
@@ -2468,67 +2740,15 @@ const great_war_data = {
                 "Technological radicalism: Willing to render Britain's own pre-dreadnought fleet obsolete to stay ahead.",
                 'Global fleet recall: Ended the historic practice of scattering warships across distant colonial stations.',
               ],
-            },
-          ],
-        },
-        {
-          act: 3,
-          title: 'The Dreadnought Revolution: All-Big-Gun Technology (February 1906)',
-          text: '<span class="para-ref">[3.3]</span> Britain met the German challenge under First Sea Lord <strong>Admiral Sir John "Jackie" Fisher</strong>. Fisher recognized that older warships with mixed gun sizes were outdated. Building in secret at Portsmouth Dockyard, Fisher launched <strong>HMS Dreadnought</strong> in February 1906.<br><br><span class="para-ref">[3.4]</span> <em>Dreadnought</em> transformed naval warfare. It was the world\'s first "all-big-gun" battleship, armed with ten 12-inch heavy guns that fired 850-pound shells over eight miles. Powered by modern steam turbines, it cruised at 21 knots, faster than any battleship afloat. However, <em>Dreadnought</em> created a serious problem for Britain. By making older ships obsolete, it erased Britain\'s big lead of fifty pre-dreadnoughts to Germany\'s twenty. The naval race was reset to zero: <strong>Britain 1, Germany 0</strong>. Germany could now build dreadnoughts of its own.',
-          source: {
-            letter: 'C',
-            type: 'written',
-            title:
-              'Source C (Public Campaign Speech): George Wyndham MP, Address Launching the Naval Slogan (March 1909)',
-            text: "We are faced with an emergency unprecedented in our national history. The German government is accelerating its naval programme in secret, laying down dreadnoughts faster than the Admiralty projected. The government proposed four new battleships; we say four is insufficient to maintain the Two-Power Standard. The nation demands security, not penny-pinching economy. We want eight, and we won't wait!",
-            caption:
-              'Speech delivered by Conservative MP George Wyndham to an Imperial Maritime League rally in London, popularizing the famous rhyming slogan that forced the Liberal government to double naval spending.',
-            citation:
-              'Hansard, House of Commons Debates (16–29 March 1909, Vol. 2, cols. 930–950); The Times, 17 March 1909.',
-            context:
-              "In 1909, fears that Germany was covertly accelerating its dreadnought building programme ignited a public panic in Britain. The slogan 'We want eight and we won't wait!' forced Prime Minister Asquith's government to authorize eight dreadnoughts in a single year. **Hinge Question:** Why did the 1909 naval panic prove that public opinion and press pressure had become decisive drivers of military spending?",
-            hinge_question:
-              'Why did the 1909 naval panic prove that public opinion and press pressure had become decisive drivers of military spending?',
-            question_badge: 'Reliability & Provenance',
-            question:
-              'What does this campaign speech demonstrate about the role of British public opinion in escalating the naval arms race?',
-            enquiry_question:
-              'What does this campaign speech demonstrate about the role of British public opinion in escalating the naval arms race?',
-            model_answer:
-              'The speech demonstrates that popular newspapers and political agitation whipped up immense public fear of German invasion, coercing the British government into funding twice as many dreadnoughts as originally budgeted.',
-            discussion_ideas: [
-              'Popular jingoism: The press and pressure groups actively stoked fear of German naval supremacy.',
-              'Political weaponisation: The opposition used national defense anxiety to attack government spending priorities.',
-              "The 'we won't wait' compromise: Winston Churchill famously noted that the Admiralty wanted six, the economists four, and they compromised on eight.",
-            ],
-          },
-          sources: [
-            {
-              letter: 'C',
-              type: 'written',
-              title:
-                'Source C (Public Campaign Speech): George Wyndham MP, Address Launching the Naval Slogan (March 1909)',
-              text: "We are faced with an emergency unprecedented in our national history. The German government is accelerating its naval programme in secret, laying down dreadnoughts faster than the Admiralty projected. The government proposed four new battleships; we say four is insufficient to maintain the Two-Power Standard. The nation demands security, not penny-pinching economy. We want eight, and we won't wait!",
-              caption:
-                'Speech delivered by Conservative MP George Wyndham to an Imperial Maritime League rally in London, popularizing the famous rhyming slogan that forced the Liberal government to double naval spending.',
-              citation:
-                'Hansard, House of Commons Debates (16–29 March 1909, Vol. 2, cols. 930–950); The Times, 17 March 1909.',
-              context:
-                "In 1909, fears that Germany was covertly accelerating its dreadnought building programme ignited a public panic in Britain. The slogan 'We want eight and we won't wait!' forced Prime Minister Asquith's government to authorize eight dreadnoughts in a single year. **Hinge Question:** Why did the 1909 naval panic prove that public opinion and press pressure had become decisive drivers of military spending?",
-              hinge_question:
-                'Why did the 1909 naval panic prove that public opinion and press pressure had become decisive drivers of military spending?',
-              question_badge: 'Reliability & Provenance',
-              question:
-                'What does this campaign speech demonstrate about the role of British public opinion in escalating the naval arms race?',
-              enquiry_question:
-                'What does this campaign speech demonstrate about the role of British public opinion in escalating the naval arms race?',
-              model_answer:
-                'The speech demonstrates that popular newspapers and political agitation whipped up immense public fear of German invasion, coercing the British government into funding twice as many dreadnoughts as originally budgeted.',
-              discussion_ideas: [
-                'Popular jingoism: The press and pressure groups actively stoked fear of German naval supremacy.',
-                'Political weaponisation: The opposition used national defense anxiety to attack government spending priorities.',
-                "The 'we won't wait' compromise: Winston Churchill famously noted that the Admiralty wanted six, the economists four, and they compromised on eight.",
-              ],
+              source_context:
+                "Upon becoming First Sea Lord in 1904, Admiral Fisher reorganized the entire Royal Navy, recalling battleships from across the empire to concentrate overwhelming force in home waters against the German High Seas Fleet. **Hinge Question:** How did Fisher's decision to build Dreadnought paradoxically erase Britain's massive numerical advantage in older battleships?",
+              teacher_notes: {
+                source_context:
+                  "Upon becoming First Sea Lord in 1904, Admiral Fisher reorganized the entire Royal Navy, recalling battleships from across the empire to concentrate overwhelming force in home waters against the German High Seas Fleet. **Hinge Question:** How did Fisher's decision to build Dreadnought paradoxically erase Britain's massive numerical advantage in older battleships?",
+              },
+              id: 'gw_l3_src_c',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -2545,7 +2765,7 @@ const great_war_data = {
             letter: 'D',
             type: 'visual',
             title:
-              "Source D (Primary Political Cartoon): L. M. Glackens, 'No Limit' (Puck Magazine, September 1909)",
+              'Source D (Political Cartoon): L. M. Glackens, "No Limit: A 1909 Cartoon on the Naval Race" (Puck, 1909)',
             image: '/units/great_war/assets/Naval-race-1909.jpg',
             src: '/units/great_war/assets/Naval-race-1909.jpg',
             is_artwork: true,
@@ -2569,13 +2789,20 @@ const great_war_data = {
               'Psychological escalation: Depicting nations as poker players highlights how pride, bluff, and fear drove building programmes.',
               'Financial exhaustion: Shows the immense stacks of national wealth being gambled away on warships.',
             ],
+            source_context:
+              "By 1909, the dreadnought revolution had spread far beyond Britain and Germany into a global arms competition involving the United States and the Empire of Japan. American satirical illustrator L. M. Glackens depicted the Great Powers gathered around an uncapped poker table ('No Limit'), recklessly betting cruisers and dreadnoughts in a spiraling cycle of bluff and escalation where no player could afford to fold. **Hinge Question:** How does the poker metaphor in Glackens's cartoon explain why nations find it psychologically and strategically impossible to stop an arms race once it begins?",
+            teacher_notes: {
+              source_context:
+                "By 1909, the dreadnought revolution had spread far beyond Britain and Germany into a global arms competition involving the United States and the Empire of Japan. American satirical illustrator L. M. Glackens depicted the Great Powers gathered around an uncapped poker table ('No Limit'), recklessly betting cruisers and dreadnoughts in a spiraling cycle of bluff and escalation where no player could afford to fold. **Hinge Question:** How does the poker metaphor in Glackens's cartoon explain why nations find it psychologically and strategically impossible to stop an arms race once it begins?",
+            },
+            id: 'gw_l3_src_d',
           },
           sources: [
             {
               letter: 'D',
               type: 'visual',
               title:
-                "Source D (Primary Political Cartoon): L. M. Glackens, 'No Limit' (Puck Magazine, September 1909)",
+                'Source D (Political Cartoon): L. M. Glackens, "No Limit: A 1909 Cartoon on the Naval Race" (Puck, 1909)',
               image: '/units/great_war/assets/Naval-race-1909.jpg',
               src: '/units/great_war/assets/Naval-race-1909.jpg',
               is_artwork: true,
@@ -2599,6 +2826,13 @@ const great_war_data = {
                 'Psychological escalation: Depicting nations as poker players highlights how pride, bluff, and fear drove building programmes.',
                 'Financial exhaustion: Shows the immense stacks of national wealth being gambled away on warships.',
               ],
+              source_context:
+                "By 1909, the dreadnought revolution had spread far beyond Britain and Germany into a global arms competition involving the United States and the Empire of Japan. American satirical illustrator L. M. Glackens depicted the Great Powers gathered around an uncapped poker table ('No Limit'), recklessly betting cruisers and dreadnoughts in a spiraling cycle of bluff and escalation where no player could afford to fold. **Hinge Question:** How does the poker metaphor in Glackens's cartoon explain why nations find it psychologically and strategically impossible to stop an arms race once it begins?",
+              teacher_notes: {
+                source_context:
+                  "By 1909, the dreadnought revolution had spread far beyond Britain and Germany into a global arms competition involving the United States and the Empire of Japan. American satirical illustrator L. M. Glackens depicted the Great Powers gathered around an uncapped poker table ('No Limit'), recklessly betting cruisers and dreadnoughts in a spiraling cycle of bluff and escalation where no player could afford to fold. **Hinge Question:** How does the poker metaphor in Glackens's cartoon explain why nations find it psychologically and strategically impossible to stop an arms race once it begins?",
+              },
+              id: 'gw_l3_src_d',
             },
           ],
         },
@@ -2632,6 +2866,15 @@ const great_war_data = {
               'Shift in German strategy: Having lost the naval race, Berlin diverted funds back to expanding its land army in 1912–1913.',
               'Enduring hostility: The naval rivalry permanently destroyed British trust in German intentions.',
             ],
+            source_context:
+              "Despite massive German financial sacrifices and Tirpitz's 'Risk Theory', Britain's overwhelming industrial shipbuilding capacity allowed the Royal Navy to win the naval race decisively, entering August 1914 with a crushing 29-to-17 dreadnought superiority in the North Sea. **Hinge Question:** If Britain won the naval arms race so decisively by 1914, why did the race nevertheless make a European war far more likely?",
+            teacher_notes: {
+              source_context:
+                "Despite massive German financial sacrifices and Tirpitz's 'Risk Theory', Britain's overwhelming industrial shipbuilding capacity allowed the Royal Navy to win the naval race decisively, entering August 1914 with a crushing 29-to-17 dreadnought superiority in the North Sea. **Hinge Question:** If Britain won the naval arms race so decisively by 1914, why did the race nevertheless make a European war far more likely?",
+            },
+            id: 'gw_l3_src_e',
+            src: '',
+            image: '',
           },
           sources: [
             {
@@ -2660,6 +2903,15 @@ const great_war_data = {
                 'Shift in German strategy: Having lost the naval race, Berlin diverted funds back to expanding its land army in 1912–1913.',
                 'Enduring hostility: The naval rivalry permanently destroyed British trust in German intentions.',
               ],
+              source_context:
+                "Despite massive German financial sacrifices and Tirpitz's 'Risk Theory', Britain's overwhelming industrial shipbuilding capacity allowed the Royal Navy to win the naval race decisively, entering August 1914 with a crushing 29-to-17 dreadnought superiority in the North Sea. **Hinge Question:** If Britain won the naval arms race so decisively by 1914, why did the race nevertheless make a European war far more likely?",
+              teacher_notes: {
+                source_context:
+                  "Despite massive German financial sacrifices and Tirpitz's 'Risk Theory', Britain's overwhelming industrial shipbuilding capacity allowed the Royal Navy to win the naval race decisively, entering August 1914 with a crushing 29-to-17 dreadnought superiority in the North Sea. **Hinge Question:** If Britain won the naval arms race so decisively by 1914, why did the race nevertheless make a European war far more likely?",
+              },
+              id: 'gw_l3_src_e',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -2950,9 +3202,38 @@ const great_war_data = {
       sources: [
         {
           letter: 'A',
+          id: 'gw_l3_src_a',
           type: 'written',
           title:
-            'Source A (German Imperial Legislation): The Second German Naval Law (Flottengesetz), Preamble (14 June 1900)',
+            'Source A (Statute Law): The Naval Defence Act 1889 (The Two-Power Standard, 52 & 53 Vict. c. 8)',
+          context:
+            'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+          hinge_question:
+            'Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+          text: '“For the safety of the United Kingdom, the protection of commerce, and the security of the colonies, it is expedient to make provisions for building and equipping seventy ships of war... The standard of naval strength which this nation must invariably maintain is that the battle fleet of the Royal Navy should at least be equal to the combined strength of any two of the next strongest naval powers in the world.”',
+          caption:
+            'Source A: Extract from the preamble of the Naval Defence Act 1889 formalising the British Two-Power Standard.',
+          question_badge: 'Strategic Doctrine',
+          question:
+            'According to the 1889 Act, why was the Royal Navy required to match the strength of the next two largest navies combined?',
+          enquiry_question:
+            'According to the 1889 Act, why was the Royal Navy required to match the strength of the next two largest navies combined?',
+          model_answer:
+            'The Act stated that maintaining a fleet equal to the next two largest navies was essential to protect Britain from invasion, secure its worldwide merchant trade routes, and protect its overseas empire.',
+          source_context:
+            'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+          teacher_notes: {
+            source_context:
+              'Passed in 1889, the Naval Defence Act legally committed Great Britain to maintain a Royal Navy battle fleet equal to or greater than the combined naval strength of the next two largest navies in the world (France and Russia). **Hinge Question:** Why did Great Britain consider maintaining a battlefleet twice the size of rival nations to be an existential necessity rather than an act of aggression?',
+          },
+          src: '',
+          image: '',
+        },
+        {
+          letter: 'B',
+          type: 'written',
+          title:
+            'Source B (German Imperial Legislation): The Second German Naval Law (Flottengesetz), Preamble (1900)',
           text: "To protect Germany's sea trade and colonies, there is only one means: Germany must have a battle fleet so strong that even for the adversary with the greatest sea power [Great Britain], a war against it would involve such perils as to imperil the position of that Power as a world power... It is not necessary for this purpose that the German battle fleet should be as strong as that of the greatest sea power at all times, because the greatest sea power will generally not be in a position to concentrate all of its forces against us.",
           caption:
             "Official preamble to the Second German Naval Law drafted by State Secretary Alfred von Tirpitz, defining Germany's strategic 'Risk Theory' (Risikogedanke).",
@@ -2979,12 +3260,15 @@ const great_war_data = {
             source_context:
               "Under Admiral Alfred von Tirpitz, Germany passed a series of Naval Laws aiming to build a battle fleet so powerful that Britain would not dare challenge it without risking its own naval supremacy. This 'Risk Theory' directly threatened Britain's national security. **Hinge Question:** Why did Germany's 'Risk Theory' backfire catastrophically by pushing Britain to abandon its policy of 'splendid isolation'?",
           },
+          id: 'gw_l3_src_b',
+          src: '',
+          image: '',
         },
         {
-          letter: 'B',
+          letter: 'C',
           type: 'written',
           title:
-            'Source B (Confidential Naval Memorandum): Admiral Sir John Fisher, First Sea Lord, Memorandum to the Admiralty Board (December 1904)',
+            'Source C (Confidential Memorandum): Admiral Sir John Fisher, Memorandum to the Admiralty Board (1904)',
           text: 'The sole purpose of the British Navy is to strike the enemy instantly and decisively. Our only probable enemy is Germany. Germany keeps her whole fleet concentrated within a few hours of England. We must keep a fleet twice as powerful concentrated within a few hours of Germany... My new design of battleship [HMS Dreadnought] will be armed only with twelve-inch guns and driven by turbine engines. It will out-range and out-steam any warship floating, rendering every foreign navy obsolescent at a single stroke.',
           caption:
             "Confidential policy paper submitted by Admiral Sir John 'Jackie' Fisher to the British Board of Admiralty, detailing the strategic justification for building HMS Dreadnought.",
@@ -3011,45 +3295,15 @@ const great_war_data = {
             source_context:
               "Upon becoming First Sea Lord in 1904, Admiral Fisher reorganized the entire Royal Navy, recalling battleships from across the empire to concentrate overwhelming force in home waters against the German High Seas Fleet. **Hinge Question:** How did Fisher's decision to build Dreadnought paradoxically erase Britain's massive numerical advantage in older battleships?",
           },
-        },
-        {
-          letter: 'C',
-          type: 'written',
-          title:
-            'Source C (Public Campaign Speech): George Wyndham MP, Address Launching the Naval Slogan (March 1909)',
-          text: "We are faced with an emergency unprecedented in our national history. The German government is accelerating its naval programme in secret, laying down dreadnoughts faster than the Admiralty projected. The government proposed four new battleships; we say four is insufficient to maintain the Two-Power Standard. The nation demands security, not penny-pinching economy. We want eight, and we won't wait!",
-          caption:
-            'Speech delivered by Conservative MP George Wyndham to an Imperial Maritime League rally in London, popularizing the famous rhyming slogan that forced the Liberal government to double naval spending.',
-          citation:
-            'Hansard, House of Commons Debates (16–29 March 1909, Vol. 2, cols. 930–950); The Times, 17 March 1909.',
-          context:
-            "In 1909, fears that Germany was covertly accelerating its dreadnought building programme ignited a public panic in Britain. The slogan 'We want eight and we won't wait!' forced Prime Minister Asquith's government to authorize eight dreadnoughts in a single year. **Hinge Question:** Why did the 1909 naval panic prove that public opinion and press pressure had become decisive drivers of military spending?",
-          hinge_question:
-            'Why did the 1909 naval panic prove that public opinion and press pressure had become decisive drivers of military spending?',
-          question_badge: 'Reliability & Provenance',
-          question:
-            'What does this campaign speech demonstrate about the role of British public opinion in escalating the naval arms race?',
-          enquiry_question:
-            'What does this campaign speech demonstrate about the role of British public opinion in escalating the naval arms race?',
-          model_answer:
-            'The speech demonstrates that popular newspapers and political agitation whipped up immense public fear of German invasion, coercing the British government into funding twice as many dreadnoughts as originally budgeted.',
-          discussion_ideas: [
-            'Popular jingoism: The press and pressure groups actively stoked fear of German naval supremacy.',
-            'Political weaponisation: The opposition used national defense anxiety to attack government spending priorities.',
-            "The 'we won't wait' compromise: Winston Churchill famously noted that the Admiralty wanted six, the economists four, and they compromised on eight.",
-          ],
-          source_context:
-            "In 1909, fears that Germany was covertly accelerating its dreadnought building programme ignited a public panic in Britain. The slogan 'We want eight and we won't wait!' forced Prime Minister Asquith's government to authorize eight dreadnoughts in a single year. **Hinge Question:** Why did the 1909 naval panic prove that public opinion and press pressure had become decisive drivers of military spending?",
-          teacher_notes: {
-            source_context:
-              "In 1909, fears that Germany was covertly accelerating its dreadnought building programme ignited a public panic in Britain. The slogan 'We want eight and we won't wait!' forced Prime Minister Asquith's government to authorize eight dreadnoughts in a single year. **Hinge Question:** Why did the 1909 naval panic prove that public opinion and press pressure had become decisive drivers of military spending?",
-          },
+          id: 'gw_l3_src_c',
+          src: '',
+          image: '',
         },
         {
           letter: 'D',
           type: 'visual',
           title:
-            "Source D (Primary Political Cartoon): L. M. Glackens, 'No Limit' (Puck Magazine, September 1909)",
+            'Source D (Political Cartoon): L. M. Glackens, "No Limit: A 1909 Cartoon on the Naval Race" (Puck, 1909)',
           image: '/units/great_war/assets/Naval-race-1909.jpg',
           src: '/units/great_war/assets/Naval-race-1909.jpg',
           is_artwork: true,
@@ -3079,6 +3333,7 @@ const great_war_data = {
             source_context:
               "By 1909, the dreadnought revolution had spread far beyond Britain and Germany into a global arms competition involving the United States and the Empire of Japan. American satirical illustrator L. M. Glackens depicted the Great Powers gathered around an uncapped poker table ('No Limit'), recklessly betting cruisers and dreadnoughts in a spiraling cycle of bluff and escalation where no player could afford to fold. **Hinge Question:** How does the poker metaphor in Glackens's cartoon explain why nations find it psychologically and strategically impossible to stop an arms race once it begins?",
           },
+          id: 'gw_l3_src_d',
         },
         {
           letter: 'E',
@@ -3112,6 +3367,9 @@ const great_war_data = {
             source_context:
               "Despite massive German financial sacrifices and Tirpitz's 'Risk Theory', Britain's overwhelming industrial shipbuilding capacity allowed the Royal Navy to win the naval race decisively, entering August 1914 with a crushing 29-to-17 dreadnought superiority in the North Sea. **Hinge Question:** If Britain won the naval arms race so decisively by 1914, why did the race nevertheless make a European war far more likely?",
           },
+          id: 'gw_l3_src_e',
+          src: '',
+          image: '',
         },
       ],
     },
@@ -3389,7 +3647,7 @@ const great_war_data = {
             letter: 'A',
             type: 'written',
             title:
-              'Source A (State Treaty): The Dual Alliance Between Germany and Austria-Hungary, Articles I & II (7 October 1879)',
+              'Source A (State Treaty): The Dual Alliance Between Germany and Austria-Hungary (1879)',
             text: 'Article I: Should, contrary to their hope, and against the sincere wish of the two High Contracting Parties, one of the two Empires be attacked by Russia, the High Contracting Parties are bound to come to the assistance one of the other with the whole war strength of their Empires, and accordingly only to conclude peace together and upon mutual agreement.<br><br>Article II: Should one of the High Contracting Parties be attacked by another Power [France], the other High Contracting Party binds itself hereby, not only not to stand by the side of the aggressor, but to maintain at least a benevolent neutrality toward its fellow Contracting Party.',
             caption:
               'Official treaty text signed in Vienna by Prince Bismarck and Count Andrássy, forming the foundational military pact of the Central Powers.',
@@ -3410,13 +3668,22 @@ const great_war_data = {
               'Austrian dependence: Tied Germany to the survival of a multi-ethnic, disintegrating empire.',
               'Rigidity of alliances: Locked Europe into automatic military obligations that limited diplomatic flexibility.',
             ],
+            source_context:
+              "The 1879 Dual Alliance bound Germany and Austria-Hungary in a mutual defence pact against Russia. While Bismarck intended the pact to restrain Austrian adventurism in the Balkans, by 1914 it functioned as a blank cheque that dragged Germany into Austria's local disputes. **Hinge Question:** Why did the Dual Alliance become dangerous to European peace once German chancellors stopped restraining Austrian foreign policy?",
+            teacher_notes: {
+              source_context:
+                "The 1879 Dual Alliance bound Germany and Austria-Hungary in a mutual defence pact against Russia. While Bismarck intended the pact to restrain Austrian adventurism in the Balkans, by 1914 it functioned as a blank cheque that dragged Germany into Austria's local disputes. **Hinge Question:** Why did the Dual Alliance become dangerous to European peace once German chancellors stopped restraining Austrian foreign policy?",
+            },
+            id: 'gw_l4_src_a',
+            src: '',
+            image: '',
           },
           sources: [
             {
               letter: 'A',
               type: 'written',
               title:
-                'Source A (State Treaty): The Dual Alliance Between Germany and Austria-Hungary, Articles I & II (7 October 1879)',
+                'Source A (State Treaty): The Dual Alliance Between Germany and Austria-Hungary (1879)',
               text: 'Article I: Should, contrary to their hope, and against the sincere wish of the two High Contracting Parties, one of the two Empires be attacked by Russia, the High Contracting Parties are bound to come to the assistance one of the other with the whole war strength of their Empires, and accordingly only to conclude peace together and upon mutual agreement.<br><br>Article II: Should one of the High Contracting Parties be attacked by another Power [France], the other High Contracting Party binds itself hereby, not only not to stand by the side of the aggressor, but to maintain at least a benevolent neutrality toward its fellow Contracting Party.',
               caption:
                 'Official treaty text signed in Vienna by Prince Bismarck and Count Andrássy, forming the foundational military pact of the Central Powers.',
@@ -3437,6 +3704,15 @@ const great_war_data = {
                 'Austrian dependence: Tied Germany to the survival of a multi-ethnic, disintegrating empire.',
                 'Rigidity of alliances: Locked Europe into automatic military obligations that limited diplomatic flexibility.',
               ],
+              source_context:
+                "The 1879 Dual Alliance bound Germany and Austria-Hungary in a mutual defence pact against Russia. While Bismarck intended the pact to restrain Austrian adventurism in the Balkans, by 1914 it functioned as a blank cheque that dragged Germany into Austria's local disputes. **Hinge Question:** Why did the Dual Alliance become dangerous to European peace once German chancellors stopped restraining Austrian foreign policy?",
+              teacher_notes: {
+                source_context:
+                  "The 1879 Dual Alliance bound Germany and Austria-Hungary in a mutual defence pact against Russia. While Bismarck intended the pact to restrain Austrian adventurism in the Balkans, by 1914 it functioned as a blank cheque that dragged Germany into Austria's local disputes. **Hinge Question:** Why did the Dual Alliance become dangerous to European peace once German chancellors stopped restraining Austrian foreign policy?",
+              },
+              id: 'gw_l4_src_a',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -3453,7 +3729,7 @@ const great_war_data = {
             letter: 'B',
             type: 'written',
             title:
-              'Source B (Secret Military Convention): The Franco-Russian Military Convention, Articles 1 & 2 (17 August 1892 / January 1894)',
+              'Source B (Secret Military Convention): The Franco-Russian Military Convention (1892/1894)',
             text: '1. If France is attacked by Germany, or by Italy supported by Germany, Russia shall employ all her available forces to attack Germany. If Russia is attacked by Germany, or by Austria supported by Germany, France shall employ all her available forces to attack Germany.<br><br>2. In case the forces of the Triple Alliance, or of one of the Powers belonging to it, should mobilize, France and Russia, at the first news of the event and without previous consultation, shall immediately and simultaneously mobilize the whole of their forces and deploy them as near their frontiers as possible.',
             caption:
               'Confidential military convention ratified by the Tsar of Russia and the President of the French Republic, creating the two-front encirclement Germany feared.',
@@ -3475,13 +3751,22 @@ const great_war_data = {
               'Automatic tripwire: Mobilisation was legally equated with a declaration of war.',
               'Ideological contradiction: Catholic republican France allied with Orthodox autocratic Tsarist Russia purely out of anti-German strategic necessity.',
             ],
+            source_context:
+              "After Kaiser Wilhelm II severed ties with Russia in 1890, democratic France and autocratic Tsarist Russia signed a mutual defense pact. Article 2 was particularly lethal: it specified that mere mobilization by the Triple Alliance would trigger immediate, automatic total mobilization by France and Russia without further discussion. **Hinge Question:** Why did Article 2's clause making mobilization automatic ensure that a diplomatic crisis could not be halted once troops began moving?",
+            teacher_notes: {
+              source_context:
+                "After Kaiser Wilhelm II severed ties with Russia in 1890, democratic France and autocratic Tsarist Russia signed a mutual defense pact. Article 2 was particularly lethal: it specified that mere mobilization by the Triple Alliance would trigger immediate, automatic total mobilization by France and Russia without further discussion. **Hinge Question:** Why did Article 2's clause making mobilization automatic ensure that a diplomatic crisis could not be halted once troops began moving?",
+            },
+            id: 'gw_l4_src_b',
+            src: '',
+            image: '',
           },
           sources: [
             {
               letter: 'B',
               type: 'written',
               title:
-                'Source B (Secret Military Convention): The Franco-Russian Military Convention, Articles 1 & 2 (17 August 1892 / January 1894)',
+                'Source B (Secret Military Convention): The Franco-Russian Military Convention (1892/1894)',
               text: '1. If France is attacked by Germany, or by Italy supported by Germany, Russia shall employ all her available forces to attack Germany. If Russia is attacked by Germany, or by Austria supported by Germany, France shall employ all her available forces to attack Germany.<br><br>2. In case the forces of the Triple Alliance, or of one of the Powers belonging to it, should mobilize, France and Russia, at the first news of the event and without previous consultation, shall immediately and simultaneously mobilize the whole of their forces and deploy them as near their frontiers as possible.',
               caption:
                 'Confidential military convention ratified by the Tsar of Russia and the President of the French Republic, creating the two-front encirclement Germany feared.',
@@ -3503,6 +3788,15 @@ const great_war_data = {
                 'Automatic tripwire: Mobilisation was legally equated with a declaration of war.',
                 'Ideological contradiction: Catholic republican France allied with Orthodox autocratic Tsarist Russia purely out of anti-German strategic necessity.',
               ],
+              source_context:
+                "After Kaiser Wilhelm II severed ties with Russia in 1890, democratic France and autocratic Tsarist Russia signed a mutual defense pact. Article 2 was particularly lethal: it specified that mere mobilization by the Triple Alliance would trigger immediate, automatic total mobilization by France and Russia without further discussion. **Hinge Question:** Why did Article 2's clause making mobilization automatic ensure that a diplomatic crisis could not be halted once troops began moving?",
+              teacher_notes: {
+                source_context:
+                  "After Kaiser Wilhelm II severed ties with Russia in 1890, democratic France and autocratic Tsarist Russia signed a mutual defense pact. Article 2 was particularly lethal: it specified that mere mobilization by the Triple Alliance would trigger immediate, automatic total mobilization by France and Russia without further discussion. **Hinge Question:** Why did Article 2's clause making mobilization automatic ensure that a diplomatic crisis could not be halted once troops began moving?",
+              },
+              id: 'gw_l4_src_b',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -3512,8 +3806,78 @@ const great_war_data = {
           text: '<span class="para-ref">[4.3]</span> For centuries, the <strong>Ottoman Empire</strong> ruled the Balkan peninsula. By 1900, Ottoman power was fading rapidly, earning the nickname the "Sick Man of Europe." As Turkish rule collapsed, new independent nations—Greece, Bulgaria, Romania, and <strong>Serbia</strong>—broke away. This unstable power vacuum became known as the <strong>"Balkan Powder Keg."</strong><br><br><span class="para-ref">[4.4]</span> Two rival empires competed for influence in the Balkans. Russia supported fellow Slavs and Orthodox Christians under the banner of <strong>Pan-Slavism</strong>, seeking warm-water sea routes to the Mediterranean. In contrast, Austria-Hungary feared that Slavic nationalism would tear its empire apart. Independent Serbia wanted to unite all South Slavs into a "Greater Serbia," making it Austria\'s fiercest rival.',
           source: {
             letter: 'C',
+            id: 'gw_l4_src_c',
+            type: 'written',
+            title:
+              'Source C (Imperial Proclamation): Emperor Franz Joseph, Proclamation on the Annexation of Bosnia and Herzegovina (5 October 1908)',
+            context:
+              'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+            hinge_question:
+              'Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+            text: '“We, Franz Joseph, by the grace of God Emperor of Austria... have resolved to extend our sovereign rights over Bosnia and Herzegovina. The European powers must recognize that our military occupation has brought civilization and order to these territories. We hereby incorporate Bosnia and Herzegovina into our monarchy as an integral and perpetual territory of the Austro-Hungarian crown.”',
+            caption:
+              'Source C: Proclamation of Emperor Franz Joseph annexing Bosnia-Herzegovina, igniting the 1908 Bosnian Crisis.',
+            question_badge: 'Imperial Aggression',
+            question:
+              'How did Austria-Hungary’s unilateral annexation of Bosnia and Herzegovina undermine European stability?',
+            enquiry_question:
+              'How did Austria-Hungary’s unilateral annexation of Bosnia and Herzegovina undermine European stability?',
+            model_answer:
+              'Austria-Hungary seized territory without European consent, outraging Serbia and humiliating Russia, which hardened alliance commitments and convinced Russia it could never back down in the Balkans again.',
+            source_context:
+              'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+            teacher_notes: {
+              source_context:
+                'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+            },
+            src: '',
+            image: '',
+          },
+          sources: [
+            {
+              letter: 'C',
+              id: 'gw_l4_src_c',
+              type: 'written',
+              title:
+                'Source C (Imperial Proclamation): Emperor Franz Joseph, Proclamation on the Annexation of Bosnia and Herzegovina (5 October 1908)',
+              context:
+                'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+              hinge_question:
+                'Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+              text: '“We, Franz Joseph, by the grace of God Emperor of Austria... have resolved to extend our sovereign rights over Bosnia and Herzegovina. The European powers must recognize that our military occupation has brought civilization and order to these territories. We hereby incorporate Bosnia and Herzegovina into our monarchy as an integral and perpetual territory of the Austro-Hungarian crown.”',
+              caption:
+                'Source C: Proclamation of Emperor Franz Joseph annexing Bosnia-Herzegovina, igniting the 1908 Bosnian Crisis.',
+              question_badge: 'Imperial Aggression',
+              question:
+                'How did Austria-Hungary’s unilateral annexation of Bosnia and Herzegovina undermine European stability?',
+              enquiry_question:
+                'How did Austria-Hungary’s unilateral annexation of Bosnia and Herzegovina undermine European stability?',
+              model_answer:
+                'Austria-Hungary seized territory without European consent, outraging Serbia and humiliating Russia, which hardened alliance commitments and convinced Russia it could never back down in the Balkans again.',
+              source_context:
+                'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+              teacher_notes: {
+                source_context:
+                  'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+              },
+              src: '',
+              image: '',
+            },
+          ],
+        },
+        {
+          act: 4,
+          title: 'The 1908 Bosnian Annexation Crisis & Russian Humiliation (October 1908)',
+          text: '<span class="para-ref">[4.4]</span> In October 1908, the powder keg nearly exploded. Taking advantage of chaos in the Ottoman Empire, Austria-Hungary <strong>annexed the provinces of Bosnia and Herzegovina</strong>. This annexation outraged Serbia, which considered Bosnia its rightful territory. Serbian crowds protested in Belgrade, demanding war.<br><br><span class="para-ref">[4.5]</span> Russia supported Serbia and prepared its army. However, German Chancellor Bernhard von Bülow intervened. In March 1909, Germany delivered an ultimatum: Russia must accept the annexation, or face war with Germany and Austria. Still recovering from its 1905 defeat by Japan, Russia could not fight. Tsar Nicholas II backed down and forced Serbia to accept Austrian rule. The humiliation was painful: Russia began rapid military rearmament and resolved never to surrender in the Balkans again.',
+          image: '/units/great_war/assets/balkans_1914_simple_map.png',
+          image_alt:
+            'Cartographic survey of the Balkan Peninsula showing territorial changes following the Balkan Wars of 1912–1913',
+          caption:
+            'The Balkan Peninsula in 1914 following the Balkan Wars, showing an expanded Serbia bordering Austro-Hungarian Bosnia-Herzegovina.',
+          source: {
+            letter: 'D',
             type: 'visual',
-            title: 'Source C (Primary Political Cartoon): Punch, The Boiling Point (October 1912)',
+            title: 'Source D (Political Cartoon): "The Boiling Point" (Punch, October 1912)',
             image: '/units/great_war/assets/was_boiling_point.png',
             src: '/units/great_war/assets/was_boiling_point.png',
             is_artwork: true,
@@ -3536,13 +3900,19 @@ const great_war_data = {
               'Collective vulnerability: All five leaders are precariously balanced on the cauldron together.',
               'Foreshadowing Sarajevo: Directly presaged how a spark in Bosnia in 1914 would finally blow the lid off European peace.',
             ],
+            source_context:
+              "The First Balkan War (1912) broke out when the Balkan League attacked the decaying Ottoman Empire. The cartoon illustrates how the violent nationalist passions of the Balkans threatened to boil over and engulf the Great Powers, who desperately tried to contain the flames while pursuing conflicting regional ambitions. **Hinge Question:** Why was the metaphor of a 'boiling pot' an accurate description of how Balkan regional conflicts dragged the Great Powers into disaster?",
+            teacher_notes: {
+              source_context:
+                "The First Balkan War (1912) broke out when the Balkan League attacked the decaying Ottoman Empire. The cartoon illustrates how the violent nationalist passions of the Balkans threatened to boil over and engulf the Great Powers, who desperately tried to contain the flames while pursuing conflicting regional ambitions. **Hinge Question:** Why was the metaphor of a 'boiling pot' an accurate description of how Balkan regional conflicts dragged the Great Powers into disaster?",
+            },
+            id: 'gw_l4_src_d',
           },
           sources: [
             {
-              letter: 'C',
+              letter: 'D',
               type: 'visual',
-              title:
-                'Source C (Primary Political Cartoon): Punch, The Boiling Point (October 1912)',
+              title: 'Source D (Political Cartoon): "The Boiling Point" (Punch, October 1912)',
               image: '/units/great_war/assets/was_boiling_point.png',
               src: '/units/great_war/assets/was_boiling_point.png',
               is_artwork: true,
@@ -3566,22 +3936,24 @@ const great_war_data = {
                 'Collective vulnerability: All five leaders are precariously balanced on the cauldron together.',
                 'Foreshadowing Sarajevo: Directly presaged how a spark in Bosnia in 1914 would finally blow the lid off European peace.',
               ],
+              source_context:
+                "The First Balkan War (1912) broke out when the Balkan League attacked the decaying Ottoman Empire. The cartoon illustrates how the violent nationalist passions of the Balkans threatened to boil over and engulf the Great Powers, who desperately tried to contain the flames while pursuing conflicting regional ambitions. **Hinge Question:** Why was the metaphor of a 'boiling pot' an accurate description of how Balkan regional conflicts dragged the Great Powers into disaster?",
+              teacher_notes: {
+                source_context:
+                  "The First Balkan War (1912) broke out when the Balkan League attacked the decaying Ottoman Empire. The cartoon illustrates how the violent nationalist passions of the Balkans threatened to boil over and engulf the Great Powers, who desperately tried to contain the flames while pursuing conflicting regional ambitions. **Hinge Question:** Why was the metaphor of a 'boiling pot' an accurate description of how Balkan regional conflicts dragged the Great Powers into disaster?",
+              },
+              id: 'gw_l4_src_d',
             },
           ],
         },
         {
-          act: 4,
-          title: 'The 1908 Bosnian Annexation Crisis & Russian Humiliation (October 1908)',
-          text: '<span class="para-ref">[4.4]</span> In October 1908, the powder keg nearly exploded. Taking advantage of chaos in the Ottoman Empire, Austria-Hungary <strong>annexed the provinces of Bosnia and Herzegovina</strong>. This annexation outraged Serbia, which considered Bosnia its rightful territory. Serbian crowds protested in Belgrade, demanding war.<br><br><span class="para-ref">[4.5]</span> Russia supported Serbia and prepared its army. However, German Chancellor Bernhard von Bülow intervened. In March 1909, Germany delivered an ultimatum: Russia must accept the annexation, or face war with Germany and Austria. Still recovering from its 1905 defeat by Japan, Russia could not fight. Tsar Nicholas II backed down and forced Serbia to accept Austrian rule. The humiliation was painful: Russia began rapid military rearmament and resolved never to surrender in the Balkans again.',
-          image: '/units/great_war/assets/balkans_1914_simple_map.png',
-          image_alt:
-            'Cartographic survey of the Balkan Peninsula showing territorial changes following the Balkan Wars of 1912–1913',
-          caption:
-            'The Balkan Peninsula in 1914 following the Balkan Wars, showing an expanded Serbia bordering Austro-Hungarian Bosnia-Herzegovina.',
+          act: 5,
+          title: 'The 1912–1913 Balkan Wars & The Pre-emptive War Urge (1912–1913)',
+          text: '<span class="para-ref">[4.5]</span> In October 1912, the <strong>First Balkan War</strong> broke out. Serbia, Greece, Bulgaria, and Montenegro (the Balkan League) attacked the Ottoman Empire, expelling Turkish forces from Europe within six weeks. In 1913, the allies turned on each other in the <strong>Second Balkan War</strong>, where Serbia defeated Bulgaria.<br><br><span class="para-ref">[4.6]</span> These wars transformed Serbia into a formidable regional power. Serbia expanded its territory by eighty percent, and its population jumped from three to 4.5 million. Armed with modern French artillery, Serbian nationalists intensified secret agitation inside Austria-Hungary. In Vienna, Austrian General <strong>Franz Conrad von Hötzendorf</strong> demanded a <strong>pre-emptive war</strong> to crush Serbia before it grew even stronger: Conrad urged war over twenty times in 1913 alone. Europe stood on the edge of catastrophe.',
           source: {
-            letter: 'D',
+            letter: 'E',
             type: 'visual',
-            title: 'Source D (Operational Military Map): The German Schlieffen Plan (1905–1914)',
+            title: 'Source E (Operational Military Map): The German Schlieffen Plan (1905–1914)',
             image: '/units/great_war/assets/schlieffen_plan_simple_map.png',
             src: '/units/great_war/assets/schlieffen_plan_simple_map.png',
             caption:
@@ -3604,12 +3976,19 @@ const great_war_data = {
               'Violation of Belgian neutrality: Made British intervention virtually guaranteed.',
               'Fatal gamble on Russian speed: Assumed Russia would take six weeks to mobilize, which proved disastrously incorrect in 1914.',
             ],
+            source_context:
+              'Terrified of fighting a simultaneous two-front war against France and Russia, the German General Staff formulated the Schlieffen Plan. It gambled that slow Russian mobilization would allow Germany 42 days to invade neutral Belgium, bypass French border forts, encircle Paris, and knock France out before turning east to face Russia. **Hinge Question:** Why did the Schlieffen Plan guarantee that any dispute with Russia in the Balkans would automatically result in a German invasion of France and Belgium?',
+            teacher_notes: {
+              source_context:
+                'Terrified of fighting a simultaneous two-front war against France and Russia, the German General Staff formulated the Schlieffen Plan. It gambled that slow Russian mobilization would allow Germany 42 days to invade neutral Belgium, bypass French border forts, encircle Paris, and knock France out before turning east to face Russia. **Hinge Question:** Why did the Schlieffen Plan guarantee that any dispute with Russia in the Balkans would automatically result in a German invasion of France and Belgium?',
+            },
+            id: 'gw_l4_src_e',
           },
           sources: [
             {
-              letter: 'D',
+              letter: 'E',
               type: 'visual',
-              title: 'Source D (Operational Military Map): The German Schlieffen Plan (1905–1914)',
+              title: 'Source E (Operational Military Map): The German Schlieffen Plan (1905–1914)',
               image: '/units/great_war/assets/schlieffen_plan_simple_map.png',
               src: '/units/great_war/assets/schlieffen_plan_simple_map.png',
               caption:
@@ -3632,67 +4011,13 @@ const great_war_data = {
                 'Violation of Belgian neutrality: Made British intervention virtually guaranteed.',
                 'Fatal gamble on Russian speed: Assumed Russia would take six weeks to mobilize, which proved disastrously incorrect in 1914.',
               ],
-            },
-          ],
-        },
-        {
-          act: 5,
-          title: 'The 1912–1913 Balkan Wars & The Pre-emptive War Urge (1912–1913)',
-          text: '<span class="para-ref">[4.5]</span> In October 1912, the <strong>First Balkan War</strong> broke out. Serbia, Greece, Bulgaria, and Montenegro (the Balkan League) attacked the Ottoman Empire, expelling Turkish forces from Europe within six weeks. In 1913, the allies turned on each other in the <strong>Second Balkan War</strong>, where Serbia defeated Bulgaria.<br><br><span class="para-ref">[4.6]</span> These wars transformed Serbia into a formidable regional power. Serbia expanded its territory by eighty percent, and its population jumped from three to 4.5 million. Armed with modern French artillery, Serbian nationalists intensified secret agitation inside Austria-Hungary. In Vienna, Austrian General <strong>Franz Conrad von Hötzendorf</strong> demanded a <strong>pre-emptive war</strong> to crush Serbia before it grew even stronger: Conrad urged war over twenty times in 1913 alone. Europe stood on the edge of catastrophe.',
-          source: {
-            letter: 'E',
-            type: 'written',
-            title:
-              'Source E (Diplomatic Telegram): Sir Edward Goschen, British Ambassador in Berlin, Final Dispatch to Sir Edward Grey (4 August 1914)',
-            text: "I found the Imperial Chancellor [Bethmann-Hollweg] very agitated. His Excellency at once began a harangue, which kept on for about twenty minutes. He said that the step taken by His Majesty's Government was terrible to a degree; just for a word—'neutrality', a word which in war time had so often been disregarded—just for a scrap of paper (*ein Fetzen Papier*), Great Britain was going to make war on a kindred nation who desired nothing better than to be friends with her... I protested strongly against that statement, and said that, if it was a matter of life and death for Germany to violate Belgium, it was also a matter of life and death for the honour of Great Britain to keep her solemn promise.",
-            caption:
-              'Official diplomatic cable sent to London recording the dramatic final interview between the British Ambassador and the German Chancellor on the night Britain declared war.',
-            citation:
-              'British Foreign Office Archives (FO 371/2165) / The National Archives, Kew (Great Britain and the European Crisis, 1914, Document 160).',
-            context:
-              "When Germany invaded Belgium, Britain issued an ultimatum demanding immediate withdrawal. When Chancellor Bethmann-Hollweg dismissed the 1839 Treaty of London as a mere 'scrap of paper', it confirmed British public belief that Germany had abandoned international law and civilized norms. **Hinge Question:** Why did the phrase 'a scrap of paper' become the most powerful British propaganda weapon of the entire war?",
-            hinge_question:
-              "Why did the phrase 'a scrap of paper' become the most powerful British propaganda weapon of the entire war?",
-            question_badge: 'Reliability & Provenance',
-            question:
-              "What does Chancellor Bethmann-Hollweg's remark reveal about the German government's attitude toward international treaties in 1914?",
-            enquiry_question:
-              "What does Chancellor Bethmann-Hollweg's remark reveal about the German government's attitude toward international treaties in 1914?",
-            model_answer:
-              'His remark reveals that the German government prioritized immediate military necessity above international law and treaty commitments, treating legal obligations as worthless paper when they conflicted with strategic military plans.',
-            discussion_ideas: [
-              "Moral justification for war: Transformed Britain's entry from realpolitik into a moral crusade for the rule of law.",
-              'Tragic miscalculation: Bethmann-Hollweg genuinely believed Britain would not fight over a 75-year-old treaty.',
-              'Collapse of diplomacy: Marked the final breakdown of European order into industrial slaughter.',
-            ],
-          },
-          sources: [
-            {
-              letter: 'E',
-              type: 'written',
-              title:
-                'Source E (Diplomatic Telegram): Sir Edward Goschen, British Ambassador in Berlin, Final Dispatch to Sir Edward Grey (4 August 1914)',
-              text: "I found the Imperial Chancellor [Bethmann-Hollweg] very agitated. His Excellency at once began a harangue, which kept on for about twenty minutes. He said that the step taken by His Majesty's Government was terrible to a degree; just for a word—'neutrality', a word which in war time had so often been disregarded—just for a scrap of paper (*ein Fetzen Papier*), Great Britain was going to make war on a kindred nation who desired nothing better than to be friends with her... I protested strongly against that statement, and said that, if it was a matter of life and death for Germany to violate Belgium, it was also a matter of life and death for the honour of Great Britain to keep her solemn promise.",
-              caption:
-                'Official diplomatic cable sent to London recording the dramatic final interview between the British Ambassador and the German Chancellor on the night Britain declared war.',
-              citation:
-                'British Foreign Office Archives (FO 371/2165) / The National Archives, Kew (Great Britain and the European Crisis, 1914, Document 160).',
-              context:
-                "When Germany invaded Belgium, Britain issued an ultimatum demanding immediate withdrawal. When Chancellor Bethmann-Hollweg dismissed the 1839 Treaty of London as a mere 'scrap of paper', it confirmed British public belief that Germany had abandoned international law and civilized norms. **Hinge Question:** Why did the phrase 'a scrap of paper' become the most powerful British propaganda weapon of the entire war?",
-              hinge_question:
-                "Why did the phrase 'a scrap of paper' become the most powerful British propaganda weapon of the entire war?",
-              question_badge: 'Reliability & Provenance',
-              question:
-                "What does Chancellor Bethmann-Hollweg's remark reveal about the German government's attitude toward international treaties in 1914?",
-              enquiry_question:
-                "What does Chancellor Bethmann-Hollweg's remark reveal about the German government's attitude toward international treaties in 1914?",
-              model_answer:
-                'His remark reveals that the German government prioritized immediate military necessity above international law and treaty commitments, treating legal obligations as worthless paper when they conflicted with strategic military plans.',
-              discussion_ideas: [
-                "Moral justification for war: Transformed Britain's entry from realpolitik into a moral crusade for the rule of law.",
-                'Tragic miscalculation: Bethmann-Hollweg genuinely believed Britain would not fight over a 75-year-old treaty.',
-                'Collapse of diplomacy: Marked the final breakdown of European order into industrial slaughter.',
-              ],
+              source_context:
+                'Terrified of fighting a simultaneous two-front war against France and Russia, the German General Staff formulated the Schlieffen Plan. It gambled that slow Russian mobilization would allow Germany 42 days to invade neutral Belgium, bypass French border forts, encircle Paris, and knock France out before turning east to face Russia. **Hinge Question:** Why did the Schlieffen Plan guarantee that any dispute with Russia in the Balkans would automatically result in a German invasion of France and Belgium?',
+              teacher_notes: {
+                source_context:
+                  'Terrified of fighting a simultaneous two-front war against France and Russia, the German General Staff formulated the Schlieffen Plan. It gambled that slow Russian mobilization would allow Germany 42 days to invade neutral Belgium, bypass French border forts, encircle Paris, and knock France out before turning east to face Russia. **Hinge Question:** Why did the Schlieffen Plan guarantee that any dispute with Russia in the Balkans would automatically result in a German invasion of France and Belgium?',
+              },
+              id: 'gw_l4_src_e',
             },
           ],
         },
@@ -4076,7 +4401,7 @@ const great_war_data = {
           letter: 'A',
           type: 'written',
           title:
-            'Source A (State Treaty): The Dual Alliance Between Germany and Austria-Hungary, Articles I & II (7 October 1879)',
+            'Source A (State Treaty): The Dual Alliance Between Germany and Austria-Hungary (1879)',
           text: 'Article I: Should, contrary to their hope, and against the sincere wish of the two High Contracting Parties, one of the two Empires be attacked by Russia, the High Contracting Parties are bound to come to the assistance one of the other with the whole war strength of their Empires, and accordingly only to conclude peace together and upon mutual agreement.<br><br>Article II: Should one of the High Contracting Parties be attacked by another Power [France], the other High Contracting Party binds itself hereby, not only not to stand by the side of the aggressor, but to maintain at least a benevolent neutrality toward its fellow Contracting Party.',
           caption:
             'Official treaty text signed in Vienna by Prince Bismarck and Count Andrássy, forming the foundational military pact of the Central Powers.',
@@ -4103,12 +4428,15 @@ const great_war_data = {
             source_context:
               "The 1879 Dual Alliance bound Germany and Austria-Hungary in a mutual defence pact against Russia. While Bismarck intended the pact to restrain Austrian adventurism in the Balkans, by 1914 it functioned as a blank cheque that dragged Germany into Austria's local disputes. **Hinge Question:** Why did the Dual Alliance become dangerous to European peace once German chancellors stopped restraining Austrian foreign policy?",
           },
+          id: 'gw_l4_src_a',
+          src: '',
+          image: '',
         },
         {
           letter: 'B',
           type: 'written',
           title:
-            'Source B (Secret Military Convention): The Franco-Russian Military Convention, Articles 1 & 2 (17 August 1892 / January 1894)',
+            'Source B (Secret Military Convention): The Franco-Russian Military Convention (1892/1894)',
           text: '1. If France is attacked by Germany, or by Italy supported by Germany, Russia shall employ all her available forces to attack Germany. If Russia is attacked by Germany, or by Austria supported by Germany, France shall employ all her available forces to attack Germany.<br><br>2. In case the forces of the Triple Alliance, or of one of the Powers belonging to it, should mobilize, France and Russia, at the first news of the event and without previous consultation, shall immediately and simultaneously mobilize the whole of their forces and deploy them as near their frontiers as possible.',
           caption:
             'Confidential military convention ratified by the Tsar of Russia and the President of the French Republic, creating the two-front encirclement Germany feared.',
@@ -4136,11 +4464,43 @@ const great_war_data = {
             source_context:
               "After Kaiser Wilhelm II severed ties with Russia in 1890, democratic France and autocratic Tsarist Russia signed a mutual defense pact. Article 2 was particularly lethal: it specified that mere mobilization by the Triple Alliance would trigger immediate, automatic total mobilization by France and Russia without further discussion. **Hinge Question:** Why did Article 2's clause making mobilization automatic ensure that a diplomatic crisis could not be halted once troops began moving?",
           },
+          id: 'gw_l4_src_b',
+          src: '',
+          image: '',
         },
         {
           letter: 'C',
+          id: 'gw_l4_src_c',
+          type: 'written',
+          title:
+            'Source C (Imperial Proclamation): Emperor Franz Joseph, Proclamation on the Annexation of Bosnia and Herzegovina (5 October 1908)',
+          context:
+            'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+          hinge_question:
+            'Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+          text: '“We, Franz Joseph, by the grace of God Emperor of Austria... have resolved to extend our sovereign rights over Bosnia and Herzegovina. The European powers must recognize that our military occupation has brought civilization and order to these territories. We hereby incorporate Bosnia and Herzegovina into our monarchy as an integral and perpetual territory of the Austro-Hungarian crown.”',
+          caption:
+            'Source C: Proclamation of Emperor Franz Joseph annexing Bosnia-Herzegovina, igniting the 1908 Bosnian Crisis.',
+          question_badge: 'Imperial Aggression',
+          question:
+            'How did Austria-Hungary’s unilateral annexation of Bosnia and Herzegovina undermine European stability?',
+          enquiry_question:
+            'How did Austria-Hungary’s unilateral annexation of Bosnia and Herzegovina undermine European stability?',
+          model_answer:
+            'Austria-Hungary seized territory without European consent, outraging Serbia and humiliating Russia, which hardened alliance commitments and convinced Russia it could never back down in the Balkans again.',
+          source_context:
+            'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+          teacher_notes: {
+            source_context:
+              'In October 1908, Austria-Hungary unilaterally annexed Bosnia and Herzegovina, breaking the Treaty of Berlin and enraging Serbia and Russia. When Germany threatened war in support of Vienna, Russia was forced to back down in humiliation, vowing never to retreat again. **Hinge Question:** Why did the 1908 Bosnian Crisis make a future European war almost inevitable when another Balkan crisis arose in 1914?',
+          },
+          src: '',
+          image: '',
+        },
+        {
+          letter: 'D',
           type: 'visual',
-          title: 'Source C (Primary Political Cartoon): Punch, The Boiling Point (October 1912)',
+          title: 'Source D (Political Cartoon): "The Boiling Point" (Punch, October 1912)',
           image: '/units/great_war/assets/was_boiling_point.png',
           src: '/units/great_war/assets/was_boiling_point.png',
           is_artwork: true,
@@ -4169,11 +4529,12 @@ const great_war_data = {
             source_context:
               "The First Balkan War (1912) broke out when the Balkan League attacked the decaying Ottoman Empire. The cartoon illustrates how the violent nationalist passions of the Balkans threatened to boil over and engulf the Great Powers, who desperately tried to contain the flames while pursuing conflicting regional ambitions. **Hinge Question:** Why was the metaphor of a 'boiling pot' an accurate description of how Balkan regional conflicts dragged the Great Powers into disaster?",
           },
+          id: 'gw_l4_src_d',
         },
         {
-          letter: 'D',
+          letter: 'E',
           type: 'visual',
-          title: 'Source D (Operational Military Map): The German Schlieffen Plan (1905–1914)',
+          title: 'Source E (Operational Military Map): The German Schlieffen Plan (1905–1914)',
           image: '/units/great_war/assets/schlieffen_plan_simple_map.png',
           src: '/units/great_war/assets/schlieffen_plan_simple_map.png',
           caption:
@@ -4202,39 +4563,7 @@ const great_war_data = {
             source_context:
               'Terrified of fighting a simultaneous two-front war against France and Russia, the German General Staff formulated the Schlieffen Plan. It gambled that slow Russian mobilization would allow Germany 42 days to invade neutral Belgium, bypass French border forts, encircle Paris, and knock France out before turning east to face Russia. **Hinge Question:** Why did the Schlieffen Plan guarantee that any dispute with Russia in the Balkans would automatically result in a German invasion of France and Belgium?',
           },
-        },
-        {
-          letter: 'E',
-          type: 'written',
-          title:
-            'Source E (Diplomatic Telegram): Sir Edward Goschen, British Ambassador in Berlin, Final Dispatch to Sir Edward Grey (4 August 1914)',
-          text: "I found the Imperial Chancellor [Bethmann-Hollweg] very agitated. His Excellency at once began a harangue, which kept on for about twenty minutes. He said that the step taken by His Majesty's Government was terrible to a degree; just for a word—'neutrality', a word which in war time had so often been disregarded—just for a scrap of paper (*ein Fetzen Papier*), Great Britain was going to make war on a kindred nation who desired nothing better than to be friends with her... I protested strongly against that statement, and said that, if it was a matter of life and death for Germany to violate Belgium, it was also a matter of life and death for the honour of Great Britain to keep her solemn promise.",
-          caption:
-            'Official diplomatic cable sent to London recording the dramatic final interview between the British Ambassador and the German Chancellor on the night Britain declared war.',
-          citation:
-            'British Foreign Office Archives (FO 371/2165) / The National Archives, Kew (Great Britain and the European Crisis, 1914, Document 160).',
-          context:
-            "When Germany invaded Belgium, Britain issued an ultimatum demanding immediate withdrawal. When Chancellor Bethmann-Hollweg dismissed the 1839 Treaty of London as a mere 'scrap of paper', it confirmed British public belief that Germany had abandoned international law and civilized norms. **Hinge Question:** Why did the phrase 'a scrap of paper' become the most powerful British propaganda weapon of the entire war?",
-          hinge_question:
-            "Why did the phrase 'a scrap of paper' become the most powerful British propaganda weapon of the entire war?",
-          question_badge: 'Reliability & Provenance',
-          question:
-            "What does Chancellor Bethmann-Hollweg's remark reveal about the German government's attitude toward international treaties in 1914?",
-          enquiry_question:
-            "What does Chancellor Bethmann-Hollweg's remark reveal about the German government's attitude toward international treaties in 1914?",
-          model_answer:
-            'His remark reveals that the German government prioritized immediate military necessity above international law and treaty commitments, treating legal obligations as worthless paper when they conflicted with strategic military plans.',
-          discussion_ideas: [
-            "Moral justification for war: Transformed Britain's entry from realpolitik into a moral crusade for the rule of law.",
-            'Tragic miscalculation: Bethmann-Hollweg genuinely believed Britain would not fight over a 75-year-old treaty.',
-            'Collapse of diplomacy: Marked the final breakdown of European order into industrial slaughter.',
-          ],
-          source_context:
-            "When Germany invaded Belgium, Britain issued an ultimatum demanding immediate withdrawal. When Chancellor Bethmann-Hollweg dismissed the 1839 Treaty of London as a mere 'scrap of paper', it confirmed British public belief that Germany had abandoned international law and civilized norms. **Hinge Question:** Why did the phrase 'a scrap of paper' become the most powerful British propaganda weapon of the entire war?",
-          teacher_notes: {
-            source_context:
-              "When Germany invaded Belgium, Britain issued an ultimatum demanding immediate withdrawal. When Chancellor Bethmann-Hollweg dismissed the 1839 Treaty of London as a mere 'scrap of paper', it confirmed British public belief that Germany had abandoned international law and civilized norms. **Hinge Question:** Why did the phrase 'a scrap of paper' become the most powerful British propaganda weapon of the entire war?",
-          },
+          id: 'gw_l4_src_e',
         },
       ],
     },
@@ -4524,6 +4853,13 @@ const great_war_data = {
               'Security failures: Astonishing lack of police escorts along the published motorcade route.',
               'Symbolic date: 28 June was St. Vitus Day (Vidovdan), a sacred anniversary of Serbian national suffering that provoked intense nationalist anger.',
             ],
+            source_context:
+              'Following an earlier failed bomb attack by Nedeljko Čabrinović, Archduke Franz Ferdinand decided to alter his schedule to visit wounded officers in hospital. However, his chauffeurs were not informed; when lead driver Leopold Lojka turned into Franz Josef Street, Governor Potiorek ordered him to brake and reverse, stalling the car directly in front of Gavrilo Princip. **Hinge Question:** How did a series of administrative blunders and a wrong turn transform a bungled assassination plot into the catalyst for world war?',
+            teacher_notes: {
+              source_context:
+                'Following an earlier failed bomb attack by Nedeljko Čabrinović, Archduke Franz Ferdinand decided to alter his schedule to visit wounded officers in hospital. However, his chauffeurs were not informed; when lead driver Leopold Lojka turned into Franz Josef Street, Governor Potiorek ordered him to brake and reverse, stalling the car directly in front of Gavrilo Princip. **Hinge Question:** How did a series of administrative blunders and a wrong turn transform a bungled assassination plot into the catalyst for world war?',
+            },
+            id: 'gw_l5_src_a',
           },
           sources: [
             {
@@ -4553,6 +4889,13 @@ const great_war_data = {
                 'Security failures: Astonishing lack of police escorts along the published motorcade route.',
                 'Symbolic date: 28 June was St. Vitus Day (Vidovdan), a sacred anniversary of Serbian national suffering that provoked intense nationalist anger.',
               ],
+              source_context:
+                'Following an earlier failed bomb attack by Nedeljko Čabrinović, Archduke Franz Ferdinand decided to alter his schedule to visit wounded officers in hospital. However, his chauffeurs were not informed; when lead driver Leopold Lojka turned into Franz Josef Street, Governor Potiorek ordered him to brake and reverse, stalling the car directly in front of Gavrilo Princip. **Hinge Question:** How did a series of administrative blunders and a wrong turn transform a bungled assassination plot into the catalyst for world war?',
+              teacher_notes: {
+                source_context:
+                  'Following an earlier failed bomb attack by Nedeljko Čabrinović, Archduke Franz Ferdinand decided to alter his schedule to visit wounded officers in hospital. However, his chauffeurs were not informed; when lead driver Leopold Lojka turned into Franz Josef Street, Governor Potiorek ordered him to brake and reverse, stalling the car directly in front of Gavrilo Princip. **Hinge Question:** How did a series of administrative blunders and a wrong turn transform a bungled assassination plot into the catalyst for world war?',
+              },
+              id: 'gw_l5_src_a',
             },
           ],
         },
@@ -4564,7 +4907,7 @@ const great_war_data = {
             letter: 'B',
             type: 'written',
             title:
-              "Source B (Imperial Diplomatic Dispatch): The German 'Blank Cheque' — Undersecretary Zimmermann to Austrian Ambassador Count Szögyény (6 July 1914)",
+              'Source B (Imperial Diplomatic Dispatch): The German "Blank Cheque" to Austria-Hungary (6 July 1914)',
             text: "His Imperial Majesty [Kaiser Wilhelm II] authorized me to inform your Excellency that Austria-Hungary may rely upon Germany's full support... Even if matters should develop into a serious European war between Austria-Hungary and Russia, Vienna may feel assured that Germany, with her customary loyalty as an ally, will stand at her side. Finally, as far as concerns Serbia, His Majesty naturally cannot interfere in the dispute now taking place... But Emperor Franz Joseph may rest assured that His Majesty will faithfully stand by Austria-Hungary, as required by the obligations of his alliance and of his ancient friendship.",
             caption:
               "Official Austrian diplomatic record of Germany's unconditional pledge of military backing, famously known to historians as the 'Blank Cheque'.",
@@ -4586,13 +4929,22 @@ const great_war_data = {
               'Loss of control: Berlin handed Vienna control over German foreign policy.',
               'Hubristic gamble: Overconfident assumption that Russia would back down as it had during the 1908 Bosnian Crisis.',
             ],
+            source_context:
+              "On 5–6 July 1914, Kaiser Wilhelm II and Chancellor Bethmann-Hollweg issued the 'Blank Cheque', promising unconditional military support if Austria-Hungary took military action against Serbia. German leaders believed Russia was unprepared for war and would back down, localizing the conflict. **Hinge Question:** Why did Germany's unconditional promise of support empower Austro-Hungarian hardliners to issue an impossible ultimatum to Serbia?",
+            teacher_notes: {
+              source_context:
+                "On 5–6 July 1914, Kaiser Wilhelm II and Chancellor Bethmann-Hollweg issued the 'Blank Cheque', promising unconditional military support if Austria-Hungary took military action against Serbia. German leaders believed Russia was unprepared for war and would back down, localizing the conflict. **Hinge Question:** Why did Germany's unconditional promise of support empower Austro-Hungarian hardliners to issue an impossible ultimatum to Serbia?",
+            },
+            id: 'gw_l5_src_b',
+            src: '',
+            image: '',
           },
           sources: [
             {
               letter: 'B',
               type: 'written',
               title:
-                "Source B (Imperial Diplomatic Dispatch): The German 'Blank Cheque' — Undersecretary Zimmermann to Austrian Ambassador Count Szögyény (6 July 1914)",
+                'Source B (Imperial Diplomatic Dispatch): The German "Blank Cheque" to Austria-Hungary (6 July 1914)',
               text: "His Imperial Majesty [Kaiser Wilhelm II] authorized me to inform your Excellency that Austria-Hungary may rely upon Germany's full support... Even if matters should develop into a serious European war between Austria-Hungary and Russia, Vienna may feel assured that Germany, with her customary loyalty as an ally, will stand at her side. Finally, as far as concerns Serbia, His Majesty naturally cannot interfere in the dispute now taking place... But Emperor Franz Joseph may rest assured that His Majesty will faithfully stand by Austria-Hungary, as required by the obligations of his alliance and of his ancient friendship.",
               caption:
                 "Official Austrian diplomatic record of Germany's unconditional pledge of military backing, famously known to historians as the 'Blank Cheque'.",
@@ -4614,6 +4966,15 @@ const great_war_data = {
                 'Loss of control: Berlin handed Vienna control over German foreign policy.',
                 'Hubristic gamble: Overconfident assumption that Russia would back down as it had during the 1908 Bosnian Crisis.',
               ],
+              source_context:
+                "On 5–6 July 1914, Kaiser Wilhelm II and Chancellor Bethmann-Hollweg issued the 'Blank Cheque', promising unconditional military support if Austria-Hungary took military action against Serbia. German leaders believed Russia was unprepared for war and would back down, localizing the conflict. **Hinge Question:** Why did Germany's unconditional promise of support empower Austro-Hungarian hardliners to issue an impossible ultimatum to Serbia?",
+              teacher_notes: {
+                source_context:
+                  "On 5–6 July 1914, Kaiser Wilhelm II and Chancellor Bethmann-Hollweg issued the 'Blank Cheque', promising unconditional military support if Austria-Hungary took military action against Serbia. German leaders believed Russia was unprepared for war and would back down, localizing the conflict. **Hinge Question:** Why did Germany's unconditional promise of support empower Austro-Hungarian hardliners to issue an impossible ultimatum to Serbia?",
+              },
+              id: 'gw_l5_src_b',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -4625,7 +4986,7 @@ const great_war_data = {
             letter: 'C',
             type: 'written',
             title:
-              'Source C (State Ultimatum): The Austro-Hungarian Ultimatum to Serbia, Points 5 & 6 (23 July 1914)',
+              'Source C (State Ultimatum): The Austro-Hungarian Ultimatum to Serbia (23 July 1914)',
             text: "The Royal Serbian Government shall pledge itself:<br>5. To accept the collaboration in Serbia of representatives of the Imperial and Royal Government [Austria-Hungary] for the suppression of the subversive movement directed against the territorial integrity of the Monarchy;<br>6. To take judicial proceedings against the accessories to the plot of June 28th who are on Serbian territory; delegates of the Austro-Hungarian Government will take part in the investigation relating thereto...<br><br>The Austro-Hungarian Government expects the reply of the Royal Government at the latest by Saturday, the 25th instant, at 6 o'clock in the evening.",
             caption:
               'Extract from the ten-point Austro-Hungarian diplomatic ultimatum delivered to the Serbian Foreign Ministry in Belgrade, intentionally drafted with a 48-hour deadline to force a military rejection.',
@@ -4647,13 +5008,22 @@ const great_war_data = {
               'Serbian masterstroke: Serbia accepted eight of ten points and conditionally accepted the rest, creating international sympathy.',
               "Austrian haste: Despite Serbia's extraordinarily conciliatory reply, Austria broke diplomatic relations within 45 minutes.",
             ],
+            source_context:
+              'Austria-Hungary delayed three weeks after the assassination before delivering a deliberately unacceptable ten-point ultimatum to Serbia. Points 5 and 6 demanded that Austrian police and judges enter Serbia to direct investigations, which Serbia could not accept without surrendering its sovereign independence. **Hinge Question:** Why did the Austro-Hungarian leadership intentionally draft the ultimatum so that Serbia could not possibly accept all its terms?',
+            teacher_notes: {
+              source_context:
+                'Austria-Hungary delayed three weeks after the assassination before delivering a deliberately unacceptable ten-point ultimatum to Serbia. Points 5 and 6 demanded that Austrian police and judges enter Serbia to direct investigations, which Serbia could not accept without surrendering its sovereign independence. **Hinge Question:** Why did the Austro-Hungarian leadership intentionally draft the ultimatum so that Serbia could not possibly accept all its terms?',
+            },
+            id: 'gw_l5_src_c',
+            src: '',
+            image: '',
           },
           sources: [
             {
               letter: 'C',
               type: 'written',
               title:
-                'Source C (State Ultimatum): The Austro-Hungarian Ultimatum to Serbia, Points 5 & 6 (23 July 1914)',
+                'Source C (State Ultimatum): The Austro-Hungarian Ultimatum to Serbia (23 July 1914)',
               text: "The Royal Serbian Government shall pledge itself:<br>5. To accept the collaboration in Serbia of representatives of the Imperial and Royal Government [Austria-Hungary] for the suppression of the subversive movement directed against the territorial integrity of the Monarchy;<br>6. To take judicial proceedings against the accessories to the plot of June 28th who are on Serbian territory; delegates of the Austro-Hungarian Government will take part in the investigation relating thereto...<br><br>The Austro-Hungarian Government expects the reply of the Royal Government at the latest by Saturday, the 25th instant, at 6 o'clock in the evening.",
               caption:
                 'Extract from the ten-point Austro-Hungarian diplomatic ultimatum delivered to the Serbian Foreign Ministry in Belgrade, intentionally drafted with a 48-hour deadline to force a military rejection.',
@@ -4675,6 +5045,15 @@ const great_war_data = {
                 'Serbian masterstroke: Serbia accepted eight of ten points and conditionally accepted the rest, creating international sympathy.',
                 "Austrian haste: Despite Serbia's extraordinarily conciliatory reply, Austria broke diplomatic relations within 45 minutes.",
               ],
+              source_context:
+                'Austria-Hungary delayed three weeks after the assassination before delivering a deliberately unacceptable ten-point ultimatum to Serbia. Points 5 and 6 demanded that Austrian police and judges enter Serbia to direct investigations, which Serbia could not accept without surrendering its sovereign independence. **Hinge Question:** Why did the Austro-Hungarian leadership intentionally draft the ultimatum so that Serbia could not possibly accept all its terms?',
+              teacher_notes: {
+                source_context:
+                  'Austria-Hungary delayed three weeks after the assassination before delivering a deliberately unacceptable ten-point ultimatum to Serbia. Points 5 and 6 demanded that Austrian police and judges enter Serbia to direct investigations, which Serbia could not accept without surrendering its sovereign independence. **Hinge Question:** Why did the Austro-Hungarian leadership intentionally draft the ultimatum so that Serbia could not possibly accept all its terms?',
+              },
+              id: 'gw_l5_src_c',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -4689,58 +5068,62 @@ const great_war_data = {
             "Achille Beltrame's famous contemporary cover illustration for La Domenica del Corriere (July 1914) depicting Gavrilo Princip firing his Browning automatic pistol at the royal couple.",
           source: {
             letter: 'D',
+            id: 'gw_l5_src_d',
             type: 'written',
             title:
-              'Source D (Official Trial Record): Gavrilo Princip, Testimony Before the Sarajevo District Court (12–16 October 1914)',
-            text: 'I am a Yugoslav nationalist, aiming for the unification of all Yugoslavs [Serbs, Croats, and Slovenes], and I do not care what form of state, but it must be freed from Austria... The plan was to assassinate the Archduke because he was the representative of the Habsburg dynasty that oppressed our people, and as Inspector General of the army he came to conduct military manoeuvres on our sacred soil. I am not a criminal, for I destroyed a bad man. I thought that by doing this, I was avenging my people and opening the road to liberation.',
-            caption:
-              'Official courtroom testimony of 19-year-old Gavrilo Princip during his treason trial in Sarajevo following the outbreak of the war.',
-            citation:
-              'Bosnian State Archives, Sarajevo / Sarajevo District Court Records (Akt-Z-1914-Princip).',
+              'Source D (Imperial Mobilisation Decree): Tsar Nicholas II, Imperial Ukase on Russian General Mobilisation (30 July 1914)',
             context:
-              "Gavrilo Princip was a member of Young Bosnia (Mlada Bosna), a radical nationalist movement supplied with weapons and training by the rogue Serbian military intelligence organization The Black Hand (Ujedinjenje ili Smrt). At his trial, Princip expressed no remorse for killing the heir to the Habsburg throne. **Hinge Question:** How did Princip's testimony demonstrate that radical nationalism in the Balkans regarded political terrorism as a legitimate weapon of national liberation?",
+              'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
             hinge_question:
-              "How did Princip's testimony demonstrate that radical nationalism in the Balkans regarded political terrorism as a legitimate weapon of national liberation?",
-            question_badge: 'Author’s Purpose',
+              'Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
+            text: '“In view of the opening of hostilities between Austria-Hungary and Serbia, We decree that the Army and Navy of the Russian Empire shall be brought to a complete war footing, and that general mobilisation shall begin immediately on 31 July. Let our brave troops answer the sovereign call of duty to defend Holy Orthodox Slavdom against Austrian aggression.”',
+            caption:
+              'Source D: Imperial decree ordering full general mobilisation of the Russian Armed Forces on 30 July 1914.',
+            question_badge: 'Military Mobilisation',
             question:
-              'How did Gavrilo Princip justify the assassination of Archduke Franz Ferdinand during his trial?',
+              'Why did Russian mobilisation trigger an immediate declaration of war from Imperial Germany?',
             enquiry_question:
-              'How did Gavrilo Princip justify the assassination of Archduke Franz Ferdinand during his trial?',
+              'Why did Russian mobilisation trigger an immediate declaration of war from Imperial Germany?',
             model_answer:
-              'Princip justified the murder as a patriotic act of national liberation, arguing that killing the heir to the Habsburg throne was necessary to free South Slavs from Austro-Hungarian imperial tyranny.',
-            discussion_ideas: [
-              'Idealistic terrorism: Princip saw himself as a martyr for Yugoslav unity, not a tool of great power politics.',
-              'Youth radicalisation: Reflects how young students were recruited and weaponised by extremist military officers.',
-              'Tragic consequences: Princip died of tuberculosis in Theresienstadt prison in 1918, having witnessed the war kill millions.',
-            ],
+              'Germany’s Schlieffen Plan depended on defeating France before Russian armies could mobilise; once Russia mobilised, German generals believed they had to attack immediately or face a fatal two-front war.',
+            source_context:
+              'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
+            teacher_notes: {
+              source_context:
+                'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
+            },
+            src: '',
+            image: '',
           },
           sources: [
             {
               letter: 'D',
+              id: 'gw_l5_src_d',
               type: 'written',
               title:
-                'Source D (Official Trial Record): Gavrilo Princip, Testimony Before the Sarajevo District Court (12–16 October 1914)',
-              text: 'I am a Yugoslav nationalist, aiming for the unification of all Yugoslavs [Serbs, Croats, and Slovenes], and I do not care what form of state, but it must be freed from Austria... The plan was to assassinate the Archduke because he was the representative of the Habsburg dynasty that oppressed our people, and as Inspector General of the army he came to conduct military manoeuvres on our sacred soil. I am not a criminal, for I destroyed a bad man. I thought that by doing this, I was avenging my people and opening the road to liberation.',
-              caption:
-                'Official courtroom testimony of 19-year-old Gavrilo Princip during his treason trial in Sarajevo following the outbreak of the war.',
-              citation:
-                'Bosnian State Archives, Sarajevo / Sarajevo District Court Records (Akt-Z-1914-Princip).',
+                'Source D (Imperial Mobilisation Decree): Tsar Nicholas II, Imperial Ukase on Russian General Mobilisation (30 July 1914)',
               context:
-                "Gavrilo Princip was a member of Young Bosnia (Mlada Bosna), a radical nationalist movement supplied with weapons and training by the rogue Serbian military intelligence organization The Black Hand (Ujedinjenje ili Smrt). At his trial, Princip expressed no remorse for killing the heir to the Habsburg throne. **Hinge Question:** How did Princip's testimony demonstrate that radical nationalism in the Balkans regarded political terrorism as a legitimate weapon of national liberation?",
+                'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
               hinge_question:
-                "How did Princip's testimony demonstrate that radical nationalism in the Balkans regarded political terrorism as a legitimate weapon of national liberation?",
-              question_badge: 'Author’s Purpose',
+                'Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
+              text: '“In view of the opening of hostilities between Austria-Hungary and Serbia, We decree that the Army and Navy of the Russian Empire shall be brought to a complete war footing, and that general mobilisation shall begin immediately on 31 July. Let our brave troops answer the sovereign call of duty to defend Holy Orthodox Slavdom against Austrian aggression.”',
+              caption:
+                'Source D: Imperial decree ordering full general mobilisation of the Russian Armed Forces on 30 July 1914.',
+              question_badge: 'Military Mobilisation',
               question:
-                'How did Gavrilo Princip justify the assassination of Archduke Franz Ferdinand during his trial?',
+                'Why did Russian mobilisation trigger an immediate declaration of war from Imperial Germany?',
               enquiry_question:
-                'How did Gavrilo Princip justify the assassination of Archduke Franz Ferdinand during his trial?',
+                'Why did Russian mobilisation trigger an immediate declaration of war from Imperial Germany?',
               model_answer:
-                'Princip justified the murder as a patriotic act of national liberation, arguing that killing the heir to the Habsburg throne was necessary to free South Slavs from Austro-Hungarian imperial tyranny.',
-              discussion_ideas: [
-                'Idealistic terrorism: Princip saw himself as a martyr for Yugoslav unity, not a tool of great power politics.',
-                'Youth radicalisation: Reflects how young students were recruited and weaponised by extremist military officers.',
-                'Tragic consequences: Princip died of tuberculosis in Theresienstadt prison in 1918, having witnessed the war kill millions.',
-              ],
+                'Germany’s Schlieffen Plan depended on defeating France before Russian armies could mobilise; once Russia mobilised, German generals believed they had to attack immediately or face a fatal two-front war.',
+              source_context:
+                'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
+              teacher_notes: {
+                source_context:
+                  'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
+              },
+              src: '',
+              image: '',
             },
           ],
         },
@@ -4752,7 +5135,7 @@ const great_war_data = {
             letter: 'E',
             type: 'visual',
             title:
-              'Source E (Primary Police Photograph): Austro-Hungarian Mugshot of Gavrilo Princip (July 1914)',
+              'Source E (Police Record): Austro-Hungarian Police Mugshot of Gavrilo Princip (July 1914)',
             image: '/units/great_war/assets/card_princip.png',
             src: '/units/great_war/assets/card_princip.png',
             caption:
@@ -4775,13 +5158,20 @@ const great_war_data = {
               'Legal protection of age: Missed the death penalty by only 27 days, saving him from execution but not slow death in prison.',
               'Mythology vs reality: Strips away romanticized heroic depictions to show the stark reality of political violence.',
             ],
+            source_context:
+              "Too young under Austro-Hungarian law to receive the death penalty (which required a convict to be 20 years old at the time of the crime), Princip was sentenced to twenty years' hard labour in solitary confinement at the fortress of Theresienstadt. **Hinge Question:** Why did the physical youth and frail appearance of Gavrilo Princip contrast so sharply with the world-shattering geopolitical catastrophe his actions unleashed?",
+            teacher_notes: {
+              source_context:
+                "Too young under Austro-Hungarian law to receive the death penalty (which required a convict to be 20 years old at the time of the crime), Princip was sentenced to twenty years' hard labour in solitary confinement at the fortress of Theresienstadt. **Hinge Question:** Why did the physical youth and frail appearance of Gavrilo Princip contrast so sharply with the world-shattering geopolitical catastrophe his actions unleashed?",
+            },
+            id: 'gw_l5_src_e',
           },
           sources: [
             {
               letter: 'E',
               type: 'visual',
               title:
-                'Source E (Primary Police Photograph): Austro-Hungarian Mugshot of Gavrilo Princip (July 1914)',
+                'Source E (Police Record): Austro-Hungarian Police Mugshot of Gavrilo Princip (July 1914)',
               image: '/units/great_war/assets/card_princip.png',
               src: '/units/great_war/assets/card_princip.png',
               caption:
@@ -4804,6 +5194,13 @@ const great_war_data = {
                 'Legal protection of age: Missed the death penalty by only 27 days, saving him from execution but not slow death in prison.',
                 'Mythology vs reality: Strips away romanticized heroic depictions to show the stark reality of political violence.',
               ],
+              source_context:
+                "Too young under Austro-Hungarian law to receive the death penalty (which required a convict to be 20 years old at the time of the crime), Princip was sentenced to twenty years' hard labour in solitary confinement at the fortress of Theresienstadt. **Hinge Question:** Why did the physical youth and frail appearance of Gavrilo Princip contrast so sharply with the world-shattering geopolitical catastrophe his actions unleashed?",
+              teacher_notes: {
+                source_context:
+                  "Too young under Austro-Hungarian law to receive the death penalty (which required a convict to be 20 years old at the time of the crime), Princip was sentenced to twenty years' hard labour in solitary confinement at the fortress of Theresienstadt. **Hinge Question:** Why did the physical youth and frail appearance of Gavrilo Princip contrast so sharply with the world-shattering geopolitical catastrophe his actions unleashed?",
+              },
+              id: 'gw_l5_src_e',
             },
           ],
         },
@@ -5114,12 +5511,13 @@ const great_war_data = {
             source_context:
               'Following an earlier failed bomb attack by Nedeljko Čabrinović, Archduke Franz Ferdinand decided to alter his schedule to visit wounded officers in hospital. However, his chauffeurs were not informed; when lead driver Leopold Lojka turned into Franz Josef Street, Governor Potiorek ordered him to brake and reverse, stalling the car directly in front of Gavrilo Princip. **Hinge Question:** How did a series of administrative blunders and a wrong turn transform a bungled assassination plot into the catalyst for world war?',
           },
+          id: 'gw_l5_src_a',
         },
         {
           letter: 'B',
           type: 'written',
           title:
-            "Source B (Imperial Diplomatic Dispatch): The German 'Blank Cheque' — Undersecretary Zimmermann to Austrian Ambassador Count Szögyény (6 July 1914)",
+            'Source B (Imperial Diplomatic Dispatch): The German "Blank Cheque" to Austria-Hungary (6 July 1914)',
           text: "His Imperial Majesty [Kaiser Wilhelm II] authorized me to inform your Excellency that Austria-Hungary may rely upon Germany's full support... Even if matters should develop into a serious European war between Austria-Hungary and Russia, Vienna may feel assured that Germany, with her customary loyalty as an ally, will stand at her side. Finally, as far as concerns Serbia, His Majesty naturally cannot interfere in the dispute now taking place... But Emperor Franz Joseph may rest assured that His Majesty will faithfully stand by Austria-Hungary, as required by the obligations of his alliance and of his ancient friendship.",
           caption:
             "Official Austrian diplomatic record of Germany's unconditional pledge of military backing, famously known to historians as the 'Blank Cheque'.",
@@ -5147,12 +5545,15 @@ const great_war_data = {
             source_context:
               "On 5–6 July 1914, Kaiser Wilhelm II and Chancellor Bethmann-Hollweg issued the 'Blank Cheque', promising unconditional military support if Austria-Hungary took military action against Serbia. German leaders believed Russia was unprepared for war and would back down, localizing the conflict. **Hinge Question:** Why did Germany's unconditional promise of support empower Austro-Hungarian hardliners to issue an impossible ultimatum to Serbia?",
           },
+          id: 'gw_l5_src_b',
+          src: '',
+          image: '',
         },
         {
           letter: 'C',
           type: 'written',
           title:
-            'Source C (State Ultimatum): The Austro-Hungarian Ultimatum to Serbia, Points 5 & 6 (23 July 1914)',
+            'Source C (State Ultimatum): The Austro-Hungarian Ultimatum to Serbia (23 July 1914)',
           text: "The Royal Serbian Government shall pledge itself:<br>5. To accept the collaboration in Serbia of representatives of the Imperial and Royal Government [Austria-Hungary] for the suppression of the subversive movement directed against the territorial integrity of the Monarchy;<br>6. To take judicial proceedings against the accessories to the plot of June 28th who are on Serbian territory; delegates of the Austro-Hungarian Government will take part in the investigation relating thereto...<br><br>The Austro-Hungarian Government expects the reply of the Royal Government at the latest by Saturday, the 25th instant, at 6 o'clock in the evening.",
           caption:
             'Extract from the ten-point Austro-Hungarian diplomatic ultimatum delivered to the Serbian Foreign Ministry in Belgrade, intentionally drafted with a 48-hour deadline to force a military rejection.',
@@ -5180,45 +5581,44 @@ const great_war_data = {
             source_context:
               'Austria-Hungary delayed three weeks after the assassination before delivering a deliberately unacceptable ten-point ultimatum to Serbia. Points 5 and 6 demanded that Austrian police and judges enter Serbia to direct investigations, which Serbia could not accept without surrendering its sovereign independence. **Hinge Question:** Why did the Austro-Hungarian leadership intentionally draft the ultimatum so that Serbia could not possibly accept all its terms?',
           },
+          id: 'gw_l5_src_c',
+          src: '',
+          image: '',
         },
         {
           letter: 'D',
+          id: 'gw_l5_src_d',
           type: 'written',
           title:
-            'Source D (Official Trial Record): Gavrilo Princip, Testimony Before the Sarajevo District Court (12–16 October 1914)',
-          text: 'I am a Yugoslav nationalist, aiming for the unification of all Yugoslavs [Serbs, Croats, and Slovenes], and I do not care what form of state, but it must be freed from Austria... The plan was to assassinate the Archduke because he was the representative of the Habsburg dynasty that oppressed our people, and as Inspector General of the army he came to conduct military manoeuvres on our sacred soil. I am not a criminal, for I destroyed a bad man. I thought that by doing this, I was avenging my people and opening the road to liberation.',
-          caption:
-            'Official courtroom testimony of 19-year-old Gavrilo Princip during his treason trial in Sarajevo following the outbreak of the war.',
-          citation:
-            'Bosnian State Archives, Sarajevo / Sarajevo District Court Records (Akt-Z-1914-Princip).',
+            'Source D (Imperial Mobilisation Decree): Tsar Nicholas II, Imperial Ukase on Russian General Mobilisation (30 July 1914)',
           context:
-            "Gavrilo Princip was a member of Young Bosnia (Mlada Bosna), a radical nationalist movement supplied with weapons and training by the rogue Serbian military intelligence organization The Black Hand (Ujedinjenje ili Smrt). At his trial, Princip expressed no remorse for killing the heir to the Habsburg throne. **Hinge Question:** How did Princip's testimony demonstrate that radical nationalism in the Balkans regarded political terrorism as a legitimate weapon of national liberation?",
+            'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
           hinge_question:
-            "How did Princip's testimony demonstrate that radical nationalism in the Balkans regarded political terrorism as a legitimate weapon of national liberation?",
-          question_badge: 'Author’s Purpose',
+            'Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
+          text: '“In view of the opening of hostilities between Austria-Hungary and Serbia, We decree that the Army and Navy of the Russian Empire shall be brought to a complete war footing, and that general mobilisation shall begin immediately on 31 July. Let our brave troops answer the sovereign call of duty to defend Holy Orthodox Slavdom against Austrian aggression.”',
+          caption:
+            'Source D: Imperial decree ordering full general mobilisation of the Russian Armed Forces on 30 July 1914.',
+          question_badge: 'Military Mobilisation',
           question:
-            'How did Gavrilo Princip justify the assassination of Archduke Franz Ferdinand during his trial?',
+            'Why did Russian mobilisation trigger an immediate declaration of war from Imperial Germany?',
           enquiry_question:
-            'How did Gavrilo Princip justify the assassination of Archduke Franz Ferdinand during his trial?',
+            'Why did Russian mobilisation trigger an immediate declaration of war from Imperial Germany?',
           model_answer:
-            'Princip justified the murder as a patriotic act of national liberation, arguing that killing the heir to the Habsburg throne was necessary to free South Slavs from Austro-Hungarian imperial tyranny.',
-          discussion_ideas: [
-            'Idealistic terrorism: Princip saw himself as a martyr for Yugoslav unity, not a tool of great power politics.',
-            'Youth radicalisation: Reflects how young students were recruited and weaponised by extremist military officers.',
-            'Tragic consequences: Princip died of tuberculosis in Theresienstadt prison in 1918, having witnessed the war kill millions.',
-          ],
+            'Germany’s Schlieffen Plan depended on defeating France before Russian armies could mobilise; once Russia mobilised, German generals believed they had to attack immediately or face a fatal two-front war.',
           source_context:
-            "Gavrilo Princip was a member of Young Bosnia (Mlada Bosna), a radical nationalist movement supplied with weapons and training by the rogue Serbian military intelligence organization The Black Hand (Ujedinjenje ili Smrt). At his trial, Princip expressed no remorse for killing the heir to the Habsburg throne. **Hinge Question:** How did Princip's testimony demonstrate that radical nationalism in the Balkans regarded political terrorism as a legitimate weapon of national liberation?",
+            'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
           teacher_notes: {
             source_context:
-              "Gavrilo Princip was a member of Young Bosnia (Mlada Bosna), a radical nationalist movement supplied with weapons and training by the rogue Serbian military intelligence organization The Black Hand (Ujedinjenje ili Smrt). At his trial, Princip expressed no remorse for killing the heir to the Habsburg throne. **Hinge Question:** How did Princip's testimony demonstrate that radical nationalism in the Balkans regarded political terrorism as a legitimate weapon of national liberation?",
+              'On 30 July 1914, following the Austrian bombardment of Belgrade, Tsar Nicholas II ordered full general mobilisation across the Russian Empire. Because Russian mobilisation threatened Germany’s eastern frontier, it triggered Berlin’s immediate decision to launch the Schlieffen Plan. **Hinge Question:** Why did Russia’s decision to mobilise its armies make a peaceful diplomatic solution impossible under the logic of European military plans?',
           },
+          src: '',
+          image: '',
         },
         {
           letter: 'E',
           type: 'visual',
           title:
-            'Source E (Primary Police Photograph): Austro-Hungarian Mugshot of Gavrilo Princip (July 1914)',
+            'Source E (Police Record): Austro-Hungarian Police Mugshot of Gavrilo Princip (July 1914)',
           image: '/units/great_war/assets/card_princip.png',
           src: '/units/great_war/assets/card_princip.png',
           caption:
@@ -5247,6 +5647,7 @@ const great_war_data = {
             source_context:
               "Too young under Austro-Hungarian law to receive the death penalty (which required a convict to be 20 years old at the time of the crime), Princip was sentenced to twenty years' hard labour in solitary confinement at the fortress of Theresienstadt. **Hinge Question:** Why did the physical youth and frail appearance of Gavrilo Princip contrast so sharply with the world-shattering geopolitical catastrophe his actions unleashed?",
           },
+          id: 'gw_l5_src_e',
         },
       ],
     },
@@ -5515,7 +5916,7 @@ const great_war_data = {
             letter: 'A',
             type: 'written',
             title:
-              'Source A (Primary Diary Record): Admiral Georg Alexander von Müller, Chief of the Imperial Naval Cabinet, The Imperial War Council (8 December 1912)',
+              'Source A (Primary Diary Record): Admiral Georg Alexander von Müller, The Imperial War Council (8 December 1912)',
             text: "Sunday: Kaiser Wilhelm summoned a meeting of the military leaders... General von Moltke [Chief of the General Staff] said: 'War is inevitable, and the sooner the better. But we ought to do more through the press to prepare the nation for a war against Russia.' The Kaiser agreed... The Chief of the Naval Staff said the Navy would like to see the conflict postponed for one-and-a-half years, until the Kiel Canal was widened to take dreadnoughts and the submarine base at Heligoland completed. Moltke replied that the Navy would never be fully ready and the Army's position would get worse as Russia built up its railways. Result: almost nothing decided, but the mindset of the military leadership was clear.",
             caption:
               'Confidential diary entry recording the secret German Imperial War Council held in Berlin on 8 December 1912, cited by historians as evidence of premeditated German planning for European war.',
@@ -5537,13 +5938,22 @@ const great_war_data = {
               'Naval vs army priorities: The navy wanted delay for the Kiel Canal, while the army feared Russian growth.',
               'Historiographical controversy: The central piece of evidence in the Fritz Fischer debate over German war guilt.',
             ],
+            source_context:
+              "Discovered by historians in the 1960s, Admiral von Müller's diary showed that senior German military commanders openly advocated pre-emptive war as early as December 1912, arguing that Germany's chances of winning would decline as Russia modernized its railways. **Hinge Question:** How does Müller's diary support the argument that German military leaders welcomed the July 1914 crisis as the ideal opportunity for a pre-emptive strike?",
+            teacher_notes: {
+              source_context:
+                "Discovered by historians in the 1960s, Admiral von Müller's diary showed that senior German military commanders openly advocated pre-emptive war as early as December 1912, arguing that Germany's chances of winning would decline as Russia modernized its railways. **Hinge Question:** How does Müller's diary support the argument that German military leaders welcomed the July 1914 crisis as the ideal opportunity for a pre-emptive strike?",
+            },
+            id: 'gw_l6_src_a',
+            src: '',
+            image: '',
           },
           sources: [
             {
               letter: 'A',
               type: 'written',
               title:
-                'Source A (Primary Diary Record): Admiral Georg Alexander von Müller, Chief of the Imperial Naval Cabinet, The Imperial War Council (8 December 1912)',
+                'Source A (Primary Diary Record): Admiral Georg Alexander von Müller, The Imperial War Council (8 December 1912)',
               text: "Sunday: Kaiser Wilhelm summoned a meeting of the military leaders... General von Moltke [Chief of the General Staff] said: 'War is inevitable, and the sooner the better. But we ought to do more through the press to prepare the nation for a war against Russia.' The Kaiser agreed... The Chief of the Naval Staff said the Navy would like to see the conflict postponed for one-and-a-half years, until the Kiel Canal was widened to take dreadnoughts and the submarine base at Heligoland completed. Moltke replied that the Navy would never be fully ready and the Army's position would get worse as Russia built up its railways. Result: almost nothing decided, but the mindset of the military leadership was clear.",
               caption:
                 'Confidential diary entry recording the secret German Imperial War Council held in Berlin on 8 December 1912, cited by historians as evidence of premeditated German planning for European war.',
@@ -5565,6 +5975,15 @@ const great_war_data = {
                 'Naval vs army priorities: The navy wanted delay for the Kiel Canal, while the army feared Russian growth.',
                 'Historiographical controversy: The central piece of evidence in the Fritz Fischer debate over German war guilt.',
               ],
+              source_context:
+                "Discovered by historians in the 1960s, Admiral von Müller's diary showed that senior German military commanders openly advocated pre-emptive war as early as December 1912, arguing that Germany's chances of winning would decline as Russia modernized its railways. **Hinge Question:** How does Müller's diary support the argument that German military leaders welcomed the July 1914 crisis as the ideal opportunity for a pre-emptive strike?",
+              teacher_notes: {
+                source_context:
+                  "Discovered by historians in the 1960s, Admiral von Müller's diary showed that senior German military commanders openly advocated pre-emptive war as early as December 1912, arguing that Germany's chances of winning would decline as Russia modernized its railways. **Hinge Question:** How does Müller's diary support the argument that German military leaders welcomed the July 1914 crisis as the ideal opportunity for a pre-emptive strike?",
+              },
+              id: 'gw_l6_src_a',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -5599,6 +6018,15 @@ const great_war_data = {
               'Miscalculation vs malice: Emphasizes that statesmen did not want the horrific war that actually resulted.',
               'Modern perspective: Benefitted from access to Russian, Serbian, and French diplomatic archives unavailable to earlier historians.',
             ],
+            source_context:
+              "Professor Christopher Clark's work revolutionized modern understanding of 1914 by rejecting the traditional idea that Germany single-handedly planned the war. He argues that leaders across Britain, France, Russia, Germany, and Austria-Hungary made reckless calculations, sleepwalking together into catastrophe. **Hinge Question:** Why is Clark's metaphor of 'sleepwalkers' so powerful in explaining why none of Europe's leaders anticipated the catastrophic reality of trench warfare?",
+            teacher_notes: {
+              source_context:
+                "Professor Christopher Clark's work revolutionized modern understanding of 1914 by rejecting the traditional idea that Germany single-handedly planned the war. He argues that leaders across Britain, France, Russia, Germany, and Austria-Hungary made reckless calculations, sleepwalking together into catastrophe. **Hinge Question:** Why is Clark's metaphor of 'sleepwalkers' so powerful in explaining why none of Europe's leaders anticipated the catastrophic reality of trench warfare?",
+            },
+            id: 'gw_l6_src_b',
+            src: '',
+            image: '',
           },
           sources: [
             {
@@ -5627,6 +6055,15 @@ const great_war_data = {
                 'Miscalculation vs malice: Emphasizes that statesmen did not want the horrific war that actually resulted.',
                 'Modern perspective: Benefitted from access to Russian, Serbian, and French diplomatic archives unavailable to earlier historians.',
               ],
+              source_context:
+                "Professor Christopher Clark's work revolutionized modern understanding of 1914 by rejecting the traditional idea that Germany single-handedly planned the war. He argues that leaders across Britain, France, Russia, Germany, and Austria-Hungary made reckless calculations, sleepwalking together into catastrophe. **Hinge Question:** Why is Clark's metaphor of 'sleepwalkers' so powerful in explaining why none of Europe's leaders anticipated the catastrophic reality of trench warfare?",
+              teacher_notes: {
+                source_context:
+                  "Professor Christopher Clark's work revolutionized modern understanding of 1914 by rejecting the traditional idea that Germany single-handedly planned the war. He argues that leaders across Britain, France, Russia, Germany, and Austria-Hungary made reckless calculations, sleepwalking together into catastrophe. **Hinge Question:** Why is Clark's metaphor of 'sleepwalkers' so powerful in explaining why none of Europe's leaders anticipated the catastrophic reality of trench warfare?",
+              },
+              id: 'gw_l6_src_b',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -5661,6 +6098,15 @@ const great_war_data = {
               "Continuity thesis: Suggested a disturbing continuity between the aggressive imperialism of 1914 and Hitler's foreign policy in 1939.",
               'Clash of historiographies: Represents the classic debate between intentionalist guilt and structural systemic failure.',
             ],
+            source_context:
+              "In 1961, German historian Fritz Fischer caused an international sensation by publishing evidence from previously secret German archives showing that imperial Germany had planned aggressive territorial annexations (Septemberprogramm) and intentionally risked world war in July 1914. **Hinge Question:** Why did Fritz Fischer's research cause such an immense scandal in post-war West Germany?",
+            teacher_notes: {
+              source_context:
+                "In 1961, German historian Fritz Fischer caused an international sensation by publishing evidence from previously secret German archives showing that imperial Germany had planned aggressive territorial annexations (Septemberprogramm) and intentionally risked world war in July 1914. **Hinge Question:** Why did Fritz Fischer's research cause such an immense scandal in post-war West Germany?",
+            },
+            id: 'gw_l6_src_c',
+            src: '',
+            image: '',
           },
           sources: [
             {
@@ -5689,6 +6135,15 @@ const great_war_data = {
                 "Continuity thesis: Suggested a disturbing continuity between the aggressive imperialism of 1914 and Hitler's foreign policy in 1939.",
                 'Clash of historiographies: Represents the classic debate between intentionalist guilt and structural systemic failure.',
               ],
+              source_context:
+                "In 1961, German historian Fritz Fischer caused an international sensation by publishing evidence from previously secret German archives showing that imperial Germany had planned aggressive territorial annexations (Septemberprogramm) and intentionally risked world war in July 1914. **Hinge Question:** Why did Fritz Fischer's research cause such an immense scandal in post-war West Germany?",
+              teacher_notes: {
+                source_context:
+                  "In 1961, German historian Fritz Fischer caused an international sensation by publishing evidence from previously secret German archives showing that imperial Germany had planned aggressive territorial annexations (Septemberprogramm) and intentionally risked world war in July 1914. **Hinge Question:** Why did Fritz Fischer's research cause such an immense scandal in post-war West Germany?",
+              },
+              id: 'gw_l6_src_c',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -5705,7 +6160,7 @@ const great_war_data = {
             letter: 'D',
             type: 'written',
             title:
-              'Source D (Primary Personal Letter): Prime Minister H. H. Asquith, Letter to Venetia Stanley on the Cabinet Crisis (2 August 1914)',
+              'Source D (Personal Letter): Prime Minister H. H. Asquith, Letter to Venetia Stanley on the Cabinet Crisis (2 August 1914)',
             text: 'We had a long Cabinet this morning. Happily, we have avoided an immediate split, though John Morley and John Burns are both talking of resignation... There are two points on which we are all agreed: (1) We have no binding obligation to France or Russia to send an army or navy to their aid; (2) We cannot allow Germany to use the English Channel as a hostile base against France. But the real crux is: what are we to do about Belgium? If Germany invades Belgium in force, we cannot stand by and see a small, heroic nation whose neutrality we guaranteed crushed under the Prussian heel. That will unite the Cabinet and the country as nothing else could.',
             caption:
               "Personal letter written by British Prime Minister Herbert Henry Asquith to his confidante Venetia Stanley on the eve of Britain's declaration of war.",
@@ -5727,13 +6182,22 @@ const great_war_data = {
               'Anti-war sentiment: Proves that British entry was not a foregone conclusion.',
               "Strategic vital interest: Belgium was not just a moral cause, but Britain's historic defense perimeter against continental invasion.",
             ],
+            source_context:
+              'Until 2 August 1914, the British Cabinet was deeply divided over whether to enter the war. A large faction of Liberal ministers opposed fighting for France or Russia. The German invasion of Belgium fundamentally transformed British politics, providing a legal, moral, and strategic justification that united the government. **Hinge Question:** Why was the German invasion of Belgium the essential catalyst needed to unite a divided British government and public for war?',
+            teacher_notes: {
+              source_context:
+                'Until 2 August 1914, the British Cabinet was deeply divided over whether to enter the war. A large faction of Liberal ministers opposed fighting for France or Russia. The German invasion of Belgium fundamentally transformed British politics, providing a legal, moral, and strategic justification that united the government. **Hinge Question:** Why was the German invasion of Belgium the essential catalyst needed to unite a divided British government and public for war?',
+            },
+            id: 'gw_l6_src_d',
+            src: '',
+            image: '',
           },
           sources: [
             {
               letter: 'D',
               type: 'written',
               title:
-                'Source D (Primary Personal Letter): Prime Minister H. H. Asquith, Letter to Venetia Stanley on the Cabinet Crisis (2 August 1914)',
+                'Source D (Personal Letter): Prime Minister H. H. Asquith, Letter to Venetia Stanley on the Cabinet Crisis (2 August 1914)',
               text: 'We had a long Cabinet this morning. Happily, we have avoided an immediate split, though John Morley and John Burns are both talking of resignation... There are two points on which we are all agreed: (1) We have no binding obligation to France or Russia to send an army or navy to their aid; (2) We cannot allow Germany to use the English Channel as a hostile base against France. But the real crux is: what are we to do about Belgium? If Germany invades Belgium in force, we cannot stand by and see a small, heroic nation whose neutrality we guaranteed crushed under the Prussian heel. That will unite the Cabinet and the country as nothing else could.',
               caption:
                 "Personal letter written by British Prime Minister Herbert Henry Asquith to his confidante Venetia Stanley on the eve of Britain's declaration of war.",
@@ -5755,6 +6219,15 @@ const great_war_data = {
                 'Anti-war sentiment: Proves that British entry was not a foregone conclusion.',
                 "Strategic vital interest: Belgium was not just a moral cause, but Britain's historic defense perimeter against continental invasion.",
               ],
+              source_context:
+                'Until 2 August 1914, the British Cabinet was deeply divided over whether to enter the war. A large faction of Liberal ministers opposed fighting for France or Russia. The German invasion of Belgium fundamentally transformed British politics, providing a legal, moral, and strategic justification that united the government. **Hinge Question:** Why was the German invasion of Belgium the essential catalyst needed to unite a divided British government and public for war?',
+              teacher_notes: {
+                source_context:
+                  'Until 2 August 1914, the British Cabinet was deeply divided over whether to enter the war. A large faction of Liberal ministers opposed fighting for France or Russia. The German invasion of Belgium fundamentally transformed British politics, providing a legal, moral, and strategic justification that united the government. **Hinge Question:** Why was the German invasion of Belgium the essential catalyst needed to unite a divided British government and public for war?',
+              },
+              id: 'gw_l6_src_d',
+              src: '',
+              image: '',
             },
           ],
         },
@@ -5790,6 +6263,13 @@ const great_war_data = {
               'Timetable tyranny: Shows where military mobilization overtook diplomatic negotiations.',
               'Multiple decision points: Prompts students to evaluate whether war could have been halted at specific stages.',
             ],
+            source_context:
+              "Within thirty-seven days of the shots fired in Sarajevo, five of the world's greatest empires were at war. The July Crisis demonstrated how interlocking alliances, rigid military mobilization timetables, and diplomatic miscalculations triggered a rapid, unstoppable chain reaction. **Hinge Question:** At which point in the July Crisis did the outbreak of general European war become inevitable?",
+            teacher_notes: {
+              source_context:
+                "Within thirty-seven days of the shots fired in Sarajevo, five of the world's greatest empires were at war. The July Crisis demonstrated how interlocking alliances, rigid military mobilization timetables, and diplomatic miscalculations triggered a rapid, unstoppable chain reaction. **Hinge Question:** At which point in the July Crisis did the outbreak of general European war become inevitable?",
+            },
+            id: 'gw_l6_src_e',
           },
           sources: [
             {
@@ -5819,6 +6299,13 @@ const great_war_data = {
                 'Timetable tyranny: Shows where military mobilization overtook diplomatic negotiations.',
                 'Multiple decision points: Prompts students to evaluate whether war could have been halted at specific stages.',
               ],
+              source_context:
+                "Within thirty-seven days of the shots fired in Sarajevo, five of the world's greatest empires were at war. The July Crisis demonstrated how interlocking alliances, rigid military mobilization timetables, and diplomatic miscalculations triggered a rapid, unstoppable chain reaction. **Hinge Question:** At which point in the July Crisis did the outbreak of general European war become inevitable?",
+              teacher_notes: {
+                source_context:
+                  "Within thirty-seven days of the shots fired in Sarajevo, five of the world's greatest empires were at war. The July Crisis demonstrated how interlocking alliances, rigid military mobilization timetables, and diplomatic miscalculations triggered a rapid, unstoppable chain reaction. **Hinge Question:** At which point in the July Crisis did the outbreak of general European war become inevitable?",
+              },
+              id: 'gw_l6_src_e',
             },
           ],
         },
@@ -6197,7 +6684,7 @@ const great_war_data = {
           letter: 'A',
           type: 'written',
           title:
-            'Source A (Primary Diary Record): Admiral Georg Alexander von Müller, Chief of the Imperial Naval Cabinet, The Imperial War Council (8 December 1912)',
+            'Source A (Primary Diary Record): Admiral Georg Alexander von Müller, The Imperial War Council (8 December 1912)',
           text: "Sunday: Kaiser Wilhelm summoned a meeting of the military leaders... General von Moltke [Chief of the General Staff] said: 'War is inevitable, and the sooner the better. But we ought to do more through the press to prepare the nation for a war against Russia.' The Kaiser agreed... The Chief of the Naval Staff said the Navy would like to see the conflict postponed for one-and-a-half years, until the Kiel Canal was widened to take dreadnoughts and the submarine base at Heligoland completed. Moltke replied that the Navy would never be fully ready and the Army's position would get worse as Russia built up its railways. Result: almost nothing decided, but the mindset of the military leadership was clear.",
           caption:
             'Confidential diary entry recording the secret German Imperial War Council held in Berlin on 8 December 1912, cited by historians as evidence of premeditated German planning for European war.',
@@ -6225,6 +6712,9 @@ const great_war_data = {
             source_context:
               "Discovered by historians in the 1960s, Admiral von Müller's diary showed that senior German military commanders openly advocated pre-emptive war as early as December 1912, arguing that Germany's chances of winning would decline as Russia modernized its railways. **Hinge Question:** How does Müller's diary support the argument that German military leaders welcomed the July 1914 crisis as the ideal opportunity for a pre-emptive strike?",
           },
+          id: 'gw_l6_src_a',
+          src: '',
+          image: '',
         },
         {
           letter: 'B',
@@ -6258,6 +6748,9 @@ const great_war_data = {
             source_context:
               "Professor Christopher Clark's work revolutionized modern understanding of 1914 by rejecting the traditional idea that Germany single-handedly planned the war. He argues that leaders across Britain, France, Russia, Germany, and Austria-Hungary made reckless calculations, sleepwalking together into catastrophe. **Hinge Question:** Why is Clark's metaphor of 'sleepwalkers' so powerful in explaining why none of Europe's leaders anticipated the catastrophic reality of trench warfare?",
           },
+          id: 'gw_l6_src_b',
+          src: '',
+          image: '',
         },
         {
           letter: 'C',
@@ -6291,12 +6784,15 @@ const great_war_data = {
             source_context:
               "In 1961, German historian Fritz Fischer caused an international sensation by publishing evidence from previously secret German archives showing that imperial Germany had planned aggressive territorial annexations (Septemberprogramm) and intentionally risked world war in July 1914. **Hinge Question:** Why did Fritz Fischer's research cause such an immense scandal in post-war West Germany?",
           },
+          id: 'gw_l6_src_c',
+          src: '',
+          image: '',
         },
         {
           letter: 'D',
           type: 'written',
           title:
-            'Source D (Primary Personal Letter): Prime Minister H. H. Asquith, Letter to Venetia Stanley on the Cabinet Crisis (2 August 1914)',
+            'Source D (Personal Letter): Prime Minister H. H. Asquith, Letter to Venetia Stanley on the Cabinet Crisis (2 August 1914)',
           text: 'We had a long Cabinet this morning. Happily, we have avoided an immediate split, though John Morley and John Burns are both talking of resignation... There are two points on which we are all agreed: (1) We have no binding obligation to France or Russia to send an army or navy to their aid; (2) We cannot allow Germany to use the English Channel as a hostile base against France. But the real crux is: what are we to do about Belgium? If Germany invades Belgium in force, we cannot stand by and see a small, heroic nation whose neutrality we guaranteed crushed under the Prussian heel. That will unite the Cabinet and the country as nothing else could.',
           caption:
             "Personal letter written by British Prime Minister Herbert Henry Asquith to his confidante Venetia Stanley on the eve of Britain's declaration of war.",
@@ -6324,6 +6820,9 @@ const great_war_data = {
             source_context:
               'Until 2 August 1914, the British Cabinet was deeply divided over whether to enter the war. A large faction of Liberal ministers opposed fighting for France or Russia. The German invasion of Belgium fundamentally transformed British politics, providing a legal, moral, and strategic justification that united the government. **Hinge Question:** Why was the German invasion of Belgium the essential catalyst needed to unite a divided British government and public for war?',
           },
+          id: 'gw_l6_src_d',
+          src: '',
+          image: '',
         },
         {
           letter: 'E',
@@ -6358,6 +6857,7 @@ const great_war_data = {
             source_context:
               "Within thirty-seven days of the shots fired in Sarajevo, five of the world's greatest empires were at war. The July Crisis demonstrated how interlocking alliances, rigid military mobilization timetables, and diplomatic miscalculations triggered a rapid, unstoppable chain reaction. **Hinge Question:** At which point in the July Crisis did the outbreak of general European war become inevitable?",
           },
+          id: 'gw_l6_src_e',
         },
       ],
     },
@@ -7091,7 +7591,12 @@ const great_war_data = {
     },
   ],
 };
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = great_war_data;
 }
+if (typeof window !== 'undefined') {
+  window.UNIT_DATA = great_war_data;
+}
+
 export default great_war_data;

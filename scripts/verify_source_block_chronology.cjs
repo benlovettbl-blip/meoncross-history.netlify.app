@@ -23,6 +23,14 @@ const FIVE_BLOCK_UNITS = [
   'cold_war',
   'eee',
   'edexcel_medicine',
+  'medieval_england',
+  'monarchy_religion_power',
+  'industrialisation_and_empire',
+  'first_british_empire',
+  'second_british_empire',
+  'australia',
+  'post_war_britain',
+  'great_war',
 ];
 
 console.log('======================================================================');
