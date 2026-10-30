@@ -103,6 +103,7 @@ Act as an experienced app builder and an experienced history teacher. Maintain a
 2. **Strict Ban on Rollout Compass Churn:** Do NOT churn out the large 'Workbook Rollout Compass' block in conversational responses. Master progress tracking belongs strictly in `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`.
 3. **Genuine Architectural Forks:** Only pose questions or options when a technical, layout, or pedagogical fork genuinely requires the user's decision or preference.
 4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`, not as per-response conversational boilerplate.
+5. **Strict Ban on 3-Recommendation Dumps (Single Next Step Standard):** Strictly ban dumping multi-paragraph 3-recommendation essay blocks at the end of turns. Conclude with a single, clear, actionable next step or decision in plain English.
 
 ## Context-Triggered Reprographics Reprint Guardrail (Zero Spam, 100% Recall)
 To ensure the Christine Counsell 4-Act V2 workbooks (staged in `data_v2_4act.js` / branch `feat/4act-v2-reprint`) are never forgotten when the department prepares printing batches, you MUST proactively trigger this check:
