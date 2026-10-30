@@ -4589,7 +4589,7 @@
           "rights_status": "Public Domain Mark (PDM 1.0)",
           "commercial_use_permitted": true,
           "source_url": "https://wellcomecollection.org/works/k3l4m5n6",
-          "asset_path": "/images/london_bill_of_mortality_1665.jpg"
+          "asset_path": "/images/plague_doctor_schnabel.jpg"
         },
         {
           "lesson_num": 10,
@@ -11815,7 +11815,21 @@
           "lesson_num": 3,
           "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
           "source_id": "Source A",
-          "artifact_title": "Technical Schematic from 'The Metamorphosis of Ajax' by Sir John Harington",
+          "artifact_title": "John Stow, 'A Survey of London' on Overcrowded Tenements & Street Filth (1598)",
+          "date": "1598",
+          "creator": "John Stow, London Historian & Antiquary",
+          "repository": "British Library, London",
+          "accession_id": "BL STC 23341 / Survey of London Early Modern Print",
+          "rights_status": "Public Domain (16th-Century Printed Book)",
+          "commercial_use_permitted": true,
+          "source_url": "https://www.bl.uk/",
+          "asset_path": ""
+        },
+        {
+          "lesson_num": 3,
+          "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
+          "source_id": "Source B",
+          "artifact_title": "Technical Schematic from 'The Metamorphosis of Ajax' by Sir John Harington (1596)",
           "date": "1596",
           "creator": "Sir John Harington, Courtier & Inventor",
           "repository": "British Library, London",
@@ -11828,7 +11842,21 @@
         {
           "lesson_num": 3,
           "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
-          "source_id": "Source B",
+          "source_id": "Source C",
+          "artifact_title": "Contemporary Etching of the New River Head and Water House at Islington by Wenceslaus Hollar (1665)",
+          "date": "1665",
+          "creator": "Wenceslaus Hollar, Bohemian-English Printmaker",
+          "repository": "British Museum, London / Yale Center for British Art",
+          "accession_id": "British Museum 1868,0822.610 / Pennington 919",
+          "rights_status": "Public Domain (17th-Century Copper Etching)",
+          "commercial_use_permitted": true,
+          "source_url": "https://www.britishmuseum.org/collection/object/P_1868-0822-610",
+          "asset_path": "/images/new_river_head_hollar_1665.jpg"
+        },
+        {
+          "lesson_num": 3,
+          "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
+          "source_id": "Source D",
           "artifact_title": "Diary Entry of Samuel Pepys, London (20 October 1660)",
           "date": "20 October 1660",
           "creator": "Samuel Pepys, Navy Board Administrator",
@@ -11842,21 +11870,7 @@
         {
           "lesson_num": 3,
           "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
-          "source_id": "Source C",
-          "artifact_title": "Doctor Schnabel von Rom: Contemporary Engraving of a Plague Doctor in Beak Mask",
-          "date": "c. 1656–1665",
-          "creator": "Paulus Fürst of Nuremberg",
-          "repository": "Wellcome Collection, London",
-          "accession_id": "Wellcome Library no. 548261i / Medical Prints & Drawings",
-          "rights_status": "Public Domain (Creative Commons Attribution 4.0)",
-          "commercial_use_permitted": true,
-          "source_url": "https://wellcomecollection.org/works/m8evp2w8",
-          "asset_path": "/images/plague_doctor_schnabel.jpg"
-        },
-        {
-          "lesson_num": 3,
-          "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
-          "source_id": "Source D",
+          "source_id": "Source E",
           "artifact_title": "London Bill of Mortality for the Week Ending 19 September 1665",
           "date": "19 September 1665",
           "creator": "Worshipful Company of Parish Clerks, London",
@@ -11866,20 +11880,6 @@
           "commercial_use_permitted": true,
           "source_url": "https://search.lma.gov.uk/",
           "asset_path": "/images/night_plague_burials_1665.jpg"
-        },
-        {
-          "lesson_num": 3,
-          "lesson_title": "To what extent did towns become filthier during the Early Modern period?",
-          "source_id": "Source E",
-          "artifact_title": "Orders Conceived and Published by the Lord Mayor and Aldermen of London (1665)",
-          "date": "1665",
-          "creator": "Sir John Lawrence, Lord Mayor of London",
-          "repository": "Corporation of London Records Office / British Library",
-          "accession_id": "BL 816.m.12.(19.) / City of London Plague Regulations",
-          "rights_status": "Public Domain (Civic Proclamation)",
-          "commercial_use_permitted": true,
-          "source_url": "https://www.bl.uk/",
-          "asset_path": "/units/water_and_sanitation/assets/was_water_closet_1596.png"
         },
         {
           "lesson_num": 4,

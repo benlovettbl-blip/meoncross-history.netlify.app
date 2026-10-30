@@ -134292,21 +134292,123 @@
               "act": 1,
               "title": "The Great Metropolis: Tudor London’s Population Boom & Overhangs",
               "theme_heading": "The Great Metropolis: Tudor London’s Population Boom & Overhangs",
-              "text": "<span class=\"para-ref\">[3.1]</span> Between 1500 and 1700, England underwent a dramatic demographic transformation. While national population doubled from 2.5 million to over 5 million, London exploded from 60,000 to over 500,000 citizens. Rural enclosure drove hundreds of thousands of poor labourers into the capital. Landlords subdivided old houses into cramped tenements and threw up flimsy timber dwellings down narrow alleys.<br><br>This sudden growth overwhelmed sanitation. Overhanging upper floors leaned so close across streets that neighbours could shake hands from top windows, trapping toxic coal smoke and street stench. London possessed no municipal sewer network. Citizens emptied chamber pots from upstairs windows into gutters with the cry *\"Gardyloo!\"* (*regardez l’eau*). Piped water was rare; most queued for hours at public conduits or paid commercial water-carriers (*cobs*) by the bucket.",
+              "text": "<span class=\"para-ref\">[3.1]</span> Between 1500 and 1700, England underwent a dramatic demographic transformation. While national population doubled from 2.5 million to over 5 million, London exploded from 60,000 to over 500,000 citizens. Rural enclosure drove hundreds of thousands of poor labourers into the capital. Landlords subdivided old houses into cramped tenements and threw up flimsy timber dwellings down narrow alleys.<br><br>This sudden growth overwhelmed sanitation (Source A). Overhanging upper floors leaned so close across streets that neighbours could shake hands from top windows, trapping toxic coal smoke and street stench. London possessed no municipal sewer network. Citizens emptied chamber pots from upstairs windows into gutters with the cry *\"Gardyloo!\"* (*regardez l’eau*). Piped water was rare; most queued for hours at public conduits or paid commercial water-carriers (*cobs*) by the bucket.",
               "sources": [
                 {
                   "id": "water_l3_src_a",
                   "letter": "A",
+                  "type": "written",
+                  "title": "Source A: John Stow, 'A Survey of London' on Overcrowded Tenements & Street Filth (1598)",
+                  "caption": "Antiquarian survey describing the overcrowding, cantilevered wooden houses, and choked sewage ditches of late Elizabethan London (British Library / STC 23341).",
+                  "author": "John Stow, London Historian & Antiquary",
+                  "date": "1598",
+                  "content": "The town ditch without the wall was formerly kept sweet and clean, but is now of late encroached upon, and by daily casting in of dead beasts, offal, and the filth of tenements, so choked up that the air is become corrupt... In many narrow lanes, the upper stories of timber houses do overhang the streets so closely that light is excluded, and the open kennels run with thick foul grease and chamber-pot waste.",
+                  "question_badge": "TUDOR URBAN OVERCROWDING",
+                  "question": "What does John Stow's survey reveal about how rapid population growth overwhelmed Tudor London's streets?",
+                  "model_answer": "Stow reveals that rapid migration led landlords to subdivide tenements and build overhanging timber houses that blocked sunlight. Furthermore, ancient ditches and street gutters were choked with dead animals and chamber-pot sewage, creating corrupt air and severe filth.",
+                  "context": "Antiquary John Stow surveyed every ward of Elizabethan London, recording how rural enclosure and rapid migration were turning ancient parish streets into overcrowded, unsanitary slums.",
+                  "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+                  "provenance_clues": {
+                    "author": "John Stow, London tailor, antiquary, and eyewitness observer.",
+                    "audience": "Citizens of London, city aldermen, and Elizabethan scholars.",
+                    "motive": "Documenting the historic geography of London while warning of rapid urban decay.",
+                    "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?"
+                  },
+                  "teacher_notes": {
+                    "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+                    "source_context": "Antiquary John Stow surveyed every ward of Elizabethan London, documenting how rapid migration from the countryside had divided ancient family homes into overcrowded tenements without sewage disposal. **Hinge Question:** Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+                    "provenance_breakdown": {
+                      "author": "John Stow, London tailor, antiquary, and eyewitness observer.",
+                      "audience": "Citizens of London, city aldermen, and Elizabethan scholars.",
+                      "motive": "Documenting the historic geography of London while warning of rapid urban decay."
+                    }
+                  },
+                  "source_context": "Antiquary John Stow surveyed every ward of Elizabethan London, documenting how rapid migration from the countryside had divided ancient family homes into overcrowded tenements without sewage disposal. **Hinge Question:** Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?"
+                }
+              ],
+              "source": {
+                "id": "water_l3_src_a",
+                "letter": "A",
+                "type": "written",
+                "title": "Source A: John Stow, 'A Survey of London' on Overcrowded Tenements & Street Filth (1598)",
+                "caption": "Antiquarian survey describing the overcrowding, cantilevered wooden houses, and choked sewage ditches of late Elizabethan London (British Library / STC 23341).",
+                "author": "John Stow, London Historian & Antiquary",
+                "date": "1598",
+                "content": "The town ditch without the wall was formerly kept sweet and clean, but is now of late encroached upon, and by daily casting in of dead beasts, offal, and the filth of tenements, so choked up that the air is become corrupt... In many narrow lanes, the upper stories of timber houses do overhang the streets so closely that light is excluded, and the open kennels run with thick foul grease and chamber-pot waste.",
+                "question_badge": "TUDOR URBAN OVERCROWDING",
+                "question": "What does John Stow's survey reveal about how rapid population growth overwhelmed Tudor London's streets?",
+                "model_answer": "Stow reveals that rapid migration led landlords to subdivide tenements and build overhanging timber houses that blocked sunlight. Furthermore, ancient ditches and street gutters were choked with dead animals and chamber-pot sewage, creating corrupt air and severe filth.",
+                "context": "Antiquary John Stow surveyed every ward of Elizabethan London, recording how rural enclosure and rapid migration were turning ancient parish streets into overcrowded, unsanitary slums.",
+                "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+                "provenance_clues": {
+                  "author": "John Stow, London tailor, antiquary, and eyewitness observer.",
+                  "audience": "Citizens of London, city aldermen, and Elizabethan scholars.",
+                  "motive": "Documenting the historic geography of London while warning of rapid urban decay.",
+                  "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?"
+                },
+                "teacher_notes": {
+                  "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+                  "source_context": "Antiquary John Stow surveyed every ward of Elizabethan London, documenting how rapid migration from the countryside had divided ancient family homes into overcrowded tenements without sewage disposal. **Hinge Question:** Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+                  "provenance_breakdown": {
+                    "author": "John Stow, London tailor, antiquary, and eyewitness observer.",
+                    "audience": "Citizens of London, city aldermen, and Elizabethan scholars.",
+                    "motive": "Documenting the historic geography of London while warning of rapid urban decay."
+                  }
+                },
+                "source_context": "Antiquary John Stow surveyed every ward of Elizabethan London, documenting how rapid migration from the countryside had divided ancient family homes into overcrowded tenements without sewage disposal. **Hinge Question:** Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?"
+              }
+            },
+            {
+              "act": 2,
+              "title": "The Royal Novelty: Sir John Harington’s Flush Toilet (1596)",
+              "theme_heading": "The Royal Novelty: Sir John Harington’s Flush Toilet (1596)",
+              "text": "<span class=\"para-ref\">[3.2]</span> In 1596, Queen Elizabeth I’s godson, **Sir John Harington**, invented the world’s first valve-operated flushing water closet (Source B). In his treatise *The Metamorphosis of Ajax*, Harington designed an indoor toilet with an overhead water cistern, a brass valve, and a release lever that unleashed 7.5 gallons of water to flush waste down a lead pipe into an outdoor pit.<br><br>Harington built models at his Kelston manor and Queen Elizabeth’s palace at Richmond. However, the invention failed to transform public health. The barrier was infrastructure: flush toilets required pressurized running water mains and municipal sewer pipes. Because 99% of British homes had neither, Harington’s flush toilet remained a royal novelty, and Britons relied on privy sheds and cesspools for two more centuries.",
+              "source": {
+                "id": "water_l3_src_b",
+                "letter": "B",
+                "type": "visual",
+                "src": "/units/water_and_sanitation/assets/harington_toilet.jpg",
+                "image": "/units/water_and_sanitation/assets/harington_toilet.jpg",
+                "title": "Source B: Technical Schematic from 'The Metamorphosis of Ajax' by Sir John Harington (1596)",
+                "caption": "Original woodcut schematic illustrating the flushing water closet apparatus invented by Sir John Harington, godson of Queen Elizabeth I (British Library C.115.a.37).",
+                "author": "Sir John Harington, Courtier & Author",
+                "date": "1596",
+                "question_badge": "TUDOR MECHANICAL ENGINEERING",
+                "question": "What does Source B show about how Sir John Harington's water closet operated?",
+                "model_answer": "Source B shows an overhead cistern supplying water to a pan with a handle that lifted a brass valve, allowing waste to flush into a vault below. This shows that flush toilets were invented in Elizabethan England, though only royalty could afford the plumbing.",
+                "context": "Harington described his water closet in a satirical pamphlet punning on 'a jakes' (privy). He built one prototype at his Kelston country house and another for Queen Elizabeth I at Richmond Palace.",
+                "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
+                "provenance_clues": {
+                  "author": "Sir John Harington, Elizabethan courtier and inventor.",
+                  "audience": "Educated Elizabethan nobility and court society.",
+                  "motive": "Promoting his mechanical water closet invention while satirizing court politics.",
+                  "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
+                },
+                "teacher_notes": {
+                  "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
+                  "source_context": "Harington described his water closet in a satirical pamphlet. **Hinge Question:** Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
+                  "provenance_breakdown": {
+                    "author": "Sir John Harington, Elizabethan courtier and inventor.",
+                    "audience": "Educated Elizabethan nobility and court society.",
+                    "motive": "Promoting his mechanical water closet invention while satirizing court politics."
+                  }
+                },
+                "source_context": "Harington described his water closet in a satirical pamphlet. **Hinge Question:** Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
+              },
+              "sources": [
+                {
+                  "id": "water_l3_src_b",
+                  "letter": "B",
                   "type": "visual",
                   "src": "/units/water_and_sanitation/assets/harington_toilet.jpg",
                   "image": "/units/water_and_sanitation/assets/harington_toilet.jpg",
-                  "title": "Source A: Technical Schematic from 'The Metamorphosis of Ajax' by Sir John Harington (1596)",
+                  "title": "Source B: Technical Schematic from 'The Metamorphosis of Ajax' by Sir John Harington (1596)",
                   "caption": "Original woodcut schematic illustrating the flushing water closet apparatus invented by Sir John Harington, godson of Queen Elizabeth I (British Library C.115.a.37).",
                   "author": "Sir John Harington, Courtier & Author",
                   "date": "1596",
                   "question_badge": "TUDOR MECHANICAL ENGINEERING",
-                  "question": "What does Source A show about how Sir John Harington's water closet operated?",
-                  "model_answer": "Source A shows an overhead cistern supplying water to a pan with a handle that lifted a brass valve, allowing waste to flush into a vault below. This shows that flush toilets were invented in Elizabethan England, though only royalty could afford the plumbing.",
+                  "question": "What does Source B show about how Sir John Harington's water closet operated?",
+                  "model_answer": "Source B shows an overhead cistern supplying water to a pan with a handle that lifted a brass valve, allowing waste to flush into a vault below. This shows that flush toilets were invented in Elizabethan England, though only royalty could afford the plumbing.",
                   "context": "Harington described his water closet in a satirical pamphlet punning on 'a jakes' (privy). He built one prototype at his Kelston country house and another for Queen Elizabeth I at Richmond Palace.",
                   "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
                   "provenance_clues": {
@@ -134327,51 +134429,92 @@
                   "source_context": "Harington described his water closet in a satirical pamphlet. **Hinge Question:** Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
                 }
               ],
+              "isReversed": false
+            },
+            {
+              "act": 3,
+              "title": "Private Water for the Wealthy: Sir Hugh Myddelton & The New River (1613)",
+              "theme_heading": "Private Water for the Wealthy: Sir Hugh Myddelton & The New River (1613)",
+              "text": "<span class=\"para-ref\">[3.3]</span> As London’s parish wells became dangerously polluted, private enterprise stepped in. In 1609, wealthy goldsmith **Sir Hugh Myddelton** launched the **New River** project: a 38-mile man-made canal bringing fresh spring water from Hertfordshire into an elevated reservoir at Islington in north London (Source C).<br><br>Completed in 1613, the New River distributed water across London through underground pipes made of hollowed-out elm tree trunks. However, this was a private commercial venture. Only wealthy nobles and merchants who paid quarterly subscription fees had branch pipes connected to their basements. Poor slum dwellers in Whitechapel and Southwark were excluded, continuing to scoop filthy, sewage-tainted water directly from the tidal Thames.",
+              "sources": [
+                {
+                  "id": "water_l3_src_c",
+                  "letter": "C",
+                  "type": "visual",
+                  "src": "/images/new_river_head_hollar_1665.jpg",
+                  "image": "/images/new_river_head_hollar_1665.jpg",
+                  "title": "Source C: Contemporary Etching of the New River Head and Water House at Islington by Wenceslaus Hollar (1665)",
+                  "caption": "Original copper etching depicting the Water House and reservoir basins at New River Head, Islington, engineered between 1609 and 1613 by Sir Hugh Myddelton to supply fresh water to London (British Museum / Yale Center for British Art).",
+                  "author": "Wenceslaus Hollar, Bohemian-English Printmaker",
+                  "date": "1665",
+                  "question_badge": "17TH-CENTURY HYDRAULIC INFRASTRUCTURE",
+                  "question": "What does Source C show about how Sir Hugh Myddelton engineered a fresh water supply for London?",
+                  "model_answer": "Source C shows the New River Head reservoir basin and two-storey Water House in Islington, where fresh water brought by a 38-mile canal was impounded and fed into wooden gravity pipes. This proves that large-scale civil engineering was used to supply fresh water to the growing capital.",
+                  "context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Chadwell and Amwell to Islington, where wooden elm-trunk pipes carried water to paying subscribers.",
+                  "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
+                  "provenance_clues": {
+                    "author": "Wenceslaus Hollar, master topographical etcher in Stuart London.",
+                    "audience": "Educated Stuart collectors, London aldermen, and historians.",
+                    "motive": "Accurately documenting London’s landmark civil engineering projects and landscapes.",
+                    "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?"
+                  },
+                  "teacher_notes": {
+                    "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
+                    "source_context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Hertfordshire into Islington. **Hinge Question:** Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
+                    "provenance_breakdown": {
+                      "author": "Wenceslaus Hollar, master topographical etcher in Stuart London.",
+                      "audience": "Educated Stuart collectors, London aldermen, and historians.",
+                      "motive": "Accurately documenting London’s landmark civil engineering projects and landscapes."
+                    }
+                  },
+                  "source_context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Hertfordshire into Islington. **Hinge Question:** Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?"
+                }
+              ],
               "source": {
-                "id": "water_l3_src_a",
-                "letter": "A",
+                "id": "water_l3_src_c",
+                "letter": "C",
                 "type": "visual",
-                "src": "/units/water_and_sanitation/assets/harington_toilet.jpg",
-                "image": "/units/water_and_sanitation/assets/harington_toilet.jpg",
-                "title": "Source A: Technical Schematic from 'The Metamorphosis of Ajax' by Sir John Harington (1596)",
-                "caption": "Original woodcut schematic illustrating the flushing water closet apparatus invented by Sir John Harington, godson of Queen Elizabeth I (British Library C.115.a.37).",
-                "author": "Sir John Harington, Courtier & Author",
-                "date": "1596",
-                "question_badge": "TUDOR MECHANICAL ENGINEERING",
-                "question": "What does Source A show about how Sir John Harington's water closet operated?",
-                "model_answer": "Source A shows an overhead cistern supplying water to a pan with a handle that lifted a brass valve, allowing waste to flush into a vault below. This shows that flush toilets were invented in Elizabethan England, though only royalty could afford the plumbing.",
-                "context": "Harington described his water closet in a satirical pamphlet punning on 'a jakes' (privy). He built one prototype at his Kelston country house and another for Queen Elizabeth I at Richmond Palace.",
-                "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
+                "src": "/images/new_river_head_hollar_1665.jpg",
+                "image": "/images/new_river_head_hollar_1665.jpg",
+                "title": "Source C: Contemporary Etching of the New River Head and Water House at Islington by Wenceslaus Hollar (1665)",
+                "caption": "Original copper etching depicting the Water House and reservoir basins at New River Head, Islington, engineered between 1609 and 1613 by Sir Hugh Myddelton to supply fresh water to London (British Museum / Yale Center for British Art).",
+                "author": "Wenceslaus Hollar, Bohemian-English Printmaker",
+                "date": "1665",
+                "question_badge": "17TH-CENTURY HYDRAULIC INFRASTRUCTURE",
+                "question": "What does Source C show about how Sir Hugh Myddelton engineered a fresh water supply for London?",
+                "model_answer": "Source C shows the New River Head reservoir basin and two-storey Water House in Islington, where fresh water brought by a 38-mile canal was impounded and fed into wooden gravity pipes. This proves that large-scale civil engineering was used to supply fresh water to the growing capital.",
+                "context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Chadwell and Amwell to Islington, where wooden elm-trunk pipes carried water to paying subscribers.",
+                "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
                 "provenance_clues": {
-                  "author": "Sir John Harington, Elizabethan courtier and inventor.",
-                  "audience": "Educated Elizabethan nobility and court society.",
-                  "motive": "Promoting his mechanical water closet invention while satirizing court politics.",
-                  "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
+                  "author": "Wenceslaus Hollar, master topographical etcher in Stuart London.",
+                  "audience": "Educated Stuart collectors, London aldermen, and historians.",
+                  "motive": "Accurately documenting London’s landmark civil engineering projects and landscapes.",
+                  "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?"
                 },
                 "teacher_notes": {
-                  "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
-                  "source_context": "Harington described his water closet in a satirical pamphlet. **Hinge Question:** Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
+                  "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
+                  "source_context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Hertfordshire into Islington. **Hinge Question:** Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
                   "provenance_breakdown": {
-                    "author": "Sir John Harington, Elizabethan courtier and inventor.",
-                    "audience": "Educated Elizabethan nobility and court society.",
-                    "motive": "Promoting his mechanical water closet invention while satirizing court politics."
+                    "author": "Wenceslaus Hollar, master topographical etcher in Stuart London.",
+                    "audience": "Educated Stuart collectors, London aldermen, and historians.",
+                    "motive": "Accurately documenting London’s landmark civil engineering projects and landscapes."
                   }
                 },
-                "source_context": "Harington described his water closet in a satirical pamphlet. **Hinge Question:** Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
+                "source_context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Hertfordshire into Islington. **Hinge Question:** Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?"
               }
             },
             {
-              "act": 2,
-              "title": "The Royal Novelty: Sir John Harington’s Flush Toilet (1596)",
-              "theme_heading": "The Royal Novelty: Sir John Harington’s Flush Toilet (1596)",
-              "text": "<span class=\"para-ref\">[3.2]</span> In 1596, Queen Elizabeth I’s godson, **Sir John Harington**, invented the world’s first valve-operated flushing water closet (Source A). In his treatise *The Metamorphosis of Ajax*, Harington designed an indoor toilet with an overhead water cistern, a brass valve, and a release lever that unleashed 7.5 gallons of water to flush waste down a lead pipe into an outdoor pit.<br><br>Harington built models at his Kelston manor and Queen Elizabeth’s palace at Richmond. However, the invention failed to transform public health. The barrier was infrastructure: flush toilets required pressurized running water mains and municipal sewer pipes. Because 99% of British homes had neither, Harington’s flush toilet remained a royal novelty, and Britons relied on privy sheds and cesspools for two more centuries.",
+              "act": 4,
+              "title": "Nightsoil and Leaking Cesspits: The Misery of Samuel Pepys’ Cellar (1660)",
+              "theme_heading": "Nightsoil and Leaking Cesspits: The Misery of Samuel Pepys’ Cellar (1660)",
+              "text": "<span class=\"para-ref\">[3.4]</span> The reality of seventeenth-century domestic sanitation is captured in the private diary of naval administrator **Samuel Pepys**. On 20 October 1660, Pepys went down to his cellar and stepped into a nightmare: *“Going down to my cellar... I put my foot into a great heap of turds, by which I find that Sir Thomas Penn’s house of office is fallen into my cellar, which do trouble me.”* (Source D). His neighbour’s brick cesspit had fractured, leaking sewage through the cellar wall.<br><br>Pepys’ diary proves that even wealthy officials lived atop sanitary hazards. London basements were honeycombed with leaking cesspools that contaminated surrounding drinking wells. The city depended entirely on nightsoil men who arrived with wooden barrels after midnight to shovel out waste, often spilling slurry on doorways.",
               "source": {
-                "id": "water_l3_src_b",
-                "letter": "B",
+                "id": "water_l3_src_d",
+                "letter": "D",
                 "type": "written",
                 "src": "/units/water_and_sanitation/assets/pepys_cover.png",
                 "image": "/units/water_and_sanitation/assets/pepys_cover.png",
-                "title": "Source B: Diary Entry of Samuel Pepys, London (20 October 1660)",
+                "title": "Source D: Diary Entry of Samuel Pepys, London (20 October 1660)",
                 "caption": "Portrait plate of Samuel Pepys alongside his personal shorthand diary entry recording a domestic sewage disaster in his Seething Lane house (Magdalene College Cambridge / NPG).",
                 "author": "Samuel Pepys, Navy Board Administrator",
                 "date": "20 October 1660",
@@ -134400,12 +134543,12 @@
               },
               "sources": [
                 {
-                  "id": "water_l3_src_b",
-                  "letter": "B",
+                  "id": "water_l3_src_d",
+                  "letter": "D",
                   "type": "written",
                   "src": "/units/water_and_sanitation/assets/pepys_cover.png",
                   "image": "/units/water_and_sanitation/assets/pepys_cover.png",
-                  "title": "Source B: Diary Entry of Samuel Pepys, London (20 October 1660)",
+                  "title": "Source D: Diary Entry of Samuel Pepys, London (20 October 1660)",
                   "caption": "Portrait plate of Samuel Pepys alongside his personal shorthand diary entry recording a domestic sewage disaster in his Seething Lane house (Magdalene College Cambridge / NPG).",
                   "author": "Samuel Pepys, Navy Board Administrator",
                   "date": "20 October 1660",
@@ -134432,93 +134575,20 @@
                   },
                   "source_context": "London townhouses had brick or timber cesspools beneath basements. **Hinge Question:** How does Pepys' casual reaction show that sewage leaks were seen as an annoying everyday inconvenience rather than a medical danger?"
                 }
-              ],
-              "isReversed": false
+              ]
             },
             {
-              "act": 3,
-              "title": "Private Water for the Wealthy: Sir Hugh Myddelton & The New River (1613)",
-              "theme_heading": "Private Water for the Wealthy: Sir Hugh Myddelton & The New River (1613)",
-              "text": "<span class=\"para-ref\">[3.3]</span> As London’s parish wells became dangerously polluted, private enterprise stepped in. In 1609, wealthy goldsmith **Sir Hugh Myddelton** launched the **New River** project: a 38-mile man-made canal bringing fresh spring water from Hertfordshire into an elevated reservoir at Islington in north London.<br><br>Completed in 1613, the New River distributed water across London through underground pipes made of hollowed-out elm tree trunks. However, this was a private commercial venture. Only wealthy nobles and merchants who paid quarterly subscription fees had branch pipes connected to their basements. Poor slum dwellers in Whitechapel and Southwark were excluded, continuing to scoop filthy, sewage-tainted water directly from the tidal Thames.",
-              "sources": [
-                {
-                  "id": "water_l3_src_c",
-                  "letter": "C",
-                  "type": "visual",
-                  "src": "/images/plague_doctor_schnabel.jpg",
-                  "image": "/images/plague_doctor_schnabel.jpg",
-                  "title": "Source C: Contemporary Engraving of a Plague Doctor in Protective Beak Mask (c.1665)",
-                  "caption": "Copper engraving of 'Doctor Schnabel von Rom' (c.1656–1665) depicting the protective waxed leather costume, glass goggles, and aromatic herb-filled beak mask (Wellcome Collection 548261i).",
-                  "author": "Paulus Fürst of Nuremberg",
-                  "date": "c. 1656–1665",
-                  "question_badge": "MIASMA THEORY & CLOTHING DEFENCE",
-                  "question": "How does the plague doctor's costume show that 17th-century medical practice was dominated by the miasma theory?",
-                  "model_answer": "The doctor wears a long leather robe and a bird-like mask with a beak filled with dried herbs and sweet-smelling spices. This proves that physicians believed breathing poisonous, foul air caused plague, using aromatic herbs to filter out lethal miasma.",
-                  "context": "Invented by French royal physician Charles de Lorme in 1619, the plague suit was treated with wax or suet to repel fluids. The hollow beak held dried lavender, camphor, cloves, and rose petals.",
-                  "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-                  "provenance_clues": {
-                    "author": "Engraver and publisher Paulus Fürst.",
-                    "audience": "European public seeking medical pamphlets during plague epidemics.",
-                    "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients.",
-                    "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?"
-                  },
-                  "teacher_notes": {
-                    "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-                    "source_context": "Invented by Charles de Lorme in 1619, the plague suit was treated with wax. **Hinge Question:** Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-                    "provenance_breakdown": {
-                      "author": "Engraver and publisher Paulus Fürst.",
-                      "audience": "European public seeking medical pamphlets during plague epidemics.",
-                      "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients."
-                    }
-                  },
-                  "source_context": "Invented by Charles de Lorme in 1619, the plague suit was treated with wax. **Hinge Question:** Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?"
-                }
-              ],
+              "act": 5,
+              "title": "Historical Verdict: The Great Plague of 1665 & The Limits of Science",
+              "theme_heading": "Historical Verdict: The Great Plague of 1665 & The Limits of Science",
+              "text": "<span class=\"para-ref\">[3.5]</span> The Early Modern era presents a striking paradox. While the Scientific Revolution made breakthroughs in physics and anatomy (William Harvey, Isaac Newton), public health in 1665 was virtually unchanged from the Black Death of 1348. When the **Great Plague of 1665** struck London, killing nearly 100,000 people (Source E), medical practice relied on ancient superstition.<br><br>Doctors prescribed burning pitch in streets, holding pomanders to noses, and smoking tobacco to ward off poisonous **miasma**. Parish watchmen padlocked infected families in their homes under forty-day quarantine, painting red crosses on doors with *\"Lord Have Mercy Upon Us\"*. King Charles II and wealthy doctors fled to the country, leaving poor slum dwellers to die. Despite early inventions like Harington’s toilet and the New River, rapid population growth had outpaced sanitation science, leaving ordinary Britons more vulnerable than ever.",
               "source": {
-                "id": "water_l3_src_c",
-                "letter": "C",
-                "type": "visual",
-                "src": "/images/plague_doctor_schnabel.jpg",
-                "image": "/images/plague_doctor_schnabel.jpg",
-                "title": "Source C: Contemporary Engraving of a Plague Doctor in Protective Beak Mask (c.1665)",
-                "caption": "Copper engraving of 'Doctor Schnabel von Rom' (c.1656–1665) depicting the protective waxed leather costume, glass goggles, and aromatic herb-filled beak mask (Wellcome Collection 548261i).",
-                "author": "Paulus Fürst of Nuremberg",
-                "date": "c. 1656–1665",
-                "question_badge": "MIASMA THEORY & CLOTHING DEFENCE",
-                "question": "How does the plague doctor's costume show that 17th-century medical practice was dominated by the miasma theory?",
-                "model_answer": "The doctor wears a long leather robe and a bird-like mask with a beak filled with dried herbs and sweet-smelling spices. This proves that physicians believed breathing poisonous, foul air caused plague, using aromatic herbs to filter out lethal miasma.",
-                "context": "Invented by French royal physician Charles de Lorme in 1619, the plague suit was treated with wax or suet to repel fluids. The hollow beak held dried lavender, camphor, cloves, and rose petals.",
-                "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-                "provenance_clues": {
-                  "author": "Engraver and publisher Paulus Fürst.",
-                  "audience": "European public seeking medical pamphlets during plague epidemics.",
-                  "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients.",
-                  "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?"
-                },
-                "teacher_notes": {
-                  "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-                  "source_context": "Invented by Charles de Lorme in 1619, the plague suit was treated with wax. **Hinge Question:** Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-                  "provenance_breakdown": {
-                    "author": "Engraver and publisher Paulus Fürst.",
-                    "audience": "European public seeking medical pamphlets during plague epidemics.",
-                    "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients."
-                  }
-                },
-                "source_context": "Invented by Charles de Lorme in 1619, the plague suit was treated with wax. **Hinge Question:** Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?"
-              }
-            },
-            {
-              "act": 4,
-              "title": "Nightsoil and Leaking Cesspits: The Misery of Samuel Pepys’ Cellar (1660)",
-              "theme_heading": "Nightsoil and Leaking Cesspits: The Misery of Samuel Pepys’ Cellar (1660)",
-              "text": "<span class=\"para-ref\">[3.4]</span> The reality of seventeenth-century domestic sanitation is captured in the private diary of naval administrator **Samuel Pepys**. On 20 October 1660, Pepys went down to his cellar and stepped into a nightmare: *“Going down to my cellar... I put my foot into a great heap of turds, by which I find that Sir Thomas Penn’s house of office is fallen into my cellar, which do trouble me.”* (Source B). His neighbour’s brick cesspit had fractured, leaking sewage through the cellar wall.<br><br>Pepys’ diary proves that even wealthy officials lived atop sanitary hazards. London basements were honeycombed with leaking cesspools that contaminated surrounding drinking wells. The city depended entirely on nightsoil men who arrived with wooden barrels after midnight to shovel out waste, often spilling slurry on doorways.",
-              "source": {
-                "id": "water_l3_src_d",
-                "letter": "D",
+                "id": "water_l3_src_e",
+                "letter": "E",
                 "type": "written",
                 "src": "/images/night_plague_burials_1665.jpg",
                 "image": "/images/night_plague_burials_1665.jpg",
-                "title": "Source D: London Bill of Mortality for the Week Ending 19 September 1665",
+                "title": "Source E: London Bill of Mortality for the Week Ending 19 September 1665",
                 "caption": "Official broadsheet published by the Company of Parish Clerks recording London's highest weekly plague mortality toll during the epidemic of 1665 (London Metropolitan Archives / Wellcome Collection).",
                 "author": "Worshipful Company of Parish Clerks, London",
                 "date": "19 September 1665",
@@ -134547,12 +134617,12 @@
               },
               "sources": [
                 {
-                  "id": "water_l3_src_d",
-                  "letter": "D",
+                  "id": "water_l3_src_e",
+                  "letter": "E",
                   "type": "written",
                   "src": "/images/night_plague_burials_1665.jpg",
                   "image": "/images/night_plague_burials_1665.jpg",
-                  "title": "Source D: London Bill of Mortality for the Week Ending 19 September 1665",
+                  "title": "Source E: London Bill of Mortality for the Week Ending 19 September 1665",
                   "caption": "Official broadsheet published by the Company of Parish Clerks recording London's highest weekly plague mortality toll during the epidemic of 1665 (London Metropolitan Archives / Wellcome Collection).",
                   "author": "Worshipful Company of Parish Clerks, London",
                   "date": "19 September 1665",
@@ -134578,78 +134648,6 @@
                     }
                   },
                   "source_context": "London Bills of Mortality were compiled weekly from parish church wardens. **Hinge Question:** Why were mortality rates so much higher in crowded out-parishes like Whitechapel and Stepney than inside the city walls?"
-                }
-              ]
-            },
-            {
-              "act": 5,
-              "title": "Historical Verdict: The Great Plague of 1665 & The Limits of Science",
-              "theme_heading": "Historical Verdict: The Great Plague of 1665 & The Limits of Science",
-              "text": "<span class=\"para-ref\">[3.5]</span> The Early Modern era presents a striking paradox. While the Scientific Revolution made breakthroughs in physics and anatomy (William Harvey, Isaac Newton), public health in 1665 was virtually unchanged from the Black Death of 1348. When the **Great Plague of 1665** struck London, killing nearly 100,000 people (Source C), medical practice relied on ancient superstition.<br><br>Doctors prescribed burning pitch in streets, holding pomanders to noses, and smoking tobacco to ward off poisonous **miasma**. Parish watchmen padlocked infected families in their homes under forty-day quarantine, painting red crosses on doors with *\"Lord Have Mercy Upon Us\"*. King Charles II and wealthy doctors fled to the country, leaving poor slum dwellers to die. Despite early inventions like Harington’s toilet and the New River, rapid population growth had outpaced sanitation science, leaving ordinary Britons more vulnerable than ever.",
-              "source": {
-                "id": "water_l3_src_e",
-                "letter": "E",
-                "type": "written",
-                "title": "Source E: Sir John Harington, 'A New Discourse of a Stale Subject, Called the Metamorphosis of Ajax' (1596)",
-                "caption": "Official broadsheet proclamation setting out municipal quarantine rules, searchers, watchmen, and burial regulations during the Great Plague (Corporation of London Records Office / British Library).",
-                "author": "Sir John Lawrence, Lord Mayor of London",
-                "date": "1665",
-                "content": "That every visited house be marked with a Red Cross of a foot long in the middle of the door, evident to be seen, and with these usual printed words: 'Lord have mercy upon us', to continue on the said door until lawful opening of the same... That two watchmen be appointed to every infected house, one for the day, and the other for the night, to keep the doors locked, and to see that no person goes in or out upon pain of severe imprisonment.",
-                "question_badge": "CIVIC QUARANTINE & PUBLIC LAW",
-                "question": "What does Source E tell us about the strict measures enforced to contain the spread of plague in London?",
-                "model_answer": "Source E shows that infected houses were padlocked shut by armed watchmen and marked with a painted red cross. This demonstrates that city authorities used compulsory quarantine to trap entire families inside with sick relatives to stop the contagion spreading.",
-                "context": "London's 1665 plague orders mandated 28 days of strict confinement for any house where plague appeared. Watchmen guarded doors day and night, bringing food and preventing escapes.",
-                "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                "provenance_clues": {
-                  "author": "Lord Mayor Sir John Lawrence and London Aldermen.",
-                  "audience": "Constables, parish officers, watchmen, and London citizens.",
-                  "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets.",
-                  "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?"
-                },
-                "teacher_notes": {
-                  "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                  "source_context": "London's 1665 plague orders mandated 28 days of strict confinement. **Hinge Question:** Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                  "provenance_breakdown": {
-                    "author": "Lord Mayor Sir John Lawrence and London Aldermen.",
-                    "audience": "Constables, parish officers, watchmen, and London citizens.",
-                    "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets."
-                  }
-                },
-                "source_context": "London's 1665 plague orders mandated 28 days of strict confinement. **Hinge Question:** Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                "text": "Here is the water cistern, filled by pipe or bucket. By lifting this small valve with a brass wire, the water gusheth forth with great force and washeth the vessel clean, carrying all waste down into the vault below. It doth sweeten the privy and keep out all foul odours and corrupt vapours, so that a lady may sit therein without offending her senses."
-              },
-              "sources": [
-                {
-                  "id": "water_l3_src_e",
-                  "letter": "E",
-                  "type": "written",
-                  "title": "Source E: Sir John Harington, 'A New Discourse of a Stale Subject, Called the Metamorphosis of Ajax' (1596)",
-                  "caption": "Official broadsheet proclamation setting out municipal quarantine rules, searchers, watchmen, and burial regulations during the Great Plague (Corporation of London Records Office / British Library).",
-                  "author": "Sir John Lawrence, Lord Mayor of London",
-                  "date": "1665",
-                  "content": "That every visited house be marked with a Red Cross of a foot long in the middle of the door, evident to be seen, and with these usual printed words: 'Lord have mercy upon us', to continue on the said door until lawful opening of the same... That two watchmen be appointed to every infected house, one for the day, and the other for the night, to keep the doors locked, and to see that no person goes in or out upon pain of severe imprisonment.",
-                  "question_badge": "CIVIC QUARANTINE & PUBLIC LAW",
-                  "question": "What does Source E tell us about the strict measures enforced to contain the spread of plague in London?",
-                  "model_answer": "Source E shows that infected houses were padlocked shut by armed watchmen and marked with a painted red cross. This demonstrates that city authorities used compulsory quarantine to trap entire families inside with sick relatives to stop the contagion spreading.",
-                  "context": "London's 1665 plague orders mandated 28 days of strict confinement for any house where plague appeared. Watchmen guarded doors day and night, bringing food and preventing escapes.",
-                  "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                  "provenance_clues": {
-                    "author": "Lord Mayor Sir John Lawrence and London Aldermen.",
-                    "audience": "Constables, parish officers, watchmen, and London citizens.",
-                    "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets.",
-                    "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?"
-                  },
-                  "teacher_notes": {
-                    "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                    "source_context": "London's 1665 plague orders mandated 28 days of strict confinement. **Hinge Question:** Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                    "provenance_breakdown": {
-                      "author": "Lord Mayor Sir John Lawrence and London Aldermen.",
-                      "audience": "Constables, parish officers, watchmen, and London citizens.",
-                      "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets."
-                    }
-                  },
-                  "source_context": "London's 1665 plague orders mandated 28 days of strict confinement. **Hinge Question:** Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                  "text": "Here is the water cistern, filled by pipe or bucket. By lifting this small valve with a brass wire, the water gusheth forth with great force and washeth the vessel clean, carrying all waste down into the vault below. It doth sweeten the privy and keep out all foul odours and corrupt vapours, so that a lady may sit therein without offending her senses."
                 }
               ],
               "isReversed": true
@@ -134711,16 +134709,24 @@
             ],
             "source_context": [
               {
-                "source": "Source A (Harington’s Toilet)",
-                "context": "Schematic from \"The Metamorphosis of Ajax\" showing overhead cistern and flush valve. Hinge Question: Does Harington’s toilet diagram prove that early modern Britain was making technological progress in sanitation, or that inventions were useless without municipal infrastructure?"
+                "source": "Source A (John Stow's Survey 1598)",
+                "context": "Antiquary John Stow surveyed every ward of Elizabethan London, documenting how rapid migration from the countryside had divided ancient family homes into overcrowded tenements without sewage disposal. Hinge Question: Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?"
               },
               {
-                "source": "Source B (Pepys’ Diary)",
-                "context": "Eyewitness account of neighbour’s cesspit seeping into Pepys’ cellar in October 1660. Hinge Question: Why were even the wealthiest London households completely powerless to prevent sewage contamination in the 1660s?"
+                "source": "Source B (Harington's Flush Toilet 1596)",
+                "context": "Schematic from \"The Metamorphosis of Ajax\" showing overhead cistern and flush valve. Hinge Question: Why did Harington’s flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
               },
               {
-                "source": "Source C (Plague Broadsheet)",
-                "context": "1665 illustrated broadsheet detailing parish mortality figures and quarantine measures. Hinge Question: Why did quarantine regulations in 1665 fail to stop the spread of bubonic plague?"
+                "source": "Source C (Hollar's New River Head 1665)",
+                "context": "Etching by Wenceslaus Hollar depicting the New River Head reservoir and Water House at Islington completed by Sir Hugh Myddelton in 1613. Hinge Question: Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?"
+              },
+              {
+                "source": "Source D (Pepys' Diary 1660)",
+                "context": "Eyewitness account of neighbour’s cesspit seeping into Pepys’ cellar in October 1660. Hinge Question: How does Pepys’ casual reaction show that sewage leaks were seen as an annoying everyday inconvenience rather than a medical danger?"
+              },
+              {
+                "source": "Source E (London Bill of Mortality 1665)",
+                "context": "Official broadsheet published by the Company of Parish Clerks recording London’s highest weekly plague mortality toll during the epidemic of September 1665. Hinge Question: Why were mortality rates so much higher in crowded out-parishes like Whitechapel and Stepney than inside the city walls?"
               }
             ]
           },
@@ -135178,16 +135184,47 @@
             {
               "id": "water_l3_src_a",
               "letter": "A",
+              "type": "written",
+              "title": "Source A: John Stow, 'A Survey of London' on Overcrowded Tenements & Street Filth (1598)",
+              "caption": "Antiquarian survey describing the overcrowding, cantilevered wooden houses, and choked sewage ditches of late Elizabethan London (British Library / STC 23341).",
+              "author": "John Stow, London Historian & Antiquary",
+              "date": "1598",
+              "content": "The town ditch without the wall was formerly kept sweet and clean, but is now of late encroached upon, and by daily casting in of dead beasts, offal, and the filth of tenements, so choked up that the air is become corrupt... In many narrow lanes, the upper stories of timber houses do overhang the streets so closely that light is excluded, and the open kennels run with thick foul grease and chamber-pot waste.",
+              "question_badge": "TUDOR URBAN OVERCROWDING",
+              "question": "What does John Stow's survey reveal about how rapid population growth overwhelmed Tudor London's streets?",
+              "model_answer": "Stow reveals that rapid migration led landlords to subdivide tenements and build overhanging timber houses that blocked sunlight. Furthermore, ancient ditches and street gutters were choked with dead animals and chamber-pot sewage, creating corrupt air and severe filth.",
+              "context": "Antiquary John Stow surveyed every ward of Elizabethan London, recording how rural enclosure and rapid migration were turning ancient parish streets into overcrowded, unsanitary slums.",
+              "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+              "provenance_clues": {
+                "author": "John Stow, London tailor, antiquary, and eyewitness observer.",
+                "audience": "Citizens of London, city aldermen, and Elizabethan scholars.",
+                "motive": "Documenting the historic geography of London while warning of rapid urban decay.",
+                "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?"
+              },
+              "teacher_notes": {
+                "hinge_question": "Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+                "source_context": "Antiquary John Stow surveyed every ward of Elizabethan London, documenting how rapid migration from the countryside had divided ancient family homes into overcrowded tenements without sewage disposal. **Hinge Question:** Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?",
+                "provenance_breakdown": {
+                  "author": "John Stow, London tailor, antiquary, and eyewitness observer.",
+                  "audience": "Citizens of London, city aldermen, and Elizabethan scholars.",
+                  "motive": "Documenting the historic geography of London while warning of rapid urban decay."
+                }
+              },
+              "source_context": "Antiquary John Stow surveyed every ward of Elizabethan London, documenting how rapid migration from the countryside had divided ancient family homes into overcrowded tenements without sewage disposal. **Hinge Question:** Why did the construction of cantilevered overhanging houses make street sanitation and disease outbreaks far worse in Tudor London?"
+            },
+            {
+              "id": "water_l3_src_b",
+              "letter": "B",
               "type": "visual",
               "src": "/units/water_and_sanitation/assets/harington_toilet.jpg",
               "image": "/units/water_and_sanitation/assets/harington_toilet.jpg",
-              "title": "Source A: Technical Schematic from 'The Metamorphosis of Ajax' by Sir John Harington (1596)",
+              "title": "Source B: Technical Schematic from 'The Metamorphosis of Ajax' by Sir John Harington (1596)",
               "caption": "Original woodcut schematic illustrating the flushing water closet apparatus invented by Sir John Harington, godson of Queen Elizabeth I (British Library C.115.a.37).",
               "author": "Sir John Harington, Courtier & Author",
               "date": "1596",
               "question_badge": "TUDOR MECHANICAL ENGINEERING",
-              "question": "What does Source A show about how Sir John Harington's water closet operated?",
-              "model_answer": "Source A shows an overhead cistern supplying water to a pan with a handle that lifted a brass valve, allowing waste to flush into a vault below. This shows that flush toilets were invented in Elizabethan England, though only royalty could afford the plumbing.",
+              "question": "What does Source B show about how Sir John Harington's water closet operated?",
+              "model_answer": "Source B shows an overhead cistern supplying water to a pan with a handle that lifted a brass valve, allowing waste to flush into a vault below. This shows that flush toilets were invented in Elizabethan England, though only royalty could afford the plumbing.",
               "context": "Harington described his water closet in a satirical pamphlet punning on 'a jakes' (privy). He built one prototype at his Kelston country house and another for Queen Elizabeth I at Richmond Palace.",
               "hinge_question": "Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?",
               "provenance_clues": {
@@ -135208,12 +135245,44 @@
               "source_context": "Harington described his water closet in a satirical pamphlet. **Hinge Question:** Why did Harington's flush toilet fail to catch on widely across Britain for nearly 200 years after 1596?"
             },
             {
-              "id": "water_l3_src_b",
-              "letter": "B",
+              "id": "water_l3_src_c",
+              "letter": "C",
+              "type": "visual",
+              "src": "/images/new_river_head_hollar_1665.jpg",
+              "image": "/images/new_river_head_hollar_1665.jpg",
+              "title": "Source C: Contemporary Etching of the New River Head and Water House at Islington by Wenceslaus Hollar (1665)",
+              "caption": "Original copper etching depicting the Water House and reservoir basins at New River Head, Islington, engineered between 1609 and 1613 by Sir Hugh Myddelton to supply fresh water to London (British Museum / Yale Center for British Art).",
+              "author": "Wenceslaus Hollar, Bohemian-English Printmaker",
+              "date": "1665",
+              "question_badge": "17TH-CENTURY HYDRAULIC INFRASTRUCTURE",
+              "question": "What does Source C show about how Sir Hugh Myddelton engineered a fresh water supply for London?",
+              "model_answer": "Source C shows the New River Head reservoir basin and two-storey Water House in Islington, where fresh water brought by a 38-mile canal was impounded and fed into wooden gravity pipes. This proves that large-scale civil engineering was used to supply fresh water to the growing capital.",
+              "context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Chadwell and Amwell to Islington, where wooden elm-trunk pipes carried water to paying subscribers.",
+              "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
+              "provenance_clues": {
+                "author": "Wenceslaus Hollar, master topographical etcher in Stuart London.",
+                "audience": "Educated Stuart collectors, London aldermen, and historians.",
+                "motive": "Accurately documenting London’s landmark civil engineering projects and landscapes.",
+                "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?"
+              },
+              "teacher_notes": {
+                "hinge_question": "Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
+                "source_context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Hertfordshire into Islington. **Hinge Question:** Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?",
+                "provenance_breakdown": {
+                  "author": "Wenceslaus Hollar, master topographical etcher in Stuart London.",
+                  "audience": "Educated Stuart collectors, London aldermen, and historians.",
+                  "motive": "Accurately documenting London’s landmark civil engineering projects and landscapes."
+                }
+              },
+              "source_context": "Completed in 1613 with financial backing from King James I, the New River brought spring water from Hertfordshire into Islington. **Hinge Question:** Why did the New River Project primarily benefit wealthy Londoners while leaving poor slum areas vulnerable to water-borne disease?"
+            },
+            {
+              "id": "water_l3_src_d",
+              "letter": "D",
               "type": "written",
               "src": "/units/water_and_sanitation/assets/pepys_cover.png",
               "image": "/units/water_and_sanitation/assets/pepys_cover.png",
-              "title": "Source B: Diary Entry of Samuel Pepys, London (20 October 1660)",
+              "title": "Source D: Diary Entry of Samuel Pepys, London (20 October 1660)",
               "caption": "Portrait plate of Samuel Pepys alongside his personal shorthand diary entry recording a domestic sewage disaster in his Seething Lane house (Magdalene College Cambridge / NPG).",
               "author": "Samuel Pepys, Navy Board Administrator",
               "date": "20 October 1660",
@@ -135241,44 +135310,12 @@
               "source_context": "London townhouses had brick or timber cesspools beneath basements. **Hinge Question:** How does Pepys' casual reaction show that sewage leaks were seen as an annoying everyday inconvenience rather than a medical danger?"
             },
             {
-              "id": "water_l3_src_c",
-              "letter": "C",
-              "type": "visual",
-              "src": "/images/plague_doctor_schnabel.jpg",
-              "image": "/images/plague_doctor_schnabel.jpg",
-              "title": "Source C: Contemporary Engraving of a Plague Doctor in Protective Beak Mask (c.1665)",
-              "caption": "Copper engraving of 'Doctor Schnabel von Rom' (c.1656–1665) depicting the protective waxed leather costume, glass goggles, and aromatic herb-filled beak mask (Wellcome Collection 548261i).",
-              "author": "Paulus Fürst of Nuremberg",
-              "date": "c. 1656–1665",
-              "question_badge": "MIASMA THEORY & CLOTHING DEFENCE",
-              "question": "How does the plague doctor's costume show that 17th-century medical practice was dominated by the miasma theory?",
-              "model_answer": "The doctor wears a long leather robe and a bird-like mask with a beak filled with dried herbs and sweet-smelling spices. This proves that physicians believed breathing poisonous, foul air caused plague, using aromatic herbs to filter out lethal miasma.",
-              "context": "Invented by French royal physician Charles de Lorme in 1619, the plague suit was treated with wax or suet to repel fluids. The hollow beak held dried lavender, camphor, cloves, and rose petals.",
-              "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-              "provenance_clues": {
-                "author": "Engraver and publisher Paulus Fürst.",
-                "audience": "European public seeking medical pamphlets during plague epidemics.",
-                "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients.",
-                "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?"
-              },
-              "teacher_notes": {
-                "hinge_question": "Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-                "source_context": "Invented by Charles de Lorme in 1619, the plague suit was treated with wax. **Hinge Question:** Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?",
-                "provenance_breakdown": {
-                  "author": "Engraver and publisher Paulus Fürst.",
-                  "audience": "European public seeking medical pamphlets during plague epidemics.",
-                  "motive": "Illustrating the eerie medical uniform worn by physicians attending plague patients."
-                }
-              },
-              "source_context": "Invented by Charles de Lorme in 1619, the plague suit was treated with wax. **Hinge Question:** Did the heavy oiled leather coat accidentally protect doctors from plague, even though they wore it for the wrong medical reason?"
-            },
-            {
-              "id": "water_l3_src_d",
-              "letter": "D",
+              "id": "water_l3_src_e",
+              "letter": "E",
               "type": "written",
               "src": "/images/night_plague_burials_1665.jpg",
               "image": "/images/night_plague_burials_1665.jpg",
-              "title": "Source D: London Bill of Mortality for the Week Ending 19 September 1665",
+              "title": "Source E: London Bill of Mortality for the Week Ending 19 September 1665",
               "caption": "Official broadsheet published by the Company of Parish Clerks recording London's highest weekly plague mortality toll during the epidemic of 1665 (London Metropolitan Archives / Wellcome Collection).",
               "author": "Worshipful Company of Parish Clerks, London",
               "date": "19 September 1665",
@@ -135304,38 +135341,6 @@
                 }
               },
               "source_context": "London Bills of Mortality were compiled weekly from parish church wardens. **Hinge Question:** Why were mortality rates so much higher in crowded out-parishes like Whitechapel and Stepney than inside the city walls?"
-            },
-            {
-              "id": "water_l3_src_e",
-              "letter": "E",
-              "type": "written",
-              "title": "Source E: Sir John Harington, 'A New Discourse of a Stale Subject, Called the Metamorphosis of Ajax' (1596)",
-              "caption": "Official broadsheet proclamation setting out municipal quarantine rules, searchers, watchmen, and burial regulations during the Great Plague (Corporation of London Records Office / British Library).",
-              "author": "Sir John Lawrence, Lord Mayor of London",
-              "date": "1665",
-              "content": "That every visited house be marked with a Red Cross of a foot long in the middle of the door, evident to be seen, and with these usual printed words: 'Lord have mercy upon us', to continue on the said door until lawful opening of the same... That two watchmen be appointed to every infected house, one for the day, and the other for the night, to keep the doors locked, and to see that no person goes in or out upon pain of severe imprisonment.",
-              "question_badge": "CIVIC QUARANTINE & PUBLIC LAW",
-              "question": "What does Source E tell us about the strict measures enforced to contain the spread of plague in London?",
-              "model_answer": "Source E shows that infected houses were padlocked shut by armed watchmen and marked with a painted red cross. This demonstrates that city authorities used compulsory quarantine to trap entire families inside with sick relatives to stop the contagion spreading.",
-              "context": "London's 1665 plague orders mandated 28 days of strict confinement for any house where plague appeared. Watchmen guarded doors day and night, bringing food and preventing escapes.",
-              "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-              "provenance_clues": {
-                "author": "Lord Mayor Sir John Lawrence and London Aldermen.",
-                "audience": "Constables, parish officers, watchmen, and London citizens.",
-                "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets.",
-                "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?"
-              },
-              "teacher_notes": {
-                "hinge_question": "Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                "source_context": "London's 1665 plague orders mandated 28 days of strict confinement. **Hinge Question:** Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-                "provenance_breakdown": {
-                  "author": "Lord Mayor Sir John Lawrence and London Aldermen.",
-                  "audience": "Constables, parish officers, watchmen, and London citizens.",
-                  "motive": "Enforcing absolute home quarantine to prevent plague victims spreading infection through city streets."
-                }
-              },
-              "source_context": "London's 1665 plague orders mandated 28 days of strict confinement. **Hinge Question:** Was locking infected families in their homes an effective quarantine measure, or did it guarantee the death of healthy household members?",
-              "text": "Here is the water cistern, filled by pipe or bucket. By lifting this small valve with a brass wire, the water gusheth forth with great force and washeth the vessel clean, carrying all waste down into the vault below. It doth sweeten the privy and keep out all foul odours and corrupt vapours, so that a lady may sit therein without offending her senses."
             }
           ]
         },

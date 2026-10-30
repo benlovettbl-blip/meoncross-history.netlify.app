@@ -39,7 +39,7 @@ Every lesson across Key Stage 2, Key Stage 3, and GCSE must enforce:
 | `the_shoah` | KS3 (Y9) | 7 | 35 | ✅ 100% (35/35) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. Gold Standard locked. |
 | `great_war_part2` | KS3 (Y9) | 5 | 25 | ✅ 100% (25/25) | 🟢 **100% ALIGNED** | ✅ 0 Duplicates | None. Gold Standard locked. |
 | `great_war` | KS3 (Y9) | 6 | 30 | ✅ 100% (30/30) | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Verify topic-to-block parity across 6 lessons. |
-| `water_and_sanitation` | KS3 (Y7) | 7 | 35 | ✅ 100% (35/35) | 🔴 **MISMATCHES DETECTED** | ⚠️ Lesson 3 Duplicate | Reshuffle L3, L4, L7 sources; eliminate Harington duplicate. |
+| `water_and_sanitation` | KS3 (Y7) | 7 | 35 | ✅ 100% (35/35) | 🟡 **IN PROGRESS (L3 FIXED)** | ✅ 0 Duplicates | L3 de-duplicated & 1:1 aligned (Stow, Harington, Hollar, Pepys, Mortality). L4, L5, L7 in queue. |
 | `medieval_england` | KS3 (Y7) | 5 | 25 | ⚠️ 1 non-5x5 | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Standardize L5 blocks and audit source thematic match. |
 | `monarchy_religion_power` | KS3 (Y8) | 5 | 25 | ⚠️ 1 non-5x5 | 🟡 **NEEDS AUDIT** | ✅ 0 Duplicates | Standardize L5 blocks and audit source thematic match. |
 | `industrialisation_and_empire`| KS3 (Y8) | 5 | 25 | ⚠️ 2 non-5x5 | 🔴 **NEEDS ALIGNMENT** | ✅ 0 Duplicates | Standardize 5x5 structure; nest missing block sources. |
